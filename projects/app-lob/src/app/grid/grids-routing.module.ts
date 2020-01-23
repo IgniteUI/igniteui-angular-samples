@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { TaskPlannerComponent } from "../grid-taskplanner/task-planner/taskplanner.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
 import { gridsRoutesData } from "./grid-routes-data";
@@ -14,6 +15,11 @@ export const gridsDVRoutes: Routes = [
         component: GridMasterDetailSampleComponent,
         data: gridsRoutesData["grid-master-detail"],
         path: "grid-master-detail"
+    },
+    {
+        component: TaskPlannerComponent,
+        data: gridsRoutesData["grid-task-planner"],
+        path: "grid-task-planner"
     }
 ];
 

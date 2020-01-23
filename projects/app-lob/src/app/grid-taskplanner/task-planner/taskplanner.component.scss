@@ -1,0 +1,88 @@
+
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$grid-toolbar-theme: igx-grid-toolbar-theme(
+    $title-text-color: #292826
+);
+
+$toolbar-button-theme: igx-button-theme(
+    // $outlined-background: #FFCD0F,
+    $outlined-text-color: #292826,
+    $outlined-hover-background: rgba(0, 0, 0, 0.04),
+    $outlined-hover-text-color: #292826
+);
+
+.igx-grid-toolbar__custom-content {
+    @include igx-button($toolbar-button-theme);
+}
+:host {
+    ::ng-deep {
+        @include igx-grid-toolbar($grid-toolbar-theme);
+
+        .igx-grid-toolbar__actions, .igx-grid-toolbar__custom-content {
+            @include igx-button($toolbar-button-theme);
+        }
+    }
+}
+
+.grid__wrapper {
+    padding: 5px 15px;
+    height: 95%;
+}
+
+.owner_name {
+    width: rem(100px);
+    margin: 0 rem(16px);
+}
+
+.owner_name {
+    @include ellipsis();
+}
+
+.cell__inner{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    justify-content: space-between;
+}
+
+.controls-holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.editing-buttons {
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // min-width: 500px;
+    padding: 16px 0px;
+}
+
+.tabContent {
+    padding: 24px 8px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px;
+}
+
+.descContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+igx-divider {
+    margin: 0 24px !important;
+}
+
+h6 {
+    margin-top: 1em;
+}
+
+.tabContent igx-grid {
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, .08);
+}

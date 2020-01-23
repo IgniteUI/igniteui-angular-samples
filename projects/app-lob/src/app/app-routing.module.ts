@@ -22,6 +22,11 @@ export const samplesRoutes: Routes = [
         path: "finjs-sample"
     },
     {
+        data: ["TaskPlannerModule"],
+        loadChildren: () => import("./grid-taskplanner/taskplanner.module").then(m => m.TaskPlannerModule),
+        path: "grid-task-planner"
+    },
+    {
         data: ["TreeGridFinjsModule"],
         loadChildren: () => import("./treegrid-finjs/treegrid-finjs.module").then(m => m.TreeGridFinjsModule),
         path: "treegrid-finjs-sample"
