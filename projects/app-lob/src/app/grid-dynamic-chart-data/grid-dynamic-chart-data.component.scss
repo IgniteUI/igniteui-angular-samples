@@ -1,4 +1,4 @@
-@import '../../../../node_modules/igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../../node_modules/igniteui-angular/lib/core/styles/themes/index';
 
 @mixin scrollbar($scrollbar-width, $scrollbar-height) {
     $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
