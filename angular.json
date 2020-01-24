@@ -13,7 +13,7 @@
           "options": {
             "aot": true,
             "sourceMap": false,
-            "outputPath": "dist",
+            "outputPath": "dist/app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
@@ -135,6 +135,140 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        }
+      }
+    },
+    "app-lob": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/app-lob",
+      "sourceRoot": "projects/app-lob/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/app-lob",
+            "index": "projects/app-lob/src/index.html",
+            "main": "projects/app-lob/src/main.ts",
+            "polyfills": "projects/app-lob/src/polyfills.ts",
+            "tsConfig": "projects/app-lob/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/app-lob/src/favicon.ico",
+              "projects/app-lob/src/assets"
+            ],
+            "styles": [
+              "projects/app-lob/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/app-lob/src/environments/environment.ts",
+                  "with": "projects/app-lob/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            },
+            "es5": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "tsConfig": "projects/app-lob/tsconfig-es5.app.json"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "app-lob:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "app-lob:build:production"
+            },
+            "es5": {
+              "browserTarget": "app-lob:build:es5"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app-lob:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/app-lob/src/test.ts",
+            "polyfills": "projects/app-lob/src/polyfills.ts",
+            "tsConfig": "projects/app-lob/tsconfig.spec.json",
+            "karmaConfig": "projects/app-lob/karma.conf.js",
+            "assets": [
+              "projects/app-lob/src/favicon.ico",
+              "projects/app-lob/src/assets"
+            ],
+            "styles": [
+              "projects/app-lob/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/app-lob/tsconfig.app.json",
+              "projects/app-lob/tsconfig.spec.json",
+              "projects/app-lob/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/app-lob/e2e/protractor.conf.js",
+            "devServerTarget": "app-lob:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app-lob:serve:production"
+            }
           }
         }
       }

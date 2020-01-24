@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { EMPLOYEE_DATA } from "../tree-grid-childdatakey-sample/data";
+import { EMPLOYEE_DATA } from "./data";
 
 @Component({
     selector: "tree-grid-clipboard-operations-sample",
