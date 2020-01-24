@@ -9,7 +9,8 @@ import {
     IDragBaseEventArgs,
     IDragMoveEventArgs,
     IgxDragDirective,
-    IgxDragLocation
+    IgxDragLocation,
+    IgxListModule
 } from "igniteui-angular";
 
 @Component({
@@ -34,6 +35,7 @@ export class ListReorderSampleComponent {
 
     public newIndex = null;
     public animationDuration = 0.3;
+    private listItemHeight = 55;
 
     public getDragDirectiveRef(id: number): IgxDragDirective {
         return this.dragDirs.find((item) => item.data.id === id);
@@ -52,8 +54,8 @@ export class ListReorderSampleComponent {
             const moveDown = this.newIndex > itemIndex;
             // If the new position is below add the height moved down, otherwise subtract it.
             const prefix = moveDown ? 1 : -1;
-            // The height that the new position differs from the current. We know that each item is 72px height.
-            const movedHeight = prefix * Math.abs(this.newIndex - itemIndex) * 72;
+            // The height that the new position differs from the current. We know that each item is 55px height.
+            const movedHeight = prefix * Math.abs(this.newIndex - itemIndex) * this.listItemHeight;
             const originLocation = event.owner.originLocation;
             event.owner.transitionTo(
                 new IgxDragLocation(originLocation.pageX, originLocation.pageY + movedHeight),
@@ -83,7 +85,7 @@ export class ListReorderSampleComponent {
         // Relative position of the dragged element to the list container.
         const relativePosY = event.nextPageY - containerPosY;
 
-        let newIndex = Math.floor(relativePosY / 72);
+        let newIndex = Math.floor(relativePosY / this.listItemHeight);
         newIndex = newIndex < 0 ? 0 : (newIndex >= this.employees.length ? this.employees.length - 1 : newIndex);
         if (newIndex === this.newIndex) {
             // If the current new index is unchanged do nothing.
@@ -100,7 +102,7 @@ export class ListReorderSampleComponent {
             const currentLocation = elementToMove.location;
             const prefix = movingDown ? -1 : 1;
             elementToMove.transitionTo(
-                new IgxDragLocation(currentLocation.pageX, currentLocation.pageY + prefix * 72),
+                new IgxDragLocation(currentLocation.pageX, currentLocation.pageY + prefix * this.listItemHeight),
                 { duration: this.animationDuration }
             );
         } else {
