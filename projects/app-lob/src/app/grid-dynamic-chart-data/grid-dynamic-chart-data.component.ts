@@ -1,7 +1,6 @@
 // tslint:disable: max-line-length
 import { AfterViewInit, ChangeDetectorRef, Component, Directive, HostListener, OnDestroy, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
-import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
 import { noop, Subject } from "rxjs";
 import { debounceTime, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../services/financialData";

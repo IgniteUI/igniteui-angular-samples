@@ -39,21 +39,6 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
         return this._formatColors;
     }
 
-    public get selectedData() {
-        if (!this._selectedData.length) {
-            this._selectedData = this.toArray(this.grid.getSelectedData());
-        }
-        return this._selectedData;
-    }
-
-    public get textData() {
-        return this.selectedData.filter(val => typeof val === "string");
-    }
-
-    public get numericData() {
-        return this.selectedData.filter(val => typeof val === "number");
-    }
-
     @Output()
     public onFormattersReady = new EventEmitter<string[]>();
 
@@ -173,6 +158,18 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
         }
     };
 
+    private get selectedData() {
+        if (!this._selectedData.length) { this._selectedData = this.toArray(this.grid.getSelectedData()); }
+        return this._selectedData;
+    }
+
+    private get textData() {
+        return this.selectedData.filter(val => typeof val === "string");
+    }
+
+    private get numericData() {
+        return this.selectedData.filter(val => typeof val === "number");
+    }
     private _formatColors: IFormatColors = {
         success: "#4EB862",
         error: "#FF134A",
@@ -225,11 +222,6 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     public ngOnDestroy(): void {
         this.destroy$.next(true);
         this.destroy$.complete();
-    }
-
-    public addToCache(rowIndex, colIndex) {
-        this.formatedRange.has(rowIndex) ? this.formatedRange.get(rowIndex).add(colIndex) :
-        this.formatedRange.set(rowIndex, new Set<number>()).get(rowIndex).add(colIndex);
     }
 
     public formatCells(formatterName, formatRange?: []) {
@@ -315,6 +307,11 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
             }
         });
         this.recalcCachedValues(true);
+    }
+
+    private addToCache(rowIndex, colIndex) {
+        this.formatedRange.has(rowIndex) ? this.formatedRange.get(rowIndex).add(colIndex) :
+        this.formatedRange.set(rowIndex, new Set<number>()).get(rowIndex).add(colIndex);
     }
 
     private toArray(data: any[]) {
