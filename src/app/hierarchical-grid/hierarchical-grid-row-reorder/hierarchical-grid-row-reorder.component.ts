@@ -13,7 +13,7 @@ import { createData, IDrive } from "../../data/files.data";
     templateUrl: "hierarchical-grid-row-reorder.component.html"
 })
 export class HGridRowReorderComponent {
-    @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent, static : true })
+    @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent, static: true })
     public hGrid: IgxHierarchicalGridComponent;
     public localData: IDrive[] = [];
     constructor() {
@@ -62,6 +62,8 @@ export class HGridRowReorderComponent {
             const rowRect = row.nativeElement.getBoundingClientRect();
             if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&
                 cursorPosition.x > rowRect.left + window.scrollX && cursorPosition.x < rowRect.right + window.scrollX) {
+                return row;
+            } else if (row === rowListArr[rowListArr.length - 1] && cursorPosition.y > rowRect.bottom) {
                 return row;
             }
         }
