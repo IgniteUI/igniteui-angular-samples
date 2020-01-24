@@ -19,10 +19,14 @@
     display: flex;
     flex-direction: column;
 }
+.igx-list__item-content {
+    padding: 0.1rem 1rem;
+}
 .folders {
     igx-list-item {
         letter-spacing: 0.15px;
         width: 13rem;
+        height: 3rem;
         overflow: hidden;
         background: igx-color($default-palette, 'grays', 200);
         cursor: pointer;
@@ -80,16 +84,6 @@
             width: 100%;
             margin-right: auto;
             justify-content: center;
-            .sender {
-                font-size: 16px;
-                letter-spacing: 0.15px;
-                color: rgba(0, 0, 0, 1);
-            }
-            .email-title {
-                font-size: 14px;
-                letter-spacing: 0.25px;
-                color: rgba(0, 0, 0, 0.619);
-            }
         }
     }
     li:hover {
