@@ -8,6 +8,7 @@ export const listsRoutesData = {
     "combo-template": { displayName: "Templating Combo", parentName: "Combo" },
     "cascading-combos": { displayName: "Cascading Combos", parentName: "Combo" },
     "combo-overlay": { displayName: "Combo Overlay", parentName: "Combo" },
+    "combo-single-selection": {displayName: "Combo Single Selection", parentName: "Combo"},
     "list": { displayName: "List Overview", parentName: "List" },
     "list-sample-2": { displayName: "List Item Header", parentName: "List" },
     "list-sample-3": { displayName: "List Item Template", parentName: "List" },
