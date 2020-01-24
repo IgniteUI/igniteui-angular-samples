@@ -1,4 +1,4 @@
-@import '../../../../node_modules/igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../../node_modules/igniteui-angular/lib/core/styles/themes/index';
 
 @mixin scrollbar($scrollbar-width, $scrollbar-height) {
     $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
@@ -119,6 +119,10 @@
 
 }
 
+.selected {
+    opacity: .5;
+}
+
 .disableButton {
     opacity: .4;
     pointer-events: none;
@@ -161,6 +165,11 @@
     align-content: center;
 }
 
+.more-action{
+    display: flex;
+    align-items: center;
+}
+
 .action {
     cursor: pointer;
 
@@ -169,39 +178,48 @@
         font-weight: 400;
         text-align: center;
     }
+}
 
-    .btn {
+.btn {
 
-        &.condition {
-            padding-right: 16px;
-        }
+    &.condition {
+        padding-right: 16px;
+    }
 
-        &.chart {
-            padding-right: 24px;
-        }
+    &.chart {
+        padding-right: 24px;
+    }
 
-        display: inline-flex;
-        flex-flow: column;
-        align-items: center;
+    display: inline-flex;
+    flex-flow: column;
+    align-items: center;
 
-        img{
-            pointer-events: none;
-        }
+    img{
+        pointer-events: none;
+    }
 
-        span {
-            pointer-events: none;
-        }
+    span {
+        pointer-events: none;
     }
 }
 
-.clear{
+.clear, .more-action{
     display: flex;
     flex-flow: column;
     justify-content: center;
     border-left: 1px solid #BDBDBD;
-    .btn{
+    .btn, .more-btn {
         width: 68px;
         margin: 0 0 7px 0;
         padding: 0;
     }
+    .name {
+        font-size: .9rem;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+.more-action{
+    padding-top: 0.8rem;
 }
