@@ -1,10 +1,6 @@
-ul {
-    padding: 0px;
-    margin: 0px;
-    li {
-        list-style-type: none;
-    }
-}
+@import "~igniteui-angular/lib/core/styles/themes/index";
+@include igx-core();
+
 .mailbox {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -24,28 +20,22 @@ ul {
     flex-direction: column;
 }
 .folders {
-    li {
-        width: 173px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        font-size: 16px;
+    igx-list-item {
         letter-spacing: 0.15px;
-        color: rgba(0,0,0,0.866);
-        background: #EBEBEB;
-        height: 48px;
+        width: 13rem;
+        overflow: hidden;
+        background: igx-color($default-palette, 'grays', 200);
         cursor: pointer;
+        width: 13rem;
         &:hover {
-            background: #D8D8D8;
+            background: igx-color($default-palette, 'grays', 100);
         }
         &:active {
-            background: #d2d2d2;
+            background: igx-color($default-palette, 'grays', 50);
         }
         igx-icon {
             margin-left: 16px;
             margin-right: 28px;
-            color: rgba(0,0,0,0.619);
         }
         &:nth-child(5) {
             igx-icon {
