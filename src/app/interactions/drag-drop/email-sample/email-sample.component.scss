@@ -1,5 +1,4 @@
 @import "~igniteui-angular/lib/core/styles/themes/index";
-@include igx-core();
 
 .mailbox {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -94,14 +93,14 @@
         background-color: #e0e0e0;
     }
     li.email-checked:hover {
-        background-color: #F4C7DE;
+        background-color: igx-color($default-palette, 'secondary', 100);;
     }
     li.email-checked:active {
-        background-color: #F4C7DE;
+        background-color: igx-color($default-palette, 'secondary', 100);;
     }
 }
 .email-checked {
-    background: #F4C7DE;
+    background: igx-color($default-palette, 'secondary', 100);
     -webkit-transition: background .1s ease-out;
     -moz-transition: background .1s ease-out;
     -o-transition: background .1s ease-out;
