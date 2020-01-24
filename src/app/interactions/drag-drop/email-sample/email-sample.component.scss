@@ -12,7 +12,9 @@
     flex-direction: row;
     font-family: Titillium Web;
 	font-weight: 400;
-	font-style: normal;
+    font-style: normal;
+    /* Clear default theming */
+    background: var(--igx-banner-banner-background);
 }
 .flexlist {
     display: flex;
@@ -27,14 +29,14 @@
         width: 13rem;
         height: 3rem;
         overflow: hidden;
-        background: igx-color($default-palette, 'grays', 200);
+        background: var(--igx-grays-200);
         cursor: pointer;
         width: 13rem;
         &:hover {
-            background: igx-color($default-palette, 'grays', 100);
+            background: var(--igx-grays-100);
         }
         &:active {
-            background: igx-color($default-palette, 'grays', 50);
+            background: var(--igx-grays-50);
         }
         igx-icon {
             margin-left: 16px;
@@ -59,55 +61,15 @@
 }
 .emails-container {
     width: 760px;
-    .period {
-        color: #ed6ca7;
-        text-align: left;
-        height: 48px;
-        padding-left: 15px;
-        font-size: 12px;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        font-weight: 800;
-        line-height: 48px;
-    }
 }
-.emails {
-    li {
-        padding-left: 18px;
-        padding-right: 18px;
-        height: 72px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        .email-content {
-            width: 100%;
-            margin-right: auto;
-            justify-content: center;
-        }
-    }
-    li:hover {
-        background-color: #eee;
-        cursor: pointer;
-    }
-    li:active {
-        background-color: #e0e0e0;
-    }
-    li.email-checked:hover {
-        background-color: igx-color($default-palette, 'secondary', 100);;
-    }
-    li.email-checked:active {
-        background-color: igx-color($default-palette, 'secondary', 100);;
-    }
-}
+
 .email-checked {
-    background: igx-color($default-palette, 'secondary', 100);
+    background: var(--igx-secondary-100);
     -webkit-transition: background .1s ease-out;
     -moz-transition: background .1s ease-out;
     -o-transition: background .1s ease-out;
     transition: background .1s ease-out;
 }
-
-
 
 .dragGhost {
     width: 173px;
