@@ -1,5 +1,5 @@
 <div class="mailbox">
-    <ul class="folders flexlist">
+    <!-- <ul class="folders flexlist">
         <li *ngFor="let folder of folders" igxDrop 
             (enter)="enterDropZone($event)"
             (leave)="leaveDropZone($event)"
@@ -8,7 +8,17 @@
             <igx-icon fontSet="material">{{folder.icon}}</igx-icon> 
             <span class="folder-title">{{folder.text}}</span>
         </li>
-    </ul>
+    </ul> -->
+    <igx-list class="folders flexlist">
+        <igx-list-item *ngFor="let folder of folders" igxDrop
+            (enter)="enterDropZone($event)"
+            (leave)="leaveDropZone($event)"
+            (dropped)="dropElement($event)"
+            [dropChannel]="folder.dropChannel">
+            <igx-icon igxListThumbnail fontSet="material">{{folder.icon}}</igx-icon>
+            <span igxListLineTitle>{{ folder.text }}</span>
+        </igx-list-item>
+    </igx-list>
     <div class="emails-container flexlist">
         <ng-template #customGhost>
             <div class="dragGhost">
