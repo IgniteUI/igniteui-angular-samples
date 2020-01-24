@@ -11,10 +11,6 @@ import { localData } from "./local-data";
 export class ComboSingleSelectionComponent implements OnInit {
     public lData: any[];
 
-    constructor(public elementRef: ElementRef) {
-
-  }
-
     public ngOnInit() {
         this.lData = localData;
     }
