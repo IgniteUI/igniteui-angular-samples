@@ -296,7 +296,6 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     }
 
     private resetRange(formatRange?: []) {
-        if (this.formatter) { return; }
         this.formatedRange.clear();
         const customRange = formatRange ? formatRange : this.grid.getSelectedRanges();
         customRange.forEach(range => {
