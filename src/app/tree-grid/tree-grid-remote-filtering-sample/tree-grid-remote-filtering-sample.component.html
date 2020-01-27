@@ -1,6 +1,5 @@
 <div class="grid__wrapper">
     <igx-tree-grid #treeGrid [data]="remoteData | async" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" width="100%" height="450px"
-                   [autoGenerate]="false"
                    [filterStrategy]="noopFilterStrategy"
                    [allowFiltering]="true">
         <igx-column [field]="'Name'" dataType="string"></igx-column>
