@@ -1,21 +1,11 @@
 /* tslint:disable:object-literal-sort-keys */
 import { HttpClientModule } from "@angular/common/http";
 import {
-    IgxAvatarModule,
-    IgxBadgeModule,
-    IgxButtonModule,
-    IgxCheckboxModule,
-    IgxExcelExporterService,
-    IgxGridModule,
-    IgxIconModule,
-    IgxInputGroupModule,
-    IgxProgressBarModule,
-    IgxRippleModule,
-    IgxSwitchModule,
-    IgxToggleModule
+    IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxCheckboxModule, IgxExcelExporterService,
+    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRippleModule,
+    IgxSwitchModule, IgxToggleModule
 } from "igniteui-angular";
-import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
-import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
+import { IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
 import { GridCRMComponent } from "../../projects/app-lob/src/app/grid-crm/grid-crm/grid-crm/grid-crm.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";

@@ -1,38 +1,16 @@
+import { ComponentFactory, ComponentFactoryResolver, ComponentRef, Directive,
+    EventEmitter, Input, Output, Type, ViewContainerRef } from "@angular/core";
 import {
-    ComponentFactory, ComponentFactoryResolver, ComponentRef,
-    Directive, EventEmitter, Input, Output, Type, ViewContainerRef
-} from "@angular/core";
-import { IgxAreaSeriesComponent } from "igniteui-angular-charts/ES5/igx-area-series-component";
-import { IgxBarSeriesComponent } from "igniteui-angular-charts/ES5/igx-bar-series-component";
-import { IgxBubbleSeriesComponent } from "igniteui-angular-charts/ES5/igx-bubble-series-component";
-import { IgxColumnSeriesComponent } from "igniteui-angular-charts/ES5/igx-column-series-component";
-import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
-import { IgxItemLegendComponent } from "igniteui-angular-charts/ES5/igx-item-legend-component";
-import { IgxLegendComponent } from "igniteui-angular-charts/ES5/igx-legend-component";
-import { IgxLineSeriesComponent } from "igniteui-angular-charts/ES5/igx-line-series-component";
-import { IgxPieChartComponent } from "igniteui-angular-charts/ES5/igx-pie-chart-component";
-import { IgxScatterLineSeriesComponent } from "igniteui-angular-charts/ES5/igx-scatter-line-series-component";
-import { IgxScatterSeriesComponent } from "igniteui-angular-charts/ES5/igx-scatter-series-component";
-import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
-import { IgxStacked100AreaSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-100-area-series-component";
-import { IgxStacked100BarSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-100-bar-series-component";
-import {
-    IgxStacked100ColumnSeriesComponent
-} from "igniteui-angular-charts/ES5/igx-stacked-100-column-series-component";
-import { IgxStacked100LineSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-100-line-series-component";
-import { IgxStackedAreaSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-area-series-component";
-import { IgxStackedBarSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-bar-series-component";
-import { IgxStackedColumnSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-column-series-component";
-import { IgxStackedLineSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-line-series-component";
+    IgxAreaSeriesComponent, IgxBarSeriesComponent, IgxBubbleSeriesComponent, IgxColumnSeriesComponent,
+    IgxDataChartComponent, IgxItemLegendComponent, IgxLegendComponent, IgxLineSeriesComponent, IgxPieChartComponent,
+    IgxScatterLineSeriesComponent, IgxScatterSeriesComponent, IgxSizeScaleComponent, IgxStacked100AreaSeriesComponent,
+    IgxStacked100BarSeriesComponent, IgxStacked100ColumnSeriesComponent, IgxStacked100LineSeriesComponent,
+    IgxStackedAreaSeriesComponent, IgxStackedBarSeriesComponent, IgxStackedColumnSeriesComponent,
+    IgxStackedLineSeriesComponent
+} from "igniteui-angular-charts";
 import { CHART_TYPE } from "./chart-types";
-import {
-    ChartInitializer,
-    IChartComponentOptions,
-    IgxDataChartInitializer,
-    IgxPieChartInitializer,
-    IgxStackedDataChartInitializer,
-    IOptions
-} from "./initializers";
+import { ChartInitializer, IChartComponentOptions, IgxDataChartInitializer,
+    IgxPieChartInitializer, IgxStackedDataChartInitializer, IOptions } from "./initializers";
 
 export interface IDeterminedChartTypesArgs {
     chartsAvailabilty: Map<CHART_TYPE, boolean>;
@@ -146,7 +124,7 @@ export class ChartIntegrationDirective {
     private _dataChartTypes = new Set<CHART_TYPE>();
     private get _labelMemberPath(): string {
         return this.defaultLabelMemberPath && this._chartData.some(r => r[this.defaultLabelMemberPath] !== undefined) ?
-               this.defaultLabelMemberPath : this._labelMemberPaths.length > 0 ? this._labelMemberPaths[0] : "Index";
+            this.defaultLabelMemberPath : this._labelMemberPaths.length > 0 ? this._labelMemberPaths[0] : "Index";
     }
 
     private get pieChartOptions(): IOptions {
@@ -313,7 +291,7 @@ export class ChartIntegrationDirective {
                 }
             });
             stacked ? chartOptions.stackedFragmentOptions = options :
-                      chartOptions.seriesOptions = options;
+                chartOptions.seriesOptions = options;
         }
         return chartOptions;
     }

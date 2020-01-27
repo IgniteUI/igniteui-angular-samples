@@ -12,7 +12,7 @@ import {
     IgxSwitchModule,
     IgxToggleModule
 } from "igniteui-angular";
-import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
+import { IgxCategoryChartModule } from "igniteui-angular-charts";
 import { FinJSDemoComponent } from "../../projects/app-lob/src/app/grid-finjs/grid-finjs-demo.component";
 import { LocalDataService } from "../../projects/app-lob/src/app/grid-finjs/localData.service";
 import { DependenciesType } from "../services/DependenciesType";
