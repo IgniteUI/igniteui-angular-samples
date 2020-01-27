@@ -1,5 +1,4 @@
 $custom-blue: #0099FF;
-$title-color: rgba(0,0,0,0.866);
 
 @mixin vendor-box-shadow(   $x1, $y1, $blur1, $spread1, $rgba1, 
                             $x2, $y2, $blur2, $spread2, $rgba2, 
@@ -42,7 +41,6 @@ article {
         font-style: normal;
         font-size: 20px;
         letter-spacing: 0.15px;
-        color: $title-color;
         position: absolute;
         top: 0px;
         left: 0px;
