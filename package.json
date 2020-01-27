@@ -19,6 +19,7 @@
     "build:app-lob": "gulp generate-live-editing --appDv=true && gulp overwrite-package-json && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build app-lob --prod --progress=true",
     "test": "ng test",
     "lint": "ng lint",
+    "lint:app-lob": "ng lint app-lob",
     "e2e": "ng e2e",
     "start:app-lob": "ng serve app-lob --configuration es5 -o --progress=true",
     "start:app-lob:live-editing": "gulp generate-live-editing --appDv=true && ng serve app-lob --configuration es5 -o --progress=true"
