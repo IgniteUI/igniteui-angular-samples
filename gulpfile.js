@@ -1,5 +1,6 @@
 const gulp = require("gulp");
 const fs = require("fs");
+const domino = require('domino');
 const tsNode = require('ts-node').register({
     transpileOnly: true,
     ignore: [/\/node_modules\/(?!igniteui-angular)/],
@@ -11,12 +12,15 @@ const tsNode = require('ts-node').register({
 const argv = require("yargs").argv;
 
 
-// Workaround for require error with LiveEditingManager
+// Workaround for require error with LiveEditingManager and charts
 global['KeyboardEvent'] = null
 global['MouseEvent'] = null
 global['Event'] = null
 global['FocusEvent'] = null
 global['PointerEvent'] = null
+
+const window = domino.createWindow('<!doctype html><html><body></body></html>');
+global.HTMLElement = window.HTMLElement;
 
 //  Workaround for exception with Excel samples running product code during generate-live-editing task.
 navigator = { language: "en-US" };
