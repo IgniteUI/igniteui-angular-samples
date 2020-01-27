@@ -331,7 +331,12 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
         }
         this.contextmenuX = cell.element.nativeElement.getClientRects()[0].right;
         this.contextmenuY = cell.element.nativeElement.getClientRects()[0].bottom;
-        this.contextmenu = this.formatting.isWithInRange(cell.rowIndex, cell.visibleColumnIndex);
+        this.contextmenu = this.isWithInRange(cell.rowIndex, cell.visibleColumnIndex);
         this.cdr.detectChanges();
+    }
+
+    public isWithInRange(rowIndex, colIndex) {
+        return rowIndex >= this.range.rowStart && rowIndex <= this.range.rowEnd
+        && colIndex >= this.range.columnStart && colIndex <= this.range.columnEnd;
     }
 }
