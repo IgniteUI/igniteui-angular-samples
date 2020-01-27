@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ChangeDetectorRef } from "@angular/core";
+import { ChangeDetectorRef, Component, Input, OnInit } from "@angular/core";
 
 const DROP_ZONE_ACTIVE_COLOR = "#d8d8d8";
 const DROP_ZONE_INACTIVE_COLOR = "#ebebeb";
@@ -73,8 +73,8 @@ export class EmailSampleComponent implements OnInit {
         this.aggressiveToggle(event);
         this.draggedElements = this.emails.filter(x => x.checked === true).length;
     }
-    
-    public onGhostCreated(event) {        
+
+    public onGhostCreated(event: any): void {
         this.cdr.detectChanges();
     }
 
