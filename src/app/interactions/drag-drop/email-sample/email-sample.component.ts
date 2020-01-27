@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, ChangeDetectorRef } from "@angular/core";
 
 const DROP_ZONE_ACTIVE_COLOR = "#d8d8d8";
 const DROP_ZONE_INACTIVE_COLOR = "#ebebeb";
@@ -33,7 +33,9 @@ export class EmailSampleComponent implements OnInit {
         { sender: "Benito Noboa", title: "Last Chance: Win an Amazon Gift Card", checked: false}
     ];
 
-    constructor() { }
+    constructor(
+        private cdr: ChangeDetectorRef
+    ) { }
 
     public ngOnInit() {
     }
@@ -70,6 +72,10 @@ export class EmailSampleComponent implements OnInit {
     public onDragStart(event: any): void {
         this.aggressiveToggle(event);
         this.draggedElements = this.emails.filter(x => x.checked === true).length;
+    }
+    
+    public onGhostCreated(event) {        
+        this.cdr.detectChanges();
     }
 
     private aggressiveToggle(event: any): void {
