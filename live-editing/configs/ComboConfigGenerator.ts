@@ -7,6 +7,9 @@ import { ComboFeatures } from "../../src/app/lists/combo/combo-features/combo-fe
 import { ComboMainComponent } from "../../src/app/lists/combo/combo-main/combo-main.component";
 import { ComboOverlayComponent } from "../../src/app/lists/combo/combo-overlay/combo-overlay.component";
 import { ComboRemoteComponent } from "../../src/app/lists/combo/combo-remote/combo-remote.component";
+import {
+    ComboSingleSelectionComponent
+} from "../../src/app/lists/combo/combo-single-selection/combo-single-selection.component";
 import { ComboStyling } from "../../src/app/lists/combo/combo-styling/combo-styling.component";
 import { ComboTemplateComponent } from "../../src/app/lists/combo/combo-template/combo-template.component";
 import { CascadingCombos } from "./../../src/app/lists/combo/cascading-combos/cascading-combos.component";
@@ -91,6 +94,17 @@ export class ComboConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxComboModule]
             }),
             component: ComboOverlayComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/lists/combo/combo-single-selection/local-data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxComboModule, ComboSingleSelectionComponent],
+                ngDeclarations: [ComboSingleSelectionComponent],
+                ngImports: [IgxComboModule]
+            }),
+            component: ComboSingleSelectionComponent,
+            shortenComponentPathBy: "/lists/combo/"
         }));
 
         configs.push(new Config({
