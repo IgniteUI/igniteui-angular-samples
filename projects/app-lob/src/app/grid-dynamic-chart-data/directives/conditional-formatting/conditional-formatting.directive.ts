@@ -24,9 +24,6 @@ export interface IFormatColors {
     selector: "[conditionalFormatting]"
 })
 export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy {
-
-    public formatedRange: Map<number, Set<number>> = new Map<number, Set<number>>();
-
     @Input()
     public formatter: string | ConditionalFormatingType;
 
@@ -34,7 +31,6 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     public set formatColors(val: IFormatColors)  {
         this._formatColors = val;
     }
-
     public get formatColors() {
         return this._formatColors;
     }
@@ -44,7 +40,7 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
     public colorScale = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (!(typeof cellValue === "number" && this.isWithInRange(rowIndex, colname))) { return; }
+            if (!(typeof cellValue === "number" && this.isWithInFormattedRange(rowIndex, colname))) { return; }
             return this.lowTresholdValue >= cellValue ? this.formatColors.error :
                 this.middleTresholdValue >= cellValue ? this.formatColors.warning :  this.formatColors.success;
         }
@@ -52,7 +48,7 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
     public dataBars = {
         backgroundImage: (rowData, colname, cellValue, rowIndex) => {
-            if (!(typeof cellValue === "number" && this.isWithInRange(rowIndex, colname))) { return; }
+            if (!(typeof cellValue === "number" && this.isWithInFormattedRange(rowIndex, colname))) { return; }
             const treshold = this.threshold;
             let gradientPercents;
             if (cellValue < 0) {
@@ -75,13 +71,13 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
     public top10Percent = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "number" && this.isWithInRange(rowIndex, colname)
+            if (typeof cellValue === "number" && this.isWithInFormattedRange(rowIndex, colname)
                 && cellValue > this.top10PercentTreshold) {
                 return  this.formatColors.info;
             }
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "number" && this.isWithInRange(rowIndex, colname)
+            if (typeof cellValue === "number" && this.isWithInFormattedRange(rowIndex, colname)
                 && cellValue > this.top10PercentTreshold) {
                 return  this.formatColors.text;
             }
@@ -90,13 +86,13 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
     public greaterThan = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "number" && this.isWithInRange(rowIndex, colname)
+            if (typeof cellValue === "number" && this.isWithInFormattedRange(rowIndex, colname)
             && cellValue > this.avgValue) {
                 return  this.formatColors.info;
             }
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "number" && this.isWithInRange(rowIndex, colname)
+            if (typeof cellValue === "number" && this.isWithInFormattedRange(rowIndex, colname)
             && cellValue > this.avgValue) {
                 return  this.formatColors.text;
             }
@@ -105,12 +101,12 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
     public empty = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (this.isWithInRange(rowIndex, colname) && cellValue === undefined) {
+            if (this.isWithInFormattedRange(rowIndex, colname) && cellValue === undefined) {
                 return  this.formatColors.info;
             }
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (this.isWithInRange(rowIndex, colname) && cellValue === undefined) {
+            if (this.isWithInFormattedRange(rowIndex, colname) && cellValue === undefined) {
                 return  this.formatColors.text;
             }
         }
@@ -118,13 +114,13 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
     public duplicates = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (!this.isWithInRange(rowIndex, colname)) { return; }
+            if (!this.isWithInFormattedRange(rowIndex, colname)) { return; }
             const arr: any[] = typeof cellValue === "number" ? this.numericData : this.textData;
             return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ?  this.formatColors.info : "";
 
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (!this.isWithInRange(rowIndex, colname)) { return; }
+            if (!this.isWithInFormattedRange(rowIndex, colname)) { return; }
             const arr: any[] = typeof cellValue === "number" ? this.numericData : this.textData;
             return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ?  this.formatColors.text : "";
         }
@@ -132,13 +128,13 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
     public textContains = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "string" && this.isWithInRange(rowIndex, colname) &&
+            if (typeof cellValue === "string" && this.isWithInFormattedRange(rowIndex, colname) &&
                 cellValue.toLowerCase().indexOf(this._valueForComparison.toLowerCase()) !== -1) {
                 return  this.formatColors.info;
             }
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "string" && this.isWithInRange(rowIndex, colname) &&
+            if (typeof cellValue === "string" && this.isWithInFormattedRange(rowIndex, colname) &&
                 cellValue.toLowerCase().indexOf(this._valueForComparison.toLowerCase()) !== -1) {
                 return  this.formatColors.text;
             }
@@ -147,12 +143,12 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
     public uniques = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (!this.isWithInRange(rowIndex, colname)) { return; }
+            if (!this.isWithInFormattedRange(rowIndex, colname)) { return; }
             const arr: any[] = typeof cellValue === "number" ? this.numericData : this.textData;
             return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ?  this.formatColors.info : "";
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (!this.isWithInRange(rowIndex, colname)) { return; }
+            if (!this.isWithInFormattedRange(rowIndex, colname)) { return; }
             const arr: any[] = typeof cellValue === "number" ? this.numericData : this.textData;
             return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ?  this.formatColors.text : "";
         }
@@ -188,6 +184,7 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     private _valueForComparison;
     private _formattersData = new Map<string, any>();
     private destroy$ = new Subject<any>();
+    private formatedRange: Map<number, Set<number>> = new Map<number, Set<number>>();
 
     constructor(@Inject(IgxGridComponent) public grid: IgxGridComponent) {
         this._formattersData.set("Data Bars", this.dataBars);
@@ -201,20 +198,16 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     }
 
     public ngAfterViewInit(): void {
-        this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => {
-            this.resetRange();
-        });
         this.grid.onRangeSelection.pipe(takeUntil(this.destroy$)).subscribe(() => {
-            this.resetRange();
             this.determineFormatters();
         });
         this.grid.onCellEdit.pipe(takeUntil(this.destroy$)).subscribe((args: any) => {
             if ((args.newValue === args.oldValue || !this.formatter)) { return; }
-            if (this.isWithInRange(args.cellID.rowIndex, args.cellID.columnID - 1)) {
+            if (this.isWithInFormattedRange(args.cellID.rowIndex, args.cellID.columnID - 1)) {
                 const value = Number(args.newValue);
                 this.selectedData.push(!Number.isNaN(value) && Number.isFinite(value) ? value : args.newValue);
                 this.recalcCachedValues();
-                this.formatCells(this.formatter);
+                this.formatCells(this.formatter, undefined, false);
             }
         });
     }
@@ -224,8 +217,8 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
         this.destroy$.complete();
     }
 
-    public formatCells(formatterName, formatRange?: []) {
-        if (formatRange) {this.resetRange(formatRange); }
+    public formatCells(formatterName, formatRange?: [], reset = true) {
+        if (reset) { this.resetRange(formatRange); }
         this.clearFormatting();
         this.formatter = formatterName;
         this.grid.visibleColumns.forEach(c => {
@@ -245,10 +238,12 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     }
 
     public determineFormatters() {
+        const numericData = this.toArray(this.grid.getSelectedData()).some(rec => typeof rec === "number");
+        const textData = this.toArray(this.grid.getSelectedData()).some(rec => typeof rec === "string");
         const formatters =  Array.of(...this._commonFormattersName);
-        if (!(this.numericData.length > 0) && this.textData.length > 0) {
+        if (!(numericData) && textData) {
             formatters.splice(0, 0, ...this._textFormatters);
-        } else if (this.numericData.length > 0 && !(this.textData.length > 0)) {
+        } else if (numericData && !textData) {
             formatters.splice(0, 0, ...this._numericFormatters);
         } else {
             formatters.splice(0, 0, ...["Data Bars", "Color Scale", "Text Contains"]);
@@ -267,7 +262,7 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
         this._minValue = Math.min(...this.numericData.filter(value => value < 0)) | 0;
     }
 
-    public isWithInRange(rowIndex, colID) {
+    public isWithInFormattedRange(rowIndex, colID) {
         const visibleIndex = typeof colID === "string" ? this.grid.getColumnByName(colID).visibleIndex : colID;
         if (!this.formatedRange.size) { return false; }
         return this.formatedRange.has(rowIndex) && this.formatedRange.get(rowIndex).has(visibleIndex);
@@ -308,7 +303,7 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
         this.recalcCachedValues(true);
     }
 
-    private addToCache(rowIndex, colIndex) {
+    private addToCache(rowIndex, colIndex, selection = true) {
         this.formatedRange.has(rowIndex) ? this.formatedRange.get(rowIndex).add(colIndex) :
         this.formatedRange.set(rowIndex, new Set<number>()).get(rowIndex).add(colIndex);
     }
