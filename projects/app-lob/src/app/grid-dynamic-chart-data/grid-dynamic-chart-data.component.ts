@@ -1,5 +1,5 @@
 // tslint:disable: max-line-length
-import { AfterViewInit, ChangeDetectorRef, Component, Directive, HostListener, OnDestroy, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, Pipe, PipeTransform, ViewChild } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { noop, Subject } from "rxjs";
 import { debounceTime, takeUntil, tap } from "rxjs/operators";
@@ -79,17 +79,10 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     public contextmenu = false;
     public contextmenuX = 0;
     public contextmenuY = 0;
-    public dataRows = [];
-    public currentChart;
     public currentChartType: CHART_TYPE = CHART_TYPE.COLUMN_GROUPED;
     public fullScreenOpened = false;
-    public row;
     public range;
-    public chartTypesData = [];
-    public chartsToDisable = {};
     public disableCreateChart = false;
-    public cellsToFormat = [];
-    public cellsFormatType;
     public currentFormatter;
     // Dialogs options
     public _chartDialogOverlaySettings = {
