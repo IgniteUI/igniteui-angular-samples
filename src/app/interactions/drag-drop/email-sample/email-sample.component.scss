@@ -100,6 +100,9 @@
     }
 }
 .email-checked, .email-checked:hover {
+    /* IE Fallback */
+    background-color: #ea87b4;
+    /* Original color */
     background-color: var(--igx-grid-row-selected-background);
     -webkit-transition: background .1s ease-out;
     -moz-transition: background .1s ease-out;
@@ -117,6 +120,9 @@
     align-items: center;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    /* IE fallback */
+    background-color: #ea87b4;
+    /* Original color */
     background-color: var(--igx-grid-row-selected-hover-background);
     font-size: 0.8em;
     padding: 5px;
