@@ -29,13 +29,22 @@
         width: 13rem;
         height: 3rem;
         overflow: hidden;
+        /* IE fallback color */
+        background: igx-color($default-palette, 'grays', 200);
+        /* Default color */
         background: var(--igx-grays-200);
         cursor: pointer;
         width: 13rem;
         &:hover {
+            /* IE fallback color */
+            background: igx-color($default-palette, 'grays', 100);
+            /* Default color */
             background: var(--igx-grays-100);
         }
         &:active {
+            /* IE Fallback color */
+            background: igx-color($default-palette, 'grays', 50);
+            /* Default color */
             background: var(--igx-grays-50);
         }
         igx-icon {
@@ -63,8 +72,11 @@
     width: 760px;
 }
 
-.email-checked {
-    background-color: var(--igx-navdrawer-item-active-background);
+.email-checked, .email-checked:hover {
+    /* IE Fallback */
+    background-color: #ea87b4;
+    /* Default color */
+    background-color: var(--igx-grid-row-selected-background);
     -webkit-transition: background .1s ease-out;
     -moz-transition: background .1s ease-out;
     -o-transition: background .1s ease-out;
@@ -81,6 +93,9 @@
     align-items: center;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    /* IE fallback */
+    background-color: #ea87b4;
+    /* Default color */
     background: var(--igx-secondary-500);
     font-size: 0.8em;
     padding: 5px;
