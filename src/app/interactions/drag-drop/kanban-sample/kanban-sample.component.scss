@@ -46,6 +46,9 @@ article {
         margin: 0px auto;
         text-align: center;
         text-transform: uppercase;
+        /* IE Fallback color */
+        color: #026ab0;
+        /* Default color */
         color: var(--igx-card-header-text-color);
     }
 }
@@ -80,5 +83,8 @@ igx-card {
     }
 }
 .dragHovered {
+    /* IE Fallback color */
+    background-color: #9ba8b0;
+    /* Default color */
     background-color: var(--igx-navdrawer-item-active-background);
 }
