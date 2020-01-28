@@ -64,7 +64,7 @@
 }
 
 .email-checked {
-    background: var(--igx-secondary-100);
+    background-color: var(--igx-navdrawer-item-active-background);
     -webkit-transition: background .1s ease-out;
     -moz-transition: background .1s ease-out;
     -o-transition: background .1s ease-out;
