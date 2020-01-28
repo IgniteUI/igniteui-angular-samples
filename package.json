@@ -42,7 +42,7 @@
     "@types/hammerjs": "^2.0.35",
     "angular-in-memory-web-api": "0.9.0",
     "classlist.js": "^1.1.20150312",
-    "core-js": "^3.6.4",
+    "core-js": "^2.6.2",
     "domino": "^2.1.4",
     "file-saver": "^2.0.2",
     "hammerjs": "^2.0.8",
