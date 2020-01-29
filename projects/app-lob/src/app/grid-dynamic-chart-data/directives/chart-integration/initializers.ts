@@ -1,18 +1,10 @@
 // tslint:disable: max-line-length
 import { EventEmitter, Type } from "@angular/core";
-import { IgxBarSeriesComponent } from "igniteui-angular-charts/ES5/igx-bar-series-component";
-import { IgxBubbleSeriesComponent } from "igniteui-angular-charts/ES5/igx-bubble-series-component";
-import { IgxCategoryXAxisComponent } from "igniteui-angular-charts/ES5/igx-category-x-axis-component";
-import { IgxCategoryYAxisComponent } from "igniteui-angular-charts/ES5/igx-category-y-axis-component";
-import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
-import { IgxNumericXAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-component";
-import { IgxNumericYAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-component";
-import { IgxPieChartComponent } from "igniteui-angular-charts/ES5/igx-pie-chart-component";
-import { IgxScatterLineSeriesComponent } from "igniteui-angular-charts/ES5/igx-scatter-line-series-component";
-import { IgxScatterSeriesComponent } from "igniteui-angular-charts/ES5/igx-scatter-series-component";
-import { IgxStacked100BarSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-100-bar-series-component";
-import { IgxStackedBarSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-bar-series-component";
-import { IgxStackedFragmentSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-fragment-series-component";
+import { IgxBarSeriesComponent, IgxBubbleSeriesComponent, IgxCategoryXAxisComponent,
+    IgxCategoryYAxisComponent, IgxDataChartComponent, IgxNumericXAxisComponent,
+    IgxNumericYAxisComponent, IgxPieChartComponent, IgxScatterLineSeriesComponent,
+    IgxScatterSeriesComponent, IgxStacked100BarSeriesComponent, IgxStackedBarSeriesComponent,
+    IgxStackedFragmentSeriesComponent } from "igniteui-angular-charts";
 
 class SeriesFactory {
     public create<T>(type: (new () => T)): T {

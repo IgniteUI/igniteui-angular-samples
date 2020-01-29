@@ -23,6 +23,15 @@ import { ThemingRoutingModule } from "./theming-routing.module";
         ThemeChooserSampleComponent,
         CardSampleShadowComponent
     ],
+    exports: [
+        DarkThemeSampleComponent,
+        DefaultThemeSampleComponent,
+        DisplayDensityComponent,
+        ShadowsSampleComponent,
+        ShadowsSample2Component,
+        ThemeChooserSampleComponent,
+        CardSampleShadowComponent
+    ],
     imports: [
         CommonModule,
         FormsModule,

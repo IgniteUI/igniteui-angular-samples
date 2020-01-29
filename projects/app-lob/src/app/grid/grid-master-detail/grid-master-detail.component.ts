@@ -1,6 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { IgxColumnComponent } from "igniteui-angular";
-import { IgxLegendComponent } from "igniteui-angular-charts/ES5/igx-legend-component";
+import { IgxLegendComponent } from "igniteui-angular-charts";
 import { data } from "../../services/athletesData";
 
 @Component({

@@ -18,7 +18,7 @@
             "port": 9229
         },
         {
-            "name": "Live-editing Gulp",
+            "name": "Live-editing Gulp with Charts",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
