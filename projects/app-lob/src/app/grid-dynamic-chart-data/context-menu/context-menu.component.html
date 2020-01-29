@@ -1,0 +1,43 @@
+<span *ngIf="showContextMenu" class="analytics-btn" [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}">
+    <button #btn igxButton="icon" (click)="toggle()">
+        <igx-icon #icon style="pointer-events: none;" class="icon" fontSet="material">insert_chart_outlined</igx-icon>
+    </button>
+</span>
+<div igxToggle class="toggle-content" style="width: 380px; height: 200px">
+    <igx-tabs tabsType="fixed" >
+        <igx-tabs-group label="Conditional Formatting" [disabled]="!options.textFormatting">
+            <span class="tab-option">
+                <span *ngFor="let condition of textFormatters" class="action">
+                    <span class="btn condition">
+                        <img class="imgSize" src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg" />
+                        <span class="name">{{condition.replace('10', '10%')}}</span>
+                    </span>
+                </span>
+            </span>
+            <span class="clear action">
+                <span class="btn"  [ngClass]="{'disableButton': !currentFormatter}">
+                    <img class="imgSize" src="assets/images/svg/conditions/Clear.svg" />
+                        <span class="name">Clear All</span>
+                </span>
+            </span>
+        </igx-tabs-group>
+        <igx-tabs-group label="Create Chart" [disabled]="!options.chartCreation">
+            <div class="tab-option">
+                <div *ngFor="let chart of chartTypes | slice:0:4" class="action">
+                    <div class="btn chart" [ngClass]="{'selected': chart === currentChartType}">
+                        <img class="chartImgButton " src="assets/images/svg/charts/{{chart}}.svg" />
+                        <span class="name">{{chart | name}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="more-action">
+                <div class="btn chart">
+                    <button class="more-btn more-icon" igxButton="icon" igxButtonBackground="#EBEBEB" igxButtonColor="black">
+                            <igx-icon class="icon" style="pointer-events: none;" fontSet="material">more_horiz</igx-icon>
+                    </button>
+                    <span class="name">More...</span>
+                </div>
+            </div>
+        </igx-tabs-group>
+    </igx-tabs>
+</div>

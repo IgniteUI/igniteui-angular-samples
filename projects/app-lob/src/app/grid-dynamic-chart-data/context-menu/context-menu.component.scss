@@ -1,0 +1,34 @@
+igx-tabs-group {
+    display: flex!important;
+    max-height: 100px;
+    max-width: 358px;
+}
+
+.tab-option {
+    padding: .9rem;
+    height: 100px;
+    width: 290px;
+    display: inline-flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    align-content: center;
+}
+
+.action {
+    cursor: pointer;
+
+    .name {
+        font-size: .9rem;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+.imgSize {
+    width: 36px;
+    height: 36px;
+}
+.chartImgButton {
+    width: 48px;
+    height: 48px;
+}
