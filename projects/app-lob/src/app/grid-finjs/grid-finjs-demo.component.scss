@@ -1,4 +1,45 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+@mixin scrollbar-love($scrollbar-color: null) {
+    $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
+    $scrollbar-thumb: hexrgba(igx-color($default-palette, 'grays', 400));
+
+    @if $scrollbar-color and luminance($scrollbar-color) < .5 {
+        $scrollbar-track: darken($scrollbar-color, 80%);
+        $scrollbar-thumb: lighten($scrollbar-color, 20%);
+    }
+
+    ::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+        background-color: $scrollbar-track;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $scrollbar-thumb;
+    }
+}
+
 :host ::ng-deep {
+    @include scrollbar-love();
+
+    .fin-dark-theme {
+        $green-btn-color: igx-color($green-palette, 'secondary', 700);
+        $black-btn-color: igx-color($green-palette, 'grays', 500);
+        $grays-btn-color: igx-color($green-palette, 'grays', 800);
+        
+        // @include scrollbar-love(darken($green-btn-color, 50%));
+        // @include scrollbar-love(darken($black-btn-color, 80%));
+        @include scrollbar-love(lighten($grays-btn-color, 20%));
+
+        .finjs-slider,
+        .sample-toolbar {
+            color: rgba(255, 255, 255, 0.87);
+        }
+
+
+    }
+    
     .finjs-icons {
         display: flex;
         align-items: center;
@@ -148,16 +189,17 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
+        width: 100%;
+        padding-bottom: 15px;
     }
+
     .switches {
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex: 1 0 0%;
-        min-width: 500px;
         padding-right: 20px;
         font-size: 0.9rem;
-        margin-bottom: -20px;
     }
     .control-item {
         padding-right: 20px;
@@ -172,19 +214,17 @@
     }
     .finjs-play-controls {
         width: 45%;
-        min-width: 500px;
-        margin-top: 20px;
+        min-width: 620px;
+        margin-top: 10px;
     }
     .sample-toolbar {
         height: 20px;
         font-size: 0.8rem;
         line-height: 20px;
-    }
-    .fin-dark-theme {
-        .finjs-slider,
-        .sample-toolbar {
-            color: rgba(255, 255, 255, 0.87);
-        }
+        /* position: absolute; */
+        /* bottom: 10px; */
+        /* left: 10px; */
+        margin-top: 11px;
     }
     .igx-grid__outlet span,
     .igx-excel-filter span,
@@ -192,14 +232,7 @@
     .igx-excel-filter input {
         font-size: 0.8125rem;
     }
-    // .igx-button-group > .igx-button--compact {
-    //     height: 1rem;
-    //     min-height: 1.5rem;
-    // }
-    // .igx-button-group > .igx-button--cosy {
-    //     height: 1rem;
-    //     min-height: 1.875rem;
-    // }
+    
     .igx-button--icon {
         width: 2rem;
         height: 2rem;
@@ -207,6 +240,22 @@
 }
 
 .grid__wrapper {
-    padding: 5px 15px;
-    height: 95%;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+igx-grid {
+    flex: 1 0 0%;
+}
+
+.controls-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
