@@ -55,6 +55,7 @@ li {
 .item-container {
     background: white;
     width: 100%;
+    max-width: 280px;
     height: 110px;
     margin-bottom: 10px;
     &:last-child {
