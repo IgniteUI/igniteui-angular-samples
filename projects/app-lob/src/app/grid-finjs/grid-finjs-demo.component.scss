@@ -21,25 +21,13 @@
 }
 
 :host ::ng-deep {
-    @include scrollbar-love();
-
     .fin-dark-theme {
-        $green-btn-color: igx-color($green-palette, 'secondary', 700);
-        $black-btn-color: igx-color($green-palette, 'grays', 500);
-        $grays-btn-color: igx-color($green-palette, 'grays', 800);
-        
-        // @include scrollbar-love(darken($green-btn-color, 50%));
-        // @include scrollbar-love(darken($black-btn-color, 80%));
-        @include scrollbar-love(lighten($grays-btn-color, 20%));
-
         .finjs-slider,
         .sample-toolbar {
             color: rgba(255, 255, 255, 0.87);
         }
-
-
     }
-    
+
     .finjs-icons {
         display: flex;
         align-items: center;
