@@ -172,18 +172,23 @@
     }
     .finjs-play-controls {
         width: 45%;
-        min-width: 500px;
-        margin-top: 20px;
+        min-width: 620px;
+        margin-top: 10px;
     }
     .sample-toolbar {
         height: 20px;
         font-size: 0.8rem;
         line-height: 20px;
+        margin-top: 11px;
     }
     .fin-dark-theme {
         .finjs-slider,
         .sample-toolbar {
             color: rgba(255, 255, 255, 0.87);
+        }
+
+        .igx-slider {
+            display: block;
         }
     }
     .igx-grid__outlet span,
@@ -204,9 +209,34 @@
         width: 2rem;
         height: 2rem;
     }
+
+    .controls-holder {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        padding-bottom: 15px;
+    }
 }
 
 .grid__wrapper {
-    padding: 5px 15px;
-    height: 95%;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
 }
+
+igx-grid {
+    flex: 1 0 0%;
+}
+
+.controls-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+} 

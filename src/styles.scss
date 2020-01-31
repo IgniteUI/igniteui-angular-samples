@@ -4,6 +4,26 @@
 @include igx-core();
 @include igx-theme($default-palette);
 
+@mixin scrollbar-love($scrollbar-color: null) {
+    $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
+    $scrollbar-thumb: hexrgba(igx-color($default-palette, 'grays', 400));
+
+    @if $scrollbar-color and luminance($scrollbar-color) < .5 {
+        $scrollbar-track: darken($scrollbar-color, 80%);
+        $scrollbar-thumb: lighten($scrollbar-color, 20%);
+    }
+
+    ::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+        background-color: $scrollbar-track;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $scrollbar-thumb;
+    }
+}
+
 /* autoprefixer grid: on */
 html,
 body {
@@ -98,19 +118,26 @@ body {
 
 $green-palette: igx-palette($primary: #09f,$secondary: #72da67, $surface: #333);
 
+@include scrollbar-love();
+
 .fin-dark-theme {
     @include igx-dark-theme($green-palette);
-     background: #333;
+    $grays-btn-color: igx-color($green-palette, 'grays', 800);
+    @include scrollbar-love(lighten($grays-btn-color, 20%));
 
-     ::-moz-placeholder {
-         opacity: 1;
-     }
+    background: #333;
+
+    ::-moz-placeholder {
+        opacity: 1;
+    }
  }
 
 .dark-theme {
     background: #333;
     color: #fff;
     @include igx-dark-theme($green-palette);
+    $grays-btn-color: igx-color($green-palette, 'grays', 800);
+    @include scrollbar-love(lighten($grays-btn-color, 20%));
 
     .grid-chart-contextmenu-wrapper{
         @include igx-fluent-dark-theme($fluent-excel-palette);
