@@ -9,7 +9,7 @@
         (dragEnd)="onDragEnd($event, targetIndex)"
         (transitioned)="onTransitioned($event, targetIndex)"
         class="list-item-container"
-        [class.list-item-dragged]="dragDirRef.data.dragged">
+        [class.list-item-dragged]="dragDirRef.data ? dragDirRef.data.dragged : false">
             <div class="text-container">
                 <div class="name">{{employee.name}}</div>
                 <div class="title">{{employee.title}}</div>
