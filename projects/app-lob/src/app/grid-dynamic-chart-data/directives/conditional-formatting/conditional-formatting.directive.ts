@@ -3,7 +3,7 @@ import { IgxGridComponent } from "igniteui-angular";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 
-export enum ConditionalFormatingType {
+export enum ConditionalFormattingType {
     dataBars = "Data Bars",
     colorScale = "Color Scale",
     top10 = "Top 10",
@@ -25,7 +25,7 @@ export interface IFormatColors {
 })
 export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy {
     @Input()
-    public formatter: string | ConditionalFormatingType;
+    public formatter: string | ConditionalFormattingType;
 
     @Input()
     public set formatColors(val: IFormatColors)  {
