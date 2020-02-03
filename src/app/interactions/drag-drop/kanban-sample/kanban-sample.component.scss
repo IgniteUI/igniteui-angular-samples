@@ -32,7 +32,7 @@ li {
 .state-container {
     display: flex;
     flex-direction: column;
-    width: 320px;
+    width: 33%;
     position: relative;
     padding: 50px 20px 20px 20px;
     margin: 0px;
@@ -54,8 +54,9 @@ li {
 }
 .item-container {
     background: white;
-    width: 280px;
-    height: 98px;
+    width: 100%;
+    max-width: 280px;
+    height: 110px;
     margin-bottom: 10px;
     &:last-child {
         margin-bottom: unset;
