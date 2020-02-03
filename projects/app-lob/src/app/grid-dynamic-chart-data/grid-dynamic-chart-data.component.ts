@@ -1,8 +1,8 @@
 // tslint:disable: max-line-length
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild } from "@angular/core";
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IGridCellEventArgs, IGridEditEventArgs, IgxDialogComponent, IgxGridCellComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
-import { noop } from "rxjs";
-import { debounceTime, filter, tap } from "rxjs/operators";
+import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, Pipe, PipeTransform, ViewChild } from "@angular/core";
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
+import { noop, Subject } from "rxjs";
+import { debounceTime, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../services/financialData";
 import { ChartHostDirective, ChartIntegrationDirective, IDeterminedChartTypesArgs } from "./directives/chart-integration/chart-integration.directive";
 import { CHART_TYPE } from "./directives/chart-integration/chart-types";
@@ -40,7 +40,7 @@ export class FilterTypePipe implements PipeTransform {
     templateUrl: "./grid-dynamic-chart-data.component.html",
     styleUrls: ["./grid-dynamic-chart-data.component.scss"]
 })
-export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
+export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnDestroy {
 
     public data;
     public opened = true;
@@ -74,26 +74,15 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     @ViewChild(IgxTabsComponent, { static: true })
     public tabs: IgxTabsComponent;
 
-    @ViewChild("configArea", { static: true })
-    public area: ElementRef;
-
     public chartData = [];
     public chartCondigAreaState = "opened";
     public contextmenu = false;
     public contextmenuX = 0;
     public contextmenuY = 0;
-    public clickedCell = null;
-    public dataRows = [];
-    public currentChart;
     public currentChartType: CHART_TYPE = CHART_TYPE.COLUMN_GROUPED;
     public fullScreenOpened = false;
-    public row;
     public range;
-    public chartTypesData = [];
-    public chartsToDisable = {};
     public disableCreateChart = false;
-    public cellsToFormat = [];
-    public cellsFormatType;
     public currentFormatter;
     // Dialogs options
     public _chartDialogOverlaySettings = {
@@ -103,6 +92,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         scrollStrategy: new CloseScrollStrategy()
     };
 
+    protected destroy$ = new Subject<any>();
     private _chartSelectionDilogOverlaySettings = {
         closeOnOutsideClick: true,
         modal: false,
@@ -129,39 +119,10 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     private rowIndex;
     private colIndex;
 
-    constructor(private zone: NgZone, private cdr: ChangeDetectorRef) {
+    constructor(private cdr: ChangeDetectorRef) {
     }
 
     public ngOnInit() {
-        this.grid.onCellClick.subscribe((evt: IGridCellEventArgs) => {
-            this.range = undefined;
-            this.contextmenu = false;
-        });
-
-        this.grid.onCellEdit.subscribe((args: IGridEditEventArgs) => {
-            if (this.formatting.range && this.currentFormatter) {
-                if ((args.newValue === args.oldValue)) {
-                    args.cancel = true;
-                } else {
-                    const node = args.cellID;
-                    const range = this.formatting.range;
-                    const isCellWithinFormattedRange = node.columnID - 1 >= range.columnStart &&
-                        node.columnID - 1 <= range.columnEnd &&
-                        node.rowIndex >= range.rowStart &&
-                        node.rowIndex <= range.rowEnd;
-                    if (isCellWithinFormattedRange) {
-                        Promise.resolve().then(() => {
-                            this.grid.selectRange(this.formatting.range);
-                            this.formatting.ensureValues();
-                            this.formatting.formatCells(this.currentFormatter);
-                        });
-                    }
-                }
-            }
-        });
-
-        this.formatting.onFormattersReady.subscribe(names => this.formattersNames = names);
-
         (this.tabs.headerContainer.nativeElement as HTMLElement).onpointerdown = event => event.stopPropagation();
 
         this.chartSelectionDialog.onOpen.subscribe(() => {
@@ -182,36 +143,25 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
         this.chartSelectionDialog.onClose.subscribe((evt) => this.chartPreviewDialog.close());
 
-        this.grid.onDataPreLoad.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(250)).
-            subscribe((evt) => this.range && !this.contextmenu ? this.renderButton() : noop());
-
         this.data = new FinancialData().generateData(1000);
 
         this.grid.onRangeSelection.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(200))
             .subscribe(range => {
-                this.zone.runOutsideAngular(() => {
-                    const areAllRangesUnderSameColumns = this.grid.getSelectedRanges().every(r => (r.columnEnd === range.columnEnd && r.columnStart === range.columnStart) ||
-                                                                                                   r.rowEnd === range.rowEnd && r.rowStart === range.rowStart);
-                    if (!areAllRangesUnderSameColumns) {
-                        this.disableCreateChart = true;
-                    } else {
-                        this.disableCreateChart = false;
-                        this.chartData = this.grid.getSelectedData();
-                    }
-                    this.range = range;
-                    this.tabs.tabs.first.isSelected = true;
-                    this.formatting.determineFormatters();
-
-                });
+                const areAllRangesUnderSameColumns = this.grid.getSelectedRanges().every(r => (r.columnEnd === range.columnEnd && r.columnStart === range.columnStart) ||
+                                                                                                r.rowEnd === range.rowEnd && r.rowStart === range.rowStart);
+                if (!areAllRangesUnderSameColumns) {
+                    this.disableCreateChart = true;
+                } else {
+                    this.disableCreateChart = false;
+                    this.chartData = this.grid.getSelectedData();
+                }
+                this.range = range;
+                this.tabs.tabs.first.isSelected = true;
                 this.renderButton();
             });
     }
 
     public ngAfterViewInit(): void {
-        const horizontalScroll = new EventEmitter();
-        this.grid.headerContainer.getScroll().onscroll = () => this.range ? horizontalScroll.emit(true) : horizontalScroll.emit(false);
-        horizontalScroll.pipe(filter((value) => value), tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(250)).subscribe(() => { this.renderButton(); });
-
         this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
             if (args.chartsAvailabilty.size === 0 || args.chartsForCreation.length === 0) {
                 this.disableCreateChart = true;
@@ -227,6 +177,25 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
                 this.availableCharts = this.chartIntegration.getAvailableCharts();
             }
         });
+        this.formatting.onFormattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
+        this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.range = undefined);
+        this.grid.onDataPreLoad.pipe(
+            tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
+            debounceTime(250),
+            takeUntil(this.destroy$))
+            .subscribe(() => this.range && !this.contextmenu ? this.renderButton() : noop());
+        this.grid.parentVirtDir.onChunkLoad.pipe(
+            tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
+            debounceTime(250),
+            takeUntil(this.destroy$))
+            .subscribe(() => {
+                if (this.range) { this.renderButton(); }
+            });
+    }
+
+    public ngOnDestroy(): void {
+        this.destroy$.next(true);
+        this.destroy$.complete();
     }
 
     public formatCurrency(value: number) {
@@ -271,19 +240,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     public formattersNames = [];
 
-    public analyse(type) {
-        this.formatting.range = this.range;
-        this.currentFormatter = type;
-        this.formatting.formatCells(this.currentFormatter);
-    }
-
-    public clearFormatting() {
-        this.formatting.clearFormatting();
-        this.currentFormatter = undefined;
-    }
-
     public createChart(type: CHART_TYPE, host: ChartHostDirective, dialog: IgxDialogComponent, overlaySettings: any) {
-
         const chartHost = host;
         const dialogToOpen = dialog;
         const dialogOverlaySettings = overlaySettings;
@@ -302,7 +259,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.contextmenu = false;
         this.chartSelectionDialog.close();
     }
-
+    // What we check here and why we need a lister on host level
     @HostListener("pointerdown", ["$event"])
     public onPointerDown(event) {
         if (!event.target.parentElement.classList.contains("analytics-btn") &&
@@ -314,8 +271,13 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         }
     }
 
-    public trackByFn(index, item) {
-        return index;
+    public analyse(condition) {
+        this.currentFormatter = condition;
+        this.formatting.formatCells(condition);
+    }
+
+    public clearFormatting() {
+        this.formatting.clearFormatting();
     }
 
     public toggle() {
@@ -324,15 +286,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     }
 
     public toggleFullScreen() {
-        let height;
-        let width;
-        if (!this.fullScreenOpened) {
-            height = this.grid.nativeElement.clientHeight + "px";
-            width = this.grid.nativeElement.clientWidth + "px";
-        } else {
-            height = (this.grid.nativeElement.clientHeight * (70 / 100)) + "px";
-            width = (this.grid.nativeElement.clientWidth * (70 / 100)) + "px";
-        }
+        const height = this.fullScreenOpened ? (this.grid.nativeElement.clientHeight * 0.7) + "px" : this.grid.nativeElement.clientHeight + "px";
+        const width = this.fullScreenOpened ?  (this.grid.nativeElement.clientWidth * 0.7) + "px" : this.grid.nativeElement.clientWidth + "px";
 
         requestAnimationFrame(() => {
             (this.dialog.toggleRef as any).elementRef.nativeElement.style.width = width;
@@ -360,23 +315,22 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
             return;
         }
 
+        let cell;
         if ((!this.grid.getRowByIndex(this.rowIndex) || (this.grid.rowList.toArray().indexOf(this.grid.getRowByIndex(this.rowIndex)) >= this.grid.rowList.length - 2) && this.rowIndex + 2 < this.grid.dataLength)) {
             const lastFullyVisibleRowIndex = this.grid.rowList.toArray()[this.grid.rowList.length - 3].index;
             const field = this.grid.visibleColumns[this.colIndex].field;
-            this.clickedCell = this.grid.getCellByColumn(lastFullyVisibleRowIndex, field);
+            cell = this.grid.getCellByColumn(lastFullyVisibleRowIndex, field);
         } else {
-            this.clickedCell = this.grid.getCellByColumn(this.rowIndex, this.grid.visibleColumns[this.colIndex].field);
+            cell = this.grid.getCellByColumn(this.rowIndex, this.grid.visibleColumns[this.colIndex].field);
         }
-        this.contextmenuX = this.clickedCell.element.nativeElement.getClientRects()[0].right;
-        this.contextmenuY = this.clickedCell.element.nativeElement.getClientRects()[0].bottom;
-        this.contextmenu = this.isWithinRange(this.clickedCell);
+        this.contextmenuX = cell.element.nativeElement.getClientRects()[0].right;
+        this.contextmenuY = cell.element.nativeElement.getClientRects()[0].bottom;
+        this.contextmenu = this.isWithInRange(cell.rowIndex, cell.visibleColumnIndex);
         this.cdr.detectChanges();
     }
 
-    private isWithinRange(cell: IgxGridCellComponent) {
-        return cell.visibleColumnIndex >= this.range.columnStart &&
-            cell.visibleColumnIndex <= this.range.columnEnd &&
-            cell.rowIndex >= this.range.rowStart &&
-            cell.rowIndex <= this.range.rowEnd;
+    public isWithInRange(rowIndex, colIndex) {
+        return rowIndex >= this.range.rowStart && rowIndex <= this.range.rowEnd
+        && colIndex >= this.range.columnStart && colIndex <= this.range.columnEnd;
     }
 }
