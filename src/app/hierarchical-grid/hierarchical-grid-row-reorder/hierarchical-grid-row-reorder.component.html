@@ -1,6 +1,6 @@
 <igx-hierarchical-grid class="hgrid" igxDrop #grid1 [data]="localData" [primaryKey]="'id'"
     [rowDraggable]="true" [rowSelectable]="true" (onRowDragStart)="rowDragStart($event)" (dropped)="rowDrop($event)"
-    [height]="'540px'" [width]="'800px'" #hGrid>
+    [height]="'540px'" [width]="'100%'" #hGrid>
     <igx-column field="name" header="Name"></igx-column>
     <igx-column field="system" header="Is System Drive"></igx-column>
     <igx-row-island [primaryKey]="'id'" [key]="'folders'" #layout1>

@@ -9,7 +9,7 @@
         (dragMove)="onDragMove($event, targetIndex)"
         (dragEnd)="onDragEnd($event, targetIndex)"
         (transitioned)="onTransitioned($event, targetIndex)"
-        [class.list-item-dragged]="dragDirRef.data.dragged">
+        [class.list-item-dragged]="dragDirRef.data ? dragDirRef.data.dragged : false">
             <span igxListLineTitle>{{employee.name}}</span>
             <span igxListLineSubTitle>{{employee.title}}</span>
             <igx-icon igxDragHandle igxListAction fontSet="material" class="dialogHandle">drag_indicator</igx-icon>
