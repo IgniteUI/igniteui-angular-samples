@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { DefaultSortingStrategy, IgxColumnComponent, IgxGridCellComponent, IgxGridComponent,
-    SortingDirection, 
-    IGridEditEventArgs,
-    IgxToastComponent} from "igniteui-angular";
-import { IgxLegendComponent } from "igniteui-angular-charts/ES5/igx-legend-component";
+import { DefaultSortingStrategy, IGridEditEventArgs, IgxGridComponent,
+    IgxToastComponent,
+    SortingDirection} from "igniteui-angular";
+import { IgxLegendComponent } from "igniteui-angular-charts";
 import { TasksDataService } from "../../services/tasks.service";
 import { MEMBERS } from "../../services/tasksData";
 
