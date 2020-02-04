@@ -1,16 +1,14 @@
 <div class="carousel-animation-wrapper">
     <div class="carousel-wrapper">
         <igx-carousel [navigation]="false" [pause]="false" animationType="fade" [interval]="2000">
-            <div class="slides-wrapper">
                 <igx-slide #slide *ngFor="let item of slides">
                     <div style="height: 100%" [ngStyle]="slideStyle(item.image)">
                         <section class="promo-price" [ngClass]="{'animated': slide.active}">
                             <div class="description">{{ item.description }}</div>
                             <div class="price">{{ item.price | currency: 'USD': 'symbol': '3.0' }}</div>
                         </section>
-                    </div>
+                </div>
                 </igx-slide>
-            </div>
             <ng-template igxCarouselIndicator></ng-template>
         </igx-carousel>
     </div>
