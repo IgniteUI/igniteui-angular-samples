@@ -1,31 +1,34 @@
 <div class="grid__wrapper" [class.fin-dark-theme]="theme">
-    <div class="controls-holder">
-        <div class="switches">
-            <div class="control-item">
-                <igx-switch [checked]="true" [(ngModel)]="theme" (change)="onThemeChanged($event)">Dark</igx-switch>
+    <div class="controls-wrapper">
+        <div class="controls-holder">
+            <div class="switches">
+                <div class="control-item">
+                    <igx-switch [checked]="true" [(ngModel)]="theme" (change)="onThemeChanged($event)">Dark</igx-switch>
+                </div>
+                <div class="control-item">
+                    <igx-switch [checked]="grouped" (change)="onChange($event)" color="blue"
+                        cssClass="finjs-sample-switch">
+                        Grouped</igx-switch>
+                </div>
+                <div class="control-item">
+                    <igx-switch [checked]="grid1.showToolbar" (change)="toggleToolbar($event)" color="blue"
+                        cssClass="finjs-sample-switch">Toolbar</igx-switch>
+                </div>
+                <div class="finjs-slider control-item">
+                    <label for="slider">Records: {{volume}}</label>
+                    <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" [step]="100"
+                        thumbLabelVisibilityDuration="250" [isContinuous]="true"></igx-slider>
+                </div>
+                <div class="finjs-slider control-item">
+                    <label for="slider">Frequency: {{frequency}} ms</label>
+                    <igx-slider #slider2 id="slider" [minValue]="100" [maxValue]="3000" [step]="10"
+                        [(ngModel)]="frequency" thumbLabelVisibilityDuration="250" [isContinuous]="true"></igx-slider>
+                </div>
             </div>
-            <div class="control-item">
-                <igx-switch [checked]="grouped" (change)="onChange($event)" color="blue" cssClass="finjs-sample-switch">
-                    Grouped</igx-switch>
+            <div class="control-item finjs-play-controls">
+                <igx-buttongroup class="finjssample-btn-group" #buttonGroup1 [multiSelection]="false"
+                    [values]="controls" (onSelect)="onButtonAction($event)"></igx-buttongroup>
             </div>
-            <div class="control-item">
-                <igx-switch [checked]="grid1.showToolbar" (change)="toggleToolbar($event)" color="blue"
-                    cssClass="finjs-sample-switch">Toolbar</igx-switch>
-            </div>
-            <div class="finjs-slider control-item">
-                <label for="slider">Records: {{volume}}</label>
-                <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" [step]="100"
-                    thumbLabelVisibilityDuration="250" [isContinuous]="true"></igx-slider>
-            </div>
-            <div class="finjs-slider control-item">
-                <label for="slider">Frequency: {{frequency}} ms</label>
-                <igx-slider #slider2 id="slider" [minValue]="100" [maxValue]="3000" [step]="10" [(ngModel)]="frequency"
-                    thumbLabelVisibilityDuration="250" [isContinuous]="true"></igx-slider>
-            </div>
-        </div>
-        <div class="control-item finjs-play-controls">
-            <igx-buttongroup class="finjssample-btn-group" #buttonGroup1 [multiSelection]="false" [values]="controls"
-                (onSelect)="onButtonAction($event)"></igx-buttongroup>
         </div>
     </div>
     <div class="sample-toolbar">
@@ -35,12 +38,11 @@
             ~{{volume/5}} records updated.</span>
     </div>
 
-    <igx-grid #grid1
-        (onRowSelectionChange)="rowSelectionChanged($event)" [data]="data"
-        [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
-        columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' [rowSelectable]="true"
-        [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [showToolbar]="false" [columnHiding]="true"
-        [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
+    <igx-grid #grid1 (onRowSelectionChange)="rowSelectionChanged($event)" [data]="data" [height]="'calc(100% - 71px)'"
+        width="100%" [autoGenerate]='false' displayDensity='compact' columnHidingTitle="Indicators"
+        hiddenColumnsText="Hidden" primaryKey='ID' [rowSelectable]="true" [allowFiltering]="true"
+        [filterMode]="'excelStyleFilter'" [showToolbar]="false" [columnHiding]="true" [columnPinning]="true"
+        [exportExcel]="true" exportExcelText="Export to Excel">
 
         <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
         <!-- <ng-template igxExcelStyleSorting></ng-template>
@@ -191,8 +193,7 @@
     closeOnOutsideSelect="true" (onClose)="onCloseHandler($event)">
     <div style="padding: 20px">
         <igx-category-chart #chart1 [dataSource]="chartData" width="900px" chartType="column" xAxisInterval="20"
-            xAxisLabelAngle="90" [includedProperties]="properties"
-            height="400px" [tooltipTemplate]="seriesTooltip">
+            xAxisLabelAngle="90" [includedProperties]="properties" height="400px" [tooltipTemplate]="seriesTooltip">
         </igx-category-chart>
     </div>
 </igx-dialog>
