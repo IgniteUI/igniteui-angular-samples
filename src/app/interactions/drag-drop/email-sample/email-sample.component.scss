@@ -72,11 +72,20 @@
     width: 760px;
 }
 
+.mailboxItem_dragEnter {
+    /* IE Fallback */
+    background-color: #ea87b4 !important;
+    /* Default color */
+    color: var(--igx-secondary-100-contrast);
+    background: var(--igx-secondary-100) !important;
+}
+
 .email-checked, .email-checked:hover {
     /* IE Fallback */
     background-color: #ea87b4;
     /* Default color */
-    background-color: var(--igx-grid-row-selected-background);
+    color: var(--igx-secondary-100-contrast);
+    background: var(--igx-secondary-100);
     -webkit-transition: background .1s ease-out;
     -moz-transition: background .1s ease-out;
     -o-transition: background .1s ease-out;
@@ -94,9 +103,10 @@
     -ms-flex-pack: start;
     justify-content: flex-start;
     /* IE fallback */
-    background-color: #ea87b4;
+    background-color: #e41c77;
     /* Default color */
     background: var(--igx-secondary-500);
+    color: var(--igx-secondary-500-contrast);
     font-size: 0.8em;
     padding: 5px;
     position: relative;

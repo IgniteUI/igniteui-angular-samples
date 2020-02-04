@@ -1,7 +1,5 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, Input, OnInit, Renderer2 } from "@angular/core";
 
-const DROP_ZONE_ACTIVE_COLOR = "#d8d8d8";
-const DROP_ZONE_INACTIVE_COLOR = "#ebebeb";
 
 @Component({
     selector: "app-email-sample",
@@ -34,7 +32,8 @@ export class EmailSampleComponent implements OnInit {
     ];
 
     constructor(
-        private cdr: ChangeDetectorRef
+        private cdr: ChangeDetectorRef,
+        private renderer:Renderer2
     ) { }
 
     public ngOnInit() {
@@ -62,11 +61,11 @@ export class EmailSampleComponent implements OnInit {
     }
 
     public enterDropZone(event: any): void {
-        event.owner.element.nativeElement.style.background = DROP_ZONE_ACTIVE_COLOR;
+        this.renderer.addClass(event.owner.element.nativeElement, "mailboxItem_dragEnter");
     }
 
     public leaveDropZone(event: any): void {
-        event.owner.element.nativeElement.style.background = DROP_ZONE_INACTIVE_COLOR;
+        this.renderer.removeClass(event.owner.element.nativeElement, "mailboxItem_dragEnter");
     }
 
     public onDragStart(event: any): void {
