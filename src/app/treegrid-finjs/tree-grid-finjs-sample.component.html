@@ -37,8 +37,22 @@
 
         <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]='true' [resizable]='true' [disableHiding]="true"></igx-column>
         <igx-column [field]="'Settlement'" [width]="'100px'" [sortable]='true'></igx-column>
-        <igx-column [field]="'Region'" [width]="'110px'" [sortable]='true'></igx-column>
-        <igx-column [field]="'Country'" [width]="'100px'" [sortable]='true'></igx-column>
+        <igx-column [field]="'Country'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'></igx-column>
+        <igx-column [field]="'Region'" [width]="'110px'" [groupable]='true' [sortable]='true' [editable]='true'>
+            <ng-template igxCellEditor let-cell="cell" let-value>
+                <igx-select [placeholder]="value" [(ngModel)]="cell.editValue">
+                    <igx-select-item *ngFor="let r of regions" [value]="r.Region">{{ r.Region }}</igx-select-item>
+                </igx-select>
+            </ng-template>
+        </igx-column>
+        <igx-column [field]="'LastUpdated'" [width]="'120px'" [editable]='true' header="Last Update">
+            <ng-template igxCell let-cell="cell">
+               {{ cell.value | date }}
+            </ng-template>
+            <ng-template igxCellEditor let-cell="cell" let-value>
+                <igx-date-picker [(ngModel)]="cell.value"></igx-date-picker>
+            </ng-template>
+        </igx-column>
         <igx-column [field]="'Open Price'" [width]="'120px'" dataType="number" [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
         <igx-column [field]="'Price'" [width]="'130px'" dataType="number" [cellClasses]="trends" [movable]="true" [sortable]="true" [disableHiding]="true">
             <ng-template igxCell let-cell="cell">
