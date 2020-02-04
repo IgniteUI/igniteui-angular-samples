@@ -326,7 +326,6 @@ export class ChartIntegrationDirective {
     }
 
     private setAxisLabelOption(type: CHART_TYPE, options: IChartComponentOptions) {
-
         if (type.indexOf("Bar") !== -1) {
             options.yAxisOptions = {
                 label: this._labelMemberPath
