@@ -29,7 +29,7 @@ li {
 article {
     display: flex;
     flex-direction: column;
-    width: 320px;
+    width: 33%;
     position: relative;
     padding: 50px 20px 20px 20px;
     margin: 0px;
@@ -53,8 +53,9 @@ article {
     }
 }
 igx-card {
-    width: 280px;
-    height: 98px;
+    width: 100%;
+    max-width: 280px;
+    height: 110px;
     margin-bottom: 10px;
     font-family: Titillium Web;
     &:last-child {
