@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component, Input, OnInit, Renderer2 } from "@angular/core";
 
-
 @Component({
     selector: "app-email-sample",
     templateUrl: "./email-sample.component.html",
@@ -33,7 +32,7 @@ export class EmailSampleComponent implements OnInit {
 
     constructor(
         private cdr: ChangeDetectorRef,
-        private renderer:Renderer2
+        private renderer: Renderer2
     ) { }
 
     public ngOnInit() {
