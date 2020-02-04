@@ -41,6 +41,13 @@ import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-mo
 import { TaskPlannerComponent } from "../grid-taskplanner/task-planner/taskplanner.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
+
+import { IgxBarSeriesModule, IgxBollingerBandsOverlayModule, IgxCategoryChartModule, IgxCategoryXAxisComponent, IgxCategoryXAxisModule, IgxDataChartCategoryModule, IgxDataChartComponent,
+    IgxDataChartCoreModule, IgxDataChartInteractivityModule, IgxDataChartScatterModule, IgxDataChartStackedModule,
+    IgxDoughnutChartComponent, IgxDoughnutChartModule, IgxFinancialPriceSeriesModule, IgxIndicatorsModule, IgxItemLegendComponent, IgxItemLegendModule, IgxLegendComponent,
+    IgxLegendModule, IgxNumericXAxisComponent, IgxNumericXAxisModule, IgxNumericYAxisComponent, IgxNumericYAxisModule,
+    IgxPieChartComponent, IgxPieChartModule, IgxRingSeriesModule, IgxSparklineCoreModule, IgxSparklineModule
+} from "igniteui-angular-charts";
 import { GridsDVRoutingModule } from "./grids-routing.module";
 
 @NgModule({

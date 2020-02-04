@@ -46,6 +46,12 @@ export const samplesRoutes: Routes = [
         // tslint:disable-next-line: max-line-length
         loadChildren: () => import("./hierarchical-grid/hierarchical-grid.module").then(m => m.HierarchicalGridDVModule),
         path: "hierarchical-grid"
+    },
+    {
+        data: ["GridDynamicChartDataModule"],
+        loadChildren: () => import("./grid-dynamic-chart-data/grid-dynamic-chart-data.module")
+        .then(m => m.GridDynamicChartDataModule),
+        path: "grid-dynamic-chart-data"
     }
 ];
 export const appRoutes: Routes = [
