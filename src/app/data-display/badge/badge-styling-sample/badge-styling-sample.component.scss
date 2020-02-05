@@ -14,7 +14,7 @@ $custom-theme: igx-badge-theme(
     $icon-color: white,
     $text-color: black,
     $border-radius: 20px,
-    $disable-border: true,
+    /* $disable-border: true, */
     $shadow: igx-elevation($elevations-color, 5)
 );
 
