@@ -9,6 +9,7 @@ import {
 import { IgxCategoryChartComponent } from "igniteui-angular-charts";
 import { timer } from "rxjs";
 import { debounce } from "rxjs/operators";
+import { Contract, REGIONS } from "../services/financialData";
 import { LocalDataService } from "./localData.service";
 
 @Component({
@@ -60,6 +61,9 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
             selected: false
         }
     ];
+
+    public contracts = Contract;
+    public regions = REGIONS;
     private subscription;
     private selectedButton;
     private _timer;
@@ -84,7 +88,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
         },
         {
             dir: SortingDirection.Desc,
-            fieldName: "Contract",
+            fieldName: "Settlement",
             ignoreCase: false,
             strategy: DefaultSortingStrategy.instance()
         }
@@ -98,6 +102,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     public ngAfterViewInit() {
+        this.grid1.hideGroupedColumns = true;
         this.grid1.reflow();
         this.selectFirstGroupAndFillChart();
     }

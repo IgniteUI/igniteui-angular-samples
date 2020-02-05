@@ -897,6 +897,7 @@ export class FinancialData {
 
             dataObj.Settlement = Settlement[this.generateRandomNumber(0, 1)];
             dataObj.Contract = Contract[this.generateRandomNumber(0, 4)];
+            dataObj.LastUpdated = this.randomizeDate();
             dataObj["OpenPriceDiff"] = (((dataObj["Open Price"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 150;
             dataObj["BuyDiff"] = (((dataObj["Buy"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 150;
             dataObj["SellDiff"] = (((dataObj["Sell"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 150;
@@ -1018,5 +1019,12 @@ export class FinancialData {
             }
          }
         return country;
+    }
+    private randomizeDate() {
+        const date = new Date();
+        date.setHours(this.generateRandomNumber(0, 23));
+        date.setMonth(this.generateRandomNumber(0, date.getMonth()));
+        date.setDate(this.generateRandomNumber(0, 23));
+        return date;
     }
 }
