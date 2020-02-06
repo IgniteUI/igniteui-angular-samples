@@ -136,6 +136,7 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         IgxTooltipModule,
         IgxToggleModule,
         IgxComboModule,
+        IgxListModule,
         LayoutsModule
     ],
     providers: [IgxOverlayService]
