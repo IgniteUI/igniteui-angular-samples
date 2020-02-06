@@ -129,6 +129,7 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         IgxDragDropModule,
         IgxIconModule,
         IgxInputGroupModule,
+        IgxListModule,
         IgxRippleModule,
         IgxSliderModule,
         IgxSwitchModule,
