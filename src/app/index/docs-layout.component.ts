@@ -1,5 +1,4 @@
-import { DOCUMENT } from "@angular/common";
-import { Component, HostListener, Inject, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
     selector: "app-docs-layout",
@@ -8,6 +7,4 @@ import { Component, HostListener, Inject, OnInit } from "@angular/core";
 })
 
 export class DocsLayoutComponent {
-    
-
 }
