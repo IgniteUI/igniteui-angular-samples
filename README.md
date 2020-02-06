@@ -71,3 +71,18 @@ npm run generate-live-editing
 
 In order to combine the execution of both [DocFX](https://github.com/IgniteUI/igniteui-docfx) and Ignite UI Angular Samples projects, use `npm run start`.
 After starting both projects you will see the embed samples into the DocFX site builder, under `localhost:port` hostname.
+
+## Running with custom [igniteui-angular](https://github.com/IgniteUI/igniteui-angular) build
+
+In order to test a specific branch created in [igniteui-angular]((https://github.com/IgniteUI/igniteui-angular)) project with `igniteui-angular-samples` you have to follow these steps:
+
+In **igniteui-angular** :
+- build the source code with the version/branch you want to test: 
+```
+npm run build:lib
+```
+- copy the builded `igniteui-angular` folder, located in the `dist` directory
+
+In **igniteui-angular-samples**:
+
+- paste the aformentioned copied, builded `igniteui-angular` folder in the `node_modules` directory
