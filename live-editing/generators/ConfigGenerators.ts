@@ -21,8 +21,6 @@ import { ExportCsvConfigGenerator } from "../configs/ExportCsvConfigGenerator";
 import { ExportExcelConfigGenerator } from "../configs/ExportExcelConfigGenerator";
 import { ForConfigGenerator } from "../configs/ForConfigGenerator";
 import { GridConfigGenerator } from "../configs/GridConfigGenerator";
-import { GridCRMConfigGenerator } from "../configs/GridCRMConfigGenerator";
-import { GridFinjsConfigGenerator } from "../configs/GridFinjsConfigGenerator";
 import { HierarchicalGridConfigGenerator } from "../configs/HierarchicalGridConfigGenerator";
 import { IconConfigGenerator } from "../configs/IconConfigGenerator";
 import { InputGroupConfigGenerator } from "../configs/InputGroupConfigGenerator";
@@ -51,7 +49,6 @@ import { ToggleConfigGenerator } from "../configs/ToggleConfigGenerator";
 import { TooltipConfigGenerator } from "../configs/TooltipConfigGenerator";
 import { TransactionsConfigGenerator } from "../configs/TransactionsConfigGenerator";
 import { TreeGridConfigGenerator } from "../configs/TreeGridConfigGenerator";
-import { TreeGridFinjsConfigGenerator } from "../configs/TreeGridFinjsConfigGenerator";
 
 export const CONFIG_GENERATORS =
     [
@@ -97,10 +94,7 @@ export const CONFIG_GENERATORS =
 
         // grids:
         GridConfigGenerator,
-        GridCRMConfigGenerator,
-        GridFinjsConfigGenerator,
         HierarchicalGridConfigGenerator,
-        TreeGridFinjsConfigGenerator,
         TreeGridConfigGenerator,
 
         // other:
