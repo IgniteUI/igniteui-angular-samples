@@ -15,7 +15,7 @@
             "console": "internalConsole"
         },
         {
-            "name": "Laung App DV Live-editing",
+            "name": "Launch App LOB Live-editing",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
