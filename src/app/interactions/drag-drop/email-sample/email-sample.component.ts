@@ -1,7 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
-
-const DROP_ZONE_ACTIVE_COLOR = "#d8d8d8";
-const DROP_ZONE_INACTIVE_COLOR = "#ebebeb";
+import { ChangeDetectorRef, Component, Input, OnInit, Renderer2 } from "@angular/core";
 
 @Component({
     selector: "app-email-sample",
@@ -33,9 +30,13 @@ export class EmailSampleComponent implements OnInit {
         { sender: "Benito Noboa", title: "Last Chance: Win an Amazon Gift Card", checked: false}
     ];
 
-    constructor() { }
+    constructor(
+        private cdr: ChangeDetectorRef,
+        private renderer: Renderer2
+    ) { }
 
-    public ngOnInit() { }
+    public ngOnInit() {
+    }
 
     public toggleCheck(email: any, checkbox: any): void {
         this.emails.forEach(x => x.checked = false);
@@ -47,8 +48,11 @@ export class EmailSampleComponent implements OnInit {
         email.checked = !email.checked;
     }
 
+    public stopEventPropagation(event: any): void {
+        event.stopPropagation();
+    }
+
     public dropElement(event: any): void {
-        const folderTitle = event.owner.element.nativeElement.querySelector(".folder-title").innerText;
         this.emails = this.emails.filter(x => x.checked !== true);
         event.dragData = {};
         event.cancel = true;
@@ -56,17 +60,20 @@ export class EmailSampleComponent implements OnInit {
     }
 
     public enterDropZone(event: any): void {
-        const folderTitle = event.owner.element.nativeElement.querySelector(".folder-title").innerText;
-        event.owner.element.nativeElement.style.background = DROP_ZONE_ACTIVE_COLOR;
+        this.renderer.addClass(event.owner.element.nativeElement, "mailboxItem_dragEnter");
     }
 
     public leaveDropZone(event: any): void {
-        event.owner.element.nativeElement.style.background = DROP_ZONE_INACTIVE_COLOR;
+        this.renderer.removeClass(event.owner.element.nativeElement, "mailboxItem_dragEnter");
     }
 
     public onDragStart(event: any): void {
         this.aggressiveToggle(event);
         this.draggedElements = this.emails.filter(x => x.checked === true).length;
+    }
+
+    public onGhostCreated(event: any): void {
+        this.cdr.detectChanges();
     }
 
     private aggressiveToggle(event: any): void {
