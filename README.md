@@ -84,10 +84,5 @@ npm run build:lib
 - copy the builded `igniteui-angular` folder, located in the `dist` directory
 
 In **igniteui-angular-samples**:
-- uninstall `igniteui-angular` using `npm`:
-```
-    npm uninstall igniteui-angular
-```
 
-- paste the aformentioned copied `igniteui-angular` in the `node_modules` directory
-
+- paste the aformentioned copied, builded `igniteui-angular` folder in the `node_modules` directory
