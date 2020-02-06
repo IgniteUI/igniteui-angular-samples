@@ -9,7 +9,7 @@ The project is divided into two two separate applications:
 
 - A `default application`, which uses all the [igniteui-angular](https://travis-ci.org/IgniteUI/igniteui-angular) components to demonstrate sample applications
 
-- A `line of business` application, which demonstrates enhanced application scenarios, using igniteui-angular-charts, igniteui-angular-excel library, igniteui-angular-sparklines combined with `igniteui-angular` components.
+- A `Line of Business` application, complemented with UI and functionality from the **Ignite UI for Angular Charts** and **Ignite UI for Angular Excel library**.
 
 ## Setup
 To setup the project run:
@@ -148,4 +148,4 @@ npm run build:lib
 
 In **igniteui-angular-samples**:
 
-- paste the copied `igniteui-angular` folder in the place of its identical folder in `node_modules` directory
+- paste the copied `igniteui-angular` folder in the place of its corresponding folder in `node_modules` directory
