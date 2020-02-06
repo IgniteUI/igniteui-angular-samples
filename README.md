@@ -148,4 +148,4 @@ npm run build:lib
 
 In **igniteui-angular-samples**:
 
-- paste the aforementioned copied, built `igniteui-angular` folder in the `node_modules` directory
+- replace the copied `igniteui-angular` with its identical folder in the `node_modules` directory
