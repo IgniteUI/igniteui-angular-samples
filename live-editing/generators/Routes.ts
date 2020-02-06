@@ -93,7 +93,10 @@ export const MODULE_ROUTES = [
     {
         module: ServicesModule,
         routes: ServicesRouting.servicesRoutes
-    },
+    }
+];
+
+export const DV_MODULE_ROUTES = [
     {
         module: GridCRMModule,
         routes: GridCRMRouting.gridcrmRoutes
