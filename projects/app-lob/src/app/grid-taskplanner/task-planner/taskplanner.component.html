@@ -1,17 +1,17 @@
 <div class="grid__wrapper" [class.fin-dark-theme]="theme">
     <div class="controls-holder">
         <div class="editing-buttons">
-            <igx-buttongroup [multiSelection]="false" (onSelect)="onButtonAction($event)">
+            <!-- <igx-buttongroup [multiSelection]="false" (onSelect)="onButtonAction($event)">
                 <button igxButton [selected]="true">Cell Editing</button>
                 <button igxButton>Row Editing</button>
                 <button igxButton>None</button>
-            </igx-buttongroup>
+            </igx-buttongroup> -->
         </div>
     </div>
 
     <igx-grid #grid1
         width="1600px" height="850px" 
-        [data]="localData"
+        [data]="localData "
         [autoGenerate]="false"
         [showToolbar]="true"
         toolbarTitle="Sprint 14"
@@ -74,7 +74,7 @@
 
         <!-- Toolbar Template -->
         <ng-template igxToolbarCustomContent let-grid="grid">
-            <button igxButton="flat" igxRipple igxRippleCentered="true" (click)="addTask()">
+            <button igxButton="flat" igxRipple igxRippleCentered="true" (click)="addTaskDialog.open()">
                 CREATE ISSUE
             </button>
         </ng-template>
@@ -89,6 +89,7 @@
             [filterable]="c.filterable"
             [formatter]="c.formatter"
             [groupable]="c.groupable"
+            [cellClasses]="c.cellClasses"
             [field]="c.field"
             [header]="c.header"
             [dataType]="c.dataType"
@@ -129,13 +130,60 @@
 
             <!-- Priority Column -->
             <ng-template *ngIf="c.field === 'priority'" igxCellEditor let-cell="cell" let-value>
-                <igx-select [placeholder]="value">
-                    <igx-select-item *ngFor="let p of priority" value="p.value">{{ p.value }}</igx-select-item>
+                <igx-select [placeholder]="value" [(ngModel)]="cell.editValue">
+                    <igx-select-item *ngFor="let p of priority" [value]="p.value">{{ p.value }}</igx-select-item>
                 </igx-select>
             </ng-template>
         </igx-column>
     </igx-grid>
 </div>
+
+
+<!-- Add record dialog  -->
+<igx-dialog #addTaskDialog title="Create Issue"
+    leftButtonLabel="Cancel"
+    (onLeftButtonSelect)="addTaskDialog.close()"
+    (onRightButtonSelect)="addTask($event)"
+    rightButtonLabel="OK"
+    [closeOnOutsideSelect]="true">
+    <div class="addDialogContent">
+        <igx-input-group #MyInputGroup>
+            <label igxLabel for="issue">Issue Title</label>
+            <input igxInput id="issue" type="text" [(ngModel)]="addTaskForm.issue" name="newTask" required/>
+        </igx-input-group>
+
+        <igx-select placeholder="Owner" [(ngModel)]="addTaskForm.owner">
+            <igx-select-item *ngFor="let m of teamMembers" [value]="m.name">{{ m.name }}</igx-select-item>
+        </igx-select>
+
+        <igx-input-group>
+            <label igxLabel for="description">Description</label>
+            <textarea rows="4" cols="50" igxInput name="desc" [(ngModel)]="addTaskForm.description"></textarea>
+        </igx-input-group>
+
+        <igx-select placeholder="Priority" [(ngModel)]="addTaskForm.priority">
+            <igx-select-item *ngFor="let p of priority" [value]="p.value">{{ p.value }}</igx-select-item>
+        </igx-select>
+
+        <igx-input-group>
+            <label igxLabel for="issue">Milestone</label>
+            <input igxInput id="issue" type="text" [(ngModel)]="addTaskForm.milestone" name="newTask" [igxMask]="'###-##-####'"/>
+        </igx-input-group>
+
+        <igx-date-picker name="deadline" [(ngModel)]="addTaskForm.deadline">
+            <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value" let-displayData="displayData">
+                <igx-input-group (click)="openDialog()">
+                    <label igxLabel>Deadline</label>
+                    <input igxInput [value]="displayData" />
+                    <igx-prefix>
+                        <igx-icon>today</igx-icon>
+                    </igx-prefix>
+                </igx-input-group>
+            </ng-template>
+        </igx-date-picker>
+    </div>
+
+</igx-dialog>
 
 <igx-toast></igx-toast>
 

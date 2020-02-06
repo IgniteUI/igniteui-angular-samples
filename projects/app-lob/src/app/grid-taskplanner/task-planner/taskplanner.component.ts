@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { DefaultSortingStrategy, IGridEditEventArgs, IgxGridComponent,
+import { ControlContainer, NgForm } from "@angular/forms";
+import { DefaultSortingStrategy, IGridEditEventArgs, IgxDialogComponent,
+    IgxGridComponent,
     IgxToastComponent,
     SortingDirection} from "igniteui-angular";
 import { IgxLegendComponent } from "igniteui-angular-charts";
@@ -13,40 +15,45 @@ export enum editMode {
 }
 
 export interface ITask {
-    id: number;
-    issue: string;
-    isActive: boolean;
-    priority: string;
-    status: string;
-    owner: {
+    id?: number;
+    issue?: string;
+    isActive?: boolean;
+    priority?: string;
+    milestone?: string;
+    status?: string;
+    owner?: {
       id: number;
       name: string;
       sex: string;
       team: string;
       avatar: string;
     };
-    created_by: string;
-    started_on: Date;
-    deadline: Date;
-    estimation: number;
-    hours_spent: number;
+    created_by?: string;
+    started_on?: Date;
+    deadline?: Date;
+    estimation?: number;
+    hours_spent?: number;
 }
 
 const newLocal = "started_on";
 @Component({
-    providers: [TasksDataService],
+    providers: [TasksDataService, { provide: ControlContainer, useExisting: NgForm }],
     selector: "app-taskplanner",
     templateUrl: "./taskplanner.component.html",
     styleUrls: ["./taskplanner.component.scss"]
 })
 export class TaskPlannerComponent implements OnInit {
+
     @ViewChild("grid1", { static: true }) public grid: IgxGridComponent;
     @ViewChild("legend", { static: true }) public legend: IgxLegendComponent;
     @ViewChild(IgxToastComponent, { read: IgxToastComponent, static: true }) public toast: IgxToastComponent;
+    // @ViewChild("MyInputGroup", { static: true }) public inputGroup: IgxInputGroupComponent;
+    @ViewChild("addTaskDialog", { static: true }) public addTaskDialog: IgxDialogComponent;
 
     public localData: any[];
     public teamMembers: any[];
     public editMode = editMode.cellEditing;
+    public addTaskForm: ITask = { };
 
     public statuses = [
         { value: "New" },
@@ -63,24 +70,69 @@ export class TaskPlannerComponent implements OnInit {
         { value: "Critical" }
     ];
 
-    public columns: any[] = [
-    // tslint:disable:max-line-length
-    { field: "id", header: "ID", width: "140px", dataType: "number", formatter: this.formatID },
-    { field: "milestone", header: "Milestone", width: "120px", dataType: "string", groupable: true, hidden: true, editable: true},
-    { field: "issue", header: "Issue", width: "200px", dataType: "string", sortable: true, filterable: false, editable: true},
-    { field: "status", header: "Status", width: "140px", dataType: "string", sortable: true, filterable: false, editable: true },
-    { field: "progress", header: "Progress", width: "120px", dataType: "number", sortable: true, filterable: true, editable: false },
-    { field: "owner", header: "Owner", width: "180px", dataType: "string", editable: true },
-    { field: "created_by", header: "Created By", width: "180px", dataType: "string", sortable: true, filterable: true, editable: false },
-    { field: "started_on", header: "Started on", width: "130px", dataType: "date", sortable: true, filterable: true, editable: true },
-    { field: "deadline", header: "Deadline", width: "130px", dataType: "date", sortable: false, filterable: true, editable: true },
-    { field: "estimation", header: "Estimation", width: "120px", dataType: "number", sortable: false, filterable: false, editable: true, columnGroup: true, formatter: this.formatHours },
-    { field: "hours_spent", header: "Hours Spent", width: "120px", dataType: "number", sortable: false, filterable: false, editable: true, columnGroup: true, formatter: this.formatHours },
-    { field: "priority", header: "Priority", width: "125px", dataType: "string", sortable: true, filterable: true, editable: true }
-    // tslint:enable:max-line-length
-  ];
+    public isDone = (rowData: any, columnKey: any): boolean => {
+        return rowData[columnKey] === "Done";
+    }
 
-    constructor(private dataService: TasksDataService) { }
+    public isNew = (rowData: any, columnKey: any): boolean => {
+        return rowData[columnKey] === "New";
+    }
+
+    public isInProgress = (rowData: any, columnKey: any): boolean => {
+        return rowData[columnKey] === "In Progress";
+    }
+
+    public isLate = (rowData: any, columnKey: any): boolean => {
+        return rowData[columnKey] === "Delayed";
+    }
+
+    public isPriority = (rowData: any, columnKey: any): boolean => {
+        return rowData[columnKey] === "Critical";
+    }
+
+    public isDelayed = (rowData: ITask, columnKey: string): boolean => {
+        return rowData.hours_spent > rowData.estimation;
+    }
+
+    public isDelayed2 = (rowData: ITask, columnKey: string): boolean => {
+        return rowData.hours_spent > rowData.estimation;
+    }
+
+    // tslint:disable:member-ordering
+    public statusClasses = {
+        done: this.isDone,
+        new: this.isNew,
+        inProgress: this.isInProgress,
+        late: this.isLate
+    };
+
+    public priorityClasses = {
+        priority: this.isPriority
+    };
+
+    public delayedClasses = {
+        delayed: this.isDelayed
+    };
+
+    public columns: any[] = [
+        // tslint:disable:max-line-length
+        { field: "id", header: "ID", width: "120px", dataType: "number", formatter: this.formatID },
+        { field: "milestone", header: "Milestone", width: "120px", dataType: "string", groupable: true, editable: true, sortable: true},
+        { field: "issue", header: "Issue", width: "300px", dataType: "string", sortable: true, filterable: false, editable: true},
+        { field: "status", header: "Status", width: "110px", dataType: "string", sortable: true, filterable: false, editable: true, cellClasses: this.statusClasses },
+        { field: "progress", header: "Progress", width: "100px", dataType: "number", sortable: true, editable: false },
+        { field: "owner", header: "Owner", width: "180px", dataType: "string", editable: true, sortable: true },
+        { field: "created_by", header: "Created By", width: "180px", dataType: "string", sortable: true, filterable: true, editable: false },
+        { field: "started_on", header: "Started on", width: "130px", dataType: "date", sortable: true, filterable: true, editable: true },
+        { field: "deadline", header: "Deadline", width: "130px", dataType: "date", sortable: false, filterable: true, editable: true },
+        { field: "estimation", header: "Estimation", width: "120px", dataType: "number", sortable: false, filterable: false, editable: true, columnGroup: true, formatter: this.formatHours, cellClasses: this.delayedClasses },
+        { field: "hours_spent", header: "Hours Spent", width: "120px", dataType: "number", sortable: false, filterable: false, editable: true, columnGroup: true, formatter: this.formatHours, cellClasses: this.delayedClasses },
+        { field: "priority", header: "Priority", width: "125px", dataType: "string", sortable: true, filterable: true, editable: true, cellClasses: this.priorityClasses }
+        // tslint:enable:max-line-length
+    ];
+
+    constructor(private dataService: TasksDataService) {  }
+    // tslint:enable:member-ordering
 
     public ngOnInit() {
         this.dataService.getData().subscribe(data => this.localData = data);
@@ -94,8 +146,17 @@ export class TaskPlannerComponent implements OnInit {
         }];
     }
 
-    public addTask() {
+    public ngAfterViewInit() {
+        this.grid.hideGroupedColumns = true;
+    }
 
+    public addTask(event: any) {
+        this.addTaskForm.id = this.grid.data[this.grid.data.length - 1].id + 1;
+        this.addTaskForm.status = "New";
+        this.addTaskForm.estimation = null;
+        this.addTaskForm.hours_spent = null;
+        this.grid.addRow(this.addTaskForm);
+        this.addTaskDialog.close();
     }
 
     public formatID(value: number): string {
@@ -103,7 +164,7 @@ export class TaskPlannerComponent implements OnInit {
     }
 
     public formatHours(value: number): string {
-        return value + "h";
+        return value ? value + "h" : "";
     }
 
     public onButtonAction(event: any) {
@@ -224,6 +285,11 @@ export class TaskPlannerComponent implements OnInit {
                     this.toast.show();
                 }
                 break;
+            }
+            case "status": {
+                if (event.newValue === "Completed") {
+                    this.grid.getRowByKey(event.rowID).rowData["isActive"] = false;
+                }
             }
         }
     }

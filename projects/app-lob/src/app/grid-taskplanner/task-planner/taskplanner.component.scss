@@ -22,6 +22,30 @@ $toolbar-button-theme: igx-button-theme(
         .igx-grid-toolbar__actions, .igx-grid-toolbar__custom-content {
             @include igx-button($toolbar-button-theme);
         }
+
+        .done {
+            background-color: rgb(2, 131, 2);
+        }
+    
+        .new {
+            background-color: rgb(0, 0, 212);
+        }
+
+        .inProgress {
+            background-color: rgb(226, 176, 11);
+        }
+    
+        .late {
+            background-color: rgb(214, 13, 13);
+        }
+
+        .priority {
+            color: rgb(214, 13, 13);
+        }
+
+        .delayed {
+            color: rgb(214, 13, 13);
+        }
     }
 }
 
@@ -85,4 +109,9 @@ h6 {
 .tabContent igx-grid {
     box-shadow: none;
     border: 1px solid rgba(0, 0, 0, .08);
+}
+
+.addDialogContent {
+    width: 100%;
+    padding: 1rem 1.5rem;
 }
