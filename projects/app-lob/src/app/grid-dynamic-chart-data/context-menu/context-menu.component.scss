@@ -1,34 +1,109 @@
-igx-tabs-group {
-    display: flex!important;
-    max-height: 100px;
-    max-width: 358px;
-}
+@import '../../../../../../node_modules/igniteui-angular/lib/core/styles/themes/index';
 
-.tab-option {
-    padding: .9rem;
-    height: 100px;
-    width: 290px;
+@include igx-fluent-theme($fluent-excel-palette);
+
+.analytics-btn {
+    @include igx-button(igx-button-theme($palette: $fluent-excel-palette,
+            $icon-color: #fff,
+            $icon-background: #335e3b,
+            $icon-hover-background: #459a55,
+            $icon-border-radius: 0));
+}
+.ig-chart-legend-items-list {
+    height: 20%;
     display: inline-flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    align-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
 }
-
-.action {
-    cursor: pointer;
-
+.toggle-content {
+    width: 350px;
+    height: 148px;
+    background-color: #fff;
+    .tabs {
+        display: flex!important;
+        max-height: 100px;
+        max-width: 358px;
+    }
+    .tab-option {
+        padding: .9rem;
+        height: 100px;
+        width: 358px;
+        display: inline-flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        align-content: center;
+        .selected {
+            opacity: .5;
+        }
+        .imgSize {
+            width: 36px;
+            height: 36px;
+            align-self: center;
+        }
+        .chartImgButton {
+            width: 48px;
+            height: 48px;
+        }
+    }
+}
+.disableButton {
+    opacity: .4;
+    pointer-events: none;
+}
+.clear, .more-action{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    border-left: 1px solid #BDBDBD;
+    .btn, .more-btn {
+        width: 68px;
+        margin: 0 0 7px 0;
+        padding: 0;
+    }
+    .more-btn {
+        width: 36px;
+        height: 36px;
+        align-self: center;
+        border-radius: 20px;
+    }
     .name {
         font-size: .9rem;
         font-weight: 400;
         text-align: center;
     }
 }
-.imgSize {
-    width: 36px;
-    height: 36px;
+.icon {
+    pointer-events: none;
 }
-.chartImgButton {
-    width: 48px;
-    height: 48px;
+.btn {
+    &.condition {
+        padding-right: 16px;
+    }
+
+    &.chart {
+        padding-right: 24px;
+    }
+    display: inline-flex;
+    flex-flow: column;
+    align-items: center;
+
+    img{
+        pointer-events: none;
+    }
+
+    span {
+        pointer-events: none;
+    }
+}
+.chart-preview {
+    width: 350px;
+    height: 300px;
+    background-color: #fff;
+    overflow: hidden;
+
+    .chart-preview-title{
+        margin: 1rem;
+        justify-content: center;
+    }
 }
