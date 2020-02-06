@@ -1,45 +1,43 @@
-<igx-dialog #chartDialog class="chart-dialog" [closeOnOutsideSelect]="true">
-    <div class="header">
-        <span class="header-text">
-            {{ currentChartType.replace('100', ' 100% ') | name | titlecase }} Chart
-        </span>
-        <div class="action-buttons-wrapper">
-            <button igxButton="icon" (click)="toggleFullScreen()">
-                <igx-icon class="material">fullscreen{{fullScreenOpened ? '_exit' : ''}}</igx-icon>
-            </button>
-            <button igxButton="icon" (click)="chartDialog.close()">
-                <igx-icon class="material">close</igx-icon>
-            </button>
-        </div>
+<div class="header">
+    <span class="header-text">
+        {{ currentChartType | titlecase }} Chart
+    </span>
+    <span class="action-buttons-wrapper">
+        <button igxButton="icon" (click)="toggleFullScreen()">
+            <igx-icon class="material">fullscreen{{fullScreen ? '_exit' : ''}}</igx-icon>
+        </button>
+        <button igxButton="icon" (click)="onClose.emit()">
+            <igx-icon class="material">close</igx-icon>
+        </button>
+    </span>
+</div>
+<div class="selection-area">
+    <div class="chart-area" [ngClass]="{'expanded': isConfigAreaExpanded}">
+        <ng-template #chart chartHost></ng-template>
     </div>
-    <div class="selection-area">
-        <div class="chart-area" [ngClass]="{'expanded': chartCondigAreaState === 'closed'}">
-            <ng-template #chart chartHost></ng-template>
+    <div>
+        <button igxButton="icon" igxRipple (click)="isConfigAreaExpanded = !isConfigAreaExpanded">
+            <igx-icon fontSet="material">chevron_{{ isConfigAreaExpanded ? 'left': 'right'}}</igx-icon>
+        </button>
+    </div>
+    <div #configArea [ngClass]="{'chart-config-area': true, 'opened': !isConfigAreaExpanded, 'closed': isConfigAreaExpanded }">
+        <div class="config-area-header">
+            <span>Chart Types</span>
         </div>
-        <span>
-            <button igxButton="icon" igxRipple (click)="toggle()">
-                <igx-icon fontSet="material">chevron_{{ opened ? 'right': 'left'}}</igx-icon>
-            </button>
-        </span>
-        <div #configArea class="chart-config-area {{chartCondigAreaState}}">
-            <div class="config-area-header">
-                <span style="font-weight: bold;">Chart Types</span>
-            </div>
-            <igx-divider class="divider"></igx-divider>
-            <div *ngFor="let chartType of chartTypes">
-                <div *ngIf="(availableCharts |filterType:chartType).length > 0" class="wrapper">
-                    <div>{{chartType | titlecase}} Chart</div>
-                    <div class="types-section">
-                        <div *ngFor="let chart of (availableCharts | filterType: chartType)"
-                             (click)="createChart(chart, chartHost, chartDialog, chartDialog)"
-                             style="width: 40%; margin-right: 5px; cursor: pointer;"
-                             [ngClass]="{'selected': chart === currentChartType}">
-                            <img src="assets/images/svg/charts/{{chart}}.svg" />
-                        </div>
-                    </div>
-                    <igx-divider></igx-divider>
+        <igx-divider class="divider"></igx-divider>
+        <div class="wrapper" *ngFor="let chartType of mainChartTypes">
+            <ng-container *ngIf="hasAvailableChart(chartType)">
+                <div>{{chartType | titlecase}} Chart</div>
+                <div class="types-section">
+                    <ng-container *ngFor="let chart of allCharts">
+                        <span *ngIf="chart.includes(chartType)"  class="types-section-btn"
+                            [ngClass]="{'selected': chart === currentChartType}">
+                        <img src="assets/images/svg/charts/{{chart}}.svg" />
+                    </span>
+                    </ng-container>
                 </div>
-            </div>
+                <igx-divider></igx-divider>
+            </ng-container>
         </div>
     </div>
-</igx-dialog>
+</div>
