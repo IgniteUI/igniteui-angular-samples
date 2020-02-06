@@ -6,6 +6,7 @@ import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignme
 import { timer } from "rxjs";
 import { debounce } from "rxjs/operators";
 import { LocalDataService } from "../grid-finjs/localData.service";
+import { Contract, REGIONS } from "../services/financialData";
 import { ITreeGridAggregation } from "./tree-grid-grouping.pipe";
 
 @Component({
@@ -84,6 +85,9 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         positionStrategy: new ConnectedPositioningStrategy(this._positionSettings),
         scrollStrategy: new AbsoluteScrollStrategy()
     };
+
+    public contracts = Contract;
+    public regions = REGIONS;
 
     private subscription;
     private selectedButton;
