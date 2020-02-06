@@ -1,8 +1,6 @@
 // tslint:disable:max-line-length
 import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDragDropModule, IgxExcelExporterService, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxTooltipModule, IgxTreeGridModule } from "igniteui-angular";
 import { IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
-import { TreeGridChilddatakeySampleComponent } from "../../projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
-import { TreeGridPrimaryforeignkeySampleComponent } from "../../projects/app-lob/src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { TreeGridAdvancedFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
 import { TreeGridAdvancedFilteringStyleComponent } from "../../src/app/tree-grid/tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
 import { TreeGridBatchEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
@@ -77,37 +75,9 @@ import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 
-
 export class TreeGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
-
-        // TreeGrid ChildDataKey Sample
-        configs.push(new Config({
-            additionalFiles: ["/projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
-            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridChilddatakeySampleComponent, IgxExcelExporterService, IgxCsvExporterService, IgxSparklineCoreModule, IgxSparklineModule],
-                ngDeclarations: [TreeGridChilddatakeySampleComponent],
-                ngImports: [IgxTreeGridModule, IgxSparklineCoreModule, IgxSparklineModule],
-                ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
-            }),
-            component: TreeGridChilddatakeySampleComponent,
-            shortenComponentPathBy: "/tree-grid/"
-        }));
-
-        // TreeGrid Primary/Foreign Key Sample
-        configs.push(new Config({
-            additionalFiles: ["/projects/app-lob/src/app/tree-grid/tree-grid-primaryforeignkey-sample/data.ts"],
-            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridPrimaryforeignkeySampleComponent, IgxSparklineCoreModule, IgxSparklineModule],
-                ngDeclarations: [TreeGridPrimaryforeignkeySampleComponent],
-                ngImports: [IgxTreeGridModule, IgxSparklineCoreModule, IgxSparklineModule]
-            }),
-            component: TreeGridPrimaryforeignkeySampleComponent,
-            shortenComponentPathBy: "/tree-grid/"
-        }));
 
         // TreeGrid Row Edit Sample
         configs.push(new Config({
