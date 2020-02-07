@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { SliderType } from "igniteui-angular";
+import { IgxSliderType } from "igniteui-angular";
 
 @Component({
     selector: "app-discrete-slider-bottom-ticks",
@@ -7,5 +7,5 @@ import { SliderType } from "igniteui-angular";
     templateUrl: "./discrete-slider-ticks-bottom.component.html"
 })
 export class SliderDiscreteTicksBottomComponent {
-    public type: SliderType = SliderType.RANGE;
+    public type: IgxSliderType = IgxSliderType.RANGE;
 }
