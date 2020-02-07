@@ -1,16 +1,16 @@
 <div class="grid__wrapper" [class.fin-dark-theme]="theme">
     <div class="controls-holder">
         <div class="editing-buttons">
-            <!-- <igx-buttongroup [multiSelection]="false" (onSelect)="onButtonAction($event)">
+            <igx-buttongroup [multiSelection]="false" (onSelect)="onButtonAction($event)">
                 <button igxButton [selected]="true">Cell Editing</button>
                 <button igxButton>Row Editing</button>
                 <button igxButton>None</button>
-            </igx-buttongroup> -->
+            </igx-buttongroup>
         </div>
     </div>
 
     <igx-grid #grid1
-        width="1600px" height="850px" 
+        width="1610px" height="850px" 
         [data]="localData "
         [autoGenerate]="false"
         [showToolbar]="true"
@@ -89,6 +89,7 @@
             [filterable]="c.filterable"
             [formatter]="c.formatter"
             [groupable]="c.groupable"
+            [sortStrategy]="c.sortStrategy"
             [cellClasses]="c.cellClasses"
             [field]="c.field"
             [header]="c.header"

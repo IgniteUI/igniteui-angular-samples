@@ -35,7 +35,6 @@ export interface ITask {
     hours_spent?: number;
 }
 
-const newLocal = "started_on";
 @Component({
     providers: [TasksDataService, { provide: ControlContainer, useExisting: NgForm }],
     selector: "app-taskplanner",
@@ -69,6 +68,11 @@ export class TaskPlannerComponent implements OnInit {
         { value: "High" },
         { value: "Critical" }
     ];
+
+    /**
+     * Calculates task progress.
+     */
+    public calcProgress = calcProgress;
 
     public isDone = (rowData: any, columnKey: any): boolean => {
         return rowData[columnKey] === "Done";
@@ -114,15 +118,18 @@ export class TaskPlannerComponent implements OnInit {
         delayed: this.isDelayed
     };
 
+    public milestoneSort = MilestoneSortingStrategy.instance();
+    public progressSort = ProgressSortingStrategy.instance();
+
     public columns: any[] = [
         // tslint:disable:max-line-length
         { field: "id", header: "ID", width: "120px", dataType: "number", formatter: this.formatID },
-        { field: "milestone", header: "Milestone", width: "120px", dataType: "string", groupable: true, editable: true, sortable: true},
-        { field: "issue", header: "Issue", width: "300px", dataType: "string", sortable: true, filterable: false, editable: true},
-        { field: "status", header: "Status", width: "110px", dataType: "string", sortable: true, filterable: false, editable: true, cellClasses: this.statusClasses },
-        { field: "progress", header: "Progress", width: "100px", dataType: "number", sortable: true, editable: false },
-        { field: "owner", header: "Owner", width: "180px", dataType: "string", editable: true, sortable: true },
-        { field: "created_by", header: "Created By", width: "180px", dataType: "string", sortable: true, filterable: true, editable: false },
+        { field: "milestone", header: "Milestone", width: "120px", dataType: "string", groupable: true, editable: true, sortable: true, sortStrategy: this.milestoneSort},
+        { field: "issue", header: "Issue", width: "380px", dataType: "string", filterable: false, editable: true},
+        { field: "status", header: "Status", width: "110px", dataType: "string", sortable: true, filterable: false, editable: true, cellClasses: this.statusClasses, sortStrategy: this.progressSort },
+        { field: "progress", header: "Progress", width: "95px", dataType: "number", sortable: false },
+        { field: "owner", header: "Owner", width: "180px", dataType: "string", editable: true, sortable: true, filterable: true },
+        { field: "created_by", header: "Created By", width: "180px", dataType: "string", sortable: true, filterable: true, editable: false, hidden: true },
         { field: "started_on", header: "Started on", width: "130px", dataType: "date", sortable: true, filterable: true, editable: true },
         { field: "deadline", header: "Deadline", width: "130px", dataType: "date", sortable: false, filterable: true, editable: true },
         { field: "estimation", header: "Estimation", width: "120px", dataType: "number", sortable: false, filterable: false, editable: true, columnGroup: true, formatter: this.formatHours, cellClasses: this.delayedClasses },
@@ -142,7 +149,18 @@ export class TaskPlannerComponent implements OnInit {
             dir: SortingDirection.Asc,
             fieldName: "milestone",
             ignoreCase: false,
-            strategy: DefaultSortingStrategy.instance()
+            strategy: this.milestoneSort
+        }];
+
+        this.grid.groupingExpansionState = [{
+            expanded: false,
+            hierarchy: [{ fieldName: "milestone", value: "Q2 2020"}]
+        }, {
+            expanded: true,
+            hierarchy: [{ fieldName: "milestone", value: "Q1 2020"}]
+        }, {
+            expanded: false,
+            hierarchy: [{ fieldName: "milestone", value: "Q4 2019"}]
         }];
     }
 
@@ -169,14 +187,6 @@ export class TaskPlannerComponent implements OnInit {
 
     public onButtonAction(event: any) {
         this.editMode = event.index;
-    }
-
-    /**
-     * Calculates task progress.
-     */
-    public calcProgress(task: ITask) {
-        const progress = (task.hours_spent / task.estimation) * 100;
-        return progress;
     }
 
     /**
@@ -308,4 +318,51 @@ export class TaskPlannerComponent implements OnInit {
             + (endDate.getMonth() - startDate.getMonth());
         return monthsDelta;
     }
+}
+
+export class MilestoneSortingStrategy extends DefaultSortingStrategy {
+    protected compareObjects(obj1: object,
+                             obj2: object,
+                             key: string,
+                             reverse: number,
+                             ignoreCase: boolean,
+                             valueResolver: (obj: any, key: string) => any) {
+
+        const objA = valueResolver(obj1, key).split(" ");
+        const objB = valueResolver(obj2, key).split(" ");
+
+        const yearA = objA[1];
+        const yearB = objB[1];
+
+        const quarterA = objA[0].slice(-1);
+        const quarterB = objB[0].slice(-1);
+
+        const milestoneA = parseInt(yearA + quarterA, 10);
+        const milestoneB = parseInt(yearB + quarterB, 10);
+
+        return reverse * this.compareValues(milestoneA, milestoneB);
+    }
+}
+
+export class ProgressSortingStrategy extends DefaultSortingStrategy {
+    protected compareObjects(obj1: object,
+                             obj2: object,
+                             key: string,
+                             reverse: number,
+                             ignoreCase: boolean,
+                             valueResolver: (obj: any, key: string) => any) {
+
+        const progressA = calcProgress(obj1);
+        const progressB = calcProgress(obj2);
+
+        return reverse * this.compareValues(progressA, progressB);
+    }
+}
+
+/**
+ * Calculates task progress.
+ */
+export function calcProgress(task: ITask) {
+    const progress = (task.hours_spent / task.estimation) * 100;
+    return progress;
 }
