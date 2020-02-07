@@ -1,10 +1,5 @@
-ul {
-    padding: 0px;
-    margin: 0px;
-    li {
-        list-style-type: none;
-    }
-}
+@import "~igniteui-angular/lib/core/styles/themes/index";
+
 .mailbox {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -17,35 +12,44 @@ ul {
     flex-direction: row;
     font-family: Titillium Web;
 	font-weight: 400;
-	font-style: normal;
+    font-style: normal;
+    /* Clear default theming */
+    background: var(--igx-banner-banner-background);
 }
 .flexlist {
     display: flex;
     flex-direction: column;
 }
+.igx-list__item-content {
+    padding: 0.1rem 1rem;
+}
 .folders {
-    li {
-        width: 173px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        font-size: 16px;
+    igx-list-item {
         letter-spacing: 0.15px;
-        color: rgba(0,0,0,0.866);
-        background: #EBEBEB;
-        height: 48px;
+        width: 13rem;
+        height: 3rem;
+        overflow: hidden;
+        /* IE fallback color */
+        background: igx-color($default-palette, 'grays', 200);
+        /* Default color */
+        background: var(--igx-grays-200);
         cursor: pointer;
+        width: 13rem;
         &:hover {
-            background: #D8D8D8;
+            /* IE fallback color */
+            background: igx-color($default-palette, 'grays', 100);
+            /* Default color */
+            background: var(--igx-grays-100);
         }
         &:active {
-            background: #d2d2d2;
+            /* IE Fallback color */
+            background: igx-color($default-palette, 'grays', 50);
+            /* Default color */
+            background: var(--igx-grays-50);
         }
         igx-icon {
             margin-left: 16px;
             margin-right: 28px;
-            color: rgba(0,0,0,0.619);
         }
         &:nth-child(5) {
             igx-icon {
@@ -66,65 +70,27 @@ ul {
 }
 .emails-container {
     width: 760px;
-    .period {
-        color: #ed6ca7;
-        text-align: left;
-        height: 48px;
-        padding-left: 15px;
-        font-size: 12px;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        font-weight: 800;
-        line-height: 48px;
-    }
 }
-.emails {
-    li {
-        padding-left: 18px;
-        padding-right: 18px;
-        height: 72px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        .email-content {
-            width: 100%;
-            margin-right: auto;
-            justify-content: center;
-            .sender {
-                font-size: 16px;
-                letter-spacing: 0.15px;
-                color: rgba(0, 0, 0, 1);
-            }
-            .email-title {
-                font-size: 14px;
-                letter-spacing: 0.25px;
-                color: rgba(0, 0, 0, 0.619);
-            }
-        }
-    }
-    li:hover {
-        background-color: #eee;
-        cursor: pointer;
-    }
-    li:active {
-        background-color: #e0e0e0;
-    }
-    li.email-checked:hover {
-        background-color: #F4C7DE;
-    }
-    li.email-checked:active {
-        background-color: #F4C7DE;
-    }
+
+.mailboxItem_dragEnter {
+    /* IE Fallback */
+    background-color: #ea87b4 !important;
+    /* Default color */
+    color: var(--igx-secondary-100-contrast);
+    background: var(--igx-secondary-100) !important;
 }
-.email-checked {
-    background: #F4C7DE;
+
+.email-checked, .email-checked:hover {
+    /* IE Fallback */
+    background-color: #ea87b4;
+    /* Default color */
+    color: var(--igx-secondary-100-contrast);
+    background: var(--igx-secondary-100);
     -webkit-transition: background .1s ease-out;
     -moz-transition: background .1s ease-out;
     -o-transition: background .1s ease-out;
     transition: background .1s ease-out;
 }
-
-
 
 .dragGhost {
     width: 173px;
@@ -136,7 +102,11 @@ ul {
     align-items: center;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    background-color: #dd75b1;
+    /* IE fallback */
+    background-color: #e41c77;
+    /* Default color */
+    background: var(--igx-secondary-500);
+    color: var(--igx-secondary-500-contrast);
     font-size: 0.8em;
     padding: 5px;
     position: relative;

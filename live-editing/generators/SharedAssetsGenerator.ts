@@ -95,6 +95,6 @@ export class SharedAssetsGenerator extends Generator {
         files.push(new LiveEditingFile(SAMPLE_APP_FOLDER + "app.component.ts", args.appComponentTsFileContent));
 
         let sharedFile = new SharedAssetsFile(files);
-        fs.writeFileSync(this.getAssetsSamplesDir() + "/shared.json", JSON.stringify(sharedFile));
+        fs.writeFileSync(this.getAssetsSamplesDir() + "shared.json", JSON.stringify(sharedFile));
     }
 }
