@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
             this.styleElem.textContent = e.data.themeStyle;
 
             const typeface = window.getComputedStyle(this.document.body).fontFamily.replace(/\"/g, "");
-            if (typeface.split(',').length < 2 &&
+            if (typeface.split(",").length < 1 &&
                 !this.typefacesLoaded.includes(typeface)) {
                 this.typefacesLoaded.push(typeface);
                 this.createTypefaceLink(typeface);
