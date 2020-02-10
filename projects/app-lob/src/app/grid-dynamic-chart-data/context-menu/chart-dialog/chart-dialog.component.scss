@@ -13,7 +13,12 @@
         background-color: $scrollbar-thumb;
     }
 }
-
+.ig-chart-legend-items-list {
+    height: 20%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
 igx-chart-menu {
     display: flex;
     flex-flow: column;

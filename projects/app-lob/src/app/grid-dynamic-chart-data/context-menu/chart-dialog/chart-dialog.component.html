@@ -11,9 +11,9 @@
         </button>
     </span>
 </div>
-<div class="selection-area">
+<div class="selection-area" (scroll)="$event.stopPropagation()" (wheel)="$event.stopPropagation()">
     <div class="chart-area" [ngClass]="{'expanded': isConfigAreaExpanded}">
-        <ng-template #chart chartHost></ng-template>
+        <ng-template #chartArea chartHost></ng-template>
     </div>
     <div>
         <button igxButton="icon" igxRipple (click)="isConfigAreaExpanded = !isConfigAreaExpanded">
@@ -30,8 +30,8 @@
                 <div>{{chartType | titlecase}} Chart</div>
                 <div class="types-section">
                     <ng-container *ngFor="let chart of allCharts">
-                        <span *ngIf="chart.includes(chartType)"  class="types-section-btn"
-                            [ngClass]="{'selected': chart === currentChartType}">
+                    <span *ngIf="chart.includes(chartType)"  class="types-section-btn" title="{{chart}}"
+                            [ngClass]="{'selected': chart === currentChartType}" (click)="createChart(chart)">
                         <img src="assets/images/svg/charts/{{chart}}.svg" />
                     </span>
                     </ng-container>

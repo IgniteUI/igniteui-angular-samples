@@ -9,12 +9,6 @@
             $icon-hover-background: #459a55,
             $icon-border-radius: 0));
 }
-.ig-chart-legend-items-list {
-    height: 20%;
-    display: inline-flex;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-}
 .toggle-content {
     width: 350px;
     height: 148px;
@@ -105,5 +99,8 @@
     .chart-preview-title{
         margin: 1rem;
         justify-content: center;
+    }
+    .chart-preview-area{
+        height: 270px;
     }
 }

@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Input, ViewChild } from "@angular/core";
 import { AbsoluteScrollStrategy, AutoPositionStrategy, HorizontalAlignment, IgxGridComponent,
     IgxOverlayService, IgxToggleDirective, OverlayCancelableEventArgs, VerticalAlignment } from "igniteui-angular";
 import { Subject } from "rxjs";
-import { merge, takeUntil } from "rxjs/operators";
+import { filter, merge, takeUntil } from "rxjs/operators";
 import { ChartHostDirective } from "../directives/chart-integration/chart-integration.directive";
 import { IgxChartMenuComponent } from "./chart-dialog/chart-dialog.component";
 @Component({
@@ -22,7 +22,7 @@ export class IgxContextMenuComponent implements AfterViewInit {
     public grid: IgxGridComponent;
 
     @Input()
-    public set formatter(value){
+    public set formatter(value) {
         this._formatter = value;
         this.options.textFormatting = true;
     }
@@ -51,46 +51,29 @@ export class IgxContextMenuComponent implements AfterViewInit {
     private _dialogId;
     private _formatter;
     private _chartDirective;
-
-    private get range() {
-        const r =  this.grid.getSelectedRanges();
-        return r[r.length - 1];
-    }
+    private _range;
     private _analyticsBtnSettings = {
         closeOnOutsideClick: false,
         modal: false,
         scrollStrategy: new AbsoluteScrollStrategy(),
-        positionStrategy: new AutoPositionStrategy({
-            verticalStartPoint: VerticalAlignment.Bottom,
-            horizontalDirection: HorizontalAlignment.Right,
-            horizontalStartPoint: HorizontalAlignment.Right,
-            closeAnimation: null
-        })
+        positionStrategy: new AutoPositionStrategy(
+            this.getPositionSettings(HorizontalAlignment.Right, VerticalAlignment.Bottom)
+        )
     };
-    private _chartDialogOS = {
-        closeOnOutsideClick: false
-    };
+    private _chartDialogOS = {closeOnOutsideClick: false };
     private _tabsMenuOverlaySettings = {
         modal: false,
         scrollStrategy: new AbsoluteScrollStrategy(),
-        positionStrategy: new AutoPositionStrategy({
-            verticalStartPoint: VerticalAlignment.Bottom,
-            horizontalDirection: HorizontalAlignment.Center,
-            horizontalStartPoint: HorizontalAlignment.Center,
-            closeAnimation: null
-        })
-    };
+        positionStrategy: new AutoPositionStrategy(
+            this.getPositionSettings(HorizontalAlignment.Center, VerticalAlignment.Bottom)
+        )};
     private _chartPreviewDialogOverlaySettings = {
         closeOnOutsideClick: false,
         modal: false,
         scrollStrategy: new AbsoluteScrollStrategy(),
         positionStrategy: new AutoPositionStrategy({
-            horizontalDirection: HorizontalAlignment.Center,
-            horizontalStartPoint: HorizontalAlignment.Center,
-            verticalStartPoint: VerticalAlignment.Top,
-            verticalDirection: VerticalAlignment.Top,
-            openAnimation: null,
-            closeAnimation: null
+            ...this.getPositionSettings(HorizontalAlignment.Center, VerticalAlignment.Top),
+            openAnimation: null
         })
     };
 
@@ -98,12 +81,13 @@ export class IgxContextMenuComponent implements AfterViewInit {
 
     public ngAfterViewInit() {
         this.grid.onRangeSelection.pipe(takeUntil(this.destroy$))
-            .subscribe(() => {
+            .subscribe((args) => {
+                this._range = args;
                 this.renderButton();
                 this.chartDirective.chartData =  this.grid.getSelectedData();
             });
         this.grid.verticalScrollContainer.onChunkLoad.pipe(merge(this.grid.parentVirtDir.onChunkLoad),
-            takeUntil(this.destroy$))
+            filter(() => !!this._range), takeUntil(this.destroy$))
             .subscribe(() => {
                 this.renderButton();
                 if (this.tabsMenu && !this.tabsMenu.collapsed) { this.tabsMenu.close(); }
@@ -114,17 +98,21 @@ export class IgxContextMenuComponent implements AfterViewInit {
                     const instance = (args.componentRef.instance as IgxChartMenuComponent);
                     instance.width = this.grid.nativeElement.clientWidth;
                     instance.height = this.grid.nativeElement.clientHeight;
+                    instance.currentChartType = this.chartType;
+                    instance.allCharts = this.chartTypes;
+                    instance.chartDirective = this.chartDirective;
                     instance.onClose.subscribe(() => this.closeDialog());
                 }
             });
-        this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.button.close());
+        this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => {
+            this._range = undefined;
+            this.button.close();
+        });
         this.button.onClosing.pipe(takeUntil(this.destroy$)).subscribe(() => this.tabsMenu.close());
         this.formatter.onFormattersReady.pipe(takeUntil(this.destroy$))
             .subscribe(names => this.textFormatters = names);
         this.chartDirective.onChartTypesDetermined.pipe(takeUntil(this.destroy$))
-        .subscribe(() => {
-            this.chartTypes = this.chartDirective.getAvailableCharts();
-        });
+        .subscribe((args) => this.chartTypes = args.chartsForCreation);
     }
 
     public ngOnDestroy(): void {
@@ -172,13 +160,13 @@ export class IgxContextMenuComponent implements AfterViewInit {
     }
 
     private renderButton() {
-        if (!this.range) { return; }
-        let rowIndex = this.range.rowEnd;
-        let colIndex = +this.range.columnEnd;
-        while (colIndex >= this.range.columnStart && !this.grid.navigation.isColumnFullyVisible(colIndex)) {
+        if (!this._range) { return; }
+        let rowIndex = this._range.rowEnd;
+        let colIndex = +this._range.columnEnd;
+        while (colIndex >= this._range.columnStart && !this.grid.navigation.isColumnFullyVisible(colIndex)) {
             colIndex--;
         }
-        while (rowIndex >= this.range.rowStart && this.grid.navigation.shouldPerformVerticalScroll(rowIndex, -1)) {
+        while (rowIndex >= this._range.rowStart && this.grid.navigation.shouldPerformVerticalScroll(rowIndex, -1)) {
             rowIndex--;
         }
         const field = this.grid.visibleColumns[colIndex] ? this.grid.visibleColumns[colIndex].field : "";
@@ -192,10 +180,12 @@ export class IgxContextMenuComponent implements AfterViewInit {
     }
 
     private isWithInRange(rInex, cIndex) {
-        if (this.range.rowStart === this.range.rowEnd && this.range.columnStart === this.range.columnEnd) {
-            return false;
-        }
-        return rInex >= this.range.rowStart && rInex <= this.range.rowEnd
-            && cIndex >= this.range.columnStart && cIndex <= this.range.columnEnd;
+        return rInex >= this._range.rowStart && rInex <= this._range.rowEnd
+            && cIndex >= this._range.columnStart && cIndex <= this._range.columnEnd;
+    }
+
+    private getPositionSettings(horizontal, vertical) {
+        return { horizontalDirection: horizontal, horizontalStartPoint: horizontal,
+                 verticalStartPoint: vertical, verticalDirection: vertical, closeAnimation: null };
     }
 }
