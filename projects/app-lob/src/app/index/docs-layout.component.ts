@@ -26,7 +26,8 @@ export class DocsLayoutComponent implements OnInit {
             this.styleElem.textContent = e.data.themeStyle;
 
             const typeface = window.getComputedStyle(this.document.body).fontFamily.replace(/\"/g, "");
-            if (!this.typefacesLoaded.includes(typeface)) {
+            if (!(typeface.match(/,/g) || []).length &&
+                !this.typefacesLoaded.includes(typeface)) {
                 this.typefacesLoaded.push(typeface);
                 this.createTypefaceLink(typeface);
             }
