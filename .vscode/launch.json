@@ -5,20 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch via NPM",
+            "name": "Launch Default App Live Editing",
             "type": "node",
             "request": "launch",
-            "runtimeExecutable": "npm",
-            "runtimeArgs": [
-                "run-script",
-                "generate-live-editing:app-lob",
-            ],
+            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "args": ["generate-live-editing"],
+            "stopOnEntry": false,
             "cwd": "${workspaceRoot}",
-            "console": "internalConsole",
-            "port": 9229
+            "console": "internalConsole"
         },
         {
-            "name": "Live-editing Gulp with Charts",
+            "name": "Launch App LOB Live-editing",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
