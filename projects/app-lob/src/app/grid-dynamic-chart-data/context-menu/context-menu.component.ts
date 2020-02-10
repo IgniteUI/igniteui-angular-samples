@@ -62,6 +62,7 @@ export class IgxContextMenuComponent implements AfterViewInit {
     };
     private _chartDialogOS = {closeOnOutsideClick: false };
     private _tabsMenuOverlaySettings = {
+        closeOnOutsideClick: false,
         modal: false,
         scrollStrategy: new AbsoluteScrollStrategy(),
         positionStrategy: new AutoPositionStrategy(
@@ -151,10 +152,12 @@ export class IgxContextMenuComponent implements AfterViewInit {
         this.chartType = type;
         this._dialogId = this._dialogId ? this._dialogId :
             this.overlayService.attach(IgxChartMenuComponent, this._chartDialogOS);
+        this.tabsMenu.close();
         this.overlayService.show(this._dialogId);
     }
 
     public closeDialog() {
+        this.toggleTabMenu();
         this.overlayService.hide(this._dialogId);
         this._dialogId = undefined;
     }

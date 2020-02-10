@@ -11,7 +11,7 @@
         </button>
     </span>
 </div>
-<div class="selection-area" (scroll)="$event.stopPropagation()" (wheel)="$event.stopPropagation()">
+<div class="selection-area">
     <div class="chart-area" [ngClass]="{'expanded': isConfigAreaExpanded}">
         <ng-template #chartArea chartHost></ng-template>
     </div>
