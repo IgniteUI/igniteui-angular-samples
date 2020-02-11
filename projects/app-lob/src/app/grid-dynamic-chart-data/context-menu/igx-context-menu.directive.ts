@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, EventEmitter, Optional, Output, NgZone } from "@angular/core";
+import { AfterViewInit, Directive, EventEmitter, Optional, Output } from "@angular/core";
 import { AbsoluteScrollStrategy, AutoPositionStrategy, HorizontalAlignment, IgxGridComponent,
     IgxOverlayService, OverlayCancelableEventArgs, VerticalAlignment } from "igniteui-angular";
 import { Subject } from "rxjs";
