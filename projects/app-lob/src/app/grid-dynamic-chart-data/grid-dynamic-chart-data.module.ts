@@ -8,8 +8,8 @@ import { IgxBarSeriesModule, IgxCategoryChartModule, IgxCategoryXAxisModule,
 import { IgxPieChartModule } from "igniteui-angular-charts/";
 import { IgxChartMenuComponent } from "./context-menu/chart-dialog/chart-dialog.component";
 import { IgxContextMenuComponent } from "./context-menu/context-menu.component";
-import { ChartHostDirective,
-    ChartIntegrationDirective } from "./directives/chart-integration/chart-integration.directive";
+import { IgxContextMenuDirective } from "./context-menu/igx-context-menu.directive";
+import { ChartIntegrationDirective } from "./directives/chart-integration/chart-integration.directive";
 import { ConditionalFormattingDirective } from "./directives/conditional-formatting/conditional-formatting.directive";
 import { GridDynamicChartDataRoutingModule } from "./grid-dynamic-chart-data-routing.module";
 import { GridDynamicChartDataComponent } from "./grid-dynamic-chart-data.component";
@@ -17,9 +17,9 @@ import { GridDynamicChartDataComponent } from "./grid-dynamic-chart-data.compone
 @NgModule({
     declarations: [
         GridDynamicChartDataComponent,
-        ChartHostDirective,
         ConditionalFormattingDirective,
         ChartIntegrationDirective,
+        IgxContextMenuDirective,
         IgxContextMenuComponent,
         IgxChartMenuComponent
     ],

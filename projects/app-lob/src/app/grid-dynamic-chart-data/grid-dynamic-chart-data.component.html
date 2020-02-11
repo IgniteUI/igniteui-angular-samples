@@ -1,5 +1,5 @@
 <div class="grid-chart-contextmenu-wrapper">
-    <igx-grid #grid chartIntegration  conditionalFormatting primaryKey='ID' displayDensity="compact" [data]="data">
+    <igx-grid #grid chartIntegration conditionalFormatting igxContextMenu primaryKey='ID' displayDensity="compact" [data]="data">
         <igx-column field='ID' [hidden]='true'></igx-column>
         <igx-column field='Category' [editable]="true" [width]="'110px'"></igx-column>
         <igx-column field='Type' [editable]="true" [filterable]='false' [width]="'130px'"></igx-column>
@@ -95,5 +95,4 @@
         <igx-column field='Contract' [editable]="true"></igx-column>
         <igx-column field='Settlement' [width]="'150px'" [editable]="true"></igx-column>
     </igx-grid>
-    <igx-context-menu [grid]="grid" [formatter]="formatting" [chartDirective]="chartIntegration"></igx-context-menu>
 </div>
