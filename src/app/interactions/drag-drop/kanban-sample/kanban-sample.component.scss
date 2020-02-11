@@ -1,5 +1,5 @@
-@mixin vendor-box-shadow(   $x1, $y1, $blur1, $spread1, $rgba1, 
-                            $x2, $y2, $blur2, $spread2, $rgba2, 
+@mixin vendor-box-shadow(   $x1, $y1, $blur1, $spread1, $rgba1,
+                            $x2, $y2, $blur2, $spread2, $rgba2,
                             $x3, $y3, $blur3, $spread3, $rgba3) {
     -webkit-box-shadow: $x1 $y1 $blur1 $spread1 $rgba1, $x2 $y2 $blur2 $spread2 $rgba2, $x3 $y3 $blur3 $spread3 $rgba3;
     -moz-box-shadow: $x1 $y1 $blur1 $spread1 $rgba1, $x2 $y2 $blur2 $spread2 $rgba2, $x3 $y3 $blur3 $spread3 $rgba3;
@@ -34,7 +34,6 @@ article {
     padding: 50px 20px 20px 20px;
     margin: 0px;
     h4 {
-        font-family: Titillium Web;
         font-weight: 600;
         font-style: normal;
         font-size: 20px;
@@ -57,7 +56,6 @@ igx-card {
     max-width: 280px;
     height: 110px;
     margin-bottom: 10px;
-    font-family: Titillium Web;
     &:last-child {
         margin-bottom: unset;
     }
