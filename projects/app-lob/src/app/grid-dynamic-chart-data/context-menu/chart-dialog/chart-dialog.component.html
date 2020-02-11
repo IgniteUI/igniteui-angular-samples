@@ -30,7 +30,7 @@
                 <div>{{chartType | titlecase}} Chart</div>
                 <div class="types-section">
                     <ng-container *ngFor="let chart of allCharts">
-                    <span *ngIf="chart.includes(chartType)"  class="types-section-btn" title="{{chart}}"
+                    <span *ngIf="chart.startsWith(chartType)"  class="types-section-btn" title="{{chart}}"
                             [ngClass]="{'selected': chart === currentChartType}" (click)="createChart(chart)">
                         <img src="assets/images/svg/charts/{{chart}}.svg" />
                     </span>

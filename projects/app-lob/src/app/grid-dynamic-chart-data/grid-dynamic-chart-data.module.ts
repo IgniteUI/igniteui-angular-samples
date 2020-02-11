@@ -51,6 +51,7 @@ import { GridDynamicChartDataComponent } from "./grid-dynamic-chart-data.compone
         IgxItemLegendComponent,
         IgxLegendComponent,
         IgxPieChartComponent,
+        IgxContextMenuComponent,
         IgxChartMenuComponent
     ]
 })

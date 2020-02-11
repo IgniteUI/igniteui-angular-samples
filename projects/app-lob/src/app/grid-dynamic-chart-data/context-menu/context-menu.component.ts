@@ -12,9 +12,9 @@ import { IgxChartMenuComponent } from "./chart-dialog/chart-dialog.component";
 export class IgxContextMenuComponent implements AfterViewInit {
 
     @ViewChild("analyticsBtn") public button: ElementRef;
-    @ViewChild("tabsMenu", {read: IgxToggleDirective}) public tabsMenu: IgxToggleDirective;
+    @ViewChild("tabsMenu", { read: IgxToggleDirective }) public tabsMenu: IgxToggleDirective;
     @ViewChild("chartPreview", { read: ViewContainerRef }) public chartPreview: ViewContainerRef;
-    @ViewChild("chartPreviewDialog", {read: IgxToggleDirective}) public chartPreviewDialog: IgxToggleDirective;
+    @ViewChild("chartPreviewDialog", { read: IgxToggleDirective }) public chartPreviewDialog: IgxToggleDirective;
 
     public contextDirective;
     public chartTypes = [];
@@ -73,6 +73,7 @@ export class IgxContextMenuComponent implements AfterViewInit {
         this.chartPreview.clear();
         this.contextDirective.chartsDirective.chartFactory(currentChartType, this.chartPreview);
         this._chartPreviewDialogOS.positionStrategy.settings.target = this.tabsMenu.element;
+        this._chartPreviewDialogOS.positionStrategy.settings.openAnimation = null;
         this.chartPreviewDialog.open(this._chartPreviewDialogOS);
     }
 

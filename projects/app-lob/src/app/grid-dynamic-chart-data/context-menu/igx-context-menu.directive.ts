@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, EventEmitter, Optional, Output } from "@angular/core";
+import { AfterViewInit, Directive, EventEmitter, Optional, Output, NgZone } from "@angular/core";
 import { AbsoluteScrollStrategy, AutoPositionStrategy, HorizontalAlignment, IgxGridComponent,
     IgxOverlayService, OverlayCancelableEventArgs, VerticalAlignment } from "igniteui-angular";
 import { Subject } from "rxjs";
@@ -59,7 +59,9 @@ export class IgxContextMenuDirective implements AfterViewInit  {
         this.grid.onRangeSelection.pipe(takeUntil(this.destroy$))
         .subscribe((args) => {
             this._range = args;
-            if (this.chartsDirective)  { this.chartsDirective.chartData =  this.grid.getSelectedData(); }
+            if (this.chartsDirective) {
+                this.chartsDirective.chartData =  this.grid.getSelectedData();
+            }
             this.renderButton();
         });
         this.grid.verticalScrollContainer.onChunkLoad.pipe(merge(this.grid.parentVirtDir.onChunkLoad),
@@ -68,9 +70,11 @@ export class IgxContextMenuDirective implements AfterViewInit  {
                 this.onButtonClose.emit();
                 this.renderButton();
         });
-        this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => {
-            this._range = undefined;
-            this.close();
+        this.grid.onSelection.pipe(takeUntil(this.destroy$)).subscribe(() => {
+           if (this.grid.selectedCells.length < 2) {
+                this._range = undefined;
+                this.close();
+           }
         });
     }
 
