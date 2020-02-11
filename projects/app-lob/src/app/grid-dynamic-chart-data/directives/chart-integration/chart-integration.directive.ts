@@ -18,12 +18,6 @@ export interface IDeterminedChartTypesArgs {
 }
 
 @Directive({
-    selector: "[chartHost]"
-})
-export class ChartHostDirective {
-    constructor(public viewContainerRef: ViewContainerRef) { }
-}
-@Directive({
     selector: "[chartIntegration]"
 })
 export class ChartIntegrationDirective {

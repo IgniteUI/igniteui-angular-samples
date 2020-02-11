@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, EventEmitter, HostBinding,
-    Input, Output, ViewChild, ViewEncapsulation} from "@angular/core";
-import { ChartHostDirective } from '../../directives/chart-integration/chart-integration.directive';
+    Output, ViewChild, ViewContainerRef, ViewEncapsulation} from "@angular/core";
 @Component({
     selector: "igx-chart-menu",
     templateUrl: "./chart-dialog.component.html",
@@ -9,11 +8,11 @@ import { ChartHostDirective } from '../../directives/chart-integration/chart-int
 })
 export class IgxChartMenuComponent implements AfterViewInit {
 
-    @ViewChild("chartArea", { read: ChartHostDirective }) public chartArea: ChartHostDirective;
+    @ViewChild("chartArea", { read: ViewContainerRef }) public chartArea: ViewContainerRef;
 
     @Output()
     public onClose = new EventEmitter<any>();
-    @Input()
+
     @HostBinding("style.width.px")
     public get width() {
         return this.fullScreen ? this._width : 0.7 * this._width;
@@ -22,7 +21,6 @@ export class IgxChartMenuComponent implements AfterViewInit {
         this._width = value;
     }
 
-    @Input()
     @HostBinding("style.height.px")
     public get height() {
         return this.fullScreen ? this._height : 0.7 * this._height;
@@ -31,15 +29,9 @@ export class IgxChartMenuComponent implements AfterViewInit {
         this._height = value;
     }
 
-    @Input()
     public chartDirective;
-
-    @Input()
     public currentChartType;
-
-    @Input()
     public allCharts = [];
-
     public fullScreen = false;
     public isConfigAreaExpanded = false;
     public mainChartTypes = ["Column", "Area", "Bar", "Line", "Scatter", "Pie"];
@@ -59,7 +51,7 @@ export class IgxChartMenuComponent implements AfterViewInit {
     }
 
     public createChart(chartType) {
-        this.chartArea.viewContainerRef.clear();
-        this.chartDirective.chartFactory(chartType, this.chartArea.viewContainerRef);
+        this.chartArea.clear();
+        this.chartDirective.chartFactory(chartType, this.chartArea);
     }
 }
