@@ -10,7 +10,6 @@ import {
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
     IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
-import { TaskPlannerComponent } from "../grid-taskplanner/task-planner/taskplanner.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
 
@@ -25,8 +24,7 @@ import { GridsDVRoutingModule } from "./grids-routing.module";
 @NgModule({
     declarations: [
         GridComponent,
-        GridMasterDetailSampleComponent,
-        TaskPlannerComponent
+        GridMasterDetailSampleComponent
     ],
     imports: [
         CommonModule,

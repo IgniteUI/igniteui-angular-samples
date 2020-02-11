@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { ControlContainer, NgForm } from "@angular/forms";
 import { DefaultSortingStrategy, IGridEditEventArgs, IgxDialogComponent,
-    IgxGridComponent,
-    IgxToastComponent,
-    SortingDirection} from "igniteui-angular";
+    IgxGridComponent, IgxToastComponent,
+    SortingDirection, Transaction} from "igniteui-angular";
 import { IgxLegendComponent } from "igniteui-angular-charts";
 import { TasksDataService } from "../../services/tasks.service";
 import { MEMBERS } from "../../services/tasksData";
@@ -20,6 +19,7 @@ export interface ITask {
     isActive?: boolean;
     priority?: string;
     milestone?: string;
+    description?: string;
     status?: string;
     owner?: {
       id: number;
@@ -36,30 +36,33 @@ export interface ITask {
 }
 
 @Component({
-    providers: [TasksDataService, { provide: ControlContainer, useExisting: NgForm }],
+    providers: [TasksDataService, { provide: ControlContainer, useExisting: NgForm }
+       ],
     selector: "app-taskplanner",
     templateUrl: "./taskplanner.component.html",
     styleUrls: ["./taskplanner.component.scss"]
 })
 export class TaskPlannerComponent implements OnInit {
 
-    @ViewChild("grid1", { static: true }) public grid: IgxGridComponent;
+    @ViewChild("tasksGrid", { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
     @ViewChild("legend", { static: true }) public legend: IgxLegendComponent;
     @ViewChild(IgxToastComponent, { read: IgxToastComponent, static: true }) public toast: IgxToastComponent;
-    // @ViewChild("MyInputGroup", { static: true }) public inputGroup: IgxInputGroupComponent;
     @ViewChild("addTaskDialog", { static: true }) public addTaskDialog: IgxDialogComponent;
+    @ViewChild("transactionsDialog", { static: true }) public transactionsDialog: IgxDialogComponent;
+    @ViewChild("transactionsGrid", { static: true }) public transactionsGrid: IgxGridComponent;
 
     public localData: any[];
     public teamMembers: any[];
     public editMode = editMode.cellEditing;
     public addTaskForm: ITask = { };
+    public batchEditingEnabled = true;
+    public transactionsData: Transaction[] = [];
 
     public statuses = [
         { value: "New" },
         { value: "In Progress" },
         { value: "Done" },
-        { value: "Delayed" },
-        { value: "Completed "}
+        { value: "Delayed" }
     ];
 
     public priority = [
@@ -145,6 +148,11 @@ export class TaskPlannerComponent implements OnInit {
         this.dataService.getData().subscribe(data => this.localData = data);
         this.teamMembers = MEMBERS;
 
+        this.transactionsData = this.grid.transactions.getAggregatedChanges(true);
+        this.grid.transactions.onStateUpdate.subscribe(() => {
+            this.transactionsData = this.grid.transactions.getAggregatedChanges(true);
+        });
+
         this.grid.groupingExpressions = [{
             dir: SortingDirection.Asc,
             fieldName: "milestone",
@@ -177,8 +185,63 @@ export class TaskPlannerComponent implements OnInit {
         this.addTaskDialog.close();
     }
 
+    public deleteTask(rowID) {
+        this.grid.deleteRow(rowID);
+    }
+
     public formatID(value: number): string {
         return "#" + value;
+    }
+
+    public undo() {
+        this.grid.transactions.undo();
+    }
+
+    public redo() {
+        this.grid.transactions.redo();
+    }
+
+    public openCommitDialog() {
+        this.transactionsDialog.open();
+        this.transactionsGrid.reflow();
+    }
+
+    public commit() {
+        this.grid.transactions.commit(this.localData);
+        this.transactionsDialog.close();
+    }
+
+    public cancel() {
+        this.transactionsDialog.close();
+    }
+
+    public discard() {
+        this.grid.transactions.clear();
+        this.transactionsDialog.close();
+    }
+
+    public get undoEnabled(): boolean {
+        return this.grid.transactions.canUndo;
+    }
+
+    public get redoEnabled(): boolean {
+        return this.grid.transactions.canRedo;
+    }
+
+    public get hasTransactions(): boolean {
+        return this.grid.transactions.getAggregatedChanges(false).length > 0;
+    }
+
+    public stateFormatter(value) {
+        return JSON.stringify(value);
+    }
+
+    public typeFormatter(value) {
+        return value.toUpperCase();
+    }
+
+    public classFromType(type: string): string {
+        return `transaction--${type.toLowerCase()}`;
     }
 
     public formatHours(value: number): string {

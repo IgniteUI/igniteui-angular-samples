@@ -141,32 +141,6 @@ export const TASKS_DATA = [
       hours_spent: 0
     },
     {
-      id: 5121,
-      milestone: "Q4 2019",
-      issue: "[igx-combo] Expose combo overlay settings combo enhancement feature-request status: in-review version: 8.0.x",
-      details: "",
-      acceptance_criteria: {
-        hasAPI: true,
-        hasTests: true,
-        builds: true
-      },
-      isActive: true,
-      priority: "Critical",
-      status: "Done",
-      owner: {
-        id: 10,
-        name: "Phill Rumsfeld",
-        sex: "male",
-        team: "Samsara",
-        avatar: "assets/images/men/4.jpg"
-      },
-      created_by: "pwnjs@infragistics.com",
-      started_on: "2019-09-07T05:44:08.809Z",
-      deadline: "2019-12-30T22:00:00.000Z",
-      estimation: 53,
-      hours_spent: 53
-    },
-    {
       id: 5122,
       milestone: "Q4 2019",
       issue: "[igxForOf] Automatically recalc chunkSize on [itemSize] change or provide method to do so enhancement feature-request status: resolved version: 7.3.x version: 8.0.x virtualization",

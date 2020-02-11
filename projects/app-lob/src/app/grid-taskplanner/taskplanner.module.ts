@@ -1,21 +1,27 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { FormControl, FormsModule } from "@angular/forms";
-import { IgxInputDirective, IgxInputGroupModule } from "igniteui-angular";
+import { FormsModule } from "@angular/forms";
+import { IgxButtonGroupModule, IgxDialogModule, IgxGridModule, IgxInputGroupModule,
+    IgxMaskModule, IgxSwitchModule} from "igniteui-angular";
 import { TasksDataService } from "../services/tasks.service";
 import { TaskPlannerComponent } from "./task-planner/taskplanner.component";
+import { GridWithTransactionsComponent } from "./task-planner/transaction.component";
 import { TaskPlannerRoutingModule } from "./taskplanner-routing.module";
 
 @NgModule({
     declarations: [
         TaskPlannerComponent,
-        IgxInputDirective
+        GridWithTransactionsComponent
     ],
     imports: [
         CommonModule,
+        IgxGridModule,
         FormsModule,
+        IgxMaskModule,
+        IgxDialogModule,
         IgxInputGroupModule,
-        FormControl,
+        IgxButtonGroupModule,
+        IgxSwitchModule,
         TaskPlannerRoutingModule
     ],
     providers: [TasksDataService]
