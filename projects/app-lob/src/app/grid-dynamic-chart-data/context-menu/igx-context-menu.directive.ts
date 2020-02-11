@@ -31,7 +31,6 @@ export class IgxContextMenuDirective implements AfterViewInit  {
             verticalDirection: VerticalAlignment.Bottom, closeAnimation: null
         })
     };
-
     constructor(public grid: IgxGridComponent,
                 @Optional() public textFormatter: ConditionalFormattingDirective,
                 @Optional() public chartsDirective: ChartIntegrationDirective,
@@ -60,7 +59,7 @@ export class IgxContextMenuDirective implements AfterViewInit  {
         this.grid.onRangeSelection.pipe(takeUntil(this.destroy$))
         .subscribe((args) => {
             this._range = args;
-            this.chartsDirective.chartData =  this.grid.getSelectedData();
+            if (this.chartsDirective)  { this.chartsDirective.chartData =  this.grid.getSelectedData(); }
             this.renderButton();
         });
         this.grid.verticalScrollContainer.onChunkLoad.pipe(merge(this.grid.parentVirtDir.onChunkLoad),
@@ -74,6 +73,7 @@ export class IgxContextMenuDirective implements AfterViewInit  {
             this.close();
         });
     }
+
     private renderButton() {
         if (!this._range) { return; }
         let rowIndex = this._range.rowEnd;
@@ -93,6 +93,7 @@ export class IgxContextMenuDirective implements AfterViewInit  {
         this._analyticsBtnSettings.positionStrategy.settings.target = cell.nativeElement;
         this._collapsed ? this.show() : this.overlayService.reposition(this._id);
     }
+
     private show() {
         if (!this._collapsed) { return; }
         this._collapsed = false;
@@ -100,6 +101,7 @@ export class IgxContextMenuDirective implements AfterViewInit  {
             this.overlayService.attach(IgxContextMenuComponent, this._analyticsBtnSettings);
         this.overlayService.show(this._id);
     }
+
     private close() {
         if (this._collapsed) { return; }
         this._collapsed = true;
@@ -107,6 +109,7 @@ export class IgxContextMenuDirective implements AfterViewInit  {
         this.onButtonClose.emit();
         this._id = undefined;
     }
+
     private isWithInRange(rInex, cIndex) {
         return rInex >= this._range.rowStart && rInex <= this._range.rowEnd
             && cIndex >= this._range.columnStart && cIndex <= this._range.columnEnd;
