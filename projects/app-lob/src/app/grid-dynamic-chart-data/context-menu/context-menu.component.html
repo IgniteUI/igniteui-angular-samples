@@ -1,11 +1,11 @@
-<span #analyticsBtn igxToggle class="analytics-btn">
+<span #analyticsBtn class="analytics-btn">
     <button #btn igxButton="icon" (click)="toggleTabMenu()">
         <igx-icon #icon class="icon" fontSet="material">insert_chart_outlined</igx-icon>
     </button>
 </span>
 <div #tabsMenu igxToggle class="toggle-content">
-    <igx-tabs tabsType="fixed" >
-        <igx-tabs-group class="tabs" label="Conditional Formatting" [disabled]="!options.textFormatting">
+    <igx-tabs tabsType="fixed" [selectedIndex]="!this.textFormatters.length ? 1 : 0" >
+        <igx-tabs-group class="tabs" label="Conditional Formatting" [disabled]="!textFormatters.length">
             <span class="tab-option">
                 <span *ngFor="let condition of textFormatters" class="action btn condition" (click)="formatCells(condition)">
                     <img class="imgSize" src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg" />
@@ -17,7 +17,7 @@
                 <span class="btn name">Clear All</span>
             </span>
         </igx-tabs-group>
-        <igx-tabs-group class="tabs" label="Create Chart" [disabled]="!options.chartCreation">
+        <igx-tabs-group class="tabs" label="Create Chart" [disabled]="!chartTypes.length">
             <span class="tab-option">
                 <span *ngFor="let chart of chartTypes | slice:0:4" class="action btn chart"  [ngClass]="{'selected': chart === chartType}"
                 (mouseenter)="previewChart(chart)" (mouseleave)="hidePreview()" (click)="openDialog(chart)">
@@ -25,7 +25,7 @@
                     <span class="name">{{chart}}</span>
                 </span>
             </span>
-            <span class="more-action chart">
+            <span class="more-action chart" (click)="openDialog(chartTypes[0])">
                 <button class="more-btn more-icon" igxButton="icon" igxButtonBackground="#EBEBEB" igxButtonColor="black">
                     <igx-icon class="icon" fontSet="material">more_horiz</igx-icon>
                 </button>
@@ -39,6 +39,6 @@
         <h5>Preview Chart</h5>
     </div>
     <div class="chart-preview-area">
-        <ng-template #chartPreview chartHost></ng-template>
+        <ng-template #chartPreview></ng-template>
     </div>
 </div>
