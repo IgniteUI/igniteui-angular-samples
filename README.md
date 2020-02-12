@@ -5,7 +5,8 @@
 
 This project is using Ignite UI for Angular components to demonstrate different scenarios related to the usage of each component. The project is tightly related to [Ignite UI DocFX Site Builder](https://github.com/IgniteUI/igniteui-docfx). All samples are part of the official component topics from our [website](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid.html).
 
-The project is divided into two two separate applications:
+The project is divided into two separate applications:
+
 
 - A `default application`, which uses all the [igniteui-angular](https://travis-ci.org/IgniteUI/igniteui-angular) components to demonstrate sample applications
 

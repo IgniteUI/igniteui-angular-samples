@@ -5,13 +5,27 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch Default App Live Editing",
             "type": "node",
             "request": "launch",
-            "name": "Gulp generate-live-editing",
-            "program": "${workspaceFolder}/node_modules/gulp/bin/gulp.js",
-            "args": [
-                "generate-live-editing"
-            ]
+            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "args": ["generate-live-editing"],
+            "stopOnEntry": false,
+            "cwd": "${workspaceRoot}",
+            "console": "internalConsole"
+        },
+        {
+            "name": "Launch App LOB Live-editing",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "stopOnEntry": false,
+            "args": ["generate-live-editing", "--appDv=true"],
+            "cwd": "${workspaceRoot}",
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "console": "internalConsole",
         }
     ]
 }

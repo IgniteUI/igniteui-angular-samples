@@ -60,8 +60,10 @@ export class HGridRowReorderComponent {
         // get the row which the dragged row was dropped on
         for (const row of rowListArr) {
             const rowRect = row.nativeElement.getBoundingClientRect();
-            if (cursorPosition.y > rowRect.top && cursorPosition.y < rowRect.bottom &&
-                cursorPosition.x > rowRect.left && cursorPosition.x < rowRect.right) {
+            if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&
+                cursorPosition.x > rowRect.left + window.scrollX && cursorPosition.x < rowRect.right + window.scrollX) {
+                return row;
+            } else if (row === rowListArr[rowListArr.length - 1] && cursorPosition.y > rowRect.bottom) {
                 return row;
             } else if (row === rowListArr[rowListArr.length - 1] && cursorPosition.y > rowRect.bottom) {
                 return row;

@@ -1,5 +1,6 @@
-﻿<ul #listContainer class="list-container">
-    <li *ngFor="let employee of employees; index as targetIndex;"
+﻿<igx-list #listContainer class="list-container">
+    <igx-list-item *ngFor="let employee of employees; index as targetIndex;"
+        class="list-item"
         #dragDirRef=drag
         igxDrop 
         [igxDrag]="{ id: employee.id, dragged: false }"
@@ -8,12 +9,9 @@
         (dragMove)="onDragMove($event, targetIndex)"
         (dragEnd)="onDragEnd($event, targetIndex)"
         (transitioned)="onTransitioned($event, targetIndex)"
-        class="list-item-container"
-        [class.list-item-dragged]="dragDirRef.data.dragged">
-            <div class="text-container">
-                <div class="name">{{employee.name}}</div>
-                <div class="title">{{employee.title}}</div>
-            </div>
-            <igx-icon igxDragHandle fontSet="material" class="dialogHandle">drag_indicator</igx-icon>
-    </li>
-</ul>
+        [class.list-item-dragged]="dragDirRef.data ? dragDirRef.data.dragged : false">
+            <span igxListLineTitle>{{employee.name}}</span>
+            <span igxListLineSubTitle>{{employee.title}}</span>
+            <igx-icon igxDragHandle igxListAction fontSet="material" class="dialogHandle">drag_indicator</igx-icon>
+    </igx-list-item>
+</igx-list>

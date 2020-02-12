@@ -1,0 +1,215 @@
+<div igxOverlayOutlet class="grid-chart-contextmenu-wrapper">
+    <igx-grid #grid chartIntegration  conditionalFormatting [formatter]="currentFormatter" [chartData]="chartData"
+         primaryKey='ID' displayDensity="compact" [data]="data">
+        <igx-column field='ID' [hidden]='true'></igx-column>
+        <igx-column field='Category' [editable]="true" [width]="'110px'"></igx-column>
+        <igx-column field='Type' [editable]="true" [filterable]='false' [width]="'130px'"></igx-column>
+        <igx-column field='Country' [editable]="true" [width]="'100px'"></igx-column>
+        <igx-column field='Price' dataType="number" [width]="'120px'" [editable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field='Start(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
+        </igx-column>
+        <igx-column field='Start(Y)Diff' dataType="number" [width]="'120px'" [editable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | number:'1.4-4'}}%</span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field='Buy' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
+        </igx-column>
+        <igx-column field='BuyDiff' dataType="number" [width]="'120px'" [editable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | number:'1.4-4'}}%</span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field='High(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
+        </igx-column>
+        <igx-column field='High(Y)Diff' [width]="'120px'" dataType="number" [formatter]="formatCurrency"
+            [editable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field='Open Price' dataType="number" [formatter]="formatCurrency" [editable]="true"
+            [width]="'130px'">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field='OpenPriceDiff' dataType="number" [width]="'140px'" [editable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | number:'1.4-4'}}%</span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field='Low(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
+        </igx-column>
+        <igx-column field='Low(Y)Diff' dataType="number" [width]="'120px'" [editable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | number:'1.4-4'}}%</span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field='High(D)' [width]="'100px'" dataType="number" [headerClasses]="'headerAlignSyle'"
+            [editable]="true" [formatter]="formatCurrency">
+        </igx-column>
+        <igx-column field='High(D)Diff' dataType="number" [width]="'120px'" [editable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | number:'1.4-4'}}%</span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field='Low(D)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
+        </igx-column>
+        <igx-column field='Low(D)Diff' dataType="number" [width]="'120px'" [editable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | number:'1.4-4'}}%</span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field='Sell' [width]="'110px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
+        </igx-column>
+        <igx-column field='SellDiff' dataType="number" [width]="'120px'" [editable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | number:'1.4-4'}}%</span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field='Region' [editable]="true"></igx-column>
+        <igx-column field='Contract' [editable]="true"></igx-column>
+        <igx-column field='Settlement' [width]="'150px'" [editable]="true"></igx-column>
+    </igx-grid>
+</div>
+
+<span *ngIf="contextmenu" class="analytics-btn" [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}">
+    <button igxButton="icon" (click)="toggleChartSelectionDialog($event)">
+        <igx-icon #icon style="pointer-events: none;" class="icon" fontSet="material">insert_chart_outlined</igx-icon>
+    </button>
+</span>
+<!-- this block can be moved in another component -->
+<igx-dialog #chartSelectionDialog>
+    <igx-tabs type="fixed">
+        <igx-tabs-group label="Conditional Formatting">
+            <div class="tab-options-wrapper">
+                <div class="tab-option">
+                    <div *ngFor="let condition of formattersNames" class="action">
+                        <div class="btn condition" (click)="analyse(condition)">
+                            <img style="width: 36px; height: 36px;"
+                                src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg" />
+                            <span class="name">{{condition.replace('10', '10%')}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear action">
+                    <div class="btn" (click)="clearFormatting()" [ngClass]="{'disableButton': !currentFormatter}">
+                        <img style="width: 36px; height: 36px;"
+                             src="assets/images/svg/conditions/Clear.svg" />
+                         <span class="name">Clear All</span>
+                    </div>
+                </div>
+            </div>
+        </igx-tabs-group>
+
+        <igx-tabs-group label="Create Chart" [disabled]="disableCreateChart">
+            <div class="tab-options-wrapper">
+                <div class="tab-option">
+                    <div *ngFor="let chart of availableCharts | slice:0:4" class="action">
+                        <div class="btn chart"
+                            (pointerdown)="createChart(currentChartType, chartHost, chartDialog, _chartDialogOverlaySettings)"
+                            (mouseleave)="chartPreviewDialog.close();"
+                            (mouseenter)="previewChart(chart)"
+                            [ngClass]="{'selected': chart === currentChartType}">
+                            <img style="width: 48px; height: 48px;"
+                                 src="assets/images/svg/charts/{{chart}}.svg" />
+                            <span class="name">{{chart | name}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="more-action">
+                    <div class="btn chart">
+                        <button class="more-btn" (click)="createChart(currentChartType, chartHost, chartDialog, _chartDialogOverlaySettings)"
+                                igxButton="icon"
+                                igxButtonBackground="#EBEBEB"
+                                igxButtonColor="black"
+                                style="width: 36px; height: 36px; border-radius: 50px; align-self: center;">
+                                <igx-icon class="icon" style="pointer-events: none;" fontSet="material">more_horiz</igx-icon>
+                        </button>
+                        <span class="name">More...</span>
+                    </div>
+                </div>
+            </div>
+        </igx-tabs-group>
+    </igx-tabs>
+</igx-dialog>
+
+<igx-dialog #chartPreviewDialog>
+    <div style="height: 300px;">
+        <div style="margin: 1rem;">
+            <h5 igxCardHeaderTitle style="justify-self: center;">Preview Chart</h5>
+        </div>
+        <ng-template #chartPreview chartHost></ng-template>
+    </div>
+</igx-dialog>
+
+<igx-dialog #chartDialog class="chart-dialog" [closeOnOutsideSelect]="true">
+    <div class="header">
+        <span class="header-text">
+            {{ currentChartType.replace('100', ' 100% ') | name | titlecase }} Chart
+        </span>
+        <div class="action-buttons-wrapper">
+            <button igxButton="icon" (click)="toggleFullScreen()">
+                <igx-icon class="material">fullscreen{{fullScreenOpened ? '_exit' : ''}}</igx-icon>
+            </button>
+            <button igxButton="icon" (click)="chartDialog.close()">
+                <igx-icon class="material">close</igx-icon>
+            </button>
+        </div>
+    </div>
+    <div class="selection-area">
+        <div class="chart-area" [ngClass]="{'expanded': chartCondigAreaState === 'closed'}">
+            <ng-template #chart chartHost></ng-template>
+        </div>
+        <span>
+            <button igxButton="icon" igxRipple (click)="toggle()">
+                <igx-icon fontSet="material">chevron_{{ opened ? 'right': 'left'}}</igx-icon>
+            </button>
+        </span>
+        <div #configArea class="chart-config-area {{chartCondigAreaState}}">
+            <div class="config-area-header">
+                <span style="font-weight: bold;">Chart Types</span>
+            </div>
+            <igx-divider class="divider"></igx-divider>
+            <div *ngFor="let chartType of chartTypes">
+                <div *ngIf="(availableCharts |filterType:chartType).length > 0" class="wrapper">
+                    <div>{{chartType | titlecase}} Chart</div>
+                    <div class="types-section">
+                        <div *ngFor="let chart of (availableCharts | filterType: chartType)"
+                             (click)="createChart(chart, chartHost, chartDialog, chartDialog)"
+                             style="width: 40%; margin-right: 5px; cursor: pointer;"
+                             [ngClass]="{'selected': chart === currentChartType}">
+                            <img src="assets/images/svg/charts/{{chart}}.svg" />
+                        </div>
+                    </div>
+                    <igx-divider></igx-divider>
+                </div>
+            </div>
+        </div>
+    </div>
+</igx-dialog>

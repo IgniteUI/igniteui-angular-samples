@@ -2,7 +2,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
-import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
@@ -22,6 +21,8 @@ import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
+import { GridExternalAdvancedFilteringComponent } from "./grid-external-advanced-filtering/grid-external-advanced-filtering.component";
+import { GridExternalExcelStyleFilteringComponent } from "./grid-external-excel-style-filtering/grid-external-excel-style-filtering.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
@@ -76,10 +77,10 @@ import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
+import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
 import {
     GridConditionalRowSelectorsComponent
 } from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
-import { GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -93,12 +94,6 @@ import {
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
-    {
-        component: GridComponent,
-        // tslint:disable-next-line:no-string-literal
-        data: gridsRoutesData["grid"],
-        path: "grid"
-    },
     {
         component: GridSample3Component,
         data: gridsRoutesData["grid-summary"],
@@ -228,6 +223,16 @@ export const gridsRoutes: Routes = [
         component: ExcelStyleFilteringStyleComponent,
         data: gridsRoutesData["grid-excel-style-filtering-style"],
         path: "grid-excel-style-filtering-style"
+    },
+    {
+        component: GridExternalExcelStyleFilteringComponent,
+        data: gridsRoutesData["grid-external-excel-style-filtering"],
+        path: "grid-external-excel-style-filtering"
+    },
+    {
+        component: GridExternalAdvancedFilteringComponent,
+        data: gridsRoutesData["grid-external-advanced-filtering"],
+        path: "grid-external-advanced-filtering"
     },
     {
         component: GridCustomFilteringComponent,
@@ -500,9 +505,9 @@ export const gridsRoutes: Routes = [
         path: "grid-conditional-row-selectors"
     },
     {
-        component: GridDynamicChartDataComponent,
-        data: gridsRoutesData["grid-dynamic-chart-data"],
-        path: "grid-dynamic-chart-data"
+        component: GridCollapsibleColumnGroupsComponent,
+        data: gridsRoutesData["grid-collapsible-groups"],
+        path: "grid-collapsible-groups"
     },
     {
         component: GridAllDataSummaryComponent,

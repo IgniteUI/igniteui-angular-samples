@@ -1,0 +1,16 @@
+<div class="container">
+    <button igxButton="fab" igxRipple="white" (click)="decrease()">
+        <igx-icon fontSet="material">keyboard_arrow_left</igx-icon>
+    </button>
+    <div class="slider-container">
+        <igx-slider
+            [maxValue]="20"
+            [showTicks]="true"
+            [secondaryTicks]="21"
+            [secondaryTickLabels]="false"
+            [ticksOrientation]="ticksOrientation"></igx-slider>
+    </div>
+    <button igxButton="fab" igxRipple="white" (click)="increase()">
+        <igx-icon fontSet="material">keyboard_arrow_right</igx-icon>
+    </button>
+</div>
