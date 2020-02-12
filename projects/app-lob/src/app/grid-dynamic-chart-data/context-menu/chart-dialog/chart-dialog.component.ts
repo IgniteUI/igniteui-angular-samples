@@ -51,6 +51,7 @@ export class IgxChartMenuComponent implements AfterViewInit {
     }
 
     public createChart(chartType) {
+        this.currentChartType = chartType.split(/(?=[A-Z])/).toString().replace(",", " ");
         this.chartArea.clear();
         this.chartDirective.chartFactory(chartType, this.chartArea);
     }
