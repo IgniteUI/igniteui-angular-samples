@@ -10,7 +10,7 @@ import { IgxContextMenuComponent } from "./context-menu.component";
 @Directive({
     selector: "[igxContextMenu]"
 })
-export class IgxContextMenuDirective implements AfterViewInit  {
+export class IgxContextMenuDirective implements AfterViewInit {
 
     @Output() public onButtonClose = new EventEmitter<any>();
 
@@ -34,17 +34,17 @@ export class IgxContextMenuDirective implements AfterViewInit  {
     constructor(public grid: IgxGridComponent,
                 @Optional() public textFormatter: ConditionalFormattingDirective,
                 @Optional() public chartsDirective: ChartIntegrationDirective,
-                private overlayService: IgxOverlayService) {}
+                private overlayService: IgxOverlayService) { }
 
     public ngAfterViewInit() {
         this.setUpGridListeners();
         if (this.textFormatter) {
             this.textFormatter.onFormattersReady.pipe(takeUntil(this.destroy$))
-            .subscribe(names => this.formatters = names);
+                .subscribe(names => this.formatters = names);
         }
         if (this.chartsDirective) {
             this.chartsDirective.onChartTypesDetermined.pipe(takeUntil(this.destroy$))
-            .subscribe((args) => this.charts = args.chartsForCreation);
+                .subscribe((args) => this.charts = args.chartsForCreation);
         }
         this.overlayService.onOpening.pipe(takeUntil(this.destroy$))
             .subscribe((args: OverlayCancelableEventArgs) => {
@@ -57,27 +57,27 @@ export class IgxContextMenuDirective implements AfterViewInit  {
 
     private setUpGridListeners() {
         this.grid.onRangeSelection.pipe(takeUntil(this.destroy$))
-        .subscribe((args) => {
-            this._range = args;
-            if (this.chartsDirective) {
-                this.chartsDirective.chartData =  this.grid.getSelectedData();
-            }
-            this.renderButton();
-        });
+            .subscribe((args) => {
+                this._range = args;
+                if (this.chartsDirective) {
+                    this.chartsDirective.chartData = this.grid.getSelectedData();
+                }
+                this.renderButton();
+            });
         this.grid.verticalScrollContainer.onChunkLoad.pipe(
             merge(this.grid.parentVirtDir.onChunkLoad, this.grid.onFilteringDone, this.grid.onColumnResized,
                 this.grid.onColumnVisibilityChanged.pipe(debounceTime(30))),
             filter(() => this._range), takeUntil(this.destroy$)).subscribe(() => {
                 this.onButtonClose.emit();
                 this.renderButton();
-        });
+            });
         this.grid.onSelection.pipe(merge(this.grid.onPagingDone, this.grid.onGroupingDone, this.grid.perPageChange),
             takeUntil(this.destroy$)).subscribe((args: any) => {
                 if (this.grid.selectedCells.length < 2 || args.expressions) {
                     this._range = undefined;
                     this.close();
                 }
-        });
+            });
     }
 
     private renderButton() {

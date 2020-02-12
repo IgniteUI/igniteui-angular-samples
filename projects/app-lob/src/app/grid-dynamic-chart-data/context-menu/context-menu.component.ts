@@ -19,7 +19,6 @@ export class IgxContextMenuComponent implements AfterViewInit {
     public contextDirective;
     public chartTypes = [];
     public textFormatters = [];
-    public currentFormatter;
     public currentChartType;
     private destroy$ = new Subject<any>();
     private _dialogId;
@@ -33,7 +32,7 @@ export class IgxContextMenuComponent implements AfterViewInit {
         this.chartTypes = this.contextDirective.charts;
         this.textFormatters = this.contextDirective.formatters;
         this.contextDirective.onButtonClose.pipe(takeUntil(this.destroy$))
-        .subscribe(() => { if (this.tabsMenu && !this.tabsMenu.collapsed) { this.tabsMenu.close(); }});
+            .subscribe(() => { if (this.tabsMenu && !this.tabsMenu.collapsed) { this.tabsMenu.close(); } });
         this.overlayService.onOpening.pipe(takeUntil(this.destroy$))
             .subscribe((args: OverlayCancelableEventArgs) => {
                 if (args.componentRef) {
@@ -59,12 +58,10 @@ export class IgxContextMenuComponent implements AfterViewInit {
     }
 
     public formatCells(condition) {
-        this.currentFormatter = condition;
         this.contextDirective.textFormatter.formatCells(condition);
     }
 
     public clearFormat() {
-        this.currentFormatter = undefined;
         this.contextDirective.textFormatter.clearFormatting();
     }
 
@@ -99,9 +96,9 @@ export class IgxContextMenuComponent implements AfterViewInit {
         return {
             closeOnOutsideClick: false, modal: false,
             scrollStrategy: new AbsoluteScrollStrategy(),
-            positionStrategy: new AutoPositionStrategy(
-            { horizontalDirection: horizontal, horizontalStartPoint: horizontal,
-              verticalStartPoint: vertical, verticalDirection: vertical, closeAnimation: null
+            positionStrategy: new AutoPositionStrategy({
+                horizontalDirection: horizontal, horizontalStartPoint: horizontal,
+                verticalStartPoint: vertical, verticalDirection: vertical, closeAnimation: null
             })
         };
     }
