@@ -1,8 +1,5 @@
-$custom-blue: #0099FF;
-$title-color: rgba(0,0,0,0.866);
-
-@mixin vendor-box-shadow(   $x1, $y1, $blur1, $spread1, $rgba1, 
-                            $x2, $y2, $blur2, $spread2, $rgba2, 
+@mixin vendor-box-shadow(   $x1, $y1, $blur1, $spread1, $rgba1,
+                            $x2, $y2, $blur2, $spread2, $rgba2,
                             $x3, $y3, $blur3, $spread3, $rgba3) {
     -webkit-box-shadow: $x1 $y1 $blur1 $spread1 $rgba1, $x2 $y2 $blur2 $spread2 $rgba2, $x3 $y3 $blur3 $spread3 $rgba3;
     -moz-box-shadow: $x1 $y1 $blur1 $spread1 $rgba1, $x2 $y2 $blur2 $spread2 $rgba2, $x3 $y3 $blur3 $spread3 $rgba3;
@@ -19,30 +16,28 @@ li {
     align-items: stretch;
     align-content: space-around;
     -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
 .notVisible {
     visibility: hidden !important;
 }
-.state-container {
+article {
     display: flex;
     flex-direction: column;
-    width: 320px;
+    width: 33%;
     position: relative;
     padding: 50px 20px 20px 20px;
     margin: 0px;
-    .state-title {
-        font-family: Titillium Web;
+    h4 {
         font-weight: 600;
         font-style: normal;
         font-size: 20px;
         letter-spacing: 0.15px;
-        color: $title-color;
         position: absolute;
         top: 0px;
         left: 0px;
@@ -50,50 +45,45 @@ li {
         margin: 0px auto;
         text-align: center;
         text-transform: uppercase;
+        /* IE Fallback color */
+        color: #026ab0;
+        /* Default color */
+        color: var(--igx-surface-100-contrast);
     }
 }
-.item-container {
-    background: white;
-    width: 280px;
-    height: 98px;
+igx-card {
+    width: 100%;
+    max-width: 280px;
+    height: 110px;
     margin-bottom: 10px;
     &:last-child {
         margin-bottom: unset;
     }
-    @include vendor-box-shadow(0px, 3px, 1px, -2px, rgba(0,0,0,0.078), 0px, 2px, 2px, 0px, rgba(0,0,0,0.121), 0px, 1px, 5px, 0px, rgba(0,0,0,0.258));
-    .item {
-        padding: 20px 20px 10px 20px;
-        font-family: Titillium Web;
-        font-style: normal;
-        vertical-align: center;
-        .title {
+    igx-card-header {
+        padding-bottom: 0;
+        p {
             font-weight: 400;
-            font-size: 20px;
-            letter-spacing: 0.15px;
-            color: $title-color;
             text-align: left;
         }
-        .id {
-            margin-top: 10px;
+    }
+    igx-card-content {
+        padding-top: 0;
+        p {
             font-weight: 300;
-            font-size: 14px;
             letter-spacing: 0.1px;
-            color: rgba(0,0,0,0.619);
             text-align: right;
         }
     }
     &.drag-ghost-class {
         @include vendor-box-shadow(0px, 4px, 18px, 3px, rgba(0,0,0,0.078), 0px, 10px, 14px, 1px, rgba(0,0,0,0.121), 0px, 6px, 6px, -3px, rgba(0,0,0,0.258));
-        .item {
-            .title {
-                color: $custom-blue
-            }
-            .id {
-                color: $custom-blue
-            }
+        igx-card-header p, igx-card-content p {
+            color: var(--igx-secondary-300);
         }
     }
 }
 .dragHovered {
-    background: #A7D8F9;
+    /* IE Fallback color */
+    background-color: #9ba8b0;
+    /* Default color */
+    background-color: var(--igx-navdrawer-item-active-background);
 }

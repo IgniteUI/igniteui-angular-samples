@@ -1,16 +1,20 @@
 const gulp = require("gulp");
 const fs = require("fs");
+const domino = require('domino');
 const tsNode = require('ts-node').register({
     transpileOnly: true,
-    ignore: [/\/node_modules\/(?!igniteui-angular)/],
     compilerOptions: {
         module: "commonjs",
         allowJs: true
     }
 });
+const argv = require("yargs").argv;
 
-//  Workaround for exception with Excel samples running product code during generate-live-editing task.
-navigator = { language: "en-US" };
+
+const window = domino.createWindow('<!doctype html><html><body></body></html>');
+global.HTMLElement = window.HTMLElement;
+
+
 
 function requireFile(path) {
     delete require.cache[require.resolve(path)];
@@ -18,7 +22,12 @@ function requireFile(path) {
 }
 
 gulp.task("generate-live-editing", (done) => {
-    requireFile("./live-editing/LiveEditingManager.ts");
+    const liveEditing = requireFile("./live-editing/LiveEditingManager.ts");
+    const manager = new liveEditing.LiveEditingManager();
+    var appDv = argv.appDv !== undefined && argv.appDv.toLowerCase().trim() === "true"
+    var compileSass = argv.css !== undefined && argv.css.toLowerCase().trim() === "true"
+
+    manager.run(appDv, compileSass);
     done();
 });
 

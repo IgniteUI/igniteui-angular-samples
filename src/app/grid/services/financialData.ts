@@ -897,7 +897,6 @@ export class FinancialData {
 
             dataObj.Settlement = Settlement[this.generateRandomNumber(0, 1)];
             dataObj.Contract = Contract[this.generateRandomNumber(0, 4)];
-            dataObj.LastUpdated = this.randomizeDate();
             dataObj["OpenPriceDiff"] = (((dataObj["Open Price"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 150;
             dataObj["BuyDiff"] = (((dataObj["Buy"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 150;
             dataObj["SellDiff"] = (((dataObj["Sell"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 150;

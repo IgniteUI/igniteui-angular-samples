@@ -19,22 +19,17 @@ export class HGridBatchEditingSampleComponent implements OnInit {
         return this.hierarchicalGrid.transactions.canRedo;
     }
 
-    public get undoEnabledChild(): boolean {
-        return this.layout1.transactions.canUndo;
-    }
-
-    public get redoEnabledChild(): boolean {
-        return this.layout1.transactions.canRedo;
-    }
-
     public get hasTransactions(): boolean {
-        return (this.hierarchicalGrid.transactions.getAggregatedChanges(false).length > 0) ||
-        (this.layout1.transactions.getAggregatedChanges(false).length > 0);
+        return this.hierarchicalGrid.transactions.getAggregatedChanges(false).length > 0 || this.hasChildTransactions;
     }
+
+    public get hasChildTransactions(): boolean {
+        return this.layout1.hgridAPI.getChildGrids()
+            .find(c => c.transactions.getAggregatedChanges(false).length > 0) !== undefined;
+    }
+
     public localdata: Singer[];
     public singer: Singer;
-    public transactionsDataParent: Transaction[] = [];
-    public transactionsDataChild: Transaction[] = [];
     public transactionsDataAll: Transaction[] = [];
 
     @ViewChild("dialogChanges", { read: IgxDialogComponent, static: true })
@@ -62,32 +57,16 @@ export class HGridBatchEditingSampleComponent implements OnInit {
             GrammyNominations: 7,
             HasGrammyAward: false
         };
-        this.transactionsDataParent = this.hierarchicalGrid.transactions.getAggregatedChanges(true);
-        this.hierarchicalGrid.transactions.onStateUpdate.subscribe(() => {
-            this.transactionsDataParent = this.hierarchicalGrid.transactions.getAggregatedChanges(true);
-        });
-        this.transactionsDataChild = this.layout1.transactions.getAggregatedChanges(true);
-        this.layout1.transactions.onStateUpdate.subscribe(() => {
-            this.transactionsDataChild = this.layout1.transactions.getAggregatedChanges(true);
-        });
     }
 
     public formatter = a => a;
 
-    public undoParent() {
-        this.hierarchicalGrid.transactions.undo();
+    public undo(grid: IgxHierarchicalGridComponent) {
+        grid.transactions.undo();
     }
 
-    public redoParent() {
-        this.hierarchicalGrid.transactions.redo();
-    }
-
-    public undoChild() {
-        this.layout1.transactions.undo();
-    }
-
-    public redoChild() {
-        this.layout1.transactions.redo();
+    public redo(grid: IgxHierarchicalGridComponent) {
+        grid.transactions.redo();
     }
 
     public commit() {
@@ -100,12 +79,17 @@ export class HGridBatchEditingSampleComponent implements OnInit {
 
     public discard() {
         this.hierarchicalGrid.transactions.clear();
-        this.layout1.transactions.clear();
+        this.layout1.hgridAPI.getChildGrids().forEach((grid) => {
+            grid.transactions.clear();
+        });
         this.dialogChanges.close();
     }
 
     public openCommitDialog() {
-        this.transactionsDataAll = this.transactionsDataParent.concat(this.transactionsDataChild);
+        this.transactionsDataAll = [...this.hierarchicalGrid.transactions.getAggregatedChanges(true)];
+        this.layout1.hgridAPI.getChildGrids().forEach((grid) => {
+            this.transactionsDataAll = this.transactionsDataAll.concat(grid.transactions.getAggregatedChanges(true));
+        });
         this.dialogChanges.open();
         this.dialogGrid.reflow();
     }

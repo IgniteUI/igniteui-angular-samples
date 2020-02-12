@@ -9,19 +9,14 @@ import { TsImportsService } from "./../services/TsImportsService";
 import { Generator, SAMPLE_APP_FOLDER, SAMPLE_SRC_FOLDER } from "./Generator";
 import { StyleSyntax } from "./misc/StyleSyntax";
 
-import * as Routing from "../../src/app/app-routing.module";
-
 import { ModuleWithProviders, Type } from "@angular/core";
 
 import { Route } from "@angular/router";
-import { CONFIG_GENERATORS } from "./ConfigGenerators";
 import { LiveEditingFile } from "./misc/LiveEditingFile";
 import { SampleDefinitionFile } from "./misc/SampleDefinitionFile";
-import { MODULE_ROUTES } from "./Routes";
 
 const BASE_PATH = path.join(__dirname, "../../");
 const APP_MODULE_TEMPLATE_PATH = path.join(__dirname, "../templates/app.module.ts.template");
-const CONFIG_GENERATORS_FILE_NAME = "ConfigGenerators.ts";
 
 const COMPONENT_STYLE_FILE_EXTENSION = "scss";
 const COMPONENT_FILE_EXTENSIONS = ["ts", "html", COMPONENT_STYLE_FILE_EXTENSION];
@@ -57,29 +52,31 @@ export class SampleAssetsGenerator extends Generator {
     }
 
     public generateSamplesAssets() {
-        let configGeneratorsFilePath = path.join(__dirname, CONFIG_GENERATORS_FILE_NAME);
+        let configGeneratorsFilePath = path.join(__dirname, this.getConfigGeneratorsFileName());
         let currentFileImports = this._tsImportsService.getFileImports(configGeneratorsFilePath);
 
         console.log("Live-Editing - generating component samples...");
-        for (let i = 0; i < CONFIG_GENERATORS.length; i++) {
-            let generator = CONFIG_GENERATORS[i];
+        const GENERATORS = this.getConfigGenerators();
+        for (let i = 0; i < GENERATORS.length; i++) {
+            let generator = GENERATORS[i];
             let generatorName = generator.name;
             let generatorPath = path.join(__dirname,
                 currentFileImports.get(generatorName) + ".ts");
             let generatorImports = this._tsImportsService.getFileImports(generatorPath);
-            let generatorConfigs = (new CONFIG_GENERATORS[i]()).generateConfigs();
+            let generatorConfigs = (new GENERATORS[i]()).generateConfigs();
 
             // if (generatorName !== "DataChartConfigGenerator") {
             //     continue;
             // }
             const generatorCount = generatorConfigs.length;
             const generatorInfo = generatorName.replace("ConfigGenerator", "");
-            console.log("Live-Editing - generated " + generatorCount + " samples for " + generatorInfo);
 
             this._logsCountConfigs++;
             for (let j = 0; j < generatorConfigs.length; j++) {
                 this._generateSampleAssets(generatorConfigs[j], generatorImports);
             }
+
+            console.log("Live-Editing - generated " + generatorCount + " samples for " + generatorInfo);
         }
 
         this._componentRoutes.forEach((route: string, name: string) => {
@@ -95,8 +92,10 @@ export class SampleAssetsGenerator extends Generator {
 
     private _generateRoutes() {
         let modulePaths = new Map<string, string>();
-        for (let i = 0; i < Routing.samplesRoutes.length; i++) {
-            let route: Route = Routing.samplesRoutes[i];
+        const appRouting = this.getAppRouting();
+
+        for (let i = 0; i < appRouting.length; i++) {
+            let route: Route = appRouting[i];
             if (route.component) {
                 this._componentRoutes.set(route.component.name, route.path);
             } else if (route.loadChildren) {
@@ -106,16 +105,17 @@ export class SampleAssetsGenerator extends Generator {
         }
         console.log("Live-Editing - generating component routes...");
 
-        for (let i = 0; i < MODULE_ROUTES.length; i++) {
-            let moduleName = MODULE_ROUTES[i].module.name;
+        const moduleRoutes = this.getModuleRoutes();
+        for (let i = 0; i < moduleRoutes.length; i++) {
+            let moduleName = moduleRoutes[i].module.name;
             let modulePath = modulePaths.get(moduleName);
             if (this._logsEnabled) {
-                let moduleStat =  MODULE_ROUTES[i].routes.length + " routes";
+                let moduleStat =  moduleRoutes[i].routes.length + " routes";
                 let moduleInfo =  moduleName.replace("Module", " module");
                 console.log("Live-Editing - generated " + moduleStat + " for " + moduleInfo);
             }
-            for (let j = 0; j < MODULE_ROUTES[i].routes.length; j++) {
-                let route: Route = MODULE_ROUTES[i].routes[j];
+            for (let j = 0; j < moduleRoutes[i].routes.length; j++) {
+                let route: Route = moduleRoutes[i].routes[j];
                 let routePath = modulePath;
                 if (route.path) {
                     routePath += "/" + route.path;
@@ -185,7 +185,7 @@ export class SampleAssetsGenerator extends Generator {
         for (let i = 0; i < COMPONENT_FILE_EXTENSIONS.length; i++) {
             let componentFilePath = componentPath + "." + COMPONENT_FILE_EXTENSIONS[i];
             let fileContent = fs.readFileSync(path.join(BASE_PATH, componentFilePath), "utf8");
-            let file = new LiveEditingFile(componentFilePath, fileContent);
+            let file = new LiveEditingFile(componentFilePath.replace("projects/app-lob/", ""), fileContent);
             this._shortenComponentPath(config, file);
             componentFiles.push(file);
         }

@@ -1,0 +1,68 @@
+.carousel-wrapper {
+    width: 60%;
+}
+
+.carousel-animation-wrapper {
+    margin: 20px auto;
+    display: flex;
+}
+
+:host ::ng-deep {
+
+    @keyframes buynow {
+        from {
+            opacity: .2;
+            transform: translateY(-25%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animated {
+        animation: buynow 360ms cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+    }
+
+    .promo-price {
+        display: flex;
+        background: rgba(255,255,255,.55);
+        padding: 1rem;
+        border-bottom: transparent 1px solid;
+        justify-content: center;        
+    }
+
+    .description {
+        font-size: 1.75rem;
+    }
+        
+    .titles {
+        display: inline-flex;
+        flex-flow: column;
+        margin-left: 1rem;
+        align-self: center;
+
+        .subTitle{
+            font-size: 1rem;
+            font-weight: 600;
+            color: #585858cc;
+        }
+    }
+
+    .price {
+        padding-left: .5rem;
+        font-size: 2rem;
+        color: #e41c77;
+    }
+
+    igx-list {
+        justify-content: space-between;
+    }
+
+    igx-list-item {
+        &.disabled {
+            opacity: .5;
+        }
+    }
+
+}

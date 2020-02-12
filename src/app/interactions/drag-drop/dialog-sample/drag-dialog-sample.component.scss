@@ -20,7 +20,8 @@ div.igx-dialog__window {
 }
 div.dialogContainer {
     margin-top: 20px;
-    margin-left: 20px
+    margin-left: 20px;
+    color: var(--igx-surface-500-contrast);
 }
 .dialog-title {
 	width: 229px;
@@ -30,7 +31,6 @@ div.dialogContainer {
 	font-style: normal;
 	font-size: 20px;
 	letter-spacing: 0.15px;
-	color: #000000DD;
 	text-align: left;
     vertical-align: center;
 }
@@ -41,6 +41,5 @@ div.dialogContainer {
 	font-weight: 400;
 	font-style: normal;
 	font-size: 16px;
-	letter-spacing: 0.44px;
-	color: #0000009E;
+    letter-spacing: 0.44px;
 }

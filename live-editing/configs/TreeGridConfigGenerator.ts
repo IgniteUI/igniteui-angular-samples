@@ -1,34 +1,13 @@
 // tslint:disable:max-line-length
-import {
-    IgxAvatarModule,
-    IgxBadgeModule,
-    IgxButtonGroupModule,
-    IgxButtonModule,
-    IgxCheckboxModule,
-    IgxChipsModule,
-    IgxColumnHidingModule,
-    IgxCsvExporterService,
-    IgxDatePickerModule,
-    IgxDialogModule,
-    IgxDragDropModule,
-    IgxExcelExporterService,
-    IgxGridModule,
-    IgxIconModule,
-    IgxInputGroupModule,
-    IgxRadioModule,
-    IgxRippleModule,
-    IgxSelectModule,
-    IgxSnackbarModule,
-    IgxSwitchModule,
-    IgxToastModule,
-    IgxTreeGridModule
-} from "igniteui-angular";
-import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
-import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
+import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDragDropModule, IgxExcelExporterService, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxTooltipModule, IgxTreeGridModule } from "igniteui-angular";
+import { IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
+import { TreeGridAdvancedFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
+import { TreeGridAdvancedFilteringStyleComponent } from "../../src/app/tree-grid/tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
 import { TreeGridBatchEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import { TreeGridWithTransactionsComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-with-transactions.component";
-import { TreeGridChilddatakeySampleComponent } from "../../src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+import { TreeGridCellSelectionComponent } from "../../src/app/tree-grid/tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
 import { TreeGridClipboardSampleComponent } from "../../src/app/tree-grid/tree-grid-clipboard-operations-sample/tree-grid-clipboard-operations-sample.component";
+import { TreeGridMultiCollapsibleColumnGroupsComponent } from "../../src/app/tree-grid/tree-grid-collapsible-groups/tree-grid-collapsible-column-groups.component";
 import { TreeGridColumnHidingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-hiding-sample/tree-grid-column-hiding-sample.component";
 import { TreeGridColumnHidingToolbarSampleComponent } from "../../src/app/tree-grid/tree-grid-column-hiding-toolbar-sample/tree-grid-column-hiding-toolbar-sample.component";
 import { TreeGridColumnHidingToolbarStyleComponent } from "../../src/app/tree-grid/tree-grid-column-hiding-toolbar-style/tree-grid-column-hiding-toolbar-style.component";
@@ -36,37 +15,21 @@ import { TreeGridColumnMovingSampleComponent } from "../../src/app/tree-grid/tre
 import { TreeGridColumnMovingStyledSampleComponent } from "../../src/app/tree-grid/tree-grid-column-moving-styled-sample/tree-grid-column-moving-styled-sample.component";
 import { TreeGridColumnPinningSampleComponent } from "../../src/app/tree-grid/tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
 import { TreeGridPinningToolbarSampleComponent } from "../../src/app/tree-grid/tree-grid-column-pinning-sample/tree-grid-toolbar-pinning.component";
-
-import { TreeGridAdvancedFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
-import { TreeGridAdvancedFilteringStyleComponent } from "../../src/app/tree-grid/tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
-import { TreeGridCellSelectionComponent } from "../../src/app/tree-grid/tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
 import { TreeGridColumnResizingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 // tslint:disable-next-line: ordered-imports
-import {
-    TreeGridConditionalCellStyle2Component
-} from "../../src/app/tree-grid/tree-grid-conditional-cell-style-2/tree-grid-conditional-cell-style-2.component";
+import { TreeGridConditionalCellStyle2Component } from "../../src/app/tree-grid/tree-grid-conditional-cell-style-2/tree-grid-conditional-cell-style-2.component";
 import { TreeGridConditionalCellStyleComponent } from "../../src/app/tree-grid/tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
-import {
-    TreeGridConditionalRowSelectorsSampleComponent
-} from "../../src/app/tree-grid/tree-grid-conditional-row-selectors/tree-grid-conditional-row-selectors.component";
+import { TreeGridConditionalRowSelectorsSampleComponent } from "../../src/app/tree-grid/tree-grid-conditional-row-selectors/tree-grid-conditional-row-selectors.component";
 import { TreeGridDisplaydensitySampleComponent } from "../../src/app/tree-grid/tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEditingEventsComponent } from "../../src/app/tree-grid/tree-grid-editing-events/tree-grid-editing-events.component";
 import { TreeGridEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-editing-sample/tree-grid-editing-sample.component";
 import { TreeGridEditingStyleComponent } from "../../src/app/tree-grid/tree-grid-editing-style/tree-grid-editing-sample.component";
 import { RemoteValuesService } from "../../src/app/tree-grid/tree-grid-excel-style-filtering-load-on-demand/remoteValues.service";
 import { TreeGridExcelStyleFilteringLoadOnDemandComponent } from "../../src/app/tree-grid/tree-grid-excel-style-filtering-load-on-demand/tree-grid-excel-style-filtering-load-on-demand.component";
-import {
-    TreeGridExcelStyleFilteringSample1Component
-} from "../../src/app/tree-grid/tree-grid-excel-style-filtering-sample-1/tree-grid-excel-style-filtering-sample-1.component";
-import {
-    TreeGridExcelStyleFilteringSample2Component
-} from "../../src/app/tree-grid/tree-grid-excel-style-filtering-sample-2/tree-grid-excel-style-filtering-sample-2.component";
-import {
-    TreeGridExcelStyleFilteringSample3Component
-} from "../../src/app/tree-grid/tree-grid-excel-style-filtering-sample-3/tree-grid-excel-style-filtering-sample-3.component";
-import {
-    TreeGridExcelStyleFilteringStyleComponent
-} from "../../src/app/tree-grid/tree-grid-excel-style-filtering-style/tree-grid-excel-style-filtering-style.component";
+import { TreeGridExcelStyleFilteringSample1Component } from "../../src/app/tree-grid/tree-grid-excel-style-filtering-sample-1/tree-grid-excel-style-filtering-sample-1.component";
+import { TreeGridExcelStyleFilteringSample2Component } from "../../src/app/tree-grid/tree-grid-excel-style-filtering-sample-2/tree-grid-excel-style-filtering-sample-2.component";
+import { TreeGridExcelStyleFilteringSample3Component } from "../../src/app/tree-grid/tree-grid-excel-style-filtering-sample-3/tree-grid-excel-style-filtering-sample-3.component";
+import { TreeGridExcelStyleFilteringStyleComponent } from "../../src/app/tree-grid/tree-grid-excel-style-filtering-style/tree-grid-excel-style-filtering-style.component";
 import { TreeGridExternalAdvancedFilteringComponent } from "../../src/app/tree-grid/tree-grid-external-advanced-filtering/tree-grid-external-advanced-filtering.component";
 import { TreeGridExternalExcelStyleFilteringComponent } from "../../src/app/tree-grid/tree-grid-external-excel-style-filtering/tree-grid-external-excel-style-filtering.component";
 import { TreeGridFilteringCustomSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
@@ -83,7 +46,6 @@ import { TreeGridMultiColumnHeadersStylingComponent } from "../../src/app/tree-g
 import { TreeGridMultiRowDrag } from "../../src/app/tree-grid/tree-grid-multi-row-drag/tree-grid-multi-row-drag.component";
 import { TreeGridPagingSampleComponent } from "../../src/app/tree-grid/tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPagingStyleSampleComponent } from "../../src/app/tree-grid/tree-grid-paging-style/tree-grid-paging-style-sample.component";
-import { TreeGridPrimaryforeignkeySampleComponent } from "../../src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { TreeGridRemoteFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
 import { TreeGridRemotePagingSampleComponent } from "../../src/app/tree-grid/tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
 import { TreeGridResizeLineStylingSampleComponent } from "../../src/app/tree-grid/tree-grid-resize-line-styling-sample/tree-grid-resize-line-styling-sample.component";
@@ -116,33 +78,6 @@ import { IConfigGenerator } from "./core/IConfigGenerator";
 export class TreeGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
-
-        // TreeGrid ChildDataKey Sample
-        configs.push(new Config({
-            additionalFiles: ["/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
-            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridChilddatakeySampleComponent, IgxExcelExporterService, IgxCsvExporterService, IgxSparklineCoreModule, IgxSparklineModule],
-                ngDeclarations: [TreeGridChilddatakeySampleComponent],
-                ngImports: [IgxTreeGridModule, IgxSparklineCoreModule, IgxSparklineModule],
-                ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
-            }),
-            component: TreeGridChilddatakeySampleComponent,
-            shortenComponentPathBy: "/tree-grid/"
-        }));
-
-        // TreeGrid Primary/Foreign Key Sample
-        configs.push(new Config({
-            additionalFiles: ["/src/app/tree-grid/tree-grid-primaryforeignkey-sample/data.ts"],
-            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridPrimaryforeignkeySampleComponent, IgxSparklineCoreModule, IgxSparklineModule],
-                ngDeclarations: [TreeGridPrimaryforeignkeySampleComponent],
-                ngImports: [IgxTreeGridModule, IgxSparklineCoreModule, IgxSparklineModule]
-            }),
-            component: TreeGridPrimaryforeignkeySampleComponent,
-            shortenComponentPathBy: "/tree-grid/"
-        }));
 
         // TreeGrid Row Edit Sample
         configs.push(new Config({
@@ -645,6 +580,28 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/tree-grid/"
         }));
 
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridExternalExcelStyleFilteringComponent],
+                ngDeclarations: [TreeGridExternalExcelStyleFilteringComponent],
+                ngImports: [IgxTreeGridModule]
+            }),
+            component: TreeGridExternalExcelStyleFilteringComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridExternalAdvancedFilteringComponent],
+                ngDeclarations: [TreeGridExternalAdvancedFilteringComponent],
+                ngImports: [IgxTreeGridModule]
+            }),
+            component: TreeGridExternalAdvancedFilteringComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
         // TreeGrid Remote Filtering sample
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/data/employees-flat.ts", "/src/app/tree-grid/services/remoteFilteringService.ts"],
@@ -695,7 +652,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         // TreeGrid Excel Style Filtering Load On Demand Sample
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/tree-grid-excel-style-filtering-load-on-demand/remoteValues.service.ts",
-                              "/src/app/tree-grid/data/employees-flat.ts"],
+                "/src/app/tree-grid/data/employees-flat.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridExcelStyleFilteringLoadOnDemandComponent, IgxIconModule, RemoteValuesService],
                 ngDeclarations: [TreeGridExcelStyleFilteringLoadOnDemandComponent],
@@ -758,7 +715,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // Tree Grid Keyboard Navigation Sample
         configs.push(new Config({
-            additionalFiles: ["/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
+            additionalFiles: ["/projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridKBNavigationComponent],
                 ngDeclarations: [TreeGridKBNavigationComponent],
@@ -806,7 +763,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Clipboard actions sample
         configs.push(new Config({
-            additionalFiles: ["/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
+            additionalFiles: ["/projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridClipboardSampleComponent, IgxSwitchModule],
                 ngDeclarations: [TreeGridClipboardSampleComponent],
@@ -895,6 +852,16 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [TreeGridConditionalCellStyle2Component],
                 ngImports: [IgxTreeGridModule]
             })
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat-detailed.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, IgxTooltipModule, TreeGridMultiCollapsibleColumnGroupsComponent],
+                ngDeclarations: [TreeGridMultiCollapsibleColumnGroupsComponent],
+                ngImports: [IgxTreeGridModule, IgxTooltipModule]
+            }),
+            component: TreeGridMultiCollapsibleColumnGroupsComponent
         }));
 
         configs.push(new Config({
