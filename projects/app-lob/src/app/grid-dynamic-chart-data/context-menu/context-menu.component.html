@@ -12,7 +12,7 @@
                     <span class="name">{{condition.replace('10', '10%')}}</span>
                 </span>
             </span>
-            <span class="clear action" [ngClass]="{'disableButton': !contextDirective.textFormatter.formatter}" (click)="clearFormat()">
+            <span class="clear action" [ngClass]="{'disableButton': contextDirective.textFormatter ? !contextDirective.textFormatter.formatter : true }" (click)="clearFormat()">
                 <img class="imgSize" src="assets/images/svg/conditions/Clear.svg" />
                 <span class="btn name">Clear All</span>
             </span>
