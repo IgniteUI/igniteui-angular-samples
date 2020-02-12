@@ -2,7 +2,7 @@ import { AfterViewInit, Directive, EventEmitter, Optional, Output } from "@angul
 import { AbsoluteScrollStrategy, AutoPositionStrategy, HorizontalAlignment, IgxGridComponent,
     IgxOverlayService, OverlayCancelableEventArgs, VerticalAlignment } from "igniteui-angular";
 import { Subject } from "rxjs";
-import { filter, merge, takeUntil } from "rxjs/operators";
+import { debounceTime, filter, merge, takeUntil } from "rxjs/operators";
 import { ChartIntegrationDirective } from "../directives/chart-integration/chart-integration.directive";
 import { ConditionalFormattingDirective } from "../directives/conditional-formatting/conditional-formatting.directive";
 import { IgxContextMenuComponent } from "./context-menu.component";
@@ -64,17 +64,19 @@ export class IgxContextMenuDirective implements AfterViewInit  {
             }
             this.renderButton();
         });
-        this.grid.verticalScrollContainer.onChunkLoad.pipe(merge(this.grid.parentVirtDir.onChunkLoad),
-            filter(() => !!this._range), takeUntil(this.destroy$))
-            .subscribe(() => {
+        this.grid.verticalScrollContainer.onChunkLoad.pipe(
+            merge(this.grid.parentVirtDir.onChunkLoad, this.grid.onFilteringDone, this.grid.onColumnResized,
+                this.grid.onColumnVisibilityChanged.pipe(debounceTime(30))),
+            filter(() => this._range), takeUntil(this.destroy$)).subscribe(() => {
                 this.onButtonClose.emit();
                 this.renderButton();
         });
-        this.grid.onSelection.pipe(takeUntil(this.destroy$)).subscribe(() => {
-           if (this.grid.selectedCells.length < 2) {
-                this._range = undefined;
-                this.close();
-           }
+        this.grid.onSelection.pipe(merge(this.grid.onPagingDone, this.grid.onGroupingDone, this.grid.perPageChange),
+            takeUntil(this.destroy$)).subscribe((args: any) => {
+                if (this.grid.selectedCells.length < 2 || args.expressions) {
+                    this._range = undefined;
+                    this.close();
+                }
         });
     }
 
