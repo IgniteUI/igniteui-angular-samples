@@ -24,6 +24,10 @@ export class AppComponent implements OnInit {
     private onMessage(e: MessageEvent) {
         if (e.origin === e.data.origin && typeof e.data.themeStyle === "string") {
             this.styleElem.textContent = e.data.themeStyle;
+            const themeName: string = e.data.themeName;
+            if (themeName) {
+                this.applyInputTypeForTheme(themeName);
+            }
 
             const typeface = window.getComputedStyle(this.document.body).fontFamily.replace(/\"/g, "");
             if (!(typeface.match(/,/g) || []).length &&
@@ -35,6 +39,14 @@ export class AppComponent implements OnInit {
             this.document.body.classList.remove(this.theme);
             this.document.body.classList.add(e.data.theme);
             this.theme = e.data.theme;
+        }
+    }
+
+    private applyInputTypeForTheme(theme:string) {
+        if (theme.indexOf('fluent') !== -1 || theme.indexOf('bootstrap') !== -1) {
+            this.document.querySelectorAll('input').forEach((input) => {
+                input.type = theme.indexOf('fluent') !== -1 ? 'fluent' : 'bootstrap';
+            });
         }
     }
 
