@@ -763,7 +763,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Clipboard actions sample
         configs.push(new Config({
-            additionalFiles: ["/projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
+            additionalFiles: ["/src/app/tree-grid/tree-grid-clipboard-operations-sample/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridClipboardSampleComponent, IgxSwitchModule],
                 ngDeclarations: [TreeGridClipboardSampleComponent],
