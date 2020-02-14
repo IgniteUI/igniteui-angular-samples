@@ -1,10 +1,11 @@
 import { Component, QueryList, ViewChildren } from "@angular/core";
+import { BaseInputGroupSampleComponent } from "../base-input.component";
 @Component({
     selector: "app-input-group-sample-6",
     styleUrls: ["./input-group-sample-6.component.scss"],
     templateUrl: "./input-group-sample-6.component.html"
 })
-export class InputGroupSample6Component {
+export class InputGroupSample6Component extends BaseInputGroupSampleComponent {
     public user = {
         dateTime: new Date(),
         email: undefined,
