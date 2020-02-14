@@ -15,6 +15,7 @@
 
         </div>
     </div>
+    <!-- Tasks Planner Grid  -->
     <app-grid-transactions>
         <igx-grid #tasksGrid
             id="tasksGrid"
@@ -51,14 +52,15 @@
                         </div>
                         <igx-divider [vertical]="true"></igx-divider>
                         <div class="descContainer">
-                            <span>Progress & Estimation (Need to be rethinked, see comments in the html</span>
+                            <span>Progress & Estimation (Need to be rethought, see comments in the html</span>
                             <!-- TODO: Rethink the design and aim of this chart to achieve a meaningful purpose.
                                 My initial idea was for the chart to display two lines:
                                     1) the ideal curve of progress based on started date, deadline and estimated hours.
                                     2) The extrapolated curve based on actual progress up to the current moment.
                                 Bugs: Extrapolated curve may exceed the total estimated hours.-->
                             <igx-legend #legend orientation="horizontal"></igx-legend>
-                            <igx-category-chart height="250px" width="400px" [legend]="legend"
+                            <igx-category-chart width="100%" height="100%"
+                                [legend]="legend"
                                 [dataSource]="getChartData(dataItem)"
                                 chartType="Line" subtitle="(StartedOn, Deadline)" xAxisInterval="1"
                                 [brushes]="['rgb(0, 111, 138)', 'rgb(171, 223, 29)']"
@@ -148,6 +150,8 @@
     </app-grid-transactions>
 </div>
 
+<!-- Toast to show validation errors  -->
+<igx-toast></igx-toast>
 
 <!-- Add record dialog  -->
 <igx-dialog #addTaskDialog title="Create Issue"

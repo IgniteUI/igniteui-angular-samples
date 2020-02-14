@@ -185,6 +185,10 @@ export class TaskPlannerComponent implements OnInit {
         this.addTaskDialog.close();
     }
 
+    public getStartedOn(dataItem: ITask): boolean {
+        return !!dataItem.started_on;
+    }
+
     public deleteTask(rowID) {
         this.grid.deleteRow(rowID);
     }
