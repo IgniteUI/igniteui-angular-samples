@@ -42,10 +42,10 @@ export class DocsLayoutComponent implements OnInit {
         }
     }
 
-    private applyInputTypeForTheme(theme:string) {
-        if (theme.indexOf('fluent') !== -1 || theme.indexOf('bootstrap') !== -1) {
-            this.document.querySelectorAll('input').forEach((input) => {
-                input.type = theme.indexOf('fluent') !== -1 ? 'fluent' : 'bootstrap';
+    private applyInputTypeForTheme(theme: string) {
+        if (theme.indexOf("fluent") !== -1 || theme.indexOf("bootstrap") !== -1) {
+            this.document.querySelectorAll("input").forEach((input) => {
+                input.type = theme.indexOf("fluent") !== -1 ? "fluent" : "bootstrap";
             });
         }
     }
