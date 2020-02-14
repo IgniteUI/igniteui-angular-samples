@@ -1,5 +1,6 @@
 import { DOCUMENT } from "@angular/common";
 import { Component, HostListener, Inject, OnInit } from "@angular/core";
+import { GlobalInputTypeService } from "../../../../../src/app/services/global-input-type.service";
 
 @Component({
     selector: "app-docs-layout",
@@ -14,7 +15,7 @@ export class DocsLayoutComponent implements OnInit {
     private typefacesLoaded = ["Titillium Web", "Roboto"];
     private typefaceUrl = "https://fonts.googleapis.com/css?family=";
 
-    constructor(@Inject(DOCUMENT) private document: Document) {}
+    constructor(@Inject(DOCUMENT) private document: Document, private typeservice: GlobalInputTypeService) {}
 
     public ngOnInit() {
         this.createThemeStyle();
@@ -44,9 +45,7 @@ export class DocsLayoutComponent implements OnInit {
 
     private applyInputTypeForTheme(theme: string) {
         if (theme.indexOf("fluent") !== -1 || theme.indexOf("bootstrap") !== -1) {
-            this.document.querySelectorAll("input").forEach((input) => {
-                input.type = theme.indexOf("fluent") !== -1 ? "fluent" : "bootstrap";
-            });
+            this.typeservice.setType(theme.indexOf("fluent") ? "fluent" : "bootstrap");
         }
     }
 
