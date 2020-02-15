@@ -162,7 +162,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridGroupBySummaryStylingSampleComponent],
                 ngImports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
                     IgxIconModule, IgxBadgeModule]
-                })
+            })
         }));
 
         configs.push(new Config({
@@ -688,7 +688,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: GridExcelStyleFilteringLoadOnDemandComponent,
             additionalFiles: ["/src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service.ts",
-                              "/src/app/grid/grid-excel-style-filtering-load-on-demand/employees.ts"],
+                "/src/app/grid/grid-excel-style-filtering-load-on-demand/employees.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridExcelStyleFilteringLoadOnDemandComponent, IgxGridModule, RemoteValuesService],
                 ngDeclarations: [GridExcelStyleFilteringLoadOnDemandComponent],
@@ -701,7 +701,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: ExcelStyleFilteringStyleComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ExcelStyleFilteringStyleComponent, IgxGridModule ],
+                imports: [ExcelStyleFilteringStyleComponent, IgxGridModule],
                 ngDeclarations: [ExcelStyleFilteringStyleComponent],
                 ngImports: [IgxGridModule]
             })
@@ -711,7 +711,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridExternalExcelStyleFilteringComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridExternalExcelStyleFilteringComponent, IgxGridModule ],
+                imports: [GridExternalExcelStyleFilteringComponent, IgxGridModule],
                 ngDeclarations: [GridExternalExcelStyleFilteringComponent],
                 ngImports: [IgxGridModule]
             })
@@ -721,7 +721,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridExternalAdvancedFilteringComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridExternalAdvancedFilteringComponent, IgxGridModule ],
+                imports: [GridExternalAdvancedFilteringComponent, IgxGridModule],
                 ngDeclarations: [GridExternalAdvancedFilteringComponent],
                 ngImports: [IgxGridModule]
             })
@@ -992,7 +992,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridAdvancedFilteringStyleComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridAdvancedFilteringStyleComponent, IgxGridModule ],
+                imports: [GridAdvancedFilteringStyleComponent, IgxGridModule],
                 ngDeclarations: [GridAdvancedFilteringStyleComponent],
                 ngImports: [IgxGridModule]
             })
@@ -1014,7 +1014,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridAllDataSummaryComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridAllDataSummaryComponent, IgxGridModule ],
+                imports: [GridAllDataSummaryComponent, IgxGridModule],
                 ngDeclarations: [GridAllDataSummaryComponent],
                 ngImports: [IgxGridModule]
             })

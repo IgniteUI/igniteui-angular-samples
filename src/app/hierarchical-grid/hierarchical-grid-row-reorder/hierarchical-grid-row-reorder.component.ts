@@ -65,6 +65,8 @@ export class HGridRowReorderComponent {
                 return row;
             } else if (row === rowListArr[rowListArr.length - 1] && cursorPosition.y > rowRect.bottom) {
                 return row;
+            } else if (row === rowListArr[rowListArr.length - 1] && cursorPosition.y > rowRect.bottom) {
+                return row;
             }
         }
     }
