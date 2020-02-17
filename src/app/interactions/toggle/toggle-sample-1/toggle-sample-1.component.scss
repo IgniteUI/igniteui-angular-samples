@@ -22,6 +22,11 @@
     .dark-theme & {
         background-color: #111;
     }
+
+    .custom-body & {
+        color: var(--igx-surface-500-contrast);
+        background-color: var(--igx-surface-500);
+    }
 }
 
 ul {
