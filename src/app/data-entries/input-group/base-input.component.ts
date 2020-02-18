@@ -1,13 +1,13 @@
-import { Directive, QueryList, ViewChildren } from "@angular/core";
+import { Directive, QueryList, ViewChildren, AfterViewInit } from "@angular/core";
 import { IgxInputGroupComponent } from "igniteui-angular";
 import { GlobalInputTypeService } from "../../services/global-input-type.service";
 
 @Directive({
     selector: "input-group-sample-base"
 })
-export class BaseInputGroupSampleComponent {
+export class BaseInputGroupSampleComponent implements AfterViewInit {
 
-    public type = "";
+    public type = null;
     @ViewChildren(IgxInputGroupComponent) public inputGroups: QueryList<IgxInputGroupComponent>;
 
     constructor(private inputType: GlobalInputTypeService) {
@@ -18,7 +18,20 @@ export class BaseInputGroupSampleComponent {
             }
         });
     }
+    ngAfterViewInit() {
+        if (this.type) {
+            this.setInputType(this.type);
+        }
+    }
+
     private setInputType(type: string) {
-        this.inputGroups.forEach(x => x.type = type);
+        if (this.inputGroups && this.inputGroups.length > 0) {
+            this.inputGroups.forEach(x => 
+                {
+                    if(!(x.isBox || x.isBorder || x.isSearch)){
+                        x.type = type;
+                    }
+                });
+        }
     }
 }
