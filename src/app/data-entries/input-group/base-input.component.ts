@@ -1,4 +1,4 @@
-import { Directive, QueryList, ViewChildren, AfterViewInit } from "@angular/core";
+import { AfterViewInit, Directive, QueryList, ViewChildren } from "@angular/core";
 import { IgxInputGroupComponent } from "igniteui-angular";
 import { GlobalInputTypeService } from "../../services/global-input-type.service";
 
@@ -18,7 +18,7 @@ export class BaseInputGroupSampleComponent implements AfterViewInit {
             }
         });
     }
-    ngAfterViewInit() {
+    public ngAfterViewInit() {
         if (this.type) {
             this.setInputType(this.type);
         }
@@ -26,9 +26,8 @@ export class BaseInputGroupSampleComponent implements AfterViewInit {
 
     private setInputType(type: string) {
         if (this.inputGroups && this.inputGroups.length > 0) {
-            this.inputGroups.forEach(x => 
-                {
-                    if(!(x.isBox || x.isBorder || x.isSearch)){
+            this.inputGroups.forEach(x => {
+                    if (!(x.isBox || x.isBorder || x.isSearch)) {
                         x.type = type;
                     }
                 });
