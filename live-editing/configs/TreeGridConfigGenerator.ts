@@ -652,7 +652,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         // TreeGrid Excel Style Filtering Load On Demand Sample
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/tree-grid-excel-style-filtering-load-on-demand/remoteValues.service.ts",
-                              "/src/app/tree-grid/data/employees-flat.ts"],
+                "/src/app/tree-grid/data/employees-flat.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridExcelStyleFilteringLoadOnDemandComponent, IgxIconModule, RemoteValuesService],
                 ngDeclarations: [TreeGridExcelStyleFilteringLoadOnDemandComponent],
