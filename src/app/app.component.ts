@@ -44,8 +44,12 @@ export class AppComponent implements OnInit {
     }
 
     private applyInputTypeForTheme(theme: string) {
-        if (theme.indexOf("fluent") !== -1 || theme.indexOf("bootstrap") !== -1) {
-            this.typeservice.setType(theme.indexOf("fluent") ? "fluent" : "bootstrap");
+        const themeName = theme.split("-")[1];
+        switch (themeName) {
+            case "theme": this.typeservice.setType("line"); break;
+            case "fluent": this.typeservice.setType("fluent"); break;
+            case "bootstrap": this.typeservice.setType("bootstrap"); break;
+            default: break;
         }
     }
 
