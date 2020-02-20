@@ -1,3 +1,8 @@
+:host {
+    display: block;
+    height: 100%;
+}
+
 .wrapper {
     height: 100%;
 }
@@ -6,20 +11,17 @@
     width: calc(100% - 300px);
 }
 
-.content {    
-    width: 100%;    
-    // height: calc(100% - 56px);    
+.content {
+    width: 100%;
+    max-height: calc(100% - 56px);
     height: 100%;
-    max-height: 1000px;
     min-width: 300px;
     min-height: 300px;
-    justify-content: center;
-    align-items: stretch;
-    overflow: auto;    
+    overflow: auto;
 }
 
 .innerItem {
-    margin-left: 36px;
+    padding-left: 44px;
 }
 
 .nav-header {
@@ -36,13 +38,12 @@
 }
 
 .searchGroup {
-    margin: 10px;
-    max-width: 260px;
+    margin: 8px 16px;
 }
 
 @media only screen and (max-width: 1024px) {
     .content {
-      padding: 0 15px;
-      justify-content: flex-start;
+        padding: 0 15px;
+        justify-content: flex-start;
     }
-  }
+}

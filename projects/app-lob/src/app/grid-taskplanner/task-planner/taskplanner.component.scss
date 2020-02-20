@@ -1,117 +1,99 @@
-
 @import '~igniteui-angular/lib/core/styles/themes/index';
+@import "tp-themes/tp-grid";
 
-$grid-toolbar-theme: igx-grid-toolbar-theme(
-    $title-text-color: #292826
+$header-height: rem(56px);
+$tp-app-padding: rem(34px);
+$offset-top: $header-height;
+$state-done: #00a86b;
+$state-new: rgb(0, 110, 184);
+$state-inProgress: rgb(187, 57, 134);
+$state-late: rgb(215, 85, 21);
+$state-priority: rgb(191, 34, 44);
+$state-delayed: rgb(171, 149, 29);
+
+$tp-palette: igx-palette(
+    $primary: rgb(0, 127, 212),
+    $secondary: rgb(171, 149, 29),
+    $surface: #282A37
 );
 
-$toolbar-button-theme: igx-button-theme(
-    // $outlined-background: #FFCD0F,
-    $outlined-text-color: #292826,
-    $outlined-hover-background: rgba(0, 0, 0, 0.04),
-    $outlined-hover-text-color: #292826
-);
+$scrollbar-track: #131317;
+$scrollbar-thumb: rgba(171, 149, 29, 0.11);
 
-.igx-grid-toolbar__custom-content {
-    @include igx-button($toolbar-button-theme);
-}
 :host {
+    display: block;
+    height:100%;
     ::ng-deep {
-        @include igx-grid-toolbar($grid-toolbar-theme);
+        .tp-app {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: $tp-app-padding;
+            background: rgb(74,79,100);
+            background: linear-gradient(90deg, rgba(74,79,100,1) 0%, rgba(33,34,42,1) 100%);
+            color: #ccc;
 
-        .igx-grid-toolbar__actions, .igx-grid-toolbar__custom-content {
-            @include igx-button($toolbar-button-theme);
+            &__grid {
+                flex: 1;
+            }
+
+            &__inner {
+                display: flex;
+                flex: 1 0 0%;
+            }
+
+            ::-webkit-scrollbar {
+                width: 16px;
+                height: 16px;
+                background-color: $scrollbar-track;
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: $scrollbar-thumb;
+            }
+            @include igx-dark-theme($tp-palette);
+
+            &__backlog {
+                min-width: 300px;
+                min-height: 400px;
+                margin-right: rem(16px);
+
+                .igx-card-header {
+                    flex: initial !important;;
+                }
+                .igx-card-content {
+                    padding: 0;
+                }
+
+                igx-icon {
+                    width: rem(16px) !important;
+                    height: rem(16px) !important;
+                    font-size: rem(16px) !important;
+                }
+            }
         }
 
         .done {
-            background-color: rgb(2, 131, 2);
+            background-color: #00a86b;
         }
-    
+
         .new {
-            background-color: rgb(0, 0, 212);
+            background-color: $state-new;
         }
 
         .inProgress {
-            background-color: rgb(226, 176, 11);
+            background-color: $state-inProgress;
         }
-    
+
         .late {
-            background-color: rgb(214, 13, 13);
+            background-color: $state-late;
         }
 
         .priority {
-            color: rgb(214, 13, 13);
+            color:$state-priority;
         }
 
         .delayed {
-            color: rgb(214, 13, 13);
+            color: $state-delayed;
         }
     }
-}
-
-.grid__wrapper {
-    padding: 5px 15px;
-    height: 95%;
-}
-
-.owner_name {
-    width: rem(100px);
-    margin: 0 rem(16px);
-}
-
-.owner_name {
-    @include ellipsis();
-}
-
-.cell__inner{
-    display: flex;
-    align-items: center;
-    height: 100%;
-    position: relative;
-    justify-content: space-between;
-}
-
-.controls-holder {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.editing-buttons {
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
-    // min-width: 500px;
-    padding: 16px 0px;
-}
-
-.tabContent {
-    padding: 24px 8px;
-    display: flex;
-    justify-content: flex-start;
-    margin: 10px;
-}
-
-.descContainer {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-igx-divider {
-    margin: 0 24px !important;
-}
-
-h6 {
-    margin-top: 1em;
-}
-
-.tabContent igx-grid {
-    box-shadow: none;
-    border: 1px solid rgba(0, 0, 0, .08);
-}
-
-.addDialogContent {
-    width: 100%;
-    padding: 1rem 1.5rem;
 }

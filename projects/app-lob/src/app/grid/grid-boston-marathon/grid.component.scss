@@ -1,6 +1,6 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-$grid-sample-theme: igx-grid-theme( 
+$grid-sample-theme: igx-grid-theme(
     $row-selected-background: #333,
     $row-selected-text-color: #ddd,
     $row-hover-background: #f8f8f8,
@@ -16,7 +16,7 @@ $progressBar-sample-theme: igx-progress-linear-theme( $track-color: rgba(181, 18
         @include igx-grid($grid-sample-theme);
         @include igx-progress-linear($progressBar-sample-theme);
     }
-} 
+}
 
 :host {
     ::ng-deep{
@@ -29,8 +29,8 @@ $progressBar-sample-theme: igx-progress-linear-theme( $track-color: rgba(181, 18
 }
 
 .grid__wrapper {
-    width: 1000px;
-    margin: 0 auto;
+    height: calc(100% - 70px);
+    padding: 34px;
 }
 
 @media (max-width: 1000px) {

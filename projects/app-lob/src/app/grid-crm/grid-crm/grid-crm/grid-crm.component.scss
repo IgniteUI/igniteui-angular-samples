@@ -72,15 +72,6 @@
         background: #f0f8fe;
     }
 
-    .grid__wrapper {
-        width: inherit;
-        position: relative;
-        height: 100%;
-        margin: 1px;
-        padding: 1px;
-        background: transparent;
-    }
-
     .avatar-cell {
         width: 100%;
         display: flex;
@@ -350,6 +341,10 @@
     }
 }
 
+.grid__wrapper {
+    height: 100%;
+    padding: 34px;
+}
 
 .animated-fan {
     width: 28px;
