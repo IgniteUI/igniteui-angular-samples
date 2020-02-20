@@ -1,0 +1,25 @@
+.sample-wrapper {
+    overflow-y: auto;
+}
+.calendar-wrapper {
+    max-width: 900px;
+    min-width: 200px;
+    max-height: 450px;
+}
+.calendar{
+    width:100%;
+}
+igx-input-group {
+    display: inline-block;
+    margin-left: 20px;
+    width: 250px;
+}
+.form{
+    display: flex;
+    padding-left: 0.2rem;
+}
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+   
+}
