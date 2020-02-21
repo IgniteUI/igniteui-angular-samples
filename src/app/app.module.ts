@@ -12,7 +12,6 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
-import { GlobalInputTypeService } from "./services/global-input-type.service";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -37,6 +36,6 @@ import { GlobalInputTypeService } from "./services/global-input-type.service";
         HttpClientModule,
         HammerModule
     ],
-    providers: [GlobalInputTypeService]
+    providers: []
 })
 export class AppModule { }

@@ -1,6 +1,5 @@
 import { DOCUMENT } from "@angular/common";
 import { Component, HostListener, Inject, OnInit } from "@angular/core";
-import { GlobalInputTypeService } from "../../../../../src/app/services/global-input-type.service";
 
 @Component({
     selector: "app-docs-layout",
@@ -15,7 +14,7 @@ export class DocsLayoutComponent implements OnInit {
     private typefacesLoaded = ["Titillium Web", "Roboto"];
     private typefaceUrl = "https://fonts.googleapis.com/css?family=";
 
-    constructor(@Inject(DOCUMENT) private document: Document, private typeservice: GlobalInputTypeService) {}
+    constructor(@Inject(DOCUMENT) private document: Document) {}
 
     public ngOnInit() {
         this.createThemeStyle();
@@ -25,10 +24,6 @@ export class DocsLayoutComponent implements OnInit {
     private onMessage(e: MessageEvent) {
         if (e.origin === e.data.origin && typeof e.data.themeStyle === "string") {
             this.styleElem.textContent = e.data.themeStyle;
-            const themeName: string = e.data.themeName;
-            if (themeName) {
-                this.applyInputTypeForTheme(themeName);
-            }
 
             const typeface = window.getComputedStyle(this.document.body).fontFamily.replace(/\"/g, "");
             if (!(typeface.match(/,/g) || []).length &&
@@ -40,16 +35,6 @@ export class DocsLayoutComponent implements OnInit {
             this.document.body.classList.remove(this.theme);
             this.document.body.classList.add(e.data.theme);
             this.theme = e.data.theme;
-        }
-    }
-
-    private applyInputTypeForTheme(theme: string) {
-        const themeName = theme.split("-")[1];
-        switch (themeName) {
-            case "theme": this.typeservice.setType("line"); break;
-            case "fluent": this.typeservice.setType("fluent"); break;
-            case "bootstrap": this.typeservice.setType("bootstrap"); break;
-            default: break;
         }
     }
 
