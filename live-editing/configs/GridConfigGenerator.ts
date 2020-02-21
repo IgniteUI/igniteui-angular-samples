@@ -98,6 +98,7 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { RightPinningSampleComponent } from '../../src/app/grid/grid-sample-right-pinning/grid-right-pinning.component';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -1029,6 +1030,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxTooltipModule]
             })
         }));
+
+        configs.push(new Config({
+            component: RightPinningSampleComponent,
+            additionalFiles: ["/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [RightPinningSampleComponent, IgxGridModule, IgxIconModule],
+                ngDeclarations: [PinningSampleComponent],
+                ngImports: [IgxGridModule, IgxIconModule],
+                ngProviders: []
+            })
+        }));
+
         return configs;
     }
 }

@@ -99,6 +99,7 @@ import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
+import { RightPinningSampleComponent } from './grid-sample-right-pinning/grid-right-pinning.component';
 
 @NgModule({
     declarations: [
@@ -189,7 +190,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridMultipleRowDragComponent,
         GridExternalAdvancedFilteringComponent,
         GridCollapsibleColumnGroupsComponent,
-        GridAllDataSummaryComponent
+        GridAllDataSummaryComponent,
+        RightPinningSampleComponent
     ],
     imports: [
         CommonModule,

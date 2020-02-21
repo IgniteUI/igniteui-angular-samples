@@ -91,6 +91,7 @@ import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinn
 import {
     GridMultiColumnHeadersStylingComponent
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
+import { RightPinningSampleComponent } from './grid-sample-right-pinning/grid-right-pinning.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -268,6 +269,11 @@ export const gridsRoutes: Routes = [
         component: PinningSampleComponent,
         data: gridsRoutesData["grid-sample-pinning"],
         path: "grid-sample-pinning"
+    },
+    {
+        component: RightPinningSampleComponent,
+        data: gridsRoutesData["grid-sample-right-pinning"],
+        path: "grid-sample-right-pinning"
     },
     {
         component: PinningToolbarSampleComponent,
