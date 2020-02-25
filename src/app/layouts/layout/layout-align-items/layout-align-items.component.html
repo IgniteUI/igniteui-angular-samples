@@ -7,7 +7,7 @@
                 <button igxButton (click) = "alignItems = 'flex-end'" [igxRipple]="rippleColor">Flex End</button>
             </igx-buttongroup>
             <div *ngIf="alignItems == 'flex-start'" class="layout-sample">
-                <div class="layout-box tall" igxLayout igxLayoutItemAlign="start">
+                <div class="layout-box tall" igxLayout igxLayoutItemAlign="flex-start">
                     <div class="layout-box__el" igxFlex>1</div>
                     <div class="layout-box__el" igxFlex>2</div>
                     <div class="layout-box__el" igxFlex>3</div>
@@ -23,7 +23,7 @@
             </div>
 
             <div *ngIf="alignItems == 'flex-end'" class="layout-sample">
-                <div class="layout-box tall" igxLayout igxLayoutItemAlign="end">
+                <div class="layout-box tall" igxLayout igxLayoutItemAlign="flex-end">
                     <div class="layout-box__el" igxFlex>1</div>
                     <div class="layout-box__el" igxFlex>2</div>
                     <div class="layout-box__el" igxFlex>3</div>
