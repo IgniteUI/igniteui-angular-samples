@@ -23,6 +23,9 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
         // input group sample 2
         configs.push(new Config({
             component: InputGroupSample2Component,
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxInputGroupModule, InputGroupSample2Component],
                 ngDeclarations: [InputGroupSample2Component],
@@ -34,6 +37,9 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
         // input group sample 5
         configs.push(new Config({
             component: InputGroupSample5Component,
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxInputGroupModule, InputGroupSample5Component],
                 ngDeclarations: [InputGroupSample5Component],
@@ -45,6 +51,9 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
         // input group sample 6
         configs.push(new Config({
             component: InputGroupSample6Component,
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
                      IgxRippleModule, InputGroupSample6Component, IgxDatePickerModule, IgxTimePickerModule,
@@ -60,6 +69,9 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
         // reactive forms
         configs.push(new Config({
             component: ReactiveFormsSampleComponent,
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
                      IgxRippleModule, ReactiveFormsSampleComponent, IgxDatePickerModule, IgxTimePickerModule,
@@ -74,6 +86,9 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: InputGroupStyleComponent,
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxInputGroupModule, InputGroupStyleComponent],
                 ngDeclarations: [InputGroupStyleComponent],
