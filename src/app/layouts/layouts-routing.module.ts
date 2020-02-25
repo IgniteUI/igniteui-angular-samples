@@ -4,6 +4,8 @@ import { RouterModule, Routes } from "@angular/router";
 import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";
 import { AvatarSample2Component } from "./avatar/avatar-sample-2/avatar-sample-2.component";
 import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3.component";
+import { AvatarSample4Component } from "./avatar/avatar-sample-4/avatar-sample-4.component";
+import { AvatarStylingSampleComponent } from "./avatar/avatar-styling/avatar-styling.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
@@ -67,6 +69,16 @@ export const layoutsRoutes: Routes = [
         component: AvatarSample3Component,
         data: layoutsRoutesData["avatar-sample-3"],
         path: "avatar-sample-3"
+    },
+    {
+        component: AvatarSample4Component,
+        data: layoutsRoutesData["avatar-sample-4"],
+        path: "avatar-sample-4"
+    },
+    {
+        component: AvatarStylingSampleComponent,
+        data: layoutsRoutesData["avatar-styling"],
+        path: "avatar-styling"
     },
     {
         component: CarouselNoNavigationSampleComponent,
