@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid #grid1 [data]="data" [width]="'1200px'" [height]="'500px'" [pinning]="pinningConfig" [autoGenerate]="false" [showToolbar]="true">
+    <igx-grid #grid1 [data]="data" [width]="'100%'" [height]="'500px'" [pinning]="pinningConfig" [autoGenerate]="false" [showToolbar]="true">
         <ng-template igxToolbarCustomContent>
             <div class="crm-toolbar-template">
                 <div class="crm-sample-toolbar__title">
@@ -7,7 +7,7 @@
                 </div>
                 <div class="sample-flex-container">
                     <igx-checkbox [(ngModel)]="columnsPinned">
-                        Show Podiums
+                        Freeze Podiums
                     </igx-checkbox>
                 </div>
             </div>
@@ -34,7 +34,7 @@
         <igx-column field="BeatsPerMinute" header="BPM"></igx-column>
         <igx-column field="TopSpeed" header="Top Speed"></igx-column>
         <igx-column field="TrackProgress" header="Track Progress"></igx-column>
-        <igx-column field="Registered" header="Date of Registration" width="200"></igx-column>
+        <igx-column field="RegistrationDate" header="Date of Registration" width="200"></igx-column>
         <igx-column field="FirstPlaces" header="Gold" width="90" [pinned]="columnsPinned"></igx-column>
         <igx-column field="SecondPlaces" header="Silver" width="90" [pinned]="columnsPinned"></igx-column>
         <igx-column field="ThirdPlaces" header="Bronze" width="90" [pinned]="columnsPinned"></igx-column>

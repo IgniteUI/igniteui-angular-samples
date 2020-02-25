@@ -1,22 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
-// import { DATA } from "../../data/customers";
+import { IgxColumnComponent, IgxGridComponent, ColumnPinningPosition } from "igniteui-angular";
+import { IPinningConfig } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { athletesData } from "../services/data";
-
-export enum ColumnPinningPosition {
-    Start,
-    End
-}
-
-export enum RowPinningPosition {
-    Top,
-    Bottom
-}
-
-export interface IPinningConfig {
-    columns?: ColumnPinningPosition;
-    rows?: RowPinningPosition;
-}
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -27,11 +12,9 @@ export interface IPinningConfig {
 })
 
 export class RightPinningSampleComponent {
-
-    
     @ViewChild("grid1", { static: true }) 
     public grid1: IgxGridComponent;
-    
+
     public data: any[];
     public columns: any[];
     public pinningConfig: IPinningConfig = { columns: ColumnPinningPosition.End };
@@ -43,10 +26,11 @@ export class RightPinningSampleComponent {
             x.FirstPlaces = Math.floor(Math.random() * Math.floor(3));
             x.SecondPlaces = Math.floor(Math.random() * Math.floor(4));
             x.ThirdPlaces = Math.floor(Math.random() * Math.floor(5));
+            x.RegistrationDate = this.generateReadableDate(x.Registered);
         });
     }
 
-    public toggleColumn(col: IgxColumnComponent) {
+    public toggleColumn(col: IgxColumnComponent): void {
         col.pinned ? col.unpin() : col.pin();
     }
 
@@ -56,6 +40,12 @@ export class RightPinningSampleComponent {
 
     public set columnsPinned(pinned) {
         this._columnsPinned = !this._columnsPinned;
-    } 
+    }
+
+    private generateReadableDate(timestamp: string): string {
+        const dateObj = new Date(timestamp.split(" ")[0]);
+        const month = dateObj.toLocaleString("default", { month: "long"});
+        return month + " " + dateObj.getFullYear();
+    }
 
 }
