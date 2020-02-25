@@ -1,0 +1,159 @@
+<div class="sample-wrapper">
+    <h4 class="sample-title">Layout direction</h4>
+    <section class="sample-content">
+        <article class="sample-column">
+            <div class="layout-sample">
+                <h5 class="rule-title">Row</h5>
+                <div class="layout-box" igxLayout igxLayoutDir="row">
+                    <div class="layout-box__el" igxFlex>1</div>
+                    <div class="layout-box__el" igxFlex>2</div>
+                    <div class="layout-box__el" igxFlex>3</div>
+                </div>
+            </div>
+
+            <div class="layout-sample">
+                <h5 class="rule-title">Row reverse</h5>
+                <div class="layout-box" igxLayout igxLayoutDir="row" igxLayoutReverse="true">
+                    <div class="layout-box__el" igxFlex>1</div>
+                    <div class="layout-box__el" igxFlex>2</div>
+                    <div class="layout-box__el" igxFlex>3</div>
+                </div>
+            </div>
+        </article>
+
+        <article class="sample-column">
+            <h5 class="rule-title">Column</h5>
+            <div class="layout-sample">
+                <div class="layout-box" igxLayout igxLayoutDir="column">
+                    <div class="layout-box__el" igxFlex igxFlexGrow="0">1</div>
+                    <div class="layout-box__el" igxFlex igxFlexGrow="0">2</div>
+                    <div class="layout-box__el" igxFlex igxFlexGrow="0">3</div>
+                </div>
+            </div>
+        </article>
+
+        <article class="sample-column">
+            <h5 class="rule-title">Column reverse</h5>
+            <div class="layout-sample">
+                <div class="layout-box" igxLayout igxLayoutDir="column" igxLayoutReverse="true">
+                    <div class="layout-box__el" igxFlex igxFlexGrow="0">1</div>
+                    <div class="layout-box__el" igxFlex igxFlexGrow="0">2</div>
+                    <div class="layout-box__el" igxFlex igxFlexGrow="0">3</div>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <h4 class="sample-title">Content Positioning (row)</h4>
+    <section class="sample-content">
+        <article class="sample-column">
+            <h5 class="rule-title">Space between</h5>
+            <div class="layout-sample">
+                <div class="layout-box" igxLayout igxLayoutJustify="space-between">
+                    <div class="layout-box__el">1</div>
+                    <div class="layout-box__el">2</div>
+                    <div class="layout-box__el">3</div>
+                </div>
+            </div>
+        </article>
+
+        <article class="sample-column">
+            <h5 class="rule-title">Space around</h5>
+            <div class="layout-sample">
+                <div class="layout-box" igxLayout igxLayoutJustify="space-around">
+                    <div class="layout-box__el">1</div>
+                    <div class="layout-box__el">2</div>
+                    <div class="layout-box__el">3</div>
+                </div>
+            </div>
+        </article>
+
+        <article class="sample-column">
+            <h5 class="rule-title">Flex start X</h5>
+            <div class="layout-sample">
+                <div class="layout-box" igxLayout igxLayoutJustify="start">
+                    <div class="layout-box__el">1</div>
+                    <div class="layout-box__el">2</div>
+                    <div class="layout-box__el">3</div>
+                </div>
+            </div>
+        </article>
+
+        <article class="sample-column">
+            <h5 class="rule-title">Center X</h5>
+            <div class="layout-sample">
+                <div class="layout-box" igxLayout igxLayoutJustify="center">
+                    <div class="layout-box__el">1</div>
+                    <div class="layout-box__el">2</div>
+                    <div class="layout-box__el">3</div>
+                </div>
+            </div>
+        </article>
+
+        <article class="sample-column">
+            <h5 class="rule-title">Flex end X</h5>
+            <div class="layout-sample">
+                <div class="layout-box" igxLayout igxLayoutJustify="end">
+                    <div class="layout-box__el">1</div>
+                    <div class="layout-box__el">2</div>
+                    <div class="layout-box__el">3</div>
+                </div>
+            </div>
+        </article>
+
+        <article class="sample-column">
+            <h5 class="rule-title">Flex start Y</h5>
+            <div class="layout-sample">
+                <div class="layout-box tall" igxLayout igxLayoutItemAlign="flex-start">
+                    <div class="layout-box__el" igxFlex>1</div>
+                    <div class="layout-box__el" igxFlex>2</div>
+                    <div class="layout-box__el" igxFlex>3</div>
+                </div>
+            </div>
+        </article>
+
+        <article class="sample-column">
+            <h5 class="rule-title">Center Y</h5>
+            <div class="layout-sample">
+                <div class="layout-box tall" igxLayout igxLayoutItemAlign="center">
+                    <div class="layout-box__el" igxFlex>1</div>
+                    <div class="layout-box__el" igxFlex>2</div>
+                    <div class="layout-box__el" igxFlex>3</div>
+                </div>
+            </div>
+        </article>
+
+        <article class="sample-column">
+            <h5 class="rule-title">Flex end Y</h5>
+            <div class="layout-sample">
+                <div class="layout-box tall" igxLayout igxLayoutItemAlign="flex-end">
+                    <div class="layout-box__el" igxFlex>1</div>
+                    <div class="layout-box__el" igxFlex>2</div>
+                    <div class="layout-box__el" igxFlex>3</div>
+                </div>
+            </div>
+        </article>
+
+        <article class="sample-column">
+            <h5 class="rule-title">Wrap</h5>
+            <div class="layout-sample">
+                <div class="layout-box" igxLayout igxLayoutDir="row" igxLayoutWrap="wrap">
+                    <div class="layout-box__el wrap-row" igxFlex igxFlexGrow="0">1</div>
+                    <div class="layout-box__el wrap-row" igxFlex igxFlexGrow="0">2</div>
+                    <div class="layout-box__el wrap-row" igxFlex igxFlexGrow="0">3</div>
+                </div>
+            </div>
+        </article>
+
+        <article class="sample-column">
+            <h5 class="rule-title">Custom order</h5>
+            <div class="layout-sample">
+                <div class="layout-box" igxLayout igxLayoutDir="row">
+                    <div class="layout-box__el" igxFlex igxFlexOrder="1">1</div>
+                    <div class="layout-box__el" igxFlex igxFlexOrder="0">2</div>
+                    <div class="layout-box__el" igxFlex igxFlexOrder="2">3</div>
+                </div>
+            </div>
+        </article>
+    </section>
+</div>
