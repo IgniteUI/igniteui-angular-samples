@@ -1033,7 +1033,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: RightPinningSampleComponent,
-            additionalFiles: ["/src/app/data/customers.ts"],
+            additionalFiles: ["/src/app/data/athletesData.ts", "/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [RightPinningSampleComponent, IgxGridModule, IgxIconModule],
                 ngDeclarations: [PinningSampleComponent],

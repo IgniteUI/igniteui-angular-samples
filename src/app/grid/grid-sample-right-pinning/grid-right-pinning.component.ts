@@ -1,6 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxColumnComponent, IgxGridComponent, ColumnPinningPosition } from "igniteui-angular";
-import { IPinningConfig } from 'igniteui-angular/lib/grids/common/grid.interface';
+import { ColumnPinningPosition, IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
+import { IPinningConfig } from "igniteui-angular/lib/grids/common/grid.interface";
+import { data } from "../../data/athletesData";
 import { athletesData } from "../services/data";
 
 @Component({
@@ -12,21 +13,30 @@ import { athletesData } from "../services/data";
 })
 
 export class RightPinningSampleComponent {
-    @ViewChild("grid1", { static: true }) 
+    @ViewChild("grid1", { static: true })
     public grid1: IgxGridComponent;
 
     public data: any[];
+    public athletesData: any[];
     public columns: any[];
     public pinningConfig: IPinningConfig = { columns: ColumnPinningPosition.End };
     private _columnsPinned: boolean = true;
 
     public ngOnInit(): void {
         this.data = athletesData;
+        this.athletesData = data;
+        let i = 0;
         this.data.forEach((x) => {
             x.FirstPlaces = Math.floor(Math.random() * Math.floor(3));
             x.SecondPlaces = Math.floor(Math.random() * Math.floor(4));
             x.ThirdPlaces = Math.floor(Math.random() * Math.floor(5));
             x.RegistrationDate = this.generateReadableDate(x.Registered);
+            x.Birthday = this.generateReadableDate(this.athletesData[i].birthday);
+            x.Sponsor = this.athletesData[i].company;
+            x.Agent = this.athletesData[i].name;
+            x.AgentContact = this.athletesData[i].email;
+            x.AgentPhone = this.athletesData[i].work_phone;
+            i++;
         });
     }
 
@@ -43,9 +53,13 @@ export class RightPinningSampleComponent {
     }
 
     private generateReadableDate(timestamp: string): string {
-        const dateObj = new Date(timestamp.split(" ")[0]);
+        let dateObj = new Date(timestamp);
+        if (isNaN(dateObj.getTime())) {
+            dateObj = new Date(timestamp.split(" ")[0]);
+        }
         const month = dateObj.toLocaleString("default", { month: "long"});
-        return month + " " + dateObj.getFullYear();
+        const day = dateObj.getDate();
+        return day + " " + month + " " + dateObj.getFullYear();
     }
 
 }
