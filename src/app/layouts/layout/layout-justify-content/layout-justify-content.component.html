@@ -1,0 +1,34 @@
+<div class="sample-wrapper">
+    <section class="sample-content">
+        <article class="sample-column">
+            <igx-buttongroup class="button-group" [alignment]="alignment">
+                <button igxButton (click) = "justifyContent = 'start'" [igxRipple]="rippleColor" [selected]="true">Start</button>
+                <button igxButton (click) = "justifyContent = 'center'" [igxRipple]="rippleColor">Center</button>
+                <button igxButton (click) = "justifyContent = 'end'" [igxRipple]="rippleColor">End</button>
+            </igx-buttongroup>
+            <div *ngIf="justifyContent == 'start'" class="layout-sample">
+                <div class="layout-box" igxLayout igxLayoutJustify="start">
+                    <div class="layout-box__el">1</div>
+                    <div class="layout-box__el">2</div>
+                    <div class="layout-box__el">3</div>
+                </div>
+            </div>
+
+            <div *ngIf="justifyContent == 'center'" class="layout-sample">
+                <div class="layout-box" igxLayout igxLayoutJustify="center">
+                    <div class="layout-box__el">1</div>
+                    <div class="layout-box__el">2</div>
+                    <div class="layout-box__el">3</div>
+                </div>
+            </div>
+
+            <div *ngIf="justifyContent == 'end'" class="layout-sample">
+                <div class="layout-box" igxLayout igxLayoutJustify="end">
+                    <div class="layout-box__el">1</div>
+                    <div class="layout-box__el">2</div>
+                    <div class="layout-box__el">3</div>
+                </div>
+            </div>
+        </article>
+    </section>
+</div>
