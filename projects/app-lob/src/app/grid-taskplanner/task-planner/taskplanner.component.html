@@ -1,60 +1,83 @@
 <div class="tp-app">
-    <div class="tp-app__filtering">
-        <div class="editing-buttons">
-            <igx-buttongroup [multiSelection]="false" (onSelect)="onButtonAction($event)">
-                <button igxButton [selected]="true">Cell Editing</button>
-                <button igxButton>Row Editing</button>
-                <button igxButton>None</button>
-            </igx-buttongroup>
-            <igx-switch [(ngModel)]="batchEditingEnabled">Batch Editing</igx-switch>
-            <div *ngIf="batchEditingEnabled">
-                <button igxButton [disabled]="!undoEnabled" (click)="undo()">Undo</button>
-                <button igxButton [disabled]="!redoEnabled" (click)="redo()">Redo</button>
-                <button igxButton [disabled]="!hasTransactions" (click)="openCommitDialog()">Commit</button>
-            </div>
+<!--    <div class="tp-app__filtering">-->
+<!--        <div class="editing-buttons">-->
+<!--            <igx-buttongroup [multiSelection]="false" (onSelect)="onButtonAction($event)">-->
+<!--                <button igxButton [selected]="true">Cell Editing</button>-->
+<!--                <button igxButton>Row Editing</button>-->
+<!--                <button igxButton>None</button>-->
+<!--            </igx-buttongroup>-->
+<!--            <igx-switch [(ngModel)]="batchEditingEnabled">Batch Editing</igx-switch>-->
+<!--            <div *ngIf="batchEditingEnabled">-->
+<!--                <button igxButton [disabled]="!undoEnabled" (click)="undo()">Undo</button>-->
+<!--                <button igxButton [disabled]="!redoEnabled" (click)="redo()">Redo</button>-->
+<!--                <button igxButton [disabled]="!hasTransactions" (click)="openCommitDialog()">Commit</button>-->
+<!--            </div>-->
 
-        </div>
-    </div>
+<!--        </div>-->
+<!--    </div>-->
     <div class="tp-app__inner">
         <!--  Master Backlog -->
         <!-- TODO Create separate component for master backlog -->
         <igx-card class="tp-app__backlog">
+
             <igx-card-header>
-                <h3 igxCardHeaderTitle>Master Backlog</h3>
+                <h1 igxCardHeaderTitle>Master Backlog</h1>
             </igx-card-header>
+            <igx-divider></igx-divider>
             <igx-card-content>
-                <igx-list>
-                    <igx-list-item>
-                        <h1 igxListLineTitle>Issue title</h1>
-                        <h2 igxListLineSubTitle>Issue subtitle</h2>
-                        <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
-                            <igx-icon fontSet="material">delete</igx-icon>
-                        </button>
-                        <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
-                            <igx-icon fontSet="material">edit</igx-icon>
-                        </button>
-                    </igx-list-item>
-                    <igx-list-item>
-                        <h1 igxListLineTitle>Issue title</h1>
-                        <h2 igxListLineSubTitle>Issue subtitle</h2>
-                        <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
-                            <igx-icon fontSet="material">delete</igx-icon>
-                        </button>
-                        <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
-                            <igx-icon fontSet="material">edit</igx-icon>
-                        </button>
-                    </igx-list-item>
-                    <igx-list-item>
-                        <h1 igxListLineTitle>Issue title</h1>
-                        <h2 igxListLineSubTitle>Issue subtitle</h2>
-                        <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
-                            <igx-icon fontSet="material">delete</igx-icon>
-                        </button>
-                        <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
-                            <igx-icon fontSet="material">edit</igx-icon>
-                        </button>
-                    </igx-list-item>
-                </igx-list>
+                <igx-tabs>
+                    <igx-tabs-group label="Queue">
+                        <igx-list>
+                            <igx-list-item>
+                                <h1 igxListLineTitle>Issue title</h1>
+                                <h2 igxListLineSubTitle>Issue subtitle</h2>
+                                <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
+                                    <igx-icon fontSet="material">edit</igx-icon>
+                                </button>
+                                <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
+                                    <igx-icon fontSet="material">delete</igx-icon>
+                                </button>
+                            </igx-list-item>
+                            <igx-list-item>
+                                <h1 igxListLineTitle>Issue title</h1>
+                                <h2 igxListLineSubTitle>Issue subtitle</h2>
+                                <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
+                                    <igx-icon fontSet="material">edit</igx-icon>
+                                </button>
+                                <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
+                                    <igx-icon fontSet="material">delete</igx-icon>
+                                </button>
+                            </igx-list-item>
+                            <igx-list-item>
+                                <h1 igxListLineTitle>Issue title</h1>
+                                <h2 igxListLineSubTitle>Issue subtitle</h2>
+                                <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
+                                    <igx-icon fontSet="material">edit</igx-icon>
+                                </button>
+                                <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
+                                    <igx-icon fontSet="material">delete</igx-icon>
+                                </button>
+                            </igx-list-item>
+                        </igx-list>
+                    </igx-tabs-group>
+                    <igx-tabs-group label="Discovery">
+                        <igx-list>
+                            <igx-list-item>
+                                <h1 igxListLineTitle>Issue title</h1>
+                                <h2 igxListLineSubTitle>Issue subtitle</h2>
+                                <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
+                                    <igx-icon fontSet="material">edit</igx-icon>
+                                </button>
+                                <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
+                                    <igx-icon fontSet="material">delete</igx-icon>
+                                </button>
+                            </igx-list-item>
+                        </igx-list>
+                    </igx-tabs-group>
+                    <igx-tabs-group label="Design">Design</igx-tabs-group>
+                    <igx-tabs-group label="Ready">Ready</igx-tabs-group>
+                    <igx-tabs-group label="Next Sprint Draft">Next Sprint Draft</igx-tabs-group>
+                </igx-tabs>
             </igx-card-content>
         </igx-card>
 
@@ -66,7 +89,6 @@
                       [data]="localData "
                       [autoGenerate]="false"
                       [showToolbar]="true"
-                      toolbarTitle="Sprint 14"
                       [primaryKey]="'id'"
                       [rowEditable]="isRowEditingEnabled"
                       [allowFiltering]="true" [allowAdvancedFiltering]="true" [filterMode]="'excelStyleFilter'"
@@ -81,20 +103,21 @@
                 <!-- Grid Detail View Template -->
                 <ng-template igxGridDetail let-dataItem>
                     <div style="width:100%;">
-                        <div class="tabContent">
-                            <div class="descContainer">
-                                <span>Description</span>
-                                <textarea rows="4" cols="50" [(ngModel)]="dataItem.details" placeholder="Enter any details here."></textarea>
+                        <div class="tp-app__row-details">
+                            <div class="tp-app__row-details-col">
+                                <div class="tp-app__row-details-col-item">
+                                    <span>Description</span>
+                                    <textarea rows="4" cols="50" [(ngModel)]="dataItem.details" placeholder="Enter any details here."></textarea>
+                                </div>
+                                <div class="tp-app__row-details-col-item">
+                                    <span>Acceptance criteria</span>
+                                    <igx-checkbox [(ngModel)]="dataItem.acceptance_criteria.hasAPI" [checked]="dataItem.acceptance_criteria.hasAPI">Includes API & Docs</igx-checkbox>
+                                    <igx-checkbox [(ngModel)]="dataItem.acceptance_criteria.hasTests" [checked]="dataItem.acceptance_criteria.hasTests">Includes unit tests</igx-checkbox>
+                                    <igx-checkbox [(ngModel)]="dataItem.acceptance_criteria.builds" [checked]="dataItem.acceptance_criteria.builds">All checks passed</igx-checkbox>
+                                </div>
                             </div>
                             <igx-divider [vertical]="true"></igx-divider>
-                            <div class="descContainer">
-                                <span>Acceptance criteria</span>
-                                <igx-checkbox [(ngModel)]="dataItem.acceptance_criteria.hasAPI" [checked]="dataItem.acceptance_criteria.hasAPI">Includes API & Docs</igx-checkbox>
-                                <igx-checkbox [(ngModel)]="dataItem.acceptance_criteria.hasTests" [checked]="dataItem.acceptance_criteria.hasTests">Includes unit tests</igx-checkbox>
-                                <igx-checkbox [(ngModel)]="dataItem.acceptance_criteria.builds" [checked]="dataItem.acceptance_criteria.builds">All checks passed</igx-checkbox>
-                            </div>
-                            <igx-divider [vertical]="true"></igx-divider>
-                            <div class="descContainer">
+                            <div class="tp-app__row-details-col">
                                 <span>Progress & Estimation (Need to be rethought, see comments in the html</span>
                                 <!-- TODO: Rethink the design and aim of this chart to achieve a meaningful purpose.
                                     My initial idea was for the chart to display two lines:
@@ -126,8 +149,12 @@
                 </ng-template>
 
                 <!-- Toolbar Template -->
-                <ng-template igxToolbarCustomContent let-grid="grid">
-                    <button igxButton="flat" igxRipple igxRippleCentered="true" (click)="addTaskDialog.open()">
+                <ng-template class="tp-app__grid-toolbar" igxToolbarCustomContent let-grid="grid">
+                    <div class="tp-app__grid-heading">
+                        <img class="tp-app__grid-logo" src="https://image.flaticon.com/icons/svg/1212/1212594.svg" alt="">
+                        <span>Task Planner</span>
+                    </div>
+                    <button igxButton="raised" igxRipple igxRippleCentered="true" (click)="addTaskDialog.open()">
                         CREATE ISSUE
                     </button>
                 </ng-template>
@@ -159,16 +186,18 @@
 
                     <!-- Owner Column -->
                     <ng-template *ngIf="c.field === 'owner'" igxCell let-cell="cell" let-value>
-                        <div class="cell__inner">
-                            <div class="cell__inner">
-                                <igx-avatar [src]="cell.value.avatar" roundShape="true" size="small"></igx-avatar>
-                                <span class="owner_name">{{ value.name }}</span>
-                            </div>
+                        <div class="owner-col">
+                            <igx-avatar class="owner-col__avatar" [src]="cell.value.avatar" roundShape="true" size="small"></igx-avatar>
+                            <span class="owner-col__name">{{ value.name }}</span>
                         </div>
                     </ng-template>
                     <ng-template *ngIf="c.field === 'owner'" igxCellEditor let-cell="cell" let-value>
                         <igx-select [placeholder]="value.name" [(ngModel)]="cell.editValue">
-                            <igx-select-item *ngFor="let m of teamMembers" [value]="m">{{ m.name }}</igx-select-item>
+                            <igx-select-item *ngFor="let m of teamMembers" [value]="m">
+                                <div class="item">
+
+                                </div>
+                            </igx-select-item>
                         </igx-select>
                     </ng-template>
 
@@ -204,33 +233,33 @@
     (onRightButtonSelect)="addTask($event)"
     rightButtonLabel="OK"
     [closeOnOutsideSelect]="true">
-    <div class="addDialogContent">
-        <igx-input-group #MyInputGroup>
+    <div class="tp-app__dialog-content">
+        <igx-input-group type="box" #MyInputGroup>
             <label igxLabel for="issue">Issue Title</label>
             <input igxInput id="issue" type="text" [(ngModel)]="addTaskForm.issue" name="newTask" required/>
         </igx-input-group>
 
-        <igx-select placeholder="Owner" [(ngModel)]="addTaskForm.owner">
+        <igx-select type="box" placeholder="Owner" [(ngModel)]="addTaskForm.owner">
             <igx-select-item *ngFor="let m of teamMembers" [value]="m.name">{{ m.name }}</igx-select-item>
         </igx-select>
 
-        <igx-input-group>
+        <igx-input-group type="box">
             <label igxLabel for="description">Description</label>
             <textarea rows="4" cols="50" igxInput name="desc" [(ngModel)]="addTaskForm.description"></textarea>
         </igx-input-group>
 
-        <igx-select placeholder="Priority" [(ngModel)]="addTaskForm.priority">
+        <igx-select type="box" placeholder="Priority" [(ngModel)]="addTaskForm.priority">
             <igx-select-item *ngFor="let p of priority" [value]="p.value">{{ p.value }}</igx-select-item>
         </igx-select>
 
-        <igx-input-group>
+        <igx-input-group type="box">
             <label igxLabel for="issue">Milestone</label>
             <input igxInput id="issue" type="text" [(ngModel)]="addTaskForm.milestone" name="newTask" [igxMask]="'###-##-####'"/>
         </igx-input-group>
 
         <igx-date-picker name="deadline" [(ngModel)]="addTaskForm.deadline">
             <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value" let-displayData="displayData">
-                <igx-input-group (click)="openDialog()">
+                <igx-input-group type="box" (click)="openDialog()">
                     <label igxLabel>Deadline</label>
                     <input igxInput [value]="displayData" />
                     <igx-prefix>

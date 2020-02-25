@@ -1,0 +1,7 @@
+$tp-paginator: igx-paginator-theme(
+    //$palette: $tp-palette,
+    //$schema: $dark-schema,
+    $background-color: $tp-grays-gradient,
+    $border-color: $header-background,
+    $text-color: igx-color($tp-palette, 'secondary')
+);

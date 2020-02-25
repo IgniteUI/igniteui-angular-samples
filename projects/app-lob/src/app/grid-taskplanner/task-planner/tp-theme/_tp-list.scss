@@ -1,0 +1,8 @@
+$tp-list: igx-list-theme(
+    $palette: $tp-palette,
+    $schema: $dark-schema,
+    $item-background-hover: $row-background,
+    $item-background-active: $row-background,
+    $item-text-color-hover: #fff,
+    $item-text-color: #fff
+);

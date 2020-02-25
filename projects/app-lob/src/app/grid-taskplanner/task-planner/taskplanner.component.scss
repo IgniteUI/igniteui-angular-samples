@@ -1,40 +1,94 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
-@import "tp-themes/tp-grid";
+$tp-palette: igx-palette(
+    $primary: #5880ff,
+    $secondary: #ea68fa,
+    $surface: #282A37,
+    $grays: #fff
+);
 
 $header-height: rem(56px);
 $tp-app-padding: rem(34px);
 $offset-top: $header-height;
-$state-done: #00a86b;
-$state-new: rgb(0, 110, 184);
-$state-inProgress: rgb(187, 57, 134);
-$state-late: rgb(215, 85, 21);
-$state-priority: rgb(191, 34, 44);
-$state-delayed: rgb(171, 149, 29);
+$state-done: #52e282;
+$state-new: #54d5ee;
+$state-inProgress: #b38de6;
+$state-late: #dc8554;
+$state-priority: #ea5556;
+$state-delayed: #d2c059;
+$tp-grays-gradient: igx-color($tp-palette, 'surface');
+$tp-grays-gradient-btn: linear-gradient(90deg, #343745 0%, rgba(65,70,92,1) 35%, #343745 100%);
+$row-background: #343745;
+$btn-icon-background: #262933;
+$header-background: $row-background;
+$scrollbar-track: $row-background;
+$scrollbar-thumb: rgba(65,70,92,1);
 
-$tp-palette: igx-palette(
-    $primary: rgb(0, 127, 212),
-    $secondary: rgb(171, 149, 29),
-    $surface: #282A37
-);
-
-$scrollbar-track: #131317;
-$scrollbar-thumb: rgba(171, 149, 29, 0.11);
+@import "tp-theme/index";
 
 :host {
     display: block;
     height:100%;
     ::ng-deep {
         .tp-app {
+            @include igx-dark-theme($tp-palette);
+            @include igx-grid($tp-grid);
+            @include igx-grid-toolbar($tp-toolbar);
+            @include igx-paginator($tp-paginator);
+            @include igx-button($tp-button);
+            @include igx-card($tp-card);
+            @include igx-input-group($tp-input-group);
+            @include igx-list($tp-list);
+            @include igx-tabs($tp-tabs);
             display: flex;
             flex-direction: column;
             height: 100%;
             padding: $tp-app-padding;
-            background: rgb(74,79,100);
-            background: linear-gradient(90deg, rgba(74,79,100,1) 0%, rgba(33,34,42,1) 100%);
+            background: rgb(26,28,37);
+            background: $tp-grays-gradient;
             color: #ccc;
+
+            &__row-details {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+
+            &__row-details-col {
+                display: flex;
+                flex-direction: column;
+                margin-right: rem(32px);
+                padding: rem(16px);
+                background: $row-background;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+
+            &__grid-logo {
+                height: 30px;
+                margin-right: rem(8px);
+            }
+
+            &__grid-heading {
+                display: flex;
+                align-items: center;
+                flex: 1;
+                font-size: 18px;
+            }
 
             &__grid {
                 flex: 1;
+                igx-grid {
+                    border-radius: rem(16px);
+                }
+            }
+
+            &__dialog-content {
+                padding:0 rem(24px);
+                > * {
+                    margin-bottom: rem(8px);
+                }
             }
 
             &__inner {
@@ -42,18 +96,9 @@ $scrollbar-thumb: rgba(171, 149, 29, 0.11);
                 flex: 1 0 0%;
             }
 
-            ::-webkit-scrollbar {
-                width: 16px;
-                height: 16px;
-                background-color: $scrollbar-track;
-            }
-            ::-webkit-scrollbar-thumb {
-                background-color: $scrollbar-thumb;
-            }
-            @include igx-dark-theme($tp-palette);
-
             &__backlog {
                 min-width: 300px;
+                width: 300px;
                 min-height: 400px;
                 margin-right: rem(16px);
 
@@ -70,30 +115,76 @@ $scrollbar-thumb: rgba(171, 149, 29, 0.11);
                     font-size: rem(16px) !important;
                 }
             }
+
+            ::-webkit-scrollbar {
+                width: 16px;
+                height: 16px;
+                background-color: $scrollbar-track;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background-color: $scrollbar-thumb;
+            }
+
+            .igx-button--raised {
+                transition: all 420ms ease-in-out;;
+            }
+        }
+
+        .done,
+        .new,
+        .inProgress,
+        .late,
+        .priority,
+        .delayed {
+            color: #000 !important;
         }
 
         .done {
-            background-color: #00a86b;
+            background-color: $state-done !important;
+            color:#000;
         }
 
         .new {
-            background-color: $state-new;
+            background-color: $state-new !important;;
         }
 
         .inProgress {
-            background-color: $state-inProgress;
+            background-color: $state-inProgress !important;;
         }
 
         .late {
-            background-color: $state-late;
+            background-color: $state-late !important;;
         }
 
         .priority {
-            color:$state-priority;
+            color: $state-priority !important;;
         }
 
         .delayed {
-            color: $state-delayed;
+            color: $state-delayed !important;;
+        }
+
+        .owner-col {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .owner-col__name {
+            white-space: nowrap;
+        }
+
+        .owner-col__avatar.igx-avatar--small {
+            width: rem(30px);
+            height: rem(30px);
+            min-width: rem(30px);
+            margin-right: rem(8px);
+        }
+
+        .igx-grid-toolbar__custom-content {
+            flex: 1;
+            justify-content: space-between;
         }
     }
 }

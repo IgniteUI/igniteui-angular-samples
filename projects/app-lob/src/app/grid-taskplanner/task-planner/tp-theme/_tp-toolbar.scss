@@ -1,0 +1,6 @@
+$tp-toolbar: igx-grid-toolbar-theme(
+    $palette: $tp-palette,
+    $schema: $dark-schema,
+    $background-color: $tp-grays-gradient,
+    $dropdown-background: igx-color($tp-palette, 'surface'),
+)

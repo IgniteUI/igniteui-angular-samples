@@ -6,11 +6,13 @@ import {
     IgxButtonGroupModule,
     IgxCardModule,
     IgxDialogModule,
+    IgxDividerModule,
     IgxGridModule,
     IgxInputGroupModule,
     IgxListModule,
     IgxMaskModule,
     IgxSwitchModule,
+    IgxTabsModule,
     IgxToastModule
 } from "igniteui-angular";
 
@@ -25,6 +27,8 @@ import { TaskPlannerRoutingModule } from "./taskplanner-routing.module";
         GridWithTransactionsComponent
     ],
     imports: [
+        IgxDividerModule,
+        IgxTabsModule,
         CommonModule,
         IgxGridModule,
         IgxAvatarModule,

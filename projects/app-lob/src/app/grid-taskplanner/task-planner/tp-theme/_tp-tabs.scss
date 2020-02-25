@@ -1,0 +1,9 @@
+$tp-tabs: igx-tabs-theme(
+    $palette: $tp-palette,
+    $schema: $dark-schema,
+    $item-background: darken(igx-color($tp-palette, 'surface'), 1%),
+    $indicator-color: igx-color($tp-palette, 'secondary'),
+    $item-active-color: igx-color($tp-palette, 'secondary'),
+    $item-active-icon-color: igx-color($tp-palette, 'secondary'),
+    $button-background: transparent
+);

@@ -1,0 +1,32 @@
+$tp-grid: igx-grid-theme(
+    $palette: $tp-palette,
+    $schema: $dark-schema,
+    $header-background: $header-background,
+    $content-background: igx-color($tp-palette, 'surface'),
+    $header-border-color: igx-color($tp-palette, 'surface'),
+
+    $row-border-color: igx-color($tp-palette, 'surface'),
+    $row-odd-background: $row-background,
+    $row-even-background: $row-background,
+    $row-selected-background: igx-color($tp-palette, 'primary'),
+
+    $group-row-background: $row-background,
+    $group-row-selected-background: igx-color($tp-palette, 'primary', 600),
+
+    $cell-selected-background: #3b3b4c,
+    $cell-editing-background: #3b3b4c,
+
+    $drop-area-background: $row-background,
+    $drop-area-on-drop-background: lighten($row-background, 10%),
+
+    $grouparea-background: $tp-grays-gradient,
+    $ghost-header-background: igx-color($tp-palette, 'surface'),
+    $filtering-header-background: igx-color($tp-palette, 'surface'),
+    $filtering-row-background: igx-color($tp-palette, 'surface'),
+    $body-summaries-background: igx-color($tp-palette, 'surface'),
+    $root-summaries-background: igx-color($tp-palette, 'surface'),
+    //$row-highlight:,
+    $row-ghost-background: #4A4F64,
+
+    $pinned-border-color: transparentize(igx-color($tp-palette, 'secondary'), .95)
+);

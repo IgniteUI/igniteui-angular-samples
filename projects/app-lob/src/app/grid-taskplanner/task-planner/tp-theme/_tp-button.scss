@@ -1,0 +1,13 @@
+$tp-button: igx-button-theme(
+    $schema: $dark-schema,
+    $palette: $tp-palette,
+    $raised-background: linear-gradient(90deg, rgba(151,89,255,1) 0%, rgba(234,104,250,1) 100%),
+    $raised-hover-background: linear-gradient(90deg, rgba(234,104,250,1) 0%, rgba(151,89,255,1) 100%),
+    $raised-border-radius: 1,
+    $flat-border-radius: 1,
+    $outlined-border-radius: 1,
+    $icon-color: #fff,
+    $icon-background: transparent,
+    $icon-hover-color: igx-color($tp-palette, 'secondary')
+);
+
