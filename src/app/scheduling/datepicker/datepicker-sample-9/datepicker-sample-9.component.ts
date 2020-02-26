@@ -2,7 +2,6 @@ import { Component, ViewChild } from "@angular/core";
 import {
     DateRangeType,
     IgxCalendarComponent,
-    IgxDialogComponent,
     IgxDropDownComponent
 } from "igniteui-angular";
 
@@ -13,17 +12,16 @@ import {
 })
 export class DatepickerSample9Component {
     @ViewChild("calendar", { static: true }) public calendar: IgxCalendarComponent;
-    @ViewChild("alert", { static: true }) public dialog: IgxDialogComponent;
     @ViewChild(IgxDropDownComponent, { static: true }) public igxDropDown: IgxDropDownComponent;
 
-    public startDate: any = new Date(Date.now());
-    public endDate: any = new Date();
-    public inputStartDate: any = this.startDate.getDate() + "/"
+    public startDate: Date = new Date(Date.now());
+    public endDate: Date = new Date();
+    public inputStartDate: string = this.startDate.getDate() + "/"
         + (this.startDate.getMonth() + 1) + "/" + this.startDate.getFullYear();
-    public inputEndDate: any = "One Way";
-    public slash = " - ";
+    public inputEndDate: string = "One Way";
+    public slash: string = " - ";
     public isClickedTwice: boolean;
-    public oneWayTicket = true;
+    public oneWayTicket: boolean = true;
     public items: Array<{ field: string }> = [
         { field: "Los Angelis" },
         { field: "New York" },

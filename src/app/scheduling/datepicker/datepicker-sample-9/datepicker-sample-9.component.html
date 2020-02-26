@@ -3,8 +3,8 @@
         <h4 class="sample-title">Range Date Picker </h4>
         <div class="form">
             <igx-input-group #inputGroup1 [igxToggleAction]="dropDown1">
-                <input #input1 type="text" igxInput [igxDropDownItemNavigation]="dropDown1"
-                    readonly="true" placeholder="choose a destination" [value]="dropDown1.selectedItem?.value" />
+                <input #input1 type="text" igxInput [igxDropDownItemNavigation]="dropDown1" readonly="true"
+                    placeholder="choose a destination" [value]="dropDown1.selectedItem?.value" />
                 <label igxLabel>From</label>
                 <igx-prefix>
                     <igx-icon>flight_takeoff</igx-icon>
@@ -21,8 +21,8 @@
             </igx-drop-down>
 
             <igx-input-group #inputGroup2 [igxToggleAction]="dropDown2" class="input-group">
-                <input #input2 type="text" igxInput [igxDropDownItemNavigation]="dropDown2"
-                    readonly="true" placeholder="choose a destination" [value]="dropDown2.selectedItem?.value" />
+                <input #input2 type="text" igxInput [igxDropDownItemNavigation]="dropDown2" readonly="true"
+                    placeholder="choose a destination" [value]="dropDown2.selectedItem?.value" />
                 <label igxLabel>To</label>
                 <igx-prefix>
                     <igx-icon>flight_land</igx-icon>
@@ -41,11 +41,11 @@
             <igx-input-group class="input-group" [igxToggleAction]="dropDownCalendar">
                 <input #dates igxInput [value]="inputStartDate +  slash + inputEndDate" type="text" igxInput
                     [igxDropDownItemNavigation]="dropDownCalendar">
-
                 <igx-prefix>
                     <igx-icon>today</igx-icon>
                 </igx-prefix>
             </igx-input-group>
+
             <igx-drop-down #dropDownCalendar (onClosing)="onClosing()">
                 <igx-calendar #calendar class="calendar" selection="range" monthsViewNumber="2"
                     (onSelection)="verifyRange($event)">
@@ -56,6 +56,5 @@
                 </div>
             </igx-drop-down>
         </div>
-
     </article>
 </div>
