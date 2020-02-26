@@ -60,6 +60,7 @@ import { LayoutCustomOrderComponent } from "./layout/layout-custom-order/layout-
 import { LayoutDirectionColumnComponent } from "./layout/layout-direction-column/layout-direction-column.component";
 import { LayoutDirectionRowComponent } from "./layout/layout-direction-row/layout-direction-row.component";
 import { LayoutJustifyContentComponent } from "./layout/layout-justify-content/layout-justify-content.component";
+import { LayoutSampleComponent } from "./layout/layout-sample/layout-sample.component";
 import { LayoutWrapComponent } from "./layout/layout-wrap/layout-wrap.component";
 import { LayoutsRoutingModule } from "./layouts-routing.module";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
@@ -122,6 +123,7 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         LayoutJustifyContentComponent,
         LayoutAlignItemsComponent,
         LayoutContentSpaceComponent,
+        LayoutSampleComponent,
         LayoutWrapComponent,
         TabbarSample1Component,
         TabbarSample2Component,
