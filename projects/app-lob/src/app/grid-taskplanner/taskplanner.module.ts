@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import {
     IgxAvatarModule,
     IgxButtonGroupModule,
+    IgxButtonModule,
     IgxCardModule,
     IgxDialogModule,
     IgxDividerModule,
@@ -27,6 +28,7 @@ import { TaskPlannerRoutingModule } from "./taskplanner-routing.module";
         GridWithTransactionsComponent
     ],
     imports: [
+        IgxButtonModule,
         IgxDividerModule,
         IgxTabsModule,
         CommonModule,

@@ -5,9 +5,11 @@ $tp-palette: igx-palette(
     $surface: #282A37,
     $grays: #fff
 );
-
+$backlog-card-header-height: rem(57px);
+$backlog-tab-header-height: rem(58px);
 $header-height: rem(56px);
-$tp-app-padding: rem(34px);
+$tp-app-padding: rem(32px);
+$backlog-width : rem(400px);
 $offset-top: $header-height;
 $state-done: #52e282;
 $state-new: #54d5ee;
@@ -25,166 +27,194 @@ $scrollbar-thumb: rgba(65,70,92,1);
 
 @import "tp-theme/index";
 
-:host {
-    display: block;
-    height:100%;
-    ::ng-deep {
-        .tp-app {
-            @include igx-dark-theme($tp-palette);
-            @include igx-grid($tp-grid);
-            @include igx-grid-toolbar($tp-toolbar);
-            @include igx-paginator($tp-paginator);
-            @include igx-button($tp-button);
-            @include igx-card($tp-card);
-            @include igx-input-group($tp-input-group);
-            @include igx-list($tp-list);
-            @include igx-tabs($tp-tabs);
+::ng-deep {
+    .tp-app{
+        display: flex;
+        flex: 1 0 0%;
+        height: 100%;
+        overflow: hidden;
+        padding: $tp-app-padding;
+        background: rgb(26,28,37);
+        background: $tp-grays-gradient;
+        color: #ccc;
+
+        @include igx-dark-theme($tp-palette);
+        @include igx-grid($tp-grid);
+        @include igx-grid-toolbar($tp-toolbar);
+        @include igx-paginator($tp-paginator);
+        @include igx-button($tp-button);
+        @include igx-card($tp-card);
+        @include igx-input-group($tp-input-group);
+        @include igx-list($tp-list);
+        @include igx-tabs($tp-tabs);
+
+        // TODO create issue to make the height of the list height:auto
+        igx-list {
+            height: auto !important;
+        }
+
+        &__backlog {
+            min-width: 300px;
+            width: $backlog-width;
+            min-height: 400px;
+            margin-right: rem(16px);
+
+            .igx-card-content {
+                padding: 0;
+            }
+
+            .igx-card-header {
+                min-height: $backlog-card-header-height;
+            }
+
+            .igx-tabs__header-menu-item--selected,
+            .igx-tabs__header-menu-item {
+                min-height: $backlog-tab-header-height;
+            }
+
+            // Add scroll to the list
+            .igx-card-content,
+            .igx-tabs > div,
+            .igx-tabs,
+            .igx-tabs__content-fluid,
+            .igx-tabs__group {
+                height: 100%;
+                overflow: hidden;
+            }
+            .igx-tabs__content-fixed {
+                height: 100%;
+            }
+
+            .tp-app__list-scroll {
+                height: calc(100% - #{$backlog-tab-header-height});
+                overflow-x: auto;
+            }
+        }
+
+        &__row-details {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        &__row-details-col {
             display: flex;
             flex-direction: column;
-            height: 100%;
-            padding: $tp-app-padding;
-            background: rgb(26,28,37);
-            background: $tp-grays-gradient;
-            color: #ccc;
+            margin-right: rem(32px);
+            padding: rem(16px);
+            background: $row-background;
 
-            &__row-details {
-                display: flex;
-                align-items: flex-start;
-                justify-content: flex-start;
-            }
-
-            &__row-details-col {
-                display: flex;
-                flex-direction: column;
-                margin-right: rem(32px);
-                padding: rem(16px);
-                background: $row-background;
-
-                &:last-of-type {
-                    margin-right: 0;
-                }
-            }
-
-            &__grid-logo {
-                height: 30px;
-                margin-right: rem(8px);
-            }
-
-            &__grid-heading {
-                display: flex;
-                align-items: center;
-                flex: 1;
-                font-size: 18px;
-            }
-
-            &__grid {
-                flex: 1;
-                igx-grid {
-                    border-radius: rem(16px);
-                }
-            }
-
-            &__dialog-content {
-                padding:0 rem(24px);
-                > * {
-                    margin-bottom: rem(8px);
-                }
-            }
-
-            &__inner {
-                display: flex;
-                flex: 1 0 0%;
-            }
-
-            &__backlog {
-                min-width: 300px;
-                width: 300px;
-                min-height: 400px;
-                margin-right: rem(16px);
-
-                .igx-card-header {
-                    flex: initial !important;;
-                }
-                .igx-card-content {
-                    padding: 0;
-                }
-
-                igx-icon {
-                    width: rem(16px) !important;
-                    height: rem(16px) !important;
-                    font-size: rem(16px) !important;
-                }
-            }
-
-            ::-webkit-scrollbar {
-                width: 16px;
-                height: 16px;
-                background-color: $scrollbar-track;
-            }
-
-            ::-webkit-scrollbar-thumb {
-                background-color: $scrollbar-thumb;
-            }
-
-            .igx-button--raised {
-                transition: all 420ms ease-in-out;;
+            &:last-of-type {
+                margin-right: 0;
             }
         }
 
-        .done,
-        .new,
-        .inProgress,
-        .late,
-        .priority,
-        .delayed {
-            color: #000 !important;
+        &__grid-logo {
+            height: 30px;
+            margin-right: rem(8px);
         }
 
-        .done {
-            background-color: $state-done !important;
-            color:#000;
-        }
-
-        .new {
-            background-color: $state-new !important;;
-        }
-
-        .inProgress {
-            background-color: $state-inProgress !important;;
-        }
-
-        .late {
-            background-color: $state-late !important;;
-        }
-
-        .priority {
-            color: $state-priority !important;;
-        }
-
-        .delayed {
-            color: $state-delayed !important;;
-        }
-
-        .owner-col {
+        &__grid-heading {
             display: flex;
             align-items: center;
-            justify-content: center;
+            flex: 1;
+            font-size: 18px;
         }
 
-        .owner-col__name {
+        &__grid {
+            flex: 1;
+            igx-grid {
+                border-radius: rem(16px);
+            }
+        }
+
+        &__dialog-content {
+            padding:0 rem(24px);
+            > * {
+                margin-bottom: rem(8px);
+            }
+        }
+
+        &__owner-col {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+
+            > span {
+                flex: 1;
+                min-width: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        &__owner-col-name {
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .owner-col__avatar.igx-avatar--small {
+        &__owner-col-avatar.igx-avatar--small {
             width: rem(30px);
             height: rem(30px);
             min-width: rem(30px);
             margin-right: rem(8px);
         }
+    }
 
-        .igx-grid-toolbar__custom-content {
-            flex: 1;
-            justify-content: space-between;
-        }
+    ::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+        background-color: $scrollbar-track;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $scrollbar-thumb;
+    }
+
+    .igx-button--raised {
+        transition: all 420ms ease-in-out;;
+    }
+
+    .done,
+    .new,
+    .inProgress,
+    .late,
+    .priority,
+    .delayed {
+        color: #000 !important;
+    }
+
+    .done {
+        background-color: $state-done !important;
+        color:#000;
+    }
+
+    .new {
+        background-color: $state-new !important;;
+    }
+
+    .inProgress {
+        background-color: $state-inProgress !important;;
+    }
+
+    .late {
+        background-color: $state-late !important;;
+    }
+
+    .priority {
+        color: $state-priority !important;
+    }
+
+    .delayed {
+        color: $state-delayed !important;;
+    }
+
+    .igx-grid-toolbar__custom-content {
+        flex: 1;
+        justify-content: space-between;
     }
 }

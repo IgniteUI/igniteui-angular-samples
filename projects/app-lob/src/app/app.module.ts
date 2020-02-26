@@ -22,6 +22,7 @@ import { IndexComponent } from "./index/index.component";
         IndexComponent
     ],
     imports: [
+        IgxButtonModule,
         AppRoutingModule,
         IgxRippleModule,
         IgxNavbarModule,

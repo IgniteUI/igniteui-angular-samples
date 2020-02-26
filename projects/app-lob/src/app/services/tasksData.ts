@@ -127,13 +127,7 @@ export const TASKS_DATA = [
       isActive: true,
       priority: "Critical",
       status: "New",
-      owner: {
-        id: 8,
-        name: "Fischer Luna",
-        sex: "female",
-        team: "Grinders",
-        avatar: "assets/images/women/3.jpg"
-      },
+      owner: {},
       created_by: "phoenix@infragistics.com",
       started_on: null,
       deadline: "2020-03-30T21:00:00.000Z",
@@ -179,13 +173,7 @@ export const TASKS_DATA = [
       isActive: true,
       priority: "Normal",
       status: "New",
-      owner: {
-        id: 13,
-        name: "Cantrell Drake",
-        sex: "male",
-        team: "CodeX",
-        avatar: "assets/images/men/6.jpg"
-      },
+      owner: {},
       created_by: "pwnjs@infragistics.com",
       started_on: null,
       deadline: "2020-03-30T21:00:00.000Z",
@@ -257,13 +245,7 @@ export const TASKS_DATA = [
       isActive: true,
       priority: "Low",
       status: "In Progress",
-      owner: {
-        id: 14,
-        name: "Joan Rich",
-        sex: "male",
-        team: "CodeX",
-        avatar: "assets/images/men/7.jpg"
-      },
+      owner: {},
       created_by: "phoenix@infragistics.com",
       started_on: "2020-02-07T05:57:35.669Z",
       deadline: "2020-03-24T00:15:42.825Z",
@@ -335,13 +317,7 @@ export const TASKS_DATA = [
       isActive: true,
       priority: "Low",
       status: "In Progress",
-      owner: {
-        id: 10,
-        name: "Phill Rumsfeld",
-        sex: "male",
-        team: "Samsara",
-        avatar: "assets/images/men/4.jpg"
-      },
+      owner: {},
       created_by: "phoenix@infragistics.com",
       started_on: "2019-12-13T18:30:29.913Z",
       deadline: "2020-02-16T21:38:22.970Z",
@@ -725,13 +701,7 @@ export const TASKS_DATA = [
       isActive: true,
       priority: "Low",
       status: "New",
-      owner: {
-        id: 2,
-        name: "Burgess Austin",
-        sex: "male",
-        team: "Phoenix",
-        avatar: "assets/images/men/1.jpg"
-      },
+      owner: {},
       created_by: "phoenix@infragistics.com",
       started_on: null,
       deadline: "2020-06-29T21:00:00.000Z",
@@ -985,13 +955,7 @@ export const TASKS_DATA = [
       isActive: true,
       priority: "High",
       status: "New",
-      owner: {
-        id: 15,
-        name: "George Parker",
-        sex: "male",
-        team: "Design & UX",
-        avatar: "assets/images/men/8.jpg"
-      },
+      owner: {},
       created_by: "powner@infragistics.com",
       started_on: null,
       deadline: "2020-06-29T21:00:00.000Z",
@@ -1349,13 +1313,7 @@ export const TASKS_DATA = [
       isActive: true,
       priority: "Critical",
       status: "In Progress",
-      owner: {
-        id: 16,
-        name: "Melanie Richmond",
-        sex: "female",
-        team: "Design & UX",
-        avatar: "assets/images/women/6.jpg"
-      },
+      owner: {},
       created_by: "powner@infragistics.com",
       started_on: "2020-01-25T16:26:10.049Z",
       deadline: "2020-03-19T21:25:59.364Z",
@@ -1557,13 +1515,7 @@ export const TASKS_DATA = [
       isActive: true,
       priority: "High",
       status: "New",
-      owner: {
-        id: 2,
-        name: "Burgess Austin",
-        sex: "male",
-        team: "Phoenix",
-        avatar: "assets/images/men/1.jpg"
-      },
+      owner: {},
       created_by: "phoenix@infragistics.com",
       started_on: null,
       deadline: "2020-03-30T21:00:00.000Z",
@@ -1687,13 +1639,7 @@ export const TASKS_DATA = [
       isActive: true,
       priority: "Low",
       status: "Done",
-      owner: {
-        id: 3,
-        name: "Alisa Aguirre",
-        sex: "female",
-        team: "Phoenix",
-        avatar: "assets/images/women/0.jpg"
-      },
+      owner: {},
       created_by: "pwnjs@infragistics.com",
       started_on: "2019-10-16T11:05:50.856Z",
       deadline: "2019-12-30T22:00:00.000Z",

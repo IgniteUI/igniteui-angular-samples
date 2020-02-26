@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, Pipe, PipeTransform, ViewChild  } from "@angular/core";
 import { ControlContainer, NgForm } from "@angular/forms";
 import { DefaultSortingStrategy, IGridEditEventArgs, IgxDialogComponent,
     IgxGridComponent, IgxToastComponent,
     SortingDirection, Transaction} from "igniteui-angular";
 import { IgxLegendComponent } from "igniteui-angular-charts";
 import { TasksDataService } from "../../services/tasks.service";
-import { MEMBERS } from "../../services/tasksData";
+import {MEMBERS, TASKS_DATA} from "../../services/tasksData";
 
 export enum editMode {
     cellEditing = 0,
@@ -40,7 +40,8 @@ export interface ITask {
        ],
     selector: "app-taskplanner",
     templateUrl: "./taskplanner.component.html",
-    styleUrls: ["./taskplanner.component.scss"]
+    styleUrls: ["./taskplanner.component.scss"],
+    host: {class: "tp-app"}
 })
 export class TaskPlannerComponent implements OnInit {
 
@@ -57,6 +58,7 @@ export class TaskPlannerComponent implements OnInit {
     public addTaskForm: ITask = { };
     public batchEditingEnabled = true;
     public transactionsData: Transaction[] = [];
+    public issues = TASKS_DATA;
 
     public statuses = [
         { value: "New" },
@@ -127,17 +129,17 @@ export class TaskPlannerComponent implements OnInit {
     public columns: any[] = [
         // tslint:disable:max-line-length
         { field: "id", header: "ID", width: "120px", dataType: "number", formatter: this.formatID },
-        { field: "milestone", header: "Milestone", width: "120px", dataType: "string", groupable: true, editable: true, sortable: true, sortStrategy: this.milestoneSort},
-        { field: "issue", header: "Issue", width: "380px", dataType: "string", filterable: false, editable: true},
-        { field: "status", header: "Status", width: "110px", dataType: "string", sortable: true, filterable: false, editable: true, cellClasses: this.statusClasses, sortStrategy: this.progressSort },
-        { field: "progress", header: "Progress", width: "95px", dataType: "number", sortable: false },
-        { field: "owner", header: "Owner", width: "180px", dataType: "string", editable: true, sortable: true, filterable: true },
-        { field: "created_by", header: "Created By", width: "180px", dataType: "string", sortable: true, filterable: true, editable: false, hidden: true },
-        { field: "started_on", header: "Started on", width: "130px", dataType: "date", sortable: true, filterable: true, editable: true },
-        { field: "deadline", header: "Deadline", width: "130px", dataType: "date", sortable: false, filterable: true, editable: true },
-        { field: "estimation", header: "Estimation", width: "120px", dataType: "number", sortable: false, filterable: false, editable: true, columnGroup: true, formatter: this.formatHours, cellClasses: this.delayedClasses },
-        { field: "hours_spent", header: "Hours Spent", width: "120px", dataType: "number", sortable: false, filterable: false, editable: true, columnGroup: true, formatter: this.formatHours, cellClasses: this.delayedClasses },
-        { field: "priority", header: "Priority", width: "125px", dataType: "string", sortable: true, filterable: true, editable: true, cellClasses: this.priorityClasses }
+        { field: "milestone", header: "Milestone", width: "120px", dataType: "string", resizable: true, groupable: true, editable: true, sortable: true, sortStrategy: this.milestoneSort},
+        { field: "issue", header: "Issue", width: "380px", dataType: "string", resizable: true, filterable: false, editable: true},
+        { field: "status", header: "Status", width: "110px", dataType: "string", resizable: true, sortable: true, filterable: false, editable: true, cellClasses: this.statusClasses, sortStrategy: this.progressSort },
+        { field: "progress", header: "Progress", width: "95px", dataType: "number", resizable: true, sortable: false },
+        { field: "owner", header: "Owner", width: "180px", dataType: "string", resizable: true, editable: true, sortable: true, filterable: true },
+        { field: "created_by", header: "Created By", width: "180px", dataType: "string", resizable: true, sortable: true, filterable: true, editable: false, hidden: true },
+        { field: "started_on", header: "Started on", width: "130px", dataType: "date", resizable: true, sortable: true, filterable: true, editable: true },
+        { field: "deadline", header: "Deadline", width: "130px", dataType: "date", resizable: true, sortable: false, filterable: true, editable: true },
+        { field: "estimation", header: "Estimation", width: "120px", dataType: "number", resizable: true, sortable: false, filterable: false, editable: true, columnGroup: true, formatter: this.formatHours, cellClasses: this.delayedClasses },
+        { field: "hours_spent", header: "Hours Spent", width: "120px", dataType: "number", resizable: true, sortable: false, filterable: false, editable: true, columnGroup: true, formatter: this.formatHours, cellClasses: this.delayedClasses },
+        { field: "priority", header: "Priority", width: "125px", dataType: "string", resizable: true, sortable: true, filterable: true, editable: true, cellClasses: this.priorityClasses }
         // tslint:enable:max-line-length
     ];
 
