@@ -1,28 +1,24 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
+import { IgxCarouselComponent } from "igniteui-angular";
 
 @Component({
   selector: "app-carousel",
   styleUrls: ["./carousel.component.scss"],
   templateUrl: "./carousel.component.html"
 })
-export class CarouselComponent implements OnInit {
 
-  public slides: any[] = [];
-  public interval = 3000;
-  public pause = true;
-  public loop = true;
-  constructor() { }
+export class CarouselComponent {
+  @ViewChild("carousel", { static: true }) public carousel: IgxCarouselComponent;
 
-  public ngOnInit() {
-    this.addNewSlide();
-  }
-
-  public addNewSlide() {
-    this.slides.push(
-      { image: "assets/images/carousel/slide1@x2.jpg" },
-      { image: "assets/images/carousel/slide2@x2.jpg" },
-      { image: "assets/images/carousel/slide3@x2.jpg" },
-      { image: "assets/images/carousel/slide4@x2.jpg" }
-    );
-  }
+  public slides = [
+      {
+        src: "http://localhost:4200/assets/images/carousel/ignite-ui-angular-indigo-design.png"
+      },
+      {
+        src: "http://localhost:4200/assets/images/carousel/slider-image-chart.png"
+      },
+      {
+        src: "http://localhost:4200/assets/images/carousel/ignite-ui-angular-charts.png"
+      }
+  ];
 }
