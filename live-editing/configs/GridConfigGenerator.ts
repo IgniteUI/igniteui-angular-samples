@@ -1033,11 +1033,14 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: RightPinningSampleComponent,
-            additionalFiles: ["/src/app/data/athletesData.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: [
+                "/src/app/data/athletesData.ts", 
+                "/src/app/grid/services/data.ts"
+            ],
             appModuleConfig: new AppModuleConfig({
-                imports: [RightPinningSampleComponent, IgxGridModule, IgxIconModule],
-                ngDeclarations: [PinningSampleComponent],
-                ngImports: [IgxGridModule, IgxIconModule],
+                imports: [RightPinningSampleComponent, IgxGridModule],
+                ngDeclarations: [RightPinningSampleComponent],
+                ngImports: [IgxGridModule],
                 ngProviders: []
             })
         }));
