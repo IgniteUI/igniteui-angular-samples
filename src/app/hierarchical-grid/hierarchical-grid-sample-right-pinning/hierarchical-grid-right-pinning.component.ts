@@ -33,11 +33,7 @@ export class HierarchicalGridRightPinningSampleComponent {
             x.RegistrationDate = this.generateReadableDate(x.Registered);
             x.Birthday = this.generateReadableDate(this.athletesData[i].birthday);
             x.Sponsor = this.athletesData[i].company;
-            x.AgentData = [{
-                Agent: this.athletesData[i].name,
-                AgentContact: this.athletesData[i].email,
-                AgentPhone: this.athletesData[i].work_phone
-            }];
+            x.AgentData = [this.athletesData[i]];
             i++;
         });
     }
