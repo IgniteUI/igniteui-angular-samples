@@ -644,20 +644,6 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             component: HGridAllDataSummaryComponent
         }));
 
-        configs.push(new Config({
-            additionalFiles: [
-                "/src/app/hierarchical-grid/services/data.ts",
-                "/src/app/data/athletesData.ts"
-            ],
-            appModuleConfig: new AppModuleConfig({
-                imports: [HierarchicalGridRightPinningSampleComponent, IgxHierarchicalGridModule],
-                ngDeclarations: [HierarchicalGridRightPinningSampleComponent],
-                ngImports: [IgxHierarchicalGridModule],
-                ngProviders: []
-            }),
-            component: HierarchicalGridRightPinningSampleComponent
-        }));
-
         return configs;
     }
 }

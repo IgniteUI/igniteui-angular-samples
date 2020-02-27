@@ -170,6 +170,7 @@ import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
+import { TreeGridRightPinningSampleComponent } from './tree-grid-sample-right-pinning/tree-grid-right-pinning.component';
 @NgModule({
     declarations: [
         TreeGridRowEditSampleComponent,
@@ -240,7 +241,8 @@ import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/tree
         TreeGridExternalAdvancedFilteringComponent,
         TreeGridConditionalCellStyle2Component,
         TreeGridMultiCollapsibleColumnGroupsComponent,
-        TreeGridAllDataSummaryComponent
+        TreeGridAllDataSummaryComponent,
+        TreeGridRightPinningSampleComponent
     ],
     imports: [
         CommonModule,

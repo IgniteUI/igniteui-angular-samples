@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
-import { ColumnPinningPosition, IgxColumnComponent, IgxHierarchicalGridComponent } from "igniteui-angular";
+import { ColumnPinningPosition, IgxColumnComponent, IgxTreeGridComponent } from "igniteui-angular";
 import { IPinningConfig } from "igniteui-angular/lib/grids/common/grid.interface";
 import { data } from "../../data/athletesData";
 import { athletesData } from "../services/data";
@@ -7,14 +7,14 @@ import { athletesData } from "../services/data";
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [],
-    selector: "hierarchical-grid-sample",
-    styleUrls: ["hierarchical-grid-right-pinning.component.scss"],
-    templateUrl: "hierarchical-grid-right-pinning.component.html"
+    selector: "tree-grid-sample",
+    styleUrls: ["tree-grid-right-pinning.component.scss"],
+    templateUrl: "tree-grid-right-pinning.component.html"
 })
 
-export class HierarchicalGridRightPinningSampleComponent {
+export class TreeGridRightPinningSampleComponent {
     @ViewChild("grid1", { static: true })
-    public grid1: IgxHierarchicalGridComponent;
+    public grid1: IgxTreeGridComponent;
 
     public data: any[];
     public athletesData: any[];

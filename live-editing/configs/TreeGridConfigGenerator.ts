@@ -876,6 +876,20 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             component: TreeGridAllDataSummaryComponent
         }));
 
+        configs.push(new Config({
+            additionalFiles: [
+                "/src/app/hierarchical-grid/services/data.ts",
+                "/src/app/data/athletesData.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [TreeGridRightPinningSampleComponent, IgxTreeGridModule],
+                ngDeclarations: [TreeGridRightPinningSampleComponent],
+                ngImports: [IgxTreeGridModule],
+                ngProviders: []
+            }),
+            component: TreeGridRightPinningSampleComponent
+        }));
+
         return configs;
     }
 }

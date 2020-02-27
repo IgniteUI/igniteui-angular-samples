@@ -143,6 +143,7 @@ import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
+import { TreeGridRightPinningSampleComponent } from './tree-grid-sample-right-pinning/tree-grid-right-pinning.component';
 
 export const treeGridRoutes: Routes = [
     {
@@ -479,6 +480,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridAllDataSummaryComponent,
         data: treeGridRoutesData["tree-grid-allData-summary"],
         path: "tree-grid-allData-summary"
+    },
+    {
+        component: TreeGridRightPinningSampleComponent,
+        data: treeGridRoutesData["tree-grid-sample-right-pinning"],
+        path: "tree-grid-sample-right-pinning"
     }
 ];
 
