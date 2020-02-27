@@ -1,53 +1,16 @@
 <div class="grid__wrapper">
-    <igx-tree-grid #grid1 childDataKey="Athletes" [data]="data" [width]="'100%'" [height]="'500px'" [pinning]="pinningConfig" [autoGenerate]="false" [columnPinning]="true" [showToolbar]="true">
-        <igx-column field="CountryName" header="Team" width="88">
-            <ng-template igxCell let-cell="cell">
-                <div class="cell__inner country-cell">
-                    <img [src]="cell.rowData.CountryFlag" class="country-flag" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef">
-                    <div #tooltipRef="tooltip" igxTooltip>
-                        {{ cell.rowData.CountryName }}
-                    </div>
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column field="Avatar" header="Photo" dataType="string" width="80" [disablePinning]="true">
-            <ng-template igxCell let-cell="cell">
-                <div class="cell__inner avatar-cell">
-                    <igx-avatar [src]="cell.rowData.Avatar" [roundShape]="true" size="small"></igx-avatar>
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column field="Name" header="Name" [disablePinning]="true"></igx-column>
-        <igx-column field="AthleteNumber" header="Number"></igx-column>
-        <igx-column field="BeatsPerMinute" header="BPM"></igx-column>
-        <igx-column field="TopSpeed" header="Top Speed"></igx-column>
-        <igx-column field="TrackProgress" header="Track Progress" [disablePinning]="true"></igx-column>
-        <igx-column field="RegistrationDate" header="Date of Registration" width="170" [disablePinning]="true"></igx-column>
-        <igx-column field="Birthday" header="Birthday" width="170" [disablePinning]="true"></igx-column>
-        <igx-column field="Sponsor" header="Sponsor Company" width="160"></igx-column>
-        <igx-column #goldColumn field="FirstPlaces" header="Gold" width="110" [pinned]="true">
-            <ng-template igxHeader>
-                <div class="title-inner">
-                    <span style="float:left">{{ goldColumn.header }}</span>
-                    <igx-icon color="#d2c206">emoji_events</igx-icon>
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column #silverColumn field="SecondPlaces" header="Silver" width="110" [pinned]="true">
-            <ng-template igxHeader>
-                <div class="title-inner">
-                    <span style="float:left">{{ silverColumn.header }}</span>
-                    <igx-icon color="#c5c5c5">emoji_events</igx-icon>
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column #bronzeColumn field="ThirdPlaces" header="Bronze" width="110" [pinned]="true">
-            <ng-template igxHeader>
-                <div class="title-inner">
-                    <span style="float:left">{{ bronzeColumn.header }}</span>
-                    <igx-icon color="#bb8b1d">emoji_events</igx-icon>
-                </div>
-            </ng-template>
-        </igx-column>
+    <igx-tree-grid #grid1 [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" [width]="'100%'" 
+        [height]="'500px'" [pinning]="pinningConfig" [autoGenerate]="false" [columnPinning]="true" [showToolbar]="true">
+        <igx-column [field]="'Name'" dataType="string" [headerTemplate]="pinTemplate" width="250px" [disablePinning]="true"></igx-column>
+        <igx-column [field]="'Title'" dataType="string" [headerTemplate]="pinTemplate" width="300px" [pinned]="true"></igx-column>
+        <igx-column [field]="'ID'" dataType="number" [headerTemplate]="pinTemplate" width="200px"></igx-column>
+        <igx-column [field]="'HireDate'" header="Hire Date" dataType="date" [headerTemplate]="pinTemplate" width="200px"></igx-column>
+        <igx-column [field]="'Age'" dataType="number" [headerTemplate]="pinTemplate" width="200px"></igx-column>
+        <igx-column [field]="'Address'" dataType="string" [headerTemplate]="pinTemplate" width="200px" [disablePinning]="true"></igx-column>
+        <igx-column [field]="'City'" dataType="string" [headerTemplate]="pinTemplate" width="200px" ></igx-column>
+        <igx-column [field]="'Country'" dataType="string" [headerTemplate]="pinTemplate" width="200px"></igx-column>
+        <igx-column [field]="'Fax'" dataType="string" [headerTemplate]="pinTemplate" width="200px"></igx-column>
+        <igx-column [field]="'PostalCode'" header="Postal Code" dataType="string" [headerTemplate]="pinTemplate" width="200px"></igx-column>
+        <igx-column [field]="'Phone'" dataType="string" [headerTemplate]="pinTemplate" width="200px"></igx-column>
     </igx-tree-grid>
 </div>
