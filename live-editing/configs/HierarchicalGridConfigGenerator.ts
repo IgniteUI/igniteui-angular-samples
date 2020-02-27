@@ -1,6 +1,6 @@
 // tslint:disable:max-line-length
 import { HttpClientModule } from "@angular/common/http";
-import { IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule, IgxDragDropModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxTooltipModule } from "igniteui-angular";
+import { IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule, IgxDragDropModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxTooltipModule, IgxAvatarModule } from "igniteui-angular";
 import { HGridAdvancedFilteringStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
 import { HGridAdvancedFilteringSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridAllDataSummaryComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-allData-summary/hierarchical-grid-allData-summary.component";
@@ -63,6 +63,7 @@ import { RemoteLoDService } from "../../src/app/hierarchical-grid/services/remot
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { HierarchicalGridRightPinningSampleComponent } from '../../src/app/hierarchical-grid/hierarchical-grid-sample-right-pinning/hierarchical-grid-right-pinning.component';
 
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -641,6 +642,20 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxHierarchicalGridModule]
             }),
             component: HGridAllDataSummaryComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: [
+                "/src/app/hierarchical-grid/services/data.ts",
+                "/src/app/data/athletesData.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HierarchicalGridRightPinningSampleComponent, IgxHierarchicalGridModule],
+                ngDeclarations: [HierarchicalGridRightPinningSampleComponent],
+                ngImports: [IgxHierarchicalGridModule],
+                ngProviders: []
+            }),
+            component: HierarchicalGridRightPinningSampleComponent
         }));
 
         return configs;
