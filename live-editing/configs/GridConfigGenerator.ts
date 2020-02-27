@@ -98,7 +98,6 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { RightPinningSampleComponent } from '../../src/app/grid/grid-sample-right-pinning/grid-right-pinning.component';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -1028,20 +1027,6 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridCollapsibleColumnGroupsComponent, IgxGridModule, IgxTooltipModule],
                 ngDeclarations: [GridCollapsibleColumnGroupsComponent],
                 ngImports: [IgxGridModule, IgxTooltipModule]
-            })
-        }));
-
-        configs.push(new Config({
-            component: RightPinningSampleComponent,
-            additionalFiles: [
-                "/src/app/data/athletesData.ts", 
-                "/src/app/grid/services/data.ts"
-            ],
-            appModuleConfig: new AppModuleConfig({
-                imports: [RightPinningSampleComponent, IgxGridModule],
-                ngDeclarations: [RightPinningSampleComponent],
-                ngImports: [IgxGridModule],
-                ngProviders: []
             })
         }));
 

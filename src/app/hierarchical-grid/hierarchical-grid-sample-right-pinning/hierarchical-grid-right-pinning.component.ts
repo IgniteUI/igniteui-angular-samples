@@ -7,12 +7,12 @@ import { athletesData } from "../services/data";
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [],
-    selector: "grid-sample",
-    styleUrls: ["grid-right-pinning.component.scss"],
-    templateUrl: "grid-right-pinning.component.html"
+    selector: "hierarchical-grid-sample",
+    styleUrls: ["hierarchical-grid-right-pinning.component.scss"],
+    templateUrl: "hierarchical-grid-right-pinning.component.html"
 })
 
-export class RightPinningSampleComponent {
+export class HierarchicalGridRightPinningSampleComponent {
     @ViewChild("grid1", { static: true })
     public grid1: IgxGridComponent;
 
