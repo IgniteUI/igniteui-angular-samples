@@ -55,6 +55,7 @@ import { HGridDragSampleComponent } from "./hierarchical-grid-row-drag/hierarchi
 import { HGridRowEditStyleComponent } from "./hierarchical-grid-row-edit-style/hierarchical-grid-row-edit-style.component";
 import { HGridRowEditingSampleComponent } from "./hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
 import { HGridRowReorderComponent } from "./hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
+import { HierarchicalGridRightPinningSampleComponent } from "./hierarchical-grid-sample-right-pinning/hierarchical-grid-right-pinning.component";
 import { HGridSelectionTemplateNumbersSampleComponent} from "./hierarchical-grid-selection-template-numbers/hierarchical-grid-selection-template-numbers.component";
 import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridSortingStylingComponent } from "./hierarchical-grid-sorting-styling/hierarchical-grid-sorting-styling.component";
@@ -67,7 +68,6 @@ import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolb
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
-import { HierarchicalGridRightPinningSampleComponent } from './hierarchical-grid-sample-right-pinning/hierarchical-grid-right-pinning.component';
 
 @NgModule({
     declarations: [
