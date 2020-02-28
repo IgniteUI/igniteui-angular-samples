@@ -1,8 +1,7 @@
-import { Component, ViewEncapsulation } from "@angular/core";
+import { Component } from "@angular/core";
 import { ButtonGroupAlignment } from "igniteui-angular";
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: "app-layout-content-space",
   styleUrls: ["./layout-content-space.component.scss"],
   templateUrl: "./layout-content-space.component.html"
