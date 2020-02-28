@@ -1,26 +1,19 @@
-<div class="sample-wrapper">
+<igx-buttongroup [alignment]="alignment">
+    <button igxButton (click) = "layout = 'row'" [igxRipple]="rippleColor" [selected]="true">Row</button>
+    <button igxButton (click) = "layout = 'row-reverse'" [igxRipple]="rippleColor">Row reverse</button>
+</igx-buttongroup>
+<div *ngIf="layout == 'row'">
+    <div class="layout-box" igxLayout igxLayoutDir="row">
+        <div class="layout-box__el" igxFlex>1</div>
+        <div class="layout-box__el" igxFlex>2</div>
+        <div class="layout-box__el" igxFlex>3</div>
+    </div>
+</div>
 
-    <section class="sample-content">
-        <article class="sample-column">
-            <igx-buttongroup class="button-group" [alignment]="alignment">
-                <button igxButton (click) = "layout = 'row'" [igxRipple]="rippleColor" [selected]="true">Row</button>
-                <button igxButton (click) = "layout = 'row-reverse'" [igxRipple]="rippleColor">Row reverse</button>
-            </igx-buttongroup>
-            <div *ngIf="layout == 'row'" class="layout-sample">
-                <div class="layout-box" igxLayout igxLayoutDir="row">
-                    <div class="layout-box__el" igxFlex>1</div>
-                    <div class="layout-box__el" igxFlex>2</div>
-                    <div class="layout-box__el" igxFlex>3</div>
-                </div>
-            </div>
-
-            <div *ngIf="layout == 'row-reverse'" class="layout-sample">
-                <div class="layout-box" igxLayout igxLayoutDir="row" igxLayoutReverse="true">
-                    <div class="layout-box__el" igxFlex>1</div>
-                    <div class="layout-box__el" igxFlex>2</div>
-                    <div class="layout-box__el" igxFlex>3</div>
-                </div>
-            </div>
-        </article>
-    </section>
+<div *ngIf="layout == 'row-reverse'">
+    <div class="layout-box" igxLayout igxLayoutDir="row" igxLayoutReverse="true">
+        <div class="layout-box__el" igxFlex>1</div>
+        <div class="layout-box__el" igxFlex>2</div>
+        <div class="layout-box__el" igxFlex>3</div>
+    </div>
 </div>

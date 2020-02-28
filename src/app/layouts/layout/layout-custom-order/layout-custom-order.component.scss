@@ -1,5 +1,6 @@
-.button-group {
-    margin-bottom: 30px;
+igx-buttongroup {
+    display: block;
+    margin: 24px 4px;
 }
 
 .layout-box {
@@ -7,6 +8,7 @@
     background: var(--igx-grays-200);
     padding: 8px;
     border-radius: 6px;
+    margin-top: 24px;
 }
 
 .layout-box__el {
