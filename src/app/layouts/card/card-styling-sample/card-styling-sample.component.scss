@@ -15,7 +15,5 @@ $colorful-card: igx-card-theme(
 );
 
 :host {
-    ::ng-deep {
-       @include igx-card($colorful-card);
-   }
+    @include igx-css-vars($colorful-card);
 }
