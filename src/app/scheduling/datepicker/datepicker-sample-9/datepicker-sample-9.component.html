@@ -2,9 +2,9 @@
     <article class="sample-column calendar-wrapper">
         <h4 class="sample-title">Range Date Picker </h4>
         <div class="form">
-            <igx-input-group #inputGroup1 [igxToggleAction]="dropDown1">
-                <input #input1 type="text" igxInput [igxDropDownItemNavigation]="dropDown1" readonly="true"
-                    placeholder="choose a destination" [value]="dropDown1.selectedItem?.value" />
+            <igx-input-group #inputGroup1 [igxToggleAction]="dropDown1" class="input-group">
+                <input #input1 type="text" igxInput placeholder="choose a destination" [igxAutocomplete]="dropDown1"
+                    [(ngModel)]="townFrom" [value]="dropDown1.selectedItem?.value" />
                 <label igxLabel>From</label>
                 <igx-prefix>
                     <igx-icon>flight_takeoff</igx-icon>
@@ -14,15 +14,15 @@
                 </igx-suffix>
             </igx-input-group>
 
-            <igx-drop-down #dropDown1 [width]="'160px'">
-                <igx-drop-down-item *ngFor="let item of items" [value]="item.field">
-                    {{ item.field }}
+            <igx-drop-down #dropDown1 [width]="'160px'" (onClosing)="saveTownFrom()">
+                <igx-drop-down-item *ngFor="let town of towns | startsWith:townFrom" [value]="town">
+                    {{ town }}
                 </igx-drop-down-item>
             </igx-drop-down>
 
             <igx-input-group #inputGroup2 [igxToggleAction]="dropDown2" class="input-group">
-                <input #input2 type="text" igxInput [igxDropDownItemNavigation]="dropDown2" readonly="true"
-                    placeholder="choose a destination" [value]="dropDown2.selectedItem?.value" />
+                <input #input2 type="text" igxInput placeholder="choose a destination" [igxAutocomplete]="dropDown2"
+                    [(ngModel)]="townTo" [value]="dropDown2.selectedItem?.value" />
                 <label igxLabel>To</label>
                 <igx-prefix>
                     <igx-icon>flight_land</igx-icon>
@@ -33,8 +33,9 @@
             </igx-input-group>
 
             <igx-drop-down #dropDown2 [width]="'160px'">
-                <igx-drop-down-item *ngFor="let item of items" [value]="item.field">
-                    {{ item.field }}
+                <igx-drop-down-item *ngFor="let town of towns | withoutTownFrom:townFrom | startsWith:townTo"
+                    [value]="town">
+                    {{ town }}
                 </igx-drop-down-item>
             </igx-drop-down>
 

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, Pipe, PipeTransform, ViewChild } from "@angular/core";
 import {
     DateRangeType,
     IgxCalendarComponent,
@@ -22,29 +22,25 @@ export class DatepickerSample9Component {
     public slash: string = " - ";
     public isClickedTwice: boolean;
     public oneWayTicket: boolean = true;
-    public items: Array<{ field: string }> = [
-        { field: "Los Angelis" },
-        { field: "New York" },
-        { field: "London" },
-        { field: "Boston" },
-        { field: "Paris" },
-        { field: "Rome" },
-        { field: "Berlin" }
-    ];
-    constructor() { }
-
-    public openDropDown() {
-        if (this.igxDropDown.collapsed) {
-            this.igxDropDown.open();
-        }
+    public townFrom: string;
+    public townTo: string;
+    public towns: string[];
+    constructor() {
+        this.towns = ["New York", "Washington, D.C.", "London", "Berlin", "Sofia", "Rome", "Kiev",
+            "Copenhagen", "Paris", "Barcelona", "Vienna", "Athens", "Dublin", "Yerevan",
+            "Oslo", "Helsinki", "Stockholm", "Prague", "Istanbul"];
     }
 
     public ngOnInit() {
-        this.calendar.disabledDates = [{ type: DateRangeType.Before, dateRange: [new Date(Date.now())]}];
+        this.calendar.disabledDates = [{ type: DateRangeType.Before, dateRange: [new Date(Date.now())] }];
     }
 
     public ngAfterViewInit() {
         this.calendar.selectDate([this.startDate, this.startDate]);
+    }
+
+    public saveTownFrom() {
+        this.townFrom = this.igxDropDown.selectedItem.value;
     }
 
     public verifyRange(dates: Date[]) {
@@ -88,5 +84,18 @@ export class DatepickerSample9Component {
             this.inputEndDate = this.inputStartDate;
             this.calendar.selectDate(this.startDate);
         }
+    }
+}
+@Pipe({ name: "startsWith" })
+export class AutocompletePipeStartsWith implements PipeTransform {
+    public transform(collection: any[], term = "") {
+        return collection.filter((item) => item.toString().toLowerCase().startsWith(term.toString().toLowerCase()));
+    }
+}
+
+@Pipe({ name: "withoutTownFrom" })
+export class PipeWithoutTownFrom implements PipeTransform {
+    public transform(collection: any[], townFrom: string) {
+        return collection.filter((item) => item !== townFrom);
     }
 }
