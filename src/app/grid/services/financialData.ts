@@ -1019,4 +1019,12 @@ export class FinancialData {
          }
         return country;
     }
+
+    private randomizeDate() {
+        const date = new Date();
+        date.setHours(this.generateRandomNumber(0, 23));
+        date.setMonth(this.generateRandomNumber(0, date.getMonth()));
+        date.setDate(this.generateRandomNumber(0, 23));
+        return date;
+    }
 }

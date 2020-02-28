@@ -3,8 +3,6 @@ import { Router, RouterModule } from "@angular/router";
 // tslint:disable:max-line-length
 import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDragDropModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxTooltipModule } from "igniteui-angular";
 import { IgxCategoryChartModule, IgxLegendModule, IgxPieChartModule, IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
-import { GridComponent } from "../../projects/app-lob/src/app/grid/grid-boston-marathon/grid.component";
-import { GridMasterDetailSampleComponent } from "../../projects/app-lob/src/app/grid/grid-master-detail/grid-master-detail.component";
 import { CustomGridPagingStyleSample } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "../../src/app/grid/grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "../../src/app/grid/grid-advanced-filtering-style/grid-advanced-filtering-style.component";
@@ -106,22 +104,6 @@ export class GridConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            component: GridComponent,
-            additionalFiles: ["/src/app/grid/services/data.ts"],
-            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
-                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, GridComponent,
-                    IgxSparklineCoreModule, IgxSparklineModule],
-                ngDeclarations: [GridComponent],
-                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
-                    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRippleModule,
-                    IgxSwitchModule, HttpClientModule, IgxSparklineCoreModule, IgxSparklineModule]
-            })
-        }));
-
-        configs.push(new Config({
             component: FinancialSampleComponent,
             additionalFiles: ["/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
@@ -180,7 +162,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridGroupBySummaryStylingSampleComponent],
                 ngImports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
                     IgxIconModule, IgxBadgeModule]
-                })
+            })
         }));
 
         configs.push(new Config({
@@ -431,22 +413,6 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridMovingSampleComponent, IgxGridModule, IgxBadgeModule, IgxIconModule],
                 ngDeclarations: [GridMovingSampleComponent],
                 ngImports: [IgxGridModule, IgxBadgeModule, IgxIconModule],
-                ngProviders: []
-            })
-        }));
-
-        // master-detail sample
-        configs.push(new Config({
-            component: GridMasterDetailSampleComponent,
-            additionalFiles: ["/projects/app-lob/src/app/services/athletesData.ts"],
-            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [GridMasterDetailSampleComponent, IgxGridModule, IgxCategoryChartModule,
-                     IgxAvatarModule, IgxTabsModule, IgxIconModule, IgxPieChartModule, IgxLegendModule,
-                     IgxDividerModule ],
-                ngDeclarations: [GridMasterDetailSampleComponent],
-                ngImports: [IgxGridModule, IgxCategoryChartModule, IgxPieChartModule, IgxLegendModule,
-                    IgxAvatarModule, IgxTabsModule, IgxIconModule, IgxDividerModule],
                 ngProviders: []
             })
         }));
@@ -722,7 +688,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: GridExcelStyleFilteringLoadOnDemandComponent,
             additionalFiles: ["/src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service.ts",
-                              "/src/app/grid/grid-excel-style-filtering-load-on-demand/employees.ts"],
+                "/src/app/grid/grid-excel-style-filtering-load-on-demand/employees.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridExcelStyleFilteringLoadOnDemandComponent, IgxGridModule, RemoteValuesService],
                 ngDeclarations: [GridExcelStyleFilteringLoadOnDemandComponent],
@@ -735,7 +701,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: ExcelStyleFilteringStyleComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ExcelStyleFilteringStyleComponent, IgxGridModule ],
+                imports: [ExcelStyleFilteringStyleComponent, IgxGridModule],
                 ngDeclarations: [ExcelStyleFilteringStyleComponent],
                 ngImports: [IgxGridModule]
             })
@@ -745,7 +711,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridExternalExcelStyleFilteringComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridExternalExcelStyleFilteringComponent, IgxGridModule ],
+                imports: [GridExternalExcelStyleFilteringComponent, IgxGridModule],
                 ngDeclarations: [GridExternalExcelStyleFilteringComponent],
                 ngImports: [IgxGridModule]
             })
@@ -755,7 +721,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridExternalAdvancedFilteringComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridExternalAdvancedFilteringComponent, IgxGridModule ],
+                imports: [GridExternalAdvancedFilteringComponent, IgxGridModule],
                 ngDeclarations: [GridExternalAdvancedFilteringComponent],
                 ngImports: [IgxGridModule]
             })
@@ -1026,7 +992,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridAdvancedFilteringStyleComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridAdvancedFilteringStyleComponent, IgxGridModule ],
+                imports: [GridAdvancedFilteringStyleComponent, IgxGridModule],
                 ngDeclarations: [GridAdvancedFilteringStyleComponent],
                 ngImports: [IgxGridModule]
             })
@@ -1048,7 +1014,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridAllDataSummaryComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridAllDataSummaryComponent, IgxGridModule ],
+                imports: [GridAllDataSummaryComponent, IgxGridModule],
                 ngDeclarations: [GridAllDataSummaryComponent],
                 ngImports: [IgxGridModule]
             })

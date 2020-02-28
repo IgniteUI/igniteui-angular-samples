@@ -1,8 +1,6 @@
 // tslint:disable:max-line-length
 import { HttpClientModule } from "@angular/common/http";
 import { IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule, IgxDragDropModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxTooltipModule } from "igniteui-angular";
-import { IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
-import { HGridColumnResizingSampleComponent } from "../../projects/app-lob/src/app/hierarchical-grid/hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import { HGridAdvancedFilteringStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
 import { HGridAdvancedFilteringSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridAllDataSummaryComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-allData-summary/hierarchical-grid-allData-summary.component";
@@ -362,17 +360,6 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxHierarchicalGridModule]
             }),
             component: HGridToolbarPinningComponent
-        }));
-
-        configs.push(new Config({
-            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
-            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxHierarchicalGridModule, HGridColumnResizingSampleComponent, IgxSparklineCoreModule, IgxSparklineModule],
-                ngDeclarations: [HGridColumnResizingSampleComponent],
-                ngImports: [IgxHierarchicalGridModule, IgxSparklineCoreModule, IgxSparklineModule]
-            }),
-            component: HGridColumnResizingSampleComponent
         }));
 
         configs.push(new Config({

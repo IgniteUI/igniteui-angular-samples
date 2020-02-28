@@ -169,6 +169,9 @@
     }
     .control-item {
         padding-right: 20px;
+        label {
+            color: var(--igx-surface-500-contrast);
+        }
     }
     .igx-slider,
     .igx-slider--disabled {
@@ -202,6 +205,15 @@
     .igx-button--icon {
         width: 2rem;
         height: 2rem;
+    }
+
+    .controls-holder {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        padding-bottom: 15px;
     }
 }
 
