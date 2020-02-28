@@ -26,7 +26,7 @@ import { ExpansionPanelSample7Component
 } from "../../src/app/layouts/expansion-panel/expansion-sample-7/expansion-sample-7.component";
 
 import { ExpansionPanelStylingComponent
-} from "./../../src/app/layouts/expansion-panel/expansion-styling/expansion-styling.component";
+} from "../../src/app/layouts/expansion-panel/expansion-styling/expansion-styling.component";
 
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -103,10 +103,10 @@ export class ExpansionPanelConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: ExpansionPanelStylingComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule,
+                imports: [IgxIconModule, IgxButtonModule, IgxExpansionPanelModule, IgxInputGroupModule,
                     ExpansionPanelStylingComponent],
                 ngDeclarations: [ExpansionPanelStylingComponent],
-                ngImports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule]
+                ngImports: [IgxIconModule, IgxButtonModule, IgxExpansionPanelModule, IgxInputGroupModule]
             }),
             shortenComponentPathBy: "/layouts/expansion-panel/"
         }));

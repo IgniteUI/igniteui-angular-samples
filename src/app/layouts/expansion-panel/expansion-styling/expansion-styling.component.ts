@@ -7,10 +7,6 @@ import { Component } from "@angular/core";
     templateUrl: "./expansion-styling.component.html"
 })
 export class ExpansionPanelStylingComponent {
-
-    public user = {
-        email: "",
-        fullName: "",
-        phone: undefined
-    };
+    public imgSource = "https://i.ibb.co/6ZdY7cn/Untitled-design-3.png";
+    public readMore = "https://en.wikipedia.org/wiki/Golden_Retriever";
 }
