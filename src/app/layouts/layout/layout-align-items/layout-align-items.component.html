@@ -1,34 +1,28 @@
-<div class="sample-wrapper">
-    <section class="sample-content">
-        <article class="sample-column">
-            <igx-buttongroup class="button-group" [alignment]="alignment">
-                <button igxButton (click) = "alignItems = 'flex-start'" [igxRipple]="rippleColor" [selected]="true">Flex Start</button>
-                <button igxButton (click) = "alignItems = 'center'" [igxRipple]="rippleColor">Center</button>
-                <button igxButton (click) = "alignItems = 'flex-end'" [igxRipple]="rippleColor">Flex End</button>
-            </igx-buttongroup>
-            <div *ngIf="alignItems == 'flex-start'" class="layout-sample">
-                <div class="layout-box tall" igxLayout igxLayoutItemAlign="flex-start">
-                    <div class="layout-box__el" igxFlex>1</div>
-                    <div class="layout-box__el" igxFlex>2</div>
-                    <div class="layout-box__el" igxFlex>3</div>
-                </div>
-            </div>
+<igx-buttongroup [alignment]="alignment">
+    <button igxButton (click) = "alignItems = 'flex-start'" [igxRipple]="rippleColor" [selected]="true">Flex Start</button>
+    <button igxButton (click) = "alignItems = 'center'" [igxRipple]="rippleColor">Center</button>
+    <button igxButton (click) = "alignItems = 'flex-end'" [igxRipple]="rippleColor">Flex End</button>
+</igx-buttongroup>
+<div *ngIf="alignItems == 'flex-start'">
+    <div class="layout-box tall" igxLayout igxLayoutItemAlign="flex-start">
+        <div class="layout-box__el" igxFlex>1</div>
+        <div class="layout-box__el" igxFlex>2</div>
+        <div class="layout-box__el" igxFlex>3</div>
+    </div>
+</div>
 
-            <div *ngIf="alignItems == 'center'" class="layout-sample">
-                <div class="layout-box tall" igxLayout igxLayoutItemAlign="center">
-                    <div class="layout-box__el" igxFlex>1</div>
-                    <div class="layout-box__el" igxFlex>2</div>
-                    <div class="layout-box__el" igxFlex>3</div>
-                </div>
-            </div>
+<div *ngIf="alignItems == 'center'">
+    <div class="layout-box tall" igxLayout igxLayoutItemAlign="center">
+        <div class="layout-box__el" igxFlex>1</div>
+        <div class="layout-box__el" igxFlex>2</div>
+        <div class="layout-box__el" igxFlex>3</div>
+    </div>
+</div>
 
-            <div *ngIf="alignItems == 'flex-end'" class="layout-sample">
-                <div class="layout-box tall" igxLayout igxLayoutItemAlign="flex-end">
-                    <div class="layout-box__el" igxFlex>1</div>
-                    <div class="layout-box__el" igxFlex>2</div>
-                    <div class="layout-box__el" igxFlex>3</div>
-                </div>
-            </div>
-        </article>
-    </section>
+<div *ngIf="alignItems == 'flex-end'">
+    <div class="layout-box tall" igxLayout igxLayoutItemAlign="flex-end">
+        <div class="layout-box__el" igxFlex>1</div>
+        <div class="layout-box__el" igxFlex>2</div>
+        <div class="layout-box__el" igxFlex>3</div>
+    </div>
 </div>
