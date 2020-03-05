@@ -6,9 +6,6 @@ import { Component, OnInit } from "@angular/core";
     templateUrl: "./avatar-sample-4.component.html"
   })
 
-export class AvatarSample4Component implements OnInit {
-    constructor() {}
+export class AvatarSample4Component {
 
-    public ngOnInit() {
-    }
 }
