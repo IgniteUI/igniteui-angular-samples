@@ -23,8 +23,6 @@ $custom-avatar-theme: igx-avatar-theme(
 );
 
 :host {
-    ::ng-deep {
-      @include igx-avatar($custom-avatar-theme);
-    }
-  }
+    @include igx-css-vars($custom-avatar-theme);
+}
 
