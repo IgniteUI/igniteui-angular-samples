@@ -6,67 +6,26 @@ import { Component, OnInit } from "@angular/core";
     templateUrl: "./tabbar-style.component.html"
 })
 export class TabbarStyleComponent {
+    public songsList: object[] = [
+        { title: "Havana", artist: "Camila Cabello" },
+        { title: "Meant To Be", artist: "Bebe Rexha & Florida Georgia Line" },
+        { title: "New Rules", artist: "Dua Lipa" },
+        { title: "Wolves", artist: "Selena Gomez & Marshmello" }
+        ];
 
-    public contactsList: Contact[] = [{
-        avatar: "assets/images/avatar/1.jpg",
-        favorite: true,
-        key: "1",
-        link: "#",
-        phone: "770-504-2217",
-        text: "Terrance Orta"
-    }, {
-        avatar: "assets/images/avatar/2.jpg",
-        favorite: false,
-        key: "2",
-        link: "#",
-        phone: "423-676-2869",
-        text: "Richard Mahoney"
-    }, {
-        avatar: "assets/images/avatar/3.jpg",
-        favorite: false,
-        key: "3",
-        link: "#",
-        phone: "859-496-2817",
-        text: "Donna Price"
-    }, {
-        avatar: "assets/images/avatar/4.jpg",
-        favorite: false,
-        key: "4",
-        link: "#",
-        phone: "901-747-3428",
-        text: "Lisa Landers"
-    }, {
-        avatar: "assets/images/avatar/12.jpg",
-        favorite: true,
-        key: "5",
-        link: "#",
-        phone: "573-394-9254",
-        text: "Dorothy H. Spencer"
-    }, {
-        avatar: "assets/images/avatar/13.jpg",
-        favorite: false,
-        key: "6",
-        link: "#",
-        phone: "323-668-1482",
-        text: "Stephanie May"
-    }, {
-        avatar: "assets/images/avatar/14.jpg",
-        favorite: false,
-        key: "7",
-        link: "#",
-        phone: "401-661-3742",
-        text: "Marianne Taylor"
-    }];
+    public moviesList: object[] = [
+    { title: "Logan", genre: "Action, Drama, Sci-Fi" },
+    { title: "Wonder Woman", genre: "Action, Adventure, Fantasy" },
+    { title: "Guardians of the Galaxy Vol. 2", genre: "Action, Adventure, Sci-Fi" },
+    { title: "Star Wars: The Last Jedi", genre: "Action, Adventure, Fantasy" }
+    ];
 
-    public constructor() {
-    }
-}
+    public booksList: object[] = [
+    { title: "Wonder", author: "R. J. Palacio" },
+    { title: "Milk and Honey", author: "Rupi Kaur" },
+    { title: "Giraffes Can't Dance", author: "Jeff Kinne" },
+    { title: "The Getaway", author: "Selena Gomez & Marshmello" }
+    ];
 
-class Contact {
-    public avatar: string;
-    public favorite: boolean;
-    public key: string;
-    public link: string;
-    public phone: string;
-    public text: string;
+    constructor() { }
 }
