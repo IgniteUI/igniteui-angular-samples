@@ -14,8 +14,6 @@ export const layoutsRoutesData = {
     "expansion-sample-3": { displayName: "Expansion Panel 3", parentName: "Expansion Panel" },
     "expansion-sample-4": { displayName: "Expansion Panel 4", parentName: "Expansion Panel" },
     "expansion-sample-5": { displayName: "Expansion Panel 5", parentName: "Expansion Panel" },
-    "expansion-sample-6": { displayName: "Expansion Panel 6", parentName: "Expansion Panel" },
-    "expansion-sample-7": { displayName: "Expansion Panel 7", parentName: "Expansion Panel" },
     "expansion-styling": { displayName: "Expansion Panel Styling", parentName: "Expansion Panel" },
     "layout": { displayName: "Layout Overview", parentName: "Layout" },
     "tabbar": { displayName: "Bottom Navigation Overview", parentName: "Bottom Navigation" },

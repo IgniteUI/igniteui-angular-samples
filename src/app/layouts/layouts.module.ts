@@ -51,8 +51,6 @@ import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
 import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
 import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
-import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
-import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
 import { ExpansionPanelStylingComponent } from "./expansion-panel/expansion-styling/expansion-styling.component";
 import { LayoutComponent } from "./layout/layout.component";
 import { LayoutsRoutingModule } from "./layouts-routing.module";
@@ -107,8 +105,6 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         ExpansionPanelSample3Component,
         ExpansionPanelSample4Component,
         ExpansionPanelSample5Component,
-        ExpansionPanelSample6Component,
-        ExpansionPanelSample7Component,
         ExpansionPanelStylingComponent,
         LayoutComponent,
         TabbarSample1Component,
