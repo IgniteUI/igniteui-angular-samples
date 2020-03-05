@@ -36,6 +36,7 @@ import { IndexComponent } from "./index/index.component";
         FormsModule,
         HttpClientModule,
         HammerModule
-    ]
+    ],
+    providers: []
 })
 export class AppModule { }
