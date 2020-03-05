@@ -28,8 +28,6 @@ import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
 import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
 import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
-import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
-import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
 import { ExpansionPanelStylingComponent } from "./expansion-panel/expansion-styling/expansion-styling.component";
 import { LayoutComponent } from "./layout/layout.component";
 import { layoutsRoutesData } from "./layouts-routes-data";
@@ -141,16 +139,6 @@ export const layoutsRoutes: Routes = [
         component: ExpansionPanelSample5Component,
         data: layoutsRoutesData["expansion-sample-5"],
         path: "expansion-sample-5"
-    },
-    {
-        component: ExpansionPanelSample6Component,
-        data: layoutsRoutesData["expansion-sample-6"],
-        path: "expansion-sample-6"
-    },
-    {
-        component: ExpansionPanelSample7Component,
-        data: layoutsRoutesData["expansion-sample-7"],
-        path: "expansion-sample-7"
     },
     {
         component: ExpansionPanelStylingComponent,
@@ -270,3 +258,4 @@ export const layoutsRoutes: Routes = [
     ]
 })
 export class LayoutsRoutingModule { }
+

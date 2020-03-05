@@ -2,7 +2,7 @@
 // @import '~minireset.css/minireset';
 @import '~igniteui-angular/lib/core/styles/themes/index';
 @include igx-core();
-@include igx-theme($default-palette);
+@include igx-theme($default-palette, $legacy-support: false);
 
 :root {
     @include css-vars-from-palette($default-palette);
