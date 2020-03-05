@@ -32,7 +32,7 @@
                 </igx-suffix>
             </igx-input-group>
 
-            <igx-drop-down #dropDown2 [width]="'160px'">
+            <igx-drop-down #dropDown2 [width]="'160px'" (onClosing)="saveTownTo()">
                 <igx-drop-down-item *ngFor="let town of towns | withoutTownFrom:townFrom | startsWith:townTo"
                     [value]="town">
                     {{ town }}

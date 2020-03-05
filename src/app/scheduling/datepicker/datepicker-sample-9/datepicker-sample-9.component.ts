@@ -12,7 +12,8 @@ import {
 })
 export class DatepickerSample9Component {
     @ViewChild("calendar", { static: true }) public calendar: IgxCalendarComponent;
-    @ViewChild(IgxDropDownComponent, { static: true }) public igxDropDown: IgxDropDownComponent;
+    @ViewChild("dropDown1", { static: true }) public dropDown1: IgxDropDownComponent;
+    @ViewChild("dropDown2", { static: true }) public dropDown2: IgxDropDownComponent;
 
     public startDate: Date = new Date(Date.now());
     public endDate: Date = new Date();
@@ -40,7 +41,19 @@ export class DatepickerSample9Component {
     }
 
     public saveTownFrom() {
-        this.townFrom = this.igxDropDown.selectedItem.value;
+        if (this.dropDown1.selectedItem !== null) {
+            this.townFrom = this.dropDown1.selectedItem.value;
+        } else {
+            this.townFrom = "";
+        }
+    }
+
+    public saveTownTo() {
+        if (this.dropDown2.selectedItem !== null) {
+            this.townTo = this.dropDown2.selectedItem.value;
+        } else {
+            this.townTo = "";
+        }
     }
 
     public verifyRange(dates: Date[]) {
