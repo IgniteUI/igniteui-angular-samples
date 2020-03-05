@@ -477,9 +477,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/services/remote-lod.service.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxHierarchicalGridModule, HierarchicalGridLoDSampleComponent, RemoteLoDService],
+                imports: [IgxHierarchicalGridModule, HierarchicalGridLoDSampleComponent, RemoteLoDService, HttpClientModule],
                 ngDeclarations: [HierarchicalGridLoDSampleComponent],
-                ngImports: [IgxHierarchicalGridModule],
+                ngImports: [IgxHierarchicalGridModule, HttpClientModule],
                 ngProviders: [RemoteLoDService]
             }),
             component: HierarchicalGridLoDSampleComponent
