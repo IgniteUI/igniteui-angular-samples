@@ -1,6 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: "app-toggle-sample-3",
   styleUrls: ["./toggle-sample-3.component.scss"],
   templateUrl: "./toggle-sample-3.component.html"

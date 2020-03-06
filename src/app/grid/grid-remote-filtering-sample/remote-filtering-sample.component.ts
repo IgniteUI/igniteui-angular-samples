@@ -79,10 +79,14 @@ export class RemoteFilteringSampleComponent implements OnInit {
         const filteringExpr = this.grid.filteringExpressionsTree.filteringOperands;
         const sortingExpr = this.grid.sortingExpressions[0];
 
+        if (isFiltering) {
+            virtualizationState.startIndex = 0;
+        }
+
         this._prevRequest = this._remoteService.getData(
             {
                 chunkSize: this._chunkSize,
-                startIndex: isFiltering ? 0 : virtualizationState.startIndex
+                startIndex: virtualizationState.startIndex
             },
             filteringExpr,
             sortingExpr,
