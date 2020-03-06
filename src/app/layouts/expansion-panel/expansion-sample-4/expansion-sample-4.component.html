@@ -11,7 +11,7 @@
             </igx-expansion-panel-icon>
         </igx-expansion-panel-header>
         <igx-expansion-panel-body>
-            <igx-grid [data]="data">
+            <igx-grid igxPreventDocumentScroll [data]="data">
                 <igx-column [sortable]="true" [field]="'Game'" [header]="'Game'" [width]="'120px'" [pinned]="true">
                     <ng-template igxCell let-value>
                         <span class="game-board__grid__match">{{value}}</span>

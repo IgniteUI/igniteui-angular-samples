@@ -37,7 +37,7 @@
         </igx-snackbar>
     </span>
 </div>
-<igx-hierarchical-grid class="hgrid" [data]="localdata" [height]="'600px'" [width]="'100%'" [rowHeight]="'65px'"
+<igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [height]="'600px'" [width]="'100%'" [rowHeight]="'65px'"
 [cellSelection]="'none'" [rowSelection]="selectionMode" [hideRowSelectors]="hideRowSelectors"
     [allowFiltering]="true" (onRowSelectionChange)="handleRowSelection($event)" #hierarchicalGrid>
     <igx-column field="Artist"></igx-column>

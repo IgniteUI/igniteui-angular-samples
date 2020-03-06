@@ -22,6 +22,7 @@ import {
     IgxTooltipModule,
     IgxTreeGridModule
 } from "igniteui-angular";
+import { IgxPreventDocumentScrollModule } from "../../../projects/app-lob/src/app/directives/prevent-scroll.directive";
 // tslint:disable:max-line-length
 import { RemoteFilteringService } from "./services/remoteFilteringService";
 import {
@@ -170,6 +171,7 @@ import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
+
 @NgModule({
     declarations: [
         TreeGridRowEditSampleComponent,
@@ -245,6 +247,7 @@ import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/tree
     imports: [
         CommonModule,
         FormsModule,
+        IgxPreventDocumentScrollModule,
         TreeGridRoutingModule,
         IgxTreeGridModule,
         IgxGridModule,

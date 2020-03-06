@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-tree-grid [data]="employees" rowSelection="multiple" cellSelection="none" primaryKey="ID" foreignKey="ParentID"
+    <igx-tree-grid igxPreventDocumentScroll  [data]="employees" rowSelection="multiple" cellSelection="none" primaryKey="ID" foreignKey="ParentID"
         height="530px" width="100%" [autoGenerate]="false" [paging]="true" (onRowSelectionChange)="onRowSelect($event)">
         <igx-column field="Name"></igx-column>
         <igx-column field="Title"></igx-column>
