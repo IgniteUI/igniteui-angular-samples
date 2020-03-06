@@ -21,11 +21,13 @@ import { TasksDataService } from "../services/tasks.service";
 import { TaskPlannerComponent } from "./task-planner/taskplanner.component";
 import { GridWithTransactionsComponent } from "./task-planner/transaction.component";
 import { TaskPlannerRoutingModule } from "./taskplanner-routing.module";
+import { BacklogComponent } from './task-planner/backlog/backlog.component';
 
 @NgModule({
     declarations: [
         TaskPlannerComponent,
-        GridWithTransactionsComponent
+        GridWithTransactionsComponent,
+        BacklogComponent
     ],
     imports: [
         IgxButtonModule,

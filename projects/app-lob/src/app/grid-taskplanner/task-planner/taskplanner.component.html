@@ -15,43 +15,7 @@
 <!--        </div>-->
 <!--    </div>-->
 <!--  Master Backlog -->
-<!-- TODO Create separate component for master backlog -->
-<igx-card class="tp-app__backlog">
-    <igx-card-header>
-        <h1 igxCardHeaderTitle>Master Backlog</h1>
-    </igx-card-header>
-    <igx-divider></igx-divider>
-    <igx-card-content>
-        <igx-tabs>
-            <igx-tabs-group label="Queue">
-                <div class="tp-app__list-scroll">
-                    <igx-list>
-                        <igx-list-item *ngFor="let issue of issues">
-                            <igx-icon igxListThumbnail>drag_indicator</igx-icon>
-                            <h1 igxListLineTitle>{{ (issue.issue.length > 19) ? (issue.issue | slice:0:16) + '...': issue.issue }}</h1>
-                            <h2 igxListLineSubTitle [ngClass]="(this.priorityClasses =='Critical')?'Critical':'my-class2'">
-                                {{issue.priority}}
-                            </h2>
-                            <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
-                                <igx-icon>edit</igx-icon>
-                            </button>
-                            <button igxListAction igxButton="icon" igxRipple igxRippleCentered="true">
-                                <igx-icon>delete</igx-icon>
-                            </button>
-                        </igx-list-item>
-                        <ng-template igxDataLoading>
-
-                        </ng-template>
-                        <ng-template igxEmptyList>
-                            No issues found
-                        </ng-template>
-                    </igx-list>
-                </div>
-            </igx-tabs-group>
-        </igx-tabs>
-    </igx-card-content>
-</igx-card>
-
+<app-backlog class="tp-app__backlog"></app-backlog>
 <!-- Tasks Planner Grid  -->
 <app-grid-transactions class="tp-app__grid">
     <igx-grid #tasksGrid

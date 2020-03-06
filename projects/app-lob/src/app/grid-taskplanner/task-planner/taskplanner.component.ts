@@ -1,11 +1,11 @@
-import { Component, OnInit, Pipe, PipeTransform, ViewChild  } from "@angular/core";
+import { Component, OnInit, ViewChild  } from "@angular/core";
 import { ControlContainer, NgForm } from "@angular/forms";
 import { DefaultSortingStrategy, IGridEditEventArgs, IgxDialogComponent,
     IgxGridComponent, IgxToastComponent,
     SortingDirection, Transaction} from "igniteui-angular";
 import { IgxLegendComponent } from "igniteui-angular-charts";
 import { TasksDataService } from "../../services/tasks.service";
-import {MEMBERS, TASKS_DATA} from "../../services/tasksData";
+import {MEMBERS} from "../../services/tasksData";
 
 export enum editMode {
     cellEditing = 0,
@@ -58,7 +58,6 @@ export class TaskPlannerComponent implements OnInit {
     public addTaskForm: ITask = { };
     public batchEditingEnabled = true;
     public transactionsData: Transaction[] = [];
-    public issues = TASKS_DATA;
 
     public statuses = [
         { value: "New" },
@@ -95,8 +94,12 @@ export class TaskPlannerComponent implements OnInit {
         return rowData[columnKey] === "Delayed";
     }
 
-    public isPriority = (rowData: any, columnKey: any): boolean => {
+    public isCritical = (rowData: any, columnKey: any): boolean => {
         return rowData[columnKey] === "Critical";
+    }
+
+    public isLow = (rowData: any, columnKey: any): boolean => {
+        return rowData[columnKey] === "Low";
     }
 
     public isDelayed = (rowData: ITask, columnKey: string): boolean => {
@@ -112,11 +115,12 @@ export class TaskPlannerComponent implements OnInit {
         done: this.isDone,
         new: this.isNew,
         inProgress: this.isInProgress,
-        late: this.isLate
+        delayed: this.isLate
     };
 
     public priorityClasses = {
-        priority: this.isPriority
+        critical: this.isCritical,
+        low: this.isLow
     };
 
     public delayedClasses = {
@@ -131,7 +135,7 @@ export class TaskPlannerComponent implements OnInit {
         { field: "id", header: "ID", width: "120px", dataType: "number", formatter: this.formatID },
         { field: "milestone", header: "Milestone", width: "120px", dataType: "string", resizable: true, groupable: true, editable: true, sortable: true, sortStrategy: this.milestoneSort},
         { field: "issue", header: "Issue", width: "380px", dataType: "string", resizable: true, filterable: false, editable: true},
-        { field: "status", header: "Status", width: "110px", dataType: "string", resizable: true, sortable: true, filterable: false, editable: true, cellClasses: this.statusClasses, sortStrategy: this.progressSort },
+        { field: "status", header: "Status", width: "130px", dataType: "string", resizable: true, sortable: true, filterable: false, editable: true, cellClasses: this.statusClasses, sortStrategy: this.progressSort },
         { field: "progress", header: "Progress", width: "95px", dataType: "number", resizable: true, sortable: false },
         { field: "owner", header: "Owner", width: "180px", dataType: "string", resizable: true, editable: true, sortable: true, filterable: true },
         { field: "created_by", header: "Created By", width: "180px", dataType: "string", resizable: true, sortable: true, filterable: true, editable: false, hidden: true },

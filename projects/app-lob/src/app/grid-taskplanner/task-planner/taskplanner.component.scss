@@ -1,30 +1,4 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
-$tp-palette: igx-palette(
-    $primary: #5880ff,
-    $secondary: #ea68fa,
-    $surface: #282A37,
-    $grays: #fff
-);
-$backlog-card-header-height: rem(57px);
-$backlog-tab-header-height: rem(58px);
-$header-height: rem(56px);
-$tp-app-padding: rem(32px);
-$backlog-width : rem(400px);
-$offset-top: $header-height;
-$state-done: #52e282;
-$state-new: #54d5ee;
-$state-inProgress: #b38de6;
-$state-late: #dc8554;
-$state-priority: #ea5556;
-$state-delayed: #d2c059;
-$tp-grays-gradient: igx-color($tp-palette, 'surface');
-$tp-grays-gradient-btn: linear-gradient(90deg, #343745 0%, rgba(65,70,92,1) 35%, #343745 100%);
-$row-background: #343745;
-$btn-icon-background: #262933;
-$header-background: $row-background;
-$scrollbar-track: $row-background;
-$scrollbar-thumb: rgba(65,70,92,1);
-
 @import "tp-theme/index";
 
 ::ng-deep {
@@ -51,44 +25,6 @@ $scrollbar-thumb: rgba(65,70,92,1);
         // TODO create issue to make the height of the list height:auto
         igx-list {
             height: auto !important;
-        }
-
-        &__backlog {
-            min-width: 300px;
-            width: $backlog-width;
-            min-height: 400px;
-            margin-right: rem(16px);
-
-            .igx-card-content {
-                padding: 0;
-            }
-
-            .igx-card-header {
-                min-height: $backlog-card-header-height;
-            }
-
-            .igx-tabs__header-menu-item--selected,
-            .igx-tabs__header-menu-item {
-                min-height: $backlog-tab-header-height;
-            }
-
-            // Add scroll to the list
-            .igx-card-content,
-            .igx-tabs > div,
-            .igx-tabs,
-            .igx-tabs__content-fluid,
-            .igx-tabs__group {
-                height: 100%;
-                overflow: hidden;
-            }
-            .igx-tabs__content-fixed {
-                height: 100%;
-            }
-
-            .tp-app__list-scroll {
-                height: calc(100% - #{$backlog-tab-header-height});
-                overflow-x: auto;
-            }
         }
 
         &__row-details {
@@ -163,16 +99,16 @@ $scrollbar-thumb: rgba(65,70,92,1);
             min-width: rem(30px);
             margin-right: rem(8px);
         }
-    }
 
-    ::-webkit-scrollbar {
-        width: 16px;
-        height: 16px;
-        background-color: $scrollbar-track;
-    }
+        ::-webkit-scrollbar {
+            width: 16px;
+            height: 16px;
+            background-color: $scrollbar-track;
+        }
 
-    ::-webkit-scrollbar-thumb {
-        background-color: $scrollbar-thumb;
+        ::-webkit-scrollbar-thumb {
+            background-color: $scrollbar-thumb;
+        }
     }
 
     .igx-button--raised {
@@ -185,33 +121,53 @@ $scrollbar-thumb: rgba(65,70,92,1);
     .late,
     .priority,
     .delayed {
-        color: #000 !important;
+        position: relative;
+        // Version 1
+        &:before {
+            $tp-cell-indicator-top-space: rem(6px);
+            content: '';
+            position: absolute;
+            top: $tp-cell-indicator-top-space;
+            left: rem(6px);
+            width: rem(8px);
+            border-radius: rem(4px);
+            height: calc(100% - (#{$tp-cell-indicator-top-space} * 2));
+        }
+        // Version
     }
 
     .done {
-        background-color: $state-done !important;
-        color:#000;
+        &:before {
+            background: $state-done;
+        }
     }
 
     .new {
-        background-color: $state-new !important;;
-    }
-
-    .inProgress {
-        background-color: $state-inProgress !important;;
-    }
-
-    .late {
-        background-color: $state-late !important;;
-    }
-
-    .priority {
-        color: $state-priority !important;
+        &:before {
+            background: $state-new;
+        }
     }
 
     .delayed {
-        color: $state-delayed !important;;
+        &:before {
+            background: $state-delayed;
+        }
     }
+
+    .inProgress {
+        &:before {
+            background: $state-inProgress;
+        }
+    }
+
+    .low {
+        color: $state-late !important;
+    }
+
+    .critical {
+        color: $state-priority !important;
+    }
+
 
     .igx-grid-toolbar__custom-content {
         flex: 1;

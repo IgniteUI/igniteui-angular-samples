@@ -1,0 +1,45 @@
+@import '~igniteui-angular/lib/core/styles/base/index';
+@import "../tp-theme/vars";
+
+::ng-deep {
+    .tp-app {
+        &__backlog {
+            min-width: 300px;
+            width: $backlog-width;
+            min-height: 400px;
+            margin-right: rem(16px);
+
+            .igx-card-content {
+                padding: 0;
+            }
+
+            .igx-card-header {
+                min-height: $backlog-card-header-height;
+            }
+
+            .igx-tabs__header-menu-item--selected,
+            .igx-tabs__header-menu-item {
+                min-height: $backlog-tab-header-height;
+            }
+
+            // Add scroll to the list
+            &-card,
+            .igx-card-content,
+            .igx-tabs > div,
+            .igx-tabs,
+            .igx-tabs__content-fluid,
+            .igx-tabs__group {
+                height: 100%;
+                overflow: hidden;
+            }
+            .igx-tabs__content-fixed {
+                height: 100%;
+            }
+
+            .tp-app__list-scroll {
+                height: calc(100% - #{$backlog-tab-header-height});
+                overflow-x: auto;
+            }
+        }
+    }
+}
