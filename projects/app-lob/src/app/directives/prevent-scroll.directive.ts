@@ -9,10 +9,11 @@ export class IgxPreventDocumentScrollDirective implements AfterViewInit {
     private gridBody: HTMLElement;
 
     /**
-     *  A boolean determining if scroll should be prevented or no. Defaults to true.
+     *  A boolean indicating if page scroll should be prevented while mouse wheeling over the grid,
+     * when grid scroll has reached top or bottom. Defaults to true.
      * ```html
      * <igx-grid igxPreventDocumentScroll></igx-grid>
-     * <igx-grid [igxPreventDocumentScroll]="'false'"></igx-grid>
+     * <igx-grid [igxPreventDocumentScroll]="false"></igx-grid>
      * ```
      */
     @Input("igxPreventDocumentScroll")
