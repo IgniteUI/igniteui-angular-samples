@@ -34,9 +34,6 @@ export class DatepickerSample9Component {
 
     public ngOnInit() {
         this.calendar.disabledDates = [{ type: DateRangeType.Before, dateRange: [new Date(Date.now())] }];
-    }
-
-    public ngAfterViewInit() {
         this.calendar.selectDate([this.startDate, this.startDate]);
     }
 
