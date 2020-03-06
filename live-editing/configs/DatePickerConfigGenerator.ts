@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 // tslint:disable:max-line-length
-import { IgxButtonModule, IgxCalendarModule, IgxDatePickerModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule, IgxSnackbarModule, IgxToggleModule } from "igniteui-angular";
+import { IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxDatePickerModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule, IgxSnackbarModule, IgxToggleModule } from "igniteui-angular";
 import { DatepickerDropdownComponent } from "../../src/app/scheduling/datepicker/datepicker-dropdown/datepicker-dropdown.component";
 import { DatepickerSample1Component } from "../../src/app/scheduling/datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "../../src/app/scheduling/datepicker/datepicker-sample-2/datepicker-sample-2.component";
@@ -120,11 +120,11 @@ export class DatePickerConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DatepickerSample9Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCalendarModule, DatepickerSample9Component, IgxIconModule,
+                imports: [IgxAutocompleteModule, IgxCalendarModule, DatepickerSample9Component, IgxIconModule,
                     IgxInputGroupModule, IgxDropDownModule, IgxButtonModule,
                     IgxToggleModule, AutocompletePipeStartsWith, PipeWithoutTownFrom],
                 ngDeclarations: [DatepickerSample9Component, AutocompletePipeStartsWith, PipeWithoutTownFrom],
-                ngImports: [IgxCalendarModule, IgxIconModule, IgxInputGroupModule,
+                ngImports: [IgxAutocompleteModule, IgxCalendarModule, IgxIconModule, IgxInputGroupModule,
                     IgxDropDownModule, IgxButtonModule, IgxToggleModule]
             })
         }));
