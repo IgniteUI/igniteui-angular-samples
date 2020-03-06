@@ -1,13 +1,5 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-$theme: igx-carousel-theme(
-    $slide-background: #333
-);
-
-:host ::ng-deep{
-    @include igx-carousel($theme);
-}
-
 .slide-wrapper{
     max-height: 600px;
     display: flex;
@@ -42,4 +34,8 @@ $theme: igx-carousel-theme(
     margin: 16px auto;
     display: flex;
     flex-flow:column;
+}
+
+.igx-card{
+    box-shadow: none;
 }
