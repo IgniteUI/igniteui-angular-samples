@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <app-tree-grid-with-transactions>
-        <igx-tree-grid #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [rowEditable]="true"
+        <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [rowEditable]="true"
             [width]="'100%'" [height]="'500px'">
             <igx-column field="ID" header="ID" dataType="number" width="200"></igx-column>
             <igx-column field="Age" header="Age" dataType="number" width="120"></igx-column>
@@ -29,7 +29,7 @@
         </div>
     </div>
     <igx-dialog title="Submit the following transactions?">
-        <igx-grid #dialogGrid [data]="transactionsData" [rowHeight]="64"
+        <igx-grid igxPreventDocumentScroll #dialogGrid [data]="transactionsData" [rowHeight]="64"
             [primaryKey]="'id'" width="600px" height="300px" [emptyGridMessage]="'No available transactions'">
             <igx-column field="id" header="ID" [dataType]="'string'" width="100px"></igx-column>
             <igx-column field="type" header="Type" width="150px" [sortable]="true">
