@@ -45,7 +45,6 @@ import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.compone
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
 import { TabsSample4Component } from "./tabs/tabs-sample-4/components/tabs-sample-4.component";
-import { TabsSample5Component } from "./tabs/tabs-sample-5/components/tabs-sample-5.component";
 import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
 import { View1Component } from "./tabs/views/view1/view1.component";
 import { View2Component } from "./tabs/views/view2/view2.component";
