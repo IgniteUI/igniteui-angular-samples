@@ -7,7 +7,7 @@ import { IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule,
     IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule,
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
     IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
-import { IgxPreventDocumentScrollModule } from "../../../projects/app-lob/src/app/directives/prevent-scroll.directive";
+import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 import { HGridAdvancedFilteringStyleComponent } from "./hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
 import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridAllDataSummaryComponent } from "./hierarchical-grid-allData-summary/hierarchical-grid-allData-summary.component";

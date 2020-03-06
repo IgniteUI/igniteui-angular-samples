@@ -22,7 +22,7 @@ import {
     IgxTooltipModule,
     IgxTreeGridModule
 } from "igniteui-angular";
-import { IgxPreventDocumentScrollModule } from "../../../projects/app-lob/src/app/directives/prevent-scroll.directive";
+import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 // tslint:disable:max-line-length
 import { RemoteFilteringService } from "./services/remoteFilteringService";
 import {
