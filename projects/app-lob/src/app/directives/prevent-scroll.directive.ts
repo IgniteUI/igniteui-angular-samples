@@ -1,10 +1,10 @@
-import { Directive, Host, Input, NgModule, OnInit, Optional } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
+import { AfterViewInit, Directive, Host, Input, NgModule, Optional } from "@angular/core";
+import { IgxGridBaseDirective } from "igniteui-angular";
 
 @Directive({
     selector: "[igxPreventDocumentScroll]"
 })
-export class IgxPreventDocumentScrollDirective implements OnInit {
+export class IgxPreventDocumentScrollDirective implements AfterViewInit {
     private _preventScroll = true;
     private gridBody: HTMLElement;
 
@@ -16,26 +16,19 @@ export class IgxPreventDocumentScrollDirective implements OnInit {
      * ```
      */
     @Input("igxPreventDocumentScroll")
-    public get preventScroll(): boolean {
-       return this._preventScroll;
-    }
-
     public set preventScroll(val: boolean) {
-        this._preventScroll = val;
+        if (val === false) { this._preventScroll = false; }
     }
 
     /**
      * @hidden
      */
-    constructor(@Host() @Optional() private grid: IgxGridComponent) {
+    constructor(@Host() @Optional() private grid: IgxGridBaseDirective) {
         this.gridBody = this.getGridBody();
     }
 
-    public ngOnInit() {
-        console.log(this._preventScroll);
-        console.log(this.grid.id);
-        if (this.preventScroll) {
-            console.log("prevent scroll for" + this.grid.id);
+    public ngAfterViewInit() {
+        if (this._preventScroll) {
             this.gridBody.addEventListener("wheel", this.preventDocumentScroll, { passive: false });
         }
     }
@@ -51,7 +44,7 @@ export class IgxPreventDocumentScrollDirective implements OnInit {
         event.preventDefault();
     }
 
-    private getGridBody() {
+    private getGridBody(): HTMLElement {
         return this.grid.nativeElement;
     }
 }
