@@ -35,12 +35,11 @@ import { LayoutComponent } from "./layout/layout.component";
 import { layoutsRoutesData } from "./layouts-routes-data";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
-import { BottomNavRoutingView1Component,
-         BottomNavRoutingView2Component,
-         BottomNavRoutingView3Component,
-         TabbarSample3Component } from "./tabbar/tabbar-sample-3/tabbar-sample-3.component";
+import { TabbarSample3Component } from "./tabbar/tabbar-sample-3/components/tabbar-sample-3.component";
 import { TabbarStyleComponent } from "./tabbar/tabbar-style/tabbar-style.component";
-import { TabbarComponent } from "./tabbar/tabbar.component";
+import { TabbarView1Component } from "./tabbar/views/view1/view1.component";
+import { TabbarView2Component } from "./tabbar/views/view2/view2.component";
+import { TabbarView3Component } from "./tabbar/views/view3/view3.component";
 import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
@@ -163,11 +162,6 @@ export const layoutsRoutes: Routes = [
         path: "layout"
     },
     {
-        component: TabbarComponent,
-        data: layoutsRoutesData["tabbar"],
-        path: "tabbar"
-    },
-    {
         component: TabbarSample1Component,
         data: layoutsRoutesData["tabbar-sample-1"],
         path: "tabbar-sample-1"
@@ -178,14 +172,14 @@ export const layoutsRoutes: Routes = [
         path: "tabbar-sample-2"
     },
     {
-        children: [
-            { path: "arrivals",   component: BottomNavRoutingView1Component },
-            { path: "departures", component: BottomNavRoutingView2Component },
-            { path: "canceled",   component: BottomNavRoutingView3Component }
-        ],
         component: TabbarSample3Component,
         data: layoutsRoutesData["tabbar-sample-3"],
-        path: "tabbar-sample-3"
+        path: "tabbar-sample-3",
+        children: [
+            { path: "tabbar-view1", component: TabbarView1Component },
+            { path: "tabbar-view2", component: TabbarView2Component },
+            { path: "tabbar-view3", component: TabbarView3Component }
+        ]
     },
     {
         component: TabbarStyleComponent,

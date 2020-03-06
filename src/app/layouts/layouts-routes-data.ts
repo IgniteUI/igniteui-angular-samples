@@ -18,7 +18,6 @@ export const layoutsRoutesData = {
     "expansion-sample-7": { displayName: "Expansion Panel 7", parentName: "Expansion Panel" },
     "expansion-styling": { displayName: "Expansion Panel Styling", parentName: "Expansion Panel" },
     "layout": { displayName: "Layout Overview", parentName: "Layout" },
-    "tabbar": { displayName: "Bottom Navigation Overview", parentName: "Bottom Navigation" },
     "tabbar-sample-1": { displayName: "Bottom Navigation Simple Panels", parentName: "Bottom Navigation" },
     "tabbar-sample-2": { displayName: "Bottom Navigation Customizing Panels", parentName: "Bottom Navigation" },
     "tabbar-sample-3": { displayName: "Bottom Navigation Routing", parentName: "Bottom Navigation" },

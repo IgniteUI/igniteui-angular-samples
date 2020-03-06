@@ -58,14 +58,8 @@ import { LayoutComponent } from "./layout/layout.component";
 import { LayoutsRoutingModule } from "./layouts-routing.module";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
-import {
-    BottomNavRoutingView1Component,
-    BottomNavRoutingView2Component,
-    BottomNavRoutingView3Component,
-    TabbarSample3Component
-} from "./tabbar/tabbar-sample-3/tabbar-sample-3.component";
+import { TabbarSample3Component } from "./tabbar/tabbar-sample-3/components/tabbar-sample-3.component";
 import { TabbarStyleComponent } from "./tabbar/tabbar-style/tabbar-style.component";
-import { TabbarComponent } from "./tabbar/tabbar.component";
 import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
@@ -84,9 +78,6 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         AvatarSample1Component,
         AvatarSample2Component,
         AvatarSample3Component,
-        BottomNavRoutingView1Component,
-        BottomNavRoutingView2Component,
-        BottomNavRoutingView3Component,
         CardSample1Component,
         CardSample2Component,
         CardSample3Component,
@@ -118,7 +109,6 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         TabsRoutingView2Component,
         TabsRoutingView3Component,
         TabsSample6Component,
-        TabbarComponent,
         TabsSample1Component,
         TabsSample2Component,
         TabsSample3Component,
