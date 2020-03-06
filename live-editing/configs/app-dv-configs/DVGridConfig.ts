@@ -7,6 +7,7 @@ import { FinJSDemoComponent } from "../../../projects/app-lob/src/app/grid-finjs
 import { LocalDataService } from "../../../projects/app-lob/src/app/grid-finjs/localData.service";
 import { GridComponent } from "../../../projects/app-lob/src/app/grid/grid-boston-marathon/grid.component";
 import { GridMasterDetailSampleComponent } from "../../../projects/app-lob/src/app/grid/grid-master-detail/grid-master-detail.component";
+import { IgxPreventDocumentScrollModule } from "../../../src/app/directives/prevent-scroll.directive";
 import { DependenciesType } from "../../services/DependenciesType";
 import { AppModuleConfig } from "../core/AppModuleConfig";
 import { Config } from "../core/Config";
@@ -18,15 +19,15 @@ export class DVGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridComponent,
-            additionalFiles: ["/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
-                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
+                imports: [IgxPreventDocumentScrollModule, HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, GridComponent,
                     IgxSparklineCoreModule, IgxSparklineModule],
                 ngDeclarations: [GridComponent],
-                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
+                ngImports: [IgxPreventDocumentScrollModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRippleModule,
                     IgxSwitchModule, HttpClientModule, IgxSparklineCoreModule, IgxSparklineModule]
             })
@@ -35,14 +36,14 @@ export class DVGridConfigGenerator implements IConfigGenerator {
         // master-detail sample
         configs.push(new Config({
             component: GridMasterDetailSampleComponent,
-            additionalFiles: ["/projects/app-lob/src/app/services/athletesData.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/services/athletesData.ts"],
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridMasterDetailSampleComponent, IgxGridModule, IgxCategoryChartModule,
+                imports: [IgxPreventDocumentScrollModule, GridMasterDetailSampleComponent, IgxGridModule, IgxCategoryChartModule,
                     IgxAvatarModule, IgxTabsModule, IgxIconModule, IgxPieChartModule, IgxLegendModule,
                     IgxDividerModule],
                 ngDeclarations: [GridMasterDetailSampleComponent],
-                ngImports: [IgxGridModule, IgxCategoryChartModule, IgxPieChartModule, IgxLegendModule,
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxCategoryChartModule, IgxPieChartModule, IgxLegendModule,
                     IgxAvatarModule, IgxTabsModule, IgxIconModule, IgxDividerModule],
                 ngProviders: []
             })
@@ -50,15 +51,15 @@ export class DVGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridCRMComponent,
-            additionalFiles: ["/projects/app-lob/src/app/services/athletesData.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/services/athletesData.ts"],
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
-                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
+                imports: [IgxPreventDocumentScrollModule, HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, IgxToggleModule, IgxCheckboxModule,
                     IgxExcelExporterService, GridCRMComponent, IgxSparklineCoreModule, IgxSparklineModule],
                 ngDeclarations: [GridCRMComponent],
-                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
+                ngImports: [IgxPreventDocumentScrollModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, IgxToggleModule, IgxCheckboxModule,
                     HttpClientModule, IgxSparklineCoreModule, IgxSparklineModule],
@@ -70,15 +71,15 @@ export class DVGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: FinJSDemoComponent,
             dependenciesType: DependenciesType.Charts,
-            additionalFiles: ["/projects/app-lob/src/app/grid-finjs/localData.service.ts",
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/grid-finjs/localData.service.ts",
                 "/projects/app-lob/src/app/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCategoryChartModule,
+                imports: [IgxPreventDocumentScrollModule, IgxCategoryChartModule,
                     IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
                     IgxButtonModule, IgxExcelExporterService, IgxCsvExporterService, IgxSwitchModule,
                     IgxRippleModule, FinJSDemoComponent, IgxDialogModule, LocalDataService],
                 ngDeclarations: [FinJSDemoComponent],
-                ngImports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
                     IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxCategoryChartModule, IgxDialogModule],
                 ngProviders: [LocalDataService, IgxExcelExporterService, IgxCsvExporterService]
             })
