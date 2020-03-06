@@ -20,4 +20,3 @@ export class TabsSample4Component implements OnInit {
         ).subscribe(args => this.path = args["url"]);
     }
 }
-
