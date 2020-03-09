@@ -10,6 +10,7 @@ import {
     IgxDataChartCategoryModule, IgxDataChartCoreModule, IgxDataChartInteractivityModule, IgxFinancialPriceSeriesModule,
     IgxIndicatorsModule, IgxLegendModule, IgxNumericXAxisModule, IgxNumericYAxisModule
 } from "igniteui-angular-charts";
+import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 import { FinJSDemoComponent } from "./grid-finjs-demo.component";
 import { GridFinjsRoutingModule } from "./grid-finjs-routing.module";
 import { LocalDataService } from "./localData.service";
@@ -19,7 +20,7 @@ import { LocalDataService } from "./localData.service";
         FinJSDemoComponent
     ],
     imports: [
-
+        IgxPreventDocumentScrollModule,
         CommonModule,
         FormsModule,
         IgxButtonModule,

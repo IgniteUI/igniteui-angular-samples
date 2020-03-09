@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
         (onSortingDone)="removeSorting($event)" [showToolbar]="true">
         <ng-template igxToolbarCustomContent let-grid="grid">
             <igx-select [(ngModel)]="currentSortingType" (onSelection)="sortTypeSelection($event)">

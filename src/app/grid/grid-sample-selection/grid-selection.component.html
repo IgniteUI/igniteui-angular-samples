@@ -41,7 +41,7 @@
     </span>
 </div>
 <div class="grid__wrapper">
-    <igx-grid #grid1 [data]="data | async" [height]="'530px'" width="100%" [cellSelection]="'none'"
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" [height]="'530px'" width="100%" [cellSelection]="'none'"
         [rowSelection]="selectionMode" [hideRowSelectors]="hideRowSelectors" [allowFiltering]="true"
         (onRowSelectionChange)="handleRowSelection($event)">
         <igx-column [field]="'Category'"></igx-column>

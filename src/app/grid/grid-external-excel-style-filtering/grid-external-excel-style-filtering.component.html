@@ -11,7 +11,7 @@
         </igx-grid-excel-style-filtering>
     </div>
 
-    <igx-grid #grid1 autoGenerate="false" [data]="data" width="800px" height="653px" [showToolbar]="true"
+    <igx-grid igxPreventDocumentScroll #grid1 autoGenerate="false" [data]="data" width="800px" height="653px" [showToolbar]="true"
         [columnHiding]="true" [columnPinning]="true" [exportExcel]="true" [exportCsv]="true" exportText="Export"
         exportExcelText="Export to Excel" exportCsvText="Export to CSV">
         <igx-column field="ProductName" header="Product Name" [dataType]="'string'">

@@ -1,6 +1,6 @@
 <button igxButton="raised" (click)="dialogAddSinger.open()" class="addSingerBtn">Add Singer</button>
 <app-hierarchical-grid-with-transactions>
-    <igx-hierarchical-grid #hierarchicalGrid class="hgrid" [data]="localdata" [primaryKey]="'Artist'"
+    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="localdata" [primaryKey]="'Artist'"
         [rowEditable]="true" [height]="'580px'" [width]="'100%'">
         <igx-column field="Artist" header="Artist" [editable]="false" [dataType]="'string'"></igx-column>
         <igx-column field="HasGrammyAward" header="Has Grammy Award?" [editable]="true" [dataType]="'boolean'">
@@ -61,7 +61,7 @@
     </div>
 </igx-dialog>
 <igx-dialog #dialogChanges title="Submit the following transactions?">
-    <igx-grid #dialogGrid [data]="transactionsDataAll" [rowHeight]="64" [primaryKey]="'id'" width="650px" height="300px"
+    <igx-grid igxPreventDocumentScroll #dialogGrid [data]="transactionsDataAll" [rowHeight]="64" [primaryKey]="'id'" width="650px" height="300px"
         [emptyGridMessage]="'No available transactions'">
         <igx-column field="id" header="ID" [dataType]="'string'" width="150px"></igx-column>
         <igx-column field="type" header="Type" width="150px" [sortable]="true">
