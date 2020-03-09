@@ -6,7 +6,7 @@
     <igx-buttongroup [values]="summaryPositions" (onSelect)="selectSummaryPosition($event)"></igx-buttongroup>
 </div>
 
-<igx-tree-grid #treegrid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
+<igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
     primaryKey="ID" foreignKey="ParentID">
     <igx-column #col field="ID" header="Product ID" [sortable]="true">
     </igx-column>
