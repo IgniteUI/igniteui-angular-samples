@@ -103,7 +103,7 @@ export class LayoutConfigGenerator implements IConfigGenerator {
                 appModuleConfig: new AppModuleConfig({
                     imports: [
                         IgxLayoutModule,
-                        LayoutDirectionColumnComponent,
+                        LayoutDirectionRowComponent,
                         IgxButtonGroupModule,
                         IgxButtonModule,
                         IgxRippleModule
@@ -123,7 +123,7 @@ export class LayoutConfigGenerator implements IConfigGenerator {
                 appModuleConfig: new AppModuleConfig({
                     imports: [
                         IgxLayoutModule,
-                        LayoutDirectionColumnComponent,
+                        LayoutJustifyContentComponent,
                         IgxButtonGroupModule,
                         IgxButtonModule,
                         IgxRippleModule
