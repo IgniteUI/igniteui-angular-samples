@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from "@angular/core";
+import { Component, ElementRef, ViewChild, ViewEncapsulation } from "@angular/core";
 
 import {
     CloseScrollStrategy,
@@ -9,6 +9,7 @@ import {
 } from "igniteui-angular";
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: "app-toggle",
   styleUrls: ["./toggle.component.scss"],
   templateUrl: "./toggle.component.html"
