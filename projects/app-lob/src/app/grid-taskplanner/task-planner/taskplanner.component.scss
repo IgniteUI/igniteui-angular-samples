@@ -2,13 +2,13 @@
 @import "tp-theme/index";
 
 ::ng-deep {
-    .tp-app{
+    .tp-app {
         display: flex;
         flex: 1 0 0%;
         height: 100%;
         overflow: hidden;
         padding: $tp-app-padding;
-        background: rgb(26,28,37);
+        background: rgb(26, 28, 37);
         background: $tp-grays-gradient;
         color: #ccc;
 
@@ -59,13 +59,15 @@
 
         &__grid {
             flex: 1;
+
             igx-grid {
                 border-radius: rem(16px);
             }
         }
 
         &__dialog-content {
-            padding:0 rem(24px);
+            padding: 0 rem(24px);
+
             > * {
                 margin-bottom: rem(8px);
             }
@@ -108,6 +110,12 @@
 
         ::-webkit-scrollbar-thumb {
             background-color: $scrollbar-thumb;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .content {
+                padding: 0;
+            }
         }
     }
 
@@ -164,8 +172,12 @@
         color: $state-late !important;
     }
 
+    .high {
+        color: $state-high !important;
+    }
+
     .critical {
-        color: $state-priority !important;
+        color: $state-critical !important;
     }
 
 
@@ -173,4 +185,10 @@
         flex: 1;
         justify-content: space-between;
     }
+}
+
+@keyframes bggAnimatio {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }

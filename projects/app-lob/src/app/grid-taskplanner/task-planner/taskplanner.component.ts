@@ -102,6 +102,10 @@ export class TaskPlannerComponent implements OnInit {
         return rowData[columnKey] === "Low";
     }
 
+    public isHigh = (rowData: any, columnKey: any): boolean => {
+        return rowData[columnKey] === "High";
+    }
+
     public isDelayed = (rowData: ITask, columnKey: string): boolean => {
         return rowData.hours_spent > rowData.estimation;
     }
@@ -120,7 +124,8 @@ export class TaskPlannerComponent implements OnInit {
 
     public priorityClasses = {
         critical: this.isCritical,
-        low: this.isLow
+        low: this.isLow,
+        high: this.isHigh
     };
 
     public delayedClasses = {

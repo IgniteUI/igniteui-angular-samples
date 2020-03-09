@@ -4,9 +4,8 @@
 ::ng-deep {
     .tp-app {
         &__backlog {
-            min-width: 300px;
+            min-width: 100px;
             width: $backlog-width;
-            min-height: 400px;
             margin-right: rem(16px);
 
             .igx-card-content {
