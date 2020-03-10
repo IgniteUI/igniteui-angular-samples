@@ -13,7 +13,7 @@
                 </igx-hint>
             </igx-input-group>
             <div class="grid-wrapper">
-                <igx-grid #grid [data]="data" primaryKey="ID" rowEditable="true" (onColumnInit)="initColumn($event)"
+                <igx-grid igxPreventDocumentScroll #grid [data]="data" primaryKey="ID" rowEditable="true" (onColumnInit)="initColumn($event)"
                     [showToolbar]="true" [clipboardOptions]="options" [autoGenerate]="true">
                     <ng-template igxToolbarCustomContent let-grid="grid">
                         <div class="tlb">

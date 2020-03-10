@@ -3,7 +3,7 @@
 </div>
 <div class="wrapper">
     <div class="left">
-        <igx-grid #source
+        <igx-grid igxPreventDocumentScroll #source
             width="100%"
             [allowFiltering]="true"
             filterMode="excelStyleFilter"
@@ -15,7 +15,7 @@
         </igx-grid>
     </div>
     <div class="right">
-        <igx-grid #target width="100%"
+        <igx-grid igxPreventDocumentScroll #target width="100%"
             [data]="targetData" height="600px" autoGenerate="true"
             (onColumnInit)="initColumn($event)">
         </igx-grid>

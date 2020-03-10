@@ -41,7 +41,7 @@ export class TabsSample6Component implements OnInit {
 @Component({
     template: `
         <br>
-        <igx-grid [data]="data">
+        <igx-grid igxPreventDocumentScroll [data]="data">
             <igx-column [field]="'Flight'" width="100"></igx-column>
             <igx-column [field]="'From'" width="120"></igx-column>
             <igx-column [field]="'Time'" width="100"></igx-column>
@@ -62,7 +62,7 @@ export class TabsRoutingView1Component {
 @Component({
     template: `
         <br>
-        <igx-grid [data]="data">
+        <igx-grid igxPreventDocumentScroll [data]="data">
             <igx-column [field]="'Flight'" width="100"></igx-column>
             <igx-column [field]="'From'" width="120"></igx-column>
             <igx-column [field]="'Time'" width="100"></igx-column>
@@ -84,7 +84,7 @@ export class TabsRoutingView2Component {
 @Component({
     template: `
         <br>
-        <igx-grid [data]="data">
+        <igx-grid igxPreventDocumentScroll [data]="data">
             <igx-column [field]="'Flight'" width="100"></igx-column>
             <igx-column [field]="'From'" width="120"></igx-column>
             <igx-column [field]="'Time'" width="100"></igx-column>
