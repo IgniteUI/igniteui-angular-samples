@@ -3,7 +3,9 @@ import {
     IgxCardModule,
     IgxCarouselModule,
     IgxIconModule,
+    IgxInputGroupModule,
     IgxListModule,
+    IgxPrefixDirective,
     IgxSelectModule,
     IgxSliderModule
 } from "igniteui-angular";
@@ -14,7 +16,7 @@ import {
     CarouselNoNavigationSampleComponent
 } from "../../src/app/layouts/carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component";
 import {
-    CarouselWithComponentsSample
+    CarouselWithComponentsSampleComponent
 } from "../../src/app/layouts/carousel/carousel-with-components-sample/carousel-with-components-sample.component";
 import { CarouselComponent } from "../../src/app/layouts/carousel/carousel.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
@@ -50,15 +52,24 @@ export class CarouselConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: CarouselWithComponentsSample,
+            component: CarouselWithComponentsSampleComponent,
             appModuleConfig: new AppModuleConfig({
                 imports: [
                     IgxCarouselModule,
                     IgxListModule,
-                    CarouselWithComponentsSample
+                    IgxInputGroupModule,
+                    IgxIconModule,
+                    IgxButtonModule,
+                    CarouselWithComponentsSampleComponent
                 ],
-                ngDeclarations: [CarouselWithComponentsSample],
-                ngImports: [IgxCarouselModule, IgxListModule]
+                ngDeclarations: [CarouselWithComponentsSampleComponent],
+                ngImports: [
+                    IgxCarouselModule,
+                    IgxListModule,
+                    IgxInputGroupModule,
+                    IgxIconModule,
+                    IgxButtonModule
+                ]
             }),
             shortenComponentPathBy: "/layouts/carousel/"
         }));

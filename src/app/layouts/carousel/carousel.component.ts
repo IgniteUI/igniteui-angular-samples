@@ -1,5 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxCarouselComponent } from "igniteui-angular";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-carousel",
@@ -8,17 +7,16 @@ import { IgxCarouselComponent } from "igniteui-angular";
 })
 
 export class CarouselComponent {
-  @ViewChild("carousel", { static: true }) public carousel: IgxCarouselComponent;
 
   public slides = [
       {
-        src: "http://localhost:4200/assets/images/carousel/ignite-ui-angular-indigo-design.png"
+        src: "/assets/images/carousel/ignite-ui-angular-indigo-design.png"
       },
       {
-        src: "http://localhost:4200/assets/images/carousel/slider-image-chart.png"
+        src: "/assets/images/carousel/slider-image-chart.png"
       },
       {
-        src: "http://localhost:4200/assets/images/carousel/ignite-ui-angular-charts.png"
+        src: "/assets/images/carousel/ignite-ui-angular-charts.png"
       }
   ];
 }
