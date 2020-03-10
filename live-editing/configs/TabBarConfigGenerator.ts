@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxAvatarModule, IgxBottomNavModule, IgxButtonModule,
-    IgxIconModule, IgxListModule, IgxRippleModule } from "igniteui-angular";
+import { RouterModule } from "@angular/router";
+import { IgxBottomNavModule } from "igniteui-angular";
 import { TabbarSample1Component } from "../../src/app/layouts/tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "../../src/app/layouts/tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import {
@@ -23,11 +23,9 @@ export class TabBarConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: TabbarSample1Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxAvatarModule, IgxIconModule, IgxListModule,
-                    IgxBottomNavModule, TabbarSample1Component],
+                imports: [IgxBottomNavModule, TabbarSample1Component],
                 ngDeclarations: [TabbarSample1Component],
-                ngImports: [IgxAvatarModule, IgxIconModule,
-                    IgxListModule, IgxBottomNavModule]
+                ngImports: [IgxBottomNavModule]
             }),
             shortenComponentPathBy: "/layouts/tabbar/"
         }));
@@ -36,11 +34,9 @@ export class TabBarConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: TabbarSample2Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxAvatarModule, IgxIconModule, IgxListModule,
-                    IgxBottomNavModule, TabbarSample2Component],
+                imports: [IgxBottomNavModule, TabbarSample2Component],
                 ngDeclarations: [TabbarSample2Component],
-                ngImports: [IgxAvatarModule, IgxIconModule,
-                    IgxListModule, IgxBottomNavModule]
+                ngImports: [IgxBottomNavModule]
             }),
             shortenComponentPathBy: "/layouts/tabbar/"
         }));
@@ -64,6 +60,7 @@ export class TabBarConfigGenerator implements IConfigGenerator {
                     TabbarSample3Module,
                     TabbarSample3Component,
                     IgxBottomNavModule,
+                    RouterModule,
                     TabbarView1Component,
                     TabbarView2Component,
                     TabbarView3Component
@@ -74,6 +71,7 @@ export class TabBarConfigGenerator implements IConfigGenerator {
                 ngImports: [
                     IgxBottomNavModule,
                     TabbarSample3Module,
+                    RouterModule,
                     `
                     RouterModule.forRoot([
                         { path: "tabbar-view1", component: TabbarView1Component },
@@ -90,12 +88,9 @@ export class TabBarConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: TabbarStyleComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxAvatarModule, IgxButtonModule, IgxIconModule,
-                    IgxBottomNavModule, TabbarStyleComponent],
+                imports: [IgxBottomNavModule, TabbarStyleComponent],
                 ngDeclarations: [TabbarStyleComponent],
-                ngImports: [
-                    IgxAvatarModule, IgxButtonModule, IgxIconModule,
-                    IgxRippleModule, IgxListModule, IgxBottomNavModule]
+                ngImports: [IgxBottomNavModule]
             }),
             shortenComponentPathBy: "/layouts/tabbar/"
         }));
