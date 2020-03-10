@@ -1,3 +1,9 @@
+<ng-template igxHeader let-column #pinTemplate>
+    <div class="title-inner">
+        <span style="float:left">{{column.field}}</span>
+        <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" [attr.draggable]="false" (click)="toggleColumnPinning(column)"></igx-icon>
+    </div>
+</ng-template>
 <div class="grid__wrapper">
     <igx-tree-grid #grid1 [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" [width]="'100%'" 
         [height]="'500px'" [pinning]="pinningConfig" [autoGenerate]="false" [columnPinning]="true" [showToolbar]="true">

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
+import { Component, ViewChild, ViewEncapsulation, TemplateRef } from "@angular/core";
 import { ColumnPinningPosition, IgxColumnComponent, IgxTreeGridComponent } from "igniteui-angular";
 import { IPinningConfig } from "igniteui-angular/lib/grids/common/grid.interface";
 import { generateEmployeeDetailedFlatData } from "../data/employees-flat-detailed";
@@ -20,11 +20,14 @@ export class TreeGridRightPinningSampleComponent {
     public pinningConfig: IPinningConfig = { columns: ColumnPinningPosition.End };
     private _columnsPinned: boolean = true;
 
+    @ViewChild("pinTemplate", { read: TemplateRef, static: true })
+    public pinTemplate: TemplateRef<any>;
+
     public ngOnInit(): void {
         this.data = generateEmployeeDetailedFlatData();
     }
 
-    public toggleColumn(col: IgxColumnComponent): void {
+    public toggleColumnPinning(col: IgxColumnComponent): void {
         col.pinned ? col.unpin() : col.pin();
     }
 

@@ -2,7 +2,29 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { IgxAvatarModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCsvExporterService, IgxDialogModule, IgxExcelExporterService, IgxGridModule, IgxIconModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule, IgxTreeGridModule } from "igniteui-angular";
+import {
+    IgxAvatarModule,
+    IgxBannerModule,
+    IgxButtonGroupModule,
+    IgxButtonModule,
+    IgxCsvExporterService,
+    IgxDialogModule,
+    IgxExcelExporterService,
+    IgxGridModule,
+    IgxIconModule,
+    IgxRadioModule,
+    IgxRippleModule,
+    IgxSelectModule,
+    IgxSliderModule,
+    IgxSnackbarModule,
+    IgxSwitchModule,
+    IgxToastModule,
+    IgxToggleModule,
+    IgxTooltipModule,
+    IgxTreeGridModule
+} from "igniteui-angular";
+import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
+// tslint:disable:max-line-length
 import { RemoteFilteringService } from "./services/remoteFilteringService";
 import { TreeGridAdvancedFilteringSampleComponent } from "./tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
 import { TreeGridAdvancedFilteringStyleComponent } from "./tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
@@ -75,6 +97,7 @@ import { TreeGridToolbarSample4Component } from "./tree-grid-toolbar-sample-4/tr
 import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-grid-toolbar-style.component";
 import { TreeGridVirtualizationSampleComponent } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
+
 @NgModule({
     declarations: [
         TreeGridRowEditSampleComponent,
@@ -151,6 +174,7 @@ import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/tree
     imports: [
         CommonModule,
         FormsModule,
+        IgxPreventDocumentScrollModule,
         TreeGridRoutingModule,
         IgxTreeGridModule,
         IgxGridModule,
