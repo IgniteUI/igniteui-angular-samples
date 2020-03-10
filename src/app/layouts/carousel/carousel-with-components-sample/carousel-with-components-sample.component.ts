@@ -1,5 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxCarouselComponent } from "igniteui-angular";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-carousel",
@@ -7,6 +6,4 @@ import { IgxCarouselComponent } from "igniteui-angular";
   templateUrl: "./carousel-with-components-sample.component.html"
 })
 
-export class CarouselWithComponentsSample {
-  @ViewChild("carousel", { static: true }) public carousel: IgxCarouselComponent;
-}
+export class CarouselWithComponentsSampleComponent { }

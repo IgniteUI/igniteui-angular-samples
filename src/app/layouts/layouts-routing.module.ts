@@ -14,7 +14,7 @@ import { CarouselAnimationsSampleComponent
     } from "./carousel/carousel-animations-sample/carousel-animations-sample.component";
 import { CarouselNoNavigationSampleComponent
     } from "./carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component";
-import { CarouselWithComponentsSample
+import { CarouselWithComponentsSampleComponent
 } from "./carousel/carousel-with-components-sample/carousel-with-components-sample.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DividerDashedComponent } from "./divider/dashed/divider-dashed.component";
@@ -77,7 +77,7 @@ export const layoutsRoutes: Routes = [
         path: "carousel-animations-sample"
     },
     {
-        component: CarouselWithComponentsSample,
+        component: CarouselWithComponentsSampleComponent,
         data: layoutsRoutesData["carousel-with-components-sample"],
         path: "carousel-with-components-sample"
     },
