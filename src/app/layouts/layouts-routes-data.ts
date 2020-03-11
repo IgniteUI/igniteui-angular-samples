@@ -34,7 +34,7 @@ export const layoutsRoutesData = {
     "tabs-sample-1": { displayName: "Tabs Overview", parentName: "Tabs" },
     "tabs-sample-2": { displayName: "Tabs Types", parentName: "Tabs" },
     "tabs-sample-3": { displayName: "Tabs Customizing", parentName: "Tabs" },
-    "tabs-sample-6": { displayName: "Tabs Routing", parentName: "Tabs" },
+    "tabs-sample-4": { displayName: "Tabs Routing", parentName: "Tabs" },
     "tabs-style": { displayName: "Tabs Styling", parentName: "Tabs" },
     "card-sample-0": { displayName: "Elevated Card", parentName: "Card" },
     "card-sample-1": { displayName: "Outlined Card", parentName: "Card" },

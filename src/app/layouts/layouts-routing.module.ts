@@ -52,12 +52,10 @@ import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.compone
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
 import { TabsSample4Component } from "./tabs/tabs-sample-4/components/tabs-sample-4.component";
-import { TabsSample5Component } from "./tabs/tabs-sample-5/components/tabs-sample-5.component";
-import { TabsRoutingView1Component,
-         TabsRoutingView2Component,
-         TabsRoutingView3Component,
-         TabsSample6Component } from "./tabs/tabs-sample-6/tabs-sample-6.component";
 import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
+import { View1Component } from "./tabs/views/view1/view1.component";
+import { View2Component } from "./tabs/views/view2/view2.component";
+import { View3Component } from "./tabs/views/view3/view3.component";
 
 export const layoutsRoutes: Routes = [
     {
@@ -252,21 +250,12 @@ export const layoutsRoutes: Routes = [
     },
     {
         component: TabsSample4Component,
-        path: "tabs-sample-4"
-    },
-    {
-        component: TabsSample5Component,
-        path: "tabs-sample-5"
-    },
-    {
+        path: "tabs-sample-4",
         children: [
-            { path: "arrivals",   component: TabsRoutingView1Component },
-            { path: "departures", component: TabsRoutingView2Component },
-            { path: "canceled",   component: TabsRoutingView3Component }
-        ],
-        component: TabsSample6Component,
-        data: layoutsRoutesData["tabs-sample-6"],
-        path: "tabs-sample-6"
+            { path: "view1", component: View1Component },
+            { path: "view2", component: View2Component },
+            { path: "view3", component: View3Component }
+        ]
     },
     {
         component: TabsStyleComponent,
