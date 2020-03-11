@@ -1,16 +1,24 @@
-a {
-    padding: 25px;
-    display: block;
-    width: 100%;
-    font-size: .875rem;
-    line-height: 1rem;
-    max-width: 100%;
-    text-align: center;
-    color:#424242;
-    position: absolute;
-}
+:host {
+    .url {
+        padding: 12px;
 
-._wrapper_tabs {
-    display: flex;
-    flex-direction: column;
+        &__title {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        &__path {
+            margin: 0;
+            padding: 0;
+            font-size: 13px;
+        }
+    }
+
+    ::ng-deep p {
+        margin: 0;
+        padding: 8px;
+    }
 }
