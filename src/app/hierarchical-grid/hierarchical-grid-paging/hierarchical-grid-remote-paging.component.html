@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid [paging]="true" [perPage]="perPage" [primaryKey]="'CustomerID'" [height]="'550px'" [paginationTemplate]="remotePager"
+    <igx-hierarchical-grid igxPreventDocumentScroll  [paging]="true" [perPage]="perPage" [primaryKey]="'CustomerID'" [height]="'550px'" [paginationTemplate]="remotePager"
         [width]="'100%'" #hierarchicalGrid>
         <igx-column field="CustomerID"></igx-column>
         <igx-column field="CompanyName"></igx-column>

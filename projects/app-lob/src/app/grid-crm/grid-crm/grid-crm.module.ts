@@ -6,6 +6,7 @@ import {
     IgxGridModule, IgxProgressBarModule
 } from "igniteui-angular";
 import { IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
+import { IgxPreventDocumentScrollModule } from "../../directives/prevent-scroll.directive";
 import { GridCRMRoutingModule } from "./grid-crm-routing.module";
 import { GridCRMComponent } from "./grid-crm/grid-crm.component";
 
@@ -16,6 +17,7 @@ import { GridCRMComponent } from "./grid-crm/grid-crm.component";
     imports: [
         CommonModule,
         FormsModule,
+        IgxPreventDocumentScrollModule,
         GridCRMRoutingModule,
         IgxGridModule,
         IgxAvatarModule,
