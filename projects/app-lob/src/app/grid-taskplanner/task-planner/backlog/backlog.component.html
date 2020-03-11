@@ -7,6 +7,15 @@
         <igx-tabs>
             <igx-tabs-group label="unassigned">
                 <div class="tp-app__list-scroll">
+                    <igx-input-group type="search" class="tp-app__task-search">
+                        <input #taskSearch igxInput placeholder="Search" />
+                        <igx-prefix>
+                            <igx-icon>search</igx-icon>
+                        </igx-prefix>
+                        <igx-suffix *ngIf="taskSearch.value.length > 0" (click)="clearSearchInput()">
+                            <igx-icon>clear</igx-icon>
+                        </igx-suffix>
+                    </igx-input-group>
                     <igx-list>
                         <igx-list-item *ngFor="let issue of issues">
                             <igx-icon igxListThumbnail>drag_indicator</igx-icon>

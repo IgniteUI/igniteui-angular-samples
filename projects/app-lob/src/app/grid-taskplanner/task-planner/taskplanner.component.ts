@@ -1,11 +1,17 @@
-import { Component, OnInit, ViewChild  } from "@angular/core";
-import { ControlContainer, NgForm } from "@angular/forms";
-import { DefaultSortingStrategy, IGridEditEventArgs, IgxDialogComponent,
-    IgxGridComponent, IgxToastComponent,
-    SortingDirection, Transaction} from "igniteui-angular";
-import { IgxLegendComponent } from "igniteui-angular-charts";
-import { TasksDataService } from "../../services/tasks.service";
-import {MEMBERS} from "../../services/tasksData";
+import {Component, OnInit, ViewChild} from "@angular/core";
+import {ControlContainer, NgForm} from "@angular/forms";
+import {
+    DefaultSortingStrategy,
+    IGridEditEventArgs,
+    IgxDialogComponent,
+    IgxGridComponent,
+    IgxToastComponent,
+    SortingDirection,
+    Transaction
+} from "igniteui-angular";
+import {IgxLegendComponent} from "igniteui-angular-charts";
+import {TasksDataService} from "../../services/tasks.service";
+import {MEMBERS, TASKS_DATA} from "../../services/tasksData";
 
 export enum editMode {
     cellEditing = 0,
@@ -36,8 +42,7 @@ export interface ITask {
 }
 
 @Component({
-    providers: [TasksDataService, { provide: ControlContainer, useExisting: NgForm }
-       ],
+    providers: [TasksDataService, { provide: ControlContainer, useExisting: NgForm }],
     selector: "app-taskplanner",
     templateUrl: "./taskplanner.component.html",
     styleUrls: ["./taskplanner.component.scss"],
@@ -58,12 +63,21 @@ export class TaskPlannerComponent implements OnInit {
     public addTaskForm: ITask = { };
     public batchEditingEnabled = true;
     public transactionsData: Transaction[] = [];
+    public allTasks = TASKS_DATA;
 
     public statuses = [
-        { value: "New" },
-        { value: "In Progress" },
-        { value: "Done" },
-        { value: "Delayed" }
+        {
+            value: "New"
+        },
+        {
+            value: "In Progress"
+        },
+        {
+            value: "Done"
+        },
+        {
+            value: "Delayed"
+        }
     ];
 
     public priority = [
@@ -72,11 +86,30 @@ export class TaskPlannerComponent implements OnInit {
         { value: "High" },
         { value: "Critical" }
     ];
-
     /**
      * Calculates task progress.
      */
     public calcProgress = calcProgress;
+
+    public get filterTasks() {
+        return this.allTasks.reduce((acc, val) => {
+            const cssClass = val.status.replace(/\s/g, "").toLowerCase();
+            const itemIndex = acc.findIndex(item => item.name === val.status);
+
+            if (itemIndex === -1) {
+                acc.push({
+                    name: val.status,
+                    items: 1,
+                    cssClass
+                });
+
+                return acc;
+            }
+
+            acc[itemIndex]["items"] = acc[itemIndex]["items"] + 1;
+            return acc;
+        }, []);
+    }
 
     public isDone = (rowData: any, columnKey: any): boolean => {
         return rowData[columnKey] === "Done";

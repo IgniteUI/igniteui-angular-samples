@@ -1,4 +1,5 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, ViewChild} from "@angular/core";
+import {IgxInputDirective} from "igniteui-angular";
 import {TASKS_DATA} from "../../../services/tasksData";
 
 @Component({
@@ -7,13 +8,14 @@ import {TASKS_DATA} from "../../../services/tasksData";
     styleUrls: ["./backlog.component.scss"],
     host: {class: "tp-app__backlog"}
 })
-export class BacklogComponent implements OnInit {
+export class BacklogComponent  {
     public issues = TASKS_DATA;
 
-    constructor() {
-    }
+    @ViewChild("taskSearch", { read: IgxInputDirective, static: true }) public searchInput: IgxInputDirective;
 
-    public ngOnInit(): void {
-    }
+    constructor() {}
 
+    public clearSearchInput() {
+        this.searchInput.value = "";
+    }
 }

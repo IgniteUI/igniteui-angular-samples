@@ -21,6 +21,10 @@
                 min-height: $backlog-tab-header-height;
             }
 
+            &__task-search {
+                padding: rem(16px);
+            }
+
             // Add scroll to the list
             &-card,
             .igx-card-content,
