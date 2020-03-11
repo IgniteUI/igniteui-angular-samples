@@ -49,7 +49,7 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-row-island [key]="'AgentData'" [autoGenerate]="false">
+        <igx-row-island [key]="'AgentData'" [autoGenerate]="false" [pinning]="pinningConfig">
             <igx-column field="avatar" header="Agent's Photo" width="80">
                 <ng-template igxCell let-cell="cell">
                     <div class="cell__inner avatar-cell">
@@ -61,11 +61,11 @@
             <igx-column field="company" header="Associated Company" width="160"></igx-column>
             <igx-column field="email" header="Work E-mail" width="250"></igx-column>
             <igx-column field="work_phone" header="Work Phone" width="160"></igx-column>
-            <igx-column field="street" header="Street" width="250"></igx-column>
-            <igx-column field="city" header="City"></igx-column>
+            <igx-column field="street" header="Street" width="200" [pinned]="true"></igx-column>
+            <igx-column field="city" header="City" [pinned]="true"></igx-column>
             <igx-column field="post_code" header="Post Code"></igx-column>
             <igx-column field="state" header="State"></igx-column>
-            <igx-column field="country" header="Country"></igx-column>
+            <igx-column field="country" header="Country" [pinned]="true"></igx-column>
             <igx-column field="refferred_by" header="Reffered by"></igx-column>
         </igx-row-island>
     </igx-hierarchical-grid>

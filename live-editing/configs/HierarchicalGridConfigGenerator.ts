@@ -1,6 +1,6 @@
 // tslint:disable:max-line-length
 import { HttpClientModule } from "@angular/common/http";
-import { IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule, IgxDragDropModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxTooltipModule } from "igniteui-angular";
+import { IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule, IgxDragDropModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxTooltipModule, IgxAvatarModule } from "igniteui-angular";
 import { IgxPreventDocumentScrollModule } from "../../src/app/directives/prevent-scroll.directive";
 import { HGridAdvancedFilteringStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
 import { HGridAdvancedFilteringSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
@@ -651,9 +651,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 "/src/app/data/athletesData.ts"
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: [HierarchicalGridRightPinningSampleComponent, IgxHierarchicalGridModule],
+                imports: [HierarchicalGridRightPinningSampleComponent, IgxHierarchicalGridModule, IgxAvatarModule, IgxTooltipModule],
                 ngDeclarations: [HierarchicalGridRightPinningSampleComponent],
-                ngImports: [IgxHierarchicalGridModule],
+                ngImports: [IgxHierarchicalGridModule, IgxAvatarModule, IgxTooltipModule],
                 ngProviders: []
             }),
             component: HierarchicalGridRightPinningSampleComponent
