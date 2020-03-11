@@ -1,0 +1,26 @@
+$tp-badge-radius: 11px;
+$tp-badge-shadow: none;
+
+$badge-new: igx-badge-theme(
+    $border-radius: $tp-badge-radius,
+    $background-color: $state-new,
+    $shadow: $tp-badge-shadow,
+);
+
+$badge-inprogress: igx-badge-theme(
+    $border-radius: $tp-badge-radius,
+    $background-color: $state-inprogress,
+    $shadow: $tp-badge-shadow,
+);
+
+$badge-done: igx-badge-theme(
+    $border-radius: $tp-badge-radius,
+    $background-color: $state-done,
+    $shadow: $tp-badge-shadow,
+);
+
+$badge-delayed: igx-badge-theme(
+    $border-radius: $tp-badge-radius,
+    $background-color: $state-delayed,
+    $shadow: $tp-badge-shadow,
+);

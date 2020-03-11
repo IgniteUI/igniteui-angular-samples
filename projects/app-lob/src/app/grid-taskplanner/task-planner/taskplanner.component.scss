@@ -4,6 +4,7 @@
 ::ng-deep {
     .tp-app {
         display: flex;
+        flex-direction: column;
         flex: 1 0 0%;
         height: 100%;
         overflow: hidden;
@@ -33,6 +34,13 @@
             justify-content: flex-start;
         }
 
+        &__inner {
+            display: flex;
+            height: 100%;
+            overflow: hidden;
+            padding: $tp-app-padding;
+        }
+
         &__row-details-col {
             display: flex;
             flex-direction: column;
@@ -43,6 +51,15 @@
             &:last-of-type {
                 margin-right: 0;
             }
+        }
+
+        &__config {
+            height: $config-height;
+            padding: $tp-app-padding;
+        }
+
+        &__config-buttons {
+            display: flex;
         }
 
         &__grid-logo {
@@ -102,6 +119,14 @@
             margin-right: rem(8px);
         }
 
+        &__row-badges {
+            margin-left: rem(8px);
+
+            .igx-badge__circle-value {
+                padding: 0 rem(16px);
+            }
+        }
+
         ::-webkit-scrollbar {
             width: 16px;
             height: 16px;
@@ -117,6 +142,29 @@
                 padding: 0;
             }
         }
+
+        .igx-grid__tr--edited::before {
+            background-size: 400% 400%;
+            animation: AnimationName 1s ease infinite;
+            background: linear-gradient(270deg, rgba(234,104,250,1), rgba(151,89,255,1));
+            @keyframes gradientAnimation {
+                from {background-position: center center, left center;}
+                to {background-position: center center, right center;}
+            }
+        }
+
+        .done {
+            @include igx-badge($badge-done)
+        }
+        .new {
+            @include igx-badge($badge-new)
+        }
+        .delayed {
+            @include igx-badge($badge-delayed)
+        }
+        .inprogress {
+            @include igx-badge($badge-inprogress)
+        }
     }
 
     .igx-button--raised {
@@ -125,7 +173,7 @@
 
     .done,
     .new,
-    .inProgress,
+    .inprogress,
     .late,
     .priority,
     .delayed {
@@ -144,29 +192,33 @@
         // Version
     }
 
-    .done {
-        &:before {
-            background: $state-done;
+    .igx-grid__tr {
+        .done {
+            &:before {
+                background: $state-done;
+            }
+        }
+
+        .new {
+            &:before {
+                background: $state-new;
+            }
+        }
+
+        .delayed {
+            &:before {
+                background: $state-delayed;
+            }
+        }
+
+        .inprogress {
+            &:before {
+                background: $state-inprogress;
+            }
         }
     }
 
-    .new {
-        &:before {
-            background: $state-new;
-        }
-    }
 
-    .delayed {
-        &:before {
-            background: $state-delayed;
-        }
-    }
-
-    .inProgress {
-        &:before {
-            background: $state-inProgress;
-        }
-    }
 
     .low {
         color: $state-late !important;
@@ -185,10 +237,4 @@
         flex: 1;
         justify-content: space-between;
     }
-}
-
-@keyframes bggAnimatio {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
 }

@@ -29,5 +29,5 @@ $tp-grid: igx-grid-theme(
     $row-ghost-background: #4A4F64,
 
     $pinned-border-color: transparentize(igx-color($tp-palette, 'secondary'), .95),
-    $edited-row-indicator: linear-gradient(90deg, rgba(151,89,255,1) 0%, rgba(234,104,250,1) 100%)
+    $edited-row-indicator: linear-gradient(270deg, rgba(234,104,250,1), rgba(151,89,255,1))
 );

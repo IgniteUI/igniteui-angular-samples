@@ -3,12 +3,16 @@
 $backlog-card-header-height: rem(57px);
 $backlog-tab-header-height: rem(58px);
 $header-height: rem(56px);
-$tp-app-padding: rem(32px);
+$config-height: rem(68px);
+$search-height: rem(50px);
+$search-margin: rem(16px);
+$tp-app-padding: rem(16px);
+$scroll-subtract: $backlog-tab-header-height + $search-height + ($tp-app-padding * 2);
 $backlog-width : rem(400px);
 $offset-top: $header-height;
 $state-done: #52e282;
 $state-new: #54d5ee;
-$state-inProgress: #b38de6;
+$state-inprogress: #b38de6;
 $state-late: #c8b78e;
 $state-critical: #ea5556;
 $state-high: #dc8c35;

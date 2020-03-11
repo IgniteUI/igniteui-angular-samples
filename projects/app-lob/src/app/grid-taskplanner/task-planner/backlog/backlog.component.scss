@@ -3,6 +3,11 @@
 
 ::ng-deep {
     .tp-app {
+        &__task-search {
+            margin: $search-margin !important;
+            height: $search-height;
+        }
+
         &__backlog {
             min-width: 100px;
             width: $backlog-width;
@@ -36,7 +41,7 @@
             }
 
             .tp-app__list-scroll {
-                height: calc(100% - #{$backlog-tab-header-height});
+                height: calc(100% - #{$scroll-subtract});
                 overflow-x: auto;
             }
         }
