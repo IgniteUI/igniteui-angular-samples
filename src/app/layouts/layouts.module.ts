@@ -54,7 +54,14 @@ import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
 import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
 import { ExpansionPanelStylingComponent } from "./expansion-panel/expansion-styling/expansion-styling.component";
-import { LayoutComponent } from "./layout/layout.component";
+import { LayoutAlignItemsComponent } from "./layout/layout-align-items/layout-align-items.component";
+import { LayoutContentSpaceComponent } from "./layout/layout-content-space/layout-content-space.component";
+import { LayoutCustomOrderComponent } from "./layout/layout-custom-order/layout-custom-order.component";
+import { LayoutDirectionColumnComponent } from "./layout/layout-direction-column/layout-direction-column.component";
+import { LayoutDirectionRowComponent } from "./layout/layout-direction-row/layout-direction-row.component";
+import { LayoutJustifyContentComponent } from "./layout/layout-justify-content/layout-justify-content.component";
+import { LayoutSampleComponent } from "./layout/layout-sample/layout-sample.component";
+import { LayoutWrapComponent } from "./layout/layout-wrap/layout-wrap.component";
 import { LayoutsRoutingModule } from "./layouts-routing.module";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
@@ -70,13 +77,6 @@ import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.compone
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
 import { TabsSample4Component } from "./tabs/tabs-sample-4/components/tabs-sample-4.component";
-import { TabsSample5Component } from "./tabs/tabs-sample-5/components/tabs-sample-5.component";
-import {
-    TabsRoutingView1Component,
-    TabsRoutingView2Component,
-    TabsRoutingView3Component,
-    TabsSample6Component
-} from "./tabs/tabs-sample-6/tabs-sample-6.component";
 import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
 
 @NgModule({
@@ -110,20 +110,22 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         ExpansionPanelSample6Component,
         ExpansionPanelSample7Component,
         ExpansionPanelStylingComponent,
-        LayoutComponent,
+        LayoutDirectionRowComponent,
+        LayoutDirectionColumnComponent,
+        LayoutCustomOrderComponent,
+        LayoutJustifyContentComponent,
+        LayoutAlignItemsComponent,
+        LayoutContentSpaceComponent,
+        LayoutSampleComponent,
+        LayoutWrapComponent,
         TabbarSample1Component,
         TabbarSample2Component,
         TabbarSample3Component,
-        TabsRoutingView1Component,
-        TabsRoutingView2Component,
-        TabsRoutingView3Component,
-        TabsSample6Component,
         TabbarComponent,
         TabsSample1Component,
         TabsSample2Component,
         TabsSample3Component,
         TabsSample4Component,
-        TabsSample5Component,
         CardStylingSampleComponent,
         TabsStyleComponent,
         TabbarStyleComponent

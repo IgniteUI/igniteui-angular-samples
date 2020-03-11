@@ -1,0 +1,28 @@
+<igx-buttongroup [alignment]="alignment">
+    <button igxButton (click) = "justifyContent = 'start'" [igxRipple]="rippleColor" [selected]="true">Flex Start</button>
+    <button igxButton (click) = "justifyContent = 'center'" [igxRipple]="rippleColor">Center</button>
+    <button igxButton (click) = "justifyContent = 'end'" [igxRipple]="rippleColor">Flex End</button>
+</igx-buttongroup>
+<div *ngIf="justifyContent == 'start'">
+    <div class="layout-box" igxLayout igxLayoutJustify="flex-start">
+        <div class="layout-box__el">1</div>
+        <div class="layout-box__el">2</div>
+        <div class="layout-box__el">3</div>
+    </div>
+</div>
+
+<div *ngIf="justifyContent == 'center'">
+    <div class="layout-box" igxLayout igxLayoutJustify="center">
+        <div class="layout-box__el">1</div>
+        <div class="layout-box__el">2</div>
+        <div class="layout-box__el">3</div>
+    </div>
+</div>
+
+<div *ngIf="justifyContent == 'end'">
+    <div class="layout-box" igxLayout igxLayoutJustify="flex-end">
+        <div class="layout-box__el">1</div>
+        <div class="layout-box__el">2</div>
+        <div class="layout-box__el">3</div>
+    </div>
+</div>
