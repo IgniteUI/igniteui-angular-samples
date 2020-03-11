@@ -70,7 +70,6 @@ export class TabsConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: TabsSample4Component,
             additionalFiles: [
-                "/src/app/layouts/tabs/tabs-sample-4/tabs.routing.module.ts",
                 "/src/app/layouts/tabs/tabs-sample-4/tabs-sample-4.module.ts",
                 "/src/app/layouts/tabs/views/views.module.ts",
                 "/src/app/layouts/tabs/views/view1/view1.component.ts",
