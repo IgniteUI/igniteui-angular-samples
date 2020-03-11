@@ -1,0 +1,46 @@
+<div class="carousel-container">
+    <igx-carousel>
+        <igx-slide>
+            <div class="slide-content-wrapper">
+                <img src="assets/images/svg/carousel/SignUp.svg">
+                <form #form class="signInForm">
+                    <igx-input-group>
+                        <igx-prefix>
+                            <igx-icon>person</igx-icon>
+                        </igx-prefix>
+                        <label style="display: flex;" igxLabel for="username">Username</label>
+                        <input igxInput id="username" type="text" />
+                    </igx-input-group>
+                    <igx-input-group>
+                        <igx-prefix>
+                            <igx-icon>lock</igx-icon>
+                        </igx-prefix>
+                        <label style="display: flex;" igxLabel for="password">Password</label>
+                        <input igxInput id="password" type="password" />
+                    </igx-input-group>
+                </form>
+                <div class="btn">
+                    <button igxButton="raised" type="submit" (click)="form.reset()">Sign In</button>
+                </div>
+            </div>
+        </igx-slide>
+
+        <igx-slide>
+            <div class="slide-content-wrapper">
+                <img src="assets/images/svg/carousel/Route.svg">
+                <form #form2 class="searchForm">
+                    <igx-input-group>
+                        <igx-prefix>
+                            <igx-icon>search</igx-icon>
+                        </igx-prefix>
+                        <label style="display: flex;" igxLabel for="username">Search</label>
+                        <input igxInput id="search" type="text" />
+                    </igx-input-group>
+                </form>
+                <div class="btn">
+                    <button igxButton="raised" type="submit" (click)="form2.reset()">Search</button>
+                </div>
+            </div>
+        </igx-slide>
+    </igx-carousel>
+</div>

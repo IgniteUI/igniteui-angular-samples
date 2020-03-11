@@ -13,6 +13,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: auto;
     }
 
     .igx-carousel{
@@ -35,9 +36,20 @@
         width: unset;
     }
 
-    .igx-slide img{
+    .igx-slide .image-container img{
         object-fit: fill;
         max-width: 90%;
+        display: block;
+        margin: auto;
+    }
+
+    form{
+        margin: 10% auto;
+    }
+
+    .btn{
+        display: flex;
+        justify-content: center;
     }
 
 }
