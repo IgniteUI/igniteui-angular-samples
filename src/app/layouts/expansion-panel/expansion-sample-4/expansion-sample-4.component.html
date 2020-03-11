@@ -22,6 +22,17 @@
             <igx-expansion-panel-title class="sample-title">SASS/SCSS</igx-expansion-panel-title>
         </igx-expansion-panel-header>
         <igx-expansion-panel-body>
+            <igx-grid igxPreventDocumentScroll [data]="data">
+                <igx-column [sortable]="true" [field]="'Game'" [header]="'Game'" [width]="'120px'" [pinned]="true">
+                    <ng-template igxCell let-value>
+                        <span class="game-board__grid__match">{{value}}</span>
+                    </ng-template>
+                </igx-column>
+                <igx-column [sortable]="true" [field]="'Player 1'" [header]="'Score: Player 1'">
+                </igx-column>
+                <igx-column [sortable]="true" [field]="'Player 2'" [header]="'Score: Player 2'">
+                </igx-column>
+            </igx-grid>
             <div class="example-content">
                 Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).            </div>
         </igx-expansion-panel-body>

@@ -4,6 +4,8 @@ import { RouterModule, Routes } from "@angular/router";
 import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";
 import { AvatarSample2Component } from "./avatar/avatar-sample-2/avatar-sample-2.component";
 import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3.component";
+import { AvatarSample4Component } from "./avatar/avatar-sample-4/avatar-sample-4.component";
+import { AvatarStylingSampleComponent } from "./avatar/avatar-styling/avatar-styling.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
@@ -12,12 +14,10 @@ import { CardStylingSampleComponent } from "./card/card-styling-sample/card-styl
 import { CardComponent } from "./card/card.component";
 import { CarouselAnimationsSampleComponent
     } from "./carousel/carousel-animations-sample/carousel-animations-sample.component";
-import { CarouselBaseSampleComponent } from "./carousel/carousel-base-sample/carousel-base-sample.component";
-import { CarouselDetailsViewComponent } from "./carousel/carousel-details/carousel-details.component";
 import { CarouselNoNavigationSampleComponent
     } from "./carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component";
-import { CarouselStylingSampleComponent
-} from "./carousel/carousel-styling-sample/carousel-styling-sample.component";
+import { CarouselWithComponentsSampleComponent
+} from "./carousel/carousel-with-components-sample/carousel-with-components-sample.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DividerDashedComponent } from "./divider/dashed/divider-dashed.component";
 import { DividerDefaultComponent } from "./divider/default/divider-default.component";
@@ -29,7 +29,14 @@ import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
 import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
 import { ExpansionPanelStylingComponent } from "./expansion-panel/expansion-styling/expansion-styling.component";
-import { LayoutComponent } from "./layout/layout.component";
+import { LayoutAlignItemsComponent } from "./layout/layout-align-items/layout-align-items.component";
+import { LayoutContentSpaceComponent } from "./layout/layout-content-space/layout-content-space.component";
+import { LayoutCustomOrderComponent } from "./layout/layout-custom-order/layout-custom-order.component";
+import { LayoutDirectionColumnComponent } from "./layout/layout-direction-column/layout-direction-column.component";
+import { LayoutDirectionRowComponent } from "./layout/layout-direction-row/layout-direction-row.component";
+import { LayoutJustifyContentComponent } from "./layout/layout-justify-content/layout-justify-content.component";
+import { LayoutSampleComponent } from "./layout/layout-sample/layout-sample.component";
+import { LayoutWrapComponent } from "./layout/layout-wrap/layout-wrap.component";
 import { layoutsRoutesData } from "./layouts-routes-data";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
@@ -67,6 +74,16 @@ export const layoutsRoutes: Routes = [
         path: "avatar-sample-3"
     },
     {
+        component: AvatarSample4Component,
+        data: layoutsRoutesData["avatar-sample-4"],
+        path: "avatar-sample-4"
+    },
+    {
+        component: AvatarStylingSampleComponent,
+        data: layoutsRoutesData["avatar-styling"],
+        path: "avatar-styling"
+    },
+    {
         component: CarouselNoNavigationSampleComponent,
         data: layoutsRoutesData["carousel-no-navigation-sample"],
         path: "carousel-no-navigation-sample"
@@ -77,23 +94,14 @@ export const layoutsRoutes: Routes = [
         path: "carousel-animations-sample"
     },
     {
-        component: CarouselBaseSampleComponent,
-        data: layoutsRoutesData["carousel-base-sample"],
-        path: "carousel-base-sample"
-    },
-    {
-        component: CarouselStylingSampleComponent,
-        data: layoutsRoutesData["carousel-styling-sample"],
-        path: "carousel-styling-sample"
+        component: CarouselWithComponentsSampleComponent,
+        data: layoutsRoutesData["carousel-with-components-sample"],
+        path: "carousel-with-components-sample"
     },
     {
         component: CarouselComponent,
         data: layoutsRoutesData["carousel"],
         path: "carousel"
-    },
-    {
-        component: CarouselDetailsViewComponent,
-        path: "details"
     },
     {
         component: DividerDefaultComponent,
@@ -146,9 +154,44 @@ export const layoutsRoutes: Routes = [
         path: "expansion-styling"
     },
     {
-        component: LayoutComponent,
-        data: layoutsRoutesData["layout"],
-        path: "layout"
+        component: LayoutDirectionRowComponent,
+        data: layoutsRoutesData["layout-direction-row"],
+        path: "layout-direction-row"
+    },
+    {
+        component: LayoutDirectionColumnComponent,
+        data: layoutsRoutesData["layout-direction-column"],
+        path: "layout-direction-column"
+    },
+    {
+        component: LayoutCustomOrderComponent,
+        data: layoutsRoutesData["layout-custom-order"],
+        path: "layout-custom-order"
+    },
+    {
+        component: LayoutJustifyContentComponent,
+        data: layoutsRoutesData["layout-justify-content"],
+        path: "layout-justify-content"
+    },
+    {
+        component: LayoutAlignItemsComponent,
+        data: layoutsRoutesData["layout-align-items"],
+        path: "layout-align-items"
+    },
+    {
+        component: LayoutContentSpaceComponent,
+        data: layoutsRoutesData["layout-content-space"],
+        path: "layout-content-space"
+    },
+    {
+        component: LayoutSampleComponent,
+        data: layoutsRoutesData["layout-sample"],
+        path: "layout-sample"
+    },
+    {
+        component: LayoutWrapComponent,
+        data: layoutsRoutesData["layout-wrap"],
+        path: "layout-wrap"
     },
     {
         component: TabbarComponent,

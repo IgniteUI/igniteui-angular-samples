@@ -6,6 +6,7 @@ import { IgxBarSeriesModule, IgxCategoryChartModule, IgxCategoryXAxisModule,
     IgxItemLegendComponent, IgxItemLegendModule, IgxLegendComponent, IgxLegendModule,
     IgxNumericXAxisModule, IgxNumericYAxisModule, IgxPieChartComponent } from "igniteui-angular-charts";
 import { IgxPieChartModule } from "igniteui-angular-charts/";
+import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 import { ChartHostDirective,
     ChartIntegrationDirective } from "./directives/chart-integration/chart-integration.directive";
 import { ConditionalFormattingDirective } from "./directives/conditional-formatting/conditional-formatting.directive";
@@ -26,6 +27,7 @@ import { FilterTypePipe, GridDynamicChartDataComponent, NamePipe } from "./grid-
         IgxDialogModule,
         IgxDividerModule,
         IgxGridModule,
+        IgxPreventDocumentScrollModule,
         IgxTabsModule,
         IgxDataChartCategoryModule,
         IgxDataChartCoreModule,
