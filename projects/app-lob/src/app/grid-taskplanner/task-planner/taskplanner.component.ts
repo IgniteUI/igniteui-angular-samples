@@ -91,9 +91,11 @@ export class TaskPlannerComponent implements OnInit {
      */
     public calcProgress = calcProgress;
 
+    // TODO Make Pipe from the filterTasks function
     public filterTasks(groupRowValue: string) {
         const groupedData = this.grid.data.filter(rec => rec.milestone === groupRowValue);
         return groupedData.reduce((acc, val) => {
+            // Return task status without whitespace in order to be used for class name
             const cssClass = val.status.replace(/\s/g, "").toLowerCase();
             const itemIndex = acc.findIndex(item => item.name === val.status);
 
