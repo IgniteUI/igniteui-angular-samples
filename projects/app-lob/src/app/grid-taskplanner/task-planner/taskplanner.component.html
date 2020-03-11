@@ -73,17 +73,18 @@
                             </div>
                         </div>
                     </div>
-                </ng-template>
-    
-                <!-- GroupBy Row Template -->
-                <ng-template igxGroupByRow let-groupRow>
-                    <div class="igx-group-label">
-                        <span>{{ groupRow.value }}</span>
-                        <div class="tp-app__row-badges" *ngFor="let task of filterTasks">
-                            <igx-badge [class]="task.cssClass" [value]="task.name + ' ' + task.items"></igx-badge>
-                        </div>
+                </div>
+            </ng-template>
+
+            <!-- GroupBy Row Template -->
+            <ng-template igxGroupByRow let-groupRow>
+                <div class="igx-group-label">
+                    <span>{{ groupRow.value }}</span>
+                    <div class="tp-app__row-badges" *ngFor="let task of filterTasks(groupRow.value)">
+                        <igx-badge [class]="task.cssClass" [value]="task.name + ' ' + task.items"></igx-badge>
                     </div>
-                </ng-template>
+                </div>
+            </ng-template>
     
                 <!-- Toolbar Template -->
                 <ng-template class="tp-app__grid-toolbar" igxToolbarCustomContent let-grid="grid">
