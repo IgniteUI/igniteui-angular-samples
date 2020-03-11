@@ -2,6 +2,8 @@
 import { IgxButtonModule, IgxRippleModule, IgxToastModule } from "igniteui-angular";
 import { ToastSample1Component
 } from "../../src/app/notifications/toast/toast-sample-1/toast-sample-1.component";
+import { ToastSample2Component
+} from "../../src/app/notifications/toast/toast-sample-2/toast-sample-2.component";
 import { ToastSample5Component
 } from "../../src/app/notifications/toast/toast-sample-5/toast-sample-5.component";
 import { ToastStyleComponent
@@ -21,6 +23,18 @@ export class ToastConfigGenerator implements IConfigGenerator {
                 imports: [IgxButtonModule, IgxRippleModule,
                     IgxToastModule, ToastSample1Component],
                 ngDeclarations: [ToastSample1Component],
+                ngImports: [IgxButtonModule, IgxRippleModule, IgxToastModule]
+            }),
+            shortenComponentPathBy: "/notifications/toast/"
+        }));
+
+        // toast sample 2
+        configs.push(new Config({
+            component: ToastSample2Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxButtonModule, IgxRippleModule,
+                    IgxToastModule, ToastSample2Component],
+                ngDeclarations: [ToastSample2Component],
                 ngImports: [IgxButtonModule, IgxRippleModule, IgxToastModule]
             }),
             shortenComponentPathBy: "/notifications/toast/"

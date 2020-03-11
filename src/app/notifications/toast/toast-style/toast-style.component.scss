@@ -1,27 +1,22 @@
+.sample-content{
+    margin: 3.5% 0;
+}
+
+.btn-group {
+    display: flex;
+    width: 300px;
+    margin-top: 16px;
+    justify-content: space-between;
+}
+
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-/*BASIC THEMING*/
-
-$dark-toast: igx-toast-theme(
-    $background: #292826,
-    $text-color: #FFCD0F,
+$custom-toast-theme: igx-toast-theme(
+    $shadow: 0 3px 5px -1px rgba(0,0,0,.26),
+    $background: #dedede,
+    $text-color: #151515,
     $border-radius: 12px
 );
-
-/*ENHANCED APPROACHES*/
-
-// $yellow-color: #FFCD0F;
-// $black-color: #292826;
-
-// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
-
-/*PALETTE and IGX-COLOR*/
-
-// $dark-toast: igx-toast-theme(
-//     $background: igx-color($dark-palette, "primary", 400),
-//     $text-color: igx-color($dark-palette, "secondary", 400),
-//     $border-radius: 12px
-// );
 
 /*SCHEMAS*/
 
@@ -50,10 +45,6 @@ $dark-toast: igx-toast-theme(
 
 :host {
     ::ng-deep {
-        @include igx-toast($dark-toast);
+        @include igx-toast($custom-toast-theme);
     }
-}
-
-.btn {
-    margin: 5px;
 }
