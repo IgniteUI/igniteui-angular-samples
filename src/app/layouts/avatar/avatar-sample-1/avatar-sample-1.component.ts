@@ -7,10 +7,6 @@ import { Component, OnInit } from "@angular/core";
 })
 export class AvatarSample1Component implements OnInit {
 
-  public bgColor = "#0375be";
-  public color = "black";
-  public isCircular = true;
-
   constructor() { }
 
   public ngOnInit() {
