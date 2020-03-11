@@ -880,8 +880,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: [
-                "/src/app/hierarchical-grid/services/data.ts",
-                "/src/app/data/athletesData.ts"
+                "/src/app/data/athletesData.ts",
+                "/src/app/tree-grid/data/employees-flat-detailed.ts"
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: [TreeGridRightPinningSampleComponent, IgxTreeGridModule],
