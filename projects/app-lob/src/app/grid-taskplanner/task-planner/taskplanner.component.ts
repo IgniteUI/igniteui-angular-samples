@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild  } from "@angular/core";
 import { ControlContainer, NgForm } from "@angular/forms";
 import { DefaultSortingStrategy, IGridEditEventArgs, IgxDialogComponent,
-    IgxGridComponent, IgxToastComponent,
-    SortingDirection, Transaction} from "igniteui-angular";
+    IgxDropDownComponent, IgxGridComponent,
+    IgxToastComponent, ISelectionEventArgs, SortingDirection, Transaction} from "igniteui-angular";
 import { IgxLegendComponent } from "igniteui-angular-charts";
 import { TasksDataService } from "../../services/tasks.service";
 import {MEMBERS} from "../../services/tasksData";
@@ -35,6 +35,8 @@ export interface ITask {
     hours_spent?: number;
 }
 
+// tslint:disable:max-line-length
+// tslint:disable:member-ordering
 @Component({
     providers: [TasksDataService, { provide: ControlContainer, useExisting: NgForm }
        ],
@@ -46,6 +48,7 @@ export interface ITask {
 export class TaskPlannerComponent implements OnInit {
 
     @ViewChild("tasksGrid", { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
+    @ViewChild("editModeDropdown", { read: IgxDropDownComponent, static: true }) public editModeDropdown: IgxDropDownComponent;
     @ViewChild("legend", { static: true }) public legend: IgxLegendComponent;
     @ViewChild(IgxToastComponent, { read: IgxToastComponent, static: true }) public toast: IgxToastComponent;
     @ViewChild("addTaskDialog", { static: true }) public addTaskDialog: IgxDialogComponent;
@@ -54,10 +57,11 @@ export class TaskPlannerComponent implements OnInit {
 
     public localData: any[];
     public teamMembers: any[];
-    public editMode = editMode.cellEditing;
+    public editMode = 0;
     public addTaskForm: ITask = { };
-    public batchEditingEnabled = true;
     public transactionsData: Transaction[] = [];
+    public editModes = ["Cell Editing", "Row Editing", "No Editing"];
+    // public editActions = ["Undo", "Redo", "Commit"];
 
     public statuses = [
         { value: "New" },
@@ -114,7 +118,6 @@ export class TaskPlannerComponent implements OnInit {
         return rowData.hours_spent > rowData.estimation;
     }
 
-    // tslint:disable:member-ordering
     public statusClasses = {
         done: this.isDone,
         new: this.isNew,
@@ -136,9 +139,8 @@ export class TaskPlannerComponent implements OnInit {
     public progressSort = ProgressSortingStrategy.instance();
 
     public columns: any[] = [
-        // tslint:disable:max-line-length
         { field: "id", header: "ID", width: "120px", dataType: "number", formatter: this.formatID },
-        { field: "milestone", header: "Milestone", width: "120px", dataType: "string", resizable: true, groupable: true, editable: true, sortable: true, sortStrategy: this.milestoneSort},
+        { field: "milestone", header: "Milestone", width: "120px", dataType: "string", resizable: true, groupable: false, editable: true, sortable: true, sortStrategy: this.milestoneSort},
         { field: "issue", header: "Issue", width: "380px", dataType: "string", resizable: true, filterable: false, editable: true},
         { field: "status", header: "Status", width: "130px", dataType: "string", resizable: true, sortable: true, filterable: false, editable: true, cellClasses: this.statusClasses, sortStrategy: this.progressSort },
         { field: "progress", header: "Progress", width: "95px", dataType: "number", resizable: true, sortable: false },
@@ -149,11 +151,9 @@ export class TaskPlannerComponent implements OnInit {
         { field: "estimation", header: "Estimation", width: "120px", dataType: "number", resizable: true, sortable: false, filterable: false, editable: true, columnGroup: true, formatter: this.formatHours, cellClasses: this.delayedClasses },
         { field: "hours_spent", header: "Hours Spent", width: "120px", dataType: "number", resizable: true, sortable: false, filterable: false, editable: true, columnGroup: true, formatter: this.formatHours, cellClasses: this.delayedClasses },
         { field: "priority", header: "Priority", width: "125px", dataType: "string", resizable: true, sortable: true, filterable: true, editable: true, cellClasses: this.priorityClasses }
-        // tslint:enable:max-line-length
     ];
 
     constructor(private dataService: TasksDataService) {  }
-    // tslint:enable:member-ordering
 
     public ngOnInit() {
         this.dataService.getData().subscribe(data => this.localData = data);
@@ -185,6 +185,7 @@ export class TaskPlannerComponent implements OnInit {
 
     public ngAfterViewInit() {
         this.grid.hideGroupedColumns = true;
+        this.editMode = 0;
     }
 
     public addTask(event: any) {
@@ -263,8 +264,12 @@ export class TaskPlannerComponent implements OnInit {
         return value ? value + "h" : "";
     }
 
-    public onButtonAction(event: any) {
-        this.editMode = event.index;
+    public onEditingModeChanged(event: ISelectionEventArgs) {
+       this.editMode = event.newSelection.index;
+    }
+
+    public isEditModeSelected(i: number): boolean {
+        return i === this.editMode;
     }
 
     /**
@@ -346,7 +351,7 @@ export class TaskPlannerComponent implements OnInit {
         if (field === "started_on" && !!event.oldValue) {
             event.cancel = true;
         }
-     }
+    }
 
     public onCellEdit(event: IGridEditEventArgs) {
         const field = this.grid.columnList.find(c => c.index === event.cellID.columnID).field;
@@ -388,6 +393,10 @@ export class TaskPlannerComponent implements OnInit {
 
     get isEditingEnabled() {
         return this.editMode !== editMode.none;
+    }
+
+    get selectedEditMode() {
+        return this.editModes[this.editMode];
     }
 
     private monthsLength(startDate, endDate): number {
@@ -444,3 +453,5 @@ export function calcProgress(task: ITask) {
     const progress = (task.hours_spent / task.estimation) * 100;
     return progress;
 }
+// tslint:enable:max-line-length
+// tslint:enable:member-ordering

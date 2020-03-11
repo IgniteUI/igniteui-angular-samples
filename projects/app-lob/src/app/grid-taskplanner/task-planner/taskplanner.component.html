@@ -1,21 +1,6 @@
-<!--    <div class="tp-app__filtering">-->
-<!--        <div class="editing-buttons">-->
-<!--            <igx-buttongroup [multiSelection]="false" (onSelect)="onButtonAction($event)">-->
-<!--                <button igxButton [selected]="true">Cell Editing</button>-->
-<!--                <button igxButton>Row Editing</button>-->
-<!--                <button igxButton>None</button>-->
-<!--            </igx-buttongroup>-->
-<!--            <igx-switch [(ngModel)]="batchEditingEnabled">Batch Editing</igx-switch>-->
-<!--            <div *ngIf="batchEditingEnabled">-->
-<!--                <button igxButton [disabled]="!undoEnabled" (click)="undo()">Undo</button>-->
-<!--                <button igxButton [disabled]="!redoEnabled" (click)="redo()">Redo</button>-->
-<!--                <button igxButton [disabled]="!hasTransactions" (click)="openCommitDialog()">Commit</button>-->
-<!--            </div>-->
-
-<!--        </div>-->
-<!--    </div>-->
 <!--  Master Backlog -->
 <app-backlog class="tp-app__backlog"></app-backlog>
+
 <!-- Tasks Planner Grid  -->
 <app-grid-transactions class="tp-app__grid">
     <igx-grid #tasksGrid
@@ -53,13 +38,15 @@
                     </div>
                     <igx-divider [vertical]="true"></igx-divider>
                     <div class="tp-app__row-details-col">
-                        <span>Progress & Estimation (Need to be rethought, see comments in the html</span>
+                        <span>Progress</span>
+                        <igx-linear-bar type="default" [max]="100" [value]="calcProgress(dataItem)" [animate]="false"></igx-linear-bar>
+                        <!-- <span>Progress & Estimation (Need to be rethought, see comments in the html</span> -->
                         <!-- TODO: Rethink the design and aim of this chart to achieve a meaningful purpose.
                             My initial idea was for the chart to display two lines:
                                 1) the ideal curve of progress based on started date, deadline and estimated hours.
                                 2) The extrapolated curve based on actual progress up to the current moment.
                             Bugs: Extrapolated curve may exceed the total estimated hours.-->
-                        <igx-legend #legend orientation="horizontal"></igx-legend>
+                        <!-- <igx-legend #legend orientation="horizontal"></igx-legend>
                         <igx-category-chart width="100%" height="100%"
                                             [legend]="legend"
                                             [dataSource]="getChartData(dataItem)"
@@ -69,8 +56,7 @@
                                             [crosshairsSnapToData]="false"
                                             [crosshairsDisplayMode]="'Horizontal'" [crosshairsAnnotationEnabled]="true"
                                             isHorizontalZoomEnabled="false" isVerticalZoomEnabled="false">
-                        </igx-category-chart>
-                        <igx-linear-bar type="default" [max]="100" [value]="calcProgress(dataItem)" [animate]="false"></igx-linear-bar>
+                        </igx-category-chart> -->
                     </div>
                 </div>
             </div>
@@ -89,9 +75,23 @@
                 <img class="tp-app__grid-logo" src="https://image.flaticon.com/icons/svg/1212/1212594.svg" alt="">
                 <span>Task Planner</span>
             </div>
-            <button igxButton="raised" igxRipple igxRippleCentered="true" (click)="addTaskDialog.open()">
-                CREATE ISSUE
-            </button>
+
+            <button igxButton="raised" igxRipple igxRippleCentered="true" (click)="addTaskDialog.open()">CREATE ISSUE</button>
+
+            <button igxButton="raised" class="button" [igxToggleAction]="editModeDropdown" [igxDropDownItemNavigation]="editModeDropdown">{{ selectedEditMode }}</button>
+            <igx-drop-down #editModeDropdown [width]="'100px'" (onSelection)='onEditingModeChanged($event)'>
+                <igx-drop-down-item *ngFor="let item of editModes; let i = index" [selected]="isEditModeSelected(i)">
+                    {{ item }}
+                </igx-drop-down-item>
+            </igx-drop-down>
+
+            <button igxButton="raised" class="button" [disabled]="!hasTransactions">Commit</button>
+            <button igxButton="raised" class="button" [disabled]="!undoEnabled" (click)="undo()">Undo</button>
+            <button igxButton="raised" class="button" [disabled]="!redoEnabled" (click)="redo()">Redo</button>
+            <!-- <igx-drop-down #editActionsDropDown [width]="'100px'" (onSelection)='onEditingModeChanged($event)'>
+                <igx-drop-down-item [disabled]="!undoEnabled" (click)="undo()">Undo</igx-drop-down-item>
+                <igx-drop-down-item [disabled]="!redoEnabled" (click)="redo()">Redo</igx-drop-down-item>
+            </igx-drop-down> -->
         </ng-template>
 
         <!-- Grid Columns -->
@@ -134,7 +134,7 @@
                 <igx-select [placeholder]="value.name" [(ngModel)]="cell.editValue">
                     <igx-select-item *ngFor="let m of teamMembers" [value]="m">
                         <div class="item">
-
+                            {{ m }}
                         </div>
                     </igx-select-item>
                 </igx-select>
@@ -231,7 +231,7 @@
         </igx-column>
     </igx-grid>
     <div class="buttons-wrapper">
-        <button igxButton (click)="commit()">Commit</button>
+        <button igxButton (click)="openCommitDialog()">Commit</button>
         <button igxButton (click)="discard()">Discard</button>
         <button igxButton (click)="cancel()">Cancel</button>
     </div>
