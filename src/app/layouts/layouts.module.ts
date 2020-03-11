@@ -112,7 +112,6 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         TabbarSample1Component,
         TabbarSample2Component,
         TabbarSample3Component,
-        TabbarComponent,
         TabsSample1Component,
         TabsSample2Component,
         TabsSample3Component,
