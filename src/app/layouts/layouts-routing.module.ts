@@ -31,7 +31,14 @@ import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
 import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
 import { ExpansionPanelStylingComponent } from "./expansion-panel/expansion-styling/expansion-styling.component";
-import { LayoutComponent } from "./layout/layout.component";
+import { LayoutAlignItemsComponent } from "./layout/layout-align-items/layout-align-items.component";
+import { LayoutContentSpaceComponent } from "./layout/layout-content-space/layout-content-space.component";
+import { LayoutCustomOrderComponent } from "./layout/layout-custom-order/layout-custom-order.component";
+import { LayoutDirectionColumnComponent } from "./layout/layout-direction-column/layout-direction-column.component";
+import { LayoutDirectionRowComponent } from "./layout/layout-direction-row/layout-direction-row.component";
+import { LayoutJustifyContentComponent } from "./layout/layout-justify-content/layout-justify-content.component";
+import { LayoutSampleComponent } from "./layout/layout-sample/layout-sample.component";
+import { LayoutWrapComponent } from "./layout/layout-wrap/layout-wrap.component";
 import { layoutsRoutesData } from "./layouts-routes-data";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
@@ -159,9 +166,44 @@ export const layoutsRoutes: Routes = [
         path: "expansion-styling"
     },
     {
-        component: LayoutComponent,
-        data: layoutsRoutesData["layout"],
-        path: "layout"
+        component: LayoutDirectionRowComponent,
+        data: layoutsRoutesData["layout-direction-row"],
+        path: "layout-direction-row"
+    },
+    {
+        component: LayoutDirectionColumnComponent,
+        data: layoutsRoutesData["layout-direction-column"],
+        path: "layout-direction-column"
+    },
+    {
+        component: LayoutCustomOrderComponent,
+        data: layoutsRoutesData["layout-custom-order"],
+        path: "layout-custom-order"
+    },
+    {
+        component: LayoutJustifyContentComponent,
+        data: layoutsRoutesData["layout-justify-content"],
+        path: "layout-justify-content"
+    },
+    {
+        component: LayoutAlignItemsComponent,
+        data: layoutsRoutesData["layout-align-items"],
+        path: "layout-align-items"
+    },
+    {
+        component: LayoutContentSpaceComponent,
+        data: layoutsRoutesData["layout-content-space"],
+        path: "layout-content-space"
+    },
+    {
+        component: LayoutSampleComponent,
+        data: layoutsRoutesData["layout-sample"],
+        path: "layout-sample"
+    },
+    {
+        component: LayoutWrapComponent,
+        data: layoutsRoutesData["layout-wrap"],
+        path: "layout-wrap"
     },
     {
         component: TabbarComponent,
