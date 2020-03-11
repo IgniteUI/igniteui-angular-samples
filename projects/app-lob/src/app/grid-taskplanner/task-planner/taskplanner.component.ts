@@ -91,8 +91,9 @@ export class TaskPlannerComponent implements OnInit {
      */
     public calcProgress = calcProgress;
 
-    public get filterTasks() {
-        return this.allTasks.reduce((acc, val) => {
+    public filterTasks(groupRowValue: string) {
+        const groupedData = this.grid.data.filter(rec => rec.milestone === groupRowValue);
+        return groupedData.reduce((acc, val) => {
             const cssClass = val.status.replace(/\s/g, "").toLowerCase();
             const itemIndex = acc.findIndex(item => item.name === val.status);
 
@@ -110,6 +111,7 @@ export class TaskPlannerComponent implements OnInit {
             return acc;
         }, []);
     }
+
 
     public isDone = (rowData: any, columnKey: any): boolean => {
         return rowData[columnKey] === "Done";
@@ -189,6 +191,7 @@ export class TaskPlannerComponent implements OnInit {
     // tslint:enable:member-ordering
 
     public ngOnInit() {
+
         this.dataService.getData().subscribe(data => this.localData = data);
         this.teamMembers = MEMBERS;
 

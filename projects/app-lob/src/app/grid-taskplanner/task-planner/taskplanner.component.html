@@ -79,7 +79,7 @@
             <ng-template igxGroupByRow let-groupRow>
                 <div class="igx-group-label">
                     <span>{{ groupRow.value }}</span>
-                    <div class="tp-app__row-badges" *ngFor="let task of filterTasks">
+                    <div class="tp-app__row-badges" *ngFor="let task of filterTasks(groupRow.value)">
                         <igx-badge [class]="task.cssClass" [value]="task.name + ' ' + task.items"></igx-badge>
                     </div>
                 </div>
