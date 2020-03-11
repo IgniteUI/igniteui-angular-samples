@@ -53,11 +53,12 @@
             }
         }
 
-        &__filtering {
+        &__config {
+            height: $config-height;
             padding: $tp-app-padding;
         }
 
-        &__filtering-buttons {
+        &__config-buttons {
             display: flex;
         }
 

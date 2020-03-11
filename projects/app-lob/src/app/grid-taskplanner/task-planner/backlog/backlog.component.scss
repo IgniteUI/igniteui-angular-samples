@@ -3,6 +3,11 @@
 
 ::ng-deep {
     .tp-app {
+        &__task-search {
+            margin: $search-margin !important;
+            height: $search-height;
+        }
+
         &__backlog {
             min-width: 100px;
             width: $backlog-width;
@@ -21,10 +26,6 @@
                 min-height: $backlog-tab-header-height;
             }
 
-            &__task-search {
-                padding: rem(16px);
-            }
-
             // Add scroll to the list
             &-card,
             .igx-card-content,
@@ -40,7 +41,7 @@
             }
 
             .tp-app__list-scroll {
-                height: calc(100% - #{$backlog-tab-header-height});
+                height: calc(100% - #{$scroll-subtract});
                 overflow-x: auto;
             }
         }

@@ -4,5 +4,6 @@ $tp-input-group: igx-input-group-theme(
     $box-border-radius: 1,
     $search-border-radius: 1,
     $border-border-radius: 1,
-    $border-color: igx-color($tp-palette, 'grays', 400)
+    $border-color: igx-color($tp-palette, 'grays', 400),
+    $search-background: $row-background
 );

@@ -3,7 +3,11 @@
 $backlog-card-header-height: rem(57px);
 $backlog-tab-header-height: rem(58px);
 $header-height: rem(56px);
+$config-height: rem(68px);
+$search-height: rem(50px);
+$search-margin: rem(16px);
 $tp-app-padding: rem(16px);
+$scroll-subtract: $backlog-tab-header-height + $search-height + ($tp-app-padding * 2);
 $backlog-width : rem(400px);
 $offset-top: $header-height;
 $state-done: #52e282;

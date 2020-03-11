@@ -151,7 +151,7 @@ export class TaskPlannerComponent implements OnInit {
     public statusClasses = {
         done: this.isDone,
         new: this.isNew,
-        inProgress: this.isInProgress,
+        inprogress: this.isInProgress,
         delayed: this.isLate
     };
 
