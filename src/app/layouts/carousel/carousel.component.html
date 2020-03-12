@@ -1,13 +1,9 @@
-<div class="sample-wrapper">
-    <div class="sample-content">
-        <section>
-            <article>
-                <igx-carousel [interval]="interval" [pause]="pause" [loop]="loop">
-                    <igx-slide *ngFor="let slide of slides;" [active]="slide.active">
-                        <img [src]="slide.image">
-                    </igx-slide>
-                </igx-carousel>
-            </article>
-        </section>
-    </div>
+<div class="carousel-container">
+    <igx-carousel #carousel>
+        <igx-slide *ngFor="let slide of slides;">
+            <div class="image-container">
+                <img [src]="slide.src">
+            </div>
+        </igx-slide>
+    </igx-carousel>
 </div>
