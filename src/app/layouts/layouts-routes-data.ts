@@ -24,7 +24,6 @@ export const layoutsRoutesData = {
     "layout-justify-content" : { displayName: "Layout Justify Content", parentName: "Layout" },
     "layout-wrap" : { displayName: "Layout Wrap", parentName: "Layout" },
     "layout-sample" : { displayName: "Layouts Sample", parentName: "Layout" },
-    "tabbar": { displayName: "Bottom Navigation Overview", parentName: "Bottom Navigation" },
     "tabbar-sample-1": { displayName: "Bottom Navigation Simple Panels", parentName: "Bottom Navigation" },
     "tabbar-sample-2": { displayName: "Bottom Navigation Customizing Panels", parentName: "Bottom Navigation" },
     "tabbar-sample-3": { displayName: "Bottom Navigation Routing", parentName: "Bottom Navigation" },
