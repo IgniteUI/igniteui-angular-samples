@@ -23,40 +23,45 @@
 
             <!-- Grid Detail View Template -->
             <ng-template igxGridDetail let-dataItem>
-                <div style="width:100%;">
-                    <div class="tp-app__row-details">
+                <div class="tp-app__row-details">
+                    <div class="tp-app__row-details-inner">
                         <div class="tp-app__row-details-col">
                             <div class="tp-app__row-details-col-item">
-                                <span>Description</span>
-                                <textarea rows="4" cols="50" [(ngModel)]="dataItem.details" placeholder="Enter any details here."></textarea>
-                            </div>
-                            <div class="tp-app__row-details-col-item">
-                                <span>Acceptance criteria</span>
-                                <igx-checkbox [(ngModel)]="dataItem.acceptance_criteria.hasAPI" [checked]="dataItem.acceptance_criteria.hasAPI">Includes API & Docs</igx-checkbox>
-                                <igx-checkbox [(ngModel)]="dataItem.acceptance_criteria.hasTests" [checked]="dataItem.acceptance_criteria.hasTests">Includes unit tests</igx-checkbox>
-                                <igx-checkbox [(ngModel)]="dataItem.acceptance_criteria.builds" [checked]="dataItem.acceptance_criteria.builds">All checks passed</igx-checkbox>
+                                <span class="tp-app__row-details-title tp-app__row-details-title--comments">Task Comments</span>
+                                <igx-input-group>
+                                    <textarea name="description" igxInput rows="4" cols="50" [(ngModel)]="dataItem.details" placeholder="Enter any details here."></textarea>
+                                </igx-input-group>
                             </div>
                         </div>
-                        <igx-divider [vertical]="true"></igx-divider>
                         <div class="tp-app__row-details-col">
-                            <span>Progress</span>
-                            <igx-linear-bar type="default" [max]="100" [value]="calcProgress(dataItem)" [animate]="false"></igx-linear-bar>
-                            <!-- TODO: Rethink the design and aim of this chart to achieve a meaningful purpose.
-                                My initial idea was for the chart to display two lines:
-                                    1) the ideal curve of progress based on started date, deadline and estimated hours.
-                                    2) The extrapolated curve based on actual progress up to the current moment.
-                                Bugs: Extrapolated curve may exceed the total estimated hours.-->
-                            <!-- <igx-legend #legend orientation="horizontal"></igx-legend>
-                            <igx-category-chart width="100%" height="100%"
-                                                [legend]="legend"
-                                                [dataSource]="getChartData(dataItem)"
-                                                chartType="Line" subtitle="(StartedOn, Deadline)" xAxisInterval="1"
-                                                [brushes]="['rgb(0, 111, 138)', 'rgb(171, 223, 29)']"
-                                                [xAxisFormatLabel]="formatDateLabel" [includedProperties]="include"
-                                                [crosshairsSnapToData]="false"
-                                                [crosshairsDisplayMode]="'Horizontal'" [crosshairsAnnotationEnabled]="true"
-                                                isHorizontalZoomEnabled="false" isVerticalZoomEnabled="false">
-                            </igx-category-chart> -->
+                            <div class="tp-app__row-details-col-item">
+                                <span class="tp-app__row-details-title">Acceptance criteria</span>
+                                <igx-checkbox class="tp-app__row-details-checkbox" [(ngModel)]="dataItem.acceptance_criteria.hasAPI" [checked]="dataItem.acceptance_criteria.hasAPI">Includes API & Docs</igx-checkbox>
+                                <igx-checkbox class="tp-app__row-details-checkbox" [(ngModel)]="dataItem.acceptance_criteria.hasTests" [checked]="dataItem.acceptance_criteria.hasTests">Includes unit tests</igx-checkbox>
+                                <igx-checkbox class="tp-app__row-details-checkbox" [(ngModel)]="dataItem.acceptance_criteria.builds" [checked]="dataItem.acceptance_criteria.builds">All checks passed</igx-checkbox>
+                            </div>
+                        </div>
+                        <div class="tp-app__row-details-col">
+                            <div class="tp-app__row-details-col-item">
+                                <span class="tp-app__row-details-title">Task Progress</span>
+                                <igx-linear-bar type="default" [max]="100" [value]="calcProgress(dataItem)" [animate]="false"></igx-linear-bar>
+                                <!-- TODO: Rethink the design and aim of this chart to achieve a meaningful purpose.
+                                    My initial idea was for the chart to display two lines:
+                                        1) the ideal curve of progress based on started date, deadline and estimated hours.
+                                        2) The extrapolated curve based on actual progress up to the current moment.
+                                    Bugs: Extrapolated curve may exceed the total estimated hours.-->
+                                <!-- <igx-legend #legend orientation="horizontal"></igx-legend>
+                                <igx-category-chart width="100%" height="100%"
+                                                    [legend]="legend"
+                                                    [dataSource]="getChartData(dataItem)"
+                                                    chartType="Line" subtitle="(StartedOn, Deadline)" xAxisInterval="1"
+                                                    [brushes]="['rgb(0, 111, 138)', 'rgb(171, 223, 29)']"
+                                                    [xAxisFormatLabel]="formatDateLabel" [includedProperties]="include"
+                                                    [crosshairsSnapToData]="false"
+                                                    [crosshairsDisplayMode]="'Horizontal'" [crosshairsAnnotationEnabled]="true"
+                                                    isHorizontalZoomEnabled="false" isVerticalZoomEnabled="false">
+                                </igx-category-chart> -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -81,7 +86,10 @@
 
                 <button igxButton="raised" igxRipple igxRippleCentered="true" (click)="addTaskDialog.open()">CREATE ISSUE</button>
 
-                <button igxButton="raised" class="button" [igxToggleAction]="editModeDropdown" [igxDropDownItemNavigation]="editModeDropdown">{{ selectedEditMode }}</button>
+                <button igxButton="outlined" class="button" [igxToggleAction]="editModeDropdown" [igxDropDownItemNavigation]="editModeDropdown">
+                    {{ selectedEditMode }}
+                    <igx-icon>arrow_drop_down</igx-icon>
+                </button>
                 <igx-drop-down #editModeDropdown [width]="'100px'" (onSelection)='onEditingModeChanged($event)'>
                     <igx-drop-down-item *ngFor="let item of editModes; let i = index" [selected]="isEditModeSelected(i)">
                         {{ item }}
@@ -163,7 +171,7 @@
         </igx-grid>
     </app-grid-transactions>
 </div>
-    
+
 <!-- Toast to show validation errors  -->
 <igx-toast></igx-toast>
 
@@ -240,7 +248,7 @@
         <button igxButton (click)="cancel()">Cancel</button>
     </div>
 </igx-dialog>
-    
+
 <!-- Templates for Charts, showcasing the asignee and team workloads that may be used for other views in the app -->
 <!-- <igx-pie-chart [dataSource]="getAsigneeWorkload(dataItem.oer.id)" [formatLabel]="formatPieLabel"
     [outlines]="['transparent']" width="200px" height="200px"
