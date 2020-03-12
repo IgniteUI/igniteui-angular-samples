@@ -1,5 +1,23 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
+.item {
+    margin-bottom: 5px;
+}
+
+.item-line1 {
+    font-size: 14px;
+    color: gray;
+}
+
+.item-line2 {
+    font-size: 12px;
+    color: darkgray;
+}
+
+igx-tab-panel {
+    padding: 10px;
+}
+
 /*BASIC THEMING*/
 
 $dark-bottom-nav: igx-bottom-nav-theme(
@@ -43,44 +61,5 @@ $dark-bottom-nav: igx-bottom-nav-theme(
 /*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 
 :host {
-    ::ng-deep {
-       @include igx-bottom-nav($dark-bottom-nav);
-   }
-}
-
-.tab-content {
-    padding: 16px;
-    min-width: 350px;
-}
-
-.item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.item > [igxLabel],
-.item > .person {
-    position: absolute;
-    margin-left: 72px;
-    top:1px;
-    left: 16px;
-}
-
-.person .name {
-    padding: 0;
-    margin: 0;
-}
-
-.person .phone {
-    font-size: 12px;
-    color: gray;
-}
-
-.item igx-icon {
-    color: lightgray;
-}
-
-.item igx-icon.favorite {
-    color: orange;
+    @include igx-css-vars($dark-bottom-nav);
 }
