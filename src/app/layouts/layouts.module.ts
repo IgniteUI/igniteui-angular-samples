@@ -51,8 +51,6 @@ import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
 import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
 import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
-import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
-import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
 import { ExpansionPanelStylingComponent } from "./expansion-panel/expansion-styling/expansion-styling.component";
 import { LayoutAlignItemsComponent } from "./layout/layout-align-items/layout-align-items.component";
 import { LayoutContentSpaceComponent } from "./layout/layout-content-space/layout-content-space.component";
@@ -65,14 +63,8 @@ import { LayoutWrapComponent } from "./layout/layout-wrap/layout-wrap.component"
 import { LayoutsRoutingModule } from "./layouts-routing.module";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
-import {
-    BottomNavRoutingView1Component,
-    BottomNavRoutingView2Component,
-    BottomNavRoutingView3Component,
-    TabbarSample3Component
-} from "./tabbar/tabbar-sample-3/tabbar-sample-3.component";
+import { TabbarSample3Component } from "./tabbar/tabbar-sample-3/components/tabbar-sample-3.component";
 import { TabbarStyleComponent } from "./tabbar/tabbar-style/tabbar-style.component";
-import { TabbarComponent } from "./tabbar/tabbar.component";
 import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
@@ -86,9 +78,6 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         AvatarSample3Component,
         AvatarSample4Component,
         AvatarStylingSampleComponent,
-        BottomNavRoutingView1Component,
-        BottomNavRoutingView2Component,
-        BottomNavRoutingView3Component,
         CardSample1Component,
         CardSample2Component,
         CardSample3Component,
@@ -107,8 +96,6 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         ExpansionPanelSample3Component,
         ExpansionPanelSample4Component,
         ExpansionPanelSample5Component,
-        ExpansionPanelSample6Component,
-        ExpansionPanelSample7Component,
         ExpansionPanelStylingComponent,
         LayoutDirectionRowComponent,
         LayoutDirectionColumnComponent,
@@ -121,7 +108,6 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         TabbarSample1Component,
         TabbarSample2Component,
         TabbarSample3Component,
-        TabbarComponent,
         TabsSample1Component,
         TabsSample2Component,
         TabsSample3Component,
