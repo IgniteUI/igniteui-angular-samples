@@ -1,7 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import {
-    IgxExpansionPanelComponent
-} from "igniteui-angular";
+import { IgxExpansionPanelComponent } from "igniteui-angular";
 @Component({
     // tslint:disable-next-line:component-selector
     selector: "app-expansion-sample-1",
@@ -11,5 +9,4 @@ import {
 export class ExpansionPanelSample1Component {
     @ViewChild(IgxExpansionPanelComponent, { read: IgxExpansionPanelComponent, static: true })
     public panel: IgxExpansionPanelComponent;
-    public readMore = "https://en.wikipedia.org/wiki/Hummingbird";
 }

@@ -10,7 +10,7 @@
         </span>
     </div>
     <div class="carousel-wrapper">
-        <igx-carousel #carousel >
+        <igx-carousel #carousel>
             <igx-slide *ngFor="let slide of slides;">
                 <div class="slide-wrapper">
                     <igx-card>
@@ -26,13 +26,13 @@
                             <img [src]="slide.image">
                         </igx-card-media>
 
-
                         <igx-card-actions>
                             <a  igxButton href="{{slide.link}}" target="_blank" style="text-decoration: none;">visit page</a>
                         </igx-card-actions>
                     </igx-card>
                 </div>
             </igx-slide>
+            <ng-template igxCarouselIndicator></ng-template>
         </igx-carousel>
     </div>
 </div>

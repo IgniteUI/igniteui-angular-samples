@@ -1,40 +1,12 @@
 <igx-tabs>
-    <igx-tabs-group label="My Albums" icon="library_music">
-        <div style="margin: 10px 3px 3px 1px">
-            <igx-card [horizontal]="true">
-                <div igxLayout igxLayoutDir="column" igxFlex igxFlexGrow="1">
-                    <igx-card-header>
-                        <igx-avatar [src]="card.avatarUrl"></igx-avatar>
-                        <h5 igxCardHeaderTitle>{{card.title}}</h5>
-                        <h5 igxCardHeaderSubtitle>{{card.subtitle}}</h5>
-                    </igx-card-header>            
-                    <igx-card-content>
-                        <p>{{card.content}}</p>
-                    </igx-card-content>            
-                    <igx-card-actions [vertical]="false">
-                        <button *ngFor="let button of card.buttons;" igxButton="flat" igxRipple>
-                            {{button}}
-                        </button>
-                    </igx-card-actions>
-                </div>            
-                <igx-card-media width="96px">
-                    <img [src]="card.imageUrl">
-                </igx-card-media>
-            </igx-card>
-        </div>
+    <igx-tabs-group label="Albums" icon="library_music">
+        Albums
     </igx-tabs-group>
-    <igx-tabs-group label="Favourites" icon="favorite">
-        <div style="margin: 3px">
-            <h5 igxCardHeaderSubtitle>
-                Add your favourite songs here.
-            </h5>
-        </div>
+    <igx-tabs-group label="Favorite" icon="favorite">
+        Favorite
     </igx-tabs-group>
-    <igx-tabs-group label="Info" icon="info">
-        <div style="margin: 3px">
-            <h5 igxCardHeaderSubtitle>
-                "Here" is the sixth studio album by American singer and songwriter Melow D.
-            </h5>
-        </div>
+    <igx-tabs-group label="Details" icon="info">
+        Details
     </igx-tabs-group>
 </igx-tabs>
+
