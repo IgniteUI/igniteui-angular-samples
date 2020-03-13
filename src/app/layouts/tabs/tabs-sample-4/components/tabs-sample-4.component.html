@@ -1,16 +1,32 @@
-<!-- router-outlet outside the tabs items content -->
-<div class="_wrapper_tabs">
-    <p>This is a sample with routing and tabs.</p>
-    <igx-tabs #tabs1>
-        <igx-tabs-group *ngFor="let routerLink of routerLinks">
-            <ng-template igxTab>
-                {{routerLink.label}}
-                <a routerLink="{{routerLink.link}}"></a>
-            </ng-template>
-        </igx-tabs-group>
-    </igx-tabs>
-
-    <div>
-        <router-outlet></router-outlet>
-    </div>
+<div class="url">
+    <p class="url__title">Current URL Path:</p>
+    <p class="url__path">http://localhost:4200{{path}}</p>
 </div>
+
+<igx-tabs #tabs1>
+    <igx-tab-item
+        label="Tab 1"
+        routerLink="view1"
+        routerLinkActive
+        #rla1="routerLinkActive"
+        [isSelected]="rla1.isActive"
+      ></igx-tab-item>
+
+      <igx-tab-item
+        label="Tab 2"
+        routerLink="view2"
+        routerLinkActive
+        #rla2="routerLinkActive"
+        [isSelected]="rla2.isActive"
+      ></igx-tab-item>
+
+      <igx-tab-item
+        label="Tab 3"
+        routerLink="view3"
+        routerLinkActive
+        #rla3="routerLinkActive"
+        [isSelected]="rla3.isActive"
+      ></igx-tab-item>
+</igx-tabs>
+
+<router-outlet></router-outlet>

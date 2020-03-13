@@ -1,0 +1,37 @@
+import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
+import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
+import { DATA } from "../../data/customers";
+
+@Component({
+    encapsulation: ViewEncapsulation.None,
+    providers: [],
+    selector: "grid-sample",
+    styleUrls: ["grid-toolbar-pinning.component.scss"],
+    templateUrl: "grid-toolbar-pinning.component.html"
+
+})
+
+export class PinningToolbarSampleComponent {
+    @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
+
+    public data: any[];
+    public columns: any[];
+    public ngOnInit(): void {
+        this.columns = [
+            { field: "CompanyName", header: "Company Name", width: 300 },
+            { field: "ContactName", header: "Contact Name", width: 200, pinned: true },
+            { field: "ContactTitle", header: "Contact Title", width: 200, pinned: true },
+            { field: "Address", header: "Address", width: 300 },
+            { field: "City", header: "City", width: 120 },
+            { field: "Region", header: "Region", width: 120 },
+            { field: "PostalCode", header: "Postal Code", width: 150 },
+            { field: "Phone", header: "Phone", width: 150 },
+            { field: "Fax", header: "Fax", width: 150 }
+        ];
+        this.data = DATA;
+    }
+
+    public toggleColumn(col: IgxColumnComponent) {
+        col.pinned ? col.unpin() : col.pin();
+    }
+}

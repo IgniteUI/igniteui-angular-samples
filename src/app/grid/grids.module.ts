@@ -10,6 +10,7 @@ import {
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
     IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
+import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
@@ -82,6 +83,7 @@ import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sa
 import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
 import { PinningToolbarSampleComponent } from "./grid-sample-pinning/grid-toolbar-pinning.component";
+import { RightPinningSampleComponent } from "./grid-sample-right-pinning/grid-right-pinning.component";
 import { GridSelectionTemplateExcelComponent} from "./grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
 import { GridSelectionTemplateNumbersComponent } from "./grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
@@ -189,11 +191,13 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridMultipleRowDragComponent,
         GridExternalAdvancedFilteringComponent,
         GridCollapsibleColumnGroupsComponent,
-        GridAllDataSummaryComponent
+        GridAllDataSummaryComponent,
+        RightPinningSampleComponent
     ],
     imports: [
         CommonModule,
         FormsModule,
+        IgxPreventDocumentScrollModule,
         HttpClientModule,
         GridsRoutingModule,
         IgxAvatarModule,

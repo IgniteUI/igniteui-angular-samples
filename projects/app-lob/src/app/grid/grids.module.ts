@@ -20,6 +20,7 @@ import { IgxBarSeriesModule, IgxBollingerBandsOverlayModule, IgxCategoryChartMod
     IgxLegendModule, IgxNumericXAxisComponent, IgxNumericXAxisModule, IgxNumericYAxisComponent, IgxNumericYAxisModule,
     IgxPieChartComponent, IgxPieChartModule, IgxRingSeriesModule, IgxSparklineCoreModule, IgxSparklineModule
 } from "igniteui-angular-charts";
+import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 import { GridsDVRoutingModule } from "./grids-routing.module";
 
 @NgModule({
@@ -32,6 +33,7 @@ import { GridsDVRoutingModule } from "./grids-routing.module";
         FormsModule,
         HttpClientModule,
         GridsDVRoutingModule,
+        IgxPreventDocumentScrollModule,
         IgxAvatarModule,
         IgxBadgeModule,
         IgxBannerModule,
