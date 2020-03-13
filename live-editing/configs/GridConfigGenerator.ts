@@ -76,6 +76,7 @@ import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-samp
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
 import { PinningStylingComponent } from "../../src/app/grid/grid-sample-pinning-styling/grid-pinning-styling.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
+import { RightPinningSampleComponent } from '../../src/app/grid/grid-sample-right-pinning/grid-right-pinning.component';
 import { PinningToolbarSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-toolbar-pinning.component";
 import { GridSelectionTemplateExcelComponent } from "../../src/app/grid/grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
 import { GridSelectionTemplateNumbersComponent } from "../../src/app/grid/grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
@@ -1028,6 +1029,20 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridCollapsibleColumnGroupsComponent, IgxGridModule, IgxTooltipModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [GridCollapsibleColumnGroupsComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxTooltipModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: RightPinningSampleComponent,
+            additionalFiles: [
+                "/src/app/data/athletesData.ts", 
+                "/src/app/grid/services/data.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [RightPinningSampleComponent, IgxGridModule, IgxTooltipModule, IgxAvatarModule],
+                ngDeclarations: [RightPinningSampleComponent],
+                ngImports: [IgxGridModule, IgxTooltipModule, IgxAvatarModule],
+                ngProviders: []
             })
         }));
 
