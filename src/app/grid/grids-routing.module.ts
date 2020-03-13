@@ -88,6 +88,7 @@ import { GridMultipleRowDragComponent } from "./grid-multiple-row-drag/grid-mult
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
+import { RightPinningSampleComponent } from "./grid-sample-right-pinning/grid-right-pinning.component";
 import {
     GridMultiColumnHeadersStylingComponent
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
@@ -268,6 +269,11 @@ export const gridsRoutes: Routes = [
         component: PinningSampleComponent,
         data: gridsRoutesData["grid-sample-pinning"],
         path: "grid-sample-pinning"
+    },
+    {
+        component: RightPinningSampleComponent,
+        data: gridsRoutesData["grid-sample-right-pinning"],
+        path: "grid-sample-right-pinning"
     },
     {
         component: PinningToolbarSampleComponent,
