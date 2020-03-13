@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <igx-hierarchical-grid #hierarchicalGrid [primaryKey]="'Artist'" [data]="localdata" height="750px" [displayDensity]="'cosy'"
+    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid [primaryKey]="'Artist'" [data]="localdata" height="750px" [displayDensity]="'cosy'"
                            [showToolbar]="true" [columnHiding]="true" [columnPinning]="true" [autoGenerate]="false"
                            [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
                            [uniqueColumnValuesStrategy]="singersColumnValuesStrategy">        
