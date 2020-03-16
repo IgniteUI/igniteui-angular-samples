@@ -22,8 +22,16 @@
         <igx-column field="BeatsPerMinute" header="BPM"></igx-column>
         <igx-column field="TopSpeed" header="Top Speed"></igx-column>
         <igx-column field="TrackProgress" header="Track Progress" [disablePinning]="true"></igx-column>
-        <igx-column field="RegistrationDate" header="Date of Registration" width="170" [disablePinning]="true"></igx-column>
-        <igx-column field="Birthday" header="Birthday" width="170" [disablePinning]="true"></igx-column>
+        <igx-column field="RegistrationDate" header="Date of Registration" width="170" [disablePinning]="true">
+            <ng-template igxCell let-cell>
+                {{ cell | date:'longDate' }}
+            </ng-template>
+        </igx-column>
+        <igx-column field="Birthday" header="Birthday" width="170" [disablePinning]="true">
+            <ng-template igxCell let-cell>
+                {{ cell | date:'longDate' }}
+            </ng-template>
+        </igx-column>
         <igx-column field="Sponsor" header="Sponsor Company" width="160"></igx-column>
         <igx-column field="Agent" header="Athlete Agent" width="140" [disablePinning]="true"></igx-column>
         <igx-column field="AgentContact" header="Agent's Email" width="200" [disablePinning]="true"></igx-column>

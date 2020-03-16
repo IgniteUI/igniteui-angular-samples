@@ -50,14 +50,12 @@ export class HierarchicalGridRightPinningSampleComponent {
         this._columnsPinned = !this._columnsPinned;
     }
 
-    private generateReadableDate(timestamp: string): string {
+    private generateReadableDate(timestamp: string): Date {
         let dateObj = new Date(timestamp);
         if (isNaN(dateObj.getTime())) {
             dateObj = new Date(timestamp.split(" ")[0]);
         }
-        const month = dateObj.toLocaleString("default", { month: "long"});
-        const day = dateObj.getDate();
-        return day + " " + month + " " + dateObj.getFullYear();
+        return dateObj;
     }
 
 }
