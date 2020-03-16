@@ -1,10 +1,14 @@
 .sample-content{
-    margin: 3.5% 0;
+    margin: 10% auto 0;
+}
+
+.sample-column {
+    min-width: 20vw;
 }
 
 .btn-group {
     display: flex;
-    width: 300px;
+    width: 250px;
     margin-top: 16px;
     justify-content: space-between;
 }
@@ -12,15 +16,28 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
 $custom-toast-theme: igx-toast-theme(
-    $shadow: 0 3px 5px -1px rgba(0,0,0,.26),
     $background: #dedede,
     $text-color: #151515,
     $border-radius: 12px
 );
 
-/*SCHEMAS*/
+/* Using Custom Palette */
 
-// $dark-toast-schema: extend($_dark-toast,
+// $white-color: #dedede;
+// $black-color: #151515;
+
+// $light-palette: igx-palette($primary: $white-color, $secondary: $black-color);
+
+// $custom-toast-theme: igx-toast-theme(
+//     $background: igx-color($light-palette, "primary", 400),
+//     $text-color: igx-color($light-palette, "secondary", 400),
+//     $border-radius: 12px
+// );
+
+
+/* Using Custom Schema */
+
+// $light-toast-schema: extend($_light-toast,
 //     (
 //         background: (
 //             igx-color: ("primary", 400)
@@ -32,13 +49,13 @@ $custom-toast-theme: igx-toast-theme(
 //     )
 // );
 
-// $custom-dark-schema: extend($dark-schema,(
-//     igx-toast: $dark-toast-schema
+// $custom-light-schema: extend($light-schema,(
+//     igx-toast: $light-toast-schema
 // ));
 
-// $dark-toast: igx-toast-theme(
-//   $palette: $dark-palette,
-//   $schema: $custom-dark-schema
+// $custom-toast-theme: igx-toast-theme(
+//   $palette: $light-palette,
+//   $schema: $custom-light-schema
 // );
 
 /*INCLUSION by DEFAULT ViewEncapsulation strategy*/
