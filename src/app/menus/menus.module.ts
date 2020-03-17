@@ -20,11 +20,9 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
-import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 
 @NgModule({
     declarations: [
-        NavdrawerComponent,
         NavDrawerMiniComponent,
         NavDrawerPinComponent,
         NavDrawerSimpleComponent,
