@@ -72,6 +72,7 @@ import { TreeGridToolbarSample4Component } from "../../src/app/tree-grid/tree-gr
 import { TreeGridToolbarStyleComponent } from "../../src/app/tree-grid/tree-grid-toolbar-style/tree-grid-toolbar-style.component";
 import { TreeGridVirtualizationSampleComponent } from "../../src/app/tree-grid/tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { TreeGridAllDataSummaryComponent } from "../../src/app/tree-grid/treegrid-allData-summary/treegrid-allData-summary.component";
+import { TreeGridRightPinningSampleComponent } from "../../src/app/tree-grid/tree-grid-sample-right-pinning/tree-grid-right-pinning.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -875,6 +876,20 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxPreventDocumentScrollModule, IgxTreeGridModule]
             }),
             component: TreeGridAllDataSummaryComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: [
+                "/src/app/data/athletesData.ts",
+                "/src/app/tree-grid/data/employees-flat-detailed.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [TreeGridRightPinningSampleComponent, IgxTreeGridModule],
+                ngDeclarations: [TreeGridRightPinningSampleComponent],
+                ngImports: [IgxTreeGridModule],
+                ngProviders: []
+            }),
+            component: TreeGridRightPinningSampleComponent
         }));
 
         return configs;
