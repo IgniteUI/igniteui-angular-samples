@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
-import { ColumnPinningPosition, IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
+import { ColumnPinningPosition, IgxColumnComponent, IgxHierarchicalGridComponent } from "igniteui-angular";
 import { IPinningConfig } from "igniteui-angular/lib/grids/common/grid.interface";
 import { data } from "../../data/athletesData";
 import { athletesData } from "../services/data";
@@ -7,14 +7,14 @@ import { athletesData } from "../services/data";
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [],
-    selector: "grid-sample",
-    styleUrls: ["grid-right-pinning.component.scss"],
-    templateUrl: "grid-right-pinning.component.html"
+    selector: "hierarchical-grid-sample",
+    styleUrls: ["hierarchical-grid-right-pinning.component.scss"],
+    templateUrl: "hierarchical-grid-right-pinning.component.html"
 })
 
-export class RightPinningSampleComponent {
+export class HierarchicalGridRightPinningSampleComponent {
     @ViewChild("grid1", { static: true })
-    public grid1: IgxGridComponent;
+    public grid1: IgxHierarchicalGridComponent;
 
     public data: any[];
     public athletesData: any[];
@@ -33,9 +33,7 @@ export class RightPinningSampleComponent {
             x.RegistrationDate = this.generateReadableDate(x.Registered);
             x.Birthday = this.generateReadableDate(this.athletesData[i].birthday);
             x.Sponsor = this.athletesData[i].company;
-            x.Agent = this.athletesData[i].name;
-            x.AgentContact = this.athletesData[i].email;
-            x.AgentPhone = this.athletesData[i].work_phone;
+            x.AgentData = [this.athletesData[i]];
             i++;
         });
     }
