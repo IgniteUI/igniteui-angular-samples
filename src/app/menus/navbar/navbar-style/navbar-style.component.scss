@@ -2,31 +2,31 @@
 
 /*BASIC THEMING*/
 
-$dark-navbar: igx-navbar-theme(
-    $text-color: #FFCD0F,
-    $background: #292826,
-    $idle-icon-color: #FFCD0F,
-    $hover-icon-color: gray
+$custom-navbar-theme: igx-navbar-theme(
+    $text-color: #151515,
+    $background: #dedede,
+    $idle-icon-color: #151515,
+    $hover-icon-color: #8c8c8c
 );
 
 /*ENHANCED APPROACHES*/
 
-// $yellow-color: #FFCD0F;
-// $black-color: #292826;
-// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+// $white-color: #dedede;
+// $black-color: #151515;
+// $light-navbar-palette: igx-palette($primary: $white-color, $secondary: $black-color);
 
 /*PALETTE and IGX-COLOR*/
 
-// $dark-navbar: igx-navbar-theme(
-//     $text-color: igx-color($dark-palette, "secondary", 400),
-//     $background: igx-color($dark-palette, "primary", 400),
-//     $idle-icon-color: igx-color($dark-palette, "secondary", 400),
-//     $hover-icon-color: gray
+// $custom-navbar-theme: igx-navbar-theme(
+//     $text-color: igx-color($light-navbar-palette, "secondary", 400),
+//     $background: igx-color($light-navbar-palette, "primary", 400),
+//     $idle-icon-color: igx-color($light-navbar-palette, "secondary", 400),
+//     $hover-icon-color: #8c8c8c
 // );
 
 /*SCHEMAS*/
 
-// $dark-navbar-schema: extend($_dark-navbar,
+// $light-navbar-schema: extend($_light-navbar,
 //     (
 //         text-color: (
 //             igx-color: ("secondary", 400)
@@ -37,23 +37,23 @@ $dark-navbar: igx-navbar-theme(
 //         idle-icon-color:(
 //             igx-color: ("secondary", 400)
 //         ),
-//         hover-icon-color: gray
+//         $hover-icon-color: #8c8c8c
 //     )
 // );
 
-// $custom-dark-schema: extend($dark-schema,(
-//     igx-navbar: $dark-navbar-schema
+// $custom-light-schema: extend($light-schema,(
+//     igx-navbar: $light-navbar-schema
 // ));
 
-// $dark-navbar: igx-navbar-theme(
-//   $palette: $dark-palette,
-//   $schema: $custom-dark-schema
+// $cutom-navbar-theme: igx-navbar-theme(
+//   $palette: $light-navbar-palette,
+//   $schema: $custom-light-schema
 // );
 
 /*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 
 :host {
      ::ng-deep {
-        @include igx-navbar($dark-navbar);
+        @include igx-navbar($custom-navbar-theme);
     }
 }
