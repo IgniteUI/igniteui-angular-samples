@@ -1,31 +1,21 @@
-<div class="sample-wrapper">
-    <igx-expansion-panel>
-        <igx-expansion-panel-header>
-            <igx-expansion-panel-title>Personal Information</igx-expansion-panel-title>
+<div class="sample-holder">
+    <igx-expansion-panel class="my-expansion-panel">
+        <igx-expansion-panel-header [iconPosition]="'right'">
+            <igx-expansion-panel-title>
+                Golden Retriever
+            </igx-expansion-panel-title>
+            <igx-expansion-panel-description>
+                Medium-large gun dog
+            </igx-expansion-panel-description>
         </igx-expansion-panel-header>
         <igx-expansion-panel-body>
-                <igx-input-group class="group">
-                    <label igxLabel for="fullName">Full Name</label>
-                    <input igxInput autocomplete="off" name="fullName" type="text" [(ngModel)]="user.fullName"/>
-                    <igx-suffix>
-                        <igx-icon>person</igx-icon>
-                    </igx-suffix>
-                </igx-input-group>
-                <igx-input-group class="group">
-                    <igx-prefix>+359</igx-prefix>
-                    <label igxLabel for="phone">Phone</label>
-                    <input igxInput autocomplete="off" name="phone" type="number" [(ngModel)]="user.phone" />
-                    <igx-suffix>
-                        <igx-icon>phone</igx-icon>
-                    </igx-suffix>
-                </igx-input-group>
-                <igx-input-group class="group">
-                    <label igxLabel for="email">Email address</label>
-                    <input igxInput autocomplete="off" name="email" type="email" [(ngModel)]="user.email"/>
-                    <igx-suffix>
-                        <igx-icon>email</igx-icon>
-                    </igx-suffix>
-                </igx-input-group>
+            <div class="example-content">
+                <img height="100" [src]="imgSource" alt="">
+                <span>
+                    The Golden Retriever is a medium-large gun dog that retrieves shot waterfowl, such as ducks and upland game birds, during hunting and shooting parties.[3] The name "retriever" refers to the breed's ability to retrieve shot game undamaged due to their soft mouth. Golden retrievers have an instinctive love of water, and are easy to train to basic or advanced obedience standards.
+                </span>
+                <a igxButton="raised" target="_blank" [href]="readMore">Read more</a>
+            </div>
         </igx-expansion-panel-body>
     </igx-expansion-panel>
 </div>

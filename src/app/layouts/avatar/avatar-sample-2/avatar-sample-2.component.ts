@@ -7,8 +7,6 @@ import { Component, OnInit } from "@angular/core";
 })
 export class AvatarSample2Component implements OnInit {
 
-  public imgSource = "assets/images/men/1.jpg";
-
   constructor() { }
 
   public ngOnInit() {

@@ -1,5 +1,12 @@
-import { Component, QueryList, ViewChildren } from "@angular/core";
-import { IExpansionPanelEventArgs, IgxExpansionPanelComponent } from "igniteui-angular";
+import { useAnimation } from "@angular/animations";
+import { Component, ViewChild } from "@angular/core";
+
+import {
+    IgxExpansionPanelComponent,
+    slideInLeft,
+    slideOutRight
+} from "igniteui-angular";
+
 @Component({
     // tslint:disable-next-line:component-selector
     selector: "app-expansion-sample-5",
@@ -8,8 +15,24 @@ import { IExpansionPanelEventArgs, IgxExpansionPanelComponent } from "igniteui-a
 })
 export class ExpansionPanelSample5Component {
 
-    @ViewChildren(IgxExpansionPanelComponent)
-    public accordion: QueryList<IgxExpansionPanelComponent>;
+    @ViewChild(IgxExpansionPanelComponent, { static: true })
+    public panel: IgxExpansionPanelComponent;
+
+    public animationSettingsCustom = {
+        closeAnimation: useAnimation(slideOutRight, {
+                params: {
+                    duration: "100ms",
+                    toPosition: "translateX(25px)"
+            }
+        }),
+        openAnimation: useAnimation(slideInLeft, {
+                params: {
+                    duration: "500ms",
+                    fromPosition: "translateX(-15px)",
+                    startOpacity: 0.1
+                }
+            })
+    };
 
     public user = {
         email: "",
@@ -17,33 +40,7 @@ export class ExpansionPanelSample5Component {
         phone: undefined
     };
 
-    public billingAddress = {
-        address: "",
-        city: "",
-        state: "",
-        zipCode: ""
-    };
-
-    public shippingAddress = {
-        address: "",
-        city: "",
-        state: "",
-        zipCode: ""
-    };
-
-    public collapsed(index: number) {
-         if (!this.accordion) {
-            return true;
-         }
-         return this.accordion.toArray()[index] && this.accordion.toArray()[index].collapsed;
-     }
-
-    public onInteraction(event: IExpansionPanelEventArgs) {
-        const expandedPanels = this.accordion.filter((panel) => !panel.collapsed);
-        expandedPanels.forEach((expandedPanel) => {
-            if (expandedPanel.id !==  event.panel.id) {
-                expandedPanel.collapse();
-            }
-        });
+    public collapsed() {
+        return this.panel && this.panel.collapsed;
     }
 }

@@ -1,16 +1,31 @@
-.sample-wrapper {
-    width: 440px;
-}
+$ep-sample-border: 1px solid rgba(174, 174, 174, 0.25);
 
-.game-board__grid__match {
-    font-weight: 600;
-    font-size: 12px;
-}
-
-.update-button {
-    flex-grow: 1;
-}
-
-.buttons-panel {
+.sample-holder{
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 16px;
+}
+
+.example-content {
+    padding: 16px;
+}
+
+.my-expansion-panel {
+    max-width: 500px;
+    min-width: 300px;
+    width: 100%;
+    border-top: $ep-sample-border;
+    border-left: $ep-sample-border;
+    border-right: $ep-sample-border;
+
+    &:last-of-type {
+        border-bottom: $ep-sample-border;
+    }
+}
+
+.body {
+    padding: 0 16px 16px 16px;
 }
