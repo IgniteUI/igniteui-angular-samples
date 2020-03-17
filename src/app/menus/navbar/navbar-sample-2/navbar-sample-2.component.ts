@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, ViewEncapsulation } from "@angular/core";
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -6,10 +6,4 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
   styleUrls: ["./navbar-sample-2.component.scss"],
   templateUrl: "./navbar-sample-2.component.html"
 })
-export class NavbarSample2Component implements OnInit {
-
-  constructor() { }
-
-  public ngOnInit() {
-  }
-}
+export class NavbarSample2Component { }
