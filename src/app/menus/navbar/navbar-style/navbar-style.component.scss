@@ -54,6 +54,6 @@ $custom-navbar-theme: igx-navbar-theme(
 
 :host {
      ::ng-deep {
-        @include igx-navbar($custom-navbar-theme);
+        @include igx-css-vars($custom-navbar-theme);
     }
 }
