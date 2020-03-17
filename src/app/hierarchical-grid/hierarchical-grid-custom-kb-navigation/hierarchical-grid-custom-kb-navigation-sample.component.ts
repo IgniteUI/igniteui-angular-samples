@@ -56,7 +56,8 @@ export class HGridCustomKBNavigationComponent implements OnInit {
             // Perform column based kb navigation with 'enter' key press
             args.cancel = true;
             grid.selectRange(null);
-            grid.navigateTo(target.rowIndex + 1, target.visibleColumnIndex,
+            const nexRowIndex = target.row.expanded ? target.rowIndex + 2 : target.rowIndex + 1;
+            grid.navigateTo(nexRowIndex, target.visibleColumnIndex,
                 (obj) => { obj.target.nativeElement.focus(); });
         }
     }
