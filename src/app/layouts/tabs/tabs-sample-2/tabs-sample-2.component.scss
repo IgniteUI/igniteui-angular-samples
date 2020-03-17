@@ -1,0 +1,12 @@
+igx-tabs {
+    display: block;
+
+    + igx-tabs {
+        margin-top: 120px;
+    }
+}
+
+igx-tabs-group {
+    padding: 8px;
+}
+

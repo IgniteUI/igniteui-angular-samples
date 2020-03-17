@@ -62,6 +62,6 @@ $custom-toast-theme: igx-toast-theme(
 
 :host {
     ::ng-deep {
-        @include igx-toast($custom-toast-theme);
+        @include igx-css-vars($custom-toast-theme);
     }
 }
