@@ -87,5 +87,7 @@ export const gridsRoutesData = {
     "grid-multiple-row-drag": { displayName: "Grid Multi Row Drag",  parentName: "Grid"},
     "grid-collapsible-groups": { displayName: "Grid Collapsible Column Groups", parentName: "Grid"},
     "grid-alldata-summaries": {displayName: "Grid AllData Summaries", parentName: "Grid"},
-    "grid-sample-right-pinning": { displayName: "Right Pinning", parentName: "Grid" }
+    "grid-sample-right-pinning": { displayName: "Right Pinning", parentName: "Grid" },
+    "grid-column-selection": { displayName: "Column Selection", parentName: "Grid" },
+    "grid-column-selection-toolbar": { displayName: "Toolbar Column Selection", parentName: "Grid" }
 };

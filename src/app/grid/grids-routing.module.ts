@@ -78,6 +78,8 @@ import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-s
 import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
+import { GridColumnSelectionComponent } from "./grid-column-selection-sample/grid-column-selection.component";
+import { GridColumnSelectionToolbarComponent } from "./grid-column-selection-toolbar-sample/grid-column-selection-toolbar.component";
 import {
     GridConditionalRowSelectorsComponent
 } from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
@@ -519,6 +521,16 @@ export const gridsRoutes: Routes = [
         component: GridAllDataSummaryComponent,
         data: gridsRoutesData["grid-alldata-summaries"],
         path: "grid-alldata-summaries"
+    },
+    {
+        component: GridColumnSelectionComponent,
+        data: gridsRoutesData["grid-column-selection"],
+        path: "grid-column-selection"
+    },
+    {
+        component: GridColumnSelectionToolbarComponent,
+        data: gridsRoutesData["grid-column-selection-toolbar"],
+        path: "grid-column-selection-toolbar"
     }
 ];
 

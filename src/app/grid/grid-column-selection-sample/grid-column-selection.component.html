@@ -1,0 +1,6 @@
+<igx-grid [data]="data" [width]="'900px'" [height]="'800px'">
+    <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.field"
+        [resizable]="c.resizable" [width]="c.width" [sortable]="c.sortable"
+        [filterable]="true" [selectable]="c.selectable" [dataType]="c.type">
+    </igx-column>
+</igx-grid>

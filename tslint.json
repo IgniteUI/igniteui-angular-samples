@@ -4,7 +4,7 @@
     "indent": [true, "spaces"],
     "variable-name": [true, "allow-leading-underscore"],
     "interface-name": [true, "always-prefix"],
-    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],    
+    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
     "no-empty": false,
     "no-bitwise": false,
     "no-object-literal-type-assertion": false,
@@ -16,6 +16,7 @@
     "prefer-conditional-expression": false,
     "prefer-for-of": false,
     "arrow-parens": false,
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "member-ordering": true
   }
 }

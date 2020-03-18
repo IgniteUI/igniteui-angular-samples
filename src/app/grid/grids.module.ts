@@ -23,6 +23,8 @@ import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnG
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
+import { GridColumnSelectionComponent } from "./grid-column-selection-sample/grid-column-selection.component";
+import { GridColumnSelectionFilterPipe, GridColumnSelectionToolbarComponent } from "./grid-column-selection-toolbar-sample/grid-column-selection-toolbar.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyle2Component } from "./grid-conditional-cell-style-2/grid-conditional-cell-style-2.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
@@ -192,7 +194,10 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridExternalAdvancedFilteringComponent,
         GridCollapsibleColumnGroupsComponent,
         GridAllDataSummaryComponent,
-        RightPinningSampleComponent
+        RightPinningSampleComponent,
+        GridColumnSelectionComponent,
+        GridColumnSelectionToolbarComponent,
+        GridColumnSelectionFilterPipe
     ],
     imports: [
         CommonModule,
