@@ -1,31 +1,43 @@
+.sample-content{
+    margin: 10% auto 0;
+}
+
+.sample-column {
+    min-width: 270px;
+}
+
+.btn-group {
+    display: flex;
+    width: 250px;
+    margin-top: 16px;
+    justify-content: space-between;
+}
+
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-/*BASIC THEMING*/
-
-$dark-toast: igx-toast-theme(
-    $background: #292826,
-    $text-color: #FFCD0F,
+$custom-toast-theme: igx-toast-theme(
+    $background: #dedede,
+    $text-color: #151515,
     $border-radius: 12px
 );
 
-/*ENHANCED APPROACHES*/
+/* Using Custom Palette */
 
-// $yellow-color: #FFCD0F;
-// $black-color: #292826;
+// $white-color: #dedede;
+// $black-color: #151515;
 
-// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+// $light-palette: igx-palette($primary: $white-color, $secondary: $black-color);
 
-/*PALETTE and IGX-COLOR*/
-
-// $dark-toast: igx-toast-theme(
-//     $background: igx-color($dark-palette, "primary", 400),
-//     $text-color: igx-color($dark-palette, "secondary", 400),
+// $custom-toast-theme: igx-toast-theme(
+//     $background: igx-color($light-palette, "primary", 400),
+//     $text-color: igx-color($light-palette, "secondary", 400),
 //     $border-radius: 12px
 // );
 
-/*SCHEMAS*/
 
-// $dark-toast-schema: extend($_dark-toast,
+/* Using Custom Schema */
+
+// $light-toast-schema: extend($_light-toast,
 //     (
 //         background: (
 //             igx-color: ("primary", 400)
@@ -37,23 +49,19 @@ $dark-toast: igx-toast-theme(
 //     )
 // );
 
-// $custom-dark-schema: extend($dark-schema,(
-//     igx-toast: $dark-toast-schema
+// $custom-light-schema: extend($light-schema,(
+//     igx-toast: $light-toast-schema
 // ));
 
-// $dark-toast: igx-toast-theme(
-//   $palette: $dark-palette,
-//   $schema: $custom-dark-schema
+// $custom-toast-theme: igx-toast-theme(
+//   $palette: $light-palette,
+//   $schema: $custom-light-schema
 // );
 
 /*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 
 :host {
     ::ng-deep {
-        @include igx-toast($dark-toast);
+        @include igx-css-vars($custom-toast-theme);
     }
-}
-
-.btn {
-    margin: 5px;
 }
