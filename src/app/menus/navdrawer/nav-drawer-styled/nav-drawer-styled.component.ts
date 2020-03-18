@@ -8,15 +8,15 @@ import { Component } from "@angular/core";
 export class NavDrawerStyledComponent {
     public componentLinks = [
         {
-            link: "/avatar",
+            link: "/menus/navigation-drawer-styled/avatar",
             name: "Avatar"
         },
         {
-            link: "/badge",
+            link: "/menus/navigation-drawer-styled/badge",
             name: "Badge"
         },
         {
-            link: "/button-group",
+            link: "/menus/navigation-drawer-styled/button-group",
             name: "Button Group"
         }
     ];

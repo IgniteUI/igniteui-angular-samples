@@ -18,7 +18,12 @@ export const menusRoutes: Routes = [
     },
     {
         component: NavDrawerStyledComponent,
-        path: "navigation-drawer-styled"
+        path: "navigation-drawer-styled",
+        children: [
+            { path: "avatar", component: null},
+            { path: "badge", component:  null},
+            { path: "button-group", component:  null}
+        ]
     },
     {
         component: NavDrawerPinComponent,
