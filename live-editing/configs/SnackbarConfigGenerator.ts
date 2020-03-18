@@ -1,6 +1,10 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxAvatarModule, IgxButtonModule, IgxIconModule,
     IgxListModule, IgxRippleModule, IgxSnackbarModule } from "igniteui-angular";
+import { SnackbarSample1Component
+} from "../../src/app/notifications/snackbar/snackbar-sample-1/snackbar-sample-1.component";
+import { SnackbarSample2Component
+} from "../../src/app/notifications/snackbar/snackbar-sample-2/snackbar-sample-2.component";
 import { SnackbarSample4Component
 } from "../../src/app/notifications/snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { SnackbarSample5Component
@@ -14,6 +18,28 @@ import { IConfigGenerator } from "./core/IConfigGenerator";
 export class SnackbarConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
+
+        configs.push(new Config({
+            component: SnackbarSample1Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxButtonModule, IgxRippleModule,
+                    IgxSnackbarModule, SnackbarSample1Component],
+                ngDeclarations: [SnackbarSample1Component],
+                ngImports: [IgxButtonModule, IgxRippleModule, IgxSnackbarModule]
+            }),
+            shortenComponentPathBy: "/notifications/snackbar/"
+        }));
+
+        configs.push(new Config({
+            component: SnackbarSample2Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxButtonModule, IgxRippleModule,
+                IgxSnackbarModule, SnackbarSample2Component],
+                ngDeclarations: [SnackbarSample2Component],
+                ngImports: [IgxButtonModule, IgxRippleModule, IgxSnackbarModule]
+            }),
+            shortenComponentPathBy: "/notifications/snackbar/"
+        }));
 
         configs.push(new Config({
             component: SnackbarSample4Component,
