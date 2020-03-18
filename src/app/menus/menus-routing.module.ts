@@ -9,11 +9,16 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
+import { NavDrawerStyledComponent } from "./navdrawer/nav-drawer-styled/nav-drawer-styled.component";
 
 export const menusRoutes: Routes = [
     {
         component: NavDrawerSimpleComponent,
         path: "navigation-drawer-simple"
+    },
+    {
+        component: NavDrawerStyledComponent,
+        path: "navigation-drawer-styled"
     },
     {
         component: NavDrawerPinComponent,
