@@ -8,7 +8,6 @@ import { BannerStylingComponent } from "./banner/banner-styling/banner-styling.c
 import { notificationsRoutesData } from "./notifications-routes-data";
 import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-sample-1.component";
 import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
-import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
 import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { SnackbarSample5Component } from "./snackbar/snackbar-sample-5/snackbar-sample-5.component";
 import { SnackbarStyleComponent } from "./snackbar/snackbar-style/snackbar-style.component";
@@ -54,11 +53,6 @@ export const notificationsRoutes: Routes = [
         component: SnackbarSample2Component,
         data: notificationsRoutesData["snackbar-sample-2"],
         path: "snackbar-sample-2"
-    },
-    {
-        component: SnackbarSample3Component,
-        data: notificationsRoutesData["snackbar-sample-3"],
-        path: "snackbar-sample-3"
     },
     {
         component: SnackbarSample4Component,

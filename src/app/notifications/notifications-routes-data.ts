@@ -6,7 +6,6 @@ export const notificationsRoutesData = {
     "banner-styling": { displayName: "Banner Styling", parentName: "Banner" },
     "snackbar-sample-1": { displayName: "Show Snackbar", parentName: "Snackbar" },
     "snackbar-sample-2": { displayName: "Hide/Auto Hide Snackbar", parentName: "Snackbar" },
-    "snackbar-sample-3": { displayName: "Snackbar Display Time", parentName: "Snackbar" },
     "snackbar-sample-4": { displayName: "Snackbar in List", parentName: "Snackbar" },
     "snackbar-sample-5": { displayName: "Display custom content", parentName: "Snackbar" },
     "snackbar-style": { displayName: "Snackbar Style", parentName: "Snackbar" },

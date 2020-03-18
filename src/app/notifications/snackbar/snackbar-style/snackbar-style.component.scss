@@ -51,7 +51,5 @@ $dark-snackbar: igx-snackbar-theme(
 // );
 
 :host {
-    ::ng-deep {
-       @include igx-snackbar($dark-snackbar);
-   }
+    @include igx-css-vars($dark-snackbar);
 }
