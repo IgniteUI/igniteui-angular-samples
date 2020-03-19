@@ -7,7 +7,6 @@ import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advan
 import { HGridAllDataSummaryComponent } from "./hierarchical-grid-allData-summary/hierarchical-grid-allData-summary.component";
 import { HGridBatchEditingSampleComponent } from "./hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component";
 import { HGridCollapsibleColumnGroupComponent } from "./hierarchical-grid-collapsible-column-groups/hierarchical-grid-collapsible-column-groups.component";
-import { HGridMultiHeadersSelectionComponent } from "./hierarchical-grid-column-group-selection/hierarchical-grid-column-group-selection.component";
 import { HierarchicalGridColumnHidingToolbarStyleComponent } from "./hierarchical-grid-column-hiding-toolbar-style/hierarchical-grid-column-hiding-toolbar-style.component";
 import { HGridCostumHidingSampleComponent } from "./hierarchical-grid-column-hiding/hierarchical-grid-custom-hiding.component";
 import { HGridColumnHidingSampleComponent } from "./hierarchical-grid-column-hiding/hierarchical-grid-hiding.component";
@@ -16,7 +15,6 @@ import { HGridColumnMovingSampleComponent } from "./hierarchical-grid-column-mov
 import { HGridPinningSampleComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-pinning.component";
 import { HGridToolbarPinningComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-toolbar-pinning.component";
 import { HierarchicalGridColumnSelectionToolbarComponent } from "./hierarchical-grid-column-selection-toolbar/hierarchical-grid-column-selection-toolbar.component";
-import { HierarchicalGridColumnSelectionComponent } from "./hierarchical-grid-column-selection/hierarchical-grid-column-selection.component";
 import {
     HGridConditionalRowSelectorsComponent
 } from "./hierarchical-grid-conditional-row-selectors/hierarchical-grid-conditional-row-selectors.component";
@@ -400,19 +398,9 @@ export const hierarchicalGridRoutes: Routes = [
         path: "hierarchical-grid-sample-right-pinning"
     },
     {
-        component: HierarchicalGridColumnSelectionComponent,
-        data: hierarchicalGridRoutesData["hierarchical-grid-column-selection"],
-        path: "hierarchical-grid-column-selection"
-    },
-    {
         component: HierarchicalGridColumnSelectionToolbarComponent,
         data: hierarchicalGridRoutesData["hierarchical-grid-column-selection-toolbar"],
         path: "hierarchical-grid-column-selection-toolbar"
-    },
-    {
-        component: HGridMultiHeadersSelectionComponent,
-        data: hierarchicalGridRoutesData["hierarchical-grid-column-group-selection"],
-        path: "hierarchical-grid-column-group-selection"
     }
 ];
 

@@ -13,11 +13,9 @@ import { GridWithTransactionsComponent } from "../../src/app/grid/grid-batch-edi
 import { GridCellSelectionComponent } from "../../src/app/grid/grid-cellSelection-sample/grid-cellSelection.component";
 import { GridClipboardSampleComponent } from "../../src/app/grid/grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridCollapsibleColumnGroupsComponent } from "../../src/app/grid/grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
-import { GridColumnGroupSelectionComponent } from "../../src/app/grid/grid-column-group-selection-sample/grid-column-group-selection.component";
 import { GridColumnHidingSampleComponent } from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "../../src/app/grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridColumnHidingToolbarStyleComponent } from "../../src/app/grid/grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
-import { GridColumnSelectionComponent } from "../../src/app/grid/grid-column-selection-sample/grid-column-selection.component";
 import { GridColumnSelectionToolbarComponent } from "../../src/app/grid/grid-column-selection-toolbar-sample/grid-column-selection-toolbar.component";
 import { GridCompositeDataComponent } from "../../src/app/grid/grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyle2Component } from "../../src/app/grid/grid-conditional-cell-style-2/grid-conditional-cell-style-2.component";
@@ -1051,32 +1049,12 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: GridColumnSelectionComponent,
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [GridColumnSelectionComponent, IgxGridModule, IgxPreventDocumentScrollModule],
-                ngDeclarations: [GridColumnSelectionComponent],
-                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule]
-            })
-        }));
-
-        configs.push(new Config({
             component: GridColumnSelectionToolbarComponent,
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridColumnSelectionToolbarComponent, IgxGridModule, IgxPreventDocumentScrollModule, IgxButtonModule],
                 ngDeclarations: [GridColumnSelectionToolbarComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxButtonModule]
-            })
-        }));
-
-        configs.push(new Config({
-            component: GridColumnGroupSelectionComponent,
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [GridColumnGroupSelectionComponent, IgxGridModule, IgxPreventDocumentScrollModule],
-                ngDeclarations: [GridColumnGroupSelectionComponent],
-                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule]
             })
         }));
 

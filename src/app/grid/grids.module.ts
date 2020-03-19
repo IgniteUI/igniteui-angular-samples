@@ -20,11 +20,9 @@ import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transac
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
-import { GridColumnGroupSelectionComponent } from "./grid-column-group-selection-sample/grid-column-group-selection.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
-import { GridColumnSelectionComponent } from "./grid-column-selection-sample/grid-column-selection.component";
 import { GridColumnSelectionFilterPipe, GridColumnSelectionToolbarComponent } from "./grid-column-selection-toolbar-sample/grid-column-selection-toolbar.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyle2Component } from "./grid-conditional-cell-style-2/grid-conditional-cell-style-2.component";
@@ -196,10 +194,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridCollapsibleColumnGroupsComponent,
         GridAllDataSummaryComponent,
         RightPinningSampleComponent,
-        GridColumnSelectionComponent,
         GridColumnSelectionToolbarComponent,
-        GridColumnSelectionFilterPipe,
-        GridColumnGroupSelectionComponent
+        GridColumnSelectionFilterPipe
     ],
     imports: [
         CommonModule,

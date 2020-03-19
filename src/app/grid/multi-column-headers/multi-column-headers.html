@@ -3,41 +3,41 @@
         <igx-column [movable]="true" [resizable]="true" field="ID" [filterable]="false"></igx-column>
         <igx-column-group [movable]="true" [pinned]="false" header="General Information">
             <igx-column [movable]="true" sortable="true" resizable="true" field="CompanyName"></igx-column>
-            <igx-column-group [movable]="true" header="Person Details">
+            <igx-column-group [movable]="true" header="Person Details" [selectable]="false">
                 <igx-column [movable]="true" [pinned]="false" sortable="true" resizable="true" field="ContactName"></igx-column>
-                <igx-column [movable]="true" sortable="true" resizable="true" field="ContactTitle"></igx-column>
+                <igx-column [movable]="true" sortable="true" resizable="true" field="ContactTitle" [selectable]="false"></igx-column>
             </igx-column-group>
         </igx-column-group>
         <igx-column-group header="Address Information">
             <igx-column-group header="Location">
                 <igx-column sortable="true" resizable="true" field="Country"></igx-column>
-                <igx-column sortable="true" resizable="true" field="Region"></igx-column>
+                <igx-column sortable="true" resizable="true" field="Region" [selectable]="false"></igx-column>
                 <igx-column sortable="true" resizable="true" field="City"></igx-column>
-                <igx-column sortable="true" resizable="true" field="Address"></igx-column>
+                <igx-column sortable="true" resizable="true" field="Address" [selectable]="false"></igx-column>
             </igx-column-group>
             <igx-column-group header="Contact Information">
                 <igx-column sortable="true" resizable="true" field="Phone"></igx-column>
                 <igx-column sortable="true" resizable="true" field="Fax"></igx-column>
-                <igx-column sortable="true" resizable="true" field="PostalCode"></igx-column>
+                <igx-column sortable="true" resizable="true" field="PostalCode" [selectable]="false"></igx-column>
             </igx-column-group>
         </igx-column-group>
         <igx-column-group header="Address Information">
             <igx-column-group header="Location">
-                <igx-column sortable="true" resizable="true" field="Country"></igx-column>
-                <igx-column sortable="true" resizable="true" field="Region"></igx-column>
-                <igx-column sortable="true" resizable="true" field="City"></igx-column>
-                <igx-column sortable="true" resizable="true" field="Address"></igx-column>
+                <igx-column sortable="true" resizable="true" field="Country" [selectable]="false"></igx-column>
+                <igx-column sortable="true" resizable="true" field="Region" [selectable]="false"></igx-column>
+                <igx-column sortable="true" resizable="true" field="City" [selectable]="false"></igx-column>
+                <igx-column sortable="true" resizable="true" field="Address" [selectable]="false"></igx-column>
             </igx-column-group>
             <igx-column-group header="Contact Information">
                 <igx-column sortable="true" resizable="true" field="Phone"></igx-column>
                 <igx-column sortable="true" resizable="true" field="Fax"></igx-column>
-                <igx-column sortable="true" resizable="true" field="PostalCode"></igx-column>
+                <igx-column sortable="true" resizable="true" field="PostalCode" [selectable]="false"></igx-column>
             </igx-column-group>
         </igx-column-group>
         <igx-column-group header="Contact Information">
             <igx-column sortable="true" resizable="true" field="Phone"></igx-column>
-            <igx-column sortable="true" resizable="true" field="Fax"></igx-column>
-            <igx-column sortable="true" resizable="true" field="PostalCode"></igx-column>
+            <igx-column sortable="true" resizable="true" field="Fax" [selectable]="false"></igx-column>
+            <igx-column sortable="true" resizable="true" field="PostalCode" [selectable]="false"></igx-column>
         </igx-column-group>
     </igx-grid>
 
