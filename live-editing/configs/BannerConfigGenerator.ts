@@ -1,6 +1,8 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxAvatarModule, IgxBannerModule, IgxButtonModule, IgxCardModule, IgxIconModule,
     IgxInputGroupModule, IgxNavbarModule, IgxRippleModule, IgxSwitchModule, IgxToastModule } from "igniteui-angular";
+import { BannerAdvancedSampleComponent
+       } from "../../src/app/notifications/banner/banner-advanced-sample/banner-advanced-sample.component";
 import { BannerSample1Component } from "../../src/app/notifications/banner/banner-sample-1/banner-sample-1.component";
 import { BannerSample2Component } from "../../src/app/notifications/banner/banner-sample-2/banner-sample-2.component";
 import { BannerSample3Component } from "../../src/app/notifications/banner/banner-sample-3/banner-sample-3.component";
@@ -13,6 +15,29 @@ import { IConfigGenerator } from "./core/IConfigGenerator";
 export class BannerConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
+
+        configs.push(new Config({
+            component: BannerAdvancedSampleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxBannerModule,
+                          IgxNavbarModule,
+                          IgxCardModule,
+                          IgxIconModule,
+                          IgxToastModule,
+                          IgxButtonModule,
+                          IgxRippleModule,
+                          BannerAdvancedSampleComponent],
+                ngDeclarations: [BannerAdvancedSampleComponent],
+                ngImports: [IgxBannerModule,
+                            IgxCardModule,
+                            IgxIconModule,
+                            IgxNavbarModule,
+                            IgxToastModule,
+                            IgxButtonModule,
+                            IgxRippleModule]
+            }),
+            shortenComponentPathBy: "/notifications/banner/"
+        }));
 
         configs.push(new Config({
             component: BannerSample1Component,
@@ -52,10 +77,12 @@ export class BannerConfigGenerator implements IConfigGenerator {
             component: BannerStylingComponent,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxBannerModule, IgxCardModule, IgxToastModule, IgxNavbarModule, IgxButtonModule,
-                    IgxRippleModule, IgxIconModule, BannerStylingComponent],
+                    IgxRippleModule, IgxIconModule, IgxButtonModule,
+                    IgxRippleModule, BannerStylingComponent],
                 ngDeclarations: [BannerStylingComponent],
                 ngImports: [IgxBannerModule, IgxCardModule, IgxToastModule,  IgxNavbarModule, IgxButtonModule,
-                    IgxRippleModule, IgxIconModule]
+                    IgxRippleModule, IgxIconModule, IgxButtonModule,
+                    IgxRippleModule]
             }),
             shortenComponentPathBy: "/notifications/banner/"
         }));
