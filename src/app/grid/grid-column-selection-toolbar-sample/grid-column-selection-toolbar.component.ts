@@ -55,7 +55,7 @@ export class GridColumnSelectionToolbarComponent implements OnInit {
     this.data = DATA;
     this.columns = [
       { field: "ID", width: 150, groupable: true, summary: true, selectable: true,  type: "string" },
-      { field: "CompanyName", width: 150, groupable: true, summary: true, selectable: true, type: "string",  },
+      { field: "CompanyName", width: 150, groupable: true, summary: true, selectable: true, type: "string"},
       { field: "ContactName", width: 150, resizable: true, movable: true,
         selectable: false, summary: true, type: "string" },
       { field: "ContactTitle", width: 150, movable: true,

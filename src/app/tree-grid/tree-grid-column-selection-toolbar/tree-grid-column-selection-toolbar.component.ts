@@ -75,5 +75,3 @@ public transform(items: any[], searchText: string): any[] {
       return  result;
   }
 }
-
-
