@@ -1,6 +1,5 @@
 <div class="sample-wrapper">
     <article class="sample-column calendar-wrapper">
-        <!-- <h4 class="sample-title">Range Date Picker </h4> -->
         <div class="form">
             <igx-input-group #inputGroup1 [igxToggleAction]="dropDown1" class="input-group" type="border">
                 <input #input1 type="text" igxInput placeholder="choose a destination" [igxAutocomplete]="dropDown1"
@@ -48,7 +47,7 @@
         </igx-input-group>
 
         <igx-drop-down #dropDownCalendar (onClosing)="onClosing()">
-            <igx-calendar #calendar class="calendar" selection="range" monthsViewNumber="2"
+            <igx-calendar #calendar class="calendar" selection="range" [monthsViewNumber]="2"
                 (onSelection)="verifyRange($event)">
             </igx-calendar>
             <div class="buttons">
