@@ -48,7 +48,7 @@
         </igx-input-group>
 
         <igx-drop-down #dropDownCalendar (onClosing)="onClosing()">
-            <igx-calendar #calendar class="calendar" selection="range" monthsViewNumber="2"
+            <igx-calendar #calendar class="calendar" selection="range" [monthsViewNumber]="2"
                 (onSelection)="verifyRange($event)">
             </igx-calendar>
             <div class="buttons">
