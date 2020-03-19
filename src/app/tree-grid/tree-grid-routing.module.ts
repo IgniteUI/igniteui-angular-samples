@@ -70,6 +70,7 @@ import { TreeGridToolbarSample4Component } from "./tree-grid-toolbar-sample-4/tr
 import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-grid-toolbar-style.component";
 import { TreeGridVirtualizationSampleComponent } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
+import { TreeGridColumnSelectionToolbarComponent } from './tree-grid-column-selection-toolbar/tree-grid-column-selection-toolbar.component';
 
 export const treeGridRoutes: Routes = [
     {
@@ -411,6 +412,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridRightPinningSampleComponent,
         data: treeGridRoutesData["tree-grid-sample-right-pinning"],
         path: "tree-grid-sample-right-pinning"
+    },
+    {
+        component: TreeGridColumnSelectionToolbarComponent,
+        data: treeGridRoutesData["tree-grid-column-selection-toolbar"],
+        path: "tree-grid-column-selection-toolbar"
     }
 ];
 

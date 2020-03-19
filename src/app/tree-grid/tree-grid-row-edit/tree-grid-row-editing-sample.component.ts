@@ -18,10 +18,10 @@ export class TreeGridRowEditSampleComponent implements OnInit {
 
         this.columns = [
             // tslint:disable:max-line-length
-            { field: "Name", label: "Full Name", resizable: true, movable: true, sortable: true, filterable: true, editable: true, dataType: "string" },
-            { field: "Age", label: "Age", resizable: false, movable: false, sortable: false, filterable: false, editable: true, dataType: "number" },
-            { field: "Title", label: "Title", resizable: true, movable: true, sortable: true, filterable: true, editable: true, dataType: "string" },
-            { field: "HireDate", label: "Hire Date", resizable: true, movable: true, sortable: true, filterable: true, editable: true, dataType: "date" }
+            { field: "Name", label: "Full Name", resizable: true, movable: true, sortable: true, filterable: true, editable: true, dataType: "string", selectable: true },
+            { field: "Age", label: "Age", resizable: false, movable: false, sortable: false, filterable: false, editable: true, dataType: "number", selectable: false },
+            { field: "Title", label: "Title", resizable: true, movable: true, sortable: true, filterable: true, editable: true, dataType: "string", selectable: false },
+            { field: "HireDate", label: "Hire Date", resizable: true, movable: true, sortable: true, filterable: true, editable: true, dataType: "date", selectable: true }
         ];
     }
 }

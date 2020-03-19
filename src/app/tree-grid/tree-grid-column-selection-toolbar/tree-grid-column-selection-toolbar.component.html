@@ -1,0 +1,34 @@
+<div class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [showToolbar]="true" [autoGenerate]="false"
+        width="100%" height="800px">
+        <igx-column [field]="'Name'" dataType="string" [editable]="true"></igx-column>
+        <igx-column [field]="'Title'" dataType="string" [editable]="true" [selectable]="false"></igx-column>
+        <igx-column [field]="'Age'" dataType="number" [editable]="true"></igx-column>
+        <igx-column [field]="'HireDate'" dataType="date" [editable]="true" [selectable]="false"></igx-column>
+        <ng-template igxToolbarCustomContent let-grid="treeGrid">
+            <button igxButton="outlined" #columnSelectionButton igxRipple (click)="toggleColumnSelection()" [displayDensity]="treeGrid.displayDensity" >
+                <div class="igx-grid-toolbar__button-space">
+                    <igx-checkbox [checked]="true" [disableRipple]="true" [readonly]="true" [disabled]="true">
+                    </igx-checkbox>
+                    <span>{{ treeGrid.selectedColumns().length }}</span>
+                </div>
+            </button>
+            <igx-drop-down #columnSelectionDropdown>
+                <igx-input-group class="igx-column-hiding__header-input">
+                    <input igxInput tabindex="0" [(ngModel)]="searchSelectedColumn"
+                        [placeholder]="'Filter Column list ...'" autocomplete="off" />
+                </igx-input-group>
+                <div class="igx-column-hiding__columns"
+                    [style.max-height]="(treeGrid.calcHeight) ? treeGrid.calcHeight * 0.7 + 'px' : '100%'">
+                    <igx-checkbox
+                        *ngFor="let columnItem of treeGrid.columns | filterColumns: searchSelectedColumn"
+                        class="igx-column-hiding__columns-item"
+                        (change)="columnItem.selected = !columnItem.selected" [checked]="columnItem.selected"
+                        [disabled]="!columnItem.selectable">
+                        {{ columnItem.field }}
+                    </igx-checkbox>
+                </div>
+            </igx-drop-down>
+        </ng-template>
+    </igx-tree-grid>
+</div>
