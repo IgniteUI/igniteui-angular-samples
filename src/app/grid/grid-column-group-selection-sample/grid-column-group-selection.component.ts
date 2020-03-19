@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { DATA } from "../../data/customers";
 
 @Component({
-  selector: "grid-column-selection",
+  selector: "grid-column-group-selection",
   styleUrls: ["./grid-column-group-selection.component.scss"],
   templateUrl: "./grid-column-group-selection.component.html"
 })

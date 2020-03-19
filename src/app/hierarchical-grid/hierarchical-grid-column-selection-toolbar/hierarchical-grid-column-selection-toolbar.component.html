@@ -1,0 +1,45 @@
+<igx-hierarchical-grid [data]="data" #grid width="100%" height="560px" [showToolbar]="true">
+    <igx-column field="Artist" [editable]="true" [dataType]="'string'"></igx-column>
+    <igx-column field="HasGrammyAward" header="Has Grammy Award?" [dataType]="'boolean'" [selectable]="false">
+    </igx-column>
+    <igx-column field="Debut" [editable]="true" dataType="number"></igx-column>
+    <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number" [selectable]="false"></igx-column>
+    <igx-column field="GrammyAwards" header="Grammy Awards" [editable]="true" dataType="number"></igx-column>
+    <igx-row-island [key]="'Albums'">
+        <igx-column field="Album" [dataType]="'string'" [selectable]="false"></igx-column>
+        <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
+        <igx-column field="BillboardReview" header="Billboard Review" dataType="number"></igx-column>
+        <igx-column field="USBillboard200" header="US Billboard 200" dataType="number" [selectable]="false"></igx-column>
+        <igx-row-island [key]="'Songs'">
+                <igx-column field="Number" header="No." dataType="number"></igx-column>
+                <igx-column field="Title" [dataType]="'string'"></igx-column>
+                <igx-column field="Released" [dataType]="'date'" [selectable]="false"></igx-column>
+                <igx-column field="Genre" [dataType]="'string'"></igx-column>
+        </igx-row-island>
+    </igx-row-island>
+    <ng-template igxToolbarCustomContent let-grid="grid">
+        <button igxButton="outlined" #columnSelectionButton igxRipple (click)="toggleColumnSelection()" [displayDensity]="grid.displayDensity" >
+            <div class="igx-grid-toolbar__button-space">
+                <igx-checkbox [checked]="true" [disableRipple]="true" [readonly]="true" [disabled]="true">
+                </igx-checkbox>
+                <span>{{ grid.selectedColumns().length }}</span>
+            </div>
+        </button>
+        <igx-drop-down #columnSelectionDropdown>
+            <igx-input-group class="igx-column-hiding__header-input">
+                <input igxInput tabindex="0" [(ngModel)]="searchSelectedColumn"
+                    [placeholder]="'Filter Column list ...'" autocomplete="off" />
+            </igx-input-group>
+            <div class="igx-column-hiding__columns"
+                [style.max-height]="(grid.calcHeight) ? grid.calcHeight * 0.7 + 'px' : '100%'">
+                <igx-checkbox
+                    *ngFor="let columnItem of grid.columns | filterColumns: searchSelectedColumn"
+                    class="igx-column-hiding__columns-item"
+                    (change)="columnItem.selected = !columnItem.selected" [checked]="columnItem.selected"
+                    [disabled]="!columnItem.selectable">
+                    {{ columnItem.field }}
+                </igx-checkbox>
+            </div>
+        </igx-drop-down>
+    </ng-template>
+</igx-hierarchical-grid>
