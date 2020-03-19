@@ -20,6 +20,7 @@ import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transac
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
+import { GridColumnGroupSelectionComponent } from "./grid-column-group-selection-sample/grid-column-group-selection.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
@@ -197,7 +198,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         RightPinningSampleComponent,
         GridColumnSelectionComponent,
         GridColumnSelectionToolbarComponent,
-        GridColumnSelectionFilterPipe
+        GridColumnSelectionFilterPipe,
+        GridColumnGroupSelectionComponent
     ],
     imports: [
         CommonModule,

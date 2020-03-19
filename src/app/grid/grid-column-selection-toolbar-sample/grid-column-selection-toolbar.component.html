@@ -1,14 +1,14 @@
-<igx-grid [data]="data" #grid [width]="'900px'" [height]="'800px'" [showToolbar]="true">
+<igx-grid [data]="data" #grid width="100%" height="560px" [showToolbar]="true">
     <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.field"
         [resizable]="c.resizable" [width]="c.width" [sortable]="c.sortable"
         [filterable]="true" [selectable]="c.selectable" [dataType]="c.type">
     </igx-column>
-    <ng-template igxToolbarCustomContent let-sampleGrid="grid">
-        <button igxButton="outlined" #columnSelectionButton igxRipple (click)="toggleColumnSelection()" [displayDensity]="sampleGrid.displayDensity" >
+    <ng-template igxToolbarCustomContent let-grid="grid">
+        <button igxButton="outlined" #columnSelectionButton igxRipple (click)="toggleColumnSelection()" [displayDensity]="grid.displayDensity" >
             <div class="igx-grid-toolbar__button-space">
                 <igx-checkbox [checked]="true" [disableRipple]="true" [readonly]="true" [disabled]="true">
                 </igx-checkbox>
-                <span>{{ sampleGrid.selectedColumns().length }}</span>
+                <span>{{ grid.selectedColumns().length }}</span>
             </div>
         </button>
         <igx-drop-down #columnSelectionDropdown>
@@ -17,9 +17,9 @@
                     [placeholder]="'Filter Column list ...'" autocomplete="off" />
             </igx-input-group>
             <div class="igx-column-hiding__columns"
-                [style.max-height]="(sampleGrid.calcHeight) ? sampleGrid.calcHeight * 0.7 + 'px' : '100%'">
+                [style.max-height]="(grid.calcHeight) ? grid.calcHeight * 0.7 + 'px' : '100%'">
                 <igx-checkbox
-                    *ngFor="let columnItem of sampleGrid.columns | filterColumns: searchSelectedColumn"
+                    *ngFor="let columnItem of grid.columns | filterColumns: searchSelectedColumn"
                     class="igx-column-hiding__columns-item"
                     (change)="columnItem.selected = !columnItem.selected" [checked]="columnItem.selected"
                     [disabled]="!columnItem.selectable">

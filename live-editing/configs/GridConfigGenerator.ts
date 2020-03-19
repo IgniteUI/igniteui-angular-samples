@@ -13,6 +13,7 @@ import { GridWithTransactionsComponent } from "../../src/app/grid/grid-batch-edi
 import { GridCellSelectionComponent } from "../../src/app/grid/grid-cellSelection-sample/grid-cellSelection.component";
 import { GridClipboardSampleComponent } from "../../src/app/grid/grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridCollapsibleColumnGroupsComponent } from "../../src/app/grid/grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
+import { GridColumnGroupSelectionComponent } from "../../src/app/grid/grid-column-group-selection-sample/grid-column-group-selection.component";
 import { GridColumnHidingSampleComponent } from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "../../src/app/grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridColumnHidingToolbarStyleComponent } from "../../src/app/grid/grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
@@ -103,7 +104,6 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { IgxGridToolbarModule } from 'igniteui-angular/lib/grids/toolbar/toolbar.module';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -1052,7 +1052,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridColumnSelectionComponent,
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customer.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridColumnSelectionComponent, IgxGridModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [GridColumnSelectionComponent],
@@ -1062,11 +1062,21 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridColumnSelectionToolbarComponent,
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customer.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridColumnSelectionToolbarComponent, IgxGridModule, IgxPreventDocumentScrollModule, IgxButtonModule, IgxGridToolbarModule],
+                imports: [GridColumnSelectionToolbarComponent, IgxGridModule, IgxPreventDocumentScrollModule, IgxButtonModule],
                 ngDeclarations: [GridColumnSelectionToolbarComponent],
-                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxButtonModule, IgxGridToolbarModule]
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxButtonModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridColumnGroupSelectionComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridColumnGroupSelectionComponent, IgxGridModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridColumnGroupSelectionComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule]
             })
         }));
 
