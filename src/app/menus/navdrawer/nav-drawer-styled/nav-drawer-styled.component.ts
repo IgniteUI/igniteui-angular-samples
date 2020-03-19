@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-nav-drawer-styled",
@@ -8,16 +9,18 @@ import { Component } from "@angular/core";
 export class NavDrawerStyledComponent {
     public componentLinks = [
         {
-            link: "/menus/navigation-drawer-styled/avatar",
+            link: this.router.url + "/avatar",
             name: "Avatar"
         },
         {
-            link: "/menus/navigation-drawer-styled/badge",
+            link: this.router.url + "/badge",
             name: "Badge"
         },
         {
-            link: "/menus/navigation-drawer-styled/button-group",
+            link: this.router.url + "/button-group",
             name: "Button Group"
         }
     ];
+
+    constructor(private router: Router) { }
 }

@@ -1,4 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
+import { RouterModule } from "@angular/router";
 import {
     IgxButtonModule, IgxIconModule, IgxLayoutModule,
     IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule
@@ -57,10 +58,19 @@ export class NavdrawerConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxIconModule, IgxLayoutModule,
                     IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule,
-                    NavDrawerStyledComponent],
+                    NavDrawerStyledComponent, RouterModule],
                 ngDeclarations: [NavDrawerStyledComponent],
                 ngImports: [IgxButtonModule, IgxIconModule, IgxLayoutModule,
-                    IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule]
+                    IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule,
+                    RouterModule,
+                    `
+                    RouterModule.forRoot([
+                        {path: "avatar", component: NavDrawerStyledComponent},
+                        {path: "badge", component: NavDrawerStyledComponent},
+                        {path: "button-group", component: NavDrawerStyledComponent}
+                    ])
+                    `
+                ]
             }),
             shortenComponentPathBy: "/menus/navdrawer/"
         }));
