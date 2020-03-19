@@ -2,7 +2,9 @@
 
 :host {
     $custom-theme: igx-navdrawer-theme(
-        $background: #494949,
+        $background: #2d313a,
+        $item-active-background: #ecc256,
+        $item-header-text-color: #f3c03e
     );
 
     @include igx-css-vars($custom-theme);
