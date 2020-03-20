@@ -5,11 +5,8 @@
     </igx-column>
     <ng-template igxToolbarCustomContent let-grid="grid">
         <button igxButton="outlined" #columnSelectionButton igxRipple (click)="toggleColumnSelection()" [displayDensity]="grid.displayDensity" >
-            <div class="igx-grid-toolbar__button-space">
-                <igx-checkbox [checked]="true" [disableRipple]="true" [readonly]="true" [disabled]="true">
-                </igx-checkbox>
-                <span>{{ grid.selectedColumns().length }}</span>
-            </div>
+            Select columns
+            <igx-icon>arrow_drop_down</igx-icon>
         </button>
         <igx-drop-down #columnSelectionDropdown>
             <igx-input-group class="igx-column-hiding__header-input">
