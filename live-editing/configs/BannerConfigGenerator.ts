@@ -18,6 +18,7 @@ export class BannerConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: BannerAdvancedSampleComponent,
+            additionalFiles: ["src/app/notifications/banner/banner-samples.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxBannerModule,
                           IgxNavbarModule,
@@ -41,16 +42,25 @@ export class BannerConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: BannerSample1Component,
+            additionalFiles: ["src/app/notifications/banner/banner-samples.scss"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxBannerModule, IgxNavbarModule, IgxCardModule, IgxIconModule, BannerSample1Component],
+                imports: [IgxBannerModule,
+                          IgxNavbarModule,
+                          IgxCardModule,
+                          IgxIconModule,
+                          BannerSample1Component],
                 ngDeclarations: [BannerSample1Component],
-                ngImports: [IgxBannerModule, IgxCardModule, IgxIconModule, IgxNavbarModule]
+                ngImports: [IgxBannerModule,
+                            IgxCardModule,
+                            IgxIconModule,
+                            IgxNavbarModule]
             }),
             shortenComponentPathBy: "/notifications/banner/"
         }));
 
         configs.push(new Config({
             component: BannerSample2Component,
+            additionalFiles: ["src/app/notifications/banner/banner-samples.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxBannerModule, IgxNavbarModule, IgxCardModule, IgxToastModule, IgxButtonModule,
                     IgxRippleModule, IgxIconModule, BannerSample2Component],
@@ -63,6 +73,7 @@ export class BannerConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: BannerSample3Component,
+            additionalFiles: ["src/app/notifications/banner/banner-samples.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxBannerModule, IgxCardModule, IgxToastModule, IgxNavbarModule, IgxButtonModule,
                     IgxRippleModule, IgxIconModule, BannerSample3Component],
@@ -75,6 +86,7 @@ export class BannerConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: BannerStylingComponent,
+            additionalFiles: ["src/app/notifications/banner/banner-samples.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxBannerModule, IgxCardModule, IgxToastModule, IgxNavbarModule, IgxButtonModule,
                     IgxRippleModule, IgxIconModule, IgxButtonModule,
