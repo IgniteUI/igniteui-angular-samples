@@ -1,27 +1,24 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxBannerComponent, IgxToastComponent, IgxToastPosition, slideInLeft, slideOutRight } from "igniteui-angular";
+import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { IgxBannerComponent, IgxToastComponent, IgxToastPosition  } from "igniteui-angular";
 import { Subject } from "rxjs";
 
 @Component({
-    selector: "banner-styling",
-    styleUrls: ["banner-styling.component.scss", "../banner-samples.scss"],
-    templateUrl: "banner-styling.component.html"
+    selector: "banner-advanced-sample",
+    styleUrls: ["../banner-samples.scss"],
+    templateUrl: "banner-advanced-sample.component.html"
 })
 
-export class BannerStylingComponent implements OnInit {
+export class BannerAdvancedSampleComponent implements OnInit, OnDestroy {
+
     @ViewChild(IgxBannerComponent, { static: true }) public banner: IgxBannerComponent;
     @ViewChild(IgxToastComponent, { static: true }) public eventToast: IgxToastComponent;
     public contentWidth = "384px";
     public imageUrls = ["assets/images/card/media/the_red_ice_forest.jpg",
         "assets/images/card/media/yosemite.jpg"];
-    public toastPosition: IgxToastPosition.Middle;
-    public animationSettings = {
-        closeAnimation: slideOutRight,
-        openAnimation: slideInLeft
-    };
     public onNetworkStateChange = new Subject();
-    private _wifiState = false;
+    public toastPosition: IgxToastPosition.Middle;
 
+    private _wifiState = false;
     public get wifiState(): boolean {
         return this._wifiState;
     }
@@ -50,7 +47,9 @@ export class BannerStylingComponent implements OnInit {
         if (!this.wifiState) {
             this.banner.open();
         } else {
-            this.banner.close();
+            if (!this.banner.collapsed) {
+                this.banner.close();
+            }
         }
         this.showToast();
     }
