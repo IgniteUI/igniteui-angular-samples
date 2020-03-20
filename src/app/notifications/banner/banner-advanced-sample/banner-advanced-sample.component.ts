@@ -4,7 +4,7 @@ import { Subject } from "rxjs";
 
 @Component({
     selector: "banner-advanced-sample",
-    styleUrls: ["banner-advanced-sample.component.scss"],
+    styleUrls: ["../banner-samples.scss"],
     templateUrl: "banner-advanced-sample.component.html"
 })
 
