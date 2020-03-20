@@ -20,15 +20,17 @@ import { NavbarStyleComponent } from "./navbar/navbar-style/navbar-style.compone
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
+import { NavDrawerRoutingComponent } from "./navdrawer/nav-drawer-routing/nav-drawer-routing.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
-import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
+import { NavDrawerStylingComponent } from "./navdrawer/nav-drawer-styling/nav-drawer-styling.component";
 
 @NgModule({
     declarations: [
-        NavdrawerComponent,
         NavDrawerMiniComponent,
         NavDrawerPinComponent,
         NavDrawerSimpleComponent,
+        NavDrawerRoutingComponent,
+        NavDrawerStylingComponent,
         NavbarComponent,
         NavbarSample1Component,
         NavbarSample2Component,

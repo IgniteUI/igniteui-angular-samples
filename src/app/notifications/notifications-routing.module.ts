@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { BannerAdvancedSampleComponent } from "./banner/banner-advanced-sample/banner-advanced-sample.component";
 import { BannerSample1Component } from "./banner/banner-sample-1/banner-sample-1.component";
 import { BannerSample2Component } from "./banner/banner-sample-2/banner-sample-2.component";
 import { BannerSample3Component } from "./banner/banner-sample-3/banner-sample-3.component";
@@ -35,14 +36,19 @@ export const notificationsRoutes: Routes = [
         path: "banner-sample-3"
     },
     {
-        component: BannerStylingComponent,
-        data: notificationsRoutesData["banner-styling"],
-        path: "banner-styling"
-    },
-    {
         component: BannerSample4Component,
         data: notificationsRoutesData["banner-sample-4"],
         path: "banner-sample-4"
+    },
+    {
+        component: BannerAdvancedSampleComponent,
+        data: notificationsRoutesData["banner-advanced-sample"],
+        path: "banner-advanced-sample"
+    },
+    {
+        component: BannerStylingComponent,
+        data: notificationsRoutesData["banner-styling"],
+        path: "banner-styling"
     },
     {
         component: SnackbarSample1Component,
