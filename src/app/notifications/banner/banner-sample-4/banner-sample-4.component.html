@@ -1,8 +1,8 @@
 <article class="settings">
     <igx-navbar title="Settings">
-        <igx-icon>settings</igx-icon>
+        <igx-icon (click)="connectionBanner.open()">settings</igx-icon>
     </igx-navbar>
-      
+
     <igx-banner #connectionBanner>
         <igx-icon>notification_important</igx-icon>
         <span>You are currently sending automatic replies.</span>
@@ -13,10 +13,10 @@
     </igx-banner>
 
     <section class="profile">
-        <igx-avatar 
-            class="profile__avatar" 
-            src="assets/images/men/15.jpg" 
-            [roundShape]="true" 
+        <igx-avatar
+            class="profile__avatar"
+            src="assets/images/men/15.jpg"
+            [roundShape]="true"
             size="small">
         </igx-avatar>
         <div class="profile__detail">
@@ -26,7 +26,7 @@
     </section>
 
     <section class="reply">
-        <igx-switch 
+        <igx-switch
             class="reply__switch"
             labelPosition="before"
             [(ngModel)]="automaticReplies"
@@ -35,8 +35,8 @@
         </igx-switch>
 
         <igx-input-group type="border" [disabled]="true">
-           <textarea 
-               class="reply__message" 
+           <textarea
+               class="reply__message"
                igxInput>{{ automaticReplyText }}
            </textarea>
         </igx-input-group>
