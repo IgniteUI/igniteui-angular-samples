@@ -92,6 +92,7 @@ import { RightPinningSampleComponent } from "./grid-sample-right-pinning/grid-ri
 import {
     GridMultiColumnHeadersStylingComponent
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
+import { RemoteRowPinningSampleComponent } from "./remote-row-pinning/remote-row-pinning-samples.component";
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -289,6 +290,11 @@ export const gridsRoutes: Routes = [
         component: RemoteFilteringSampleComponent,
         data: gridsRoutesData["grid-remote-filtering"],
         path: "grid-remote-filtering"
+    },
+    {
+        component: RemoteRowPinningSampleComponent,
+        data: gridsRoutesData["grid-remote-row-pinning"],
+        path: "grid-remote-row-pinning"
     },
     {
         component: GridSelectionSampleComponent,

@@ -38,6 +38,7 @@ export const gridsRoutesData = {
     "grid-sample-toolbar-pinning": { displayName: "Grid Toolbar Pinning", parentName: "Grid" },
     "grid-sample-4": { displayName: "Grid Remote Virtualization", parentName: "Grid" },
     "grid-remote-filtering": { displayName: "Grid Remote Filtering", parentName: "Grid" },
+    "grid-remote-row-pinning": {displayName: "Grid Remote Row Pinning", parentName: "Grid"},
     "grid-selection": { displayName: "Grid Selection", parentName: "Grid" },
     "grid-selection-template-numbering": { displayName: "Grid Row Selectors Template - Numbers", parentName: "Grid" },
     "grid-selection-template-excel": { displayName: "Grid Row Selectors Template - Excel", parentName: "Grid" },

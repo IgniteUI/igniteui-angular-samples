@@ -22,9 +22,9 @@ export enum FILTER_OPERATION {
 @Injectable()
 export class RemoteFilteringService {
     public remoteData: Observable<any[]>;
-    private _remoteData: BehaviorSubject<any[]>;
+    protected _remoteData: BehaviorSubject<any[]>;
 
-    constructor(private _http: HttpClient) {
+    constructor(protected _http: HttpClient) {
         this._remoteData = new BehaviorSubject([]);
         this.remoteData = this._remoteData.asObservable();
     }
@@ -42,7 +42,7 @@ export class RemoteFilteringService {
             });
     }
 
-    private buildDataUrl(virtualizationArgs: any, filteringArgs: any, sortingArgs: any): string {
+    protected buildDataUrl(virtualizationArgs: any, filteringArgs: any, sortingArgs: any): string {
         let baseQueryString = `${DATA_URL}?$count=true`;
         let scrollingQuery = EMPTY_STRING;
         let orderQuery = EMPTY_STRING;

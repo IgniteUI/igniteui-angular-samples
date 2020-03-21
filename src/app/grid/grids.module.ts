@@ -101,6 +101,7 @@ import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
+import { RemoteRowPinningSampleComponent } from "./remote-row-pinning/remote-row-pinning-samples.component";
 
 @NgModule({
     declarations: [
@@ -127,6 +128,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         PagingSampleComponent,
         GridPasteSampleComponent,
         RemoteFilteringSampleComponent,
+        RemoteRowPinningSampleComponent,
         RemotePagingGridSample,
         CustomRemotePagingGridSample,
         ResizingSampleComponent,
