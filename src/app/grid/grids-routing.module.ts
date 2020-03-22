@@ -56,6 +56,7 @@ import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
 import { PinningToolbarSampleComponent } from "./grid-sample-pinning/grid-toolbar-pinning.component";
+import { GridPinningDragSampleComponent } from "./grid-row-pinning-drag/grid-row-pinning-drag.component";
 import { GridSelectionTemplateExcelComponent} from "./grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
 import { GridSelectionTemplateNumbersComponent } from "./grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
@@ -174,6 +175,11 @@ export const gridsRoutes: Routes = [
         component: GridRowReorderComponent,
         data: gridsRoutesData["grid-row-reorder"],
         path: "grid-row-reorder"
+    },
+    {
+        component: GridPinningDragSampleComponent,
+        data: gridsRoutesData["grid-row-pinning-drag"],
+        path: "grid-row-pinning-drag"
     },
     {
         component: GridBatchEditingSampleComponent,
