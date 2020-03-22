@@ -58,17 +58,17 @@ export class RemoteRowPinningSampleComponent implements OnInit {
             debounceTime(DEBOUNCE_TIME),
             takeUntil(this.destroy$)
         ).subscribe(() => {
-            this.processData(true);
+            this.processData("filtering");
         });
         this.grid.sortingExpressionsChange.pipe(
             debounceTime(DEBOUNCE_TIME),
             takeUntil(this.destroy$)
         ).subscribe(() => {
-            this.processData();
+            this.processData("sorting");
         });
     }
 
-    public processData(isFiltering: boolean = false) {
+    public processData(dataAction?: string) {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
         }
@@ -81,8 +81,15 @@ export class RemoteRowPinningSampleComponent implements OnInit {
         const filteringExpr = this.grid.filteringExpressionsTree.filteringOperands;
         const sortingExpr = this.grid.sortingExpressions[0];
 
-        if (isFiltering) {
+        if (dataAction === "filtering") {
             virtualizationState.startIndex = 0;
+            this._remoteService.updateCaching({
+                chunkSize: this._chunkSize,
+                startIndex: virtualizationState.startIndex
+            },
+            filteringExpr,
+            sortingExpr);
+        } else if (dataAction === "sorting" && sortingExpr) {
             this._remoteService.updateCaching({
                 chunkSize: this._chunkSize,
                 startIndex: virtualizationState.startIndex
@@ -102,6 +109,9 @@ export class RemoteRowPinningSampleComponent implements OnInit {
                 this.grid.totalItemCount = data["@odata.count"];
                 if (this.grid.isLoading) {
                     this.grid.isLoading = false;
+                }
+                if (sortingExpr) {
+                    this.reaplyPinning(data.value);
                 }
             });
     }
@@ -131,5 +141,15 @@ export class RemoteRowPinningSampleComponent implements OnInit {
             row.pin();
             this._remoteService.storePinnedRecord(row);
         }
+    }
+
+    public reaplyPinning(data) {
+        const primaryKey = this.grid.primaryKey;
+        data.forEach(element => {
+            if (this.grid.isRecordPinned(element)) {
+                this.grid.unpinRow(element[primaryKey]);
+                this.grid.pinRow(element[primaryKey]);
+            }
+        });
     }
 }

@@ -14,7 +14,8 @@ export class RemotePinningService extends RemoteFilteringService {
         sortingArgs?: any, cb?: (any) => void): any {
         return this._http.get(this.buildDataUrl(
             virtualizationArgs, filteringArgs, sortingArgs)).subscribe((data: any) => {
-                this._remoteData.next(this.addPinnedRows(data.value));
+                data.value = this.addPinnedRows(data.value);
+                this._remoteData.next(data.value);
                 if (cb) {
                     cb(data);
                 }
@@ -47,8 +48,11 @@ export class RemotePinningService extends RemoteFilteringService {
 
     protected buildPinnedDataUrl(virtualizationArgs: any, filteringArgs: any, sortingArgs: any): string {
         const baseQueryString = this.buildDataUrl(virtualizationArgs, filteringArgs, sortingArgs);
-
-        return baseQueryString.replace(`$filter=`, `$filter=${this.buildCachedRecordsUrl()} and `);
+        if (sortingArgs && baseQueryString.indexOf("$filter") === -1) {
+            return baseQueryString.replace(`$orderby=`, `$filter=${this.buildCachedRecordsUrl()}&$orderby=`);
+        } else {
+            return baseQueryString.replace(`$filter=`, `$filter=${this.buildCachedRecordsUrl()} and `);
+        }
     }
 
     private addPinnedRows(data) {
