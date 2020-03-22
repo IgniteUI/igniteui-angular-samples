@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from "@angular/core";
 import { IgxGridComponent, IgxGridRowComponent, RowPinningPosition } from "igniteui-angular";
-import { DATA } from "../../data/customers";
 import { IPinningConfig } from "igniteui-angular/lib/grids/common/grid.interface";
+import { DATA } from "../../data/customers";
 
 enum DragIcon {
     DEFAULT = "drag_indicator",
