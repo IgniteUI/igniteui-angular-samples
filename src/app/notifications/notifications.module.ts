@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { IgxAvatarModule, IgxBannerModule, IgxButtonModule, IgxCardModule, IgxIconModule, IgxInputGroupModule,
      IgxListModule, IgxNavbarModule, IgxRippleModule, IgxSnackbarModule,
      IgxSwitchModule, IgxToastModule } from "igniteui-angular";
+import { BannerAdvancedSampleComponent } from "./banner/banner-advanced-sample/banner-advanced-sample.component";
 import { BannerSample1Component } from "./banner/banner-sample-1/banner-sample-1.component";
 import { BannerSample2Component } from "./banner/banner-sample-2/banner-sample-2.component";
 import { BannerSample3Component } from "./banner/banner-sample-3/banner-sample-3.component";
@@ -27,8 +28,9 @@ import { ToastStyleComponent } from "./toast/toast-style/toast-style.component";
         BannerSample1Component,
         BannerSample2Component,
         BannerSample3Component,
-        BannerStylingComponent,
         BannerSample4Component,
+        BannerAdvancedSampleComponent,
+        BannerStylingComponent,
         SnackbarSample1Component,
         SnackbarSample2Component,
         SnackbarSample4Component,
