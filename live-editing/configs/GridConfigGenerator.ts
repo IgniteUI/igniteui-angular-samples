@@ -100,6 +100,8 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { RemoteRowPinningSampleComponent } from "../../src/app/grid/remote-row-pinning/remote-row-pinning-sample.component";
+import { RemotePinningService } from '../../src/app/grid/services/remotePinningService';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -382,6 +384,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [RemoteFilteringSampleComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxBadgeModule, HttpClientModule, IgxToastModule],
                 ngProviders: [RemoteFilteringService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: RemoteRowPinningSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/remotePinningService.ts", "/src/app/grid/services/remoteFilteringService.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [RemoteRowPinningSampleComponent, IgxGridModule,
+                    IgxBadgeModule, HttpClientModule, RemotePinningService, IgxToastModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [RemoteRowPinningSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxBadgeModule, HttpClientModule, IgxToastModule],
+                ngProviders: [RemotePinningService]
             })
         }));
 

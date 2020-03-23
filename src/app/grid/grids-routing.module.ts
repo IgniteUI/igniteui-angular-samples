@@ -92,7 +92,7 @@ import { RightPinningSampleComponent } from "./grid-sample-right-pinning/grid-ri
 import {
     GridMultiColumnHeadersStylingComponent
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
-import { RemoteRowPinningSampleComponent } from "./remote-row-pinning/remote-row-pinning-samples.component";
+import { RemoteRowPinningSampleComponent } from "./remote-row-pinning/remote-row-pinning-sample.component";
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
