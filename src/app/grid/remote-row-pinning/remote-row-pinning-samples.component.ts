@@ -46,6 +46,14 @@ export class RemoteRowPinningSampleComponent implements OnInit {
             (data) => {
                 this.grid.totalItemCount = data["@odata.count"];
                 this.grid.isLoading = false;
+                const primaryKey = this.grid.primaryKey;
+                const firstRec = data.value[0];
+                const lastRec = data.value[data.value.length - 1];
+
+                this.grid.pinRow(firstRec[primaryKey]);
+                this._remoteService.storePinnedRecord({rowID: firstRec[primaryKey], rowData: firstRec});
+                this.grid.pinRow(lastRec[primaryKey]);
+                this._remoteService.storePinnedRecord({rowID: lastRec[primaryKey], rowData: lastRec});
             });
 
         this.grid.onDataPreLoad.pipe(
@@ -89,7 +97,7 @@ export class RemoteRowPinningSampleComponent implements OnInit {
             },
             filteringExpr,
             sortingExpr);
-        } else if (dataAction === "sorting" && sortingExpr) {
+        } else if (dataAction === "sorting") {
             this._remoteService.updateCaching({
                 chunkSize: this._chunkSize,
                 startIndex: virtualizationState.startIndex
@@ -110,7 +118,7 @@ export class RemoteRowPinningSampleComponent implements OnInit {
                 if (this.grid.isLoading) {
                     this.grid.isLoading = false;
                 }
-                if (sortingExpr) {
+                if (dataAction === "sorting") {
                     this.reaplyPinning(data.value);
                 }
             });
@@ -132,7 +140,7 @@ export class RemoteRowPinningSampleComponent implements OnInit {
         this.destroy$.complete();
     }
 
-    public togglePining(row: IgxGridRowComponent, event) {
+    public togglePining(row: IgxGridRowComponent) {
         event.preventDefault();
         if (row.pinned) {
             row.unpin();
@@ -151,5 +159,6 @@ export class RemoteRowPinningSampleComponent implements OnInit {
                 this.grid.pinRow(element[primaryKey]);
             }
         });
+        this.grid.cdr.detectChanges();
     }
 }

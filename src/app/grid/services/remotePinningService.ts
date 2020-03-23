@@ -34,6 +34,10 @@ export class RemotePinningService extends RemoteFilteringService {
 
     public updateCaching(virtualizationArgs, filteringArgs, sortingArgs) {
         const remotePinnedData = new Map<number, any>();
+        if (this._currentPinningData.size === 0) {
+            return;
+        }
+
         this.resetCaching();
         this._http.get(this.buildPinnedDataUrl(
             virtualizationArgs, filteringArgs, sortingArgs)).subscribe((data: any) => {
@@ -47,11 +51,13 @@ export class RemotePinningService extends RemoteFilteringService {
     }
 
     protected buildPinnedDataUrl(virtualizationArgs: any, filteringArgs: any, sortingArgs: any): string {
-        const baseQueryString = this.buildDataUrl(virtualizationArgs, filteringArgs, sortingArgs);
+        const baseQueryString = this.buildDataUrl(null, filteringArgs, sortingArgs);
         if (sortingArgs && baseQueryString.indexOf("$filter") === -1) {
             return baseQueryString.replace(`$orderby=`, `$filter=${this.buildCachedRecordsUrl()}&$orderby=`);
-        } else {
+        } else if (filteringArgs && filteringArgs.length > 0) {
             return baseQueryString.replace(`$filter=`, `$filter=${this.buildCachedRecordsUrl()} and `);
+        } else {
+            return baseQueryString + `&$filter=${this.buildCachedRecordsUrl()}`;
         }
     }
 
