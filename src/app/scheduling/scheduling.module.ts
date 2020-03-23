@@ -2,9 +2,9 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule, IgxDialogModule,
-    IgxDropDownModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule,
-    IgxSnackbarModule, IgxSwitchModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
+    IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule,
+    IgxDateTimeEditorModule, IgxDialogModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule,
+    IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
 } from "igniteui-angular";
 import { CalendarSample1Component } from "./calendar/calendar-sample-1/calendar-sample-1.component";
 import { CalendarSample2Component } from "./calendar/calendar-sample-2/calendar-sample-2.component";
@@ -17,6 +17,7 @@ import { CalendarStylingSample } from "./calendar/calendar-styling-sample/calend
 import { CalendarViewsComponent } from "./calendar/calendar-views/calendar-views.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { CalendarMultiViewComponent } from "./calendar/multiview/multiview.component";
+import { DateTimeAdvancedComponent } from "./date-time/date-time-advanced";
 import { DatepickerDropdownComponent } from "./datepicker/datepicker-dropdown/datepicker-dropdown.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
@@ -55,6 +56,7 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         CalendarSample7Component,
         CalendarMultiViewComponent,
         CalendarStylingSample,
+        DateTimeAdvancedComponent,
         DatepickerSample1Component,
         DatepickerSample2Component,
         DatepickerSample3Component,
@@ -99,7 +101,8 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         IgxButtonModule,
         IgxSelectModule,
         IgxDropDownModule,
-        IgxToggleModule
+        IgxToggleModule,
+        IgxDateTimeEditorModule
     ]
 })
 export class SchedulingModule { }

@@ -1,0 +1,32 @@
+<div class="date-time-wrapper">
+    <label>Increment/Decrement Default</label>
+    <igx-input-group>
+        <input igxInput #dateEditorDefault="igxDateTimeEditor" type="text" [igxDateTimeEditor]="'dd/MM/yyyy'" [(ngModel)]="date">
+        <igx-suffix>
+            <igx-icon (click)="dateEditorDefault.increment()">keyboard_arrow_up</igx-icon>
+            <igx-icon (click)="dateEditorDefault.decrement()">keyboard_arrow_down</igx-icon>
+        </igx-suffix>
+    </igx-input-group>
+    <igx-input-group>
+        <input igxInput #timeEditorDefault="igxDateTimeEditor" type="text" [igxDateTimeEditor]="'HH:mm tt'" [(ngModel)]="date">
+        <igx-suffix>
+            <igx-icon (click)="timeEditorDefault.increment()">keyboard_arrow_up</igx-icon>
+            <igx-icon (click)="timeEditorDefault.decrement()">keyboard_arrow_down</igx-icon>
+        </igx-suffix>
+    </igx-input-group>
+    <label>Increment/Decrement specific datePart</label>
+    <igx-input-group>
+        <input igxInput #dateEditor="igxDateTimeEditor" type="text" [igxDateTimeEditor]="'dd/MM/yyyy'" [(ngModel)]="date">
+        <igx-suffix>
+            <igx-icon (click)="dateEditor.increment(datePart.Year)">keyboard_arrow_up</igx-icon>
+            <igx-icon (click)="dateEditor.decrement(datePart.Year)">keyboard_arrow_down</igx-icon>
+        </igx-suffix>
+    </igx-input-group>
+    <igx-input-group>
+        <input igxInput #timeEditor="igxDateTimeEditor" type="text" [igxDateTimeEditor]="'HH:mm tt'" [(ngModel)]="date">
+        <igx-suffix>
+            <igx-icon (click)="timeEditor.increment(datePart.Minutes)">keyboard_arrow_up</igx-icon>
+            <igx-icon (click)="timeEditor.decrement(datePart.Minutes)">keyboard_arrow_down</igx-icon>
+        </igx-suffix>
+    </igx-input-group>
+<div>

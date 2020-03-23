@@ -30,5 +30,7 @@ export const schedulingRoutesData = {
     "timepicker-sample-6": { displayName: "Timepicker Input Group Template Dropdown", parentName: "Timepicker" },
     "timepicker-sample-7": { displayName: "Custom Action Buttons", parentName: "Timepicker" },
     "timepicker-sample-8": { displayName: "Timepicker Format", parentName: "Timepicker" },
-    "multiview-calendar": {displayName: "Multiview Calendar", parentName: "Calendar"}
+    "multiview-calendar": {displayName: "Multiview Calendar", parentName: "Calendar"},
+    "date-time-advanced": {displayName: "Date Time Advanced", parentName: "Date Time Editor"}
+
 };

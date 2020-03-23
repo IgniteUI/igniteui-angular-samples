@@ -1,0 +1,12 @@
+.date-time-wrapper {
+    padding: 16px;
+    width: 300px;
+
+    igx-suffix {
+        user-select: none;
+    }
+
+    igx-input-group:nth-child(3) {
+        padding-bottom: 48px;
+    }
+}

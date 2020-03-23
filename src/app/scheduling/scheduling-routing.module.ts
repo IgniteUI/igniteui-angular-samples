@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { DateTimeAdvancedComponent } from "../scheduling/date-time/date-time-advanced";
 import { CalendarSample1Component } from "./calendar/calendar-sample-1/calendar-sample-1.component";
 import { CalendarSample2Component } from "./calendar/calendar-sample-2/calendar-sample-2.component";
 import { CalendarSample3Component } from "./calendar/calendar-sample-3/calendar-sample-3.component";
@@ -199,6 +200,11 @@ export const schedulingRoutes: Routes = [
         component: CalendarMultiViewComponent,
         data: schedulingRoutesData["multiview-calendar"],
         path: "multiview-calendar"
+    },
+    {
+        component: DateTimeAdvancedComponent,
+        data: schedulingRoutesData["date-time-advanced"],
+        path: "date-time-advanced"
     }
 ];
 
