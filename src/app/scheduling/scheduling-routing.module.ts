@@ -21,6 +21,7 @@ import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/dat
 import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/datepicker-sample-7.component";
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { DatepickerSample9Component } from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
+// tslint:disable-next-line: max-line-length
 import { DateТimeЕditorSample1Component } from "./datetimeeditor/datetimeeditor-sample-1/datetimeeditor-sample-1.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
 import { MonthpickerSample2Component } from "./monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";
@@ -209,11 +210,7 @@ export const schedulingRoutes: Routes = [
 ];
 
 @NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(schedulingRoutes)
-    ]
+    exports: [RouterModule],
+    imports: [RouterModule.forChild(schedulingRoutes)]
 })
-export class SchedulingRoutingModule { }
+export class SchedulingRoutingModule {}

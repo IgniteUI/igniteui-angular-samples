@@ -2,7 +2,8 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule, IgxDateTimeEditorModule, IgxDialogModule,
+    IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule,
+    IgxDatePickerModule, IgxDateTimeEditorModule, IgxDialogModule,
     IgxDropDownModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule,
     IgxSnackbarModule, IgxSwitchModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
 } from "igniteui-angular";
@@ -28,6 +29,7 @@ import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/dat
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { AutocompletePipeStartsWith, DatepickerSample9Component, PipeWithoutTownFrom
     } from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
+// tslint:disable-next-line: max-line-length
 import { DateТimeЕditorSample1Component } from "./datetimeeditor/datetimeeditor-sample-1/datetimeeditor-sample-1.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
 import { MonthpickerSample2Component } from "./monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";

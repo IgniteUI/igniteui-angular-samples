@@ -13,7 +13,7 @@ import {
 export class DateТimeЕditorSample1Component implements OnInit {
     public date = new Date();
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
 
     }
 }
