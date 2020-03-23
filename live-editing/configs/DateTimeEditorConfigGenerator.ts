@@ -1,7 +1,6 @@
 import { IgxDateTimeEditorDirective, IgxInputGroupModule } from "igniteui-angular";
 
 import { DateТimeЕditorSample1Component } from "../../src/app/scheduling/datetimeeditor/datetimeeditor-sample-1/datetimeeditor-sample-1.component";
-// import { DateТimeЕditorSample2Component } from "../../src/app/scheduling/datetimeeditor/datetimeeditor-sample-2/datetimeeditor-sample-2.component";
 
 import { Config } from "./core/Config";
 import { AppModuleConfig } from "./core/AppModuleConfig";
@@ -24,22 +23,6 @@ export class DateTimeEditorConfigGenerator implements IConfigGenerator {
                 shortenComponentPathBy: "/scheduling/datetimeeditor"
             })
         );
-
-        // date time editor sample 2
-        // configs.push(
-        //     new Config({
-        //         component: DateТimeЕditorSample2Component,
-        //         appModuleConfig: new AppModuleConfig({
-        //             imports: [
-        //                 DateТimeЕditorSample2Component,
-        //                 DateТimeЕditorSample2Component
-        //             ],
-        //             ngDeclarations: [DateТimeЕditorSample2Component],
-        //             ngImports: [IgxDateTimeEditorDirective]
-        //         }),
-        //         shortenComponentPathBy: "/scheduling/datetimeeditor"
-        //     })
-        // );
         return configs;
     }
 }

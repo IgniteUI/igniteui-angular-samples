@@ -22,8 +22,6 @@ import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/dat
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { DatepickerSample9Component } from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
 import { DateТimeЕditorSample1Component } from "./datetimeeditor/datetimeeditor-sample-1/datetimeeditor-sample-1.component";
-// import { DateТimeЕditorSample2Component } from "./datetimeeditor/datetimeeditor-sample-2/datetimeeditor-sample-2.component";
-
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
 import { MonthpickerSample2Component } from "./monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";
 import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
@@ -138,11 +136,6 @@ export const schedulingRoutes: Routes = [
         data: schedulingRoutesData["datetimeeditor-sample-1"],
         path: "datetimeeditor-sample-1"
     },
-    // {
-    //     component: DateТimeЕditorSample2Component,
-    //     data: schedulingRoutesData["datetimeeditor-sample-2"],
-    //     path: "datetimeeditor-sample-2"
-    // },
     {
         component: DatepickerDropdownComponent,
         data: schedulingRoutesData["datepicker-dropdown"],
