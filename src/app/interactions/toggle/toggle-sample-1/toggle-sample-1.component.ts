@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { IgxToggleDirective } from "igniteui-angular";
 
 @Component({
@@ -6,12 +6,9 @@ import { IgxToggleDirective } from "igniteui-angular";
   styleUrls: ["./toggle-sample-1.component.scss"],
   templateUrl: "./toggle-sample-1.component.html"
 })
-export class ToggleSample1Component implements OnInit {
+export class ToggleSample1Component {
 
   @ViewChild(IgxToggleDirective, { static: true }) public toggle: IgxToggleDirective;
-  constructor() { }
-
-  public ngOnInit() {}
 
   public toggleContent() {
     if (this.toggle.collapsed) {

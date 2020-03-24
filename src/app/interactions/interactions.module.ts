@@ -59,6 +59,7 @@ import { SliderTimeframeComponent } from "./slider/slider-timeframe/slider-timef
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
+import { ToggleSample4Component } from "./toggle/toggle-sample-4/toggle-sample-4.component";
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
@@ -100,6 +101,7 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         ToggleSample1Component,
         ToggleSample2Component,
         ToggleSample3Component,
+        ToggleSample4Component,
         TooltipRichComponent,
         TooltipSimpleComponent,
         OverlaySampleMain1Component,
