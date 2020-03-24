@@ -9,7 +9,7 @@ import {
 
 @Component({
   selector: "app-toggle",
-  styleUrls: ["./toggle.component.scss"],
+  styleUrls: ["./toggle-samples.scss"],
   templateUrl: "./toggle.component.html"
 })
 export class ToggleComponent {
