@@ -1,9 +1,9 @@
 import { IgxDateTimeEditorModule, IgxInputGroupModule } from "igniteui-angular";
 
-import { DateTimeBasicComponent } from "../../src/app/scheduling/datetimeeditor/datetime-basic/datetime-basic.component";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
+import { DateТimeBasic } from "../../src/app/scheduling/datetimeeditor/datetime-basic/datetime-basic.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 export class DateTimeEditorConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -11,13 +11,13 @@ export class DateTimeEditorConfigGenerator implements IConfigGenerator {
         // date time editor sample 1
         configs.push(
             new Config({
-                component: DateТimeBasicComponent,
+                component: DateТimeBasic,
                 appModuleConfig: new AppModuleConfig({
                     imports: [
-                        DateТimeBasicComponent,
+                        DateТimeBasic,
                         IgxInputGroupModule
                     ],
-                    ngDeclarations: [DateТimeBasicComponent],
+                    ngDeclarations: [DateТimeBasic],
                     ngImports: [IgxDateTimeEditorModule, IgxInputGroupModule]
                 }),
                 shortenComponentPathBy: "/scheduling/datetimeeditor"

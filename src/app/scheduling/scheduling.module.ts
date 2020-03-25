@@ -29,7 +29,7 @@ import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/dat
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { AutocompletePipeStartsWith, DatepickerSample9Component, PipeWithoutTownFrom
     } from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
-import { DateТimeBasicComponent } from "./datetimeeditor/datetime-basic/datetime-basic.component";
+import { DateТimeBasic } from "./datetimeeditor/datetime-basic/datetime-basic.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
 import { MonthpickerSample2Component } from "./monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";
 import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
@@ -66,7 +66,7 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         DatepickerSample7Component,
         DatepickerSample8Component,
         DatepickerSample9Component,
-        DateТimeBasicComponent,
+        DateТimeBasic,
         DatepickerDropdownComponent,
         TimePickerSample1Component,
         TimePickerSample2Component,
