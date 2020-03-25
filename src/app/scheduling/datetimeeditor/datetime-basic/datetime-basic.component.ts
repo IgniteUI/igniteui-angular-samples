@@ -6,11 +6,11 @@ import {
 } from "igniteui-angular";
 
 @Component({
-    selector: "datetimeeditor-sample-1",
-    styleUrls: ["./datetimeeditor-sample-1.component.scss"],
-    templateUrl: "./datetimeeditor-sample-1.component.html"
+    selector: "datetime-basic",
+    styleUrls: ["./datetime-basic.component.scss"],
+    templateUrl: "./datetime-basic.component.html"
 })
-export class DateТimeЕditorSample1Component implements OnInit {
+export class DateТimeBasicComponent implements OnInit {
     public date = new Date();
 
     public ngOnInit(): void {
