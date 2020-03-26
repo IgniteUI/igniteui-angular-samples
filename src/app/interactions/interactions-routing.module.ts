@@ -1,12 +1,10 @@
 // tslint:disable:no-string-literal
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { CustomDialogComponent } from "./dialog/custom-dialog/custom-dialog.component";
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogStylingSample } from "./dialog/dialog-styling-sample/dialog-styling-sample.component";
-import { DialogComponent } from "./dialog/dialog.component";
 import { DragDialogSampleComponent } from "./drag-drop/dialog-sample/drag-dialog-sample.component";
 import { EmailSampleComponent } from "./drag-drop/email-sample/email-sample.component";
 import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
@@ -60,11 +58,6 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
 
 export const interactionsRoutes: Routes = [
     {
-        component: DialogComponent,
-        data: interactionsRoutesData["dialog"],
-        path: "dialog"
-    },
-    {
         component: DialogSample1Component,
         data: interactionsRoutesData["dialog-sample-1"],
         path: "dialog-sample-1"
@@ -78,11 +71,6 @@ export const interactionsRoutes: Routes = [
         component: DialogSample3Component,
         data: interactionsRoutesData["dialog-sample-3"],
         path: "dialog-sample-3"
-    },
-    {
-        component: CustomDialogComponent,
-        data: interactionsRoutesData["custom-dialog-sample"],
-        path: "custom-dialog-sample"
     },
     {
         component: DialogStylingSample,
