@@ -1,10 +1,5 @@
 <div class="datetime-wrapper">
-        <igx-input-group>
-            <input
-                type="text"
-                igxInput
-                [igxDateTimeEditor]="'dd/MM/yyyy'"
-                [(ngModel)]="date"
-            />
-        </igx-input-group>
+    <igx-input-group>
+        <input type="text" igxInput [igxDateTimeEditor]="'dd/MM/yyyy'" [value]="date"/>
+    </igx-input-group>
 </div>

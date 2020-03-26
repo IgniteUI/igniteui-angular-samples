@@ -5,7 +5,6 @@ import { Component } from "@angular/core";
     styleUrls: ["./datetime-basic.component.scss"],
     templateUrl: "./datetime-basic.component.html"
 })
-export class DateТimeBasic {
+export class DateTimeBasicComponent {
     public date = new Date();
-
 }
