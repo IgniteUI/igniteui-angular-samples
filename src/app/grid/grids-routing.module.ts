@@ -72,6 +72,9 @@ import { GridToolbarStyleComponent } from "./grid-toolbar-style/grid-toolbar-sty
 import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
+import { GridColumnGroupSelectionComponent } from "./column-group-selection-sample/column-group-selection-sample.component";
+import { GridColumnSelectionComponent } from "./column-selection-sample/column-selection-sample.component";
+import { GridColumnSelectionStylesComponent } from "./column-selection-styles/column-selection-styles.component";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
@@ -519,6 +522,21 @@ export const gridsRoutes: Routes = [
         component: GridAllDataSummaryComponent,
         data: gridsRoutesData["grid-alldata-summaries"],
         path: "grid-alldata-summaries"
+    },
+    {
+        component: GridColumnSelectionComponent,
+        data: gridsRoutesData["grid-column-selection"],
+        path: "grid-column-selection"
+    },
+    {
+        component: GridColumnGroupSelectionComponent,
+        data: gridsRoutesData["grid-column-group-selection"],
+        path: "grid-column-group-selection"
+    },
+    {
+        component: GridColumnSelectionStylesComponent,
+        data: gridsRoutesData["grid-column-selection-styles"],
+        path: "grid-column-selection-styles"
     }
 ];
 
