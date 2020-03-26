@@ -1,17 +1,12 @@
-.wrapper { 
+.wrapper {
     margin: 20px;
 }
 
-.cursorHover:hover {
+.location:hover {
     cursor: pointer;
 }
 
-.card-wrapper {
-    max-width: 200px;
-    min-width: 120px;
-}
-
-.location {
+.map {
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -19,11 +14,12 @@
     width: 200px;
     height: 252px;
     background-image: url(assets/images/card/media/infragisticsMap.png);
+    border: 1px solid #D4D4D4;
 }
 
 .locationTooltip {
     width: 310px;
-    background-color: rgba(128, 128, 128, 0.7);
+    background-color: var(--igx-grays-700);
     padding: 3px;
     font-size: 13px;
 }
@@ -34,9 +30,9 @@
     align-items: center;
 }
 
-.locationIcon {
+.logo {
     margin-right: 10px;
     min-width: 25px;
     width: 45px;
-    height: 45px;    
+    height: 45px;
 }
