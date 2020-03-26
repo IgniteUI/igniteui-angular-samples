@@ -77,6 +77,7 @@ import { PlanetComponent } from "./grid-row-drag/planet/planet.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
 import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
 import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
+import { GridRowPinningSampleComponent } from "./grid-row-pinning/grid-row-pinning.component";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
@@ -140,6 +141,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridRemoteVirtualizationSampleComponent,
         PinningSampleComponent,
         PinningToolbarSampleComponent,
+        GridRowPinningSampleComponent,
         GridSelectionSampleComponent,
         GridSelectionTemplateExcelComponent,
         GridSelectionTemplateNumbersComponent,
