@@ -17,7 +17,6 @@ import { CalendarStylingSample } from "./calendar/calendar-styling-sample/calend
 import { CalendarViewsComponent } from "./calendar/calendar-views/calendar-views.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { CalendarMultiViewComponent } from "./calendar/multiview/multiview.component";
-import { DateTimeAdvancedComponent } from "./date-time/date-time-advanced";
 import { DatepickerDropdownComponent } from "./datepicker/datepicker-dropdown/datepicker-dropdown.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
@@ -29,6 +28,7 @@ import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/dat
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { AutocompletePipeStartsWith, DatepickerSample9Component, PipeWithoutTownFrom
     } from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
+import { DateTimeAdvancedComponent } from "./datetimeeditor/datetime-advanced/datetime-advanced";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
 import { MonthpickerSample2Component } from "./monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";
 import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";

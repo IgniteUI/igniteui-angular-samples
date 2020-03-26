@@ -1,16 +1,16 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxDateTimeEditorModule, IgxInputGroupModule } from "igniteui-angular";
-import { DateTimeAdvancedComponent } from "../../src/app/scheduling/date-time/date-time-advanced";
+import { DateTimeAdvancedComponent } from "../../src/app/scheduling/datetimeeditor/datetime-advanced/datetime-advanced";
 
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 
-export class MaskConfigGenerator implements IConfigGenerator {
+export class DateTimeEditorConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
-        // date-time advanced
+        // Date Time Advanced
         configs.push(new Config({
             component: DateTimeAdvancedComponent,
             appModuleConfig: new AppModuleConfig({
@@ -18,7 +18,7 @@ export class MaskConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [DateTimeAdvancedComponent],
                 ngImports: [IgxInputGroupModule, IgxDateTimeEditorModule]
             }),
-            shortenComponentPathBy: "/scheduling/date-time/"
+            shortenComponentPathBy: "/scheduling/datetimeeditor/"
         }));
 
         return configs;

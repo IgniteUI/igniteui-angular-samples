@@ -2,9 +2,9 @@ import { Component } from "@angular/core";
 import { DatePart } from "igniteui-angular";
 
 @Component({
-    selector: "app-date-time-advanced",
-    styleUrls: ["./date-time-advanced.scss"],
-    templateUrl: "./date-time-advanced.html"
+    selector: "app-datetime-advanced",
+    styleUrls: ["./datetime-advanced.scss"],
+    templateUrl: "./datetime-advanced.html"
 })
 
 export class DateTimeAdvancedComponent {

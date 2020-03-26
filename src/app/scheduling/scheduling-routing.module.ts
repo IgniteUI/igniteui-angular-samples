@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { DateTimeAdvancedComponent } from "../scheduling/date-time/date-time-advanced";
 import { CalendarSample1Component } from "./calendar/calendar-sample-1/calendar-sample-1.component";
 import { CalendarSample2Component } from "./calendar/calendar-sample-2/calendar-sample-2.component";
 import { CalendarSample3Component } from "./calendar/calendar-sample-3/calendar-sample-3.component";
@@ -22,6 +21,7 @@ import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/dat
 import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/datepicker-sample-7.component";
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { DatepickerSample9Component } from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
+import { DateTimeAdvancedComponent } from "./datetimeeditor/datetime-advanced/datetime-advanced";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
 import { MonthpickerSample2Component } from "./monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";
 import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
@@ -203,8 +203,8 @@ export const schedulingRoutes: Routes = [
     },
     {
         component: DateTimeAdvancedComponent,
-        data: schedulingRoutesData["date-time-advanced"],
-        path: "date-time-advanced"
+        data: schedulingRoutesData["datetime-advanced"],
+        path: "datetime-advanced"
     }
 ];
 

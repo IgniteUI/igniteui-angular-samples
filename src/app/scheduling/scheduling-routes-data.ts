@@ -18,6 +18,7 @@ export const schedulingRoutesData = {
     "datepicker-sample-7": { displayName: "Dropdown Datepicker Template", parentName: "Datepicker" },
     "datepicker-sample-8": { displayName: "Custom Action Buttons", parentName: "Datepicker" },
     "datepicker-sample-9": { displayName: "Range Datepicker", parentName: "Datepicker" },
+    "datetime-advanced": { displayName: "Date Time Advanced", parentName: "Date Time Editor" },
     "monthpicker-sample-1": { displayName: "Default Month Picker", parentName: "Monthpicker" },
     "monthpicker-sample-2": { displayName: "Month Picker with Format Options", parentName: "Monthpicker" },
     "monthpicker-sample-3": { displayName: "Localized Month Picker", parentName: "Monthpicker" },
@@ -30,7 +31,5 @@ export const schedulingRoutesData = {
     "timepicker-sample-6": { displayName: "Timepicker Input Group Template Dropdown", parentName: "Timepicker" },
     "timepicker-sample-7": { displayName: "Custom Action Buttons", parentName: "Timepicker" },
     "timepicker-sample-8": { displayName: "Timepicker Format", parentName: "Timepicker" },
-    "multiview-calendar": {displayName: "Multiview Calendar", parentName: "Calendar"},
-    "date-time-advanced": {displayName: "Date Time Advanced", parentName: "Date Time Editor"}
-
+    "multiview-calendar": {displayName: "Multiview Calendar", parentName: "Calendar"}
 };
