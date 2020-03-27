@@ -10,8 +10,8 @@ export class ToggleSample4Component {
     @ViewChild(IgxToggleDirective, { static: true }) public toggle: IgxToggleDirective;
 
     public offsetToggle() {
-        const deltaX: number = 30;
-        const deltaY: number = 30;
+        const deltaX = 30;
+        const deltaY = 30;
         this.toggle.setOffset(deltaX, deltaY);
     }
 }

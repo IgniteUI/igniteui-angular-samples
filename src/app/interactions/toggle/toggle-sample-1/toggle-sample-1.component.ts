@@ -8,7 +8,8 @@ import { IgxToggleDirective } from "igniteui-angular";
 })
 export class ToggleSample1Component {
 
-  @ViewChild(IgxToggleDirective, { static: true }) public toggle: IgxToggleDirective;
+  @ViewChild(IgxToggleDirective, { static: true })
+  public toggle: IgxToggleDirective;
 
   public toggleContent() {
     if (this.toggle.collapsed) {
