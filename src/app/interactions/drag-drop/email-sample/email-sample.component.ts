@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnInit, Renderer2 } from "@angular/core";
+import { ChangeDetectorRef, Component, Input, Renderer2 } from "@angular/core";
 
 @Component({
     selector: "app-email-sample",
@@ -6,7 +6,7 @@ import { ChangeDetectorRef, Component, Input, OnInit, Renderer2 } from "@angular
     styleUrls: ["./email-sample.component.scss"]
 })
 
-export class EmailSampleComponent implements OnInit {
+export class EmailSampleComponent {
 
     @Input()
     public ghostTemplate: any;
@@ -34,9 +34,6 @@ export class EmailSampleComponent implements OnInit {
         private cdr: ChangeDetectorRef,
         private renderer: Renderer2
     ) { }
-
-    public ngOnInit() {
-    }
 
     public toggleCheck(email: any, checkbox: any): void {
         this.emails.forEach(x => x.checked = false);
@@ -72,7 +69,7 @@ export class EmailSampleComponent implements OnInit {
         this.draggedElements = this.emails.filter(x => x.checked === true).length;
     }
 
-    public onGhostCreated(event: any): void {
+    public onGhostCreated(): void {
         this.cdr.detectChanges();
     }
 
