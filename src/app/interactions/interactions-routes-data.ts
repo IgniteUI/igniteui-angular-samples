@@ -29,6 +29,7 @@ export const interactionsRoutesData = {
     "toggle-sample-1": { displayName: "Toggle Content", parentName: "Toggle" },
     "toggle-sample-2": { displayName: "Automatic Toggle Actions", parentName: "Toggle" },
     "toggle-sample-3": { displayName: "Toggle Service Provider", parentName: "Toggle" },
+    "toggle-sample-4": { displayName: "Offset Toggle", parentName: "Toggle" },
     "tooltip-simple": { displayName: "Simple Tooltip", parentName: "Tooltip" },
     "tooltip-rich": { displayName: "Rich Tooltip", parentName: "Tooltip" },
     "tooltip-style": { displayName: "Tooltip Style", parentName: "Tooltip" },
