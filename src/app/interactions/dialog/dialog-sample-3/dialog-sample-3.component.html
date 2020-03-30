@@ -1,14 +1,13 @@
-<h4 class="sample-title">Custom Dialog</h4>
-<p class="sample-description">Sign in form.</p>
+<button igxButton="raised" igxRipple="white" (click)="form.open()">Show Custom Dialog</button>
 
-<button igxButton="raised" igxRipple="white" (click)="form.open()">Show Dialog</button>
+<igx-dialog #form [closeOnOutsideSelect]="true">
+    <igx-dialog-title>
+        <div class="dialog-container">
+            <igx-icon>vpn_key</igx-icon>
+            <div class="dialog-title">Sign In</div>
+        </div>
+    </igx-dialog-title>
 
-<igx-dialog #form title="Sign In"
-    leftButtonLabel="Cancel"
-    (onLeftButtonSelect)="form.close()"
-    (onRightButtonSelect)="signIn($event)"
-    rightButtonLabel="Sign In"
-    [closeOnOutsideSelect]="true">
     <form class="signInForm">
         <igx-input-group>
             <igx-prefix>
@@ -25,4 +24,9 @@
             <input igxInput id="password" type="password" />
         </igx-input-group>
     </form>
+
+    <div igxDialogActions>
+        <button igxButton (click)="form.close()">CANCEL</button>
+        <button igxButton (click)="form.close()">SIGN IN</button>
+    </div>
 </igx-dialog>
