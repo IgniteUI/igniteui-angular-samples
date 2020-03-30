@@ -11,7 +11,3 @@ $dark-tooltip: igx-tooltip-theme(
 :host {
     @include igx-css-vars($dark-tooltip);
 }
-
-.wrapper {
-    margin: 20px;
-}
