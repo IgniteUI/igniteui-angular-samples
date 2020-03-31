@@ -2,7 +2,7 @@
     <igx-advanced-filtering-dialog [grid]="treegrid1" class="advanced-dialog">
     </igx-advanced-filtering-dialog>
 
-    <igx-tree-grid #treegrid1 [data]="data" [autoGenerate]="false" height="400px" width="800px" [allowFiltering]="true"
+    <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [autoGenerate]="false" height="400px" width="800px" [allowFiltering]="true"
         primaryKey="ID" foreignKey="ParentID">
         <igx-column field="ID" header="Product ID" [dataType]="'string'" [sortable]="true" [movable]="true">
         </igx-column>

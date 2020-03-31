@@ -16,4 +16,13 @@
     background-color: #ffffff;
     align-items: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    .dark-theme & {
+        background-color: #111;
+    }
+
+    .custom-body & {
+        color: var(--igx-surface-500-contrast);
+        background-color: var(--igx-surface-500);
+    }
 }
