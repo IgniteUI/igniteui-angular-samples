@@ -20,7 +20,6 @@ import { OverlayPositionSample3Component } from "./overlay/overlay-positioning-3
 import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
 import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
 import { OverlayStylingComponent } from "./overlay/overlay-styling/overlay-styling.component";
-import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
@@ -50,6 +49,7 @@ import { SliderTimeframeComponent } from "./slider/slider-timeframe/slider-timef
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
+import { ToggleSample4Component } from "./toggle/toggle-sample-4/toggle-sample-4.component";
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
@@ -137,11 +137,6 @@ export const interactionsRoutes: Routes = [
         path: "slider-tick-labels-template"
     },
     {
-        component: RippleSample1Component,
-        data: interactionsRoutesData["ripple-sample-1"],
-        path: "ripple-sample-1"
-    },
-    {
         component: RippleSample2Component,
         data: interactionsRoutesData["ripple-sample-2"],
         path: "ripple-sample-2"
@@ -185,6 +180,11 @@ export const interactionsRoutes: Routes = [
         component: ToggleSample3Component,
         data: interactionsRoutesData["toggle-sample-3"],
         path: "toggle-sample-3"
+    },
+    {
+        component: ToggleSample4Component,
+        data: interactionsRoutesData["toggle-sample-4"],
+        path: "toggle-sample-4"
     },
     {
         component: TooltipSimpleComponent,
