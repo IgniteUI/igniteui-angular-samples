@@ -1,3 +1,5 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
 .section {
     flex-flow: row wrap;
     display: flex;
@@ -12,54 +14,13 @@
     width: 7rem;
 }
 
-.shadow{
-    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+h5 {
+    margin-bottom: 16px;
 }
-
-h5{
-    margin-bottom: 15px;
-}
-
-.igx-button--outlined, .igx-button--icon{
-    color: #217346;
-    background-color: white;
-}
-
-.igx-avatar--icon{
-    color: white;
-    background-color: #72da67;
-}
-
-@import '~igniteui-angular/lib/core/styles/themes/index';
 
 $custom-ripple-theme: igx-ripple-theme(
-  $color: #217346
+  $color: igx-color($default-palette, 'secondary', 200)
 );
-
-$black-color: #151515;
-$green-color: #217346;
-
-/* Custom Palette */
-
-// $custom-ripple-palette: igx-palette(
-//     $primary: $black-color,
-//     $secondary: $green-color
-// );
-
-// $custom-ripple-theme: igx-ripple-theme(
-//     $color: igx-color($custom-ripple-palette, "secondary", 500)
-// );
-
-/* Custom Schema */
-
-// $custom-ripple-schema: extend($_light-ripple, (
-//     color: (igx-color("secondary", 500))
-// ));
-//
-// $custom-ripple-theme: igx-ripple-theme(
-//     $palette: $custom-ripple-palette,
-//     $schema: $custom-ripple-schema
-// );
 
 :host {
     @include igx-css-vars($custom-ripple-theme);
