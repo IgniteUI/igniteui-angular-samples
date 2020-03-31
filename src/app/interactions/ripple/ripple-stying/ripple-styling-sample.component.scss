@@ -8,15 +8,6 @@
     min-width: 270px;
 }
 
-.sample-content {
-    flex-flow: column nowrap;
-}
-
-.button-sample {
-    display: flex;
-    flex-flow: row wrap;
-}
-
 .sample-button{
     width: 7rem;
 }
@@ -27,6 +18,16 @@
 
 h5{
     margin-bottom: 15px;
+}
+
+.igx-button--outlined, .igx-button--icon{
+    color: #217346;
+    background-color: white;
+}
+
+.igx-avatar--icon{
+    color: white;
+    background-color: #72da67;
 }
 
 @import '~igniteui-angular/lib/core/styles/themes/index';
