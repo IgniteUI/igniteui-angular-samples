@@ -7,12 +7,10 @@ import {
     IgxSliderModule, IgxSwitchModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
 import { LayoutsModule } from "../layouts/layouts.module";
-import { CustomDialogComponent } from "./dialog/custom-dialog/custom-dialog.component";
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogStylingSample } from "./dialog/dialog-styling-sample/dialog-styling-sample.component";
-import { DialogComponent } from "./dialog/dialog.component";
 import { DragDialogSampleComponent } from "./drag-drop/dialog-sample/drag-dialog-sample.component";
 import { EmailSampleComponent } from "./drag-drop/email-sample/email-sample.component";
 import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
@@ -59,6 +57,7 @@ import { SliderTimeframeComponent } from "./slider/slider-timeframe/slider-timef
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
+import { ToggleSample4Component } from "./toggle/toggle-sample-4/toggle-sample-4.component";
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
@@ -66,8 +65,6 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
 
 @NgModule({
     declarations: [
-        CustomDialogComponent,
-        DialogComponent,
         DialogSample1Component,
         DialogSample2Component,
         DialogSample3Component,
@@ -100,6 +97,7 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         ToggleSample1Component,
         ToggleSample2Component,
         ToggleSample3Component,
+        ToggleSample4Component,
         TooltipRichComponent,
         TooltipSimpleComponent,
         OverlaySampleMain1Component,
@@ -112,7 +110,6 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         OverlayScrollSample2Component,
         OverlayStylingComponent,
         MyDynamicCardComponent,
-        CustomDialogComponent,
         DialogStylingSample,
         TooltipStyleComponent
     ],

@@ -1,8 +1,6 @@
 // tslint:disable:object-literal-sort-keys
 
 export const interactionsRoutesData = {
-    "custom-dialog-sample": { displayName: "Customized Dialog", parentName: "Dialog" },
-    "dialog": { displayName: "Various Dialogs", parentName: "Dialog" },
     "dialog-sample-1": { displayName: "Completed Action Dialog", parentName: "Dialog" },
     "dialog-sample-2": { displayName: "Confirmation Dialog", parentName: "Dialog" },
     "dialog-sample-3": { displayName: "Sign-in form Dialog", parentName: "Dialog" },
@@ -30,6 +28,7 @@ export const interactionsRoutesData = {
     "toggle-sample-1": { displayName: "Toggle Content", parentName: "Toggle" },
     "toggle-sample-2": { displayName: "Automatic Toggle Actions", parentName: "Toggle" },
     "toggle-sample-3": { displayName: "Toggle Service Provider", parentName: "Toggle" },
+    "toggle-sample-4": { displayName: "Offset Toggle", parentName: "Toggle" },
     "tooltip-simple": { displayName: "Simple Tooltip", parentName: "Tooltip" },
     "tooltip-rich": { displayName: "Rich Tooltip", parentName: "Tooltip" },
     "tooltip-style": { displayName: "Tooltip Style", parentName: "Tooltip" },
