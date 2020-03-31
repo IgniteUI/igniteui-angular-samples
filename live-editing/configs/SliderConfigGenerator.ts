@@ -169,7 +169,6 @@ export class SliderConfigGenerator implements IConfigGenerator {
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
-
         return configs;
     }
 }
