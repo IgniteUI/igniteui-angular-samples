@@ -1,6 +1,7 @@
+<app-header></app-header>
 <div class="tp-app__inner">
     <!--  Master Backlog -->
-    <app-backlog class="tp-app__backlog"></app-backlog>
+<!--    <app-backlog class="tp-app__backlog"></app-backlog>-->
 
     <!-- Tasks Planner Grid  -->
     <app-grid-transactions class="tp-app__grid">
@@ -84,12 +85,11 @@
                     <span>Task Planner</span>
                 </div>
 
-                <button igxButton="raised" igxRipple igxRippleCentered="true" (click)="addTaskDialog.open()">CREATE ISSUE</button>
-
                 <button igxButton="outlined" class="button" [igxToggleAction]="editModeDropdown" [igxDropDownItemNavigation]="editModeDropdown">
                     {{ selectedEditMode }}
                     <igx-icon>arrow_drop_down</igx-icon>
                 </button>
+
                 <igx-drop-down #editModeDropdown [width]="'100px'" (onSelection)='onEditingModeChanged($event)'>
                     <igx-drop-down-item *ngFor="let item of editModes; let i = index" [selected]="isEditModeSelected(i)">
                         {{ item }}

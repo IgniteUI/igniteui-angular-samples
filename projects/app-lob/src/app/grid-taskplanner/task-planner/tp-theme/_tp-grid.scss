@@ -8,13 +8,15 @@ $tp-grid: igx-grid-theme(
     $row-border-color: igx-color($tp-palette, 'surface'),
     $row-odd-background: $row-background,
     $row-even-background: $row-background,
-    $row-selected-background: igx-color($tp-palette, 'primary'),
+    $row-selected-background: rgba(igx-color($tp-palette, 'primary', 600), .1),
+    $row-selected-hover-background: rgba(igx-color($tp-palette, 'primary', 600), .2),
+    $row-selected-text-color: $light-text,
 
     $group-row-background: $row-background,
     $group-row-selected-background: igx-color($tp-palette, 'primary', 600),
 
-    $cell-selected-background: #3b3b4c,
-    $cell-editing-background: #3b3b4c,
+    $cell-selected-background: $row-col-background,
+    $cell-editing-background: $row-col-background,
     $cell-edited-value-color: igx-color($tp-palette, 'secondary', 200),
 
     $drop-area-background: $row-background,

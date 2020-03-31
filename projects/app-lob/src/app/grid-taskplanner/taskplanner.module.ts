@@ -9,27 +9,33 @@ import {
     IgxDialogModule,
     IgxDividerModule,
     IgxGridModule,
+    IgxIconModule,
     IgxInputGroupModule,
     IgxListModule,
     IgxMaskModule,
+    IgxNavbarModule,
     IgxSwitchModule,
     IgxTabsModule,
     IgxToastModule
 } from "igniteui-angular";
 
 import { TasksDataService } from "../services/tasks.service";
+import { BacklogComponent } from "./task-planner/backlog/backlog.component";
+import { HeaderComponent } from "./task-planner/header/header.component";
 import { TaskPlannerComponent } from "./task-planner/taskplanner.component";
 import { GridWithTransactionsComponent } from "./task-planner/transaction.component";
 import { TaskPlannerRoutingModule } from "./taskplanner-routing.module";
-import { BacklogComponent } from './task-planner/backlog/backlog.component';
 
 @NgModule({
     declarations: [
         TaskPlannerComponent,
         GridWithTransactionsComponent,
-        BacklogComponent
+        BacklogComponent,
+        HeaderComponent
     ],
     imports: [
+        IgxIconModule,
+        IgxNavbarModule,
         IgxButtonModule,
         IgxDividerModule,
         IgxTabsModule,
@@ -50,4 +56,3 @@ import { BacklogComponent } from './task-planner/backlog/backlog.component';
     providers: [TasksDataService]
 })
 export class TaskPlannerModule {}
-
