@@ -47,6 +47,13 @@
             background: transparent;
             transition: background .15s $ease-out-quad;
 
+            &.drag-enter {
+                /* IE fallback color */
+                background: igx-color($default-palette, 'secondary', 100);
+                /* Default color */
+                background: var(--igx-secondary-100);
+            }
+
             &:hover {
                 /* IE fallback color */
                 background: igx-color($default-palette, 'grays', 100);

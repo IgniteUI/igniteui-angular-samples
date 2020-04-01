@@ -57,11 +57,11 @@ export class EmailSampleComponent {
     }
 
     public enterDropZone(event: any): void {
-        this.renderer.addClass(event.owner.element.nativeElement, "mailboxItem_dragEnter");
+        this.renderer.addClass(event.owner.element.nativeElement, "drag-enter");
     }
 
     public leaveDropZone(event: any): void {
-        this.renderer.removeClass(event.owner.element.nativeElement, "mailboxItem_dragEnter");
+        this.renderer.removeClass(event.owner.element.nativeElement, "drag-enter");
     }
 
     public onDragStart(event: any): void {
