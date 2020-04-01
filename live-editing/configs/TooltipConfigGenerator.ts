@@ -1,6 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxIconModule, IgxSliderModule,
-    IgxSwitchModule, IgxTooltipModule, IgxToggleModule } from "igniteui-angular";
+import { IgxAvatarModule, IgxIconModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
 import { TooltipRichComponent } from "../../src/app/interactions/tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "../../src/app/interactions/tooltip/tooltip-simple/tooltip-simple.component";
 import { TooltipStyleComponent } from "../../src/app/interactions/tooltip/tooltip-style/tooltip-style.component";
@@ -16,9 +15,13 @@ export class TooltipConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: TooltipSimpleComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxAvatarModule, IgxTooltipModule, IgxSwitchModule, IgxSliderModule, TooltipSimpleComponent],
+                imports: [
+                    IgxAvatarModule,
+                    IgxTooltipModule,
+                    TooltipSimpleComponent
+                ],
                 ngDeclarations: [TooltipSimpleComponent],
-                ngImports: [IgxAvatarModule, IgxTooltipModule, IgxSwitchModule, IgxSliderModule]
+                ngImports: [IgxAvatarModule, IgxTooltipModule]
             }),
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
@@ -27,10 +30,16 @@ export class TooltipConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: TooltipRichComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxAvatarModule, IgxTooltipModule, IgxCardModule, IgxIconModule,
-                    IgxButtonModule, TooltipRichComponent],
+                imports: [
+                    IgxAvatarModule,
+                    IgxTooltipModule,
+                    IgxIconModule,
+                    TooltipRichComponent],
                 ngDeclarations: [TooltipRichComponent],
-                ngImports: [IgxAvatarModule, IgxTooltipModule, IgxCardModule, IgxIconModule, IgxButtonModule]
+                ngImports: [
+                    IgxAvatarModule,
+                    IgxTooltipModule,
+                    IgxIconModule]
             }),
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
@@ -39,9 +48,18 @@ export class TooltipConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: TooltipStyleComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxAvatarModule, IgxTooltipModule, IgxToggleModule, TooltipStyleComponent],
+                imports: [
+                    IgxAvatarModule,
+                    IgxTooltipModule,
+                    IgxToggleModule,
+                    TooltipStyleComponent
+                ],
                 ngDeclarations: [TooltipStyleComponent],
-                ngImports: [IgxAvatarModule, IgxTooltipModule, IgxToggleModule]
+                ngImports: [
+                    IgxAvatarModule,
+                    IgxTooltipModule,
+                    IgxToggleModule
+                ]
             }),
             shortenComponentPathBy: "/interactions/tooltip/"
         }));

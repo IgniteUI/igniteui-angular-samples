@@ -20,7 +20,6 @@ import { OverlayPositionSample3Component } from "./overlay/overlay-positioning-3
 import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
 import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
 import { OverlayStylingComponent } from "./overlay/overlay-styling/overlay-styling.component";
-import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
@@ -142,11 +141,6 @@ export const interactionsRoutes: Routes = [
         component: AppSliderStylingComponent,
         data: interactionsRoutesData["slider-styling-sample"],
         path: "slider-styling-sample"
-    },
-    {
-        component: RippleSample1Component,
-        data: interactionsRoutesData["ripple-sample-1"],
-        path: "ripple-sample-1"
     },
     {
         component: RippleSample2Component,
