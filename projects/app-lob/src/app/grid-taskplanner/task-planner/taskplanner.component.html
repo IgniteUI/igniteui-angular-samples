@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header (messageToEmit)="openAddTaskDialog()"></app-header>
 <div class="tp-app__inner">
     <!--  Master Backlog -->
 <!--    <app-backlog class="tp-app__backlog"></app-backlog>-->
@@ -84,6 +84,8 @@
                     <img class="tp-app__grid-logo" src="https://image.flaticon.com/icons/svg/1212/1212594.svg" alt="">
                     <span>Task Planner</span>
                 </div>
+
+<!--                <button igxButton="raised" igxRipple igxRippleCentered="true" (click)="addTaskDialog.open()">CREATE ISSUE</button>-->
 
                 <button igxButton="outlined" class="button" [igxToggleAction]="editModeDropdown" [igxDropDownItemNavigation]="editModeDropdown">
                     {{ selectedEditMode }}

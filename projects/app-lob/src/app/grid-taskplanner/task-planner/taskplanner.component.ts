@@ -53,7 +53,6 @@ export interface ITask {
     host: {class: "tp-app"}
 })
 export class TaskPlannerComponent implements OnInit {
-
     @ViewChild("tasksGrid", { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
     @ViewChild("editModeDropdown", { read: IgxDropDownComponent, static: true }) public editModeDropdown: IgxDropDownComponent;
     @ViewChild("legend", { static: true }) public legend: IgxLegendComponent;
@@ -118,7 +117,6 @@ export class TaskPlannerComponent implements OnInit {
             return acc;
         }, []);
     }
-
 
     public isDone = (rowData: any, columnKey: any): boolean => {
         return rowData[columnKey] === "Done";
@@ -190,6 +188,10 @@ export class TaskPlannerComponent implements OnInit {
         { field: "hours_spent", header: "Hours Spent", width: "120px", dataType: "number", resizable: true, sortable: false, filterable: false, editable: true, columnGroup: true, formatter: this.formatHours, cellClasses: this.delayedClasses },
         { field: "priority", header: "Priority", width: "125px", dataType: "string", resizable: true, sortable: true, filterable: true, editable: true, cellClasses: this.priorityClasses }
     ];
+
+    public openAddTaskDialog() {
+        this.addTaskDialog.open();
+    }
 
     constructor(private dataService: TasksDataService) {  }
 
