@@ -27,7 +27,8 @@
             [class.invisible]="item.id === 'dummy'"
             id="{{item.id}}"
             [attr.data-state]="item.state"
-            [hideBaseOnDrag]="true"
+            (ghostCreate)="item.hide = true"
+            [style.visibility]='item.hide ? "hidden" : "visible"'
             [dragTolerance]="0"
             [ghostClass]="'drag-ghost'">
                 <igx-card-header>
@@ -69,7 +70,8 @@
             [class.invisible]="item.id === 'dummy'"
             id="{{item.id}}"
             [attr.data-state]="item.state"
-            [hideBaseOnDrag]="true"
+            (ghostCreate)="item.hide = true"
+            [style.visibility]='item.hide ? "hidden" : "visible"'
             [dragTolerance]="0"
             [ghostClass]="'drag-ghost'">
                 <igx-card-header>
@@ -111,7 +113,8 @@
             [class.invisible]="item.id === 'dummy'"
             id="{{item.id}}"
             [attr.data-state]="item.state"
-            [hideBaseOnDrag]="true"
+            (ghostCreate)="item.hide = true"
+            [style.visibility]='item.hide ? "hidden" : "visible"'
             [dragTolerance]="0"
             [ghostClass]="'drag-ghost'">
                 <igx-card-header>

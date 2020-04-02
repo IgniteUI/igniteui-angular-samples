@@ -158,6 +158,7 @@ export class KanbanSampleComponent implements OnInit {
                 this[dropListState].push(this.dragObj);
             }
         }
+        this.dragObj.hide = false;
         this.dragObj = null;
         // The default browser drag behavior should be cancelled
         event.cancel = true;
