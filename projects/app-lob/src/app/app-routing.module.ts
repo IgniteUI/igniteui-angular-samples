@@ -43,10 +43,10 @@ export const samplesRoutes: Routes = [
         path: "hierarchical-grid"
     },
     {
-        data: ["GridDynamicChartDataModule"],
-        loadChildren: () => import("./grid-dynamic-chart-data/grid-dynamic-chart-data.module")
-        .then(m => m.GridDynamicChartDataModule),
-        path: "grid-dynamic-chart-data"
+        data: ["GridDataAnalysisModule"],
+        loadChildren: () => import("./grid-data-analysis/grid-data-analysis.module")
+        .then(m => m.GridDataAnalysisModule),
+        path: "grid-data-analysis"
     }
 ];
 export const appRoutes: Routes = [
