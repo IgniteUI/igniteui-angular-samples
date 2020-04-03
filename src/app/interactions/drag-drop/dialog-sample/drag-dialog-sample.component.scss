@@ -1,45 +1,38 @@
-.dialog-container {
-    display: flex;
-    flex-direction: row;
-}
-.dialogHandle {
-    cursor: move;
-    user-select: none;
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    z-index: 10;
-}
-.igx-dialog {
-    width: 280px;
-    height: 148px;
-    position: relative;
-}
-div.igx-dialog__window {
-    height: 100%
-}
-div.dialogContainer {
-    margin-top: 20px;
-    margin-left: 20px;
-    color: var(--igx-surface-500-contrast);
-}
-.dialog-title {
-	width: 229px;
-	height: 34px;
-	font-family: Titillium Web;
-	font-weight: 600;
-	font-style: normal;
-	font-size: 20px;
-	letter-spacing: 0.15px;
-	text-align: left;
-    vertical-align: center;
-}
-.dialog-content {
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+@include igx-dialog(
+    igx-dialog-theme(
+        $palette: $default-palette,
+        $schema: $light-schema
+    )
+);
+
+@include igx-dialog-typography($default-type-scale);
+
+:host {
     display: block;
-    margin-top: 20px;
-    font-family: Titillium Web;
-	font-weight: 400;
-	font-style: normal;
-	font-size: 16px;
-    letter-spacing: 0.44px;
+    margin: 16px;
+
+    @include b(dialog) {
+        @extend %igx-dialog-window;
+
+        display: flex;
+        flex-direction: column;
+        max-width: rem(280px);
+
+        @include e(icon) {
+            position: absolute;
+            right: rem(24px);
+            top: rem(24px);
+            cursor: move;
+        }
+
+        @include e(title) {
+            @extend %igx-dialog-title;
+        }
+
+        @include e(content) {
+            @extend %igx-dialog-content;
+        }
+    }
 }
