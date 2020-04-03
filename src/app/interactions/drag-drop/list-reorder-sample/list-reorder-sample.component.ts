@@ -9,8 +9,7 @@ import {
     IDragBaseEventArgs,
     IDragMoveEventArgs,
     IgxDragDirective,
-    IgxDragLocation,
-    IgxListModule
+    IgxDragLocation
 } from "igniteui-angular";
 
 @Component({
@@ -41,14 +40,14 @@ export class ListReorderSampleComponent {
         return this.dragDirs.find((item) => item.data.id === id);
     }
 
-    private onDragStart(event, dragIndex) {
+    public onDragStart(event: IDragBaseEventArgs, dragIndex: number) {
         // Record the current index as basis for moving up/down.
         this.newIndex = dragIndex;
         // Sets specific class when dragging.
         event.owner.data.dragged = true;
     }
 
-    private onDragEnd(event: IDragBaseEventArgs, itemIndex) {
+    public onDragEnd(event: IDragBaseEventArgs, itemIndex: number) {
         if (this.newIndex !== null) {
             // When we have moved the dragged element up/down, animate it to its new location.
             const moveDown = this.newIndex > itemIndex;
@@ -67,7 +66,7 @@ export class ListReorderSampleComponent {
         }
     }
 
-    private onTransitioned(event: IDragBaseEventArgs, itemIndex) {
+    public onTransitioned(event: IDragBaseEventArgs, itemIndex: number) {
         // We can have other items transitioned when they move to free up space where the dragged element would be.
         if (event.owner.data.dragged && this.newIndex != null && this.newIndex !== itemIndex) {
             // If the element finished transitioning is the one were dragging,
@@ -80,7 +79,7 @@ export class ListReorderSampleComponent {
         event.owner.data.dragged = false;
     }
 
-    private onDragMove(event: IDragMoveEventArgs, itemIndex) {
+    public onDragMove(event: IDragMoveEventArgs, itemIndex: number) {
         const containerPosY = this.listContainer.nativeElement.getBoundingClientRect().top;
         // Relative position of the dragged element to the list container.
         const relativePosY = event.nextPageY - containerPosY;
@@ -116,7 +115,7 @@ export class ListReorderSampleComponent {
         this.newIndex = newIndex;
     }
 
-    private shiftElements(draggedIndex, targetIndex) {
+    private shiftElements(draggedIndex: number, targetIndex: number) {
         // Move the dragged element in DOM to the new position.
         const movedElem = this.employees.splice(draggedIndex, 1);
         this.employees.splice(targetIndex, 0, movedElem[0]);

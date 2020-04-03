@@ -1,116 +1,99 @@
 @import "~igniteui-angular/lib/core/styles/themes/index";
 
-.mailbox {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-    display: flex;
-    flex-direction: row;
-	font-weight: 400;
-    font-style: normal;
-    /* Clear default theming */
-    background: var(--igx-banner-banner-background);
-}
-.flexlist {
-    display: flex;
-    flex-direction: column;
-}
-.igx-list__item-content {
-    padding: 0.1rem 1rem;
-}
-.folders {
-    igx-list-item {
-        letter-spacing: 0.15px;
-        width: 13rem;
-        height: 3rem;
-        overflow: hidden;
-        /* IE fallback color */
-        background: igx-color($default-palette, 'grays', 200);
-        /* Default color */
-        background: var(--igx-grays-200);
-        cursor: pointer;
-        width: 13rem;
-        &:hover {
-            /* IE fallback color */
-            background: igx-color($default-palette, 'grays', 100);
-            /* Default color */
-            background: var(--igx-grays-100);
-        }
-        &:active {
-            /* IE Fallback color */
-            background: igx-color($default-palette, 'grays', 50);
-            /* Default color */
-            background: var(--igx-grays-50);
-        }
-        igx-icon {
-            margin-left: 16px;
-            margin-right: 28px;
-        }
-        &:nth-child(5) {
-            igx-icon {
-                color: #af1159;
-            }
-        }
-        &:nth-child(6) {
-            igx-icon {
-                color: #0071bf;
-            }
-        }
-        &:nth-child(7) {
-            igx-icon {
-                color: #4eb862;
-            }
-        }
-    }
-}
-.emails-container {
-    width: 760px;
-}
 
-.mailboxItem_dragEnter {
-    /* IE Fallback */
-    background-color: #ea87b4 !important;
-    /* Default color */
-    color: var(--igx-secondary-100-contrast);
-    background: var(--igx-secondary-100) !important;
-}
-
-.email-checked, .email-checked:hover {
-    /* IE Fallback */
-    background-color: #ea87b4;
-    /* Default color */
-    color: var(--igx-secondary-100-contrast);
-    background: var(--igx-secondary-100);
-    -webkit-transition: background .1s ease-out;
-    -moz-transition: background .1s ease-out;
-    -o-transition: background .1s ease-out;
-    transition: background .1s ease-out;
-}
-
-.dragGhost {
-    width: 173px;
-    display: -ms-flexbox;
+.drag-ghost {
+    position: relative;
     display: flex;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: start;
     justify-content: flex-start;
+    width: rem(180px);
+    color: var(--igx-secondary-200-contrast);
+    font-size: rem(13px);
+    padding: rem(8px);
+    border-radius: rem(4px);
     /* IE fallback */
     background-color: #e41c77;
     /* Default color */
-    background: var(--igx-secondary-500);
-    color: var(--igx-secondary-500-contrast);
-    font-size: 0.8em;
-    padding: 5px;
-    position: relative;
+    background: var(--igx-secondary-200);
 
-    & igx-icon {
-        margin: 0 0.5rem;
+    igx-icon {
+        margin-right: rem(8px);
     }
+}
+
+:host {
+    display: flex;
+    user-select: none;
+	font-weight: 400;
+    font-style: normal;
+    height: 100%;
+
+    .folders {
+        width: rem(200px);
+        padding: 8px;
+        /* IE fallback color */
+        background: igx-color($default-palette, 'grays', 50);
+        /* Default color */
+        background: var(--igx-grays-50);
+        border: none;
+
+        igx-icon {
+            margin: 0;
+        }
+
+        igx-list-item {
+            cursor: pointer;
+            border-radius: 4px;
+            background: transparent;
+            transition: background .15s $ease-out-quad;
+
+            &.drag-enter {
+                /* IE fallback color */
+                background: igx-color($default-palette, 'secondary', 100);
+                /* Default color */
+                background: var(--igx-secondary-100);
+            }
+
+            &:hover {
+                /* IE fallback color */
+                background: igx-color($default-palette, 'grays', 100);
+                /* Default color */
+                background: var(--igx-grays-100);
+            }
+
+            &:nth-child(5) {
+                igx-icon {
+                    color: #af1159;
+                }
+            }
+
+            &:nth-child(6) {
+                igx-icon {
+                    color: #0071bf;
+                }
+            }
+
+            &:nth-child(7) {
+                igx-icon {
+                    color: #4eb862;
+                }
+            }
+        }
+    }
+
+    .emails {
+        flex-grow: 1;
+        border: none;
+        border-radius: 0;
+    }
+
+    .email-checked {
+        /* IE Fallback */
+        background-color: #ea87b4;
+        /* Default color */
+        color: var(--igx-secondary-100-contrast);
+        background: var(--igx-secondary-100);
+        transition: background .1s ease-out;
+    }
+
 }
