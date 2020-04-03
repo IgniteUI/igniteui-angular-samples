@@ -41,6 +41,7 @@ import { SliderSample6Component } from "./slider/slider-sample-6/slider-sample-6
 import {
     SliderSecondaryTicksMirrorComponent
 } from "./slider/slider-secondary-ticks-mirror/slider-secondary-ticks-mirror.component";
+import { AppSliderStylingComponent } from "./slider/slider-styling-sample/app-slider-styling.component";
 import { TickLabelsTemplateComponent } from "./slider/slider-tick-labels-template/tick-labels-template.component";
 import {
     SliderTicksBottomtotopLabelsComponent
@@ -135,6 +136,11 @@ export const interactionsRoutes: Routes = [
         component: TickLabelsTemplateComponent,
         data: interactionsRoutesData["slider-tick-labels-template"],
         path: "slider-tick-labels-template"
+    },
+    {
+        component: AppSliderStylingComponent,
+        data: interactionsRoutesData["slider-styling-sample"],
+        path: "slider-styling-sample"
     },
     {
         component: RippleSample2Component,

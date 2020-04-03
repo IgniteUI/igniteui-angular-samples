@@ -1,3 +1,13 @@
 .container {
-    margin: 55px 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    max-width: 300px;
+    width: 100%;
+}
+
+.sample-center {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }

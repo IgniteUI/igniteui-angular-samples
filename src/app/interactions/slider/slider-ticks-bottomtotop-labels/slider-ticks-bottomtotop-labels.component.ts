@@ -9,10 +9,6 @@ import { IgxSliderType, TickLabelsOrientation } from "igniteui-angular";
 export class SliderTicksBottomtotopLabelsComponent {
     public type: IgxSliderType = IgxSliderType.RANGE;
     public labelsOrientation = TickLabelsOrientation.BottomToTop;
-
-    public priceRange: PriceRange = new PriceRange(20, 40);
 }
 
-export class PriceRange {
-    constructor(public lower: number, public upper: number) {}
-}
+export class PriceRange {}

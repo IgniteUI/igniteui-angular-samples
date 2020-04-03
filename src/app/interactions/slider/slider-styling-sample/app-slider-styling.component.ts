@@ -2,11 +2,11 @@ import { Component, ViewChild } from "@angular/core";
 import { IgxSliderComponent, TicksOrientation} from "igniteui-angular";
 
 @Component({
-    selector: "app-slider-bottom-ticks",
-    styleUrls: ["./slider-secondary-ticks-mirror.component.scss"],
-    templateUrl: "./slider-secondary-ticks-mirror.component.html"
+    selector: "app-slider-styling",
+    styleUrls: ["./app-slider-styling.component.scss"],
+    templateUrl: "./app-slider-styling.component.html"
 })
-export class SliderSecondaryTicksMirrorComponent {
+export class AppSliderStylingComponent {
     @ViewChild(IgxSliderComponent, { static: true })
     public slider: IgxSliderComponent;
     public ticksOrientation = TicksOrientation.Mirror;
