@@ -74,6 +74,7 @@ import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolb
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
+import { HierarchicalGridColumnGroupSelectionComponent } from './column-group-selection/hierarchical-grid-column-group-selection.component';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -401,6 +402,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HierarchicalGridColumnSelectionComponent,
         data: hierarchicalGridRoutesData["column-selection"],
         path: "column-selection"
+    },
+    {
+        component: HierarchicalGridColumnGroupSelectionComponent,
+        data: hierarchicalGridRoutesData["column-group-selection"],
+        path: "column-group-selection"
     }
 ];
 
