@@ -2,6 +2,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
+import { HierarchicalGridColumnGroupSelectionComponent } from "./column-group-selection/hierarchical-grid-column-group-selection.component";
+import { HGridColumnSelectionStylesComponent } from "./column-selection-styles/hierarchical-grid-column-selection-styles.component";
 import { HierarchicalGridColumnSelectionComponent } from "./column-selection/hierarchical-grid-column-selection.component";
 import { HGridAdvancedFilteringStyleComponent } from "./hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
 import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
@@ -74,7 +76,6 @@ import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolb
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
-import { HierarchicalGridColumnGroupSelectionComponent } from './column-group-selection/hierarchical-grid-column-group-selection.component';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -407,6 +408,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HierarchicalGridColumnGroupSelectionComponent,
         data: hierarchicalGridRoutesData["column-group-selection"],
         path: "column-group-selection"
+    },
+    {
+        component: HGridColumnSelectionStylesComponent,
+        data: hierarchicalGridRoutesData["column-selection-styles"],
+        path: "column-selection-styles"
     }
 ];
 

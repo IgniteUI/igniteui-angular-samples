@@ -58,5 +58,6 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-allData-summary": {displayName: "HGrid All Data Custom Summaries", parentName: "Hierarchical Grid"},
     "hierarchical-grid-sample-right-pinning": { displayName: "Hierarchical Grid Right Side Pinning", parentName: "Hierarchical Grid" },
     "column-selection": { displayName: "HGrid Column Selection", parentName: "Hierarchical Grid" },
-    "column-group-selection": { displayName: "HGrid Column Group Selection", parentName: "Hierarchical Grid" }
+    "column-group-selection": { displayName: "HGrid Column Group Selection", parentName: "Hierarchical Grid" },
+    "column-selection-styles": { displayName: "HGrid Column Selection Styles", parentName: "Hierarchical Grid" }
 };

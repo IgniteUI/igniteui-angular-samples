@@ -6,6 +6,7 @@ import { FormsModule } from "@angular/forms";
 import { IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
 import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 import { HierarchicalGridColumnGroupSelectionComponent } from "./column-group-selection/hierarchical-grid-column-group-selection.component";
+import { HGridColumnSelectionStylesComponent } from "./column-selection-styles/hierarchical-grid-column-selection-styles.component";
 import { HierarchicalGridColumnSelectionComponent } from "./column-selection/hierarchical-grid-column-selection.component";
 import { HGridAdvancedFilteringStyleComponent } from "./hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
 import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
@@ -128,7 +129,8 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridAllDataSummaryComponent,
         HierarchicalGridRightPinningSampleComponent,
         HierarchicalGridColumnSelectionComponent,
-        HierarchicalGridColumnGroupSelectionComponent
+        HierarchicalGridColumnGroupSelectionComponent,
+        HGridColumnSelectionStylesComponent
     ],
     imports: [
         CommonModule,
