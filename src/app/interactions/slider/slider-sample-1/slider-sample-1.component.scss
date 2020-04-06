@@ -1,8 +1,23 @@
-.container {
-    margin: 30px 20px;
+.sample-center {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    max-width: 500px;
+}
+
 .wrapper {
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+    > * {
+        width: 100%;
+        margin-left: 8px;
+        &:first-of-type {
+            margin-left: 0;
+        }
+    }
 }
