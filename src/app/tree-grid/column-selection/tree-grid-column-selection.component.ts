@@ -14,14 +14,12 @@ export class TreeGridColumnSelectionComponent implements OnInit, AfterViewInit {
     { field: "ID",  selectable: true },
     { field: "Name", selectable: true },
     { field: "UnitPrice",  selectable: false },
-    { field: "AddedDate",  selectable: true },
+    { field: "AddedDate",  selectable: true, formatter: this.formatDate },
     { field: "Discontinued", selectable: false}
     ];
 
   @ViewChild(IgxTreeGridComponent)
   public tGrid: IgxTreeGridComponent;
-
-  constructor() { }
 
   public ngOnInit(): void {
       this.data = FOODS_DATA();

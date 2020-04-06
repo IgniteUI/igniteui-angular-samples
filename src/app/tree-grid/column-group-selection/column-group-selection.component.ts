@@ -13,8 +13,6 @@ export class TreeGridColumnGroupSelectionComponent implements OnInit {
    public treeGrid: IgxTreeGridComponent;
    public data;
 
-   constructor() { }
-
    public ngOnInit(): void {
     this.data = generateEmployeeDetailedFlatData();
     this.treeGrid.selectColumns(["ID", "Title", "City"]);
