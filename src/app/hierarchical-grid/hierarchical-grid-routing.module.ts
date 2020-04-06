@@ -2,6 +2,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
+import { HierarchicalGridColumnSelectionComponent } from "./column-selection/hierarchical-grid-column-selection.component";
 import { HGridAdvancedFilteringStyleComponent } from "./hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
 import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridAllDataSummaryComponent } from "./hierarchical-grid-allData-summary/hierarchical-grid-allData-summary.component";
@@ -395,6 +396,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HierarchicalGridRightPinningSampleComponent,
         data: hierarchicalGridRoutesData["hierarchical-grid-sample-right-pinning"],
         path: "hierarchical-grid-sample-right-pinning"
+    },
+    {
+        component: HierarchicalGridColumnSelectionComponent,
+        data: hierarchicalGridRoutesData["column-selection"],
+        path: "column-selection"
     }
 ];
 
