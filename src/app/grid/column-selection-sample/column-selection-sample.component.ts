@@ -1,5 +1,5 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
+import { AfterViewInit, Component, OnInit, ViewChild} from "@angular/core";
+import {IgxGridComponent, IgxSelectComponent } from "igniteui-angular";
 import { DATA } from "../../data/customers";
 
 @Component({
@@ -7,18 +7,21 @@ import { DATA } from "../../data/customers";
   templateUrl: "./column-selection-sample.component.html",
   styleUrls: ["./column-selection-sample.component.scss"]
 })
-export class GridColumnSelectionComponent {
+export class GridColumnSelectionComponent implements OnInit, AfterViewInit {
   public data: any[];
+  public columnSelectionType = "single";
 
   @ViewChild(IgxGridComponent)
   public grid: IgxGridComponent;
 
-  constructor() {
-    this.data = DATA;
+  @ViewChild(IgxSelectComponent)
+  public select: IgxSelectComponent;
+
+  public ngOnInit() {
+      this.data = DATA;
   }
 
   public ngAfterViewInit() {
-    this.grid.getColumnByName("PostalCode").selected = true;
     this.grid.getColumnByName("CompanyName").selected = true;
   }
 }

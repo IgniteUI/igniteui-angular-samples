@@ -88,7 +88,7 @@ export const gridsRoutesData = {
     "grid-collapsible-groups": { displayName: "Grid Collapsible Column Groups", parentName: "Grid"},
     "grid-alldata-summaries": {displayName: "Grid AllData Summaries", parentName: "Grid"},
     "grid-sample-right-pinning": { displayName: "Right Pinning", parentName: "Grid" },
-    "grid-column-selection": { displayName: "Column Selection", parentName: "Grid" },
-    "grid-column-group-selection": { displayName: "Column Group Selection", parentName: "Grid" },
-    "grid-column-selection-styles": { displayName: "Column Selection Styles", parentName: "Grid" }
+    "column-selection": { displayName: "Column Selection", parentName: "Grid" },
+    "column-group-selection": { displayName: "Column Group Selection", parentName: "Grid" },
+    "column-selection-styles": { displayName: "Column Selection Styles", parentName: "Grid" }
 };

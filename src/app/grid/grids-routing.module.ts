@@ -525,18 +525,18 @@ export const gridsRoutes: Routes = [
     },
     {
         component: GridColumnSelectionComponent,
-        data: gridsRoutesData["grid-column-selection"],
-        path: "grid-column-selection"
+        data: gridsRoutesData["column-selection"],
+        path: "column-selection"
     },
     {
         component: GridColumnGroupSelectionComponent,
-        data: gridsRoutesData["grid-column-group-selection"],
-        path: "grid-column-group-selection"
+        data: gridsRoutesData["column-group-selection"],
+        path: "column-group-selection"
     },
     {
         component: GridColumnSelectionStylesComponent,
-        data: gridsRoutesData["grid-column-selection-styles"],
-        path: "grid-column-selection-styles"
+        data: gridsRoutesData["column-selection-styles"],
+        path: "column-selection-styles"
     }
 ];
 

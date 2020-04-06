@@ -1,9 +1,11 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
 $custom-grid-theme: igx-grid-theme(
-    $row-selected-background: steelblue,
-    $row-selected-text-color: gold,
-    $row-selected-hover-background: steelblue
+    $row-selected-background: #011627,
+    $row-selected-text-color: #ECAA53,
+    $row-selected-hover-background: #011627
 );
 
-@include igx-css-vars($custom-grid-theme);
+:host {
+    @include igx-css-vars($custom-grid-theme);
+}
