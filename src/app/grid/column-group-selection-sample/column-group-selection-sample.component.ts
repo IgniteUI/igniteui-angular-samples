@@ -18,6 +18,6 @@ export class GridColumnGroupSelectionComponent implements OnInit, AfterViewInit 
   }
 
   public ngAfterViewInit() {
-    this.grid.selectColumns(["Region", "PostalCode"]);
+    this.grid.selectColumns(["City", "PostalCode"]);
   }
 }
