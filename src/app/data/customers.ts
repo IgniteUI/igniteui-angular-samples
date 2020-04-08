@@ -35,7 +35,7 @@ export const DATA = [
         PostalCode: "05023",
         Country: "Mexico",
         Phone: "(5) 555-3932",
-        Fax: null
+        Fax: "(5) 555-3745"
     }, {
         ID: "AROUT",
         CompanyName: "Around the Horn",
@@ -131,7 +131,7 @@ export const DATA = [
         PostalCode: "EC2 5NT",
         Country: "UK",
         Phone: "(171) 555-1212",
-        Fax: null
+        Fax: "(5) 555-3745"
     }, {
         ID: "CACTU",
         CompanyName: "Cactus Comidas para llevar",
@@ -167,7 +167,7 @@ export const DATA = [
         PostalCode: "3012",
         Country: "Switzerland",
         Phone: "0452-076545",
-        Fax: null
+        Fax: "(5) 555-3745"
     }, {
         ID: "COMMI",
         CompanyName: "Comércio Mineiro",
@@ -179,7 +179,7 @@ export const DATA = [
         PostalCode: "05432-043",
         Country: "Brazil",
         Phone: "(11) 555-7647",
-        Fax: null
+        Fax: "(5) 555-3745"
     }, {
         ID: "CONSH",
         CompanyName: "Consolidated Holdings",
@@ -251,7 +251,7 @@ export const DATA = [
         PostalCode: "05442-030",
         Country: "Brazil",
         Phone: "(11) 555-9857",
-        Fax: null
+        Fax: "(5) 555-3745"
     }, {
         ID: "FISSA",
         CompanyName: "FISSA Fabrica Inter. Salchichas S.A.",

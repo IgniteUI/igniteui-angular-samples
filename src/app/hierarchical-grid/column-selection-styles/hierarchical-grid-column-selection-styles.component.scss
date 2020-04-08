@@ -1,0 +1,15 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$custom-grid-theme: igx-grid-theme(
+    $row-selected-background: #011627,
+    $row-selected-text-color: #ECAA53,
+    $row-selected-hover-background: #011627
+);
+
+:host {
+    @include igx-css-vars($custom-grid-theme);
+}
+
+.grid__wrapper {
+    padding: 10px;
+}

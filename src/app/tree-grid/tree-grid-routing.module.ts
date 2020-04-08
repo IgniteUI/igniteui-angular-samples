@@ -1,6 +1,9 @@
+// tslint:disable:max-line-length
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-// tslint:disable:max-line-length
+import { TreeGridColumnGroupSelectionComponent } from "./column-group-selection/column-group-selection.component";
+import { TreeGridColumnSelectionStylesComponent } from "./column-selection-styles/tree-grid-column-selection-style.component";
+import { TreeGridColumnSelectionComponent } from "./column-selection/tree-grid-column-selection.component";
 import { TreeGridAdvancedFilteringSampleComponent } from "./tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
 import { TreeGridAdvancedFilteringStyleComponent } from "./tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
 import { TreeGridBatchEditingSampleComponent } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
@@ -411,6 +414,21 @@ export const treeGridRoutes: Routes = [
         component: TreeGridRightPinningSampleComponent,
         data: treeGridRoutesData["tree-grid-sample-right-pinning"],
         path: "tree-grid-sample-right-pinning"
+    },
+    {
+        component: TreeGridColumnSelectionComponent,
+        data: treeGridRoutesData["column-selection"],
+        path: "column-selection"
+    },
+    {
+        component: TreeGridColumnGroupSelectionComponent,
+        data: treeGridRoutesData["column-group-selection"],
+        path: "column-group-selection"
+    },
+    {
+        component: TreeGridColumnSelectionStylesComponent,
+        data: treeGridRoutesData["column-selection-styles"],
+        path: "column-selection-styles"
     }
 ];
 
