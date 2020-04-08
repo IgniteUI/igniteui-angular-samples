@@ -10,6 +10,6 @@ $custom-grid-theme: igx-grid-theme(
     @include igx-css-vars($custom-grid-theme);
 }
 
-.grid-wrapper{
+.grid__wrapper {
     padding: 10px;
 }
