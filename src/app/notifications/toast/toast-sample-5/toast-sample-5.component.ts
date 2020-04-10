@@ -8,7 +8,7 @@ import { IgxToastPosition } from "igniteui-angular";
 })
 
 export class ToastSample5Component {
-  public toastPosition: IgxToastPosition.Top;
+  public toastPosition: IgxToastPosition = IgxToastPosition.Bottom;
 
   public show(toast) {
     this.toastPosition = IgxToastPosition.Top;
