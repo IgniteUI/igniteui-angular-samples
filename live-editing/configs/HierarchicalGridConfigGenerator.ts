@@ -65,6 +65,9 @@ import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { HierarchicalGridRightPinningSampleComponent } from '../../src/app/hierarchical-grid/hierarchical-grid-sample-right-pinning/hierarchical-grid-right-pinning.component';
+import { HierarchicalGridColumnSelectionComponent } from '../../src/app/hierarchical-grid/column-selection/hierarchical-grid-column-selection.component';
+import { HierarchicalGridColumnGroupSelectionComponent } from '../../src/app/hierarchical-grid/column-group-selection/hierarchical-grid-column-group-selection.component';
+import { HGridColumnSelectionStylesComponent } from '../../src/app/hierarchical-grid/column-selection-styles/hierarchical-grid-column-selection-styles.component';
 
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -657,6 +660,45 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngProviders: []
             }),
             component: HierarchicalGridRightPinningSampleComponent
+        }));
+
+        configs.push(new Config({
+            component: HierarchicalGridColumnSelectionComponent,
+            additionalFiles: [
+                "/src/app/hierarchical-grid/data.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HierarchicalGridColumnSelectionComponent, IgxHierarchicalGridModule],
+                ngDeclarations: [HierarchicalGridColumnSelectionComponent],
+                ngImports: [IgxHierarchicalGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: HierarchicalGridColumnGroupSelectionComponent,
+            additionalFiles: [
+                "/src/app/hierarchical-grid/data.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HierarchicalGridColumnGroupSelectionComponent, IgxHierarchicalGridModule],
+                ngDeclarations: [HierarchicalGridColumnGroupSelectionComponent],
+                ngImports: [IgxHierarchicalGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: HGridColumnSelectionStylesComponent,
+            additionalFiles: [
+                "/src/app/hierarchical-grid/data.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HGridColumnSelectionStylesComponent, IgxHierarchicalGridModule],
+                ngDeclarations: [HGridColumnSelectionStylesComponent],
+                ngImports: [IgxHierarchicalGridModule],
+                ngProviders: []
+            })
         }));
 
         return configs;
