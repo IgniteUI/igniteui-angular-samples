@@ -1,15 +1,7 @@
-<div class="sample-wrapper">
-    <div class="sample-content">
-        <!-- Disabled dates -->
-        <article class="sample-column calendar-wrapper">
-            <span>Request Time Off</span>
-            <igx-calendar #calendar
-                selection="multi"
-                (onSelection)="selectPTOdays($event)">
-            </igx-calendar>
-            <button igxButton="raised" (click)="submitPTOdays($event)">Submit Request</button>
-        </article>
-
-    </div>
-    <igx-snackbar displayTime="3000"></igx-snackbar>
-</div>
+<article class="sample-column calendar-wrapper">
+    <igx-calendar #calendar weekStart="1" selection="multi" (onSelection)="selectPTOdays($event)">
+    </igx-calendar>
+    <igx-dialog #alert title="Request Time Off" leftButtonLabel="OK" (onLeftButtonSelect)="alert.close()">
+    </igx-dialog>
+    <button igxButton="raised" (click)="submitPTOdays($event)">Submit Request</button>
+</article>

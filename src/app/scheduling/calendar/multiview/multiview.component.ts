@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { DateRangeType, IgxCalendarComponent, IgxSnackbarComponent } from "igniteui-angular";
+import { IgxCalendarComponent, IgxDialogComponent } from "igniteui-angular";
 
 @Component({
   selector: "app-calendar",
@@ -8,7 +8,7 @@ import { DateRangeType, IgxCalendarComponent, IgxSnackbarComponent } from "ignit
 })
 export class CalendarMultiViewComponent {
     @ViewChild("calendar", { static: true }) public calendar: IgxCalendarComponent;
-    @ViewChild(IgxSnackbarComponent, { static: true }) public snackbar: IgxSnackbarComponent;
+    @ViewChild("alert", { static: true }) public dialog: IgxDialogComponent;
     public range = [];
 
     public selectDates(dates: Date[]) {
@@ -16,13 +16,12 @@ export class CalendarMultiViewComponent {
     }
 
     public submitDates(eventArgs) {
-
         if (this.range.length < 2) {
-            this.snackbar.message = "Select dates from the Calendar first.";
+            this.dialog.message = "Select dates from the Calendar first.";
         } else {
-            this.snackbar.message = "Request for your stay has been submitted !";
+            this.dialog.message = "Request for your stay has been submitted !";
         }
-        this.snackbar.show();
+        this.dialog.open();
     }
 
     public formatDate(date: Date): string {
@@ -53,5 +52,4 @@ export class CalendarMultiViewComponent {
         const checkin = this.range[this.range.length - 1];
         return this.formatDate(checkin);
     }
-
 }
