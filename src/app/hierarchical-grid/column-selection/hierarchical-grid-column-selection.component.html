@@ -1,0 +1,44 @@
+<div class="grid__wrapper">
+    <igx-hierarchical-grid igxPreventDocumentScroll [data]="data" height="500px" width="100%"
+        [columnSelection]="currentColumnSelection" [showToolbar]="true">
+
+        <ng-template igxToolbarCustomContent let-igxHierarchicalGrid="grid">
+            <igx-select [(ngModel)]="currentColumnSelection">
+                <label igxLabel>Column Selection</label>
+                <igx-select-item value="none">None</igx-select-item>
+                <igx-select-item value="single">Single</igx-select-item>
+                <igx-select-item value="multiple">Mulitple</igx-select-item>
+            </igx-select>
+        </ng-template>
+
+        <igx-column field="Artist"></igx-column>
+        <igx-column field="Photo" [selectable]="false">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner_2">
+                    <img [src]="cell.value" class="photo" />
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="Debut" dataType="number" [formatter]="formatter" [selectable]="false"></igx-column>
+        <igx-column field="GrammyNominations" header="Grammy Nominations"></igx-column>
+        <igx-column field="GrammyAwards" header="Grammy Awards"></igx-column>
+        <igx-row-island [key]="'Albums'" [autoGenerate]="false" [columnSelection]="currentColumnSelection">
+            <igx-column field="Album"></igx-column>
+            <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'" [selectable]="false"></igx-column>
+            <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
+            <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
+            <igx-row-island [key]="'Songs'" [autoGenerate]="false" [columnSelection]="currentColumnSelection">
+                <igx-column field="Number" header="No."></igx-column>
+                <igx-column field="Title"></igx-column>
+                <igx-column field="Released" dataType="date" [selectable]="false"></igx-column>
+                <igx-column field="Genre"></igx-column>
+            </igx-row-island>
+        </igx-row-island>
+        <igx-row-island [key]="'Tours'" [autoGenerate]="false" [columnSelection]="currentColumnSelection">
+            <igx-column field="Tour" [selectable]="false"></igx-column>
+            <igx-column field="StartedOn" header="Started on" [selectable]="false"></igx-column>
+            <igx-column field="Location" [selectable]="false"></igx-column>
+            <igx-column field="Headliner"></igx-column>
+        </igx-row-island>
+    </igx-hierarchical-grid>
+</div>
