@@ -9,7 +9,7 @@ import { InteractionMode } from "igniteui-angular";
 export class TimepickerDropdownComponent {
     public mode: InteractionMode = InteractionMode.DropDown;
     public format: string = "hh:mm tt";
-    public date: Date = new Date(2018, 10, 27, 17, 45, 0, 0);
+    public date: Date = new Date();
 
     constructor() { }
 }

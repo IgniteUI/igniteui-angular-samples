@@ -1,3 +1,18 @@
 .time-width{
-    width: 350px;
+    width: 300px;
+}
+
+$margin:  8px 8px 8px 0px;
+$actions-height: 52px;
+
+.action-buttons {
+    display: flex;
+    margin-left: 24px;
+    justify-content: flex-end;
+    align-items: center;
+    height: $actions-height;
+
+    [igxButton] {
+        margin: $margin;
+    }
 }
