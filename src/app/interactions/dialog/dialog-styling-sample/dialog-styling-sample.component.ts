@@ -27,7 +27,6 @@ export class DialogStylingSample {
     };
 
     private _dialogOverlaySettings2 = {
-        closeOnOutsideClick: false,
         modal: true,
         outlet: this.outlet,
         scrollStrategy: new CloseScrollStrategy(),

@@ -1,13 +1,17 @@
 export const schedulingRoutesData = {
-    "calendar-sample-1": { displayName: "Calendar Overview", parentName: "Calendar" },
+    "calendar-sample-1": { displayName: "Calendar Multi Selection Mode", parentName: "Calendar" },
     "calendar-sample-2": { displayName: "Customized Dates Display", parentName: "Calendar" },
-    "calendar-sample-3": { displayName: "Calendar with Date Range", parentName: "Calendar" },
+    "calendar-sample-3": { displayName: "Calendar Range Mode", parentName: "Calendar" },
     "calendar-sample-4": { displayName: "Conditional Templating and Date Parsing ", parentName: "Calendar" },
-    "calendar-sample-5": { displayName: "Calendar Selection", parentName: "Calendar" },
-    "calendar-sample-6": { displayName: "Calendar disabled dates", parentName: "Calendar" },
-    "calendar-sample-7": { displayName: "Calendar special dates", parentName: "Calendar" },
+    "calendar-sample-5": { displayName: "Calendar Selection Mode", parentName: "Calendar" },
+    "calendar-sample-6": { displayName: "Calendar Disabled Dates", parentName: "Calendar" },
+    "calendar-sample-7": { displayName: "Calendar Special Dates", parentName: "Calendar" },
+    "calendar-sample-8": { displayName: "Calendar Range Mode", parentName: "Calendar" },
+    "calendar-days-view": { displayName: "Calendar Days View", parentName: "Calendar" },
+    "calendar-months-view": { displayName: "Calendar Months View", parentName: "Calendar" },
+    "calendar-years-view": { displayName: "Calendar Years View", parentName: "Calendar" },
+    "multiview-calendar": {displayName: "Multiview Calendar", parentName: "Calendar"},
     "calendar-styling-sample": { displayName: "Calendar Styling", parentName: "Calendar" },
-    "calendar-views": { displayName: "Calendar Views", parentName: "Calendar" },
     "datepicker-dropdown": { displayName: "Editable Datepicker", parentName: "Datepicker" },
     "datepicker-sample-1": { displayName: "Simple Datepicker", parentName: "Datepicker" },
     "datepicker-sample-2": { displayName: "One-way data bound Datepicker", parentName: "Datepicker" },
@@ -30,6 +34,5 @@ export const schedulingRoutesData = {
     "timepicker-sample-5": { displayName: "Timepicker Input Group Template", parentName: "Timepicker" },
     "timepicker-sample-6": { displayName: "Timepicker Input Group Template Dropdown", parentName: "Timepicker" },
     "timepicker-sample-7": { displayName: "Custom Action Buttons", parentName: "Timepicker" },
-    "timepicker-sample-8": { displayName: "Timepicker Format", parentName: "Timepicker" },
-    "multiview-calendar": {displayName: "Multiview Calendar", parentName: "Calendar"}
+    "timepicker-sample-8": { displayName: "Timepicker Format", parentName: "Timepicker" }
 };

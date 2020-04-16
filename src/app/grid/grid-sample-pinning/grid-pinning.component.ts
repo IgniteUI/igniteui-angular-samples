@@ -1,7 +1,10 @@
 import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
+import { IgxColumnComponent, IgxGridComponent, IgxIconService } from "igniteui-angular";
+import { icons } from "../services/svgIcons";
+
 import { DATA } from "../../data/customers";
 
+const FILTERING_ICONS_FONT_SET = "filtering-icons";
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [],
@@ -16,6 +19,10 @@ export class PinningSampleComponent {
 
     public data: any[];
     public columns: any[];
+
+    constructor(private iconService: IgxIconService) {
+    }
+
     public ngOnInit(): void {
         this.columns = [
             { field: "ID", header: "ID", width: 100, hidden: true },
@@ -30,6 +37,15 @@ export class PinningSampleComponent {
             { field: "Fax", header: "Fax", width: 150 }
         ];
         this.data = DATA;
+    }
+
+    public ngAfterViewInit() {
+        const pinnedIcons = icons.filter(icon => icon.name === "pin" || icon.name === "unpin");
+        pinnedIcons.forEach(icon => {
+            if (!this.iconService.isSvgIconCached(icon.name, FILTERING_ICONS_FONT_SET)) {
+                this.iconService.addSvgIconFromText(icon.name, icon.value, FILTERING_ICONS_FONT_SET);
+            }
+        });
     }
 
     public toggleColumn(col: IgxColumnComponent) {
