@@ -1,12 +1,11 @@
 .datetime-wrapper {
     padding: 16px;
-    width: 300px;
-
+    display: flex;
+    flex-wrap: wrap;
+    igx-input-group {
+        padding-right: 20px;
+    }
     igx-suffix {
         user-select: none;
-    }
-
-    igx-input-group:nth-child(3) {
-        padding-bottom: 48px;
     }
 }
