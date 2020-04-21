@@ -3,9 +3,12 @@
         <div class="control-item">
             <ul>
                 <li>Leave the page by navigating to the <a [routerLink]="['../grid-about']"><strong>ABOUT</strong></a> page or hitting the Save button, the current grid state will be stored in the localStorage object.</li>
+                <li>To restore the previous grid state, use the <strong><igx-icon class="desc-icon">refresh</igx-icon> Restore Grid State</strong> button.</li>
+                <li>To restore a specific feature state, click on the corresponding restore action button.</li>
                 <li>Use the switch buttons to stop saving state for the corresponding feature.</li>
             </ul>
         </div>
+        <p class="category-title">Features to include in the grid state persistance:</p>
         <div class="switches">
             <!-- <div class="control-item">
                 <igx-switch [(ngModel)]="options.rowSelection" (change)="onChange($event, 'rowSelection')">Row Selection</igx-switch>
@@ -35,45 +38,46 @@
                 <igx-switch [(ngModel)]="serialize">Serialize</igx-switch>
             </div>
         </div>
-        <div class="switches" style="min-width: inherit">
+        <p class="category-title">Restore actions:</p>
+        <div class="switches">
             <div class="control-item">
-                <button igxButton="raised" (click)="saveGridState()">Save</button>
+                <button igxButton="raised" (click)="restoreGridState()"><igx-icon class="btn-icon">refresh</igx-icon> Restore Grid State</button>
             </div>
             <div class="control-item">
-                <button igxButton="raised" (click)="restoreGridState()">Restore All</button>
+                <button igxButton="raised" (click)="restoreColumns()"><igx-icon class="btn-icon">refresh</igx-icon> Columns</button>
             </div>
             <div class="control-item">
-                <button igxButton="raised" (click)="restoreColumns()">Columns</button>
+                <button igxButton="raised" (click)="restoreFiltering()"><igx-icon class="btn-icon">refresh</igx-icon> Filtering</button>
             </div>
             <div class="control-item">
-                <button igxButton="raised" (click)="restoreFiltering()">Filtering</button>
+                <button igxButton="raised" (click)="restoreAdvancedFiltering()"><igx-icon class="btn-icon">refresh</igx-icon> Adv Filtering</button>
             </div>
             <div class="control-item">
-                <button igxButton="raised" (click)="restoreAdvancedFiltering()">Adv Filtering</button>
+                <button igxButton="raised" (click)="restoreSorting()"><igx-icon class="btn-icon">refresh</igx-icon> Sorting</button>
             </div>
             <div class="control-item">
-                <button igxButton="raised" (click)="restoreSorting()">Sorting</button>
-            </div>
-            <div class="control-item">
-                <button igxButton="raised" (click)="restoreGroupby()">GroupBy</button>
+                <button igxButton="raised" (click)="restoreGroupby()"><igx-icon class="btn-icon">refresh</igx-icon> Grouping</button>
             </div>
             <!-- <div class="control-item">
                 <button igxButton="raised" (click)="restoreRowSelection()">Row Selection</button>
             </div> -->
             <div class="control-item">
-                <button igxButton="raised" (click)="restoreCellSelection()">Cell Selection</button>
+                <button igxButton="raised" (click)="restoreCellSelection()"><igx-icon class="btn-icon">refresh</igx-icon> Cell Selection</button>
             </div>
             <div class="control-item">
-                <button igxButton="raised" (click)="restorePaging()">Paging</button>
+                <button igxButton="raised" (click)="restorePaging()"><igx-icon class="btn-icon">refresh</igx-icon> Paging</button>
+            </div>
+        </div>
+        <p class="category-title">Grid state actions:</p>
+        <div class="switches" style="justify-content: flex-start;">
+            <div class="control-item" style="margin-right: 10px;">
+                <button igxButton="raised" (click)="saveGridState()"><igx-icon class="btn-icon">save</igx-icon> Save Current State</button>
+            </div>
+            <div class="control-item" style="margin-right: 10px;">
+                <button igxButton="raised" (click)="resetGridState()"><igx-icon class="btn-icon">clear</igx-icon> Reset Current State</button>
             </div>
             <div class="control-item">
-                <button igxButton="raised" (click)="resetGridState()">Reset</button>
-            </div>
-            <div class="control-item">
-                <span class="clear-button" (click)="clearStorage()" #target="tooltipTarget" [igxTooltipTarget]="clear"><igx-icon>delete</igx-icon></span>
-            </div>
-            <div class="control-item">
-                <span class="clear-button" (click)="reloadPage()" #target="tooltipTarget" [igxTooltipTarget]="reload"><igx-icon>refresh</igx-icon></span>
+                <button igxButton="raised" (click)="restoreGridState()"><igx-icon class="btn-icon">delete</igx-icon> Delete State from localStorage</button>
             </div>
         </div>
     </div>
@@ -105,7 +109,4 @@
             [hidden]="c.hidden">
         </igx-column>
         </igx-grid>
-
-    <div #clear="tooltip" igxTooltip>Clear the state from localStorage.</div>
-    <div #reload="tooltip" igxTooltip>Reload the page.</div>
 </div>
