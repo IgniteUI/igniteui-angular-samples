@@ -10,6 +10,7 @@ import { DatepickerSample5Component } from "../../src/app/scheduling/datepicker/
 import { DatepickerSample6Component } from "../../src/app/scheduling/datepicker/datepicker-sample-6/datepicker-sample-6.component";
 import { DatepickerSample7Component } from "../../src/app/scheduling/datepicker/datepicker-sample-7/datepicker-sample-7.component";
 import { DatepickerSample8Component } from "../../src/app/scheduling/datepicker/datepicker-sample-8/datepicker-sample-8.component";
+import { DatepickerStylingSample } from "../../src/app/scheduling/datepicker/datepicker-styling-sample/datepicker-styling-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -111,6 +112,15 @@ export class DatePickerConfigGenerator implements IConfigGenerator {
                     IgxInputGroupModule],
                 ngDeclarations: [DatepickerSample8Component],
                 ngImports: [IgxButtonModule, IgxDatePickerModule, IgxIconModule, IgxInputGroupModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: DatepickerStylingSample,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxDatePickerModule, DatepickerStylingSample, IgxIconModule],
+                ngDeclarations: [DatepickerStylingSample],
+                ngImports: [IgxDatePickerModule, IgxIconModule]
             })
         }));
 
