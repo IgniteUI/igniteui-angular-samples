@@ -23,6 +23,7 @@ import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/dat
 import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/datepicker-sample-7.component";
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { DatepickerSample9Component } from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
+import { DateTimeBasicComponent } from "./datetimeeditor/datetime-basic/datetime-basic.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
 import { MonthpickerSample2Component } from "./monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";
 import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
@@ -144,6 +145,11 @@ export const schedulingRoutes: Routes = [
         path: "datepicker-sample-9"
     },
     {
+        component: DateTimeBasicComponent,
+        data: schedulingRoutesData["datetime-basic"],
+        path: "datetime-basic"
+    },
+    {
         component: DatepickerDropdownComponent,
         data: schedulingRoutesData["datepicker-dropdown"],
         path: "datepicker-dropdown"
@@ -216,11 +222,7 @@ export const schedulingRoutes: Routes = [
 ];
 
 @NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(schedulingRoutes)
-    ]
+    exports: [RouterModule],
+    imports: [RouterModule.forChild(schedulingRoutes)]
 })
-export class SchedulingRoutingModule { }
+export class SchedulingRoutingModule {}
