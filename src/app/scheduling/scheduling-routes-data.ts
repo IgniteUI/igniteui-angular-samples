@@ -23,6 +23,7 @@ export const schedulingRoutesData = {
     "datepicker-sample-8": { displayName: "Custom Action Buttons", parentName: "Datepicker" },
     "datepicker-sample-9": { displayName: "Range Datepicker", parentName: "Datepicker" },
     "datetime-basic": { displayName: "Date Time Basic", parentName: "Date Time Editor" },
+    "datetime-advanced": { displayName: "Date Time Advanced", parentName: "Date Time Editor" },
     "monthpicker-sample-1": { displayName: "Default Month Picker", parentName: "Monthpicker" },
     "monthpicker-sample-3": { displayName: "Localized Month Picker", parentName: "Monthpicker" },
     "monthpicker-styling": { displayName: "Styled Month Picker", parentName: "Monthpicker" },

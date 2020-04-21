@@ -2,10 +2,9 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule,
-    IgxDatePickerModule, IgxDateTimeEditorModule, IgxDialogModule,
-    IgxDropDownModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule,
-    IgxSnackbarModule, IgxSwitchModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
+    IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule,
+    IgxDateTimeEditorModule, IgxDialogModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule,
+    IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
 } from "igniteui-angular";
 import { CalendarDaysViewComponent } from "./calendar/calendar-days-view/calendar-days-view.component";
 import { CalendarMonthsViewComponent } from "./calendar/calendar-months-view/calendar-months-view.component";
@@ -31,6 +30,7 @@ import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/dat
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { AutocompletePipeStartsWith, DatepickerSample9Component, PipeWithoutTownFrom
     } from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
+import { DateTimeAdvancedComponent } from "./datetimeeditor/datetime-advanced/datetime-advanced";
 import { DateTimeBasicComponent } from "./datetimeeditor/datetime-basic/datetime-basic.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
 import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
@@ -62,6 +62,7 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         CalendarSample8Component,
         CalendarMultiViewComponent,
         CalendarStylingSample,
+        DateTimeAdvancedComponent,
         DatepickerSample1Component,
         DatepickerSample2Component,
         DatepickerSample3Component,
@@ -107,7 +108,8 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         IgxButtonModule,
         IgxSelectModule,
         IgxDropDownModule,
-        IgxToggleModule
+        IgxToggleModule,
+        IgxDateTimeEditorModule
     ]
 })
 export class SchedulingModule { }

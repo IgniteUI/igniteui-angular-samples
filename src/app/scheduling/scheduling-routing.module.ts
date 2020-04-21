@@ -23,6 +23,7 @@ import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/dat
 import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/datepicker-sample-7.component";
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { DatepickerSample9Component } from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
+import { DateTimeAdvancedComponent } from "./datetimeeditor/datetime-advanced/datetime-advanced";
 import { DateTimeBasicComponent } from "./datetimeeditor/datetime-basic/datetime-basic.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
 import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
@@ -218,6 +219,11 @@ export const schedulingRoutes: Routes = [
         component: CalendarMultiViewComponent,
         data: schedulingRoutesData["multiview-calendar"],
         path: "multiview-calendar"
+    },
+    {
+        component: DateTimeAdvancedComponent,
+        data: schedulingRoutesData["datetime-advanced"],
+        path: "datetime-advanced"
     }
 ];
 
