@@ -2,10 +2,13 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule, IgxDialogModule,
+    IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule,
+    IgxDatePickerModule, IgxDateTimeEditorModule, IgxDialogModule,
     IgxDropDownModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule,
     IgxSnackbarModule, IgxSwitchModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
 } from "igniteui-angular";
+import { CalendarDaysViewComponent } from "./calendar/calendar-days-view/calendar-days-view.component";
+import { CalendarMonthsViewComponent } from "./calendar/calendar-months-view/calendar-months-view.component";
 import { CalendarSample1Component } from "./calendar/calendar-sample-1/calendar-sample-1.component";
 import { CalendarSample2Component } from "./calendar/calendar-sample-2/calendar-sample-2.component";
 import { CalendarSample3Component } from "./calendar/calendar-sample-3/calendar-sample-3.component";
@@ -13,9 +16,9 @@ import { CalendarSample4Component } from "./calendar/calendar-sample-4/calendar-
 import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-sample-5.component";
 import { CalendarSample6Component } from "./calendar/calendar-sample-6/calendar-sample-6.component";
 import { CalendarSample7Component } from "./calendar/calendar-sample-7/calendar-sample-7.component";
+import { CalendarSample8Component } from "./calendar/calendar-sample-8/calendar-sample-8.component";
 import { CalendarStylingSample } from "./calendar/calendar-styling-sample/calendar-styling-sample.component";
-import { CalendarViewsComponent } from "./calendar/calendar-views/calendar-views.component";
-import { CalendarComponent } from "./calendar/calendar.component";
+import { CalendarYearsViewComponent } from "./calendar/calendar-years-view/calendar-years-view.component";
 import { CalendarMultiViewComponent } from "./calendar/multiview/multiview.component";
 import { DatepickerDropdownComponent } from "./datepicker/datepicker-dropdown/datepicker-dropdown.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
@@ -28,6 +31,7 @@ import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/dat
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { AutocompletePipeStartsWith, DatepickerSample9Component, PipeWithoutTownFrom
     } from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
+import { DateTimeBasicComponent } from "./datetimeeditor/datetime-basic/datetime-basic.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
 import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
 import { MonthpickerStylingComponent } from "./monthpicker/monthpicker-styling/monthpicker-styling.component";
@@ -45,7 +49,9 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
 @NgModule({
     declarations: [
         AutocompletePipeStartsWith,
-        CalendarComponent,
+        CalendarDaysViewComponent,
+        CalendarMonthsViewComponent,
+        CalendarYearsViewComponent,
         CalendarSample1Component,
         CalendarSample2Component,
         CalendarSample3Component,
@@ -53,6 +59,7 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         CalendarSample5Component,
         CalendarSample6Component,
         CalendarSample7Component,
+        CalendarSample8Component,
         CalendarMultiViewComponent,
         CalendarStylingSample,
         DatepickerSample1Component,
@@ -64,6 +71,7 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         DatepickerSample7Component,
         DatepickerSample8Component,
         DatepickerSample9Component,
+        DateTimeBasicComponent,
         DatepickerDropdownComponent,
         TimePickerSample1Component,
         TimePickerSample2Component,
@@ -75,7 +83,6 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         TimePickerSample8Component,
         DatepickerDropdownComponent,
         TimepickerDropdownComponent,
-        CalendarViewsComponent,
         MonthpickerSample1Component,
         MonthpickerSample3Component,
         MonthpickerStylingComponent,
@@ -89,6 +96,7 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         IgxCalendarModule,
         IgxCardModule,
         IgxDatePickerModule,
+        IgxDateTimeEditorModule,
         IgxDialogModule,
         IgxIconModule,
         IgxInputGroupModule,
