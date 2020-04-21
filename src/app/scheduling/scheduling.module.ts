@@ -33,8 +33,8 @@ import { AutocompletePipeStartsWith, DatepickerSample9Component, PipeWithoutTown
 import { DateTimeAdvancedComponent } from "./datetimeeditor/datetime-advanced/datetime-advanced";
 import { DateTimeBasicComponent } from "./datetimeeditor/datetime-basic/datetime-basic.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
-import { MonthpickerSample2Component } from "./monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";
 import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
+import { MonthpickerStylingComponent } from "./monthpicker/monthpicker-styling/monthpicker-styling.component";
 import { SchedulingRoutingModule } from "./scheduling-routing.module";
 import { TimepickerDropdownComponent } from "./timepicker/timepicker-dropdown/timepicker-dropdown.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
@@ -85,8 +85,8 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         DatepickerDropdownComponent,
         TimepickerDropdownComponent,
         MonthpickerSample1Component,
-        MonthpickerSample2Component,
         MonthpickerSample3Component,
+        MonthpickerStylingComponent,
         PipeWithoutTownFrom
     ],
     imports: [
