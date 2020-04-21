@@ -11,6 +11,9 @@ import {
     IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
 import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
+import { GridColumnGroupSelectionComponent } from "./column-group-selection-sample/column-group-selection-sample.component";
+import { GridColumnSelectionComponent } from "./column-selection-sample/column-selection-sample.component";
+import { GridColumnSelectionStylesComponent } from "./column-selection-styles/column-selection-styles.component";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
@@ -192,7 +195,10 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridExternalAdvancedFilteringComponent,
         GridCollapsibleColumnGroupsComponent,
         GridAllDataSummaryComponent,
-        RightPinningSampleComponent
+        RightPinningSampleComponent,
+        GridColumnSelectionComponent,
+        GridColumnGroupSelectionComponent,
+        GridColumnSelectionStylesComponent
     ],
     imports: [
         CommonModule,
