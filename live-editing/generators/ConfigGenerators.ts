@@ -12,6 +12,7 @@ import { ChipConfigGenerator } from "../configs/ChipConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "../configs/CircularProgressbarConfigGenerator";
 import { ComboConfigGenerator } from "../configs/ComboConfigGenerator";
 import { DatePickerConfigGenerator } from "../configs/DatePickerConfigGenerator";
+import { DateTimeEditorConfigGenerator } from "../configs/DateTimeEditorConfigGenerator";
 import { DialogConfigGenerator } from "../configs/DialogConfigGenerator";
 import { DividerConfigGenerator } from "../configs/DividerConfigGenerator";
 import { DragAndDropConfigGenerator } from "../configs/DragAndDropConfigGenerator";
@@ -81,6 +82,7 @@ export const CONFIG_GENERATORS =
         CheckboxConfigGenerator,
         ComboConfigGenerator,
         DatePickerConfigGenerator,
+        DateTimeEditorConfigGenerator,
         DropDownConfigGenerator,
         InputGroupConfigGenerator,
         MaskConfigGenerator,
