@@ -36,7 +36,6 @@ import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/tim
 import { TimePickerSample6Component } from "./timepicker/timepicker-sample-6/timepicker-sample-6.component";
 import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/timepicker-styling.component";
 
-
 export const schedulingRoutes: Routes = [
     {
         component: CalendarSample1Component,
