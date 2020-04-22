@@ -1,14 +1,14 @@
 import { Component, ViewChild } from "@angular/core";
-import { DateRangeDescriptor, DateRangeType, IgxCalendarComponent, IgxSnackbarComponent } from "igniteui-angular";
+import { DateRangeType, IgxCalendarComponent, IgxDialogComponent } from "igniteui-angular";
 
 @Component({
-  selector: "app-calendar",
-  styleUrls: ["./calendar-sample-7.component.scss"],
-  templateUrl: "./calendar-sample-7.component.html"
+    selector: "app-calendar",
+    styleUrls: ["./calendar-sample-7.component.scss"],
+    templateUrl: "./calendar-sample-7.component.html"
 })
 export class CalendarSample7Component {
     @ViewChild("calendar", { static: true }) public calendar: IgxCalendarComponent;
-    @ViewChild(IgxSnackbarComponent, { static: true }) public snackbar: IgxSnackbarComponent;
+    @ViewChild("alert", { static: true }) public dialog: IgxDialogComponent;
     public range = [];
 
     public selectPTOdays(dates: Date[]) {
@@ -24,10 +24,10 @@ export class CalendarSample7Component {
         });
 
         if (this.range.length === 0) {
-            this.snackbar.message = "Select dates from the Calendar first.";
+            this.dialog.message = "Select dates from the Calendar first.";
         } else {
-            this.snackbar.message = "PTO days submitted.";
+            this.dialog.message = "PTO days submitted.";
         }
-        this.snackbar.show();
+        this.dialog.open();
     }
 }
