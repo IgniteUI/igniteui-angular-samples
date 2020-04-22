@@ -1,5 +1,5 @@
 <div>
-    <igx-time-picker id="time-picker" [overlaySettings]="{ outlet: element }"></igx-time-picker>
+    <igx-time-picker #picker [overlaySettings]="{ outlet: element }"></igx-time-picker>
     <ng-template igxTimePickerActions>
         <div>
             <button igxButton="flat" (click)="picker.cancelButtonClick()">cancel</button>

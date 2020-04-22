@@ -1,7 +1,7 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
 igx-time-picker {
-    padding: 1rem;
+    width: 400px;
 }
 
 $my-time-picker-theme: igx-time-picker-theme(

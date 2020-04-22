@@ -1,6 +1,5 @@
 
 import { Component, ElementRef } from "@angular/core";
-import { IgxOverlayService } from "igniteui-angular";
 
 @Component({
     selector: "app-timepicker",
@@ -8,5 +7,5 @@ import { IgxOverlayService } from "igniteui-angular";
     templateUrl: "./timepicker-styling.component.html"
 })
 export class TimePickerStylingComponent {
-    constructor(public element: ElementRef, private overlayService: IgxOverlayService) { }
+    constructor(public element: ElementRef) { }
  }

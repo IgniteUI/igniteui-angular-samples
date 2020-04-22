@@ -10,6 +10,4 @@ export class TimepickerDropdownComponent {
     public mode: InteractionMode = InteractionMode.DropDown;
     public format: string = "hh:mm tt";
     public date: Date = new Date();
-
-    constructor() { }
 }

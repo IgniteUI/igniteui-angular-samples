@@ -1,5 +1,9 @@
 <igx-time-picker [value]="date">
-    <ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value" let-displayTime="displayTime">
+    <ng-template
+        igxTimePickerTemplate
+        let-openDialog="openDialog"
+        let-value="value"
+        let-displayTime="displayTime">
         <igx-input-group (click)="openDialog()">
             <igx-prefix>
                 <igx-icon>home</igx-icon>
@@ -9,7 +13,7 @@
             <igx-suffix>
                 <igx-icon>access_alarm</igx-icon>
             </igx-suffix>
+            <igx-hint>{{value}}</igx-hint>
         </igx-input-group>
-        <label>{{value}}</label>
     </ng-template>
 </igx-time-picker>
