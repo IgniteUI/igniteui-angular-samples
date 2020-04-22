@@ -24,9 +24,11 @@ import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/dat
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { DatepickerSample9Component } from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
 import { DatepickerStylingSample } from "./datepicker/datepicker-styling-sample/datepicker-styling-sample.component";
+import { DateTimeAdvancedComponent } from "./datetimeeditor/datetime-advanced/datetime-advanced";
+import { DateTimeBasicComponent } from "./datetimeeditor/datetime-basic/datetime-basic.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
-import { MonthpickerSample2Component } from "./monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";
 import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
+import { MonthpickerStylingComponent } from "./monthpicker/monthpicker-styling/monthpicker-styling.component";
 import { schedulingRoutesData } from "./scheduling-routes-data";
 import { TimepickerDropdownComponent } from "./timepicker/timepicker-dropdown/timepicker-dropdown.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
@@ -145,6 +147,11 @@ export const schedulingRoutes: Routes = [
         path: "datepicker-sample-9"
     },
     {
+        component: DateTimeBasicComponent,
+        data: schedulingRoutesData["datetime-basic"],
+        path: "datetime-basic"
+    },
+    {
         component: DatepickerDropdownComponent,
         data: schedulingRoutesData["datepicker-dropdown"],
         path: "datepicker-dropdown"
@@ -205,28 +212,29 @@ export const schedulingRoutes: Routes = [
         path: "monthpicker-sample-1"
     },
     {
-        component: MonthpickerSample2Component,
-        data: schedulingRoutesData["monthpicker-sample-2"],
-        path: "monthpicker-sample-2"
-    },
-    {
         component: MonthpickerSample3Component,
         data: schedulingRoutesData["monthpicker-sample-3"],
         path: "monthpicker-sample-3"
     },
     {
+        component: MonthpickerStylingComponent,
+        data: schedulingRoutesData["monthpicker-styling"],
+        path: "monthpicker-styling"
+    },
+    {
         component: CalendarMultiViewComponent,
         data: schedulingRoutesData["multiview-calendar"],
         path: "multiview-calendar"
+    },
+    {
+        component: DateTimeAdvancedComponent,
+        data: schedulingRoutesData["datetime-advanced"],
+        path: "datetime-advanced"
     }
 ];
 
 @NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(schedulingRoutes)
-    ]
+    exports: [RouterModule],
+    imports: [RouterModule.forChild(schedulingRoutes)]
 })
-export class SchedulingRoutingModule { }
+export class SchedulingRoutingModule {}
