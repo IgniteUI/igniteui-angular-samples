@@ -5,10 +5,7 @@ import { Component } from "@angular/core";
   styleUrls: ["./timepicker-sample-5.component.scss"],
   templateUrl: "./timepicker-sample-5.component.html"
 })
+
 export class TimePickerSample5Component {
-
-    public date: Date = new Date(Date.now());
-
-    constructor() { }
-
+    public date: Date = new Date();
 }
