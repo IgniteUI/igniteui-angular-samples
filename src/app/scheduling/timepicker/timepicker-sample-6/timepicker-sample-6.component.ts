@@ -8,7 +8,7 @@ import { IgxTimePickerComponent } from "igniteui-angular";
 })
 export class TimePickerSample6Component {
 
-    public today: Date = new Date(Date.now());
+    public today: Date = new Date();
 
     public onBlur(inputValue: string, value: Date, picker: IgxTimePickerComponent) {
         const parts = inputValue.split(/[\s:]+/);
@@ -21,5 +21,10 @@ export class TimePickerSample6Component {
         } else {
             throw new Error("This is not a valid hour.");
         }
+    }
+
+    public selectNow(timePicker: IgxTimePickerComponent) {
+        timePicker.value = this.today;
+        timePicker.close();
     }
 }

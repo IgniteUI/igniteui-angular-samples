@@ -39,13 +39,10 @@ import { MonthpickerStylingComponent } from "./monthpicker/monthpicker-styling/m
 import { SchedulingRoutingModule } from "./scheduling-routing.module";
 import { TimepickerDropdownComponent } from "./timepicker/timepicker-dropdown/timepicker-dropdown.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
-import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
-import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
 import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
 import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
 import { TimePickerSample6Component } from "./timepicker/timepicker-sample-6/timepicker-sample-6.component";
-import { TimePickerSample7Component } from "./timepicker/timepicker-sample-7/timepicker-sample-7.component";
-import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/timepicker-sample-8.component";
+import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/timepicker-styling.component";
 
 @NgModule({
     declarations: [
@@ -77,13 +74,10 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         DatepickerDropdownComponent,
         DatepickerStylingSample,
         TimePickerSample1Component,
-        TimePickerSample2Component,
-        TimePickerSample3Component,
         TimePickerSample4Component,
         TimePickerSample5Component,
         TimePickerSample6Component,
-        TimePickerSample7Component,
-        TimePickerSample8Component,
+        TimePickerStylingComponent,
         DatepickerDropdownComponent,
         TimepickerDropdownComponent,
         MonthpickerSample1Component,
