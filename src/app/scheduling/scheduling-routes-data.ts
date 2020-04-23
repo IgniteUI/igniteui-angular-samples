@@ -22,17 +22,16 @@ export const schedulingRoutesData = {
     "datepicker-sample-7": { displayName: "Dropdown Datepicker Template", parentName: "Datepicker" },
     "datepicker-sample-8": { displayName: "Custom Action Buttons", parentName: "Datepicker" },
     "datepicker-sample-9": { displayName: "Range Datepicker", parentName: "Datepicker" },
+    "datepicker-styling-sample": { displayName: "Datepicker Styling", parentName: "Datepicker" },
     "datetime-basic": { displayName: "Date Time Basic", parentName: "Date Time Editor" },
+    "datetime-advanced": { displayName: "Date Time Advanced", parentName: "Date Time Editor" },
     "monthpicker-sample-1": { displayName: "Default Month Picker", parentName: "Monthpicker" },
-    "monthpicker-sample-2": { displayName: "Month Picker with Format Options", parentName: "Monthpicker" },
     "monthpicker-sample-3": { displayName: "Localized Month Picker", parentName: "Monthpicker" },
+    "monthpicker-styling": { displayName: "Styled Month Picker", parentName: "Monthpicker" },
     "timepicker-dropdown": { displayName: "Timepicker DropDown", parentName: "Timepicker" },
     "timepicker-sample-1": { displayName: "Timepicker Overview", parentName: "Timepicker" },
-    "timepicker-sample-2": { displayName: "One-way data bound Timepicker", parentName: "Timepicker" },
-    "timepicker-sample-3": { displayName: "Timepicker Delta and Spin Mode", parentName: "Timepicker" },
     "timepicker-sample-4": { displayName: "Timepicker Validation", parentName: "Timepicker" },
     "timepicker-sample-5": { displayName: "Timepicker Input Group Template", parentName: "Timepicker" },
     "timepicker-sample-6": { displayName: "Timepicker Input Group Template Dropdown", parentName: "Timepicker" },
-    "timepicker-sample-7": { displayName: "Custom Action Buttons", parentName: "Timepicker" },
-    "timepicker-sample-8": { displayName: "Timepicker Format", parentName: "Timepicker" }
+    "timepicker-styling": { displayName: "Styled Timepicker", parentName: "Timepicker" }
 };

@@ -2,10 +2,9 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule,
-    IgxDatePickerModule, IgxDateTimeEditorModule, IgxDialogModule,
-    IgxDropDownModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule,
-    IgxSnackbarModule, IgxSwitchModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
+    IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule,
+    IgxDateTimeEditorModule, IgxDialogModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule,
+    IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
 } from "igniteui-angular";
 import { CalendarDaysViewComponent } from "./calendar/calendar-days-view/calendar-days-view.component";
 import { CalendarMonthsViewComponent } from "./calendar/calendar-months-view/calendar-months-view.component";
@@ -30,21 +29,20 @@ import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/dat
 import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/datepicker-sample-7.component";
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { AutocompletePipeStartsWith, DatepickerSample9Component, PipeWithoutTownFrom
-    } from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
+} from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
+import { DatepickerStylingSample } from "./datepicker/datepicker-styling-sample/datepicker-styling-sample.component";
+import { DateTimeAdvancedComponent } from "./datetimeeditor/datetime-advanced/datetime-advanced";
 import { DateTimeBasicComponent } from "./datetimeeditor/datetime-basic/datetime-basic.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
-import { MonthpickerSample2Component } from "./monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";
 import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
+import { MonthpickerStylingComponent } from "./monthpicker/monthpicker-styling/monthpicker-styling.component";
 import { SchedulingRoutingModule } from "./scheduling-routing.module";
 import { TimepickerDropdownComponent } from "./timepicker/timepicker-dropdown/timepicker-dropdown.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
-import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
-import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
 import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
 import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
 import { TimePickerSample6Component } from "./timepicker/timepicker-sample-6/timepicker-sample-6.component";
-import { TimePickerSample7Component } from "./timepicker/timepicker-sample-7/timepicker-sample-7.component";
-import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/timepicker-sample-8.component";
+import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/timepicker-styling.component";
 
 @NgModule({
     declarations: [
@@ -62,6 +60,7 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         CalendarSample8Component,
         CalendarMultiViewComponent,
         CalendarStylingSample,
+        DateTimeAdvancedComponent,
         DatepickerSample1Component,
         DatepickerSample2Component,
         DatepickerSample3Component,
@@ -73,19 +72,17 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         DatepickerSample9Component,
         DateTimeBasicComponent,
         DatepickerDropdownComponent,
+        DatepickerStylingSample,
         TimePickerSample1Component,
-        TimePickerSample2Component,
-        TimePickerSample3Component,
         TimePickerSample4Component,
         TimePickerSample5Component,
         TimePickerSample6Component,
-        TimePickerSample7Component,
-        TimePickerSample8Component,
+        TimePickerStylingComponent,
         DatepickerDropdownComponent,
         TimepickerDropdownComponent,
         MonthpickerSample1Component,
-        MonthpickerSample2Component,
         MonthpickerSample3Component,
+        MonthpickerStylingComponent,
         PipeWithoutTownFrom
     ],
     imports: [
@@ -107,7 +104,8 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         IgxButtonModule,
         IgxSelectModule,
         IgxDropDownModule,
-        IgxToggleModule
+        IgxToggleModule,
+        IgxDateTimeEditorModule
     ]
 })
 export class SchedulingModule { }

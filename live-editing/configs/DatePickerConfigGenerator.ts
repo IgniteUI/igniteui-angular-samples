@@ -10,9 +10,7 @@ import { DatepickerSample5Component } from "../../src/app/scheduling/datepicker/
 import { DatepickerSample6Component } from "../../src/app/scheduling/datepicker/datepicker-sample-6/datepicker-sample-6.component";
 import { DatepickerSample7Component } from "../../src/app/scheduling/datepicker/datepicker-sample-7/datepicker-sample-7.component";
 import { DatepickerSample8Component } from "../../src/app/scheduling/datepicker/datepicker-sample-8/datepicker-sample-8.component";
-import {
-    AutocompletePipeStartsWith, DatepickerSample9Component, PipeWithoutTownFrom
-} from "../../src/app/scheduling/datepicker/datepicker-sample-9/datepicker-sample-9.component";
+import { DatepickerStylingSample } from "../../src/app/scheduling/datepicker/datepicker-styling-sample/datepicker-styling-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -110,22 +108,19 @@ export class DatePickerConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DatepickerSample8Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDatePickerModule, DatepickerSample8Component, IgxIconModule,
+                imports: [IgxButtonModule, IgxDatePickerModule, DatepickerSample8Component, IgxIconModule,
                     IgxInputGroupModule],
                 ngDeclarations: [DatepickerSample8Component],
-                ngImports: [IgxDatePickerModule, IgxIconModule, IgxInputGroupModule]
+                ngImports: [IgxButtonModule, IgxDatePickerModule, IgxIconModule, IgxInputGroupModule]
             })
         }));
 
         configs.push(new Config({
-            component: DatepickerSample9Component,
+            component: DatepickerStylingSample,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxAutocompleteModule, IgxCalendarModule, DatepickerSample9Component, IgxIconModule,
-                    IgxInputGroupModule, IgxDropDownModule, IgxButtonModule,
-                    IgxToggleModule, AutocompletePipeStartsWith, PipeWithoutTownFrom],
-                ngDeclarations: [DatepickerSample9Component, AutocompletePipeStartsWith, PipeWithoutTownFrom],
-                ngImports: [IgxAutocompleteModule, IgxCalendarModule, IgxIconModule, IgxInputGroupModule,
-                    IgxDropDownModule, IgxButtonModule, IgxToggleModule]
+                imports: [IgxDatePickerModule, DatepickerStylingSample, IgxIconModule],
+                ngDeclarations: [DatepickerStylingSample],
+                ngImports: [IgxDatePickerModule, IgxIconModule]
             })
         }));
 
