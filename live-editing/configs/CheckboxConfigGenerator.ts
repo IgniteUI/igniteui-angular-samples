@@ -1,5 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxCheckboxModule } from "igniteui-angular";
+import { CheckboxSample1Component
+} from "../../src/app/data-entries/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component
 } from "../../src/app/data-entries/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { CheckboxStylingComponent
@@ -11,6 +13,17 @@ import { IConfigGenerator } from "./core/IConfigGenerator";
 export class CheckboxConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
+
+        // checkbox sample 2
+        configs.push(new Config({
+            component: CheckboxSample1Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxCheckboxModule, CheckboxSample1Component],
+                ngDeclarations: [CheckboxSample1Component],
+                ngImports: [IgxCheckboxModule]
+            }),
+            shortenComponentPathBy: "/data-entries/checkbox/"
+        }));
 
         // checkbox sample 2
         configs.push(new Config({
