@@ -1,39 +1,16 @@
-<div class="sample-wrapper">
-    <section class="section-content">
-        <article class="sample-column">
-            <h5 class="sample-title">Exclusive Selection</h5>
-            <p class="sample-description">Horizontal Alignment</p>
-            <igx-buttongroup [multiSelection]="false">
-                <button igxButton [igxRipple]="rippleColor">
-                    <igx-icon>format_align_left</igx-icon>
-                </button>
-                <button igxButton [igxRipple]="rippleColor">
-                    <igx-icon>format_align_center</igx-icon>
-                </button>
-                <button igxButton [igxRipple]="rippleColor">
-                    <igx-icon>format_align_right</igx-icon>
-                </button>
-                <button igxButton [igxRipple]="rippleColor" [selected]="true">
-                    <igx-icon>format_align_justify</igx-icon>
-                </button>
-            </igx-buttongroup>
-
-            <p class="sample-description">Vertical Alignment</p>
-            <igx-buttongroup [multiSelection]="false" [alignment]="alignment">
-                <button igxButton [igxRipple]="rippleColor">Sofia</button>
-                <button igxButton [igxRipple]="rippleColor">London</button>
-                <button igxButton [igxRipple]="rippleColor">New York</button>
-                <button igxButton [igxRipple]="rippleColor" [disabled]="true">Tokyo</button>
-            </igx-buttongroup>
-        </article>
-        <article class="sample-column">
-            <h5 class="sample-title">Multiple Selection</h5>
-            <p class="sample-description">Horizontal Alignment</p>
-            <igx-buttongroup [multiSelection]="true" [values]="fontOptionsButtons"></igx-buttongroup>
-
-            <p class="sample-description">Vertical Alignment</p>
-            <igx-buttongroup [multiSelection]="true" [alignment]="alignment" [values]="bordersButtons">
-            </igx-buttongroup>
-        </article>
-    </section>
-</div>
+<article class="sample-column">
+    <igx-buttongroup>
+        <button igxButton [igxRipple]="rippleColor">
+            <igx-icon>format_align_left</igx-icon>
+        </button>
+        <button igxButton [igxRipple]="rippleColor">
+            <igx-icon>format_align_center</igx-icon>
+        </button>
+        <button igxButton [igxRipple]="rippleColor">
+            <igx-icon>format_align_right</igx-icon>
+        </button>
+        <button igxButton [igxRipple]="rippleColor" [selected]="true">
+            <igx-icon>format_align_justify</igx-icon>
+        </button>
+    </igx-buttongroup>
+</article>

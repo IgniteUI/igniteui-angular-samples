@@ -1,82 +1,22 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-/*BASIC THEMING*/
+igx-buttongroup{
+    display: inline-block;
+    width: 200px;
+}
 
-$dark-button-group: igx-button-group-theme(
-    $item-text-color: #FFCD0F,
-    $item-background: #292826,
-    $item-hover-text-color: #292826,
-    $item-hover-background: #FFCD0F,
-    $item-selected-text-color: #292826,
-    $item-selected-background: #FFCD0F,
+$custom-button-group: igx-button-group-theme(
+    $item-text-color: #fdfdfd,
+    $item-background: #2f4d6a,
+    $item-hover-text-color: #fdfdfd,
+    $item-hover-background: #1f3347,
+    $item-selected-text-color: #fdfdfd,
+    $item-selected-background: #1f3347,
+    $item-selected-hover-background: #1f3347,
     $disabled-text-color: gray,
     $disabled-background-color: lightgray
 );
 
-/*ENHANCED APPROACHES*/
-
-// $yellow-color: #FFCD0F;
-// $black-color: #292826;
-// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
-
-/*PALETTE and IGX-COLOR*/
-
-// $dark-button-group: igx-button-group-theme(
-//     $palette: $dark-palette,
-//     $item-text-color: igx-color($dark-palette, "secondary", 500),
-//     $item-background: igx-color($dark-palette, "primary", 500),
-//     $item-hover-text-color: igx-color($dark-palette, "primary", 500),
-//     $item-hover-background: igx-color($dark-palette, "secondary", 500),
-//     $item-selected-text-color: igx-color($dark-palette, "primary", 500),
-//     $item-selected-background: igx-color($dark-palette, "secondary", 500),
-//     $disabled-text-color: gray,
-//     $disabled-background-color: lightgray
-// );
-
-/*SCHEMAS*/
-
-// $dark-button-group-schema: extend($_dark-button-group,
-//     (
-//         item-text-color:(
-//             igx-color:("secondary", 500)
-//         ),
-//         item-background:(
-//             igx-color:("primary", 500)
-//         ),
-//         item-hover-text-color:(
-//             igx-color:("primary", 500)
-//         ),
-//         item-hover-background:(
-//             igx-color:("secondary", 500)
-//         ),
-//         item-selected-text-color:(
-//             igx-color:("primary", 500)
-//         ),
-//         item-selected-background:(
-//             igx-color:("secondary", 500)
-//         ),
-//         disabled-text-color: gray,
-//         disabled-background-color: lightgray
-//     )
-// );
-// $custom-dark-schema: extend($dark-schema,(
-//     igx-button-group: $dark-button-group-schema
-// ));
-// $dark-button-group: igx-button-group-theme(
-//   $palette: $dark-palette,
-//   $schema: $custom-dark-schema
-// );
-
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
-
 :host {
-     ::ng-deep {
-        @include igx-button-group($dark-button-group);
-    }
-}
-
-.section-content {
-    display: flex; 
-    flex-flow: row wrap; 
-    justify-content: center;
+  @include igx-css-vars($custom-button-group);
 }
