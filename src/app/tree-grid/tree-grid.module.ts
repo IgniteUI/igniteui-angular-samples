@@ -81,6 +81,7 @@ import { TreeGridRowDragBase } from "./tree-grid-row-drag-base/tree-grid-row-dra
 import { TreeGridRowDrag } from "./tree-grid-row-drag/tree-grid-row-drag.component";
 import { TreeGridRowEditStyleComponent } from "./tree-grid-row-edit-style/tree-grid-row-edit-style.component";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
+import { TreeGridRowPinningSampleComponent } from "./tree-grid-row-pinning/tree-grid-row-pinning-sample.component";
 import { TreeGridRowReorderComponent } from "./tree-grid-row-reorder/tree-grid-row-reorder.component";
 import { TreeGridRightPinningSampleComponent } from "./tree-grid-sample-right-pinning/tree-grid-right-pinning.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
@@ -171,6 +172,7 @@ import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/tree
         TreeGridConditionalCellStyle2Component,
         TreeGridMultiCollapsibleColumnGroupsComponent,
         TreeGridAllDataSummaryComponent,
+        TreeGridRowPinningSampleComponent,
         TreeGridRightPinningSampleComponent,
         TreeGridColumnSelectionComponent,
         TreeGridColumnGroupSelectionComponent,
