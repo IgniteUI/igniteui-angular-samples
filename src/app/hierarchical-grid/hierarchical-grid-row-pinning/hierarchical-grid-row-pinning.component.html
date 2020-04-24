@@ -6,8 +6,7 @@
             [height]="'500px'" [width]="'100%'" [rowHeight]="'65px'" [pinning]='pinningConfig'>
             <igx-column width='70px' [filterable]='false'>
                 <ng-template igxCell let-cell="cell" let-val>
-                    <igx-icon class="pin-icon" (mousedown)="togglePinning(cell.row, $event)">
-                        {{cell.row.pinned ? 'lock' : 'lock_open'}}
+                    <igx-icon class="pin-icon" fontSet="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}" (mousedown)="togglePinning(cell.row, $event)">
                     </igx-icon>
                 </ng-template>
             </igx-column>
@@ -23,7 +22,13 @@
             <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number"></igx-column>
             <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number"></igx-column>
 
-            <igx-row-island [key]="'Albums'" [autoGenerate]="false" [primaryKey]="'Album'">
+            <igx-row-island [key]="'Albums'" [autoGenerate]="false" [primaryKey]="'Album'" [pinning] = 'pinningConfig' height='300px'>
+                <igx-column width='70px' [filterable]='false'>
+                    <ng-template igxCell let-cell="cell" let-val>
+                        <igx-icon class="pin-icon" fontSet="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}" (mousedown)="togglePinning(cell.row, $event)">
+                        </igx-icon>
+                    </ng-template>
+                </igx-column>
                 <igx-column field="Album"></igx-column>
                 <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
                 <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
