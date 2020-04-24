@@ -8,8 +8,7 @@
    >
    <igx-column width='150px' [filterable]='false'>
         <ng-template igxCell let-cell="cell" let-val>
-            <igx-icon class="pin-icon" (mousedown)="togglePinning(cell.row, $event)">
-                {{cell.row.pinned ? 'lock' : 'lock_open'}}
+            <igx-icon class="pin-icon" fontSet="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}" (mousedown)="togglePinning(cell.row, $event)">
             </igx-icon>
         </ng-template>
     </igx-column>
