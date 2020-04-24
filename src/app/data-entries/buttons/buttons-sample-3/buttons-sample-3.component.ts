@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-buttons-sample-3",
@@ -6,11 +6,4 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./buttons-sample-3.component.html"
 
 })
-export class ButtonsSample3Component implements OnInit {
-
-  constructor() { }
-
-  public ngOnInit() {
-  }
-
-}
+export class ButtonsSample3Component { }
