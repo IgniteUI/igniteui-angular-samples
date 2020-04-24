@@ -33,7 +33,13 @@
                 <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
                 <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
                 <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
-            <igx-row-island [key]="'Songs'" [autoGenerate]="false" [primaryKey]="'Number'">
+            <igx-row-island [key]="'Songs'" [autoGenerate]="false" [primaryKey]="'Number'" [pinning] = 'pinningConfig'>
+                    <igx-column width='70px' [filterable]='false'>
+                        <ng-template igxCell let-cell="cell" let-val>
+                            <igx-icon class="pin-icon" fontSet="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}" (mousedown)="togglePinning(cell.row, $event)">
+                            </igx-icon>
+                        </ng-template>
+                    </igx-column>
                     <igx-column field="Number" header="No."></igx-column>
                     <igx-column field="Title"></igx-column>
                     <igx-column field="Released" dataType="date"></igx-column>
@@ -41,7 +47,13 @@
             </igx-row-island>
         </igx-row-island>
 
-        <igx-row-island [key]="'Tours'" [autoGenerate]="false" [primaryKey]="'Tour'">
+        <igx-row-island [key]="'Tours'" [autoGenerate]="false" [primaryKey]="'Tour'" [pinning]='pinningConfig'>
+            <igx-column width='70px' [filterable]='false'>
+                <ng-template igxCell let-cell="cell" let-val>
+                    <igx-icon class="pin-icon" fontSet="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}" (mousedown)="togglePinning(cell.row, $event)">
+                    </igx-icon>
+                </ng-template>
+            </igx-column>
             <igx-column field="Tour"></igx-column>
             <igx-column field="StartedOn" header="Started on"></igx-column>
             <igx-column field="Location"></igx-column>
