@@ -17,6 +17,7 @@ export const interactionsRoutesData = {
     "slider-primary-ticks-top": { displayName: "Slider Primary Ticks Top", parentName: "Slider" },
     "slider-timeframe": { displayName: "Slider Timeframe", parentName: "Slider" },
     "slider-tick-labels-template": { displayName: "Slider Tick labels template", parentName: "Slider" },
+    "slider-styling-sample": { displayName: "Slider styling sample", parentName: "Slider" },
     "ripple-sample-2": { displayName: "Ripple Target", parentName: "Ripple" },
     "ripple-sample-3": { displayName: "Ripple Centered Effect", parentName: "Ripple" },
     "ripple-sample-4": { displayName: "Ripple Duration", parentName: "Ripple" },

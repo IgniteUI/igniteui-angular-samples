@@ -15,6 +15,8 @@ import { SliderSample6Component } from "../../src/app/interactions/slider/slider
 import {
     SliderSecondaryTicksMirrorComponent
 } from "../../src/app/interactions/slider/slider-secondary-ticks-mirror/slider-secondary-ticks-mirror.component";
+// tslint:disable-next-line:max-line-length
+import { AppSliderStylingComponent } from "../../src/app/interactions/slider/slider-styling-sample/app-slider-styling.component";
 import {
     TickLabelsTemplateComponent
 } from "../../src/app/interactions/slider/slider-tick-labels-template/tick-labels-template.component";
@@ -158,6 +160,15 @@ export class SliderConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/interactions/slider/"
         }));
 
+        configs.push(new Config({
+            component: AppSliderStylingComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxSliderModule, AppSliderStylingComponent],
+                ngDeclarations: [AppSliderStylingComponent],
+                ngImports: [IgxSliderModule]
+            }),
+            shortenComponentPathBy: "/interactions/slider/"
+        }));
         return configs;
     }
 }

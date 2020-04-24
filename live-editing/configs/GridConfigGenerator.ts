@@ -4,6 +4,9 @@ import { Router, RouterModule } from "@angular/router";
 import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDragDropModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxTooltipModule } from "igniteui-angular";
 import { IgxCategoryChartModule, IgxLegendModule, IgxPieChartModule, IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
 import { IgxPreventDocumentScrollModule } from "../../src/app/directives/prevent-scroll.directive";
+import { GridColumnGroupSelectionComponent } from "../../src/app/grid/column-group-selection-sample/column-group-selection-sample.component";
+import { GridColumnSelectionComponent } from "../../src/app/grid/column-selection-sample/column-selection-sample.component";
+import { GridColumnSelectionStylesComponent } from "../../src/app/grid/column-selection-styles/column-selection-styles.component";
 import { CustomGridPagingStyleSample } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "../../src/app/grid/grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "../../src/app/grid/grid-advanced-filtering-style/grid-advanced-filtering-style.component";
@@ -76,8 +79,8 @@ import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-samp
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
 import { PinningStylingComponent } from "../../src/app/grid/grid-sample-pinning-styling/grid-pinning-styling.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
-import { RightPinningSampleComponent } from '../../src/app/grid/grid-sample-right-pinning/grid-right-pinning.component';
 import { PinningToolbarSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-toolbar-pinning.component";
+import { RightPinningSampleComponent } from "../../src/app/grid/grid-sample-right-pinning/grid-right-pinning.component";
 import { GridSelectionTemplateExcelComponent } from "../../src/app/grid/grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
 import { GridSelectionTemplateNumbersComponent } from "../../src/app/grid/grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
@@ -255,7 +258,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridSelectionTemplateNumbersComponent,
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", 
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts",
                 "/src/app/data/customers.ts"
             ],
             appModuleConfig: new AppModuleConfig({
@@ -387,7 +390,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: PinningSampleComponent,
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts", "/src/app/grid/services/svgIcons.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [PinningSampleComponent, IgxGridModule, IgxIconModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [PinningSampleComponent],
@@ -761,7 +764,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         const gridSaveStateSampleConfig = new Config({
             component: GridSaveStateComponent,
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", 
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts",
                 "/src/app/grid/grid-save-state/localData.ts",
                 "/src/app/grid/grid-save-state/about.component.ts",
                 "/src/app/grid/grid-save-state/about.component.html"
@@ -854,7 +857,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", 
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts",
                 "/src/app/grid/grid-row-drag/data.ts",
                 "/src/app/grid/grid-row-drag/planet/planet.component.html",
                 "/src/app/grid/grid-row-drag/planet/planet.component.scss",
@@ -890,7 +893,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridMultipleRowDragComponent,
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", 
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts",
                 "/src/app/data/customers.ts"
             ],
             appModuleConfig: new AppModuleConfig({
@@ -902,7 +905,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridRowReorderComponent,
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", 
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts",
                 "/src/app/data/customers.ts"
             ],
             appModuleConfig: new AppModuleConfig({
@@ -914,7 +917,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridGroupByPagingSampleComponent,
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", 
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts",
                 "/src/app/data/invoiceData.ts"
             ],
             appModuleConfig: new AppModuleConfig({
@@ -1035,13 +1038,52 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: RightPinningSampleComponent,
             additionalFiles: [
-                "/src/app/data/athletesData.ts", 
+                "/src/app/data/athletesData.ts",
                 "/src/app/grid/services/data.ts"
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: [RightPinningSampleComponent, IgxGridModule, IgxTooltipModule, IgxAvatarModule],
                 ngDeclarations: [RightPinningSampleComponent],
                 ngImports: [IgxGridModule, IgxTooltipModule, IgxAvatarModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridColumnSelectionComponent,
+            additionalFiles: [
+                "/src/app/data/customers.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridColumnSelectionComponent, IgxGridModule],
+                ngDeclarations: [GridColumnSelectionComponent],
+                ngImports: [IgxGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridColumnGroupSelectionComponent,
+            additionalFiles: [
+                "/src/app/data/customers.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridColumnGroupSelectionComponent, IgxGridModule],
+                ngDeclarations: [GridColumnGroupSelectionComponent],
+                ngImports: [IgxGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridColumnSelectionStylesComponent,
+            additionalFiles: [
+                "/src/app/data/customers.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridColumnSelectionStylesComponent, IgxGridModule],
+                ngDeclarations: [GridColumnSelectionStylesComponent],
+                ngImports: [IgxGridModule],
                 ngProviders: []
             })
         }));
