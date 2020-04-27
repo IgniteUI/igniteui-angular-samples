@@ -1,30 +1,8 @@
-<div class="sample-wrapper">
-    <section class="section-content">
-        <article class="sample-column">
-            <p class="sample-description">Vertical Alignment</p>
-            <igx-buttongroup [multiSelection]="false" [alignment]="alignment">
-                <button igxButton igxRipple>Sofia</button>
-                <button igxButton igxRipple>London</button>
-                <button igxButton igxRipple>New York</button>
-                <button igxButton igxRipple [disabled]="true">Tokyo</button>
-            </igx-buttongroup>
-        </article>
-        <article class="sample-column">
-            <p class="sample-description">Horizontal Alignment</p>
-            <igx-buttongroup [multiSelection]="false">
-                <button igxButton igxRipple>
-                    <igx-icon>format_align_left</igx-icon>
-                </button>
-                <button igxButton igxRipple>
-                    <igx-icon>format_align_center</igx-icon>
-                </button>
-                <button igxButton igxRipple>
-                    <igx-icon>format_align_right</igx-icon>
-                </button>
-                <button igxButton igxRipple [selected]="true">
-                    <igx-icon>format_align_justify</igx-icon>
-                </button>
-            </igx-buttongroup>
-        </article>
-    </section>
-</div>
+<article class="sample-column">
+    <igx-buttongroup [alignment]="alignment">
+        <button igxButton igxRipple="white">Sofia</button>
+        <button igxButton igxRipple="white">London</button>
+        <button igxButton igxRipple="white">New York</button>
+        <button igxButton igxRipple="white" [disabled]="true">Tokyo</button>
+    </igx-buttongroup>
+</article>

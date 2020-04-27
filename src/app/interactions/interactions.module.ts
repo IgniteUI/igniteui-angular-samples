@@ -2,17 +2,29 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxComboModule, IgxDialogModule,
-    IgxDragDropModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxRippleModule,
-    IgxSliderModule, IgxSwitchModule, IgxToggleModule, IgxTooltipModule
+    IgxAvatarModule,
+    IgxButtonModule,
+    IgxCardModule,
+    IgxCheckboxModule,
+    IgxChipsModule,
+    IgxComboModule,
+    IgxDialogModule,
+    IgxDragDropModule,
+    IgxIconModule,
+    IgxInputGroupModule,
+    IgxListModule,
+    IgxOverlayService,
+    IgxRippleModule,
+    IgxSliderModule,
+    IgxSwitchModule,
+    IgxToggleModule,
+    IgxTooltipModule
 } from "igniteui-angular";
 import { LayoutsModule } from "../layouts/layouts.module";
-import { CustomDialogComponent } from "./dialog/custom-dialog/custom-dialog.component";
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogStylingSample } from "./dialog/dialog-styling-sample/dialog-styling-sample.component";
-import { DialogComponent } from "./dialog/dialog.component";
 import { DragDialogSampleComponent } from "./drag-drop/dialog-sample/drag-dialog-sample.component";
 import { EmailSampleComponent } from "./drag-drop/email-sample/email-sample.component";
 import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
@@ -29,7 +41,6 @@ import { OverlayPositionSample3Component } from "./overlay/overlay-positioning-3
 import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
 import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
 import { OverlayStylingComponent } from "./overlay/overlay-styling/overlay-styling.component";
-import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
@@ -51,6 +62,7 @@ import { SliderSample6Component } from "./slider/slider-sample-6/slider-sample-6
 import {
     SliderSecondaryTicksMirrorComponent
 } from "./slider/slider-secondary-ticks-mirror/slider-secondary-ticks-mirror.component";
+import { AppSliderStylingComponent } from "./slider/slider-styling-sample/app-slider-styling.component";
 import { TickLabelsTemplateComponent } from "./slider/slider-tick-labels-template/tick-labels-template.component";
 import {
     SliderTicksBottomtotopLabelsComponent
@@ -59,6 +71,7 @@ import { SliderTimeframeComponent } from "./slider/slider-timeframe/slider-timef
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
+import { ToggleSample4Component } from "./toggle/toggle-sample-4/toggle-sample-4.component";
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
@@ -66,8 +79,6 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
 
 @NgModule({
     declarations: [
-        CustomDialogComponent,
-        DialogComponent,
         DialogSample1Component,
         DialogSample2Component,
         DialogSample3Component,
@@ -82,6 +93,7 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         SliderSample3Component,
         SliderSample4Component,
         SliderSample5Component,
+        AppSliderStylingComponent,
         SliderSample6Component,
         SliderSecondaryTicksMirrorComponent,
         SliderDiscreteTicksBottomComponent,
@@ -89,7 +101,6 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         SliderPrimaryTicksTopComponent,
         SliderTimeframeComponent,
         TickLabelsTemplateComponent,
-        RippleSample1Component,
         RippleSample2Component,
         RippleSample3Component,
         RippleSample4Component,
@@ -100,6 +111,7 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         ToggleSample1Component,
         ToggleSample2Component,
         ToggleSample3Component,
+        ToggleSample4Component,
         TooltipRichComponent,
         TooltipSimpleComponent,
         OverlaySampleMain1Component,
@@ -112,7 +124,6 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         OverlayScrollSample2Component,
         OverlayStylingComponent,
         MyDynamicCardComponent,
-        CustomDialogComponent,
         DialogStylingSample,
         TooltipStyleComponent
     ],
@@ -125,6 +136,7 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         IgxButtonModule,
         IgxCardModule,
         IgxCheckboxModule,
+        IgxChipsModule,
         IgxDialogModule,
         IgxDragDropModule,
         IgxIconModule,
