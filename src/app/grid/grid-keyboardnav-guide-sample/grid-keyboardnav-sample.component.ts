@@ -1,21 +1,30 @@
-import { Component, OnInit, ViewChild, HostListener, ChangeDetectorRef, OnDestroy } from "@angular/core";
-import { IgxGridComponent, IGridCellEventArgs, IForOfState } from "igniteui-angular";
+import { animate, state, style, transition, trigger } from "@angular/animations";
+import { ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { IForOfState, IGridCellEventArgs, IgxGridComponent } from "igniteui-angular";
+import { Subject } from "rxjs";
+import { takeUntil } from "rxjs/operators";
 import { DATA } from "../../data/nwindData";
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 
 @Component({
     selector: "grid-keyboardnav",
     templateUrl: "./grid-keyboardnav-sample.component.html",
-    styleUrls: ["grid-keyboardnav-sample.component.scss"]
+    styleUrls: ["grid-keyboardnav-sample.component.scss"],
+    animations: [
+      trigger("completed", [
+        state("completed", style({
+          // opacity: .7,
+          backgroundColor: "#7FFF00"
+        })),
+        transition("* => completed", [
+          animate(".5s")
+        ])
+      ])
+    ]
 })
 export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
     private _destroyer = new Subject();
-    private _forOfState: IForOfState = {
-        startIndex: 0,
-        chunkSize: 0
-    };
 
     @ViewChild(IgxGridComponent, { static: true})
     public grid: IgxGridComponent;
@@ -41,6 +50,11 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     @HostListener("keydown.PageDown", ["$event"])
     public onPageDown(evt) {
         this.trackListCombinations(evt);
+    }
+
+    @HostListener("keydown.l", ["$event"])
+    public onLKeyDown(evt) {
+      console.log(evt);
     }
 
     public ngOnInit() {

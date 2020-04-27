@@ -13,18 +13,10 @@
     <div class="list-sample">
         <igx-list>
             <igx-list-item isHeader=true>Combinations</igx-list-item>
-            <igx-list-item *ngFor="let c of keyCombinations" [ngClass]="{'completed': c.completed}">
+            <igx-list-item *ngFor="let c of keyCombinations" [ngClass]="{'completed': c.completed}" [@completed]="c.completed ? 'completed' : ''">
                 <h4 igxListLineTitle>{{ c.title }}</h4>
                 <p igxListLineSubTitle>{{ c.subTitle }}</p>
-            </igx-list-item>
-        </igx-list>
-    </div>
-    <div class="list-sample">
-        <igx-list>
-            <igx-list-item isHeader=true>Combinations</igx-list-item>
-            <igx-list-item *ngFor="let c of keyCombinations" [ngClass]="{'completed': c.completed}">
-                <h4 igxListLineTitle>{{ c.title }}</h4>
-                <p igxListLineSubTitle>{{ c.subTitle }}</p>
+                <igx-icon *ngIf="c.completed">done</igx-icon>
             </igx-list-item>
         </igx-list>
     </div>
