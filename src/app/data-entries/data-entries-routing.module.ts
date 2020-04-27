@@ -9,8 +9,8 @@ import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3
 import { ButtonGroupSampleComponent } from "./buttonGroup/button-group-sample-4/button-group-sample.component";
 import { ButtonGroupSample5Component } from "./buttonGroup/button-group-sample-5/button-group-sample-5.component";
 import { ButtonGroupStyleComponent } from "./buttonGroup/button-group-style/button-group-style.component";
+import { ButtonsDisabledComponent } from "./buttons/buttons-disabled-sample/buttons-disabled-sample";
 import { ButtonsDisplayDensityComponent } from "./buttons/buttons-display-density/buttons-display-density.component";
-import { ButtonsRoundnessComponent } from "./buttons/buttons-roundness-sample/buttons-roundness-sample";
 import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
 import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
 import { ButtonsSample3Component } from "./buttons/buttons-sample-3/buttons-sample-3.component";
@@ -148,9 +148,9 @@ export const dataEntriesRoutes: Routes = [
         path: "buttons-sample-8"
     },
     {
-        component: ButtonsRoundnessComponent,
-        data: dataEntriesRoutesData["buttons-roundness-sample"],
-        path: "buttons-roundness-sample"
+        component: ButtonsDisabledComponent,
+        data: dataEntriesRoutesData["buttons-disabled-sample"],
+        path: "buttons-disabled-sample"
     },
     {
         component: ButtonsStyleComponent,
