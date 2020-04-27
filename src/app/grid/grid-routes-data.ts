@@ -90,5 +90,6 @@ export const gridsRoutesData = {
     "grid-sample-right-pinning": { displayName: "Right Pinning", parentName: "Grid" },
     "column-selection": { displayName: "Column Selection", parentName: "Grid" },
     "column-group-selection": { displayName: "Column Group Selection", parentName: "Grid" },
-    "column-selection-styles": { displayName: "Column Selection Styles", parentName: "Grid" }
+    "column-selection-styles": { displayName: "Column Selection Styles", parentName: "Grid" },
+    "grid-keyboardnav-guide": { displayName: "Grid keyboard navigation guide", parentName: "Grid" }
 };

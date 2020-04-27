@@ -7,8 +7,8 @@ import {
     IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule,
     IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule,
     IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule,
-    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
-    IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
+    IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule,
+    IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
 import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 import { GridColumnGroupSelectionComponent } from "./column-group-selection-sample/column-group-selection-sample.component";
@@ -55,6 +55,7 @@ import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-s
 import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
+import { GridKeyboardnavGuide } from "./grid-keyboardnav-guide-sample/grid-keyboardnav-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/grid-moving-styled-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -198,7 +199,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         RightPinningSampleComponent,
         GridColumnSelectionComponent,
         GridColumnGroupSelectionComponent,
-        GridColumnSelectionStylesComponent
+        GridColumnSelectionStylesComponent,
+        GridKeyboardnavGuide
     ],
     imports: [
         CommonModule,
@@ -234,7 +236,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         IgxSnackbarModule,
         IgxTabsModule,
         IgxCardModule,
-        IgxDividerModule
+        IgxDividerModule,
+        IgxListModule
     ],
     providers: [
         IgxCsvExporterService,
