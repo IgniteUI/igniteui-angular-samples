@@ -34,6 +34,7 @@ import { ButtonsSample8Component } from "./buttons/buttons-sample-8/buttons-samp
 import { ButtonsStyleComponent } from "./buttons/buttons-style/buttons-style.component";
 import { CheckboxSample1Component } from "./checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./checkbox/checkbox-sample-2/checkbox-sample-2.component";
+import { CheckboxSample3Component } from "./checkbox/checkbox-sample-3/checkbox-sample-3.component";
 import { CheckboxStylingComponent } from "./checkbox/checkbox-styling/checkbox-styling.component";
 import { DataEntriesRoutingModule } from "./data-entries-routing.module";
 import { DropDownRemoteComponent } from "./dropdown/drop-down-remote-virtual/drop-down-remote.component";
@@ -88,8 +89,9 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         ButtonsSample7Component,
         ButtonsSample8Component,
         CheckboxSample1Component,
-        CheckboxStylingComponent,
         CheckboxSample2Component,
+        CheckboxSample3Component,
+        CheckboxStylingComponent,
         DropDownRemoteComponent,
         DropDownVirtualComponent,
         DropdownMenuComponent,
