@@ -101,7 +101,7 @@ export class TextHighlightSample2Component {
 
                 IgxTextHighlightDirective.setActiveHighlight("group1", {
                     index: actualIndex,
-                    rowIndex: row
+                    row: row
                 });
             }
         } else {
