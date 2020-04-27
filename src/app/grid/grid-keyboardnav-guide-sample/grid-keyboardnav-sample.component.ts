@@ -1,10 +1,12 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { IForOfState, IGridCellEventArgs, IgxGridComponent } from "igniteui-angular";
+import { IForOfState, IGridCellEventArgs, IgxGridComponent, IgxOverlayService } from "igniteui-angular";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { DATA } from "../../data/nwindData";
+import { IgxAverageDirectionalIndexIndicatorComponent } from 'igniteui-angular-charts';
+import { IgxGridExcelStyleFilteringComponent } from 'igniteui-angular/lib/grids/filtering/excel-style/grid.excel-style-filtering.component';
 
 @Component({
     selector: "grid-keyboardnav",
@@ -29,7 +31,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     @ViewChild(IgxGridComponent, { static: true})
     public grid: IgxGridComponent;
 
-    public constructor(private cdr: ChangeDetectorRef) {}
+    public constructor(private cdr: ChangeDetectorRef, private _overlay: IgxOverlayService) {}
 
     public keyCombinations = [
         {title: "ctrl + Arrow Key Up", subTitle:"move to top cell in column", completed: false},
@@ -39,7 +41,8 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         {title: "ctrl + home", subTitle:"move to top left cell in the grid", completed: false},
         {title: "ctrl + end", subTitle:"move to bottom right cell in the grid", completed: false},
         {title: "PageUP", subTitle:"move to bottom right cell in the grid", completed: false},
-        {title: "PageDown", subTitle:"move to bottom right cell in the grid", completed: false}
+        {title: "PageDown", subTitle:"move to bottom right cell in the grid", completed: false},
+        {title: "ctrl + shift + l", subTitle:"opens the excel style filtering", completed: false},
     ];
 
     @HostListener("keydown.PageUp", ["$event"])
@@ -52,21 +55,19 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         this.trackListCombinations(evt);
     }
 
-    @HostListener("keydown.l", ["$event"])
-    public onLKeyDown(evt) {
-      console.log(evt);
-    }
-
     public ngOnInit() {
         this.grid.data = DATA;
         this.grid.onSelection.pipe(takeUntil(this._destroyer))
-            .subscribe((evt: IGridCellEventArgs) => {
-                this.trackListCombinations(evt.event);
-            });
-        this.grid.verticalScrollContainer.onChunkPreload.pipe(takeUntil(this._destroyer))
-            .subscribe((evt: IForOfState) => {
-                console.log(evt);
-            });
+          .subscribe((evt: IGridCellEventArgs) => {
+            this.trackListCombinations(evt.event);
+          });
+        this._overlay.onOpening.pipe(takeUntil(this._destroyer))
+          .subscribe((args) => {
+            if (args.componentRef.componentType.name === "IgxGridExcelStyleFilteringComponent") {
+              this.keyCombinations[8].completed = true;
+              this.cdr.detectChanges();
+            }
+          });
     }
 
     public trackListCombinations(evt) {

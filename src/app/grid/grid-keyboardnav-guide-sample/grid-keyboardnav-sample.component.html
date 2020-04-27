@@ -1,6 +1,6 @@
 <div class="sample">
     <div class="grid_wrapper">
-        <igx-grid height="600px" width="100%" [paging]="true">
+        <igx-grid height="600px" width="100%" [paging]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
             <igx-column field="ProductID" header="ProductID"></igx-column>
             <igx-column field="ProductName" header="ProductName" [hasSummary]="true" dataType="string"></igx-column>
             <igx-column field="SupplierID" header="SupplierID" dataType="number" [hasSummary]="true"></igx-column>
