@@ -7,23 +7,14 @@
 // Ignite UI for Angular Theming engine related styling
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-$my-primary-color: #f5e492;
-$my-secondary-color: #09f;
-
-$my-color-palette: igx-palette(
-    $primary: $my-primary-color,
-    $secondary: $my-secondary-color,
-);
-
 $custom-checkbox-theme: igx-checkbox-theme(
-    $palette: $my-color-palette,
     $border-radius: 10px,
-    $label-color: $my-secondary-color,
-    $empty-color: $my-secondary-color
+    $label-color: #011627,
+    $empty-color: #ECAA53,
+    $fill-color: #ECAA53,
+    $tick-color: #011627,
 );
 
 :host {
-    ::ng-deep {
-        @include igx-checkbox($custom-checkbox-theme);
-    }
+    @include igx-css-vars($custom-checkbox-theme);
 }
