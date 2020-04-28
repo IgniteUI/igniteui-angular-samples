@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { ButtonGroupAlignment } from "igniteui-angular";
 
 @Component({
@@ -6,11 +6,6 @@ import { ButtonGroupAlignment } from "igniteui-angular";
     styleUrls: ["./button-group-style.component.scss"],
     templateUrl: "./button-group-style.component.html"
 })
-export class ButtonGroupStyleComponent implements OnInit {
+export class ButtonGroupStyleComponent {
     public alignment = ButtonGroupAlignment.vertical;
-
-    constructor() { }
-
-    public ngOnInit() {
-    }
 }

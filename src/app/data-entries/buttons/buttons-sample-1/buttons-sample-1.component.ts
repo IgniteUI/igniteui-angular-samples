@@ -6,11 +6,4 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./buttons-sample-1.component.html"
 
 })
-export class ButtonsSample1Component implements OnInit {
-
-  constructor() { }
-
-  public ngOnInit() {
-  }
-
-}
+export class ButtonsSample1Component { }
