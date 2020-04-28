@@ -99,10 +99,7 @@ export class TextHighlightSample2Component {
 
                 const actualIndex = row === 0 ? this.index : this.index - matchesArray[row - 1];
 
-                IgxTextHighlightDirective.setActiveHighlight("group1", {
-                    index: actualIndex,
-                    row: row
-                });
+                IgxTextHighlightDirective.setActiveHighlight("group1", { index: actualIndex, row });
             }
         } else {
             this.highlights.forEach((h) => {
