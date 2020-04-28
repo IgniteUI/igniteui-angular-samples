@@ -11,6 +11,7 @@ export class TreeGridRowEditSampleComponent implements OnInit {
 
     public data: IEmployee[];
     public columns: any[];
+    public selectionMode = "multiple";
 
     @ViewChild("treeGrid", { static: true }) public treeGrid1: IgxTreeGridComponent;
     public ngOnInit(): void {

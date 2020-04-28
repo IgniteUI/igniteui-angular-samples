@@ -8,7 +8,7 @@ import { EMPLOYEE_DATA } from "./data";
 })
 export class TreeGridChilddatakeySampleComponent implements OnInit {
     public localData: any[];
-
+    public selectionMode = "multiple";
     constructor() { }
 
     public ngOnInit() {
