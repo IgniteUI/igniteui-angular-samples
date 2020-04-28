@@ -21,6 +21,7 @@ import {
     IgxRippleModule,
     IgxSelectModule,
     IgxSliderModule,
+    IgxSplitterModule,
     IgxTabsModule,
     IgxToastModule
 } from "igniteui-angular";
@@ -61,6 +62,10 @@ import { LayoutJustifyContentComponent } from "./layout/layout-justify-content/l
 import { LayoutSampleComponent } from "./layout/layout-sample/layout-sample.component";
 import { LayoutWrapComponent } from "./layout/layout-wrap/layout-wrap.component";
 import { LayoutsRoutingModule } from "./layouts-routing.module";
+import { SplitterHorizontalSampleComponent
+    } from "./splitter/splitter-horizontal-sample/splitter-horizontal-sample.component";
+import { SplitterNestedSampleComponent } from "./splitter/splitter-nested-sample/splitter-nested-sample.component";
+import { SplitterStylingSampleComponent } from "./splitter/splitter-styling-sample/splitter-styling-sample.component";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarSample3Component } from "./tabbar/tabbar-sample-3/components/tabbar-sample-3.component";
@@ -105,6 +110,9 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         LayoutContentSpaceComponent,
         LayoutSampleComponent,
         LayoutWrapComponent,
+        SplitterHorizontalSampleComponent,
+        SplitterNestedSampleComponent,
+        SplitterStylingSampleComponent,
         TabbarSample1Component,
         TabbarSample2Component,
         TabbarSample3Component,
@@ -142,6 +150,7 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         IgxRippleModule,
         IgxSelectModule,
         IgxSliderModule,
+        IgxSplitterModule,
         IgxTabsModule,
         IgxToastModule
     ]
