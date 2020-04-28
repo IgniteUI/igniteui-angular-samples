@@ -28,7 +28,7 @@ export class GridRowPinningExtraColumnSampleComponent implements AfterViewInit {
         this.data = DATA;
     }
 
-    public togglePining(row: IgxGridRowComponent, event) {
+    public togglePinning(row: IgxGridRowComponent, event) {
         event.preventDefault();
         if (row.pinned) {
             row.unpin();

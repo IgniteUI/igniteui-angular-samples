@@ -3,11 +3,11 @@
 </div>
 <div class="grid-container">
     <igx-hierarchical-grid #hierarchicalGrid [data]="localData" [primaryKey]="'Photo'" [autoGenerate]="false"
-        [height]="'430px'" [width]="'100%'" [rowHeight]="'65px'" [pinning]='pinningConfig' [cellSelection]="'none'">
+        [height]="'520px'" [width]="'100%'" [rowHeight]="'65px'" [pinning]='pinningConfig' [cellSelection]="'none'">
         <igx-column width='70px' [filterable]='false' [pinned]="true">
             <ng-template igxCell let-cell="cell" let-val>
                 <igx-icon class="pin-icon" fontSet="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}"
-                    (mousedown)="togglePinning(cell.row, $event)">
+                    (mouseup)="togglePinning(cell.row, $event)">
                 </igx-icon>
             </ng-template>
         </igx-column>
@@ -28,7 +28,7 @@
             <igx-column width='70px' [filterable]='false' [pinned]="true">
                 <ng-template igxCell let-cell="cell" let-val>
                     <igx-icon class="pin-icon" fontSet="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}"
-                        (mousedown)="togglePinning(cell.row, $event)">
+                        (mouseup)="togglePinning(cell.row, $event)">
                     </igx-icon>
                 </ng-template>
             </igx-column>
@@ -41,7 +41,7 @@
                 <igx-column width='70px' [filterable]='false' [pinned]="true">
                     <ng-template igxCell let-cell="cell" let-val>
                         <igx-icon class="pin-icon" fontSet="filtering-icons"
-                            name="{{cell.row.pinned ? 'unpin' : 'pin'}}" (mousedown)="togglePinning(cell.row, $event)">
+                            name="{{cell.row.pinned ? 'unpin' : 'pin'}}" (mouseup)="togglePinning(cell.row, $event)">
                         </igx-icon>
                     </ng-template>
                 </igx-column>
@@ -57,7 +57,7 @@
             <igx-column width='70px' [filterable]='false' [pinned]="true">
                 <ng-template igxCell let-cell="cell" let-val>
                     <igx-icon class="pin-icon" fontSet="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}"
-                        (mousedown)="togglePinning(cell.row, $event)">
+                        (mouseup)="togglePinning(cell.row, $event)">
                     </igx-icon>
                 </ng-template>
             </igx-column>
