@@ -1,12 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from "@angular/core";
-import { IgxGridComponent, IgxGridRowComponent, RowPinningPosition } from "igniteui-angular";
+import { IgxGridComponent, IgxGridRowComponent, IRowDragStartEventArgs, RowPinningPosition } from "igniteui-angular";
 import { IPinningConfig } from "igniteui-angular/lib/grids/common/grid.interface";
 import { DATA } from "../../data/customers";
-
-enum DragIcon {
-    DEFAULT = "drag_indicator",
-    ALLOW = "add"
-}
 
 @Component({
     selector: "grid-row-pinning-drag-sample",
@@ -16,7 +11,7 @@ enum DragIcon {
 
 export class GridPinningDragSampleComponent implements AfterViewInit {
     public data: any[];
-    @ViewChild("grid", { read: IgxGridComponent, static : true })
+    @ViewChild("grid", { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top };
 
@@ -44,11 +39,11 @@ export class GridPinningDragSampleComponent implements AfterViewInit {
         const event = args.originalEvent;
         let currRowPinnedIndex;
         const currRowIndex = this.getCurrentRowIndex(this.grid.rowList.toArray(),
-        { x: event.clientX, y: event.clientY });
+            { x: event.clientX, y: event.clientY });
         if (currRowIndex === -1) { return; }
 
         const currRowID = this.getCurrentRowID(this.grid.rowList.toArray(),
-        { x: event.clientX, y: event.clientY });
+            { x: event.clientX, y: event.clientY });
 
         const currentRow = this.grid.rowList.toArray().find((r) => r.rowID === currRowID);
         if (currentRow.pinned) {
@@ -64,6 +59,12 @@ export class GridPinningDragSampleComponent implements AfterViewInit {
         } else if (currentRow.pinned && args.dragData.pinned) {
             this.grid.unpinRow(args.dragData.rowID);
             this.grid.pinRow(args.dragData.rowID, currRowPinnedIndex);
+        }
+    }
+
+    public onRowDragStart(args: IRowDragStartEventArgs) {
+        if (args.dragData.disabled) {
+            args.cancel = true;
         }
     }
 
