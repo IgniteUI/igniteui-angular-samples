@@ -10,7 +10,7 @@ export class TreeGridRowEditStyleComponent implements OnInit {
 
     public data: IEmployee[];
     public columns: any[];
-
+    public selectionMode = "multiple";
     public ngOnInit(): void {
         this.data = generateEmployeeFlatData();
 

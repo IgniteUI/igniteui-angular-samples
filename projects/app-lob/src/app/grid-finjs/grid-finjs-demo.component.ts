@@ -28,7 +28,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild("dialog", { static: true }) public dialog: IgxDialogComponent;
 
     public properties;
-
+    public selectionMode = "multiple";
     public theme = false;
     public volume = 1000;
     public frequency = 500;

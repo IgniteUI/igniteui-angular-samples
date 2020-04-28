@@ -22,6 +22,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     @ViewChild("slider1", { static: true }) public volumeSlider: IgxSliderComponent;
     @ViewChild("slider2", { static: true }) public intervalSlider: IgxSliderComponent;
 
+    public selectionMode = "multiple";
     public theme = false;
     public volume = 1000;
     public frequency = 500;

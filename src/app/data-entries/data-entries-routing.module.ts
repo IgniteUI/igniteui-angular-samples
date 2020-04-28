@@ -55,6 +55,7 @@ import { SelectSample4Component } from "./select/select-sample-4/select-sample-4
 import { SelectStylingComponent } from "./select/select-styling/select-styling.component";
 import { SwitchSample1Component } from "./switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2.component";
+import { SwitchStylingComponent } from "./switch/switch-styling/switch-styling.component";
 
 export const dataEntriesRoutes: Routes = [
     {
@@ -286,6 +287,11 @@ export const dataEntriesRoutes: Routes = [
         component: SwitchSample2Component,
         data: dataEntriesRoutesData["switch-sample-2"],
         path: "switch-sample-2"
+    },
+    {
+        component: SwitchStylingComponent,
+        data: dataEntriesRoutesData["switch-styling"],
+        path: "switch-styling"
     },
     {
         component: SelectSample1Component,
