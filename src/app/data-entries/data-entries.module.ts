@@ -34,6 +34,7 @@ import { ButtonsSample8Component } from "./buttons/buttons-sample-8/buttons-samp
 import { ButtonsStyleComponent } from "./buttons/buttons-style/buttons-style.component";
 import { CheckboxSample1Component } from "./checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./checkbox/checkbox-sample-2/checkbox-sample-2.component";
+import { CheckboxSample3Component } from "./checkbox/checkbox-sample-3/checkbox-sample-3.component";
 import { CheckboxStylingComponent } from "./checkbox/checkbox-styling/checkbox-styling.component";
 import { DataEntriesRoutingModule } from "./data-entries-routing.module";
 import { DropDownRemoteComponent } from "./dropdown/drop-down-remote-virtual/drop-down-remote.component";
@@ -67,6 +68,7 @@ import { SelectSample4Component } from "./select/select-sample-4/select-sample-4
 import { SelectStylingComponent } from "./select/select-styling/select-styling.component";
 import { SwitchSample1Component } from "./switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2.component";
+import { SwitchStylingComponent } from "./switch/switch-styling/switch-styling.component";
 
 @NgModule({
     declarations: [
@@ -89,8 +91,9 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         ButtonsSample7Component,
         ButtonsSample8Component,
         CheckboxSample1Component,
-        CheckboxStylingComponent,
         CheckboxSample2Component,
+        CheckboxSample3Component,
+        CheckboxStylingComponent,
         DropDownRemoteComponent,
         DropDownVirtualComponent,
         DropdownMenuComponent,
@@ -115,6 +118,7 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         RadioStylingSampleComponent,
         SwitchSample1Component,
         SwitchSample2Component,
+        SwitchStylingComponent,
         SelectSample1Component,
         SelectSample2Component,
         SelectSample3Component,

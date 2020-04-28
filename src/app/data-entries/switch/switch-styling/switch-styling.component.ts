@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "app-switch-sample-2",
-  styleUrls: ["./switch-sample-2.component.scss"],
-  templateUrl: "./switch-sample-2.component.html"
+  selector: "app-switch-styling",
+  styleUrls: ["./switch-styling.component.scss"],
+  templateUrl: "./switch-styling.component.html"
 })
-export class SwitchSample2Component {
+export class SwitchStylingComponent {
   public settings = [
     { name: "WiFi", state: false},
     { name: "Bluetooth", state: true},
