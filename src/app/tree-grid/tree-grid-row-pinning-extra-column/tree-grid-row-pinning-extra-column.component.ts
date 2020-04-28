@@ -1,33 +1,39 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import {IgxGridRowComponent, IgxIconService, IgxTreeGridComponent, RowPinningPosition } from "igniteui-angular";
+import {
+    ColumnPinningPosition,
+    IgxIconService,
+    IgxTreeGridComponent,
+    IgxTreeGridRowComponent,
+    RowPinningPosition
+} from "igniteui-angular";
 import { IPinningConfig } from "igniteui-angular/lib/grids/common/grid.interface";
 import { icons } from "../../grid/services/svgIcons";
 import { generateEmployeeFlatData, IEmployee } from "../data/employees-flat";
 
 const FILTERING_ICONS_FONT_SET = "filtering-icons";
+
 @Component({
-    selector: "app-tree-grid-row-pinning",
-    styleUrls: ["tree-grid-row-pinning-sample.component.scss"],
-    templateUrl: "tree-grid-row-pinning-sample.component.html"
+    selector: "tree-grid-row-pinning-extra-column",
+    styleUrls: ["tree-grid-row-pinning-extra-column.component.scss"],
+    templateUrl: "tree-grid-row-pinning-extra-column.component.html"
 })
-export class TreeGridRowPinningSampleComponent implements OnInit {
+export class TreeGridRowPinningExtraColumnSampleComponent implements OnInit {
 
     public data: IEmployee[];
     public columns: any[];
-    public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top };
+    public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top, columns: ColumnPinningPosition.End };
     @ViewChild("treeGrid", { static: true }) public treeGrid1: IgxTreeGridComponent;
 
-    constructor(private iconService: IgxIconService) {}
+    constructor(private iconService: IgxIconService) { }
 
     public ngOnInit(): void {
         this.data = generateEmployeeFlatData();
 
         this.columns = [
-            // tslint:disable:max-line-length
-            { field: "Name", label: "Full Name", resizable: true, movable: true, sortable: true, filterable: true, editable: true, dataType: "string" },
-            { field: "Age", label: "Age", resizable: false, movable: false, sortable: false, filterable: false, editable: true, dataType: "number" },
-            { field: "Title", label: "Title", resizable: true, movable: true, sortable: true, filterable: true, editable: true, dataType: "string" },
-            { field: "HireDate", label: "Hire Date", resizable: true, movable: true, sortable: true, filterable: true, editable: true, dataType: "date" }
+            { field: "Name", label: "Full Name", dataType: "string" },
+            { field: "Age", label: "Age", dataType: "number" },
+            { field: "Title", label: "Title", dataType: "string" },
+            { field: "HireDate", label: "Hire Date", dataType: "date" }
         ];
     }
 
@@ -40,7 +46,7 @@ export class TreeGridRowPinningSampleComponent implements OnInit {
         });
     }
 
-    public togglePinning(row: IgxGridRowComponent, event) {
+    public togglePinning(row: IgxTreeGridRowComponent, event) {
         event.preventDefault();
         if (row.pinned) {
             row.unpin();

@@ -6,7 +6,7 @@ export const treeGridRoutesData = {
     "tree-grid-row-drag-base": { displayName: "Tree Grid Row Drag - Base", parentName: "TreeGrid" },
     "treegrid-row-edit": { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
     "treegrid-row-edit-style": { displayName: "TreeGrid Row Edit Style", parentName: "TreeGrid" },
-    "tree-grid-row-pinning": { displayName: "Tree Grid Row Pinning", parentName: "TreeGrid" },
+    "tree-grid-row-pinning-extra-column": { displayName: "Tree Grid Row Pinning Custom UI", parentName: "TreeGrid" },
     "treegrid-batchediting": { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
     "treegrid-employees": { displayName: "TreeGrid Employees", parentName: "TreeGrid" },
     "treegrid-search": { displayName: "TreeGrid Search", parentName: "TreeGrid" },

@@ -704,7 +704,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: HGridRowPinningExtraColumnSampleComponent,
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts", "/src/app/grid/services/svgIcons.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/grid/services/svgIcons.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HGridRowPinningExtraColumnSampleComponent, IgxHierarchicalGridModule, IgxIconModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [HGridRowPinningExtraColumnSampleComponent],

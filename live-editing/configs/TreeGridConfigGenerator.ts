@@ -19,6 +19,7 @@ import { TreeGridColumnMovingSampleComponent } from "../../src/app/tree-grid/tre
 import { TreeGridColumnMovingStyledSampleComponent } from "../../src/app/tree-grid/tree-grid-column-moving-styled-sample/tree-grid-column-moving-styled-sample.component";
 import { TreeGridColumnPinningSampleComponent } from "../../src/app/tree-grid/tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
 import { TreeGridPinningToolbarSampleComponent } from "../../src/app/tree-grid/tree-grid-column-pinning-sample/tree-grid-toolbar-pinning.component";
+import { TreeGridRowPinningExtraColumnSampleComponent } from "../../src/app/tree-grid/tree-grid-row-pinning-extra-column/tree-grid-row-pinning-extra-column.component";
 import { TreeGridColumnResizingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 // tslint:disable-next-line: ordered-imports
 import { TreeGridConditionalCellStyle2Component } from "../../src/app/tree-grid/tree-grid-conditional-cell-style-2/tree-grid-conditional-cell-style-2.component";
@@ -930,6 +931,17 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 imports: [TreeGridColumnSelectionStylesComponent, IgxTreeGridModule],
                 ngDeclarations: [TreeGridColumnSelectionStylesComponent],
                 ngImports: [IgxTreeGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: TreeGridRowPinningExtraColumnSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/tree-grid/data/employees-flat.ts", "/src/app/grid/services/svgIcons.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [TreeGridRowPinningExtraColumnSampleComponent, IgxTreeGridModule, IgxIconModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [TreeGridRowPinningExtraColumnSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxTreeGridModule, IgxIconModule],
                 ngProviders: []
             })
         }));
