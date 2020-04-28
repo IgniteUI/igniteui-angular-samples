@@ -51,6 +51,7 @@ import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
 import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
 import { GridRowPinningSampleComponent } from "./grid-row-pinning/grid-row-pinning.component";
+import { GridPinningDragSampleComponent } from "./grid-row-pinning-drag/grid-row-pinning-drag.component";
 import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -73,6 +74,9 @@ import { GridToolbarStyleComponent } from "./grid-toolbar-style/grid-toolbar-sty
 import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
+import { GridColumnGroupSelectionComponent } from "./column-group-selection-sample/column-group-selection-sample.component";
+import { GridColumnSelectionComponent } from "./column-selection-sample/column-selection-sample.component";
+import { GridColumnSelectionStylesComponent } from "./column-selection-styles/column-selection-styles.component";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
@@ -180,6 +184,11 @@ export const gridsRoutes: Routes = [
         component: GridRowPinningSampleComponent,
         data: gridsRoutesData["grid-row-pinning"],
         path: "grid-row-pinning"
+    },
+    {
+        component: GridPinningDragSampleComponent,
+        data: gridsRoutesData["grid-row-pinning-drag"],
+        path: "grid-row-pinning-drag"
     },
     {
         component: GridBatchEditingSampleComponent,
@@ -525,6 +534,21 @@ export const gridsRoutes: Routes = [
         component: GridAllDataSummaryComponent,
         data: gridsRoutesData["grid-alldata-summaries"],
         path: "grid-alldata-summaries"
+    },
+    {
+        component: GridColumnSelectionComponent,
+        data: gridsRoutesData["column-selection"],
+        path: "column-selection"
+    },
+    {
+        component: GridColumnGroupSelectionComponent,
+        data: gridsRoutesData["column-group-selection"],
+        path: "column-group-selection"
+    },
+    {
+        component: GridColumnSelectionStylesComponent,
+        data: gridsRoutesData["column-selection-styles"],
+        path: "column-selection-styles"
     }
 ];
 

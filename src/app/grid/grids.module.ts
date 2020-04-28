@@ -11,6 +11,9 @@ import {
     IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
 import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
+import { GridColumnGroupSelectionComponent } from "./column-group-selection-sample/column-group-selection-sample.component";
+import { GridColumnSelectionComponent } from "./column-selection-sample/column-selection-sample.component";
+import { GridColumnSelectionStylesComponent } from "./column-selection-styles/column-selection-styles.component";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
@@ -77,6 +80,7 @@ import { PlanetComponent } from "./grid-row-drag/planet/planet.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
 import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
 import { GridRowPinningSampleComponent } from "./grid-row-pinning/grid-row-pinning.component";
+import { GridPinningDragSampleComponent } from "./grid-row-pinning-drag/grid-row-pinning-drag.component";
 import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -142,6 +146,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         PinningSampleComponent,
         PinningToolbarSampleComponent,
         GridRowPinningSampleComponent,
+        GridPinningDragSampleComponent,
         GridSelectionSampleComponent,
         GridSelectionTemplateExcelComponent,
         GridSelectionTemplateNumbersComponent,
@@ -194,7 +199,10 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridExternalAdvancedFilteringComponent,
         GridCollapsibleColumnGroupsComponent,
         GridAllDataSummaryComponent,
-        RightPinningSampleComponent
+        RightPinningSampleComponent,
+        GridColumnSelectionComponent,
+        GridColumnGroupSelectionComponent,
+        GridColumnSelectionStylesComponent
     ],
     imports: [
         CommonModule,

@@ -67,13 +67,13 @@ export class KanbanSampleComponent implements OnInit {
             this.dummyObj = null;
         }
         // Add the blue container hightlight when an item starts being dragged
-        this.renderer.addClass(event.owner.element.nativeElement, "dragHovered");
+        this.renderer.addClass(event.owner.element.nativeElement, "active");
     }
 
     public onStateContainerLeave(event: IDropDroppedEventArgs) {
         // This event also gets raised when the user drags a task over another task tile.
-        // That means we have to re-apply the "dragHovered" class in the `onItemEnter` event handler
-        this.renderer.removeClass(event.owner.element.nativeElement,  "dragHovered");
+        // That means we have to re-apply the "active" class in the `onItemEnter` event handler
+        this.renderer.removeClass(event.owner.element.nativeElement,  "active");
     }
 
     public dragStartHandler(event) {
@@ -100,7 +100,7 @@ export class KanbanSampleComponent implements OnInit {
     public onItemEnter(event: IDropBaseEventArgs) {
         // Applying the container highlighting again
         const listContainer = event.owner.element.nativeElement.dataset.state;
-        this.renderer.addClass(this[listContainer].nativeElement, "dragHovered");
+        this.renderer.addClass(this[listContainer].nativeElement, "active");
 
         const currentList = event.owner.element.nativeElement.dataset.state + "List";
         const currentItemIndex = this[currentList].findIndex((item) => {
@@ -136,7 +136,7 @@ export class KanbanSampleComponent implements OnInit {
 
     public onItemLeave(event: IDropBaseEventArgs) {
         const listContainer = event.owner.element.nativeElement.dataset.state;
-        this.renderer.removeClass(this[listContainer].nativeElement, "dragHovered");
+        this.renderer.removeClass(this[listContainer].nativeElement, "active");
     }
 
     public onItemDropped(event: IDropDroppedEventArgs) {

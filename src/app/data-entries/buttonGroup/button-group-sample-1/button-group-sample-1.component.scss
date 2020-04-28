@@ -1,11 +1,4 @@
-:host {
-    display: block;
-    padding: 16px;
+igx-buttongroup{
+    display: inline-block;
+    max-width: 400px;
 }
-
-.section-content {
-    display: flex; 
-    flex-flow: row wrap; 
-    justify-content: center;
-}
-

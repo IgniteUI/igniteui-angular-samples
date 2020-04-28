@@ -12,6 +12,7 @@ import { ChipConfigGenerator } from "../configs/ChipConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "../configs/CircularProgressbarConfigGenerator";
 import { ComboConfigGenerator } from "../configs/ComboConfigGenerator";
 import { DatePickerConfigGenerator } from "../configs/DatePickerConfigGenerator";
+import { DateTimeEditorConfigGenerator } from "../configs/DateTimeEditorConfigGenerator";
 import { DialogConfigGenerator } from "../configs/DialogConfigGenerator";
 import { DividerConfigGenerator } from "../configs/DividerConfigGenerator";
 import { DragAndDropConfigGenerator } from "../configs/DragAndDropConfigGenerator";
@@ -37,6 +38,7 @@ import { RadioConfigGenerator } from "../configs/RadioConfigGenerator";
 import { RippleConfigGenerator } from "../configs/RippleConfigGenerator";
 import { SelectConfigGenerator } from "../configs/SelectConfigGenerator";
 import { SliderConfigGenerator } from "../configs/SliderConfigGenerator";
+import { SplitterConfigGenerator } from "../configs/SplitterConfigGenerator";
 import { SnackbarConfigGenerator } from "../configs/SnackbarConfigGenerator";
 import { SwitchConfigGenerator } from "../configs/SwitchConfigGenerator";
 import { TabBarConfigGenerator } from "../configs/TabBarConfigGenerator";
@@ -81,6 +83,7 @@ export const CONFIG_GENERATORS =
         CheckboxConfigGenerator,
         ComboConfigGenerator,
         DatePickerConfigGenerator,
+        DateTimeEditorConfigGenerator,
         DropDownConfigGenerator,
         InputGroupConfigGenerator,
         MaskConfigGenerator,
@@ -111,5 +114,6 @@ export const CONFIG_GENERATORS =
         ToastConfigGenerator,
         TooltipConfigGenerator,
         ThemingConfigGenerator,
-        TransactionsConfigGenerator
+        TransactionsConfigGenerator,
+        SplitterConfigGenerator
     ];

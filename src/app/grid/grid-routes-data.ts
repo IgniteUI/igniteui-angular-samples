@@ -34,6 +34,7 @@ export const gridsRoutesData = {
     "grid-resizing-sample": { displayName: "Grid Resizing", parentName: "Grid" },
     "grid-resize-line-styling-sample": { displayName: "Grid Resize Line Styling", parentName: "Grid" },
     "grid-row-pinning": { displayName: "Grid Row Pinning", parentName: "Grid" },
+    "grid-row-pinning-drag": { displayName: "Grid Row Pinning Drag/Drop", parentName: "Grid" },
     "grid-sample-2": { displayName: "Grid Financial Sample", parentName: "Grid" },
     "grid-sample-pinning": { displayName: "Grid Header Template with Pinning", parentName: "Grid" },
     "grid-sample-toolbar-pinning": { displayName: "Grid Toolbar Pinning", parentName: "Grid" },
@@ -88,5 +89,8 @@ export const gridsRoutesData = {
     "grid-multiple-row-drag": { displayName: "Grid Multi Row Drag",  parentName: "Grid"},
     "grid-collapsible-groups": { displayName: "Grid Collapsible Column Groups", parentName: "Grid"},
     "grid-alldata-summaries": {displayName: "Grid AllData Summaries", parentName: "Grid"},
-    "grid-sample-right-pinning": { displayName: "Right Pinning", parentName: "Grid" }
+    "grid-sample-right-pinning": { displayName: "Right Pinning", parentName: "Grid" },
+    "column-selection": { displayName: "Column Selection", parentName: "Grid" },
+    "column-group-selection": { displayName: "Column Group Selection", parentName: "Grid" },
+    "column-selection-styles": { displayName: "Column Selection Styles", parentName: "Grid" }
 };
