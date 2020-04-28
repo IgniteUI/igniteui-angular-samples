@@ -53,7 +53,7 @@ import { HGridRowDragBaseComponent } from "./hierarchical-grid-row-drag-base/hie
 import { HGridDragSampleComponent } from "./hierarchical-grid-row-drag/hierarchical-grid-row-drag.component";
 import { HGridRowEditStyleComponent } from "./hierarchical-grid-row-edit-style/hierarchical-grid-row-edit-style.component";
 import { HGridRowEditingSampleComponent } from "./hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
-import { HGridRowPinningSampleComponent } from "./hierarchical-grid-row-pinning/hierarchical-grid-row-pinning.component";
+import { HGridRowPinningExtraColumnSampleComponent } from "./hierarchical-grid-row-pinning-extra-column/hierarchical-grid-row-pinning-extra-column.component";
 import { HGridRowReorderComponent } from "./hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
 import { HierarchicalGridRightPinningSampleComponent } from "./hierarchical-grid-sample-right-pinning/hierarchical-grid-right-pinning.component";
 import { HGridSelectionTemplateNumbersSampleComponent } from "./hierarchical-grid-selection-template-numbers/hierarchical-grid-selection-template-numbers.component";
@@ -98,7 +98,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridToolbarCustomSampleComponent,
         HGridRowEditingSampleComponent,
         HGridRowEditStyleComponent,
-        HGridRowPinningSampleComponent,
+        HGridRowPinningExtraColumnSampleComponent,
         HGridEditingSampleComponent,
         HGridEditingStyleComponent,
         HGridEditingEventsComponent,
