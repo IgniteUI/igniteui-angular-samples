@@ -81,6 +81,7 @@ import { PinningStylingComponent } from "../../src/app/grid/grid-sample-pinning-
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { PinningToolbarSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-toolbar-pinning.component";
 import { RightPinningSampleComponent } from "../../src/app/grid/grid-sample-right-pinning/grid-right-pinning.component";
+import { GridRowPinningExtraColumnSampleComponent } from "../../src/app/grid/grid-row-pinning-extra-column/grid-row-pinning-extra-column.component";
 import { GridSelectionTemplateExcelComponent } from "../../src/app/grid/grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
 import { GridSelectionTemplateNumbersComponent } from "../../src/app/grid/grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
@@ -1084,6 +1085,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridColumnSelectionStylesComponent, IgxGridModule],
                 ngDeclarations: [GridColumnSelectionStylesComponent],
                 ngImports: [IgxGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridRowPinningExtraColumnSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts", "/src/app/grid/services/svgIcons.ts"],],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridRowPinningExtraColumnSampleComponent, IgxGridModule, IgxIconModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridRowPinningExtraColumnSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxIconModule],
                 ngProviders: []
             })
         }));

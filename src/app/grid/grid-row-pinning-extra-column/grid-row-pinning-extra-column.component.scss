@@ -1,0 +1,21 @@
+@import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fontawesome.css");
+@import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-regular.css");
+@import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-solid.css");
+
+.grid-container {
+    display: flex;
+    padding: 20px;
+}
+
+.pin-icon {
+    cursor: pointer;
+    color: #999;
+}
+
+.pin-icon:hover {
+    color: #444
+}
+
+.switches {
+    margin-top: 24px;
+}
