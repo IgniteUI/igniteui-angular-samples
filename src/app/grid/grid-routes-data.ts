@@ -33,6 +33,7 @@ export const gridsRoutesData = {
     "grid-pinning-styling": { displayName: "Grid Pinning Styling", parentName: "Grid" },
     "grid-resizing-sample": { displayName: "Grid Resizing", parentName: "Grid" },
     "grid-resize-line-styling-sample": { displayName: "Grid Resize Line Styling", parentName: "Grid" },
+    "grid-row-pinning-extra-column": { displayName: "Grid Row Pinning Custom UI", parentName: "Grid" },
     "grid-row-pinning-drag": { displayName: "Grid Row Pinning Drag/Drop", parentName: "Grid" },
     "grid-sample-2": { displayName: "Grid Financial Sample", parentName: "Grid" },
     "grid-sample-pinning": { displayName: "Grid Header Template with Pinning", parentName: "Grid" },
