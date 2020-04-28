@@ -13,7 +13,7 @@ export class TreeGridMultiColumnHeaderTemplateSampleComponent {
     public treeGrid: IgxTreeGridComponent;
     public data: any[] = generateEmployeeDetailedFlatData();
     public columnGroupStates = new Map<IgxColumnGroupComponent, boolean>();
-
+    public selectionMode =  "none";
     constructor() {
         for (const item of this.data) {
             item.Location = `${item.Address}, ${item.City}, ${item.Country}`;

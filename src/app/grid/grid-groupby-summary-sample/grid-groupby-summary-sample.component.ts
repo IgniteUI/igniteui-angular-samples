@@ -63,6 +63,7 @@ export class GridGroupBySummarySampleComponent {
     public summaryPosition = GridSummaryPosition.bottom;
     public summaryCalcModes;
     public summaryCalculationMode = GridSummaryCalculationMode.rootAndChildLevels;
+    public selectionMode = "multiple";
 
     constructor() {
         this.data = INVOICE_DATA;

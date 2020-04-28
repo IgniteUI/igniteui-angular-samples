@@ -18,7 +18,7 @@ export class GridGroupByPagingSampleComponent {
     public grid1: IgxGridComponent;
     public data;
     public expr: ISortingExpression[];
-
+    public selectionMode = "multiple";
     constructor() {
         this.data = INVOICE_DATA;
         this.expr = [
