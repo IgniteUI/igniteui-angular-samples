@@ -95,6 +95,7 @@ export class KanbanSampleComponent implements OnInit {
         this.doneList = this.doneList.filter((x) => {
             return x.id !== "dummy";
         });
+        this.dragObj.hide = false;
     }
 
     public onItemEnter(event: IDropBaseEventArgs) {
