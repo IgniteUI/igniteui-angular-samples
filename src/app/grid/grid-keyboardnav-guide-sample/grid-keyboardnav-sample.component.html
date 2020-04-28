@@ -1,31 +1,24 @@
 <div class="sample">
     <div class="grid_wrapper">
         <igx-grid height="600px" width="100%" [paging]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
-            summaryCalculationMode="rootLevelOnly">
-            <!-- <igx-column field="ProductID" header="ProductID" [groupable]="true"></igx-column>
-            <igx-column field="ProductName" header="ProductName" [hasSummary]="true" dataType="string" [groupable]="true"></igx-column>
-            <igx-column field="SupplierID" header="SupplierID" dataType="number" [hasSummary]="true" [groupable]="true"></igx-column>
-            <igx-column field="UnitPrice" [hasSummary]="true" dataType="number"></igx-column>
-            <igx-column field="UnitsInStock" header="UnitsInStock"></igx-column>
-            <igx-column field="ReorderLevel" header="ReorderLevel"></igx-column>
-            <igx-column field="OrderDate" header="OrderDate"></igx-column> -->
+            summaryCalculationMode="rootLevelOnly" columnSelection="single" [showToolbar]="true" [allowAdvancedFiltering]="true">
             <igx-column-group header="General Information" [groupable]="true">
-                <igx-column field="CompanyName" [hasSummary]="true"></igx-column>
-                <igx-column-group [movable]="true" header="Personal Details" [groupable]="true" [collapsible]="true" [expanded]="false" (expandedChange)="expandChange($event)">
-                    <igx-column field="ContactName" [groupable]="true" [visibleWhenCollapsed]="true" [hasSummary]="true"></igx-column>
-                    <igx-column field="ContactTitle" [visibleWhenCollapsed]="false"></igx-column>
-                    <!-- <igx-column field="ContactTitle" [visibleWhenCollapsed]="false"></igx-column> -->
+                <igx-column field="CompanyName" [hasSummary]="true" [groupable]="true"></igx-column>
+                <igx-column-group [movable]="true" header="Personal Details" [collapsible]="true" [expanded]="false" (expandedChange)="expandChange($event)">
+                    <igx-column field="ContactName" [groupable]="true" [visibleWhenCollapsed]="true" [hasSummary]="true" [sortable]="true" [groupable]="true"></igx-column>
+                    <igx-column field="ContactTitle" [visibleWhenCollapsed]="false" [sortable]="true" [groupable]="true"></igx-column>
+                    <igx-column field="ContactTitle" [visibleWhenCollapsed]="false" [sortable]="true"></igx-column>
                 </igx-column-group>
             </igx-column-group>
             <igx-column-group header="Address Information">
                 <igx-column-group header="Location" [groupable]="true" [collapsible]="true" [expanded]="false" (expandedChange)="expandChange($event)">
-                    <igx-column field="Country" [groupable]="true" [visibleWhenCollapsed]="true" [hasSummary]="true"></igx-column>
-                    <igx-column field="Region" [groupable]="true" [visibleWhenCollapsed]="false"></igx-column>
-                    <igx-column field="City" [groupable]="true" [visibleWhenCollapsed]="false" [hasSummary]="true"></igx-column>
+                    <igx-column field="Country" [groupable]="true" [visibleWhenCollapsed]="true" [hasSummary]="true" [sortable]="true"></igx-column>
+                    <igx-column field="Region" [groupable]="true" [visibleWhenCollapsed]="false" [sortable]="true" [groupable]="true"></igx-column>
+                    <igx-column field="City" [groupable]="true" [visibleWhenCollapsed]="false" [hasSummary]="true" [groupable]="true"></igx-column>
                     <igx-column field="Address" [visibleWhenCollapsed]="false"></igx-column>
                 </igx-column-group>
                 <igx-column-group header="Contact Information">
-                    <igx-column field="Phone"></igx-column>
+                    <igx-column field="Phone" [groupable]="true"></igx-column>
                     <igx-column field="Fax"></igx-column>
                     <igx-column field="PostalCode"></igx-column>
                 </igx-column-group>

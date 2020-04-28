@@ -54,6 +54,9 @@ const theadKeyCombinations = [
     new Item("ctrl + shift + l", "opens the excel style filtering", false),
     new Item("shift + alt + arrow left/right", "group/ungroup the active column", false),
     new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header", false),
+    new Item("space", "select column", false),
+    new Item("ctrl + arrow up/down", "sorts the column asc/desc", false),
+    new Item("alt + l", "sorts the column asc/desc", false)
 ];
 @Component({
     selector: "grid-keyboardnav",
@@ -108,10 +111,19 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
         this._overlay.onOpening.pipe(takeUntil(this._destroyer))
           .subscribe((args) => {
-            if (args.componentRef.componentType.name === "IgxGridExcelStyleFilteringComponent") {
-              this._keyboardHandler.completeItem(0);
-              this.cdr.detectChanges();
-            }
+              const componentType = args.componentRef.componentType.name;
+              switch(componentType) {
+                case "IgxGridExcelStyleFilteringComponent":
+                    this._keyboardHandler.completeItem(0);
+                    this.cdr.detectChanges();
+                    break;
+                case "IgxAdvancedFilteringDialogComponent":
+                    this._keyboardHandler.completeItem(5);
+                    break;
+                default:
+                    return;
+
+              }
           });
 
         this.grid.groupingExpansionStateChange.pipe(takeUntil(this._destroyer))
@@ -123,6 +135,19 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
           .subscribe((args) => {
               this._keyboardHandler.completeItem(1);
           });
+
+        this.grid.onColumnSelectionChange.pipe(takeUntil(this._destroyer))
+          .subscribe((args) => {
+              const evt = args.event;
+              if (evt.type === "keydown") {
+                this._keyboardHandler.completeItem(3);
+              }
+          });
+
+        this.grid.onSortingDone.pipe(takeUntil(this._destroyer))
+          .subscribe((args) => {
+              this._keyboardHandler.completeItem(4);
+          })
 
         this.grid.groupingExpressions = [
             { fieldName: "ProductName", dir: SortingDirection.Asc }
