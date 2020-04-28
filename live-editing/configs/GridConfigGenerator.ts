@@ -1091,7 +1091,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridRowPinningExtraColumnSampleComponent,
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts", "/src/app/grid/services/svgIcons.ts"],],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts", "/src/app/grid/services/svgIcons.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridRowPinningExtraColumnSampleComponent, IgxGridModule, IgxIconModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [GridRowPinningExtraColumnSampleComponent],
