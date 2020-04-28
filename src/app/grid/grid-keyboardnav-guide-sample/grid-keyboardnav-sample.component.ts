@@ -1,13 +1,60 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { IForOfState, IGridCellEventArgs, IgxGridComponent, IgxOverlayService } from "igniteui-angular";
+import { IgxGridComponent, IgxOverlayService, SortingDirection } from "igniteui-angular";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
-import { DATA } from "../../data/nwindData";
-import { IgxAverageDirectionalIndexIndicatorComponent } from 'igniteui-angular-charts';
-import { IgxGridExcelStyleFilteringComponent } from 'igniteui-angular/lib/grids/filtering/excel-style/grid.excel-style-filtering.component';
+import { DATA } from "../../data/customers";
 
+enum GridSections {
+    THEAD = "igx-grid__thead-wrapper",
+    TBODY ="igx-grid__tbody-content"
+}
+
+class Item {
+    public title: string;
+    public subTitle: string;
+    public completed: boolean;
+
+    public constructor(title: string, subTitle: string, completed: boolean) {
+        this.title = title;
+        this.subTitle = subTitle;
+        this.completed = completed;
+    }
+}
+
+class KeyboardHandler {
+    private _collection: Item[];
+
+    public constructor(colleciton: Item[]) {
+        this._collection = colleciton;
+    }
+
+    public set collection(collection: Item[]) {
+        this._collection = collection;
+    }
+
+    public get collection() {
+        return this._collection;
+    }
+
+    public completeItem(idx: number) {
+        this._collection[idx].completed = true;
+    }
+}
+
+const tbodyKeyCombinations: Item[] = [
+    new Item("ctrl + Arrow Key Up", "move to top cell in column", false),
+    new Item("ctrl + alt + arrow right/left", "group/ungroup the active column", false),
+    new Item("ctrl + Arrow Key Down", "move to bottom cell in column", false),
+    new Item("ctrl + Right Arrow Key", "move to rightmost cell in row", false)
+];
+
+const theadKeyCombinations = [
+    new Item("ctrl + shift + l", "opens the excel style filtering", false),
+    new Item("shift + alt + arrow left/right", "group/ungroup the active column", false),
+    new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header", false),
+];
 @Component({
     selector: "grid-keyboardnav",
     templateUrl: "./grid-keyboardnav-sample.component.html",
@@ -15,97 +62,94 @@ import { IgxGridExcelStyleFilteringComponent } from 'igniteui-angular/lib/grids/
     animations: [
       trigger("completed", [
         state("completed", style({
-          // opacity: .7,
           backgroundColor: "#7FFF00"
         })),
         transition("* => completed", [
-          animate(".5s")
+          animate(".3s")
         ])
+      ]),
+      trigger("load", [
+        transition(":enter", [
+            style({ opacity: 0 }),
+            animate(".3s", style({ opacity: 1 }))
+          ])
       ])
     ]
 })
 export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
-    private _destroyer = new Subject();
-
     @ViewChild(IgxGridComponent, { static: true})
     public grid: IgxGridComponent;
 
-    public constructor(private cdr: ChangeDetectorRef, private _overlay: IgxOverlayService) {}
-
-    public keyCombinations = [
-        {title: "ctrl + Arrow Key Up", subTitle:"move to top cell in column", completed: false},
-        {title: "ctrl + Arrow Key Down", subTitle:"move to bottom cell in column", completed: false},
-        {title: "ctrl + Right Arrow Key", subTitle:"move to rightmost cell in row", completed: false},
-        {title: "ctrl + Left Arrow Key", subTitle:"move to leftmost cell in row", completed: false},
-        {title: "ctrl + home", subTitle:"move to top left cell in the grid", completed: false},
-        {title: "ctrl + end", subTitle:"move to bottom right cell in the grid", completed: false},
-        {title: "PageUP", subTitle:"move to bottom right cell in the grid", completed: false},
-        {title: "PageDown", subTitle:"move to bottom right cell in the grid", completed: false},
-        {title: "ctrl + shift + l", subTitle:"opens the excel style filtering", completed: false},
-    ];
-
-    @HostListener("keydown.PageUp", ["$event"])
-    public onPageUp(evt) {
-        this.trackListCombinations(evt);
+    public get keyboardCollection() {
+        return this._keyboardHandler.collection;
     }
 
-    @HostListener("keydown.PageDown", ["$event"])
-    public onPageDown(evt) {
-        this.trackListCombinations(evt);
+    private _destroyer = new Subject();
+    private _keyboardHandler = new KeyboardHandler(theadKeyCombinations);
+
+    public constructor(private cdr: ChangeDetectorRef, private _overlay: IgxOverlayService) {}
+
+    @HostListener("keyup.tab", ["$event"])
+    @HostListener("keyup.shift.tab", ["$event"])
+    public onTab(evt) {
+        const gridSection = evt.srcElement.className;
+        this.changeKeyboardCollection(gridSection);
+    }
+
+    @HostListener("click", ["$event"])
+    public onClick (evt) {
+        const gridSection = document.activeElement.className;
+        this.changeKeyboardCollection(gridSection);
     }
 
     public ngOnInit() {
         this.grid.data = DATA;
-        this.grid.onSelection.pipe(takeUntil(this._destroyer))
-          .subscribe((evt: IGridCellEventArgs) => {
-            this.trackListCombinations(evt.event);
-          });
+
         this._overlay.onOpening.pipe(takeUntil(this._destroyer))
           .subscribe((args) => {
             if (args.componentRef.componentType.name === "IgxGridExcelStyleFilteringComponent") {
-              this.keyCombinations[8].completed = true;
+              this._keyboardHandler.completeItem(0);
               this.cdr.detectChanges();
             }
           });
-    }
 
-    public trackListCombinations(evt) {
-        const keyboardEvt = evt as KeyboardEvent;
-        switch(keyboardEvt.key) {
-            case "ArrowUp":
-                if (keyboardEvt.ctrlKey) { this.keyCombinations[0].completed = true; }
-                break;
-            case "ArrowDown":
-                if (keyboardEvt.ctrlKey) { this.keyCombinations[1].completed = true; }
-                break;
-            case "ArrowRight":
-                if (keyboardEvt.ctrlKey) { this.keyCombinations[2].completed = true; }
-                break;
-            case "ArrowLeft":
-                if (keyboardEvt.ctrlKey) { this.keyCombinations[3].completed = true; }
-                break;
-            case "Home":
-                if (keyboardEvt.ctrlKey) { this.keyCombinations[4].completed = true; }
-                break;
-            case "End":
-                if (keyboardEvt.ctrlKey) { this.keyCombinations[5].completed = true; }
-                break;
-            case "PageUp":
-                if (keyboardEvt.target === this.grid.tbody.nativeElement) { this.keyCombinations[6].completed = true; }
-                break;
-            case "PageDown":
-                if (keyboardEvt.target === this.grid.tbody.nativeElement) { this.keyCombinations[7].completed = true; }
-                break;
-            default:
-                return;
-        }
+        this.grid.groupingExpansionStateChange.pipe(takeUntil(this._destroyer))
+          .subscribe((args) => {
+              this._keyboardHandler.completeItem(1);
+          });
 
-        this.cdr.detectChanges();
+        this.grid.onGroupingDone.pipe(takeUntil(this._destroyer))
+          .subscribe((args) => {
+              this._keyboardHandler.completeItem(1);
+          });
+
+        this.grid.groupingExpressions = [
+            { fieldName: "ProductName", dir: SortingDirection.Asc }
+        ];
     }
 
     public ngOnDestroy() {
         this._destroyer.next();
+    }
+
+    public expandChange(evt) {
+        if (evt) {
+            this._keyboardHandler.completeItem(2);
+        }
+    }
+
+    public changeKeyboardCollection(gridSection) {
+        switch (gridSection) {
+            case GridSections.THEAD:
+                this._keyboardHandler.collection = theadKeyCombinations;
+                break;
+            case GridSections.TBODY:
+                this._keyboardHandler.collection = tbodyKeyCombinations;
+                break;
+            default:
+                return;
+        }
     }
 
 }
