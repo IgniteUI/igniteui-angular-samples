@@ -31,9 +31,9 @@ export class BadgeConfigGenerator implements IConfigGenerator {
             component: BadgeSample2Component,
             additionalFiles: ["src/app/data-display/badge/model/member.model.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxBadgeModule, IgxListModule, IgxAvatarModule, BadgeSample2Component],
+                imports: [IgxBadgeModule, IgxAvatarModule, BadgeSample2Component],
                 ngDeclarations: [BadgeSample2Component],
-                ngImports: [IgxBadgeModule, IgxListModule, IgxAvatarModule]
+                ngImports: [IgxBadgeModule, IgxAvatarModule]
             }),
             shortenComponentPathBy: "/data-display/badge/"
         }));
@@ -54,9 +54,9 @@ export class BadgeConfigGenerator implements IConfigGenerator {
             component: BadgeStylingSampleComponent,
             additionalFiles: ["src/app/data-display/badge/model/member.model.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxBadgeModule, IgxListModule, BadgeStylingSampleComponent],
+                imports: [IgxBadgeModule, IgxListModule, IgxAvatarModule, BadgeStylingSampleComponent],
                 ngDeclarations: [BadgeStylingSampleComponent],
-                ngImports: [IgxBadgeModule, IgxListModule]
+                ngImports: [IgxBadgeModule, IgxListModule, IgxAvatarModule]
             }),
             shortenComponentPathBy: "/data-display/badge/"
         }));
