@@ -44,6 +44,7 @@ export const dataEntriesRoutesData = {
     "reactive-forms": { displayName: "Reactive Forms Overview", parentName: "Reactive Forms" },
     "radio-sample-1": { displayName: "Simple Radio Buttons", parentName: "Radio" },
     "radio-sample-2": { displayName: "Radio Button Binding", parentName: "Radio" },
+    "radio-sample-3": { displayName: "Radio Label Position", parentName: "Radio" },
     "radio-group-sample": { displayName: "Radio Group", parentName: "Radio" },
     "radio-styling-sample": { displayName: "Styling Radio Buttons", parentName: "Radio" },
     "switch-sample-1": { displayName: "Switch Overview", parentName: "Switch" },
