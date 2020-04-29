@@ -118,7 +118,8 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
           item.FirstName = names[0];
           item.LastName = names[names.length - 1];
           item.FullAddress = `${item.Address}, ${item.City}, ${item.Country}`;
-          item.PersonalDetails = `${item.ContactTitle}: ${item.ContactName}`;
+          item.PersonelDetails = `${item.ContactTitle}: ${item.ContactName}`;
+          item.CompanysAnnualProfit = (100000 + (Math.random() * Math.floor(1000000))).toFixed(0);
         }
 
         this._overlay.onOpening.pipe(takeUntil(this._destroyer))

@@ -2,11 +2,17 @@
     <div class="grid_wrapper">
         <igx-grid height="600px" width="100%" [paging]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
             summaryCalculationMode="rootLevelOnly" columnSelection="single" [showToolbar]="true" [allowAdvancedFiltering]="true">
+            <ng-template igxGridDetail let-dataItem>
+                <div *ngIf="dataItem.CompanysAnnualProfit">
+                    <header>Annual Profit:</header>
+                    <span>{{dataItem.CompanysAnnualProfit}}</span>
+                </div>
+            </ng-template>
             <igx-column-group header="General Information" [groupable]="true">
                 <igx-column field="CompanyName" [hasSummary]="true" [groupable]="true" [editable]="true"></igx-column>
-                <igx-column-group [movable]="true" header="Personal Details" [collapsible]="true"
+                <igx-column-group [movable]="true" header="Personel Details" [collapsible]="true"
                         dataType="string" [expanded]="false" (expandedChange)="expandChange($event)">
-                    <igx-column field="PersonalDetails" [width]="'250px'" [groupable]="true" [visibleWhenCollapsed]="true"></igx-column>
+                    <igx-column field="PersonelDetails" [width]="'250px'" [groupable]="true" [visibleWhenCollapsed]="true"></igx-column>
                     <igx-column field="ContactName" [groupable]="true" [visibleWhenCollapsed]="false"
                         [hasSummary]="true" [sortable]="true" [groupable]="true" [editable]=true></igx-column>
                     <igx-column field="ContactTitle" [visibleWhenCollapsed]="false" [sortable]="true" [groupable]="true" [editable]="true"></igx-column>
