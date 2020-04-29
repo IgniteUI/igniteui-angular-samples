@@ -20,7 +20,7 @@ export class TreeGridRowPinningStylingSampleComponent implements OnInit {
     public columns: any[];
 
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top, columns: ColumnPinningPosition.End };
-    
+
     @ViewChild(IgxTreeGridComponent, { static: true })
     public treeGrid: IgxTreeGridComponent;
 
