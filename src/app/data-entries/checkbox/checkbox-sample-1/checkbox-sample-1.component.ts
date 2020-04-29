@@ -1,15 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
     selector: "app-checkbox-sample-1",
     styleUrls: ["./checkbox-sample-1.component.scss"],
     templateUrl: "./checkbox-sample-1.component.html"
 })
-export class CheckboxSample1Component implements OnInit {
-
-    constructor() { }
-
-    public ngOnInit() {
-    }
-
-}
+export class CheckboxSample1Component { }

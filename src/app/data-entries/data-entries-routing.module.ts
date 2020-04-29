@@ -22,6 +22,7 @@ import { ButtonsSample8Component } from "./buttons/buttons-sample-8/buttons-samp
 import { ButtonsStyleComponent } from "./buttons/buttons-style/buttons-style.component";
 import { CheckboxSample1Component } from "./checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./checkbox/checkbox-sample-2/checkbox-sample-2.component";
+import { CheckboxSample3Component } from "./checkbox/checkbox-sample-3/checkbox-sample-3.component";
 import { CheckboxStylingComponent } from "./checkbox/checkbox-styling/checkbox-styling.component";
 import { dataEntriesRoutesData } from "./data-entries-routes-data";
 import { DropDownRemoteComponent } from "./dropdown/drop-down-remote-virtual/drop-down-remote.component";
@@ -56,6 +57,7 @@ import { SelectSample4Component } from "./select/select-sample-4/select-sample-4
 import { SelectStylingComponent } from "./select/select-styling/select-styling.component";
 import { SwitchSample1Component } from "./switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2.component";
+import { SwitchStylingComponent } from "./switch/switch-styling/switch-styling.component";
 
 export const dataEntriesRoutes: Routes = [
     {
@@ -167,6 +169,11 @@ export const dataEntriesRoutes: Routes = [
         component: CheckboxSample2Component,
         data: dataEntriesRoutesData["checkbox-sample-2"],
         path: "checkbox-sample-2"
+    },
+    {
+        component: CheckboxSample3Component,
+        data: dataEntriesRoutesData["checkbox-sample-3"],
+        path: "checkbox-sample-3"
     },
     {
         component: CheckboxStylingComponent,
@@ -292,6 +299,11 @@ export const dataEntriesRoutes: Routes = [
         component: SwitchSample2Component,
         data: dataEntriesRoutesData["switch-sample-2"],
         path: "switch-sample-2"
+    },
+    {
+        component: SwitchStylingComponent,
+        data: dataEntriesRoutesData["switch-styling"],
+        path: "switch-styling"
     },
     {
         component: SelectSample1Component,
