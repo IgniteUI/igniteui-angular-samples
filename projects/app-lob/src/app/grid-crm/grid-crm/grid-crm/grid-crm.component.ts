@@ -108,6 +108,7 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
 
     public searchText: string = "";
     public caseSensitive: boolean = false;
+    public selectionMode = "multiple";
 
     public _positionSettings: PositionSettings = {
         horizontalDirection: HorizontalAlignment.Left,

@@ -22,6 +22,7 @@ import { ButtonsSample8Component } from "./buttons/buttons-sample-8/buttons-samp
 import { ButtonsStyleComponent } from "./buttons/buttons-style/buttons-style.component";
 import { CheckboxSample1Component } from "./checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./checkbox/checkbox-sample-2/checkbox-sample-2.component";
+import { CheckboxSample3Component } from "./checkbox/checkbox-sample-3/checkbox-sample-3.component";
 import { CheckboxStylingComponent } from "./checkbox/checkbox-styling/checkbox-styling.component";
 import { dataEntriesRoutesData } from "./data-entries-routes-data";
 import { DropDownRemoteComponent } from "./dropdown/drop-down-remote-virtual/drop-down-remote.component";
@@ -44,6 +45,8 @@ import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/react
 import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.component";
 import { RadioSample2Component } from "./radio/radio-sample-2/radio-sample-2.component";
+import { RadioSample3Component } from "./radio/radio-sample-3/radio-sample-3.component";
+import { RadioStylingSampleComponent } from "./radio/radio-styling-sample/radio-styling-sample.component";
 import { SelectFormComponent } from "./select/select-form/select-form.component";
 import { SelectHeaderFooterComponent } from "./select/select-header-footer/select-header-footer.component";
 import { SelectInputDirectivesComponent } from "./select/select-input-directives/select-input-directives";
@@ -54,6 +57,7 @@ import { SelectSample4Component } from "./select/select-sample-4/select-sample-4
 import { SelectStylingComponent } from "./select/select-styling/select-styling.component";
 import { SwitchSample1Component } from "./switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2.component";
+import { SwitchStylingComponent } from "./switch/switch-styling/switch-styling.component";
 
 export const dataEntriesRoutes: Routes = [
     {
@@ -167,6 +171,11 @@ export const dataEntriesRoutes: Routes = [
         path: "checkbox-sample-2"
     },
     {
+        component: CheckboxSample3Component,
+        data: dataEntriesRoutesData["checkbox-sample-3"],
+        path: "checkbox-sample-3"
+    },
+    {
         component: CheckboxStylingComponent,
         data: dataEntriesRoutesData["checkbox-styling"],
         path: "checkbox-styling"
@@ -267,9 +276,19 @@ export const dataEntriesRoutes: Routes = [
         path: "radio-sample-2"
     },
     {
+        component: RadioSample3Component,
+        data: dataEntriesRoutesData["radio-sample-3"],
+        path: "radio-sample-3"
+    },
+    {
         component: RadioGroupSampleComponent,
         data: dataEntriesRoutesData["radio-group-sample"],
         path: "radio-group-sample"
+    },
+    {
+        component: RadioStylingSampleComponent,
+        data: dataEntriesRoutesData["radio-styling-sample"],
+        path: "radio-styling-sample"
     },
     {
         component: SwitchSample1Component,
@@ -280,6 +299,11 @@ export const dataEntriesRoutes: Routes = [
         component: SwitchSample2Component,
         data: dataEntriesRoutesData["switch-sample-2"],
         path: "switch-sample-2"
+    },
+    {
+        component: SwitchStylingComponent,
+        data: dataEntriesRoutesData["switch-styling"],
+        path: "switch-styling"
     },
     {
         component: SelectSample1Component,

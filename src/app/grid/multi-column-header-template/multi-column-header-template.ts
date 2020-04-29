@@ -13,6 +13,7 @@ export class GridMultiColumnHeaderTemplateComponent {
     public grid: IgxGridComponent;
     public data: any[] = DATA;
     public columnGroupStates = new Map<IgxColumnGroupComponent, boolean>();
+    public selectionMode = "multiple";
 
     constructor() {
         for (const item of this.data) {
