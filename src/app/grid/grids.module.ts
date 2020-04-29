@@ -8,7 +8,7 @@ import {
     IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule,
     IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule,
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
-    IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
+    IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule, IgxActionStripModule
 } from "igniteui-angular";
 import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 import { GridColumnGroupSelectionComponent } from "./column-group-selection-sample/column-group-selection-sample.component";
@@ -105,11 +105,13 @@ import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
+import { GridActionStripSampleComponent } from './grid-action-strip/grid-action-strip-sample';
 
 @NgModule({
     declarations: [
         GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
+        GridActionStripSampleComponent,
         GridColumnHidingSampleComponent,
         GridColumnHidingToolbarSampleComponent,
         GridConditionalCellStyle2Component,
@@ -236,7 +238,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         IgxSnackbarModule,
         IgxTabsModule,
         IgxCardModule,
-        IgxDividerModule
+        IgxDividerModule,
+        IgxActionStripModule
     ],
     providers: [
         IgxCsvExporterService,

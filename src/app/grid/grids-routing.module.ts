@@ -96,6 +96,7 @@ import { RightPinningSampleComponent } from "./grid-sample-right-pinning/grid-ri
 import {
     GridMultiColumnHeadersStylingComponent
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
+import { GridActionStripSampleComponent } from './grid-action-strip/grid-action-strip-sample';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -188,6 +189,11 @@ export const gridsRoutes: Routes = [
         component: GridBatchEditingSampleComponent,
         data: gridsRoutesData["grid-batch-editing"],
         path: "grid-batch-editing"
+    },
+    {
+        component: GridActionStripSampleComponent,
+        data: gridsRoutesData["grid-action-strip"],
+        path: "grid-action-strip"
     },
     {
         component: GridDisplayDensitySampleComponent,
