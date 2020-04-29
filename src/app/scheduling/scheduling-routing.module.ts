@@ -42,6 +42,7 @@ import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/tim
 import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
 import { TimePickerSample6Component } from "./timepicker/timepicker-sample-6/timepicker-sample-6.component";
 import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/timepicker-styling.component";
+import { StyledDateRangePickerComponent } from './daterangepicker/daterangepicker-styling/daterangepicker-styling';
 
 export const schedulingRoutes: Routes = [
     {
@@ -228,6 +229,11 @@ export const schedulingRoutes: Routes = [
         component: DateRangePickerValidationComponent,
         data: schedulingRoutesData["daterangepicker-validation"],
         path: "daterangepicker-validation"
+    },
+    {
+        component: StyledDateRangePickerComponent,
+        data: schedulingRoutesData["styled-daterangepicker"],
+        path: "styled-daterangepicker"
     },
     {
         component: FlightBookingComponent,

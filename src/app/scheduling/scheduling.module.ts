@@ -38,6 +38,7 @@ import {
     FlightBookingComponent } from "./daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking";
 import {
     DateRangePickerStartEndComponent } from "./daterangepicker/daterangepicker-start-end/daterangepicker-start-end";
+import { StyledDateRangePickerComponent } from './daterangepicker/daterangepicker-styling/daterangepicker-styling';
 import {
     DateRangePickerValidationComponent } from "./daterangepicker/daterangepicker-validation/daterangepicker-validation";
 import { DateTimeAdvancedComponent } from "./datetimeeditor/datetime-advanced/datetime-advanced";
@@ -96,6 +97,7 @@ import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/time
         BasicDateRangePickerComponent,
         DateRangePickerStartEndComponent,
         DateRangePickerValidationComponent,
+        StyledDateRangePickerComponent,
         FlightBookingComponent
     ],
     imports: [
