@@ -16,6 +16,7 @@ export class HGridRowReorderComponent {
     @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent, static: true })
     public hGrid: IgxHierarchicalGridComponent;
     public localData: IDrive[] = [];
+    public selectionMode = "multiple";
     constructor() {
         this.localData = createData(3, 12, 8);
     }
@@ -42,7 +43,7 @@ export class HGridRowReorderComponent {
         // delete the dragged row and then insert it at its new position
         draggedRow.delete();
         parent.data.splice(rowIndex, 0, draggedRow.rowData);
-        if (draggedRow.isSelected) {
+        if (draggedRow.selected) {
             // find the row that has the same ID as the dragged row and select it
             parent.selectRows([parent.rowList.toArray()
                 .find((r) => r.rowData.id === draggedRow.rowData.id).rowID], false);

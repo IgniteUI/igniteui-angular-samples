@@ -11,7 +11,7 @@ import { DATA } from "../../data/nwindData";
 export class GridCustomKBNavigationComponent implements OnInit {
     @ViewChild("grid1", { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
-
+    public selectionMode = "multiple";
     public data: any[];
 
     constructor() {
@@ -25,7 +25,7 @@ export class GridCustomKBNavigationComponent implements OnInit {
         const evt: KeyboardEvent = args.event as KeyboardEvent;
         const type = args.targetType;
 
-        if (type === "dataCell" && target.inEditMode && evt.key.toLowerCase() === "tab") {
+        if (type === "dataCell" && target.editMode && evt.key.toLowerCase() === "tab") {
             // Value validation for number column.
             // This covers both 'tab' and 'shift+tab' key interactions.
             args.event.preventDefault();
