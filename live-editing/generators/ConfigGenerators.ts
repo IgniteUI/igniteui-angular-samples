@@ -38,6 +38,7 @@ import { RadioConfigGenerator } from "../configs/RadioConfigGenerator";
 import { RippleConfigGenerator } from "../configs/RippleConfigGenerator";
 import { SelectConfigGenerator } from "../configs/SelectConfigGenerator";
 import { SliderConfigGenerator } from "../configs/SliderConfigGenerator";
+import { SplitterConfigGenerator } from "../configs/SplitterConfigGenerator";
 import { SnackbarConfigGenerator } from "../configs/SnackbarConfigGenerator";
 import { SwitchConfigGenerator } from "../configs/SwitchConfigGenerator";
 import { TabBarConfigGenerator } from "../configs/TabBarConfigGenerator";
@@ -113,5 +114,6 @@ export const CONFIG_GENERATORS =
         ToastConfigGenerator,
         TooltipConfigGenerator,
         ThemingConfigGenerator,
-        TransactionsConfigGenerator
+        TransactionsConfigGenerator,
+        SplitterConfigGenerator
     ];

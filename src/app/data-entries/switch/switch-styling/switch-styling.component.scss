@@ -1,0 +1,22 @@
+//Sample related styling
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 16px;
+}
+
+igx-switch {
+    margin-top: 24px;
+}
+
+// Ignite UI for Angular Theming engine related styling
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$custom-switch-theme: igx-switch-theme(
+    $thumb-on-color: #ECAA53,
+    $track-on-color: #F0CB9C
+);
+
+:host {
+    @include igx-css-vars($custom-switch-theme);
+}
