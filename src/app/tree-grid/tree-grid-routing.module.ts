@@ -57,6 +57,7 @@ import { TreeGridRowEditStyleComponent } from "./tree-grid-row-edit-style/tree-g
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
 import { TreeGridRowPinningExtraColumnSampleComponent } from "./tree-grid-row-pinning-extra-column/tree-grid-row-pinning-extra-column.component";
 import { TreeGridRowPinningSampleComponent } from "./tree-grid-row-pinning/tree-grid-row-pinning.component";
+import { TreeGridRowPinningStylingSampleComponent } from "./tree-grid-row-pinning-styling/tree-grid-row-pinning-styling.component";
 import { TreeGridRowReorderComponent } from "./tree-grid-row-reorder/tree-grid-row-reorder.component";
 import { TreeGridRightPinningSampleComponent } from "./tree-grid-sample-right-pinning/tree-grid-right-pinning.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
@@ -346,6 +347,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridRowPinningExtraColumnSampleComponent,
         data: treeGridRoutesData["tree-grid-row-pinning-extra-column"],
         path: "tree-grid-row-pinning-extra-column"
+    },
+    {
+        component: TreeGridRowPinningStylingSampleComponent,
+        data: treeGridRoutesData["tree-grid-row-pinning-styling"],
+        path: "tree-grid-row-pinning-styling"
     },
     {
         component: TreeGridRemotePagingSampleComponent,
