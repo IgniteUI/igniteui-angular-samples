@@ -8,7 +8,7 @@ import { DATA } from "../../data/customers";
 
 enum GridSections {
     THEAD = "igx-grid__thead-wrapper",
-    TBODY ="igx-grid__tbody-content"
+    TBODY = "igx-grid__tbody-content"
 }
 
 class Item {
@@ -44,10 +44,13 @@ class KeyboardHandler {
 }
 
 const tbodyKeyCombinations: Item[] = [
-    new Item("ctrl + Arrow Key Up", "move to top cell in column", false),
+    // new Item("ctrl + Arrow Key Up", "move to top cell in column", false),
     new Item("ctrl + alt + arrow right/left", "group/ungroup the active column", false),
-    new Item("ctrl + Arrow Key Down", "move to bottom cell in column", false),
-    new Item("ctrl + Right Arrow Key", "move to rightmost cell in row", false)
+    new Item("enter", "enter in edit mode", false),
+    new Item("shift + tab", "focus the thead", false),
+    new Item("tab", "focus the summaries or tfoot", false)
+    // new Item("ctrl + Arrow Key Down", "move to bottom cell in column", false),
+    // new Item("ctrl + Right Arrow Key", "move to rightmost cell in row", false)
 ];
 
 const theadKeyCombinations = [
@@ -56,7 +59,9 @@ const theadKeyCombinations = [
     new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header", false),
     new Item("space", "select column", false),
     new Item("ctrl + arrow up/down", "sorts the column asc/desc", false),
-    new Item("alt + l", "sorts the column asc/desc", false)
+    new Item("alt + l", "opens the advanced filtering", false),
+    new Item("shift + tab", "focus the grid", false),
+    new Item("tab", "navigates to the tbody", false)
 ];
 @Component({
     selector: "grid-keyboardnav",
@@ -101,18 +106,25 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     @HostListener("click", ["$event"])
-    public onClick (evt) {
+    public onClick () {
         const gridSection = document.activeElement.className;
         this.changeKeyboardCollection(gridSection);
     }
 
     public ngOnInit() {
         this.grid.data = DATA;
+        for (const item of this.grid.data) {
+          const names = item.CompanyName.split(" ");
+          item.FirstName = names[0];
+          item.LastName = names[names.length - 1];
+          item.FullAddress = `${item.Address}, ${item.City}, ${item.Country}`;
+          item.PersonalDetails = `${item.ContactTitle}: ${item.ContactName}`;
+        }
 
         this._overlay.onOpening.pipe(takeUntil(this._destroyer))
           .subscribe((args) => {
               const componentType = args.componentRef.componentType.name;
-              switch(componentType) {
+              switch (componentType) {
                 case "IgxGridExcelStyleFilteringComponent":
                     this._keyboardHandler.completeItem(0);
                     this.cdr.detectChanges();
@@ -127,13 +139,13 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
           });
 
         this.grid.groupingExpansionStateChange.pipe(takeUntil(this._destroyer))
-          .subscribe((args) => {
+          .subscribe(() => {
               this._keyboardHandler.completeItem(1);
           });
 
         this.grid.onGroupingDone.pipe(takeUntil(this._destroyer))
-          .subscribe((args) => {
-              this._keyboardHandler.completeItem(1);
+          .subscribe(() => {
+              this._keyboardHandler.completeItem(0);
           });
 
         this.grid.onColumnSelectionChange.pipe(takeUntil(this._destroyer))
@@ -145,9 +157,14 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
           });
 
         this.grid.onSortingDone.pipe(takeUntil(this._destroyer))
-          .subscribe((args) => {
+          .subscribe(() => {
               this._keyboardHandler.completeItem(4);
-          })
+          });
+
+        this.grid.onCellEditEnter.pipe(takeUntil(this._destroyer))
+          .subscribe(() => {
+            this._keyboardHandler.completeItem(1);
+          });
 
         this.grid.groupingExpressions = [
             { fieldName: "ProductName", dir: SortingDirection.Asc }
@@ -169,11 +186,12 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
             case GridSections.THEAD:
                 this._keyboardHandler.collection = theadKeyCombinations;
                 break;
-            case GridSections.TBODY:
+                case GridSections.TBODY:
                 this._keyboardHandler.collection = tbodyKeyCombinations;
                 break;
             default:
                 return;
+
         }
     }
 
