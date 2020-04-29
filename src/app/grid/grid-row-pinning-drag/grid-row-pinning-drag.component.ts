@@ -1,5 +1,12 @@
 import { AfterViewInit, Component, ViewChild } from "@angular/core";
-import { IgxGridComponent, IgxGridRowComponent, IRowDragStartEventArgs, RowPinningPosition } from "igniteui-angular";
+import {
+    IGridCellEventArgs,
+    IgxActionStripComponent,
+    IgxGridComponent,
+    IgxGridRowComponent,
+    IRowDragStartEventArgs,
+    RowPinningPosition
+} from "igniteui-angular";
 import { IPinningConfig } from "igniteui-angular/lib/grids/common/grid.interface";
 import { DATA } from "../../data/customers";
 
@@ -11,8 +18,13 @@ import { DATA } from "../../data/customers";
 
 export class GridPinningDragSampleComponent implements AfterViewInit {
     public data: any[];
-    @ViewChild("grid", { read: IgxGridComponent, static: true })
+
+    @ViewChild(IgxGridComponent, { static: true })
     public grid: IgxGridComponent;
+
+    @ViewChild(IgxActionStripComponent, { static: true })
+    public actionStrip: IgxActionStripComponent;
+
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top };
 
     constructor() {
@@ -66,6 +78,24 @@ export class GridPinningDragSampleComponent implements AfterViewInit {
         if (args.dragData.disabled) {
             args.cancel = true;
         }
+    }
+
+    public onMouseOver(actionStrip: IgxActionStripComponent, grid: IgxGridComponent, event) {
+        if (event.target.nodeName.toLowerCase() === "igx-grid-cell") {
+            const rowIndex = parseInt(event.target.attributes["data-rowindex"].value, 10);
+            const row = grid.getRowByIndex(rowIndex);
+            actionStrip.show(row);
+        }
+    }
+
+    public onMouseLeave(actionStrip: IgxActionStripComponent, event?) {
+        if (!event || !event.relatedTarget || event.relatedTarget.nodeName.toLowerCase() !== "igx-drop-down-item") {
+            actionStrip.hide();
+        }
+    }
+
+    public onCellClick(args: IGridCellEventArgs) {
+        this.actionStrip.show(args.cell.row);
     }
 
     private getCurrentRowIndex(rowList, cursorPosition) {

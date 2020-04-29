@@ -4,7 +4,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule,
+    IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule,
     IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule,
     IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule,
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
@@ -81,6 +81,7 @@ import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-e
 import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
 import { GridPinningDragSampleComponent } from "./grid-row-pinning-drag/grid-row-pinning-drag.component";
 import { GridRowPinningExtraColumnSampleComponent } from "./grid-row-pinning-extra-column/grid-row-pinning-extra-column.component";
+import { GridRowPinningSampleComponent } from "./grid-row-pinning/grid-row-pinning.component";
 import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -145,6 +146,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridRemoteVirtualizationSampleComponent,
         PinningSampleComponent,
         PinningToolbarSampleComponent,
+        GridRowPinningSampleComponent,
         GridRowPinningExtraColumnSampleComponent,
         GridPinningDragSampleComponent,
         GridSelectionSampleComponent,
@@ -210,6 +212,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         IgxPreventDocumentScrollModule,
         HttpClientModule,
         GridsRoutingModule,
+        IgxActionStripModule,
         IgxAvatarModule,
         IgxBadgeModule,
         IgxBannerModule,
