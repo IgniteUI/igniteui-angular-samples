@@ -25,9 +25,11 @@ class Item {
 
 class KeyboardHandler {
     private _collection: Item[];
+    private _section: GridSections;
 
-    public constructor(colleciton: Item[]) {
+    public constructor(colleciton: Item[], section: GridSections) {
         this._collection = colleciton;
+        this._section = section;
     }
 
     public set collection(collection: Item[]) {
@@ -36,6 +38,14 @@ class KeyboardHandler {
 
     public get collection() {
         return this._collection;
+    }
+
+    public set gridSection(section: GridSections) {
+      this._section = section;
+    }
+
+    public get gridSection() {
+      return this._section;
     }
 
     public completeItem(idx: number) {
@@ -47,8 +57,8 @@ const tbodyKeyCombinations: Item[] = [
     // new Item("ctrl + Arrow Key Up", "move to top cell in column", false),
     new Item("ctrl + alt + arrow right/left", "group/ungroup the active column", false),
     new Item("enter", "enter in edit mode", false),
-    new Item("shift + tab", "focus the thead", false),
-    new Item("tab", "focus the summaries or tfoot", false)
+    new Item("alt + arrow left/up", "collapse master datils row", false),
+    new Item("alt + arrow right/down", "expand master datils row", false)
     // new Item("ctrl + Arrow Key Down", "move to bottom cell in column", false),
     // new Item("ctrl + Right Arrow Key", "move to rightmost cell in row", false)
 ];
@@ -59,9 +69,7 @@ const theadKeyCombinations = [
     new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header", false),
     new Item("space", "select column", false),
     new Item("ctrl + arrow up/down", "sorts the column asc/desc", false),
-    new Item("alt + l", "opens the advanced filtering", false),
-    new Item("shift + tab", "focus the grid", false),
-    new Item("tab", "navigates to the tbody", false)
+    new Item("alt + l", "opens the advanced filtering", false)
 ];
 @Component({
     selector: "grid-keyboardnav",
@@ -94,7 +102,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     private _destroyer = new Subject();
-    private _keyboardHandler = new KeyboardHandler(theadKeyCombinations);
+    private _keyboardHandler = new KeyboardHandler(theadKeyCombinations, GridSections.THEAD);
 
     public constructor(private cdr: ChangeDetectorRef, private _overlay: IgxOverlayService) {}
 
@@ -141,12 +149,14 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
         this.grid.groupingExpansionStateChange.pipe(takeUntil(this._destroyer))
           .subscribe(() => {
-              this._keyboardHandler.completeItem(1);
+              if (this._keyboardHandler.gridSection === GridSections.TBODY) {
+                this._keyboardHandler.completeItem(0);
+              }
           });
 
         this.grid.onGroupingDone.pipe(takeUntil(this._destroyer))
           .subscribe(() => {
-              this._keyboardHandler.completeItem(0);
+              this._keyboardHandler.completeItem(1);
           });
 
         this.grid.onColumnSelectionChange.pipe(takeUntil(this._destroyer))
@@ -165,6 +175,17 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         this.grid.onCellEditEnter.pipe(takeUntil(this._destroyer))
           .subscribe(() => {
             this._keyboardHandler.completeItem(1);
+          });
+
+        this.grid.onRowToggle.pipe(takeUntil(this._destroyer))
+          .subscribe((args) => {
+            const evt = args.event;
+            if (evt.type !== "keydown") {
+              return;
+            }
+
+            return evt.code === "ArrowLeft" || evt.code === "ArrowUp" ? this._keyboardHandler.completeItem(2) :
+              this._keyboardHandler.completeItem(3);
           });
 
         this.grid.groupingExpressions = [
@@ -186,9 +207,11 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         switch (gridSection) {
             case GridSections.THEAD:
                 this._keyboardHandler.collection = theadKeyCombinations;
+                this._keyboardHandler.gridSection = GridSections.THEAD;
                 break;
                 case GridSections.TBODY:
                 this._keyboardHandler.collection = tbodyKeyCombinations;
+                this._keyboardHandler.gridSection = GridSections.TBODY;
                 break;
             default:
                 return;
