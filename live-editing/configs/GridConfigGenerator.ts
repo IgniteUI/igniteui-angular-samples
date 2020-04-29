@@ -82,6 +82,7 @@ import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/g
 import { PinningToolbarSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-toolbar-pinning.component";
 import { RightPinningSampleComponent } from "../../src/app/grid/grid-sample-right-pinning/grid-right-pinning.component";
 import { GridRowPinningSampleComponent } from "../../src/app/grid/grid-row-pinning/grid-row-pinning.component";
+import { GridRowPinningStylingSampleComponent } from '../../src/app/grid/grid-row-pinning-styling/grid-row-pinning-styling.component';
 import { GridRowPinningExtraColumnSampleComponent } from "../../src/app/grid/grid-row-pinning-extra-column/grid-row-pinning-extra-column.component";
 import { GridPinningDragSampleComponent } from "../../src/app/grid/grid-row-pinning-drag/grid-row-pinning-drag.component";
 import { GridSelectionTemplateExcelComponent } from "../../src/app/grid/grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
@@ -1119,6 +1120,17 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [GridPinningDragSampleComponent, IgxActionStripModule, IgxGridModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [GridPinningDragSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxActionStripModule, IgxGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridRowPinningStylingSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridRowPinningStylingSampleComponent, IgxActionStripModule, IgxGridModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridRowPinningStylingSampleComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxActionStripModule, IgxGridModule],
                 ngProviders: []
             })

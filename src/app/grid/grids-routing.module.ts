@@ -52,6 +52,7 @@ import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-e
 import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
 import { GridPinningDragSampleComponent } from "./grid-row-pinning-drag/grid-row-pinning-drag.component";
 import { GridRowPinningExtraColumnSampleComponent } from "./grid-row-pinning-extra-column/grid-row-pinning-extra-column.component";
+import { GridRowPinningStylingSampleComponent } from "./grid-row-pinning-styling/grid-row-pinning-styling.component";
 import { GridRowPinningSampleComponent } from "./grid-row-pinning/grid-row-pinning.component";
 import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
@@ -195,6 +196,11 @@ export const gridsRoutes: Routes = [
         component: GridPinningDragSampleComponent,
         data: gridsRoutesData["grid-row-pinning-drag"],
         path: "grid-row-pinning-drag"
+    },
+    {
+        component: GridRowPinningStylingSampleComponent,
+        data: gridsRoutesData["grid-row-pinning-styling"],
+        path: "grid-row-pinning-styling"
     },
     {
         component: GridBatchEditingSampleComponent,
