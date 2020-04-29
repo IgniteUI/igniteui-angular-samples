@@ -22,8 +22,14 @@ import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/dat
 import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/datepicker-sample-6.component";
 import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/datepicker-sample-7.component";
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
-import { DatepickerSample9Component } from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
 import { DatepickerStylingSample } from "./datepicker/datepicker-styling-sample/datepicker-styling-sample.component";
+import { BasicDateRangePickerComponent } from "./daterangepicker/daterangepicker-basic/daterangepicker-basic";
+import {
+    FlightBookingComponent } from "./daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking";
+import {
+    DateRangePickerStartEndComponent } from "./daterangepicker/daterangepicker-start-end/daterangepicker-start-end";
+import {
+    DateRangePickerValidationComponent } from "./daterangepicker/daterangepicker-validation/daterangepicker-validation";
 import { DateTimeAdvancedComponent } from "./datetimeeditor/datetime-advanced/datetime-advanced";
 import { DateTimeBasicComponent } from "./datetimeeditor/datetime-basic/datetime-basic.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
@@ -139,11 +145,6 @@ export const schedulingRoutes: Routes = [
         path: "datepicker-sample-8"
     },
     {
-        component: DatepickerSample9Component,
-        data: schedulingRoutesData["datepicker-sample-9"],
-        path: "datepicker-sample-9"
-    },
-    {
         component: DateTimeBasicComponent,
         data: schedulingRoutesData["datetime-basic"],
         path: "datetime-basic"
@@ -212,6 +213,26 @@ export const schedulingRoutes: Routes = [
         component: DateTimeAdvancedComponent,
         data: schedulingRoutesData["datetime-advanced"],
         path: "datetime-advanced"
+    },
+    {
+        component: BasicDateRangePickerComponent,
+        data: schedulingRoutesData["basic-daterangepicker"],
+        path: "basic-daterangepicker"
+    },
+    {
+        component: DateRangePickerStartEndComponent,
+        data: schedulingRoutesData["daterangepicker-start-end"],
+        path: "daterangepicker-start-end"
+    },
+    {
+        component: DateRangePickerValidationComponent,
+        data: schedulingRoutesData["daterangepicker-validation"],
+        path: "daterangepicker-validation"
+    },
+    {
+        component: FlightBookingComponent,
+        data: schedulingRoutesData["flight-booking"],
+        path: "flight-booking"
     }
 ];
 

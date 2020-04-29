@@ -3,8 +3,9 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule,
-    IgxDateTimeEditorModule, IgxDialogModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule,
-    IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
+    IgxDateRangePickerModule, IgxDateTimeEditorModule, IgxDialogModule, IgxDropDownModule, IgxIconModule,
+    IgxInputGroupModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTimePickerModule,
+    IgxToastModule, IgxToggleModule
 } from "igniteui-angular";
 import { CalendarDaysViewComponent } from "./calendar/calendar-days-view/calendar-days-view.component";
 import { CalendarMonthsViewComponent } from "./calendar/calendar-months-view/calendar-months-view.component";
@@ -31,6 +32,14 @@ import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/dat
 import { AutocompletePipeStartsWith, DatepickerSample9Component, PipeWithoutTownFrom
 } from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
 import { DatepickerStylingSample } from "./datepicker/datepicker-styling-sample/datepicker-styling-sample.component";
+import {
+    BasicDateRangePickerComponent } from "./daterangepicker/daterangepicker-basic/daterangepicker-basic";
+import {
+    FlightBookingComponent } from "./daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking";
+import {
+    DateRangePickerStartEndComponent } from "./daterangepicker/daterangepicker-start-end/daterangepicker-start-end";
+import {
+    DateRangePickerValidationComponent } from "./daterangepicker/daterangepicker-validation/daterangepicker-validation";
 import { DateTimeAdvancedComponent } from "./datetimeeditor/datetime-advanced/datetime-advanced";
 import { DateTimeBasicComponent } from "./datetimeeditor/datetime-basic/datetime-basic.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
@@ -83,7 +92,11 @@ import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/time
         MonthpickerSample1Component,
         MonthpickerSample3Component,
         MonthpickerStylingComponent,
-        PipeWithoutTownFrom
+        PipeWithoutTownFrom,
+        BasicDateRangePickerComponent,
+        DateRangePickerStartEndComponent,
+        DateRangePickerValidationComponent,
+        FlightBookingComponent
     ],
     imports: [
         CommonModule,
@@ -105,7 +118,8 @@ import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/time
         IgxSelectModule,
         IgxDropDownModule,
         IgxToggleModule,
-        IgxDateTimeEditorModule
+        IgxDateTimeEditorModule,
+        IgxDateRangePickerModule
     ]
 })
 export class SchedulingModule { }
