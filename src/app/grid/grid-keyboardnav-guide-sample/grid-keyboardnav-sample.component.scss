@@ -1,4 +1,15 @@
 
+@import '~igniteui-angular/lib/core/styles/themes/index';
+$my-color: igx-color($default-palette, 'success');
+
+$custom-checkbox-theme: igx-checkbox-theme(
+    $fill-color: $my-color,
+    $border-radius: 10px
+);
+
+:host ::ng-deep {
+    @include igx-checkbox($custom-checkbox-theme);
+}
 .sample {
     display: flex;
 }
