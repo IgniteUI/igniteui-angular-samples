@@ -1,20 +1,8 @@
-import { Component, OnInit } from "@angular/core";
-import { Member } from "../model/member.model";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-badge-sample-2",
   styleUrls: ["./badge-sample-2.component.scss"],
   templateUrl: "./badge-sample-2.component.html"
 })
-export class BadgeSample2Component implements OnInit {
-  public members: Member[] = [
-    new Member("Terrance Orta", "online"),
-    new Member("Donna Price", "online"),
-    new Member("Lisa Landers", "away"),
-    new Member("Dorothy H. Spencer", "offline")
-  ];
-  constructor() { }
-
-  public ngOnInit() {
-  }
-}
+export class BadgeSample2Component { }
