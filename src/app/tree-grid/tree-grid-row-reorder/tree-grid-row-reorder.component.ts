@@ -1,5 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
-import { IDropDroppedEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent, Point } from "igniteui-angular";
+import { IDropDroppedEventArgs,
+    IgxTreeGridComponent, IgxTreeGridRowComponent, Point } from "igniteui-angular";
 import { generateEmployeeFlatData } from "../data/employees-flat";
 
 @Component({
@@ -10,7 +11,7 @@ import { generateEmployeeFlatData } from "../data/employees-flat";
 export class TreeGridRowReorderComponent {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static : true })
     public treeGrid: IgxTreeGridComponent;
-
+    public selectionMode = "multiple";
     public localData = [];
     constructor() {
         this.localData = generateEmployeeFlatData();
@@ -43,7 +44,7 @@ export class TreeGridRowReorderComponent {
                 this.localData[rowIndex].ParentID = row.rowData.ParentID;
             }
         }
-        if (draggedRow.isSelected) {
+        if (draggedRow.selected) {
             this.treeGrid.selectRows([this.treeGrid.rowList.toArray()
                 .find((r) => r.rowData.ID === draggedRow.rowData.ID).rowID], false);
         }

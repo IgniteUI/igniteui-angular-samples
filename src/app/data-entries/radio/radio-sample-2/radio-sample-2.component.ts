@@ -6,8 +6,6 @@ import { Component } from "@angular/core";
     templateUrl: "./radio-sample-2.component.html"
 })
 export class RadioSample2Component {
-    public title = "Select Background";
-
     public colors = [{
         hex: "#f06a2f",
         name: "Carrot"

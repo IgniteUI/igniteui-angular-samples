@@ -80,6 +80,7 @@ import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component
 import { PlanetComponent } from "./grid-row-drag/planet/planet.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
 import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
+import { GridPinningDragSampleComponent } from "./grid-row-pinning-drag/grid-row-pinning-drag.component";
 import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -144,6 +145,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridRemoteVirtualizationSampleComponent,
         PinningSampleComponent,
         PinningToolbarSampleComponent,
+        GridPinningDragSampleComponent,
         GridSelectionSampleComponent,
         GridSelectionTemplateExcelComponent,
         GridSelectionTemplateNumbersComponent,

@@ -37,7 +37,7 @@ export class HGridCustomKBNavigationComponent implements OnInit {
         const evt: KeyboardEvent = args.event as KeyboardEvent;
         const type = args.targetType;
 
-        if (type === "dataCell" && target.inEditMode && evt.key.toLowerCase() === "tab") {
+        if (type === "dataCell" && target.editMode && evt.key.toLowerCase() === "tab") {
             // Value validation for number column.
             // This covers both 'tab' and 'shift+tab' key interactions.
             args.event.preventDefault();
