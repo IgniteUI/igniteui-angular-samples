@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
+import { IgxGridComponent, SortingDirection } from "igniteui-angular";
 import { DATA } from "../../data/customers";
 
 @Component({
@@ -21,5 +21,12 @@ export class GridMultiColumnHeadersComponent {
     public hideGroup() {
         const firstColumnGroup = this.grid.columnList.filter((c) => c.header === "General Information")[0];
         firstColumnGroup.hidden = !firstColumnGroup.hidden;
+    }
+
+    public ngOnInit() {
+
+      this.grid.groupingExpressions = [
+        { fieldName: "ContactName", dir: SortingDirection.Asc }
+      ];
     }
 }

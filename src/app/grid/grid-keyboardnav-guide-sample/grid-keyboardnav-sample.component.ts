@@ -1,7 +1,13 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { IgxGridComponent, IgxOverlayService, SortingDirection, IgxListComponent } from "igniteui-angular";
+import {
+  IgxGridComponent,
+  IgxListComponent,
+  IgxOverlayService,
+  IgxPaginatorComponent,
+  SortingDirection
+} from "igniteui-angular";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { DATA } from "../../data/customers";
@@ -82,6 +88,13 @@ const summaryCombinations: Item[] = [
   new Item("ctrl + End", "navigates to the last summary cell", false)
 ];
 
+const pagingCombinations: Item[] = [
+  new Item("ArrowLeft", "navigates one summary cell right", false),
+  new Item("ArrowRight", "navigates one summary cell left", false),
+  new Item("ctrl + Home", "navigates to the first summary cell", false),
+  new Item("ctrl + End", "navigates to the last summary cell", false)
+];
+
 @Component({
     selector: "grid-keyboardnav",
     templateUrl: "./grid-keyboardnav-sample.component.html",
@@ -117,6 +130,9 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     @ViewChild(IgxListComponent, { static: true})
     public listref: IgxListComponent;
 
+    @ViewChild(IgxPaginatorComponent, { static: true})
+    public paginator: IgxPaginatorComponent;
+
     public get keyboardCollection() {
         return this._keyboardHandler.collection;
     }
@@ -129,14 +145,14 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     @HostListener("keyup.tab", ["$event"])
     @HostListener("keyup.shift.tab", ["$event"])
     public onTab(evt) {
-        const gridSection = evt.srcElement.className;
-        this.changeKeyboardCollection(gridSection);
+      const gridSection = evt.srcElement.className;
+      this.changeKeyboardCollection(gridSection);
     }
 
     @HostListener("click", ["$event"])
-    public onClick() {
-        const gridSection = document.activeElement.className;
-        this.changeKeyboardCollection(gridSection);
+    public onClick(evt) {
+      const gridSection = document.activeElement.className;
+      this.changeKeyboardCollection(gridSection);
     }
 
     @HostListener("keydown.ArrowLeft")
@@ -153,16 +169,6 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
       }
     }
 
-    @HostListener("keydown", ["$event"])
-    public onHomeClick(evt: KeyboardEvent) {
-      if (this._keyboardHandler.gridSection !== GridSection.FOOTER) {
-        return;
-      }
-
-      return evt.key === "End" && evt.ctrlKey ? this._keyboardHandler.selectItem(3) :
-        evt.key === "Home" && evt.ctrlKey ? this._keyboardHandler.selectItem(2) : false;
-    }
-
     public ngOnInit() {
         this.grid.data = DATA;
         for (const item of this.grid.data) {
@@ -176,6 +182,10 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
         this._overlay.onOpening.pipe(takeUntil(this._destroyer))
           .subscribe((args) => {
+              if (args.componentRef === undefined) {
+                return;
+              }
+
               const componentType = args.componentRef.componentType.name;
               switch (componentType) {
                 case "IgxGridExcelStyleFilteringComponent":
@@ -252,9 +262,13 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
               evt.key === "Home" && evt.ctrlKey ? this._keyboardHandler.selectItem(2) : false;
           });
 
+        this.grid.onPagingDone.pipe(takeUntil(this._destroyer))
+          .subscribe((args) => {
+            console.log(args);
+          });
+
         this.listref.onItemClicked.pipe(takeUntil(this._destroyer))
           .subscribe((args) => {
-            // this.changeKeyboardCollection(this._keyboardHandler.gridSection);
             args.event.stopPropagation();
           });
     }
@@ -275,22 +289,21 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
     public changeKeyboardCollection(gridSection) {
         switch (gridSection) {
-            case GridSection.THEAD:
-              this._keyboardHandler.collection = theadKeyCombinations;
-              this._keyboardHandler.gridSection = GridSection.THEAD;
-              break;
-            case GridSection.TBODY:
-              this._keyboardHandler.collection = tbodyKeyCombinations;
-              this._keyboardHandler.gridSection = GridSection.TBODY;
-              break;
-            case GridSection.FOOTER:
-              this._keyboardHandler.collection = summaryCombinations;
-              this._keyboardHandler.gridSection = GridSection.FOOTER;
-              break;
-            default:
-              this._keyboardHandler.collection = [];
-              return;
-
+          case GridSection.THEAD:
+            this._keyboardHandler.collection = theadKeyCombinations;
+            this._keyboardHandler.gridSection = GridSection.THEAD;
+            break;
+          case GridSection.TBODY:
+            this._keyboardHandler.collection = tbodyKeyCombinations;
+            this._keyboardHandler.gridSection = GridSection.TBODY;
+            break;
+          case GridSection.FOOTER:
+            this._keyboardHandler.collection = summaryCombinations;
+            this._keyboardHandler.gridSection = GridSection.FOOTER;
+            break;
+          default:
+            this._keyboardHandler.collection = [];
+            return;
         }
     }
 
