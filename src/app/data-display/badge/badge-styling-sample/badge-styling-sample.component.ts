@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { Member } from "../model/member.model";
 
 @Component({
@@ -6,16 +6,11 @@ import { Member } from "../model/member.model";
   styleUrls: ["./badge-styling-sample.component.scss"],
   templateUrl: "./badge-styling-sample.component.html"
 })
-export class BadgeStylingSampleComponent implements OnInit {
+export class BadgeStylingSampleComponent {
   public members: Member[] = [
     new Member("Terrance Orta", "online"),
     new Member("Donna Price", "online"),
     new Member("Lisa Landers", "away"),
     new Member("Dorothy H. Spencer", "offline")
   ];
-
-  constructor() { }
-
-  public ngOnInit() {
-  }
 }
