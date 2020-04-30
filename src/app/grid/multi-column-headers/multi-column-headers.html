@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll [rowSelection]="selectionMode" #grid height="480px" [data]="data" displayDensity="compact">
+    <igx-grid igxPreventDocumentScroll [rowSelection]="selectionMode" #grid height="480px" [data]="data" displayDensity="compact" [allowFiltering]="true">
         <igx-column [movable]="true" [resizable]="true" field="ID" [filterable]="false"></igx-column>
         <igx-column-group [movable]="true" [pinned]="false" header="General Information">
             <igx-column [movable]="true" sortable="true" resizable="true" field="CompanyName"></igx-column>

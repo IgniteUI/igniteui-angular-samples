@@ -22,11 +22,4 @@ export class GridMultiColumnHeadersComponent {
         const firstColumnGroup = this.grid.columnList.filter((c) => c.header === "General Information")[0];
         firstColumnGroup.hidden = !firstColumnGroup.hidden;
     }
-
-    public ngOnInit() {
-
-      this.grid.groupingExpressions = [
-        { fieldName: "ContactName", dir: SortingDirection.Asc }
-      ];
-    }
 }
