@@ -37,12 +37,23 @@
     </div>
     <div class="list-sample">
         <igx-list>
-            <igx-list-item isHeader=true>Combinations</igx-list-item>
+            <igx-list-item *ngIf="keyboardCollection.length > 0" isHeader=true>Combinations</igx-list-item>
             <igx-list-item @load *ngFor="let c of keyboardCollection; let idx=index" [ngClass]="{'completed': c.completed}" [@toggle]="c.completed ? 'selected' : 'deselected'">
                 <h4 igxListLineTitle>{{ c.title }}</h4>
                 <p igxListLineSubTitle>{{ c.subTitle }}</p>
                 <igx-checkbox [checked]="c.completed" (change)="onCheckChange($event, idx)"></igx-checkbox>
             </igx-list-item>
+            <ng-template igxEmptyList>
+                <span class="empty-list">
+                    <h4 >Please focus any section of the grid.</h4>
+                    <ul>
+                        <li>Header</li>
+                        <li>Body</li>
+                        <li>Summary</li>
+                        <li>Paging</li>
+                    </ul>
+                </span>
+            </ng-template>
         </igx-list>
     </div>
 </div>

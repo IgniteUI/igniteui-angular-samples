@@ -1,14 +1,15 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { IgxGridComponent, IgxOverlayService, SortingDirection } from "igniteui-angular";
+import { IgxGridComponent, IgxOverlayService, SortingDirection, IgxListComponent } from "igniteui-angular";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { DATA } from "../../data/customers";
 
-enum GridSections {
+enum GridSection {
     THEAD = "igx-grid__thead-wrapper",
-    TBODY = "igx-grid__tbody-content"
+    TBODY = "igx-grid__tbody-content",
+    FOOTER = "igx-grid__tfoot"
 }
 
 class Item {
@@ -25,9 +26,9 @@ class Item {
 
 class KeyboardHandler {
     private _collection: Item[];
-    private _section: GridSections;
+    private _section: GridSection;
 
-    public constructor(colleciton: Item[], section: GridSections) {
+    public constructor(colleciton: Item[], section: GridSection) {
         this._collection = colleciton;
         this._section = section;
     }
@@ -40,7 +41,7 @@ class KeyboardHandler {
         return this._collection;
     }
 
-    public set gridSection(section: GridSections) {
+    public set gridSection(section: GridSection) {
       this._section = section;
     }
 
@@ -57,16 +58,6 @@ class KeyboardHandler {
     }
 }
 
-const tbodyKeyCombinations: Item[] = [
-    // new Item("ctrl + Arrow Key Up", "move to top cell in column", false),
-    new Item("enter", "enter in edit mode", false),
-    new Item("alt + arrow left/up", "collapse master datils row", false),
-    new Item("alt + arrow right/down", "expand master datils row", false),
-    new Item("ctrl + alt + arrow right/left", "group/ungroup the active column", false)
-    // new Item("ctrl + Arrow Key Down", "move to bottom cell in column", false),
-    // new Item("ctrl + Right Arrow Key", "move to rightmost cell in row", false)
-];
-
 const theadKeyCombinations = [
     new Item("space", "select column", false),
     new Item("alt + l", "opens the advanced filtering", false),
@@ -75,6 +66,22 @@ const theadKeyCombinations = [
     new Item("shift + alt + arrow left/right", "group/ungroup the active column", false),
     new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header", false)
 ];
+
+const tbodyKeyCombinations: Item[] = [
+    new Item("enter", "enter in edit mode", false),
+    new Item("alt + arrow left/up", "collapse master datils row", false),
+    new Item("alt + arrow right/down", "expand master datils row", false),
+    new Item("ctrl + alt + arrow right/left", "group/ungroup the active column", false),
+    new Item("ctrl + Home/End", "navigates to the upper-left/bottom-right cell", false)
+];
+
+const summaryCombinations: Item[] = [
+  new Item("ArrowLeft", "navigates one summary cell right", false),
+  new Item("ArrowRight", "navigates one summary cell left", false),
+  new Item("ctrl + Home", "navigates to the first summary cell", false),
+  new Item("ctrl + End", "navigates to the last summary cell", false)
+];
+
 @Component({
     selector: "grid-keyboardnav",
     templateUrl: "./grid-keyboardnav-sample.component.html",
@@ -107,12 +114,15 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     @ViewChild(IgxGridComponent, { static: true})
     public grid: IgxGridComponent;
 
+    @ViewChild(IgxListComponent, { static: true})
+    public listref: IgxListComponent;
+
     public get keyboardCollection() {
         return this._keyboardHandler.collection;
     }
 
     private _destroyer = new Subject();
-    private _keyboardHandler = new KeyboardHandler(theadKeyCombinations, GridSections.THEAD);
+    private _keyboardHandler = new KeyboardHandler([], GridSection.THEAD);
 
     public constructor(private cdr: ChangeDetectorRef, private _overlay: IgxOverlayService) {}
 
@@ -124,9 +134,33 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     @HostListener("click", ["$event"])
-    public onClick () {
+    public onClick() {
         const gridSection = document.activeElement.className;
         this.changeKeyboardCollection(gridSection);
+    }
+
+    @HostListener("keydown.ArrowLeft")
+    public onArrowLeft() {
+      if (this._keyboardHandler.gridSection === GridSection.FOOTER) {
+        this._keyboardHandler.selectItem(0);
+      }
+    }
+
+    @HostListener("keydown.ArrowRight")
+    public onArrowRight() {
+      if (this._keyboardHandler.gridSection === GridSection.FOOTER) {
+        this._keyboardHandler.selectItem(1);
+      }
+    }
+
+    @HostListener("keydown", ["$event"])
+    public onHomeClick(evt: KeyboardEvent) {
+      if (this._keyboardHandler.gridSection !== GridSection.FOOTER) {
+        return;
+      }
+
+      return evt.key === "End" && evt.ctrlKey ? this._keyboardHandler.selectItem(3) :
+        evt.key === "Home" && evt.ctrlKey ? this._keyboardHandler.selectItem(2) : false;
     }
 
     public ngOnInit() {
@@ -159,7 +193,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
         this.grid.groupingExpansionStateChange.pipe(takeUntil(this._destroyer))
           .subscribe(() => {
-              if (this._keyboardHandler.gridSection === GridSections.TBODY) {
+              if (this._keyboardHandler.gridSection === GridSection.TBODY) {
                 this._keyboardHandler.selectItem(3);
               }
           });
@@ -201,6 +235,28 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         this.grid.groupingExpressions = [
             { fieldName: "ProductName", dir: SortingDirection.Asc }
         ];
+
+        this.grid.onSelection.pipe(takeUntil(this._destroyer))
+          .subscribe((args) => {
+            this.handleDOMSelection(args.event);
+          });
+
+        this.grid.onGridKeydown.pipe(takeUntil(this._destroyer))
+          .subscribe((args) => {
+            const evt = args.event as KeyboardEvent;
+            if (this._keyboardHandler.gridSection !== GridSection.FOOTER) {
+              return;
+            }
+
+            return evt.key === "End" && evt.ctrlKey ? this._keyboardHandler.selectItem(3) :
+              evt.key === "Home" && evt.ctrlKey ? this._keyboardHandler.selectItem(2) : false;
+          });
+
+        this.listref.onItemClicked.pipe(takeUntil(this._destroyer))
+          .subscribe((args) => {
+            // this.changeKeyboardCollection(this._keyboardHandler.gridSection);
+            args.event.stopPropagation();
+          });
     }
 
     public ngOnDestroy() {
@@ -213,24 +269,50 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         }
     }
 
-    public changeKeyboardCollection(gridSection) {
-        switch (gridSection) {
-            case GridSections.THEAD:
-                this._keyboardHandler.collection = theadKeyCombinations;
-                this._keyboardHandler.gridSection = GridSections.THEAD;
-                break;
-                case GridSections.TBODY:
-                this._keyboardHandler.collection = tbodyKeyCombinations;
-                this._keyboardHandler.gridSection = GridSections.TBODY;
-                break;
-            default:
-                return;
-
-        }
-    }
-
     public onCheckChange(evt, idx) {
       evt.checked ? this._keyboardHandler.selectItem(idx) : this._keyboardHandler.deselectItem(idx);
     }
 
+    public changeKeyboardCollection(gridSection) {
+        switch (gridSection) {
+            case GridSection.THEAD:
+              this._keyboardHandler.collection = theadKeyCombinations;
+              this._keyboardHandler.gridSection = GridSection.THEAD;
+              break;
+            case GridSection.TBODY:
+              this._keyboardHandler.collection = tbodyKeyCombinations;
+              this._keyboardHandler.gridSection = GridSection.TBODY;
+              break;
+            case GridSection.FOOTER:
+              this._keyboardHandler.collection = summaryCombinations;
+              this._keyboardHandler.gridSection = GridSection.FOOTER;
+              break;
+            default:
+              this._keyboardHandler.collection = [];
+              return;
+
+        }
+    }
+
+    public handleDOMSelection(evt) {
+      const target = evt.target.className;
+      switch (target) {
+        case GridSection.TBODY :
+          this.trackUpRightOrBottomLeftNav(evt, 4);
+          break;
+        case GridSection.FOOTER :
+          this.trackUpRightOrBottomLeftNav(evt, 2);
+          break;
+        default:
+          return;
+      }
+
+      this.cdr.detectChanges();
+    }
+
+    public trackUpRightOrBottomLeftNav(evt, idx) {
+      if ((evt.code === "End" || evt.code === "Home") && evt.ctrlKey) {
+        this._keyboardHandler.selectItem(idx);
+      }
+    }
 }
