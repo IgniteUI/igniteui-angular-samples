@@ -4,9 +4,9 @@ import {
     IgxIconService,
     IgxTreeGridComponent,
     IgxTreeGridRowComponent,
+    IPinningConfig,
     RowPinningPosition
 } from "igniteui-angular";
-import { IPinningConfig } from "igniteui-angular/lib/grids/common/grid.interface";
 import { icons } from "../../grid/services/svgIcons";
 import { generateEmployeeFlatData, IEmployee } from "../data/employees-flat";
 

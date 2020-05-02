@@ -1,13 +1,13 @@
-import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import {
     IGridCellEventArgs,
     IgxActionStripComponent,
     IgxGridComponent,
     IgxGridRowComponent,
+    IPinningConfig,
     IRowDragStartEventArgs,
     RowPinningPosition
 } from "igniteui-angular";
-import { IPinningConfig } from "igniteui-angular/lib/grids/common/grid.interface";
 import { DATA } from "../../data/customers";
 
 @Component({
@@ -16,10 +16,10 @@ import { DATA } from "../../data/customers";
     templateUrl: "grid-row-pinning-drag.component.html"
 })
 
-export class GridPinningDragSampleComponent implements AfterViewInit {
+export class GridPinningDragSampleComponent implements OnInit {
     public data: any[];
 
-    @ViewChild(IgxGridComponent, { static: true })
+    @ViewChild("grid1", { static: true })
     public grid: IgxGridComponent;
 
     @ViewChild(IgxActionStripComponent, { static: true })
@@ -31,7 +31,7 @@ export class GridPinningDragSampleComponent implements AfterViewInit {
         this.data = DATA;
     }
 
-    public ngAfterViewInit() {
+    public ngOnInit() {
         this.grid.pinRow(this.data[0].ID);
         this.grid.pinRow(this.data[3].ID);
         this.grid.pinRow(this.data[8].ID);

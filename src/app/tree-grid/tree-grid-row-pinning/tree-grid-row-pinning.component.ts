@@ -4,9 +4,9 @@ import {
     IGridCellEventArgs,
     IgxActionStripComponent,
     IgxTreeGridComponent,
+    IPinningConfig,
     RowPinningPosition
 } from "igniteui-angular";
-import { IPinningConfig } from "igniteui-angular/lib/grids/common/grid.interface";
 import { generateEmployeeFlatData, IEmployee } from "../data/employees-flat";
 
 @Component({
@@ -21,7 +21,7 @@ export class TreeGridRowPinningSampleComponent implements OnInit {
 
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top, columns: ColumnPinningPosition.End };
 
-    @ViewChild(IgxTreeGridComponent, { static: true })
+    @ViewChild("treeGrid1", { static: true })
     public treeGrid: IgxTreeGridComponent;
 
     @ViewChild(IgxActionStripComponent, { static: true })
@@ -38,9 +38,7 @@ export class TreeGridRowPinningSampleComponent implements OnInit {
             { field: "Title", label: "Title", dataType: "string" },
             { field: "HireDate", label: "Hire Date", dataType: "date" }
         ];
-    }
 
-    public ngAfterViewInit() {
         this.treeGrid.pinRow(this.data[0].ID);
         this.treeGrid.pinRow(this.data[3].ID);
     }

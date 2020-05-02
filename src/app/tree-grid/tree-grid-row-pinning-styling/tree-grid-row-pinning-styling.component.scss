@@ -50,3 +50,8 @@ $custom-theme: igx-grid-theme(
         @include igx-grid($custom-theme);
     }
 }
+
+.grid-container {
+    display: flex;
+    padding: 20px;
+}

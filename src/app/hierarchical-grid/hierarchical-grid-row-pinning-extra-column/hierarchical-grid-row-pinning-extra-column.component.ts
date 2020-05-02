@@ -3,9 +3,9 @@ import {
     ColumnPinningPosition,
     IgxHierarchicalRowComponent,
     IgxIconService,
+    IPinningConfig,
     RowPinningPosition
 } from "igniteui-angular";
-import { IPinningConfig } from "igniteui-angular/lib/grids/common/grid.interface";
 import { icons } from "../../grid/services/svgIcons";
 import { SINGERS } from "../data";
 

@@ -4,9 +4,9 @@ import {
     IgxGridComponent,
     IgxGridRowComponent,
     IgxIconService,
+    IPinningConfig,
     RowPinningPosition
 } from "igniteui-angular";
-import { IPinningConfig } from "igniteui-angular/lib/grids/common/grid.interface";
 import { DATA } from "../../data/customers";
 import { icons } from "../services/svgIcons";
 

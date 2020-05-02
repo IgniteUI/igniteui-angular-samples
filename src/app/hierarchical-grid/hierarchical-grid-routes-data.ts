@@ -49,6 +49,8 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-multi-column-template": { displayName: "Hierarchical Grid Multi Column Header Template", parentName: "Hierarchical Grid" },
     "hierarchical-grid-multi-column-styling": { displayName: "Hierarchical Grid Multi Column Header Styling", parentName: "Hierarchical Grid" },
     "hierarchical-grid-row-edit-style": { displayName: "HGrid Row Edit Style", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-row-pinning": { displayName: "Hierarchical Grid Row Pinning", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-row-pinning-styling": { displayName: "Hierarchical Grid Row Pinning Styling", parentName: "Hierarchical Grid" },
     "hierarchical-grid-row-pinning-extra-column": { displayName: "Hierarchical Grid Row Pinning Custom UI", parentName: "Hierarchical Grid" },
     "hierarchical-grid-toolbar-style": { displayName: "HGrid Toolbar Style", parentName: "Hierarchical Grid" },
     "hierarchical-grid-advanced-filtering": { displayName: "Hierarchical Grid Advanced Filtering", parentName: "Hierarchical Grid" },
