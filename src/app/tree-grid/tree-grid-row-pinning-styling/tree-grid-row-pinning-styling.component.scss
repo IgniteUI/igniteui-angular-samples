@@ -47,7 +47,7 @@ $custom-theme: igx-grid-theme(
 
 :host {
     ::ng-deep{
-        @include igx-grid($custom-theme);
+        @include igx-css-vars($custom-theme);
     }
 }
 
