@@ -1,11 +1,10 @@
 .wrapper {
-    display: flex;
-    flex-direction: row;
-}
-.contact-name {
-    font-weight: 600;
-}
-.contact-container{
-    margin-left: 20px;
+    position: relative;
+    margin-top: 15px;
 }
 
+igx-badge {
+  position: absolute;
+  bottom: 0;
+  left: 28px;
+}
