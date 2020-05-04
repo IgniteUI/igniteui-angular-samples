@@ -28,6 +28,7 @@ import {
     FlightBookingComponent } from "./daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking";
 import {
     DateRangePickerStartEndComponent } from "./daterangepicker/daterangepicker-start-end/daterangepicker-start-end";
+import { StyledDateRangePickerComponent } from "./daterangepicker/daterangepicker-styling/daterangepicker-styling";
 import {
     DateRangePickerValidationComponent } from "./daterangepicker/daterangepicker-validation/daterangepicker-validation";
 import { DateTimeAdvancedComponent } from "./datetimeeditor/datetime-advanced/datetime-advanced";
@@ -42,7 +43,6 @@ import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/tim
 import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
 import { TimePickerSample6Component } from "./timepicker/timepicker-sample-6/timepicker-sample-6.component";
 import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/timepicker-styling.component";
-import { StyledDateRangePickerComponent } from './daterangepicker/daterangepicker-styling/daterangepicker-styling';
 
 export const schedulingRoutes: Routes = [
     {
