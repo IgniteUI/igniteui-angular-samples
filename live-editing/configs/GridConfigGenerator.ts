@@ -1096,7 +1096,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 "/src/app/data/nwindData.ts"
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridKeyboardnavGuide, IgxGridModule, IgxListModule, CommonModule],
+                imports: [GridKeyboardnavGuide, IgxGridModule, IgxListModule, CommonModule, IgxOverlayService],
                 ngDeclarations: [GridKeyboardnavGuide],
                 ngImports: [IgxGridModule, IgxListModule, CommonModule],
                 ngProviders: [IgxOverlayService]

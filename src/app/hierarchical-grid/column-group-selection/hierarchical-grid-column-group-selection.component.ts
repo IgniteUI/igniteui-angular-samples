@@ -9,13 +9,13 @@ import { CUSTOMERS } from "../data";
 })
 export class HierarchicalGridColumnGroupSelectionComponent implements OnInit, AfterViewInit {
 
-    public data;
+    // public data;
 
     @ViewChild(IgxHierarchicalGridComponent, { static: true })
     private hGrid: IgxHierarchicalGridComponent;
 
     public ngOnInit(): void {
-        this.data = CUSTOMERS;
+        this.hGrid.data = CUSTOMERS;
     }
 
     public ngAfterViewInit() {

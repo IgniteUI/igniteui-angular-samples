@@ -88,13 +88,6 @@ const summaryCombinations: Item[] = [
   new Item("ctrl + End", "navigates to the last summary cell", false)
 ];
 
-const pagingCombinations: Item[] = [
-  new Item("ArrowLeft", "navigates one summary cell right", false),
-  new Item("ArrowRight", "navigates one summary cell left", false),
-  new Item("ctrl + Home", "navigates to the first summary cell", false),
-  new Item("ctrl + End", "navigates to the last summary cell", false)
-];
-
 @Component({
     selector: "grid-keyboardnav",
     templateUrl: "./grid-keyboardnav-sample.component.html",
@@ -150,7 +143,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     @HostListener("click", ["$event"])
-    public onClick(evt) {
+    public onClick() {
       const gridSection = document.activeElement.className;
       this.changeKeyboardCollection(gridSection);
     }

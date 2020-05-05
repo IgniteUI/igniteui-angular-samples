@@ -16,39 +16,40 @@ $custom-checkbox-theme: igx-checkbox-theme(
 }
 .sample {
     display: flex;
-}
 
-.grid_wrapper {
-    padding-left: 15px;
-    padding-top: 15px;
-    width: 75%;
-}
-
-.list-sample {
-    padding-top: 15px;
-    width: 20%;
-
-    .completed {
-        opacity: .7;
+    .grid_wrapper {
+        padding-left: 15px;
+        padding-top: 15px;
+        width: 75%;
     }
 
-    igx-list {
-        height: 600px;
-        // overflow-y: scroll;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2),
-        0 1px 1px 0 rgba(0, 0, 0, 0.14),
-        0 2px 1px -1px rgba(0, 0, 0, 0.12);
-    }
-}
 
-.empty-list {
-    h5 {
-        padding: 15px;
+    .list-sample {
+        padding-top: 15px;
+        width: 20%;
+
+        .completed {
+            opacity: .7;
+        }
+
+        igx-list {
+            height: 600px;
+            // overflow-y: scroll;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2),
+            0 1px 1px 0 rgba(0, 0, 0, 0.14),
+            0 2px 1px -1px rgba(0, 0, 0, 0.12);
+        }
     }
 
-    ul {
-        margin-left: 15px;
-        font-size: 20px;
-        font-weight: 400;
+    .empty-list {
+        h5 {
+            padding: 15px;
+        }
+
+        ul {
+            margin-left: 15px;
+            font-size: 20px;
+            font-weight: 400;
+        }
     }
 }
