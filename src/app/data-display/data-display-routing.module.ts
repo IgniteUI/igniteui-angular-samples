@@ -7,6 +7,9 @@ import {
 } from "./badge/badge-styling-sample/badge-styling-sample.component";
 import { ChipStylingSampleComponent } from "./chip-styling/chip-styling.component";
 import { ChipSampleComponent } from "./chip/chip.component";
+import {
+    CircularDynamicSampleComponent
+} from "./circular-progressbar/circular-dynamic-sample/circular-dynamic-sample.component";
 // tslint:disable-next-line:max-line-length
 import { CircularIndeterminateProgressbarComponent } from "./circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
@@ -58,6 +61,11 @@ export const dataDisplayRoutes: Routes = [
         component: ChipSampleComponent,
         data: dataDisplayRoutesData["chip-sample"],
         path: "chip-sample"
+    },
+    {
+        component: CircularDynamicSampleComponent,
+        data: dataDisplayRoutesData["circular-dynamic-sample"],
+        path: "circular-dynamic-sample"
     },
     {
         component: CircularIndeterminateProgressbarComponent,
