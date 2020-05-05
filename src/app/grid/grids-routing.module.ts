@@ -77,6 +77,7 @@ import { GridColumnGroupSelectionComponent } from "./column-group-selection-samp
 import { GridColumnSelectionComponent } from "./column-selection-sample/column-selection-sample.component";
 import { GridColumnSelectionStylesComponent } from "./column-selection-styles/column-selection-styles.component";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridActionStripSampleComponent } from "./grid-action-strip/grid-action-strip-sample";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
@@ -188,6 +189,11 @@ export const gridsRoutes: Routes = [
         component: GridBatchEditingSampleComponent,
         data: gridsRoutesData["grid-batch-editing"],
         path: "grid-batch-editing"
+    },
+    {
+        component: GridActionStripSampleComponent,
+        data: gridsRoutesData["grid-action-strip"],
+        path: "grid-action-strip"
     },
     {
         component: GridDisplayDensitySampleComponent,

@@ -4,17 +4,18 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule,
-    IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule,
-    IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule,
-    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
-    IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
+    IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule,
+    IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService,
+    IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule,
+    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule,
+    IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
 import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 import { GridColumnGroupSelectionComponent } from "./column-group-selection-sample/column-group-selection-sample.component";
 import { GridColumnSelectionComponent } from "./column-selection-sample/column-selection-sample.component";
 import { GridColumnSelectionStylesComponent } from "./column-selection-styles/column-selection-styles.component";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridActionStripSampleComponent } from "./grid-action-strip/grid-action-strip-sample";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
@@ -110,6 +111,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
     declarations: [
         GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
+        GridActionStripSampleComponent,
         GridColumnHidingSampleComponent,
         GridColumnHidingToolbarSampleComponent,
         GridConditionalCellStyle2Component,
@@ -236,7 +238,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         IgxSnackbarModule,
         IgxTabsModule,
         IgxCardModule,
-        IgxDividerModule
+        IgxDividerModule,
+        IgxActionStripModule
     ],
     providers: [
         IgxCsvExporterService,
