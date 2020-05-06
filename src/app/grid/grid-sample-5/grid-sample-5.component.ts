@@ -36,7 +36,7 @@ export class GridRemoteVirtualizationAddRowSampleComponent {
         this.grid.isLoading = true;
 
         this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true, (data) => {
-            this.grid.totalItemCount = data["@odata.count"];
+            this.grid.totalItemCount = 12;
             this.grid.isLoading = false;
         });
 
@@ -73,6 +73,15 @@ export class GridRemoteVirtualizationAddRowSampleComponent {
         this.applyLoadingStyles();
         this._prevRequest = this._remoteService.getData(this.grid.virtualizationState,
             this.grid.sortingExpressions[0], reset, () => {
+                if (this.grid.virtualizationState.startIndex + this.grid.virtualizationState.chunkSize >= (this.grid.totalItemCount - 3)) {
+                    // The grid needs to be resized
+                    const i = this.grid.virtualizationState.startIndex;
+                    const j = this.grid.virtualizationState.chunkSize + i;
+                    const expansionElements = this._remoteService.cachedData.filter((x, y) => 
+                        y >= i && y <= j && x === null
+                    ).length;
+                    this.grid.totalItemCount += expansionElements;
+                }
                 if (this._isColumnCellTemplateReset) {
                     let oldTemplate;
                     this.grid.columns.forEach((column: IgxColumnComponent) => {
