@@ -1,7 +1,7 @@
 <div class="sample">
     <div class="grid_wrapper">
         <igx-hierarchical-grid height="600px" width="100%" [showToolbar]="true" [allowAdvancedFiltering]="true"
-            columnSelection="multiple" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+            columnSelection="multiple" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" displayDensity="compact">
             <igx-column field="CustomerID" [filterable]="true" [sortable]="true" [editable]="true"></igx-column>
             <igx-column-group header="General Information">
                 <igx-column field="CompanyName" [sortable]="true"></igx-column>
@@ -25,19 +25,20 @@
                 </igx-column-group>
             </igx-column-group>
 
-            <igx-row-island [key]="'Orders'" [autoGenerate]="false" columnSelection="multi" (onGridCreated)="onGridCreated($event)">
+            <igx-row-island [key]="'Orders'" [autoGenerate]="false" columnSelection="multi" (onGridCreated)="onGridCreated($event)"
+            [showToolbar]="true" [allowAdvancedFiltering]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
                 <igx-column-group header="Order Information">
                     <igx-column-group header="Order Details">
                         <igx-column [editable]="true" [sortable]="true" field="OrderID"></igx-column>
                         <igx-column [editable]="true" [sortable]="true" field="EmployeeID"></igx-column>
-                        <igx-column [editable]="true" [sortable]="true" field="OrderDate"  [dataType]="'date'"></igx-column>
+                        <igx-column [editable]="true" [sortable]="true" field="OrderDate"  [dataType]="'date'" [hasSummary]="true"></igx-column>
                         <igx-column [editable]="true" field="RequiredDate"  [dataType]="'date'"></igx-column>
                     </igx-column-group>
                     <igx-column-group header="General Shipping Information">
                         <igx-column field="ShippedDate" [dataType]="'date'"></igx-column>
                         <igx-column field="ShipVia" [selectable]="false"></igx-column>
                         <igx-column field="Freight" [selectable]="false"></igx-column>
-                        <igx-column field="ShipName"></igx-column>
+                        <igx-column field="ShipName" [hasSummary]="true"></igx-column>
                     </igx-column-group>
                     <igx-column-group header="Shipping Location">
                         <igx-column field="ShipAddress"></igx-column>
@@ -46,11 +47,12 @@
                         <igx-column field="ShipCountry"></igx-column>
                     </igx-column-group>
                 </igx-column-group>
-                <igx-row-island [key]="'OrderDetails'" [autoGenerate]="false" columnSelection="single" (onGridCreated)="onGridCreated($event)">
-                        <igx-column field="ProductID" ></igx-column>
-                        <igx-column field="UnitPrice"></igx-column>
-                        <igx-column field="Quantity" [selectable]="false"></igx-column>
-                        <igx-column field="Discount"></igx-column>
+                <igx-row-island [key]="'OrderDetails'" [autoGenerate]="false" columnSelection="single" (onGridCreated)="onGridCreated($event)"
+                [showToolbar]="true" [allowAdvancedFiltering]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+                        <igx-column [editable]="true" [sortable]="true" field="ProductID" ></igx-column>
+                        <igx-column [editable]="true" [sortable]="true" field="UnitPrice"></igx-column>
+                        <igx-column [editable]="true" [sortable]="true" field="Quantity" [selectable]="false"></igx-column>
+                        <igx-column [editable]="true" field="Discount" [hasSummary]="true"></igx-column>
                 </igx-row-island>
             </igx-row-island>
         </igx-hierarchical-grid>

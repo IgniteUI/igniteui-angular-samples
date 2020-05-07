@@ -14,6 +14,7 @@ $custom-checkbox-theme: igx-checkbox-theme(
 .list-sample {
     @include igx-checkbox($custom-checkbox-theme);
 }
+
 .sample {
     display: flex;
 
@@ -50,5 +51,6 @@ $custom-checkbox-theme: igx-checkbox-theme(
                 font-size: 20px;
                 font-weight: 400;
             }
+        }   
     }
 }

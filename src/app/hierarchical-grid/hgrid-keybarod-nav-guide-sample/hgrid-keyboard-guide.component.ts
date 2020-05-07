@@ -72,8 +72,8 @@ const theadKeyCombinations = [
 
 const tbodyKeyCombinations: Item[] = [
     new Item("enter", "enter in edit mode", false),
-    new Item("alt + arrow left/up", "collapse master datils row", false),
-    new Item("alt + arrow right/down", "expand master datils row", false),
+    new Item("alt + arrow left/up", "collapse row island row", false),
+    new Item("alt + arrow right/down", "expand row island row", false),
     new Item("ctrl + Home/End", "navigates to the upper-left/bottom-right cell", false)
 ];
 
@@ -143,24 +143,9 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
   }
 
   @HostListener("click", ["$event"])
-  public onClick(evt) {
+  public onClick() {
     const gridSection = document.activeElement.className;
-    // const grid = this.hGridApi.getChildGridByID(document.activeElement.parentElement.parentElement.id, 0);
-    // this.hGrid.gridAPI
-    // TODO: get from evt the target igx-hierarchical-grid then it's id.
-    // const hGridEl = this.findSelectedGrid(evt.target);
-    // TODO: get from this.hGrid.grdiAPI.childGrid the corresponding
-    // const hGrid = this.hGrid.gridAPI.childGrid.find()
-    // rowIlands and pass the ref to the gridUndreManagement
     this.changeKeyboardCollection(gridSection);
-  }
-
-  @HostListener("focus", ["$event"])
-  public onFocus(evt) {
-    const target = evt.target;
-    if (target.tagName === "igx-hierarchical-grid") {
-      // this.hGrid.gridAPI.childGrids.find()
-    }
   }
 
   @HostListener("keydown.ArrowLeft")
