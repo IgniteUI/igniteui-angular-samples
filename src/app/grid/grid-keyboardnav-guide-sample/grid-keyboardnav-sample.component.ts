@@ -66,11 +66,11 @@ class KeyboardHandler {
 
 const theadKeyCombinations = [
     new Item("space", "select column", false),
-    new Item("alt + l", "opens the advanced filtering", false),
-    new Item("ctrl + shift + l", "opens the excel style filtering", false),
     new Item("ctrl + arrow up/down", "sorts the column asc/desc", false),
     new Item("shift + alt + arrow left/right", "group/ungroup the active column", false),
-    new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header", false)
+    new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header", false),
+    new Item("ctrl + shift + l", "opens the excel style filtering", false),
+    new Item("alt + l", "opens the advanced filtering", false)
 ];
 
 const tbodyKeyCombinations: Item[] = [
@@ -182,11 +182,11 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
               const componentType = args.componentRef.componentType.name;
               switch (componentType) {
                 case "IgxGridExcelStyleFilteringComponent":
-                    this._keyboardHandler.selectItem(2);
+                    this._keyboardHandler.selectItem(4);
                     this.cdr.detectChanges();
                     break;
                 case "IgxAdvancedFilteringDialogComponent":
-                    this._keyboardHandler.selectItem(1);
+                    this._keyboardHandler.selectItem(5);
                     break;
                 default:
                     return;
@@ -203,7 +203,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
         this.grid.onGroupingDone.pipe(takeUntil(this._destroyer))
           .subscribe(() => {
-              this._keyboardHandler.selectItem(4);
+              this._keyboardHandler.selectItem(2);
           });
 
         this.grid.onColumnSelectionChange.pipe(takeUntil(this._destroyer))
@@ -216,7 +216,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
         this.grid.onSortingDone.pipe(takeUntil(this._destroyer))
           .subscribe(() => {
-              this._keyboardHandler.selectItem(3);
+              this._keyboardHandler.selectItem(1);
           });
 
         this.grid.onCellEditEnter.pipe(takeUntil(this._destroyer))
@@ -272,7 +272,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
     public expandChange(evt) {
         if (evt) {
-            this._keyboardHandler.selectItem(5);
+            this._keyboardHandler.selectItem(3);
         }
     }
 
