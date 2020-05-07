@@ -237,18 +237,6 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
     }
   }
 
-  public findSelectedGrid(target: HTMLElement) {
-    if (!target || !target.parentElement) {
-      return;
-    }
-
-    if (target.parentElement.tagName === "igx-hierarchical-grid") {
-      return target.parentElement;
-    }
-
-    this.findSelectedGrid(target.parentElement);
-  }
-
   public onGridCreated(evt) {
     console.log(evt);
     fromEvent(evt.grid.elementRef.nativeElement, "click").pipe(takeUntil(this._destroyer))

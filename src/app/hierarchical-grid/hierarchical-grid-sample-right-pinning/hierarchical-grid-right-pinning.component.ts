@@ -1,8 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
 import {
-    ColumnPinningPosition, IgxColumnComponent, IgxHierarchicalGridComponent
+    ColumnPinningPosition, IgxColumnComponent, IgxHierarchicalGridComponent, IPinningConfig
 } from "igniteui-angular";
-import { IPinningConfig } from "igniteui-angular/lib/grids/common/grid.interface";
 import { data } from "../../data/athletesData";
 import { athletesData } from "../services/data";
 
