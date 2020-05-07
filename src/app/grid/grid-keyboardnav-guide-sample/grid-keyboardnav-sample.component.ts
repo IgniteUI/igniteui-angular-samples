@@ -70,7 +70,7 @@ const theadKeyCombinations = [
     new Item("shift + alt + arrow left/right", "group/ungroup the active column", false),
     new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header", false),
     new Item("ctrl + shift + l", "opens the excel style filtering", false),
-    new Item("alt + l", "opens the advanced filtering", false),
+    new Item("alt + l", "opens the advanced filtering", false)
 ];
 
 const tbodyKeyCombinations: Item[] = [

@@ -1,7 +1,7 @@
 <div class="sample">
     <div class="grid_wrapper">
         <igx-grid height="600px" width="100%" [paging]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" displayDensity="compact"
-            summaryCalculationMode="rootLevelOnly" columnSelection="single" [showToolbar]="true" [allowAdvancedFiltering]="true">
+            summaryCalculationMode="rootLevelOnly" columnSelection="single" [showToolbar]="false" [allowAdvancedFiltering]="true">
             <ng-template igxGridDetail let-dataItem>
                 <div *ngIf="dataItem.CompanysAnnualProfit">
                     <header>Annual Profit:</header>
@@ -45,12 +45,13 @@
             </igx-list-item>
             <ng-template igxEmptyList>
                 <span class="empty-list">
-                    <h5>Use the native navigation of the browser until you reach some of the following grid sections below:</h5>
+                    <h6>Use the native navigation of the browser until you reach some of the following grid sections below:</h6>
                     <ul>
                         <li>Header</li>
                         <li>Body</li>
                         <li>Summary</li>
                     </ul>
+                    <h6>When reached, an <b>action list</b> will be shown.</h6>
                 </span>
             </ng-template>
         </igx-list>
