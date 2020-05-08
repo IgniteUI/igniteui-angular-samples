@@ -43,6 +43,7 @@ import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-s
 import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
+import { GridKeyboardnavGuide } from './grid-keyboardnav-guide-sample/grid-keyboardnav-sample.component';
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/grid-moving-styled-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -168,7 +169,7 @@ export const gridsRoutes: Routes = [
     },
     {
         component: GridMultipleRowDragComponent,
-        data:  gridsRoutesData["grid-multiple-row-drag"],
+        data: gridsRoutesData["grid-multiple-row-drag"],
         path: "grid-multiple-row-drag"
     },
     {
@@ -546,6 +547,11 @@ export const gridsRoutes: Routes = [
         data: gridsRoutesData["grid-sample-5"],
         path: "grid-sample-5"
     },
+    {
+        component: GridKeyboardnavGuide,
+        data: gridsRoutesData["grid-keybarodnav-guide"],
+        path: "grid-keyboardnav-guide"
+    }
 ];
 
 @NgModule({

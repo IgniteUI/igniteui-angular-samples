@@ -1,7 +1,8 @@
+import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { Router, RouterModule } from "@angular/router";
 // tslint:disable:max-line-length
-import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDragDropModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxTooltipModule } from "igniteui-angular";
+import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDragDropModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxTooltipModule } from "igniteui-angular";
 import { IgxCategoryChartModule, IgxLegendModule, IgxPieChartModule, IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
 import { IgxPreventDocumentScrollModule } from "../../src/app/directives/prevent-scroll.directive";
 import { GridColumnGroupSelectionComponent } from "../../src/app/grid/column-group-selection-sample/column-group-selection-sample.component";
@@ -51,6 +52,7 @@ import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-samp
 import { GridGroupByStyling } from "../../src/app/grid/grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "../../src/app/grid/grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
+import { GridKeyboardnavGuide } from "../../src/app/grid/grid-keyboardnav-guide-sample/grid-keyboardnav-sample.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 import { GridMovingStyledSampleComponent } from "../../src/app/grid/grid-moving-styled-sample/grid-moving-styled-sample.component";
 import { GridMRLCustomNavigationComponent } from "../../src/app/grid/grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -1101,6 +1103,18 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        configs.push(new Config({
+            component: GridKeyboardnavGuide,
+            additionalFiles: [
+                "/src/app/data/customers.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridKeyboardnavGuide, IgxGridModule, IgxListModule, CommonModule, IgxOverlayService],
+                ngDeclarations: [GridKeyboardnavGuide],
+                ngImports: [IgxGridModule, IgxListModule, CommonModule],
+                ngProviders: [IgxOverlayService]
+            })
+        }));
 
         return configs;
     }
