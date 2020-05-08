@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ElementRef } from "@angular/core";
 
 @Component({
     selector: "styled-rangedatepicker",
@@ -7,4 +7,7 @@ import { Component } from "@angular/core";
 })
 export class StyledDateRangePickerComponent {
     public range = { start: new Date(), end: new Date(new Date().setDate(new Date().getDate() + 5)) };
+
+    constructor(public element: ElementRef) {
+    }
 }
