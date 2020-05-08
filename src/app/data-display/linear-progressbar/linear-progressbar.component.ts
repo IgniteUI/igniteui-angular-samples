@@ -1,4 +1,4 @@
-import { Component, QueryList, ViewChildren } from "@angular/core";
+import { Component, OnInit , ViewChild } from "@angular/core";
 import { IgxLinearProgressBarComponent } from "igniteui-angular";
 
 @Component({
@@ -6,37 +6,18 @@ import { IgxLinearProgressBarComponent } from "igniteui-angular";
   styleUrls: ["./linear-progressbar.component.scss"],
   templateUrl: "./linear-progressbar.component.html"
 })
-export class LinearProgressbarComponent {
+export class LinearProgressbarComponent implements OnInit {
 
   public interval: any;
 
-  @ViewChildren(IgxLinearProgressBarComponent, { read: IgxLinearProgressBarComponent })
-  public linearBars: QueryList<IgxLinearProgressBarComponent>;
+  @ViewChild(IgxLinearProgressBarComponent, { read: IgxLinearProgressBarComponent })
+  public linearBar: IgxLinearProgressBarComponent;
 
-  constructor() { }
-
-  public changeIcon() {
-    return this.interval ? "pause" : "play_arrow";
+  public ngOnInit() {
+    this.interval = setInterval(this.updateValue.bind(this), 60);
   }
 
   public updateValue() {
-      this.linearBars.map((bar) => bar.value += this.randomIntFromInterval(1, 3));
-      const shouldStop = this.linearBars.toArray().every((bar) => bar.value >= bar.max);
-      if (shouldStop) {
-        this.interval = clearInterval(this.interval);
-      }
+      this.linearBar.value += 1;
   }
-
-  public tick() {
-      if (this.interval) {
-          this.interval = clearInterval(this.interval);
-          return;
-      }
-      this.interval = setInterval(this.updateValue.bind(this), 60);
-  }
-
-  private randomIntFromInterval(min: number, max: number) {
-      return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
 }
