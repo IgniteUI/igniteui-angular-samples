@@ -18,7 +18,7 @@ $custom-date-range-theme: igx-date-range-picker-theme(
 );
 
 // INPUT GROUP
-$input-group-theme: igx-input-group-theme(
+$custom-input-group-theme: igx-input-group-theme(
   $palette: $custom-palette,
   $filled-text-color: $text-color,
   $idle-text-color: $text-color,
@@ -39,7 +39,7 @@ $custom-calendar-theme: igx-calendar-theme(
 :host {
     ::ng-deep {
         @include igx-date-range-picker($custom-date-range-theme);
-        @include igx-input-group($input-group-theme);
+        @include igx-input-group($custom-input-group-theme);
         @include igx-calendar($custom-calendar-theme);
     }
 }
