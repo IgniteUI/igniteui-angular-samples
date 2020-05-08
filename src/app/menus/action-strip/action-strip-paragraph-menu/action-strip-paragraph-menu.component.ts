@@ -7,7 +7,7 @@ import { DisplayDensity, IgxActionStripComponent } from "igniteui-angular";
   templateUrl: "./action-strip-paragraph-menu.component.html"
 })
 export class ActionStripParagraphMenuComponent {
-    // @ViewChild("actionstrip") public actionStrip: IgxActionStripComponent;
+    @ViewChild("actionStrip") public actionStrip: IgxActionStripComponent;
     @ViewChild("myParagraph") public paragraph;
     public result: string;
     public isVisible = false;
@@ -16,11 +16,17 @@ export class ActionStripParagraphMenuComponent {
     public textRight = false;
     public displayDensity = DisplayDensity.comfortable;
 
-    // public onMouseLeave(event?) {
-    //     if (!event || event.relatedTarget.nodeName.toLowerCase() !== "igx-drop-down-item") {
-    //         this.hideActions();
-    //     }
-    // }
+    public onMouseLeave(event?) {
+        if (!event) {
+            return;
+        }
+        if (event.relatedTarget &&
+            event.relatedTarget.nodeName.toLowerCase() !== "igx-drop-down-item" &&
+            event.relatedTarget.className.indexOf("menu-button") === -1) {
+            console.log(event.relatedTarget.nodeName);
+            this.actionStrip.hide();
+        }
+    }
 
     public alignTextLeft() {
         this.paragraph.nativeElement.classList.add("text-align-left");
