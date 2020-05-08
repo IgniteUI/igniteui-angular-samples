@@ -171,8 +171,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
     ],
     providers: [
         IgxCsvExporterService,
-        IgxExcelExporterService,
-        IgxHierarchicalGridAPIService
+        IgxExcelExporterService
     ]
 })
 export class HierarchicalGridModule { }

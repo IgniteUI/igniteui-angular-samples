@@ -21,7 +21,8 @@ import {
     IgxToastModule,
     IgxToggleModule,
     IgxTooltipModule,
-    IgxTreeGridModule
+    IgxTreeGridModule,
+    IgxListModule
 } from "igniteui-angular";
 import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 import { TreeGridColumnGroupSelectionComponent } from "./column-group-selection/column-group-selection.component";
@@ -100,6 +101,7 @@ import { TreeGridToolbarSample4Component } from "./tree-grid-toolbar-sample-4/tr
 import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-grid-toolbar-style.component";
 import { TreeGridVirtualizationSampleComponent } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
+import { TGridKeyboardnavGuide } from './tgrid-keyboard-guide/tgrid-keyboardnav-guide.component';
 @NgModule({
     declarations: [
         TreeGridRowEditSampleComponent,
@@ -174,7 +176,8 @@ import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/tree
         TreeGridRightPinningSampleComponent,
         TreeGridColumnSelectionComponent,
         TreeGridColumnGroupSelectionComponent,
-        TreeGridColumnSelectionStylesComponent
+        TreeGridColumnSelectionStylesComponent,
+        TGridKeyboardnavGuide
     ],
     imports: [
         CommonModule,
@@ -197,7 +200,8 @@ import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/tree
         IgxSelectModule,
         IgxBannerModule,
         IgxSnackbarModule,
-        IgxTooltipModule
+        IgxTooltipModule,
+        IgxListModule
     ],
     providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })

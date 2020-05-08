@@ -4,8 +4,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   IgxHierarchicalGridComponent,
   IgxListComponent,
-  IgxOverlayService,
-  IgxPaginatorComponent} from "igniteui-angular";
+  IgxOverlayService} from "igniteui-angular";
 import { Subject, fromEvent } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { CUSTOMERS } from "../data";
@@ -64,10 +63,10 @@ class KeyboardHandler {
 
 const theadKeyCombinations = [
     new Item("space", "select column", false),
-    new Item("alt + l", "opens the advanced filtering", false),
-    new Item("ctrl + shift + l", "opens the excel style filtering", false),
     new Item("ctrl + arrow up/down", "sorts the column asc/desc", false),
-    new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header", false)
+    new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header", false),
+    new Item("alt + l", "opens the advanced filtering", false),
+    new Item("ctrl + shift + l", "opens the excel style filtering", false)
 ];
 
 const tbodyKeyCombinations: Item[] = [
@@ -118,9 +117,6 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
 
   @ViewChild(IgxListComponent, { static: true})
   public listref: IgxListComponent;
-
-  @ViewChild(IgxPaginatorComponent, { static: true})
-  public paginator: IgxPaginatorComponent;
 
   public get keyboardCollection() {
       return this._keyboardHandler.collection;
@@ -182,11 +178,11 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
             const componentType = args.componentRef.componentType.name;
             switch (componentType) {
               case "IgxGridExcelStyleFilteringComponent":
-                  this._keyboardHandler.selectItem(2);
+                  this._keyboardHandler.selectItem(4);
                   this.cdr.detectChanges();
                   break;
               case "IgxAdvancedFilteringDialogComponent":
-                  this._keyboardHandler.selectItem(1);
+                  this._keyboardHandler.selectItem(3);
                   break;
               default:
                   return;
@@ -208,9 +204,7 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
   }
 
   public expandChange(evt) {
-    if (evt) {
-        this._keyboardHandler.selectItem(4);
-    }
+    this._keyboardHandler.selectItem(2);
   }
 
   public onCheckChange(evt, idx) {
@@ -283,7 +277,7 @@ export class GridUnderManagement {
 
     this.hGrid.onSortingDone.pipe(takeUntil(this.destroyer))
       .subscribe(() => {
-        this.keyboardHandler.selectItem(3);
+        this.keyboardHandler.selectItem(1);
       });
 
     this.hGrid.onCellEditEnter.pipe(takeUntil(this.destroyer))
