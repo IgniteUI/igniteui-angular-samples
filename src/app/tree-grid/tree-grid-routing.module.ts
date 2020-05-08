@@ -4,6 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { TreeGridColumnGroupSelectionComponent } from "./column-group-selection/column-group-selection.component";
 import { TreeGridColumnSelectionStylesComponent } from "./column-selection-styles/tree-grid-column-selection-style.component";
 import { TreeGridColumnSelectionComponent } from "./column-selection/tree-grid-column-selection.component";
+import { TGridKeyboardnavGuide } from "./tgrid-keyboard-guide/tgrid-keyboardnav-guide.component";
 import { TreeGridAdvancedFilteringSampleComponent } from "./tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
 import { TreeGridAdvancedFilteringStyleComponent } from "./tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
 import { TreeGridBatchEditingSampleComponent } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
@@ -73,7 +74,6 @@ import { TreeGridToolbarSample4Component } from "./tree-grid-toolbar-sample-4/tr
 import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-grid-toolbar-style.component";
 import { TreeGridVirtualizationSampleComponent } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
-import { TGridKeyboardnavGuide } from './tgrid-keyboard-guide/tgrid-keyboardnav-guide.component';
 
 export const treeGridRoutes: Routes = [
     {

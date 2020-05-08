@@ -119,6 +119,7 @@ const summaryCombinations: Item[] = [
     ]
 })
 export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
+    public data;
 
     @ViewChild(IgxTreeGridComponent, { static: true})
     public tgrid: IgxTreeGridComponent;
@@ -162,17 +163,8 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
       }
     }
 
-    public data;
     public ngOnInit() {
         this.data = generateEmployeeDetailedFlatData();
-        // for (const item of this.data) {
-        //   const names = item.CompanyName.split(" ");
-        //   item.FirstName = names[0];
-        //   item.LastName = names[names.length - 1];
-        //   item.FullAddress = `${item.Address}, ${item.City}, ${item.Country}`;
-        //   item.PersonelDetails = `${item.ContactTitle}: ${item.ContactName}`;
-        //   item.CompanysAnnualProfit = (100000 + (Math.random() * Math.floor(1000000))).toFixed(0);
-        // }
 
         this._overlay.onOpening.pipe(takeUntil(this._destroyer))
           .subscribe((args) => {

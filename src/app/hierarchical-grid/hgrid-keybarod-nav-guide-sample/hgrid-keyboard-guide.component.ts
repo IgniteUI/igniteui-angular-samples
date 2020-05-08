@@ -4,8 +4,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   IgxHierarchicalGridComponent,
   IgxListComponent,
-  IgxOverlayService} from "igniteui-angular";
-import { Subject, fromEvent } from "rxjs";
+  IgxOverlayService } from "igniteui-angular";
+import { fromEvent, Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { CUSTOMERS } from "../data";
 
@@ -243,7 +243,7 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
         this.gridTarget = new GridUnderManagement(evt.grid, this._keyboardHandler, this._destroyer, this.cdr);
         this.gridTarget.subscribe();
     });
-    
+
     fromEvent((evt.grid as IgxHierarchicalGridComponent).tbody.nativeElement, "focus").pipe(takeUntil(this._destroyer))
     .subscribe(() => {
         this.gridTarget = new GridUnderManagement(evt.grid, this._keyboardHandler, this._destroyer, this.cdr);
