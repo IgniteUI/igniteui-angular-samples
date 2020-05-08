@@ -936,7 +936,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: TreeGridColumnSelectionStylesComponent,
+            component: TGridKeyboardnavGuide,
             additionalFiles: [
                 "/src/app/tree-grid/data/employees-flat-detailed.ts"
             ],
