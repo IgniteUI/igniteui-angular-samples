@@ -238,7 +238,6 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
   }
 
   public onGridCreated(evt) {
-    console.log(evt);
     fromEvent(evt.grid.elementRef.nativeElement, "click").pipe(takeUntil(this._destroyer))
       .subscribe(() => {
         this.gridTarget = new GridUnderManagement(evt.grid, this._keyboardHandler, this._destroyer, this.cdr);
@@ -247,6 +246,12 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
 
     fromEvent(evt.grid.elementRef.nativeElement, "focus").pipe(takeUntil(this._destroyer))
       .subscribe(() => {
+        this.gridTarget = new GridUnderManagement(evt.grid, this._keyboardHandler, this._destroyer, this.cdr);
+        this.gridTarget.subscribe();
+    });
+    
+    fromEvent((evt.grid as IgxHierarchicalGridComponent).tbody.nativeElement, "focus").pipe(takeUntil(this._destroyer))
+    .subscribe(() => {
         this.gridTarget = new GridUnderManagement(evt.grid, this._keyboardHandler, this._destroyer, this.cdr);
         this.gridTarget.subscribe();
       });
