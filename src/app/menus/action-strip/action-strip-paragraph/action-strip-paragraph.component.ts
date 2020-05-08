@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { DisplayDensity, IgxActionStripComponent } from "igniteui-angular";
+import { DisplayDensity } from "igniteui-angular";
 
 @Component({
   selector: "app-action-strip-paragraph",
@@ -7,7 +7,6 @@ import { DisplayDensity, IgxActionStripComponent } from "igniteui-angular";
   templateUrl: "./action-strip-paragraph.component.html"
 })
 export class ActionStripParagraphComponent {
-    @ViewChild("actionstrip") public actionStrip: IgxActionStripComponent;
     @ViewChild("myParagraph") public paragraph;
     public result: string;
     public isVisible = false;
@@ -44,13 +43,5 @@ export class ActionStripParagraphComponent {
             this.paragraph.nativeElement.classList.remove("font-underlined");
             this.isUnderlined = false;
         }
-    }
-
-    public showActions() {
-        this.isVisible = true;
-    }
-
-    public hideActions() {
-        this.isVisible = false;
     }
 }
