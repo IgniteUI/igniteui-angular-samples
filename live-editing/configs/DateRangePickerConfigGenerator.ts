@@ -1,12 +1,17 @@
+import { IgxDateRangePickerModule, IgxIconModule, IgxInputGroupModule } from "igniteui-angular";
+import { BasicDateRangePickerComponent
+} from "../../src/app/scheduling/daterangepicker/daterangepicker-basic/daterangepicker-basic";
+import { FlightBookingComponent
+} from "../../src/app/scheduling/daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking";
+import { DateRangePickerStartEndComponent
+} from "../../src/app/scheduling/daterangepicker/daterangepicker-start-end/daterangepicker-start-end";
+import { DateRangePickerValidationComponent
+} from "../../src/app/scheduling/daterangepicker/daterangepicker-validation/daterangepicker-validation";
+import { StyledDateRangePickerComponent
+} from "./../../src/app/scheduling/daterangepicker/daterangepicker-styling/daterangepicker-styling";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { BasicDateRangePickerComponent } from '../../src/app/scheduling/daterangepicker/daterangepicker-basic/daterangepicker-basic';
-import { IgxDateRangePickerModule, IgxIconModule, IgxInputGroupModule } from 'igniteui-angular';
-import { DateRangePickerStartEndComponent } from '../../src/app/scheduling/daterangepicker/daterangepicker-start-end/daterangepicker-start-end';
-import { DateRangePickerValidationComponent } from '../../src/app/scheduling/daterangepicker/daterangepicker-validation/daterangepicker-validation';
-import { FlightBookingComponent } from "../../src/app/scheduling/daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking";
-import { StyledDateRangePickerComponent } from './../../src/app/scheduling/daterangepicker/daterangepicker-styling/daterangepicker-styling';
 
 export class DateRangePickerConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -52,9 +57,9 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
             new Config({
                 component: StyledDateRangePickerComponent,
                 appModuleConfig: new AppModuleConfig({
-                    imports: [IgxDateRangePickerModule, StyledDateRangePickerComponent],
+                    imports: [IgxDateRangePickerModule, StyledDateRangePickerComponent, IgxIconModule],
                     ngDeclarations: [StyledDateRangePickerComponent],
-                    ngImports: [IgxDateRangePickerModule]
+                    ngImports: [IgxDateRangePickerModule, IgxIconModule]
                 }),
                 shortenComponentPathBy: "/scheduling/daterangepicker"
             })

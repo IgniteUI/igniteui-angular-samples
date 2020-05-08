@@ -2,5 +2,10 @@
 	"editor.tabSize": 4,
 	"editor.insertSpaces": true,
     "editor.detectIndentation": false,
-    "jscs.enable": false
+    "jscs.enable": false,
+    "cSpell.words": [
+        "angular",
+        "igniteui",
+        "igniteui-angular"
+    ]
 }
