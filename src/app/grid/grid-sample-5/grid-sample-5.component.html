@@ -1,16 +1,5 @@
 <div class="grid__wrapper">
-    <ng-template #remoteDataLoadingLarge>
-        <div class="remote-data-loading-template-large"></div>
-    </ng-template>
-    <ng-template #remoteDataLoadingMedium>
-        <div class="remote-data-loading-template-medium"></div>
-    </ng-template>
-    <ng-template #remoteDataLoadingSmall>
-        <div class="remote-data-loading-template-small"></div>
-    </ng-template>
-
-    <igx-grid igxPreventDocumentScroll #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="handlePreLoad()"
-        (onSortingDone)="processData(true)">
+    <igx-grid igxPreventDocumentScroll #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="handlePreLoad()">
         <igx-column [field]="'ProductID'" [sortable]="true"></igx-column>
         <igx-column [field]="'ProductName'" [sortable]="true"></igx-column>
         <igx-column [field]="'UnitPrice'" dataType="number" [formatter]="formatCurrency" [sortable]="true"></igx-column>

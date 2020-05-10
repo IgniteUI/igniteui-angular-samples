@@ -1,99 +1,57 @@
-import { ChangeDetectorRef, Component, TemplateRef, ViewChild } from "@angular/core";
-import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
+import { ChangeDetectorRef, Component, ViewChild, AfterViewInit } from "@angular/core";
+import { IgxGridComponent } from "igniteui-angular";
 import { debounceTime } from "rxjs/operators";
-import { RemoteServiceVirt } from "../services/remoteService";
+import { RemoteService } from "./remote.service";
 
 @Component({
-    providers: [RemoteServiceVirt],
+    providers: [RemoteService],
     selector: "grid-remote-virtualization-sample",
     styleUrls: ["grid-sample-5.component.scss"],
     templateUrl: "grid-sample-5.component.html"
 })
 
-export class GridRemoteVirtualizationAddRowSampleComponent {
+export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewInit {
+    
+    @ViewChild("grid", { static: true }) 
+    public grid: IgxGridComponent;
+    
     public remoteData: any;
-
-    @ViewChild("grid", { static: true }) public grid: IgxGridComponent;
-    @ViewChild("remoteDataLoadingLarge", { read: TemplateRef, static: true })
-    protected remoteDataLoadingLargeTemplate: TemplateRef<any>;
-    @ViewChild("remoteDataLoadingMedium", { read: TemplateRef, static: true })
-    protected remoteDataLoadingMediumTemplate: TemplateRef<any>;
-    @ViewChild("remoteDataLoadingSmall", { read: TemplateRef, static: true })
-    protected remoteDataLoadingSmallTemplate: TemplateRef<any>;
-
-    private _columnCellCustomTemplates: Map<IgxColumnComponent, TemplateRef<any>>;
-    private _isColumnCellTemplateReset: boolean = false;
     private _prevRequest: any;
 
-    constructor(private _remoteService: RemoteServiceVirt, public cdr: ChangeDetectorRef) { }
+    constructor(private _remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
 
     public ngOnInit(): void {
         this.remoteData = this._remoteService.data;
-        this._columnCellCustomTemplates = new Map<IgxColumnComponent, TemplateRef<any>>();
     }
 
     public ngAfterViewInit() {
         this.grid.isLoading = true;
-
         this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true, (data) => {
-            this.grid.totalItemCount = 12;
-            this.grid.isLoading = false;
+            if (data) {
+                // increase totalItemCount a little above the visible grid size in order to be able to scroll 
+                this.grid.totalItemCount = data.value.length + 3;
+                this.grid.isLoading = false;
+            }
         });
-
-        this.grid.onDataPreLoad.pipe(debounceTime(500)).subscribe(() => {
-            this.processData(false);
-        });
-    }
-
-    public applyLoadingStyles() {
-        if (this.grid.columns.length > 0) {
-            this.grid.columns.forEach((column: IgxColumnComponent) => {
-                if (column.bodyTemplate && !this._isColumnCellTemplateReset) {
-                    this._columnCellCustomTemplates.set(column, column.bodyTemplate);
-                }
-                column.bodyTemplate = this.getDataLoadingTemplate();
-            });
-
-            this._isColumnCellTemplateReset = true;
-        }
     }
 
     public handlePreLoad() {
-        if (this._remoteService.hasItemsInCache(this.grid.virtualizationState)) {
-            this.processData(false);
-        } else {
-            this.applyLoadingStyles();
-        }
+        this.processData(false);
     }
 
     public processData(reset) {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
         }
-        this.applyLoadingStyles();
-        this._prevRequest = this._remoteService.getData(this.grid.virtualizationState,
-            this.grid.sortingExpressions[0], reset, () => {
-                if (this.grid.virtualizationState.startIndex + this.grid.virtualizationState.chunkSize >= (this.grid.totalItemCount - 3)) {
-                    // The grid needs to be resized
-                    const i = this.grid.virtualizationState.startIndex;
-                    const j = this.grid.virtualizationState.chunkSize + i;
-                    const expansionElements = this._remoteService.cachedData.filter((x, y) => 
-                        y >= i && y <= j && x === null
-                    ).length;
-                    this.grid.totalItemCount += expansionElements;
+        this._prevRequest = this._remoteService.getData(
+            this.grid.virtualizationState, this.grid.sortingExpressions[0], reset, 
+            (data) => {
+                if (data.length !== 0 && (this.grid.virtualizationState.startIndex + this.grid.virtualizationState.chunkSize) + 3 >= this.grid.totalItemCount) {
+                    this.grid.totalItemCount += data.value.length;
                 }
-                if (this._isColumnCellTemplateReset) {
-                    let oldTemplate;
-                    this.grid.columns.forEach((column: IgxColumnComponent) => {
-                        oldTemplate = this._columnCellCustomTemplates.get(column);
-                        column.bodyTemplate = oldTemplate;
-                    });
-                    this._columnCellCustomTemplates.clear();
-                    this._isColumnCellTemplateReset = false;
-                }
-
-                this.cdr.detectChanges();
-            });
+                this.grid.cdr.detectChanges();
+            }
+        )
     }
 
     public formatNumber(value: number) {
@@ -107,16 +65,6 @@ export class GridRemoteVirtualizationAddRowSampleComponent {
     public ngOnDestroy() {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
-        }
-    }
-
-    private getDataLoadingTemplate(): TemplateRef<any> {
-        const val = Math.floor(Math.random() * 3) + 1;
-
-        switch (val) {
-            case 1: return this.remoteDataLoadingLargeTemplate;
-            case 2: return this.remoteDataLoadingMediumTemplate;
-            case 3: return this.remoteDataLoadingSmallTemplate;
         }
     }
 }

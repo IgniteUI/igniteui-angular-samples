@@ -107,6 +107,7 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { GridRemoteVirtualizationAddRowSampleComponent } from './grid-sample-5/grid-sample-5.component';
+import { RemoteService } from './grid-sample-5/remote.service';
 
 @NgModule({
     declarations: [
