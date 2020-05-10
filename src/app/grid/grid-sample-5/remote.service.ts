@@ -47,9 +47,6 @@ export class RemoteService {
         const startIndex = virtualizationArgs.startIndex;
         const endIndex = virtualizationArgs.chunkSize + startIndex;
 
-        console.log(this._data);
-        console.log(virtualizationArgs);
-
         if (resetData) {
             this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
                 this._updateData(data, startIndex);
@@ -63,9 +60,6 @@ export class RemoteService {
 
         if (!this.hasItemsInCache(virtualizationArgs)) {
             this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
-                this._cachedDataLength += data.value.length;
-                this._cachedData.length += data.value.length;
-                this._cachedData.fill(null, virtualizationArgs.startIndex);
                 this._updateData(data, startIndex);
                 this.cdr.detectChanges();
                 if (cb) {
@@ -76,8 +70,6 @@ export class RemoteService {
             const data = this._cachedData.slice(startIndex, endIndex);
             this._data.next(data);
             if (cb) {
-                console.log(this._cachedData);
-                console.log(data);
                 cb(data);
             }
         }
