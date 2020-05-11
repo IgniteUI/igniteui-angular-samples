@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { ChangeDetectorRef, Injectable } from "@angular/core";
 import { IForOfState, SortingDirection } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
-import { debounceTime } from "rxjs/operators";
+import { take } from "rxjs/operators";
 
 const DATA_URL: string = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
 const EMPTY_STRING: string = "";
@@ -45,7 +45,7 @@ export class RemoteService {
     }
 
     public getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean,
-                   loadState?: IForOfState, cb?: (any) => void): any {
+                   loadState?: IForOfState, cb?: (arg0: any, arg1?: any) => void): any {
         const startIndex = virtualizationArgs.startIndex;
         const endIndex = virtualizationArgs.chunkSize + startIndex;
 
@@ -62,17 +62,21 @@ export class RemoteService {
         }
 
         if (loadState) {
-            this._http.get(this._buildDataUrl(loadState, sortingArgs)).pipe(debounceTime(500)).subscribe((data: any) => {
+            this._http.get(this._buildDataUrl(loadState, sortingArgs)).pipe(take(1)).subscribe((data: any) => {
                 this._updateData(data, loadState.startIndex);
                 let returnData = [];
+                let endOfData = false;
                 if (loadState.startIndex + loadState.chunkSize > this._cachedData.length) {
+                    if (this._prevRequestChunk > data.value.length) {
+                        endOfData = true;
+                    }
                     returnData = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk);
                 } else {
                     returnData = this._cachedData.slice(startIndex, endIndex);
                 }
                 this._data.next(returnData);
                 if (cb) {
-                    cb(returnData);
+                    cb(returnData, endOfData);
                 }
             });
         } else {
@@ -88,28 +92,6 @@ export class RemoteService {
                 cb(data);
             }
         }
-
-        /*if (!this.hasItemsInCache(virtualizationArgs)) {
-            this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).pipe(debounceTime(500)).subscribe((data: any) => {
-                this._updateData(data, startIndex);
-                if (data.value.length < this._prevRequestChunk) {
-                    // max data has been reached
-                    const newStartIndex = (this._cachedData.length - 1) - this._prevRequestChunk;
-                    data = this._cachedData.slice(newStartIndex, this._cachedData.length);
-                } else {
-                    this._prevRequestChunk = data.value.length;
-                }
-                this.cdr.detectChanges();
-                if (cb) {
-                    cb(data);
-                }
-            });
-        } else {*/
-        
-        // if (endIndex - startIndex < this._prevRequestChunk) {
-        //     data = this._cachedData.slice(endIndex - this._prevRequestChunk, endIndex);
-        // }
-        //}
     }
 
     private _updateData(data: any, startIndex: number) {

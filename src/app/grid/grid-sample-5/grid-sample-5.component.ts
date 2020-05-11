@@ -17,6 +17,7 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     public remoteData: any;
     private _prevRequest: any;
     private _prevRequestChunk: number;
+    private _endOfData = false;
 
     constructor(private _remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
 
@@ -29,7 +30,7 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
         this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true, undefined, (data) => {
             if (data) {
                 // increase totalItemCount a little above the visible grid size in order to be able to scroll
-                this.grid.totalItemCount = data.value.length + 5;
+                this.grid.totalItemCount = data.value.length + 3;
                 this.grid.isLoading = false;
                 this._prevRequestChunk = data.value.length;
             }
@@ -39,7 +40,7 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     public handlePreLoad() {
         const index = this.grid.virtualizationState.chunkSize +
                                 this.grid.virtualizationState.startIndex;
-        if (index > this._remoteService.cachedData.length) {
+        if (index > this._remoteService.cachedData.length && !this._endOfData) {
             const loadState = {
                 startIndex: index - 1,
                 chunkSize: this.grid.virtualizationState.chunkSize
@@ -51,15 +52,16 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     }
 
     public processData(reset, state?) {
-        if (this._prevRequest) {
-            this._prevRequest.unsubscribe();
-        }
         this._prevRequest = this._remoteService.getData(
             this.grid.virtualizationState, this.grid.sortingExpressions[0], reset, state,
-            (data) => {
+            (data, endOfData?) => {
                 const chunkLength = this.grid.virtualizationState.startIndex +
                                     this.grid.virtualizationState.chunkSize + 5;
-                if (chunkLength >= this.grid.totalItemCount) {
+                if (this._endOfData || endOfData) {
+                    this.grid.totalItemCount = this._remoteService.cachedData.length;
+                    this._endOfData = true;
+                    this.grid.cdr.detectChanges();
+                } else if (chunkLength >= this.grid.totalItemCount) {
                     if (this.grid.virtualizationState.startIndex >= this._remoteService.cachedData.length) {
                         this.grid.totalItemCount = this._remoteService.cachedData.length;
                     } else {
