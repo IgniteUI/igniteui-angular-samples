@@ -11,7 +11,7 @@
         </igx-input-group>
     </div>
 
-    <igx-grid #grid1 igxPreventDocumentScroll [data]="localData" [paging]="true" [perPage]="10" height="600px" (onSelection)="cellSelection($event)"
+    <igx-grid #grid1 igxPreventDocumentScroll [data]="localData" [paging]="true" [perPage]="20" height="600px" (onSelection)="cellSelection($event)"
     [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [allowAdvancedFiltering]="true" displayDensity="cosy">
         <igx-column header="Rank" [width]="'12%'" field="Id" sortable="true" [filterable]="false">
             <ng-template igxCell let-cell="cell">
