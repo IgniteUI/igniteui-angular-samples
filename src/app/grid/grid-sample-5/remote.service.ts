@@ -16,7 +16,7 @@ export class RemoteService {
     public data: Observable<any[]>;
     private _data: BehaviorSubject<any[]>;
     private _cachedData = [];
-    private _cachedDataLength = 0;
+    private _prevRequestChunk: number;
 
     constructor(private _http: HttpClient, private cdr: ChangeDetectorRef) {
         this._data = new BehaviorSubject([]);
@@ -50,6 +50,7 @@ export class RemoteService {
         if (resetData) {
             this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
                 this._updateData(data, startIndex);
+                this._prevRequestChunk = data.value.length;
                 if (cb) {
                     cb(data);
                 }
@@ -61,13 +62,23 @@ export class RemoteService {
         if (!this.hasItemsInCache(virtualizationArgs)) {
             this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
                 this._updateData(data, startIndex);
+                if (data.value.length < this._prevRequestChunk) {
+                    // max data has been reached
+                    const newStartIndex = (this._cachedData.length - 1) - this._prevRequestChunk;
+                    data = this._cachedData.slice(newStartIndex, this._cachedData.length);
+                } else {
+                    this._prevRequestChunk = data.value.length;
+                }
                 this.cdr.detectChanges();
                 if (cb) {
                     cb(data);
                 }
             });
         } else {
-            const data = this._cachedData.slice(startIndex, endIndex);
+            let data = this._cachedData.slice(startIndex, endIndex);
+            if (endIndex - startIndex < this._prevRequestChunk){
+                data = this._cachedData.slice(endIndex - this._prevRequestChunk, endIndex);
+            }
             this._data.next(data);
             if (cb) {
                 cb(data);
