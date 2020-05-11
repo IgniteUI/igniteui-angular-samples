@@ -2,6 +2,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
+import { HierarchicalGridColumnGroupSelectionComponent } from "./column-group-selection/hierarchical-grid-column-group-selection.component";
+import { HGridColumnSelectionStylesComponent } from "./column-selection-styles/hierarchical-grid-column-selection-styles.component";
+import { HierarchicalGridColumnSelectionComponent } from "./column-selection/hierarchical-grid-column-selection.component";
 import { HGridAdvancedFilteringStyleComponent } from "./hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
 import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridAllDataSummaryComponent } from "./hierarchical-grid-allData-summary/hierarchical-grid-allData-summary.component";
@@ -61,6 +64,7 @@ import { HGridDragSampleComponent } from "./hierarchical-grid-row-drag/hierarchi
 import { HGridRowEditStyleComponent } from "./hierarchical-grid-row-edit-style/hierarchical-grid-row-edit-style.component";
 import { HGridRowEditingSampleComponent } from "./hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
 import { HGridRowReorderComponent } from "./hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
+import { HierarchicalGridRightPinningSampleComponent } from "./hierarchical-grid-sample-right-pinning/hierarchical-grid-right-pinning.component";
 import { HGridSelectionTemplateNumbersSampleComponent } from "./hierarchical-grid-selection-template-numbers/hierarchical-grid-selection-template-numbers.component";
 import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridSortingStylingComponent } from "./hierarchical-grid-sorting-styling/hierarchical-grid-sorting-styling.component";
@@ -389,6 +393,26 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridAllDataSummaryComponent,
         data: hierarchicalGridRoutesData["hierarchical-grid-allData-summary"],
         path: "hierarchical-grid-allData-summary"
+    },
+    {
+        component: HierarchicalGridRightPinningSampleComponent,
+        data: hierarchicalGridRoutesData["hierarchical-grid-sample-right-pinning"],
+        path: "hierarchical-grid-sample-right-pinning"
+    },
+    {
+        component: HierarchicalGridColumnSelectionComponent,
+        data: hierarchicalGridRoutesData["column-selection"],
+        path: "column-selection"
+    },
+    {
+        component: HierarchicalGridColumnGroupSelectionComponent,
+        data: hierarchicalGridRoutesData["column-group-selection"],
+        path: "column-group-selection"
+    },
+    {
+        component: HGridColumnSelectionStylesComponent,
+        data: hierarchicalGridRoutesData["column-selection-styles"],
+        path: "column-selection-styles"
     }
 ];
 

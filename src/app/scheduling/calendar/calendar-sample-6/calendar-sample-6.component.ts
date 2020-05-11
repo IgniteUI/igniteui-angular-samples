@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { DateRangeDescriptor, DateRangeType, IgxCalendarComponent } from "igniteui-angular";
+import { DateRangeType, IgxCalendarComponent } from "igniteui-angular";
 
 @Component({
   selector: "app-calendar",
@@ -13,8 +13,6 @@ export class CalendarSample6Component {
         new Date(this.today.getFullYear(), this.today.getMonth(), 3),
         new Date(this.today.getFullYear(), this.today.getMonth(), 8)
     ];
-
-    constructor() { }
 
     public ngOnInit() {
         this.calendar.disabledDates = [{ type: DateRangeType.Between, dateRange: this.range }];

@@ -1,6 +1,6 @@
 <div class="grid_wrapper">
-    <igx-tree-grid #treeGrid igxDrop [data]="localData" childDataKey="Employees" width="900px" height="550px"
-        [autoGenerate]="false" [rowDraggable]="true" [paging]="true" foreignKey="ParentID" [rowSelectable]="true"
+    <igx-tree-grid igxPreventDocumentScroll  #treeGrid igxDrop [data]="localData" childDataKey="Employees" width="900px" height="550px"
+        [autoGenerate]="false" [rowDraggable]="true" [paging]="true" foreignKey="ParentID" [rowSelection]="selectionMode"
         [primaryKey]="'ID'" (onRowDragStart)="rowDragStart($event)" (dropped)="dropInGrid($event)">
         <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [movable]="true"
             [resizable]="true">

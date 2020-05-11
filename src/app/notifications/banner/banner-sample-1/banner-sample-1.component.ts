@@ -3,7 +3,7 @@ import { IgxBannerComponent } from "igniteui-angular";
 
 @Component({
     selector: "banner-sample-1",
-    styleUrls: ["banner-sample-1.component.scss"],
+    styleUrls: ["../banner-samples.scss"],
     templateUrl: "banner-sample-1.component.html"
 })
 

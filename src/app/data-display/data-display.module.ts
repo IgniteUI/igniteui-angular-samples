@@ -7,7 +7,6 @@ import {
     IgxListModule, IgxMaskModule, IgxProgressBarModule, IgxRippleModule, IgxSnackbarModule,
     IgxSwitchModule, IgxTextHighlightModule, IgxToastModule
 } from "igniteui-angular";
-import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
 import {
@@ -56,7 +55,6 @@ import { TextHighlightStyleComponent } from "./text-highlight/text-highlight-sty
         EmailFilterPipe,
         DisplayFormatPipe,
         InputFormatPipe,
-        BadgeSample1Component,
         BadgeSample2Component,
         BadgeSample3Component,
         BadgeStylingSampleComponent,

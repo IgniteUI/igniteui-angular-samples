@@ -1,9 +1,11 @@
-.sample-wrapper {
-    overflow-y: auto;
+.calendar-wrapper {
+    max-width: 500px;
+    min-width: 200px;
+    border: 1px solid var(--igx-secondary-400);
+    border-radius: 6px;
+    margin: 8px;
 }
 
-.calendar-wrapper {
-    max-width: 300px;
-    min-width: 200px;
-    border: 1px solid #e41c77;
+.igx-calendar{
+    border-radius: 4px;
 }

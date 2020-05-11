@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { IgxAvatarModule, IgxBannerModule, IgxButtonModule, IgxCardModule, IgxIconModule, IgxInputGroupModule,
      IgxListModule, IgxNavbarModule, IgxRippleModule, IgxSnackbarModule,
      IgxSwitchModule, IgxToastModule } from "igniteui-angular";
+import { BannerAdvancedSampleComponent } from "./banner/banner-advanced-sample/banner-advanced-sample.component";
 import { BannerSample1Component } from "./banner/banner-sample-1/banner-sample-1.component";
 import { BannerSample2Component } from "./banner/banner-sample-2/banner-sample-2.component";
 import { BannerSample3Component } from "./banner/banner-sample-3/banner-sample-3.component";
@@ -12,7 +13,6 @@ import { BannerStylingComponent } from "./banner/banner-styling/banner-styling.c
 import { NotificationsRoutingModule } from "./notifications-routing.module";
 import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-sample-1.component";
 import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
-import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
 import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { SnackbarSample5Component } from "./snackbar/snackbar-sample-5/snackbar-sample-5.component";
 import { SnackbarStyleComponent } from "./snackbar/snackbar-style/snackbar-style.component";
@@ -28,11 +28,11 @@ import { ToastStyleComponent } from "./toast/toast-style/toast-style.component";
         BannerSample1Component,
         BannerSample2Component,
         BannerSample3Component,
-        BannerStylingComponent,
         BannerSample4Component,
+        BannerAdvancedSampleComponent,
+        BannerStylingComponent,
         SnackbarSample1Component,
         SnackbarSample2Component,
-        SnackbarSample3Component,
         SnackbarSample4Component,
         SnackbarSample5Component,
         SnackbarStyleComponent,

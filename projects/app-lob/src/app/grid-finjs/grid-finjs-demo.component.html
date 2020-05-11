@@ -36,10 +36,10 @@
                 ~{{volume/5}} records updated.</span>
         </div>
     </div>
-    <igx-grid #grid1
+    <igx-grid #grid1 igxPreventDocumentScroll
         (onRowSelectionChange)="rowSelectionChanged($event)" [data]="data"
-        width="100%" [autoGenerate]='false' displayDensity='compact'
-        columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' [rowSelectable]="true"
+        width="100%" height="30%" [autoGenerate]='false' displayDensity='compact'
+        columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' [rowSelection]="selectionMode"
         [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [showToolbar]="false" [columnHiding]="true"
         [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
 

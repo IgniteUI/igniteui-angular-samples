@@ -7,9 +7,13 @@ import {
     IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule,
     IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule,
     IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule,
-    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
-    IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
+    IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule,
+    IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
+import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
+import { GridColumnGroupSelectionComponent } from "./column-group-selection-sample/column-group-selection-sample.component";
+import { GridColumnSelectionComponent } from "./column-selection-sample/column-selection-sample.component";
+import { GridColumnSelectionStylesComponent } from "./column-selection-styles/column-selection-styles.component";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
@@ -51,6 +55,7 @@ import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-s
 import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
+import { GridKeyboardnavGuide } from "./grid-keyboardnav-guide-sample/grid-keyboardnav-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/grid-moving-styled-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -75,6 +80,7 @@ import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component
 import { PlanetComponent } from "./grid-row-drag/planet/planet.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
 import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
+import { GridPinningDragSampleComponent } from "./grid-row-pinning-drag/grid-row-pinning-drag.component";
 import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -82,6 +88,7 @@ import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sa
 import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
 import { PinningToolbarSampleComponent } from "./grid-sample-pinning/grid-toolbar-pinning.component";
+import { RightPinningSampleComponent } from "./grid-sample-right-pinning/grid-right-pinning.component";
 import { GridSelectionTemplateExcelComponent} from "./grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
 import { GridSelectionTemplateNumbersComponent } from "./grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
@@ -138,6 +145,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridRemoteVirtualizationSampleComponent,
         PinningSampleComponent,
         PinningToolbarSampleComponent,
+        GridPinningDragSampleComponent,
         GridSelectionSampleComponent,
         GridSelectionTemplateExcelComponent,
         GridSelectionTemplateNumbersComponent,
@@ -189,11 +197,17 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridMultipleRowDragComponent,
         GridExternalAdvancedFilteringComponent,
         GridCollapsibleColumnGroupsComponent,
-        GridAllDataSummaryComponent
+        GridAllDataSummaryComponent,
+        RightPinningSampleComponent,
+        GridColumnSelectionComponent,
+        GridColumnGroupSelectionComponent,
+        GridColumnSelectionStylesComponent,
+        GridKeyboardnavGuide
     ],
     imports: [
         CommonModule,
         FormsModule,
+        IgxPreventDocumentScrollModule,
         HttpClientModule,
         GridsRoutingModule,
         IgxAvatarModule,
@@ -224,7 +238,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         IgxSnackbarModule,
         IgxTabsModule,
         IgxCardModule,
-        IgxDividerModule
+        IgxDividerModule,
+        IgxListModule
     ],
     providers: [
         IgxCsvExporterService,

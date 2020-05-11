@@ -10,5 +10,13 @@
     height: 88px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 72px;
+    margin: 15px 0;
+}
+
+.avatar-sample.initials .igx-avatar{
+    background: #e41c77;
+}
+
+.avatar-sample.icon .igx-avatar{
+    background: #9e9e9e;
 }

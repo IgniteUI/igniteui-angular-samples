@@ -1,14 +1,22 @@
-<section class="kanban">
-    <article 
-        #toDo
-        igxDrop
-        id="toDoList"
-        class="state-container"
-        [attr.data-state]="'ToDo'"
-        (enter)="onStateContainerEnter($event)"
-        (leave)="onStateContainerLeave($event)"
-        (dropped)="onItemDropped($event)">        
-        <h4 class="igx-typography__h4 state-title">To Do {{toDoList.length}}</h4>
+<article
+    #toDo
+    igxDrop
+    id="toDoList"
+    [attr.data-state]="'ToDo'"
+    (enter)="onStateContainerEnter($event)"
+    (leave)="onStateContainerLeave($event)"
+    (dropped)="onItemDropped($event)">
+
+    <header>
+        <h4 class="state-title">To Do</h4>
+        <igx-chip>
+            <span class="state-number">
+                {{toDoList.length}}
+            </span>
+        </igx-chip>
+    </header>
+
+    <section>
         <igx-card *ngFor="let item of toDoList"
             igxDrag
             igxDrop
@@ -16,31 +24,42 @@
             (dragEnd)="dragEndHandler($event)"
             (enter)="onItemEnter($event)"
             (leave)="onItemLeave($event)"
-            class="item-container"
-            [class.notVisible]="item.id === 'dummy'"
+            [class.invisible]="item.id === 'dummy'"
             id="{{item.id}}"
             [attr.data-state]="item.state"
-            [hideBaseOnDrag]="true"
+            (ghostCreate)="item.hide = true"
+            [style.visibility]='item.hide ? "hidden" : "visible"'
             [dragTolerance]="0"
-            [ghostClass]="'drag-ghost-class'">
+            [ghostClass]="'drag-ghost'">
                 <igx-card-header>
                     <p igxCardHeaderTitle>{{ item.text }}</p>
                 </igx-card-header>
                 <igx-card-content>
                     <p>{{ item.id }}</p>
                 </igx-card-content>
-        </igx-card>    
-    </article>
-    <article 
-        #inProgress
-        igxDrop 
-        id="inProgressList"
-        class="state-container"
-        [attr.data-state]="'InProgress'"
-        (enter)="onStateContainerEnter($event)"
-        (leave)="onStateContainerLeave($event)"
-        (dropped)="onItemDropped($event)">
-        <h4 class="state-title">In Progress {{inProgressList.length}}</h4>
+        </igx-card>
+    </section>
+</article>
+
+<article
+    #inProgress
+    igxDrop
+    id="inProgressList"
+    [attr.data-state]="'InProgress'"
+    (enter)="onStateContainerEnter($event)"
+    (leave)="onStateContainerLeave($event)"
+    (dropped)="onItemDropped($event)">
+
+    <header>
+        <h4 class="state-title">In Progress</h4>
+        <igx-chip>
+            <span class="state-number">
+                {{inProgressList.length}}
+            </span>
+        </igx-chip>
+    </header>
+
+    <section>
         <igx-card *ngFor="let item of inProgressList"
             igxDrag
             igxDrop
@@ -48,31 +67,42 @@
             (dragEnd)="dragEndHandler($event)"
             (enter)="onItemEnter($event)"
             (leave)="onItemLeave($event)"
-            class="item-container"
-            [class.notVisible]="item.id === 'dummy'"
+            [class.invisible]="item.id === 'dummy'"
             id="{{item.id}}"
             [attr.data-state]="item.state"
-            [hideBaseOnDrag]="true"
+            (ghostCreate)="item.hide = true"
+            [style.visibility]='item.hide ? "hidden" : "visible"'
             [dragTolerance]="0"
-            [ghostClass]="'drag-ghost-class'">
+            [ghostClass]="'drag-ghost'">
                 <igx-card-header>
                     <p igxCardHeaderTitle>{{ item.text }}</p>
                 </igx-card-header>
                 <igx-card-content>
                     <p>{{ item.id }}</p>
                 </igx-card-content>
-        </igx-card>    
-    </article>
-    <article 
-        #done
-        igxDrop
-        id="doneList"
-        class="state-container"
-        [attr.data-state]="'Done'"
-        (enter)="onStateContainerEnter($event)"
-        (leave)="onStateContainerLeave($event)"
-        (dropped)="onItemDropped($event)">
-        <h4 class="state-title">Done {{doneList.length}}</h4>
+        </igx-card>
+    </section>
+</article>
+
+<article
+    #done
+    igxDrop
+    id="doneList"
+    [attr.data-state]="'Done'"
+    (enter)="onStateContainerEnter($event)"
+    (leave)="onStateContainerLeave($event)"
+    (dropped)="onItemDropped($event)">
+
+    <header>
+        <h4 class="state-title">Done</h4>
+        <igx-chip>
+            <span class="state-number">
+                {{doneList.length}}
+            </span>
+        </igx-chip>
+    </header>
+
+    <section>
         <igx-card *ngFor="let item of doneList"
             igxDrag
             igxDrop
@@ -80,19 +110,20 @@
             (dragEnd)="dragEndHandler($event)"
             (enter)="onItemEnter($event)"
             (leave)="onItemLeave($event)"
-            class="item-container"
-            [class.notVisible]="item.id === 'dummy'"
+            [class.invisible]="item.id === 'dummy'"
             id="{{item.id}}"
             [attr.data-state]="item.state"
-            [hideBaseOnDrag]="true"
+            (ghostCreate)="item.hide = true"
+            [style.visibility]='item.hide ? "hidden" : "visible"'
             [dragTolerance]="0"
-            [ghostClass]="'drag-ghost-class'">
+            [ghostClass]="'drag-ghost'">
                 <igx-card-header>
                     <p igxCardHeaderTitle>{{ item.text }}</p>
                 </igx-card-header>
                 <igx-card-content>
                     <p>{{ item.id }}</p>
                 </igx-card-content>
-        </igx-card>      
-    </article>
-</section>
+        </igx-card>
+    </section>
+</article>
+

@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid #grid [data]="data" [paging]="true" [perPage]="10" [paginationTemplate]="pager" height="500px"
+    <igx-grid igxPreventDocumentScroll #grid [data]="data" [paging]="true" [perPage]="10" [paginationTemplate]="pager" height="500px"
         width="100%" displayDensity="cosy">
         <igx-column header="Rank" headerClasses="myClass" field="Id" sortable="true"></igx-column>
         <igx-column field="Name" header="Athlete"></igx-column>

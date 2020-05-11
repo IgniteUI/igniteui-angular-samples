@@ -50,6 +50,7 @@ import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-
 import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
 import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
+import { GridPinningDragSampleComponent } from "./grid-row-pinning-drag/grid-row-pinning-drag.component";
 import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -72,6 +73,9 @@ import { GridToolbarStyleComponent } from "./grid-toolbar-style/grid-toolbar-sty
 import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
+import { GridColumnGroupSelectionComponent } from "./column-group-selection-sample/column-group-selection-sample.component";
+import { GridColumnSelectionComponent } from "./column-selection-sample/column-selection-sample.component";
+import { GridColumnSelectionStylesComponent } from "./column-selection-styles/column-selection-styles.component";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
@@ -83,11 +87,13 @@ import {
 } from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
+import { GridKeyboardnavGuide } from "./grid-keyboardnav-guide-sample/grid-keyboardnav-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridMultipleRowDragComponent } from "./grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
+import { RightPinningSampleComponent } from "./grid-sample-right-pinning/grid-right-pinning.component";
 import {
     GridMultiColumnHeadersStylingComponent
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
@@ -173,6 +179,11 @@ export const gridsRoutes: Routes = [
         component: GridRowReorderComponent,
         data: gridsRoutesData["grid-row-reorder"],
         path: "grid-row-reorder"
+    },
+    {
+        component: GridPinningDragSampleComponent,
+        data: gridsRoutesData["grid-row-pinning-drag"],
+        path: "grid-row-pinning-drag"
     },
     {
         component: GridBatchEditingSampleComponent,
@@ -268,6 +279,11 @@ export const gridsRoutes: Routes = [
         component: PinningSampleComponent,
         data: gridsRoutesData["grid-sample-pinning"],
         path: "grid-sample-pinning"
+    },
+    {
+        component: RightPinningSampleComponent,
+        data: gridsRoutesData["grid-sample-right-pinning"],
+        path: "grid-sample-right-pinning"
     },
     {
         component: PinningToolbarSampleComponent,
@@ -513,6 +529,26 @@ export const gridsRoutes: Routes = [
         component: GridAllDataSummaryComponent,
         data: gridsRoutesData["grid-alldata-summaries"],
         path: "grid-alldata-summaries"
+    },
+    {
+        component: GridColumnSelectionComponent,
+        data: gridsRoutesData["column-selection"],
+        path: "column-selection"
+    },
+    {
+        component: GridColumnGroupSelectionComponent,
+        data: gridsRoutesData["column-group-selection"],
+        path: "column-group-selection"
+    },
+    {
+        component: GridColumnSelectionStylesComponent,
+        data: gridsRoutesData["column-selection-styles"],
+        path: "column-selection-styles"
+    },
+    {
+        component: GridKeyboardnavGuide,
+        data: gridsRoutesData["grid-keybarodnav-guide"],
+        path: "grid-keyboardnav-guide"
     }
 ];
 

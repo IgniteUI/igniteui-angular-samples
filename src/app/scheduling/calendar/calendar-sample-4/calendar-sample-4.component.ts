@@ -13,5 +13,4 @@ export class CalendarSample4Component {
   public formatParts: boolean = this.intlDateTimeFormat.formatToParts;
 
   constructor(public parser: DateParser) { }
-
- }
+}

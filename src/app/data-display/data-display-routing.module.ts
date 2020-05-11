@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
 import {
@@ -40,11 +39,6 @@ import { TextHighlightSample2Component
 import { TextHighlightStyleComponent } from "./text-highlight/text-highlight-style/text-highlight-style.component";
 
 export const dataDisplayRoutes: Routes = [
-    {
-        component: BadgeSample1Component,
-        data: dataDisplayRoutesData["badge-sample-1"],
-        path: "badge-sample-1"
-    },
     {
         component: BadgeSample2Component,
         data: dataDisplayRoutesData["badge-sample-2"],

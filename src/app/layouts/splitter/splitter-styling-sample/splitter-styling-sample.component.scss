@@ -1,0 +1,18 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$splitter-theme: igx-splitter-theme(
+    $bar-color: #011627,
+    $handle-color: #ECAA53,
+    $expander-color: #ECAA53,
+    $border-radius: 0,
+    $focus-color: #ECAA53,
+    $size: 4px
+);
+
+:host {
+    p {
+        padding: 0 16px;
+    }
+
+    @include igx-css-vars($splitter-theme);
+}

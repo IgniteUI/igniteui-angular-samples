@@ -55,5 +55,9 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-filtering-style": { displayName: "HGrid Filtering Style", parentName: "Hierarchical Grid" },
     "hierarchical-grid-conditional-row-selectors": { displayName: "HGrid Conditional Row Selectors", parentName: "Hierarchical Grid" },
     "hierarchical-grid-collapsible-column-groups": { displayName: "HGrid Collapsible Column Grous", parentName: "Hierarchical Grid" },
-    "hierarchical-grid-allData-summary": {displayName: "HGrid All Data Custom Summaries", parentName: "Hierarchical Grid"}
+    "hierarchical-grid-allData-summary": {displayName: "HGrid All Data Custom Summaries", parentName: "Hierarchical Grid"},
+    "hierarchical-grid-sample-right-pinning": { displayName: "Hierarchical Grid Right Side Pinning", parentName: "Hierarchical Grid" },
+    "column-selection": { displayName: "HGrid Column Selection", parentName: "Hierarchical Grid" },
+    "column-group-selection": { displayName: "HGrid Column Group Selection", parentName: "Hierarchical Grid" },
+    "column-selection-styles": { displayName: "HGrid Column Selection Styles", parentName: "Hierarchical Grid" }
 };

@@ -1,19 +1,33 @@
 /* tslint:disable:object-literal-sort-keys */
 import { KanbanSampleComponent } from "../../src/app/interactions/drag-drop/kanban-sample/kanban-sample.component";
 import {
+    ConnectedPositioningStrategy,
+    GlobalPositionStrategy,
+    IgxButtonModule,
+    IgxCardModule,
+    IgxCheckboxModule,
+    IgxChipsModule,
     IgxDialogModule,
     IgxDragDirective,
     IgxDragDropModule,
     IgxDropDirective,
     IgxIconModule,
-    IgxCheckboxModule,
-    NoOpScrollStrategy,
-    ConnectedPositioningStrategy,
-    GlobalPositionStrategy } from "igniteui-angular";
-import { DragDialogSampleComponent } from "../../src/app/interactions/drag-drop/dialog-sample/drag-dialog-sample.component";
-import { ListReorderSampleComponent } from "../../src/app/interactions/drag-drop/list-reorder-sample/list-reorder-sample.component";
-import { IconsSampleComponent } from "../../src/app/interactions/drag-drop/icons-sample/icons-sample.component";
-import { EmailSampleComponent } from "../../src/app/interactions/drag-drop/email-sample/email-sample.component";
+    IgxListModule,
+    IgxToggleModule,
+    NoOpScrollStrategy
+} from "igniteui-angular";
+import {
+    DragDialogSampleComponent
+} from "../../src/app/interactions/drag-drop/dialog-sample/drag-dialog-sample.component";
+import {
+    EmailSampleComponent
+} from "../../src/app/interactions/drag-drop/email-sample/email-sample.component";
+import {
+    IconsSampleComponent
+} from "../../src/app/interactions/drag-drop/icons-sample/icons-sample.component";
+import {
+    ListReorderSampleComponent
+} from "../../src/app/interactions/drag-drop/list-reorder-sample/list-reorder-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -25,10 +39,18 @@ export class DragAndDropConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: IconsSampleComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDragDirective, IgxDropDirective,
-                    IgxDragDropModule, IgxDialogModule, IconsSampleComponent],
+                imports: [
+                    IgxDragDirective,
+                    IgxDropDirective,
+                    IgxDragDropModule,
+                    IgxDialogModule,
+                    IconsSampleComponent
+                ],
                 ngDeclarations: [IconsSampleComponent],
-                ngImports: [IgxDragDropModule, IgxDialogModule]
+                ngImports: [
+                    IgxDragDropModule,
+                    IgxDialogModule
+                ]
             }),
             shortenComponentPathBy: "/interactions/"
         }));
@@ -36,10 +58,21 @@ export class DragAndDropConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: EmailSampleComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDragDirective, IgxDropDirective,
-                    IgxDragDropModule, IgxIconModule, IgxCheckboxModule, EmailSampleComponent],
+                imports: [
+                    IgxDragDirective,
+                    IgxDropDirective,
+                    IgxListModule,
+                    IgxDragDropModule,
+                    IgxIconModule,
+                    IgxCheckboxModule,
+                    EmailSampleComponent
+                ],
                 ngDeclarations: [EmailSampleComponent],
-                ngImports: [IgxDragDropModule, IgxIconModule, IgxCheckboxModule]
+                ngImports: [IgxDragDropModule,
+                    IgxIconModule,
+                    IgxCheckboxModule,
+                    IgxListModule
+                ]
             }),
             shortenComponentPathBy: "/interactions/"
         }));
@@ -47,10 +80,20 @@ export class DragAndDropConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: ListReorderSampleComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDragDirective, IgxDropDirective,
-                    IgxDragDropModule, ListReorderSampleComponent],
+                imports: [
+                    IgxDragDirective,
+                    IgxDropDirective,
+                    IgxIconModule,
+                    IgxListModule,
+                    IgxDragDropModule,
+                    ListReorderSampleComponent
+                ],
                 ngDeclarations: [ListReorderSampleComponent],
-                ngImports: [IgxDragDropModule]
+                ngImports: [
+                    IgxIconModule,
+                    IgxListModule,
+                    IgxDragDropModule
+                ]
             }),
             shortenComponentPathBy: "/interactions/"
         }));
@@ -58,12 +101,24 @@ export class DragAndDropConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DragDialogSampleComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDragDirective, IgxDropDirective,
-                    IgxDragDropModule, IgxDialogModule, 
-                    NoOpScrollStrategy, ConnectedPositioningStrategy, 
-                    GlobalPositionStrategy,],
+                imports: [
+                    IgxDragDropModule,
+                    IgxDialogModule,
+                    IgxIconModule,
+                    IgxButtonModule,
+                    IgxToggleModule,
+                    NoOpScrollStrategy,
+                    ConnectedPositioningStrategy,
+                    GlobalPositionStrategy,
+                    DragDialogSampleComponent
+                ],
                 ngDeclarations: [DragDialogSampleComponent],
-                ngImports: [IgxDragDropModule, IgxDialogModule]
+                ngImports: [
+                    IgxDragDropModule,
+                    IgxDialogModule,
+                    IgxIconModule,
+                    IgxButtonModule,
+                    IgxToggleModule]
             }),
             shortenComponentPathBy: "/interactions/"
         }));
@@ -71,10 +126,21 @@ export class DragAndDropConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: KanbanSampleComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDragDirective, IgxDropDirective,
-                    IgxDragDropModule, IgxDialogModule, KanbanSampleComponent],
+                imports: [
+                    KanbanSampleComponent,
+                    IgxDragDirective,
+                    IgxDropDirective,
+                    IgxDragDropModule,
+                    IgxDialogModule,
+                    IgxCardModule,
+                    IgxChipsModule
+                ],
                 ngDeclarations: [KanbanSampleComponent],
-                ngImports: [IgxDragDropModule]
+                ngImports: [
+                    IgxDragDropModule,
+                    IgxCardModule,
+                    IgxChipsModule
+                ]
             }),
             shortenComponentPathBy: "/interactions/"
         }));
