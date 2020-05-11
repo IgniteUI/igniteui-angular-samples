@@ -158,7 +158,7 @@
             "main": "projects/app-lob/src/main.ts",
             "polyfills": "projects/app-lob/src/polyfills.ts",
             "tsConfig": "projects/app-lob/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/app-lob/src/favicon.ico",
               "projects/app-lob/src/assets"
