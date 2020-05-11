@@ -13,14 +13,14 @@ export class CircularDynamicSampleComponent implements OnInit {
         this.currentValue = 0;
     }
 
-    public addProgress() {
+    public incrementProgress() {
         this.currentValue += 10;
         if (this.currentValue > 100) {
             this.currentValue = 100;
         }
     }
 
-    public removeProgress() {
+    public decrementProgress() {
         this.currentValue -= 10;
         if (this.currentValue < 0) {
             this.currentValue = 0;
