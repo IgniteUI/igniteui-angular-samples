@@ -22,14 +22,6 @@ export class LinearProgressbarSample2Component implements OnInit {
   }
 
   public updateValue() {
-      this.linearBars.map((bar) => bar.value += this.randomIntFromInterval(1, 3));
-      const shouldStop = this.linearBars.toArray().every((bar) => bar.value >= bar.max);
-      if (shouldStop) {
-        this.interval = clearInterval(this.interval);
-      }
-  }
-
-  private randomIntFromInterval(min: number, max: number) {
-      return Math.floor(Math.random() * (max - min + 1) + min);
+      this.linearBars.map(bar => bar.value += 1);
   }
 }
