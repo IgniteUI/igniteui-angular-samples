@@ -87,6 +87,7 @@ import {
 } from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
+import { GridKeyboardnavGuide } from "./grid-keyboardnav-guide-sample/grid-keyboardnav-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridMultipleRowDragComponent } from "./grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
@@ -543,6 +544,11 @@ export const gridsRoutes: Routes = [
         component: GridColumnSelectionStylesComponent,
         data: gridsRoutesData["column-selection-styles"],
         path: "column-selection-styles"
+    },
+    {
+        component: GridKeyboardnavGuide,
+        data: gridsRoutesData["grid-keybarodnav-guide"],
+        path: "grid-keyboardnav-guide"
     }
 ];
 
