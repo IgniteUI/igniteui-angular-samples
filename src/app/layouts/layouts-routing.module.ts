@@ -54,6 +54,7 @@ import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.compone
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
 import { TabsSample4Component } from "./tabs/tabs-sample-4/components/tabs-sample-4.component";
 import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
+import { DockManagerComponent } from './dock-manager/dock-manager.component';
 import { View1Component } from "./tabs/views/view1/view1.component";
 import { View2Component } from "./tabs/views/view2/view2.component";
 import { View3Component } from "./tabs/views/view3/view3.component";
@@ -123,6 +124,11 @@ export const layoutsRoutes: Routes = [
         component: DividerInsetComponent,
         data: layoutsRoutesData["divider-sample-4"],
         path: "divider-sample-4"
+    },
+    {
+        component: DockManagerComponent,
+        data: layoutsRoutesData["dock-manager-sample"],
+        path: "dock-manager-sample"
     },
     {
         component: ExpansionPanelSample1Component,
