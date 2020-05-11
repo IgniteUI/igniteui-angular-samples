@@ -1,54 +1,34 @@
 <div class="date-picker-wrapper">
-    <div class="towns">
-        <igx-input-group #townFromInputGroup [igxToggleAction]="fromTownsDropDown" class="input-group">
-            <input #townFromInput type="text" igxInput placeholder="choose a destination" [igxAutocomplete]="fromTownsDropDown"
-                [(ngModel)]="townFrom" />
-            <label igxLabel>From</label>
-            <igx-prefix>
-                <igx-icon>flight_takeoff</igx-icon>
-            </igx-prefix>
-            <igx-suffix igxButton="icon" class="dropdownToggleButton" igxRipple>
-                <igx-icon>arrow_drop{{ fromTownsDropDown.collapsed ? '_down' : '_up' }}</igx-icon>
-            </igx-suffix>
-        </igx-input-group>
+    <form>
+        <div class="towns">
+            <igx-select name="townFrom" [(ngModel)]="townFrom" class="town-select">
+                <igx-prefix>
+                    <igx-icon>flight_takeoff</igx-icon>
+                </igx-prefix>
+                <igx-select-item *ngFor="let town of towns" [value]="town">
+                    {{town}}
+                </igx-select-item>
+            </igx-select>
+            <igx-select name="townTo" [(ngModel)]="townTo" class="town-select">
+                <igx-prefix>
+                    <igx-icon>flight_land</igx-icon>
+                </igx-prefix>
+                <igx-select-item *ngFor="let town of towns | withoutTownFrom:townFrom" [value]="town">
+                    {{town}}
+                </igx-select-item>
+            </igx-select>
+        </div>
 
-        <igx-drop-down #fromTownsDropDown [width]="'180px'" [maxHeight]="'400px'"
-            (onClosing)="townFrom = fromTownsDropDown.selectedItem ? fromTownsDropDown.selectedItem.value : townFrom">
-            <igx-drop-down-item *ngFor="let town of towns | startsWith:townFrom" [value]="town">
-                {{ town }}
-            </igx-drop-down-item>
-        </igx-drop-down>
-
-        <igx-input-group #townToInputGroup [igxToggleAction]="toTownsDropDown" class="input-group">
-            <input #townToInput type="text" igxInput placeholder="choose a destination" [igxAutocomplete]="toTownsDropDown"
-                [(ngModel)]="townTo" />
-            <label igxLabel>To</label>
-            <igx-prefix>
-                <igx-icon>flight_land</igx-icon>
-            </igx-prefix>
-            <igx-suffix igxButton="icon" class="dropdownToggleButton" igxRipple>
-                <igx-icon>arrow_drop{{ toTownsDropDown.collapsed ? '_down' : '_up' }}</igx-icon>
-            </igx-suffix>
-        </igx-input-group>
-
-        <igx-drop-down #toTownsDropDown [width]="'180px'" [maxHeight]="'400px'"
-            (onClosing)="townTo = toTownsDropDown.selectedItem ? toTownsDropDown.selectedItem.value : townTo">
-            <igx-drop-down-item *ngFor="let town of towns | withoutTownFrom:townFrom | startsWith:townTo"
-                [value]="town">
-                {{ town }}
-            </igx-drop-down-item>
-        </igx-drop-down>
-    </div>
-
-    <igx-date-range-picker
-        #dateRangePicker
-        required
-        [(ngModel)]="range"
-        [minValue]="minDate"
-        [maxValue]="maxDate"
-        [placeholder]="'depart on - return on'">
-        <igx-hint *ngIf="dateRangePicker.invalid && (dateRangePicker.dirty || dateRangePicker.touched)">
-            Please choose start and end date!
-        </igx-hint>
-    </igx-date-range-picker>
+        <igx-date-range-picker name="datesRange" #dateRangePicker required
+            [(ngModel)]="range"
+            [minValue]="minDate"
+            [maxValue]="maxDate"
+            [placeholder]="'Depart on - Return on'"
+        >
+            <label igxLabel>Flight dates</label>
+            <igx-hint *ngIf="dateRangePicker.invalid">
+                Please choose start and end date!
+            </igx-hint>
+        </igx-date-range-picker>
+    </form>
 </div>

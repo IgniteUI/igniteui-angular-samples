@@ -1,5 +1,5 @@
-import { Component, Pipe, PipeTransform, ViewChild } from "@angular/core";
-import { IgxDropDownComponent, DateRange } from "igniteui-angular";
+import { Component, Pipe, PipeTransform } from "@angular/core";
+import { DateRange } from "igniteui-angular";
 
 @Component({
     selector: "flight-booking",
@@ -7,12 +7,6 @@ import { IgxDropDownComponent, DateRange } from "igniteui-angular";
     templateUrl: "./daterangepicker-flight-booking.html"
 })
 export class FlightBookingComponent {
-    @ViewChild("fromTownsDropDown")
-    public fromTownsDropDown: IgxDropDownComponent;
-
-    @ViewChild("toTownsDropDown")
-    public toTownsDropDown: IgxDropDownComponent;
-
     public towns: string[] = [
         "New York",
         "Washington, D.C.",
@@ -42,18 +36,13 @@ export class FlightBookingComponent {
 
     constructor() {
         const today = new Date();
+
         this.minDate = new Date();
         this.minDate.setDate(today.getDate() + 10);
 
         this.maxDate = new Date();
         this.maxDate.setDate(today.getDate() + 10);
         this.maxDate.setMonth(today.getMonth() + 1);
-    }
-}
-@Pipe({ name: "startsWith" })
-export class AutocompletePipeStartsWith implements PipeTransform {
-    public transform(collection: any[], term = "") {
-        return collection.filter((item) => item.toString().toLowerCase().startsWith(term.toString().toLowerCase()));
     }
 }
 
