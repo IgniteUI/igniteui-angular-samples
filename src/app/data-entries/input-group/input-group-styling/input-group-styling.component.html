@@ -1,7 +1,11 @@
-<igx-input-group type="box">
-    <input igxInput name="fullName2" type="text" />
-    <label igxLabel for="fullName2">Full Name</label>
-    <igx-suffix>
-        <igx-icon>person</igx-icon>
-    </igx-suffix>
-</igx-input-group>
+<article class="sample-column">
+    <igx-input-group type="box">
+        <igx-prefix>+359</igx-prefix>
+        <label igxLabel for="phone">Phone</label>
+        <input type="number" igxInput name="phone" />
+        <igx-suffix>
+            <igx-icon>phone</igx-icon>
+        </igx-suffix>
+        <igx-hint position="start">Ex.: +359 888 123 456</igx-hint>
+    </igx-input-group>
+</article>

@@ -7,7 +7,7 @@ import { BaseInputGroupSampleComponent } from "../base-input.component";
     styleUrls: ["./input-group-sample-5.component.scss"],
     templateUrl: "./input-group-sample-5.component.html"
 })
-export class InputGroupSample5Component  extends BaseInputGroupSampleComponent {
+export class InputGroupSample5Component extends BaseInputGroupSampleComponent {
     @ViewChild("input1", { read: IgxInputDirective, static: true }) public searchInput: IgxInputDirective;
 
     public clearSearchInput() {
