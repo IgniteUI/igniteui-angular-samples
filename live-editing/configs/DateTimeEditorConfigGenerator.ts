@@ -19,7 +19,7 @@ export class DateTimeEditorConfigGenerator implements IConfigGenerator {
                     ngDeclarations: [DateTimeBasicComponent],
                     ngImports: [IgxInputGroupModule, IgxDateTimeEditorModule]
                 }),
-                shortenComponentPathBy: "/scheduling/datetimeeditor"
+                shortenComponentPathBy: "/scheduling/datetimeeditor/"
             })
         );
 

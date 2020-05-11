@@ -5,10 +5,10 @@ import { FlightBookingComponent
 } from "../../src/app/scheduling/daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking";
 import { DateRangePickerStartEndComponent
 } from "../../src/app/scheduling/daterangepicker/daterangepicker-start-end/daterangepicker-start-end";
+import { StyledDateRangePickerComponent
+} from "../../src/app/scheduling/daterangepicker/daterangepicker-styling/daterangepicker-styling";
 import { DateRangePickerValidationComponent
 } from "../../src/app/scheduling/daterangepicker/daterangepicker-validation/daterangepicker-validation";
-import { StyledDateRangePickerComponent
-} from "./../../src/app/scheduling/daterangepicker/daterangepicker-styling/daterangepicker-styling";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -25,7 +25,7 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
                     ngDeclarations: [BasicDateRangePickerComponent],
                     ngImports: [IgxDateRangePickerModule]
                 }),
-                shortenComponentPathBy: "/scheduling/daterangepicker"
+                shortenComponentPathBy: "/scheduling/daterangepicker/"
             })
         );
 
@@ -37,7 +37,7 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
                     ngDeclarations: [DateRangePickerStartEndComponent],
                     ngImports: [IgxDateRangePickerModule, IgxIconModule]
                 }),
-                shortenComponentPathBy: "/scheduling/daterangepicker"
+                shortenComponentPathBy: "/scheduling/daterangepicker/"
             })
         );
 
@@ -45,11 +45,11 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
             new Config({
                 component: DateRangePickerValidationComponent,
                 appModuleConfig: new AppModuleConfig({
-                    imports: [IgxDateRangePickerModule, DateRangePickerValidationComponent],
+                    imports: [IgxDateRangePickerModule, DateRangePickerValidationComponent, IgxIconModule],
                     ngDeclarations: [DateRangePickerValidationComponent],
-                    ngImports: [IgxDateRangePickerModule]
+                    ngImports: [IgxDateRangePickerModule, IgxIconModule]
                 }),
-                shortenComponentPathBy: "/scheduling/daterangepicker"
+                shortenComponentPathBy: "/scheduling/daterangepicker/"
             })
         );
 
@@ -61,7 +61,7 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
                     ngDeclarations: [StyledDateRangePickerComponent],
                     ngImports: [IgxDateRangePickerModule, IgxIconModule]
                 }),
-                shortenComponentPathBy: "/scheduling/daterangepicker"
+                shortenComponentPathBy: "/scheduling/daterangepicker/"
             })
         );
 
@@ -73,7 +73,7 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
                     ngDeclarations: [FlightBookingComponent],
                     ngImports: [IgxDateRangePickerModule, IgxInputGroupModule, IgxIconModule]
                 }),
-                shortenComponentPathBy: "/scheduling/daterangepicker"
+                shortenComponentPathBy: "/scheduling/daterangepicker/"
             })
         );
 
