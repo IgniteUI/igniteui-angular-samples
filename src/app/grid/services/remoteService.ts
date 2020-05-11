@@ -35,10 +35,6 @@ export class RemoteServiceVirt {
         return areAllItemsInCache;
     }
 
-    public get cachedData() {
-        return this._cachedData;
-    }
-
     public getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean, cb?: (any) => void): any {
         const startIndex = virtualizationArgs.startIndex;
         const endIndex = virtualizationArgs.chunkSize + startIndex;
