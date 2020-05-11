@@ -26,10 +26,10 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
 
     public ngAfterViewInit() {
         this.grid.isLoading = true;
-        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true, (data) => {
+        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true, undefined, (data) => {
             if (data) {
                 // increase totalItemCount a little above the visible grid size in order to be able to scroll
-                this.grid.totalItemCount = data.value.length + 3;
+                this.grid.totalItemCount = data.value.length + 5;
                 this.grid.isLoading = false;
                 this._prevRequestChunk = data.value.length;
             }
@@ -37,26 +37,37 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     }
 
     public handlePreLoad() {
-        this.processData(false);
+        const index = this.grid.virtualizationState.chunkSize +
+                                this.grid.virtualizationState.startIndex;
+        if (index > this._remoteService.cachedData.length) {
+            const loadState = {
+                startIndex: index - 1,
+                chunkSize: this.grid.virtualizationState.chunkSize
+            };
+            this.processData(false, loadState);
+        } else {
+            this.processData(false);
+        }
     }
 
-    public processData(reset) {
+    public processData(reset, state?) {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
         }
         this._prevRequest = this._remoteService.getData(
-            this.grid.virtualizationState, this.grid.sortingExpressions[0], reset,
+            this.grid.virtualizationState, this.grid.sortingExpressions[0], reset, state,
             (data) => {
                 const chunkLength = this.grid.virtualizationState.startIndex +
-                                    this.grid.virtualizationState.chunkSize + 3;
-                if (!data.value && this.grid.virtualizationState.chunkSize < this._prevRequestChunk) {
-                    this.grid.totalItemCount = this._remoteService.cachedData.length;
+                                    this.grid.virtualizationState.chunkSize + 5;
+                if (chunkLength >= this.grid.totalItemCount) {
+                    if (this.grid.virtualizationState.startIndex >= this._remoteService.cachedData.length) {
+                        this.grid.totalItemCount = this._remoteService.cachedData.length;
+                    } else {
+                        this.grid.totalItemCount += data.length;
+                        this._prevRequestChunk = this.grid.virtualizationState.chunkSize;
+                    }
                     this.grid.cdr.detectChanges();
-                } else if (data.value && chunkLength >= this.grid.totalItemCount) {
-                    this.grid.totalItemCount += data.value.length;
-                    this._prevRequestChunk = this.grid.virtualizationState.chunkSize;
                 }
-                this.grid.cdr.detectChanges();
             }
         );
     }
