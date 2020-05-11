@@ -49,10 +49,10 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
             (data) => {
                 const chunkLength = this.grid.virtualizationState.startIndex +
                                     this.grid.virtualizationState.chunkSize + 3;
-                if (!data.value) {
+                if (!data.value && this.grid.virtualizationState.chunkSize < this._prevRequestChunk) {
                     this.grid.totalItemCount = this._remoteService.cachedData.length;
-                    this.cdr.detectChanges();
-                } else if (chunkLength >= this.grid.totalItemCount) {
+                    this.grid.cdr.detectChanges();
+                } else if (data.value && chunkLength >= this.grid.totalItemCount) {
                     this.grid.totalItemCount += data.value.length;
                     this._prevRequestChunk = this.grid.virtualizationState.chunkSize;
                 }

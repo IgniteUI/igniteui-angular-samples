@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { ChangeDetectorRef, Injectable } from "@angular/core";
 import { IForOfState, SortingDirection } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
+import { debounceTime } from 'rxjs/operators';
 
 const DATA_URL: string = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
 const EMPTY_STRING: string = "";
@@ -60,12 +61,13 @@ export class RemoteService {
         }
 
         if (!this.hasItemsInCache(virtualizationArgs)) {
-            this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
+            this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).pipe(debounceTime(500)).subscribe((data: any) => {
                 this._updateData(data, startIndex);
                 if (data.value.length < this._prevRequestChunk) {
                     // max data has been reached
                     const newStartIndex = (this._cachedData.length - 1) - this._prevRequestChunk;
                     data = this._cachedData.slice(newStartIndex, this._cachedData.length);
+                    this._data.next(data);
                 } else {
                     this._prevRequestChunk = data.value.length;
                 }
