@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxActionStripModule } from "igniteui-angular";
+import { IgxActionStripModule, IgxRippleModule, IgxButtonModule, IgxIconModule, IgxButtonGroupModule } from "igniteui-angular";
 import {
     ActionStripParagraphMenuComponent
 } from "../../src/app/menus/action-strip/action-strip-paragraph-menu/action-strip-paragraph-menu.component";
@@ -20,9 +20,9 @@ export class ActionStripConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: ActionStripParagraphComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxActionStripModule, ActionStripParagraphComponent],
+                imports: [IgxActionStripModule, ActionStripParagraphComponent, IgxRippleModule, IgxButtonGroupModule, IgxButtonModule, IgxIconModule],
                 ngDeclarations: [ActionStripParagraphComponent],
-                ngImports: [IgxActionStripModule]
+                ngImports: [IgxActionStripModule, IgxRippleModule, IgxButtonGroupModule, IgxButtonModule, IgxIconModule]
             }),
             shortenComponentPathBy: "/menus/action-strip/"
         }));
@@ -30,9 +30,9 @@ export class ActionStripConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: ActionStripParagraphMenuComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxActionStripModule, ActionStripParagraphMenuComponent],
+                imports: [IgxActionStripModule, ActionStripParagraphMenuComponent, IgxRippleModule, IgxButtonModule, IgxIconModule],
                 ngDeclarations: [ActionStripParagraphMenuComponent],
-                ngImports: [IgxActionStripModule]
+                ngImports: [IgxActionStripModule, IgxRippleModule, IgxButtonModule, IgxIconModule]
             }),
             shortenComponentPathBy: "/menus/action-strip/"
         }));
@@ -40,9 +40,9 @@ export class ActionStripConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: ActionStripStylingComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxActionStripModule, ActionStripStylingComponent],
+                imports: [IgxActionStripModule, ActionStripStylingComponent, IgxRippleModule, IgxButtonModule, IgxIconModule],
                 ngDeclarations: [ActionStripStylingComponent],
-                ngImports: [IgxActionStripModule]
+                ngImports: [IgxActionStripModule, IgxRippleModule, IgxButtonModule, IgxIconModule]
             }),
             shortenComponentPathBy: "/menus/action-strip/"
         }));
