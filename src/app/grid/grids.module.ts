@@ -3,13 +3,7 @@ import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import {
-    IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule,
-    IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule,
-    IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule,
-    IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule,
-    IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
-} from "igniteui-angular";
+import { IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
 import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 import { GridColumnGroupSelectionComponent } from "./column-group-selection-sample/column-group-selection-sample.component";
 import { GridColumnSelectionComponent } from "./column-selection-sample/column-selection-sample.component";
@@ -85,11 +79,12 @@ import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reor
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
+import { GridRemoteVirtualizationAddRowSampleComponent } from "./grid-sample-5/grid-sample-5.component";
 import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
 import { PinningToolbarSampleComponent } from "./grid-sample-pinning/grid-toolbar-pinning.component";
 import { RightPinningSampleComponent } from "./grid-sample-right-pinning/grid-right-pinning.component";
-import { GridSelectionTemplateExcelComponent} from "./grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
+import { GridSelectionTemplateExcelComponent } from "./grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
 import { GridSelectionTemplateNumbersComponent } from "./grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "./grid-save-state/about.component";
@@ -106,8 +101,6 @@ import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
-import { GridRemoteVirtualizationAddRowSampleComponent } from './grid-sample-5/grid-sample-5.component';
-import { RemoteService } from './grid-sample-5/remote.service';
 
 @NgModule({
     declarations: [

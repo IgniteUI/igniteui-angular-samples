@@ -1,5 +1,5 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable, ChangeDetectorRef } from "@angular/core";
+import { ChangeDetectorRef, Injectable } from "@angular/core";
 import { IForOfState, SortingDirection } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
 
@@ -76,7 +76,7 @@ export class RemoteService {
             });
         } else {
             let data = this._cachedData.slice(startIndex, endIndex);
-            if (endIndex - startIndex < this._prevRequestChunk){
+            if (endIndex - startIndex < this._prevRequestChunk) {
                 data = this._cachedData.slice(endIndex - this._prevRequestChunk, endIndex);
             }
             this._data.next(data);

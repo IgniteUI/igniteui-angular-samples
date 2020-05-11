@@ -1,6 +1,5 @@
-import { ChangeDetectorRef, Component, ViewChild, AfterViewInit } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, ViewChild } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
-import { debounceTime } from "rxjs/operators";
 import { RemoteService } from "./remote.service";
 
 @Component({
@@ -11,10 +10,10 @@ import { RemoteService } from "./remote.service";
 })
 
 export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewInit {
-    
-    @ViewChild("grid", { static: true }) 
+
+    @ViewChild("grid", { static: true })
     public grid: IgxGridComponent;
-    
+
     public remoteData: any;
     private _prevRequest: any;
     private _prevRequestChunk: number;
@@ -46,18 +45,20 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
             this._prevRequest.unsubscribe();
         }
         this._prevRequest = this._remoteService.getData(
-            this.grid.virtualizationState, this.grid.sortingExpressions[0], reset, 
+            this.grid.virtualizationState, this.grid.sortingExpressions[0], reset,
             (data) => {
+                const chunkLength = this.grid.virtualizationState.startIndex +
+                                    this.grid.virtualizationState.chunkSize + 3;
                 if (!data.value) {
                     this.grid.totalItemCount = this._remoteService.cachedData.length;
                     this.cdr.detectChanges();
-                } else if (this.grid.virtualizationState.startIndex + this.grid.virtualizationState.chunkSize + 3 >= this.grid.totalItemCount) {
+                } else if (chunkLength >= this.grid.totalItemCount) {
                     this.grid.totalItemCount += data.value.length;
                     this._prevRequestChunk = this.grid.virtualizationState.chunkSize;
                 }
                 this.grid.cdr.detectChanges();
             }
-        )
+        );
     }
 
     public formatNumber(value: number) {
