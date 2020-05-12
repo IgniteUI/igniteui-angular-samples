@@ -38,7 +38,7 @@ export const dataEntriesRoutesData = {
     "input-group-sample-2": { displayName: "Input Required", parentName: "Input Group" },
     "input-group-sample-3": { displayName: "Input Group Prefix and Sufix", parentName: "Input Group" },
     "input-group-sample-4": { displayName: "Input Group Hint", parentName: "Input Group" },
-    "input-group-sample-5": { displayName: "Input Group Styling", parentName: "Input Group" },
+    "input-group-sample-5": { displayName: "Input Group Types", parentName: "Input Group" },
     "input-group-sample-6": { displayName: "Input Group Full Form", parentName: "Input Group" },
     "input-group-style": { displayName: "Input Group Style", parentName: "Input Group" },
     "reactive-forms": { displayName: "Reactive Forms Overview", parentName: "Reactive Forms" },
