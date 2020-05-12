@@ -28,6 +28,9 @@ import { IconStylingSample } from "./icon/icon-styling-sample/icon-styling-sampl
 import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import {
+    LinearDynamicSampleComponent
+} from "./linear-progressbar/linear-dynamic-sample/linear-dynamic-sample.component";
+import {
     LinearProgressbarSample1Component
 } from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
 import {
@@ -65,6 +68,7 @@ import { TextHighlightStyleComponent } from "./text-highlight/text-highlight-sty
         IconStylingSample,
         SvgIconSampleComponent,
         IgxForComponent,
+        LinearDynamicSampleComponent,
         LinearProgressbarComponent,
         LinearProgressbarSample1Component,
         LinearProgressbarSample2Component,

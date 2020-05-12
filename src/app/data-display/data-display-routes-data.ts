@@ -14,6 +14,7 @@ export const dataDisplayRoutesData = {
     "icon-styling": { displayName: "Icon Styling", parentName: "Icon" },
     "svg-icon-sample": { displayName: "SVG Icons", parentName: "Icon" },
     "igx-for-sample-1": { displayName: "List with igxFor directive", parentName: "For" },
+    "linear-dynamic-sample": { displayName: "Dynamic Linear Progressbar", parentName: "Linear Progressbar" },
     "linear-progressbar": { displayName: "Simple Linear Progressbar", parentName: "Linear Progressbar" },
     "linear-progressbar-sample-1": { displayName: "Linear Progressbar Types", parentName: "Linear Progressbar" },
     "linear-progressbar-sample-2": { displayName: "Linear Progressbar Styles", parentName: "Linear Progressbar" },
