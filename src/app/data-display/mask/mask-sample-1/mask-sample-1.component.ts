@@ -9,13 +9,14 @@ import { Person } from "../model/person";
 
 export class MaskSample1Component implements OnInit {
     public person: Person;
-
+    public isFocused;
     constructor() {
         this.person = {
             birthday: null,
             name: "John Doe",
             socialSecurityNumber: ""
         };
+        this.isFocused = !!this.person.name;
     }
 
     public ngOnInit() {

@@ -57,5 +57,6 @@ export const dataEntriesRoutesData = {
     "select-styling": { displayName: "Select Styling", parentName: "Select" },
     "select-input-directives": { displayName: "Select Input Directives", parentName: "Select" },
     "select-form": { displayName: "Select In a Form", parentName: "Select" },
-    "select-header-footer": { displayName: "Select with Header&Footer Templates", parentName: "Select" }
+    "select-header-footer": { displayName: "Select with Header&Footer Templates", parentName: "Select" },
+    "input-text-selection": {displayName: "Input with Text Selection", parentName: "Input Group"}
 };
