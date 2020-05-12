@@ -23,6 +23,7 @@ import { DividerDashedComponent } from "./divider/dashed/divider-dashed.componen
 import { DividerDefaultComponent } from "./divider/default/divider-default.component";
 import { DividerInsetComponent } from "./divider/inset/divider-inset.component";
 import { DividerVerticalComponent } from "./divider/vertical/divider-vertical.component";
+import { DockManagerComponent } from "./dock-manager/dock-manager.component";
 import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
 import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
@@ -54,7 +55,6 @@ import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.compone
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
 import { TabsSample4Component } from "./tabs/tabs-sample-4/components/tabs-sample-4.component";
 import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
-import { DockManagerComponent } from './dock-manager/dock-manager.component';
 import { View1Component } from "./tabs/views/view1/view1.component";
 import { View2Component } from "./tabs/views/view2/view2.component";
 import { View3Component } from "./tabs/views/view3/view3.component";
