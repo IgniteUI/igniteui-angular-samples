@@ -22,6 +22,9 @@ import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component
 import { IconStylingSample } from "./icon/icon-styling-sample/icon-styling-sample.component";
 import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
+import {
+    LinearDynamicSampleComponent
+} from "./linear-progressbar/linear-dynamic-sample/linear-dynamic-sample.component";
 import { LinearProgressbarSample1Component
 } from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
 import { LinearProgressbarSample2Component
@@ -100,6 +103,11 @@ export const dataDisplayRoutes: Routes = [
         component: IgxForComponent,
         data: dataDisplayRoutesData["igx-for-sample-1"],
         path: "igx-for-sample-1"
+    },
+    {
+        component: LinearDynamicSampleComponent,
+        data: dataDisplayRoutesData["linear-dynamic-sample"],
+        path: "linear-dynamic-sample"
     },
     {
         component: LinearProgressbarComponent,
