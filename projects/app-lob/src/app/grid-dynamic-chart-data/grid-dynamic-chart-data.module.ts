@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { IgxButtonModule, IgxDialogModule, IgxDividerModule, IgxGridModule, IgxTabsModule } from "igniteui-angular";
 import { IgxBarSeriesModule, IgxCategoryChartModule, IgxCategoryXAxisModule,
     IgxDataChartCategoryModule, IgxDataChartComponent, IgxDataChartCoreModule,
@@ -51,6 +51,7 @@ import { FilterTypePipe, GridDynamicChartDataComponent, NamePipe } from "./grid-
         IgxItemLegendComponent,
         IgxLegendComponent,
         IgxPieChartComponent
-    ]
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridDynamicChartDataModule {}
