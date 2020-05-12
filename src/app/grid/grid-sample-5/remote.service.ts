@@ -56,7 +56,7 @@ export class RemoteService {
                 if (cb) {
                     cb(data);
                 }
-            });;
+            });
         } else if (loadState) {
             this._http.get(this._buildDataUrl(loadState, sortingArgs)).pipe(take(1)).subscribe((data: any) => {
                 this._updateData(data, loadState.startIndex);

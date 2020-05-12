@@ -1,8 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ViewChild } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
 import { RemoteService } from "./remote.service";
-import { Observable, of } from 'rxjs';
-import { take, debounceTime } from 'rxjs/operators';
 
 @Component({
     providers: [RemoteService],
