@@ -152,7 +152,7 @@ export class GridComponent implements OnInit, OnDestroy {
     }
 
     public filter(term) {
-        this.grid1.filter("CountryName", term, IgxStringFilteringOperand.instance().condition("contains"));
+        this.grid1.filter("CountryName", term, IgxStringFilteringOperand.instance().condition("contains"), true);
         this.grid1.markForCheck();
     }
 
