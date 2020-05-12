@@ -1,6 +1,8 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ViewChild } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
 import { RemoteService } from "./remote.service";
+import { Observable, of } from 'rxjs';
+import { take, debounceTime } from 'rxjs/operators';
 
 @Component({
     providers: [RemoteService],
@@ -15,7 +17,6 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     public grid: IgxGridComponent;
 
     public remoteData: any;
-    private _prevRequest: any;
     private _prevRequestChunk: number;
     private _endOfData = false;
 
@@ -41,8 +42,8 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     public handlePreLoad() {
         const index = this.grid.virtualizationState.chunkSize +
                                 this.grid.virtualizationState.startIndex;
+        this.grid.isLoading = true;
         if (index > this._remoteService.cachedData.length && !this._endOfData) {
-            this.grid.isLoading = true;
             const loadState = {
                 startIndex: index - 1,
                 chunkSize: this.grid.virtualizationState.chunkSize
@@ -54,12 +55,11 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     }
 
     public processData(reset, state?) {
-        this._prevRequest = this._remoteService.getData(
+        this._remoteService.getData(
             this.grid.virtualizationState, this.grid.sortingExpressions[0], reset, state,
             (data, endOfData?) => {
                 const chunkLength = this.grid.virtualizationState.startIndex +
                                     this.grid.virtualizationState.chunkSize + 5;
-                this.grid.isLoading = false;
                 if (this._endOfData || endOfData) {
                     this.grid.totalItemCount = this._remoteService.cachedData.length;
                     this._endOfData = true;
@@ -69,6 +69,7 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
                     this._prevRequestChunk = this.grid.virtualizationState.chunkSize;
                     this.grid.cdr.detectChanges();
                 }
+                this.grid.isLoading = false;
             }
         );
     }
@@ -79,11 +80,5 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
 
     public formatCurrency(value: number) {
         return "$" + value.toFixed(2);
-    }
-
-    public ngOnDestroy() {
-        if (this._prevRequest) {
-            this._prevRequest.unsubscribe();
-        }
     }
 }
