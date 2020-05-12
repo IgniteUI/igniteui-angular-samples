@@ -70,7 +70,7 @@ export class RemoteService {
                     if (this._prevRequestChunk > data.value.length) {
                         endOfData = true;
                     }
-                    returnData = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk);
+                    returnData = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
                 } else {
                     returnData = this._cachedData.slice(startIndex, endIndex);
                 }
@@ -82,7 +82,7 @@ export class RemoteService {
         } else {
             let data = [];
             if (endIndex > this._cachedData.length) {
-                data = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk);
+                data = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
             } else {
                 data = this._cachedData.slice(startIndex, endIndex);
                 this._prevRequestChunk = virtualizationArgs.chunkSize;

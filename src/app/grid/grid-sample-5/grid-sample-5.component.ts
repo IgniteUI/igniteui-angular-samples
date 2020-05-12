@@ -42,6 +42,7 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
         const index = this.grid.virtualizationState.chunkSize +
                                 this.grid.virtualizationState.startIndex;
         if (index > this._remoteService.cachedData.length && !this._endOfData) {
+            this.grid.isLoading = true;
             const loadState = {
                 startIndex: index - 1,
                 chunkSize: this.grid.virtualizationState.chunkSize
@@ -58,17 +59,14 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
             (data, endOfData?) => {
                 const chunkLength = this.grid.virtualizationState.startIndex +
                                     this.grid.virtualizationState.chunkSize + 5;
+                this.grid.isLoading = false;
                 if (this._endOfData || endOfData) {
                     this.grid.totalItemCount = this._remoteService.cachedData.length;
                     this._endOfData = true;
                     this.grid.cdr.detectChanges();
                 } else if (chunkLength >= this.grid.totalItemCount) {
-                    if (this.grid.virtualizationState.startIndex >= this._remoteService.cachedData.length) {
-                        this.grid.totalItemCount = this._remoteService.cachedData.length;
-                    } else {
-                        this.grid.totalItemCount += data.length;
-                        this._prevRequestChunk = this.grid.virtualizationState.chunkSize;
-                    }
+                    this.grid.totalItemCount += data.length;
+                    this._prevRequestChunk = this.grid.virtualizationState.chunkSize;
                     this.grid.cdr.detectChanges();
                 }
             }
