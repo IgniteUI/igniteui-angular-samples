@@ -11,11 +11,12 @@
         </igx-input-group>
     </div>
 
-    <igx-grid #grid1 igxPreventDocumentScroll [data]="localData" [paging]="true" [perPage]="10" height="600px" (onSelection)="cellSelection($event)" [allowFiltering]="true">
-        <igx-column header="Rank" headerClasses="myClass" width="115px" field="Id" sortable="true" [filterable]="false">
+    <igx-grid #grid1 igxPreventDocumentScroll [data]="localData" [paging]="true" [perPage]="20" height="600px" (onSelection)="cellSelection($event)"
+    [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [allowAdvancedFiltering]="true" displayDensity="cosy">
+        <igx-column header="Rank" [width]="'12%'" field="Id" sortable="true" [filterable]="false">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <div>{{ cell.value }}</div>
+                    <div>{{ cell.row.index + 1 }}</div>
                     <ng-container *ngIf="isTop3(cell)">
                         <span class="cup" *ngIf="cell.value === 1">
                             <img src="assets/images/grid/trophy_gold.svg" alt="golf-trophy" />
@@ -31,7 +32,7 @@
             </ng-template>
         </igx-column>
 
-        <igx-column field="Name" header="Athlete" width="280">
+        <igx-column field="Name" header="Athlete" [width]="athleteColumnWidth" [hasSummary]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
                     <igx-avatar [src]="cell.row.rowData.Avatar" roundShape="true" size="small"> </igx-avatar><span
@@ -42,20 +43,20 @@
             </ng-template>
         </igx-column>
 
-        <igx-column field="Speed" header="Speed" [width]="'190px'" [filterable]="false">
+        <igx-column field="Speed" header="Speed" [width]="'23%'" [filterable]="false" [hasSummary]="true" [summaries]="speedSummary">
             <ng-template igxCell let-val>
-                <igx-sparkline height="40px" width="180px"
-                    [dataSource]="val"
-                    valueMemberPath="Speed"
-                    displayType="Line"
-                    minimum="0"
-                    lineThickness="2"
-                    brush="rgb(0, 153, 255)">
+                    <igx-sparkline height="40px" width="190px"
+                        [dataSource]="val"
+                        valueMemberPath="Speed"
+                        displayType="Line"
+                        minimum="0"
+                        lineThickness="2"
+                        brush="rgb(0, 153, 255)">
                 </igx-sparkline>
             </ng-template>
         </igx-column>
 
-        <igx-column field="BeatsPerMinute" header="Beats per minute" [hasSummary]="true" dataType="number" [summaries]="bnpSummary"
+        <igx-column field="BeatsPerMinute" header="Heart Rate (bpm)" [width]="'15%'" [hasSummary]="true" dataType="number" [summaries]="bnpSummary"
             [hidden]="hideBeatsPerMinute" [filterable]="false">
             <ng-template igxCell let-val>
                 <div class="cell__inner">
@@ -64,8 +65,8 @@
             </ng-template>
         </igx-column>
 
-        <igx-column field="TopSpeed" header="Top Speed" width="120px" dataType="number" [hasSummary]="true" [summaries]="topSpeedSummary"
-            [filterable]="false">
+        <igx-column field="TopSpeed" header="Top Speed" [width]="'9%'" dataType="number" [hasSummary]="true" [summaries]="topSpeedSummary"
+            [filterable]="false" [hidden]="live">
 
             <ng-template igxCell let-val>
                 <div class="cell__inner">
@@ -75,16 +76,14 @@
 
         </igx-column>
 
-        <igx-column field="TrackProgress" sortable="true" header="Track Progress" [filterable]="false">
+        <igx-column field="TrackProgress" header="Progress" [filterable]="false" [width]="'10%'">
             <ng-template igxCell let-val>
                 <div class="linear-bar-container">
-                    <igx-linear-bar [textVisibility]="false" class="cell__inner_2" [value]="val"></igx-linear-bar>
+                    <igx-circular-bar [value]="val" [max]="100" [animate]="true" [textVisibility]="true"></igx-circular-bar>
                 </div>
             </ng-template>
         </igx-column>
-
-        <igx-column field="CountryName" hidden="true"></igx-column>
-        <igx-column field="CountryFlag" header="Country" width="90px" [filterable]="false">
+        <igx-column field="CountryFlag" header="Country" [width]="'10%'" [filterable]="false">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner_2">
                     <span>
