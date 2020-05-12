@@ -7,6 +7,7 @@ export const dataDisplayRoutesData = {
     "chip-sample": { displayName: "Chip Overview", parentName: "Chip" },
     "chip-styling": { displayName: "Chip Styling", parentName: "Chip" },
     "circular-progressbar": { displayName: "Circular Progressbar Sample", parentName: "Circular Progressbar" },
+    "circular-dynamic-sample": { displayName: "Circular Dynamic Sample", parentName: "Circular Progressbar" },
     // tslint:disable-next-line:max-line-length
     "circular-indeterminate-progressbar": { displayName: "Circular Indeterminate Progressbar", parentName: "Circular Progressbar" },
     "circular-styling-sample": { displayName: "Circular Styling Sample", parentName: "Circular Progressbar" },
