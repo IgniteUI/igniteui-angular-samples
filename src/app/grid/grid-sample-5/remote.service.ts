@@ -44,56 +44,53 @@ export class RemoteService {
         return hasItems;
     }
 
-    public getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean,
-                   loadState?: IForOfState, cb?: (arg0: any, arg1?: any) => void): any {
-        const startIndex = virtualizationArgs.startIndex;
-        const endIndex = virtualizationArgs.chunkSize + startIndex;
+    public async getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean,
+                   loadState?: IForOfState): Promise<any> {
 
-        if (resetData) {
-            this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
-                this._updateData(data, startIndex);
-                this._prevRequestChunk = data.value.length;
-                if (cb) {
-                    cb(data);
-                }
-            });
-        } else if (loadState) {
-            this._http.get(this._buildDataUrl(loadState, sortingArgs)).pipe(take(1)).subscribe((data: any) => {
-                this._updateData(data, loadState.startIndex);
-                let returnData = [];
-                let endOfData = false;
-                if (loadState.startIndex + loadState.chunkSize > this._cachedData.length) {
-                    if (this._prevRequestChunk > data.value.length) {
-                        endOfData = true;
+        return new Promise((res) => {
+            const startIndex = virtualizationArgs.startIndex;
+            const endIndex = virtualizationArgs.chunkSize + startIndex;
+            let endOfData = false;
+
+            if (resetData) {
+                this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
+                    this._updateData(data, startIndex);
+                    this._data.next(data.value);
+                    this._prevRequestChunk = data.value.length;
+                    res({data: data, endOfData: endOfData});
+                });
+            } else if (loadState) {
+                this._http.get(this._buildDataUrl(loadState, sortingArgs)).pipe(take(1)).subscribe((data: any) => {
+                    this._updateData(data, loadState.startIndex);
+                    let returnData = [];
+                    if (loadState.startIndex + loadState.chunkSize > this._cachedData.length) {
+                        if (this._prevRequestChunk > data.value.length) {
+                            endOfData = true;
+                        }
+                        returnData = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
+                    } else {
+                        returnData = this._cachedData.slice(startIndex, endIndex);
                     }
-                    returnData = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
-                } else {
-                    returnData = this._cachedData.slice(startIndex, endIndex);
-                }
-                this._data.next(returnData);
-                if (cb) {
-                    cb(returnData, endOfData);
-                }
-            });
-        } else {
-            let data = [];
-            if (endIndex > this._cachedData.length) {
-                data = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
+                    this._data.next(returnData);
+                    res({data: returnData, endOfData: endOfData});
+                });
             } else {
-                data = this._cachedData.slice(startIndex, endIndex);
-                this._prevRequestChunk = virtualizationArgs.chunkSize;
+                let data = [];
+                if (endIndex > this._cachedData.length) {
+                    data = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
+                } else {
+                    data = this._cachedData.slice(startIndex, endIndex);
+                    this._prevRequestChunk = virtualizationArgs.chunkSize;
+                }
+                this._data.next(data);
+                res({data: data, endOfData: endOfData});
             }
-            this._data.next(data);
-            if (cb) {
-                cb(data);
-            }
-        }
+        });
     }
 
     private _updateData(data: any, startIndex: number) {
-        this._data.next(data.value);
         for (let i = 0; i < data.value.length; i++) {
-            this._cachedData[i + startIndex] = data.value[i] || {};
+            this._cachedData[i + startIndex] = data.value[i];
         }
     }
 

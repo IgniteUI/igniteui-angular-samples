@@ -26,13 +26,13 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
 
     public ngAfterViewInit() {
         this.grid.isLoading = true;
-        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true, undefined,
-        (data) => {
-            if (data) {
+        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true, undefined)
+        .then((request) => {
+            if (request.data) {
                 // increase totalItemCount a little above the visible grid size in order to be able to scroll
-                this.grid.totalItemCount = data.value.length + 3;
+                this.grid.totalItemCount = request.data.value.length + 3;
                 this.grid.isLoading = false;
-                this._prevRequestChunk = data.value.length;
+                this._prevRequestChunk = request.data.value.length;
             }
         });
     }
@@ -46,30 +46,37 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
                 startIndex: index - 1,
                 chunkSize: this.grid.virtualizationState.chunkSize
             };
-            this.processData(false, loadState);
+            this.processData(false, loadState).then(x => {
+                if (x) this.grid.isLoading = false;
+            });
         } else {
-            this.processData(false);
+            this.processData(false).then(x => {
+                if (x) this.grid.isLoading = false;
+            });
         }
     }
 
-    public processData(reset, state?) {
-        this._remoteService.getData(
-            this.grid.virtualizationState, this.grid.sortingExpressions[0], reset, state,
-            (data, endOfData?) => {
-                const chunkLength = this.grid.virtualizationState.startIndex +
-                                    this.grid.virtualizationState.chunkSize + 5;
-                if (this._endOfData || endOfData) {
-                    this.grid.totalItemCount = this._remoteService.cachedData.length;
-                    this._endOfData = true;
-                    this.grid.cdr.detectChanges();
-                } else if (chunkLength >= this.grid.totalItemCount) {
-                    this.grid.totalItemCount += data.length;
-                    this._prevRequestChunk = this.grid.virtualizationState.chunkSize;
-                    this.grid.cdr.detectChanges();
-                }
-                this.grid.isLoading = false;
-            }
-        );
+    public processData(reset, state?): Promise<boolean> {
+        return new Promise((res) => {
+            this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], reset, state)
+            .then((remoteData) => {
+                    if (remoteData.data) {
+                        const chunkLength = this.grid.virtualizationState.startIndex +
+                                            this.grid.virtualizationState.chunkSize + 5;
+                        if (this._endOfData || remoteData.endOfData) {
+                            this.grid.totalItemCount = this._remoteService.cachedData.length;
+                            this._endOfData = true;
+                            this.grid.cdr.detectChanges();
+                        } else if (chunkLength >= this.grid.totalItemCount) {
+                            this.grid.totalItemCount += remoteData.data.length;
+                            this._prevRequestChunk = this.grid.virtualizationState.chunkSize;
+                            this.grid.cdr.detectChanges();
+                        }
+                        res(true);
+                    }
+                    res(false);
+                });
+        });
     }
 
     public formatNumber(value: number) {
