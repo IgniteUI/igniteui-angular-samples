@@ -5,6 +5,4 @@ import { Component } from "@angular/core";
     templateUrl: "input-group-styling.component.html",
     styleUrls: ["input-group-styling.component.scss"]
 })
-export class InputGroupStyleComponent {
-
-}
+export class InputGroupStyleComponent { }
