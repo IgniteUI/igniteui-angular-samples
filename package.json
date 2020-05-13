@@ -40,7 +40,7 @@
     "@angular/platform-browser": "9.1.0",
     "@angular/platform-browser-dynamic": "9.1.0",
     "@angular/router": "9.1.0",
-    "@infragistics/igniteui-dockmanager": "file:infragistics-igniteui-dockmanager-0.1.0-beta.5.tgz",
+    "@infragistics/igniteui-dockmanager": "0.1.0-beta.6",
     "@types/file-saver": "^2.0.1",
     "@types/hammerjs": "^2.0.35",
     "angular-in-memory-web-api": "0.9.0",
