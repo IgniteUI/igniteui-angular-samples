@@ -1,0 +1,158 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '~dockmanager-webcomponent/dist/collection/styles/igc.themes.css';
+
+:host {
+  width: 100%;
+}
+
+
+@mixin scrollbar($scrollbar-width, $scrollbar-height) {
+    $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
+    $scrollbar-thumb: hexrgba(igx-color($default-palette, 'grays', 400));
+
+    ::-webkit-scrollbar {
+        width: $scrollbar-width;
+        height: $scrollbar-height;
+        background-color: $scrollbar-track;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $scrollbar-thumb;
+    }
+}
+
+.grid-chart-contextmenu-wrapper {
+    width: 90%;
+    margin: 50px auto;
+    height: 80%;
+}
+
+
+
+:host ::ng-deep {
+
+    .grid-chart-contextmenu-wrapper {
+        igx-grid {
+            @include scrollbar(16px, 16px);
+        }
+    }
+
+    .header {
+        height: 10%;
+        background-color: #e0e0e0;
+        display: flex;
+        font-size: 1.8rem;
+        align-self: center;
+
+        .action-buttons-wrapper {
+            margin-left: auto;
+            margin-right: 10px;
+            align-self: center;
+        }
+
+        .header-text {
+            margin-right: auto;
+            align-self: center;
+            margin-left: 3rem;
+        }
+    }
+
+    .analytics-btn {
+        @include igx-button(igx-button-theme($palette: $fluent-excel-palette,
+                $icon-color: #fff,
+                $icon-background: #335e3b,
+                $icon-hover-background: #459a55,
+                $icon-border-radius: 0));
+        z-index: 9;
+        position: absolute;
+    }
+
+    .ig-chart-legend-items-list {
+        height: 20%;
+        display: inline-flex;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .igx-grid__grouparea {
+        max-height: 100%;
+        height: auto;
+    }
+
+    igx-tabs-group {
+        @include scrollbar(10px, 10px);
+    }
+
+}
+
+.selected {
+    opacity: .5;
+}
+
+.disableButton {
+    opacity: .4;
+    pointer-events: none;
+}
+
+.tab-options-wrapper{
+    display: flex;
+    max-height: 100px;
+    max-width: 358px;
+}
+
+.tab-option {
+    padding: .9rem;
+    height: 100px;
+    width: 358px;
+    display: inline-flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    align-content: center;
+}
+
+.action {
+    cursor: pointer;
+
+    .name {
+        font-size: .9rem;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+.btn {
+
+    &.condition {
+        padding-right: 16px;
+    }
+
+    display: inline-flex;
+    flex-flow: column;
+    align-items: center;
+
+    img{
+        pointer-events: none;
+    }
+
+    span {
+        pointer-events: none;
+    }
+}
+
+.clear{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    border-left: 1px solid #BDBDBD;
+    .btn, .more-btn {
+        width: 68px;
+        margin: 0 0 7px 0;
+        padding: 0;
+    }
+    .name {
+        font-size: .9rem;
+        font-weight: 400;
+        text-align: center;
+    }
+}
