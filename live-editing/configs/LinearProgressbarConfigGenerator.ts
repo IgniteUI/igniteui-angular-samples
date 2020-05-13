@@ -1,6 +1,9 @@
 // tslint:disable:object-literal-sort-keys
 // tslint:disable:max-line-length
 import { IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule } from "igniteui-angular";
+import {
+    LinearDynamicSampleComponent
+} from "../../src/app/data-display/linear-progressbar/linear-dynamic-sample/linear-dynamic-sample.component";
 import { LinearProgressbarSample1Component
 } from "../../src/app/data-display/linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
 import { LinearProgressbarSample2Component
@@ -18,21 +21,40 @@ export class LinearProgressbarConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: LinearProgressbarComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule,
-                    LinearProgressbarComponent],
+                imports: [IgxProgressBarModule, LinearProgressbarComponent],
                 ngDeclarations: [LinearProgressbarComponent],
-                ngImports: [IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule]
+                ngImports: [IgxProgressBarModule]
             }),
             shortenComponentPathBy: "/data-display/"
         }));
 
         configs.push(new Config({
+            component: LinearDynamicSampleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [
+                    IgxButtonModule,
+                    IgxIconModule,
+                    IgxProgressBarModule,
+                    IgxRippleModule,
+                    LinearDynamicSampleComponent
+                ],
+                ngDeclarations: [LinearDynamicSampleComponent],
+                ngImports: [
+                    IgxButtonModule,
+                    IgxIconModule,
+                    IgxProgressBarModule,
+                    IgxRippleModule
+                ]
+            }),
+            shortenComponentPathBy: "/data-display/linear-progressbar/"
+        }));
+
+        configs.push(new Config({
             component: LinearProgressbarSample1Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule,
-                    LinearProgressbarSample1Component],
+                imports: [IgxProgressBarModule, LinearProgressbarSample1Component],
                 ngDeclarations: [LinearProgressbarSample1Component],
-                ngImports: [IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule]
+                ngImports: [IgxProgressBarModule]
             }),
             shortenComponentPathBy: "/data-display/linear-progressbar/"
         }));
@@ -40,10 +62,9 @@ export class LinearProgressbarConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: LinearProgressbarSample2Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule,
-                    LinearProgressbarSample2Component],
+                imports: [IgxProgressBarModule, LinearProgressbarSample2Component],
                 ngDeclarations: [LinearProgressbarSample2Component],
-                ngImports: [IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule]
+                ngImports: [IgxProgressBarModule]
             }),
             shortenComponentPathBy: "/data-display/linear-progressbar/"
         }));
@@ -51,10 +72,9 @@ export class LinearProgressbarConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: LinearProgressbarStylingComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule,
-                    LinearProgressbarStylingComponent],
+                imports: [IgxProgressBarModule, LinearProgressbarStylingComponent],
                 ngDeclarations: [LinearProgressbarStylingComponent],
-                ngImports: [IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule]
+                ngImports: [IgxProgressBarModule]
             }),
             shortenComponentPathBy: "/data-display/linear-progressbar"
         }));

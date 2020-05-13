@@ -15,6 +15,9 @@ import {
 import { ChipStylingSampleComponent } from "./chip-styling/chip-styling.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 import { EmailFilterPipe } from "./chip/email-filter-pipe";
+import {
+    CircularDynamicSampleComponent
+} from "./circular-progressbar/circular-dynamic-sample/circular-dynamic-sample.component";
 // tslint:disable-next-line:max-line-length
 import { CircularIndeterminateProgressbarComponent } from "./circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
@@ -27,6 +30,9 @@ import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component
 import { IconStylingSample } from "./icon/icon-styling-sample/icon-styling-sample.component";
 import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
+import {
+    LinearDynamicSampleComponent
+} from "./linear-progressbar/linear-dynamic-sample/linear-dynamic-sample.component";
 import {
     LinearProgressbarSample1Component
 } from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
@@ -59,12 +65,14 @@ import { TextHighlightStyleComponent } from "./text-highlight/text-highlight-sty
         BadgeSample3Component,
         BadgeStylingSampleComponent,
         ChipSampleComponent,
+        CircularDynamicSampleComponent,
         CircularProgressbarComponent,
         IconSample1Component,
         IconSample2Component,
         IconStylingSample,
         SvgIconSampleComponent,
         IgxForComponent,
+        LinearDynamicSampleComponent,
         LinearProgressbarComponent,
         LinearProgressbarSample1Component,
         LinearProgressbarSample2Component,
