@@ -15,6 +15,9 @@ import {
 import { ChipStylingSampleComponent } from "./chip-styling/chip-styling.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 import { EmailFilterPipe } from "./chip/email-filter-pipe";
+import {
+    CircularDynamicSampleComponent
+} from "./circular-progressbar/circular-dynamic-sample/circular-dynamic-sample.component";
 // tslint:disable-next-line:max-line-length
 import { CircularIndeterminateProgressbarComponent } from "./circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
@@ -62,6 +65,7 @@ import { TextHighlightStyleComponent } from "./text-highlight/text-highlight-sty
         BadgeSample3Component,
         BadgeStylingSampleComponent,
         ChipSampleComponent,
+        CircularDynamicSampleComponent,
         CircularProgressbarComponent,
         IconSample1Component,
         IconSample2Component,
