@@ -1,32 +1,20 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-$blue: #61AEDB;
-$purple: #9E379F;
+.sample-column {
+    max-width: 550px;
+}
 
-$custom-palette: igx-palette($primary: $blue, $secondary: $purple);
-
-$text-color: igx-color($custom-palette, "secondary", 400);
-$border-color:  igx-color($custom-palette, "secondary", 900);
-$background-color: #91CEFB27;
-
-$input-group: igx-input-group-theme(
-  $palette: $custom-palette,
-  $filled-text-color: $text-color,
-  $focused-text-color: $text-color,
-  $idle-text-color: $text-color,
-  $idle-bottom-line-color: $border-color,
-  $focused-bottom-line-color: $border-color,
-  $interim-bottom-line-color: $border-color,
-  $hover-bottom-line-color: $border-color,
-  $box-background: $background-color
+$custom-input-group: igx-input-group-theme(
+  $filled-text-color: #288a54,
+  $focused-text-color: #174f30,
+  $idle-text-color: #288a54,
+  $idle-bottom-line-color: #288a54,
+  $interim-bottom-line-color: #288a54,
+  $hover-bottom-line-color: #288a54,
+  $focused-secondary-color: #174f30,
+  $box-background: #eeeeee
 );
 
-
 :host {
-    display: block;
-    width: 480px;
-    margin: auto;
-    ::ng-deep {
-        @include igx-input-group($input-group);
-    }
+    @include igx-css-vars($custom-input-group);
 }

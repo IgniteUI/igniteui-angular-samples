@@ -9,7 +9,7 @@ export const athletesData = [{
   "BeatsPerMinute": 105,
   "TopSpeed": 5.1,
   "Registered": "2017-10-05T05:54:31 -03:00",
-  "TrackProgress": 27,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/af.png",
   "CountryName": "Afghanistan"
 }, {
@@ -21,7 +21,7 @@ export const athletesData = [{
   "BeatsPerMinute": 94,
   "TopSpeed": 4.8,
   "Registered": "2017-01-09T05:46:07 -02:00",
-  "TrackProgress": 31,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/al.png",
   "CountryName": "Albania"
 }, {
@@ -33,7 +33,7 @@ export const athletesData = [{
   "BeatsPerMinute": 92,
   "TopSpeed": 4.8,
   "Registered": "2017-01-23T06:14:22 -02:00",
-  "TrackProgress": 34,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/dz.png",
   "CountryName": "Algeria"
 }, {
@@ -45,7 +45,7 @@ export const athletesData = [{
   "BeatsPerMinute": 107,
   "TopSpeed": 6,
   "Registered": "2017-06-13T12:54:56 -03:00",
-  "TrackProgress": 21,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/ad.png",
   "CountryName": "Andorra"
 }, {
@@ -57,7 +57,7 @@ export const athletesData = [{
   "BeatsPerMinute": 90,
   "TopSpeed": 5.7,
   "Registered": "2017-09-07T11:17:40 -03:00",
-  "TrackProgress": 42,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ao.png",
   "CountryName": "Angola"
 }, {
@@ -69,7 +69,7 @@ export const athletesData = [{
   "BeatsPerMinute": 93,
   "TopSpeed": 4.6,
   "Registered": "2017-02-02T03:50:21 -02:00",
-  "TrackProgress": 48,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ag.png",
   "CountryName": "Antigua and Barbuda"
 }, {
@@ -81,7 +81,7 @@ export const athletesData = [{
   "BeatsPerMinute": 94,
   "TopSpeed": 5.6,
   "Registered": "2017-03-19T01:10:55 -02:00",
-  "TrackProgress": 26,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/ar.png",
   "CountryName": "Argentina"
 }, {
@@ -93,7 +93,7 @@ export const athletesData = [{
   "BeatsPerMinute": 95,
   "TopSpeed": 5.9,
   "Registered": "2017-01-11T01:41:31 -02:00",
-  "TrackProgress": 41,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/am.png",
   "CountryName": "Armenia"
 }, {
@@ -105,7 +105,7 @@ export const athletesData = [{
   "BeatsPerMinute": 97,
   "TopSpeed": 5.6,
   "Registered": "2017-09-28T04:37:56 -03:00",
-  "TrackProgress": 23,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/au.png",
   "CountryName": "Australia"
 }, {
@@ -117,7 +117,7 @@ export const athletesData = [{
   "BeatsPerMinute": 94,
   "TopSpeed": 4.5,
   "Registered": "2017-11-07T09:58:42 -02:00",
-  "TrackProgress": 42,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/at.png",
   "CountryName": "Austria"
 }, {
@@ -129,7 +129,7 @@ export const athletesData = [{
   "BeatsPerMinute": 106,
   "TopSpeed": 5.5,
   "Registered": "2017-06-29T04:58:27 -03:00",
-  "TrackProgress": 29,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/az.png",
   "CountryName": "Azerbaijan"
 }, {
@@ -141,7 +141,7 @@ export const athletesData = [{
   "BeatsPerMinute": 92,
   "TopSpeed": 4.9,
   "Registered": "2017-07-07T03:51:26 -03:00",
-  "TrackProgress": 39,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/bs.png",
   "CountryName": "Bahamas"
 }, {
@@ -153,7 +153,7 @@ export const athletesData = [{
   "BeatsPerMinute": 105,
   "TopSpeed": 5.3,
   "Registered": "2017-04-05T05:27:13 -03:00",
-  "TrackProgress": 23,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/bh.png",
   "CountryName": "Bahrain"
 }, {
@@ -165,7 +165,7 @@ export const athletesData = [{
   "BeatsPerMinute": 96,
   "TopSpeed": 5.6,
   "Registered": "2017-06-05T08:19:32 -03:00",
-  "TrackProgress": 34,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/bd.png",
   "CountryName": "Bangladesh"
 }, {
@@ -177,7 +177,7 @@ export const athletesData = [{
   "BeatsPerMinute": 95,
   "TopSpeed": 4.4,
   "Registered": "2017-06-30T11:23:25 -03:00",
-  "TrackProgress": 32,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/bb.png",
   "CountryName": "Barbados"
 }, {
@@ -189,7 +189,7 @@ export const athletesData = [{
   "BeatsPerMinute": 97,
   "TopSpeed": 5.6,
   "Registered": "2017-08-16T09:46:35 -03:00",
-  "TrackProgress": 27,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/by.png",
   "CountryName": "Belarus"
 }, {
@@ -201,7 +201,7 @@ export const athletesData = [{
   "BeatsPerMinute": 96,
   "TopSpeed": 5.7,
   "Registered": "2017-09-30T01:01:04 -03:00",
-  "TrackProgress": 23,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/be.png",
   "CountryName": "Belgium"
 }, {
@@ -213,7 +213,7 @@ export const athletesData = [{
   "BeatsPerMinute": 107,
   "TopSpeed": 4.6,
   "Registered": "2017-01-01T07:40:19 -02:00",
-  "TrackProgress": 23,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/bz.png",
   "CountryName": "Belize"
 }, {
@@ -225,7 +225,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 5.5,
   "Registered": "2017-03-26T10:04:29 -03:00",
-  "TrackProgress": 33,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/bj.png",
   "CountryName": "Benin"
 }, {
@@ -237,7 +237,7 @@ export const athletesData = [{
   "BeatsPerMinute": 108,
   "TopSpeed": 5.6,
   "Registered": "2017-03-29T11:54:15 -03:00",
-  "TrackProgress": 23,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/bt.png",
   "CountryName": "Bhutan"
 }, {
@@ -249,7 +249,7 @@ export const athletesData = [{
   "BeatsPerMinute": 91,
   "TopSpeed": 5.4,
   "Registered": "2017-07-03T06:19:47 -03:00",
-  "TrackProgress": 48,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/bo.png",
   "CountryName": "Bolivia"
 }, {
@@ -261,7 +261,7 @@ export const athletesData = [{
   "BeatsPerMinute": 98,
   "TopSpeed": 4.9,
   "Registered": "2017-06-09T08:07:19 -03:00",
-  "TrackProgress": 46,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ba.png",
   "CountryName": "Bosnia and Herzegovina"
 }, {
@@ -273,7 +273,7 @@ export const athletesData = [{
   "BeatsPerMinute": 90,
   "TopSpeed": 4.6,
   "Registered": "2017-10-07T06:08:00 -03:00",
-  "TrackProgress": 23,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/bw.png",
   "CountryName": "Botswana"
 }, {
@@ -285,7 +285,7 @@ export const athletesData = [{
   "BeatsPerMinute": 98,
   "TopSpeed": 5.8,
   "Registered": "2017-09-01T04:39:52 -03:00",
-  "TrackProgress": 24,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/br.png",
   "CountryName": "Brazil"
 }, {
@@ -297,7 +297,7 @@ export const athletesData = [{
   "BeatsPerMinute": 108,
   "TopSpeed": 5.7,
   "Registered": "2017-04-18T08:03:01 -03:00",
-  "TrackProgress": 50,
+  "TrackProgress": 5,
   "CountryFlag": "assets/images/grid/flags/bg.png",
   "CountryName": "Bulgaria"
 }, {
@@ -309,7 +309,7 @@ export const athletesData = [{
   "BeatsPerMinute": 110,
   "TopSpeed": 4.1,
   "Registered": "2017-11-01T10:34:07 -02:00",
-  "TrackProgress": 31,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/bf.png",
   "CountryName": "Burkina Faso"
 }, {
@@ -321,7 +321,7 @@ export const athletesData = [{
   "BeatsPerMinute": 90,
   "TopSpeed": 4.8,
   "Registered": "2017-04-22T04:20:39 -03:00",
-  "TrackProgress": 27,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/bi.png",
   "CountryName": "Burundi"
 }, {
@@ -333,7 +333,7 @@ export const athletesData = [{
   "BeatsPerMinute": 105,
   "TopSpeed": 4.1,
   "Registered": "2017-02-07T10:23:13 -02:00",
-  "TrackProgress": 40,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/kh.png",
   "CountryName": "Cambodia"
 }, {
@@ -345,7 +345,7 @@ export const athletesData = [{
   "BeatsPerMinute": 110,
   "TopSpeed": 4.3,
   "Registered": "2017-11-09T08:50:06 -02:00",
-  "TrackProgress": 23,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/cm.png",
   "CountryName": "Cameroon"
 }, {
@@ -357,7 +357,7 @@ export const athletesData = [{
   "BeatsPerMinute": 108,
   "TopSpeed": 4,
   "Registered": "2017-01-08T02:13:29 -02:00",
-  "TrackProgress": 49,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ca.png",
   "CountryName": "Canada"
 }, {
@@ -369,7 +369,7 @@ export const athletesData = [{
   "BeatsPerMinute": 110,
   "TopSpeed": 5.5,
   "Registered": "2017-01-26T11:50:00 -02:00",
-  "TrackProgress": 31,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/cv.png",
   "CountryName": "Cape Verde"
 }, {
@@ -381,7 +381,7 @@ export const athletesData = [{
   "BeatsPerMinute": 110,
   "TopSpeed": 4.8,
   "Registered": "2017-10-03T08:01:40 -03:00",
-  "TrackProgress": 34,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/cf.png",
   "CountryName": "Central African Republic"
 }, {
@@ -393,7 +393,7 @@ export const athletesData = [{
   "BeatsPerMinute": 102,
   "TopSpeed": 5.3,
   "Registered": "2017-09-12T09:14:14 -03:00",
-  "TrackProgress": 22,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/td.png",
   "CountryName": "Chad"
 }, {
@@ -405,7 +405,7 @@ export const athletesData = [{
   "BeatsPerMinute": 107,
   "TopSpeed": 4.2,
   "Registered": "2017-01-02T01:04:04 -02:00",
-  "TrackProgress": 43,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/cl.png",
   "CountryName": "Chile"
 }, {
@@ -417,7 +417,7 @@ export const athletesData = [{
   "BeatsPerMinute": 110,
   "TopSpeed": 4.1,
   "Registered": "2017-06-04T09:04:31 -03:00",
-  "TrackProgress": 45,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/cn.png",
   "CountryName": "China"
 }, {
@@ -429,7 +429,7 @@ export const athletesData = [{
   "BeatsPerMinute": 90,
   "TopSpeed": 5,
   "Registered": "2017-06-04T12:52:03 -03:00",
-  "TrackProgress": 48,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/co.png",
   "CountryName": "Colombia"
 }, {
@@ -441,7 +441,7 @@ export const athletesData = [{
   "BeatsPerMinute": 106,
   "TopSpeed": 5.1,
   "Registered": "2017-11-09T02:43:54 -02:00",
-  "TrackProgress": 34,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/km.png",
   "CountryName": "Comoros"
 }, {
@@ -453,7 +453,7 @@ export const athletesData = [{
   "BeatsPerMinute": 110,
   "TopSpeed": 4.6,
   "Registered": "2017-10-19T10:38:35 -03:00",
-  "TrackProgress": 39,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/ck.png",
   "CountryName": "Cook Islands"
 }, {
@@ -465,7 +465,7 @@ export const athletesData = [{
   "BeatsPerMinute": 101,
   "TopSpeed": 4.7,
   "Registered": "2017-06-30T04:13:42 -03:00",
-  "TrackProgress": 35,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/cr.png",
   "CountryName": "Costa Rica"
 }, {
@@ -477,7 +477,7 @@ export const athletesData = [{
   "BeatsPerMinute": 110,
   "TopSpeed": 5.6,
   "Registered": "2017-06-23T01:21:21 -03:00",
-  "TrackProgress": 49,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ci.png",
   "CountryName": "Cote DIvoire"
 }, {
@@ -489,7 +489,7 @@ export const athletesData = [{
   "BeatsPerMinute": 106,
   "TopSpeed": 4.4,
   "Registered": "2017-02-08T04:03:22 -02:00",
-  "TrackProgress": 27,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/hr.png",
   "CountryName": "Croatia"
 }, {
@@ -501,7 +501,7 @@ export const athletesData = [{
   "BeatsPerMinute": 109,
   "TopSpeed": 4.3,
   "Registered": "2017-06-19T10:57:42 -03:00",
-  "TrackProgress": 41,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/cu.png",
   "CountryName": "Cuba"
 }, {
@@ -513,7 +513,7 @@ export const athletesData = [{
   "BeatsPerMinute": 94,
   "TopSpeed": 4.5,
   "Registered": "2017-03-13T10:51:36 -02:00",
-  "TrackProgress": 24,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/cy.png",
   "CountryName": "Cyprus"
 }, {
@@ -525,7 +525,7 @@ export const athletesData = [{
   "BeatsPerMinute": 104,
   "TopSpeed": 5.2,
   "Registered": "2017-06-02T12:21:59 -03:00",
-  "TrackProgress": 35,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/cz.png",
   "CountryName": "Czech Republic"
 }, {
@@ -537,7 +537,7 @@ export const athletesData = [{
   "BeatsPerMinute": 101,
   "TopSpeed": 5.3,
   "Registered": "2017-04-02T03:33:57 -03:00",
-  "TrackProgress": 38,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/dk.png",
   "CountryName": "Denmark"
 }, {
@@ -549,7 +549,7 @@ export const athletesData = [{
   "BeatsPerMinute": 109,
   "TopSpeed": 5.6,
   "Registered": "2017-06-20T06:02:49 -03:00",
-  "TrackProgress": 27,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/dj.png",
   "CountryName": "Djibouti"
 }, {
@@ -561,7 +561,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 4.9,
   "Registered": "2017-07-13T09:06:04 -03:00",
-  "TrackProgress": 22,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/dm.png",
   "CountryName": "Dominica"
 }, {
@@ -573,7 +573,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 5,
   "Registered": "2017-08-17T01:35:09 -03:00",
-  "TrackProgress": 20,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/do.png",
   "CountryName": "Dominican Republic"
 }, {
@@ -585,7 +585,7 @@ export const athletesData = [{
   "BeatsPerMinute": 107,
   "TopSpeed": 5.7,
   "Registered": "2017-05-15T09:25:03 -03:00",
-  "TrackProgress": 43,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ec.png",
   "CountryName": "Ecuador"
 }, {
@@ -597,7 +597,7 @@ export const athletesData = [{
   "BeatsPerMinute": 96,
   "TopSpeed": 4.2,
   "Registered": "2017-10-28T04:06:33 -03:00",
-  "TrackProgress": 47,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/eg.png",
   "CountryName": "Egypt"
 }, {
@@ -609,7 +609,7 @@ export const athletesData = [{
   "BeatsPerMinute": 104,
   "TopSpeed": 4.6,
   "Registered": "2017-10-04T03:02:35 -03:00",
-  "TrackProgress": 44,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/sv.png",
   "CountryName": "El Salvador"
 }, {
@@ -621,7 +621,7 @@ export const athletesData = [{
   "BeatsPerMinute": 103,
   "TopSpeed": 5.4,
   "Registered": "2017-07-04T03:01:47 -03:00",
-  "TrackProgress": 49,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/gq.png",
   "CountryName": "Equatorial Guinea"
 }, {
@@ -633,7 +633,7 @@ export const athletesData = [{
   "BeatsPerMinute": 101,
   "TopSpeed": 6,
   "Registered": "2017-11-06T02:14:31 -02:00",
-  "TrackProgress": 27,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/er.png",
   "CountryName": "Eritrea"
 }, {
@@ -645,7 +645,7 @@ export const athletesData = [{
   "BeatsPerMinute": 102,
   "TopSpeed": 5.1,
   "Registered": "2017-09-04T07:03:19 -03:00",
-  "TrackProgress": 41,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ee.png",
   "CountryName": "Estonia"
 }, {
@@ -657,7 +657,7 @@ export const athletesData = [{
   "BeatsPerMinute": 104,
   "TopSpeed": 4.5,
   "Registered": "2017-04-26T01:26:36 -03:00",
-  "TrackProgress": 35,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/et.png",
   "CountryName": "Ethiopia"
 }, {
@@ -669,7 +669,7 @@ export const athletesData = [{
   "BeatsPerMinute": 93,
   "TopSpeed": 5.2,
   "Registered": "2017-04-10T09:57:13 -03:00",
-  "TrackProgress": 34,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/fj.png",
   "CountryName": "Fiji"
 }, {
@@ -681,7 +681,7 @@ export const athletesData = [{
   "BeatsPerMinute": 106,
   "TopSpeed": 5.2,
   "Registered": "2017-01-06T09:58:02 -02:00",
-  "TrackProgress": 24,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/fi.png",
   "CountryName": "Finland"
 }, {
@@ -693,7 +693,7 @@ export const athletesData = [{
   "BeatsPerMinute": 101,
   "TopSpeed": 4.2,
   "Registered": "2017-09-27T01:17:14 -03:00",
-  "TrackProgress": 32,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/fr.png",
   "CountryName": "France"
 }, {
@@ -705,7 +705,7 @@ export const athletesData = [{
   "BeatsPerMinute": 106,
   "TopSpeed": 4.9,
   "Registered": "2017-06-14T05:12:04 -03:00",
-  "TrackProgress": 39,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/ga.png",
   "CountryName": "Gabon"
 }, {
@@ -717,7 +717,7 @@ export const athletesData = [{
   "BeatsPerMinute": 97,
   "TopSpeed": 4,
   "Registered": "2017-07-15T12:32:30 -03:00",
-  "TrackProgress": 35,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/gm.png",
   "CountryName": "Gambia"
 }, {
@@ -729,7 +729,7 @@ export const athletesData = [{
   "BeatsPerMinute": 102,
   "TopSpeed": 5.8,
   "Registered": "2017-02-20T11:53:08 -02:00",
-  "TrackProgress": 27,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/ge.png",
   "CountryName": "Georgia"
 }, {
@@ -741,7 +741,7 @@ export const athletesData = [{
   "BeatsPerMinute": 94,
   "TopSpeed": 4.3,
   "Registered": "2017-10-09T02:01:16 -03:00",
-  "TrackProgress": 20,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/de.png",
   "CountryName": "Germany"
 }, {
@@ -753,7 +753,7 @@ export const athletesData = [{
   "BeatsPerMinute": 103,
   "TopSpeed": 5.8,
   "Registered": "2017-08-07T10:35:06 -03:00",
-  "TrackProgress": 46,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/gh.png",
   "CountryName": "Ghana"
 }, {
@@ -765,7 +765,7 @@ export const athletesData = [{
   "BeatsPerMinute": 100,
   "TopSpeed": 5.2,
   "Registered": "2017-09-15T02:11:43 -03:00",
-  "TrackProgress": 47,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/gr.png",
   "CountryName": "Greece"
 }, {
@@ -777,7 +777,7 @@ export const athletesData = [{
   "BeatsPerMinute": 91,
   "TopSpeed": 5.2,
   "Registered": "2017-04-21T08:08:33 -03:00",
-  "TrackProgress": 46,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/gd.png",
   "CountryName": "Grenada"
 }, {
@@ -789,7 +789,7 @@ export const athletesData = [{
   "BeatsPerMinute": 104,
   "TopSpeed": 5.3,
   "Registered": "2017-09-08T08:29:08 -03:00",
-  "TrackProgress": 33,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/gt.png",
   "CountryName": "Guatemala"
 }, {
@@ -801,7 +801,7 @@ export const athletesData = [{
   "BeatsPerMinute": 100,
   "TopSpeed": 5.9,
   "Registered": "2017-02-08T07:50:59 -02:00",
-  "TrackProgress": 37,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/gn.png",
   "CountryName": "Guinea"
 }, {
@@ -813,7 +813,7 @@ export const athletesData = [{
   "BeatsPerMinute": 107,
   "TopSpeed": 5.5,
   "Registered": "2017-10-21T05:57:02 -03:00",
-  "TrackProgress": 34,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/gw.png",
   "CountryName": "Guinea-Bissau"
 }, {
@@ -825,7 +825,7 @@ export const athletesData = [{
   "BeatsPerMinute": 103,
   "TopSpeed": 4.5,
   "Registered": "2017-08-31T11:55:25 -03:00",
-  "TrackProgress": 29,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/gy.png",
   "CountryName": "Guyana"
 }, {
@@ -837,7 +837,7 @@ export const athletesData = [{
   "BeatsPerMinute": 103,
   "TopSpeed": 5,
   "Registered": "2017-08-24T11:58:56 -03:00",
-  "TrackProgress": 25,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/ht.png",
   "CountryName": "Haiti"
 }, {
@@ -849,7 +849,7 @@ export const athletesData = [{
   "BeatsPerMinute": 98,
   "TopSpeed": 5.5,
   "Registered": "2017-05-17T12:51:47 -03:00",
-  "TrackProgress": 48,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/va.png",
   "CountryName": "Holy See (Vatican City State)"
 }, {
@@ -861,7 +861,7 @@ export const athletesData = [{
   "BeatsPerMinute": 103,
   "TopSpeed": 5.7,
   "Registered": "2017-02-26T07:28:02 -02:00",
-  "TrackProgress": 36,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/hn.png",
   "CountryName": "Honduras"
 }, {
@@ -873,7 +873,7 @@ export const athletesData = [{
   "BeatsPerMinute": 92,
   "TopSpeed": 4.1,
   "Registered": "2017-08-22T10:36:38 -03:00",
-  "TrackProgress": 38,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/hu.png",
   "CountryName": "Hungary"
 }, {
@@ -885,7 +885,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 5.4,
   "Registered": "2017-07-20T09:00:22 -03:00",
-  "TrackProgress": 33,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/is.png",
   "CountryName": "Iceland"
 }, {
@@ -897,7 +897,7 @@ export const athletesData = [{
   "BeatsPerMinute": 109,
   "TopSpeed": 5.5,
   "Registered": "2017-06-14T11:10:20 -03:00",
-  "TrackProgress": 42,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/in.png",
   "CountryName": "India"
 }, {
@@ -909,7 +909,7 @@ export const athletesData = [{
   "BeatsPerMinute": 95,
   "TopSpeed": 4.2,
   "Registered": "2017-08-23T09:37:40 -03:00",
-  "TrackProgress": 24,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/id.png",
   "CountryName": "Indonesia"
 }, {
@@ -921,7 +921,7 @@ export const athletesData = [{
   "BeatsPerMinute": 91,
   "TopSpeed": 5,
   "Registered": "2017-10-24T08:25:40 -03:00",
-  "TrackProgress": 32,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/ir.png",
   "CountryName": "Iran, Islamic Republic Of"
 }, {
@@ -933,7 +933,7 @@ export const athletesData = [{
   "BeatsPerMinute": 100,
   "TopSpeed": 4.7,
   "Registered": "2017-10-28T10:39:22 -03:00",
-  "TrackProgress": 23,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/iq.png",
   "CountryName": "Iraq"
 }, {
@@ -945,7 +945,7 @@ export const athletesData = [{
   "BeatsPerMinute": 102,
   "TopSpeed": 4.4,
   "Registered": "2017-07-28T09:10:43 -03:00",
-  "TrackProgress": 44,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ie.png",
   "CountryName": "Ireland"
 }, {
@@ -957,7 +957,7 @@ export const athletesData = [{
   "BeatsPerMinute": 103,
   "TopSpeed": 4.3,
   "Registered": "2017-08-10T08:27:45 -03:00",
-  "TrackProgress": 24,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/il.png",
   "CountryName": "Israel"
 }, {
@@ -969,7 +969,7 @@ export const athletesData = [{
   "BeatsPerMinute": 96,
   "TopSpeed": 4.5,
   "Registered": "2017-03-22T03:23:12 -02:00",
-  "TrackProgress": 20,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/it.png",
   "CountryName": "Italy"
 }, {
@@ -981,7 +981,7 @@ export const athletesData = [{
   "BeatsPerMinute": 105,
   "TopSpeed": 5,
   "Registered": "2017-01-21T10:19:56 -02:00",
-  "TrackProgress": 43,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/jm.png",
   "CountryName": "Jamaica"
 }, {
@@ -993,7 +993,7 @@ export const athletesData = [{
   "BeatsPerMinute": 105,
   "TopSpeed": 5.4,
   "Registered": "2017-03-31T06:14:26 -03:00",
-  "TrackProgress": 27,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/jp.png",
   "CountryName": "Japan"
 }, {
@@ -1005,7 +1005,7 @@ export const athletesData = [{
   "BeatsPerMinute": 105,
   "TopSpeed": 5,
   "Registered": "2017-01-24T07:30:43 -02:00",
-  "TrackProgress": 41,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/jo.png",
   "CountryName": "Jordan"
 }, {
@@ -1017,7 +1017,7 @@ export const athletesData = [{
   "BeatsPerMinute": 101,
   "TopSpeed": 4.3,
   "Registered": "2017-01-08T02:41:56 -02:00",
-  "TrackProgress": 24,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/kz.png",
   "CountryName": "Kazakhstan"
 }, {
@@ -1029,7 +1029,7 @@ export const athletesData = [{
   "BeatsPerMinute": 98,
   "TopSpeed": 4.2,
   "Registered": "2017-03-23T12:54:35 -02:00",
-  "TrackProgress": 27,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/ke.png",
   "CountryName": "Kenya"
 }, {
@@ -1041,7 +1041,7 @@ export const athletesData = [{
   "BeatsPerMinute": 106,
   "TopSpeed": 6,
   "Registered": "2017-01-30T09:22:52 -02:00",
-  "TrackProgress": 43,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ki.png",
   "CountryName": "Kiribati"
 }, {
@@ -1053,7 +1053,7 @@ export const athletesData = [{
   "BeatsPerMinute": 105,
   "TopSpeed": 5.3,
   "Registered": "2017-11-11T02:04:19 -02:00",
-  "TrackProgress": 43,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/kp.png",
   "CountryName": "Korea, Democratic PeopleS Republic of"
 }, {
@@ -1065,7 +1065,7 @@ export const athletesData = [{
   "BeatsPerMinute": 92,
   "TopSpeed": 5.6,
   "Registered": "2017-10-22T02:15:39 -03:00",
-  "TrackProgress": 22,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/kr.png",
   "CountryName": "Korea, Republic of"
 }, {
@@ -1077,7 +1077,7 @@ export const athletesData = [{
   "BeatsPerMinute": 93,
   "TopSpeed": 5.7,
   "Registered": "2017-03-25T11:25:30 -02:00",
-  "TrackProgress": 43,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/kw.png",
   "CountryName": "Kuwait"
 }, {
@@ -1089,7 +1089,7 @@ export const athletesData = [{
   "BeatsPerMinute": 98,
   "TopSpeed": 4.9,
   "Registered": "2017-02-01T04:18:19 -02:00",
-  "TrackProgress": 35,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/kg.png",
   "CountryName": "Kyrgyzstan"
 }, {
@@ -1101,7 +1101,7 @@ export const athletesData = [{
   "BeatsPerMinute": 110,
   "TopSpeed": 5,
   "Registered": "2017-10-19T11:01:10 -03:00",
-  "TrackProgress": 23,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/la.png",
   "CountryName": "Lao PeopleS Democratic Republic"
 }, {
@@ -1113,7 +1113,7 @@ export const athletesData = [{
   "BeatsPerMinute": 106,
   "TopSpeed": 4.2,
   "Registered": "2017-01-19T11:34:13 -02:00",
-  "TrackProgress": 42,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/lv.png",
   "CountryName": "Latvia"
 }, {
@@ -1125,7 +1125,7 @@ export const athletesData = [{
   "BeatsPerMinute": 90,
   "TopSpeed": 4.5,
   "Registered": "2017-07-21T06:42:59 -03:00",
-  "TrackProgress": 47,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/lb.png",
   "CountryName": "Lebanon"
 }, {
@@ -1137,7 +1137,7 @@ export const athletesData = [{
   "BeatsPerMinute": 104,
   "TopSpeed": 5,
   "Registered": "2017-08-22T09:11:37 -03:00",
-  "TrackProgress": 47,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ls.png",
   "CountryName": "Lesotho"
 }, {
@@ -1149,7 +1149,7 @@ export const athletesData = [{
   "BeatsPerMinute": 98,
   "TopSpeed": 5.4,
   "Registered": "2017-03-19T08:12:23 -02:00",
-  "TrackProgress": 27,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/lr.png",
   "CountryName": "Liberia"
 }, {
@@ -1161,7 +1161,7 @@ export const athletesData = [{
   "BeatsPerMinute": 110,
   "TopSpeed": 4.9,
   "Registered": "2017-10-20T03:40:24 -03:00",
-  "TrackProgress": 25,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/ly.png",
   "CountryName": "Libyan Arab Jamahiriya"
 }, {
@@ -1173,7 +1173,7 @@ export const athletesData = [{
   "BeatsPerMinute": 108,
   "TopSpeed": 4,
   "Registered": "2017-06-11T12:20:41 -03:00",
-  "TrackProgress": 42,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/li.png",
   "CountryName": "Liechtenstein"
 }, {
@@ -1185,7 +1185,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 4.6,
   "Registered": "2017-09-29T03:54:57 -03:00",
-  "TrackProgress": 23,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/lt.png",
   "CountryName": "Lithuania"
 }, {
@@ -1197,7 +1197,7 @@ export const athletesData = [{
   "BeatsPerMinute": 100,
   "TopSpeed": 5.3,
   "Registered": "2017-07-23T02:43:07 -03:00",
-  "TrackProgress": 39,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/lu.png",
   "CountryName": "Luxembourg"
 }, {
@@ -1209,7 +1209,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 4.6,
   "Registered": "2017-08-13T01:05:52 -03:00",
-  "TrackProgress": 28,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/mk.png",
   "CountryName": "Macedonia, The Former Yugoslav Republic of"
 }, {
@@ -1221,7 +1221,7 @@ export const athletesData = [{
   "BeatsPerMinute": 92,
   "TopSpeed": 5.3,
   "Registered": "2017-05-10T04:33:10 -03:00",
-  "TrackProgress": 34,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/mg.png",
   "CountryName": "Madagascar"
 }, {
@@ -1233,7 +1233,7 @@ export const athletesData = [{
   "BeatsPerMinute": 97,
   "TopSpeed": 5.4,
   "Registered": "2017-11-11T05:14:31 -02:00",
-  "TrackProgress": 32,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/mw.png",
   "CountryName": "Malawi"
 }, {
@@ -1245,7 +1245,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 5.4,
   "Registered": "2017-09-11T12:20:19 -03:00",
-  "TrackProgress": 47,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/my.png",
   "CountryName": "Malaysia"
 }, {
@@ -1257,7 +1257,7 @@ export const athletesData = [{
   "BeatsPerMinute": 104,
   "TopSpeed": 5.7,
   "Registered": "2017-03-16T02:00:35 -02:00",
-  "TrackProgress": 28,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/mv.png",
   "CountryName": "Maldives"
 }, {
@@ -1269,7 +1269,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 5.5,
   "Registered": "2017-02-13T11:53:15 -02:00",
-  "TrackProgress": 47,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ml.png",
   "CountryName": "Mali"
 }, {
@@ -1281,7 +1281,7 @@ export const athletesData = [{
   "BeatsPerMinute": 93,
   "TopSpeed": 5.6,
   "Registered": "2017-08-20T09:26:51 -03:00",
-  "TrackProgress": 45,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/mt.png",
   "CountryName": "Malta"
 }, {
@@ -1293,7 +1293,7 @@ export const athletesData = [{
   "BeatsPerMinute": 91,
   "TopSpeed": 5.2,
   "Registered": "2017-01-07T06:47:56 -02:00",
-  "TrackProgress": 46,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/mh.png",
   "CountryName": "Marshall Islands"
 }, {
@@ -1305,7 +1305,7 @@ export const athletesData = [{
   "BeatsPerMinute": 110,
   "TopSpeed": 5.7,
   "Registered": "2017-11-10T11:31:44 -02:00",
-  "TrackProgress": 46,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/mr.png",
   "CountryName": "Mauritania"
 }, {
@@ -1317,7 +1317,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 5.9,
   "Registered": "2017-02-02T11:42:41 -02:00",
-  "TrackProgress": 45,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/mu.png",
   "CountryName": "Mauritius"
 }, {
@@ -1329,7 +1329,7 @@ export const athletesData = [{
   "BeatsPerMinute": 94,
   "TopSpeed": 5.9,
   "Registered": "2017-10-03T09:42:15 -03:00",
-  "TrackProgress": 37,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/mx.png",
   "CountryName": "Mexico"
 }, {
@@ -1341,7 +1341,7 @@ export const athletesData = [{
   "BeatsPerMinute": 90,
   "TopSpeed": 4.5,
   "Registered": "2017-05-10T12:45:12 -03:00",
-  "TrackProgress": 24,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/fm.png",
   "CountryName": "Micronesia, Federated States of"
 }, {
@@ -1353,7 +1353,7 @@ export const athletesData = [{
   "BeatsPerMinute": 94,
   "TopSpeed": 4.3,
   "Registered": "2017-08-04T07:05:34 -03:00",
-  "TrackProgress": 41,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/md.png",
   "CountryName": "Moldova, Republic of"
 }, {
@@ -1365,7 +1365,7 @@ export const athletesData = [{
   "BeatsPerMinute": 106,
   "TopSpeed": 4.4,
   "Registered": "2017-02-20T09:42:07 -02:00",
-  "TrackProgress": 42,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/mc.png",
   "CountryName": "Monaco"
 }, {
@@ -1377,7 +1377,7 @@ export const athletesData = [{
   "BeatsPerMinute": 104,
   "TopSpeed": 5.5,
   "Registered": "2017-02-08T12:45:46 -02:00",
-  "TrackProgress": 42,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/mn.png",
   "CountryName": "Mongolia"
 }, {
@@ -1389,7 +1389,7 @@ export const athletesData = [{
   "BeatsPerMinute": 109,
   "TopSpeed": 4.7,
   "Registered": "2017-04-15T10:25:21 -03:00",
-  "TrackProgress": 25,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/ma.png",
   "CountryName": "Morocco"
 }, {
@@ -1401,7 +1401,7 @@ export const athletesData = [{
   "BeatsPerMinute": 101,
   "TopSpeed": 4.3,
   "Registered": "2017-09-17T09:41:01 -03:00",
-  "TrackProgress": 21,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/mz.png",
   "CountryName": "Mozambique"
 }, {
@@ -1413,7 +1413,7 @@ export const athletesData = [{
   "BeatsPerMinute": 104,
   "TopSpeed": 4.2,
   "Registered": "2017-09-28T11:13:00 -03:00",
-  "TrackProgress": 29,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/mm.png",
   "CountryName": "Myanmar"
 }, {
@@ -1425,7 +1425,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 5.7,
   "Registered": "2017-05-31T02:56:58 -03:00",
-  "TrackProgress": 36,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/na.png",
   "CountryName": "Namibia"
 }, {
@@ -1437,7 +1437,7 @@ export const athletesData = [{
   "BeatsPerMinute": 96,
   "TopSpeed": 5.1,
   "Registered": "2017-07-03T05:39:45 -03:00",
-  "TrackProgress": 30,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/nr.png",
   "CountryName": "Nauru"
 }, {
@@ -1449,7 +1449,7 @@ export const athletesData = [{
   "BeatsPerMinute": 90,
   "TopSpeed": 4.1,
   "Registered": "2017-09-08T01:22:14 -03:00",
-  "TrackProgress": 39,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/np.png",
   "CountryName": "Nepal"
 }, {
@@ -1461,7 +1461,7 @@ export const athletesData = [{
   "BeatsPerMinute": 104,
   "TopSpeed": 5.3,
   "Registered": "2017-01-10T07:12:44 -02:00",
-  "TrackProgress": 48,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/nl.png",
   "CountryName": "Netherlands"
 }, {
@@ -1473,7 +1473,7 @@ export const athletesData = [{
   "BeatsPerMinute": 106,
   "TopSpeed": 5.1,
   "Registered": "2017-09-16T07:05:43 -03:00",
-  "TrackProgress": 27,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/nz.png",
   "CountryName": "New Zealand"
 }, {
@@ -1485,7 +1485,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 5.4,
   "Registered": "2017-05-08T09:30:14 -03:00",
-  "TrackProgress": 28,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/ni.png",
   "CountryName": "Nicaragua"
 }, {
@@ -1497,7 +1497,7 @@ export const athletesData = [{
   "BeatsPerMinute": 103,
   "TopSpeed": 4.7,
   "Registered": "2017-04-20T09:33:53 -03:00",
-  "TrackProgress": 32,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/ne.png",
   "CountryName": "Niger"
 }, {
@@ -1509,7 +1509,7 @@ export const athletesData = [{
   "BeatsPerMinute": 97,
   "TopSpeed": 4.6,
   "Registered": "2017-06-11T03:50:43 -03:00",
-  "TrackProgress": 40,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ng.png",
   "CountryName": "Nigeria"
 }, {
@@ -1521,7 +1521,7 @@ export const athletesData = [{
   "BeatsPerMinute": 109,
   "TopSpeed": 4.4,
   "Registered": "2017-04-16T01:10:37 -03:00",
-  "TrackProgress": 25,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/nu.png",
   "CountryName": "Niue"
 }, {
@@ -1533,7 +1533,7 @@ export const athletesData = [{
   "BeatsPerMinute": 93,
   "TopSpeed": 5.6,
   "Registered": "2017-03-22T08:55:46 -02:00",
-  "TrackProgress": 49,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/no.png",
   "CountryName": "Norway"
 }, {
@@ -1545,7 +1545,7 @@ export const athletesData = [{
   "BeatsPerMinute": 105,
   "TopSpeed": 5.3,
   "Registered": "2017-02-03T04:36:54 -02:00",
-  "TrackProgress": 28,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/om.png",
   "CountryName": "Oman"
 }, {
@@ -1557,7 +1557,7 @@ export const athletesData = [{
   "BeatsPerMinute": 103,
   "TopSpeed": 4.2,
   "Registered": "2017-04-30T02:34:29 -03:00",
-  "TrackProgress": 22,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/pk.png",
   "CountryName": "Pakistan"
 }, {
@@ -1569,7 +1569,7 @@ export const athletesData = [{
   "BeatsPerMinute": 93,
   "TopSpeed": 5.2,
   "Registered": "2017-03-02T05:01:02 -02:00",
-  "TrackProgress": 38,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/pw.png",
   "CountryName": "Palau"
 }, {
@@ -1581,7 +1581,7 @@ export const athletesData = [{
   "BeatsPerMinute": 97,
   "TopSpeed": 5.6,
   "Registered": "2017-04-21T04:06:34 -03:00",
-  "TrackProgress": 31,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/pa.png",
   "CountryName": "Panama"
 }, {
@@ -1593,7 +1593,7 @@ export const athletesData = [{
   "BeatsPerMinute": 93,
   "TopSpeed": 5.7,
   "Registered": "2017-03-01T12:21:24 -02:00",
-  "TrackProgress": 34,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/pg.png",
   "CountryName": "Papua New Guinea"
 }, {
@@ -1605,7 +1605,7 @@ export const athletesData = [{
   "BeatsPerMinute": 107,
   "TopSpeed": 4.1,
   "Registered": "2017-08-05T10:54:56 -03:00",
-  "TrackProgress": 37,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/py.png",
   "CountryName": "Paraguay"
 }, {
@@ -1617,7 +1617,7 @@ export const athletesData = [{
   "BeatsPerMinute": 106,
   "TopSpeed": 5.7,
   "Registered": "2017-01-24T01:00:15 -02:00",
-  "TrackProgress": 48,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/pe.png",
   "CountryName": "Peru"
 }, {
@@ -1629,7 +1629,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 4.2,
   "Registered": "2017-06-17T12:34:29 -03:00",
-  "TrackProgress": 50,
+  "TrackProgress": 5,
   "CountryFlag": "assets/images/grid/flags/ph.png",
   "CountryName": "Philippines"
 }, {
@@ -1641,7 +1641,7 @@ export const athletesData = [{
   "BeatsPerMinute": 102,
   "TopSpeed": 5.8,
   "Registered": "2017-04-12T04:16:56 -03:00",
-  "TrackProgress": 31,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/pl.png",
   "CountryName": "Poland"
 }, {
@@ -1653,7 +1653,7 @@ export const athletesData = [{
   "BeatsPerMinute": 101,
   "TopSpeed": 4.4,
   "Registered": "2017-07-25T09:23:24 -03:00",
-  "TrackProgress": 37,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/pt.png",
   "CountryName": "Portugal"
 }, {
@@ -1665,7 +1665,7 @@ export const athletesData = [{
   "BeatsPerMinute": 107,
   "TopSpeed": 5.1,
   "Registered": "2017-08-26T08:21:22 -03:00",
-  "TrackProgress": 43,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ro.png",
   "CountryName": "Romania"
 }, {
@@ -1677,7 +1677,7 @@ export const athletesData = [{
   "BeatsPerMinute": 92,
   "TopSpeed": 5.5,
   "Registered": "2017-05-14T12:30:08 -03:00",
-  "TrackProgress": 30,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/ru.png",
   "CountryName": "Russian Federation"
 }, {
@@ -1689,7 +1689,7 @@ export const athletesData = [{
   "BeatsPerMinute": 100,
   "TopSpeed": 5,
   "Registered": "2017-04-24T01:20:34 -03:00",
-  "TrackProgress": 30,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/rw.png",
   "CountryName": "RWANDA"
 }, {
@@ -1701,7 +1701,7 @@ export const athletesData = [{
   "BeatsPerMinute": 102,
   "TopSpeed": 4.5,
   "Registered": "2017-01-20T02:38:39 -02:00",
-  "TrackProgress": 27,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/kn.png",
   "CountryName": "Saint Kitts and Nevis"
 }, {
@@ -1713,7 +1713,7 @@ export const athletesData = [{
   "BeatsPerMinute": 104,
   "TopSpeed": 5.3,
   "Registered": "2017-03-31T07:15:46 -03:00",
-  "TrackProgress": 45,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/lc.png",
   "CountryName": "Saint Lucia"
 }, {
@@ -1725,7 +1725,7 @@ export const athletesData = [{
   "BeatsPerMinute": 90,
   "TopSpeed": 4.7,
   "Registered": "2017-03-30T12:34:24 -03:00",
-  "TrackProgress": 27,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/vc.png",
   "CountryName": "Saint Vincent and the Grenadines"
 }, {
@@ -1737,7 +1737,7 @@ export const athletesData = [{
   "BeatsPerMinute": 101,
   "TopSpeed": 4.1,
   "Registered": "2017-03-01T07:51:17 -02:00",
-  "TrackProgress": 28,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/ws.png",
   "CountryName": "Samoa"
 }, {
@@ -1749,7 +1749,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 5.8,
   "Registered": "2017-05-10T02:18:02 -03:00",
-  "TrackProgress": 26,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/sm.png",
   "CountryName": "San Marino"
 }, {
@@ -1761,7 +1761,7 @@ export const athletesData = [{
   "BeatsPerMinute": 103,
   "TopSpeed": 5.7,
   "Registered": "2017-03-04T01:58:52 -02:00",
-  "TrackProgress": 20,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/st.png",
   "CountryName": "Sao Tome and Principe"
 }, {
@@ -1773,7 +1773,7 @@ export const athletesData = [{
   "BeatsPerMinute": 97,
   "TopSpeed": 4.5,
   "Registered": "2017-04-14T11:48:28 -03:00",
-  "TrackProgress": 24,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/sa.png",
   "CountryName": "Saudi Arabia"
 }, {
@@ -1785,7 +1785,7 @@ export const athletesData = [{
   "BeatsPerMinute": 100,
   "TopSpeed": 4.7,
   "Registered": "2017-01-30T03:23:36 -02:00",
-  "TrackProgress": 40,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/sn.png",
   "CountryName": "Senegal"
 }, {
@@ -1797,7 +1797,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 4.7,
   "Registered": "2017-01-04T03:04:05 -02:00",
-  "TrackProgress": 25,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/sc.png",
   "CountryName": "Seychelles"
 }, {
@@ -1809,7 +1809,7 @@ export const athletesData = [{
   "BeatsPerMinute": 99,
   "TopSpeed": 5.8,
   "Registered": "2017-05-23T05:24:38 -03:00",
-  "TrackProgress": 40,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/sl.png",
   "CountryName": "Sierra Leone"
 }, {
@@ -1821,7 +1821,7 @@ export const athletesData = [{
   "BeatsPerMinute": 110,
   "TopSpeed": 6,
   "Registered": "2017-11-02T02:17:43 -02:00",
-  "TrackProgress": 25,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/sg.png",
   "CountryName": "Singapore"
 }, {
@@ -1833,7 +1833,7 @@ export const athletesData = [{
   "BeatsPerMinute": 97,
   "TopSpeed": 5.4,
   "Registered": "2017-04-19T11:43:38 -03:00",
-  "TrackProgress": 28,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/si.png",
   "CountryName": "Slovenia"
 }, {
@@ -1845,7 +1845,7 @@ export const athletesData = [{
   "BeatsPerMinute": 110,
   "TopSpeed": 4.8,
   "Registered": "2017-04-07T09:53:13 -03:00",
-  "TrackProgress": 41,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/sb.png",
   "CountryName": "Solomon Islands"
 }, {
@@ -1857,7 +1857,7 @@ export const athletesData = [{
   "BeatsPerMinute": 93,
   "TopSpeed": 4.1,
   "Registered": "2017-05-03T02:40:05 -03:00",
-  "TrackProgress": 50,
+  "TrackProgress": 5,
   "CountryFlag": "assets/images/grid/flags/so.png",
   "CountryName": "Somalia"
 }, {
@@ -1869,7 +1869,7 @@ export const athletesData = [{
   "BeatsPerMinute": 105,
   "TopSpeed": 5,
   "Registered": "2017-02-13T05:39:15 -02:00",
-  "TrackProgress": 43,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/za.png",
   "CountryName": "South Africa"
 }, {
@@ -1881,7 +1881,7 @@ export const athletesData = [{
   "BeatsPerMinute": 107,
   "TopSpeed": 5.4,
   "Registered": "2017-01-31T12:07:48 -02:00",
-  "TrackProgress": 21,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/es.png",
   "CountryName": "Spain"
 }, {
@@ -1893,7 +1893,7 @@ export const athletesData = [{
   "BeatsPerMinute": 101,
   "TopSpeed": 5.1,
   "Registered": "2017-01-05T10:12:42 -02:00",
-  "TrackProgress": 34,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/lk.png",
   "CountryName": "Sri Lanka"
 }, {
@@ -1905,7 +1905,7 @@ export const athletesData = [{
   "BeatsPerMinute": 94,
   "TopSpeed": 4.3,
   "Registered": "2017-03-10T07:36:56 -02:00",
-  "TrackProgress": 32,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/sd.png",
   "CountryName": "Sudan"
 }, {
@@ -1917,7 +1917,7 @@ export const athletesData = [{
   "BeatsPerMinute": 109,
   "TopSpeed": 5.9,
   "Registered": "2017-07-12T09:01:11 -03:00",
-  "TrackProgress": 20,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/sz.png",
   "CountryName": "Swaziland"
 }, {
@@ -1929,7 +1929,7 @@ export const athletesData = [{
   "BeatsPerMinute": 98,
   "TopSpeed": 4.1,
   "Registered": "2017-04-10T11:39:46 -03:00",
-  "TrackProgress": 29,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/se.png",
   "CountryName": "Sweden"
 }, {
@@ -1941,7 +1941,7 @@ export const athletesData = [{
   "BeatsPerMinute": 100,
   "TopSpeed": 5.9,
   "Registered": "2017-01-04T02:54:53 -02:00",
-  "TrackProgress": 38,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/ch.png",
   "CountryName": "Switzerland"
 }, {
@@ -1953,7 +1953,7 @@ export const athletesData = [{
   "BeatsPerMinute": 94,
   "TopSpeed": 4.2,
   "Registered": "2017-03-19T10:20:51 -02:00",
-  "TrackProgress": 27,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/sy.png",
   "CountryName": "Syrian Arab Republic"
 }, {
@@ -1965,7 +1965,7 @@ export const athletesData = [{
   "BeatsPerMinute": 106,
   "TopSpeed": 5.3,
   "Registered": "2017-11-04T11:09:26 -02:00",
-  "TrackProgress": 45,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/tw.png",
   "CountryName": "Taiwan, Province of China"
 }, {
@@ -1977,7 +1977,7 @@ export const athletesData = [{
   "BeatsPerMinute": 101,
   "TopSpeed": 5.5,
   "Registered": "2017-03-06T09:21:58 -02:00",
-  "TrackProgress": 20,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/tj.png",
   "CountryName": "Tajikistan"
 }, {
@@ -1989,7 +1989,7 @@ export const athletesData = [{
   "BeatsPerMinute": 110,
   "TopSpeed": 5.7,
   "Registered": "2017-07-30T01:33:14 -03:00",
-  "TrackProgress": 46,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/tz.png",
   "CountryName": "Tanzania, United Republic of"
 }, {
@@ -2001,7 +2001,7 @@ export const athletesData = [{
   "BeatsPerMinute": 105,
   "TopSpeed": 5.5,
   "Registered": "2017-01-11T12:52:28 -02:00",
-  "TrackProgress": 32,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/th.png",
   "CountryName": "Thailand"
 }, {
@@ -2013,7 +2013,7 @@ export const athletesData = [{
   "BeatsPerMinute": 102,
   "TopSpeed": 4.2,
   "Registered": "2017-10-09T11:32:13 -03:00",
-  "TrackProgress": 33,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/tl.png",
   "CountryName": "Timor-Leste"
 }, {
@@ -2025,7 +2025,7 @@ export const athletesData = [{
   "BeatsPerMinute": 104,
   "TopSpeed": 5.2,
   "Registered": "2017-06-10T04:11:01 -03:00",
-  "TrackProgress": 39,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/tg.png",
   "CountryName": "Togo"
 }, {
@@ -2037,7 +2037,7 @@ export const athletesData = [{
   "BeatsPerMinute": 103,
   "TopSpeed": 5.2,
   "Registered": "2017-07-13T02:23:56 -03:00",
-  "TrackProgress": 29,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/to.png",
   "CountryName": "Tonga"
 }, {
@@ -2049,7 +2049,7 @@ export const athletesData = [{
   "BeatsPerMinute": 108,
   "TopSpeed": 6,
   "Registered": "2017-03-18T06:35:44 -02:00",
-  "TrackProgress": 41,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/tt.png",
   "CountryName": "Trinidad and Tobago"
 }, {
@@ -2061,7 +2061,7 @@ export const athletesData = [{
   "BeatsPerMinute": 108,
   "TopSpeed": 5.2,
   "Registered": "2017-09-19T05:47:21 -03:00",
-  "TrackProgress": 20,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/tn.png",
   "CountryName": "Tunisia"
 }, {
@@ -2073,7 +2073,7 @@ export const athletesData = [{
   "BeatsPerMinute": 96,
   "TopSpeed": 4.6,
   "Registered": "2017-07-20T11:45:52 -03:00",
-  "TrackProgress": 22,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/tr.png",
   "CountryName": "Turkey"
 }, {
@@ -2085,7 +2085,7 @@ export const athletesData = [{
   "BeatsPerMinute": 90,
   "TopSpeed": 5.5,
   "Registered": "2017-02-16T07:11:52 -02:00",
-  "TrackProgress": 43,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/tm.png",
   "CountryName": "Turkmenistan"
 }, {
@@ -2097,7 +2097,7 @@ export const athletesData = [{
   "BeatsPerMinute": 104,
   "TopSpeed": 4.5,
   "Registered": "2017-02-18T05:32:55 -02:00",
-  "TrackProgress": 32,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/tv.png",
   "CountryName": "Tuvalu"
 }, {
@@ -2109,7 +2109,7 @@ export const athletesData = [{
   "BeatsPerMinute": 102,
   "TopSpeed": 5.4,
   "Registered": "2017-02-13T05:23:49 -02:00",
-  "TrackProgress": 36,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/ug.png",
   "CountryName": "Uganda"
 }, {
@@ -2121,7 +2121,7 @@ export const athletesData = [{
   "BeatsPerMinute": 94,
   "TopSpeed": 4.1,
   "Registered": "2017-02-13T05:03:04 -02:00",
-  "TrackProgress": 40,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ua.png",
   "CountryName": "Ukraine"
 }, {
@@ -2133,7 +2133,7 @@ export const athletesData = [{
   "BeatsPerMinute": 94,
   "TopSpeed": 5.1,
   "Registered": "2017-07-21T04:22:18 -03:00",
-  "TrackProgress": 42,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/ae.png",
   "CountryName": "United Arab Emirates"
 }, {
@@ -2145,7 +2145,7 @@ export const athletesData = [{
   "BeatsPerMinute": 98,
   "TopSpeed": 4,
   "Registered": "2017-04-03T02:18:46 -03:00",
-  "TrackProgress": 40,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/gb.png",
   "CountryName": "United Kingdom"
 }, {
@@ -2157,7 +2157,7 @@ export const athletesData = [{
   "BeatsPerMinute": 102,
   "TopSpeed": 5.1,
   "Registered": "2017-06-21T06:45:54 -03:00",
-  "TrackProgress": 31,
+  "TrackProgress": 3,
   "CountryFlag": "assets/images/grid/flags/uz.png",
   "CountryName": "Uruguay"
 }, {
@@ -2169,7 +2169,7 @@ export const athletesData = [{
   "BeatsPerMinute": 101,
   "TopSpeed": 5.2,
   "Registered": "2017-01-05T07:28:11 -02:00",
-  "TrackProgress": 44,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/uz.png",
   "CountryName": "Uzbekistan"
 }, {
@@ -2181,7 +2181,7 @@ export const athletesData = [{
   "BeatsPerMinute": 91,
   "TopSpeed": 6,
   "Registered": "2017-10-04T02:46:46 -03:00",
-  "TrackProgress": 22,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/vu.png",
   "CountryName": "Vanuatu"
 }, {
@@ -2193,7 +2193,7 @@ export const athletesData = [{
   "BeatsPerMinute": 91,
   "TopSpeed": 4.5,
   "Registered": "2017-08-19T03:02:33 -03:00",
-  "TrackProgress": 22,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/ve.png",
   "CountryName": "Venezuela"
 }, {
@@ -2205,7 +2205,7 @@ export const athletesData = [{
   "BeatsPerMinute": 96,
   "TopSpeed": 4.7,
   "Registered": "2017-09-22T11:49:02 -03:00",
-  "TrackProgress": 41,
+  "TrackProgress": 4,
   "CountryFlag": "assets/images/grid/flags/eh.png",
   "CountryName": "Western Sahara"
 }, {
@@ -2217,7 +2217,7 @@ export const athletesData = [{
   "BeatsPerMinute": 107,
   "TopSpeed": 5.1,
   "Registered": "2017-01-05T11:41:20 -02:00",
-  "TrackProgress": 24,
+  "TrackProgress": 2,
   "CountryFlag": "assets/images/grid/flags/ye.png",
   "CountryName": "Yemen"
 }];
