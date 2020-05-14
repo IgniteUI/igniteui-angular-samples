@@ -2,7 +2,7 @@
 // @import '~minireset.css/minireset';
 @import '~igniteui-angular/lib/core/styles/themes/index';
 @include igx-core();
-@include igx-theme($default-palette);
+@include igx-theme($default-palette, $legacy-support: true);
 
 @mixin scrollbar-love($scrollbar-color: null) {
     $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
@@ -120,7 +120,8 @@ $green-palette: igx-palette($primary: #09f,$secondary: #72da67, $surface: #333);
 @include scrollbar-love();
 
 .fin-dark-theme {
-    @include igx-dark-theme($green-palette);
+    @include igx-dark-theme($green-palette, $legacy-support: true);
+
     $grays-btn-color: igx-color($green-palette, 'grays', 800);
     @include scrollbar-love(lighten($grays-btn-color, 20%));
 
