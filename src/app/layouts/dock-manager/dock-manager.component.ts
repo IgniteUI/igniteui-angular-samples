@@ -5,6 +5,7 @@ import { IgcDockManagerLayout,
 
 @Component({
     selector: "dock-manager",
+    styleUrls: ["./dock-manager.component.scss"],
     templateUrl: "./dock-manager.component.html"
 })
 export class DockManagerComponent {
@@ -14,9 +15,21 @@ export class DockManagerComponent {
             orientation: IgcSplitPaneOrientation.horizontal,
             panes: [
                 {
-                    type: IgcDockManagerPaneType.contentPane,
-                    contentId: "content1",
-                    header: "Content Pane 1"
+                    type: IgcDockManagerPaneType.splitPane,
+                    orientation: IgcSplitPaneOrientation.vertical,
+                    panes: [
+                        {
+                            type: IgcDockManagerPaneType.contentPane,
+                            contentId: "content1",
+                            header: "Content Pane 1"
+                        },
+                        {
+                            type: IgcDockManagerPaneType.contentPane,
+                            contentId: "content2",
+                            header: "Unpinned Pane 1",
+                            isPinned: false
+                        }
+                    ]
                 },
                 {
                     type: IgcDockManagerPaneType.splitPane,
@@ -36,12 +49,12 @@ export class DockManagerComponent {
                                             {
                                                 type: IgcDockManagerPaneType.contentPane,
                                                 header: "Document 1",
-                                                contentId: "content2"
+                                                contentId: "content3"
                                             },
                                             {
                                                 type: IgcDockManagerPaneType.contentPane,
                                                 header: "Document 2",
-                                                contentId: "content3"
+                                                contentId: "content4"
                                             }
                                         ]
                                     }
@@ -50,24 +63,36 @@ export class DockManagerComponent {
                         },
                         {
                             type: IgcDockManagerPaneType.contentPane,
-                            contentId: "content7",
-                            header: "Unpinned Pane",
+                            contentId: "content5",
+                            header: "Unpinned Pane 2",
                             isPinned: false
                         }
                     ]
                 },
                 {
-                    type: IgcDockManagerPaneType.tabGroupPane,
+                    type: IgcDockManagerPaneType.splitPane,
+                    orientation: IgcSplitPaneOrientation.vertical,
                     panes: [
                         {
-                            type: IgcDockManagerPaneType.contentPane,
-                            contentId: "content4",
-                            header: "Tab 1"
+                            type: IgcDockManagerPaneType.tabGroupPane,
+                            size: 200,
+                            panes: [
+                                {
+                                    type: IgcDockManagerPaneType.contentPane,
+                                    contentId: "content6",
+                                    header: "Tab 1"
+                                },
+                                {
+                                    type: IgcDockManagerPaneType.contentPane,
+                                    contentId: "content7",
+                                    header: "Tab 2"
+                                }
+                            ]
                         },
                         {
                             type: IgcDockManagerPaneType.contentPane,
-                            contentId: "content5",
-                            header: "Tab 2"
+                            contentId: "content8",
+                            header: "Content Pane 2"
                         }
                     ]
                 }
@@ -83,7 +108,7 @@ export class DockManagerComponent {
                 panes: [
                     {
                         type: IgcDockManagerPaneType.contentPane,
-                        contentId: "content6",
+                        contentId: "content9",
                         header: "Floating Pane"
                     }
                 ]
