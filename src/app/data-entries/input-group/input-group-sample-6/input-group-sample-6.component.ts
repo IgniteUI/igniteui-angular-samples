@@ -1,4 +1,4 @@
-import { Component, QueryList, ViewChildren } from "@angular/core";
+import { Component } from "@angular/core";
 import { BaseInputGroupSampleComponent } from "../base-input.component";
 @Component({
     selector: "app-input-group-sample-6",

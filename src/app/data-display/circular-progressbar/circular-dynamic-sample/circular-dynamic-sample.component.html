@@ -1,0 +1,28 @@
+<div class="wrapper">
+    <div class="sample-content">
+        <igx-circular-bar
+        [value]="currentValue"
+        [max]="100"
+        [animate]="true"
+        class="custom-size"
+        >
+            <ng-template igxProgressBarGradient let-id>
+                <svg:linearGradient [id]="id" gradientTransform="rotate(90)">
+                    <stop offset="0%"   stop-color="#ff9a40"/>
+                    <stop offset="50%" stop-color="#1eccd4"/>
+                    <stop offset="100%" stop-color="#ff0079"/>
+                </svg:linearGradient>
+            </ng-template>
+        </igx-circular-bar>
+
+        <div class="button-container">
+            <button igxButton="icon" (click)="decrementProgress()">
+                <igx-icon fontSet="material">remove</igx-icon>
+            </button>
+            <button igxButton="icon" (click)="incrementProgress()">
+                <igx-icon fontSet="material">add</igx-icon>
+            </button>
+        </div>
+    </div>
+</div>
+
