@@ -48,7 +48,7 @@ export class RemoteService {
                    loadState?: IForOfState): Promise<any> {
 
         return new Promise((res) => {
-            const startIndex = virtualizationArgs.startIndex;
+            const startIndex = this._cachedData.length ? this._cachedData.length - 1 : 0;
             const endIndex = virtualizationArgs.chunkSize + startIndex;
             let endOfData = false;
 
@@ -60,6 +60,11 @@ export class RemoteService {
                     res({data: data, endOfData: endOfData});
                 });
             } else if (loadState) {
+                const diff = loadState.startIndex - (this._cachedData.length);
+                if (diff > 0) {
+                    loadState.startIndex = this._cachedData.length;
+                    loadState.chunkSize += diff;
+                }
                 this._http.get(this._buildDataUrl(loadState, sortingArgs)).pipe(take(1)).subscribe((data: any) => {
                     this._updateData(data, loadState.startIndex);
                     let returnData = [];
@@ -79,7 +84,7 @@ export class RemoteService {
                 if (endIndex > this._cachedData.length) {
                     data = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
                 } else {
-                    data = this._cachedData.slice(startIndex, endIndex);
+                    data = this._cachedData.slice(virtualizationArgs.startIndex, endIndex);
                     this._prevRequestChunk = virtualizationArgs.chunkSize;
                 }
                 this._data.next(data);
