@@ -134,12 +134,20 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     @HostListener("keyup.tab", ["$event"])
     @HostListener("keyup.shift.tab", ["$event"])
     public onTab(evt) {
+      if (this.grid.crudService.cell) {
+          return;
+      }
+
       const gridSection = evt.srcElement.className;
       this.changeKeyboardCollection(gridSection);
     }
 
     @HostListener("click", ["$event"])
     public onClick() {
+      if (this.grid.crudService.cell) {
+          return;
+      }
+
       const gridSection = document.activeElement.className;
       this.changeKeyboardCollection(gridSection);
     }
@@ -267,6 +275,10 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     public expandChange(evt) {
+        if (!this._keyboardHandler.collection.length) {
+            return;
+        }
+
         this._keyboardHandler.selectItem(3);
     }
 
