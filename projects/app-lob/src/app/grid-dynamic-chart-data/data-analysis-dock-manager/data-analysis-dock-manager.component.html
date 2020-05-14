@@ -1,4 +1,4 @@
-<igc-dockmanager class="light-theme" [layout]="docLayout" style="width: '100%'; height: 100%; padding: 2px">
+<igc-dockmanager #dock class="light-theme" [layout]="docLayout" style="width: '100%'; height: 100%; padding: 2px">
     <div slot="grid" igxOverlayOutlet  style="height: 98.5%;">
         <igx-grid  igxPreventDocumentScroll #grid chartIntegration conditionalFormatting [formatter]="currentFormatter"
             [chartData]="chartData" primaryKey='ID' displayDensity="compact" [data]="data">
@@ -102,22 +102,28 @@
             <igx-column field='Settlement' [width]="'150px'" [editable]="true"></igx-column>
         </igx-grid>
     </div>
-    <div slot="chart-types-content"  style="overflow-y: auto;">
+    <div slot="chart-types-content"  style="overflow-y: auto; height: 98.5%;">
         <div class="chart-config-area">
             <div *ngFor="let chartType of chartTypes">
                 <div *ngIf="(availableCharts |filterType:chartType).length > 0" class="wrapper">
                     <div>{{chartType | titlecase}} Chart</div>
                     <div class="types-section">
                         <div *ngFor="let chart of (availableCharts | filterType: chartType)"
-                            (click)="createChart(chart, null)" 
-                            [ngClass]="{'selected': chart === currentChartType}"
-                            style="width: 64px; margin-right: 7px; cursor: pointer;">
+                            (click)="createChart(chart)" 
+                            [ngClass]="{'selected': currentChartTypes[chart]}"
+                            style="width: 60px; margin-right: 20px; cursor: pointer;">
                             <img src="assets/images/svg/charts/{{chart}}.svg" />
                         </div>
                     </div>
                     <igx-divider></igx-divider>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div  *ngFor="let chart of availableCharts" slot="{{chart}}"  >
+        <div style="width: 400px; height: 270px; padding: 5px"> 
+            <div id={{chart}} chartHost ></div>
         </div>
     </div>
 </igc-dockmanager>

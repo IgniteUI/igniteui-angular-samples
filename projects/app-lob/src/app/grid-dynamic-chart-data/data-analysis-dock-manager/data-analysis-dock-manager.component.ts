@@ -1,6 +1,6 @@
 // tslint:disable: max-line-length
-import { ChangeDetectorRef, Component, HostListener, OnInit, ViewChild } from "@angular/core";
-import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPaneOrientation } from "dockmanager-webcomponent";
+import { ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild, ViewChildren, QueryList } from "@angular/core";
+import { IgcContentPane, IgcDockManagerLayout, IgcDockManagerPaneType, IgcDockManagerPoint, IgcSplitPane, IgcSplitPaneOrientation } from "dockmanager-webcomponent";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxButtonDirective, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { noop, Subject } from "rxjs";
 import { debounceTime, takeUntil, tap } from "rxjs/operators";
@@ -8,14 +8,19 @@ import { FinancialData } from "../../services/financialData";
 import { ChartHostDirective, ChartIntegrationDirective, IDeterminedChartTypesArgs } from "../directives/chart-integration/chart-integration.directive";
 import { CHART_TYPE } from "../directives/chart-integration/chart-types";
 import { ConditionalFormattingDirective } from "../directives/conditional-formatting/conditional-formatting.directive";
+import { FloatingPanesService } from "./floating-panes.service";
 @Component({
   selector: "app-data-analysis-dock-manager",
   templateUrl: "./data-analysis-dock-manager.component.html",
-  styleUrls: ["./data-analysis-dock-manager.component.scss"]
+  styleUrls: ["./data-analysis-dock-manager.component.scss"],
+  providers: [FloatingPanesService]
 })
 export class DataAnalysisDockManagerComponent implements OnInit {
 
     public data;
+    @ViewChild("dock", {read: ElementRef})
+
+    public dockManager: ElementRef<HTMLIgcDockmanagerElement>;
     @ViewChild(ConditionalFormattingDirective, { read: ConditionalFormattingDirective, static: true })
     public formatting: ConditionalFormattingDirective;
 
@@ -24,9 +29,6 @@ export class DataAnalysisDockManagerComponent implements OnInit {
 
     @ViewChild("grid", { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
-
-    @ViewChild("chart", { read: ChartHostDirective, static: true })
-    public chartHost: ChartHostDirective;
 
     @ViewChild(IgxOverlayOutletDirective, { static: true })
     public outlet: IgxOverlayOutletDirective;
@@ -37,11 +39,14 @@ export class DataAnalysisDockManagerComponent implements OnInit {
     @ViewChild(IgxTabsComponent, { static: true })
     public tabs: IgxTabsComponent;
 
+    @ViewChildren(ChartHostDirective)
+    public slots: QueryList<ChartHostDirective>;
+
     public chartData = [];
     public contextmenu = false;
     public contextmenuX = 0;
     public contextmenuY = 0;
-    public currentChartType: CHART_TYPE = CHART_TYPE.COLUMN_GROUPED;
+    public currentChartTypes = {};
     public range;
     public currentFormatter;
 
@@ -57,15 +62,11 @@ export class DataAnalysisDockManagerComponent implements OnInit {
     private rowIndex;
     private colIndex;
 
-    constructor(private cdr: ChangeDetectorRef) {
+    constructor(private cdr: ChangeDetectorRef, private renderer: Renderer2, private paneService: FloatingPanesService) {
     }
 
     public ngOnInit() {
         (this.tabs.headerContainer.nativeElement as HTMLElement).onpointerdown = event => event.stopPropagation();
-
-        this.contextDialog.onOpen.subscribe(() => {
-            this.currentChartType = CHART_TYPE.COLUMN_GROUPED;
-        });
 
         this.data = new FinancialData().generateData(1000);
 
@@ -83,25 +84,33 @@ export class DataAnalysisDockManagerComponent implements OnInit {
     }
 
     public ngAfterViewInit(): void {
-        this.availableCharts = this.chartIntegration.getAllChartTypes();
-        this.cdr.detectChanges();
-        this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
-                    console.log(args);
-        });
-        this.formatting.onFormattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
-        this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.range = undefined);
-        this.grid.onDataPreLoad.pipe(
+         this.availableCharts = this.chartIntegration.getAllChartTypes();
+
+         this.cdr.detectChanges();
+        // this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
+
+        // });
+         this.formatting.onFormattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
+         this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.range = undefined);
+         this.grid.onDataPreLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             takeUntil(this.destroy$))
             .subscribe(() => this.range && !this.contextmenu ? this.renderButton() : noop());
-        this.grid.parentVirtDir.onChunkLoad.pipe(
+         this.grid.parentVirtDir.onChunkLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             takeUntil(this.destroy$))
             .subscribe(() => {
                 if (this.range) { this.renderButton(); }
             });
+
+         setTimeout(() => {
+                const x = this.dockManager.nativeElement.getBoundingClientRect().width / 2;
+                const y = this.dockManager.nativeElement.getBoundingClientRect().height / 2;
+
+                this.paneService.initialPosition = {x, y};
+            }, 1000);
     }
 
     public ngOnDestroy(): void {
@@ -147,7 +156,8 @@ export class DataAnalysisDockManagerComponent implements OnInit {
                 size: 20
             }
         ]
-        }
+        },
+        floatingPanes: []
       };
 
     public toggleContextDialog(btn) {
@@ -174,12 +184,34 @@ export class DataAnalysisDockManagerComponent implements OnInit {
 
     public formattersNames = [];
 
-    public createChart(type: CHART_TYPE, host: ChartHostDirective) {
-        const chartHost = host;
+    public createChart(type: CHART_TYPE) {
+        const floatingPane: IgcSplitPane = {
+            type: IgcDockManagerPaneType.splitPane,
+            orientation: IgcSplitPaneOrientation.horizontal,
+            panes: [
+                {
+                    type: IgcDockManagerPaneType.contentPane,
+                    header: type,
+                    contentId: type
+                }
+            ]
+        };
+        const splitPane: IgcSplitPane = {
+            type: IgcDockManagerPaneType.splitPane,
+            orientation: IgcSplitPaneOrientation.horizontal,
+            floatingWidth: 400,
+            floatingHeight: 300,
+            floatingLocation: { x: 750, y: 350 },
+            panes: [floatingPane]
+        };
 
-        this.currentChartType = type;
-        chartHost.viewContainerRef.clear();
-        this.chartIntegration.chartFactory(type, chartHost.viewContainerRef);
+        this.paneService.appendChartPane(splitPane);
+        const chartHost = this.slots.find(s => s.viewContainerRef.element.nativeElement.id === type);
+        const chart = this.chartIntegration.chartFactory(type, chartHost.viewContainerRef);
+        this.docLayout.floatingPanes.push(splitPane);
+        this.docLayout = {...this.docLayout};
+        this.currentChartTypes[type] = chart;
+        this.cdr.detectChanges();
     }
 
     public disableContextMenu() {

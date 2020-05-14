@@ -4,7 +4,7 @@ import { IgcDockManagerPoint, IgcSplitPane } from "dockmanager-webcomponent/dist
 import { DataAnalysisDockManagerComponent } from "./data-analysis-dock-manager.component";
 
 @Injectable({
-  providedIn: DataAnalysisDockManagerComponent
+  providedIn: 'root'
 })
 export class FloatingPanesService {
   public set initialPosition(point: IgcDockManagerPoint) {
@@ -15,7 +15,7 @@ export class FloatingPanesService {
       return this._initialPosition;
   }
 
-  public floatingPanes: IgcSplitPane[];
+  public floatingPanes: IgcSplitPane[] = [];
 
   private _initialPosition: IgcDockManagerPoint;
   constructor() { }
@@ -23,8 +23,8 @@ export class FloatingPanesService {
   public appendChartPane(pane: IgcSplitPane) {
       pane.floatingLocation = this.initialPosition;
       this.floatingPanes.push(pane);
-      this.initialPosition.x++;
-      this.initialPosition.y--;
+      this.initialPosition.x = this.initialPosition.x + 10 ;
+      this.initialPosition.y = this.initialPosition.y + 10;
   }
 
   public removeChartPane(pane: IgcSplitPane) {
@@ -32,14 +32,14 @@ export class FloatingPanesService {
     this.floatingPanes = this.floatingPanes.slice(index, index + 1);
     if (index !== this.floatingPanes.length - 1) {
         this.floatingPanes.filter((p, i) => i >= index).forEach(p => {
-            p.floatingLocation.x--;
-            p.floatingLocation.y++;
+            p.floatingLocation.x = this.initialPosition.x - 10 ;
+            p.floatingLocation.y = this.initialPosition.y - 10 ;
         });
     }
 
     const lastPane = this.floatingPanes[this.floatingPanes.length - 1];
-    this.initialPosition.x = lastPane.floatingLocation.x + 1;
-    this.initialPosition.y = lastPane.floatingLocation.y - 1;
+    this.initialPosition.x = lastPane.floatingLocation.x + 10;
+    this.initialPosition.y = lastPane.floatingLocation.y + 10;
   }
 
 }

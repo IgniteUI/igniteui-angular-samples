@@ -46,6 +46,7 @@
 :host ::ng-deep {
     .chart-config-area {
         overflow-y: auto;
+        padding-left: 2px;
     }
     .wrapper {
         padding: 3px;
@@ -122,6 +123,7 @@
 
 .selected {
     opacity: .5;
+    pointer-events: none;
 }
 
 .disableButton {

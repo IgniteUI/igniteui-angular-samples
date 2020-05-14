@@ -224,7 +224,7 @@ export class ChartIntegrationDirective {
         });
     }
 
-    public chartFactory(type: CHART_TYPE, viewContainerRef: ViewContainerRef) {
+    public chartFactory(type: CHART_TYPE, viewContainerRef?: ViewContainerRef) {
         if (!this.chartTypesAvailability.get(type)) {
             return;
         }
@@ -251,6 +251,7 @@ export class ChartIntegrationDirective {
         }
         const chart = initializer.initChart(componentRef.instance, options);
         this.onChartCreationDone.emit(chart);
+        return chart;
     }
 
     private getInitializer(chartType: CHART_TYPE, componentClassRef): ChartInitializer {
