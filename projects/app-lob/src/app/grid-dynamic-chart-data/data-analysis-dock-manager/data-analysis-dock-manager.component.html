@@ -1,7 +1,7 @@
-<igc-dockmanager>
-    <div igxOverlayOutlet class="grid-chart-contextmenu-wrapper">
-        <igx-grid igxPreventDocumentScroll #grid chartIntegration  conditionalFormatting [formatter]="currentFormatter" [chartData]="chartData"
-             primaryKey='ID' displayDensity="compact" [data]="data">
+<igc-dockmanager class="light-theme" [layout]="docLayout" style="width: '100%'; height: 100%; padding: 2px">
+    <div slot="grid" igxOverlayOutlet  style="height: 98.5%;">
+        <igx-grid  igxPreventDocumentScroll #grid chartIntegration conditionalFormatting [formatter]="currentFormatter"
+            [chartData]="chartData" primaryKey='ID' displayDensity="compact" [data]="data">
             <igx-column field='ID' [hidden]='true'></igx-column>
             <igx-column field='Category' [editable]="true" [width]="'110px'"></igx-column>
             <igx-column field='Type' [editable]="true" [filterable]='false' [width]="'130px'"></igx-column>
@@ -13,7 +13,8 @@
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field='Start(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
+            <igx-column field='Start(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency"
+                [editable]="true">
             </igx-column>
             <igx-column field='Start(Y)Diff' dataType="number" [width]="'120px'" [editable]="true">
                 <ng-template igxCell let-cell="cell">
@@ -31,7 +32,8 @@
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field='High(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
+            <igx-column field='High(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency"
+                [editable]="true">
             </igx-column>
             <igx-column field='High(Y)Diff' [width]="'120px'" dataType="number" [formatter]="formatCurrency"
                 [editable]="true">
@@ -56,7 +58,8 @@
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field='Low(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
+            <igx-column field='Low(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency"
+                [editable]="true">
             </igx-column>
             <igx-column field='Low(Y)Diff' dataType="number" [width]="'120px'" [editable]="true">
                 <ng-template igxCell let-cell="cell">
@@ -75,7 +78,8 @@
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field='Low(D)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
+            <igx-column field='Low(D)' [width]="'100px'" dataType="number" [formatter]="formatCurrency"
+                [editable]="true">
             </igx-column>
             <igx-column field='Low(D)Diff' dataType="number" [width]="'120px'" [editable]="true">
                 <ng-template igxCell let-cell="cell">
@@ -98,9 +102,28 @@
             <igx-column field='Settlement' [width]="'150px'" [editable]="true"></igx-column>
         </igx-grid>
     </div>
+    <div slot="chart-types-content"  style="overflow-y: auto;">
+        <div class="chart-config-area">
+            <div *ngFor="let chartType of chartTypes">
+                <div *ngIf="(availableCharts |filterType:chartType).length > 0" class="wrapper">
+                    <div>{{chartType | titlecase}} Chart</div>
+                    <div class="types-section">
+                        <div *ngFor="let chart of (availableCharts | filterType: chartType)"
+                            (click)="createChart(chart, null)" 
+                            [ngClass]="{'selected': chart === currentChartType}"
+                            style="width: 64px; margin-right: 7px; cursor: pointer;">
+                            <img src="assets/images/svg/charts/{{chart}}.svg" />
+                        </div>
+                    </div>
+                    <igx-divider></igx-divider>
+                </div>
+            </div>
+        </div>
+    </div>
 </igc-dockmanager>
 
-<span *ngIf="contextmenu" class="analytics-btn" [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}" (onOpened)="toggleContextDialog($event)">
+<span *ngIf="contextmenu" class="analytics-btn" [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}"
+    (onOpened)="toggleContextDialog($event)">
     <button #button igxButton="icon">
         <igx-icon #icon style="pointer-events: none;" class="icon" fontSet="material">multiline_chart</igx-icon>
     </button>
@@ -121,9 +144,8 @@
                 </div>
                 <div class="clear action">
                     <div class="btn" (click)="clearFormatting()" [ngClass]="{'disableButton': !currentFormatter}">
-                        <img style="width: 36px; height: 36px;"
-                             src="assets/images/svg/conditions/Clear.svg" />
-                         <span class="name">Clear All</span>
+                        <img style="width: 36px; height: 36px;" src="assets/images/svg/conditions/Clear.svg" />
+                        <span class="name">Clear All</span>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 // tslint:disable: max-line-length
 import { ChangeDetectorRef, Component, HostListener, OnInit, ViewChild } from "@angular/core";
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment, IgxButtonDirective } from "igniteui-angular";
+import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPaneOrientation } from "dockmanager-webcomponent";
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxButtonDirective, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { noop, Subject } from "rxjs";
 import { debounceTime, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../../services/financialData";
@@ -74,7 +75,7 @@ export class DataAnalysisDockManagerComponent implements OnInit {
                 this.range = range;
                 this.tabs.tabs.first.isSelected = true;
                 this.renderButton();
-                const btn = document.getElementsByClassName('analytics-btn')[0];
+                const btn = document.getElementsByClassName("analytics-btn")[0];
                 setTimeout(() => {
                     this.toggleContextDialog(btn);
                 });
@@ -82,18 +83,10 @@ export class DataAnalysisDockManagerComponent implements OnInit {
     }
 
     public ngAfterViewInit(): void {
+        this.availableCharts = this.chartIntegration.getAllChartTypes();
+        this.cdr.detectChanges();
         this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
-            if (args.chartsAvailabilty.size === 0 || args.chartsForCreation.length === 0) {
-            } else {
-                args.chartsAvailabilty.forEach((isAvailable, chart) => {
-                    if (args.chartsForCreation.indexOf(chart) === -1) {
-                        this.chartIntegration.disableCharts([chart]);
-                    } else {
-                        this.chartIntegration.enableCharts([chart]);
-                    }
-                });
-                this.availableCharts = this.chartIntegration.getAvailableCharts();
-            }
+                    console.log(args);
         });
         this.formatting.onFormattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
         this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.range = undefined);
@@ -127,6 +120,36 @@ export class DataAnalysisDockManagerComponent implements OnInit {
     public availableCharts: CHART_TYPE[] = [];
     public chartTypes = ["Column", "Area", "Bar", "Line", "Scatter", "Pie"];
 
+    public docLayout: IgcDockManagerLayout = {
+        rootPane: {
+          type: IgcDockManagerPaneType.splitPane,
+          orientation: IgcSplitPaneOrientation.horizontal,
+          panes: [
+            {
+              type: IgcDockManagerPaneType.documentHost,
+              rootPane: {
+                type: IgcDockManagerPaneType.splitPane,
+                size: 75,
+                orientation: IgcSplitPaneOrientation.horizontal,
+                panes: [
+                    {
+                        type: IgcDockManagerPaneType.contentPane,
+                        contentId: "grid",
+                        header: "Grid"
+                    }
+                ]
+            }
+            },
+            {
+                type: IgcDockManagerPaneType.contentPane,
+                contentId: "chart-types-content",
+                header: "Chart Types",
+                size: 20
+            }
+        ]
+        }
+      };
+
     public toggleContextDialog(btn) {
         if (!this.contextDialog.isOpen) {
             this._contextDilogOverlaySettings.outlet = this.outlet;
@@ -151,17 +174,12 @@ export class DataAnalysisDockManagerComponent implements OnInit {
 
     public formattersNames = [];
 
-    public createChart(type: CHART_TYPE, host: ChartHostDirective, dialog: IgxDialogComponent, overlaySettings: any) {
+    public createChart(type: CHART_TYPE, host: ChartHostDirective) {
         const chartHost = host;
-        const dialogToOpen = dialog;
-        const dialogOverlaySettings = overlaySettings;
+
         this.currentChartType = type;
         chartHost.viewContainerRef.clear();
         this.chartIntegration.chartFactory(type, chartHost.viewContainerRef);
-        if (dialogToOpen.isCollapsed) {
-            dialogOverlaySettings.outlet = this.outlet;
-            dialogToOpen.open(overlaySettings);
-        }
     }
 
     public disableContextMenu() {

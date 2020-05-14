@@ -194,6 +194,10 @@ export class ChartIntegrationDirective {
         }
     }
 
+    public getAllChartTypes() {
+        return Array.from(this._dataChartTypes);
+    }
+
     public getAvailableCharts() {
         const res = [];
         this.chartTypesAvailability.forEach((isAvailable, chartType) => {
