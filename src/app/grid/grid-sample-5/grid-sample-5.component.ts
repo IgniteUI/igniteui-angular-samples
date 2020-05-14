@@ -40,8 +40,8 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     public handlePreLoad() {
         const index = this.grid.virtualizationState.chunkSize +
                                 this.grid.virtualizationState.startIndex;
-        this.grid.isLoading = true;
         if (index > this._remoteService.cachedData.length && !this._endOfData) {
+            this.grid.isLoading = true;
             const loadState = {
                 startIndex: index - 1,
                 chunkSize: this.grid.virtualizationState.chunkSize
