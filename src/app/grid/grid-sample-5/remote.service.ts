@@ -46,7 +46,6 @@ export class RemoteService {
 
     public async getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean,
                          loadState?: IForOfState): Promise<any> {
-
         return new Promise((res) => {
             const startIndex = this._cachedData.length ? this._cachedData.length - 1 : 0;
             const endIndex = virtualizationArgs.chunkSize + startIndex;
@@ -74,10 +73,13 @@ export class RemoteService {
                         }
                         returnData = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
                     } else {
-                        returnData = this._cachedData.slice(startIndex, endIndex);
+                        returnData = this._cachedData.slice(
+                                virtualizationArgs.startIndex, 
+                                virtualizationArgs.startIndex + virtualizationArgs.chunkSize
+                        );
                     }
                     this._data.next(returnData);
-                    res({returnData, endOfData});
+                    res({ data: returnData, endOfData });
                 });
             } else {
                 let data = [];
