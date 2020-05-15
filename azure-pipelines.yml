@@ -3,23 +3,23 @@ pool:
 
 steps:
 
-- task: npm@addregistry
+- task: NpmAddRegistry@1
   inputs:
     command: 'custom'
     workingDir: '$(Build.SourcesDirectory)'
     customCommand: 'config set @infragistics:registry $(npmRegistry)'
 
-- task: npm@config
+- task: NpmConfig@1
   inputs:
     command: 'custom'
     workingDir: '$(Build.SourcesDirectory)'
     customCommand: 'config set always-auth=true --scope:@infragistics'
 
-- task: npm@configauth
+- task: NpmConfigAuth@1
   inputs:
     command: 'custom'
     workingDir: '$(Build.SourcesDirectory)'
-    customCommand: 'config set _auth=$(key) --scope:@infragistics'
+    customCommand: 'config set _auth=$(token) --scope:@infragistics'
 
 - script: npm install
   displayName: 'Install dependencies'
