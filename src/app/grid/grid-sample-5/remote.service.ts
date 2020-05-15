@@ -74,7 +74,7 @@ export class RemoteService {
                         returnData = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
                     } else {
                         returnData = this._cachedData.slice(
-                                virtualizationArgs.startIndex, 
+                                virtualizationArgs.startIndex,
                                 virtualizationArgs.startIndex + virtualizationArgs.chunkSize
                         );
                     }
