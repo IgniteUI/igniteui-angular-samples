@@ -3,11 +3,6 @@ pool:
 
 steps:
 
-
-- script: npm install
-  displayName: 'Install dependencies'
-  env:
-    AZURE_PIPELINES: "true"
 - task: Npm@1
   inputs:
     command: 'custom'
@@ -18,7 +13,18 @@ steps:
   inputs:
     command: 'custom'
     workingDir: '$(Build.SourcesDirectory)'
-    customCommand: 'npm config set always-auth=true --scope:@infragistics'
+    customCommand: 'config set always-auth=true --scope:@infragistics'
+
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: '$(Build.SourcesDirectory)'
+    customCommand: 'npm config set _auth=$(key) --scope:@infragistics'
+
+- script: npm install
+  displayName: 'Install dependencies'
+  env:
+    AZURE_PIPELINES: "true"
 
 - script: npm run lint
   displayName: 'Run lint'
