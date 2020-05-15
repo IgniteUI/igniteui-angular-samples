@@ -1,6 +1,27 @@
 pool:
   vmImage: 'Ubuntu 16.04'
 
+- task: Npm@1
+  displayName: Npm add registry
+  inputs:
+    command: 'custom'
+    workingDir: '$(Build.SourcesDirectory)'
+    customCommand: 'config set @infragistics:registry $(npmRegistry)'
+
+- task: Npm@1
+  displayName: Npm condig
+  inputs:
+    command: 'custom'
+    workingDir: '$(Build.SourcesDirectory)'
+    customCommand: 'config set always-auth=true --scope:@infragistics'
+
+- task: Npm@1
+  displayName: Npm condig auth
+  inputs:
+    command: 'custom'
+    workingDir: '$(Build.SourcesDirectory)'
+    customCommand: 'config set _auth=$(token) --scope:@infragistics'
+
 steps:
 - script: npm install
   displayName: 'Install dependencies'
