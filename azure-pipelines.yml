@@ -3,26 +3,14 @@ pool:
 
 steps:
 
-- task: Npm@1
-  displayName: Npm add registry
-  inputs:
-    command: 'custom'
-    workingDir: '$(Build.SourcesDirectory)'
-    customCommand: 'config set @infragistics:registry $(npmRegistry)'
+- script: npm config set @infragistics:registry $(npmRegistry)
+  displayName: 'Npm add registry'
 
-- task: Npm@1
-  displayName: Npm config
-  inputs:
-    command: 'custom'
-    workingDir: '$(Build.SourcesDirectory)'
-    customCommand: 'config set always-auth=true --scope:@infragistics'
+- script: npm config set always-auth=true --scope:@infragistics
+  displayName: 'Npm config'
 
-- task: Npm@1
-  displayName: Npm config auth
-  inputs:
-    command: 'custom'
-    workingDir: '$(Build.SourcesDirectory)'
-    customCommand: 'config set _auth=$(token) --scope:@infragistics'
+- script: npm config set _auth=$(token) --scope:@infragistics
+  displayName: 'Npm config auth'
 
 - script: npm install
   displayName: 'Install dependencies'
