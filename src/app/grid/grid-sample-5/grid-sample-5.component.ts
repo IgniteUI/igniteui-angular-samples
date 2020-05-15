@@ -47,11 +47,11 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
                 chunkSize: this.grid.virtualizationState.chunkSize
             };
             this.processData(false, loadState).then(x => {
-                if (x) this.grid.isLoading = false;
+                if (x) { this.grid.isLoading = false; }
             });
         } else {
             this.processData(false).then(x => {
-                if (x) this.grid.isLoading = false;
+                if (x) { this.grid.isLoading = false; }
             });
         }
     }

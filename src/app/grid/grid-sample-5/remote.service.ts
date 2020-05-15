@@ -45,7 +45,7 @@ export class RemoteService {
     }
 
     public async getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean,
-                   loadState?: IForOfState): Promise<any> {
+                         loadState?: IForOfState): Promise<any> {
 
         return new Promise((res) => {
             const startIndex = this._cachedData.length ? this._cachedData.length - 1 : 0;
@@ -57,7 +57,7 @@ export class RemoteService {
                     this._updateData(data, startIndex);
                     this._data.next(data.value);
                     this._prevRequestChunk = data.value.length;
-                    res({data: data, endOfData: endOfData});
+                    res({data, endOfData});
                 });
             } else if (loadState) {
                 const diff = loadState.startIndex - (this._cachedData.length);
@@ -77,18 +77,19 @@ export class RemoteService {
                         returnData = this._cachedData.slice(startIndex, endIndex);
                     }
                     this._data.next(returnData);
-                    res({data: returnData, endOfData: endOfData});
+                    res({returnData, endOfData});
                 });
             } else {
                 let data = [];
-                if (endIndex > this._cachedData.length) {
+                if (virtualizationArgs.startIndex + virtualizationArgs.chunkSize > this._cachedData.length) {
                     data = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
                 } else {
-                    data = this._cachedData.slice(virtualizationArgs.startIndex, endIndex);
+                    data = this._cachedData.slice(virtualizationArgs.startIndex,
+                                                  virtualizationArgs.startIndex + virtualizationArgs.chunkSize);
                     this._prevRequestChunk = virtualizationArgs.chunkSize;
                 }
                 this._data.next(data);
-                res({data: data, endOfData: endOfData});
+                res({data, endOfData});
             }
         });
     }
