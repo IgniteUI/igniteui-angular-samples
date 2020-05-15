@@ -23,6 +23,7 @@ steps:
     command: 'custom'
     workingDir: '$(Build.SourcesDirectory)'
     customCommand: 'config set _auth=$(token) --scope:@infragistics'
+
 - script: npm install
   displayName: 'Install dependencies'
   env:
