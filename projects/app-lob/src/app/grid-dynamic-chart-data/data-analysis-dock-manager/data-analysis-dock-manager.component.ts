@@ -214,7 +214,6 @@ export class DataAnalysisDockManagerComponent implements OnInit {
             orientation: IgcSplitPaneOrientation.horizontal,
             floatingWidth: 400,
             floatingHeight: 300,
-            floatingLocation: { x: 750, y: 350 },
             panes: [floatingPane]
         };
 
@@ -225,6 +224,21 @@ export class DataAnalysisDockManagerComponent implements OnInit {
         this.docLayout = {...this.docLayout};
         this.currentChartTypes[type] = chart;
         this.cdr.detectChanges();
+
+        // setTimeout(() => {
+        //     const slot = this.dockManager.nativeElement.shadowRoot.querySelector<HTMLElement>(`slot[name='${type}'`);
+        //     let pane = slot.parentElement;
+
+        //     while (pane.nodeName.toLowerCase() !== "igc-content-pane") {
+        //         pane = pane.parentElement;
+        //     }
+        //     // const closeButton = pane.querySelector<HTMLElement>("igc-pane-header").
+        //     //                     shadowRoot.querySelector<HTMLElement>("igc-button:not([name='test'])");
+        //     pane.onclose = () => {
+        //         delete this.currentChartTypes[type];
+        //         this.cdr.detectChanges();
+        //     };
+        // });
     }
 
     public disableContextMenu() {

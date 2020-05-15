@@ -163,7 +163,6 @@ export class ChartIntegrationDirective {
             autoMarginWidth: 50,
             isVerticalZoomEnabled: true,
             isHorizontalZoomEnabled: true,
-            isTransitionInEnabled: true,
             dataSource: this.chartData
         };
     }

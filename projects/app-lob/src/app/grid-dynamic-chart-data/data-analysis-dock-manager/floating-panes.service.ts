@@ -1,10 +1,9 @@
 // tslint:disable: max-line-length
 import { Injectable } from "@angular/core";
 import { IgcDockManagerPoint, IgcSplitPane } from "@infragistics/igniteui-dockmanager/dist/types/components/dockmanager/dockmanager.public-interfaces";
-import { DataAnalysisDockManagerComponent } from "./data-analysis-dock-manager.component";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class FloatingPanesService {
   public set initialPosition(point: IgcDockManagerPoint) {
