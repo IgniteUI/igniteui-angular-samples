@@ -55,7 +55,8 @@ export class RemoteService {
                     loadState.startIndex = this._cachedData.length;
                     loadState.chunkSize += diff;
                 }
-                this._http.get(this._buildDataUrl(loadState, sortingArgs)).pipe(debounceTime(500)).subscribe((data: any) => {
+                this._http.get(this._buildDataUrl(loadState, sortingArgs)).pipe(debounceTime(500))
+                .subscribe((data: any) => {
                     let returnData = [];
                     if (loadState.startIndex === 0 && loadState.chunkSize === 0) {
                         // first request
