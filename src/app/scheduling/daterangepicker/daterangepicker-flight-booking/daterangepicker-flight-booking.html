@@ -19,14 +19,14 @@
             </igx-select>
         </div>
 
-        <igx-date-range-picker name="datesRange" #dateRangePicker required
+        <igx-date-range-picker name="datesRange" #dateRangePicker="ngModel" required
             [(ngModel)]="range"
             [minValue]="minDate"
             [maxValue]="maxDate"
             [placeholder]="'Depart on - Return on'"
         >
             <label igxLabel>Flight dates</label>
-            <igx-hint *ngIf="dateRangePicker.invalid">
+            <igx-hint *ngIf="dateRangePicker.invalid && (dateRangePicker.dirty || dateRangePicker.touched)">
                 Please choose start and end date!
             </igx-hint>
         </igx-date-range-picker>
