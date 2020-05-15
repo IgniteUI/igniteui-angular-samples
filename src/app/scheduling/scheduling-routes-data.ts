@@ -36,6 +36,7 @@ export const schedulingRoutesData = {
     "timepicker-styling": { displayName: "Styled Timepicker", parentName: "Timepicker" },
     "basic-daterangepicker": { displayName: "Date Range Picker", parentName: "Date Range Picker" },
     "daterangepicker-start-end": { displayName: "Separate inputs", parentName: "Date Range Picker" },
+    "daterangepicker-mode": { displayName: "Separate inputs", parentName: "Date Range Picker Mode" },
     "daterangepicker-validation": { displayName: "Validation", parentName: "Date Range Picker" },
     "styled-daterangepicker": { displayName: "Styled Date Range Picker", parentName: "Date Range Picker" },
     "flight-booking": { displayName: "Flight Booking", parentName: "Date Range Picker" }

@@ -3,6 +3,8 @@ import { BasicDateRangePickerComponent
 } from "../../src/app/scheduling/daterangepicker/daterangepicker-basic/daterangepicker-basic";
 import { FlightBookingComponent
 } from "../../src/app/scheduling/daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking";
+import { DateRangePickerModeComponent
+} from "../../src/app/scheduling/daterangepicker/daterangepicker-mode/daterangepicker-mode";
 import { DateRangePickerStartEndComponent
 } from "../../src/app/scheduling/daterangepicker/daterangepicker-start-end/daterangepicker-start-end";
 import { StyledDateRangePickerComponent
@@ -23,6 +25,18 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
                 appModuleConfig: new AppModuleConfig({
                     imports: [IgxDateRangePickerModule, BasicDateRangePickerComponent],
                     ngDeclarations: [BasicDateRangePickerComponent],
+                    ngImports: [IgxDateRangePickerModule]
+                }),
+                shortenComponentPathBy: "/scheduling/daterangepicker/"
+            })
+        );
+
+        configs.push(
+            new Config({
+                component: DateRangePickerModeComponent,
+                appModuleConfig: new AppModuleConfig({
+                    imports: [IgxDateRangePickerModule, DateRangePickerModeComponent],
+                    ngDeclarations: [DateRangePickerModeComponent],
                     ngImports: [IgxDateRangePickerModule]
                 }),
                 shortenComponentPathBy: "/scheduling/daterangepicker/"

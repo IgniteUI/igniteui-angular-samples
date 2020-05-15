@@ -36,6 +36,7 @@ import {
     BasicDateRangePickerComponent } from "./daterangepicker/daterangepicker-basic/daterangepicker-basic";
 import {
     FlightBookingComponent } from "./daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking";
+import { DateRangePickerModeComponent } from "./daterangepicker/daterangepicker-mode/daterangepicker-mode";
 import {
     DateRangePickerStartEndComponent } from "./daterangepicker/daterangepicker-start-end/daterangepicker-start-end";
 import { StyledDateRangePickerComponent } from "./daterangepicker/daterangepicker-styling/daterangepicker-styling";
@@ -95,6 +96,7 @@ import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/time
         MonthpickerStylingComponent,
         PipeWithoutTownFrom,
         BasicDateRangePickerComponent,
+        DateRangePickerModeComponent,
         DateRangePickerStartEndComponent,
         DateRangePickerValidationComponent,
         StyledDateRangePickerComponent,

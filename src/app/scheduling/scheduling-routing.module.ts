@@ -26,6 +26,7 @@ import { DatepickerStylingSample } from "./datepicker/datepicker-styling-sample/
 import { BasicDateRangePickerComponent } from "./daterangepicker/daterangepicker-basic/daterangepicker-basic";
 import {
     FlightBookingComponent } from "./daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking";
+import { DateRangePickerModeComponent } from "./daterangepicker/daterangepicker-mode/daterangepicker-mode";
 import {
     DateRangePickerStartEndComponent } from "./daterangepicker/daterangepicker-start-end/daterangepicker-start-end";
 import { StyledDateRangePickerComponent } from "./daterangepicker/daterangepicker-styling/daterangepicker-styling";
@@ -219,6 +220,11 @@ export const schedulingRoutes: Routes = [
         component: BasicDateRangePickerComponent,
         data: schedulingRoutesData["basic-daterangepicker"],
         path: "basic-daterangepicker"
+    },
+    {
+        component: DateRangePickerModeComponent,
+        data: schedulingRoutesData["daterangepicker-mode"],
+        path: "daterangepicker-mode"
     },
     {
         component: DateRangePickerStartEndComponent,
