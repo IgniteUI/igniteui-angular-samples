@@ -41,7 +41,6 @@ export class TreeGridKBNavigationComponent implements OnInit {
         } else if (type === "dataCell" && evt.key.toLowerCase() === "enter") {
             // Perform column based kb navigation with 'enter' key press
             args.cancel = true;
-            this.grid1.selectRange(null);
             this.grid1.navigateTo(target.rowIndex + 1, target.visibleColumnIndex,
                 (obj) => { obj.target.activate(); });
         }

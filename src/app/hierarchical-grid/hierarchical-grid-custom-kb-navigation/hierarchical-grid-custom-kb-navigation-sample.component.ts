@@ -55,7 +55,6 @@ export class HGridCustomKBNavigationComponent implements OnInit {
         } else if (type === "dataCell" && evt.key.toLowerCase() === "enter") {
             // Perform column based kb navigation with 'enter' key press
             args.cancel = true;
-            grid.selectRange(null);
             const nexRowIndex = target.row.expanded ? target.rowIndex + 2 : target.rowIndex + 1;
             grid.navigateTo(nexRowIndex, target.visibleColumnIndex,
                 (obj) => { obj.target.activate(); });
