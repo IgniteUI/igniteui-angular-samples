@@ -1,6 +1,6 @@
 // tslint:disable: max-line-length
 import { Injectable } from "@angular/core";
-import { IgcDockManagerPoint, IgcSplitPane } from "dockmanager-webcomponent/dist/types/components/dockmanager/dockmanager.public-interfaces";
+import { IgcDockManagerPoint, IgcSplitPane } from "@infragistics/igniteui-dockmanager/dist/types/components/dockmanager/dockmanager.public-interfaces";
 import { DataAnalysisDockManagerComponent } from "./data-analysis-dock-manager.component";
 
 @Injectable({

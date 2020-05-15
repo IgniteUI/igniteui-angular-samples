@@ -163,6 +163,7 @@ export class ChartIntegrationDirective {
             autoMarginWidth: 50,
             isVerticalZoomEnabled: true,
             isHorizontalZoomEnabled: true,
+            isTransitionInEnabled: true,
             dataSource: this.chartData
         };
     }
@@ -224,7 +225,7 @@ export class ChartIntegrationDirective {
         });
     }
 
-    public chartFactory(type: CHART_TYPE, viewContainerRef?: ViewContainerRef) {
+    public chartFactory(type: CHART_TYPE, viewContainerRef: ViewContainerRef) {
         if (!this.chartTypesAvailability.get(type)) {
             return;
         }

@@ -1,11 +1,11 @@
 // tslint:disable: max-line-length
-import { ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild, ViewChildren, QueryList } from "@angular/core";
-import { IgcContentPane, IgcDockManagerLayout, IgcDockManagerPaneType, IgcDockManagerPoint, IgcSplitPane, IgcSplitPaneOrientation } from "dockmanager-webcomponent";
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxButtonDirective, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
+import { ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren } from "@angular/core";
+import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from "@infragistics/igniteui-dockmanager";
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { noop, Subject } from "rxjs";
 import { debounceTime, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../../services/financialData";
-import { ChartHostDirective, ChartIntegrationDirective, IDeterminedChartTypesArgs } from "../directives/chart-integration/chart-integration.directive";
+import { ChartHostDirective, ChartIntegrationDirective } from "../directives/chart-integration/chart-integration.directive";
 import { CHART_TYPE } from "../directives/chart-integration/chart-types";
 import { ConditionalFormattingDirective } from "../directives/conditional-formatting/conditional-formatting.directive";
 import { FloatingPanesService } from "./floating-panes.service";
@@ -18,9 +18,10 @@ import { FloatingPanesService } from "./floating-panes.service";
 export class DataAnalysisDockManagerComponent implements OnInit {
 
     public data;
-    @ViewChild("dock", {read: ElementRef})
 
+    @ViewChild("dock", {read: ElementRef})
     public dockManager: ElementRef<HTMLIgcDockmanagerElement>;
+
     @ViewChild(ConditionalFormattingDirective, { read: ConditionalFormattingDirective, static: true })
     public formatting: ConditionalFormattingDirective;
 
@@ -62,7 +63,7 @@ export class DataAnalysisDockManagerComponent implements OnInit {
     private rowIndex;
     private colIndex;
 
-    constructor(private cdr: ChangeDetectorRef, private renderer: Renderer2, private paneService: FloatingPanesService) {
+    constructor(private cdr: ChangeDetectorRef, private paneService: FloatingPanesService) {
     }
 
     public ngOnInit() {
@@ -80,16 +81,28 @@ export class DataAnalysisDockManagerComponent implements OnInit {
                 setTimeout(() => {
                     this.toggleContextDialog(btn);
                 });
+                setTimeout(() => {
+                    this.availableCharts.forEach(c => {
+                        if (this.currentChartTypes[c]) {
+                            const chartSlot = this.getSlot(c);
+                            chartSlot.viewContainerRef.clear();
+                            this.currentChartTypes[c] = this.chartIntegration.chartFactory(c, chartSlot.viewContainerRef);
+                            this.cdr.detectChanges();
+                        }
+                    });
+                }, 20);
             });
+    }
+
+    public getSlot(type: CHART_TYPE) {
+        return this.slots.find(s => s.viewContainerRef.element.nativeElement.id === type);
     }
 
     public ngAfterViewInit(): void {
          this.availableCharts = this.chartIntegration.getAllChartTypes();
 
          this.cdr.detectChanges();
-        // this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
 
-        // });
          this.formatting.onFormattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
          this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.range = undefined);
          this.grid.onDataPreLoad.pipe(
