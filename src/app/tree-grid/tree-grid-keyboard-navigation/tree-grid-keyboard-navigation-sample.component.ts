@@ -37,13 +37,13 @@ export class TreeGridKBNavigationComponent implements OnInit {
                 this.grid1.getNextCell(target.rowIndex, target.visibleColumnIndex, (col) => col.editable);
 
             this.grid1.navigateTo(cell.rowIndex, cell.visibleColumnIndex,
-                (obj) => { obj.target.nativeElement.focus(); });
+                (obj) => { obj.target.activate(); });
         } else if (type === "dataCell" && evt.key.toLowerCase() === "enter") {
             // Perform column based kb navigation with 'enter' key press
             args.cancel = true;
             this.grid1.selectRange(null);
             this.grid1.navigateTo(target.rowIndex + 1, target.visibleColumnIndex,
-                (obj) => { obj.target.nativeElement.focus(); });
+                (obj) => { obj.target.activate(); });
         }
     }
 }
