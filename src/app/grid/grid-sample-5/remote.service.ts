@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { ChangeDetectorRef, Injectable } from "@angular/core";
 import { IForOfState, SortingDirection } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
-import { take } from "rxjs/operators";
+import { debounceTime } from "rxjs/operators";
 
 const DATA_URL: string = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
 const EMPTY_STRING: string = "";
@@ -44,54 +44,45 @@ export class RemoteService {
         return hasItems;
     }
 
-    public async getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean,
-                         loadState?: IForOfState): Promise<any> {
+    public getData(virtualizationArgs: IForOfState, sortingArgs?: any, loadState?: IForOfState): Promise<any> {
         return new Promise((res) => {
-            const startIndex = this._cachedData.length ? this._cachedData.length - 1 : 0;
-            const endIndex = virtualizationArgs.chunkSize + startIndex;
+            let virtArgsEndIndex = virtualizationArgs.startIndex + virtualizationArgs.chunkSize;
             let endOfData = false;
 
-            if (resetData) {
-                this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
-                    this._updateData(data, startIndex);
-                    this._data.next(data.value);
-                    this._prevRequestChunk = data.value.length;
-                    res({data, endOfData});
-                });
-            } else if (loadState) {
+            if (loadState) {
                 const diff = loadState.startIndex - (this._cachedData.length);
                 if (diff > 0) {
                     loadState.startIndex = this._cachedData.length;
                     loadState.chunkSize += diff;
                 }
-                this._http.get(this._buildDataUrl(loadState, sortingArgs)).pipe(take(1)).subscribe((data: any) => {
-                    this._updateData(data, loadState.startIndex);
+                this._http.get(this._buildDataUrl(loadState, sortingArgs)).pipe(debounceTime(500)).subscribe((data: any) => {
                     let returnData = [];
+                    if (loadState.startIndex === 0 && loadState.chunkSize === 0) {
+                        // first request
+                        virtArgsEndIndex = data.length;
+                    }
+                    this._updateData(data, loadState.startIndex);
                     if (loadState.startIndex + loadState.chunkSize > this._cachedData.length) {
                         if (this._prevRequestChunk > data.value.length) {
                             endOfData = true;
                         }
                         returnData = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
                     } else {
-                        returnData = this._cachedData.slice(
-                                virtualizationArgs.startIndex,
-                                virtualizationArgs.startIndex + virtualizationArgs.chunkSize
-                        );
+                        returnData = this._cachedData.slice(virtualizationArgs.startIndex, virtArgsEndIndex);
                     }
                     this._data.next(returnData);
                     res({ data: returnData, endOfData });
                 });
             } else {
                 let data = [];
-                if (virtualizationArgs.startIndex + virtualizationArgs.chunkSize > this._cachedData.length) {
+                if (virtArgsEndIndex > this._cachedData.length) {
                     data = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
                 } else {
-                    data = this._cachedData.slice(virtualizationArgs.startIndex,
-                                                  virtualizationArgs.startIndex + virtualizationArgs.chunkSize);
+                    data = this._cachedData.slice(virtualizationArgs.startIndex, virtArgsEndIndex);
                     this._prevRequestChunk = virtualizationArgs.chunkSize;
                 }
                 this._data.next(data);
-                res({data, endOfData});
+                res({ data, endOfData });
             }
         });
     }

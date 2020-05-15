@@ -26,13 +26,14 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
 
     public ngAfterViewInit() {
         this.grid.isLoading = true;
-        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true, undefined)
+        const loadState = { ...this.grid.virtualizationState };
+        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], loadState)
         .then((request) => {
             if (request.data) {
                 // increase totalItemCount a little above the visible grid size in order to be able to scroll
-                this.grid.totalItemCount = request.data.value.length + 3;
+                this.grid.totalItemCount = request.data.length + 3;
                 this.grid.isLoading = false;
-                this._prevRequestChunk = request.data.value.length;
+                this._prevRequestChunk = request.data.length;
             }
         });
     }
@@ -46,18 +47,18 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
                 startIndex: index - 1,
                 chunkSize: this.grid.virtualizationState.chunkSize
             };
-            this.processData(false, loadState, () => {
+            this.processData(loadState, () => {
                 this.grid.isLoading = false;
             });
         } else {
-            this.processData(false, undefined, () => {
+            this.processData(undefined, () => {
                 this.grid.isLoading = false;
             });
         }
     }
 
-    public processData(reset, state?, callback?: () => void): void {
-        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], reset, state)
+    public processData(state?, callback?: () => void): void {
+        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], state)
         .then((remoteData) => {
                 if (remoteData.data) {
                     const chunkLength = this.grid.virtualizationState.startIndex +
