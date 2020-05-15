@@ -2,10 +2,23 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
+
+
 - script: npm install
   displayName: 'Install dependencies'
   env:
     AZURE_PIPELINES: "true"
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: '$(Build.SourcesDirectory)'
+    customCommand: 'config set @infragistics:registry $(npmRegistry)'
+
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: '$(Build.SourcesDirectory)'
+    customCommand: 'npm config set always-auth=true --scope:@infragistics'
 
 - script: npm run lint
   displayName: 'Run lint'
