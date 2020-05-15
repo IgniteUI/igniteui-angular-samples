@@ -3,19 +3,22 @@ pool:
 
 steps:
 
-- task: NpmAddRegistry@1
+- task: Npm@1
+  displayName: Npm add registry
   inputs:
     command: 'custom'
     workingDir: '$(Build.SourcesDirectory)'
     customCommand: 'config set @infragistics:registry $(npmRegistry)'
 
-- task: NpmConfig@1
+- task: Npm@1
+  displayName: Npm condig
   inputs:
     command: 'custom'
     workingDir: '$(Build.SourcesDirectory)'
     customCommand: 'config set always-auth=true --scope:@infragistics'
 
-- task: NpmConfigAuth@1
+- task: Npm@1
+  displayName: Npm condig auth
   inputs:
     command: 'custom'
     workingDir: '$(Build.SourcesDirectory)'
