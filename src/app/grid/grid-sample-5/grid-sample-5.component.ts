@@ -49,10 +49,12 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
             };
             this.processData(loadState, () => {
                 this.grid.isLoading = false;
+                this.grid.cdr.detectChanges();
             });
         } else {
             this.processData(undefined, () => {
                 this.grid.isLoading = false;
+                this.grid.cdr.detectChanges();
             });
         }
     }
