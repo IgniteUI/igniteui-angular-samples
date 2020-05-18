@@ -13,6 +13,7 @@ import {
     IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
+    IgxListModule,
     IgxRadioModule,
     IgxRippleModule,
     IgxSelectModule,
@@ -30,6 +31,7 @@ import { TreeGridColumnSelectionStylesComponent } from "./column-selection-style
 import { TreeGridColumnSelectionComponent } from "./column-selection/tree-grid-column-selection.component";
 // tslint:disable:max-line-length
 import { RemoteFilteringService } from "./services/remoteFilteringService";
+import { TGridKeyboardnavGuide } from "./tgrid-keyboard-guide/tgrid-keyboardnav-guide.component";
 import { TreeGridAdvancedFilteringSampleComponent } from "./tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
 import { TreeGridAdvancedFilteringStyleComponent } from "./tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
 import { TreeGridBatchEditingSampleComponent } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
@@ -181,7 +183,8 @@ import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/tree
         TreeGridRightPinningSampleComponent,
         TreeGridColumnSelectionComponent,
         TreeGridColumnGroupSelectionComponent,
-        TreeGridColumnSelectionStylesComponent
+        TreeGridColumnSelectionStylesComponent,
+        TGridKeyboardnavGuide
     ],
     imports: [
         CommonModule,
@@ -205,7 +208,8 @@ import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/tree
         IgxSelectModule,
         IgxBannerModule,
         IgxSnackbarModule,
-        IgxTooltipModule
+        IgxTooltipModule,
+        IgxListModule
     ],
     providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })
