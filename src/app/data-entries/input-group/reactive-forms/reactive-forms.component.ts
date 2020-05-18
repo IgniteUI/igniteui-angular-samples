@@ -36,7 +36,6 @@ export class ReactiveFormsSampleComponent {
             { type: "Sci-Fi" , movies: ["The Fifth Element"]},
             { type: "Thriller" , movies: ["The Usual Suspects"]},
             { type: "Western" , movies: ["Django Unchained"]}];
-
     }
 
     public onSubmit() {

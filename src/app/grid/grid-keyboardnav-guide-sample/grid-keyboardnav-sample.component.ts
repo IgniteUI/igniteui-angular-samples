@@ -5,7 +5,6 @@ import {
   IgxGridComponent,
   IgxListComponent,
   IgxOverlayService,
-  IgxPaginatorComponent,
   SortingDirection
 } from "igniteui-angular";
 import { Subject } from "rxjs";
@@ -123,9 +122,6 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     @ViewChild(IgxListComponent, { static: true})
     public listref: IgxListComponent;
 
-    @ViewChild(IgxPaginatorComponent, { static: true})
-    public paginator: IgxPaginatorComponent;
-
     public get keyboardCollection() {
         return this._keyboardHandler.collection;
     }
@@ -138,12 +134,20 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     @HostListener("keyup.tab", ["$event"])
     @HostListener("keyup.shift.tab", ["$event"])
     public onTab(evt) {
+      if (this.grid.crudService.cell) {
+          return;
+      }
+
       const gridSection = evt.srcElement.className;
       this.changeKeyboardCollection(gridSection);
     }
 
     @HostListener("click", ["$event"])
-    public onClick(evt) {
+    public onClick() {
+      if (this.grid.crudService.cell) {
+          return;
+      }
+
       const gridSection = document.activeElement.className;
       this.changeKeyboardCollection(gridSection);
     }
@@ -271,9 +275,11 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     public expandChange(evt) {
-        if (evt) {
-            this._keyboardHandler.selectItem(3);
+        if (!this._keyboardHandler.collection.length) {
+            return;
         }
+
+        this._keyboardHandler.selectItem(3);
     }
 
     public onCheckChange(evt, idx) {

@@ -152,7 +152,7 @@ export class GridComponent implements OnInit, OnDestroy {
     }
 
     public filter(term) {
-        this.grid1.filter("CountryName", term, IgxStringFilteringOperand.instance().condition("contains"));
+        this.grid1.filter("CountryName", term, IgxStringFilteringOperand.instance().condition("contains"), true);
         this.grid1.markForCheck();
     }
 
@@ -250,7 +250,7 @@ export class CustomSpeedSummary extends IgxNumberSummaryOperand {
     }
 
     public operate(data?: any[]): IgxSummaryResult[] {
-        data = (data as any).flat().map(rec => rec.Speed);
+        data = data.reduce((acc, val) => acc.concat(val), []).map(rec => rec.Speed);
         const result = [];
         result.push(
             {
