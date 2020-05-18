@@ -1,31 +1,59 @@
 // tslint:disable: max-line-length
-import { ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren } from "@angular/core";
+import { ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren } from "@angular/core";
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from "@infragistics/igniteui-dockmanager";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { noop, Subject } from "rxjs";
 import { debounceTime, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../../services/financialData";
-import { ChartHostDirective, ChartIntegrationDirective } from "../directives/chart-integration/chart-integration.directive";
+import { ChartIntegrationDirective } from "../directives/chart-integration/chart-integration.directive";
 import { CHART_TYPE } from "../directives/chart-integration/chart-types";
 import { ConditionalFormattingDirective } from "../directives/conditional-formatting/conditional-formatting.directive";
+import { DockSlotComponent } from "./dock-slot/dock-slot.component";
 import { FloatingPanesService } from "./floating-panes.service";
+@Pipe({
+    name: "hastDuplicateLayouts",
+    pure: false
+})
+export class HastDuplicateLayouts implements PipeTransform {
+    public transform(contentId: string, layout: IgcDockManagerLayout) {
+        return this.hasDuplicateContentID(layout, contentId, 0) >= 1;
+
+    }
+
+    private hasDuplicateContentID = (ob, contentId, count) => {
+
+        if (ob["contentId"] && ob["contentId"] === contentId) {
+            count++;
+        }
+
+        for (const i in ob) {
+            if (!ob.hasOwnProperty(i)) { continue; }
+
+            if ((typeof ob[i]) === "object") {
+                count =  this.hasDuplicateContentID(ob[i], contentId, count);
+            }
+        }
+        return count;
+    }
+}
+
 @Component({
-  selector: "app-data-analysis-dock-manager",
-  templateUrl: "./data-analysis-dock-manager.component.html",
-  styleUrls: ["./data-analysis-dock-manager.component.scss"],
-  providers: [FloatingPanesService]
+    selector: "app-data-analysis-dock-manager",
+    templateUrl: "./data-analysis-dock-manager.component.html",
+    styleUrls: ["./data-analysis-dock-manager.component.scss"],
+    providers: [FloatingPanesService]
 })
 export class DataAnalysisDockManagerComponent implements OnInit {
 
     public data;
 
-    @ViewChild("dock", {read: ElementRef})
+    @ViewChild("dock", { read: ElementRef })
     public dockManager: ElementRef<HTMLIgcDockmanagerElement>;
 
     @ViewChild(ConditionalFormattingDirective, { read: ConditionalFormattingDirective, static: true })
     public formatting: ConditionalFormattingDirective;
 
-    @ViewChild(ChartIntegrationDirective, {read: ChartIntegrationDirective, static: true})
+    @ViewChild(ChartIntegrationDirective, { read: ChartIntegrationDirective, static: true })
     public chartIntegration: ChartIntegrationDirective;
 
     @ViewChild("grid", { read: IgxGridComponent, static: true })
@@ -40,8 +68,8 @@ export class DataAnalysisDockManagerComponent implements OnInit {
     @ViewChild(IgxTabsComponent, { static: true })
     public tabs: IgxTabsComponent;
 
-    @ViewChildren(ChartHostDirective)
-    public slots: QueryList<ChartHostDirective>;
+    @ViewChildren(DockSlotComponent)
+    public dockSlots: QueryList<DockSlotComponent>;
 
     public chartData = [];
     public contextmenu = false;
@@ -63,7 +91,40 @@ export class DataAnalysisDockManagerComponent implements OnInit {
     private rowIndex;
     private colIndex;
 
+    // tslint:disable-next-line: member-ordering
+    public docLayout: IgcDockManagerLayout = {
+        rootPane: {
+            type: IgcDockManagerPaneType.splitPane,
+            orientation: IgcSplitPaneOrientation.horizontal,
+            panes: [
+                {
+                    type: IgcDockManagerPaneType.documentHost,
+                    rootPane: {
+                        type: IgcDockManagerPaneType.splitPane,
+                        size: 75,
+                        orientation: IgcSplitPaneOrientation.horizontal,
+                        panes: [
+                            {
+                                type: IgcDockManagerPaneType.contentPane,
+                                contentId: "grid",
+                                header: "Grid"
+                            }
+                        ]
+                    }
+                },
+                {
+                    type: IgcDockManagerPaneType.contentPane,
+                    contentId: "chart-types-content",
+                    header: "Chart Types",
+                    size: 20
+                }
+            ]
+        },
+        floatingPanes: []
+    };
+
     constructor(private cdr: ChangeDetectorRef, private paneService: FloatingPanesService) {
+
     }
 
     public ngOnInit() {
@@ -84,9 +145,9 @@ export class DataAnalysisDockManagerComponent implements OnInit {
                 setTimeout(() => {
                     this.availableCharts.forEach(c => {
                         if (this.currentChartTypes[c]) {
-                            const chartSlot = this.getSlot(c);
-                            chartSlot.viewContainerRef.clear();
-                            this.currentChartTypes[c] = this.chartIntegration.chartFactory(c, chartSlot.viewContainerRef);
+                            const chartHost = this.getChartHostFromSlot(c);
+                            chartHost.viewContainerRef.clear();
+                            this.currentChartTypes[c] = this.chartIntegration.chartFactory(c, chartHost.viewContainerRef);
                             this.cdr.detectChanges();
                         }
                     });
@@ -94,23 +155,24 @@ export class DataAnalysisDockManagerComponent implements OnInit {
             });
     }
 
-    public getSlot(type: CHART_TYPE) {
-        return this.slots.find(s => s.viewContainerRef.element.nativeElement.id === type);
+    public getChartHostFromSlot(type: CHART_TYPE) {
+        return this.dockSlots.find(s => s.id === type).chartHost;
     }
 
     public ngAfterViewInit(): void {
-         this.availableCharts = this.chartIntegration.getAllChartTypes();
 
-         this.cdr.detectChanges();
+        this.availableCharts = this.chartIntegration.getAllChartTypes();
 
-         this.formatting.onFormattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
-         this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.range = undefined);
-         this.grid.onDataPreLoad.pipe(
+        this.cdr.detectChanges();
+
+        this.formatting.onFormattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
+        this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.range = undefined);
+        this.grid.onDataPreLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             takeUntil(this.destroy$))
             .subscribe(() => this.range && !this.contextmenu ? this.renderButton() : noop());
-         this.grid.parentVirtDir.onChunkLoad.pipe(
+        this.grid.parentVirtDir.onChunkLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             takeUntil(this.destroy$))
@@ -118,13 +180,42 @@ export class DataAnalysisDockManagerComponent implements OnInit {
                 if (this.range) { this.renderButton(); }
             });
 
-         setTimeout(() => {
+        setTimeout(() => {
                 const x = this.dockManager.nativeElement.getBoundingClientRect().width / 2;
                 const y = this.dockManager.nativeElement.getBoundingClientRect().height / 2;
 
                 this.paneService.initialPosition = {x, y};
             }, 1000);
-    }
+
+        // const handler = (component) => {
+        //     const _this = component;
+        //     return {
+        //         deleteProperty(target, prop) {
+        //             if (target[prop].type && target[prop].type === IgcDockManagerPaneType.contentPane) {
+        //                 const id = target[prop].id;
+        //                 const chart = target[prop].contentId;
+        //                 setTimeout(() => {
+        //                     const dockLayout = _this.flattenObject(_this.dockManager.nativeElement.layout);
+        //                     if (Object.values(dockLayout).indexOf(id) === -1) {
+        //                         delete _this.currentChartTypes[chart];
+        //                     }
+        //                 });
+        //             }
+        //             return true;
+        //         },
+        //         set(target, property: string, value) {
+        //             if (property !== "length") {
+        //                 console.log("target: " + target);
+        //                 console.log("property: " + property);
+        //                 value.panes = new Proxy(value.panes, handler(_this));
+        //             }
+        //             target[property] = value;
+        //             return true;
+        //         }
+        //     };
+        // };
+        // this.dockManager.nativeElement.layout.floatingPanes = new Proxy(this.dockManager.nativeElement.layout.floatingPanes, handler(this));
+}
 
     public ngOnDestroy(): void {
         this.destroy$.next(true);
@@ -141,37 +232,6 @@ export class DataAnalysisDockManagerComponent implements OnInit {
 
     public availableCharts: CHART_TYPE[] = [];
     public chartTypes = ["Column", "Area", "Bar", "Line", "Scatter", "Pie"];
-
-    public docLayout: IgcDockManagerLayout = {
-        rootPane: {
-          type: IgcDockManagerPaneType.splitPane,
-          orientation: IgcSplitPaneOrientation.horizontal,
-          panes: [
-            {
-              type: IgcDockManagerPaneType.documentHost,
-              rootPane: {
-                type: IgcDockManagerPaneType.splitPane,
-                size: 75,
-                orientation: IgcSplitPaneOrientation.horizontal,
-                panes: [
-                    {
-                        type: IgcDockManagerPaneType.contentPane,
-                        contentId: "grid",
-                        header: "Grid"
-                    }
-                ]
-            }
-            },
-            {
-                type: IgcDockManagerPaneType.contentPane,
-                contentId: "chart-types-content",
-                header: "Chart Types",
-                size: 20
-            }
-        ]
-        },
-        floatingPanes: []
-      };
 
     public toggleContextDialog(btn) {
         if (!this.contextDialog.isOpen) {
@@ -198,6 +258,7 @@ export class DataAnalysisDockManagerComponent implements OnInit {
     public formattersNames = [];
 
     public createChart(type: CHART_TYPE) {
+
         const floatingPane: IgcSplitPane = {
             type: IgcDockManagerPaneType.splitPane,
             orientation: IgcSplitPaneOrientation.horizontal,
@@ -218,27 +279,12 @@ export class DataAnalysisDockManagerComponent implements OnInit {
         };
 
         this.paneService.appendChartPane(splitPane);
-        const chartHost = this.slots.find(s => s.viewContainerRef.element.nativeElement.id === type);
+        const chartHost = this.getChartHostFromSlot(type);
         const chart = this.chartIntegration.chartFactory(type, chartHost.viewContainerRef);
-        this.docLayout.floatingPanes.push(splitPane);
-        this.docLayout = {...this.docLayout};
+        this.dockManager.nativeElement.layout.floatingPanes.push(splitPane);
+        this.docLayout = { ...this.dockManager.nativeElement.layout };
         this.currentChartTypes[type] = chart;
         this.cdr.detectChanges();
-
-        // setTimeout(() => {
-        //     const slot = this.dockManager.nativeElement.shadowRoot.querySelector<HTMLElement>(`slot[name='${type}'`);
-        //     let pane = slot.parentElement;
-
-        //     while (pane.nodeName.toLowerCase() !== "igc-content-pane") {
-        //         pane = pane.parentElement;
-        //     }
-        //     // const closeButton = pane.querySelector<HTMLElement>("igc-pane-header").
-        //     //                     shadowRoot.querySelector<HTMLElement>("igc-button:not([name='test'])");
-        //     pane.onclose = () => {
-        //         delete this.currentChartTypes[type];
-        //         this.cdr.detectChanges();
-        //     };
-        // });
     }
 
     public disableContextMenu() {
@@ -293,6 +339,6 @@ export class DataAnalysisDockManagerComponent implements OnInit {
 
     public isWithInRange(rowIndex, colIndex) {
         return rowIndex >= this.range.rowStart && rowIndex <= this.range.rowEnd
-        && colIndex >= this.range.columnStart && colIndex <= this.range.columnEnd;
+            && colIndex >= this.range.columnStart && colIndex <= this.range.columnEnd;
     }
 }
