@@ -27,8 +27,8 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     public ngAfterViewInit() {
         this.grid.isLoading = true;
         const loadState = { ...this.grid.virtualizationState };
-        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], loadState)
-        .then((request) => {
+        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], loadState,
+        (request) => {
             if (request.data) {
                 // increase totalItemCount a little above the visible grid size in order to be able to scroll
                 this.grid.totalItemCount = request.data.length + 3;
@@ -60,8 +60,8 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     }
 
     public processData(state?, callback?: () => void): void {
-        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], state)
-        .then((remoteData) => {
+        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], state,
+        (remoteData) => {
                 if (remoteData.data) {
                     const chunkLength = this.grid.virtualizationState.startIndex +
                                         this.grid.virtualizationState.chunkSize + 3;

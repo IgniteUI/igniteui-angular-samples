@@ -44,48 +44,47 @@ export class RemoteService {
         return hasItems;
     }
 
-    public getData(virtualizationArgs: IForOfState, sortingArgs?: any, loadState?: IForOfState): Promise<any> {
-        return new Promise((res) => {
-            let virtArgsEndIndex = virtualizationArgs.startIndex + virtualizationArgs.chunkSize;
-            let endOfData = false;
+    public getData(virtualizationArgs: IForOfState, sortingArgs?: any, loadState?: IForOfState,
+                   callback?: (any) => void) {
+        let virtArgsEndIndex = virtualizationArgs.startIndex + virtualizationArgs.chunkSize;
+        let endOfData = false;
 
-            if (loadState) {
-                const diff = loadState.startIndex - (this._cachedData.length);
-                if (diff > 0) {
-                    loadState.startIndex = this._cachedData.length;
-                    loadState.chunkSize += diff;
-                }
-                this._http.get(this._buildDataUrl(loadState, sortingArgs)).pipe(debounceTime(500))
-                .subscribe((data: any) => {
-                    let returnData = [];
-                    if (loadState.startIndex === 0 && loadState.chunkSize === 0) {
-                        // first request
-                        virtArgsEndIndex = data.length;
-                    }
-                    this._updateData(data, loadState.startIndex);
-                    if (loadState.startIndex + loadState.chunkSize > this._cachedData.length) {
-                        if (this._prevRequestChunk > data.value.length) {
-                            endOfData = true;
-                        }
-                        returnData = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
-                    } else {
-                        returnData = this._cachedData.slice(virtualizationArgs.startIndex, virtArgsEndIndex);
-                    }
-                    this._data.next(returnData);
-                    res({ data: returnData, endOfData });
-                });
-            } else {
-                let data = [];
-                if (virtArgsEndIndex > this._cachedData.length) {
-                    data = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
-                } else {
-                    data = this._cachedData.slice(virtualizationArgs.startIndex, virtArgsEndIndex);
-                    this._prevRequestChunk = virtualizationArgs.chunkSize;
-                }
-                this._data.next(data);
-                res({ data, endOfData });
+        if (loadState) {
+            const diff = loadState.startIndex - (this._cachedData.length);
+            if (diff > 0) {
+                loadState.startIndex = this._cachedData.length;
+                loadState.chunkSize += diff;
             }
-        });
+            this._http.get(this._buildDataUrl(loadState, sortingArgs)).pipe(debounceTime(500))
+            .subscribe((data: any) => {
+                let returnData = [];
+                if (loadState.startIndex === 0 && loadState.chunkSize === 0) {
+                    // first request
+                    virtArgsEndIndex = data.length;
+                }
+                this._updateData(data, loadState.startIndex);
+                if (loadState.startIndex + loadState.chunkSize > this._cachedData.length) {
+                    if (this._prevRequestChunk > data.value.length) {
+                        endOfData = true;
+                    }
+                    returnData = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
+                } else {
+                    returnData = this._cachedData.slice(virtualizationArgs.startIndex, virtArgsEndIndex);
+                }
+                this._data.next(returnData);
+                callback({ data: returnData, endOfData });
+            });
+        } else {
+            let data = [];
+            if (virtArgsEndIndex > this._cachedData.length) {
+                data = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);
+            } else {
+                data = this._cachedData.slice(virtualizationArgs.startIndex, virtArgsEndIndex);
+                this._prevRequestChunk = virtualizationArgs.chunkSize;
+            }
+            this._data.next(data);
+            callback({ data, endOfData });
+        }
     }
 
     private _updateData(data: any, startIndex: number) {
