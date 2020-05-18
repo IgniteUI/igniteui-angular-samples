@@ -18,7 +18,10 @@ import {
 } from "./circular-progressbar/circular-styling-sample/circular-styling-sample.component";
 import { dataDisplayRoutesData } from "./data-display-routes-data";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
-import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
+import { IconSample2Component } from "./icon/icon-sample-2/icon-sample-2.component";
+import { IconSample3Component } from "./icon/icon-sample-3/icon-sample-3.component";
+import { IconSample4Component } from "./icon/icon-sample-4/icon-sample-4.component";
+import { IconSample5Component } from "./icon/icon-sample-5/icon-sample-5.component";
 import { IconStylingSample } from "./icon/icon-styling-sample/icon-styling-sample.component";
 import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
@@ -92,7 +95,23 @@ export const dataDisplayRoutes: Routes = [
     },
     {
         component: IconSample2Component,
-        path: "icon-sample2"
+        data: dataDisplayRoutesData["icon-sample-2"],
+        path: "icon-sample-2"
+    },
+    {
+        component: IconSample3Component,
+        data: dataDisplayRoutesData["icon-sample-3"],
+        path: "icon-sample-3"
+    },
+    {
+        component: IconSample4Component,
+        data: dataDisplayRoutesData["icon-sample-4"],
+        path: "icon-sample-4"
+    },
+    {
+        component: IconSample5Component,
+        data: dataDisplayRoutesData["icon-sample-5"],
+        path: "icon-sample-5"
     },
     {
         component: SvgIconSampleComponent,
