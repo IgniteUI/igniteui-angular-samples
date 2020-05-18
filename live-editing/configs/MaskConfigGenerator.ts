@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import {
-    IgxIconModule, IgxInputGroupModule, IgxMaskModule, IgxSnackbarModule, IgxSwitchModule, IgxFocusModule, IgxTextSelectionModule
+    IgxIconModule, IgxInputGroupModule, IgxMaskModule, IgxSnackbarModule, IgxSwitchModule, IgxTextSelectionModule
 } from "igniteui-angular";
 import { MaskSample1Component } from "../../src/app/data-display/mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "../../src/app/data-display/mask/mask-sample-2/mask-sample-2.component";
@@ -20,11 +20,10 @@ export class MaskConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: MaskSample1Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSnackbarModule, IgxMaskModule, IgxInputGroupModule, MaskSample1Component,
-                    IgxFocusModule, IgxTextSelectionModule],
+                imports: [IgxSnackbarModule, IgxMaskModule, IgxInputGroupModule,
+                    MaskSample1Component, IgxTextSelectionModule],
                 ngDeclarations: [MaskSample1Component],
-                ngImports: [IgxSnackbarModule, IgxMaskModule, IgxInputGroupModule,
-                            IgxFocusModule, IgxTextSelectionModule]
+                ngImports: [IgxSnackbarModule, IgxMaskModule, IgxInputGroupModule, IgxTextSelectionModule]
             }),
             shortenComponentPathBy: "/data-display/mask/"
         }));
