@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxAvatarModule,
@@ -47,6 +47,7 @@ import { DividerDashedComponent } from "./divider/dashed/divider-dashed.componen
 import { DividerDefaultComponent } from "./divider/default/divider-default.component";
 import { DividerInsetComponent } from "./divider/inset/divider-inset.component";
 import { DividerVerticalComponent } from "./divider/vertical/divider-vertical.component";
+import { DockManagerComponent } from "./dock-manager/dock-manager.component";
 import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
 import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
@@ -96,6 +97,7 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         DividerVerticalComponent,
         DividerDashedComponent,
         DividerInsetComponent,
+        DockManagerComponent,
         ExpansionPanelSample1Component,
         ExpansionPanelSample2Component,
         ExpansionPanelSample3Component,
@@ -153,6 +155,7 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         IgxSplitterModule,
         IgxTabsModule,
         IgxToastModule
-    ]
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class LayoutsModule { }
