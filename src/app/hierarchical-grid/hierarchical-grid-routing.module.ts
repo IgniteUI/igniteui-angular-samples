@@ -5,6 +5,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { HierarchicalGridColumnGroupSelectionComponent } from "./column-group-selection/hierarchical-grid-column-group-selection.component";
 import { HGridColumnSelectionStylesComponent } from "./column-selection-styles/hierarchical-grid-column-selection-styles.component";
 import { HierarchicalGridColumnSelectionComponent } from "./column-selection/hierarchical-grid-column-selection.component";
+import { HGridKeyboardnavGuide } from "./hgrid-keybarod-nav-guide-sample/hgrid-keyboard-guide.component";
 import { HGridAdvancedFilteringStyleComponent } from "./hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
 import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridAllDataSummaryComponent } from "./hierarchical-grid-allData-summary/hierarchical-grid-allData-summary.component";
@@ -413,6 +414,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridColumnSelectionStylesComponent,
         data: hierarchicalGridRoutesData["column-selection-styles"],
         path: "column-selection-styles"
+    },
+    {
+        component: HGridKeyboardnavGuide,
+        data: hierarchicalGridRoutesData["hgrid-keyboard-guide"],
+        path: "hgrid-keyboard-guide"
     }
 ];
 

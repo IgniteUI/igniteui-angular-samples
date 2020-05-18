@@ -2,14 +2,13 @@ import { animate, state, style, transition, trigger } from "@angular/animations"
 import { ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
-  IgxGridComponent,
   IgxListComponent,
   IgxOverlayService,
-  SortingDirection
+  IgxTreeGridComponent
 } from "igniteui-angular";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
-import { DATA } from "../../data/customers";
+import { generateEmployeeDetailedFlatData } from "../data/employees-flat-detailed";
 
 enum GridSection {
     THEAD = "igx-grid__thead-wrapper",
@@ -55,10 +54,17 @@ class KeyboardHandler {
     }
 
     public selectItem(idx: number) {
+        if (!this._collection.length) {
+            return;
+        }
+
         this._collection[idx].completed = true;
     }
 
     public deselectItem(idx: number) {
+      if (!this._collection.length) {
+        return;
+      }
       this._collection[idx].completed = false;
     }
 }
@@ -66,7 +72,6 @@ class KeyboardHandler {
 const theadKeyCombinations = [
     new Item("space", "select column", false),
     new Item("ctrl + arrow up/down", "sorts the column asc/desc", false),
-    new Item("shift + alt + arrow left/right", "group/ungroup the active column", false),
     new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header", false),
     new Item("ctrl + shift + l", "opens the excel style filtering", false),
     new Item("alt + l", "opens the advanced filtering", false)
@@ -76,7 +81,6 @@ const tbodyKeyCombinations: Item[] = [
     new Item("enter", "enter in edit mode", false),
     new Item("alt + arrow left/up", "collapse master datils row", false),
     new Item("alt + arrow right/down", "expand master datils row", false),
-    new Item("ctrl + alt + arrow right/left", "group/ungroup the active column", false),
     new Item("ctrl + Home/End", "navigates to the upper-left/bottom-right cell", false)
 ];
 
@@ -89,8 +93,8 @@ const summaryCombinations: Item[] = [
 
 @Component({
     selector: "grid-keyboardnav",
-    templateUrl: "./grid-keyboardnav-sample.component.html",
-    styleUrls: ["grid-keyboardnav-sample.component.scss"],
+    templateUrl: "./tgrid-keyboardnav-guide.component.html",
+    styleUrls: ["tgrid-keyboardnav-guide.component.scss"],
     animations: [
       trigger("toggle", [
         state("selected", style({
@@ -114,10 +118,11 @@ const summaryCombinations: Item[] = [
       ])
     ]
 })
-export class GridKeyboardnavGuide implements OnInit, OnDestroy {
+export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
+    public data;
 
-    @ViewChild(IgxGridComponent, { static: true})
-    public grid: IgxGridComponent;
+    @ViewChild(IgxTreeGridComponent, { static: true})
+    public tgrid: IgxTreeGridComponent;
 
     @ViewChild(IgxListComponent, { static: true})
     public listref: IgxListComponent;
@@ -134,7 +139,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     @HostListener("keyup.tab", ["$event"])
     @HostListener("keyup.shift.tab", ["$event"])
     public onTab(evt) {
-      if (this.grid.crudService.cell) {
+      if (this.tgrid.crudService.cell) {
           return;
       }
 
@@ -144,7 +149,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
     @HostListener("click", ["$event"])
     public onClick() {
-      if (this.grid.crudService.cell) {
+      if (this.tgrid.crudService.cell) {
           return;
       }
 
@@ -167,15 +172,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     public ngOnInit() {
-        this.grid.data = DATA;
-        for (const item of this.grid.data) {
-          const names = item.CompanyName.split(" ");
-          item.FirstName = names[0];
-          item.LastName = names[names.length - 1];
-          item.FullAddress = `${item.Address}, ${item.City}, ${item.Country}`;
-          item.PersonelDetails = `${item.ContactTitle}: ${item.ContactName}`;
-          item.CompanysAnnualProfit = (100000 + (Math.random() * Math.floor(1000000))).toFixed(0);
-        }
+        this.data = generateEmployeeDetailedFlatData();
 
         this._overlay.onOpening.pipe(takeUntil(this._destroyer))
           .subscribe((args) => {
@@ -186,11 +183,11 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
               const componentType = args.componentRef.componentType.name;
               switch (componentType) {
                 case "IgxGridExcelStyleFilteringComponent":
-                    this._keyboardHandler.selectItem(4);
+                    this._keyboardHandler.selectItem(3);
                     this.cdr.detectChanges();
                     break;
                 case "IgxAdvancedFilteringDialogComponent":
-                    this._keyboardHandler.selectItem(5);
+                    this._keyboardHandler.selectItem(4);
                     break;
                 default:
                     return;
@@ -198,19 +195,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
               }
           });
 
-        this.grid.groupingExpansionStateChange.pipe(takeUntil(this._destroyer))
-          .subscribe(() => {
-              if (this._keyboardHandler.gridSection === GridSection.TBODY) {
-                this._keyboardHandler.selectItem(3);
-              }
-          });
-
-        this.grid.onGroupingDone.pipe(takeUntil(this._destroyer))
-          .subscribe(() => {
-              this._keyboardHandler.selectItem(2);
-          });
-
-        this.grid.onColumnSelectionChange.pipe(takeUntil(this._destroyer))
+        this.tgrid.onColumnSelectionChange.pipe(takeUntil(this._destroyer))
           .subscribe((args) => {
               const evt = args.event;
               if (evt.type === "keydown") {
@@ -218,17 +203,17 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
               }
           });
 
-        this.grid.onSortingDone.pipe(takeUntil(this._destroyer))
+        this.tgrid.onSortingDone.pipe(takeUntil(this._destroyer))
           .subscribe(() => {
               this._keyboardHandler.selectItem(1);
           });
 
-        this.grid.onCellEditEnter.pipe(takeUntil(this._destroyer))
+        this.tgrid.onCellEditEnter.pipe(takeUntil(this._destroyer))
           .subscribe(() => {
             this._keyboardHandler.selectItem(0);
           });
 
-        this.grid.onRowToggle.pipe(takeUntil(this._destroyer))
+        this.tgrid.onRowToggle.pipe(takeUntil(this._destroyer))
           .subscribe((args) => {
             const evt = args.event as KeyboardEvent;
             if (evt.type !== "keydown") {
@@ -239,16 +224,12 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
               this._keyboardHandler.selectItem(2);
           });
 
-        this.grid.groupingExpressions = [
-            { fieldName: "ProductName", dir: SortingDirection.Asc }
-        ];
-
-        this.grid.onSelection.pipe(takeUntil(this._destroyer))
+        this.tgrid.onSelection.pipe(takeUntil(this._destroyer))
           .subscribe((args) => {
             this.handleDOMSelection(args.event);
           });
 
-        this.grid.onGridKeydown.pipe(takeUntil(this._destroyer))
+        this.tgrid.onGridKeydown.pipe(takeUntil(this._destroyer))
           .subscribe((args) => {
             const evt = args.event as KeyboardEvent;
             if (this._keyboardHandler.gridSection !== GridSection.FOOTER) {
@@ -259,7 +240,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
               evt.key === "Home" && evt.ctrlKey ? this._keyboardHandler.selectItem(2) : false;
           });
 
-        this.grid.onPagingDone.pipe(takeUntil(this._destroyer))
+        this.tgrid.onPagingDone.pipe(takeUntil(this._destroyer))
           .subscribe((args) => {
             console.log(args);
           });
@@ -279,7 +260,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
             return;
         }
 
-        this._keyboardHandler.selectItem(3);
+        this._keyboardHandler.selectItem(2);
     }
 
     public onCheckChange(evt, idx) {
@@ -310,7 +291,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
       const target = evt.target.className;
       switch (target) {
         case GridSection.TBODY :
-          this.trackUpRightOrBottomLeftNav(evt, 4);
+          this.trackUpRightOrBottomLeftNav(evt, 3);
           break;
         case GridSection.FOOTER :
           this.trackUpRightOrBottomLeftNav(evt, 2);
