@@ -12,9 +12,9 @@ import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.com
 import {
     BadgeStylingSampleComponent
 } from "./badge/badge-styling-sample/badge-styling-sample.component";
-import { ChipStylingSampleComponent } from "./chip-styling/chip-styling.component";
-import { ChipSampleComponent } from "./chip/chip.component";
-import { EmailFilterPipe } from "./chip/email-filter-pipe";
+import { ChipAreaSampleComponent } from "./chip/chip-area-sample/chip-area-sample.component";
+import { ChipSimpleComponent } from "./chip/chip-simple/chip-simple.component";
+import { ChipStylingSampleComponent } from "./chip/chip-styling/chip-styling.component";
 // tslint:disable-next-line:max-line-length
 import { CircularIndeterminateProgressbarComponent } from "./circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
@@ -52,13 +52,13 @@ import { TextHighlightStyleComponent } from "./text-highlight/text-highlight-sty
 
 @NgModule({
     declarations: [
-        EmailFilterPipe,
         DisplayFormatPipe,
         InputFormatPipe,
         BadgeSample2Component,
         BadgeSample3Component,
         BadgeStylingSampleComponent,
-        ChipSampleComponent,
+        ChipAreaSampleComponent,
+        ChipSimpleComponent,
         CircularProgressbarComponent,
         IconSample1Component,
         IconSample2Component,
