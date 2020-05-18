@@ -1,5 +1,5 @@
 // tslint:disable:max-line-length
-import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDragDropModule, IgxExcelExporterService, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxTooltipModule, IgxTreeGridModule } from "igniteui-angular";
+import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDragDropModule, IgxExcelExporterService, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxTooltipModule, IgxTreeGridModule, IgxOverlayService, IgxListModule } from "igniteui-angular";
 import { IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
 import { IgxPreventDocumentScrollModule } from "../../src/app/directives/prevent-scroll.directive";
 import { TreeGridColumnGroupSelectionComponent } from "../../src/app/tree-grid/column-group-selection/column-group-selection.component";
@@ -79,6 +79,7 @@ import { TreeGridAllDataSummaryComponent } from "../../src/app/tree-grid/treegri
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { TGridKeyboardnavGuide } from '../../src/app/tree-grid/tgrid-keyboard-guide/tgrid-keyboardnav-guide.component';
 
 export class TreeGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -931,6 +932,19 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [TreeGridColumnSelectionStylesComponent],
                 ngImports: [IgxTreeGridModule],
                 ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: TGridKeyboardnavGuide,
+            additionalFiles: [
+                "/src/app/tree-grid/data/employees-flat-detailed.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [TGridKeyboardnavGuide, IgxTreeGridModule, IgxListModule, IgxOverlayService],
+                ngDeclarations: [TGridKeyboardnavGuide],
+                ngImports: [IgxTreeGridModule, IgxListModule],
+                ngProviders: [IgxOverlayService]
             })
         }));
 
