@@ -1109,9 +1109,9 @@ export class GridConfigGenerator implements IConfigGenerator {
                 "/src/app/data/customers.ts"
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridKeyboardnavGuide, IgxGridModule, IgxListModule, CommonModule, IgxOverlayService],
+                imports: [GridKeyboardnavGuide, IgxGridModule, IgxListModule, IgxOverlayService],
                 ngDeclarations: [GridKeyboardnavGuide],
-                ngImports: [IgxGridModule, IgxListModule, CommonModule],
+                ngImports: [IgxGridModule, IgxListModule],
                 ngProviders: [IgxOverlayService]
             })
         }));
