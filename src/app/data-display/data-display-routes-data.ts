@@ -8,6 +8,7 @@ export const dataDisplayRoutesData = {
     "chip-area-sample": { displayName: "Chip Area Sample", parentName: "Chip" },
     "chip-styling": { displayName: "Chip Styling", parentName: "Chip" },
     "circular-progressbar": { displayName: "Circular Progressbar Sample", parentName: "Circular Progressbar" },
+    "circular-dynamic-sample": { displayName: "Circular Dynamic Sample", parentName: "Circular Progressbar" },
     // tslint:disable-next-line:max-line-length
     "circular-indeterminate-progressbar": { displayName: "Circular Indeterminate Progressbar", parentName: "Circular Progressbar" },
     "circular-styling-sample": { displayName: "Circular Styling Sample", parentName: "Circular Progressbar" },
@@ -15,6 +16,7 @@ export const dataDisplayRoutesData = {
     "icon-styling": { displayName: "Icon Styling", parentName: "Icon" },
     "svg-icon-sample": { displayName: "SVG Icons", parentName: "Icon" },
     "igx-for-sample-1": { displayName: "List with igxFor directive", parentName: "For" },
+    "linear-dynamic-sample": { displayName: "Dynamic Linear Progressbar", parentName: "Linear Progressbar" },
     "linear-progressbar": { displayName: "Simple Linear Progressbar", parentName: "Linear Progressbar" },
     "linear-progressbar-sample-1": { displayName: "Linear Progressbar Types", parentName: "Linear Progressbar" },
     "linear-progressbar-sample-2": { displayName: "Linear Progressbar Styles", parentName: "Linear Progressbar" },
