@@ -109,7 +109,7 @@
                 <div class="types-section">
                     <div *ngFor="let chart of (availableCharts | filterType: chartType)"
                         (click)="createChart(chart)" 
-                        [ngClass]="{'selected': chart | hastDuplicateLayouts: docLayout}"
+                        [ngClass]="{'selected': chart | hastDuplicateLayouts: dock.layout}"
                         style="width: 60px; margin-right: 20px; cursor: pointer;">
                         <img src="assets/images/svg/charts/{{chart}}.svg" />
                     </div>
