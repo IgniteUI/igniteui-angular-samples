@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { DateRange } from "igniteui-angular";
 
 @Component({
     selector: "rangedatepicker-start-end",
@@ -6,6 +7,5 @@ import { Component } from "@angular/core";
     templateUrl: "./daterangepicker-start-end.html"
 })
 export class DateRangePickerStartEndComponent {
-    public range: { start: Date, end: Date } =
-        { start: new Date(), end: new Date(new Date().setDate(new Date().getDate() + 5)) };
+    public range: DateRange = { start: new Date(), end: new Date(new Date().setDate(new Date().getDate() + 5)) };
 }
