@@ -2,9 +2,10 @@ import { animate, state, style, transition, trigger } from "@angular/animations"
 import { ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
-  IgxHierarchicalGridComponent,
-  IgxListComponent,
-  IgxOverlayService } from "igniteui-angular";
+    IgxHierarchicalGridComponent,
+    IgxListComponent,
+    IgxOverlayService
+} from "igniteui-angular";
 import { fromEvent, Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { CUSTOMERS } from "../data";
@@ -45,11 +46,11 @@ class KeyboardHandler {
     }
 
     public set gridSection(section: GridSection) {
-      this._section = section;
+        this._section = section;
     }
 
     public get gridSection() {
-      return this._section;
+        return this._section;
     }
 
     public selectItem(idx: number) {
@@ -57,7 +58,7 @@ class KeyboardHandler {
     }
 
     public deselectItem(idx: number) {
-      this._collection[idx].completed = false;
+        this._collection[idx].completed = false;
     }
 }
 
@@ -77,10 +78,10 @@ const tbodyKeyCombinations: Item[] = [
 ];
 
 const summaryCombinations: Item[] = [
-  new Item("ArrowLeft", "navigates one summary cell right", false),
-  new Item("ArrowRight", "navigates one summary cell left", false),
-  new Item("ctrl + Home", "navigates to the first summary cell", false),
-  new Item("ctrl + End", "navigates to the last summary cell", false)
+    new Item("ArrowLeft", "navigates one summary cell right", false),
+    new Item("ArrowRight", "navigates one summary cell left", false),
+    new Item("Home", "navigates to the first summary cell", false),
+    new Item("End", "navigates to the last summary cell", false)
 ];
 
 @Component({
@@ -88,267 +89,242 @@ const summaryCombinations: Item[] = [
     templateUrl: "./hgrid-keyboard-guide.component.html",
     styleUrls: ["hgrid-keyboard-guide.component.scss"],
     animations: [
-      trigger("toggle", [
-        state("selected", style({
-          color: "#4eb862"
-        })),
-        state("deselected", style({
-          color: "black"
-        })),
-        transition("deselected => selected", [
-          animate(".3s")
+        trigger("toggle", [
+            state("selected", style({
+                color: "#4eb862"
+            })),
+            state("deselected", style({
+                color: "black"
+            })),
+            transition("deselected => selected", [
+                animate(".3s")
+            ]),
+            transition("selected => deselected", [
+                animate(".3s")
+            ])
         ]),
-        transition("selected => deselected", [
-          animate(".3s")
+        trigger("load", [
+            transition(":enter", [
+                style({ opacity: 0 }),
+                animate(".3s", style({ opacity: 1 }))
+            ])
         ])
-      ]),
-      trigger("load", [
-        transition(":enter", [
-            style({ opacity: 0 }),
-            animate(".3s", style({ opacity: 1 }))
-          ])
-      ])
     ]
 })
 export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
 
-  @ViewChild(IgxHierarchicalGridComponent, { static: true})
-  public hGrid: IgxHierarchicalGridComponent;
+    @ViewChild(IgxHierarchicalGridComponent, { static: true })
+    public hGrid: IgxHierarchicalGridComponent;
 
-  @ViewChild(IgxListComponent, { static: true})
-  public listref: IgxListComponent;
+    @ViewChild(IgxListComponent, { static: true })
+    public listref: IgxListComponent;
 
-  public get keyboardCollection() {
-      return this._keyboardHandler.collection;
-  }
-
-  public gridTarget: GridUnderManagement;
-
-  private _destroyer = new Subject<boolean>();
-  private _keyboardHandler = new KeyboardHandler([], GridSection.THEAD);
-
-  public constructor(
-    private cdr: ChangeDetectorRef,
-    private _overlay: IgxOverlayService) {}
-
-  @HostListener("keyup.tab", ["$event"])
-  @HostListener("keyup.shift.tab", ["$event"])
-  public onTab(evt) {
-    if (this.hGrid.crudService.cell) {
-        return;
+    public get keyboardCollection() {
+        return this._keyboardHandler.collection;
     }
 
-    const gridSection = evt.srcElement.className;
-    this.changeKeyboardCollection(gridSection);
-  }
+    public gridTarget: GridUnderManagement;
 
-  @HostListener("click", ["$event"])
-  public onClick() {
-    if (this.hGrid.crudService.cell) {
-        return;
+    private _destroyer = new Subject<boolean>();
+    private _keyboardHandler = new KeyboardHandler([], GridSection.THEAD);
+
+    public constructor(
+        private cdr: ChangeDetectorRef,
+        private _overlay: IgxOverlayService) { }
+
+    @HostListener("keyup.tab", ["$event"])
+    @HostListener("keyup.shift.tab", ["$event"])
+    public onTab(evt) {
+        if (this.hGrid.crudService.cell) {
+            return;
+        }
+
+        const gridSection = evt.srcElement.className;
+        this.changeKeyboardCollection(gridSection);
     }
 
-    const gridSection = document.activeElement.className;
-    this.changeKeyboardCollection(gridSection);
-  }
+    @HostListener("click", ["$event"])
+    public onClick() {
+        if (this.hGrid.crudService.cell) {
+            return;
+        }
 
-  @HostListener("keydown.ArrowLeft")
-  public onArrowLeft() {
-    if (this._keyboardHandler.gridSection === GridSection.FOOTER) {
-      this._keyboardHandler.selectItem(0);
+        const gridSection = document.activeElement.className;
+        this.changeKeyboardCollection(gridSection);
     }
-  }
 
-  @HostListener("keydown.ArrowRight")
-  public onArrowRight() {
-    if (this._keyboardHandler.gridSection === GridSection.FOOTER) {
-      this._keyboardHandler.selectItem(1);
+    public ngOnInit() {
+        this.hGrid.data = CUSTOMERS;
+        for (const item of this.hGrid.data) {
+            const names = item.CompanyName.split(" ");
+            item.FirstName = names[0];
+            item.LastName = names[names.length - 1];
+            item.FullAddress = `${item.Address}, ${item.City}, ${item.Country}`;
+            item.PersonelDetails = `${item.ContactTitle}: ${item.ContactName}`;
+            item.CompanysAnnualProfit = (100000 + (Math.random() * Math.floor(1000000))).toFixed(0);
+        }
+
+        this.gridTarget = new GridUnderManagement(this.hGrid, this._keyboardHandler, this._destroyer, this.cdr);
+        this.gridTarget.subscribe();
+
+        this.listref.onItemClicked.pipe(takeUntil(this._destroyer))
+            .subscribe((args) => {
+                args.event.stopPropagation();
+            });
     }
-  }
 
-  public ngOnInit() {
-      this.hGrid.data = CUSTOMERS;
-      for (const item of this.hGrid.data) {
-        const names = item.CompanyName.split(" ");
-        item.FirstName = names[0];
-        item.LastName = names[names.length - 1];
-        item.FullAddress = `${item.Address}, ${item.City}, ${item.Country}`;
-        item.PersonelDetails = `${item.ContactTitle}: ${item.ContactName}`;
-        item.CompanysAnnualProfit = (100000 + (Math.random() * Math.floor(1000000))).toFixed(0);
-      }
+    public ngOnDestroy() {
+        this._destroyer.next();
+    }
 
-      this._overlay.onOpening.pipe(takeUntil(this._destroyer))
-        .subscribe((args) => {
-            if (args.componentRef === undefined) {
-              return;
+    public expandChange(evt) {
+        if (!this._keyboardHandler.collection.length) {
+            return;
+        }
+
+        this._keyboardHandler.selectItem(2);
+    }
+
+    public onCheckChange(evt, idx) {
+        evt.checked ? this._keyboardHandler.selectItem(idx) : this._keyboardHandler.deselectItem(idx);
+    }
+
+    public changeKeyboardCollection(gridSection) {
+        switch (gridSection) {
+            case GridSection.THEAD:
+                this._keyboardHandler.collection = theadKeyCombinations;
+                this._keyboardHandler.gridSection = GridSection.THEAD;
+                break;
+            case GridSection.TBODY:
+                this._keyboardHandler.collection = tbodyKeyCombinations;
+                this._keyboardHandler.gridSection = GridSection.TBODY;
+                break;
+            case GridSection.FOOTER:
+                this._keyboardHandler.collection = summaryCombinations;
+                this._keyboardHandler.gridSection = GridSection.FOOTER;
+                break;
+            default:
+                this._keyboardHandler.collection = [];
+                return;
+        }
+    }
+
+    public onGridCreated(evt) {
+        fromEvent(evt.grid.elementRef.nativeElement, "click").pipe(takeUntil(this._destroyer))
+            .subscribe(() => {
+                this.gridTarget = new GridUnderManagement(evt.grid, this._keyboardHandler, this._destroyer, this.cdr);
+                this.gridTarget.subscribe();
+            });
+
+        fromEvent(evt.grid.elementRef.nativeElement, "focus").pipe(takeUntil(this._destroyer))
+            .subscribe(() => {
+                this.gridTarget = new GridUnderManagement(evt.grid, this._keyboardHandler, this._destroyer, this.cdr);
+                this.gridTarget.subscribe();
+            });
+
+        fromEvent((evt.grid as IgxHierarchicalGridComponent).tbody.nativeElement, "focus")
+            .pipe(takeUntil(this._destroyer)).subscribe(() => {
+                this.gridTarget = new GridUnderManagement(evt.grid, this._keyboardHandler, this._destroyer, this.cdr);
+                this.gridTarget.subscribe();
+            });
+    }
+
+    public gridKeydown(evt) {
+        const key = evt.key.toLowerCase();
+        if (this._keyboardHandler.gridSection === GridSection.FOOTER) {
+            switch (key) {
+                case "end":
+                    this._keyboardHandler.selectItem(3);
+                    break;
+                case "home":
+                    this._keyboardHandler.selectItem(2);
+                    break;
+                case "arrowleft":
+                    this._keyboardHandler.selectItem(0);
+                    break;
+                case "arrowright":
+                    this._keyboardHandler.selectItem(1);
+                    break;
+                default:
+                    break;
+            }
+            return;
+        }
+
+        if (this._keyboardHandler.gridSection === GridSection.THEAD) {
+            if (key === "l" && evt.altKey) {
+                this._keyboardHandler.selectItem(3);
+                return;
             }
 
-            const componentType = args.componentRef.componentType.name;
-            switch (componentType) {
-              case "IgxGridExcelStyleFilteringComponent":
-                  this._keyboardHandler.selectItem(4);
-                  this.cdr.detectChanges();
-                  break;
-              case "IgxAdvancedFilteringDialogComponent":
-                  this._keyboardHandler.selectItem(3);
-                  break;
-              default:
-                  return;
-
+            const activeCol = this.gridTarget.hGrid.navigation.activeNode;
+            const col = this.gridTarget.hGrid.visibleColumns.find
+                (c => c.visibleIndex === activeCol.column && c.level === activeCol.level);
+            if (key === "l" && evt.ctrlKey && evt.shiftKey) {
+                if (col && !col.columnGroup && col.filterable) {
+                    this._keyboardHandler.selectItem(4);
+                }
             }
-        });
 
-      this.gridTarget = new GridUnderManagement(this.hGrid, this._keyboardHandler, this._destroyer, this.cdr);
-      this.gridTarget.subscribe();
-
-      this.listref.onItemClicked.pipe(takeUntil(this._destroyer))
-        .subscribe((args) => {
-          args.event.stopPropagation();
-        });
+            if ((key === "arrowup" || key === "arrowdown") && evt.ctrlKey) {
+                if (col && !col.columnGroup && col.sortable) {
+                    this._keyboardHandler.selectItem(1);
+                }
+            }
+        }
     }
-
-  public ngOnDestroy() {
-    this._destroyer.next();
-  }
-
-  public expandChange(evt) {
-    if (!this._keyboardHandler.collection.length) {
-        return;
-    }
-
-    this._keyboardHandler.selectItem(2);
-  }
-
-  public onCheckChange(evt, idx) {
-    evt.checked ? this._keyboardHandler.selectItem(idx) : this._keyboardHandler.deselectItem(idx);
-  }
-
-  public changeKeyboardCollection(gridSection) {
-    switch (gridSection) {
-      case GridSection.THEAD:
-        this._keyboardHandler.collection = theadKeyCombinations;
-        this._keyboardHandler.gridSection = GridSection.THEAD;
-        break;
-      case GridSection.TBODY:
-        this._keyboardHandler.collection = tbodyKeyCombinations;
-        this._keyboardHandler.gridSection = GridSection.TBODY;
-        break;
-      case GridSection.FOOTER:
-        this._keyboardHandler.collection = summaryCombinations;
-        this._keyboardHandler.gridSection = GridSection.FOOTER;
-        break;
-      default:
-        this._keyboardHandler.collection = [];
-        return;
-    }
-  }
-
-  public onGridCreated(evt) {
-    fromEvent(evt.grid.elementRef.nativeElement, "click").pipe(takeUntil(this._destroyer))
-      .subscribe(() => {
-        this.gridTarget = new GridUnderManagement(evt.grid, this._keyboardHandler, this._destroyer, this.cdr);
-        this.gridTarget.subscribe();
-      });
-
-    fromEvent(evt.grid.elementRef.nativeElement, "focus").pipe(takeUntil(this._destroyer))
-      .subscribe(() => {
-        this.gridTarget = new GridUnderManagement(evt.grid, this._keyboardHandler, this._destroyer, this.cdr);
-        this.gridTarget.subscribe();
-    });
-
-    fromEvent((evt.grid as IgxHierarchicalGridComponent).tbody.nativeElement, "focus").pipe(takeUntil(this._destroyer))
-    .subscribe(() => {
-        this.gridTarget = new GridUnderManagement(evt.grid, this._keyboardHandler, this._destroyer, this.cdr);
-        this.gridTarget.subscribe();
-      });
-  }
 }
 
 export class GridUnderManagement {
-  public hGrid: IgxHierarchicalGridComponent;
-  public destroyer = new Subject();
-  public keyboardHandler: KeyboardHandler;
-  public cdr: ChangeDetectorRef;
+    public hGrid: IgxHierarchicalGridComponent;
+    public destroyer = new Subject();
+    public keyboardHandler: KeyboardHandler;
+    public cdr: ChangeDetectorRef;
 
-  constructor(hGrid: IgxHierarchicalGridComponent, keyboardHandler: KeyboardHandler,
-              destroyer: Subject<boolean>, cdr: ChangeDetectorRef) {
-    this.hGrid = hGrid;
-    this.keyboardHandler = keyboardHandler;
-    this.destroyer = destroyer;
-    this.cdr = cdr;
-  }
-
-  public subscribe() {
-    this.hGrid.onColumnSelectionChange.pipe(takeUntil(this.destroyer))
-      .subscribe((args) => {
-          const evt = args.event;
-          if (evt.type === "keydown") {
-            this.keyboardHandler.selectItem(0);
-          }
-      });
-
-    this.hGrid.onSortingDone.pipe(takeUntil(this.destroyer))
-      .subscribe(() => {
-        this.keyboardHandler.selectItem(1);
-      });
-
-    this.hGrid.onCellEditEnter.pipe(takeUntil(this.destroyer))
-      .subscribe(() => {
-        this.keyboardHandler.selectItem(0);
-      });
-
-    this.hGrid.onRowToggle.pipe(takeUntil(this.destroyer))
-      .subscribe((args) => {
-        const evt = args.event as KeyboardEvent;
-        if (!evt || evt.type !== "keydown") {
-          return;
-        }
-
-        return evt.code === "ArrowLeft" || evt.code === "ArrowUp" ? this.keyboardHandler.selectItem(1) :
-          this.keyboardHandler.selectItem(2);
-      });
-
-    this.hGrid.onSelection.pipe(takeUntil(this.destroyer))
-      .subscribe((args) => {
-        this.handleDOMSelection(args.event);
-      });
-
-    this.hGrid.onGridKeydown.pipe(takeUntil(this.destroyer))
-      .subscribe((args) => {
-        const evt = args.event as KeyboardEvent;
-        if (this.keyboardHandler.gridSection !== GridSection.FOOTER) {
-          return;
-        }
-
-        return evt.key === "End" && evt.ctrlKey ? this.keyboardHandler.selectItem(3) :
-          evt.key === "Home" && evt.ctrlKey ? this.keyboardHandler.selectItem(2) : false;
-      });
-
-    this.hGrid.onPagingDone.pipe(takeUntil(this.destroyer))
-      .subscribe((args) => {
-        console.log(args);
-      });
-  }
-
-  private handleDOMSelection(evt) {
-    const target = evt.target.className;
-    switch (target) {
-      case GridSection.TBODY :
-        this.trackUpRightOrBottomLeftNav(evt, 3);
-        break;
-      case GridSection.FOOTER :
-        this.trackUpRightOrBottomLeftNav(evt, 2);
-        break;
-      default:
-        return;
+    constructor(hGrid: IgxHierarchicalGridComponent, keyboardHandler: KeyboardHandler,
+                destroyer: Subject<boolean>, cdr: ChangeDetectorRef) {
+        this.hGrid = hGrid;
+        this.keyboardHandler = keyboardHandler;
+        this.destroyer = destroyer;
+        this.cdr = cdr;
     }
 
-    this.cdr.detectChanges();
-  }
+    public subscribe() {
+        this.hGrid.onColumnSelectionChange.pipe(takeUntil(this.destroyer))
+            .subscribe((args) => {
+                const evt = args.event;
+                if (evt.type === "keydown") {
+                    this.keyboardHandler.selectItem(0);
+                }
+            });
 
-  private trackUpRightOrBottomLeftNav(evt, idx) {
-    if ((evt.code === "End" || evt.code === "Home") && evt.ctrlKey) {
-      this.keyboardHandler.selectItem(idx);
+        this.hGrid.onCellEditEnter.pipe(takeUntil(this.destroyer))
+            .subscribe(() => {
+                this.keyboardHandler.selectItem(0);
+            });
+
+        this.hGrid.onRowToggle.pipe(takeUntil(this.destroyer))
+            .subscribe((args) => {
+                const evt = args.event as KeyboardEvent;
+                if (!evt || evt.type !== "keydown") {
+                    return;
+                }
+
+                return evt.code === "ArrowLeft" || evt.code === "ArrowUp" ? this.keyboardHandler.selectItem(1) :
+                    this.keyboardHandler.selectItem(2);
+            });
+
+        this.hGrid.onSelection.pipe(takeUntil(this.destroyer))
+            .subscribe((args) => {
+                this.handleDOMSelection(args.event);
+            });
     }
-  }
+
+    private handleDOMSelection(evt) {
+        const target = evt.target.className;
+        if (target === GridSection.TBODY && (evt.code === "End" || evt.code === "Home") && evt.ctrlKey) {
+            this.keyboardHandler.selectItem(3);
+            this.cdr.detectChanges();
+        }
+    }
 }
