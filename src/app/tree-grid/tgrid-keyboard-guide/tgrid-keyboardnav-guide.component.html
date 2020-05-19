@@ -1,39 +1,33 @@
 <div class="sample">
     <div class="grid_wrapper">
-        <igx-grid height="450px" width="100%" [paging]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" displayDensity="compact"
-            summaryCalculationMode="rootLevelOnly" columnSelection="single" [showToolbar]="false" [allowAdvancedFiltering]="true">
-            <ng-template igxGridDetail let-dataItem>
-                <div *ngIf="dataItem.CompanysAnnualProfit">
-                    <header>Annual Profit:</header>
-                    <span>{{dataItem.CompanysAnnualProfit}}</span>
-                </div>
-            </ng-template>
-            <igx-column-group header="General Information" [groupable]="true">
-                <igx-column field="CompanyName" [hasSummary]="true" [groupable]="true" [editable]="true" [sortable]="true"></igx-column>
+        <igx-tree-grid [data]="data" height="450px" width="100%" [paging]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" displayDensity="compact"
+            summaryCalculationMode="rootLevelOnly" primaryKey="ID" foreignKey="ParentID" columnSelection="single" [showToolbar]="false" [allowAdvancedFiltering]="true">
+            <igx-column field="Name" [hasSummary]="true" [editable]="true" [sortable]="true"></igx-column>
+            <igx-column-group header="General Information" >
+                <igx-column field="HireDate" [hasSummary]="true" [editable]="true" [sortable]="true"></igx-column>
                 <igx-column-group [movable]="true" header="Personel Details" [collapsible]="true"
                         dataType="string" [expanded]="false" (expandedChange)="expandChange($event)">
-                    <igx-column field="PersonelDetails" [width]="'250px'" [groupable]="true" [visibleWhenCollapsed]="true" [sortable]="true"></igx-column>
-                    <igx-column field="ContactName" [groupable]="true" [visibleWhenCollapsed]="false"
-                        [hasSummary]="true" [sortable]="true" [groupable]="true" [editable]=true></igx-column>
-                    <igx-column field="ContactTitle" [visibleWhenCollapsed]="false" [sortable]="true" [groupable]="true" [editable]="true"></igx-column>
+                    <igx-column field="ID" [width]="'250px'" [visibleWhenCollapsed]="true" [sortable]="true"></igx-column>
+                    <igx-column field="Title" [visibleWhenCollapsed]="false"
+                        [hasSummary]="true" [sortable]="true" [editable]=true></igx-column>
+                    <igx-column field="Age" [visibleWhenCollapsed]="false" [sortable]="true" [groupable]="true" [editable]="true"></igx-column>
                 </igx-column-group>
             </igx-column-group>
             <igx-column-group header="Address Information">
-                <igx-column-group header="Location" [groupable]="true" [collapsible]="true" [expanded]="false" (expandedChange)="expandChange($event)">
+                <igx-column-group header="Location" [collapsible]="true" [expanded]="false" (expandedChange)="expandChange($event)">
                     <igx-column field="FullAddress" header="Full Address" [width]="'250px'" [visibleWhenCollapsed]="true"
                         [dataType]="'string'" [visibleWhenCollapsed]="true" [sortable]="true"></igx-column>
-                    <igx-column field="Country" [groupable]="true" [visibleWhenCollapsed]="false" [hasSummary]="true" [sortable]="true" [editable]="true"></igx-column>
-                    <igx-column field="Region" [groupable]="true" [visibleWhenCollapsed]="false" [sortable]="true" [groupable]="true" [editable]="true"></igx-column>
-                    <igx-column field="City" [groupable]="true" [visibleWhenCollapsed]="false" [hasSummary]="true" [groupable]="true" [editable]="true"></igx-column>
+                    <igx-column field="Country" [visibleWhenCollapsed]="false" [hasSummary]="true" [sortable]="true" [editable]="true"></igx-column>
+                    <igx-column field="City" [visibleWhenCollapsed]="false" [hasSummary]="true" [groupable]="true" [editable]="true"></igx-column>
                     <igx-column field="Address" [visibleWhenCollapsed]="false"></igx-column>
                 </igx-column-group>
                 <igx-column-group header="Contact Information">
-                    <igx-column field="Phone" [groupable]="true" [editable]="true"></igx-column>
+                    <igx-column field="Phone" [editable]="true"></igx-column>
                     <igx-column field="Fax" [editable]="true"></igx-column>
                     <igx-column field="PostalCode"></igx-column>
                 </igx-column-group>
             </igx-column-group>
-        </igx-grid>
+        </igx-tree-grid>
     </div>
     <div class="list-sample">
         <igx-list>
