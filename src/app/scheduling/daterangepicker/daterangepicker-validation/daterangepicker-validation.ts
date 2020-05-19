@@ -7,5 +7,8 @@ import { DateRange } from "igniteui-angular";
     templateUrl: "./daterangepicker-validation.html"
 })
 export class DateRangePickerValidationComponent {
-    public range: DateRange = { start: new Date(), end: new Date(new Date().setDate(new Date().getDate() + 5)) };
+    public rangeSingle: DateRange;
+    public rangeSeparate: DateRange;
+    public startDate: Date;
+    public endDate: Date;
 }
