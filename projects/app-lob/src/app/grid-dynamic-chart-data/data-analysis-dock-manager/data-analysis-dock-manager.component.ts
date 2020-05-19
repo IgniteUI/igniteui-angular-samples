@@ -11,12 +11,16 @@ import { ConditionalFormattingDirective } from "../directives/conditional-format
 import { DockSlotComponent } from "./dock-slot/dock-slot.component";
 import { FloatingPanesService } from "./floating-panes.service";
 @Pipe({
-    name: "hastDuplicateLayouts",
-    pure: false
+    name: "hastDuplicateLayouts"
 })
 export class HastDuplicateLayouts implements PipeTransform {
-    public transform(contentId: string, layout: IgcDockManagerLayout) {
-        return this.hasDuplicateContentID(layout, contentId, 0) >= 1;
+    public transform(contentId: string, layout: IgcDockManagerLayout, chartTypes) {
+        const count = this.hasDuplicateContentID(layout, contentId, 0);
+        if (count === 0 && chartTypes[contentId]) {
+            delete chartTypes[contentId];
+            return false;
+        }
+        return count >= 1;
 
     }
 
@@ -142,16 +146,15 @@ export class DataAnalysisDockManagerComponent implements OnInit {
                 setTimeout(() => {
                     this.toggleContextDialog(btn);
                 });
-                setTimeout(() => {
-                    this.availableCharts.forEach(c => {
-                        if (this.currentChartTypes[c]) {
-                            const chartHost = this.getChartHostFromSlot(c);
-                            chartHost.viewContainerRef.clear();
-                            this.currentChartTypes[c] = this.chartIntegration.chartFactory(c, chartHost.viewContainerRef);
-                            this.cdr.detectChanges();
-                        }
+                if (Object.keys(this.currentChartTypes).length !== 0) {
+                    setTimeout(() => {
+                        this.availableCharts.forEach(c => {
+                            if (this.currentChartTypes[c]) {
+                                this.currentChartTypes[c] = this.chartIntegration.chartFactory(c, null, this.currentChartTypes[c]);
+                            }
+                        });
                     });
-                }, 20);
+                }
             });
     }
 
@@ -181,14 +184,14 @@ export class DataAnalysisDockManagerComponent implements OnInit {
             });
 
         window.onresize = () => {
-            const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 2) - 300;
-            const y = (this.dockManager.nativeElement.getBoundingClientRect().height / 2) - 300;
+            const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 3);
+            const y = (this.dockManager.nativeElement.getBoundingClientRect().height / 3);
             this.paneService.initialPanePosition = { x, y };
         };
 
         setTimeout(() => {
-            const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 2) - 300;
-            const y = (this.dockManager.nativeElement.getBoundingClientRect().height / 2) - 300;
+            const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 3);
+            const y = (this.dockManager.nativeElement.getBoundingClientRect().height / 3);
 
             this.paneService.initialPanePosition = { x, y };
 

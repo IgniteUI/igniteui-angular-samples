@@ -6,7 +6,7 @@ import { ChartHostDirective } from "../../directives/chart-integration/chart-int
     templateUrl: "./dock-slot.component.html",
     styleUrls: ["./dock-slot.component.scss"]
 })
-export class DockSlotComponent implements OnInit, OnDestroy {
+export class DockSlotComponent implements OnInit {
 
     @ViewChild(ChartHostDirective)
     public chartHost: ChartHostDirective;
@@ -21,9 +21,4 @@ export class DockSlotComponent implements OnInit, OnDestroy {
     public ngOnInit(): void {
         this.slot = this.id;
     }
-
-    public ngOnDestroy() {
-        console.log(this);
-    }
-
 }

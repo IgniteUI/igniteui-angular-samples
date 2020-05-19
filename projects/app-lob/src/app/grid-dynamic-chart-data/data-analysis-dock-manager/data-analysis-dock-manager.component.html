@@ -3,10 +3,10 @@
         <igx-grid  igxPreventDocumentScroll #grid chartIntegration conditionalFormatting [formatter]="currentFormatter"
             [chartData]="chartData" primaryKey='ID' displayDensity="compact" [data]="data">
             <igx-column field='ID' [hidden]='true'></igx-column>
-            <igx-column field='Category' [editable]="true" [width]="'110px'"></igx-column>
-            <igx-column field='Type' [editable]="true" [filterable]='false' [width]="'130px'"></igx-column>
-            <igx-column field='Country' [editable]="true" [width]="'100px'"></igx-column>
-            <igx-column field='Price' dataType="number" [width]="'120px'" [editable]="true">
+            <igx-column field='Category'  [width]="'110px'"></igx-column>
+            <igx-column field='Type'  [filterable]='false' [width]="'130px'"></igx-column>
+            <igx-column field='Country'  [width]="'100px'"></igx-column>
+            <igx-column field='Price' dataType="number" [width]="'120px'" >
                 <ng-template igxCell let-cell="cell">
                     <div class="finjs-icons">
                         <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
@@ -14,18 +14,18 @@
                 </ng-template>
             </igx-column>
             <igx-column field='Start(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency"
-                [editable]="true">
+                >
             </igx-column>
-            <igx-column field='Start(Y)Diff' dataType="number" [width]="'120px'" [editable]="true">
+            <igx-column field='Start(Y)Diff' dataType="number" [width]="'120px'" >
                 <ng-template igxCell let-cell="cell">
                     <div class="finjs-icons">
                         <span>{{cell.value | number:'1.4-4'}}%</span>
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field='Buy' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
+            <igx-column field='Buy' [width]="'100px'" dataType="number" [formatter]="formatCurrency" >
             </igx-column>
-            <igx-column field='BuyDiff' dataType="number" [width]="'120px'" [editable]="true">
+            <igx-column field='BuyDiff' dataType="number" [width]="'120px'" >
                 <ng-template igxCell let-cell="cell">
                     <div class="finjs-icons">
                         <span>{{cell.value | number:'1.4-4'}}%</span>
@@ -33,17 +33,17 @@
                 </ng-template>
             </igx-column>
             <igx-column field='High(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency"
-                [editable]="true">
+                >
             </igx-column>
             <igx-column field='High(Y)Diff' [width]="'120px'" dataType="number" [formatter]="formatCurrency"
-                [editable]="true">
+                >
                 <ng-template igxCell let-cell="cell">
                     <div class="finjs-icons">
                         <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field='Open Price' dataType="number" [formatter]="formatCurrency" [editable]="true"
+            <igx-column field='Open Price' dataType="number" [formatter]="formatCurrency" 
                 [width]="'130px'">
                 <ng-template igxCell let-cell="cell">
                     <div class="finjs-icons">
@@ -51,7 +51,7 @@
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field='OpenPriceDiff' dataType="number" [width]="'140px'" [editable]="true">
+            <igx-column field='OpenPriceDiff' dataType="number" [width]="'140px'" >
                 <ng-template igxCell let-cell="cell">
                     <div class="finjs-icons">
                         <span>{{cell.value | number:'1.4-4'}}%</span>
@@ -59,9 +59,9 @@
                 </ng-template>
             </igx-column>
             <igx-column field='Low(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency"
-                [editable]="true">
+                >
             </igx-column>
-            <igx-column field='Low(Y)Diff' dataType="number" [width]="'120px'" [editable]="true">
+            <igx-column field='Low(Y)Diff' dataType="number" [width]="'120px'" >
                 <ng-template igxCell let-cell="cell">
                     <div class="finjs-icons">
                         <span>{{cell.value | number:'1.4-4'}}%</span>
@@ -69,9 +69,9 @@
                 </ng-template>
             </igx-column>
             <igx-column field='High(D)' [width]="'100px'" dataType="number" [headerClasses]="'headerAlignSyle'"
-                [editable]="true" [formatter]="formatCurrency">
+                 [formatter]="formatCurrency">
             </igx-column>
-            <igx-column field='High(D)Diff' dataType="number" [width]="'120px'" [editable]="true">
+            <igx-column field='High(D)Diff' dataType="number" [width]="'120px'" >
                 <ng-template igxCell let-cell="cell">
                     <div class="finjs-icons">
                         <span>{{cell.value | number:'1.4-4'}}%</span>
@@ -79,27 +79,27 @@
                 </ng-template>
             </igx-column>
             <igx-column field='Low(D)' [width]="'100px'" dataType="number" [formatter]="formatCurrency"
-                [editable]="true">
+                >
             </igx-column>
-            <igx-column field='Low(D)Diff' dataType="number" [width]="'120px'" [editable]="true">
+            <igx-column field='Low(D)Diff' dataType="number" [width]="'120px'" >
                 <ng-template igxCell let-cell="cell">
                     <div class="finjs-icons">
                         <span>{{cell.value | number:'1.4-4'}}%</span>
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field='Sell' [width]="'110px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
+            <igx-column field='Sell' [width]="'110px'" dataType="number" [formatter]="formatCurrency" >
             </igx-column>
-            <igx-column field='SellDiff' dataType="number" [width]="'120px'" [editable]="true">
+            <igx-column field='SellDiff' dataType="number" [width]="'120px'" >
                 <ng-template igxCell let-cell="cell">
                     <div class="finjs-icons">
                         <span>{{cell.value | number:'1.4-4'}}%</span>
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field='Region' [editable]="true"></igx-column>
-            <igx-column field='Contract' [editable]="true"></igx-column>
-            <igx-column field='Settlement' [width]="'150px'" [editable]="true"></igx-column>
+            <igx-column field='Region' ></igx-column>
+            <igx-column field='Contract' ></igx-column>
+            <igx-column field='Settlement' [width]="'150px'" ></igx-column>
         </igx-grid>
     </div>
     <div slot="chart-types-content" style="overflow-y: auto; height: 100%; width: 100%;">
@@ -109,7 +109,7 @@
                 <div class="types-section">
                     <div *ngFor="let chart of (availableCharts | filterType: chartType)"
                         (click)="createChart(chart)" 
-                        [ngClass]="{'selected': chart | hastDuplicateLayouts: dock.layout}"
+                        [ngClass]="{'selected': chart | hastDuplicateLayouts: dock.layout: currentChartTypes}"
                         style="width: 60px; margin-right: 20px; cursor: pointer;">
                         <img src="assets/images/svg/charts/{{chart}}.svg" />
                     </div>

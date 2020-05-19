@@ -224,32 +224,38 @@ export class ChartIntegrationDirective {
         });
     }
 
-    public chartFactory(type: CHART_TYPE, viewContainerRef: ViewContainerRef) {
+    public chartFactory(type: CHART_TYPE, viewContainerRef?: ViewContainerRef, createdChart?: any) {
         if (!this.chartTypesAvailability.get(type)) {
             return;
         }
-        let componentFactory: ComponentFactory<any>;
-        let componentRef: ComponentRef<any>;
-        this._sizeScale.maximumValue = 60;
-        this._sizeScale.minimumValue = 10;
         const chartType = this.dataCharts.get(type);
-
-        if (type === CHART_TYPE.PIE) {
-            componentFactory = this.factoryResolver.resolveComponentFactory(IgxPieChartComponent);
-            componentRef = viewContainerRef.createComponent(componentFactory);
-        } else {
-            componentFactory = this.factoryResolver.resolveComponentFactory(IgxDataChartComponent);
-            componentRef = viewContainerRef.createComponent(componentFactory);
-        }
         const options: IChartComponentOptions = this.getChartOptions(type);
         const initializer: ChartInitializer = this.getInitializer(type, chartType);
-        if (this.useLegend) {
-            const legendType = type === CHART_TYPE.PIE ? IgxItemLegendComponent : IgxLegendComponent;
-            const legendFactory = this.factoryResolver.resolveComponentFactory(legendType as any);
-            const legendComponentRef: ComponentRef<any> = viewContainerRef.createComponent(legendFactory);
-            options.chartOptions["legend"] = legendComponentRef.instance;
+        let chart;
+        if (viewContainerRef) {
+            let componentFactory: ComponentFactory<any>;
+            let componentRef: ComponentRef<any>;
+            this._sizeScale.maximumValue = 60;
+            this._sizeScale.minimumValue = 10;
+
+            if (type === CHART_TYPE.PIE) {
+                componentFactory = this.factoryResolver.resolveComponentFactory(IgxPieChartComponent);
+                componentRef = viewContainerRef.createComponent(componentFactory);
+            } else {
+                componentFactory = this.factoryResolver.resolveComponentFactory(IgxDataChartComponent);
+                componentRef = viewContainerRef.createComponent(componentFactory);
+            }
+
+            if (this.useLegend) {
+                const legendType = type === CHART_TYPE.PIE ? IgxItemLegendComponent : IgxLegendComponent;
+                const legendFactory = this.factoryResolver.resolveComponentFactory(legendType as any);
+                const legendComponentRef: ComponentRef<any> = viewContainerRef.createComponent(legendFactory);
+                options.chartOptions["legend"] = legendComponentRef.instance;
+            }
+            chart = initializer.initChart(componentRef.instance, options);
+        } else if (createdChart) {
+            chart = initializer.initChart(createdChart, options);
         }
-        const chart = initializer.initChart(componentRef.instance, options);
         this.onChartCreationDone.emit(chart);
         return chart;
     }
