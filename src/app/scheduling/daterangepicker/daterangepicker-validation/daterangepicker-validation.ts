@@ -6,5 +6,6 @@ import { Component } from "@angular/core";
     templateUrl: "./daterangepicker-validation.html"
 })
 export class DateRangePickerValidationComponent {
-    public range = { start: new Date(), end: new Date(new Date().setDate(new Date().getDate() + 5)) };
-}
+    public range: { start: Date, end: Date } =
+        { start: new Date(), end: new Date(new Date().setDate(new Date().getDate() + 5)) };
+    }

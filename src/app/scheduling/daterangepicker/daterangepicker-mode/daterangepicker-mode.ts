@@ -6,5 +6,6 @@ import { Component } from "@angular/core";
     templateUrl: "./daterangepicker-mode.html"
 })
 export class DateRangePickerModeComponent {
-    public range = { start: new Date(), end: new Date(new Date().setDate(new Date().getDate() + 5)) };
+    public range: { start: Date, end: Date } =
+        { start: new Date(), end: new Date(new Date().setDate(new Date().getDate() + 5)) };
 }

@@ -1,7 +1,7 @@
-import { IgxDateRangePickerModule, IgxIconModule, IgxInputGroupModule } from "igniteui-angular";
+import { IgxDateRangePickerModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule } from "igniteui-angular";
 import { BasicDateRangePickerComponent
 } from "../../src/app/scheduling/daterangepicker/daterangepicker-basic/daterangepicker-basic";
-import { FlightBookingComponent
+import { FlightBookingComponent, PipeWithoutTownFrom
 } from "../../src/app/scheduling/daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking";
 import { DateRangePickerModeComponent
 } from "../../src/app/scheduling/daterangepicker/daterangepicker-mode/daterangepicker-mode";
@@ -47,9 +47,10 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
             new Config({
                 component: DateRangePickerStartEndComponent,
                 appModuleConfig: new AppModuleConfig({
-                    imports: [IgxDateRangePickerModule, IgxIconModule, DateRangePickerStartEndComponent],
+                    imports: [IgxDateRangePickerModule, DateRangePickerStartEndComponent,
+                        IgxInputGroupModule, IgxIconModule ],
                     ngDeclarations: [DateRangePickerStartEndComponent],
-                    ngImports: [IgxDateRangePickerModule, IgxIconModule]
+                    ngImports: [IgxDateRangePickerModule, IgxInputGroupModule, IgxIconModule]
                 }),
                 shortenComponentPathBy: "/scheduling/daterangepicker/"
             })
@@ -59,9 +60,10 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
             new Config({
                 component: DateRangePickerValidationComponent,
                 appModuleConfig: new AppModuleConfig({
-                    imports: [IgxDateRangePickerModule, DateRangePickerValidationComponent, IgxIconModule],
+                    imports: [IgxDateRangePickerModule, DateRangePickerValidationComponent,
+                        IgxInputGroupModule, IgxIconModule],
                     ngDeclarations: [DateRangePickerValidationComponent],
-                    ngImports: [IgxDateRangePickerModule, IgxIconModule]
+                    ngImports: [IgxDateRangePickerModule, IgxInputGroupModule, IgxIconModule]
                 }),
                 shortenComponentPathBy: "/scheduling/daterangepicker/"
             })
@@ -71,9 +73,10 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
             new Config({
                 component: StyledDateRangePickerComponent,
                 appModuleConfig: new AppModuleConfig({
-                    imports: [IgxDateRangePickerModule, StyledDateRangePickerComponent, IgxIconModule],
+                    imports: [IgxDateRangePickerModule, StyledDateRangePickerComponent,
+                        IgxInputGroupModule, IgxIconModule],
                     ngDeclarations: [StyledDateRangePickerComponent],
-                    ngImports: [IgxDateRangePickerModule, IgxIconModule]
+                    ngImports: [IgxDateRangePickerModule, IgxInputGroupModule, IgxIconModule]
                 }),
                 shortenComponentPathBy: "/scheduling/daterangepicker/"
             })
@@ -83,9 +86,10 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
             new Config({
                 component: FlightBookingComponent,
                 appModuleConfig: new AppModuleConfig({
-                    imports: [IgxDateRangePickerModule, IgxInputGroupModule, IgxIconModule, FlightBookingComponent],
-                    ngDeclarations: [FlightBookingComponent],
-                    ngImports: [IgxDateRangePickerModule, IgxInputGroupModule, IgxIconModule]
+                    imports: [IgxDateRangePickerModule, IgxSelectModule,
+                        IgxInputGroupModule, IgxIconModule, FlightBookingComponent, PipeWithoutTownFrom],
+                    ngDeclarations: [FlightBookingComponent, PipeWithoutTownFrom],
+                    ngImports: [IgxDateRangePickerModule, IgxSelectModule, IgxInputGroupModule, IgxIconModule]
                 }),
                 shortenComponentPathBy: "/scheduling/daterangepicker/"
             })

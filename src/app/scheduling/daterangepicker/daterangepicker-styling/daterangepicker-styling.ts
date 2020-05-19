@@ -6,8 +6,8 @@ import { Component, ElementRef } from "@angular/core";
     templateUrl: "./daterangepicker-styling.html"
 })
 export class StyledDateRangePickerComponent {
-    public range = { start: new Date(), end: new Date(new Date().setDate(new Date().getDate() + 5)) };
+    public range: { start: Date, end: Date } =
+        { start: new Date(), end: new Date(new Date().setDate(new Date().getDate() + 5)) };
 
-    constructor(public element: ElementRef) {
-    }
+    constructor(public element: ElementRef) { }
 }
