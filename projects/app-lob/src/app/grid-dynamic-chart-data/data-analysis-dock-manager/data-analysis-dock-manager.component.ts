@@ -16,7 +16,7 @@ import { FloatingPanesService } from "./floating-panes.service";
 export class HastDuplicateLayouts implements PipeTransform {
     public transform(contentId: string, layout: IgcDockManagerLayout, chartTypes) {
         const count = this.hasDuplicateContentID(layout, contentId, 0);
-        if (count === 0 && chartTypes[contentId]) {
+        if (count === 0 && (chartTypes[contentId] || Object.keys(chartTypes).indexOf(contentId) !== -1)) {
             delete chartTypes[contentId];
             return false;
         }
@@ -153,7 +153,7 @@ export class DataAnalysisDockManagerComponent implements OnInit {
                                         const chartHost =  this.getChartHostFromSlot(c);
                                         this.selectedCharts[c] = this.chartIntegration.chartFactory(c, chartHost.viewContainerRef);
                                     }
-                                } else if(this.selectedCharts[c]) {
+                                } else if (this.selectedCharts[c]) {
                                     this.selectedCharts[c] = undefined;
                                 }
                             });
