@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit, ViewChild, HostBinding } from "@angular/core";
+import { Component, HostBinding, Input, OnInit, ViewChild } from "@angular/core";
 import { ChartHostDirective } from "../../directives/chart-integration/chart-integration.directive";
 
 @Component({

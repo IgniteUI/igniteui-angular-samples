@@ -82,8 +82,12 @@ export class IgxDataChartInitializer extends ChartInitializer {
     }
 
     public initChart(chart: IgxDataChartComponent, options: IChartComponentOptions): IgxDataChartComponent {
-        chart.series.clear();
-        chart.axes.clear();
+        if (chart.series.count) {
+            chart.series.clear();
+        }
+        if (chart.axes.count) {
+            chart.axes.clear();
+        }
         options.seriesOptions.forEach((option) => {
             const series = this.seriesFactory.create(this.seriesType);
             series.xAxis = this.xAxis;
@@ -115,8 +119,13 @@ export class IgxStackedDataChartInitializer extends ChartInitializer {
         this.seriesType = seriesType;
     }
     public initChart(chart: IgxDataChartComponent, options?: IChartComponentOptions): IgxDataChartComponent {
-        chart.series.clear();
-        chart.axes.clear();
+        if (chart.series.count) {
+            chart.series.clear();
+        }
+        if (chart.axes.count) {
+            chart.axes.clear();
+        }
+
         const series = this.seriesFactory.create(this.seriesType);
         series.xAxis = this.xAxis;
         series.yAxis = this.yAxis;

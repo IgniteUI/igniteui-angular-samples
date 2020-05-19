@@ -43,8 +43,25 @@
 
 
 }
-
+$custom-badge-theme: igx-badge-theme(
+    $border-color: white,
+    $border-width: 2px,
+    $icon-color: white,
+    $text-color: black,
+    $background-color: black,
+    $border-radius: 50%
+    );
 :host ::ng-deep {
+    .selected igx-badge{
+        &{
+            @include igx-badge($custom-badge-theme);
+        }
+
+        position: absolute;
+        bottom: 0;
+        left: 18px;
+    }
+
     .wrapper {
         padding: 3px;
     
@@ -118,10 +135,14 @@
 
 }
 
-.selected {
-    opacity: .5;
+.selected, .disabled {
     pointer-events: none;
 }
+
+.disabled{
+    opacity: .5;
+}
+
 
 .disableButton {
     opacity: .4;

@@ -104,14 +104,16 @@
     </div>
     <div slot="chart-types-content" style="overflow-y: auto; height: 100%; width: 100%;">
         <div *ngFor="let chartType of chartTypes">
-            <div *ngIf="(availableCharts |filterType:chartType).length > 0" class="wrapper">
+            <div *ngIf="(allCharts |filterType:chartType).length > 0" class="wrapper">
                 <div>{{chartType | titlecase}} Chart</div>
                 <div class="types-section">
-                    <div *ngFor="let chart of (availableCharts | filterType: chartType)"
-                        (click)="createChart(chart)" 
-                        [ngClass]="{'selected': chart | hastDuplicateLayouts: dock.layout: currentChartTypes}"
-                        style="width: 60px; margin-right: 20px; cursor: pointer;">
+                    <div *ngFor="let chart of (allCharts | filterType: chartType); let i=index"
+                        (click)="createChart(chart)"
+                        title="{{chart | name}}" 
+                        [ngClass]="{'disabled': availableCharts.indexOf(chart) === -1, 'selected': chart | hastDuplicateLayouts: dock.layout: selectedCharts}"
+                        style="width: 60px; margin-right: 20px; cursor: pointer; position: relative;">
                         <img src="assets/images/svg/charts/{{chart}}.svg" />
+                        <igx-badge *ngIf="selectedCharts[chart]" icon="check"></igx-badge>
                     </div>
                 </div>
                 <igx-divider></igx-divider>

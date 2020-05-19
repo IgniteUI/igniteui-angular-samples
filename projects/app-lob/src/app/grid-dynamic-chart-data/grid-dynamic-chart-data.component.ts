@@ -1,6 +1,6 @@
 // tslint:disable: max-line-length
 import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, Pipe, PipeTransform, ViewChild } from "@angular/core";
-import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPaneOrientation, } from "@infragistics/igniteui-dockmanager";
+import { IgcDockManagerLayout } from "@infragistics/igniteui-dockmanager";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { noop, Subject } from "rxjs";
 import { debounceTime, takeUntil, tap } from "rxjs/operators";
@@ -15,7 +15,7 @@ import { ConditionalFormattingDirective } from "./directives/conditional-formatt
 export class NamePipe implements PipeTransform {
     public transform(name: string): string {
         let res = "";
-        const upperCaseChars = name.match(/[A-Z]{1,}/g);
+        const upperCaseChars = name.match(/[A-Z0-9]{1,}/g);
         for (let index = 0; index < upperCaseChars.length; index++) {
           if (!(index === upperCaseChars.length - 1)) {
             res += name.substring(name.indexOf(upperCaseChars[index]),

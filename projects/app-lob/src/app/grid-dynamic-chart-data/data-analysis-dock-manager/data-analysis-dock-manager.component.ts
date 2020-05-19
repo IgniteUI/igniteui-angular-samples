@@ -1,11 +1,11 @@
 // tslint:disable: max-line-length
 import { ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren } from "@angular/core";
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from "@infragistics/igniteui-dockmanager";
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment, OverlaySettings } from "igniteui-angular";
 import { noop, Subject } from "rxjs";
 import { debounceTime, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../../services/financialData";
-import { ChartIntegrationDirective } from "../directives/chart-integration/chart-integration.directive";
+import { ChartIntegrationDirective, IDeterminedChartTypesArgs } from "../directives/chart-integration/chart-integration.directive";
 import { CHART_TYPE } from "../directives/chart-integration/chart-types";
 import { ConditionalFormattingDirective } from "../directives/conditional-formatting/conditional-formatting.directive";
 import { DockSlotComponent } from "./dock-slot/dock-slot.component";
@@ -79,12 +79,12 @@ export class DataAnalysisDockManagerComponent implements OnInit {
     public contextmenu = false;
     public contextmenuX = 0;
     public contextmenuY = 0;
-    public currentChartTypes = {};
+    public selectedCharts = {};
     public range;
     public currentFormatter;
 
     protected destroy$ = new Subject<any>();
-    private _contextDilogOverlaySettings = {
+    private _contextDilogOverlaySettings: OverlaySettings = {
         closeOnOutsideClick: true,
         modal: false,
         outlet: null,
@@ -140,20 +140,28 @@ export class DataAnalysisDockManagerComponent implements OnInit {
             .subscribe(range => {
                 this.chartData = this.grid.getSelectedData();
                 this.range = range;
-                this.tabs.tabs.first.isSelected = true;
                 this.renderButton();
-                const btn = document.getElementsByClassName("analytics-btn")[0];
-                setTimeout(() => {
-                    this.toggleContextDialog(btn);
-                });
-                if (Object.keys(this.currentChartTypes).length !== 0) {
-                    setTimeout(() => {
-                        this.availableCharts.forEach(c => {
-                            if (this.currentChartTypes[c]) {
-                                this.currentChartTypes[c] = this.chartIntegration.chartFactory(c, null, this.currentChartTypes[c]);
-                            }
+
+                if (Object.keys(this.selectedCharts).length !== 0) {
+                    if (this.availableCharts.length > 0) {
+                        setTimeout(() => {
+                            Object.keys(this.selectedCharts).forEach((c: CHART_TYPE) => {
+                                if (this.availableCharts.indexOf(c) !== -1) {
+                                    if (this.selectedCharts[c]) {
+                                        this.selectedCharts[c] = this.chartIntegration.chartFactory(c, null, this.selectedCharts[c]);
+                                    } else {
+                                        const chartHost =  this.getChartHostFromSlot(c);
+                                        this.selectedCharts[c] = this.chartIntegration.chartFactory(c, chartHost.viewContainerRef);
+                                    }
+                                } else if(this.selectedCharts[c]) {
+                                    this.selectedCharts[c] = undefined;
+                                }
+                            });
                         });
-                    });
+                    } else {
+                        Object.keys(this.selectedCharts).forEach(v => this.selectedCharts[v] = undefined);
+                    }
+
                 }
             });
     }
@@ -164,8 +172,22 @@ export class DataAnalysisDockManagerComponent implements OnInit {
 
     public ngAfterViewInit(): void {
 
-        this.availableCharts = this.chartIntegration.getAllChartTypes();
+        this.allCharts = this.chartIntegration.getAllChartTypes();
+        this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
+            if (args.chartsAvailabilty.size === 0 || args.chartsForCreation.length === 0) {
+                this.chartIntegration.disableCharts(this.allCharts);
+            } else {
+                args.chartsAvailabilty.forEach((isAvailable, chart) => {
+                    if (args.chartsForCreation.indexOf(chart) === -1) {
+                        this.chartIntegration.disableCharts([chart]);
+                    } else {
+                        this.chartIntegration.enableCharts([chart]);
+                    }
+                });
+            }
 
+            this.availableCharts = this.chartIntegration.getAvailableCharts();
+        });
         this.cdr.detectChanges();
 
         this.formatting.onFormattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
@@ -226,6 +248,7 @@ export class DataAnalysisDockManagerComponent implements OnInit {
     public chartTypesMenuY;
 
     public availableCharts: CHART_TYPE[] = [];
+    public allCharts: CHART_TYPE[] = [];
     public chartTypes = ["Column", "Area", "Bar", "Line", "Scatter", "Pie"];
 
     public toggleContextDialog(btn) {
@@ -233,7 +256,9 @@ export class DataAnalysisDockManagerComponent implements OnInit {
             this._contextDilogOverlaySettings.outlet = this.outlet;
             const positionStrategy = {
                 verticalStartPoint: VerticalAlignment.Bottom,
-                target: btn
+                target: btn,
+                openAnimation: null,
+                closeAnimation: null
             };
 
             if (((this.grid.visibleColumns.length - 1) - this.colIndex) < 2 || !this.grid.navigation.isColumnFullyVisible(this.colIndex + 1)) {
@@ -280,7 +305,7 @@ export class DataAnalysisDockManagerComponent implements OnInit {
 
         this.dockManager.nativeElement.layout.floatingPanes.push(splitPane);
         this.docLayout = { ...this.dockManager.nativeElement.layout };
-        this.currentChartTypes[type] = chart;
+        this.selectedCharts[type] = chart;
         this.cdr.detectChanges();
     }
 
