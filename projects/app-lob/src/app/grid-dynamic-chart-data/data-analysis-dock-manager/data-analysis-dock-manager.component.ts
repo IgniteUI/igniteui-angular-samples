@@ -30,7 +30,7 @@ export class HastDuplicateLayouts implements PipeTransform {
             if (!ob.hasOwnProperty(i)) { continue; }
 
             if ((typeof ob[i]) === "object") {
-                count =  this.hasDuplicateContentID(ob[i], contentId, count);
+                count = this.hasDuplicateContentID(ob[i], contentId, count);
             }
         }
         return count;
@@ -180,42 +180,34 @@ export class DataAnalysisDockManagerComponent implements OnInit {
                 if (this.range) { this.renderButton(); }
             });
 
+        window.onresize = () => {
+            const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 2) - 300;
+            const y = (this.dockManager.nativeElement.getBoundingClientRect().height / 2) - 300;
+            this.paneService.initialPanePosition = { x, y };
+        };
+
         setTimeout(() => {
-                const x = this.dockManager.nativeElement.getBoundingClientRect().width / 2;
-                const y = this.dockManager.nativeElement.getBoundingClientRect().height / 2;
+            const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 2) - 300;
+            const y = (this.dockManager.nativeElement.getBoundingClientRect().height / 2) - 300;
 
-                this.paneService.initialPosition = {x, y};
-            }, 1000);
+            this.paneService.initialPanePosition = { x, y };
 
-        // const handler = (component) => {
-        //     const _this = component;
-        //     return {
-        //         deleteProperty(target, prop) {
-        //             if (target[prop].type && target[prop].type === IgcDockManagerPaneType.contentPane) {
-        //                 const id = target[prop].id;
-        //                 const chart = target[prop].contentId;
-        //                 setTimeout(() => {
-        //                     const dockLayout = _this.flattenObject(_this.dockManager.nativeElement.layout);
-        //                     if (Object.values(dockLayout).indexOf(id) === -1) {
-        //                         delete _this.currentChartTypes[chart];
-        //                     }
-        //                 });
-        //             }
-        //             return true;
-        //         },
-        //         set(target, property: string, value) {
-        //             if (property !== "length") {
-        //                 console.log("target: " + target);
-        //                 console.log("property: " + property);
-        //                 value.panes = new Proxy(value.panes, handler(_this));
-        //             }
-        //             target[property] = value;
-        //             return true;
-        //         }
-        //     };
-        // };
-        // this.dockManager.nativeElement.layout.floatingPanes = new Proxy(this.dockManager.nativeElement.layout.floatingPanes, handler(this));
-}
+            const handler = (component) => {
+                const _this = component;
+                return {
+                    deleteProperty(target, prop) {
+                        if (target[prop].type) {
+                            _this.paneService.removeChartPane(target[prop]);
+                            _this.cdr.detectChanges();
+                        }
+                        return true;
+                    }
+                };
+            };
+            this.dockManager.nativeElement.layout.floatingPanes = new Proxy(this.dockManager.nativeElement.layout.floatingPanes, handler(this));
+
+        }, 1000);
+    }
 
     public ngOnDestroy(): void {
         this.destroy$.next(true);
@@ -280,7 +272,9 @@ export class DataAnalysisDockManagerComponent implements OnInit {
 
         this.paneService.appendChartPane(splitPane);
         const chartHost = this.getChartHostFromSlot(type);
+        chartHost.viewContainerRef.clear();
         const chart = this.chartIntegration.chartFactory(type, chartHost.viewContainerRef);
+
         this.dockManager.nativeElement.layout.floatingPanes.push(splitPane);
         this.docLayout = { ...this.dockManager.nativeElement.layout };
         this.currentChartTypes[type] = chart;

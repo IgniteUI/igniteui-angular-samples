@@ -6,39 +6,35 @@ import { IgcDockManagerPoint, IgcSplitPane } from "@infragistics/igniteui-dockma
   providedIn: "root"
 })
 export class FloatingPanesService {
-  public set initialPosition(point: IgcDockManagerPoint) {
-    this._initialPosition = point;
+
+  public set initialPanePosition(point: IgcDockManagerPoint) {
+    this._initialPanePosition = point;
   }
 
-  public get initialPosition() {
-      return this._initialPosition;
+  public get initialPanePosition() {
+      return this._initialPanePosition;
   }
 
   public floatingPanes: IgcSplitPane[] = [];
 
-  private _initialPosition: IgcDockManagerPoint;
+  private _initialPanePosition: IgcDockManagerPoint;
   constructor() { }
 
   public appendChartPane(pane: IgcSplitPane) {
-      pane.floatingLocation = this.initialPosition;
-      this.floatingPanes.push(pane);
-      this.initialPosition.x = this.initialPosition.x + 10 ;
-      this.initialPosition.y = this.initialPosition.y + 10;
+
+        if (this.floatingPanes.length) {
+            const lastPane = this.floatingPanes[this.floatingPanes.length - 1];
+            pane.floatingLocation = {x: lastPane.floatingLocation.x + 10, y: lastPane.floatingLocation.y + 10}  ;
+        } else {
+            pane.floatingLocation = this.initialPanePosition;
+        }
+        this.floatingPanes.push(pane);
+
   }
 
   public removeChartPane(pane: IgcSplitPane) {
-    const index = this.floatingPanes.indexOf(pane);
-    this.floatingPanes = this.floatingPanes.slice(index, index + 1);
-    if (index !== this.floatingPanes.length - 1) {
-        this.floatingPanes.filter((p, i) => i >= index).forEach(p => {
-            p.floatingLocation.x = this.initialPosition.x - 10 ;
-            p.floatingLocation.y = this.initialPosition.y - 10 ;
-        });
-    }
-
-    const lastPane = this.floatingPanes[this.floatingPanes.length - 1];
-    this.initialPosition.x = lastPane.floatingLocation.x + 10;
-    this.initialPosition.y = lastPane.floatingLocation.y + 10;
+    const index = this.floatingPanes.indexOf(this.floatingPanes.find(p => p.id === pane.id));
+    this.floatingPanes.splice(index, index + 1);
   }
 
 }
