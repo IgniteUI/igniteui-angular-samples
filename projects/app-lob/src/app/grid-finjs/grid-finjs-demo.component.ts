@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import {
-    DefaultSortingStrategy, IDialogEventArgs, IgxButtonGroupComponent, IgxDialogComponent,
+    DefaultSortingStrategy, IDialogEventArgs, IGridKeydownEventArgs, IgxButtonGroupComponent,
+    IgxDialogComponent,
     IgxGridCellComponent,
     IgxGridComponent,
     IgxSliderComponent,
@@ -159,6 +160,21 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
 
     public onCloseHandler(evt: IDialogEventArgs) {
         this.buttonGroup1.selectButton(2);
+        if (this.grid1.navigation.activeNode) {
+            if (this.grid1.navigation.activeNode.row === -1) {
+                this.grid1.theadRow.nativeElement.focus();
+            } else {
+                this.grid1.tbody.nativeElement.focus();
+            }
+        }
+    }
+
+    public closeDialog(evt) {
+        if (this.dialog.isOpen &&
+            evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === "d") {
+            evt.preventDefault();
+            this.dialog.close();
+        }
     }
 
     public onChange(event: any) {
@@ -324,6 +340,15 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     public formatYAxisLabel(item: any): string {
         return item + "test test";
     }
+
+    public customKeydown(evt) {
+        if (this.grid1.selectedRows().length > 0 &&
+            evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === "d") {
+            evt.preventDefault();
+            this.dialog.open();
+        }
+    }
+
     // tslint:enable:member-ordering
 
     private disableOtherButtons(ind: number, disableButtons: boolean) {
@@ -418,4 +443,5 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     get buttonSelected(): number {
         return this.selectedButton || this.selectedButton === 0 ? this.selectedButton : -1;
     }
+
 }

@@ -41,7 +41,7 @@
         width="100%" height="30%" [autoGenerate]='false' displayDensity='compact'
         columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' [rowSelection]="selectionMode"
         [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [showToolbar]="false" [columnHiding]="true"
-        [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
+        [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel" (keydown)="customKeydown($event)">
 
         <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
         <!-- <ng-template igxExcelStyleSorting></ng-template>
@@ -88,7 +88,7 @@
         </igx-column>
         <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [filterable]='false'>
             <ng-template igxCell let-cell="cell" class="center-text">
-                <button class="button-icon" igxButton="icon" igxRippleCentered="true">
+                <button class="button-icon" igxButton="icon" igxRippleCentered="true" tabindex="-1">
                     <igx-icon fontSet="material" (click)="openSingleRowChart(cell)">insert_chart_outlined</igx-icon>
                 </button>
             </ng-template>
@@ -205,13 +205,19 @@
     </igx-grid>
 </div>
 
-<igx-dialog #dialog title="Chart" (onRightButtonSelect)="dialog.close()" rightButtonLabel="OK"
-    closeOnOutsideSelect="true" (onClose)="onCloseHandler($event)">
-    <div style="padding: 20px">
-        <igx-category-chart #chart1 [dataSource]="chartData" width="900px" chartType="column" xAxisInterval="20"
-            xAxisLabelAngle="90" [includedProperties]="properties"
-            height="400px" [tooltipTemplate]="seriesTooltip">
-        </igx-category-chart>
+<igx-dialog #dialog closeOnOutsideSelect="true" (onClose)="onCloseHandler($event)">
+    <div (keydown)="closeDialog($event)">
+        <igx-dialog-title> Chart </igx-dialog-title>
+
+        <div style="padding: 20px">
+            <igx-category-chart #chart1 [dataSource]="chartData" width="900px" chartType="column" xAxisInterval="20"
+                xAxisLabelAngle="90" [includedProperties]="properties" height="400px" [tooltipTemplate]="seriesTooltip">
+            </igx-category-chart>
+        </div>
+
+        <div igxDialogActions>
+            <button igxButton (click)="dialog.close()" [igxFocus]="dialog.isOpen">ОК</button>
+        </div>
     </div>
 </igx-dialog>
 
