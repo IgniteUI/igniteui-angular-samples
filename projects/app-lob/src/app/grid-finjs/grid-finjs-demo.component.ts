@@ -341,11 +341,22 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
         return item + "test test";
     }
 
-    public customKeydown(evt) {
+    public gridKeydown(evt) {
         if (this.grid1.selectedRows().length > 0 &&
             evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === "d") {
             evt.preventDefault();
             this.dialog.open();
+        }
+    }
+
+    public customKeydown(args: IGridKeydownEventArgs) {
+        const target: IgxGridCellComponent = args.target as IgxGridCellComponent;
+        const evt: KeyboardEvent = args.event as KeyboardEvent;
+        const type = args.targetType;
+
+        if (type === "dataCell" && target.column.field === "Chart" && evt.key.toLowerCase() === "enter") {
+            this.grid1.selectRows([target.row.rowID], true);
+            this.openSingleRowChart(target);
         }
     }
 
