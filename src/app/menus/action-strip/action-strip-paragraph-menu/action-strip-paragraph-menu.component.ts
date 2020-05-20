@@ -23,7 +23,6 @@ export class ActionStripParagraphMenuComponent {
         if (event.relatedTarget &&
             event.relatedTarget.nodeName.toLowerCase() !== "igx-drop-down-item" &&
             event.relatedTarget.className.indexOf("menu-button") === -1) {
-            console.log(event.relatedTarget.nodeName);
             this.actionStrip.hide();
         }
     }
