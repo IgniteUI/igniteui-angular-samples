@@ -69,8 +69,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     @ViewChild("contextDialog", { static: true })
     public contextDialog: IgxDialogComponent;
 
-    @ViewChild(IgxTabsComponent, { static: true })
-    public tabs: IgxTabsComponent;
+    @ViewChild("dialogContent", { read: ElementRef })
+    public dialogContent: ElementRef<any>;
 
     @ViewChildren(DockSlotComponent)
     public dockSlots: QueryList<DockSlotComponent>;
@@ -135,7 +135,6 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     }
 
     public ngOnInit() {
-        (this.tabs.headerContainer.nativeElement as HTMLElement).onpointerdown = event => event.stopPropagation();
 
         this.data = new FinancialData().generateData(1000);
 
@@ -172,6 +171,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     }
 
     public ngAfterViewInit(): void {
+        this.dialogContent.nativeElement.onpointerdown = event => event.stopPropagation();
+
         this.allCharts = this.chartIntegration.getAllChartTypes();
         this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
             if (args.chartsAvailabilty.size === 0 || args.chartsForCreation.length === 0) {
@@ -331,6 +332,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
 
     public clearFormatting() {
         this.formatting.clearFormatting();
+        this.currentFormatter = undefined;
     }
 
     private renderButton() {

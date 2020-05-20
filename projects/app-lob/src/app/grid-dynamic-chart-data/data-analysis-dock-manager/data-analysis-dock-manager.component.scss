@@ -52,14 +52,16 @@ $custom-badge-theme: igx-badge-theme(
     $border-radius: 50%
     );
 :host ::ng-deep {
-    .selected igx-badge{
-        &{
-            @include igx-badge($custom-badge-theme);
+    .selected {
+        igx-badge{
+            &{
+                @include igx-badge($custom-badge-theme);
+            }
+    
+            position: absolute;
+            bottom: 0;
+            left: 18px;
         }
-
-        position: absolute;
-        bottom: 0;
-        left: 18px;
     }
 
     .wrapper {
@@ -84,26 +86,6 @@ $custom-badge-theme: igx-badge-theme(
     .grid-chart-contextmenu-wrapper {
         igx-grid {
             @include scrollbar(16px, 16px);
-        }
-    }
-
-    .header {
-        height: 10%;
-        background-color: #e0e0e0;
-        display: flex;
-        font-size: 1.8rem;
-        align-self: center;
-
-        .action-buttons-wrapper {
-            margin-left: auto;
-            margin-right: 10px;
-            align-self: center;
-        }
-
-        .header-text {
-            margin-right: auto;
-            align-self: center;
-            margin-left: 3rem;
         }
     }
 
@@ -145,20 +127,34 @@ $custom-badge-theme: igx-badge-theme(
 
 
 .disableButton {
-    opacity: .4;
+    opacity: .3;
     pointer-events: none;
 }
 
+$font-family: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
 .tab-options-wrapper{
+    @include scrollbar(6px, 6px);
+
     display: flex;
-    max-height: 100px;
-    max-width: 358px;
+    flex-flow: column;
+    max-height: 110px;
+    max-width: 310px;
+    .header{
+        font-size: 0.8rem;
+        display: flex;
+        width: 100%;
+        padding: 0 0.2rem 0 0.4rem;
+        font-weight: 650;
+        border-bottom: 1px solid #BDBDBD;
+        align-self: center;
+        font-family: $font-family;
+    }
 }
 
 .tab-option {
-    padding: .9rem;
-    height: 100px;
-    width: 358px;
+    padding: .5rem 0.4rem 0.4rem 0.4rem;
+    height: 110px;
+    width: 310px;
     display: inline-flex;
     overflow-x: auto;
     overflow-y: hidden;
@@ -171,8 +167,9 @@ $custom-badge-theme: igx-badge-theme(
 
     .name {
         font-size: .9rem;
-        font-weight: 400;
+        font-weight: 500;
         text-align: center;
+        font-family: $font-family;
     }
 }
 
@@ -198,16 +195,6 @@ $custom-badge-theme: igx-badge-theme(
 .clear{
     display: flex;
     flex-flow: column;
+    margin-left: auto;
     justify-content: center;
-    border-left: 1px solid #BDBDBD;
-    .btn, .more-btn {
-        width: 68px;
-        margin: 0 0 7px 0;
-        padding: 0;
-    }
-    .name {
-        font-size: .9rem;
-        font-weight: 400;
-        text-align: center;
-    }
 }

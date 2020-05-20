@@ -128,32 +128,30 @@
 <span *ngIf="contextmenu" class="analytics-btn" [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}"
     (click)="toggleContextDialog(button)">
     <button #button igxButton="icon">
-        <igx-icon #icon style="pointer-events: none;" class="icon" fontSet="material">multiline_chart</igx-icon>
+        <igx-icon #icon style="pointer-events: none;" class="icon" fontSet="material">insert_chart_outlined</igx-icon>
     </button>
 </span>
 <!-- this block can be moved in another component -->
 <igx-dialog #contextDialog>
-    <igx-tabs type="fixed">
-        <igx-tabs-group label="Conditional Formatting">
-            <div class="tab-options-wrapper">
-                <div class="tab-option">
-                    <div *ngFor="let condition of formattersNames" class="action">
-                        <div class="btn condition" (click)="analyse(condition)">
-                            <img style="width: 36px; height: 36px;"
-                                src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg" />
-                            <span class="name">{{condition.replace('10', '10%')}}</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="clear action">
-                    <div class="btn" (click)="clearFormatting()" [ngClass]="{'disableButton': !currentFormatter}">
-                        <img style="width: 36px; height: 36px;" src="assets/images/svg/conditions/Clear.svg" />
-                        <span class="name">Clear All</span>
+        <div #dialogContent class="tab-options-wrapper">
+            <div class="header">
+                <span>CONDITIONAL FORMATTING</span>
+                <div class="clear action" [ngClass]="{'disableButton': !currentFormatter}">
+                    <div class="btn" (click)="clearFormatting()">
+                        <img style="width: 18px; height: 18px;" src="assets/images/svg/conditions/Clear.svg" />
                     </div>
                 </div>
             </div>
-        </igx-tabs-group>
-    </igx-tabs>
+            <div class="tab-option">
+                <div *ngFor="let condition of formattersNames" class="action">
+                    <div class="btn condition" (click)="analyse(condition)">
+                        <img style="width: 36px; height: 36px;"
+                            src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg" />
+                        <span class="name">{{condition.replace('10', '10%')}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 </igx-dialog>
 
 <ng-template #template>
