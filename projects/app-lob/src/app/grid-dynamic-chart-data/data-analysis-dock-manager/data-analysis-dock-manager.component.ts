@@ -1,7 +1,7 @@
 // tslint:disable: max-line-length
-import { ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren, TemplateRef, AfterViewInit } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from "@angular/core";
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from "@infragistics/igniteui-dockmanager";
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment, OverlaySettings } from "igniteui-angular";
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, OverlaySettings, VerticalAlignment } from "igniteui-angular";
 import { noop, Subject } from "rxjs";
 import { debounceTime, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../../services/financialData";
@@ -172,7 +172,6 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     }
 
     public ngAfterViewInit(): void {
-        console.log(this.emptyChartTemplate)
         this.allCharts = this.chartIntegration.getAllChartTypes();
         this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
             if (args.chartsAvailabilty.size === 0 || args.chartsForCreation.length === 0) {
