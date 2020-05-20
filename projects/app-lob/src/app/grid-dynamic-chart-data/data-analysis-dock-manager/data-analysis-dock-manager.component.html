@@ -121,7 +121,7 @@
         </div>
     </div>
 
-    <dock-slot  *ngFor="let chart of availableCharts" [id]="chart" >
+    <dock-slot  *ngFor="let chart of allCharts" [id]="chart" >
     </dock-slot>
 </igc-dockmanager>
 
@@ -155,3 +155,7 @@
         </igx-tabs-group>
     </igx-tabs>
 </igx-dialog>
+
+<ng-template #template>
+    <span>Incompatible data</span>
+</ng-template>

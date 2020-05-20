@@ -1,5 +1,5 @@
 // tslint:disable: max-line-length
-import { ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren } from "@angular/core";
+import { ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren, TemplateRef, AfterViewInit } from "@angular/core";
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from "@infragistics/igniteui-dockmanager";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment, OverlaySettings } from "igniteui-angular";
 import { noop, Subject } from "rxjs";
@@ -47,7 +47,7 @@ export class HastDuplicateLayouts implements PipeTransform {
     styleUrls: ["./data-analysis-dock-manager.component.scss"],
     providers: [FloatingPanesService]
 })
-export class DataAnalysisDockManagerComponent implements OnInit {
+export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
 
     public data;
 
@@ -74,6 +74,9 @@ export class DataAnalysisDockManagerComponent implements OnInit {
 
     @ViewChildren(DockSlotComponent)
     public dockSlots: QueryList<DockSlotComponent>;
+
+    @ViewChild("template", { read: TemplateRef })
+    public emptyChartTemplate: TemplateRef<any>;
 
     public chartData = [];
     public contextmenu = false;
@@ -141,27 +144,25 @@ export class DataAnalysisDockManagerComponent implements OnInit {
                 this.chartData = this.grid.getSelectedData();
                 this.range = range;
                 this.renderButton();
-
                 if (Object.keys(this.selectedCharts).length !== 0) {
-                    if (this.availableCharts.length > 0) {
-                        setTimeout(() => {
-                            Object.keys(this.selectedCharts).forEach((c: CHART_TYPE) => {
-                                if (this.availableCharts.indexOf(c) !== -1) {
-                                    if (this.selectedCharts[c]) {
-                                        this.selectedCharts[c] = this.chartIntegration.chartFactory(c, null, this.selectedCharts[c]);
-                                    } else {
-                                        const chartHost =  this.getChartHostFromSlot(c);
-                                        this.selectedCharts[c] = this.chartIntegration.chartFactory(c, chartHost.viewContainerRef);
-                                    }
-                                } else if (this.selectedCharts[c]) {
-                                    this.selectedCharts[c] = undefined;
+                    setTimeout(() => {
+                        Object.keys(this.selectedCharts).forEach((c: CHART_TYPE) => {
+                            const chartHost = this.getChartHostFromSlot(c);
+                            if (this.availableCharts.indexOf(c) !== -1) {
+                                if (this.selectedCharts[c]) {
+                                    this.selectedCharts[c] = this.chartIntegration.chartFactory(c, null, this.selectedCharts[c]);
+                                } else {
+                                    chartHost.viewContainerRef.clear();
+                                    this.selectedCharts[c] = this.chartIntegration.chartFactory(c, chartHost.viewContainerRef);
                                 }
-                            });
+                            } else {
+                                chartHost.viewContainerRef.clear();
+                                const embeddedView = chartHost.viewContainerRef.createEmbeddedView(this.emptyChartTemplate);
+                                embeddedView.detectChanges();
+                                this.selectedCharts[c] = undefined;
+                            }
                         });
-                    } else {
-                        Object.keys(this.selectedCharts).forEach(v => this.selectedCharts[v] = undefined);
-                    }
-
+                    });
                 }
             });
     }
@@ -171,7 +172,7 @@ export class DataAnalysisDockManagerComponent implements OnInit {
     }
 
     public ngAfterViewInit(): void {
-
+        console.log(this.emptyChartTemplate)
         this.allCharts = this.chartIntegration.getAllChartTypes();
         this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
             if (args.chartsAvailabilty.size === 0 || args.chartsForCreation.length === 0) {
