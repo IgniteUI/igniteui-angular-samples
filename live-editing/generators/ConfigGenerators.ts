@@ -1,3 +1,4 @@
+import { ActionStripConfigGenerator } from "../configs/ActionStripConfigGenerator";
 import { AutocompleteConfigGenerator } from "../configs/AutocompleteConfigGenerator";
 import { AvatarConfigGenerator } from "../configs/AvatarConfigGenerator";
 import { BadgeConfigGenerator } from "../configs/BadgeConfigGenerator";
@@ -101,6 +102,7 @@ export const CONFIG_GENERATORS =
         TreeGridConfigGenerator,
 
         // other:
+        ActionStripConfigGenerator,
         CircularProgressbarConfigGenerator,
         DividerConfigGenerator,
         ForConfigGenerator,
