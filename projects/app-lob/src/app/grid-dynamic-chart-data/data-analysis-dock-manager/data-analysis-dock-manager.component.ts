@@ -149,7 +149,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                         Object.keys(this.selectedCharts).forEach((c: CHART_TYPE) => {
                             const chartHost = this.getChartHostFromSlot(c);
                             if (this.availableCharts.indexOf(c) !== -1) {
-                                if (this.selectedCharts[c]) {
+                                if (c !== CHART_TYPE.PIE && typeof this.selectedCharts[c] === "object") {
                                     this.selectedCharts[c] = this.chartIntegration.chartFactory(c, null, this.selectedCharts[c]);
                                 } else {
                                     chartHost.viewContainerRef.clear();
@@ -159,7 +159,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                                 chartHost.viewContainerRef.clear();
                                 const embeddedView = chartHost.viewContainerRef.createEmbeddedView(this.emptyChartTemplate);
                                 embeddedView.detectChanges();
-                                this.selectedCharts[c] = undefined;
+                                this.selectedCharts[c] = "Empty";
                             }
                         });
                     });
