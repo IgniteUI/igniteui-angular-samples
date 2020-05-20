@@ -711,7 +711,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [HGridRowPinningExtraColumnSampleComponent, IgxHierarchicalGridModule, IgxIconModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [HGridRowPinningExtraColumnSampleComponent],
-                ngImports: [IgxPreventDocumentScrollModule, IgxHierarchicalGridModule, IgxIconModule],
+                ngImports: [IgxPreventDocumentScrollModule, IgxHierarchicalGridModule, IgxIconModule, IgxSwitchModule],
                 ngProviders: []
             })
         }));
@@ -722,7 +722,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [HGridRowPinningSampleComponent, IgxHierarchicalGridModule, IgxActionStripModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [HGridRowPinningSampleComponent],
-                ngImports: [IgxPreventDocumentScrollModule, IgxActionStripModule, IgxHierarchicalGridModule],
+                ngImports: [IgxPreventDocumentScrollModule, IgxActionStripModule, IgxHierarchicalGridModule, IgxSwitchModule],
                 ngProviders: []
             })
         }));
