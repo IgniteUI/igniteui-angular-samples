@@ -4,8 +4,8 @@ import { FormsModule } from "@angular/forms";
 import {
     IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule,
     IgxDateRangePickerModule, IgxDateTimeEditorModule, IgxDialogModule, IgxDropDownModule, IgxIconModule,
-    IgxInputGroupModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTimePickerModule,
-    IgxToastModule, IgxToggleModule
+    IgxInputGroupModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTextSelectionModule,
+    IgxTimePickerModule, IgxToastModule, IgxToggleModule
 } from "igniteui-angular";
 import { CalendarDaysViewComponent } from "./calendar/calendar-days-view/calendar-days-view.component";
 import { CalendarMonthsViewComponent } from "./calendar/calendar-months-view/calendar-months-view.component";
@@ -110,6 +110,7 @@ import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/time
         IgxCalendarModule,
         IgxCardModule,
         IgxDatePickerModule,
+        IgxDateRangePickerModule,
         IgxDateTimeEditorModule,
         IgxDialogModule,
         IgxIconModule,
@@ -122,8 +123,7 @@ import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/time
         IgxSelectModule,
         IgxDropDownModule,
         IgxToggleModule,
-        IgxDateTimeEditorModule,
-        IgxDateRangePickerModule
+        IgxTextSelectionModule
     ]
 })
 export class SchedulingModule { }

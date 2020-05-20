@@ -3,9 +3,9 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxChipsModule,
-    IgxDropDownModule, IgxFilterModule, IgxForOfModule, IgxIconModule, IgxInputGroupModule,
-    IgxListModule, IgxMaskModule, IgxProgressBarModule, IgxRippleModule, IgxSnackbarModule,
-    IgxSwitchModule, IgxTextHighlightModule, IgxToastModule
+    IgxDropDownModule, IgxFilterModule, IgxFocusModule, IgxForOfModule,
+    IgxIconModule, IgxInputGroupModule, IgxListModule, IgxMaskModule, IgxProgressBarModule,
+    IgxRippleModule, IgxSnackbarModule, IgxSwitchModule, IgxTextHighlightModule, IgxTextSelectionModule, IgxToastModule
 } from "igniteui-angular";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
@@ -104,6 +104,8 @@ import { TextHighlightStyleComponent } from "./text-highlight/text-highlight-sty
         IgxListModule,
         IgxChipsModule,
         IgxDropDownModule,
+        IgxFocusModule,
+        IgxTextSelectionModule,
         IgxInputGroupModule,
         IgxToastModule,
         IgxButtonModule,
