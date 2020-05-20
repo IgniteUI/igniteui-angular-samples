@@ -36,14 +36,12 @@ $custom-calendar-theme: igx-calendar-theme(
 );
 
 :host {
+    display: block;
+    padding: 1rem;
+    
     ::ng-deep {
         @include igx-date-range-picker($custom-date-range-theme);
         @include igx-input-group($custom-input-group-theme);
         @include igx-calendar($custom-calendar-theme);
     }
-}
-
-:host {
-    display: block;
-    padding: 1rem;
 }
