@@ -25,6 +25,10 @@ $progressBar-sample-theme: igx-progress-linear-theme( $track-color: rgba(181, 18
             display: flex;
             align-items: center;
         }
+        igx-sparkline {
+            margin-top: 20px;
+            margin-bottom: -10px;
+        }
     }
 }
 
@@ -125,5 +129,5 @@ $progressBar-sample-theme: igx-progress-linear-theme( $track-color: rgba(181, 18
 }
 
 .linear-bar-container {
-    width: 100%;
+    margin: auto;
 }
