@@ -16,6 +16,7 @@ export const gridsRoutesData = {
     "grid-row-drag-to-grid": { displayName: "Row Drag between Grids", parentName: "Grid" },
     "grid-row-reorder": { displayName: "Grid Row Reorder", parentName: "Grid" },
     "grid-batch-editing": { displayName: "Grid Batch Editing", parentName: "Grid" },
+    "grid-action-strip": { displayName: "Grid with Action Strip", parentName: "Grid" },
     "grid-displayDensity": { displayName: "Grid Display Density", parentName: "Grid" },
     "grid-cell-styling": { displayName: "Grid Conditional Cell Classes", parentName: "Grid" },
     "grid-cell-cellStyling": { displayName: "Grid Conditional Cell Styling", parentName: "Grid" },
