@@ -178,11 +178,6 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
                 }
             });
 
-        this.grid.onCellEditEnter.pipe(takeUntil(this._destroyer))
-            .subscribe(() => {
-                this._keyboardHandler.selectItem(0);
-            });
-
         this.grid.onRowToggle.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 const evt = args.event as KeyboardEvent;
@@ -239,21 +234,28 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
             const activeCol = this.grid.navigation.activeNode;
             const col = this.grid.visibleColumns.find
                 (c => c.visibleIndex === activeCol.column && c.level === activeCol.level);
-            if (key === "l" && evt.ctrlKey && evt.shiftKey) {
-                if (col && !col.columnGroup && col.filterable) {
+            if (key === "l" && evt.ctrlKey && evt.shiftKey  && col && !col.columnGroup && col.filterable) {
                     this._keyboardHandler.selectItem(4);
-                }
             }
 
-            if ((key === "arrowleft" || key === "arrowright") && evt.altKey && evt.shiftKey) {
-                if (col && !col.columnGroup && col.groupable) {
-                    this._keyboardHandler.selectItem(2);
-                }
+            if ((key === "arrowleft" || key === "arrowright") && evt.altKey && evt.shiftKey &&
+            col && !col.columnGroup && col.groupable) {
+                this._keyboardHandler.selectItem(2);
             }
 
             if ((key === "arrowup" || key === "arrowdown") && evt.ctrlKey) {
                 if (col && !col.columnGroup && col.sortable) {
                     this._keyboardHandler.selectItem(1);
+                }
+            }
+        }
+
+        if (this._keyboardHandler.gridSection === GridSection.TBODY) {
+            if (key === "enter") {
+                const activeCell = this.grid.navigation.activeNode;
+                const cell = this.grid.getCellByColumnVisibleIndex(activeCell.row, activeCell.column);
+                if (cell && cell.column.editable && cell.editMode) {
+                    this._keyboardHandler.selectItem(0);
                 }
             }
         }

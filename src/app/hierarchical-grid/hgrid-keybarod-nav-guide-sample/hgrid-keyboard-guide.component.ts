@@ -260,15 +260,21 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
             const activeCol = this.gridTarget.hGrid.navigation.activeNode;
             const col = this.gridTarget.hGrid.visibleColumns.find
                 (c => c.visibleIndex === activeCol.column && c.level === activeCol.level);
-            if (key === "l" && evt.ctrlKey && evt.shiftKey) {
-                if (col && !col.columnGroup && col.filterable) {
-                    this._keyboardHandler.selectItem(4);
-                }
+            if (key === "l" && evt.ctrlKey && evt.shiftKey && col && !col.columnGroup && col.filterable) {
+                this._keyboardHandler.selectItem(4);
             }
 
-            if ((key === "arrowup" || key === "arrowdown") && evt.ctrlKey) {
-                if (col && !col.columnGroup && col.sortable) {
-                    this._keyboardHandler.selectItem(1);
+            if ((key === "arrowup" || key === "arrowdown") && evt.ctrlKey && col && !col.columnGroup && col.sortable) {
+                this._keyboardHandler.selectItem(1);
+            }
+        }
+
+        if (this._keyboardHandler.gridSection === GridSection.TBODY) {
+            if (key === "enter") {
+                const activeCell = this.gridTarget.hGrid.navigation.activeNode;
+                const cell = this.gridTarget.hGrid.getCellByColumnVisibleIndex(activeCell.row, activeCell.column);
+                if (cell && cell.column.editable && cell.editMode) {
+                    this._keyboardHandler.selectItem(0);
                 }
             }
         }
@@ -296,11 +302,6 @@ export class GridUnderManagement {
                 if (evt.type === "keydown") {
                     this.keyboardHandler.selectItem(0);
                 }
-            });
-
-        this.hGrid.onCellEditEnter.pipe(takeUntil(this.destroyer))
-            .subscribe(() => {
-                this.keyboardHandler.selectItem(0);
             });
 
         this.hGrid.onRowToggle.pipe(takeUntil(this.destroyer))
