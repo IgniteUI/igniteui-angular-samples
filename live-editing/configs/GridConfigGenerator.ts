@@ -2,7 +2,7 @@ import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { Router, RouterModule } from "@angular/router";
 // tslint:disable:max-line-length
-import { IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDragDropModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxTooltipModule } from "igniteui-angular";
+import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDragDropModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxTooltipModule, IgxActionStripModule } from "igniteui-angular";
 import { IgxCategoryChartModule, IgxLegendModule, IgxPieChartModule, IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
 import { IgxPreventDocumentScrollModule } from "../../src/app/directives/prevent-scroll.directive";
 import { GridColumnGroupSelectionComponent } from "../../src/app/grid/column-group-selection-sample/column-group-selection-sample.component";
@@ -109,6 +109,7 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridActionStripSampleComponent } from '../../src/app/grid/grid-action-strip/grid-action-strip-sample';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -619,6 +620,20 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxFocusModule, GridWithTransactionsComponent, IgxPreventDocumentScrollModule],
                 ngDeclarations: [GridBatchEditingSampleComponent, GridWithTransactionsComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxDialogModule, IgxButtonModule,
+                    IgxFocusModule]
+            })
+        }));
+
+        //Grid with Action Strip
+        configs.push(new Config({
+            component: GridActionStripSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts", "/src/app/data/utils.ts",
+                "/src/app/grid/grid-batch-editing/grid-transaction.component.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridActionStripSampleComponent, IgxGridModule, IgxDialogModule, IgxButtonModule,
+                    IgxFocusModule, GridWithTransactionsComponent, IgxPreventDocumentScrollModule, IgxActionStripModule],
+                ngDeclarations: [GridActionStripSampleComponent, GridWithTransactionsComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxDialogModule, IgxButtonModule, IgxActionStripModule,
                     IgxFocusModule]
             })
         }));
