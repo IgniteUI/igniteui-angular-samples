@@ -1,10 +1,12 @@
+<div class="switches">
+    <igx-switch (change)='changePinningPosition()' style="padding-left: 20px">Bottom Row Pinning toggle</igx-switch>
+</div>
 <div class="grid-container">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [pinning]='pinningConfig' [height]="'490px'" [width]="'100%'"
-        [autoGenerate]="false" [rowDraggable]="true" [primaryKey]="'ID'" [cellSelection]="false" igxDrop
-        (onRowDragStart)="onRowDragStart($event)" (dropped)="onDropAllowed($event)"
+    <igx-grid #grid1 igxPreventDocumentScroll [data]="data" [pinning]='pinningConfig' [height]="'520px'" [width]="'100%'" [autoGenerate]="false"
+        [primaryKey]="'ID'" [cellSelection]="'none'" [rowEditable]="true"
         (mouseover)="onMouseOver(actionStrip1, grid1, $event)" (onCellClick)="onCellClick($event)"
         (mouseleave)="onMouseLeave(actionStrip1, $event)">
-        <igx-column [field]="'CompanyName'" [header]="'Company Name'"></igx-column>
+        <igx-column [field]="'CompanyName'" [header]="'Company Name'" [width]="'300px'"></igx-column>
         <igx-column [field]="'ContactName'" [header]="'Contact Name'"></igx-column>
         <igx-column [field]="'ContactTitle'" [header]="'Contact Title'"></igx-column>
         <igx-column [field]="'Address'" [header]="'Address'"></igx-column>
@@ -15,6 +17,7 @@
 
         <igx-action-strip #actionStrip1>
             <igx-grid-pinning-actions></igx-grid-pinning-actions>
+            <igx-grid-editing-actions></igx-grid-editing-actions>
         </igx-action-strip>
     </igx-grid>
 </div>
