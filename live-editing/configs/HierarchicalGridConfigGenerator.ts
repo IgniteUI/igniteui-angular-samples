@@ -1,6 +1,6 @@
 // tslint:disable:max-line-length
 import { HttpClientModule } from "@angular/common/http";
-import { IgxAvatarModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule, IgxDragDropModule, IgxGridModule, IgxHierarchicalGridAPIService, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxTooltipModule } from "igniteui-angular";
+import { IgxActionStripModule, IgxAvatarModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule, IgxDragDropModule, IgxGridModule, IgxHierarchicalGridAPIService, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxTooltipModule } from "igniteui-angular";
 import { IgxPreventDocumentScrollModule } from "../../src/app/directives/prevent-scroll.directive";
 import { HierarchicalGridColumnGroupSelectionComponent } from "../../src/app/hierarchical-grid/column-group-selection/hierarchical-grid-column-group-selection.component";
 import { HGridColumnSelectionStylesComponent } from "../../src/app/hierarchical-grid/column-selection-styles/hierarchical-grid-column-selection-styles.component";
@@ -18,6 +18,9 @@ import { HGridColumnHidingSampleComponent } from "../../src/app/hierarchical-gri
 import { HGridColumnMovingSampleComponentStyled } from "../../src/app/hierarchical-grid/hierarchical-grid-column-moving-styled/hierarchical-grid-moving-styled.component";
 import { HGridColumnMovingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-moving/hierarchical-grid-moving.component";
 import { HGridPinningSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-pinning/hierarchical-grid-pinning.component";
+import { HGridRowPinningExtraColumnSampleComponent } from '../../src/app/hierarchical-grid/hierarchical-grid-row-pinning-extra-column/hierarchical-grid-row-pinning-extra-column.component';
+import { HGridRowPinningSampleComponent } from '../../src/app/hierarchical-grid/hierarchical-grid-row-pinning/hierarchical-grid-row-pinning.component';
+import { HGridRowPinningStylingSampleComponent } from'../../src/app/hierarchical-grid/hierarchical-grid-row-pinning-styling/hierarchical-grid-row-pinning-styling.component';
 import { HGridToolbarPinningComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-pinning/hierarchical-grid-toolbar-pinning.component";
 import { HGridConditionalRowSelectorsComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-conditional-row-selectors/hierarchical-grid-conditional-row-selectors.component";
 import { HGridCustomKBNavigationComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-custom-kb-navigation/hierarchical-grid-custom-kb-navigation-sample.component";
@@ -698,6 +701,39 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 imports: [HGridColumnSelectionStylesComponent, IgxHierarchicalGridModule],
                 ngDeclarations: [HGridColumnSelectionStylesComponent],
                 ngImports: [IgxHierarchicalGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: HGridRowPinningExtraColumnSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/grid/services/svgIcons.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HGridRowPinningExtraColumnSampleComponent, IgxHierarchicalGridModule, IgxIconModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [HGridRowPinningExtraColumnSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxHierarchicalGridModule, IgxIconModule, IgxSwitchModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: HGridRowPinningSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/grid/services/svgIcons.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HGridRowPinningSampleComponent, IgxHierarchicalGridModule, IgxActionStripModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [HGridRowPinningSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxActionStripModule, IgxHierarchicalGridModule, IgxSwitchModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: HGridRowPinningStylingSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/grid/services/svgIcons.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HGridRowPinningStylingSampleComponent, IgxHierarchicalGridModule, IgxActionStripModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [HGridRowPinningStylingSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxActionStripModule, IgxHierarchicalGridModule],
                 ngProviders: []
             })
         }));
