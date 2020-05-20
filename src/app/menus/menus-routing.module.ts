@@ -1,5 +1,14 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import {
+    ActionStripParagraphMenuComponent
+} from "./action-strip/action-strip-paragraph-menu/action-strip-paragraph-menu.component";
+import {
+    ActionStripStylingComponent
+} from "./action-strip/action-strip-paragraph-styling/action-strip-paragraph-styling.component";
+import {
+    ActionStripParagraphComponent
+} from "./action-strip/action-strip-paragraph/action-strip-paragraph.component";
 import { menusRoutesData } from "./menus-routes-data";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
@@ -70,6 +79,21 @@ export const menusRoutes: Routes = [
         component: NavbarStyleComponent,
         data: menusRoutesData["navbar-style"],
         path: "navbar-style"
+    },
+    {
+        component: ActionStripParagraphComponent,
+        data: menusRoutesData["action-strip-paragraph"],
+        path: "action-strip-paragraph"
+    },
+    {
+        component: ActionStripParagraphMenuComponent,
+        data: menusRoutesData["action-strip-paragraph-menu"],
+        path: "action-strip-paragraph-menu"
+    },
+    {
+        component: ActionStripStylingComponent,
+        data: menusRoutesData["action-strip-styling"],
+        path: "action-strip-styling"
     }
 ];
 
