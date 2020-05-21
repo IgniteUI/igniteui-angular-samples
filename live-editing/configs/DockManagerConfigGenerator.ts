@@ -9,6 +9,7 @@ export class DockManagerConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: DockManagerComponent,
+            additionalDependencies: ["igniteui-dockmanager"],
             appModuleConfig: new AppModuleConfig({
                 imports: [DockManagerComponent],
                 ngDeclarations: [DockManagerComponent],
