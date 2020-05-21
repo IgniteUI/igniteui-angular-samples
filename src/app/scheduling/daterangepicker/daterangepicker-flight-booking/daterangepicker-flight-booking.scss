@@ -1,0 +1,16 @@
+:host {
+    display: block;
+    padding: 1rem;
+    max-width: 700px;
+}
+
+.towns {
+    display: flex;
+    margin-top: 16px;
+    justify-content: space-between;
+}
+.town-select {
+    display: inline-block;
+    width: 49%;
+}
+

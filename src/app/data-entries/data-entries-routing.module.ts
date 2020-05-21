@@ -41,6 +41,7 @@ import { InputGroupSample4Component } from "./input-group/input-group-sample-4/i
 import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 import { InputGroupStyleComponent } from "./input-group/input-group-styling/input-group-styling.component";
+import { InputTextSelectionComponent } from "./input-group/input-text-selection/input-text-selection.component";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.component";
@@ -344,6 +345,11 @@ export const dataEntriesRoutes: Routes = [
         component: SelectHeaderFooterComponent,
         data: dataEntriesRoutesData["select-header-footer"],
         path: "select-header-footer"
+    },
+    {
+        component: InputTextSelectionComponent,
+        data: dataEntriesRoutesData["input-text-selection"],
+        path: "input-text-selection"
     }
 ];
 
