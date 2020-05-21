@@ -3,12 +3,19 @@ import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
+import {
+    IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule,
+    IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService,
+    IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule,
+    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule,
+    IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
+} from "igniteui-angular";
 import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 import { GridColumnGroupSelectionComponent } from "./column-group-selection-sample/column-group-selection-sample.component";
 import { GridColumnSelectionComponent } from "./column-selection-sample/column-selection-sample.component";
 import { GridColumnSelectionStylesComponent } from "./column-selection-styles/column-selection-styles.component";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridActionStripSampleComponent } from "./grid-action-strip/grid-action-strip-sample";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
@@ -75,6 +82,9 @@ import { PlanetComponent } from "./grid-row-drag/planet/planet.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
 import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
 import { GridPinningDragSampleComponent } from "./grid-row-pinning-drag/grid-row-pinning-drag.component";
+import { GridRowPinningExtraColumnSampleComponent } from "./grid-row-pinning-extra-column/grid-row-pinning-extra-column.component";
+import { GridRowPinningStylingSampleComponent } from "./grid-row-pinning-styling/grid-row-pinning-styling.component";
+import { GridRowPinningSampleComponent } from "./grid-row-pinning/grid-row-pinning.component";
 import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -106,6 +116,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
     declarations: [
         GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
+        GridActionStripSampleComponent,
         GridColumnHidingSampleComponent,
         GridColumnHidingToolbarSampleComponent,
         GridConditionalCellStyle2Component,
@@ -141,7 +152,10 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridRemoteVirtualizationAddRowSampleComponent,
         PinningSampleComponent,
         PinningToolbarSampleComponent,
+        GridRowPinningSampleComponent,
+        GridRowPinningExtraColumnSampleComponent,
         GridPinningDragSampleComponent,
+        GridRowPinningStylingSampleComponent,
         GridSelectionSampleComponent,
         GridSelectionTemplateExcelComponent,
         GridSelectionTemplateNumbersComponent,
@@ -206,6 +220,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         IgxPreventDocumentScrollModule,
         HttpClientModule,
         GridsRoutingModule,
+        IgxActionStripModule,
         IgxAvatarModule,
         IgxBadgeModule,
         IgxBannerModule,
@@ -235,6 +250,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         IgxTabsModule,
         IgxCardModule,
         IgxDividerModule,
+        IgxActionStripModule,
         IgxListModule
     ],
     providers: [

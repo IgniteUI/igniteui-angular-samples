@@ -3,10 +3,9 @@ import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule,
-    IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule,
-    IgxDialogModule, IgxExcelExporterService, IgxFocusModule,
-    IgxGridModule, IgxHierarchicalGridAPIService, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule,
+import { IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule,
+    IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService,
+    IgxFocusModule, IgxGridModule, IgxHierarchicalGridAPIService, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule,
     IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
     IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
 import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
@@ -59,6 +58,9 @@ import { HGridRowDragBaseComponent } from "./hierarchical-grid-row-drag-base/hie
 import { HGridDragSampleComponent } from "./hierarchical-grid-row-drag/hierarchical-grid-row-drag.component";
 import { HGridRowEditStyleComponent } from "./hierarchical-grid-row-edit-style/hierarchical-grid-row-edit-style.component";
 import { HGridRowEditingSampleComponent } from "./hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
+import { HGridRowPinningExtraColumnSampleComponent } from "./hierarchical-grid-row-pinning-extra-column/hierarchical-grid-row-pinning-extra-column.component";
+import { HGridRowPinningStylingSampleComponent } from "./hierarchical-grid-row-pinning-styling/hierarchical-grid-row-pinning-styling.component";
+import { HGridRowPinningSampleComponent } from "./hierarchical-grid-row-pinning/hierarchical-grid-row-pinning.component";
 import { HGridRowReorderComponent } from "./hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
 import { HierarchicalGridRightPinningSampleComponent } from "./hierarchical-grid-sample-right-pinning/hierarchical-grid-right-pinning.component";
 import { HGridSelectionTemplateNumbersSampleComponent } from "./hierarchical-grid-selection-template-numbers/hierarchical-grid-selection-template-numbers.component";
@@ -103,6 +105,9 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridToolbarCustomSampleComponent,
         HGridRowEditingSampleComponent,
         HGridRowEditStyleComponent,
+        HGridRowPinningExtraColumnSampleComponent,
+        HGridRowPinningSampleComponent,
+        HGridRowPinningStylingSampleComponent,
         HGridEditingSampleComponent,
         HGridEditingStyleComponent,
         HGridEditingEventsComponent,
@@ -145,6 +150,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HttpClientModule,
         HierarchicalGridRoutingModule,
         IgxPreventDocumentScrollModule,
+        IgxActionStripModule,
         IgxAvatarModule,
         IgxBadgeModule,
         IgxButtonGroupModule,

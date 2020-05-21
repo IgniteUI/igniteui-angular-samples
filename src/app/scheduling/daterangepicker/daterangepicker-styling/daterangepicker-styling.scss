@@ -1,0 +1,47 @@
+// in component.scss
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+// common
+$purple: #9E379F;
+$blue: #61AEDB;
+
+$custom-palette: igx-palette($primary: $blue, $secondary: $purple);
+
+$today-text: igx-color($custom-palette, "primary", 500);
+$text-color: igx-color($custom-palette, "secondary", 200);
+$color-focused: igx-color($custom-palette, "secondary", 500);
+
+
+// DATE-RANGE
+$custom-date-range-theme: igx-date-range-picker-theme(
+    $label-color: $color-focused
+);
+
+// INPUT GROUP
+$custom-input-group-theme: igx-input-group-theme(
+  $palette: $custom-palette,
+  $filled-text-color: $text-color,
+  $idle-text-color: $text-color,
+  $focused-text-color: $color-focused,
+  $hover-bottom-line-color: $color-focused,
+  $idle-bottom-line-color: $purple
+);
+
+// CALENDAR styling specific overlay component requires outlet -> [overlaySettings]="{ outlet: element }"
+$custom-calendar-theme: igx-calendar-theme(
+    $palette: $custom-palette,
+    $date-current-text-color: $today-text,
+    $border-radius: 0.5,
+    $date-border-radius: 0.5
+);
+
+:host {
+    display: block;
+    padding: 1rem;
+    
+    ::ng-deep {
+        @include igx-date-range-picker($custom-date-range-theme);
+        @include igx-input-group($custom-input-group-theme);
+        @include igx-calendar($custom-calendar-theme);
+    }
+}
