@@ -15,6 +15,7 @@ import { AppComponent } from "./app.component";{imports}
     FormsModule{ngImports}
   ],
   providers: [{ngProviders}],
-  entryComponents: [{ngEntryComponents}]
+  entryComponents: [{ngEntryComponents}],
+  schemas: [{ngSchemas}]
 })
 export class AppModule {}

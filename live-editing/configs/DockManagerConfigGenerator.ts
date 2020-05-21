@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { DockManagerComponent } from "./../../src/app/layouts/dock-manager/dock-manager.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -11,9 +12,10 @@ export class DockManagerConfigGenerator implements IConfigGenerator {
             component: DockManagerComponent,
             additionalDependencies: ["igniteui-dockmanager"],
             appModuleConfig: new AppModuleConfig({
-                imports: [DockManagerComponent],
+                imports: [DockManagerComponent, "CUSTOM_ELEMENTS_SCHEMA"],
                 ngDeclarations: [DockManagerComponent],
-                ngImports: []
+                ngImports: [],
+                schemas: ["CUSTOM_ELEMENTS_SCHEMA"]
             }),
             shortenComponentPathBy: "/layouts/dock-manager/"
         }));
