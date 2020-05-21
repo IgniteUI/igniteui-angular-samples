@@ -140,19 +140,19 @@ export class ChartIntegrationDirective {
         };
     }
 
-    private dataChartSeriesOptionsModel: IOptions = {
+    public dataChartSeriesOptionsModel: IOptions = {
         isHighlightingEnabled: true,
         areaFillOpacity: .4,
         markerType: 3,
-        showDefaultTooltip: true
+        showDefaultTooltip: false
     };
 
-    private scatterChartSeriesOptionsModel: IOptions = {
+    public scatterChartSeriesOptionsModel: IOptions = {
         markerType: 3,
         showDefaultTooltip: true
     };
 
-    private bubbleChartSeriesOptionsModel: IOptions = {
+    public bubbleChartSeriesOptionsModel: IOptions = {
         radiusScale: this._sizeScale
     };
 

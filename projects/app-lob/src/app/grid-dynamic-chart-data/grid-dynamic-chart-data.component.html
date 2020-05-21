@@ -1,9 +1,9 @@
 <div igxOverlayOutlet class="grid-chart-contextmenu-wrapper">
-    <igx-grid igxPreventDocumentScroll #grid chartIntegration  conditionalFormatting [formatter]="currentFormatter" [chartData]="chartData"
+    <igx-grid [columnSelection]="columnSelectionType" #grid [formatter]="currentFormatter" [chartData]="chartData"
          primaryKey='ID' displayDensity="compact" [data]="data">
         <igx-column field='ID' [hidden]='true'></igx-column>
-        <igx-column field='Category' [editable]="true" [width]="'110px'"></igx-column>
-        <igx-column field='Type' [editable]="true" [filterable]='false' [width]="'130px'"></igx-column>
+        <igx-column field='Category' [editable]="true" [width]="'110px'" [selectable]="true"></igx-column>
+        <igx-column field='Type' [editable]="true" [filterable]='false' [width]="'130px'" [selectable]="true"></igx-column>
         <igx-column field='Country' [editable]="true" [width]="'100px'"></igx-column>
         <igx-column field='Price' dataType="number" [width]="'120px'" [editable]="true">
             <ng-template igxCell let-cell="cell">

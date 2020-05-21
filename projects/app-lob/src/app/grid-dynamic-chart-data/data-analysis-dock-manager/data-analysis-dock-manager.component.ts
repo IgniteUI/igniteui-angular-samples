@@ -78,6 +78,9 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     @ViewChild("template", { read: TemplateRef })
     public emptyChartTemplate: TemplateRef<any>;
 
+    @ViewChild("tooltipChart", {static: true})
+    public tooltipTemplate: TemplateRef<any>;
+
     public chartData = [];
     public contextmenu = false;
     public contextmenuX = 0;
@@ -85,6 +88,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     public selectedCharts = {};
     public range;
     public currentFormatter;
+    public headersRenderButton = false;
 
     protected destroy$ = new Subject<any>();
     private _contextDilogOverlaySettings: OverlaySettings = {
@@ -140,30 +144,50 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
 
         this.grid.onRangeSelection.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(200))
             .subscribe(range => {
+                // Clear column selection
+                this.grid.deselectAllColumns();
+
                 this.chartData = this.grid.getSelectedData();
                 this.range = range;
                 this.renderButton();
-                if (Object.keys(this.selectedCharts).length !== 0) {
-                    setTimeout(() => {
-                        Object.keys(this.selectedCharts).forEach((c: CHART_TYPE) => {
-                            const chartHost = this.getChartHostFromSlot(c);
-                            if (this.availableCharts.indexOf(c) !== -1) {
-                                if (c !== CHART_TYPE.PIE && typeof this.selectedCharts[c] === "object") {
-                                    this.selectedCharts[c] = this.chartIntegration.chartFactory(c, null, this.selectedCharts[c]);
-                                } else {
-                                    chartHost.viewContainerRef.clear();
-                                    this.selectedCharts[c] = this.chartIntegration.chartFactory(c, chartHost.viewContainerRef);
-                                }
-                            } else {
-                                chartHost.viewContainerRef.clear();
-                                const embeddedView = chartHost.viewContainerRef.createEmbeddedView(this.emptyChartTemplate);
-                                embeddedView.detectChanges();
-                                this.selectedCharts[c] = "Empty";
-                            }
-                        });
-                    });
-                }
+                this.createChartCommonLogic();
+                this.headersRenderButton = false;
             });
+
+        this.grid.onColumnSelectionChange.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(100))
+            .subscribe(range => {
+                // Clear range selection
+                this.grid.clearCellSelection();
+
+                this.chartData = this.grid.getSelectedColumnsData();
+                this.range = range;
+                this.renderHeaderButton();
+                this.createChartCommonLogic();
+                this.headersRenderButton = true;
+            });
+    }
+
+    public createChartCommonLogic() {
+        if (Object.keys(this.selectedCharts).length !== 0) {
+            setTimeout(() => {
+                Object.keys(this.selectedCharts).forEach((c: CHART_TYPE) => {
+                    const chartHost = this.getChartHostFromSlot(c);
+                    if (this.availableCharts.indexOf(c) !== -1) {
+                        if (c !== CHART_TYPE.PIE && typeof this.selectedCharts[c] === "object") {
+                            this.selectedCharts[c] = this.chartIntegration.chartFactory(c, null, this.selectedCharts[c]);
+                        } else {
+                            chartHost.viewContainerRef.clear();
+                            this.selectedCharts[c] = this.chartIntegration.chartFactory(c, chartHost.viewContainerRef);
+                        }
+                    } else {
+                        chartHost.viewContainerRef.clear();
+                        const embeddedView = chartHost.viewContainerRef.createEmbeddedView(this.emptyChartTemplate);
+                        embeddedView.detectChanges();
+                        this.selectedCharts[c] = "Empty";
+                    }
+                });
+            });
+        }
     }
 
     public getChartHostFromSlot(type: CHART_TYPE) {
@@ -197,13 +221,13 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             takeUntil(this.destroy$))
-            .subscribe(() => this.range && !this.contextmenu ? this.renderButton() : noop());
+            .subscribe(() => this.range && !this.contextmenu ? (this.headersRenderButton ? this.renderHeaderButton() : this.renderButton()) : noop());
         this.grid.parentVirtDir.onChunkLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             takeUntil(this.destroy$))
             .subscribe(() => {
-                if (this.range) { this.renderButton(); }
+                if (this.range) { this.headersRenderButton ? this.renderHeaderButton() : this.renderButton(); }
             });
 
         window.onresize = () => {
@@ -211,6 +235,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             const y = (this.dockManager.nativeElement.getBoundingClientRect().height / 3);
             this.paneService.initialPanePosition = { x, y };
         };
+
+        this.chartIntegration.dataChartSeriesOptionsModel["tooltipTemplate"] = this.tooltipTemplate;
 
         setTimeout(() => {
             const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 3);
@@ -294,8 +320,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
         const splitPane: IgcSplitPane = {
             type: IgcDockManagerPaneType.splitPane,
             orientation: IgcSplitPaneOrientation.horizontal,
-            floatingWidth: 400,
-            floatingHeight: 300,
+            floatingWidth: 800,
+            floatingHeight: 500,
             panes: [floatingPane]
         };
 
@@ -358,6 +384,28 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
         this.contextmenuX = cell.element.nativeElement.getClientRects()[0].right;
         this.contextmenuY = cell.element.nativeElement.getClientRects()[0].bottom;
         this.contextmenu = this.isWithInRange(cell.rowIndex, cell.visibleColumnIndex);
+        this.cdr.detectChanges();
+    }
+
+    private renderHeaderButton() {
+        if (this.grid.selectedColumns().length === 0) {
+            return;
+        }
+
+        this.colIndex = this.grid.selectedColumns()[this.grid.selectedColumns().length - 1].visibleIndex;
+
+        while (this.colIndex >= 0 && !this.grid.navigation.isColumnFullyVisible(this.colIndex)) {
+            this.colIndex--;
+        }
+
+        if (this.colIndex < 0) {
+            return;
+        }
+
+        const headerCell = this.grid.headerCellList[this.grid.selectedColumns()[this.grid.selectedColumns().length - 1].visibleIndex];
+        this.contextmenuX = headerCell.elementRef.nativeElement.getClientRects()[0].right;
+        this.contextmenuY = headerCell.elementRef.nativeElement.getClientRects()[0].bottom;
+        this.contextmenu = true;
         this.cdr.detectChanges();
     }
 

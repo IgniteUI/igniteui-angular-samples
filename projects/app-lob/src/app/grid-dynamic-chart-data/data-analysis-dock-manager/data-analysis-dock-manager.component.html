@@ -1,6 +1,6 @@
 <igc-dockmanager #dock class="light-theme" [layout]="docLayout" style="width: 100vw; height: 100vh;">
     <div slot="grid" igxOverlayOutlet style="height: 100%">
-        <igx-grid  igxPreventDocumentScroll #grid chartIntegration conditionalFormatting [formatter]="currentFormatter"
+        <igx-grid columnSelection="multiple" igxPreventDocumentScroll #grid chartIntegration conditionalFormatting [formatter]="currentFormatter"
             [chartData]="chartData" primaryKey='ID' displayDensity="compact" [data]="data">
             <igx-column field='ID' [hidden]='true'></igx-column>
             <igx-column field='Category'  [width]="'110px'"></igx-column>
@@ -156,4 +156,14 @@
 
 <ng-template #template>
     <span>Incompatible data</span>
+</ng-template>
+
+<ng-template let-series="series" let-item="item" #tooltipChart>
+    <div class="app__map-tooltip">
+        <div>test {{ item[series.valueMemberPath] }}</div>
+        <div>
+            test
+            <span></span>
+        </div>
+    </div>
 </ng-template>

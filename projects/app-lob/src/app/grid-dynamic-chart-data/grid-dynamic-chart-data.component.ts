@@ -43,6 +43,7 @@ export class FilterTypePipe implements PipeTransform {
 })
 export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnDestroy {
 
+    public columnSelectionType = "multiple";
     public data;
     public opened = true;
     @ViewChild(ConditionalFormattingDirective, { read: ConditionalFormattingDirective, static: true })
