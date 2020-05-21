@@ -1,3 +1,4 @@
+import { ActionStripConfigGenerator } from "../configs/ActionStripConfigGenerator";
 import { AutocompleteConfigGenerator } from "../configs/AutocompleteConfigGenerator";
 import { AvatarConfigGenerator } from "../configs/AvatarConfigGenerator";
 import { BadgeConfigGenerator } from "../configs/BadgeConfigGenerator";
@@ -12,6 +13,7 @@ import { ChipConfigGenerator } from "../configs/ChipConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "../configs/CircularProgressbarConfigGenerator";
 import { ComboConfigGenerator } from "../configs/ComboConfigGenerator";
 import { DatePickerConfigGenerator } from "../configs/DatePickerConfigGenerator";
+import { DateRangePickerConfigGenerator } from "../configs/DateRangePickerConfigGenerator";
 import { DateTimeEditorConfigGenerator } from "../configs/DateTimeEditorConfigGenerator";
 import { DialogConfigGenerator } from "../configs/DialogConfigGenerator";
 import { DividerConfigGenerator } from "../configs/DividerConfigGenerator";
@@ -84,6 +86,7 @@ export const CONFIG_GENERATORS =
         CheckboxConfigGenerator,
         ComboConfigGenerator,
         DatePickerConfigGenerator,
+        DateRangePickerConfigGenerator,
         DateTimeEditorConfigGenerator,
         DropDownConfigGenerator,
         InputGroupConfigGenerator,
@@ -102,6 +105,7 @@ export const CONFIG_GENERATORS =
         TreeGridConfigGenerator,
 
         // other:
+        ActionStripConfigGenerator,
         CircularProgressbarConfigGenerator,
         DividerConfigGenerator,
         ForConfigGenerator,
