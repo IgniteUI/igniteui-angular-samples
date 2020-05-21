@@ -9,7 +9,6 @@ import { Person } from "../model/person";
 
 export class MaskSample1Component implements OnInit {
     public person: Person;
-
     constructor() {
         this.person = {
             birthday: null,
