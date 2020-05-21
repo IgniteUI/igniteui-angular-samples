@@ -10,7 +10,7 @@ import { RemotePagingService } from "../services/remotePagingService";
     styleUrls: ["./batch-editing-remote-paging.component.scss"],
     templateUrl: "./batch-editing-remote-paging.component.html"
 })
-export class RemotePagingBatchEditingSample implements OnInit, AfterViewInit, OnDestroy {
+export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit, OnDestroy {
 
     public page = 0;
     public totalCount = 0;
