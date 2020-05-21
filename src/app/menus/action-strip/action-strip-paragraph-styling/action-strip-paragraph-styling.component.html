@@ -1,0 +1,21 @@
+<div class="parent" (mouseenter)="actionStrip.show()" (mouseleave)="actionStrip.hide()">
+    <p #myParagraph>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non nibh eu libero commodo posuere at id augue.
+        Morbi nec justo enim. Sed placerat fringilla quam in pharetra. Pellentesque imperdiet lorem quis sem bibendum
+        molestie. Aliquam fringilla tellus nec convallis sodales. Suspendisse a eros accumsan, mattis mauris id,
+        malesuada nibh. Maecenas eget augue faucibus, euismod arcu sit amet, tempus nisi. Sed tellus nisl, luctus vitae
+        vestibulum ac, vehicula non ex. Donec condimentum rhoncus enim, et efficitur tortor faucibus sed. Integer at
+        mauris facilisis mauris condimentum bibendum. Maecenas eget lacus dolor. Etiam pulvinar, sapien vitae fermentum
+        interdum, nunc justo facilisis est, eu ullamcorper dolor lectus sit amet nisl. Quisque aliquam urna ut leo
+        mollis luctus. Morbi lacinia orci augue, sed blandit est ornare placerat. Cras a ante nec mauris euismod aliquam
+        vel pulvinar urna. Morbi tincidunt fringilla tortor, at ultricies neque rhoncus ac.
+    </p>
+    <igx-action-strip [(displayDensity)]="displayDensity" class="my-action-strip" #actionStrip [hidden]="true">
+        <button igxButton (click)="textRestore()">
+            <igx-icon>restore</igx-icon>
+        </button>
+        <button igxButton (click)="textDelete()">
+            <igx-icon>delete</igx-icon>
+        </button>
+    </igx-action-strip>
+</div>
