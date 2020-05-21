@@ -33,5 +33,11 @@ export const schedulingRoutesData = {
     "timepicker-sample-4": { displayName: "Timepicker Validation", parentName: "Timepicker" },
     "timepicker-sample-5": { displayName: "Timepicker Input Group Template", parentName: "Timepicker" },
     "timepicker-sample-6": { displayName: "Timepicker Input Group Template Dropdown", parentName: "Timepicker" },
-    "timepicker-styling": { displayName: "Styled Timepicker", parentName: "Timepicker" }
+    "timepicker-styling": { displayName: "Styled Timepicker", parentName: "Timepicker" },
+    "basic-daterangepicker": { displayName: "Single Read-Only Input", parentName: "Date Range Picker" },
+    "daterangepicker-start-end": { displayName: "Separate Editable Inputs", parentName: "Date Range Picker" },
+    "daterangepicker-mode": { displayName: "Dropdown Mode", parentName: "Date Range Picker" },
+    "daterangepicker-validation": { displayName: "Validation", parentName: "Date Range Picker" },
+    "styled-daterangepicker": { displayName: "Styling", parentName: "Date Range Picker" },
+    "flight-booking": { displayName: "Flight Booking", parentName: "Date Range Picker" }
 };
