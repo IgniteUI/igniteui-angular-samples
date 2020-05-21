@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
+    IgxActionStripModule,
     IgxAvatarModule,
     IgxBannerModule,
     IgxButtonGroupModule,
@@ -83,6 +84,9 @@ import { TreeGridRowDragBase } from "./tree-grid-row-drag-base/tree-grid-row-dra
 import { TreeGridRowDrag } from "./tree-grid-row-drag/tree-grid-row-drag.component";
 import { TreeGridRowEditStyleComponent } from "./tree-grid-row-edit-style/tree-grid-row-edit-style.component";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
+import { TreeGridRowPinningExtraColumnSampleComponent } from "./tree-grid-row-pinning-extra-column/tree-grid-row-pinning-extra-column.component";
+import { TreeGridRowPinningStylingSampleComponent} from "./tree-grid-row-pinning-styling/tree-grid-row-pinning-styling.component";
+import { TreeGridRowPinningSampleComponent} from "./tree-grid-row-pinning/tree-grid-row-pinning.component";
 import { TreeGridRowReorderComponent } from "./tree-grid-row-reorder/tree-grid-row-reorder.component";
 import { TreeGridRightPinningSampleComponent } from "./tree-grid-sample-right-pinning/tree-grid-right-pinning.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
@@ -173,6 +177,9 @@ import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/tree
         TreeGridConditionalCellStyle2Component,
         TreeGridMultiCollapsibleColumnGroupsComponent,
         TreeGridAllDataSummaryComponent,
+        TreeGridRowPinningSampleComponent,
+        TreeGridRowPinningStylingSampleComponent,
+        TreeGridRowPinningExtraColumnSampleComponent,
         TreeGridRightPinningSampleComponent,
         TreeGridColumnSelectionComponent,
         TreeGridColumnGroupSelectionComponent,
@@ -186,6 +193,7 @@ import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/tree
         TreeGridRoutingModule,
         IgxTreeGridModule,
         IgxGridModule,
+        IgxActionStripModule,
         IgxButtonGroupModule,
         IgxIconModule,
         IgxSliderModule,
