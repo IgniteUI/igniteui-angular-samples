@@ -1,4 +1,4 @@
-<igc-dockmanager #dock class="light-theme" [layout]="docLayout" style="width: 100vw; height: 100vh;">
+<igc-dockmanager #dock class="light-theme dock-m-position" [layout]="docLayout">
     <div slot="grid" igxOverlayOutlet style="height: 100%">
         <igx-grid columnSelection="multiple" igxPreventDocumentScroll #grid chartIntegration conditionalFormatting [formatter]="currentFormatter"
             [chartData]="chartData" primaryKey='ID' displayDensity="compact" [data]="data">
@@ -102,7 +102,7 @@
             <igx-column field='Settlement' [width]="'150px'" ></igx-column>
         </igx-grid>
     </div>
-    <div slot="chart-types-content" style="overflow-y: auto; height: 100%; width: 100%;">
+    <div slot="chart-types-content" class="chart-types-container">
         <div *ngFor="let chartType of chartTypes">
             <div *ngIf="(allCharts |filterType:chartType).length > 0" class="wrapper">
                 <div>{{chartType | titlecase}} Chart</div>

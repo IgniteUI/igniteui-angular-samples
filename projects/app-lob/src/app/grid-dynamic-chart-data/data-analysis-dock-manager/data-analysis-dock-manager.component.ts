@@ -127,7 +127,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                     type: IgcDockManagerPaneType.contentPane,
                     contentId: "chart-types-content",
                     header: "Chart Types",
-                    size: 20
+                    size: 27
                 }
             ]
         },
@@ -320,8 +320,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
         const splitPane: IgcSplitPane = {
             type: IgcDockManagerPaneType.splitPane,
             orientation: IgcSplitPaneOrientation.horizontal,
-            floatingWidth: 800,
-            floatingHeight: 500,
+            floatingWidth: 600,
+            floatingHeight: 400,
             panes: [floatingPane]
         };
 
