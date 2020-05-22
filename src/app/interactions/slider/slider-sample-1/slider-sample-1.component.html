@@ -4,12 +4,12 @@
         <div class="wrapper">
             <igx-input-group type="border">
                 <igx-prefix>USD</igx-prefix>
-                <input igxInput type="number" id="lowerInput" [ngModel]="priceRange.lower" (blur)="updatePriceRange($event.target)" />
+                <input #lowerInput igxInput type="number" id="lowerInput" [ngModel]="priceRange.lower" />
                 <label igxLabel for="lowerInput">Lower price:</label>
             </igx-input-group>
             <igx-input-group type="border">
                 <igx-prefix>USD</igx-prefix>
-                <input igxInput type="number" id="upperInput" [ngModel]="priceRange.upper" (blur)="updatePriceRange($event.target)" />
+                <input #upperInput igxInput type="number" id="upperInput" [ngModel]="priceRange.upper" />
                 <label igxLabel for="upperInput">Upper price:</label>
             </igx-input-group>
         </div>

@@ -1,11 +1,14 @@
-import { AfterViewInit, Component, ViewChild } from "@angular/core";
-import { IgxGridComponent, IgxGridRowComponent, IPinningConfig, RowPinningPosition } from "igniteui-angular";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import {
+    IGridCellEventArgs,
+    IgxActionStripComponent,
+    IgxGridComponent,
+    IgxGridRowComponent,
+    IPinningConfig,
+    IRowDragStartEventArgs,
+    RowPinningPosition
+} from "igniteui-angular";
 import { DATA } from "../../data/customers";
-
-enum DragIcon {
-    DEFAULT = "drag_indicator",
-    ALLOW = "add"
-}
 
 @Component({
     selector: "grid-row-pinning-drag-sample",
@@ -13,17 +16,22 @@ enum DragIcon {
     templateUrl: "grid-row-pinning-drag.component.html"
 })
 
-export class GridPinningDragSampleComponent implements AfterViewInit {
+export class GridPinningDragSampleComponent implements OnInit {
     public data: any[];
-    @ViewChild("grid", { read: IgxGridComponent, static : true })
+
+    @ViewChild("grid1", { static: true })
     public grid: IgxGridComponent;
+
+    @ViewChild(IgxActionStripComponent, { static: true })
+    public actionStrip: IgxActionStripComponent;
+
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top };
 
     constructor() {
         this.data = DATA;
     }
 
-    public ngAfterViewInit() {
+    public ngOnInit() {
         this.grid.pinRow(this.data[0].ID);
         this.grid.pinRow(this.data[3].ID);
         this.grid.pinRow(this.data[8].ID);
@@ -43,11 +51,11 @@ export class GridPinningDragSampleComponent implements AfterViewInit {
         const event = args.originalEvent;
         let currRowPinnedIndex;
         const currRowIndex = this.getCurrentRowIndex(this.grid.rowList.toArray(),
-        { x: event.clientX, y: event.clientY });
+            { x: event.clientX, y: event.clientY });
         if (currRowIndex === -1) { return; }
 
         const currRowID = this.getCurrentRowID(this.grid.rowList.toArray(),
-        { x: event.clientX, y: event.clientY });
+            { x: event.clientX, y: event.clientY });
 
         const currentRow = this.grid.rowList.toArray().find((r) => r.rowID === currRowID);
         if (currentRow.pinned) {
@@ -64,6 +72,30 @@ export class GridPinningDragSampleComponent implements AfterViewInit {
             this.grid.unpinRow(args.dragData.rowID);
             this.grid.pinRow(args.dragData.rowID, currRowPinnedIndex);
         }
+    }
+
+    public onRowDragStart(args: IRowDragStartEventArgs) {
+        if (args.dragData.disabled) {
+            args.cancel = true;
+        }
+    }
+
+    public onMouseOver(actionStrip: IgxActionStripComponent, grid: IgxGridComponent, event) {
+        if (event.target.nodeName.toLowerCase() === "igx-grid-cell") {
+            const rowIndex = parseInt(event.target.attributes["data-rowindex"].value, 10);
+            const row = grid.getRowByIndex(rowIndex);
+            actionStrip.show(row);
+        }
+    }
+
+    public onMouseLeave(actionStrip: IgxActionStripComponent, event?) {
+        if (!event || !event.relatedTarget || event.relatedTarget.nodeName.toLowerCase() !== "igx-drop-down-item") {
+            actionStrip.hide();
+        }
+    }
+
+    public onCellClick(args: IGridCellEventArgs) {
+        this.actionStrip.show(args.cell.row);
     }
 
     private getCurrentRowIndex(rowList, cursorPosition) {

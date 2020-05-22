@@ -6,6 +6,9 @@ export const treeGridRoutesData = {
     "tree-grid-row-drag-base": { displayName: "Tree Grid Row Drag - Base", parentName: "TreeGrid" },
     "treegrid-row-edit": { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
     "treegrid-row-edit-style": { displayName: "TreeGrid Row Edit Style", parentName: "TreeGrid" },
+    "tree-grid-row-pinning": { displayName: "Tree Grid Row Pinning", parentName: "TreeGrid" },
+    "tree-grid-row-pinning-extra-column": { displayName: "Tree Grid Row Pinning Custom UI", parentName: "TreeGrid" },
+    "tree-grid-row-pinning-styling": { displayName: "Tree Grid Row Pinning Styling", parentName: "TreeGrid" },
     "treegrid-batchediting": { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
     "treegrid-employees": { displayName: "TreeGrid Employees", parentName: "TreeGrid" },
     "treegrid-search": { displayName: "TreeGrid Search", parentName: "TreeGrid" },
@@ -97,5 +100,5 @@ export const treeGridRoutesData = {
     "column-selection": { displayName: "TreeGrid Column Selection", parentName: "TreeGrid"},
     "column-group-selection": { displayName: "TreeGrid Column Group Selection", parentName: "TreeGrid"},
     "column-selection-styles": { displayName: "TreeGrid Column Selection Style", parentName: "TreeGrid"},
-    "tgrid-keyboardnav-guide": { displayName: "TreeGrid keybard navigation guide", parentName: "TreeGrid"}
+    "tgrid-keyboardnav-guide": { displayName: "TreeGrid keyboard navigation guide", parentName: "TreeGrid"}
 };
