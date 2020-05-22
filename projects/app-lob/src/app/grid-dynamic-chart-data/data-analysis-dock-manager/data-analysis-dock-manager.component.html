@@ -159,10 +159,12 @@
 </ng-template>
 
 <ng-template let-series="series" let-item="item" #tooltipChart>
-    <div class="app__map-tooltip">
-        <div>test {{ item[series.valueMemberPath] }}</div>
+    <div class="app__chart-tooltip" style="">
         <div>
-            test
+            <!-- <span>{{ formatValue(item, series) }}</span> -->
+            <span>{{ series.valueMemberPath }}</span><span> {{ item[series.valueMemberPath] | number:'1.4-4' }}</span>
+        </div>
+        <div>
             <span></span>
         </div>
     </div>

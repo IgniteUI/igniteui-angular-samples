@@ -145,7 +145,7 @@ export class ChartIntegrationDirective {
         isHighlightingEnabled: true,
         areaFillOpacity: .4,
         markerType: 3,
-        showDefaultTooltip: false
+        showDefaultTooltip: true
     };
 
     // tslint:disable-next-line: member-ordering

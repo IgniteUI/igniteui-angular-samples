@@ -413,4 +413,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
         return rowIndex >= this.range.rowStart && rowIndex <= this.range.rowEnd
             && colIndex >= this.range.columnStart && colIndex <= this.range.columnEnd;
     }
+
+    public formatValue(item, series) {
+        // debugger;
+    }
 }
