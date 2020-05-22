@@ -2,7 +2,7 @@ import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { Router, RouterModule } from "@angular/router";
 // tslint:disable:max-line-length
-import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDragDropModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxTooltipModule } from "igniteui-angular";
+import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDragDropModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxTooltipModule, IgxActionStripModule } from "igniteui-angular";
 import { IgxCategoryChartModule, IgxLegendModule, IgxPieChartModule, IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
 import { IgxPreventDocumentScrollModule } from "../../src/app/directives/prevent-scroll.directive";
 import { GridColumnGroupSelectionComponent } from "../../src/app/grid/column-group-selection-sample/column-group-selection-sample.component";
@@ -83,6 +83,10 @@ import { PinningStylingComponent } from "../../src/app/grid/grid-sample-pinning-
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { PinningToolbarSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-toolbar-pinning.component";
 import { RightPinningSampleComponent } from "../../src/app/grid/grid-sample-right-pinning/grid-right-pinning.component";
+import { GridRowPinningSampleComponent } from "../../src/app/grid/grid-row-pinning/grid-row-pinning.component";
+import { GridRowPinningStylingSampleComponent } from '../../src/app/grid/grid-row-pinning-styling/grid-row-pinning-styling.component';
+import { GridRowPinningExtraColumnSampleComponent } from "../../src/app/grid/grid-row-pinning-extra-column/grid-row-pinning-extra-column.component";
+import { GridPinningDragSampleComponent } from "../../src/app/grid/grid-row-pinning-drag/grid-row-pinning-drag.component";
 import { GridSelectionTemplateExcelComponent } from "../../src/app/grid/grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
 import { GridSelectionTemplateNumbersComponent } from "../../src/app/grid/grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
@@ -105,6 +109,7 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridActionStripSampleComponent } from '../../src/app/grid/grid-action-strip/grid-action-strip-sample';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -619,6 +624,20 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        //Grid with Action Strip
+        configs.push(new Config({
+            component: GridActionStripSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts", "/src/app/data/utils.ts",
+                "/src/app/grid/grid-batch-editing/grid-transaction.component.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridActionStripSampleComponent, IgxGridModule, IgxDialogModule, IgxButtonModule,
+                    IgxFocusModule, GridWithTransactionsComponent, IgxPreventDocumentScrollModule, IgxActionStripModule],
+                ngDeclarations: [GridActionStripSampleComponent, GridWithTransactionsComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxDialogModule, IgxButtonModule, IgxActionStripModule,
+                    IgxFocusModule]
+            })
+        }));
+
         // Grid Custom Summaries
         configs.push(new Config({
             component: GridCustomSummariesSelection,
@@ -1091,14 +1110,58 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: GridRowPinningSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridRowPinningSampleComponent, IgxActionStripModule, IgxSwitchModule, IgxGridModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridRowPinningSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxActionStripModule, IgxSwitchModule, IgxGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridRowPinningExtraColumnSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts", "/src/app/grid/services/svgIcons.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridRowPinningExtraColumnSampleComponent, IgxSwitchModule, IgxGridModule, IgxIconModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridRowPinningExtraColumnSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxSwitchModule, IgxGridModule, IgxIconModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridPinningDragSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridPinningDragSampleComponent, IgxActionStripModule, IgxGridModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridPinningDragSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxActionStripModule, IgxGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridRowPinningStylingSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridRowPinningStylingSampleComponent, IgxActionStripModule, IgxGridModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridRowPinningStylingSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxActionStripModule, IgxGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
             component: GridKeyboardnavGuide,
             additionalFiles: [
                 "/src/app/data/customers.ts"
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridKeyboardnavGuide, IgxGridModule, IgxListModule, CommonModule, IgxOverlayService],
+                imports: [GridKeyboardnavGuide, IgxGridModule, IgxListModule, IgxOverlayService],
                 ngDeclarations: [GridKeyboardnavGuide],
-                ngImports: [IgxGridModule, IgxListModule, CommonModule],
+                ngImports: [IgxGridModule, IgxListModule],
                 ngProviders: [IgxOverlayService]
             })
         }));

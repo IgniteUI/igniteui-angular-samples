@@ -1,0 +1,34 @@
+<div class="switches">
+    <igx-switch (change)='changePinningPosition()' style="padding-left: 20px">Bottom Row Pinning toggle</igx-switch>
+</div>
+<div class="grid-container">
+    <igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid1 [data]="localData" [primaryKey]="'Photo'"
+        [autoGenerate]="false" [height]="'520px'" [width]="'100%'" [rowHeight]="'65px'" [pinning]='pinningConfig'
+        [cellSelection]="'none'" (onCellClick)="onCellClick($event)" (mouseleave)="onMouseLeave(actionStrip1, $event)"
+        (mouseover)="onMouseOver(actionStrip1, hierarchicalGrid1, $event)"
+        (onDataPreLoad)="actionStrip1.hide()">
+        <igx-column field="Artist"></igx-column>
+        <igx-column field="Photo" [editable]="false">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner_2">
+                    <img [src]="cell.value" class="photo" />
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="Debut" dataType="number" [formatter]="formatter"></igx-column>
+        <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number"></igx-column>
+        <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number"></igx-column>
+
+        <igx-action-strip #actionStrip1>
+            <igx-grid-pinning-actions></igx-grid-pinning-actions>
+        </igx-action-strip>
+
+        <igx-row-island [key]="'Albums'" [autoGenerate]="false" [primaryKey]="'Album'" [pinning]='pinningConfig'
+            [cellSelection]="'none'" (onCellClick)="onCellClick($event)" (onDataPreLoad)="actionStrip1.hide()">
+            <igx-column field="Album"></igx-column>
+            <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
+            <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
+            <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
+        </igx-row-island>
+    </igx-hierarchical-grid>
+</div>
