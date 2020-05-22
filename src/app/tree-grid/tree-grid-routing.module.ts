@@ -453,6 +453,11 @@ export const treeGridRoutes: Routes = [
         component: TGridKeyboardnavGuide,
         data: treeGridRoutesData["tgrid-keyboardnav-guide"],
         path: "tgrid-keyboardnav-guide"
+    },
+    {
+        component: TreeGridRemotePagingDefaultTemplateComponent,
+        data: treeGridRoutesData["tree-grid-remote-paging-default-template"],
+        path: "tree-grid-remote-paging-default-template"
     }
 ];
 
