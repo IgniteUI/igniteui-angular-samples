@@ -1,5 +1,5 @@
 <div igxOverlayOutlet class="grid-chart-contextmenu-wrapper">
-    <igx-grid [columnSelection]="columnSelectionType" #grid [formatter]="currentFormatter" [chartData]="chartData"
+    <igx-grid chartIntegration conditionalFormatting [columnSelection]="columnSelectionType" #grid [formatter]="currentFormatter" [chartData]="chartData"
          primaryKey='ID' displayDensity="compact" [data]="data">
         <igx-column field='ID' [hidden]='true'></igx-column>
         <igx-column field='Category' [editable]="true" [width]="'110px'" [selectable]="true"></igx-column>
