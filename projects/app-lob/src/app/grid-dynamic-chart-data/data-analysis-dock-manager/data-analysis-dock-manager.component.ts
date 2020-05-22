@@ -78,9 +78,6 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     @ViewChild("template", { read: TemplateRef })
     public emptyChartTemplate: TemplateRef<any>;
 
-    @ViewChild("tooltipChart", {static: true})
-    public tooltipTemplate: TemplateRef<any>;
-
     public chartData = [];
     public contextmenu = false;
     public contextmenuX = 0;
@@ -240,8 +237,6 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             const y = (this.dockManager.nativeElement.getBoundingClientRect().height / 3);
             this.paneService.initialPanePosition = { x, y };
         };
-
-        this.chartIntegration.dataChartSeriesOptionsModel["tooltipTemplate"] = this.tooltipTemplate;
 
         setTimeout(() => {
             const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 3);

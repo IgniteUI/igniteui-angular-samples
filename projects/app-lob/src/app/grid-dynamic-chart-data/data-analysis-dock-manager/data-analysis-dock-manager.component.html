@@ -100,6 +100,7 @@
             <igx-column field='Settlement' [width]="'150px'" ></igx-column>
         </igx-grid>
     </div>
+
     <div slot="chart-types-content" class="chart-types-container">
         <div *ngFor="let chartType of chartTypes">
             <div *ngIf="(allCharts |filterType:chartType).length > 0" class="wrapper">
@@ -129,6 +130,7 @@
         <igx-icon #icon style="pointer-events: none;" class="icon" fontSet="material">insert_chart_outlined</igx-icon>
     </button>
 </span>
+
 <!-- this block can be moved in another component -->
 <igx-dialog #contextDialog>
         <div #dialogContent class="tab-options-wrapper">
@@ -154,16 +156,4 @@
 
 <ng-template #template>
     <span>Incompatible data</span>
-</ng-template>
-
-<ng-template let-series="series" let-item="item" #tooltipChart>
-    <div class="app__chart-tooltip" style="">
-        <div>
-            <!-- <span>{{ formatValue(item, series) }}</span> -->
-            <span>{{ series.valueMemberPath }}</span><span> {{ item[series.valueMemberPath] | number:'1.4-4' }}</span>
-        </div>
-        <div>
-            <span></span>
-        </div>
-    </div>
 </ng-template>
