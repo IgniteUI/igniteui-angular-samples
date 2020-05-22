@@ -115,7 +115,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                             {
                                 type: IgcDockManagerPaneType.contentPane,
                                 contentId: "grid",
-                                header: "Grid"
+                                header: "Grid",
+                                allowClose: false
                             }
                         ]
                     }
@@ -124,7 +125,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                     type: IgcDockManagerPaneType.contentPane,
                     contentId: "chart-types-content",
                     header: "Chart Types",
-                    size: 27
+                    size: 27,
+                    allowClose: false
                 }
             ]
         },
