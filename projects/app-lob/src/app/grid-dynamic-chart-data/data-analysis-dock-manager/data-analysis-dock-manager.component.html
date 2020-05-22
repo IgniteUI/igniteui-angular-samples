@@ -2,10 +2,6 @@
     <div slot="grid" igxOverlayOutlet style="height: 100%">
         <igx-grid columnSelection="multiple" igxPreventDocumentScroll #grid chartIntegration conditionalFormatting [formatter]="currentFormatter"
             [chartData]="chartData" primaryKey='ID' displayDensity="compact" [data]="data">
-            <igx-column field='ID' [hidden]='true'></igx-column>
-            <igx-column field='Category'  [width]="'110px'"></igx-column>
-            <igx-column field='Type'  [filterable]='false' [width]="'130px'"></igx-column>
-            <igx-column field='Country'  [width]="'100px'"></igx-column>
             <igx-column field='Price' dataType="number" [width]="'120px'" >
                 <ng-template igxCell let-cell="cell">
                     <div class="finjs-icons">
@@ -13,8 +9,7 @@
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field='Start(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency"
-                >
+            <igx-column field='Start(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency">
             </igx-column>
             <igx-column field='Start(Y)Diff' dataType="number" [width]="'120px'" >
                 <ng-template igxCell let-cell="cell">
@@ -58,8 +53,7 @@
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field='Low(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency"
-                >
+            <igx-column field='Low(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency">
             </igx-column>
             <igx-column field='Low(Y)Diff' dataType="number" [width]="'120px'" >
                 <ng-template igxCell let-cell="cell">
@@ -97,6 +91,10 @@
                     </div>
                 </ng-template>
             </igx-column>
+            <igx-column field='ID' [hidden]='true'></igx-column>
+            <igx-column field='Category'  [width]="'110px'"></igx-column>
+            <igx-column field='Type'  [filterable]='false' [width]="'130px'"></igx-column>
+            <igx-column field='Country'  [width]="'100px'"></igx-column>
             <igx-column field='Region' ></igx-column>
             <igx-column field='Contract' ></igx-column>
             <igx-column field='Settlement' [width]="'150px'" ></igx-column>

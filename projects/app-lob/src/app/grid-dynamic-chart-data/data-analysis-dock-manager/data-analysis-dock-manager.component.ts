@@ -320,8 +320,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
         const splitPane: IgcSplitPane = {
             type: IgcDockManagerPaneType.splitPane,
             orientation: IgcSplitPaneOrientation.horizontal,
-            floatingWidth: 600,
-            floatingHeight: 400,
+            floatingWidth: 550,
+            floatingHeight: 350,
             panes: [floatingPane]
         };
 
