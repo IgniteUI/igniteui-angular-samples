@@ -20,18 +20,20 @@
     </igx-grid>
     <ng-template #defaultFilterTemplate igxFilterCellTemplate let-column="column">
         <div class="filter-cell">
-            <igx-input-group class="filter-input" type="box" [displayDensity]="'compact'">
+            <igx-input-group #inputGr class="filter-input" type="box" [displayDensity]="'compact'">
                 <igx-prefix>
                     <igx-icon>search</igx-icon>
                 </igx-prefix>
                 <input
                     #input
                     igxInput
-                    tabindex="0"
+                    tabindex="-1"
                     placeholder="Filter..."
                     autocomplete="off"
                     [value]="getFilterValue(column)"
-                    (input)="onInput(input, column)"/>
+                    (input)="onInput(input, column)"
+                    (click)="onClick(inputGr)"
+                    [igxFocus]="getFocused(column)"/>
                 <igx-suffix *ngIf="input.value || input.value === 0" (click)="clearInput(column)" tabindex="0">
                     <igx-icon>clear</igx-icon>
                 </igx-suffix>
@@ -52,8 +54,10 @@
                             (click)="openDatePicker(openDialog)"
                             placeholder="Filter..."
                             autocomplete="off"
+                            tabindex="-1"
                             [value]="displayData | date"
-                            [readonly]="true"/>
+                            [readonly]="true"
+                            [igxFocus]="getFocused(column)"/>
                         <igx-suffix *ngIf="input.value || input.value === 0" (click)="clearInput(column)" tabindex="0">
                             <igx-icon>clear</igx-icon>
                         </igx-suffix>

@@ -65,6 +65,17 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
         grid.clearFilter(column.field);
     }
 
+    public getFocused(column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
+        const activeNode = grid.navigation.activeNode;
+        return activeNode && activeNode.row === -1 && activeNode.column === column.visibleIndex;
+    }
+
+    public onClick(inputGroup) {
+        if (!inputGroup.isFocused) {
+            inputGroup.input.focus();
+        }
+    }
+
     public onDateSelected(event, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
         this._filterValues.set(column, event);
 

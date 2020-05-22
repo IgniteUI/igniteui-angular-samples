@@ -66,6 +66,17 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
         this.treegrid1.clearFilter(column.field);
     }
 
+    public getFocused(column: IgxColumnComponent) {
+        const activeNode = this.treegrid1.navigation.activeNode;
+        return activeNode && activeNode.row === -1 && activeNode.column === column.visibleIndex;
+    }
+
+    public onClick(inputGroup) {
+        if (!inputGroup.isFocused) {
+            inputGroup.input.focus();
+        }
+    }
+
     public onDateSelected(event, column: IgxColumnComponent) {
         this._filterValues.set(column, event);
 

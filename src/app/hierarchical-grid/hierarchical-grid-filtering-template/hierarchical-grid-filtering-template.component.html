@@ -34,18 +34,20 @@
 </igx-hierarchical-grid>
 <ng-template #defaultFilterTemplate igxFilterCellTemplate let-column="column" let-grid="column.grid">
     <div class="filter-cell">
-        <igx-input-group type="box" [displayDensity]="'compact'">
+        <igx-input-group #inputGr type="box" [displayDensity]="'compact'">
             <igx-prefix>
                 <igx-icon>search</igx-icon>
             </igx-prefix>
             <input
                 #input
                 igxInput
-                tabindex="0"
+                tabindex="-1"
                 placeholder="Filter..."
                 autocomplete="off"
                 [value]="getFilterValue(column)"
-                (input)="onInput(input, column, grid)"/>
+                (input)="onInput(input, column, grid)"
+                (click)="onClick(inputGr)"
+                [igxFocus]="getFocused(column, grid)"/>
             <igx-suffix *ngIf="input.value || input.value === 0" (click)="clearInput(column, grid)" tabindex="0">
                 <igx-icon>clear</igx-icon>
             </igx-suffix>
@@ -55,7 +57,7 @@
 <ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column" let-grid="column.grid">
     <div class="filter-cell">
         <igx-date-picker [value]="getFilterValue(column)"
-                         (onSelection)="onDateSelected($event, column, grid)" 
+                         (onSelection)="onDateSelected($event, column, grid)"
                          [modalOverlaySettings]="overlaySettings">
             <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-displayData="displayData">
                 <igx-input-group type="box" [displayDensity]="'compact'">
@@ -66,9 +68,11 @@
                         igxInput
                         (click)="openDatePicker(openDialog)"
                         placeholder="Filter..."
+                        tabindex="-1"
                         autocomplete="off"
                         [value]="displayData | date"
-                        [readonly]="true"/>
+                        [readonly]="true"
+                        [igxFocus]="getFocused(column, grid)"/>
                     <igx-suffix *ngIf="input.value || input.value === 0" (click)="clearInput(column, grid)" tabindex="0">
                         <igx-icon>clear</igx-icon>
                     </igx-suffix>

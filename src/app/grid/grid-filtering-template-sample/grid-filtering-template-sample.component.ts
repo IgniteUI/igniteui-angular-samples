@@ -65,6 +65,20 @@ export class FilteringTemplateSampleComponent implements OnInit {
         this.grid1.clearFilter(column.field);
     }
 
+    public getFocused(column: IgxColumnComponent) {
+        const activeNode = this.grid1.navigation.activeNode;
+        if (activeNode && activeNode.row === -1 && activeNode.column === column.visibleIndex) {
+            return true;
+        }
+        return false;
+    }
+
+    public onClick(inputGroup) {
+        if (!inputGroup.isFocused) {
+            inputGroup.input.focus();
+        }
+    }
+
     public onDateSelected(event, column: IgxColumnComponent) {
         this._filterValues.set(column, event);
 
