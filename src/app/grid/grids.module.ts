@@ -72,6 +72,7 @@ import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.c
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { PasteHandler } from "./grid-paste/paste-handler.directive";
 import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/remote-filtering-sample.component";
+import { RemotePagingDefaultTemplateComponent } from "./grid-remote-paging-defaultTemplate-sample/remote-paging-default-template.component";
 import { RemotePagingGridSample } from "./grid-remote-paging-sample/remote-paging-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 import { ResizingSampleComponent } from "./grid-resizing-sample/grid-resizing-sample.component";
@@ -210,7 +211,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridColumnSelectionComponent,
         GridColumnGroupSelectionComponent,
         GridColumnSelectionStylesComponent,
-        GridKeyboardnavGuide
+        GridKeyboardnavGuide,
+        RemotePagingDefaultTemplateComponent
     ],
     imports: [
         CommonModule,
