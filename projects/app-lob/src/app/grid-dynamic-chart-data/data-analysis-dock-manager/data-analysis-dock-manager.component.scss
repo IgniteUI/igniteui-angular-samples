@@ -6,7 +6,6 @@
   overflow-y: auto;
 }
 
-
 @mixin scrollbar($scrollbar-width, $scrollbar-height) {
     $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
     $scrollbar-thumb: hexrgba(igx-color($default-palette, 'grays', 400));
@@ -25,6 +24,19 @@
 .grid-chart-contextmenu-wrapper {
     width: 100%;
     height: 95%;
+}
+
+.dock-m-position {
+    width: 100vw;
+    height: 100vh;
+    padding: 0px 8px 8px 8px;
+}
+
+.chart-types-container {
+    overflow-y: auto; 
+    height: 100%; 
+    width: 100%;
+    padding-left: 15px;
 }
 
 .selection-area {
@@ -79,8 +91,9 @@ $custom-badge-theme: igx-badge-theme(
         }
     
         .igx-divider {
-            margin: 5px !important;
+            margin-top: 5px !important;
             background: black !important;
+            width: 95% !important;
         }
     }
     .grid-chart-contextmenu-wrapper {
