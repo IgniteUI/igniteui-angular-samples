@@ -44,7 +44,7 @@ export class RemoteService {
         return hasItems;
     }
 
-    public getData(virtualizationArgs: IForOfState, sortingArgs?: any, loadState?: IForOfState,
+    public getData(virtualizationArgs: IForOfState, loadState?: IForOfState,
                    callback?: (any) => void) {
         let virtArgsEndIndex = virtualizationArgs.startIndex + virtualizationArgs.chunkSize;
         let endOfData = false;
@@ -55,7 +55,7 @@ export class RemoteService {
                 loadState.startIndex = this._cachedData.length;
                 loadState.chunkSize += diff;
             }
-            this._http.get(this._buildDataUrl(loadState, sortingArgs)).pipe(debounceTime(500))
+            this._http.get(this._buildDataUrl(loadState)).pipe(debounceTime(500))
             .subscribe((data: any) => {
                 let returnData = [];
                 if (loadState.startIndex === 0 && loadState.chunkSize === 0) {
@@ -93,27 +93,11 @@ export class RemoteService {
         }
     }
 
-    private _buildDataUrl(virtualizationArgs: any, sortingArgs: any): string {
-        let baseQueryString = `${DATA_URL}?$count=true`;
+    private _buildDataUrl(virtualizationArgs: any): string {
+        const orderQuery = EMPTY_STRING;
         let scrollingQuery = EMPTY_STRING;
-        let orderQuery = EMPTY_STRING;
         let query = EMPTY_STRING;
-
-        if (sortingArgs) {
-            let sortingDirection: string;
-            switch (sortingArgs.dir) {
-                case SortingDirection.Asc:
-                    sortingDirection = SortOrder.ASC;
-                    break;
-                case SortingDirection.Desc:
-                    sortingDirection = SortOrder.DESC;
-                    break;
-                default:
-                    sortingDirection = SortOrder.NONE;
-            }
-
-            orderQuery = `$orderby=${sortingArgs.fieldName} ${sortingDirection}`;
-        }
+        let baseQueryString = `${DATA_URL}?$count=true`;
 
         if (virtualizationArgs) {
             let requiredChunkSize: number;
