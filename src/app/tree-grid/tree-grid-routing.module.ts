@@ -4,6 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { TreeGridColumnGroupSelectionComponent } from "./column-group-selection/column-group-selection.component";
 import { TreeGridColumnSelectionStylesComponent } from "./column-selection-styles/tree-grid-column-selection-style.component";
 import { TreeGridColumnSelectionComponent } from "./column-selection/tree-grid-column-selection.component";
+import { TGridKeyboardnavGuide } from "./tgrid-keyboard-guide/tgrid-keyboardnav-guide.component";
 import { TreeGridAdvancedFilteringSampleComponent } from "./tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
 import { TreeGridAdvancedFilteringStyleComponent } from "./tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
 import { TreeGridBatchEditingSampleComponent } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
@@ -55,6 +56,9 @@ import { TreeGridRowDragBase } from "./tree-grid-row-drag-base/tree-grid-row-dra
 import { TreeGridRowDrag } from "./tree-grid-row-drag/tree-grid-row-drag.component";
 import { TreeGridRowEditStyleComponent } from "./tree-grid-row-edit-style/tree-grid-row-edit-style.component";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
+import { TreeGridRowPinningExtraColumnSampleComponent } from "./tree-grid-row-pinning-extra-column/tree-grid-row-pinning-extra-column.component";
+import { TreeGridRowPinningStylingSampleComponent } from "./tree-grid-row-pinning-styling/tree-grid-row-pinning-styling.component";
+import { TreeGridRowPinningSampleComponent } from "./tree-grid-row-pinning/tree-grid-row-pinning.component";
 import { TreeGridRowReorderComponent } from "./tree-grid-row-reorder/tree-grid-row-reorder.component";
 import { TreeGridRightPinningSampleComponent } from "./tree-grid-sample-right-pinning/tree-grid-right-pinning.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
@@ -336,6 +340,21 @@ export const treeGridRoutes: Routes = [
         path: "tree-grid-row-reordering"
     },
     {
+        component: TreeGridRowPinningSampleComponent,
+        data: treeGridRoutesData["tree-grid-row-pinning"],
+        path: "tree-grid-row-pinning"
+    },
+    {
+        component: TreeGridRowPinningExtraColumnSampleComponent,
+        data: treeGridRoutesData["tree-grid-row-pinning-extra-column"],
+        path: "tree-grid-row-pinning-extra-column"
+    },
+    {
+        component: TreeGridRowPinningStylingSampleComponent,
+        data: treeGridRoutesData["tree-grid-row-pinning-styling"],
+        path: "tree-grid-row-pinning-styling"
+    },
+    {
         component: TreeGridRemotePagingSampleComponent,
         data: treeGridRoutesData["treegrid-remote-paging"],
         path: "treegrid-remote-paging"
@@ -429,6 +448,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridColumnSelectionStylesComponent,
         data: treeGridRoutesData["column-selection-styles"],
         path: "column-selection-styles"
+    },
+    {
+        component: TGridKeyboardnavGuide,
+        data: treeGridRoutesData["tgrid-keyboardnav-guide"],
+        path: "tgrid-keyboardnav-guide"
     }
 ];
 
