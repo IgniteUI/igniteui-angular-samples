@@ -11,7 +11,7 @@ $custom-checkbox-theme: igx-checkbox-theme(
     $border-radius: 10px
 );
 
-.list-sample {
+.list-sample ::ng-deep {
     @include igx-checkbox($custom-checkbox-theme);
 }
 
@@ -50,6 +50,6 @@ $custom-checkbox-theme: igx-checkbox-theme(
                 font-size: 20px;
                 font-weight: 400;
             }
-        }   
+        }
     }
 }
