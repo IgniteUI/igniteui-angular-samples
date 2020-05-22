@@ -4,9 +4,9 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {
     IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxComboModule,
-    IgxDatePickerModule, IgxDialogModule, IgxDropDownModule, IgxForOfModule, IgxIconModule,
-    IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule,
-    IgxSwitchModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
+    IgxDatePickerModule, IgxDialogModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
+    IgxIconModule, IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule,
+    IgxSelectModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
 } from "igniteui-angular";
 import { AutocompleteRemote } from "./autocomplete/autocomplete-remote/autocomplete-remote.component";
 import { AutocompleteBasic, AutocompletePipeStartsWith } from "./autocomplete/autocomplete/autocomplete.component";
@@ -53,6 +53,7 @@ import { InputGroupSample4Component } from "./input-group/input-group-sample-4/i
 import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 import { InputGroupStyleComponent } from "./input-group/input-group-styling/input-group-styling.component";
+import { InputTextSelectionComponent } from "./input-group/input-text-selection/input-text-selection.component";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.component";
@@ -132,7 +133,8 @@ import { SwitchStylingComponent } from "./switch/switch-styling/switch-styling.c
         ButtonGroupSampleComponent,
         ButtonsDisplayDensityComponent,
         ButtonsStyleComponent,
-        ButtonGroupStyleComponent
+        ButtonGroupStyleComponent,
+        InputTextSelectionComponent
     ],
     imports: [
         CommonModule,
@@ -159,7 +161,9 @@ import { SwitchStylingComponent } from "./switch/switch-styling/switch-styling.c
         IgxSelectModule,
         IgxSwitchModule,
         IgxProgressBarModule,
-        IgxForOfModule
+        IgxForOfModule,
+        IgxTextSelectionModule,
+        IgxFocusModule
     ]
 })
 export class DataEntriesModule { }
