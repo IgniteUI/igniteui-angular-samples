@@ -147,7 +147,12 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                 // Clear column selection
                 this.grid.deselectAllColumns();
 
-                this.chartData = this.grid.getSelectedData();
+                if (this.grid.getSelectedRanges().length > 1) {
+                   this.chartData = [];
+                } else {
+                    this.chartData = this.grid.getSelectedData();
+                }
+
                 this.range = range;
                 this.renderButton();
                 this.createChartCommonLogic();
@@ -227,7 +232,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             debounceTime(250),
             takeUntil(this.destroy$))
             .subscribe(() => {
-                if (this.range) { this.headersRenderButton ? this.renderHeaderButton() : this.renderButton(); }
+                if (this.range && !this.contextmenu) { this.headersRenderButton ? this.renderHeaderButton() : this.renderButton(); }
             });
 
         window.onresize = () => {
@@ -388,11 +393,13 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     }
 
     private renderHeaderButton() {
-        if (this.grid.selectedColumns().length === 0) {
+        const selectedColumns = this.grid.selectedColumns();
+        if (selectedColumns.length === 0) {
             return;
         }
 
-        this.colIndex = this.grid.selectedColumns()[this.grid.selectedColumns().length - 1].visibleIndex;
+        this.colIndex = Math.max(...selectedColumns.map(c => c.visibleIndex));
+        this.rowIndex = undefined;
 
         while (this.colIndex >= 0 && !this.grid.navigation.isColumnFullyVisible(this.colIndex)) {
             this.colIndex--;
@@ -402,9 +409,15 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             return;
         }
 
-        const headerCell = this.grid.headerCellList[this.grid.selectedColumns()[this.grid.selectedColumns().length - 1].visibleIndex];
-        this.contextmenuX = headerCell.elementRef.nativeElement.getClientRects()[0].right;
-        this.contextmenuY = headerCell.elementRef.nativeElement.getClientRects()[0].bottom;
+        const col = selectedColumns.find(c => c.visibleIndex === this.colIndex);
+
+        if (!col) {
+            return;
+        }
+
+        const headerCell = col.headerCell.elementRef.nativeElement;
+        this.contextmenuX = headerCell.getClientRects()[0].right;
+        this.contextmenuY = headerCell.getClientRects()[0].bottom;
         this.contextmenu = true;
         this.cdr.detectChanges();
     }
@@ -412,9 +425,5 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     public isWithInRange(rowIndex, colIndex) {
         return rowIndex >= this.range.rowStart && rowIndex <= this.range.rowEnd
             && colIndex >= this.range.columnStart && colIndex <= this.range.columnEnd;
-    }
-
-    public formatValue(item, series) {
-        // debugger;
     }
 }

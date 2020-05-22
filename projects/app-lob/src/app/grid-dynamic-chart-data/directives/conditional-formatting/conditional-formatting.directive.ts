@@ -244,7 +244,7 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     public determineFormatters(fromColumn) {
         const data = fromColumn ? this.grid.getSelectedColumnsData() : this.grid.getSelectedData();
         const numericData = this.toArray(data).some(rec => typeof rec === "number");
-        const textData = this.toArray(this.grid.getSelectedData()).some(rec => typeof rec === "string");
+        const textData = this.toArray(data).some(rec => typeof rec === "string");
         const formatters =  Array.of(...this._commonFormattersName);
         if (!(numericData) && textData) {
             formatters.splice(0, 0, ...this._textFormatters);
@@ -259,13 +259,12 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     public recalcCachedValues(clearAll = false) {
         if (clearAll) {
             if (this.grid.getSelectedRanges().length === 0) {
-                const selectedColumnsLength = this.grid.selectedColumns().length;
-                if (selectedColumnsLength === 1) {
-                    this._startColumn = this.grid.selectedColumns()[0].visibleIndex;
-                    this._endColumn = this.grid.selectedColumns()[0].visibleIndex;
-                } else if (selectedColumnsLength > 1) {
-                    this._startColumn = this.grid.selectedColumns()[0].visibleIndex;
-                    this._endColumn = this.grid.selectedColumns()[selectedColumnsLength - 1].visibleIndex;
+                const selectedColumns = this.grid.selectedColumns();
+                if (selectedColumns.length === 1) {
+                    this._startColumn = this._endColumn = selectedColumns[0].visibleIndex;
+                } else if (selectedColumns.length > 1) {
+                    this._startColumn =  Math.min(...selectedColumns.map(c => c.visibleIndex));
+                    this._endColumn =  Math.max(...selectedColumns.map(c => c.visibleIndex));
                 } else {
                     return;
                 }
@@ -315,9 +314,10 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
         // Column selection custom range
         if (selectedRanges.length === 0) {
+            const selectedColumns = this.grid.selectedColumns();
             customRange = [{
-                columnEnd: this.grid.selectedColumns()[this.grid.selectedColumns().length - 1].visibleIndex,
-                columnStart: this.grid.selectedColumns()[0].visibleIndex,
+                columnEnd: Math.max(...selectedColumns.map(c => c.visibleIndex)),
+                columnStart: Math.min(...selectedColumns.map(c => c.visibleIndex)),
                 rowEnd: this.grid.data.length - 1,
                 rowStart: 0
             }];
