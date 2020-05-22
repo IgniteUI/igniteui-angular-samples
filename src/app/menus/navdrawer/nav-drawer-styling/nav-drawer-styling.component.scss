@@ -1,3 +1,5 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
 .content-wrap {
     display: flex;
     height: 100%;
@@ -15,4 +17,12 @@ main {
 :host {
     display: block;
     height: 100%;
+
+    $custom-theme: igx-navdrawer-theme(
+        $background: #2d313a,
+        $item-active-background: #ecc256,
+        $item-header-text-color: #f3c03e
+    );
+
+    @include igx-css-vars($custom-theme);
 }
