@@ -242,7 +242,6 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     }
 
     public determineFormatters(fromColumn) {
-        debugger;
         const data = fromColumn ? this.grid.getSelectedColumnsData() : this.grid.getSelectedData();
         const numericData = this.toArray(data).some(rec => typeof rec === "number");
         const textData = this.toArray(this.grid.getSelectedData()).some(rec => typeof rec === "string");
@@ -258,7 +257,6 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     }
 
     public recalcCachedValues(clearAll = false) {
-        debugger;
         if (clearAll) {
             if (this.grid.getSelectedRanges().length === 0) {
                 const selectedColumnsLength = this.grid.selectedColumns().length;

@@ -140,6 +140,7 @@ export class ChartIntegrationDirective {
         };
     }
 
+    // tslint:disable-next-line: member-ordering
     public dataChartSeriesOptionsModel: IOptions = {
         isHighlightingEnabled: true,
         areaFillOpacity: .4,
@@ -147,11 +148,13 @@ export class ChartIntegrationDirective {
         showDefaultTooltip: false
     };
 
+    // tslint:disable-next-line: member-ordering
     public scatterChartSeriesOptionsModel: IOptions = {
         markerType: 3,
         showDefaultTooltip: true
     };
 
+    // tslint:disable-next-line: member-ordering
     public bubbleChartSeriesOptionsModel: IOptions = {
         radiusScale: this._sizeScale
     };
