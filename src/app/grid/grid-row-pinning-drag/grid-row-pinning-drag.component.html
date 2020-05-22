@@ -1,23 +1,21 @@
 <div class="grid-container">
-    <igx-grid igxPreventDocumentScroll #grid [data]="data" [pinning]='pinningConfig' [height]="'800px'" [width]="'1000px'" [autoGenerate]="false" [rowDraggable]="true"
-        [primaryKey]="'ID'" igxDrop (dropped)="onDropAllowed($event)">
-        <igx-column width='70px' [filterable]='false'>
-            <ng-template igxCell let-cell="cell" let-val>
-                <igx-icon class="pin-icon" (mousedown)="togglePining(cell.row, $event)">
-                    {{cell.row.pinned ? 'lock' : 'lock_open'}}
-                </igx-icon>
-            </ng-template>
-        </igx-column>
-        <igx-column [field]="'ID'" [header]="'ID'" width="100px"></igx-column>
-        <igx-column [field]="'CompanyName'" [header]="'Company Name'" width="100px"></igx-column>
-        <igx-column [field]="'ContactName'" [header]="'Contact Name'" width="100px" [minWidth]="'60px'"
-            [maxWidth]="'230px'"></igx-column>
-        <igx-column [field]="'ContactTitle'" [header]="'Contact Title'" width="100px"></igx-column>
-        <igx-column [field]="'Address'" [header]="'Address'" width="100px"></igx-column>
-        <igx-column [field]="'City'" [header]="'City'" width="100px"></igx-column>
-        <igx-column [field]="'Region'" [header]="'Region'" width="100px"></igx-column>
-        <igx-column [field]="'PostalCode'" [header]="'Postal Code'" width="100px"></igx-column>
-        <igx-column [field]="'Phone'" [header]="'Phone'" width="100px"></igx-column>
-        <igx-column [field]="'Fax'" [header]="'Fax'" width="100px"></igx-column>
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [pinning]='pinningConfig' [height]="'490px'" [width]="'100%'"
+        [autoGenerate]="false" [rowDraggable]="true" [primaryKey]="'ID'" [cellSelection]="false" igxDrop
+        (onRowDragStart)="onRowDragStart($event)" (dropped)="onDropAllowed($event)"
+        (mouseover)="onMouseOver(actionStrip1, grid1, $event)" (onCellClick)="onCellClick($event)"
+        (mouseleave)="onMouseLeave(actionStrip1, $event)"
+        (onDataPreLoad)="actionStrip1.hide()">
+        <igx-column [field]="'CompanyName'" [header]="'Company Name'"></igx-column>
+        <igx-column [field]="'ContactName'" [header]="'Contact Name'"></igx-column>
+        <igx-column [field]="'ContactTitle'" [header]="'Contact Title'"></igx-column>
+        <igx-column [field]="'Address'" [header]="'Address'"></igx-column>
+        <igx-column [field]="'City'" [header]="'City'"></igx-column>
+        <igx-column [field]="'PostalCode'" [header]="'Postal Code'"></igx-column>
+        <igx-column [field]="'Phone'" [header]="'Phone'"></igx-column>
+        <igx-column [field]="'Fax'" [header]="'Fax'"></igx-column>
+
+        <igx-action-strip #actionStrip1>
+            <igx-grid-pinning-actions></igx-grid-pinning-actions>
+        </igx-action-strip>
     </igx-grid>
 </div>

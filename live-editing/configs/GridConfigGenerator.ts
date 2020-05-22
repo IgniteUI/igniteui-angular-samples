@@ -83,6 +83,10 @@ import { PinningStylingComponent } from "../../src/app/grid/grid-sample-pinning-
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { PinningToolbarSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-toolbar-pinning.component";
 import { RightPinningSampleComponent } from "../../src/app/grid/grid-sample-right-pinning/grid-right-pinning.component";
+import { GridRowPinningSampleComponent } from "../../src/app/grid/grid-row-pinning/grid-row-pinning.component";
+import { GridRowPinningStylingSampleComponent } from '../../src/app/grid/grid-row-pinning-styling/grid-row-pinning-styling.component';
+import { GridRowPinningExtraColumnSampleComponent } from "../../src/app/grid/grid-row-pinning-extra-column/grid-row-pinning-extra-column.component";
+import { GridPinningDragSampleComponent } from "../../src/app/grid/grid-row-pinning-drag/grid-row-pinning-drag.component";
 import { GridSelectionTemplateExcelComponent } from "../../src/app/grid/grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
 import { GridSelectionTemplateNumbersComponent } from "../../src/app/grid/grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
@@ -1101,6 +1105,50 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridColumnSelectionStylesComponent, IgxGridModule],
                 ngDeclarations: [GridColumnSelectionStylesComponent],
                 ngImports: [IgxGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridRowPinningSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridRowPinningSampleComponent, IgxActionStripModule, IgxSwitchModule, IgxGridModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridRowPinningSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxActionStripModule, IgxSwitchModule, IgxGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridRowPinningExtraColumnSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts", "/src/app/grid/services/svgIcons.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridRowPinningExtraColumnSampleComponent, IgxSwitchModule, IgxGridModule, IgxIconModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridRowPinningExtraColumnSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxSwitchModule, IgxGridModule, IgxIconModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridPinningDragSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridPinningDragSampleComponent, IgxActionStripModule, IgxGridModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridPinningDragSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxActionStripModule, IgxGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridRowPinningStylingSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridRowPinningStylingSampleComponent, IgxActionStripModule, IgxGridModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridRowPinningStylingSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxActionStripModule, IgxGridModule],
                 ngProviders: []
             })
         }));
