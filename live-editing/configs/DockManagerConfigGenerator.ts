@@ -1,4 +1,4 @@
-import { DockManagerComponent } from "./../../src/app/layouts/dock-manager/dock-manager.component";
+import { DockManagerComponent } from "../../src/app/layouts/dock-manager/dock-manager-sample/dock-manager.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
