@@ -7,6 +7,7 @@ export class AppModuleConfig {
     public ngProviders: Provider[];
     public ngEntryComponents: Array<Type<any>>;
     public schemas: Array<Type<any> | any>;
+    public additionalAdjustments: string[];
 
     constructor(fields: {
         imports: Array<Type<any> | any>,
@@ -14,7 +15,8 @@ export class AppModuleConfig {
         ngImports: Array<Type<any> | ModuleWithProviders | any>,
         ngProviders?: Provider[],
         ngEntryComponents?: Array<Type<any>>,
-        schemas?: Array<Type<any> | any>
+        schemas?: Array<Type<any> | any>,
+        additionalAdjustments?: string[]
 
     }) {
         this.imports = fields.imports;
@@ -23,5 +25,6 @@ export class AppModuleConfig {
         this.ngProviders = fields.ngProviders;
         this.ngEntryComponents = fields.ngEntryComponents;
         this.schemas = fields.schemas;
+        this.additionalAdjustments = fields.additionalAdjustments;
     }
 }
