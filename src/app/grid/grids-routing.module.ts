@@ -589,7 +589,7 @@ export const gridsRoutes: Routes = [
     },
     {
         component: RemotePagingDefaultTemplateComponent,
-        data: gridsRoutesData["grid-remote-paging-sample"],
+        data: gridsRoutesData["remote-paging-default-template"],
         path: "remote-paging-default-template"
 
     }
