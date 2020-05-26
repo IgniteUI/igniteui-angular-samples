@@ -29,7 +29,7 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     public ngAfterViewInit() {
         this.grid.isLoading = true;
         // load 1 page of data with the size of a  data view and a half
-        const dataViewSize = parseInt(this.grid.height)/this.grid.rowHeight;
+        const dataViewSize = parseInt(this.grid.height, 10) / this.grid.rowHeight;
         this.pageSize = Math.floor(dataViewSize * 1.5);
         this._remoteService.loadDataForPage(this.page, this.pageSize, (request) => {
             if (request.data) {
