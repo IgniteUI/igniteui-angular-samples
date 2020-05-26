@@ -140,6 +140,7 @@ export class ChartIntegrationDirective {
         };
     }
 
+    // tslint:disable-next-line: member-ordering
     private dataChartSeriesOptionsModel: IOptions = {
         isHighlightingEnabled: true,
         areaFillOpacity: .4,
@@ -147,11 +148,13 @@ export class ChartIntegrationDirective {
         showDefaultTooltip: true
     };
 
+    // tslint:disable-next-line: member-ordering
     private scatterChartSeriesOptionsModel: IOptions = {
         markerType: 3,
         showDefaultTooltip: true
     };
 
+    // tslint:disable-next-line: member-ordering
     private bubbleChartSeriesOptionsModel: IOptions = {
         radiusScale: this._sizeScale
     };
@@ -194,6 +197,10 @@ export class ChartIntegrationDirective {
         }
     }
 
+    public getAllChartTypes() {
+        return Array.from(this._dataChartTypes);
+    }
+
     public getAvailableCharts() {
         const res = [];
         this.chartTypesAvailability.forEach((isAvailable, chartType) => {
@@ -220,33 +227,40 @@ export class ChartIntegrationDirective {
         });
     }
 
-    public chartFactory(type: CHART_TYPE, viewContainerRef: ViewContainerRef) {
+    public chartFactory(type: CHART_TYPE, viewContainerRef?: ViewContainerRef, createdChart?: any) {
         if (!this.chartTypesAvailability.get(type)) {
             return;
         }
-        let componentFactory: ComponentFactory<any>;
-        let componentRef: ComponentRef<any>;
-        this._sizeScale.maximumValue = 60;
-        this._sizeScale.minimumValue = 10;
         const chartType = this.dataCharts.get(type);
-
-        if (type === CHART_TYPE.PIE) {
-            componentFactory = this.factoryResolver.resolveComponentFactory(IgxPieChartComponent);
-            componentRef = viewContainerRef.createComponent(componentFactory);
-        } else {
-            componentFactory = this.factoryResolver.resolveComponentFactory(IgxDataChartComponent);
-            componentRef = viewContainerRef.createComponent(componentFactory);
-        }
         const options: IChartComponentOptions = this.getChartOptions(type);
         const initializer: ChartInitializer = this.getInitializer(type, chartType);
-        if (this.useLegend) {
-            const legendType = type === CHART_TYPE.PIE ? IgxItemLegendComponent : IgxLegendComponent;
-            const legendFactory = this.factoryResolver.resolveComponentFactory(legendType as any);
-            const legendComponentRef: ComponentRef<any> = viewContainerRef.createComponent(legendFactory);
-            options.chartOptions["legend"] = legendComponentRef.instance;
+        let chart;
+        if (viewContainerRef) {
+            let componentFactory: ComponentFactory<any>;
+            let componentRef: ComponentRef<any>;
+            this._sizeScale.maximumValue = 60;
+            this._sizeScale.minimumValue = 10;
+
+            if (type === CHART_TYPE.PIE) {
+                componentFactory = this.factoryResolver.resolveComponentFactory(IgxPieChartComponent);
+                componentRef = viewContainerRef.createComponent(componentFactory);
+            } else {
+                componentFactory = this.factoryResolver.resolveComponentFactory(IgxDataChartComponent);
+                componentRef = viewContainerRef.createComponent(componentFactory);
+            }
+
+            if (this.useLegend) {
+                const legendType = type === CHART_TYPE.PIE ? IgxItemLegendComponent : IgxLegendComponent;
+                const legendFactory = this.factoryResolver.resolveComponentFactory(legendType as any);
+                const legendComponentRef: ComponentRef<any> = viewContainerRef.createComponent(legendFactory);
+                options.chartOptions["legend"] = legendComponentRef.instance;
+            }
+            chart = initializer.initChart(componentRef.instance, options);
+        } else if (createdChart) {
+            chart = initializer.initChart(createdChart, options);
         }
-        const chart = initializer.initChart(componentRef.instance, options);
         this.onChartCreationDone.emit(chart);
+        return chart;
     }
 
     private getInitializer(chartType: CHART_TYPE, componentClassRef): ChartInitializer {
