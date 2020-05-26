@@ -29,18 +29,18 @@ export class RemoteService {
     }
 
     public loadDataForPage(page: number, pageSize: number,
-                   callback?: (any) => void) {
+                           callback?: (any) => void) {
         this._http.get(this._buildDataUrl(page, pageSize))
             .subscribe((data: any) => {
                 const startIndex = (page - 1) * pageSize;
                 this._updateData(data, startIndex);
                 this._data.next(data);
-                callback({ data: data });
+                callback({ data });
             });
     }
 
     public getCachedData(virtualizationArgs: IForOfState) {
-        let virtArgsEndIndex = virtualizationArgs.startIndex + virtualizationArgs.chunkSize;
+        const virtArgsEndIndex = virtualizationArgs.startIndex + virtualizationArgs.chunkSize;
         let data = [];
         if (virtArgsEndIndex > this._cachedData.length) {
             data = this._cachedData.slice(this._cachedData.length - this._prevRequestChunk + 1);

@@ -36,7 +36,7 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
                 this.grid.totalItemCount = this.page * this.pageSize;
                 this.grid.data = this._remoteService.getCachedData({startIndex: 0, chunkSize: 10});
                 this.totalItems = request.data["@odata.count"];
-                this.totalPageCount = Math.ceil(this.totalItems/this.pageSize);
+                this.totalPageCount = Math.ceil(this.totalItems / this.pageSize);
                 this.grid.isLoading = false;
             }
         });
@@ -45,11 +45,11 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     public handlePreLoad() {
         const isLastChunk = this.grid.totalItemCount === this.grid.virtualizationState.startIndex + this.grid.virtualizationState.chunkSize;
         // when last chunk reached load another page of data
-        if (isLastChunk) {            
+        if (isLastChunk) {
             if (this.totalPageCount === this.page) {
                 this.grid.data = this._remoteService.getCachedData(this.grid.virtualizationState);
                 return;
-            } 
+            }
             this.page++;
             this.grid.isLoading = true;
             this._remoteService.loadDataForPage(this.page, this.pageSize, (request) => {
