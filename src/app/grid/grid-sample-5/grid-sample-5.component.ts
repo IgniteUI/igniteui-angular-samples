@@ -15,8 +15,10 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     public grid: IgxGridComponent;
 
     public remoteData: any;
-    private _prevRequestChunk: number;
-    private _endOfData = false;
+    private page = 0;
+    private pageSize = 10;
+    private totalPageCount = 0;
+    private totalItems = 0;
 
     constructor(private _remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
 
@@ -26,57 +28,40 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
 
     public ngAfterViewInit() {
         this.grid.isLoading = true;
-        const loadState = { ...this.grid.virtualizationState };
-        this._remoteService.getData(this.grid.virtualizationState, loadState,
-        (request) => {
+        // load 1 page of data with the size of a  data view and a half
+        this.pageSize = Math.floor((this.grid.virtualizationState.chunkSize || 10) * 1.5);
+        this.page = 1;
+        this._remoteService.loadDataForPage(this.page, this.pageSize, (request) => {
             if (request.data) {
-                // increase totalItemCount a little above the visible grid size in order to be able to scroll
-                this.grid.totalItemCount = request.data.length + 3;
+                this.grid.totalItemCount = this.page * this.pageSize;
+                this.grid.data = this._remoteService.getCachedData({startIndex: 0, chunkSize: 10});
+                this.totalItems = request.data["@odata.count"];
+                this.totalPageCount = Math.ceil(this.totalItems/this.pageSize);
                 this.grid.isLoading = false;
-                this._prevRequestChunk = request.data.length;
             }
         });
     }
 
     public handlePreLoad() {
-        const index = this.grid.virtualizationState.chunkSize +
-                                this.grid.virtualizationState.startIndex;
-        if (index > this._remoteService.cachedData.length && !this._endOfData) {
+        const isLastChunk = this.grid.totalItemCount === this.grid.virtualizationState.startIndex + this.grid.virtualizationState.chunkSize;
+        // when last chunk reached load another page of data
+        if (isLastChunk) {            
+            if (this.totalPageCount === this.page) {
+                this.grid.data = this._remoteService.getCachedData(this.grid.virtualizationState);
+                return;
+            } 
+            this.page++;
             this.grid.isLoading = true;
-            const loadState = {
-                startIndex: index - 1,
-                chunkSize: this.grid.virtualizationState.chunkSize
-            };
-            this.processData(loadState, () => {
-                this.grid.isLoading = false;
-                this.grid.cdr.detectChanges();
+            this._remoteService.loadDataForPage(this.page, this.pageSize, (request) => {
+                if (request.data) {
+                    this.grid.totalItemCount = Math.min(this.page * this.pageSize, this.totalItems);
+                    this.grid.data = this._remoteService.getCachedData(this.grid.virtualizationState);
+                    this.grid.isLoading = false;
+                }
             });
         } else {
-            this.processData(undefined, () => {
-                this.grid.isLoading = false;
-                this.grid.cdr.detectChanges();
-            });
+            this.grid.data = this._remoteService.getCachedData(this.grid.virtualizationState);
         }
-    }
-
-    public processData(state?, callback?: () => void): void {
-        this._remoteService.getData(this.grid.virtualizationState, state,
-        (remoteData) => {
-                if (remoteData.data) {
-                    const chunkLength = this.grid.virtualizationState.startIndex +
-                                        this.grid.virtualizationState.chunkSize + 3;
-                    if (this._endOfData || remoteData.endOfData) {
-                        this.grid.totalItemCount = this._remoteService.cachedData.length;
-                        this._endOfData = true;
-                        this.grid.cdr.detectChanges();
-                    } else if (chunkLength >= this.grid.totalItemCount) {
-                        this.grid.totalItemCount += remoteData.data.length;
-                        this._prevRequestChunk = this.grid.virtualizationState.chunkSize;
-                        this.grid.cdr.detectChanges();
-                    }
-                    callback();
-                }
-        });
     }
 
     public formatNumber(value: number) {
