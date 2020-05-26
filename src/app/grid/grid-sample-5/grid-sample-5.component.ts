@@ -43,7 +43,8 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     }
 
     public handlePreLoad() {
-        const isLastChunk = this.grid.totalItemCount === this.grid.virtualizationState.startIndex + this.grid.virtualizationState.chunkSize;
+        const isLastChunk = this.grid.totalItemCount ===
+                            this.grid.virtualizationState.startIndex + this.grid.virtualizationState.chunkSize;
         // when last chunk reached load another page of data
         if (isLastChunk) {
             if (this.totalPageCount === this.page) {
