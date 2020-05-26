@@ -15,7 +15,7 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     public grid: IgxGridComponent;
 
     public remoteData: any;
-    private page = 0;
+    private page = 1;
     private pageSize = 10;
     private totalPageCount = 0;
     private totalItems = 0;
@@ -29,8 +29,8 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     public ngAfterViewInit() {
         this.grid.isLoading = true;
         // load 1 page of data with the size of a  data view and a half
-        this.pageSize = Math.floor((this.grid.virtualizationState.chunkSize || 10) * 1.5);
-        this.page = 1;
+        const dataViewSize = parseInt(this.grid.height)/this.grid.rowHeight;
+        this.pageSize = Math.floor(dataViewSize * 1.5);
         this._remoteService.loadDataForPage(this.page, this.pageSize, (request) => {
             if (request.data) {
                 this.grid.totalItemCount = this.page * this.pageSize;
