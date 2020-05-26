@@ -2,7 +2,8 @@
     <igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid1 [data]="localData" [primaryKey]="'Photo'"
         [autoGenerate]="false" [height]="'520px'" [width]="'100%'" [rowHeight]="'65px'" [pinning]='pinningConfig'
         [cellSelection]="'none'" (onCellClick)="onCellClick($event)" (mouseleave)="onMouseLeave(actionStrip1, $event)"
-        (mouseover)="onMouseOver(actionStrip1, hierarchicalGrid1, $event)">
+        (mouseover)="onMouseOver(actionStrip1, hierarchicalGrid1, $event)"
+        (onDataPreLoad)="actionStrip1.hide()">
         <igx-column field="Artist"></igx-column>
         <igx-column field="Photo" [editable]="false">
             <ng-template igxCell let-cell="cell">
@@ -20,7 +21,7 @@
         </igx-action-strip>
 
         <igx-row-island [key]="'Albums'" [autoGenerate]="false" [primaryKey]="'Album'" [pinning]='pinningConfig'
-            [cellSelection]="'none'" (onCellClick)="onCellClick($event)">
+            [cellSelection]="'none'" (onCellClick)="onCellClick($event)" (onDataPreLoad)="actionStrip1.hide()">
             <igx-column field="Album"></igx-column>
             <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
