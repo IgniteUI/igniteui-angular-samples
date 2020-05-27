@@ -97,10 +97,8 @@ export class RemoteServiceVirt {
         }
 
         if (virtualizationArgs) {
-            let requiredChunkSize: number;
             const skip = virtualizationArgs.startIndex;
-            requiredChunkSize = virtualizationArgs.chunkSize === 0 ? 11 : virtualizationArgs.chunkSize;
-            const top = requiredChunkSize;
+            const top = 20;
             scrollingQuery = `$skip=${skip}&$top=${top}`;
         }
 

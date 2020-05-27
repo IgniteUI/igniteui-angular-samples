@@ -59,6 +59,7 @@ export class GridRemoteVirtualizationSampleComponent {
     }
 
     public handlePreLoad() {
+        this.grid.virtualizationState.chunkSize = this.grid.dataView.length;
         if (this._remoteService.hasItemsInCache(this.grid.virtualizationState)) {
             this.processData(false);
         } else {
