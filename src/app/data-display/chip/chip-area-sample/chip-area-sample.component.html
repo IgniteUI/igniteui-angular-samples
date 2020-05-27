@@ -1,0 +1,29 @@
+<div class="sample-container">
+    <igx-chips-area (onReorder)="chipsOrderChanged($event)">
+        <igx-chip
+        *ngFor="let chip of chipList"
+        [id]="chip.id"
+        [selectable]="true"
+        [selectIcon]="mySelectIcon"
+        [removable]="true"
+        [removeIcon]="myRemoveIcon"
+        (onRemove)="chipRemoved($event)"
+        [draggable]="'true'">
+            <igx-avatar
+            class="chip-avatar-resized"
+            igxPrefix
+            [src]="chip.photo"
+            roundShape="true"
+            ></igx-avatar>
+            {{chip.name}}
+        </igx-chip>
+    </igx-chips-area>
+</div>
+
+<ng-template #mySelectIcon>
+    <igx-icon>check_circle</igx-icon>
+</ng-template>
+
+<ng-template #myRemoveIcon>
+    <igx-icon>delete</igx-icon>
+</ng-template>

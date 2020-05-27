@@ -1,11 +1,5 @@
 @import "~igniteui-angular/lib/core/styles/themes/index";
 
-:host {
-    display: flex;
-    flex-flow: column nowrap;
-    padding: 16px;
-}
-
 igx-radio + igx-radio {
     margin-top: 16px;
 }
@@ -20,5 +14,19 @@ $custom-radio-theme: igx-radio-theme(
 );
 
 :host {
-    @include igx-css-vars($custom-radio-theme);
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 16px;
+
+    // @include igx-css-vars($custom-radio-theme);
+
+    /* Using Theme Overrides to provide IE 11 support.
+     * NOTE: Theming using this approach will greatly increase the size
+     * of the output CSS. If you do not plan to target IE 11,
+     * delete this section and use the `igx-css-vars` mixin as shown above.
+    **/
+    ::ng-deep {
+        @include igx-radio($custom-radio-theme);
+    }
 }
+
