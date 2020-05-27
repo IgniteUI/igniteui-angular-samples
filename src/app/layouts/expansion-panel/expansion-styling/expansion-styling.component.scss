@@ -32,24 +32,22 @@ $custom-button-theme: igx-button-theme(
     $palette: $my-color-palette,
 );
 
-
 // NOTE: comment this if you need IE11 support
-:host {
-    @include igx-css-vars($custom-panel-theme);
-    @include igx-css-vars($custom-button-theme);
-}
+// :host {
+//     @include igx-css-vars($custom-panel-theme);
+//     @include igx-css-vars($custom-button-theme);
+// }
 
 // NOTE: Uncomment this if you need to support IE11
 // The `:host` here makes sure that all the theming will affect only this component after the ViewEncapsulation Penetration.
-//:host {
-//    // Penetrate the ViewEncapsulation
-//    ::ng-deep {
-//        // Apply the custom themes to the compoents mixins.
-//        @include igx-expansion-panel($custom-panel-theme);
-//        @include igx-button($custom-button-theme);
-//    }
-//}
-
+:host {
+    // Penetrate the ViewEncapsulation
+    ::ng-deep {
+        // Apply the custom themes to the compoents mixins.
+        @include igx-expansion-panel($custom-panel-theme);
+        @include igx-button($custom-button-theme);
+    }
+}
 
 // Styles NOT related to Theming engine START
 .sample-holder {
@@ -90,3 +88,4 @@ img {
     border-radius: 8px;
 }
 // Styles NOT related to Theming engine END
+

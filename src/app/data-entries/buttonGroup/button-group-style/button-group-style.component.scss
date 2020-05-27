@@ -17,6 +17,16 @@ $custom-button-group: igx-button-group-theme(
     $disabled-background-color: lightgray
 );
 
-:host {
-  @include igx-css-vars($custom-button-group);
+// :host {
+//   @include igx-css-vars($custom-button-group);
+// }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+  @include igx-button-group($custom-button-group);
 }
+
