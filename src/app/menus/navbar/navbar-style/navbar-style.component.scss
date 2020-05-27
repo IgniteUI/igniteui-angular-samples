@@ -1,7 +1,5 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-/*BASIC THEMING*/
-
 $custom-navbar-theme: igx-navbar-theme(
     $text-color: #151515,
     $background: #dedede,
@@ -9,51 +7,16 @@ $custom-navbar-theme: igx-navbar-theme(
     $hover-icon-color: #8c8c8c
 );
 
-/*ENHANCED APPROACHES*/
+// :host {
+//     @include igx-css-vars($custom-navbar-theme);
+// }
 
-// $white-color: #dedede;
-// $black-color: #151515;
-// $light-navbar-palette: igx-palette($primary: $white-color, $secondary: $black-color);
-
-/*PALETTE and IGX-COLOR*/
-
-// $custom-navbar-theme: igx-navbar-theme(
-//     $text-color: igx-color($light-navbar-palette, "secondary", 400),
-//     $background: igx-color($light-navbar-palette, "primary", 400),
-//     $idle-icon-color: igx-color($light-navbar-palette, "secondary", 400),
-//     $hover-icon-color: #8c8c8c
-// );
-
-/*SCHEMAS*/
-
-// $light-navbar-schema: extend($_light-navbar,
-//     (
-//         text-color: (
-//             igx-color: ("secondary", 400)
-//         ),
-//         background: (
-//             igx-color: ("primary", 400)
-//         ),
-//         idle-icon-color:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         $hover-icon-color: #8c8c8c
-//     )
-// );
-
-// $custom-light-schema: extend($light-schema,(
-//     igx-navbar: $light-navbar-schema
-// ));
-
-// $cutom-navbar-theme: igx-navbar-theme(
-//   $palette: $light-navbar-palette,
-//   $schema: $custom-light-schema
-// );
-
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
-
-:host {
-     ::ng-deep {
-        @include igx-css-vars($custom-navbar-theme);
-    }
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-navbar($custom-navbar-theme);
 }
+
