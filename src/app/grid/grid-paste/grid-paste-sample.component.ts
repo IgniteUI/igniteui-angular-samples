@@ -144,6 +144,7 @@ export class GridPasteSampleComponent {
 
     public redo() {
         this.grid1.transactions.redo();
+        this.grid1.cdr.detectChanges();
         this.grid1.verticalScrollContainer.scrollTo(this.grid1.data.length +
             this.grid1.transactions.getAggregatedChanges(false).length - 1);
     }
