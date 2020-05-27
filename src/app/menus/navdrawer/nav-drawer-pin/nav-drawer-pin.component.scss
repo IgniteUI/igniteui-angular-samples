@@ -1,12 +1,18 @@
 .content-wrap {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    display: flex;
+    height: 100%;
 }
 
-main h5 {
-    padding: 10px;
+main {
+    height: 100%;
+    overflow: auto;
+    padding: 16px;
+    h5 {
+        padding: 8px 0;
+    }
+}
+
+:host {
+    display: block;
+    height: calc(100% - 56px);
 }

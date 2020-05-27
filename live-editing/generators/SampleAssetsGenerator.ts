@@ -65,9 +65,6 @@ export class SampleAssetsGenerator extends Generator {
             let generatorImports = this._tsImportsService.getFileImports(generatorPath);
             let generatorConfigs = (new GENERATORS[i]()).generateConfigs();
 
-            // if (generatorName !== "DataChartConfigGenerator") {
-            //     continue;
-            // }
             const generatorCount = generatorConfigs.length;
             const generatorInfo = generatorName.replace("ConfigGenerator", "");
 
@@ -288,12 +285,30 @@ export class SampleAssetsGenerator extends Generator {
             ngEntryComponents = this._formatAppModuleTypes(appModuleNgEntryComponents, false, 2, "\r\n\t");
         }
 
+        let schemas = "";
+        if (config.appModuleConfig.schemas !== undefined &&
+            config.appModuleConfig.schemas.length > 0) {
+            let appModuleSchemas: string[] = config.appModuleConfig.schemas;
+            schemas = this._formatAppModuleTypes(appModuleSchemas, false, 2, "\r\n\t");
+        }
+
+        let additionalAdjustments = "";
+        if (config.appModuleConfig.additionalAdjustments !== undefined &&
+            config.appModuleConfig.additionalAdjustments.length > 0)  {
+                let adjustments: string[] = config.appModuleConfig.additionalAdjustments;
+                adjustments.forEach(a => {
+                    additionalAdjustments += a + "\n";
+                });
+        }
+
         appModuleTemplate = appModuleTemplate
             .replace("{imports}", imports)
             .replace("{ngDeclarations}", ngDeclarations)
             .replace("{ngImports}", ngImports)
             .replace("{ngProviders}", ngProviders)
-            .replace("{ngEntryComponents}", ngEntryComponents);
+            .replace("{ngEntryComponents}", ngEntryComponents)
+            .replace("{ngSchemas}", schemas)
+            .replace("{additionalAdjustments}", additionalAdjustments);
 
         return appModuleTemplate;
     }

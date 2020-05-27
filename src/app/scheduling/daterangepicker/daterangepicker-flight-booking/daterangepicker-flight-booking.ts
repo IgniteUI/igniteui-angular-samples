@@ -35,14 +35,10 @@ export class FlightBookingComponent {
     public range: DateRange;
 
     constructor() {
-        const today = new Date();
-
         this.minDate = new Date();
-        this.minDate.setDate(today.getDate() + 10);
 
         this.maxDate = new Date();
-        this.maxDate.setDate(today.getDate() + 10);
-        this.maxDate.setMonth(today.getMonth() + 1);
+        this.maxDate.setMonth(this.maxDate.getMonth() + 1);
     }
 }
 
