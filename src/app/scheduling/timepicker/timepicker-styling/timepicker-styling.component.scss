@@ -19,7 +19,18 @@ $dark-button: igx-button-theme(
     $flat-hover-background: #ECAA53
 );
 
-:host{
-    @include igx-css-vars($my-time-picker-theme);
-    @include igx-css-vars($dark-button);
+// :host {
+//     @include igx-css-vars($my-time-picker-theme);
+//     @include igx-css-vars($dark-button);
+// }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-time-picker($my-time-picker-theme);
+    @include igx-button($dark-button);
 }
+
