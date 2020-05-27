@@ -1,7 +1,7 @@
 // tslint:disable: max-line-length
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from "@angular/core";
-import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from "@infragistics/igniteui-dockmanager";
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, OverlaySettings, VerticalAlignment } from "igniteui-angular";
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, OverlaySettings, VerticalAlignment } from "igniteui-angular";
+import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from "igniteui-dockmanager";
 import { noop, Subject } from "rxjs";
 import { debounceTime, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../../services/financialData";

@@ -4,6 +4,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppComponent } from "./app.component";{imports}
 
+{additionalAdjustments}
+
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [
@@ -15,6 +17,7 @@ import { AppComponent } from "./app.component";{imports}
     FormsModule{ngImports}
   ],
   providers: [{ngProviders}],
-  entryComponents: [{ngEntryComponents}]
+  entryComponents: [{ngEntryComponents}],
+  schemas: [{ngSchemas}]
 })
 export class AppModule {}
