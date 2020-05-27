@@ -1,3 +1,5 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
 .sample-content{
     margin: 10% auto 0;
 }
@@ -13,7 +15,6 @@
     justify-content: space-between;
 }
 
-@import '~igniteui-angular/lib/core/styles/themes/index';
 
 $custom-toast-theme: igx-toast-theme(
     $background: #dedede,
@@ -21,47 +22,16 @@ $custom-toast-theme: igx-toast-theme(
     $border-radius: 12px
 );
 
-/* Using Custom Palette */
+// :host {
+//     @include igx-css-vars($custom-toast-theme);
+// }
 
-// $white-color: #dedede;
-// $black-color: #151515;
-
-// $light-palette: igx-palette($primary: $white-color, $secondary: $black-color);
-
-// $custom-toast-theme: igx-toast-theme(
-//     $background: igx-color($light-palette, "primary", 400),
-//     $text-color: igx-color($light-palette, "secondary", 400),
-//     $border-radius: 12px
-// );
-
-
-/* Using Custom Schema */
-
-// $light-toast-schema: extend($_light-toast,
-//     (
-//         background: (
-//             igx-color: ("primary", 400)
-//         ),
-//         text-color: (
-//             igx-color: ("secondary", 400)
-//         ),
-//         border-radius: 12px
-//     )
-// );
-
-// $custom-light-schema: extend($light-schema,(
-//     igx-toast: $light-toast-schema
-// ));
-
-// $custom-toast-theme: igx-toast-theme(
-//   $palette: $light-palette,
-//   $schema: $custom-light-schema
-// );
-
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
-
-:host {
-    ::ng-deep {
-        @include igx-css-vars($custom-toast-theme);
-    }
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-toast($custom-toast-theme);
 }
+
