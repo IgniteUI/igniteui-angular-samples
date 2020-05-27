@@ -49,6 +49,13 @@ export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, Aft
         const skip = page.current * this.treeGrid.perPage;
         this.remoteService.getData(skip, this.treeGrid.perPage);
     }
+    public log() {
+        console.log(this.treeGrid.totalRecords, this.treeGrid.totalPages);
+    }
+
+    public getPage() {
+        this.remoteService.getData(0, this.treeGrid.perPage);
+    }
 
     public formatSize(value: number) {
         return formatNumber(value, "en") + " KB";
