@@ -1,7 +1,7 @@
-import {Component} from "@angular/core";
+import { Component} from "@angular/core";
 import { IgcDockManagerLayout,
          IgcDockManagerPaneType,
-         IgcSplitPaneOrientation } from "@infragistics/igniteui-dockmanager";
+         IgcSplitPaneOrientation } from "igniteui-dockmanager";
 
 @Component({
     selector: "dock-manager",

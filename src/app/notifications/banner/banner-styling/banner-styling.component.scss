@@ -1,4 +1,3 @@
-// Ignite UI for Angular Theming engine related styling
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
 $custom-banner-theme: igx-banner-theme(
@@ -7,43 +6,16 @@ $custom-banner-theme: igx-banner-theme(
     $banner-illustration-color: #666666
 );
 
-/* Using Custom Palette */
+// :host {
+//     @include igx-css-vars($custom-banner-theme);
+// }
 
-// $white-color: #dedede;
-// $black-color: #151515;
-
-// $light-banner-palette: igx-palette($primary: $white-color, $secondary: $black-color);
-
-// $custom-banner-theme: igx-banner-theme(
-//     $banner-message-color: igx-color($light-banner-palette, "secondary", 400),
-//     $banner-background: igx-color($light-banner-palette, "primary", 400),
-//     $banner-illustration-color: igx-color($light-banner-palette, "secondary", 100)
-// );
-
-/* Using Custom Schema */
-
-// $light-toast-schema: extend($_light-toast,
-//     (
-//         banner-message-color: (
-//             igx-color: ("secondary", 400)
-//         ),
-//         banner-background: (
-//             igx-color: ("primary", 400)
-//         ),
-//         banner-illustration-color: (
-//             igx-color: ("secondary", 100)
-//         )
-//     )
-// );
-
-// $custom-banner-theme: igx-banner-theme(
-//   $palette: $light-banner-palette,
-//   $schema: $light-toast-schema
-// );
-
-// Pass our custom-banner-theme
-:host {
-    @include igx-css-vars($custom-banner-theme);
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-banner($custom-banner-theme);
 }
-
 

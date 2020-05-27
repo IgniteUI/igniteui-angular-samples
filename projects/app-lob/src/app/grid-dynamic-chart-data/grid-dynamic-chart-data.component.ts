@@ -1,7 +1,7 @@
 // tslint:disable: max-line-length
 import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, Pipe, PipeTransform, ViewChild } from "@angular/core";
-import { IgcDockManagerLayout } from "@infragistics/igniteui-dockmanager";
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
+import { AutoPositionStrategy, CloseScrollStrategy,
+         HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { noop, Subject } from "rxjs";
 import { debounceTime, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../services/financialData";
@@ -334,51 +334,5 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     public isWithInRange(rowIndex, colIndex) {
         return rowIndex >= this.range.rowStart && rowIndex <= this.range.rowEnd
         && colIndex >= this.range.columnStart && colIndex <= this.range.columnEnd;
-    }
-
-    // Adding dock manager
-
-    public layout: IgcDockManagerLayout;
-    public dockManager: HTMLIgcDockmanagerElement;
-
-    public initDockManager(currentChartType) {
-        // this.layout.rootPane.type = IgcDockManagerPaneType.splitPane;
-        // this.layout.rootPane.orientation = IgcSplitPaneOrientation.horizontal;
-        // this.layout.rootPane = [mainPane];
-        // const mainPane = {
-        //     type: IgcDockManagerPaneType.splitPane,
-        //     orientation: IgcSplitPaneOrientation.horizontal,
-
-        //     rootPane: {
-        //       type: IgcDockManagerPaneType.splitPane,
-        //       orientation: IgcSplitPaneOrientation.horizontal,
-        //       panes: [
-        //         {
-        //           type: IgcDockManagerPaneType.tabGroupPane,
-        //           panes: [
-        //             {
-        //               type: IgcDockManagerPaneType.contentPane,
-        //               contentId: "content1",
-        //               header: currentChartType
-        //             }
-        //           ]
-        //         },
-        //         {
-        //             type: IgcDockManagerPaneType.tabGroupPane,
-        //             panes: [
-        //               {
-        //                 type: IgcDockManagerPaneType.contentPane,
-        //                 contentId: "content2",
-        //                 header: "Chart Types"
-        //               }
-        //             ]
-        //         }
-        //       ]
-        //     },
-        //     floatingLocation: { x: 50, y: 100 },
-        //     floatingWidth: this.grid.calcWidth,
-        //     floatingHeight: this.grid.calcHeight
-        // };
-        // this.layout.floatingPanes = [mainPane];
     }
 }

@@ -5,13 +5,6 @@ $custom-icon-theme: igx-icon-theme(
   $disabled-color: #494949
 );
 
-:host {
-    @include igx-css-vars($custom-icon-theme);
-    .igx-icon:hover {
-      color: #0a415c;
-    }
-}
-
 .wrapper {
     display: flex;
     flex-flow: row wrap;
@@ -25,5 +18,22 @@ $custom-icon-theme: igx-icon-theme(
     height: 44px;
     justify-content: center;
     align-items: center;
+}
+
+:host {
+    .igx-icon:hover {
+      color: #0a415c;
+    }
+
+    // @include igx-css-vars($custom-icon-theme);
+
+    /* Using Theme Overrides to provide IE 11 support.
+     * NOTE: Theming using this approach will greatly increase the size
+     * of the output CSS. If you do not plan to target IE 11,
+     * delete this section and use the `igx-css-vars` mixin as shown above.
+    **/
+    ::ng-deep {
+        @include igx-icon($custom-icon-theme);
+    }
 }
 
