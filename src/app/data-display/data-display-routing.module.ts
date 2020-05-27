@@ -8,6 +8,9 @@ import {
 import { ChipAreaSampleComponent } from "./chip/chip-area-sample/chip-area-sample.component";
 import { ChipSimpleComponent } from "./chip/chip-simple/chip-simple.component";
 import { ChipStylingSampleComponent } from "./chip/chip-styling/chip-styling.component";
+import {
+    CircularDynamicSampleComponent
+} from "./circular-progressbar/circular-dynamic-sample/circular-dynamic-sample.component";
 // tslint:disable-next-line:max-line-length
 import { CircularIndeterminateProgressbarComponent } from "./circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
@@ -16,10 +19,16 @@ import {
 } from "./circular-progressbar/circular-styling-sample/circular-styling-sample.component";
 import { dataDisplayRoutesData } from "./data-display-routes-data";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
-import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
+import { IconSample2Component } from "./icon/icon-sample-2/icon-sample-2.component";
+import { IconSample3Component } from "./icon/icon-sample-3/icon-sample-3.component";
+import { IconSample4Component } from "./icon/icon-sample-4/icon-sample-4.component";
+import { IconSample5Component } from "./icon/icon-sample-5/icon-sample-5.component";
 import { IconStylingSample } from "./icon/icon-styling-sample/icon-styling-sample.component";
 import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
+import {
+    LinearDynamicSampleComponent
+} from "./linear-progressbar/linear-dynamic-sample/linear-dynamic-sample.component";
 import { LinearProgressbarSample1Component
 } from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
 import { LinearProgressbarSample2Component
@@ -66,6 +75,11 @@ export const dataDisplayRoutes: Routes = [
         path: "chip-simple"
     },
     {
+        component: CircularDynamicSampleComponent,
+        data: dataDisplayRoutesData["circular-dynamic-sample"],
+        path: "circular-dynamic-sample"
+    },
+    {
         component: CircularIndeterminateProgressbarComponent,
         data: dataDisplayRoutesData["circular-indeterminate-progressbar"],
         path: "circular-indeterminate-progressbar"
@@ -87,7 +101,23 @@ export const dataDisplayRoutes: Routes = [
     },
     {
         component: IconSample2Component,
-        path: "icon-sample2"
+        data: dataDisplayRoutesData["icon-sample-2"],
+        path: "icon-sample-2"
+    },
+    {
+        component: IconSample3Component,
+        data: dataDisplayRoutesData["icon-sample-3"],
+        path: "icon-sample-3"
+    },
+    {
+        component: IconSample4Component,
+        data: dataDisplayRoutesData["icon-sample-4"],
+        path: "icon-sample-4"
+    },
+    {
+        component: IconSample5Component,
+        data: dataDisplayRoutesData["icon-sample-5"],
+        path: "icon-sample-5"
     },
     {
         component: SvgIconSampleComponent,
@@ -98,6 +128,11 @@ export const dataDisplayRoutes: Routes = [
         component: IgxForComponent,
         data: dataDisplayRoutesData["igx-for-sample-1"],
         path: "igx-for-sample-1"
+    },
+    {
+        component: LinearDynamicSampleComponent,
+        data: dataDisplayRoutesData["linear-dynamic-sample"],
+        path: "linear-dynamic-sample"
     },
     {
         component: LinearProgressbarComponent,

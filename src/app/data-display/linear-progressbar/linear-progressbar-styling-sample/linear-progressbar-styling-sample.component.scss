@@ -1,64 +1,17 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
+igx-linear-bar {
+    margin-top: 20px;
+}
+
 /*BASIC THEMING*/
 
 $custom-theme: igx-progress-linear-theme(
-    $track-color: lightgray,
-    $fill-color-default:  rgb(22, 187, 238),
-    $fill-color-danger: rgb(22, 187, 238),
-    $stripes-color: rgba(0, 0, 0, 0.26),
-    $text-color: rgb(22, 187, 238)
+    $track-color: #D3D3D3,
+    $fill-color-default: #ECAA53,
+    $text-color: #ECAA53
 );
 
-/*ENHANCED APPROACHES*/
-
-// $gray-color: lightgray;
-// $blue-color: rgb(22, 187, 238);
-
-/*PALETTE*/
-
-// $custom-palette: igx-palette(
-//     $primary: $gray-color,
-//     $secondary: $blue-color
-// );
-
-// $custom-theme: igx-progress-linear-theme(
-//     $track-color: igx-color($custom-palette, "primary", 500),
-//     $fill-color-default: igx-color($custom-palette, "secondary", 500),
-//     $fill-color-danger: igx-color($custom-palette, "secondary", 500),
-//     $stripes-color: igx-color($custom-palette, "grays", 400),
-//     $text-color: igx-color($custom-palette, "secondary", 500)
-// );
-
-/*SCHEMAS*/
-
-// $custom-progress-schema: extend($_light-progress-linear,
-//     (
-//         track-color: (igx-color:('primary', 500)),
-//         fill-color-default: (igx-color:('secondary', 500)),
-//         fill-color-danger: (igx-color:('secondary', 500)),
-//         stripes-color: (igx-color:('grays', 400)),
-//         text-color: (igx-color:('secondary', 500))
-//     )
-// );
-
-// $my-custom-schema: extend($light-schema, 
-//     (
-//         igx-linear-bar: $custom-progress-schema
-//     )
-// );
-
-/*THEME*/
-
-// $custom-theme: igx-progress-linear-theme(
-//     $palette: $custom-palette,
-//     $schema: $my-custom-schema
-// );
-
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
-
 :host {
-  ::ng-deep {
-    @include igx-progress-linear($custom-theme);
-  }
+    @include igx-css-vars($custom-theme);
 }

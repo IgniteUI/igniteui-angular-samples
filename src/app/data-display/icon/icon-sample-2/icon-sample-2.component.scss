@@ -3,14 +3,17 @@
     width: 56px;
     height: 56px;
 }
-.icons-wrapper {
+
+.wrapper {
     display: flex;
     flex-flow: row wrap;
+    margin: 16px 8px;
 }
+
 .icon-sample {
     display: flex;
     flex: 1 0 20%;
     height: 44px;
-    justify-content: center;
     align-items: center;
+    max-width: 80px;
 }

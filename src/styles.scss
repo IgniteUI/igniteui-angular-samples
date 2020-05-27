@@ -2,12 +2,13 @@
 // @import '~minireset.css/minireset';
 @import '~igniteui-angular/lib/core/styles/themes/index';
 @include igx-core();
-@include igx-theme($default-palette, $legacy-support: false);
+@include igx-theme($default-palette, $legacy-support: true);
 
 :root {
     @include css-vars-from-palette($default-palette);
 }
 
+/* autoprefixer grid: on */
 html,
 body {
     height: 100%;
@@ -113,7 +114,7 @@ $green-palette: igx-palette($primary: #09f,$secondary: #72da67, $surface: #333);
 .dark-theme {
     background: #333;
     color: #fff;
-    @include igx-dark-theme($green-palette);
+    @include igx-dark-theme($green-palette, $legacy-support: true);
 
     .grid-chart-contextmenu-wrapper{
         @include igx-fluent-dark-theme($fluent-excel-palette);
