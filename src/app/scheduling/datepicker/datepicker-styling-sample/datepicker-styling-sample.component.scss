@@ -32,6 +32,6 @@ $custom-datepicker-theme: igx-calendar-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-date-picker($custom-datepicker-theme);
+    @include igx-calendar($custom-datepicker-theme);
 }
 
