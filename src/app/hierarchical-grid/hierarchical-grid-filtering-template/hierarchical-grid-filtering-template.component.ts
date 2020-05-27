@@ -40,6 +40,10 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
         return this._filterValues.has(column) ? this._filterValues.get(column) : null;
     }
 
+    public onKeyDown(event: KeyboardEvent) {
+        event.stopImmediatePropagation();
+    }
+
     public onInput(input: any, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
         this._filterValues.set(column, input.value);
 
@@ -63,11 +67,6 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
     public clearInput(column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
         this._filterValues.delete(column);
         grid.clearFilter(column.field);
-    }
-
-    public getFocused(column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
-        const activeNode = grid.navigation.activeNode;
-        return activeNode && activeNode.row === -1 && activeNode.column === column.visibleIndex;
     }
 
     public onClick(inputGroup) {

@@ -27,13 +27,13 @@
                 <input
                     #input
                     igxInput
-                    tabindex="-1"
+                    tabindex="0"
                     placeholder="Filter..."
                     autocomplete="off"
                     [value]="getFilterValue(column)"
                     (input)="onInput(input, column)"
                     (click)="onClick(inputGr)"
-                    [igxFocus]="getFocused(column)"/>
+                    (keydown)="onKeyDown($event)"/>
                 <igx-suffix *ngIf="input.value || input.value === 0" (click)="clearInput(column)" tabindex="0">
                     <igx-icon>clear</igx-icon>
                 </igx-suffix>
@@ -54,10 +54,9 @@
                             (click)="openDatePicker(openDialog)"
                             placeholder="Filter..."
                             autocomplete="off"
-                            tabindex="-1"
+                            tabindex="0"
                             [value]="displayData | date"
-                            [readonly]="true"
-                            [igxFocus]="getFocused(column)"/>
+                            [readonly]="true"/>
                         <igx-suffix *ngIf="input.value || input.value === 0" (click)="clearInput(column)" tabindex="0">
                             <igx-icon>clear</igx-icon>
                         </igx-suffix>
