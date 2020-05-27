@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { IForOfState, SortingDirection } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
+import { debounceTime, auditTime, delay } from 'rxjs/operators';
 
 const DATA_URL: string = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
 const EMPTY_STRING: string = "";
@@ -54,13 +55,15 @@ export class RemoteServiceVirt {
         if (!this.hasItemsInCache(virtualizationArgs)) {
             const data = this._cachedData.slice(startIndex, endIndex);
             this._data.next(data);
-            
-            this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
-                this._updateData(data, startIndex);
-                if (cb) {
-                    cb(data);
-                }
-            });
+
+            setTimeout(() => {
+                this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
+                    this._updateData(data, startIndex);
+                    if (cb) {
+                        cb(data);
+                    }
+                });
+            }, 500);
         } else {
             const data = this._cachedData.slice(startIndex, endIndex);
             this._data.next(data);
