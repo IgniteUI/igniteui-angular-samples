@@ -577,7 +577,7 @@ export const gridsRoutes: Routes = [
     },
     {
         component: RemotePagingBatchEditingComponent,
-        data: gridsRoutesData["grid-remote-paging-sample"],
+        data: gridsRoutesData["remote-paging-batch-editing"],
         path: "remote-paging-batch-editing"
     }
 ];
