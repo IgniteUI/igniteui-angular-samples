@@ -2,8 +2,8 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, OverlaySettings, VerticalAlignment } from "igniteui-angular";
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from "igniteui-dockmanager";
-import { noop, Subject } from "rxjs";
-import { debounceTime, takeUntil, tap } from "rxjs/operators";
+import { merge, noop, Subject } from "rxjs";
+import { debounceTime, filter, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../../services/financialData";
 import { ChartIntegrationDirective, IDeterminedChartTypesArgs } from "../directives/chart-integration/chart-integration.directive";
 import { CHART_TYPE } from "../directives/chart-integration/chart-types";
@@ -191,9 +191,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                 this.disableContextMenu();
                 this.range = undefined;
             }
-            if (this.currentFormatter) {
+            if (this.hasFormatter) {
                 this.clearFormatting();
-                this.hasFormatter = false;
             }
         });
     }
