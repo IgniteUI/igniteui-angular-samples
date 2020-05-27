@@ -17,6 +17,7 @@ import { DateRangePickerConfigGenerator } from "../configs/DateRangePickerConfig
 import { DateTimeEditorConfigGenerator } from "../configs/DateTimeEditorConfigGenerator";
 import { DialogConfigGenerator } from "../configs/DialogConfigGenerator";
 import { DividerConfigGenerator } from "../configs/DividerConfigGenerator";
+import { DockManagerConfigGenerator } from "../configs/DockManagerConfigGenerator";
 import { DragAndDropConfigGenerator } from "../configs/DragAndDropConfigGenerator";
 import { DropDownConfigGenerator } from "../configs/DropDownConfigGenerator";
 import { ExpansionPanelConfigGenerator } from "../configs/ExpansionPanelConfigGenerator";
@@ -40,8 +41,8 @@ import { RadioConfigGenerator } from "../configs/RadioConfigGenerator";
 import { RippleConfigGenerator } from "../configs/RippleConfigGenerator";
 import { SelectConfigGenerator } from "../configs/SelectConfigGenerator";
 import { SliderConfigGenerator } from "../configs/SliderConfigGenerator";
-import { SplitterConfigGenerator } from "../configs/SplitterConfigGenerator";
 import { SnackbarConfigGenerator } from "../configs/SnackbarConfigGenerator";
+import { SplitterConfigGenerator } from "../configs/SplitterConfigGenerator";
 import { SwitchConfigGenerator } from "../configs/SwitchConfigGenerator";
 import { TabBarConfigGenerator } from "../configs/TabBarConfigGenerator";
 import { TabsConfigGenerator } from "../configs/TabsConfigGenerator";
@@ -119,5 +120,6 @@ export const CONFIG_GENERATORS =
         TooltipConfigGenerator,
         ThemingConfigGenerator,
         TransactionsConfigGenerator,
-        SplitterConfigGenerator
+        SplitterConfigGenerator,
+        DockManagerConfigGenerator
     ];
