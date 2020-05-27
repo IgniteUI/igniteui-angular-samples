@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" width="100%" height="540px" [paging]="true" [pagingMode]="mode" [totalRecords]="totalCount" (onPagingDone)="pagingDone($event)">
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" width="100%" height="540px" [paging]="true" (perPageChange)="paginate()" [pagingMode]="mode" [totalRecords]="totalCount" (onPagingDone)="pagingDone($event)">
         <igx-column field="ID"></igx-column>
         <igx-column field="ProductName"></igx-column>
         <igx-column field="QuantityPerUnit"></igx-column>

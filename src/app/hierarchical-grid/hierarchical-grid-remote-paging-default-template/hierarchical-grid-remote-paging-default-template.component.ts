@@ -74,7 +74,7 @@ export class HGridRemotePagingDefaultTemplateComponent implements OnInit, AfterV
     }
 
     public pagingDone(page) {
-        const skip = page.currentPage * this.hierarchicalGrid.perPage;
+        const skip = page.current * this.hierarchicalGrid.perPage;
         this.remoteService.getData(
             { parentID: null, rootLevel: true, key: "Customers" }, skip, this.hierarchicalGrid.perPage)
             .subscribe((data) => {
@@ -87,5 +87,14 @@ export class HGridRemotePagingDefaultTemplateComponent implements OnInit, AfterV
                     this.hierarchicalGrid.cdr.detectChanges();
                 }
             );
+    }
+
+    public getFirstPage() {
+        this.remoteService.getData(
+            { parentID: null, rootLevel: true, key: "Customers" }, 0, this.hierarchicalGrid.perPage)
+            .subscribe((data) => {
+                this.hierarchicalGrid.data = data;
+                this.hierarchicalGrid.cdr.detectChanges();
+            });
     }
 }

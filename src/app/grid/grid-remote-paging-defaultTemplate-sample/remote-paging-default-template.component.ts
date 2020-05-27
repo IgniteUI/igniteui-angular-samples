@@ -45,4 +45,8 @@ export class RemotePagingDefaultTemplateComponent implements OnInit, AfterViewIn
         const skip = page.current * this.grid1.perPage;
         this.remoteService.getData(skip, this.grid1.perPage);
     }
+
+    public paginate() {
+        this.remoteService.getData(0, this.grid1.perPage);
+    }
 }
