@@ -2,8 +2,8 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from "@angular/core";
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from "@infragistics/igniteui-dockmanager";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, OverlaySettings, VerticalAlignment } from "igniteui-angular";
-import { noop, Subject } from "rxjs";
-import { debounceTime, takeUntil, tap } from "rxjs/operators";
+import { merge, noop, Subject } from "rxjs";
+import { debounceTime, filter, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../../services/financialData";
 import { ChartIntegrationDirective, IDeterminedChartTypesArgs } from "../directives/chart-integration/chart-integration.directive";
 import { CHART_TYPE } from "../directives/chart-integration/chart-types";
@@ -85,6 +85,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     public selectedCharts = {};
     public range;
     public currentFormatter;
+    public hasFormatter = false;
     public headersRenderButton = false;
 
     protected destroy$ = new Subject<any>();
@@ -98,6 +99,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
 
     private rowIndex;
     private colIndex;
+    private gridEventEmitters;
 
     // tslint:disable-next-line: member-ordering
     public docLayout: IgcDockManagerLayout = {
@@ -145,13 +147,13 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             .subscribe(range => {
                 // Clear column selection
                 this.grid.deselectAllColumns();
-
                 if (this.grid.getSelectedRanges().length > 1) {
-                   this.chartData = [];
+                    this.chartData = [];
                 } else {
                     this.chartData = this.grid.getSelectedData();
                 }
 
+                this.currentFormatter = undefined;
                 this.range = range;
                 this.renderButton();
                 this.createChartCommonLogic();
@@ -162,13 +164,38 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             .subscribe(range => {
                 // Clear range selection
                 this.grid.clearCellSelection();
-
                 this.chartData = this.grid.getSelectedColumnsData();
+                this.currentFormatter = undefined;
                 this.range = range;
                 this.renderHeaderButton();
                 this.createChartCommonLogic();
                 this.headersRenderButton = true;
             });
+
+        this.gridEventEmitters = merge(this.grid.onFilteringDone,
+                                       this.grid.onSortingDone,
+                                       this.grid.onPagingDone,
+                                       this.grid.onColumnMoving,
+                                       this.grid.onColumnPinning,
+                                       this.grid.onColumnResized,
+                                       this.grid.onColumnVisibilityChanged);
+
+        this.gridEventEmitters.subscribe(() => {
+            if (this.grid.selectedCells.length > 0) {
+                this.grid.clearCellSelection();
+            }
+            if (this.grid.selectedColumns().length > 0) {
+                this.grid.deselectAllColumns();
+            }
+            if (this.contextmenu) {
+                this.disableContextMenu();
+                this.range = undefined;
+            }
+            if (this.currentFormatter) {
+                this.clearFormatting();
+                this.hasFormatter = false;
+            }
+        });
     }
 
     public createChartCommonLogic() {
@@ -220,19 +247,30 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
         this.cdr.detectChanges();
 
         this.formatting.onFormattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
-        this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.range = undefined);
         this.grid.onDataPreLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
+            filter(() => this.range),
             takeUntil(this.destroy$))
-            .subscribe(() => this.range && !this.contextmenu ? (this.headersRenderButton ? this.renderHeaderButton() : this.renderButton()) : noop());
+        .subscribe(() => !this.contextmenu ? (this.headersRenderButton ? this.renderHeaderButton() : this.renderButton()) : noop());
         this.grid.parentVirtDir.onChunkLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
+            filter(() => this.range),
             takeUntil(this.destroy$))
-            .subscribe(() => {
-                if (this.range && !this.contextmenu) { this.headersRenderButton ? this.renderHeaderButton() : this.renderButton(); }
-            });
+        .subscribe(() => {
+                if (!this.contextmenu) { this.headersRenderButton ? this.renderHeaderButton() : this.renderButton(); }
+        });
+
+        this.grid.onSelection.pipe(
+            filter(() => this.range),
+            takeUntil(this.destroy$))
+        .subscribe((args: any) => {
+            if (this.grid.selectedCells.length < 2 || args.expressions) {
+                this.range = undefined;
+                this.contextmenu = false;
+            }
+        });
 
         window.onresize = () => {
             const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 3);
@@ -355,11 +393,13 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
 
     public analyse(condition) {
         this.currentFormatter = condition;
+        this.hasFormatter = true;
         this.formatting.formatCells(condition);
     }
 
     public clearFormatting() {
         this.formatting.clearFormatting();
+        this.hasFormatter = false;
         this.currentFormatter = undefined;
     }
 

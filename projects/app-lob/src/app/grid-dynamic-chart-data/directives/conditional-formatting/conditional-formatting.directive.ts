@@ -275,8 +275,9 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
             this._selectedData = [];
         }
         this._valueForComparison = this.textData[0];
+        const hasNegativeValues = this.numericData.some(value => value < 0);
         this._maxValue = Math.max(...this.numericData);
-        this._minValue = Math.min(...this.numericData.filter(value => value < 0)) | 0;
+        this._minValue = hasNegativeValues ? Math.min(...this.numericData.filter(value => value < 0)) : 0;
     }
 
     public isWithInFormattedRange(rowIndex, colID) {
