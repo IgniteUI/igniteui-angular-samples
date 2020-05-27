@@ -59,20 +59,22 @@ export class GridRemoteVirtualizationSampleComponent {
     }
 
     public handlePreLoad() {
-        if (this._remoteService.hasItemsInCache(this.grid.virtualizationState)) {
-            this.processData(false);
-        } else {
-            this.applyLoadingStyles();
-        }
+        this.processData(false);
+        // if (this._remoteService.hasItemsInCache(this.grid.virtualizationState)) {
+        // } else {
+        //     // this.applyLoadingStyles();
+        //     this.grid.cdr.detectChanges();
+        //     console.log(this.remoteData);
+        // }
     }
 
     public processData(reset) {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
         }
-        this.applyLoadingStyles();
+        // this.applyLoadingStyles();
         this._prevRequest = this._remoteService.getData(this.grid.virtualizationState,
-            this.grid.sortingExpressions[0], reset, () => {
+            this.grid.sortingExpressions[0], reset, (tmpData?) => {
                 if (this._isColumnCellTemplateReset) {
                     let oldTemplate;
                     this.grid.columns.forEach((column: IgxColumnComponent) => {
