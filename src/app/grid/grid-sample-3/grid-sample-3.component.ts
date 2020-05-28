@@ -24,7 +24,6 @@ class MySummary extends IgxNumberSummaryOperand {
   }
 }
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: "app-grid-sample-3",
   styleUrls: ["./grid-sample-3.component.scss"],
   templateUrl: "./grid-sample-3.component.html"
