@@ -14,7 +14,7 @@ export class GridRemoteVirtualizationSampleComponent {
     public remoteData: any;
 
     @ViewChild("grid", { static: true }) public grid: IgxGridComponent;
-    
+
     @ViewChild("remoteDataLoadingLarge", { read: TemplateRef, static: true })
     public remoteDataLoadingLargeTemplate: TemplateRef<any>;
     @ViewChild("remoteDataLoadingMedium", { read: TemplateRef, static: true })
@@ -46,46 +46,16 @@ export class GridRemoteVirtualizationSampleComponent {
         });
     }
 
-    public applyLoadingStyles() {
-        if (this.grid.columns.length > 0) {
-            this.grid.columns.forEach((column: IgxColumnComponent) => {
-                if (column.bodyTemplate && !this._isColumnCellTemplateReset) {
-                    this._columnCellCustomTemplates.set(column, column.bodyTemplate);
-                }
-                column.bodyTemplate = this.getDataLoadingTemplate();
-            });
-
-            this._isColumnCellTemplateReset = true;
-        }
-    }
-
     public handlePreLoad() {
         this.processData(false);
-        // if (this._remoteService.hasItemsInCache(this.grid.virtualizationState)) {
-        // } else {
-        //     // this.applyLoadingStyles();
-        //     this.grid.cdr.detectChanges();
-        //     console.log(this.remoteData);
-        // }
     }
 
     public processData(reset) {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
         }
-        // this.applyLoadingStyles();
         this._prevRequest = this._remoteService.getData(this.grid.virtualizationState,
-            this.grid.sortingExpressions[0], reset, (tmpData?) => {
-                if (this._isColumnCellTemplateReset) {
-                    let oldTemplate;
-                    this.grid.columns.forEach((column: IgxColumnComponent) => {
-                        oldTemplate = this._columnCellCustomTemplates.get(column);
-                        column.bodyTemplate = oldTemplate;
-                    });
-                    this._columnCellCustomTemplates.clear();
-                    this._isColumnCellTemplateReset = false;
-                }
-
+            this.grid.sortingExpressions[0], reset, () => {
                 this.cdr.detectChanges();
             });
     }

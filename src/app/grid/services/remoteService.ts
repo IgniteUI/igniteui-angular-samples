@@ -55,11 +55,11 @@ export class RemoteServiceVirt {
             const data = this._cachedData.slice(startIndex, endIndex);
             this._data.next(data);
 
-            this.debounceRequest(1000, () => {
-                this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
-                    this._updateData(data, startIndex);
+            this.debounceRequest(500, () => {
+                this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((reqData: any) => {
+                    this._updateData(reqData, startIndex);
                     if (cb) {
-                        cb(data);
+                        cb(reqData);
                     }
                 });
             });
