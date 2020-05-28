@@ -2,7 +2,6 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { IForOfState, SortingDirection } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
-import { debounceTime, auditTime, delay } from 'rxjs/operators';
 
 const DATA_URL: string = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
 const EMPTY_STRING: string = "";

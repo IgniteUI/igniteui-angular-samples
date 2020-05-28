@@ -1,3 +1,8 @@
+<ng-template #cellTemplate igxCell let-val let-rowData="cell.row.rowData">
+    <div *ngIf="!rowData.emptyRec; else getDataLoadingTemplate()">
+        {{ val }}
+    </div>
+</ng-template>
 <div class="grid__wrapper">
     <ng-template #remoteDataLoadingLarge>
         <div class="remote-data-loading-template-large"></div>
@@ -11,33 +16,15 @@
 
     <igx-grid igxPreventDocumentScroll #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="handlePreLoad()"
         (onSortingDone)="processData(true)">
-        <igx-column [field]="'ProductID'" [sortable]="true">
-            <ng-template igxCell let-val let-cell="cell">
-                <div *ngIf="!cell.row.rowData.emptyRec; else remoteDataLoadingLarge">
-                    {{ val }}    
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column [field]="'ProductName'" [sortable]="true">
-            <ng-template igxCell let-val let-cell="cell">
-                <div *ngIf="!cell.row.rowData.emptyRec; else remoteDataLoadingLarge">
-                    {{ val }}    
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column [field]="'UnitPrice'" dataType="number" [formatter]="formatCurrency" [sortable]="true">
-            <ng-template igxCell let-val let-cell="cell">
-                <div *ngIf="!cell.row.rowData.emptyRec; else remoteDataLoadingLarge">
-                    {{ val }}    
-                </div>
-            </ng-template>
-        </igx-column>
+        <igx-column [field]="'ProductID'" [sortable]="true" [cellTemplate]="cellTemplate"></igx-column>
+        <igx-column [field]="'ProductName'" [sortable]="true" [cellTemplate]="cellTemplate"></igx-column>
+        <igx-column [field]="'UnitPrice'" dataType="number" [formatter]="formatCurrency" [sortable]="true" [cellTemplate]="cellTemplate"></igx-column>
         <igx-column [field]="'UnitsInStock'" dataType="number" [headerClasses]="'headerAlignSyle'" [sortable]="true">
             <ng-template igxHeader>
                 <span class="cellAlignSyle">UnitsInStock</span>
             </ng-template>
             <ng-template igxCell let-val let-cell="cell">
-                <div *ngIf="!cell.row.rowData.emptyRec; else remoteDataLoadingLarge">
+                <div *ngIf="!cell.row.rowData.emptyRec; else getDataLoadingTemplate()">
                     <div class="currency-badge-container">
                         <igx-badge *ngIf="val>50" type="success" position="bottom-right" icon="arrow_upward" class="badge-left"></igx-badge>
                         <igx-badge *ngIf="val<=50" type="error" position="bottom-right" icon="arrow_downward" class="error badge-left"></igx-badge>
@@ -46,13 +33,13 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'QuantityPerUnit'" [sortable]="true"></igx-column>
+        <igx-column [field]="'QuantityPerUnit'" [sortable]="true" [cellTemplate]="cellTemplate"></igx-column>
         <igx-column [field]="'ReorderLevel'" dataType="number" [headerClasses]="'headerAlignSyle'" [sortable]="true">
             <ng-template igxHeader>
                 <span class="cellAlignSyle">ReorderLevel</span>
             </ng-template>
             <ng-template igxCell let-val let-cell="cell">
-                <div *ngIf="!cell.row.rowData.emptyRec; else remoteDataLoadingLarge">
+                <div *ngIf="!cell.row.rowData.emptyRec; else getDataLoadingTemplate()">
                     <div class="currency-badge-container">
                         <igx-badge *ngIf="val>20" type="success" position="bottom-right" icon="arrow_upward" class="badge-left"></igx-badge>
                         <igx-badge *ngIf="val<=20" type="error" position="bottom-right" icon="arrow_downward" class="error badge-left"></igx-badge>

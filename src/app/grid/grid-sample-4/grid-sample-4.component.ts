@@ -14,12 +14,13 @@ export class GridRemoteVirtualizationSampleComponent {
     public remoteData: any;
 
     @ViewChild("grid", { static: true }) public grid: IgxGridComponent;
+    
     @ViewChild("remoteDataLoadingLarge", { read: TemplateRef, static: true })
-    protected remoteDataLoadingLargeTemplate: TemplateRef<any>;
+    public remoteDataLoadingLargeTemplate: TemplateRef<any>;
     @ViewChild("remoteDataLoadingMedium", { read: TemplateRef, static: true })
-    protected remoteDataLoadingMediumTemplate: TemplateRef<any>;
+    public remoteDataLoadingMediumTemplate: TemplateRef<any>;
     @ViewChild("remoteDataLoadingSmall", { read: TemplateRef, static: true })
-    protected remoteDataLoadingSmallTemplate: TemplateRef<any>;
+    public remoteDataLoadingSmallTemplate: TemplateRef<any>;
 
     private _columnCellCustomTemplates: Map<IgxColumnComponent, TemplateRef<any>>;
     private _isColumnCellTemplateReset: boolean = false;
@@ -103,7 +104,7 @@ export class GridRemoteVirtualizationSampleComponent {
         }
     }
 
-    private getDataLoadingTemplate(): TemplateRef<any> {
+    public getDataLoadingTemplate(): TemplateRef<any> {
         const val = Math.floor(Math.random() * 3) + 1;
 
         switch (val) {
