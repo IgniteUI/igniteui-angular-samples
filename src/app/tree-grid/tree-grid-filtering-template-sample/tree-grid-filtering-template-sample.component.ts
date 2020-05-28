@@ -66,6 +66,16 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
         this.treegrid1.clearFilter(column.field);
     }
 
+    public onKeyDown(event: KeyboardEvent) {
+        event.stopImmediatePropagation();
+    }
+
+    public onClick(inputGroup) {
+        if (!inputGroup.isFocused) {
+            inputGroup.input.focus();
+        }
+    }
+
     public onDateSelected(event, column: IgxColumnComponent) {
         this._filterValues.set(column, event);
 
