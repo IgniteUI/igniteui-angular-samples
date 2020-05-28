@@ -22,7 +22,16 @@ $custom-avatar-theme: igx-avatar-theme(
     $border-radius-square: 16px
 );
 
-:host {
-    @include igx-css-vars($custom-avatar-theme);
+// :host {
+//     @include igx-css-vars($custom-avatar-theme);
+// }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-avatar($custom-avatar-theme);
 }
 
