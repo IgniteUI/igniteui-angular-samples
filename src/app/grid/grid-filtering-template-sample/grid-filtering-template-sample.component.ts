@@ -41,6 +41,10 @@ export class FilteringTemplateSampleComponent implements OnInit {
         return this._filterValues.has(column) ? this._filterValues.get(column) : null;
     }
 
+    public onKeyDown(event: KeyboardEvent) {
+        event.stopImmediatePropagation();
+    }
+
     public onInput(input: any, column: IgxColumnComponent) {
         this._filterValues.set(column, input.value);
 
@@ -63,6 +67,12 @@ export class FilteringTemplateSampleComponent implements OnInit {
     public clearInput(column: IgxColumnComponent) {
         this._filterValues.delete(column);
         this.grid1.clearFilter(column.field);
+    }
+
+    public onClick(inputGroup) {
+        if (!inputGroup.isFocused) {
+            inputGroup.input.focus();
+        }
     }
 
     public onDateSelected(event, column: IgxColumnComponent) {
