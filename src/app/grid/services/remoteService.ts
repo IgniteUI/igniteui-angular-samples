@@ -55,14 +55,14 @@ export class RemoteServiceVirt {
             const data = this._cachedData.slice(startIndex, endIndex);
             this._data.next(data);
 
-            setTimeout(() => {
+            this.debounceRequest(1000, () => {
                 this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
                     this._updateData(data, startIndex);
                     if (cb) {
                         cb(data);
                     }
                 });
-            }, 500);
+            });
         } else {
             const data = this._cachedData.slice(startIndex, endIndex);
             this._data.next(data);
@@ -70,6 +70,11 @@ export class RemoteServiceVirt {
                 cb(data);
             }
         }
+    }
+
+    private debounceRequest(ms, cb) {
+        const promise = new Promise((res, rej) => setTimeout(res, ms));
+        promise.then(x => cb());
     }
 
     private _updateData(data: any, startIndex: number) {
