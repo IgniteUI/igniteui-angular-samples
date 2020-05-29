@@ -85,6 +85,7 @@ import { GridActionStripSampleComponent } from "./grid-action-strip/grid-action-
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
+import { RemotePagingBatchEditingComponent } from "./grid-batchEditing-remotePaging/batch-editing-remote-paging.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
 import {
@@ -579,6 +580,11 @@ export const gridsRoutes: Routes = [
         component: GridKeyboardnavGuide,
         data: gridsRoutesData["grid-keybarodnav-guide"],
         path: "grid-keyboardnav-guide"
+    },
+    {
+        component: RemotePagingBatchEditingComponent,
+        data: gridsRoutesData["remote-paging-batch-editing"],
+        path: "remote-paging-batch-editing"
     }
 ];
 

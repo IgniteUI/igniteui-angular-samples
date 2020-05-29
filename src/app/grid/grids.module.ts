@@ -21,6 +21,7 @@ import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-s
 import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
+import { RemotePagingBatchEditingComponent } from "./grid-batchEditing-remotePaging/batch-editing-remote-paging.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
@@ -212,7 +213,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridColumnSelectionComponent,
         GridColumnGroupSelectionComponent,
         GridColumnSelectionStylesComponent,
-        GridKeyboardnavGuide
+        GridKeyboardnavGuide,
+        RemotePagingBatchEditingComponent
     ],
     imports: [
         CommonModule,
