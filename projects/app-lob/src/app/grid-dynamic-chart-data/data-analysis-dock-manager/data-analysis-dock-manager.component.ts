@@ -1,6 +1,6 @@
 // tslint:disable: max-line-length
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnInit, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from "@angular/core";
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxOverlayService, OverlayCancelableEventArgs, OverlayEventArgs, OverlaySettings, VerticalAlignment } from "igniteui-angular";
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IColumnSelectionEventArgs, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxOverlayService, OverlayCancelableEventArgs, OverlayEventArgs, OverlaySettings, VerticalAlignment } from "igniteui-angular";
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from "igniteui-dockmanager";
 // tslint:disable-next-line: no-implicit-dependencies
 import ResizeObserver from "resize-observer-polyfill";
@@ -178,7 +178,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             });
 
         this.grid.onColumnSelectionChange.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(100))
-            .subscribe(range => {
+            .subscribe((args: IColumnSelectionEventArgs) => {
                 if (this._esfOverlayId) {
                     this.overlaySerive.hide(this._esfOverlayId);
                 }
@@ -186,7 +186,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                 this.grid.clearCellSelection();
                 this.chartData = this.grid.getSelectedColumnsData();
                 this.currentFormatter = undefined;
-                this.range = range;
+                this.range = {};
                 this.renderHeaderButton();
                 this.createChartCommonLogic();
                 this.headersRenderButton = true;
@@ -198,7 +198,6 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                                        this.grid.onColumnMoving,
                                        this.grid.onColumnPinning,
                                        this.grid.onColumnResized,
-                                       this.grid.onColumnMovingStart,
                                        this.grid.onColumnMovingEnd,
                                        this.grid.onColumnVisibilityChanged);
 
@@ -467,14 +466,19 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             return;
         }
 
-        this.colIndex = Math.max(...selectedColumns.map(c => c.visibleIndex));
+        const selectedColumnsIndexes = selectedColumns.map(c => c.visibleIndex).sort((a, b) => a - b);
+        this.colIndex = selectedColumnsIndexes[selectedColumnsIndexes.length - 1];
         this.rowIndex = undefined;
 
-        while (this.colIndex >= 0 && !this.grid.navigation.isColumnFullyVisible(this.colIndex)) {
-            this.colIndex--;
+        while (selectedColumnsIndexes.length) {
+            if (this.grid.navigation.isColumnFullyVisible(this.colIndex)) {
+                break;
+            }
+            selectedColumnsIndexes.pop();
+            this.colIndex = selectedColumnsIndexes[selectedColumnsIndexes.length - 1];
         }
 
-        if (this.colIndex < 0) {
+        if (!selectedColumnsIndexes.length) {
             return;
         }
 
