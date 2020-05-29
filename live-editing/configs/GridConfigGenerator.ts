@@ -85,6 +85,8 @@ import { GridRowReorderComponent } from "../../src/app/grid/grid-row-reorder-sam
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
+import { GridRemoteVirtualizationAddRowSampleComponent } from "../../src/app/grid/grid-sample-5/grid-sample-5.component";
+import { RemoteService } from "../../src/app/grid/grid-sample-5/remote.service";
 import { PinningStylingComponent } from "../../src/app/grid/grid-sample-pinning-styling/grid-pinning-styling.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { PinningToolbarSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-toolbar-pinning.component";
@@ -1107,6 +1109,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridColumnSelectionStylesComponent],
                 ngImports: [IgxGridModule],
                 ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridRemoteVirtualizationAddRowSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/grid-sample-5/remote.service.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridRemoteVirtualizationAddRowSampleComponent, IgxGridModule, IgxToastModule,
+                    IgxBadgeModule, HttpClientModule, RemoteService, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridRemoteVirtualizationAddRowSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxToastModule, IgxBadgeModule, HttpClientModule],
+                ngProviders: [RemoteService]
             })
         }));
 
