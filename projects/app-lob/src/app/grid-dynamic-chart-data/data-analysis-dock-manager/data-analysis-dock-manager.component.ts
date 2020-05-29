@@ -1,15 +1,18 @@
 // tslint:disable: max-line-length
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from "@angular/core";
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, OverlaySettings, VerticalAlignment } from "igniteui-angular";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnInit, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from "@angular/core";
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IColumnSelectionEventArgs, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxOverlayService, OverlayCancelableEventArgs, OverlayEventArgs, OverlaySettings, VerticalAlignment } from "igniteui-angular";
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from "igniteui-dockmanager";
-import { noop, Subject } from "rxjs";
-import { debounceTime, takeUntil, tap } from "rxjs/operators";
+// tslint:disable-next-line: no-implicit-dependencies
+import ResizeObserver from "resize-observer-polyfill";
+import { merge, noop, Subject } from "rxjs";
+import { debounceTime, filter, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../../services/financialData";
 import { ChartIntegrationDirective, IDeterminedChartTypesArgs } from "../directives/chart-integration/chart-integration.directive";
 import { CHART_TYPE } from "../directives/chart-integration/chart-types";
 import { ConditionalFormattingDirective } from "../directives/conditional-formatting/conditional-formatting.directive";
 import { DockSlotComponent } from "./dock-slot/dock-slot.component";
 import { FloatingPanesService } from "./floating-panes.service";
+
 @Pipe({
     name: "hastDuplicateLayouts"
 })
@@ -85,20 +88,24 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     public selectedCharts = {};
     public range;
     public currentFormatter;
+    public hasFormatter = false;
     public headersRenderButton = false;
 
     protected destroy$ = new Subject<any>();
     private _contextDilogOverlaySettings: OverlaySettings = {
-        closeOnOutsideClick: true,
+        closeOnOutsideClick: false,
         modal: false,
         outlet: null,
         scrollStrategy: new CloseScrollStrategy(),
         positionStrategy: null
     };
 
+    private _esfOverlayId;
     private rowIndex;
     private colIndex;
-
+    private gridEventEmitters;
+    private gridResizeNotify = new Subject();
+    private contentObserver: ResizeObserver;
     // tslint:disable-next-line: member-ordering
     public docLayout: IgcDockManagerLayout = {
         rootPane: {
@@ -133,25 +140,37 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
         floatingPanes: []
     };
 
-    constructor(private cdr: ChangeDetectorRef, private paneService: FloatingPanesService) {
+    constructor(private cdr: ChangeDetectorRef, private paneService: FloatingPanesService,
+                @Inject(IgxOverlayService) private overlayService: IgxOverlayService) {
 
     }
 
     public ngOnInit() {
 
         this.data = new FinancialData().generateData(1000);
-
-        this.grid.onRangeSelection.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(200))
+        this.gridResizeNotify.pipe(takeUntil(this.destroy$))
+        .subscribe(() => {
+                if (this.contextmenu) {
+                    this.disableContextMenu();
+                }
+                if (this._esfOverlayId) {
+                    this.overlayService.hide(this._esfOverlayId);
+                }
+        });
+        this.grid.onRangeSelection.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(30))
             .subscribe(range => {
+                if (this._esfOverlayId) {
+                    this.overlayService.hide(this._esfOverlayId);
+                }
                 // Clear column selection
                 this.grid.deselectAllColumns();
-
                 if (this.grid.getSelectedRanges().length > 1) {
-                   this.chartData = [];
+                    this.chartData = [];
                 } else {
                     this.chartData = this.grid.getSelectedData();
                 }
 
+                this.currentFormatter = undefined;
                 this.range = range;
                 this.renderButton();
                 this.createChartCommonLogic();
@@ -159,16 +178,61 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             });
 
         this.grid.onColumnSelectionChange.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(100))
-            .subscribe(range => {
+            .subscribe((args: IColumnSelectionEventArgs) => {
+                if (this._esfOverlayId) {
+                    this.overlayService.hide(this._esfOverlayId);
+                }
                 // Clear range selection
                 this.grid.clearCellSelection();
-
                 this.chartData = this.grid.getSelectedColumnsData();
-                this.range = range;
+                this.currentFormatter = undefined;
+                this.range = {};
                 this.renderHeaderButton();
                 this.createChartCommonLogic();
                 this.headersRenderButton = true;
             });
+
+        this.gridEventEmitters = merge(this.grid.onFilteringDone,
+                                       this.grid.onSortingDone,
+                                       this.grid.onPagingDone,
+                                       this.grid.onColumnMoving,
+                                       this.grid.onColumnPinning,
+                                       this.grid.onColumnResized,
+                                       this.grid.onColumnMovingEnd,
+                                       this.grid.onColumnVisibilityChanged);
+
+        this.gridEventEmitters.pipe(takeUntil(this.destroy$)).subscribe(() => {
+            if (this.grid.selectedCells.length > 0) {
+                this.grid.clearCellSelection();
+            }
+            if (this.grid.selectedColumns().length > 0) {
+                this.grid.deselectAllColumns();
+            }
+            if (this.contextmenu) {
+                this.disableContextMenu();
+                this.range = undefined;
+            }
+            if (this.hasFormatter) {
+                this.clearFormatting();
+            }
+        });
+
+        this.overlayService.onOpening.subscribe((evt: OverlayCancelableEventArgs) => {
+            if (evt.componentRef && evt.componentRef.instance &&
+                (evt.componentRef.instance as any).className === "igx-excel-filter") {
+                this.disableContextMenu();
+                this._esfOverlayId = evt.id;
+             }
+        });
+
+        this.overlayService.onClosed.subscribe((evt: OverlayEventArgs) => {
+            if (evt.componentRef &&
+                evt.componentRef.instance &&
+                (evt.componentRef.instance as any).className === "igx-excel-filter" &&
+                evt.id === this._esfOverlayId) {
+                this._esfOverlayId = undefined;
+             }
+        });
     }
 
     public createChartCommonLogic() {
@@ -199,6 +263,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     }
 
     public ngAfterViewInit(): void {
+        this.contentObserver = new ResizeObserver(() => this.gridResizeNotify.next());
+        this.contentObserver.observe(this.grid.nativeElement);
         this.dialogContent.nativeElement.onpointerdown = event => event.stopPropagation();
 
         this.allCharts = this.chartIntegration.getAllChartTypes();
@@ -214,25 +280,39 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                     }
                 });
             }
-
             this.availableCharts = this.chartIntegration.getAvailableCharts();
         });
         this.cdr.detectChanges();
 
         this.formatting.onFormattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
-        this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.range = undefined);
         this.grid.onDataPreLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
+            filter(() => this.range),
             takeUntil(this.destroy$))
-            .subscribe(() => this.range && !this.contextmenu ? (this.headersRenderButton ? this.renderHeaderButton() : this.renderButton()) : noop());
+        .subscribe(() => !this.contextmenu ? (this.headersRenderButton ? this.renderHeaderButton() : this.renderButton()) : noop());
         this.grid.parentVirtDir.onChunkLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
+            filter(() => this.range),
             takeUntil(this.destroy$))
-            .subscribe(() => {
-                if (this.range && !this.contextmenu) { this.headersRenderButton ? this.renderHeaderButton() : this.renderButton(); }
-            });
+        .subscribe(() => {
+                if (!this.contextmenu) { this.headersRenderButton ? this.renderHeaderButton() : this.renderButton(); }
+        });
+
+        this.grid.onSelection.pipe(
+            filter(() => this.range),
+            takeUntil(this.destroy$))
+        .subscribe((args: any) => {
+            if (this.grid.selectedCells.length < 2 || args.expressions) {
+                this.range = undefined;
+                this.disableContextMenu();
+                if (this._esfOverlayId) {
+                    this.overlayService.hide(this._esfOverlayId);
+                }
+                this.cdr.detectChanges();
+            }
+        });
 
         window.onresize = () => {
             const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 3);
@@ -259,7 +339,6 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                 };
             };
             this.dockManager.nativeElement.layout.floatingPanes = new Proxy(this.dockManager.nativeElement.layout.floatingPanes, handler(this));
-
         }, 1000);
     }
 
@@ -342,24 +421,16 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
         this.contextmenu = false;
         this.contextDialog.close();
     }
-    // What we check here and why we need a lister on host level
-    @HostListener("pointerdown", ["$event"])
-    public onPointerDown(event) {
-        if (!event.target.parentElement.classList.contains("analytics-btn") &&
-            event.target.className.indexOf("btn") === -1 &&
-            event.target.className.indexOf("action") === -1 &&
-            event.target.className.indexOf("tab-option") === -1) {
-            this.disableContextMenu();
-        }
-    }
 
     public analyse(condition) {
         this.currentFormatter = condition;
+        this.hasFormatter = true;
         this.formatting.formatCells(condition);
     }
 
     public clearFormatting() {
         this.formatting.clearFormatting();
+        this.hasFormatter = false;
         this.currentFormatter = undefined;
     }
 
@@ -395,14 +466,19 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             return;
         }
 
-        this.colIndex = Math.max(...selectedColumns.map(c => c.visibleIndex));
+        const selectedColumnsIndexes = selectedColumns.map(c => c.visibleIndex).sort((a, b) => a - b);
+        this.colIndex = selectedColumnsIndexes[selectedColumnsIndexes.length - 1];
         this.rowIndex = undefined;
 
-        while (this.colIndex >= 0 && !this.grid.navigation.isColumnFullyVisible(this.colIndex)) {
-            this.colIndex--;
+        while (selectedColumnsIndexes.length) {
+            if (this.grid.navigation.isColumnFullyVisible(this.colIndex)) {
+                break;
+            }
+            selectedColumnsIndexes.pop();
+            this.colIndex = selectedColumnsIndexes[selectedColumnsIndexes.length - 1];
         }
 
-        if (this.colIndex < 0) {
+        if (!selectedColumnsIndexes.length) {
             return;
         }
 

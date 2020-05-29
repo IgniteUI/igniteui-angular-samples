@@ -21,6 +21,7 @@ import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-s
 import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
+import { RemotePagingBatchEditingComponent } from "./grid-batchEditing-remotePaging/batch-editing-remote-paging.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
@@ -89,11 +90,12 @@ import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reor
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
+import { GridRemoteVirtualizationAddRowSampleComponent } from "./grid-sample-5/grid-sample-5.component";
 import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
 import { PinningToolbarSampleComponent } from "./grid-sample-pinning/grid-toolbar-pinning.component";
 import { RightPinningSampleComponent } from "./grid-sample-right-pinning/grid-right-pinning.component";
-import { GridSelectionTemplateExcelComponent} from "./grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
+import { GridSelectionTemplateExcelComponent } from "./grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
 import { GridSelectionTemplateNumbersComponent } from "./grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "./grid-save-state/about.component";
@@ -148,6 +150,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         FinancialSampleComponent,
         GridSample3Component,
         GridRemoteVirtualizationSampleComponent,
+        GridRemoteVirtualizationAddRowSampleComponent,
         PinningSampleComponent,
         PinningToolbarSampleComponent,
         GridRowPinningSampleComponent,
@@ -210,7 +213,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridColumnSelectionComponent,
         GridColumnGroupSelectionComponent,
         GridColumnSelectionStylesComponent,
-        GridKeyboardnavGuide
+        GridKeyboardnavGuide,
+        RemotePagingBatchEditingComponent
     ],
     imports: [
         CommonModule,
