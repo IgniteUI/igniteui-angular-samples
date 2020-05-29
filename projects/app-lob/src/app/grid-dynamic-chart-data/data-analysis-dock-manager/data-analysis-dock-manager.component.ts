@@ -141,7 +141,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     };
 
     constructor(private cdr: ChangeDetectorRef, private paneService: FloatingPanesService,
-                @Inject(IgxOverlayService) private overlaySerive: IgxOverlayService) {
+                @Inject(IgxOverlayService) private overlayService: IgxOverlayService) {
 
     }
 
@@ -154,13 +154,13 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                     this.disableContextMenu();
                 }
                 if (this._esfOverlayId) {
-                    this.overlaySerive.hide(this._esfOverlayId);
+                    this.overlayService.hide(this._esfOverlayId);
                 }
         });
         this.grid.onRangeSelection.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(30))
             .subscribe(range => {
                 if (this._esfOverlayId) {
-                    this.overlaySerive.hide(this._esfOverlayId);
+                    this.overlayService.hide(this._esfOverlayId);
                 }
                 // Clear column selection
                 this.grid.deselectAllColumns();
@@ -180,7 +180,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
         this.grid.onColumnSelectionChange.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(100))
             .subscribe((args: IColumnSelectionEventArgs) => {
                 if (this._esfOverlayId) {
-                    this.overlaySerive.hide(this._esfOverlayId);
+                    this.overlayService.hide(this._esfOverlayId);
                 }
                 // Clear range selection
                 this.grid.clearCellSelection();
@@ -217,7 +217,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             }
         });
 
-        this.overlaySerive.onOpening.subscribe((evt: OverlayCancelableEventArgs) => {
+        this.overlayService.onOpening.subscribe((evt: OverlayCancelableEventArgs) => {
             if (evt.componentRef && evt.componentRef.instance &&
                 (evt.componentRef.instance as any).className === "igx-excel-filter") {
                 this.disableContextMenu();
@@ -225,7 +225,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
              }
         });
 
-        this.overlaySerive.onClosed.subscribe((evt: OverlayEventArgs) => {
+        this.overlayService.onClosed.subscribe((evt: OverlayEventArgs) => {
             if (evt.componentRef &&
                 evt.componentRef.instance &&
                 (evt.componentRef.instance as any).className === "igx-excel-filter" &&
@@ -308,7 +308,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                 this.range = undefined;
                 this.disableContextMenu();
                 if (this._esfOverlayId) {
-                    this.overlaySerive.hide(this._esfOverlayId);
+                    this.overlayService.hide(this._esfOverlayId);
                 }
                 this.cdr.detectChanges();
             }
