@@ -96,5 +96,6 @@ export const gridsRoutesData = {
     "column-selection": { displayName: "Column Selection", parentName: "Grid" },
     "column-group-selection": { displayName: "Column Group Selection", parentName: "Grid" },
     "column-selection-styles": { displayName: "Column Selection Styles", parentName: "Grid" },
-    "grid-keyboardnav-guide": { displayName: "Grid keyboard navigation guide", parentName: "Grid" }
+    "grid-keyboardnav-guide": { displayName: "Grid keyboard navigation guide", parentName: "Grid" },
+    "remote-paging-batch-editing": {displayName: "Remote paging with batch editing", parentName: "Grid"}
 };
