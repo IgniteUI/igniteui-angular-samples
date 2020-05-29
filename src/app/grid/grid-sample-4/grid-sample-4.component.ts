@@ -35,7 +35,8 @@ export class GridRemoteVirtualizationSampleComponent {
     public ngAfterViewInit() {
         this.grid.isLoading = true;
 
-        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true, (data) => {
+        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true,
+        (data) => {
             this.grid.totalItemCount = data["@odata.count"];
             this.grid.isLoading = false;
         });
@@ -59,7 +60,6 @@ export class GridRemoteVirtualizationSampleComponent {
     }
 
     public handlePreLoad() {
-        this.grid.virtualizationState.chunkSize = this.grid.dataView.length;
         if (this._remoteService.hasItemsInCache(this.grid.virtualizationState)) {
             this.processData(false);
         } else {
@@ -72,6 +72,10 @@ export class GridRemoteVirtualizationSampleComponent {
             this._prevRequest.unsubscribe();
         }
         this.applyLoadingStyles();
+        const state = {
+            startIndex: this.grid.virtualizationState.startIndex,
+            chunkSize: 20
+        };
         this._prevRequest = this._remoteService.getData(this.grid.virtualizationState,
             this.grid.sortingExpressions[0], reset, () => {
                 if (this._isColumnCellTemplateReset) {
@@ -85,7 +89,7 @@ export class GridRemoteVirtualizationSampleComponent {
                 }
 
                 this.cdr.detectChanges();
-            });
+            }, state);
     }
 
     public formatNumber(value: number) {
