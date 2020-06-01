@@ -72,10 +72,13 @@ export class GridRemoteVirtualizationSampleComponent {
             this._prevRequest.unsubscribe();
         }
         this.applyLoadingStyles();
-        const state = {
-            startIndex: this.grid.virtualizationState.startIndex,
-            chunkSize: 20
-        };
+        let state;
+        if (!reset) {
+            state = {
+                startIndex: this.grid.virtualizationState.startIndex,
+                chunkSize: 20
+            };
+        }
         this._prevRequest = this._remoteService.getData(this.grid.virtualizationState,
             this.grid.sortingExpressions[0], reset, () => {
                 if (this._isColumnCellTemplateReset) {
