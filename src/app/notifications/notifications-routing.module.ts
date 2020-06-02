@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { BannerAdvancedSampleComponent } from "./banner/banner-advanced-sample/banner-advanced-sample.component";
 import { BannerSample1Component } from "./banner/banner-sample-1/banner-sample-1.component";
 import { BannerSample2Component } from "./banner/banner-sample-2/banner-sample-2.component";
 import { BannerSample3Component } from "./banner/banner-sample-3/banner-sample-3.component";
@@ -8,7 +9,6 @@ import { BannerStylingComponent } from "./banner/banner-styling/banner-styling.c
 import { notificationsRoutesData } from "./notifications-routes-data";
 import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-sample-1.component";
 import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
-import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
 import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { SnackbarSample5Component } from "./snackbar/snackbar-sample-5/snackbar-sample-5.component";
 import { SnackbarStyleComponent } from "./snackbar/snackbar-style/snackbar-style.component";
@@ -36,14 +36,19 @@ export const notificationsRoutes: Routes = [
         path: "banner-sample-3"
     },
     {
-        component: BannerStylingComponent,
-        data: notificationsRoutesData["banner-styling"],
-        path: "banner-styling"
-    },
-    {
         component: BannerSample4Component,
         data: notificationsRoutesData["banner-sample-4"],
         path: "banner-sample-4"
+    },
+    {
+        component: BannerAdvancedSampleComponent,
+        data: notificationsRoutesData["banner-advanced-sample"],
+        path: "banner-advanced-sample"
+    },
+    {
+        component: BannerStylingComponent,
+        data: notificationsRoutesData["banner-styling"],
+        path: "banner-styling"
     },
     {
         component: SnackbarSample1Component,
@@ -54,11 +59,6 @@ export const notificationsRoutes: Routes = [
         component: SnackbarSample2Component,
         data: notificationsRoutesData["snackbar-sample-2"],
         path: "snackbar-sample-2"
-    },
-    {
-        component: SnackbarSample3Component,
-        data: notificationsRoutesData["snackbar-sample-3"],
-        path: "snackbar-sample-3"
     },
     {
         component: SnackbarSample4Component,

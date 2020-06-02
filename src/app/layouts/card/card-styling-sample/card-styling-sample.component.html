@@ -14,12 +14,11 @@
         </igx-card-content>
 
         <igx-card-actions>
-            <button igxButton igxRipple *ngFor="let button of card.buttons">{{ button }}</button>
             <button igxButton="icon"
                 igxRipple
                 igxRippleCentered="true"
                 *ngFor="let icon of card.icons">
-                <igx-icon>{{icon}}</igx-icon>
+                <igx-icon color="#ECAA53">{{icon}}</igx-icon>
             </button>
         </igx-card-actions>
 

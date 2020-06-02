@@ -6,5 +6,4 @@ import { BaseInputGroupSampleComponent } from "../base-input.component";
     styleUrls: ["./input-group-sample-2.component.scss"],
     templateUrl: "./input-group-sample-2.component.html"
 })
-export class InputGroupSample2Component  extends BaseInputGroupSampleComponent {
-}
+export class InputGroupSample2Component extends BaseInputGroupSampleComponent { }

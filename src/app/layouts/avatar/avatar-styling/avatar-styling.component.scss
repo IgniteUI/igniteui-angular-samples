@@ -1,0 +1,37 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+.avatars-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.avatar-sample {
+    display: flex;
+    flex: 1 0 30%;
+    width: 88px;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+$custom-avatar-theme: igx-avatar-theme(
+    $initials-background: #72da67,
+    $initials-color: #000000,
+    $icon-background: #217346,
+    $icon-color: #ffffff,
+    $border-radius-square: 16px
+);
+
+// :host {
+//     @include igx-css-vars($custom-avatar-theme);
+// }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-avatar($custom-avatar-theme);
+}
+

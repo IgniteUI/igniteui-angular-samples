@@ -1,11 +1,11 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxButtonGroupModule, IgxButtonModule, IgxIconModule, IgxRippleModule } from "igniteui-angular";
 import {
+    ButtonsDisabledComponent
+} from "../../src/app/data-entries/buttons/buttons-disabled-sample/buttons-disabled-sample";
+import {
     ButtonsDisplayDensityComponent
 } from "../../src/app/data-entries/buttons/buttons-display-density/buttons-display-density.component";
-import {
-    ButtonsRoundnessComponent
-} from "../../src/app/data-entries/buttons/buttons-roundness-sample/buttons-roundness-sample";
 import {
     ButtonsSample1Component
 } from "../../src/app/data-entries/buttons/buttons-sample-1/buttons-sample-1.component";
@@ -33,10 +33,10 @@ export class ButtonConfigGenerator implements IConfigGenerator {
 
         // buttons roundness
         configs.push(new Config({
-            component: ButtonsRoundnessComponent,
+            component: ButtonsDisabledComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxIconModule, IgxRippleModule, ButtonsRoundnessComponent],
-                ngDeclarations: [ButtonsRoundnessComponent],
+                imports: [IgxButtonModule, IgxIconModule, IgxRippleModule, ButtonsDisabledComponent],
+                ngDeclarations: [ButtonsDisabledComponent],
                 ngImports: [IgxButtonModule, IgxIconModule, IgxRippleModule]
             }),
             shortenComponentPathBy: "/data-entries/buttons/"

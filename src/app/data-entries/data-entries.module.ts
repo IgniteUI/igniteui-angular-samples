@@ -4,9 +4,9 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {
     IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxComboModule,
-    IgxDatePickerModule, IgxDialogModule, IgxDropDownModule, IgxForOfModule, IgxIconModule,
-    IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule,
-    IgxSwitchModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
+    IgxDatePickerModule, IgxDialogModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
+    IgxIconModule, IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule,
+    IgxSelectModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
 } from "igniteui-angular";
 import { AutocompleteRemote } from "./autocomplete/autocomplete-remote/autocomplete-remote.component";
 import { AutocompleteBasic, AutocompletePipeStartsWith } from "./autocomplete/autocomplete/autocomplete.component";
@@ -21,8 +21,8 @@ import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3
 import { ButtonGroupSampleComponent } from "./buttonGroup/button-group-sample-4/button-group-sample.component";
 import { ButtonGroupSample5Component } from "./buttonGroup/button-group-sample-5/button-group-sample-5.component";
 import { ButtonGroupStyleComponent } from "./buttonGroup/button-group-style/button-group-style.component";
+import { ButtonsDisabledComponent } from "./buttons/buttons-disabled-sample/buttons-disabled-sample";
 import { ButtonsDisplayDensityComponent } from "./buttons/buttons-display-density/buttons-display-density.component";
-import { ButtonsRoundnessComponent } from "./buttons/buttons-roundness-sample/buttons-roundness-sample";
 import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
 import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
 import { ButtonsSample3Component } from "./buttons/buttons-sample-3/buttons-sample-3.component";
@@ -34,6 +34,7 @@ import { ButtonsSample8Component } from "./buttons/buttons-sample-8/buttons-samp
 import { ButtonsStyleComponent } from "./buttons/buttons-style/buttons-style.component";
 import { CheckboxSample1Component } from "./checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./checkbox/checkbox-sample-2/checkbox-sample-2.component";
+import { CheckboxSample3Component } from "./checkbox/checkbox-sample-3/checkbox-sample-3.component";
 import { CheckboxStylingComponent } from "./checkbox/checkbox-styling/checkbox-styling.component";
 import { DataEntriesRoutingModule } from "./data-entries-routing.module";
 import { DropDownRemoteComponent } from "./dropdown/drop-down-remote-virtual/drop-down-remote.component";
@@ -52,10 +53,13 @@ import { InputGroupSample4Component } from "./input-group/input-group-sample-4/i
 import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 import { InputGroupStyleComponent } from "./input-group/input-group-styling/input-group-styling.component";
+import { InputTextSelectionComponent } from "./input-group/input-text-selection/input-text-selection.component";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.component";
 import { RadioSample2Component } from "./radio/radio-sample-2/radio-sample-2.component";
+import { RadioSample3Component } from "./radio/radio-sample-3/radio-sample-3.component";
+import { RadioStylingSampleComponent } from "./radio/radio-styling-sample/radio-styling-sample.component";
 import { SelectFormComponent } from "./select/select-form/select-form.component";
 import { SelectHeaderFooterComponent } from "./select/select-header-footer/select-header-footer.component";
 import { SelectInputDirectivesComponent } from "./select/select-input-directives/select-input-directives";
@@ -66,6 +70,7 @@ import { SelectSample4Component } from "./select/select-sample-4/select-sample-4
 import { SelectStylingComponent } from "./select/select-styling/select-styling.component";
 import { SwitchSample1Component } from "./switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2.component";
+import { SwitchStylingComponent } from "./switch/switch-styling/switch-styling.component";
 
 @NgModule({
     declarations: [
@@ -78,7 +83,7 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         ButtonGroupSample2Component,
         ButtonGroupSample3Component,
         ButtonGroupSample5Component,
-        ButtonsRoundnessComponent,
+        ButtonsDisabledComponent,
         ButtonsSample1Component,
         ButtonsSample2Component,
         ButtonsSample3Component,
@@ -88,8 +93,9 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         ButtonsSample7Component,
         ButtonsSample8Component,
         CheckboxSample1Component,
-        CheckboxStylingComponent,
         CheckboxSample2Component,
+        CheckboxSample3Component,
+        CheckboxStylingComponent,
         DropDownRemoteComponent,
         DropDownVirtualComponent,
         DropdownMenuComponent,
@@ -111,8 +117,11 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         RadioGroupSampleComponent,
         RadioSample1Component,
         RadioSample2Component,
+        RadioSample3Component,
+        RadioStylingSampleComponent,
         SwitchSample1Component,
         SwitchSample2Component,
+        SwitchStylingComponent,
         SelectSample1Component,
         SelectSample2Component,
         SelectSample3Component,
@@ -124,7 +133,8 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         ButtonGroupSampleComponent,
         ButtonsDisplayDensityComponent,
         ButtonsStyleComponent,
-        ButtonGroupStyleComponent
+        ButtonGroupStyleComponent,
+        InputTextSelectionComponent
     ],
     imports: [
         CommonModule,
@@ -151,7 +161,9 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         IgxSelectModule,
         IgxSwitchModule,
         IgxProgressBarModule,
-        IgxForOfModule
+        IgxForOfModule,
+        IgxTextSelectionModule,
+        IgxFocusModule
     ]
 })
 export class DataEntriesModule { }

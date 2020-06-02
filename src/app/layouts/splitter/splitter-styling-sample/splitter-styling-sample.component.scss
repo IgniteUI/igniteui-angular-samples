@@ -1,0 +1,28 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$splitter-theme: igx-splitter-theme(
+    $bar-color: #011627,
+    $handle-color: #ECAA53,
+    $expander-color: #ECAA53,
+    $border-radius: 0,
+    $focus-color: #ECAA53,
+    $size: 4px
+);
+
+:host {
+    p {
+        padding: 0 16px;
+    }
+
+    // @include igx-css-vars($splitter-theme);
+
+    /* Using Theme Overrides to provide IE 11 support.
+     * NOTE: Theming using this approach will greatly increase the size
+     * of the output CSS. If you do not plan to target IE 11,
+     * delete this section and use the `igx-css-vars` mixin as shown above.
+    **/
+    ::ng-deep {
+        @include igx-splitter($splitter-theme);
+    }
+}
+

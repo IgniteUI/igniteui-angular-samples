@@ -1,29 +1,26 @@
-// Sample related styling section
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$custom-checkbox-theme: igx-checkbox-theme(
+    $border-radius: 10px,
+    $label-color: #011627,
+    $empty-color: #ECAA53,
+    $fill-color: #ECAA53,
+    $tick-color: #011627,
+);
+
 :host {
     display: flex;
     padding: 16px;
-}
 
-// Ignite UI for Angular Theming engine related styling
-@import '~igniteui-angular/lib/core/styles/themes/index';
+    // @include igx-css-vars($custom-checkbox-theme);
 
-$my-primary-color: #f5e492;
-$my-secondary-color: #09f;
-
-$my-color-palette: igx-palette(
-    $primary: $my-primary-color,
-    $secondary: $my-secondary-color,
-);
-
-$custom-checkbox-theme: igx-checkbox-theme(
-    $palette: $my-color-palette,
-    $border-radius: 10px,
-    $label-color: $my-secondary-color,
-    $empty-color: $my-secondary-color
-);
-
-:host {
+    /* Using Theme Overrides to provide IE 11 support.
+     * NOTE: Theming using this approach will greatly increase the size
+     * of the output CSS. If you do not plan to target IE 11,
+     * delete this section and use the `igx-css-vars` mixin as shown above.
+    **/
     ::ng-deep {
         @include igx-checkbox($custom-checkbox-theme);
     }
 }
+

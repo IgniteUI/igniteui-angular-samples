@@ -1,7 +1,7 @@
 import { AfterViewInit, Directive, EventEmitter, Inject, Input, OnDestroy, Output } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
 import { Subject } from "rxjs";
-import { takeUntil } from "rxjs/operators";
+import { debounceTime, takeUntil } from "rxjs/operators";
 
 export enum ConditionalFormattingType {
     dataBars = "Data Bars",
@@ -155,7 +155,8 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     };
 
     private get selectedData() {
-        if (!this._selectedData.length) { this._selectedData = this.toArray(this.grid.getSelectedData()); }
+        this._selectedData = this.grid.getSelectedData().length ? this.toArray(this.grid.getSelectedData()) :
+            this.toArray(this.grid.getSelectedColumnsData());
         return this._selectedData;
     }
 
@@ -199,7 +200,10 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
     public ngAfterViewInit(): void {
         this.grid.onRangeSelection.pipe(takeUntil(this.destroy$)).subscribe(() => {
-            this.determineFormatters();
+            this.determineFormatters(false);
+        });
+        this.grid.onColumnSelectionChange.pipe(takeUntil(this.destroy$), debounceTime(200)).subscribe(() => {
+            this.determineFormatters(true);
         });
         this.grid.onCellEdit.pipe(takeUntil(this.destroy$)).subscribe((args: any) => {
             if ((args.newValue === args.oldValue || !this.formatter)) { return; }
@@ -237,9 +241,10 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
         });
     }
 
-    public determineFormatters() {
-        const numericData = this.toArray(this.grid.getSelectedData()).some(rec => typeof rec === "number");
-        const textData = this.toArray(this.grid.getSelectedData()).some(rec => typeof rec === "string");
+    public determineFormatters(fromColumn) {
+        const data = fromColumn ? this.grid.getSelectedColumnsData() : this.grid.getSelectedData();
+        const numericData = this.toArray(data).some(rec => typeof rec === "number");
+        const textData = this.toArray(data).some(rec => typeof rec === "string");
         const formatters =  Array.of(...this._commonFormattersName);
         if (!(numericData) && textData) {
             formatters.splice(0, 0, ...this._textFormatters);
@@ -253,13 +258,26 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
     public recalcCachedValues(clearAll = false) {
         if (clearAll) {
-            this._startColumn = Math.min(...this.grid.getSelectedRanges().map(r => Number(r.columnStart)));
-            this._endColumn = Math.max(...this.grid.getSelectedRanges().map(r => Number(r.columnEnd)));
+            if (this.grid.getSelectedRanges().length === 0) {
+                const selectedColumns = this.grid.selectedColumns();
+                if (selectedColumns.length === 1) {
+                    this._startColumn = this._endColumn = selectedColumns[0].visibleIndex;
+                } else if (selectedColumns.length > 1) {
+                    this._startColumn =  Math.min(...selectedColumns.map(c => c.visibleIndex));
+                    this._endColumn =  Math.max(...selectedColumns.map(c => c.visibleIndex));
+                } else {
+                    return;
+                }
+            } else {
+                this._startColumn = Math.min(...this.grid.getSelectedRanges().map(r => Number(r.columnStart)));
+                this._endColumn = Math.max(...this.grid.getSelectedRanges().map(r => Number(r.columnEnd)));
+            }
             this._selectedData = [];
         }
         this._valueForComparison = this.textData[0];
+        const hasNegativeValues = this.numericData.some(value => value < 0);
         this._maxValue = Math.max(...this.numericData);
-        this._minValue = Math.min(...this.numericData.filter(value => value < 0)) | 0;
+        this._minValue = hasNegativeValues ? Math.min(...this.numericData.filter(value => value < 0)) : 0;
     }
 
     public isWithInFormattedRange(rowIndex, colID) {
@@ -292,7 +310,24 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
     private resetRange(formatRange?: []) {
         this.formatedRange.clear();
-        const customRange = formatRange ? formatRange : this.grid.getSelectedRanges();
+        const selectedRanges = this.grid.getSelectedRanges();
+        let customRange;
+
+        // Column selection custom range
+        if (selectedRanges.length === 0) {
+            const selectedColumns = this.grid.selectedColumns();
+            customRange = [];
+            selectedColumns.forEach(c => {
+                customRange.push({
+                    columnEnd: c.visibleIndex,
+                    columnStart: c.visibleIndex,
+                    rowEnd: this.grid.data.length - 1,
+                    rowStart: 0
+                });
+            });
+        } else {
+            customRange = formatRange ? formatRange : this.grid.getSelectedRanges();
+        }
         customRange.forEach(range => {
             for (let ri = range.rowStart; ri <= Number(range.rowEnd); ri++) {
                 for (let ci = Number(range.columnStart); ci <= Number(range.columnEnd); ci++) {

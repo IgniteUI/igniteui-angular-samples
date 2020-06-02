@@ -1,59 +1,37 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-/*BASIC THEMING*/
+.sample-content{
+    margin: 10% auto 0;
+}
 
-$dark-toast: igx-toast-theme(
-    $background: #292826,
-    $text-color: #FFCD0F,
+.sample-column {
+    min-width: 270px;
+}
+
+.btn-group {
+    display: flex;
+    width: 250px;
+    margin-top: 16px;
+    justify-content: space-between;
+}
+
+
+$custom-toast-theme: igx-toast-theme(
+    $background: #dedede,
+    $text-color: #151515,
     $border-radius: 12px
 );
 
-/*ENHANCED APPROACHES*/
+// :host {
+//     @include igx-css-vars($custom-toast-theme);
+// }
 
-// $yellow-color: #FFCD0F;
-// $black-color: #292826;
-
-// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
-
-/*PALETTE and IGX-COLOR*/
-
-// $dark-toast: igx-toast-theme(
-//     $background: igx-color($dark-palette, "primary", 400),
-//     $text-color: igx-color($dark-palette, "secondary", 400),
-//     $border-radius: 12px
-// );
-
-/*SCHEMAS*/
-
-// $dark-toast-schema: extend($_dark-toast,
-//     (
-//         background: (
-//             igx-color: ("primary", 400)
-//         ),
-//         text-color: (
-//             igx-color: ("secondary", 400)
-//         ),
-//         border-radius: 12px
-//     )
-// );
-
-// $custom-dark-schema: extend($dark-schema,(
-//     igx-toast: $dark-toast-schema
-// ));
-
-// $dark-toast: igx-toast-theme(
-//   $palette: $dark-palette,
-//   $schema: $custom-dark-schema
-// );
-
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
-
-:host {
-    ::ng-deep {
-        @include igx-toast($dark-toast);
-    }
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-toast($custom-toast-theme);
 }
 
-.btn {
-    margin: 5px;
-}

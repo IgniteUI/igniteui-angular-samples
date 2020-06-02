@@ -1,33 +1,31 @@
-.sample-wrapper {
-    overflow-y: auto;
+.date-picker-wrapper {
+    padding: 1rem;
+    max-width: 700px;
 }
-.calendar-wrapper {
-    max-width: 900px;
-    min-width: 200px;
-    max-height: 450px;
-}
+
 .calendar {
-    width:100%;
+    width: 100%;
 }
+
 igx-input-group {
     display: inline-block;
-    margin-left: 20px;
-    width: 250px;
+    width: 49%;
 }
+
 .form {
     display: flex;
-    padding-left: 2px;
-    margin-top: 20px;
+    margin-top: 16px;
+    justify-content: space-between;
 }
+
 .buttons {
     display: flex;
     justify-content: flex-end;
     padding: 10px;
 }
+
 .calendarDropDown {
     display: inline-block;
-    margin-left: 20px;
-    width: 522px;
-    padding-left: 2px;
-    margin-top: 35px;
+    margin-top: 36px;
+    width: 100%;
 }

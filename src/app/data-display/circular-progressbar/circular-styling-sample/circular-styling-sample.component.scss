@@ -1,67 +1,21 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-/*BASIC THEMING*/
-
 $custom-theme: igx-progress-circular-theme(
     $base-circle-color: lightgray,
-    $progress-circle-color: rgb(32, 192, 17),
-    $text-color: lightgray
+    $progress-circle-color: rgb(32, 192, 17)
+
 );
 
-/*ENHANCED APPROACHES*/
+// :host {
+//     @include igx-css-vars($custom-theme);
+// }
 
-// $gray-color: lightgray;
-// $green-color: rgb(32, 192, 17);
-
-/*PALETTE*/
-
-// $custom-palette: igx-palette(
-//     $primary: $gray-color,
-//     $secondary: $green-color
-// );
-
-// $custom-theme: igx-progress-circular-theme(
-//     $base-circle-color: igx-color($custom-palette, "primary", 500),
-//     $progress-circle-color: igx-color($custom-palette, "secondary", 500),
-//     $text-color: igx-color($custom-palette, "primary", 500)
-// );
-
-/*SCHEMAS*/
-
-// $custom-progress-schema: extend($_light-progress-circular,
-//     (
-//         base-circle-color: (igx-color:('primary', 500)),
-//         progress-circle-color: (igx-color:('secondary', 500)),
-//         text-color: (igx-color:('primary', 500))
-//     )
-// );
-
-// $my-custom-schema: extend($light-schema, 
-//     (
-//         igx-circular-bar: $custom-progress-schema
-//     )
-// );
-
-/*THEME*/
-
-// $custom-theme: igx-progress-circular-theme(
-//     $palette: $custom-palette,
-//     $schema: $my-custom-schema
-// );
-
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
-
-:host {
-  ::ng-deep {
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
     @include igx-progress-circular($custom-theme);
-  }
 }
 
-.circular-container {
-    height: 64px;
-    width: 64px;
-}
-
-.button-container {
-    margin-left: 20px;
-}

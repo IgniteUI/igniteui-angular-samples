@@ -32,7 +32,7 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
 
     public set perPage(val: number) {
         this._perPage = val;
-        this.paginate(0);
+        // this.paginate(0);
     }
 
     public ngOnInit() {
@@ -59,6 +59,13 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
         this.page = page;
         const skip = this.page * this.perPage;
         const top = this.perPage;
+
+        this.remoteService.getData(skip, top);
+    }
+
+    public perPageChange(perPage: number) {
+        const skip = this.page * perPage;
+        const top = perPage;
 
         this.remoteService.getData(skip, top);
     }

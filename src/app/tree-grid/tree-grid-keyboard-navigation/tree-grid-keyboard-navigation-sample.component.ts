@@ -11,7 +11,7 @@ export class TreeGridKBNavigationComponent implements OnInit {
     public localData: any[];
     @ViewChild("grid1", { read: IgxTreeGridComponent, static: true })
     public grid1: IgxTreeGridComponent;
-
+    public selectionMode = "multiple";
     constructor() { }
 
     public ngOnInit() {
@@ -23,7 +23,7 @@ export class TreeGridKBNavigationComponent implements OnInit {
         const evt: KeyboardEvent = args.event as KeyboardEvent;
         const type = args.targetType;
 
-        if (type === "dataCell" && target.inEditMode && evt.key.toLowerCase() === "tab") {
+        if (type === "dataCell" && target.editMode && evt.key.toLowerCase() === "tab") {
             // Value validation for number column.
             // This covers both 'tab' and 'shift+tab' key interactions.
             args.event.preventDefault();
@@ -37,13 +37,12 @@ export class TreeGridKBNavigationComponent implements OnInit {
                 this.grid1.getNextCell(target.rowIndex, target.visibleColumnIndex, (col) => col.editable);
 
             this.grid1.navigateTo(cell.rowIndex, cell.visibleColumnIndex,
-                (obj) => { obj.target.nativeElement.focus(); });
+                (obj) => { obj.target.activate(); });
         } else if (type === "dataCell" && evt.key.toLowerCase() === "enter") {
             // Perform column based kb navigation with 'enter' key press
             args.cancel = true;
-            this.grid1.selectRange(null);
             this.grid1.navigateTo(target.rowIndex + 1, target.visibleColumnIndex,
-                (obj) => { obj.target.nativeElement.focus(); });
+                (obj) => { obj.target.activate(); });
         }
     }
 }

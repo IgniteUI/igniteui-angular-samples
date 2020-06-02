@@ -1,7 +1,6 @@
 <div class="gallery__wrapper">
     <igx-navbar title="Gallery">
         <igx-icon (click)="wifiState = !wifiState">{{ wifiState ? 'signal_wifi_4_bar' : 'signal_wifi_off'}}</igx-icon>
-        <igx-icon (click)="refreshBanner()">refresh</igx-icon>
     </igx-navbar>
     <div class="gallery__content">
         <igx-banner class="offline-banner" #connectionBanner [animationSettings]="animationSettings">
@@ -14,14 +13,14 @@
         </igx-banner>
         <igx-card class="gallery__item">
             <div>
-                <img width="100%" height="100%" [src]="imageUrls[0]">
+                <img [src]="imageUrls[0]">
             </div>
         </igx-card>
         <igx-card class="gallery__item">
             <div>
-                <img width="100%" height="100%" [src]="imageUrls[1]">
+                <img [src]="imageUrls[1]">
             </div>
         </igx-card>
-        <igx-toast #eventToast></igx-toast>
+        <igx-toast #eventToast [position]="toastPosition"></igx-toast>
     </div>
 </div>

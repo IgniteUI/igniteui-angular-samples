@@ -1,9 +1,5 @@
 import { Component, Pipe, PipeTransform, ViewChild } from "@angular/core";
-import {
-    DateRangeType,
-    IgxCalendarComponent,
-    IgxDropDownComponent
-} from "igniteui-angular";
+import { DateRangeType, IgxCalendarComponent, IgxDropDownComponent } from "igniteui-angular";
 
 @Component({
     selector: "datepicker-sample-9",
@@ -85,7 +81,6 @@ export class DatepickerSample9Component {
     }
 
     public onDoneSelected(dropDownCalendar) {
-
         dropDownCalendar.close();
     }
 

@@ -4,6 +4,8 @@ import { RouterModule, Routes } from "@angular/router";
 import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";
 import { AvatarSample2Component } from "./avatar/avatar-sample-2/avatar-sample-2.component";
 import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3.component";
+import { AvatarSample4Component } from "./avatar/avatar-sample-4/avatar-sample-4.component";
+import { AvatarStylingSampleComponent } from "./avatar/avatar-styling/avatar-styling.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
@@ -12,45 +14,50 @@ import { CardStylingSampleComponent } from "./card/card-styling-sample/card-styl
 import { CardComponent } from "./card/card.component";
 import { CarouselAnimationsSampleComponent
     } from "./carousel/carousel-animations-sample/carousel-animations-sample.component";
-import { CarouselBaseSampleComponent } from "./carousel/carousel-base-sample/carousel-base-sample.component";
-import { CarouselDetailsViewComponent } from "./carousel/carousel-details/carousel-details.component";
 import { CarouselNoNavigationSampleComponent
     } from "./carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component";
-import { CarouselStylingSampleComponent
-} from "./carousel/carousel-styling-sample/carousel-styling-sample.component";
+import { CarouselWithComponentsSampleComponent
+} from "./carousel/carousel-with-components-sample/carousel-with-components-sample.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DividerDashedComponent } from "./divider/dashed/divider-dashed.component";
 import { DividerDefaultComponent } from "./divider/default/divider-default.component";
 import { DividerInsetComponent } from "./divider/inset/divider-inset.component";
 import { DividerVerticalComponent } from "./divider/vertical/divider-vertical.component";
+import { DockManagerComponent } from "./dock-manager/dock-manager-sample/dock-manager.component";
 import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
 import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
 import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
 import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
-import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
-import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
 import { ExpansionPanelStylingComponent } from "./expansion-panel/expansion-styling/expansion-styling.component";
-import { LayoutComponent } from "./layout/layout.component";
+import { LayoutAlignItemsComponent } from "./layout/layout-align-items/layout-align-items.component";
+import { LayoutContentSpaceComponent } from "./layout/layout-content-space/layout-content-space.component";
+import { LayoutCustomOrderComponent } from "./layout/layout-custom-order/layout-custom-order.component";
+import { LayoutDirectionColumnComponent } from "./layout/layout-direction-column/layout-direction-column.component";
+import { LayoutDirectionRowComponent } from "./layout/layout-direction-row/layout-direction-row.component";
+import { LayoutJustifyContentComponent } from "./layout/layout-justify-content/layout-justify-content.component";
+import { LayoutSampleComponent } from "./layout/layout-sample/layout-sample.component";
+import { LayoutWrapComponent } from "./layout/layout-wrap/layout-wrap.component";
 import { layoutsRoutesData } from "./layouts-routes-data";
+import { SplitterHorizontalSampleComponent
+    } from "./splitter/splitter-horizontal-sample/splitter-horizontal-sample.component";
+import { SplitterNestedSampleComponent } from "./splitter/splitter-nested-sample/splitter-nested-sample.component";
+import { SplitterStylingSampleComponent } from "./splitter/splitter-styling-sample/splitter-styling-sample.component";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
-import { BottomNavRoutingView1Component,
-         BottomNavRoutingView2Component,
-         BottomNavRoutingView3Component,
-         TabbarSample3Component } from "./tabbar/tabbar-sample-3/tabbar-sample-3.component";
+import { TabbarSample3Component } from "./tabbar/tabbar-sample-3/components/tabbar-sample-3.component";
 import { TabbarStyleComponent } from "./tabbar/tabbar-style/tabbar-style.component";
-import { TabbarComponent } from "./tabbar/tabbar.component";
+import { TabbarView1Component } from "./tabbar/views/view1/view1.component";
+import { TabbarView2Component } from "./tabbar/views/view2/view2.component";
+import { TabbarView3Component } from "./tabbar/views/view3/view3.component";
 import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
 import { TabsSample4Component } from "./tabs/tabs-sample-4/components/tabs-sample-4.component";
-import { TabsSample5Component } from "./tabs/tabs-sample-5/components/tabs-sample-5.component";
-import { TabsRoutingView1Component,
-         TabsRoutingView2Component,
-         TabsRoutingView3Component,
-         TabsSample6Component } from "./tabs/tabs-sample-6/tabs-sample-6.component";
 import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
+import { View1Component } from "./tabs/views/view1/view1.component";
+import { View2Component } from "./tabs/views/view2/view2.component";
+import { View3Component } from "./tabs/views/view3/view3.component";
 
 export const layoutsRoutes: Routes = [
     {
@@ -69,6 +76,16 @@ export const layoutsRoutes: Routes = [
         path: "avatar-sample-3"
     },
     {
+        component: AvatarSample4Component,
+        data: layoutsRoutesData["avatar-sample-4"],
+        path: "avatar-sample-4"
+    },
+    {
+        component: AvatarStylingSampleComponent,
+        data: layoutsRoutesData["avatar-styling"],
+        path: "avatar-styling"
+    },
+    {
         component: CarouselNoNavigationSampleComponent,
         data: layoutsRoutesData["carousel-no-navigation-sample"],
         path: "carousel-no-navigation-sample"
@@ -79,23 +96,14 @@ export const layoutsRoutes: Routes = [
         path: "carousel-animations-sample"
     },
     {
-        component: CarouselBaseSampleComponent,
-        data: layoutsRoutesData["carousel-base-sample"],
-        path: "carousel-base-sample"
-    },
-    {
-        component: CarouselStylingSampleComponent,
-        data: layoutsRoutesData["carousel-styling-sample"],
-        path: "carousel-styling-sample"
+        component: CarouselWithComponentsSampleComponent,
+        data: layoutsRoutesData["carousel-with-components-sample"],
+        path: "carousel-with-components-sample"
     },
     {
         component: CarouselComponent,
         data: layoutsRoutesData["carousel"],
         path: "carousel"
-    },
-    {
-        component: CarouselDetailsViewComponent,
-        path: "details"
     },
     {
         component: DividerDefaultComponent,
@@ -116,6 +124,11 @@ export const layoutsRoutes: Routes = [
         component: DividerInsetComponent,
         data: layoutsRoutesData["divider-sample-4"],
         path: "divider-sample-4"
+    },
+    {
+        component: DockManagerComponent,
+        data: layoutsRoutesData["dock-manager-sample"],
+        path: "dock-manager-sample"
     },
     {
         component: ExpansionPanelSample1Component,
@@ -143,29 +156,64 @@ export const layoutsRoutes: Routes = [
         path: "expansion-sample-5"
     },
     {
-        component: ExpansionPanelSample6Component,
-        data: layoutsRoutesData["expansion-sample-6"],
-        path: "expansion-sample-6"
-    },
-    {
-        component: ExpansionPanelSample7Component,
-        data: layoutsRoutesData["expansion-sample-7"],
-        path: "expansion-sample-7"
-    },
-    {
         component: ExpansionPanelStylingComponent,
         data: layoutsRoutesData["expansion-styling"],
         path: "expansion-styling"
     },
     {
-        component: LayoutComponent,
-        data: layoutsRoutesData["layout"],
-        path: "layout"
+        component: LayoutDirectionRowComponent,
+        data: layoutsRoutesData["layout-direction-row"],
+        path: "layout-direction-row"
     },
     {
-        component: TabbarComponent,
-        data: layoutsRoutesData["tabbar"],
-        path: "tabbar"
+        component: LayoutDirectionColumnComponent,
+        data: layoutsRoutesData["layout-direction-column"],
+        path: "layout-direction-column"
+    },
+    {
+        component: LayoutCustomOrderComponent,
+        data: layoutsRoutesData["layout-custom-order"],
+        path: "layout-custom-order"
+    },
+    {
+        component: LayoutJustifyContentComponent,
+        data: layoutsRoutesData["layout-justify-content"],
+        path: "layout-justify-content"
+    },
+    {
+        component: LayoutAlignItemsComponent,
+        data: layoutsRoutesData["layout-align-items"],
+        path: "layout-align-items"
+    },
+    {
+        component: LayoutContentSpaceComponent,
+        data: layoutsRoutesData["layout-content-space"],
+        path: "layout-content-space"
+    },
+    {
+        component: LayoutSampleComponent,
+        data: layoutsRoutesData["layout-sample"],
+        path: "layout-sample"
+    },
+    {
+        component: LayoutWrapComponent,
+        data: layoutsRoutesData["layout-wrap"],
+        path: "layout-wrap"
+    },
+    {
+        component: SplitterHorizontalSampleComponent,
+        data: layoutsRoutesData["splitter-horizontal-sample"],
+        path: "splitter-horizontal-sample"
+    },
+    {
+        component: SplitterNestedSampleComponent,
+        data: layoutsRoutesData["splitter-nested-sample"],
+        path: "splitter-nested-sample"
+    },
+    {
+        component: SplitterStylingSampleComponent,
+        data: layoutsRoutesData["splitter-styling-sample"],
+        path: "splitter-styling-sample"
     },
     {
         component: TabbarSample1Component,
@@ -178,14 +226,14 @@ export const layoutsRoutes: Routes = [
         path: "tabbar-sample-2"
     },
     {
-        children: [
-            { path: "arrivals",   component: BottomNavRoutingView1Component },
-            { path: "departures", component: BottomNavRoutingView2Component },
-            { path: "canceled",   component: BottomNavRoutingView3Component }
-        ],
         component: TabbarSample3Component,
         data: layoutsRoutesData["tabbar-sample-3"],
-        path: "tabbar-sample-3"
+        path: "tabbar-sample-3",
+        children: [
+            { path: "tabbar-view1", component: TabbarView1Component },
+            { path: "tabbar-view2", component: TabbarView2Component },
+            { path: "tabbar-view3", component: TabbarView3Component }
+        ]
     },
     {
         component: TabbarStyleComponent,
@@ -209,21 +257,12 @@ export const layoutsRoutes: Routes = [
     },
     {
         component: TabsSample4Component,
-        path: "tabs-sample-4"
-    },
-    {
-        component: TabsSample5Component,
-        path: "tabs-sample-5"
-    },
-    {
+        path: "tabs-sample-4",
         children: [
-            { path: "arrivals",   component: TabsRoutingView1Component },
-            { path: "departures", component: TabsRoutingView2Component },
-            { path: "canceled",   component: TabsRoutingView3Component }
-        ],
-        component: TabsSample6Component,
-        data: layoutsRoutesData["tabs-sample-6"],
-        path: "tabs-sample-6"
+            { path: "view1", component: View1Component },
+            { path: "view2", component: View2Component },
+            { path: "view3", component: View3Component }
+        ]
     },
     {
         component: TabsStyleComponent,

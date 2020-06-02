@@ -1,0 +1,160 @@
+<igc-dockmanager #dock class="light-theme dock-m-position" [layout]="docLayout">
+    <div slot="grid" igxOverlayOutlet style="height: 100%">
+        <igx-grid igxPreventDocumentScroll #grid columnSelection="multiple" chartIntegration conditionalFormatting [formatter]="currentFormatter"
+            [chartData]="chartData" primaryKey='ID' displayDensity="compact" [data]="data"
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='ID' [hidden]='true'></igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Category'  [width]="'110px'"></igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Type'  [filterable]='false' [width]="'130px'"></igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Country'  [width]="'100px'"></igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Price' dataType="number" [width]="'120px'" >
+                <ng-template igxCell let-cell="cell">
+                    <div class="finjs-icons">
+                        <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Start(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency">
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Start(Y)Diff' dataType="number" [width]="'120px'" >
+                <ng-template igxCell let-cell="cell">
+                    <div class="finjs-icons">
+                        <span>{{cell.value | number:'1.4-4'}}%</span>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Buy' [width]="'100px'" dataType="number" [formatter]="formatCurrency" >
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='BuyDiff' dataType="number" [width]="'120px'" >
+                <ng-template igxCell let-cell="cell">
+                    <div class="finjs-icons">
+                        <span>{{cell.value | number:'1.4-4'}}%</span>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='High(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency"
+                >
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='High(Y)Diff' [width]="'120px'" dataType="number" [formatter]="formatCurrency"
+                >
+                <ng-template igxCell let-cell="cell">
+                    <div class="finjs-icons">
+                        <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Open Price' dataType="number" [formatter]="formatCurrency" 
+                [width]="'130px'">
+                <ng-template igxCell let-cell="cell">
+                    <div class="finjs-icons">
+                        <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='OpenPriceDiff' dataType="number" [width]="'140px'" >
+                <ng-template igxCell let-cell="cell">
+                    <div class="finjs-icons">
+                        <span>{{cell.value | number:'1.4-4'}}%</span>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Low(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency">
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Low(Y)Diff' dataType="number" [width]="'120px'" >
+                <ng-template igxCell let-cell="cell">
+                    <div class="finjs-icons">
+                        <span>{{cell.value | number:'1.4-4'}}%</span>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='High(D)' [width]="'100px'" dataType="number" [headerClasses]="'headerAlignSyle'"
+                 [formatter]="formatCurrency">
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='High(D)Diff' dataType="number" [width]="'120px'" >
+                <ng-template igxCell let-cell="cell">
+                    <div class="finjs-icons">
+                        <span>{{cell.value | number:'1.4-4'}}%</span>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Low(D)' [width]="'100px'" dataType="number" [formatter]="formatCurrency"
+                >
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Low(D)Diff' dataType="number" [width]="'120px'" >
+                <ng-template igxCell let-cell="cell">
+                    <div class="finjs-icons">
+                        <span>{{cell.value | number:'1.4-4'}}%</span>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Sell' [width]="'110px'" dataType="number" [formatter]="formatCurrency" >
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='SellDiff' dataType="number" [width]="'120px'" >
+                <ng-template igxCell let-cell="cell">
+                    <div class="finjs-icons">
+                        <span>{{cell.value | number:'1.4-4'}}%</span>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Region' ></igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Contract' ></igx-column>
+            <igx-column [sortable]="true" [movable]="true" [disablePinning]="true" [disableHiding]="true" field='Settlement' [width]="'150px'" ></igx-column>
+        </igx-grid>
+    </div>
+
+    <div slot="chart-types-content" class="chart-types-container">
+        <div *ngFor="let chartType of chartTypes">
+            <div *ngIf="(allCharts |filterType:chartType).length > 0" class="wrapper">
+                <div>{{chartType | titlecase}} Chart</div>
+                <div class="types-section">
+                    <div *ngFor="let chart of (allCharts | filterType: chartType); let i=index"
+                        (click)="createChart(chart)"
+                        title="{{chart | name}}" 
+                        [ngClass]="{'disabled': availableCharts.indexOf(chart) === -1, 'selected': chart | hastDuplicateLayouts: dock.layout: selectedCharts}"
+                        style="width: 60px; margin-right: 20px; cursor: pointer; position: relative;">
+                        <img src="assets/images/svg/charts/{{chart}}.svg" />
+                        <igx-badge *ngIf="selectedCharts[chart]" icon="check"></igx-badge>
+                    </div>
+                </div>
+                <igx-divider></igx-divider>
+            </div>
+        </div>
+    </div>
+
+    <dock-slot  *ngFor="let chart of allCharts" [id]="chart" >
+    </dock-slot>
+</igc-dockmanager>
+
+<span *ngIf="contextmenu" class="analytics-btn" [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}"
+    (click)="toggleContextDialog(button)">
+    <button #button igxButton="icon">
+        <igx-icon #icon style="pointer-events: none;" class="icon" fontSet="material">insert_chart_outlined</igx-icon>
+    </button>
+</span>
+
+<!-- this block can be moved in another component -->
+<igx-dialog #contextDialog>
+        <div #dialogContent class="tab-options-wrapper">
+            <div class="header">
+                <span>CONDITIONAL FORMATTING</span>
+                <div class="clear-action" [ngClass]="{'disableButton': !hasFormatter}">
+                    <div class="btn" (click)="clearFormatting()">
+                        <img style="width: 18px; height: 18px;" src="assets/images/svg/conditions/Clear.svg" />
+                    </div>
+                </div>
+            </div>
+            <div class="tab-option">
+                <div *ngFor="let condition of formattersNames" class="action" [ngClass]="{'selected--condition': condition === currentFormatter}">
+                    <div class="btn condition" (click)="analyse(condition)">
+                        <img style="width: 36px; height: 36px;"
+                            src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg" />
+                        <span class="name">{{condition.replace('10', '10%')}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</igx-dialog>
+
+<ng-template #template>
+    <span>Incompatible data</span>
+</ng-template>

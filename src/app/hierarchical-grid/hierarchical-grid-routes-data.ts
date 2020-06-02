@@ -49,11 +49,19 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-multi-column-template": { displayName: "Hierarchical Grid Multi Column Header Template", parentName: "Hierarchical Grid" },
     "hierarchical-grid-multi-column-styling": { displayName: "Hierarchical Grid Multi Column Header Styling", parentName: "Hierarchical Grid" },
     "hierarchical-grid-row-edit-style": { displayName: "HGrid Row Edit Style", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-row-pinning": { displayName: "Hierarchical Grid Row Pinning", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-row-pinning-styling": { displayName: "Hierarchical Grid Row Pinning Styling", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-row-pinning-extra-column": { displayName: "Hierarchical Grid Row Pinning Custom UI", parentName: "Hierarchical Grid" },
     "hierarchical-grid-toolbar-style": { displayName: "HGrid Toolbar Style", parentName: "Hierarchical Grid" },
     "hierarchical-grid-advanced-filtering": { displayName: "Hierarchical Grid Advanced Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-advanced-filtering-style": { displayName: "Hierarchical Grid Advanced Filtering Style", parentName: "Hierarchical Grid" },
     "hierarchical-grid-filtering-style": { displayName: "HGrid Filtering Style", parentName: "Hierarchical Grid" },
     "hierarchical-grid-conditional-row-selectors": { displayName: "HGrid Conditional Row Selectors", parentName: "Hierarchical Grid" },
     "hierarchical-grid-collapsible-column-groups": { displayName: "HGrid Collapsible Column Grous", parentName: "Hierarchical Grid" },
-    "hierarchical-grid-allData-summary": {displayName: "HGrid All Data Custom Summaries", parentName: "Hierarchical Grid"}
+    "hierarchical-grid-allData-summary": {displayName: "HGrid All Data Custom Summaries", parentName: "Hierarchical Grid"},
+    "hierarchical-grid-sample-right-pinning": { displayName: "Hierarchical Grid Right Side Pinning", parentName: "Hierarchical Grid" },
+    "column-selection": { displayName: "HGrid Column Selection", parentName: "Hierarchical Grid" },
+    "column-group-selection": { displayName: "HGrid Column Group Selection", parentName: "Hierarchical Grid" },
+    "column-selection-styles": { displayName: "HGrid Column Selection Styles", parentName: "Hierarchical Grid" },
+    "hgrid-keyboard-guide": { displayName: "HGrid Keyboard navigation guide", parentName: "Hierarchical Grid" }
 };

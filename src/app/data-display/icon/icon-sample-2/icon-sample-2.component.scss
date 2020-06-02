@@ -1,0 +1,19 @@
+.custom-size{
+    font-size: 56px;
+    width: 56px;
+    height: 56px;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 16px 8px;
+}
+
+.icon-sample {
+    display: flex;
+    flex: 1 0 20%;
+    height: 44px;
+    align-items: center;
+    max-width: 80px;
+}

@@ -12,7 +12,7 @@ export class TreeGridMultiCollapsibleColumnGroupsComponent {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: true })
     public treeGrid: IgxTreeGridComponent;
     public data = generateEmployeeDetailedFlatData();
-
+    public selectionMode = "none";
     public ngOnInit() {
         for (const item of this.data) {
             const names = item.Name.split(" ");

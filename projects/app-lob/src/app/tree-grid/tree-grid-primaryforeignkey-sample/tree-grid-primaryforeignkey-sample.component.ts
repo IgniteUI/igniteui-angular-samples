@@ -8,7 +8,7 @@ import { Data } from "./data";
 })
 export class TreeGridPrimaryforeignkeySampleComponent implements OnInit {
     public data: any[];
-
+    public selectionMode = "multiple";
     constructor() { }
 
     public ngOnInit() {

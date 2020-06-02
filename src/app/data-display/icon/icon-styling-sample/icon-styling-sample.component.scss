@@ -1,66 +1,16 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-$custom-theme: igx-icon-theme(
-  $color: #ffcd0f,
+$custom-icon-theme: igx-icon-theme(
+  $color: #1481b8,
   $disabled-color: #494949
 );
 
-$black-color: #494949;
-$yellow-color: #ffcd0f;
-
-/* Custom theme */
-
-// $custom-palette: igx-palette(
-//     $primary: $black-color,
-//     $secondary: $yellow-color
-// );
-
-// $custom-theme: igx-icon-theme(
-//     $color: igx-color($custom-palette, "secondary", 600),
-//     $disabled-color: igx-color($custom-palette, "primary", 500)
-// );
-
-/* Custom Schema */
-
-// $custom-icon-schema: extend($_dark-icon, (
-//     color: (igx-color("secondary", 500)),
-//     disabled-color: (igx-color("primary", 500))
-// ));
-
-// $my-custom-schema: extend($dark-schema, (
-//     igx-icon: $custom-icon-schema
-// ));
-
-// $custom-theme: igx-icon-theme(
-//     $palette: $custom-palette,
-//     $schema: $my-custom-schema
-// );
-
-:host {
-  ::ng-deep {
-    @include igx-icon($custom-theme);
-    .first-col .igx-icon:hover {
-      color: rgb(52, 0, 104);
-    }
-
-    .second-col .igx-icon:hover {
-      color: black;
-    }
-
-    .third-col .igx-icon:hover {
-      color: #0375be;
-    }
-
-    .fourth-col .igx-icon:hover {
-      color: #e41c77;
-    }
-  }
-}
-
-.icons-wrapper {
+.wrapper {
     display: flex;
     flex-flow: row wrap;
+    margin: 16px 0;
 }
+
 .icon-sample {
     display: flex;
     flex: 1 0 20%;
@@ -68,6 +18,22 @@ $yellow-color: #ffcd0f;
     height: 44px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 36px;
+}
+
+:host {
+    .igx-icon:hover {
+      color: #0a415c;
+    }
+
+    // @include igx-css-vars($custom-icon-theme);
+
+    /* Using Theme Overrides to provide IE 11 support.
+     * NOTE: Theming using this approach will greatly increase the size
+     * of the output CSS. If you do not plan to target IE 11,
+     * delete this section and use the `igx-css-vars` mixin as shown above.
+    **/
+    ::ng-deep {
+        @include igx-icon($custom-icon-theme);
+    }
 }
 

@@ -150,25 +150,3 @@ npm run build:lib
 In **igniteui-angular-samples**:
 
 - paste the copied `igniteui-angular` folder in the place of its corresponding folder in `node_modules` directory
-
-Or using `npm link`:
-
-In **igniteui-angular** :
-- build the source code with the version/branch you want to test: 
-```
-npm run build:lib
-```
-- navigate to the builded `igniteui-angular` folder, located in the `dist` directory and link it:
-```
-npm link
-```
-
-In **igniteui-angular-samples**:
-- link to `igniteui-angular`:
-```
-npm link igniteui-angular
-```
-**NOTE**: To unlink the sample project use:
-```
-npm unlink igniteui-angular
-```

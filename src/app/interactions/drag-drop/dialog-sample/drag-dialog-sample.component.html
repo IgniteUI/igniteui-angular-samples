@@ -1,22 +1,15 @@
-<button 
-    #dialogButton
-    igxButton="raised" 
-    igxRipple="white" 
-    (click)="openDialog()">Show Dialog</button>
-<div igxToggle
-    igxDrag 
-    #toggleForm="toggle" 
-    class="igx-dialog" 
-    [ghost]="false" 
+<button #dialogButton igxButton="raised" (click)="openDialog()">Show Dialog</button>
+
+<div class="dialog"
+    igxToggle
+    #toggleForm="toggle"
+    igxDrag
+    [ghost]="false"
     [dragTolerance]="0"
     (dragMove)=onDragMove($event)>
-    <igx-icon igxListAction igxDragHandle fontSet="material" class="dialogHandle">drag_indicator</igx-icon>
-    <div class="igx-dialog__window">
-        <div class="dialogContainer">
-            <span igxListLineTitle class="dialog-title">Drag this dialog</span>
-            <span igxListLineSubTitle class="dialog-content">This is just a sample</span>
-        </div>
-    </div>
+    <igx-icon class="dialog__icon" igxDragHandle>drag_indicator</igx-icon>
+    <span class="dialog__title">Draggable Dialog</span>
+    <span class="dialog__content">Grab the handle icon to drag.</span>
 </div>
 
 

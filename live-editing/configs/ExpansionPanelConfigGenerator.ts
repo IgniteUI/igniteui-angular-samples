@@ -19,14 +19,8 @@ import { ExpansionPanelSample4Component
 import { ExpansionPanelSample5Component
 } from "../../src/app/layouts/expansion-panel/expansion-sample-5/expansion-sample-5.component";
 
-import { ExpansionPanelSample6Component
-} from "../../src/app/layouts/expansion-panel/expansion-sample-6/expansion-sample-6.component";
-
-import { ExpansionPanelSample7Component
-} from "../../src/app/layouts/expansion-panel/expansion-sample-7/expansion-sample-7.component";
-
 import { ExpansionPanelStylingComponent
-} from "./../../src/app/layouts/expansion-panel/expansion-styling/expansion-styling.component";
+} from "../../src/app/layouts/expansion-panel/expansion-styling/expansion-styling.component";
 
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -70,10 +64,10 @@ export class ExpansionPanelConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: ExpansionPanelSample4Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxAvatarModule, IgxExpansionPanelModule,
-                    ExpansionPanelSample4Component, IgxGridModule],
+                imports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule,
+                    ExpansionPanelSample4Component],
                 ngDeclarations: [ExpansionPanelSample4Component],
-                ngImports: [IgxIconModule, IgxAvatarModule, IgxExpansionPanelModule, IgxGridModule]
+                ngImports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule]
             }),
             shortenComponentPathBy: "/layouts/expansion-panel/"
         }));
@@ -90,35 +84,12 @@ export class ExpansionPanelConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: ExpansionPanelSample6Component,
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule,
-                    ExpansionPanelSample6Component],
-                ngDeclarations: [ExpansionPanelSample6Component],
-                ngImports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule]
-            }),
-            shortenComponentPathBy: "/layouts/expansion-panel/"
-        }));
-
-        configs.push(new Config({
             component: ExpansionPanelStylingComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule,
+                imports: [IgxIconModule, IgxButtonModule, IgxExpansionPanelModule, IgxInputGroupModule,
                     ExpansionPanelStylingComponent],
                 ngDeclarations: [ExpansionPanelStylingComponent],
-                ngImports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule]
-            }),
-            shortenComponentPathBy: "/layouts/expansion-panel/"
-        }));
-
-        configs.push(new Config({
-            component: ExpansionPanelSample7Component,
-            additionalFiles: ["/src/app/layouts/expansion-panel/expansion-sample-7/weather-data.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxCardModule, IgxExpansionPanelModule, IgxButtonModule, IgxRippleModule,
-                    ExpansionPanelSample7Component],
-                ngDeclarations: [ExpansionPanelSample7Component],
-                ngImports: [IgxIconModule, IgxExpansionPanelModule, IgxCardModule, IgxButtonModule , IgxRippleModule]
+                ngImports: [IgxIconModule, IgxButtonModule, IgxExpansionPanelModule, IgxInputGroupModule]
             }),
             shortenComponentPathBy: "/layouts/expansion-panel/"
         }));

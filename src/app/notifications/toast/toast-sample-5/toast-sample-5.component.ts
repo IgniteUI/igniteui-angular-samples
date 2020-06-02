@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { IgxToastPosition } from "igniteui-angular";
 
 @Component({
@@ -6,13 +6,9 @@ import { IgxToastPosition } from "igniteui-angular";
   styleUrls: ["./toast-sample-5.component.scss"],
   templateUrl: "./toast-sample-5.component.html"
 })
-export class ToastSample5Component implements OnInit {
-  public toastPosition: IgxToastPosition;
 
-  constructor() { }
-
-  public ngOnInit() {
-  }
+export class ToastSample5Component {
+  public toastPosition: IgxToastPosition = IgxToastPosition.Bottom;
 
   public show(toast) {
     this.toastPosition = IgxToastPosition.Top;

@@ -1,59 +1,22 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-/*BASIC THEMING*/
-
-$dark-navbar: igx-navbar-theme(
-    $text-color: #FFCD0F,
-    $background: #292826,
-    $idle-icon-color: #FFCD0F,
-    $hover-icon-color: gray
+$custom-navbar-theme: igx-navbar-theme(
+    $text-color: #151515,
+    $background: #dedede,
+    $idle-icon-color: #151515,
+    $hover-icon-color: #8c8c8c
 );
 
-/*ENHANCED APPROACHES*/
+// :host {
+//     @include igx-css-vars($custom-navbar-theme);
+// }
 
-// $yellow-color: #FFCD0F;
-// $black-color: #292826;
-// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
-
-/*PALETTE and IGX-COLOR*/
-
-// $dark-navbar: igx-navbar-theme(
-//     $text-color: igx-color($dark-palette, "secondary", 400),
-//     $background: igx-color($dark-palette, "primary", 400),
-//     $idle-icon-color: igx-color($dark-palette, "secondary", 400),
-//     $hover-icon-color: gray
-// );
-
-/*SCHEMAS*/
-
-// $dark-navbar-schema: extend($_dark-navbar,
-//     (
-//         text-color: (
-//             igx-color: ("secondary", 400)
-//         ),
-//         background: (
-//             igx-color: ("primary", 400)
-//         ),
-//         idle-icon-color:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         hover-icon-color: gray
-//     )
-// );
-
-// $custom-dark-schema: extend($dark-schema,(
-//     igx-navbar: $dark-navbar-schema
-// ));
-
-// $dark-navbar: igx-navbar-theme(
-//   $palette: $dark-palette,
-//   $schema: $custom-dark-schema
-// );
-
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
-
-:host {
-     ::ng-deep {
-        @include igx-navbar($dark-navbar);
-    }
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-navbar($custom-navbar-theme);
 }
+
