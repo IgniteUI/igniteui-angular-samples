@@ -3,13 +3,13 @@ pool:
 
 steps:
 
-- script: echo "@infragistics:registry=$(npmRegistry)" >> ~/.npmrc 
+- script: echo "@infragistics:registry=$(npmRegistry)" >> $HOME/.npmrc 
   displayName: 'Npm add registry'
 
-- script: echo "$(igScope):always-auth=true" >> ~/.npmrc
+- script: echo "$(igScope):always-auth=true" >> $HOME/.npmrc
   displayName: 'Npm config'
 
-- script: echo "$(igScope):_auth=$(token)" >> ~/.npmrc
+- script: echo "$(igScope):_auth=$(token)" >> $HOME/.npmrc
   displayName: 'Npm config auth'
 
 - script: npm install
