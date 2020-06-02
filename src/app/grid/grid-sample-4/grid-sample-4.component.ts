@@ -36,7 +36,8 @@ export class GridRemoteVirtualizationSampleComponent {
     public ngAfterViewInit() {
         this.grid.isLoading = true;
 
-        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true, (data) => {
+        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true,
+        (data) => {
             this.grid.totalItemCount = data["@odata.count"];
             this.grid.isLoading = false;
         });
@@ -54,10 +55,17 @@ export class GridRemoteVirtualizationSampleComponent {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
         }
+        let state;
+        if (!reset) {
+            state = {
+                startIndex: this.grid.virtualizationState.startIndex,
+                chunkSize: 20
+            };
+        }
         this._prevRequest = this._remoteService.getData(this.grid.virtualizationState,
             this.grid.sortingExpressions[0], reset, () => {
                 this.cdr.detectChanges();
-            });
+            }, state);
     }
 
     public formatNumber(value: number) {

@@ -35,12 +35,14 @@ export class RemoteServiceVirt {
         return areAllItemsInCache;
     }
 
-    public getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean, cb?: (any) => void): any {
+    public getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean,
+                   cb?: (any) => void, state?: IForOfState): any {
         const startIndex = virtualizationArgs.startIndex;
         const endIndex = virtualizationArgs.chunkSize + startIndex;
+        const requestState = state || virtualizationArgs;
 
         if (resetData) {
-            this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
+            this._http.get(this._buildDataUrl(requestState, sortingArgs)).subscribe((data: any) => {
                 this._cachedData = new Array<any>(data["@odata.count"]).fill({ emptyRec: true });
                 this._updateData(data, startIndex);
                 if (cb) {
@@ -56,10 +58,12 @@ export class RemoteServiceVirt {
             this._data.next(data);
 
             this.debounceRequest(500, () => {
-                this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((reqData: any) => {
+                this._http.get(this._buildDataUrl(requestState, sortingArgs)).subscribe((reqData: any) => {
                     this._updateData(reqData, startIndex);
+                    const returnData = this._cachedData.slice(startIndex, endIndex);
+                    this._data.next(returnData);
                     if (cb) {
-                        cb(reqData);
+                        cb(returnData);
                     }
                 });
             });
