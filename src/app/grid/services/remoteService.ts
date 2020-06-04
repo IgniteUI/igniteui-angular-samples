@@ -27,7 +27,8 @@ export class RemoteServiceVirt {
         const endIndex = virtualizationArgs.chunkSize + startIndex;
         let areAllItemsInCache = true;
         for (let i = startIndex; i < endIndex; i++) {
-            if (this._cachedData[i].emptyRec !== undefined) {
+            // if (this._cachedData[i].emptyRec !== undefined) {
+            if (this._cachedData[i] === null) {
                 areAllItemsInCache = false;
                 break;
             }
@@ -54,8 +55,10 @@ export class RemoteServiceVirt {
 
         if (resetData) {
             this._http.get(this._buildDataUrl(requestState, sortingArgs)).subscribe((data: any) => {
-                this._cachedData = new Array<any>(data["@odata.count"]).fill({ emptyRec: true });
+                // this._cachedData = new Array<any>(data["@odata.count"]).fill({ emptyRec: true });
+                this._cachedData = new Array<any>(data["@odata.count"]).fill(null);
                 this._updateData(data, startIndex);
+                this._data.next(data.value);
                 if (cb) {
                     cb(data);
                 }
@@ -80,7 +83,7 @@ export class RemoteServiceVirt {
     }
 
     private _updateData(data: any, startIndex: number) {
-        this._data.next(data.value);
+        // this._data.next(data.value);
         for (let i = 0; i < data.value.length; i++) {
             this._cachedData[i + startIndex] = data.value[i];
         }
