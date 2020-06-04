@@ -40,6 +40,9 @@ export class GridRemoteVirtualizationSampleComponent {
         (data) => {
             this.grid.totalItemCount = data["@odata.count"];
             this.grid.isLoading = false;
+        }, {
+            startIndex: this.grid.virtualizationState.startIndex,
+            chunkSize: 20
         });
     }
 

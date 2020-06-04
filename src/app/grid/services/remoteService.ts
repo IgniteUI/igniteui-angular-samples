@@ -65,6 +65,7 @@ export class RemoteServiceVirt {
                 this._http.get(this._buildDataUrl(requestState, sortingArgs)).subscribe((reqData: any) => {
                     this._updateData(reqData, startIndex);
                     const returnData = this._cachedData.slice(startIndex, endIndex);
+                    this._data.next(this._cachedData.slice(virtualizationArgs.startIndex, virtualizationArgs.chunkSize + virtualizationArgs.startIndex));
                     if (cb) {
                         cb(returnData);
                     }
