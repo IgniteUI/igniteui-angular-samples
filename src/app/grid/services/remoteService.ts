@@ -16,7 +16,6 @@ export class RemoteServiceVirt {
     public data: Observable<any[]>;
     private _data: BehaviorSubject<any[]>;
     private _cachedData: any[];
-    public grid:any;
 
     constructor(private _http: HttpClient) {
         this._data = new BehaviorSubject([]);
@@ -35,6 +34,17 @@ export class RemoteServiceVirt {
         }
         return areAllItemsInCache;
     }
+
+    public getDataFromCache(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean,
+        cb?: (any) => void, state?: IForOfState) {
+            const startIndex = virtualizationArgs.startIndex;
+            const endIndex = virtualizationArgs.chunkSize + startIndex;
+            const data = this._cachedData.slice(startIndex, endIndex);
+            this._data.next(data);
+            if (cb) {
+                cb(data);
+            }
+        }
 
     public getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean,
                    cb?: (any) => void, state?: IForOfState): any {
@@ -58,30 +68,15 @@ export class RemoteServiceVirt {
             const data = this._cachedData.slice(startIndex, endIndex);
             this._data.next(data);
 
-            this.debounceRequest(500, () => {
                 this._http.get(this._buildDataUrl(requestState, sortingArgs)).subscribe((reqData: any) => {
                     this._updateData(reqData, startIndex);
-                    if (this.grid.virtualizationState.startIndex === startIndex) {
                         const returnData = this._cachedData.slice(startIndex, endIndex);
                         this._data.next(returnData);
                         if (cb) {
                             cb(returnData);
                         }
-                    }                    
                 });
-            });
-        } else {
-            const data = this._cachedData.slice(startIndex, endIndex);
-            this._data.next(data);
-            if (cb) {
-                cb(data);
-            }
         }
-    }
-
-    private debounceRequest(ms, cb) {
-        const promise = new Promise((res, rej) => setTimeout(res, ms));
-        promise.then(x => cb());
     }
 
     private _updateData(data: any, startIndex: number) {
