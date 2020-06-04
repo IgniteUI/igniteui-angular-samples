@@ -16,6 +16,7 @@ export class RemoteServiceVirt {
     public data: Observable<any[]>;
     private _data: BehaviorSubject<any[]>;
     private _cachedData: any[];
+    public grid:any;
 
     constructor(private _http: HttpClient) {
         this._data = new BehaviorSubject([]);
@@ -60,11 +61,13 @@ export class RemoteServiceVirt {
             this.debounceRequest(500, () => {
                 this._http.get(this._buildDataUrl(requestState, sortingArgs)).subscribe((reqData: any) => {
                     this._updateData(reqData, startIndex);
-                    const returnData = this._cachedData.slice(startIndex, endIndex);
-                    this._data.next(returnData);
-                    if (cb) {
-                        cb(returnData);
-                    }
+                    if (this.grid.virtualizationState.startIndex === startIndex) {
+                        const returnData = this._cachedData.slice(startIndex, endIndex);
+                        this._data.next(returnData);
+                        if (cb) {
+                            cb(returnData);
+                        }
+                    }                    
                 });
             });
         } else {

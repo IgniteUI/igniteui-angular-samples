@@ -35,15 +35,12 @@ export class GridRemoteVirtualizationSampleComponent {
 
     public ngAfterViewInit() {
         this.grid.isLoading = true;
+        this._remoteService.grid = this.grid;
 
         this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true,
         (data) => {
             this.grid.totalItemCount = data["@odata.count"];
             this.grid.isLoading = false;
-        });
-
-        this.grid.onDataPreLoad.pipe(debounceTime(500)).subscribe(() => {
-            this.processData(false);
         });
     }
 
