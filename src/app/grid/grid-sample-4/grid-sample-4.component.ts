@@ -41,6 +41,17 @@ export class GridRemoteVirtualizationSampleComponent {
             this.grid.totalItemCount = data["@odata.count"];
             this.grid.isLoading = false;
         });
+
+        this.grid.onDataPreLoad.pipe().subscribe(() => {
+            this._remoteService.getDataFromCache(this.grid.virtualizationState,
+                this.grid.sortingExpressions[0], false, () => {
+                    this.cdr.detectChanges();
+                });
+        });
+
+        this.grid.onDataPreLoad.pipe(debounceTime(500)).subscribe(() => {
+            this.processData(false);
+        });
     }
 
     public handlePreLoad() {

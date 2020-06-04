@@ -36,6 +36,17 @@ export class RemoteServiceVirt {
         return areAllItemsInCache;
     }
 
+    public getDataFromCache(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean,
+                            cb?: (any) => void, state?: IForOfState) {
+            const startIndex = virtualizationArgs.startIndex;
+            const endIndex = virtualizationArgs.chunkSize + startIndex;
+            const data = this._cachedData.slice(startIndex, endIndex);
+            this._data.next(data);
+            if (cb) {
+                cb(data);
+            }
+        }
+
     public getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean,
                    cb?: (any) => void, state?: IForOfState): any {
         const startIndex = virtualizationArgs.startIndex;
@@ -44,7 +55,6 @@ export class RemoteServiceVirt {
 
         if (resetData) {
             this._http.get(this._buildDataUrl(requestState, sortingArgs)).subscribe((data: any) => {
-                // this._cachedData = new Array<any>(data["@odata.count"]).fill({ emptyRec: true });
                 this._cachedData = new Array<any>(data["@odata.count"]).fill(null);
                 this._updateData(data, startIndex);
                 this._data.next(data.value);
@@ -57,45 +67,21 @@ export class RemoteServiceVirt {
         }
 
         if (!this.hasItemsInCache(virtualizationArgs)) {
-            this.polluteData(requestState);
             const data = this._cachedData.slice(startIndex, endIndex);
             this._data.next(data);
 
-            this.debounceRequest(500, () => {
-                this._http.get(this._buildDataUrl(requestState, sortingArgs)).subscribe((reqData: any) => {
-                    this._updateData(reqData, startIndex);
-                    const returnData = this._cachedData.slice(startIndex, endIndex);
-                    if (cb) {
-                        cb(returnData);
-                    }
-                });
+            this._http.get(this._buildDataUrl(requestState, sortingArgs)).subscribe((reqData: any) => {
+                this._updateData(reqData, startIndex);
+                const returnData = this._cachedData.slice(startIndex, endIndex);
+                this._data.next(returnData);
+                if (cb) {
+                    cb(returnData);
+                }
             });
-        } else {
-            const data = this._cachedData.slice(startIndex, endIndex);
-            this._data.next(data);
-            if (cb) {
-                cb(data);
-            }
         }
-    }
-
-    private polluteData(virtualizationArgs) {
-        const startIndex = virtualizationArgs.startIndex;
-        const endIndex = virtualizationArgs.chunkSize + startIndex;
-        for (let i = startIndex; i < endIndex; i++) {
-            if (this._cachedData[i] === null) {
-                this._cachedData[i] = { emptyRec: true };
-            }
-        }
-    }
-
-    private debounceRequest(ms, cb) {
-        const promise = new Promise((res, rej) => setTimeout(res, ms));
-        promise.then(x => cb());
     }
 
     private _updateData(data: any, startIndex: number) {
-        // this._data.next(data.value);
         for (let i = 0; i < data.value.length; i++) {
             this._cachedData[i + startIndex] = data.value[i];
         }
