@@ -29,8 +29,13 @@ $dark-drop-down-theme: igx-drop-down-theme(
     $selected-item-background: #FFCD0F,
     $selected-item-text-color:  #292826,
     $focused-item-background: #FFCD0F,
-    $focused-item-text-color:  #292826
+    $focused-item-text-color:  #292826,
+    $selected-focus-item-background:  #FFCD0F,
+    $selected-focus-item-text-color:  #292826,
+    $selected-hover-item-background: #FFCD0F,
+    $selected-hover-item-text-color:  #292826
 );
+
 /*ENHANCED APPROACHES*/
 
 // $yellow-color: #FFCD0F;
@@ -129,13 +134,13 @@ $dark-drop-down-theme: igx-drop-down-theme(
 :host {
      ::ng-deep {
         @include igx-grid($custom-grid);
+        @include igx-drop-down($dark-drop-down-theme);
         .igx-grid__filtering-row {
             @include igx-button($dark-button);
             @include igx-input-group($dark-input-group);
             .igx-input-group__input::placeholder {
                 color: #FFCD0F;
             }
-            @include igx-drop-down($dark-drop-down-theme);
         }
     }
 }
