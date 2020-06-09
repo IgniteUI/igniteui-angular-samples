@@ -3,10 +3,10 @@
 /*BASIC THEMING*/
 
 $custom-column-hiding-theme: igx-column-hiding-theme(
-    $background-color: steelblue,
-    $title-color: gold
+    $background-color:#FFCD0F,
+    $title-color: #292826
 );
-$custom-button: igx-button-theme($flat-text-color: gold, $disabled-color: black);
+$custom-button: igx-button-theme($flat-text-color: black, $disabled-color: gray);
 
 /*ENHANCED APPROACHES*/
 

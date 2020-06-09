@@ -4,11 +4,19 @@
 
 $dark-paginator: igx-paginator-theme( $text-color: #F4D45C, $background-color: #575757, $border-color: #292826);
 $dark-button: igx-button-theme( $icon-color: #FFCD0F, $icon-hover-color: #292826, $icon-hover-background: #FFCD0F, $icon-focus-color: #292826, $icon-focus-background: #FFCD0F, $disabled-color: #16130C);
-
+$dark-drop-down-theme: igx-drop-down-theme(
+    $background-color:  #292826,
+    $item-text-color:  #FFCD0F,
+    $selected-item-background: #FFCD0F,
+    $selected-item-text-color:  #292826,
+    $focused-item-background: #FFCD0F,
+    $focused-item-text-color:  #292826
+);
 /*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 
 :host {
      ::ng-deep {
+        @include igx-drop-down($dark-drop-down-theme);
         @include igx-paginator($dark-paginator);
         .igx-paginator__pager {
             @include igx-button($dark-button);

@@ -23,6 +23,14 @@ $dark-button: igx-button-theme(
     $flat-hover-text-color: #FFCD0F
 );
 
+$dark-drop-down-theme: igx-drop-down-theme(
+    $background-color:  #292826,
+    $item-text-color:  #FFCD0F,
+    $selected-item-background: #FFCD0F,
+    $selected-item-text-color:  #292826,
+    $focused-item-background: #FFCD0F,
+    $focused-item-text-color:  #292826
+);
 /*ENHANCED APPROACHES*/
 
 // $yellow-color: #FFCD0F;
@@ -127,6 +135,7 @@ $dark-button: igx-button-theme(
             .igx-input-group__input::placeholder {
                 color: #FFCD0F;
             }
+            @include igx-drop-down($dark-drop-down-theme);
         }
     }
 }
