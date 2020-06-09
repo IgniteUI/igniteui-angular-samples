@@ -1,108 +1,44 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-/*ELEVATIONS*/
-
-$color-1: rgb(119, 119, 119);
-$color-2: #1c83e4;
-$color-3: rgb(16, 4, 51);
-
-$elevations-color: igx-elevations($color-1 , $color-2, $color-3);
-
-/*BASIC THEMING*/
-
-$my-dialog-theme: igx-dialog-theme(
-    $background: #000000,
-    $title-color: #1c83e4,
-    $message-color: #ffffff,
-    $border-radius: .3,
-    $shadow: igx-elevation($elevations-color, 14)
-);
-
-/*ENHANCED APPROACHES*/
-
-// $black-color: #000000;
-// $light-blue-color: #1c83e4;
-// $white-color: #ffffff;
-
-/*PALETTE*/
-
-// $custom-palette: igx-palette(
-//     $primary: $black-color,
-//     $secondary: $light-blue-color,
-//     $info: $white-color
-// );
-
-// $my-dialog-theme: igx-dialog-theme(
-//     $background: igx-color($custom-palette, "primary", 500),
-//     $title-color: igx-color($custom-palette, "secondary", 500),
-//     $message-color: igx-color($custom-palette, "info", 500),
-//     $border-radius: .3,
-//     $shadow: igx-elevation($elevations-color, 14)
-// );
-
-/*SCHEMAS*/
-
-// $custom-dialog-schema: extend($_light-dialog,
-//     (
-//         background: igx-color($custom-palette, "primary", 500),
-//         title-color: igx-color($custom-palette, "secondary", 500),
-//         message-color: igx-color($custom-palette, "info", 500),
-//         border-radius: .3,
-//         shadow: igx-elevation($elevations-color, 14)
-//     )
-// );
-
-// $my-custom-schema: extend($light-schema, 
-//     (
-//         igx-dialog: $custom-dialog-schema
-//     )
-// );
-
-/*THEME*/
-
-// $my-dialog-theme: igx-dialog-theme(
-//   $palette: $custom-palette,
-//   $schema: $my-custom-schema
-// );
-
-$margin:  8px 8px 8px 0px;
-$padding: rem(24px) rem(24px) rem(12px) rem(24px);
-$actions-height: 52px;
-
 .dialog-container{
-    display: flex; flex-direction: row;
+    display: flex;
     margin-left: 24px;
 }
 
 igx-icon {
-    margin: $margin;
+    margin-right: 8px;
 }
 
-.dialog-title{
-    padding: $padding;
-    margin: $margin; 
-}
-
-.dialog-actions {
-    justify-content: flex-end;
-    align-items: center;
-    height: $actions-height;
-
-    [igxButton] {
-        margin: $margin;
-    }
-}
+$my-dialog-theme: igx-dialog-theme(
+    $background: #011627,
+    $title-color:  #ECAA53,
+    $message-color:  #FEFEFE,
+    $border-radius: .3,
+);
 
 $dark-button: igx-button-theme(
-    $raised-background: #1c83e4,
-    $raised-text-color: black,
+    $raised-background: #ECAA53,
+    $raised-text-color: #011627,
 );
 
 :host {
     display: block;
-    padding: 0 16px;
+    padding: 16px;
+
+    // @include igx-css-vars($my-dialog-theme);
+
+    // .dialog-container {
+    //     @include igx-css-vars($dark-button);
+    // }
+
+    /* Using Theme Overrides to provide IE 11 support.
+     * NOTE: Theming using this approach will greatly increase the size
+     * of the output CSS. If you do not plan to target IE 11,
+     * delete this section and use the `igx-css-vars` mixin as shown above.
+    **/
     ::ng-deep {
         @include igx-dialog($my-dialog-theme);
+
         .dialog-container {
             @include igx-button($dark-button);
         }

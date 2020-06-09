@@ -5,6 +5,4 @@ import { Component } from "@angular/core";
   styleUrls: ["./calendar-styling-sample.component.scss"],
   templateUrl: "./calendar-styling-sample.component.html"
 })
-export class CalendarStylingSample {
-  constructor() { }
-}
+export class CalendarStylingSample { }

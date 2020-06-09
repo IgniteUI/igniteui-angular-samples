@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxBannerComponent, IgxToastComponent, slideInLeft, slideOutRight } from "igniteui-angular";
+import { IgxBannerComponent, IgxToastComponent, IgxToastPosition, slideInLeft, slideOutRight } from "igniteui-angular";
 import { Subject } from "rxjs";
 
 @Component({
     selector: "banner-styling",
-    styleUrls: ["banner-styling.component.scss"],
+    styleUrls: ["banner-styling.component.scss", "../banner-samples.scss"],
     templateUrl: "banner-styling.component.html"
 })
 
@@ -14,6 +14,7 @@ export class BannerStylingComponent implements OnInit {
     public contentWidth = "384px";
     public imageUrls = ["assets/images/card/media/the_red_ice_forest.jpg",
         "assets/images/card/media/yosemite.jpg"];
+    public toastPosition: IgxToastPosition.Middle;
     public animationSettings = {
         closeAnimation: slideOutRight,
         openAnimation: slideInLeft
@@ -32,6 +33,7 @@ export class BannerStylingComponent implements OnInit {
     public showToast() {
         this.eventToast.hide();
         this.eventToast.message = `Wifi is now ${this.wifiState ? "on" : "off"}`;
+        this.toastPosition = IgxToastPosition.Middle;
         this.eventToast.show();
     }
 

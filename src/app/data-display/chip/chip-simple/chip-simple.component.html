@@ -1,0 +1,12 @@
+<div class="sample-container">
+    <igx-chip
+    *ngFor="let chip of chipList"
+    [id]="chip.id"
+    [selectable]="true"
+    [removable]="true"
+    (onRemove)="chipRemoved($event)"
+    >
+        <igx-icon igxPrefix>{{chip.icon}}</igx-icon>
+        {{chip.text}}
+    </igx-chip>
+</div>

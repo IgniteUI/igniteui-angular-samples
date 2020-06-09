@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
     selector: "app-monthpicker-sample-3",
@@ -7,8 +7,7 @@ import { Component, ViewChild } from "@angular/core";
 })
 export class MonthpickerSample3Component {
     public formatOptions = {
-        month: "long",
-        year: "numeric"
+        month: "long"
     };
 
     public date = new Date();

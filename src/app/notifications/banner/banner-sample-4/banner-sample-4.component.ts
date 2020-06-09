@@ -9,9 +9,7 @@ import { IgxBannerComponent } from "igniteui-angular";
 export class BannerSample4Component implements OnInit {
   public automaticReplies = true;
   public automaticReplyText = `Dear Sender,
-
-I am currently OOO with limited access to e-mails.
-
+I am currently out of the office with limited access to e-mails.
 I will respond to your as soon as I can.
 For urgent matters, please contact qually-t@example.com;
 

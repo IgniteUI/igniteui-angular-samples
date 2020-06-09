@@ -1,22 +1,18 @@
-$margin:  8px 8px 8px 0px;
-$actions-height: 52px;
-
 .date-picker-wrapper {
     padding: 1rem;
     overflow: hidden;
-}
-
-.container{
-    display: flex; flex-direction: row;
-    margin-left: 24px;
+    max-width: 600px;
 }
 
 .action-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-left: 24px;
     justify-content: flex-end;
     align-items: center;
-    height: $actions-height;
+    height: 52px;
 
     [igxButton] {
-        margin: $margin;
+        margin: 8px 8px 8px 0px;
     }
 }

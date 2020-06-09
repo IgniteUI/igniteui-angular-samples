@@ -6,11 +6,10 @@
 .button-sample {
     display: flex;
     flex: 1 0 30%;
-    margin-bottom: 36px;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-evenly;
 }
 
 .density-chooser {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }

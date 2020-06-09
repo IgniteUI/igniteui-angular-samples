@@ -1,0 +1,16 @@
+<div class="datetime-wrapper">
+    <igx-input-group>
+        <input igxInput #dateEditor="igxDateTimeEditor" type="text" [igxDateTimeEditor]="'dd/MM/yyyy'" [(ngModel)]="date">
+        <igx-suffix>
+            <igx-icon (click)="dateEditor.increment(datePart.Year)">keyboard_arrow_up</igx-icon>
+            <igx-icon (click)="dateEditor.decrement(datePart.Year)">keyboard_arrow_down</igx-icon>
+        </igx-suffix>
+    </igx-input-group>
+    <igx-input-group>
+    <input igxInput #timeEditor="igxDateTimeEditor" type="text" [igxDateTimeEditor]="'HH:mm tt'" [(ngModel)]="date">
+    <igx-suffix>
+        <igx-icon (click)="timeEditor.increment(datePart.Minutes)">keyboard_arrow_up</igx-icon>
+        <igx-icon (click)="timeEditor.decrement(datePart.Minutes)">keyboard_arrow_down</igx-icon>
+    </igx-suffix>
+    </igx-input-group>
+<div>

@@ -1,0 +1,224 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '~igniteui-dockmanager/dist/collection/styles/igc.themes.css';
+
+:host {
+  width: 100%;
+  overflow-y: auto;
+}
+
+@mixin scrollbar($scrollbar-width, $scrollbar-height) {
+    $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
+    $scrollbar-thumb: hexrgba(igx-color($default-palette, 'grays', 400));
+
+    ::-webkit-scrollbar {
+        width: $scrollbar-width;
+        height: $scrollbar-height;
+        background-color: $scrollbar-track;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $scrollbar-thumb;
+    }
+}
+
+.grid-chart-contextmenu-wrapper {
+    width: 100%;
+    height: 95%;
+}
+
+.dock-m-position {
+    width: 100vw;
+    height: 100vh;
+    padding: 0px 8px 8px 8px;
+    --igc-pane-content-background: #fff;
+}
+
+.chart-types-container {
+    overflow-y: auto; 
+    height: 100%; 
+    width: 100%;
+    padding-left: 15px;
+}
+
+.selection-area {
+
+    @include scrollbar(6px, 6px);
+    width: 100%;
+    height: 90%;
+    display: inline-flex;
+
+    .chart-area {
+        margin-top: 1rem;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+
+}
+$custom-badge-theme: igx-badge-theme(
+    $border-color: white,
+    $border-width: 2px,
+    $icon-color: white,
+    $text-color: black,
+    $background-color: black,
+    $border-radius: 50%
+    );
+:host ::ng-deep {
+    .selected {
+        igx-badge{
+            &{
+                @include igx-badge($custom-badge-theme);
+            }
+    
+            position: absolute;
+            bottom: 0;
+            left: 18px;
+        }
+    }
+
+    .wrapper {
+        padding: 3px;
+    
+        .types-section {
+    
+            display: flex;
+            flex-wrap: wrap;
+    
+            button {
+                margin-right: 4px;
+                margin-top: 4px;
+            }
+        }
+    
+        .igx-divider {
+            margin-top: 5px !important;
+            background: black !important;
+            width: 95% !important;
+        }
+    }
+    .grid-chart-contextmenu-wrapper {
+        igx-grid {
+            @include scrollbar(16px, 16px);
+        }
+    }
+
+    .analytics-btn {
+        @include igx-button(igx-button-theme($palette: $fluent-excel-palette,
+                $icon-color: #fff,
+                $icon-background: #335e3b,
+                $icon-hover-background: #459a55,
+                $icon-border-radius: 0));
+        z-index: 9;
+        position: absolute;
+    }
+
+    .ig-chart-legend-items-list {
+        height: 20%;
+        display: inline-flex;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .igx-grid__grouparea {
+        max-height: 100%;
+        height: auto;
+    }
+
+    igx-tabs-group {
+        @include scrollbar(10px, 10px);
+    }
+
+}
+
+.selected, .disabled {
+    pointer-events: none;
+}
+
+.disabled{
+    opacity: .5;
+}
+
+
+.disableButton {
+    opacity: .3;
+    pointer-events: none;
+}
+
+$font-family: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
+.tab-options-wrapper{
+    @include scrollbar(6px, 6px);
+
+    display: flex;
+    flex-flow: column;
+    max-height: 110px;
+    max-width: 310px;
+    .header{
+        font-size: 0.7rem;
+        display: flex;
+        width: 100%;
+        padding: 0 0.2rem 0 0.4rem;
+        font-weight: 650;
+        border-bottom: 1px solid #BDBDBD;
+        align-self: center;
+        font-family: $font-family;
+        letter-spacing: 1.7px;
+        color: rgba(0, 0, 0, 0.87);
+    }
+}
+
+.tab-option {
+    padding: .5rem 0.4rem 0.4rem 0.4rem;
+    height: 110px;
+    width: 310px;
+    display: inline-flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    align-content: center;
+}
+
+.action {
+    cursor: pointer;
+
+    opacity: .62;
+    &.selected--condition{
+        pointer-events: none;
+        opacity: 1;
+    }
+
+    .name {
+        font-size: .9rem;
+        font-weight: 500;
+        text-align: center;
+        font-family: $font-family;
+    }
+}
+
+.clear-action{
+    cursor: pointer;
+    display: flex;
+    flex-flow: column;
+    margin-left: auto;
+    justify-content: center;
+}
+
+
+.btn {
+
+    &.condition {
+        padding-right: 16px;
+    }
+
+    display: inline-flex;
+    flex-flow: column;
+    align-items: center;
+
+    img{
+        pointer-events: none;
+    }
+
+    span {
+        pointer-events: none;
+    }
+}

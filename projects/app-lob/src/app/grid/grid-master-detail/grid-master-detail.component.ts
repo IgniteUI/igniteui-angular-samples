@@ -19,6 +19,15 @@ export class GridMasterDetailSampleComponent {
         this.data = data;
     }
 
+    public getHeight(selectedIndex) {
+        switch (selectedIndex) {
+            case 0: return 250;
+            case 1: return 320;
+            case 2: return 400;
+            default: return 250;
+        }
+    }
+
     public formatPieLabel = (args) => {
         return args.item.Value + " " + args.item.Label;
     }

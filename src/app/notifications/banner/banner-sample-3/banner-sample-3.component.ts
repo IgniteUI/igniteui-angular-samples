@@ -1,16 +1,14 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxBannerComponent, IgxToastComponent, slideInLeft, slideOutRight } from "igniteui-angular";
-import { Subject } from "rxjs";
+import { IgxBannerComponent, slideInLeft, slideOutRight } from "igniteui-angular";
 
 @Component({
     selector: "banner-sample-3",
-    styleUrls: ["banner-sample-3.component.scss"],
+    styleUrls: ["../banner-samples.scss"],
     templateUrl: "banner-sample-3.component.html"
 })
 
 export class BannerSample3Component implements OnInit {
     @ViewChild(IgxBannerComponent, { static: true }) public banner: IgxBannerComponent;
-    @ViewChild(IgxToastComponent, { static: true }) public eventToast: IgxToastComponent;
     public contentWidth = "384px";
     public imageUrls = ["assets/images/card/media/the_red_ice_forest.jpg",
         "assets/images/card/media/yosemite.jpg"];
@@ -18,38 +16,8 @@ export class BannerSample3Component implements OnInit {
         closeAnimation: slideOutRight,
         openAnimation: slideInLeft
     };
-    public onNetworkStateChange = new Subject();
-    private _wifiState = false;
-
-    public get wifiState(): boolean {
-        return this._wifiState;
-    }
-    public set wifiState(v: boolean) {
-        this._wifiState = v;
-        this.onNetworkStateChange.next();
-    }
-
-    public showToast() {
-        this.eventToast.hide();
-        this.eventToast.message = `Wifi is now ${this.wifiState ? "on" : "off"}`;
-        this.eventToast.show();
-    }
 
     public ngOnInit() {
         this.banner.open();
-        this.onNetworkStateChange.subscribe(() => this.refreshBanner());
-    }
-
-    public ngOnDestroy(): void {
-        this.onNetworkStateChange.complete();
-    }
-
-    public refreshBanner() {
-        if (!this.wifiState) {
-            this.banner.open();
-        } else {
-            this.banner.close();
-        }
-        this.showToast();
     }
 }

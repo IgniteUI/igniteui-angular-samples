@@ -1,0 +1,29 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+.grid-wrapper {
+    padding: 10px;
+}
+
+$custom-grid-theme: igx-grid-theme(
+    $row-selected-background: #011627,
+    $row-selected-text-color: #ECAA53,
+    $row-selected-hover-background: #011627,
+    $header-selected-text-color: #ECAA53,
+    $header-selected-background: #011627,
+    $expand-icon-color: #ECAA53,
+    $expand-icon-hover-color: rgb(182, 128, 57),
+);
+
+// :host {
+//     @include igx-css-vars($custom-grid-theme);
+// }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-grid($custom-grid-theme);
+}
+
