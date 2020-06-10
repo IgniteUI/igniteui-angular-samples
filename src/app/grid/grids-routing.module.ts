@@ -58,9 +58,10 @@ import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reor
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
+import { GridRemoteVirtualizationAddRowSampleComponent } from "./grid-sample-5/grid-sample-5.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
 import { PinningToolbarSampleComponent } from "./grid-sample-pinning/grid-toolbar-pinning.component";
-import { GridSelectionTemplateExcelComponent} from "./grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
+import { GridSelectionTemplateExcelComponent } from "./grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
 import { GridSelectionTemplateNumbersComponent } from "./grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "./grid-save-state/about.component";
@@ -84,6 +85,7 @@ import { GridActionStripSampleComponent } from "./grid-action-strip/grid-action-
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
+import { RemotePagingBatchEditingComponent } from "./grid-batchEditing-remotePaging/batch-editing-remote-paging.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
 import {
@@ -177,7 +179,7 @@ export const gridsRoutes: Routes = [
     },
     {
         component: GridMultipleRowDragComponent,
-        data:  gridsRoutesData["grid-multiple-row-drag"],
+        data: gridsRoutesData["grid-multiple-row-drag"],
         path: "grid-multiple-row-drag"
     },
     {
@@ -571,6 +573,11 @@ export const gridsRoutes: Routes = [
         path: "column-selection-styles"
     },
     {
+        component: GridRemoteVirtualizationAddRowSampleComponent,
+        data: gridsRoutesData["grid-sample-5"],
+        path: "grid-sample-5"
+    },
+    {
         component: GridKeyboardnavGuide,
         data: gridsRoutesData["grid-keybarodnav-guide"],
         path: "grid-keyboardnav-guide"
@@ -579,7 +586,11 @@ export const gridsRoutes: Routes = [
         component: RemotePagingDefaultTemplateComponent,
         data: gridsRoutesData["remote-paging-default-template"],
         path: "remote-paging-default-template"
-
+    },
+    {
+        component: RemotePagingBatchEditingComponent,
+        data: gridsRoutesData["remote-paging-batch-editing"],
+        path: "remote-paging-batch-editing"
     }
 ];
 
