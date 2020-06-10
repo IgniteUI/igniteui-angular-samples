@@ -18,10 +18,10 @@
         <igx-column field="GrammyAwards" header="Grammy Awards" [filterable]='true' dataType="number"></igx-column>
 
         <igx-row-island [key]="'Albums'" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter">
-            <ng-template igxExcelStyleSorting>Sorting Template</ng-template>
-            <ng-template igxExcelStyleHiding>Hiding Template</ng-template>
-            <ng-template igxExcelStyleMoving>Moving Template</ng-template>
-            <ng-template igxExcelStylePinning>Pinning Template</ng-template>
+            <ng-template igxExcelStyleSorting>Template area [Sorting]</ng-template>
+            <ng-template igxExcelStyleHiding>Template area [Hiding]</ng-template>
+            <ng-template igxExcelStyleMoving>Template area [Moving]</ng-template>
+            <ng-template igxExcelStylePinning>Template area [Pinning]</ng-template>
             <igx-column field="Album" [filterable]='true'></igx-column>
             <igx-column field="LaunchDate" header="Launch Date" [filterable]='true' [dataType]="'date'"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review" [filterable]='true' dataType="number"></igx-column>
