@@ -6,10 +6,10 @@ steps:
 - script: npm config set @infragistics:registry $(npmRegistry)
   displayName: 'Npm add registry'
 
-- script: npm config set always-auth=true --scope:@infragistics
+- script: npm config set $(igScope):always-auth=true
   displayName: 'Npm config'
 
-- script: npm config set _auth=$(token) --scope:@infragistics
+- script: npm config set $(igScope):_auth=$(token)
   displayName: 'Npm config auth'
 
 - script: npm ci
