@@ -1,60 +1,46 @@
-// Browser samples related styling
 .control-wrapper {
-   margin:10px;
+    margin: 10px;
 }
 
 .drop-down {
-    width:180px;
+    width: 220px;
 }
 
 .drop-down__scroll-container {
     max-height: 280px;
 }
 
-// Using Ignite UI for Angular Theming engine related styling
-// Import the IgniteUI themes library first
-@import '~igniteui-angular/lib/core/styles/themes/index';
-$my-primary-color:#FFC314;
-$my-secondary-color: #7344df;
-$my-info-color: #ffffff;
-
-$my-color-palette: igx-palette(
-    $primary: $my-primary-color,
-    $secondary: $my-secondary-color,
-    $info: $my-info-color
-);
+@import "~igniteui-angular/lib/core/styles/themes/index";
 
 $custom-drop-down-theme: igx-drop-down-theme(
-    $background-color: igx-color($my-color-palette, "secondary", 100),
-    $header-text-color: igx-color($my-color-palette, "secondary", 600),
-    $item-text-color: igx-color($my-info-color, "info"),
-
-    $selected-item-background: igx-color($my-color-palette, "secondary", 400),
-    $selected-item-text-color: igx-color($my-color-palette, "info"),
-    $selected-hover-item-background: igx-color($my-color-palette, "secondary", 400),
-    $selected-hover-item-text-color: igx-color($my-color-palette, "info"),
-    $selected-focus-item-background: igx-color($my-color-palette, "secondary", 400),
-    $selected-focus-item-text-color: igx-color($my-color-palette, "info"),
-
-    $focused-item-background: igx-color($my-color-palette, "secondary", 300),
-    $focused-item-text-color: igx-color($my-color-palette, "info"),
-
-    $hover-item-background: igx-color($my-color-palette, "info"),
-    $hover-item-text-color: igx-color($my-color-palette, "secondary", 600)
+    $background-color: #fdfdfd,
+    $header-text-color: #345779,
+    $item-text-color: #2dabe8,
+    $selected-item-background: #345779,
+    $selected-item-text-color: #fdfdfd,
+    $selected-hover-item-background: #345779,
+    $selected-hover-item-text-color: #fdfdfd,
+    $selected-focus-item-background: #345779,
+    $selected-focus-item-text-color: #fdfdfd,
+    $hover-item-background: rgba(0, 0, 0, 0.12),
+    $hover-item-text-color: #345779,
 );
 
 $custom-button-theme: igx-button-theme(
-    $palette: $my-color-palette
+    $raised-background: #345779,
+    $raised-text-color: #fdfdfd,
 );
 
-:host {
-    ::ng-deep {
-        @include igx-drop-down($custom-drop-down-theme);
-        @include igx-button($custom-button-theme);
-    }
+// :host {
+//     @include igx-css-vars($custom-drop-down-theme);
+// }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host  ::ng-deep {
+    @include igx-drop-down($custom-drop-down-theme);
+    @include igx-button($custom-button-theme);
 }
-
-
-
-
-

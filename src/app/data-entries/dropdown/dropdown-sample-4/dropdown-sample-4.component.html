@@ -2,7 +2,7 @@
     <igx-input-group #inputGroup [igxToggleAction]="dropDown" class="input-group">
         <input #input class="input"  type="text" igxInput [igxDropDownItemNavigation]="dropDown"
             readonly= "true"
-            placeholder="choose an option"
+            placeholder="Choose an option"
             [value]="dropDown.selectedItem?.value"
             (keydown.ArrowDown)="openDropDown()"/>
 
@@ -12,7 +12,7 @@
     </igx-input-group>
 
     <span>Selected: {{ dropDown.selectedItem?.value }}</span>
-    <igx-drop-down #dropDown [width]="'160px'">
+    <igx-drop-down #dropDown [width]="'180px'">
         <igx-drop-down-item *ngFor="let item of items" [value]="item.field">
             {{ item.field }}
         </igx-drop-down-item>
