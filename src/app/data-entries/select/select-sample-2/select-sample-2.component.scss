@@ -8,3 +8,14 @@
     padding-left: 10px;
     padding-left: 10px;
 }
+
+:host ::ng-deep {
+    .igx-drop-down__item {
+        .igx-drop-down__inner {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding-left: 12px;
+        }
+    }
+}

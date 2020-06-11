@@ -1,5 +1,5 @@
 <div class="header-footer-select-sample">
-    <igx-select>
+    <igx-select [overlaySettings]="{ outlet: element }">
         <label igxLabel>Pick your fruit</label>
         <igx-select-item *ngFor="let fruit of fruits" [value]="fruit.type" [text]="fruit.type"
             [ngSwitch]="fruit.delivery">
