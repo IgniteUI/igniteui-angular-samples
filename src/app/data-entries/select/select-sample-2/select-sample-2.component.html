@@ -2,7 +2,7 @@
     <igx-select [overlaySettings]="{ outlet: element }" #select>
         <label igxLabel>Select With Groups</label>
         <igx-select-item-group *ngFor="let group of greengrocery" [label]="group.label">
-            <igx-select-item *ngFor="let item of group.items" [value]="item.type" [text]="item.type">
+            <igx-select-item *ngFor="let item of group.items" class="select__entry" [value]="item.type" [text]="item.type">
                 {{item.type}}
                 <igx-icon title="Local product" class="icon" color="green" *ngIf="item.origin === 'local';else templateImport">local_shipping</igx-icon>
                 <ng-template #templateImport>

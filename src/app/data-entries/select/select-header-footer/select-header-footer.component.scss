@@ -10,8 +10,8 @@
 }
 
 :host ::ng-deep {
-    .igx-drop-down__item {
-        .igx-drop-down__inner {
+    .select__entry {
+        span {
             display: flex;
             padding: 8px;
             justify-content: space-between;
