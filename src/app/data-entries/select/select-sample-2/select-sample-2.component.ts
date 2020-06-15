@@ -10,7 +10,7 @@ import { IgxSelectComponent } from "igniteui-angular";
 export class SelectSample2Component {
     @ViewChild(IgxSelectComponent, { static: true })
     public select: IgxSelectComponent;
-    
+
     public greengrocery: Array<{
         label: string,
         items: Array<{ type: string, origin: string }>

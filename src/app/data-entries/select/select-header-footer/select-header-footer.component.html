@@ -1,7 +1,7 @@
 <div class="header-footer-select-sample">
     <igx-select [overlaySettings]="{ outlet: element }">
         <label igxLabel>Pick your fruit</label>
-        <igx-select-item *ngFor="let fruit of fruits" [value]="fruit.type" [text]="fruit.type"
+        <igx-select-item *ngFor="let fruit of fruits" [value]="fruit.type" class="select__entry" [text]="fruit.type"
             [ngSwitch]="fruit.delivery">
             {{fruit.type}}
             <igx-icon *ngSwitchCase="'flight'">flight</igx-icon>
