@@ -29,8 +29,15 @@ $custom-checkbox-theme: igx-checkbox-theme(
         padding-top: 15px;
         width: 20%;
 
+        .disabled {
+            opacity: .4;
+        }
         .completed {
             opacity: .7;
+        }
+
+        .active {
+            opacity: 1;
         }
 
         igx-list {
@@ -41,6 +48,7 @@ $custom-checkbox-theme: igx-checkbox-theme(
         }
 
         .empty-list {
+            opacity: 1;
             h6 {
                 padding: 15px;
             }

@@ -1,12 +1,15 @@
-import { animate, state, style, transition, trigger } from "@angular/animations";
+import { animate, state, style, transition, trigger, group } from "@angular/animations";
 import { ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
+    IgxColumnComponent,
+    IgxColumnGroupComponent,
+    IgxGridCellComponent,
     IgxGridComponent,
     IgxListComponent,
-    IgxOverlayService,
     SortingDirection
 } from "igniteui-angular";
+import { IgxGridExpandableCellComponent } from "igniteui-angular/lib/grids/grid/expandable-cell.component";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { DATA } from "../../data/customers";
@@ -17,15 +20,44 @@ enum GridSection {
     FOOTER = "igx-grid__tfoot"
 }
 
+enum ItemAction {
+    Filterable,
+    Sortable,
+    Selectable,
+    Groupable,
+    Collapsible,
+    Expandable,
+    Editable,
+    Always
+}
+
 class Item {
     public title: string;
     public subTitle: string;
-    public completed: boolean;
+    public action: ItemAction;
+    public active = false;
 
-    public constructor(title: string, subTitle: string, completed: boolean) {
+    private _completed: boolean;
+
+    public constructor(title: string, subTitle: string, completed: boolean, itemAction?: ItemAction) {
         this.title = title;
         this.subTitle = subTitle;
         this.completed = completed;
+        this.action = itemAction;
+
+        if (itemAction === ItemAction.Always) {
+            this.active = true;
+        }
+    }
+
+    public set completed(value: boolean) {
+        if (this.active) {
+            this._completed = value;
+        }
+    }
+
+    public get completed() {
+        return this._completed;
     }
 }
 
@@ -54,6 +86,23 @@ class KeyboardHandler {
         return this._section;
     }
 
+    public enableActionItems(action: ItemAction[]) {
+        this.resetCollection();
+        action.forEach(element => {
+            this._collection
+            .filter(e => e.action === element)
+            .map(e => e.active = true);
+        });
+    }
+
+    public resetCollection() {
+        this._collection.forEach(e => {
+            if (e.action !== ItemAction.Always) {
+                e.active = false;
+            }
+        });
+    }
+
     public selectItem(idx: number) {
         this._collection[idx].completed = true;
     }
@@ -64,20 +113,21 @@ class KeyboardHandler {
 }
 
 const theadKeyCombinations = [
-    new Item("space", "select column", false),
-    new Item("ctrl + arrow up/down", "sorts the column asc/desc", false),
-    new Item("shift + alt + arrow left/right", "group/ungroup the active column", false),
-    new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header", false),
-    new Item("ctrl + shift + l", "opens the excel style filtering", false),
-    new Item("alt + l", "opens the advanced filtering", false)
+    new Item("space", "select column", false, ItemAction.Selectable),
+    new Item("ctrl + arrow up/down", "sorts the column asc/desc", false, ItemAction.Sortable),
+    new Item("shift + alt + arrow left/right", "group/ungroup the active column", false, ItemAction.Groupable),
+    new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header",
+        false, ItemAction.Collapsible),
+    new Item("ctrl + shift + l", "opens the excel style filtering", false, ItemAction.Filterable),
+    new Item("alt + l", "opens the advanced filtering", false, ItemAction.Filterable)
 ];
 
 const tbodyKeyCombinations: Item[] = [
-    new Item("enter", "enter in edit mode", false),
-    new Item("alt + arrow left/up", "collapse master datils row", false),
-    new Item("alt + arrow right/down", "expand master datils row", false),
-    new Item("alt + arrow right/left", "expand/collapse the group row", false),
-    new Item("ctrl + Home/End", "navigates to the upper-left/bottom-right cell", false)
+    new Item("enter", "enter in edit mode", false, ItemAction.Editable),
+    new Item("alt + arrow left/up", "collapse master details row", false, ItemAction.Always),
+    new Item("alt + arrow right/down", "expand master details row", false, ItemAction.Always),
+    new Item("alt + arrow right/left", "expand/collapse the group row", false, ItemAction.Expandable),
+    new Item("ctrl + Home/End", "navigates to the upper-left/bottom-right cell", false, ItemAction.Always)
 ];
 
 const summaryCombinations: Item[] = [
@@ -109,7 +159,7 @@ const summaryCombinations: Item[] = [
         trigger("load", [
             transition(":enter", [
                 style({ opacity: 0 }),
-                animate(".3s", style({ opacity: 1 }))
+                animate(".3s", style({ opacity: .4 }))
             ])
         ])
     ]
@@ -129,7 +179,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     private _destroyer = new Subject();
     private _keyboardHandler = new KeyboardHandler([], GridSection.THEAD);
 
-    public constructor(private cdr: ChangeDetectorRef, private _overlay: IgxOverlayService) { }
+    public constructor(private cdr: ChangeDetectorRef) { }
 
     @HostListener("keyup.tab", ["$event"])
     @HostListener("keyup.shift.tab", ["$event"])
@@ -150,6 +200,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
         const gridSection = document.activeElement.className;
         this.changeKeyboardCollection(gridSection);
+        this.switchHeaderCombinations();
     }
 
     public ngOnInit() {
@@ -195,12 +246,18 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         this.grid.onSelection.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 this.handleDOMSelection(args.event);
+                this.switchBodyCombinations(args.cell);
             });
 
         this.listref.onItemClicked.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 args.event.stopPropagation();
             });
+
+    }
+
+    public ngOnDestroy() {
+        this._destroyer.next();
     }
 
     public gridKeydown(evt) {
@@ -226,6 +283,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         }
 
         if (this._keyboardHandler.gridSection === GridSection.THEAD) {
+            this.switchHeaderCombinations();
             if (key === "l" && evt.altKey) {
                 this._keyboardHandler.selectItem(5);
                 return;
@@ -261,11 +319,32 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         }
     }
 
-    public ngOnDestroy() {
-        this._destroyer.next();
+    public switchHeaderCombinations() {
+        if (this._keyboardHandler.gridSection !== GridSection.THEAD) {
+            return;
+        }
+
+        const activeNode = this.grid.navigation.activeNode;
+        const currColumn = this.grid.columnList
+            .find(c => c.visibleIndex === activeNode.column && c.level === activeNode.level);
+
+        const actions = this.extractColumnActions(currColumn);
+        this._keyboardHandler.enableActionItems(actions);
     }
 
-    public expandChange(evt) {
+    public switchBodyCombinations(cell: IgxGridCellComponent | IgxGridExpandableCellComponent) {
+        if (this._keyboardHandler.gridSection !== GridSection.TBODY) {
+            return;
+        }
+        // let groupableRow;
+        // if (cell === null) {
+        //     groupableRow =
+        // }
+        const actions = this.extractCellActions(cell);
+        this._keyboardHandler.enableActionItems(actions);
+    }
+
+    public expandChange() {
         if (!this._keyboardHandler.collection.length) {
             return;
         }
@@ -303,5 +382,39 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
             this._keyboardHandler.selectItem(4);
             this.cdr.detectChanges();
         }
+    }
+
+    public extractColumnActions(col: IgxColumnComponent | IgxColumnGroupComponent) {
+        const res = [];
+        if (col.sortable) {
+            res.push(ItemAction.Sortable);
+        }
+
+        if (col.filterable && col.elementRef.nativeElement.tagName !== "IGX-COLUMN-GROUP") {
+            res.push(ItemAction.Filterable);
+        }
+
+        if (col.collapsible) {
+            res.push(ItemAction.Collapsible);
+        }
+
+        if (col.groupable) {
+            res.push(ItemAction.Groupable);
+        }
+
+        if (col.selectable) {
+            res.push(ItemAction.Selectable);
+        }
+
+        return res;
+    }
+
+    public extractCellActions(cell: IgxGridCellComponent | IgxGridExpandableCellComponent) {
+        const res = [];
+        if (cell.editable) {
+            res.push(ItemAction.Editable);
+        }
+
+        return res;
     }
 }
