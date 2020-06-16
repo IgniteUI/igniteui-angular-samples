@@ -16,7 +16,7 @@ import { PasteHandler} from "./paste-handler.directive";
 
 import { EXCEL_DATA, LOCAL_DATA } from "./data";
 
-import { take, first } from "rxjs/operators";
+import { first, take } from "rxjs/operators";
 
 @Component({
     encapsulation: ViewEncapsulation.None,
