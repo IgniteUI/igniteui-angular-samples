@@ -14,12 +14,13 @@ export class GridRemoteVirtualizationSampleComponent {
     public remoteData: any;
 
     @ViewChild("grid", { static: true }) public grid: IgxGridComponent;
+
     @ViewChild("remoteDataLoadingLarge", { read: TemplateRef, static: true })
-    protected remoteDataLoadingLargeTemplate: TemplateRef<any>;
+    public remoteDataLoadingLargeTemplate: TemplateRef<any>;
     @ViewChild("remoteDataLoadingMedium", { read: TemplateRef, static: true })
-    protected remoteDataLoadingMediumTemplate: TemplateRef<any>;
+    public remoteDataLoadingMediumTemplate: TemplateRef<any>;
     @ViewChild("remoteDataLoadingSmall", { read: TemplateRef, static: true })
-    protected remoteDataLoadingSmallTemplate: TemplateRef<any>;
+    public remoteDataLoadingSmallTemplate: TemplateRef<any>;
 
     private _columnCellCustomTemplates: Map<IgxColumnComponent, TemplateRef<any>>;
     private _isColumnCellTemplateReset: boolean = false;
@@ -39,6 +40,16 @@ export class GridRemoteVirtualizationSampleComponent {
         (data) => {
             this.grid.totalItemCount = data["@odata.count"];
             this.grid.isLoading = false;
+        }, {
+            startIndex: this.grid.virtualizationState.startIndex,
+            chunkSize: 20
+        });
+
+        this.grid.onDataPreLoad.pipe().subscribe(() => {
+            this._remoteService.getDataFromCache(this.grid.virtualizationState,
+                this.grid.sortingExpressions[0], false, () => {
+                    this.cdr.detectChanges();
+                });
         });
 
         this.grid.onDataPreLoad.pipe(debounceTime(500)).subscribe(() => {
@@ -46,32 +57,14 @@ export class GridRemoteVirtualizationSampleComponent {
         });
     }
 
-    public applyLoadingStyles() {
-        if (this.grid.columns.length > 0) {
-            this.grid.columns.forEach((column: IgxColumnComponent) => {
-                if (column.bodyTemplate && !this._isColumnCellTemplateReset) {
-                    this._columnCellCustomTemplates.set(column, column.bodyTemplate);
-                }
-                column.bodyTemplate = this.getDataLoadingTemplate();
-            });
-
-            this._isColumnCellTemplateReset = true;
-        }
-    }
-
     public handlePreLoad() {
-        if (this._remoteService.hasItemsInCache(this.grid.virtualizationState)) {
-            this.processData(false);
-        } else {
-            this.applyLoadingStyles();
-        }
+        this.processData(false);
     }
 
     public processData(reset) {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
         }
-        this.applyLoadingStyles();
         let state;
         if (!reset) {
             state = {
@@ -81,16 +74,6 @@ export class GridRemoteVirtualizationSampleComponent {
         }
         this._prevRequest = this._remoteService.getData(this.grid.virtualizationState,
             this.grid.sortingExpressions[0], reset, () => {
-                if (this._isColumnCellTemplateReset) {
-                    let oldTemplate;
-                    this.grid.columns.forEach((column: IgxColumnComponent) => {
-                        oldTemplate = this._columnCellCustomTemplates.get(column);
-                        column.bodyTemplate = oldTemplate;
-                    });
-                    this._columnCellCustomTemplates.clear();
-                    this._isColumnCellTemplateReset = false;
-                }
-
                 this.cdr.detectChanges();
             }, state);
     }
@@ -109,7 +92,7 @@ export class GridRemoteVirtualizationSampleComponent {
         }
     }
 
-    private getDataLoadingTemplate(): TemplateRef<any> {
+    public getDataLoadingTemplate(): TemplateRef<any> {
         const val = Math.floor(Math.random() * 3) + 1;
 
         switch (val) {
