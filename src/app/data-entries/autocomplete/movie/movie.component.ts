@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Pipe, PipeTransform } from "@angular/core";
 import { ConnectedPositioningStrategy, VerticalAlignment } from "igniteui-angular";
 @Component({
     selector: "movie-availability",
@@ -6,6 +6,8 @@ import { ConnectedPositioningStrategy, VerticalAlignment } from "igniteui-angula
     templateUrl: "./movie.component.html"
 })
 export class MovieComponent {
+    public cinemaSelected;
+
     public settings = {
         positionStrategy: new ConnectedPositioningStrategy({
             closeAnimation: null,
@@ -41,4 +43,11 @@ export class MovieComponent {
                 "Skyway Outdoor Cinema"
         ]}
     ];
+}
+
+@Pipe({ name: "startsWith" })
+export class AutocompletePipeStartsWith implements PipeTransform {
+    public transform(collection: any[], term = "") {
+        return collection.filter((item) => item.toString().toLowerCase().startsWith(term.toString().toLowerCase()));
+    }
 }

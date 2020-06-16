@@ -3,11 +3,12 @@
     <input igxInput name="cinema" type="text"
     [igxAutocomplete]="townsPanel"
     [igxAutocompleteSettings]="settings"
+    [(ngModel)]="cinemaSelected"
     />
 </igx-input-group>
 <igx-drop-down #townsPanel maxHeight="300px">
     <igx-drop-down-item-group *ngFor="let town of towns" [label]="town.name">
-        <igx-drop-down-item *ngFor="let cinema of town.cinemas" [value]="cinema">
+        <igx-drop-down-item *ngFor="let cinema of town.cinemas | startsWith:cinemaSelected" [value]="cinema">
             {{cinema}}
         </igx-drop-down-item>
     </igx-drop-down-item-group>
