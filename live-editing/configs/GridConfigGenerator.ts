@@ -2,18 +2,20 @@ import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { Router, RouterModule } from "@angular/router";
 // tslint:disable:max-line-length
-import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDragDropModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxTooltipModule, IgxActionStripModule } from "igniteui-angular";
+import { IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDragDropModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxTooltipModule } from "igniteui-angular";
 import { IgxCategoryChartModule, IgxLegendModule, IgxPieChartModule, IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
 import { IgxPreventDocumentScrollModule } from "../../src/app/directives/prevent-scroll.directive";
 import { GridColumnGroupSelectionComponent } from "../../src/app/grid/column-group-selection-sample/column-group-selection-sample.component";
 import { GridColumnSelectionComponent } from "../../src/app/grid/column-selection-sample/column-selection-sample.component";
 import { GridColumnSelectionStylesComponent } from "../../src/app/grid/column-selection-styles/column-selection-styles.component";
 import { CustomGridPagingStyleSample } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridActionStripSampleComponent } from '../../src/app/grid/grid-action-strip/grid-action-strip-sample';
 import { GridAdvancedFilteringSampleComponent } from "../../src/app/grid/grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "../../src/app/grid/grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridAllDataSummaryComponent } from "../../src/app/grid/grid-allData-summary/grid-allData-summary.component";
 import { GridBatchEditingSampleComponent } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "../../src/app/grid/grid-batch-editing/grid-transaction.component";
+import { RemotePagingBatchEditingComponent } from "../../src/app/grid/grid-batchEditing-remotePaging/batch-editing-remote-paging.component";
 import { GridCellSelectionComponent } from "../../src/app/grid/grid-cellSelection-sample/grid-cellSelection.component";
 import { GridClipboardSampleComponent } from "../../src/app/grid/grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridCollapsibleColumnGroupsComponent } from "../../src/app/grid/grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
@@ -75,18 +77,20 @@ import { GridDragSampleComponent } from "../../src/app/grid/grid-row-drag/grid-r
 import { PlanetComponent } from "../../src/app/grid/grid-row-drag/planet/planet.component";
 import { GridRowEditSampleComponent } from "../../src/app/grid/grid-row-editing-sample/grid-row-editing-sample.component";
 import { GridRowEditStyleComponent } from "../../src/app/grid/grid-row-editing-style/grid-row-editing-style.component";
+import { GridPinningDragSampleComponent } from "../../src/app/grid/grid-row-pinning-drag/grid-row-pinning-drag.component";
+import { GridRowPinningExtraColumnSampleComponent } from "../../src/app/grid/grid-row-pinning-extra-column/grid-row-pinning-extra-column.component";
+import { GridRowPinningStylingSampleComponent } from "../../src/app/grid/grid-row-pinning-styling/grid-row-pinning-styling.component";
+import { GridRowPinningSampleComponent } from "../../src/app/grid/grid-row-pinning/grid-row-pinning.component";
 import { GridRowReorderComponent } from "../../src/app/grid/grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
+import { GridRemoteVirtualizationAddRowSampleComponent } from "../../src/app/grid/grid-sample-5/grid-sample-5.component";
+import { RemoteService } from "../../src/app/grid/grid-sample-5/remote.service";
 import { PinningStylingComponent } from "../../src/app/grid/grid-sample-pinning-styling/grid-pinning-styling.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { PinningToolbarSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-toolbar-pinning.component";
 import { RightPinningSampleComponent } from "../../src/app/grid/grid-sample-right-pinning/grid-right-pinning.component";
-import { GridRowPinningSampleComponent } from "../../src/app/grid/grid-row-pinning/grid-row-pinning.component";
-import { GridRowPinningStylingSampleComponent } from '../../src/app/grid/grid-row-pinning-styling/grid-row-pinning-styling.component';
-import { GridRowPinningExtraColumnSampleComponent } from "../../src/app/grid/grid-row-pinning-extra-column/grid-row-pinning-extra-column.component";
-import { GridPinningDragSampleComponent } from "../../src/app/grid/grid-row-pinning-drag/grid-row-pinning-drag.component";
 import { GridSelectionTemplateExcelComponent } from "../../src/app/grid/grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
 import { GridSelectionTemplateNumbersComponent } from "../../src/app/grid/grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
@@ -109,7 +113,6 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { GridActionStripSampleComponent } from '../../src/app/grid/grid-action-strip/grid-action-strip-sample';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -1110,6 +1113,18 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: GridRemoteVirtualizationAddRowSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/grid-sample-5/remote.service.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridRemoteVirtualizationAddRowSampleComponent, IgxGridModule, IgxToastModule,
+                    IgxBadgeModule, HttpClientModule, RemoteService, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridRemoteVirtualizationAddRowSampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxToastModule, IgxBadgeModule, HttpClientModule],
+                ngProviders: [RemoteService]
+            })
+        }));
+
+        configs.push(new Config({
             component: GridRowPinningSampleComponent,
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
@@ -1163,6 +1178,20 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridKeyboardnavGuide],
                 ngImports: [IgxGridModule, IgxListModule],
                 ngProviders: [IgxOverlayService]
+            })
+        }));
+
+        // Grid Batch Editing with remote paging
+        configs.push(new Config({
+            component: RemotePagingBatchEditingComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts", "/src/app/data/utils.ts",
+                "/src/app/grid/grid-batchEditing-remotePaging/transaction.component.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [RemotePagingBatchEditingComponent, IgxGridModule, IgxDialogModule, IgxButtonModule,
+                    IgxFocusModule, GridWithTransactionsComponent, IgxPreventDocumentScrollModule],
+                ngDeclarations: [RemotePagingBatchEditingComponent, GridWithTransactionsComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxDialogModule, IgxButtonModule,
+                    IgxFocusModule]
             })
         }));
 

@@ -6,8 +6,8 @@
         <igx-column field="email" header="Email"></igx-column>
         <igx-column field="referred_by" header="Referrer"></igx-column>
         <ng-template igxGridDetail let-dataItem>
-            <div style="width:100%; height: 355px;">
-                <igx-tabs>
+            <div style="width:100%;" (keydown)='$event.stopPropagation()' [style.height.px]='getHeight(tabs.selectedIndex)'>
+                <igx-tabs #tabs selectedIndex='0'>
                     <igx-tabs-group label="Details">
                         <div class="tabContent">
                             <div class="avatarContainer">

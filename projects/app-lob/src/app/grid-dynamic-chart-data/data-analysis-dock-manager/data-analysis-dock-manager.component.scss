@@ -30,6 +30,7 @@
     width: 100vw;
     height: 100vh;
     padding: 0px 8px 8px 8px;
+    --igc-pane-content-background: #fff;
 }
 
 .chart-types-container {
@@ -153,7 +154,7 @@ $font-family: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
     max-height: 110px;
     max-width: 310px;
     .header{
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         display: flex;
         width: 100%;
         padding: 0 0.2rem 0 0.4rem;
@@ -161,6 +162,8 @@ $font-family: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
         border-bottom: 1px solid #BDBDBD;
         align-self: center;
         font-family: $font-family;
+        letter-spacing: 1.7px;
+        color: rgba(0, 0, 0, 0.87);
     }
 }
 
@@ -178,6 +181,12 @@ $font-family: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
 .action {
     cursor: pointer;
 
+    opacity: .62;
+    &.selected--condition{
+        pointer-events: none;
+        opacity: 1;
+    }
+
     .name {
         font-size: .9rem;
         font-weight: 500;
@@ -185,6 +194,15 @@ $font-family: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
         font-family: $font-family;
     }
 }
+
+.clear-action{
+    cursor: pointer;
+    display: flex;
+    flex-flow: column;
+    margin-left: auto;
+    justify-content: center;
+}
+
 
 .btn {
 
@@ -203,11 +221,4 @@ $font-family: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
     span {
         pointer-events: none;
     }
-}
-
-.clear{
-    display: flex;
-    flex-flow: column;
-    margin-left: auto;
-    justify-content: center;
 }

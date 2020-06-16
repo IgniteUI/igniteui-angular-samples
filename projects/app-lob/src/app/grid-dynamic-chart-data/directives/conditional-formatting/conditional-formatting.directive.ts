@@ -275,8 +275,9 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
             this._selectedData = [];
         }
         this._valueForComparison = this.textData[0];
+        const hasNegativeValues = this.numericData.some(value => value < 0);
         this._maxValue = Math.max(...this.numericData);
-        this._minValue = Math.min(...this.numericData.filter(value => value < 0)) | 0;
+        this._minValue = hasNegativeValues ? Math.min(...this.numericData.filter(value => value < 0)) : 0;
     }
 
     public isWithInFormattedRange(rowIndex, colID) {
@@ -315,12 +316,15 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
         // Column selection custom range
         if (selectedRanges.length === 0) {
             const selectedColumns = this.grid.selectedColumns();
-            customRange = [{
-                columnEnd: Math.max(...selectedColumns.map(c => c.visibleIndex)),
-                columnStart: Math.min(...selectedColumns.map(c => c.visibleIndex)),
-                rowEnd: this.grid.data.length - 1,
-                rowStart: 0
-            }];
+            customRange = [];
+            selectedColumns.forEach(c => {
+                customRange.push({
+                    columnEnd: c.visibleIndex,
+                    columnStart: c.visibleIndex,
+                    rowEnd: this.grid.data.length - 1,
+                    rowStart: 0
+                });
+            });
         } else {
             customRange = formatRange ? formatRange : this.grid.getSelectedRanges();
         }
