@@ -16,7 +16,7 @@ import { PasteHandler} from "./paste-handler.directive";
 
 import { EXCEL_DATA, LOCAL_DATA } from "./data";
 
-import { take } from "rxjs/operators";
+import { take, first } from "rxjs/operators";
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -72,7 +72,6 @@ export class GridPasteSampleComponent {
     public addRecords(processedData: any[]) {
         const columns = this.grid1.visibleColumns;
         const pk = this.grid1.primaryKey;
-        const addedData = [];
         for (const curentDataRow of processedData) {
             const rowData = {};
             for (const col of columns) {
@@ -81,12 +80,11 @@ export class GridPasteSampleComponent {
             // generate PK
             rowData[pk] = this.grid1.data.length + this.grid1.transactions.getAggregatedChanges(false).length + 1;
             this.grid1.addRow(rowData);
-            addedData.push(rowData);
-            this.grid1.cdr.detectChanges();
         }
         // scroll to last added row
-        this.grid1.verticalScrollContainer.scrollTo(this.grid1.data.length +
-            this.grid1.transactions.getAggregatedChanges(false).length - 1);
+        this.grid1.verticalScrollContainer.onDataChanged.pipe(first()).subscribe(() => {
+            this.grid1.verticalScrollContainer.scrollTo(this.grid1.dataView.length - 1);
+          });
 
     }
 
@@ -144,9 +142,9 @@ export class GridPasteSampleComponent {
 
     public redo() {
         this.grid1.transactions.redo();
-        this.grid1.cdr.detectChanges();
-        this.grid1.verticalScrollContainer.scrollTo(this.grid1.data.length +
-            this.grid1.transactions.getAggregatedChanges(false).length - 1);
+        this.grid1.verticalScrollContainer.onDataChanged.pipe(first()).subscribe(() => {
+            this.grid1.verticalScrollContainer.scrollTo(this.grid1.dataView.length - 1);
+          });
     }
 
     public commit() {
