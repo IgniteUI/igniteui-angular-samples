@@ -95,13 +95,5 @@ export const EMPLOYEE_DATA = [
         ID: 10,
         Name: "Yang Wang",
         Title: "Sales Manager"
-    },
-    {
-        Age: 38,
-        Employees: [],
-        HireDate: new Date(2014, 1, 22),
-        ID: 36,
-        Name: "Roth Walter",
-        Title: "Support Engineer"
     }
 ];
