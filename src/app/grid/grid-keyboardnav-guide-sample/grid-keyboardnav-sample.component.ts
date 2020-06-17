@@ -136,10 +136,10 @@ const tbodyKeyCombinations: Item[] = [
 ];
 
 const summaryCombinations: Item[] = [
-    new Item("ArrowLeft", "navigates one summary cell left", false),
-    new Item("ArrowRight", "navigates one summary cell right", false),
-    new Item("Home", "navigates to the first summary cell", false),
-    new Item("End", "navigates to the last summary cell", false)
+    new Item("ArrowLeft", "navigates one summary cell left", false, ItemAction.Always),
+    new Item("ArrowRight", "navigates one summary cell right", false, ItemAction.Always),
+    new Item("Home", "navigates to the first summary cell", false, ItemAction.Always),
+    new Item("End", "navigates to the last summary cell", false, ItemAction.Always)
 ];
 
 @Component({
@@ -179,6 +179,13 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
     public get keyboardCollection() {
         return this._keyboardHandler.collection;
+    }
+
+    public get headerList() {
+        return this._keyboardHandler.gridSection === GridSection.THEAD ?
+            "HEADER COMBINATIONS" : this._keyboardHandler.gridSection === GridSection.TBODY ?
+            "BODY COMBITNATIONS" : this._keyboardHandler.gridSection === GridSection.FOOTER ?
+            "SUMMARY COMBINATIONS" : "";
     }
 
     private _destroyer = new Subject();
