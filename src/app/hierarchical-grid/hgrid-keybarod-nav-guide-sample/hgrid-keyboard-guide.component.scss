@@ -28,11 +28,19 @@ $custom-checkbox-theme: igx-checkbox-theme(
     padding-top: 15px;
     width: 20%;
 
-    .completed {
-        opacity: .7;
+    .disabled {
+        opacity: .4;
+    }
+
+    .active {
+        opacity: 1;
     }
 
     igx-list {
+        .igx-list__item-line-title, .igx-list__item-line-subtitle {
+            font-size: 13px;
+        }
+
         height: 450px;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2),
         0 1px 1px 0 rgba(0, 0, 0, 0.14),
@@ -43,11 +51,14 @@ $custom-checkbox-theme: igx-checkbox-theme(
 .empty-list {
     h5 {
         padding: 15px;
+        font-size: 15px;
     }
 
     ul {
+        li {
+            font-size: 13px;
+        }
         margin-left: 15px;
-        font-size: 20px;
         font-weight: 400;
     }
 }
