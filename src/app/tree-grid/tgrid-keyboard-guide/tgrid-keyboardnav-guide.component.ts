@@ -36,7 +36,6 @@ enum ElementTags {
     COLUMN_GROUP = "IGX-COLUMN-GROUP"
 }
 
-
 class Item {
     public title: string;
     public subTitle: string;
