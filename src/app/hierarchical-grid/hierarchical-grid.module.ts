@@ -52,6 +52,7 @@ import { HGridMultiRowDragComponent } from "./hierarchical-grid-multi-row-drag/h
 import { HGridPagingStyleSampleComponent } from "./hierarchical-grid-paging-style/hierarchical-grid-paging-style.component";
 import { HGridPagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-paging.component";
 import { HGridRemotePagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-remote-paging.component";
+import { HGridRemotePagingDefaultTemplateComponent } from "./hierarchical-grid-remote-paging-default-template/hierarchical-grid-remote-paging-default-template.component";
 import { HGridResizeLineStylingComponent } from "./hierarchical-grid-resize-line-styling/hierarchical-grid-resize-line-styling.component";
 import { HierarchicalGridRoutingModule } from "./hierarchical-grid-routing.module";
 import { HGridRowDragBaseComponent } from "./hierarchical-grid-row-drag-base/hierarchical-row-drag-base.component";
@@ -142,7 +143,8 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HierarchicalGridColumnSelectionComponent,
         HierarchicalGridColumnGroupSelectionComponent,
         HGridColumnSelectionStylesComponent,
-        HGridKeyboardnavGuide
+        HGridKeyboardnavGuide,
+        HGridRemotePagingDefaultTemplateComponent
     ],
     imports: [
         CommonModule,
