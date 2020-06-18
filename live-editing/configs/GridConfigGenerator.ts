@@ -9,7 +9,7 @@ import { GridColumnGroupSelectionComponent } from "../../src/app/grid/column-gro
 import { GridColumnSelectionComponent } from "../../src/app/grid/column-selection-sample/column-selection-sample.component";
 import { GridColumnSelectionStylesComponent } from "../../src/app/grid/column-selection-styles/column-selection-styles.component";
 import { CustomGridPagingStyleSample } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
-import { GridActionStripSampleComponent } from '../../src/app/grid/grid-action-strip/grid-action-strip-sample';
+import { GridActionStripSampleComponent } from "../../src/app/grid/grid-action-strip/grid-action-strip-sample";
 import { GridAdvancedFilteringSampleComponent } from "../../src/app/grid/grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "../../src/app/grid/grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridAllDataSummaryComponent } from "../../src/app/grid/grid-allData-summary/grid-allData-summary.component";
