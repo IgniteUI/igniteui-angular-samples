@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 
 // tslint:disable:object-literal-sort-keys
 // tslint:disable-next-line:interface-name
@@ -14,7 +14,7 @@ interface DataItem {
   templateUrl: "./drop-down-virtual.component.html",
   styleUrls: ["./drop-down-virtual.component.scss"]
 })
-export class DropDownVirtualComponent implements OnInit {
+export class DropDownVirtualComponent {
   public items: DataItem[];
   public itemHeight = 48;
   public itemsMaxHeight = 240;
@@ -39,8 +39,5 @@ export class DropDownVirtualComponent implements OnInit {
         }
     }
     this.items = itemsCollection;
-  }
-
-  public ngOnInit() {
   }
 }
