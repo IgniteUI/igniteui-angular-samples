@@ -58,6 +58,7 @@ import { HGridMultiRowDragComponent } from "./hierarchical-grid-multi-row-drag/h
 import { HGridPagingStyleSampleComponent } from "./hierarchical-grid-paging-style/hierarchical-grid-paging-style.component";
 import { HGridPagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-paging.component";
 import { HGridRemotePagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-remote-paging.component";
+import { HGridRemotePagingDefaultTemplateComponent } from "./hierarchical-grid-remote-paging-default-template/hierarchical-grid-remote-paging-default-template.component";
 import { HGridResizeLineStylingComponent } from "./hierarchical-grid-resize-line-styling/hierarchical-grid-resize-line-styling.component";
 import { hierarchicalGridRoutesData } from "./hierarchical-grid-routes-data";
 import { HGridRowDragBaseComponent } from "./hierarchical-grid-row-drag-base/hierarchical-row-drag-base.component";
@@ -440,6 +441,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridKeyboardnavGuide,
         data: hierarchicalGridRoutesData["hgrid-keyboard-guide"],
         path: "hgrid-keyboard-guide"
+    },
+    {
+        component: HGridRemotePagingDefaultTemplateComponent,
+        data:  hierarchicalGridRoutesData["remote-paging-default-template"],
+        path: "remote-paging-default-template"
     }
 ];
 
