@@ -1,16 +1,12 @@
-.sample-wrapper {
-    padding-left: 10px;
-    padding-top: 10px;
-}
-
 .button {
-    width:100px;
+    width: 160px;
 }
 
 .controls-wrapper {
     display: flex;
     flex-flow: row;
     max-width: 450px;
+    margin: 8px;
 }
 
 igx-switch {
