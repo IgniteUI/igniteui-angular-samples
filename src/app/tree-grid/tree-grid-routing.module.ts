@@ -49,6 +49,7 @@ import { TreeGridMultiRowDrag } from "./tree-grid-multi-row-drag/tree-grid-multi
 import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPagingStyleSampleComponent } from "./tree-grid-paging-style/tree-grid-paging-style-sample.component";
 import { TreeGridRemoteFilteringSampleComponent } from "./tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
+import { TreeGridRemotePagingDefaultTemplateComponent } from "./tree-grid-remote-paging-default-template/tree-grid-remote-paging-default-template.component";
 import { TreeGridRemotePagingSampleComponent } from "./tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
 import { TreeGridResizeLineStylingSampleComponent } from "./tree-grid-resize-line-styling-sample/tree-grid-resize-line-styling-sample.component";
 import { treeGridRoutesData } from "./tree-grid-routes-data";
@@ -453,6 +454,11 @@ export const treeGridRoutes: Routes = [
         component: TGridKeyboardnavGuide,
         data: treeGridRoutesData["tgrid-keyboardnav-guide"],
         path: "tgrid-keyboardnav-guide"
+    },
+    {
+        component: TreeGridRemotePagingDefaultTemplateComponent,
+        data: treeGridRoutesData["tree-grid-remote-paging-default-template"],
+        path: "tree-grid-remote-paging-default-template"
     }
 ];
 

@@ -1,9 +1,8 @@
-import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { ChangeDetectorRef, Component, ElementRef, OnInit } from "@angular/core";
 @Component({
     selector: "select-header-footer",
     styleUrls: ["select-header-footer.component.scss"],
-    templateUrl: "select-header-footer.component.html",
-    encapsulation: ViewEncapsulation.None
+    templateUrl: "select-header-footer.component.html"
 })
 export class SelectHeaderFooterComponent implements OnInit {
     public flightCount: number;
@@ -31,7 +30,7 @@ export class SelectHeaderFooterComponent implements OnInit {
             { type: "Watermelon", delivery: "train"}
         ];
 
-    constructor(public cdr: ChangeDetectorRef) {
+    constructor(public cdr: ChangeDetectorRef, public element: ElementRef) {
     }
 
     public ngOnInit() {
