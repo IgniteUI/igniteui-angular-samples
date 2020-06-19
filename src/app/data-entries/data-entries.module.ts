@@ -60,14 +60,11 @@ import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.com
 import { RadioSample2Component } from "./radio/radio-sample-2/radio-sample-2.component";
 import { RadioSample3Component } from "./radio/radio-sample-3/radio-sample-3.component";
 import { RadioStylingSampleComponent } from "./radio/radio-styling-sample/radio-styling-sample.component";
-import { SelectFormComponent } from "./select/select-form/select-form.component";
 import { SelectHeaderFooterComponent } from "./select/select-header-footer/select-header-footer.component";
 import { SelectInputDirectivesComponent } from "./select/select-input-directives/select-input-directives";
 import { SelectSample1Component } from "./select/select-sample-1/select-sample-1.component";
 import { SelectSample2Component } from "./select/select-sample-2/select-sample-2.component";
-import { SelectSample3Component } from "./select/select-sample-3/select-sample-3.component";
 import { SelectSample4Component } from "./select/select-sample-4/select-sample-4.component";
-import { SelectStylingComponent } from "./select/select-styling/select-styling.component";
 import { SwitchSample1Component } from "./switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2.component";
 import { SwitchStylingComponent } from "./switch/switch-styling/switch-styling.component";
@@ -124,10 +121,7 @@ import { SwitchStylingComponent } from "./switch/switch-styling/switch-styling.c
         SwitchStylingComponent,
         SelectSample1Component,
         SelectSample2Component,
-        SelectSample3Component,
-        SelectFormComponent,
         SelectSample4Component,
-        SelectStylingComponent,
         SelectInputDirectivesComponent,
         SelectHeaderFooterComponent,
         ButtonGroupSampleComponent,

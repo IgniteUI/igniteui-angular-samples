@@ -52,11 +52,8 @@ export const dataEntriesRoutesData = {
     "switch-styling": { displayName: "Styled Switches", parentName: "Switch" },
     "select-sample-1": { displayName: "Simple Select", parentName: "Select" },
     "select-sample-2": { displayName: "Select With Groups", parentName: "Select" },
-    "select-sample-3": { displayName: "Select With Forms", parentName: "Select" },
     "select-sample-4": { displayName: "Custom Overlay Settings", parentName: "Select" },
-    "select-styling": { displayName: "Select Styling", parentName: "Select" },
     "select-input-directives": { displayName: "Select Input Directives", parentName: "Select" },
-    "select-form": { displayName: "Select In a Form", parentName: "Select" },
     "select-header-footer": { displayName: "Select with Header&Footer Templates", parentName: "Select" },
     "input-text-selection": {displayName: "Input with Text Selection", parentName: "Input Group"}
 };
