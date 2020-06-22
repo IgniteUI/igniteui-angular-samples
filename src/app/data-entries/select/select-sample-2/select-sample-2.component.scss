@@ -4,7 +4,8 @@ igx-select {
     padding-left: 40px;
 }
 
-.icon {
-    padding-left: 10px;
-    padding-left: 10px;
+igx-select-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
