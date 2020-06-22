@@ -21,7 +21,7 @@
                 </igx-column-group>
             </igx-column-group>
             <igx-column-group header="Address Information">
-                <igx-column-group header="Location" [groupable]="true" [collapsible]="true" [expanded]="false" (expandedChange)="expandChange()">
+                <igx-column-group header="Location" [collapsible]="true" [expanded]="false" (expandedChange)="expandChange()">
                     <igx-column field="FullAddress" header="Full Address" [width]="'250px'" [visibleWhenCollapsed]="true"
                         [dataType]="'string'" [visibleWhenCollapsed]="true" [sortable]="true"></igx-column>
                     <igx-column field="Country" [groupable]="true" [selectable]="false" [visibleWhenCollapsed]="false" [hasSummary]="true" [sortable]="true" [editable]="true"></igx-column>
@@ -43,7 +43,7 @@
             <igx-list-item @load *ngFor="let c of keyboardCollection; let idx=index" [ngClass]="{ 'active': c.active, 'disabled': !c.active}" [@toggle]="c.completed ? 'selected' : 'deselected'">
                 <h4 igxListLineTitle>{{ c.title }}</h4>
                 <p igxListLineSubTitle>{{ c.subTitle }}</p>
-                <igx-checkbox [disabled]="!c.active" [checked]="false" (change)="onCheckChange($event, idx)"></igx-checkbox>
+                <igx-checkbox [disabled]="!c.active" [checked]="c.completed" (change)="onCheckChange($event, idx)"></igx-checkbox>
             </igx-list-item>
             <ng-template igxEmptyList>
                 <span class="empty-list">
