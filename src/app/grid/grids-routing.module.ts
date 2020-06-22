@@ -97,6 +97,7 @@ import { GridKeyboardnavGuide } from "./grid-keyboardnav-guide-sample/grid-keybo
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridMultipleRowDragComponent } from "./grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
+import { RemotePagingDefaultTemplateComponent } from "./grid-remote-paging-defaultTemplate-sample/remote-paging-default-template.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
 import { RightPinningSampleComponent } from "./grid-sample-right-pinning/grid-right-pinning.component";
@@ -580,6 +581,11 @@ export const gridsRoutes: Routes = [
         component: GridKeyboardnavGuide,
         data: gridsRoutesData["grid-keybarodnav-guide"],
         path: "grid-keyboardnav-guide"
+    },
+    {
+        component: RemotePagingDefaultTemplateComponent,
+        data: gridsRoutesData["remote-paging-default-template"],
+        path: "remote-paging-default-template"
     },
     {
         component: RemotePagingBatchEditingComponent,
