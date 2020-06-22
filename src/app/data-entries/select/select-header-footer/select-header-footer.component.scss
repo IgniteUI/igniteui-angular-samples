@@ -7,8 +7,15 @@
     margin-left: 48px;
 }
 
-.igx-drop-down__item {
-    justify-content: space-between;
+:host ::ng-deep {
+    .select__entry {
+        span {
+            display: flex;
+            padding: 8px;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
 }
 
 igx-select {
