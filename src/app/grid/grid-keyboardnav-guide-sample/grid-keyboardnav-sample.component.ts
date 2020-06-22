@@ -118,7 +118,7 @@ class KeyboardHandler {
 }
 
 const theadKeyCombinations = [
-    new Item("space", "select column", false, ItemAction.Selectable),
+    new Item("space key", "select column", false, ItemAction.Selectable),
     new Item("ctrl + arrow up/down", "sorts the column asc/desc", false, ItemAction.Sortable),
     new Item("shift + alt + arrow left/right", "group/ungroup the active column", false, ItemAction.Groupable),
     new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header",
