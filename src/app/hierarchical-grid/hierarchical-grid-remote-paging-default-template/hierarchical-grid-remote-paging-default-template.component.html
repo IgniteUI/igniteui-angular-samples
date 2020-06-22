@@ -1,0 +1,26 @@
+<div class="grid__wrapper">
+    <igx-hierarchical-grid igxPreventDocumentScroll  [paging]="true" [primaryKey]="'CustomerID'" [height]="'550px'" (perPageChange)="getFirstPage()"
+        [width]="'100%'" [pagingMode]="mode"  [totalRecords]="totalCount" (onPagingDone)="pagingDone($event)" #hierarchicalGrid>
+        <igx-column field="CustomerID"></igx-column>
+        <igx-column field="CompanyName"></igx-column>
+        <igx-column field="ContactName"></igx-column>
+        <igx-column field="ContactTitle"></igx-column>
+        <igx-column field="Country"></igx-column>
+        <igx-column field="Phone"></igx-column>
+        <igx-row-island [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false"
+            (onGridCreated)="gridCreated($event, 'CustomerID')" [paging]="true" [perPage]="5">
+            <igx-column field="OrderID"></igx-column>
+            <igx-column field="OrderDate" [formatter]="dateFormatter"></igx-column>
+            <igx-column field="ShipCountry"></igx-column>
+            <igx-column field="ShipCity"></igx-column>
+            <igx-column field="ShipAddress"></igx-column>
+            <igx-row-island [key]="'Order_Details'" [primaryKey]="'ProductID'" [autoGenerate]="false"
+                (onGridCreated)="gridCreated($event, 'OrderID')" [paging]="true" [perPage]="5">
+                <igx-column field="ProductID"></igx-column>
+                <igx-column field="UnitPrice"></igx-column>
+                <igx-column field="Quantity"></igx-column>
+                <igx-column field="Discount"></igx-column>
+            </igx-row-island>
+        </igx-row-island>
+    </igx-hierarchical-grid>
+</div>

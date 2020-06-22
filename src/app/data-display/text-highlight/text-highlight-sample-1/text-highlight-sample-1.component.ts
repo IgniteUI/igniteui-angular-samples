@@ -56,11 +56,11 @@ export class TextHighlightSample1Component {
         return this.matchCount > 1;
     }
 
-    private findNext() {
+    public findNext() {
         this.find(1);
     }
 
-    private findPrev() {
+    public findPrev() {
         this.find(-1);
     }
 
