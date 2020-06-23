@@ -9,6 +9,9 @@
 
 :host ::ng-deep {
     .select__entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
         span {
             display: flex;
             padding: 8px;
