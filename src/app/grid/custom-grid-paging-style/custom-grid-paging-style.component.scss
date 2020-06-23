@@ -2,26 +2,61 @@
 
 /*BASIC THEMING*/
 
-$dark-paginator: igx-paginator-theme( $text-color: #F4D45C, $background-color: #575757, $border-color: #292826);
-$dark-button: igx-button-theme( $icon-color: #FFCD0F, $icon-hover-color: #292826, $icon-hover-background: #FFCD0F, $icon-focus-color: #292826, $icon-focus-background: #FFCD0F, $disabled-color: #16130C);
+$yellow: #ffcd0f;
+$bg: #292826;
+$gray: #404040;
+$light-gray: rgba(255, 255, 255, .54);
+
+$dark-paginator: igx-paginator-theme(
+    $text-color: $yellow,
+    $background-color: $gray,
+    $border-color: $bg
+);
+$dark-button: igx-button-theme(
+    $icon-color: $yellow,
+    $icon-hover-color: $bg,
+    $icon-hover-background: $yellow,
+    $icon-focus-color: $bg,
+    $icon-focus-background: $yellow,
+    $disabled-color: #16130C
+);
+$dark-input-group: igx-input-group-theme(
+    $filled-text-color: $light-gray,
+    $idle-text-color: $light-gray,
+    $focused-text-color: $yellow,
+    $border-color: $light-gray,
+    $hover-border-color: $yellow,
+    $focused-border-color: $yellow
+);
 $dark-drop-down-theme: igx-drop-down-theme(
-    $background-color:  #292826,
-    $item-text-color:  #FFCD0F,
-    $selected-item-background: #FFCD0F,
-    $selected-item-text-color:  #292826,
-    $focused-item-background: #FFCD0F,
-    $focused-item-text-color:  #292826
+    $background-color: $bg,
+    $item-text-color: $yellow,
+    $selected-item-background: $yellow,
+    $selected-item-text-color: $bg,
+    $focused-item-background: $yellow,
+    $focused-item-text-color: $bg,
+    $selected-focus-item-background: $yellow,
+    $selected-focus-item-text-color: $bg,
+    $selected-hover-item-background: $yellow,
+    $selected-hover-item-text-color: $bg
 );
 /*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 
 :host {
      ::ng-deep {
-        @include igx-drop-down($dark-drop-down-theme);
         @include igx-paginator($dark-paginator);
-        .igx-paginator__pager {
+        @include igx-drop-down($dark-drop-down-theme);
+
+        igx-paginator {
             @include igx-button($dark-button);
+            @include igx-input-group($dark-input-group);
         }
     }
+}
+
+.grid__wrapper {
+    width: 950px;
+    margin: 10px auto;
 }
 
 
@@ -98,7 +133,3 @@ $dark-drop-down-theme: igx-drop-down-theme(
 //   $palette: $dark-palette,
 //   $schema: $custom-dark-schema
 // );
-.grid__wrapper {
-    width: 950px;
-    margin: 10px auto;
-}
