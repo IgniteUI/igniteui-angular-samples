@@ -7,7 +7,7 @@ import { LiveEditingFile } from "./misc/LiveEditingFile";
 import { SharedAssetsFile } from "./misc/SharedAssetsFile";
 import { SharedAssetsGeneratorArgs } from "./misc/SharedAssetsGeneratorArgs";
 import { StyleSyntax } from "./misc/StyleSyntax";
-
+import { DevDependencyResolver } from "../services/DependencyResolver";
 const INDEX_FILE_PATH = path.join(__dirname, "../../src/index.html");
 const POLYPFILLS_FILE_PATH = path.join(__dirname, "../../src/polyfills.ts");
 const STYLES_FILE_PATH = path.join(__dirname, "../../src/styles.scss");
@@ -94,7 +94,7 @@ export class SharedAssetsGenerator extends Generator {
              args.appComponentStylesFileContent));
         files.push(new LiveEditingFile(SAMPLE_APP_FOLDER + "app.component.ts", args.appComponentTsFileContent));
 
-        let sharedFile = new SharedAssetsFile(files);
+        let sharedFile = new SharedAssetsFile(files, new DevDependencyResolver().devDependencies);
         fs.writeFileSync(this.getAssetsSamplesDir() + "shared.json", JSON.stringify(sharedFile));
     }
 }
