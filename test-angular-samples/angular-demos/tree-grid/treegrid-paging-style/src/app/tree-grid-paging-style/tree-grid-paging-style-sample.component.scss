@@ -1,0 +1,97 @@
+.grid__wrapper {
+    margin: 0 16px;
+    padding-top: 10px;
+}
+
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+/*BASIC THEMING*/
+
+$dark-paginator: igx-paginator-theme( $text-color: #F4D45C, $background-color: #575757, $border-color: #292826);
+$dark-button: igx-button-theme( $icon-color: #FFCD0F, $icon-hover-color: #292826, $icon-hover-background: #FFCD0F, $icon-focus-color: #292826, $icon-focus-background: #FFCD0F, $disabled-color: #16130C);
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+     ::ng-deep {
+        @include igx-paginator($dark-paginator);
+        .igx-paginator__pager{
+            @include igx-button($dark-button);
+        }
+    }
+}
+
+
+/*ENHANCED APPROACHES*/
+
+// $yellow-color: #F9D342;
+// $black-color: #292826;
+// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+
+/*PALETTE and IGX-COLOR*/
+
+// $dark-paginator: igx-paginator-theme(
+//     $palette: $dark-palette,
+//     $text-color: igx-color($dark-palette, "secondary", 400),
+//     $background-color: igx-color($dark-palette, "primary", 200),
+//     $border-color:  igx-color($dark-palette, "primary", 500)
+// );
+// $dark-button: igx-button-theme(
+//     $palette: $dark-palette,
+//     $icon-color: igx-color($dark-palette, "secondary", 700),
+//     $icon-hover-color: igx-color($dark-palette, "primary", 500),
+//     $icon-hover-background: igx-color($dark-palette, "secondary", 500),
+//     $icon-focus-color: igx-color($dark-palette, "primary", 500),
+//     $icon-focus-background: igx-color($dark-palette, "secondary", 500),
+//     $disabled-color: igx-color($dark-palette, "primary", 700)
+// );
+
+/*SCHEMAS*/
+
+// $dark-paginator-schema: extend($_dark-pagination,
+//         (
+//             text-color:(
+//                 igx-color: ("secondary", 400)
+//             ),
+//             background-color:(
+//                 igx-color: ("primary", 200)
+//             ),
+//             border-color:(
+//                 igx-color:( "primary", 500)
+//             )
+//         )
+// );
+// $dark-button-schema: extend($_dark-button,
+//         (
+//             icon-color:(
+//                 igx-color:("secondary", 700)
+//             ),
+//             icon-hover-color:(
+//                 igx-color:("primary", 500)
+//             ),
+//             icon-hover-background:(
+//                 igx-color:("secondary", 500)
+//             ),
+//             icon-focus-color:(
+//                 igx-color:("primary", 500)
+//             ),
+//             icon-focus-background:(
+//                 igx-color:("secondary", 500)
+//             ),
+//             disabled-color:(
+//                 igx-color:("primary", 700)
+//             )
+//         )
+// );
+// $custom-dark-schema: extend($dark-schema,(
+//     igx-paginator: $dark-paginator-schema,
+//     igx-button: $dark-button-schema
+// ));
+// $dark-paginator: igx-paginator-theme(
+//   $palette: $dark-palette,
+//   $schema: $custom-dark-schema
+// );
+// $dark-button: igx-button-theme(
+//   $palette: $dark-palette,
+//   $schema: $custom-dark-schema
+// );

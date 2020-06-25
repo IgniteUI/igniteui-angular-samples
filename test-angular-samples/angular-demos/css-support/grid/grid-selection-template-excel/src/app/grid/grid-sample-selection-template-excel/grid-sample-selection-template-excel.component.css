@@ -1,0 +1,78 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+.header-selector {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  min-width: 50px;
+  cursor: pointer;
+  height: 100%;
+  padding: 8px; }
+
+.row-selector {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  min-width: 50px;
+  cursor: pointer; }
+
+::ng-deep .igx-grid__cbx-selection {
+  padding: 0; }
+
+.excel-style-arrow {
+  color: rgba(0, 0, 0, 0.26); }
+  .excel-style-arrow:hover {
+    color: rgba(0, 0, 0, 0.74); }
+
+.excel-style-arrow-all {
+  color: #f0b2ce; }

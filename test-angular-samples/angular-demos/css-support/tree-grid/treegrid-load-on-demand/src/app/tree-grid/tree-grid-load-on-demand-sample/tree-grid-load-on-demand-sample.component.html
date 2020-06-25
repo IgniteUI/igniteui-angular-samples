@@ -1,0 +1,9 @@
+<div class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" width="100%" height="400px"
+        primaryKey="ID" foreignKey="ParentID"
+        [loadChildrenOnDemand]="loadChildren" hasChildrenKey="hasEmployees">
+        <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true" ></igx-column>
+        <igx-column field="JobTitle" dataType="string" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true" ></igx-column>
+        <igx-column field="Age" dataType="number" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true" ></igx-column>
+    </igx-tree-grid>
+</div>

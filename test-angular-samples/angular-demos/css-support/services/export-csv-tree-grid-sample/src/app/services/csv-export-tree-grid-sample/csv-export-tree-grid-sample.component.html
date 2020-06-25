@@ -1,0 +1,26 @@
+<p class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  #igxTreeGrid1 [data]="data" [autoGenerate]="false" height="300px" width="100%"
+        primaryKey="ID" foreignKey="ParentID">
+        <igx-column field="ID" header="Product ID" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="Name" header="Product Name" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Unit Price" dataType="number">
+            <ng-template igxCell let-cell="cell" let-val>
+                <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
+                <span *ngIf="cell.row.rowData.UnitPrice != 0">${{val}}</span>
+            </ng-template>
+        </igx-column>
+        <igx-column field="AddedDate" header="Added Date" [dataType]="'date'">
+        </igx-column>
+        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
+            <ng-template igxCell let-cell="cell" let-val>
+                <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
+                <img *ngIf="cell.row.rowData.UnitPrice != 0 && val" src="https://www.infragistics.com/angular-demos/assets/images/grid/active.png" title="Continued" alt="Continued" />
+                <img *ngIf="cell.row.rowData.UnitPrice != 0 && !val" src="https://www.infragistics.com/angular-demos/assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+            </ng-template>
+        </igx-column>
+    </igx-tree-grid>
+    <button (click)="exportButtonHandler()" class="exportButton">Export TreeGrid to CSV</button>
+</p>
+  

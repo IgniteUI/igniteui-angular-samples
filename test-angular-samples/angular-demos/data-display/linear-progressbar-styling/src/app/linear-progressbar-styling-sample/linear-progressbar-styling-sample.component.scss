@@ -1,0 +1,24 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+igx-linear-bar {
+    margin-top: 20px;
+}
+
+$custom-theme: igx-progress-linear-theme(
+    $track-color: #D3D3D3,
+    $fill-color-default: #ECAA53,
+    $text-color: #ECAA53
+);
+
+// :host {
+//     @include igx-css-vars($custom-theme);
+// }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-progress-linear($custom-theme);
+}

@@ -1,0 +1,57 @@
+<div class="grid__wrapper">
+    <igx-grid igxPreventDocumentScroll #grid1 id="grid1" [data]="data" [autoGenerate]="false" height="400px" width="700px"
+        [showToolbar]="true"
+        toolbarTitle="Grid Toolbar"
+
+        [exportExcel]="true"
+        [exportCsv]="true"
+        exportText="Export"
+        exportExcelText="Export to Excel"
+        exportCsvText="Export to TSV"
+
+        (onToolbarExporting)="toolbarExportingHandler($event)">
+        
+        <igx-column field="Name" header="Athlete" width="200">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner">
+                    <igx-avatar [src]="cell.row.rowData.Avatar" roundShape="true" size="small"></igx-avatar>
+                    <span class="athlete_name">{{ cell.value }}</span>
+                </div>
+            </ng-template>
+        </igx-column>
+
+        <igx-column field="CountryName" header="Country" width="200">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner">
+                    <igx-avatar [src]="cell.row.rowData.CountryFlag" roundShape="true" size="small"></igx-avatar>
+                    <span class="country_name">{{ cell.value }}</span>
+                </div>
+            </ng-template>
+        </igx-column>
+
+        <igx-column field="BeatsPerMinute" header="Beats Per Minute">
+            <ng-template igxCell let-val>
+                <div class="cell__inner">{{ val }}</div>
+            </ng-template>
+        </igx-column>
+
+        <igx-column field="TopSpeed" header="Top Speed">
+            <ng-template igxCell let-val>
+                <div class="cell__inner">{{ val }}</div>
+            </ng-template>
+
+        </igx-column>
+
+        <igx-column field="AthleteNumber" header="ID">
+            <ng-template igxCell let-val>
+                <div class="cell__inner">{{ val }}</div>
+            </ng-template>
+        </igx-column>
+
+        <igx-column field="TrackProgress" header="Progress">
+            <ng-template igxCell let-val>
+                <div class="cell__inner">{{ val }}</div>
+            </ng-template>
+        </igx-column>
+    </igx-grid>
+</div>

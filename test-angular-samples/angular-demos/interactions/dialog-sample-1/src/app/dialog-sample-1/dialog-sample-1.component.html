@@ -1,0 +1,8 @@
+<button igxButton="raised" igxRipple="white" (click)="alert.open()">Show Alert Dialog</button>
+
+<igx-dialog #alert
+    title="Notification"
+    message="Your email has been sent successfully!"
+    leftButtonLabel="OK"
+    (onLeftButtonSelect)="alert.close()">
+</igx-dialog>

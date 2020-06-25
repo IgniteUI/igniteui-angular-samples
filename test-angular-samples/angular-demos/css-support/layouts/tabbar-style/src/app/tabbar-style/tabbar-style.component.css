@@ -1,0 +1,172 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+.item {
+  margin-bottom: 5px; }
+
+.item-line1 {
+  font-size: 14px;
+  color: gray; }
+
+.item-line2 {
+  font-size: 12px;
+  color: darkgray; }
+
+igx-tab-panel {
+  padding: 10px; }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+  --igx-bottom-nav-elevation: 8;
+  --igx-bottom-nav-background: #292826;
+  --igx-bottom-nav-idle-item-color: rgba(255, 255, 255, 0.7);
+  --igx-bottom-nav-active-item-color: #F4D45C;
+  --igx-bottom-nav-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26), 0 8px 10px 1px rgba(0, 0, 0, 0.12), 0 3px 14px 2px rgba(0, 0, 0, 0.08); }
+
+:host ::ng-deep .igx-bottom-nav__panel, :host ::ng-deep .igx-bottom-nav__panel--selected {
+  display: none; }
+
+:host ::ng-deep .igx-bottom-nav__panel--selected {
+  display: block; }
+
+:host ::ng-deep .igx-bottom-nav__menu, :host ::ng-deep .igx-bottom-nav__menu--top, :host ::ng-deep .igx-bottom-nav__menu--bottom {
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: var(--igx-bottom-nav-background);
+  overflow: hidden;
+  z-index: 8; }
+
+:host ::ng-deep .igx-bottom-nav__menu--top {
+  top: 0;
+  bottom: inherit;
+  box-shadow: var(--igx-bottom-nav-shadow); }
+
+:host ::ng-deep .igx-bottom-nav__menu--bottom {
+  top: inherit;
+  bottom: 0;
+  box-shadow: var(--igx-bottom-nav-shadow); }
+
+:host ::ng-deep .igx-bottom-nav__menu-item, :host ::ng-deep .igx-bottom-nav__menu-item--selected, :host ::ng-deep .igx-bottom-nav__menu-item--disabled {
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+  -ms-flex: 1;
+      flex: 1;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  min-width: 80px;
+  max-width: 168px;
+  height: 100%;
+  color: var(--igx-bottom-nav-idle-item-color);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  padding: 0 0.75rem;
+  -webkit-tap-highlight-color: transparent;
+  outline: 0; }
+
+:host ::ng-deep .igx-bottom-nav__menu-item--disabled {
+  opacity: .5;
+  cursor: default; }
+
+:host ::ng-deep .igx-bottom-nav__menu-item--selected .tab-icon, .igx-bottom-nav__menu-item--selected :host ::ng-deep .tab-icon, :host ::ng-deep .igx-bottom-nav__menu-item--selected .tab-label, .igx-bottom-nav__menu-item--selected :host ::ng-deep .tab-label {
+  color: var(--igx-bottom-nav-active-item-color);
+  transition: color 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955), opacity 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+:host ::ng-deep .igx-bottom-nav__menu-item .tab-label, .igx-bottom-nav__menu-item :host ::ng-deep .tab-label, :host ::ng-deep .igx-bottom-nav__menu-item--selected .tab-label, .igx-bottom-nav__menu-item--selected :host ::ng-deep .tab-label {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-top: 4px;
+  max-width: 100%;
+  text-align: center;
+  transform: translateZ(0);
+  transition: transform 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  z-index: 1; }
+
+:host ::ng-deep .igx-bottom-nav__menu-item .tab-icon, .igx-bottom-nav__menu-item :host ::ng-deep .tab-icon, :host ::ng-deep .igx-bottom-nav__menu-item--selected .tab-icon, .igx-bottom-nav__menu-item--selected :host ::ng-deep .tab-icon {
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -ms-flex-pack: center;
+      justify-content: center;
+  height: 24px;
+  padding: 0 8px;
+  transform: translateZ(0);
+  transition: transform 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  z-index: 1; }
+  :host ::ng-deep .igx-bottom-nav__menu-item .tab-icon igx-badge, .igx-bottom-nav__menu-item :host ::ng-deep .tab-icon igx-badge, :host ::ng-deep .igx-bottom-nav__menu-item--selected .tab-icon igx-badge, .igx-bottom-nav__menu-item--selected :host ::ng-deep .tab-icon igx-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    padding: 1px; }
+
+:host ::ng-deep .igx-bottom-nav__menu-item--selected .tab-icon, .igx-bottom-nav__menu-item--selected :host ::ng-deep .tab-icon {
+  -ms-transform: translateY(-2px);
+      transform: translateY(-2px); }
+
+:host ::ng-deep .igx-bottom-nav__menu-item--selected .tab-label, .igx-bottom-nav__menu-item--selected :host ::ng-deep .tab-label {
+  -ms-transform: translateY(-2px) scale(1.16667);
+      transform: translateY(-2px) scale(1.16667); }

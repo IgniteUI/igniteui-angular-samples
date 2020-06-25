@@ -1,0 +1,32 @@
+.calendar-wrapper {
+    max-width: 900px;
+    min-width: 200px;
+    margin: 8px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26),
+    0 1px 1px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px -1px rgba(0, 0, 0, 0.08);
+}
+
+.igx-calendar {
+    border-radius: 0;
+}
+
+.igx-button--raised {
+    border-radius: 0;
+}
+
+.stay__info {
+    display: flex;
+    justify-content: center;
+    background: var(--igx-surface-500);
+}
+
+.stay__info > span {
+    color: var(--igx-secondary-400);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.046875rem;
+    text-transform: uppercase;
+    line-height: 1rem;
+    margin: 16px;
+}

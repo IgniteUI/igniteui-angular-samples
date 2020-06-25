@@ -1,0 +1,282 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+:host ::ng-deep {
+  --igx-list-border-radius: 0px;
+  --igx-list-item-border-radius: 0px;
+  --igx-list-background: #0568ab;
+  --igx-list-header-background: #0568ab;
+  --igx-list-header-text-color: white;
+  --igx-list-item-background: #0568ab;
+  --igx-list-item-background-hover: #0680d3;
+  --igx-list-item-background-active: #0680d3;
+  --igx-list-item-text-color: white;
+  --igx-list-item-text-color-hover: black;
+  --igx-list-item-text-color-active: black;
+  --igx-list-item-title-color: white;
+  --igx-list-item-title-color-hover: black;
+  --igx-list-item-title-color-active: black;
+  --igx-list-item-action-color: white;
+  --igx-list-item-action-color-hover: black;
+  --igx-list-item-action-color-active: black;
+  --igx-list-item-subtitle-color: rgba(255, 255, 255, 0.74);
+  --igx-list-item-subtitle-color-hover: rgba(0, 0, 0, 0.74);
+  --igx-list-item-subtitle-color-active: rgba(0, 0, 0, 0.74);
+  --igx-list-item-thumbnail-color: white;
+  --igx-list-item-thumbnail-color-hover: black;
+  --igx-list-item-thumbnail-color-active: black;
+  --igx-list-border-color: transparent;
+  --igx-list-border-width: 0; }
+
+:host ::ng-deep .igx-list, :host ::ng-deep .igx-list__empty, :host ::ng-deep .igx-list--compact, :host ::ng-deep .igx-list--cosy {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+  background: var(--igx-list-background);
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  border-radius: var(--igx-list-border-radius); }
+
+:host ::ng-deep .igx-list__empty, :host ::ng-deep .igx-list__empty--custom {
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+
+:host ::ng-deep .image {
+  width: auto;
+  max-height: 120px; }
+
+:host ::ng-deep .message {
+  text-align: center;
+  color: var(--igx-list-item-text-color);
+  padding: 1rem;
+  z-index: 1; }
+
+:host ::ng-deep .message {
+  padding: 0.5rem; }
+
+:host ::ng-deep .message {
+  padding: 0.25rem; }
+
+:host ::ng-deep .igx-list__header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  color: var(--igx-list-header-text-color);
+  background: var(--igx-list-header-background);
+  padding: 0.5rem 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+:host ::ng-deep .igx-list--cosy .igx-list__header, .igx-list--cosy :host ::ng-deep .igx-list__header {
+  padding: 0.25rem 0.5rem; }
+
+:host ::ng-deep .igx-list--compact .igx-list__header, .igx-list--compact :host ::ng-deep .igx-list__header {
+  padding: 0.125rem 0.25rem; }
+
+:host ::ng-deep .igx-list__item-base {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+  border-radius: var(--igx-list-item-border-radius);
+  color: var(--igx-list-item-text-color);
+  background: var(--igx-list-item-background); }
+  :host ::ng-deep .igx-list__item-base:hover {
+    color: var(--igx-list-item-text-color-hover);
+    background: var(--igx-list-item-background-hover); }
+    :host ::ng-deep .igx-list__item-base:hover .igx-list__item-lines {
+      color: currentColor; }
+    :host ::ng-deep .igx-list__item-base:hover .igx-list__item-line-title {
+      color: var(--igx-list-item-title-color-hover); }
+    :host ::ng-deep .igx-list__item-base:hover .igx-list__item-line-subtitle {
+      color: var(--igx-list-item-subtitle-color-hover); }
+    :host ::ng-deep .igx-list__item-base:hover .igx-list__item-actions {
+      color: var(--igx-list-item-action-color-hover); }
+      :host ::ng-deep .igx-list__item-base:hover .igx-list__item-actions .igx-icon, :host ::ng-deep .igx-list__item-base:hover .igx-list__item-actions .igx-icon--inactive {
+        color: var(--igx-list-item-action-color-hover); }
+    :host ::ng-deep .igx-list__item-base:hover .igx-list__item-thumbnail {
+      color: var(--igx-list-item-thumbnail-color-hover); }
+      :host ::ng-deep .igx-list__item-base:hover .igx-list__item-thumbnail .igx-icon, :host ::ng-deep .igx-list__item-base:hover .igx-list__item-thumbnail .igx-icon--inactive {
+        color: var(--igx-list-item-thumbnail-color-hover); }
+
+:host ::ng-deep .igx-list__item-right, :host ::ng-deep .igx-list__item-left {
+  position: absolute;
+  visibility: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1; }
+
+:host ::ng-deep .igx-list__item-lines {
+  color: currentColor;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex: 1 0 0%;
+      flex: 1 0 0%; }
+  :host ::ng-deep .igx-list__item-lines:empty {
+    display: none; }
+
+:host ::ng-deep .igx-list__item-line-subtitle {
+  color: var(--igx-list-item-subtitle-color);
+  opacity: .74; }
+
+:host ::ng-deep .igx-list__item-line-title {
+  color: var(--igx-list-item-title-color); }
+
+:host ::ng-deep .igx-list__item-actions {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  color: var(--igx-list-item-action-color); }
+  :host ::ng-deep .igx-list__item-actions > * {
+    margin-left: 0.5rem; }
+  :host ::ng-deep .igx-list__item-actions:empty {
+    display: none; }
+  :host ::ng-deep .igx-list__item-actions .igx-icon, :host ::ng-deep .igx-list__item-actions .igx-icon--inactive {
+    color: var(--igx-list-item-action-color); }
+
+:host ::ng-deep .igx-list__item-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: var(--igx-list-item-border-radius);
+  background: inherit;
+  z-index: 2; }
+
+:host ::ng-deep .igx-list--compact .igx-list__item-content, .igx-list--compact :host ::ng-deep .igx-list__item-content {
+  padding: 0.125rem 0.25rem; }
+
+:host ::ng-deep .igx-list--cosy .igx-list__item-content, .igx-list--cosy :host ::ng-deep .igx-list__item-content {
+  padding: 0.25rem 0.5rem; }
+
+:host ::ng-deep .igx-list__item-thumbnail {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding: 0;
+  color: var(--igx-list-item-thumbnail-color); }
+  :host ::ng-deep .igx-list__item-thumbnail > .igx-icon, :host ::ng-deep .igx-list__item-thumbnail > .igx-icon--inactive {
+    margin: 0.5rem 1rem 0.5rem 0; }
+  :host ::ng-deep .igx-list__item-thumbnail > .igx-avatar > .igx-icon, :host ::ng-deep .igx-list__item-thumbnail > .igx-avatar--rounded > .igx-icon, :host ::ng-deep .igx-list__item-thumbnail > .igx-avatar > .igx-icon--inactive, :host ::ng-deep .igx-list__item-thumbnail > .igx-avatar--rounded > .igx-icon--inactive {
+    margin: 0; }
+  :host ::ng-deep .igx-list__item-thumbnail:empty {
+    display: none; }
+
+:host ::ng-deep .igx-list__item-thumbnail:not(:empty) + .igx-list__item-lines {
+  margin: 0 0 0 1rem; }
+
+:host ::ng-deep .igx-list--cosy .igx-list__item-thumbnail:not(:empty) + .igx-list__item-lines, .igx-list--cosy :host ::ng-deep .igx-list__item-thumbnail:not(:empty) + .igx-list__item-lines {
+  margin: 0 0 0 0.75rem; }
+
+:host ::ng-deep .igx-list--compact .igx-list__item-thumbnail:not(:empty) + .igx-list__item-lines, .igx-list--compact :host ::ng-deep .igx-list__item-thumbnail:not(:empty) + .igx-list__item-lines {
+  margin: 0 0 0 0.5rem; }
+
+:host ::ng-deep .igx-list--cosy .igx-list__item-thumbnail > .igx-icon, .igx-list--cosy :host ::ng-deep .igx-list__item-thumbnail > .igx-icon, :host ::ng-deep .igx-list--cosy .igx-list__item-thumbnail > .igx-icon--inactive, .igx-list--cosy :host ::ng-deep .igx-list__item-thumbnail > .igx-icon--inactive {
+  margin: 0.375rem 0.5rem 0.375rem 0; }
+
+:host ::ng-deep .igx-list--compact .igx-list__item-thumbnail > .igx-icon, .igx-list--compact :host ::ng-deep .igx-list__item-thumbnail > .igx-icon, :host ::ng-deep .igx-list--compact .igx-list__item-thumbnail > .igx-icon--inactive, .igx-list--compact :host ::ng-deep .igx-list__item-thumbnail > .igx-icon--inactive {
+  margin: 0.25rem 0.25rem 0.25rem 0; }
+
+:host ::ng-deep .igx-list--cosy .igx-list__item-actions > *, .igx-list--cosy :host ::ng-deep .igx-list__item-actions > * {
+  margin-left: 0.375rem; }
+
+:host ::ng-deep .igx-list--compact .igx-list__item-actions > *, .igx-list--compact :host ::ng-deep .igx-list__item-actions > * {
+  margin-left: 0.25rem; }
+
+:host ::ng-deep .igx-list__item-lines + .igx-list__item-actions {
+  margin-left: 0.5rem; }
+
+:host ::ng-deep .igx-list__item-content:active {
+  color: var(--igx-list-item-text-color-active);
+  background: var(--igx-list-item-background-active);
+  z-index: 3; }
+  :host ::ng-deep .igx-list__item-content:active .igx-list__item-line-title {
+    color: var(--igx-list-item-title-color-active); }
+  :host ::ng-deep .igx-list__item-content:active .igx-list__item-line-subtitle {
+    color: var(--igx-list-item-subtitle-color-active); }
+  :host ::ng-deep .igx-list__item-content:active .igx-list__item-actions {
+    color: var(--igx-list-item-action-color-active); }
+    :host ::ng-deep .igx-list__item-content:active .igx-list__item-actions .igx-icon, :host ::ng-deep .igx-list__item-content:active .igx-list__item-actions .igx-icon--inactive {
+      color: var(--igx-list-item-action-color-active); }
+  :host ::ng-deep .igx-list__item-content:active .igx-list__item-thumbnail {
+    color: var(--igx-list-item-thumbnail-color-active); }
+    :host ::ng-deep .igx-list__item-content:active .igx-list__item-thumbnail .igx-icon, :host ::ng-deep .igx-list__item-content:active .igx-list__item-thumbnail .igx-icon--inactive {
+      color: var(--igx-list-item-thumbnail-color-active); }
+
+:host ::ng-deep .igx-list__item-content:not(:active) {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+:host {
+  display: block;
+  padding: 16px; }
+
+.list-sample {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12); }
+
+igx-icon {
+  cursor: pointer; }

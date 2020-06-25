@@ -1,0 +1,26 @@
+<div class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data | async" childDataKey="Content" expansionDepth="0" width="100%" height="540px"
+        [paging]="true" [perPage]="maxPerPage" [paginationTemplate]="customPager">
+        <igx-column field="Name">
+            <ng-template igxCell let-cell="cell" let-val>
+                <igx-icon *ngIf="cell.rowData.Type === 'File folder'" fontSet="material" class="typeIcon">folder
+                </igx-icon>
+                <igx-icon *ngIf="cell.rowData.Type === 'JPG File'" fontSet="material" class="typeIcon">photo</igx-icon>
+                {{val}}
+            </ng-template>
+        </igx-column>
+        <igx-column field="Type"></igx-column>
+        <igx-column field="Size" dataType="number" [formatter]="formatSize"></igx-column>
+    </igx-tree-grid>
+
+    <ng-template #customPager let-api>
+        <igx-paginator #paginator
+            [totalRecords]="totalCount"
+            [(perPage)]="perPage"
+            [selectLabel]="'Records per page:'"
+            [selectOptions]="selectOptions"
+            [displayDensity]="treeGrid.displayDensity"
+            (pageChange)="paginate($event)">
+        </igx-paginator>
+    </ng-template>
+</div>

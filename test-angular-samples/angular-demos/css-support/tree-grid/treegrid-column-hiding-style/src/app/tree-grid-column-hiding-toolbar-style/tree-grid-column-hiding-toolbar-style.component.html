@@ -1,0 +1,17 @@
+<div class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" width="100%"
+        height="560px" columnWidth="200px" [showToolbar]="true" [columnHiding]="true" toolbarTitle="Employees"
+        columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden" [allowFiltering]="true">
+        <igx-column [field]="'Name'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'ID'" dataType="number" [sortable]="true"></igx-column>
+        <igx-column [field]="'Title'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'HireDate'" dataType="date" [sortable]="true"></igx-column>
+        <igx-column [field]="'Age'" dataType="number" [sortable]="true"></igx-column>
+        <igx-column [field]="'Address'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'City'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'Country'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'Fax'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'PostalCode'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'Phone'" dataType="string" [sortable]="true"></igx-column>
+    </igx-tree-grid>
+</div>

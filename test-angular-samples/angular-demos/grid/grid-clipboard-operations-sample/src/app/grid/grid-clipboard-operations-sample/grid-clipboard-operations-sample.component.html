@@ -1,0 +1,40 @@
+<div class="wrapper theme">
+    <div class="sample-content">
+        <div class="sample-column">
+            <igx-input-group type="box">
+                <label igxLabel>Change copy separator</label>
+                <input type="text" igxInput [(ngModel)]="options.separator" />
+                <igx-suffix (pointerup)="options.separator = '\t'">
+                    <igx-icon>clear</igx-icon>
+                </igx-suffix>
+                <igx-hint>
+                    The default value is a single tabulation which is shown as whitespace above.
+                    Click the clear icon to reset it back to tabulation.
+                </igx-hint>
+            </igx-input-group>
+            <div class="grid-wrapper">
+                <igx-grid igxPreventDocumentScroll #grid [data]="data" primaryKey="ProductID" rowEditable="true" (onColumnInit)="initColumn($event)"
+                    [showToolbar]="true" [clipboardOptions]="options" [autoGenerate]="true">
+                    <ng-template igxToolbarCustomContent let-grid="grid">
+                        <div class="tlb">
+                            <igx-switch [(ngModel)]="options.enabled">Grid copy behavior</igx-switch>
+                            <igx-switch [(ngModel)]="options.copyHeaders">Copying of header labels</igx-switch>
+                            <igx-switch [(ngModel)]="options.copyFormatters">Copying column formatters</igx-switch>
+                            <button igxButton="outlined" igxRippleCentered="true" (click)="grid.clearCellSelection()">
+                                <igx-icon fontSet="material">clear</igx-icon>
+                                Selection
+                            </button>
+                        </div>
+                    </ng-template>
+                </igx-grid>
+            </div>
+
+            <div style="margin-top: 0.5rem">
+                <igx-input-group type="box">
+                    <label igxLabel>Paste your data here (or in Excel)</label>
+                    <textarea igxInput cols="30" rows="5"></textarea>
+                </igx-input-group>
+            </div>
+        </div>
+    </div>
+</div>

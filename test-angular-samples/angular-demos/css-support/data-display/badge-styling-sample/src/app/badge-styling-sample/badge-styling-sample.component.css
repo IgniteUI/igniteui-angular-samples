@@ -1,0 +1,133 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+.wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row; }
+
+.contact-name {
+  font-weight: 600; }
+
+.contact-container {
+  margin-left: 20px; }
+
+.badge-style {
+  position: absolute;
+  bottom: 2.5px;
+  left: 40px; }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+  --igx-badge-border-radius: 11px;
+  --igx-badge-elevation: 1;
+  --igx-badge-icon-color: white;
+  --igx-badge-text-color: black;
+  --igx-badge-border-color: white;
+  --igx-badge-background-color: #09f;
+  --igx-badge-border-width: 1px;
+  --igx-badge-shadow: 3px 2px 5px 0px rgba(0, 0, 0, 0.4); }
+
+:host ::ng-deep .igx-badge, :host ::ng-deep .igx-badge__circle, :host ::ng-deep .igx-badge__circle--info, :host ::ng-deep .igx-badge__circle--success, :host ::ng-deep .igx-badge__circle--warning, :host ::ng-deep .igx-badge__circle--error {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  min-width: 22px;
+  height: 22px;
+  font-size: 0.6875rem;
+  font-weight: normal;
+  color: var(--igx-badge-text-color);
+  line-height: 1; }
+  :host ::ng-deep .igx-badge igx-icon, :host ::ng-deep .igx-badge__circle igx-icon, :host ::ng-deep .igx-badge__circle--info igx-icon, :host ::ng-deep .igx-badge__circle--success igx-icon, :host ::ng-deep .igx-badge__circle--warning igx-icon, :host ::ng-deep .igx-badge__circle--error igx-icon {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    width: 20px;
+    height: 20px;
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: var(--igx-badge-icon-color); }
+
+:host ::ng-deep .igx-badge__circle-value {
+  white-space: nowrap;
+  padding: 0.25rem; }
+
+:host ::ng-deep .igx-badge__circle {
+  border-radius: var(--igx-badge-border-radius);
+  box-shadow: var(--igx-badge-shadow);
+  border-width: var(--igx-badge-border-width);
+  border-color: var(--igx-badge-border-color);
+  border-style: solid;
+  overflow: hidden; }
+
+:host ::ng-deep .igx-badge__circle--default {
+  background: var(--igx-badge-background-color); }
+
+:host ::ng-deep .igx-badge__circle--success {
+  background: #4eb862; }
+
+:host ::ng-deep .igx-badge__circle--info {
+  background: #1377d5; }
+
+:host ::ng-deep .igx-badge__circle--warning {
+  background: #fbb13c; }
+
+:host ::ng-deep .igx-badge__circle--error {
+  background: #ff134a; }
+
+:host ::ng-deep .igx-badge--hidden {
+  visibility: hidden; }

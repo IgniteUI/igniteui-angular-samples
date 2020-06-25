@@ -1,0 +1,36 @@
+.grid__wrapper {
+  margin: 10px; }
+
+:host::ng-deep .upPrice {
+  color: red; }
+
+:host::ng-deep .downPrice {
+  color: green; }
+
+:host::ng-deep .allergensFont {
+  color: royalblue; }
+
+:host::ng-deep .contentStyle, :host::ng-deep .star, :host::ng-deep .allergens:after, :host::ng-deep #message:before {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-right: 5px; }
+
+:host::ng-deep .star, :host::ng-deep .allergens:after, :host::ng-deep #message:before {
+  content: "*"; }
+
+:host::ng-deep .allergens:after {
+  font-weight: normal;
+  color: royalblue;
+  vertical-align: top;
+  margin-left: 2px; }
+
+:host::ng-deep #message:before {
+  font-weight: lighter;
+  color: royalblue;
+  vertical-align: top;
+  margin-right: 2px; }
+
+:host::ng-deep #message {
+  color: royalblue;
+  font-style: italic;
+  font-size: 0.75rem; }

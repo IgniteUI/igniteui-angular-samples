@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  padding: 16px; }
+
+.signInForm {
+  padding: 0 24px 24px; }
+  .signInForm igx-input-group + igx-input-group {
+    margin-top: 24px; }
+
+.dialog-container {
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 24px; }
+
+igx-icon {
+  margin-right: 8px; }

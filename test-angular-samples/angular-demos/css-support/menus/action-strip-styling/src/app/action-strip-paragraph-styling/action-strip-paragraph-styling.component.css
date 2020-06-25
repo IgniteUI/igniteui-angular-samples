@@ -1,0 +1,153 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+.parent {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  padding: 1rem;
+  margin: auto;
+  min-width: 700px;
+  max-width: 1000px;
+  position: relative; }
+
+.my-action-strip {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -ms-flex-align: end;
+      align-items: flex-end; }
+  .my-action-strip {
+    --igx-action-strip-actions-border-radius: 0px;
+    --igx-action-strip-variant: material;
+    --igx-action-strip-actions-background: rgba(109, 121, 147, 0.6);
+    --igx-action-strip-background: rgba(150, 133, 143, 0.4);
+    --igx-action-strip-color: black;
+    --igx-action-strip-delete-action: #ff134a; }
+  .my-action-strip .igx-action-strip {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    background: var(--igx-action-strip-background);
+    color: inherit;
+    padding: 0 1.5rem;
+    z-index: 9999; }
+  .my-action-strip .igx-action-strip--cosy [igxButton='icon'], .my-action-strip .igx-action-strip--compact [igxButton='icon'] {
+    width: 1.75rem;
+    height: 1.75rem; }
+    .my-action-strip .igx-action-strip--cosy [igxButton='icon'] igx-icon, .my-action-strip .igx-action-strip--compact [igxButton='icon'] igx-icon {
+      width: 0.875rem;
+      height: 0.875rem;
+      font-size: 0.875rem; }
+  .my-action-strip .igx-action-strip--cosy {
+    padding: 0 1rem; }
+  .my-action-strip .igx-action-strip--compact {
+    padding: 0 0.75rem; }
+  .my-action-strip .igx-action-strip__editing-actions,
+  .my-action-strip .igx-action-strip__pining-actions {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center; }
+  .my-action-strip .igx-action-strip__actions {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    pointer-events: all;
+    position: relative;
+    color: var(--igx-action-strip-color);
+    border-radius: var(--igx-action-strip-actions-border-radius);
+    background: var(--igx-action-strip-actions-background);
+    max-height: 36px; }
+    .my-action-strip .igx-action-strip__actions:last-child {
+      margin-right: 0; }
+    .my-action-strip .igx-action-strip__actions igx-icon {
+      color: var(--igx-action-strip-color); }
+  
+  .my-action-strip .igx-action-strip__pining-actions {
+    margin-right: 0.25rem; }
+    .my-action-strip .igx-action-strip__pining-actions:last-child {
+      margin-right: 0; }
+  .my-action-strip .igx-action-strip__editing-actions > [igxButton] {
+    margin-left: 0.25rem; }
+    .my-action-strip .igx-action-strip__editing-actions > [igxButton]:first-of-type {
+      margin-left: 0; }
+  .my-action-strip .igx-action-strip__delete igx-icon {
+    color: var(--igx-action-strip-delete-action); }
+
+.text-strike-through {
+  text-decoration: line-through; }
+
+:host ::ng-deep .igx-action-strip__actions {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  max-height: 72px; }

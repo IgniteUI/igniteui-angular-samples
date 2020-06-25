@@ -1,0 +1,22 @@
+.contact-container span {
+  margin: 5px; }
+
+.contact-container--edit {
+  margin-bottom: 5px; }
+
+.address-container {
+  display: -ms-flexbox;
+  display: flex; }
+  .address-container div + div {
+    margin-left: 5px; }
+  .address-container--edit {
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: 3px; }
+    .address-container--edit div + div {
+      margin-left: 10px; }
+
+.grid__wrapper {
+  width: 950px;
+  margin: 0 auto; }

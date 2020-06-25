@@ -1,0 +1,439 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+igx-time-picker {
+  width: 400px; }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+  --igx-time-picker-border-radius: 4px;
+  --igx-time-picker-active-item-border-radius: 15px;
+  --igx-time-picker-modal-elevation: 24;
+  --igx-time-picker-dropdown-elevation: 8;
+  --igx-time-picker-variant: material;
+  --igx-time-picker-text-color: #e4c8a5;
+  --igx-time-picker-hover-text-color: #ECAA53;
+  --igx-time-picker-selected-text-color: #ECAA53;
+  --igx-time-picker-active-item-background: rgba(255, 255, 255, 0.12);
+  --igx-time-picker-disabled-text-color: rgba(158, 158, 158, 0.5);
+  --igx-time-picker-disabled-item-background: transparent;
+  --igx-time-picker-header-background: #ECAA53;
+  --igx-time-picker-header-hour-text-color: #011627;
+  --igx-time-picker-header-time-period-color: #011627;
+  --igx-time-picker-background-color: #011627;
+  --igx-time-picker-modal-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.26), 0 24px 38px 3px rgba(0, 0, 0, 0.12), 0 9px 46px 8px rgba(0, 0, 0, 0.08);
+  --igx-time-picker-dropdown-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26), 0 8px 10px 1px rgba(0, 0, 0, 0.12), 0 3px 14px 2px rgba(0, 0, 0, 0.08); }
+
+:host ::ng-deep .igx-time-picker {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+  max-width: 21.25rem;
+  min-width: 20rem;
+  border-radius: var(--igx-time-picker-border-radius);
+  box-shadow: var(--igx-time-picker-modal-shadow);
+  overflow: hidden; }
+
+:host ::ng-deep .igx-time-picker--vertical {
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+  min-width: 33.75rem; }
+
+:host ::ng-deep .igx-time-picker__main {
+  background: var(--igx-time-picker-background-color);
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto; }
+
+:host ::ng-deep .igx-time-picker--dropdown {
+  min-width: 12.5rem;
+  box-shadow: var(--igx-time-picker-dropdown-shadow); }
+
+:host ::ng-deep .igx-time-picker__body {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.625rem 0;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+:host ::ng-deep .igx-time-picker__hourList {
+  text-align: right; }
+
+:host ::ng-deep .igx-time-picker__minuteList {
+  text-align: center; }
+
+:host ::ng-deep .igx-time-picker__secondsList {
+  text-align: center; }
+
+:host ::ng-deep .igx-time-picker__ampmList {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  padding-top: 3rem; }
+
+:host ::ng-deep .igx-time-picker__column {
+  max-width: 4rem;
+  height: 20.3125rem;
+  padding: 0;
+  cursor: pointer;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  color: var(--igx-time-picker-text-color);
+  overflow: hidden; }
+  :host ::ng-deep .igx-time-picker__column:focus, :host ::ng-deep .igx-time-picker__column:active {
+    outline: none; }
+
+:host ::ng-deep .igx-time-picker__item {
+  width: 3.375rem;
+  padding: 0.3125rem 0.625rem;
+  border-radius: var(--igx-time-picker-active-item-border-radius);
+  height: 3rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+  :host ::ng-deep .igx-time-picker__item:focus, :host ::ng-deep .igx-time-picker__item:active {
+    outline: none; }
+  :host ::ng-deep .igx-time-picker__item:hover {
+    color: var(--igx-time-picker-hover-text-color); }
+
+:host ::ng-deep .igx-time-picker__item--selected {
+  font-size: 1.5rem;
+  color: var(--igx-time-picker-selected-text-color); }
+
+:host ::ng-deep .igx-time-picker__item--active {
+  background: var(--igx-time-picker-active-item-background); }
+
+:host ::ng-deep .igx-time-picker__item--disabled {
+  color: var(--igx-time-picker-disabled-text-color);
+  background: var(--igx-time-picker-disabled-item-background);
+  pointer-events: none; }
+
+:host ::ng-deep .igx-time-picker__header {
+  background: var(--igx-time-picker-header-background);
+  padding: 1.5rem 1rem; }
+
+:host ::ng-deep .igx-time-picker__header-ampm {
+  color: var(--igx-time-picker-header-time-period-color); }
+
+:host ::ng-deep .igx-time-picker--vertical .igx-time-picker__header, .igx-time-picker--vertical :host ::ng-deep .igx-time-picker__header {
+  width: 10.5rem; }
+
+:host ::ng-deep .igx-time-picker__header-hour {
+  display: -ms-flexbox;
+  display: flex;
+  color: var(--igx-time-picker-header-hour-text-color); }
+
+:host ::ng-deep .igx-time-picker__header-ampm, :host ::ng-deep .igx-time-picker__header-hour {
+  margin: 0; }
+
+:host ::ng-deep .igx-time-picker__buttons {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  height: 3.25rem;
+  padding: 0.5rem; }
+  :host ::ng-deep .igx-time-picker__buttons [igxButton] + [igxButton] {
+    margin-left: 0.5rem; }
+
+:host ::ng-deep {
+  --igx-button-flat-border-radius: 4px;
+  --igx-button-raised-border-radius: 4px;
+  --igx-button-outlined-border-radius: 4px;
+  --igx-button-fab-border-radius: 28px;
+  --igx-button-icon-border-radius: 20px;
+  --igx-button-raised-resting-elevation: 2;
+  --igx-button-raised-hover-elevation: 4;
+  --igx-button-raised-focus-elevation: 8;
+  --igx-button-fab-resting-elevation: 6;
+  --igx-button-fab-hover-elevation: 12;
+  --igx-button-fab-focus-elevation: 12;
+  --igx-button-variant: material;
+  --igx-button-flat-background: transparent;
+  --igx-button-flat-text-color: #ECAA53;
+  --igx-button-flat-icon-color: 'currentColor';
+  --igx-button-flat-hover-icon-color: 'currentColor';
+  --igx-button-flat-focus-icon-color: 'currentColor';
+  --igx-button-raised-icon-color: 'currentColor';
+  --igx-button-raised-hover-icon-color: 'currentColor';
+  --igx-button-raised-focus-icon-color: 'currentColor';
+  --igx-button-outlined-icon-color: 'currentColor';
+  --igx-button-outlined-hover-icon-color: 'currentColor';
+  --igx-button-outlined-focus-icon-color: 'currentColor';
+  --igx-button-flat-hover-background: #ECAA53;
+  --igx-button-flat-hover-text-color: black;
+  --igx-button-flat-focus-background: rgba(223, 54, 131, 0.12);
+  --igx-button-flat-focus-text-color: #e41c77;
+  --igx-button-outlined-background: transparent;
+  --igx-button-outlined-outline-color: rgba(0, 0, 0, 0.12);
+  --igx-button-outlined-text-color: #e41c77;
+  --igx-button-outlined-hover-background: rgba(228, 28, 119, 0.05);
+  --igx-button-outlined-hover-text-color: #e41c77;
+  --igx-button-outlined-focus-background: rgba(223, 54, 131, 0.12);
+  --igx-button-outlined-focus-text-color: #e41c77;
+  --igx-button-outlined-disabled-outline-color: rgba(0, 0, 0, 0.12);
+  --igx-button-raised-background: #e41c77;
+  --igx-button-raised-text-color: black;
+  --igx-button-raised-hover-background: #dc5391;
+  --igx-button-raised-hover-text-color: black;
+  --igx-button-raised-focus-background: #dc5391;
+  --igx-button-raised-focus-text-color: black;
+  --igx-button-fab-background: #e41c77;
+  --igx-button-fab-text-color: black;
+  --igx-button-fab-hover-background: #dc5391;
+  --igx-button-fab-hover-text-color: black;
+  --igx-button-fab-focus-background: #dc5391;
+  --igx-button-fab-focus-text-color: black;
+  --igx-button-icon-color: rgba(0, 0, 0, 0.74);
+  --igx-button-icon-background: transparent;
+  --igx-button-icon-hover-background: rgba(0, 0, 0, 0.04);
+  --igx-button-icon-hover-color: rgba(0, 0, 0, 0.74);
+  --igx-button-icon-focus-background: rgba(0, 0, 0, 0.26);
+  --igx-button-icon-focus-color: rgba(0, 0, 0, 0.74);
+  --igx-button-disabled-color: rgba(0, 0, 0, 0.26);
+  --igx-button-disabled-background: rgba(0, 0, 0, 0.04);
+  --igx-button-raised-resting-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.08);
+  --igx-button-raised-hover-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.26), 0 4px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+  --igx-button-raised-focus-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26), 0 8px 10px 1px rgba(0, 0, 0, 0.12), 0 3px 14px 2px rgba(0, 0, 0, 0.08);
+  --igx-button-fab-resting-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.26), 0 6px 10px 0 rgba(0, 0, 0, 0.12), 0 1px 18px 0 rgba(0, 0, 0, 0.08);
+  --igx-button-fab-hover-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.26), 0 12px 17px 2px rgba(0, 0, 0, 0.12), 0 5px 22px 4px rgba(0, 0, 0, 0.08);
+  --igx-button-fab-focus-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.26), 0 12px 17px 2px rgba(0, 0, 0, 0.12), 0 5px 22px 4px rgba(0, 0, 0, 0.08);
+  --igx-button-raised-shadow-color: transparent;
+  --igx-button-outlined-shadow-color: transparent;
+  --igx-button-icon-shadow-color: transparent;
+  --igx-button-fab-shadow-color: transparent; }
+
+:host ::ng-deep .igx-button, :host ::ng-deep .igx-button--flat, :host ::ng-deep .igx-button--outlined, :host ::ng-deep .igx-button--raised {
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  min-width: 5.5rem;
+  padding: 0.5625rem 1rem;
+  min-height: 2.25rem;
+  border: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline-style: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: color 1ms ease-in-out, background-color 1ms ease-in-out, border-color 1ms ease-in-out, box-shadow 1ms ease-in-out;
+  font-family: inherit; }
+  :host ::ng-deep .igx-button .igx-icon, :host ::ng-deep .igx-button--flat .igx-icon, :host ::ng-deep .igx-button--outlined .igx-icon, :host ::ng-deep .igx-button--raised .igx-icon, :host ::ng-deep .igx-button .igx-icon--inactive, :host ::ng-deep .igx-button--flat .igx-icon--inactive, :host ::ng-deep .igx-button--outlined .igx-icon--inactive, :host ::ng-deep .igx-button--raised .igx-icon--inactive {
+    width: 1.125rem;
+    height: 1.125rem;
+    font-size: 1.125rem; }
+
+:host ::ng-deep .igx-button--cosy {
+  padding: 0.375rem 1rem;
+  min-height: 1.875rem; }
+
+:host ::ng-deep .igx-button--compact {
+  padding: 0.1875rem 1rem;
+  min-height: 1.5rem; }
+
+:host ::ng-deep .igx-button--flat {
+  background: var(--igx-button-flat-background);
+  color: var(--igx-button-flat-text-color);
+  border-radius: var(--igx-button-flat-border-radius); }
+  :host ::ng-deep .igx-button--flat .igx-icon, :host ::ng-deep .igx-button--flat .igx-icon--inactive {
+    color: var(--igx-button-flat-icon-color); }
+  :host ::ng-deep .igx-button--flat:hover {
+    background: var(--igx-button-flat-hover-background);
+    color: var(--igx-button-flat-hover-text-color); }
+    :host ::ng-deep .igx-button--flat:hover .igx-icon, :host ::ng-deep .igx-button--flat:hover .igx-icon--inactive {
+      color: var(--igx-button-flat-hover-icon-color); }
+  :host ::ng-deep .igx-button--flat:focus, :host ::ng-deep .igx-button--flat:active {
+    background: var(--igx-button-flat-focus-background);
+    color: var(--igx-button-flat-focus-text-color); }
+    :host ::ng-deep .igx-button--flat:focus .igx-icon, :host ::ng-deep .igx-button--flat:focus .igx-icon--inactive, :host ::ng-deep .igx-button--flat:active .igx-icon, :host ::ng-deep .igx-button--flat:active .igx-icon--inactive {
+      color: var(--igx-button-flat-focus-icon-color); }
+
+:host ::ng-deep .igx-button--outlined {
+  border: 1px solid transparent;
+  border-color: var(--igx-button-outlined-outline-color);
+  background: var(--igx-button-outlined-background);
+  color: var(--igx-button-outlined-text-color);
+  border-radius: var(--igx-button-outlined-border-radius); }
+  :host ::ng-deep .igx-button--outlined .igx-icon, :host ::ng-deep .igx-button--outlined .igx-icon--inactive {
+    color: var(--igx-button-outlined-icon-color); }
+  :host ::ng-deep .igx-button--outlined:hover {
+    background: var(--igx-button-outlined-hover-background);
+    color: var(--igx-button-outlined-hover-text-color); }
+    :host ::ng-deep .igx-button--outlined:hover .igx-icon, :host ::ng-deep .igx-button--outlined:hover .igx-icon--inactive {
+      color: var(--igx-button-outlined-hover-icon-color); }
+  :host ::ng-deep .igx-button--outlined:focus, :host ::ng-deep .igx-button--outlined:active {
+    background: var(--igx-button-outlined-focus-background);
+    color: var(--igx-button-outlined-focus-text-color); }
+    :host ::ng-deep .igx-button--outlined:focus .igx-icon, :host ::ng-deep .igx-button--outlined:focus .igx-icon--inactive, :host ::ng-deep .igx-button--outlined:active .igx-icon, :host ::ng-deep .igx-button--outlined:active .igx-icon--inactive {
+      color: var(--igx-button-outlined-focus-icon-color); }
+
+:host ::ng-deep .igx-button--raised {
+  color: var(--igx-button-raised-text-color);
+  background: var(--igx-button-raised-background);
+  box-shadow: var(--igx-button-raised-resting-shadow);
+  border-radius: var(--igx-button-raised-border-radius); }
+  :host ::ng-deep .igx-button--raised .igx-icon, :host ::ng-deep .igx-button--raised .igx-icon--inactive {
+    color: var(--igx-button-raised-icon-color); }
+  :host ::ng-deep .igx-button--raised:hover {
+    color: var(--igx-button-raised-hover-text-color);
+    background: var(--igx-button-raised-hover-background);
+    box-shadow: var(--igx-button-raised-hover-shadow); }
+    :host ::ng-deep .igx-button--raised:hover .igx-icon, :host ::ng-deep .igx-button--raised:hover .igx-icon--inactive {
+      color: var(--igx-button-raised-hover-icon-color); }
+  :host ::ng-deep .igx-button--raised:focus, :host ::ng-deep .igx-button--raised:active {
+    color: var(--igx-button-raised-focus-text-color);
+    background: var(--igx-button-raised-focus-background);
+    box-shadow: var(--igx-button-raised-focus-shadow); }
+    :host ::ng-deep .igx-button--raised:focus .igx-icon, :host ::ng-deep .igx-button--raised:focus .igx-icon--inactive, :host ::ng-deep .igx-button--raised:active .igx-icon, :host ::ng-deep .igx-button--raised:active .igx-icon--inactive {
+      color: var(--igx-button-raised-focus-icon-color); }
+
+:host ::ng-deep .igx-button--fab, :host ::ng-deep .igx-button--icon {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  border: 1px solid transparent;
+  border-radius: var(--igx-button-fab-border-radius);
+  outline: none;
+  cursor: pointer;
+  transition: color 1ms ease-in-out, background-color 1ms ease-in-out, border-color 1ms ease-in-out, box-shadow 1ms ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  -webkit-filter: blur(0);
+          filter: blur(0); }
+
+:host ::ng-deep .igx-button--fab {
+  padding: 0.9375rem;
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+  line-height: unset;
+  white-space: nowrap;
+  color: var(--igx-button-fab-text-color);
+  background: var(--igx-button-fab-background);
+  box-shadow: var(--igx-button-fab-resting-shadow);
+  border-radius: var(--igx-button-fab-border-radius); }
+  :host ::ng-deep .igx-button--fab:hover {
+    color: var(--igx-button-fab-hover-text-color);
+    background: var(--igx-button-fab-hover-background);
+    box-shadow: var(--igx-button-fab-resting-shadow); }
+  :host ::ng-deep .igx-button--fab:focus, :host ::ng-deep .igx-button--fab:active {
+    color: var(--igx-button-fab-focus-text-color);
+    background: var(--igx-button-fab-focus-background);
+    box-shadow: var(--igx-button-fab-focus-shadow); }
+
+:host ::ng-deep .igx-button--fab-cosy.igx-button--fab {
+  padding: 0.6875rem;
+  min-width: 3rem;
+  min-height: 3rem; }
+
+:host ::ng-deep .igx-button--fab-compact.igx-button--fab {
+  padding: 0.4375rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem; }
+
+:host ::ng-deep .igx-button--icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1rem;
+  padding: 0;
+  color: var(--igx-button-icon-color);
+  background: var(--igx-button-icon-background);
+  border-radius: var(--igx-button-icon-border-radius); }
+  :host ::ng-deep .igx-button--icon:hover {
+    transition: color 1ms ease-in-out, background-color 1ms ease-in-out, border-color 1ms ease-in-out, box-shadow 1ms ease-in-out;
+    color: var(--igx-button-icon-hover-color);
+    background: var(--igx-button-icon-hover-background); }
+  :host ::ng-deep .igx-button--icon:focus, :host ::ng-deep .igx-button--icon:active {
+    color: var(--igx-button-icon-focus-color);
+    background: var(--igx-button-icon-focus-background);
+    box-shadow: var(--igx-button-raised-focus-shadow); }
+
+:host ::ng-deep .igx-button--disabled {
+  pointer-events: none;
+  box-shadow: none; }
+  :host ::ng-deep .igx-button--outlined.igx-button--disabled, :host ::ng-deep .igx-button--flat.igx-button--disabled, :host ::ng-deep .igx-button--raised.igx-button--disabled, :host ::ng-deep .igx-button--fab.igx-button--disabled, :host ::ng-deep .igx-button--icon.igx-button--disabled {
+    color: var(--igx-button-disabled-color); }
+    :host ::ng-deep .igx-button--outlined.igx-button--disabled igx-icon, :host ::ng-deep .igx-button--flat.igx-button--disabled igx-icon, :host ::ng-deep .igx-button--raised.igx-button--disabled igx-icon, :host ::ng-deep .igx-button--fab.igx-button--disabled igx-icon, :host ::ng-deep .igx-button--icon.igx-button--disabled igx-icon {
+      color: inherit; }
+  :host ::ng-deep .igx-button--raised.igx-button--disabled, :host ::ng-deep .igx-button--fab.igx-button--disabled {
+    background: var(--igx-button-disabled-background); }
+  :host ::ng-deep .igx-button--flat.igx-button--disabled, :host ::ng-deep .igx-button--outlined.igx-button--disabled {
+    background: transparent; }
+  :host ::ng-deep .igx-button--outlined.igx-button--disabled {
+    border-color: var(--igx-button-outlined-disabled-outline-color); }
+  :host ::ng-deep .igx-button--disabled:focus {
+    box-shadow: none; }

@@ -1,0 +1,44 @@
+@import "~igniteui-angular/lib/core/styles/themes/index";
+
+.calendar-wrapper {
+    max-width: 600px;
+    min-width: 200px;
+    margin: 8px;
+}
+
+.igx-calendar {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26),
+    0 1px 1px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px -1px rgba(0, 0, 0, 0.08);
+}
+
+$custom-calendar-theme: igx-calendar-theme(
+    $header-background: #345779,
+    $content-background: #fdfdfd,
+    $header-text-color: #ffffff,
+    $date-current-text-color: #2dabe8,
+    $picker-arrow-color: #2dabe8,
+    $date-selected-text-color: #fdfdfd,
+    $date-current-bg-color: #fdfdfd,
+    $picker-arrow-hover-color: #345779,
+    $year-current-text-color: #2dabe8,
+    $year-hover-text-color: #2dabe8,
+    $month-current-text-color: #2dabe8,
+    $month-hover-text-color: #2dabe8,
+    $picker-text-color: #2dabe8,
+    $picker-text-hover-color: #345779,
+);
+
+// :host {
+//     @include igx-css-vars($custom-calendar-theme);
+// }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-calendar($custom-calendar-theme);
+}
+

@@ -1,0 +1,17 @@
+.sample-holder {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.my-expansion-panel {
+    max-width: 500px;
+    min-width: 300px;
+    width: 100%;
+    border: 1px solid rgba(171, 171, 171, 0.3)
+}
+
+.example-content {
+    padding: 16px;
+}

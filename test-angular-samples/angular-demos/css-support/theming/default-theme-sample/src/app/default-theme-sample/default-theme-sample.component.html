@@ -1,0 +1,55 @@
+<igx-dialog #dialog1 title="New Record" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'" (onLeftButtonSelect)="cancel()"
+    (onRightButtonSelect)="addRow()">
+    <div class="dialogNewRecord">
+        <igx-input-group>
+            <label igxLabel for="industrySector">Industry Sector</label>
+            <input igxInput id="industrySector" type="text" [(ngModel)]="record.IndustrySector" />
+        </igx-input-group>
+        <igx-input-group>
+            <label igxLabel for="industryGroup">Industry Group</label>
+            <input igxInput id="industryGroup" type="text" [(ngModel)]="record.IndustryGroup" />
+        </igx-input-group>
+        <igx-input-group>
+            <label igxLabel for="sectorType">Sector Type</label>
+            <input igxInput id="sectorType" type="text" [(ngModel)]="record.SectorType" />
+        </igx-input-group>
+        <igx-input-group>
+            <label igxLabel for="krd">KRD</label>
+            <input igxInput id="krd" type="number" [(ngModel)]="record.KRD" />
+        </igx-input-group>
+        <igx-input-group>
+            <label igxLabel for="marketNotion">Market Notion</label>
+            <input igxInput id="marketNotion" type="number" [(ngModel)]="record.MarketNotion" />
+        </igx-input-group>
+        <igx-date-picker id="date" label="Date" [(ngModel)]="record.Date"></igx-date-picker>
+    </div>
+</igx-dialog>
+<div igxOverlayOutlet #outlet>
+    <div class="grid-options" igxLayout igxLayoutDir="row" igxLayoutWrap="wrap">
+        <button igxButton="flat" class="addProdBtn" (click)="openDialog()">Add New Product</button>
+    </div>
+    <igx-grid igxPreventDocumentScroll [data]="data" [autoGenerate]="false" height="550px" width="100%" [paging]="true" [perPage]="10"
+        displayDensity="comfortable" #grid1 [allowFiltering]="true">
+        <igx-column [field]="'IndustrySector'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'IndustryGroup'" dataType="string" [sortable]="true" [editable]="true"></igx-column>
+        <igx-column [field]="'SectorType'" dataType="string" [sortable]="true" [editable]="true"></igx-column>
+        <igx-column [field]="'KRD'" dataType="number" [sortable]="true"></igx-column>
+        <igx-column [field]="'MarketNotion'" dataType="number" [sortable]="true" [editable]="true"></igx-column>
+        <igx-column [field]="'Date'" dataType="date" [sortable]="true" [editable]="true">
+            <ng-template igxCell let-cell="cell" let-val>
+                {{val | date:'dd/MM/yyyy'}}
+            </ng-template>
+        </igx-column>
+        <igx-column [field]="'Delete Row'" [filterable]="false">
+            <ng-template igxCell let-cell="cell">
+                <button igxButton="icon" (click)="removeRow(cell.cellID.rowIndex)">
+                    <igx-icon>delete</igx-icon>
+                </button>
+            </ng-template>
+        </igx-column>
+    </igx-grid>
+</div>
+<div class="snackbar_wrapper">
+    <igx-snackbar #snackbar [autoHide]="true" displayTime="2500" actionText="Undo" (onAction)="restoreRow()">
+    </igx-snackbar>
+</div>

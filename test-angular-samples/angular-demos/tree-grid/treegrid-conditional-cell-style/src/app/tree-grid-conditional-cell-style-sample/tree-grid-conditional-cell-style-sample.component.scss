@@ -1,0 +1,57 @@
+.grid__wrapper {
+    margin: 10px;
+}
+
+:host::ng-deep {
+    $primary-color-green: green;
+    $primary-color-red: red;
+    $primary-color-blue: royalblue;
+    $margin-right-images: 5px;
+    $images-font-size: 1.5em;
+    $images-font-weight: bold;
+
+    .upPrice {
+        color: $primary-color-red;
+    }
+
+    .downPrice {
+        color: $primary-color-green;
+    }
+
+    .allergensFont {
+        color: $primary-color-blue;
+    }
+
+    .contentStyle {
+        font-size: $images-font-size;
+        font-weight: $images-font-weight;
+        margin-right: $margin-right-images;
+    }
+
+    .star {
+        @extend .contentStyle;
+        content: "*";
+    }
+
+    .allergens:after {
+        @extend .star;
+        font-weight: normal;
+        color: $primary-color-blue;
+        vertical-align: top;
+        margin-left: 2px;
+    }
+
+    #message:before {
+        @extend .star;
+        font-weight: lighter;
+        color: $primary-color-blue;
+        vertical-align: top;
+        margin-right: 2px;
+    }
+
+    #message {
+        color: $primary-color-blue;
+        font-style: italic;
+        font-size: 0.75rem;
+    }
+}

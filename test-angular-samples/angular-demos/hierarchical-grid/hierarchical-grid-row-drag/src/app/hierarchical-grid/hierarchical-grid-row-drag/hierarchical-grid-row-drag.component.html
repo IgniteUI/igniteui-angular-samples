@@ -1,0 +1,24 @@
+<div class="drop-area" igxDrop (enter)="onEnterAllowed($event)" (leave)="onLeaveAllowed($event)"
+    (dropped)="onDropAllowed($event)">
+    <igx-icon>delete</igx-icon>
+    <div>Drag a row here to delete it</div>
+</div>
+<igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [allowFiltering]='true' #grid1 [data]="localData" [primaryKey]="'id'" [rowDraggable]="true"
+    [height]="'540px'" [width]="'100%'" #hGrid (onRowDragEnd)="onRowDragEnd($event)">
+    <igx-column field="name" header="Name"></igx-column>
+    <igx-column field="system" header="Is System Drive"></igx-column>
+    <igx-row-island [primaryKey]="'id'" igxDrop [key]="'folders'" #layout1 (onRowDragEnd)="onRowDragEnd($event)">
+        <igx-column field="name" header="Name"></igx-column>
+        <igx-column field="createdOn" header="Created On"></igx-column>
+        <igx-column field="createdBy" header="Created By"></igx-column>
+        <igx-row-island [rowDraggable]="true" [primaryKey]="'id'" igxDrop [key]="'files'">
+            <igx-column field="name" header="Name"></igx-column>
+            <igx-column field="extension" header="Extension"></igx-column>
+            <igx-column field="size" header="Size" dataType="number" hasSummary='true'></igx-column>
+            <igx-column field="createdBy" header="createdBy"></igx-column>
+        </igx-row-island>
+    </igx-row-island>
+    <ng-template igxDragIndicatorIcon>
+        <igx-icon>drag_handle</igx-icon>
+    </ng-template>
+</igx-hierarchical-grid>

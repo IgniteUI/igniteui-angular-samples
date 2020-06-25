@@ -1,0 +1,54 @@
+<button igxButton="raised" (click)="dialogAdd.open()" class="addSingerBtn">Add New Singer</button>
+<igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="localdata" [autoGenerate]="false"
+    [height]="'600px'" [width]="'100%'">
+    <igx-column field="Artist" [editable]="true" [dataType]="'string'"></igx-column>
+    <igx-column field="HasGrammyAward" header="Has Grammy Award?" [editable]="true" [dataType]="'boolean'">
+    </igx-column>
+    <igx-column field="Debut" [editable]="true" dataType="number" [formatter]="formatter"></igx-column>
+    <igx-column field="GrammyNominations" header="Grammy Nominations" [editable]="true" dataType="number" 
+        [hasSummary]="true" [summaries]="mySummary"></igx-column>
+    <igx-column field="GrammyAwards" header="Grammy Awards" [editable]="true" dataType="number" 
+        [hasSummary]="true" [summaries]="mySummary"></igx-column>
+    <igx-column [width]="'100px'">
+        <ng-template igxCell let-cell="cell">
+            <button igxButton="icon" (click)="removeRow(cell.cellID.rowIndex)">
+                <igx-icon>delete</igx-icon>
+            </button>
+        </ng-template>
+    </igx-column>
+
+    <igx-row-island [key]="'Albums'" [autoGenerate]="false">
+        <igx-column field="Album" [editable]="true" [dataType]="'string'"></igx-column>
+        <igx-column field="LaunchDate" header="Launch Date" [editable]="true" [dataType]="'date'"></igx-column>
+        <igx-column field="BillboardReview" header="Billboard Review" [editable]="true" dataType="number"></igx-column>
+        <igx-column field="USBillboard200" header="US Billboard 200" [editable]="true" dataType="number"></igx-column>
+        <igx-row-island [key]="'Songs'" [autoGenerate]="false">
+                <igx-column field="Number" header="No." [editable]="true" dataType="number"></igx-column>
+                <igx-column field="Title" [editable]="true" [dataType]="'string'"></igx-column>
+                <igx-column field="Released" [editable]="true" [dataType]="'date'"></igx-column>
+                <igx-column field="Genre" [editable]="true" [dataType]="'string'"></igx-column>
+        </igx-row-island>
+    </igx-row-island>
+</igx-hierarchical-grid>
+<igx-dialog #dialogAdd title="New Singer" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'"
+(onLeftButtonSelect)="cancel()" (onRightButtonSelect)="addRow()">
+<div class="dialogNewRecord">
+    <igx-input-group>
+        <label igxLabel for="artist">Artist</label>
+        <input igxInput id="artist" type="text" [(ngModel)]="singer.Artist" />
+    </igx-input-group>
+    <igx-checkbox id="hasGrammyAward" [(ngModel)]="singer.HasGrammyAward">Has Grammy Award</igx-checkbox>
+    <igx-input-group>
+        <label igxLabel for="debut">Debut</label>
+        <input igxInput id="debut" type="number" [(ngModel)]="singer.Debut" />
+    </igx-input-group>
+    <igx-input-group>
+        <label igxLabel for="grammyNominations">Grammy Nominations</label>
+        <input igxInput id="grammyNominations" type="number" [(ngModel)]="singer.GrammyNominations" />
+    </igx-input-group>
+    <igx-input-group>
+        <label igxLabel for="grammyAwards">Grammy Awards</label>
+        <input igxInput id="grammyAwards" type="number" [(ngModel)]="singer.GrammyAwards" />
+    </igx-input-group>
+</div>
+</igx-dialog>

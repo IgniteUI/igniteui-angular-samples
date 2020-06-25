@@ -1,0 +1,20 @@
+<div class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" width="100%" height="500px"
+        [rowEditable]="true" [rowSelection]="selectionMode" [columnHiding]="true">
+        <igx-column *ngFor="let c of columns" [field]="c.field" [dataType]="c.dataType" [header]="c.label">
+        </igx-column>
+        <ng-template igxRowEditText let-rowChangesCount>
+            <span class="changes"> Changes: {{rowChangesCount}}</span>
+        </ng-template>
+        <ng-template igxRowEditActions let-endRowEdit>
+            <div class="custom-buttons">
+                <button igxButton="icon" class="custom-button" igxRowEditTabStop (click)="endRowEdit(false)">
+                    <igx-icon>clear</igx-icon>
+                </button>
+                <button igxButton="icon" class="custom-button" igxRowEditTabStop (click)="endRowEdit(true)">
+                    <igx-icon>check</igx-icon>
+                </button>
+            </div>
+        </ng-template>
+    </igx-tree-grid>
+</div>

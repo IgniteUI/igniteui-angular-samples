@@ -1,0 +1,131 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+:root {
+  --igx-dialog-border-radius: 4px;
+  --igx-dialog-elevation: 24;
+  --igx-dialog-variant: material;
+  --igx-dialog-background: #fff;
+  --igx-dialog-title-color: rgba(0, 0, 0, 0.87);
+  --igx-dialog-message-color: rgba(0, 0, 0, 0.6);
+  --igx-dialog-border-color: transparent;
+  --igx-dialog-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.26), 0 24px 38px 3px rgba(0, 0, 0, 0.12), 0 9px 46px 8px rgba(0, 0, 0, 0.08); }
+
+.igx-dialog {
+  outline-style: none; }
+
+.igx-dialog--hidden {
+  display: none; }
+
+.igx-dialog__window, .dialog {
+  position: relative;
+  min-width: 17.5rem;
+  border: 1px solid var(--igx-dialog-border-color);
+  border-radius: var(--igx-dialog-border-radius);
+  background: var(--igx-dialog-background);
+  box-shadow: var(--igx-dialog-shadow);
+  overflow: hidden; }
+  .igx-dialog__window .igx-calendar, .dialog .igx-calendar {
+    width: 20rem; }
+  .igx-dialog__window .igx-calendar--vertical, .dialog .igx-calendar--vertical {
+    width: 31rem; }
+
+.igx-dialog__window-title, .dialog__title {
+  display: -ms-flexbox;
+  display: flex;
+  color: var(--igx-dialog-title-color);
+  padding: 1.5rem 1.5rem 0.75rem 1.5rem; }
+
+.igx-dialog__window-content, .dialog__content {
+  color: var(--igx-dialog-message-color);
+  max-width: 40ch;
+  padding: 0.75rem 1.5rem; }
+
+.igx-dialog__window-actions {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  padding: 0.5rem; }
+  .igx-dialog__window-actions button + button {
+    margin-left: 0.5rem; }
+
+.igx-dialog__window-title, .dialog__title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 0.00937rem;
+  text-transform: none;
+  line-height: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin: 0; }
+
+.igx-dialog__window-content, .dialog__content {
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.03125rem;
+  text-transform: none;
+  line-height: 1.75rem;
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+  margin: 0; }
+
+:host {
+  display: block;
+  margin: 16px; }
+  .dialog {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    max-width: 17.5rem; }
+    .dialog__icon {
+      position: absolute;
+      right: 1.5rem;
+      top: 1.5rem;
+      cursor: move; }

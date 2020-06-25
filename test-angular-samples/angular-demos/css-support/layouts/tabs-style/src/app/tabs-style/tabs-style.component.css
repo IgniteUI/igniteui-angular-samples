@@ -1,0 +1,293 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+:host igx-tabs-group {
+  padding: 8px; }
+
+:host ::ng-deep {
+  --igx-tabs-border-radius: 0px;
+  --igx-tabs-item-text-color: #f0d675;
+  --igx-tabs-item-background: #323232;
+  --igx-tabs-item-hover-background: #f0d675;
+  --igx-tabs-item-hover-color: #323232;
+  --igx-tabs-item-active-color: #f0d675;
+  --igx-tabs-item-active-icon-color: #f0d675;
+  --igx-tabs-item-active-background: rgba(0, 0, 0, 0.08);
+  --igx-tabs-indicator-color: #f0d675;
+  --igx-tabs-button-color: white;
+  --igx-tabs-button-background: rgba(255, 255, 255, 0.1);
+  --igx-tabs-button-hover-background: rgba(255, 255, 255, 0.14);
+  --igx-tabs-button-hover-color: white;
+  --igx-tabs-tab-ripple-color: #f0d675;
+  --igx-tabs-button-ripple-color: rgba(255, 255, 255, 0.4);
+  --igx-tabs-border-color: transparent;
+  --igx-tabs-border-color--hover: transparent;
+  --igx-tabs-tab-area-shadow: none; }
+
+:host ::ng-deep .igx-tabs {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+
+:host ::ng-deep .igx-tabs__header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  overflow: hidden;
+  background: var(--igx-tabs-item-background);
+  box-shadow: var(--igx-tabs-tab-area-shadow); }
+
+:host ::ng-deep .igx-tabs__content-fixed,
+:host ::ng-deep .igx-tabs__header-wrapper-fixed {
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+  overflow: hidden; }
+
+:host ::ng-deep .igx-tabs__content-fluid,
+:host ::ng-deep .igx-tabs__header-wrapper-fluid {
+  position: relative;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  transition: transform 0.2s cubic-bezier(0.35, 0, 0.25, 1); }
+
+
+:host ::ng-deep .igx-tabs__header-wrapper-fluid {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  min-width: 100%; }
+
+:host ::ng-deep .igx-tabs__content-fluid {
+  display: -ms-flexbox;
+  display: flex; }
+
+:host ::ng-deep .igx-tabs__header-menu-item, :host ::ng-deep .igx-tabs__header-menu-item--selected, :host ::ng-deep .igx-tabs__header-menu-item--disabled {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  min-width: 90px;
+  max-width: 360px;
+  word-wrap: break-word;
+  height: 3rem;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 0 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: var(--igx-tabs-item-background);
+  color: var(--igx-tabs-item-text-color);
+  outline: 0;
+  border: 1px solid var(--igx-tabs-border-color); }
+  :host ::ng-deep .igx-tabs__header-menu-item::-moz-focus-inner, :host ::ng-deep .igx-tabs__header-menu-item--selected::-moz-focus-inner, :host ::ng-deep .igx-tabs__header-menu-item--disabled::-moz-focus-inner {
+    border: 0; }
+  :host ::ng-deep .igx-tabs__header-menu-item:focus, :host ::ng-deep .igx-tabs__header-menu-item--selected:focus, :host ::ng-deep .igx-tabs__header-menu-item--disabled:focus {
+    background: var(--igx-tabs-item-active-background);
+    border-bottom-color: transparent; }
+  :host ::ng-deep .igx-tabs__header-menu-item:hover, :host ::ng-deep .igx-tabs__header-menu-item--selected:hover, :host ::ng-deep .igx-tabs__header-menu-item--disabled:hover {
+    background: var(--igx-tabs-item-hover-background);
+    color: var(--igx-tabs-item-hover-color); }
+  :host ::ng-deep .igx-tabs__header-menu-item:hover, :host ::ng-deep .igx-tabs__header-menu-item--selected:hover, :host ::ng-deep .igx-tabs__header-menu-item--disabled:hover, :host ::ng-deep .igx-tabs__header-menu-item:focus, :host ::ng-deep .igx-tabs__header-menu-item--selected:focus, :host ::ng-deep .igx-tabs__header-menu-item--disabled:focus {
+    border: 1px solid var(--igx-tabs-border-color--hover); }
+  :host ::ng-deep .igx-tabs__header-menu-item, :host ::ng-deep .igx-tabs__header-menu-item--selected, :host ::ng-deep .igx-tabs__header-menu-item--disabled {
+    --igx-ripple-variant: material;
+    --igx-ripple-color: var(--igx-tabs-tab-ripple-color); }
+  :host ::ng-deep .igx-tabs__header-menu-item .igx-ripple__inner, :host ::ng-deep .igx-tabs__header-menu-item--selected .igx-ripple__inner, :host ::ng-deep .igx-tabs__header-menu-item--disabled .igx-ripple__inner {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background: var(--igx-ripple-color);
+    pointer-events: none;
+    -ms-transform-origin: center;
+        transform-origin: center;
+    transform: translate3d(0, 0, 0) scale(0);
+    will-change: opacity, transform;
+    opacity: .5;
+    margin: 0 !important;
+    border: none !important; }
+  :host ::ng-deep .igx-tabs__header-menu-item .igx-ripple, :host ::ng-deep .igx-tabs__header-menu-item--selected .igx-ripple, :host ::ng-deep .igx-tabs__header-menu-item--disabled .igx-ripple {
+    overflow: hidden; }
+  :host ::ng-deep .igx-tabs__header-menu-item, :host ::ng-deep .igx-tabs__header-menu-item--selected, :host ::ng-deep .igx-tabs__header-menu-item--disabled {
+    --igx-ripple-variant: material;
+    --igx-ripple-color: var(--igx-tabs-tab-ripple-color); }
+
+:host ::ng-deep .igx-tabs__header-menu-item--selected {
+  outline: 0;
+  color: var(--igx-tabs-item-active-color); }
+  :host ::ng-deep .igx-tabs__header-menu-item--selected:focus {
+    background: var(--igx-tabs-item-active-background);
+    color: var(--igx-tabs-item-active-color); }
+  :host ::ng-deep .igx-tabs__header-menu-item--selected:hover {
+    background: var(--igx-tabs-item-active-background);
+    color: var(--igx-tabs-item-active-color); }
+  :host ::ng-deep .igx-tabs__header-menu-item--selected .igx-tabs__header-menu-item-icon {
+    color: var(--igx-tabs-item-active-icon-color); }
+    :host ::ng-deep .igx-tabs__header-menu-item--selected .igx-tabs__header-menu-item-icon igx-icon {
+      color: var(--igx-tabs-item-active-icon-color); }
+
+:host ::ng-deep .igx-tabs__header-menu-item--disabled {
+  outline: 0;
+  opacity: .5;
+  cursor: default;
+  pointer-events: none; }
+
+:host ::ng-deep .igx-tabs__header-menu-item-icon {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+  :host ::ng-deep .igx-tabs__header-menu-item-icon + .igx-tabs__item-label {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-top: 0.75rem; }
+
+:host ::ng-deep .igx-tabs__header-menu-item-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -ms-transform: translateX(0);
+      transform: translateX(0);
+  height: 2px;
+  min-width: 90px;
+  background: var(--igx-tabs-indicator-color);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1), width 0.2s cubic-bezier(0.35, 0, 0.25, 1); }
+
+:host ::ng-deep .igx-tabs__header-button, :host ::ng-deep .igx-tabs__header-button--hidden, :host ::ng-deep .igx-tabs__header-button--active {
+  z-index: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  border: none;
+  padding: 0;
+  min-width: 3rem;
+  width: 3rem;
+  min-height: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  position: relative;
+  background: var(--igx-tabs-button-background);
+  color: var(--igx-tabs-button-color);
+  outline: 0;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.26), 0 4px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.08); }
+  :host ::ng-deep .igx-tabs__header-button:hover, :host ::ng-deep .igx-tabs__header-button--hidden:hover, :host ::ng-deep .igx-tabs__header-button--active:hover {
+    background: var(--igx-tabs-button-hover-background);
+    color: var(--igx-tabs-button-hover-color); }
+  :host ::ng-deep .igx-tabs__header-button:focus, :host ::ng-deep .igx-tabs__header-button--hidden:focus, :host ::ng-deep .igx-tabs__header-button--active:focus {
+    outline: 0;
+    background: var(--igx-tabs-button-hover-background); }
+  :host ::ng-deep .igx-tabs__header-button::-moz-focus-inner, :host ::ng-deep .igx-tabs__header-button--hidden::-moz-focus-inner, :host ::ng-deep .igx-tabs__header-button--active::-moz-focus-inner {
+    border: 0; }
+  :host ::ng-deep .igx-tabs__header-button, :host ::ng-deep .igx-tabs__header-button--hidden, :host ::ng-deep .igx-tabs__header-button--active {
+    --igx-ripple-variant: material;
+    --igx-ripple-color: var(--igx-tabs-button-ripple-color); }
+  :host ::ng-deep .igx-tabs__header-button .igx-ripple__inner, :host ::ng-deep .igx-tabs__header-button--hidden .igx-ripple__inner, :host ::ng-deep .igx-tabs__header-button--active .igx-ripple__inner {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background: var(--igx-ripple-color);
+    pointer-events: none;
+    -ms-transform-origin: center;
+        transform-origin: center;
+    transform: translate3d(0, 0, 0) scale(0);
+    will-change: opacity, transform;
+    opacity: .5;
+    margin: 0 !important;
+    border: none !important; }
+  :host ::ng-deep .igx-tabs__header-button .igx-ripple, :host ::ng-deep .igx-tabs__header-button--hidden .igx-ripple, :host ::ng-deep .igx-tabs__header-button--active .igx-ripple {
+    overflow: hidden; }
+  :host ::ng-deep .igx-tabs__header-button, :host ::ng-deep .igx-tabs__header-button--hidden, :host ::ng-deep .igx-tabs__header-button--active {
+    --igx-ripple-variant: material;
+    --igx-ripple-color: var(--igx-tabs-button-ripple-color); }
+
+:host ::ng-deep .igx-tabs__header-button--hidden {
+  visibility: hidden; }
+
+:host ::ng-deep .igx-tabs__header-button--none {
+  display: none; }
+
+:host ::ng-deep .igx-tabs__item-label {
+  word-break: break-word;
+  max-width: 100%;
+  text-align: center; }
+  :host ::ng-deep .igx-tabs__item-label + .igx-tabs__header-menu-item-icon {
+    padding-top: 0.75rem; }
+
+:host ::ng-deep .igx-tabs__group {
+  display: inline-block;
+  min-width: 100%; }
+
+:host ::ng-deep .igx-tabs--fixed .igx-tabs__header-menu-item, :host ::ng-deep .igx-tabs--fixed .igx-tabs__header-menu-item--selected, :host ::ng-deep .igx-tabs--fixed .igx-tabs__header-menu-item--disabled {
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+  width: 100%; }
+
+:host ::ng-deep .igx-tabs--icons .igx-tabs__header-button, :host ::ng-deep .igx-tabs--icons .igx-tabs__header-button--hidden, :host ::ng-deep .igx-tabs--icons .igx-tabs__header-button--active,
+:host ::ng-deep .igx-tabs--icons .igx-tabs__header-menu-item,
+:host ::ng-deep .igx-tabs--icons .igx-tabs__header-menu-item--selected,
+:host ::ng-deep .igx-tabs--icons .igx-tabs__header-menu-item--disabled {
+  min-height: 4.5rem;
+  height: 4.5rem; }

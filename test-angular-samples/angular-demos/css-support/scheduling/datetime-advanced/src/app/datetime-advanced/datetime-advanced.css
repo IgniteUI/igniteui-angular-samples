@@ -1,0 +1,13 @@
+.datetime-wrapper {
+  padding: 16px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .datetime-wrapper igx-input-group {
+    padding-right: 20px; }
+  .datetime-wrapper igx-suffix {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }

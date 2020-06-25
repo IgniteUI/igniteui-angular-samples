@@ -1,0 +1,44 @@
+<article class="settings">
+    <igx-navbar title="Settings">
+        <igx-icon (click)="connectionBanner.open()">settings</igx-icon>
+    </igx-navbar>
+
+    <igx-banner #connectionBanner>
+        <igx-icon>notification_important</igx-icon>
+        <span>You are currently sending automatic replies.</span>
+        <igx-banner-actions>
+            <button igxButton igxRipple (click)="automaticRepliesSwitch(false)">Turn Off</button>
+            <button igxButton igxRipple (click)="connectionBanner.close()">Dismiss</button>
+        </igx-banner-actions>
+    </igx-banner>
+
+    <section class="profile">
+        <igx-avatar
+            class="profile__avatar"
+            src="https://www.infragistics.com/angular-demos/assets/images/men/15.jpg"
+            [roundShape]="true"
+            size="small">
+        </igx-avatar>
+        <div class="profile__detail">
+          <h4 class="igx-typography__subtitle-2">James Gort</h4>
+          <h6 class="igx-typography__caption">jgort@example.com</h6>
+        </div>
+    </section>
+
+    <section class="reply">
+        <igx-switch
+            class="reply__switch"
+            labelPosition="before"
+            [(ngModel)]="automaticReplies"
+            (ngModelChange)="toggleBanner($event)">
+            Automatic Replies
+        </igx-switch>
+
+        <igx-input-group type="border" [disabled]="true">
+           <textarea
+               class="reply__message"
+               igxInput>{{ automaticReplyText }}
+           </textarea>
+        </igx-input-group>
+    </section>
+</article>

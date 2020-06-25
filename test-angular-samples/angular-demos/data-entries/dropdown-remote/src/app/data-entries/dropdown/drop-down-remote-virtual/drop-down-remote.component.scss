@@ -1,0 +1,24 @@
+.drop-down-virtual-wrapper {
+    overflow-y: hidden;
+    width: 260px;
+    height: 320px;
+}
+
+:host {
+    display: flex;
+    flex-flow: row;
+    margin: 8px;
+}
+
+.button {
+    width: 260px;
+}
+
+.selection {
+    line-height: 2.25rem;
+    padding: 0px 8px;
+}
+
+.igx-drop-down__item {
+    padding: 0 0.8rem;
+}

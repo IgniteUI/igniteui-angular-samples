@@ -1,0 +1,101 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+/*BASIC THEMING*/
+
+$dark-button-theme: igx-button-theme(
+    $outlined-background: #FFCD0F,
+    $outlined-text-color: #292826,
+    $outlined-hover-background: #404040,
+    $outlined-hover-text-color: #FFCD0F
+);
+
+$dark-grid-toolbar-theme: igx-grid-toolbar-theme(
+    $background-color: #292826,
+    $title-text-color: #FFCD0F
+);
+
+/*ENHANCED APPROACHES*/
+
+// $yellow-color: #FFCD0F;
+// $black-color: #292826;
+// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+
+/*PALETTE and IGX-COLOR*/
+
+// $dark-button-theme: igx-button-theme(
+//     $outlined-background: igx-color($dark-palette, "secondary", 400),
+//     $outlined-text-color: igx-color($dark-palette, "primary", 400),
+//     $outlined-hover-background: igx-color($dark-palette, "primary", 400),
+//     $outlined-hover-text-color: igx-color($dark-palette, "secondary", 400)
+// );
+
+// $dark-grid-toolbar-theme: igx-grid-toolbar-theme(
+//     $background-color: igx-color($dark-palette, "primary", 200),
+//     $title-text-color: igx-color($dark-palette, "secondary", 400)
+// );
+
+/*SCHEMAS*/
+
+// $dark-grid-toolbar-schema: extend($_dark-grid-toolbar,
+//     (
+//         background-color:(
+//             igx-color: ("primary", 200)
+//         ),
+//         title-text-color:(
+//             igx-color: ("secondary", 400)
+//         )
+//     )
+// );
+
+// $dark-button-schema: extend($_dark-button,
+//     (
+//         outlined-background: (
+//             igx-color: ("secondary", 400)
+//         ),
+//         outlined-text-color: (
+//             igx-color: ("primary", 400)
+//         ),
+//         outlined-hover-background: (
+//             igx-color: ("primary", 400)
+//         ),
+//         outlined-hover-text-color: (
+//             igx-color: ("secondary", 400)
+//         )
+//     )
+// );
+
+// $custom-dark-schema: extend($dark-schema,(
+//     igx-grid-toolbar: $dark-grid-toolbar-schema,
+//     igx-button: $dark-button-schema
+// ));
+
+// $dark-button-theme: igx-button-theme(
+//   $palette: $dark-palette,
+//   $schema: $custom-dark-schema
+// );
+
+// $dark-grid-toolbar-theme: igx-grid-toolbar-theme(
+//   $palette: $dark-palette,
+//   $schema: $custom-dark-schema
+// );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+    ::ng-deep {
+        @include igx-grid-toolbar($dark-grid-toolbar-theme);
+
+        .igx-grid-toolbar__actions {
+            @include igx-button($dark-button-theme);
+    
+            .igx-button--outlined {
+                margin-left: 0.5rem;
+                border: none;
+            }
+        }
+    }
+}
+
+.hgrid_wrapper {
+    margin: 15px;
+}

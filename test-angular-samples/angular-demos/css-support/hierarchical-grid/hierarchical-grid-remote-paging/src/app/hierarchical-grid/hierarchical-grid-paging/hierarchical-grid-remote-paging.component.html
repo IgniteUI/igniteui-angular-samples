@@ -1,0 +1,37 @@
+<div class="grid__wrapper">
+    <igx-hierarchical-grid igxPreventDocumentScroll  [paging]="true" [perPage]="perPage" [primaryKey]="'CustomerID'" [height]="'550px'" [paginationTemplate]="remotePager"
+        [width]="'100%'" #hierarchicalGrid>
+        <igx-column field="CustomerID"></igx-column>
+        <igx-column field="CompanyName"></igx-column>
+        <igx-column field="ContactName"></igx-column>
+        <igx-column field="ContactTitle"></igx-column>
+        <igx-column field="Country"></igx-column>
+        <igx-column field="Phone"></igx-column>
+        <igx-row-island [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false"
+            (onGridCreated)="gridCreated($event, 'CustomerID')" [paging]="true" [perPage]="5">
+            <igx-column field="OrderID"></igx-column>
+            <igx-column field="OrderDate" [formatter]="dateFormatter"></igx-column>
+            <igx-column field="ShipCountry"></igx-column>
+            <igx-column field="ShipCity"></igx-column>
+            <igx-column field="ShipAddress"></igx-column>
+            <igx-row-island [key]="'Order_Details'" [primaryKey]="'ProductID'" [autoGenerate]="false"
+                (onGridCreated)="gridCreated($event, 'OrderID')" [paging]="true" [perPage]="5">
+                <igx-column field="ProductID"></igx-column>
+                <igx-column field="UnitPrice"></igx-column>
+                <igx-column field="Quantity"></igx-column>
+                <igx-column field="Discount"></igx-column>
+            </igx-row-island>
+        </igx-row-island>
+    </igx-hierarchical-grid>
+</div>
+
+<ng-template #customPager let-api>
+    <igx-paginator #paginator
+        [totalRecords]="totalCount"
+        [(perPage)]="perPage"
+        [selectLabel]="'Records per page:'"
+        [selectOptions]="selectOptions"
+        [displayDensity]="hierarchicalGrid.displayDensity"
+        (pageChange)="paginate($event)">
+    </igx-paginator>
+</ng-template>

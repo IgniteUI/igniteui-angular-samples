@@ -1,0 +1,30 @@
+<div class="sample-wrapper">
+    <section class="sample-content">
+        <article class="sample-column">
+            <h5 class="title">Bottom Position</h5>
+            <div class="preview bottom"></div>
+            <div class="btn-group">
+                <button igxButton="raised" igxRipple="white" (click)="showToast(toast, 'bottom')" [disabled]="toast.isVisible">Show Toast</button>
+                <button igxButton="raised" igxRipple="white" (click)="toast.hide()" [disabled]="!toast.isVisible">Hide Toast</button>
+            </div>
+        </article>
+        <article class="sample-column">
+            <h5 class="title">Middle Position</h5>
+            <div class="preview middle"></div>
+            <div class="btn-group">
+                <button igxButton="raised" igxRipple="white" (click)="showToast(toast, 'middle')" [disabled]="toast.isVisible">Show Toast</button>
+                <button igxButton="raised" igxRipple="white" (click)="toast.hide()" [disabled]="!toast.isVisible">Hide Toast</button>
+            </div>
+        </article>
+        <article class="sample-column">
+            <h5 class="title"> Top Position</h5>
+            <div class="preview top"></div>
+            <div class="btn-group">
+                <button igxButton="raised" igxRipple="white" (click)="showToast(toast, 'top')" [disabled]="toast.isVisible">Show Toast</button>
+                <button igxButton="raised" igxRipple="white" (click)="toast.hide()" [disabled]="!toast.isVisible">Hide Toast</button>
+            </div>
+        </article>
+    </section>
+
+    <igx-toast #toast [position]="toastPosition">This message will self-destruct in 4 seconds.</igx-toast>
+</div>

@@ -1,0 +1,15 @@
+<div class="date-picker-wrapper">
+    <igx-date-picker [value]="currentDate" mode="dropdown">
+        <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value" let-displayData="displayData">
+            <igx-input-group>
+                <input #dropDownTarget class="igx-date-picker__input-date" igxInput [value]="displayData"
+                    (blur)="changeDate($event)" />
+                <igx-suffix (click)="openDialog(dropDownTarget)">
+                    <igx-icon>event_note</igx-icon>
+                </igx-suffix>
+            </igx-input-group>
+        </ng-template>
+    </igx-date-picker>
+    <label>Date: {{ currentDate | date:'longDate'}}</label>
+    <igx-snackbar #snackbar></igx-snackbar>
+</div>

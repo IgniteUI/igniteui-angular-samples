@@ -1,0 +1,2831 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+.sample-wrapper {
+  margin: 0 auto;
+  padding: 5px; }
+
+.custom-buttons {
+  --igx-button-flat-border-radius: 4px;
+  --igx-button-raised-border-radius: 4px;
+  --igx-button-outlined-border-radius: 4px;
+  --igx-button-fab-border-radius: 28px;
+  --igx-button-icon-border-radius: 20px;
+  --igx-button-raised-resting-elevation: 2;
+  --igx-button-raised-hover-elevation: 4;
+  --igx-button-raised-focus-elevation: 8;
+  --igx-button-fab-resting-elevation: 6;
+  --igx-button-fab-hover-elevation: 12;
+  --igx-button-fab-focus-elevation: 12;
+  --igx-button-variant: material;
+  --igx-button-flat-background: transparent;
+  --igx-button-flat-text-color: #514590;
+  --igx-button-flat-icon-color: 'currentColor';
+  --igx-button-flat-hover-icon-color: 'currentColor';
+  --igx-button-flat-focus-icon-color: 'currentColor';
+  --igx-button-raised-icon-color: 'currentColor';
+  --igx-button-raised-hover-icon-color: 'currentColor';
+  --igx-button-raised-focus-icon-color: 'currentColor';
+  --igx-button-outlined-icon-color: 'currentColor';
+  --igx-button-outlined-hover-icon-color: 'currentColor';
+  --igx-button-outlined-focus-icon-color: 'currentColor';
+  --igx-button-flat-hover-background: rgba(81, 69, 144, 0.05);
+  --igx-button-flat-hover-text-color: #514590;
+  --igx-button-flat-focus-background: rgba(94, 83, 150, 0.12);
+  --igx-button-flat-focus-text-color: #514590;
+  --igx-button-outlined-background: transparent;
+  --igx-button-outlined-outline-color: rgba(0, 0, 0, 0.12);
+  --igx-button-outlined-text-color: #514590;
+  --igx-button-outlined-hover-background: rgba(81, 69, 144, 0.05);
+  --igx-button-outlined-hover-text-color: #514590;
+  --igx-button-outlined-focus-background: rgba(94, 83, 150, 0.12);
+  --igx-button-outlined-focus-text-color: #514590;
+  --igx-button-outlined-disabled-outline-color: rgba(0, 0, 0, 0.12);
+  --igx-button-raised-background: #514590;
+  --igx-button-raised-text-color: white;
+  --igx-button-raised-hover-background: #6f669e;
+  --igx-button-raised-hover-text-color: white;
+  --igx-button-raised-focus-background: #6f669e;
+  --igx-button-raised-focus-text-color: white;
+  --igx-button-fab-background: #514590;
+  --igx-button-fab-text-color: white;
+  --igx-button-fab-hover-background: #6f669e;
+  --igx-button-fab-hover-text-color: white;
+  --igx-button-fab-focus-background: #6f669e;
+  --igx-button-fab-focus-text-color: white;
+  --igx-button-icon-color: rgba(0, 0, 0, 0.74);
+  --igx-button-icon-background: transparent;
+  --igx-button-icon-hover-background: rgba(0, 0, 0, 0.04);
+  --igx-button-icon-hover-color: rgba(0, 0, 0, 0.74);
+  --igx-button-icon-focus-background: rgba(0, 0, 0, 0.26);
+  --igx-button-icon-focus-color: rgba(0, 0, 0, 0.74);
+  --igx-button-disabled-color: rgba(0, 0, 0, 0.26);
+  --igx-button-disabled-background: rgba(0, 0, 0, 0.04);
+  --igx-button-raised-resting-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.08);
+  --igx-button-raised-hover-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.26), 0 4px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+  --igx-button-raised-focus-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26), 0 8px 10px 1px rgba(0, 0, 0, 0.12), 0 3px 14px 2px rgba(0, 0, 0, 0.08);
+  --igx-button-fab-resting-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.26), 0 6px 10px 0 rgba(0, 0, 0, 0.12), 0 1px 18px 0 rgba(0, 0, 0, 0.08);
+  --igx-button-fab-hover-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.26), 0 12px 17px 2px rgba(0, 0, 0, 0.12), 0 5px 22px 4px rgba(0, 0, 0, 0.08);
+  --igx-button-fab-focus-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.26), 0 12px 17px 2px rgba(0, 0, 0, 0.12), 0 5px 22px 4px rgba(0, 0, 0, 0.08);
+  --igx-button-raised-shadow-color: transparent;
+  --igx-button-outlined-shadow-color: transparent;
+  --igx-button-icon-shadow-color: transparent;
+  --igx-button-fab-shadow-color: transparent; }
+
+.custom-buttons .igx-button, .custom-buttons .igx-button--flat, .custom-buttons .igx-button--outlined, .custom-buttons .igx-button--raised {
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  min-width: 5.5rem;
+  padding: 0.5625rem 1rem;
+  min-height: 2.25rem;
+  border: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline-style: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: color 1ms ease-in-out, background-color 1ms ease-in-out, border-color 1ms ease-in-out, box-shadow 1ms ease-in-out;
+  font-family: inherit; }
+  .custom-buttons .igx-button .igx-icon, .custom-buttons .igx-button--flat .igx-icon, .custom-buttons .igx-button--outlined .igx-icon, .custom-buttons .igx-button--raised .igx-icon, .custom-buttons .igx-button .igx-icon--inactive, .custom-buttons .igx-button--flat .igx-icon--inactive, .custom-buttons .igx-button--outlined .igx-icon--inactive, .custom-buttons .igx-button--raised .igx-icon--inactive {
+    width: 1.125rem;
+    height: 1.125rem;
+    font-size: 1.125rem; }
+
+.custom-buttons .igx-button--cosy {
+  padding: 0.375rem 1rem;
+  min-height: 1.875rem; }
+
+.custom-buttons .igx-button--compact {
+  padding: 0.1875rem 1rem;
+  min-height: 1.5rem; }
+
+.custom-buttons .igx-button--flat {
+  background: var(--igx-button-flat-background);
+  color: var(--igx-button-flat-text-color);
+  border-radius: var(--igx-button-flat-border-radius); }
+  .custom-buttons .igx-button--flat .igx-icon, .custom-buttons .igx-button--flat .igx-icon--inactive {
+    color: var(--igx-button-flat-icon-color); }
+  .custom-buttons .igx-button--flat:hover {
+    background: var(--igx-button-flat-hover-background);
+    color: var(--igx-button-flat-hover-text-color); }
+    .custom-buttons .igx-button--flat:hover .igx-icon, .custom-buttons .igx-button--flat:hover .igx-icon--inactive {
+      color: var(--igx-button-flat-hover-icon-color); }
+  .custom-buttons .igx-button--flat:focus, .custom-buttons .igx-button--flat:active {
+    background: var(--igx-button-flat-focus-background);
+    color: var(--igx-button-flat-focus-text-color); }
+    .custom-buttons .igx-button--flat:focus .igx-icon, .custom-buttons .igx-button--flat:focus .igx-icon--inactive, .custom-buttons .igx-button--flat:active .igx-icon, .custom-buttons .igx-button--flat:active .igx-icon--inactive {
+      color: var(--igx-button-flat-focus-icon-color); }
+
+.custom-buttons .igx-button--outlined {
+  border: 1px solid transparent;
+  border-color: var(--igx-button-outlined-outline-color);
+  background: var(--igx-button-outlined-background);
+  color: var(--igx-button-outlined-text-color);
+  border-radius: var(--igx-button-outlined-border-radius); }
+  .custom-buttons .igx-button--outlined .igx-icon, .custom-buttons .igx-button--outlined .igx-icon--inactive {
+    color: var(--igx-button-outlined-icon-color); }
+  .custom-buttons .igx-button--outlined:hover {
+    background: var(--igx-button-outlined-hover-background);
+    color: var(--igx-button-outlined-hover-text-color); }
+    .custom-buttons .igx-button--outlined:hover .igx-icon, .custom-buttons .igx-button--outlined:hover .igx-icon--inactive {
+      color: var(--igx-button-outlined-hover-icon-color); }
+  .custom-buttons .igx-button--outlined:focus, .custom-buttons .igx-button--outlined:active {
+    background: var(--igx-button-outlined-focus-background);
+    color: var(--igx-button-outlined-focus-text-color); }
+    .custom-buttons .igx-button--outlined:focus .igx-icon, .custom-buttons .igx-button--outlined:focus .igx-icon--inactive, .custom-buttons .igx-button--outlined:active .igx-icon, .custom-buttons .igx-button--outlined:active .igx-icon--inactive {
+      color: var(--igx-button-outlined-focus-icon-color); }
+
+.custom-buttons .igx-button--raised {
+  color: var(--igx-button-raised-text-color);
+  background: var(--igx-button-raised-background);
+  box-shadow: var(--igx-button-raised-resting-shadow);
+  border-radius: var(--igx-button-raised-border-radius); }
+  .custom-buttons .igx-button--raised .igx-icon, .custom-buttons .igx-button--raised .igx-icon--inactive {
+    color: var(--igx-button-raised-icon-color); }
+  .custom-buttons .igx-button--raised:hover {
+    color: var(--igx-button-raised-hover-text-color);
+    background: var(--igx-button-raised-hover-background);
+    box-shadow: var(--igx-button-raised-hover-shadow); }
+    .custom-buttons .igx-button--raised:hover .igx-icon, .custom-buttons .igx-button--raised:hover .igx-icon--inactive {
+      color: var(--igx-button-raised-hover-icon-color); }
+  .custom-buttons .igx-button--raised:focus, .custom-buttons .igx-button--raised:active {
+    color: var(--igx-button-raised-focus-text-color);
+    background: var(--igx-button-raised-focus-background);
+    box-shadow: var(--igx-button-raised-focus-shadow); }
+    .custom-buttons .igx-button--raised:focus .igx-icon, .custom-buttons .igx-button--raised:focus .igx-icon--inactive, .custom-buttons .igx-button--raised:active .igx-icon, .custom-buttons .igx-button--raised:active .igx-icon--inactive {
+      color: var(--igx-button-raised-focus-icon-color); }
+
+.custom-buttons .igx-button--fab, .custom-buttons .igx-button--icon {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  border: 1px solid transparent;
+  border-radius: var(--igx-button-fab-border-radius);
+  outline: none;
+  cursor: pointer;
+  transition: color 1ms ease-in-out, background-color 1ms ease-in-out, border-color 1ms ease-in-out, box-shadow 1ms ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  -webkit-filter: blur(0);
+          filter: blur(0); }
+
+.custom-buttons .igx-button--fab {
+  padding: 0.9375rem;
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+  line-height: unset;
+  white-space: nowrap;
+  color: var(--igx-button-fab-text-color);
+  background: var(--igx-button-fab-background);
+  box-shadow: var(--igx-button-fab-resting-shadow);
+  border-radius: var(--igx-button-fab-border-radius); }
+  .custom-buttons .igx-button--fab:hover {
+    color: var(--igx-button-fab-hover-text-color);
+    background: var(--igx-button-fab-hover-background);
+    box-shadow: var(--igx-button-fab-resting-shadow); }
+  .custom-buttons .igx-button--fab:focus, .custom-buttons .igx-button--fab:active {
+    color: var(--igx-button-fab-focus-text-color);
+    background: var(--igx-button-fab-focus-background);
+    box-shadow: var(--igx-button-fab-focus-shadow); }
+
+.custom-buttons .igx-button--fab-cosy.igx-button--fab {
+  padding: 0.6875rem;
+  min-width: 3rem;
+  min-height: 3rem; }
+
+.custom-buttons .igx-button--fab-compact.igx-button--fab {
+  padding: 0.4375rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem; }
+
+.custom-buttons .igx-button--icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1rem;
+  padding: 0;
+  color: var(--igx-button-icon-color);
+  background: var(--igx-button-icon-background);
+  border-radius: var(--igx-button-icon-border-radius); }
+  .custom-buttons .igx-button--icon:hover {
+    transition: color 1ms ease-in-out, background-color 1ms ease-in-out, border-color 1ms ease-in-out, box-shadow 1ms ease-in-out;
+    color: var(--igx-button-icon-hover-color);
+    background: var(--igx-button-icon-hover-background); }
+  .custom-buttons .igx-button--icon:focus, .custom-buttons .igx-button--icon:active {
+    color: var(--igx-button-icon-focus-color);
+    background: var(--igx-button-icon-focus-background);
+    box-shadow: var(--igx-button-raised-focus-shadow); }
+
+.custom-buttons .igx-button--disabled {
+  pointer-events: none;
+  box-shadow: none; }
+  .custom-buttons .igx-button--outlined.igx-button--disabled, .custom-buttons .igx-button--flat.igx-button--disabled, .custom-buttons .igx-button--raised.igx-button--disabled, .custom-buttons .igx-button--fab.igx-button--disabled, .custom-buttons .igx-button--icon.igx-button--disabled {
+    color: var(--igx-button-disabled-color); }
+    .custom-buttons .igx-button--outlined.igx-button--disabled igx-icon, .custom-buttons .igx-button--flat.igx-button--disabled igx-icon, .custom-buttons .igx-button--raised.igx-button--disabled igx-icon, .custom-buttons .igx-button--fab.igx-button--disabled igx-icon, .custom-buttons .igx-button--icon.igx-button--disabled igx-icon {
+      color: inherit; }
+  .custom-buttons .igx-button--raised.igx-button--disabled, .custom-buttons .igx-button--fab.igx-button--disabled {
+    background: var(--igx-button-disabled-background); }
+  .custom-buttons .igx-button--flat.igx-button--disabled, .custom-buttons .igx-button--outlined.igx-button--disabled {
+    background: transparent; }
+  .custom-buttons .igx-button--outlined.igx-button--disabled {
+    border-color: var(--igx-button-outlined-disabled-outline-color); }
+  .custom-buttons .igx-button--disabled:focus {
+    box-shadow: none; }
+
+:host ::ng-deep {
+  /* We set those with position relative
+    so that the drop indicators be scoped
+    to their respective group. The item
+    being the topmost element, while the
+    subgroup encapsulates children of each
+    thead item and group.
+    */ }
+  :host ::ng-deep {
+    --igx-checkbox-border-radius: 2px;
+    --igx-checkbox-border-radius-ripple: 24px;
+    --igx-checkbox-variant: material;
+    --igx-checkbox-tick-color: #fff;
+    --igx-checkbox-label-color: rgba(0, 0, 0, 0.87);
+    --igx-checkbox-empty-color: rgba(0, 0, 0, 0.54);
+    --igx-checkbox-fill-color: #514590;
+    --igx-checkbox-disabled-color: rgba(0, 0, 0, 0.26);
+    --igx-checkbox-disabled-color-label: rgba(0, 0, 0, 0.26); }
+
+@-webkit-keyframes scale-in-out {
+  50% {
+    transform: scale(0.9);
+    transform-origin: 50% 50%; }
+  100% {
+    transform: scale(1);
+    transform-origin: 50% 50%; } }
+
+@keyframes scale-in-out {
+  50% {
+    transform: scale(0.9);
+    transform-origin: 50% 50%; }
+  100% {
+    transform: scale(1);
+    transform-origin: 50% 50%; } }
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    transform: scale(0);
+    opacity: 1; }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
+
+@keyframes scale-in-center {
+  0% {
+    transform: scale(0);
+    opacity: 1; }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
+  :host ::ng-deep .igx-checkbox {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+    -ms-flex-align: center;
+        align-items: center;
+    outline-style: none; }
+  :host ::ng-deep .igx-checkbox--disabled {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    pointer-events: none;
+    cursor: initial; }
+  :host ::ng-deep .igx-checkbox__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: none;
+    clip: rect(0, 0, 0, 0);
+    outline: 0;
+    pointer-events: none;
+    overflow: hidden;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none; }
+  :host ::ng-deep .igx-checkbox__composite-wrapper {
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    width: 1.25em;
+    height: 1.25em; }
+  :host ::ng-deep .igx-checkbox__composite {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 1.25em;
+    height: 1.25em;
+    min-width: 1.25em;
+    border-width: 0.125rem;
+    border-style: solid;
+    border-color: var(--igx-checkbox-empty-color);
+    border-radius: var(--igx-checkbox-border-radius);
+    -webkit-tap-highlight-color: transparent;
+    transition: border-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden; }
+    :host ::ng-deep .igx-checkbox__composite::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: background 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  :host ::ng-deep .igx-checkbox--indeterminate .igx-checkbox__composite, .igx-checkbox--indeterminate :host ::ng-deep .igx-checkbox__composite, :host ::ng-deep .igx-checkbox--checked .igx-checkbox__composite, .igx-checkbox--checked :host ::ng-deep .igx-checkbox__composite {
+    border-color: var(--igx-checkbox-fill-color);
+    background: var(--igx-checkbox-fill-color); }
+    :host ::ng-deep .igx-checkbox--indeterminate .igx-checkbox__composite::after, .igx-checkbox--indeterminate :host ::ng-deep .igx-checkbox__composite::after, :host ::ng-deep .igx-checkbox--checked .igx-checkbox__composite::after, .igx-checkbox--checked :host ::ng-deep .igx-checkbox__composite::after {
+      background: var(--igx-checkbox-fill-color); }
+  :host ::ng-deep .igx-checkbox--disabled .igx-checkbox__composite, .igx-checkbox--disabled :host ::ng-deep .igx-checkbox__composite {
+    border-color: var(--igx-checkbox-disabled-color);
+    background: transparent; }
+  :host ::ng-deep .igx-checkbox--indeterminate.igx-checkbox--disabled .igx-checkbox__composite, .igx-checkbox--indeterminate.igx-checkbox--disabled :host ::ng-deep .igx-checkbox__composite, :host ::ng-deep .igx-checkbox--checked.igx-checkbox--disabled .igx-checkbox__composite, .igx-checkbox--checked.igx-checkbox--disabled :host ::ng-deep .igx-checkbox__composite {
+    background: var(--igx-checkbox-disabled-color); }
+    :host ::ng-deep .igx-checkbox--indeterminate.igx-checkbox--disabled .igx-checkbox__composite::after, .igx-checkbox--indeterminate.igx-checkbox--disabled :host ::ng-deep .igx-checkbox__composite::after, :host ::ng-deep .igx-checkbox--checked.igx-checkbox--disabled .igx-checkbox__composite::after, .igx-checkbox--checked.igx-checkbox--disabled :host ::ng-deep .igx-checkbox__composite::after {
+      background: var(--igx-checkbox-disabled-color); }
+  :host ::ng-deep .igx-checkbox__composite-mark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    stroke: var(--igx-checkbox-tick-color);
+    stroke-linecap: square;
+    stroke-width: 3;
+    stroke-dasharray: 24;
+    stroke-dashoffset: 24;
+    fill: none;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  :host ::ng-deep .igx-checkbox--indeterminate .igx-checkbox__composite-mark {
+    top: 0;
+    left: 0; }
+  :host ::ng-deep .igx-checkbox--checked .igx-checkbox__composite-mark, .igx-checkbox--checked :host ::ng-deep .igx-checkbox__composite-mark {
+    stroke-dashoffset: 0;
+    opacity: 1;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  :host ::ng-deep .igx-checkbox--indeterminate .igx-checkbox__composite-mark, .igx-checkbox--indeterminate :host ::ng-deep .igx-checkbox__composite-mark {
+    stroke-dashoffset: 41;
+    /* length of path - adjacent line length */
+    opacity: 1;
+    -ms-transform: rotate(45deg) translateX(-0.125em);
+        transform: rotate(45deg) translateX(-0.125em); }
+  :host ::ng-deep .igx-checkbox__label, :host ::ng-deep .igx-checkbox__label--before {
+    display: inline-block;
+    color: var(--igx-checkbox-label-color);
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    word-wrap: break-all; }
+    :host ::ng-deep .igx-checkbox__label:empty, :host ::ng-deep .igx-checkbox__label--before:empty {
+      margin: 0; }
+  :host ::ng-deep .igx-checkbox__label--before:empty,
+  :host ::ng-deep .igx-checkbox__label:empty {
+    margin: 0; }
+  :host ::ng-deep .igx-checkbox__label {
+    margin-left: 0.5em; }
+  :host ::ng-deep .igx-checkbox__label--before {
+    margin-right: 0.5em;
+    -ms-flex-order: -1;
+        order: -1; }
+  :host ::ng-deep .igx-checkbox--disabled .igx-checkbox__label, .igx-checkbox--disabled :host ::ng-deep .igx-checkbox__label, :host ::ng-deep .igx-checkbox--disabled .igx-checkbox__label--before, .igx-checkbox--disabled :host ::ng-deep .igx-checkbox__label--before {
+    color: var(--igx-checkbox-disabled-color-label); }
+  :host ::ng-deep .igx-checkbox__ripple {
+    display: block;
+    position: absolute;
+    top: calc(50% - 1.5em);
+    right: calc(100% - 1.5em - 0.625em);
+    width: 3em;
+    height: 3em;
+    border-radius: var(--igx-checkbox-border-radius-ripple);
+    overflow: hidden;
+    pointer-events: none;
+    -webkit-filter: opacity(1);
+            filter: opacity(1); }
+    :host ::ng-deep .igx-checkbox__ripple {
+      --igx-ripple-variant: material;
+      --igx-ripple-color: var(--igx-checkbox-fill-color); }
+    :host ::ng-deep .igx-checkbox__ripple .igx-ripple__inner {
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      background: var(--igx-ripple-color);
+      pointer-events: none;
+      -ms-transform-origin: center;
+          transform-origin: center;
+      transform: translate3d(0, 0, 0) scale(0);
+      will-change: opacity, transform;
+      opacity: .5;
+      margin: 0 !important;
+      border: none !important; }
+    :host ::ng-deep .igx-checkbox__ripple .igx-ripple {
+      overflow: hidden; }
+    :host ::ng-deep .igx-checkbox__ripple {
+      --igx-ripple-variant: material;
+      --igx-ripple-color: var(--igx-checkbox-fill-color); }
+  :host ::ng-deep .igx-checkbox--focused .igx-checkbox__ripple, .igx-checkbox--focused :host ::ng-deep .igx-checkbox__ripple {
+    -webkit-animation: "scale-in-out" 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+            animation: "scale-in-out" 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    background: var(--igx-checkbox-empty-color);
+    transition: background 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: .12; }
+  :host ::ng-deep .igx-checkbox--focused.igx-checkbox--checked .igx-checkbox__ripple, .igx-checkbox--focused.igx-checkbox--checked :host ::ng-deep .igx-checkbox__ripple, :host ::ng-deep .igx-checkbox--focused.igx-checkbox--indeterminate .igx-checkbox__ripple, .igx-checkbox--focused.igx-checkbox--indeterminate :host ::ng-deep .igx-checkbox__ripple {
+    background: var(--igx-checkbox-fill-color); }
+  :host ::ng-deep .igx-checkbox:hover .igx-checkbox__ripple::after, .igx-checkbox:hover :host ::ng-deep .igx-checkbox__ripple::after, :host ::ng-deep .igx-checkbox:active .igx-checkbox__ripple::after, .igx-checkbox:active :host ::ng-deep .igx-checkbox__ripple::after, :host ::ng-deep .igx-checkbox--indeterminate:hover .igx-checkbox__ripple::after, .igx-checkbox--indeterminate:hover :host ::ng-deep .igx-checkbox__ripple::after, :host ::ng-deep .igx-checkbox--indeterminate:active .igx-checkbox__ripple::after, .igx-checkbox--indeterminate:active :host ::ng-deep .igx-checkbox__ripple::after, :host ::ng-deep .igx-checkbox--checked:hover .igx-checkbox__ripple::after, .igx-checkbox--checked:hover :host ::ng-deep .igx-checkbox__ripple::after, :host ::ng-deep .igx-checkbox--checked:active .igx-checkbox__ripple::after, .igx-checkbox--checked:active :host ::ng-deep .igx-checkbox__ripple::after {
+    position: absolute;
+    content: '';
+    opacity: .06;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  :host ::ng-deep .igx-checkbox:hover .igx-checkbox__ripple::after, .igx-checkbox:hover :host ::ng-deep .igx-checkbox__ripple::after, :host ::ng-deep .igx-checkbox:active .igx-checkbox__ripple::after, .igx-checkbox:active :host ::ng-deep .igx-checkbox__ripple::after {
+    background: var(--igx-checkbox-empty-color); }
+  :host ::ng-deep .igx-checkbox--indeterminate:hover .igx-checkbox__ripple::after, .igx-checkbox--indeterminate:hover :host ::ng-deep .igx-checkbox__ripple::after, :host ::ng-deep .igx-checkbox--indeterminate:active .igx-checkbox__ripple::after, .igx-checkbox--indeterminate:active :host ::ng-deep .igx-checkbox__ripple::after, :host ::ng-deep .igx-checkbox--checked:hover .igx-checkbox__ripple::after, .igx-checkbox--checked:hover :host ::ng-deep .igx-checkbox__ripple::after, :host ::ng-deep .igx-checkbox--checked:active .igx-checkbox__ripple::after, .igx-checkbox--checked:active :host ::ng-deep .igx-checkbox__ripple::after {
+    background: var(--igx-checkbox-fill-color); }
+  :host ::ng-deep .igx-checkbox:active .igx-checkbox__ripple::after, .igx-checkbox:active :host ::ng-deep .igx-checkbox__ripple::after, :host ::ng-deep .igx-checkbox--indeterminate:active .igx-checkbox__ripple::after, .igx-checkbox--indeterminate:active :host ::ng-deep .igx-checkbox__ripple::after, :host ::ng-deep .igx-checkbox--checked:active .igx-checkbox__ripple::after, .igx-checkbox--checked:active :host ::ng-deep .igx-checkbox__ripple::after {
+    opacity: .12; }
+  :host ::ng-deep .igx-checkbox--plain .igx-checkbox__composite,
+  :host ::ng-deep .igx-checkbox--plain .igx-checkbox__composite::after,
+  :host ::ng-deep .igx-checkbox--plain .igx-checkbox__composite-mark,
+  :host ::ng-deep .igx-checkbox--plain .igx-checkbox--checked .igx-checkbox__composite-mark,
+  .igx-checkbox--checked :host ::ng-deep .igx-checkbox--plain .igx-checkbox__composite-mark {
+    transition: none; }
+  :host ::ng-deep {
+    --igx-grid-drop-area-border-radius: 16px;
+    --igx-grid-grid-elevation: 2;
+    --igx-grid-drag-elevation: 5;
+    --igx-grid-variant: material;
+    --igx-grid-grouparea-color: rgba(0, 0, 0, 0.38);
+    --igx-grid-filtering-background-and: #16ccef;
+    --igx-grid-filtering-background-or: #6f669e;
+    --igx-grid-filtering-background-and--focus: #008ea9;
+    --igx-grid-filtering-background-or--focus: #322286;
+    --igx-grid-grid-border-color: transparent;
+    --igx-grid-header-background: #f4f4f4;
+    --igx-grid-header-text-color: rgba(0, 0, 0, 0.54);
+    --igx-grid-header-selected-background: #a095d7;
+    --igx-grid-header-selected-text-color: black;
+    --igx-grid-sortable-header-icon-hover-color: #514590;
+    --igx-grid-sorted-header-icon-color: #514590;
+    --igx-grid-header-border-width: 1px;
+    --igx-grid-header-border-style: solid;
+    --igx-grid-header-border-color: rgba(0, 0, 0, 0.08);
+    --igx-grid-content-background: #fff;
+    --igx-grid-content-text-color: rgba(0, 0, 0, 0.74);
+    --igx-grid-ghost-header-text-color: rgba(0, 0, 0, 0.54);
+    --igx-grid-ghost-header-icon-color: rgba(0, 0, 0, 0.38);
+    --igx-grid-ghost-header-background: #fff;
+    --igx-grid-row-odd-background: #fff;
+    --igx-grid-row-even-background: #fff;
+    --igx-grid-row-odd-text-color: inherit;
+    --igx-grid-row-even-text-color: inherit;
+    --igx-grid-row-selected-background: #bab3e3;
+    --igx-grid-row-selected-hover-background: #b4abe0;
+    --igx-grid-row-selected-text-color: black;
+    --igx-grid-row-hover-background: #f4f4f4;
+    --igx-grid-row-hover-text-color: black;
+    --igx-grid-row-border-color: rgba(0, 0, 0, 0.12);
+    --igx-grid-pinned-border-width: 2px;
+    --igx-grid-pinned-border-style: solid;
+    --igx-grid-pinned-border-color: rgba(0, 0, 0, 0.26);
+    --igx-grid-cell-active-border-color: #514590;
+    --igx-grid-cell-selected-background: #eaeaea;
+    --igx-grid-cell-selected-text-color: black;
+    --igx-grid-cell-editing-background: #fff;
+    --igx-grid-edit-mode-color: #514590;
+    --igx-grid-edited-row-indicator: rgba(0, 0, 0, 0.26);
+    --igx-grid-cell-edited-value-color: rgba(0, 0, 0, 0.54);
+    --igx-grid-cell-disabled-color: rgba(0, 0, 0, 0.38);
+    --igx-grid-resize-line-color: #514590;
+    --igx-grid-drop-indicator-color: #514590;
+    --igx-grid-grouparea-background: #f4f4f4;
+    --igx-grid-group-label-column-name-text: #00b4d6;
+    --igx-grid-group-label-icon: #00b4d6;
+    --igx-grid-group-label-text: rgba(0, 0, 0, 0.74);
+    --igx-grid-expand-all-icon-color: rgba(0, 0, 0, 0.54);
+    --igx-grid-expand-all-icon-hover-color: rgba(0, 0, 0, 0.74);
+    --igx-grid-expand-icon-color: rgba(0, 0, 0, 0.54);
+    --igx-grid-expand-icon-hover-color: #00b4d6;
+    --igx-grid-active-expand-icon-color: rgba(0, 0, 0, 0.38);
+    --igx-grid-active-expand-icon-hover-color: #00b4d6;
+    --igx-grid-group-count-background: rgba(0, 0, 0, 0.08);
+    --igx-grid-group-count-text-color: rgba(0, 0, 0, 0.54);
+    --igx-grid-drop-area-text-color: rgba(0, 0, 0, 0.54);
+    --igx-grid-drop-area-icon-color: #9e9e9e;
+    --igx-grid-drop-area-background: rgba(0, 0, 0, 0.04);
+    --igx-grid-drop-area-on-drop-background: rgba(0, 0, 0, 0.08);
+    --igx-grid-group-row-background: #f4f4f4;
+    --igx-grid-group-row-selected-background: #eaeaea;
+    --igx-grid-filtering-header-background: #fff;
+    --igx-grid-filtering-header-text-color: rgba(0, 0, 0, 0.74);
+    --igx-grid-filtering-row-background: #fff;
+    --igx-grid-filtering-row-text-color: rgba(0, 0, 0, 0.74);
+    --igx-grid-tree-filtered-text-color: rgba(0, 0, 0, 0.38);
+    --igx-grid-body-summaries-background: #f4f4f4;
+    --igx-grid-body-summaries-text-color: black;
+    --igx-grid-root-summaries-background: #e0e0e0;
+    --igx-grid-root-summaries-text-color: black;
+    --igx-grid-row-highlight: #514590;
+    --igx-grid-row-ghost-background: #97efff;
+    --igx-grid-row-drag-color: rgba(0, 0, 0, 0.08);
+    --igx-grid-tree-selected-filtered-row-text-color: rgba(0, 0, 0, 0.5);
+    --igx-grid-tree-selected-filtered-cell-text-color: rgba(0, 0, 0, 0.5);
+    --igx-grid-row-selected-cell-background: #d5d0ee;
+    --igx-grid-grid-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.08);
+    --igx-grid-drag-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.26), 0 5px 8px 0 rgba(0, 0, 0, 0.12), 0 1px 14px 0 rgba(0, 0, 0, 0.08); }
+  :host ::ng-deep .igx-grid, :host ::ng-deep .igx-grid--cosy, :host ::ng-deep .igx-grid--compact {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto auto;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    box-shadow: var(--igx-grid-grid-shadow);
+    outline-style: none;
+    z-index: 1;
+    border: 0 solid var(--igx-grid-grid-border-color); }
+    :host ::ng-deep .igx-grid .igx-checkbox, :host ::ng-deep .igx-grid--cosy .igx-checkbox, :host ::ng-deep .igx-grid--compact .igx-checkbox {
+      min-width: 1.25rem; }
+  :host ::ng-deep .igx-grid__caption {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    padding: 1rem 1.5rem;
+    grid-row: 1; }
+  :host ::ng-deep .igx-grid__thead-wrapper,
+  :host ::ng-deep .igx-grid__tfoot {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    background: var(--igx-grid-header-background);
+    color: var(--igx-grid-header-text-color);
+    overflow: hidden;
+    outline-style: none; }
+    :host ::ng-deep .igx-grid__thead-wrapper .igx-grid__tr,
+    :host ::ng-deep .igx-grid__tfoot .igx-grid__tr {
+      position: relative;
+      background: inherit;
+      color: inherit;
+      z-index: 2; }
+      :host ::ng-deep .igx-grid__thead-wrapper .igx-grid__tr:hover,
+      :host ::ng-deep .igx-grid__tfoot .igx-grid__tr:hover {
+        background: inherit;
+        color: inherit; }
+  :host ::ng-deep .igx-grid__thead-wrapper {
+    border-bottom: var(--igx-grid-header-border-width) var(--igx-grid-header-border-style) var(--igx-grid-header-border-color);
+    z-index: 2; }
+    :host ::ng-deep .igx-grid__thead-wrapper .igx-grid__cbx-selection--push {
+      -ms-flex-align: start;
+          align-items: flex-start;
+      padding-top: 0.9375rem; }
+    :host ::ng-deep .igx-grid__thead-wrapper .igx-grid__tr:last-of-type {
+      border-bottom: none; }
+  :host ::ng-deep .igx-grid__thead {
+    grid-row: 3;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden; }
+    :host ::ng-deep .igx-grid__thead .igx-grid__drag-indicator {
+      cursor: default; }
+    :host ::ng-deep .igx-grid__thead .igx-grid__tr--mrl .igx-grid__hierarchical-expander--header,
+    :host ::ng-deep .igx-grid__thead .igx-grid__tr--mrl .igx-grid__header-indentation,
+    :host ::ng-deep .igx-grid__thead .igx-grid__tr--mrl .igx-grid__row-indentation,
+    :host ::ng-deep .igx-grid__thead .igx-grid__tr--mrl .igx-grid__cbx-selection {
+      border-bottom: var(--igx-grid-header-border-width) var(--igx-grid-header-border-style) var(--igx-grid-header-border-color); }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__thead-wrapper .igx-grid__cbx-selection--push, .igx-grid--cosy :host ::ng-deep .igx-grid__thead-wrapper .igx-grid__cbx-selection--push {
+    -ms-flex-align: start;
+        align-items: flex-start;
+    padding-top: 0.625rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__thead-wrapper .igx-grid__cbx-selection--push, .igx-grid--compact :host ::ng-deep .igx-grid__thead-wrapper .igx-grid__cbx-selection--push {
+    -ms-flex-align: start;
+        align-items: flex-start;
+    padding-top: 0.375rem; }
+  :host ::ng-deep .igx-grid__thead-title {
+    -ms-flex-preferred-size: auto !important;
+        flex-basis: auto !important;
+    -ms-flex-align: center !important;
+        align-items: center !important;
+    border-bottom: var(--igx-grid-header-border-width) var(--igx-grid-header-border-style) var(--igx-grid-header-border-color);
+    height: 3.125rem; }
+  :host ::ng-deep .igx-grid__thead-title--pinned-last {
+    border-right: var(--igx-grid-pinned-border-width) var(--igx-grid-pinned-border-style) var(--igx-grid-pinned-border-color) !important; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__thead-title, .igx-grid--cosy :host ::ng-deep .igx-grid__thead-title {
+    height: 2.5rem;
+    padding: 0 1rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__thead-title, .igx-grid--compact :host ::ng-deep .igx-grid__thead-title {
+    height: 2rem;
+    padding: 0 0.75rem; }
+  :host ::ng-deep .igx-grid__thead-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap; }
+  :host ::ng-deep .igx-grid__thead-item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column nowrap;
+        flex-flow: column nowrap; }
+    :host ::ng-deep .igx-grid__thead-item .igx-grid__thead-group {
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto; }
+    :host ::ng-deep .igx-grid__thead-item .igx-grid__thead-title, :host ::ng-deep .igx-grid__thead-item .igx-grid__th {
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto; }
+    :host ::ng-deep .igx-grid__thead-item .igx-grid__thead-title {
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto; }
+  :host ::ng-deep .igx-grid__thead-item,
+  :host ::ng-deep .igx-grid__thead-subgroup {
+    position: relative; }
+  
+  :host ::ng-deep .igx-grid__tfoot {
+    grid-row: 5;
+    border-top: var(--igx-grid-header-border-width) var(--igx-grid-header-border-style) var(--igx-grid-header-border-color);
+    z-index: 10001; }
+  :host ::ng-deep .igx-grid__footer {
+    grid-row: 7; }
+  :host ::ng-deep .igx-grid__thead-wrapper igx-display-container, .igx-grid__thead-wrapper :host ::ng-deep igx-display-container {
+    width: 100%;
+    overflow: visible; }
+  :host ::ng-deep .igx-grid__tr igx-display-container, .igx-grid__tr :host ::ng-deep igx-display-container, :host ::ng-deep .igx-grid__summaries igx-display-container, .igx-grid__summaries :host ::ng-deep igx-display-container, :host ::ng-deep .igx-grid__summaries--body igx-display-container, .igx-grid__summaries--body :host ::ng-deep igx-display-container {
+    width: 100%;
+    overflow: visible; }
+  :host ::ng-deep .igx-grid__mrl-block {
+    display: grid;
+    background: inherit;
+    position: relative; }
+    :host ::ng-deep .igx-grid__mrl-block .igx-grid__thead-item {
+      display: -ms-flexbox;
+      display: flex; }
+    :host ::ng-deep .igx-grid__mrl-block .igx-grid__thead-title, :host ::ng-deep .igx-grid__mrl-block .igx-grid__th {
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+      border-bottom: var(--igx-grid-header-border-width) var(--igx-grid-header-border-style) var(--igx-grid-header-border-color); }
+    :host ::ng-deep .igx-grid__mrl-block .igx-grid__thead-title, :host ::ng-deep .igx-grid__mrl-block .igx-grid__th, :host ::ng-deep .igx-grid__mrl-block .igx-grid__td {
+      border-right: 1px solid var(--igx-grid-row-border-color);
+      border-bottom: 1px solid var(--igx-grid-row-border-color); }
+  :host ::ng-deep .igx-grid__tr.igx-grid__tr--mrl {
+    border-bottom-color: transparent; }
+  :host ::ng-deep .igx-grid__tr--mrl .igx-grid__cbx-selection,
+  :host ::ng-deep .igx-grid__tr--mrl .igx-grid__row-indentation,
+  :host ::ng-deep .igx-grid__tr--mrl .igx-grid__drag-indicator {
+    border-bottom: 1px solid var(--igx-grid-row-border-color); }
+  :host ::ng-deep .igx-grid__tbody-content {
+    position: relative;
+    background: var(--igx-grid-content-background);
+    color: var(--igx-grid-content-text-color);
+    overflow: hidden;
+    z-index: 1;
+    outline-style: none; }
+  :host ::ng-deep .igx-grid__tbody {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    grid-row: 4;
+    overflow: hidden; }
+  :host ::ng-deep .igx-grid__tbody-message {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    height: 100%;
+    color: var(--igx-grid-content-text-color); }
+  :host ::ng-deep .igx-grid__loading {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    height: 100%;
+    min-height: 100px; }
+    :host ::ng-deep .igx-grid__loading > .igx-circular-bar {
+      width: 3.125rem;
+      height: 3.125rem; }
+  :host ::ng-deep .igx-grid__scroll {
+    grid-row: 6;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+    width: 100%;
+    background: var(--igx-grid-header-background);
+    z-index: 10001; }
+  :host ::ng-deep .igx-grid__thead-thumb {
+    background: var(--igx-grid-header-background);
+    border-left: 1px solid rgba(0, 0, 0, 0.12); }
+  :host ::ng-deep .igx-grid__tfoot-thumb {
+    background: var(--igx-grid-header-background);
+    border-left: 1px solid rgba(0, 0, 0, 0.12); }
+  :host ::ng-deep .igx-grid__tbody-scrollbar {
+    background: var(--igx-grid-content-background);
+    border-left: 1px solid rgba(0, 0, 0, 0.12);
+    position: relative; }
+  :host ::ng-deep .igx-grid__tbody-scrollbar-start {
+    background: var(--igx-grid-header-background); }
+  :host ::ng-deep .igx-grid__tbody-scrollbar-main {
+    position: relative; }
+  :host ::ng-deep .igx-grid__tbody-scrollbar-end {
+    background: var(--igx-grid-header-background); }
+  :host ::ng-deep .igx-grid__scroll-start {
+    background: var(--igx-grid-header-background); }
+  :host ::ng-deep .igx-grid__scroll-main igx-display-container {
+    height: 0; }
+  :host ::ng-deep .igx-grid__scroll-main igx-horizontal-virtual-helper {
+    height: 100%; }
+  :host ::ng-deep .igx-grid__tr {
+    display: -ms-flexbox;
+    display: flex;
+    background: var(--igx-grid-content-background);
+    border-bottom: 1px solid var(--igx-grid-row-border-color);
+    outline-style: none;
+    position: relative; }
+    :host ::ng-deep .igx-grid__tr:hover {
+      background: var(--igx-grid-row-hover-background);
+      color: var(--igx-grid-row-hover-text-color); }
+      :host ::ng-deep .igx-grid__tr:hover .igx-grid__td--column-selected {
+        background: var(--igx-grid-row-selected-hover-background); }
+      :host ::ng-deep .igx-grid__tr:hover .igx-grid__td--selected.igx-grid__td--column-selected {
+        color: var(--igx-grid-row-selected-text-color);
+        background: var(--igx-grid-row-selected-cell-background); }
+    :host ::ng-deep .igx-grid__tr.igx-grid__tr--ghost {
+      background: var(--igx-grid-row-ghost-background);
+      z-index: 1; }
+  :host ::ng-deep .igx-grid__drag-indicator {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    padding: 0 1.5rem;
+    padding-right: 0;
+    min-width: calc(1.5rem + 1.5rem);
+    background: inherit;
+    z-index: 4;
+    cursor: move; }
+    :host ::ng-deep .igx-grid__drag-indicator .igx-icon, :host ::ng-deep .igx-grid__drag-indicator .igx-icon--inactive {
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 1.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__drag-indicator, .igx-grid--cosy :host ::ng-deep .igx-grid__drag-indicator {
+    padding: 0 1rem;
+    min-width: calc(1.5rem + 1rem);
+    padding-right: 0; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__drag-indicator, .igx-grid--compact :host ::ng-deep .igx-grid__drag-indicator {
+    padding: 0 0.75rem;
+    min-width: calc(1.5rem + 0.75rem);
+    padding-right: 0; }
+  :host ::ng-deep .igx-grid__drag-indicator--header {
+    border-right: var(--igx-grid-header-border-width) var(--igx-grid-header-border-style) var(--igx-grid-header-border-color); }
+  :host ::ng-deep .igx-grid__hierarchical-expander + .igx-grid__drag-indicator, :host ::ng-deep .igx-grid__hierarchical-expander--empty + .igx-grid__drag-indicator {
+    padding-left: 0;
+    min-width: 1.5rem; }
+  :host ::ng-deep .igx-grid__drag-indicator--off {
+    color: var(--igx-grid-row-drag-color); }
+  :host ::ng-deep .igx-grid__tr--drag {
+    opacity: .5; }
+  :host ::ng-deep .igx-grid__tr--odd {
+    background: var(--igx-grid-row-odd-background);
+    color: var(--igx-grid-row-odd-text-color); }
+  :host ::ng-deep .igx-grid__tr--even {
+    background: var(--igx-grid-row-even-background);
+    color: var(--igx-grid-row-even-text-color); }
+  :host ::ng-deep .igx-grid__tr--selected {
+    color: var(--igx-grid-row-selected-text-color);
+    background: var(--igx-grid-row-selected-background); }
+    :host ::ng-deep .igx-grid__tr--selected .igx-grid__td--selected,
+    :host ::ng-deep .igx-grid__tr--selected .igx-grid__td--pinned.igx-grid__td--selected {
+      background: var(--igx-grid-row-selected-cell-background); }
+    :host ::ng-deep .igx-grid__tr--selected:hover {
+      background: var(--igx-grid-row-selected-hover-background);
+      color: var(--igx-grid-row-selected-text-color); }
+      :host ::ng-deep .igx-grid__tr--selected:hover .igx-grid__td--column-selected {
+        color: var(--igx-grid-row-selected-text-color);
+        background: var(--igx-grid-row-selected-hover-background); }
+    :host ::ng-deep .igx-grid__tr--selected .igx-grid__tree-grouping-indicator {
+      color: var(--igx-grid-row-selected-text-color); }
+      :host ::ng-deep .igx-grid__tr--selected .igx-grid__tree-grouping-indicator:hover {
+        color: var(--igx-grid-row-selected-text-color); }
+  :host ::ng-deep .igx-grid__tr--expanded {
+    border-bottom: none; }
+  :host ::ng-deep .igx-grid__tr--pinned {
+    position: relative;
+    background: inherit;
+    z-index: 10000; }
+  :host ::ng-deep .igx-grid__tr--pinned-top {
+    border-bottom: var(--igx-grid-pinned-border-width) var(--igx-grid-pinned-border-style) var(--igx-grid-pinned-border-color) !important; }
+  :host ::ng-deep .igx-grid__tr--pinned-bottom {
+    border-top: var(--igx-grid-pinned-border-width) var(--igx-grid-pinned-border-style) var(--igx-grid-pinned-border-color) !important;
+    position: absolute;
+    bottom: 0; }
+  :host ::ng-deep .igx-grid__tr--edit {
+    border-bottom: 1px solid var(--igx-grid-edit-mode-color);
+    position: relative; }
+    :host ::ng-deep .igx-grid__tr--edit::after {
+      content: '';
+      position: absolute;
+      height: 0.0625rem;
+      width: 100%;
+      top: -0.0625rem;
+      left: 0;
+      background: var(--igx-grid-edit-mode-color); }
+    :host ::ng-deep .igx-grid__tr.igx-grid__tr--edit {
+      border-bottom: 1px solid var(--igx-grid-edit-mode-color); }
+    :host ::ng-deep .igx-grid__tr--edit .igx-grid__td--editing {
+      border: none; }
+      :host ::ng-deep .igx-grid__tr--edit .igx-grid__td--editing .igx-input-group--focused .igx-input-group__bundle, .igx-input-group--focused :host ::ng-deep .igx-grid__tr--edit .igx-grid__td--editing .igx-input-group__bundle {
+        caret-color: var(--igx-grid-edit-mode-color) !important; }
+      :host ::ng-deep .igx-grid__tr--edit .igx-grid__td--editing .igx-input-group__border {
+        background: var(--igx-grid-edit-mode-color) !important; }
+  :host ::ng-deep .igx-grid__tr--mrl.igx-grid__tr--edit:first-of-type::after {
+    top: 0;
+    z-index: 5; }
+  :host ::ng-deep .igx-grid__tr--edited::before {
+    content: '';
+    position: absolute;
+    width: 0.125rem;
+    height: 100%;
+    z-index: 10000;
+    background: var(--igx-grid-edited-row-indicator); }
+  :host ::ng-deep .igx-grid__tr--group {
+    position: relative;
+    background: var(--igx-grid-header-background) !important; }
+  :host ::ng-deep .igx-grid__tr--filtered .igx-grid__td-text {
+    color: var(--igx-grid-tree-filtered-text-color); }
+  :host ::ng-deep .igx-grid__tr--filtered .igx-grid__tree-grouping-indicator {
+    color: var(--igx-grid-tree-filtered-text-color); }
+    :host ::ng-deep .igx-grid__tr--filtered .igx-grid__tree-grouping-indicator:hover {
+      color: var(--igx-grid-tree-filtered-text-color); }
+  :host ::ng-deep .igx-grid__tr--filtered .igx-grid__td--selected .igx-grid__td-text {
+    color: var(--igx-grid-tree-selected-filtered-cell-text-color); }
+  :host ::ng-deep .igx-grid__tr--filtered .igx-grid__td--selected .igx-grid__tree-grouping-indicator {
+    color: var(--igx-grid-tree-selected-filtered-cell-text-color); }
+    :host ::ng-deep .igx-grid__tr--filtered .igx-grid__td--selected .igx-grid__tree-grouping-indicator:hover {
+      color: var(--igx-grid-tree-selected-filtered-cell-text-color); }
+  :host ::ng-deep .igx-grid__tr--selected.igx-grid__tr--filtered .igx-grid__td-text {
+    color: var(--igx-grid-tree-selected-filtered-row-text-color); }
+  :host ::ng-deep .igx-grid__tr--selected.igx-grid__tr--filtered .igx-grid__tree-grouping-indicator {
+    color: var(--igx-grid-tree-selected-filtered-row-text-color); }
+    :host ::ng-deep .igx-grid__tr--selected.igx-grid__tr--filtered .igx-grid__tree-grouping-indicator:hover {
+      color: var(--igx-grid-tree-selected-filtered-row-text-color); }
+  :host ::ng-deep .igx-grid__tr--selected.igx-grid__tr--filtered .igx-grid__td--selected .igx-grid__td-text {
+    color: var(--igx-grid-tree-selected-filtered-cell-text-color); }
+  :host ::ng-deep .igx-grid__tr--selected.igx-grid__tr--filtered .igx-grid__td--selected .igx-grid__tree-grouping-indicator {
+    color: var(--igx-grid-tree-selected-filtered-cell-text-color); }
+    :host ::ng-deep .igx-grid__tr--selected.igx-grid__tr--filtered .igx-grid__td--selected .igx-grid__tree-grouping-indicator:hover {
+      color: var(--igx-grid-tree-selected-filtered-cell-text-color); }
+  :host ::ng-deep .igx-grid__tree-grouping-indicator {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    outline-style: none;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    color: var(--igx-grid-expand-icon-color); }
+    :host ::ng-deep .igx-grid__tree-grouping-indicator:hover {
+      color: var(--igx-grid-expand-icon-hover-color); }
+  :host ::ng-deep .igx-grid__tree-loading-indicator {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem; }
+    :host ::ng-deep .igx-grid__tree-loading-indicator .igx-circular-bar__outer {
+      stroke: var(--igx-grid-expand-icon-color); }
+    :host ::ng-deep .igx-grid__tree-loading-indicator > .igx-circular-bar {
+      width: 1.5rem;
+      height: 1.5rem; }
+  :host ::ng-deep .igx-grid__thead-title, :host ::ng-deep .igx-grid__th, :host ::ng-deep .igx-grid__td {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1 1 0%;
+        flex: 1 1 0%;
+    -ms-flex-align: center;
+        align-items: center;
+    outline-style: none;
+    padding: 0 1.5rem;
+    font-size: 0.8125rem;
+    line-height: 1rem;
+    color: inherit;
+    text-align: left; }
+  :host ::ng-deep .igx-grid__td--tree-cell {
+    overflow: hidden; }
+  :host ::ng-deep .igx-grid__td-text {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__td, .igx-grid--cosy :host ::ng-deep .igx-grid__td {
+    padding: 0 1rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__td, .igx-grid--compact :host ::ng-deep .igx-grid__td {
+    padding: 0 0.75rem; }
+  :host ::ng-deep .igx-grid__th--fw, :host ::ng-deep .igx-grid__td--fw {
+    -ms-flex-positive: 0;
+        flex-grow: 0;
+    outline-style: none; }
+  :host ::ng-deep .igx-grid__td--active, :host ::ng-deep .igx-grid__th--active, :host ::ng-deep .igx-grid__th--active .igx-grid__th--selected, :host ::ng-deep .igx-grid__th--active .igx-grid__th--selectable, :host ::ng-deep .igx-grid-summary--active, :host ::ng-deep .igx-grid__group-row--active, :host ::ng-deep .igx-grid__tr-container--active {
+    box-shadow: inset 0 0 0 1px var(--igx-grid-cell-active-border-color); }
+  :host ::ng-deep .igx-grid__td--selected {
+    color: var(--igx-grid-cell-selected-text-color);
+    background: var(--igx-grid-cell-selected-background); }
+    :host ::ng-deep .igx-grid__td--selected .igx-grid__tree-grouping-indicator:hover {
+      color: var(--igx-grid-cell-selected-text-color); }
+  :host ::ng-deep .igx-grid__td--column-selected {
+    color: var(--igx-grid-row-selected-text-color);
+    background: var(--igx-grid-row-selected-background); }
+  :host ::ng-deep .igx-grid__td--selected.igx-grid__td--column-selected {
+    color: var(--igx-grid-row-selected-text-color);
+    background: var(--igx-grid-row-selected-cell-background); }
+  :host ::ng-deep .igx-grid__td--edited .igx-grid__td-text {
+    font-style: italic;
+    color: var(--igx-grid-cell-edited-value-color);
+    padding: 0 1px; }
+  :host ::ng-deep .igx-grid__tr--deleted .igx-grid__td-text {
+    font-style: italic;
+    color: #ff134a;
+    text-decoration: line-through; }
+  :host ::ng-deep .igx-grid__tr--disabled .igx-grid__td-text {
+    color: var(--igx-grid-cell-disabled-color); }
+  :host ::ng-deep .igx-grid__td--editing {
+    background: var(--igx-grid-cell-editing-background) !important;
+    box-shadow: inset 0 0 0 0.125rem var(--igx-grid-edit-mode-color); }
+    :host ::ng-deep .igx-grid__td--editing igx-input-group {
+      width: 100%;
+      margin-top: -16px; }
+    :host ::ng-deep .igx-grid__td--editing .igx-input-group__input, :host ::ng-deep .igx-grid__td--editing .igx-input-group__textarea {
+      font-size: 0.8125rem !important;
+      line-height: 1rem !important; }
+  :host ::ng-deep .igx-grid__th--pinned, :host ::ng-deep .igx-grid__td--pinned, :host ::ng-deep .igx-grid__td--pinned-last, :host ::ng-deep .igx-grid__td--pinned-first {
+    position: relative;
+    background: inherit;
+    z-index: 9999; }
+  :host ::ng-deep .igx-grid__td--pinned.igx-grid__td--selected {
+    color: var(--igx-grid-cell-selected-text-color);
+    background: var(--igx-grid-cell-selected-background); }
+  :host ::ng-deep .igx-grid__td--pinned.igx-grid__td--column-selected {
+    color: var(--igx-grid-row-selected-text-color);
+    background: var(--igx-grid-row-selected-background); }
+    :host ::ng-deep .igx-grid__td--pinned.igx-grid__td--column-selected:hover {
+      background: var(--igx-grid-row-selected-hover-background);
+      color: var(--igx-grid-row-selected-text-color); }
+  :host ::ng-deep .igx-grid__th--pinned-last, :host ::ng-deep .igx-grid__td--pinned-last {
+    border-right: var(--igx-grid-pinned-border-width) var(--igx-grid-pinned-border-style) var(--igx-grid-pinned-border-color) !important; }
+  :host ::ng-deep .igx-grid__th--pinned-first, :host ::ng-deep .igx-grid__td--pinned-first {
+    border-left: var(--igx-grid-pinned-border-width) var(--igx-grid-pinned-border-style) var(--igx-grid-pinned-border-color) !important; }
+  :host ::ng-deep .igx-grid__td--row-pinned-first {
+    overflow: hidden; }
+  :host ::ng-deep .igx-grid__td--pinned-chip {
+    margin-right: 0.75rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__td--pinned-chip, .igx-grid--cosy :host ::ng-deep .igx-grid__td--pinned-chip {
+    margin-right: 0.5rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__td--pinned-chip, .igx-grid--compact :host ::ng-deep .igx-grid__td--pinned-chip {
+    margin-right: 0.25rem; }
+  :host ::ng-deep .igx-grid__thead-title, :host ::ng-deep .igx-grid__th {
+    -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: end;
+        align-items: flex-end;
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 0;
+    padding: 0 1.5rem;
+    border-right: var(--igx-grid-header-border-width) var(--igx-grid-header-border-style) var(--igx-grid-header-border-color);
+    outline-style: none;
+    overflow: hidden;
+    transition: color 250ms ease-in-out; }
+  :host ::ng-deep .igx-grid__th--filtering {
+    background: var(--igx-grid-filtering-header-background);
+    color: var(--igx-grid-filtering-header-text-color);
+    z-index: 3; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__th, .igx-grid--cosy :host ::ng-deep .igx-grid__th {
+    padding: 0 1rem;
+    min-height: 2.5rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__th, .igx-grid--compact :host ::ng-deep .igx-grid__th {
+    padding: 0 0.75rem;
+    min-height: 2rem; }
+  :host ::ng-deep .igx-grid__th-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 600;
+    min-width: 3ch;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    cursor: initial;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    /* hey IE, the text should take most of the space */
+    line-height: 4.16667;
+    opacity: .7;
+    transition: opacity 250ms ease-in-out, color 250ms ease-in-out; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__th-title, .igx-grid--cosy :host ::ng-deep .igx-grid__th-title {
+    line-height: 3.33333; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__th-title, .igx-grid--compact :host ::ng-deep .igx-grid__th-title {
+    line-height: 2.66667; }
+  :host ::ng-deep .igx-grid__th-icons {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    min-width: 30px;
+    /* sort-icon + filter icon width */
+    height: 3.125rem;
+    -ms-flex-item-align: end;
+        align-self: flex-end; }
+    :host ::ng-deep .igx-grid__th-icons:empty {
+      min-width: 0; }
+    :host ::ng-deep .igx-grid__th-icons .sort-icon {
+      width: 0.9375rem;
+      height: 0.9375rem;
+      min-width: 0.9375rem;
+      /* yeah IE, it really needs to be 15px wide... */
+      font-size: 0.9375rem; }
+  :host ::ng-deep .igx-grid__th-expander {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    margin-right: 0.5rem;
+    cursor: pointer; }
+    :host ::ng-deep .igx-grid__th-expander igx-icon {
+      color: var(--igx-grid-expand-icon-color); }
+    :host ::ng-deep .igx-grid__th-expander:hover igx-icon {
+      color: var(--igx-grid-expand-icon-hover-color); }
+  :host ::ng-deep .igx-grid__th-group-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+  :host ::ng-deep .igx-grid__th--collapsible {
+    -ms-flex-pack: normal;
+        justify-content: normal; }
+  :host ::ng-deep .igx-grid__th--selectable {
+    color: var(--igx-grid-header-selected-text-color);
+    background: var(--igx-grid-header-selected-background);
+    opacity: .7; }
+  :host ::ng-deep .igx-grid__th--selected {
+    color: var(--igx-grid-header-selected-text-color);
+    background: var(--igx-grid-header-selected-background); }
+  :host ::ng-deep .igx-grid__th--sortable .sort-icon {
+    cursor: pointer;
+    opacity: .7; }
+    :host ::ng-deep .igx-grid__th--sortable .sort-icon:hover {
+      opacity: 1; }
+  :host ::ng-deep .igx-grid__th--sorted .sort-icon {
+    opacity: 1;
+    color: var(--igx-grid-sorted-header-icon-color); }
+    :host ::ng-deep .igx-grid__th--sorted .sort-icon:hover {
+      color: var(--igx-grid-sortable-header-icon-hover-color); }
+  :host ::ng-deep .igx-grid__th--filtrable .igx-grid__th-title {
+    opacity: .7; }
+  :host ::ng-deep .igx-grid__th--filtrable.igx-grid__th--sortable .sort-icon:hover {
+    opacity: 1; }
+  :host ::ng-deep .sort-icon {
+    opacity: 0;
+    transition: all 250ms ease-in-out; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__th-icons, .igx-grid--cosy :host ::ng-deep .igx-grid__th-icons {
+    height: 2.5rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__th-icons, .igx-grid--compact :host ::ng-deep .igx-grid__th-icons {
+    height: 2rem; }
+  :host ::ng-deep .igx-grid__th--number, :host ::ng-deep .igx-grid__td--number {
+    text-align: right;
+    -ms-flex-pack: end;
+        justify-content: flex-end; }
+    :host ::ng-deep .igx-grid__th--number .igx-grid__th-icons, :host ::ng-deep .igx-grid__td--number .igx-grid__th-icons {
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+      -ms-flex-order: -1;
+          order: -1; }
+      :host ::ng-deep .igx-grid__th--number .igx-grid__th-icons .sort-icon, :host ::ng-deep .igx-grid__td--number .igx-grid__th-icons .sort-icon {
+        -ms-flex-order: 1;
+            order: 1; }
+  :host ::ng-deep .igx-grid__cbx-selection {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    border-right: var(--igx-grid-header-border-width) var(--igx-grid-header-border-style) var(--igx-grid-header-border-color);
+    background: inherit;
+    z-index: 4; }
+  :host ::ng-deep .igx-grid__cbx-padding {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    min-width: calc(1.25rem + (1.5rem * 2)); }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__cbx-padding, .igx-grid--cosy :host ::ng-deep .igx-grid__cbx-padding {
+    min-width: calc(1.25rem + (1rem * 2)); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__cbx-padding, .igx-grid--compact :host ::ng-deep .igx-grid__cbx-padding {
+    min-width: calc(1.25rem + (0.75rem * 2)); }
+  :host ::ng-deep .igx-grid__th-resize-handle {
+    position: absolute;
+    width: 4px;
+    top: 0;
+    right: -2px;
+    height: 100%;
+    z-index: 2; }
+  :host ::ng-deep .igx-grid__th-resize-line {
+    position: absolute;
+    cursor: col-resize;
+    width: 4px;
+    background: var(--igx-grid-resize-line-color);
+    z-index: 2; }
+    :host ::ng-deep .igx-grid__th-resize-line::before, :host ::ng-deep .igx-grid__th-resize-line::after {
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 96px; }
+    :host ::ng-deep .igx-grid__th-resize-line::before {
+      right: 100%; }
+    :host ::ng-deep .igx-grid__th-resize-line::after {
+      left: 100%; }
+  :host ::ng-deep .igx-grid__summaries, :host ::ng-deep .igx-grid__summaries--body {
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    background: var(--igx-grid-root-summaries-background); }
+    :host ::ng-deep .igx-grid__summaries .igx-grid-summary__result, :host ::ng-deep .igx-grid__summaries--body .igx-grid-summary__result {
+      color: var(--igx-grid-root-summaries-text-color); }
+  :host ::ng-deep .igx-grid__summaries--body {
+    background: var(--igx-grid-body-summaries-background);
+    border-bottom: 1px dashed var(--igx-grid-row-border-color); }
+    :host ::ng-deep .igx-grid__summaries--body:last-of-type {
+      border-bottom: none; }
+    :host ::ng-deep .igx-grid__summaries--body .igx-grid-summary__result {
+      color: var(--igx-grid-body-summaries-text-color); }
+  :host ::ng-deep .igx-grid__summaries-patch {
+    background: inherit;
+    position: relative;
+    z-index: 1;
+    border-right: 1px solid var(--igx-grid-header-border-color); }
+  :host ::ng-deep .igx-grid__th-drop-indicator-left,
+  :host ::ng-deep .igx-grid__th-drop-indicator-right {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    z-index: 1; }
+  :host ::ng-deep .igx-grid__th-drop-indicator-left {
+    left: -1px; }
+  
+  :host ::ng-deep .igx-grid__th-drop-indicator-right {
+    right: -1px; }
+  :host ::ng-deep .igx-grid__th-drop-indicator-left.igx-grid__th-drop-indicator--active, :host ::ng-deep .igx-grid__th-drop-indicator-right.igx-grid__th-drop-indicator--active {
+    border-right: 1px solid var(--igx-grid-drop-indicator-color); }
+  :host ::ng-deep .igx-grid__th-drop-indicator--active::after, :host ::ng-deep .igx-grid__th-drop-indicator--active::before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    left: -3px; }
+  :host ::ng-deep .igx-grid__th-drop-indicator--active::before {
+    bottom: 0;
+    border-width: 0 4px 4px;
+    border-color: transparent transparent var(--igx-grid-drop-indicator-color); }
+  :host ::ng-deep .igx-grid__th-drop-indicator--active::after {
+    top: 0;
+    border-width: 4px 4px 0;
+    border-color: var(--igx-grid-drop-indicator-color) transparent transparent; }
+  :host ::ng-deep .igx-grid__scroll-on-drag-left,
+  :host ::ng-deep .igx-grid__scroll-on-drag-right {
+    position: absolute;
+    width: 15px;
+    top: 0;
+    height: 100%;
+    z-index: 25; }
+  :host ::ng-deep .igx-grid__scroll-on-drag-left {
+    left: 0; }
+  
+  :host ::ng-deep .igx-grid__scroll-on-drag-right {
+    right: 0; }
+  :host ::ng-deep .igx-grid__scroll-on-drag-pinned {
+    position: absolute;
+    width: 15px;
+    height: 100%;
+    top: 0;
+    z-index: 25; }
+  :host ::ng-deep .igx-grid__drag-ghost-image {
+    position: absolute;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    background: var(--igx-grid-ghost-header-background);
+    color: var(--igx-grid-ghost-header-text-color);
+    min-width: 168px;
+    max-width: 320px;
+    height: 3.125rem;
+    min-height: 3.125rem;
+    top: -99999px;
+    left: -99999px;
+    border: none;
+    box-shadow: var(--igx-grid-drag-shadow);
+    overflow: hidden;
+    z-index: 20; }
+    :host ::ng-deep .igx-grid__drag-ghost-image .igx-grid__th-title {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+      text-align: right; }
+    :host ::ng-deep .igx-grid__drag-ghost-image .igx-grid__th-icons {
+      display: none; }
+    :host ::ng-deep .igx-grid__drag-ghost-image .igx-grid__thead-title {
+      border: none; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__drag-ghost-image, .igx-grid--cosy :host ::ng-deep .igx-grid__drag-ghost-image {
+    height: 2.5rem;
+    min-height: 2.5rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__drag-ghost-image, .igx-grid--compact :host ::ng-deep .igx-grid__drag-ghost-image {
+    height: 2rem;
+    min-height: 2rem; }
+  :host ::ng-deep .igx-grid__drag-ghost-image-icon {
+    color: var(--igx-grid-ghost-header-icon-color);
+    margin-right: 0.75rem; }
+  :host ::ng-deep .igx-grid__drag-ghost-image-icon-group {
+    color: var(--igx-grid-ghost-header-icon-color);
+    padding: var(---comfortable);
+    padding-right: 0;
+    margin-right: 0.5rem; }
+  :host ::ng-deep .igx-grid__drag-col-header {
+    background: var(--igx-grid-header-background); }
+    :host ::ng-deep .igx-grid__drag-col-header .igx-grid__thead-title, :host ::ng-deep .igx-grid__drag-col-header .igx-grid__th {
+      opacity: .4; }
+  :host ::ng-deep .igx-grid__group-row {
+    background: var(--igx-grid-group-row-background);
+    display: -ms-flexbox;
+    display: flex;
+    outline-style: none;
+    border-bottom: 1px solid var(--igx-grid-row-border-color);
+    min-height: 3.125rem; }
+  :host ::ng-deep .igx-grid__group-row--active {
+    background: var(--igx-grid-group-row-selected-background); }
+    :host ::ng-deep .igx-grid__group-row--active .igx-grid__grouping-indicator {
+      color: var(--igx-grid-expand-icon-color); }
+    :host ::ng-deep .igx-grid__group-row--active:hover {
+      background: var(--igx-grid-group-row-selected-background); }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__group-row, .igx-grid--cosy :host ::ng-deep .igx-grid__group-row {
+    min-height: 2.5rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__group-row, .igx-grid--compact :host ::ng-deep .igx-grid__group-row {
+    min-height: 2rem; }
+  :host ::ng-deep .igx-group-label {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    line-height: 1rem; }
+    :host ::ng-deep .igx-group-label > * {
+      margin-right: 0.25rem; }
+      :host ::ng-deep .igx-group-label > *:last-child {
+        margin-right: 0; }
+  :host ::ng-deep .igx-group-label__icon {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+    :host ::ng-deep .igx-group-label__icon.igx-icon, :host ::ng-deep .igx-group-label__icon.igx-icon--inactive {
+      color: var(--igx-grid-group-label-icon);
+      width: 1rem;
+      height: 1rem;
+      font-size: 1rem; }
+  :host ::ng-deep .igx-group-label__column-name {
+    color: var(--igx-grid-group-label-column-name-text);
+    font-weight: 600;
+    font-size: 12px; }
+  :host ::ng-deep .igx-group-label__count-badge > div {
+    background: var(--igx-grid-group-count-background);
+    color: var(--igx-grid-group-count-text-color);
+    font-size: 0.75rem; }
+  :host ::ng-deep .igx-group-label__text {
+    font-size: 0.8125rem;
+    color: var(--igx-grid-group-label-text); }
+  :host ::ng-deep [dir='rtl'] .igx-grid__group-content {
+    padding-left: 1.5rem; }
+  :host ::ng-deep [dir='rtl'] .igx-grid--cosy .igx-grid__group-content, .igx-grid--cosy :host ::ng-deep [dir='rtl'] .igx-grid__group-content {
+    padding-left: 1rem; }
+  :host ::ng-deep [dir='rtl'] .igx-grid--compact .igx-grid__group-content, .igx-grid--compact :host ::ng-deep [dir='rtl'] .igx-grid__group-content {
+    padding-left: 0.75rem; }
+  :host ::ng-deep [dir='rtl'] .igx-group-label > * {
+    margin-left: 0.25rem; }
+    :host ::ng-deep [dir='rtl'] .igx-group-label > *:last-child {
+      margin-left: 0; }
+  :host ::ng-deep .igx-grid__group-content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    padding-left: 1.5rem;
+    min-height: 3.125rem; }
+    :host ::ng-deep .igx-grid__group-content:focus {
+      outline: transparent; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__group-content, .igx-grid--cosy :host ::ng-deep .igx-grid__group-content {
+    padding-left: 1rem;
+    min-height: 2.5rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__group-content, .igx-grid--compact :host ::ng-deep .igx-grid__group-content {
+    padding-left: 0.75rem;
+    min-height: 2rem; }
+  :host ::ng-deep .igx-grid__row-indentation {
+    background: transparent;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    position: relative;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-right: 1px solid transparent; }
+    :host ::ng-deep .igx-grid__row-indentation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 0.0625rem;
+      bottom: -1px;
+      left: 0;
+      background: transparent; }
+    :host ::ng-deep .igx-grid__row-indentation .igx-button--icon {
+      width: 1.75rem;
+      height: 1.75rem;
+      color: var(--igx-grid-expand-all-icon-color); }
+    :host ::ng-deep .igx-grid__row-indentation:focus .igx-button--icon, :host ::ng-deep .igx-grid__row-indentation:hover .igx-button--icon {
+      color: var(--igx-grid-expand-all-icon-hover-color); }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__row-indentation, .igx-grid--cosy :host ::ng-deep .igx-grid__row-indentation {
+    padding-left: 1rem;
+    padding-right: 1rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__row-indentation, .igx-grid--compact :host ::ng-deep .igx-grid__row-indentation {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem; }
+  :host ::ng-deep .igx-grid__grouparea {
+    grid-row: 2;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    border-bottom: var(--igx-grid-header-border-width) var(--igx-grid-header-border-style) var(--igx-grid-header-border-color);
+    background: var(--igx-grid-grouparea-background);
+    color: var(--igx-grid-grouparea-color);
+    min-height: 3.5625rem;
+    padding: 0.5rem 1.5rem;
+    z-index: 2;
+    height: 100%;
+    overflow: hidden; }
+    :host ::ng-deep .igx-grid__grouparea:focus {
+      outline-style: none; }
+  :host ::ng-deep .igx-grid__grouparea-connector {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    margin: 0 0.25rem; }
+    :host ::ng-deep .igx-grid__grouparea-connector igx-icon {
+      width: 16px;
+      height: 16px;
+      font-size: 16px; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__grouparea, .igx-grid--cosy :host ::ng-deep .igx-grid__grouparea {
+    min-height: 3.0625rem;
+    padding: 0.5rem 1rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__grouparea, .igx-grid--compact :host ::ng-deep .igx-grid__grouparea {
+    min-height: 2.5625rem;
+    padding: 0.25rem 0.75rem; }
+  :host ::ng-deep .igx-drop-area, :host ::ng-deep .igx-drop-area--compact, :host ::ng-deep .igx-drop-area--cosy {
+    min-width: 5rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    height: 2rem;
+    border-radius: var(--igx-grid-drop-area-border-radius);
+    padding: 0 1.5rem;
+    -ms-flex: 1 0 0%;
+        flex: 1 0 0%;
+    background: var(--igx-grid-drop-area-background); }
+    :host ::ng-deep .igx-drop-area .igx-drop-area__icon, :host ::ng-deep .igx-drop-area--compact .igx-drop-area__icon, :host ::ng-deep .igx-drop-area--cosy .igx-drop-area__icon {
+      color: var(--igx-grid-drop-area-icon-color);
+      width: 1rem;
+      height: 1rem;
+      font-size: 1rem;
+      margin-right: 0.5rem; }
+  :host ::ng-deep .igx-drop-area--hover {
+    background: var(--igx-grid-drop-area-on-drop-background); }
+  :host ::ng-deep .igx-drop-area--compact {
+    height: 1.5rem;
+    border-radius: var(--igx-grid-drop-area-border-radius);
+    padding: 0 1rem; }
+  :host ::ng-deep .igx-drop-area--cosy {
+    height: 1.5rem;
+    border-radius: var(--igx-grid-drop-area-border-radius);
+    padding: 0 0.75rem; }
+  :host ::ng-deep .igx-drop-area__text {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: var(--igx-grid-drop-area-text-color);
+    font-size: 0.8125rem; }
+  :host ::ng-deep .igx-grid__grouping-indicator {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    z-index: 1;
+    cursor: pointer;
+    padding-left: 1.5rem;
+    padding-right: 0.75rem;
+    min-height: 3.125rem; }
+    :host ::ng-deep .igx-grid__grouping-indicator igx-icon {
+      color: var(--igx-grid-expand-icon-color);
+      width: 1.5rem; }
+    :host ::ng-deep .igx-grid__grouping-indicator:hover, :host ::ng-deep .igx-grid__grouping-indicator:focus {
+      outline-style: none; }
+      :host ::ng-deep .igx-grid__grouping-indicator:hover igx-icon, :host ::ng-deep .igx-grid__grouping-indicator:focus igx-icon {
+        color: var(--igx-grid-expand-icon-hover-color); }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__grouping-indicator, .igx-grid--cosy :host ::ng-deep .igx-grid__grouping-indicator {
+    padding-left: 1rem;
+    min-height: 2.5rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__grouping-indicator, .igx-grid--compact :host ::ng-deep .igx-grid__grouping-indicator {
+    padding-left: 0.75rem;
+    min-height: 2rem; }
+  :host ::ng-deep .igx-grid__header-indentation {
+    position: relative;
+    padding-right: 1.5rem;
+    border-right: 1px solid var(--igx-grid-header-border-color);
+    background: var(--igx-grid-header-background);
+    z-index: 4; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__header-indentation, .igx-grid--cosy :host ::ng-deep .igx-grid__header-indentation {
+    padding-right: 1rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__header-indentation, .igx-grid--compact :host ::ng-deep .igx-grid__header-indentation {
+    padding-right: 0.75rem; }
+  :host ::ng-deep .igx-grid__group-expand-btn {
+    position: absolute;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    top: calc(50% - 12px);
+    left: 1.5rem; }
+    :host ::ng-deep .igx-grid__group-expand-btn:hover {
+      color: var(--igx-grid-expand-icon-hover-color); }
+    :host ::ng-deep .igx-grid__group-expand-btn.igx-grid__group-expand-btn--push {
+      top: 0.8125rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__group-expand-btn, .igx-grid--cosy :host ::ng-deep .igx-grid__group-expand-btn {
+    left: 1rem; }
+    :host ::ng-deep .igx-grid--cosy .igx-grid__group-expand-btn--push.igx-grid__group-expand-btn, .igx-grid--cosy :host ::ng-deep .igx-grid__group-expand-btn--push.igx-grid__group-expand-btn {
+      top: 0.5rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__group-expand-btn, .igx-grid--compact :host ::ng-deep .igx-grid__group-expand-btn {
+    left: 0.75rem; }
+    :host ::ng-deep .igx-grid--compact .igx-grid__group-expand-btn--push.igx-grid__group-expand-btn, .igx-grid--compact :host ::ng-deep .igx-grid__group-expand-btn--push.igx-grid__group-expand-btn {
+      top: 0.25rem; }
+  :host ::ng-deep .igx-grid__row-indentation--level-1 {
+    background: inherit;
+    padding-left: calc(1.5rem + 1.5rem); }
+  :host ::ng-deep .igx-grid__group-row--padding-level-1 {
+    padding-left: 1.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__row-indentation--level-1, .igx-grid--cosy :host ::ng-deep .igx-grid__row-indentation--level-1 {
+    padding-left: calc(1rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__row-indentation--level-1, .igx-grid--compact :host ::ng-deep .igx-grid__row-indentation--level-1 {
+    padding-left: calc(0.75rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__group-row--padding-level-1, .igx-grid--compact :host ::ng-deep .igx-grid__group-row--padding-level-1 {
+    padding-left: 0.75rem; }
+  :host ::ng-deep .igx-grid__row-indentation--level-2 {
+    background: inherit;
+    padding-left: calc(3rem + 1.5rem); }
+  :host ::ng-deep .igx-grid__group-row--padding-level-2 {
+    padding-left: 3rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__row-indentation--level-2, .igx-grid--cosy :host ::ng-deep .igx-grid__row-indentation--level-2 {
+    padding-left: calc(2rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__row-indentation--level-2, .igx-grid--compact :host ::ng-deep .igx-grid__row-indentation--level-2 {
+    padding-left: calc(1.5rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__group-row--padding-level-2, .igx-grid--compact :host ::ng-deep .igx-grid__group-row--padding-level-2 {
+    padding-left: 1.5rem; }
+  :host ::ng-deep .igx-grid__row-indentation--level-3 {
+    background: inherit;
+    padding-left: calc(4.5rem + 1.5rem); }
+  :host ::ng-deep .igx-grid__group-row--padding-level-3 {
+    padding-left: 4.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__row-indentation--level-3, .igx-grid--cosy :host ::ng-deep .igx-grid__row-indentation--level-3 {
+    padding-left: calc(3rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__row-indentation--level-3, .igx-grid--compact :host ::ng-deep .igx-grid__row-indentation--level-3 {
+    padding-left: calc(2.25rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__group-row--padding-level-3, .igx-grid--compact :host ::ng-deep .igx-grid__group-row--padding-level-3 {
+    padding-left: 2.25rem; }
+  :host ::ng-deep .igx-grid__row-indentation--level-4 {
+    background: inherit;
+    padding-left: calc(6rem + 1.5rem); }
+  :host ::ng-deep .igx-grid__group-row--padding-level-4 {
+    padding-left: 6rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__row-indentation--level-4, .igx-grid--cosy :host ::ng-deep .igx-grid__row-indentation--level-4 {
+    padding-left: calc(4rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__row-indentation--level-4, .igx-grid--compact :host ::ng-deep .igx-grid__row-indentation--level-4 {
+    padding-left: calc(3rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__group-row--padding-level-4, .igx-grid--compact :host ::ng-deep .igx-grid__group-row--padding-level-4 {
+    padding-left: 3rem; }
+  :host ::ng-deep .igx-grid__row-indentation--level-5 {
+    background: inherit;
+    padding-left: calc(7.5rem + 1.5rem); }
+  :host ::ng-deep .igx-grid__group-row--padding-level-5 {
+    padding-left: 7.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__row-indentation--level-5, .igx-grid--cosy :host ::ng-deep .igx-grid__row-indentation--level-5 {
+    padding-left: calc(5rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__row-indentation--level-5, .igx-grid--compact :host ::ng-deep .igx-grid__row-indentation--level-5 {
+    padding-left: calc(3.75rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__group-row--padding-level-5, .igx-grid--compact :host ::ng-deep .igx-grid__group-row--padding-level-5 {
+    padding-left: 3.75rem; }
+  :host ::ng-deep .igx-grid__row-indentation--level-6 {
+    background: inherit;
+    padding-left: calc(9rem + 1.5rem); }
+  :host ::ng-deep .igx-grid__group-row--padding-level-6 {
+    padding-left: 9rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__row-indentation--level-6, .igx-grid--cosy :host ::ng-deep .igx-grid__row-indentation--level-6 {
+    padding-left: calc(6rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__row-indentation--level-6, .igx-grid--compact :host ::ng-deep .igx-grid__row-indentation--level-6 {
+    padding-left: calc(4.5rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__group-row--padding-level-6, .igx-grid--compact :host ::ng-deep .igx-grid__group-row--padding-level-6 {
+    padding-left: 4.5rem; }
+  :host ::ng-deep .igx-grid__row-indentation--level-7 {
+    background: inherit;
+    padding-left: calc(10.5rem + 1.5rem); }
+  :host ::ng-deep .igx-grid__group-row--padding-level-7 {
+    padding-left: 10.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__row-indentation--level-7, .igx-grid--cosy :host ::ng-deep .igx-grid__row-indentation--level-7 {
+    padding-left: calc(7rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__row-indentation--level-7, .igx-grid--compact :host ::ng-deep .igx-grid__row-indentation--level-7 {
+    padding-left: calc(5.25rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__group-row--padding-level-7, .igx-grid--compact :host ::ng-deep .igx-grid__group-row--padding-level-7 {
+    padding-left: 5.25rem; }
+  :host ::ng-deep .igx-grid__row-indentation--level-8 {
+    background: inherit;
+    padding-left: calc(12rem + 1.5rem); }
+  :host ::ng-deep .igx-grid__group-row--padding-level-8 {
+    padding-left: 12rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__row-indentation--level-8, .igx-grid--cosy :host ::ng-deep .igx-grid__row-indentation--level-8 {
+    padding-left: calc(8rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__row-indentation--level-8, .igx-grid--compact :host ::ng-deep .igx-grid__row-indentation--level-8 {
+    padding-left: calc(6rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__group-row--padding-level-8, .igx-grid--compact :host ::ng-deep .igx-grid__group-row--padding-level-8 {
+    padding-left: 6rem; }
+  :host ::ng-deep .igx-grid__row-indentation--level-9 {
+    background: inherit;
+    padding-left: calc(13.5rem + 1.5rem); }
+  :host ::ng-deep .igx-grid__group-row--padding-level-9 {
+    padding-left: 13.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__row-indentation--level-9, .igx-grid--cosy :host ::ng-deep .igx-grid__row-indentation--level-9 {
+    padding-left: calc(9rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__row-indentation--level-9, .igx-grid--compact :host ::ng-deep .igx-grid__row-indentation--level-9 {
+    padding-left: calc(6.75rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__group-row--padding-level-9, .igx-grid--compact :host ::ng-deep .igx-grid__group-row--padding-level-9 {
+    padding-left: 6.75rem; }
+  :host ::ng-deep .igx-grid__row-indentation--level-10 {
+    background: inherit;
+    padding-left: calc(15rem + 1.5rem); }
+  :host ::ng-deep .igx-grid__group-row--padding-level-10 {
+    padding-left: 15rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__row-indentation--level-10, .igx-grid--cosy :host ::ng-deep .igx-grid__row-indentation--level-10 {
+    padding-left: calc(10rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__row-indentation--level-10, .igx-grid--compact :host ::ng-deep .igx-grid__row-indentation--level-10 {
+    padding-left: calc(7.5rem + 1.5rem); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__group-row--padding-level-10, .igx-grid--compact :host ::ng-deep .igx-grid__group-row--padding-level-10 {
+    padding-left: 7.5rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-1 {
+    padding-left: 1.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-1, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-1 {
+    padding-left: 1rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-1, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-1 {
+    padding-left: 0.75rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-2 {
+    padding-left: 3rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-2, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-2 {
+    padding-left: 2rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-2, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-2 {
+    padding-left: 1.5rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-3 {
+    padding-left: 4.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-3, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-3 {
+    padding-left: 3rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-3, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-3 {
+    padding-left: 2.25rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-4 {
+    padding-left: 6rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-4, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-4 {
+    padding-left: 4rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-4, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-4 {
+    padding-left: 3rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-5 {
+    padding-left: 7.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-5, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-5 {
+    padding-left: 5rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-5, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-5 {
+    padding-left: 3.75rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-6 {
+    padding-left: 9rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-6, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-6 {
+    padding-left: 6rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-6, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-6 {
+    padding-left: 4.5rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-7 {
+    padding-left: 10.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-7, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-7 {
+    padding-left: 7rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-7, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-7 {
+    padding-left: 5.25rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-8 {
+    padding-left: 12rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-8, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-8 {
+    padding-left: 8rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-8, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-8 {
+    padding-left: 6rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-9 {
+    padding-left: 13.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-9, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-9 {
+    padding-left: 9rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-9, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-9 {
+    padding-left: 6.75rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-10 {
+    padding-left: 15rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-10, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-10 {
+    padding-left: 10rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-10, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-10 {
+    padding-left: 7.5rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-11 {
+    padding-left: 16.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-11, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-11 {
+    padding-left: 11rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-11, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-11 {
+    padding-left: 8.25rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-12 {
+    padding-left: 18rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-12, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-12 {
+    padding-left: 12rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-12, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-12 {
+    padding-left: 9rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-13 {
+    padding-left: 19.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-13, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-13 {
+    padding-left: 13rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-13, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-13 {
+    padding-left: 9.75rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-14 {
+    padding-left: 21rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-14, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-14 {
+    padding-left: 14rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-14, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-14 {
+    padding-left: 10.5rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-15 {
+    padding-left: 22.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-15, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-15 {
+    padding-left: 15rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-15, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-15 {
+    padding-left: 11.25rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-16 {
+    padding-left: 24rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-16, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-16 {
+    padding-left: 16rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-16, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-16 {
+    padding-left: 12rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-17 {
+    padding-left: 25.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-17, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-17 {
+    padding-left: 17rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-17, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-17 {
+    padding-left: 12.75rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-18 {
+    padding-left: 27rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-18, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-18 {
+    padding-left: 18rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-18, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-18 {
+    padding-left: 13.5rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-19 {
+    padding-left: 28.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-19, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-19 {
+    padding-left: 19rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-19, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-19 {
+    padding-left: 14.25rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-20 {
+    padding-left: 30rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-20, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-20 {
+    padding-left: 20rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-20, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-20 {
+    padding-left: 15rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-21 {
+    padding-left: 31.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-21, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-21 {
+    padding-left: 21rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-21, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-21 {
+    padding-left: 15.75rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-22 {
+    padding-left: 33rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-22, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-22 {
+    padding-left: 22rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-22, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-22 {
+    padding-left: 16.5rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-23 {
+    padding-left: 34.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-23, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-23 {
+    padding-left: 23rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-23, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-23 {
+    padding-left: 17.25rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-24 {
+    padding-left: 36rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-24, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-24 {
+    padding-left: 24rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-24, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-24 {
+    padding-left: 18rem; }
+  :host ::ng-deep .igx-grid__tree-cell--padding-level-25 {
+    padding-left: 37.5rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__tree-cell--padding-level-25, .igx-grid--cosy :host ::ng-deep .igx-grid__tree-cell--padding-level-25 {
+    padding-left: 25rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__tree-cell--padding-level-25, .igx-grid--compact :host ::ng-deep .igx-grid__tree-cell--padding-level-25 {
+    padding-left: 18.75rem; }
+  :host ::ng-deep .igx-grid__outlet {
+    z-index: 10002;
+    position: fixed; }
+  :host ::ng-deep .igx-grid__loading-outlet {
+    z-index: 10003; }
+    :host ::ng-deep .igx-grid__loading-outlet > .igx-overlay__wrapper--modal {
+      background: none; }
+    :host ::ng-deep .igx-grid__loading-outlet .igx-circular-bar {
+      width: 3.125rem;
+      height: 3.125rem; }
+  :host ::ng-deep .igx-grid__row-editing-outlet {
+    z-index: 10000;
+    position: absolute; }
+    :host ::ng-deep .igx-grid__row-editing-outlet .igx-overlay__wrapper, :host ::ng-deep .igx-grid__row-editing-outlet .igx-overlay__wrapper--modal, :host ::ng-deep .igx-grid__row-editing-outlet .igx-overlay__wrapper--flex, :host ::ng-deep .igx-grid__row-editing-outlet .igx-overlay__wrapper--flex-container {
+      /* Change wrapper position from 'fixed' to 'absolute' so that it is hidden when scrolled below the parent grid body content. */
+      position: absolute; }
+  :host ::ng-deep .igx-grid__filtering-cell, :host ::ng-deep .igx-grid__filtering-cell--selected {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    border-right: var(--igx-grid-header-border-width) var(--igx-grid-header-border-style) var(--igx-grid-header-border-color);
+    border-top: var(--igx-grid-header-border-width) var(--igx-grid-header-border-style) var(--igx-grid-header-border-color);
+    height: 3.125rem;
+    padding: 0 1.5rem;
+    overflow: hidden; }
+    :host ::ng-deep .igx-grid__filtering-cell igx-chips-area, :host ::ng-deep .igx-grid__filtering-cell--selected igx-chips-area {
+      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap; }
+      :host ::ng-deep .igx-grid__filtering-cell igx-chips-area .igx-filtering-chips__connector, :host ::ng-deep .igx-grid__filtering-cell--selected igx-chips-area .igx-filtering-chips__connector {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 0 0.5rem; }
+  :host ::ng-deep .igx-grid__filtering-cell--selected {
+    color: var(--igx-grid-header-selected-text-color);
+    background: var(--igx-grid-header-selected-background); }
+  :host ::ng-deep .igx-grid__filtering-cell-indicator, :host ::ng-deep .igx-grid__filtering-cell-indicator--hidden {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    padding-right: 8px;
+    margin-left: 8px;
+    cursor: pointer;
+    visibility: visible; }
+    :host ::ng-deep .igx-grid__filtering-cell-indicator igx-icon, :host ::ng-deep .igx-grid__filtering-cell-indicator--hidden igx-icon {
+      width: 18px;
+      height: 18px;
+      font-size: 18px; }
+    :host ::ng-deep .igx-grid__filtering-cell-indicator .igx-badge, :host ::ng-deep .igx-grid__filtering-cell-indicator--hidden .igx-badge, :host ::ng-deep .igx-grid__filtering-cell-indicator .igx-badge__circle, :host ::ng-deep .igx-grid__filtering-cell-indicator--hidden .igx-badge__circle, :host ::ng-deep .igx-grid__filtering-cell-indicator .igx-badge__circle--info, :host ::ng-deep .igx-grid__filtering-cell-indicator--hidden .igx-badge__circle--info, :host ::ng-deep .igx-grid__filtering-cell-indicator .igx-badge__circle--success, :host ::ng-deep .igx-grid__filtering-cell-indicator--hidden .igx-badge__circle--success, :host ::ng-deep .igx-grid__filtering-cell-indicator .igx-badge__circle--warning, :host ::ng-deep .igx-grid__filtering-cell-indicator--hidden .igx-badge__circle--warning, :host ::ng-deep .igx-grid__filtering-cell-indicator .igx-badge__circle--error, :host ::ng-deep .igx-grid__filtering-cell-indicator--hidden .igx-badge__circle--error {
+      /* start of IE vertical alignment fix */
+      top: 50%;
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+      /* end of IE vertical alignment fix */
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      min-width: 14px;
+      font-size: 12px;
+      text-align: center;
+      right: 0; }
+  :host ::ng-deep .igx-grid__filtering-cell-indicator--hidden {
+    visibility: hidden; }
+  :host ::ng-deep .igx-grid__filtering-row {
+    position: absolute;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 3.125rem;
+    padding: 0 1rem;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    background: var(--igx-grid-filtering-row-background);
+    color: var(--igx-grid-filtering-row-text-color);
+    left: 0;
+    bottom: 0;
+    z-index: 3; }
+    :host ::ng-deep .igx-grid__filtering-row::after {
+      display: block;
+      position: absolute;
+      content: '';
+      background: inherit;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      box-shadow: 0 1px 0 var(--igx-grid-filtering-row-background), 0 4px 10px rgba(0, 0, 0, 0.12);
+      z-index: -1; }
+    :host ::ng-deep .igx-grid__filtering-row igx-input-group {
+      -ms-flex: 0 0 200px;
+          flex: 0 0 200px; }
+    :host ::ng-deep .igx-grid__filtering-row igx-prefix:focus {
+      color: #514590; }
+    :host ::ng-deep .igx-grid__filtering-row igx-suffix igx-icon {
+      outline-style: none; }
+      :host ::ng-deep .igx-grid__filtering-row igx-suffix igx-icon:focus {
+        color: #514590; }
+      :host ::ng-deep .igx-grid__filtering-row igx-suffix igx-icon + igx-icon {
+        margin-left: 0.25rem; }
+  :host ::ng-deep .igx-grid__filtering-row--cosy {
+    height: 2.5rem; }
+  :host ::ng-deep .igx-grid__filtering-row--compact {
+    height: 2rem; }
+  :host ::ng-deep .igx-grid__filtering-row-main {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1;
+        flex: 1;
+    overflow: hidden;
+    max-width: calc(100% - 176px); }
+    :host ::ng-deep .igx-grid__filtering-row-main igx-chips-area {
+      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      margin: 0 0.5rem; }
+    :host ::ng-deep .igx-grid__filtering-row-main igx-chip {
+      margin: 0 0.25rem; }
+    :host ::ng-deep .igx-grid__filtering-row-main [igxButton] igx-icon {
+      position: absolute;
+      left: 0.75rem;
+      /* IE fix for vertical alignment*/
+      top: 50%;
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%); }
+    :host ::ng-deep .igx-grid__filtering-row-main [igxButton] span {
+      margin-left: 1rem; }
+  :host ::ng-deep .igx-grid__filtering-row-scroll-start::after, :host ::ng-deep .igx-grid__filtering-row-scroll-end::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: -2px;
+    bottom: -2px;
+    width: 10px; }
+  :host ::ng-deep .igx-grid__filtering-row-scroll-start {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    overflow: visible;
+    margin: 0 8px;
+    z-index: 1; }
+    :host ::ng-deep .igx-grid__filtering-row-scroll-start::after {
+      left: calc(100% + 6px);
+      background: linear-gradient(to right, var(--igx-grid-filtering-row-background), transparent); }
+  :host ::ng-deep .igx-grid__filtering-row-scroll-end {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    overflow: visible;
+    margin: 0 8px;
+    z-index: 1; }
+    :host ::ng-deep .igx-grid__filtering-row-scroll-end::before {
+      right: calc(100% + 6px);
+      background: linear-gradient(to left, var(--igx-grid-filtering-row-background), transparent); }
+  :host ::ng-deep .igx-grid__tr--highlighted {
+    position: relative; }
+    :host ::ng-deep .igx-grid__tr--highlighted::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--igx-grid-row-highlight);
+      z-index: 3; }
+    :host ::ng-deep .igx-grid__tr--highlighted .igx-grid__tr--edited::before {
+      left: 4px; }
+    :host ::ng-deep .igx-grid__tr--highlighted::before {
+      left: 4px; }
+  :host ::ng-deep .igx-grid__tr-container {
+    border-bottom: 1px solid var(--igx-grid-row-border-color); }
+  :host ::ng-deep .igx-grid__hierarchical-expander, :host ::ng-deep .igx-grid__hierarchical-expander--empty {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background: inherit;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    color: var(--igx-grid-expand-icon-color);
+    border-right: 1px solid transparent; }
+    :host ::ng-deep .igx-grid__hierarchical-expander:focus, :host ::ng-deep .igx-grid__hierarchical-expander--empty:focus {
+      outline: none; }
+      :host ::ng-deep .igx-grid__hierarchical-expander:focus igx-icon, :host ::ng-deep .igx-grid__hierarchical-expander--empty:focus igx-icon {
+        color: var(--igx-grid-expand-icon-hover-color); }
+    :host ::ng-deep .igx-grid__hierarchical-expander:hover igx-icon, :host ::ng-deep .igx-grid__hierarchical-expander--empty:hover igx-icon {
+      color: var(--igx-grid-expand-icon-hover-color); }
+    :host ::ng-deep .igx-grid__hierarchical-expander igx-icon, :host ::ng-deep .igx-grid__hierarchical-expander--empty igx-icon {
+      color: var(--igx-grid-expand-icon-color);
+      max-width: 24px;
+      min-width: 24px; }
+    :host ::ng-deep .igx-grid__hierarchical-expander--empty {
+      cursor: default;
+      pointer-events: none; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__hierarchical-expander, .igx-grid--cosy :host ::ng-deep .igx-grid__hierarchical-expander, :host ::ng-deep .igx-grid--cosy .igx-grid__hierarchical-expander--empty, .igx-grid--cosy :host ::ng-deep .igx-grid__hierarchical-expander--empty {
+    padding-left: 1rem;
+    padding-right: 1rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__hierarchical-expander, .igx-grid--compact :host ::ng-deep .igx-grid__hierarchical-expander, :host ::ng-deep .igx-grid--compact .igx-grid__hierarchical-expander--empty, .igx-grid--compact :host ::ng-deep .igx-grid__hierarchical-expander--empty {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem; }
+  :host ::ng-deep .igx-grid__hierarchical-expander--header {
+    background: inherit;
+    border-right: 1px solid var(--igx-grid-header-border-color);
+    z-index: 3; }
+    :host ::ng-deep .igx-grid__hierarchical-expander--header igx-icon {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center; }
+  :host ::ng-deep .igx-grid__hierarchical-expander--push {
+    -ms-flex-align: start;
+        align-items: flex-start; }
+    :host ::ng-deep .igx-grid__hierarchical-expander--push igx-icon {
+      min-height: 3.125rem;
+      max-height: 3.125rem; }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__hierarchical-expander--push igx-icon, .igx-grid--cosy :host ::ng-deep .igx-grid__hierarchical-expander--push igx-icon {
+    min-height: 2.5rem; }
+  :host ::ng-deep .igx-grid--compact .igx-grid__hierarchical-expander--push igx-icon, .igx-grid--compact :host ::ng-deep .igx-grid__hierarchical-expander--push igx-icon {
+    min-height: 2rem; }
+  :host ::ng-deep .igx-grid__hierarchical-expander--no-border,
+  :host ::ng-deep .igx-grid__header-indentation--no-border {
+    border-right: 1px solid transparent; }
+  :host ::ng-deep .igx-grid__hierarchical-indent {
+    margin-left: calc(2 * 1.5rem + 24px);
+    margin-top: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem; }
+    :host ::ng-deep .igx-grid__hierarchical-indent--scroll {
+      margin-right: calc(1.5rem + 18px); }
+  :host ::ng-deep .igx-grid--cosy .igx-grid__hierarchical-indent, .igx-grid--cosy :host ::ng-deep .igx-grid__hierarchical-indent {
+    margin-left: calc(2 * 1rem + 24px);
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem; }
+    :host ::ng-deep .igx-grid--cosy .igx-grid__hierarchical-indent--scroll, .igx-grid--cosy :host ::ng-deep .igx-grid__hierarchical-indent--scroll {
+      margin-right: calc(1rem + 18px); }
+  :host ::ng-deep .igx-grid--compact .igx-grid__hierarchical-indent, .igx-grid--compact :host ::ng-deep .igx-grid__hierarchical-indent {
+    margin-left: calc(2 * 0.75rem + 24px);
+    margin-top: 0.75rem;
+    margin-right: 0.75rem;
+    margin-bottom: 0.75rem; }
+    :host ::ng-deep .igx-grid--compact .igx-grid__hierarchical-indent--scroll, .igx-grid--compact :host ::ng-deep .igx-grid__hierarchical-indent--scroll {
+      margin-right: calc(0.75rem + 18px); }
+  :host ::ng-deep .igx-excel-filter {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.26), 0 12px 17px 2px rgba(0, 0, 0, 0.12), 0 5px 22px 4px rgba(0, 0, 0, 0.08);
+    overflow: auto; }
+  :host ::ng-deep .igx-excel-filter--inline {
+    box-shadow: none; }
+    :host ::ng-deep .igx-excel-filter--inline .igx-excel-filter__menu {
+      width: 100%; }
+  :host ::ng-deep .igx-excel-filter__loading {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center; }
+  :host ::ng-deep .igx-excel-filter__icon, :host ::ng-deep .igx-excel-filter__icon--filtered {
+    cursor: pointer; }
+    :host ::ng-deep .igx-icon.igx-excel-filter__icon, :host ::ng-deep .igx-icon.igx-excel-filter__icon--filtered {
+      width: 0.9375rem;
+      height: 0.9375rem;
+      font-size: 0.9375rem; }
+  :host ::ng-deep .igx-icon.igx-excel-filter__icon--filtered {
+    color: #514590; }
+  :host ::ng-deep .igx-excel-filter__menu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    height: 100%;
+    width: 320px;
+    min-width: 320px;
+    background: var(--igx-grid-filtering-row-background);
+    border-radius: 4px; }
+    :host ::ng-deep .igx-excel-filter__menu {
+      --igx-button-group-border-radius: 4px;
+      --igx-button-group-elevation: 2;
+      --igx-button-group-variant: material;
+      --igx-button-group-item-background: var(--igx-grid-filtering-row-background);
+      --igx-button-group-item-border-color: transparent;
+      --igx-button-group-item-text-color: rgba(0, 0, 0, 0.62);
+      --igx-button-group-item-hover-text-color: rgba(0, 0, 0, 0.74);
+      --igx-button-group-item-hover-background: rgba(0, 0, 0, 0.04);
+      --igx-button-group-item-selected-text-color: #514590;
+      --igx-button-group-item-selected-background: rgba(0, 0, 0, 0.04);
+      --igx-button-group-item-selected-hover-background: rgba(0, 0, 0, 0.38);
+      --igx-button-group-item-selected-border-color: transparent;
+      --igx-button-group-disabled-text-color: rgba(0, 0, 0, 0.26);
+      --igx-button-group-disabled-background-color: rgba(0, 0, 0, 0.02);
+      --igx-button-group-item-disabled-border: #191919;
+      --igx-button-group-border: none;
+      --igx-button-group-shadow: none; }
+    :host ::ng-deep .igx-excel-filter__menu .igx-button-group, :host ::ng-deep .igx-excel-filter__menu .igx-button-group--vertical {
+      display: -ms-flexbox;
+      display: flex;
+      box-shadow: var(--igx-button-group-shadow);
+      transition: all 140ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      border-radius: var(--igx-button-group-border-radius); }
+    :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected {
+      border: 1px solid var(--igx-button-group-item-border-color);
+      color: var(--igx-button-group-item-text-color);
+      background: var(--igx-button-group-item-background);
+      min-width: 24px;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex: 1 0 0%;
+          flex: 1 0 0%;
+      -ms-flex-pack: center;
+          justify-content: center;
+      -ms-flex-align: center;
+          align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+      position: relative;
+      z-index: 0;
+      transition: all 140ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+      :host ::ng-deep .igx-excel-filter__menu .igx-button--flat.igx-button-group__item, :host ::ng-deep .igx-excel-filter__menu .igx-button--flat.igx-button-group__item--selected {
+        border-radius: 0; }
+      :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item .igx-icon, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected .igx-icon, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item .igx-icon--inactive, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected .igx-icon--inactive {
+        color: currentColor; }
+      :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item:not(:nth-child(0)), :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected:not(:nth-child(0)) {
+        margin-left: -1px; }
+      :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item:first-of-type, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected:first-of-type {
+        border-top-left-radius: var(--igx-button-group-border-radius);
+        border-bottom-left-radius: var(--igx-button-group-border-radius); }
+      :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item:last-of-type, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected:last-of-type {
+        border-top-right-radius: var(--igx-button-group-border-radius);
+        border-bottom-right-radius: var(--igx-button-group-border-radius); }
+      :host ::ng-deep .igx-excel-filter__menu .igx-button--disabled.igx-button-group__item, :host ::ng-deep .igx-excel-filter__menu .igx-button--disabled.igx-button-group__item--selected {
+        color: var(--igx-button-group-disabled-text-color) !important;
+        background: var(--igx-button-group-disabled-background-color) !important;
+        border-color: var(--igx-button-group-item-disabled-border); }
+      :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item:hover, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected:hover, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item:focus, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected:focus {
+        color: var(--igx-button-group-item-hover-text-color);
+        background: var(--igx-button-group-item-hover-background);
+        z-index: 1; }
+        :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item:hover .igx-icon, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected:hover .igx-icon, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item:hover .igx-icon--inactive, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected:hover .igx-icon--inactive, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item:focus .igx-icon, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected:focus .igx-icon, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item:focus .igx-icon--inactive, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected:focus .igx-icon--inactive {
+          color: currentColor; }
+    :host ::ng-deep .igx-excel-filter__menu .igx-button-group--vertical .igx-button-group__item:not(:nth-child(0)), .igx-button-group--vertical :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item:not(:nth-child(0)) {
+      margin-top: -1px;
+      margin-left: 0; }
+    :host ::ng-deep .igx-excel-filter__menu .igx-button-group--vertical .igx-button-group__item:first-of-type, .igx-button-group--vertical :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item:first-of-type {
+      border-top-left-radius: var(--igx-button-group-border-radius);
+      border-top-right-radius: var(--igx-button-group-border-radius);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0; }
+    :host ::ng-deep .igx-excel-filter__menu .igx-button-group--vertical .igx-button-group__item:last-of-type, .igx-button-group--vertical :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item:last-of-type {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: var(--igx-button-group-border-radius);
+      border-bottom-right-radius: var(--igx-button-group-border-radius); }
+    :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected {
+      color: var(--igx-button-group-item-selected-text-color);
+      background: var(--igx-button-group-item-selected-background);
+      border-color: var(--igx-button-group-item-selected-border-color);
+      position: relative;
+      z-index: 1; }
+      :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected:hover, :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item--selected:focus {
+        color: var(--igx-button-group-item-selected-text-color);
+        background: var(--igx-button-group-item-selected-hover-background); }
+      :host ::ng-deep .igx-excel-filter__menu .igx-button--disabled.igx-button-group__item--selected {
+        position: relative; }
+        :host ::ng-deep .igx-excel-filter__menu .igx-button--disabled.igx-button-group__item--selected::before {
+          position: absolute;
+          content: '';
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.06); }
+    :host ::ng-deep .igx-excel-filter__menu .igx-button-group--vertical {
+      -ms-flex-flow: column;
+          flex-flow: column; }
+    :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item-content {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+      min-width: 0; }
+      :host ::ng-deep .igx-excel-filter__menu .igx-button-group__item-content * ~ * {
+        margin-left: 0.625rem; }
+    :host ::ng-deep .igx-excel-filter__menu .igx-button-group__button-text {
+      width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+  :host ::ng-deep .igx-excel-filter__menu-header, :host ::ng-deep .igx-excel-filter__secondary-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    padding: 1rem;
+    color: rgba(0, 0, 0, 0.62); }
+  :host ::ng-deep .igx-excel-filter__menu-header-actions {
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: auto; }
+    :host ::ng-deep .igx-excel-filter__menu-header-actions [igxButton] + [igxButton] {
+      margin-left: 0.25rem; }
+  :host ::ng-deep .igx-excel-filter__menu-footer, :host ::ng-deep .igx-excel-filter__secondary-footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    padding: 0.5rem 1rem; }
+    :host ::ng-deep .igx-excel-filter__menu-footer [igxButton], :host ::ng-deep .igx-excel-filter__secondary-footer [igxButton] {
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+      :host ::ng-deep .igx-excel-filter__menu-footer [igxButton] + [igxButton], :host ::ng-deep .igx-excel-filter__secondary-footer [igxButton] + [igxButton] {
+        margin-left: 1rem; }
+  :host ::ng-deep .igx-excel-filter__sort {
+    display: block;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; }
+    :host ::ng-deep .igx-excel-filter__sort header {
+      color: rgba(0, 0, 0, 0.62);
+      margin-bottom: 0.25rem; }
+    :host ::ng-deep .igx-excel-filter__sort igx-icon {
+      font-size: 1.125rem;
+      width: 1.125rem;
+      height: 1.125rem;
+      margin-right: 0.5rem; }
+  :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__sort, :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__move {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
+    :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__sort header, :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__move header {
+      color: rgba(0, 0, 0, 0.62);
+      margin-right: auto; }
+  :host ::ng-deep .igx-excel-filter__actions {
+    padding: 0.5rem 1rem; }
+  :host ::ng-deep .igx-excel-filter__actions-selected igx-icon {
+    color: #514590; }
+  :host ::ng-deep .igx-excel-filter__move {
+    margin-bottom: 0.5rem; }
+    :host ::ng-deep .igx-excel-filter__move header {
+      color: rgba(0, 0, 0, 0.62);
+      margin-bottom: 0.25rem; }
+  :host ::ng-deep .igx-excel-filter__move-buttons {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
+    :host ::ng-deep .igx-excel-filter__move-buttons [igxButton] {
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+      width: 6.5rem; }
+    :host ::ng-deep .igx-excel-filter__move-buttons igx-icon {
+      font-size: 1.125rem;
+      width: 1.125rem;
+      height: 1.125rem; }
+    :host ::ng-deep .igx-excel-filter__move-buttons igx-icon + span,
+    :host ::ng-deep .igx-excel-filter__move-buttons span + igx-icon {
+      margin-left: 0.5rem; }
+  :host ::ng-deep .igx-excel-filter__actions-pin, :host ::ng-deep .igx-excel-filter__actions-pin--disabled, :host ::ng-deep .igx-excel-filter__actions-unpin, :host ::ng-deep .igx-excel-filter__actions-hide, :host ::ng-deep .igx-excel-filter__actions-select, :host ::ng-deep .igx-excel-filter__actions-selected, :host ::ng-deep .igx-excel-filter__actions-filter, :host ::ng-deep .igx-excel-filter__actions-clear, :host ::ng-deep .igx-excel-filter__actions-clear--disabled {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    padding: 0.5rem 1rem;
+    margin: 0 -1rem;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.62);
+    outline-style: none; }
+    :host ::ng-deep .igx-excel-filter__actions-pin:hover, :host ::ng-deep .igx-excel-filter__actions-pin--disabled:hover, :host ::ng-deep .igx-excel-filter__actions-unpin:hover, :host ::ng-deep .igx-excel-filter__actions-hide:hover, :host ::ng-deep .igx-excel-filter__actions-select:hover, :host ::ng-deep .igx-excel-filter__actions-selected:hover, :host ::ng-deep .igx-excel-filter__actions-filter:hover, :host ::ng-deep .igx-excel-filter__actions-clear:hover, :host ::ng-deep .igx-excel-filter__actions-clear--disabled:hover, :host ::ng-deep .igx-excel-filter__actions-pin:focus, :host ::ng-deep .igx-excel-filter__actions-pin--disabled:focus, :host ::ng-deep .igx-excel-filter__actions-unpin:focus, :host ::ng-deep .igx-excel-filter__actions-hide:focus, :host ::ng-deep .igx-excel-filter__actions-select:focus, :host ::ng-deep .igx-excel-filter__actions-selected:focus, :host ::ng-deep .igx-excel-filter__actions-filter:focus, :host ::ng-deep .igx-excel-filter__actions-clear:focus, :host ::ng-deep .igx-excel-filter__actions-clear--disabled:focus {
+      background: rgba(0, 0, 0, 0.04); }
+  :host ::ng-deep .igx-excel-filter__actions-pin--disabled, :host ::ng-deep .igx-excel-filter__actions-clear--disabled {
+    color: rgba(0, 0, 0, 0.26);
+    pointer-events: none; }
+  :host ::ng-deep .igx-excel-filter__menu-main {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    overflow: hidden;
+    padding: 0 1rem; }
+    :host ::ng-deep .igx-excel-filter__menu-main igx-list {
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+      overflow: hidden;
+      margin: 0.5rem -1rem 0;
+      border: 0;
+      border-top: 1px dashed rgba(0, 0, 0, 0.12);
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.12); }
+  :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__menu-header, :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__secondary-header {
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    padding: 0.5rem; }
+  :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__sort {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; }
+  :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__actions {
+    padding: 0.5rem; }
+  :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__actions-pin, :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__actions-pin--disabled, :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__actions-unpin, :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__actions-hide, :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__actions-select, :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__actions-selected, :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__actions-filter, :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__actions-clear, :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__actions-clear--disabled {
+    padding: 0.5rem;
+    margin: 0 -0.5rem; }
+  :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__menu-main {
+    padding: 0 0.5rem; }
+  :host ::ng-deep .igx-excel-filter__menu--cosy igx-list {
+    margin: 0.5rem -0.5rem 0; }
+  :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__menu-footer, :host ::ng-deep .igx-excel-filter__menu--cosy .igx-excel-filter__secondary-footer {
+    padding: 0.5rem; }
+  :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__menu-header, :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__secondary-header {
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    padding: 0.25rem; }
+  :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__sort {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem; }
+    :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__sort igx-buttongroup {
+      width: 13rem; }
+      :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__sort igx-buttongroup [igxButton] > igx-icon + span {
+        margin-left: 0.5rem; }
+  :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__move {
+    margin-bottom: 0; }
+  :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__actions {
+    padding: 0.25rem; }
+  :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__actions-pin, :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__actions-pin--disabled, :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__actions-unpin, :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__actions-hide, :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__actions-select, :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__actions-selected, :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__actions-filter, :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__actions-clear, :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__actions-clear--disabled {
+    padding: 0.25rem;
+    margin: 0 -0.25rem; }
+  :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__menu-main {
+    padding: 0 0.25rem; }
+  :host ::ng-deep .igx-excel-filter__menu--compact igx-list {
+    margin: 0.5rem -0.25rem 0; }
+  :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__menu-footer, :host ::ng-deep .igx-excel-filter__menu--compact .igx-excel-filter__secondary-footer {
+    padding: 0.5rem 0.25rem; }
+  :host ::ng-deep .igx-excel-filter__secondary {
+    width: 520px;
+    min-width: 520px;
+    background: var(--igx-grid-filtering-row-background);
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.26), 0 12px 17px 2px rgba(0, 0, 0, 0.12), 0 5px 22px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 0.25rem; }
+  :host ::ng-deep .igx-excel-filter__secondary--cosy .igx-excel-filter__menu-header, :host ::ng-deep .igx-excel-filter__secondary--cosy .igx-excel-filter__secondary-header {
+    padding: 0.5rem; }
+  :host ::ng-deep .igx-excel-filter__secondary--cosy .igx-excel-filter__condition {
+    padding: 0 0.5rem; }
+  :host ::ng-deep .igx-excel-filter__secondary--cosy .igx-excel-filter__add-filter {
+    margin: 0 0.5rem 0.5rem; }
+  :host ::ng-deep .igx-excel-filter__secondary--cosy .igx-excel-filter__menu-footer, :host ::ng-deep .igx-excel-filter__secondary--cosy .igx-excel-filter__secondary-footer {
+    padding: 0.5rem; }
+  :host ::ng-deep .igx-excel-filter__secondary--compact .igx-excel-filter__menu-header, :host ::ng-deep .igx-excel-filter__secondary--compact .igx-excel-filter__secondary-header {
+    padding: 0.25rem; }
+  :host ::ng-deep .igx-excel-filter__secondary--compact .igx-excel-filter__condition {
+    padding: 0 0.25rem; }
+  :host ::ng-deep .igx-excel-filter__secondary--compact .igx-excel-filter__add-filter {
+    margin: 0 0.25rem 0.25rem; }
+  :host ::ng-deep .igx-excel-filter__secondary--compact .igx-excel-filter__menu-footer, :host ::ng-deep .igx-excel-filter__secondary--compact .igx-excel-filter__secondary-footer {
+    padding: 0.5rem 0.25rem; }
+  :host ::ng-deep .igx-excel-filter__secondary-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+  :host ::ng-deep .igx-excel-filter__secondary-main {
+    height: 232px;
+    overflow: auto; }
+  :host ::ng-deep .igx-excel-filter__secondary-footer {
+    border-top: 1px dashed rgba(0, 0, 0, 0.12); }
+    :host ::ng-deep .igx-excel-filter__secondary-footer [igxButton] {
+      -ms-flex-positive: 0;
+          flex-grow: 0; }
+  :host ::ng-deep .igx-excel-filter__condition {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-align: center;
+        align-items: center;
+    padding: 0 1rem; }
+    :host ::ng-deep .igx-excel-filter__condition igx-input-group {
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+      -ms-flex-preferred-size: 40%;
+          flex-basis: 40%;
+      margin: 1rem 0; }
+      :host ::ng-deep .igx-excel-filter__condition igx-input-group ~ igx-input-group,
+      :host ::ng-deep .igx-excel-filter__condition igx-input-group ~ igx-date-picker {
+        margin-left: 1rem; }
+    :host ::ng-deep .igx-excel-filter__condition [igxButton='icon'] {
+      margin-left: 1rem; }
+  :host ::ng-deep .igx-excel-filter__add-filter {
+    margin: 0 1rem 1rem; }
+    :host ::ng-deep .igx-excel-filter__add-filter igx-icon {
+      width: 1.125rem;
+      height: 1.125rem;
+      font-size: 1.125rem;
+      margin-right: 0.5rem; }
+  :host ::ng-deep .igx-advanced-filter {
+    width: 660px;
+    min-width: 660px;
+    max-width: 720px;
+    background-color: var(--igx-grid-filtering-row-background);
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.26), 0 12px 17px 2px rgba(0, 0, 0, 0.12), 0 5px 22px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 0.25rem; }
+  :host ::ng-deep .igx-advanced-filter__header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    padding: 1rem;
+    color: rgba(0, 0, 0, 0.62);
+    background-color: rgba(0, 0, 0, 0.08);
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    cursor: -webkit-grab;
+    cursor: grab; }
+  :host ::ng-deep .igx-advanced-filter__main {
+    display: block;
+    padding: 1rem;
+    overflow: auto;
+    min-height: 214px;
+    max-height: 468px; }
+    :host ::ng-deep .igx-advanced-filter__main [igxButton] + [igxButton] {
+      margin-left: 0.5rem; }
+  :host ::ng-deep .igx-advanced-filter__outlet igx-select-item > igx-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    font-size: 1.125rem;
+    margin-right: 0.5rem; }
+  :host ::ng-deep .igx-filter-tree {
+    display: -ms-flexbox;
+    display: flex; }
+    :host ::ng-deep .igx-filter-tree + .igx-filter-tree,
+    :host ::ng-deep .igx-filter-tree + .igx-filter-tree__expression-item,
+    :host ::ng-deep .igx-filter-tree + .igx-filter-tree__inputs {
+      margin-top: 1rem; }
+  :host ::ng-deep .igx-filter-tree__line {
+    width: 0.5rem;
+    min-width: 0.5rem;
+    background-color: white;
+    margin-right: 1rem;
+    outline-style: none;
+    border-radius: 0.25rem;
+    cursor: pointer; }
+  :host ::ng-deep .igx-filter-tree__line--and {
+    background: var(--igx-grid-filtering-background-and); }
+    :host ::ng-deep .igx-filter-tree__line--selected.igx-filter-tree__line--and {
+      background: var(--igx-grid-filtering-background-and--focus); }
+    :host ::ng-deep .igx-filter-tree__line--and:focus {
+      box-shadow: inset 0 0 0 2px var(--igx-grid-filtering-background-and--focus); }
+  :host ::ng-deep .igx-filter-tree__line--or {
+    background: var(--igx-grid-filtering-background-or); }
+    :host ::ng-deep .igx-filter-tree__line--selected.igx-filter-tree__line--or {
+      background-color: var(--igx-grid-filtering-background-or--focus); }
+    :host ::ng-deep .igx-filter-tree__line--or:focus {
+      box-shadow: inset 0 0 0 2px var(--igx-grid-filtering-background-or--focus); }
+  :host ::ng-deep .igx-filter-tree__expression {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: start;
+        align-items: flex-start; }
+  :host ::ng-deep .igx-filter-tree__expression-item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
+    :host ::ng-deep .igx-filter-tree__expression-item + .igx-filter-tree,
+    :host ::ng-deep .igx-filter-tree__expression-item + .igx-filter-tree__inputs,
+    :host ::ng-deep .igx-filter-tree__expression-item + .igx-filter-tree__expression-item {
+      margin-top: 1rem; }
+  :host ::ng-deep .igx-filter-tree__expression-column {
+    padding: 0 0.5rem; }
+  :host ::ng-deep .igx-filter-tree__expression-actions {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin: 0 0.5rem; }
+    :host ::ng-deep .igx-filter-tree__expression-actions igx-icon {
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.38);
+      outline-style: none; }
+      :host ::ng-deep .igx-filter-tree__expression-actions igx-icon:hover, :host ::ng-deep .igx-filter-tree__expression-actions igx-icon:focus {
+        color: rgba(0, 0, 0, 0.74); }
+    :host ::ng-deep .igx-filter-tree__expression-actions igx-icon + igx-icon {
+      margin-left: 0.5rem; }
+  :host ::ng-deep .igx-filter-tree__expression-condition {
+    opacity: .7; }
+  :host ::ng-deep .igx-filter-tree__buttons {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
+    margin-top: 1rem; }
+    :host ::ng-deep .igx-filter-tree__buttons + .igx-filter-tree,
+    :host ::ng-deep .igx-filter-tree__buttons + .igx-filter-tree__expression-item,
+    :host ::ng-deep .igx-filter-tree__buttons + .igx-filter-tree__inputs {
+      margin-top: 1rem; }
+  :host ::ng-deep .igx-filter-tree__inputs {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
+    :host ::ng-deep .igx-filter-tree__inputs igx-select + igx-select,
+    :host ::ng-deep .igx-filter-tree__inputs igx-select + igx-input-group,
+    :host ::ng-deep .igx-filter-tree__inputs igx-select + igx-date-picker,
+    :host ::ng-deep .igx-filter-tree__inputs igx-input-group + igx-select {
+      margin-left: 0.5rem; }
+    :host ::ng-deep .igx-filter-tree__inputs + .igx-filter-tree,
+    :host ::ng-deep .igx-filter-tree__inputs + .igx-filter-tree__expression-item {
+      margin-top: 1rem; }
+  :host ::ng-deep .igx-filter-tree__inputs-actions {
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 0.5rem;
+    -ms-flex-align: center;
+        align-items: center; }
+    :host ::ng-deep .igx-filter-tree__inputs-actions [igxButton] + [igxButton] {
+      margin-left: 0.5rem; }
+  :host ::ng-deep .igx-filter-legend {
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: auto;
+    pointer-events: none; }
+  :host ::ng-deep .igx-filter-legend__item, :host ::ng-deep .igx-filter-legend__item--and, :host ::ng-deep .igx-filter-legend__item--or {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+        align-items: center;
+    font-size: 0.75rem; }
+    :host ::ng-deep .igx-filter-legend__item::before, :host ::ng-deep .igx-filter-legend__item--and::before, :host ::ng-deep .igx-filter-legend__item--or::before {
+      content: '';
+      width: 1.5rem;
+      height: 1.5rem;
+      background: white;
+      border-radius: 0.25rem;
+      margin-right: 0.5rem; }
+    :host ::ng-deep .igx-filter-legend__item + .igx-filter-legend__item, :host ::ng-deep .igx-filter-legend__item--and + .igx-filter-legend__item, :host ::ng-deep .igx-filter-legend__item--or + .igx-filter-legend__item, :host ::ng-deep .igx-filter-legend__item + .igx-filter-legend__item--and, :host ::ng-deep .igx-filter-legend__item--and + .igx-filter-legend__item--and, :host ::ng-deep .igx-filter-legend__item--or + .igx-filter-legend__item--and, :host ::ng-deep .igx-filter-legend__item + .igx-filter-legend__item--or, :host ::ng-deep .igx-filter-legend__item--and + .igx-filter-legend__item--or, :host ::ng-deep .igx-filter-legend__item--or + .igx-filter-legend__item--or {
+      margin-left: 1.5rem; }
+  :host ::ng-deep .igx-filter-legend__item--and::before {
+    background: var(--igx-grid-filtering-background-and); }
+  :host ::ng-deep .igx-filter-legend__item--or::before {
+    background: var(--igx-grid-filtering-background-or); }
+  :host ::ng-deep .igx-filter-contextual-menu {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column;
+        flex-flow: column;
+    width: 196px;
+    background-color: var(--igx-grid-filtering-row-background);
+    padding: 1rem;
+    margin-left: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.08); }
+    :host ::ng-deep .igx-filter-contextual-menu > [igxButton] + [igxButton],
+    :host ::ng-deep .igx-filter-contextual-menu igx-buttongroup + [igxButton],
+    :host ::ng-deep .igx-filter-contextual-menu [igxButton] + igx-buttongroup {
+      margin-top: 1rem; }
+    :host ::ng-deep .igx-filter-contextual-menu > .igx-filter-contextual-menu__close-btn[igxButton] + [igxButton],
+    :host ::ng-deep .igx-filter-contextual-menu .igx-filter-contextual-menu__close-btn[igxButton] + igx-buttongroup {
+      margin-top: 0; }
+    :host ::ng-deep .igx-filter-contextual-menu [igxButton] > igx-icon + * {
+      margin-left: 8px; }
+    :host ::ng-deep .igx-filter-contextual-menu igx-buttongroup > * {
+      box-shadow: none; }
+  :host ::ng-deep .igx-filter-contextual-menu__delete-btn {
+    color: #ff134a; }
+    :host ::ng-deep .igx-filter-contextual-menu__delete-btn:hover, :host ::ng-deep .igx-filter-contextual-menu__delete-btn:focus {
+      color: #ff134a; }
+  :host ::ng-deep .igx-filter-contextual-menu__close-btn {
+    position: absolute;
+    top: -1.125rem;
+    right: -1.125rem;
+    background-color: var(--igx-grid-filtering-row-background);
+    border: 1px solid rgba(0, 0, 0, 0.08); }
+    :host ::ng-deep .igx-filter-contextual-menu__close-btn:hover, :host ::ng-deep .igx-filter-contextual-menu__close-btn:focus {
+      background-color: var(--igx-grid-filtering-row-background); }
+  :host ::ng-deep .igx-filter-empty {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    height: 144px; }
+  :host ::ng-deep .igx-filter-empty__title {
+    color: rgba(0, 0, 0, 0.38); }
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-advanced-filter__main {
+    min-height: 164px;
+    max-height: 394px; }
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-empty {
+    height: 107px; }
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-advanced-filter__main,
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-advanced-filter__header {
+    padding: 0.75rem 1rem; }
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-tree__expression-actions igx-icon {
+    font-size: 1.125rem;
+    width: 1.125rem;
+    height: 1.125rem; }
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-tree__line {
+    margin-right: 0.75rem; }
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-tree + .igx-filter-tree,
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-tree + .igx-filter-tree__expression-item,
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-tree + .igx-filter-tree__inputs {
+    margin-top: 0.75rem; }
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-tree__expression-item + .igx-filter-tree,
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-tree__expression-item + .igx-filter-tree__inputs,
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-tree__expression-item + .igx-filter-tree__expression-item {
+    margin-top: 0.75rem; }
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-tree__buttons {
+    margin-top: 0.75rem; }
+    :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-tree__buttons + .igx-filter-tree,
+    :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-tree__buttons + .igx-filter-tree__expression-item,
+    :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-tree__buttons + .igx-filter-tree__inputs {
+      margin-top: 0.75rem; }
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-tree__inputs + .igx-filter-tree,
+  :host ::ng-deep .igx-advanced-filter--cosy .igx-filter-tree__inputs + .igx-filter-tree__expression-item {
+    margin-top: 0.75rem; }
+  :host ::ng-deep .igx-advanced-filter--compact .igx-advanced-filter__main {
+    min-height: 138px;
+    max-height: 305px; }
+  :host ::ng-deep .igx-advanced-filter--compact .igx-filter-empty {
+    height: 92px; }
+  :host ::ng-deep .igx-advanced-filter--compact .igx-advanced-filter__main,
+  :host ::ng-deep .igx-advanced-filter--compact .igx-advanced-filter__header {
+    padding: 0.5rem 1rem; }
+  :host ::ng-deep .igx-advanced-filter--compact .igx-filter-tree__expression-actions igx-icon {
+    font-size: 1.125rem;
+    width: 1.125rem;
+    height: 1.125rem; }
+  :host ::ng-deep .igx-advanced-filter--compact .igx-filter-tree__line {
+    margin-right: 0.5rem; }
+  :host ::ng-deep .igx-advanced-filter--compact .igx-filter-tree + .igx-filter-tree,
+  :host ::ng-deep .igx-advanced-filter--compact .igx-filter-tree + .igx-filter-tree__expression-item,
+  :host ::ng-deep .igx-advanced-filter--compact .igx-filter-tree + .igx-filter-tree__inputs {
+    margin-top: 0.5rem; }
+  :host ::ng-deep .igx-advanced-filter--compact .igx-filter-tree__expression-item + .igx-filter-tree,
+  :host ::ng-deep .igx-advanced-filter--compact .igx-filter-tree__expression-item + .igx-filter-tree__inputs,
+  :host ::ng-deep .igx-advanced-filter--compact .igx-filter-tree__expression-item + .igx-filter-tree__expression-item {
+    margin-top: 0.5rem; }
+  :host ::ng-deep .igx-advanced-filter--compact .igx-filter-tree__buttons {
+    margin-top: 0.5rem; }
+    :host ::ng-deep .igx-advanced-filter--compact .igx-filter-tree__buttons + .igx-filter-tree,
+    :host ::ng-deep .igx-advanced-filter--compact .igx-filter-tree__buttons + .igx-filter-tree__expression-item,
+    :host ::ng-deep .igx-advanced-filter--compact .igx-filter-tree__buttons + .igx-filter-tree__inputs {
+      margin-top: 0.5rem; }
+  :host ::ng-deep .igx-advanced-filter--compact .igx-filter-tree__inputs + .igx-filter-tree,
+  :host ::ng-deep .igx-advanced-filter--compact .igx-filter-tree__inputs + .igx-filter-tree__expression-item {
+    margin-top: 0.5rem; }
+  :host ::ng-deep .igx-advanced-filter--inline {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    height: inherit;
+    max-height: inherit;
+    min-width: 480px;
+    box-shadow: none; }
+    :host ::ng-deep .igx-advanced-filter--inline .igx-advanced-filter__main {
+      min-height: initial;
+      max-height: initial;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+  :host ::ng-deep .igx-filter-contextual-menu--cosy > [igxButton] + [igxButton],
+  :host ::ng-deep .igx-filter-contextual-menu--cosy igx-buttongroup + [igxButton],
+  :host ::ng-deep .igx-filter-contextual-menu--cosy [igxButton] + igx-buttongroup {
+    margin-top: 0.75rem; }
+  :host ::ng-deep .igx-filter-contextual-menu--compact > [igxButton] + [igxButton],
+  :host ::ng-deep .igx-filter-contextual-menu--compact igx-buttongroup + [igxButton],
+  :host ::ng-deep .igx-filter-contextual-menu--compact [igxButton] + igx-buttongroup {
+    margin-top: 0.5rem; }
+  :host ::ng-deep {
+    --igx-banner-banner-background: #e3e3e3;
+    --igx-banner-banner-message-color: #3f318a;
+    --igx-banner-banner-border-color: rgba(0, 0, 0, 0.26);
+    --igx-banner-banner-illustration-color: rgba(0, 0, 0, 0.87); }
+  :host ::ng-deep .igx-banner, :host ::ng-deep .igx-banner--cosy, :host ::ng-deep .igx-banner--compact,
+  :host ::ng-deep .igx-banner__illustration,
+  :host ::ng-deep .igx-banner__message {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
+  :host ::ng-deep .igx-banner, :host ::ng-deep .igx-banner--cosy, :host ::ng-deep .igx-banner--compact {
+    padding-right: 0.5rem;
+    padding-left: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background: var(--igx-banner-banner-background);
+    -ms-flex-align: center;
+        align-items: center;
+    position: relative;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: end;
+        justify-content: flex-end; }
+  
+  :host ::ng-deep .igx-banner__illustration {
+    -ms-flex-pack: center;
+        justify-content: center;
+    width: 2.5rem;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1rem;
+    color: var(--igx-banner-banner-illustration-color); }
+  :host ::ng-deep .igx-banner__border-top {
+    border-top: 1px solid var(--igx-banner-banner-border-color);
+    top: -1px; }
+  :host ::ng-deep .igx-banner__border-bottom {
+    border-bottom: 1px solid var(--igx-banner-banner-border-color);
+    top: 0; }
+  :host ::ng-deep .igx-banner__text {
+    color: var(--igx-banner-banner-message-color);
+    -ms-flex: 1 0 0%;
+        flex: 1 0 0%;
+    margin-left: 1.5rem; }
+  :host ::ng-deep .igx-banner--cosy {
+    padding: 0.5rem; }
+  :host ::ng-deep .igx-banner--compact {
+    padding: 0.5rem; }
+  
+  :host ::ng-deep .igx-banner__message {
+    min-width: 13.75rem;
+    -ms-flex: 1 0 0%;
+        flex: 1 0 0%;
+    margin-right: 5.625rem; }
+  :host ::ng-deep .igx-banner__banner__row {
+    display: -ms-flexbox;
+    display: flex; }
+  :host ::ng-deep .igx-banner__actions {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    -ms-flex-pack: center;
+        justify-content: center;
+    min-height: 2.5rem; }

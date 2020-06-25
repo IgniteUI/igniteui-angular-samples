@@ -1,0 +1,38 @@
+<div class="grid__wrapper">
+    <igx-hierarchical-grid igxPreventDocumentScroll  [data]="singers" rowSelection="multiple" cellSelection="none" [autoGenerate]="false"
+        height="600px" width="100%" [paging]="true" primaryKey="Artist" (onRowSelectionChange)="onRowSelect($event)">
+        <igx-column field="Artist"></igx-column>
+        <igx-column field="Debut"></igx-column>
+        <igx-column field="GrammyNominations" header="Grammy Nominations"></igx-column>
+        <igx-column field="GrammyAwards" header="Grammy Awards"></igx-column>
+
+        <igx-row-island key="Albums" [autoGenerate]="false" rowSelection="multiple">
+            <igx-column field="Album"></igx-column>
+            <igx-column field="LaunchDate" header="Launch Date"></igx-column>
+            <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
+            <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
+            <igx-row-island key="Songs" [autoGenerate]="false" rowSelection="multiple">
+                <igx-column field="Number" header="No."></igx-column>
+                <igx-column field="Title"></igx-column>
+                <igx-column field="Released"></igx-column>
+                <igx-column field="Genre"></igx-column>
+            </igx-row-island>
+        </igx-row-island>
+
+        <igx-row-island key="Tours" [autoGenerate]="false" rowSelection="multiple">
+            <igx-column field="Tour"></igx-column>
+            <igx-column field="StartedOn" header="Started on"></igx-column>
+            <igx-column field="Location"></igx-column>
+            <igx-column field="Headliner"></igx-column>
+        </igx-row-island>
+
+        <ng-template igxRowSelector let-rowContext>
+            <div class="row-selector">
+                <igx-checkbox [readonly]="true" [checked]="rowContext.selected"
+                    [disabled]="!isSelectionAllowed(rowContext.rowID)"
+                    [aria-label]="rowContext.selected ? 'Deselect row' : 'Select row'">
+                </igx-checkbox>
+            </div>
+        </ng-template>
+    </igx-hierarchical-grid>
+</div>

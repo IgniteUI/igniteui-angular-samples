@@ -1,0 +1,25 @@
+.grid__wrapper {
+  margin: 16px; }
+
+.gridSample__filter {
+  width: rem(200px); }
+
+.cell__inner,
+.cell__inner_2 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  height: 100%; }
+
+.cell__inner {
+  position: relative;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.density-chooser {
+  margin-bottom: 16px; }
+
+igx-buttongroup {
+  display: block;
+  width: 500px; }

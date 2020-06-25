@@ -1,0 +1,42 @@
+<div class="wrapper theme">
+    <div class="sample-content">
+        <div class="sample-column">
+            <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [rowSelection]="selectionMode" height="480px"
+            displayDensity="compact" width="1000px">
+                <igx-column-group [movable]="true" [pinned]="false" header="General Information" [collapsible]="true" [expanded]="false">
+                    <ng-template igxCollapsibleIndicator let-column="column">
+                        <igx-icon [attr.draggable]="false" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef" [showDelay]="0" [hideDelay]="0">{{column.expanded ? 'expand_more' : 'chevron_right'}} </igx-icon>
+                        <div #tooltipRef="tooltip" igxTooltip>
+                            {{getTooltipText(column.expanded)}}
+                        </div>
+                    </ng-template>
+                    <igx-column field="Name" header="Full Name" dataType="string" [movable]="true" [sortable]="true" [resizable]="true" width="200px" [visibleWhenCollapsed]="false"></igx-column>
+                    <igx-column field="LastName" header="Last Name" dataType="string" [movable]="true" [sortable]="true" [resizable]="true" width="200px" [visibleWhenCollapsed]="true"></igx-column>
+                    <igx-column field="Title" [width]="'250px'" dataType="string" [movable]="true" [sortable]="true" [resizable]="true"></igx-column>
+                    <igx-column field="ID" dataType="number" [movable]="true" [resizable]="true" [filterable]="false" [visibleWhenCollapsed]="false"></igx-column>
+                    <igx-column field="HireDate" dataType="date" [movable]="true" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
+                    <igx-column field="Age" dataType="number" [movable]="true" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
+                </igx-column-group>
+                <igx-column-group header="Address Information">
+                    <igx-column-group header="Location" [collapsible]="true">
+                        <ng-template igxCollapsibleIndicator let-column="column">
+                            <igx-icon [attr.draggable]="false" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef" [showDelay]="0" [hideDelay]="0">{{column.expanded ? 'expand_more' : 'chevron_right'}} </igx-icon>
+                            <div #tooltipRef="tooltip" igxTooltip>
+                                <span style="width: 200px"> {{getTooltipText(column.expanded)}}</span>
+                            </div>
+                        </ng-template>
+                        <igx-column field="FullAddress" [width]="'300px'" dataType="string" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="true"></igx-column>
+                        <igx-column field="Country" dataType="string" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
+                        <igx-column field="City" dataType="string" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
+                        <igx-column field="Address" dataType="string" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
+                    </igx-column-group>
+                    <igx-column-group header="Contact Information">
+                        <igx-column field="Phone" dataType="string" [sortable]="true" [resizable]="true"></igx-column>
+                        <igx-column field="Fax" dataType="string" [sortable]="true" [resizable]="true"></igx-column>
+                        <igx-column field="PostalCode" dataType="string" [sortable]="true" [resizable]="true"></igx-column>
+                    </igx-column-group>
+                </igx-column-group>
+            </igx-tree-grid>
+        </div>
+    </div>
+</div>

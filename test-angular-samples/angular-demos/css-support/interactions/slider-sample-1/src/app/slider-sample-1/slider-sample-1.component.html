@@ -1,0 +1,17 @@
+<div class="sample-center">
+    <div class="container">
+        <igx-slider id="slider" [type]="sliderType.RANGE" [minValue]="0" [maxValue]="1000" [lowerBound]="100" [upperBound]="900" [(ngModel)]="priceRange"></igx-slider>
+        <div class="wrapper">
+            <igx-input-group type="border">
+                <igx-prefix>USD</igx-prefix>
+                <input #lowerInput igxInput type="number" id="lowerInput" [ngModel]="priceRange.lower" />
+                <label igxLabel for="lowerInput">Lower price:</label>
+            </igx-input-group>
+            <igx-input-group type="border">
+                <igx-prefix>USD</igx-prefix>
+                <input #upperInput igxInput type="number" id="upperInput" [ngModel]="priceRange.upper" />
+                <label igxLabel for="upperInput">Upper price:</label>
+            </igx-input-group>
+        </div>
+    </div>
+</div>

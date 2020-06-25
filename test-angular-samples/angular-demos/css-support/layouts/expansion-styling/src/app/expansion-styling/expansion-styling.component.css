@@ -1,0 +1,425 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+:host ::ng-deep {
+  --igx-expansion-panel-border-radius: 8px;
+  --igx-expansion-panel-header-background: #18203b;
+  --igx-expansion-panel-body-background: #18203b;
+  --igx-expansion-panel-header-focus-background: #18203b;
+  --igx-expansion-panel-header-title-color: #ffd351;
+  --igx-expansion-panel-header-description-color: rgba(255, 255, 255, 0.8);
+  --igx-expansion-panel-header-icon-color: #ffd351;
+  --igx-expansion-panel-body-color: #fff;
+  --igx-expansion-panel-disabled-color: rgba(0, 0, 0, 0.38); }
+
+:host ::ng-deep .igx-expansion-panel {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  border-radius: var(--igx-expansion-panel-border-radius);
+  overflow: hidden; }
+
+:host ::ng-deep .igx-expansion-panel__header-title {
+  color: var(--igx-expansion-panel-header-title-color);
+  margin-right: 1rem; }
+
+:host ::ng-deep .igx-expansion-panel__header-description {
+  color: var(--igx-expansion-panel-header-description-color); }
+
+:host ::ng-deep .igx-expansion-panel__header-title, :host ::ng-deep .igx-expansion-panel__header-description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap; }
+
+:host ::ng-deep .igx-expansion-panel__header-inner {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 1em;
+  cursor: pointer;
+  background: var(--igx-expansion-panel-header-background); }
+  :host ::ng-deep .igx-expansion-panel__header-inner:focus, :host ::ng-deep .igx-expansion-panel__header-inner:active {
+    background: var(--igx-expansion-panel-header-focus-background);
+    outline: transparent; }
+
+:host ::ng-deep .igx-expansion-panel__title-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex: 1 0 0%;
+      flex: 1 0 0%;
+  overflow: hidden; }
+
+:host ::ng-deep .igx-expansion-panel__header-icon--end {
+  -ms-flex-order: 1;
+      order: 1;
+  margin-left: 1rem; }
+
+:host ::ng-deep .igx-expansion-panel__header-icon--start {
+  -ms-flex-order: -1;
+      order: -1;
+  margin-right: 1rem; }
+
+:host ::ng-deep .igx-expansion-panel__header-icon--none {
+  display: none; }
+
+:host ::ng-deep .igx-expansion-panel__header-icon--end, :host ::ng-deep .igx-expansion-panel__header-icon--start {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: var(--igx-expansion-panel-header-icon-color); }
+  :host ::ng-deep .igx-expansion-panel__header-icon--end igx-icon,
+  :host ::ng-deep .igx-expansion-panel__header-icon--start igx-icon {
+    color: var(--igx-expansion-panel-header-icon-color); }
+
+:host ::ng-deep .igx-expansion-panel__body {
+  color: var(--igx-expansion-panel-body-color);
+  background: var(--igx-expansion-panel-body-background);
+  overflow: hidden; }
+
+:host ::ng-deep .igx-expansion-panel--disabled .igx-expansion-panel__header-title,
+:host ::ng-deep .igx-expansion-panel--disabled .igx-expansion-panel__header-description {
+  color: var(--igx-expansion-panel-disabled-color); }
+
+:host ::ng-deep .igx-expansion-panel--disabled .igx-expansion-panel__header-icon--start igx-icon,
+:host ::ng-deep .igx-expansion-panel--disabled .igx-expansion-panel__header-icon--end igx-icon {
+  color: var(--igx-expansion-panel-disabled-color); }
+
+:host ::ng-deep {
+  --igx-button-flat-border-radius: 4px;
+  --igx-button-raised-border-radius: 4px;
+  --igx-button-outlined-border-radius: 4px;
+  --igx-button-fab-border-radius: 28px;
+  --igx-button-icon-border-radius: 20px;
+  --igx-button-raised-resting-elevation: 2;
+  --igx-button-raised-hover-elevation: 4;
+  --igx-button-raised-focus-elevation: 8;
+  --igx-button-fab-resting-elevation: 6;
+  --igx-button-fab-hover-elevation: 12;
+  --igx-button-fab-focus-elevation: 12;
+  --igx-button-variant: material;
+  --igx-button-flat-background: transparent;
+  --igx-button-flat-text-color: #ffd351;
+  --igx-button-flat-icon-color: 'currentColor';
+  --igx-button-flat-hover-icon-color: 'currentColor';
+  --igx-button-flat-focus-icon-color: 'currentColor';
+  --igx-button-raised-icon-color: 'currentColor';
+  --igx-button-raised-hover-icon-color: 'currentColor';
+  --igx-button-raised-focus-icon-color: 'currentColor';
+  --igx-button-outlined-icon-color: 'currentColor';
+  --igx-button-outlined-hover-icon-color: 'currentColor';
+  --igx-button-outlined-focus-icon-color: 'currentColor';
+  --igx-button-flat-hover-background: rgba(255, 211, 81, 0.05);
+  --igx-button-flat-hover-text-color: #ffd351;
+  --igx-button-flat-focus-background: rgba(250, 214, 107, 0.12);
+  --igx-button-flat-focus-text-color: #ffd351;
+  --igx-button-outlined-background: transparent;
+  --igx-button-outlined-outline-color: rgba(0, 0, 0, 0.12);
+  --igx-button-outlined-text-color: #ffd351;
+  --igx-button-outlined-hover-background: rgba(255, 211, 81, 0.05);
+  --igx-button-outlined-hover-text-color: #ffd351;
+  --igx-button-outlined-focus-background: rgba(250, 214, 107, 0.12);
+  --igx-button-outlined-focus-text-color: #ffd351;
+  --igx-button-outlined-disabled-outline-color: rgba(0, 0, 0, 0.12);
+  --igx-button-raised-background: #ffd351;
+  --igx-button-raised-text-color: black;
+  --igx-button-raised-hover-background: #f7db88;
+  --igx-button-raised-hover-text-color: black;
+  --igx-button-raised-focus-background: #f7db88;
+  --igx-button-raised-focus-text-color: black;
+  --igx-button-fab-background: #ffd351;
+  --igx-button-fab-text-color: black;
+  --igx-button-fab-hover-background: #f7db88;
+  --igx-button-fab-hover-text-color: black;
+  --igx-button-fab-focus-background: #f7db88;
+  --igx-button-fab-focus-text-color: black;
+  --igx-button-icon-color: rgba(0, 0, 0, 0.74);
+  --igx-button-icon-background: transparent;
+  --igx-button-icon-hover-background: rgba(0, 0, 0, 0.04);
+  --igx-button-icon-hover-color: rgba(0, 0, 0, 0.74);
+  --igx-button-icon-focus-background: rgba(0, 0, 0, 0.26);
+  --igx-button-icon-focus-color: rgba(0, 0, 0, 0.74);
+  --igx-button-disabled-color: rgba(0, 0, 0, 0.26);
+  --igx-button-disabled-background: rgba(0, 0, 0, 0.04);
+  --igx-button-raised-resting-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.08);
+  --igx-button-raised-hover-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.26), 0 4px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+  --igx-button-raised-focus-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26), 0 8px 10px 1px rgba(0, 0, 0, 0.12), 0 3px 14px 2px rgba(0, 0, 0, 0.08);
+  --igx-button-fab-resting-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.26), 0 6px 10px 0 rgba(0, 0, 0, 0.12), 0 1px 18px 0 rgba(0, 0, 0, 0.08);
+  --igx-button-fab-hover-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.26), 0 12px 17px 2px rgba(0, 0, 0, 0.12), 0 5px 22px 4px rgba(0, 0, 0, 0.08);
+  --igx-button-fab-focus-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.26), 0 12px 17px 2px rgba(0, 0, 0, 0.12), 0 5px 22px 4px rgba(0, 0, 0, 0.08);
+  --igx-button-raised-shadow-color: transparent;
+  --igx-button-outlined-shadow-color: transparent;
+  --igx-button-icon-shadow-color: transparent;
+  --igx-button-fab-shadow-color: transparent; }
+
+:host ::ng-deep .igx-button, :host ::ng-deep .igx-button--flat, :host ::ng-deep .igx-button--outlined, :host ::ng-deep .igx-button--raised {
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  min-width: 5.5rem;
+  padding: 0.5625rem 1rem;
+  min-height: 2.25rem;
+  border: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline-style: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: color 1ms ease-in-out, background-color 1ms ease-in-out, border-color 1ms ease-in-out, box-shadow 1ms ease-in-out;
+  font-family: inherit; }
+  :host ::ng-deep .igx-button .igx-icon, :host ::ng-deep .igx-button--flat .igx-icon, :host ::ng-deep .igx-button--outlined .igx-icon, :host ::ng-deep .igx-button--raised .igx-icon, :host ::ng-deep .igx-button .igx-icon--inactive, :host ::ng-deep .igx-button--flat .igx-icon--inactive, :host ::ng-deep .igx-button--outlined .igx-icon--inactive, :host ::ng-deep .igx-button--raised .igx-icon--inactive {
+    width: 1.125rem;
+    height: 1.125rem;
+    font-size: 1.125rem; }
+
+:host ::ng-deep .igx-button--cosy {
+  padding: 0.375rem 1rem;
+  min-height: 1.875rem; }
+
+:host ::ng-deep .igx-button--compact {
+  padding: 0.1875rem 1rem;
+  min-height: 1.5rem; }
+
+:host ::ng-deep .igx-button--flat {
+  background: var(--igx-button-flat-background);
+  color: var(--igx-button-flat-text-color);
+  border-radius: var(--igx-button-flat-border-radius); }
+  :host ::ng-deep .igx-button--flat .igx-icon, :host ::ng-deep .igx-button--flat .igx-icon--inactive {
+    color: var(--igx-button-flat-icon-color); }
+  :host ::ng-deep .igx-button--flat:hover {
+    background: var(--igx-button-flat-hover-background);
+    color: var(--igx-button-flat-hover-text-color); }
+    :host ::ng-deep .igx-button--flat:hover .igx-icon, :host ::ng-deep .igx-button--flat:hover .igx-icon--inactive {
+      color: var(--igx-button-flat-hover-icon-color); }
+  :host ::ng-deep .igx-button--flat:focus, :host ::ng-deep .igx-button--flat:active {
+    background: var(--igx-button-flat-focus-background);
+    color: var(--igx-button-flat-focus-text-color); }
+    :host ::ng-deep .igx-button--flat:focus .igx-icon, :host ::ng-deep .igx-button--flat:focus .igx-icon--inactive, :host ::ng-deep .igx-button--flat:active .igx-icon, :host ::ng-deep .igx-button--flat:active .igx-icon--inactive {
+      color: var(--igx-button-flat-focus-icon-color); }
+
+:host ::ng-deep .igx-button--outlined {
+  border: 1px solid transparent;
+  border-color: var(--igx-button-outlined-outline-color);
+  background: var(--igx-button-outlined-background);
+  color: var(--igx-button-outlined-text-color);
+  border-radius: var(--igx-button-outlined-border-radius); }
+  :host ::ng-deep .igx-button--outlined .igx-icon, :host ::ng-deep .igx-button--outlined .igx-icon--inactive {
+    color: var(--igx-button-outlined-icon-color); }
+  :host ::ng-deep .igx-button--outlined:hover {
+    background: var(--igx-button-outlined-hover-background);
+    color: var(--igx-button-outlined-hover-text-color); }
+    :host ::ng-deep .igx-button--outlined:hover .igx-icon, :host ::ng-deep .igx-button--outlined:hover .igx-icon--inactive {
+      color: var(--igx-button-outlined-hover-icon-color); }
+  :host ::ng-deep .igx-button--outlined:focus, :host ::ng-deep .igx-button--outlined:active {
+    background: var(--igx-button-outlined-focus-background);
+    color: var(--igx-button-outlined-focus-text-color); }
+    :host ::ng-deep .igx-button--outlined:focus .igx-icon, :host ::ng-deep .igx-button--outlined:focus .igx-icon--inactive, :host ::ng-deep .igx-button--outlined:active .igx-icon, :host ::ng-deep .igx-button--outlined:active .igx-icon--inactive {
+      color: var(--igx-button-outlined-focus-icon-color); }
+
+:host ::ng-deep .igx-button--raised {
+  color: var(--igx-button-raised-text-color);
+  background: var(--igx-button-raised-background);
+  box-shadow: var(--igx-button-raised-resting-shadow);
+  border-radius: var(--igx-button-raised-border-radius); }
+  :host ::ng-deep .igx-button--raised .igx-icon, :host ::ng-deep .igx-button--raised .igx-icon--inactive {
+    color: var(--igx-button-raised-icon-color); }
+  :host ::ng-deep .igx-button--raised:hover {
+    color: var(--igx-button-raised-hover-text-color);
+    background: var(--igx-button-raised-hover-background);
+    box-shadow: var(--igx-button-raised-hover-shadow); }
+    :host ::ng-deep .igx-button--raised:hover .igx-icon, :host ::ng-deep .igx-button--raised:hover .igx-icon--inactive {
+      color: var(--igx-button-raised-hover-icon-color); }
+  :host ::ng-deep .igx-button--raised:focus, :host ::ng-deep .igx-button--raised:active {
+    color: var(--igx-button-raised-focus-text-color);
+    background: var(--igx-button-raised-focus-background);
+    box-shadow: var(--igx-button-raised-focus-shadow); }
+    :host ::ng-deep .igx-button--raised:focus .igx-icon, :host ::ng-deep .igx-button--raised:focus .igx-icon--inactive, :host ::ng-deep .igx-button--raised:active .igx-icon, :host ::ng-deep .igx-button--raised:active .igx-icon--inactive {
+      color: var(--igx-button-raised-focus-icon-color); }
+
+:host ::ng-deep .igx-button--fab, :host ::ng-deep .igx-button--icon {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  border: 1px solid transparent;
+  border-radius: var(--igx-button-fab-border-radius);
+  outline: none;
+  cursor: pointer;
+  transition: color 1ms ease-in-out, background-color 1ms ease-in-out, border-color 1ms ease-in-out, box-shadow 1ms ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  -webkit-filter: blur(0);
+          filter: blur(0); }
+
+:host ::ng-deep .igx-button--fab {
+  padding: 0.9375rem;
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+  line-height: unset;
+  white-space: nowrap;
+  color: var(--igx-button-fab-text-color);
+  background: var(--igx-button-fab-background);
+  box-shadow: var(--igx-button-fab-resting-shadow);
+  border-radius: var(--igx-button-fab-border-radius); }
+  :host ::ng-deep .igx-button--fab:hover {
+    color: var(--igx-button-fab-hover-text-color);
+    background: var(--igx-button-fab-hover-background);
+    box-shadow: var(--igx-button-fab-resting-shadow); }
+  :host ::ng-deep .igx-button--fab:focus, :host ::ng-deep .igx-button--fab:active {
+    color: var(--igx-button-fab-focus-text-color);
+    background: var(--igx-button-fab-focus-background);
+    box-shadow: var(--igx-button-fab-focus-shadow); }
+
+:host ::ng-deep .igx-button--fab-cosy.igx-button--fab {
+  padding: 0.6875rem;
+  min-width: 3rem;
+  min-height: 3rem; }
+
+:host ::ng-deep .igx-button--fab-compact.igx-button--fab {
+  padding: 0.4375rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem; }
+
+:host ::ng-deep .igx-button--icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1rem;
+  padding: 0;
+  color: var(--igx-button-icon-color);
+  background: var(--igx-button-icon-background);
+  border-radius: var(--igx-button-icon-border-radius); }
+  :host ::ng-deep .igx-button--icon:hover {
+    transition: color 1ms ease-in-out, background-color 1ms ease-in-out, border-color 1ms ease-in-out, box-shadow 1ms ease-in-out;
+    color: var(--igx-button-icon-hover-color);
+    background: var(--igx-button-icon-hover-background); }
+  :host ::ng-deep .igx-button--icon:focus, :host ::ng-deep .igx-button--icon:active {
+    color: var(--igx-button-icon-focus-color);
+    background: var(--igx-button-icon-focus-background);
+    box-shadow: var(--igx-button-raised-focus-shadow); }
+
+:host ::ng-deep .igx-button--disabled {
+  pointer-events: none;
+  box-shadow: none; }
+  :host ::ng-deep .igx-button--outlined.igx-button--disabled, :host ::ng-deep .igx-button--flat.igx-button--disabled, :host ::ng-deep .igx-button--raised.igx-button--disabled, :host ::ng-deep .igx-button--fab.igx-button--disabled, :host ::ng-deep .igx-button--icon.igx-button--disabled {
+    color: var(--igx-button-disabled-color); }
+    :host ::ng-deep .igx-button--outlined.igx-button--disabled igx-icon, :host ::ng-deep .igx-button--flat.igx-button--disabled igx-icon, :host ::ng-deep .igx-button--raised.igx-button--disabled igx-icon, :host ::ng-deep .igx-button--fab.igx-button--disabled igx-icon, :host ::ng-deep .igx-button--icon.igx-button--disabled igx-icon {
+      color: inherit; }
+  :host ::ng-deep .igx-button--raised.igx-button--disabled, :host ::ng-deep .igx-button--fab.igx-button--disabled {
+    background: var(--igx-button-disabled-background); }
+  :host ::ng-deep .igx-button--flat.igx-button--disabled, :host ::ng-deep .igx-button--outlined.igx-button--disabled {
+    background: transparent; }
+  :host ::ng-deep .igx-button--outlined.igx-button--disabled {
+    border-color: var(--igx-button-outlined-disabled-outline-color); }
+  :host ::ng-deep .igx-button--disabled:focus {
+    box-shadow: none; }
+
+.sample-holder {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  height: 100%; }
+
+.my-expansion-panel {
+  max-width: 500px;
+  min-width: 300px;
+  width: 100%; }
+
+.example-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  padding: 16px;
+  border-top: 1px solid #353a4b; }
+  .example-content ::-moz-selection {
+    background: #f8e8b7; }
+  .example-content ::selection {
+    background: #f8e8b7; }
+  .example-content span {
+    display: block;
+    margin-bottom: 16px; }
+
+a {
+  text-decoration: none; }
+
+img {
+  width: 100%;
+  margin-bottom: 8px;
+  border-radius: 8px; }

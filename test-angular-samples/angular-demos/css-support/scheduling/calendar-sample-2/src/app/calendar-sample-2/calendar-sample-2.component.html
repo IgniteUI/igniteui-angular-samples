@@ -1,0 +1,13 @@
+<article class="sample-column location-wrapper">
+    <igx-select #select [(ngModel)]="locale">
+        <igx-prefix>Location: </igx-prefix>
+        <igx-select-item *ngFor="let locale of locales" [value]="locale">
+            {{ locale }}
+        </igx-select-item>
+    </igx-select>
+</article>
+<article class="sample-column calendar-wrapper">
+    <igx-calendar #calendar [locale]="locale" [weekStart]="1" [formatOptions]="formatOptions"
+        [formatViews]="formatViews">
+    </igx-calendar>
+</article>

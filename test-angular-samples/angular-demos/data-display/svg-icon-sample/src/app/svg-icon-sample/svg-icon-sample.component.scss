@@ -1,0 +1,13 @@
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 16px 0;
+}
+
+.icon-sample {
+    display: flex;
+    flex: 1 0 10%;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+}

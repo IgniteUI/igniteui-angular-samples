@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="moon-info">
+        <igx-grid igxPreventDocumentScroll [data]="moonData" [primaryKey]="'name'" [rowDraggable]="true" (onRowDragStart)="onRowDragStart($event)" (onRowDragEnd)="onRowDragEnd($event)">
+            <igx-column [field]="'name'" [header]="'Moon'" width="120px" [pinned]="true" [sortable]="true"></igx-column>
+            <igx-column [field]="'planet'" [header]="'Planet'" width="150px" [sortable]="true"></igx-column>
+            <igx-column [field]="'mass'" [header]="'Mass'" width="200px" [sortable]="true"></igx-column>
+            <igx-column [field]="'diameter'" [header]="'Diameter'" width="200px" [sortable]="true"></igx-column>
+            <igx-column [field]="'orbitalPeriod'" [header]="'Orbital Period'" width="200px" [sortable]="true"></igx-column>
+        </igx-grid>
+    </div>
+    <div class="solar-system">
+        <div class="planets">
+            <planet #planet *ngFor="let data of planetData" [data]="data"
+                igxDrop (enter)="onEnter($event, planet)" (leave)="onLeave($event)" (dropped)="onDrop($event, planet)"></planet>
+        </div>
+        <div class="sun-wrapper">
+            <div class="sun">
+        </div>
+    </div>
+</div>

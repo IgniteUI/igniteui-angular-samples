@@ -1,0 +1,27 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+.card-wrapper {
+    max-width: 320px;
+    min-width: 220px;
+}
+
+$colorful-card: igx-card-theme(
+    $background: #011627,
+    $header-text-color: #FEFEFE,
+    $subtitle-text-color: #ECAA53,
+    $content-text-color: #FEFEFE
+);
+
+// :host {
+//     @include igx-css-vars($colorful-card);
+// }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-card($colorful-card);
+}
+

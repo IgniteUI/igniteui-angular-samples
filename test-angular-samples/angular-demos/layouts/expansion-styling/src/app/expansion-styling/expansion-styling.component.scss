@@ -1,0 +1,91 @@
+// Import theming engine functionality
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+// Add your brand colors
+$my-primary-color:#353a4b;
+$my-secondary-color: #ffd351;
+
+// Create custom palette
+$my-color-palette: igx-palette(
+    $primary: $my-primary-color,
+    $secondary: $my-secondary-color
+);
+
+// Create expansion panel theme
+$custom-panel-theme: igx-expansion-panel-theme(
+    // pass `$my-color-palette` palette
+    $palette: $my-color-palette,
+
+    // Styling parameters
+    $header-background: igx-color($my-color-palette, "primary", 700),
+    $header-focus-background: igx-color($my-color-palette, "primary", 700),
+    $header-title-color: igx-color($my-color-palette, "secondary"),
+    $header-icon-color: igx-color($my-color-palette, "secondary"),
+    $body-background: igx-color($my-color-palette, "primary", 700),
+    $body-color: igx-color($my-color-palette, "secondary" 100),
+    $border-radius: .5
+);
+
+// Since we use igxButton in our sample we need to create button component theme to fit our styling
+// NOTE: If we define our palette in our main sass file we don't have to do that.
+$custom-button-theme: igx-button-theme(
+    $palette: $my-color-palette,
+);
+
+// NOTE: comment this if you need IE11 support
+// :host {
+//     @include igx-css-vars($custom-panel-theme);
+//     @include igx-css-vars($custom-button-theme);
+// }
+
+// NOTE: Uncomment this if you need to support IE11
+// The `:host` here makes sure that all the theming will affect only this component after the ViewEncapsulation Penetration.
+:host {
+    // Penetrate the ViewEncapsulation
+    ::ng-deep {
+        // Apply the custom themes to the compoents mixins.
+        @include igx-expansion-panel($custom-panel-theme);
+        @include igx-button($custom-button-theme);
+    }
+}
+
+// Styles NOT related to Theming engine START
+.sample-holder {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.my-expansion-panel {
+    max-width: 500px;
+    min-width: 300px;
+    width: 100%;
+}
+
+.example-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    border-top: 1px solid igx-color($my-color-palette, 'primary');
+    ::selection  {
+        background: igx-color($my-color-palette, 'secondary', 200)
+    }
+    span {
+        display: block;
+        margin-bottom: 16px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    margin-bottom: 8px;
+    border-radius: 8px;
+}
+// Styles NOT related to Theming engine END
+

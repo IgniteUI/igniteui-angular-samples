@@ -1,0 +1,15 @@
+:host {
+  margin: 8px; }
+
+.input {
+  padding-left: 0.2rem; }
+
+.input-group {
+  width: 180px; }
+
+.igx-input-group {
+  display: inline-block; }
+
+span {
+  display: inline;
+  padding-left: 24px; }

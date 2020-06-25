@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  padding: 8px; }
+
+.summary-chooser {
+  margin-bottom: 16px; }
+
+igx-buttongroup {
+  display: block;
+  width: 600px; }

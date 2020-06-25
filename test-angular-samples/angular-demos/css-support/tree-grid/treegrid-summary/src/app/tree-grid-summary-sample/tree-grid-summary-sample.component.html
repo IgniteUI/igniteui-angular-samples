@@ -1,0 +1,45 @@
+<div class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [autoGenerate]="false" height="600px" width="100%"
+        primaryKey="ID" foreignKey="ParentID">
+        <igx-column #col field="ID" header="Product ID">
+        </igx-column>
+        <igx-column #col field="Name" header="Product Name" [hasSummary]="true">
+            <ng-template igxCell let-cell="cell" let-val>
+                {{ val }}
+            </ng-template>
+            <ng-template igxHeader let-col>
+                <div class="text">{{col.field}}</div>
+                <igx-icon class="header-icon" color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
+            </ng-template>
+        </igx-column>
+        <igx-column #col field="UnitPrice" header="Price" [filterable]="false" editable="true" dataType="number"
+            [hasSummary]="true">
+            <ng-template igxCell let-cell="cell" let-val let-row>
+                ${{ val }}
+            </ng-template>
+            <ng-template igxHeader let-col>
+                <div class="text">Price</div>
+                <igx-icon class="header-icon" color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
+            </ng-template>
+        </igx-column>
+        <igx-column #col field="Discontinued" header="Discontinued" [hasSummary]="true" [dataType]="'boolean'">
+            <ng-template igxCell let-cell="cell" let-val>
+                <img *ngIf="val" src="https://www.infragistics.com/angular-demos/assets/images/grid/active.png" title="Continued" alt="Continued" />
+                <img *ngIf="!val" src="https://www.infragistics.com/angular-demos/assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+            </ng-template>
+            <ng-template igxHeader let-col>
+                <div class="text">{{ col.field }}</div>
+                <igx-icon class="header-icon" color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
+            </ng-template>
+        </igx-column>
+        <igx-column #col field="AddedDate" header="Added Date" [dataType]="'date'" [hasSummary]="true">
+            <ng-template igxCell let-cell="cell" let-val let-row>
+                {{ val | date: 'MMM d, yyyy' }}
+            </ng-template>
+            <ng-template igxHeader let-col>
+                <div class="text">Added Date</div>
+                <igx-icon class="header-icon" color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
+            </ng-template>
+        </igx-column>
+    </igx-tree-grid>
+</div>

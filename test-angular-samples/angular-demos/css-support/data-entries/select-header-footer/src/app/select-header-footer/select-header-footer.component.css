@@ -1,0 +1,623 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+.header-footer-select-sample {
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -ms-flex-align: center;
+      align-items: center;
+  margin-left: 48px; }
+
+:host ::ng-deep .select__entry span {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  width: 100%; }
+
+igx-select {
+  min-width: 320px; }
+
+.custom-select-header,
+.custom-select-footer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 0 1.5rem;
+  background: #ebebeb; }
+  .custom-select-header igx-icon,
+  .custom-select-footer igx-icon {
+    color: #ddd; }
+    .custom-select-header igx-icon.important-icon,
+    .custom-select-footer igx-icon.important-icon {
+      color: #09f; }
+
+.sample-template-icons,
+.sample-template-icons__item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
+  .sample-template-icons igx-icon,
+  .sample-template-icons__item igx-icon {
+    margin-right: 8px; }
+
+.sample-template-icons__item {
+  margin-left: 32px; }
+
+.custom-select-header {
+  height: 56px; }
+
+.custom-select-footer {
+  height: 44px; }
+
+.sample-template-heading {
+  font-size: 12px; }
+
+.sample-template-heading {
+  color: #dc0a6a; }
+
+:root {
+  --igx-button-group-border-radius: 0px;
+  --igx-button-group-elevation: 2;
+  --igx-button-group-variant: material;
+  --igx-button-group-item-background: rgba(0, 0, 0, 0.12);
+  --igx-button-group-item-border-color: #d5d5d5;
+  --igx-button-group-item-text-color: rgba(0, 0, 0, 0.62);
+  --igx-button-group-item-hover-text-color: rgba(0, 0, 0, 0.62);
+  --igx-button-group-item-hover-background: rgba(0, 0, 0, 0.26);
+  --igx-button-group-item-selected-text-color: #fff;
+  --igx-button-group-item-selected-background: #09f;
+  --igx-button-group-item-selected-hover-background: #0089e5;
+  --igx-button-group-item-selected-border-color: #09f;
+  --igx-button-group-disabled-text-color: rgba(0, 0, 0, 0.26);
+  --igx-button-group-disabled-background-color: rgba(0, 0, 0, 0.02);
+  --igx-button-group-item-disabled-border: #c7c7c7;
+  --igx-button-group-border: none;
+  --igx-button-group-shadow: none; }
+
+.igx-button-group, .igx-button-group--vertical {
+  display: -ms-flexbox;
+  display: flex;
+  box-shadow: var(--igx-button-group-shadow);
+  transition: all 140ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  border-radius: var(--igx-button-group-border-radius); }
+
+.igx-button-group__item, .igx-button-group__item--selected, .igx-button-group--vertical .igx-button-group__item, .igx-button-group--vertical .igx-button-group__item--selected {
+  border: 1px solid var(--igx-button-group-item-border-color);
+  color: var(--igx-button-group-item-text-color);
+  background: var(--igx-button-group-item-background);
+  min-width: 24px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 0 0%;
+      flex: 1 0 0%;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  z-index: 0;
+  transition: all 140ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+  .igx-button--flat.igx-button-group__item, .igx-button--flat.igx-button-group__item--selected {
+    border-radius: 0; }
+  .igx-button-group__item .igx-icon, .igx-button-group__item--selected .igx-icon, .igx-button-group__item .igx-icon--inactive, .igx-button-group__item--selected .igx-icon--inactive {
+    color: currentColor; }
+  .igx-button-group__item:not(:nth-child(0)), .igx-button-group__item--selected:not(:nth-child(0)), .igx-button-group--vertical .igx-button-group__item:not(:nth-child(0)), .igx-button-group--vertical .igx-button-group__item--selected:not(:nth-child(0)) {
+    margin-left: -1px; }
+  .igx-button-group__item:first-of-type, .igx-button-group__item--selected:first-of-type {
+    border-top-left-radius: var(--igx-button-group-border-radius);
+    border-bottom-left-radius: var(--igx-button-group-border-radius); }
+  .igx-button-group__item:last-of-type, .igx-button-group__item--selected:last-of-type {
+    border-top-right-radius: var(--igx-button-group-border-radius);
+    border-bottom-right-radius: var(--igx-button-group-border-radius); }
+  .igx-button--disabled.igx-button-group__item, .igx-button--disabled.igx-button-group__item--selected {
+    color: var(--igx-button-group-disabled-text-color) !important;
+    background: var(--igx-button-group-disabled-background-color) !important;
+    border-color: var(--igx-button-group-item-disabled-border); }
+  .igx-button-group__item:hover, .igx-button-group__item--selected:hover, .igx-button-group__item:focus, .igx-button-group__item--selected:focus {
+    color: var(--igx-button-group-item-hover-text-color);
+    background: var(--igx-button-group-item-hover-background);
+    z-index: 1; }
+    .igx-button-group__item:hover .igx-icon, .igx-button-group__item--selected:hover .igx-icon, .igx-button-group__item:hover .igx-icon--inactive, .igx-button-group__item--selected:hover .igx-icon--inactive, .igx-button-group__item:focus .igx-icon, .igx-button-group__item--selected:focus .igx-icon, .igx-button-group__item:focus .igx-icon--inactive, .igx-button-group__item--selected:focus .igx-icon--inactive {
+      color: currentColor; }
+
+.igx-button-group--vertical .igx-button-group__item:not(:nth-child(0)) {
+  margin-top: -1px;
+  margin-left: 0; }
+
+.igx-button-group--vertical .igx-button-group__item:first-of-type {
+  border-top-left-radius: var(--igx-button-group-border-radius);
+  border-top-right-radius: var(--igx-button-group-border-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.igx-button-group--vertical .igx-button-group__item:last-of-type {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: var(--igx-button-group-border-radius);
+  border-bottom-right-radius: var(--igx-button-group-border-radius); }
+
+.igx-button-group__item--selected, .igx-button-group--vertical .igx-button-group__item--selected {
+  color: var(--igx-button-group-item-selected-text-color);
+  background: var(--igx-button-group-item-selected-background);
+  border-color: var(--igx-button-group-item-selected-border-color);
+  position: relative;
+  z-index: 1; }
+  .igx-button-group__item--selected:hover, .igx-button-group__item--selected:focus {
+    color: var(--igx-button-group-item-selected-text-color);
+    background: var(--igx-button-group-item-selected-hover-background); }
+  .igx-button--disabled.igx-button-group__item--selected {
+    position: relative; }
+    .igx-button--disabled.igx-button-group__item--selected::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.06); }
+
+.igx-button-group--vertical {
+  -ms-flex-flow: column;
+      flex-flow: column; }
+
+.igx-button-group__item-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+  min-width: 0; }
+  .igx-button-group__item-content * ~ * {
+    margin-left: 0.625rem; }
+
+.igx-button-group__button-text {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+:host ::ng-deep {
+  --igx-button-group-border-radius: 0px;
+  --igx-button-group-elevation: 2;
+  --igx-button-group-variant: material;
+  --igx-button-group-item-background: rgba(0, 0, 0, 0.12);
+  --igx-button-group-item-border-color: #d5d5d5;
+  --igx-button-group-item-text-color: rgba(0, 0, 0, 0.62);
+  --igx-button-group-item-hover-text-color: rgba(0, 0, 0, 0.62);
+  --igx-button-group-item-hover-background: rgba(0, 0, 0, 0.26);
+  --igx-button-group-item-selected-text-color: #fff;
+  --igx-button-group-item-selected-background: #09f;
+  --igx-button-group-item-selected-hover-background: #0089e5;
+  --igx-button-group-item-selected-border-color: #09f;
+  --igx-button-group-disabled-text-color: rgba(0, 0, 0, 0.26);
+  --igx-button-group-disabled-background-color: rgba(0, 0, 0, 0.02);
+  --igx-button-group-item-disabled-border: #c7c7c7;
+  --igx-button-group-border: none;
+  --igx-button-group-shadow: none; }
+
+:host ::ng-deep .igx-button-group, :host ::ng-deep .igx-button-group--vertical {
+  display: -ms-flexbox;
+  display: flex;
+  box-shadow: var(--igx-button-group-shadow);
+  transition: all 140ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  border-radius: var(--igx-button-group-border-radius); }
+
+:host ::ng-deep .igx-button-group__item, :host ::ng-deep .igx-button-group__item--selected {
+  border: 1px solid var(--igx-button-group-item-border-color);
+  color: var(--igx-button-group-item-text-color);
+  background: var(--igx-button-group-item-background);
+  min-width: 24px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 0 0%;
+      flex: 1 0 0%;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  z-index: 0;
+  transition: all 140ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+  :host ::ng-deep .igx-button--flat.igx-button-group__item, :host ::ng-deep .igx-button--flat.igx-button-group__item--selected {
+    border-radius: 0; }
+  :host ::ng-deep .igx-button-group__item .igx-icon, :host ::ng-deep .igx-button-group__item--selected .igx-icon, :host ::ng-deep .igx-button-group__item .igx-icon--inactive, :host ::ng-deep .igx-button-group__item--selected .igx-icon--inactive {
+    color: currentColor; }
+  :host ::ng-deep .igx-button-group__item:not(:nth-child(0)), :host ::ng-deep .igx-button-group__item--selected:not(:nth-child(0)) {
+    margin-left: -1px; }
+  :host ::ng-deep .igx-button-group__item:first-of-type, :host ::ng-deep .igx-button-group__item--selected:first-of-type {
+    border-top-left-radius: var(--igx-button-group-border-radius);
+    border-bottom-left-radius: var(--igx-button-group-border-radius); }
+  :host ::ng-deep .igx-button-group__item:last-of-type, :host ::ng-deep .igx-button-group__item--selected:last-of-type {
+    border-top-right-radius: var(--igx-button-group-border-radius);
+    border-bottom-right-radius: var(--igx-button-group-border-radius); }
+  :host ::ng-deep .igx-button--disabled.igx-button-group__item, :host ::ng-deep .igx-button--disabled.igx-button-group__item--selected {
+    color: var(--igx-button-group-disabled-text-color) !important;
+    background: var(--igx-button-group-disabled-background-color) !important;
+    border-color: var(--igx-button-group-item-disabled-border); }
+  :host ::ng-deep .igx-button-group__item:hover, :host ::ng-deep .igx-button-group__item--selected:hover, :host ::ng-deep .igx-button-group__item:focus, :host ::ng-deep .igx-button-group__item--selected:focus {
+    color: var(--igx-button-group-item-hover-text-color);
+    background: var(--igx-button-group-item-hover-background);
+    z-index: 1; }
+    :host ::ng-deep .igx-button-group__item:hover .igx-icon, :host ::ng-deep .igx-button-group__item--selected:hover .igx-icon, :host ::ng-deep .igx-button-group__item:hover .igx-icon--inactive, :host ::ng-deep .igx-button-group__item--selected:hover .igx-icon--inactive, :host ::ng-deep .igx-button-group__item:focus .igx-icon, :host ::ng-deep .igx-button-group__item--selected:focus .igx-icon, :host ::ng-deep .igx-button-group__item:focus .igx-icon--inactive, :host ::ng-deep .igx-button-group__item--selected:focus .igx-icon--inactive {
+      color: currentColor; }
+
+:host ::ng-deep .igx-button-group--vertical .igx-button-group__item:not(:nth-child(0)), .igx-button-group--vertical :host ::ng-deep .igx-button-group__item:not(:nth-child(0)) {
+  margin-top: -1px;
+  margin-left: 0; }
+
+:host ::ng-deep .igx-button-group--vertical .igx-button-group__item:first-of-type, .igx-button-group--vertical :host ::ng-deep .igx-button-group__item:first-of-type {
+  border-top-left-radius: var(--igx-button-group-border-radius);
+  border-top-right-radius: var(--igx-button-group-border-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+
+:host ::ng-deep .igx-button-group--vertical .igx-button-group__item:last-of-type, .igx-button-group--vertical :host ::ng-deep .igx-button-group__item:last-of-type {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: var(--igx-button-group-border-radius);
+  border-bottom-right-radius: var(--igx-button-group-border-radius); }
+
+:host ::ng-deep .igx-button-group__item--selected {
+  color: var(--igx-button-group-item-selected-text-color);
+  background: var(--igx-button-group-item-selected-background);
+  border-color: var(--igx-button-group-item-selected-border-color);
+  position: relative;
+  z-index: 1; }
+  :host ::ng-deep .igx-button-group__item--selected:hover, :host ::ng-deep .igx-button-group__item--selected:focus {
+    color: var(--igx-button-group-item-selected-text-color);
+    background: var(--igx-button-group-item-selected-hover-background); }
+  :host ::ng-deep .igx-button--disabled.igx-button-group__item--selected {
+    position: relative; }
+    :host ::ng-deep .igx-button--disabled.igx-button-group__item--selected::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.06); }
+
+:host ::ng-deep .igx-button-group--vertical {
+  -ms-flex-flow: column;
+      flex-flow: column; }
+
+:host ::ng-deep .igx-button-group__item-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+  min-width: 0; }
+  :host ::ng-deep .igx-button-group__item-content * ~ * {
+    margin-left: 0.625rem; }
+
+:host ::ng-deep .igx-button-group__button-text {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+.dark-theme .custom-select-header,
+.dark-theme .custom-select-footer {
+  background: #222; }
+  .dark-theme .custom-select-header igx-icon,
+  .dark-theme .custom-select-footer igx-icon {
+    color: #ddd; }
+    .dark-theme .custom-select-header igx-icon.important-icon,
+    .dark-theme .custom-select-footer igx-icon.important-icon {
+      color: #72da67; }
+
+.dark-theme .sample-template-heading {
+  color: #54e245; }
+
+.dark-theme {
+  --igx-button-group-border-radius: 0px;
+  --igx-button-group-elevation: 2;
+  --igx-button-group-variant: material;
+  --igx-button-group-item-background: #333;
+  --igx-button-group-item-border-color: #222;
+  --igx-button-group-item-text-color: #ddd;
+  --igx-button-group-item-hover-text-color: #fff;
+  --igx-button-group-item-hover-background: #444;
+  --igx-button-group-item-selected-text-color: #000;
+  --igx-button-group-item-selected-background: #72da67;
+  --igx-button-group-item-selected-hover-background: #54e245;
+  --igx-button-group-item-selected-border-color: #72da67;
+  --igx-button-group-disabled-text-color: rgba(0, 0, 0, 0.26);
+  --igx-button-group-disabled-background-color: rgba(0, 0, 0, 0.02);
+  --igx-button-group-item-disabled-border: #191919;
+  --igx-button-group-border: none;
+  --igx-button-group-shadow: none; }
+
+.dark-theme .igx-button-group, .dark-theme .igx-button-group--vertical {
+  display: -ms-flexbox;
+  display: flex;
+  box-shadow: var(--igx-button-group-shadow);
+  transition: all 140ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  border-radius: var(--igx-button-group-border-radius); }
+
+.dark-theme .igx-button-group__item, .dark-theme .igx-button-group__item--selected {
+  border: 1px solid var(--igx-button-group-item-border-color);
+  color: var(--igx-button-group-item-text-color);
+  background: var(--igx-button-group-item-background);
+  min-width: 24px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 0 0%;
+      flex: 1 0 0%;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  z-index: 0;
+  transition: all 140ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+  .dark-theme .igx-button--flat.igx-button-group__item, .dark-theme .igx-button--flat.igx-button-group__item--selected {
+    border-radius: 0; }
+  .dark-theme .igx-button-group__item .igx-icon, .dark-theme .igx-button-group__item--selected .igx-icon, .dark-theme .igx-button-group__item .igx-icon--inactive, .dark-theme .igx-button-group__item--selected .igx-icon--inactive {
+    color: currentColor; }
+  .dark-theme .igx-button-group__item:not(:nth-child(0)), .dark-theme .igx-button-group__item--selected:not(:nth-child(0)) {
+    margin-left: -1px; }
+  .dark-theme .igx-button-group__item:first-of-type, .dark-theme .igx-button-group__item--selected:first-of-type {
+    border-top-left-radius: var(--igx-button-group-border-radius);
+    border-bottom-left-radius: var(--igx-button-group-border-radius); }
+  .dark-theme .igx-button-group__item:last-of-type, .dark-theme .igx-button-group__item--selected:last-of-type {
+    border-top-right-radius: var(--igx-button-group-border-radius);
+    border-bottom-right-radius: var(--igx-button-group-border-radius); }
+  .dark-theme .igx-button--disabled.igx-button-group__item, .dark-theme .igx-button--disabled.igx-button-group__item--selected {
+    color: var(--igx-button-group-disabled-text-color) !important;
+    background: var(--igx-button-group-disabled-background-color) !important;
+    border-color: var(--igx-button-group-item-disabled-border); }
+  .dark-theme .igx-button-group__item:hover, .dark-theme .igx-button-group__item--selected:hover, .dark-theme .igx-button-group__item:focus, .dark-theme .igx-button-group__item--selected:focus {
+    color: var(--igx-button-group-item-hover-text-color);
+    background: var(--igx-button-group-item-hover-background);
+    z-index: 1; }
+    .dark-theme .igx-button-group__item:hover .igx-icon, .dark-theme .igx-button-group__item--selected:hover .igx-icon, .dark-theme .igx-button-group__item:hover .igx-icon--inactive, .dark-theme .igx-button-group__item--selected:hover .igx-icon--inactive, .dark-theme .igx-button-group__item:focus .igx-icon, .dark-theme .igx-button-group__item--selected:focus .igx-icon, .dark-theme .igx-button-group__item:focus .igx-icon--inactive, .dark-theme .igx-button-group__item--selected:focus .igx-icon--inactive {
+      color: currentColor; }
+
+.dark-theme .igx-button-group--vertical .igx-button-group__item:not(:nth-child(0)), .igx-button-group--vertical .dark-theme .igx-button-group__item:not(:nth-child(0)) {
+  margin-top: -1px;
+  margin-left: 0; }
+
+.dark-theme .igx-button-group--vertical .igx-button-group__item:first-of-type, .igx-button-group--vertical .dark-theme .igx-button-group__item:first-of-type {
+  border-top-left-radius: var(--igx-button-group-border-radius);
+  border-top-right-radius: var(--igx-button-group-border-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.dark-theme .igx-button-group--vertical .igx-button-group__item:last-of-type, .igx-button-group--vertical .dark-theme .igx-button-group__item:last-of-type {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: var(--igx-button-group-border-radius);
+  border-bottom-right-radius: var(--igx-button-group-border-radius); }
+
+.dark-theme .igx-button-group__item--selected {
+  color: var(--igx-button-group-item-selected-text-color);
+  background: var(--igx-button-group-item-selected-background);
+  border-color: var(--igx-button-group-item-selected-border-color);
+  position: relative;
+  z-index: 1; }
+  .dark-theme .igx-button-group__item--selected:hover, .dark-theme .igx-button-group__item--selected:focus {
+    color: var(--igx-button-group-item-selected-text-color);
+    background: var(--igx-button-group-item-selected-hover-background); }
+  .dark-theme .igx-button--disabled.igx-button-group__item--selected {
+    position: relative; }
+    .dark-theme .igx-button--disabled.igx-button-group__item--selected::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.06); }
+
+.dark-theme .igx-button-group--vertical {
+  -ms-flex-flow: column;
+      flex-flow: column; }
+
+.dark-theme .igx-button-group__item-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+  min-width: 0; }
+  .dark-theme .igx-button-group__item-content * ~ * {
+    margin-left: 0.625rem; }
+
+.dark-theme .igx-button-group__button-text {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+.dark-theme :host ::ng-deep {
+  --igx-button-group-border-radius: 0px;
+  --igx-button-group-elevation: 2;
+  --igx-button-group-variant: material;
+  --igx-button-group-item-background: #333;
+  --igx-button-group-item-border-color: #222;
+  --igx-button-group-item-text-color: #ddd;
+  --igx-button-group-item-hover-text-color: #fff;
+  --igx-button-group-item-hover-background: #444;
+  --igx-button-group-item-selected-text-color: #000;
+  --igx-button-group-item-selected-background: #72da67;
+  --igx-button-group-item-selected-hover-background: #54e245;
+  --igx-button-group-item-selected-border-color: #72da67;
+  --igx-button-group-disabled-text-color: rgba(0, 0, 0, 0.26);
+  --igx-button-group-disabled-background-color: rgba(0, 0, 0, 0.02);
+  --igx-button-group-item-disabled-border: #191919;
+  --igx-button-group-border: none;
+  --igx-button-group-shadow: none; }
+
+.dark-theme :host ::ng-deep .igx-button-group, .dark-theme :host ::ng-deep .igx-button-group--vertical {
+  display: -ms-flexbox;
+  display: flex;
+  box-shadow: var(--igx-button-group-shadow);
+  transition: all 140ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  border-radius: var(--igx-button-group-border-radius); }
+
+.dark-theme :host ::ng-deep .igx-button-group__item, .dark-theme :host ::ng-deep .igx-button-group__item--selected {
+  border: 1px solid var(--igx-button-group-item-border-color);
+  color: var(--igx-button-group-item-text-color);
+  background: var(--igx-button-group-item-background);
+  min-width: 24px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 0 0%;
+      flex: 1 0 0%;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  z-index: 0;
+  transition: all 140ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+  .dark-theme :host ::ng-deep .igx-button--flat.igx-button-group__item, .dark-theme :host ::ng-deep .igx-button--flat.igx-button-group__item--selected {
+    border-radius: 0; }
+  .dark-theme :host ::ng-deep .igx-button-group__item .igx-icon, .dark-theme :host ::ng-deep .igx-button-group__item--selected .igx-icon, .dark-theme :host ::ng-deep .igx-button-group__item .igx-icon--inactive, .dark-theme :host ::ng-deep .igx-button-group__item--selected .igx-icon--inactive {
+    color: currentColor; }
+  .dark-theme :host ::ng-deep .igx-button-group__item:not(:nth-child(0)), .dark-theme :host ::ng-deep .igx-button-group__item--selected:not(:nth-child(0)) {
+    margin-left: -1px; }
+  .dark-theme :host ::ng-deep .igx-button-group__item:first-of-type, .dark-theme :host ::ng-deep .igx-button-group__item--selected:first-of-type {
+    border-top-left-radius: var(--igx-button-group-border-radius);
+    border-bottom-left-radius: var(--igx-button-group-border-radius); }
+  .dark-theme :host ::ng-deep .igx-button-group__item:last-of-type, .dark-theme :host ::ng-deep .igx-button-group__item--selected:last-of-type {
+    border-top-right-radius: var(--igx-button-group-border-radius);
+    border-bottom-right-radius: var(--igx-button-group-border-radius); }
+  .dark-theme :host ::ng-deep .igx-button--disabled.igx-button-group__item, .dark-theme :host ::ng-deep .igx-button--disabled.igx-button-group__item--selected {
+    color: var(--igx-button-group-disabled-text-color) !important;
+    background: var(--igx-button-group-disabled-background-color) !important;
+    border-color: var(--igx-button-group-item-disabled-border); }
+  .dark-theme :host ::ng-deep .igx-button-group__item:hover, .dark-theme :host ::ng-deep .igx-button-group__item--selected:hover, .dark-theme :host ::ng-deep .igx-button-group__item:focus, .dark-theme :host ::ng-deep .igx-button-group__item--selected:focus {
+    color: var(--igx-button-group-item-hover-text-color);
+    background: var(--igx-button-group-item-hover-background);
+    z-index: 1; }
+    .dark-theme :host ::ng-deep .igx-button-group__item:hover .igx-icon, .dark-theme :host ::ng-deep .igx-button-group__item--selected:hover .igx-icon, .dark-theme :host ::ng-deep .igx-button-group__item:hover .igx-icon--inactive, .dark-theme :host ::ng-deep .igx-button-group__item--selected:hover .igx-icon--inactive, .dark-theme :host ::ng-deep .igx-button-group__item:focus .igx-icon, .dark-theme :host ::ng-deep .igx-button-group__item--selected:focus .igx-icon, .dark-theme :host ::ng-deep .igx-button-group__item:focus .igx-icon--inactive, .dark-theme :host ::ng-deep .igx-button-group__item--selected:focus .igx-icon--inactive {
+      color: currentColor; }
+
+.dark-theme :host ::ng-deep .igx-button-group--vertical .igx-button-group__item:not(:nth-child(0)), .igx-button-group--vertical .dark-theme :host ::ng-deep .igx-button-group__item:not(:nth-child(0)) {
+  margin-top: -1px;
+  margin-left: 0; }
+
+.dark-theme :host ::ng-deep .igx-button-group--vertical .igx-button-group__item:first-of-type, .igx-button-group--vertical .dark-theme :host ::ng-deep .igx-button-group__item:first-of-type {
+  border-top-left-radius: var(--igx-button-group-border-radius);
+  border-top-right-radius: var(--igx-button-group-border-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.dark-theme :host ::ng-deep .igx-button-group--vertical .igx-button-group__item:last-of-type, .igx-button-group--vertical .dark-theme :host ::ng-deep .igx-button-group__item:last-of-type {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: var(--igx-button-group-border-radius);
+  border-bottom-right-radius: var(--igx-button-group-border-radius); }
+
+.dark-theme :host ::ng-deep .igx-button-group__item--selected {
+  color: var(--igx-button-group-item-selected-text-color);
+  background: var(--igx-button-group-item-selected-background);
+  border-color: var(--igx-button-group-item-selected-border-color);
+  position: relative;
+  z-index: 1; }
+  .dark-theme :host ::ng-deep .igx-button-group__item--selected:hover, .dark-theme :host ::ng-deep .igx-button-group__item--selected:focus {
+    color: var(--igx-button-group-item-selected-text-color);
+    background: var(--igx-button-group-item-selected-hover-background); }
+  .dark-theme :host ::ng-deep .igx-button--disabled.igx-button-group__item--selected {
+    position: relative; }
+    .dark-theme :host ::ng-deep .igx-button--disabled.igx-button-group__item--selected::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.06); }
+
+.dark-theme :host ::ng-deep .igx-button-group--vertical {
+  -ms-flex-flow: column;
+      flex-flow: column; }
+
+.dark-theme :host ::ng-deep .igx-button-group__item-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+  min-width: 0; }
+  .dark-theme :host ::ng-deep .igx-button-group__item-content * ~ * {
+    margin-left: 0.625rem; }
+
+.dark-theme :host ::ng-deep .igx-button-group__button-text {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }

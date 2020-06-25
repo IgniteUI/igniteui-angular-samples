@@ -1,0 +1,28 @@
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 16px;
+}
+
+igx-radio + igx-radio {
+    margin-top: 16px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    max-width: 400px;
+    height: 250px;
+    padding: 16px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, .24);
+    transition: background-color .2s ease-out;
+}
+
+
+h5 {
+    margin: 0 0 16px 0;
+}

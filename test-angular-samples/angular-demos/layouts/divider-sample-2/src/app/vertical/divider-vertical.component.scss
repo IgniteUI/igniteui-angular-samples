@@ -1,0 +1,20 @@
+.divider-sample {
+    display: flex;
+    padding: 20px;
+    border: 1px solid #ededed;
+    > div {
+        margin-left: 20px;
+        text-align: left;
+        &:first-of-type {
+            text-align: right;
+            margin-left: 0;
+            margin-right: 20px;
+        }
+    }
+    p {
+        margin: 0;
+    }
+    .mt {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,33 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+igx-chip {
+    margin-right: 5px;
+    margin-top: 20px;
+}
+
+$custom-theme: igx-chip-theme(
+    $background: #011627,
+    $hover-background:  #011627dc,
+    $focus-background: #0116276c,
+    $selected-background: #ECAA53,
+    $hover-selected-background: #ECAA53,
+    $focus-selected-background: #ECAA53,
+    $text-color: #FEFEFE,
+    $remove-icon-color-focus: #da0000,
+    $border-radius: 5px
+);
+
+
+// :host {
+//     @include igx-css-vars($custom-theme);
+// }
+
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-chip($custom-theme);
+}

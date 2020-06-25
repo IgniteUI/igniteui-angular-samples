@@ -1,0 +1,59 @@
+<div class="sample">
+    <div class="grid_wrapper">
+        <igx-grid height="450px" width="100%" [paging]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" displayDensity="compact"
+            summaryCalculationMode="rootLevelOnly" columnSelection="single" [showToolbar]="false" [allowAdvancedFiltering]="true" (keydown)="gridKeydown($event)">
+            <ng-template igxGridDetail let-dataItem>
+                <div *ngIf="dataItem.CompanysAnnualProfit">
+                    <header>Annual Profit:</header>
+                    <span>{{dataItem.CompanysAnnualProfit}}</span>
+                </div>
+            </ng-template>
+            <igx-column-group header="General Information">
+                <igx-column field="CompanyName" [hasSummary]="true" [groupable]="true" [editable]="true" [sortable]="true"></igx-column>
+                <igx-column-group [movable]="true" header="Personel Details" [collapsible]="true"
+                        dataType="string" [expanded]="true" (expandedChange)="expandChange($event)">
+                    <igx-column field="PersonelDetails" [width]="'250px'" [groupable]="true" [visibleWhenCollapsed]="true" [sortable]="true"></igx-column>
+                    <igx-column field="ContactName" [groupable]="true" [visibleWhenCollapsed]="false"
+                        [hasSummary]="true" [sortable]="true" [groupable]="true" [editable]=true></igx-column>
+                    <igx-column field="ContactTitle" [visibleWhenCollapsed]="false" [sortable]="true" [groupable]="true" [editable]="true"></igx-column>
+                </igx-column-group>
+            </igx-column-group>
+            <igx-column-group header="Address Information">
+                <igx-column-group header="Location" [groupable]="true" [collapsible]="true" [expanded]="false" (expandedChange)="expandChange($event)">
+                    <igx-column field="FullAddress" header="Full Address" [width]="'250px'" [visibleWhenCollapsed]="true"
+                        [dataType]="'string'" [visibleWhenCollapsed]="true" [sortable]="true"></igx-column>
+                    <igx-column field="Country" [groupable]="true" [visibleWhenCollapsed]="false" [hasSummary]="true" [sortable]="true" [editable]="true"></igx-column>
+                    <igx-column field="Region" [groupable]="true" [visibleWhenCollapsed]="false" [sortable]="true" [groupable]="true" [editable]="true"></igx-column>
+                    <igx-column field="City" [groupable]="true" [visibleWhenCollapsed]="false" [hasSummary]="true" [groupable]="true" [editable]="true"></igx-column>
+                    <igx-column field="Address" [visibleWhenCollapsed]="false"></igx-column>
+                </igx-column-group>
+                <igx-column-group header="Contact Information">
+                    <igx-column field="Phone" [groupable]="true" [editable]="true"></igx-column>
+                    <igx-column field="Fax" [editable]="true"></igx-column>
+                    <igx-column field="PostalCode"></igx-column>
+                </igx-column-group>
+            </igx-column-group>
+        </igx-grid>
+    </div>
+    <div class="list-sample">
+        <igx-list>
+            <igx-list-item *ngIf="keyboardCollection.length > 0" isHeader=true>Combinations</igx-list-item>
+            <igx-list-item @load *ngFor="let c of keyboardCollection; let idx=index" [ngClass]="{'completed': c.completed}" [@toggle]="c.completed ? 'selected' : 'deselected'">
+                <h4 igxListLineTitle>{{ c.title }}</h4>
+                <p igxListLineSubTitle>{{ c.subTitle }}</p>
+                <igx-checkbox [checked]="c.completed" (change)="onCheckChange($event, idx)"></igx-checkbox>
+            </igx-list-item>
+            <ng-template igxEmptyList>
+                <span class="empty-list">
+                    <h6>Use the native navigation of the browser until you reach some of the following grid sections below:</h6>
+                    <ul>
+                        <li>Header</li>
+                        <li>Body</li>
+                        <li>Summary</li>
+                    </ul>
+                    <h6>When reached, an <b>action list</b> will be shown.</h6>
+                </span>
+            </ng-template>
+        </igx-list>
+    </div>
+</div>

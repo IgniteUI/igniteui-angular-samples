@@ -1,0 +1,11 @@
+.grid__wrapper {
+  margin: 0 16px;
+  padding-top: 10px;
+}
+
+.row-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: calc(1.25rem + (1.5rem * 2));
+}

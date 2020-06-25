@@ -1,0 +1,70 @@
+<div class="wrapper theme">
+    <div class="sample-content">
+        <div class="sample-column">
+            <igx-grid igxPreventDocumentScroll #grid [data]="data" [displayDensity]="'cosy'" width="950px" height="550px">
+                <igx-column-group header="Customer Information" [collapsible]="true">
+                    <ng-template igxCollapsibleIndicator let-column="column">
+                        <igx-icon [attr.draggable]="false" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef"[showDelay]="0" [hideDelay]="0">{{column.expanded ? 'expand_more' : 'chevron_right'}} </igx-icon>
+                        <div #tooltipRef="tooltip" igxTooltip>
+                            <span *ngIf="column.expanded">The column is expanded! Click here to collapse</span>
+                            <span [hidden]="column.expanded">The column is collapsed! Click here to expand</span>
+                        </div>
+                    </ng-template>
+                    <igx-column field="CustomerName" header="Fullname" [dataType]="'string'" [visibleWhenCollapsed]="true"></igx-column>
+                    <igx-column field="CustomerID" header="Customer ID" [dataType]="'string'" [visibleWhenCollapsed]="false"></igx-column>
+                    <igx-column field="FirstName" header="First Name" [dataType]="'string'" [visibleWhenCollapsed]="false">
+                    </igx-column>
+                    <igx-column field="LastName" header="Last Name" [dataType]="'string'" [visibleWhenCollapsed]="false">
+                    </igx-column>
+                    <igx-column-group header="Customer Address" [collapsible]="true" [expanded]="false">
+                        <ng-template igxCollapsibleIndicator let-column="column">
+                            <igx-icon [attr.draggable]="false" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef" [showDelay]="0" [hideDelay]="0">{{column.expanded ? 'expand_more' : 'chevron_right'}} </igx-icon>
+                            <div #tooltipRef="tooltip" igxTooltip>
+                                <span *ngIf="column.expanded">The column is expanded! Click here to collapse</span>
+                                <span [hidden]="column.expanded">The column is collapsed! Click here to expand</span>
+                            </div>
+                        </ng-template>
+                        <igx-column field="FullAddress" header="Full Address" [width]="'250px'" [dataType]="'string'" [sortable]="true" [visibleWhenCollapsed]="true">
+                        </igx-column>
+                        <igx-column field="Country" header="Country" [dataType]="'string'" [sortable]="true" [visibleWhenCollapsed]="false">
+                        </igx-column>
+                        <igx-column field="City" header="City" [dataType]="'string'" [sortable]="true"[visibleWhenCollapsed]="false">
+                        </igx-column>
+                        <igx-column field="Address" header="Address" [dataType]="'string'" [sortable]="true" [visibleWhenCollapsed]="false">
+                        </igx-column>
+                        <igx-column field="PostalCode" header="Postal Code" [dataType]="'string'" [sortable]="true" [visibleWhenCollapsed]="false">
+                        </igx-column>
+                    </igx-column-group>
+                </igx-column-group>
+                <igx-column field="ShipperName" header="Shipper Name" [dataType]="'string'" [sortable]="true">
+                </igx-column>
+                <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [sortable]="true">
+                    <ng-template igxCell let-cell="cell" let-val>
+                        {{val | date:'dd/MM/yyyy'}}
+                    </ng-template>
+                </igx-column>
+                <igx-column-group header="Product Details" [collapsible]="true" [expanded]="false">
+                    <ng-template igxCollapsibleIndicator let-column="column">
+                        <igx-icon [attr.draggable]="false" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef" [showDelay]="0" [hideDelay]="0">{{column.expanded ? 'expand_more' : 'chevron_right'}} </igx-icon>
+                        <div #tooltipRef="tooltip" igxTooltip>
+                            <span *ngIf="column.expanded">The column is expanded! Click here to collapse</span>
+                            <span [hidden]="column.expanded">The column is collapsed! Click here to expand</span>
+                        </div>
+                    </ng-template>
+                    <igx-column field="ProductName" header="Name" [dataType]="'string'" [sortable]="true"
+                        [filterable]="false">
+                    </igx-column>
+                    <igx-column field="UnitPrice" header="Unit Price" dataType="number" [sortable]="true"[filterable]="false">
+                    </igx-column>
+                    <igx-column field="ProductID" header="ID" [dataType]="'string'" [sortable]="true" [visibleWhenCollapsed]="true"
+                        [filterable]="false">
+                    </igx-column>
+                    <igx-column field="Quantity" header="Quantity" dataType="number" [sortable]="true" [filterable]="false" [visibleWhenCollapsed]="false">
+                    </igx-column>
+                    <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [sortable]="true" [visibleWhenCollapsed]="false">
+                    </igx-column>
+                </igx-column-group>
+            </igx-grid>
+        </div>
+    </div>
+</div>

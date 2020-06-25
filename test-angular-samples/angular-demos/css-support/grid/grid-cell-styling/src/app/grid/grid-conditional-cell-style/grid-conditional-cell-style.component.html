@@ -1,0 +1,34 @@
+<div class="grid__wrapper">
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" height="500px" width="100%" [autoGenerate]="false">
+        <igx-column header="Rank" field="Id" sortable="true" [editable]="true" [sortable]="true" [cellClasses]="rankClasses"></igx-column>
+        <igx-column field="Name" header="Athlete" [sortable]="true"></igx-column>
+        <igx-column field="BeatsPerMinute" header="Beats per minute" dataType="number" [editable]="true" [sortable]="true"
+            [cellClasses]="beatsPerMinuteClasses"></igx-column>
+        <igx-column field="TopSpeed" header="Top Speed" dataType="number" [editable]="true" [sortable]="true"
+            [cellClasses]="speedClasses">
+            <ng-template igxCell let-val>
+                <div class="cell__inner">
+                    {{ val | number: '1.1-5' }}
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="TrackProgress" header="Track Progress" [editable]="true" [sortable]="true">
+            <ng-template igxCell let-val>
+                <div class="cellContainer">
+                    <span class="cellAlignSyle">
+                        {{ val / 100 | percent }}
+                    </span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="CountryFlag" header="Country">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner_2">
+                    <span>
+                        <img [src]="cell.value" class="flag" />
+                    </span>
+                </div>
+            </ng-template>
+        </igx-column>
+    </igx-grid>
+</div>

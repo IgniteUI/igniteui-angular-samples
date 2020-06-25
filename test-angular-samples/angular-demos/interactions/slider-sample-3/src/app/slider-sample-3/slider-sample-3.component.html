@@ -1,0 +1,10 @@
+<div class="sample-center">
+    <div class="container">
+        <igx-slider [minValue]="0" [maxValue]="100" [step]="10" [(ngModel)]="task.completion"></igx-slider>
+        <igx-input-group type="border">
+            <input igxInput id="percentInput" type="number" [ngModel]="task.completion" />
+            <label igxLabel for="percentInput">Task Completion</label>
+            <igx-suffix>%</igx-suffix>
+        </igx-input-group>
+    </div>
+</div>

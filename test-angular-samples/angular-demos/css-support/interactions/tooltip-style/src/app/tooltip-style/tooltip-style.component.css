@@ -1,0 +1,76 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+  --igx-tooltip-border-radius: 6px;
+  --igx-tooltip-background: #011627;
+  --igx-tooltip-text-color: #ECAA53;
+  --igx-tooltip-roundness: 0.25rem; }
+
+:host ::ng-deep .igx-tooltip, :host ::ng-deep .igx-tooltip--desktop, :host ::ng-deep .igx-tooltip--mobile {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  background: var(--igx-tooltip-background);
+  color: var(--igx-tooltip-text-color);
+  border-radius: var(--igx-tooltip-border-radius);
+  margin: 0 auto; }
+
+:host ::ng-deep .igx-tooltip--desktop {
+  padding: 0 0.5rem;
+  min-height: 1.5rem; }
+
+:host ::ng-deep .igx-tooltip--mobile {
+  padding: 0 1rem;
+  min-height: 2rem; }

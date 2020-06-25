@@ -1,0 +1,15 @@
+<div class="sample-column card-wrapper">
+    <div>
+        <igx-select #select [(ngModel)]="locale">
+            <igx-prefix>Locales: </igx-prefix>
+            <igx-select-item *ngFor="let locale of locales" [value]="locale">
+                {{ locale }}
+            </igx-select-item>
+        </igx-select>
+    </div>
+
+    <igx-card>
+        <igx-month-picker #monthPicker [(ngModel)]="date" [locale]="locale" [formatOptions]="formatOptions">
+        </igx-month-picker>
+    </igx-card>
+</div>

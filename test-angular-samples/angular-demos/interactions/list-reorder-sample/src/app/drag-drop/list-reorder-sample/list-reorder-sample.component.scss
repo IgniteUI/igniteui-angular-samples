@@ -1,0 +1,26 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+:host {
+    display: block;
+    margin: 16px;
+
+    igx-list {
+        max-width: 336px;
+        overflow: visible;
+    }
+
+    igx-list-item {
+        z-index: 0;
+
+        &.dragged {
+            box-shadow: igx-elevation($elevations, 8);
+            z-index: 1;
+        }
+    }
+
+    igx-icon {
+        cursor: move;
+        user-select: none;
+    }
+}
+

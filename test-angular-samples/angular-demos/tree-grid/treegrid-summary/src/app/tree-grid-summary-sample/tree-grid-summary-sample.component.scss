@@ -1,0 +1,89 @@
+:host{
+    ::ng-deep {
+        .grid-controls {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            margin: 0 16px 24px;
+    
+            igx-switch {
+                margin-top: 24px;
+            }
+    
+        }
+
+        .header {
+            height: 100%;
+        }
+
+        .igx-grid__th .title{
+            width: 100%;
+            cursor: auto;
+        }
+          
+    }
+}
+
+.grid__wrapper {
+    margin: 0 16px;
+}
+
+@media screen and (max-width: 677px){
+
+    [class*=header-icon]{
+        padding-bottom: 17px;
+        padding-top: 17px;
+        font-size: 1.4em;
+        width: 1.1em;
+        height: 1.1em;
+        float: right;
+    }
+    [class*=text]{
+        float:left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 50%;
+    }  
+}
+
+
+@media screen and (min-width: 677px){
+
+    [class*=header-icon]{
+        padding-top: 17px;
+        font-size: 1.4em;
+        width: 1.1em;
+        height: 1.1em;
+        float: right;
+    }
+
+    [class*=text] {
+        float:left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 50%;
+    }    
+}
+
+
+@media screen and (min-width: 992px){
+
+    [class*=header-icon] {
+        padding-top: 17px;
+        font-size: 1.4em;
+        width: 1.1em;
+        height: 1.1em;
+        float: right;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    [class*=text] {
+        float:left;
+        white-space: nowrap;
+        width: 50%;
+        cursor: auto;
+    }
+}

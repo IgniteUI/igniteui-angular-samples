@@ -1,0 +1,18 @@
+<div class="grid_wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  #treeGrid igxDrop [data]="localData" childDataKey="Employees" width="900px" height="550px"
+        [autoGenerate]="false" [rowDraggable]="true" [paging]="true" foreignKey="ParentID" [rowSelection]="selectionMode"
+        [primaryKey]="'ID'" (onRowDragStart)="rowDragStart($event)" (dropped)="dropInGrid($event)">
+        <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [movable]="true"
+            [resizable]="true">
+        </igx-column>
+        <igx-column field="Title" dataType="string" [sortable]="true" [editable]="true" [movable]="true"
+            [resizable]="true">
+        </igx-column>
+        <igx-column field="HireDate" header="Hire Date" dataType="date" [sortable]="true" [editable]="true"
+            [movable]="true" [resizable]="true" width="150px">
+        </igx-column>
+        <igx-column field="Age" dataType="number" [sortable]="true" [editable]="true" [movable]="true"
+            [resizable]="true" width="100px">
+        </igx-column>
+    </igx-tree-grid>
+</div>

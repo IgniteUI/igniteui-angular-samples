@@ -1,0 +1,404 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+.container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 18px;
+  height: 100%; }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+  --igx-slider-variant: material;
+  --igx-slider-tick-color: #b246c2;
+  --igx-slider-tick-color-tall: #ff7400;
+  --igx-slider-tick-label-color: #b246c2;
+  --igx-slider-tick-label-color-tall: #ff7400;
+  --igx-slider-track-color: #ff7400;
+  --igx-slider-thumb-color: #ff7400;
+  --igx-slider-thumb-border-color: #e41c77;
+  --igx-slider-label-background-color: #e41c77;
+  --igx-slider-label-text-color: black;
+  --igx-slider-disabled-thumb-color: #bcbcbc;
+  --igx-slider-disabled-base-track-color: rgba(0, 0, 0, 0.26);
+  --igx-slider-thumb-disabled-border-color: rgba(0, 0, 0, 0.26);
+  --igx-slider-base-track-color: #ddd;
+  --igx-slider-base-track-hover-color: #ccc;
+  --igx-slider-track-hover-color: #ff7400; }
+
+:host ::ng-deep .igx-slider, :host ::ng-deep .igx-slider--disabled {
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: 3rem;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  -ms-flex-align: center;
+      align-items: center;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  :host ::ng-deep .igx-slider:hover .igx-slider__track-fill, :host ::ng-deep .igx-slider--disabled:hover .igx-slider__track-fill {
+    background: var(--igx-slider-track-hover-color); }
+  :host ::ng-deep .igx-slider:hover .igx-slider__track, :host ::ng-deep .igx-slider--disabled:hover .igx-slider__track {
+    background: var(--igx-slider-base-track-hover-color); }
+  :host ::ng-deep .igx-slider:hover .igx-slider--disabled .igx-slider__track, .igx-slider--disabled :host ::ng-deep .igx-slider:hover .igx-slider__track, :host ::ng-deep .igx-slider--disabled:hover .igx-slider__track {
+    background: var(--igx-slider-disabled-base-track-color); }
+  :host ::ng-deep .igx-slider:hover .igx-slider__thumb-from .dot::before, .igx-slider__thumb-from :host ::ng-deep .igx-slider:hover .dot::before, :host ::ng-deep .igx-slider--disabled:hover .igx-slider__thumb-from .dot::before, .igx-slider__thumb-from :host ::ng-deep .igx-slider--disabled:hover .dot::before, :host ::ng-deep .igx-slider:hover .igx-slider__thumb-to .dot::before, .igx-slider__thumb-to :host ::ng-deep .igx-slider:hover .dot::before, :host ::ng-deep .igx-slider--disabled:hover .igx-slider__thumb-to .dot::before, .igx-slider__thumb-to :host ::ng-deep .igx-slider--disabled:hover .dot::before {
+    border-color: var(--igx-slider-track-hover-color); }
+  :host ::ng-deep .igx-slider:hover .igx-slider--disabled .igx-slider__thumb-from .dot::before, .igx-slider--disabled .igx-slider__thumb-from :host ::ng-deep .igx-slider:hover .dot::before, :host ::ng-deep .igx-slider--disabled:hover .igx-slider__thumb-from .dot::before, :host ::ng-deep .igx-slider:hover .igx-slider--disabled .igx-slider__thumb-to .dot::before, .igx-slider--disabled .igx-slider__thumb-to :host ::ng-deep .igx-slider:hover .dot::before, :host ::ng-deep .igx-slider--disabled:hover .igx-slider__thumb-to .dot::before {
+    border-color: var(--igx-slider-thumb-disabled-border-color); }
+
+:host ::ng-deep .igx-slider__thumbs {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  cursor: default;
+  z-index: 1;
+  left: 0; }
+
+:host ::ng-deep .igx-slider__track {
+  position: relative;
+  width: 100%;
+  height: 0.125rem;
+  background: var(--igx-slider-base-track-color);
+  transition: background 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+:host ::ng-deep .igx-slider--disabled .igx-slider__track, .igx-slider--disabled :host ::ng-deep .igx-slider__track {
+  background: var(--igx-slider-disabled-base-track-color); }
+
+:host ::ng-deep .igx-slider__track-fill {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  background: var(--igx-slider-track-color);
+  -ms-transform-origin: left center;
+      transform-origin: left center;
+  -ms-transform: scaleX(0);
+      transform: scaleX(0); }
+
+:host ::ng-deep .igx-slider--disabled .igx-slider__track-fill, .igx-slider--disabled :host ::ng-deep .igx-slider__track-fill {
+  visibility: hidden; }
+
+:host ::ng-deep .igx-slider__ticks {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0.25rem;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  z-index: 1; }
+  :host ::ng-deep .igx-slider__ticks.igx-slider__ticks--top {
+    bottom: 0.25rem;
+    top: auto;
+    -ms-flex-align: end;
+        align-items: flex-end; }
+
+:host ::ng-deep .igx-slider__ticks-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  position: relative; }
+  :host ::ng-deep .igx-slider__ticks-group:first-of-type {
+    margin-left: -0.0625rem; }
+  :host ::ng-deep .igx-slider__ticks-group:last-of-type {
+    margin-left: -0.0625rem; }
+
+:host ::ng-deep .igx-slider__ticks-label {
+  color: var(--igx-slider-tick-label-color);
+  position: absolute;
+  top: 1rem;
+  -ms-transform: translate(-50%);
+      transform: translate(-50%);
+  line-height: .7;
+  opacity: 1;
+  transition: opacity 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+:host ::ng-deep .igx-slider__ticks-tick {
+  background: var(--igx-slider-tick-color);
+  height: 0.5rem;
+  width: 0.125rem; }
+
+:host ::ng-deep .igx-slider__ticks--tall .igx-slider__ticks-label {
+  top: calc(1rem + 0.5rem); }
+
+:host ::ng-deep .igx-slider--disabled .igx-slider__ticks-tick, .igx-slider--disabled :host ::ng-deep .igx-slider__ticks-tick {
+  background: var(--igx-slider-disabled-base-track-color) !important; }
+
+:host ::ng-deep .igx-slider--disabled .igx-slider__ticks-label, .igx-slider--disabled :host ::ng-deep .igx-slider__ticks-label {
+  color: var(--igx-slider-disabled-base-track-color) !important; }
+
+:host ::ng-deep .igx-slider__ticks-group--tall .igx-slider__ticks-tick {
+  height: 1rem;
+  background: var(--igx-slider-tick-color-tall); }
+
+:host ::ng-deep .igx-slider__ticks-group--tall .igx-slider__ticks-label {
+  top: calc(1rem + 0.5rem);
+  color: var(--igx-slider-tick-label-color-tall); }
+
+:host ::ng-deep .igx-slider__ticks--top .igx-slider__ticks-label {
+  bottom: calc(0.5rem + 0.5rem);
+  top: auto; }
+
+:host ::ng-deep .igx-slider__ticks--tall.igx-slider__ticks--top .igx-slider__ticks-label {
+  bottom: calc(1rem + 0.5rem);
+  top: auto; }
+
+:host ::ng-deep .igx-slider__tick-label--hidden {
+  opacity: 0; }
+
+:host ::ng-deep .igx-slider__track-steps {
+  position: absolute;
+  width: 100%;
+  height: 0.125rem;
+  background-size: 100% 0.125em;
+  opacity: .85;
+  transition: opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1; }
+
+:host ::ng-deep .igx-slider--disabled .igx-slider__track-steps, .igx-slider--disabled :host ::ng-deep .igx-slider__track-steps {
+  visibility: hidden; }
+
+:host ::ng-deep .igx-slider__tick-labels--top-bottom .igx-slider__ticks-group {
+  display: block; }
+
+:host ::ng-deep .igx-slider__tick-labels--top-bottom .igx-slider__ticks-label {
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  -ms-transform: translate(-50%) rotate(0deg);
+      transform: translate(-50%) rotate(0deg); }
+
+:host ::ng-deep .igx-slider__tick-labels--top-bottom .igx-slider__ticks--tall .igx-slider__ticks-label {
+  top: calc(1rem + 0.125rem); }
+
+:host ::ng-deep .igx-slider__ticks--top.igx-slider__tick-labels--top-bottom .igx-slider__ticks-label {
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  -ms-transform: translate(-50%) rotate(0deg);
+      transform: translate(-50%) rotate(0deg); }
+
+:host ::ng-deep .igx-slider__ticks--top.igx-slider__tick-labels--top-bottom .igx-slider__ticks--tall .igx-slider__ticks-label {
+  bottom: calc(1rem + 0.125rem); }
+
+:host ::ng-deep .igx-slider__tick-labels--bottom-top .igx-slider__ticks-group {
+  display: block; }
+
+:host ::ng-deep .igx-slider__tick-labels--bottom-top .igx-slider__ticks-label {
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  -ms-transform: translate(-50%) rotate(180deg);
+      transform: translate(-50%) rotate(180deg); }
+
+:host ::ng-deep .igx-slider__ticks--top.igx-slider__tick-labels--bottom-top .igx-slider__ticks-label {
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  -ms-transform: translate(-50%) rotate(180deg);
+      transform: translate(-50%) rotate(180deg); }
+
+:host ::ng-deep .igx-slider__ticks--top.igx-slider__tick-labels--bottom-top .igx-slider__ticks--tall .igx-slider__ticks-label {
+  bottom: calc(1rem + 0.125rem); }
+
+:host ::ng-deep .igx-slider__thumb-from, :host ::ng-deep .igx-slider__thumb-to {
+  position: absolute;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 40px;
+  height: 40px;
+  outline-style: none;
+  top: -1.25rem;
+  margin-left: -1.25rem; }
+  :host ::ng-deep .igx-slider__thumb-from:focus .dot::after, :host ::ng-deep .igx-slider__thumb-to:focus .dot::after {
+    opacity: .18;
+    /* 32 / 40 */
+    -ms-transform: scale(0.8);
+        transform: scale(0.8); }
+
+:host ::ng-deep .igx-slider--disabled .igx-slider__thumb-from:hover .igx-slider__label-from .label, .igx-slider__label-from :host ::ng-deep .igx-slider--disabled .igx-slider__thumb-from:hover .label, .igx-slider--disabled :host ::ng-deep .igx-slider__thumb-from:hover .igx-slider__label-from .label, .igx-slider__label-from .igx-slider--disabled :host ::ng-deep .igx-slider__thumb-from:hover .label, :host ::ng-deep .igx-slider--disabled .igx-slider__thumb-to:hover .igx-slider__label-from .label, .igx-slider__label-from :host ::ng-deep .igx-slider--disabled .igx-slider__thumb-to:hover .label, .igx-slider--disabled :host ::ng-deep .igx-slider__thumb-to:hover .igx-slider__label-from .label, .igx-slider__label-from .igx-slider--disabled :host ::ng-deep .igx-slider__thumb-to:hover .label, :host ::ng-deep .igx-slider--disabled .igx-slider__thumb-from:hover .igx-slider__label-to .label, .igx-slider__label-to :host ::ng-deep .igx-slider--disabled .igx-slider__thumb-from:hover .label, .igx-slider--disabled :host ::ng-deep .igx-slider__thumb-from:hover .igx-slider__label-to .label, .igx-slider__label-to .igx-slider--disabled :host ::ng-deep .igx-slider__thumb-from:hover .label, :host ::ng-deep .igx-slider--disabled .igx-slider__thumb-to:hover .igx-slider__label-to .label, .igx-slider__label-to :host ::ng-deep .igx-slider--disabled .igx-slider__thumb-to:hover .label, .igx-slider--disabled :host ::ng-deep .igx-slider__thumb-to:hover .igx-slider__label-to .label, .igx-slider__label-to .igx-slider--disabled :host ::ng-deep .igx-slider__thumb-to:hover .label {
+  opacity: 0; }
+
+:host ::ng-deep .igx-slider__label-from, :host ::ng-deep .igx-slider__label-to {
+  position: absolute;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  height: 40px;
+  outline-style: none;
+  top: -1.25rem;
+  margin: 0 auto; }
+
+:host ::ng-deep .igx-slider__label-from .label, .igx-slider__label-from :host ::ng-deep .label, :host ::ng-deep .igx-slider__label-to .label, .igx-slider__label-to :host ::ng-deep .label {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+  top: -2.25rem;
+  left: -50%;
+  pointer-events: none;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.125rem;
+  border-radius: 1.125rem;
+  margin: 0 auto;
+  line-height: 1.125rem;
+  color: var(--igx-slider-label-text-color);
+  background: var(--igx-slider-label-background-color);
+  opacity: 0;
+  border-color: var(--igx-slider-label-background-color) transparent transparent;
+  transition: opacity 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: -1; }
+  :host ::ng-deep .igx-slider__label-from .label::after, .igx-slider__label-from :host ::ng-deep .label::after, :host ::ng-deep .igx-slider__label-to .label::after, .igx-slider__label-to :host ::ng-deep .label::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -18px;
+    width: 2.25rem;
+    height: 36px;
+    border-radius: 0 18px 18px;
+    background: inherit;
+    -ms-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    z-index: -1; }
+  :host ::ng-deep .igx-slider__label-from .label::before, .igx-slider__label-from :host ::ng-deep .label::before, :host ::ng-deep .igx-slider__label-to .label::before, .igx-slider__label-to :host ::ng-deep .label::before {
+    content: '';
+    position: absolute;
+    top: 2.5rem;
+    left: calc(50% - 1px);
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-top: 0.875rem solid;
+    border-color: inherit; }
+
+:host ::ng-deep .igx-slider__thumb-from .dot, .igx-slider__thumb-from :host ::ng-deep .dot, :host ::ng-deep .igx-slider__thumb-to .dot, .igx-slider__thumb-to :host ::ng-deep .dot {
+  position: relative;
+  left: 0;
+  padding: 1.25rem;
+  pointer-events: none; }
+  :host ::ng-deep .igx-slider__thumb-from .dot:hover::after, .igx-slider__thumb-from :host ::ng-deep .dot:hover::after, :host ::ng-deep .igx-slider__thumb-to .dot:hover::after, .igx-slider__thumb-to :host ::ng-deep .dot:hover::after {
+    opacity: .12;
+    /* 32 / 40 */
+    -ms-transform: scale(0.8);
+        transform: scale(0.8); }
+  :host ::ng-deep .igx-slider__thumb-from .dot::before, .igx-slider__thumb-from :host ::ng-deep .dot::before, :host ::ng-deep .igx-slider__thumb-to .dot::before, .igx-slider__thumb-to :host ::ng-deep .dot::before {
+    position: absolute;
+    content: '';
+    width: 0.75rem;
+    height: 0.75rem;
+    left: 0.875rem;
+    top: 0.875rem;
+    background: var(--igx-slider-thumb-color);
+    border: 0rem solid var(--igx-slider-thumb-border-color);
+    -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-radius 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 1.25rem; }
+  :host ::ng-deep .igx-slider__thumb-from .dot::after, .igx-slider__thumb-from :host ::ng-deep .dot::after, :host ::ng-deep .igx-slider__thumb-to .dot::after, .igx-slider__thumb-to :host ::ng-deep .dot::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--igx-slider-thumb-color);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    -ms-transform: scale(0);
+        transform: scale(0);
+    -ms-transform-origin: center center;
+        transform-origin: center center;
+    transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 50%; }
+
+:host ::ng-deep .igx-slider--disabled .igx-slider__thumb-from .dot, .igx-slider--disabled .igx-slider__thumb-from :host ::ng-deep .dot, :host ::ng-deep .igx-slider--disabled .igx-slider__thumb-to .dot, .igx-slider--disabled .igx-slider__thumb-to :host ::ng-deep .dot {
+  pointer-events: none; }
+  :host ::ng-deep .igx-slider--disabled .igx-slider__thumb-from .dot::before, .igx-slider--disabled .igx-slider__thumb-from :host ::ng-deep .dot::before, :host ::ng-deep .igx-slider--disabled .igx-slider__thumb-to .dot::before, .igx-slider--disabled .igx-slider__thumb-to :host ::ng-deep .dot::before {
+    background: var(--igx-slider-disabled-thumb-color);
+    border-color: var(--igx-slider-thumb-disabled-border-color);
+    border-radius: 1.25rem; }
+  :host ::ng-deep .igx-slider--disabled .igx-slider__thumb-from .dot::after, .igx-slider--disabled .igx-slider__thumb-from :host ::ng-deep .dot::after, :host ::ng-deep .igx-slider--disabled .igx-slider__thumb-to .dot::after, .igx-slider--disabled .igx-slider__thumb-to :host ::ng-deep .dot::after {
+    -ms-transform: scale(0);
+        transform: scale(0); }
+
+:host ::ng-deep .igx-slider__thumb-from--active .dot::before, .igx-slider__thumb-from--active :host ::ng-deep .dot::before, :host ::ng-deep .igx-slider__thumb-to--active .dot::before, .igx-slider__thumb-to--active :host ::ng-deep .dot::before, :host ::ng-deep .igx-slider__thumb--hovered .dot::before, .igx-slider__thumb--hovered :host ::ng-deep .dot::before {
+  border-radius: 0 20px 20px; }
+
+:host ::ng-deep .igx-slider__thumb--pressed .dot::after, .igx-slider__thumb--pressed :host ::ng-deep .dot::after {
+  opacity: .24 !important;
+  /* 48 / 40 */
+  -ms-transform: scale(1.2) !important;
+      transform: scale(1.2) !important; }
+
+:host ::ng-deep .igx-slider__label-from--active .label, .igx-slider__label-from--active :host ::ng-deep .label, :host ::ng-deep .igx-slider__label-to--active .label, .igx-slider__label-to--active :host ::ng-deep .label {
+  opacity: 1; }
+
+:host ::ng-deep .igx-slider__thumb-from--active, :host ::ng-deep .igx-slider__label-from--active, :host ::ng-deep .igx-slider__thumb-to--active, :host ::ng-deep .igx-slider__label-to--active {
+  z-index: 1; }

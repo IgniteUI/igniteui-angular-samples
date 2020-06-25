@@ -1,0 +1,36 @@
+.grid__wrapper {
+  margin: 0 16px;
+  padding-top: 10px; }
+
+.buttons-row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding: 5px; }
+
+.buttons-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+  padding: 10px 0; }
+
+.transaction--update, .transaction--delete, .transaction--add {
+  font-weight: 600; }
+
+.transaction--add {
+  color: #6b3; }
+
+.transaction--update {
+  color: #4a71b9; }
+
+.transaction--delete {
+  color: #ee4920; }
+
+.transaction-log {
+  word-wrap: none; }

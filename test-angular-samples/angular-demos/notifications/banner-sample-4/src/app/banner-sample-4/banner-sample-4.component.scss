@@ -1,0 +1,62 @@
+@import '~igniteui-angular/lib/core/styles/themes/utilities';
+
+.settings {
+    width: 400px;
+    height: 360px;
+    margin: 24px auto;
+    overflow: hidden;
+    box-shadow: igx-elevation($elevations, 2);
+    border-radius: 2px;
+}
+
+igx-banner {
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.profile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 24px 16px;
+    background-image: url('https://www.infragistics.com/angular-demos/assets/images/banner/cort.jpg');
+
+    &__avatar {
+        box-sizing: content-box;
+        border: 2px solid rgba(0, 0, 0, .24);
+        z-index: 2;
+    }
+
+    &__detail {
+        color: #000000;
+        margin-left: 16px;
+        z-index: 2;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #f3f3f3;
+        opacity: .64;
+        z-index: 1;
+    }
+}
+
+.reply {
+    flex-flow: column;
+    padding: 0 16px;
+
+    &__switch {
+        width: 100%;
+        padding: 16px 0;
+        justify-content: space-between;
+    }
+
+    &__message {
+        resize: none;
+        height: 14rem;
+    }
+}

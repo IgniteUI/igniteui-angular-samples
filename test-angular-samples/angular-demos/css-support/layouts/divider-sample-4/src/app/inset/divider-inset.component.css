@@ -1,0 +1,30 @@
+.divider-sample {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  border: 1px solid #ededed; }
+  .divider-sample > div {
+    margin-left: 40px; }
+    .divider-sample > div:first-of-type {
+      margin-left: 0;
+      margin-right: 0; }
+  .divider-sample h4 {
+    margin-top: 0; }
+  .divider-sample p {
+    margin-top: 0; }
+  .divider-sample .mt {
+    margin-top: 16px;
+    margin-bottom: 0; }
+  .divider-sample .mb {
+    margin-bottom: 16px; }
+
+.inset-sample {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: start;
+      justify-content: flex-start; }
+
+.divider-indent-text {
+  padding-left: 40px; }

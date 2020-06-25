@@ -1,0 +1,27 @@
+.sample-holder {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  height: 100%;
+  padding: 16px; }
+
+.example-content {
+  padding: 16px; }
+
+.my-expansion-panel {
+  max-width: 500px;
+  min-width: 300px;
+  width: 100%;
+  border-top: 1px solid rgba(174, 174, 174, 0.25);
+  border-left: 1px solid rgba(174, 174, 174, 0.25);
+  border-right: 1px solid rgba(174, 174, 174, 0.25); }
+  .my-expansion-panel:last-of-type {
+    border-bottom: 1px solid rgba(174, 174, 174, 0.25); }
+
+.body {
+  padding: 0 16px 16px 16px; }

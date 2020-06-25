@@ -1,0 +1,5 @@
+:host {
+  display: block;
+  padding: 16px; }
+  :host h4 {
+    margin: 8px; }

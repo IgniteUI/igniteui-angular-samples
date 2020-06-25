@@ -1,0 +1,30 @@
+<div class="linear-container">
+    <igx-linear-bar
+        type="default"
+        [value]="100"
+    ></igx-linear-bar>
+    <igx-linear-bar
+        type="success"
+        [value]="100"
+        class="indeterminate"
+        [indeterminate]="true"
+        [striped]="true"
+    ></igx-linear-bar>
+    <igx-linear-bar
+        type="error"
+        [value]="100"
+        [textAlign]="positionEnd"
+        [text]="'Custom text'"
+    ></igx-linear-bar>
+    <igx-linear-bar
+        type="info"
+        [value]="100"
+        [textVisibility]="false"
+        [striped]="true"
+    ></igx-linear-bar>
+    <igx-linear-bar
+        type="warning"
+        [value]="100"
+        [textTop]="true"
+    ></igx-linear-bar>
+</div>

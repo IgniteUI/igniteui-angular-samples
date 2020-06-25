@@ -1,0 +1,81 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+igx-card {
+    width: rem(288px);
+    height: rem(128px);
+    margin-bottom: rem(16px);
+    cursor: move;
+
+    &.drag-ghost {
+        transform: scale(1.05);
+        box-shadow: igx-elevation($elevations, 24);
+        color: var(--igx-secondary-300);
+    }
+
+    &.invisible {
+        visibility: hidden !important;
+    }
+
+    [igxCardHeaderTitle] {
+        font-size: rem(16px);
+    }
+
+    &:last-child {
+        margin-bottom: unset;
+    }
+}
+
+:host {
+    display: flex;
+    height: 100%;
+    min-height: rem(656px);
+    user-select: none;
+    padding: rem(16px);
+    overflow: auto;
+
+    article {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1 0 33%;
+        max-width: rem(320px);
+        min-width: rem(320px);
+        padding: 0 rem(16px);
+        background-color: var(--igx-grays-100);
+        border-radius: rem(8px);
+        border: 1px solid var(--igx-grays-200);
+        margin: 0 rem(12px);
+        overflow: auto;
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: rem(8px) 0;
+            align-self: flex-start;
+
+            .state-title {
+                @include igx-type-style($default-type-scale, 'subtitle-1') {
+                    font-weight: 600;
+                    margin: 0;
+                };
+            }
+
+            .state-number {
+                font-size: rem(12px);
+                font-weight: bold;
+                padding: 4px;
+            }
+        }
+
+        &.active {
+            /* IE Fallback color */
+            background-color: #9ba8b0;
+            /* Default color */
+            background-color: var(--igx-navdrawer-item-active-background);
+        }
+    }
+}
+

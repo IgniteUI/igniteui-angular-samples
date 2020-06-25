@@ -1,0 +1,31 @@
+$ep-sample-border: 1px solid rgba(174, 174, 174, 0.25);
+
+.sample-holder{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 16px;
+}
+
+.example-content {
+    padding: 16px;
+}
+
+.my-expansion-panel {
+    max-width: 500px;
+    min-width: 300px;
+    width: 100%;
+    border-top: $ep-sample-border;
+    border-left: $ep-sample-border;
+    border-right: $ep-sample-border;
+
+    &:last-of-type {
+        border-bottom: $ep-sample-border;
+    }
+}
+
+.body {
+    padding: 0 16px 16px 16px;
+}

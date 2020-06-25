@@ -1,0 +1,15 @@
+<div class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" height="620px"
+        width="100%" [showToolbar]='true' [columnPinning]='true'>
+        <igx-column [field]="'Name'" dataType="string" width="250px"></igx-column>
+        <igx-column [field]="'Title'" dataType="string" width="300px" [pinned]='true'></igx-column>
+        <igx-column [field]="'HireDate'" header="Hire Date" dataType="date" width="200px"></igx-column>
+        <igx-column [field]="'Age'" dataType="number" width="100px"></igx-column>
+        <igx-column [field]="'Address'" dataType="string" width="200px"></igx-column>
+        <igx-column [field]="'City'" dataType="string" width="200px"></igx-column>
+        <igx-column [field]="'Country'" dataType="string" width="200px"></igx-column>
+        <igx-column [field]="'Fax'" dataType="string" width="200px"></igx-column>
+        <igx-column [field]="'PostalCode'" header="Postal Code" dataType="string" width="200px"></igx-column>
+        <igx-column [field]="'Phone'" dataType="string" width="200px"></igx-column>
+    </igx-tree-grid>
+</div>

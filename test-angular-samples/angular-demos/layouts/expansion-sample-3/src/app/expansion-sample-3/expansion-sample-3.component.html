@@ -1,0 +1,25 @@
+<div class="sample-holder">
+    <igx-expansion-panel class="my-expansion-panel">
+        <igx-expansion-panel-header [iconPosition]="'right'">
+            <igx-expansion-panel-title>
+                Golden Retriever
+            </igx-expansion-panel-title>
+            <igx-expansion-panel-description>
+                Medium-large gun dog
+            </igx-expansion-panel-description>
+            <igx-expansion-panel-icon>
+                <span class="example-icon" *ngIf="panel.collapsed">Show more</span>
+                <span class="example-icon" *ngIf="!panel.collapsed">Show Less</span>
+            </igx-expansion-panel-icon>
+        </igx-expansion-panel-header>
+        <igx-expansion-panel-body>
+            <div class="example-content">
+                <img height="100" [src]="imgSource" alt="">
+                <span>
+                    The Golden Retriever is a medium-large gun dog that retrieves shot waterfowl, such as ducks and upland game birds, during hunting and shooting parties.[3] The name "retriever" refers to the breed's ability to retrieve shot game undamaged due to their soft mouth. Golden retrievers have an instinctive love of water, and are easy to train to basic or advanced obedience standards.
+                </span>
+                <a igxButton="outlined" target="_blank" [href]="readMore">Read more</a>
+            </div>
+        </igx-expansion-panel-body>
+    </igx-expansion-panel>
+</div>

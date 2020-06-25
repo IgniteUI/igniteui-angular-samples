@@ -1,0 +1,29 @@
+<div class="hgrid-sample">
+    <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata"
+        [height]="'600px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
+        <igx-column field="Artist" [hasSummary]='true'></igx-column>
+        <igx-column field="Photo" [hasSummary]='true' [summaries]="grammySummary">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner_2">
+                    <img [src]="cell.value" class="photo" />
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="Debut"></igx-column>
+        <igx-column field="GrammyNominations" header="Grammy Nominations" [hasSummary]='true' [dataType]="'number'" [summaries]="numberSummary"></igx-column>
+        <igx-column field="GrammyAwards" header="Grammy Awards" [hasSummary]='true' [dataType]="'number'" [summaries]="numberSummary"></igx-column>
+
+        <igx-row-island [key]="'Albums'">
+            <igx-column field="Album" [hasSummary]='true'></igx-column>
+            <igx-column field="LaunchDate" header="Launch Date" [hasSummary]='true' [dataType]="'date'"></igx-column>
+            <igx-column field="BillboardReview" header="Billboard Review" [hasSummary]='true'></igx-column>
+            <igx-column field="USBillboard200" header="US Billboard 200" [hasSummary]='true'></igx-column>
+        <igx-row-island [key]="'Songs'">
+                <igx-column field="Number" header="No." [hasSummary]='true'></igx-column>
+                <igx-column field="Title" [hasSummary]='true'></igx-column>
+                <igx-column field="Released" dataType="date" [hasSummary]='true'></igx-column>
+                <igx-column field="Genre" [hasSummary]='true'></igx-column>
+        </igx-row-island>
+    </igx-row-island>
+    </igx-hierarchical-grid>
+</div>

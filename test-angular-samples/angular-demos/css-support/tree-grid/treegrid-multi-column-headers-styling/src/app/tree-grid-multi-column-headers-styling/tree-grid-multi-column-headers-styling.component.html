@@ -1,0 +1,43 @@
+<div class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" height="480px"
+        displayDensity="compact" width="100%">
+        <igx-column field="Name" dataType="string" width="200px"></igx-column>
+        <igx-column-group header="General Information">
+            <igx-column field="HireDate" dataType="date"></igx-column>
+            <igx-column-group header="Personal Details">
+                <igx-column field="ID" dataType="number"></igx-column>
+                <igx-column field="Title" dataType="string"></igx-column>
+                <igx-column field="Age" dataType="number"></igx-column>
+            </igx-column-group>            
+        </igx-column-group>
+        <igx-column-group header="Address Information">
+            <igx-column-group header="Location">
+                <igx-column field="Country" dataType="string"></igx-column>
+                <igx-column field="City" dataType="string"></igx-column>
+                <igx-column field="Address" dataType="string"></igx-column>
+            </igx-column-group>
+            <igx-column-group header="Contact Information">
+                <igx-column field="Phone" dataType="string"></igx-column>
+                <igx-column field="Fax" dataType="string"></igx-column>
+                <igx-column field="PostalCode" dataType="string"></igx-column>
+            </igx-column-group>
+        </igx-column-group>
+        <igx-column-group header="Address Information">
+            <igx-column-group header="Location">
+                <igx-column field="Country" dataType="string"></igx-column>
+                <igx-column field="City" dataType="string"></igx-column>
+                <igx-column field="Address" dataType="string"></igx-column>
+            </igx-column-group>
+            <igx-column-group header="Contact Information">
+                <igx-column field="Phone" dataType="string"></igx-column>
+                <igx-column field="Fax" dataType="string"></igx-column>
+                <igx-column field="PostalCode" dataType="string"></igx-column>
+            </igx-column-group>
+        </igx-column-group>
+        <igx-column-group header="Contact Information">
+            <igx-column field="Phone" dataType="string"></igx-column>
+            <igx-column field="Fax" dataType="string"></igx-column>
+            <igx-column field="PostalCode" dataType="string"></igx-column>
+        </igx-column-group>
+    </igx-tree-grid>
+</div>

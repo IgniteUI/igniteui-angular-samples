@@ -1,0 +1,4 @@
+<button igxButton="raised" (click)="snackbar.show()">Send message</button>
+<div>
+  <igx-snackbar #snackbar [autoHide]="false" actionText="CLOSE" (onAction)="close(snackbar)">Message sent</igx-snackbar>
+</div>

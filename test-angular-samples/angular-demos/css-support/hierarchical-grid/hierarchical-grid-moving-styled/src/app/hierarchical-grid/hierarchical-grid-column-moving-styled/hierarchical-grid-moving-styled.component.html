@@ -1,0 +1,104 @@
+<igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid [data]="localdata" [height]="'650px'" [width]="'100%'" [paging]="true" [perPage]="15">
+    <igx-column #customerid field="CustomerID" [movable]="true">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">CustomerID</span>
+                <igx-icon class="pin-icon" [attr.draggable]="false" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(customerid)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #companyname field="CompanyName" [movable]="true" width="150px">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">CompanyName</span>
+                <igx-icon class="pin-icon" [attr.draggable]="false" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(companyname)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #contactname field="ContactName" [movable]="true" width="150px">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">ContactName</span>
+                <igx-icon class="pin-icon" [attr.draggable]="false" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(contactname)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #contacttitle field="ContactTitle" [movable]="true" width="150px">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">ContactTitle</span>
+                <igx-icon class="pin-icon" [attr.draggable]="false" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(contacttitle)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #address field="Address" [movable]="true">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">Address</span>
+                <igx-icon class="pin-icon" [attr.draggable]="false" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(address)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #city field="City" [movable]="true">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">City</span>
+                <igx-icon class="pin-icon" [attr.draggable]="false" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(city)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #postalcode field="PostalCode" [movable]="true">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">PostalCode</span>
+                <igx-icon class="pin-icon" [attr.draggable]="false" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(postalcode)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #country field="Country" [movable]="true">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">Country</span>
+                <igx-icon class="pin-icon" [attr.draggable]="false" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(country)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #phone field="Phone" [movable]="true">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">Phone</span>
+                <igx-icon class="pin-icon" [attr.draggable]="false" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(phone)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #fax field="Fax" [movable]="true">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">Fax</span>
+                <igx-icon class="pin-icon" [attr.draggable]="false" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(fax)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+
+    <igx-row-island [key]="'Orders'" [autoGenerate]="false">
+            <igx-column field="OrderID" [movable]="true"></igx-column>
+            <igx-column field="EmployeeID" [movable]="true"></igx-column>
+            <igx-column field="OrderDate" [movable]="true" [dataType]="'date'"></igx-column>
+            <igx-column field="RequiredDate" [movable]="true" [dataType]="'date'"></igx-column>
+            <igx-column field="ShippedDate" [movable]="true" [dataType]="'date'"></igx-column>
+            <igx-column field="ShipVia" [movable]="true"></igx-column>
+            <igx-column field="Freight" [movable]="true"></igx-column>
+            <igx-column field="ShipName" [movable]="true"></igx-column>
+            <igx-column field="ShipAddress" [movable]="true"></igx-column>
+            <igx-column field="ShipCity" [movable]="true"></igx-column>
+            <igx-column field="ShipPostalCode" [movable]="true"></igx-column>
+            <igx-column field="ShipCountry" [movable]="true"></igx-column>
+        <igx-row-island [key]="'OrderDetails'" [autoGenerate]="false">
+                <igx-column field="ProductID" [movable]="true"></igx-column>
+                <igx-column field="UnitPrice" [movable]="true"></igx-column>
+                <igx-column field="Quantity" [movable]="true"></igx-column>
+                <igx-column field="Discount" [movable]="true"></igx-column>
+        </igx-row-island>
+    </igx-row-island>
+
+</igx-hierarchical-grid>

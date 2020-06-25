@@ -1,0 +1,37 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+.sample-content{
+    margin: 10% auto 0;
+}
+
+.sample-column {
+    min-width: 270px;
+}
+
+.btn-group {
+    display: flex;
+    width: 250px;
+    margin-top: 16px;
+    justify-content: space-between;
+}
+
+
+$custom-toast-theme: igx-toast-theme(
+    $background: #dedede,
+    $text-color: #151515,
+    $border-radius: 12px
+);
+
+// :host {
+//     @include igx-css-vars($custom-toast-theme);
+// }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-toast($custom-toast-theme);
+}
+

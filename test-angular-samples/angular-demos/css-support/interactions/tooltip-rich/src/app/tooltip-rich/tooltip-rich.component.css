@@ -1,0 +1,35 @@
+.location:hover {
+  cursor: pointer; }
+
+.map {
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 200px;
+  height: 252px;
+  background-image: url(https://www.infragistics.com/angular-demos/assets/images/card/media/infragisticsMap.png);
+  border: 1px solid #D4D4D4; }
+
+.locationTooltip {
+  width: 310px;
+  background-color: var(--igx-grays-700);
+  padding: 3px;
+  font-size: 13px; }
+
+.locationTooltipContent {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+
+.logo {
+  margin-right: 10px;
+  min-width: 25px;
+  width: 45px;
+  height: 45px; }

@@ -1,0 +1,49 @@
+<div class="grid__wrapper">
+    <igx-input-group type="search" class="offset">
+        <igx-prefix>
+            <igx-icon *ngIf="searchText.length == 0">search</igx-icon>
+            <igx-icon *ngIf="searchText.length > 0" (click)="clearSearch()">clear</igx-icon>
+        </igx-prefix>
+
+        <input #search1 id="search1" igxInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="treeGrid.findNext(searchText, caseSensitive, exactMatch)"
+            (keydown)="searchKeyDown($event)" />
+
+        <igx-suffix *ngIf="searchText.length > 0">
+            <div class="resultsText" *ngIf="treeGrid.lastSearchInfo">
+                <span *ngIf="treeGrid.lastSearchInfo.matchInfoCache.length > 0">
+                    {{ treeGrid.lastSearchInfo.activeMatchIndex + 1 }} of {{ treeGrid.lastSearchInfo.matchInfoCache.length }}
+                    results
+                </span>
+                <span *ngIf="treeGrid.lastSearchInfo.matchInfoCache.length == 0">
+                    No results
+                </span>
+            </div>
+            <div class="chips">
+                <igx-chips-area>
+                    <igx-chip (click)="updateSearch()" [color]="caseSensitive? 'lightgrey' : 'rgba(0, 0, 0, .04)'">
+                        <span>Case Sensitive</span>
+                    </igx-chip>
+                    <igx-chip (click)="updateExactSearch()" [color]="exactMatch? 'lightgrey' : 'rgba(0, 0, 0, .04)'">
+                        <span>Exact Match</span>
+                    </igx-chip>
+                </igx-chips-area>
+            </div>
+            <div class="searchButtons">
+                <button igxButton="icon" igxRipple igxRippleCentered="true" (click)="treeGrid.findPrev(searchText, caseSensitive, exactMatch)">
+                    <igx-icon fontSet="material">navigate_before</igx-icon>
+                </button>
+                <button igxButton="icon" igxRipple igxRippleCentered="true" (click)="treeGrid.findNext(searchText, caseSensitive, exactMatch)">
+                    <igx-icon fontSet="material">navigate_next</igx-icon>
+                </button>
+            </div>
+        </igx-suffix>
+    </igx-input-group>
+
+    <igx-tree-grid igxPreventDocumentScroll  #treeGrid1 [data]="data" [autoGenerate]="false" primaryKey="ID" foreignKey="ParentID" height="480px" width="100%" [allowFiltering]="true">
+        <igx-column [field]="'Name'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'ID'" dataType="number" [sortable]="true"></igx-column>
+        <igx-column [field]="'Title'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'Age'" dataType="number" [sortable]="true"></igx-column>
+        <igx-column [field]="'HireDate'" dataType="date" [sortable]="true"></igx-column>
+    </igx-tree-grid>
+</div>

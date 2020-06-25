@@ -1,0 +1,9 @@
+<div class="carousel-container">
+    <igx-carousel #carousel>
+        <igx-slide *ngFor="let slide of slides;">
+            <div class="image-container">
+                <img [src]="slide.src">
+            </div>
+        </igx-slide>
+    </igx-carousel>
+</div>

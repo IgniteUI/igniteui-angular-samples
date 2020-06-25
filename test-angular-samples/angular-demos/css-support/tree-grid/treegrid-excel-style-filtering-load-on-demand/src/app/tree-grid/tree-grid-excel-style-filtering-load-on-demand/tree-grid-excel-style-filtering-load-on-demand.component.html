@@ -1,0 +1,16 @@
+<div class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" height="750px" primaryKey="ID" foreignKey="ParentID" [displayDensity]="'cosy'"
+                   [showToolbar]="true" [columnHiding]="true" [columnPinning]="true" [autoGenerate]="false"
+                   [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
+                   [uniqueColumnValuesStrategy]="columnValuesStrategy">
+        <igx-column [field]="'Name'" dataType="string" [movable]="true"></igx-column>
+        <igx-column [field]="'Title'" dataType="string" [movable]="true"></igx-column>
+        <igx-column [field]="'Age'" dataType="number" [movable]="true"></igx-column>
+        <igx-column [field]="'HireDate'" dataType="date" [movable]="true"></igx-column>
+        <igx-column [field]="'OnPTO'" dataType="boolean" [movable]="true" width="130px">
+            <ng-template igxCell let-cell="cell" let-val>
+                <igx-icon [color]="cell.row.rowData.OnPTO? 'red': 'green'">account_circle</igx-icon>
+            </ng-template>
+        </igx-column>
+    </igx-tree-grid>
+</div>

@@ -1,0 +1,11 @@
+<igx-list #fruitList>
+    <igx-list-item *ngFor="let fruit of fruitsData" igxRipple igxRippleTarget=".igx-list__item-content">
+        {{ fruit }}
+    </igx-list-item>
+    <ng-template igxEmptyList>
+        <div class="center"><button type="button" igxButton="raised" (click)="loadFruits()">Load data</button></div>
+    </ng-template>
+    <ng-template igxDataLoading>
+        <div class="center"><span>Patience, we are currently loading your data...</span></div>
+    </ng-template>
+</igx-list>

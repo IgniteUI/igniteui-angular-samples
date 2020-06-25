@@ -1,0 +1,50 @@
+<div class="grid__wrapper">
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" [height]="'500px'" width="100%" [autoGenerate]='false' [allowFiltering]="true">
+        <igx-column [field]="'Category'" [width]="'120px'"></igx-column>
+        <igx-column [field]="'Type'" [width]="'150px'" [filterable]='false'></igx-column>
+        <igx-column [field]="'Open Price'" [width]="'120px'" dataType="number" [formatter]="formatCurrency">
+        </igx-column>
+        <igx-column [field]="'Price'" [width]="'120px'" dataType="number" [formatter]="formatCurrency"></igx-column>
+        <igx-column [field]="'Change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'">
+            <ng-template igxHeader>
+                <span>Change</span>
+            </ng-template>
+
+            <ng-template igxCell let-val>
+                <div class="currency-badge-container">
+                    <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward" class="badge-left"></igx-badge>
+                    <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward" class="error badge-left"></igx-badge>
+                    <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}</span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column [field]="'Change(%)'" [width]="'130px'" dataType="number" [formatter]="formatNumber">
+            <ng-template igxHeader>
+                <span>Change(%)</span>
+            </ng-template>
+
+            <ng-template igxCell let-val>
+                <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}%</span>
+            </ng-template>
+        </igx-column>
+        <igx-column [field]="'Change On Year(%)'" [width]="'150px'" dataType="number" [formatter]="formatNumber">
+            <ng-template igxCell let-val>
+                <div class="currency-badge-container">
+                    <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward" class="badge-left"></igx-badge>
+                    <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward" class="error badge-left"></igx-badge>
+                    <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}%</span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column [field]="'Buy'" [width]="'130px'" dataType="number" [formatter]="formatCurrency"></igx-column>
+        <igx-column [field]="'Sell'" [width]="'130px'" dataType="number" [formatter]="formatCurrency"></igx-column>
+        <igx-column [field]="'Spread'" [width]="'130px'" dataType="number" [formatter]="formatNumber"></igx-column>
+        <igx-column [field]="'Volume'" [width]="'130px'" dataType="number" [formatter]="formatNumber"></igx-column>
+        <igx-column [field]="'High(D)'" [width]="'130px'" dataType="number" [formatter]="formatCurrency"></igx-column>
+        <igx-column [field]="'Low(D)'" [width]="'130px'" dataType="number" [formatter]="formatCurrency"></igx-column>
+        <igx-column [field]="'High(Y)'" [width]="'130px'" dataType="number" [formatter]="formatCurrency"></igx-column>
+        <igx-column [field]="'Low(Y)'" [width]="'130px'" dataType="number" [formatter]="formatCurrency"></igx-column>
+        <igx-column [field]="'Start(Y)'" [width]="'130px'" dataType="number" [formatter]="formatCurrency"></igx-column>
+    </igx-grid>
+    <br />
+</div>

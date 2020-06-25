@@ -1,0 +1,15 @@
+.title-inner {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center; }
+
+.grid__wrapper {
+  margin: 0 auto;
+  padding: 5px; }
+
+img.country-flag {
+  width: 35px;
+  height: 20px; }

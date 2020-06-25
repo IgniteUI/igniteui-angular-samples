@@ -1,0 +1,17 @@
+.wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  margin: 16px 0; }
+
+.icon-sample {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 0 10%;
+      flex: 1 0 10%;
+  height: 44px;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }

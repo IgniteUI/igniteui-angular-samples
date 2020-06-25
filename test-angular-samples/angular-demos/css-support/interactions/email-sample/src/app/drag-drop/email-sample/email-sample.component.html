@@ -1,0 +1,44 @@
+<ng-template #customGhost>
+    <div class="drag-ghost">
+        <igx-icon>email</igx-icon>
+        <span>Move {{ draggedElements }} item{{ (draggedElements > 1 ? 's' : '')}}</span>
+    </div>
+</ng-template>
+
+<igx-list class="folders">
+    <igx-list-item *ngFor="let folder of folders" igxDrop
+        (enter)="enterDropZone($event)"
+        (leave)="leaveDropZone($event)"
+        (dropped)="dropElement($event)"
+        [dropChannel]="folder.dropChannel">
+        <igx-icon igxListThumbnail>{{folder.icon}}</igx-icon>
+        <h4 igxListLineTitle>{{ folder.text }}</h4>
+    </igx-list-item>
+</igx-list>
+
+<igx-list class="emails">
+    <igx-list-item isHeader="true">Today</igx-list-item>
+
+    <igx-list-item *ngFor="let email of emails"
+        [class.email-checked]="email.checked"
+        [igxDrag]="email"
+        [dragChannel]="['starred', 'important', 'personal', 'work', 'finances']"
+        [ghostTemplate]="customGhost"
+        [ghostOffsetX]="-5"
+        [ghostOffsetY]="-5"
+        (dragStart)="onDragStart($event)"
+        (ghostCreate)="onGhostCreated($event)"
+        class="email-content flexlist"
+        (click)="toggleCheck(email, checkbox)">
+
+        <h4 igxListLineTitle>{{ email.sender }}</h4>
+        <h6 igxListLineSubTitle>{{ email.title }}</h6>
+        <igx-checkbox #checkbox
+            [(ngModel)]="email.checked"
+            (change)="toggleCheckbox(email)"
+            (pointerdown)="stopEventPropagation($event)"
+            (click)="stopEventPropagation($event)">
+        </igx-checkbox>
+
+    </igx-list-item>
+</igx-list>

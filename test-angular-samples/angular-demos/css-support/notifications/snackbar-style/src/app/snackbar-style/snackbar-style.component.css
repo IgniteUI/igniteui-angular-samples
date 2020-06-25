@@ -1,0 +1,99 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+  --igx-snackbar-border-radius: 12px;
+  --igx-snackbar-elevation: 4;
+  --igx-snackbar-background: #292826;
+  --igx-snackbar-text-color: #FFCD0F;
+  --igx-snackbar-button-color: #FFCD0F;
+  --igx-snackbar-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.26), 0 4px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.08); }
+
+:host ::ng-deep .igx-snackbar {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  min-height: 3rem;
+  padding: 0.4375rem 1.5rem;
+  margin: 8px;
+  color: var(--igx-snackbar-text-color);
+  background: var(--igx-snackbar-background);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  box-shadow: var(--igx-snackbar-shadow);
+  border-radius: var(--igx-snackbar-border-radius); }
+
+:host ::ng-deep .igx-snackbar__button {
+  background: transparent;
+  color: var(--igx-snackbar-button-color);
+  border: 0;
+  line-height: 1rem;
+  margin-left: 1.5rem;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-weight: 600;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  transition: color .2s ease;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer; }
+  :host ::ng-deep .igx-snackbar__button:hover {
+    color: var(--igx-snackbar-button-color); }

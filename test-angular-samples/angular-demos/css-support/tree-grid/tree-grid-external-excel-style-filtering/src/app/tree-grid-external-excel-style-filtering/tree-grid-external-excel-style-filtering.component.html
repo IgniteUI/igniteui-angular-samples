@@ -1,0 +1,38 @@
+<div class="grid__wrapper">
+    <div class="flex-column">
+        <igx-select #gridColums value="ID" class="igSelect">
+            <label igxLabel>Columns:</label>
+            <igx-select-item *ngFor="let c of treegrid1.columns" [value]="c.field">
+                {{ c.field }}
+            </igx-select-item>
+        </igx-select>
+
+        <igx-grid-excel-style-filtering [column]="treegrid1.getColumnByName(gridColums.value)">
+        </igx-grid-excel-style-filtering>
+    </div>
+
+    <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [autoGenerate]="false" height="653px" width="800px" primaryKey="ID"
+        foreignKey="ParentID">
+        <igx-column field="ID" header="Product ID" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="Name" header="Product Name" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Unit Price" dataType="number">
+            <ng-template igxCell let-cell="cell" let-val>
+                <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
+                <span *ngIf="cell.row.rowData.UnitPrice != 0">${{val}}</span>
+            </ng-template>
+        </igx-column>
+        <igx-column field="AddedDate" header="Added Date" [dataType]="'date'">
+        </igx-column>
+        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
+            <ng-template igxCell let-cell="cell" let-val>
+                <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
+                <img *ngIf="cell.row.rowData.UnitPrice != 0 && val" src="https://www.infragistics.com/angular-demos/assets/images/grid/active.png"
+                    title="Continued" alt="Continued" />
+                <img *ngIf="cell.row.rowData.UnitPrice != 0 && !val" src="https://www.infragistics.com/angular-demos/assets/images/grid/expired.png"
+                    title="Discontinued" alt="Discontinued" />
+            </ng-template>
+        </igx-column>
+    </igx-tree-grid>
+</div>

@@ -1,0 +1,7 @@
+.grid-container {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px; }
+
+.switches {
+  margin-top: 24px; }

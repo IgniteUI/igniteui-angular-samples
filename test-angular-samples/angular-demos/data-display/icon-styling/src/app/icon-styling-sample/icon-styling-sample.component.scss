@@ -1,0 +1,39 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$custom-icon-theme: igx-icon-theme(
+  $color: #1481b8,
+  $disabled-color: #494949
+);
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 16px 0;
+}
+
+.icon-sample {
+    display: flex;
+    flex: 1 0 20%;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+}
+
+:host {
+    .igx-icon:hover {
+      color: #0a415c;
+    }
+
+    // @include igx-css-vars($custom-icon-theme);
+
+    /* Using Theme Overrides to provide IE 11 support.
+     * NOTE: Theming using this approach will greatly increase the size
+     * of the output CSS. If you do not plan to target IE 11,
+     * delete this section and use the `igx-css-vars` mixin as shown above.
+    **/
+    ::ng-deep {
+        @include igx-icon($custom-icon-theme);
+    }
+}
+

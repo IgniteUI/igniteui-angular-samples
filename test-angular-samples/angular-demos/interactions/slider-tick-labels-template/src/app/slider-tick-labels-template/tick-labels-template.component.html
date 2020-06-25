@@ -1,0 +1,11 @@
+<div class="container">
+    <igx-slider #slider4
+    [step]="5"
+    [showTicks]="true"
+    [primaryTicks]="3"
+    [secondaryTicks]="4">
+        <ng-template igxSliderTickLabel let-value let-primary="isPrimary" let-idx="index">
+            {{ tickLabel(value, primary, idx) }}
+        </ng-template>
+    </igx-slider>
+</div>

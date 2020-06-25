@@ -1,0 +1,16 @@
+<div class="grid__wrapper">
+    <igx-grid igxPreventDocumentScroll #grid [data]="data" [autoGenerate]="false" width="100%" height="560px" columnWidth="200px" [showToolbar]="true"
+        [columnHiding]="true" toolbarTitle="Employees" columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden"
+        [allowFiltering]="true">
+        <igx-column [field]="'ID'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'ContactName'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'ContactTitle'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'City'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'CompanyName'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'Fax'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'Address'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'PostalCode'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'Country'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'Phone'" dataType="string" [sortable]="true"></igx-column>
+    </igx-grid>
+</div>

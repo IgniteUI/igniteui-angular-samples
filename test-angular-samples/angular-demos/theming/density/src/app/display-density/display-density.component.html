@@ -1,0 +1,23 @@
+<div class="density-chooser">
+    <igx-buttongroup [values]="displayDensities" (onSelect)="changeDensity($event)"></igx-buttongroup>
+</div>
+
+<igx-input-group>
+    <input igxInput name="firstName" type="text" [(ngModel)]="user.firstName" />
+    <label igxLabel for="firstName">First Name</label>
+</igx-input-group>
+
+<igx-input-group>
+    <input igxInput name="lastName" type="text" [(ngModel)]="user.lastName" required />
+    <label igxLabel for="lastName">Last Name</label>
+</igx-input-group>
+
+<igx-input-group>
+    <igx-prefix>+359</igx-prefix>
+    <label igxLabel for="phone">Phone</label>
+    <input type="number" igxInput name="phone" [(ngModel)]="user.phone" />
+    <igx-suffix>
+        <igx-icon>phone</igx-icon>
+    </igx-suffix>
+    <igx-hint position="start">Ex.: +359 888 123 456</igx-hint>
+</igx-input-group>

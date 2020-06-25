@@ -1,0 +1,44 @@
+<igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="localData" rowSelection="multiple"
+    cellSelection="none" [autoGenerate]="false" height="600px" width="100%" [paging]="true">
+    <igx-column field="Artist"></igx-column>
+    <igx-column field="Debut"></igx-column>
+    <igx-column field="GrammyNominations" header="Grammy Nominations"></igx-column>
+    <igx-column field="GrammyAwards" header="Grammy Awards"></igx-column>
+
+    <igx-row-island key="Albums" [autoGenerate]="false">
+        <igx-column field="Album"></igx-column>
+        <igx-column field="LaunchDate" header="Launch Date"></igx-column>
+        <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
+        <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
+        <igx-row-island [key]="'Songs'" [autoGenerate]="false">
+            <igx-column field="Number" header="No."></igx-column>
+            <igx-column field="Title"></igx-column>
+            <igx-column field="Released"></igx-column>
+            <igx-column field="Genre"></igx-column>
+        </igx-row-island>
+    </igx-row-island>
+
+    <igx-row-island key="Tours" [autoGenerate]="false">
+        <igx-column field="Tour"></igx-column>
+        <igx-column field="StartedOn" header="Started on"></igx-column>
+        <igx-column field="Location"></igx-column>
+        <igx-column field="Headliner"></igx-column>
+    </igx-row-island>
+
+    <ng-template igxHeadSelector>
+        <div class="header-selector">
+            <img src="https://www.infragistics.com/angular-demos/assets/images/card/avatars/igLogo.png" class="header-image">
+        </div>
+    </ng-template>
+
+    <ng-template igxRowSelector let-rowContext>
+        <div class="row-selector">
+            <span class="row-selector-index">{{ rowContext.index + 1 }}</span>
+            <igx-checkbox class="row-selector-checkbox"
+                [checked]="rowContext.selected"
+                [readonly]="true"
+                disableRipple="true" [disableTransitions]="hierarchicalGrid.disableTransitions">
+            </igx-checkbox>
+        </div>
+    </ng-template>
+</igx-hierarchical-grid>

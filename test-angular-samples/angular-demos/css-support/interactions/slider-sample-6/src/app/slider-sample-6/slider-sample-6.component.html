@@ -1,0 +1,10 @@
+<div class="container">
+    <igx-slider [labels]="labels" [type]="type" [lowerBound]="1" [upperBound]="5">
+        <ng-template igxSliderThumbFrom let-value let-labels="labels">
+            <span class="ellipsis"> {{ labels[value.lower] }} </span>
+        </ng-template>
+        <ng-template igxSliderThumbTo let-value let-labels="labels">
+            <span class="ellipsis"> {{ labels[value.upper] }} </span>
+        </ng-template>
+    </igx-slider>
+</div>

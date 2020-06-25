@@ -1,0 +1,17 @@
+<igx-hierarchical-grid igxPreventDocumentScroll  [data]="localData" [autoGenerate]="false"
+    height="600px" width="100%" primaryKey="Artist" (onCellEdit)="handleCellEdit($event, grid)">
+    <igx-column field="Artist" dataType="string"></igx-column>
+    <igx-column field="HasGrammyAward" header="Has Grammy Award?" [editable]="true" dataType="boolean">
+    </igx-column>
+    <igx-column field="Debut" [editable]="true" dataType="number" [formatter]="formatter"></igx-column>
+    <igx-column field="GrammyNominations" header="Grammy Nominations" [editable]="true" dataType="number"></igx-column>
+    <igx-column field="GrammyAwards" header="Grammy Awards" [editable]="true" dataType="number"></igx-column>
+
+    <igx-row-island key="Albums" primaryKey="Album" [autoGenerate]="false" (onGridCreated)="handleCreate($event)">
+        <igx-column field="Album" [editable]="true" dataType="string"></igx-column>
+        <igx-column field="LaunchDate" header="Launch Date" [editable]="true" dataType="date"></igx-column>
+        <igx-column field="BillboardReview" header="Billboard Review" [editable]="true" dataType="number"></igx-column>
+        <igx-column field="USBillboard200" header="US Billboard 200" [editable]="true" dataType="number"></igx-column>
+    </igx-row-island>
+</igx-hierarchical-grid>
+<igx-toast></igx-toast>

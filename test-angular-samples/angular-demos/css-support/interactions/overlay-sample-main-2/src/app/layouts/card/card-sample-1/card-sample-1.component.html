@@ -1,0 +1,19 @@
+<div class="sample-column card-wrapper">
+    <igx-card type="outlined">
+        <igx-card-header>
+            <h5 igxCardHeaderTitle>{{card.title}}</h5>
+            <h5 igxCardHeaderSubtitle>{{card.subtitle}}</h5>
+            <igx-card-media width="64px" height="64px">
+                <img [src]="card.imageUrl">
+            </igx-card-media>
+        </igx-card-header>
+
+        <igx-divider></igx-divider>
+
+        <igx-card-actions layout="justify">
+            <button *ngFor="let icon of card.icons;" igxButton="icon" igxRipple igxRippleCentered="true">
+                <igx-icon>{{icon}}</igx-icon>
+            </button>
+        </igx-card-actions>
+    </igx-card>
+</div>

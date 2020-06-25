@@ -1,0 +1,74 @@
+<div class="grid-controls">
+    <span> <igx-switch [(ngModel)]="hideRowSelectors">Hide Row Selectors</igx-switch></span>
+    <span style="display: flex">
+        <igx-buttongroup [values]="selectionModes" (onSelect)="selectCellSelectionMode($event)"></igx-buttongroup>
+        <igx-snackbar #snackbar actionText="Got it. Thanks!" (onAction)="snackbar.hide()">
+            <div class="container">
+                <igx-icon>notification_important</igx-icon>
+                <ng-container *ngIf="selectionMode === 'multiple'">
+                    <ul>
+                        <li><b>Now you can select multiple rows within a grid.</b></li>
+                        <li>Click on row selector field or press SPACE key when some cell is active to toggle row
+                            selection.
+                        </li>
+                        <li>On cell click the row get selected and previous selection state is cleared.</li>
+                        <li>On cell click holding ctrl key, the row get selected and previous selection state is
+                            preserved.
+                        </li>
+                        <li>Shift + click select a range of rows.</li>
+                    </ul>
+                </ng-container>
+                <ng-container *ngIf="selectionMode === 'single'">
+                    <ul>
+                        <li><b>Now you can select only one row within a grid.</b></li>
+                        <li>Click on row selector field or press SPACE key when some cell is active to toggle row
+                            selection.
+                        </li>
+                        <li>On cell click the row get selected and previous selection state is cleared.</li>
+                    </ul>
+                </ng-container>
+                <ng-container *ngIf="selectionMode === 'none'">
+                    <ul>
+                        <li><b>Now you are unable to select a row while interacting with grid UI.</b></li>
+                        <li>If you need to select a row use grid API methods.</li>
+                    </ul>
+                </ng-container>
+            </div>
+        </igx-snackbar>
+    </span>
+</div>
+<igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [height]="'600px'" [width]="'100%'" [rowHeight]="'65px'"
+[cellSelection]="'none'" [rowSelection]="selectionMode" [hideRowSelectors]="hideRowSelectors"
+    [allowFiltering]="true" (onRowSelectionChange)="handleRowSelection($event)" #hierarchicalGrid>
+    <igx-column field="Artist"></igx-column>
+    <igx-column field="Photo">
+        <ng-template igxCell let-cell="cell">
+            <div class="cell__inner_2">
+                <img [src]="cell.value" class="photo" />
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column field="Debut" [formatter]="formatter"></igx-column>
+    <igx-column field="GrammyNominations" header="Grammy Nominations"></igx-column>
+    <igx-column field="GrammyAwards" header="Grammy Awards"></igx-column>
+
+    <igx-row-island [key]="'Albums'" [autoGenerate]="false" [rowSelection]="selectionMode">
+        <igx-column field="Album" ></igx-column>
+        <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
+        <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
+        <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
+    <igx-row-island [key]="'Songs'" [autoGenerate]="false" [rowSelection]="selectionMode" >
+            <igx-column field="Number" header="No."></igx-column>
+            <igx-column field="Title"></igx-column>
+            <igx-column field="Released" dataType="date"></igx-column>
+            <igx-column field="Genre"></igx-column>
+    </igx-row-island>
+    </igx-row-island>
+
+    <igx-row-island [key]="'Tours'" [autoGenerate]="false" [rowSelection]="selectionMode" >
+        <igx-column field="Tour"></igx-column>
+        <igx-column field="StartedOn" header="Started on"></igx-column>
+        <igx-column field="Location"></igx-column>
+        <igx-column field="Headliner"></igx-column>
+    </igx-row-island>
+</igx-hierarchical-grid>

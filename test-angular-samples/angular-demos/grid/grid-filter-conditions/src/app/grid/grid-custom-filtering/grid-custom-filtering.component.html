@@ -1,0 +1,21 @@
+<div class="grid__wrapper">
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="550px" width="100%" [allowFiltering]="true">
+        <igx-column field="ProductName" header="Product Name" [dataType]="'string'" [filters]="caseSensitiveFilteringOperand">
+        </igx-column>
+        <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Unit Price" dataType="number">
+            <ng-template igxCell let-cell="cell" let-val let-row>
+                {{+val | currency}}
+            </ng-template>
+        </igx-column>
+        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [formatter]="formatDate">
+        </igx-column>
+        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [filters]="booleanFilteringOperand">
+            <ng-template igxCell let-cell="cell" let-val>
+                <img *ngIf="val" src="https://www.infragistics.com/angular-demos/assets/images/grid/active.png" title="Continued" alt="Continued" />
+                <img *ngIf="!val" src="https://www.infragistics.com/angular-demos/assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+            </ng-template>
+        </igx-column>
+    </igx-grid>
+</div>

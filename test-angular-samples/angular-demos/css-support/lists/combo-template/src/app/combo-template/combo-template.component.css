@@ -1,0 +1,8 @@
+.combo {
+  margin: 10px;
+  width: 300px; }
+
+.header-class, .footer-class, .empty-class {
+  text-align: center;
+  font-style: italic;
+  font-weight: bold; }

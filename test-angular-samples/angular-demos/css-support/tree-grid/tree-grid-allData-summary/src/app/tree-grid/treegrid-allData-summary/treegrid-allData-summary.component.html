@@ -1,0 +1,12 @@
+<div class="grid__wrapper">
+    <div class="sample-wrapper">
+        <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data"  cellSelection="single" primaryKey="ID"
+            foreignKey="ParentID" height="650px" width="100%" [displayDensity]="'compact'">
+            <igx-column field="Name"></igx-column>
+            <igx-column field="Age" width="15%" ></igx-column>
+            <igx-column field="Title" [hasSummary]="true" [summaries]="ptoSummary"></igx-column>
+            <igx-column field="HireDate" [dataType]="'date'" [hasSummary]="true"></igx-column>
+            <igx-column field="OnPTO" width="15%"  [dataType]="'boolean'" [editable]="true" [hasSummary]="true"></igx-column>
+        </igx-tree-grid>
+    </div>
+</div>

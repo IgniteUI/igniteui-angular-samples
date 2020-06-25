@@ -1,0 +1,26 @@
+<div class="gallery__wrapper">
+    <igx-navbar title="Gallery">
+        <igx-icon (click)="wifiState = !wifiState">{{ wifiState ? 'signal_wifi_4_bar' : 'signal_wifi_off'}}</igx-icon>
+    </igx-navbar>
+    <div class="gallery__content">
+        <igx-banner class="offline-banner" #connectionBanner [animationSettings]="animationSettings">
+            <igx-icon>signal_wifi_off</igx-icon>
+            You have lost connection to the internet. This app is offline.
+            <igx-banner-actions>
+                    <button igxButton igxRipple (click)="connectionBanner.close()">Continue Offline</button>
+                    <button igxButton igxRipple (click)="wifiState = true">Turn On Wifi</button>
+            </igx-banner-actions>
+        </igx-banner>
+        <igx-card class="gallery__item">
+            <div>
+                <img [src]="imageUrls[0]">
+            </div>
+        </igx-card>
+        <igx-card class="gallery__item">
+            <div>
+                <img [src]="imageUrls[1]">
+            </div>
+        </igx-card>
+        <igx-toast #eventToast [position]="toastPosition"></igx-toast>
+    </div>
+</div>

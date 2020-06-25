@@ -1,0 +1,38 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+@include igx-dialog(
+    igx-dialog-theme(
+        $palette: $default-palette,
+        $schema: $light-schema
+    )
+);
+
+@include igx-dialog-typography($default-type-scale);
+
+:host {
+    display: block;
+    margin: 16px;
+
+    @include b(dialog) {
+        @extend %igx-dialog-window;
+
+        display: flex;
+        flex-direction: column;
+        max-width: rem(280px);
+
+        @include e(icon) {
+            position: absolute;
+            right: rem(24px);
+            top: rem(24px);
+            cursor: move;
+        }
+
+        @include e(title) {
+            @extend %igx-dialog-title;
+        }
+
+        @include e(content) {
+            @extend %igx-dialog-content;
+        }
+    }
+}

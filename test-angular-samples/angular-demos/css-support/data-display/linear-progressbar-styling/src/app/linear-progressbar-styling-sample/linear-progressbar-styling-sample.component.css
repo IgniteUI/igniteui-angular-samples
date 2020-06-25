@@ -1,0 +1,170 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+igx-linear-bar {
+  margin-top: 20px; }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+  --igx-linear-bar-track-border-radius: 0px;
+  --igx-linear-bar-variant: material;
+  --igx-linear-bar-track-color: #D3D3D3;
+  --igx-linear-bar-fill-color-default: #ECAA53;
+  --igx-linear-bar-fill-color-danger: #ff134a;
+  --igx-linear-bar-fill-color-warning: #fbb13c;
+  --igx-linear-bar-fill-color-info: #1377d5;
+  --igx-linear-bar-fill-color-success: #4eb862;
+  --igx-linear-bar-stripes-color: rgba(255, 255, 255, 0.7);
+  --igx-linear-bar-text-color: #ECAA53; }
+
+:host ::ng-deep .igx-linear-bar {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex: 1 1 100%;
+      flex: 1 1 100%;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+
+:host ::ng-deep .igx-linear-bar__base {
+  position: relative;
+  width: inherit;
+  height: 0.25rem;
+  background: var(--igx-linear-bar-track-color);
+  overflow: hidden;
+  border-radius: var(--igx-linear-bar-track-border-radius);
+  z-index: 0; }
+
+:host ::ng-deep .igx-linear-bar__indicator {
+  width: 100%;
+  position: relative;
+  height: inherit; }
+
+:host ::ng-deep .igx-linear-bar--striped .igx-linear-bar__indicator, .igx-linear-bar--striped :host ::ng-deep .igx-linear-bar__indicator {
+  background-image: linear-gradient(-45deg, var(--igx-linear-bar-stripes-color) 25%, transparent 25%, transparent 50%, var(--igx-linear-bar-stripes-color) 50%, var(--igx-linear-bar-stripes-color) 75%, transparent 75%, transparent);
+  background-size: 2.5rem 2.5rem; }
+
+:host ::ng-deep .igx-linear-bar--indeterminate .igx-linear-bar__indicator, .igx-linear-bar--indeterminate :host ::ng-deep .igx-linear-bar__indicator {
+  -webkit-animation: indeterminate-bar 2s cubic-bezier(0, 0.085, 0.68, 0.53) normal infinite;
+          animation: indeterminate-bar 2s cubic-bezier(0, 0.085, 0.68, 0.53) normal infinite;
+  width: 100% !important; }
+  :host ::ng-deep .igx-linear-bar--indeterminate .igx-linear-bar__indicator::before, .igx-linear-bar--indeterminate :host ::ng-deep .igx-linear-bar__indicator::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: -200%;
+    width: 100%;
+    height: inherit;
+    background-color: inherit;
+    -ms-transform-origin: top right;
+        transform-origin: top right; }
+
+:host ::ng-deep .igx-linear-bar__indicator {
+  background: var(--igx-linear-bar-fill-color-default); }
+
+:host ::ng-deep .igx-linear-bar--danger .igx-linear-bar__indicator, .igx-linear-bar--danger :host ::ng-deep .igx-linear-bar__indicator {
+  background-color: var(--igx-linear-bar-fill-color-danger); }
+
+:host ::ng-deep .igx-linear-bar--warning .igx-linear-bar__indicator, .igx-linear-bar--warning :host ::ng-deep .igx-linear-bar__indicator {
+  background-color: var(--igx-linear-bar-fill-color-warning); }
+
+:host ::ng-deep .igx-linear-bar--info .igx-linear-bar__indicator, .igx-linear-bar--info :host ::ng-deep .igx-linear-bar__indicator {
+  background-color: var(--igx-linear-bar-fill-color-info); }
+
+:host ::ng-deep .igx-linear-bar--success .igx-linear-bar__indicator, .igx-linear-bar--success :host ::ng-deep .igx-linear-bar__indicator {
+  background-color: var(--igx-linear-bar-fill-color-success); }
+
+:host ::ng-deep .igx-linear-bar__value, :host ::ng-deep .igx-linear-bar__value--start, :host ::ng-deep .igx-linear-bar__value--center, :host ::ng-deep .igx-linear-bar__value--end, :host ::ng-deep .igx-linear-bar__value--top, :host ::ng-deep .igx-linear-bar__value--hidden {
+  margin: 0;
+  color: var(--igx-linear-bar-text-color);
+  font-size: 0.875em;
+  font-weight: 600; }
+
+:host ::ng-deep .igx-linear-bar__value, :host ::ng-deep .igx-linear-bar__value--start {
+  -ms-flex-item-align: start;
+      align-self: flex-start; }
+
+:host ::ng-deep .igx-linear-bar__value--center {
+  -ms-flex-item-align: center;
+      align-self: center; }
+
+:host ::ng-deep .igx-linear-bar__value--end {
+  -ms-flex-item-align: end;
+      align-self: flex-end; }
+
+:host ::ng-deep .igx-linear-bar__value--top {
+  -ms-flex-order: -1;
+      order: -1; }
+
+:host ::ng-deep .igx-linear-bar__value--hidden, :host ::ng-deep .igx-linear-bar--indeterminate .igx-linear-bar__value, .igx-linear-bar--indeterminate :host ::ng-deep .igx-linear-bar__value {
+  display: none; }
+
+@-webkit-keyframes indeterminate-bar {
+  0% {
+    transform: scaleX(0) translateX(-100%);
+    transform-origin: left; }
+  50% {
+    transform: scaleX(1) translateX(50%);
+    transform-origin: right; }
+  100% {
+    transform: scaleX(0) translateX(200%);
+    transform-origin: right; } }
+
+@keyframes indeterminate-bar {
+  0% {
+    transform: scaleX(0) translateX(-100%);
+    transform-origin: left; }
+  50% {
+    transform: scaleX(1) translateX(50%);
+    transform-origin: right; }
+  100% {
+    transform: scaleX(0) translateX(200%);
+    transform-origin: right; } }

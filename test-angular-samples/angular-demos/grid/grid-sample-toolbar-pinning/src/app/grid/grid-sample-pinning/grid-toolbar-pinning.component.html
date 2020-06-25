@@ -1,0 +1,7 @@
+<div class="grid__wrapper" style='width: 100%;'>
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [width]="'100%'" [height]="'500px'" [showToolbar]='true' [columnPinning]='true'>
+        <igx-column #col *ngFor="let c of columns" [field]="c.field" [header]="c.header" [width]="c.width" [pinned]='c.pinned'
+            [hidden]='c.hidden' [headerClasses]="'customHeaderSyle'">
+        </igx-column>
+    </igx-grid>
+</div>

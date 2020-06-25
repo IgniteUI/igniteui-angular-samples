@@ -1,0 +1,35 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+.buttons-sample {
+    display: flex;
+    margin: 8px;
+}
+
+.button-sample {
+    display: flex;
+    margin-right: 16px;
+}
+
+$custom-button-theme: igx-button-theme(
+    $raised-text-color: #fdfdfd,
+    $raised-hover-text-color: #fdfdfd,
+    $raised-background: #345779,
+    $raised-hover-background: #2e4d6b,
+    $raised-focus-text-color: #fdfdfd,
+    $raised-focus-background: #2e4d6b,
+    $disabled-color: #2e4d6b
+);
+
+// :host {
+//     @include igx-css-vars($custom-button-theme);
+// }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-button($custom-button-theme);
+}
+

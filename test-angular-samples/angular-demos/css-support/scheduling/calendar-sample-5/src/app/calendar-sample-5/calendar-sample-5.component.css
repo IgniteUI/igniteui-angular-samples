@@ -1,0 +1,9 @@
+.calendar-wrapper {
+  max-width: 500px;
+  min-width: 200px;
+  border: 1px solid var(--igx-secondary-400);
+  border-radius: 6px;
+  margin: 8px; }
+
+.igx-calendar {
+  border-radius: 4px; }

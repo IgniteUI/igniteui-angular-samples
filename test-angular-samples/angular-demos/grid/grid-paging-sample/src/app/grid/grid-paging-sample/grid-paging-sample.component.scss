@@ -1,0 +1,33 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+// Todo: Remve this after we add !optional in the list
+%igx-list-item--inactive {
+  content: "";
+}
+
+$progressBar-sample-theme: igx-progress-linear-theme(
+  $track-color: rgba(181,181,181, .5),
+  $fill-color-default: orange
+);
+
+.grid__wrapper {
+  @include igx-progress-linear($progressBar-sample-theme);
+    margin: 0 16px;
+    padding-top: 10px;
+}
+
+.cell__inner,
+.cell__inner_2 {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.cell__inner {
+  position: relative;
+  justify-content: space-between;
+}
+
+.linear-bar-container {
+    width: 100%;
+}

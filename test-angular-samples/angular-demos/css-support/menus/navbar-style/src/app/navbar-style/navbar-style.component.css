@@ -1,0 +1,104 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+  --igx-navbar-elevation: 4;
+  --igx-navbar-background: #dedede;
+  --igx-navbar-text-color: #151515;
+  --igx-navbar-idle-icon-color: #151515;
+  --igx-navbar-hover-icon-color: #8c8c8c;
+  --igx-navbar-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.26), 0 4px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.08); }
+
+:host ::ng-deep .igx-navbar {
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  width: 100%;
+  height: 56px;
+  padding: 0 1em;
+  background: var(--igx-navbar-background);
+  color: var(--igx-navbar-text-color);
+  box-shadow: var(--igx-navbar-shadow);
+  z-index: 4; }
+
+:host ::ng-deep .igx-navbar__title {
+  margin: 0; }
+
+:host ::ng-deep .igx-navbar__left, :host ::ng-deep .igx-navbar__right {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  :host ::ng-deep .igx-navbar__left > * + *, :host ::ng-deep .igx-navbar__right > * + * {
+    margin-left: 16px; }
+
+:host ::ng-deep .igx-navbar__left igx-icon, :host ::ng-deep .igx-navbar__right igx-icon {
+  cursor: pointer;
+  color: var(--igx-navbar-idle-icon-color);
+  transition: color 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  :host ::ng-deep .igx-navbar__left igx-icon:hover, :host ::ng-deep .igx-navbar__right igx-icon:hover {
+    color: var(--igx-navbar-hover-icon-color); }
+
+:host ::ng-deep igx-action-icon {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }

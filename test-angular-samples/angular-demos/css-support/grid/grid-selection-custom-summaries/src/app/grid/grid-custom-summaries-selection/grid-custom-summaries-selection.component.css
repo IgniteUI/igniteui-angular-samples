@@ -1,0 +1,70 @@
+.cellAlignSyle {
+  text-align: right;
+  float: right; }
+
+.cellAlignSyle > span {
+  float: right; }
+
+.up {
+  color: green; }
+
+.down {
+  color: red; }
+
+.headerAlignSyle {
+  text-align: right !important; }
+
+.sample-container {
+  width: 20%;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0% 0% 20px 10px; }
+
+.grid-controls {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  margin: 0 16px 24px;
+  -ms-flex-flow: column;
+      flex-flow: column;
+  -ms-flex-align: start;
+      align-items: flex-start; }
+
+.grid__wrapper {
+  margin: 0 16px; }
+
+.currency-badge-container {
+  width: 80px;
+  float: right; }
+
+.badge-left {
+  float: left; }
+
+div.igx-grid__tfoot {
+  z-index: 1; }
+
+.custom-summaries {
+  margin-left: auto;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: end;
+      justify-content: flex-end; }
+
+.summaries-data-wrapper {
+  display: inline-block; }
+
+.summaries-data-wrapper span:first-child {
+  margin-right: 16px; }
+
+.cosy {
+  padding-right: 16px; }
+
+.compact {
+  padding-right: 12px; }
+
+.comfortable {
+  padding-right: 24px; }

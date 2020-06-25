@@ -1,0 +1,54 @@
+<div class="sample">
+    <div class="grid_wrapper">
+        <igx-tree-grid [data]="data" height="450px" width="100%" [paging]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" displayDensity="compact"
+            summaryCalculationMode="rootLevelOnly" primaryKey="ID" foreignKey="ParentID" columnSelection="single" [showToolbar]="false" [allowAdvancedFiltering]="true"
+            (keydown)="gridKeydown($event)">
+            <igx-column field="Name" [hasSummary]="true" [editable]="true" [sortable]="true"></igx-column>
+            <igx-column-group header="General Information" >
+                <igx-column field="HireDate" [hasSummary]="true" [editable]="true" [sortable]="true"></igx-column>
+                <igx-column-group [movable]="true" header="Personel Details" [collapsible]="true"
+                        dataType="string" [expanded]="false" (expandedChange)="expandChange($event)">
+                    <igx-column field="ID" [width]="'250px'" [visibleWhenCollapsed]="true" [sortable]="true"></igx-column>
+                    <igx-column field="Title" [visibleWhenCollapsed]="false"
+                        [hasSummary]="true" [sortable]="true" [editable]=true></igx-column>
+                    <igx-column field="Age" [visibleWhenCollapsed]="false" [sortable]="true" [groupable]="true" [editable]="true"></igx-column>
+                </igx-column-group>
+            </igx-column-group>
+            <igx-column-group header="Address Information">
+                <igx-column-group header="Location" [collapsible]="true" [expanded]="false" (expandedChange)="expandChange($event)">
+                    <igx-column field="FullAddress" header="Full Address" [width]="'250px'" [visibleWhenCollapsed]="true"
+                        [dataType]="'string'" [visibleWhenCollapsed]="true" [sortable]="true"></igx-column>
+                    <igx-column field="Country" [visibleWhenCollapsed]="false" [hasSummary]="true" [sortable]="true" [editable]="true"></igx-column>
+                    <igx-column field="City" [visibleWhenCollapsed]="false" [hasSummary]="true" [groupable]="true" [editable]="true"></igx-column>
+                    <igx-column field="Address" [visibleWhenCollapsed]="false"></igx-column>
+                </igx-column-group>
+                <igx-column-group header="Contact Information">
+                    <igx-column field="Phone" [editable]="true"></igx-column>
+                    <igx-column field="Fax" [editable]="true"></igx-column>
+                    <igx-column field="PostalCode"></igx-column>
+                </igx-column-group>
+            </igx-column-group>
+        </igx-tree-grid>
+    </div>
+    <div class="list-sample">
+        <igx-list>
+            <igx-list-item *ngIf="keyboardCollection.length > 0" isHeader=true>Combinations</igx-list-item>
+            <igx-list-item @load *ngFor="let c of keyboardCollection; let idx=index" [ngClass]="{'completed': c.completed}" [@toggle]="c.completed ? 'selected' : 'deselected'">
+                <h4 igxListLineTitle>{{ c.title }}</h4>
+                <p igxListLineSubTitle>{{ c.subTitle }}</p>
+                <igx-checkbox [checked]="c.completed" (change)="onCheckChange($event, idx)"></igx-checkbox>
+            </igx-list-item>
+            <ng-template igxEmptyList>
+                <span class="empty-list">
+                    <h6>Use the native navigation of the browser until you reach some of the following grid sections below:</h6>
+                    <ul>
+                        <li>Header</li>
+                        <li>Body</li>
+                        <li>Summary</li>
+                    </ul>
+                    <h6>When reached, an <b>action list</b> will be shown.</h6>
+                </span>
+            </ng-template>
+        </igx-list>
+    </div>
+</div>

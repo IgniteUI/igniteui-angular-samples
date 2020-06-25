@@ -1,0 +1,67 @@
+.cellAlignSyle {
+    text-align: right;
+    float:right;
+}
+.cellAlignSyle > span {
+    float:right;
+}
+.up {
+    color: green;
+}
+.down {
+    color: red;
+}
+.headerAlignSyle {
+    text-align: right !important;
+}
+
+.sample-container {
+    width: 20%;
+    display: flex;
+
+    margin: 0% 0% 20px 10px
+}
+
+.grid-controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 16px 24px;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+.grid__wrapper {
+    margin: 0 16px;
+}
+
+.currency-badge-container {
+    width: 80px;
+    float: right;
+}
+
+.badge-left {
+    float: left;
+}
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+igx-snackbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.igx-snackbar {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.container {
+    display: flex;
+    igx-icon {
+        margin: 20px;
+    }
+}

@@ -1,0 +1,74 @@
+
+@import 'themes';
+
+:host {
+    display: block;
+    margin: 16px;
+    box-shadow: igx-elevation($elevations, 12);
+
+
+  //Set the light themes for the components.
+    &.light-theme {
+      background: $light-color;
+      ::ng-deep {
+        .sort-icon.material-icons.igx-icon {
+            color: white;
+        }
+        @include igx-grid($light-grid-theme);
+        @include igx-snackbar($light-snackbar-theme);
+        @include igx-input-group($light-input-group-theme);
+        @include igx-paginator($light-paginator-theme);
+        @include igx-button($light-button-theme);
+        @include igx-dialog($light-dialog-theme);
+        @include igx-button-group($light-button-group-theme);
+        @include igx-calendar($light-calendar-theme);
+        @include igx-icon($light-icon-theme);
+        @include igx-chip($light-chip-theme);
+        @include igx-drop-down($light-drop-down-theme);
+        @include igx-badge($light-badge-theme);
+      }
+    }
+
+    //Set the dark themes for the components.
+    &.dark-theme {
+      background: $dark-color;
+      ::ng-deep {
+        @include igx-grid($dark-grid-theme);
+        @include igx-snackbar($dark-snackbar-theme);
+        @include igx-input-group($dark-input-group-theme);
+        @include igx-paginator($dark-paginator-theme);
+        @include igx-button($dark-button-theme);
+        @include igx-dialog($dark-dialog-theme);
+        @include igx-button-group($dark-button-group-theme);
+        @include igx-calendar($dark-calendar-theme);
+        @include igx-icon($dark-icon-theme);
+        @include igx-chip($dark-chip-theme);
+        @include igx-drop-down($dark-drop-down-theme);
+        @include igx-badge($dark-badge-theme);
+      }
+    }
+
+     //Set the black themes for the components.
+    &.black-theme {
+      background: $black-color;
+      ::ng-deep {
+        @include igx-grid($black-grid-theme);
+        @include igx-snackbar($black-snackbar-theme);
+        @include igx-input-group($black-input-group-theme);
+        @include igx-paginator($black-paginator-theme);
+        @include igx-button($black-button-theme);
+        @include igx-dialog($black-dialog-theme);
+        @include igx-button-group($black-button-group-theme);
+        @include igx-calendar($black-calendar-theme);
+        @include igx-icon($black-icon-theme);
+        @include igx-chip($black-chip-theme);
+        @include igx-drop-down($black-drop-down-theme);
+        @include igx-badge($black-badge-theme);
+
+        .igx-drop-down__list{
+            background: $black-color;
+          }
+
+      }
+    }
+  }

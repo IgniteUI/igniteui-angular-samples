@@ -1,0 +1,12 @@
+<div class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  #grid1 [data]="localData" childDataKey="Employees" width="100%" height="500px"
+        displayDensity="compact" (onGridKeydown)="customKeydown($event)" [autoGenerate]="false" [rowSelection]="selectionMode"
+        [paging]="true" [allowFiltering]="true" [columnHiding]="true" [columnPinning]="true">
+        <igx-column field="HireDate" dataType="date" [sortable]="true" [editable]="true" [movable]="true"
+            [resizable]="true"></igx-column>
+        <igx-column field="Age" dataType="number" [sortable]="true" [editable]="true" [movable]="true"
+            [resizable]="true"></igx-column>
+        <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [movable]="true"
+            [resizable]="true"></igx-column>
+    </igx-tree-grid>
+</div>

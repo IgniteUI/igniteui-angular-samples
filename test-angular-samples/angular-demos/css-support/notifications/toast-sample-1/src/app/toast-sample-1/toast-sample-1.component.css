@@ -1,0 +1,10 @@
+.sample-content {
+  margin: 3.5% 0; }
+
+.btn-group {
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  margin-top: 16px;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }

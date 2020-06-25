@@ -1,0 +1,9 @@
+.wrapper {
+  margin: 16px; }
+
+.photo {
+  vertical-align: middle;
+  max-height: 40px; }
+
+.cell__inner {
+  margin: 1px auto 1px auto; }

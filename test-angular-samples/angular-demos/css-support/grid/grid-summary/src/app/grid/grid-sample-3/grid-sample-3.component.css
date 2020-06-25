@@ -1,0 +1,64 @@
+.grid-controls {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  margin: 0 16px 24px; }
+  .grid-controls igx-switch {
+    margin-top: 24px; }
+
+.grid__wrapper {
+  margin: 0 16px; }
+
+.header {
+  height: 100%; }
+
+:host ::ng-deep .igx-grid__th .title {
+  width: 100%;
+  cursor: auto; }
+
+@media screen and (max-width: 677px) {
+  :host ::ng-deep .header-icon {
+    padding-bottom: 17px;
+    padding-top: 17px;
+    font-size: 1.4em;
+    width: 1.1em;
+    height: 1.1em;
+    float: right; }
+  :host ::ng-deep .header-text {
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 50%; } }
+
+@media screen and (min-width: 677px) {
+  :host ::ng-deep .header-icon {
+    padding-top: 17px;
+    font-size: 1.4em;
+    width: 1.1em;
+    height: 1.1em;
+    float: right; }
+  :host ::ng-deep .header-text {
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 50%; } }
+
+@media screen and (min-width: 992px) {
+  :host ::ng-deep .header-icon {
+    padding-top: 17px;
+    font-size: 1.4em;
+    width: 1.1em;
+    height: 1.1em;
+    float: right;
+    margin-right: 10px;
+    cursor: pointer; }
+  :host ::ng-deep .header-text {
+    float: left;
+    white-space: nowrap;
+    width: 50%;
+    cursor: auto; } }

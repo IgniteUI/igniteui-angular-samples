@@ -1,0 +1,10 @@
+.date-picker-wrapper {
+  padding: 1rem;
+  overflow: hidden;
+  max-width: 600px; }
+
+igx-snackbar {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  right: 0px; }

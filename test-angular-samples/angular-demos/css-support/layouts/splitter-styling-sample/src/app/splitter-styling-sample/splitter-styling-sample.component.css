@@ -1,0 +1,163 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+:host {
+  /* Using Theme Overrides to provide IE 11 support.
+     * NOTE: Theming using this approach will greatly increase the size
+     * of the output CSS. If you do not plan to target IE 11,
+     * delete this section and use the `igx-css-vars` mixin as shown above.
+    **/ }
+  :host p {
+    padding: 0 16px; }
+  :host ::ng-deep {
+    --igx-splitter-border-radius: 0px;
+    --igx-splitter-bar-color: #011627;
+    --igx-splitter-focus-color: #ECAA53;
+    --igx-splitter-handle-color: #ECAA53;
+    --igx-splitter-expander-color: #ECAA53;
+    --igx-splitter-size: 4px; }
+  :host ::ng-deep .igx-splitter-bar::before, :host ::ng-deep .igx-splitter-bar::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: transparent; }
+  :host ::ng-deep .igx-splitter-bar--vertical::before, :host ::ng-deep .igx-splitter-bar--vertical::after {
+    width: 4px;
+    height: 100%; }
+  :host ::ng-deep .igx-splitter-bar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    background: var(--igx-splitter-bar-color);
+    border: 1px solid var(--igx-splitter-bar-color);
+    z-index: 99;
+    opacity: .68;
+    transition: opacity 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; }
+    :host ::ng-deep .igx-splitter-bar::before {
+      top: 100%; }
+    :host ::ng-deep .igx-splitter-bar::after {
+      bottom: 100%; }
+    :host ::ng-deep .igx-splitter-bar:hover {
+      transition: all .25s ease-out;
+      opacity: 1; }
+  :host ::ng-deep .igx-splitter-bar-host:focus {
+    outline: transparent solid 1px;
+    box-shadow: inset 0 0 0 1px var(--igx-splitter-focus-color); }
+  :host ::ng-deep .igx-splitter-bar--vertical {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    height: 100%; }
+    :host ::ng-deep .igx-splitter-bar--vertical::before {
+      top: 0;
+      right: 100%; }
+    :host ::ng-deep .igx-splitter-bar--vertical::after {
+      top: 0;
+      left: 100%; }
+  :host ::ng-deep .igx-splitter-bar__handle {
+    background: var(--igx-splitter-handle-color);
+    border-radius: var(--igx-splitter-border-radius); }
+  :host ::ng-deep .igx-splitter-bar__handle {
+    width: 25%;
+    height: var(--igx-splitter-size);
+    margin: 0 3rem; }
+  :host ::ng-deep .igx-splitter-bar--vertical .igx-splitter-bar__handle, .igx-splitter-bar--vertical :host ::ng-deep .igx-splitter-bar__handle {
+    width: var(--igx-splitter-size);
+    height: 25%;
+    margin: 3rem 0; }
+  :host ::ng-deep .igx-splitter-bar__expander--start::before, :host ::ng-deep .igx-splitter-bar__expander--end::before {
+    position: absolute;
+    content: '';
+    background: transparent; }
+  :host ::ng-deep .igx-splitter-bar__expander--start, :host ::ng-deep .igx-splitter-bar__expander--end {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-right: var(--igx-splitter-size) solid transparent;
+    border-left: var(--igx-splitter-size) solid transparent;
+    cursor: pointer;
+    z-index: 1; }
+  :host ::ng-deep .igx-splitter-bar__expander--start {
+    border-bottom: var(--igx-splitter-size) solid var(--igx-splitter-expander-color); }
+    :host ::ng-deep .igx-splitter-bar__expander--start::before {
+      top: calc(100% - 4px);
+      left: calc(100% - 8px);
+      width: 16px;
+      height: 12px; }
+  :host ::ng-deep .igx-splitter-bar__expander--end {
+    border-bottom: unset;
+    border-top: var(--igx-splitter-size) solid var(--igx-splitter-expander-color); }
+    :host ::ng-deep .igx-splitter-bar__expander--end::before {
+      top: calc(100% - 8px);
+      left: calc(100% - 8px);
+      width: 16px;
+      height: 12px; }
+  :host ::ng-deep .igx-splitter-bar--vertical .igx-splitter-bar__expander--start, .igx-splitter-bar--vertical :host ::ng-deep .igx-splitter-bar__expander--start {
+    border-top: var(--igx-splitter-size) solid transparent;
+    border-right: var(--igx-splitter-size) solid var(--igx-splitter-expander-color);
+    border-bottom: var(--igx-splitter-size) solid transparent;
+    border-left: unset; }
+    :host ::ng-deep .igx-splitter-bar--vertical .igx-splitter-bar__expander--start::before, .igx-splitter-bar--vertical :host ::ng-deep .igx-splitter-bar__expander--start::before {
+      top: calc(100% - 8px);
+      left: calc(100% - 4px);
+      width: 12px;
+      height: 16px; }
+  :host ::ng-deep .igx-splitter-bar--vertical .igx-splitter-bar__expander--end, .igx-splitter-bar--vertical :host ::ng-deep .igx-splitter-bar__expander--end {
+    border-top: var(--igx-splitter-size) solid transparent;
+    border-right: unset;
+    border-bottom: var(--igx-splitter-size) solid transparent;
+    border-left: var(--igx-splitter-size) solid var(--igx-splitter-expander-color); }
+    :host ::ng-deep .igx-splitter-bar--vertical .igx-splitter-bar__expander--end::before, .igx-splitter-bar--vertical :host ::ng-deep .igx-splitter-bar__expander--end::before {
+      left: calc(100% - 8px);
+      top: calc(100% - 8px);
+      height: 16px;
+      width: 12px; }

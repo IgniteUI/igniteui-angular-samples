@@ -1,0 +1,148 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+.avatars-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap; }
+
+.avatar-sample {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 0 30%;
+      flex: 1 0 30%;
+  width: 88px;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  margin: 15px 0; }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+  --igx-avatar-border-radius-round: 44px;
+  --igx-avatar-border-radius-square: 16px;
+  --igx-avatar-icon-background: #217346;
+  --igx-avatar-icon-color: #ffffff;
+  --igx-avatar-initials-background: #72da67;
+  --igx-avatar-initials-color: #000000;
+  --igx-avatar-image-background: transparent; }
+
+:host ::ng-deep .igx-avatar, :host ::ng-deep .igx-avatar--rounded {
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: var(--igx-avatar-initials-color);
+  background: var(--igx-avatar-initials-background);
+  vertical-align: middle;
+  border-radius: var(--igx-avatar-border-radius-square);
+  outline-style: none; }
+  :host ::ng-deep .igx-avatar::after, :host ::ng-deep .igx-avatar--rounded::after {
+    box-shadow: none;
+    transition: box-shadow 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+:host ::ng-deep .igx-avatar__image {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit; }
+
+:host ::ng-deep .igx-avatar__image {
+  background-color: var(--igx-avatar-image-background);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+:host ::ng-deep .igx-avatar--rounded {
+  border-radius: var(--igx-avatar-border-radius-round); }
+
+:host ::ng-deep .igx-avatar--small {
+  width: 2.5rem;
+  height: 2.5rem;
+  min-width: 2.5rem; }
+
+:host ::ng-deep .igx-avatar--medium {
+  width: 4rem;
+  height: 4rem;
+  min-width: 4rem; }
+
+:host ::ng-deep .igx-avatar--large {
+  width: 5.5rem;
+  height: 5.5rem;
+  min-width: 5.5rem; }
+
+:host ::ng-deep .igx-avatar--icon {
+  color: var(--igx-avatar-icon-color);
+  background: var(--igx-avatar-icon-background); }
+
+:host ::ng-deep .igx-avatar--initials {
+  text-transform: uppercase;
+  color: var(--igx-avatar-initials-color);
+  background-color: var(--igx-avatar-initials-background); }
+
+:host ::ng-deep .igx-avatar--initials {
+  font-size: 1.25rem;
+  line-height: 2.5rem; }
+
+:host ::ng-deep .igx-avatar--medium.igx-avatar--initials {
+  font-size: 2rem;
+  line-height: 4rem; }
+
+:host ::ng-deep .igx-avatar--large.igx-avatar--initials {
+  font-size: 2.75rem;
+  line-height: 5.5rem; }

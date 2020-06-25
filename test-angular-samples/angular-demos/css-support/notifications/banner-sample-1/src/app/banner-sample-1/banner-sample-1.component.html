@@ -1,0 +1,20 @@
+<div class="gallery__wrapper">
+    <igx-navbar title="Gallery">
+        <igx-icon (click)="connectionBanner.open()">refresh</igx-icon>
+    </igx-navbar>
+    <div class="gallery__content">
+        <igx-banner class="offline-banner" #connectionBanner>
+            You are currently offline.
+        </igx-banner>
+        <igx-card class="gallery__item">
+            <div>
+                <img [src]="imageUrls[0]">
+            </div>
+        </igx-card>
+        <igx-card class="gallery__item">
+            <div>
+                <img [src]="imageUrls[1]">
+            </div>
+        </igx-card>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.content-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%; }
+
+main {
+  height: 100%;
+  overflow: auto;
+  padding: 16px; }
+
+:host {
+  display: block;
+  height: 100%; }

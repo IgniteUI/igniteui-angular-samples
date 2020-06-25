@@ -1,0 +1,29 @@
+<igx-hierarchical-grid igxPreventDocumentScroll  class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
+    [height]="'500px'" [width]="'100%'" [showToolbar]='true' [columnPinning]='true' #hierarchicalGrid>
+    <igx-column field="CompanyName" header="Company Name" width="200px" [pinned]="true"></igx-column>
+    <igx-column field="ContactName" header="Contact Name" width="150px"></igx-column>
+    <igx-column field="ContactTitle" header="Contact Title" width="200px"></igx-column>
+    <igx-column field="Address" width="200px"></igx-column>
+    <igx-column field="City" width="150px"></igx-column>
+    <igx-column field="PostalCode" header="Postal Code" width="150px"></igx-column>
+    <igx-column field="Country" width="150px"></igx-column>
+    <igx-column field="Phone" width="150px"></igx-column>
+    <igx-column field="Fax" width="150px"></igx-column>
+    <igx-row-island [key]="'Orders'" [autoGenerate]="false">
+            <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" width="150px"></igx-column>
+            <igx-column field="RequiredDate" header="Required Date" [dataType]="'date'" width="150px"></igx-column>
+            <igx-column field="ShippedDate" header="Shipped Date" [dataType]="'date'" width="150px"></igx-column>
+            <igx-column field="ShipVia" header="Ship Via" width="150px"></igx-column>
+            <igx-column field="Freight" width="150px"></igx-column>
+            <igx-column field="ShipName" header="Ship Name" width="200px" pinned="true"></igx-column>
+            <igx-column field="ShipAddress" header="Ship Address" width="150px"></igx-column>
+            <igx-column field="ShipCity" header="Ship City" width="150px"></igx-column>
+            <igx-column field="ShipPostalCode" header="Ship Postal Code" width="150px"></igx-column>
+            <igx-column field="ShipCountry" header="Ship Country" width="150px"></igx-column>
+        <igx-row-island [key]="'OrderDetails'" [autoGenerate]="false">
+                <igx-column field="UnitPrice" header="Unit Price" width="150px"></igx-column>
+                <igx-column field="Quantity" width="150px"></igx-column>
+                <igx-column field="Discount" width="150px"></igx-column>
+        </igx-row-island>
+    </igx-row-island>
+</igx-hierarchical-grid>

@@ -1,0 +1,18 @@
+.date-picker-wrapper {
+    padding: 1rem;
+    overflow: hidden;
+    max-width: 600px;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-left: 24px;
+    justify-content: flex-end;
+    align-items: center;
+    height: 52px;
+
+    [igxButton] {
+        margin: 8px 8px 8px 0px;
+    }
+}

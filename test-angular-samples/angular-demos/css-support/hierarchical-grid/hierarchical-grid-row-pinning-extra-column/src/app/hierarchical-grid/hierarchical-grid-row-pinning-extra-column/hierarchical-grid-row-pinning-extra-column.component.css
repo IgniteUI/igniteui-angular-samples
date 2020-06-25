@@ -1,0 +1,14 @@
+.grid-container {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px; }
+
+.pin-icon {
+  cursor: pointer;
+  color: #999; }
+
+.pin-icon:hover {
+  color: #444; }
+
+.switches {
+  margin-top: 24px; }

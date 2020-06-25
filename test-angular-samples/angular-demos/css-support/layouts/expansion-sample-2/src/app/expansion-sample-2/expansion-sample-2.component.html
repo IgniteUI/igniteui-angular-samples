@@ -1,0 +1,15 @@
+<igx-expansion-panel class="my-expansion-panel" (onExpanded)="handleExpansion($event)" (onCollapsed)="handleCollapse($event)">
+    <igx-expansion-panel-header>
+        <igx-expansion-panel-title>
+            Golden Retriever
+        </igx-expansion-panel-title>
+        <igx-expansion-panel-description *ngIf="panel.collapsed">
+            Medium-large gun dog
+        </igx-expansion-panel-description>
+    </igx-expansion-panel-header>
+    <igx-expansion-panel-body class="my-expansion-panel">
+        The Golden Retriever is a medium-large gun dog that retrieves shot waterfowl, such as ducks and upland game birds, during hunting and shooting parties.[3] The name "retriever" refers to the breed's ability to retrieve shot game undamaged due to their soft mouth. Golden retrievers have an instinctive love of water, and are easy to train to basic or advanced obedience standards.
+    </igx-expansion-panel-body>
+</igx-expansion-panel>
+
+<igx-toast displayTime=1500 #eventToast></igx-toast>

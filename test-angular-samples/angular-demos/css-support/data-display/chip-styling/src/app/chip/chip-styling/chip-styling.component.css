@@ -1,0 +1,361 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+igx-chip {
+  margin-right: 5px;
+  margin-top: 20px; }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+  --igx-chip-border-radius: 5px;
+  --igx-chip-ghost-elevation: 8;
+  --igx-chip-variant: material;
+  --igx-chip-remove-icon-color: 'currentColor';
+  --igx-chip-remove-icon-color-focus: #da0000;
+  --igx-chip-text-color: #FEFEFE;
+  --igx-chip-background: #011627;
+  --igx-chip-border-color: transparent;
+  --igx-chip-ghost-background: #bcbcbc;
+  --igx-chip-hover-text-color: white;
+  --igx-chip-hover-background: #011627dc;
+  --igx-chip-hover-border-color: transparent;
+  --igx-chip-focus-text-color: black;
+  --igx-chip-focus-background: #0116276c;
+  --igx-chip-focus-border-color: transparent;
+  --igx-chip-selected-text-color: black;
+  --igx-chip-selected-background: #ECAA53;
+  --igx-chip-selected-border-color: transparent;
+  --igx-chip-hover-selected-text-color: black;
+  --igx-chip-hover-selected-background: #ECAA53;
+  --igx-chip-hover-selected-border-color: transparent;
+  --igx-chip-focus-selected-text-color: black;
+  --igx-chip-focus-selected-background: #ECAA53;
+  --igx-chip-focus-selected-border-color: transparent;
+  --igx-chip-ghost-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26), 0 8px 10px 1px rgba(0, 0, 0, 0.12), 0 3px 14px 2px rgba(0, 0, 0, 0.08); }
+
+:host ::ng-deep .igx-chip-area {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%; }
+  :host ::ng-deep .igx-chip-area:empty {
+    display: none; }
+
+:host ::ng-deep .igx-chip, :host ::ng-deep .igx-chip__ghost, :host ::ng-deep .igx-chip__ghost--cosy, :host ::ng-deep .igx-chip__ghost--compact, :host ::ng-deep .igx-chip--cosy, :host ::ng-deep .igx-chip--compact {
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  transition: all 120ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition-property: top, left;
+  -ms-touch-action: none;
+      touch-action: none; }
+  :host ::ng-deep .igx-chip:focus, :host ::ng-deep .igx-chip__ghost:focus, :host ::ng-deep .igx-chip__ghost--cosy:focus, :host ::ng-deep .igx-chip__ghost--compact:focus, :host ::ng-deep .igx-chip--cosy:focus, :host ::ng-deep .igx-chip--compact:focus {
+    outline-style: none; }
+
+:host ::ng-deep .igx-chip--disabled .igx-chip__item {
+  cursor: default;
+  pointer-events: none; }
+
+:host ::ng-deep .igx-chip igx-icon, :host ::ng-deep .igx-chip__ghost igx-icon, :host ::ng-deep .igx-chip__ghost--cosy igx-icon, :host ::ng-deep .igx-chip__ghost--compact igx-icon, :host ::ng-deep .igx-chip--cosy igx-icon, :host ::ng-deep .igx-chip--compact igx-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  font-size: 1.125rem;
+  outline-style: none; }
+
+:host ::ng-deep .igx-chip--cosy igx-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  font-size: 1.125rem;
+  outline-style: none; }
+
+:host ::ng-deep .igx-chip--compact igx-icon, :host ::ng-deep .igx-chip__ghost--compact igx-icon {
+  width: 1rem;
+  height: 1rem;
+  font-size: 1rem;
+  outline-style: none; }
+
+:host ::ng-deep .igx-chip igx-prefix, :host ::ng-deep .igx-chip__ghost igx-prefix, :host ::ng-deep .igx-chip__ghost--cosy igx-prefix, :host ::ng-deep .igx-chip__ghost--compact igx-prefix, :host ::ng-deep .igx-chip--cosy igx-prefix, :host ::ng-deep .igx-chip--compact igx-prefix,
+:host ::ng-deep .igx-chip [igxPrefix],
+:host ::ng-deep .igx-chip__ghost [igxPrefix],
+:host ::ng-deep .igx-chip__ghost--cosy [igxPrefix],
+:host ::ng-deep .igx-chip__ghost--compact [igxPrefix],
+:host ::ng-deep .igx-chip--cosy [igxPrefix],
+:host ::ng-deep .igx-chip--compact [igxPrefix],
+:host ::ng-deep .igx-chip igx-suffix,
+:host ::ng-deep .igx-chip__ghost igx-suffix,
+:host ::ng-deep .igx-chip__ghost--cosy igx-suffix,
+:host ::ng-deep .igx-chip__ghost--compact igx-suffix,
+:host ::ng-deep .igx-chip--cosy igx-suffix,
+:host ::ng-deep .igx-chip--compact igx-suffix,
+:host ::ng-deep .igx-chip [igxSuffix],
+:host ::ng-deep .igx-chip__ghost [igxSuffix],
+:host ::ng-deep .igx-chip__ghost--cosy [igxSuffix],
+:host ::ng-deep .igx-chip__ghost--compact [igxSuffix],
+:host ::ng-deep .igx-chip--cosy [igxSuffix],
+:host ::ng-deep .igx-chip--compact [igxSuffix] {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 32ch; }
+
+:host ::ng-deep .igx-chip igx-suffix + igx-suffix, :host ::ng-deep .igx-chip__ghost igx-suffix + igx-suffix, :host ::ng-deep .igx-chip__ghost--cosy igx-suffix + igx-suffix, :host ::ng-deep .igx-chip__ghost--compact igx-suffix + igx-suffix, :host ::ng-deep .igx-chip--cosy igx-suffix + igx-suffix, :host ::ng-deep .igx-chip--compact igx-suffix + igx-suffix, :host ::ng-deep .igx-chip [igxSuffix] + igx-suffix, :host ::ng-deep .igx-chip__ghost [igxSuffix] + igx-suffix, :host ::ng-deep .igx-chip__ghost--cosy [igxSuffix] + igx-suffix, :host ::ng-deep .igx-chip__ghost--compact [igxSuffix] + igx-suffix, :host ::ng-deep .igx-chip--cosy [igxSuffix] + igx-suffix, :host ::ng-deep .igx-chip--compact [igxSuffix] + igx-suffix,
+:host ::ng-deep .igx-chip igx-suffix + [igxSuffix],
+:host ::ng-deep .igx-chip__ghost igx-suffix + [igxSuffix],
+:host ::ng-deep .igx-chip__ghost--cosy igx-suffix + [igxSuffix],
+:host ::ng-deep .igx-chip__ghost--compact igx-suffix + [igxSuffix],
+:host ::ng-deep .igx-chip--cosy igx-suffix + [igxSuffix],
+:host ::ng-deep .igx-chip--compact igx-suffix + [igxSuffix],
+:host ::ng-deep .igx-chip [igxSuffix] + [igxSuffix],
+:host ::ng-deep .igx-chip__ghost [igxSuffix] + [igxSuffix],
+:host ::ng-deep .igx-chip__ghost--cosy [igxSuffix] + [igxSuffix],
+:host ::ng-deep .igx-chip__ghost--compact [igxSuffix] + [igxSuffix],
+:host ::ng-deep .igx-chip--cosy [igxSuffix] + [igxSuffix],
+:host ::ng-deep .igx-chip--compact [igxSuffix] + [igxSuffix],
+:host ::ng-deep .igx-chip igx-suffix + .igx-chip__remove,
+:host ::ng-deep .igx-chip__ghost igx-suffix + .igx-chip__remove,
+:host ::ng-deep .igx-chip__ghost--cosy igx-suffix + .igx-chip__remove,
+:host ::ng-deep .igx-chip__ghost--compact igx-suffix + .igx-chip__remove,
+:host ::ng-deep .igx-chip--cosy igx-suffix + .igx-chip__remove,
+:host ::ng-deep .igx-chip--compact igx-suffix + .igx-chip__remove,
+:host ::ng-deep .igx-chip [igxSuffix] + .igx-chip__remove,
+:host ::ng-deep .igx-chip__ghost [igxSuffix] + .igx-chip__remove,
+:host ::ng-deep .igx-chip__ghost--cosy [igxSuffix] + .igx-chip__remove,
+:host ::ng-deep .igx-chip__ghost--compact [igxSuffix] + .igx-chip__remove,
+:host ::ng-deep .igx-chip--cosy [igxSuffix] + .igx-chip__remove,
+:host ::ng-deep .igx-chip--compact [igxSuffix] + .igx-chip__remove {
+  margin-left: 0.25rem; }
+
+:host ::ng-deep .igx-chip igx-prefix + igx-prefix, :host ::ng-deep .igx-chip__ghost igx-prefix + igx-prefix, :host ::ng-deep .igx-chip__ghost--cosy igx-prefix + igx-prefix, :host ::ng-deep .igx-chip__ghost--compact igx-prefix + igx-prefix, :host ::ng-deep .igx-chip--cosy igx-prefix + igx-prefix, :host ::ng-deep .igx-chip--compact igx-prefix + igx-prefix, :host ::ng-deep .igx-chip [igxPrefix] + igx-prefix, :host ::ng-deep .igx-chip__ghost [igxPrefix] + igx-prefix, :host ::ng-deep .igx-chip__ghost--cosy [igxPrefix] + igx-prefix, :host ::ng-deep .igx-chip__ghost--compact [igxPrefix] + igx-prefix, :host ::ng-deep .igx-chip--cosy [igxPrefix] + igx-prefix, :host ::ng-deep .igx-chip--compact [igxPrefix] + igx-prefix,
+:host ::ng-deep .igx-chip igx-prefix + [igxPrefix],
+:host ::ng-deep .igx-chip__ghost igx-prefix + [igxPrefix],
+:host ::ng-deep .igx-chip__ghost--cosy igx-prefix + [igxPrefix],
+:host ::ng-deep .igx-chip__ghost--compact igx-prefix + [igxPrefix],
+:host ::ng-deep .igx-chip--cosy igx-prefix + [igxPrefix],
+:host ::ng-deep .igx-chip--compact igx-prefix + [igxPrefix],
+:host ::ng-deep .igx-chip [igxPrefix] + [igxPrefix],
+:host ::ng-deep .igx-chip__ghost [igxPrefix] + [igxPrefix],
+:host ::ng-deep .igx-chip__ghost--cosy [igxPrefix] + [igxPrefix],
+:host ::ng-deep .igx-chip__ghost--compact [igxPrefix] + [igxPrefix],
+:host ::ng-deep .igx-chip--cosy [igxPrefix] + [igxPrefix],
+:host ::ng-deep .igx-chip--compact [igxPrefix] + [igxPrefix] {
+  margin-left: 0.25rem; }
+  :host ::ng-deep .igx-chip igx-prefix + igx-prefix.igx-avatar, :host ::ng-deep .igx-chip__ghost igx-prefix + igx-prefix.igx-avatar, :host ::ng-deep .igx-chip__ghost--cosy igx-prefix + igx-prefix.igx-avatar, :host ::ng-deep .igx-chip__ghost--compact igx-prefix + igx-prefix.igx-avatar, :host ::ng-deep .igx-chip--cosy igx-prefix + igx-prefix.igx-avatar, :host ::ng-deep .igx-chip--compact igx-prefix + igx-prefix.igx-avatar, :host ::ng-deep .igx-chip [igxPrefix] + igx-prefix.igx-avatar, :host ::ng-deep .igx-chip__ghost [igxPrefix] + igx-prefix.igx-avatar, :host ::ng-deep .igx-chip__ghost--cosy [igxPrefix] + igx-prefix.igx-avatar, :host ::ng-deep .igx-chip__ghost--compact [igxPrefix] + igx-prefix.igx-avatar, :host ::ng-deep .igx-chip--cosy [igxPrefix] + igx-prefix.igx-avatar, :host ::ng-deep .igx-chip--compact [igxPrefix] + igx-prefix.igx-avatar, :host ::ng-deep .igx-chip igx-prefix + igx-prefix.igx-avatar--rounded, :host ::ng-deep .igx-chip__ghost igx-prefix + igx-prefix.igx-avatar--rounded, :host ::ng-deep .igx-chip__ghost--cosy igx-prefix + igx-prefix.igx-avatar--rounded, :host ::ng-deep .igx-chip__ghost--compact igx-prefix + igx-prefix.igx-avatar--rounded, :host ::ng-deep .igx-chip--cosy igx-prefix + igx-prefix.igx-avatar--rounded, :host ::ng-deep .igx-chip--compact igx-prefix + igx-prefix.igx-avatar--rounded, :host ::ng-deep .igx-chip [igxPrefix] + igx-prefix.igx-avatar--rounded, :host ::ng-deep .igx-chip__ghost [igxPrefix] + igx-prefix.igx-avatar--rounded, :host ::ng-deep .igx-chip__ghost--cosy [igxPrefix] + igx-prefix.igx-avatar--rounded, :host ::ng-deep .igx-chip__ghost--compact [igxPrefix] + igx-prefix.igx-avatar--rounded, :host ::ng-deep .igx-chip--cosy [igxPrefix] + igx-prefix.igx-avatar--rounded, :host ::ng-deep .igx-chip--compact [igxPrefix] + igx-prefix.igx-avatar--rounded,
+  :host ::ng-deep .igx-chip igx-prefix + .igx-avatar[igxPrefix],
+  :host ::ng-deep .igx-chip__ghost igx-prefix + .igx-avatar[igxPrefix],
+  :host ::ng-deep .igx-chip__ghost--cosy igx-prefix + .igx-avatar[igxPrefix],
+  :host ::ng-deep .igx-chip__ghost--compact igx-prefix + .igx-avatar[igxPrefix],
+  :host ::ng-deep .igx-chip--cosy igx-prefix + .igx-avatar[igxPrefix],
+  :host ::ng-deep .igx-chip--compact igx-prefix + .igx-avatar[igxPrefix],
+  :host ::ng-deep .igx-chip [igxPrefix] + .igx-avatar[igxPrefix],
+  :host ::ng-deep .igx-chip__ghost [igxPrefix] + .igx-avatar[igxPrefix],
+  :host ::ng-deep .igx-chip__ghost--cosy [igxPrefix] + .igx-avatar[igxPrefix],
+  :host ::ng-deep .igx-chip__ghost--compact [igxPrefix] + .igx-avatar[igxPrefix],
+  :host ::ng-deep .igx-chip--cosy [igxPrefix] + .igx-avatar[igxPrefix],
+  :host ::ng-deep .igx-chip--compact [igxPrefix] + .igx-avatar[igxPrefix],
+  :host ::ng-deep .igx-chip igx-prefix + .igx-avatar--rounded[igxPrefix],
+  :host ::ng-deep .igx-chip__ghost igx-prefix + .igx-avatar--rounded[igxPrefix],
+  :host ::ng-deep .igx-chip__ghost--cosy igx-prefix + .igx-avatar--rounded[igxPrefix],
+  :host ::ng-deep .igx-chip__ghost--compact igx-prefix + .igx-avatar--rounded[igxPrefix],
+  :host ::ng-deep .igx-chip--cosy igx-prefix + .igx-avatar--rounded[igxPrefix],
+  :host ::ng-deep .igx-chip--compact igx-prefix + .igx-avatar--rounded[igxPrefix],
+  :host ::ng-deep .igx-chip [igxPrefix] + .igx-avatar--rounded[igxPrefix],
+  :host ::ng-deep .igx-chip__ghost [igxPrefix] + .igx-avatar--rounded[igxPrefix],
+  :host ::ng-deep .igx-chip__ghost--cosy [igxPrefix] + .igx-avatar--rounded[igxPrefix],
+  :host ::ng-deep .igx-chip__ghost--compact [igxPrefix] + .igx-avatar--rounded[igxPrefix],
+  :host ::ng-deep .igx-chip--cosy [igxPrefix] + .igx-avatar--rounded[igxPrefix],
+  :host ::ng-deep .igx-chip--compact [igxPrefix] + .igx-avatar--rounded[igxPrefix] {
+    max-height: 100%;
+    max-width: 100%;
+    margin-left: 0 !important; }
+
+:host ::ng-deep .igx-chip__content {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 0 0.5rem;
+  max-width: 32ch; }
+  :host ::ng-deep .igx-chip__content:empty {
+    display: none; }
+
+:host ::ng-deep .igx-chip--cosy .igx-chip__content, .igx-chip--cosy :host ::ng-deep .igx-chip__content {
+  padding: 0 0.25rem; }
+
+:host ::ng-deep .igx-chip--compact .igx-chip__content, .igx-chip--compact :host ::ng-deep .igx-chip__content {
+  padding: 0 0.125rem; }
+
+:host ::ng-deep .igx-chip__remove {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-right: 0.25rem;
+  color: var(--igx-chip-remove-icon-color, currentColor); }
+  :host ::ng-deep .igx-chip__remove:empty {
+    display: none; }
+  :host ::ng-deep .igx-chip__remove:focus {
+    outline-style: none; }
+    :host ::ng-deep .igx-chip__remove:focus igx-icon {
+      outline-style: none;
+      color: var(--igx-chip-remove-icon-color-focus); }
+  :host ::ng-deep .igx-chip__remove igx-icon:focus {
+    outline-style: none; }
+
+:host ::ng-deep .igx-chip__select, :host ::ng-deep .igx-chip__select--hidden {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  width: 18px;
+  opacity: 1;
+  z-index: 1;
+  transition: opacity 120ms cubic-bezier(0.25, 0.46, 0.45, 0.94), width 120ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  :host ::ng-deep .igx-chip__select > *, :host ::ng-deep .igx-chip__select--hidden > * {
+    width: inherit !important; }
+  :host ::ng-deep .igx-chip__select + igx-prefix, :host ::ng-deep .igx-chip__select--hidden + igx-prefix,
+  :host ::ng-deep .igx-chip__select + [igxPrefix],
+  :host ::ng-deep .igx-chip__select--hidden + [igxPrefix] {
+    margin-left: 0.25rem; }
+
+:host ::ng-deep .igx-chip__select--hidden {
+  width: 0;
+  opacity: 0;
+  z-index: -1; }
+  :host ::ng-deep .igx-chip__select--hidden + igx-prefix,
+  :host ::ng-deep .igx-chip__select--hidden + [igxPrefix] {
+    margin-left: 0; }
+
+:host ::ng-deep .igx-chip__item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+  height: 2rem;
+  padding: 0 0.25rem;
+  color: var(--igx-chip-text-color);
+  background: var(--igx-chip-background);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--igx-chip-border-color);
+  border-radius: var(--igx-chip-border-radius);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-filter: opacity(1);
+          filter: opacity(1); }
+
+:host ::ng-deep .igx-chip__item:hover {
+  color: var(--igx-chip-hover-text-color);
+  background: var(--igx-chip-hover-background);
+  border-color: var(--igx-chip-hover-border-color);
+  transition: all 120ms ease-in; }
+
+:host ::ng-deep .igx-chip__item:focus {
+  color: var(--igx-chip-focus-text-color);
+  background: var(--igx-chip-focus-background);
+  border-color: var(--igx-chip-focus-border-color);
+  outline-style: none; }
+
+:host ::ng-deep .igx-chip__item--selected {
+  color: var(--igx-chip-selected-text-color);
+  background: var(--igx-chip-selected-background);
+  border-color: var(--igx-chip-selected-border-color); }
+
+:host ::ng-deep .igx-chip__item--selected:hover {
+  color: var(--igx-chip-hover-selected-text-color);
+  background: var(--igx-chip-hover-selected-background);
+  border-color: var(--igx-chip-hover-selected-border-color);
+  transition: all 120ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+:host ::ng-deep .igx-chip__item--selected:focus {
+  color: var(--igx-chip-focus-selected-text-color);
+  background: var(--igx-chip-focus-selected-background);
+  border-color: var(--igx-chip-focus-selected-border-color);
+  transition: all 120ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+:host ::ng-deep .igx-chip--cosy .igx-chip__item, .igx-chip--cosy :host ::ng-deep .igx-chip__item {
+  height: 1.5rem;
+  padding: 0 0.25rem; }
+
+:host ::ng-deep .igx-chip--compact .igx-chip__item, .igx-chip--compact :host ::ng-deep .igx-chip__item {
+  height: 1.125rem;
+  padding: 0 0.125rem; }
+
+:host ::ng-deep .igx-chip__ghost, :host ::ng-deep .igx-chip__ghost--cosy, :host ::ng-deep .igx-chip__ghost--compact {
+  position: absolute;
+  z-index: 10;
+  box-shadow: var(--igx-chip-ghost-shadow);
+  overflow: hidden;
+  background: var(--igx-chip-ghost-background); }
+  :host ::ng-deep .igx-chip__ghost:hover, :host ::ng-deep .igx-chip__ghost--cosy:hover, :host ::ng-deep .igx-chip__ghost--compact:hover, :host ::ng-deep .igx-chip__ghost:focus, :host ::ng-deep .igx-chip__ghost--cosy:focus, :host ::ng-deep .igx-chip__ghost--compact:focus {
+    background: var(--igx-chip-ghost-background); }
+
+:host ::ng-deep .igx-chip__ghost--cosy {
+  height: 1.5rem; }
+  :host ::ng-deep .igx-chip__ghost--cosy .igx-chip__content {
+    padding: 0 0.25rem; }
+
+:host ::ng-deep .igx-chip__ghost--compact {
+  height: 1.125rem; }
+  :host ::ng-deep .igx-chip__ghost--compact .igx-chip__content {
+    padding: 0 0.125rem; }

@@ -1,0 +1,18 @@
+.grid__wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row;
+      flex-flow: row;
+  height: 650px;
+  margin: 15px; }
+
+.flex-column {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+      flex-flow: column;
+  height: 650px;
+  margin-left: 1px; }
+
+.igSelect {
+  margin-left: 1px; }

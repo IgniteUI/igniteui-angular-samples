@@ -1,0 +1,16 @@
+.divider-sample {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  border: 1px solid #ededed; }
+  .divider-sample > div {
+    margin-left: 20px;
+    text-align: left; }
+    .divider-sample > div:first-of-type {
+      text-align: right;
+      margin-left: 0;
+      margin-right: 20px; }
+  .divider-sample p {
+    margin: 0; }
+  .divider-sample .mt {
+    margin-top: 20px; }

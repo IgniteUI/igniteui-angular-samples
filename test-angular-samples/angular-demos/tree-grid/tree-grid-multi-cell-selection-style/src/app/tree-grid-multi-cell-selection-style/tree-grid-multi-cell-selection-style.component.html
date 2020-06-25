@@ -1,0 +1,16 @@
+<div class="wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  #source width="100%" [data]="sourceData" height="600px" [autoGenerate]="false" primaryKey="ID"
+        foreignKey="ParentID">
+        <igx-column field="ID" header="Product ID" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="Name" header="Product Name" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Unit Price" [dataType]="'number'">
+            <ng-template igxCell let-cell="cell" let-val let-row>
+                {{+val | currency}}
+            </ng-template>
+        </igx-column>
+        <igx-column field="AddedDate" header="Added Date" [dataType]="'date'">
+        </igx-column>
+    </igx-tree-grid>
+</div>

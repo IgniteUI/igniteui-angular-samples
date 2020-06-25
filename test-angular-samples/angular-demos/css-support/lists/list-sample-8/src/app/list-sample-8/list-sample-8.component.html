@@ -1,0 +1,11 @@
+<div class="list-sample">
+    <igx-list>
+        <igx-list-item isHeader="true">Contacts</igx-list-item>
+        <igx-list-item #item *ngFor="let contact of contacts">
+            <igx-avatar igxListThumbnail [src]="contact.photo" roundShape="true"></igx-avatar>
+            <span igxListLineTitle>{{ contact.name }}</span>
+            <span igxListLineSubTitle>{{ contact.phone }}</span>
+            <igx-icon igxListAction [color]="contact.isFavorite ? 'orange' : 'lightgray'" (click)="toggleFavorite(contact)">star</igx-icon>
+        </igx-list-item>
+    </igx-list>
+</div>

@@ -1,0 +1,19 @@
+<div class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  [data]="employees" rowSelection="multiple" cellSelection="none" primaryKey="ID" foreignKey="ParentID"
+        height="530px" width="100%" [autoGenerate]="false" [paging]="true" (onRowSelectionChange)="onRowSelect($event)">
+        <igx-column field="Name"></igx-column>
+        <igx-column field="Title"></igx-column>
+        <igx-column field="HireDate"></igx-column>
+        <igx-column field="Age" width="15%"></igx-column>
+        <igx-column field="OnPTO" width="15%"></igx-column>
+
+        <ng-template igxRowSelector let-rowContext>
+            <div class="row-selector">
+                <igx-checkbox [readonly]="true" [checked]="rowContext.selected"
+                    [disabled]="!isSelectionAllowed(rowContext.rowID)"
+                    [aria-label]="rowContext.selected ? 'Deselect row' : 'Select row'">
+                </igx-checkbox>
+            </div>
+        </ng-template>
+    </igx-tree-grid>
+</div>

@@ -1,0 +1,15 @@
+.grid__wrapper {
+  margin: 10px; }
+
+.cell__inner {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  height: 100%;
+  position: relative;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.name {
+  margin-left: 30px; }

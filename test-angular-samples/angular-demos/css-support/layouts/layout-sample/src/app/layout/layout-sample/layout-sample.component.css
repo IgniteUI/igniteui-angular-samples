@@ -1,0 +1,20 @@
+.layout-box {
+  width: 100%;
+  background: var(--igx-grays-200);
+  padding: 8px; }
+  .layout-box .layout-box__el {
+    padding: 10px 20px;
+    margin: 8px;
+    background: var(--igx-secondary-500);
+    color: var(--igx-surface-500); }
+  .layout-box.sidebar {
+    -ms-flex: 1;
+        flex: 1; }
+  .layout-box.content {
+    -ms-flex: 3;
+        flex: 3; }
+    .layout-box.content .layout-box {
+      height: 400px; }
+    .layout-box.content .body {
+      background: none;
+      padding: 0; }

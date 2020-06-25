@@ -1,0 +1,158 @@
+[hidden] {
+  display: none !important; }
+
+.igx-display-container {
+  display: inherit;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.igx-display-container--inactive {
+  width: 100%; }
+
+.igx-drag {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.igx-drag--select-disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-drag__handle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.igx-svg-container {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden; }
+
+.igx-radio-group {
+  display: block; }
+
+[class^='igx-'],
+[class^='igx-'] *,
+[class^='igx-'] *::before,
+[class^='igx-'] *::after {
+  box-sizing: border-box; }
+
+:host {
+  display: block;
+  padding: 16px;
+  /* Using Theme Overrides to provide IE 11 support.
+     * NOTE: Theming using this approach will greatly increase the size
+     * of the output CSS. If you do not plan to target IE 11,
+     * delete this section and use the `igx-css-vars` mixin as shown above.
+    **/ }
+  :host ::ng-deep {
+    --igx-drop-down-border-radius: 4px;
+    --igx-drop-down-elevation: 8;
+    --igx-drop-down-background-color: #fff;
+    --igx-drop-down-header-text-color: #5434b8;
+    --igx-drop-down-item-text-color: rgba(0, 0, 0, 0.74);
+    --igx-drop-down-hover-item-text-color: rgba(0, 0, 0, 0.74);
+    --igx-drop-down-hover-item-background: rgba(0, 0, 0, 0.04);
+    --igx-drop-down-focused-item-background: rgba(0, 0, 0, 0.04);
+    --igx-drop-down-focused-item-text-color: rgba(0, 0, 0, 0.74);
+    --igx-drop-down-selected-item-background: #baaee1;
+    --igx-drop-down-selected-item-text-color: black;
+    --igx-drop-down-selected-hover-item-background: #9483c8;
+    --igx-drop-down-selected-hover-item-text-color: black;
+    --igx-drop-down-selected-focus-item-background: #9483c8;
+    --igx-drop-down-selected-focus-item-text-color: black;
+    --igx-drop-down-disabled-item-background: transparent;
+    --igx-drop-down-disabled-item-text-color: rgba(0, 0, 0, 0.38);
+    --igx-drop-down-border-color: rgba(0, 0, 0, 0.12);
+    --igx-drop-down-border-width: 0;
+    --igx-drop-down-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26), 0 8px 10px 1px rgba(0, 0, 0, 0.12), 0 3px 14px 2px rgba(0, 0, 0, 0.08); }
+  :host ::ng-deep .igx-drop-down {
+    position: absolute; }
+  :host ::ng-deep .igx-drop-down__list {
+    overflow: hidden;
+    border-radius: var(--igx-drop-down-border-radius);
+    background: var(--igx-drop-down-background-color);
+    box-shadow: var(--igx-drop-down-shadow);
+    min-width: 8rem;
+    border: var(--igx-drop-down-border-width) solid var(--igx-drop-down-border-color); }
+  :host ::ng-deep .igx-drop-down__list-scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative; }
+    :host ::ng-deep .igx-drop-down__list-scroll:empty {
+      box-shadow: none; }
+    :host ::ng-deep .igx-drop-down__list-scroll igx-input-group {
+      margin-top: -16px !important; }
+  :host ::ng-deep .igx-drop-down__header, :host ::ng-deep .igx-drop-down__group label,
+  :host ::ng-deep .igx-drop-down__item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    -ms-flex-align: center;
+        align-items: center;
+    width: 100%;
+    white-space: nowrap;
+    height: 2.5rem; }
+  
+  :host ::ng-deep .igx-drop-down__item {
+    color: var(--igx-drop-down-item-text-color);
+    cursor: pointer;
+    padding: 0 1.5rem; }
+    :host ::ng-deep .igx-drop-down__item:focus {
+      outline: 0;
+      outline-color: transparent;
+      background: var(--igx-drop-down-focused-item-background);
+      color: var(--igx-drop-down-focused-item-text-color); }
+    :host ::ng-deep .igx-drop-down__item:hover {
+      background: var(--igx-drop-down-hover-item-background);
+      color: var(--igx-drop-down-hover-item-text-color); }
+  :host ::ng-deep .igx-drop-down__item--cosy {
+    height: 2rem;
+    padding: 0 1.25rem; }
+  :host ::ng-deep .igx-drop-down__item--compact {
+    height: 1.75rem;
+    padding: 0 1rem; }
+  :host ::ng-deep .igx-drop-down__header, :host ::ng-deep .igx-drop-down__group label {
+    color: var(--igx-drop-down-header-text-color);
+    pointer-events: none;
+    padding: 0 1rem; }
+  :host ::ng-deep .igx-drop-down__header--cosy {
+    height: 2rem;
+    padding: 0 0.75rem; }
+  :host ::ng-deep .igx-drop-down__header--compact {
+    height: 1.75rem;
+    padding: 0 0.5rem; }
+  :host ::ng-deep .igx-drop-down__group {
+    pointer-events: auto; }
+    :host ::ng-deep .igx-drop-down__group .igx-drop-down__item {
+      text-indent: 0 1.5rem; }
+  :host ::ng-deep .igx-drop-down__item--focused {
+    background: var(--igx-drop-down-focused-item-background);
+    color: var(--igx-drop-down-focused-item-text-color); }
+    :host ::ng-deep .igx-drop-down__item--focused:hover {
+      color: var(--igx-drop-down-focused-item-text-color);
+      background: var(--igx-drop-down-focused-item-background); }
+  :host ::ng-deep .igx-drop-down__item--selected {
+    background: var(--igx-drop-down-selected-item-background);
+    color: var(--igx-drop-down-selected-item-text-color); }
+    :host ::ng-deep .igx-drop-down__item--selected:hover {
+      background: var(--igx-drop-down-selected-hover-item-background);
+      color: var(--igx-drop-down-selected-hover-item-text-color); }
+  :host ::ng-deep .igx-drop-down__item--selected.igx-drop-down__item--focused {
+    background: var(--igx-drop-down-selected-focus-item-background);
+    color: var(--igx-drop-down-selected-focus-item-text-color); }
+  :host ::ng-deep .igx-drop-down__item--disabled, :host ::ng-deep .igx-drop-down__group--disabled {
+    background: var(--igx-drop-down-disabled-item-background);
+    color: var(--igx-drop-down-disabled-item-text-color);
+    cursor: default;
+    pointer-events: none; }
+    :host ::ng-deep .igx-drop-down__item--disabled:hover, :host ::ng-deep .igx-drop-down__group--disabled:hover {
+      background: var(--igx-drop-down-disabled-item-background); }

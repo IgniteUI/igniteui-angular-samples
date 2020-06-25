@@ -1,0 +1,21 @@
+.select-wrapper {
+    display: flex;
+    padding-top: 220px;
+    padding-left: 40px;
+}
+
+.icon {
+    padding-left: 10px;
+    padding-left: 10px;
+}
+
+:host ::ng-deep {
+    .select__entry {
+        span {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding-right: 12px;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.custom-size {
+  width: 100px;
+  height: 100px; }
+
+.sample-content {
+  width: 300px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  margin-top: 30px; }

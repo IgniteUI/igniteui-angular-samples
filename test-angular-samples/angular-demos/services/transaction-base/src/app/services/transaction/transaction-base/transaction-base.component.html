@@ -1,0 +1,34 @@
+<igx-card>
+    <igx-list>
+        <igx-list-item [isHeader]="true">Wishlist</igx-list-item>
+        <!-- use the transactionBasePipe to display changes to the items in the wishlist without affecting the original data -->
+        <igx-list-item *ngFor="let item of this.wishlist | transactionBasePipe"
+            [ngClass]="{ deleted: isDeleted(item.id), edited: isEdited(item.id) }">
+            <p igxListLineTitle>{{item.name}}</p>
+            <p igxListLineSubTitle>Costs: {{item.price}}</p>
+            <igx-icon igxListAction (click)="onEdit()" *ngIf="item.id === 1 && item.price !== '$999'">edit</igx-icon>
+            <igx-icon igxListAction (click)="onDelete()" *ngIf="item.id === 2 && !isDeleted(item.id)">delete</igx-icon>
+        </igx-list-item>
+        <button igxButton (click)="onAdd()" [disabled]="itemAdded(4)">Add New</button>
+    </igx-list>
+</igx-card>
+<div class="buttons">
+    <button igxButton="raised" (click)="onClear()" [disabled]="this.getTransactionLog().length === 0">Clear
+        Transactions</button>
+    <button igxButton="raised" (click)="onCommit()" [disabled]="this.getTransactionLog().length === 0">Commit
+        Transactions</button>
+</div>
+<div class="output">
+    <div>
+        <h5>Transaction Log</h5>
+        <div *ngFor="let transaction of this.getTransactionLog()">
+            {{transaction.type.toUpperCase()}} -> {{transaction.name}} Costs: {{transaction.price}}
+        </div>
+    </div>
+    <div>
+        <h5>Data Items</h5>
+        <div *ngFor="let item of this.wishlist">
+            <div>{{item.name}} - {{item.price}}</div>
+        </div>
+    </div>
+</div>
