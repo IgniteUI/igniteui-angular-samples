@@ -10,10 +10,10 @@ export class DropDownSample5Component {
     public disableMeats = false;
 
     // tslint:disable:object-literal-sort-keys
-    public foods: Array<{
+    public foods: {
         name: string,
-        entries: Array<{ name: string, refNo: string }>
-    }> = [{
+        entries: { name: string, refNo: string }[]
+    }[] = [{
         name: "Vegetables",
         entries: [{
             name: "Cucumber",
