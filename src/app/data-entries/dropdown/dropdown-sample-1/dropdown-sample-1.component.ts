@@ -6,7 +6,7 @@ import { Component } from "@angular/core";
     templateUrl: "./dropdown-sample-1.component.html"
 })
 export class DropDownSample1Component {
-    public items: Array<{ field: string }> = [
+    public items: { field: string }[] = [
         { field: "Option 1" },
         { field: "Option 2" },
         { field: "Option 3" }

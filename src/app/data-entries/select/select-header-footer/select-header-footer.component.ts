@@ -9,9 +9,9 @@ export class SelectHeaderFooterComponent implements OnInit {
     public trainCount: number;
     public boatCount: number;
     public selected: string;
-    public fruits: Array<{ type: string, delivery: string }>;
+    public fruits: { type: string, delivery: string }[];
 
-    public fruitsDS: Array<{ type: string, delivery: string }> = [
+    public fruitsDS: { type: string, delivery: string }[] = [
             { type: "Apple", delivery: "boat" },
             { type: "Banana", delivery: "flight"},
             { type: "Blackberry", delivery: "train"},
