@@ -13,7 +13,7 @@ const tsNode = require('ts-node').register({
 });
 const argv = require("yargs").argv;
 
-const submodule = "test-angular-samples";
+const submodule = "igniteui-live-editing-samples";
 
 const window = domino.createWindow('<!doctype html><html><body></body></html>');
 global.HTMLElement = window.HTMLElement;
@@ -63,22 +63,10 @@ gulp.task("sass-js-compile-check", async() => {
 
 const excludedDirectories = ["index", "assets", "environment"];
 
-const getSampleBaseDir = (directories, fileName) =>  directories.find(d => {
-    return fileName.indexOf(d + "-") !== -1 && fileName.indexOf(d + "-") === 0;
-});
-
-const getSampleNameFromFileName = (fileName, sampleBaseDir) => fileName.replace(sampleBaseDir + "-", "");
+const getSampleNameFromFileName = (fileName, sampleBaseDir) => fileName.replace(sampleBaseDir + "--", "");
 var assetsRegex = new RegExp("\/?assets\/", "g");
 
-const appLobExplicitSampleBasesStructure = {
-    "finjs-sample": "",
-    "grid-crm": "",
-    "grid-grid": "grid",
-    "grid-grid-master-detail": "grid",
-    "treegrid-finjs-sample": ""
-}
-
-const processApp = (projectPath, dest, directoriesToExclude, compileSass, explicitSampleBaseStructures) => {
+const processApp = (projectPath, dest, directoriesToExclude, compileSass) => {
     if(!fs.existsSync(submodule)) {
         return console.error("No submodule found");
     }
@@ -116,13 +104,7 @@ const processApp = (projectPath, dest, directoriesToExclude, compileSass, explic
 
                         // Configure sample application file structure
                         const fileName = file.path.substring(file.base.length + 1).replace(".json", "");
-                        let sampleBaseDir;
-                        if(explicitSampleBaseStructures) {
-                            sampleBaseDir = fileName in explicitSampleBaseStructures ?
-                            explicitSampleBaseStructures[fileName] : getSampleBaseDir(directories, fileName);
-                        } else {
-                            sampleBaseDir = getSampleBaseDir(directories, fileName);
-                        }
+                        let sampleBaseDir = fileName.indexOf("--") !== -1 ? fileName.substring(0, fileName.indexOf("--")) : "";
                         if(sampleBaseDir && !fs.existsSync(submoduleAppDest + sampleBaseDir)) {
                             fs.mkdirSync(submoduleAppDest + sampleBaseDir);
                         }
@@ -165,11 +147,11 @@ const processApp = (projectPath, dest, directoriesToExclude, compileSass, explic
                .on("end", () => console.log(`Geneared ${i} with applications ${compileSass ? "CSS" : "SCSS" } in ${dest.toUpperCase()} project.`));
 }
 
-const processDemosWithScss = () =>  processApp("src", "angular-demos", "data", false, undefined);
-const processAppLobWithScss = () => processApp("projects/app-lob/src", "angular-demos-lob", "services", false, appLobExplicitSampleBasesStructure);
+const processDemosWithScss = () =>  processApp("src", "angular-demos", "data", false);
+const processAppLobWithScss = () => processApp("projects/app-lob/src", "angular-demos-lob", "services", false);
 
-const processDemosWithCss = () =>  processApp("src", "angular-demos", "data", true, undefined);
-const processAppLobWithCss = () => processApp("projects/app-lob/src", "angular-demos-lob", "services", true, appLobExplicitSampleBasesStructure);
+const processDemosWithCss = () =>  processApp("src", "angular-demos", "data", true);
+const processAppLobWithCss = () => processApp("projects/app-lob/src", "angular-demos-lob", "services", true);
 
 let repositoryfyWithScss;
 let repositoryfyWithCss;

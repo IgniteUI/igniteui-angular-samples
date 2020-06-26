@@ -29,7 +29,8 @@
     "start:app-lob:live-editing:noCss": "gulp generate-live-editing --appDv=true && ng serve app-lob --configuration es5 -o --progress=true",
     "build-ci": "gulp overwrite-package-json && node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng build --prod --progress=true",
     "build-ci:app-lob": "gulp overwrite-package-json && node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng build app-lob --prod --progress=true",
-    "repositoryfy": "gulp repositoryfy"
+    "repositoryfy": "gulp repositoryfy",
+    "repositoryfy:prod": "gulp repositoryfy --prod=true"
   },
   "repository": {
     "type": "git",

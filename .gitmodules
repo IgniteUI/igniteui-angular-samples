@@ -2,7 +2,3 @@
 	path = igniteui-live-editing-samples
 	url = https://github.com/IgniteUI/igniteui-live-editing-samples
     branch = vNext
-[submodule "test-angular-samples"]
-	path = test-angular-samples
-	url = https://github.com/HristoP96/test-angular-samples
-	branch = vNext

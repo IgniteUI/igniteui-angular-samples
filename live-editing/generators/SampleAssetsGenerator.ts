@@ -165,7 +165,7 @@ export class SampleAssetsGenerator extends Generator {
         if (sampleRoute === undefined) {
             console.log("Live-Editing - ERROR missing route for " + sampleName);
         } else {
-            sampleRoute = sampleRoute.replace("/", "-") + ".json";
+            sampleRoute = sampleRoute.replace("/", "--") + ".json";
             fs.writeFileSync(this.getAssetsSamplesDir() + sampleRoute, JSON.stringify(sampleDef));
             this._logsSampleFiles += sampleFilesCount;
             this._logsUtilitiesFiles += additionalFiles.length;
