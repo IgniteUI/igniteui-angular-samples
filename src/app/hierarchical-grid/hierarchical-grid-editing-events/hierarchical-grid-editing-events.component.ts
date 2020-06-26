@@ -56,6 +56,6 @@ export class HGridEditingEventsComponent implements OnInit, OnDestroy {
     }
 
     public handleCreate(event: IGridCreatedEventArgs) {
-        event.grid.onCellEdit.pipe(takeUntil(this.destroy$)).subscribe((e) => this.handleCellEdit(e, event.grid));
+        event.grid.onCellEdit.pipe(takeUntil(this.destroy$)).subscribe((e) => this.handleCellEdit(e));
     }
 }
