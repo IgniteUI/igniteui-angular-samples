@@ -1207,6 +1207,18 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        configs.push(new Config({
+            component: RemotePagingDefaultTemplateComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/remotePagingService.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [RemotePagingDefaultTemplateComponent, IgxGridModule, RouterModule,
+                    HttpClientModule, RemotePagingService, IgxPreventDocumentScrollModule],
+                ngDeclarations: [RemotePagingDefaultTemplateComponent],
+                ngImports: [IgxPreventDocumentScrollModule, "RouterModule.forRoot([])", IgxGridModule, HttpClientModule],
+                ngProviders: [RemotePagingService]
+            })
+        }));
+
         return configs;
     }
 }
