@@ -10,7 +10,7 @@ import {
     templateUrl: "./dropdown-menu.component.html"
 })
 export class DropdownMenuComponent {
-    public items: Array<{ text: string }> =
+    public items: { text: string }[] =
         [{ text: "Add New Contact" }, { text: "Edit Contact" }, { text: "Refresh" }, { text: "Help" }];
     public text: string;
     public overlaySettings = {

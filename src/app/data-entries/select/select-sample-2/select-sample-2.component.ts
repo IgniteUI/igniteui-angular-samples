@@ -11,10 +11,10 @@ export class SelectSample2Component {
     @ViewChild(IgxSelectComponent, { static: true })
     public select: IgxSelectComponent;
 
-    public greengrocery: Array<{
+    public greengrocery: {
         label: string,
-        items: Array<{ type: string, origin: string }>
-    }> = [
+        items: { type: string, origin: string }[]
+    }[] = [
         {
             label: "Fruits",
             items:
