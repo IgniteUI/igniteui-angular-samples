@@ -8,22 +8,12 @@ import { DATA } from "../services/financialData";
     templateUrl: "./grid-moving-styled-sample.component.html"
 })
 
-export class GridMovingStyledSampleComponent implements AfterViewInit {
+export class GridMovingStyledSampleComponent {
     public data: any[];
     @ViewChild("dataGrid", { static: true }) public grid: IgxGridComponent;
-    @ViewChild("pinTemplate", { read: TemplateRef, static: true })
-    private pinTemplate: TemplateRef<any>;
 
     constructor() {
         this.data = DATA;
-    }
-
-    public ngAfterViewInit(): void {
-        if (this.grid.columns.length > 0) {
-            this.grid.columns.forEach((column: IgxColumnComponent) => {
-                column.headerTemplate = this.pinTemplate;
-            });
-        }
     }
 
     public formatNumber(value: number) {
