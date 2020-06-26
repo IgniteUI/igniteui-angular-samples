@@ -1,9 +1,0 @@
-<h4>Current Employees</h4>
-<igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" width="100%"
-    height="500px" (onCellEdit)="handleEdit($event)">
-    <igx-column field="Name" dataType="string"></igx-column>
-    <igx-column field="Title" dataType="string"></igx-column>
-    <igx-column field="Age" dataType="number" [editable]="true"></igx-column>
-    <igx-column field="HireDate" dataType="date" [editable]="true"></igx-column>
-</igx-tree-grid>
-<igx-toast></igx-toast>

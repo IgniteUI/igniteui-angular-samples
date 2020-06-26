@@ -1,7 +1,0 @@
-<article class="sample-column calendar-wrapper">
-    <igx-calendar #calendar weekStart="1" selection="multi" (onSelection)="selectPTOdays($event)">
-    </igx-calendar>
-    <igx-dialog #alert title="Request Time Off" leftButtonLabel="OK" (onLeftButtonSelect)="alert.close()">
-    </igx-dialog>
-    <button igxButton="raised" (click)="submitPTOdays($event)">Submit Request</button>
-</article>
