@@ -2,25 +2,43 @@
 
 /*BASIC THEMING*/
 
+$yellow: #ffcd0f;
+$bg: #292826;
+$gray: #404040;
+$light-gray: rgba(255, 255, 255, .54);
+
 $custom-grid: igx-grid-theme(
-    $filtering-row-text-color: #292826,
-    $filtering-row-background: #FFCD0F,
-    $filtering-header-text-color: #292826,
-    $filtering-header-background: #FFCD0F
+    $filtering-row-text-color: $bg,
+    $filtering-row-background: $yellow,
+    $filtering-header-text-color: $bg,
+    $filtering-header-background: $yellow
 );
 
 $dark-input-group: igx-input-group-theme(
-    $box-background: #292826,
-    $idle-text-color: #FFCD0F,
-    $focused-text-color: #FFCD0F,
-    $filled-text-color: #FFCD0F
+    $box-background: $bg,
+    $idle-text-color: $yellow,
+    $focused-text-color: $yellow,
+    $filled-text-color: $yellow
 );
 
 $dark-button: igx-button-theme(
-    $flat-background: #FFCD0F,
-    $flat-text-color: #292826,
-    $flat-hover-background: #292826,
-    $flat-hover-text-color: #FFCD0F
+    $flat-background: $yellow,
+    $flat-text-color: $bg,
+    $flat-hover-background: $bg,
+    $flat-hover-text-color: $yellow
+);
+
+$dark-drop-down-theme: igx-drop-down-theme(
+    $background-color: $bg,
+    $item-text-color: $yellow,
+    $selected-item-background: $yellow,
+    $selected-item-text-color: $bg,
+    $focused-item-background: $yellow,
+    $focused-item-text-color: $bg,
+    $selected-focus-item-background: $yellow,
+    $selected-focus-item-text-color: $bg,
+    $selected-hover-item-background: $yellow,
+    $selected-hover-item-text-color: $bg
 );
 
 /*ENHANCED APPROACHES*/
@@ -121,11 +139,12 @@ $dark-button: igx-button-theme(
 :host {
      ::ng-deep {
         @include igx-grid($custom-grid);
-        .igx-grid__filtering-row {
+        @include igx-drop-down($dark-drop-down-theme);
+        igx-grid-filtering-row {
             @include igx-button($dark-button);
             @include igx-input-group($dark-input-group);
             .igx-input-group__input::placeholder {
-                color: #FFCD0F;
+                color: $yellow;
             }
         }
     }
