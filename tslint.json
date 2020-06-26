@@ -1,6 +1,9 @@
 {
   "extends": "tslint:latest",
   "rules": {
+    "deprecation": {
+      "severity": "warning"
+    },
     "indent": [true, "spaces"],
     "variable-name": [true, "allow-leading-underscore"],
     "interface-name": [true, "always-prefix"],

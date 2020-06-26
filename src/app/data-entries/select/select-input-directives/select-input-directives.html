@@ -6,6 +6,7 @@
     <igx-suffix *ngIf="selected">
         <igx-icon (click)="clearSelection($event)">clear</igx-icon>
     </igx-suffix>
+    <igx-hint>Choose a banana</igx-hint>
     <igx-select-item *ngFor="let item of items" [value]="item">
         {{item}}
     </igx-select-item>

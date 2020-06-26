@@ -363,7 +363,7 @@ export class SampleAssetsGenerator extends Generator {
         }
 
         let imports = "";
-        let sampleImportsKeys = [...sampleImports.keys()];
+        let sampleImportsKeys = Array.from(sampleImports.keys());
         for (let i = 0; i < sampleImportsKeys.length; i++) {
             let currentImportModuleSpecifier: string = sampleImportsKeys[i];
             let baseDirIndex: number = currentImportModuleSpecifier.indexOf(SAMPLE_APP_FOLDER);
