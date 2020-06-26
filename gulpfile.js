@@ -144,7 +144,7 @@ const processApp = (projectPath, dest, directoriesToExclude, compileSass) => {
                     })
                }))
                .on("error", () => console.log(err))
-               .on("end", () => console.log(`Geneared ${i} with applications ${compileSass ? "CSS" : "SCSS" } in ${dest.toUpperCase()} project.`));
+               .on("end", () => console.log(`Geneared ${i} applications with ${compileSass ? "CSS" : "SCSS" } in ${dest.toUpperCase()} project.`));
 }
 
 const processDemosWithScss = () =>  processApp("src", "angular-demos", "data", false);
