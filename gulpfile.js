@@ -148,26 +148,26 @@ const processApp = (projectPath, dest, directoriesToExclude, compileSass) => {
 }
 
 const processDemosWithScss = () =>  processApp("src", "angular-demos", "data", false);
-const processAppLobWithScss = () => processApp("projects/app-lob/src", "angular-demos-lob", "services", false);
+const processDemosLobWithScss = () => processApp("projects/app-lob/src", "angular-demos-lob", "services", false);
 
 const processDemosWithCss = () =>  processApp("src", "angular-demos", "data", true);
-const processAppLobWithCss = () => processApp("projects/app-lob/src", "angular-demos-lob", "services", true);
+const processDemosLobWithCss = () => processApp("projects/app-lob/src", "angular-demos-lob", "services", true);
 
-let repositoryfyWithScss;
-let repositoryfyWithCss;
+let repositoryfyAngularDemos;
+let repositoryfyAngularDemosLob;
 
-const cleanupSubModule = (cb) => {
+const cleanupAngularDemos = (cb) => {
     fsExtra.removeSync(submodule + "/angular-demos");
-    fsExtra.removeSync(submodule + "/angular-demos-lob");
-
     fsExtra.mkdirSync(submodule + "/angular-demos");
+    cb();
+}
+
+const cleanupAngularDemosLob = (cb) => {
+    fsExtra.removeSync(submodule + "/angular-demos-lob");
     fsExtra.mkdirSync(submodule + "/angular-demos-lob");
     cb();
-
 }
-exports.repositoryfyWithScss = repositoryfyWithScss = gulp.parallel(processDemosWithScss, processAppLobWithScss);
-exports.repositoryfyWithCss = repositoryfyWithCss = gulp.parallel(processDemosWithCss, processAppLobWithCss);
-exports.repositoryfy = gulp.series(cleanupSubModule, gulp.parallel(repositoryfyWithScss, repositoryfyWithCss));
-
+exports.repositoryfyAngularDemos = repositoryfyAngularDemos = gulp.series(cleanupAngularDemos, gulp.parallel(processDemosWithScss, processDemosWithCss));
+exports.repositoryfyAngularDemosLob = repositoryfyAngularDemosLob =  gulp.series(cleanupAngularDemosLob, gulp.parallel(processDemosLobWithScss, processDemosLobWithCss));
 
 
