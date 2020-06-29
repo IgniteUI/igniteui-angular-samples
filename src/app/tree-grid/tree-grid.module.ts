@@ -77,6 +77,7 @@ import { TreeGridMultiRowDrag } from "./tree-grid-multi-row-drag/tree-grid-multi
 import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPagingStyleSampleComponent } from "./tree-grid-paging-style/tree-grid-paging-style-sample.component";
 import { TreeGridRemoteFilteringSampleComponent } from "./tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
+import { TreeGridRemotePagingDefaultTemplateComponent } from "./tree-grid-remote-paging-default-template/tree-grid-remote-paging-default-template.component";
 import { TreeGridRemotePagingSampleComponent } from "./tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
 import { TreeGridResizeLineStylingSampleComponent } from "./tree-grid-resize-line-styling-sample/tree-grid-resize-line-styling-sample.component";
 import { TreeGridRoutingModule } from "./tree-grid-routing.module";
@@ -184,7 +185,8 @@ import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/tree
         TreeGridColumnSelectionComponent,
         TreeGridColumnGroupSelectionComponent,
         TreeGridColumnSelectionStylesComponent,
-        TGridKeyboardnavGuide
+        TGridKeyboardnavGuide,
+        TreeGridRemotePagingDefaultTemplateComponent
     ],
     imports: [
         CommonModule,

@@ -1,6 +1,6 @@
 
-import { Component, ViewChild } from "@angular/core";
-import { IgxSelectComponent, IgxSelectItemComponent } from "igniteui-angular";
+import { Component, ElementRef, ViewChild } from "@angular/core";
+import { IgxSelectComponent } from "igniteui-angular";
 
 @Component({
     selector: "select-sample-2",
@@ -11,27 +11,30 @@ export class SelectSample2Component {
     @ViewChild(IgxSelectComponent, { static: true })
     public select: IgxSelectComponent;
 
-    public greengrocery: Array<{
+    public greengrocery: {
         label: string,
-        items: Array<{ type: string, origin: string }>
-    }> = [
-            {
-                label: "Fruits",
-                items:
-                    [
-                        { type: "Apple", origin: "local" },
-                        { type: "Orange", origin: "import" },
-                        { type: "Banana", origin: "import"}
-                    ]
-            },
-            {
-                label: "Vegetables",
-                items:
-                    [
-                        { type: "Cucumber", origin: "local" },
-                        { type: "Potato", origin: "import" },
-                        { type: "Pepper", origin: "local" }
-                    ]
-            }
-        ];
+        items: { type: string, origin: string }[]
+    }[] = [
+        {
+            label: "Fruits",
+            items:
+            [
+                { type: "Apple", origin: "local" },
+                { type: "Orange", origin: "import" },
+                { type: "Banana", origin: "import"}
+            ]
+        },
+        {
+            label: "Vegetables",
+            items:
+            [
+                { type: "Cucumber", origin: "local" },
+                { type: "Potato", origin: "import" },
+                { type: "Pepper", origin: "local" }
+            ]
+        }
+    ];
+
+    constructor(public element: ElementRef) {
+    }
 }
