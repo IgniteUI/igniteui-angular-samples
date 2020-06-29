@@ -215,8 +215,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridColumnGroupSelectionComponent,
         GridColumnSelectionStylesComponent,
         GridKeyboardnavGuide,
-        RemotePagingBatchEditingComponent,
-        RemotePagingDefaultTemplateComponent
+        RemotePagingDefaultTemplateComponent,
+        RemotePagingBatchEditingComponent
     ],
     imports: [
         CommonModule,
