@@ -145,6 +145,9 @@ export class GridPasteSampleComponent {
 
     public redo() {
         this.grid1.transactions.redo();
+        if (this.pasteMode === "Paste starting from active cell") {
+            return;
+        }
         this.grid1.verticalScrollContainer.onDataChanged
             .pipe(first())
             .subscribe(() => {
