@@ -51,7 +51,7 @@ export class GridEditingSampleComponent implements OnInit, AfterViewInit {
         this.product = new Product();
     }
 
-    public parseArray(arr: Array<{ shop: string, lastInventory: string}>): string {
+    public parseArray(arr: { shop: string, lastInventory: string}[]): string {
         return  (arr || []).map((e) => e.shop).join(", ");
     }
 }

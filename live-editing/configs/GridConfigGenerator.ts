@@ -3,7 +3,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { Router, RouterModule } from "@angular/router";
 // tslint:disable:max-line-length
 import { IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDragDropModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxTooltipModule } from "igniteui-angular";
-import { IgxCategoryChartModule, IgxLegendModule, IgxPieChartModule, IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
 import { IgxPreventDocumentScrollModule } from "../../src/app/directives/prevent-scroll.directive";
 import { GridColumnGroupSelectionComponent } from "../../src/app/grid/column-group-selection-sample/column-group-selection-sample.component";
 import { GridColumnSelectionComponent } from "../../src/app/grid/column-selection-sample/column-selection-sample.component";
@@ -1179,6 +1178,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridKeyboardnavGuide],
                 ngImports: [IgxGridModule, IgxListModule],
                 ngProviders: [IgxOverlayService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: RemotePagingDefaultTemplateComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/remotePagingService.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [RemotePagingDefaultTemplateComponent, IgxGridModule, RouterModule,
+                    HttpClientModule, RemotePagingService, IgxPreventDocumentScrollModule],
+                ngDeclarations: [RemotePagingDefaultTemplateComponent],
+                ngImports: [IgxPreventDocumentScrollModule, "RouterModule.forRoot([])", IgxGridModule, HttpClientModule],
+                ngProviders: [RemotePagingService]
             })
         }));
 

@@ -583,6 +583,11 @@ export const gridsRoutes: Routes = [
         path: "grid-keyboardnav-guide"
     },
     {
+        component: RemotePagingDefaultTemplateComponent,
+        data: gridsRoutesData["remote-paging-default-template"],
+        path: "remote-paging-default-template"
+    },
+    {
         component: RemotePagingBatchEditingComponent,
         data: gridsRoutesData["remote-paging-batch-editing"],
         path: "remote-paging-batch-editing"

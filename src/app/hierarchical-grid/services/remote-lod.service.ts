@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 
-interface IoDataResponse {
+interface IDataResponse {
     value: any[];
 }
 
@@ -22,7 +22,7 @@ export class RemoteLoDService {
 
     public getData(dataState?: IDataState): Observable<any[]> {
         return this.http.get(this.buildUrl(dataState)).pipe(
-            map((response: IoDataResponse) => response.value)
+            map((response: IDataResponse) => response.value)
         );
     }
 
