@@ -1,40 +1,23 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { NavigationStart, Router } from "@angular/router";
-import { FilteringExpressionsTree, FilteringLogic, FlatGridFeatures, GridFeatures,
-    IGridState, IGridStateOptions, IgxGridComponent, IgxGridStateDirective,
-    IgxNumberSummaryOperand, IgxSummaryResult } from "igniteui-angular";
+import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
+    IGridState, IGridStateOptions, IgxGridStateDirective, 
+    IgxTreeGridComponent} from "igniteui-angular";
 import { take } from "rxjs/operators";
-import { employeesData } from "./localData";
-
-class MySummary extends IgxNumberSummaryOperand {
-
-    constructor() {
-        super();
-    }
-
-    public operate(data?: any[]): IgxSummaryResult[] {
-        const result = super.operate(data);
-        result.push({
-            key: "test",
-            label: "Test",
-            summaryResult: data.filter(rec => rec > 10 && rec < 30).length
-        });
-        return result;
-    }
-  }
+import { EMPLOYEE_DATA } from "../../../../projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data";
 
 // tslint:disable:object-literal-sort-keys
 @Component({
-  selector: "app-grid",
-  styleUrls: ["./grid-state.component.scss"],
-  templateUrl: "./grid-state.component.html"
+  selector: "app-hGrid",
+  styleUrls: ["./tGrid-state.component.scss"],
+  templateUrl: "./tGrid-state.component.html"
 })
 
-export class GridSaveStateComponent implements OnInit {
+export class TGridSaveStateComponent implements OnInit {
     public localData: any[];
     public columns: any[];
-    public gridId = "grid1";
-    public stateKey = this.gridId + "-state";
+    public treeGridId = "grid1";
+    public stateKey = this.treeGridId + "-state";
     public gridState: IGridState;
     public serialize = true;
 
@@ -48,8 +31,7 @@ export class GridSaveStateComponent implements OnInit {
         { key: GridFeatures.PAGING, shortName: "Paging" },
         { key: GridFeatures.ROW_PINNING, shortName: "Row Pining" },
         { key: GridFeatures.ROW_SELECTION, shortName: "Row Sel" },
-        { key: GridFeatures.SORTING, shortName: "Sorting" },
-        { key: FlatGridFeatures.GROUP_BY, shortName: "GroupBy"}
+        { key: GridFeatures.SORTING, shortName: "Sorting" }
       ];
 
     public options: IGridStateOptions = {
@@ -59,7 +41,6 @@ export class GridSaveStateComponent implements OnInit {
       advancedFiltering: true,
       paging: true,
       sorting: true,
-      groupBy: true,
       columns: true,
       expansion: true,
       rowPinning: true,
@@ -67,24 +48,13 @@ export class GridSaveStateComponent implements OnInit {
     };
 
     @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
-    @ViewChild(IgxGridComponent, { static: true }) public grid: IgxGridComponent;
+    @ViewChild("treeGrid", { static: true }) public tGrid: IgxTreeGridComponent;
 
-    public initialColumns: any[] = [
-      // tslint:disable:max-line-length
-      { field: "FirstName", header: "First Name", width: "150px", dataType: "string", pinned: true, movable: true, sortable: true, filterable: true},
-      { field: "LastName", header: "Last Name", width: "150px", dataType: "string", pinned: true, movable: true, sortable: true, filterable: true},
-      { field: "Country", header: "Country", width: "140px", dataType: "string", groupable: true, movable: true, sortable: true, filterable: true, resizable: true },
-      { field: "Age", header: "Age", width: "110px", dataType: "number", movable: true, sortable: true, filterable: true, hasSummary: true, resizable: true, summaries: MySummary},
-      { field: "RegistererDate", header: "Registerer Date", width: "180px", dataType: "date", movable: true, sortable: true, filterable: true, resizable: true },
-      { field: "IsActive", header: "Is Active", width: "140px", dataType: "boolean", groupable: true, movable: true, sortable: true, filterable: true }
-      // tslint:enable:max-line-length
-    ];
-
-    constructor(private router: Router) {}
+    constructor(private router: Router) {
+        this.localData = EMPLOYEE_DATA;
+    }
 
     public ngOnInit() {
-      this.localData = employeesData;
-      this.columns = this.initialColumns;
       this.router.events.pipe(take(1)).subscribe((event: NavigationStart) => {
           this.saveGridState();
       });
@@ -96,7 +66,6 @@ export class GridSaveStateComponent implements OnInit {
 
     public saveGridState() {
         const state = this.state.getState(this.serialize);
-        // const state = this.state.getState(this.serialize, ['sorting', 'filtering']);
         if (typeof state === "string") {
           window.localStorage.setItem(this.stateKey, state);
         } else {
@@ -127,13 +96,12 @@ export class GridSaveStateComponent implements OnInit {
     }
 
     public resetGridState() {
-        const grid: IgxGridComponent = this.grid;
-        grid.filteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
-        grid.advancedFilteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
-        grid.sortingExpressions = [];
-        grid.groupingExpressions = [];
-        grid.deselectAllRows();
-        grid.clearCellSelection();
+        const tGrid: IgxTreeGridComponent = this.tGrid;
+        tGrid.filteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
+        tGrid.advancedFilteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
+        tGrid.sortingExpressions = [];
+        tGrid.deselectAllRows();
+        tGrid.clearCellSelection();
       }
 
     public onChange(event: any, action: string) {
@@ -147,4 +115,6 @@ export class GridSaveStateComponent implements OnInit {
     public reloadPage() {
         window.location.reload();
     }
+
+    public formatter = (a) => a;
 }

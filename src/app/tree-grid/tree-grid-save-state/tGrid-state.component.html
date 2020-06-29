@@ -2,7 +2,7 @@
     <div class="controls-holder">
         <div class="control-item">
             <ul>
-                <li>Leave the page by navigating to the <a [routerLink]="['../grid-about']"><strong>ABOUT</strong></a> page or hitting the Save button, the current grid state will be stored in the localStorage object.</li>
+                <li>Leave the page by navigating to the <a [routerLink]="['../tree-grid-state-about']"><strong>ABOUT</strong></a> page or hitting the Save button, the current grid state will be stored in the localStorage object.</li>
                 <li>To restore the previous grid state, use the <strong><igx-icon class="desc-icon">refresh</igx-icon> Restore Grid State</strong> button.</li>
                 <li>To restore a specific feature state, click on the corresponding restore action button.</li>
                 <li>Use the switch buttons to stop saving state for the corresponding feature.</li>
@@ -37,31 +37,20 @@
         </div>
     </div>
 
-    <igx-grid igxPreventDocumentScroll [id]="gridId" #grid1 [igxGridState]="options"
-        width="1150px" height="550px" [autoGenerate]="false"
+    <igx-tree-grid #treeGrid [id]="treeGridId" igxGridState
+        primaryKey="Name"
         [data]="localData"
-        [primaryKey]="'EmployeeID'" 
-        [rowEditable]="false"
-        [allowFiltering]="true" [allowAdvancedFiltering]="true" [filterMode]="'excelStyleFilter'"
+        childDataKey="Employees"
+        displayDensity="cosy"
+        width="100%" height="800px" 
+        [autoGenerate]="false"
+        [rowSelection]="'multiple'"
         [paging]="true"
-        [showToolbar]="true"
-        [columnPinning]="true"
+        [allowFiltering]="true"
         [columnHiding]="true"
-        [displayDensity]="'cosy'"
-        [cellSelection]="'multiple'"
-        [rowSelection]="'none'">
-        <igx-column *ngFor="let c of columns"
-            [sortable]="c.sortable"
-            [movable]="c.movable"
-            [editable]="true"
-            [hasSummary]="c.hasSummary"
-            [filterable]="c.filterable"
-            [groupable]="c.groupable"
-            [field]="c.field"
-            [header]="c.header"
-            [dataType]="c.dataType"
-            [pinned]="c.pinned"
-            [hidden]="c.hidden">
-        </igx-column>
-        </igx-grid>
+        [columnPinning]="true">
+        <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true" [hasSummary]="true"></igx-column>
+        <igx-column field="HireDate" dataType="date" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true"></igx-column>
+        <igx-column field="Age" dataType="number" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true"></igx-column>
+    </igx-tree-grid>
 </div>

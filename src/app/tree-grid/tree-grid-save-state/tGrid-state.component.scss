@@ -1,0 +1,48 @@
+.controls-holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.switches {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 0 0%;
+    min-width: 100%;
+    padding-right: 20px;
+    font-size: 0.9rem;
+    margin-top: 0;
+}
+
+.control-item {
+    display: block;
+    padding: 8px 0px;
+    > span {
+        cursor: pointer;
+    }
+}
+
+.grid__wrapper {
+    margin: 0 16px;
+    width: 1150px;
+}
+
+p.category-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.desc-icon {
+    font-size: 0.8em;
+    width: 0.8em; 
+    height: 0.8em; 
+}
+
+.btn-icon {
+    margin-right: 5px;
+}
