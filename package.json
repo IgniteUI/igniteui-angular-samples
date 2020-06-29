@@ -7,7 +7,7 @@
     "ng": "ng",
     "update": "ng update",
     "start": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng serve --configuration es5 -o --progress=true",
-    "startProd": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng serve --prod -o --progress=true",
+    "startProd": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng serve --prod --configuration es5 -o --progress=true",
     "start:live-editing": "gulp generate-live-editing --css=true && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve --configuration es5 -o --progress=true",
     "start:live-editing:noCss": "gulp generate-live-editing && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve --configuration es5 -o --progress=true",
     "start:watch-live-editing": "gulp watch-live-editing && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve --configuration es5 -o --progress=true",
