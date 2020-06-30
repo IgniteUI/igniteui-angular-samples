@@ -1,15 +1,10 @@
 import { Component, ViewChild } from "@angular/core";
 import {
-    CloseScrollStrategy,
-    ConnectedPositioningStrategy,
-    HorizontalAlignment,
-    IgxDropDownComponent,
     IgxExcelExporterOptions,
     IgxExcelExporterService,
     IgxGridComponent,
     IgxGridTransaction,
-    IgxTransactionService,
-    VerticalAlignment
+    IgxTransactionService
 } from "igniteui-angular";
 
 import { EXCEL_DATA, LOCAL_DATA } from "./data";
@@ -27,18 +22,12 @@ import { first } from "rxjs/operators";
 export class GridPasteSampleComponent {
     @ViewChild("grid1", { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
-    @ViewChild(IgxDropDownComponent, { static: true })
-    public igxDropDown: IgxDropDownComponent;
     public data;
     public comboData = [
         "Paste data as new records",
         "Paste starting from active cell"
     ];
     public pasteMode = this.comboData[0];
-    private _positionSettings = {
-        horizontalStartPoint: HorizontalAlignment.Left,
-        verticalStartPoint: VerticalAlignment.Bottom
-    };
 
     constructor(private excelExportService: IgxExcelExporterService) {
         this.data = LOCAL_DATA;
@@ -46,8 +35,8 @@ export class GridPasteSampleComponent {
 
     public ngOnInit() {}
 
-    public changePasteMode() {
-        this.pasteMode = this.igxDropDown.selectedItem.value;
+    public selectionChange(event: any) {
+        this.pasteMode = event.newSelection.value;
     }
 
     public dataPasted(processedData) {
@@ -121,14 +110,6 @@ export class GridPasteSampleComponent {
             this.grid1.cdr.detectChanges();
             updatedRecsPK.push(rowPkValue);
             index++;
-        }
-
-        for (const pkVal of updatedRecsPK) {
-            const row = this.grid1.getRowByKey(pkVal);
-            if (row) {
-                row.nativeElement.style["font-style"] = "italic";
-                row.nativeElement.style.color = "gray";
-            }
         }
     }
 
