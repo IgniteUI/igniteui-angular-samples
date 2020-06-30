@@ -137,9 +137,7 @@ const processApp = (projectPath, dest, directoriesToExclude, compileSass) => {
                             })
                         });
                         i++;
-                        process.stdout.write(`Processing ${fileName}.json with ${compileSass ? "CSS" : "SCSS" } styling`);
-                        process.stdout.clearLine();
-                        process.stdout.cursorTo(0);
+                        console.log(`Processing ${fileName}.json with ${compileSass ? "CSS" : "SCSS" } styling`);
                         cb(null, file);
                     })
                }))
