@@ -37,9 +37,9 @@ export class HGridEditingEventsComponent implements OnInit, OnDestroy {
 
     public formatter = (a) => a;
 
-    public handleCellEdit(event: IGridEditEventArgs, grid: IgxGridBaseDirective) {
+    public handleCellEdit(event: IGridEditEventArgs) {
         const today = new Date();
-        const column = grid.columnList.find(col => col.index === event.cellID.columnID);
+        const column = event.column;
         if (column.field === "Debut") {
             if (event.newValue > today.getFullYear()) {
                 this.toast.message = "The debut date must be in the past!";
@@ -56,6 +56,6 @@ export class HGridEditingEventsComponent implements OnInit, OnDestroy {
     }
 
     public handleCreate(event: IGridCreatedEventArgs) {
-        event.grid.onCellEdit.pipe(takeUntil(this.destroy$)).subscribe((e) => this.handleCellEdit(e, event.grid));
+        event.grid.onCellEdit.pipe(takeUntil(this.destroy$)).subscribe((e) => this.handleCellEdit(e));
     }
 }

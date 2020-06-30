@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { NavigationStart, Router, RouterModule, Routes } from "@angular/router";
-import "rxjs/add/operator/filter";
+import { filter } from "rxjs/operators";
 import { HomeComponent } from "./home/home.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
@@ -71,8 +71,9 @@ export const appRoutes: Routes = [
 })
 export class AppRoutingModule {
     constructor(private router: Router) {
-        router.events
-            .filter((event) => event instanceof NavigationStart)
+        router.events.pipe(
+            filter((event) => event instanceof NavigationStart)
+        )
             .subscribe((event: NavigationStart) => {
                 this.setOverflow(event.url);
             });
