@@ -104,5 +104,5 @@ export const treeGridRoutesData = {
     // tslint:disable-next-line:max-line-length
     "tree-grid-remote-paging-default-template": { displayName: "TreeGrid remote paging with default template", parentName: "TreeGrid"},
     "tree-grid-state": { displayName: "TreeGrid Save State", parentName: "TreeGrid" },
-    "tree-grid-state-about": { displayName: "TreeGrid Save State", parentName: "TreeGrid" }
+    "tree-grid-state-about": { displayName: "About", parentName: "TreeGrid" }
 };

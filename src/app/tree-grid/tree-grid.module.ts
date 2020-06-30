@@ -108,7 +108,7 @@ import { TreeGridToolbarSample4Component } from "./tree-grid-toolbar-sample-4/tr
 import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-grid-toolbar-style.component";
 import { TreeGridVirtualizationSampleComponent } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
-import { AboutComponent } from "../hierarchical-grid/hierarchical-grid-save-state/about.component";
+import { TGridAboutComponent } from "./tree-grid-save-state/about.component";
 
 @NgModule({
     declarations: [
@@ -133,7 +133,7 @@ import { AboutComponent } from "../hierarchical-grid/hierarchical-grid-save-stat
         TreeGridPinningToolbarSampleComponent,
         TreeGridColumnResizingSampleComponent,
         TreeGridFilteringSampleComponent,
-        AboutComponent,
+        TGridAboutComponent,
         TreeGridFilteringTemplateSampleComponent,
         TreeGridFilteringCustomSampleComponent,
         TreeGridMultiColumnHeadersSampleComponent,

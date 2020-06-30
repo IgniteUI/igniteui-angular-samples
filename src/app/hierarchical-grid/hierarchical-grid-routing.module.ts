@@ -82,7 +82,7 @@ import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolb
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
-import { AboutComponent } from "./hierarchical-grid-save-state/about.component";
+import { HGridAboutComponent } from "./hierarchical-grid-save-state/about.component";
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -455,7 +455,7 @@ export const hierarchicalGridRoutes: Routes = [
         path: "hGrid-state"
     },
     {
-        component: AboutComponent,
+        component: HGridAboutComponent,
         data:  hierarchicalGridRoutesData["hGrid-state-about"],
         path: "hGrid-state-about"
     }

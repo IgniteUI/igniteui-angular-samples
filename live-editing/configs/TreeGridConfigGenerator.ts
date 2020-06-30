@@ -64,6 +64,8 @@ import { TreeGridRowPinningStylingSampleComponent } from "../../src/app/tree-gri
 import { TreeGridRowPinningSampleComponent } from "../../src/app/tree-grid/tree-grid-row-pinning/tree-grid-row-pinning.component";
 import { TreeGridRowReorderComponent } from "../../src/app/tree-grid/tree-grid-row-reorder/tree-grid-row-reorder.component";
 import { TreeGridRightPinningSampleComponent } from "../../src/app/tree-grid/tree-grid-sample-right-pinning/tree-grid-right-pinning.component";
+import { TGridSaveStateComponent } from "../../src/app/tree-grid/tree-grid-save-state/tGrid-state.component";
+import { TGridAboutComponent } from "../../src/app/tree-grid/tree-grid-save-state/about.component";
 import { TreeGridSearchSampleComponent } from "../../src/app/tree-grid/tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "../../src/app/tree-grid/tree-grid-selection-sample/tree-grid-selection-sample.component";
 import { TreeGridSelectionTemplateNumbersSampleComponent } from "../../src/app/tree-grid/tree-grid-selection-template-numbers/tree-grid-selection-template-numbers.component";
@@ -993,6 +995,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxPreventDocumentScrollModule, IgxTreeGridModule]
             }),
             component: TreeGridRemotePagingDefaultTemplateComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxPreventDocumentScrollModule, IgxTreeGridModule, TGridSaveStateComponent, TGridAboutComponent],
+                ngDeclarations: [TGridSaveStateComponent, TGridAboutComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxTreeGridModule,
+                    "RouterModule.forRoot([\{component: TGridAboutComponent, path: 'tree-grid-about'},\{component: TGridSaveStateComponent, path: 'tree-grid-state'},\{ path: '', redirectTo: '/tree-grid-state', pathMatch: 'full' }])]"]
+            }),
+            component: TGridSaveStateComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 
