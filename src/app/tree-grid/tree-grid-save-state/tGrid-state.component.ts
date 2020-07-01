@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ViewChildren, QueryList } from "@angular/core";
 import { NavigationStart, Router } from "@angular/router";
 import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
-    IGridState, IGridStateOptions, IgxGridStateDirective, 
+    IGridState, IGridStateOptions, IgxGridStateDirective,
     IgxTreeGridComponent, IgxCheckboxComponent} from "igniteui-angular";
 import { take } from "rxjs/operators";
 import { EMPLOYEE_DATA } from "../../../../projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data";
