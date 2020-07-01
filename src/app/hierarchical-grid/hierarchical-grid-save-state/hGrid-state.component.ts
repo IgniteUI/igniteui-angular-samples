@@ -114,15 +114,6 @@ export class HGridSaveStateComponent implements OnInit {
         return state;
     }
 
-    public resetGridState() {
-        const hGrid: IgxHierarchicalGridComponent = this.hGrid;
-        hGrid.filteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
-        hGrid.advancedFilteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
-        hGrid.sortingExpressions = [];
-        hGrid.deselectAllRows();
-        hGrid.clearCellSelection();
-      }
-
     public onChange(event: any, action: string) {
         if (action === "toggleAll") {
           this.checkboxes.forEach(cb => {
