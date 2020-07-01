@@ -1,38 +1,30 @@
 <div class="grid__wrapper">
     <div class="controls-holder">
-        <div class="control-item">
+        <div class="switches">
+            <button igxButton="raised" (click)="restoreGridState()"><igx-icon class="btn-icon">restore</igx-icon>Restore</button>
+            <button igxButton="raised" (click)="saveGridState()"><igx-icon class="btn-icon">save</igx-icon>Save</button>
+            <button igxButton="raised" (click)="resetGridState()"><igx-icon class="btn-icon">clear</igx-icon>Reset</button>
+            <button igxButton="raised" [routerLink]="['../grid-about']"><igx-icon class="btn-icon">forward</igx-icon>Leave</button>
+            <button igxButton="raised" (click)="restoreGridState()"><igx-icon class="btn-icon">delete</igx-icon>Clear</button>
+            <button igxButton="raised" (click)="reloadPage()"><igx-icon class="btn-icon">refresh</igx-icon>Reload</button>
+        </div>
+
+        <div class="switches">
             <ul>
-                <li>Leave the page by navigating to the <a [routerLink]="['../grid-about']"><strong>ABOUT</strong></a> page or hitting the Save button, the current grid state will be stored in the localStorage object.</li>
-                <li>To restore the previous grid state, use the <strong><igx-icon class="desc-icon">refresh</igx-icon> Restore Grid State</strong> button.</li>
-                <li>To restore a specific feature state, click on the corresponding restore action button.</li>
-                <li>Use the switch buttons to stop saving state for the corresponding feature.</li>
+                <li>Clicking the SAVE button or leaving the page <a [routerLink]="['../grid-about']"><strong>here</strong></a> will save grid state to localStorage.</li>
+                <li>Use the control buttons to SAVE / RESTORE / RESET / DELETE / grid state or LEAVE the page.</li>
+                <li>Select/Deselect checkboxes to control saving / restoring feature state.</li>
             </ul>
         </div>
-        <p class="category-title">Features to include in the grid state persistance:</p>
+
         <div class="switches">
-            <div class="control-item" *ngFor="let f of features">
-                <igx-switch [(ngModel)]="options[f.key]" (change)="onChange($event, f.key, state)">{{ f.shortName }}</igx-switch>
-            </div>
             <div class="control-item">
-                <igx-switch [(ngModel)]="serialize">Serialize</igx-switch>
+                <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">Select All</igx-checkbox>
             </div>
-        </div>
-        <p class="category-title">Restore actions:</p>
-        <div class="switches">
             <div class="control-item" *ngFor="let f of features">
-                <button igxButton="raised" (click)="restoreFeature(state, f.key)">{{ f.shortName }}</button>
-            </div>
-        </div>
-        <p class="category-title">Grid state actions:</p>
-        <div class="switches" style="justify-content: flex-start;">
-            <div class="control-item" style="margin-right: 10px;">
-                <button igxButton="raised" (click)="saveGridState()"><igx-icon class="btn-icon">save</igx-icon> Save Current State</button>
-            </div>
-            <div class="control-item" style="margin-right: 10px;">
-                <button igxButton="raised" (click)="resetGridState()"><igx-icon class="btn-icon">clear</igx-icon> Reset Current State</button>
-            </div>
-            <div class="control-item">
-                <button igxButton="raised" (click)="restoreGridState()"><igx-icon class="btn-icon">delete</igx-icon> Delete State from localStorage</button>
+                <igx-checkbox (change)="onChange($event, f.key)" [checked]="options[f.key]">
+                    {{ f.shortName }}
+                </igx-checkbox>
             </div>
         </div>
     </div>
@@ -63,5 +55,5 @@
             [pinned]="c.pinned"
             [hidden]="c.hidden">
         </igx-column>
-        </igx-grid>
+    </igx-grid>
 </div>

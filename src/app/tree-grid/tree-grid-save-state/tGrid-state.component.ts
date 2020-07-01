@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, ViewChildren, QueryList } from "@angular/core";
 import { NavigationStart, Router } from "@angular/router";
 import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
     IGridState, IGridStateOptions, IgxGridStateDirective, 
-    IgxTreeGridComponent} from "igniteui-angular";
+    IgxTreeGridComponent, IgxCheckboxComponent} from "igniteui-angular";
 import { take } from "rxjs/operators";
 import { EMPLOYEE_DATA } from "../../../../projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data";
 
@@ -16,7 +16,7 @@ import { EMPLOYEE_DATA } from "../../../../projects/app-lob/src/app/tree-grid/tr
 export class TGridSaveStateComponent implements OnInit {
     public localData: any[];
     public columns: any[];
-    public treeGridId = "grid1";
+    public treeGridId = "tGrid1";
     public stateKey = this.treeGridId + "-state";
     public gridState: IGridState;
     public serialize = true;
@@ -49,6 +49,7 @@ export class TGridSaveStateComponent implements OnInit {
 
     @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
     @ViewChild("treeGrid", { static: true }) public tGrid: IgxTreeGridComponent;
+    @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
 
     constructor(private router: Router) {
         this.localData = EMPLOYEE_DATA;
@@ -105,8 +106,17 @@ export class TGridSaveStateComponent implements OnInit {
       }
 
     public onChange(event: any, action: string) {
-      this.state.options[action] = event.checked;
-    }
+        if (action === "toggleAll") {
+          this.checkboxes.forEach(cb => {
+              cb.checked = event.checked;
+          })
+          for (const key of Object.keys(this.options)) {
+              this.state.options[key] = event.checked;
+          }
+          return;
+        }
+        this.state.options[action] = event.checked;
+      }
 
     public clearStorage() {
       window.localStorage.removeItem(this.stateKey);

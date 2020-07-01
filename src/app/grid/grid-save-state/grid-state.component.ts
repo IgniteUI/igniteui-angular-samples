@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, ViewChildren, QueryList } from "@angular/core";
 import { NavigationStart, Router } from "@angular/router";
 import { FilteringExpressionsTree, FilteringLogic, FlatGridFeatures, GridFeatures,
     IGridState, IGridStateOptions, IgxGridComponent, IgxGridStateDirective,
-    IgxNumberSummaryOperand, IgxSummaryResult } from "igniteui-angular";
+    IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent } from "igniteui-angular";
 import { take } from "rxjs/operators";
 import { employeesData } from "./localData";
 
@@ -21,7 +21,7 @@ class MySummary extends IgxNumberSummaryOperand {
         });
         return result;
     }
-  }
+}
 
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -68,6 +68,7 @@ export class GridSaveStateComponent implements OnInit {
 
     @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
     @ViewChild(IgxGridComponent, { static: true }) public grid: IgxGridComponent;
+    @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
 
     public initialColumns: any[] = [
       // tslint:disable:max-line-length
@@ -128,15 +129,27 @@ export class GridSaveStateComponent implements OnInit {
 
     public resetGridState() {
         const grid: IgxGridComponent = this.grid;
+        const pagingState = {index: 0, recordsPerPage: 15, metadata: { countPages: 3, countRecords: this.localData.length}}
+        grid.pagingState = pagingState;
         grid.filteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
         grid.advancedFilteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
         grid.sortingExpressions = [];
         grid.groupingExpressions = [];
+        grid.deselectAllColumns();
         grid.deselectAllRows();
         grid.clearCellSelection();
       }
 
     public onChange(event: any, action: string) {
+      if (action === "toggleAll") {
+        this.checkboxes.forEach(cb => {
+            cb.checked = event.checked;
+        })
+        for (const key of Object.keys(this.options)) {
+            this.state.options[key] = event.checked;
+        }
+        return;
+      }
       this.state.options[action] = event.checked;
     }
 

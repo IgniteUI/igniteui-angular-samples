@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, ViewChildren, QueryList } from "@angular/core";
 import { NavigationStart, Router } from "@angular/router";
 import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
     IGridState, IGridStateOptions, IgxGridStateDirective,
     IgxHierarchicalGridComponent, IgxNumberSummaryOperand,
-    IgxSummaryResult } from "igniteui-angular";
+    IgxSummaryResult, IgxCheckboxComponent} from "igniteui-angular";
 import { take } from "rxjs/operators";
 import { SINGERS } from "../data";
 
@@ -34,7 +34,7 @@ class MySummary extends IgxNumberSummaryOperand {
 export class HGridSaveStateComponent implements OnInit {
     public localData: any[];
     public columns: any[];
-    public gridId = "grid1";
+    public gridId = "hGrid1";
     public stateKey = this.gridId + "-state";
     public gridState: IGridState;
     public serialize = true;
@@ -67,6 +67,7 @@ export class HGridSaveStateComponent implements OnInit {
 
     @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
     @ViewChild("hierarchicalGrid", { static: true }) public hGrid: IgxHierarchicalGridComponent;
+    @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
 
     constructor(private router: Router) {
         this.localData = SINGERS;
@@ -123,8 +124,17 @@ export class HGridSaveStateComponent implements OnInit {
       }
 
     public onChange(event: any, action: string) {
-      this.state.options[action] = event.checked;
-    }
+        if (action === "toggleAll") {
+          this.checkboxes.forEach(cb => {
+              cb.checked = event.checked;
+          })
+          for (const key of Object.keys(this.options)) {
+              this.state.options[key] = event.checked;
+          }
+          return;
+        }
+        this.state.options[action] = event.checked;
+      }
 
     public clearStorage() {
       window.localStorage.removeItem(this.stateKey);
