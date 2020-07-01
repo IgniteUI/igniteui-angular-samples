@@ -13,9 +13,6 @@ export class GridEditingEventsComponent implements OnInit {
     public balance: number = 7800;
     public orderBalance: number;
 
-    @ViewChild(IgxGridComponent, { read: IgxGridComponent, static: true })
-    public grid: IgxGridComponent;
-
     @ViewChild(IgxToastComponent, { read: IgxToastComponent, static: true })
     public toast: IgxToastComponent;
 
@@ -34,10 +31,9 @@ export class GridEditingEventsComponent implements OnInit {
     }
 
     public handleCellEdit(event: IGridEditEventArgs) {
-        const column = this.grid.columnList.find(e => e.index === event.cellID.columnID);
-        if (column.header === "Ordered") {
-            const rowData = this.grid.data
-            .find(entry => entry[this.grid.primaryKey] === event.cellID.rowID);
+        const column = event.column;
+        if (column.field === "Ordered") {
+            const rowData = event.rowData;
             if (!rowData) {
                 return;
             }
@@ -47,5 +43,4 @@ export class GridEditingEventsComponent implements OnInit {
             }
         }
     }
-
 }
