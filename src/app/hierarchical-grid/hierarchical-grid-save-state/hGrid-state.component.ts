@@ -50,7 +50,7 @@ export class HGridSaveStateComponent implements OnInit {
         { key: 'rowPinning', shortName: 'Row Pining' },
         { key: 'rowSelection', shortName: 'Row Sel' },
         { key: 'sorting', shortName: 'Sorting' },
-        { key: 'inheritance', shortName: 'inheritance' }
+        { key: 'rowIslands', shortName: 'Row Islands' }
       ];
 
     public options: IGridStateOptions = {
