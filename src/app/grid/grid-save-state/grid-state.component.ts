@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewChildren, QueryList } from "@angular/core";
 import { NavigationStart, Router } from "@angular/router";
-import { FilteringExpressionsTree, FilteringLogic, FlatGridFeatures, GridFeatures,
+import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
     IGridState, IGridStateOptions, IgxGridComponent, IgxGridStateDirective,
     IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent } from "igniteui-angular";
 import { take } from "rxjs/operators";
@@ -38,18 +38,18 @@ export class GridSaveStateComponent implements OnInit {
     public gridState: IGridState;
     public serialize = true;
 
-    public features = [
-        { key: GridFeatures.ADVANCED_FILTERING, shortName: "Adv Filt" },
-        { key: GridFeatures.CELL_SELECTION, shortName: "Cell Sel" },
-        { key: GridFeatures.COLUMNS, shortName: "Columns" } ,
-        { key: GridFeatures.COLUMN_SELECTION, shortName: "Cols Sel" },
-        { key: GridFeatures.EXPANSION, shortName: "Expansion" },
-        { key: GridFeatures.FILTERING, shortName: "Filt" },
-        { key: GridFeatures.PAGING, shortName: "Paging" },
-        { key: GridFeatures.ROW_PINNING, shortName: "Row Pining" },
-        { key: GridFeatures.ROW_SELECTION, shortName: "Row Sel" },
-        { key: GridFeatures.SORTING, shortName: "Sorting" },
-        { key: FlatGridFeatures.GROUP_BY, shortName: "GroupBy"}
+    public features: { key: GridFeatures, shortName: string }[] = [
+        { key: 'advancedFiltering', shortName: 'Adv Filt' },
+        { key: 'cellSelection', shortName: 'Cell Sel' },
+        { key: 'columns', shortName: 'Columns' } ,
+        { key: 'columnSelection', shortName: 'Cols Sel' },
+        { key: 'expansion', shortName: 'Expansion' },
+        { key: 'filtering', shortName: 'Filt' },
+        { key: 'paging', shortName: 'Paging' },
+        { key: 'rowPinning', shortName: 'Row Pining' },
+        { key: 'rowSelection', shortName: 'Row Sel' },
+        { key: 'sorting', shortName: 'Sorting' },
+        { key: 'groupBy', shortName: 'GroupBy' }
       ];
 
     public options: IGridStateOptions = {

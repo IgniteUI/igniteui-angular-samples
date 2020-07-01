@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewChildren, QueryList } from "@angular/core";
 import { NavigationStart, Router } from "@angular/router";
-import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
+import { GridFeatures,
     IGridState, IGridStateOptions, IgxGridStateDirective,
     IgxHierarchicalGridComponent, IgxNumberSummaryOperand,
     IgxSummaryResult, IgxCheckboxComponent} from "igniteui-angular";
@@ -39,17 +39,18 @@ export class HGridSaveStateComponent implements OnInit {
     public gridState: IGridState;
     public serialize = true;
 
-    public features = [
-        { key: GridFeatures.ADVANCED_FILTERING, shortName: "Adv Filt" },
-        { key: GridFeatures.CELL_SELECTION, shortName: "Cell Sel" },
-        { key: GridFeatures.COLUMNS, shortName: "Columns" } ,
-        { key: GridFeatures.COLUMN_SELECTION, shortName: "Cols Sel" },
-        { key: GridFeatures.EXPANSION, shortName: "Expansion" },
-        { key: GridFeatures.FILTERING, shortName: "Filt" },
-        { key: GridFeatures.PAGING, shortName: "Paging" },
-        { key: GridFeatures.ROW_PINNING, shortName: "Row Pining" },
-        { key: GridFeatures.ROW_SELECTION, shortName: "Row Sel" },
-        { key: GridFeatures.SORTING, shortName: "Sorting" }
+    public features: { key: GridFeatures, shortName: string }[] = [
+        { key: 'advancedFiltering', shortName: 'Adv Filt' },
+        { key: 'cellSelection', shortName: 'Cell Sel' },
+        { key: 'columns', shortName: 'Columns' } ,
+        { key: 'columnSelection', shortName: 'Cols Sel' },
+        { key: 'expansion', shortName: 'Expansion' },
+        { key: 'filtering', shortName: 'Filt' },
+        { key: 'paging', shortName: 'Paging' },
+        { key: 'rowPinning', shortName: 'Row Pining' },
+        { key: 'rowSelection', shortName: 'Row Sel' },
+        { key: 'sorting', shortName: 'Sorting' },
+        { key: 'inheritance', shortName: 'inheritance' }
       ];
 
     public options: IGridStateOptions = {
