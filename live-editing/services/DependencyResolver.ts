@@ -7,6 +7,22 @@ import { DependenciesType } from "./DependenciesType";
 
 const PACKAGES_CONFIG_PATH = path.join(__dirname, "../../package.json");
 
+const SHARED_DEV_DEPENDENCIES = {
+    "@angular-devkit/build-angular": "",
+    "@angular/cli": "",
+    "@angular/compiler-cli": "",
+    "@angular/language-service": "",
+    "@types/node": "",
+    "codelyzer": "",
+    "jasmine-core": "",
+    "jasmine-spec-reporter": "",
+    "node-sass": "",
+    "sass.js": "",
+    "ts-node": "",
+    "tslint": "",
+    "typescript": ""
+};
+
 const SHARED_DEPENDENCIES = [
     "@angular/common",
     "@angular/compiler",
@@ -90,6 +106,29 @@ const EXACT_VERSION_PACKAGES = [
     "igniteui-angular-spreadsheet",
     "igniteui-angular-spreadsheet-chart-adapter"
 ];
+
+export class DevDependencyResolver {
+    private _devDependencies;
+
+    constructor() {
+        let packageFile = JSON.parse(fs.readFileSync(PACKAGES_CONFIG_PATH, "utf8"));
+        this._devDependencies = packageFile.devDependencies;
+    }
+
+    public get devDependencies() {
+        const result = {};
+        
+        for (let key in this._devDependencies) {
+            if (key in SHARED_DEV_DEPENDENCIES) {
+                    let version = this._devDependencies[key];
+                    result[key] = version.replace("~", "").replace("^", "");
+            }
+        }
+
+        return result;
+    }
+
+}
 
 export class DependencyResolver {
     private _defaultDependencies: Set<string>;
