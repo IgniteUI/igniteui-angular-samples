@@ -8,9 +8,6 @@ import { generateEmployeeFlatData, IEmployee } from "../data/employees-flat";
     styleUrls: ["tree-grid-editing-events.component.scss"]
 })
 export class TreeGridEditingEventsComponent implements OnInit {
-    @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: true })
-    public grid: IgxTreeGridComponent;
-
     @ViewChild(IgxToastComponent, { read: IgxToastComponent, static: true })
     public toast: IgxToastComponent;
 
@@ -21,11 +18,7 @@ export class TreeGridEditingEventsComponent implements OnInit {
     }
 
     public handleEdit(event: IGridEditEventArgs) {
-        const row = this.data.find(e => e[this.grid.primaryKey] === event.cellID.rowID);
-        if (!row) {
-            return;
-        }
-        const column = this.grid.columnList.find(col => col.index === event.cellID.columnID);
+        const column = event.column;
         if (column.field === "Age") {
             if (event.newValue < 18) {
                 event.cancel = true;
