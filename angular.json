@@ -32,7 +32,7 @@
               "budgets": [
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "500kb"
+                  "maximumWarning": "700kb"
                 }
               ],
               "optimization": true,
@@ -55,7 +55,7 @@
               "budgets": [
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "500kb"
+                  "maximumWarning": "700kb"
                 }
               ],
               "tsConfig": "src/tsconfig-es5.app.json"
@@ -167,8 +167,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "500kb",
-                  "maximumError": "500kb"
+                  "maximumWarning": "700kb",
+                  "maximumError": "700kb"
                 }
               ]
             },
@@ -176,7 +176,7 @@
               "budgets": [
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "500kb"
+                  "maximumWarning": "700kb"
                 }
               ],
               "tsConfig": "projects/app-lob/tsconfig-es5.app.json"
