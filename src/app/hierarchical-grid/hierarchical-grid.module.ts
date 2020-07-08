@@ -64,6 +64,7 @@ import { HGridRowPinningStylingSampleComponent } from "./hierarchical-grid-row-p
 import { HGridRowPinningSampleComponent } from "./hierarchical-grid-row-pinning/hierarchical-grid-row-pinning.component";
 import { HGridRowReorderComponent } from "./hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
 import { HierarchicalGridRightPinningSampleComponent } from "./hierarchical-grid-sample-right-pinning/hierarchical-grid-right-pinning.component";
+import { HGridSaveStateComponent } from "./hierarchical-grid-save-state/hGrid-state.component";
 import { HGridSelectionTemplateNumbersSampleComponent } from "./hierarchical-grid-selection-template-numbers/hierarchical-grid-selection-template-numbers.component";
 import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridSortingStylingComponent } from "./hierarchical-grid-sorting-styling/hierarchical-grid-sorting-styling.component";
@@ -76,6 +77,7 @@ import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolb
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
+import { HGridAboutComponent } from "./hierarchical-grid-save-state/about.component";
 
 @NgModule({
     declarations: [
@@ -88,6 +90,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridSelectionTemplateNumbersSampleComponent,
         HGridSummarySampleComponent,
         HGridSummaryStylingComponent,
+        HGridSaveStateComponent,
         HGridPagingSampleComponent,
         HGridPagingStyleSampleComponent,
         HGridRemotePagingSampleComponent,
@@ -136,6 +139,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridStylingComponent,
         HGridConditionalRowSelectorsComponent,
         HGridExternalAdvancedFilteringComponent,
+        HGridAboutComponent,
         HGridExternalExcelStyleFilteringComponent,
         HGridCollapsibleColumnGroupComponent,
         HGridAllDataSummaryComponent,

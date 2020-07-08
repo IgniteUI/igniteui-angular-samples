@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild, ViewChildren, QueryList } from "@angular/core";
 import { NavigationStart, Router } from "@angular/router";
-import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
-    IGridState, IGridStateOptions, IgxGridComponent, IgxGridStateDirective,
-    IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent } from "igniteui-angular";
+import { GridFeatures,
+    IGridState, IGridStateOptions, IgxGridStateDirective,
+    IgxHierarchicalGridComponent, IgxNumberSummaryOperand,
+    IgxSummaryResult, IgxCheckboxComponent} from "igniteui-angular";
 import { take } from "rxjs/operators";
-import { employeesData } from "./localData";
+import { SINGERS } from "../data";
 
 class MySummary extends IgxNumberSummaryOperand {
 
@@ -21,19 +22,19 @@ class MySummary extends IgxNumberSummaryOperand {
         });
         return result;
     }
-}
+  }
 
 // tslint:disable:object-literal-sort-keys
 @Component({
-  selector: "app-grid",
-  styleUrls: ["./grid-state.component.scss"],
-  templateUrl: "./grid-state.component.html"
+  selector: "app-hGrid",
+  styleUrls: ["./hGrid-state.component.scss"],
+  templateUrl: "./hGrid-state.component.html"
 })
 
-export class GridSaveStateComponent implements OnInit {
+export class HGridSaveStateComponent implements OnInit {
     public localData: any[];
     public columns: any[];
-    public gridId = "grid1";
+    public gridId = "hGrid1";
     public stateKey = this.gridId + "-state";
     public gridState: IGridState;
     public serialize = true;
@@ -49,7 +50,7 @@ export class GridSaveStateComponent implements OnInit {
         { key: 'rowPinning', shortName: 'Row Pining' },
         { key: 'rowSelection', shortName: 'Row Sel' },
         { key: 'sorting', shortName: 'Sorting' },
-        { key: 'groupBy', shortName: 'GroupBy' }
+        { key: 'rowIslands', shortName: 'Row Islands' }
       ];
 
     public options: IGridStateOptions = {
@@ -59,7 +60,6 @@ export class GridSaveStateComponent implements OnInit {
       advancedFiltering: true,
       paging: true,
       sorting: true,
-      groupBy: true,
       columns: true,
       expansion: true,
       rowPinning: true,
@@ -67,25 +67,14 @@ export class GridSaveStateComponent implements OnInit {
     };
 
     @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
-    @ViewChild(IgxGridComponent, { static: true }) public grid: IgxGridComponent;
+    @ViewChild("hierarchicalGrid", { static: true }) public hGrid: IgxHierarchicalGridComponent;
     @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
 
-    public initialColumns: any[] = [
-      // tslint:disable:max-line-length
-      { field: "FirstName", header: "First Name", width: "150px", dataType: "string", pinned: true, movable: true, sortable: true, filterable: true},
-      { field: "LastName", header: "Last Name", width: "150px", dataType: "string", pinned: true, movable: true, sortable: true, filterable: true},
-      { field: "Country", header: "Country", width: "140px", dataType: "string", groupable: true, movable: true, sortable: true, filterable: true, resizable: true },
-      { field: "Age", header: "Age", width: "110px", dataType: "number", movable: true, sortable: true, filterable: true, hasSummary: true, resizable: true, summaries: MySummary},
-      { field: "RegistererDate", header: "Registerer Date", width: "180px", dataType: "date", movable: true, sortable: true, filterable: true, resizable: true },
-      { field: "IsActive", header: "Is Active", width: "140px", dataType: "boolean", groupable: true, movable: true, sortable: true, filterable: true }
-      // tslint:enable:max-line-length
-    ];
-
-    constructor(private router: Router) {}
+    constructor(private router: Router) {
+        this.localData = SINGERS;
+    }
 
     public ngOnInit() {
-      this.localData = employeesData;
-      this.columns = this.initialColumns;
       this.router.events.pipe(take(1)).subscribe((event: NavigationStart) => {
           this.saveGridState();
       });
@@ -97,7 +86,6 @@ export class GridSaveStateComponent implements OnInit {
 
     public saveGridState() {
         const state = this.state.getState(this.serialize);
-        // const state = this.state.getState(this.serialize, ['sorting', 'filtering']);
         if (typeof state === "string") {
           window.localStorage.setItem(this.stateKey, state);
         } else {
@@ -127,31 +115,18 @@ export class GridSaveStateComponent implements OnInit {
         return state;
     }
 
-    public resetGridState() {
-        const grid: IgxGridComponent = this.grid;
-        const pagingState = {index: 0, recordsPerPage: 15, metadata: { countPages: 3, countRecords: this.localData.length}}
-        grid.pagingState = pagingState;
-        grid.filteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
-        grid.advancedFilteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
-        grid.sortingExpressions = [];
-        grid.groupingExpressions = [];
-        grid.deselectAllColumns();
-        grid.deselectAllRows();
-        grid.clearCellSelection();
-      }
-
     public onChange(event: any, action: string) {
-      if (action === "toggleAll") {
-        this.checkboxes.forEach(cb => {
-            cb.checked = event.checked;
-        })
-        for (const key of Object.keys(this.options)) {
-            this.state.options[key] = event.checked;
+        if (action === "toggleAll") {
+          this.checkboxes.forEach(cb => {
+              cb.checked = event.checked;
+          })
+          for (const key of Object.keys(this.options)) {
+              this.state.options[key] = event.checked;
+          }
+          return;
         }
-        return;
+        this.state.options[action] = event.checked;
       }
-      this.state.options[action] = event.checked;
-    }
 
     public clearStorage() {
       window.localStorage.removeItem(this.stateKey);
@@ -160,4 +135,6 @@ export class GridSaveStateComponent implements OnInit {
     public reloadPage() {
         window.location.reload();
     }
+
+    public formatter = (a) => a;
 }

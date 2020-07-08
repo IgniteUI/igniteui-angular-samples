@@ -4,14 +4,14 @@
             <button igxButton="raised" (click)="restoreGridState()"><igx-icon class="btn-icon">restore</igx-icon>Restore</button>
             <button igxButton="raised" (click)="saveGridState()"><igx-icon class="btn-icon">save</igx-icon>Save</button>
             <button igxButton="raised" (click)="resetGridState()"><igx-icon class="btn-icon">clear</igx-icon>Reset</button>
-            <button igxButton="raised" [routerLink]="['../grid-about']"><igx-icon class="btn-icon">forward</igx-icon>Leave</button>
+            <button igxButton="raised" [routerLink]="['../tree-grid-about']"><igx-icon class="btn-icon">forward</igx-icon>Leave</button>
             <button igxButton="raised" (click)="clearStorage()"><igx-icon class="btn-icon">delete</igx-icon>Clear</button>
             <button igxButton="raised" (click)="reloadPage()"><igx-icon class="btn-icon">refresh</igx-icon>Reload</button>
         </div>
 
         <div class="switches">
             <ul>
-                <li>Clicking the SAVE button or leaving the page <a [routerLink]="['../grid-about']"><strong>here</strong></a> will save grid state to localStorage.</li>
+                <li>Clicking the SAVE button or leaving the page <a [routerLink]="['../tree-grid-about']"><strong>here</strong></a> will save grid state to localStorage.</li>
                 <li>Use the control buttons to SAVE / RESTORE / RESET / DELETE / grid state or LEAVE the page.</li>
                 <li>Select/Deselect checkboxes to control saving / restoring feature state.</li>
             </ul>
@@ -29,31 +29,20 @@
         </div>
     </div>
 
-    <igx-grid igxPreventDocumentScroll [id]="gridId" #grid1 [igxGridState]="options"
-        width="1150px" height="550px" [autoGenerate]="false"
+    <igx-tree-grid #treeGrid [id]="treeGridId" igxGridState
+        primaryKey="Name"
         [data]="localData"
-        [primaryKey]="'EmployeeID'" 
-        [rowEditable]="false"
-        [allowFiltering]="true" [allowAdvancedFiltering]="true" [filterMode]="'excelStyleFilter'"
+        childDataKey="Employees"
+        displayDensity="cosy"
+        width="100%" height="800px" 
+        [autoGenerate]="false"
+        [rowSelection]="'multiple'"
         [paging]="true"
-        [showToolbar]="true"
-        [columnPinning]="true"
+        [allowFiltering]="true"
         [columnHiding]="true"
-        [displayDensity]="'cosy'"
-        [cellSelection]="'multiple'"
-        [rowSelection]="'none'">
-        <igx-column *ngFor="let c of columns"
-            [sortable]="c.sortable"
-            [movable]="c.movable"
-            [editable]="true"
-            [hasSummary]="c.hasSummary"
-            [filterable]="c.filterable"
-            [groupable]="c.groupable"
-            [field]="c.field"
-            [header]="c.header"
-            [dataType]="c.dataType"
-            [pinned]="c.pinned"
-            [hidden]="c.hidden">
-        </igx-column>
-    </igx-grid>
+        [columnPinning]="true">
+        <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true" [hasSummary]="true"></igx-column>
+        <igx-column field="HireDate" dataType="date" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true"></igx-column>
+        <igx-column field="Age" dataType="number" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true"></igx-column>
+    </igx-tree-grid>
 </div>

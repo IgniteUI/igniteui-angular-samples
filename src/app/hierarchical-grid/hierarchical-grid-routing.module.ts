@@ -70,6 +70,7 @@ import { HGridRowPinningStylingSampleComponent } from "./hierarchical-grid-row-p
 import { HGridRowPinningSampleComponent } from "./hierarchical-grid-row-pinning/hierarchical-grid-row-pinning.component";
 import { HGridRowReorderComponent } from "./hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
 import { HierarchicalGridRightPinningSampleComponent } from "./hierarchical-grid-sample-right-pinning/hierarchical-grid-right-pinning.component";
+import { HGridSaveStateComponent } from "./hierarchical-grid-save-state/hGrid-state.component";
 import { HGridSelectionTemplateNumbersSampleComponent } from "./hierarchical-grid-selection-template-numbers/hierarchical-grid-selection-template-numbers.component";
 import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridSortingStylingComponent } from "./hierarchical-grid-sorting-styling/hierarchical-grid-sorting-styling.component";
@@ -81,6 +82,7 @@ import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolb
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
+import { HGridAboutComponent } from "./hierarchical-grid-save-state/about.component";
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -446,6 +448,16 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridRemotePagingDefaultTemplateComponent,
         data:  hierarchicalGridRoutesData["remote-paging-default-template"],
         path: "remote-paging-default-template"
+    },
+    {
+        component: HGridSaveStateComponent,
+        data:  hierarchicalGridRoutesData["hGrid-state"],
+        path: "hGrid-state"
+    },
+    {
+        component: HGridAboutComponent,
+        data:  hierarchicalGridRoutesData["hGrid-state-about"],
+        path: "hGrid-state-about"
     }
 ];
 
