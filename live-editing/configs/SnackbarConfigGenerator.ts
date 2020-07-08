@@ -33,10 +33,10 @@ export class SnackbarConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: SnackbarSample2Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxRippleModule,
+                imports: [IgxButtonModule, IgxRippleModule, IgxIconModule,
                 IgxSnackbarModule, SnackbarSample2Component],
                 ngDeclarations: [SnackbarSample2Component],
-                ngImports: [IgxButtonModule, IgxRippleModule, IgxSnackbarModule]
+                ngImports: [IgxButtonModule, IgxRippleModule, IgxSnackbarModule, IgxIconModule]
             }),
             shortenComponentPathBy: "/notifications/snackbar/"
         }));
