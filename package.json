@@ -83,7 +83,6 @@
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^13.9.3",
     "codelyzer": "^5.2.1",
-    "del": "^5.1.0",
     "event-stream": "^4.0.1",
     "fs-extra": "^8.1.0",
     "gulp": "^4.0.2",
