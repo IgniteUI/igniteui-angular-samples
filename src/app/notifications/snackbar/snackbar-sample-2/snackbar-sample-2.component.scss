@@ -1,6 +1,16 @@
-/* .div
-{
-    position: absolute; 
-    height: 150px; 
-    width: 100%;
-} */
+.columnWrapper {
+    display: flex;
+    flex-flow: row;
+    padding-top: 30px;
+}
+.columnWrapper span {
+    min-width: 250px;
+    flex: 1 0 0px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+button {
+    margin-top: 20px;
+}
