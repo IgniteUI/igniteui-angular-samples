@@ -117,6 +117,10 @@ export class GridGroupBySummarySampleComponent {
         this.grid1.summaryCalculationMode = this.summaryCalculationMode;
     }
 
+    public toggle(event) {
+        this.grid1.showSummaryOnCollapse = !this.grid1.showSummaryOnCollapse;
+    }
+
     public formatDate(val: Date) {
         return new Intl.DateTimeFormat("en-US").format(val);
     }
