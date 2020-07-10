@@ -5,13 +5,10 @@ import {
 import { generateEmployeeFlatData } from "../data/employees-flat";
 import { Employee } from "./employee";
 
-class CustomNumberSummary extends IgxSummaryOperand {
+class CustomNumberSummary {
 
-    constructor() {
-        super();
-    }
     public operate(data?: any[]): IgxSummaryResult[] {
-        const result = super.operate(data);
+        const result = new IgxSummaryOperand().operate(data);
         result.push({
             key: "Min",
             label: "Min",

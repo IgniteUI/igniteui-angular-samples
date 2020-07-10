@@ -3,11 +3,7 @@ import { IgxNumberSummaryOperand,
     IgxSummaryResult } from "igniteui-angular";
 import { SINGERS } from "../data";
 
-class MySummary extends IgxNumberSummaryOperand {
-
-    constructor() {
-      super();
-    }
+class MySummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];
@@ -30,11 +26,7 @@ class MySummary extends IgxNumberSummaryOperand {
         return result;
     }
 }
-class MyChildSummary extends IgxNumberSummaryOperand {
-
-    constructor() {
-      super();
-    }
+class MyChildSummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];
