@@ -5,25 +5,17 @@ import { IgxHierarchicalGridComponent,
     IgxSummaryResult } from "igniteui-angular";
 import { SINGERS } from "../data";
 
-class CustomNumberSummary extends IgxNumberSummaryOperand {
-
-    constructor() {
-      super();
-    }
+class CustomNumberSummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
-        const result = super.operate(data);
+        const result = new IgxNumberSummaryOperand().operate(data);
         result.pop();
         result.pop();
         return result;
     }
 }
 
-class GrammySummary extends IgxSummaryOperand {
-
-    constructor() {
-      super();
-    }
+class GrammySummary {
 
     public operate(data?: any[], allData = [], fieldName = ""): IgxSummaryResult[] {
         const result = [];

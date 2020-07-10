@@ -4,13 +4,10 @@ import {
 } from "igniteui-angular";
 import { generateEmployeeDetailedFlatData } from "../data/employees-flat-detailed";
 
-class CustomNumberSummary extends IgxSummaryOperand {
+class CustomNumberSummary {
 
-    constructor() {
-        super();
-    }
     public operate(data?: any[]): IgxSummaryResult[] {
-        const result = super.operate(data);
+        const result = new IgxSummaryOperand().operate(data);
         result.push({
             key: "Min",
             label: "Min",
