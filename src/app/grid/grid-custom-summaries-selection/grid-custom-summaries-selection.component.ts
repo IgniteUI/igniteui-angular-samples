@@ -4,13 +4,10 @@ import { IgxDateSummaryOperand, IgxGridComponent, IgxNumberSummaryOperand,
     IgxSummaryOperand, IgxSummaryResult } from "igniteui-angular";
 import { DATA } from "../../data/nwindData";
 
-class MySummary extends IgxSummaryOperand {
+class MySummary {
 
-    constructor() {
-        super();
-    }
     public operate(data: any[] = []): IgxSummaryResult[] {
-        const result = super.operate(data);
+        const result = new IgxSummaryOperand().operate(data);
         if (data.length < 1) { return result; }
         const numberData = data.filter(rec => typeof rec === "number");
         const boolData = data.filter(rec => typeof rec === "boolean");
