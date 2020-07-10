@@ -6,14 +6,10 @@ import {
     IgxSummaryResult } from "igniteui-angular";
 import { DATA } from "../../data/nwindData";
 
-class MySummary extends IgxNumberSummaryOperand {
-
-  constructor() {
-    super();
-  }
+class MySummary  {
 
   public operate(data?: any[]): IgxSummaryResult[] {
-    const result = super.operate(data);
+    const result = new IgxNumberSummaryOperand().operate(data);
     result.push({
       key: "test",
       label: "Test",

@@ -12,11 +12,7 @@ import {
 } from "igniteui-angular";
 import { INVOICE_DATA } from "../../data/invoiceData";
 
-class AvgSummary extends IgxSummaryOperand {
-
-    constructor() {
-        super();
-    }
+class AvgSummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];
@@ -30,11 +26,7 @@ class AvgSummary extends IgxSummaryOperand {
     }
 }
 
-class SumSummary extends IgxSummaryOperand {
-
-    constructor() {
-        super();
-    }
+class SumSummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];

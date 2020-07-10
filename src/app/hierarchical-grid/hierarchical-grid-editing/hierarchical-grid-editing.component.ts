@@ -6,11 +6,7 @@ import {
 import { SINGERS } from "../data";
 import { Singer } from "../models";
 
-class MySummary extends IgxNumberSummaryOperand {
-
-    constructor() {
-        super();
-    }
+class MySummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];

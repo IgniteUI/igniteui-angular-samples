@@ -12,11 +12,8 @@ import {
 } from "igniteui-angular";
 import { INVOICE_DATA } from "../../data/invoiceData";
 
-class CustomSummary extends IgxSummaryOperand {
+class CustomSummary {
 
-    constructor() {
-        super();
-    }
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];
