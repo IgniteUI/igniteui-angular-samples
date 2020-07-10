@@ -522,7 +522,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/tree-grid/"
         }));
 
-        // TreeGrid Summay Styling sample
+        // TreeGrid Summary Styling sample
         configs.push(new Config({
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/tree-grid/data/foods.ts"],
             appModuleConfig: new AppModuleConfig({
@@ -538,9 +538,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/tree-grid/data/foods.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxPreventDocumentScrollModule, IgxButtonModule, IgxButtonGroupModule, IgxTreeGridModule, TreeGridSummary2SampleComponent, IgxIconModule],
+                imports: [IgxPreventDocumentScrollModule, IgxButtonModule, IgxButtonGroupModule, IgxTreeGridModule, TreeGridSummary2SampleComponent, IgxIconModule, IgxSwitchModule],
                 ngDeclarations: [TreeGridSummary2SampleComponent],
-                ngImports: [IgxPreventDocumentScrollModule, IgxButtonModule, IgxButtonGroupModule, IgxTreeGridModule, IgxIconModule]
+                ngImports: [IgxPreventDocumentScrollModule, IgxButtonModule, IgxButtonGroupModule, IgxTreeGridModule, IgxIconModule, IgxSwitchModule]
             }),
             component: TreeGridSummary2SampleComponent,
             shortenComponentPathBy: "/tree-grid/"
