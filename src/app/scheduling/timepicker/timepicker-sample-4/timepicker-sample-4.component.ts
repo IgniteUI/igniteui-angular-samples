@@ -7,8 +7,8 @@ import { Component, ViewChild } from "@angular/core";
 })
 export class TimePickerSample4Component {
 
-    public min: string = "09:00";
-    public max: string = "18:00";
+    public min: string = "09:15:30 AM";
+    public max: string = "06:15:30 PM";
 
     @ViewChild("toast", { static: true })
     private toast;
