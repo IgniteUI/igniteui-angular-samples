@@ -3,6 +3,7 @@
 export const gridsRoutesData = {
     "grid-summary": { displayName: "Grid Summary", parentName: "Grid" },
     "grid-groupby": { displayName: "Grid GroupBy", parentName: "Grid" },
+    "grid-groupby-custom": {displayName: "Grid GroupBy Custom", parentName: "Grid"},
     "grid-groupby-paging": { displayName: "Grid GroupBy Paging", parentName: "Grid" },
     "grid-groupby-styling": { displayName: "Grid GroupBy Styling", parentName: "Grid" },
     "grid-groupby-summary": { displayName: "Grid GroupBy Summary", parentName: "Grid" },
