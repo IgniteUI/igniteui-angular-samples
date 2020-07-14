@@ -7,14 +7,10 @@ import { FilteringExpressionsTree, FilteringLogic, IGridState, IGroupingState,
 import { take } from "rxjs/operators";
 import { employeesData } from "./localData";
 
-class MySummary extends IgxNumberSummaryOperand {
-
-    constructor() {
-        super();
-    }
+class MySummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
-        const result = super.operate(data);
+        const result = new IgxNumberSummaryOperand().operate(data);
         result.push({
             key: "test",
             label: "Test",

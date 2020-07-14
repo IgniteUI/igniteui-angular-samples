@@ -206,11 +206,8 @@ export class GridComponent implements OnInit, OnDestroy {
     }
 }
 
-class CustomTopSpeedSummary extends IgxNumberSummaryOperand {
+class CustomTopSpeedSummary {
 
-    constructor() {
-        super();
-    }
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];
@@ -224,11 +221,7 @@ class CustomTopSpeedSummary extends IgxNumberSummaryOperand {
     }
 }
 
-export class CustomBPMSummary extends IgxNumberSummaryOperand {
-
-    constructor() {
-        super();
-    }
+export class CustomBPMSummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];
@@ -243,11 +236,7 @@ export class CustomBPMSummary extends IgxNumberSummaryOperand {
     }
 }
 
-export class CustomSpeedSummary extends IgxNumberSummaryOperand {
-
-    constructor() {
-        super();
-    }
+export class CustomSpeedSummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         data = data.reduce((acc, val) => acc.concat(val), []).map(rec => rec.Speed);
