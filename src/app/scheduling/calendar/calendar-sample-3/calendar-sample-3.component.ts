@@ -20,12 +20,12 @@ export class CalendarSample3Component {
     public viewDateChanged(event: IViewDateChangeEventArgs) {
         const logger: HTMLElement = document.querySelector(".logger");
         const eventArgs = `event.prevousValue: ${this.parseDate(event.previousValue)} | event.currentValue: ${this.parseDate(event.currentValue)}`;
-        logger.innerHTML += `<span>'onViewDateChanged': ${eventArgs}</span><br>`;
+        logger.innerHTML += `<span>'viewDateChanged': ${eventArgs}</span><br>`;
     }
 
     public activeViewChanged(event: CalendarView) {
         const logger: HTMLElement = document.querySelector(".logger");
-        logger.innerHTML += `<span>'onActiveViewChanged':. Active view is: ${CalendarView[event]}</span><br>`;
+        logger.innerHTML += `<span>'activeViewChanged':. Active view is: ${CalendarView[event]}</span><br>`;
     }
 
     private parseDate(date: Date) {
