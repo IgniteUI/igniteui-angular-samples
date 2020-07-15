@@ -6,6 +6,10 @@
     <igx-buttongroup [values]="summaryPositions" (onSelect)="selectSummaryPosition($event)"></igx-buttongroup>
 </div>
 
+<div class="summary-chooser">
+    <igx-switch labelPosition="before" [checked]='treegrid1.showSummaryOnCollapse' (change)='toggle($event)'> Show summary row when group row is collapsed:</igx-switch>
+</div>
+
 <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
     primaryKey="ID" foreignKey="ParentID">
     <igx-column #col field="ID" header="Product ID" [sortable]="true">

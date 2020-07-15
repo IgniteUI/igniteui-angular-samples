@@ -107,6 +107,10 @@ export class TreeGridSummary2SampleComponent implements OnInit {
         this.grid1.summaryCalculationMode = this.summaryCalculationMode;
     }
 
+    public toggle(event) {
+        this.grid1.showSummaryOnCollapse = !this.grid1.showSummaryOnCollapse;
+    }
+
     public formatCurrency(value: number) {
         return "$" + value.toFixed(2);
     }
