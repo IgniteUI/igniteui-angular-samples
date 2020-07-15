@@ -32,12 +32,12 @@
                             <span class="igx-group-label__column-name">
                             {{ groupRow.expression.fieldName }}:
                             </span>
-                            <span class="igx-group-label__text">{{ isDate(groupRow.value) ? formatWeekDay(groupRow.value) : groupRow.value }}</span>
+                            <span class="igx-group-label__text">{{ isDate(groupRow.value) ? formatGroupByRow(groupRow.value) : groupRow.value }}</span>
                             <igx-badge [value]="groupRow.records.length" class='igx-group-label__count-badge'></igx-badge>
                         </div>
                 </ng-template>
                 <ng-template igxToolbarCustomContent let-grid="grid1">
-                    <button igxButton="raised" [igxToggleAction]="dropDown" [igxDropDownItemNavigation]="dropDown">Group By Date</button>
+                    <button igxButton="raised" [igxToggleAction]="dropDown" [igxDropDownItemNavigation]="dropDown">Group By {{ groupByMode }}</button>
                     <igx-drop-down #dropDown (onSelection)="selectionChange($event)">
                         <igx-drop-down-item *ngFor="let item of groupByOptions" [value]="item">
                             {{ item.name }}

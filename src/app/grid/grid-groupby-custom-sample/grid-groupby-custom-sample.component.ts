@@ -19,10 +19,11 @@ export class GridGroupByCustomSampleComponent {
     public sortingStrategy;
     public groupByOptions = [
         { name: "Day", ref: DaySortingStrategy.instance() },
-        { name: "Month", ref: MonthSortingStrategy.instance() },
-        { name: "Year", ref: YearSortingStrategy.instance() },
-        { name: "Weekday", ref: WeekdaySortingStrategy.instance() }
+        { name: "Week", ref: WeekSortingStrategy.instance() },
+        { name: "Month", ref: BaseSortingStrategy.instance() },
+        { name: "Year", ref: BaseSortingStrategy.instance() }
     ];
+
     public groupByMode = this.groupByOptions[0].name;
     public initialExpr;
 
@@ -39,7 +40,14 @@ export class GridGroupByCustomSampleComponent {
                 groupingComparer: (a, b) => {
                     const dateA = this.sortingStrategy.getParsedDate(a);
                     const dateB = this.sortingStrategy.getParsedDate(b);
-                    return dateA === dateB ? 0 : -1;
+                    if (this.groupByMode === 'Month') {
+                        return dateA.month === dateB.month ? 0 : -1;
+                    } else if (this.groupByMode === "Year") {
+                        return dateA.year === dateB.year ? 0 : -1;
+                    } else if (this.groupByMode === "Week") {
+                        return dateA.week === dateB.week ? 0 : -1;
+                    }
+                    return dateA.day === dateB.day && dateA.month === dateB.month ? 0 : -1;
                 }
             }
         ];
@@ -65,10 +73,15 @@ export class GridGroupByCustomSampleComponent {
         return new Intl.DateTimeFormat("en-US").format(val);
     }
 
-    public formatWeekDay(val: Date) {
-        return this.groupByMode === "Weekday"
-            ? new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(val)
-            : new Intl.DateTimeFormat("en-US").format(val);
+    public formatGroupByRow(val: Date) {
+        if (this.groupByMode === "Month") {
+            return new Intl.DateTimeFormat("en-US", { month: 'long', year: 'numeric' }).format(val);
+        } else if (this.groupByMode === "Year") {
+            return new Intl.DateTimeFormat("en-US", { year: 'numeric' }).format(val);
+        } else if (this.groupByMode === "Week") {
+            return new Intl.DateTimeFormat("en-US", { year: 'numeric' }).format(val) + " week " + this.sortingStrategy.getWeekOfDate(val);
+        }
+        return new Intl.DateTimeFormat("en-US").format(val);
     }
     public formatCurrency(value: number) {
         return "$" + value.toFixed(2);
@@ -83,56 +96,42 @@ export class GridGroupByCustomSampleComponent {
 }
 
 class BaseSortingStrategy extends DefaultSortingStrategy {
-    public getParsedDate(date: any) {}
+
+    public getParsedDate(date: any) {
+        return {
+            day: parseInt(new Intl.DateTimeFormat("en-US", { day: "numeric" }).format(date), 10),
+            month: parseInt(new Intl.DateTimeFormat("en-US", { month: "numeric" }).format(date), 10),
+            year: parseInt(new Intl.DateTimeFormat("en-US", { year: "numeric" }).format(date), 10),
+            week: this.getWeekOfDate(date)
+        };
+    }
+
+    public getWeekOfDate(a: any) {
+        const firstJan = new Date(a.getFullYear(), 0, 1);
+        const millisecsInDay = 86400000;
+        return Math.ceil((((a.getTime() - firstJan.getTime()) / millisecsInDay) + firstJan.getDay() + 1) / 7);
+    }
+
     compareValues(a: any, b: any) {
-        const dayA = this.getParsedDate(a);
-        const dayB = this.getParsedDate(b);
-        if (dayA > dayB) return 1;
-        else if (dayA === dayB) return 0;
-        else return -1;
+        const dateA = this.getParsedDate(a);
+        const dateB = this.getParsedDate(b);
+        return dateA.year < dateB.year ? -1 : dateA.year > dateB.year ? 1 : dateA.month  < dateB.month ? -1 : dateA.month > dateB.month ? 1 : 0;
     }
 }
 
 class DaySortingStrategy extends BaseSortingStrategy {
-    public getParsedDate(date: any) {
-        return parseInt(
-            new Intl.DateTimeFormat("en-US", { day: "numeric" }).format(date),
-            10
-        );
+    compareValues(a: any, b: any) {
+        const dateA = this.getParsedDate(a);
+        const dateB = this.getParsedDate(b);
+        return dateA.year < dateB.year ? -1 : dateA.year > dateB.year ? 1 : dateA.month  < dateB.month ? -1 : dateA.month > dateB.month ? 1 :
+                dateA.day < dateB.day ? -1 : dateA.day > dateB.day ? 1 : 0;
     }
 }
 
-class MonthSortingStrategy extends BaseSortingStrategy {
-    public getParsedDate(date: any) {
-        return parseInt(
-            new Intl.DateTimeFormat("en-US", { month: "numeric" }).format(date),
-            10
-        );
-    }
-}
-
-class YearSortingStrategy extends BaseSortingStrategy {
-    public getParsedDate(date: any) {
-        return parseInt(
-            new Intl.DateTimeFormat("en-US", { year: "numeric" }).format(date),
-            10
-        );
-    }
-}
-
-class WeekdaySortingStrategy extends BaseSortingStrategy {
-    public getParsedDate(date: any) {
-        const weekDays = [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-        ];
-        return weekDays.indexOf(
-            new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(date)
-        );
-    }
+class WeekSortingStrategy extends BaseSortingStrategy {
+   compareValues(a: any, b: any) {
+        const dateA = this.getParsedDate(a);
+        const dateB = this.getParsedDate(b);
+        return dateA.year < dateB.year ? -1 : dateA.year > dateB.year ? 1 : dateA.week < dateB.week ? -1 : dateA.week > dateB.week ? 1 : 0;
+   }
 }
