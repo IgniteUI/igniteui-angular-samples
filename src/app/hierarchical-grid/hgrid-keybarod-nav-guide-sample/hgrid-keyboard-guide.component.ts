@@ -8,7 +8,7 @@ import {
     IgxHierarchicalGridComponent,
     IgxListComponent
 } from "igniteui-angular";
-import { IgxGridExpandableCellComponent } from "igniteui-angular/lib/grids/grid/expandable-cell.component";
+import { IgxGridExpandableCellComponent } from "igniteui-angular";
 import { fromEvent, Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { CUSTOMERS } from "../data";

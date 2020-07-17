@@ -9,7 +9,7 @@ import {
     IgxOverlayService,
     IgxTreeGridComponent
 } from "igniteui-angular";
-import { IgxGridExpandableCellComponent } from "igniteui-angular/lib/grids/grid/expandable-cell.component";
+import { IgxGridExpandableCellComponent } from "igniteui-angular";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { generateEmployeeDetailedFlatData } from "../data/employees-flat-detailed";
