@@ -25,7 +25,7 @@ export class ToggleComponent {
     public _overlaySettings: OverlaySettings = {
         closeOnOutsideClick: false,
         modal: false,
-        closeOnEsc: true,
+        closeOnEscape: true,
         positionStrategy: new ConnectedPositioningStrategy(this._positionSettings)
     };
 
