@@ -5,6 +5,7 @@ import {
     SortingDirection
 } from "igniteui-angular";
 import { INVOICE_DATA } from "../../data/invoiceData";
+import { DatePipe } from '@angular/common';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -45,7 +46,7 @@ export class GridGroupByCustomSampleComponent {
                     } else if (this.groupByMode === "Year") {
                         return dateA.year === dateB.year ? 0 : -1;
                     } else if (this.groupByMode === "Week") {
-                        return dateA.week === dateB.week ? 0 : -1;
+                       return this.sortingStrategy.getWeekOfDate(a) === this.sortingStrategy.getWeekOfDate(b) ? 0 : -1;
                     }
                     return dateA.day === dateB.day && dateA.month === dateB.month ? 0 : -1;
                 }
@@ -75,13 +76,14 @@ export class GridGroupByCustomSampleComponent {
 
     public formatGroupByRow(val: Date) {
         if (this.groupByMode === "Month") {
-            return new Intl.DateTimeFormat("en-US", { month: 'long', year: 'numeric' }).format(val);
+            const months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
+            return months[val.getMonth()] + ` ${val.getFullYear()} `;
         } else if (this.groupByMode === "Year") {
-            return new Intl.DateTimeFormat("en-US", { year: 'numeric' }).format(val);
+            return val.getFullYear();
         } else if (this.groupByMode === "Week") {
-            return new Intl.DateTimeFormat("en-US", { year: 'numeric' }).format(val) + " week " + this.sortingStrategy.getWeekOfDate(val);
+            return val.getFullYear() + ` week ${this.sortingStrategy.getWeekOfDate(val)}`;
         }
-        return new Intl.DateTimeFormat("en-US").format(val);
+        return val.toLocaleDateString("en-US")
     }
     public formatCurrency(value: number) {
         return "$" + value.toFixed(2);
@@ -99,17 +101,10 @@ class BaseSortingStrategy extends DefaultSortingStrategy {
 
     public getParsedDate(date: any) {
         return {
-            day: parseInt(new Intl.DateTimeFormat("en-US", { day: "numeric" }).format(date), 10),
-            month: parseInt(new Intl.DateTimeFormat("en-US", { month: "numeric" }).format(date), 10),
-            year: parseInt(new Intl.DateTimeFormat("en-US", { year: "numeric" }).format(date), 10),
-            week: this.getWeekOfDate(date)
+            day: date.getDay(),
+            month: date.getMonth() + 1,
+            year: date.getFullYear()
         };
-    }
-
-    public getWeekOfDate(a: any) {
-        const firstJan = new Date(a.getFullYear(), 0, 1);
-        const millisecsInDay = 86400000;
-        return Math.ceil((((a.getTime() - firstJan.getTime()) / millisecsInDay) + firstJan.getDay() + 1) / 7);
     }
 
     compareValues(a: any, b: any) {
@@ -129,9 +124,16 @@ class DaySortingStrategy extends BaseSortingStrategy {
 }
 
 class WeekSortingStrategy extends BaseSortingStrategy {
-   compareValues(a: any, b: any) {
+
+    public getWeekOfDate(a: any) {
+       return parseInt(new DatePipe("en-US").transform(a, 'w'), 10);
+    }
+
+    compareValues(a: any, b: any) {
         const dateA = this.getParsedDate(a);
         const dateB = this.getParsedDate(b);
-        return dateA.year < dateB.year ? -1 : dateA.year > dateB.year ? 1 : dateA.week < dateB.week ? -1 : dateA.week > dateB.week ? 1 : 0;
-   }
+        const weekA = this.getWeekOfDate(a);
+        const weekB = this.getWeekOfDate(b);
+        return dateA.year < dateB.year ? -1 : dateA.year > dateB.year ? 1 : weekA < weekB ? -1 : weekA > weekB ? 1 : 0;
+    }
 }
