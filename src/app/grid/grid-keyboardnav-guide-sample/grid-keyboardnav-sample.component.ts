@@ -6,10 +6,10 @@ import {
     IgxColumnGroupComponent,
     IgxGridCellComponent,
     IgxGridComponent,
+    IgxGridExpandableCellComponent,
     IgxListComponent,
     SortingDirection
 } from "igniteui-angular";
-import { IgxGridExpandableCellComponent } from "igniteui-angular";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { DATA } from "../../data/customers";
