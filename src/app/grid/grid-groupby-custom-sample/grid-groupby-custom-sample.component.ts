@@ -27,10 +27,12 @@ export class GridGroupByCustomSampleComponent {
 
     public groupByMode = this.groupByOptions[0].name;
     public initialExpr;
+    public dateFormatter = "";
 
     constructor() {
         this.data = INVOICE_DATA;
         this.sortingStrategy = this.groupByOptions[0].ref;
+        this.dateFormatter = "MM/dd/yyyy";
 
         this.initialExpr = [
             {
@@ -57,7 +59,7 @@ export class GridGroupByCustomSampleComponent {
     public selectionChange(event: any) {
         this.groupByMode = event.newSelection.value.name;
         this.sortingStrategy = event.newSelection.value.ref;
-
+        this.dateFormatter = this.changeFormatter(this.groupByMode);
         // Changing groupingExpression and calling the setter again
         const expr = this.grid1.groupingExpressions.find(
             (e) => e.fieldName === "OrderDate"
@@ -70,24 +72,17 @@ export class GridGroupByCustomSampleComponent {
         }
     }
 
-    public formatDate(val: Date) {
-        return new Intl.DateTimeFormat("en-US").format(val);
+    public changeFormatter(mode: string) {
+        if (this.groupByMode === "Month") {
+            return 'MMMM yyyy';
+        } else if (this.groupByMode === "Year") {
+            return 'yyyy';
+        } else if (this.groupByMode === 'Week'){
+            return  'yyyy \'week\' w';
+        }
+        return 'MM/dd/yyyy';
     }
 
-    public formatGroupByRow(val: Date) {
-        if (this.groupByMode === "Month") {
-            const months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
-            return months[val.getMonth()] + ` ${val.getFullYear()} `;
-        } else if (this.groupByMode === "Year") {
-            return val.getFullYear();
-        } else if (this.groupByMode === "Week") {
-            return val.getFullYear() + ` week ${this.sortingStrategy.getWeekOfDate(val)}`;
-        }
-        return val.toLocaleDateString("en-US")
-    }
-    public formatCurrency(value: number) {
-        return "$" + value.toFixed(2);
-    }
     public isDate(value: any) {
         if (value instanceof Date) {
             return true;
