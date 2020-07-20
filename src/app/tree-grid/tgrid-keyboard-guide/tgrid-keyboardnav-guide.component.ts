@@ -9,7 +9,6 @@ import {
     IgxOverlayService,
     IgxTreeGridComponent
 } from "igniteui-angular";
-import { IgxGridExpandableCellComponent } from "igniteui-angular/lib/grids/grid/expandable-cell.component";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { generateEmployeeDetailedFlatData } from "../data/employees-flat-detailed";
@@ -380,7 +379,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         this.toggleCellCombinations(cell);
     }
 
-    public toggleCellCombinations(cell?: IgxGridCellComponent | IgxGridExpandableCellComponent) {
+    public toggleCellCombinations(cell?: IgxGridCellComponent) {
         if (this._keyboardHandler.gridSection !== GridSection.TBODY) {
             return;
         }
@@ -414,7 +413,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         return res;
     }
 
-    public extractCellActions(cell: IgxGridCellComponent | IgxGridExpandableCellComponent) {
+    public extractCellActions(cell: IgxGridCellComponent) {
         const res = [];
         if (cell.editable) {
             res.push(ItemAction.Editable);
