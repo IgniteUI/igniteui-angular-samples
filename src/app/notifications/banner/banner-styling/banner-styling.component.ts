@@ -32,9 +32,8 @@ export class BannerStylingComponent implements OnInit {
 
     public showToast() {
         this.eventToast.hide();
-        this.eventToast.message = `Wifi is now ${this.wifiState ? "on" : "off"}`;
         this.toastPosition = IgxToastPosition.Middle;
-        this.eventToast.show();
+        this.eventToast.show(`Wifi is now ${this.wifiState ? "on" : "off"}`);
     }
 
     public ngOnInit() {

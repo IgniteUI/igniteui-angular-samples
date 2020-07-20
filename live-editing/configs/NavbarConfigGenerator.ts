@@ -8,6 +8,7 @@ import { NavbarComponent } from "../../src/app/menus/navbar/navbar.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { NavbarCustomTitleComponent } from "../../src/app/menus/navbar/navbar-custom-title/navbar-custom-title.component";
 
 export class NavbarConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -58,6 +59,16 @@ export class NavbarConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxNavbarModule, NavbarStyleComponent],
                 ngDeclarations: [NavbarStyleComponent],
+                ngImports: [IgxIconModule, IgxNavbarModule]
+            }),
+            shortenComponentPathBy: "/menus/navbar/"
+        }));
+
+        configs.push(new Config({
+            component: NavbarCustomTitleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxIconModule, IgxNavbarModule, NavbarCustomTitleComponent],
+                ngDeclarations: [NavbarCustomTitleComponent],
                 ngImports: [IgxIconModule, IgxNavbarModule]
             }),
             shortenComponentPathBy: "/menus/navbar/"

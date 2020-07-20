@@ -58,15 +58,13 @@ export class ListSample8Component implements OnInit {
 
     public rightPanPerformed(args) {
         args.keepItem = true;
-        this.toast.message = "Dialing " + this.contacts[args.item.index - 1].name;
-        this.toast.show();
+        this.toast.show("Dialing " + this.contacts[args.item.index - 1].name);
     }
 
     public leftPanPerformed(args) {
         args.keepItem = false;
         setTimeout((idx = args.item.index - 1) => {
-            this.toast.message = "Contact " + this.contacts[idx].name + " removed.";
-            this.toast.show();
+            this.toast.show("Contact " + this.contacts[idx].name + " removed.");
             this.contacts.splice(idx, 1);
         }, 500);
     }
