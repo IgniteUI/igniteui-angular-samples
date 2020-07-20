@@ -1,11 +1,11 @@
 
     <igx-time-picker
     [itemsDelta]="{hours:1, minutes:5}"
-    format="HH:mm tt"
+    format="hh:mm:ss tt"
     [vertical]="true"
     [minValue]="min"
     [maxValue]="max"
     (onValidationFailed)="onValidationFailed()"
     ></igx-time-picker>
 
-    <igx-toast #toast>Value must be between 09:00 and 18:00</igx-toast>
+    <igx-toast #toast>Value must be between {{min}} and {{max}}.</igx-toast>
