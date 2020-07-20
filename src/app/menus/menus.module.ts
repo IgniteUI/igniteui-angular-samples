@@ -34,6 +34,7 @@ import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin
 import { NavDrawerRoutingComponent } from "./navdrawer/nav-drawer-routing/nav-drawer-routing.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavDrawerStylingComponent } from "./navdrawer/nav-drawer-styling/nav-drawer-styling.component";
+import { NavbarCustomTitleComponent } from './navbar/navbar-custom-title/navbar-custom-title.component';
 
 @NgModule({
     declarations: [
@@ -49,7 +50,8 @@ import { NavDrawerStylingComponent } from "./navdrawer/nav-drawer-styling/nav-dr
         NavbarStyleComponent,
         ActionStripParagraphComponent,
         ActionStripParagraphMenuComponent,
-        ActionStripStylingComponent
+        ActionStripStylingComponent,
+        NavbarCustomTitleComponent
     ],
     imports: [
         CommonModule,
