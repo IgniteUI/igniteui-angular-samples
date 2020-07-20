@@ -424,7 +424,7 @@ export class GridUnderManagement {
 
     }
 
-    public toggleCellCombinations(cell?: IgxGridCellComponent | IgxGridExpandableCellComponent) {
+    public toggleCellCombinations(cell?: IgxGridCellComponent) {
         if (this.keyboardHandler.gridSection !== GridSection.TBODY) {
             return;
         }
@@ -458,7 +458,7 @@ export class GridUnderManagement {
         return res;
     }
 
-    public extractCellActions(cell: IgxGridCellComponent | IgxGridExpandableCellComponent) {
+    public extractCellActions(cell: IgxGridCellComponent) {
         const res = [];
         if (cell.editable) {
             res.push(ItemAction.Editable);

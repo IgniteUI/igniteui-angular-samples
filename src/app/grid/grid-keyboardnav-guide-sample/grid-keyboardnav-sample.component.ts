@@ -378,7 +378,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
     }
 
-    public toggleCellCombinations(cell?: IgxGridCellComponent | IgxGridExpandableCellComponent) {
+    public toggleCellCombinations(cell?: IgxGridCellComponent) {
         if (this._keyboardHandler.gridSection !== GridSection.TBODY) {
             return;
         }
@@ -440,7 +440,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         return res;
     }
 
-    public extractCellActions(cell: IgxGridCellComponent | IgxGridExpandableCellComponent) {
+    public extractCellActions(cell: IgxGridCellComponent) {
         const res = [];
         if (cell.editable) {
             res.push(ItemAction.Editable);
