@@ -5,7 +5,6 @@ import {
     IgxColumnComponent,
     IgxColumnGroupComponent,
     IgxGridCellComponent,
-    IgxGridExpandableCellComponent,
     IgxListComponent,
     IgxOverlayService,
     IgxTreeGridComponent

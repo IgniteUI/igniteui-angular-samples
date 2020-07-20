@@ -5,8 +5,7 @@ import {
     IgxColumnComponent,
     IgxColumnGroupComponent,
     IgxGridCellComponent,
-    IgxGridComponent,
-    IgxGridExpandableCellComponent,
+    IgxGridComponent
     IgxListComponent,
     SortingDirection
 } from "igniteui-angular";
