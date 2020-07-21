@@ -42,10 +42,9 @@ export class DropDownRemoteComponent implements OnInit, OnDestroy {
         if (this.prevRequest) {
             this.prevRequest.unsubscribe();
         }
-        this.loadingToast.message = "Loading Remote Data...";
         this.loadingToast.position = IgxToastPosition.Middle;
         this.loadingToast.autoHide = false;
-        this.loadingToast.show();
+        this.loadingToast.show("Loading Remote Data...");
         this.cdr.detectChanges();
         this.prevRequest = this.remoteService.getData(
             evt,

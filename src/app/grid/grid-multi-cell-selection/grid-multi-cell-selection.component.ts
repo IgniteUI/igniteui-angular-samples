@@ -18,10 +18,9 @@ export class GridMultiCellSelectionComponent {
         target.shouldGenerate = true;
         target.clearCellSelection();
         this.targetData = source.getSelectedData();
-        notification.message = `Transfered ${this.targetData.length} rows`;
         notification.position = IgxToastPosition.Middle;
         notification.displayTime = 1000;
-        notification.show();
+        notification.show(`Transfered ${this.targetData.length} rows`);
     }
 
     public initColumn(column: IgxColumnComponent) {
