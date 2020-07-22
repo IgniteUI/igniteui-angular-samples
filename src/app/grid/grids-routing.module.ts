@@ -26,6 +26,7 @@ import { GridExternalExcelStyleFilteringComponent } from "./grid-external-excel-
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
+import { GridGroupByCustomSampleComponent } from "./grid-groupby-custom-sample/grid-groupby-custom-sample.component";
 import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
@@ -116,6 +117,11 @@ export const gridsRoutes: Routes = [
         component: GridGroupByPagingSampleComponent,
         data: gridsRoutesData["grid-groupby-paging"],
         path: "grid-groupby-paging"
+    },
+    {
+        component: GridGroupByCustomSampleComponent,
+        data: gridsRoutesData["grid-groupby-custom"],
+        path: "grid-groupby-custom"
     },
     {
         component: GridGroupBySampleComponent,

@@ -54,6 +54,7 @@ import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filteri
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupByCustomSampleComponent } from './grid-groupby-custom-sample/grid-groupby-custom-sample.component';
 import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
@@ -133,6 +134,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         FilteringSampleComponent,
         FilteringTemplateSampleComponent,
         GridGroupBySampleComponent,
+        GridGroupByCustomSampleComponent,
         GridGroupBySummarySampleComponent,
         GridGroupBySummaryStylingSampleComponent,
         GridMovingSampleComponent,
