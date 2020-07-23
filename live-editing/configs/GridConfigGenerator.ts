@@ -50,6 +50,7 @@ import { GridFilteringStyleComponent } from "../../src/app/grid/grid-filtering-s
 import { FilteringTemplateSampleComponent } from "../../src/app/grid/grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupByPagingSampleComponent } from "../../src/app/grid/grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupByCustomSampleComponent } from "../../src/app/grid/grid-groupby-custom-sample/grid-groupby-custom-sample.component";
 import { GridGroupByStyling } from "../../src/app/grid/grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "../../src/app/grid/grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
@@ -142,6 +143,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridSample3Component],
                 ngImports: [IgxPreventDocumentScrollModule, IgxButtonModule, IgxGridModule,
                     IgxInputGroupModule, IgxRippleModule, HttpClientModule, IgxIconModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridGroupByCustomSampleComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/invoiceData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxButtonModule, IgxGridModule,
+                    IgxSwitchModule, GridGroupBySampleComponent, IgxIconModule, IgxBadgeModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridGroupBySampleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxButtonModule, IgxGridModule, IgxIconModule, IgxBadgeModule]
             })
         }));
 
@@ -627,7 +639,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
-        //Grid with Action Strip
+        // Grid with Action Strip
         configs.push(new Config({
             component: GridActionStripSampleComponent,
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts", "/src/app/data/utils.ts",
