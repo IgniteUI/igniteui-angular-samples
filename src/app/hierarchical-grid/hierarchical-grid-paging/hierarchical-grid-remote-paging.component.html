@@ -29,7 +29,6 @@
     <igx-paginator #paginator
         [totalRecords]="totalCount"
         [(perPage)]="perPage"
-        [selectLabel]="'Records per page:'"
         [selectOptions]="selectOptions"
         [displayDensity]="hierarchicalGrid.displayDensity"
         (pageChange)="paginate($event)">
