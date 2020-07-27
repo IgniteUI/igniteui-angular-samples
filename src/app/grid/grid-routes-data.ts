@@ -30,6 +30,7 @@ export const gridsRoutesData = {
     "grid-filter-conditions": { displayName: "Custom Filtering Conditions", parentName: "Grid" },
     "grid-external-excel-style-filtering": { displayName: "Grid External Excel Style Filtering", parentName: "Grid" },
     "grid-external-advanced-filtering": { displayName: "Grid External Advanced Filtering", parentName: "Grid" },
+    "grid-external-outlet": { displayName: "Grid External Outlet", parentName: "Grid" },
     "grid-pager-sample": { displayName: "Grid Pager", parentName: "Grid" },
     "grid-paging-sample": { displayName: "Grid Paging", parentName: "Grid" },
     "grid-pinning-styling": { displayName: "Grid Pinning Styling", parentName: "Grid" },
