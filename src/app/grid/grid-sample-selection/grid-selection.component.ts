@@ -73,6 +73,7 @@ export class GridSelectionSampleComponent implements AfterViewInit {
     public selectionMode = "multiple";
     public selectionModes = [];
     public hideRowSelectors = false;
+    public selectedRows = ['Oil', 'Currencies'];
 
     constructor(private localService: LocalService) {
         this.localService.getData(100000);
