@@ -11,6 +11,7 @@ import { IViewDateChangeEventArgs } from "igniteui-angular/lib/calendar/calendar
 export class CalendarSample3Component {
     @ViewChild("calendar", { static: true }) public calendar: IgxCalendarComponent;
     @ViewChild("alert", { static: true }) public dialog: IgxDialogComponent;
+    public loggerHeader = `Interact with the calendar to see the events logged here in sequence:`
 
     public onSelection(dates: Date[]) {
       const logger: HTMLElement = document.querySelector(".logger");
@@ -20,12 +21,12 @@ export class CalendarSample3Component {
     public viewDateChanged(event: IViewDateChangeEventArgs) {
         const logger: HTMLElement = document.querySelector(".logger");
         const eventArgs = `event.prevousValue: ${this.parseDate(event.previousValue)} | event.currentValue: ${this.parseDate(event.currentValue)}`;
-        logger.innerHTML += `<span>'viewDateChanged': ${eventArgs}</span><br>`;
+        logger.innerHTML = `<span> => 'viewDateChanged': ${eventArgs}</span><br>${logger.innerHTML}`;
     }
 
     public activeViewChanged(event: CalendarView) {
         const logger: HTMLElement = document.querySelector(".logger");
-        logger.innerHTML += `<span>'activeViewChanged':. Active view is: ${CalendarView[event]}</span><br>`;
+        logger.innerHTML = `<span> => 'activeViewChanged':. Active view is: ${CalendarView[event]}</span><br>${logger.innerHTML}`;
     }
 
     private parseDate(date: Date) {
