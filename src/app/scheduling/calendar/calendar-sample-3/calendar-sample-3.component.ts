@@ -15,12 +15,12 @@ export class CalendarSample3Component {
 
     public onSelection(dates: Date[]) {
       const logger: HTMLElement = document.querySelector(".logger");
-      logger.innerHTML += `<span>'onSelectionChanged': ${dates.length} dates selected.<br>`;
+      logger.innerHTML = `<span>' => onSelectionChanged': ${dates.length} dates selected.<br>${logger.innerHTML}`;
     }
 
     public viewDateChanged(event: IViewDateChangeEventArgs) {
         const logger: HTMLElement = document.querySelector(".logger");
-        const eventArgs = `event.prevousValue: ${this.parseDate(event.previousValue)} | event.currentValue: ${this.parseDate(event.currentValue)}`;
+        const eventArgs = `event.previousValue: ${this.parseDate(event.previousValue)} | event.currentValue: ${this.parseDate(event.currentValue)}`;
         logger.innerHTML = `<span> => 'viewDateChanged': ${eventArgs}</span><br>${logger.innerHTML}`;
     }
 
