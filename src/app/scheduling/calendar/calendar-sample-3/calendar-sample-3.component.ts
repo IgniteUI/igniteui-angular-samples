@@ -15,7 +15,7 @@ export class CalendarSample3Component {
 
     public onSelection(dates: Date[]) {
       const logger: HTMLElement = document.querySelector(".logger");
-      logger.innerHTML = `<span>' => onSelectionChanged': ${dates.length} dates selected.<br>${logger.innerHTML}`;
+      logger.innerHTML = `<span> => 'onSelectionChanged': ${dates.length} dates selected.<br>${logger.innerHTML}`;
     }
 
     public viewDateChanged(event: IViewDateChangeEventArgs) {
