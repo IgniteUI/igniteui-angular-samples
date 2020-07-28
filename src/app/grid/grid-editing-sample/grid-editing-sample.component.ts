@@ -32,7 +32,7 @@ export class GridEditingSampleComponent implements OnInit, AfterViewInit {
 
     public ngAfterViewInit() {
         this.customOverlaySettings = {
-            outlet: this.grid1.outletDirective
+            outlet: this.grid1.outlet
         };
     }
 

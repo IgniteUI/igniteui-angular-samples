@@ -38,14 +38,16 @@ export class GridSortingIndicatorsComponent implements OnInit, AfterViewInit {
     }
 
     public ngAfterViewInit() {
+        const expressions = [];
         this.grid.columns.forEach(c => {
             const sortExpr =
             {
                 dir: generateRandomInteger(1, 2), fieldName: c.field,
                 ignoreCase: true, strategy: DefaultSortingStrategy.instance()
             }
-            this.grid.sortingExpressions.push(sortExpr)
+            expressions.push(sortExpr)
         });
+        this.grid.sortingExpressions = expressions;
         this.grid.cdr.detectChanges();
     }
     public formatCurrency(value: number) {
