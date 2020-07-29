@@ -30,6 +30,6 @@ export class GridPagerSampleComponent implements OnInit {
     public ngAfterViewInit(): void {
         requestAnimationFrame(() => {
             this.paginator.resourceStrings = this.paginatorResourceStrings;
-        })
+        });
     };
 }
