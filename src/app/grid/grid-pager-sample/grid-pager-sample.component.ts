@@ -31,5 +31,5 @@ export class GridPagerSampleComponent implements OnInit {
         requestAnimationFrame(() => {
             this.paginator.resourceStrings = this.paginatorResourceStrings;
         });
-    };
+    }
 }
