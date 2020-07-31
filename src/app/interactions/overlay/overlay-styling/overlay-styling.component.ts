@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewEncapsulation } from "@angular/core";
+import { Component, ElementRef } from "@angular/core";
 import { IgxOverlayService } from "igniteui-angular";
 
 @Component({

@@ -1,13 +1,17 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-$red: #ac4365;
-$purple: #5434b8;
+$orange: #eaa417;
+$blue: #09f;
 
-$my-palette: igx-palette($primary: $red, $secondary: $purple);
+$my-palette: igx-palette($primary: $orange, $secondary: $blue);
 
 $my-drop-down-theme: igx-drop-down-theme(
     $palette: $my-palette,
     $header-text-color: igx-color($my-palette, "secondary", 500)
+);
+
+$my-overlay-theme: igx-overlay-theme(
+        $background-color: rgba(0, 153, 255, 0.3)
 );
 
 :host {
@@ -15,6 +19,7 @@ $my-drop-down-theme: igx-drop-down-theme(
     padding: 16px;
 
     // @include igx-css-vars($my-drop-down-theme);
+    // @include igx-css-vars($my-overlay-theme);
 
     /* Using Theme Overrides to provide IE 11 support.
      * NOTE: Theming using this approach will greatly increase the size
@@ -23,6 +28,6 @@ $my-drop-down-theme: igx-drop-down-theme(
     **/
     ::ng-deep {
         @include igx-drop-down($my-drop-down-theme);
+        @include igx-overlay($my-overlay-theme);
     }
 }
-
