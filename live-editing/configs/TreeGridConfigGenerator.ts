@@ -83,6 +83,7 @@ import { TreeGridToolbarSample4Component } from "../../src/app/tree-grid/tree-gr
 import { TreeGridToolbarStyleComponent } from "../../src/app/tree-grid/tree-grid-toolbar-style/tree-grid-toolbar-style.component";
 import { TreeGridVirtualizationSampleComponent } from "../../src/app/tree-grid/tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { TreeGridAllDataSummaryComponent } from "../../src/app/tree-grid/treegrid-allData-summary/treegrid-allData-summary.component";
+import { TreeGridExternalOutletComponent } from "../../src/app/tree-grid/tree-grid-external-outlet/tree-grid-external-outlet-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -1007,6 +1008,17 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                     "RouterModule.forRoot([\{component: TGridAboutComponent, path: 'tree-grid-about'},\{component: TGridSaveStateComponent, path: 'tree-grid-state'},\{ path: '', redirectTo: '/tree-grid-state', pathMatch: 'full' }])]"]
             }),
             component: TGridSaveStateComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/tree-grid/data/foods.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxPreventDocumentScrollModule, IgxTreeGridModule, TreeGridExternalOutletComponent],
+                ngDeclarations: [TreeGridExternalOutletComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxTreeGridModule]
+            }),
+            component: TreeGridExternalOutletComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 
