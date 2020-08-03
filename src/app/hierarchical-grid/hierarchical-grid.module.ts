@@ -76,6 +76,7 @@ import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolb
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
+import { HierarchicalGridExternalOutletComponent } from './hierarchical-grid-external-outlet/hierarchical-grid-external-outlet-sample.component';
 
 @NgModule({
     declarations: [
@@ -136,6 +137,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridStylingComponent,
         HGridConditionalRowSelectorsComponent,
         HGridExternalAdvancedFilteringComponent,
+        HierarchicalGridExternalOutletComponent,
         HGridExternalExcelStyleFilteringComponent,
         HGridCollapsibleColumnGroupComponent,
         HGridAllDataSummaryComponent,
