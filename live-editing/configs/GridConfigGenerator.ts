@@ -114,7 +114,7 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {GridSortingIndicatorsComponent} from '../../src/app/grid/grid-sorting-indicators/grid-sorting-indicators.component'
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -1228,6 +1228,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [RemotePagingDefaultTemplateComponent],
                 ngImports: [IgxPreventDocumentScrollModule, "RouterModule.forRoot([])", IgxGridModule, HttpClientModule],
                 ngProviders: [RemotePagingService]
+            })
+        }));
+
+
+        configs.push(new Config({
+            component: GridSortingIndicatorsComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/utils.ts", "/src/app/grid/services/financialData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridSortingIndicatorsComponent, IgxGridModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridSortingIndicatorsComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule],
+                ngProviders: []
             })
         }));
 
