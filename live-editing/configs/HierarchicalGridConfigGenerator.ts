@@ -1,6 +1,6 @@
 // tslint:disable:max-line-length
 import { HttpClientModule } from "@angular/common/http";
-import { IgxActionStripModule, IgxAvatarModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule, IgxDragDropModule, IgxGridModule, IgxHierarchicalGridAPIService, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxTooltipModule, IgxOverlayOutletDirective } from "igniteui-angular";
+import { IgxActionStripModule, IgxAvatarModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule, IgxDragDropModule, IgxGridModule, IgxHierarchicalGridAPIService, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxTooltipModule, IgxToggleModule } from "igniteui-angular";
 import { IgxPreventDocumentScrollModule } from "../../src/app/directives/prevent-scroll.directive";
 import { HierarchicalGridColumnGroupSelectionComponent } from "../../src/app/hierarchical-grid/column-group-selection/hierarchical-grid-column-group-selection.component";
 import { HGridColumnSelectionStylesComponent } from "../../src/app/hierarchical-grid/column-selection-styles/hierarchical-grid-column-selection-styles.component";
@@ -779,9 +779,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [HierarchicalGridExternalOutletComponent, IgxHierarchicalGridModule, IgxOverlayOutletDirective, IgxPreventDocumentScrollModule],
+                imports: [HierarchicalGridExternalOutletComponent, IgxHierarchicalGridModule, IgxToggleModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [HierarchicalGridExternalOutletComponent],
-                ngImports: [IgxPreventDocumentScrollModule, IgxHierarchicalGridModule, IgxOverlayOutletDirective]
+                ngImports: [IgxPreventDocumentScrollModule, IgxHierarchicalGridModule, IgxToggleModule]
             }),
             component: HierarchicalGridExternalOutletComponent
         }));
