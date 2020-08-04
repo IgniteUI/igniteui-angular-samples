@@ -106,6 +106,7 @@ import { RightPinningSampleComponent } from "./grid-sample-right-pinning/grid-ri
 import {
     GridMultiColumnHeadersStylingComponent
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
+import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -608,7 +609,11 @@ export const gridsRoutes: Routes = [
         component: RemotePagingDefaultTemplateComponent,
         data: gridsRoutesData["remote-paging-default-template"],
         path: "remote-paging-default-template"
-
+    },
+    {
+        component: GridSortingIndicatorsComponent,
+        data: gridsRoutesData["grid-sorting-indicators"],
+        path: "grid-sorting-indicators"
     }
 ];
 

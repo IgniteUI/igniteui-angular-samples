@@ -115,6 +115,7 @@ import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
+import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
 
 @NgModule({
     declarations: [
@@ -220,7 +221,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridColumnSelectionStylesComponent,
         GridKeyboardnavGuide,
         RemotePagingDefaultTemplateComponent,
-        RemotePagingBatchEditingComponent
+        RemotePagingBatchEditingComponent,
+        GridSortingIndicatorsComponent
     ],
     imports: [
         CommonModule,
