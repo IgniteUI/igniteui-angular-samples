@@ -49,6 +49,7 @@ import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
 import { GridExternalAdvancedFilteringComponent } from "./grid-external-advanced-filtering/grid-external-advanced-filtering.component";
 import { GridExternalExcelStyleFilteringComponent } from "./grid-external-excel-style-filtering/grid-external-excel-style-filtering.component";
+import { GridExternalOutletComponent } from "./grid-external-outlet-sample/grid-external-outlet-sample.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
@@ -201,6 +202,7 @@ import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-s
         GridFilteringStyleComponent,
         GridExcelStyleFilteringLoadOnDemandComponent,
         GridExternalExcelStyleFilteringComponent,
+        GridExternalOutletComponent,
         GridCustomSummariesSelection,
         GridMultiRowLayoutStylingComponent,
         PinningStylingComponent,
