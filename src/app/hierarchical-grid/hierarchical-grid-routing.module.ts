@@ -81,6 +81,7 @@ import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolb
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
+import { HierarchicalGridExternalOutletComponent } from "./hierarchical-grid-external-outlet/hierarchical-grid-external-outlet-sample.component"
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -136,6 +137,12 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-external-advanced-filtering"],
         path: "hierarchical-grid-external-advanced-filtering"
+    },
+    {
+        component: HierarchicalGridExternalOutletComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-external-outlet"],
+        path: "hierarchical-grid-external-outlet"
     },
     {
         component: HGridCustomFilteringSampleComponent,
