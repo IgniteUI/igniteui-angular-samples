@@ -49,6 +49,7 @@ import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
 import { GridExternalAdvancedFilteringComponent } from "./grid-external-advanced-filtering/grid-external-advanced-filtering.component";
 import { GridExternalExcelStyleFilteringComponent } from "./grid-external-excel-style-filtering/grid-external-excel-style-filtering.component";
+import { GridExternalOutletComponent } from "./grid-external-outlet-sample/grid-external-outlet-sample.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
@@ -114,6 +115,7 @@ import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
+import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
 
 @NgModule({
     declarations: [
@@ -200,6 +202,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridFilteringStyleComponent,
         GridExcelStyleFilteringLoadOnDemandComponent,
         GridExternalExcelStyleFilteringComponent,
+        GridExternalOutletComponent,
         GridCustomSummariesSelection,
         GridMultiRowLayoutStylingComponent,
         PinningStylingComponent,
@@ -218,7 +221,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridColumnSelectionStylesComponent,
         GridKeyboardnavGuide,
         RemotePagingDefaultTemplateComponent,
-        RemotePagingBatchEditingComponent
+        RemotePagingBatchEditingComponent,
+        GridSortingIndicatorsComponent
     ],
     imports: [
         CommonModule,

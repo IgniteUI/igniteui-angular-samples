@@ -1,0 +1,49 @@
+<div class="grid__wrapper">
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="300px" width="100%"
+              [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
+              [columnHiding]="true" [columnPinning]="true">
+        <igx-column field="ProductName" header="Product Name" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Unit Price" dataType="number">
+            <ng-template igxCell let-cell="cell" let-val let-row>
+                {{+val | currency}}
+            </ng-template>
+        </igx-column>
+        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'">
+        </igx-column>
+        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
+            <ng-template igxCell let-cell="cell" let-val>
+                <img *ngIf="val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
+                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+            </ng-template>
+        </igx-column>
+    </igx-grid>
+
+    <br>
+
+    <igx-grid igxPreventDocumentScroll #grid2 [data]="data" [autoGenerate]="false" height="300px" width="100%"
+              [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
+              [columnHiding]="true" [columnPinning]="true">
+        <igx-column field="ProductName" header="Product Name" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Unit Price" dataType="number">
+            <ng-template igxCell let-cell="cell" let-val let-row>
+                {{+val | currency}}
+            </ng-template>
+        </igx-column>
+        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'">
+        </igx-column>
+        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
+            <ng-template igxCell let-cell="cell" let-val>
+                <img *ngIf="val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
+                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+            </ng-template>
+        </igx-column>
+    </igx-grid>
+</div>
+
+<div class="igx-grid__outlet" #igxFilteringOverlayOutlet igxOverlayOutlet></div>

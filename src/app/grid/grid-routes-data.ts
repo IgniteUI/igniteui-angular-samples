@@ -30,6 +30,7 @@ export const gridsRoutesData = {
     "grid-filter-conditions": { displayName: "Custom Filtering Conditions", parentName: "Grid" },
     "grid-external-excel-style-filtering": { displayName: "Grid External Excel Style Filtering", parentName: "Grid" },
     "grid-external-advanced-filtering": { displayName: "Grid External Advanced Filtering", parentName: "Grid" },
+    "grid-external-outlet": { displayName: "Grid External Outlet", parentName: "Grid" },
     "grid-pager-sample": { displayName: "Grid Pager", parentName: "Grid" },
     "grid-paging-sample": { displayName: "Grid Paging", parentName: "Grid" },
     "grid-pinning-styling": { displayName: "Grid Pinning Styling", parentName: "Grid" },
@@ -100,5 +101,6 @@ export const gridsRoutesData = {
     "grid-keyboardnav-guide": { displayName: "Grid keyboard navigation guide", parentName: "Grid" },
     "remote-paging-default-template": { displayName: "Remote Paging with default template", parentName: "Grid" },
     "grid-sample-5": { displayName: "Grid Infinite Scroll", parentName: "Grid" },
-    "remote-paging-batch-editing": {displayName: "Remote paging with batch editing", parentName: "Grid"}
+    "remote-paging-batch-editing": {displayName: "Remote paging with batch editing", parentName: "Grid"},
+    "grid-sorting-indicators": {displayName: "Grid Sorting Indicators", parentName: "Grid"}
 };

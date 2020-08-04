@@ -26,10 +26,10 @@ export class BaseInputGroupSampleComponent {
         }
     }
 
-    private setInputType(type: string) {
+    private setInputType(type) {
         if (this.inputGroups && this.inputGroups.length > 0) {
             this.inputGroups.forEach(x => {
-                    if (!(x.isBox || x.isBorder || x.isSearch)) {
+                    if (!(x.isTypeBox || x.isTypeBorder || x.isTypeSearch)) {
                         x.type = type;
                     }
                 });
