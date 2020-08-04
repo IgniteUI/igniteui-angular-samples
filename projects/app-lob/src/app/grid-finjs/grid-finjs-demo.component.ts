@@ -342,7 +342,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     public gridKeydown(evt) {
-        if (this.grid1.selectedRows().length > 0 &&
+        if (this.grid1.selectedRows.length > 0 &&
             evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === "d") {
             evt.preventDefault();
             this.dialog.open();
