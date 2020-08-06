@@ -135,8 +135,8 @@ const theadKeyCombinations = [
 
 const tbodyKeyCombinations: Item[] = [
     new Item("enter", "enter in edit mode", false, ItemAction.Editable),
-    new Item("alt + arrow left/up", "collapse row", false, ItemAction.Always),
-    new Item("alt + arrow right/down", "expand row", false, ItemAction.Always),
+    new Item("alt + arrow left/up", "collapse row", false, ItemAction.Collapsible),
+    new Item("alt + arrow right/down", "expand row", false, ItemAction.Collapsible),
     new Item("ctrl + Home/End", "navigates to the upper-left/bottom-right cell", false, ItemAction.Always)
 ];
 
@@ -384,8 +384,9 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         if (cell.editable) {
             res.push(ItemAction.Editable);
         }
-
-        res.push(ItemAction.Collapsible);
+        if (cell.row.treeRow.children && cell.row.treeRow.children.length) {
+            res.push(ItemAction.Collapsible);
+        }
         return res;
     }
 }
