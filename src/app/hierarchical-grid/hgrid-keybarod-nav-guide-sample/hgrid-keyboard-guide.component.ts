@@ -240,24 +240,22 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
         evt.checked ? this.keyboardHandler.selectItem(idx) : this.keyboardHandler.deselectItem(idx);
     }
 
-    public changeKeyboardCollection(gridSection) {
+    public changeKeyboardCollection(gridSection: GridSection) {
         switch (gridSection) {
             case GridSection.THEAD:
                 this.keyboardHandler.collection = theadKeyCombinations;
-                this.keyboardHandler.gridSection = GridSection.THEAD;
                 break;
             case GridSection.TBODY:
                 this.keyboardHandler.collection = tbodyKeyCombinations;
-                this.keyboardHandler.gridSection = GridSection.TBODY;
                 break;
             case GridSection.FOOTER:
                 this.keyboardHandler.collection = summaryCombinations;
-                this.keyboardHandler.gridSection = GridSection.FOOTER;
                 break;
             default:
                 this.keyboardHandler.collection = [];
                 return;
         }
+        this.keyboardHandler.gridSection = gridSection;
     }
 
     public onGridCreated(evt) {
@@ -327,7 +325,6 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
             }
             if ((evt.code === "End" || evt.code === "Home") && evt.ctrlKey) {
                 this.keyboardHandler.selectItem(3);
-                this.cdr.detectChanges();
             }
         }
     }
