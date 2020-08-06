@@ -1,6 +1,5 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ViewChild, ChangeDetectionStrategy, OnInit } from "@angular/core";
 import { FOODS_DATA } from "../data/foods";
-import { IgxTreeGridComponent } from 'igniteui-angular';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -8,19 +7,12 @@ import { IgxTreeGridComponent } from 'igniteui-angular';
     templateUrl: "./tree-grid-external-excel-style-filtering.component.html",
     styleUrls: ["./tree-grid-external-excel-style-filtering.component.scss"]
 })
-export class TreeGridExternalExcelStyleFilteringComponent {
-
-    @ViewChild("tGrid", { read: IgxTreeGridComponent, static: true })
-    public tGrid: IgxTreeGridComponent;
-
-    public columns: any[];
+export class TreeGridExternalExcelStyleFilteringComponent implements OnInit {
     public data: any[];
 
-    constructor() {
-        this.data = FOODS_DATA();
-    }
+    constructor() { }
 
-    public ngAfterViewInit() {
-        this.columns = this.tGrid.columns.filter(c => c.filterable);
+    public ngOnInit() {
+        this.data = FOODS_DATA();
     }
 }
