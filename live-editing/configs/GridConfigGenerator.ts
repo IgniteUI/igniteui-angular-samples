@@ -66,6 +66,7 @@ import { GridMultiRowLayoutStylingComponent } from "../../src/app/grid/grid-mult
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridMultipleRowDragComponent } from "../../src/app/grid/grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
+import { GridNestedDataBindAminoacidComponent } from "../../src/app/grid/grid-nested-data-binding-2/grid-nested-data-bind2";
 import { GridPagerSampleComponent } from "../../src/app/grid/grid-pager-sample/grid-pager-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import { RemoteFilteringSampleComponent } from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
@@ -847,6 +848,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridNestedDataBindComponent, IgxGridModule, IgxInputGroupModule, IgxExpansionPanelModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [GridNestedDataBindComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxInputGroupModule, IgxExpansionPanelModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridNestedDataBindAminoacidComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/grid-nested-data-binding-2/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridNestedDataBindAminoacidComponent, IgxGridModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridNestedDataBindAminoacidComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule]
             })
         }));
 
