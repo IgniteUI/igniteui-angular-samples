@@ -9,7 +9,7 @@ import { AMINO_DATA } from "./data";
 })
 export class GridNestedDataBindAminoacidComponent implements OnInit {
 
-    protected translateMap = new Map<string, string>([
+    protected static translateMap = new Map<string, string>([
         ['0', '₀'], ['1', '₁'], ['2', '₂'],
         ['3', '₃'], ['4', '₄'], ['5', '₅'],
         ['6', '₆'], ['7', '₇'], ['8', '₈'],
@@ -33,7 +33,7 @@ export class GridNestedDataBindAminoacidComponent implements OnInit {
     ];
 
     number2subscript(value: string) {
-        return value.split('').map(each => this.translateMap.get(each) || each).join('');
+        return value.split('').map(each => GridNestedDataBindAminoacidComponent.translateMap.get(each) || each).join('');
     }
 
     public ngOnInit() {
