@@ -181,7 +181,7 @@ import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-s
         AboutComponent,
         GridMultiCellSelectionComponent,
         GridMultiCellSelectionStyleComponent,
-        GridNestedDataBindComponent,
+        GridCompositeDataComponent,
         GridNestedDataBindComponent,
         GridNestedDataBindAminoacidComponent,
         GridMultiRowLayoutComponent,
