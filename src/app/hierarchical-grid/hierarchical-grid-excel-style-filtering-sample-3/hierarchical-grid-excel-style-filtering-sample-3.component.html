@@ -1,10 +1,23 @@
 <div class="wrapper">
     <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [showToolbar]="true" [columnHiding]="true" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter"
-    height="850px" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
-        <ng-template igxExcelStyleSorting>Template area [Sorting]</ng-template>
-        <ng-template igxExcelStyleHiding>Template area [Hiding]</ng-template>
-        <ng-template igxExcelStyleMoving>Template area [Moving]</ng-template>
-        <ng-template igxExcelStylePinning>Template area [Pinning]</ng-template>
+    height="650px" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
+
+        <igx-grid-excel-style-filtering [minHeight]="'380px'" [maxHeight]="'500px'">
+            <igx-excel-style-column-operations>
+                <igx-excel-style-header
+                    [showPinning]="true"
+                    [showHiding]="true"
+                >
+                </igx-excel-style-header>
+
+                <igx-excel-style-sorting></igx-excel-style-sorting>
+            </igx-excel-style-column-operations>
+
+            <igx-excel-style-filter-operations>
+                <igx-excel-style-search></igx-excel-style-search>
+            </igx-excel-style-filter-operations>
+        </igx-grid-excel-style-filtering>
+
         <igx-column field="Artist" [filterable]='true' [sortable]="true" [movable]="true"></igx-column>
         <igx-column field="Photo" [filterable]='false'>
             <ng-template igxCell let-cell="cell">
@@ -18,10 +31,23 @@
         <igx-column field="GrammyAwards" header="Grammy Awards" [filterable]='true' dataType="number"></igx-column>
 
         <igx-row-island [key]="'Albums'" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter">
-            <ng-template igxExcelStyleSorting>Template area [Sorting]</ng-template>
-            <ng-template igxExcelStyleHiding>Template area [Hiding]</ng-template>
-            <ng-template igxExcelStyleMoving>Template area [Moving]</ng-template>
-            <ng-template igxExcelStylePinning>Template area [Pinning]</ng-template>
+
+            <igx-grid-excel-style-filtering [minHeight]="'380px'" [maxHeight]="'500px'">
+                <igx-excel-style-column-operations>
+                    <igx-excel-style-header
+                        [showPinning]="true"
+                        [showHiding]="true"
+                    >
+                    </igx-excel-style-header>
+
+                    <igx-excel-style-sorting></igx-excel-style-sorting>
+                </igx-excel-style-column-operations>
+
+                <igx-excel-style-filter-operations>
+                    <igx-excel-style-search></igx-excel-style-search>
+                </igx-excel-style-filter-operations>
+            </igx-grid-excel-style-filtering>
+
             <igx-column field="Album" [filterable]='true'></igx-column>
             <igx-column field="LaunchDate" header="Launch Date" [filterable]='true' [dataType]="'date'"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review" [filterable]='true' dataType="number"></igx-column>
