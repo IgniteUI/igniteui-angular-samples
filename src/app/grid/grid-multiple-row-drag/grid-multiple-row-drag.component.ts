@@ -27,7 +27,7 @@ export class GridMultipleRowDragComponent  {
 
     public onDropAllowed(args) {
         let selected = false;
-        const ids = this.sourceGrid.selectedRows();
+        const ids = this.sourceGrid.selectedRows;
         const selectedRowData = this.sourceGrid.data.filter((record) => {
             return ids.includes(record.ID);
         });
@@ -46,7 +46,7 @@ export class GridMultipleRowDragComponent  {
         this.dragIcon = "add";
     }
     public onRowDragStart(args) {
-        const count = this.sourceGrid.selectedRows().length || 1;
+        const count = this.sourceGrid.selectedRows.length || 1;
         this.countIcon = `filter_${count > 9 ? "9_plus" : `${count}`}`;
     }
     public onLeave(args) {

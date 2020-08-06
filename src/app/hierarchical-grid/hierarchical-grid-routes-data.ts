@@ -19,6 +19,7 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-excel-style-filtering-style": { displayName: "Hierarchical Grid Excel Style Filtering Styling", parentName: "Hierarchical Grid" },
     "hierarchical-grid-external-excel-style-filtering": { displayName: "Hierarchical Grid External Excel Style Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-external-advanced-filtering": { displayName: "Hierarchical Grid External Advanced Filtering", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-external-outlet": { displayName: "Hierarchical Grid External Outlet", parentName: "Hierarchical Grid" },
     "hierarchical-grid-custom-filtering": { displayName: "Hierarchical Grid Custom Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-sorting": { displayName: "Hierarchical Grid Sorting", parentName: "Hierarchical Grid" },
     "hierarchical-grid-sorting-styling": { displayName: "Hierarchical Grid Sorting Styling", parentName: "Hierarchical Grid" },
