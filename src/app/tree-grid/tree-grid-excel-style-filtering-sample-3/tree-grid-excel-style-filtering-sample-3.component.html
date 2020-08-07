@@ -1,10 +1,23 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [showToolbar]="true" [columnHiding]="true" [autoGenerate]="false" height="850px" width="100%" [allowFiltering]="true"
+    <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [showToolbar]="true" [columnHiding]="true" [autoGenerate]="false" height="650px" width="100%" [allowFiltering]="true"
         primaryKey="ID" foreignKey="ParentID" filterMode="excelStyleFilter">
-        <ng-template igxExcelStyleSorting>Template area [Sorting]</ng-template>
-        <ng-template igxExcelStyleHiding>Template area [Hiding]</ng-template>
-        <ng-template igxExcelStyleMoving>Template area [Moving]</ng-template>
-        <ng-template igxExcelStylePinning>Template area [Pinning]</ng-template>
+
+        <igx-grid-excel-style-filtering [minHeight]="'380px'" [maxHeight]="'500px'">
+            <igx-excel-style-column-operations>
+                <igx-excel-style-header
+                    [showPinning]="true"
+                    [showHiding]="true"
+                >
+                </igx-excel-style-header>
+
+                <igx-excel-style-sorting></igx-excel-style-sorting>
+            </igx-excel-style-column-operations>
+
+            <igx-excel-style-filter-operations>
+                <igx-excel-style-search></igx-excel-style-search>
+            </igx-excel-style-filter-operations>
+        </igx-grid-excel-style-filtering>
+
         <igx-column field="ID" header="Product ID" [dataType]="'string'">
         </igx-column>
         <igx-column field="Name" header="Product Name" [sortable]="true" [movable]="true" [dataType]="'string'">

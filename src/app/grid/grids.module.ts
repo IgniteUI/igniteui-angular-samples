@@ -70,6 +70,7 @@ import { GridMultiRowLayoutStylingComponent } from "./grid-multi-row-layout-styl
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridMultipleRowDragComponent } from "./grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
+import { GridNestedDataBindAminoacidComponent } from "./grid-nested-data-binding-2/grid-nested-data-bind2";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
@@ -180,8 +181,9 @@ import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-s
         AboutComponent,
         GridMultiCellSelectionComponent,
         GridMultiCellSelectionStyleComponent,
-        GridNestedDataBindComponent,
         GridCompositeDataComponent,
+        GridNestedDataBindComponent,
+        GridNestedDataBindAminoacidComponent,
         GridMultiRowLayoutComponent,
         GridMultiRowLayoutConfigurationComponent,
         GridDragSampleComponent,
