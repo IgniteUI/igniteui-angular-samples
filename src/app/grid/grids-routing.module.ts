@@ -41,6 +41,7 @@ import { GridMultiRowLayoutConfigurationComponent } from "./grid-multi-row-layou
 import { GridMultiRowLayoutStylingComponent } from "./grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
+import { GridNestedDataBindAminoacidComponent } from "./grid-nested-data-binding-2/grid-nested-data-bind2";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/remote-filtering-sample.component";
@@ -464,6 +465,11 @@ export const gridsRoutes: Routes = [
         component: GridNestedDataBindComponent,
         data: gridsRoutesData["grid-nested-data-binding"],
         path: "grid-nested-data-binding"
+    },
+    {
+        component: GridNestedDataBindAminoacidComponent,
+        data: gridsRoutesData["grid-nested-data-binding-2"],
+        path: "grid-nested-data-binding-2"
     },
     {
         component: GridCompositeDataComponent,
