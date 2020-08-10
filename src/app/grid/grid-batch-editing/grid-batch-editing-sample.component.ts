@@ -55,6 +55,8 @@ export class GridBatchEditingSampleComponent implements OnInit {
     }
 
     public undo() {
+        /* exit edit mode */
+        this.grid.endEdit(/* commit the edit transaction */ false);
         this.grid.transactions.undo();
     }
 

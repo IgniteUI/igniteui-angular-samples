@@ -67,6 +67,8 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
     }
 
     public undo() {
+        /* exit edit mode */
+        this.treeGrid.endEdit(/* commit the edit transaction */ false);
         this.treeGrid.transactions.undo();
     }
 
