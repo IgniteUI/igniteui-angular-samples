@@ -7,7 +7,7 @@ $bg: #292826;
 $gray: #404040;
 $light-gray: rgba(255, 255, 255, .54);
 
-$dark-column-hiding-theme: igx-column-hiding-theme(
+$dark-column-actions-theme: igx-column-actions-theme(
     $background-color: $bg,
     $title-color: $yellow
 );
@@ -55,7 +55,7 @@ $dark-ripple-theme: igx-ripple-theme(
 
 /*PALETTE and IGX-COLOR*/
 
-// $custom-column-hiding-theme: igx-column-hiding-theme(
+// $custom-column-actions-theme: igx-column-actions-theme(
 //     $palette: $custom-palette,
 //     $title-color: igx-color($custom-palette, "secondary", 400),
 //     $background-color: igx-color($custom-palette, "primary", 200)
@@ -68,7 +68,7 @@ $dark-ripple-theme: igx-ripple-theme(
 
 /*SCHEMAS*/
 
-// $custom-column-hiding-schema: extend($_dark-column-hiding,
+// $custom-column-actions-schema: extend($_dark-column-actions,
 //     (
 //         title-color:(
 //             igx-color: ("secondary", 400)
@@ -91,10 +91,10 @@ $dark-ripple-theme: igx-ripple-theme(
 // );
 // 
 // $custom-dark-schema: extend($dark-schema,(
-//     igx-column-hiding: $custom-column-hiding-schema,
+//     igx-column-actions: $custom-column-actions-schema,
 //     igx-button: $custom-button-schema
 // ));
-// $custom-column-hiding-theme: igx-column-hiding-theme(
+// $custom-column-actions-theme: igx-column-actions-theme(
 //   $palette: $custom-palette,
 //   $schema: $custom-dark-schema
 // );
@@ -107,9 +107,9 @@ $dark-ripple-theme: igx-ripple-theme(
 
 :host {
     ::ng-deep {
-        @include igx-column-hiding($dark-column-hiding-theme);
+        @include igx-column-actions($dark-column-actions-theme);
 
-        igx-column-hiding, igx-grid-toolbar {
+        igx-column-actions, igx-grid-toolbar {
             @include igx-checkbox($dark-checkbox-theme);
             @include igx-input-group($dark-input-group);
             @include igx-button($dark-button-theme);
