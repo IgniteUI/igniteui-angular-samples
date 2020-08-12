@@ -3,6 +3,7 @@
 export const gridsRoutesData = {
     "grid-summary": { displayName: "Grid Summary", parentName: "Grid" },
     "grid-groupby": { displayName: "Grid GroupBy", parentName: "Grid" },
+    "grid-groupby-custom": {displayName: "Grid GroupBy Custom", parentName: "Grid"},
     "grid-groupby-paging": { displayName: "Grid GroupBy Paging", parentName: "Grid" },
     "grid-groupby-styling": { displayName: "Grid GroupBy Styling", parentName: "Grid" },
     "grid-groupby-summary": { displayName: "Grid GroupBy Summary", parentName: "Grid" },
@@ -77,6 +78,7 @@ export const gridsRoutesData = {
         { displayName: "Grid Multi Row Layout Custom Keyboard Navigation", parentName: "Grid" },
     "custom-grid-paging-style": { displayName: "Custom Grid Paging Style", parentName: "Grid" },
     "grid-nested-data-binding": { displayName: "Grid Nested Data Binding", parentName: "Grid" },
+    "grid-nested-data-binding-2": { displayName: "Grid Nested Data Binding", parentName: "Grid"},
     "grid-composite-data-binding": { displayName: "Grid Composite Data Binding", parentName: "Grid" },
     "grid-row-edit-style": { displayName: "Grid Row Edit Style", parentName: "Grid" },
     "grid-contextmenu-sample": { displayName: "Grid Context Menu", parentName: "Grid" },
@@ -100,5 +102,6 @@ export const gridsRoutesData = {
     "grid-keyboardnav-guide": { displayName: "Grid keyboard navigation guide", parentName: "Grid" },
     "remote-paging-default-template": { displayName: "Remote Paging with default template", parentName: "Grid" },
     "grid-sample-5": { displayName: "Grid Infinite Scroll", parentName: "Grid" },
-    "remote-paging-batch-editing": {displayName: "Remote paging with batch editing", parentName: "Grid"}
+    "remote-paging-batch-editing": {displayName: "Remote paging with batch editing", parentName: "Grid"},
+    "grid-sorting-indicators": {displayName: "Grid Sorting Indicators", parentName: "Grid"}
 };

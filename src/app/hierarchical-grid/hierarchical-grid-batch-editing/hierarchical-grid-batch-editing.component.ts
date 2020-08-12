@@ -62,6 +62,8 @@ export class HGridBatchEditingSampleComponent implements OnInit {
     public formatter = a => a;
 
     public undo(grid: IgxHierarchicalGridComponent) {
+        /* exit edit mode */
+        grid.endEdit(/* commit the edit transaction */ false);
         grid.transactions.undo();
     }
 

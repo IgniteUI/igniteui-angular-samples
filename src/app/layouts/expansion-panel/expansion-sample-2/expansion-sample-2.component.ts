@@ -17,14 +17,12 @@ export class ExpansionPanelSample2Component {
     public handleExpansion(evt?: {event: Event}) {
         this.eventToast.hide();
         console.log("Expanded event thrown ", (evt ? "with event: " + evt.event : "with no event"));
-        this.eventToast.message = "Expanded Event Fired!";
-        this.eventToast.show();
+        this.eventToast.show("Expanded Event Fired!");
     }
 
     public handleCollapse(evt?: {event: Event}) {
         this.eventToast.hide();
         console.log("Collapsed event thrown ", (evt ? "with event: " + evt.event : "with no event"));
-        this.eventToast.message = "Collapsed Event Fired!";
-        this.eventToast.show();
+        this.eventToast.show("Collapsed Event Fired!");
     }
 }

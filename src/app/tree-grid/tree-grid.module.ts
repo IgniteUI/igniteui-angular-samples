@@ -90,6 +90,7 @@ import { TreeGridRowPinningStylingSampleComponent} from "./tree-grid-row-pinning
 import { TreeGridRowPinningSampleComponent} from "./tree-grid-row-pinning/tree-grid-row-pinning.component";
 import { TreeGridRowReorderComponent } from "./tree-grid-row-reorder/tree-grid-row-reorder.component";
 import { TreeGridRightPinningSampleComponent } from "./tree-grid-sample-right-pinning/tree-grid-right-pinning.component";
+import { TGridSaveStateComponent } from "./tree-grid-save-state/tGrid-state.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
 import { TreeGridSelectionTemplateNumbersSampleComponent } from "./tree-grid-selection-template-numbers/tree-grid-selection-template-numbers.component";
@@ -107,7 +108,9 @@ import { TreeGridToolbarSample4Component } from "./tree-grid-toolbar-sample-4/tr
 import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-grid-toolbar-style.component";
 import { TreeGridVirtualizationSampleComponent } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
+import { TGridAboutComponent } from "./tree-grid-save-state/about.component";
 import { TreeGridExternalOutletComponent } from './tree-grid-external-outlet/tree-grid-external-outlet-sample.component';
+
 @NgModule({
     declarations: [
         TreeGridRowEditSampleComponent,
@@ -131,6 +134,7 @@ import { TreeGridExternalOutletComponent } from './tree-grid-external-outlet/tre
         TreeGridPinningToolbarSampleComponent,
         TreeGridColumnResizingSampleComponent,
         TreeGridFilteringSampleComponent,
+        TGridAboutComponent,
         TreeGridFilteringTemplateSampleComponent,
         TreeGridFilteringCustomSampleComponent,
         TreeGridMultiColumnHeadersSampleComponent,
@@ -145,6 +149,7 @@ import { TreeGridExternalOutletComponent } from './tree-grid-external-outlet/tre
         TreeGridSummaryStylingComponent,
         TreeGridSummary2SampleComponent,
         TreeGridConditionalCellStyleComponent,
+        TGridSaveStateComponent,
         TreeGridPagingSampleComponent,
         TreeGridEditingSampleComponent,
         TreeGridEditingStyleComponent,
