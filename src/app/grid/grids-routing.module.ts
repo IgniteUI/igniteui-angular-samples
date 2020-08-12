@@ -27,6 +27,7 @@ import { GridExternalOutletComponent } from "./grid-external-outlet-sample/grid-
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
+import { GridGroupByCustomSampleComponent } from "./grid-groupby-custom-sample/grid-groupby-custom-sample.component";
 import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
@@ -40,6 +41,7 @@ import { GridMultiRowLayoutConfigurationComponent } from "./grid-multi-row-layou
 import { GridMultiRowLayoutStylingComponent } from "./grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
+import { GridNestedDataBindAminoacidComponent } from "./grid-nested-data-binding-2/grid-nested-data-bind2";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/remote-filtering-sample.component";
@@ -105,6 +107,7 @@ import { RightPinningSampleComponent } from "./grid-sample-right-pinning/grid-ri
 import {
     GridMultiColumnHeadersStylingComponent
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
+import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -117,6 +120,11 @@ export const gridsRoutes: Routes = [
         component: GridGroupByPagingSampleComponent,
         data: gridsRoutesData["grid-groupby-paging"],
         path: "grid-groupby-paging"
+    },
+    {
+        component: GridGroupByCustomSampleComponent,
+        data: gridsRoutesData["grid-groupby-custom"],
+        path: "grid-groupby-custom"
     },
     {
         component: GridGroupBySampleComponent,
@@ -459,6 +467,11 @@ export const gridsRoutes: Routes = [
         path: "grid-nested-data-binding"
     },
     {
+        component: GridNestedDataBindAminoacidComponent,
+        data: gridsRoutesData["grid-nested-data-binding-2"],
+        path: "grid-nested-data-binding-2"
+    },
+    {
         component: GridCompositeDataComponent,
         data: gridsRoutesData["grid-composite-data-binding"],
         path: "grid-composite-data-binding"
@@ -602,7 +615,11 @@ export const gridsRoutes: Routes = [
         component: RemotePagingDefaultTemplateComponent,
         data: gridsRoutesData["remote-paging-default-template"],
         path: "remote-paging-default-template"
-
+    },
+    {
+        component: GridSortingIndicatorsComponent,
+        data: gridsRoutesData["grid-sorting-indicators"],
+        path: "grid-sorting-indicators"
     }
 ];
 

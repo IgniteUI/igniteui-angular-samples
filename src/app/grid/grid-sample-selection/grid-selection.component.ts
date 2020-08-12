@@ -26,17 +26,18 @@ export class LocalService {
         for (let i = 0; i < count; i++) {
             const rand = Math.floor(Math.random() * Math.floor(DATA.length));
             const dataObj = Object.assign({}, DATA[rand]);
-            this.randomizeObjectData(dataObj);
+            this.randomizeObjectData(dataObj, i);
             currData.push(dataObj);
         }
         return currData;
     }
-    private randomizeObjectData(dataObj) {
+    private randomizeObjectData(dataObj, index) {
         const changeP = "Change(%)";
         const res = this.generateNewPrice(dataObj.Price);
         dataObj.Change = res.Price - dataObj.Price;
         dataObj.Price = res.Price;
         dataObj[changeP] = res.ChangePercent;
+        dataObj["ID"] = index;
     }
     private generateNewPrice(oldPrice): any {
         const rnd = parseFloat(Math.random().toFixed(2));
@@ -73,6 +74,7 @@ export class GridSelectionSampleComponent implements AfterViewInit {
     public selectionMode = "multiple";
     public selectionModes = [];
     public hideRowSelectors = false;
+    public selectedRows = [1, 2, 3];
 
     constructor(private localService: LocalService) {
         this.localService.getData(100000);

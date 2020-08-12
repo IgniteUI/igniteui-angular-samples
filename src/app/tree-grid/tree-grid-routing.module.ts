@@ -78,6 +78,8 @@ import { TreeGridToolbarSample4Component } from "./tree-grid-toolbar-sample-4/tr
 import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-grid-toolbar-style.component";
 import { TreeGridVirtualizationSampleComponent } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
+import { TGridSaveStateComponent } from './tree-grid-save-state/tGrid-state.component';
+import { TGridAboutComponent } from "./tree-grid-save-state/about.component";
 import { TreeGridExternalOutletComponent } from "./tree-grid-external-outlet/tree-grid-external-outlet-sample.component";
 
 export const treeGridRoutes: Routes = [
@@ -465,6 +467,16 @@ export const treeGridRoutes: Routes = [
         component: TreeGridRemotePagingDefaultTemplateComponent,
         data: treeGridRoutesData["tree-grid-remote-paging-default-template"],
         path: "tree-grid-remote-paging-default-template"
+    },
+    {
+        component: TGridSaveStateComponent,
+        data: treeGridRoutesData["tree-grid-state"],
+        path: "tree-grid-state"
+    },
+    {
+        component: TGridAboutComponent,
+        data: treeGridRoutesData["tree-grid-about"],
+        path: "tree-grid-about"
     }
 ];
 

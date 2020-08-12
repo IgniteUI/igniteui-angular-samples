@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, ViewChildren, QueryList } from "@angular/core";
 import { NavigationStart, Router } from "@angular/router";
-import { FilteringExpressionsTree, FilteringLogic, IGridState, IGroupingState,
-    IgxGridComponent, IgxGridStateDirective, IgxNumberSummaryOperand, IgxSummaryResult,
-    IPagingState,
-    ISortingExpression} from "igniteui-angular";
+import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
+    IGridState, IGridStateOptions, IgxGridComponent, IgxGridStateDirective,
+    IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent } from "igniteui-angular";
 import { take } from "rxjs/operators";
 import { employeesData } from "./localData";
 
@@ -18,7 +17,7 @@ class MySummary {
         });
         return result;
     }
-  }
+}
 
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -35,7 +34,21 @@ export class GridSaveStateComponent implements OnInit {
     public gridState: IGridState;
     public serialize = true;
 
-    public options = {
+    public features: { key: GridFeatures, shortName: string }[] = [
+        { key: 'advancedFiltering', shortName: 'Adv Filt' },
+        { key: 'cellSelection', shortName: 'Cell Sel' },
+        { key: 'columns', shortName: 'Columns' } ,
+        { key: 'columnSelection', shortName: 'Cols Sel' },
+        { key: 'expansion', shortName: 'Expansion' },
+        { key: 'filtering', shortName: 'Filt' },
+        { key: 'paging', shortName: 'Paging' },
+        { key: 'rowPinning', shortName: 'Row Pining' },
+        { key: 'rowSelection', shortName: 'Row Sel' },
+        { key: 'sorting', shortName: 'Sorting' },
+        { key: 'groupBy', shortName: 'GroupBy' }
+      ];
+
+    public options: IGridStateOptions = {
       cellSelection: true,
       rowSelection: true,
       filtering: true,
@@ -43,11 +56,15 @@ export class GridSaveStateComponent implements OnInit {
       paging: true,
       sorting: true,
       groupBy: true,
-      columns: true
+      columns: true,
+      expansion: true,
+      rowPinning: true,
+      columnSelection: true
     };
 
     @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
     @ViewChild(IgxGridComponent, { static: true }) public grid: IgxGridComponent;
+    @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
 
     public initialColumns: any[] = [
       // tslint:disable:max-line-length
@@ -70,6 +87,10 @@ export class GridSaveStateComponent implements OnInit {
       });
     }
 
+    public ngAfterViewInit() {
+        this.restoreGridState();
+    }
+
     public saveGridState() {
         const state = this.state.getState(this.serialize);
         // const state = this.state.getState(this.serialize, ['sorting', 'filtering']);
@@ -87,92 +108,44 @@ export class GridSaveStateComponent implements OnInit {
         }
     }
 
-    public restoreColumns() {
-      const state = this.getColumnsState();
-      if (state) {
-        this.state.setState({ columns: state });
+    public restoreFeature(stateDirective: IgxGridStateDirective, feature: string) {
+        const state = this.getFeatureState(this.stateKey, feature);
+        if (state) {
+          const featureState = { } as IGridState;
+          featureState[feature] = state;
+          stateDirective.setState(featureState);
+        }
       }
-    }
 
-    public getColumnsState(): any {
-      let state = window.localStorage.getItem(this.stateKey);
-      state =  state ? JSON.parse(state).columns : null;
-      return state;
-    }
-
-    public restoreFiltering() {
-      const state = window.localStorage.getItem(this.stateKey);
-      const filteringState: FilteringExpressionsTree = state ? JSON.parse(state).filtering : null;
-      if (filteringState) {
-        const gridFilteringState: IGridState = { filtering: filteringState};
-        this.state.setState(gridFilteringState);
-      }
-    }
-
-    public restoreAdvancedFiltering() {
-      const state = window.localStorage.getItem(this.stateKey);
-      const advFilteringState: FilteringExpressionsTree = state ? JSON.parse(state).advancedFiltering : null;
-      if (advFilteringState) {
-        const gridAdvancedFilteringState: IGridState = { advancedFiltering: advFilteringState};
-        this.state.setState(gridAdvancedFilteringState);
-      }
-    }
-
-    public restoreSorting() {
-      const state = window.localStorage.getItem(this.stateKey);
-      const sortingState: ISortingExpression[] =  state ? JSON.parse(state).sorting : null;
-      if (sortingState) {
-        const gridSortingState: IGridState = { sorting: sortingState};
-        this.state.setState(gridSortingState);
-      }
-    }
-
-    public restoreGroupby() {
-      const state = window.localStorage.getItem(this.stateKey);
-      const groupByState: IGroupingState = state ? JSON.parse(state).groupBy : null;
-      if (groupByState) {
-        const gridGroupiByState: IGridState = { groupBy: groupByState};
-        this.state.setState(gridGroupiByState);
-      }
-    }
-
-    public restoreRowSelection() {
-      const state = window.localStorage.getItem(this.stateKey);
-      const rowSelectionState = state ? JSON.parse(state).rowSelection : null;
-      if (rowSelectionState) {
-        const gridRowSelectionState: IGridState = { rowSelection: rowSelectionState };
-        this.state.setState(gridRowSelectionState);
-      }
-    }
-
-    public restoreCellSelection() {
-      const state = window.localStorage.getItem(this.stateKey);
-      const cellSelectionState = state ? JSON.parse(state).cellSelection : null;
-      if (state) {
-        const gridCellSelectionState: IGridState = { cellSelection: cellSelectionState };
-        this.state.setState(gridCellSelectionState);
-      }
-    }
-
-    public restorePaging() {
-      const state = window.localStorage.getItem(this.stateKey);
-      const pagingState: IPagingState = state ? JSON.parse(state).paging : null;
-      if (state) {
-        const gridPagingState: IGridState = { paging: pagingState };
-        this.state.setState(gridPagingState);
-      }
+    public getFeatureState(stateKey: string, feature: string) {
+        let state = window.localStorage.getItem(stateKey);
+        state =  state ? JSON.parse(state)[feature] : null;
+        return state;
     }
 
     public resetGridState() {
-      this.grid.filteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
-      this.grid.advancedFilteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
-      this.grid.sortingExpressions = [];
-      this.grid.groupingExpressions = [];
-      this.grid.deselectAllRows();
-      this.grid.clearCellSelection();
-    }
+        const grid: IgxGridComponent = this.grid;
+        const pagingState = {index: 0, recordsPerPage: 15, metadata: { countPages: 3, countRecords: this.localData.length}}
+        grid.pagingState = pagingState;
+        grid.filteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
+        grid.advancedFilteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
+        grid.sortingExpressions = [];
+        grid.groupingExpressions = [];
+        grid.deselectAllColumns();
+        grid.deselectAllRows();
+        grid.clearCellSelection();
+      }
 
     public onChange(event: any, action: string) {
+      if (action === "toggleAll") {
+        this.checkboxes.forEach(cb => {
+            cb.checked = event.checked;
+        })
+        for (const key of Object.keys(this.options)) {
+            this.state.options[key] = event.checked;
+        }
+        return;
+      }
       this.state.options[action] = event.checked;
     }
 
