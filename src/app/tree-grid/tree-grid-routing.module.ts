@@ -80,6 +80,7 @@ import { TreeGridVirtualizationSampleComponent } from "./tree-grid-virtualizatio
 import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
 import { TGridSaveStateComponent } from './tree-grid-save-state/tGrid-state.component';
 import { TGridAboutComponent } from "./tree-grid-save-state/about.component";
+import { TreeGridExternalOutletComponent } from "./tree-grid-external-outlet/tree-grid-external-outlet-sample.component";
 
 export const treeGridRoutes: Routes = [
     {
@@ -221,6 +222,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridExternalExcelStyleFilteringComponent,
         data: treeGridRoutesData["tree-grid-external-excel-style-filtering"],
         path: "tree-grid-external-excel-style-filtering"
+    },
+    {
+        component: TreeGridExternalOutletComponent,
+        data: treeGridRoutesData["tree-grid-external-outlet"],
+        path: "tree-grid-external-outlet"
     },
     {
         component: TreeGridExternalAdvancedFilteringComponent,

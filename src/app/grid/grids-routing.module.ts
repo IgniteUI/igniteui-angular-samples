@@ -23,6 +23,7 @@ import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
 import { GridExternalAdvancedFilteringComponent } from "./grid-external-advanced-filtering/grid-external-advanced-filtering.component";
 import { GridExternalExcelStyleFilteringComponent } from "./grid-external-excel-style-filtering/grid-external-excel-style-filtering.component";
+import { GridExternalOutletComponent } from "./grid-external-outlet-sample/grid-external-outlet-sample.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
@@ -40,6 +41,7 @@ import { GridMultiRowLayoutConfigurationComponent } from "./grid-multi-row-layou
 import { GridMultiRowLayoutStylingComponent } from "./grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
+import { GridNestedDataBindAminoacidComponent } from "./grid-nested-data-binding-2/grid-nested-data-bind2";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/remote-filtering-sample.component";
@@ -105,6 +107,7 @@ import { RightPinningSampleComponent } from "./grid-sample-right-pinning/grid-ri
 import {
     GridMultiColumnHeadersStylingComponent
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
+import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -284,6 +287,11 @@ export const gridsRoutes: Routes = [
         path: "grid-filter-conditions"
     },
     {
+        component: GridExternalOutletComponent,
+        data: gridsRoutesData["grid-external-outlet"],
+        path: "grid-external-outlet"
+    },
+    {
         component: GridPagerSampleComponent,
         data: gridsRoutesData["grid-pager-sample"],
         path: "grid-pager-sample"
@@ -459,6 +467,11 @@ export const gridsRoutes: Routes = [
         path: "grid-nested-data-binding"
     },
     {
+        component: GridNestedDataBindAminoacidComponent,
+        data: gridsRoutesData["grid-nested-data-binding-2"],
+        path: "grid-nested-data-binding-2"
+    },
+    {
         component: GridCompositeDataComponent,
         data: gridsRoutesData["grid-composite-data-binding"],
         path: "grid-composite-data-binding"
@@ -602,7 +615,11 @@ export const gridsRoutes: Routes = [
         component: RemotePagingDefaultTemplateComponent,
         data: gridsRoutesData["remote-paging-default-template"],
         path: "remote-paging-default-template"
-
+    },
+    {
+        component: GridSortingIndicatorsComponent,
+        data: gridsRoutesData["grid-sorting-indicators"],
+        path: "grid-sorting-indicators"
     }
 ];
 

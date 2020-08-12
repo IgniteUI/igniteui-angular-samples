@@ -28,7 +28,7 @@
 
 
 :host ::ng-deep {
-    @include igx-fluent-theme($fluent-excel-palette);
+    @include igx-fluent-light-theme($fluent-excel-palette);
 
     .grid-chart-contextmenu-wrapper {
         igx-grid {
