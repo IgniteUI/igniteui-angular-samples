@@ -19,7 +19,7 @@
 
         <div class="switches">
             <div class="control-item">
-                <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">Select All</igx-checkbox>
+                <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">All</igx-checkbox>
             </div>
             <div class="control-item" *ngFor="let f of features">
                 <igx-checkbox (change)="onChange($event, f.key)" [checked]="options[f.key]">
@@ -34,7 +34,7 @@
         [data]="localData"
         childDataKey="Employees"
         displayDensity="cosy"
-        width="100%" height="800px" 
+        width="98%" height="800px" 
         [autoGenerate]="false"
         [rowSelection]="'multiple'"
         [paging]="true"

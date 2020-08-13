@@ -18,7 +18,7 @@
 
         <div class="switches">
             <div class="control-item">
-                <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">Select All</igx-checkbox>
+                <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">All</igx-checkbox>
             </div>
             <div class="control-item" *ngFor="let f of features">
                 <igx-checkbox (change)="onChange($event, f.key)" [checked]="options[f.key]">
@@ -29,7 +29,7 @@
     </div>
 
     <igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid class="hgrid" igxGridState
-        [data]="localData" [height]="'500px'" [width]="'100%'" [rowHeight]="'65px'"
+        [data]="localData" [height]="'500px'" [width]="'98%'" [rowHeight]="'65px'"
         [primaryKey]="'Photo'"
         [autoGenerate]="false"
         [columnSelection]="'multiple'"
