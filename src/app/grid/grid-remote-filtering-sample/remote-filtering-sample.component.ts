@@ -76,7 +76,10 @@ export class RemoteFilteringSampleComponent implements OnInit {
         }
 
         const virtualizationState = this.grid.virtualizationState;
-        const filteringExpr = this.grid.filteringExpressionsTree.filteringOperands;
+        const filteringExpr = [];
+        this.grid.filteringExpressionsTree.filteringOperands.forEach(operand => {
+            filteringExpr.push(this._remoteService.getFilteringExpressionTreeForColumn(operand))
+        });
         const sortingExpr = this.grid.sortingExpressions[0];
 
         if (isFiltering) {

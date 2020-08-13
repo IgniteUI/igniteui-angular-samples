@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { FilteringLogic, IForOfState, SortingDirection } from "igniteui-angular";
+import { FilteringLogic, IForOfState, SortingDirection, FilteringExpressionsTree } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
 
 const DATA_URL = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
@@ -182,5 +182,12 @@ export class RemoteFilteringService {
         const top = requiredChunkSize;
 
         return `$skip=${skip}&$top=${top}`;
+    }
+
+    public getFilteringExpressionTreeForColumn(filteringExpression: any) {
+        if (filteringExpression.filteringOperands[0] instanceof FilteringExpressionsTree) {
+            return this.getFilteringExpressionTreeForColumn(filteringExpression.filteringOperands[0]);
+        }
+        return filteringExpression;
     }
 }
