@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { IForOfState, SortingDirection } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
 
-const DATA_URL: string = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
+const DATA_URL: string = "https://services.odata.org/V4/Northwind/Northwind.svc/Invoices";
 const EMPTY_STRING: string = "";
 export enum SortOrder {
     ASC = "asc",

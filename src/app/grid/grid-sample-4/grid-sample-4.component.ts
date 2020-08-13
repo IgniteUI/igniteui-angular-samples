@@ -82,10 +82,6 @@ export class GridRemoteVirtualizationSampleComponent {
         return value.toFixed(2);
     }
 
-    public formatCurrency(value: number) {
-        return "$" + value.toFixed(2);
-    }
-
     public ngOnDestroy() {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
