@@ -19,7 +19,7 @@
 
         <div class="switches">
             <div class="control-item">
-                <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">Select All</igx-checkbox>
+                <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">All</igx-checkbox>
             </div>
             <div class="control-item" *ngFor="let f of features">
                 <igx-checkbox (change)="onChange($event, f.key)" [checked]="options[f.key]">
@@ -30,7 +30,7 @@
     </div>
 
     <igx-grid igxPreventDocumentScroll [id]="gridId" #grid1 [igxGridState]="options"
-        width="1150px" height="550px" [autoGenerate]="false"
+        width="98%" height="550px" [autoGenerate]="false"
         [data]="localData"
         [primaryKey]="'EmployeeID'" 
         [rowEditable]="false"
