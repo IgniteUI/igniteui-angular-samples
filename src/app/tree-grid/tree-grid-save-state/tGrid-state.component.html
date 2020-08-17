@@ -1,0 +1,48 @@
+<div class="grid__wrapper">
+    <div class="controls-holder">
+        <div class="switches">
+            <button igxButton="raised" (click)="restoreGridState()"><igx-icon class="btn-icon">restore</igx-icon>Restore</button>
+            <button igxButton="raised" (click)="saveGridState()"><igx-icon class="btn-icon">save</igx-icon>Save</button>
+            <button igxButton="raised" (click)="resetGridState()"><igx-icon class="btn-icon">clear</igx-icon>Reset</button>
+            <button igxButton="raised" [routerLink]="['../tree-grid-about']"><igx-icon class="btn-icon">forward</igx-icon>Leave</button>
+            <button igxButton="raised" (click)="clearStorage()"><igx-icon class="btn-icon">delete</igx-icon>Clear</button>
+            <button igxButton="raised" (click)="reloadPage()"><igx-icon class="btn-icon">refresh</igx-icon>Reload</button>
+        </div>
+
+        <div class="switches">
+            <ul>
+                <li>Clicking the SAVE button or leaving the page <a [routerLink]="['../tree-grid-about']"><strong>here</strong></a> will save grid state to localStorage.</li>
+                <li>Use the control buttons to SAVE / RESTORE / RESET / DELETE / grid state or LEAVE the page.</li>
+                <li>Select/Deselect checkboxes to control saving / restoring feature state.</li>
+            </ul>
+        </div>
+
+        <div class="switches">
+            <div class="control-item">
+                <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">All</igx-checkbox>
+            </div>
+            <div class="control-item" *ngFor="let f of features">
+                <igx-checkbox (change)="onChange($event, f.key)" [checked]="options[f.key]">
+                    {{ f.shortName }}
+                </igx-checkbox>
+            </div>
+        </div>
+    </div>
+
+    <igx-tree-grid #treeGrid [id]="treeGridId" igxGridState
+        primaryKey="Name"
+        [data]="localData"
+        childDataKey="Employees"
+        displayDensity="cosy"
+        width="98%" height="800px" 
+        [autoGenerate]="false"
+        [rowSelection]="'multiple'"
+        [paging]="true"
+        [allowFiltering]="true"
+        [columnHiding]="true"
+        [columnPinning]="true">
+        <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true" [hasSummary]="true"></igx-column>
+        <igx-column field="HireDate" dataType="date" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true"></igx-column>
+        <igx-column field="Age" dataType="number" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true"></igx-column>
+    </igx-tree-grid>
+</div>

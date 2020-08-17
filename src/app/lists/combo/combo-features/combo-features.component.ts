@@ -14,6 +14,7 @@ export class ComboFeatures {
     @ViewChild("combo", { read: IgxComboComponent, static: true }) public combo: IgxComboComponent;
 
     public filterable = true;
+    public showSearchCaseIcon = true;
     public customValues = true;
     public disabled = false;
 

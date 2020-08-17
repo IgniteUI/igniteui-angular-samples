@@ -8,13 +8,13 @@ import { generateEmployeeFlatData } from "../data/employees-flat";
     templateUrl: "./tree-grid-selection-sample.component.html"
 })
 export class TreeGridSelectionSampleComponent implements OnInit {
-
     @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
     @ViewChild(IgxSnackbarComponent, { static: true }) public snackbar: IgxSnackbarComponent;
     public data: any[];
     public selectionMode = "multiple";
     public selectionModes = [];
     public hideRowSelectors = false;
+    public selectedRows = [1, 2, 3];
 
     constructor() {
         this.data = generateEmployeeFlatData();
@@ -26,13 +26,11 @@ export class TreeGridSelectionSampleComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-
         this.snackbar.autoHide = false;
         this.snackbar.show();
     }
-    public handleRowSelection(event) {
 
-    }
+    public handleRowSelection(event) { }
 
     public selectCellSelectionMode(args) {
         this.selectionMode = this.selectionModes[args.index].label;

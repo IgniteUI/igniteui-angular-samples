@@ -4,7 +4,8 @@ import {
     ConnectedPositioningStrategy,
     HorizontalAlignment,
     IgxToggleDirective,
-    VerticalAlignment
+    VerticalAlignment,
+    OverlaySettings
 } from "igniteui-angular";
 
 @Component({
@@ -21,9 +22,10 @@ export class ToggleComponent {
         verticalStartPoint: VerticalAlignment.Bottom
     };
 
-    public _overlaySettings = {
+    public _overlaySettings: OverlaySettings = {
         closeOnOutsideClick: false,
         modal: false,
+        closeOnEscape: true,
         positionStrategy: new ConnectedPositioningStrategy(this._positionSettings)
     };
 
