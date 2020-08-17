@@ -23,6 +23,10 @@ const SHARED_DEV_DEPENDENCIES = {
     "typescript": ""
 };
 
+const DEPENDENCIES_WITH_FIXED_VERSION = {
+    "tslib": "1.13.0"
+};
+
 const SHARED_DEPENDENCIES = [
     "@angular/common",
     "@angular/compiler",
@@ -117,7 +121,7 @@ export class DevDependencyResolver {
 
     public get devDependencies() {
         const result = {};
-        
+
         for (let key in this._devDependencies) {
             if (key in SHARED_DEV_DEPENDENCIES) {
                     let version = this._devDependencies[key];
@@ -207,7 +211,10 @@ export class DependencyResolver {
         for (let key in packageFileDependencies) {
             if (dependencies.has(key)) {
                 if (this._specificVersionPackages.has(key)) {
-                    let version = packageFileDependencies[key];
+                    let version =  DEPENDENCIES_WITH_FIXED_VERSION[key] ?? packageFileDependencies[key];
+                    packageFileDependencies[key] = version.replace("~", "").replace("^", "");
+                } else if (typeof DEPENDENCIES_WITH_FIXED_VERSION[key] !== "undefined") {
+                    let version =  DEPENDENCIES_WITH_FIXED_VERSION[key];
                     packageFileDependencies[key] = version.replace("~", "").replace("^", "");
                 }
             } else {

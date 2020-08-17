@@ -2,7 +2,7 @@
 
 /*BASIC THEMING*/
 
-$custom-column-hiding-theme: igx-column-hiding-theme(
+$custom-column-actions-theme: igx-column-actions-theme(
     $background-color: steelblue,
     $title-color: gold
 );
@@ -16,7 +16,7 @@ $custom-button: igx-button-theme($flat-text-color: gold, $disabled-color: black)
 
 /*PALETTE and IGX-COLOR*/
 
-// $custom-column-hiding-theme: igx-column-hiding-theme(
+// $custom-column-actions-theme: igx-column-actions-theme(
 //     $palette: $custom-palette,
 //     $title-color: igx-color($custom-palette, "secondary", 400),
 //     $background-color: igx-color($custom-palette, "primary", 200)
@@ -29,7 +29,7 @@ $custom-button: igx-button-theme($flat-text-color: gold, $disabled-color: black)
 
 /*SCHEMAS*/
 
-// $custom-column-hiding-schema: extend($_dark-column-hiding,
+// $custom-column-actions-schema: extend($_dark-column-actions,
 //     (
 //         title-color:(
 //             igx-color: ("secondary", 400)
@@ -52,10 +52,10 @@ $custom-button: igx-button-theme($flat-text-color: gold, $disabled-color: black)
 // );
 // 
 // $custom-dark-schema: extend($dark-schema,(
-//     igx-column-hiding: $custom-column-hiding-schema,
+//     igx-column-actions: $custom-column-actions-schema,
 //     igx-button: $custom-button-schema
 // ));
-// $custom-column-hiding-theme: igx-column-hiding-theme(
+// $custom-column-actions-theme: igx-column-actions-theme(
 //   $palette: $custom-palette,
 //   $schema: $custom-dark-schema
 // );
@@ -68,8 +68,8 @@ $custom-button: igx-button-theme($flat-text-color: gold, $disabled-color: black)
 
 :host {
     ::ng-deep {
-        @include igx-column-hiding($custom-column-hiding-theme);
-        .igx-column-hiding {
+        @include igx-column-actions($custom-column-actions-theme);
+        .igx-column-actions {
             @include igx-button($custom-button);
         }
     }
