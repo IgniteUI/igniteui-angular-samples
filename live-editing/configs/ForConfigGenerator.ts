@@ -29,10 +29,10 @@ export class ForConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/data-display/igxFor/names.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxAvatarModule, IgxFilterModule, IgxListModule, IgxIconModule,
-                    IgxRippleModule, IgxForOfModule, IgxForComponent, IgxInputGroupModule],
+                          IgxForOfModule, IgxForHorizontalComponent, IgxInputGroupModule],
                 ngDeclarations: [IgxForHorizontalComponent],
                 ngImports: [IgxAvatarModule, IgxFilterModule, IgxListModule,
-                            IgxIconModule, IgxRippleModule, IgxForOfModule, IgxInputGroupModule]
+                            IgxIconModule, IgxForOfModule, IgxInputGroupModule]
             }),
             shortenComponentPathBy: "/data-display/"
         }));

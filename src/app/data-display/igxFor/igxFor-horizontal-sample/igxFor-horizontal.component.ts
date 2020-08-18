@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { IgxFilterOptions } from "igniteui-angular";
-import { femaleFNames, lastName, maleFNames, middleNames } from "../names";
+import { femaleFNames, lastName, maleFNames } from "../names";
 
 @Component({
     selector: "igxFor-horizontal",
@@ -33,14 +33,12 @@ export class IgxForHorizontalComponent implements OnInit {
         item.avatar = "assets/images/" +
             (gender === "M" ? "men" : "women") +
             "/" + Math.floor((Math.random() * 100)) + ".jpg";
-        item.favorite = Math.floor((Math.random() * 3)) % 3 === 0;
         return item;
     }
     private generateName(gender): string {
         let name = "";
         const fNames = gender === "M" ? maleFNames : femaleFNames;
         name += fNames[Math.floor(Math.random() * fNames.length)] + " ";
-        name += middleNames[Math.floor(Math.random() * middleNames.length)] + " ";
         name += lastName[Math.floor(Math.random() * lastName.length)];
         return name;
     }
@@ -49,6 +47,5 @@ export class IgxForHorizontalComponent implements OnInit {
 export class Person {
     public key: number;
     public name: string;
-    public favorite: boolean;
     public avatar: string;
 }

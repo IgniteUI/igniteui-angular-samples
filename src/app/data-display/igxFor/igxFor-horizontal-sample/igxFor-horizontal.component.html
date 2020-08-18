@@ -11,10 +11,10 @@
 <div class="list-sample">
     <igx-list>
         <igx-list-item [isHeader]="true">Contacts: {{(data | igxFilter: fo).length}} </igx-list-item>
-        <div [style.width]="'100%'" [style.overflow]="'hidden'" [style.position]="'relative'">
+        <div class="list-container" [style.width]="'100%'" [style.overflow]="'hidden'" [style.position]="'relative'">
             <igx-list-item
-                [style.width]="'calc(100% - 18px)'"
-                *igxFor="let item of data | igxFilter: fo; scrollOrientation : 'horizontal'; containerSize: '800px'; itemSize: '120px'">
+                [style.width]="'240px'"
+                *igxFor="let item of data | igxFilter: fo; scrollOrientation : 'horizontal'; containerSize: '800px'; itemSize: '240px'">
                 <div class="item-container">
                     <div class="contact">
                         <igx-avatar [src]="item.avatar" roundShape="true"></igx-avatar>

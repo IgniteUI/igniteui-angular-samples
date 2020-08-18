@@ -16,6 +16,14 @@
         0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
 
+.list-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 240px;
+    flex: 1 1 240px;
+    padding: 16px 8px 0;
+}
+
 .item-container {
   display: flex;
   justify-content: space-between;
