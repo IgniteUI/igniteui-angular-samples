@@ -33,6 +33,7 @@ import { IconSample5Component } from "./icon/icon-sample-5/icon-sample-5.compone
 import { IconStylingSample } from "./icon/icon-styling-sample/icon-styling-sample.component";
 import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
+import { IgxForHorizontalComponent } from "./igxFor/igxFor-horizontal-sample/igxFor-horizontal.component";
 import {
     LinearDynamicSampleComponent
 } from "./linear-progressbar/linear-dynamic-sample/linear-dynamic-sample.component";
@@ -79,6 +80,7 @@ import { TextHighlightStyleComponent } from "./text-highlight/text-highlight-sty
         IconStylingSample,
         SvgIconSampleComponent,
         IgxForComponent,
+        IgxForHorizontalComponent,
         LinearDynamicSampleComponent,
         LinearProgressbarComponent,
         LinearProgressbarSample1Component,
