@@ -244,7 +244,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     }
 
     private tickerAllPrices(data: any) {
-        this.updateAllPrices(data);
+        this.data = this.updateAllPrices(data);
     }
 
     /**
@@ -254,7 +254,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         for (const dataRow of data) {
             this.randomizeObjectData(dataRow);
         }
-        (this.grid1 as any).notifyChanges();
+        return Array.from(data);
     }
 
     /**
