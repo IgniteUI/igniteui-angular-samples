@@ -1,0 +1,256 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+/* autoprefixer grid: on */
+$sample-width: rem(850px);
+$sample-height: rem(700px);
+$sample-padding: rem(16px);
+$grid-icon-size: rem(32px);
+$grid-padding: rem(24px);
+$grid-item-width: rem(104px);
+$grid-item-height: rem(120px);
+$grid-item-padding: rem(8px);
+$grid-item-margin: $grid-item-padding;
+$grid-body-section-padding: $grid-padding;
+$grid-item-border-width: rem(2px);
+
+$clipboardSuccessColor: igx-color($default-palette, 'success');
+
+%icon-size {
+  width: $grid-icon-size;
+  height: $grid-icon-size;
+  font-size: $grid-icon-size;
+}
+
+%flex-row-center-center {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+@include b(sample) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  max-width: $sample-width;
+  height: $sample-height;
+  margin: 0 auto;
+  padding: $sample-padding;
+
+  @include e(header) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: rem(24px);
+    width: 100%;
+  }
+
+  @include e(header-title) {
+    display: flex;
+    align-items: center;
+  }
+  @include e(header-search) {
+    max-width: rem(220px);
+    width: 100%;
+    margin-left: rem(8px);
+  }
+
+  @include e(body) {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: calc(100% - #{rem(70px)});
+    width: 100%;
+
+    padding: 0 0 rem(12px) 0;
+    box-shadow:
+            0 rem(1px) rem(5px) 0 rgba(0,0,0, .26),
+            0 rem(1px) rem(2px) 0 rgba(0,0,0, .12);
+
+    &-inner + &-empty {
+      display: none;
+    }
+  }
+
+  @include e(body-empty) {
+   @extend %flex-row-center-center;
+    flex-direction: column;
+    text-align: center;
+    padding: $grid-padding $grid-padding 0 $grid-padding;
+
+    strong {
+      text-transform: capitalize;
+    }
+
+    button {
+      align-self: center;
+      margin-top: rem(8px);
+
+      igx-icon {
+        margin-right: rem(4px);
+      }
+    }
+  }
+
+  @include e(body-section) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 $grid-body-section-padding $grid-body-section-padding $grid-body-section-padding;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      min-height: 100%;
+    }
+  }
+
+  @include e(body-title) {
+    display: flex;
+    align-items: center;
+    border-bottom: rem(1px) solid #ddd;
+    margin: rem(16px) rem(16px) (rem(16px) + $grid-item-padding) rem(16px);
+    min-height: rem(37px);
+    text-transform: capitalize;
+    font-size: rem(16px);
+    line-height: rem(24px);
+  }
+
+  @include e(grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($grid-item-width, 1fr));
+    grid-auto-rows: $grid-item-height;
+    grid-column-gap: $grid-item-margin;
+    grid-row-gap: $grid-item-margin * 2;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin: 0 -#{$grid-item-padding};
+      min-height: 100%;
+    }
+  }
+
+  @include e(grid-item-content)  {
+    @extend %flex-row-center-center;
+    flex-direction: column;
+
+    > igx-icon {
+      @extend %icon-size;
+      align-self: center;
+      margin-bottom: rem(4px);
+    }
+  }
+
+  @include e(grid-item) {
+    @extend %flex-row-center-center;
+    flex-direction: column;
+    padding: $grid-item-padding;
+    position: relative;
+    border: $grid-item-border-width solid transparent;
+
+    &:hover,
+    &:focus {
+      border-color: igx-color($default-palette, 'secondary');
+      outline-color: transparent;
+      outline-width: 0;
+
+      .sample__grid-item-download,
+      .sample__grid-item-clipboard{
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .sample__grid-item-download  {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      $grid-item-padding-IE: $grid-item-padding / 2;
+      flex: 1;
+      min-width: $grid-item-width + ($grid-item-padding * 2);
+      min-height: $grid-item-height;
+      margin: 0 $grid-item-padding-IE $grid-item-padding $grid-item-padding-IE;
+    }
+  }
+
+  @include e(grid-item-download) {
+    pointer-events: none;
+    display: flex;
+    width: rem(100px);
+    max-width: 90%;
+    max-height: rem(36px);
+    position: absolute;
+    bottom: -#{rem(16px) + $grid-item-border-width};
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    opacity: 0;
+    text-decoration: none;
+
+    igx-icon {
+      margin-right: rem(4px);
+    }
+
+    &:hover,
+    &:focus {
+      pointer-events: auto;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  @include e(grid-item-clipboard) {
+    @extend %flex-row-center-center;
+    border-radius: 50%;
+    background: igx-color($default-palette, 'surface');
+    box-shadow: none;
+    border: none;
+    padding: rem(4px);
+    cursor: pointer;
+    pointer-events: none;
+    max-width: rem(32px);
+    max-height: rem(32px);
+    position: absolute;
+    right: rem(8px);
+    top: rem(8px);
+    opacity: 0;
+    transition: all 250ms ease-in-out;
+
+    igx-icon {
+      width: rem(16px);
+      height: rem(16px);
+      font-size: rem(16px);
+    }
+
+    &:focus {
+      outline-color: transparent;
+      outline-width: 0;
+    }
+
+    &:hover,
+    &:focus {
+      pointer-events: auto;
+      visibility: visible;
+      opacity: 1;
+      color: igx-color($default-palette, 'secondary');
+    }
+  }
+
+  @include e(grid-item-clipboard, $m: success) {
+    background: $clipboardSuccessColor;
+    color: igx-contrast-color($default-palette, $clipboardSuccessColor) !important;
+  }
+
+  @include e(grid-icon-name) {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+
