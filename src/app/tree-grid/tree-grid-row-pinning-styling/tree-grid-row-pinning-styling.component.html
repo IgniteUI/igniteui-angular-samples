@@ -3,7 +3,7 @@
         [width]="'100%'" [height]="'520px'" [cellSelection]="'none'"
         (mouseover)="onMouseOver(actionStrip1, treeGrid1, $event)" (onCellClick)="onCellClick($event)"
         (mouseleave)="onMouseLeave(actionStrip1, $event)"
-        (onDataPreLoad)="actionStrip1.hide()">
+        (onScroll)="actionStrip1.hide()">
         <igx-column *ngFor="let c of columns" [field]="c.field" [dataType]="c.dataType" [header]="c.label">
         </igx-column>
         <igx-action-strip #actionStrip1>

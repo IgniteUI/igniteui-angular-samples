@@ -342,7 +342,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     public gridKeydown(evt) {
-        if (this.grid1.selectedRows().length > 0 &&
+        if (this.grid1.selectedRows.length > 0 &&
             evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === "d") {
             evt.preventDefault();
             this.dialog.open();
@@ -390,17 +390,17 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     private tickerAllPrices(data: any) {
-        this.updateAllPrices(data);
+        this.grid1.data = this.updateAllPrices(data);
     }
 
     /**
      * Updates values in every record
      */
-    private updateAllPrices(data: any[]): any {
+    private updateAllPrices(data: any[]): any[] {
         for (const dataRow of data) {
             this.randomizeObjectData(dataRow);
         }
-        (this.grid1 as any).notifyChanges();
+        return Array.from(data);
     }
 
     /**

@@ -73,6 +73,8 @@ import { RemoteLoDService } from "../../src/app/hierarchical-grid/services/remot
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { HGridSaveStateComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-save-state/hGrid-state.component";
+import { HGridAboutComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-save-state/about.component";
 import { HierarchicalGridExternalOutletComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-external-outlet/hierarchical-grid-external-outlet-sample.component";
 
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {
@@ -761,6 +763,17 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxPreventDocumentScrollModule, IgxHierarchicalGridModule, HttpClientModule]
             }),
             component: HGridRemotePagingDefaultTemplateComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridSaveStateComponent, HGridAboutComponent, IgxPreventDocumentScrollModule],
+                ngDeclarations: [HGridSaveStateComponent, HGridAboutComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxHierarchicalGridModule, HttpClientModule,
+                    "RouterModule.forRoot([\{component: HGridAboutComponent, path: 'hGrid-state-about'},\{component: HGridSaveStateComponent, path: 'hGrid-state'},\{ path: '', redirectTo: '/hGrid-state', pathMatch: 'full' }])]"]
+            }),
+            component: HGridSaveStateComponent
         }));
 
         configs.push(new Config({
