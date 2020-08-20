@@ -3,8 +3,13 @@
     padding: 16px;
 }
 
+.sample-content{
+    max-width: 880px;
+}
+
 .search {
     margin-bottom: 16px;
+    width: 100%;
 }
 
 .list-sample {
@@ -19,25 +24,31 @@
 .list-container {
     display: flex;
     flex-direction: column;
-    min-width: 240px;
-    flex: 1 1 240px;
     padding: 16px 8px 0;
 }
 
 .item-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 220px;
+    flex: 0 0 220px;
 }
 
 .contact {
-  display: flex;
-  flex: 1 0 140px;
-  align-items: center;
-
-  &__info {
     display: flex;
-    flex-flow: column nowrap;
-    margin-left: 16px;
-  }
+    flex: 1 0 220px;
+    align-items: center;
+
+    &__info {
+        display: flex;
+        flex-flow: column nowrap;
+        margin-left: 16px;
+    }
+}
+
+.name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
