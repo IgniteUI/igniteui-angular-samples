@@ -29,72 +29,65 @@
         </igx-input-group>
     </div>
     <div class="sample__body">
-        <article
-            class="sample__body-inner"
-            #article
-            *ngFor="
-                let group of allIcons
-                    | filterByName: input.value
-                    | categoriesFilter: selectedCategory
-            "
-        >
-            <header class="sample__body-title">
-                {{ group.category }}
-            </header>
-
-            <section class="sample__body-section">
-                <div class="sample__grid">
-                    <div
-                        class="sample__grid-item"
-                        *ngFor="let icon of group.icons"
-                    >
-                        <button
-                            [value]="icon.name"
-                            [title]="
-                                'Copy &quot;' +
-                                icon.name +
-                                '&quot; to clipboard'
-                            "
-                            (click)="copyValue($event, icon.name)"
-                            class="sample__grid-item-clipboard"
+        <ng-container *ngIf="(allIcons | filterByName: input.value | categoriesFilter: selectedCategory) as fResults">
+            <article *ngFor="let group of fResults" class="sample__body-inner">
+                <header class="sample__body-title">
+                    {{ group.category }}
+                </header>
+                <section class="sample__body-section">
+                    <div class="sample__grid">
+                        <div
+                            class="sample__grid-item"
+                            *ngFor="let icon of group.icons"
                         >
-                            <igx-icon>content_copy</igx-icon>
-                        </button>
-                        <div class="sample__grid-item-content">
-                            <igx-icon
-                                class="sample__grid-icon"
-                                fontSet="imx-icons"
-                                name="{{ icon.name }}"
-                            ></igx-icon>
-                            <span
-                                class="sample__grid-icon-name"
-                                title="{{ icon.name }}"
-                                >{{ icon.name }}</span
+                            <button
+                                [value]="icon.name"
+                                [title]="
+                                    'Copy &quot;' +
+                                    icon.name +
+                                    '&quot; to clipboard'
+                                "
+                                (click)="copyValue($event, icon.name)"
+                                class="sample__grid-item-clipboard"
                             >
-                        </div>
+                                <igx-icon>content_copy</igx-icon>
+                            </button>
+                            <div class="sample__grid-item-content">
+                                <igx-icon
+                                    class="sample__grid-icon"
+                                    fontSet="imx-icons"
+                                    name="{{ icon.name }}"
+                                ></igx-icon>
+                                <span
+                                    class="sample__grid-icon-name"
+                                    title="{{ icon.name }}"
+                                    >{{ icon.name }}</span
+                                >
+                            </div>
 
-                        <button
-                            (click)="downloadFile(icon.value)"
-                            igxripple
-                            class="sample__grid-item-download"
-                            igxButton="raised"
-                        >
-                            <igx-icon>arrow_downward</igx-icon>
-                            <span>SVG</span>
-                        </button>
+                            <button
+                                (click)="downloadFile(icon.value)"
+                                igxripple
+                                class="sample__grid-item-download"
+                                igxButton="raised"
+                            >
+                                <igx-icon>arrow_downward</igx-icon>
+                                <span>SVG</span>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </section>
-        </article>
-        <div class="sample__body-empty">
-            <span
-                >No results in category:
-                <strong>"{{ selectedCategory }}"</strong>. Reset the category
-                filter to search the entire icon set.</span
-            >
-            <button igxButton (click)="resetFilter()">
-                Reset the category filter
-            </button>
-        </div>
+                </section>
+            </article>
+            <div class="sample__body-empty">
+                <span>
+                    No results
+                    {{selectedCategory !== 'all' && fResults.length !== -1 ? ' in category: ' : 'found' }}
+                    <strong *ngIf="selectedCategory !== 'all' && fResults.length !== -1">{{ selectedCategory }}</strong>
+                </span>
+                <button *ngIf="selectedCategory !== 'all' && fResults.length !== -1" igxButton (click)="resetFilter()">
+                    Reset the category filter
+                </button>
+            </div>
+        </ng-container>
     </div>
 </div>
