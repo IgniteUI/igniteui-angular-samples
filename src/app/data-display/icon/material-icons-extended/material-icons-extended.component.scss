@@ -1,8 +1,13 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
-/* autoprefixer grid: on */
+
 $sample-width: rem(850px);
 $sample-height: rem(700px);
 $sample-padding: rem(16px);
+$sample-body-padding: rem(16px);
+$sample-header-margin: rem(24px);
+$sample-header-height: rem(50px);
+$sample-header-height-m: rem(50px) + $sample-header-margin;
+$sample-body-max-height: calc(100% - (#{$sample-header-height-m} + #{$sample-padding} + #{$sample-body-padding * 2}));
 $grid-icon-size: rem(32px);
 $grid-padding: rem(24px);
 $grid-item-width: rem(104px);
@@ -41,8 +46,9 @@ $clipboardSuccessColor: igx-color($default-palette, 'success');
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: rem(24px);
+    margin-bottom: $sample-header-margin;
     width: 100%;
+    height: $sample-header-height;
   }
 
   @include e(header-title) {
@@ -60,10 +66,9 @@ $clipboardSuccessColor: igx-color($default-palette, 'success');
     flex-direction: column;
     overflow-y: scroll;
     overflow-x: hidden;
-    max-height: calc(100% - #{rem(70px)});
+    max-height: $sample-body-max-height;
     width: 100%;
-
-    padding: 0 0 rem(12px) 0;
+    padding: 0 0 $sample-body-padding 0;
     box-shadow:
             0 rem(1px) rem(5px) 0 rgba(0,0,0, .26),
             0 rem(1px) rem(2px) 0 rgba(0,0,0, .12);
