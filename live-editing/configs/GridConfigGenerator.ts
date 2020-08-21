@@ -521,11 +521,11 @@ export class GridConfigGenerator implements IConfigGenerator {
                 "/src/app/grid/grid-editing-sample/product.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
-                    IgxGridModule, IgxInputGroupModule, IgxIconModule, IgxComboModule,
+                    IgxGridModule, IgxInputGroupModule, IgxIconModule, IgxComboModule, IgxToastModule,
                     IgxRippleModule, GridEditingSampleComponent, IgxPreventDocumentScrollModule],
                 ngDeclarations: [GridEditingSampleComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
-                    IgxGridModule, IgxInputGroupModule, IgxIconModule, IgxRippleModule, IgxComboModule]
+                    IgxGridModule, IgxInputGroupModule, IgxIconModule, IgxRippleModule, IgxToastModule, IgxComboModule]
             })
         }));
 
