@@ -8,7 +8,6 @@ import {
 } from "@angular/core";
 import * as fileSaver from "file-saver";
 import { DOCUMENT } from "@angular/common";
-import { HttpClient } from "@angular/common/http";
 import { IgxIconService, ISelectionEventArgs } from "igniteui-angular";
 
 import {
@@ -34,7 +33,6 @@ interface ICategoryOption {
 export class MaterialIconsExtendedComponent implements OnInit {
     constructor(
         private iconService: IgxIconService,
-        private http: HttpClient,
         @Inject(DOCUMENT) private document: Document,
         private renderer: Renderer2
     ) {}
@@ -68,18 +66,13 @@ export class MaterialIconsExtendedComponent implements OnInit {
 
     addIcons() {
         for (const icon of this.allIcons) {
-            this.iconService.addSvgIcon(icon.name, icon.value, "imx-icons");
+            this.iconService.addSvgIconFromText(icon.name, icon.value, "imx-icons");
         }
     }
 
-    downloadFile(icon: string) {
-        this.http.get(icon, { responseType: "text" }).subscribe(
-            (res) => {
-                const blob: any = new Blob([res], { type: "image/svg+xml" });
-                fileSaver.saveAs(blob);
-            },
-            (err) => console.log(err)
-        );
+    downloadFile(icon: IMXIcon) {
+        const blob: any = new Blob([icon.value], { type: "image/svg+xml" });
+        fileSaver.saveAs(blob, icon.name);
     }
 
     copyValue(event: Event, val: string) {

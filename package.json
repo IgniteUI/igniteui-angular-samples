@@ -48,7 +48,7 @@
     "@angular/platform-browser": "^10.0.0",
     "@angular/platform-browser-dynamic": "^10.0.0",
     "@angular/router": "^10.0.0",
-    "@igniteui/material-icons-extended": "^1.1.1",
+    "@igniteui/material-icons-extended": "^2.0.0-beta",
     "@types/file-saver": "^2.0.1",
     "@types/hammerjs": "^2.0.35",
     "angular-in-memory-web-api": "0.9.0",
