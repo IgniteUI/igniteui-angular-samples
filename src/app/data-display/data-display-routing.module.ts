@@ -47,6 +47,7 @@ import { TextHighlightSample1Component
 import { TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
 import { TextHighlightStyleComponent } from "./text-highlight/text-highlight-style/text-highlight-style.component";
+import { MaterialIconsExtendedComponent } from "./icon/material-icons-extended/material-icons-extended.component";
 
 export const dataDisplayRoutes: Routes = [
     {
@@ -203,6 +204,11 @@ export const dataDisplayRoutes: Routes = [
         component: ChipStylingSampleComponent,
         data: dataDisplayRoutesData["chip-styling"],
         path: "chip-styling"
+    },
+    {
+        component: MaterialIconsExtendedComponent,
+        data: dataDisplayRoutesData["material-icons-extended"],
+        path: "material-icons-extended"
     }
 ];
 
