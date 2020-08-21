@@ -64,10 +64,10 @@ export class Product {
     private unitsInStock: number;
     private locations: any[];
 
-    constructor() {
+    constructor(id: number) {
         this.discontinued = false;
         this.orderDate = new Date();
-        this.productID = 0;
+        this.productID = id;
         this.productName = "";
         this.quantityPerUnit = "";
         this.reorderLevel = 0;
