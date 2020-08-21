@@ -59,10 +59,10 @@ export class RemoteFilteringService {
                 if (filter !== EMPTY_STRING) {
                     filter += ` ${FilteringLogic[FilteringLogic.And].toLowerCase()} `;
                 }
-
+                const exprTree = this.getFilteringExpressionTreeForColumn(columnFilter)
                 filter += this._buildAdvancedFilterExpression(
-                    columnFilter.filteringOperands,
-                    columnFilter.operator);
+                    exprTree.filteringOperands,
+                    exprTree.operator);
             });
 
             filterQuery = `$filter=${filter}`;
