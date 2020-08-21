@@ -43,6 +43,7 @@ import { IconSample5Component } from "./icon/icon-sample-5/icon-sample-5.compone
 import { IconStylingSample } from "./icon/icon-styling-sample/icon-styling-sample.component";
 import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
+import { IgxForHorizontalComponent } from "./igxFor/igxFor-horizontal-sample/igxFor-horizontal.component";
 import { LinearDynamicSampleComponent } from "./linear-progressbar/linear-dynamic-sample/linear-dynamic-sample.component";
 import { LinearProgressbarSample1Component } from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
 import { LinearProgressbarSample2Component } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
@@ -86,6 +87,7 @@ import {
         IconStylingSample,
         SvgIconSampleComponent,
         IgxForComponent,
+        IgxForHorizontalComponent,
         LinearDynamicSampleComponent,
         LinearProgressbarComponent,
         LinearProgressbarSample1Component,
