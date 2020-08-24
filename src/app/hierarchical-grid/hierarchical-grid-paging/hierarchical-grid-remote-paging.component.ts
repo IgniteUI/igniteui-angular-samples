@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild } from "@angular/core";
 import { IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
 import { RemotePagingService } from "./remotePagingService";
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
     providers: [RemotePagingService],
@@ -17,6 +18,7 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
     public totalCount = 0;
     public title = "gridPaging";
     public selectOptions = [5, 10, 25, 50];
+    public data: BehaviorSubject<any> = new BehaviorSubject([]);
 
     @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
     @ViewChild("layout1") public layout1: IgxRowIslandComponent;
@@ -55,7 +57,7 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
         this.remoteService.getData(
             { parentID: null, rootLevel: true, key: "Customers" }, 0, this.perPage).subscribe((data) => {
                 this.hierarchicalGrid.isLoading = false;
-                this.hierarchicalGrid.data = data;
+                this.data.next(data);
             },
                 (error) => {
                     this.hierarchicalGrid.emptyGridMessage = error.message;
@@ -97,12 +99,12 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
         const top = this.perPage;
         this.remoteService.getData(
             { parentID: null, rootLevel: true, key: "Customers" }, skip, top).subscribe((data) => {
-                this.hierarchicalGrid.data = data;
+                this.data.next(data);
                 this.hierarchicalGrid.cdr.detectChanges();
             },
                 (error) => {
                     this.hierarchicalGrid.emptyGridMessage = error.message;
-                    this.hierarchicalGrid.data = null;
+                    this.data.next([]);
                     this.hierarchicalGrid.cdr.detectChanges();
                 }
             );
