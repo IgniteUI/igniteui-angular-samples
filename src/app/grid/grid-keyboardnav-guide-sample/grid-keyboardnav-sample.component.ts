@@ -383,7 +383,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
             res.push(ItemAction.Sortable);
         }
 
-        if (col.filterable && col.elementRef.nativeElement.tagName !== ElementTags.COLUMN_GROUP) {
+        if (col.filterable && !col.columnGroup) {
             res.push(ItemAction.Filterable);
         }
 
