@@ -33,8 +33,9 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
         this.pageSize = Math.floor(dataViewSize * 1.5);
         this._remoteService.loadDataForPage(this.page, this.pageSize, (request) => {
             if (request.data) {
-                this.grid.totalItemCount = this.page * this.pageSize;
                 this.grid.data = this._remoteService.getCachedData({startIndex: 0, chunkSize: 10});
+                this.cdr.detectChanges();
+                this.grid.verticalScrollContainer.totalItemCount = this.page * this.pageSize;
                 this.totalItems = request.data["@odata.count"];
                 this.totalPageCount = Math.ceil(this.totalItems / this.pageSize);
                 this.grid.isLoading = false;

@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
-import { ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
     IgxColumnComponent,
@@ -7,9 +7,9 @@ import {
     IgxGridCellComponent,
     IgxListComponent,
     IgxOverlayService,
-    IgxTreeGridComponent
+    IgxTreeGridComponent,
+    IActiveNodeChangeEventArgs
 } from "igniteui-angular";
-import { IgxGridExpandableCellComponent } from "igniteui-angular/lib/grids/grid/expandable-cell.component";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { generateEmployeeDetailedFlatData } from "../data/employees-flat-detailed";
@@ -135,8 +135,8 @@ const theadKeyCombinations = [
 
 const tbodyKeyCombinations: Item[] = [
     new Item("enter", "enter in edit mode", false, ItemAction.Editable),
-    new Item("alt + arrow left/up", "collapse row", false, ItemAction.Always),
-    new Item("alt + arrow right/down", "expand row", false, ItemAction.Always),
+    new Item("alt + arrow left/up", "collapse row", false, ItemAction.Collapsible),
+    new Item("alt + arrow right/down", "expand row", false, ItemAction.Collapsible),
     new Item("ctrl + Home/End", "navigates to the upper-left/bottom-right cell", false, ItemAction.Always)
 ];
 
@@ -199,27 +199,15 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
 
     public constructor(private cdr: ChangeDetectorRef, private _overlay: IgxOverlayService) { }
 
-    @HostListener("keyup.tab", ["$event"])
-    @HostListener("keyup.shift.tab", ["$event"])
-    public onTab(evt) {
+    public onActiveNodeChange(evt: IActiveNodeChangeEventArgs) {
         if (this.tgrid.crudService.cell) {
             return;
         }
 
-        const gridSection = evt.srcElement.className;
+        const gridSection = evt.row < 0 ? GridSection.THEAD : evt.row === this.tgrid.dataView.length ? GridSection.FOOTER : GridSection.TBODY;
         this.changeKeyboardCollection(gridSection);
-    }
-
-    @HostListener("click", ["$event"])
-    public onClick() {
-        if (this.tgrid.crudService.cell) {
-            return;
-        }
-
-        const gridSection = document.activeElement.className;
-        this.changeKeyboardCollection(gridSection);
-        this.toggleHeaderCombinations();
-        this.toggleBodyCombinations();
+        this.toggleHeaderCombinations(evt);
+        this.toggleBodyCombinations(evt);
     }
 
     public ngOnInit() {
@@ -244,11 +232,6 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
                     this._keyboardHandler.selectItem(2);
             });
 
-        this.tgrid.onSelection.pipe(takeUntil(this._destroyer))
-            .subscribe((args) => {
-                this.handleDOMSelection(args.event);
-            });
-
         this.listref.onItemClicked.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 args.event.stopPropagation();
@@ -271,28 +254,27 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         evt.checked ? this._keyboardHandler.selectItem(idx) : this._keyboardHandler.deselectItem(idx);
     }
 
-    public changeKeyboardCollection(gridSection) {
+    public changeKeyboardCollection(gridSection: GridSection) {
         switch (gridSection) {
             case GridSection.THEAD:
                 this._keyboardHandler.collection = theadKeyCombinations;
-                this._keyboardHandler.gridSection = GridSection.THEAD;
                 break;
             case GridSection.TBODY:
                 this._keyboardHandler.collection = tbodyKeyCombinations;
-                this._keyboardHandler.gridSection = GridSection.TBODY;
                 break;
             case GridSection.FOOTER:
                 this._keyboardHandler.collection = summaryCombinations;
-                this._keyboardHandler.gridSection = GridSection.FOOTER;
                 break;
             default:
                 this._keyboardHandler.collection = [];
                 return;
         }
+        this._keyboardHandler.gridSection = gridSection;
     }
 
     public gridKeydown(evt) {
         const key = evt.key.toLowerCase();
+        if (key === "tab") { return; }
         if (this._keyboardHandler.gridSection === GridSection.FOOTER) {
             switch (key) {
                 case "end":
@@ -312,17 +294,14 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
             }
             return;
         }
-
+        const activeNode = this.tgrid.navigation.activeNode;
         if (this._keyboardHandler.gridSection === GridSection.THEAD) {
-            this.toggleHeaderCombinations();
             if (key === "l" && evt.altKey) {
                 this._keyboardHandler.selectItem(4);
                 return;
             }
-
-            const activeCol = this.tgrid.navigation.activeNode;
             const col = this.tgrid.visibleColumns.find
-                (c => c.visibleIndex === activeCol.column && c.level === activeCol.level);
+                (c => c.visibleIndex === activeNode.column && c.level === activeNode.level);
             if (key === "l" && evt.ctrlKey && evt.shiftKey && col && !col.columnGroup && col.filterable) {
                 this._keyboardHandler.selectItem(3);
             }
@@ -333,31 +312,23 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         }
 
         if (this._keyboardHandler.gridSection === GridSection.TBODY) {
-            this.toggleBodyCombinations();
             if (key === "enter") {
-                const activeCell = this.tgrid.navigation.activeNode;
-                const cell = this.tgrid.getCellByColumnVisibleIndex(activeCell.row, activeCell.column);
+                const cell = this.tgrid.getCellByColumnVisibleIndex(activeNode.row, activeNode.column);
                 if (cell && cell.column.editable && cell.editMode) {
                     this._keyboardHandler.selectItem(0);
                 }
             }
+            if ((evt.code === "End" || evt.code === "Home") && evt.ctrlKey) {
+                this._keyboardHandler.selectItem(3);
+                this.cdr.detectChanges();
+            }
         }
     }
 
-    public handleDOMSelection(evt) {
-        const target = evt.target.className;
-        if (target === GridSection.TBODY && (evt.code === "End" || evt.code === "Home") && evt.ctrlKey) {
-            this._keyboardHandler.selectItem(3);
-            this.cdr.detectChanges();
-        }
-    }
-
-    public toggleHeaderCombinations() {
+    public toggleHeaderCombinations(activeNode) {
         if (this._keyboardHandler.gridSection !== GridSection.THEAD) {
             return;
         }
-
-        const activeNode = this.tgrid.navigation.activeNode;
         const currColumn = this.tgrid.columnList
             .find(c => c.visibleIndex === activeNode.column && c.level === activeNode.level);
 
@@ -365,22 +336,16 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         this._keyboardHandler.enableActionItems(actions);
     }
 
-    public toggleBodyCombinations() {
-        if (this._keyboardHandler.gridSection !== GridSection.TBODY) {
+    public toggleBodyCombinations(activeNode) {
+        const rowRef = this.tgrid.gridAPI.get_row_by_index(activeNode.row);
+        if (this._keyboardHandler.gridSection !== GridSection.TBODY || !rowRef) {
             return;
         }
-        const row = this.tgrid.navigation.activeNode.row;
-        const column = this.tgrid.navigation.activeNode.column;
-        const rowRef = this.tgrid.gridAPI.get_row_by_index(row);
-        if (!rowRef) {
-            return;
-        }
-
-        const cell = this.tgrid.gridAPI.get_cell_by_visible_index(row, column);
+        const cell = this.tgrid.gridAPI.get_cell_by_visible_index(activeNode.row, activeNode.column);
         this.toggleCellCombinations(cell);
     }
 
-    public toggleCellCombinations(cell?: IgxGridCellComponent | IgxGridExpandableCellComponent) {
+    public toggleCellCombinations(cell?: IgxGridCellComponent) {
         if (this._keyboardHandler.gridSection !== GridSection.TBODY) {
             return;
         }
@@ -394,8 +359,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         if (col.sortable) {
             res.push(ItemAction.Sortable);
         }
-
-        if (col.filterable && col.elementRef.nativeElement.tagName !== ElementTags.COLUMN_GROUP) {
+        if (col.filterable && !col.columnGroup) {
             res.push(ItemAction.Filterable);
         }
 
@@ -414,13 +378,14 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         return res;
     }
 
-    public extractCellActions(cell: IgxGridCellComponent | IgxGridExpandableCellComponent) {
+    public extractCellActions(cell: IgxGridCellComponent) {
         const res = [];
         if (cell.editable) {
             res.push(ItemAction.Editable);
         }
-
-        res.push(ItemAction.Collapsible);
+        if (cell.row.treeRow.children && cell.row.treeRow.children.length) {
+            res.push(ItemAction.Collapsible);
+        }
         return res;
     }
 }

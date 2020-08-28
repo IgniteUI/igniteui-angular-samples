@@ -26,6 +26,7 @@ import { IconSample5Component } from "./icon/icon-sample-5/icon-sample-5.compone
 import { IconStylingSample } from "./icon/icon-styling-sample/icon-styling-sample.component";
 import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
+import { IgxForHorizontalComponent } from "./igxFor/igxFor-horizontal-sample/igxFor-horizontal.component";
 import {
     LinearDynamicSampleComponent
 } from "./linear-progressbar/linear-dynamic-sample/linear-dynamic-sample.component";
@@ -47,6 +48,7 @@ import { TextHighlightSample1Component
 import { TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
 import { TextHighlightStyleComponent } from "./text-highlight/text-highlight-style/text-highlight-style.component";
+import { MaterialIconsExtendedComponent } from "./icon/material-icons-extended/material-icons-extended.component";
 
 export const dataDisplayRoutes: Routes = [
     {
@@ -130,6 +132,11 @@ export const dataDisplayRoutes: Routes = [
         path: "igx-for-sample-1"
     },
     {
+        component: IgxForHorizontalComponent,
+        data: dataDisplayRoutesData["igx-for-sample-2"],
+        path: "igx-for-sample-2"
+    },
+    {
         component: LinearDynamicSampleComponent,
         data: dataDisplayRoutesData["linear-dynamic-sample"],
         path: "linear-dynamic-sample"
@@ -203,6 +210,11 @@ export const dataDisplayRoutes: Routes = [
         component: ChipStylingSampleComponent,
         data: dataDisplayRoutesData["chip-styling"],
         path: "chip-styling"
+    },
+    {
+        component: MaterialIconsExtendedComponent,
+        data: dataDisplayRoutesData["material-icons-extended"],
+        path: "material-icons-extended"
     }
 ];
 

@@ -1,6 +1,15 @@
-<article class="sample-column calendar-wrapper">
-    <igx-calendar #calendar selection="range" (onSelection)="verifyRange($event)"></igx-calendar>
-    <igx-dialog #alert title="Notification" message="Please select a range of up to 5 days!" leftButtonLabel="OK"
-        (onLeftButtonSelect)="alert.close()">
-    </igx-dialog>
-</article>
+<div class="calendar-section">
+    <article class="calendar-wrapper">
+        <igx-calendar #calendar selection="multi" (onSelection)="onSelection($event)" (viewDateChanged)="viewDateChanged($event)" (activeViewChanged)="activeViewChanged($event)"></igx-calendar>
+    </article>
+</div>
+<div class="calendar-section" style="width: calc(100% - 324px)">
+    <div class="selected-data-area">
+        <div class="logContainer">
+            <div class="highlight">
+                <span>{{loggerHeader}}</span>
+            </div>
+            <div class="logger"></div>
+        </div>
+    </div>
+</div>

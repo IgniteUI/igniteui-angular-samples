@@ -1,15 +1,14 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
-import { ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import {
     IgxColumnComponent,
     IgxColumnGroupComponent,
     IgxGridCellComponent,
     IgxGridComponent,
     IgxListComponent,
-    SortingDirection
+    SortingDirection,
+    IActiveNodeChangeEventArgs
 } from "igniteui-angular";
-import { IgxGridExpandableCellComponent } from "igniteui-angular/lib/grids/grid/expandable-cell.component";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { DATA } from "../../data/customers";
@@ -193,27 +192,15 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
     public constructor(private cdr: ChangeDetectorRef) { }
 
-    @HostListener("keyup.tab", ["$event"])
-    @HostListener("keyup.shift.tab", ["$event"])
-    public onTab(evt) {
+
+    public onActiveNodeChange(evt: IActiveNodeChangeEventArgs) {
         if (this.grid.crudService.cell) {
             return;
         }
-
-        const gridSection = evt.srcElement.className;
+        const gridSection = evt.row < 0 ? GridSection.THEAD : evt.row === this.grid.dataView.length ? GridSection.FOOTER : GridSection.TBODY;
         this.changeCombinationsCollection(gridSection);
-    }
-
-    @HostListener("click", ["$event"])
-    public onClick() {
-        if (this.grid.crudService.cell) {
-            return;
-        }
-
-        const gridSection = document.activeElement.className;
-        this.changeCombinationsCollection(gridSection);
-        this.toggleHeaderCombinations();
-        this.toggleBodyCombinations();
+        this.toggleHeaderCombinations(evt);
+        this.toggleBodyCombinations(evt);
     }
 
     public ngOnInit() {
@@ -256,10 +243,6 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
             { fieldName: "ProductName", dir: SortingDirection.Asc }
         ];
 
-        this.grid.onSelection.pipe(takeUntil(this._destroyer))
-            .subscribe((args) => {
-                this.handleDOMSelection(args.event);
-            });
 
         this.listref.onItemClicked.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
@@ -274,6 +257,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
     public gridKeydown(evt) {
         const key = evt.key.toLowerCase();
+        if (key === 'tab') { return; }
         if (this._keyboardHandler.gridSection === GridSection.FOOTER) {
             switch (key) {
                 case "end":
@@ -294,16 +278,14 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
             return;
         }
 
+        const activeNode = this.grid.navigation.activeNode;
         if (this._keyboardHandler.gridSection === GridSection.THEAD) {
-            this.toggleHeaderCombinations();
             if (key === "l" && evt.altKey) {
                 this._keyboardHandler.selectItem(5);
                 return;
             }
-
-            const activeCol = this.grid.navigation.activeNode;
             const col = this.grid.visibleColumns.find
-                (c => c.visibleIndex === activeCol.column && c.level === activeCol.level);
+                (c => c.visibleIndex === activeNode.column && c.level === activeNode.level);
             if (key === "l" && evt.ctrlKey && evt.shiftKey  && col && !col.columnGroup && col.filterable) {
                     this._keyboardHandler.selectItem(4);
             }
@@ -321,13 +303,15 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         }
 
         if (this._keyboardHandler.gridSection === GridSection.TBODY) {
-            this.toggleBodyCombinations();
             if (key === "enter") {
-                const activeCell = this.grid.navigation.activeNode;
-                const cell = this.grid.getCellByColumnVisibleIndex(activeCell.row, activeCell.column);
+                const cell = this.grid.getCellByColumnVisibleIndex(activeNode.row, activeNode.column);
                 if (cell && cell.column.editable && cell.editMode) {
                     this._keyboardHandler.selectItem(0);
                 }
+            }
+            if ((key === "end" || key === "home") && evt.ctrlKey) {
+                this._keyboardHandler.selectItem(4);
+                this.cdr.detectChanges();
             }
         }
     }
@@ -344,12 +328,10 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         evt.checked ? this._keyboardHandler.selectItem(idx) : this._keyboardHandler.deselectItem(idx);
     }
 
-    public toggleHeaderCombinations() {
+    public toggleHeaderCombinations(activeNode) {
         if (this._keyboardHandler.gridSection !== GridSection.THEAD) {
             return;
         }
-
-        const activeNode = this.grid.navigation.activeNode;
         const currColumn = this.grid.columnList
             .find(c => c.visibleIndex === activeNode.column && c.level === activeNode.level);
 
@@ -357,62 +339,42 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         this._keyboardHandler.enableActionItems(actions);
     }
 
-    public toggleBodyCombinations() {
-        if (this._keyboardHandler.gridSection !== GridSection.TBODY) {
-            return;
-        }
-
-        const row = this.grid.navigation.activeNode.row;
-        const column = this.grid.navigation.activeNode.column;
-        const rowRef = this.grid.gridAPI.get_row_by_index(row);
-        if (!rowRef) {
+    public toggleBodyCombinations(activeNode) {
+        const rowRef = this.grid.gridAPI.get_row_by_index(activeNode.row);
+        if (this._keyboardHandler.gridSection !== GridSection.TBODY || !rowRef) {
             return;
         }
 
         if (rowRef.nativeElement.tagName === ElementTags.GROUPBY_ROW) {
             this._keyboardHandler.enableActionItems([ItemAction.Expandable]);
         } else {
-            const cell = this.grid.gridAPI.get_cell_by_visible_index(row, column);
+            const cell = this.grid.gridAPI.get_cell_by_visible_index(activeNode.row, activeNode.column);
             this.toggleCellCombinations(cell);
         }
 
     }
 
-    public toggleCellCombinations(cell?: IgxGridCellComponent | IgxGridExpandableCellComponent) {
-        if (this._keyboardHandler.gridSection !== GridSection.TBODY) {
-            return;
-        }
-
+    public toggleCellCombinations(cell?: IgxGridCellComponent) {
         const actions = this.extractCellActions(cell);
         this._keyboardHandler.enableActionItems(actions);
     }
 
-    public changeCombinationsCollection(gridSection) {
+    public changeCombinationsCollection(gridSection: GridSection) {
         switch (gridSection) {
             case GridSection.THEAD:
                 this._keyboardHandler.collection = theadKeyCombinations;
-                this._keyboardHandler.gridSection = GridSection.THEAD;
                 break;
             case GridSection.TBODY:
                 this._keyboardHandler.collection = tbodyKeyCombinations;
-                this._keyboardHandler.gridSection = GridSection.TBODY;
                 break;
             case GridSection.FOOTER:
                 this._keyboardHandler.collection = summaryCombinations;
-                this._keyboardHandler.gridSection = GridSection.FOOTER;
                 break;
             default:
                 this._keyboardHandler.collection = [];
                 return;
         }
-    }
-
-    public handleDOMSelection(evt) {
-        const target = evt.target.className;
-        if (target === GridSection.TBODY && (evt.code === "End" || evt.code === "Home") && evt.ctrlKey) {
-            this._keyboardHandler.selectItem(4);
-            this.cdr.detectChanges();
-        }
+        this._keyboardHandler.gridSection = gridSection;
     }
 
     public extractColumnActions(col: IgxColumnComponent | IgxColumnGroupComponent) {
@@ -421,7 +383,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
             res.push(ItemAction.Sortable);
         }
 
-        if (col.filterable && col.elementRef.nativeElement.tagName !== ElementTags.COLUMN_GROUP) {
+        if (col.filterable && !col.columnGroup) {
             res.push(ItemAction.Filterable);
         }
 
@@ -440,7 +402,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         return res;
     }
 
-    public extractCellActions(cell: IgxGridCellComponent | IgxGridExpandableCellComponent) {
+    public extractCellActions(cell: IgxGridCellComponent) {
         const res = [];
         if (cell.editable) {
             res.push(ItemAction.Editable);

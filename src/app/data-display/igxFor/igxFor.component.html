@@ -18,15 +18,9 @@
                 igxRipple="pink"
                 igxRippleTarget=".igx-list__item"
                 *igxFor="let item of data | igxFilter: fo; scrollOrientation : 'vertical'; containerSize: '500px'; itemSize: '50px'">
-                <div class="item-container">
-                    <div class="contact">
-                        <igx-avatar [src]="item.avatar" roundShape="true"></igx-avatar>
-                        <div class="contact__info">
-                            <span class="name">{{item.name}}</span>
-                        </div>
-                    </div>
-                    <igx-icon [color]="item.favorite ? 'orange' : 'lightgray'">star</igx-icon>
-                </div>
+                <igx-avatar igxListThumbnail [src]="item.avatar" roundShape="true"></igx-avatar>
+            <span igxListLineTitle>{{ item.name }}</span>
+            <igx-icon igxListAction [color]="item.favorite ? 'orange' : 'lightgray'" (click)="toggleFavorite(item)">star</igx-icon>
             </igx-list-item>
         </div>
     </igx-list>

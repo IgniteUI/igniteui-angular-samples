@@ -49,11 +49,13 @@ import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
 import { GridExternalAdvancedFilteringComponent } from "./grid-external-advanced-filtering/grid-external-advanced-filtering.component";
 import { GridExternalExcelStyleFilteringComponent } from "./grid-external-excel-style-filtering/grid-external-excel-style-filtering.component";
+import { GridExternalOutletComponent } from "./grid-external-outlet-sample/grid-external-outlet-sample.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupByCustomSampleComponent } from './grid-groupby-custom-sample/grid-groupby-custom-sample.component';
 import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
@@ -68,6 +70,7 @@ import { GridMultiRowLayoutStylingComponent } from "./grid-multi-row-layout-styl
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridMultipleRowDragComponent } from "./grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
+import { GridNestedDataBindAminoacidComponent } from "./grid-nested-data-binding-2/grid-nested-data-bind2";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
@@ -113,6 +116,7 @@ import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
+import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
 
 @NgModule({
     declarations: [
@@ -133,6 +137,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         FilteringSampleComponent,
         FilteringTemplateSampleComponent,
         GridGroupBySampleComponent,
+        GridGroupByCustomSampleComponent,
         GridGroupBySummarySampleComponent,
         GridGroupBySummaryStylingSampleComponent,
         GridMovingSampleComponent,
@@ -176,8 +181,9 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         AboutComponent,
         GridMultiCellSelectionComponent,
         GridMultiCellSelectionStyleComponent,
-        GridNestedDataBindComponent,
         GridCompositeDataComponent,
+        GridNestedDataBindComponent,
+        GridNestedDataBindAminoacidComponent,
         GridMultiRowLayoutComponent,
         GridMultiRowLayoutConfigurationComponent,
         GridDragSampleComponent,
@@ -198,6 +204,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridFilteringStyleComponent,
         GridExcelStyleFilteringLoadOnDemandComponent,
         GridExternalExcelStyleFilteringComponent,
+        GridExternalOutletComponent,
         GridCustomSummariesSelection,
         GridMultiRowLayoutStylingComponent,
         PinningStylingComponent,
@@ -216,7 +223,8 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
         GridColumnSelectionStylesComponent,
         GridKeyboardnavGuide,
         RemotePagingDefaultTemplateComponent,
-        RemotePagingBatchEditingComponent
+        RemotePagingBatchEditingComponent,
+        GridSortingIndicatorsComponent
     ],
     imports: [
         CommonModule,
