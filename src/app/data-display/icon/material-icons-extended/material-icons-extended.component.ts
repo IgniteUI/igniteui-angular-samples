@@ -11,11 +11,7 @@ import { DOCUMENT } from "@angular/common";
 import { IgxIconService, ISelectionEventArgs } from "igniteui-angular";
 
 import {
-    finance,
-    health,
-    programming,
-    logos,
-    socialMedia,
+    all as imxIcons,
     IconCategory,
     IMXIcon
 } from "@igniteui/material-icons-extended";
@@ -38,21 +34,28 @@ export class MaterialIconsExtendedComponent implements OnInit {
     ) {}
 
     public categories: ICategoryOption[] = [
-        { text: "All", category: "all" },
-        { text: "Health", category: "health" },
-        { text: "Programming", category: "programming" },
-        { text: "Finance", category: "finance" },
-        { text: "Logos", category: "logos" },
-        { text: "Social Media", category: "social media" }
+        {
+            text: "All",
+            category: "all"
+        }
     ];
 
-    public allIcons = [
-        ...health,
-        ...programming,
-        ...finance,
-        ...logos,
-        ...socialMedia
-    ];
+    public setCategories() {
+        const categories = IconCategory.values().map(
+            (category) =>
+                ({
+                    text: category
+                        .split(" ")
+                        .map((w) => w.replace(/^\w/, (c) => c.toUpperCase()))
+                        .join(" "),
+                    category
+                } as ICategoryOption)
+        );
+
+        this.categories = [...this.categories, ...categories];
+    }
+
+    public allIcons = imxIcons;
 
     public selectedCategory: IconCategory | "all" = "all";
 
@@ -65,8 +68,12 @@ export class MaterialIconsExtendedComponent implements OnInit {
     }
 
     addIcons() {
-        for (const icon of this.allIcons) {
-            this.iconService.addSvgIconFromText(icon.name, icon.value, "imx-icons");
+        for (const icon of imxIcons) {
+            this.iconService.addSvgIconFromText(
+                icon.name,
+                icon.value,
+                "imx-icons"
+            );
         }
     }
 
@@ -92,17 +99,24 @@ export class MaterialIconsExtendedComponent implements OnInit {
         this.renderer.removeChild(this.document.body, tempField);
 
         if (element.innerText !== "done") {
-            this.renderer.setProperty(element, 'innerText', 'done');
-            this.renderer.addClass(target, "sample__grid-item-clipboard--success");
+            this.renderer.setProperty(element, "innerText", "done");
+            this.renderer.addClass(
+                target,
+                "sample__grid-item-clipboard--success"
+            );
 
             setTimeout(() => {
-                this.renderer.setProperty(element, 'innerText', 'content_copy');
-                this.renderer.removeClass(target, "sample__grid-item-clipboard--success");
+                this.renderer.setProperty(element, "innerText", "content_copy");
+                this.renderer.removeClass(
+                    target,
+                    "sample__grid-item-clipboard--success"
+                );
             }, 1500);
         }
     }
 
     ngOnInit() {
+        this.setCategories();
         this.addIcons();
     }
 }
