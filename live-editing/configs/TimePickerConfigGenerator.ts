@@ -27,6 +27,9 @@ import {
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import {
+    TimepickerLabelComponent
+} from "../../src/app/scheduling/timepicker/timepicker-label/timepicker-label.component";
 
 export class TimePickerConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {

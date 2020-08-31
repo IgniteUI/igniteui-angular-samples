@@ -54,6 +54,7 @@ import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/tim
 import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
 import { TimePickerSample6Component } from "./timepicker/timepicker-sample-6/timepicker-sample-6.component";
 import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/timepicker-styling.component";
+import { TimepickerLabelComponent } from './timepicker/timepicker-label/timepicker-label.component';
 
 @NgModule({
     declarations: [
@@ -100,7 +101,8 @@ import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/time
         DateRangePickerStartEndComponent,
         DateRangePickerValidationComponent,
         StyledDateRangePickerComponent,
-        FlightBookingComponent
+        FlightBookingComponent,
+        TimepickerLabelComponent
     ],
     imports: [
         CommonModule,
