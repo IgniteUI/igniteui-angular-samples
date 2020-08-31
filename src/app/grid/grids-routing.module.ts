@@ -108,6 +108,7 @@ import {
     GridMultiColumnHeadersStylingComponent
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
+import { GridExportVisualizationComponent } from "./grid-export-visualization/grid-export-visualization.component";
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -620,6 +621,11 @@ export const gridsRoutes: Routes = [
         component: GridSortingIndicatorsComponent,
         data: gridsRoutesData["grid-sorting-indicators"],
         path: "grid-sorting-indicators"
+    },
+    {
+        component: GridExportVisualizationComponent,
+        data: gridsRoutesData["exporting-visualization"],
+        path: "exporting-visualization"
     }
 ];
 
