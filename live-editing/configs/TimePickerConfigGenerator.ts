@@ -28,7 +28,7 @@ import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import {
-    TimepickerLabelComponent
+    TimePickerLabelComponent
 } from "../../src/app/scheduling/timepicker/timepicker-label/timepicker-label.component";
 
 export class TimePickerConfigGenerator implements IConfigGenerator {
@@ -117,6 +117,17 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTimePickerModule, TimePickerStylingComponent],
                 ngDeclarations: [TimePickerStylingComponent],
+                ngImports: [IgxTimePickerModule]
+            }),
+            shortenComponentPathBy: "/scheduling/timepicker/"
+        }));
+
+        // time picker custom label
+        configs.push(new Config({
+            component: TimePickerLabelComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTimePickerModule, TimePickerLabelComponent],
+                ngDeclarations: [TimePickerLabelComponent],
                 ngImports: [IgxTimePickerModule]
             }),
             shortenComponentPathBy: "/scheduling/timepicker/"

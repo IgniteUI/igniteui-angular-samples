@@ -44,7 +44,7 @@ import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/tim
 import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
 import { TimePickerSample6Component } from "./timepicker/timepicker-sample-6/timepicker-sample-6.component";
 import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/timepicker-styling.component";
-import { TimepickerLabelComponent } from "./timepicker/timepicker-label/timepicker-label.component";
+import { TimePickerLabelComponent } from "./timepicker/timepicker-label/timepicker-label.component";
 
 export const schedulingRoutes: Routes = [
     {
@@ -193,7 +193,7 @@ export const schedulingRoutes: Routes = [
         path: "timepicker-dropdown"
     },
     {
-    component: TimepickerLabelComponent,
+    component: TimePickerLabelComponent,
     data: schedulingRoutesData["timepicker-label"],
     path: "timepicker-label"
     },

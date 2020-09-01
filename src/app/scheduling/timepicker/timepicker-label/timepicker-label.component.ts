@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { InteractionMode } from 'igniteui-angular';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -7,11 +6,5 @@ import { InteractionMode } from 'igniteui-angular';
   templateUrl: './timepicker-label.component.html',
   styleUrls: ['./timepicker-label.component.scss']
 })
-export class TimepickerLabelComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class TimePickerLabelComponent {
 }
