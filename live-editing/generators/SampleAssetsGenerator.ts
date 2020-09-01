@@ -11,7 +11,6 @@ import { StyleSyntax } from "./misc/StyleSyntax";
 
 import { ModuleWithProviders, Type } from "@angular/core";
 
-import { Route } from "@angular/router";
 import { LiveEditingFile } from "./misc/LiveEditingFile";
 import { SampleDefinitionFile } from "./misc/SampleDefinitionFile";
 
@@ -88,36 +87,24 @@ export class SampleAssetsGenerator extends Generator {
     }
 
     private _generateRoutes() {
-        let modulePaths = new Map<string, string>();
-        const appRouting = this.getAppRouting();
-
-        for (let i = 0; i < appRouting.length; i++) {
-            let route: Route = appRouting[i];
-            if (route.component) {
-                this._componentRoutes.set(route.component.name, route.path);
-            } else if (route.loadChildren) {
-                let moduleName = route.data.toString();
-                modulePaths.set(moduleName, route.path);
-            }
-        }
         console.log("Live-Editing - generating component routes...");
 
         const moduleRoutes = this.getModuleRoutes();
         for (let i = 0; i < moduleRoutes.length; i++) {
-            let moduleName = moduleRoutes[i].module.name;
-            let modulePath = modulePaths.get(moduleName);
+            let moduleName = moduleRoutes[i].module;
+            let modulePath = moduleRoutes[i].path;
             if (this._logsEnabled) {
                 let moduleStat =  moduleRoutes[i].routes.length + " routes";
                 let moduleInfo =  moduleName.replace("Module", " module");
                 console.log("Live-Editing - generated " + moduleStat + " for " + moduleInfo);
             }
             for (let j = 0; j < moduleRoutes[i].routes.length; j++) {
-                let route: Route = moduleRoutes[i].routes[j];
+                let route = moduleRoutes[i].routes[j];
                 let routePath = modulePath;
                 if (route.path) {
                     routePath += "/" + route.path;
                 }
-                this._componentRoutes.set(route.component.name, routePath);
+                this._componentRoutes.set(route.component, routePath);
             }
         }
     }
@@ -323,8 +310,8 @@ export class SampleAssetsGenerator extends Generator {
                 if (appModuleNgImport.name !== undefined) {
                     appModuleNgImports.push(appModuleNgImport.name);
                 } else {
-                    let appModuleNgImportWithProviders: ModuleWithProviders =
-                        config.appModuleConfig.ngImports[i] as ModuleWithProviders;
+                    let appModuleNgImportWithProviders: ModuleWithProviders<any> =
+                        config.appModuleConfig.ngImports[i] as ModuleWithProviders<any>;
                     let useClass = "";
                     let forRoot = ".forRoot()";
                     if (appModuleNgImportWithProviders.providers
