@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { data } from '../../data/athletesData';
+import { INVOICE_DATA } from '../../data/invoiceData';
 
 @Component({
     selector: 'app-grid-export-visualization',
@@ -12,9 +12,9 @@ export class GridExportVisualizationComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        for (let i = 0; i < 25; i++) {
-            for (let c = 0; c < data.length; c++) {
-                this.localData.push(data[c]);
+        for (let i = 0; i < 50; i++) {
+            for (let c = 0; c < INVOICE_DATA.length; c++) {
+                this.localData.push(INVOICE_DATA[c]);
             }
         }
     }
