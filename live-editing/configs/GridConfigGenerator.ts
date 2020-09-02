@@ -116,7 +116,8 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import {GridSortingIndicatorsComponent} from '../../src/app/grid/grid-sorting-indicators/grid-sorting-indicators.component'
+import { GridSortingIndicatorsComponent } from '../../src/app/grid/grid-sorting-indicators/grid-sorting-indicators.component';
+import { GridExportVisualizationComponent } from '../../src/app/grid/grid-export-visualization/grid-export-visualization.component';
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -191,7 +192,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridGroupBySummaryStylingSampleComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
                     IgxIconModule, IgxBadgeModule]
-                })
+            })
         }));
 
         configs.push(new Config({
@@ -731,7 +732,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: GridExcelStyleFilteringLoadOnDemandComponent,
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service.ts",
-                              "/src/app/grid/grid-excel-style-filtering-load-on-demand/employees.ts"],
+                "/src/app/grid/grid-excel-style-filtering-load-on-demand/employees.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridExcelStyleFilteringLoadOnDemandComponent, IgxGridModule, RemoteValuesService, IgxPreventDocumentScrollModule],
                 ngDeclarations: [GridExcelStyleFilteringLoadOnDemandComponent],
@@ -744,7 +745,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: ExcelStyleFilteringStyleComponent,
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ExcelStyleFilteringStyleComponent, IgxGridModule , IgxPreventDocumentScrollModule],
+                imports: [ExcelStyleFilteringStyleComponent, IgxGridModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [ExcelStyleFilteringStyleComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxGridModule]
             })
@@ -754,7 +755,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridExternalExcelStyleFilteringComponent,
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridExternalExcelStyleFilteringComponent, IgxGridModule , IgxPreventDocumentScrollModule],
+                imports: [GridExternalExcelStyleFilteringComponent, IgxGridModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [GridExternalExcelStyleFilteringComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxGridModule]
             })
@@ -764,7 +765,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridExternalAdvancedFilteringComponent,
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridExternalAdvancedFilteringComponent, IgxGridModule , IgxPreventDocumentScrollModule],
+                imports: [GridExternalAdvancedFilteringComponent, IgxGridModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [GridExternalAdvancedFilteringComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxGridModule]
             })
@@ -1045,7 +1046,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridAdvancedFilteringStyleComponent,
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridAdvancedFilteringStyleComponent, IgxGridModule , IgxPreventDocumentScrollModule],
+                imports: [GridAdvancedFilteringStyleComponent, IgxGridModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [GridAdvancedFilteringStyleComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxGridModule]
             })
@@ -1067,7 +1068,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridAllDataSummaryComponent,
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridAllDataSummaryComponent, IgxGridModule , IgxPreventDocumentScrollModule],
+                imports: [GridAllDataSummaryComponent, IgxGridModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [GridAllDataSummaryComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxGridModule]
             })
@@ -1259,6 +1260,17 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [GridSortingIndicatorsComponent, IgxGridModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [GridSortingIndicatorsComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridExportVisualizationComponent,
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/utils.ts", "/src/app/data/invoiceData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridExportVisualizationComponent, IgxGridModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [GridExportVisualizationComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxGridModule],
                 ngProviders: []
             })

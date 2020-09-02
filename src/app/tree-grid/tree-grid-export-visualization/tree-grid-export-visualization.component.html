@@ -1,0 +1,18 @@
+<div class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll [data]="localData" [autoGenerate]="false" primaryKey="ID"
+        foreignKey="ParentID" height="300px" width="100%" primaryKey="ID"
+        [showToolbar]="true" exportText="Export" [exportExcel]="true" exportExcelText="ExportToExcel"
+        [exportCsv]="true" exportCsvText="ExportToCSV">
+        <igx-column field="ID" header="Product ID" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="Name" header="Product Name" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Unit Price" dataType="number">
+            <ng-template igxCell let-cell="cell" let-val let-row>
+                {{+val | currency}}
+            </ng-template>
+        </igx-column>
+        <igx-column field="AddedDate" header="Added Date" [dataType]="'date'">
+        </igx-column>
+    </igx-tree-grid>
+</div>

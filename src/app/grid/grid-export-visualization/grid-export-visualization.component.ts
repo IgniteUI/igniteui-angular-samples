@@ -6,12 +6,9 @@ import { INVOICE_DATA } from '../../data/invoiceData';
     templateUrl: './grid-export-visualization.component.html',
     styleUrls: ['./grid-export-visualization.component.scss']
 })
-export class GridExportVisualizationComponent implements OnInit {
+export class GridExportVisualizationComponent {
     public localData = [];
     constructor() {
-    }
-
-    ngOnInit(): void {
         for (let i = 0; i < 50; i++) {
             for (let c = 0; c < INVOICE_DATA.length; c++) {
                 this.localData.push(INVOICE_DATA[c]);

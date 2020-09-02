@@ -53,7 +53,7 @@ import { HGridDragSampleComponent } from "../../src/app/hierarchical-grid/hierar
 import { HGridRowEditStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-edit-style/hierarchical-grid-row-edit-style.component";
 import { HGridRowEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
 import { HGridRowPinningExtraColumnSampleComponent } from '../../src/app/hierarchical-grid/hierarchical-grid-row-pinning-extra-column/hierarchical-grid-row-pinning-extra-column.component';
-import { HGridRowPinningStylingSampleComponent } from'../../src/app/hierarchical-grid/hierarchical-grid-row-pinning-styling/hierarchical-grid-row-pinning-styling.component';
+import { HGridRowPinningStylingSampleComponent } from '../../src/app/hierarchical-grid/hierarchical-grid-row-pinning-styling/hierarchical-grid-row-pinning-styling.component';
 import { HGridRowPinningSampleComponent } from '../../src/app/hierarchical-grid/hierarchical-grid-row-pinning/hierarchical-grid-row-pinning.component';
 import { HGridRowReorderComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
 import { HierarchicalGridRightPinningSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-sample-right-pinning/hierarchical-grid-right-pinning.component";
@@ -76,7 +76,7 @@ import { IConfigGenerator } from "./core/IConfigGenerator";
 import { HGridSaveStateComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-save-state/hGrid-state.component";
 import { HGridAboutComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-save-state/about.component";
 import { HierarchicalGridExternalOutletComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-external-outlet/hierarchical-grid-external-outlet-sample.component";
-
+import { HierarchicalGridExportVisualizationComponent } from '../../src/app/hierarchical-grid/hierarchical-grid-export-visualization/hierarchical-grid-export-visualization.component';
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -278,7 +278,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridSelectionSampleComponent, IgxSwitchModule,
-                IgxSnackbarModule, IgxButtonGroupModule, IgxPreventDocumentScrollModule],
+                    IgxSnackbarModule, IgxButtonGroupModule, IgxPreventDocumentScrollModule],
                 ngDeclarations: [HGridSelectionSampleComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxHierarchicalGridModule, IgxSwitchModule, IgxSnackbarModule, IgxButtonGroupModule]
             }),
@@ -501,7 +501,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         // Hierarchical Grid Excel Style Filtering Load On Demand Sample
         configs.push(new Config({
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-load-on-demand/remoteValues.service.ts",
-                              "/src/app/hierarchical-grid/data.ts"],
+                "/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HierarchicalGridExcelStyleFilteringLoadOnDemandComponent, RemoteValuesService, IgxPreventDocumentScrollModule],
                 ngDeclarations: [HierarchicalGridExcelStyleFilteringLoadOnDemandComponent],
@@ -784,6 +784,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxPreventDocumentScrollModule, IgxHierarchicalGridModule, IgxToggleModule]
             }),
             component: HierarchicalGridExternalOutletComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HierarchicalGridExportVisualizationComponent, IgxHierarchicalGridModule, IgxToggleModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [HierarchicalGridExportVisualizationComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxHierarchicalGridModule, IgxToggleModule]
+            }),
+            component: HierarchicalGridExportVisualizationComponent
         }));
 
         return configs;
