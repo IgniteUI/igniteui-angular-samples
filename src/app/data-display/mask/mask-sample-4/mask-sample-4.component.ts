@@ -6,7 +6,6 @@ import { Component, Pipe, PipeTransform } from "@angular/core";
 })
 
 export class MaskSample4Component {
-
     public value = 100;
     public displayFormat = new DisplayFormatPipe();
     public inputFormat = new InputFormatPipe();
