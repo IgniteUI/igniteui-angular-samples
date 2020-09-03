@@ -54,7 +54,7 @@ const getHeroArmorsData = () => {
 const getHeroWeaponsData = () => {
     const weapons = {
     "Close Range": ["Short Sword", "Long Sword", "Bastard Sword",
-        "Great Sword", "Sabre", "Katana", "Dagger", "Tochilka"],
+        "Great Sword", "Sabre", "Katana", "Dagger"],
     "Long Range": ["Short Bow", "Long Bow", "Crossbow", "Heavy Crossbow",
         "Throwing Knives", "Throwing Axes", "Shuriken"]
 };
