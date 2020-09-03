@@ -67,6 +67,5 @@ export const hierarchicalGridRoutesData = {
     "hgrid-keyboard-guide": { displayName: "HGrid Keyboard navigation guide", parentName: "Hierarchical Grid" },
     "remote-paging-default-template": { displayName: "HGrid remote paging with default template", parentName: "Hierarchical Grid" },
     "hGrid-state": { displayName: "HGrid Save State", parentName: "Hierarchical Grid" },
-    "hGrid-state-about": { displayName: "About", parentName: "Hierarchical Grid" },
-    "hierarchical-grid-exporting-visualization": {displayName: "Exporting Visualization", parentName: "Hierarchical Grid"}
+    "hGrid-state-about": { displayName: "About", parentName: "Hierarchical Grid" }
 };

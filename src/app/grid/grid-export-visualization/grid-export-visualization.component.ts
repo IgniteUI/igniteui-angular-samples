@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { INVOICE_DATA } from '../../data/invoiceData';
+import { DATA } from '../../data/nwindData';
 
 @Component({
     selector: 'app-grid-export-visualization',
@@ -9,10 +9,18 @@ import { INVOICE_DATA } from '../../data/invoiceData';
 export class GridExportVisualizationComponent {
     public localData = [];
     constructor() {
-        for (let i = 0; i < 50; i++) {
-            for (let c = 0; c < INVOICE_DATA.length; c++) {
-                this.localData.push(INVOICE_DATA[c]);
+        for (let i = 0; i < 1000; i++) {
+            for (let c = 0; c < DATA.length; c++) {
+                this.localData.push(DATA[c]);
             }
+        }
+    }
+
+    public formatDate(val) {
+        if (val !== "Select All") {
+            return new Intl.DateTimeFormat("en-US").format(val);
+        } else {
+            return val;
         }
     }
 }

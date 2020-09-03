@@ -1026,9 +1026,11 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/tree-grid/data/foods.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxPreventDocumentScrollModule, IgxTreeGridModule, TreeGridExportVisualizationComponent, IgxToggleModule],
+                imports: [IgxPreventDocumentScrollModule, IgxTreeGridModule, TreeGridExportVisualizationComponent, IgxToggleModule,
+                    IgxExcelExporterService, IgxCsvExporterService],
                 ngDeclarations: [TreeGridExportVisualizationComponent],
-                ngImports: [IgxPreventDocumentScrollModule, IgxTreeGridModule, IgxToggleModule]
+                ngImports: [IgxPreventDocumentScrollModule, IgxTreeGridModule, IgxToggleModule],
+                ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
             }),
             component: TreeGridExportVisualizationComponent,
             shortenComponentPathBy: "/tree-grid/"
