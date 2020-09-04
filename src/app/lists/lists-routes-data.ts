@@ -1,8 +1,10 @@
 // tslint:disable:object-literal-sort-keys
 
 export const listsRoutesData = {
+    "combo-main": { displayName: "Main Combo", parentName: "Combo" },
     "combo-features": { displayName: "Combos Features", parentName: "Combo" },
-    "combo-binding": { displayName: "Combo Binding", parentName: "Combo" },
+    "combo-valuekey": { displayName: "Combo With ValueKey", parentName: "Combo" },
+    "combo-binding": { displayName: "Combo Without ValueKey", parentName: "Combo" },
     "combo-remote": { displayName: "Remote Combo", parentName: "Combo" },
     "combo-styling": { displayName: "Combo Styling", parentName: "Combo" },
     "combo-template": { displayName: "Templating Combo", parentName: "Combo" },

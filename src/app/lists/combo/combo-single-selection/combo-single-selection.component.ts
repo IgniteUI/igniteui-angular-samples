@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IComboSelectionChangeEventArgs } from "igniteui-angular";
 import { localData } from "./local-data";
 

@@ -4,29 +4,17 @@ button {
 
 .sample-wrapper {
     margin: 16px;
-    max-height: 600px;
 }
 
 .combo-section {
     display: flex;
-    justify-content: space-between;
-    max-width: 630px;
+    width: 100%;
     flex-flow: row wrap;
     margin-bottom: 16px;
 }
 
 .combo {
     width: 430px;
-}
-
-.cities-container {
-    max-width: 630px;
-    max-height: 450px;
-    overflow-y: auto;
-
-    igx-card {
-        margin: 8px 8px 8px 0;
-    }
 }
 
 @media (max-width: 700px) {
