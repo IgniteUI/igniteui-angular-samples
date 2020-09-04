@@ -76,7 +76,6 @@ import { IConfigGenerator } from "./core/IConfigGenerator";
 import { HGridSaveStateComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-save-state/hGrid-state.component";
 import { HGridAboutComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-save-state/about.component";
 import { HierarchicalGridExternalOutletComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-external-outlet/hierarchical-grid-external-outlet-sample.component";
-import { HierarchicalGridExportVisualizationComponent } from '../../src/app/hierarchical-grid/hierarchical-grid-export-visualization/hierarchical-grid-export-visualization.component';
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
