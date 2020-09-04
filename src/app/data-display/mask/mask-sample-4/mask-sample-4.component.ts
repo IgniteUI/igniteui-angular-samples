@@ -6,8 +6,7 @@ import { Component, Pipe, PipeTransform } from "@angular/core";
 })
 
 export class MaskSample4Component {
-
-    public value = 1255;
+    public value = 100;
     public displayFormat = new DisplayFormatPipe();
     public inputFormat = new InputFormatPipe();
 }
@@ -15,21 +14,13 @@ export class MaskSample4Component {
 @Pipe({ name: "displayFormat" })
 export class DisplayFormatPipe implements PipeTransform {
     public transform(value: any): string {
-        let val = value;
-        if (val.indexOf(" %") === -1) {
-            val += " %";
-        }
-        return val;
+        return value + " %";
     }
 }
 
 @Pipe({ name: "inputFormat" })
 export class InputFormatPipe implements PipeTransform {
     public transform(value: any): string {
-        let val = value;
-        if (val.indexOf(" %") !== -1) {
-            val = val.replace(new RegExp(" %", "g"), "");
-        }
-        return val;
+        return value;
     }
 }
