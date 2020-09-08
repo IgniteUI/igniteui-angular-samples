@@ -103,5 +103,6 @@ export const gridsRoutesData = {
     "remote-paging-default-template": { displayName: "Remote Paging with default template", parentName: "Grid" },
     "grid-sample-5": { displayName: "Grid Infinite Scroll", parentName: "Grid" },
     "remote-paging-batch-editing": {displayName: "Remote paging with batch editing", parentName: "Grid"},
-    "grid-sorting-indicators": {displayName: "Grid Sorting Indicators", parentName: "Grid"}
+    "grid-sorting-indicators": {displayName: "Grid Sorting Indicators", parentName: "Grid"},
+    "exporting-visualization": {displayName: "Exporting Visualization", parentName: "Grid"}
 };

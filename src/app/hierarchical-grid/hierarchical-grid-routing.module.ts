@@ -83,7 +83,7 @@ import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/h
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
 import { HGridAboutComponent } from "./hierarchical-grid-save-state/about.component";
-import { HierarchicalGridExternalOutletComponent } from "./hierarchical-grid-external-outlet/hierarchical-grid-external-outlet-sample.component"
+import { HierarchicalGridExternalOutletComponent } from "./hierarchical-grid-external-outlet/hierarchical-grid-external-outlet-sample.component";
 
 export const hierarchicalGridRoutes: Routes = [
     {

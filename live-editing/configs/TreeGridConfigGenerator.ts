@@ -87,6 +87,7 @@ import { TreeGridExternalOutletComponent } from "../../src/app/tree-grid/tree-gr
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { TreeGridExportVisualizationComponent } from "../../src/app/tree-grid/tree-grid-export-visualization/tree-grid-export-visualization.component";
 
 export class TreeGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -1019,6 +1020,19 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxPreventDocumentScrollModule, IgxTreeGridModule, IgxToggleModule]
             }),
             component: TreeGridExternalOutletComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/tree-grid/data/foods.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxPreventDocumentScrollModule, IgxTreeGridModule, TreeGridExportVisualizationComponent, IgxToggleModule,
+                    IgxExcelExporterService, IgxCsvExporterService],
+                ngDeclarations: [TreeGridExportVisualizationComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxTreeGridModule, IgxToggleModule],
+                ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
+            }),
+            component: TreeGridExportVisualizationComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 

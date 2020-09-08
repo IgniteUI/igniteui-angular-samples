@@ -81,7 +81,7 @@ import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/tree
 import { TGridSaveStateComponent } from './tree-grid-save-state/tGrid-state.component';
 import { TGridAboutComponent } from "./tree-grid-save-state/about.component";
 import { TreeGridExternalOutletComponent } from "./tree-grid-external-outlet/tree-grid-external-outlet-sample.component";
-
+import { TreeGridExportVisualizationComponent } from "./tree-grid-export-visualization/tree-grid-export-visualization.component";
 export const treeGridRoutes: Routes = [
     {
         component: TreeGridRowEditSampleComponent,
@@ -477,6 +477,11 @@ export const treeGridRoutes: Routes = [
         component: TGridAboutComponent,
         data: treeGridRoutesData["tree-grid-about"],
         path: "tree-grid-about"
+    },
+    {
+        component: TreeGridExportVisualizationComponent,
+        data: treeGridRoutesData["tree-grid-exporting-visualization"],
+        path: "tree-grid-exporting-visualization"
     }
 ];
 
