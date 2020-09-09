@@ -42,9 +42,9 @@ export class GridGroupBySummaryStylingSampleComponent {
     public expr: ISortingExpression[];
     public customSummary = CustomSummary;
     public summaryPositions;
-    public summaryPosition = GridSummaryPosition.bottom;
+    public summaryPosition: GridSummaryPosition = GridSummaryPosition.bottom;
     public summaryCalcModes;
-    public summaryCalculationMode = GridSummaryCalculationMode.rootAndChildLevels;
+    public summaryCalculationMode: GridSummaryCalculationMode = GridSummaryCalculationMode.rootAndChildLevels;
     public selectionMode = "multiple";
 
     constructor() {
