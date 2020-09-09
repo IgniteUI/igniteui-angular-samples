@@ -1,61 +1,53 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
 // Browser samples related styling
 .control-wrapper {
-    display: flex;
-    flex-flow: row;
-    max-width: 900px;
-    padding-left: 10px;
-    padding-top: 10px;
+    padding: 8px;
 }
 
 // Ignite UI for Angular Theming engine related styling
-@import '~igniteui-angular/lib/core/styles/themes/index';
-$my-primary-color:#FFC314;
-$my-secondary-color: #7344df;
-$my-info-color: #ffffff;
-
-$my-color-palette: igx-palette(
-    $primary: $my-primary-color,
-    $secondary: $my-secondary-color,
-    $info: $my-info-color
-);
-
 $custom-drop-down-theme: igx-drop-down-theme(
-    $background-color: igx-color($my-color-palette, "secondary", 100),
-    $header-text-color: igx-color($my-color-palette, "secondary", 600),
-    $item-text-color: igx-color($my-info-color, "info", 100),
+    $background-color: #d9f5d6,
+    $header-text-color: #1a5214,
+    $item-text-color: #1a5214,
 
-    $selected-item-background: igx-color($my-color-palette, "secondary", 400),
-    $selected-item-text-color: igx-color($my-color-palette, "info"),
-    $selected-hover-item-background: igx-color($my-color-palette, "secondary", 400),
-    $selected-hover-item-text-color: igx-color($my-color-palette, "info"),
-    $selected-focus-item-background: igx-color($my-color-palette, "secondary", 400),
-    $selected-focus-item-text-color: igx-color($my-color-palette, "info"),
+    $focused-item-background: #72da67,
+    $focused-item-text-color: #1a5214,
+    $hover-item-background: #a0e698,
+    $hover-item-text-color: #1a5214,
 
-    $focused-item-background: igx-color($my-color-palette, "secondary", 300),
-    $focused-item-text-color: igx-color($my-color-palette, "info"),
-
-    $hover-item-background: igx-color($my-color-palette, "info"),
-    $hover-item-text-color: igx-color($my-color-palette, "secondary", 600)
+    $selected-item-background: #a0e698,
+    $selected-item-text-color: #1a5214,
+    $selected-hover-item-background: #72da67,
+    $selected-hover-item-text-color: #1a5214,
+    $selected-focus-item-background: #72da67,
+    $selected-focus-item-text-color: #1a5214,
 );
 
-// igx-combo-theme exposes several parameters on top of the igx-drop-down-theme.
 $custom-combo-theme: igx-combo-theme(
-    $search-separator-border-color: igx-color($my-color-palette, "secondary", 600)
+    $search-separator-border-color: #1a5214
 );
 
 $custom-checkbox-theme: igx-checkbox-theme(
-    $palette: $my-color-palette,
     $border-radius: 10px,
-    $label-color: $my-secondary-color,
-    $empty-color: $my-secondary-color
+    $fill-color: #1a5214,
+    $empty-color: #1a5214,
 );
 
-// Pass our custom-drop-down-theme and custom-combo-theme to respectively `igx-drop-down` and igx-combo mixins.
-// Add custom-checkbox-theme to complete the sample look and feel as well
-:host {
-   ::ng-deep {
-           @include igx-drop-down($custom-drop-down-theme);
-           @include igx-combo($custom-combo-theme);
-           @include igx-checkbox($custom-checkbox-theme);
-   }
+// :host {
+//   @include igx-css-vars($custom-drop-down-theme);
+//   @include igx-css-vars($custom-combo-theme);
+//   @include igx-css-vars($custom-checkbox-theme);
+// }
+
+/* Using Theme Overrides to provide IE 11 support.
+ * NOTE: Theming using this approach will greatly increase the size
+ * of the output CSS. If you do not plan to target IE 11,
+ * delete this section and use the `igx-css-vars` mixin as shown above.
+**/
+:host ::ng-deep {
+    @include igx-drop-down($custom-drop-down-theme);
+    @include igx-combo($custom-combo-theme);
+    @include igx-checkbox($custom-checkbox-theme);
 }
+

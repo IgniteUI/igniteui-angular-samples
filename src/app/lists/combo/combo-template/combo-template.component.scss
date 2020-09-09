@@ -1,10 +1,14 @@
 .combo {
-    margin: 10px;
-    width: 300px;
+    margin: 8px;
+    width: 430px;
 }
 
-.header-class, .footer-class, .empty-class {
+.header-class, .footer-class {
     text-align: center;
-    font-style: italic;
-    font-weight: bold;
+    padding: 4px;
+    color: var(--igx-secondary-500);
+}
+
+.empty-class {
+    margin: 8px;
 }

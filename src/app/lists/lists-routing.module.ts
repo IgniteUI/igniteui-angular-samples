@@ -8,6 +8,7 @@ import { ComboOverlayComponent } from "./combo/combo-overlay/combo-overlay.compo
 import { ComboRemoteComponent } from "./combo/combo-remote/combo-remote.component";
 import { ComboSingleSelectionComponent } from "./combo/combo-single-selection/combo-single-selection.component";
 import { ComboStyling } from "./combo/combo-styling/combo-styling.component";
+import { ComboValueKeyComponent} from "./combo/combo-valuekey/combo-valuekey.component";
 import { ComboTemplateComponent } from "./combo/combo-template/combo-template.component";
 import { ListChatSampleComponent } from "./list/list-chat-sample/list-chat-sample.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
@@ -24,7 +25,8 @@ import { listsRoutesData } from "./lists-routes-data";
 export const listsRoutes: Routes = [
     {
         component: ComboMainComponent,
-        path: "combo"
+        data: listsRoutesData["combo-main"],
+        path: "combo-main"
     },
     {
         component: ComboBindingComponent,
@@ -40,6 +42,11 @@ export const listsRoutes: Routes = [
         component: ComboStyling,
         data: listsRoutesData["combo-styling"],
         path: "combo-styling"
+    },
+    {
+        component: ComboValueKeyComponent,
+        data: listsRoutesData["combo-valuekey"],
+        path: "combo-valuekey"
     },
     {
         component: ComboRemoteComponent,
