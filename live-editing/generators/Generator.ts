@@ -8,7 +8,8 @@ export const SAMPLE_APP_FOLDER = "src/app/";
 
 export abstract class Generator {
     protected styleSyntax: StyleSyntax;
-    protected importedPaths = LiveEditingManager.routingPathService.importedPaths;
+    protected componentPaths = LiveEditingManager.routingPathService.componentPaths;
+
     constructor(styleSyntax: StyleSyntax) {
         this.styleSyntax = styleSyntax;
     }

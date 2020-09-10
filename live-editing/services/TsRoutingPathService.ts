@@ -21,12 +21,10 @@ export class TsRoutingPathService {
     private routingImports: Map<string, string>;
     private tsImportService: TsImportsService;
     public appRouting = new Map<string, IModuleRouting[]>();
-    public importedPaths = new Map<string, string>();
-    private dependencies: string[];
+    public componentPaths = new Map<string, string>();
     constructor(){
         this.tsImportService =  new TsImportsService();
         this.routingImports = this.tsImportService.getFileImports(path.join(__dirname, ROUTES));
-        this.dependencies = Object.keys(JSON.parse(fs.readFileSync(path.join(__dirname, "../../package.json"), "utf8")).dependencies);
     }
 
     public generateRouting(routePath: string = ROUTES, moduleRouting?: IModuleRouting) {
@@ -47,7 +45,7 @@ export class TsRoutingPathService {
                 classRoutePath = this.getObjectLiteralPropertyValue<ts.StringLiteral>(properties, 'path', ts.SyntaxKind.StringLiteral);
                 const componentImports = this.tsImportService.getFileImports(path.join(__dirname, routePath));
                 const componentPath = path.join(path.dirname(routePath), componentImports.get(name.text));
-                this.importedPaths.set(name.text, componentPath);
+                this.componentPaths.set(name.text, componentPath);
                 route = {component: name.text, route: classRoutePath.text} as IComponentRoute;
                 moduleRouting.routes.push(route);
             });
@@ -69,25 +67,8 @@ export class TsRoutingPathService {
                     const moduleRoutingPath = `${this.routingImports.get(moduleRoutingIdentifier)}.ts`;
                     this.generateRouting(moduleRoutingPath, route);
                     this.appRouting.get(variableName.text).push(route);
-                    const moduleImports = this.tsImportService.getFileImports(path.join(__dirname, `${this.routingImports.get(name.text)}.ts`));
-                    moduleImports.forEach((importPath, className) => {
-                        if (!this.importedPaths.has(className) && this.dependencies.includes(importPath)) {
-                            this.importedPaths.set(className, importPath)
-                        }
-                    });
                     console.log(`Configure Routing and Paths for ${moduleName}`);
                 });
-            });
-            this.importedPaths.forEach((importPath, className) => {
-                if (!this.dependencies.includes(importPath)){
-                    const content = fs.readFileSync(path.join(__dirname, `${importPath}.ts`), 'utf8');
-                    const imports = this.tsImportService.getFileImports(importPath, content.toString());
-                    imports.forEach((i, c) => {
-                        if (!this.importedPaths.has(c) && this.dependencies.includes(i)){
-                            this.importedPaths.set(c, i);
-                        }
-                    });
-                }
             });
         }
     }
