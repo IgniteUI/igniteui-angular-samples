@@ -1,32 +1,19 @@
-/* tslint:disable:object-literal-sort-keys */
-import {
-    IgxButtonDirective, IgxButtonModule, IgxCardModule, IgxComboModule,
-    IgxDividerModule, IgxIconModule, IgxOverlayService, IgxSwitchModule, IgxToggleModule
-} from "igniteui-angular";
-import { CardSample1Component } from "../../src/app/layouts/card/card-sample-1/card-sample-1.component";
-
-import { MyDynamicCardComponent
-} from "../../src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component";
-import { OverlaySampleMain1Component
-} from "../../src/app/interactions/overlay/overlay-main-1/overlay-main-sample-1.component";
-import { OverlaySampleMain2Component
-} from "../../src/app/interactions/overlay/overlay-main-2/overlay-main-sample-2.component";
-import { OverlayPositionSample1Component
-} from "../../src/app/interactions/overlay/overlay-positioning-1/overlay-position-sample-1.component";
-import { OverlayPositionSample2Component
-} from "../../src/app/interactions/overlay/overlay-positioning-2/overlay-position-sample-2.component";
-import { OverlayPositionSample3Component
-} from "../../src/app/interactions/overlay/overlay-positioning-3/overlay-position-sample-3.component";
-import { OverlayScrollSample1Component
-} from "../../src/app/interactions/overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
-import { OverlayScrollSample2Component
-} from "../../src/app/interactions/overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
-import { OverlayStylingComponent } from "../../src/app/interactions/overlay/overlay-styling/overlay-styling.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxButtonDirective,
+IgxButtonModule,
+IgxCardModule,
+IgxComboModule,
+IgxDividerModule,
+IgxIconModule,
+IgxOverlayService,
+IgxSwitchModule,
+IgxToggleModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class OverlayConfigGenerator implements IConfigGenerator {
+    public additionalImports = {
+        MyDynamicCardComponent: '../../src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component'
+};
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

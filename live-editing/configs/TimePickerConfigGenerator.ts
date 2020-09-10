@@ -1,34 +1,14 @@
-/* tslint:disable:object-literal-sort-keys */
-import {
-    IgxButtonModule,
-    IgxIconModule,
-    IgxInputGroupModule,
-    IgxTimePickerModule,
-    IgxToastModule
-} from "igniteui-angular";
-import {
-    TimepickerDropdownComponent
-} from "../../src/app/scheduling/timepicker/timepicker-dropdown/timepicker-dropdown.component";
-import {
-    TimePickerSample1Component
-} from "../../src/app/scheduling/timepicker/timepicker-sample-1/timepicker-sample-1.component";
-import {
-    TimePickerSample4Component
-} from "../../src/app/scheduling/timepicker/timepicker-sample-4/timepicker-sample-4.component";
-import {
-    TimePickerSample5Component
-} from "../../src/app/scheduling/timepicker/timepicker-sample-5/timepicker-sample-5.component";
-import {
-    TimePickerSample6Component
-} from "../../src/app/scheduling/timepicker/timepicker-sample-6/timepicker-sample-6.component";
-import {
-    TimePickerStylingComponent
-} from "../../src/app/scheduling/timepicker/timepicker-styling/timepicker-styling.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxButtonModule,
+IgxIconModule,
+IgxInputGroupModule,
+IgxTimePickerModule,
+IgxToastModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class TimePickerConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

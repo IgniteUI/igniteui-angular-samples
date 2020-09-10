@@ -1,18 +1,10 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxCheckboxModule } from "igniteui-angular";
-import { CheckboxSample1Component
-} from "../../src/app/data-entries/checkbox/checkbox-sample-1/checkbox-sample-1.component";
-import { CheckboxSample2Component
-} from "../../src/app/data-entries/checkbox/checkbox-sample-2/checkbox-sample-2.component";
-import { CheckboxSample3Component
-} from "../../src/app/data-entries/checkbox/checkbox-sample-3/checkbox-sample-3.component";
-import { CheckboxStylingComponent
-} from "../../src/app/data-entries/checkbox/checkbox-styling/checkbox-styling.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxCheckboxModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class CheckboxConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

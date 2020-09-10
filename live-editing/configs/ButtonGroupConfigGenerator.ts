@@ -1,26 +1,13 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxButtonGroupModule, IgxButtonModule, IgxIconModule, IgxRippleModule } from "igniteui-angular";
-import {
-    ButtonGroupSample1Component
-} from "../../src/app/data-entries/buttonGroup/button-group-sample-1/button-group-sample-1.component";
-import {
-    ButtonGroupSample2Component
-} from "../../src/app/data-entries/buttonGroup/button-group-sample-2/button-group-sample-2.component";
-import {
-    ButtonGroupSample3Component
-} from "../../src/app/data-entries/buttonGroup/button-group-sample-3/button-group-sample-3.component";
-import {
-    ButtonGroupSampleComponent
-} from "../../src/app/data-entries/buttonGroup/button-group-sample-4/button-group-sample.component";
-import {
-    ButtonGroupSample5Component
-} from "../../src/app/data-entries/buttonGroup/button-group-sample-5/button-group-sample-5.component";
-import { ButtonGroupStyleComponent } from "../../src/app/data-entries/buttonGroup/button-group-style/button-group-style.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxButtonGroupModule,
+IgxButtonModule,
+IgxIconModule,
+IgxRippleModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class ButtonGroupConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

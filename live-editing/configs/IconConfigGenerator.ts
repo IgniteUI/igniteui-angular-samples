@@ -1,14 +1,15 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxIconModule, IgxInputGroupModule, IgxButtonModule, IgxSelectModule } from "igniteui-angular";
-import { IconSample1Component } from "../../src/app/data-display/icon/icon-sample-1/icon-sample-1.component";
-import { SvgIconSampleComponent } from "../../src/app/data-display/icon/svg-icon-sample/svg-icon-sample.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { IconStylingSample } from '../../src/app/data-display/icon/icon-styling-sample/icon-styling-sample.component';
-import { MaterialIconsExtendedComponent, CategoriesFilterPipe, FilterByName } from '../../src/app/data-display/icon/material-icons-extended/material-icons-extended.component';
-
+import {IgxIconModule,
+IgxInputGroupModule,
+IgxButtonModule,
+IgxSelectModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class IconConfigGenerator implements IConfigGenerator {
+    public additionalImports = {
+        CategoriesFilterPipe: '../../src/app/data-display/icon/material-icons-extended/material-icons-extended.component',
+        FilterByName: '../../src/app/data-display/icon/material-icons-extended/material-icons-extended.component'
+};
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

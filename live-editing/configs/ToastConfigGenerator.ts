@@ -1,19 +1,13 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxButtonModule, IgxRippleModule, IgxToastModule, IgxIconModule } from "igniteui-angular";
-import { ToastSample1Component
-} from "../../src/app/notifications/toast/toast-sample-1/toast-sample-1.component";
-import { ToastSample2Component
-} from "../../src/app/notifications/toast/toast-sample-2/toast-sample-2.component";
-import { ToastSample5Component
-} from "../../src/app/notifications/toast/toast-sample-5/toast-sample-5.component";
-import { ToastStyleComponent
-} from "../../src/app/notifications/toast/toast-style/toast-style.component";
-import { ToastSample3Component } from "../../src/app/notifications/toast/toast-sample-3/toast-sample-3.component"
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxButtonModule,
+IgxRippleModule,
+IgxToastModule,
+IgxIconModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class ToastConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

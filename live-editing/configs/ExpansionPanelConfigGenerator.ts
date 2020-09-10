@@ -1,32 +1,18 @@
-
-import {
-    IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxExpansionPanelModule,
-    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxRippleModule, IgxToastModule
-} from "igniteui-angular";
-
-import { ExpansionPanelSample1Component
-} from "../../src/app/layouts/expansion-panel/expansion-sample-1/expansion-sample-1.component";
-
-import { ExpansionPanelSample2Component
-} from "../../src/app/layouts/expansion-panel/expansion-sample-2/expansion-sample-2.component";
-
-import { ExpansionPanelSample3Component
-} from "../../src/app/layouts/expansion-panel/expansion-sample-3/expansion-sample-3.component";
-
-import { ExpansionPanelSample4Component
-} from "../../src/app/layouts/expansion-panel/expansion-sample-4/expansion-sample-4.component";
-
-import { ExpansionPanelSample5Component
-} from "../../src/app/layouts/expansion-panel/expansion-sample-5/expansion-sample-5.component";
-
-import { ExpansionPanelStylingComponent
-} from "../../src/app/layouts/expansion-panel/expansion-styling/expansion-styling.component";
-
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxAvatarModule,
+IgxButtonModule,
+IgxCardModule,
+IgxExpansionPanelModule,
+IgxGridModule,
+IgxIconModule,
+IgxInputGroupModule,
+IgxRippleModule,
+IgxToastModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class ExpansionPanelConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

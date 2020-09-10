@@ -1,83 +1,36 @@
-// tslint:disable:max-line-length
-import { HttpClientModule } from "@angular/common/http";
-import { IgxActionStripModule, IgxAvatarModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule, IgxDragDropModule, IgxGridModule, IgxHierarchicalGridAPIService, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxTooltipModule, IgxToggleModule } from "igniteui-angular";
-import { IgxPreventDocumentScrollModule } from "../../src/app/directives/prevent-scroll.directive";
-import { HierarchicalGridColumnGroupSelectionComponent } from "../../src/app/hierarchical-grid/column-group-selection/hierarchical-grid-column-group-selection.component";
-import { HGridColumnSelectionStylesComponent } from "../../src/app/hierarchical-grid/column-selection-styles/hierarchical-grid-column-selection-styles.component";
-import { HierarchicalGridColumnSelectionComponent } from "../../src/app/hierarchical-grid/column-selection/hierarchical-grid-column-selection.component";
-import { HGridKeyboardnavGuide } from "../../src/app/hierarchical-grid/hgrid-keybarod-nav-guide-sample/hgrid-keyboard-guide.component";
-import { HGridAdvancedFilteringStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
-import { HGridAdvancedFilteringSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
-import { HGridAllDataSummaryComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-allData-summary/hierarchical-grid-allData-summary.component";
-import { HGridBatchEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component";
-import { HierarchicalGridWithTransactionsComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-transactions.component";
-import { HGridCollapsibleColumnGroupComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-collapsible-column-groups/hierarchical-grid-collapsible-column-groups.component";
-import { HierarchicalGridColumnHidingToolbarStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-hiding-toolbar-style/hierarchical-grid-column-hiding-toolbar-style.component";
-import { HGridCostumHidingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-hiding/hierarchical-grid-custom-hiding.component";
-import { HGridColumnHidingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-hiding/hierarchical-grid-hiding.component";
-import { HGridColumnMovingSampleComponentStyled } from "../../src/app/hierarchical-grid/hierarchical-grid-column-moving-styled/hierarchical-grid-moving-styled.component";
-import { HGridColumnMovingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-moving/hierarchical-grid-moving.component";
-import { HGridPinningSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-pinning/hierarchical-grid-pinning.component";
-import { HGridToolbarPinningComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-pinning/hierarchical-grid-toolbar-pinning.component";
-import { HGridConditionalRowSelectorsComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-conditional-row-selectors/hierarchical-grid-conditional-row-selectors.component";
-import { HGridCustomKBNavigationComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-custom-kb-navigation/hierarchical-grid-custom-kb-navigation-sample.component";
-import { HGridDisplayDensitySampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-display-density/hierarchical-grid-density.component";
-import { HGridEditingEventsComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-editing-events/hierarchical-grid-editing-events.component";
-import { HGridEditingStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-editing-style/hierarchical-grid-editing-style.component";
-import { HGridEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-editing/hierarchical-grid-editing.component";
-import { HierarchicalGridExcelStyleFilteringLoadOnDemandComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-load-on-demand/hierarchical-grid-excel-style-filtering-load-on-demand.component";
-import { RemoteValuesService } from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-load-on-demand/remoteValues.service";
-import { HGridExcelStyleFilteringSample1Component } from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-sample-1/hierarchical-grid-excel-style-filtering-sample-1.component";
-import { HGridExcelStyleFilteringSample2Component } from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-sample-2/hierarchical-grid-excel-style-filtering-sample-2.component";
-import { HGridExcelStyleFilteringSample3Component } from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-sample-3/hierarchical-grid-excel-style-filtering-sample-3.component";
-import { HGridExcelStyleFilteringStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-style/hierarchical-grid-excel-style-filtering-style.component";
-import { HGridExternalAdvancedFilteringComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-external-advanced-filtering/hierarchical-grid-external-advanced-filtering.component";
-import { HGridExternalExcelStyleFilteringComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-external-excel-style-filtering/hierarchical-grid-external-excel-style-filtering.component";
-import { HierarchicalGridFilteringStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-filtering-style/hierarchical-grid-filtering-style.component";
-import { HGridFilteringTemplateSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-filtering-template/hierarchical-grid-filtering-template.component";
-import { HGridCustomFilteringSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
-import { HGridFilteringSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-filtering/hierarchical-grid-filtering.component";
-import { HierarchicalGridLoDSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-lod/hierarchical-grid-lod.component";
-import { HGridMultiCellStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-cell-style/hierarchical-grid-multi-cell-style.component";
-import { HGridMultiHeaderTemplateSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-column-header-template/hierarchical-grid-multi-column-template.component";
-import { HGridMultiHeadersStylingComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-column-headers-styling/hierarchical-grid-multi-column-styling.component";
-import { HGridMultiHeadersSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component";
-import { HGridMultiRowDragComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-row-drag/hierarchical-grid-multi-row-drag.component";
-import { HGridPagingStyleSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-paging-style/hierarchical-grid-paging-style.component";
-import { HGridPagingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-paging/hierarchical-grid-paging.component";
-import { HGridRemotePagingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-paging/hierarchical-grid-remote-paging.component";
-import { HGridRemotePagingDefaultTemplateComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-remote-paging-default-template/hierarchical-grid-remote-paging-default-template.component";
-import { HGridResizeLineStylingComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-resize-line-styling/hierarchical-grid-resize-line-styling.component";
-import { HGridRowDragBaseComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-drag-base/hierarchical-row-drag-base.component";
-import { HGridDragSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-drag/hierarchical-grid-row-drag.component";
-import { HGridRowEditStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-edit-style/hierarchical-grid-row-edit-style.component";
-import { HGridRowEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
-import { HGridRowPinningExtraColumnSampleComponent } from '../../src/app/hierarchical-grid/hierarchical-grid-row-pinning-extra-column/hierarchical-grid-row-pinning-extra-column.component';
-import { HGridRowPinningStylingSampleComponent } from'../../src/app/hierarchical-grid/hierarchical-grid-row-pinning-styling/hierarchical-grid-row-pinning-styling.component';
-import { HGridRowPinningSampleComponent } from '../../src/app/hierarchical-grid/hierarchical-grid-row-pinning/hierarchical-grid-row-pinning.component';
-import { HGridRowReorderComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
-import { HierarchicalGridRightPinningSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-sample-right-pinning/hierarchical-grid-right-pinning.component";
-import { HGridSelectionTemplateNumbersSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-selection-template-numbers/hierarchical-grid-selection-template-numbers.component";
-import { HGridSelectionSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-selection/hierarchical-grid-selection.component";
-import { HGridSortingStylingComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-sorting-styling/hierarchical-grid-sorting-styling.component";
-import { HGridContextmenuComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-sorting/hgrid-contextmenu/hgrid-contextmenu.component";
-import { HGridSortingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-sorting/hierarchical-grid-sorting.component";
-import { HGridStylingComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-styling/hierarchical-grid-styling.component";
-import { HGridSummaryStylingComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-summary-styling/hierarchical-grid-summary-styling.component";
-import { HGridSummarySampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-summary/hierarchical-grid-summary.component";
-import { HierarchicalGridToolbarStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-toolbar-style/hierarchical-grid-toolbar-style.component";
-import { HGridToolbarCustomSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
-import { HGridToolbarOptionsSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
-import { HGridToolbarTitleSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
-import { RemoteLoDService } from "../../src/app/hierarchical-grid/services/remote-lod.service";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { HGridSaveStateComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-save-state/hGrid-state.component";
-import { HGridAboutComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-save-state/about.component";
-import { HierarchicalGridExternalOutletComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-external-outlet/hierarchical-grid-external-outlet-sample.component";
-
+import {HttpClientModule} from '@angular/common/http';
+import {IgxActionStripModule,
+IgxAvatarModule,
+IgxButtonGroupModule,
+IgxButtonModule,
+IgxCheckboxModule,
+IgxDatePickerModule,
+IgxDialogModule,
+IgxDragDropModule,
+IgxGridModule,
+IgxHierarchicalGridAPIService,
+IgxHierarchicalGridModule,
+IgxIconModule,
+IgxInputGroupModule,
+IgxListModule,
+IgxOverlayService,
+IgxSelectModule,
+IgxSnackbarModule,
+IgxSwitchModule,
+IgxToastModule,
+IgxTooltipModule,
+IgxToggleModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {
+    public additionalImports = {
+        IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive',
+        HierarchicalGridWithTransactionsComponent: '../../src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-transactions.component',
+        RemoteValuesService: '../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-load-on-demand/remoteValues.service',
+        HGridContextmenuComponent: '../../src/app/hierarchical-grid/hierarchical-grid-sorting/hgrid-contextmenu/hgrid-contextmenu.component',
+        RemoteLoDService: '../../src/app/hierarchical-grid/services/remote-lod.service'
+};
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

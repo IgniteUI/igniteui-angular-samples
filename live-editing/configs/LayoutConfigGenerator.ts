@@ -1,30 +1,13 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxButtonGroupModule, IgxButtonModule, IgxLayoutModule, IgxRippleModule } from "igniteui-angular";
-import {
-    LayoutAlignItemsComponent
-} from "../../src/app/layouts/layout/layout-align-items/layout-align-items.component";
-import {
-    LayoutContentSpaceComponent
-} from "../../src/app/layouts/layout/layout-content-space/layout-content-space.component";
-import {
-    LayoutCustomOrderComponent
-} from "../../src/app/layouts/layout/layout-custom-order/layout-custom-order.component";
-import {
-    LayoutDirectionColumnComponent
-} from "../../src/app/layouts/layout/layout-direction-column/layout-direction-column.component";
-import {
-    LayoutDirectionRowComponent
-} from "../../src/app/layouts/layout/layout-direction-row/layout-direction-row.component";
-import {
-    LayoutJustifyContentComponent
-} from "../../src/app/layouts/layout/layout-justify-content/layout-justify-content.component";
-import { LayoutSampleComponent } from "../../src/app/layouts/layout/layout-sample/layout-sample.component";
-import { LayoutWrapComponent } from "../../src/app/layouts/layout/layout-wrap/layout-wrap.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxButtonGroupModule,
+IgxButtonModule,
+IgxLayoutModule,
+IgxRippleModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class LayoutConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

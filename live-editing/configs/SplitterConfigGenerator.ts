@@ -1,19 +1,10 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxSplitterModule } from "igniteui-angular";
-import {
-    SplitterHorizontalSampleComponent
-} from "../../src/app/layouts/splitter/splitter-horizontal-sample/splitter-horizontal-sample.component";
-import {
-    SplitterNestedSampleComponent
-} from "../../src/app/layouts/splitter/splitter-nested-sample/splitter-nested-sample.component";
-import {
-    SplitterStylingSampleComponent
-} from "../../src/app/layouts/splitter/splitter-styling-sample/splitter-styling-sample.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxSplitterModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class SplitterConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

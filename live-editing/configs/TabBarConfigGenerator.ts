@@ -1,21 +1,15 @@
-/* tslint:disable:object-literal-sort-keys */
-import { RouterModule } from "@angular/router";
-import { IgxBottomNavModule } from "igniteui-angular";
-import { TabbarSample1Component } from "../../src/app/layouts/tabbar/tabbar-sample-1/tabbar-sample-1.component";
-import { TabbarSample2Component } from "../../src/app/layouts/tabbar/tabbar-sample-2/tabbar-sample-2.component";
-import {
-    TabbarSample3Component } from "../../src/app/layouts/tabbar/tabbar-sample-3/components/tabbar-sample-3.component";
-import {
-    TabbarSample3Module } from "../../src/app/layouts/tabbar/tabbar-sample-3/tabbar-sample-3.module";
-import { TabbarStyleComponent } from "../../src/app/layouts/tabbar/tabbar-style/tabbar-style.component";
-import { TabbarView1Component } from "../../src/app/layouts/tabbar/views/view1/view1.component";
-import { TabbarView2Component } from "../../src/app/layouts/tabbar/views/view2/view2.component";
-import { TabbarView3Component } from "../../src/app/layouts/tabbar/views/view3/view3.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {RouterModule} from '@angular/router';
+import {IgxBottomNavModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class TabBarConfigGenerator implements IConfigGenerator {
+    public additionalImports = {
+        TabbarSample3Module: '../../src/app/layouts/tabbar/tabbar-sample-3/tabbar-sample-3.module',
+        TabbarView1Component: '../../src/app/layouts/tabbar/views/view1/view1.component',
+        TabbarView2Component: '../../src/app/layouts/tabbar/views/view2/view2.component',
+        TabbarView3Component: '../../src/app/layouts/tabbar/views/view3/view3.component'
+};
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

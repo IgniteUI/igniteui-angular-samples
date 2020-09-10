@@ -1,16 +1,13 @@
-import {
-    IgxAutocompleteModule,
-    IgxDropDownModule,
-    IgxInputGroupModule
- } from "igniteui-angular";
-import { AutocompleteBasic, AutocompletePipeStartsWith
-    } from "../../src/app/data-entries/autocomplete/autocomplete/autocomplete.component";
-import { MovieComponent } from "../../src/app/data-entries/autocomplete/movie/movie.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxAutocompleteModule,
+IgxDropDownModule,
+IgxInputGroupModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class AutocompleteConfigGenerator implements IConfigGenerator {
+    public additionalImports = {
+        AutocompletePipeStartsWith: '../../src/app/data-entries/autocomplete/autocomplete/autocomplete.component'
+};
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

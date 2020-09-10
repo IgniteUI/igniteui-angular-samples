@@ -1,25 +1,16 @@
-/* tslint:disable:object-literal-sort-keys */
-// tslint:disable:max-line-length
-import { IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDialogModule, IgxPrefixModule, IgxSelectModule, IgxSnackbarModule } from "igniteui-angular";
-import { CalendarDaysViewComponent } from "../../src/app/scheduling/calendar/calendar-days-view/calendar-days-view.component";
-import { CalendarMonthsViewComponent } from "../../src/app/scheduling/calendar/calendar-months-view/calendar-months-view.component";
-import { CalendarSample1Component } from "../../src/app/scheduling/calendar/calendar-sample-1/calendar-sample-1.component";
-import { CalendarSample2Component } from "../../src/app/scheduling/calendar/calendar-sample-2/calendar-sample-2.component";
-import { CalendarSample3Component } from "../../src/app/scheduling/calendar/calendar-sample-3/calendar-sample-3.component";
-import { CalendarSample4Component } from "../../src/app/scheduling/calendar/calendar-sample-4/calendar-sample-4.component";
-import { CalendarSample5Component } from "../../src/app/scheduling/calendar/calendar-sample-5/calendar-sample-5.component";
-import { CalendarSample6Component } from "../../src/app/scheduling/calendar/calendar-sample-6/calendar-sample-6.component";
-import { CalendarSample7Component } from "../../src/app/scheduling/calendar/calendar-sample-7/calendar-sample-7.component";
-import { CalendarSample8Component } from "../../src/app/scheduling/calendar/calendar-sample-8/calendar-sample-8.component";
-import { CalendarStylingSample } from "../../src/app/scheduling/calendar/calendar-styling-sample/calendar-styling-sample.component";
-import { CalendarYearsViewComponent } from "../../src/app/scheduling/calendar/calendar-years-view/calendar-years-view.component";
-import { CalendarMultiViewComponent } from "../../src/app/scheduling/calendar/multiview/multiview.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-// tslint:enable:max-line-length
-
+import {IgxButtonModule,
+IgxCalendarModule,
+IgxCardModule,
+IgxDialogModule,
+IgxPrefixModule,
+IgxSelectModule,
+IgxSnackbarModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class CalendarConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

@@ -1,19 +1,14 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxActionStripModule, IgxRippleModule, IgxButtonModule, IgxIconModule, IgxButtonGroupModule } from "igniteui-angular";
-import {
-    ActionStripParagraphMenuComponent
-} from "../../src/app/menus/action-strip/action-strip-paragraph-menu/action-strip-paragraph-menu.component";
-import {
-    ActionStripStylingComponent
-} from "../../src/app/menus/action-strip/action-strip-paragraph-styling/action-strip-paragraph-styling.component";
-import {
-    ActionStripParagraphComponent
-} from "../../src/app/menus/action-strip/action-strip-paragraph/action-strip-paragraph.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxActionStripModule,
+IgxRippleModule,
+IgxButtonModule,
+IgxIconModule,
+IgxButtonGroupModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class ActionStripConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

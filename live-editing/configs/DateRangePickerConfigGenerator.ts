@@ -1,21 +1,14 @@
-import { IgxDateRangePickerModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule } from "igniteui-angular";
-import { BasicDateRangePickerComponent
-} from "../../src/app/scheduling/daterangepicker/daterangepicker-basic/daterangepicker-basic";
-import { FlightBookingComponent, PipeWithoutTownFrom
-} from "../../src/app/scheduling/daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking";
-import { DateRangePickerModeComponent
-} from "../../src/app/scheduling/daterangepicker/daterangepicker-mode/daterangepicker-mode";
-import { DateRangePickerStartEndComponent
-} from "../../src/app/scheduling/daterangepicker/daterangepicker-start-end/daterangepicker-start-end";
-import { StyledDateRangePickerComponent
-} from "../../src/app/scheduling/daterangepicker/daterangepicker-styling/daterangepicker-styling";
-import { DateRangePickerValidationComponent
-} from "../../src/app/scheduling/daterangepicker/daterangepicker-validation/daterangepicker-validation";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxDateRangePickerModule,
+IgxIconModule,
+IgxInputGroupModule,
+IgxSelectModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class DateRangePickerConfigGenerator implements IConfigGenerator {
+    public additionalImports = {
+        PipeWithoutTownFrom: '../../src/app/scheduling/daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking'
+};
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

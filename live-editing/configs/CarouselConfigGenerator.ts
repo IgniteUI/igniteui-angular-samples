@@ -1,29 +1,18 @@
-import {
-    IgxButtonModule,
-    IgxCardModule,
-    IgxCarouselModule,
-    IgxIconModule,
-    IgxInputGroupModule,
-    IgxListModule,
-    IgxPrefixDirective,
-    IgxSelectModule,
-    IgxSliderModule
-} from "igniteui-angular";
-import {
-    CarouselAnimationsSampleComponent
-} from "../../src/app/layouts/carousel/carousel-animations-sample/carousel-animations-sample.component";
-import {
-    CarouselNoNavigationSampleComponent
-} from "../../src/app/layouts/carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component";
-import {
-    CarouselWithComponentsSampleComponent
-} from "../../src/app/layouts/carousel/carousel-with-components-sample/carousel-with-components-sample.component";
-import { CarouselComponent } from "../../src/app/layouts/carousel/carousel.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxButtonModule,
+IgxCardModule,
+IgxCarouselModule,
+IgxIconModule,
+IgxInputGroupModule,
+IgxListModule,
+IgxPrefixDirective,
+IgxSelectModule,
+IgxSliderModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class CarouselConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

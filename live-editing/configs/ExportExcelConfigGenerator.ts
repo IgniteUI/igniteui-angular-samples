@@ -1,20 +1,16 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxButtonModule, IgxDropDownComponent, IgxDropDownModule, IgxExcelExporterService,
-    IgxGridModule, IgxTreeGridModule } from "igniteui-angular";
-import { GridPasteSampleComponent } from "../../src/app/grid/grid-paste/grid-paste-sample.component";
-import { PasteHandler } from "../../src/app/grid/grid-paste/paste-handler.directive";
-import {
-    ExcelExportSample1Component
-} from "../../src/app/services/export-excel/excel-export-sample-1/excel-export-sample-1.component";
-import {
-    TreeGridExcelExportSample1Component
-} from "../../src/app/services/export-excel/excel-export-tree-grid-sample/excel-export-tree-grid-sample.component";
-import { ExcelExportComponent } from "../../src/app/services/export-excel/excel-export.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxButtonModule,
+IgxDropDownComponent,
+IgxDropDownModule,
+IgxExcelExporterService,
+IgxGridModule,
+IgxTreeGridModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class ExportExcelConfigGenerator implements IConfigGenerator {
+    public additionalImports = {
+        PasteHandler: '../../src/app/grid/grid-paste/paste-handler.directive'
+};
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

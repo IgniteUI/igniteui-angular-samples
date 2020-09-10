@@ -1,21 +1,15 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxAvatarModule, IgxButtonModule, IgxIconModule,
-    IgxListModule, IgxRippleModule, IgxSnackbarModule } from "igniteui-angular";
-import { SnackbarSample1Component
-} from "../../src/app/notifications/snackbar/snackbar-sample-1/snackbar-sample-1.component";
-import { SnackbarSample2Component
-} from "../../src/app/notifications/snackbar/snackbar-sample-2/snackbar-sample-2.component";
-import { SnackbarSample4Component
-} from "../../src/app/notifications/snackbar/snackbar-sample-4/snackbar-sample-4.component";
-import { SnackbarSample5Component
-} from "../../src/app/notifications/snackbar/snackbar-sample-5/snackbar-sample-5.component";
-import { SnackbarStyleComponent
-} from "../../src/app/notifications/snackbar/snackbar-style/snackbar-style.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxAvatarModule,
+IgxButtonModule,
+IgxIconModule,
+IgxListModule,
+IgxRippleModule,
+IgxSnackbarModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class SnackbarConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

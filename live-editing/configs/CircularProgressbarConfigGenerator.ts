@@ -1,20 +1,13 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule } from "igniteui-angular";
-import {
-    CircularDynamicSampleComponent
-} from "../../src/app/data-display/circular-progressbar/circular-dynamic-sample/circular-dynamic-sample.component";
-// tslint:disable-next-line:max-line-length
-import { CircularIndeterminateProgressbarComponent } from "../../src/app/data-display/circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component";
-import { CircularProgressbarComponent
-} from "../../src/app/data-display/circular-progressbar/circular-progressbar.component";
-import {
-    CircularStylingSampleComponent
-} from "../../src/app/data-display/circular-progressbar/circular-styling-sample/circular-styling-sample.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxButtonModule,
+IgxIconModule,
+IgxProgressBarModule,
+IgxRippleModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class CircularProgressbarConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

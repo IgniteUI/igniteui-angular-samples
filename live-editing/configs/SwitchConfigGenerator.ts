@@ -1,16 +1,10 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxSwitchModule } from "igniteui-angular";
-import { SwitchSample1Component
-} from "../../src/app/data-entries/switch/switch-sample-1/switch-sample-1.component";
-import { SwitchSample2Component
-} from "../../src/app/data-entries/switch/switch-sample-2/switch-sample-2.component";
-import { SwitchStylingComponent
-} from "../../src/app/data-entries/switch/switch-styling/switch-styling.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxSwitchModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class SwitchConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

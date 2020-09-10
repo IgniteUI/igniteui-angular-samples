@@ -1,10 +1,10 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
-import { DockManagerComponent } from "../../src/app/layouts/dock-manager/dock-manager-sample/dock-manager.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class DockManagerConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

@@ -1,29 +1,19 @@
-/* tslint:disable:object-literal-sort-keys */
-import {
-    IgxAvatarModule,
-    IgxButtonModule,
-    IgxCardModule,
-    IgxChipsModule,
-    IgxDividerModule,
-    IgxExpansionPanelModule,
-    IgxIconModule,
-    IgxListModule,
-    IgxRippleModule,
-    IgxSliderModule
-} from "igniteui-angular";
-
-import { CardSample1Component } from "../../src/app/layouts/card/card-sample-1/card-sample-1.component";
-import { CardSample2Component } from "../../src/app/layouts/card/card-sample-2/card-sample-2.component";
-import { CardSample3Component } from "../../src/app/layouts/card/card-sample-3/card-sample-3.component";
-import { CardSample4Component } from "../../src/app/layouts/card/card-sample-4/card-sample-4.component";
-import { CardStylingSampleComponent } from '../../src/app/layouts/card/card-styling-sample/card-styling-sample.component';
-import { CardComponent } from "../../src/app/layouts/card/card.component";
-
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxAvatarModule,
+IgxButtonModule,
+IgxCardModule,
+IgxChipsModule,
+IgxDividerModule,
+IgxExpansionPanelModule,
+IgxIconModule,
+IgxListModule,
+IgxRippleModule,
+IgxSliderModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class CardConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

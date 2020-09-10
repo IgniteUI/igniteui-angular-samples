@@ -1,13 +1,13 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxAvatarModule, IgxIconModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
-import { TooltipRichComponent } from "../../src/app/interactions/tooltip/tooltip-rich/tooltip-rich.component";
-import { TooltipSimpleComponent } from "../../src/app/interactions/tooltip/tooltip-simple/tooltip-simple.component";
-import { TooltipStyleComponent } from "../../src/app/interactions/tooltip/tooltip-style/tooltip-style.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxAvatarModule,
+IgxIconModule,
+IgxToggleModule,
+IgxTooltipModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class TooltipConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

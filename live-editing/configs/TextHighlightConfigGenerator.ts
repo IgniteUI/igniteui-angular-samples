@@ -1,22 +1,14 @@
-/* tslint:disable:object-literal-sort-keys */
-import {
-    IgxButtonModule,
-    IgxIconModule,
-    IgxInputGroupModule,
-    IgxRippleModule,
-    IgxTextHighlightModule
-} from "igniteui-angular";
-import { TextHighlightSample1Component
-} from "../../src/app/data-display/text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
-import { TextHighlightSample2Component
-} from "../../src/app/data-display/text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
-import { TextHighlightStyleComponent
-} from "../../src/app/data-display/text-highlight/text-highlight-style/text-highlight-style.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxButtonModule,
+IgxIconModule,
+IgxInputGroupModule,
+IgxRippleModule,
+IgxTextHighlightModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class TextHighlightConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

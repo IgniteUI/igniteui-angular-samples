@@ -1,21 +1,24 @@
-
-// tslint:disable:object-literal-sort-keys
-import { IgxButtonGroupModule, IgxButtonModule, IgxCalendarModule, IgxCardModule,
-    IgxDatePickerModule, IgxDialogModule, IgxDropDownModule, IgxGridModule, IgxIconModule,
-    IgxInputGroupModule, IgxLayoutModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule,
-    IgxToggleModule } from "igniteui-angular";
-import { DarkThemeSampleComponent } from "../../src/app/theming/dark-theme-sample/dark-theme-sample.component";
-import { DefaultThemeSampleComponent } from "../../src/app/theming/default-theme-sample/default-theme-sample.component";
-import { DisplayDensityComponent } from "../../src/app/theming/display-density/display-density.component";
-import { CardSampleShadowComponent } from "../../src/app/theming/shadows/card-sample-shadow/card-sample-shadow";
-import { ShadowsSampleComponent } from "../../src/app/theming/shadows/shadows-sample-1/shadows-sample.component";
-import { ShadowsSample2Component } from "../../src/app/theming/shadows/shadows-sample-2/shadows-sample-2.component";
-import { ThemeChooserSampleComponent } from "../../src/app/theming/theme-chooser/theme-chooser-sample.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxButtonGroupModule,
+IgxButtonModule,
+IgxCalendarModule,
+IgxCardModule,
+IgxDatePickerModule,
+IgxDialogModule,
+IgxDropDownModule,
+IgxGridModule,
+IgxIconModule,
+IgxInputGroupModule,
+IgxLayoutModule,
+IgxRippleModule,
+IgxSelectModule,
+IgxSnackbarModule,
+IgxToggleModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class ThemingConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

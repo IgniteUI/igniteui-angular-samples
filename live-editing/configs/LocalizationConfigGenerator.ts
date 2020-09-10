@@ -1,19 +1,13 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxTimePickerModule } from "igniteui-angular";
-import {
-    LocalizationSample1Component
-} from "../../src/app/services/localization-samples/localization-sample-1/localization-sample-1.component";
-import {
-    LocalizationSample2Component
-} from "../../src/app/services/localization-samples/localization-sample-2/localization-sample-2.component";
-import {
-    LocalizationSample3Component
-} from "../../src/app/services/localization-samples/localization-sample-3/localization-sample-3.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxGridModule,
+IgxIconModule,
+IgxInputGroupModule,
+IgxTimePickerModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class LocalizationConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

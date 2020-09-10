@@ -1,18 +1,17 @@
-/* tslint:disable:object-literal-sort-keys */
-import {
-    IgxIconModule, IgxInputGroupModule, IgxMaskModule, IgxSnackbarModule, IgxSwitchModule, IgxTextSelectionModule
-} from "igniteui-angular";
-import { MaskSample1Component } from "../../src/app/data-display/mask/mask-sample-1/mask-sample-1.component";
-import { MaskSample2Component } from "../../src/app/data-display/mask/mask-sample-2/mask-sample-2.component";
-import { MaskSample3Component } from "../../src/app/data-display/mask/mask-sample-3/mask-sample-3.component";
-import { DisplayFormatPipe, InputFormatPipe, MaskSample4Component
-} from "../../src/app/data-display/mask/mask-sample-4/mask-sample-4.component";
-import { MaskSample5Component } from "../../src/app/data-display/mask/mask-sample-5/mask-sample-5.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxIconModule,
+IgxInputGroupModule,
+IgxMaskModule,
+IgxSnackbarModule,
+IgxSwitchModule,
+IgxTextSelectionModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class MaskConfigGenerator implements IConfigGenerator {
+    public additionalImports = {
+        DisplayFormatPipe: '../../src/app/data-display/mask/mask-sample-4/mask-sample-4.component',
+        InputFormatPipe: '../../src/app/data-display/mask/mask-sample-4/mask-sample-4.component'
+};
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

@@ -1,38 +1,23 @@
-/* tslint:disable:object-literal-sort-keys */
-import { KanbanSampleComponent } from "../../src/app/interactions/drag-drop/kanban-sample/kanban-sample.component";
-import {
-    ConnectedPositioningStrategy,
-    GlobalPositionStrategy,
-    IgxButtonModule,
-    IgxCardModule,
-    IgxCheckboxModule,
-    IgxChipsModule,
-    IgxDialogModule,
-    IgxDragDirective,
-    IgxDragDropModule,
-    IgxDropDirective,
-    IgxIconModule,
-    IgxListModule,
-    IgxToggleModule,
-    NoOpScrollStrategy
-} from "igniteui-angular";
-import {
-    DragDialogSampleComponent
-} from "../../src/app/interactions/drag-drop/dialog-sample/drag-dialog-sample.component";
-import {
-    EmailSampleComponent
-} from "../../src/app/interactions/drag-drop/email-sample/email-sample.component";
-import {
-    IconsSampleComponent
-} from "../../src/app/interactions/drag-drop/icons-sample/icons-sample.component";
-import {
-    ListReorderSampleComponent
-} from "../../src/app/interactions/drag-drop/list-reorder-sample/list-reorder-sample.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {ConnectedPositioningStrategy,
+GlobalPositionStrategy,
+IgxButtonModule,
+IgxCardModule,
+IgxCheckboxModule,
+IgxChipsModule,
+IgxDialogModule,
+IgxDragDirective,
+IgxDragDropModule,
+IgxDropDirective,
+IgxIconModule,
+IgxListModule,
+IgxToggleModule,
+NoOpScrollStrategy} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class DragAndDropConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

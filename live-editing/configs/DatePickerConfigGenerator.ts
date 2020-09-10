@@ -1,22 +1,18 @@
-/* tslint:disable:object-literal-sort-keys */
-// tslint:disable:max-line-length
-import { IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxDatePickerModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule, IgxSnackbarModule, IgxToggleModule } from "igniteui-angular";
-import { DatepickerDropdownComponent } from "../../src/app/scheduling/datepicker/datepicker-dropdown/datepicker-dropdown.component";
-import { DatepickerSample1Component } from "../../src/app/scheduling/datepicker/datepicker-sample-1/datepicker-sample-1.component";
-import { DatepickerSample2Component } from "../../src/app/scheduling/datepicker/datepicker-sample-2/datepicker-sample-2.component";
-import { DatepickerSample3Component } from "../../src/app/scheduling/datepicker/datepicker-sample-3/datepicker-sample-3.component";
-import { DatepickerSample4Component } from "../../src/app/scheduling/datepicker/datepicker-sample-4/datepicker-sample-4.component";
-import { DatepickerSample5Component } from "../../src/app/scheduling/datepicker/datepicker-sample-5/datepicker-sample-5.component";
-import { DatepickerSample6Component } from "../../src/app/scheduling/datepicker/datepicker-sample-6/datepicker-sample-6.component";
-import { DatepickerSample7Component } from "../../src/app/scheduling/datepicker/datepicker-sample-7/datepicker-sample-7.component";
-import { DatepickerSample8Component } from "../../src/app/scheduling/datepicker/datepicker-sample-8/datepicker-sample-8.component";
-import { DatepickerStylingSample } from "../../src/app/scheduling/datepicker/datepicker-styling-sample/datepicker-styling-sample.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-// tslint:enable:max-line-length
-
+import {IgxAutocompleteModule,
+IgxButtonModule,
+IgxCalendarModule,
+IgxDatePickerModule,
+IgxDropDownModule,
+IgxIconModule,
+IgxInputGroupModule,
+IgxSnackbarModule,
+IgxToggleModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class DatePickerConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

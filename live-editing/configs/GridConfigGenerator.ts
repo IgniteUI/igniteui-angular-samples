@@ -1,123 +1,55 @@
-import { CommonModule } from "@angular/common";
-import { HttpClientModule } from "@angular/common/http";
-import { Router, RouterModule } from "@angular/router";
-// tslint:disable:max-line-length
-import { IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDragDropModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxOverlayService, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxTooltipModule, IgxToggleModule } from "igniteui-angular";
-import { IgxPreventDocumentScrollModule } from "../../src/app/directives/prevent-scroll.directive";
-import { GridColumnGroupSelectionComponent } from "../../src/app/grid/column-group-selection-sample/column-group-selection-sample.component";
-import { GridColumnSelectionComponent } from "../../src/app/grid/column-selection-sample/column-selection-sample.component";
-import { GridColumnSelectionStylesComponent } from "../../src/app/grid/column-selection-styles/column-selection-styles.component";
-import { CustomGridPagingStyleSample } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
-import { GridActionStripSampleComponent } from "../../src/app/grid/grid-action-strip/grid-action-strip-sample";
-import { GridAdvancedFilteringSampleComponent } from "../../src/app/grid/grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
-import { GridAdvancedFilteringStyleComponent } from "../../src/app/grid/grid-advanced-filtering-style/grid-advanced-filtering-style.component";
-import { GridAllDataSummaryComponent } from "../../src/app/grid/grid-allData-summary/grid-allData-summary.component";
-import { GridBatchEditingSampleComponent } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
-import { GridWithTransactionsComponent } from "../../src/app/grid/grid-batch-editing/grid-transaction.component";
-import { RemotePagingBatchEditingComponent } from "../../src/app/grid/grid-batchEditing-remotePaging/batch-editing-remote-paging.component";
-import { GridCellSelectionComponent } from "../../src/app/grid/grid-cellSelection-sample/grid-cellSelection.component";
-import { GridClipboardSampleComponent } from "../../src/app/grid/grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
-import { GridCollapsibleColumnGroupsComponent } from "../../src/app/grid/grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
-import { GridColumnHidingSampleComponent } from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
-import { GridColumnHidingToolbarSampleComponent } from "../../src/app/grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
-import { GridColumnHidingToolbarStyleComponent } from "../../src/app/grid/grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
-import { GridCompositeDataComponent } from "../../src/app/grid/grid-composite-data-binding/grid-composite-data.component";
-import { GridConditionalCellStyle2Component } from "../../src/app/grid/grid-conditional-cell-style-2/grid-conditional-cell-style-2.component";
-import { GridConditionalCellStyleComponent } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
-import { GridConditionalRowSelectorsComponent } from "../../src/app/grid/grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
-import { ContextmenuComponent } from "../../src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component";
-import { GridContextmenuSampleComponent } from "../../src/app/grid/grid-contextmenu-sample/grid-contextmenu-sample.component";
-import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-filtering/grid-custom-filtering.component";
-import { GridCustomKBNavigationComponent } from "../../src/app/grid/grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
-import { CustomRemotePagingGridSample } from "../../src/app/grid/grid-custom-remote-paging-sample/custom-remote-paging-sample.component";
-import { GridCustomSummariesSelection } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
-import { GridDisplayDensitySampleComponent } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
-import { GridEditingEventsComponent } from "../../src/app/grid/grid-editing-events/grid-editing-events.component";
-import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
-import { GridEditingStyleSample } from "../../src/app/grid/grid-editing-style-sample/grid-editing-style-sample.component";
-import {
-    GridExcelStyleFilteringLoadOnDemandComponent
-} from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
-import { RemoteValuesService } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service";
-import { ExcelStyleFilteringSample1Component } from "../../src/app/grid/grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
-import { ExcelStyleFilteringSample2Component } from "../../src/app/grid/grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
-import { ExcelStyleFilteringSample3Component } from "../../src/app/grid/grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
-import { ExcelStyleFilteringStyleComponent } from "../../src/app/grid/grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
-import { GridExternalAdvancedFilteringComponent } from "../../src/app/grid/grid-external-advanced-filtering/grid-external-advanced-filtering.component";
-import { GridExternalExcelStyleFilteringComponent } from "../../src/app/grid/grid-external-excel-style-filtering/grid-external-excel-style-filtering.component";
-import { GridExternalOutletComponent } from "../../src/app/grid/grid-external-outlet-sample/grid-external-outlet-sample.component";
-import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
-import { GridFilteringStyleComponent } from "../../src/app/grid/grid-filtering-style/grid-filtering-style.component";
-import { FilteringTemplateSampleComponent } from "../../src/app/grid/grid-filtering-template-sample/grid-filtering-template-sample.component";
-import { GridGroupByPagingSampleComponent } from "../../src/app/grid/grid-group-by-paging-sample/grid-group-by-paging-sample.component";
-import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
-import { GridGroupByCustomSampleComponent } from "../../src/app/grid/grid-groupby-custom-sample/grid-groupby-custom-sample.component";
-import { GridGroupByStyling } from "../../src/app/grid/grid-groupby-styling/grid-groupby-styling.component";
-import { GridGroupBySummarySampleComponent } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
-import { GridGroupBySummaryStylingSampleComponent } from "../../src/app/grid/grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
-import { GridKeyboardnavGuide } from "../../src/app/grid/grid-keyboardnav-guide-sample/grid-keyboardnav-sample.component";
-import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
-import { GridMovingStyledSampleComponent } from "../../src/app/grid/grid-moving-styled-sample/grid-moving-styled-sample.component";
-import { GridMRLCustomNavigationComponent } from "../../src/app/grid/grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
-import { GridMultiCellSelectionStyleComponent } from "../../src/app/grid/grid-multi-cell-selection-style/grid-multi-cell-selection-style.component";
-import { GridMultiCellSelectionComponent } from "../../src/app/grid/grid-multi-cell-selection/grid-multi-cell-selection.component";
-import { GridMultiRowLayoutConfigurationComponent } from "../../src/app/grid/grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
-import { GridMultiRowLayoutStylingComponent } from "../../src/app/grid/grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
-import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
-import { GridMultipleRowDragComponent } from "../../src/app/grid/grid-multiple-row-drag/grid-multiple-row-drag.component";
-import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
-import { GridNestedDataBindAminoacidComponent } from "../../src/app/grid/grid-nested-data-binding-2/grid-nested-data-bind2";
-import { GridPagerSampleComponent } from "../../src/app/grid/grid-pager-sample/grid-pager-sample.component";
-import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
-import { RemoteFilteringSampleComponent } from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
-import { RemotePagingDefaultTemplateComponent } from "../../src/app/grid/grid-remote-paging-defaultTemplate-sample/remote-paging-default-template.component";
-import { RemotePagingGridSample } from "../../src/app/grid/grid-remote-paging-sample/remote-paging-sample.component";
-import { GridResizeLineStylingSampleComponent } from "../../src/app/grid/grid-resize-line-styling-sample/grid-resize-line-styling-sample";
-import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
-import { GridDragBaseSampleComponent } from "../../src/app/grid/grid-row-drag-base/grid-row-drag-base.component";
-import { GridDragToGridSampleComponent } from "../../src/app/grid/grid-row-drag-to-grid/grid-row-drag-to-grid.component";
-import { GridDragSampleComponent } from "../../src/app/grid/grid-row-drag/grid-row-drag.component";
-import { PlanetComponent } from "../../src/app/grid/grid-row-drag/planet/planet.component";
-import { GridRowEditSampleComponent } from "../../src/app/grid/grid-row-editing-sample/grid-row-editing-sample.component";
-import { GridRowEditStyleComponent } from "../../src/app/grid/grid-row-editing-style/grid-row-editing-style.component";
-import { GridPinningDragSampleComponent } from "../../src/app/grid/grid-row-pinning-drag/grid-row-pinning-drag.component";
-import { GridRowPinningExtraColumnSampleComponent } from "../../src/app/grid/grid-row-pinning-extra-column/grid-row-pinning-extra-column.component";
-import { GridRowPinningStylingSampleComponent } from "../../src/app/grid/grid-row-pinning-styling/grid-row-pinning-styling.component";
-import { GridRowPinningSampleComponent } from "../../src/app/grid/grid-row-pinning/grid-row-pinning.component";
-import { GridRowReorderComponent } from "../../src/app/grid/grid-row-reorder-sample/grid-row-reorder";
-import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
-import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
-import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
-import { GridRemoteVirtualizationAddRowSampleComponent } from "../../src/app/grid/grid-sample-5/grid-sample-5.component";
-import { RemoteService } from "../../src/app/grid/grid-sample-5/remote.service";
-import { PinningStylingComponent } from "../../src/app/grid/grid-sample-pinning-styling/grid-pinning-styling.component";
-import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
-import { PinningToolbarSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-toolbar-pinning.component";
-import { RightPinningSampleComponent } from "../../src/app/grid/grid-sample-right-pinning/grid-right-pinning.component";
-import { GridSelectionTemplateExcelComponent } from "../../src/app/grid/grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
-import { GridSelectionTemplateNumbersComponent } from "../../src/app/grid/grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
-import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
-import { AboutComponent } from "../../src/app/grid/grid-save-state/about.component";
-import { GridSaveStateComponent } from "../../src/app/grid/grid-save-state/grid-state.component";
-import { GridSearchSampleComponent } from "../../src/app/grid/grid-search-sample/grid-search-sample.component";
-import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
-import { SortingStylingComponent } from "../../src/app/grid/grid-sorting-styling/grid-sorting-styling.component";
-import { GridToolbarSample1Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
-import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
-import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
-import { GridToolbarSample4Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-4.component";
-import { GridToolbarStyleComponent } from "../../src/app/grid/grid-toolbar-style/grid-toolbar-style.component";
-import { GridMultiColumnHeaderTemplateComponent } from "../../src/app/grid/multi-column-header-template/multi-column-header-template";
-import { GridMultiColumnHeadersStylingComponent } from "../../src/app/grid/multi-column-headers-styling/multi-column-headers-styling.component";
-import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
-import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
-import { RemotePagingService } from "../../src/app/grid/services/remotePagingService";
-import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import {GridSortingIndicatorsComponent} from '../../src/app/grid/grid-sorting-indicators/grid-sorting-indicators.component'
+import {CommonModule} from '@angular/common';
+import {HttpClientModule} from '@angular/common/http';
+import {Router,
+RouterModule} from '@angular/router';
+import {IgxActionStripModule,
+IgxAvatarModule,
+IgxBadgeModule,
+IgxButtonGroupModule,
+IgxButtonModule,
+IgxCheckboxModule,
+IgxChipsModule,
+IgxColumnHidingModule,
+IgxComboModule,
+IgxCsvExporterService,
+IgxDatePickerModule,
+IgxDialogModule,
+IgxDividerModule,
+IgxDragDropModule,
+IgxExcelExporterService,
+IgxExpansionPanelModule,
+IgxFocusModule,
+IgxGridModule,
+IgxIconModule,
+IgxInputGroupModule,
+IgxListModule,
+IgxOverlayService,
+IgxProgressBarModule,
+IgxRadioModule,
+IgxRippleModule,
+IgxSelectModule,
+IgxSnackbarModule,
+IgxSwitchModule,
+IgxTabsModule,
+IgxToastModule,
+IgxTooltipModule,
+IgxToggleModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class GridConfigGenerator implements IConfigGenerator {
+    public additionalImports = {
+        IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive',
+        GridWithTransactionsComponent: '../../src/app/grid/grid-batch-editing/grid-transaction.component',
+        ContextmenuComponent: '../../src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component',
+        RemoteValuesService: '../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service',
+        PlanetComponent: '../../src/app/grid/grid-row-drag/planet/planet.component',
+        LocalService: '../../src/app/grid/grid-sample-2/grid-sample-2.component',
+        RemoteService: '../../src/app/grid/grid-sample-5/remote.service',
+        RemoteFilteringService: '../../src/app/grid/services/remoteFilteringService',
+        RemotePagingService: '../../src/app/grid/services/remotePagingService',
+        RemoteServiceVirt: '../../src/app/grid/services/remoteService'
+};
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

@@ -1,18 +1,15 @@
-import { IgxButtonGroupModule, IgxButtonModule, IgxDropDownModule, IgxIconModule,
-    IgxInputGroupModule,
-    IgxSelectModule} from "igniteui-angular";
-import { SelectHeaderFooterComponent
-} from "../../src/app/data-entries/select/select-header-footer/select-header-footer.component";
-import { SelectInputDirectivesComponent
-} from "../../src/app/data-entries/select/select-input-directives/select-input-directives";
-import { SelectSample1Component } from "../../src/app/data-entries/select/select-sample-1/select-sample-1.component";
-import { SelectSample2Component } from "../../src/app/data-entries/select/select-sample-2/select-sample-2.component";
-import { SelectSample4Component } from "../../src/app/data-entries/select/select-sample-4/select-sample-4.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxButtonGroupModule,
+IgxButtonModule,
+IgxDropDownModule,
+IgxIconModule,
+IgxInputGroupModule,
+IgxSelectModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class SelectConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

@@ -1,18 +1,19 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxAvatarModule, IgxBannerModule, IgxButtonModule, IgxCardModule, IgxIconModule,
-    IgxInputGroupModule, IgxNavbarModule, IgxRippleModule, IgxSwitchModule, IgxToastModule } from "igniteui-angular";
-import { BannerAdvancedSampleComponent
-       } from "../../src/app/notifications/banner/banner-advanced-sample/banner-advanced-sample.component";
-import { BannerSample1Component } from "../../src/app/notifications/banner/banner-sample-1/banner-sample-1.component";
-import { BannerSample2Component } from "../../src/app/notifications/banner/banner-sample-2/banner-sample-2.component";
-import { BannerSample3Component } from "../../src/app/notifications/banner/banner-sample-3/banner-sample-3.component";
-import { BannerSample4Component } from "../../src/app/notifications/banner/banner-sample-4/banner-sample-4.component";
-import { BannerStylingComponent } from "../../src/app/notifications/banner/banner-styling/banner-styling.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-
+import {IgxAvatarModule,
+IgxBannerModule,
+IgxButtonModule,
+IgxCardModule,
+IgxIconModule,
+IgxInputGroupModule,
+IgxNavbarModule,
+IgxRippleModule,
+IgxSwitchModule,
+IgxToastModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class BannerConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

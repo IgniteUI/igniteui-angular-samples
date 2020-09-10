@@ -1,16 +1,11 @@
-/* tslint:disable:object-literal-sort-keys */
-import { IgxIconModule, IgxNavbarModule } from "igniteui-angular";
-import { NavbarSample1Component } from "../../src/app/menus/navbar/navbar-sample-1/navbar-sample-1.component";
-import { NavbarSample2Component } from "../../src/app/menus/navbar/navbar-sample-2/navbar-sample-2.component";
-import { NavbarSample3Component } from "../../src/app/menus/navbar/navbar-sample-3/navbar-sample-3.component";
-import { NavbarStyleComponent } from "../../src/app/menus/navbar/navbar-style/navbar-style.component";
-import { NavbarComponent } from "../../src/app/menus/navbar/navbar.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { NavbarCustomTitleComponent } from "../../src/app/menus/navbar/navbar-custom-title/navbar-custom-title.component";
-
+import {IgxIconModule,
+IgxNavbarModule} from 'igniteui-angular';
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class NavbarConfigGenerator implements IConfigGenerator {
+    
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
