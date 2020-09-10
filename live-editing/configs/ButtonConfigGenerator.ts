@@ -22,46 +22,46 @@ export class ButtonConfigGenerator implements IConfigGenerator {
 
         // buttons sample 1
         configs.push(new Config({
-            component: ButtonsSample1Component,
+            component: 'ButtonsSample1Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxIconModule, IgxRippleModule, ButtonsSample1Component],
-                ngDeclarations: [ButtonsSample1Component],
-                ngImports: [IgxButtonModule, IgxIconModule, IgxRippleModule]
+                imports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule', 'ButtonsSample1Component'],
+                ngDeclarations: ['ButtonsSample1Component'],
+                ngImports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule']
             }),
             shortenComponentPathBy: "/data-entries/buttons/"
         }));
 
         // buttons roundness
         configs.push(new Config({
-            component: ButtonsDisabledComponent,
+            component: 'ButtonsDisabledComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxIconModule, IgxRippleModule, ButtonsDisabledComponent],
-                ngDeclarations: [ButtonsDisabledComponent],
-                ngImports: [IgxButtonModule, IgxIconModule, IgxRippleModule]
+                imports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule', 'ButtonsDisabledComponent'],
+                ngDeclarations: ['ButtonsDisabledComponent'],
+                ngImports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule']
             }),
             shortenComponentPathBy: "/data-entries/buttons/"
         }));
 
         // buttons display density
         configs.push(new Config({
-            component: ButtonsDisplayDensityComponent,
+            component: 'ButtonsDisplayDensityComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxIconModule, IgxRippleModule, IgxButtonGroupModule,
-                    ButtonsDisplayDensityComponent],
-                ngDeclarations: [ButtonsDisplayDensityComponent],
-                ngImports: [IgxButtonModule, IgxIconModule, IgxRippleModule, IgxButtonGroupModule]
+                imports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule', 'IgxButtonGroupModule',
+                    'ButtonsDisplayDensityComponent'],
+                ngDeclarations: ['ButtonsDisplayDensityComponent'],
+                ngImports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule', 'IgxButtonGroupModule']
             }),
             shortenComponentPathBy: "/data-entries/buttons/"
         }));
 
         // button style
         configs.push(new Config({
-            component: ButtonsStyleComponent,
+            component: 'ButtonsStyleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxIconModule, IgxRippleModule, IgxButtonGroupModule,
-                    ButtonsStyleComponent],
-                ngDeclarations: [ButtonsStyleComponent],
-                ngImports: [IgxButtonModule, IgxIconModule, IgxRippleModule, IgxButtonGroupModule]
+                imports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule', 'IgxButtonGroupModule',
+                    'ButtonsStyleComponent'],
+                ngDeclarations: ['ButtonsStyleComponent'],
+                ngImports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule', 'IgxButtonGroupModule']
             }),
             shortenComponentPathBy: "/data-entries/buttons/"
         }));

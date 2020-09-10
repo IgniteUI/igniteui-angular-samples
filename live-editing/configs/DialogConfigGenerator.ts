@@ -19,47 +19,47 @@ export class DialogConfigGenerator implements IConfigGenerator {
 
         // dialog sample 1
         configs.push(new Config({
-            component: DialogSample1Component,
+            component: 'DialogSample1Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxDialogModule, IgxRippleModule,
-                    DialogSample1Component],
-                ngDeclarations: [DialogSample1Component],
-                ngImports: [IgxButtonModule, IgxDialogModule, IgxRippleModule]
+                imports: ['IgxButtonModule', 'IgxDialogModule', 'IgxRippleModule',
+                    'DialogSample1Component'],
+                ngDeclarations: ['DialogSample1Component'],
+                ngImports: ['IgxButtonModule', 'IgxDialogModule', 'IgxRippleModule']
             }),
             shortenComponentPathBy: "/interactions/dialog/"
         }));
 
         // dialog sample 2
         configs.push(new Config({
-            component: DialogSample2Component,
+            component: 'DialogSample2Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxDialogModule, IgxRippleModule,
-                    DialogSample2Component],
-                ngDeclarations: [DialogSample2Component],
-                ngImports: [IgxButtonModule, IgxDialogModule, IgxRippleModule]
+                imports: ['IgxButtonModule', 'IgxDialogModule', 'IgxRippleModule',
+                    'DialogSample2Component'],
+                ngDeclarations: ['DialogSample2Component'],
+                ngImports: ['IgxButtonModule', 'IgxDialogModule', 'IgxRippleModule']
             }),
             shortenComponentPathBy: "/interactions/dialog/"
         }));
 
         // dialog sample 3
         configs.push(new Config({
-            component: DialogSample3Component,
+            component: 'DialogSample3Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule,
-                    DialogSample3Component, IgxIconModule],
-                ngDeclarations: [DialogSample3Component],
-                ngImports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule, IgxIconModule]
+                imports: ['IgxButtonModule', 'IgxDialogModule', 'IgxInputGroupModule', 'IgxRippleModule',
+                    'DialogSample3Component', 'IgxIconModule'],
+                ngDeclarations: ['DialogSample3Component'],
+                ngImports: ['IgxButtonModule', 'IgxDialogModule', 'IgxInputGroupModule', 'IgxRippleModule', 'IgxIconModule']
             }),
             shortenComponentPathBy: "/interactions/dialog/"
         }));
 
         configs.push(new Config({
-            component: DialogStylingSample,
+            component: 'DialogStylingSample',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxDialogModule, IgxRippleModule,
-                    DialogStylingSample, IgxIconModule, IgxToggleModule],
-                ngDeclarations: [DialogStylingSample],
-                ngImports: [IgxButtonModule, IgxDialogModule, IgxRippleModule, IgxIconModule, IgxToggleModule]
+                imports: ['IgxButtonModule', 'IgxDialogModule', 'IgxRippleModule',
+                    'DialogStylingSample', 'IgxIconModule', 'IgxToggleModule'],
+                ngDeclarations: ['DialogStylingSample'],
+                ngImports: ['IgxButtonModule', 'IgxDialogModule', 'IgxRippleModule', 'IgxIconModule', 'IgxToggleModule']
             }),
             shortenComponentPathBy: "/interactions/"
         }));

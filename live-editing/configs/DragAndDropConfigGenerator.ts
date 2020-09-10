@@ -37,109 +37,109 @@ export class DragAndDropConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            component: IconsSampleComponent,
+            component: 'IconsSampleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxDragDirective,
-                    IgxDropDirective,
-                    IgxDragDropModule,
-                    IgxDialogModule,
-                    IconsSampleComponent
+                    'IgxDragDirective',
+                    'IgxDropDirective',
+                    'IgxDragDropModule',
+                    'IgxDialogModule',
+                    'IconsSampleComponent'
                 ],
-                ngDeclarations: [IconsSampleComponent],
+                ngDeclarations: ['IconsSampleComponent'],
                 ngImports: [
-                    IgxDragDropModule,
-                    IgxDialogModule
+                    'IgxDragDropModule',
+                    'IgxDialogModule'
                 ]
             }),
             shortenComponentPathBy: "/interactions/"
         }));
 
         configs.push(new Config({
-            component: EmailSampleComponent,
+            component: 'EmailSampleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxDragDirective,
-                    IgxDropDirective,
-                    IgxListModule,
-                    IgxDragDropModule,
-                    IgxIconModule,
-                    IgxCheckboxModule,
-                    EmailSampleComponent
+                    'IgxDragDirective',
+                    'IgxDropDirective',
+                    'IgxListModule',
+                    'IgxDragDropModule',
+                    'IgxIconModule',
+                    'IgxCheckboxModule',
+                    'EmailSampleComponent'
                 ],
-                ngDeclarations: [EmailSampleComponent],
-                ngImports: [IgxDragDropModule,
-                    IgxIconModule,
-                    IgxCheckboxModule,
-                    IgxListModule
+                ngDeclarations: ['EmailSampleComponent'],
+                ngImports: ['IgxDragDropModule',
+                    'IgxIconModule',
+                    'IgxCheckboxModule',
+                    'IgxListModule'
                 ]
             }),
             shortenComponentPathBy: "/interactions/"
         }));
 
         configs.push(new Config({
-            component: ListReorderSampleComponent,
+            component: 'ListReorderSampleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxDragDirective,
-                    IgxDropDirective,
-                    IgxIconModule,
-                    IgxListModule,
-                    IgxDragDropModule,
-                    ListReorderSampleComponent
+                    'IgxDragDirective',
+                    'IgxDropDirective',
+                    'IgxIconModule',
+                    'IgxListModule',
+                    'IgxDragDropModule',
+                    'ListReorderSampleComponent'
                 ],
-                ngDeclarations: [ListReorderSampleComponent],
+                ngDeclarations: ['ListReorderSampleComponent'],
                 ngImports: [
-                    IgxIconModule,
-                    IgxListModule,
-                    IgxDragDropModule
+                    'IgxIconModule',
+                    'IgxListModule',
+                    'IgxDragDropModule'
                 ]
             }),
             shortenComponentPathBy: "/interactions/"
         }));
 
         configs.push(new Config({
-            component: DragDialogSampleComponent,
+            component: 'DragDialogSampleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxDragDropModule,
-                    IgxDialogModule,
-                    IgxIconModule,
-                    IgxButtonModule,
-                    IgxToggleModule,
-                    NoOpScrollStrategy,
-                    ConnectedPositioningStrategy,
-                    GlobalPositionStrategy,
-                    DragDialogSampleComponent
+                    'IgxDragDropModule',
+                    'IgxDialogModule',
+                    'IgxIconModule',
+                    'IgxButtonModule',
+                    'IgxToggleModule',
+                    'NoOpScrollStrategy',
+                    'ConnectedPositioningStrategy',
+                    'GlobalPositionStrategy',
+                    'DragDialogSampleComponent'
                 ],
-                ngDeclarations: [DragDialogSampleComponent],
+                ngDeclarations: ['DragDialogSampleComponent'],
                 ngImports: [
-                    IgxDragDropModule,
-                    IgxDialogModule,
-                    IgxIconModule,
-                    IgxButtonModule,
-                    IgxToggleModule]
+                    'IgxDragDropModule',
+                    'IgxDialogModule',
+                    'IgxIconModule',
+                    'IgxButtonModule',
+                    'IgxToggleModule']
             }),
             shortenComponentPathBy: "/interactions/"
         }));
 
         configs.push(new Config({
-            component: KanbanSampleComponent,
+            component: 'KanbanSampleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    KanbanSampleComponent,
-                    IgxDragDirective,
-                    IgxDropDirective,
-                    IgxDragDropModule,
-                    IgxDialogModule,
-                    IgxCardModule,
-                    IgxChipsModule
+                    'KanbanSampleComponent',
+                    'IgxDragDirective',
+                    'IgxDropDirective',
+                    'IgxDragDropModule',
+                    'IgxDialogModule',
+                    'IgxCardModule',
+                    'IgxChipsModule'
                 ],
-                ngDeclarations: [KanbanSampleComponent],
+                ngDeclarations: ['KanbanSampleComponent'],
                 ngImports: [
-                    IgxDragDropModule,
-                    IgxCardModule,
-                    IgxChipsModule
+                    'IgxDragDropModule',
+                    'IgxCardModule',
+                    'IgxChipsModule'
                 ]
             }),
             shortenComponentPathBy: "/interactions/"

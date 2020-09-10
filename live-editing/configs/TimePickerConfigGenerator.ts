@@ -34,59 +34,59 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
 
         // time picker sample 1
         configs.push(new Config({
-            component: TimePickerSample1Component,
+            component: 'TimePickerSample1Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTimePickerModule, TimePickerSample1Component],
-                ngDeclarations: [TimePickerSample1Component],
-                ngImports: [IgxTimePickerModule]
+                imports: ['IgxTimePickerModule', 'TimePickerSample1Component'],
+                ngDeclarations: ['TimePickerSample1Component'],
+                ngImports: ['IgxTimePickerModule']
             }),
             shortenComponentPathBy: "/scheduling/timepicker/"
         }));
 
         // time picker sample 4
         configs.push(new Config({
-            component: TimePickerSample4Component,
+            component: 'TimePickerSample4Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTimePickerModule, IgxToastModule, TimePickerSample4Component],
-                ngDeclarations: [TimePickerSample4Component],
-                ngImports: [IgxTimePickerModule, IgxToastModule]
+                imports: ['IgxTimePickerModule', 'IgxToastModule', 'TimePickerSample4Component'],
+                ngDeclarations: ['TimePickerSample4Component'],
+                ngImports: ['IgxTimePickerModule', 'IgxToastModule']
             }),
             shortenComponentPathBy: "/scheduling/timepicker/"
         }));
 
         // time picker sample 5
         configs.push(new Config({
-            component: TimePickerSample5Component,
+            component: 'TimePickerSample5Component',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxTimePickerModule,
-                    IgxInputGroupModule,
-                    IgxIconModule,
-                    TimePickerSample5Component
+                    'IgxTimePickerModule',
+                    'IgxInputGroupModule',
+                    'IgxIconModule',
+                    'TimePickerSample5Component'
                 ],
-                ngDeclarations: [TimePickerSample5Component],
-                ngImports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule]
+                ngDeclarations: ['TimePickerSample5Component'],
+                ngImports: ['IgxTimePickerModule', 'IgxInputGroupModule', 'IgxIconModule']
             }),
             shortenComponentPathBy: "/scheduling/timepicker/"
         }));
 
         // time picker sample 6
         configs.push(new Config({
-            component: TimePickerSample6Component,
+            component: 'TimePickerSample6Component',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxTimePickerModule,
-                    IgxInputGroupModule,
-                    IgxIconModule,
-                    IgxButtonModule,
-                    TimePickerSample6Component
+                    'IgxTimePickerModule',
+                    'IgxInputGroupModule',
+                    'IgxIconModule',
+                    'IgxButtonModule',
+                    'TimePickerSample6Component'
                 ],
-                ngDeclarations: [TimePickerSample6Component],
+                ngDeclarations: ['TimePickerSample6Component'],
                 ngImports: [
-                    IgxTimePickerModule,
-                    IgxInputGroupModule,
-                    IgxIconModule,
-                    IgxButtonModule
+                    'IgxTimePickerModule',
+                    'IgxInputGroupModule',
+                    'IgxIconModule',
+                    'IgxButtonModule'
                 ]
             }),
             shortenComponentPathBy: "/scheduling/timepicker/"
@@ -94,27 +94,27 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
 
         // time picker dropdown sample
         configs.push(new Config({
-            component: TimepickerDropdownComponent,
+            component: 'TimepickerDropdownComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxTimePickerModule,
-                    IgxInputGroupModule,
-                    IgxIconModule,
-                    TimepickerDropdownComponent
+                    'IgxTimePickerModule',
+                    'IgxInputGroupModule',
+                    'IgxIconModule',
+                    'TimepickerDropdownComponent'
                 ],
-                ngDeclarations: [TimepickerDropdownComponent],
-                ngImports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule]
+                ngDeclarations: ['TimepickerDropdownComponent'],
+                ngImports: ['IgxTimePickerModule', 'IgxInputGroupModule', 'IgxIconModule']
             }),
             shortenComponentPathBy: "/scheduling/timepicker/"
         }));
 
         // time picker styling sample
         configs.push(new Config({
-            component: TimePickerStylingComponent,
+            component: 'TimePickerStylingComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTimePickerModule, TimePickerStylingComponent],
-                ngDeclarations: [TimePickerStylingComponent],
-                ngImports: [IgxTimePickerModule]
+                imports: ['IgxTimePickerModule', 'TimePickerStylingComponent'],
+                ngDeclarations: ['TimePickerStylingComponent'],
+                ngImports: ['IgxTimePickerModule']
             }),
             shortenComponentPathBy: "/scheduling/timepicker/"
         }));

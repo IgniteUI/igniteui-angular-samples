@@ -11,21 +11,21 @@ export class AvatarConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            component: AvatarSample3Component,
+            component: 'AvatarSample3Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxAvatarModule, AvatarSample3Component],
-                ngDeclarations: [AvatarSample3Component],
-                ngImports: [IgxAvatarModule]
+                imports: ['IgxAvatarModule', 'AvatarSample3Component'],
+                ngDeclarations: ['AvatarSample3Component'],
+                ngImports: ['IgxAvatarModule']
             }),
             shortenComponentPathBy: "/layouts/avatar/"
         }));
 
         configs.push(new Config({
-            component: AvatarStylingSampleComponent,
+            component: 'AvatarStylingSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxAvatarModule, AvatarStylingSampleComponent],
-                ngDeclarations: [AvatarStylingSampleComponent],
-                ngImports: [IgxAvatarModule]
+                imports: ['IgxAvatarModule', 'AvatarStylingSampleComponent'],
+                ngDeclarations: ['AvatarStylingSampleComponent'],
+                ngImports: ['IgxAvatarModule']
             }),
             shortenComponentPathBy: "/layouts/avatar/"
         }));

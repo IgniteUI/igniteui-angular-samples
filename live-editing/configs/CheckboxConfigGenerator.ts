@@ -18,43 +18,43 @@ export class CheckboxConfigGenerator implements IConfigGenerator {
 
         // checkbox sample 2
         configs.push(new Config({
-            component: CheckboxSample1Component,
+            component: 'CheckboxSample1Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCheckboxModule, CheckboxSample1Component],
-                ngDeclarations: [CheckboxSample1Component],
-                ngImports: [IgxCheckboxModule]
+                imports: ['IgxCheckboxModule', 'CheckboxSample1Component'],
+                ngDeclarations: ['CheckboxSample1Component'],
+                ngImports: ['IgxCheckboxModule']
             }),
             shortenComponentPathBy: "/data-entries/checkbox/"
         }));
 
         // checkbox sample 2
         configs.push(new Config({
-            component: CheckboxSample2Component,
+            component: 'CheckboxSample2Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCheckboxModule, CheckboxSample2Component],
-                ngDeclarations: [CheckboxSample2Component],
-                ngImports: [IgxCheckboxModule]
+                imports: ['IgxCheckboxModule', 'CheckboxSample2Component'],
+                ngDeclarations: ['CheckboxSample2Component'],
+                ngImports: ['IgxCheckboxModule']
             }),
             shortenComponentPathBy: "/data-entries/checkbox/"
         }));
 
         configs.push(new Config({
-            component: CheckboxSample3Component,
+            component: 'CheckboxSample3Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCheckboxModule, CheckboxSample3Component],
-                ngDeclarations: [CheckboxSample3Component],
-                ngImports: [IgxCheckboxModule]
+                imports: ['IgxCheckboxModule', 'CheckboxSample3Component'],
+                ngDeclarations: ['CheckboxSample3Component'],
+                ngImports: ['IgxCheckboxModule']
             }),
             shortenComponentPathBy: "/data-entries/checkbox/"
         }));
 
         // checkbox styling
         configs.push(new Config({
-            component: CheckboxStylingComponent,
+            component: 'CheckboxStylingComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCheckboxModule, CheckboxStylingComponent],
-                ngDeclarations: [CheckboxStylingComponent],
-                ngImports: [IgxCheckboxModule]
+                imports: ['IgxCheckboxModule', 'CheckboxStylingComponent'],
+                ngDeclarations: ['CheckboxStylingComponent'],
+                ngImports: ['IgxCheckboxModule']
             }),
             shortenComponentPathBy: "/data-entries/checkbox/"
         }));

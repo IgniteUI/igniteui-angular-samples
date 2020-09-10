@@ -12,13 +12,13 @@ export class DockManagerConfigGenerator implements IConfigGenerator {
         const defineCustomElements = "defineCustomElements();";
 
         configs.push(new Config({
-            component: DockManagerComponent,
+            component: 'DockManagerComponent',
             additionalDependencies: ["igniteui-dockmanager"],
             appModuleConfig: new AppModuleConfig({
-                imports: [DockManagerComponent, "CUSTOM_ELEMENTS_SCHEMA"],
-                ngDeclarations: [DockManagerComponent],
+                imports: ['DockManagerComponent', 'CUSTOM_ELEMENTS_SCHEMA'],
+                ngDeclarations: ['DockManagerComponent'],
                 ngImports: [],
-                schemas: ["CUSTOM_ELEMENTS_SCHEMA"],
+                schemas: ['CUSTOM_ELEMENTS_SCHEMA'],
                 additionalAdjustments: [dockManagerImport, defineCustomElements]
             }),
             shortenComponentPathBy: "/layouts/dock-manager/"

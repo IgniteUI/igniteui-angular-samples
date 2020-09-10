@@ -19,33 +19,33 @@ export class SplitterConfigGenerator implements IConfigGenerator {
 
         // splitter horizontal sample
         configs.push(new Config({
-            component: SplitterHorizontalSampleComponent,
+            component: 'SplitterHorizontalSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSplitterModule, SplitterHorizontalSampleComponent],
-                ngDeclarations: [SplitterHorizontalSampleComponent],
-                ngImports: [IgxSplitterModule]
+                imports: ['IgxSplitterModule', 'SplitterHorizontalSampleComponent'],
+                ngDeclarations: ['SplitterHorizontalSampleComponent'],
+                ngImports: ['IgxSplitterModule']
             }),
             shortenComponentPathBy: "/layouts/splitter/"
         }));
 
         // splitter nested sample
         configs.push(new Config({
-            component: SplitterNestedSampleComponent,
+            component: 'SplitterNestedSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSplitterModule, SplitterNestedSampleComponent],
-                ngDeclarations: [SplitterNestedSampleComponent],
-                ngImports: [IgxSplitterModule]
+                imports: ['IgxSplitterModule', 'SplitterNestedSampleComponent'],
+                ngDeclarations: ['SplitterNestedSampleComponent'],
+                ngImports: ['IgxSplitterModule']
             }),
             shortenComponentPathBy: "/layouts/splitter/"
         }));
 
         // splitter styling sample
         configs.push(new Config({
-            component: SplitterStylingSampleComponent,
+            component: 'SplitterStylingSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSplitterModule, SplitterStylingSampleComponent],
-                ngDeclarations: [SplitterStylingSampleComponent],
-                ngImports: [IgxSplitterModule]
+                imports: ['IgxSplitterModule', 'SplitterStylingSampleComponent'],
+                ngDeclarations: ['SplitterStylingSampleComponent'],
+                ngImports: ['IgxSplitterModule']
             }),
             shortenComponentPathBy: "/layouts/splitter/"
         }));

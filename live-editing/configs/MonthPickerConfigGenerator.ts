@@ -21,34 +21,34 @@ export class MonthPickerConfigGenerator implements IConfigGenerator {
 
         // default month picker sample 1
         configs.push(new Config({
-            component: MonthpickerSample1Component,
+            component: 'MonthpickerSample1Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCalendarModule, MonthpickerSample1Component, IgxCardModule],
-                ngDeclarations: [MonthpickerSample1Component],
-                ngImports: [IgxCalendarModule, IgxCardModule]
+                imports: ['IgxCalendarModule', 'MonthpickerSample1Component', 'IgxCardModule'],
+                ngDeclarations: ['MonthpickerSample1Component'],
+                ngImports: ['IgxCalendarModule', 'IgxCardModule']
             }),
             shortenComponentPathBy: "/scheduling/monthpicker/"
         }));
 
         // localized month picker sample 3
         configs.push(new Config({
-            component: MonthpickerSample3Component,
+            component: 'MonthpickerSample3Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCalendarModule, MonthpickerSample3Component,
-                    IgxSelectModule, IgxCardModule, IgxInputGroupModule],
-                ngDeclarations: [MonthpickerSample3Component],
-                ngImports: [IgxCalendarModule, IgxSelectModule, IgxCardModule, IgxInputGroupModule]
+                imports: ['IgxCalendarModule', 'MonthpickerSample3Component',
+                    'IgxSelectModule', 'IgxCardModule', 'IgxInputGroupModule'],
+                ngDeclarations: ['MonthpickerSample3Component'],
+                ngImports: ['IgxCalendarModule', 'IgxSelectModule', 'IgxCardModule', 'IgxInputGroupModule']
             }),
             shortenComponentPathBy: "/scheduling/monthpicker/"
         }));
 
         // styled month picker sample
         configs.push(new Config({
-            component: MonthpickerStylingComponent,
+            component: 'MonthpickerStylingComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCalendarModule, MonthpickerStylingComponent],
-                ngDeclarations: [MonthpickerStylingComponent],
-                ngImports: [IgxCalendarModule]
+                imports: ['IgxCalendarModule', 'MonthpickerStylingComponent'],
+                ngDeclarations: ['MonthpickerStylingComponent'],
+                ngImports: ['IgxCalendarModule']
             }),
             shortenComponentPathBy: "/scheduling/monthpicker/"
         }));

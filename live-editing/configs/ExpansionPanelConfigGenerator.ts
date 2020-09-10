@@ -31,65 +31,65 @@ export class ExpansionPanelConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            component: ExpansionPanelSample1Component,
+            component: 'ExpansionPanelSample1Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxExpansionPanelModule, ExpansionPanelSample1Component],
-                ngDeclarations: [ExpansionPanelSample1Component],
-                ngImports: [IgxIconModule, IgxExpansionPanelModule]
+                imports: ['IgxIconModule', 'IgxExpansionPanelModule', 'ExpansionPanelSample1Component'],
+                ngDeclarations: ['ExpansionPanelSample1Component'],
+                ngImports: ['IgxIconModule', 'IgxExpansionPanelModule']
             }),
             shortenComponentPathBy: "/layouts/expansion-panel/"
         }));
 
         configs.push(new Config({
-            component: ExpansionPanelSample2Component,
+            component: 'ExpansionPanelSample2Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxExpansionPanelModule, IgxToastModule, ExpansionPanelSample2Component],
-                ngDeclarations: [ExpansionPanelSample2Component],
-                ngImports: [IgxIconModule, IgxExpansionPanelModule, IgxToastModule]
+                imports: ['IgxIconModule', 'IgxExpansionPanelModule', 'IgxToastModule', 'ExpansionPanelSample2Component'],
+                ngDeclarations: ['ExpansionPanelSample2Component'],
+                ngImports: ['IgxIconModule', 'IgxExpansionPanelModule', 'IgxToastModule']
             }),
             shortenComponentPathBy: "/layouts/expansion-panel/"
         }));
 
         configs.push(new Config({
-            component: ExpansionPanelSample3Component,
+            component: 'ExpansionPanelSample3Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxAvatarModule, IgxToastModule,
-                    IgxExpansionPanelModule, ExpansionPanelSample3Component],
-                ngDeclarations: [ExpansionPanelSample3Component],
-                ngImports: [IgxIconModule, IgxAvatarModule, IgxToastModule, IgxExpansionPanelModule]
+                imports: ['IgxIconModule', 'IgxAvatarModule', 'IgxToastModule',
+                    'IgxExpansionPanelModule', 'ExpansionPanelSample3Component'],
+                ngDeclarations: ['ExpansionPanelSample3Component'],
+                ngImports: ['IgxIconModule', 'IgxAvatarModule', 'IgxToastModule', 'IgxExpansionPanelModule']
             }),
             shortenComponentPathBy: "/layouts/expansion-panel/"
         }));
 
         configs.push(new Config({
-            component: ExpansionPanelSample4Component,
+            component: 'ExpansionPanelSample4Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule,
-                    ExpansionPanelSample4Component],
-                ngDeclarations: [ExpansionPanelSample4Component],
-                ngImports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule]
+                imports: ['IgxIconModule', 'IgxExpansionPanelModule', 'IgxInputGroupModule',
+                    'ExpansionPanelSample4Component'],
+                ngDeclarations: ['ExpansionPanelSample4Component'],
+                ngImports: ['IgxIconModule', 'IgxExpansionPanelModule', 'IgxInputGroupModule']
             }),
             shortenComponentPathBy: "/layouts/expansion-panel/"
         }));
 
         configs.push(new Config({
-            component: ExpansionPanelSample5Component,
+            component: 'ExpansionPanelSample5Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule,
-                    ExpansionPanelSample5Component],
-                ngDeclarations: [ExpansionPanelSample5Component],
-                ngImports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule]
+                imports: ['IgxIconModule', 'IgxExpansionPanelModule', 'IgxInputGroupModule',
+                    'ExpansionPanelSample5Component'],
+                ngDeclarations: ['ExpansionPanelSample5Component'],
+                ngImports: ['IgxIconModule', 'IgxExpansionPanelModule', 'IgxInputGroupModule']
             }),
             shortenComponentPathBy: "/layouts/expansion-panel/"
         }));
 
         configs.push(new Config({
-            component: ExpansionPanelStylingComponent,
+            component: 'ExpansionPanelStylingComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxButtonModule, IgxExpansionPanelModule, IgxInputGroupModule,
-                    ExpansionPanelStylingComponent],
-                ngDeclarations: [ExpansionPanelStylingComponent],
-                ngImports: [IgxIconModule, IgxButtonModule, IgxExpansionPanelModule, IgxInputGroupModule]
+                imports: ['IgxIconModule', 'IgxButtonModule', 'IgxExpansionPanelModule', 'IgxInputGroupModule',
+                    'ExpansionPanelStylingComponent'],
+                ngDeclarations: ['ExpansionPanelStylingComponent'],
+                ngImports: ['IgxIconModule', 'IgxButtonModule', 'IgxExpansionPanelModule', 'IgxInputGroupModule']
             }),
             shortenComponentPathBy: "/layouts/expansion-panel/"
         }));

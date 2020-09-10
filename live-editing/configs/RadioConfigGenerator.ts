@@ -16,45 +16,45 @@ export class RadioConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            component: RadioSample1Component,
+            component: 'RadioSample1Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxRadioModule, RadioSample1Component],
-                ngDeclarations: [RadioSample1Component],
-                ngImports: [IgxRadioModule]
+                imports: ['IgxRadioModule', 'RadioSample1Component'],
+                ngDeclarations: ['RadioSample1Component'],
+                ngImports: ['IgxRadioModule']
             }),
             shortenComponentPathBy: "/data-entries/radio/"
         }));
 
         configs.push(new Config({
-            component: RadioSample2Component,
+            component: 'RadioSample2Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxRadioModule, RadioSample2Component],
-                ngDeclarations: [RadioSample2Component],
-                ngImports: [IgxRadioModule]
+                imports: ['IgxRadioModule', 'RadioSample2Component'],
+                ngDeclarations: ['RadioSample2Component'],
+                ngImports: ['IgxRadioModule']
             }),
             shortenComponentPathBy: "/data-entries/radio/"
         }));
 
         configs.push(new Config({
-            component: RadioGroupSampleComponent,
+            component: 'RadioGroupSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule,
-                          IgxRadioModule,
-                          RadioGroupSampleComponent,
-                          IgxInputGroupModule,
-                          ReactiveFormsModule],
-                ngDeclarations: [RadioGroupSampleComponent],
-                ngImports: [IgxButtonModule, IgxRadioModule, IgxInputGroupModule, ReactiveFormsModule]
+                imports: ['IgxButtonModule',
+                          'IgxRadioModule',
+                          'RadioGroupSampleComponent',
+                          'IgxInputGroupModule',
+                          'ReactiveFormsModule'],
+                ngDeclarations: ['RadioGroupSampleComponent'],
+                ngImports: ['IgxButtonModule', 'IgxRadioModule', 'IgxInputGroupModule', 'ReactiveFormsModule']
             }),
             shortenComponentPathBy: "/data-entries/radio/"
         }));
 
         configs.push(new Config({
-            component: RadioStylingSampleComponent,
+            component: 'RadioStylingSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxRadioModule, RadioStylingSampleComponent],
-                ngDeclarations: [RadioStylingSampleComponent],
-                ngImports: [IgxRadioModule]
+                imports: ['IgxRadioModule', 'RadioStylingSampleComponent'],
+                ngDeclarations: ['RadioStylingSampleComponent'],
+                ngImports: ['IgxRadioModule']
             }),
             shortenComponentPathBy: "/data-entries/radio/"
         }));

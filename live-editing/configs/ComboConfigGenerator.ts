@@ -24,97 +24,97 @@ export class ComboConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/lists/combo/combo-features/local-data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, IgxSwitchModule, ComboFeatures],
-                ngDeclarations: [ComboFeatures],
-                ngImports: [IgxComboModule, IgxSwitchModule]
+                imports: ['IgxComboModule', 'IgxSwitchModule', 'ComboFeatures'],
+                ngDeclarations: ['ComboFeatures'],
+                ngImports: ['IgxComboModule', 'IgxSwitchModule']
             }),
-            component: ComboFeatures,
+            component: 'ComboFeatures',
             shortenComponentPathBy: "/lists/combo/"
         }));
 
         configs.push(new Config({
             additionalFiles: ["/src/app/data/heroData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, ComboStyling],
-                ngDeclarations: [ComboStyling],
-                ngImports: [IgxComboModule]
+                imports: ['IgxComboModule', 'ComboStyling'],
+                ngDeclarations: ['ComboStyling'],
+                ngImports: ['IgxComboModule']
             }),
-            component: ComboStyling
+            component: 'ComboStyling'
         }));
 
         configs.push(new Config({
             additionalFiles: ["/src/app/lists/combo/cascading-combos/local-data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, IgxSelectModule, CascadingCombos],
-                ngDeclarations: [CascadingCombos],
-                ngImports: [IgxComboModule, IgxSelectModule]
+                imports: ['IgxComboModule', 'IgxSelectModule', 'CascadingCombos'],
+                ngDeclarations: ['CascadingCombos'],
+                ngImports: ['IgxComboModule', 'IgxSelectModule']
             }),
-            component: CascadingCombos,
+            component: 'CascadingCombos',
             shortenComponentPathBy: "/lists/combo/"
         }));
 
         configs.push(new Config({
             additionalFiles: ["/src/app/lists/combo/combo-main/local-data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, ComboMainComponent],
-                ngDeclarations: [ComboMainComponent],
-                ngImports: [IgxComboModule]
+                imports: ['IgxComboModule', 'ComboMainComponent'],
+                ngDeclarations: ['ComboMainComponent'],
+                ngImports: ['IgxComboModule']
             }),
-            component: ComboMainComponent,
+            component: 'ComboMainComponent',
             shortenComponentPathBy: "/lists/combo/"
         }));
 
         configs.push(new Config({
             additionalFiles: ["/src/app/lists/combo/combo-template/local-data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, ComboTemplateComponent],
-                ngDeclarations: [ComboTemplateComponent],
-                ngImports: [IgxComboModule]
+                imports: ['IgxComboModule', 'ComboTemplateComponent'],
+                ngDeclarations: ['ComboTemplateComponent'],
+                ngImports: ['IgxComboModule']
             }),
-            component: ComboTemplateComponent,
+            component: 'ComboTemplateComponent',
             shortenComponentPathBy: "/lists/combo/"
         }));
 
         configs.push(new Config({
             additionalFiles: ["/src/app/grid/services/remote.service.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, IgxToastModule, ComboRemoteComponent,
-                    HttpClientModule, RemoteService],
-                ngDeclarations: [ComboRemoteComponent],
-                ngImports: [IgxComboModule, IgxToastModule, HttpClientModule],
-                ngProviders: [RemoteService]
+                imports: ['IgxComboModule', 'IgxToastModule', 'ComboRemoteComponent',
+                    'HttpClientModule', 'RemoteService'],
+                ngDeclarations: ['ComboRemoteComponent'],
+                ngImports: ['IgxComboModule', 'IgxToastModule', 'HttpClientModule'],
+                ngProviders: ['RemoteService']
             }),
-            component: ComboRemoteComponent
+            component: 'ComboRemoteComponent'
         }));
 
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, ComboOverlayComponent],
-                ngDeclarations: [ComboOverlayComponent],
-                ngImports: [IgxComboModule]
+                imports: ['IgxComboModule', 'ComboOverlayComponent'],
+                ngDeclarations: ['ComboOverlayComponent'],
+                ngImports: ['IgxComboModule']
             }),
-            component: ComboOverlayComponent
+            component: 'ComboOverlayComponent'
         }));
 
         configs.push(new Config({
             additionalFiles: ["/src/app/lists/combo/combo-single-selection/local-data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, ComboSingleSelectionComponent],
-                ngDeclarations: [ComboSingleSelectionComponent],
-                ngImports: [IgxComboModule]
+                imports: ['IgxComboModule', 'ComboSingleSelectionComponent'],
+                ngDeclarations: ['ComboSingleSelectionComponent'],
+                ngImports: ['IgxComboModule']
             }),
-            component: ComboSingleSelectionComponent,
+            component: 'ComboSingleSelectionComponent',
             shortenComponentPathBy: "/lists/combo/"
         }));
 
         configs.push(new Config({
             additionalFiles: ["/src/app/lists/combo/combo-binding/cities.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, IgxButtonModule, IgxCardModule, ComboBindingComponent],
-                ngDeclarations: [ComboBindingComponent],
-                ngImports: [IgxComboModule, IgxButtonModule, IgxCardModule]
+                imports: ['IgxComboModule', 'IgxButtonModule', 'IgxCardModule', 'ComboBindingComponent'],
+                ngDeclarations: ['ComboBindingComponent'],
+                ngImports: ['IgxComboModule', 'IgxButtonModule', 'IgxCardModule']
             }),
-            component: ComboBindingComponent,
+            component: 'ComboBindingComponent',
             shortenComponentPathBy: "/lists/combo/"
         }));
 

@@ -7,18 +7,18 @@ import { MetaDataGenerator } from "./generators/MetaDataGenerator";
 import { StyleSyntax } from "./generators/misc/StyleSyntax";
 import { SampleAssetsGenerator } from "./generators/SampleAssetsGenerator";
 import { SharedAssetsGenerator } from "./generators/SharedAssetsGenerator";
-import { TsRoutingService } from "./services/TsRoutingService";
-
+import { TsRoutingPathService } from "./services/TsRoutingPathService";
 export class LiveEditingManager {
     public static  ASSETS_SAMPLES_DIR = path.join(__dirname, "../src/assets/samples/");
     public static  ASSETS_SAMPLES_CSS_SUPPORT_DIR = path.join(__dirname, "../src/assets/samples/css-support/");
     public static  DEFAULT_PROJECT = true;
 
-    public static routingService: TsRoutingService = new TsRoutingService();
+    public static routingPathService: TsRoutingPathService = new TsRoutingPathService();
 
     constructor(){
-        LiveEditingManager.routingService.generateRouting();
+       LiveEditingManager.routingPathService.generateRouting();
     }
+
     public run(changeAssetsPath: boolean, compileSass: boolean) {
 
         if (changeAssetsPath) {

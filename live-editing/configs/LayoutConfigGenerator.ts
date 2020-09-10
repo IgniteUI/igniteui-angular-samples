@@ -30,129 +30,129 @@ export class LayoutConfigGenerator implements IConfigGenerator {
 
         configs.push(
             new Config({
-                component: LayoutAlignItemsComponent,
+                component: 'LayoutAlignItemsComponent',
                 appModuleConfig: new AppModuleConfig({
                     imports: [
-                        IgxLayoutModule,
-                        LayoutAlignItemsComponent,
-                        IgxButtonGroupModule,
-                        IgxButtonModule,
-                        IgxRippleModule
+                        'IgxLayoutModule',
+                        'LayoutAlignItemsComponent',
+                        'IgxButtonGroupModule',
+                        'IgxButtonModule',
+                        'IgxRippleModule'
                     ],
-                    ngDeclarations: [LayoutAlignItemsComponent],
+                    ngDeclarations: ['LayoutAlignItemsComponent'],
                     ngImports: [
-                        IgxLayoutModule,
-                        IgxButtonGroupModule,
-                        IgxButtonModule,
-                        IgxRippleModule
+                        'IgxLayoutModule',
+                        'IgxButtonGroupModule',
+                        'IgxButtonModule',
+                        'IgxRippleModule'
                     ]
                 }),
                 shortenComponentPathBy: "/layouts/"
             }),
             new Config({
-                component: LayoutContentSpaceComponent,
+                component: 'LayoutContentSpaceComponent',
                 appModuleConfig: new AppModuleConfig({
                     imports: [
-                        IgxLayoutModule,
-                        LayoutContentSpaceComponent,
-                        IgxButtonGroupModule,
-                        IgxButtonModule,
-                        IgxRippleModule
+                        'IgxLayoutModule',
+                        'LayoutContentSpaceComponent',
+                        'IgxButtonGroupModule',
+                        'IgxButtonModule',
+                        'IgxRippleModule'
                     ],
-                    ngDeclarations: [LayoutContentSpaceComponent],
+                    ngDeclarations: ['LayoutContentSpaceComponent'],
                     ngImports: [
-                        IgxLayoutModule,
-                        IgxButtonGroupModule,
-                        IgxButtonModule,
-                        IgxRippleModule
+                        'IgxLayoutModule',
+                        'IgxButtonGroupModule',
+                        'IgxButtonModule',
+                        'IgxRippleModule'
                     ]
                 }),
                 shortenComponentPathBy: "/layouts/"
             }),
             new Config({
-                component: LayoutCustomOrderComponent,
+                component: 'LayoutCustomOrderComponent',
                 appModuleConfig: new AppModuleConfig({
-                    imports: [IgxLayoutModule, LayoutCustomOrderComponent],
-                    ngDeclarations: [LayoutCustomOrderComponent],
-                    ngImports: [IgxLayoutModule]
+                    imports: ['IgxLayoutModule', 'LayoutCustomOrderComponent'],
+                    ngDeclarations: ['LayoutCustomOrderComponent'],
+                    ngImports: ['IgxLayoutModule']
                 }),
                 shortenComponentPathBy: "/layouts/"
             }),
             new Config({
-                component: LayoutDirectionColumnComponent,
+                component: 'LayoutDirectionColumnComponent',
                 appModuleConfig: new AppModuleConfig({
                     imports: [
-                        IgxLayoutModule,
-                        LayoutDirectionColumnComponent,
-                        IgxButtonGroupModule,
-                        IgxButtonModule,
-                        IgxRippleModule
+                        'IgxLayoutModule',
+                        'LayoutDirectionColumnComponent',
+                        'IgxButtonGroupModule',
+                        'IgxButtonModule',
+                        'IgxRippleModule'
                     ],
-                    ngDeclarations: [LayoutDirectionColumnComponent],
+                    ngDeclarations: ['LayoutDirectionColumnComponent'],
                     ngImports: [
-                        IgxLayoutModule,
-                        IgxButtonGroupModule,
-                        IgxButtonModule,
-                        IgxRippleModule
+                        'IgxLayoutModule',
+                        'IgxButtonGroupModule',
+                        'IgxButtonModule',
+                        'IgxRippleModule'
                     ]
                 }),
                 shortenComponentPathBy: "/layouts/"
             }),
             new Config({
-                component: LayoutDirectionRowComponent,
+                component: 'LayoutDirectionRowComponent',
                 appModuleConfig: new AppModuleConfig({
                     imports: [
-                        IgxLayoutModule,
-                        LayoutDirectionRowComponent,
-                        IgxButtonGroupModule,
-                        IgxButtonModule,
-                        IgxRippleModule
+                        'IgxLayoutModule',
+                        'LayoutDirectionRowComponent',
+                        'IgxButtonGroupModule',
+                        'IgxButtonModule',
+                        'IgxRippleModule'
                     ],
-                    ngDeclarations: [LayoutDirectionRowComponent],
+                    ngDeclarations: ['LayoutDirectionRowComponent'],
                     ngImports: [
-                        IgxLayoutModule,
-                        IgxButtonGroupModule,
-                        IgxButtonModule,
-                        IgxRippleModule
+                        'IgxLayoutModule',
+                        'IgxButtonGroupModule',
+                        'IgxButtonModule',
+                        'IgxRippleModule'
                     ]
                 }),
                 shortenComponentPathBy: "/layouts/"
             }),
             new Config({
-                component: LayoutJustifyContentComponent,
+                component: 'LayoutJustifyContentComponent',
                 appModuleConfig: new AppModuleConfig({
                     imports: [
-                        IgxLayoutModule,
-                        LayoutJustifyContentComponent,
-                        IgxButtonGroupModule,
-                        IgxButtonModule,
-                        IgxRippleModule
+                        'IgxLayoutModule',
+                        'LayoutJustifyContentComponent',
+                        'IgxButtonGroupModule',
+                        'IgxButtonModule',
+                        'IgxRippleModule'
                     ],
-                    ngDeclarations: [LayoutJustifyContentComponent],
+                    ngDeclarations: ['LayoutJustifyContentComponent'],
                     ngImports: [
-                        IgxLayoutModule,
-                        IgxButtonGroupModule,
-                        IgxButtonModule,
-                        IgxRippleModule
+                        'IgxLayoutModule',
+                        'IgxButtonGroupModule',
+                        'IgxButtonModule',
+                        'IgxRippleModule'
                     ]
                 }),
                 shortenComponentPathBy: "/layouts/"
             }),
             new Config({
-                component: LayoutSampleComponent,
+                component: 'LayoutSampleComponent',
                 appModuleConfig: new AppModuleConfig({
-                    imports: [IgxLayoutModule, LayoutSampleComponent],
-                    ngDeclarations: [LayoutSampleComponent],
-                    ngImports: [IgxLayoutModule]
+                    imports: ['IgxLayoutModule', 'LayoutSampleComponent'],
+                    ngDeclarations: ['LayoutSampleComponent'],
+                    ngImports: ['IgxLayoutModule']
                 }),
                 shortenComponentPathBy: "/layouts/"
             }),
             new Config({
-                component: LayoutWrapComponent,
+                component: 'LayoutWrapComponent',
                 appModuleConfig: new AppModuleConfig({
-                    imports: [IgxLayoutModule, LayoutWrapComponent],
-                    ngDeclarations: [LayoutWrapComponent],
-                    ngImports: [IgxLayoutModule]
+                    imports: ['IgxLayoutModule', 'LayoutWrapComponent'],
+                    ngDeclarations: ['LayoutWrapComponent'],
+                    ngImports: ['IgxLayoutModule']
                 }),
                 shortenComponentPathBy: "/layouts/"
             })

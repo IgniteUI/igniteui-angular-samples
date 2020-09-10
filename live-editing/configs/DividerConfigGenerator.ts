@@ -13,41 +13,41 @@ export class DividerConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            component: DividerDefaultComponent,
+            component: 'DividerDefaultComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDividerModule, DividerDefaultComponent],
-                ngDeclarations: [DividerDefaultComponent],
-                ngImports: [IgxDividerModule]
+                imports: ['IgxDividerModule', 'DividerDefaultComponent'],
+                ngDeclarations: ['DividerDefaultComponent'],
+                ngImports: ['IgxDividerModule']
             }),
             shortenComponentPathBy: "/layouts/divider/"
         }));
 
         configs.push(new Config({
-            component: DividerDashedComponent,
+            component: 'DividerDashedComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDividerModule, DividerDashedComponent],
-                ngDeclarations: [DividerDashedComponent],
-                ngImports: [IgxDividerModule]
+                imports: ['IgxDividerModule', 'DividerDashedComponent'],
+                ngDeclarations: ['DividerDashedComponent'],
+                ngImports: ['IgxDividerModule']
             }),
             shortenComponentPathBy: "/layouts/divider/"
         }));
 
         configs.push(new Config({
-            component: DividerVerticalComponent,
+            component: 'DividerVerticalComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDividerModule, DividerVerticalComponent],
-                ngDeclarations: [DividerVerticalComponent],
-                ngImports: [IgxDividerModule]
+                imports: ['IgxDividerModule', 'DividerVerticalComponent'],
+                ngDeclarations: ['DividerVerticalComponent'],
+                ngImports: ['IgxDividerModule']
             }),
             shortenComponentPathBy: "/layouts/divider/"
         }));
 
         configs.push(new Config({
-            component: DividerInsetComponent,
+            component: 'DividerInsetComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDividerModule, DividerInsetComponent],
-                ngDeclarations: [DividerInsetComponent],
-                ngImports: [IgxDividerModule]
+                imports: ['IgxDividerModule', 'DividerInsetComponent'],
+                ngDeclarations: ['DividerInsetComponent'],
+                ngImports: ['IgxDividerModule']
             }),
             shortenComponentPathBy: "/layouts/divider/"
         }));

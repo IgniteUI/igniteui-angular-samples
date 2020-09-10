@@ -18,53 +18,53 @@ export class SelectConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSelectModule, SelectSample1Component, IgxInputGroupModule],
-                ngDeclarations: [SelectSample1Component],
-                ngImports: [IgxSelectModule, IgxInputGroupModule]
+                imports: ['IgxSelectModule', 'SelectSample1Component', 'IgxInputGroupModule'],
+                ngDeclarations: ['SelectSample1Component'],
+                ngImports: ['IgxSelectModule', 'IgxInputGroupModule']
             }),
-            component: SelectSample1Component,
+            component: 'SelectSample1Component',
             shortenComponentPathBy: "/data-entries/select/"
         }));
 
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSelectModule, SelectSample2Component, IgxInputGroupModule,
-                    IgxDropDownModule, IgxIconModule],
-                ngDeclarations: [SelectSample2Component],
-                ngImports: [IgxSelectModule, IgxInputGroupModule, IgxDropDownModule, IgxIconModule]
+                imports: ['IgxSelectModule', 'SelectSample2Component', 'IgxInputGroupModule',
+                    'IgxDropDownModule', 'IgxIconModule'],
+                ngDeclarations: ['SelectSample2Component'],
+                ngImports: ['IgxSelectModule', 'IgxInputGroupModule', 'IgxDropDownModule', 'IgxIconModule']
             }),
-            component: SelectSample2Component,
+            component: 'SelectSample2Component',
             shortenComponentPathBy: "/data-entries/select/"
         }));
 
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSelectModule, SelectSample4Component, IgxInputGroupModule],
-                ngDeclarations: [SelectSample4Component],
-                ngImports: [IgxSelectModule, IgxInputGroupModule]
+                imports: ['IgxSelectModule', 'SelectSample4Component', 'IgxInputGroupModule'],
+                ngDeclarations: ['SelectSample4Component'],
+                ngImports: ['IgxSelectModule', 'IgxInputGroupModule']
             }),
-            component: SelectSample4Component,
+            component: 'SelectSample4Component',
             shortenComponentPathBy: "/data-entries/select/"
         }));
 
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSelectModule, SelectInputDirectivesComponent, IgxInputGroupModule, IgxIconModule],
-                ngDeclarations: [SelectInputDirectivesComponent],
-                ngImports: [IgxSelectModule, IgxInputGroupModule, IgxIconModule]
+                imports: ['IgxSelectModule', 'SelectInputDirectivesComponent', 'IgxInputGroupModule', 'IgxIconModule'],
+                ngDeclarations: ['SelectInputDirectivesComponent'],
+                ngImports: ['IgxSelectModule', 'IgxInputGroupModule', 'IgxIconModule']
             }),
-            component: SelectInputDirectivesComponent
+            component: 'SelectInputDirectivesComponent'
         }));
 
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSelectModule, SelectHeaderFooterComponent, IgxInputGroupModule,
-                    IgxDropDownModule, IgxIconModule, IgxButtonGroupModule, IgxButtonModule],
-                ngDeclarations: [SelectHeaderFooterComponent],
-                ngImports: [IgxSelectModule, IgxInputGroupModule,
-                    IgxDropDownModule, IgxIconModule, IgxButtonGroupModule, IgxButtonModule]
+                imports: ['IgxSelectModule', 'SelectHeaderFooterComponent', 'IgxInputGroupModule',
+                    'IgxDropDownModule', 'IgxIconModule', 'IgxButtonGroupModule', 'IgxButtonModule'],
+                ngDeclarations: ['SelectHeaderFooterComponent'],
+                ngImports: ['IgxSelectModule', 'IgxInputGroupModule',
+                    'IgxDropDownModule', 'IgxIconModule', 'IgxButtonGroupModule', 'IgxButtonModule']
             }),
-            component: SelectHeaderFooterComponent,
+            component: 'SelectHeaderFooterComponent',
             shortenComponentPathBy: "/data-entries/select/"
         }));
 

@@ -28,59 +28,59 @@ export class CarouselConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            component: CarouselComponent,
+            component: 'CarouselComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCarouselModule, IgxSliderModule, CarouselComponent],
-                ngDeclarations: [CarouselComponent],
-                ngImports: [IgxCarouselModule, IgxSliderModule]
+                imports: ['IgxCarouselModule', 'IgxSliderModule', 'CarouselComponent'],
+                ngDeclarations: ['CarouselComponent'],
+                ngImports: ['IgxCarouselModule', 'IgxSliderModule']
             }),
             shortenComponentPathBy: "/layouts/"
         }));
 
         configs.push(new Config({
-            component: CarouselNoNavigationSampleComponent,
+            component: 'CarouselNoNavigationSampleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxCarouselModule,
-                    IgxListModule,
-                    CarouselNoNavigationSampleComponent
+                    'IgxCarouselModule',
+                    'IgxListModule',
+                    'CarouselNoNavigationSampleComponent'
                 ],
-                ngDeclarations: [CarouselNoNavigationSampleComponent],
-                ngImports: [IgxCarouselModule, IgxListModule]
+                ngDeclarations: ['CarouselNoNavigationSampleComponent'],
+                ngImports: ['IgxCarouselModule', 'IgxListModule']
             }),
             shortenComponentPathBy: "/layouts/carousel/"
         }));
 
         configs.push(new Config({
-            component: CarouselWithComponentsSampleComponent,
+            component: 'CarouselWithComponentsSampleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxCarouselModule,
-                    IgxListModule,
-                    IgxInputGroupModule,
-                    IgxIconModule,
-                    IgxButtonModule,
-                    CarouselWithComponentsSampleComponent
+                    'IgxCarouselModule',
+                    'IgxListModule',
+                    'IgxInputGroupModule',
+                    'IgxIconModule',
+                    'IgxButtonModule',
+                    'CarouselWithComponentsSampleComponent'
                 ],
-                ngDeclarations: [CarouselWithComponentsSampleComponent],
+                ngDeclarations: ['CarouselWithComponentsSampleComponent'],
                 ngImports: [
-                    IgxCarouselModule,
-                    IgxListModule,
-                    IgxInputGroupModule,
-                    IgxIconModule,
-                    IgxButtonModule
+                    'IgxCarouselModule',
+                    'IgxListModule',
+                    'IgxInputGroupModule',
+                    'IgxIconModule',
+                    'IgxButtonModule'
                 ]
             }),
             shortenComponentPathBy: "/layouts/carousel/"
         }));
 
         configs.push(new Config({
-            component: CarouselAnimationsSampleComponent,
+            component: 'CarouselAnimationsSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCarouselModule,
-                    CarouselAnimationsSampleComponent, IgxIconModule, IgxSelectModule, IgxButtonModule, IgxCardModule],
-                ngDeclarations: [CarouselAnimationsSampleComponent],
-                ngImports: [IgxCarouselModule, IgxIconModule, IgxSelectModule, IgxButtonModule, IgxCardModule]
+                imports: ['IgxCarouselModule',
+                    'CarouselAnimationsSampleComponent', 'IgxIconModule', 'IgxSelectModule', 'IgxButtonModule', 'IgxCardModule'],
+                ngDeclarations: ['CarouselAnimationsSampleComponent'],
+                ngImports: ['IgxCarouselModule', 'IgxIconModule', 'IgxSelectModule', 'IgxButtonModule', 'IgxCardModule']
             }),
             shortenComponentPathBy: "/layouts/carousel/"
         }));

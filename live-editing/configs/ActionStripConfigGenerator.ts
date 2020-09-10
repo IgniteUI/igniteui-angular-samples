@@ -18,31 +18,31 @@ export class ActionStripConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            component: ActionStripParagraphComponent,
+            component: 'ActionStripParagraphComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxActionStripModule, ActionStripParagraphComponent, IgxRippleModule, IgxButtonGroupModule, IgxButtonModule, IgxIconModule],
-                ngDeclarations: [ActionStripParagraphComponent],
-                ngImports: [IgxActionStripModule, IgxRippleModule, IgxButtonGroupModule, IgxButtonModule, IgxIconModule]
+                imports: ['IgxActionStripModule', 'ActionStripParagraphComponent', 'IgxRippleModule', 'IgxButtonGroupModule', 'IgxButtonModule', 'IgxIconModule'],
+                ngDeclarations: ['ActionStripParagraphComponent'],
+                ngImports: ['IgxActionStripModule', 'IgxRippleModule', 'IgxButtonGroupModule', 'IgxButtonModule', 'IgxIconModule']
             }),
             shortenComponentPathBy: "/menus/action-strip/"
         }));
 
         configs.push(new Config({
-            component: ActionStripParagraphMenuComponent,
+            component: 'ActionStripParagraphMenuComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxActionStripModule, ActionStripParagraphMenuComponent, IgxRippleModule, IgxButtonModule, IgxIconModule],
-                ngDeclarations: [ActionStripParagraphMenuComponent],
-                ngImports: [IgxActionStripModule, IgxRippleModule, IgxButtonModule, IgxIconModule]
+                imports: ['IgxActionStripModule', 'ActionStripParagraphMenuComponent', 'IgxRippleModule', 'IgxButtonModule', 'IgxIconModule'],
+                ngDeclarations: ['ActionStripParagraphMenuComponent'],
+                ngImports: ['IgxActionStripModule', 'IgxRippleModule', 'IgxButtonModule', 'IgxIconModule']
             }),
             shortenComponentPathBy: "/menus/action-strip/"
         }));
 
         configs.push(new Config({
-            component: ActionStripStylingComponent,
+            component: 'ActionStripStylingComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxActionStripModule, ActionStripStylingComponent, IgxRippleModule, IgxButtonModule, IgxIconModule],
-                ngDeclarations: [ActionStripStylingComponent],
-                ngImports: [IgxActionStripModule, IgxRippleModule, IgxButtonModule, IgxIconModule]
+                imports: ['IgxActionStripModule', 'ActionStripStylingComponent', 'IgxRippleModule', 'IgxButtonModule', 'IgxIconModule'],
+                ngDeclarations: ['ActionStripStylingComponent'],
+                ngImports: ['IgxActionStripModule', 'IgxRippleModule', 'IgxButtonModule', 'IgxIconModule']
             }),
             shortenComponentPathBy: "/menus/action-strip/"
         }));

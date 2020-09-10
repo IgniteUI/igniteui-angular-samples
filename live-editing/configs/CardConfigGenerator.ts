@@ -29,21 +29,21 @@ export class CardConfigGenerator implements IConfigGenerator {
 
         // card sample
         configs.push(new Config({
-            component: CardComponent,
+            component: 'CardComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxButtonModule,
-                    IgxIconModule,
-                    IgxCardModule,
-                    IgxRippleModule,
-                    CardComponent
+                    'IgxButtonModule',
+                    'IgxIconModule',
+                    'IgxCardModule',
+                    'IgxRippleModule',
+                    'CardComponent'
                 ],
-                ngDeclarations: [CardComponent],
+                ngDeclarations: ['CardComponent'],
                 ngImports: [
-                    IgxButtonModule,
-                    IgxIconModule,
-                    IgxCardModule,
-                    IgxRippleModule
+                    'IgxButtonModule',
+                    'IgxIconModule',
+                    'IgxCardModule',
+                    'IgxRippleModule'
                 ]
             }),
             additionalFiles: [
@@ -54,21 +54,21 @@ export class CardConfigGenerator implements IConfigGenerator {
 
         // card sample 1
         configs.push(new Config({
-            component: CardSample1Component,
+            component: 'CardSample1Component',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxButtonModule,
-                    IgxIconModule,
-                    IgxCardModule,
-                    IgxDividerModule,
-                    CardSample1Component
+                    'IgxButtonModule',
+                    'IgxIconModule',
+                    'IgxCardModule',
+                    'IgxDividerModule',
+                    'CardSample1Component'
                 ],
-                ngDeclarations: [CardSample1Component],
+                ngDeclarations: ['CardSample1Component'],
                 ngImports: [
-                    IgxButtonModule,
-                    IgxIconModule,
-                    IgxCardModule,
-                    IgxDividerModule
+                    'IgxButtonModule',
+                    'IgxIconModule',
+                    'IgxCardModule',
+                    'IgxDividerModule'
                 ]
             }),
             additionalFiles: [
@@ -79,21 +79,21 @@ export class CardConfigGenerator implements IConfigGenerator {
 
         // card sample 2
         configs.push(new Config({
-            component: CardSample2Component,
+            component: 'CardSample2Component',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxButtonModule,
-                    IgxIconModule,
-                    IgxCardModule,
-                    IgxDividerModule,
-                    CardSample2Component
+                    'IgxButtonModule',
+                    'IgxIconModule',
+                    'IgxCardModule',
+                    'IgxDividerModule',
+                    'CardSample2Component'
                 ],
-                ngDeclarations: [CardSample2Component],
+                ngDeclarations: ['CardSample2Component'],
                 ngImports: [
-                    IgxButtonModule,
-                    IgxIconModule,
-                    IgxCardModule,
-                    IgxDividerModule
+                    'IgxButtonModule',
+                    'IgxIconModule',
+                    'IgxCardModule',
+                    'IgxDividerModule'
                 ]
             }),
             additionalFiles: [
@@ -104,21 +104,21 @@ export class CardConfigGenerator implements IConfigGenerator {
 
         // card sample 3
         configs.push(new Config({
-            component: CardSample3Component,
+            component: 'CardSample3Component',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxAvatarModule,
-                    IgxButtonModule,
-                    IgxCardModule,
-                    IgxRippleModule,
-                    CardSample3Component
+                    'IgxAvatarModule',
+                    'IgxButtonModule',
+                    'IgxCardModule',
+                    'IgxRippleModule',
+                    'CardSample3Component'
                 ],
-                ngDeclarations: [CardSample3Component],
+                ngDeclarations: ['CardSample3Component'],
                 ngImports: [
-                    IgxAvatarModule,
-                    IgxButtonModule,
-                    IgxCardModule,
-                    IgxRippleModule
+                    'IgxAvatarModule',
+                    'IgxButtonModule',
+                    'IgxCardModule',
+                    'IgxRippleModule'
                 ]
             }),
             additionalFiles: [
@@ -129,33 +129,33 @@ export class CardConfigGenerator implements IConfigGenerator {
 
         // card sample 4
         configs.push(new Config({
-            component: CardSample4Component,
+            component: 'CardSample4Component',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxAvatarModule,
-                    IgxButtonModule,
-                    IgxIconModule,
-                    IgxCardModule,
-                    IgxDividerModule,
-                    IgxRippleModule,
-                    IgxChipsModule,
-                    IgxSliderModule,
-                    IgxListModule,
-                    IgxExpansionPanelModule,
-                    CardSample4Component
+                    'IgxAvatarModule',
+                    'IgxButtonModule',
+                    'IgxIconModule',
+                    'IgxCardModule',
+                    'IgxDividerModule',
+                    'IgxRippleModule',
+                    'IgxChipsModule',
+                    'IgxSliderModule',
+                    'IgxListModule',
+                    'IgxExpansionPanelModule',
+                    'CardSample4Component'
                 ],
-                ngDeclarations: [CardSample4Component],
+                ngDeclarations: ['CardSample4Component'],
                 ngImports: [
-                    IgxAvatarModule,
-                    IgxButtonModule,
-                    IgxIconModule,
-                    IgxCardModule,
-                    IgxDividerModule,
-                    IgxRippleModule,
-                    IgxChipsModule,
-                    IgxListModule,
-                    IgxExpansionPanelModule,
-                    IgxSliderModule
+                    'IgxAvatarModule',
+                    'IgxButtonModule',
+                    'IgxIconModule',
+                    'IgxCardModule',
+                    'IgxDividerModule',
+                    'IgxRippleModule',
+                    'IgxChipsModule',
+                    'IgxListModule',
+                    'IgxExpansionPanelModule',
+                    'IgxSliderModule'
                 ]
             }),
             additionalFiles: [
@@ -166,21 +166,21 @@ export class CardConfigGenerator implements IConfigGenerator {
 
         // card styling sample
         configs.push(new Config({
-            component: CardStylingSampleComponent,
+            component: 'CardStylingSampleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxButtonModule,
-                    IgxIconModule,
-                    IgxCardModule,
-                    IgxRippleModule,
-                    CardStylingSampleComponent
+                    'IgxButtonModule',
+                    'IgxIconModule',
+                    'IgxCardModule',
+                    'IgxRippleModule',
+                    'CardStylingSampleComponent'
                 ],
-                ngDeclarations: [CardStylingSampleComponent],
+                ngDeclarations: ['CardStylingSampleComponent'],
                 ngImports: [
-                    IgxButtonModule,
-                    IgxIconModule,
-                    IgxCardModule,
-                    IgxRippleModule
+                    'IgxButtonModule',
+                    'IgxIconModule',
+                    'IgxCardModule',
+                    'IgxRippleModule'
                 ]
             }),
             additionalFiles: [

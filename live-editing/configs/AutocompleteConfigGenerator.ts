@@ -16,31 +16,31 @@ export class AutocompleteConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxAutocompleteModule, IgxDropDownModule, IgxInputGroupModule,
-                    AutocompleteBasic, AutocompletePipeStartsWith],
-                ngDeclarations: [AutocompleteBasic, AutocompletePipeStartsWith],
-                ngImports: [IgxAutocompleteModule, IgxDropDownModule, IgxInputGroupModule]
+                imports: ['IgxAutocompleteModule', 'IgxDropDownModule', 'IgxInputGroupModule',
+                    'AutocompleteBasic', 'AutocompletePipeStartsWith'],
+                ngDeclarations: ['AutocompleteBasic', 'AutocompletePipeStartsWith'],
+                ngImports: ['IgxAutocompleteModule', 'IgxDropDownModule', 'IgxInputGroupModule']
             }),
-            component: AutocompleteBasic,
+            component: 'AutocompleteBasic',
             shortenComponentPathBy: "/data-entries/autocomplete/"
         }));
 
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxAutocompleteModule,
-                    IgxDropDownModule,
-                    IgxInputGroupModule,
-                    MovieComponent
+                    'IgxAutocompleteModule',
+                    'IgxDropDownModule',
+                    'IgxInputGroupModule',
+                    'MovieComponent'
                 ],
-                ngDeclarations: [MovieComponent ],
+                ngDeclarations: ['MovieComponent' ],
                 ngImports: [
-                    IgxAutocompleteModule,
-                    IgxDropDownModule,
-                    IgxInputGroupModule
+                    'IgxAutocompleteModule',
+                    'IgxDropDownModule',
+                    'IgxInputGroupModule'
                 ]
             }),
-            component: MovieComponent
+            component: 'MovieComponent'
         }));
 
         return configs;

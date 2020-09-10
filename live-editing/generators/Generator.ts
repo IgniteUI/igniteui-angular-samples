@@ -8,6 +8,7 @@ export const SAMPLE_APP_FOLDER = "src/app/";
 
 export abstract class Generator {
     protected styleSyntax: StyleSyntax;
+    protected importedPaths = LiveEditingManager.routingPathService.importedPaths;
     constructor(styleSyntax: StyleSyntax) {
         this.styleSyntax = styleSyntax;
     }
@@ -36,8 +37,15 @@ export abstract class Generator {
 
     protected getModuleRoutes() {
         if (LiveEditingManager.DEFAULT_PROJECT) {
-            return LiveEditingManager.routingService.appRouting.get("MODULE_ROUTES");
+            return LiveEditingManager.routingPathService.appRouting.get("MODULE_ROUTES");
         }
-        return LiveEditingManager.routingService.appRouting.get("DV_MODULE_ROUTES");
+        return LiveEditingManager.routingPathService.appRouting.get("DV_MODULE_ROUTES");
+    }
+
+    protected getComponentProjectDir() {
+        if (LiveEditingManager.DEFAULT_PROJECT) {
+            return '';
+        }
+        return 'projects/app-lob/';
     }
 }

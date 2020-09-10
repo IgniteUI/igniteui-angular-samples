@@ -13,52 +13,52 @@ export class TooltipConfigGenerator implements IConfigGenerator {
 
         // Simple Tooltip Sample
         configs.push(new Config({
-            component: TooltipSimpleComponent,
+            component: 'TooltipSimpleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxAvatarModule,
-                    IgxTooltipModule,
-                    TooltipSimpleComponent
+                    'IgxAvatarModule',
+                    'IgxTooltipModule',
+                    'TooltipSimpleComponent'
                 ],
-                ngDeclarations: [TooltipSimpleComponent],
-                ngImports: [IgxAvatarModule, IgxTooltipModule]
+                ngDeclarations: ['TooltipSimpleComponent'],
+                ngImports: ['IgxAvatarModule', 'IgxTooltipModule']
             }),
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
         // Rich Tooltip Sample
         configs.push(new Config({
-            component: TooltipRichComponent,
+            component: 'TooltipRichComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxAvatarModule,
-                    IgxTooltipModule,
-                    IgxIconModule,
-                    TooltipRichComponent],
-                ngDeclarations: [TooltipRichComponent],
+                    'IgxAvatarModule',
+                    'IgxTooltipModule',
+                    'IgxIconModule',
+                    'TooltipRichComponent'],
+                ngDeclarations: ['TooltipRichComponent'],
                 ngImports: [
-                    IgxAvatarModule,
-                    IgxTooltipModule,
-                    IgxIconModule]
+                    'IgxAvatarModule',
+                    'IgxTooltipModule',
+                    'IgxIconModule']
             }),
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
         // Style Tooltip Sample
         configs.push(new Config({
-            component: TooltipStyleComponent,
+            component: 'TooltipStyleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    IgxAvatarModule,
-                    IgxTooltipModule,
-                    IgxToggleModule,
-                    TooltipStyleComponent
+                    'IgxAvatarModule',
+                    'IgxTooltipModule',
+                    'IgxToggleModule',
+                    'TooltipStyleComponent'
                 ],
-                ngDeclarations: [TooltipStyleComponent],
+                ngDeclarations: ['TooltipStyleComponent'],
                 ngImports: [
-                    IgxAvatarModule,
-                    IgxTooltipModule,
-                    IgxToggleModule
+                    'IgxAvatarModule',
+                    'IgxTooltipModule',
+                    'IgxToggleModule'
                 ]
             }),
             shortenComponentPathBy: "/interactions/tooltip/"

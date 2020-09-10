@@ -21,29 +21,29 @@ export class TabBarConfigGenerator implements IConfigGenerator {
 
         // tabbar sample 1
         configs.push(new Config({
-            component: TabbarSample1Component,
+            component: 'TabbarSample1Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxBottomNavModule, TabbarSample1Component],
-                ngDeclarations: [TabbarSample1Component],
-                ngImports: [IgxBottomNavModule]
+                imports: ['IgxBottomNavModule', 'TabbarSample1Component'],
+                ngDeclarations: ['TabbarSample1Component'],
+                ngImports: ['IgxBottomNavModule']
             }),
             shortenComponentPathBy: "/layouts/tabbar/"
         }));
 
         // tabbar sample 2
         configs.push(new Config({
-            component: TabbarSample2Component,
+            component: 'TabbarSample2Component',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxBottomNavModule, TabbarSample2Component],
-                ngDeclarations: [TabbarSample2Component],
-                ngImports: [IgxBottomNavModule]
+                imports: ['IgxBottomNavModule', 'TabbarSample2Component'],
+                ngDeclarations: ['TabbarSample2Component'],
+                ngImports: ['IgxBottomNavModule']
             }),
             shortenComponentPathBy: "/layouts/tabbar/"
         }));
 
         // tabbar sample 3
         configs.push(new Config({
-            component: TabbarSample3Component,
+            component: 'TabbarSample3Component',
             additionalFiles: [
                 "/src/app/layouts/tabbar/tabbar-sample-3/tabbar.routing.module.ts",
                 "/src/app/layouts/tabbar/tabbar-sample-3/tabbar-sample-3.module.ts",
@@ -57,26 +57,26 @@ export class TabBarConfigGenerator implements IConfigGenerator {
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    TabbarSample3Module,
-                    TabbarSample3Component,
-                    IgxBottomNavModule,
-                    RouterModule,
-                    TabbarView1Component,
-                    TabbarView2Component,
-                    TabbarView3Component
+                    'TabbarSample3Module',
+                    'TabbarSample3Component',
+                    'IgxBottomNavModule',
+                    'RouterModule',
+                    'TabbarView1Component',
+                    'TabbarView2Component',
+                    'TabbarView3Component'
                 ],
                 ngDeclarations: [
-                    TabbarSample3Component
+                    'TabbarSample3Component'
                 ],
                 ngImports: [
-                    IgxBottomNavModule,
-                    TabbarSample3Module,
-                    RouterModule,
+                    'IgxBottomNavModule',
+                    'TabbarSample3Module',
+                    'RouterModule',
                     `
-                    RouterModule.forRoot([
-                        { path: "tabbar-view1", component: TabbarView1Component },
-                        { path: "tabbar-view2", component: TabbarView2Component },
-                        { path: "tabbar-view3", component: TabbarView3Component }
+                    'RouterModule'.forRoot([
+                        { path: "tabbar-view1", component: 'TabbarView1Component' },
+                        { path: "tabbar-view2", component: 'TabbarView2Component' },
+                        { path: "tabbar-view3", component: 'TabbarView3Component' }
                     ])
                     `
                 ]
@@ -86,11 +86,11 @@ export class TabBarConfigGenerator implements IConfigGenerator {
 
         // tabbar styling sample
         configs.push(new Config({
-            component: TabbarStyleComponent,
+            component: 'TabbarStyleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxBottomNavModule, TabbarStyleComponent],
-                ngDeclarations: [TabbarStyleComponent],
-                ngImports: [IgxBottomNavModule]
+                imports: ['IgxBottomNavModule', 'TabbarStyleComponent'],
+                ngDeclarations: ['TabbarStyleComponent'],
+                ngImports: ['IgxBottomNavModule']
             }),
             shortenComponentPathBy: "/layouts/tabbar/"
         }));
