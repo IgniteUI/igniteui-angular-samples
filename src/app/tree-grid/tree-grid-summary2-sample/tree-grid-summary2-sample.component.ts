@@ -40,9 +40,9 @@ export class TreeGridSummary2SampleComponent implements OnInit {
     public expr: ISortingExpression[];
     public avgSummary = AvgSummary;
     public summaryPositions;
-    public summaryPosition = GridSummaryPosition.bottom;
+    public summaryPosition: GridSummaryPosition = GridSummaryPosition.bottom;
     public summaryCalcModes;
-    public summaryCalculationMode = GridSummaryCalculationMode.rootAndChildLevels;
+    public summaryCalculationMode: GridSummaryCalculationMode = GridSummaryCalculationMode.rootAndChildLevels;
 
     constructor() {
         this.data = FOODS_DATA();
