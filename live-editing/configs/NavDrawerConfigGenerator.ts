@@ -9,7 +9,7 @@ import {AppModuleConfig} from './core/AppModuleConfig';
 import {Config} from './core/Config';
 import {IConfigGenerator} from './core/IConfigGenerator';
 export class NavdrawerConfigGenerator implements IConfigGenerator {
-    
+
 
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -72,12 +72,11 @@ export class NavdrawerConfigGenerator implements IConfigGenerator {
                     'IgxNavigationDrawerModule',
                     'IgxRippleModule',
                     'IgxToggleModule',
-                    'RouterModule',
                     `
-                    'RouterModule'.forRoot([
-                        {path: "avatar", component: 'NavDrawerRoutingComponent'},
-                        {path: "badge", component: 'NavDrawerRoutingComponent'},
-                        {path: "button-group", component: 'NavDrawerRoutingComponent'}
+                    RouterModule.forRoot([
+                        {path: "avatar", component: NavDrawerRoutingComponent},
+                        {path: "badge", component: NavDrawerRoutingComponent},
+                        {path: "button-group", component: NavDrawerRoutingComponent}
                     ])
                     `
                 ]
@@ -115,12 +114,11 @@ export class NavdrawerConfigGenerator implements IConfigGenerator {
                     'IgxNavigationDrawerModule',
                     'IgxRippleModule',
                     'IgxToggleModule',
-                    'RouterModule',
                     `
-                    'RouterModule'.forRoot([
-                        {path: "avatar", component: 'NavDrawerRoutingComponent'},
-                        {path: "badge", component: 'NavDrawerRoutingComponent'},
-                        {path: "button-group", component: 'NavDrawerRoutingComponent'}
+                    RouterModule.forRoot([
+                        {path: "avatar", component: NavDrawerRoutingComponent},
+                        {path: "badge", component: NavDrawerRoutingComponent},
+                        {path: "button-group", component: NavDrawerRoutingComponent}
                     ])
                     `
                 ]

@@ -65,12 +65,11 @@ export class TabBarConfigGenerator implements IConfigGenerator {
                 ngImports: [
                     'IgxBottomNavModule',
                     'TabbarSample3Module',
-                    'RouterModule',
                     `
-                    'RouterModule'.forRoot([
-                        { path: "tabbar-view1", component: 'TabbarView1Component' },
-                        { path: "tabbar-view2", component: 'TabbarView2Component' },
-                        { path: "tabbar-view3", component: 'TabbarView3Component' }
+                    RouterModule.forRoot([
+                        { path: "tabbar-view1", component: TabbarView1Component },
+                        { path: "tabbar-view2", component: TabbarView2Component },
+                        { path: "tabbar-view3", component: TabbarView3Component }
                     ])
                     `
                 ]

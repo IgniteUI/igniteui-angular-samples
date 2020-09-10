@@ -85,10 +85,10 @@ export class TabsConfigGenerator implements IConfigGenerator {
                     'IgxTabsModule',
                     'TabsSample4Module',
                     `
-                    'RouterModule'.forRoot([
-                        { path: "view1", component: 'View1Component' },
-                        { path: "view2", component: 'View2Component' },
-                        { path: "view3", component: 'View3Component' }
+                    RouterModule.forRoot([
+                        { path: "view1", component: View1Component },
+                        { path: "view2", component: View2Component },
+                        { path: "view3", component: View3Component }
                     ])
                     `
                 ]
