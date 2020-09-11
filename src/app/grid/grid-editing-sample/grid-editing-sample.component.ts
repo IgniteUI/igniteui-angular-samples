@@ -75,9 +75,10 @@ export class GridEditingSampleComponent implements OnInit, AfterViewInit {
         this.cancel();
         this.grid1.page = this.grid1.totalPages - 1;
         this.grid1.cdr.detectChanges();
+        let row;
         requestAnimationFrame(() => {
             const index = this.grid1.filteredSortedData ? this.grid1.filteredSortedData.map(rec => rec['ProductID']).indexOf(id) :
-                this.grid1.getRowByKey(id)?.index;
+                (row = this.grid1.getRowByKey(id) ? row.index : undefined);
             this.grid1.navigateTo(index, -1);
         });
     }

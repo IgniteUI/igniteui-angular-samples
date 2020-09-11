@@ -54,9 +54,9 @@ export class MaskConfigGenerator implements IConfigGenerator {
             component: 'MaskSample4Component',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxMaskModule', 'IgxInputGroupModule', 'MaskSample4Component', 'IgxIconModule',
-                    'DisplayFormatPipe', 'InputFormatPipe'],
+                    'DisplayFormatPipe', 'InputFormatPipe', 'IgxTextSelectionModule'],
                 ngDeclarations: ['MaskSample4Component', 'DisplayFormatPipe', 'InputFormatPipe'],
-                ngImports: ['IgxMaskModule', 'IgxInputGroupModule', 'IgxIconModule']
+                ngImports: ['IgxMaskModule', 'IgxInputGroupModule', 'IgxIconModule', 'IgxTextSelectionModule']
             }),
             shortenComponentPathBy: "/data-display/mask/"
         }));

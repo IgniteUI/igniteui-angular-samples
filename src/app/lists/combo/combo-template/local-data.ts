@@ -10,7 +10,6 @@ const division = {
     "South Atlantic 01": ["Delaware", "Florida", "Georgia", "Maryland"],
     "South Atlantic 02": ["North Carolina", "South Carolina", "Virginia",
         "District of Columbia", "West Virginia"],
-    "South Atlantic 03": ["District of Columbia", "West Virginia"],
     "East South Central 01": ["Alabama", "Kentucky"],
     "East South Central 02": ["Mississippi", "Tennessee"],
     "West South Central": ["Arkansas", "Louisiana", "Oklahome", "Texas"],

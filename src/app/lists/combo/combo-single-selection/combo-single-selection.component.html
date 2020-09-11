@@ -1,2 +1,7 @@
-<igx-combo #combo class="combo" [itemsMaxHeight]="250" [data]="lData" displayKey="field" valueKey="field" (onSelectionChange)="singleSelection($event)" placeholder="Location(s)" searchPlaceholder="Search...">
+<igx-combo #combo class="combo" displayKey="field" valueKey="field"
+           [itemsMaxHeight]="250"
+           [data]="lData"
+           (onSelectionChange)="singleSelection($event)"
+           placeholder="Location"
+           searchPlaceholder="Search...">
 </igx-combo>

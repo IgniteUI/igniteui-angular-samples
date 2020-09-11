@@ -231,7 +231,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxHierarchicalGridModule', 'HGridSelectionSampleComponent', 'IgxSwitchModule',
-                'IgxSnackbarModule', 'IgxButtonGroupModule', 'IgxPreventDocumentScrollModule'],
+                    'IgxSnackbarModule', 'IgxButtonGroupModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['HGridSelectionSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxSwitchModule', 'IgxSnackbarModule', 'IgxButtonGroupModule']
             }),
@@ -454,7 +454,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         // Hierarchical Grid Excel Style Filtering Load On Demand Sample
         configs.push(new Config({
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-load-on-demand/remoteValues.service.ts",
-                              "/src/app/hierarchical-grid/data.ts"],
+                "/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxHierarchicalGridModule', 'HierarchicalGridExcelStyleFilteringLoadOnDemandComponent', 'RemoteValuesService', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['HierarchicalGridExcelStyleFilteringLoadOnDemandComponent'],
