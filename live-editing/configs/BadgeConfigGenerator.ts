@@ -5,7 +5,7 @@ import {AppModuleConfig} from './core/AppModuleConfig';
 import {Config} from './core/Config';
 import {IConfigGenerator} from './core/IConfigGenerator';
 export class BadgeConfigGenerator implements IConfigGenerator {
-    
+
 
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
