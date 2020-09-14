@@ -9,23 +9,14 @@ import { FOODS_DATA } from "../data/foods";
 })
 
 export class TreeGridExternalOutletComponent implements OnInit {
-    @ViewChild("tGrid1", { read: IgxTreeGridComponent, static: true })
-    public tGrid1: IgxTreeGridComponent;
-
-    @ViewChild("tGrid2", { read: IgxTreeGridComponent, static: true })
-    public tGrid2: IgxTreeGridComponent;
-
     @ViewChild('igxFilteringOverlayOutlet', { read: IgxOverlayOutletDirective, static: true })
-    public _outletDirective: IgxOverlayOutletDirective;
+    public outletDirective: IgxOverlayOutletDirective;
 
     public data: any[];
 
     constructor() {
     }
     public ngOnInit(): void {
-        this.tGrid1.outlet = this._outletDirective;
-        this.tGrid2.outlet = this._outletDirective;
-
         this.data = FOODS_DATA();
     }
 }
