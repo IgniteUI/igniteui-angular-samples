@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxHierarchicalGridComponent, IgxOverlayOutletDirective } from "igniteui-angular";
+import { Component, OnInit } from "@angular/core";
 import { SINGERS } from "../data";
 
 @Component({
@@ -9,9 +8,6 @@ import { SINGERS } from "../data";
 })
 
 export class HierarchicalGridExternalOutletComponent implements OnInit {
-    @ViewChild('igxFilteringOverlayOutlet', { read: IgxOverlayOutletDirective, static: true })
-    public outletDirective: IgxOverlayOutletDirective;
-
     public data: any[];
 
     constructor() {

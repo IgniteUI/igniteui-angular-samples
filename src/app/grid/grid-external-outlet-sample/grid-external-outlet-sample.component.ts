@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent, IgxOverlayOutletDirective } from "igniteui-angular";
+import { Component, OnInit } from "@angular/core";
 import { DATA } from "../../data/nwindData";
 
 @Component({
@@ -9,9 +8,6 @@ import { DATA } from "../../data/nwindData";
 })
 
 export class GridExternalOutletComponent implements OnInit {
-    @ViewChild('igxFilteringOverlayOutlet', { read: IgxOverlayOutletDirective, static: true })
-    public outletDirective: IgxOverlayOutletDirective;
-
     public data: any[];
 
     constructor() {
