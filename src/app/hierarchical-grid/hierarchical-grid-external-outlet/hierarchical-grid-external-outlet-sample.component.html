@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <igx-hierarchical-grid igxPreventDocumentScroll #hGrid1 class="hgrid" [data]="data" [showToolbar]="true" [columnHiding]="true" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter"
-    height="300px" [width]="'100%'" [rowHeight]="'65px'" [outlet]="outletDirective">
+    height="300px" [width]="'100%'" [rowHeight]="'65px'" [outlet]="filteringOverlayOutlet">
         <igx-column field="Artist" [sortable]="true" [movable]="true"></igx-column>
         <igx-column field="Photo" [filterable]='false'>
             <ng-template igxCell let-cell="cell">
@@ -73,4 +73,4 @@
 
 </div>
 
-<div class="igx-grid__outlet" #igxFilteringOverlayOutlet igxOverlayOutlet></div>
+<div #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>

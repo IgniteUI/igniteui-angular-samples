@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="300px" width="100%"
-              [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [outlet]="outletDirective"
+              [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [outlet]="filteringOverlayOutlet"
               [columnHiding]="true" [columnPinning]="true">
         <igx-column field="ProductName" header="Product Name" [dataType]="'string'">
         </igx-column>
@@ -46,4 +46,4 @@
     </igx-grid>
 </div>
 
-<div class="igx-grid__outlet" #igxFilteringOverlayOutlet igxOverlayOutlet></div>
+<div #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>

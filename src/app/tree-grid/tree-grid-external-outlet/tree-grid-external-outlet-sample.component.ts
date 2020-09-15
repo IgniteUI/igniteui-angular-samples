@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxTreeGridComponent, IgxOverlayOutletDirective } from "igniteui-angular";
+import { Component, OnInit } from "@angular/core";
 import { FOODS_DATA } from "../data/foods";
 
 @Component({
@@ -9,9 +8,6 @@ import { FOODS_DATA } from "../data/foods";
 })
 
 export class TreeGridExternalOutletComponent implements OnInit {
-    @ViewChild('igxFilteringOverlayOutlet', { read: IgxOverlayOutletDirective, static: true })
-    public outletDirective: IgxOverlayOutletDirective;
-
     public data: any[];
 
     constructor() {
