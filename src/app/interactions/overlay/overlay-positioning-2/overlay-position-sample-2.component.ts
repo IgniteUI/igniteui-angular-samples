@@ -39,7 +39,6 @@ export class OverlayPositionSample2Component implements OnDestroy {
     public showOverlay() {
         if (!this._overlayId) {
             const positionSettings: PositionSettings = {
-                target: this.buttonElement.nativeElement,
                 horizontalDirection: HorizontalAlignment.Left,
                 verticalDirection: VerticalAlignment.Top,
                 horizontalStartPoint: HorizontalAlignment.Right,
@@ -49,6 +48,7 @@ export class OverlayPositionSample2Component implements OnDestroy {
 
             // Initialize and use overlay settings
             const overlaySettings: OverlaySettings = {
+                target: this.buttonElement.nativeElement,
                 // Pass in the positioning strategy
                 positionStrategy: strategy
             };

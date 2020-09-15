@@ -30,7 +30,7 @@ export class ToggleComponent {
     };
 
     public toggle() {
-        this._overlaySettings.positionStrategy.settings.target = this.igxButton.nativeElement;
+        this._overlaySettings.target = this.igxButton.nativeElement;
         this.igxToggle.toggle(this._overlaySettings);
     }
 }

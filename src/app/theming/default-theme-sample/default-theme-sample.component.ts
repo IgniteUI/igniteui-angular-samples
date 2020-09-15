@@ -8,7 +8,8 @@ import {
     IgxGridComponent,
     IgxOverlayOutletDirective,
     IgxSnackbarComponent,
-    VerticalAlignment
+    VerticalAlignment,
+    OverlaySettings
 } from "igniteui-angular";
 import { DATA } from "../data/data";
 import { Record } from "../data/record";
@@ -42,7 +43,7 @@ export class DefaultThemeSampleComponent implements OnInit {
         verticalStartPoint: VerticalAlignment.Bottom
     };
 
-    private _dropDownOverlaySettings = {
+    private _dropDownOverlaySettings: OverlaySettings = {
         closeOnOutsideClick: true,
         modal: false,
         positionStrategy: new ConnectedPositioningStrategy(this._dropdownPositionSettings),
@@ -60,7 +61,7 @@ export class DefaultThemeSampleComponent implements OnInit {
 
     public toggleDropDown(eventArgs, selectedDropDown: IgxDropDownComponent) {
         const dropDown = selectedDropDown;
-        this._dropDownOverlaySettings.positionStrategy.settings.target = eventArgs.target;
+        this._dropDownOverlaySettings.target = eventArgs.target;
         dropDown.toggle(this._dropDownOverlaySettings);
     }
 

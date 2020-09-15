@@ -34,7 +34,6 @@ export class OverlayScrollSample1Component implements OnDestroy {
     public mainContainer: ElementRef;
 
     private _defaultPositionSettings: PositionSettings = {
-        target: null,
         horizontalDirection: HorizontalAlignment.Center,
         horizontalStartPoint: HorizontalAlignment.Center,
         verticalDirection: VerticalAlignment.Middle,
@@ -67,7 +66,6 @@ export class OverlayScrollSample1Component implements OnDestroy {
     public onClickModal(event: Event, strategy: string) {
         event.stopPropagation();
         const positionSettings = Object.assign(Object.assign({}, this._defaultPositionSettings), {
-            target: this.modalDemo.nativeElement,
             horizontalDirection: HorizontalAlignment.Right,
             horizontalStartPoint: HorizontalAlignment.Right,
             verticalDirection: VerticalAlignment.Bottom,
@@ -91,6 +89,7 @@ export class OverlayScrollSample1Component implements OnDestroy {
                 }));
         }
         const showSettings = Object.assign(Object.assign({}, this._overlaySettings), {
+            target: this.modalDemo.nativeElement,
             modal: this.modalValue,
             positionStrategy
         });
