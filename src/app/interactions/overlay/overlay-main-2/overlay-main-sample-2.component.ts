@@ -33,10 +33,9 @@ export class OverlaySampleMain2Component implements OnDestroy {
     public toggleOverlay() {
         if (this._cardHidden) {
             if (!this._overlayId) {
-                const positionStrategy = new ConnectedPositioningStrategy({
-                    target: this.buttonElement.nativeElement
-                });
+                const positionStrategy = new ConnectedPositioningStrategy();
                 this._overlayId = this.overlayService.attach(CardSample1Component, {
+                    target: this.buttonElement.nativeElement,
                     positionStrategy,
                     modal: false,
                     closeOnOutsideClick: false
