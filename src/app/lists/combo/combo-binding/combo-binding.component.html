@@ -1,15 +1,10 @@
-<div class="combo-section">
-    <igx-combo #withValueKey [data]="cities" valueKey="id" displayKey="name" groupKey="country"
-        [(ngModel)]="selectedValueKey">
-    </igx-combo>
-    <button igxButton  (click)="selectFavorites(true)">Select Favorites</button>
-    <h6>Selected Cities:</h6>
-    <div>{{ selectedValueKey }}</div>
-</div>
-<div class="combo-section">
-    <igx-combo #noValueKey [data]="cities" displayKey="name" groupKey="country" [(ngModel)]="selectedNoValueKey">
-    </igx-combo>
-    <button igxButton (click)="selectFavorites(false)">Select Favorites</button>
+<div class="sample-wrapper">
+    <div class="combo-section">
+        <igx-combo class="combo" #noValueKey [data]="cities" displayKey="name"
+                   groupKey="country" [(ngModel)]="selectedNoValueKey">
+        </igx-combo>
+        <button igxButton="raised" (click)="selectFavorites()">Select Favorites</button>
+    </div>
     <h6>Selected Cities:</h6>
     <div class="cities-container">
         <igx-card type="outlined" *ngFor="let city of selectedNoValueKey">
@@ -21,3 +16,4 @@
         </igx-card>
     </div>
 </div>
+

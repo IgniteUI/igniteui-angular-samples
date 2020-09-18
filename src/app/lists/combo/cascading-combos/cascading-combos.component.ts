@@ -25,6 +25,6 @@ export class CascadingCombos {
 
     public selectProvince(args) {
         this.townData = this.data[this.location.country][args.newSelection.value];
-        this.location.towns = [this.townData[0]];
+        this.location.towns = [];
     }
 }

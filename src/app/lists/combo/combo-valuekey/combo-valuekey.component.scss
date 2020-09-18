@@ -1,0 +1,24 @@
+button {
+    margin: 0 8px;
+}
+
+.sample-wrapper {
+    margin: 16px;
+}
+
+.combo-section {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    margin-bottom: 16px;
+}
+
+.combo {
+    width: 430px;
+}
+
+@media (max-width: 700px) {
+    button {
+        margin: 16px 0;
+    }
+}

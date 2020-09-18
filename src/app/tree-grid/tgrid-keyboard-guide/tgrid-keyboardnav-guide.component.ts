@@ -359,7 +359,6 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         if (col.sortable) {
             res.push(ItemAction.Sortable);
         }
-
         if (col.filterable && !col.columnGroup) {
             res.push(ItemAction.Filterable);
         }

@@ -110,6 +110,7 @@ import { TreeGridVirtualizationSampleComponent } from "./tree-grid-virtualizatio
 import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
 import { TGridAboutComponent } from "./tree-grid-save-state/about.component";
 import { TreeGridExternalOutletComponent } from './tree-grid-external-outlet/tree-grid-external-outlet-sample.component';
+import { TreeGridExportVisualizationComponent } from './tree-grid-export-visualization/tree-grid-export-visualization.component';
 
 @NgModule({
     declarations: [
@@ -193,7 +194,8 @@ import { TreeGridExternalOutletComponent } from './tree-grid-external-outlet/tre
         TreeGridColumnSelectionStylesComponent,
         TGridKeyboardnavGuide,
         TreeGridRemotePagingDefaultTemplateComponent,
-        TreeGridExternalOutletComponent
+        TreeGridExternalOutletComponent,
+        TreeGridExportVisualizationComponent
     ],
     imports: [
         CommonModule,

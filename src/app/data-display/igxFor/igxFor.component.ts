@@ -44,6 +44,10 @@ export class IgxForComponent implements OnInit {
         name += lastName[Math.floor(Math.random() * lastName.length)];
         return name;
     }
+
+    public toggleFavorite(item: any) {
+        item.favorite = !item.favorite;
+    }
 }
 
 export class Person {
