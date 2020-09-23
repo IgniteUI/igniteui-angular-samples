@@ -118,6 +118,7 @@ import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { GridSortingIndicatorsComponent } from '../../src/app/grid/grid-sorting-indicators/grid-sorting-indicators.component';
 import { GridExportVisualizationComponent } from '../../src/app/grid/grid-export-visualization/grid-export-visualization.component';
+import { GridEditingLifecycleComponent } from "../../src/app/grid/grid-editing-lifecycle-sample/grid-editing-lifecycle.component";
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -1273,6 +1274,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridExportVisualizationComponent],
                 ngImports: [IgxPreventDocumentScrollModule, IgxGridModule],
                 ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridEditingLifecycleComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, IgxPreventDocumentScrollModule, GridEditingLifecycleComponent],
+                ngDeclarations: [GridEditingLifecycleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule],
+                ngProviders: []
             })
         }));
 

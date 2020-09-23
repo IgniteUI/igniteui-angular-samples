@@ -95,6 +95,7 @@ import {
     GridConditionalRowSelectorsComponent
 } from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
+import { GridEditingLifecycleComponent } from "./grid-editing-lifecycle-sample/grid-editing-lifecycle.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridKeyboardnavGuide } from "./grid-keyboardnav-guide-sample/grid-keyboardnav-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -626,6 +627,11 @@ export const gridsRoutes: Routes = [
         component: GridExportVisualizationComponent,
         data: gridsRoutesData["exporting-visualization"],
         path: "exporting-visualization"
+    },
+    {
+        component: GridEditingLifecycleComponent,
+        data: gridsRoutesData["grid-editing-lifecycle"],
+        path: "grid-editing-lifecycle"
     }
 ];
 

@@ -1,0 +1,40 @@
+<div class="switches">
+    <igx-switch (change)='this.$rowEditEnter = !this.$rowEditEnter' style="padding-left: 20px">cancel rowEditEnter</igx-switch>
+    <igx-switch (change)='this.$cellEditEnter = !this.$cellEditEnter' style="padding-left: 20px">cancel cellEditEnter</igx-switch>
+    <igx-switch (change)='this.$cellEdit = !this.$cellEdit' style="padding-left: 20px">cancel cellEdit</igx-switch>
+    <igx-switch (change)='this.$cellEditExit = !this.$cellEditExit' style="padding-left: 20px">cancel cellEditExit</igx-switch>
+    <igx-switch (change)='this.$rowEdit = !this.$rowEdit' style="padding-left: 20px">cancel rowEdit</igx-switch>
+    <igx-switch (change)='this.$rowEditExit = !this.$rowEditExit' style="padding-left: 20px">cancel rowEditEnter</igx-switch>
+</div>
+<div class="sample-wrapper">
+    <div class="grid-wrapper">
+        <div>
+            <igx-grid igxPreventDocumentScroll [data]="data" height="500px" primaryKey="ProductID"
+                [rowEditable]="true"
+                (rowEditEnter)="rowEditEnter($event)"
+                (cellEditEnter)="cellEditEnter($event)"
+                (cellEdit)="cellEdit($event)"
+                (cellEditDone)="cellEditDone($event)"
+                (cellEditExit)="cellEditExit($event)"
+                (rowEdit)="rowEdit($event)"
+                (rowEditDone)="rowEditDone($event)"
+                (rowEditExit)="rowEditExit($event)">
+                <igx-column field="ProductName" header="Product Name" dataType="string"></igx-column>
+                <igx-column field="UnitPrice" header="Price" dataType="number" [editable]="true"></igx-column>
+                <igx-column field="UnitsInStock" header="Units In Stock" dataType="number" [editable]="true"></igx-column>
+                <igx-column field="Ordered" header="Ordered" dataType="number" [editable]="true"></igx-column>
+            </igx-grid>
+        </div>
+    </div>
+    <div class="calendar-section" style="width: calc(100% - 824px)">
+        <div class="selected-data-area">
+            <div class="logContainer">
+                <div class="highlight">
+                    <span>Grid editing events execution sequence</span>
+                </div>
+                <hr />
+                <div #logger class="logger"></div>
+            </div>
+        </div>
+    </div>
+</div>
