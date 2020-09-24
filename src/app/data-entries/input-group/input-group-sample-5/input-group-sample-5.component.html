@@ -25,22 +25,6 @@
                     <igx-icon>person</igx-icon>
                 </igx-suffix>
             </igx-input-group>
-            <h6>Bootstrap Type</h6>
-            <igx-input-group type="bootstrap">
-                <input igxInput name="fullName3" type="text" />
-                <label igxLabel for="fullName3">Full Name</label>
-                <igx-suffix>
-                    <igx-icon>person</igx-icon>
-                </igx-suffix>
-            </igx-input-group>
-            <h6>Fluent Type</h6>
-            <igx-input-group type="fluent">
-                <input igxInput name="fullName3" type="text" />
-                <label igxLabel for="fullName3">Full Name</label>
-                <igx-suffix>
-                    <igx-icon>person</igx-icon>
-                </igx-suffix>
-            </igx-input-group>
             <h6>Search Type</h6>
             <igx-input-group type="search">
                 <input #input1 igxInput placeholder="Search" />
@@ -54,17 +38,12 @@
                     <igx-icon>mic</igx-icon>
                 </igx-suffix>
             </igx-input-group>
-            <h6>Fluent Search Type</h6>
-            <igx-input-group type="fluent_search">
-                <input #input2 igxInput placeholder="Search" />
-                <igx-prefix>
-                    <igx-icon>search</igx-icon>
-                </igx-prefix>
-                <igx-suffix *ngIf="input2.value.length > 0" (click)="input2.value = ''">
-                    <igx-icon>clear</igx-icon>
-                </igx-suffix>
+            <h6>Type Box set via a Token</h6>
+            <igx-input-group>
+                <input igxInput name="fullName1" type="text" />
+                <label igxLabel for="fullName1">Full Name</label>
                 <igx-suffix>
-                    <igx-icon>mic</igx-icon>
+                    <igx-icon>person</igx-icon>
                 </igx-suffix>
             </igx-input-group>
         </form>

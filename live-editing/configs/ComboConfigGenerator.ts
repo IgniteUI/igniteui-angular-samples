@@ -1,6 +1,6 @@
 import { HttpClientModule } from "@angular/common/http";
 import { IgxButtonModule, IgxCardModule, IgxComboModule, IgxSelectModule,
-    IgxSwitchModule, IgxToastModule } from "igniteui-angular";
+    IgxSwitchModule, IgxToastModule, IgxIconModule, IgxPrefixModule } from "igniteui-angular";
 import { RemoteService } from "../../src/app/grid/services/remote.service";
 import { ComboBindingComponent } from "../../src/app/lists/combo/combo-binding/combo-binding.component";
 import { ComboFeatures } from "../../src/app/lists/combo/combo-features/combo-features.component";
@@ -12,6 +12,7 @@ import {
 } from "../../src/app/lists/combo/combo-single-selection/combo-single-selection.component";
 import { ComboStyling } from "../../src/app/lists/combo/combo-styling/combo-styling.component";
 import { ComboTemplateComponent } from "../../src/app/lists/combo/combo-template/combo-template.component";
+import { ComboValueKeyComponent } from "../../src/app/lists/combo/combo-valuekey/combo-valuekey.component";
 import { CascadingCombos } from "./../../src/app/lists/combo/cascading-combos/cascading-combos.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -35,9 +36,9 @@ export class ComboConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/data/heroData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, ComboStyling],
+                imports: [IgxComboModule, IgxToastModule, ComboStyling],
                 ngDeclarations: [ComboStyling],
-                ngImports: [IgxComboModule]
+                ngImports: [IgxComboModule, IgxToastModule]
             }),
             component: ComboStyling
         }));
@@ -67,9 +68,9 @@ export class ComboConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/lists/combo/combo-template/local-data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, ComboTemplateComponent],
+                imports: [IgxComboModule, IgxIconModule, IgxPrefixModule, ComboTemplateComponent],
                 ngDeclarations: [ComboTemplateComponent],
-                ngImports: [IgxComboModule]
+                ngImports: [IgxComboModule, IgxIconModule, IgxPrefixModule]
             }),
             component: ComboTemplateComponent,
             shortenComponentPathBy: "/lists/combo/"
@@ -115,6 +116,17 @@ export class ComboConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxComboModule, IgxButtonModule, IgxCardModule]
             }),
             component: ComboBindingComponent,
+            shortenComponentPathBy: "/lists/combo/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/lists/combo/combo-valuekey/cities.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxComboModule, IgxButtonModule, ComboValueKeyComponent],
+                ngDeclarations: [ComboValueKeyComponent],
+                ngImports: [IgxComboModule, IgxButtonModule]
+            }),
+            component: ComboValueKeyComponent,
             shortenComponentPathBy: "/lists/combo/"
         }));
 
