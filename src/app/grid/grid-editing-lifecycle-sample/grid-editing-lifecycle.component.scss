@@ -2,10 +2,15 @@
     width: 100%;
 }
 
+.switches {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
 .sample-wrapper {
     display: flex;
     flex-flow: row wrap;
-    // flex-direction: column;
 }
 
 .grid-wrapper {
@@ -27,7 +32,6 @@
 }
 
 .highlight {
-    // background-color: lightgray;
     text-align: center;
     margin-bottom: 0.4rem;
 }
