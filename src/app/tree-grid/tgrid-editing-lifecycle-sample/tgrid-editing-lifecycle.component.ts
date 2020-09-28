@@ -1,13 +1,12 @@
 import { Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
-import { contains } from '@igniteui/material-icons-extended';
-import { DATA } from "../../data/nwindData";
+import { generateEmployeeFlatData } from "../data/employees-flat";
 
 @Component({
-    selector: "grid-editing-lifecycle",
-    templateUrl: "grid-editing-lifecycle.component.html",
-    styleUrls: ["grid-editing-lifecycle.component.scss"]
+    selector: "tgrid-editing-lifecycle",
+    templateUrl: "tgrid-editing-lifecycle.component.html",
+    styleUrls: ["tgrid-editing-lifecycle.component.scss"]
 })
-export class GridEditingLifecycleComponent {
+export class TGridEditingLifecycleComponent {
     public $rowEditEnter = false;
     public $cellEditEnter = false;
     public $cellEdit = false
@@ -20,7 +19,7 @@ export class GridEditingLifecycleComponent {
     public logger: ElementRef;
 
     public constructor(private renderer: Renderer2) {
-        this.data = DATA;
+        this.data = generateEmployeeFlatData();
     }
 
     public rowEditEnter(evt) {

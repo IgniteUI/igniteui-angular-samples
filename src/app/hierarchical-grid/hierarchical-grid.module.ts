@@ -79,6 +79,7 @@ import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
 import { HGridAboutComponent } from "./hierarchical-grid-save-state/about.component";
 import { HierarchicalGridExternalOutletComponent } from './hierarchical-grid-external-outlet/hierarchical-grid-external-outlet-sample.component';
+import { HGridEditingLifecycleComponent } from "./hgrid-editing-lifecycle-sample/hgrid-editing-lifecycle.component";
 
 @NgModule({
     declarations: [
@@ -150,7 +151,8 @@ import { HierarchicalGridExternalOutletComponent } from './hierarchical-grid-ext
         HierarchicalGridColumnGroupSelectionComponent,
         HGridColumnSelectionStylesComponent,
         HGridKeyboardnavGuide,
-        HGridRemotePagingDefaultTemplateComponent
+        HGridRemotePagingDefaultTemplateComponent,
+        HGridEditingLifecycleComponent
     ],
     imports: [
         CommonModule,

@@ -76,6 +76,7 @@ import { IConfigGenerator } from "./core/IConfigGenerator";
 import { HGridSaveStateComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-save-state/hGrid-state.component";
 import { HGridAboutComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-save-state/about.component";
 import { HierarchicalGridExternalOutletComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-external-outlet/hierarchical-grid-external-outlet-sample.component";
+import { HGridEditingLifecycleComponent } from "../../src/app/hierarchical-grid/hgrid-editing-lifecycle-sample/hgrid-editing-lifecycle.component";
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -783,6 +784,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxPreventDocumentScrollModule, IgxHierarchicalGridModule, IgxToggleModule]
             }),
             component: HierarchicalGridExternalOutletComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HGridEditingLifecycleComponent, IgxHierarchicalGridModule, IgxPreventDocumentScrollModule],
+                ngDeclarations: [HGridEditingLifecycleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxHierarchicalGridModule]
+            }),
+            component: HGridEditingLifecycleComponent
         }));
 
         return configs;

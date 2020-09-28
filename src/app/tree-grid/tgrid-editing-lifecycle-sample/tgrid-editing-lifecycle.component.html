@@ -9,7 +9,8 @@
 <div class="sample-wrapper">
     <div class="grid-wrapper">
         <div>
-            <igx-grid igxPreventDocumentScroll [data]="data" height="500px" primaryKey="ProductID"
+            <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" width="100%"
+                height="500px" 
                 [rowEditable]="true"
                 (rowEditEnter)="rowEditEnter($event)"
                 (cellEditEnter)="cellEditEnter($event)"
@@ -19,11 +20,11 @@
                 (rowEdit)="rowEdit($event)"
                 (rowEditDone)="rowEditDone($event)"
                 (rowEditExit)="rowEditExit($event)">
-                <igx-column field="ProductName" header="Product Name" dataType="string"></igx-column>
-                <igx-column field="UnitPrice" header="Price" dataType="number" [editable]="true"></igx-column>
-                <igx-column field="UnitsInStock" header="Units In Stock" dataType="number" [editable]="true"></igx-column>
-                <igx-column field="Ordered" header="Ordered" dataType="number" [editable]="true"></igx-column>
-            </igx-grid>
+                <igx-column field="Name" dataType="string"></igx-column>
+                <igx-column field="Title" dataType="string"></igx-column>
+                <igx-column field="Age" dataType="number" [editable]="true"></igx-column>
+                <igx-column field="HireDate" dataType="date" [editable]="true"></igx-column>
+            </igx-tree-grid>
         </div>
     </div>
     <div class="calendar-section" style="width: calc(100% - 824px)">

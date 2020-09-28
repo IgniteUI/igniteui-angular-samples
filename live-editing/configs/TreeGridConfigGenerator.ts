@@ -88,6 +88,7 @@ import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { TreeGridExportVisualizationComponent } from "../../src/app/tree-grid/tree-grid-export-visualization/tree-grid-export-visualization.component";
+import { TGridEditingLifecycleComponent } from "../../src/app/tree-grid/tgrid-editing-lifecycle-sample/tgrid-editing-lifecycle.component";
 
 export class TreeGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -1033,6 +1034,17 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
             }),
             component: TreeGridExportVisualizationComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/tree-grid/data/employees-flat.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxPreventDocumentScrollModule, TGridEditingLifecycleComponent, IgxTreeGridModule],
+                ngDeclarations: [TGridEditingLifecycleComponent],
+                ngImports: [IgxPreventDocumentScrollModule, IgxTreeGridModule]
+            }),
+            component: TGridEditingLifecycleComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 
