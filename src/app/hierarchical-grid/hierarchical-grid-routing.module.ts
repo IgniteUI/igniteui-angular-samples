@@ -85,6 +85,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
 import { HGridAboutComponent } from "./hierarchical-grid-save-state/about.component";
 import { HierarchicalGridExternalOutletComponent } from "./hierarchical-grid-external-outlet/hierarchical-grid-external-outlet-sample.component";
 import { HGridEditingLifecycleComponent } from "./hgrid-editing-lifecycle-sample/hgrid-editing-lifecycle.component";
+import { HierarchicalGridCellSelectionComponent } from './hierarchical-grid-cellSelection-sample/hierarchical-grid-cellSelection.component';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -471,6 +472,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridEditingLifecycleComponent,
         data:  hierarchicalGridRoutesData["hGrid-editing-lifecycle"],
         path: "hGrid-editing-lifecycle"
+    },
+    {
+        component: HierarchicalGridCellSelectionComponent,
+        data: hierarchicalGridRoutesData["hGrid-cell-selection"],
+        path: "hGrid-cell-selection"
     }
 ];
 
