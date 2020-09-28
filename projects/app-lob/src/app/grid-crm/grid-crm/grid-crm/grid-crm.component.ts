@@ -123,8 +123,6 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         scrollStrategy: new CloseScrollStrategy()
     };
 
-    private frmt: Intl.DateTimeFormat;
-
     constructor(private excelExporterService: IgxExcelExporterService) { }
 
     public ngOnInit() {
@@ -188,10 +186,7 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     }
 
     public formatDate(val: Date) {
-        if (!this.frmt) {
-            this.frmt = new Intl.DateTimeFormat("en-US");
-        }
-        return this.frmt.format(val);
+        return new Intl.DateTimeFormat("en-US").format(val);
     }
 
     public searchKeyDown(ev) {
