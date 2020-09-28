@@ -1,7 +1,7 @@
 // tslint:disable: max-line-length
 import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, Pipe, PipeTransform, ViewChild } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy,
-         HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
+         HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment, OverlaySettings } from "igniteui-angular";
 import { noop, Subject } from "rxjs";
 import { debounceTime, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../services/financialData";
@@ -95,7 +95,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     };
 
     protected destroy$ = new Subject<any>();
-    private _chartSelectionDilogOverlaySettings = {
+    private _chartSelectionDilogOverlaySettings : OverlaySettings = {
         closeOnOutsideClick: true,
         modal: false,
         outlet: null,
@@ -103,7 +103,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
         positionStrategy: null
     };
 
-    private _chartPreviewDialogOverlaySettings = {
+    private _chartPreviewDialogOverlaySettings : OverlaySettings = {
         closeOnOutsideClick: false,
         modal: false,
         outlet: null,
