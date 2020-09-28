@@ -6,6 +6,8 @@
     [minValue]="min"
     [maxValue]="max"
     (onValidationFailed)="onValidationFailed()"
-    ></igx-time-picker>
+    >
+    <label igxLabel>Meeting Start</label>
+    </igx-time-picker>
 
     <igx-toast #toast>Value must be between {{min}} and {{max}}.</igx-toast>
