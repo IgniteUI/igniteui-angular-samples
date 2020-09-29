@@ -42,11 +42,4 @@ export abstract class Generator {
         }
         return LiveEditingManager.routingPathService.appRouting.get("DV_MODULE_ROUTES");
     }
-
-    protected getComponentProjectDir() {
-        if (LiveEditingManager.DEFAULT_PROJECT) {
-            return '';
-        }
-        return 'projects/app-lob/';
-    }
 }

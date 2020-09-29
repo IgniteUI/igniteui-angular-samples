@@ -157,11 +157,10 @@ export class SampleAssetsGenerator extends Generator {
     private _getComponentFiles(config: Config): LiveEditingFile[] {
         let componentFiles = new Array<LiveEditingFile>();
         let componentPath = this.componentPaths.get(config.component);
-        const baseDir = this.getComponentProjectDir();
         for (let i = 0; i < COMPONENT_FILE_EXTENSIONS.length; i++) {
             let componentFilePath = componentPath + "." + COMPONENT_FILE_EXTENSIONS[i];
             let fileContent = fs.readFileSync(path.join(__dirname, componentFilePath), "utf8");
-            let file = new LiveEditingFile(componentFilePath.replace(GO_DIR_BACK_REG_EX, "").replace(baseDir, ""), fileContent);
+            let file = new LiveEditingFile(componentFilePath.substr(componentFilePath.indexOf("src")), fileContent);
             this._shortenComponentPath(config, file);
             componentFiles.push(file);
         }
