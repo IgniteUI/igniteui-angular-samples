@@ -23,10 +23,9 @@ export class DropDownSample4Component {
     public openDropDown() {
         if (this.igxDropDown.collapsed) {
             this.igxDropDown.open({
+                target: this.inputGroup.element.nativeElement,
                 modal: false,
-                positionStrategy: new ConnectedPositioningStrategy({
-                    target: this.inputGroup.element.nativeElement
-                })
+                positionStrategy: new ConnectedPositioningStrategy()
             });
         }
     }

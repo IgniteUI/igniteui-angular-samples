@@ -22,11 +22,11 @@ export class SelectSample4Component implements OnInit {
             horizontalDirection: HorizontalAlignment.Right,
             horizontalStartPoint: HorizontalAlignment.Left,
             openAnimation: scaleInTop,
-            target: this.igxSelect.inputGroup.element.nativeElement,
             verticalDirection: VerticalAlignment.Bottom,
             verticalStartPoint: VerticalAlignment.Bottom
         };
         this.customOverlaySettings = {
+            target: this.igxSelect.inputGroup.element.nativeElement,
             positionStrategy: new ConnectedPositioningStrategy(
                 positionSettings
             ),
