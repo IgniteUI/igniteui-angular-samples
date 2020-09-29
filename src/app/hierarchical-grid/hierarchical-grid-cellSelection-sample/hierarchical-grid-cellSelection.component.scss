@@ -1,0 +1,26 @@
+.grid__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 16px 24px;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+igx-snackbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.igx-snackbar {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.container {
+    display: flex;
+    igx-icon {
+        margin: 20px;
+    }
+}
