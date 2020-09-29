@@ -20,9 +20,8 @@ export class OverlaySampleMain3Component {
 
     public showOverlay() {
         const overlayId = this.overlayService.attach(this.cardSample, {
-            positionStrategy: new ConnectedPositioningStrategy({
-                target: this.buttonElement.nativeElement
-            })
+            target: this.buttonElement.nativeElement,
+            positionStrategy: new ConnectedPositioningStrategy()
         });
         this.overlayService.show(overlayId);
     }

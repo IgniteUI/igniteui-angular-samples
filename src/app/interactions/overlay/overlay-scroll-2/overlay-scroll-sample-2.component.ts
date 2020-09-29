@@ -31,6 +31,7 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
 
     private destroy$ = new Subject<boolean>();
     private _overlayId: string;
+    private _target: HTMLElement;
 
     constructor(
         @Inject(IgxOverlayService) public overlay: IgxOverlayService
@@ -61,21 +62,22 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
         switch (strategy) {
             case ("absolute"):
                 scrollStrategy = new AbsoluteScrollStrategy();
-                positionStrategy.settings.target = this.scrollDemo.nativeElement.children[0];
+                this._target = this.scrollDemo.nativeElement.children[0];
                 break;
             case ("block"):
                 scrollStrategy = new BlockScrollStrategy();
-                positionStrategy.settings.target = this.scrollDemo.nativeElement.children[1];
+                this._target = this.scrollDemo.nativeElement.children[1];
                 break;
             case ("close"):
                 scrollStrategy = new CloseScrollStrategy(this.mainContainer.nativeElement);
-                positionStrategy.settings.target = this.scrollDemo.nativeElement.children[2];
+                this._target = this.scrollDemo.nativeElement.children[2];
                 break;
             default:
                 scrollStrategy = new NoOpScrollStrategy();
-                positionStrategy.settings.target = this.scrollDemo.nativeElement.children[3];
+                this._target = this.scrollDemo.nativeElement.children[3];
         }
         this.overlay.show(this.overlayId, {
+            target: this._target,
             positionStrategy,
             scrollStrategy,
             modal: false,
