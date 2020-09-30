@@ -2,6 +2,8 @@
 // tslint:disable:prefer-const
 import * as fs from "fs";
 import * as path from "path";
+// tslint:disable-next-line: no-implicit-dependencies
+import slash =  require('slash');
 import { SassCompiler } from "../services/SassCompiler";
 import { Config } from "./../configs/core/Config";
 import { DependencyResolver } from "./../services/DependencyResolver";
@@ -156,7 +158,7 @@ export class SampleAssetsGenerator extends Generator {
 
     private _getComponentFiles(config: Config): LiveEditingFile[] {
         let componentFiles = new Array<LiveEditingFile>();
-        let componentPath = this.componentPaths.get(config.component);
+        let componentPath = slash(this.componentPaths.get(config.component));
         for (let i = 0; i < COMPONENT_FILE_EXTENSIONS.length; i++) {
             let componentFilePath = componentPath + "." + COMPONENT_FILE_EXTENSIONS[i];
             let fileContent = fs.readFileSync(path.join(__dirname, componentFilePath), "utf8");
