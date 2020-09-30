@@ -3,6 +3,8 @@ import * as path from "path";
 // tslint:disable-next-line: no-implicit-dependencies
 import * as ts from "typescript";
 import * as fs from "fs";
+// tslint:disable-next-line: no-implicit-dependencies
+import slash = require('slash');
 
 interface IComponentRoute{
     component: string,
@@ -44,7 +46,7 @@ export class TsRoutingPathService {
                 name = this.getObjectLiteralPropertyValue<ts.Identifier>(properties, 'component', ts.SyntaxKind.Identifier);
                 classRoutePath = this.getObjectLiteralPropertyValue<ts.StringLiteral>(properties, 'path', ts.SyntaxKind.StringLiteral);
                 const componentImports = this.tsImportService.getFileImports(path.join(__dirname, routePath));
-                const componentPath = path.join(path.dirname(routePath), componentImports.get(name.text));
+                const componentPath = slash(path.join(path.dirname(routePath), componentImports.get(name.text)));
                 this.componentPaths.set(name.text, componentPath);
                 route = {component: name.text, route: classRoutePath.text} as IComponentRoute;
                 moduleRouting.routes.push(route);
