@@ -1,21 +1,19 @@
-import { ModuleWithProviders, Provider, Type } from "@angular/core";
-
 export class AppModuleConfig {
-    public imports: Array<Type<any> | any>;
-    public ngDeclarations: Array<Type<any>>;
-    public ngImports: Array<Type<any> | ModuleWithProviders | any>;
-    public ngProviders: Provider[];
-    public ngEntryComponents: Array<Type<any>>;
-    public schemas: Array<Type<any> | any>;
+    public imports: string[];
+    public ngDeclarations: string[];
+    public ngImports: string[];
+    public ngProviders: string[];
+    public ngEntryComponents: string[];
+    public schemas: string[];
     public additionalAdjustments: string[];
 
     constructor(fields: {
-        imports: Array<Type<any> | any>,
-        ngDeclarations: Array<Type<any>>,
-        ngImports: Array<Type<any> | ModuleWithProviders | any>,
-        ngProviders?: Provider[],
-        ngEntryComponents?: Array<Type<any>>,
-        schemas?: Array<Type<any> | any>,
+        imports: string[],
+        ngDeclarations: string[],
+        ngImports: string[],
+        ngProviders?: string[],
+        ngEntryComponents?: string[],
+        schemas?: string[],
         additionalAdjustments?: string[]
 
     }) {
