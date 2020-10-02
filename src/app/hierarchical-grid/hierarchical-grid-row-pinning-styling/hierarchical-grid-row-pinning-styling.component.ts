@@ -47,12 +47,20 @@ export class HGridRowPinningStylingSampleComponent implements OnInit {
     public onMouseOver(actionStrip: IgxActionStripComponent, hierarchicalGrid: IgxHierarchicalGridComponent, event) {
         const target = event.target;
         if (target.nodeName.toLowerCase() === "igx-hierarchical-grid-cell") {
-            const gridId = target.parentNode.parentNode.attributes["ng-reflect-grid-i-d"].value;
+            const gridId = this.closestGrid(target).attributes["id"].value;
             const grid = hierarchicalGrid.hgridAPI.getChildGrids(true)
                 .find(childGrid => childGrid.id === gridId) || hierarchicalGrid;
             const rowIndex = parseInt(target.attributes["data-rowindex"].value, 10);
             const row = grid.getRowByIndex(rowIndex);
             actionStrip.show(row);
+        }
+    }
+
+    public closestGrid(element) {
+        while (element = element.parentNode) {
+            if (element.nodeName.toLowerCase() === "igx-hierarchical-grid") {
+                return element;
+            }
         }
     }
 
