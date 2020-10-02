@@ -7,7 +7,7 @@ import { IgxToastPosition } from "igniteui-angular";
     templateUrl: "./toast-sample-1.component.html"
 })
 export class ToastSample1Component implements OnInit {
-    public toastPosition: IgxToastPosition = IgxToastPosition.Bottom;
+    public toastPosition: IgxToastPosition = "bottom";
 
     constructor() { }
 
@@ -17,13 +17,13 @@ export class ToastSample1Component implements OnInit {
     public showToast(toast, position) {
         switch (position) {
             case "middle":
-                this.toastPosition = IgxToastPosition.Middle;
+                this.toastPosition = "middle";
                 break;
             case "top":
-                this.toastPosition = IgxToastPosition.Top;
+                this.toastPosition = "top";
                 break;
             default:
-                this.toastPosition = IgxToastPosition.Bottom;
+                this.toastPosition = "bottom";
         }
 
         toast.show();

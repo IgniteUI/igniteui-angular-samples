@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxComboComponent, IgxToastComponent, IgxToastPosition } from "igniteui-angular";
+import { IgxComboComponent, IgxToastComponent } from "igniteui-angular";
 import { RemoteService } from "../../../grid/services/remote.service";
 
 @Component({
@@ -33,7 +33,7 @@ export class ComboRemoteComponent implements OnInit {
         if (this.prevRequest) {
             this.prevRequest.unsubscribe();
         }
-        this.loadingToast.position = IgxToastPosition.Middle;
+        this.loadingToast.position = "middle";
         this.loadingToast.autoHide = false;
         this.loadingToast.show("Loading Remote Data...");
         this.cdr.detectChanges();

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from "@angular/core";
-import { IgxColumnComponent, IgxToastComponent, IgxToastPosition, IgxTreeGridComponent } from "igniteui-angular";
+import { IgxColumnComponent, IgxToastComponent, IgxTreeGridComponent } from "igniteui-angular";
 import { FOODS_DATA } from "../data/foods";
 
 @Component({
@@ -18,7 +18,7 @@ export class TreeGridMultiCellSelectionComponent {
         target.shouldGenerate = true;
         target.clearCellSelection();
         this.targetData = source.getSelectedData();
-        notification.position = IgxToastPosition.Middle;
+        notification.position = "middle";
         notification.displayTime = 1000;
         notification.show(`Transfered ${this.targetData.length} rows`);
     }
