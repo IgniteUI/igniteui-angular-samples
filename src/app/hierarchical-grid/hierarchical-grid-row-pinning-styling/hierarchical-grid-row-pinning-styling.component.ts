@@ -57,11 +57,12 @@ export class HGridRowPinningStylingSampleComponent implements OnInit {
     }
 
     public closestGrid(element) {
-        while (element = element.parentNode) {
+        do {
             if (element.nodeName.toLowerCase() === "igx-hierarchical-grid") {
                 return element;
             }
-        }
+            element = element.parentNode;
+        } while (element);
     }
 
     public onMouseLeave(actionStrip: IgxActionStripComponent, event?) {
