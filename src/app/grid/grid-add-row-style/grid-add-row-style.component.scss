@@ -1,0 +1,65 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$my-light-gray: #e3e3e3;
+$blue: #0099ff;
+$white: #fff;
+$my-banner-palette: $purple-palette;
+
+$custom-grid: igx-grid-theme(
+    $palette: $purple-palette,
+    $cell-editing-background: $blue
+);
+
+
+.sample-wrapper {
+    margin: 0 auto;
+    padding: 5px;
+}
+
+$banner-theme: igx-banner-theme( 
+    $banner-background: $my-light-gray,
+    $banner-message-color: igx-color($my-banner-palette, "secondary", 600)
+);
+
+$button-theme: igx-button-theme(
+  $palette: $purple-palette
+);
+
+$custom-checkbox: igx-checkbox-theme(
+  $palette: $my-banner-palette
+);
+$input-theme: igx-input-group-theme(
+    $palette: igx-palette,
+    $filled-text-color: $white,
+    $focused-text-color: $white,
+    $idle-text-color: $white,
+    $idle-bottom-line-color: $white,
+    $focused-bottom-line-color: $white,
+    $interim-bottom-line-color: $white,
+    $hover-bottom-line-color: $white,
+    $box-background: $blue
+);
+$actionstrip-theme: igx-action-strip-theme(
+    $background: rgba(150, 133, 143, 0.4),
+    $actions-background: rgba(109, 121, 147, 0.6),
+    $color:  $blue,
+    $delete-action: black,
+    $actions-border-radius: 0
+);
+
+.custom-buttons {
+    @include igx-button($button-theme);
+  }
+
+:host {
+  ::ng-deep {
+       .igx-grid__tbody{
+           @include igx-input-group($input-theme);
+       }
+          @include igx-checkbox($custom-checkbox);
+          @include igx-grid($custom-grid);
+          @include igx-banner($banner-theme);
+          @include igx-action-strip($actionstrip-theme);
+
+  }
+}

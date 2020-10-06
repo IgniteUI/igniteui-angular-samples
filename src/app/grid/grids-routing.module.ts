@@ -52,6 +52,7 @@ import { GridDragBaseSampleComponent } from "./grid-row-drag-base/grid-row-drag-
 import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
+import { GridAddRowSampleComponent } from "./grid-add-row-sample/grid-add-row-sample.component";
 import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
 import { GridPinningDragSampleComponent } from "./grid-row-pinning-drag/grid-row-pinning-drag.component";
 import { GridRowPinningExtraColumnSampleComponent } from "./grid-row-pinning-extra-column/grid-row-pinning-extra-column.component";
@@ -109,6 +110,7 @@ import {
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
 import { GridExportVisualizationComponent } from "./grid-export-visualization/grid-export-visualization.component";
+import { GridAddRowStyleComponent } from './grid-add-row-style/grid-add-row-style.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -156,6 +158,16 @@ export const gridsRoutes: Routes = [
         component: GridEditingStyleSample,
         data: gridsRoutesData["grid-editing-style"],
         path: "grid-editing-style"
+    },
+    {
+        component: GridAddRowSampleComponent,
+        data: gridsRoutesData["grid-add-row"],
+        path: "grid-add-row"
+    },
+    {
+        component: GridAddRowStyleComponent,
+        data: gridsRoutesData["grid-add-row-style"],
+        path: "grid-add-row-style"
     },
     {
         component: GridEditingEventsComponent,

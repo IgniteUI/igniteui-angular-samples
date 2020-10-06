@@ -1207,6 +1207,26 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        configs.push(new Config({
+            component: 'GridAddRowSampleComponent',
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['GridAddRowSampleComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule', 'IgxActionStripModule', 'IgxInputGroupModule', 'IgxFocusModule'],
+                ngDeclarations: ['GridAddRowSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule','IgxActionStripModule', 'IgxInputGroupModule', 'IgxFocusModule']
+            })
+        }));
+        
+        configs.push(new Config({
+            component: 'GridAddRowStyleComponent',
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['GridAddRowStyleComponent', 'IgxGridModule', 'IgxFocusModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule', 'IgxActionStripModule', 'IgxInputGroupModule'],
+                ngDeclarations: ['GridAddRowStyleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxFocusModule', 'IgxIconModule', 'IgxActionStripModule', 'IgxInputGroupModule']
+            })
+        }));
+
         return configs;
     }
 }
