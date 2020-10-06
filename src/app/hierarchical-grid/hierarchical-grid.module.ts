@@ -13,6 +13,8 @@ import { HierarchicalGridColumnGroupSelectionComponent } from "./column-group-se
 import { HGridColumnSelectionStylesComponent } from "./column-selection-styles/hierarchical-grid-column-selection-styles.component";
 import { HierarchicalGridColumnSelectionComponent } from "./column-selection/hierarchical-grid-column-selection.component";
 import { HGridKeyboardnavGuide } from "./hgrid-keybarod-nav-guide-sample/hgrid-keyboard-guide.component";
+import { HGridAddRowSampleComponent } from "./hierarchical-grid-add-row/hierarchical-grid-add-row.component";
+import { HGridAddRowStyleComponent } from "./hierarchical-grid-add-row-style/hierarchical-grid-add-row-style.component";
 import { HGridAdvancedFilteringStyleComponent } from "./hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
 import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridAllDataSummaryComponent } from "./hierarchical-grid-allData-summary/hierarchical-grid-allData-summary.component";
@@ -136,6 +138,8 @@ import { HierarchicalGridCellSelectionComponent } from './hierarchical-grid-cell
         HierarchicalGridToolbarStyleComponent,
         HierarchicalGridFilteringStyleComponent,
         HierarchicalGridExcelStyleFilteringLoadOnDemandComponent,
+        HGridAddRowSampleComponent,
+        HGridAddRowStyleComponent,
         HGridAdvancedFilteringSampleComponent,
         HGridAdvancedFilteringStyleComponent,
         HGridStylingComponent,
