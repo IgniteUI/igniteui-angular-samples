@@ -1,0 +1,10 @@
+<div class="sample-wrapper">
+    <div class="combo-section">
+        <igx-combo class="combo" #withValueKey [data]="cities" valueKey="id" displayKey="name" groupKey="country"
+            [(ngModel)]="selectedValueKey">
+        </igx-combo>
+        <button igxButton="raised" (click)="selectFavorites()">Select Favorites</button>
+    </div>
+    <h6>Selected Cities:</h6>
+    <div>{{ selectedValueKey }}</div>
+</div>

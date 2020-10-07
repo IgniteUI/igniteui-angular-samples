@@ -52,9 +52,9 @@ export class GridGroupBySummarySampleComponent {
     public avgSummary = AvgSummary;
     public sumSummary = SumSummary;
     public summaryPositions;
-    public summaryPosition = GridSummaryPosition.bottom;
+    public summaryPosition: GridSummaryPosition = GridSummaryPosition.bottom;
     public summaryCalcModes;
-    public summaryCalculationMode = GridSummaryCalculationMode.rootAndChildLevels;
+    public summaryCalculationMode: GridSummaryCalculationMode = GridSummaryCalculationMode.rootAndChildLevels;
     public selectionMode = "multiple";
 
     constructor() {

@@ -13,7 +13,7 @@ export class OverlayPositionSample1Component implements OnDestroy {
     private destroy$ = new Subject<boolean>();
     private _overlayId: string;
 
-    @ViewChild("buttonElement", { static: true})
+    @ViewChild("buttonElement", { static: true })
     private buttonElement: ElementRef;
 
     constructor(
@@ -33,11 +33,10 @@ export class OverlayPositionSample1Component implements OnDestroy {
         if (!this._overlayId) {
             // Initialize and use overlay settings
             const overlaySettings: OverlaySettings = {
+                // Set the target where content should be shown
+                target: this.buttonElement.nativeElement,
                 // Pass in the positioning strategy
-                positionStrategy: new ConnectedPositioningStrategy({
-                    // Set the target where content should be shown
-                    target: this.buttonElement.nativeElement
-                })
+                positionStrategy: new ConnectedPositioningStrategy()
             };
             this._overlayId = this.overlayService.attach(MyDynamicCardComponent, overlaySettings);
         }
