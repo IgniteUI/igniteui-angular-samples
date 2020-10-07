@@ -18,8 +18,27 @@
     overflow: auto;    
 }
 
+.navdrawer-ellipsis {
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 .innerItem {
-    margin-left: 36px;
+    $innerMargin: 36px;
+    // The 8px here comes from the item right margin
+    $max-width-subtract: $innerMargin + 8px;
+    margin-left: $innerMargin !important;
+    max-width: calc(100% - #{$max-width-subtract});
+}
+
+:host {
+    [igxbutton="icon"] {
+        igx-icon {
+            margin-left: 0;
+        }
+    }
 }
 
 .nav-header {
