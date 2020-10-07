@@ -8,10 +8,8 @@
                 </div>
 
                 <!-- Home -->
-                <span igxDrawerItem igxRipple routerLink="{{homeRouteItem.path}}" routerLinkActive="igx-nav-drawer__item--active">
-                    <button igxButton="icon" igxRipple igxRippleCentered="true">
-                        <igx-icon fontSet="material">home</igx-icon>
-                    </button>
+                <span igxDrawerItem igxRipple routerLink="{{homeRouteItem.path}}" routerLinkActive="igx-nav-drawer__item--active navdrawer-ellipsis">
+                    <igx-icon fontSet="material">home</igx-icon>
                     {{homeRouteItem.displayName}}
                 </span>
 
@@ -28,15 +26,13 @@
 
                 <span *ngFor="let navItem of currentNavItems">
                     <!-- Header -->
-                    <span igxDrawerItem igxRipple routerLinkActive="igx-nav-drawer__item--active" (click)="toggleParent('header' + navItem.name)">
-                        <button igxButton="icon" igxRipple igxRippleCentered="true" style="vertical-align: middle">
-                            <igx-icon fontSet="material">{{convertNodeStateToIcon('header' + navItem.name)}}</igx-icon>
-                        </button>
-                        <span style="vertical-align: middle">{{navItem.name}}</span>
+                    <span igxDrawerItem igxRipple routerLinkActive="igx-nav-drawer__item--active navdrawer-ellipsis" (click)="toggleParent('header' + navItem.name)">
+                        <igx-icon fontSet="material">{{convertNodeStateToIcon('header' + navItem.name)}}</igx-icon>
+                        <span class="navdrawer-ellipsis" style="vertical-align: middle">{{navItem.name}}</span>
                     </span>
                     <!-- Children -->
                     <span [id]="'header' + navItem.name" style="display:none">
-                        <span [id]="'child' + routeItem.displayName" class="innerItem" *ngFor="let routeItem of navItem.children" igxDrawerItem igxRipple
+                        <span [id]="'child' + routeItem.displayName" class="innerItem navdrawer-ellipsis" *ngFor="let routeItem of navItem.children" igxDrawerItem igxRipple
                             routerLink="{{routeItem.path}}" routerLinkActive="igx-nav-drawer__item--active">
                             {{routeItem.displayName}}
                         </span>
