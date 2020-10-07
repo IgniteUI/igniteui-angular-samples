@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { IgxBannerComponent, IgxToastComponent, IgxToastPosition  } from "igniteui-angular";
+import { IgxBannerComponent, IgxToastComponent } from "igniteui-angular";
 import { Subject } from "rxjs";
 
 @Component({
@@ -16,7 +16,7 @@ export class BannerAdvancedSampleComponent implements OnInit, OnDestroy {
     public imageUrls = ["assets/images/card/media/the_red_ice_forest.jpg",
         "assets/images/card/media/yosemite.jpg"];
     public onNetworkStateChange = new Subject();
-    public toastPosition: IgxToastPosition.Middle;
+    public toastPosition: "middle";
 
     private _wifiState = false;
     public get wifiState(): boolean {
@@ -29,7 +29,7 @@ export class BannerAdvancedSampleComponent implements OnInit, OnDestroy {
 
     public showToast() {
         this.eventToast.hide();
-        this.toastPosition = IgxToastPosition.Middle;
+        this.toastPosition =  "middle";
         this.eventToast.show(`Wifi is now ${this.wifiState ? "on" : "off"}`);
     }
 
