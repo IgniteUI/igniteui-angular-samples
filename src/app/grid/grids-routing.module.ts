@@ -110,7 +110,6 @@ import {
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
 import { GridExportVisualizationComponent } from "./grid-export-visualization/grid-export-visualization.component";
-import { GridAddRowStyleComponent } from './grid-add-row-style/grid-add-row-style.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -163,11 +162,6 @@ export const gridsRoutes: Routes = [
         component: GridAddRowSampleComponent,
         data: gridsRoutesData["grid-add-row"],
         path: "grid-add-row"
-    },
-    {
-        component: GridAddRowStyleComponent,
-        data: gridsRoutesData["grid-add-row-style"],
-        path: "grid-add-row-style"
     },
     {
         component: GridEditingEventsComponent,
