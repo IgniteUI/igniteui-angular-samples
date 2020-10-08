@@ -12,6 +12,7 @@ export const gridsRoutesData = {
     "grid-editing-events": { displayName: "Grid Editing Events", parentName: "Grid" },
     "grid-editing-style": { displayName: "Grid Editing Style", parentName: "Grid" },
     "grid-row-editing": { displayName: "Grid Row Editing", parentName: "Grid" },
+    "grid-add-row": { displayName: "Grid Add Row", parentName: "Grid"},
     "grid-row-drag": { displayName: "Grid Row Drag", parentName: "Grid" },
     "grid-row-drag-base": { displayName: "Grid Row Drag - Base", parentName: "Grid" },
     "grid-row-drag-to-grid": { displayName: "Row Drag between Grids", parentName: "Grid" },
