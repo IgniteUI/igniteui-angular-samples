@@ -14,10 +14,12 @@ import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.dir
 import { FinJSDemoComponent } from "./grid-finjs-demo.component";
 import { GridFinjsRoutingModule } from "./grid-finjs-routing.module";
 import { LocalDataService } from "./localData.service";
+import { GridFinjsPartialComponent } from './partial/grid-finjs-partial.component';
 
 @NgModule({
     declarations: [
-        FinJSDemoComponent
+        FinJSDemoComponent,
+        GridFinjsPartialComponent
     ],
     imports: [
         IgxPreventDocumentScrollModule,
