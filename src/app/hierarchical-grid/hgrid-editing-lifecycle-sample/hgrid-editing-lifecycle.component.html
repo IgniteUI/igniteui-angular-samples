@@ -1,0 +1,59 @@
+<div class="switches">
+    <igx-switch (change)='this.$rowEditEnter = !this.$rowEditEnter' style="padding-left: 20px">cancel rowEditEnter</igx-switch>
+    <igx-switch (change)='this.$cellEditEnter = !this.$cellEditEnter' style="padding-left: 20px">cancel cellEditEnter</igx-switch>
+    <igx-switch (change)='this.$cellEdit = !this.$cellEdit' style="padding-left: 20px">cancel cellEdit</igx-switch>
+    <igx-switch (change)='this.$cellEditExit = !this.$cellEditExit' style="padding-left: 20px">cancel cellEditExit</igx-switch>
+    <igx-switch (change)='this.$rowEdit = !this.$rowEdit' style="padding-left: 20px">cancel rowEdit</igx-switch>
+    <igx-switch (change)='this.$rowEditExit = !this.$rowEditExit' style="padding-left: 20px">cancel rowEditExit</igx-switch>
+</div>
+<div class="sample-wrapper">
+    <div class="grid-wrapper">
+        <div>
+            <igx-hierarchical-grid igxPreventDocumentScroll  [data]="data" [autoGenerate]="false"
+                height="500px" width="100%" primaryKey="Artist" primaryKey="Artist" 
+                rowEditable="true"
+                (rowEditEnter)="rowEditEnter($event)"
+                (cellEditEnter)="cellEditEnter($event)"
+                (cellEdit)="cellEdit($event)"
+                (cellEditDone)="cellEditDone($event)"
+                (cellEditExit)="cellEditExit($event)"
+                (rowEdit)="rowEdit($event)"
+                (rowEditDone)="rowEditDone($event)"
+                (rowEditExit)="rowEditExit($event)">>
+                <igx-column field="Artist" dataType="string"></igx-column>
+                <igx-column field="HasGrammyAward" header="Has Grammy Award?" dataType="boolean">
+                </igx-column>
+                <igx-column field="Debut" dataType="number"></igx-column>
+                <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number"></igx-column>
+                <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number"></igx-column>
+
+                <igx-row-island key="Albums" primaryKey="Album" [autoGenerate]="false"
+                    rowEditable="true"
+                    (rowEditEnter)="rowEditEnter($event)"
+                    (cellEditEnter)="cellEditEnter($event)"
+                    (cellEdit)="cellEdit($event)"
+                    (cellEditDone)="cellEditDone($event)"
+                    (cellEditExit)="cellEditExit($event)"
+                    (rowEdit)="rowEdit($event)"
+                    (rowEditDone)="rowEditDone($event)"
+                    (rowEditExit)="rowEditExit($event)">
+                    <igx-column field="Album" dataType="string"></igx-column>
+                    <igx-column field="LaunchDate" header="Launch Date" dataType="date"></igx-column>
+                    <igx-column field="BillboardReview" header="Billboard Review" dataType="number"></igx-column>
+                    <igx-column field="USBillboard200" header="US Billboard 200" dataType="number"></igx-column>
+                </igx-row-island>
+            </igx-hierarchical-grid>
+        </div>
+    </div>
+    <div class="calendar-section" style="width: calc(100% - 724px)">
+        <div class="selected-data-area">
+            <div class="logContainer">
+                <div class="highlight">
+                    <span>Grid editing events execution sequence</span>
+                </div>
+                <hr />
+                <div #logger class="logger"></div>
+            </div>
+        </div>
+    </div>
+</div>

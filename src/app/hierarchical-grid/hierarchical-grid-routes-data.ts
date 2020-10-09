@@ -68,5 +68,6 @@ export const hierarchicalGridRoutesData = {
     "remote-paging-default-template": { displayName: "HGrid remote paging with default template", parentName: "Hierarchical Grid" },
     "hGrid-state": { displayName: "HGrid Save State", parentName: "Hierarchical Grid" },
     "hGrid-state-about": { displayName: "About", parentName: "Hierarchical Grid" },
+    "hGrid-editing-lifecycle": { displayName: "Hierarchical Grid Editing lifecycle", parentName: "Hierarchical Grid" },
     "hGrid-cell-selection": {displayName: "HGrid Cell Selection", parentName: "Hierarchical Grid"}
 };
