@@ -15,11 +15,6 @@ const argv = require("yargs").argv;
 
 const submodule = "igniteui-live-editing-samples";
 
-const window = domino.createWindow('<!doctype html><html><body></body></html>');
-global.HTMLElement = window.HTMLElement;
-
-
-
 function requireFile(path) {
     delete require.cache[require.resolve(path)];
     return require(path);
@@ -92,7 +87,7 @@ const processApp = (projectPath, dest, directoriesToExclude, compileSass) => {
                     fs.readFile(file.path, 'utf-8', (err, content) => {
                         // Adjust sample application bundle files
                         const jsonObj = JSON.parse(content);
-                        const packageJson = 
+                        const packageJson =
                         {
                             "path": "package.json",
                             "hasRelativeAssetsUrls": false,

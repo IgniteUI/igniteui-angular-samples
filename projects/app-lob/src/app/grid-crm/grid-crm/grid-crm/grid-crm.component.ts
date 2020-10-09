@@ -123,8 +123,6 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         scrollStrategy: new CloseScrollStrategy()
     };
 
-    private frmt: Intl.DateTimeFormat;
-
     constructor(private excelExporterService: IgxExcelExporterService) { }
 
     public ngOnInit() {
@@ -136,12 +134,12 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     }
 
     public toggleHiding() {
-        this._overlaySettings.positionStrategy.settings.target = this.hidingButton.nativeElement;
+        this._overlaySettings.target = this.hidingButton.nativeElement;
         this.toggleRefHiding.toggle(this._overlaySettings);
     }
 
     public togglePinning() {
-        this._overlaySettings.positionStrategy.settings.target = this.pinningButton.nativeElement;
+        this._overlaySettings.target = this.pinningButton.nativeElement;
         this.toggleRefPinning.toggle(this._overlaySettings);
     }
 
@@ -188,10 +186,7 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     }
 
     public formatDate(val: Date) {
-        if (!this.frmt) {
-            this.frmt = new Intl.DateTimeFormat("en-US");
-        }
-        return this.frmt.format(val);
+        return new Intl.DateTimeFormat("en-US").format(val);
     }
 
     public searchKeyDown(ev) {

@@ -44,54 +44,67 @@ import { TreeGridModule } from "../../src/app/tree-grid/tree-grid.module";
 export const MODULE_ROUTES = [
     {
         module: NotificationsModule,
+        path: "notifications",
         routes: NotificationsRouting.notificationsRoutes
     },
     {
         module: DataDisplayModule,
+        path: "data-display",
         routes: DataDisplayRouting.dataDisplayRoutes
     },
     {
         module: DataEntriesModule,
+        path: "data-entries",
         routes: DataEntriesRouting.dataEntriesRoutes
     },
     {
         module: ThemingModule,
+        path: "theming",
         routes: ThemingRouting.themingRoutes
     },
     {
         module: MenusModule,
+        path: "menus",
         routes: MenusRouting.menusRoutes
     },
     {
         module: SchedulingModule,
+        path: "scheduling",
         routes: SchedulingRouting.schedulingRoutes
     },
     {
         module: ListsModule,
+        path: "lists",
         routes: ListsRouting.listsRoutes
     },
     {
         module: InteractionsModule,
+        path: "interactions",
         routes: InteractionsRouting.interactionsRoutes
     },
     {
         module: LayoutsModule,
+        path: "layouts",
         routes: LayoutsRouting.layoutsRoutes
     },
     {
         module: TreeGridModule,
+        path: "tree-grid",
         routes: TreeGridRouting.treeGridRoutes
     },
     {
         module: GridsModule,
+        path: "grid",
         routes: GridRouting.gridsRoutes
     },
     {
         module: HierarchicalGridModule,
+        path: "hierarchical-grid",
         routes: HierarchicalGridRouting.hierarchicalGridRoutes
     },
     {
         module: ServicesModule,
+        path: "services",
         routes: ServicesRouting.servicesRoutes
     }
 ];
@@ -99,26 +112,32 @@ export const MODULE_ROUTES = [
 export const DV_MODULE_ROUTES = [
     {
         module: GridCRMModule,
+        path: "grid-crm",
         routes: GridCRMRouting.gridcrmRoutes
     },
     {
         module: GridFinjsModule,
+        path: "finjs-sample",
         routes: GridFinjsRouting.gridfinjsRoutes
     },
     {
         module: TreeGridFinjsModule,
+        path: "treegrid-finjs-sample",
         routes: TreeGridFinjsRouting.treegridfinjsRoutes
     },
     {
         module: GridsDVModule,
+        path: "grid",
         routes: GridsDVRouting.gridsDVRoutes
     },
     {
         module: TreeGridDVModule,
+        path: "tree-grid",
         routes: TreeGridDvRoutingModule.treeGridDVRoutes
     },
     {
         module: HierarchicalGridDVModule,
+        path: "hierarchical-grid",
         routes: HieararchicalGridsDVRouting.hierarchicalGridDVRoutes
     }
 ];
