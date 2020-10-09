@@ -131,7 +131,8 @@
         display: flex;
         align-self: center;
         justify-content: flex-end;
-        width: 500px;
+        max-width: 500px;
+        width: 50%
     }
 
     .crm-sample-toolbar__title {
@@ -139,6 +140,7 @@
         display: flex;
         align-items: center;
         justify-self: flex-start;
+        width: 50%;
     }
 
     .crm-sample-toolbar__ellipsis {
@@ -159,10 +161,12 @@
             border: none;
         }
     }
-
+    .igx-input-group--search{
+        width: 100%;
+    }
     .igx-input-group--search .igx-input-group__bundle {
         height: rem(36px);
-        width: 500px;
+        width: 100%;
         overflow: hidden;
         background-color: igx-color($crm-grid-palette, "primary", 800);
 
