@@ -9,10 +9,8 @@ import { SINGERS } from "../data";
 export class HGridEditingLifecycleComponent {
     public $rowEditEnter = false;
     public $cellEditEnter = false;
-    public $cellEdit = false
-    public $cellEditExit = false
-    public $rowEdit = false
-    public $rowEditExit = false
+    public $cellEdit = false;
+    public $rowEdit = false;
     public data;
 
     @ViewChild('logger')
@@ -34,23 +32,21 @@ export class HGridEditingLifecycleComponent {
         evt.cancel = this.$cellEdit;
         this.logAnEvent(`=> 'cellEdit'`, evt.cancel);
     }
-    public cellEditDone(evt) {
+    public cellEditDone() {
         this.logAnEvent(`=> 'cellEditDone'`);
     }
-    public cellEditExit(evt) {
-        evt.cancel = this.$cellEditExit;
-        this.logAnEvent(`=> 'cellEditExit'`, evt.cancel);
+    public cellEditExit() {
+        this.logAnEvent(`=> 'cellEditExit'`);
     }
     public rowEdit(evt) {
         evt.cancel = this.$rowEdit;
         this.logAnEvent(`=> 'rowEdit'`, evt.cancel);
     }
-    public rowEditDone(evt) {
+    public rowEditDone() {
         this.logAnEvent(`=> 'rowEditDone'`);
     }
-    public rowEditExit(evt) {
-        evt.cancel = this.$rowEditExit;
-        this.logAnEvent(`=> 'rowEditExit'`, evt.cancel);
+    public rowEditExit() {
+        this.logAnEvent(`=> 'rowEditExit'`);
     }
 
     private logAnEvent(msg: string, canceled?: boolean) {
