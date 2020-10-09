@@ -750,6 +750,17 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             component: 'HierarchicalGridCellSelectionComponent'
         }));
 
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxGridModule', 'IgxPreventDocumentScrollModule', 'HGridEditingLifecycleComponent', 'IgxSwitchModule'],
+                ngDeclarations: ['HGridEditingLifecycleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSwitchModule'],
+                ngProviders: []
+            }),
+            component: 'HGridEditingLifecycleComponent'
+        }));
+
         return configs;
     }
 }

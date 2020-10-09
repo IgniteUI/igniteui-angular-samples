@@ -1218,12 +1218,12 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: GridEditingLifecycleComponent,
+            component: 'GridEditingLifecycleComponent',
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxGridModule, IgxPreventDocumentScrollModule, GridEditingLifecycleComponent, IgxSwitchModule],
-                ngDeclarations: [GridEditingLifecycleComponent],
-                ngImports: [IgxPreventDocumentScrollModule, IgxGridModule, IgxSwitchModule],
+                imports: ['IgxGridModule', 'IgxPreventDocumentScrollModule', 'GridEditingLifecycleComponent', 'IgxSwitchModule'],
+                ngDeclarations: ['GridEditingLifecycleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSwitchModule'],
                 ngProviders: []
             })
         }));
