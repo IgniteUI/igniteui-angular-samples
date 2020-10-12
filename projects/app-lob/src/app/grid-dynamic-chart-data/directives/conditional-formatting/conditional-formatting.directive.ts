@@ -205,7 +205,7 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
         this.grid.onColumnSelectionChange.pipe(takeUntil(this.destroy$), debounceTime(200)).subscribe(() => {
             this.determineFormatters(true);
         });
-        this.grid.onCellEdit.pipe(takeUntil(this.destroy$)).subscribe((args: any) => {
+        this.grid.cellEdit.pipe(takeUntil(this.destroy$)).subscribe((args: any) => {
             if ((args.newValue === args.oldValue || !this.formatter)) { return; }
             if (this.isWithInFormattedRange(args.cellID.rowIndex, args.cellID.columnID - 1)) {
                 const value = Number(args.newValue);
