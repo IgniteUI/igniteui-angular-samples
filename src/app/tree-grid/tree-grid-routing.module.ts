@@ -6,7 +6,6 @@ import { TreeGridColumnSelectionStylesComponent } from "./column-selection-style
 import { TreeGridColumnSelectionComponent } from "./column-selection/tree-grid-column-selection.component";
 import { TGridKeyboardnavGuide } from "./tgrid-keyboard-guide/tgrid-keyboardnav-guide.component";
 import { TreeGridAddRowSampleComponent } from "./tree-grid-add-row-sample/tree-grid-add-row-sample.component";
-import { TreeGridAddRowStyleComponent } from "./tree-grid-add-row-style/tree-grid-add-row-sample.component";
 import { TreeGridAdvancedFilteringSampleComponent } from "./tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
 import { TreeGridAdvancedFilteringStyleComponent } from "./tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
 import { TreeGridBatchEditingSampleComponent } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
@@ -404,11 +403,6 @@ export const treeGridRoutes: Routes = [
         component: TreeGridAddRowSampleComponent,
         data: treeGridRoutesData["treegrid-add-row"],
         path: "treegrid-add-row"
-    },
-    {
-        component: TreeGridAddRowStyleComponent,
-        data: treeGridRoutesData["treegrid-add-row-style"],
-        path: "treegrid-add-row-style"
     },
     {
         component: TreeGridAdvancedFilteringSampleComponent,

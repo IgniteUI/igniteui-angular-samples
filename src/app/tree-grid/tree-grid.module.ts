@@ -33,7 +33,6 @@ import { TreeGridColumnSelectionComponent } from "./column-selection/tree-grid-c
 import { RemoteFilteringService } from "./services/remoteFilteringService";
 import { TGridKeyboardnavGuide } from "./tgrid-keyboard-guide/tgrid-keyboardnav-guide.component";
 import { TreeGridAddRowSampleComponent } from "./tree-grid-add-row-sample/tree-grid-add-row-sample.component";
-import { TreeGridAddRowStyleComponent } from "./tree-grid-add-row-style/tree-grid-add-row-sample.component";
 import { TreeGridAdvancedFilteringSampleComponent } from "./tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
 import { TreeGridAdvancedFilteringStyleComponent } from "./tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
 import { TreeGridBatchEditingSampleComponent } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
@@ -178,7 +177,6 @@ import { TreeGridExportVisualizationComponent } from './tree-grid-export-visuali
         TreeGridFilteringStyleComponent,
         TreeGridCellSelectionComponent,
         TreeGridAddRowSampleComponent,
-        TreeGridAddRowStyleComponent,
         TreeGridAdvancedFilteringSampleComponent,
         TreeGridAdvancedFilteringStyleComponent,
         TreeGridExcelStyleFilteringLoadOnDemandComponent,
