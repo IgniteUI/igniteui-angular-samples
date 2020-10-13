@@ -1,0 +1,19 @@
+<div class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID"
+        [autoGenerate]="false" displayDensity="comfortable" width="100%" height="500px"
+        [allowFiltering]="true" [rowEditable]="true">
+        <igx-column [field]="'Name'" dataType="string"></igx-column>
+        <igx-column [field]="'Title'" dataType="string"></igx-column>
+        <igx-column [field]="'HireDate'" dataType="date"></igx-column>
+        <igx-column [field]="'OnPTO'" dataType="boolean"width="130px">
+            <ng-template igxCell let-cell="cell" let-val>
+                <igx-icon [color]="cell.row.rowData.OnPTO? 'red': 'green'">account_circle</igx-icon>
+            </ng-template>
+        </igx-column>
+        <igx-column [field]="'Age'" dataType="number"></igx-column>
+        <igx-action-strip #actionstrip>
+            <igx-grid-editing-actions [addRow]="true" [addChild]="actionstrip.context?.treeRow.level < 2">
+            </igx-grid-editing-actions>
+        </igx-action-strip>
+    </igx-tree-grid>
+</div>
