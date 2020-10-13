@@ -80,24 +80,6 @@ export class GridPinningDragSampleComponent implements OnInit {
         }
     }
 
-    public onMouseOver(actionStrip: IgxActionStripComponent, grid: IgxGridComponent, event) {
-        if (event.target.nodeName.toLowerCase() === "igx-grid-cell") {
-            const rowIndex = parseInt(event.target.attributes["data-rowindex"].value, 10);
-            const row = grid.getRowByIndex(rowIndex);
-            actionStrip.show(row);
-        }
-    }
-
-    public onMouseLeave(actionStrip: IgxActionStripComponent, event?) {
-        if (!event || !event.relatedTarget || event.relatedTarget.nodeName.toLowerCase() !== "igx-drop-down-item") {
-            actionStrip.hide();
-        }
-    }
-
-    public onCellClick(args: IGridCellEventArgs) {
-        this.actionStrip.show(args.cell.row);
-    }
-
     private getCurrentRowIndex(rowList, cursorPosition) {
         for (const row of rowList) {
             const rowRect = row.nativeElement.getBoundingClientRect();
