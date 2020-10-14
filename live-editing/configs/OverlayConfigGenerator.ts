@@ -1,7 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
 import {
     IgxButtonDirective, IgxButtonModule, IgxCardModule, IgxComboModule,
-    IgxDividerModule, IgxIconModule, IgxOverlayService, IgxSwitchModule, IgxToggleModule
+    IgxDividerModule, IgxIconModule, IgxOverlayService, IgxRadioModule, IgxSwitchModule, IgxToggleModule
 } from "igniteui-angular";
 import { CardSample1Component } from "../../src/app/layouts/card/card-sample-1/card-sample-1.component";
 
@@ -21,6 +21,8 @@ import { OverlayScrollSample1Component
 } from "../../src/app/interactions/overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
 import { OverlayScrollSample2Component
 } from "../../src/app/interactions/overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
+import { OverlayPresetSettingsSampleComponent
+} from "../../src/app/interactions/overlay/overlay-preset-settings/overlay-preset-settings-sample.component";
 import { OverlayStylingComponent } from "../../src/app/interactions/overlay/overlay-styling/overlay-styling.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -135,6 +137,22 @@ export class OverlayConfigGenerator implements IConfigGenerator {
                 ngProviders: [IgxOverlayService],
                 ngDeclarations: [OverlayScrollSample1Component],
                 ngImports: [IgxIconModule, IgxSwitchModule, IgxCardModule]
+            }),
+            shortenComponentPathBy: "/interactions/overlay/"
+        }));
+
+        configs.push(new Config({
+            component: OverlayPresetSettingsSampleComponent,
+            additionalFiles: ["/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.ts",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.scss",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.html"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxIconModule, IgxOverlayService, OverlayPresetSettingsSampleComponent, IgxCardModule,
+                    IgxRadioModule, MyDynamicCardComponent],
+                ngEntryComponents: [MyDynamicCardComponent],
+                ngProviders: [IgxOverlayService],
+                ngDeclarations: [OverlayPresetSettingsSampleComponent, MyDynamicCardComponent],
+                ngImports: [IgxIconModule, IgxCardModule, IgxRadioModule]
             }),
             shortenComponentPathBy: "/interactions/overlay/"
         }));
