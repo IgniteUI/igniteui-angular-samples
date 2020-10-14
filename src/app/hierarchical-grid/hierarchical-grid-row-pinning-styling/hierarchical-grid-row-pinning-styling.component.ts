@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import {
     ColumnPinningPosition,
-    IGridCellEventArgs,
-    IgxActionStripComponent,
     IgxHierarchicalGridComponent,
     IPinningConfig,
     RowPinningPosition
@@ -21,9 +19,6 @@ export class HGridRowPinningStylingSampleComponent implements OnInit {
 
     @ViewChild("hierarchicalGrid1", { static: true })
     public hierarchicalGrid: IgxHierarchicalGridComponent;
-
-    @ViewChild(IgxActionStripComponent, { static: true })
-    public actionStrip: IgxActionStripComponent;
 
     constructor() {
         this.localData = SINGERS;

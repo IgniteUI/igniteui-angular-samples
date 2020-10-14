@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import {
-    IGridCellEventArgs,
-    IgxActionStripComponent,
     IgxGridComponent,
     IgxGridRowComponent,
     IPinningConfig,
@@ -21,9 +19,6 @@ export class GridPinningDragSampleComponent implements OnInit {
 
     @ViewChild("grid1", { static: true })
     public grid: IgxGridComponent;
-
-    @ViewChild(IgxActionStripComponent, { static: true })
-    public actionStrip: IgxActionStripComponent;
 
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top };
 

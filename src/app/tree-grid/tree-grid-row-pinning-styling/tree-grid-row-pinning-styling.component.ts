@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import {
     ColumnPinningPosition,
-    IGridCellEventArgs,
-    IgxActionStripComponent,
     IgxTreeGridComponent,
     IPinningConfig,
     RowPinningPosition
@@ -23,9 +21,6 @@ export class TreeGridRowPinningStylingSampleComponent implements OnInit {
 
     @ViewChild("treeGrid1", { static: true })
     public treeGrid: IgxTreeGridComponent;
-
-    @ViewChild(IgxActionStripComponent, { static: true })
-    public actionStrip: IgxActionStripComponent;
 
     constructor() { }
 
