@@ -107,5 +107,6 @@ export const treeGridRoutesData = {
     "tree-grid-remote-paging-default-template": { displayName: "TreeGrid remote paging with default template", parentName: "TreeGrid" },
     "tree-grid-state": { displayName: "TreeGrid Save State", parentName: "TreeGrid" },
     "tree-grid-state-about": { displayName: "About", parentName: "TreeGrid" },
-    "tree-grid-exporting-visualization": { displayName: "Exporting Visualization", parentName: "TreeGrid" }
+    "tree-grid-exporting-visualization": { displayName: "Exporting Visualization", parentName: "TreeGrid" },
+    "tree-grid-editing-lifecycle": { displayName: "Editing Lifecycle", parentName: "TreeGrid" }
 };

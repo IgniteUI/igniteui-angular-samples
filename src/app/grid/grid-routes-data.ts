@@ -105,5 +105,6 @@ export const gridsRoutesData = {
     "grid-sample-5": { displayName: "Grid Infinite Scroll", parentName: "Grid" },
     "remote-paging-batch-editing": {displayName: "Remote paging with batch editing", parentName: "Grid"},
     "grid-sorting-indicators": {displayName: "Grid Sorting Indicators", parentName: "Grid"},
-    "exporting-visualization": {displayName: "Exporting Visualization", parentName: "Grid"}
+    "exporting-visualization": {displayName: "Exporting Visualization", parentName: "Grid"},
+    "grid-editing-lifecycle": {displayName: "Grid editing lifecycle", parentName: "Grid"}
 };
