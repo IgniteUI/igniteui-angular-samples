@@ -250,7 +250,7 @@ export const interactionsRoutes: Routes = [
     },
     {
         component: OverlayPresetSettingsSampleComponent,
-        data: interactionsRoutesData["overlay-relative-presets-sample"],
+        data: interactionsRoutesData["overlay-preset-settings-sample"],
         path: "overlay-preset-settings-sample"
     },
     {
