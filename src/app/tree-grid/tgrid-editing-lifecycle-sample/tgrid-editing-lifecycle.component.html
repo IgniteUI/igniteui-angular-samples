@@ -25,11 +25,12 @@
             </igx-tree-grid>
         </div>
     </div>
-    <div class="calendar-section" style="width: calc(100% - 724px)">
+    <div class="log-wrapper">
         <div class="selected-data-area">
             <div class="logContainer">
                 <div class="highlight">
-                    <span>Grid editing events execution sequence</span>
+                    <span>Events execution sequence</span>
+                    <button class="clearBtn" igxButton="flat" (click)="clearLog()"><igx-icon>clear</igx-icon>Clear log</button>
                 </div>
                 <hr />
                 <div #logger class="logger"></div>

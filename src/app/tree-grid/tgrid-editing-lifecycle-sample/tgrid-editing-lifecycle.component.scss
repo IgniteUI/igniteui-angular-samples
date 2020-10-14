@@ -3,6 +3,8 @@
 }
 
 .switches {
+    margin-top: 12px;
+    margin-bottom: 8px;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -11,13 +13,21 @@
 .sample-wrapper {
     display: flex;
     flex-flow: row wrap;
+    width: 100%;
 }
 
 .grid-wrapper {
-    width: 700px;
+    width: 60%;
     margin: 8px;
 }
+.log-wrapper {
+    width: 35%;
+}
 
+.clearBtn {
+    top: 3px;
+    margin-left: 20px;
+}
 .selected-data-area{
     overflow-y: auto;
     max-height: 500px;

@@ -22,15 +22,15 @@ export class HGridEditingLifecycleComponent {
 
     public rowEditEnter(evt) {
         evt.cancel = this.$rowEditEnter;
-        this.logAnEvent(`=> 'rowEditEnter'`, evt.cancel);
+        this.logAnEvent(`=> 'rowEditEnter' with 'RowID':` + evt.rowID, evt.cancel);
     }
     public cellEditEnter(evt) {
         evt.cancel = this.$cellEditEnter;
-        this.logAnEvent(`=> 'cellEditEnter'`, evt.cancel);
+        this.logAnEvent(`=> 'cellEditEnter' with 'value':` + evt.oldValue, evt.cancel);
     }
     public cellEdit(evt) {
         evt.cancel = this.$cellEdit;
-        this.logAnEvent(`=> 'cellEdit'`, evt.cancel);
+        this.logAnEvent(`=> 'cellEdit' with 'newValue':` + evt.newValue, evt.cancel);
     }
     public cellEditDone() {
         this.logAnEvent(`=> 'cellEditDone'`);
@@ -46,7 +46,7 @@ export class HGridEditingLifecycleComponent {
         this.logAnEvent(`=> 'rowEditDone'`);
     }
     public rowEditExit() {
-        this.logAnEvent(`=> 'rowEditExit'`);
+        this.logAnEvent(`=> 'rowEditExit'  << End of cycle >>`);
     }
 
     private logAnEvent(msg: string, canceled?: boolean) {
@@ -60,5 +60,12 @@ export class HGridEditingLifecycleComponent {
         this.renderer.appendChild(createElem, text);
         const container = this.logger.nativeElement;
         this.renderer.insertBefore(container, createElem, container.children[0]);
+    }
+
+    public clearLog() {
+        const  elements = this.logger.nativeElement.querySelectorAll('p');
+        for (let index = 0; index < elements.length; index++) {
+            this.renderer.removeChild(this.logger.nativeElement, elements[index]);
+        }
     }
 }
