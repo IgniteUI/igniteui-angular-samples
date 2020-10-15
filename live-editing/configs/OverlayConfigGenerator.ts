@@ -1,11 +1,11 @@
 import {IgxButtonDirective,
 IgxButtonModule,
+IgxButtonGroupModule,
 IgxCardModule,
 IgxComboModule,
 IgxDividerModule,
 IgxIconModule,
 IgxOverlayService,
-IgxRadioModule,
 IgxSwitchModule,
 IgxToggleModule} from 'igniteui-angular';
 import {AppModuleConfig} from './core/AppModuleConfig';
@@ -134,11 +134,11 @@ export class OverlayConfigGenerator implements IConfigGenerator {
             "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.html"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxIconModule', 'IgxOverlayService', 'OverlayPresetSettingsSampleComponent', 'IgxCardModule',
-                        'IgxRadioModule', 'MyDynamicCardComponent'],
+                        'IgxButtonGroupModule', 'MyDynamicCardComponent'],
                 ngEntryComponents: ['MyDynamicCardComponent'],
                 ngProviders: ['IgxOverlayService'],
                 ngDeclarations: ['OverlayPresetSettingsSampleComponent', 'MyDynamicCardComponent'],
-                ngImports: ['IgxIconModule', 'IgxCardModule', 'IgxRadioModule']
+                ngImports: ['IgxIconModule', 'IgxCardModule', 'IgxButtonGroupModule']
             }),
             shortenComponentPathBy: "/interactions/overlay/"
         }));
