@@ -1,7 +1,5 @@
 <div class="sample-wrapper">
-    <igx-grid #grid [data]="data" width="100%" height="500px" [primaryKey]="'ProductID'" [rowEditable]="true"
-    (mouseleave)="onMouseLeave(actionstrip)"
-    (mouseover)="onMouseOver($event, grid, actionstrip)">
+    <igx-grid #grid [data]="data" width="100%" height="500px" [primaryKey]="'ProductID'" [rowEditable]="true">
     <igx-column field="ProductID" header="Product ID"></igx-column>
     <igx-column field="ReorderLevel" header="ReorderLever" dataType="number"></igx-column>
     <igx-column field="ProductName" header="ProductName" [dataType]="'string'"></igx-column>
@@ -19,7 +17,7 @@
     <igx-action-strip #actionstrip>
         <igx-grid-editing-actions [addRow]="true"></igx-grid-editing-actions>
     </igx-action-strip>
-    
-       
+
+
     </igx-grid>
 </div>
