@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import {
     ColumnPinningPosition,
-    IGridCellEventArgs,
-    IgxActionStripComponent,
     IgxTreeGridComponent,
     IPinningConfig,
     RowPinningPosition
@@ -24,9 +22,6 @@ export class TreeGridRowPinningStylingSampleComponent implements OnInit {
     @ViewChild("treeGrid1", { static: true })
     public treeGrid: IgxTreeGridComponent;
 
-    @ViewChild(IgxActionStripComponent, { static: true })
-    public actionStrip: IgxActionStripComponent;
-
     constructor() { }
 
     public ngOnInit(): void {
@@ -41,23 +36,5 @@ export class TreeGridRowPinningStylingSampleComponent implements OnInit {
 
         this.treeGrid.pinRow(this.data[0].ID);
         this.treeGrid.pinRow(this.data[3].ID);
-    }
-
-    public onMouseOver(actionStrip: IgxActionStripComponent, treeGrid: IgxTreeGridComponent, event) {
-        if (["igx-grid-cell", "igx-tree-grid-cell"].find(e => e === event.target.nodeName.toLowerCase())) {
-            const rowIndex = parseInt(event.target.attributes["data-rowindex"].value, 10);
-            const row = treeGrid.getRowByIndex(rowIndex);
-            actionStrip.show(row);
-        }
-    }
-
-    public onMouseLeave(actionStrip: IgxActionStripComponent, event?) {
-        if (!event || !event.relatedTarget || event.relatedTarget.nodeName.toLowerCase() !== "igx-drop-down-item") {
-            actionStrip.hide();
-        }
-    }
-
-    public onCellClick(args: IGridCellEventArgs) {
-        this.actionStrip.show(args.cell.row);
     }
 }

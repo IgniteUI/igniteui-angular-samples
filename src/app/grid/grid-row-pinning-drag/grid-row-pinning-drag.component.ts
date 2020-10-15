@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import {
-    IGridCellEventArgs,
-    IgxActionStripComponent,
     IgxGridComponent,
     IgxGridRowComponent,
     IPinningConfig,
@@ -21,9 +19,6 @@ export class GridPinningDragSampleComponent implements OnInit {
 
     @ViewChild("grid1", { static: true })
     public grid: IgxGridComponent;
-
-    @ViewChild(IgxActionStripComponent, { static: true })
-    public actionStrip: IgxActionStripComponent;
 
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top };
 
@@ -78,24 +73,6 @@ export class GridPinningDragSampleComponent implements OnInit {
         if (args.dragData.disabled) {
             args.cancel = true;
         }
-    }
-
-    public onMouseOver(actionStrip: IgxActionStripComponent, grid: IgxGridComponent, event) {
-        if (event.target.nodeName.toLowerCase() === "igx-grid-cell") {
-            const rowIndex = parseInt(event.target.attributes["data-rowindex"].value, 10);
-            const row = grid.getRowByIndex(rowIndex);
-            actionStrip.show(row);
-        }
-    }
-
-    public onMouseLeave(actionStrip: IgxActionStripComponent, event?) {
-        if (!event || !event.relatedTarget || event.relatedTarget.nodeName.toLowerCase() !== "igx-drop-down-item") {
-            actionStrip.hide();
-        }
-    }
-
-    public onCellClick(args: IGridCellEventArgs) {
-        this.actionStrip.show(args.cell.row);
     }
 
     private getCurrentRowIndex(rowList, cursorPosition) {

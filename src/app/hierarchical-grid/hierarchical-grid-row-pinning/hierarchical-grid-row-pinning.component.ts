@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import {
     ColumnPinningPosition,
-    IGridCellEventArgs,
-    IgxActionStripComponent,
     IgxHierarchicalGridComponent,
     IPinningConfig,
     RowPinningPosition
@@ -22,9 +20,6 @@ export class HGridRowPinningSampleComponent implements OnInit {
     @ViewChild("hierarchicalGrid1", { static: true })
     public hierarchicalGrid: IgxHierarchicalGridComponent;
 
-    @ViewChild(IgxActionStripComponent, { static: true })
-    public actionStrip: IgxActionStripComponent;
-
     constructor() {
         this.localData = SINGERS;
     }
@@ -42,27 +37,5 @@ export class HGridRowPinningSampleComponent implements OnInit {
         } else {
             this.pinningConfig = { columns: this.pinningConfig.columns, rows: RowPinningPosition.Bottom };
         }
-    }
-
-    public onMouseOver(actionStrip: IgxActionStripComponent, hierarchicalGrid: IgxHierarchicalGridComponent, event) {
-        const target = event.target;
-        if (target.nodeName.toLowerCase() === "igx-hierarchical-grid-cell") {
-            const gridId = target.parentNode.parentNode.attributes["ng-reflect-grid-i-d"].value;
-            const grid = hierarchicalGrid.hgridAPI.getChildGrids(true)
-                .find(childGrid => childGrid.id === gridId) || hierarchicalGrid;
-            const rowIndex = parseInt(target.attributes["data-rowindex"].value, 10);
-            const row = grid.getRowByIndex(rowIndex);
-            actionStrip.show(row);
-        }
-    }
-
-    public onMouseLeave(actionStrip: IgxActionStripComponent, event?) {
-        if (!event || !event.relatedTarget || event.relatedTarget.nodeName.toLowerCase() !== "igx-drop-down-item") {
-            actionStrip.hide();
-        }
-    }
-
-    public onCellClick(args: IGridCellEventArgs) {
-        this.actionStrip.show(args.cell.row);
     }
 }
