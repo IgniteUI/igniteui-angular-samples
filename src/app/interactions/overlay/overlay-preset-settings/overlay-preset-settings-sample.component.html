@@ -89,6 +89,7 @@
 </button>
 
 <article
+    #outlet
     class="outlet-group"
     [class.outlet-group--active]="
         positionStrategy === 'absolute' && absPositionStrategy === 'container'
@@ -102,17 +103,14 @@
         <igx-icon>anchor</igx-icon>
     </section>
 
-    <section #outlet class="outlet-group__container">
-        <header>
-            <h1 class="igx-typography__h5 outlet-group__title">
-                Outlet Container
-            </h1>
-            <h2 class="igx-typography__body-1 outlet-group__subtitle">
-                The card will be positioned relative to the container or the
-                anchor based on the selected <em><b>type and strategy</b></em
-                >.
-            </h2>
-        </header>
-    </section>
+    <header>
+        <h1 class="igx-typography__h5 outlet-group__title">
+            Outlet Container
+        </h1>
+        <h2 class="igx-typography__body-1 outlet-group__subtitle">
+            The card will be positioned relative to the container or the anchor
+            based on the selected <em><b>type and strategy</b></em
+            >.
+        </h2>
+    </header>
 </article>
-

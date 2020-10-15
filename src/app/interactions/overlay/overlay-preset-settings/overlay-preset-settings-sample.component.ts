@@ -25,11 +25,11 @@ import { Subject } from "rxjs";
     providers: [IgxOverlayService]
 })
 export class OverlayPresetSettingsSampleComponent implements OnDestroy {
-    @ViewChild("buttonElement", { static: true })
-    public button: ElementRef;
+    @ViewChild("anchor", { static: true })
+    public anchor: ElementRef;
 
     @ViewChild("outlet", { static: true })
-    public outletElement: ElementRef;
+    public outlet: ElementRef;
 
     private _overlayId: string;
     private _overlaySettings: OverlaySettings;
@@ -38,7 +38,7 @@ export class OverlayPresetSettingsSampleComponent implements OnDestroy {
     public positionStrategies = ["relative", "absolute"];
     public positionStrategy = this.positionStrategies[0];
 
-    public absStrategies = ["global", "container"];
+    public absStrategies = ["container", "global"];
 
     public absPositions = [
         AbsolutePosition.Center,
@@ -60,7 +60,7 @@ export class OverlayPresetSettingsSampleComponent implements OnDestroy {
         RelativePosition.After
     ];
 
-    public absPositionStrategy = "global";
+    public absPositionStrategy = this.absStrategies[0];
     public absPosition = AbsolutePosition.Center;
     public relPositionStrategy = RelativePositionStrategy.Auto;
     public relPosition = RelativePosition.Default;
@@ -78,43 +78,13 @@ export class OverlayPresetSettingsSampleComponent implements OnDestroy {
             .subscribe(() => delete this._overlayId);
     }
 
-    ngOnInit(): void {
-        this._overlaySettings = IgxOverlayService.createAbsoluteOverlaySettings(
-            this.absPosition
-        );
+    ngOnInit() {
+        this.setRelativeOverlaySettings();
     }
 
-    onChange(event) {
-        switch (event) {
-            case "auto":
-            case "connected":
-            case "elastic":
-            case "above":
-            case "below":
-            case "before":
-            case "after":
-            case "default":
-                this.clearAbsoluteSettings();
-                this.relPositionStrategy =
-                    this.relPositionStrategy || RelativePositionStrategy.Auto;
-                this.relPosition = this.relPosition || RelativePosition.Default;
-                this._overlaySettings = IgxOverlayService.createRelativeOverlaySettings(
-                    this.button.nativeElement,
-                    this.relPosition,
-                    this.relPositionStrategy
-                );
-                break;
-            case "global":
-            case "container":
-            case "top":
-            case "bottom":
-            case "center":
-                this.clearRelativeSettings();
-                this.absPositionStrategy = this.absPositionStrategy || "global";
-                this.absPosition = this.absPosition || AbsolutePosition.Center;
-                this.setAbsoluteOverlaySettings(this.absPositionStrategy);
-                break;
-        }
+    ngOnDestroy() {
+        this.destroy$.next(true);
+        this.destroy$.complete();
     }
 
     public showOverlay() {
@@ -127,27 +97,12 @@ export class OverlayPresetSettingsSampleComponent implements OnDestroy {
         this.overlayService.show(this._overlayId, this._overlaySettings);
     }
 
-    public ngOnDestroy() {
-        this.destroy$.next(true);
-        this.destroy$.complete();
-    }
-
-    private clearAbsoluteSettings() {
-        this.absPositionStrategy = null;
-        this.absPosition = null;
-    }
-
-    private clearRelativeSettings() {
-        this.relPositionStrategy = null;
-        this.relPosition = null;
-    }
-
     private setAbsoluteOverlaySettings(strategy: string) {
         switch (strategy) {
             case "container":
                 this._overlaySettings = IgxOverlayService.createAbsoluteOverlaySettings(
                     this.absPosition,
-                    this.outletElement
+                    this.outlet
                 );
                 break;
             case "global":
@@ -158,23 +113,36 @@ export class OverlayPresetSettingsSampleComponent implements OnDestroy {
                 break;
         }
     }
+
+    private setRelativeOverlaySettings() {
+        this._overlaySettings = IgxOverlayService.createRelativeOverlaySettings(
+            this.anchor.nativeElement,
+            this.relPosition,
+            this.relPositionStrategy
+        );
+    }
+
     public selectPositionStrategy(event: IButtonGroupEventArgs) {
         this.positionStrategy = this.positionStrategies[event.index];
     }
 
     public selectAbsStrategy(event: IButtonGroupEventArgs) {
         this.absPositionStrategy = this.absStrategies[event.index];
+        this.setAbsoluteOverlaySettings(this.absPositionStrategy);
     }
 
     public selectRelStrategy(event: IButtonGroupEventArgs) {
         this.relPositionStrategy = this.relStrategies[event.index];
+        this.setRelativeOverlaySettings();
     }
 
     public selectAbsPosition(event: IButtonGroupEventArgs) {
         this.absPosition = this.absPositions[event.index];
+        this.setAbsoluteOverlaySettings(this.absPositionStrategy);
     }
 
     public selectRelPosition(event: IButtonGroupEventArgs) {
         this.relPosition = this.relPositions[event.index];
+        this.setRelativeOverlaySettings();
     }
 }

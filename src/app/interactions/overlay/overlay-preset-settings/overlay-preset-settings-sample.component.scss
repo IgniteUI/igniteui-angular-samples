@@ -1,11 +1,13 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
 :host {
+    position: relative;
     display: block;
     padding: rem(12px);
 }
 
 @include b(outlet-group) {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
