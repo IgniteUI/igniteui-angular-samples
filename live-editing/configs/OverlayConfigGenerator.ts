@@ -134,11 +134,11 @@ export class OverlayConfigGenerator implements IConfigGenerator {
             "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.html"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxIconModule', 'IgxOverlayService', 'OverlayPresetSettingsSampleComponent', 'IgxCardModule',
-                        'IgxButtonGroupModule', 'MyDynamicCardComponent'],
+                        'IgxButtonGroupModule', 'IgxButtonModule', 'MyDynamicCardComponent'],
                 ngEntryComponents: ['MyDynamicCardComponent'],
                 ngProviders: ['IgxOverlayService'],
                 ngDeclarations: ['OverlayPresetSettingsSampleComponent', 'MyDynamicCardComponent'],
-                ngImports: ['IgxIconModule', 'IgxCardModule', 'IgxButtonGroupModule']
+                ngImports: ['IgxIconModule', 'IgxCardModule', 'IgxButtonGroupModule', 'IgxButtonModule']
             }),
             shortenComponentPathBy: "/interactions/overlay/"
         }));
