@@ -20,7 +20,7 @@ export class ExpansionPanelSample4Component {
     public onInteraction(event: IExpansionPanelEventArgs) {
         const expandedPanels = this.accordion.filter((panel) => !panel.collapsed);
         expandedPanels.forEach((expandedPanel) => {
-            if (expandedPanel.id !==  event.panel.id) {
+            if (expandedPanel.id !==  event.owner.id) {
                 expandedPanel.collapse();
             }
         });
