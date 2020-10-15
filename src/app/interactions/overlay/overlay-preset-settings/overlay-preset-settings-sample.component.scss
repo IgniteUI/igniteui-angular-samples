@@ -1,41 +1,72 @@
-.sample-section{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    min-height: 100%; 
-    width: 100%;
-    padding-top: 2%;
-}
+@import '~igniteui-angular/lib/core/styles/themes/index';
 
-.settings{
-    background-color: #09f;
-    flex: 0 0 15%;
-    align-content: center;
-    padding: 0.5%;
-}
-
-.igx-radio{
+:host {
     display: block;
+    padding: rem(12px);
 }
 
-.outlet{
-    background-color: #444444;
-    flex: 0 0 60%;
-    height: 450px;
-    position: relative;
-    overflow: hidden;
-}
-
-.sample-dropdown{
+@include b(outlet-group) {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    background: igx-color($default-palette, 'grays', 100);
+    border: 2px dashed igx-color($default-palette, 'grays', 200);
+    border-radius: rem(8px);
+    padding: rem(12px);
+    height: 576px;
+
+    @include e(anchor) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: rem(80px);
+        height: rem(80px);
+        margin-bottom: rem(24px);
+        border: 2px dashed igx-color($default-palette, 'grays', 300);
+        border-radius: rem(8px);
+        color: igx-color($default-palette, 'grays', 800);
+
+        igx-icon {
+            font-size: 64px;
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    @include e(anchor, active) {
+        border-color: igx-color($default-palette, 'primary');
+    }
+
+    @include e(title) {
+        text-align: center;
+        margin: 0;
+        color: igx-color($default-palette, 'grays', 800);
+    }
+
+    @include e(subtitle) {
+        text-align: center;
+        margin: 0;
+        color: igx-color($default-palette, 'grays', 600);
+    }
+
+    @include m(active) {
+        border-color: igx-color($default-palette, 'primary');
+    }
 }
 
-p {
-    padding: 2% 0;
+@include b(filter-group) {
+    @include e(header) {
+
+        h1 {
+            font-size: rem(12px);
+            margin-bottom: rem(8px);
+        }
+    }
 }
 
-button[name=buttonElement]{
-    position: absolute;
+
+[igxButton="raised"] {
+    margin: rem(24px) 0;
 }
+

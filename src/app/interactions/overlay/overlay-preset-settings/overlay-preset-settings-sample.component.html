@@ -1,42 +1,118 @@
-<div #container>
-    <section class="presets-sample-content">
-        <div class="sample-section">
-            <div class="column settings">
-                <div class="radio-group">
-                    <p>Absolute Position Strategies</p>
-                    <div>
-                        <igx-radio *ngFor="let item of absStrategies" value="{{item}}" name="ps"
-                            [(ngModel)]="absPositionStrategy" (ngModelChange)="onChange($event)">{{item}}</igx-radio>
-                    </div>
-                </div>
-                <div class="radio-group">
-                    <p>Absolute Position Settings</p>
-                    <igx-radio *ngFor="let item of absPositions" value="{{item}}" name="pos" [(ngModel)]="absPosition"
-                        (ngModelChange)="onChange($event)">{{item}}</igx-radio>
-                </div>
-            </div>
-            <div class="column settings">
-                <div class="radio-group">
-                    <p>Relative Position Strategies</p>
-                    <div>
-                        <igx-radio *ngFor="let item of relStrategies" value="{{item}}" name="ps"
-                            [(ngModel)]="relPositionStrategy" (ngModelChange)="onChange($event)">{{item}}</igx-radio>
-                    </div>
-                </div>
-                <div class="radio-group">
-                    <p>Relative Position Settings</p>
-                    <igx-radio *ngFor="let item of relPositions" value="{{item}}" name="pos" [(ngModel)]="relPosition"
-                        (ngModelChange)="onChange($event)">{{item}}</igx-radio>
-                </div>
-            </div>
-            <div #outlet class="outlet">
-                Outlet
-            </div>
-        </div>
-        <div class="sample-dropdown">
-        <button class="igx-button--raised" #buttonElement igxButton (click)='showOverlay()'>
-            Show Card
+<ng-template #header let-title="title">
+    <header class="filter-group__header">
+        <h1 class="igx-typography__overline">{{ title }}</h1>
+    </header>
+</ng-template>
+
+<article class="filter-group">
+    <ng-container
+        *ngTemplateOutlet="header; context: { title: 'Type' }"
+    ></ng-container>
+
+    <igx-buttongroup (onSelect)="selectPositionStrategy($event)">
+        <button
+            igxButton
+            *ngFor="let item of positionStrategies; let i = index"
+            [selected]="positionStrategy === positionStrategies[i]"
+        >
+            {{ item }}
         </button>
-    </div>
+    </igx-buttongroup>
+</article>
+
+<article class="fitler-group" *ngIf="positionStrategy === 'absolute'">
+    <ng-container
+        *ngTemplateOutlet="header; context: { title: 'Strategy' }"
+    ></ng-container>
+
+    <igx-buttongroup (onSelect)="selectAbsStrategy($event)">
+        <button
+            igxButton
+            *ngFor="let item of absStrategies; let i = index"
+            [selected]="absPositionStrategy === absStrategies[i]"
+        >
+            {{ item }}
+        </button>
+    </igx-buttongroup>
+</article>
+
+<article class="filter-group" *ngIf="positionStrategy === 'absolute'">
+    <ng-container
+        *ngTemplateOutlet="header; context: { title: 'Position' }"
+    ></ng-container>
+
+    <igx-buttongroup (onSelect)="selectAbsPosition($event)">
+        <button
+            igxButton
+            *ngFor="let item of absPositions; let i = index"
+            [selected]="absPosition === absPositions[i]"
+        >
+            {{ item }}
+        </button>
+    </igx-buttongroup>
+</article>
+
+<article class="filter-group" *ngIf="positionStrategy === 'relative'">
+    <ng-container
+        *ngTemplateOutlet="header; context: { title: 'Strategy' }"
+    ></ng-container>
+
+    <igx-buttongroup (onSelect)="selectRelStrategy($event)">
+        <button
+            igxButton
+            *ngFor="let item of relStrategies; let i = index"
+            [selected]="relPositionStrategy === relStrategies[i]"
+        >
+            {{ item }}
+        </button>
+    </igx-buttongroup>
+</article>
+
+<article class="filter-group" *ngIf="positionStrategy === 'relative'">
+    <ng-container
+        *ngTemplateOutlet="header; context: { title: 'Position' }"
+    ></ng-container>
+
+    <igx-buttongroup (onSelect)="selectRelPosition($event)">
+        <button
+            igxButton
+            *ngFor="let item of relPositions; let i = index"
+            [selected]="relPosition === relPositions[i]"
+        >
+            {{ item }}
+        </button>
+    </igx-buttongroup>
+</article>
+
+<button #buttonElement igxButton="raised" (click)="showOverlay()">
+    Apply Settings
+</button>
+
+<article
+    class="outlet-group"
+    [class.outlet-group--active]="
+        positionStrategy === 'absolute' && absPositionStrategy === 'container'
+    "
+>
+    <section
+        #anchor
+        class="outlet-group__anchor"
+        [class.outlet-group__anchor--active]="positionStrategy === 'relative'"
+    >
+        <igx-icon>anchor</igx-icon>
     </section>
-<div>
+
+    <section #outlet class="outlet-group__container">
+        <header>
+            <h1 class="igx-typography__h5 outlet-group__title">
+                Outlet Container
+            </h1>
+            <h2 class="igx-typography__body-1 outlet-group__subtitle">
+                The card will be positioned relative to the container or the
+                anchor based on the selected <em><b>type and strategy</b></em
+                >.
+            </h2>
+        </header>
+    </section>
+</article>
+

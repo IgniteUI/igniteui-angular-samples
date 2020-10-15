@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import {
     IgxAvatarModule,
     IgxButtonModule,
+    IgxButtonGroupModule,
     IgxCardModule,
     IgxCheckboxModule,
     IgxChipsModule,
@@ -137,6 +138,7 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         InteractionsRoutingModule,
         IgxAvatarModule,
         IgxButtonModule,
+        IgxButtonGroupModule,
         IgxCardModule,
         IgxCheckboxModule,
         IgxChipsModule,
