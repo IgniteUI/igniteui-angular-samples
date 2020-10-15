@@ -4,90 +4,6 @@
     </header>
 </ng-template>
 
-<article class="filter-group">
-    <ng-container
-        *ngTemplateOutlet="header; context: { title: 'Type' }"
-    ></ng-container>
-
-    <igx-buttongroup (onSelect)="selectPositionStrategy($event)">
-        <button
-            igxButton
-            *ngFor="let item of positionStrategies; let i = index"
-            [selected]="positionStrategy === positionStrategies[i]"
-        >
-            {{ item }}
-        </button>
-    </igx-buttongroup>
-</article>
-
-<article class="fitler-group" *ngIf="positionStrategy === 'absolute'">
-    <ng-container
-        *ngTemplateOutlet="header; context: { title: 'Strategy' }"
-    ></ng-container>
-
-    <igx-buttongroup (onSelect)="selectAbsStrategy($event)">
-        <button
-            igxButton
-            *ngFor="let item of absStrategies; let i = index"
-            [selected]="absPositionStrategy === absStrategies[i]"
-        >
-            {{ item }}
-        </button>
-    </igx-buttongroup>
-</article>
-
-<article class="filter-group" *ngIf="positionStrategy === 'absolute'">
-    <ng-container
-        *ngTemplateOutlet="header; context: { title: 'Position' }"
-    ></ng-container>
-
-    <igx-buttongroup (onSelect)="selectAbsPosition($event)">
-        <button
-            igxButton
-            *ngFor="let item of absPositions; let i = index"
-            [selected]="absPosition === absPositions[i]"
-        >
-            {{ item }}
-        </button>
-    </igx-buttongroup>
-</article>
-
-<article class="filter-group" *ngIf="positionStrategy === 'relative'">
-    <ng-container
-        *ngTemplateOutlet="header; context: { title: 'Strategy' }"
-    ></ng-container>
-
-    <igx-buttongroup (onSelect)="selectRelStrategy($event)">
-        <button
-            igxButton
-            *ngFor="let item of relStrategies; let i = index"
-            [selected]="relPositionStrategy === relStrategies[i]"
-        >
-            {{ item }}
-        </button>
-    </igx-buttongroup>
-</article>
-
-<article class="filter-group" *ngIf="positionStrategy === 'relative'">
-    <ng-container
-        *ngTemplateOutlet="header; context: { title: 'Position' }"
-    ></ng-container>
-
-    <igx-buttongroup (onSelect)="selectRelPosition($event)">
-        <button
-            igxButton
-            *ngFor="let item of relPositions; let i = index"
-            [selected]="relPosition === relPositions[i]"
-        >
-            {{ item }}
-        </button>
-    </igx-buttongroup>
-</article>
-
-<button #buttonElement igxButton="raised" (click)="showOverlay()">
-    Apply Settings
-</button>
-
 <article
     #outlet
     class="outlet-group"
@@ -114,3 +30,87 @@
         </h2>
     </header>
 </article>
+
+<article class="filter-group">
+    <ng-container
+        *ngTemplateOutlet="header; context: { title: 'Type' }"
+    ></ng-container>
+
+    <igx-buttongroup (onSelect)="selectPositionStrategy($event)">
+        <button
+            igxButton
+            *ngFor="let item of positionStrategies; let i = index"
+            [selected]="positionStrategy === positionStrategies[i]"
+        >
+            {{ item }}
+        </button>
+    </igx-buttongroup>
+</article>
+
+<article class="filter-group" *ngIf="positionStrategy === 'absolute'">
+    <ng-container
+        *ngTemplateOutlet="header; context: { title: 'Position' }"
+    ></ng-container>
+
+    <igx-buttongroup (onSelect)="selectAbsPosition($event)">
+        <button
+            igxButton
+            *ngFor="let item of absPositions; let i = index"
+            [selected]="absPosition === absPositions[i]"
+        >
+            {{ item }}
+        </button>
+    </igx-buttongroup>
+</article>
+
+<article class="fitler-group" *ngIf="positionStrategy === 'absolute'">
+    <ng-container
+        *ngTemplateOutlet="header; context: { title: 'Strategy' }"
+    ></ng-container>
+
+    <igx-buttongroup (onSelect)="selectAbsStrategy($event)">
+        <button
+            igxButton
+            *ngFor="let item of absStrategies; let i = index"
+            [selected]="absPositionStrategy === absStrategies[i]"
+        >
+            {{ item }}
+        </button>
+    </igx-buttongroup>
+</article>
+
+<article class="filter-group" *ngIf="positionStrategy === 'relative'">
+    <ng-container
+        *ngTemplateOutlet="header; context: { title: 'Position' }"
+    ></ng-container>
+
+    <igx-buttongroup (onSelect)="selectRelPosition($event)">
+        <button
+            igxButton
+            *ngFor="let item of relPositions; let i = index"
+            [selected]="relPosition === relPositions[i]"
+        >
+            {{ item }}
+        </button>
+    </igx-buttongroup>
+</article>
+
+<article class="filter-group" *ngIf="positionStrategy === 'relative'">
+    <ng-container
+        *ngTemplateOutlet="header; context: { title: 'Strategy' }"
+    ></ng-container>
+
+    <igx-buttongroup (onSelect)="selectRelStrategy($event)">
+        <button
+            igxButton
+            *ngFor="let item of relStrategies; let i = index"
+            [selected]="relPositionStrategy === relStrategies[i]"
+        >
+            {{ item }}
+        </button>
+    </igx-buttongroup>
+</article>
+
+<button #buttonElement igxButton="raised" (click)="showOverlay()">
+    Apply Settings
+</button>
