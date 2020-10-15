@@ -1,7 +1,6 @@
 import { Component, ElementRef, Inject, OnDestroy, ViewChild } from "@angular/core";
 import {
     AbsolutePosition,
-    IgxDragDirective,
     IgxOverlayService,
     OverlaySettings,
     RelativePosition,
@@ -20,7 +19,6 @@ import { Subject } from "rxjs";
 export class OverlayPresetSettingsSampleComponent implements OnDestroy {
     @ViewChild('buttonElement', { static: true }) public button: ElementRef;
     @ViewChild('outlet', { static: true }) public outletElement: ElementRef;
-    @ViewChild(IgxDragDirective, { static: true }) public igxDrag: IgxDragDirective;
 
     private _overlayId: string;
     private _overlaySettings: OverlaySettings;
