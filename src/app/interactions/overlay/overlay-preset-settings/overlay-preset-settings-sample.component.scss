@@ -1,0 +1,74 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+:host {
+    position: relative;
+    display: block;
+    padding: rem(12px);
+}
+
+@include b(outlet-group) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: igx-color($default-palette, 'grays', 100);
+    border: 2px dashed igx-color($default-palette, 'grays', 200);
+    border-radius: rem(8px);
+    padding: rem(12px);
+    height: 376px;
+
+    @include e(anchor) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: rem(80px);
+        height: rem(80px);
+        margin-bottom: rem(24px);
+        border: 2px dashed igx-color($default-palette, 'grays', 300);
+        border-radius: rem(8px);
+        color: igx-color($default-palette, 'grays', 800);
+
+        igx-icon {
+            font-size: 64px;
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    @include e(anchor, active) {
+        border-color: igx-color($default-palette, 'primary');
+    }
+
+    @include e(title) {
+        text-align: center;
+        margin: 0;
+        color: igx-color($default-palette, 'grays', 800);
+    }
+
+    @include e(subtitle) {
+        text-align: center;
+        margin: 0;
+        color: igx-color($default-palette, 'grays', 600);
+    }
+
+    @include m(active) {
+        border-color: igx-color($default-palette, 'primary');
+    }
+}
+
+@include b(filter-group) {
+    @include e(header) {
+
+        h1 {
+            font-size: rem(12px);
+            margin-bottom: rem(8px);
+        }
+    }
+}
+
+
+[igxButton="raised"] {
+    margin: rem(24px) 0;
+}
+
