@@ -41,7 +41,7 @@ export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
                 name: "Contains (case sensitive)"
             },
             {
-                iconName: "does_not_contain",
+                iconName: "does-not-contain",
                 isUnary: false,
                 logic: (target: string, searchVal: string, ignoreCase?: boolean) => {
                     ignoreCase = false;
