@@ -16,7 +16,7 @@
     border: 2px dashed igx-color($default-palette, 'grays', 200);
     border-radius: rem(8px);
     padding: rem(12px);
-    height: 576px;
+    height: 376px;
 
     @include e(anchor) {
         display: flex;
