@@ -1,5 +1,6 @@
 import {IgxButtonDirective,
 IgxButtonModule,
+IgxButtonGroupModule,
 IgxCardModule,
 IgxComboModule,
 IgxDividerModule,
@@ -122,6 +123,22 @@ export class OverlayConfigGenerator implements IConfigGenerator {
                 ngProviders: ['IgxOverlayService'],
                 ngDeclarations: ['OverlayScrollSample1Component'],
                 ngImports: ['IgxIconModule', 'IgxSwitchModule', 'IgxCardModule']
+            }),
+            shortenComponentPathBy: "/interactions/overlay/"
+        }));
+
+        configs.push(new Config({
+            component: 'OverlayPresetSettingsSampleComponent',
+            additionalFiles: ["/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.ts",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.scss",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.html"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxIconModule', 'IgxOverlayService', 'OverlayPresetSettingsSampleComponent', 'IgxCardModule',
+                        'IgxButtonGroupModule', 'IgxButtonModule', 'MyDynamicCardComponent'],
+                ngEntryComponents: ['MyDynamicCardComponent'],
+                ngProviders: ['IgxOverlayService'],
+                ngDeclarations: ['OverlayPresetSettingsSampleComponent', 'MyDynamicCardComponent'],
+                ngImports: ['IgxIconModule', 'IgxCardModule', 'IgxButtonGroupModule', 'IgxButtonModule']
             }),
             shortenComponentPathBy: "/interactions/overlay/"
         }));
