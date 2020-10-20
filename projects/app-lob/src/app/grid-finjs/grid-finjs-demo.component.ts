@@ -397,10 +397,11 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
      * Updates values in every record
      */
     private updateAllPrices(data: any[]): any[] {
+        const newData = []
         for (const dataRow of data) {
-            this.randomizeObjectData(dataRow);
+            newData.push(this.randomizeObjectData(dataRow));
         }
-        return Array.from(data);
+        return newData;
     }
 
     /**
@@ -408,9 +409,8 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
      */
     private updateRandomPrices(data: any[]): any {
         const newData = data.slice();
-        let y = 0;
-        for (let i = Math.round(Math.random() * 10); i < newData.length; i += Math.round(Math.random() * 10)) {
-            this.randomizeObjectData(newData[i]);
+        for (let i = Math.round(Math.random() * 10), y = 0; i < data.length; i += Math.round(Math.random() * 10)) {
+            newData[i] = this.randomizeObjectData(data[i]);
             y++;
         }
         return newData;
@@ -425,6 +425,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
         dataObj.Change = res.Price - dataObj.Price;
         dataObj.Price = res.Price;
         dataObj[changeP] = res.ChangePercent;
+        return {...dataObj};
     }
 
     private generateNewPrice(oldPrice): any {
