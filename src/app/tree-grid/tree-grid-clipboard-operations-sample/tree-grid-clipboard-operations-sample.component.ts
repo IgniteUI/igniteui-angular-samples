@@ -25,7 +25,7 @@ export class TreeGridClipboardSampleComponent implements OnInit {
     }
 
     public formatter = (value: any) => `** ${value} **`;
-    public formatDate(val: Date) {
+    public formatDate = (val: Date) => {
         if (!this.frmt) {
             this.frmt = new Intl.DateTimeFormat("en-US");
         }
