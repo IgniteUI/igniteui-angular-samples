@@ -1,31 +1,18 @@
-import { Component, OnInit } from "@angular/core";
-import { IgxToastPosition } from "igniteui-angular";
+import { Component } from "@angular/core";
+import { IgxToastComponent, IgxToastPosition } from "igniteui-angular";
 
 @Component({
     selector: "app-toast-style",
     styleUrls: ["./toast-style.component.scss"],
     templateUrl: "./toast-style.component.html"
 })
-export class ToastStyleComponent implements OnInit {
-    public toastPosition: IgxToastPosition = "bottom";
+export class ToastStyleComponent {
+    public toast: IgxToastComponent;
+    public toastPosition: IgxToastPosition;
 
-    constructor() { }
-
-    public ngOnInit() {
-    }
-
-    public showToast(toast, position) {
-        switch (position) {
-            case "middle":
-                this.toastPosition = "middle";
-                break;
-            case "top":
-                this.toastPosition = "top";
-                break;
-            default:
-                this.toastPosition = "bottom";
-        }
-
+    showToast(toast: IgxToastComponent, toastPosition: IgxToastPosition) {
+        toast.position = toastPosition;
         toast.show();
     }
 }
+
