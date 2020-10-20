@@ -10,10 +10,10 @@ $custom-grid: igx-grid-theme(
 );
 
 $dark-input-group: igx-input-group-theme(
-    $box-background: #292826,
-    $idle-text-color: #FFCD0F,
-    $focused-text-color: #FFCD0F,
-    $filled-text-color: #FFCD0F
+    $box-background: #FFCD0F,
+    $idle-text-color: #292826,
+    $focused-text-color: #292826,
+    $filled-text-color: #292826
 );
 
 $dark-button: igx-button-theme(
@@ -125,7 +125,7 @@ $dark-button: igx-button-theme(
             @include igx-button($dark-button);
             @include igx-input-group($dark-input-group);
             .igx-input-group__input::placeholder {
-                color: #FFCD0F;
+                color: #292826;
             }
         }
     }
