@@ -6,6 +6,7 @@ import { HierarchicalGridColumnGroupSelectionComponent } from "./column-group-se
 import { HGridColumnSelectionStylesComponent } from "./column-selection-styles/hierarchical-grid-column-selection-styles.component";
 import { HierarchicalGridColumnSelectionComponent } from "./column-selection/hierarchical-grid-column-selection.component";
 import { HGridKeyboardnavGuide } from "./hgrid-keybarod-nav-guide-sample/hgrid-keyboard-guide.component";
+import { HGridAddRowSampleComponent } from "./hierarchical-grid-add-row/hierarchical-grid-add-row.component";
 import { HGridAdvancedFilteringStyleComponent } from "./hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
 import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridAllDataSummaryComponent } from "./hierarchical-grid-allData-summary/hierarchical-grid-allData-summary.component";
@@ -84,6 +85,8 @@ import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
 import { HGridAboutComponent } from "./hierarchical-grid-save-state/about.component";
 import { HierarchicalGridExternalOutletComponent } from "./hierarchical-grid-external-outlet/hierarchical-grid-external-outlet-sample.component";
+import { HGridEditingLifecycleComponent } from "./hgrid-editing-lifecycle-sample/hgrid-editing-lifecycle.component";
+import { HierarchicalGridCellSelectionComponent } from './hierarchical-grid-cellSelection-sample/hierarchical-grid-cellSelection.component';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -395,6 +398,12 @@ export const hierarchicalGridRoutes: Routes = [
         path: "hierarchical-grid-filtering-style"
     },
     {
+        component: HGridAddRowSampleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-add-row"],
+        path: "hierarchical-grid-add-row"
+    },
+    {
         component: HGridAdvancedFilteringSampleComponent,
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-advanced-filtering"],
@@ -465,6 +474,16 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridAboutComponent,
         data:  hierarchicalGridRoutesData["hGrid-state-about"],
         path: "hGrid-state-about"
+    },
+    {
+        component: HGridEditingLifecycleComponent,
+        data:  hierarchicalGridRoutesData["hGrid-editing-lifecycle"],
+        path: "hGrid-editing-lifecycle"
+    },
+    {
+        component: HierarchicalGridCellSelectionComponent,
+        data: hierarchicalGridRoutesData["hGrid-cell-selection"],
+        path: "hGrid-cell-selection"
     }
 ];
 

@@ -1,0 +1,39 @@
+<div class="switches">
+    <igx-switch (change)='this.$rowEditEnter = !this.$rowEditEnter' style="padding-left: 20px">cancel rowEditEnter</igx-switch>
+    <igx-switch (change)='this.$cellEditEnter = !this.$cellEditEnter' style="padding-left: 20px">cancel cellEditEnter</igx-switch>
+    <igx-switch (change)='this.$cellEdit = !this.$cellEdit' style="padding-left: 20px">cancel cellEdit</igx-switch>
+    <igx-switch (change)='this.$rowEdit = !this.$rowEdit' style="padding-left: 20px">cancel rowEdit</igx-switch>
+</div>
+<div class="sample-wrapper">
+    <div class="grid-wrapper">
+        <div>
+            <igx-grid igxPreventDocumentScroll [data]="data" height="500px" primaryKey="ProductID"
+                [rowEditable]="true"
+                (rowEditEnter)="rowEditEnter($event)"
+                (cellEditEnter)="cellEditEnter($event)"
+                (cellEdit)="cellEdit($event)"
+                (cellEditDone)="cellEditDone()"
+                (cellEditExit)="cellEditExit()"
+                (rowEdit)="rowEdit($event)"
+                (rowEditDone)="rowEditDone()"
+                (rowEditExit)="rowEditExit()">
+                <igx-column field="ProductName" header="Product Name" dataType="string"></igx-column>
+                <igx-column field="UnitPrice" header="Price" dataType="number" [editable]="true"></igx-column>
+                <igx-column field="UnitsInStock" header="Units In Stock" dataType="number" [editable]="true"></igx-column>
+                <igx-column field="Ordered" header="Ordered" dataType="number" [editable]="true"></igx-column>
+            </igx-grid>
+        </div>
+    </div>
+    <div class="log-wrapper">
+        <div class="selected-data-area">
+            <div class="logContainer">
+                <div class="highlight">
+                    <span>Events execution sequence</span>
+                    <button class="clearBtn" igxButton="flat" (click)="clearLog()"><igx-icon>clear</igx-icon>Clear log</button>
+                </div>
+                <hr />
+                <div #logger class="logger"></div>
+            </div>
+        </div>
+    </div>
+</div>

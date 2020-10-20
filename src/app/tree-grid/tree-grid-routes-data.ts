@@ -89,6 +89,7 @@ export const treeGridRoutesData = {
     "tree-grid-clipboard-operations-sample": { displayName: "TreeGrid Clipboard Operations", parentName: "TreeGrid" },
     "treegrid-toolbar-style": { displayName: "TreeGrid Toolbar Style", parentName: "TreeGrid" },
     "treegrid-filtering-style": { displayName: "TreeGrid Filtering Style", parentName: "TreeGrid" },
+    "treegrid-add-row": { displayName: "TreeGrid Add Row", parentName: "TreeGrid" },
     "treegrid-advanced-filtering": { displayName: "TreeGrid Advanced Filtering", parentName: "TreeGrid" },
     "treegrid-advanced-filtering-style": { displayName: "TreeGrid Advanced Filtering Style", parentName: "TreeGrid" },
     "treegrid-cell-selection": { displayName: "TreeGrid Cell Selection", parentName: "TreeGrid" },
@@ -106,5 +107,6 @@ export const treeGridRoutesData = {
     "tree-grid-remote-paging-default-template": { displayName: "TreeGrid remote paging with default template", parentName: "TreeGrid" },
     "tree-grid-state": { displayName: "TreeGrid Save State", parentName: "TreeGrid" },
     "tree-grid-state-about": { displayName: "About", parentName: "TreeGrid" },
-    "tree-grid-exporting-visualization": { displayName: "Exporting Visualization", parentName: "TreeGrid" }
+    "tree-grid-exporting-visualization": { displayName: "Exporting Visualization", parentName: "TreeGrid" },
+    "tree-grid-editing-lifecycle": { displayName: "Editing Lifecycle", parentName: "TreeGrid" }
 };

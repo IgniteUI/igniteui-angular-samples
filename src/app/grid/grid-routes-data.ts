@@ -12,6 +12,7 @@ export const gridsRoutesData = {
     "grid-editing-events": { displayName: "Grid Editing Events", parentName: "Grid" },
     "grid-editing-style": { displayName: "Grid Editing Style", parentName: "Grid" },
     "grid-row-editing": { displayName: "Grid Row Editing", parentName: "Grid" },
+    "grid-add-row": { displayName: "Grid Add Row", parentName: "Grid"},
     "grid-row-drag": { displayName: "Grid Row Drag", parentName: "Grid" },
     "grid-row-drag-base": { displayName: "Grid Row Drag - Base", parentName: "Grid" },
     "grid-row-drag-to-grid": { displayName: "Row Drag between Grids", parentName: "Grid" },
@@ -104,5 +105,6 @@ export const gridsRoutesData = {
     "grid-sample-5": { displayName: "Grid Infinite Scroll", parentName: "Grid" },
     "remote-paging-batch-editing": {displayName: "Remote paging with batch editing", parentName: "Grid"},
     "grid-sorting-indicators": {displayName: "Grid Sorting Indicators", parentName: "Grid"},
-    "exporting-visualization": {displayName: "Exporting Visualization", parentName: "Grid"}
+    "exporting-visualization": {displayName: "Exporting Visualization", parentName: "Grid"},
+    "grid-editing-lifecycle": {displayName: "Grid editing lifecycle", parentName: "Grid"}
 };

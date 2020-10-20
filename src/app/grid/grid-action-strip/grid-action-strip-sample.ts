@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { DATA } from "../../data/nwindData";
-import { generateRandomInteger } from "../../data/utils";
 
 import { IgxGridComponent, IgxGridRowComponent, Transaction } from "igniteui-angular";
 
@@ -27,20 +26,6 @@ export class GridActionStripSampleComponent {
 
     public typeFormatter(value: string) {
         return value.toUpperCase();
-    }
-
-    public onMouseOver(event, grid, actionStrip) {
-        if (event.target.nodeName.toLowerCase() === "igx-grid-cell") {
-            const rowIndex = parseInt(event.target.attributes["data-rowindex"].value, 10);
-            const row = grid.getRowByIndex(rowIndex);
-            actionStrip.show(row);
-        }
-    }
-
-    public onMouseLeave(actionstrip, event?) {
-        if (!event || event.relatedTarget.nodeName.toLowerCase() !== "igx-drop-down-item") {
-            actionstrip.hide();
-        }
     }
 
     public isDirty(rowContext: IgxGridRowComponent) {

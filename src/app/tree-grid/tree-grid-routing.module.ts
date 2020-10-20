@@ -5,6 +5,7 @@ import { TreeGridColumnGroupSelectionComponent } from "./column-group-selection/
 import { TreeGridColumnSelectionStylesComponent } from "./column-selection-styles/tree-grid-column-selection-style.component";
 import { TreeGridColumnSelectionComponent } from "./column-selection/tree-grid-column-selection.component";
 import { TGridKeyboardnavGuide } from "./tgrid-keyboard-guide/tgrid-keyboardnav-guide.component";
+import { TreeGridAddRowSampleComponent } from "./tree-grid-add-row-sample/tree-grid-add-row-sample.component";
 import { TreeGridAdvancedFilteringSampleComponent } from "./tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
 import { TreeGridAdvancedFilteringStyleComponent } from "./tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
 import { TreeGridBatchEditingSampleComponent } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
@@ -82,6 +83,7 @@ import { TGridSaveStateComponent } from './tree-grid-save-state/tGrid-state.comp
 import { TGridAboutComponent } from "./tree-grid-save-state/about.component";
 import { TreeGridExternalOutletComponent } from "./tree-grid-external-outlet/tree-grid-external-outlet-sample.component";
 import { TreeGridExportVisualizationComponent } from "./tree-grid-export-visualization/tree-grid-export-visualization.component";
+import { TGridEditingLifecycleComponent } from "./tgrid-editing-lifecycle-sample/tgrid-editing-lifecycle.component";
 export const treeGridRoutes: Routes = [
     {
         component: TreeGridRowEditSampleComponent,
@@ -399,6 +401,11 @@ export const treeGridRoutes: Routes = [
         path: "treegrid-filtering-style"
     },
     {
+        component: TreeGridAddRowSampleComponent,
+        data: treeGridRoutesData["treegrid-add-row"],
+        path: "treegrid-add-row"
+    },
+    {
         component: TreeGridAdvancedFilteringSampleComponent,
         data: treeGridRoutesData["treegrid-advanced-filtering"],
         path: "treegrid-advanced-filtering"
@@ -482,6 +489,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridExportVisualizationComponent,
         data: treeGridRoutesData["tree-grid-exporting-visualization"],
         path: "tree-grid-exporting-visualization"
+    },
+    {
+        component: TGridEditingLifecycleComponent,
+        data: treeGridRoutesData["tree-grid-editing-lifecycle"],
+        path: "tree-grid-editing-lifecycle"
     }
 ];
 

@@ -52,6 +52,7 @@ import { GridDragBaseSampleComponent } from "./grid-row-drag-base/grid-row-drag-
 import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
+import { GridAddRowSampleComponent } from "./grid-add-row-sample/grid-add-row-sample.component";
 import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
 import { GridPinningDragSampleComponent } from "./grid-row-pinning-drag/grid-row-pinning-drag.component";
 import { GridRowPinningExtraColumnSampleComponent } from "./grid-row-pinning-extra-column/grid-row-pinning-extra-column.component";
@@ -95,6 +96,7 @@ import {
     GridConditionalRowSelectorsComponent
 } from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
+import { GridEditingLifecycleComponent } from "./grid-editing-lifecycle-sample/grid-editing-lifecycle.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridKeyboardnavGuide } from "./grid-keyboardnav-guide-sample/grid-keyboardnav-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -156,6 +158,11 @@ export const gridsRoutes: Routes = [
         component: GridEditingStyleSample,
         data: gridsRoutesData["grid-editing-style"],
         path: "grid-editing-style"
+    },
+    {
+        component: GridAddRowSampleComponent,
+        data: gridsRoutesData["grid-add-row"],
+        path: "grid-add-row"
     },
     {
         component: GridEditingEventsComponent,
@@ -626,6 +633,11 @@ export const gridsRoutes: Routes = [
         component: GridExportVisualizationComponent,
         data: gridsRoutesData["exporting-visualization"],
         path: "exporting-visualization"
+    },
+    {
+        component: GridEditingLifecycleComponent,
+        data: gridsRoutesData["grid-editing-lifecycle"],
+        path: "grid-editing-lifecycle"
     }
 ];
 

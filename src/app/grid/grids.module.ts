@@ -40,7 +40,9 @@ import { CustomRemotePagingGridSample } from "./grid-custom-remote-paging-sample
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
+import { GridEditingLifecycleComponent } from "./grid-editing-lifecycle-sample/grid-editing-lifecycle.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
+import { GridAddRowSampleComponent } from "./grid-add-row-sample/grid-add-row-sample.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridExcelStyleFilteringLoadOnDemandComponent } from "./grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
 import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
@@ -152,6 +154,7 @@ import { GridExportVisualizationComponent } from './grid-export-visualization/gr
         GridResizeLineStylingSampleComponent,
         GridRowEditSampleComponent,
         GridRowEditStyleComponent,
+        GridAddRowSampleComponent,
         GridEditingStyleSample,
         GridEditingEventsComponent,
         FinancialSampleComponent,
@@ -226,7 +229,8 @@ import { GridExportVisualizationComponent } from './grid-export-visualization/gr
         RemotePagingDefaultTemplateComponent,
         RemotePagingBatchEditingComponent,
         GridSortingIndicatorsComponent,
-        GridExportVisualizationComponent
+        GridExportVisualizationComponent,
+        GridEditingLifecycleComponent
     ],
     imports: [
         CommonModule,

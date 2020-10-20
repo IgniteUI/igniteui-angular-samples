@@ -1,9 +1,8 @@
-import { Type } from "@angular/core";
 import { DependenciesType } from "../../services/DependenciesType";
 import { AppModuleConfig } from "./AppModuleConfig";
 
 export class Config {
-    public component: Type<any>;
+    public component: string;
     public usesRouting: boolean;
     public additionalFiles: string[];
     public appModuleConfig: AppModuleConfig;
@@ -12,7 +11,7 @@ export class Config {
     public shortenComponentPathBy: string;
 
     constructor(fields: {
-        component: Type<any>,
+        component: string,
         additionalFiles?: string[],
         appModuleConfig: AppModuleConfig,
         dependenciesType?: DependenciesType,

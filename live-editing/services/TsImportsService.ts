@@ -5,9 +5,9 @@ import * as fs from "fs";
 import * as ts from "typescript";
 
 export class TsImportsService {
-    public getFileImports(filePath: string): Map<string, string> {
+    public getFileImports(filePath: string, content?: string): Map<string, string> {
         let sourceFile = ts.createSourceFile(
-            filePath, fs.readFileSync(filePath).toString(), ts.ScriptTarget.ES2015, true);
+            filePath, content ?? fs.readFileSync(filePath).toString(), ts.ScriptTarget.ES2015, true);
         let imports = new Map<string, string>();
         let children = sourceFile.getChildren()[0].getChildren();
         for (let i = 0; i < children.length; i++) {
@@ -34,10 +34,15 @@ export class TsImportsService {
         }
     }
 
+
     private getImportSpecifiers(node: ts.Node, importSpecifiers: string[]) {
         if (node.kind === ts.SyntaxKind.ImportSpecifier) {
             let importSpecifier = (node as ts.ImportSpecifier);
             importSpecifiers.push(importSpecifier.getText());
+            return;
+        } else if (node.kind === ts.SyntaxKind.NamespaceImport) {
+            let importSpecifierNode = node.getChildren().find(n => n.kind === ts.SyntaxKind.Identifier);
+            importSpecifiers.push(importSpecifierNode.getText());
             return;
         }
 

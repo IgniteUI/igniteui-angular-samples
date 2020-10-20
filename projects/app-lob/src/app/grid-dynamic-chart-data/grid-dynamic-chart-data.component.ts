@@ -1,7 +1,7 @@
 // tslint:disable: max-line-length
 import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, Pipe, PipeTransform, ViewChild } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy,
-         HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
+         HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment, OverlaySettings } from "igniteui-angular";
 import { noop, Subject } from "rxjs";
 import { debounceTime, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../services/financialData";
@@ -95,7 +95,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     };
 
     protected destroy$ = new Subject<any>();
-    private _chartSelectionDilogOverlaySettings = {
+    private _chartSelectionDilogOverlaySettings : OverlaySettings = {
         closeOnOutsideClick: true,
         modal: false,
         outlet: null,
@@ -103,7 +103,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
         positionStrategy: null
     };
 
-    private _chartPreviewDialogOverlaySettings = {
+    private _chartPreviewDialogOverlaySettings : OverlaySettings = {
         closeOnOutsideClick: false,
         modal: false,
         outlet: null,
@@ -216,8 +216,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
         if (!this.chartSelectionDialog.isOpen) {
             this._chartSelectionDilogOverlaySettings.outlet = this.outlet;
             const positionStrategy = {
-                verticalStartPoint: VerticalAlignment.Bottom,
-                target: event.target
+                verticalStartPoint: VerticalAlignment.Bottom
             };
 
             if (((this.grid.visibleColumns.length - 1) - this.colIndex) < 2 || !this.grid.navigation.isColumnFullyVisible(this.colIndex + 1)) {
@@ -227,6 +226,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
                 positionStrategy["horizontalDirection"] = HorizontalAlignment.Center;
                 positionStrategy["horizontalStartPoint"] = HorizontalAlignment.Center;
             }
+            this._chartSelectionDilogOverlaySettings.target = event.target;
             this._chartSelectionDilogOverlaySettings.positionStrategy = new AutoPositionStrategy({ ...positionStrategy });
             this.chartSelectionDialog.open(this._chartSelectionDilogOverlaySettings);
         } else {
@@ -235,7 +235,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     }
 
     public previewChart(chart: CHART_TYPE) {
-        this._chartPreviewDialogOverlaySettings.positionStrategy.settings.target = this.tabs.tabsContainer.nativeElement;
+        this._chartPreviewDialogOverlaySettings.target = this.tabs.tabsContainer.nativeElement;
         this.chartPreviewDialog.toggleRef.element.style.width = (this.chartSelectionDialog.toggleRef as any).elementRef.nativeElement.clientWidth + "px";
         this.createChart(chart, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }

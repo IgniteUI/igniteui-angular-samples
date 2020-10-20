@@ -54,6 +54,7 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-row-pinning-styling": { displayName: "Hierarchical Grid Row Pinning Styling", parentName: "Hierarchical Grid" },
     "hierarchical-grid-row-pinning-extra-column": { displayName: "Hierarchical Grid Row Pinning Custom UI", parentName: "Hierarchical Grid" },
     "hierarchical-grid-toolbar-style": { displayName: "HGrid Toolbar Style", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-add-row": { displayName: "Hierarchical Grid Add Row", parentName: "Hierarchical Grid" },
     "hierarchical-grid-advanced-filtering": { displayName: "Hierarchical Grid Advanced Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-advanced-filtering-style": { displayName: "Hierarchical Grid Advanced Filtering Style", parentName: "Hierarchical Grid" },
     "hierarchical-grid-filtering-style": { displayName: "HGrid Filtering Style", parentName: "Hierarchical Grid" },
@@ -67,5 +68,7 @@ export const hierarchicalGridRoutesData = {
     "hgrid-keyboard-guide": { displayName: "HGrid Keyboard navigation guide", parentName: "Hierarchical Grid" },
     "remote-paging-default-template": { displayName: "HGrid remote paging with default template", parentName: "Hierarchical Grid" },
     "hGrid-state": { displayName: "HGrid Save State", parentName: "Hierarchical Grid" },
-    "hGrid-state-about": { displayName: "About", parentName: "Hierarchical Grid" }
+    "hGrid-state-about": { displayName: "About", parentName: "Hierarchical Grid" },
+    "hGrid-editing-lifecycle": { displayName: "Hierarchical Grid Editing lifecycle", parentName: "Hierarchical Grid" },
+    "hGrid-cell-selection": {displayName: "HGrid Cell Selection", parentName: "Hierarchical Grid"}
 };
