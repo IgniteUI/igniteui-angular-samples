@@ -19,10 +19,10 @@ $custom-button: igx-button-theme(
 );
 
 $custom-input-group: igx-input-group-theme(
-    $box-background: #292826,
-    $idle-text-color: #FFCD0F,
-    $focused-text-color: #FFCD0F,
-    $filled-text-color: #FFCD0F
+    $box-background: #FFCD0F,
+    $idle-text-color: #292826,
+    $focused-text-color: #292826,
+    $filled-text-color: #292826
 );
 
 $custom-list: igx-list-theme(
@@ -248,7 +248,7 @@ $custom-drop-down: igx-drop-down-theme(
             @include igx-checkbox($custom-checkbox);
             @include igx-list($custom-list);
             .igx-input-group__input::placeholder {
-                color: #FFCD0F;
+                color: #292826;
             }
         }
     }
