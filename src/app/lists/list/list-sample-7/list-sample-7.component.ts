@@ -57,6 +57,7 @@ export class ListSample7Component implements OnInit {
     }
 
     public rightPanPerformed(args) {
+        args.keepItem = true;
         this.toast.show("Dialing " + this.contacts[args.item.index - 1].name);
     }
 
