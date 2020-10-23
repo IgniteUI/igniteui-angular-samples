@@ -121,7 +121,6 @@ export class DevDependencyResolver {
 
     public get devDependencies() {
         const result = {};
-
         for (let key in this._devDependencies) {
             if (key in SHARED_DEV_DEPENDENCIES) {
                     let version = this._devDependencies[key];
