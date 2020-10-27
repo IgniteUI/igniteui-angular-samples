@@ -39,6 +39,7 @@ export class HGridEditingSampleComponent implements OnInit {
     public localdata;
     public singer: Singer;
     public mySummary = MySummary;
+    private id = 14;
 
     @ViewChild("hierarchicalGrid", { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
@@ -51,6 +52,7 @@ export class HGridEditingSampleComponent implements OnInit {
     public ngOnInit(): void {
         this.localdata = SINGERS;
         this.singer = {
+            ID: this.id,
             Artist: "Mock Jagger",
             Debut: 2005,
             GrammyAwards: 4,
@@ -63,12 +65,14 @@ export class HGridEditingSampleComponent implements OnInit {
 
     public addRow() {
         this.hierarchicalGrid.addRow(this.singer);
+        ++this.id;
         this.cancel();
     }
 
     public cancel() {
         this.dialog.close();
         this.singer = {
+            ID: this.id,
             Artist: "Mock Jagger",
             Debut: 2005,
             GrammyAwards: 4,

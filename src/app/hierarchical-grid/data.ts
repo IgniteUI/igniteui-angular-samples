@@ -3,6 +3,7 @@ import { Singer } from "./models";
 // tslint:disable:object-literal-sort-keys
 export const SINGERS: Singer[] = [
     {
+        ID: 0,
         Artist: "Naomí Yepes",
         Photo: "assets/images/hgrid/naomi.jpg",
         Debut: 2011,
@@ -274,6 +275,7 @@ export const SINGERS: Singer[] = [
         ]
     },
     {
+        ID: 1,
         Artist: "Babila Ebwélé",
         Photo: "assets/images/hgrid/babila.jpg",
         Debut: 2009,
@@ -480,6 +482,7 @@ export const SINGERS: Singer[] = [
             }]
     },
     {
+        ID: 2,
         Artist: "Ahmad Nazeri",
         Photo: "assets/images/hgrid/ahmad.jpg",
         Debut: 2004,
@@ -505,6 +508,7 @@ export const SINGERS: Singer[] = [
         ]
     },
     {
+        ID: 3,
         Artist: "Kimmy McIlmorie",
         Photo: "assets/images/hgrid/kimmy.jpg",
         Debut: 2007,
@@ -522,6 +526,7 @@ export const SINGERS: Singer[] = [
         ]
     },
     {
+        ID: 4,
         Artist: "Mar Rueda",
         Photo: "assets/images/hgrid/mar.jpg",
         Debut: 1996,
@@ -530,6 +535,7 @@ export const SINGERS: Singer[] = [
         HasGrammyAward: true
     },
     {
+        ID: 5,
         Artist: "Izabella Tabakova",
         Photo: "assets/images/hgrid/izabella.jpg",
         Debut: 2017,
@@ -733,6 +739,7 @@ export const SINGERS: Singer[] = [
         ]
     },
     {
+        ID: 6,
         Artist: "Nguyễn Diệp Chi",
         Photo: "assets/images/hgrid/nguyen.jpg",
         Debut: 1992,
@@ -750,6 +757,7 @@ export const SINGERS: Singer[] = [
         ]
     },
     {
+        ID: 7,
         Artist: "Eva Lee",
         Photo: "assets/images/hgrid/eva.jpg",
         Debut: 2008,
@@ -767,6 +775,7 @@ export const SINGERS: Singer[] = [
         ]
     },
     {
+        ID: 8,
         Artist: "Siri Jakobsson",
         Photo: "assets/images/hgrid/siri.jpg",
         Debut: 1990,
@@ -921,6 +930,7 @@ export const SINGERS: Singer[] = [
         ]
     },
     {
+        ID: 9,
         Artist: "Pablo Cambeiro",
         Photo: "assets/images/hgrid/pablo.jpg",
         Debut: 2011,
@@ -1058,6 +1068,7 @@ export const SINGERS: Singer[] = [
             }]
     },
     {
+        ID: 10,
         Artist: "Athar Malakooti",
         Photo: "assets/images/hgrid/athar.jpg",
         Debut: 2017,
@@ -1075,6 +1086,7 @@ export const SINGERS: Singer[] = [
         ]
     },
     {
+        ID: 11,
         Artist: "Marti Valencia",
         Photo: "assets/images/hgrid/marti.jpg",
         Debut: 2004,
@@ -1205,6 +1217,7 @@ export const SINGERS: Singer[] = [
         ]
     },
     {
+        ID: 12,
         Artist: "Alicia Stanger",
         Photo: "assets/images/hgrid/alicia.jpg",
         Debut: 2010,
@@ -1222,6 +1235,7 @@ export const SINGERS: Singer[] = [
         ]
     },
     {
+        ID: 13,
         Artist: "Peter Taylor",
         Photo: "assets/images/hgrid/peter.jpg",
         Debut: 2005,

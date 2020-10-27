@@ -23,6 +23,7 @@ export interface Album {
 }
 
 export interface Singer {
+    ID: number;
     Artist: string;
     Photo?: string;
     Debut: number;

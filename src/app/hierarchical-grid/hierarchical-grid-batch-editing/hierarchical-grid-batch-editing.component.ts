@@ -31,6 +31,7 @@ export class HGridBatchEditingSampleComponent implements OnInit {
     public localdata: Singer[];
     public singer: Singer;
     public transactionsDataAll: Transaction[] = [];
+    private id = 14;
 
     @ViewChild("dialogChanges", { read: IgxDialogComponent, static: true })
     public dialogChanges: IgxDialogComponent;
@@ -51,6 +52,7 @@ export class HGridBatchEditingSampleComponent implements OnInit {
     public ngOnInit(): void {
         this.localdata = SINGERS;
         this.singer = {
+            ID: this.id,
             Artist: "Mock Jagger",
             Debut: 2005,
             GrammyAwards: 4,
@@ -98,6 +100,7 @@ export class HGridBatchEditingSampleComponent implements OnInit {
 
     public addSinger() {
         this.hierarchicalGrid.addRow(this.singer);
+        ++this.id;
         this.cancel();
     }
 
@@ -122,6 +125,7 @@ export class HGridBatchEditingSampleComponent implements OnInit {
         this.dialogChanges.close();
         this.dialogSinger.close();
         this.singer = {
+            ID: this.id,
             Artist: "Mock Jagger",
             Debut: 2005,
             GrammyAwards: 4,
