@@ -25,10 +25,10 @@ export class IgxPreventDocumentScrollDirective implements AfterViewInit {
      * @hidden
      */
     constructor(@Host() @Optional() private grid: IgxGridBaseDirective) {
-        this.gridBody = this.getGridBody();
     }
 
     public ngAfterViewInit() {
+        this.gridBody = this.getGridTBody();
         if (this._preventScroll) {
             this.gridBody.addEventListener("wheel", this.preventDocumentScroll, { passive: false });
         }
@@ -45,8 +45,8 @@ export class IgxPreventDocumentScrollDirective implements AfterViewInit {
         event.preventDefault();
     }
 
-    private getGridBody(): HTMLElement {
-        return this.grid.nativeElement;
+    private getGridTBody(): HTMLElement {
+        return this.grid.tbody.nativeElement;
     }
 }
 
