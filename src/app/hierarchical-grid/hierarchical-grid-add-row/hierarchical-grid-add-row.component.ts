@@ -10,16 +10,9 @@ import { Singer } from "../models";
 
 export class HGridAddRowSampleComponent implements OnInit {
     public localdata;
-    public singer: Singer;
+
 
     public ngOnInit(): void {
         this.localdata = SINGERS;
-        this.singer = {
-            Artist: "Mock Jagger",
-            Debut: 2005,
-            GrammyAwards: 4,
-            GrammyNominations: 7,
-            HasGrammyAward: false
-        };
     }
 }
