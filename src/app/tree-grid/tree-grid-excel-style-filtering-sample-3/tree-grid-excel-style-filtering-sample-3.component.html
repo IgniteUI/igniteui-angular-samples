@@ -2,6 +2,10 @@
     <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [showToolbar]="true" [columnHiding]="true" [autoGenerate]="false" height="650px" width="100%" [allowFiltering]="true"
         primaryKey="ID" foreignKey="ParentID" filterMode="excelStyleFilter">
 
+        <ng-template igxExcelStyleHeaderIcon>
+            <igx-icon>filter_alt</igx-icon>
+        </ng-template>
+
         <igx-grid-excel-style-filtering [minHeight]="'380px'" [maxHeight]="'500px'">
             <igx-excel-style-column-operations>
                 <igx-excel-style-header
