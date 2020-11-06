@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
 
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample.component";
 
@@ -6,7 +6,7 @@ describe("GridDisplaydensitySampleComponent", () => {
   let component: GridDisplayDensitySampleComponent;
   let fixture: ComponentFixture<GridDisplayDensitySampleComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ GridDisplayDensitySampleComponent ]
     })
