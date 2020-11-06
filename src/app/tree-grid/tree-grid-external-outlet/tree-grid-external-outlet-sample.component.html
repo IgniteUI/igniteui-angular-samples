@@ -1,6 +1,8 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll #tGrid1 [data]="data" [showToolbar]="true" [columnHiding]="true" [autoGenerate]="false" height="300px" width="100%" [allowFiltering]="true"
+    <igx-tree-grid igxPreventDocumentScroll #tGrid1 [data]="data" [columnHiding]="true" [autoGenerate]="false" height="300px" width="100%" [allowFiltering]="true"
         primaryKey="ID" foreignKey="ParentID" filterMode="excelStyleFilter" [outlet]="filteringOverlayOutlet">
+        <igx-grid-toolbar></igx-grid-toolbar>
+
         <igx-column field="ID" header="Product ID" [dataType]="'string'" [sortable]="true" [movable]="true">
         </igx-column>
         <igx-column field="Name" header="Product Name" [dataType]="'string'" [sortable]="true" [movable]="true">
@@ -24,8 +26,10 @@
 
     <br>
 
-    <igx-tree-grid igxPreventDocumentScroll #tGrid2 [data]="data" [showToolbar]="true" [columnHiding]="true" [autoGenerate]="false" height="300px" width="100%" [allowFiltering]="true"
+    <igx-tree-grid igxPreventDocumentScroll #tGrid2 [data]="data" [columnHiding]="true" [autoGenerate]="false" height="300px" width="100%" [allowFiltering]="true"
         primaryKey="ID" foreignKey="ParentID" filterMode="excelStyleFilter" [outlet]="filteringOverlayOutlet">
+        <igx-grid-toolbar></igx-grid-toolbar>
+
         <igx-column field="ID" header="Product ID" [dataType]="'string'" [sortable]="true" [movable]="true">
         </igx-column>
         <igx-column field="Name" header="Product Name" [dataType]="'string'" [sortable]="true" [movable]="true">

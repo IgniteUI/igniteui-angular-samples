@@ -11,8 +11,10 @@
         </igx-grid-excel-style-filtering>
     </div>
 
-    <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [showToolbar]="true" [columnHiding]="true"
+    <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [columnHiding]="true"
         [autoGenerate]="false" height="653px" [width]="'800px'" [rowHeight]="'65px'" #hierarchicalGrid>
+        <igx-grid-toolbar></igx-grid-toolbar>
+
         <igx-column field="Artist"></igx-column>
         <igx-column field="Photo" [filterable]='false'>
             <ng-template igxCell let-cell="cell">

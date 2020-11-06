@@ -37,8 +37,9 @@
         [data]="data | treeGridGrouping:groupColumns:aggregations:groupColumnKey:primaryKey:childDataKey"
         [height]="'calc(100% - 76px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
         [primaryKey]="primaryKey" [childDataKey]="childDataKey" columnHidingTitle="Indicators"
-        hiddenColumnsText="Hidden" [rowSelection]="selectionMode" [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
-        [showToolbar]="true" [columnHiding]="true" [exportExcel]="true" exportExcelText="Export to Excel">
+        hiddenColumnsText="Hidden" [rowSelection]="selectionMode" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [columnHiding]="true" [exportExcel]="true" exportExcelText="Export to Excel">
+        <igx-grid-toolbar></igx-grid-toolbar>
+
 
         <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
         <!-- <ng-template igxExcelStyleSorting></ng-template>

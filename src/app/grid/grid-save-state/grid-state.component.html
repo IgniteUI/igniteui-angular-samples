@@ -32,16 +32,17 @@
     <igx-grid igxPreventDocumentScroll [id]="gridId" #grid1 [igxGridState]="options"
         width="98%" height="550px" [autoGenerate]="false"
         [data]="localData"
-        [primaryKey]="'EmployeeID'" 
+        [primaryKey]="'EmployeeID'"
         [rowEditable]="false"
         [allowFiltering]="true" [allowAdvancedFiltering]="true" [filterMode]="'excelStyleFilter'"
         [paging]="true"
-        [showToolbar]="true"
         [columnPinning]="true"
         [columnHiding]="true"
         [displayDensity]="'cosy'"
         [cellSelection]="'multiple'"
         [rowSelection]="'none'">
+        <igx-grid-toolbar></igx-grid-toolbar>
+
         <igx-column *ngFor="let c of columns"
             [sortable]="c.sortable"
             [movable]="c.movable"

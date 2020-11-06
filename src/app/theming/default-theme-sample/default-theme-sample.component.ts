@@ -50,12 +50,7 @@ export class DefaultThemeSampleComponent implements OnInit {
         scrollStrategy: new CloseScrollStrategy()
     };
 
-    private _dialogOverlaySettings2 = {
-        closeOnOutsideClick: true,
-        modal: true,
-        outlet: this.outlet,
-        scrollStrategy: new CloseScrollStrategy()
-    };
+    private _dialogOverlaySettings2;
 
     constructor() { }
 
@@ -96,5 +91,11 @@ export class DefaultThemeSampleComponent implements OnInit {
     public ngOnInit() {
         this.data = DATA;
         this.record = new Record();
+        this._dialogOverlaySettings2 = {
+            closeOnOutsideClick: true,
+            modal: true,
+            outlet: this.outlet,
+            scrollStrategy: new CloseScrollStrategy()
+        };
     }
 }
