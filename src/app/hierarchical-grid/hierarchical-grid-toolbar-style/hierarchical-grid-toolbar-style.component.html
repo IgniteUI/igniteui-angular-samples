@@ -1,7 +1,13 @@
 <div class="hgrid_wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="localdata" toolbarTitle="Singers"
-    [columnHiding]="true" [columnPinning]="true" [height]="'500px'" [width]="'100%'" [rowHeight]="'65px'">
-        <igx-grid-toolbar></igx-grid-toolbar>
+    <igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid class="hgrid" [data]="data" [height]="'500px'"
+        [width]="'100%'" [rowHeight]="'65px'">
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-title>Singers</igx-grid-toolbar-title>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
 
         <igx-column field="Artist" width="150px"></igx-column>
         <igx-column field="Photo">
@@ -20,20 +26,20 @@
             <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
             <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
-        <igx-row-island [key]="'Songs'" [autoGenerate]="false">
+            <igx-row-island [key]="'Songs'" [autoGenerate]="false">
                 <igx-column field="Number" header="No."></igx-column>
                 <igx-column field="Title"></igx-column>
                 <igx-column field="Released" dataType="date"></igx-column>
                 <igx-column field="Genre"></igx-column>
+            </igx-row-island>
         </igx-row-island>
-    </igx-row-island>
 
-    <igx-row-island [key]="'Tours'" [autoGenerate]="false">
-        <igx-column field="Tour"></igx-column>
-        <igx-column field="StartedOn" header="Started on"></igx-column>
-        <igx-column field="Location"></igx-column>
-        <igx-column field="Headliner"></igx-column>
-    </igx-row-island>
+        <igx-row-island [key]="'Tours'" [autoGenerate]="false">
+            <igx-column field="Tour"></igx-column>
+            <igx-column field="StartedOn" header="Started on"></igx-column>
+            <igx-column field="Location"></igx-column>
+            <igx-column field="Headliner"></igx-column>
+        </igx-row-island>
 
     </igx-hierarchical-grid>
 </div>
