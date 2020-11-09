@@ -19,12 +19,12 @@ export class RemoteValuesService {
 
             if (!parentId) {
                 // Generate unique column values for the singers.
-                filteredData = this._filteringStrategy.filter(this.getSingersData(), columnExprTree);
+                filteredData = this._filteringStrategy.filter(this.getSingersData(), columnExprTree, null, null);
             } else if (key === "Albums") {
                 // Generate unique column values for the albums of a specific singer.
                 const singer = this.getSingersData().find((rec) => rec.Artist === parentId);
                 const albums = singer ? (singer.Albums ? singer.Albums : []) : [];
-                filteredData = this._filteringStrategy.filter(albums, columnExprTree);
+                filteredData = this._filteringStrategy.filter(albums, columnExprTree, null, null);
             }
 
             const columnValues = filteredData.map(record => record[column.field]);
