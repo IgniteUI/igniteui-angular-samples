@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { athletesData } from "../services/data";
 
 @Component({
@@ -7,17 +6,11 @@ import { athletesData } from "../services/data";
   styleUrls: ["./grid-toolbar-style.component.scss"],
   templateUrl: "./grid-toolbar-style.component.html"
 })
-export class GridToolbarStyleComponent implements OnInit, AfterViewInit {
+export class GridToolbarStyleComponent implements OnInit {
 
-    @ViewChild("grid1", { static: true }) public grid: IgxGridComponent;
     public data: any[];
 
     public ngOnInit() {
         this.data = athletesData;
-    }
-
-    public ngAfterViewInit() {
-        this.grid.toolbar.columnPinningUI.columnsAreaMaxHeight = "250px";
-        this.grid.toolbar.columnHidingUI.columnsAreaMaxHeight = "200px";
     }
 }

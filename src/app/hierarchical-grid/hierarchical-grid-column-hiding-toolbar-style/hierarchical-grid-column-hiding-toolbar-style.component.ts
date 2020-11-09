@@ -7,19 +7,12 @@ import { SINGERS } from "../data";
   styleUrls: ["./hierarchical-grid-column-hiding-toolbar-style.component.scss"],
   templateUrl: "./hierarchical-grid-column-hiding-toolbar-style.component.html"
 })
-export class HierarchicalGridColumnHidingToolbarStyleComponent implements OnInit, AfterViewInit {
+export class HierarchicalGridColumnHidingToolbarStyleComponent implements OnInit {
     public localdata;
-
-    @ViewChild("hierarchicalGrid", { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {}
 
     public ngOnInit(): void {
         this.localdata = SINGERS;
-    }
-
-    public ngAfterViewInit() {
-        this.hierarchicalGrid.toolbar.columnHidingUI.columnsAreaMaxHeight = "200px";
     }
 }

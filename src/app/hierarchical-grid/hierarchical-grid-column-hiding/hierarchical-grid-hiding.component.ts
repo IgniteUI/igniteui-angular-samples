@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
+import { Component, OnInit } from "@angular/core";
 import { SINGERS } from "../data";
 
 @Component({
@@ -11,17 +10,10 @@ import { SINGERS } from "../data";
 export class HGridColumnHidingSampleComponent implements OnInit {
     public localdata;
 
-    @ViewChild("hierarchicalGrid", { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
-
     constructor() {}
 
     public ngOnInit(): void {
         this.localdata = SINGERS;
-    }
-
-    public ngAfterViewInit() {
-        this.hierarchicalGrid.toolbar.columnHidingUI.columnsAreaMaxHeight = "200px";
     }
 
     public formatter = (a) => a;
