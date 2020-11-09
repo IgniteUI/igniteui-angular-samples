@@ -36,9 +36,10 @@
         displayDensity="cosy"
         [cellSelection]="'multiple'"
         [paging]="true"
-        [showToolbar]="true"
         [columnPinning]="true"
         [columnHiding]="true">
+        <igx-grid-toolbar></igx-grid-toolbar>
+
             <igx-column field="Artist" [sortable]="true"></igx-column>
             <igx-column field="Photo" [editable]="false" [sortable]="true">
                 <ng-template igxCell let-cell="cell">

@@ -1,5 +1,7 @@
 <igx-hierarchical-grid igxPreventDocumentScroll  class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
-    [height]="'500px'" [width]="'100%'" [showToolbar]='true' [columnPinning]='true' #hierarchicalGrid>
+    [height]="'500px'" [width]="'100%'" [columnPinning]='true' #hierarchicalGrid>
+        <igx-grid-toolbar></igx-grid-toolbar>
+
     <igx-column field="CompanyName" header="Company Name" width="200px" [pinned]="true"></igx-column>
     <igx-column field="ContactName" header="Contact Name" width="150px"></igx-column>
     <igx-column field="ContactTitle" header="Contact Title" width="200px"></igx-column>

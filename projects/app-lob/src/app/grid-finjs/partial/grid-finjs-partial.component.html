@@ -3,9 +3,11 @@
         (onRowSelectionChange)="rowSelectionChanged($event)" [data]="data"
         width="100%" height="30%" [autoGenerate]='false' displayDensity='compact'
         columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' [rowSelection]="selectionMode"
-        [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [showToolbar]="false" [columnHiding]="true"
+        [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [columnHiding]="true"
         [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel"
         (keydown)="gridKeydown($event)" (onGridKeydown)="customKeydown($event)">
+        <igx-grid-toolbar *ngIf="false"></igx-grid-toolbar>
+
 
         <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
         <!-- <ng-template igxExcelStyleSorting></ng-template>

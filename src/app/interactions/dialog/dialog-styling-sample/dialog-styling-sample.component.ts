@@ -1,5 +1,5 @@
 import { useAnimation } from "@angular/animations";
-import { Component, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { CloseScrollStrategy,
     GlobalPositionStrategy,
     IgxDialogComponent,
@@ -13,7 +13,7 @@ import { CloseScrollStrategy,
     styleUrls: ["./dialog-styling-sample.component.scss"],
     templateUrl: "./dialog-styling-sample.component.html"
 })
-export class DialogStylingSample {
+export class DialogStylingSample implements OnInit {
 
     @ViewChild(IgxOverlayOutletDirective, { static: true })
     public outlet: IgxOverlayOutletDirective;
@@ -26,15 +26,19 @@ export class DialogStylingSample {
         closeAnimation: useAnimation(slideOutTop, { params: { toPosition: "translateY(-100%)" } })
     };
 
-    private _dialogOverlaySettings2 = {
-        modal: true,
-        outlet: this.outlet,
-        scrollStrategy: new CloseScrollStrategy(),
-        positionStrategy: new GlobalPositionStrategy(this._animaitonSettings)
-    };
+    private _dialogOverlaySettings2;
 
     public openDialog() {
         this._dialogOverlaySettings2.outlet = this.outlet;
         this.dialog.open(this._dialogOverlaySettings2);
+    }
+
+    public ngOnInit() {
+        this._dialogOverlaySettings2 = {
+            modal: true,
+            outlet: this.outlet,
+            scrollStrategy: new CloseScrollStrategy(),
+            positionStrategy: new GlobalPositionStrategy(this._animaitonSettings)
+        };
     }
 }

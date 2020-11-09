@@ -1,14 +1,13 @@
 <div class="grid__wrapper">
     <igx-grid #grid1 igxPreventDocumentScroll id="grid1" [data]="localData" [height]="'430px'" [width]="'100%'" [rowSelection]="selectionMode"
-        displayDensity="cosy" rowHeight="50" [allowFiltering]="true"
-        [showToolbar]="true" [columnHiding]="true" columnHidingTitle="Column Hiding"
+        displayDensity="cosy" rowHeight="50" [allowFiltering]="true" [columnHiding]="true" columnHidingTitle="Column Hiding"
         [columnPinning]="true" [exportExcel]="true" [exportCsv]="true" exportExcelText="Export to Excel" exportCsvText="Export to CSV">
+        <igx-grid-toolbar>
 
-        <ng-template igxToolbarCustomContent>
             <div class="crm-toolbar-template">
                 <div class="crm-sample-toolbar__title">
                     <span class="logo-propeller">
-                        <img src="assets/images/grid/propeller-logo.svg" class="animated-fan" />
+                        <img src="assets/images/grid/propeller-logo.svg" class="animated-fan"/>
                     </span>
                     <span class="crm-sample-toolbar__ellipsis">Business Propeller</span>
                 </div>
@@ -19,8 +18,7 @@
                             <igx-icon class="prefixIcon" *ngIf="searchText.length > 0" (click)="clearSearch()">clear</igx-icon>
                         </igx-prefix>
 
-                        <input #search1 id="search1" class="searchInput" igxInput placeholder="Search" [(ngModel)]="searchText"
-                            (ngModelChange)="grid1.findNext(searchText, caseSensitive)" (keydown)="searchKeyDown($event)" />
+                        <input #search1 id="search1" class="searchInput" igxInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="grid1.findNext(searchText, caseSensitive)" (keydown)="searchKeyDown($event)"/>
 
                         <igx-suffix *ngIf="searchText.length > 0">
                             <div class="resultsText" *ngIf="grid1.lastSearchInfo">
@@ -33,8 +31,7 @@
                                 </span>
                             </div>
                             <div class="caseSensitiveButton">
-                                <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="updateSearch()"
-                                    [igxButtonBackground]="caseSensitive? 'rgb(73, 180, 254)' : 'transparent'">
+                                <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="updateSearch()" [igxButtonBackground]="caseSensitive? 'rgb(73, 180, 254)' : 'transparent'">
                                     <igx-icon class="caseSensitiveIcon" fontSet="material">text_fields</igx-icon>
                                 </button>
                             </div>
@@ -50,7 +47,11 @@
                     </igx-input-group>
                 </div>
             </div>
-        </ng-template>
+
+        </igx-grid-toolbar>
+
+
+
 
         <igx-column field="id" header="Customer Number" width="172" [pinned]="true" [hasSummary]="false" [resizable]="true"
             [hidden]="true" [movable]="true">

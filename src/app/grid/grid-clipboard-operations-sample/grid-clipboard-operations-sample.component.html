@@ -13,9 +13,9 @@
                 </igx-hint>
             </igx-input-group>
             <div class="grid-wrapper">
-                <igx-grid igxPreventDocumentScroll #grid [data]="data" primaryKey="ProductID" rowEditable="true" (onColumnInit)="initColumn($event)"
-                    [showToolbar]="true" [clipboardOptions]="options" [autoGenerate]="true">
-                    <ng-template igxToolbarCustomContent let-grid="grid">
+                <igx-grid igxPreventDocumentScroll #grid [data]="data" primaryKey="ProductID" rowEditable="true" (onColumnInit)="initColumn($event)" [clipboardOptions]="options" [autoGenerate]="true">
+                    <igx-grid-toolbar>
+
                         <div class="tlb">
                             <igx-switch [(ngModel)]="options.enabled">Grid copy behavior</igx-switch>
                             <igx-switch [(ngModel)]="options.copyHeaders">Copying of header labels</igx-switch>
@@ -25,7 +25,8 @@
                                 Selection
                             </button>
                         </div>
-                    </ng-template>
+
+                    </igx-grid-toolbar>
                 </igx-grid>
             </div>
 

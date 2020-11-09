@@ -1,8 +1,10 @@
 <div class="sample">
     <div class="grid_wrapper">
         <igx-tree-grid [data]="data" height="450px" width="100%" [paging]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" displayDensity="compact"
-            summaryCalculationMode="rootLevelOnly" primaryKey="ID" foreignKey="ParentID" columnSelection="single" [showToolbar]="false" [allowAdvancedFiltering]="true"
+            summaryCalculationMode="rootLevelOnly" primaryKey="ID" foreignKey="ParentID" columnSelection="single" [allowAdvancedFiltering]="true"
             (keydown)="gridKeydown($event)" (activeNodeChange)="onActiveNodeChange($event)">
+            <igx-grid-toolbar *ngIf="false"></igx-grid-toolbar>
+
             <igx-column field="Name" [hasSummary]="true" [editable]="true" [sortable]="true"></igx-column>
             <igx-column-group header="General Information" >
                 <igx-column field="HireDate" [hasSummary]="true" [editable]="true" [sortable]="true"></igx-column>
