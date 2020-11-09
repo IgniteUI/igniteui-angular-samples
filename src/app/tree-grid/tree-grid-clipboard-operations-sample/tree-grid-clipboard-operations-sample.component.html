@@ -14,22 +14,26 @@
             </igx-input-group>
             <div class="grid-wrapper">
                 <igx-tree-grid igxPreventDocumentScroll  #grid1 [data]="data" childDataKey="Employees" (onColumnInit)="initColumn($event)"
-                    [autoGenerate]="false" [showToolbar]="true" [clipboardOptions]="options">
-                    <igx-column field="ID"></igx-column>
-                    <igx-column field="HireDate" dataType="date"></igx-column>
-                    <igx-column field="Age" dataType="number" ></igx-column>
-                    <igx-column field="Name" dataType="string"></igx-column>
-                    <ng-template igxToolbarCustomContent let-grid="grid">
+                    [autoGenerate]="false" [clipboardOptions]="options">
+                    <igx-grid-toolbar>
+
                         <div class="tlb">
                             <igx-switch [(ngModel)]="options.enabled">Grid copy behavior</igx-switch>
                             <igx-switch [(ngModel)]="options.copyHeaders">Copying of header labels</igx-switch>
                             <igx-switch [(ngModel)]="options.copyFormatters">Copying column formatters</igx-switch>
-                            <button igxButton="outlined" igxRippleCentered="true" (click)="grid.clearCellSelection()">
+                            <button igxButton="outlined" igxRippleCentered="true" (click)="grid1.clearCellSelection()">
                                 <igx-icon fontSet="material">clear</igx-icon>
                                 Selection
                             </button>
                         </div>
-                    </ng-template>
+
+                    </igx-grid-toolbar>
+
+                    <igx-column field="ID"></igx-column>
+                    <igx-column field="HireDate" dataType="date"></igx-column>
+                    <igx-column field="Age" dataType="number" ></igx-column>
+                    <igx-column field="Name" dataType="string"></igx-column>
+
                 </igx-tree-grid>
             </div>
 

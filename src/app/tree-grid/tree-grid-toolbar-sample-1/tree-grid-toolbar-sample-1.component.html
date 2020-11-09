@@ -1,6 +1,5 @@
 <div class="grid__wrapper">
     <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" height="400px" width="700px"
-                [showToolbar]="true"
                 toolbarTitle="Tree Grid Toolbar"
                 [columnHiding]="true"
                 [columnPinning]="true"
@@ -9,6 +8,8 @@
                 exportText="Export"
                 exportExcelText="Export to Excel"
                 exportCsvText="Export to CSV">
+        <igx-grid-toolbar></igx-grid-toolbar>
+
         <igx-column field="Name" width="250px">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">

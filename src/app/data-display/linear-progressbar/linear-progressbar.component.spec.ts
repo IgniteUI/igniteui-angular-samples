@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
 
 import { LinearProgressbarComponent } from "./linear-progressbar.component";
 
@@ -6,7 +6,7 @@ describe("LinearProgressbarComponent", () => {
   let component: LinearProgressbarComponent;
   let fixture: ComponentFixture<LinearProgressbarComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LinearProgressbarComponent ]
     })
