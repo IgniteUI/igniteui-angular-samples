@@ -22,6 +22,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     @ViewChild("slider1", { static: true }) public volumeSlider: IgxSliderComponent;
     @ViewChild("slider2", { static: true }) public intervalSlider: IgxSliderComponent;
 
+    public showToolbar = true;
     public selectionMode = "multiple";
     public theme = false;
     public volume = 1000;
@@ -176,8 +177,8 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         this.volumeChanged.unsubscribe();
     }
 
-    public toggleToolbar(event: any) {
-        this.grid1.showToolbar = !this.grid1.showToolbar;
+    public toggleToolbar() {
+        this.showToolbar = !this.showToolbar;
     }
 
     private negative = (rowData: any): boolean => {
