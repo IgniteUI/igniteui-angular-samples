@@ -12,6 +12,7 @@ import {
     HorizontalAlignment,
     IColumnExportingEventArgs,
     IgxColumnComponent,
+    IgxCsvExporterService,
     IgxDateSummaryOperand,
     IgxExcelExporterService,
     IgxGridComponent,
@@ -123,7 +124,17 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         scrollStrategy: new CloseScrollStrategy()
     };
 
-    constructor(private excelExporterService: IgxExcelExporterService) { }
+    constructor(
+        private csvExporter: IgxCsvExporterService,
+        private excelExporter: IgxExcelExporterService) {
+
+        const exporterCb = (args: IColumnExportingEventArgs) => {
+            if (args.field === 'Deals') { args.cancel = true; }
+        };
+
+        this.excelExporter.onColumnExport.subscribe(exporterCb);
+        this.csvExporter.onColumnExport.subscribe(exporterCb);
+    }
 
     public ngOnInit() {
         const employees = data;
@@ -147,19 +158,6 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         this.cols = this.grid1.columnList;
         this.hiddenColsLength = this.cols.filter((col) => col.hidden).length;
         this.pinnedColsLength = this.cols.filter((col) => col.pinned).length;
-        this.grid1.toolbar.columnPinningDropdown.width = "250px";
-
-        this.grid1.toolbar.excelExporter.onColumnExport.subscribe((args: IColumnExportingEventArgs) => {
-            if (args.field === "Deals") {
-                args.cancel = true;
-            }
-        });
-
-        this.grid1.toolbar.csvExporter.onColumnExport.subscribe((args: IColumnExportingEventArgs) => {
-            if (args.field === "Deals") {
-                args.cancel = true;
-            }
-        });
     }
 
     public toggleVisibility(col: IgxColumnComponent) {

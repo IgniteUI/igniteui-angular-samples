@@ -6,11 +6,12 @@
                     <igx-switch [checked]="true" [(ngModel)]="theme" (change)="onThemeChanged($event)">Dark</igx-switch>
                 </div>
                 <div class="control-item">
-                    <igx-switch [checked]="grouped" (change)="onChange($event)" color="blue" cssClass="finjs-sample-switch">
+                    <igx-switch [checked]="grouped" (change)="onChange($event)" color="blue"
+                        cssClass="finjs-sample-switch">
                         Grouped</igx-switch>
                 </div>
                 <div class="control-item">
-                    <igx-switch [checked]="grid1.showToolbar" (change)="toggleToolbar($event)" color="blue"
+                    <igx-switch [checked]="showToolbar" (change)="toggleToolbar()" color="blue"
                         cssClass="finjs-sample-switch">Toolbar</igx-switch>
                 </div>
                 <div class="finjs-slider control-item">
@@ -20,13 +21,13 @@
                 </div>
                 <div class="finjs-slider control-item">
                     <label for="slider">Frequency: {{frequency}} ms</label>
-                    <igx-slider #slider2 id="slider" [minValue]="100" [maxValue]="3000" [step]="10" [(ngModel)]="frequency"
-                        thumbLabelVisibilityDuration="250" [continuous]="true"></igx-slider>
+                    <igx-slider #slider2 id="slider" [minValue]="100" [maxValue]="3000" [step]="10"
+                        [(ngModel)]="frequency" thumbLabelVisibilityDuration="250" [continuous]="true"></igx-slider>
                 </div>
             </div>
             <div class="control-item finjs-play-controls">
-                <igx-buttongroup class="finjssample-btn-group" #buttonGroup1 [multiSelection]="false" [values]="controls"
-                    (onSelect)="onButtonAction($event)"></igx-buttongroup>
+                <igx-buttongroup class="finjssample-btn-group" #buttonGroup1 [multiSelection]="false"
+                    [values]="controls" (onSelect)="onButtonAction($event)"></igx-buttongroup>
             </div>
         </div>
         <div class="sample-toolbar">
@@ -36,14 +37,17 @@
                 ~{{volume/5}} records updated.</span>
         </div>
     </div>
-    <igx-grid #grid1 igxPreventDocumentScroll
-        (onRowSelectionChange)="rowSelectionChanged($event)" [data]="data"
-        width="100%" height="30%" [autoGenerate]='false' displayDensity='compact'
-        columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' [rowSelection]="selectionMode"
-        [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [columnHiding]="true"
-        [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel"
+    <igx-grid #grid1 igxPreventDocumentScroll (onRowSelectionChange)="rowSelectionChanged($event)" [data]="data"
+        width="100%" height="30%" [autoGenerate]='false' displayDensity='compact' primaryKey='ID' hiddenColumnsText="Hidden"
+        [rowSelection]="selectionMode" [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
         (keydown)="gridKeydown($event)" (onGridKeydown)="customKeydown($event)">
-        <igx-grid-toolbar *ngIf="false"></igx-grid-toolbar>
+        <igx-grid-toolbar *ngIf="showToolbar">
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding title="Indicators"></igx-grid-toolbar-hiding>
+                <igx-grid-toolbar-pinning title=" "></igx-grid-toolbar-pinning>
+                <igx-grid-toolbar-exporter [exportCSV]="false"></igx-grid-toolbar-exporter>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
 
 
         <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
@@ -64,7 +68,8 @@
             </ng-template>
         </igx-column>
         <igx-column [field]="'Settlement'" [width]="'100px'" [groupable]='true' [sortable]='true'></igx-column>
-        <igx-column [field]="'Country'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'></igx-column>
+        <igx-column [field]="'Country'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
+        </igx-column>
         <igx-column [field]="'Region'" [width]="'110px'" [groupable]='true' [sortable]='true' [editable]='true'>
             <ng-template igxCellEditor let-cell="cell" let-value>
                 <igx-select [placeholder]="value" [(ngModel)]="cell.editValue" [igxFocus]="true">
@@ -72,7 +77,8 @@
                 </igx-select>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'LastUpdated'" [width]="'120px'" [editable]='true' header="Last Update" dataType="date"></igx-column>
+        <igx-column [field]="'LastUpdated'" [width]="'120px'" [editable]='true' header="Last Update" dataType="date">
+        </igx-column>
         <igx-column [field]="'Open Price'" [width]="'120px'" dataType="number" [formatter]="formatCurrency"
             [movable]="true" [sortable]="true"></igx-column>
         <igx-column [field]="'Price'" [width]="'110px'" dataType="number" [cellClasses]="trends" [movable]="true"
