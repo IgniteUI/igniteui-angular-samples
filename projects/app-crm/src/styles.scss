@@ -1,0 +1,141 @@
+// CSS Reset, comment out if not required or using a different module
+// @import '~minireset.css/minireset';
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$include: (igx-avatar,
+           igx-icon,
+           igx-overlay,
+           igx-button,
+           igx-checkbox,
+           igx-grid,
+           igx-grid-toolbar);
+
+@include igx-core();
+@include igx-theme($default-palette, $exclude: map-keys(map-remove($components, $include...),));
+
+@mixin scrollbar-love($scrollbar-color: null) {
+    $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
+    $scrollbar-thumb: hexrgba(igx-color($default-palette, 'grays', 400));
+
+    @if $scrollbar-color and luminance($scrollbar-color) < .5 {
+        $scrollbar-track: darken($scrollbar-color, 80%);
+        $scrollbar-thumb: lighten($scrollbar-color, 20%);
+    }
+
+    ::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+        background-color: $scrollbar-track;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $scrollbar-thumb;
+    }
+}
+
+/* autoprefixer grid: on */
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.sample-wrapper {
+    width: inherit;
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+    background: transparent;
+}
+
+.sample-content {
+    display: flex;
+    flex-grow: 1;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 0;
+    -webkit-animation: fade-in .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    -moz-animation: fade-in .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.sample-column {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 0 25%;
+    align-content: flex-start;
+    margin: 16px;
+    min-width: 280px;
+}
+
+.sample-title {
+    color: #0375be;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.sample-title .light {
+    font-weight: 400;
+}
+
+.sample-description {
+    font-size: 14px;
+    font-weight: normal;
+    color: #717171;
+}
+
+@-webkit-keyframes color-change-2x {
+    0% {
+        background: #fdf8f0;
+    }
+    100% {
+        background: #f6e7ec;
+    }
+}
+
+@keyframes color-change-2x {
+    0% {
+        background: #fdf8f0;
+    }
+    100% {
+        background: #f6e7ec;
+    }
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.headerAlignSyle {
+    text-align: right !important;
+}
+
+$green-palette: igx-palette($primary: #09f,$secondary: #72da67, $surface: #333);
+@include scrollbar-love();
+
+.fin-dark-theme {
+    @include igx-dark-theme($green-palette, $legacy-support: true);
+    $grays-btn-color: igx-color($green-palette, 'grays', 800);
+    @include scrollbar-love(lighten($grays-btn-color, 20%));
+
+    background: #333;
+
+    ::-moz-placeholder {
+        opacity: 1;
+    }
+ }

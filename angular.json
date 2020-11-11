@@ -244,6 +244,139 @@
           }
         }
       }
+    },
+    "app-crm": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/app-crm",
+      "sourceRoot": "projects/app-crm/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/app-crm",
+            "index": "projects/app-crm/src/index.html",
+            "main": "projects/app-crm/src/main.ts",
+            "polyfills": "projects/app-crm/src/polyfills.ts",
+            "tsConfig": "projects/app-crm/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/app-crm/src/favicon.ico",
+              "projects/app-crm/src/assets"
+            ],
+            "styles": [
+              "projects/app-crm/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/app-crm/src/environments/environment.ts",
+                  "with": "projects/app-crm/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "900kb",
+                  "maximumError": "900kb"
+                }
+              ]
+            },
+            "es5": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "900kb"
+                }
+              ],
+              "tsConfig": "projects/app-crm/tsconfig-es5.app.json"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "app-crm:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "app-crm:build:production"
+            },
+            "es5": {
+              "browserTarget": "app-crm:build:es5"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app-crm:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/app-crm/src/test.ts",
+            "polyfills": "projects/app-crm/src/polyfills.ts",
+            "tsConfig": "projects/app-crm/tsconfig.spec.json",
+            "karmaConfig": "projects/app-crm/karma.conf.js",
+            "assets": [
+              "projects/app-crm/src/favicon.ico",
+              "projects/app-crm/src/assets"
+            ],
+            "styles": [
+              "projects/app-crm/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/app-crm/tsconfig.app.json",
+              "projects/app-crm/tsconfig.spec.json",
+              "projects/app-crm/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/app-crm/e2e/protractor.conf.js",
+            "devServerTarget": "app-crm:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app-crm:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "my-app",
