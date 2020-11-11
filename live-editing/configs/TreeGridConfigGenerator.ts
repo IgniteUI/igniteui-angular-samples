@@ -5,7 +5,6 @@ IgxButtonGroupModule,
 IgxButtonModule,
 IgxCheckboxModule,
 IgxChipsModule,
-IgxColumnHidingModule,
 IgxCsvExporterService,
 IgxDatePickerModule,
 IgxDialogModule,
@@ -121,9 +120,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/tree-grid/data/employees-flat-detailed.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridColumnHidingSampleComponent', 'IgxRadioModule', 'IgxColumnHidingModule'],
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridColumnHidingSampleComponent', 'IgxRadioModule'],
                 ngDeclarations: ['TreeGridColumnHidingSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxRadioModule', 'IgxColumnHidingModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxRadioModule']
             }),
             component: 'TreeGridColumnHidingSampleComponent',
             shortenComponentPathBy: "/tree-grid/"
