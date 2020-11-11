@@ -5,9 +5,7 @@ import {
     IgxAvatarModule, IgxCsvExporterService, IgxExcelExporterService,
     IgxGridModule, IgxProgressBarModule
 } from "igniteui-angular";
-import { IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
-import { IgxPreventDocumentScrollModule } from "../../directives/prevent-scroll.directive";
-import { GridCRMRoutingModule } from "./grid-crm-routing.module";
+import { IgxPreventDocumentScrollModule } from '../../directives/prevent-scroll.directive';
 import { GridCRMComponent } from "./grid-crm/grid-crm.component";
 
 @NgModule({
@@ -18,13 +16,14 @@ import { GridCRMComponent } from "./grid-crm/grid-crm.component";
         CommonModule,
         FormsModule,
         IgxPreventDocumentScrollModule,
-        GridCRMRoutingModule,
+        // GridCRMRoutingModule,
         IgxGridModule,
         IgxAvatarModule,
-        IgxProgressBarModule,
-        IgxSparklineModule,
-        IgxSparklineCoreModule
+        IgxProgressBarModule
     ],
-    providers: [IgxCsvExporterService, IgxExcelExporterService]
+    providers: [IgxCsvExporterService, IgxExcelExporterService],
+    exports: [
+        GridCRMComponent
+    ]
 })
 export class GridCRMModule { }
