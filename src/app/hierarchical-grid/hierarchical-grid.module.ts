@@ -95,6 +95,7 @@ import { HierarchicalGridCellSelectionComponent } from './hierarchical-grid-cell
         HGridSummarySampleComponent,
         HGridSummaryStylingComponent,
         HGridSaveStateComponent,
+        HGridAboutComponent,
         HGridPagingSampleComponent,
         HGridPagingStyleSampleComponent,
         HGridRemotePagingSampleComponent,
