@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
+import { Component} from "@angular/core";
 import { athletesData } from "../services/data";
 
 @Component({
@@ -7,12 +6,11 @@ import { athletesData } from "../services/data";
   styleUrls: ["./grid-toolbar-sample-1.component.scss"],
   templateUrl: "./grid-toolbar-sample-1.component.html"
 })
-export class GridToolbarSample1Component implements OnInit {
+export class GridToolbarSample1Component {
 
-    @ViewChild("grid1", { static: true }) public grid: IgxGridComponent;
     public data: any[];
 
-    public ngOnInit() {
+    constructor() {
         this.data = athletesData;
     }
 }

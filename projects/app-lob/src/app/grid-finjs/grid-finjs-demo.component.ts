@@ -28,6 +28,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild("chart1", { static: true }) public chart1: IgxCategoryChartComponent;
     @ViewChild("dialog", { static: true }) public dialog: IgxDialogComponent;
 
+    public showToolbar = false;
     public properties;
     public selectionMode = "multiple";
     public theme = false;
@@ -270,8 +271,8 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
         this.volumeChanged.unsubscribe();
     }
 
-    public toggleToolbar(event: any) {
-        this.grid1.showToolbar = !this.grid1.showToolbar;
+    public toggleToolbar() {
+        this.showToolbar = !this.showToolbar;
     }
 
     private negative = (rowData: any): boolean => {

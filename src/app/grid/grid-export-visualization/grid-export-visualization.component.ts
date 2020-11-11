@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DATA } from '../../data/nwindData';
 
 @Component({
@@ -22,5 +22,10 @@ export class GridExportVisualizationComponent {
         } else {
             return val;
         }
+    }
+
+    longRunning(toolbar: any) {
+        toolbar.showProgress = true;
+        setTimeout(() => toolbar.showProgress = false, 5000);
     }
 }

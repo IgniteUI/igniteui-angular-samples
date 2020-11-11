@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component } from "@angular/core";
 import { athletesData } from "../services/data";
 
 @Component({
@@ -6,11 +6,11 @@ import { athletesData } from "../services/data";
   styleUrls: ["./grid-toolbar-style.component.scss"],
   templateUrl: "./grid-toolbar-style.component.html"
 })
-export class GridToolbarStyleComponent implements OnInit {
+export class GridToolbarStyleComponent {
 
     public data: any[];
 
-    public ngOnInit() {
+    constructor() {
         this.data = athletesData;
     }
 }

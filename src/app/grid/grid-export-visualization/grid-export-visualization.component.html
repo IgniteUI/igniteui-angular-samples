@@ -1,7 +1,13 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll [data]="localData" [autoGenerate]="false" height="350px" width="100%" exportText="Export"
-    [exportExcel]="true" exportExcelText="Export to Excel" [exportCsv]="true" exportCsvText="Export to CSV">
-        <igx-grid-toolbar></igx-grid-toolbar>
+    <igx-grid igxPreventDocumentScroll [data]="localData" [autoGenerate]="false" height="350px" width="100%">
+        <igx-grid-toolbar #toolbar>
+            <igx-grid-toolbar-actions>
+                <button [disabled]="toolbar.showProgress" (click)="longRunning(toolbar)" igxButton>
+                    Simulate long running operation
+                </button>
+                <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
 
         <igx-column field="ProductName" header="Product Name" [sortable]="true" [movable]="true" [dataType]="'string'">
         </igx-column>

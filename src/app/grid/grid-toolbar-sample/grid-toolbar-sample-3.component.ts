@@ -1,12 +1,11 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component } from "@angular/core";
 import {
     CsvFileTypes,
     IColumnExportingEventArgs,
     IGridToolbarExportEventArgs,
     IgxCsvExporterOptions,
     IgxExcelExporterOptions,
-    IgxExporterOptionsBase,
-    IgxGridComponent
+    IgxExporterOptionsBase
 } from "igniteui-angular";
 import { athletesData } from "../services/data";
 
@@ -15,16 +14,15 @@ import { athletesData } from "../services/data";
   styleUrls: ["./grid-toolbar-sample-3.component.scss"],
   templateUrl: "./grid-toolbar-sample-3.component.html"
 })
-export class GridToolbarSample3Component implements OnInit {
+export class GridToolbarSample3Component {
 
-    @ViewChild("grid1", { static: true }) public grid: IgxGridComponent;
     public data: any[];
 
-    public ngOnInit() {
+    constructor() {
         this.data = athletesData;
     }
 
-    public toolbarExportingHandler(args: IGridToolbarExportEventArgs) {
+    public configureExport(args: IGridToolbarExportEventArgs) {
         // You can customize the exporting from this event
         const options: IgxExporterOptionsBase = args.options ;
         options.fileName = "Custom Title";
