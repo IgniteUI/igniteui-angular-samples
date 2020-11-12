@@ -132,7 +132,7 @@
         align-self: center;
         justify-content: flex-end;
         max-width: 500px;
-        width: 50%
+        width: 70%
     }
 
     .crm-sample-toolbar__title {
@@ -140,7 +140,7 @@
         display: flex;
         align-items: center;
         justify-self: flex-start;
-        width: 50%;
+        width: 30%;
     }
 
     .crm-sample-toolbar__ellipsis {
@@ -351,6 +351,10 @@
         justify-content: center;
         width: 1rem;
         height: 1rem;
+    }
+
+    .igx-grid-toolbar__title {
+        max-width: 68ch;
     }
 }
 
