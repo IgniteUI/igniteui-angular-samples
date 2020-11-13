@@ -1,8 +1,17 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" height="400px" width="900px"
-                [showToolbar]="true"
-                toolbarTitle="Tree Grid Toolbar"
-                [columnHiding]="true">
+    <igx-tree-grid igxPreventDocumentScroll #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID"
+        [autoGenerate]="false" height="400px" width="900px">
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-title>Tree Grid Toolbar</igx-grid-toolbar-title>
+            <igx-grid-toolbar-actions>
+                <button igxButton="flat" igxRipple (click)="treeGrid.clearSort()">
+                    <igx-icon fontSet="material">clear</igx-icon>
+                    Clear Sort
+                </button>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
+
         <igx-column field="Name" header="Name" width="25%">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
@@ -11,16 +20,11 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'Title'" dataType="string" [sortable]="true" width="25%"></igx-column>
-        <igx-column [field]="'ID'" dataType="number" [sortable]="true" width="15%"></igx-column>
-        <igx-column [field]="'Age'" dataType="number" [sortable]="true" width="15%"></igx-column>
-        <igx-column [field]="'HireDate'" dataType="date" [sortable]="true" width="20%"></igx-column>
+        <igx-column field="Title" dataType="string" [sortable]="true" width="25%"></igx-column>
+        <igx-column field="ID" dataType="number" [sortable]="true" width="15%"></igx-column>
+        <igx-column field="Age" dataType="number" [sortable]="true" width="15%"></igx-column>
+        <igx-column field="HireDate" dataType="date" [sortable]="true" width="20%"></igx-column>
 
-        <ng-template igxToolbarCustomContent let-igxTreeGrid="grid">
-            <button igxButton="flat" igxRipple igxRippleCentered="true" (click)="igxTreeGrid.clearSort()">
-                <igx-icon fontSet="material">clear</igx-icon>
-                Clear Sort
-            </button>
-        </ng-template>
+
     </igx-tree-grid>
 </div>

@@ -1,16 +1,15 @@
 <div class="grid__wrapper">
     <igx-grid igxPreventDocumentScroll #grid1 id="grid1" [data]="data" [autoGenerate]="false" height="400px" width="700px"
-        [showToolbar]="true"
-        toolbarTitle="Grid Toolbar"
+        (onToolbarExporting)="configureExport($event)"
+    >
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-title>Grid toolbar</igx-grid-toolbar-title>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
 
-        [exportExcel]="true"
-        [exportCsv]="true"
-        exportText="Export"
-        exportExcelText="Export to Excel"
-        exportCsvText="Export to TSV"
 
-        (onToolbarExporting)="toolbarExportingHandler($event)">
-        
         <igx-column field="Name" header="Athlete" width="200">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">

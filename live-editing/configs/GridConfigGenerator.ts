@@ -9,7 +9,6 @@ IgxButtonGroupModule,
 IgxButtonModule,
 IgxCheckboxModule,
 IgxChipsModule,
-IgxColumnHidingModule,
 IgxComboModule,
 IgxCsvExporterService,
 IgxDatePickerModule,
@@ -244,10 +243,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridColumnHidingSampleComponent',
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['HttpClientModule', 'IgxGridModule', 'IgxRadioModule',
-                    'IgxColumnHidingModule', 'GridColumnHidingSampleComponent', 'IgxPreventDocumentScrollModule'],
+                imports: ['HttpClientModule', 'IgxGridModule', 'IgxRadioModule', 'GridColumnHidingSampleComponent', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridColumnHidingSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxRadioModule', 'IgxColumnHidingModule', 'HttpClientModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxRadioModule', 'HttpClientModule'],
                 ngProviders: []
             })
         }));
@@ -404,10 +402,10 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridToolbarSample2Component',
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridToolbarSample2Component', 'IgxAvatarModule', 'IgxGridModule',
+                imports: ['GridToolbarSample2Component', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule',
                     'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridToolbarSample2Component'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxGridModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule'],
                 ngProviders: ['IgxExcelExporterService', 'IgxCsvExporterService']
             })
         }));

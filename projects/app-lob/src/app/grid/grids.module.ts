@@ -5,7 +5,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule,
-    IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule,
+    IgxChipsModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule,
     IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule,
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
     IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
@@ -41,7 +41,6 @@ import { GridsDVRoutingModule } from "./grids-routing.module";
         IgxButtonModule,
         IgxCheckboxModule,
         IgxChipsModule,
-        IgxColumnHidingModule,
         IgxComboModule,
         IgxDatePickerModule,
         IgxDialogModule,

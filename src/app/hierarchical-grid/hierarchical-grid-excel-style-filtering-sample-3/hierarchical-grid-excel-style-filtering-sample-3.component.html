@@ -1,6 +1,12 @@
 <div class="wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [showToolbar]="true" [columnHiding]="true" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter"
+    <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [columnHiding]="true" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter"
     height="650px" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
+        <igx-grid-toolbar></igx-grid-toolbar>
+
+
+        <ng-template igxExcelStyleHeaderIcon>
+            <igx-icon>filter_alt</igx-icon>
+        </ng-template>
 
         <igx-grid-excel-style-filtering [minHeight]="'380px'" [maxHeight]="'500px'">
             <igx-excel-style-column-operations>

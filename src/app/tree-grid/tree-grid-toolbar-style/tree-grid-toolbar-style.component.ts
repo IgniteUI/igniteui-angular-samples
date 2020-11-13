@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { EMPLOYEE_FLAT_AVATARS_DATA } from "../data/employees-flat-avatars";
 
 @Component({
@@ -6,11 +6,11 @@ import { EMPLOYEE_FLAT_AVATARS_DATA } from "../data/employees-flat-avatars";
   styleUrls: ["./tree-grid-toolbar-style.component.scss"],
   templateUrl: "./tree-grid-toolbar-style.component.html"
 })
-export class TreeGridToolbarStyleComponent implements OnInit {
+export class TreeGridToolbarStyleComponent {
 
     public data: any[];
 
-    public ngOnInit() {
+    constructor() {
         this.data = EMPLOYEE_FLAT_AVATARS_DATA();
     }
 }

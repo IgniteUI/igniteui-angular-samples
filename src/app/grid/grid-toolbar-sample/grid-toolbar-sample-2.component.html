@@ -1,15 +1,26 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 id="grid1" [data]="data" [autoGenerate]="false" height="400px" width="700px"
-        [showToolbar]="true"
-        toolbarTitle="Grid Toolbar"
-        [columnHiding]="true"
-        [columnPinning]="true"
-        [exportExcel]="true"
-        [exportCsv]="true"
-        exportText="Export"
-        exportExcelText="Export to Excel"
-        exportCsvText="Export to CSV">
-        
+    <div class="control_panel">
+        <igx-input-group>
+            <label for="toolbarTitle" igxLabel>Toolbar title</label>
+            <input name="toolbarTitle" type="text" igxInput [(ngModel)]="toolbarTitle" />
+        </igx-input-group>
+        <div>
+            <igx-switch [(ngModel)]="enableHiding">Column hiding</igx-switch>
+            <igx-switch [(ngModel)]="enablePinning">Column pinning</igx-switch>
+            <igx-switch [(ngModel)]="enableExport">Exporting</igx-switch>
+        </div>
+    </div>
+    <igx-grid igxPreventDocumentScroll #grid1 id="grid1" [data]="data" [autoGenerate]="false" height="400px" width="700px">
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-title>{{ toolbarTitle }}</igx-grid-toolbar-title>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding *ngIf="enableHiding"></igx-grid-toolbar-hiding>
+                <igx-grid-toolbar-pinning *ngIf="enablePinning"></igx-grid-toolbar-pinning>
+                <igx-grid-toolbar-exporter *ngIf="enableExport"></igx-grid-toolbar-exporter>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
+
+
         <igx-column field="Name" header="Athlete" width="200">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
