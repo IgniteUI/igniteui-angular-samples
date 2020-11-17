@@ -39,19 +39,24 @@ $progressBar-sample-theme: igx-progress-linear-theme(
 				.s-overlay {
 						@extend %flex-center;
 						position: absolute;
-						top: 50%;
-						transform: translateY(-50%);
 						left: 0;
-						right: 0;
-						margin: 0 auto;
+						top: 0;
 						z-index: 1;
-						flex-direction: column;
-						color: #333;
-						width: 50%;
-						box-shadow: 0 10px 20px rgba(0, 0, 0, .10), 0 6px 6px rgba(0, 0, 0, .16);
-						background: #fff;
-						overflow: hidden;
-						border-radius: rem(16px);
+						width: 100%;
+						height: 100%;
+
+						&--finish {
+								background: rgba(0,0,0, .2);
+						}
+
+						&__inner {
+								@extend %flex-center;
+								flex-direction: column;
+								border-radius: rem(16px);
+								overflow: hidden;
+								background: #fff;
+								box-shadow: 0 10px 20px rgba(0, 0, 0, .10), 0 6px 6px rgba(0, 0, 0, .16);
+						}
 
 						&__heading {
 								@extend %flex-center;
@@ -61,6 +66,7 @@ $progressBar-sample-theme: igx-progress-linear-theme(
 								margin-bottom: rem(16px);
 								font-size: rem(28px);
 								height: rem(70px);
+								padding: 0 rem(24px);
 								background-color: white;
 								background-image: linear-gradient(45deg, #efefef 25%, transparent 25%),
 								linear-gradient(-45deg, #efefef 25%, transparent 25%),
@@ -76,6 +82,7 @@ $progressBar-sample-theme: igx-progress-linear-theme(
 
 						&__players {
 								@extend %flex-center;
+								padding: rem(24px);
 						}
 
 						&__player {
@@ -108,7 +115,10 @@ $progressBar-sample-theme: igx-progress-linear-theme(
 .grid__wrapper {
 		width: 1000px;
 		margin: 0 auto;
-		position: relative;
+
+		&__inner {
+				position: relative;
+		}
 }
 
 @media (max-width: 1000px) {
