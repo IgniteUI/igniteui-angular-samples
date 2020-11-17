@@ -1,16 +1,22 @@
 import {
     Component,
     HostListener,
-    NgZone,
     OnDestroy,
     OnInit,
-    ViewChild
+    ViewChild,
+    Inject,
+    ElementRef
 } from "@angular/core";
 import {
     IgxGridComponent,
     IgxNumberSummaryOperand,
     IgxStringFilteringOperand,
-    IgxSummaryResult
+    IgxSummaryResult,
+    IgxGridCellComponent,
+    OverlaySettings,
+    RelativePositionStrategy,
+    IgxOverlayService,
+    RelativePosition
 } from "igniteui-angular";
 import { athletesData } from "./../services/data";
 
@@ -24,15 +30,21 @@ export class GridComponent implements OnInit, OnDestroy {
     @ViewChild("grid1", { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 
+    @ViewChild("overlay", { static: true })
+    public overlay: ElementRef;
+
     public topSpeedSummary = CustomTopSpeedSummary;
     public bnpSummary = CustomBPMSummary;
     public speedSummary = CustomSpeedSummary;
     public localData: any[];
     public isFinished = false;
+    public hasWinner = false;
     public athleteColumnWidth = "30%";
     private _live = true;
     private _timer;
     private windowWidth: any;
+    private _overlayId: string;
+    public show = false;
 
     get live() {
         return this._live;
@@ -41,10 +53,14 @@ export class GridComponent implements OnInit, OnDestroy {
     set live(val) {
         this._live = val;
         if (this._live) {
-            this._timer = setInterval(() => this.ticker(), 3000);
+            this.ticker();
         } else {
             clearInterval(this._timer);
         }
+    }
+
+    get canShowOverlay() {
+        return this.show && this.hasWinner;
     }
 
     get hideAthleteNumber() {
@@ -54,26 +70,24 @@ export class GridComponent implements OnInit, OnDestroy {
         return this.windowWidth && this.windowWidth < 860;
     }
 
-    constructor(private zone: NgZone) { }
-
+    constructor(@Inject(IgxOverlayService) public overlayService: IgxOverlayService) {}
     public ngOnInit() {
-        const athletes = athletesData;
-
-        for (const athlete of athletes) {
-            this.getSpeed(athlete);
-        }
-
-        this.localData = athletes.sort((a, b) => b.TrackProgress - a.TrackProgress);
+        this.localData = athletesData.slice(0, 30).sort((a, b) => b.TrackProgress - a.TrackProgress);
+        this.localData.forEach(rec => this.getSpeed(rec));
         this.windowWidth = window.innerWidth;
-        this._timer = setInterval(() => this.ticker(), 1500);
+        this.ticker();
     }
 
+    public getValue(cell: IgxGridCellComponent): number {
+        const val = cell.value;
+        return val;
+    }
     public ngOnDestroy() {
         clearInterval(this._timer);
     }
 
     public isTop3(cell): boolean {
-        const top = cell.value > 0 && cell.value < 4;
+        const top = this.grid1.page === 0 && cell.row.index < 4;
         if (top) {
             cell.row.nativeElement.classList.add("top3");
         } else {
@@ -130,8 +144,8 @@ export class GridComponent implements OnInit, OnDestroy {
             minutes = 20;
         }
         const speedCollection = athlete.Speed ? athlete.Speed : [];
-        for (let m = 0; m < minutes; m += 3) {
-            const value = this.getRandomNumber(16, 20);
+        for (let m = 3; m <= minutes; m += 3) {
+            const value = this.getRandomNumber(10, 20);
             const speed = speedCollection[speedCollection.length - 1];
             const min = speed && speed.Minute ? speed.Minute + m : m;
             speedCollection.push({Speed: value, Minute: min});
@@ -140,10 +154,6 @@ export class GridComponent implements OnInit, OnDestroy {
             }
         }
         return speedCollection;
-    }
-
-    public getRandomNumber(min: number, max: number): number {
-        return Math.round(min + Math.random() * (max - min));
     }
 
     @HostListener("window:resize", ["$event"])
@@ -156,53 +166,83 @@ export class GridComponent implements OnInit, OnDestroy {
         this.grid1.markForCheck();
     }
 
-    private ticker() {
-        this.zone.runOutsideAngular(() => {
-            this.updateData();
-            this.zone.run(() => this.grid1.markForCheck());
-        });
-    }
-
     private generateRandomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
+    private ticker() {
+        this._timer = setInterval(() => this.updateData(), 1500)
+    }
+
+    private getRandomNumber(min: number, max: number): number {
+        return Math.round(min + Math.random() * (max - min));
+    }
+
     private updateData() {
-        this.localData.map((rec) => {
-            const val = this.generateRandomNumber(2, 6);
-            rec.Speed = this.addSpeedeData(rec, 3);
-            rec.BeatsPerMinute += this.generateRandomNumber(-5, 5);
-            rec.TrackProgress += val;
-        });
-        const unsortedData = this.localData.slice(0);
-
-        this.localData.sort((a, b) => b.TrackProgress - a.TrackProgress).map((rec, idx) => rec.Id = idx + 1);
-        this.localData = this.localData.slice(0);
-
-        // tslint:disable-next-line:prefer-for-of
-        // Browser compatibility: for-of, No support for IE
-        for (let i = 0; i < unsortedData.length; i++) {
-            this.localData.some((elem, ind) => {
-                if (unsortedData[i].Id === elem.Id) {
-                    const position = i - ind;
-
-                    if (position < 0) {
-                        elem.Position = "down";
-                    } else if (position === 0) {
-                        elem.Position = "current";
-                    } else {
-                        elem.Position = "up";
-                    }
-                    return true;
+        this.hideOverlay();
+        const newData = []
+        this.localData.forEach((rec, index) => {
+            rec.LastPosition = index;
+            if (rec.TrackProgress < 100) {
+                rec.Speed = this.addSpeedeData(rec, 3);
+                rec.BeatsPerMinute += this.generateRandomNumber(-5, 5);
+                if (rec.Id < this.grid1.perPage + 1) {
+                    rec.TrackProgress = Math.min(rec.TrackProgress + this.generateRandomNumber(15, 20), 100);
+                } else {
+                    rec.TrackProgress = Math.min(rec.TrackProgress + this.generateRandomNumber(7, 12), 100);
                 }
-            });
+
+            }
+            newData.push({...rec});
+        });
+
+        this.localData = newData.sort((a, b) => b.TrackProgress - a.TrackProgress);
+        this.localData.forEach((elem, ind) => {
+            const position = elem.LastPosition - ind;
+            if (position < 0) {
+                elem.Position = "down";
+            } else if (position === 0) {
+                elem.Position = "current";
+            } else {
+                elem.Position = "up";
+            }
+        })
+
+        if (!this.hasWinner && this.grid1.getCellByColumn(0, 'TrackProgress').value >= 85) {
+            this.showOverlay();
+            this.show = true;
+            this.hasWinner = true;
         }
 
-        if (this.localData[0].TrackProgress >= 100) {
+        if (this.grid1.getCellByColumn(0, 'TrackProgress').value === 100) {
+            this.grid1.page = this.grid1.page + 1;
+        }
+
+        if (this.localData[this.localData.length - 1].TrackProgress === 100) {
+            this.grid1.page = 0;
             this.live = false;
             this.isFinished = true;
             this.athleteColumnWidth = "21%";
         }
+    }
+
+    public showOverlay() {
+        if (!this._overlayId) {
+            // Initialize and use overlay settings
+            const overlaySettings: OverlaySettings = IgxOverlayService.createRelativeOverlaySettings(
+                this.grid1.getCellByColumn(0, "Id").nativeElement,
+                RelativePosition.After,
+                RelativePositionStrategy.Connected
+            );
+            this._overlayId = this.overlayService.attach(this.overlay, overlaySettings);
+        }
+
+        this.overlayService.show(this._overlayId);
+    }
+
+    public hideOverlay() {
+        this.show = false;
+        this.overlayService.hide(this._overlayId);
     }
 }
 

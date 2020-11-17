@@ -1,25 +1,15 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
-
-$grid-sample-theme: igx-grid-theme( 
-    $row-selected-background: #333,
-    $row-selected-text-color: #ddd,
-    $row-hover-background: #f8f8f8,
-    $row-border-color: #f8f8f8,
-    $cell-selected-background: igx-color($default-palette, grays, 800),
-    $cell-selected-text-color: #fff
-);
-
+$grid-sample-theme: igx-grid-theme( $row-selected-background: #333, $row-selected-text-color: #ddd, $row-hover-background: #f8f8f8, $row-border-color: #f8f8f8, $cell-selected-background: igx-color($default-palette, grays, 800), $cell-selected-text-color: #fff);
 $progressBar-sample-theme: igx-progress-linear-theme( $track-color: rgba(181, 181, 181, .5), $fill-color-default: orange);
-
-::ng-deep .default-theme{
+::ng-deep .default-theme {
     .grid__wrapper {
         @include igx-grid($grid-sample-theme);
         @include igx-progress-linear($progressBar-sample-theme);
     }
-} 
+}
 
 :host {
-    ::ng-deep{
+     ::ng-deep {
         .igx-paginator>* {
             margin: 0 auto;
             display: flex;
@@ -28,6 +18,16 @@ $progressBar-sample-theme: igx-progress-linear-theme( $track-color: rgba(181, 18
         igx-sparkline {
             margin-top: 20px;
             margin-bottom: -10px;
+        }
+        .overlay {
+            background-color: #e6d058;
+            opacity: 0.75;
+            color: blue;
+            font-weight: bold;
+            min-height: 50px;
+            width: 880px;
+            padding-top: -10px;
+            margin-top: -11px;
         }
     }
 }
@@ -52,10 +52,6 @@ $progressBar-sample-theme: igx-progress-linear-theme( $track-color: rgba(181, 18
         margin: 0 3px;
         padding-right: 5px;
     }
-}
-
-.sample-column {
-    margin: 0 !important;
 }
 
 .switch-sample__title {
@@ -92,7 +88,6 @@ $progressBar-sample-theme: igx-progress-linear-theme( $track-color: rgba(181, 18
     @include ellipsis();
 }
 
-.badge_wrap,
 .cell__inner,
 .cell__inner_2 {
     display: flex;
@@ -100,8 +95,7 @@ $progressBar-sample-theme: igx-progress-linear-theme( $track-color: rgba(181, 18
     height: 100%;
 }
 
-.cell__inner,
-.badge_wrap {
+.cell__inner {
     position: relative;
     justify-content: space-between;
 }
@@ -118,10 +112,6 @@ $progressBar-sample-theme: igx-progress-linear-theme( $track-color: rgba(181, 18
     padding-left: 20px;
 }
 
-.rowIndex {
-    margin-left: rem(57px);
-}
-
 @media (max-width: rem(960px)) {
     .grid__wrapper {
         width: rem(960px);
@@ -130,4 +120,15 @@ $progressBar-sample-theme: igx-progress-linear-theme( $track-color: rgba(181, 18
 
 .linear-bar-container {
     margin: auto;
+}
+
+.overlay {
+    background-color: #e6d058;
+    opacity: 0.75;
+    color: blue;
+    font-weight: bold;
+    min-height: 50px;
+    width: 880px;
+    padding-top: -10px;
+    margin-top: -11px;
 }
