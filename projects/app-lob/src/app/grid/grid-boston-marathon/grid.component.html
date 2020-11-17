@@ -93,7 +93,7 @@
         </div>
     </div>
 
-    <div class="s-overlay s-overlay--finish" #finishedAlert>
+    <div class="s-overlay s-overlay--finish" [hidden]="!showFinishedOverlay" #finishedAlert>
         <div class="s-overlay__heading">
             <span>Race Finished !!!</span>
         </div>
