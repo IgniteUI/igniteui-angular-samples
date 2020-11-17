@@ -30,8 +30,11 @@ export class GridComponent implements OnInit, OnDestroy {
     @ViewChild("grid1", { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 
-    @ViewChild("overlay", { static: true })
-    public overlay: ElementRef;
+    @ViewChild("winnerAlert", { static: true })
+    public winnerAlert: ElementRef;
+
+    @ViewChild("finishedAlert", { static: true })
+    public finishedAlert: ElementRef;
 
     public topSpeedSummary = CustomTopSpeedSummary;
     public bnpSummary = CustomBPMSummary;
@@ -44,8 +47,8 @@ export class GridComponent implements OnInit, OnDestroy {
     private _timer;
     private windowWidth: any;
     private _overlayId: string;
-    public show = false;
-
+    public showOverlay = false;
+    public overlaySettings: OverlaySettings;
     get live() {
         return this._live;
     }
@@ -59,8 +62,12 @@ export class GridComponent implements OnInit, OnDestroy {
         }
     }
 
-    get canShowOverlay() {
-        return this.show && this.hasWinner;
+    get showWinnerOverlay() {
+        return this.showOverlay && this.hasWinner && !this.isFinished;
+    }
+
+    get showFinishedOverlay() {
+        return this.showOverlay && this.isFinished && this.live;
     }
 
     get hideAthleteNumber() {
@@ -76,6 +83,14 @@ export class GridComponent implements OnInit, OnDestroy {
         this.localData.forEach(rec => this.getSpeed(rec));
         this.windowWidth = window.innerWidth;
         this.ticker();
+    }
+
+    public ngAfterViewInit() {
+        this.overlaySettings = IgxOverlayService.createRelativeOverlaySettings(
+            this.grid1.getCellByColumn(0, "Id").nativeElement,
+            RelativePosition.After,
+            RelativePositionStrategy.Connected
+        );
     }
 
     public getValue(cell: IgxGridCellComponent): number {
@@ -179,7 +194,16 @@ export class GridComponent implements OnInit, OnDestroy {
     }
 
     private updateData() {
-        this.hideOverlay();
+        if (this.localData[this.localData.length - 1].TrackProgress === 100) {
+            this.live = false;
+            this.hideAlert();
+            this.grid1.page = 0;
+            return;
+        }
+        if (this.hasWinner && this.grid1.getCellByColumn(0, 'TrackProgress').value >= 85) {
+            this.showOverlay = false;
+            this.hideAlert();
+        }
         const newData = []
         this.localData.forEach((rec, index) => {
             rec.LastPosition = index;
@@ -209,9 +233,9 @@ export class GridComponent implements OnInit, OnDestroy {
         })
 
         if (!this.hasWinner && this.grid1.getCellByColumn(0, 'TrackProgress').value >= 85) {
-            this.showOverlay();
-            this.show = true;
+            this.showOverlay = true;
             this.hasWinner = true;
+            this.showAlert(this.winnerAlert);
         }
 
         if (this.grid1.getCellByColumn(0, 'TrackProgress').value === 100) {
@@ -219,29 +243,20 @@ export class GridComponent implements OnInit, OnDestroy {
         }
 
         if (this.localData[this.localData.length - 1].TrackProgress === 100) {
-            this.grid1.page = 0;
-            this.live = false;
             this.isFinished = true;
+            this.showOverlay = true;
+            this.showAlert(this.finishedAlert);
             this.athleteColumnWidth = "21%";
         }
     }
 
-    public showOverlay() {
-        if (!this._overlayId) {
-            // Initialize and use overlay settings
-            const overlaySettings: OverlaySettings = IgxOverlayService.createRelativeOverlaySettings(
-                this.grid1.getCellByColumn(0, "Id").nativeElement,
-                RelativePosition.After,
-                RelativePositionStrategy.Connected
-            );
-            this._overlayId = this.overlayService.attach(this.overlay, overlaySettings);
-        }
-
+    public showAlert(element: ElementRef) {
+        this._overlayId = this.overlayService.attach(element, this.overlaySettings);
         this.overlayService.show(this._overlayId);
     }
 
-    public hideOverlay() {
-        this.show = false;
+    public hideAlert() {
+        this.showOverlay = false;
         this.overlayService.hide(this._overlayId);
     }
 }

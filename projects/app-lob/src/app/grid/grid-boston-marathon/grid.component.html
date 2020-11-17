@@ -81,6 +81,10 @@
     </igx-grid>
 </div>
 
-<div class="overlay" [hidden]="!canShowOverlay" #overlay>
+<div class="overlay" [hidden]="!showWinnerOverlay" #winnerAlert>
     <span>Winner !!!</span>
+</div>
+
+<div class="overlay" [hidden]="!showFinishedOverlay" #finishedAlert>
+    <span>Race Finished !!!</span>
 </div>
