@@ -48,6 +48,9 @@ export class GridComponent implements OnInit, OnDestroy {
     private _overlayId: string;
     public showOverlay = false;
     public overlaySettings: OverlaySettings;
+    public winner = { };
+    public top3 = [];
+
     get live() {
         return this._live;
     }
@@ -231,6 +234,7 @@ export class GridComponent implements OnInit, OnDestroy {
         })
 
         if (!this.hasWinner && this.grid1.getCellByColumn(0, 'TrackProgress').value >= 85) {
+            this.winner = this.grid1.getRowByIndex(0).rowData;
             this.showOverlay = true;
             this.hasWinner = true;
             this.showAlert(this.winnerAlert);
@@ -241,6 +245,7 @@ export class GridComponent implements OnInit, OnDestroy {
         }
 
         if (this.localData[this.localData.length - 1].TrackProgress === 100) {
+            this.top3 = this.localData.slice(0, 3);
             this.isFinished = true;
             this.showOverlay = true;
             this.showAlert(this.finishedAlert);
