@@ -124,7 +124,7 @@ export class SampleAssetsGenerator extends Generator {
         }
 
         let appModuleFile = new LiveEditingFile(
-            SAMPLE_APP_FOLDER + "app.module.ts", this._getAppModuleConfig(config, configImports, configAdditionalImports));
+            SAMPLE_APP_FOLDER + "app.module.ts", this._getAppModuleConfig(config, configImports, configAdditionalImports), true, 'ts', 'modules');
         this._shortenComponentPath(config, appModuleFile);
         sampleFiles.push(appModuleFile);
         sampleFiles.push(new LiveEditingFile(
@@ -160,7 +160,7 @@ export class SampleAssetsGenerator extends Generator {
         for (let i = 0; i < COMPONENT_FILE_EXTENSIONS.length; i++) {
             let componentFilePath = componentPath + "." + COMPONENT_FILE_EXTENSIONS[i];
             let fileContent = fs.readFileSync(path.join(__dirname, componentFilePath), "utf8");
-            let file = new LiveEditingFile(componentFilePath.substr(componentFilePath.indexOf("src")), fileContent);
+            let file = new LiveEditingFile(componentFilePath.substr(componentFilePath.indexOf("src")), fileContent, true, COMPONENT_FILE_EXTENSIONS[i], COMPONENT_FILE_EXTENSIONS[i]);
             this._shortenComponentPath(config, file);
             componentFiles.push(file);
         }
