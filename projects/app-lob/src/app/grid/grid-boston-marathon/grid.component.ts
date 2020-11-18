@@ -58,7 +58,7 @@ export class GridComponent implements OnInit, OnDestroy {
     set live(val) {
         this._live = val;
         if (this._live) {
-            this.ticker();
+            this._timer = setInterval(() => this.ticker(), 1500)
         } else {
             clearInterval(this._timer);
         }
@@ -84,7 +84,7 @@ export class GridComponent implements OnInit, OnDestroy {
         this.localData = athletesData.slice(0, 30).sort((a, b) => b.TrackProgress - a.TrackProgress);
         this.localData.forEach(rec => this.getSpeed(rec));
         this.windowWidth = window.innerWidth;
-        this.ticker();
+        this._timer = setInterval(() => this.ticker(), 1500)
     }
 
     public ngAfterViewInit() {
@@ -92,6 +92,7 @@ export class GridComponent implements OnInit, OnDestroy {
             AbsolutePosition.Center,
             this.grid1
         );
+        this.overlaySettings.modal = true;
     }
 
     public getValue(cell: IgxGridCellComponent): number {
@@ -110,6 +111,18 @@ export class GridComponent implements OnInit, OnDestroy {
             cell.row.nativeElement.classList.remove("top3");
         }
         return top;
+    }
+
+    public getTrophyUrl(index: number) {
+        if (index === 0) {
+            return 'assets/images/grid/trophy_gold.svg'
+        }
+        if (index === 1) {
+            return 'assets/images/grid/trophy_silver.svg'
+        }
+        if (index === 2) {
+            return 'assets/images/grid/trophy_bronze.svg'
+        }
     }
 
     public cellSelection(evt) {
@@ -187,24 +200,44 @@ export class GridComponent implements OnInit, OnDestroy {
     }
 
     private ticker() {
-        this._timer = setInterval(() => this.updateData(), 1500)
+        if (this.showWinnerOverlay || this.showFinishedOverlay) {
+            this.hideAlert();
+        }
+        if (this.isFinished) {
+            this.live = false;
+            this.grid1.page = 0;
+            return;
+        }
+        this.updateData();
+        this.manageRace();
     }
 
     private getRandomNumber(min: number, max: number): number {
         return Math.round(min + Math.random() * (max - min));
     }
 
-    private updateData() {
+    private manageRace() {
+        // show winner alert
+        if (!this.hasWinner && this.grid1.getCellByColumn(0, 'TrackProgress').value >= 85) {
+            this.winner = this.grid1.getRowByIndex(0).rowData;
+            this.hasWinner = true;
+            this.showAlert(this.winnerAlert);
+        }
+
+        // move grid to next page to monitor players who still run
+        if (this.grid1.getCellByColumn(0, 'TrackProgress').value === 100) {
+            this.grid1.page = this.grid1.page + 1;
+        }
+
+        // show Top 3 players after race has finished
         if (this.localData[this.localData.length - 1].TrackProgress === 100) {
-            this.live = false;
-            this.hideAlert();
-            this.grid1.page = 0;
-            return;
+            this.top3 = this.localData.slice(0, 3);
+            this.isFinished = true;
+            this.showAlert(this.finishedAlert);
         }
-        if (this.hasWinner && this.grid1.getCellByColumn(0, 'TrackProgress').value >= 85) {
-            this.showOverlay = false;
-            this.hideAlert();
-        }
+    }
+
+    private updateData() {
         const newData = []
         this.localData.forEach((rec, index) => {
             rec.LastPosition = index;
@@ -232,28 +265,10 @@ export class GridComponent implements OnInit, OnDestroy {
                 elem.Position = "up";
             }
         })
-
-        if (!this.hasWinner && this.grid1.getCellByColumn(0, 'TrackProgress').value >= 85) {
-            this.winner = this.grid1.getRowByIndex(0).rowData;
-            this.showOverlay = true;
-            this.hasWinner = true;
-            this.showAlert(this.winnerAlert);
-        }
-
-        if (this.grid1.getCellByColumn(0, 'TrackProgress').value === 100) {
-            this.grid1.page = this.grid1.page + 1;
-        }
-
-        if (this.localData[this.localData.length - 1].TrackProgress === 100) {
-            this.top3 = this.localData.slice(0, 3);
-            this.isFinished = true;
-            this.showOverlay = true;
-            this.showAlert(this.finishedAlert);
-            this.athleteColumnWidth = "21%";
-        }
     }
 
     public showAlert(element: ElementRef) {
+        this.showOverlay = true;
         this._overlayId = this.overlayService.attach(element, this.overlaySettings);
         this.overlayService.show(this._overlayId);
     }
