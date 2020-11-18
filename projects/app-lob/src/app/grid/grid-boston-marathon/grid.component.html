@@ -58,7 +58,7 @@
             <igx-column field="BeatsPerMinute" header="Heart Rate (bpm)" [width]="'15%'" [hasSummary]="true" dataType="number" [summaries]="bnpSummary" [hidden]="hideBeatsPerMinute" [filterable]="false">
             </igx-column>
 
-            <igx-column field="TopSpeed" header="Top Speed" [width]="'9%'" dataType="number" [hasSummary]="true" [summaries]="topSpeedSummary" [filterable]="false" [hidden]="live">
+            <igx-column field="TopSpeed" header="Top Speed" [width]="'15%'" dataType="number" [hasSummary]="true" [summaries]="topSpeedSummary" [filterable]="false" [hidden]="live">
                 <ng-template igxCell let-val>
                     <div class="cell__inner">
                         {{ val | number: '1.1-5' }}

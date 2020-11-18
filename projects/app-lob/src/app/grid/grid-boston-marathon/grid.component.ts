@@ -15,7 +15,8 @@ import {
     IgxGridCellComponent,
     OverlaySettings,
     IgxOverlayService,
-    AbsolutePosition
+    AbsolutePosition,
+    OverlayClosingEventArgs
 } from "igniteui-angular";
 import { athletesData } from "./../services/data";
 
@@ -69,14 +70,14 @@ export class GridComponent implements OnInit, OnDestroy {
     }
 
     get showFinishedOverlay() {
-        return this.showOverlay && this.isFinished && this.live;
+        return this.showOverlay && this.isFinished;
     }
 
     get hideAthleteNumber() {
         return this.windowWidth && this.windowWidth < 960;
     }
     get hideBeatsPerMinute() {
-        return this.windowWidth && this.windowWidth < 860;
+        return (this.windowWidth && this.windowWidth < 860) || !this.live;
     }
 
     constructor(@Inject(IgxOverlayService) public overlayService: IgxOverlayService) {}
@@ -85,6 +86,9 @@ export class GridComponent implements OnInit, OnDestroy {
         this.localData.forEach(rec => this.getSpeed(rec));
         this.windowWidth = window.innerWidth;
         this._timer = setInterval(() => this.ticker(), 1500)
+        this.overlayService.onClosing.subscribe((event: OverlayClosingEventArgs) => {
+            this.showOverlay = false;
+        });
     }
 
     public ngAfterViewInit() {
@@ -200,7 +204,7 @@ export class GridComponent implements OnInit, OnDestroy {
     }
 
     private ticker() {
-        if (this.showWinnerOverlay || this.showFinishedOverlay) {
+        if (this.showWinnerOverlay) {
             this.hideAlert();
         }
         if (this.isFinished) {
