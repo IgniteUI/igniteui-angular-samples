@@ -48,7 +48,7 @@ export class GridComponent implements OnInit, OnDestroy {
     private _overlayId: string;
     public showOverlay = false;
     public overlaySettings: OverlaySettings;
-    public winner = { };
+    public winner = { Avatar: null, Name: null };
     public top3 = [];
 
     get live() {
