@@ -37,13 +37,6 @@ $progressBar-sample-theme: igx-progress-linear-theme(
 				}
 
 				.s-overlay {
-						@extend %flex-center;
-						position: absolute;
-						left: 0;
-						top: 0;
-						z-index: 1;
-						width: 100%;
-						height: 100%;
 
 						&--finish {
 								background: rgba(0,0,0, .2);
@@ -138,6 +131,10 @@ $progressBar-sample-theme: igx-progress-linear-theme(
 		}
 }
 
+.sample-column {	
+    margin: 0 !important;	
+}
+
 .switch-sample__title {
 		margin: 0 rem(20px) 0 0;
 }
@@ -172,6 +169,7 @@ $progressBar-sample-theme: igx-progress-linear-theme(
 		@include ellipsis();
 }
 
+.badge_wrap,
 .cell__inner,
 .cell__inner_2 {
 		display: flex;
@@ -179,7 +177,8 @@ $progressBar-sample-theme: igx-progress-linear-theme(
 		height: 100%;
 }
 
-.cell__inner {
+.cell__inner,
+.badge_wrap {
 		position: relative;
 		justify-content: space-between;
 }
@@ -196,6 +195,10 @@ $progressBar-sample-theme: igx-progress-linear-theme(
 		padding-left: 20px;
 }
 
+.rowIndex {	
+    margin-left: rem(57px);	
+}
+
 @media (max-width: rem(960px)) {
 		.grid__wrapper {
 				width: rem(960px);
@@ -204,15 +207,4 @@ $progressBar-sample-theme: igx-progress-linear-theme(
 
 .linear-bar-container {
 		margin: auto;
-}
-
-.overlay {
-		background-color: #e6d058;
-		opacity: 0.75;
-		color: blue;
-		font-weight: bold;
-		min-height: 50px;
-		width: 880px;
-		padding-top: -10px;
-		margin-top: -11px;
 }

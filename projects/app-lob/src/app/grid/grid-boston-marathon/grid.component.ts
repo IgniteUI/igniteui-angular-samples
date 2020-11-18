@@ -14,9 +14,8 @@ import {
     IgxSummaryResult,
     IgxGridCellComponent,
     OverlaySettings,
-    RelativePositionStrategy,
     IgxOverlayService,
-    RelativePosition
+    AbsolutePosition
 } from "igniteui-angular";
 import { athletesData } from "./../services/data";
 
@@ -86,10 +85,9 @@ export class GridComponent implements OnInit, OnDestroy {
     }
 
     public ngAfterViewInit() {
-        this.overlaySettings = IgxOverlayService.createRelativeOverlaySettings(
-            this.grid1.getCellByColumn(0, "Id").nativeElement,
-            RelativePosition.After,
-            RelativePositionStrategy.Connected
+        this.overlaySettings = IgxOverlayService.createAbsoluteOverlaySettings(
+            AbsolutePosition.Center,
+            this.grid1
         );
     }
 
@@ -160,7 +158,7 @@ export class GridComponent implements OnInit, OnDestroy {
         }
         const speedCollection = athlete.Speed ? athlete.Speed : [];
         for (let m = 3; m <= minutes; m += 3) {
-            const value = this.getRandomNumber(10, 20);
+            const value = this.getRandomNumber(16, 20);
             const speed = speedCollection[speedCollection.length - 1];
             const min = speed && speed.Minute ? speed.Minute + m : m;
             speedCollection.push({Speed: value, Minute: min});
