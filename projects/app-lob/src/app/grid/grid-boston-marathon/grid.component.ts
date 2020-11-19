@@ -222,7 +222,7 @@ export class GridComponent implements OnInit, OnDestroy {
 
     private manageRace() {
         // show winner alert
-        if (!this.hasWinner && this.localData[0].TrackProgress >= 85) {
+        if (!this.hasWinner && this.localData[0].TrackProgress >= 100) {
             this.winner = this.localData[0];
             this.hasWinner = true;
             this.showAlert(this.winnerAlert);
