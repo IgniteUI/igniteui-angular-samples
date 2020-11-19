@@ -229,7 +229,8 @@ export class GridComponent implements OnInit, OnDestroy {
         }
 
         // move grid to next page to monitor players who still run
-        if (this.grid1.getCellByColumn(0, 'TrackProgress').value === 100) {
+        const firstOnPage = this.grid1.getCellByColumn(0, 'TrackProgress')
+        if (firstOnPage && firstOnPage.value === 100) {
             this.grid1.page = this.grid1.page + 1;
         }
 
