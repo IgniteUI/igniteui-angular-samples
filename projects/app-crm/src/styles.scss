@@ -128,14 +128,10 @@ body {
 $green-palette: igx-palette($primary: #09f,$secondary: #72da67, $surface: #333);
 @include scrollbar-love();
 
-.fin-dark-theme {
-    @include igx-dark-theme($green-palette, $legacy-support: true);
-    $grays-btn-color: igx-color($green-palette, 'grays', 800);
-    @include scrollbar-love(lighten($grays-btn-color, 20%));
-
-    background: #333;
-
-    ::-moz-placeholder {
-        opacity: 1;
-    }
- }
+@font-face {
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format('woff2');
+    font-display: swap;
+}

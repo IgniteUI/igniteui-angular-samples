@@ -21,9 +21,10 @@ import {
     IgxToggleDirective,
     OverlaySettings,
     PositionSettings,
-    VerticalAlignment
+    VerticalAlignment,
+    IgxGridCellComponent
 } from "igniteui-angular";
-import { data } from "../../../services/athletesData";
+import { data } from './data';
 
 function formatDate(val: Date) {
     return new Intl.DateTimeFormat("en-US").format(val);
@@ -147,6 +148,10 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     public toggleHiding() {
         this._overlaySettings.target = this.hidingButton.nativeElement;
         this.toggleRefHiding.toggle(this._overlaySettings);
+    }
+
+    public getPhoto(cell: IgxGridCellComponent) {
+        return cell.row.rowData.avatar;
     }
 
     public togglePinning() {
