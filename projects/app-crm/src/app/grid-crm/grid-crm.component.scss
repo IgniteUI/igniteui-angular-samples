@@ -72,14 +72,14 @@
         align-self: center;
         justify-content: flex-end;
         max-width: 500px;
-        width: 50%
+        width: 70%
     }
     .crm-sample-toolbar__title {
         margin-right: rem(16px);
         display: flex;
         align-items: center;
         justify-self: flex-start;
-        width: 50%;
+        width: 30%;
     }
     .crm-sample-toolbar__ellipsis {
         @include ellipsis();

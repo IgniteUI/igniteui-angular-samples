@@ -3,13 +3,11 @@
         [autoGenerate]="false" height="400px" width="900px">
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>Tree Grid Toolbar</igx-grid-toolbar-title>
-
-            <button igxButton="flat" igxRipple (click)="treeGrid.clearSort()">
-                <igx-icon fontSet="material">clear</igx-icon>
-                Clear Sort
-            </button>
-
             <igx-grid-toolbar-actions>
+                <button igxButton="flat" igxRipple (click)="treeGrid.clearSort()">
+                    <igx-icon fontSet="material">clear</igx-icon>
+                    Clear Sort
+                </button>
                 <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
