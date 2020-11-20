@@ -25,6 +25,7 @@
     "lint": "ng lint",
     "lint:app-lob": "ng lint app-lob",
     "e2e": "ng e2e",
+    "start:app-crm": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng serve app-crm --configuration es5 -o --progress=true",
     "start:app-lob": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng serve app-lob --configuration es5 -o --progress=true",
     "start:app-lob:live-editing": "gulp generate-live-editing --css=true --appDv=true && node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng serve app-lob --configuration es5 -o --progress=true",
     "start:app-lob:live-editing:noCss": "gulp generate-live-editing --appDv=true && node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng serve app-lob --configuration es5 -o --progress=true",
