@@ -1,6 +1,4 @@
 
-import * as GridCRMRouting from "../../projects/app-lob/src/app/grid-crm/grid-crm/grid-crm-routing.module";
-import { GridCRMModule } from "../../projects/app-lob/src/app/grid-crm/grid-crm/grid-crm.module";
 import * as GridFinjsRouting from "../../projects/app-lob/src/app/grid-finjs/grid-finjs-routing.module";
 import { GridFinjsModule } from "../../projects/app-lob/src/app/grid-finjs/grid-finjs.module";
 import * as TreeGridFinjsRouting from "../../projects/app-lob/src/app/treegrid-finjs/treegrid-finjs-routing.module";
@@ -110,11 +108,6 @@ export const MODULE_ROUTES = [
 ];
 
 export const DV_MODULE_ROUTES = [
-    {
-        module: GridCRMModule,
-        path: "grid-crm",
-        routes: GridCRMRouting.gridcrmRoutes
-    },
     {
         module: GridFinjsModule,
         path: "finjs-sample",
