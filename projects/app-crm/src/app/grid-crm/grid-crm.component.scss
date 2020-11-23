@@ -1,3 +1,6 @@
+@import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fontawesome.css");
+@import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-regular.css");
+@import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-solid.css");
 @import '~igniteui-angular/lib/core/styles/themes/index';
 :host ::ng-deep {
     $crm-grid-palette: igx-palette( $primary: #09f, $secondary: #ffbf00);
@@ -197,7 +200,7 @@
         background: igx-color($crm-grid-palette, "secondary", 500);
     }
     .igx-grid-toolbar__title {
-        display: none;
+        max-width: 68ch;
     }
 }
 
