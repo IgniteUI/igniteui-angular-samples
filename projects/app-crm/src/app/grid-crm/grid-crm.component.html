@@ -1,6 +1,11 @@
 <div class="grid__wrapper">
     <igx-grid #grid1 igxPreventDocumentScroll id="grid1" [data]="localData" [height]="'430px'" [width]="'100%'" [rowSelection]="selectionMode" displayDensity="cosy" rowHeight="50" [allowFiltering]="true">
         <igx-grid-toolbar>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+                <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+            </igx-grid-toolbar-actions>
             <igx-grid-toolbar-title>
                 <div class="crm-toolbar-template">
                     <div class="crm-sample-toolbar__title">
@@ -17,9 +22,7 @@
                                 </igx-icon>
                             </igx-prefix>
     
-                            <input #search1 id="search1" class="searchInput" igxInput placeholder="Search"
-                                [(ngModel)]="searchText" (ngModelChange)="grid1.findNext(searchText, caseSensitive)"
-                                (keydown)="searchKeyDown($event)" />
+                            <input #search1 name="search" id="search1" class="searchInput" igxInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="grid1.findNext(searchText, caseSensitive)" (keydown)="searchKeyDown($event)" />
     
                             <igx-suffix *ngIf="searchText.length > 0">
                                 <div class="resultsText" *ngIf="grid1.lastSearchInfo">
@@ -32,18 +35,15 @@
                                     </span>
                                 </div>
                                 <div class="caseSensitiveButton">
-                                    <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="updateSearch()"
-                                        [igxButtonBackground]="caseSensitive? 'rgb(73, 180, 254)' : 'transparent'">
+                                    <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="updateSearch()" [igxButtonBackground]="caseSensitive? 'rgb(73, 180, 254)' : 'transparent'">
                                         <igx-icon class="caseSensitiveIcon" fontSet="material">text_fields</igx-icon>
                                     </button>
                                 </div>
                                 <div class="searchButtons">
-                                    <button igxButton="icon" igxRipple [igxRippleCentered]="true"
-                                        (click)="grid1.findPrev(searchText, caseSensitive)">
+                                    <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="grid1.findPrev(searchText, caseSensitive)">
                                         <igx-icon fontSet="material">navigate_before</igx-icon>
                                     </button>
-                                    <button igxButton="icon" igxRipple [igxRippleCentered]="true"
-                                        (click)="grid1.findNext(searchText, caseSensitive)">
+                                    <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="grid1.findNext(searchText, caseSensitive)">
                                         <igx-icon fontSet="material">navigate_next</igx-icon>
                                     </button>
                                 </div>
@@ -52,15 +52,9 @@
                     </div>
                 </div>
             </igx-grid-toolbar-title>
-            <igx-grid-toolbar-actions>
-                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
-                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
-                <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
-            </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
 
-        <igx-column field="id" header="Customer Number" width="172" [pinned]="true" [hasSummary]="false"
-            [resizable]="true" [hidden]="true" [movable]="true">
+        <igx-column field="id" header="Customer Number" width="172" [pinned]="true" [hasSummary]="false" [resizable]="true" [hidden]="true" [movable]="true">
         </igx-column>
 
         <igx-column field="avatar" header="Photo" width="88" [pinned]="true" [resizable]="true" [searchable]="false" [movable]="true" [filterable]="false">
