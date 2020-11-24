@@ -8,13 +8,13 @@ on:
   push:
     branches: [ master, vNext, crm-ci-test]
     paths:
-    - "projects/app-crm/**"
-    - "package.json"
+    - 'projects/app-crm/**'
+    - 'package.json'
   pull_request:
     branches: [ master, vNext, crm-ci-test]
     paths:
-    - "projects/app-crm/**"
-    - "package.json"
+    - 'projects/app-crm/**'
+    - 'package.json'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
