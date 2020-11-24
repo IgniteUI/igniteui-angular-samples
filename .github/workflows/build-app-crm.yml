@@ -6,12 +6,12 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master, vNext, crm-ci-test]
+    branches: [ master, vNext]
     paths:
     - 'projects/app-crm/**'
     - 'package.json'
   pull_request:
-    branches: [ master, vNext, crm-ci-test]
+    branches: [ master, vNext]
     paths:
     - 'projects/app-crm/**'
     - 'package.json'
