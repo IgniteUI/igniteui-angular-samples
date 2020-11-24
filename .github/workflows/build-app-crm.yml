@@ -6,15 +6,16 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master, vNext]
+    branches: [ master, vNext, crm-ci-test]
     paths:
-    - "projects/app-lob/**"
+    - "projects/app-crm/**"
     - "package.json"
   pull_request:
-    branches: [ master, vNext]
+    branches: [ master, vNext, crm-ci-test]
     paths:
-    - "projects/app-lob/**"
+    - "projects/app-crm/**"
     - "package.json"
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -34,6 +35,6 @@ jobs:
         run: npm run lint
 
       - name: 'Generate live editing and build samples'
-        run: npm run build:app-lob
+        run: npm run build:app-crm
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
