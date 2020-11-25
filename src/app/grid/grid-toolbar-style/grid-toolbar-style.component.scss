@@ -1,93 +1,52 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-/*BASIC THEMING*/
+$my-dark-palette: igx-palette(
+    $primary: #2466ff,
+    $secondary: #FFCD0F,
+    $surface: #2a2b2f,
+    $grays: #fff,
+);
+
+$my-dark-color: igx-color($my-dark-palette, 'surface');
 
 $dark-button-theme: igx-button-theme(
-    $outlined-background: #FFCD0F,
-    $outlined-text-color: #292826,
-    $outlined-hover-background: #404040,
-    $outlined-hover-text-color: #FFCD0F
+    $palette: $my-dark-palette,
+    $outlined-background: igx-color($my-dark-palette, 'secondary'),
+    $outlined-hover-background: igx-color($my-dark-palette, 'grays', 100),
+    $outlined-hover-text-color: igx-color($my-dark-palette, 'secondary')
 );
 
 $dark-grid-toolbar-theme: igx-grid-toolbar-theme(
-    $background-color: #292826,
-    $title-text-color: #FFCD0F
+    $palette: $my-dark-palette,
+    $background-color: $my-dark-color,
+    $title-text-color: igx-color($my-dark-palette, 'secondary'),
+    $dropdown-background: $my-dark-color,
 );
 
-/*ENHANCED APPROACHES*/
+$dark-column-actions-theme: igx-column-actions-theme(
+    $palette: $my-dark-palette,
+    $title-color: igx-color($my-dark-palette, 'secondary'),
+    $background-color: igx-color($my-dark-palette, 'surface')
+);
 
-// $yellow-color: #FFCD0F;
-// $black-color: #292826;
-// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+$dark-checkbox-theme: igx-checkbox-theme(
+    $palette: $my-dark-palette,
+    $tick-color: $my-dark-color,
+);
 
-/*PALETTE and IGX-COLOR*/
-
-// $dark-button-theme: igx-button-theme(
-//     $outlined-background: igx-color($dark-palette, "secondary", 400),
-//     $outlined-text-color: igx-color($dark-palette, "primary", 400),
-//     $outlined-hover-background: igx-color($dark-palette, "primary", 400),
-//     $outlined-hover-text-color: igx-color($dark-palette, "secondary", 400)
-// );
-
-// $dark-grid-toolbar-theme: igx-grid-toolbar-theme(
-//     $background-color: igx-color($dark-palette, "primary", 200),
-//     $title-text-color: igx-color($dark-palette, "secondary", 400)
-// );
-
-/*SCHEMAS*/
-
-// $dark-grid-toolbar-schema: extend($_dark-grid-toolbar,
-//     (
-//         background-color:(
-//             igx-color: ("primary", 200)
-//         ),
-//         title-text-color:(
-//             igx-color: ("secondary", 400)
-//         )
-//     )
-// );
-
-// $dark-button-schema: extend($_dark-button,
-//     (
-//         outlined-background: (
-//             igx-color: ("secondary", 400)
-//         ),
-//         outlined-text-color: (
-//             igx-color: ("primary", 400)
-//         ),
-//         outlined-hover-background: (
-//             igx-color: ("primary", 400)
-//         ),
-//         outlined-hover-text-color: (
-//             igx-color: ("secondary", 400)
-//         )
-//     )
-// );
-
-// $custom-dark-schema: extend($dark-schema,(
-//     igx-grid-toolbar: $dark-grid-toolbar-schema,
-//     igx-button: $dark-button-schema
-// ));
-
-// $dark-button-theme: igx-button-theme(
-//   $palette: $dark-palette,
-//   $schema: $custom-dark-schema
-// );
-
-// $dark-grid-toolbar-theme: igx-grid-toolbar-theme(
-//   $palette: $dark-palette,
-//   $schema: $custom-dark-schema
-// );
-
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+$dark-input-group-theme: igx-input-group-theme(
+    $palette: $my-dark-palette
+);
 
 :host {
     ::ng-deep {
         @include igx-grid-toolbar($dark-grid-toolbar-theme);
+        @include igx-column-actions($dark-column-actions-theme);
+        @include igx-checkbox($dark-checkbox-theme);
+        @include igx-input-group($dark-input-group-theme);
+        @include igx-button($dark-button-theme);
 
         .igx-grid-toolbar__actions {
-            @include igx-button($dark-button-theme);
-    
             .igx-button--outlined {
                 margin-left: 0.5rem;
                 border: none;
