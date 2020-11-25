@@ -1,16 +1,16 @@
 <div class="grid__wrapper">
-    <div class="control_panel">
-        <igx-input-group>
-            <label for="toolbarTitle" igxLabel>Toolbar title</label>
-            <input name="toolbarTitle" type="text" igxInput [(ngModel)]="toolbarTitle" />
+    <div class="control-panel">
+        <igx-input-group type="box">
+            <label for="toolbarTitle" igxLabel>Change Toolbar title</label>
+            <input name="toolbarTitle" id="toolbarTitle" type="text" igxInput [(ngModel)]="toolbarTitle" />
         </igx-input-group>
-        <div>
+        <div class="control-panel__switches">
             <igx-switch [(ngModel)]="enableHiding">Column hiding</igx-switch>
             <igx-switch [(ngModel)]="enablePinning">Column pinning</igx-switch>
             <igx-switch [(ngModel)]="enableExport">Exporting</igx-switch>
         </div>
     </div>
-    <igx-grid igxPreventDocumentScroll #grid1 id="grid1" [data]="data" [autoGenerate]="false" height="400px" width="700px">
+    <igx-grid igxPreventDocumentScroll [data]="data" [autoGenerate]="false" height="400px" width="700px">
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>{{ toolbarTitle }}</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
@@ -25,7 +25,7 @@
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
                     <igx-avatar [src]="cell.row.rowData.Avatar" roundShape="true" size="small"></igx-avatar>
-                    <span class="athlete_name">{{ cell.value }}</span>
+                    <span class="athlete-name">{{ cell.value }}</span>
                 </div>
             </ng-template>
         </igx-column>
@@ -34,7 +34,7 @@
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
                     <igx-avatar [src]="cell.row.rowData.CountryFlag" roundShape="true" size="small"></igx-avatar>
-                    <span class="country_name">{{ cell.value }}</span>
+                    <span class="country-name">{{ cell.value }}</span>
                 </div>
             </ng-template>
         </igx-column>
