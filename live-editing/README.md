@@ -140,4 +140,4 @@ For each sample you have to request two files - `shared.json` and `sample.json` 
 
 ### CSS Support
 
-By default the live editing generates samples with Sass. CSS is also supported. The samples with CSS have the same structure and are located in `/assets/samples/css-support/` folder.
+CSS style is no longer supported for the Live Editing generation.
