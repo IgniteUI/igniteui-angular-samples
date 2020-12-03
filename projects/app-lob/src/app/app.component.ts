@@ -1,5 +1,9 @@
 import { DOCUMENT } from "@angular/common";
 import { Component, HostListener, Inject, OnInit } from "@angular/core";
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter, map, mergeMap } from 'rxjs/operators';
+import { SEOService } from './seo.service';
+
 @Component({
     selector: "app-root",
     styleUrls: ["./app.component.scss"],
@@ -13,9 +17,23 @@ export class AppComponent implements OnInit {
     private typefacesLoaded = ["Titillium Web", "Roboto"];
     private typefaceUrl = "https://fonts.googleapis.com/css?family=";
 
-    constructor(@Inject(DOCUMENT) private document: Document) {}
+    constructor(@Inject(DOCUMENT) private document: Document,  private router: Router, private activatedRoute: ActivatedRoute, private seoService: SEOService) {}
 
     public ngOnInit() {
+        this.router.events.pipe(
+            filter((event) => event instanceof NavigationEnd),
+            map(() => this.activatedRoute),
+            map((route) => {
+            while (route.firstChild) route = route.firstChild;
+            return route;
+            }),
+            filter((route) => route.outlet === 'primary'),
+            mergeMap((route) => route.data)
+           )
+           .subscribe((event) => {
+            this.seoService.updateTitle(event['title']);
+            this.seoService.updateDescription(event['description'])
+           });
         this.createThemeStyle();
     }
 
