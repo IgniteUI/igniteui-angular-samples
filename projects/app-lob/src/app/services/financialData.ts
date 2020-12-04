@@ -930,11 +930,10 @@ export class FinancialData {
     }
 
     public updateAllPrices(data: any[]): any[] {
-        const newData = [];
         for (const dataRow of data) {
-            newData.push(this.randomizeObjectData(dataRow));
+            this.randomizeObjectData(dataRow);
         }
-        return newData;
+        return Array.from(data);
     }
 
     public updateRandomPrices(data: any[]): any {
@@ -956,7 +955,6 @@ export class FinancialData {
         dataObj.Change = res.Price - dataObj.Price;
         dataObj.Price = res.Price;
         dataObj[changeP] = res.ChangePercent;
-        return {...dataObj};
     }
     private generateNewPrice(oldPrice): any {
         const rnd = parseFloat(Math.random().toFixed(2));
