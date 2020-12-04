@@ -14,7 +14,7 @@ export class SEOService {
 
 
     updateTitle(title: string) {
-        title ? this.title.setTitle(title) : this.title.setTitle(this.defaultTitle);
+        this.title.setTitle(title ?? this.defaultTitle)
     }
 
     updateDescription(desc: string) {
