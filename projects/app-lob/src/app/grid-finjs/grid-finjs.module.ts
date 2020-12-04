@@ -11,15 +11,17 @@ import {
     IgxIndicatorsModule, IgxLegendModule, IgxNumericXAxisModule, IgxNumericYAxisModule
 } from "igniteui-angular-charts";
 import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
-import { FinJSDemoComponent } from "./grid-finjs-demo.component";
+import { FinJSDemoComponent } from "./main.component";
 import { GridFinjsRoutingModule } from "./grid-finjs-routing.module";
-import { LocalDataService } from "./localData.service";
-import { GridFinjsPartialComponent } from './partial/grid-finjs-partial.component';
+import { GridFinJSComponent } from './grid-finjs.component';
+import { ControllerComponent } from './controllers.component';
+import { LocalDataService } from './localData.service';
 
 @NgModule({
     declarations: [
         FinJSDemoComponent,
-        GridFinjsPartialComponent
+        GridFinJSComponent,
+        ControllerComponent
     ],
     imports: [
         IgxPreventDocumentScrollModule,
