@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { FinJSDemoComponent } from "./grid-finjs-demo.component";
+import { FinJSDemoComponent } from "./main.component";
 import { gridfinjsRoutesData } from "./grid-finjs-routes-data";
-import { GridFinjsPartialComponent } from './partial/grid-finjs-partial.component';
+import { GridFinJSComponent } from './grid-finjs.component';
 
 export const gridfinjsRoutes: Routes = [
     {
@@ -11,7 +11,7 @@ export const gridfinjsRoutes: Routes = [
         path: ""
     },
     {
-        component: GridFinjsPartialComponent,
+        component: GridFinJSComponent,
         data: gridfinjsRoutesData["grid-finjs-partial"],
         path: "grid-finjs-partial"
     }
