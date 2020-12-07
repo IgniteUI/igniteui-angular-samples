@@ -3,7 +3,7 @@
 <igx-drop-down #dropdown [width]="'240px'">
     <div class="drop-down__scroll-container">
         <igx-drop-down-item *ngFor="let item of items" [disabled]="item.disabled" [isHeader]="item.header"
-            [selected]="item.selected">
+            [selected]="item.selected" [class.drop-down-header]="item.header">
             <igx-icon igxPrefix>place</igx-icon>
             {{ item.field }}
             <span igxSuffix>{{ item.code }}</span>
