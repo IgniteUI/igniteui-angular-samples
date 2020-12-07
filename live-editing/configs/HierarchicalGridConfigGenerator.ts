@@ -665,7 +665,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'HGridRowPinningExtraColumnSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/grid/services/svgIcons.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/services/svgIcons.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['HGridRowPinningExtraColumnSampleComponent', 'IgxHierarchicalGridModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['HGridRowPinningExtraColumnSampleComponent'],
@@ -676,7 +676,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'HGridRowPinningSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/grid/services/svgIcons.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/services/svgIcons.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['HGridRowPinningSampleComponent', 'IgxHierarchicalGridModule', 'IgxActionStripModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['HGridRowPinningSampleComponent'],
@@ -687,7 +687,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'HGridRowPinningStylingSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/grid/services/svgIcons.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/services/svgIcons.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['HGridRowPinningStylingSampleComponent', 'IgxHierarchicalGridModule', 'IgxActionStripModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['HGridRowPinningStylingSampleComponent'],

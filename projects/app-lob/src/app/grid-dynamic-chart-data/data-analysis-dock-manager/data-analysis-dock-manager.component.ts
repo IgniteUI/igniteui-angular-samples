@@ -6,7 +6,7 @@ import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPan
 import ResizeObserver from "resize-observer-polyfill";
 import { merge, noop, Subject } from "rxjs";
 import { debounceTime, filter, takeUntil, tap } from "rxjs/operators";
-import { FinancialData } from "../../services/financialData";
+import { FinancialData } from "../../data/financialData";
 import { ChartIntegrationDirective, IDeterminedChartTypesArgs } from "../directives/chart-integration/chart-integration.directive";
 import { CHART_TYPE } from "../directives/chart-integration/chart-types";
 import { ConditionalFormattingDirective } from "../directives/conditional-formatting/conditional-formatting.directive";
@@ -147,7 +147,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
 
     public ngOnInit() {
 
-        this.data = new FinancialData().generateData(1000);
+        this.data = FinancialData.generateData(1000);
         this.gridResizeNotify.pipe(takeUntil(this.destroy$))
         .subscribe(() => {
                 if (this.contextmenu) {
