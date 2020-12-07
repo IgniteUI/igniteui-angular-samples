@@ -30,7 +30,6 @@ import { TreeGridColumnGroupSelectionComponent } from "./column-group-selection/
 import { TreeGridColumnSelectionStylesComponent } from "./column-selection-styles/tree-grid-column-selection-style.component";
 import { TreeGridColumnSelectionComponent } from "./column-selection/tree-grid-column-selection.component";
 // tslint:disable:max-line-length
-import { RemoteFilteringService } from "./services/remoteFilteringService";
 import { TGridKeyboardnavGuide } from "./tgrid-keyboard-guide/tgrid-keyboardnav-guide.component";
 import { TreeGridAddRowSampleComponent } from "./tree-grid-add-row-sample/tree-grid-add-row-sample.component";
 import { TreeGridAdvancedFilteringSampleComponent } from "./tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
@@ -113,6 +112,7 @@ import { TGridAboutComponent } from "./tree-grid-save-state/about.component";
 import { TreeGridExternalOutletComponent } from './tree-grid-external-outlet/tree-grid-external-outlet-sample.component';
 import { TreeGridExportVisualizationComponent } from './tree-grid-export-visualization/tree-grid-export-visualization.component';
 import { TGridEditingLifecycleComponent } from "./tgrid-editing-lifecycle-sample/tgrid-editing-lifecycle.component";
+import { RemoteFilteringService } from './services/remoteFilteringService';
 
 @NgModule({
     declarations: [

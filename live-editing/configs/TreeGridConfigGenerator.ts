@@ -65,7 +65,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Virtualization sample
         configs.push(new Config({
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/financialData.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxBadgeModule', 'TreeGridVirtualizationSampleComponent'],
                 ngDeclarations: ['TreeGridVirtualizationSampleComponent'],

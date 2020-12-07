@@ -45,16 +45,16 @@ export class GridConfigGenerator implements IConfigGenerator {
         PlanetComponent: '../../src/app/grid/grid-row-drag/planet/planet.component',
         LocalService: '../../src/app/grid/grid-sample-2/grid-sample-2.component',
         RemoteService: '../../src/app/grid/grid-sample-5/remote.service',
-        RemoteFilteringService: '../../src/app/grid/services/remoteFilteringService',
-        RemotePagingService: '../../src/app/grid/services/remotePagingService',
-        RemoteServiceVirt: '../../src/app/grid/services/remoteService'
+        RemoteFilteringService: '../../src/app/services/remoteFiltering.service',
+        RemotePagingService: '../../src/app/services/remotePaging.service',
+        RemoteServiceVirt: '../../src/app/services/remoteVirtualization.service'
 };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
         configs.push(new Config({
             component: 'FinancialSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/financialData.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['HttpClientModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule',
                     'IgxGridModule', 'IgxIconModule', 'IgxInputGroupModule', 'IgxProgressBarModule',
@@ -165,7 +165,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'PagingSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/athletesData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['HttpClientModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule',
                     'IgxGridModule', 'IgxIconModule', 'IgxInputGroupModule', 'IgxProgressBarModule',
@@ -179,7 +179,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridPagerSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/athletesData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxGridModule', 'IgxRippleModule', 'IgxSwitchModule', 'GridPagerSampleComponent', 'IgxSelectModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridPagerSampleComponent'],
@@ -189,7 +189,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridSelectionSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/financialData.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['HttpClientModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule', 'IgxSnackbarModule',
                     'IgxGridModule', 'IgxIconModule', 'IgxInputGroupModule', 'IgxSwitchModule', 'GridSelectionSampleComponent', 'IgxPreventDocumentScrollModule'],
@@ -285,7 +285,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridResizeLineStylingSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/athletesData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxGridModule', 'GridResizeLineStylingSampleComponent', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridResizeLineStylingSampleComponent'],
@@ -320,7 +320,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridRemoteVirtualizationSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/remoteService.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/services/remoteVirtualization.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridRemoteVirtualizationSampleComponent', 'IgxGridModule', 'IgxToastModule',
                     'IgxBadgeModule', 'HttpClientModule', 'RemoteServiceVirt', 'IgxPreventDocumentScrollModule'],
@@ -332,7 +332,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'RemoteFilteringSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/remoteFilteringService.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/services/remoteFiltering.service.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['RemoteFilteringSampleComponent', 'IgxGridModule',
                     'IgxBadgeModule', 'HttpClientModule', 'RemoteFilteringService', 'IgxToastModule', 'IgxPreventDocumentScrollModule'],
@@ -344,7 +344,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'PinningSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts", "/src/app/grid/services/svgIcons.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts", "/src/app/services/svgIcons.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['PinningSampleComponent', 'IgxGridModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['PinningSampleComponent'],
@@ -367,7 +367,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // column-moving sample
         configs.push(new Config({
             component: 'GridMovingSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/financialData.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridMovingSampleComponent', 'IgxGridModule', 'IgxBadgeModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridMovingSampleComponent'],
@@ -378,7 +378,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridMovingStyledSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/financialData.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridMovingStyledSampleComponent', 'IgxGridModule', 'IgxBadgeModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridMovingStyledSampleComponent'],
@@ -389,7 +389,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridToolbarSample1Component',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/athletesData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridToolbarSample1Component', 'IgxAvatarModule', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridToolbarSample1Component'],
@@ -400,7 +400,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridToolbarSample2Component',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/athletesData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridToolbarSample2Component', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule',
                     'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxPreventDocumentScrollModule'],
@@ -412,7 +412,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridToolbarSample3Component',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/athletesData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridToolbarSample3Component', 'IgxAvatarModule', 'IgxGridModule',
                     'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxPreventDocumentScrollModule'],
@@ -424,7 +424,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridToolbarSample4Component',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/athletesData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridToolbarSample4Component', 'IgxAvatarModule', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridToolbarSample4Component'],
@@ -435,7 +435,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridToolbarStyleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/athletesData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridToolbarStyleComponent', 'IgxAvatarModule', 'IgxGridModule',
                     'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxPreventDocumentScrollModule'],
@@ -501,7 +501,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'RemotePagingGridSample',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/remotePagingService.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/services/remotePaging.service.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['RemotePagingGridSample', 'IgxGridModule', 'RouterModule', 'HttpClientModule', 'RemotePagingService',
                     'IgxSelectModule', 'IgxPreventDocumentScrollModule'],
@@ -513,7 +513,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'CustomRemotePagingGridSample',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/remotePagingService.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/services/remotePaging.service.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['CustomRemotePagingGridSample', 'IgxGridModule', 'RouterModule', 'HttpClientModule',
                     'RemotePagingService', 'IgxSelectModule', 'IgxPreventDocumentScrollModule'],
@@ -538,7 +538,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid cellClasses
         configs.push(new Config({
             component: 'GridConditionalCellStyleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/athletesData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxGridModule', 'GridConditionalCellStyleComponent', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridConditionalCellStyleComponent'],
@@ -549,7 +549,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid cellStyles
         configs.push(new Config({
             component: 'GridConditionalCellStyle2Component',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/athletesData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxGridModule', 'GridConditionalCellStyle2Component', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridConditionalCellStyle2Component'],
@@ -861,7 +861,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'CustomGridPagingStyleSample',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/athletesData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['CustomGridPagingStyleSample', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['CustomGridPagingStyleSample'],
@@ -1016,8 +1016,8 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'RightPinningSampleComponent',
             additionalFiles: [
-                "/src/app/data/athletesData.ts",
-                "/src/app/grid/services/data.ts"
+                "/src/app/data/employeesData.ts",
+                "/src/app/data/athletesData.ts"
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['RightPinningSampleComponent', 'IgxGridModule', 'IgxTooltipModule', 'IgxAvatarModule'],
@@ -1091,7 +1091,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridRowPinningExtraColumnSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts", "/src/app/grid/services/svgIcons.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/customers.ts", "/src/app/services/svgIcons.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridRowPinningExtraColumnSampleComponent', 'IgxSwitchModule', 'IgxGridModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridRowPinningExtraColumnSampleComponent'],
@@ -1137,7 +1137,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'RemotePagingDefaultTemplateComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/remotePagingService.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/services/remotePaging.service.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['RemotePagingDefaultTemplateComponent', 'IgxGridModule', 'RouterModule',
                     'HttpClientModule', 'RemotePagingService', 'IgxPreventDocumentScrollModule'],
@@ -1163,7 +1163,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'RemotePagingDefaultTemplateComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/remotePagingService.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/services/remotePaging.service.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['RemotePagingDefaultTemplateComponent', 'IgxGridModule', 'RouterModule',
                     'HttpClientModule', 'RemotePagingService', 'IgxPreventDocumentScrollModule'],
@@ -1185,7 +1185,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridSortingIndicatorsComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/utils.ts", "/src/app/grid/services/financialData.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/utils.ts", "/src/app/data/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridSortingIndicatorsComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridSortingIndicatorsComponent'],

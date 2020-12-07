@@ -5,12 +5,12 @@ import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignme
     PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
 import { timer } from "rxjs";
 import { debounce } from "rxjs/operators";
-import { LocalDataService } from "../grid-finjs/localData.service";
-import { Contract, REGIONS } from "../services/financialData";
+import { Contract, REGIONS } from "../data/financialData";
+import { FinancialDataService } from '../services/financial.service';
 import { ITreeGridAggregation } from "./tree-grid-grouping.pipe";
 
 @Component({
-    providers: [LocalDataService],
+    providers: [FinancialDataService],
     selector: "app-tree-grid-finjs-sample",
     styleUrls: ["./tree-grid-finjs-sample.component.scss"],
     templateUrl: "./tree-grid-finjs-sample.component.html"
@@ -96,7 +96,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     private _timer;
     private volumeChanged;
 
-    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef) {
+    constructor(private zone: NgZone, private localService: FinancialDataService, private elRef: ElementRef) {
         this.subscription = this.localService.getData(this.volume);
         this.localService.records.subscribe((d) => this.data = d);
     }
