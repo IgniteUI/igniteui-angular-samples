@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, OnDestroy, Output, ViewChild } from "@angular/core";
-import { IDialogEventArgs, IgxDialogComponent } from 'igniteui-angular';
+import { IgxDialogComponent, IDialogEventArgs } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
-import { FinancialData } from '../services/financialData';
+import { FinancialData } from "../data/financialData";
 import { ControllerComponent } from './controllers.component';
 import { GridFinJSComponent } from './grid-finjs.component';
 
@@ -10,6 +10,7 @@ import { GridFinJSComponent } from './grid-finjs.component';
     styleUrls: ["./main.component.scss"],
     templateUrl: "./main.component.html"
 })
+
 export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     @ViewChild('finGrid', { static: true }) public finGrid: GridFinJSComponent;
     @ViewChild('controllers', { static: true }) public controller: ControllerComponent;
@@ -189,11 +190,11 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     }
 
     private ticker(data: any) {
-        this.finGrid.data = new FinancialData().updateRandomPrices(data);
+        this.finGrid.data = FinancialData.updateRandomPrices(data);
     }
 
     private tickerAllPrices(data: any) {
-        this.finGrid.data = new FinancialData().updateAllPrices(data);
+        this.finGrid.data = FinancialData.updateAllPrices(data);
     }
 
     public ngOnDestroy() {

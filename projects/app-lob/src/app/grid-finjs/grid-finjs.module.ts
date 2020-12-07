@@ -15,7 +15,7 @@ import { FinJSDemoComponent } from "./main.component";
 import { GridFinjsRoutingModule } from "./grid-finjs-routing.module";
 import { GridFinJSComponent } from './grid-finjs.component';
 import { ControllerComponent } from './controllers.component';
-import { LocalDataService } from './localData.service';
+import { FinancialDataService } from '../services/financial.service';
 
 @NgModule({
     declarations: [
@@ -45,6 +45,6 @@ import { LocalDataService } from './localData.service';
         IgxGridModule,
         IgxDialogModule
     ],
-    providers: [LocalDataService, IgxExcelExporterService]
+    providers: [FinancialDataService, IgxExcelExporterService]
 })
 export class GridFinjsModule { }
