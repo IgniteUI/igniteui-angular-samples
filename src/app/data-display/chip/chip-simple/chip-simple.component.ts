@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectorRef } from "@angular/core";
 import { IBaseChipEventArgs } from "igniteui-angular";
 
 @Component({
@@ -31,12 +31,12 @@ export class ChipSimpleComponent {
         }
     ];
 
-    private changeDetectionRef: any;
+    constructor(public cdr: ChangeDetectorRef) { }
 
     public chipRemoved(event: IBaseChipEventArgs) {
         this.chipList = this.chipList.filter((item) => {
             return item.id !== event.owner.id;
         });
-        this.changeDetectionRef.detectChanges();
+        this.cdr.detectChanges();
     }
 }
