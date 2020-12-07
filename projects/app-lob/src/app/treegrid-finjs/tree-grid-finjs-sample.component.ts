@@ -4,7 +4,7 @@ import {
     IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
     PositionSettings, SortingDirection, VerticalAlignment
 } from 'igniteui-angular';
-import { Contract, REGIONS } from '../services/financialData';
+import { Contract, REGIONS } from '../data/financialData';
 import { ITreeGridAggregation } from './tree-grid-grouping.pipe';
 import { SignalRService } from '../services/signal-r.service';
 

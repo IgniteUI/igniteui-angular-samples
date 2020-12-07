@@ -2,7 +2,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IgxColumnComponent } from 'igniteui-angular';
 import { IgxLegendComponent } from 'igniteui-angular-charts';
-import { data } from '../../services/athletesData';
+import { employeesData } from '../../data/employees';
 
 @Component({
     selector: 'app-grid-master-detail',
@@ -17,7 +17,7 @@ export class GridMasterDetailSampleComponent {
     public data = [];
     public include = ['date', 'estimated', 'actual'];
     constructor() {
-        this.data = data;
+        this.data = employeesData;
     }
 
     public getHeight(selectedIndex) {

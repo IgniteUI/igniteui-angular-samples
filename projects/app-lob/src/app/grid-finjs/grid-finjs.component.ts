@@ -5,7 +5,6 @@ import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCell
 import { SignalRService } from '../services/signal-r.service';
 
 @Component({
-  providers: [SignalRService],
   selector: 'app-finjs-grid',
   templateUrl: './grid-finjs.component.html',
   styleUrls: ['./grid-finjs.component.scss']
@@ -91,7 +90,7 @@ export class GridFinJSComponent implements OnInit {
         }
     }
 
-    public rowSelectionChanged(args: IRowSelectionEventArgs) {
+    public rowSelectionChanged(args) {
         this.grid.clearCellSelection();
         this.selectedDataChanged.emit(args.newSelection);
     }
