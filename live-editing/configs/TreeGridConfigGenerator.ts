@@ -26,7 +26,9 @@ IgxTreeGridModule,
 IgxToggleModule} from 'igniteui-angular';
 import {IgxSparklineCoreModule,
 IgxSparklineModule} from 'igniteui-angular-charts';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import {AppModuleConfig} from './core/AppModuleConfig';
+import {Config} from './core/Config';
+import {IConfigGenerator} from './core/IConfigGenerator';
 export class TreeGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive',
@@ -63,7 +65,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Virtualization sample
         configs.push(new Config({
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/financialData.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxBadgeModule', 'TreeGridVirtualizationSampleComponent'],
                 ngDeclarations: ['TreeGridVirtualizationSampleComponent'],
@@ -1001,17 +1003,6 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 'IgxInputGroupModule', 'IgxCheckboxModule', 'IgxDatePickerModule', 'IgxActionStripModule']
             }),
             component: 'TreeGridAddRowSampleComponent',
-            shortenComponentPathBy: "/tree-grid/"
-        }));
-
-        configs.push(new Config({
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/tree-grid/data/foods.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridFormattedFilteringStrategyComponent'],
-                ngDeclarations: ['TreeGridFormattedFilteringStrategyComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule']
-            }),
-            component: 'TreeGridFormattedFilteringStrategyComponent',
             shortenComponentPathBy: "/tree-grid/"
         }));
 

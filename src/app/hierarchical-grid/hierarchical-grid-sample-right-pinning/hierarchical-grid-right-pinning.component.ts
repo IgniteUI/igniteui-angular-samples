@@ -5,8 +5,8 @@ import {
     IgxHierarchicalGridComponent,
     IPinningConfig
 } from "igniteui-angular";
-import { data } from "../../data/athletesData";
-import { athletesData } from "../services/data";
+import { employeesData } from "../../data/employeesData";
+import { athletesData } from '../../data/athletesData';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -21,23 +21,23 @@ export class HierarchicalGridRightPinningSampleComponent {
     public grid1: IgxHierarchicalGridComponent;
 
     public data: any[];
-    public athletesData: any[];
+    public employeesData: any[];
     public columns: any[];
     public pinningConfig: IPinningConfig = { columns: ColumnPinningPosition.End };
     private _columnsPinned: boolean = true;
 
     public ngOnInit(): void {
         this.data = athletesData;
-        this.athletesData = data;
+        this.employeesData = employeesData;
         let i = 0;
         this.data.forEach((x) => {
             x.FirstPlaces = Math.floor(Math.random() * Math.floor(3));
             x.SecondPlaces = Math.floor(Math.random() * Math.floor(4));
             x.ThirdPlaces = Math.floor(Math.random() * Math.floor(5));
             x.RegistrationDate = this.generateReadableDate(x.Registered);
-            x.Birthday = this.generateReadableDate(this.athletesData[i].birthday);
-            x.Sponsor = this.athletesData[i].company;
-            x.AgentData = [this.athletesData[i]];
+            x.Birthday = this.generateReadableDate(this.employeesData[i].birthday);
+            x.Sponsor = this.employeesData[i].company;
+            x.AgentData = [this.employeesData[i]];
             i++;
         });
     }

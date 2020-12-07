@@ -7,7 +7,7 @@ import {
     IgxExcelExporterOptions,
     IgxExporterOptionsBase
 } from "igniteui-angular";
-import { athletesData } from "../services/data";
+import { athletesData } from "../../data/athletesData";
 
 @Component({
   selector: "grid-toolbar-sample-3",
@@ -36,7 +36,7 @@ export class GridToolbarSample3Component {
             csvOptions.valueDelimiter = "\t";
         }
 
-        args.exporter.columnExporting.subscribe((columnArgs: IColumnExportingEventArgs) => {
+        args.exporter.onColumnExport.subscribe((columnArgs: IColumnExportingEventArgs) => {
             // Don't export image fields
             columnArgs.cancel = columnArgs.header === "Athlete" ||
                                 columnArgs.header === "Country";

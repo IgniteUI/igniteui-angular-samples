@@ -1,8 +1,7 @@
-import { AfterViewInit, Component, ContentChild, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from "@angular/core";
-import { GridPagingMode, IgxGridComponent, IgxPaginatorComponent } from "igniteui-angular";
-import { IPagingEventArgs } from "igniteui-angular/lib/paginator/interfaces";
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
+import { GridPagingMode, IgxGridComponent } from "igniteui-angular";
 import { Observable } from "rxjs";
-import { RemotePagingService } from "../services/remotePagingService";
+import { RemotePagingService } from "../../services/remotePaging.service";
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -14,12 +13,9 @@ import { RemotePagingService } from "../services/remotePagingService";
 export class RemotePagingDefaultTemplateComponent implements OnInit, AfterViewInit, OnDestroy {
 
     public totalCount = 0;
-    public page = 0;
-    public perPage = 10;
     public data: Observable<any[]>;
-    public mode = GridPagingMode.Remote;
+    public mode = GridPagingMode.remote;
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
-    @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
 
     private _dataLengthSubscriber;
 
@@ -42,17 +38,15 @@ export class RemotePagingDefaultTemplateComponent implements OnInit, AfterViewIn
 
     public ngAfterViewInit() {
         this.grid1.isLoading = true;
-        const skip = this.page * this.perPage;
-        this.remoteService.getData(skip, this.perPage);
+        this.remoteService.getData(0, this.grid1.perPage);
     }
 
-    public paging(event: IPagingEventArgs) {
-        const skip = event.newPage * this.perPage;
-        this.remoteService.getData(skip, this.perPage);
+    public pagingDone(page) {
+        const skip = page.current * this.grid1.perPage;
+        this.remoteService.getData(skip, this.grid1.perPage);
     }
 
-    public perPageChange(perPage: number) {
-        const skip = this.page * perPage;
-        this.remoteService.getData(skip, perPage);
+    public paginate() {
+        this.remoteService.getData(0, this.grid1.perPage);
     }
 }

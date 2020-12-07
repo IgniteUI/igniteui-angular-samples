@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
 import { IgxGridComponent, NoopFilteringStrategy, NoopSortingStrategy } from "igniteui-angular";
 import { Subject } from "rxjs";
 import { debounceTime, takeUntil } from "rxjs/operators";
-import { RemoteFilteringService } from "../services/remoteFilteringService";
+import { RemoteFilteringService } from "../../services/remoteFiltering.service";
 
 const DEBOUNCE_TIME = 300;
 

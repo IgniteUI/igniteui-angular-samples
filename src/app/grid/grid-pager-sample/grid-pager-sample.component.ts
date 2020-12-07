@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { athletesData } from "../services/data";
+import { athletesData } from "../../data/athletesData";
 import { IPaginatorResourceStrings, IgxPaginatorComponent } from "igniteui-angular";
 
 @Component({
