@@ -2,7 +2,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { IgxDialogComponent, IgxGridComponent, Transaction } from 'igniteui-angular';
 import { Observable } from 'rxjs';
-import { RemotePagingService } from '../services/remotePagingService';
+import { RemotePagingService } from '../../services/remotePaging.service';
 
 @Component({
     encapsulation: ViewEncapsulation.None,

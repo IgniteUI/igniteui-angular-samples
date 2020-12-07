@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular';
-import { athletesData } from '../services/data';
+import { athletesData } from '../../data/athletesData';
 
 @Component({
     encapsulation: ViewEncapsulation.None,

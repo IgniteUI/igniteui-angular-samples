@@ -3,7 +3,7 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, AfterViewIn
 import { IForOfState, IgxDropDownComponent, IgxForOfDirective, IgxToastComponent } from 'igniteui-angular';
 import { Subject, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { RemoteService } from '../../../grid/services/remote.service';
+import { RemoteService } from '../../../services/remoteNwind.service';
 
 // tslint:disable:object-literal-sort-keys
 @Component({
