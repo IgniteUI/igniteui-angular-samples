@@ -22,18 +22,21 @@ export class AppComponent implements OnInit {
     public ngOnInit() {
         this.router.events.pipe(
             filter((event) => event instanceof NavigationEnd),
-            map(() => this.activatedRoute),
-            map((route) => {
-            while (route.firstChild) route = route.firstChild;
-            return route;
-            }),
-            filter((route) => route.outlet === 'primary'),
-            mergeMap((route) => route.data)
+            map(() => {
+                let route = this.activatedRoute.firstChild;
+                while (route.firstChild) route = route.firstChild;
+                return route;
+            })
            )
            .subscribe((event) => {
-            this.seoService.updateTitle(event['title']);
-            this.seoService.updateDescription(event['description'])
-           });
+            if (!event.snapshot.data['title'] && !event.snapshot.data['description']){
+                this.seoService.updateTitle(event.parent.snapshot.data['title']);
+                this.seoService.updateDescription(event.parent.snapshot.data['description'])
+            }else{
+                this.seoService.updateTitle(event.snapshot.data['title']);
+                this.seoService.updateDescription(event.snapshot.data['description'])
+            }
+        });
         this.createThemeStyle();
     }
 
