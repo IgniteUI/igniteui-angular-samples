@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { ChangeDetectorRef, Component } from "@angular/core";
 import { IBaseChipEventArgs, IChipsAreaReorderEventArgs } from "igniteui-angular";
 
 @Component({
@@ -26,7 +26,8 @@ export class ChipAreaSampleComponent {
         }
     ];
 
-    private changeDetectionRef: any;
+
+    constructor(public changeDetectionRef: ChangeDetectorRef) { }
 
     public chipRemoved(event: IBaseChipEventArgs) {
         this.chipList = this.chipList.filter((item) => {
