@@ -2,10 +2,13 @@
     display: flex;
     flex-flow: column;
     margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .advanced-dialog {
     margin-bottom: 2px;
     width: 800px;
-    height: 350px;
+    height: 300px;
 }
