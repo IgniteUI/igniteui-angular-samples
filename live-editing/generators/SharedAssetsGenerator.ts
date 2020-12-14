@@ -12,7 +12,7 @@ const STYLES_FILE_PATH = path.join(__dirname, "../../src/styles.scss");
 const ANGULAR_JSON_TEMPLATE_PATH = path.join(__dirname, "../templates/angular.json.template");
 const MAIN_TS_FILE_PATH = path.join(__dirname, "../templates/main.ts.template");
 const APP_COMPONENT_SCSS_PATH = path.join(__dirname, "../../src/app/app.component.scss");
-const APP_COMPONENT_TS_PATH = path.join(__dirname, "../../src/app/app.component.ts");
+const APP_COMPONENT_TS_PATH = path.join(__dirname, "../templates/app.component.ts.template");
 export class SharedAssetsGenerator extends Generator {
     private _showLogs: boolean;
 
