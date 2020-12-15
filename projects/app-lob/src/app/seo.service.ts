@@ -12,12 +12,14 @@ export class SEOService {
 
     constructor(private title: Title, private meta: Meta) { }
 
-
-    updateTitle(title: string) {
+    updateHeadProperties(title: string, desc: string, url: string){
         this.title.setTitle(title ?? this.defaultTitle)
-    }
-
-    updateDescription(desc: string) {
         this.meta.updateTag({ name: 'description', content: desc ?? this.defaultDesc });
+        this.meta.updateTag({property: "og:image", content: url})
+        this.meta.updateTag({property: "og:site_name", content: "Infragistics"})
+        this.meta.updateTag({property: "og:type", content: "object"})
+        this.meta.updateTag({property: "og:title", content: title ?? this.defaultTitle})
+        this.meta.updateTag({property: "og:url", content: url})
+        this.meta.updateTag({property: "og:description", content: desc ?? this.defaultDesc})
     }
 }
