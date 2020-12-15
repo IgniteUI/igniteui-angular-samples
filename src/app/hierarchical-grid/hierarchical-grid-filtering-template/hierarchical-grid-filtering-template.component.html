@@ -1,5 +1,6 @@
+<div class="grid__wrapper">
 <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [autoGenerate]="false" [allowFiltering]='true'
-    [height]="'600px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
+    [height]="'580px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
     <igx-column field="Artist" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
     <igx-column field="Photo" [filterable]="false">
         <ng-template igxCell let-cell="cell">
@@ -80,3 +81,4 @@
         </igx-date-picker>
     </div>
 </ng-template>
+</div>
