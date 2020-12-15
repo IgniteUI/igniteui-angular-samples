@@ -1,3 +1,4 @@
+<div class="grid__wrapper">
 <ng-template igxHeader let-column #pinTemplate>
     <div class="title-inner">
         <span style="float:left">{{column.header || column.field}}</span>
@@ -6,7 +7,7 @@
     </div>
 </ng-template>
 <igx-hierarchical-grid igxPreventDocumentScroll  class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
-    [height]="'500px'" [width]="'100%'" #hierarchicalGrid>
+    [height]="'480px'" [width]="'100%'" #hierarchicalGrid>
     <igx-column field="CompanyName" header="Company Name" [headerTemplate]="pinTemplate" width="200px" [pinned]="true"></igx-column>
     <igx-column field="ContactName" header="Contact Name" [headerTemplate]="pinTemplate" width="150px"></igx-column>
     <igx-column field="ContactTitle" header="Contact Title" [headerTemplate]="pinTemplate" width="200px"></igx-column>
@@ -34,3 +35,4 @@
         </igx-row-island>
     </igx-row-island>
 </igx-hierarchical-grid>
+</div>
