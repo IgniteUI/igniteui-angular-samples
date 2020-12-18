@@ -10,8 +10,7 @@
     <igx-tree-grid igxPreventDocumentScroll 
         #grid1 [data]="data"
         primaryKey="ID" foreignKey="ParentID"
-        width="80%"
-        height="300px">
+        height="350px">
         <igx-column *ngFor="let c of columns"
             [field]="c.field"
             [header]="c.field"

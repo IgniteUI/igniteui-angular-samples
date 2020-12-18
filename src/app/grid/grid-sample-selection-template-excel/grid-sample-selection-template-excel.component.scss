@@ -12,6 +12,11 @@ $default-arrow-all-color: igx-color($default-palette, 'secondary', 100);
     cursor: pointer;
 }
 
+.grid__wrapper {
+    margin: 0 auto;
+    padding: 16px;
+}
+
 .header-selector {
     @include selector(flex-end, flex-end);
     height: 100%;

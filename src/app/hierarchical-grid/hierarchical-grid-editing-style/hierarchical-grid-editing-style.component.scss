@@ -37,7 +37,6 @@ $datepicker-theme: igx-calendar-theme(
 );
 
 :host {
-    padding: 3px 10px;
     ::ng-deep {
         @include igx-checkbox($checkbox-theme);
         @include igx-input-group($input-theme);
@@ -46,6 +45,7 @@ $datepicker-theme: igx-calendar-theme(
     }
 }
 
-.igx-hierarchical-grid {
-    margin-top: 10px;
+.grid__wrapper {
+    margin: 0 auto;
+    padding: 16px;
 }

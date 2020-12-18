@@ -27,7 +27,7 @@ $dark-grid-column-moving-theme: igx-grid-theme(
         }
 
         .grid__wrapper {
-            padding: 5px 1px;
+            padding: 16px;
             @include igx-grid($dark-grid-column-moving-theme);
           }
     }

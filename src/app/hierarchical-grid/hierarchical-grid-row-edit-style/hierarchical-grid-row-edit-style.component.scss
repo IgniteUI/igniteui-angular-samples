@@ -6,6 +6,11 @@
     margin: 1px
 }
 
+.grid__wrapper {
+    margin: 0 auto;
+    padding: 16px;
+}
+
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
 $my-light-gray: #e3e3e3;

@@ -1,7 +1,8 @@
+<div class="grid-wrapper">
 <button igxButton="raised" (click)="dialogAddSinger.open()" class="addSingerBtn">Add Singer</button>
 <app-hierarchical-grid-with-transactions>
     <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="localdata" [primaryKey]="'Artist'"
-        [rowEditable]="true" [height]="'580px'" [width]="'100%'">
+        [rowEditable]="true" [height]="'550px'" [width]="'100%'">
         <igx-column field="Artist" header="Artist" [editable]="false" [dataType]="'string'"></igx-column>
         <igx-column field="HasGrammyAward" header="Has Grammy Award?" [editable]="true" [dataType]="'boolean'">
         </igx-column>
@@ -85,3 +86,4 @@
         <button igxButton (click)="cancel()">Cancel</button>
     </div>
 </igx-dialog>
+</div>
