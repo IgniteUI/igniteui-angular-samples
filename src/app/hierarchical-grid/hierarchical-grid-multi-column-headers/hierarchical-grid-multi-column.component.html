@@ -1,4 +1,5 @@
-<igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid [data]="localdata" [height]="'500px'" [width]="'100%'" displayDensity="compact" [allowFiltering]="true">
+<div class="grid__wrapper">
+<igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid [data]="localdata" [height]="'480px'" [width]="'100%'" displayDensity="compact" [allowFiltering]="true">
     <igx-column field="CustomerID" [movable]="true" sortable="true" resizable="true"></igx-column>
     <igx-column-group [movable]="true" [pinned]="false" header="General Information">
         <igx-column field="CompanyName" [movable]="true" sortable="true" resizable="true"></igx-column>
@@ -55,3 +56,4 @@
     <button igxButton="raised" (click)="pinGroup()">Pin first group</button>
     <button igxButton="raised" (click)="hideGroup()">Hide first group</button>
 </section>
+</div>
