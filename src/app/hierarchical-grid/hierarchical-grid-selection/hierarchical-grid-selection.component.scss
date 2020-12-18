@@ -8,9 +8,13 @@
 .grid-controls {
     display: flex;
     justify-content: space-between;
-    margin: 0 16px 24px;
+    margin-bottom: 10px;
     flex-flow: column;
     align-items: flex-start;
+}
+
+.grid__wrapper{
+    padding: 16px;
 }
 
 igx-snackbar {
