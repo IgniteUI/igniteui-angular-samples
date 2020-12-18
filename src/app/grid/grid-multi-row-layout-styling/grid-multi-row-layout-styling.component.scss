@@ -55,3 +55,7 @@ $custom-theme: igx-grid-theme(
 // );
 
 @include igx-grid($custom-theme); 
+
+.wrapper {
+    padding: 16px;
+}
