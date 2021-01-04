@@ -86,3 +86,8 @@ $custom-chips-theme: igx-chip-theme(
         @include igx-chip($custom-chips-theme);
     }
 }
+
+.grid__wrapper {
+    padding-top: 16px;
+    margin: 0 16px;
+}
