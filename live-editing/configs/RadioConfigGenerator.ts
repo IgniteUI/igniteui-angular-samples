@@ -46,6 +46,16 @@ export class RadioConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'RadioGroupVerticalComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxRadioModule', 'RadioGroupVerticalComponent'],
+                ngDeclarations: ['RadioGroupSampleComponent'],
+                ngImports: ['IgxRadioModule']
+            }),
+            shortenComponentPathBy: "/data-entries/radio/"
+        }));
+
+        configs.push(new Config({
             component: 'RadioStylingSampleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxRadioModule', 'RadioStylingSampleComponent'],
