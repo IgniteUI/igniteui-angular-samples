@@ -42,6 +42,7 @@ import { InputGroupSample6Component } from "./input-group/input-group-sample-6/i
 import { InputGroupStyleComponent } from "./input-group/input-group-styling/input-group-styling.component";
 import { InputTextSelectionComponent } from "./input-group/input-text-selection/input-text-selection.component";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
+import { RadioGroupVerticalComponent } from "./radio/radio-group-vertical/radio-group-vertical.component";
 import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.component";
 import { RadioSample2Component } from "./radio/radio-sample-2/radio-sample-2.component";
@@ -276,6 +277,11 @@ export const dataEntriesRoutes: Routes = [
         component: RadioGroupSampleComponent,
         data: dataEntriesRoutesData["radio-group-sample"],
         path: "radio-group-sample"
+    },
+    {
+        component: RadioGroupVerticalComponent,
+        data: dataEntriesRoutesData["radio-group-vertical"],
+        path: "radio-group-vertical"
     },
     {
         component: RadioStylingSampleComponent,
