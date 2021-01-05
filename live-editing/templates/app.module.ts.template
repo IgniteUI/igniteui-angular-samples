@@ -8,14 +8,8 @@ import { AppComponent } from "./app.component";{imports}
 
 @NgModule({
   bootstrap: [AppComponent],
-  declarations: [
-    AppComponent{ngDeclarations}
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule{ngImports}
-  ],
+  declarations: [{ngDeclarations}],
+  imports: [{ngImports}],
   providers: [{ngProviders}],
   entryComponents: [{ngEntryComponents}],
   schemas: [{ngSchemas}]
