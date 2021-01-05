@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid [height]="'500px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="handlePreLoad()">
+    <igx-grid igxPreventDocumentScroll #grid [height]="'480px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="handlePreLoad()">
         <igx-column [field]="'ProductID'"></igx-column>
         <igx-column [field]="'ProductName'"></igx-column>
         <igx-column [field]="'UnitPrice'" dataType="number" [formatter]="formatCurrency"></igx-column>

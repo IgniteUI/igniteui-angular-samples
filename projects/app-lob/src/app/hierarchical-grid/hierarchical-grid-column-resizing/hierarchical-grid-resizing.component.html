@@ -1,5 +1,6 @@
+<div class="grid__wrapper">
 <igx-hierarchical-grid igxPreventDocumentScroll class="hierarchicalGrid" [data]="localdata" (onColumnResized)="onResize($event)" [autoGenerate]="false"
-    [height]="'500px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
+    [height]="'480px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
     <igx-column field="Artist" [resizable]="true"></igx-column>
     <igx-column field="Photo" [resizable]="true" [minWidth]="'115px'">
         <ng-template igxCell let-cell="cell">
@@ -43,3 +44,4 @@
         <igx-column field="Headliner" [resizable]="true"></igx-column>
     </igx-row-island>
 </igx-hierarchical-grid>
+</div>

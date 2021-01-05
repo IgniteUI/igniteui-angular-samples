@@ -9,7 +9,7 @@
         </div>
     </ng-template>
 
-    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [rowSelection]="selectionMode" height="480px"
+    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [rowSelection]="selectionMode" height="520px"
         displayDensity="compact" [allowFiltering]="true" width="100%">
         <igx-column field="Name" dataType="string" [movable]="true" [sortable]="true" [resizable]="true" width="200px"></igx-column>
         <igx-column-group [movable]="true" [pinned]="false" header="General Information" [headerTemplate]="columnGroupTemplate">

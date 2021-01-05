@@ -1,5 +1,5 @@
 <div class="grid-container">
-        <igx-grid igxPreventDocumentScroll #sourceGrid [data]="data1" [height]="'480px'" [width]="'640px'" [autoGenerate]="false"
+        <igx-grid igxPreventDocumentScroll #sourceGrid [data]="data1" [height]="'480px'" [autoGenerate]="false"
             [rowDraggable]="true" [primaryKey]="'ID'" (onRowDragStart)="onRowDragStart($event)"
             (onRowDragEnd)="onRowDragEnd($event)" [cellSelection]="'none'" [rowSelection]="selectionMode">
             <igx-column [field]="'ID'" [header]="'ID'" width="100px"></igx-column>
@@ -20,7 +20,7 @@
             </ng-template>
         </igx-grid>
         
-        <igx-grid igxPreventDocumentScroll #targetGrid igxDrop [data]="data2" [height]="'480px'" [width]="'640px'" [autoGenerate]="false"
+        <igx-grid igxPreventDocumentScroll #targetGrid igxDrop [data]="data2" [height]="'480px'" [autoGenerate]="false"
             [emptyGridTemplate]="dragHereTemplate" (enter)="onEnter($event)" (leave)="onLeave($event)"
             (dropped)="onDropAllowed($event)" [primaryKey]="'ID'">
             <igx-column [field]="'ID'" [header]="'ID'" width="100px"></igx-column>
