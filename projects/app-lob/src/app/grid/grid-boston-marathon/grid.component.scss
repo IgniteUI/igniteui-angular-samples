@@ -162,8 +162,8 @@ $progressBar-sample-theme: igx-progress-linear-theme(
 }
 
 .grid__wrapper {
-    width: 1000px;
     margin: 0 auto;
+    padding: 16px;
 }
 
 @media (max-width: 1000px) {

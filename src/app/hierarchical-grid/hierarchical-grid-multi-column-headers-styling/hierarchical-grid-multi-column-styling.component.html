@@ -1,4 +1,5 @@
-<igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid [data]="localdata" [height]="'500px'" [width]="'100%'" displayDensity="compact">
+<div class="grid__wrapper">
+<igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid [data]="localdata" [height]="'470px'" [width]="'100%'" displayDensity="compact">
     <igx-column field="CustomerID"></igx-column>
     <igx-column-group header="General Information">
         <igx-column field="CompanyName"></igx-column>
@@ -50,3 +51,4 @@
     </igx-row-island>
 
 </igx-hierarchical-grid>
+</div>
