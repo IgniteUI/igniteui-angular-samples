@@ -29,13 +29,8 @@ export class AppComponent implements OnInit {
             })
            )
            .subscribe((event) => {
-            if (!event.snapshot.data['title'] && !event.snapshot.data['description']){
-                this.seoService.updateTitle(event.parent.snapshot.data['title']);
-                this.seoService.updateDescription(event.parent.snapshot.data['description'])
-            }else{
-                this.seoService.updateTitle(event.snapshot.data['title']);
-                this.seoService.updateDescription(event.snapshot.data['description'])
-            }
+            this.seoService.updateHeadProperties(event.snapshot.data['title'] ?? event.parent.snapshot.data['title'],
+            event.snapshot.data['title'] ?? event.parent.snapshot.data['description'], window.location.href)
         });
         this.createThemeStyle();
     }
