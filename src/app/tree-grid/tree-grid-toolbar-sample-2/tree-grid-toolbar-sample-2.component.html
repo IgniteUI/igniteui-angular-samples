@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <igx-tree-grid igxPreventDocumentScroll #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID"
-        [autoGenerate]="false" height="400px" width="900px" (onToolbarExporting)="configureExport($event)">
+        [autoGenerate]="false" height="400px" (onToolbarExporting)="configureExport($event)">
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>Grid toolbar</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>

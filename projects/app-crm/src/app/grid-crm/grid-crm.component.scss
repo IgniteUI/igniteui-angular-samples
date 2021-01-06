@@ -200,7 +200,7 @@
         background: igx-color($crm-grid-palette, "secondary", 500);
     }
     .igx-grid-toolbar__title {
-        display: none;
+        max-width: 68ch;
     }
 }
 

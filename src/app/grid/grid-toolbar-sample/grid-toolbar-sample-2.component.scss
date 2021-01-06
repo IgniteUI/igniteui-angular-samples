@@ -1,27 +1,31 @@
 .grid__wrapper {
-    margin: 15px;
-}
-
-.control_panel {
-    width: 700px;
-    margin-bottom: 10px;
-}
-
-.cell__inner {
+    margin: 16px;
     display: flex;
     align-items: center;
-    height: 100%;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.cell__inner {
-    position: relative;
-    justify-content: space-between;
+.control-panel {
+    margin-bottom: 16px;
+
+    &__switches {
+        margin-top: 16px;
+
+        > * {
+            margin-left: 32px;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+        }
+    }
 }
 
-.athlete_name {
-    margin-left: 30px;
+.athlete-name {
+    margin-left: 8px;
 }
 
-.country_name {
-    margin-left: 30px;
+.country-name {
+    margin-left: 8px;
 }

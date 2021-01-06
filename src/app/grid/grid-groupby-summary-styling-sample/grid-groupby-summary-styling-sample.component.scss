@@ -68,7 +68,7 @@ $custom-theme: igx-grid-summary-theme(
         @include igx-grid-summary($custom-theme);
     }
     display: block;
-    padding: 8px;
+    padding: 16px;
 }
 
 .summary-chooser {

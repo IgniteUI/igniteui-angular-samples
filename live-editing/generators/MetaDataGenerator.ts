@@ -3,11 +3,10 @@
 import * as fs from "fs";
 import { Generator } from "./Generator";
 import { MetaData } from "./misc/MetaData";
-import { StyleSyntax } from "./misc/StyleSyntax";
 
 export class MetaDataGenerator extends Generator {
-    constructor(styleSyntax: StyleSyntax = StyleSyntax.Sass) {
-        super(styleSyntax);
+    constructor() {
+        super();
     }
 
     public Generate() {

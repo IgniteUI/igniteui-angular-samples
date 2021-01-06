@@ -1,11 +1,7 @@
 .grid__wrapper {
     margin: 0 auto;
-    padding: 5px;
+    padding: 16px;
     transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-
-    igx-input-group {
-        width: 80%;
-    }
 
     igx-grid {
         margin-top: 25px;

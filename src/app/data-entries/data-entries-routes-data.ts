@@ -45,6 +45,7 @@ export const dataEntriesRoutesData = {
     "radio-sample-2": { displayName: "Radio Button Binding", parentName: "Radio" },
     "radio-sample-3": { displayName: "Radio Label Position", parentName: "Radio" },
     "radio-group-sample": { displayName: "Radio Group", parentName: "Radio" },
+    "radio-group-vertical": { displayName: "Vertical Radio Group", parentName: "Radio" },
     "radio-styling-sample": { displayName: "Styling Radio Buttons", parentName: "Radio" },
     "switch-sample-1": { displayName: "Switch Overview", parentName: "Switch" },
     "switch-sample-2": { displayName: "Multiple Switches", parentName: "Switch" },
