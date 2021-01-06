@@ -12,7 +12,6 @@ export class AppComponent implements OnInit{
     constructor(private seoService: SEOService) {}
 
     public ngOnInit() {
-        this.seoService.updateTitle(this.title);
-        this.seoService.updateDescription(this.metaDesc);
+        this.seoService.updateHeadProperties(this.title,this.metaDesc,window.location.href)
     }
 }
