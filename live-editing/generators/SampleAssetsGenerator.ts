@@ -184,37 +184,39 @@ export class SampleAssetsGenerator extends Generator {
     }
 
     private _getAppModuleConfig(config: Config, configImports, configAdditionalImports?) {
+        let defaultNgDeclarations = ["AppComponent"];
+        let defaultNgImports = ["BrowserModule", "BrowserAnimationsModule","FormsModule"];
         let appModuleTemplate = fs.readFileSync(APP_MODULE_TEMPLATE_PATH, "utf8");
 
         let imports = this._getAppModuleImports(config, configImports, configAdditionalImports);
 
-        let appModuleNgDeclarations: string[] = config.appModuleConfig.ngDeclarations;
-        let ngDeclarations = "," + this._formatAppModuleTypes(appModuleNgDeclarations, true, 2);
+        let appModuleNgDeclarations: string[] = defaultNgDeclarations.concat(config.appModuleConfig.ngDeclarations);
+        let ngDeclarations = this._formatAppModuleTypes(appModuleNgDeclarations, true, 1, "\r\n");
 
-        let appModuleNgImports: string[] = config.appModuleConfig.ngImports;
+        let appModuleNgImports: string[] = defaultNgImports.concat(config.appModuleConfig.ngImports);
 
-        let ngImports = "," + this._formatAppModuleTypes(appModuleNgImports, true, 2);
+        let ngImports = this._formatAppModuleTypes(appModuleNgImports, true, 1, "\r\n");
 
         let ngProviders = "";
         if (config.appModuleConfig.ngProviders !== undefined &&
             config.appModuleConfig.ngProviders !== null &&
             config.appModuleConfig.ngProviders.length > 0) {
             let appModuleNgProviders: string[] = config.appModuleConfig.ngProviders;
-            ngProviders = this._formatAppModuleTypes(appModuleNgProviders, false, 2, "\r\n\t");
+            ngProviders = this._formatAppModuleTypes(appModuleNgProviders, false, 1, "\r\n");
         }
 
         let ngEntryComponents = "";
         if (config.appModuleConfig.ngEntryComponents !== undefined &&
             config.appModuleConfig.ngEntryComponents.length > 0) {
             let appModuleNgEntryComponents: string[] = config.appModuleConfig.ngEntryComponents;
-            ngEntryComponents = this._formatAppModuleTypes(appModuleNgEntryComponents, false, 2, "\r\n\t");
+            ngEntryComponents = this._formatAppModuleTypes(appModuleNgEntryComponents, false, 1, "\r\n");
         }
 
         let schemas = "";
         if (config.appModuleConfig.schemas !== undefined &&
             config.appModuleConfig.schemas.length > 0) {
             let appModuleSchemas: string[] = config.appModuleConfig.schemas;
-            schemas = this._formatAppModuleTypes(appModuleSchemas, false, 2, "\r\n\t");
+            schemas = this._formatAppModuleTypes(appModuleSchemas, false, 1, "\r\n");
         }
 
         let additionalAdjustments = "";
