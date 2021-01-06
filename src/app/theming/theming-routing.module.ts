@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { AnimationsSampleComponent } from "./animations/animations.component";
 import { DarkThemeSampleComponent } from "./dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "./default-theme-sample/default-theme-sample.component";
 import { DisplayDensityComponent } from "./display-density/display-density.component";
@@ -45,6 +46,11 @@ export const themingRoutes: Routes = [
         component: CardSampleShadowComponent,
         data: themingRoutesData["card-sample-shadow"],
         path: "card-sample-shadow"
+    },
+    {
+        component: AnimationsSampleComponent,
+        data: themingRoutesData["animations"],
+        path: "animations"
     }
 ];
 
