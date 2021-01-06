@@ -5,7 +5,7 @@
         (playAction)="onPlayAction($event)">
     </app-finjs-controllers>
     <app-finjs-grid #finGrid
-        (selectedDataChange)="onSelectionChanged($event)"
+        (selectedDataChanged)="setChartData($event)"
         (keyDown)="dialog.open()"
         (chartColumnKeyDown)="openSingleRowChart($event)">
     </app-finjs-grid>

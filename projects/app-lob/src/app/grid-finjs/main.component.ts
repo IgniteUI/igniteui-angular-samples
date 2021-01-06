@@ -79,6 +79,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
                 break;
             }
             case 'chart': {
+                this.setChartData(this.finGrid.grid.selectedRows);
                 this.dialog.open()
                 break;
             }
@@ -89,14 +90,13 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
         }
     }
 
-    public onSelectionChanged(args: any[]) {
+    public setChartData(args: any[]) {
         this.chartData = [];
         args.forEach(row => {
             this.chartData.push(this.finGrid.data[row]);
             this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1,
                 this.finGrid.data[row]);
         });
-        this.chartData = args;
         this.setLabelIntervalAndAngle();
         this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
     }
