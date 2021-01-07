@@ -1,4 +1,4 @@
-<div class="hgrid-wrapper">
+<div class="hgrid__wrapper">
     <div class="control_panel">
         <igx-input-group>
             <label for="toolbarTitle" igxLabel>Toolbar title</label>
@@ -10,7 +10,7 @@
             <igx-switch [(ngModel)]="enableExport">Exporting</igx-switch>
         </div>
     </div>
-    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="data" height="500px" width="100%" rowHeight="65px">
+    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="data" height="390px" width="100%" rowHeight="65px">
     <igx-grid-toolbar>
         <igx-grid-toolbar-title>{{ toolbarTitle }}</igx-grid-toolbar-title>
         <igx-grid-toolbar-actions>

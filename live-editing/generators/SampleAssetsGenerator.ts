@@ -2,11 +2,9 @@
 // tslint:disable:prefer-const
 import * as fs from "fs";
 import * as path from "path";
-import { SassCompiler } from "../services/SassCompiler";
 import { Config } from "./../configs/core/Config";
 import { DependencyResolver } from "./../services/DependencyResolver";
 import { Generator, SAMPLE_APP_FOLDER, SAMPLE_SRC_FOLDER } from "./Generator";
-import { StyleSyntax } from "./misc/StyleSyntax";
 
 import { LiveEditingFile } from "./misc/LiveEditingFile";
 import { SampleDefinitionFile } from "./misc/SampleDefinitionFile";
@@ -18,11 +16,9 @@ const APP_MODULE_TEMPLATE_PATH = path.join(__dirname, "../templates/app.module.t
 
 const COMPONENT_STYLE_FILE_EXTENSION = "scss";
 const COMPONENT_FILE_EXTENSIONS = ["ts", "html", COMPONENT_STYLE_FILE_EXTENSION];
-const GO_DIR_BACK_REG_EX = new RegExp(/\.\.\//g);
 
 export class SampleAssetsGenerator extends Generator {
     private _dependencyResolver: DependencyResolver;
-    private _sassCompiler: SassCompiler;
     private _componentRoutes: Map<string, string>;
     private _generatedSamples: Map<string, string>;
     private _logsEnabled: boolean;
@@ -31,8 +27,8 @@ export class SampleAssetsGenerator extends Generator {
     private _logsUtilitiesFiles: number;
     private _tsImportsService: TsImportsService;
 
-    constructor(styleSyntax: StyleSyntax = StyleSyntax.Sass, showLogs?: boolean) {
-        super(styleSyntax);
+    constructor(showLogs?: boolean) {
+        super();
         this._tsImportsService = new TsImportsService();
 
         this._logsEnabled = showLogs;
@@ -42,7 +38,6 @@ export class SampleAssetsGenerator extends Generator {
         console.log("Live-Editing - SampleAssetsGenerator... ");
 
         this._dependencyResolver = new DependencyResolver();
-        this._sassCompiler = new SassCompiler();
 
         this._componentRoutes = new Map<string, string>();
         this._generatedSamples = new Map<string, string>();
@@ -105,7 +100,6 @@ export class SampleAssetsGenerator extends Generator {
     private _generateSampleAssets(config: Config, configImports: Map<string, string>, configAdditionalImports?) {
         let sampleFiles = this._getComponentFiles(config);
         let sampleFilesCount =  sampleFiles.length;
-        this._processComponentFilesStyles(sampleFiles);
         let componentTsContent;
         let componentTsName;
         for (let i = 0; i < sampleFiles.length; i++) {
@@ -119,7 +113,6 @@ export class SampleAssetsGenerator extends Generator {
         let additionalFiles: LiveEditingFile[] = [];
         if (config.additionalFiles !== undefined && config.additionalFiles.length > 0) {
             additionalFiles = this._getAdditionalFiles(config);
-            this._processAdditionalFilesStyles(additionalFiles);
             sampleFiles = sampleFiles.concat(additionalFiles);
         }
 
@@ -168,26 +161,6 @@ export class SampleAssetsGenerator extends Generator {
         return componentFiles;
     }
 
-    private _processComponentFilesStyles(componentFiles: LiveEditingFile[]) {
-        if (this.styleSyntax === StyleSyntax.CSS) {
-            let tsFile: LiveEditingFile;
-            let styleFile: LiveEditingFile;
-            for (let i = 0; i < componentFiles.length; i++) {
-                if (componentFiles[i].path.indexOf(".ts") !== -1) {
-                    tsFile = componentFiles[i];
-                } else if (componentFiles[i].path.indexOf("." + COMPONENT_STYLE_FILE_EXTENSION) !== -1) {
-                    styleFile = componentFiles[i];
-                }
-            }
-
-            let styleFileName = this._getFileName(styleFile.path);
-            styleFile.path = styleFile.path.replace("." + COMPONENT_STYLE_FILE_EXTENSION, ".css");
-            let newStyleFileName = this._getFileName(styleFile.path);
-            styleFile.content = this._sassCompiler.compile(styleFile.content);
-            tsFile.content = tsFile.content.replace(styleFileName, newStyleFileName);
-        }
-    }
-
     private _getAdditionalFiles(config: Config): LiveEditingFile[] {
         let additionalFiles = new Array<LiveEditingFile>();
         for (let i = 0; i < config.additionalFiles.length; i++) {
@@ -202,31 +175,6 @@ export class SampleAssetsGenerator extends Generator {
         return additionalFiles;
     }
 
-    private _processAdditionalFilesStyles(additionalFiles: LiveEditingFile[]) {
-        if (this.styleSyntax === StyleSyntax.CSS) {
-            for (let i = 0; i < additionalFiles.length; i++) {
-                if (additionalFiles[i].path.indexOf("." + COMPONENT_STYLE_FILE_EXTENSION) !== -1) {
-                    let file = additionalFiles[i];
-                    let fileName = this._getFileName(file.path);
-                    file.path = file.path.replace("." + COMPONENT_STYLE_FILE_EXTENSION, ".css");
-                    file.content = this._sassCompiler.compile(file.content);
-
-                    // additional component detected
-                    if (fileName.indexOf("component") !== -1) {
-                        let newFileName = this._getFileName(file.path);
-                        let componentFileName = newFileName.replace(".css", ".ts");
-                        for (let j = 0; j < additionalFiles.length; j++) {
-                            if (additionalFiles[j].path.indexOf(componentFileName) !== -1) {
-                                additionalFiles[j].content = additionalFiles[j].content.replace(fileName, newFileName);
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     private _getAppComponentHtml(componentTsContent, usesRouting) {
         let selectorRegex = /selector:[\s]*["']([a-zA-Z0-9-]+)["']/g;
         let selectorComponent = selectorRegex.exec(componentTsContent)[1];
@@ -236,37 +184,39 @@ export class SampleAssetsGenerator extends Generator {
     }
 
     private _getAppModuleConfig(config: Config, configImports, configAdditionalImports?) {
+        let defaultNgDeclarations = ["AppComponent"];
+        let defaultNgImports = ["BrowserModule", "BrowserAnimationsModule","FormsModule"];
         let appModuleTemplate = fs.readFileSync(APP_MODULE_TEMPLATE_PATH, "utf8");
 
         let imports = this._getAppModuleImports(config, configImports, configAdditionalImports);
 
-        let appModuleNgDeclarations: string[] = config.appModuleConfig.ngDeclarations;
-        let ngDeclarations = "," + this._formatAppModuleTypes(appModuleNgDeclarations, true, 2);
+        let appModuleNgDeclarations: string[] = defaultNgDeclarations.concat(config.appModuleConfig.ngDeclarations);
+        let ngDeclarations = this._formatAppModuleTypes(appModuleNgDeclarations, true, 1, "\r\n");
 
-        let appModuleNgImports: string[] = config.appModuleConfig.ngImports;
+        let appModuleNgImports: string[] = defaultNgImports.concat(config.appModuleConfig.ngImports);
 
-        let ngImports = "," + this._formatAppModuleTypes(appModuleNgImports, true, 2);
+        let ngImports = this._formatAppModuleTypes(appModuleNgImports, true, 1, "\r\n");
 
         let ngProviders = "";
         if (config.appModuleConfig.ngProviders !== undefined &&
             config.appModuleConfig.ngProviders !== null &&
             config.appModuleConfig.ngProviders.length > 0) {
             let appModuleNgProviders: string[] = config.appModuleConfig.ngProviders;
-            ngProviders = this._formatAppModuleTypes(appModuleNgProviders, false, 2, "\r\n\t");
+            ngProviders = this._formatAppModuleTypes(appModuleNgProviders, false, 1, "\r\n");
         }
 
         let ngEntryComponents = "";
         if (config.appModuleConfig.ngEntryComponents !== undefined &&
             config.appModuleConfig.ngEntryComponents.length > 0) {
             let appModuleNgEntryComponents: string[] = config.appModuleConfig.ngEntryComponents;
-            ngEntryComponents = this._formatAppModuleTypes(appModuleNgEntryComponents, false, 2, "\r\n\t");
+            ngEntryComponents = this._formatAppModuleTypes(appModuleNgEntryComponents, false, 1, "\r\n");
         }
 
         let schemas = "";
         if (config.appModuleConfig.schemas !== undefined &&
             config.appModuleConfig.schemas.length > 0) {
             let appModuleSchemas: string[] = config.appModuleConfig.schemas;
-            schemas = this._formatAppModuleTypes(appModuleSchemas, false, 2, "\r\n\t");
+            schemas = this._formatAppModuleTypes(appModuleSchemas, false, 1, "\r\n");
         }
 
         let additionalAdjustments = "";
