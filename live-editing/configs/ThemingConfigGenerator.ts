@@ -141,9 +141,6 @@ export class ThemingConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['AnimationsSample2Component'],
                 ngImports: ['IgxCardModule', 'IgxButtonModule', 'IgxIconModule', 'IgxDividerModule']
             }),
-            additionalFiles: [
-                "/src/app/layouts/card/card.blueprint.ts"
-            ],
             shortenComponentPathBy: "/theming/animations/"
         }));
 
