@@ -2,9 +2,10 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { IgxButtonGroupModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule,
-    IgxDialogModule, IgxDropDownModule, IgxGridModule, IgxIconModule, IgxInputGroupModule,
+    IgxDialogModule, IgxDividerModule, IgxDropDownModule, IgxGridModule, IgxIconModule, IgxInputGroupModule,
     IgxLayoutModule, IgxListModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxToggleModule } from "igniteui-angular";
-import { AnimationsSampleComponent } from "./animations/animations.component";
+import { AnimationsSampleComponent } from "./animations/animations-sample-1/animations-sample-1.component";
+import { AnimationsSample2Component } from "./animations/animations-sample-2/animations-sample-2.component";
 import { DarkThemeSampleComponent } from "./dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "./default-theme-sample/default-theme-sample.component";
 import { DisplayDensityComponent } from "./display-density/display-density.component";
@@ -23,7 +24,8 @@ import { ThemingRoutingModule } from "./theming-routing.module";
         ShadowsSample2Component,
         ThemeChooserSampleComponent,
         CardSampleShadowComponent,
-        AnimationsSampleComponent
+        AnimationsSampleComponent,
+        AnimationsSample2Component
     ],
     exports: [
         DarkThemeSampleComponent,
@@ -33,7 +35,8 @@ import { ThemingRoutingModule } from "./theming-routing.module";
         ShadowsSample2Component,
         ThemeChooserSampleComponent,
         CardSampleShadowComponent,
-        AnimationsSampleComponent
+        AnimationsSampleComponent,
+        AnimationsSample2Component
     ],
     imports: [
         CommonModule,
@@ -45,6 +48,7 @@ import { ThemingRoutingModule } from "./theming-routing.module";
         IgxCalendarModule,
         IgxDatePickerModule,
         IgxDialogModule,
+        IgxDividerModule,
         IgxDropDownModule,
         IgxGridModule,
         IgxIconModule,

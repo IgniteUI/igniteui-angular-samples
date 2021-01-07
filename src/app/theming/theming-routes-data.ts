@@ -1,7 +1,8 @@
 // tslint:disable:object-literal-sort-keys
 
 export const themingRoutesData = {
-    "animations": { displayName: "Animations", parentName: "Animations" },
+    "animations-sample-1": { displayName: "Angular Animations", parentName: "Animations" },
+    "animations-sample-2": { displayName: "SCSS Animations", parentName: "Animations" },
     "theme-chooser": { displayName: "Style components with custom themes", parentName: "Themes" },
     "default-theme-sample": { displayName: "Default theme sample", parentName: "Themes" },
     "dark-theme-sample": { displayName: "Dark theme sample", parentName: "Themes" },

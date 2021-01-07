@@ -4,11 +4,13 @@ IgxCalendarModule,
 IgxCardModule,
 IgxDatePickerModule,
 IgxDialogModule,
+IgxDividerModule,
 IgxDropDownModule,
 IgxGridModule,
 IgxIconModule,
 IgxInputGroupModule,
 IgxLayoutModule,
+IgxListModule,
 IgxRippleModule,
 IgxSelectModule,
 IgxSnackbarModule,
@@ -120,6 +122,29 @@ export class ThemingConfigGenerator implements IConfigGenerator {
                 ngImports: ['IgxInputGroupModule', 'IgxButtonGroupModule', 'IgxIconModule']
             }),
             shortenComponentPathBy: "/theming/"
+        }));
+
+        configs.push(new Config({
+            component: 'AnimationsSampleComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['AnimationsSampleComponent', 'IgxDialogModule', 'IgxButtonModule', 'IgxListModule'],
+                ngDeclarations: ['AnimationsSampleComponent'],
+                ngImports: ['IgxDialogModule', 'IgxButtonModule', 'IgxListModule']
+            }),
+            shortenComponentPathBy: "/theming/animations/"
+        }));
+
+        configs.push(new Config({
+            component: 'AnimationsSample2Component',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['AnimationsSample2Component', 'IgxCardModule', 'IgxButtonModule', 'IgxIconModule', 'IgxDividerModule'],
+                ngDeclarations: ['AnimationsSample2Component'],
+                ngImports: ['IgxCardModule', 'IgxButtonModule', 'IgxIconModule', 'IgxDividerModule']
+            }),
+            additionalFiles: [
+                "/src/app/layouts/card/card.blueprint.ts"
+            ],
+            shortenComponentPathBy: "/theming/animations/"
         }));
 
         return configs;

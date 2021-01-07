@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { AnimationsSampleComponent } from "./animations/animations.component";
+import { AnimationsSampleComponent } from "./animations/animations-sample-1/animations-sample-1.component";
+import { AnimationsSample2Component } from "./animations/animations-sample-2/animations-sample-2.component";
 import { DarkThemeSampleComponent } from "./dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "./default-theme-sample/default-theme-sample.component";
 import { DisplayDensityComponent } from "./display-density/display-density.component";
@@ -49,8 +50,13 @@ export const themingRoutes: Routes = [
     },
     {
         component: AnimationsSampleComponent,
-        data: themingRoutesData["animations"],
-        path: "animations"
+        data: themingRoutesData["animations-sample-1"],
+        path: "animations-sample-1"
+    },
+    {
+        component: AnimationsSample2Component,
+        data: themingRoutesData["animations-sample-2"],
+        path: "animations-sample-2"
     }
 ];
 

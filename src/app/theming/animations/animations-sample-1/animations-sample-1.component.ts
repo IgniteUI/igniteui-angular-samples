@@ -25,9 +25,9 @@ import {
 } from 'igniteui-angular';
 
 @Component({
-    selector: "app-animations",
-    styleUrls: ["./animations.component.scss"],
-    templateUrl: "./animations.component.html"
+    selector: "animations-sample-1",
+    styleUrls: ["./animations-sample-1.component.scss"],
+    templateUrl: "./animations-sample-1.component.html"
 })
 export class AnimationsSampleComponent {
     @ViewChild('dialog', { static: true, read: IgxDialogComponent })
