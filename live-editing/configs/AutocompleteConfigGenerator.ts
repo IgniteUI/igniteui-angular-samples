@@ -1,9 +1,9 @@
 import {IgxAutocompleteModule,
 IgxDropDownModule,
 IgxInputGroupModule} from 'igniteui-angular';
-import {AppModuleConfig} from './core/AppModuleConfig';
-import {Config} from './core/Config';
-import {IConfigGenerator} from './core/IConfigGenerator';
+
+import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing';
+
 export class AutocompleteConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         AutocompletePipeStartsWith: '../../src/app/data-entries/autocomplete/autocomplete/autocomplete.component'
