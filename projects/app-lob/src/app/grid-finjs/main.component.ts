@@ -97,6 +97,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
             this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1,
                 this.finGrid.data[row]);
         });
+        this.controller.controls[3].disabled = this.chartData.length === 0;
         this.setLabelIntervalAndAngle();
         this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
     }
@@ -134,7 +135,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
         this.chart.yAxisTitle = yAxis;
         this.chart.chartTitle = title;
     }
-
     public setLabelIntervalAndAngle() {
         const intervalSet = this.chartData.length;
         if (intervalSet < 10) {
