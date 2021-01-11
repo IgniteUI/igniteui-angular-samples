@@ -928,15 +928,13 @@ export class FinancialData {
         }
         return currData;
     }
+
     public updateAllPrices(data: any[]): any[] {
-        const currData = [];
         for (const dataRow of data) {
-          const dataObj = Object.assign({}, dataRow);
-          this.randomizeObjectData(dataObj);
-          currData.push(dataObj);
+            this.randomizeObjectData(dataRow)
         }
-        return currData;
-      }
+        return Array.from(data);
+    }
 
     public updateRandomPrices(data: any[]): any {
         const currData = data.slice(0, data.length + 1);
@@ -949,18 +947,8 @@ export class FinancialData {
         }
        // return {data: currData, recordsUpdated: y };
         return currData;
-      }
-    public updateRandomPrices2(data: any[]): IResponse {
-        const currData = data.slice(0, data.length + 1);
-        let y = 0;
-        for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10)) {
-          const dataObj = Object.assign({}, data[i]);
-          this.randomizeObjectData(dataObj);
-          currData[i] = dataObj;
-          y++;
-        }
-        return {data: currData, recordsUpdated: y };
-      }
+    }
+
     private randomizeObjectData(dataObj) {
         const changeP = "Change(%)";
         const res = this.generateNewPrice(dataObj.Price);
