@@ -5,14 +5,13 @@ import { SEOService } from '../../../app-lob/src/app/seo.service';
     styleUrls: ["./app.component.scss"],
     templateUrl: "./app.component.html"
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
     private title: string = "Business propeller - Angular Data Grid Example";
     private metaDesc: string = "In this angular grid example, you can see how users can customize their data view by leveraging the various features built into the grid.";
 
-    constructor(private seoService: SEOService) {}
+    constructor(private seoService: SEOService) { }
 
     public ngOnInit() {
-        this.seoService.updateTitle(this.title);
-        this.seoService.updateDescription(this.metaDesc);
+        this.seoService.updateHeadProperties(this.title, this.metaDesc, window.location.href)
     }
 }
