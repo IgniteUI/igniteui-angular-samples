@@ -11,22 +11,32 @@ const tsNode = require('ts-node').register({
         allowJs: true
     }
 });
+const { generateLiveEditing } = require('igniteui-live-editing');
 const argv = require("yargs").argv;
 
 const submodule = "igniteui-live-editing-samples";
 
-function requireFile(path) {
-    delete require.cache[require.resolve(path)];
-    return require(path);
-}
-
-gulp.task("generate-live-editing", (done) => {
-    const liveEditing = requireFile("./live-editing/LiveEditingManager.ts");
-    const manager = new liveEditing.LiveEditingManager();
-    var appDv = argv.appDv !== undefined && argv.appDv.toLowerCase().trim() === "true"
-
-    manager.run(appDv);
-    done();
+gulp.task("generate-live-editing", async () => {
+    var appDv = argv.appDv !== undefined && argv.appDv.toLowerCase().trim() === "true";
+    const liveEditingOptions = appDv ? 
+    {
+        platform: 'angular', 
+        samplesDir: "./projects/app-lob/src/assets",
+        configGeneratorPath: "./live-editing/generators/AppDVConfigGenerators.ts",
+        module: {
+            moduleName: "DV_MODULE_ROUTES", routerPath: './live-editing/Routes.ts',
+        }
+    }
+        :
+    {
+        platform: 'angular', 
+        samplesDir: "./src/assets",
+        configGeneratorPath: "./live-editing/generators/ConfigGenerators.ts",
+        module: {
+            moduleName: "MODULE_ROUTES", routerPath: './live-editing/Routes.ts',
+        }
+    }
+    await generateLiveEditing(liveEditingOptions);
 });
 
 gulp.task("overwrite-package-json", (done) => {
@@ -49,11 +59,6 @@ gulp.task("watch-live-editing", gulp.series("generate-live-editing", () => {
         gulp.start("generate-live-editing");
     });
 }));
-
-gulp.task("sass-js-compile-check", async() => {
-    var checker = requireFile("./live-editing/services/SassJsCompileChecker.ts");
-    await checker.sassJsCompileChecker.run();
-});
 
 const excludedDirectories = ["index", "assets", "environment"];
 
@@ -158,5 +163,3 @@ const cleanupAngularDemosLob = (cb) => {
 }
 exports.repositoryfyAngularDemos = repositoryfyAngularDemos = gulp.series(cleanupAngularDemos, processDemosWithScss);
 exports.repositoryfyAngularDemosLob = repositoryfyAngularDemosLob =  gulp.series(cleanupAngularDemosLob, processDemosLobWithScss);
-
-

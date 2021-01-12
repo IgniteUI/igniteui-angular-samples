@@ -4,9 +4,7 @@ IgxMaskModule,
 IgxSnackbarModule,
 IgxSwitchModule,
 IgxTextSelectionModule} from 'igniteui-angular';
-import {AppModuleConfig} from './core/AppModuleConfig';
-import {Config} from './core/Config';
-import {IConfigGenerator} from './core/IConfigGenerator';
+import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class MaskConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         DisplayFormatPipe: '../../src/app/data-display/mask/mask-sample-4/mask-sample-4.component',
