@@ -2,9 +2,7 @@ import {IgxDateRangePickerModule,
 IgxIconModule,
 IgxInputGroupModule,
 IgxSelectModule} from 'igniteui-angular';
-import {AppModuleConfig} from './core/AppModuleConfig';
-import {Config} from './core/Config';
-import {IConfigGenerator} from './core/IConfigGenerator';
+import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class DateRangePickerConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         PipeWithoutTownFrom: '../../src/app/scheduling/daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking'
