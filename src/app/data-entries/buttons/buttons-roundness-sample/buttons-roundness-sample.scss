@@ -1,0 +1,23 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$mySpecialButton: igx-button-theme(
+    $flat-border-radius: .5,
+    $raised-border-radius: 30px,
+    $fab-border-radius: 10%,
+    $icon-border-radius: .5 .2 .5 .2
+);
+
+:host ::ng-deep {
+    @include igx-button($mySpecialButton);
+}
+
+.buttons-sample {
+    display: flex;
+}
+
+.buttons-sample_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
