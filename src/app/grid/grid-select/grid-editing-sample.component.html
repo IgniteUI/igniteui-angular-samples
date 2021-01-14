@@ -1,9 +1,9 @@
 <div class="grid__wrapper">
 	<div class="sample__header">
 		<igx-grid #grid1 [data]="data" [primaryKey]="'name'" width="65%" height="600px">
-			<igx-column field="name" header="Character name" [editable]="true" width="20%">
+			<igx-column field="name" header="Character name" [editable]="true" width="24%">
 			</igx-column>
-            <igx-column field="race" header="Race" [editable]="true" [filterable]="false" width="20%">
+            <igx-column field="race" header="Race" [editable]="true" [filterable]="false" width="24%">
 				<ng-template igxCellEditor let-cell="cell" let-value>
 					<igx-select [(ngModel)]="cell.editValue" width="100px" [igxFocus]="true">
 						<igx-select-item *ngFor="let race of races" [value]="race">
@@ -12,7 +12,7 @@
 				</ng-template>
 				<!-- Select Column Template END -->
 			</igx-column>
-			<igx-column field="class" header="Class" [editable]="true" [filterable]="false" width="20%">
+			<igx-column field="class" header="Class" [editable]="true" [filterable]="false" width="24%">
 				<ng-template igxCellEditor let-cell="cell" let-value>
 					<igx-select [(ngModel)]="cell.editValue" width="100px" [igxFocus]="true">
 						<igx-select-item *ngFor="let class of classes" [value]="class">
@@ -21,9 +21,9 @@
 				</ng-template>
 				<!-- Select Column Template END -->
             </igx-column>
-            <igx-column field="age" header="Age" [dataType]="'number'" [editable]="true" width="10%">
+            <igx-column field="age" header="Age" [dataType]="'number'" [editable]="true" width="8%">
 			</igx-column>
-			<igx-column field="alignment" header="Alignment" [editable]="true" [filterable]="false" width="20%">
+			<igx-column field="alignment" header="Alignment" [editable]="true" [filterable]="false" width="24%">
 				<ng-template igxCellEditor let-cell="cell" let-value>
 					<igx-select [(ngModel)]="cell.editValue" width="100px" [igxFocus]="true">
 						<igx-select-item *ngFor="let alignment of alignments" [value]="alignment">

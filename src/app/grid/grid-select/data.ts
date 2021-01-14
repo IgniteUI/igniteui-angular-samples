@@ -140,7 +140,8 @@ export const RACES = [
     "🤖 Warforged",
     "🐡 Locathah",
     "🎭 Changeling",
-    "🐯 Tabaxi"
+    "🐯 Tabaxi",
+    "🌳 Arboren"
 ]
 
 export const CLASSES = [
