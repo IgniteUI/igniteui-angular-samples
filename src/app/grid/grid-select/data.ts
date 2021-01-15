@@ -1,117 +1,117 @@
 export const DATA: any[] = [{
     name: "Stredo",
     class: "Ranger",
-    age: "244",
+    age: "244"
 },
 {
     name: "Haluun",
     class: "Bard",
-    age: 40,
+    age: 40
 },
 {
     name: "Ivellios",
     class: "Monk",
-    age: "244",
+    age: "244"
 },
 {
     name: "Tes",
     class: "Rogue",
-    age: 35,
+    age: 35
 },
 {
     name: "Kalla",
     class: "Barbarian",
-    age: "47",
+    age: "47"
 },
 {
     name: "Halimath Dundragon",
     class: "Monk",
-    age: "149",
+    age: "149"
 },
 {
     name: "Iriphawa",
     class: "Fighter",
-    age: "39",
+    age: "39"
 },
 {
     name: "Quaf",
     class: "Wizard",
-    age: "25",
+    age: "25"
 },
 {
     name: "Rat Scratch",
     class: "Druid",
-    age: "15",
+    age: "15"
 },
 {
     name: "Slicer",
     class: "Cleric",
-    age: "57",
+    age: "57"
 },
 {
     name: "Nereones Ahlorsath",
     class: "Barbarian",
-    age: "95",
+    age: "95"
 },
 {
     name: "Nalvarti Stonecutter",
     class: "Monk",
-    age: "118",
+    age: "118"
 },
 {
     name: "Errk",
     class: "Monk",
-    age: "22",
+    age: "22"
 },
 {
     name: "Seven Thundercloud",
     class: "Paladin",
-    age: "43",
+    age: "43"
 },
 {
     name: "Navarra Chergoba",
     class: "Bard",
-    age: "16",
+    age: "16"
 },
 {
     name: "Sail Snap",
     class: "Sorcerer",
-    age: "56",
+    age: "56"
 },
 {
     name: "Urreek",
     class: "Paladin",
-    age: "17",
+    age: "17"
 },
 {
     name: "Morkral Firetamer",
     class: "Druid",
-    age: "24",
+    age: "24"
 },
 {
     name: "Vithka",
     class: "Rogue",
-    age: "53",
+    age: "53"
 },
 {
     name: "Sandrue Avhoste",
     class: "Bard",
-    age: "19",
+    age: "19"
 },
 {
     name: "Hapah Moq",
     class: "Paladin",
-    age: "34",
+    age: "34"
 },
 {
     name: "Kothar ",
     class: "Cleric",
-    age: "55",
+    age: "55"
 },
 {
     name: "Senen",
     class: "Rogue",
-    age: "40",
+    age: "40"
 },
 ];
 
