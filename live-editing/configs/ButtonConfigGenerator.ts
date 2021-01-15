@@ -3,6 +3,7 @@ IgxButtonModule,
 IgxIconModule,
 IgxRippleModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import { ButtonsRoundnessComponent } from '../../src/app/data-entries/buttons/buttons-roundness-sample/buttons-roundness-sample';
 export class ButtonConfigGenerator implements IConfigGenerator {
 
 
@@ -39,6 +40,16 @@ export class ButtonConfigGenerator implements IConfigGenerator {
                     'ButtonsDisplayDensityComponent'],
                 ngDeclarations: ['ButtonsDisplayDensityComponent'],
                 ngImports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule', 'IgxButtonGroupModule']
+            }),
+            shortenComponentPathBy: "/data-entries/buttons/"
+        }));
+
+        configs.push(new Config({
+            component: 'ButtonsRoundnessComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule', 'ButtonsRoundnessComponent'],
+                ngDeclarations: ['ButtonsRoundnessComponent'],
+                ngImports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule']
             }),
             shortenComponentPathBy: "/data-entries/buttons/"
         }));
