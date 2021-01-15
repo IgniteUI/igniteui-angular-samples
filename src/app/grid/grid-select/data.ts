@@ -112,7 +112,7 @@ export const DATA: any[] = [{
     name: "Senen",
     class: "Rogue",
     age: "40"
-},
+}
 ];
 
 export const ALIGNMENTS = [
