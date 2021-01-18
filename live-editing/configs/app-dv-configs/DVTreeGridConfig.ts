@@ -10,9 +10,8 @@ IgxToggleModule,
 IgxTreeGridModule} from 'igniteui-angular';
 import {IgxSparklineCoreModule,
 IgxSparklineModule} from 'igniteui-angular-charts';
-import {AppModuleConfig} from '../core/AppModuleConfig';
-import {Config} from '../core/Config';
-import {IConfigGenerator} from '../core/IConfigGenerator';
+import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing';
+
 export class DVTreeGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         'LocalDataService': '../../../projects/app-lob/src/app/grid-finjs/localData.service',
