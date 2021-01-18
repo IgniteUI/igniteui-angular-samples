@@ -13,8 +13,13 @@
 }
 
 .dialogNewRecord {
-    margin: 10px;
-    padding: 10px;;
+    > * {
+        margin-bottom: 8px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .igx-input-group {

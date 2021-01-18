@@ -20,15 +20,16 @@ h4 {
     margin-bottom: 10px;
 }
 
-.dialogNewSinger,.dialogNewAlbum {
-    margin: 10px;
-    padding: 10px;;
+.dialogNewSinger {
+    > * {
+        margin-bottom: 8px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
-.igx-input-group {
-    margin-bottom: 10px;
-    padding: 5px;
-}
 .igx-checkbox {
     margin-top: 5px;
     margin-bottom: 5px;
