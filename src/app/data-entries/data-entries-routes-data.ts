@@ -19,6 +19,7 @@ export const dataEntriesRoutesData = {
     "buttons-sample-8": { displayName: "Outlined Button", parentName: "Buttons" },
     "buttons-disabled-sample": { displayName: "Disabled Button", parentName: "Buttons" },
     "buttons-display-density": { displayName: "Display Density", parentName: "Buttons" },
+    "buttons-roundness-sample": { displayName: "Components Roundness", parentName: "Buttons" },
     "buttons-style": { displayName: "Button Style", parentName: "Buttons" },
     "checkbox-sample-1": { displayName: "Simple Checkbox", parentName: "Checkbox" },
     "checkbox-sample-2": { displayName: "Multiple Checkboxes", parentName: "Checkbox" },
