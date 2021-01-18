@@ -43,6 +43,16 @@ export class ButtonConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/data-entries/buttons/"
         }));
 
+        configs.push(new Config({
+            component: 'ButtonsRoundnessComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule', 'ButtonsRoundnessComponent'],
+                ngDeclarations: ['ButtonsRoundnessComponent'],
+                ngImports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule']
+            }),
+            shortenComponentPathBy: "/data-entries/buttons/"
+        }));
+
         // button style
         configs.push(new Config({
             component: 'ButtonsStyleComponent',
