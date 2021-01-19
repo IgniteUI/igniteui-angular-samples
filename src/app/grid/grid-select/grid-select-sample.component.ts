@@ -4,9 +4,9 @@ import { IgxDialogComponent, IgxGridComponent, IGridCellEventArgs } from "ignite
 import { DATA, ALIGNMENTS, RACES, CLASSES } from "./data";
 
 @Component({
-    selector: "app-grid-editing-sample",
-    styleUrls: ["./grid-editing-sample.component.scss"],
-    templateUrl: "./grid-editing-sample.component.html"
+    selector: "app-grid-select-sample",
+    styleUrls: ["./grid-select-sample.component.scss"],
+    templateUrl: "./grid-select-sample.component.html"
 })
 export class GridSelectComponent implements OnInit {
 
