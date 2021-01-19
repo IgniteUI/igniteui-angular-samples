@@ -22,10 +22,7 @@ IgxLegendModule,
 IgxPieChartModule,
 IgxSparklineCoreModule,
 IgxSparklineModule} from 'igniteui-angular-charts';
-import {DependenciesType} from '../../services/DependenciesType';
-import {AppModuleConfig} from '../core/AppModuleConfig';
-import {Config} from '../core/Config';
-import {IConfigGenerator} from '../core/IConfigGenerator';
+import { Config, IConfigGenerator, AppModuleConfig, DependenciesType } from 'igniteui-live-editing';
 export class DVGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         'LocalDataService': '../../../projects/app-lob/src/app/grid-finjs/localData.service',

@@ -2,10 +2,7 @@ import {IgxButtonGroupModule,
 IgxButtonModule,
 IgxIconModule,
 IgxRippleModule} from 'igniteui-angular';
-import { ButtonsRoundnessComponent } from '../../src/app/data-entries/buttons/buttons-roundness-sample/buttons-roundness-sample';
-import {AppModuleConfig} from './core/AppModuleConfig';
-import {Config} from './core/Config';
-import {IConfigGenerator} from './core/IConfigGenerator';
+import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class ButtonConfigGenerator implements IConfigGenerator {
 
 

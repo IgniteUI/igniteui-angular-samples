@@ -8,9 +8,7 @@ IgxIconModule,
 IgxOverlayService,
 IgxSwitchModule,
 IgxToggleModule} from 'igniteui-angular';
-import {AppModuleConfig} from './core/AppModuleConfig';
-import {Config} from './core/Config';
-import {IConfigGenerator} from './core/IConfigGenerator';
+import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class OverlayConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         MyDynamicCardComponent: '../../src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component'
