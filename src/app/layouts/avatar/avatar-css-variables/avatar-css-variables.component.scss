@@ -1,0 +1,31 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+@include igx-core();
+@include igx-theme($palette: $light-material-palette);
+@include igx-palette-vars($light-material-palette, $contrast: true);
+
+$custom-avatar-schema: extend($_light-avatar, (
+   icon-background: var(--igx-grays-400),
+   icon-color: var(--igx-grays-800),
+   initials-background: var(--igx-grays-400),
+   initials-color: var(--igx-grays-800)
+));
+
+@include igx-avatar(
+    igx-avatar-theme(
+        $schema: $custom-avatar-schema,
+    )
+);
+
+//Sample related styling
+.avatars-wrapper {
+    display: flex;
+}
+
+.avatar-sample {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin: 16px 8px;
+}
+
