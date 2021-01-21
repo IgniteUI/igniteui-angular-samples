@@ -1,0 +1,44 @@
+.grid__wrapper {
+    margin: 0 16px;
+}
+
+.dialogNewRecord {
+    margin: 10px;
+    padding: 10px;
+    #discontinued {
+        margin-top: 15px; 
+    }
+}
+
+:host{
+    ::ng-deep{
+        .igx-grid {
+            margin-top: 10px;
+        }
+        .igx-checkbox {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding-top: 8px;
+            padding-bottom: 5px;
+        }
+        .reorderLevelInput {
+            color: black;
+            width: 100%;
+        }
+        @media screen and (max-width: 934px) {
+            .igx-grid {
+                overflow-x: none;
+            }
+        }
+    }
+}
+
+.default-theme {
+    .addProdBtn.igx-button--raised {
+        background-color: lightgrey;
+        color: black;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.26)
+        }
+    }
+}
