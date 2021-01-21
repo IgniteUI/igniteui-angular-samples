@@ -1,8 +1,13 @@
 <div class="wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid [primaryKey]="'Artist'" [data]="localdata" height="750px" [displayDensity]="'cosy'" [columnHiding]="true" [columnPinning]="true" [autoGenerate]="false"
+    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid [primaryKey]="'Artist'" [data]="localdata" height="750px" [displayDensity]="'cosy'" [autoGenerate]="false"
                            [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
                            [uniqueColumnValuesStrategy]="singersColumnValuesStrategy">
-        <igx-grid-toolbar></igx-grid-toolbar>
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
 
         <igx-column field="Photo" [filterable]="false">
             <ng-template igxCell let-cell="cell">
