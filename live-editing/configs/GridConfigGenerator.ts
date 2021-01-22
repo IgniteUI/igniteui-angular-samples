@@ -1228,9 +1228,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridSelectComponent',
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/grid-select/data.ts", "/src/app/grid/grid-select/characters.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSelectModule', 'IgxDialogModule', 'GridSelectComponent' ],
+                imports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSelectModule', 'GridSelectComponent' ],
                 ngDeclarations: ['GridSelectComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSelectModule', 'IgxDialogModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSelectModule'],
             })
         }));
 
