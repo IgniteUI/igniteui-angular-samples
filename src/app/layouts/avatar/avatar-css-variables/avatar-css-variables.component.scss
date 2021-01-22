@@ -1,31 +1,24 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import "~igniteui-angular/lib/core/styles/themes/index";
+@import "~bootstrap/scss/bootstrap";
 
 @include igx-core();
-@include igx-theme($palette: $light-material-palette);
-@include igx-palette-vars($light-material-palette, $contrast: true);
 
-$custom-avatar-schema: extend($_light-avatar, (
-   icon-background: var(--igx-grays-400),
-   icon-color: var(--igx-grays-800),
-   initials-background: var(--igx-grays-400),
-   initials-color: var(--igx-grays-800)
-));
+:host {
+    // Include the Bootstrap theme colors
+    @each $color, $value in $theme-colors {
+        --#{$color}: #{$value};
+    }
 
-@include igx-avatar(
-    igx-avatar-theme(
-        $schema: $custom-avatar-schema,
-    )
-);
-
-//Sample related styling
-.avatars-wrapper {
-    display: flex;
+    ::ng-deep {
+        @include igx-avatar(igx-avatar-theme(
+            $initials-background: var(--primary),
+            $initials-color: var(--dark),
+            $icon-background: var(--info),
+            $icon-color: var(--light)
+        ));
+    }
 }
 
-.avatar-sample {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    margin: 16px 8px;
+igx-avatar {
+    margin: 8px;
 }
-

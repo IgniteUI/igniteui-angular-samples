@@ -33,6 +33,7 @@ export class AvatarConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['AvatarCSSVariablesComponent'],
                 ngImports: ['IgxAvatarModule']
             }),
+            additionalDependencies: ['bootstrap'],
             shortenComponentPathBy: "/layouts/avatar/"
         }));
 
