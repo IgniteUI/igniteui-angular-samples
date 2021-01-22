@@ -19,7 +19,6 @@ export class GridSelectComponent implements OnInit {
     public character;
 
     public generateRandomData(data) {
-
         return data.map((e) => {
             const indexAlignments = Math.floor(Math.random() * ALIGNMENTS.length);
             e.alignment = ALIGNMENTS[indexAlignments];
