@@ -1,21 +1,22 @@
 @import "~igniteui-angular/lib/core/styles/themes/index";
-@import "~bootstrap/scss/bootstrap";
 
 @include igx-core();
 
 :host {
-    // Include the Bootstrap theme colors
-    @each $color, $value in $theme-colors {
-        --#{$color}: #{$value};
-    }
+    --teal-light: #64ffda;
+    --teal-dark: #004d40;
+    --green-dark: #558B2F;
+    --gray-light: #fafafa;
 
     ::ng-deep {
-        @include igx-avatar(igx-avatar-theme(
-            $initials-background: var(--primary),
-            $initials-color: var(--dark),
-            $icon-background: var(--info),
-            $icon-color: var(--light)
-        ));
+        @include igx-avatar(
+            igx-avatar-theme(
+                $initials-background: var(--teal-light),
+                $initials-color: var(--teal-dark),
+                $icon-background: var(--green-dark),
+                $icon-color: var(--gray-light)
+            )
+        );
     }
 }
 
