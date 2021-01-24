@@ -34,6 +34,12 @@ export class TreeGridRowReorderComponent {
     private moveRow(draggedRow: IgxTreeGridRowComponent, cursorPosition: Point): void {
         const row: IgxTreeGridRowComponent = this.catchCursorPosOnElem(this.treeGrid.rowList.toArray(), cursorPosition);
         if (!row) { return; }
+
+        if (row.rowData.ID === draggedRow.rowData.ID) {
+            /** dragged row and targeted row are same */
+            return;
+        }
+
         if (row.rowData.ParentID === -1) {
             this.performDrop(draggedRow, row).ParentID = -1;
         } else {
