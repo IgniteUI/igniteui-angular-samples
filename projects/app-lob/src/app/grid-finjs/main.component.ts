@@ -25,7 +25,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     public chartData = [];
     public selectionMode = 'multiple';
     private subscription$;
-    public theme = false;
+    public darkTheme = false;
     public volume = 1000;
     public frequency = 500;
     private _timer;
@@ -48,7 +48,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
                 break;
             }
             case 'theme': {
-                this.changeTheme(event.value);
+                this.darkTheme = event.value;
                 break;
             }
             default:
@@ -178,18 +178,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
         }, 200);
     }
 
-    /**
-     * the below code is needed when accessing the sample through the navigation
-     * it will style all the space below the sample component element, but not the navigation menu
-     */
-    public changeTheme(dark: true) {
-        const parentEl = this.parentComponentEl();
-        if (dark && parentEl.classList.contains('main')) {
-            parentEl.classList.add('fin-dark-theme');
-        } else {
-            parentEl.classList.remove('fin-dark-theme');
-        }
-    }
 
     public stopFeed() {
         if (this._timer) {
@@ -206,14 +194,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
 
     private tickerAllPrices(data: any) {
         this.finGrid.data = new FinancialData().updateAllPrices(data);
-    }
-
-    /**
-     * returns the main div container of the Index Component,
-     * if path is /samples/sample-url, or the appRoot, if path is /sample-url
-     */
-    private parentComponentEl() {
-        return this.elRef.nativeElement.parentElement.parentElement;
     }
 
     public ngOnDestroy() {
