@@ -1,7 +1,11 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll #hGrid1 class="hgrid" [data]="data" [columnHiding]="true" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter"
+    <igx-hierarchical-grid igxPreventDocumentScroll #hGrid1 class="hgrid" [data]="data" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter"
     height="300px" [width]="'100%'" [rowHeight]="'65px'" [outlet]="filteringOverlayOutlet">
-        <igx-grid-toolbar></igx-grid-toolbar>
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
 
         <igx-column field="Artist" [sortable]="true" [movable]="true"></igx-column>
         <igx-column field="Photo" [filterable]='false'>
@@ -38,9 +42,13 @@
 
     <br>
 
-    <igx-hierarchical-grid igxPreventDocumentScroll #hGrid2 class="hgrid" [data]="data" [columnHiding]="true" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter"
+    <igx-hierarchical-grid igxPreventDocumentScroll #hGrid2 class="hgrid" [data]="data" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter"
     height="300px" [width]="'100%'" [rowHeight]="'65px'" [outlet]="filteringOverlayOutlet">
-        <igx-grid-toolbar></igx-grid-toolbar>
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
 
         <igx-column field="Artist" [sortable]="true" [movable]="true"></igx-column>
         <igx-column field="Photo" [filterable]='false'>
