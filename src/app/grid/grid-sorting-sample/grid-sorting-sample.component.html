@@ -2,13 +2,14 @@
     <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
         (onSortingDone)="removeSorting($event)">
         <igx-grid-toolbar>
-
+            <igx-grid-toolbar-actions>
             <igx-select [(ngModel)]="currentSortingType" (onSelection)="sortTypeSelection($event)">
                 <label igxLabel>Select Sorting Type</label>
                 <igx-select-item *ngFor="let type of sortingTypes" [value]="type.value">
                     {{type.name}}
                 </igx-select-item>
             </igx-select>
+            </igx-grid-toolbar-actions>
 
         </igx-grid-toolbar>
         <igx-column field="OrderID" header="Order ID">
