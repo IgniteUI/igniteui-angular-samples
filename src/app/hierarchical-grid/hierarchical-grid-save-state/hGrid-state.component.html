@@ -35,10 +35,13 @@
         [columnSelection]="'multiple'"
         displayDensity="cosy"
         [cellSelection]="'multiple'"
-        [paging]="true"
-        [columnPinning]="true"
-        [columnHiding]="true">
-        <igx-grid-toolbar></igx-grid-toolbar>
+        [paging]="true">
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
 
             <igx-column field="Artist" [sortable]="true"></igx-column>
             <igx-column field="Photo" [editable]="false" [sortable]="true">

@@ -1,6 +1,10 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" [columnHiding]="true" height="850px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
-        <igx-grid-toolbar></igx-grid-toolbar>
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="850px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
 
         <igx-column field="ProductName" header="Product Name" [sortable]="true" [movable]="true" [dataType]="'string'">
         </igx-column>
