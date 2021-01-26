@@ -35,7 +35,7 @@ export class TreeGridSelectionSampleComponent implements OnInit {
     public handleRowSelection(event) { }
 
     public selectCellSelectionMode(args) {
-      this.selectionMode = this.selectionModes[args.index].selectMode;
+        this.selectionMode = this.selectionModes[args.index].selectMode;
         this.snackbar.show();
     }
 }
