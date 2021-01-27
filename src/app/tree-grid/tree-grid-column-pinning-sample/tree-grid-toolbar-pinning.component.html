@@ -1,7 +1,11 @@
 <div class="grid__wrapper">
     <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" height="600px"
-        width="100%" [columnPinning]='true'>
-        <igx-grid-toolbar></igx-grid-toolbar>
+        width="100%">
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
 
         <igx-column [field]="'Name'" dataType="string" width="250px"></igx-column>
         <igx-column [field]="'Title'" dataType="string" width="300px" [pinned]='true'></igx-column>
