@@ -1,7 +1,11 @@
 <div class="hgrid_wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  class="hierarchicalGrid" [data]="localdata" [columnHiding]="true" toolbarTitle="Singers"
-    columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden" [height]="'540px'" [width]="'100%'" [rowHeight]="'65px'" [allowFiltering]="true" #hierarchicalGrid >
-        <igx-grid-toolbar></igx-grid-toolbar>
+    <igx-hierarchical-grid igxPreventDocumentScroll  class="hierarchicalGrid" [data]="localdata" hiddenColumnsText="Hidden" [height]="'540px'" [width]="'100%'" [rowHeight]="'65px'" [allowFiltering]="true" #hierarchicalGrid >
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-title>Singers</igx-grid-toolbar-title>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding title="Column Hiding"></igx-grid-toolbar-hiding>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
 
         <igx-column field="Artist" [sortable]="true"></igx-column>
         <igx-column field="Photo">
@@ -15,17 +19,25 @@
         <igx-column field="GrammyNominations" header="Grammy Nominations" [sortable]="true" dataType="number"></igx-column>
         <igx-column field="GrammyAwards" header="Grammy Awards" [sortable]="true" dataType="number"></igx-column>
 
-        <igx-row-island [key]="'Albums'" [autoGenerate]="false" [columnHiding]="true"
-        toolbarTitle="Albums" columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden">
-        <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid"></igx-grid-toolbar>
+        <igx-row-island [key]="'Albums'" [autoGenerate]="false" hiddenColumnsText="Hidden">
+        <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
+            <igx-grid-toolbar-title>Albums</igx-grid-toolbar-title>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding title="Column Hiding"></igx-grid-toolbar-hiding>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
 
             <igx-column field="Album" [sortable]="true"></igx-column>
             <igx-column field="LaunchDate" header="Launch Date" [sortable]="true" [dataType]="'date'"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review" [sortable]="true"></igx-column>
             <igx-column field="USBillboard200" header="US Billboard 200" [sortable]="true"></igx-column>
-        <igx-row-island [key]="'Songs'" [autoGenerate]="false" [columnHiding]="true"
-            toolbarTitle="Songs" columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden">
-        <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid"></igx-grid-toolbar>
+        <igx-row-island [key]="'Songs'" [autoGenerate]="false" hiddenColumnsText="Hidden">
+        <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
+            <igx-grid-toolbar-title>Songs</igx-grid-toolbar-title>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding title="Column Hiding"></igx-grid-toolbar-hiding>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
 
                 <igx-column field="Number" header="No."></igx-column>
                 <igx-column field="Title"></igx-column>

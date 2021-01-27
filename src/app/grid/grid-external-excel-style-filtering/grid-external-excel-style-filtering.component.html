@@ -11,10 +11,17 @@
         </igx-grid-excel-style-filtering>
     </div>
 
-    <igx-grid igxPreventDocumentScroll #grid1 autoGenerate="false" [data]="data" height="653px"
-        [columnHiding]="true" [columnPinning]="true" [exportExcel]="true" [exportCsv]="true" exportText="Export"
-        exportExcelText="Export to Excel" exportCsvText="Export to CSV">
-        <igx-grid-toolbar></igx-grid-toolbar>
+    <igx-grid igxPreventDocumentScroll #grid1 autoGenerate="false" [data]="data" height="653px">
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+                <igx-grid-toolbar-exporter>
+                    <span excelText>Export to Excel</span>
+                    <span csvText>Export to CSV</span>
+                </igx-grid-toolbar-exporter>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
 
         <igx-column field="ProductName" header="Product Name" [dataType]="'string'">
         </igx-column>
