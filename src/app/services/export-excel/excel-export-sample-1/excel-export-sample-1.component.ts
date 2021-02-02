@@ -19,7 +19,7 @@ export class ExcelExportSample1Component implements OnInit {
     { dataType: 'string', field: 'ShipAddress', width: 150, groupable: true},
     { dataType: 'string', field: 'PostalCode', width: 150, groupable: true },
     { dataType: 'date', field: 'OrderDate', width: 150, groupable: true },
-    { dataType: 'number', field: 'Quantity', width: 150, groupable: true },
+    { dataType: 'number', field: 'Quantity', width: 150, groupable: true }
   ];
 
   constructor(private excelExportService: IgxExcelExporterService) {
