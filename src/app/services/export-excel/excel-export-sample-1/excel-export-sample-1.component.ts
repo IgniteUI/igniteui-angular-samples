@@ -1,24 +1,32 @@
-import { Component, ViewChild } from "@angular/core";
-
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxExcelExporterOptions,
          IgxExcelExporterService,
          IgxGridComponent } from "igniteui-angular";
+import { INVOICE_DATA } from "../../../data/invoiceData";
 
 @Component({
   selector: "app-excel-export-sample-1",
   styleUrls: ["./excel-export-sample-1.component.scss"],
   templateUrl: "./excel-export-sample-1.component.html"
 })
-export class ExcelExportSample1Component {
-
+export class ExcelExportSample1Component implements OnInit {
   @ViewChild("igxGrid1", { static: true }) public igxGrid1: IgxGridComponent;
-  public localData = [
-    { Name: "Eric Ridley", Age: "26" },
-    { Name: "Alanis Brook", Age: "22" },
-    { Name: "Jonathan Morris", Age: "23" }
+
+  public data = [];
+  public columns = [
+    { dataType: 'string', field: 'ShipCountry', width: 150, groupable: true },
+    { dataType: 'string', field: 'ShipCity', width: 150, groupable: true },
+    { dataType: 'string', field: 'ShipAddress', width: 150, groupable: true},
+    { dataType: 'string', field: 'PostalCode', width: 150, groupable: true },
+    { dataType: 'date', field: 'OrderDate', width: 150, groupable: true },
+    { dataType: 'number', field: 'Quantity', width: 150, groupable: true },
   ];
 
   constructor(private excelExportService: IgxExcelExporterService) {
+  }
+
+  public ngOnInit(): void {
+    this.data = INVOICE_DATA;
   }
 
   public exportButtonHandler() {
@@ -37,5 +45,4 @@ export class ExcelExportSample1Component {
     */
     this.excelExportService.export(this.igxGrid1, new IgxExcelExporterOptions("ExportFileFromGrid"));
   }
-
 }
