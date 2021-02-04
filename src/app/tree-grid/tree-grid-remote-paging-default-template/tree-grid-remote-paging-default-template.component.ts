@@ -15,7 +15,7 @@ export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, Aft
 
     public totalCount = 0;
     public data: Observable<any[]>;
-    public mode = GridPagingMode.remote;
+    public mode = GridPagingMode.Remote;
     @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
     private _dataLengthSubscriber;
 
