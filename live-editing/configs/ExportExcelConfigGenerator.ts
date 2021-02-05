@@ -24,6 +24,7 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'ExcelExportSample1Component',
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxGridModule', 'IgxExcelExporterService', 'ExcelExportSample1Component', 'IgxButtonModule'],
                 ngDeclarations: ['ExcelExportSample1Component'],
