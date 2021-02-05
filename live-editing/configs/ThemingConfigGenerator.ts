@@ -4,18 +4,18 @@ IgxCalendarModule,
 IgxCardModule,
 IgxDatePickerModule,
 IgxDialogModule,
+IgxDividerModule,
 IgxDropDownModule,
 IgxGridModule,
 IgxIconModule,
 IgxInputGroupModule,
 IgxLayoutModule,
+IgxListModule,
 IgxRippleModule,
 IgxSelectModule,
 IgxSnackbarModule,
 IgxToggleModule} from 'igniteui-angular';
-import {AppModuleConfig} from './core/AppModuleConfig';
-import {Config} from './core/Config';
-import {IConfigGenerator} from './core/IConfigGenerator';
+import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class ThemingConfigGenerator implements IConfigGenerator {
 
 
@@ -120,6 +120,26 @@ export class ThemingConfigGenerator implements IConfigGenerator {
                 ngImports: ['IgxInputGroupModule', 'IgxButtonGroupModule', 'IgxIconModule']
             }),
             shortenComponentPathBy: "/theming/"
+        }));
+
+        configs.push(new Config({
+            component: 'AnimationsSampleComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['AnimationsSampleComponent', 'IgxDialogModule', 'IgxButtonModule', 'IgxListModule'],
+                ngDeclarations: ['AnimationsSampleComponent'],
+                ngImports: ['IgxDialogModule', 'IgxButtonModule', 'IgxListModule']
+            }),
+            shortenComponentPathBy: "/theming/animations/"
+        }));
+
+        configs.push(new Config({
+            component: 'AnimationsSample2Component',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['AnimationsSample2Component', 'IgxCardModule', 'IgxButtonModule', 'IgxIconModule', 'IgxDividerModule'],
+                ngDeclarations: ['AnimationsSample2Component'],
+                ngImports: ['IgxCardModule', 'IgxButtonModule', 'IgxIconModule', 'IgxDividerModule']
+            }),
+            shortenComponentPathBy: "/theming/animations/"
         }));
 
         return configs;

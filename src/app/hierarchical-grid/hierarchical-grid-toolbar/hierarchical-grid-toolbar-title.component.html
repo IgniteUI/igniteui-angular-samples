@@ -1,6 +1,9 @@
 <div class="hgrid-wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="localdata" [showToolbar]="true" toolbarTitle="Singers" 
-     [height]="'500px'" [width]="'100%'" [rowHeight]="'65px'">
+    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="data" height="480px" rowHeight="65px">
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-title>Singers</igx-grid-toolbar-title>
+        </igx-grid-toolbar>
+
         <igx-column field="Artist" width="150px"></igx-column>
         <igx-column field="Photo">
             <ng-template igxCell let-cell="cell">
@@ -9,16 +12,25 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="Debut" [formatter]="formatter"></igx-column>
+        <igx-column field="Debut"></igx-column>
         <igx-column field="GrammyNominations" header="Grammy Nominations" width="200px"></igx-column>
         <igx-column field="GrammyAwards" header="Grammy Awards" width="200px"></igx-column>
 
-        <igx-row-island [key]="'Albums'" [autoGenerate]="false" [showToolbar]="true" toolbarTitle="Albums">
+        <igx-row-island key="Albums" [autoGenerate]="false">
+            <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
+                <igx-grid-toolbar-title>Albums</igx-grid-toolbar-title>
+            </igx-grid-toolbar>
+
             <igx-column field="Album"></igx-column>
-            <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
+            <igx-column field="LaunchDate" header="Launch Date" dataType="date"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
             <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
-        <igx-row-island [key]="'Songs'" [autoGenerate]="false" [showToolbar]="true" toolbarTitle="Songs">
+
+        <igx-row-island key="Songs" [autoGenerate]="false">
+            <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
+                <igx-grid-toolbar-title>Songs</igx-grid-toolbar-title>
+            </igx-grid-toolbar>
+
                 <igx-column field="Number" header="No."></igx-column>
                 <igx-column field="Title"></igx-column>
                 <igx-column field="Released" dataType="date"></igx-column>
@@ -26,7 +38,11 @@
         </igx-row-island>
     </igx-row-island>
 
-    <igx-row-island [key]="'Tours'" [autoGenerate]="false" [showToolbar]="true" toolbarTitle="Tours">
+    <igx-row-island key="Tours" [autoGenerate]="false">
+        <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
+            <igx-grid-toolbar-title>Tours</igx-grid-toolbar-title>
+        </igx-grid-toolbar>
+
         <igx-column field="Tour"></igx-column>
         <igx-column field="StartedOn" header="Started on"></igx-column>
         <igx-column field="Location"></igx-column>

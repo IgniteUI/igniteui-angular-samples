@@ -5,7 +5,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule,
-    IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService,
+    IgxCheckboxModule, IgxChipsModule, IgxComboModule, IgxCsvExporterService,
     IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule,
     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule,
     IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
@@ -120,6 +120,7 @@ import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-s
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
 import { GridExportVisualizationComponent } from './grid-export-visualization/grid-export-visualization.component';
+import {GridSelectComponent} from './grid-select/grid-select-sample.component';
 
 @NgModule({
     declarations: [
@@ -230,7 +231,8 @@ import { GridExportVisualizationComponent } from './grid-export-visualization/gr
         RemotePagingBatchEditingComponent,
         GridSortingIndicatorsComponent,
         GridExportVisualizationComponent,
-        GridEditingLifecycleComponent
+        GridEditingLifecycleComponent,
+        GridSelectComponent
     ],
     imports: [
         CommonModule,
@@ -246,7 +248,6 @@ import { GridExportVisualizationComponent } from './grid-export-visualization/gr
         IgxButtonModule,
         IgxCheckboxModule,
         IgxChipsModule,
-        IgxColumnHidingModule,
         IgxComboModule,
         IgxDatePickerModule,
         IgxDialogModule,

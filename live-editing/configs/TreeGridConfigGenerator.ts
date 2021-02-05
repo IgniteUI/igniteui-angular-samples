@@ -5,7 +5,6 @@ IgxButtonGroupModule,
 IgxButtonModule,
 IgxCheckboxModule,
 IgxChipsModule,
-IgxColumnHidingModule,
 IgxCsvExporterService,
 IgxDatePickerModule,
 IgxDialogModule,
@@ -27,9 +26,7 @@ IgxTreeGridModule,
 IgxToggleModule} from 'igniteui-angular';
 import {IgxSparklineCoreModule,
 IgxSparklineModule} from 'igniteui-angular-charts';
-import {AppModuleConfig} from './core/AppModuleConfig';
-import {Config} from './core/Config';
-import {IConfigGenerator} from './core/IConfigGenerator';
+import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class TreeGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive',
@@ -121,9 +118,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/tree-grid/data/employees-flat-detailed.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridColumnHidingSampleComponent', 'IgxRadioModule', 'IgxColumnHidingModule'],
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridColumnHidingSampleComponent', 'IgxRadioModule'],
                 ngDeclarations: ['TreeGridColumnHidingSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxRadioModule', 'IgxColumnHidingModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxRadioModule']
             }),
             component: 'TreeGridColumnHidingSampleComponent',
             shortenComponentPathBy: "/tree-grid/"
@@ -396,9 +393,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/tree-grid/data/employees-flat-avatars.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridToolbarSample1Component', 'IgxAvatarModule',
-                    'IgxExcelExporterService', 'IgxCsvExporterService'],
+                    'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxSwitchModule'],
                 ngDeclarations: ['TreeGridToolbarSample1Component'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxAvatarModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxAvatarModule', 'IgxSwitchModule'],
                 ngProviders: ['IgxExcelExporterService', 'IgxCsvExporterService']
             }),
             component: 'TreeGridToolbarSample1Component',

@@ -1,15 +1,16 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll [data]="data" height="500px" width="100%"
-        [columnSelection]="currentColumnSelection" [showToolbar]="true">
+    <igx-hierarchical-grid igxPreventDocumentScroll [data]="data" height="530px" width="100%"
+        [columnSelection]="currentColumnSelection">
+        <igx-grid-toolbar>
 
-        <ng-template igxToolbarCustomContent let-igxHierarchicalGrid="grid">
             <igx-select [(ngModel)]="currentColumnSelection">
                 <label igxLabel>Column Selection</label>
                 <igx-select-item value="none">None</igx-select-item>
                 <igx-select-item value="single">Single</igx-select-item>
                 <igx-select-item value="multiple">Mulitple</igx-select-item>
             </igx-select>
-        </ng-template>
+
+        </igx-grid-toolbar>
 
         <igx-column field="Artist"></igx-column>
         <igx-column field="Photo" [selectable]="false">

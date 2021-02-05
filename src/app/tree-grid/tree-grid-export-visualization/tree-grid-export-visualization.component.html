@@ -1,8 +1,15 @@
 <div class="grid__wrapper">
     <igx-tree-grid igxPreventDocumentScroll [data]="localData" [autoGenerate]="false" primaryKey="ID"
-        foreignKey="ParentID" height="350px" width="100%" primaryKey="ID"
-        [showToolbar]="true" exportText="Export" [exportExcel]="true" exportExcelText="Export To Excel"
-        [exportCsv]="true" exportCsvText="Export To CSV">
+        foreignKey="ParentID" height="350px" width="100%" primaryKey="ID">
+        <igx-grid-toolbar #toolbar>
+            <igx-grid-toolbar-actions>
+                <button [disabled]="toolbar.showProgress" (click)="longRunning(toolbar)" igxButton>
+                    Simulate long running operation
+                </button>
+                <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
+
         <igx-column field="ID" header="Product ID" [dataType]="'string'">
         </igx-column>
         <igx-column field="Name" header="Product Name" [dataType]="'string'">

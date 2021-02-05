@@ -18,6 +18,7 @@ import { ButtonGroupSample5Component } from "./buttonGroup/button-group-sample-5
 import { ButtonGroupStyleComponent } from "./buttonGroup/button-group-style/button-group-style.component";
 import { ButtonsDisabledComponent } from "./buttons/buttons-disabled-sample/buttons-disabled-sample";
 import { ButtonsDisplayDensityComponent } from "./buttons/buttons-display-density/buttons-display-density.component";
+import { ButtonsRoundnessComponent } from "./buttons/buttons-roundness-sample/buttons-roundness-sample";
 import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
 import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
 import { ButtonsSample3Component } from "./buttons/buttons-sample-3/buttons-sample-3.component";
@@ -50,6 +51,7 @@ import { InputGroupSample6Component } from "./input-group/input-group-sample-6/i
 import { InputGroupStyleComponent } from "./input-group/input-group-styling/input-group-styling.component";
 import { InputTextSelectionComponent } from "./input-group/input-text-selection/input-text-selection.component";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
+import { RadioGroupVerticalComponent } from "./radio/radio-group-vertical/radio-group-vertical.component";
 import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.component";
 import { RadioSample2Component } from "./radio/radio-sample-2/radio-sample-2.component";
@@ -73,6 +75,7 @@ import { SwitchStylingComponent } from "./switch/switch-styling/switch-styling.c
         ButtonGroupSample3Component,
         ButtonGroupSample5Component,
         ButtonsDisabledComponent,
+        ButtonsRoundnessComponent,
         ButtonsSample1Component,
         ButtonsSample2Component,
         ButtonsSample3Component,
@@ -103,6 +106,7 @@ import { SwitchStylingComponent } from "./switch/switch-styling/switch-styling.c
         InputGroupStyleComponent,
         MovieComponent,
         ReactiveFormsSampleComponent,
+        RadioGroupVerticalComponent,
         RadioGroupSampleComponent,
         RadioSample1Component,
         RadioSample2Component,

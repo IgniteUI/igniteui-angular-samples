@@ -12,11 +12,6 @@ export const samplesRoutes: Routes = [
         path: "home"
     },
     {
-        data: ["GridCRMModule"],
-        loadChildren: () => import("./grid-crm//grid-crm/grid-crm.module").then(m => m.GridCRMModule),
-        path: "grid-crm"
-    },
-    {
         data: ["GridFinjsModule"],
         loadChildren: () => import("./grid-finjs/grid-finjs.module").then(m => m.GridFinjsModule),
         path: "finjs-sample"
@@ -66,7 +61,7 @@ export const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

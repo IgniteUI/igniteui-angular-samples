@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
 
 import { ExcelExportComponent } from "./excel-export.component";
 
@@ -6,7 +6,7 @@ describe("ExcelExportComponent", () => {
   let component: ExcelExportComponent;
   let fixture: ComponentFixture<ExcelExportComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ExcelExportComponent ]
     })

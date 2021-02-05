@@ -1,6 +1,16 @@
-<div class="hgrid-wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="localdata" [showToolbar]="true" toolbarTitle="Singers" 
-     [height]="'500px'" [width]="'100%'" [rowHeight]="'65px'">
+<div class="hgrid__wrapper">
+    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="data" height="480px" width="100%" rowHeight="65px">
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-title>Singers</igx-grid-toolbar-title>
+            <igx-grid-toolbar-actions>
+                <button igxButton="flat" igxRipple (click)="hierarchicalGrid.clearSort()">
+                    <igx-icon fontSet="material">clear</igx-icon>
+                    Clear Sort
+                </button>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
+
         <igx-column field="Artist" width="150px" sortable="true"></igx-column>
         <igx-column field="Photo">
             <ng-template igxCell let-cell="cell">
@@ -9,20 +19,26 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="Debut" sortable="true" [formatter]="formatter"></igx-column>
+        <igx-column field="Debut" sortable="true"></igx-column>
         <igx-column field="GrammyNominations" header="Grammy Nominations" width="200px" sortable="true"></igx-column>
         <igx-column field="GrammyAwards" header="Grammy Awards" width="200px" sortable="true"></igx-column>
 
-        <ng-template igxToolbarCustomContent let-igxHierarchicalGrid="grid">
-            <button igxButton="flat" igxRipple igxRippleCentered="true" (click)="igxHierarchicalGrid.clearSort()">
-                <igx-icon fontSet="material">clear</igx-icon>
-                Clear Sort
-            </button>
-        </ng-template>
 
-        <igx-row-island [key]="'Albums'" [autoGenerate]="false" [showToolbar]="true" toolbarTitle="Albums">
+
+        <igx-row-island key="Albums" [autoGenerate]="false">
+            <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
+                <igx-grid-toolbar-title>Albums</igx-grid-toolbar-title>
+                <button igxButton="flat" igxRipple igxRippleCentered="true" (click)="childGrid.clearSort()">
+                    <igx-icon fontSet="material">clear</igx-icon>
+                    Clear Sort
+                </button>
+                <igx-grid-toolbar-actions>
+                    <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+                </igx-grid-toolbar-actions>
+            </igx-grid-toolbar>
+
             <igx-column field="Album" [sortable]="true"></igx-column>
-            <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'" [sortable]="true"></igx-column>
+            <igx-column field="LaunchDate" header="Launch Date" dataType="date" [sortable]="true"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review" [sortable]="true"></igx-column>
             <igx-column field="USBillboard200" header="US Billboard 200" [sortable]="true"></igx-column>
             <igx-row-island [key]="'Songs'" [autoGenerate]="false">
@@ -31,15 +47,10 @@
                 <igx-column field="Released" dataType="date"></igx-column>
                 <igx-column field="Genre"></igx-column>
             </igx-row-island>
-            <ng-template igxToolbarCustomContent let-childGrid="grid">
-                <button igxButton="flat" igxRipple igxRippleCentered="true" (click)="childGrid.clearSort()">
-                    <igx-icon fontSet="material">clear</igx-icon>
-                    Clear Sort
-                </button>
-            </ng-template>
+
     </igx-row-island>
 
-    <igx-row-island [key]="'Tours'" [autoGenerate]="false">
+    <igx-row-island key="Tours" [autoGenerate]="false">
         <igx-column field="Tour"></igx-column>
         <igx-column field="StartedOn" header="Started on"></igx-column>
         <igx-column field="Location"></igx-column>

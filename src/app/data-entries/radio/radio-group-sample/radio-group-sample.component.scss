@@ -1,24 +1,14 @@
-:host {
-    display: flex;
-    flex-flow: column nowrap;
-    padding: 16px;
+.sample-wrapper {
+    margin: 16px;
 }
 
 form {
-    max-width: 300px;
+    max-width: 380px;
     margin-bottom: 16px;
 }
 
-igx-radio-group {
-    display: flex;
-    flex-flow: column nowrap;
-    padding-top: 16px;
-    padding-bottom: 16px;
-}
-
 igx-radio {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 8px;
 }
 
 .igx-button--raised {

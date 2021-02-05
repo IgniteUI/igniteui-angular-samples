@@ -4,7 +4,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule,
-    IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService,
+    IgxChipsModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService,
     IgxFocusModule, IgxGridModule, IgxHierarchicalGridAPIService, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule,
     IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
     IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
@@ -95,6 +95,7 @@ import { HierarchicalGridCellSelectionComponent } from './hierarchical-grid-cell
         HGridSummarySampleComponent,
         HGridSummaryStylingComponent,
         HGridSaveStateComponent,
+        HGridAboutComponent,
         HGridPagingSampleComponent,
         HGridPagingStyleSampleComponent,
         HGridRemotePagingSampleComponent,
@@ -171,7 +172,6 @@ import { HierarchicalGridCellSelectionComponent } from './hierarchical-grid-cell
         IgxButtonModule,
         IgxCheckboxModule,
         IgxChipsModule,
-        IgxColumnHidingModule,
         IgxComboModule,
         IgxDatePickerModule,
         IgxDialogModule,

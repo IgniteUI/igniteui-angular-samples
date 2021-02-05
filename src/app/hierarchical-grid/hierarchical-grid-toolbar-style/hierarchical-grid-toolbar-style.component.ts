@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { SINGERS } from "../data";
 
 @Component({
@@ -6,13 +6,10 @@ import { SINGERS } from "../data";
   styleUrls: ["./hierarchical-grid-toolbar-style.component.scss"],
   templateUrl: "./hierarchical-grid-toolbar-style.component.html"
 })
-export class HierarchicalGridToolbarStyleComponent implements OnInit {
-    public localdata;
+export class HierarchicalGridToolbarStyleComponent {
+    public data: any[];
 
     constructor() {
-        this.localdata = SINGERS;
-    }
-
-    public ngOnInit(): void {
+        this.data = SINGERS;
     }
 }

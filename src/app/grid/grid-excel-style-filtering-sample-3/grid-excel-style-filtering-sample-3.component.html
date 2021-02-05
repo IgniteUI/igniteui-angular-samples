@@ -1,5 +1,15 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" [showToolbar]="true" [columnHiding]="true" height="650px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="650px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
+
+
+        <ng-template igxExcelStyleHeaderIcon>
+            <igx-icon>filter_alt</igx-icon>
+        </ng-template>
 
         <igx-grid-excel-style-filtering [minHeight]="'380px'" [maxHeight]="'500px'">
             <igx-excel-style-column-operations>

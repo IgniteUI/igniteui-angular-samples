@@ -2,7 +2,7 @@
     <igx-advanced-filtering-dialog class="advanced-dialog" [grid]="hierarchicalGrid">
     </igx-advanced-filtering-dialog>
 
-    <igx-hierarchical-grid igxPreventDocumentScroll  [data]="localdata" [autoGenerate]="false" [height]="'400px'" [width]="'800px'"
+    <igx-hierarchical-grid igxPreventDocumentScroll  [data]="localdata" [autoGenerate]="false" [height]="'400px'"
         [rowHeight]="'65px'" #hierarchicalGrid>
         <igx-column field="Artist"></igx-column>
         <igx-column field="Photo" [filterable]="false">
@@ -16,7 +16,9 @@
         <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number"></igx-column>
         <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number"></igx-column>
 
-        <igx-row-island [key]="'Albums'" [autoGenerate]="false" [showToolbar]="true">
+        <igx-row-island [key]="'Albums'" [autoGenerate]="false">
+            <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid"></igx-grid-toolbar>
+
             <igx-column field="Album"></igx-column>
             <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review" dataType="number"></igx-column>
@@ -29,7 +31,9 @@
             </igx-row-island>
         </igx-row-island>
 
-        <igx-row-island [key]="'Tours'" [autoGenerate]="false" [showToolbar]="true">
+        <igx-row-island [key]="'Tours'" [autoGenerate]="false">
+            <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid"></igx-grid-toolbar>
+
             <igx-column field="Tour"></igx-column>
             <igx-column field="StartedOn" header="Started on"></igx-column>
             <igx-column field="Location"></igx-column>

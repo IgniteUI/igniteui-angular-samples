@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
 
 import { CsvExportSample1Component } from "./csv-export-sample-1.component";
 
@@ -6,7 +6,7 @@ describe("CsvExportSample1Component", () => {
   let component: CsvExportSample1Component;
   let fixture: ComponentFixture<CsvExportSample1Component>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CsvExportSample1Component ]
     })

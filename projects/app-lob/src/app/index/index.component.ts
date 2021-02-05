@@ -2,7 +2,6 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from "
 import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
-import { gridcrmRoutesData } from "../grid-crm/grid-crm/grid-crm-routes-data";
 import { gridDynamicChartRoutesData } from "../grid-dynamic-chart-data/grid-dynamic-chart-data-routes-data";
 import { gridfinjsRoutesData} from "../grid-finjs/grid-finjs-routes-data";
 import { gridsRoutesData } from "../grid/grid-routes-data";
@@ -44,10 +43,6 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "grid",
             routesData: gridsRoutesData
-        },
-        {
-            path: "grid-crm",
-            routesData: gridcrmRoutesData
         },
         {
             path: "hierarchical-grid",

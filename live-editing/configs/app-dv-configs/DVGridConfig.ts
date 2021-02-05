@@ -22,10 +22,7 @@ IgxLegendModule,
 IgxPieChartModule,
 IgxSparklineCoreModule,
 IgxSparklineModule} from 'igniteui-angular-charts';
-import {DependenciesType} from '../../services/DependenciesType';
-import {AppModuleConfig} from '../core/AppModuleConfig';
-import {Config} from '../core/Config';
-import {IConfigGenerator} from '../core/IConfigGenerator';
+import { Config, IConfigGenerator, AppModuleConfig, DependenciesType } from 'igniteui-live-editing';
 export class DVGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         'LocalDataService': '../../../projects/app-lob/src/app/grid-finjs/localData.service',
@@ -66,24 +63,24 @@ export class DVGridConfigGenerator implements IConfigGenerator {
             })
         }));
 
-        configs.push(new Config({
-            component: 'GridCRMComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/services/athletesData.ts"],
-            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'HttpClientModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule',
-                    'IgxGridModule', 'IgxIconModule', 'IgxInputGroupModule', 'IgxProgressBarModule',
-                    'IgxRippleModule', 'IgxSwitchModule', 'IgxToggleModule', 'IgxCheckboxModule',
-                    'IgxExcelExporterService', 'GridCRMComponent', 'IgxSparklineCoreModule', 'IgxSparklineModule'],
-                ngDeclarations: ['GridCRMComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule', 'IgxGridModule',
-                    'IgxIconModule', 'IgxInputGroupModule', 'IgxProgressBarModule',
-                    'IgxRippleModule', 'IgxSwitchModule', 'IgxToggleModule', 'IgxCheckboxModule',
-                    'HttpClientModule', 'IgxSparklineCoreModule', 'IgxSparklineModule'],
-                ngProviders: ['IgxExcelExporterService']
-            }),
-            shortenComponentPathBy: "/grid-crm/"
-        }));
+        // configs.push(new Config({
+        //     component: 'GridCRMComponent',
+        //     additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/services/athletesData.ts"],
+        //     additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
+        //     appModuleConfig: new AppModuleConfig({
+        //         imports: ['IgxPreventDocumentScrollModule', 'HttpClientModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule',
+        //             'IgxGridModule', 'IgxIconModule', 'IgxInputGroupModule', 'IgxProgressBarModule',
+        //             'IgxRippleModule', 'IgxSwitchModule', 'IgxToggleModule', 'IgxCheckboxModule',
+        //             'IgxExcelExporterService', 'GridCRMComponent', 'IgxSparklineCoreModule', 'IgxSparklineModule'],
+        //         ngDeclarations: ['GridCRMComponent'],
+        //         ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule', 'IgxGridModule',
+        //             'IgxIconModule', 'IgxInputGroupModule', 'IgxProgressBarModule',
+        //             'IgxRippleModule', 'IgxSwitchModule', 'IgxToggleModule', 'IgxCheckboxModule',
+        //             'HttpClientModule', 'IgxSparklineCoreModule', 'IgxSparklineModule'],
+        //         ngProviders: ['IgxExcelExporterService']
+        //     }),
+        //     shortenComponentPathBy: "/grid-crm/"
+        // }));
 
         configs.push(new Config({
             component: 'FinJSDemoComponent',

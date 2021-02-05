@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import {
     CsvFileTypes,
     IColumnExportingEventArgs,
@@ -14,15 +14,15 @@ import { EMPLOYEE_FLAT_AVATARS_DATA } from "../data/employees-flat-avatars";
     styleUrls: ["./tree-grid-toolbar-sample-2.component.scss"],
     templateUrl: "./tree-grid-toolbar-sample-2.component.html"
 })
-export class TreeGridToolbarSample2Component implements OnInit {
+export class TreeGridToolbarSample2Component {
 
     public data: any[];
 
-    public ngOnInit() {
+    constructor() {
         this.data = EMPLOYEE_FLAT_AVATARS_DATA();
     }
 
-    public toolbarExportingHandler(args: IGridToolbarExportEventArgs) {
+    public configureExport(args: IGridToolbarExportEventArgs) {
         // You can customize the exporting from this event
         const options: IgxExporterOptionsBase = args.options;
         options.fileName = "Custom Title";

@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxHierarchicalGridComponent } from "igniteui-angular";
+import { Component } from "@angular/core";
 import { SINGERS } from "../data";
 
 @Component({
@@ -8,18 +7,11 @@ import { SINGERS } from "../data";
     templateUrl: "hierarchical-grid-toolbar-title.component.html"
 })
 
-export class HGridToolbarTitleSampleComponent implements OnInit {
-    public localdata;
+export class HGridToolbarTitleSampleComponent {
 
-    @ViewChild("hierarchicalGrid", { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
+    public data: any[];
 
     constructor() {
-        this.localdata = SINGERS;
+        this.data = SINGERS;
     }
-    public ngOnInit(): void {
-
-    }
-
-    public formatter = (a) => a;
 }

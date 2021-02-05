@@ -12,7 +12,7 @@ import { RemotePagingService } from "./remotePagingService";
 export class HGridRemotePagingDefaultTemplateComponent implements OnInit, AfterViewInit, OnDestroy {
 
     public totalCount = 0;
-    public mode = GridPagingMode.remote;
+    public mode = GridPagingMode.Remote;
     @ViewChild("hierarchicalGrid", { static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;
     private _dataLengthSubscriber;
 

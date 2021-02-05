@@ -4,9 +4,7 @@ IgxDropDownModule,
 IgxExcelExporterService,
 IgxGridModule,
 IgxTreeGridModule} from 'igniteui-angular';
-import {AppModuleConfig} from './core/AppModuleConfig';
-import {Config} from './core/Config';
-import {IConfigGenerator} from './core/IConfigGenerator';
+import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class ExportExcelConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         PasteHandler: '../../src/app/grid/grid-paste/paste-handler.directive'
@@ -26,6 +24,7 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'ExcelExportSample1Component',
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxGridModule', 'IgxExcelExporterService', 'ExcelExportSample1Component', 'IgxButtonModule'],
                 ngDeclarations: ['ExcelExportSample1Component'],

@@ -51,12 +51,7 @@ export class ThemeChooserSampleComponent implements OnInit {
 
     private deletedRow;
 
-    private _dialogOverlaySettings2 = {
-        closeOnOutsideClick: true,
-        modal: true,
-        outlet: this.outlet,
-        scrollStrategy: new CloseScrollStrategy()
-    };
+    private _dialogOverlaySettings2;
 
     constructor() { }
 
@@ -96,5 +91,11 @@ export class ThemeChooserSampleComponent implements OnInit {
         this.datePicker.outlet = this.outlet;
         this.data = DATA;
         this.record = new Record();
+        this._dialogOverlaySettings2 = {
+            closeOnOutsideClick: true,
+            modal: true,
+            outlet: this.outlet,
+            scrollStrategy: new CloseScrollStrategy()
+        };
     }
 }

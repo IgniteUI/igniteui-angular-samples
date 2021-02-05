@@ -1,0 +1,42 @@
+<div class="main__wrapper" [class.fin-dark-theme]="darkTheme">
+    <app-finjs-controllers #controllers
+        (switchChanged)="onSwitchChanged($event)"
+        (volumeChanged)="onVolumeChanged($event)"
+        (playAction)="onPlayAction($event)">
+    </app-finjs-controllers>
+    <app-finjs-grid #finGrid
+        (selectedDataChanged)="setChartData($event)"
+        (keyDown)="dialog.open()"
+        (chartColumnKeyDown)="openSingleRowChart($event)">
+    </app-finjs-grid>
+</div>
+
+<igx-dialog #dialog closeOnOutsideSelect="true" (onClose)="onCloseHandler($event)">
+    <div (keydown)="closeDialog($event)">
+        <igx-dialog-title> Chart </igx-dialog-title>
+
+        <div>
+            <igx-category-chart #chart1 [dataSource]="chartData" width="900px" chartType="column" xAxisInterval="20"
+                xAxisLabelAngle="90" [includedProperties]="properties" height="400px" [tooltipTemplate]="seriesTooltip">
+            </igx-category-chart>
+        </div>
+
+        <div igxDialogActions>
+            <button igxButton (click)="dialog.close()" [igxFocus]="dialog.isOpen">ОК</button>
+        </div>
+    </div>
+</igx-dialog>
+
+<ng-template let-series="series" let-item="item" #seriesTooltip>
+    <div class="tooltipTable">
+        <div class="tooltipRow">
+            <div><b>Category:</b> {{ item.Category }}</div>
+        </div>
+        <div class="tooltipRow">
+            <div><b>Country:</b> {{ item.Country }}</div>
+        </div>
+        <div class="tooltipRow">
+            <div><b>Price:</b> ${{ item.Price }}</div>
+        </div>
+    </div>
+</ng-template>
