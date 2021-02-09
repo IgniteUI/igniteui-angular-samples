@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxExcelExporterOptions,
          IgxExcelExporterService,
          IgxGridComponent } from "igniteui-angular";
-import { INVOICE_DATA } from "../../../data/invoiceData";
+import { INVOICE_DATA } from "../data/invoiceData";
 
 @Component({
   selector: "app-excel-export-sample-1",
@@ -46,3 +46,4 @@ export class ExcelExportSample1Component implements OnInit {
     this.excelExportService.export(this.igxGrid1, new IgxExcelExporterOptions("ExportFileFromGrid"));
   }
 }
+
