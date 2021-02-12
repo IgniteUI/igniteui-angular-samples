@@ -1234,6 +1234,16 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        configs.push(new Config({
+            component: 'GridFormattedFilteringStrategyComponent',
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['GridFormattedFilteringStrategyComponent', 'IgxGridModule', 'IgxButtonGroupModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['GridFormattedFilteringStrategyComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxButtonGroupModule']
+            })
+        }));
+
         return configs;
     }
 }
