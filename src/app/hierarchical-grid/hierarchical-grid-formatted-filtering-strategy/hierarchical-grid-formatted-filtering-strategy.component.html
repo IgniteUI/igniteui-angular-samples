@@ -1,0 +1,30 @@
+<div class="wrapper">
+    <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [autoGenerate]="false"
+        [allowFiltering]='true' filterMode="excelStyleFilter" [filterStrategy]="filterStrategy"
+        height="600px" [width]="'100%'" #hierarchicalGrid>
+        <igx-column field="Artist" [sortable]="true" [disableHiding]="true"></igx-column>
+        <igx-column field="Debut" header="Debut Decade" [sortable]="true" [disableHiding]="true" [formatter]="decadeFormatter"></igx-column>
+        <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number" [sortable]="true" [disableHiding]="true"></igx-column>
+        <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number" [sortable]="true" [disableHiding]="true"></igx-column>
+
+        <igx-row-island [key]="'Albums'" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter">
+            <igx-column field="Album" [sortable]="true" [disableHiding]="true"></igx-column>
+            <igx-column field="LaunchDate" header="Launch Date" [sortable]="true" [disableHiding]="true" [dataType]="'date'"></igx-column>
+            <igx-column field="BillboardReview" header="Billboard Review" [sortable]="true" [disableHiding]="true" dataType="number"></igx-column>
+            <igx-column field="USBillboard200" header="US Billboard 200" [sortable]="true" [disableHiding]="true" dataType="number"></igx-column>
+        <igx-row-island [key]="'Songs'" [autoGenerate]="false" >
+                <igx-column field="Number" header="No."></igx-column>
+                <igx-column field="Title"></igx-column>
+                <igx-column field="Released" dataType="date"></igx-column>
+                <igx-column field="Genre"></igx-column>
+        </igx-row-island>
+        </igx-row-island>
+
+        <igx-row-island [key]="'Tours'" [autoGenerate]="false">
+            <igx-column field="Tour"></igx-column>
+            <igx-column field="StartedOn" header="Started on"></igx-column>
+            <igx-column field="Location"></igx-column>
+            <igx-column field="Headliner"></igx-column>
+        </igx-row-island>
+    </igx-hierarchical-grid>
+</div>

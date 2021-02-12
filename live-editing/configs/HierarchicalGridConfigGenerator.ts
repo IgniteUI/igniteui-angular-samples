@@ -719,7 +719,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         const hGridSaveStateSampleConfig = new Config({
             additionalFiles: [
-            "/src/app/directives/prevent-scroll.directive.ts", 
+            "/src/app/directives/prevent-scroll.directive.ts",
             "/src/app/hierarchical-grid/data.ts",
             "/src/app/hierarchical-grid/hierarchical-grid-save-state/about.component.ts",
             "/src/app/hierarchical-grid/hierarchical-grid-save-state/about.component.html"
@@ -727,7 +727,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxHierarchicalGridModule', 'HGridSaveStateComponent', 'HGridAboutComponent', 'IgxPreventDocumentScrollModule', 'Router', 'RouterModule'],
                 ngDeclarations: ['HGridSaveStateComponent', 'HGridAboutComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule',
                     "RouterModule.forRoot([\{component: HGridAboutComponent, path: 'hGrid-state-about'},\{component: HGridSaveStateComponent, path: 'hGrid-state'},\{ path: '', redirectTo: '/hGrid-state', pathMatch: 'full' }])"]
             }),
             component: 'HGridSaveStateComponent'
@@ -780,6 +780,17 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             }),
             component: 'HGridAddRowSampleComponent'
         }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxHierarchicalGridModule', 'HGridFormattedFilteringStrategyComponent', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['HGridFormattedFilteringStrategyComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
+            }),
+            component: 'HGridFormattedFilteringStrategyComponent'
+        }));
+
 
         return configs;
     }
