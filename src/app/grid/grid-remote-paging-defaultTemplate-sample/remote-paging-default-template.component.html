@@ -13,13 +13,11 @@
     <ng-template #customPager let-api>
         <igx-paginator #paginator
             [totalRecords]="totalCount"
-            [page]="page"
-            [selectOptions]="selectOptions"
+            [(page)]="page"
             [(perPage)]="perPage"
             [displayDensity]="grid1.displayDensity"
-            (pageChange)="paginate($event)"
-            (perPageChange)="paginate()"
-            (pagingDone)="pagingDone($event)">
+            (perPageChange)="perPageChange($event)"
+            (paging)="paging($event)">
         </igx-paginator>
     </ng-template>
 </div>
