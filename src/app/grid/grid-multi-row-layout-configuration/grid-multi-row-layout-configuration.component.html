@@ -7,10 +7,10 @@
             </div>
             <div class="layoutListContainer" >
                 <label>Select layout to configure or reorder them:</label>
-                <igx-chips-area style="margin: auto; justify-content: center;" (onReorder)="blocksOrderChanged($event)">
+                <igx-chips-area style="margin: auto; justify-content: center;" (reorder)="blocksOrderChanged($event)">
                     <igx-chip #chip *ngFor="let block of blocks; let blockIndex = index" [style.margin]="'5px'"
                             [id]="block.key" [data]="block" [selected]="block.key === selectedBlock.key" [draggable]="true"
-                            (onClick)="selectedBlock = block" (pointerenter)="onPointerOver(chip)" (pointerleave)="onPointerLeave(chip)">
+                            (chipClick)="selectedBlock = block" (pointerenter)="onPointerOver(chip)" (pointerleave)="onPointerLeave(chip)">
                         {{block.key}}
                         <div class="material-icons igx-icon"
                             [style.opacity]="chip.data.hovered ? '1' : '0'" [style.z-index]="chip.data.hovered ? '1' : '-1'" [style.width]="chip.data.hovered ? '24px' : '0px'"
@@ -19,7 +19,7 @@
                             <igx-icon  id="igx-icon-150" >cancel</igx-icon>
                         </div>
                     </igx-chip>
-                    <igx-chip #addBlock [style.margin]="'5px'" [data]="{ clicked: false }" (onClick)="onAddBlockClick(addBlock)">
+                    <igx-chip #addBlock [style.margin]="'5px'" [data]="{ clicked: false }" (chipClick)="onAddBlockClick(addBlock)">
                         <igx-icon igxPrefix>add_circle_outline</igx-icon>
                         <span *ngIf="!addBlock.data.clicked">{{"Add Layout"}}</span>
                         <igx-input-group *ngIf="addBlock.data.clicked">
@@ -105,7 +105,7 @@
                         <igx-icon  id="igx-icon-150" >cancel</igx-icon>
                     </div>
                 </igx-chip>
-                <igx-chip #addChip [style.margin]="'5px'" [data]="{ clicked: false }" (onClick)="onAddChipClick(addChip)">
+                <igx-chip #addChip [style.margin]="'5px'" [data]="{ clicked: false }" (chipClick)="onAddChipClick(addChip)">
                     <igx-icon igxPrefix>add_circle_outline</igx-icon>
                     <span *ngIf="!addChip.data.clicked">{{"Add Column"}}</span>
                     <igx-input-group *ngIf="addChip.data.clicked">

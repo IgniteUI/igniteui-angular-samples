@@ -6,7 +6,7 @@
         [autoGenerate]="false" [primaryKey]="'ID'" [cellSelection]="'none'">
         <igx-column width='70px' [filterable]='false' [pinned]="true">
             <ng-template igxCell let-cell="cell" let-val>
-                <igx-icon class="pin-icon" (mouseup)="togglePinning(cell.row, $event)" fontSet="filtering-icons"
+                <igx-icon class="pin-icon" (mouseup)="togglePinning(cell.row, $event)" family="filtering-icons"
                     name="{{cell.row.pinned ? 'unpin' : 'pin'}}">
                 </igx-icon>
             </ng-template>

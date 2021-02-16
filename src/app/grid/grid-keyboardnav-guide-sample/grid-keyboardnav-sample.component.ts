@@ -244,7 +244,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         ];
 
 
-        this.listref.onItemClicked.pipe(takeUntil(this._destroyer))
+        this.listref.itemClicked.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 args.event.stopPropagation();
             });

@@ -36,7 +36,7 @@ export class TreeGridToolbarSample2Component {
             csvOptions.valueDelimiter = "\t";
         }
 
-        args.exporter.onColumnExport.subscribe((columnArgs: IColumnExportingEventArgs) => {
+        args.exporter.columnExporting.subscribe((columnArgs: IColumnExportingEventArgs) => {
             // Don't export image field
             columnArgs.cancel = columnArgs.header === "Name";
         });

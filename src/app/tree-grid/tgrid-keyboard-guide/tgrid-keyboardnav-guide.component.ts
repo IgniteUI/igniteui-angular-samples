@@ -232,7 +232,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
                     this._keyboardHandler.selectItem(2);
             });
 
-        this.listref.onItemClicked.pipe(takeUntil(this._destroyer))
+        this.listref.itemClicked.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 args.event.stopPropagation();
             });

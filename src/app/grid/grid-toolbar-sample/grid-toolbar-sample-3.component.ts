@@ -36,7 +36,7 @@ export class GridToolbarSample3Component {
             csvOptions.valueDelimiter = "\t";
         }
 
-        args.exporter.onColumnExport.subscribe((columnArgs: IColumnExportingEventArgs) => {
+        args.exporter.columnExporting.subscribe((columnArgs: IColumnExportingEventArgs) => {
             // Don't export image fields
             columnArgs.cancel = columnArgs.header === "Athlete" ||
                                 columnArgs.header === "Country";
