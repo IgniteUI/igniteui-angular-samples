@@ -192,7 +192,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                 this.headersRenderButton = true;
             });
 
-        this.gridEventEmitters = merge(this.grid.onfilde,
+        this.gridEventEmitters = merge(this.grid.onFilteringDone,
                                        this.grid.onSortingDone,
                                        this.grid.pagingDone,
                                        this.grid.onColumnMoving,
