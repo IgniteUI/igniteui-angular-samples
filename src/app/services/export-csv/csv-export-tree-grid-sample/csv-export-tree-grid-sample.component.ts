@@ -30,7 +30,7 @@ export class TreeGridCsvExportSample1Component implements OnInit {
     /*
     The following code demonstrates how to attach event handlers to exporter specific events
     and also how to customize the column export process.
-    this.csvExportService.onColumnExport.subscribe((args: IColumnExportingEventArgs) => {
+    this.csvExportService.columnExporting.subscribe((args: IColumnExportingEventArgs) => {
       if (args.header == "Age" && args.columnIndex == 1) {
         args.cancel = true;
       }
