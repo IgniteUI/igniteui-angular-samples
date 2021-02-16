@@ -1,20 +1,20 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [allowAdvancedFiltering]="true" [autoGenerate]="false" height="500px" width="100%">
-        <igx-grid-toolbar></igx-grid-toolbar>
-
-        <igx-column field="ProductName" header="Product Name" [sortable]="true" [movable]="true" [dataType]="'string'">
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
+        [autoGenerate]="false" [height]="'500px'" [width]="'100%'" displayDensity="compact">
+        <igx-column field="ProductName" header="Product Name" [sortable]="true" [hasSummary]="true" [editable]="true"
+            [dataType]="'string'">
         </igx-column>
-        <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [sortable]="true" [movable]="true" [dataType]="'string'">
+        <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [sortable]="true" [hasSummary]="true"
+            [editable]="true" [dataType]="'string'">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" [sortable]="true" [movable]="true" dataType="number" [formatter]="formatCurrency">
+        <igx-column field="UnitPrice" header="Unit Price" [sortable]="true" [hasSummary]="true" [editable]="true"
+            dataType="number">
         </igx-column>
-        <igx-column field="OrderDate" header="Order Date" [sortable]="true" [movable]="true" [dataType]="'date'">
+        <igx-column field="OrderDate" header="Order Date" [sortable]="true" [hasSummary]="true" [editable]="true"
+            [dataType]="'date'">
         </igx-column>
-        <igx-column field="Discontinued" header="Discontinued" [sortable]="true" [movable]="true" [dataType]="'boolean'">
-            <ng-template igxCell let-cell="cell" let-val>
-                <img *ngIf="val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
-                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
-            </ng-template>
+        <igx-column field="Discontinued" header="Discontinued" [sortable]="true" [hasSummary]="true" [editable]="true"
+            [dataType]="'boolean'">
         </igx-column>
     </igx-grid>
 </div>
