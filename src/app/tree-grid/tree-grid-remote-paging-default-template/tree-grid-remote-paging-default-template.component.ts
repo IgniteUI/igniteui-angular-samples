@@ -49,7 +49,6 @@ export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, Aft
     }
 
     public paging(event: IPagingEventArgs) {
-        debugger;
         const skip = event.newPage * event.owner.perPage;
         this.remoteService.getData(skip, event.owner.perPage);
     }

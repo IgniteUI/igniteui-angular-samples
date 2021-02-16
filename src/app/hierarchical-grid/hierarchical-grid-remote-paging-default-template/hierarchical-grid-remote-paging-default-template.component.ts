@@ -36,7 +36,6 @@ export class HGridRemotePagingDefaultTemplateComponent implements OnInit, AfterV
 
     public ngAfterViewInit() {
         this.hierarchicalGrid.isLoading = true;
-        debugger;
         const skip = this.page * this.perPage;
         this.remoteService.getData(
             { parentID: null, rootLevel: true, key: "Customers" }, skip, this.perPage)
@@ -79,7 +78,6 @@ export class HGridRemotePagingDefaultTemplateComponent implements OnInit, AfterV
     }
 
     public paging(event: IPagingEventArgs) {
-        debugger;
         const skip = event.newPage * this.perPage;
 
         this.remoteService.getData(

@@ -47,7 +47,6 @@ export class RemotePagingDefaultTemplateComponent implements OnInit, AfterViewIn
     }
 
     public paging(event: IPagingEventArgs) {
-        debugger;
         const skip = event.newPage * this.perPage;
         this.remoteService.getData(skip, this.perPage);
     }
