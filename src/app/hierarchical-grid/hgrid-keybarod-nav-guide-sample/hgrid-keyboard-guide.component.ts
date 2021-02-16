@@ -218,7 +218,7 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
         this.gridTarget = new GridUnderManagement(this.hGrid, this.keyboardHandler, this._destroyer, this.cdr);
         this.gridTarget.subscribe();
 
-        this.listref.onItemClicked.pipe(takeUntil(this._destroyer))
+        this.listref.itemClicked.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 args.event.stopPropagation();
             });

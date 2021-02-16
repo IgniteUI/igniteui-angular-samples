@@ -4,7 +4,7 @@
     [id]="chip.id"
     [selectable]="true"
     [removable]="true"
-    (onRemove)="chipRemoved($event)"
+    (remove)="chipRemoved($event)"
     >
         <igx-icon igxPrefix>{{chip.icon}}</igx-icon>
         {{chip.text}}

@@ -36,7 +36,7 @@
         *ngTemplateOutlet="header; context: { title: 'Type' }"
     ></ng-container>
 
-    <igx-buttongroup (onSelect)="selectPositionStrategy($event)">
+    <igx-buttongroup (selected)="selectPositionStrategy($event)">
         <button
             igxButton
             *ngFor="let item of positionStrategies; let i = index"
@@ -52,7 +52,7 @@
         *ngTemplateOutlet="header; context: { title: 'Position' }"
     ></ng-container>
 
-    <igx-buttongroup (onSelect)="selectAbsPosition($event)">
+    <igx-buttongroup (selected)="selectAbsPosition($event)">
         <button
             igxButton
             *ngFor="let item of absPositions; let i = index"
@@ -68,7 +68,7 @@
         *ngTemplateOutlet="header; context: { title: 'Strategy' }"
     ></ng-container>
 
-    <igx-buttongroup (onSelect)="selectAbsStrategy($event)">
+    <igx-buttongroup (selected)="selectAbsStrategy($event)">
         <button
             igxButton
             *ngFor="let item of absStrategies; let i = index"
@@ -84,7 +84,7 @@
         *ngTemplateOutlet="header; context: { title: 'Position' }"
     ></ng-container>
 
-    <igx-buttongroup (onSelect)="selectRelPosition($event)">
+    <igx-buttongroup (selected)="selectRelPosition($event)">
         <button
             igxButton
             *ngFor="let item of relPositions; let i = index"
@@ -100,7 +100,7 @@
         *ngTemplateOutlet="header; context: { title: 'Strategy' }"
     ></ng-container>
 
-    <igx-buttongroup (onSelect)="selectRelStrategy($event)">
+    <igx-buttongroup (selected)="selectRelStrategy($event)">
         <button
             igxButton
             *ngFor="let item of relStrategies; let i = index"

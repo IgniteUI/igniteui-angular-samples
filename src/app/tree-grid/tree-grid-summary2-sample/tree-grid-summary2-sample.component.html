@@ -1,9 +1,9 @@
 <div class="summary-chooser">
-    <igx-buttongroup [values]="summaryCalcModes" (onSelect)="selectSummaryCalcMode($event)"></igx-buttongroup>
+    <igx-buttongroup [values]="summaryCalcModes" (selected)="selectSummaryCalcMode($event)"></igx-buttongroup>
 </div>
 
 <div class="summary-chooser">
-    <igx-buttongroup [values]="summaryPositions" (onSelect)="selectSummaryPosition($event)"></igx-buttongroup>
+    <igx-buttongroup [values]="summaryPositions" (selected)="selectSummaryPosition($event)"></igx-buttongroup>
 </div>
 
 <div class="summary-chooser">
