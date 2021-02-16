@@ -87,6 +87,7 @@ import { GridColumnSelectionStylesComponent } from "./column-selection-styles/co
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridActionStripSampleComponent } from "./grid-action-strip/grid-action-strip-sample";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
+import { GridColumnDataTypesSampleComponent } from "./grid-column-data-types-sample/grid-column-data-types-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
 import { RemotePagingBatchEditingComponent } from "./grid-batchEditing-remotePaging/batch-editing-remote-paging.component";
@@ -559,6 +560,11 @@ export const gridsRoutes: Routes = [
         component: GridAdvancedFilteringSampleComponent,
         data: gridsRoutesData["grid-pinning-styling"],
         path: "grid-advanced-filtering"
+    },
+    {
+        component: GridColumnDataTypesSampleComponent,
+        data: gridsRoutesData["grid-column-data-types"],
+        path: "grid-column-data-types"
     },
     {
         component: GridAdvancedFilteringStyleComponent,
