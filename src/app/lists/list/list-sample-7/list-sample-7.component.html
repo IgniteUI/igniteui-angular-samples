@@ -4,8 +4,8 @@
 </div>
 
 <div class="list-sample">
-    <igx-list [allowLeftPanning]="true" [allowRightPanning]="true" #mainIgxList (onLeftPan)="leftPanPerformed($event)"
-        (onRightPan)="rightPanPerformed($event)">
+    <igx-list [allowLeftPanning]="true" [allowRightPanning]="true" #mainIgxList (leftPan)="leftPanPerformed($event)"
+        (rightPan)="rightPanPerformed($event)">
         <ng-template igxListItemLeftPanning>
             <div class="listItemLeftPanningStyle">
                 <igx-icon>delete</igx-icon>Delete

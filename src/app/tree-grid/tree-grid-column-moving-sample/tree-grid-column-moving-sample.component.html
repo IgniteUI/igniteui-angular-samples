@@ -1,7 +1,7 @@
 <ng-template igxHeader let-column #pinTemplate>
     <div class="title-inner">
         <span style="float:left">{{column.field}}</span>
-        <igx-icon class="pin-icon" [class.pinned]="column.pinned" [class.unpinned]="!column.pinned" fontSet="fas" name="fa-thumbtack"
+        <igx-icon class="pin-icon" [class.pinned]="column.pinned" [class.unpinned]="!column.pinned" family="fas" name="fa-thumbtack"
             [attr.draggable]="false" (click)="toggleColumnPinning(column)"></igx-icon>
     </div>
 </ng-template>
