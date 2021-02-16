@@ -133,8 +133,8 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
             if (args.field === 'Deals') { args.cancel = true; }
         };
 
-        this.excelExporter.onColumnExport.subscribe(exporterCb);
-        this.csvExporter.onColumnExport.subscribe(exporterCb);
+        this.excelExporter.columnExporting.subscribe(exporterCb);
+        this.csvExporter.columnExporting.subscribe(exporterCb);
     }
 
     public ngOnInit() {

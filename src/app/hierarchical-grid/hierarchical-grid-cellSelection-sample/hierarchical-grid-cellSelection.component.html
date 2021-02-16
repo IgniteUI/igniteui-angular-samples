@@ -1,14 +1,14 @@
 <div class="grid__wrapper">
     <div>
         <h6>Parent Grid cell selection mode: </h6>
-        <igx-buttongroup [values]="selectionModes" (onSelect)="selectCellSelectionMode($event)"></igx-buttongroup>
+        <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
     </div>
     <div>
         <h6>Child Grid cell selection mode: </h6>
-        <igx-buttongroup [values]="selectionModesChildren" (onSelect)="selectCellSelectionModeChildGrid($event)"></igx-buttongroup>
+        <igx-buttongroup [values]="selectionModesChildren" (selected)="selectCellSelectionModeChildGrid($event)"></igx-buttongroup>
     </div>
     <span style="display: flex">
-        <igx-snackbar #snackbar actionText="Got it. Thanks!" (onAction)="snackbar.hide()">
+        <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.hide()">
             <div class="container">
                 <igx-icon>notification_important</igx-icon>
                 <ng-container *ngIf="selectionMode === 'multiple'">

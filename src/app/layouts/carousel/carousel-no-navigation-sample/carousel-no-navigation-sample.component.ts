@@ -20,7 +20,7 @@ export class CarouselNoNavigationSampleComponent implements OnInit {
   public ngOnInit() {
     this.addSlides();
 
-    this.list.onItemClicked.subscribe((args: IListItemClickEventArgs) => {
+    this.list.itemClicked.subscribe((args: IListItemClickEventArgs) => {
         this.currentIndex = args.item.index;
         this.carousel.select(this.carousel.get(this.currentIndex));
     });

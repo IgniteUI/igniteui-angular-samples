@@ -5,7 +5,7 @@
         <span igxDrawerItem [isHeader]="true">Components</span>
 
         <span *ngFor="let item of navItems" igxDrawerItem [active]="item.text === selected" igxRipple (click)="navigate(item)">
-          <igx-icon fontSet="material">{{ item.name }}</igx-icon>
+          <igx-icon family="material">{{ item.name }}</igx-icon>
           <span>{{ item.text }}</span>
         </span>
       </nav>
@@ -15,7 +15,7 @@
   <main>
     <!-- <button (click)="drawer.toggle()"> Menu </button> -->
     <span igxButton="icon" igxToggleAction="navigation">
-      <igx-icon fontSet="material">menu</igx-icon>
+      <igx-icon family="material">menu</igx-icon>
     </span>
 
     <h5>{{selected}} content.</h5>
