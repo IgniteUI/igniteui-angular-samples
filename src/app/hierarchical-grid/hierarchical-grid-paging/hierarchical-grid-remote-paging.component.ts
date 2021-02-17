@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild } from "@angular/core";
-import { IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent, IPagingEventArgs } from "igniteui-angular";
+import { IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
 import { RemotePagingService } from "./remotePagingService";
 import { BehaviorSubject } from 'rxjs';
+import { IPagingEventArgs } from "igniteui-angular/lib/paginator/interfaces";
 
 @Component({
     providers: [RemotePagingService],
