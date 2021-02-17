@@ -31,9 +31,9 @@ export class CsvExportSample1Component {
         args.cancel = true;
       }
     });
-    this.csvExportService.onRowExport.subscribe((args: IRowExportingEventArgs) => {
+    this.csvExportService.rowExporting.subscribe((args: IRowExportingEventArgs) => {
     });
-    this.csvExportService.onExportEnded.subscribe((args: ICsvExportEndedEventArgs) => {
+    this.csvExportService.exportEnded.subscribe((args: ICsvExportEndedEventArgs) => {
     });
     */
     this.csvExportService.export(this.igxGrid1, new IgxCsvExporterOptions("ExportFileFromGrid", CsvFileTypes.CSV));
