@@ -47,7 +47,7 @@
 
     <igx-drop-down #dropDownCalendar (onClosing)="onClosing()" >
         <igx-calendar #calendar class="calendar" selection="range" [monthsViewNumber]="2"
-            (onSelection)="verifyRange($event)">
+            (selected)="verifyRange($event)">
         </igx-calendar>
         <div class="buttons">
             <button igxButton (click)="oneWay(dropDownCalendar)">One Way Ticket</button>

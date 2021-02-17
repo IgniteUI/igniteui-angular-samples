@@ -1,5 +1,5 @@
 <div class="sample-container">
-    <igx-chips-area (onReorder)="chipsOrderChanged($event)">
+    <igx-chips-area (reorder)="chipsOrderChanged($event)">
         <igx-chip
         *ngFor="let chip of chipList"
         [id]="chip.id"
@@ -7,7 +7,7 @@
         [selectIcon]="mySelectIcon"
         [removable]="true"
         [removeIcon]="myRemoveIcon"
-        (onRemove)="chipRemoved($event)"
+        (remove)="chipRemoved($event)"
         [draggable]="'true'">
             <igx-avatar
             class="chip-avatar-resized"

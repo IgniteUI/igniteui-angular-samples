@@ -6,7 +6,7 @@
         [height]="'520px'" [width]="'100%'" [rowHeight]="'65px'" [pinning]='pinningConfig' [cellSelection]="'none'">
         <igx-column width='70px' [filterable]='false' [pinned]="true">
             <ng-template igxCell let-cell="cell" let-val>
-                <igx-icon class="pin-icon" fontSet="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}"
+                <igx-icon class="pin-icon" family="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}"
                     (mouseup)="togglePinning(cell.row, $event)">
                 </igx-icon>
             </ng-template>
@@ -27,7 +27,7 @@
             [cellSelection]="'none'">
             <igx-column width='70px' [filterable]='false' [pinned]="true">
                 <ng-template igxCell let-cell="cell" let-val>
-                    <igx-icon class="pin-icon" fontSet="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}"
+                    <igx-icon class="pin-icon" family="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}"
                         (mouseup)="togglePinning(cell.row, $event)">
                     </igx-icon>
                 </ng-template>
@@ -40,7 +40,7 @@
                 [cellSelection]="'none'">
                 <igx-column width='70px' [filterable]='false' [pinned]="true">
                     <ng-template igxCell let-cell="cell" let-val>
-                        <igx-icon class="pin-icon" fontSet="filtering-icons"
+                        <igx-icon class="pin-icon" family="filtering-icons"
                             name="{{cell.row.pinned ? 'unpin' : 'pin'}}" (mouseup)="togglePinning(cell.row, $event)">
                         </igx-icon>
                     </ng-template>
@@ -56,7 +56,7 @@
             [cellSelection]="'none'">
             <igx-column width='70px' [filterable]='false' [pinned]="true">
                 <ng-template igxCell let-cell="cell" let-val>
-                    <igx-icon class="pin-icon" fontSet="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}"
+                    <igx-icon class="pin-icon" family="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}"
                         (mouseup)="togglePinning(cell.row, $event)">
                     </igx-icon>
                 </ng-template>

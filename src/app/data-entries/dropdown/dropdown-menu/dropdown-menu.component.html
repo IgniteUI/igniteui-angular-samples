@@ -2,7 +2,7 @@
     <igx-navbar title="Contacts">
         <button [igxToggleAction]="menu" [igxToggleOutlet]="outlet" [overlaySettings]="overlaySettings" [igxDropDownItemNavigation]="menu"
             igxButton="icon">
-            <igx-icon fontSet="material">more_vert</igx-icon>
+            <igx-icon family="material">more_vert</igx-icon>
         </button>
         <igx-drop-down #menu (onSelection)="onSelection($event)">
             <igx-drop-down-item *ngFor="let item of items" [value]="item.text">

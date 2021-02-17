@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <div class="density-chooser">
-        <igx-buttongroup [values]="displayDensities" (onSelect)="selectDensity($event)"></igx-buttongroup>
+        <igx-buttongroup [values]="displayDensities" (selected)="selectDensity($event)"></igx-buttongroup>
     </div>
     <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [displayDensity]="density" [autoGenerate]="false" height="850px" width="100%" [allowFiltering]="true"
         primaryKey="ID" foreignKey="ParentID" filterMode="excelStyleFilter">

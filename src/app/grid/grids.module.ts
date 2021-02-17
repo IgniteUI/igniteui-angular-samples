@@ -120,6 +120,8 @@ import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-s
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
 import { GridExportVisualizationComponent } from './grid-export-visualization/grid-export-visualization.component';
+import {GridSelectComponent} from './grid-select/grid-select-sample.component';
+import { GridFormattedFilteringStrategyComponent } from "./grid-formatted-filtering-strategy/grid-formatted-filtering-strategy.component";
 
 @NgModule({
     declarations: [
@@ -230,7 +232,9 @@ import { GridExportVisualizationComponent } from './grid-export-visualization/gr
         RemotePagingBatchEditingComponent,
         GridSortingIndicatorsComponent,
         GridExportVisualizationComponent,
-        GridEditingLifecycleComponent
+        GridEditingLifecycleComponent,
+        GridSelectComponent,
+        GridFormattedFilteringStrategyComponent
     ],
     imports: [
         CommonModule,

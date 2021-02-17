@@ -1,6 +1,6 @@
 <article class="sample-column">
     <div class="density-chooser">
-        <igx-buttongroup [values]="displayDensities" (onSelect)="selectDensity($event)"></igx-buttongroup>
+        <igx-buttongroup [values]="displayDensities" (selected)="selectDensity($event)"></igx-buttongroup>
     </div>
     <div class="button-sample">
         <div class="button-sample">
@@ -13,11 +13,11 @@
             <button igxButton="outlined" igxRipple [displayDensity]="density">Outlined</button>
         </div>
         <div class="button-sample">
-            <button igxButton="fab" igxRipple [displayDensity]="density"><igx-icon fontSet="material">edit</igx-icon></button>
+            <button igxButton="fab" igxRipple [displayDensity]="density"><igx-icon family="material">edit</igx-icon></button>
         </div>
         <div class="button-sample">
             <button igxButton="fab" igxRipple [displayDensity]="density">
-                <igx-icon fontSet="material">favorite</igx-icon>
+                <igx-icon family="material">favorite</igx-icon>
                 <span>Like</span>
             </button>
         </div>
