@@ -35,9 +35,9 @@ export class TreeGridCsvExportSample1Component implements OnInit {
         args.cancel = true;
       }
     });
-    this.csvExportService.onRowExport.subscribe((args: IRowExportingEventArgs) => {
+    this.csvExportService.rowExporting.subscribe((args: IRowExportingEventArgs) => {
     });
-    this.csvExportService.onExportEnded.subscribe((args: ICsvExportEndedEventArgs) => {
+    this.csvExportService.exportEnded.subscribe((args: ICsvExportEndedEventArgs) => {
     });
     */
     this.csvExportService.export(this.igxTreeGrid1,
