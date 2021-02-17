@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from "@angular/core";
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
+import { IPagingEventArgs } from "igniteui-angular/lib/paginator/interfaces";
 import { Observable } from "rxjs";
 import { RemotePagingService } from "../services/remotePagingService";
 @Component({
@@ -12,27 +13,15 @@ import { RemotePagingService } from "../services/remotePagingService";
 export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy {
 
     public page = 0;
+    public perPage = 5;
     public totalCount = 0;
-    public pages = [];
     public data: Observable<any[]>;
     public selectOptions = [5, 10, 15, 25, 50];
-
-    @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
-    @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
-
-    private _perPage = 10;
     private _dataLengthSubscriber;
 
+    @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
+
     constructor(private remoteService: RemotePagingService) {
-    }
-
-    public get perPage(): number {
-        return this._perPage;
-    }
-
-    public set perPage(val: number) {
-        this._perPage = val;
-        // this.paginate(0);
     }
 
     public ngOnInit() {
@@ -51,22 +40,17 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
     }
 
     public ngAfterViewInit() {
-        this.grid1.isLoading = true;
-        this.remoteService.getData(0, this.perPage);
+        const skip = this.page * this.perPage;
+        this.remoteService.getData(skip, this.perPage);
     }
 
-    public paginate(page: number) {
-        this.page = page;
-        const skip = this.page * this.perPage;
-        const top = this.perPage;
-
-        this.remoteService.getData(skip, top);
+    public paging(event: IPagingEventArgs) {
+        const skip = event.newPage * this.perPage;
+        this.remoteService.getData(skip, this.perPage);
     }
 
     public perPageChange(perPage: number) {
         const skip = this.page * perPage;
-        const top = perPage;
-
-        this.remoteService.getData(skip, top);
+        this.remoteService.getData(skip, perPage);
     }
 }
