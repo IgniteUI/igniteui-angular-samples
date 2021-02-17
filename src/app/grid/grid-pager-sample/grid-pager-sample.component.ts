@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { athletesData } from "../services/data";
 import { IPaginatorResourceStrings, IgxPaginatorComponent } from "igniteui-angular";
-import { IPagingEventArgs } from "igniteui-angular/lib/paginator/interfaces";
+
 
 @Component({
     selector: "app-grid-pager-sample",

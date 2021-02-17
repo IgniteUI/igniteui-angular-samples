@@ -30,7 +30,7 @@
     <igx-paginator #paginator
         [totalRecords]="totalCount"
         [(page)]="page"
-        [perPage]="perPage"
+        [(perPage)]="perPage"
         [displayDensity]="hierarchicalGrid.displayDensity"
         (perPageChange)="perPageChange($event)"
         (paging)="paging($event)">
