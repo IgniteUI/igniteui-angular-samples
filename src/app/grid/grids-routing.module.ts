@@ -112,6 +112,7 @@ import {
 import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
 import { GridExportVisualizationComponent } from "./grid-export-visualization/grid-export-visualization.component";
 import { GridSelectComponent } from './grid-select/grid-select-sample.component'
+import { GridFormattedFilteringStrategyComponent } from "./grid-formatted-filtering-strategy/grid-formatted-filtering-strategy.component";
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -644,6 +645,11 @@ export const gridsRoutes: Routes = [
         component: GridSelectComponent,
         data: gridsRoutesData["grid-select"],
         path: "grid-select"
+    },
+    {
+        component: GridFormattedFilteringStrategyComponent,
+        data: gridsRoutesData["grid-formatted-filtering-strategy"],
+        path: "grid-formatted-filtering-strategy"
     }
 ];
 
