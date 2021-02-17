@@ -27,8 +27,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
     public locale = "EN";
 
     // Date formats
-    public dateFormats: Array<{ format: string, eq: string }> = 
-        [
+    public dateFormats = [
             { format: "short", eq: "'M/d/yy, h:mm a'" },
             { format: "shortDate", eq: "'M/d/yy'" },
             { format: "mediumDate", eq: "'MMMM d, y, h:mm:ss a z'"},
