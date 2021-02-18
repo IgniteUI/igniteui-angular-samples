@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { athletesData } from "../services/data";
-import { IPaginatorResourceStrings, IgxPaginatorComponent } from "igniteui-angular";
+import { IPaginatorResourceStrings, IgxPaginatorComponent, IPagingEventArgs, GridPagingMode } from "igniteui-angular";
 
 
 @Component({
@@ -14,6 +14,7 @@ export class GridPagerSampleComponent implements OnInit {
     public totalRecords = 0;
     public page = 0;
     public perPage = 10;
+    public mode: GridPagingMode.Remote;
     public isDropdownHidden = false;
     public isPagerHidden = false;
     public isDropdownDisabled = false;
@@ -29,7 +30,9 @@ export class GridPagerSampleComponent implements OnInit {
     };
 
     public ngOnInit(): void {
-        this.allData = athletesData;
+        this.allData = athletesData.sort((a, b) => {
+            return a.Id - b.Id}
+        );
         this.totalRecords = this.allData.length;
         this.data = this.sliceData(this.page, this.perPage);
         this.densityOptions = ["compact", "cosy", "comfortable"];
