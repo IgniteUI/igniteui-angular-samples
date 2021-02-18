@@ -5,6 +5,19 @@
         <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.hide()">
             <div class="container">
                 <igx-icon>notification_important</igx-icon>
+                <ng-container *ngIf="selectionMode === 'multipleCascade'">
+                    <ul>
+                        <li><b>Now you can select multiple rows within a grid and their children.</b></li>
+                        <li>Click on row selector field or press SPACE key when some cell is active to toggle row
+                            selection.
+                        </li>
+                        <li>On cell click the row get selected and previous selection state is cleared.</li>
+                        <li>On cell click holding ctrl key, the row get selected and previous selection state is
+                            preserved.
+                        </li>
+                        <li>Shift + click select a range of rows.</li>
+                    </ul>
+                </ng-container>
                 <ng-container *ngIf="selectionMode === 'multiple'">
                     <ul>
                         <li><b>Now you can select multiple rows within a grid.</b></li>
