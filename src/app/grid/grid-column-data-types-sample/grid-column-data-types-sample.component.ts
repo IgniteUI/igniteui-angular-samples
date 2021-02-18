@@ -163,7 +163,6 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
     ];
 
     private regEx = new RegExp('^[0-9]+\.[0-9]+\-[0-9]$')
-    //private regEx = new RegExp('^[0-9]\.[0-9]\-[0-9]$');
 
     constructor() {
     }
@@ -185,8 +184,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
     }
     public modelChange() {
         if (this.options.digitsInfo.match(this.regEx)) {
-            debugger;
-            if (Number(this.options.digitsInfo.substr(2,1)) > Number(this.options.digitsInfo.substr(4,1))) {
+            if (Number(this.options.digitsInfo.substr(2, 1)) > Number(this.options.digitsInfo.substr(4, 1))) {
                 this.digitsInfoMessage = 'The minimum number of digits after fraction (x) is higher than the maximum (x).';
             } else {
                 this.digitsInfoMessage = 'Applicable to number, currency and percent type columns';
