@@ -1,0 +1,84 @@
+<div class="wrapper">
+    <span class="location-wrapper">
+        <igx-select #select [(ngModel)]="locale">
+            <igx-prefix class="ellipsis">Locale: </igx-prefix>
+            <igx-select-item *ngFor="let locale of locales" [value]="locale">
+                {{ locale }}
+            </igx-select-item>
+            <igx-hint>Applicable to date, number, currency and percent type columns</igx-hint>
+        </igx-select>
+
+        <igx-select #select [(ngModel)]="dateOptions.format" (onSelection)="selectionChanging($event)">
+            <igx-prefix class="ellipsis">Date format: </igx-prefix>
+            <igx-select-item *ngFor="let dateFormat of dateFormats" [value]="dateFormat.format"
+                [text]="dateFormat.format + ' ---> ' + dateFormat.eq">
+                {{ dateFormat.format }}
+            </igx-select-item>
+            <igx-hint>Applicable to date type columns only</igx-hint>
+        </igx-select>
+
+        <igx-select #select [(ngModel)]="dateOptions.timezone" (onSelection)="timezoneSelectionChanging($event)">
+            <igx-prefix class="ellipsis">Timezone: </igx-prefix>
+            <igx-select-item *ngFor="let timezone of timezoneFormats" [value]="timezone" [text]="timezone">
+                {{ timezone }}
+            </igx-select-item>
+            <igx-hint>Applicable to date type columns only</igx-hint>
+        </igx-select>
+
+        <igx-select #select [(ngModel)]="options.currencyCode" (onSelection)="currencySelectionChanging($event)">
+            <igx-prefix class="ellipsis">Currency Code: </igx-prefix>
+            <igx-select-item *ngFor="let currencyCode of currencyCodes" [value]="currencyCode">
+                {{ currencyCode }}
+            </igx-select-item>
+            <igx-hint>Applicable to currency type columns</igx-hint>
+            <igx-suffix>
+                <igx-icon class="prefixIcon" *ngIf="options.currencyCode.length > 0" (click)="clearCode($event)">clear
+                </igx-icon>
+            </igx-suffix>
+        </igx-select>
+        <br />
+        <igx-input-group type="search" class="searchInputGroup">
+            <igx-prefix class="ellipsis">
+                <div #target="tooltipTarget" [igxTooltipTarget]="tooltipRef" [showDelay]="0" [hideDelay]="0">Set digits
+                    info
+                </div>
+                <div #tooltipRef="tooltip" igxTooltip>
+                    <span style="width: 300px"> Decimal representation options, specified by a string in the following
+                        format: minIntegerDigits.minFractionDigits-maxFractionDigits</span>
+                </div>
+            </igx-prefix>
+            <input name="info" igxInput placeholder="Digits info" [(ngModel)]="options.digitsInfo"
+                (ngModelChange)="modelChange()" />
+            <igx-suffix>
+                <igx-icon class="prefixIcon" *ngIf="options.digitsInfo.length > 0" (click)="reset()">clear
+                </igx-icon>
+            </igx-suffix>
+            <igx-hint [ngClass]="warningClass()" position="start">{{ digitsInfoMessage }}</igx-hint>
+
+        </igx-input-group>
+    </span>
+
+    <span class="grid-wrapper">
+        <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [allowFiltering]="true" [locale]="locale"
+            [filterMode]="'excelStyleFilter'" [autoGenerate]="false" [height]="null" [width]="'100%'" displayDensity="compact">
+            <igx-column field="ProductName" header="Product Name" [sortable]="true" [hasSummary]="true"
+                [editable]="true" [dataType]="'string'">
+            </igx-column>
+            <igx-column field="UnitPrice" header="Unit Price" [sortable]="true" [hasSummary]="true" [editable]="true"
+                [pipeArgs]="formatOptions" [dataType]="'number'">
+            </igx-column>
+            <igx-column field="OrderDate" header="Order Date" [sortable]="true" [hasSummary]="true" [editable]="true"
+                [pipeArgs]="formatDateOptions" [dataType]="'date'">
+            </igx-column>
+            <igx-column field="UnitsInStock" header="Stock Value" [sortable]="true" [hasSummary]="true"
+                [editable]="true" [pipeArgs]="formatOptions" [dataType]="'currency'">
+            </igx-column>
+            <igx-column field="UnitsOnOrder" header="Percent Change" [sortable]="true" [hasSummary]="true"
+                [editable]="true" [pipeArgs]="formatOptions" [dataType]="'percent'">
+            </igx-column>
+            <igx-column field="Discontinued" header="Discontinued" [sortable]="true" [hasSummary]="true"
+                [editable]="true" [dataType]="'boolean'">
+            </igx-column>
+        </igx-grid>
+    </span>
+</div>
