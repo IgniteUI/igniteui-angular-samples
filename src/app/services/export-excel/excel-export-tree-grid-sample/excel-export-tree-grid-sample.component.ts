@@ -34,9 +34,9 @@ export class TreeGridExcelExportSample1Component implements OnInit {
         args.cancel = true;
       }
     });
-    this.excelExportService.onRowExport.subscribe((args: IRowExportingEventArgs) => {
+    this.excelExportService.rowExporting.subscribe((args: IRowExportingEventArgs) => {
     });
-    this.excelExportService.onExportEnded.subscribe((args: IExcelExportEndedEventArgs) => {
+    this.excelExportService.exportEnded.subscribe((args: IExcelExportEndedEventArgs) => {
     });
     */
     this.excelExportService.export(this.igxTreeGrid1,
