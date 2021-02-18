@@ -4,7 +4,10 @@
             [paging]="true" [primaryKey]="'ProductID'" [perPage]="10" [allowFiltering]="true" (onRowDeleted)="show($event)">
             <igx-grid-toolbar>
 
-                <button igxButton="flat" (click)="dialogAdd.open()" class="addProdBtn"><igx-icon>add</igx-icon> Add Product</button>
+                <button igxButton="flat" (click)="dialogAdd.open()" class="addProdBtn">
+                    <igx-icon>add</igx-icon>
+                    <span>Add Product</span>
+                </button>
 
             </igx-grid-toolbar>
 
