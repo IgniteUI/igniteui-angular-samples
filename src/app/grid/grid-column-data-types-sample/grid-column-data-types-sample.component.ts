@@ -15,6 +15,8 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
     @ViewChild("grid1", { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 
+    public digitsInfoMessage: string = 'Applicable to number, currency and percent type columns';
+
     // Number options
     public options = {
         digitsInfo: '1.4-4',
@@ -160,6 +162,9 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }
     ];
 
+    private regEx = new RegExp('^[0-9]+\.[0-9]+\-[0-9]$')
+    //private regEx = new RegExp('^[0-9]\.[0-9]\-[0-9]$');
+
     constructor() {
     }
     public ngOnInit(): void {
@@ -179,7 +184,15 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         this.formatOptions = Object.assign({}, this.formatOptions, this.options);
     }
     public modelChange() {
-        this.formatOptions = Object.assign({}, this.formatOptions, this.options);
+        if (this.options.digitsInfo.match(this.regEx)) {
+            debugger;
+            if (Number(this.options.digitsInfo.substr(2,1)) > Number(this.options.digitsInfo.substr(4,1))) {
+                this.digitsInfoMessage = 'The minimum number of digits after fraction (x) is higher than the maximum (x).';
+            } else {
+                this.digitsInfoMessage = 'Applicable to number, currency and percent type columns';
+                this.formatOptions = Object.assign({}, this.formatOptions, this.options);
+            }
+        }
     }
 
     public selectionChanging(event) {
@@ -195,5 +208,9 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
     public currencySelectionChanging(event) {
         this.options.currencyCode = event.newSelection.value;
         this.formatOptions = Object.assign({}, this.formatOptions, this.options);
+    }
+
+    public warningClass() {
+        if (!this.digitsInfoMessage.startsWith('Applicable')) return 'warning';
     }
 }

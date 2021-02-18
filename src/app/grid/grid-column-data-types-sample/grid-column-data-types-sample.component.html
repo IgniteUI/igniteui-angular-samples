@@ -8,8 +8,6 @@
             <igx-hint>Applicable to date, number, currency and percent type columns</igx-hint>
         </igx-select>
 
-        <br />
-
         <igx-select #select [(ngModel)]="dateOptions.format" (onSelection)="selectionChanging($event)">
             <igx-prefix class="ellipsis">Date format: </igx-prefix>
             <igx-select-item *ngFor="let dateFormat of dateFormats" [value]="dateFormat.format"
@@ -19,8 +17,6 @@
             <igx-hint>Applicable to date type columns only</igx-hint>
         </igx-select>
 
-        <br />
-
         <igx-select #select [(ngModel)]="dateOptions.timezone" (onSelection)="timezoneSelectionChanging($event)">
             <igx-prefix class="ellipsis">Timezone: </igx-prefix>
             <igx-select-item *ngFor="let timezone of timezoneFormats" [value]="timezone" [text]="timezone">
@@ -28,8 +24,6 @@
             </igx-select-item>
             <igx-hint>Applicable to date type columns only</igx-hint>
         </igx-select>
-
-        <br />
 
         <igx-select #select [(ngModel)]="options.currencyCode" (onSelection)="currencySelectionChanging($event)">
             <igx-prefix class="ellipsis">Currency Code: </igx-prefix>
@@ -59,14 +53,14 @@
                 <igx-icon class="prefixIcon" *ngIf="options.digitsInfo.length > 0" (click)="reset()">clear
                 </igx-icon>
             </igx-suffix>
-            <igx-hint position="start">Applicable to number, currency and percent type columns</igx-hint>
+            <igx-hint [ngClass]="warningClass()" position="start">{{ digitsInfoMessage }}</igx-hint>
 
         </igx-input-group>
     </span>
 
     <span class="grid-wrapper">
         <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [allowFiltering]="true" [locale]="locale"
-            [filterMode]="'excelStyleFilter'" [autoGenerate]="false" [width]="'100%'" displayDensity="compact">
+            [filterMode]="'excelStyleFilter'" [autoGenerate]="false" [height]="null" [width]="'100%'" displayDensity="compact">
             <igx-column field="ProductName" header="Product Name" [sortable]="true" [hasSummary]="true"
                 [editable]="true" [dataType]="'string'">
             </igx-column>
