@@ -5,6 +5,8 @@
         childDataKey="Content"
         expansionDepth="0" width="100%" height="540px"
         [paging]="true"
+        [pagingMode]="mode"
+        [totalRecords]="totalCount"
         [paginationTemplate]="customPager">
         <igx-column field="Name">
             <ng-template igxCell let-cell="cell" let-val>
