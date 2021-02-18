@@ -1,7 +1,11 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxExcelExporterOptions,
-         IgxExcelExporterService,
-         IgxGridComponent } from "igniteui-angular";
+import {
+    IgxExcelExporterOptions,
+    IgxExcelExporterService,
+    IgxGridComponent,
+    ISortingExpression,
+    SortingDirection
+} from "igniteui-angular";
 import { INVOICE_DATA } from "../data/invoiceData";
 
 @Component({
@@ -13,6 +17,7 @@ export class ExcelExportSample1Component implements OnInit {
   @ViewChild("igxGrid1", { static: true }) public igxGrid1: IgxGridComponent;
 
   public data = [];
+  public groupExpressions : ISortingExpression[];
   public columns = [
     { dataType: 'string', field: 'ShipCountry', width: 150, groupable: true },
     { dataType: 'string', field: 'ShipCity', width: 150, groupable: true },
@@ -27,6 +32,10 @@ export class ExcelExportSample1Component implements OnInit {
 
   public ngOnInit(): void {
     this.data = INVOICE_DATA;
+    this.groupExpressions  = [
+        { dir: SortingDirection.Asc, fieldName: "ShipCountry" },
+        { dir: SortingDirection.Asc, fieldName: "ShipCity" }
+    ];
   }
 
   public exportButtonHandler() {
@@ -38,9 +47,9 @@ export class ExcelExportSample1Component implements OnInit {
         args.cancel = true;
       }
     });
-    this.excelExportService.onRowExport.subscribe((args: IRowExportingEventArgs) => {
+    this.excelExportService.rowExporting.subscribe((args: IRowExportingEventArgs) => {
     });
-    this.excelExportService.onExportEnded.subscribe((args: IExcelExportEndedEventArgs) => {
+    this.excelExportService.exportEnded.subscribe((args: IExcelExportEndedEventArgs) => {
     });
     */
     this.excelExportService.export(this.igxGrid1, new IgxExcelExporterOptions("ExportFileFromGrid"));
