@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild } from "@angular/core";
-import { IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
+import { IGridCreatedEventArgs, IPagingEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
 import { RemotePagingService } from "./remotePagingService";
 import { BehaviorSubject } from 'rxjs';
+
 
 @Component({
     providers: [RemotePagingService],
@@ -12,6 +13,7 @@ import { BehaviorSubject } from 'rxjs';
 
 export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, OnDestroy {
     public page = 0;
+    public perPage = 10;
     public lastPage = false;
     public firstPage = true;
     public totalPages: number = 1;
@@ -24,19 +26,9 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
     @ViewChild("layout1") public layout1: IgxRowIslandComponent;
     @ViewChild("hierarchicalGrid", { static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;
 
-    private _perPage = 10;
     private _dataLengthSubscriber;
 
     constructor(private remoteService: RemotePagingService) { }
-
-    public get perPage(): number {
-        return this._perPage;
-    }
-
-    public set perPage(val: number) {
-        this._perPage = val;
-        this.paginate(0);
-    }
 
     public ngOnInit(): void {
         this._dataLengthSubscriber = this.remoteService.getDataLength(
@@ -54,8 +46,9 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
 
     public ngAfterViewInit() {
         this.hierarchicalGrid.isLoading = true;
+        const skip = this.page * this.perPage;
         this.remoteService.getData(
-            { parentID: null, rootLevel: true, key: "Customers" }, 0, this.perPage).subscribe((data) => {
+            { parentID: null, rootLevel: true, key: "Customers" }, skip, this.perPage).subscribe((data) => {
                 this.hierarchicalGrid.isLoading = false;
                 this.data.next(data);
             },
@@ -93,20 +86,29 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
         );
     }
 
-    public paginate(page: number) {
-        this.page = page;
-        const skip = this.page * this.perPage;
-        const top = this.perPage;
+    public paging(event: IPagingEventArgs) {
+        const skip = event.newPage * this.perPage;
         this.remoteService.getData(
-            { parentID: null, rootLevel: true, key: "Customers" }, skip, top).subscribe((data) => {
-                this.data.next(data);
+            { parentID: null, rootLevel: true, key: "Customers" }, skip, this.perPage)
+            .subscribe((data) => {
+                this.hierarchicalGrid.data = data;
                 this.hierarchicalGrid.cdr.detectChanges();
             },
                 (error) => {
                     this.hierarchicalGrid.emptyGridMessage = error.message;
-                    this.data.next([]);
+                    this.hierarchicalGrid.data = null;
                     this.hierarchicalGrid.cdr.detectChanges();
                 }
             );
+    }
+
+    public perPageChange(perPage: number) {
+        const skip = this.page * perPage;
+        this.remoteService.getData(
+            { parentID: null, rootLevel: true, key: "Customers" }, skip, perPage)
+            .subscribe((data) => {
+                this.hierarchicalGrid.data = data;
+                this.hierarchicalGrid.cdr.detectChanges();
+            });
     }
 }

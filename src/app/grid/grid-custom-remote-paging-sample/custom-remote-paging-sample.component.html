@@ -1,5 +1,10 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" width="100%" height="580px" [paging]="true" [perPage]="perPage" [paginationTemplate]="customPager">
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" width="100%" height="580px"
+        [paging]="true"
+        [paginationTemplate]="customPager"
+        [pagingMode]="mode"
+        [totalRecords]="totalCount"
+        [isLoading]="isLoading">
         <igx-column field="ID"></igx-column>
         <igx-column field="ProductName"></igx-column>
         <igx-column field="QuantityPerUnit"></igx-column>

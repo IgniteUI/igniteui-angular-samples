@@ -513,6 +513,11 @@ export const gridsRoutes: Routes = [
         path: "custom-grid-paging-style"
     },
     {
+        component: GridPagerSampleComponent,
+        data: gridsRoutesData["grid-paginator-local-data"],
+        path: "grid-paginator-local-data"
+    },
+    {
         component: GridColumnHidingToolbarStyleComponent,
         data: gridsRoutesData["grid-column-hiding-style"],
         path: "grid-column-hiding-style"

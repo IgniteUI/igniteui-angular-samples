@@ -1,7 +1,7 @@
 import { formatNumber } from "@angular/common";
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { GridPagingMode, IgxTreeGridComponent } from "igniteui-angular";
-import { IPagingEventArgs } from "igniteui-angular/lib/paginator/interfaces";
+import { GridPagingMode, IgxTreeGridComponent, IPagingEventArgs } from "igniteui-angular";
+
 import { Observable } from "rxjs";
 import { RemotePagingService } from "./remotePagingService";
 
@@ -19,6 +19,8 @@ export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, Aft
     public page = 0;
     public perPage = 10;
     public mode = GridPagingMode.Remote;
+    public isLoading = true;
+
     @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
     private _dataLengthSubscriber;
 
@@ -28,10 +30,12 @@ export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, Aft
 
     public ngOnInit() {
         this.data = this.remoteService.remoteData.asObservable();
+        this.data.subscribe((data) => {
+            this.isLoading = false;
+        })
 
         this._dataLengthSubscriber = this.remoteService.dataLength.subscribe((data) => {
             this.totalCount = data;
-            this.treeGrid.isLoading = false;
         });
     }
 
@@ -42,21 +46,25 @@ export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, Aft
     }
 
     public ngAfterViewInit() {
-        this.treeGrid.isLoading = true;
         const skip = this.page * this.perPage
         this.remoteService.getData(skip, this.perPage);
         this.remoteService.getDataLength();
     }
 
     public paging(event: IPagingEventArgs) {
+        this.isLoading = true;
         const skip = event.newPage * event.owner.perPage;
         this.remoteService.getData(skip, event.owner.perPage);
     }
 
     public perPageChange(perPage: number) {
-        const skip = this.page * perPage;
-        this.remoteService.getData(skip, perPage);
+        if (this.page < this.totalPages) {
+            this.isLoading = true;
+            const skip = this.page * perPage;
+            this.remoteService.getData(skip, perPage);
+        }
     }
+
     public log() {
         console.log(this.treeGrid.totalRecords, this.treeGrid.totalPages);
     }
@@ -67,5 +75,9 @@ export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, Aft
 
     public formatSize(value: number) {
         return formatNumber(value, "en") + " KB";
+    }
+
+    private get totalPages() {
+        return Math.ceil(this.totalCount / this.perPage);
     }
 }
