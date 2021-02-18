@@ -121,6 +121,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
 import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
 import { GridExportVisualizationComponent } from './grid-export-visualization/grid-export-visualization.component';
 import {GridSelectComponent} from './grid-select/grid-select-sample.component';
+import { GridColumnDataTypesSampleComponent } from "./grid-column-data-types-sample/grid-column-data-types-sample.component";
 import { GridFormattedFilteringStrategyComponent } from "./grid-formatted-filtering-strategy/grid-formatted-filtering-strategy.component";
 
 @NgModule({
@@ -216,6 +217,7 @@ import { GridFormattedFilteringStrategyComponent } from "./grid-formatted-filter
         PinningStylingComponent,
         GridGroupByStyling,
         GridAdvancedFilteringSampleComponent,
+        GridColumnDataTypesSampleComponent,
         GridAdvancedFilteringStyleComponent,
         GridCellSelectionComponent,
         GridConditionalRowSelectorsComponent,

@@ -18,10 +18,12 @@ export class TreeGridSelectionSampleComponent implements OnInit {
 
     constructor() {
         this.data = generateEmployeeFlatData();
+
         this.selectionModes = [
-            { label: "none", selected: this.selectionMode === "none", togglable: true },
-            { label: "single", selected: this.selectionMode === "single", togglable: true },
-            { label: "multiple", selected: this.selectionMode === "multiple", togglable: true }
+            { label: "none", selectMode: "none", selected: this.selectionMode === "none", togglable: true },
+            { label: "single", selectMode: "single", selected: this.selectionMode === "single", togglable: true },
+            { label: "multiple", selectMode: "multiple", selected: this.selectionMode === "multiple", togglable: true },
+            { label: "cascade", selectMode: "multipleCascade", selected: this.selectionMode === "multipleCascade", togglable: true }
         ];
     }
 
@@ -33,7 +35,7 @@ export class TreeGridSelectionSampleComponent implements OnInit {
     public handleRowSelection(event) { }
 
     public selectCellSelectionMode(args) {
-        this.selectionMode = this.selectionModes[args.index].label;
+        this.selectionMode = this.selectionModes[args.index].selectMode;
         this.snackbar.show();
     }
 }
