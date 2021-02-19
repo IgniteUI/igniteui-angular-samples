@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { GridPagingMode, IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxPaginatorComponent, IPagingEventArgs } from "igniteui-angular";
-
+import { GridPagingMode, IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxPaginatorComponent } from "igniteui-angular";
+import { IPagingEventArgs } from "igniteui-angular/lib/paginator/interfaces";
 import { RemotePagingService } from "./remotePagingService";
 
 @Component({

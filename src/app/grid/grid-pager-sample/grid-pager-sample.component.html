@@ -1,8 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid [data]="data"
-    [paging]="true" [paginationTemplate]="pager"
-    [pagingMode]="mode" [totalRecords]="totalRecords"
-    height="500px"
+    <igx-grid igxPreventDocumentScroll #grid [data]="data" [paging]="true" [perPage]="10" [paginationTemplate]="pager" height="500px"
         width="100%" displayDensity="cosy">
         <igx-column header="Rank" headerClasses="myClass" field="Id" sortable="true"></igx-column>
         <igx-column field="Name" header="Athlete"></igx-column>
@@ -23,18 +20,10 @@
     </igx-grid>
 
     <ng-template #pager>
-        <igx-paginator #paginator
-            [(page)]="page"
-            [(perPage)]="perPage"
-            [totalRecords]="totalRecords"
-            [dropdownHidden]="isDropdownHidden"
-            [pagerHidden]="isPagerHidden"
-            [dropdownEnabled]="!isDropdownDisabled"
-            [pagerEnabled]="!isPagerDisabled"
-            [selectOptions]="selectOptions"
-            [displayDensity]="grid.displayDensity"
-            (perPageChange)="perPageChange($event)"
-            (paging)="paging($event)">
+        <igx-paginator #paginator [(page)]="grid.page" [totalRecords]="grid.totalRecords" [(perPage)]="grid.perPage"
+            [dropdownHidden]="isDropdownHidden" [pagerHidden]="isPagerHidden"
+            [dropdownEnabled]="!isDropdownDisabled" [pagerEnabled]="!isPagerDisabled"
+            [selectOptions]="selectOptions" [displayDensity]="grid.displayDensity">
         </igx-paginator>
     </ng-template>
 

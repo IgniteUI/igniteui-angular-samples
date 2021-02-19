@@ -28,7 +28,7 @@
     <div class="grid-options" igxLayout igxLayoutDir="row" igxLayoutWrap="wrap">
         <button igxButton="raised" class="addProdBtn" (click)="openDialog()">Add New Product</button>
     </div>
-    <igx-grid igxPreventDocumentScroll [data]="data" [autoGenerate]="false" height="550px" width="100%" [paging]="true"
+    <igx-grid igxPreventDocumentScroll [data]="data" [autoGenerate]="false" height="550px" width="100%" [paging]="true" [perPage]="10"
         displayDensity="comfortable" #grid1 [allowFiltering]="true">
         <igx-column [field]="'IndustrySector'" dataType="string" [sortable]="true"></igx-column>
         <igx-column [field]="'IndustryGroup'" dataType="string" [sortable]="true" [editable]="true"></igx-column>

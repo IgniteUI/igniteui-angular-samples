@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { GridPagingMode, IgxGridComponent, IPagingEventArgs } from "igniteui-angular";
-
+import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from "@angular/core";
+import { IgxGridComponent } from "igniteui-angular";
 import { Observable } from "rxjs";
 import { RemotePagingService } from "../services/remotePagingService";
 @Component({
@@ -13,27 +12,35 @@ import { RemotePagingService } from "../services/remotePagingService";
 export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy {
 
     public page = 0;
-    public perPage = 5;
     public totalCount = 0;
+    public pages = [];
     public data: Observable<any[]>;
     public selectOptions = [5, 10, 15, 25, 50];
-    public isLoading = true;
-    public mode = GridPagingMode.Remote;
-    private _dataLengthSubscriber;
 
+    @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
+
+    private _perPage = 10;
+    private _dataLengthSubscriber;
 
     constructor(private remoteService: RemotePagingService) {
     }
 
+    public get perPage(): number {
+        return this._perPage;
+    }
+
+    public set perPage(val: number) {
+        this._perPage = val;
+        // this.paginate(0);
+    }
+
     public ngOnInit() {
         this.data = this.remoteService.remoteData.asObservable();
-        this.data.subscribe((data) => {
-            this.isLoading = false;
-        })
 
         this._dataLengthSubscriber = this.remoteService.getDataLength().subscribe((data) => {
             this.totalCount = data;
+            this.grid1.isLoading = false;
         });
     }
 
@@ -44,25 +51,22 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
     }
 
     public ngAfterViewInit() {
-        const skip = this.page * this.perPage;
-        this.remoteService.getData(skip, this.perPage);
+        this.grid1.isLoading = true;
+        this.remoteService.getData(0, this.perPage);
     }
 
-    public paging(event: IPagingEventArgs) {
-        this.isLoading = true;
-        const skip = event.newPage * this.perPage;
-        this.remoteService.getData(skip, this.perPage);
+    public paginate(page: number) {
+        this.page = page;
+        const skip = this.page * this.perPage;
+        const top = this.perPage;
+
+        this.remoteService.getData(skip, top);
     }
 
     public perPageChange(perPage: number) {
-        if (this.page < this.totalPages) {
-            this.isLoading = true;
-            const skip = this.page * perPage;
-            this.remoteService.getData(skip, perPage);
-        }
-    }
+        const skip = this.page * perPage;
+        const top = perPage;
 
-    private get totalPages() {
-        return Math.ceil(this.totalCount / this.perPage);
+        this.remoteService.getData(skip, top);
     }
 }
