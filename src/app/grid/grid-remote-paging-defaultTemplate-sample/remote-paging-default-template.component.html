@@ -2,10 +2,7 @@
     <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" width="100%" 
         height="580px" 
         [paginationTemplate]="customPager"
-        [paging]="true"
-        [pagingMode]="mode"
-        [totalRecords]="totalCount"
-        [isLoading]="isLoading">
+        [paging]="true">
         <igx-column field="ID"></igx-column>
         <igx-column field="ProductName"></igx-column>
         <igx-column field="QuantityPerUnit"></igx-column>
@@ -17,7 +14,7 @@
         <igx-paginator #paginator
             [totalRecords]="totalCount"
             [(page)]="page"
-            [(perPage)]="perPage"
+            [perPage]="perPage"
             [displayDensity]="grid1.displayDensity"
             (perPageChange)="perPageChange($event)"
             (paging)="paging($event)">

@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { GridPagingMode, IgxGridComponent } from "igniteui-angular";
+import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from "@angular/core";
+import { IgxGridComponent } from "igniteui-angular";
 import { Observable } from "rxjs";
 import { RemotePagingService } from "../services/remotePagingService";
 @Component({
@@ -12,7 +12,6 @@ import { RemotePagingService } from "../services/remotePagingService";
 export class CustomRemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy {
 
     public page = 0;
-    public perPage = 10;
     public lastPage = false;
     public firstPage = true;
     public totalPages: number = 1;
@@ -20,17 +19,27 @@ export class CustomRemotePagingGridSample implements OnInit, AfterViewInit, OnDe
     public pages = [];
     public title = "gridPaging";
     public data: Observable<any[]>;
-    public isLoading = true;
-    public mode = GridPagingMode.Remote;
 
+    @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
 
     private visibleElements = 5;
+    private _perPage = 10;
     private _dataLengthSubscriber;
 
     constructor(
         private remoteService: RemotePagingService) {
     }
+
+    public get perPage(): number {
+        return this._perPage;
+    }
+
+    public set perPage(val: number) {
+        this._perPage = val;
+        this.paginate(0, true);
+    }
+
     public get shouldShowLastPage() {
         return this.pages[this.pages.length - 1] !== this.totalPages - 1;
     }
@@ -41,14 +50,12 @@ export class CustomRemotePagingGridSample implements OnInit, AfterViewInit, OnDe
 
     public ngOnInit() {
         this.data = this.remoteService.remoteData.asObservable();
-        this.data.subscribe((data) => {
-            this.isLoading = false;
-        })
 
         this._dataLengthSubscriber = this.remoteService.getDataLength().subscribe((data) => {
             this.totalCount = data;
             this.totalPages = Math.ceil(data / this.perPage);
             this.buttonDeselection(this.page, this.totalPages);
+            this.grid1.isLoading = false;
             this.setNumberOfPagingItems(this.page, this.totalPages);
         });
 
@@ -61,30 +68,35 @@ export class CustomRemotePagingGridSample implements OnInit, AfterViewInit, OnDe
     }
 
     public ngAfterViewInit() {
-        const skip = this.page * this.perPage;
-        this.remoteService.getData(skip, this.perPage);
+        this.grid1.isLoading = true;
+        this.remoteService.getData(0, this.perPage);
     }
 
     public nextPage() {
         this.firstPage = false;
-        this.paginate(this.page + 1);
-
+        this.page++;
+        const skip = this.page * this.perPage;
+        const top = this.perPage;
+        this.remoteService.getData(skip, top);
         if (this.page + 1 >= this.totalPages) {
             this.lastPage = true;
         }
+        this.setNumberOfPagingItems(this.page, this.totalPages);
     }
 
     public previousPage() {
         this.lastPage = false;
-        this.paginate(this.page - 1);
-
+        this.page--;
+        const skip = this.page * this.perPage;
+        const top = this.perPage;
+        this.remoteService.getData(skip, top);
         if (this.page <= 0) {
             this.firstPage = true;
         }
+        this.setNumberOfPagingItems(this.page, this.totalPages);
     }
 
     public paginate(page: number, recalc = false) {
-        this.isLoading = true;
         this.page = page;
         const skip = this.page * this.perPage;
         const top = this.perPage;

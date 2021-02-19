@@ -18,8 +18,6 @@ export class RemotePagingDefaultTemplateComponent implements OnInit, AfterViewIn
     public perPage = 10;
     public data: Observable<any[]>;
     public mode = GridPagingMode.Remote;
-    public isLoading = true;
-
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
 
     private _dataLengthSubscriber;
@@ -29,11 +27,9 @@ export class RemotePagingDefaultTemplateComponent implements OnInit, AfterViewIn
 
     public ngOnInit() {
         this.data = this.remoteService.remoteData.asObservable();
-        this.data.subscribe((data) => {
-            this.isLoading = false;
-        })
         this._dataLengthSubscriber = this.remoteService.getDataLength().subscribe((data) => {
             this.totalCount = data;
+            this.grid1.isLoading = false;
         });
     }
 
@@ -44,25 +40,18 @@ export class RemotePagingDefaultTemplateComponent implements OnInit, AfterViewIn
     }
 
     public ngAfterViewInit() {
+        this.grid1.isLoading = true;
         const skip = this.page * this.perPage;
         this.remoteService.getData(skip, this.perPage);
     }
 
     public paging(event: IPagingEventArgs) {
-        this.isLoading = true;
         const skip = event.newPage * this.perPage;
         this.remoteService.getData(skip, this.perPage);
     }
 
     public perPageChange(perPage: number) {
-        if (this.page < this.totalPages) {
-            this.isLoading = true;
-            const skip = this.page * perPage;
-            this.remoteService.getData(skip, perPage);
-        }
-    }
-
-    private get totalPages() {
-        return Math.ceil(this.totalCount / this.perPage);
+        const skip = this.page * perPage;
+        this.remoteService.getData(skip, perPage);
     }
 }
