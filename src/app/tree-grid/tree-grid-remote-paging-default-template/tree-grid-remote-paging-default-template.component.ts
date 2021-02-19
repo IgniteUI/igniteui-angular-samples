@@ -1,7 +1,7 @@
 import { formatNumber } from "@angular/common";
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { GridPagingMode, IPagingEventArgs, IgxTreeGridComponent } from "igniteui-angular";
-
+import { GridPagingMode, IgxTreeGridComponent } from "igniteui-angular";
+import { IPagingEventArgs } from "igniteui-angular/lib/paginator/interfaces";
 import { Observable } from "rxjs";
 import { RemotePagingService } from "./remotePagingService";
 

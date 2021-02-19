@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxGridComponent, IPagingEventArgs } from "igniteui-angular";
-
+import { IgxGridComponent } from "igniteui-angular";
+import { IPagingEventArgs } from "igniteui-angular/lib/paginator/interfaces";
 import { Observable } from "rxjs";
 import { RemotePagingService } from "../services/remotePagingService";
 @Component({
