@@ -1,6 +1,6 @@
 import { formatNumber } from "@angular/common";
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxTreeGridComponent, IPagingEventArgs } from "igniteui-angular";
+import { IgxTreeGridComponent } from "igniteui-angular";
 import { Observable } from "rxjs";
 import { RemotePagingService } from "./remotePagingService";
 
@@ -13,17 +13,29 @@ import { RemotePagingService } from "./remotePagingService";
 })
 export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewInit, OnDestroy {
     public page = 0;
-    public perPage = 10;
+    public lastPage = false;
+    public firstPage = true;
     public totalPages: number = 1;
     public totalCount = 0;
+    public maxPerPage = Number.MAX_SAFE_INTEGER;
     public data: Observable<any[]>;
     public selectOptions = [5, 10, 25, 50];
     @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
 
+    private _perPage = 10;
     private _dataLengthSubscriber;
 
     constructor(
         private remoteService: RemotePagingService) {
+    }
+
+    public get perPage(): number {
+        return this._perPage;
+    }
+
+    public set perPage(val: number) {
+        this._perPage = val;
+        this.paginate(0);
     }
 
     public ngOnInit() {
@@ -44,20 +56,16 @@ export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewIni
 
     public ngAfterViewInit() {
         this.treeGrid.isLoading = true;
-        const skip = this.page * this.perPage;
-        this.remoteService.getData(skip, this.perPage);
+
+        this.remoteService.getData(0, this.perPage);
         this.remoteService.getDataLength();
     }
 
-
-    public paging(event: IPagingEventArgs) {
-        const skip = event.newPage * event.owner.perPage;
-        this.remoteService.getData(skip, event.owner.perPage);
-    }
-
-    public perPageChange(perPage: number) {
-        const skip = this.page * perPage;
-        this.remoteService.getData(skip, perPage);
+    public paginate(page: number) {
+        this.page = page;
+        const skip = this.page * this.perPage;
+        const top = this.perPage;
+        this.remoteService.getData(skip, top);
     }
 
     public formatSize(value: number) {

@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { athletesData } from "../services/data";
 import { IPaginatorResourceStrings, IgxPaginatorComponent } from "igniteui-angular";
-import { IPagingEventArgs } from "igniteui-angular/lib/paginator/interfaces";
 
 @Component({
     selector: "app-grid-pager-sample",
@@ -11,16 +10,11 @@ import { IPagingEventArgs } from "igniteui-angular/lib/paginator/interfaces";
 export class GridPagerSampleComponent implements OnInit {
     public data: any[];
     public densityOptions: string[];
-    public totalRecords = 0;
-    public page = 0;
-    public perPage = 10;
     public isDropdownHidden = false;
     public isPagerHidden = false;
     public isDropdownDisabled = false;
     public isPagerDisabled = false;
-    public selectOptions = [5, 10, 15, 25];
-    public allData: any[];
-
+    public selectOptions = [5, 15, 20, 50];
     @ViewChild("paginator", { read: IgxPaginatorComponent, static: false })
     paginator: IgxPaginatorComponent;
 
@@ -29,25 +23,8 @@ export class GridPagerSampleComponent implements OnInit {
     };
 
     public ngOnInit(): void {
-        this.allData = athletesData;
-        this.totalRecords = this.allData.length;
-        this.data = this.sliceData(this.page, this.perPage);
+        this.data = athletesData;
         this.densityOptions = ["compact", "cosy", "comfortable"];
-    }
-
-    public paging(event: IPagingEventArgs) {
-        this.data = this.sliceData(event.newPage, this.perPage);
-    }
-
-    public sliceData(page, perPage) {
-        const start = page * perPage;
-        const end = (page + 1) * perPage;
-        const result = this.allData.slice(start, end);
-        return result;
-    }
-
-    public perPageChange(perPage: number) {
-        this.data = this.sliceData(this.page, perPage);
     }
 
     public ngAfterViewInit(): void {

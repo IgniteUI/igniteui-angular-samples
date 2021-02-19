@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <igx-hierarchical-grid igxPreventDocumentScroll [data]="data | async" [paging]="true" 
-        [primaryKey]="'CustomerID'" [height]="'550px'" 
+        [perPage]="perPage" [primaryKey]="'CustomerID'" [height]="'550px'" 
         [paginationTemplate]="remotePager" [width]="'100%'" #hierarchicalGrid>
         <igx-column field="CustomerID"></igx-column>
         <igx-column field="CompanyName"></igx-column>
@@ -29,10 +29,9 @@
 <ng-template #customPager let-api>
     <igx-paginator #paginator
         [totalRecords]="totalCount"
-        [(page)]="page"
-        [perPage]="perPage"
+        [(perPage)]="perPage"
+        [selectOptions]="selectOptions"
         [displayDensity]="hierarchicalGrid.displayDensity"
-        (perPageChange)="perPageChange($event)"
-        (paging)="paging($event)">
+        (pageChange)="paginate($event)">
     </igx-paginator>
 </ng-template>

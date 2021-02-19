@@ -19,6 +19,7 @@ export class RemotePagingDefaultTemplateComponent implements OnInit, AfterViewIn
     public data: Observable<any[]>;
     public mode = GridPagingMode.Remote;
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
+    @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
 
     private _dataLengthSubscriber;
 
