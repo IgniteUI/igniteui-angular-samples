@@ -20,9 +20,7 @@ IgxSwitchModule,
 IgxToastModule,
 IgxTooltipModule,
 IgxToggleModule} from 'igniteui-angular';
-import {AppModuleConfig} from './core/AppModuleConfig';
-import {Config} from './core/Config';
-import {IConfigGenerator} from './core/IConfigGenerator';
+import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import {Router, RouterModule} from '@angular/router'
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
@@ -30,7 +28,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         HierarchicalGridWithTransactionsComponent: '../../src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-transactions.component',
         RemoteValuesService: '../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-load-on-demand/remoteValues.service',
         HGridContextmenuComponent: '../../src/app/hierarchical-grid/hierarchical-grid-sorting/hgrid-contextmenu/hgrid-contextmenu.component',
-        RemoteLoDService: '../../src/app/hierarchical-grid/services/remote-lod.service'
+        RemoteLoDService: '../../src/app/services/remote-lod.service'
 };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -665,7 +663,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'HGridRowPinningExtraColumnSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/services/svgIcons.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/grid/services/svgIcons.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['HGridRowPinningExtraColumnSampleComponent', 'IgxHierarchicalGridModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['HGridRowPinningExtraColumnSampleComponent'],
@@ -676,7 +674,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'HGridRowPinningSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/services/svgIcons.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/grid/services/svgIcons.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['HGridRowPinningSampleComponent', 'IgxHierarchicalGridModule', 'IgxActionStripModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['HGridRowPinningSampleComponent'],
@@ -687,7 +685,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'HGridRowPinningStylingSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/services/svgIcons.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts", "/src/app/grid/services/svgIcons.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['HGridRowPinningStylingSampleComponent', 'IgxHierarchicalGridModule', 'IgxActionStripModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['HGridRowPinningStylingSampleComponent'],

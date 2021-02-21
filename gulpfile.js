@@ -11,23 +11,32 @@ const tsNode = require('ts-node').register({
         allowJs: true
     }
 });
+const { generateLiveEditing } = require('igniteui-live-editing');
 const argv = require("yargs").argv;
 
 const submodule = "igniteui-live-editing-samples";
 
-function requireFile(path) {
-    delete require.cache[require.resolve(path)];
-    return require(path);
-}
-
-gulp.task("generate-live-editing", (done) => {
-    const liveEditing = requireFile("./live-editing/LiveEditingManager.ts");
-    const manager = new liveEditing.LiveEditingManager();
-    var appDv = argv.appDv !== undefined && argv.appDv.toLowerCase().trim() === "true"
-    var compileSass = argv.css !== undefined && argv.css.toLowerCase().trim() === "true"
-
-    manager.run(appDv, compileSass);
-    done();
+gulp.task("generate-live-editing", async () => {
+    var appDv = argv.appDv !== undefined && argv.appDv.toLowerCase().trim() === "true";
+    const liveEditingOptions = appDv ? 
+    {
+        platform: 'angular', 
+        samplesDir: "./projects/app-lob/src/assets",
+        configGeneratorPath: "./live-editing/generators/AppDVConfigGenerators.ts",
+        module: {
+            moduleName: "DV_MODULE_ROUTES", routerPath: './live-editing/Routes.ts',
+        }
+    }
+        :
+    {
+        platform: 'angular', 
+        samplesDir: "./src/assets",
+        configGeneratorPath: "./live-editing/generators/ConfigGenerators.ts",
+        module: {
+            moduleName: "MODULE_ROUTES", routerPath: './live-editing/Routes.ts',
+        }
+    }
+    await generateLiveEditing(liveEditingOptions);
 });
 
 gulp.task("overwrite-package-json", (done) => {
@@ -51,17 +60,12 @@ gulp.task("watch-live-editing", gulp.series("generate-live-editing", () => {
     });
 }));
 
-gulp.task("sass-js-compile-check", async() => {
-    var checker = requireFile("./live-editing/services/SassJsCompileChecker.ts");
-    await checker.sassJsCompileChecker.run();
-});
-
 const excludedDirectories = ["index", "assets", "environment"];
 
 const getSampleNameFromFileName = (fileName, sampleBaseDir) => fileName.replace(sampleBaseDir + "--", "");
 var assetsRegex = new RegExp("\/?assets\/", "g");
 
-const processApp = (projectPath, dest, directoriesToExclude, compileSass) => {
+const processApp = (projectPath, dest, directoriesToExclude) => {
     if(!fs.existsSync(submodule)) {
         return console.error("No submodule found");
     }
@@ -74,9 +78,9 @@ const processApp = (projectPath, dest, directoriesToExclude, compileSass) => {
                 directories.push(child);
             }
     });
-    const jsonSamplesPath = path.join(__dirname, `${projectPath}/assets/samples${compileSass ? "/css-support" : ""}`);
+    const jsonSamplesPath = path.join(__dirname, `${projectPath}/assets/samples`);
     const sharedJson = JSON.parse(fs.readFileSync(path.join(jsonSamplesPath, "/shared.json")));
-    const submoduleAppDest = submodule + `/${dest}/${compileSass ? "css-support/":""}`;
+    const submoduleAppDest = submodule + `/${dest}/`;
     if(!fs.existsSync(submoduleAppDest)) {
         fs.mkdirSync(submoduleAppDest);
     }
@@ -132,19 +136,16 @@ const processApp = (projectPath, dest, directoriesToExclude, compileSass) => {
                             })
                         });
                         i++;
-                        console.log(`Processing ${fileName}.json with ${compileSass ? "CSS" : "SCSS" } styling`);
+                        console.log(`Processing ${fileName}.json with SCSS styling`);
                         cb(null, file);
                     })
                }))
                .on("error", () => console.log(err))
-               .on("end", () => console.log(`Geneared ${i} applications with ${compileSass ? "CSS" : "SCSS" } in ${dest.toUpperCase()} project.`));
+               .on("end", () => console.log(`Geneared ${i} applications with SCSS in ${dest.toUpperCase()} project.`));
 }
 
-const processDemosWithScss = () =>  processApp("src", "angular-demos", "data", false);
-const processDemosLobWithScss = () => processApp("projects/app-lob/src", "angular-demos-lob", "services", false);
-
-const processDemosWithCss = () =>  processApp("src", "angular-demos", "data", true);
-const processDemosLobWithCss = () => processApp("projects/app-lob/src", "angular-demos-lob", "services", true);
+const processDemosWithScss = () =>  processApp("src", "angular-demos", "data");
+const processDemosLobWithScss = () => processApp("projects/app-lob/src", "angular-demos-lob", "services");
 
 let repositoryfyAngularDemos;
 let repositoryfyAngularDemosLob;
@@ -160,7 +161,5 @@ const cleanupAngularDemosLob = (cb) => {
     fsExtra.mkdirSync(submodule + "/angular-demos-lob");
     cb();
 }
-exports.repositoryfyAngularDemos = repositoryfyAngularDemos = gulp.series(cleanupAngularDemos, gulp.parallel(processDemosWithScss, processDemosWithCss));
-exports.repositoryfyAngularDemosLob = repositoryfyAngularDemosLob =  gulp.series(cleanupAngularDemosLob, gulp.parallel(processDemosLobWithScss, processDemosLobWithCss));
-
-
+exports.repositoryfyAngularDemos = repositoryfyAngularDemos = gulp.series(cleanupAngularDemos, processDemosWithScss);
+exports.repositoryfyAngularDemosLob = repositoryfyAngularDemosLob =  gulp.series(cleanupAngularDemosLob, processDemosLobWithScss);

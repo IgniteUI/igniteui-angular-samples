@@ -1,18 +1,16 @@
 .grid__wrapper {
     position: relative;
     width: 100%;
-    height: calc(100% - 56px);
+    height: 98%;
     top: 0;
     left: 0;
     padding: 15px;
     display: flex;
     flex-direction: column;
-
     app-finjs-grid {
         height: 100%;
     }
 }
-
 
 :host ::ng-deep {
     .finjs-icons {

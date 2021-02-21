@@ -2,9 +2,7 @@ import {IgxIconModule,
 IgxInputGroupModule,
 IgxButtonModule,
 IgxSelectModule} from 'igniteui-angular';
-import {AppModuleConfig} from './core/AppModuleConfig';
-import {Config} from './core/Config';
-import {IConfigGenerator} from './core/IConfigGenerator';
+import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class IconConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         CategoriesFilterPipe: '../../src/app/data-display/icon/material-icons-extended/material-icons-extended.component',
