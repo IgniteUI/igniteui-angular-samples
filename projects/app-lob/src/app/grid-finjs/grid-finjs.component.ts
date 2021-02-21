@@ -1,9 +1,9 @@
 import { ElementRef, Inject, AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs } from 'igniteui-angular';
-import { Contract, REGIONS } from '../services/financialData';
-import { LocalDataService } from './localData.service';
-// tslint:disable-next-line:no-implicit-dependencies
+import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, IgxDialogComponent, IDialogEventArgs } from 'igniteui-angular';
+import { Contract, REGIONS } from '../data/financialData';
+import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
+import { FinancialDataService } from '../services/financial.service';
 import ResizeObserver from "resize-observer-polyfill";
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
@@ -34,14 +34,11 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
     private resizeContentToFit = new Subject();
     private contentObserver: ResizeObserver;
 
-
-    @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;
-
     @Output() public selectedDataChanged = new EventEmitter<any>();
     @Output() public keyDown = new EventEmitter<any>();
     @Output() public chartColumnKeyDown = new EventEmitter<any>();
 
-    constructor(public finService: LocalDataService, private el: ElementRef, @Inject(DOCUMENT) private document: Document, private renderer: Renderer2) {
+    constructor(public finService: FinancialDataService, private el: ElementRef, @Inject(DOCUMENT) private document: Document, private renderer: Renderer2) {
     }
 
     public ngOnInit() {
