@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
-import { SINGERS } from '../singersData';
+import { SINGERS } from '../data';
 
 @Component({
     selector: "hierarchical-grid-resizing",

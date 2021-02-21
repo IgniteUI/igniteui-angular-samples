@@ -25,7 +25,7 @@ IgxSparklineModule} from 'igniteui-angular-charts';
 import { Config, IConfigGenerator, AppModuleConfig, DependenciesType } from 'igniteui-live-editing';
 export class DVGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
-        'LocalDataService': '../../../projects/app-lob/src/app/grid-finjs/localData.service',
+        'FinancialDataService': '../../../projects/app-lob/src/app/services/financial.service',
         'IgxPreventDocumentScrollModule': '../../../src/app/directives/prevent-scroll.directive'
 };
     public generateConfigs(): Config[] {
@@ -91,11 +91,11 @@ export class DVGridConfigGenerator implements IConfigGenerator {
                 imports: ['IgxPreventDocumentScrollModule', 'IgxCategoryChartModule',
                     'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxSwitchModule',
-                    'IgxRippleModule', 'FinJSDemoComponent', 'IgxDialogModule', 'LocalDataService'],
+                    'IgxRippleModule', 'FinJSDemoComponent', 'IgxDialogModule', 'FinancialDataService'],
                 ngDeclarations: ['FinJSDemoComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule', 'IgxCategoryChartModule', 'IgxDialogModule'],
-                ngProviders: ['LocalDataService', 'IgxExcelExporterService', 'IgxCsvExporterService']
+                ngProviders: ['FinancialDataService', 'IgxExcelExporterService', 'IgxCsvExporterService']
             })
         }));
 
