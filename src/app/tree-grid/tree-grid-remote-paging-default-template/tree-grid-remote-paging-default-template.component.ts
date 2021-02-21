@@ -1,7 +1,6 @@
 import { formatNumber } from "@angular/common";
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import { GridPagingMode, IgxTreeGridComponent } from "igniteui-angular";
-import { IPagingEventArgs } from "igniteui-angular/lib/paginator/interfaces";
 import { Observable } from "rxjs";
 import { RemotePagingService } from "./remotePagingService";
 
@@ -16,8 +15,6 @@ export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, Aft
 
     public totalCount = 0;
     public data: Observable<any[]>;
-    public page = 0;
-    public perPage = 10;
     public mode = GridPagingMode.Remote;
     @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
     private _dataLengthSubscriber;
@@ -43,20 +40,15 @@ export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, Aft
 
     public ngAfterViewInit() {
         this.treeGrid.isLoading = true;
-        const skip = this.page * this.perPage
-        this.remoteService.getData(skip, this.perPage);
+        this.remoteService.getData(0, this.treeGrid.perPage);
         this.remoteService.getDataLength();
     }
 
-    public paging(event: IPagingEventArgs) {
-        const skip = event.newPage * event.owner.perPage;
-        this.remoteService.getData(skip, event.owner.perPage);
+    public paginate(page) {
+        const skip = page.current * this.treeGrid.perPage;
+        this.remoteService.getData(skip, this.treeGrid.perPage);
     }
 
-    public perPageChange(perPage: number) {
-        const skip = this.page * perPage;
-        this.remoteService.getData(skip, perPage);
-    }
     public log() {
         console.log(this.treeGrid.totalRecords, this.treeGrid.totalPages);
     }
