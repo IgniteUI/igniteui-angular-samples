@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
-import { SINGERS } from '../singersData';
+import { RemoteValuesService } from '../../services/remoteValues.service';
 
 @Component({
     selector: 'app-hierarchical-grid-resizing',
     styleUrls: ['./hierarchical-grid-resizing.component.scss'],
-    templateUrl: 'hierarchical-grid-resizing.component.html'
+    templateUrl: 'hierarchical-grid-resizing.component.html',
+    providers: [RemoteValuesService]
 })
 
 export class HGridColumnResizingSampleComponent implements OnInit {
@@ -14,13 +15,14 @@ export class HGridColumnResizingSampleComponent implements OnInit {
     public col: IgxColumnComponent;
     public pWidth: string;
     public nWidth: string;
+    public singers: any[];
 
-    constructor() {
-        const singers = SINGERS;
-        for (const singer of singers) {
+    constructor(private remoteValuesService: RemoteValuesService) {
+        this.singers = this.remoteValuesService.getSingersData();;
+        for (const singer of this.singers) {
             this.getSales(singer);
         }
-        this.localdata = singers;
+        this.localdata = this.singers;
     }
 
     public ngOnInit(): void {
