@@ -87,6 +87,7 @@ import { GridColumnSelectionStylesComponent } from "./column-selection-styles/co
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridActionStripSampleComponent } from "./grid-action-strip/grid-action-strip-sample";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
+import { GridColumnDataTypesSampleComponent } from "./grid-column-data-types-sample/grid-column-data-types-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
 import { RemotePagingBatchEditingComponent } from "./grid-batchEditing-remotePaging/batch-editing-remote-paging.component";
@@ -111,6 +112,8 @@ import {
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
 import { GridExportVisualizationComponent } from "./grid-export-visualization/grid-export-visualization.component";
+import { GridSelectComponent } from './grid-select/grid-select-sample.component'
+import { GridFormattedFilteringStrategyComponent } from "./grid-formatted-filtering-strategy/grid-formatted-filtering-strategy.component";
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -560,6 +563,11 @@ export const gridsRoutes: Routes = [
         path: "grid-advanced-filtering"
     },
     {
+        component: GridColumnDataTypesSampleComponent,
+        data: gridsRoutesData["grid-column-data-types"],
+        path: "grid-column-data-types"
+    },
+    {
         component: GridAdvancedFilteringStyleComponent,
         data: gridsRoutesData["grid-advanced-filtering-style"],
         path: "grid-advanced-filtering-style"
@@ -638,6 +646,16 @@ export const gridsRoutes: Routes = [
         component: GridEditingLifecycleComponent,
         data: gridsRoutesData["grid-editing-lifecycle"],
         path: "grid-editing-lifecycle"
+    },
+    {
+        component: GridSelectComponent,
+        data: gridsRoutesData["grid-select"],
+        path: "grid-select"
+    },
+    {
+        component: GridFormattedFilteringStrategyComponent,
+        data: gridsRoutesData["grid-formatted-filtering-strategy"],
+        path: "grid-formatted-filtering-strategy"
     }
 ];
 

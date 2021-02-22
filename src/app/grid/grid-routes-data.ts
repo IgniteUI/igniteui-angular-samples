@@ -106,5 +106,8 @@ export const gridsRoutesData = {
     "remote-paging-batch-editing": {displayName: "Remote paging with batch editing", parentName: "Grid"},
     "grid-sorting-indicators": {displayName: "Grid Sorting Indicators", parentName: "Grid"},
     "exporting-visualization": {displayName: "Exporting Visualization", parentName: "Grid"},
-    "grid-editing-lifecycle": {displayName: "Grid editing lifecycle", parentName: "Grid"}
+    "grid-editing-lifecycle": {displayName: "Grid editing lifecycle", parentName: "Grid"},
+    "grid-select": {displayName: "Grid with Select as Editor Provider", parentName: "Grid"},
+    "grid-column-data-types": {displayName: "Grid column data types", parentName: "Grid"},
+    "grid-formatted-filtering-strategy": { displayName: "Grid Formatted Filtering Strategy", parentName: "Grid" }
 };

@@ -1,12 +1,15 @@
 import {HttpClientModule} from '@angular/common/http';
 import {IgxButtonModule,
 IgxDropDownModule,
+IgxDividerModule,
 IgxForOfModule,
 IgxIconModule,
 IgxInputGroupModule,
 IgxNavbarModule,
 IgxRippleModule,
 IgxSwitchModule,
+IgxPrefixModule,
+IgxSuffixModule,
 IgxToastModule,
 IgxToggleModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
@@ -40,9 +43,11 @@ export class DropDownConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'DropDownSample3Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxDropDownModule', 'DropDownSample3Component', 'IgxButtonModule', 'IgxToggleModule'],
+                imports: ['IgxDropDownModule', 'DropDownSample3Component', 'IgxButtonModule', 'IgxToggleModule',
+                          'IgxPrefixModule', 'IgxSuffixModule', 'IgxIconModule', 'IgxDividerModule'],
                 ngDeclarations: ['DropDownSample3Component'],
-                ngImports: ['IgxDropDownModule', 'IgxButtonModule', 'IgxToggleModule']
+                ngImports: ['IgxDropDownModule', 'IgxButtonModule', 'IgxToggleModule', 'IgxPrefixModule',
+                            'IgxSuffixModule', 'IgxIconModule', 'IgxDividerModule']
             }),
             shortenComponentPathBy: "/data-entries/dropdown/"
         }));

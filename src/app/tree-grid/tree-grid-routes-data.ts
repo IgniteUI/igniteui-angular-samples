@@ -108,5 +108,6 @@ export const treeGridRoutesData = {
     "tree-grid-state": { displayName: "TreeGrid Save State", parentName: "TreeGrid" },
     "tree-grid-state-about": { displayName: "About", parentName: "TreeGrid" },
     "tree-grid-exporting-visualization": { displayName: "Exporting Visualization", parentName: "TreeGrid" },
-    "tree-grid-editing-lifecycle": { displayName: "Editing Lifecycle", parentName: "TreeGrid" }
+    "tree-grid-editing-lifecycle": { displayName: "Editing Lifecycle", parentName: "TreeGrid" },
+    "tree-grid-formatted-filtering-strategy": { displayName: "TreeGrid Formatted Filtering Strategy", parentName: "TreeGrid" }
 };

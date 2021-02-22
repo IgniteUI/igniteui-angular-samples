@@ -1,0 +1,22 @@
+@import '~igniteui-angular/lib/core/styles/themes/utilities';
+
+:host {
+    display: flex;
+}
+
+h5 {
+    margin: 8px;
+}
+
+igx-list {
+    box-shadow: igx-elevation($elevations, 2);
+    max-height: 352px;
+}
+
+.animate {
+    overflow-y: scroll;
+}
+
+igx-list-item {
+    border-bottom: 1px solid var(--igx-grays-100);
+}

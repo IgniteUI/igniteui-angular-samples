@@ -1,0 +1,23 @@
+@import '~igniteui-angular/lib/core/styles/themes/utilities';
+
+.grid-wrapper {
+    margin: 15px;
+}
+
+.location-wrapper {
+    min-width: 200px;
+    margin: 20px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.ellipsis {
+    @include ellipsis();
+}
+
+.warning {
+    color:red;
+}

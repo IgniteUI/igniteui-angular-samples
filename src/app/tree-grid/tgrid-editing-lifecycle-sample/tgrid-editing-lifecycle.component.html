@@ -30,7 +30,10 @@
             <div class="logContainer">
                 <div class="highlight">
                     <span>Events execution sequence</span>
-                    <button class="clearBtn" igxButton="flat" (click)="clearLog()"><igx-icon>clear</igx-icon>Clear log</button>
+                    <button class="clearBtn" igxButton="flat" (click)="clearLog()">
+                        <igx-icon>clear</igx-icon>
+                        <span>Clear log</span>
+                    </button>
                 </div>
                 <hr />
                 <div #logger class="logger"></div>

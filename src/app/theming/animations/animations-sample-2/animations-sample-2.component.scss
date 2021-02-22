@@ -1,0 +1,13 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+@include fade-in-top();
+
+.sample-column {
+    display: block;
+    padding: 16px;
+    @include animation('fade-in-top' 3s $ease-out-quad infinite);
+}
+
+.card-wrapper {
+    max-width: 400px;
+    min-width: 250px;
+}

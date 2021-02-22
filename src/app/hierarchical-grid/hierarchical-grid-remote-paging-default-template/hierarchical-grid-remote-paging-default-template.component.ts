@@ -12,7 +12,7 @@ import { RemotePagingService } from "./remotePagingService";
 export class HGridRemotePagingDefaultTemplateComponent implements OnInit, AfterViewInit, OnDestroy {
 
     public totalCount = 0;
-    public mode = GridPagingMode.remote;
+    public mode = GridPagingMode.Remote;
     @ViewChild("hierarchicalGrid", { static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;
     private _dataLengthSubscriber;
 
@@ -34,7 +34,7 @@ export class HGridRemotePagingDefaultTemplateComponent implements OnInit, AfterV
     public ngAfterViewInit() {
         this.hierarchicalGrid.isLoading = true;
         this.remoteService.getData(
-            { parentID: null, rootLevel: true, key: "Customers" }, 0, this.hierarchicalGrid.perPage)
+            { parentID: null, rootLevel: true, key: "Customers" }, this.hierarchicalGrid.perPage)
             .subscribe((data) => {
                 this.hierarchicalGrid.isLoading = false;
                 this.hierarchicalGrid.data = data;
@@ -75,6 +75,7 @@ export class HGridRemotePagingDefaultTemplateComponent implements OnInit, AfterV
 
     public pagingDone(page) {
         const skip = page.current * this.hierarchicalGrid.perPage;
+
         this.remoteService.getData(
             { parentID: null, rootLevel: true, key: "Customers" }, skip, this.hierarchicalGrid.perPage)
             .subscribe((data) => {

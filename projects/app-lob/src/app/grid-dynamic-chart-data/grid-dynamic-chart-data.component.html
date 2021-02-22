@@ -100,7 +100,7 @@
 
 <span *ngIf="contextmenu" class="analytics-btn" [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}">
     <button igxButton="icon" (click)="toggleChartSelectionDialog($event)">
-        <igx-icon #icon style="pointer-events: none;" class="icon" fontSet="material">insert_chart_outlined</igx-icon>
+        <igx-icon #icon style="pointer-events: none;" class="icon" family="material">insert_chart_outlined</igx-icon>
     </button>
 </span>
 <!-- this block can be moved in another component -->
@@ -149,7 +149,7 @@
                                 igxButtonBackground="#EBEBEB"
                                 igxButtonColor="black"
                                 style="width: 36px; height: 36px; border-radius: 50px; align-self: center;">
-                                <igx-icon class="icon" style="pointer-events: none;" fontSet="material">more_horiz</igx-icon>
+                                <igx-icon class="icon" style="pointer-events: none;" family="material">more_horiz</igx-icon>
                         </button>
                         <span class="name">More...</span>
                     </div>
@@ -188,7 +188,7 @@
         </div>
         <span>
             <button igxButton="icon" igxRipple (click)="toggle()">
-                <igx-icon fontSet="material">chevron_{{ opened ? 'right': 'left'}}</igx-icon>
+                <igx-icon family="material">chevron_{{ opened ? 'right': 'left'}}</igx-icon>
             </button>
         </span>
         <div #configArea class="chart-config-area {{chartCondigAreaState}}">

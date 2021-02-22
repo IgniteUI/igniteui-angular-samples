@@ -30,6 +30,7 @@ import { AvatarSample2Component } from "./avatar/avatar-sample-2/avatar-sample-2
 import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3.component";
 import { AvatarSample4Component } from "./avatar/avatar-sample-4/avatar-sample-4.component";
 import { AvatarStylingSampleComponent } from "./avatar/avatar-styling/avatar-styling.component";
+import { AvatarCSSVariablesComponent } from "./avatar/avatar-css-variables/avatar-css-variables.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
@@ -84,6 +85,7 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         AvatarSample3Component,
         AvatarSample4Component,
         AvatarStylingSampleComponent,
+        AvatarCSSVariablesComponent,
         CardSample1Component,
         CardSample2Component,
         CardSample3Component,
