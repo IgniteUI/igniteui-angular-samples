@@ -1,31 +1,25 @@
 import { ElementRef, Inject, AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, IgxDialogComponent, IDialogEventArgs } from 'igniteui-angular';
+import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs } from 'igniteui-angular';
 import { Contract, REGIONS } from '../data/financialData';
-import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
 import { FinancialDataService } from '../services/financial.service';
+// tslint:disable-next-line:no-implicit-dependencies
 import ResizeObserver from "resize-observer-polyfill";
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 @Component({
+  providers: [FinancialDataService],
   selector: 'app-finjs-grid',
   templateUrl: './grid-finjs.component.html',
   styleUrls: ['./grid-finjs.component.scss']
 })
 export class GridFinJSComponent implements OnInit, AfterViewInit {
-    @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;
-    @ViewChild("chart1", { static: true }) public chart1: IgxCategoryChartComponent;
-    @ViewChild("dialog", { static: true }) public dialog: IgxDialogComponent;
-
-    public properties;
     public selectionMode = "multiple";
     public volume = 1000;
     public frequency = 500;
     public data = [];
-    public chartData = [];
     public multiCellSelection: { data: any[] } = { data: [] };
-
     public contracts = Contract;
     public regions = REGIONS;
     public showToolbar = true;
@@ -33,6 +27,9 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
     private subscription$;
     private resizeContentToFit = new Subject();
     private contentObserver: ResizeObserver;
+
+
+    @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;
 
     @Output() public selectedDataChanged = new EventEmitter<any>();
     @Output() public keyDown = new EventEmitter<any>();
@@ -77,27 +74,10 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
         this.contentObserver = new ResizeObserver(() => this.resizeContentToFit.next());
         this.contentObserver.observe(this.controlsWrapper);
         this.grid.hideGroupedColumns = true;
-        // this.grid.reflow();
+        this.grid.reflow();
     }
 
     /** Event Handlers and Methods */
-    public onCloseHandler(evt: IDialogEventArgs) {
-        if (this.grid.navigation.activeNode) {
-            if (this.grid.navigation.activeNode.row === -1) {
-                this.grid.theadRow.nativeElement.focus();
-            } else {
-                this.grid.tbody.nativeElement.focus();
-            }
-        }
-    }
-
-    public closeDialog(evt) {
-        if (this.dialog.isOpen &&
-            evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === "d") {
-            evt.preventDefault();
-            this.dialog.close();
-        }
-    }
     public onChange(event: any) {
         if (this.grid.groupingExpressions.length > 0) {
             this.grid.groupingExpressions = [];
@@ -124,32 +104,9 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
         }
     }
 
-    public rowSelectionChanged(args) {
+    public rowSelectionChanged(args: IRowSelectionEventArgs) {
         this.grid.clearCellSelection();
-        this.chartData = [];
-        args.newSelection.forEach(row => {
-            this.chartData.push(this.grid.data[row]);
-            this.chart1.notifyInsertItem(this.chartData, this.chartData.length - 1,
-                this.grid.data[row]);
-        });
-        this.setLabelIntervalAndAngle();
-        this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
-    }
-
-    public openSingleRowChart(cell: IgxGridCellComponent) {
-        this.chartData = [];
-        setTimeout(() => {
-            this.chartData = this.data.filter(item => item.Region === cell.rowData.Region &&
-                item.Category === cell.rowData.Category);
-
-            this.chart1.notifyInsertItem(this.chartData, this.chartData.length - 1, {});
-
-            this.setLabelIntervalAndAngle();
-            this.chart1.chartTitle = "Data Chart with prices of " + this.chartData[0].Category + " in " +
-                this.chartData[0].Region + " Region";
-
-            this.dialog.open();
-        }, 200);
+        this.selectedDataChanged.emit(args.newSelection);
     }
 
     public toggleGrouping() {
@@ -182,7 +139,7 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
         if (this.grid.selectedRows.length > 0 &&
             evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === "d") {
             evt.preventDefault();
-            this.dialog.open();
+            this.keyDown.emit();
         }
     }
 
@@ -193,27 +150,12 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
 
         if (type === "dataCell" && target.column.field === "Chart" && evt.key.toLowerCase() === "enter") {
             this.grid.selectRows([target.row.rowID], true);
-            this.openSingleRowChart(target);
+            this.chartColumnAction(target);
         }
     }
 
-    public selectFirstGroupAndFillChart() {
-        this.properties = ["Price", "Country"];
-        this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
-        // tslint:disable-next-line: max-line-length
-        const recordsToBeSelected = this.grid.selectionService.getRowIDs(this.grid.groupsRecords[0].groups[0].groups[0].records);
-        recordsToBeSelected.forEach(item => {
-            this.grid.selectionService.selectRowById(item, false, true);
-        });
-    }
-    public setChartConfig(xAsis, yAxis, title) {
-        // update label interval and angle based on data
-        this.setLabelIntervalAndAngle();
-
-        // this.chart1.yAxisFormatLabel = this.formatYAxisLabel;
-        this.chart1.xAxisTitle = xAsis;
-        this.chart1.yAxisTitle = yAxis;
-        this.chart1.chartTitle = title;
+    public chartColumnAction(target) {
+        this.chartColumnKeyDown.emit(target.rowData);
     }
 
     /** Grid Formatters */
@@ -275,38 +217,9 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
     };
     // tslint:enable:member-ordering
 
-    public setLabelIntervalAndAngle() {
-        const intervalSet = this.chartData.length;
-        if (intervalSet < 10) {
-            this.chart1.xAxisLabelAngle = 0;
-            this.chart1.xAxisInterval = 1;
-        } else if (intervalSet < 15) {
-            this.chart1.xAxisLabelAngle = 30;
-            this.chart1.xAxisInterval = 1;
-        } else if (intervalSet < 40) {
-            this.chart1.xAxisLabelAngle = 90;
-            this.chart1.xAxisInterval = 1;
-        } else if (intervalSet < 100) {
-            this.chart1.xAxisLabelAngle = 90;
-            this.chart1.xAxisInterval = 3;
-        } else if (intervalSet < 200) {
-            this.chart1.xAxisLabelAngle = 90;
-            this.chart1.xAxisInterval = 5;
-        } else if (intervalSet < 400) {
-            this.chart1.xAxisLabelAngle = 90;
-            this.chart1.xAxisInterval = 7;
-        } else if (intervalSet > 400) {
-            this.chart1.xAxisLabelAngle = 90;
-            this.chart1.xAxisInterval = 10;
-        }
-        this.chart1.yAxisAbbreviateLargeNumbers = true;
-    }
-
     public ngOnDestroy() {
-        this.subscription$.unsubscribe();
-    }
-
-    get grouped(): boolean {
-        return this.grid.groupingExpressions.length > 0;
+        if (this.subscription$) {
+            this.subscription$.unsubscribe();
+        }
     }
 }

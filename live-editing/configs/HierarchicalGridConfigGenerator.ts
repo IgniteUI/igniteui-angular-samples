@@ -783,6 +783,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             component: 'HGridAddRowSampleComponent'
         }));
 
+        configs.push(new Config({
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxHierarchicalGridModule', 'HGridFormattedFilteringStrategyComponent', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['HGridFormattedFilteringStrategyComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
+            }),
+            component: 'HGridFormattedFilteringStrategyComponent'
+        }));
+
         return configs;
     }
 }
