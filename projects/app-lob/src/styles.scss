@@ -32,6 +32,10 @@ body {
     margin: 0;
 }
 
+.igx-dialog__window-content {
+    max-width: none;
+}
+
 .sample-wrapper {
     width: inherit;
     position: relative;
