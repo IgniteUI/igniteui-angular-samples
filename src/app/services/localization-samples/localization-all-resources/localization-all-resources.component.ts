@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { registerLocaleData } from "@angular/common";
 import localeEN from '@angular/common/locales/en';
 import localeDE from '@angular/common/locales/de';
-import localeES from '@angular/common/locales/ES';
+import localeES from '@angular/common/locales/es';
 import localeFR from '@angular/common/locales/fr';
 import localeIT from '@angular/common/locales/it';
 import localeJA from '@angular/common/locales/ja';
