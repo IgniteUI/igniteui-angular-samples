@@ -1,7 +1,10 @@
-import {IgxGridModule,
-IgxIconModule,
-IgxInputGroupModule,
-IgxTimePickerModule} from 'igniteui-angular';
+import {
+    IgxGridModule,
+    IgxIconModule,
+    IgxInputGroupModule,
+    IgxTimePickerModule,
+    IgxSelectModule
+} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class LocalizationConfigGenerator implements IConfigGenerator {
     public additionalImports = {
