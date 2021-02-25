@@ -10,6 +10,6 @@ export const servicesRoutesData = {
     "localization-sample-1": { displayName: "Localize one component", parentName: "Localization" },
     "localization-sample-2": { displayName: "Localize All", parentName: "Localization" },
     "localization-sample-3": { displayName: "Localize partially", parentName: "Localization" },
-    "localization-all-resources": { displayName: "Localize an application via i18n package", parentName: "Localization" },
+    "localization-all-resources": { displayName: "Localize application", parentName: "Localization" },
     "transaction-base": { displayName: "Base Transaction", parentName: "Transactions" }
 };

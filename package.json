@@ -63,6 +63,7 @@
     "igniteui-angular-core": "^10.1.4",
     "igniteui-angular-excel": "^9.1.2",
     "igniteui-angular-gauges": "^9.1.2",
+    "igniteui-angular-i18n": "^11.1.0",
     "igniteui-angular-maps": "^9.1.2",
     "igniteui-angular-spreadsheet": "^9.1.2",
     "igniteui-angular-spreadsheet-chart-adapter": "^9.1.2",
