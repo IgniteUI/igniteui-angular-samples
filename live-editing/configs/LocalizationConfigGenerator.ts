@@ -7,10 +7,6 @@ import {
 } from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class LocalizationConfigGenerator implements IConfigGenerator {
-    public additionalImports = {
-        IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive',
-};
-
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
@@ -19,9 +15,9 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
             component: 'LocalizationSample1Component',
             additionalFiles: ["src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxInputGroupModule', 'LocalizationSample1Component', 'IgxGridModule', 'IgxIconModule'],
+                imports: ['IgxInputGroupModule', 'LocalizationSample1Component', 'IgxGridModule', 'IgxIconModule'],
                 ngDeclarations: ['LocalizationSample1Component'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxInputGroupModule', 'IgxGridModule', 'IgxGridModule']
+                ngImports: ['IgxInputGroupModule', 'IgxGridModule', 'IgxGridModule']
             }),
             shortenComponentPathBy: "/localization-samples/"
         }));
@@ -31,10 +27,10 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
             component: 'LocalizationSample2Component',
             additionalFiles: ["src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxInputGroupModule', 'LocalizationSample2Component', 'IgxIconModule',
+                imports: ['IgxInputGroupModule', 'LocalizationSample2Component', 'IgxIconModule',
                           'IgxTimePickerModule', 'IgxGridModule'],
                 ngDeclarations: ['LocalizationSample2Component'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxInputGroupModule', 'IgxIconModule', 'IgxTimePickerModule', 'IgxGridModule']
+                ngImports: ['IgxInputGroupModule', 'IgxIconModule', 'IgxTimePickerModule', 'IgxGridModule']
             }),
             shortenComponentPathBy: "/localization-samples/"
         }));
@@ -44,9 +40,9 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
             component: 'LocalizationSample3Component',
             additionalFiles: ["src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxInputGroupModule', 'LocalizationSample3Component', 'IgxGridModule', 'IgxIconModule'],
+                imports: ['IgxInputGroupModule', 'LocalizationSample3Component', 'IgxGridModule', 'IgxIconModule'],
                 ngDeclarations: ['LocalizationSample3Component'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxInputGroupModule', 'IgxGridModule', 'IgxIconModule']
+                ngImports: ['IgxInputGroupModule', 'IgxGridModule', 'IgxIconModule']
             }),
             shortenComponentPathBy: "/localization-samples/"
         }));
@@ -56,9 +52,9 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
             component: 'LocalizationAllResourcesComponent',
             additionalFiles: ["src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxInputGroupModule', 'LocalizationAllResourcesComponent', 'IgxGridModule', 'IgxIconModule', 'IgxSelectModule'],
+                imports: ['IgxInputGroupModule', 'LocalizationAllResourcesComponent', 'IgxGridModule', 'IgxIconModule', 'IgxSelectModule'],
                 ngDeclarations: ['LocalizationAllResourcesComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxInputGroupModule', 'IgxGridModule', 'IgxIconModule', 'IgxSelectModule']
+                ngImports: ['IgxInputGroupModule', 'IgxGridModule', 'IgxIconModule', 'IgxSelectModule']
             }),
             shortenComponentPathBy: "/localization-samples/"
         }));
