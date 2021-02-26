@@ -11,7 +11,7 @@ import localeKO from '@angular/common/locales/ko';
 import localeHans from '@angular/common/locales/zh-Hans';
 import localeHant from '@angular/common/locales/zh-Hant';
 import { DATA } from "../../data/nwindData";
-import { IgxGridComponent, IResourceStrings, changei18n, getCurrentResourceStrings, IGridResourceStrings } from "igniteui-angular";
+import { IgxGridComponent, IResourceStrings, changei18n, getCurrentResourceStrings } from "igniteui-angular";
 import {
     IgxResourceStringsDE, IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsIT,
     IgxResourceStringsJA, IgxResourceStringsKO, IgxResourceStringsZHHANS, IgxResourceStringsZHHANT
@@ -31,7 +31,7 @@ export class LocalizationAllResourcesComponent implements OnInit, OnDestroy {
     public locales: { type: string, resource: object }[];
     public selectLocales = ["BG", "EN", "DE", "ES", "FR", "IT", "JA", "KO", "zh-Hans", "zh-Hant"];
     public cashedLocalizationEN: IResourceStrings;
-    public partialCustomBG: IGridResourceStrings;
+    public partialCustomBG: IResourceStrings;
 
     constructor() { }
     public ngOnInit(): void {
