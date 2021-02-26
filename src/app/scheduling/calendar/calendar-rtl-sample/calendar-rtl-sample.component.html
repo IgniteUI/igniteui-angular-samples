@@ -1,0 +1,20 @@
+<div class="calendar-wrapper">
+    <div class="sample-column" [attr.dir]="directionality">
+        <article>
+            <igx-select #select [(ngModel)]="locale">
+                <igx-prefix>Location: </igx-prefix>
+                <igx-select-item *ngFor="let locale of locales" [value]="locale">
+                    {{ locale }}
+                </igx-select-item>
+            </igx-select>
+        </article>
+        <article>
+            <igx-calendar #calendar [locale]="locale" [weekStart]="1" [formatOptions]="formatOptions"
+                [formatViews]="formatViews">
+            </igx-calendar>
+        </article>
+    </div>
+    <div class="sample-column" (click)="changeDirectionality()">
+        <button igxButton="raised" igxRipple>Change Directionality</button>
+    </div>
+</div>
