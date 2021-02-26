@@ -16,7 +16,7 @@ export class CalendarRtlSampleComponent {
     public directionality = 'rtl'
 
     changeDirectionality(){
-        this.directionality === 'rtl' ? this.directionality='ltr' : this.directionality='rtl';
+        this.directionality === 'rtl' ? this.directionality = 'ltr' : this.directionality = 'rtl';
     }
 
     public ngOnInit() {
