@@ -1,7 +1,6 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, OnDestroy, Output, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, EventEmitter, NgZone, OnDestroy, Output, ViewChild } from "@angular/core";
 import { IDialogEventArgs, IgxDialogComponent } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
-import { FinancialData } from '../services/financialData';
 import { ControllerComponent } from './controllers.component';
 import { GridFinJSComponent } from './grid-finjs.component';
 
@@ -30,7 +29,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     public frequency = 500;
     private _timer;
 
-    constructor(private elRef: ElementRef) {
+    constructor(private zone: NgZone) {
     }
 
     public ngAfterViewInit() {
@@ -59,6 +58,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     }
 
     public onVolumeChanged(volume: any) {
+        this.finGrid.grid.deselectAllRows();
         this.finGrid.finService.getData(volume);
     }
 
@@ -66,12 +66,12 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
         switch (event.action) {
             case 'playAll': {
                 const currData = this.finGrid.data;
-                this._timer = setInterval(() => this.tickerAllPrices(currData), this.controller.frequency);
+                this._timer = setInterval(() =>  this.zone.runOutsideAngular(() => this.finGrid.finService.updateAllPriceValues(currData)), this.controller.frequency);
                 break;
             }
             case 'playRandom': {
-                const currData = this.finGrid.data;
-                this._timer = setInterval(() => this.ticker(currData), this.controller.frequency);
+                const currData = this.finGrid.grid.filteredSortedData ?? this.finGrid.data;
+                this._timer = setInterval(() => this.zone.runOutsideAngular(() => this.finGrid.finService.updateRandomPriceValues(currData)), this.controller.frequency);
                 break;
             }
             case 'stop': {
@@ -186,14 +186,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
         if (this.subscription$) {
             this.subscription$.unsubscribe();
         }
-    }
-
-    private ticker(data: any) {
-        this.finGrid.data = new FinancialData().updateRandomPrices(data);
-    }
-
-    private tickerAllPrices(data: any) {
-        this.finGrid.data = new FinancialData().updateAllPrices(data);
     }
 
     public ngOnDestroy() {

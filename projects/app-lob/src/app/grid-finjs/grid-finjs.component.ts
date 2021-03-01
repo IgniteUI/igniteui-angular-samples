@@ -16,7 +16,6 @@ export class GridFinJSComponent implements OnInit {
     public volume = 1000;
     public frequency = 500;
     public data = [];
-    public multiCellSelection: { data: any[] } = { data: [] };
     public contracts = Contract;
     public regions = REGIONS;
     public columnFormat = { digitsInfo: '1.3-3'}
