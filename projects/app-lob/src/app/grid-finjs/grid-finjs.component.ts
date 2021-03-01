@@ -1,11 +1,8 @@
-import { ElementRef, Inject, AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild, Renderer2 } from '@angular/core';
+import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { Contract, REGIONS } from '../services/financialData';
 import { LocalDataService } from './localData.service';
-// tslint:disable-next-line:no-implicit-dependencies
-import ResizeObserver from "resize-observer-polyfill";
-import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -14,7 +11,7 @@ import { Subject } from 'rxjs';
   templateUrl: './grid-finjs.component.html',
   styleUrls: ['./grid-finjs.component.scss']
 })
-export class GridFinJSComponent implements OnInit, AfterViewInit {
+export class GridFinJSComponent implements OnInit {
     public selectionMode = "multiple";
     public volume = 1000;
     public frequency = 500;
@@ -22,11 +19,10 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
     public multiCellSelection: { data: any[] } = { data: [] };
     public contracts = Contract;
     public regions = REGIONS;
+    public columnFormat = { digitsInfo: '1.3-3'}
     public showToolbar = true;
     protected destroy$ = new Subject<any>();
     private subscription$;
-    private resizeContentToFit = new Subject();
-    private contentObserver: ResizeObserver;
     public overlaySettings: OverlaySettings = {
         modal: false
     };
@@ -43,10 +39,6 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
 
     public ngOnInit() {
         this.overlaySettings.outlet = this.outlet;
-        this.resizeContentToFit.pipe(takeUntil(this.destroy$)).subscribe(() => {
-            const height = `${this.document.body.offsetHeight - this.controlsWrapper.offsetHeight - 5}px`;
-            this.renderer.setStyle(this.gridWrapper, 'height', height);
-        });
         if (this.data.length === 0) {
             this.finService.getData(this.volume);
             this.subscription$ = this.finService.records.subscribe(x => {
@@ -74,12 +66,6 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
         ];
     }
 
-    public ngAfterViewInit() {
-        this.contentObserver = new ResizeObserver(() => this.resizeContentToFit.next());
-        this.contentObserver.observe(this.controlsWrapper);
-        this.grid.hideGroupedColumns = true;
-        this.grid.reflow();
-    }
 
     /** Event Handlers and Methods */
     public onChange(event: any) {
@@ -160,19 +146,6 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
 
     public chartColumnAction(target) {
         this.chartColumnKeyDown.emit(target.rowData);
-    }
-
-    /** Grid Formatters */
-    public formatNumber(value: number) {
-        return value.toFixed(2);
-    }
-
-    public percentage(value: number) {
-        return value.toFixed(2) + "%";
-    }
-
-    public formatCurrency(value: number) {
-        return "$" + value.toFixed(3);
     }
 
     get gridWrapper(): HTMLElement {
