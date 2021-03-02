@@ -175,7 +175,6 @@ export class GridFinJSComponent implements OnInit {
         return rowData["Change(%)"] <= -1;
     }
 
-    // tslint:disable:member-ordering
     public trends = {
         changeNeg: this.changeNegative,
         changePos: this.changePositive,
@@ -191,7 +190,6 @@ export class GridFinJSComponent implements OnInit {
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
     };
-    // tslint:enable:member-ordering
 
     public ngOnDestroy() {
         if (this.subscription$) {
