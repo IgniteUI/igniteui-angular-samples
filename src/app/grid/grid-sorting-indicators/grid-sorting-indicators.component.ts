@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { IgxGridComponent, DefaultSortingStrategy } from 'igniteui-angular';
 import { FinancialData } from '../../data/financialData';
 import  {generateRandomInteger, generateRandomFloat} from '../../data/utils';
-
 @Component({
   selector: 'app-grid-sorting-indicators',
   templateUrl: './grid-sorting-indicators.component.html',

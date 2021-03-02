@@ -113,6 +113,7 @@ import { TreeGridExternalOutletComponent } from './tree-grid-external-outlet/tre
 import { TreeGridExportVisualizationComponent } from './tree-grid-export-visualization/tree-grid-export-visualization.component';
 import { TGridEditingLifecycleComponent } from "./tgrid-editing-lifecycle-sample/tgrid-editing-lifecycle.component";
 import { RemoteFilteringService } from './services/remoteFilteringService';
+import { TreeGridFormattedFilteringStrategyComponent } from "./tree-grid-formatted-filtering-strategy/tree-grid-formatted-filtering-strategy.component";
 
 @NgModule({
     declarations: [
@@ -199,7 +200,8 @@ import { RemoteFilteringService } from './services/remoteFilteringService';
         TreeGridRemotePagingDefaultTemplateComponent,
         TreeGridExternalOutletComponent,
         TreeGridExportVisualizationComponent,
-        TGridEditingLifecycleComponent
+        TGridEditingLifecycleComponent,
+        TreeGridFormattedFilteringStrategyComponent
     ],
     imports: [
         CommonModule,

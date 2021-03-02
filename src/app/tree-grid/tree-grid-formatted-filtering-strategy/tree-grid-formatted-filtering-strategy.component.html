@@ -3,15 +3,15 @@
         [allowFiltering]="true" filterMode="excelStyleFilter" [filterStrategy]="filterStrategy"
         primaryKey="ID" foreignKey="ParentID">
 
-        <igx-column field="ID" header="Product ID" [dataType]="'string'" [sortable]="true" >
+        <igx-column field="ID" header="Product ID" [dataType]="'string'" [sortable]="true" [disableHiding]="true">
         </igx-column>
-        <igx-column field="Name" header="Product Name" [dataType]="'string'" [sortable]="true" >
+        <igx-column field="Name" header="Product Name" [dataType]="'string'" [sortable]="true" [disableHiding]="true">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price Category" dataType="string" [sortable]="true" [formatter]="formatPrice">
+        <igx-column field="UnitPrice" header="Unit Price Category" dataType="string" [sortable]="true" [disableHiding]="true" [formatter]="formatPrice">
         </igx-column>
-        <igx-column field="AddedDate" header="Added Date" [dataType]="'date'" [sortable]="true" >
+        <igx-column field="AddedDate" header="Added Date" [dataType]="'date'" [sortable]="true" [disableHiding]="true">
         </igx-column>
-        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [sortable]="true" >
+        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [sortable]="true" [disableHiding]="true">
             <ng-template igxCell let-cell="cell" let-val>
                 <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
                 <img *ngIf="cell.row.rowData.UnitPrice != 0 && val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />

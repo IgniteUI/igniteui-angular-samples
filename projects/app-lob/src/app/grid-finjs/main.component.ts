@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, OnDestroy, Output, ViewChild } from "@angular/core";
-import { IgxDialogComponent, IDialogEventArgs } from 'igniteui-angular';
+import { IDialogEventArgs, IgxDialogComponent } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
-import { FinancialData } from "../data/financialData";
+import { FinancialData } from '../data/financialData';
 import { ControllerComponent } from './controllers.component';
 import { GridFinJSComponent } from './grid-finjs.component';
 

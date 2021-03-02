@@ -1,6 +1,6 @@
 import { ElementRef, Inject, AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
+import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { Contract, REGIONS } from '../data/financialData';
 import { FinancialDataService } from '../services/financial.service';
 // tslint:disable-next-line:no-implicit-dependencies
@@ -78,7 +78,7 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
         this.contentObserver = new ResizeObserver(() => this.resizeContentToFit.next());
         this.contentObserver.observe(this.controlsWrapper);
         this.grid.hideGroupedColumns = true;
-        // this.grid.reflow();
+        this.grid.reflow();
     }
 
     /** Event Handlers and Methods */
@@ -108,7 +108,7 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
         }
     }
 
-    public rowSelectionChanged(args) {
+    public rowSelectionChanged(args: IRowSelectionEventArgs) {
         this.grid.clearCellSelection();
         this.selectedDataChanged.emit(args.newSelection);
     }

@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
-    IgxButtonGroupComponent, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
+    IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
     PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
 import { timer } from "rxjs";
 import { debounce } from "rxjs/operators";
@@ -20,6 +20,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     @ViewChild("buttonGroup1", { static: true }) public buttonGroup1: IgxButtonGroupComponent;
     @ViewChild("slider1", { static: true }) public volumeSlider: IgxSliderComponent;
     @ViewChild("slider2", { static: true }) public intervalSlider: IgxSliderComponent;
+    @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
 
     public showToolbar = true;
     public selectionMode = "multiple";
@@ -27,6 +28,9 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     public volume = 1000;
     public frequency = 500;
     public data: any[] = [];
+    public overlaySettings: OverlaySettings = {
+        modal: false
+    };
     public controls = [
         {
             disabled: false,
@@ -101,6 +105,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     }
 
     public ngOnInit() {
+        this.overlaySettings.outlet = this.outlet;
         this.grid1.sortingExpressions = [{ fieldName: this.groupColumnKey, dir: SortingDirection.Desc }];
         this.volumeChanged = this.volumeSlider.onValueChange.pipe(debounce(() => timer(200)));
         this.volumeChanged.subscribe(
