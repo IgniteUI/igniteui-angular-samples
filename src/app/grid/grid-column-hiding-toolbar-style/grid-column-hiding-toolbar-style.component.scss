@@ -12,18 +12,18 @@ $dark-column-actions-theme: igx-column-actions-theme(
     $title-color: $yellow
 );
 
-$dark-button-theme: igx-button-theme(
-    $outlined-background: $yellow,
-    $outlined-text-color: $bg,
-    $outlined-hover-background: $gray,
-    $outlined-hover-text-color: $yellow,
-    $outlined-focus-background: $yellow,
-    $flat-text-color: $yellow,
-    $flat-hover-background: $gray,
-    $flat-hover-text-color: $yellow,
-    $flat-focus-background: $yellow,
-    $disabled-color: $light-gray
-);
+// $dark-button-theme: igx-button-theme(
+//     $outlined-background: $yellow,
+//     $outlined-text-color: $bg,
+//     $outlined-hover-background: $gray,
+//     $outlined-hover-text-color: $yellow,
+//     $outlined-focus-background: $yellow,
+//     $flat-text-color: $yellow,
+//     $flat-hover-background: $gray,
+//     $flat-hover-text-color: $yellow,
+//     $flat-focus-background: $yellow,
+//     $disabled-color: $light-gray
+// );
 
 $dark-input-group: igx-input-group-theme(
     $filled-text-color: $yellow,
@@ -78,9 +78,9 @@ $dark-ripple-theme: igx-ripple-theme(
 //         )
 //     )
 // );
-// 
+//
 // $custom-button-schema: extend($_dark-button,
-//     (           
+//     (
 //         flat-text-color:(
 //             igx-color:("secondary", 500)
 //         ),
@@ -89,7 +89,7 @@ $dark-ripple-theme: igx-ripple-theme(
 //         )
 //     )
 // );
-// 
+//
 // $custom-dark-schema: extend($dark-schema,(
 //     igx-column-actions: $custom-column-actions-schema,
 //     igx-button: $custom-button-schema
@@ -112,7 +112,7 @@ $dark-ripple-theme: igx-ripple-theme(
         igx-column-actions, igx-grid-toolbar {
             @include igx-checkbox($dark-checkbox-theme);
             @include igx-input-group($dark-input-group);
-            @include igx-button($dark-button-theme);
+            // @include igx-button($dark-button-theme);
             @include igx-ripple($dark-ripple-theme);
         }
     }

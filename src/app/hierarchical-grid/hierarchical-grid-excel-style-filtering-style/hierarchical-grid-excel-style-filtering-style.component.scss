@@ -7,15 +7,10 @@ $custom-grid: igx-grid-theme(
 );
 
 $custom-button: igx-button-theme(
-    $flat-background: #FFCD0F,
-    $flat-text-color: #292826,
-    $flat-hover-background: #292826,
-    $flat-hover-text-color: #FFCD0F,
-
-    $raised-background: #FFCD0F,
-    $raised-text-color: #292826,
-    $raised-hover-background: #292826,
-    $raised-hover-text-color: #FFCD0F
+    $background: #FFCD0F,
+    $foreground: #292826,
+    $hover-background: #292826,
+    $hover-foreground: #FFCD0F
 );
 
 $custom-input-group: igx-input-group-theme(
@@ -56,15 +51,10 @@ $custom-drop-down: igx-drop-down-theme(
 // );
 
 // $custom-button: igx-button-theme(
-//     $flat-background: igx-color($dark-palette, "secondary", 400),
-//     $flat-text-color: igx-color($dark-palette, "primary", 400),
-//     $flat-hover-background: igx-color($dark-palette, "primary", 400),
-//     $flat-hover-text-color: igx-color($dark-palette, "secondary", 400),
-
-//     $raised-background: igx-color($dark-palette, "secondary", 400),
-//     $raised-text-color: igx-color($dark-palette, "primary", 400),
-//     $raised-hover-background: igx-color($dark-palette, "primary", 400),
-//     $raised-hover-text-color: igx-color($dark-palette, "secondary", 400)
+//     $background: igx-color($dark-palette, "secondary", 400),
+//     $foreground: igx-color($dark-palette, "primary", 400),
+//     $hover-background: igx-color($dark-palette, "primary", 400),
+//     $hover-foreground: igx-color($dark-palette, "secondary", 400)
 // );
 
 // $custom-input-group: igx-input-group-theme(
@@ -104,29 +94,16 @@ $custom-drop-down: igx-drop-down-theme(
 
 // $custom-button-schema: extend($_light-button,
 //     (
-//         flat-background:(
+//         background:(
 //             igx-color: ("secondary", 400)
 //         ),
-//         flat-text-color:(
+//         foreground:(
 //             igx-color: ("primary", 400)
 //         ),
-//         flat-hover-background:(
+//         hover-background:(
 //             igx-color: ("primary", 400)
 //         ),
-//         flat-hover-text-color:(
-//             igx-color: ("secondary", 400)
-//         ),
-
-//         raised-background:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         raised-text-color:(
-//             igx-color: ("primary", 400)
-//         ),
-//         raised-hover-background:(
-//             igx-color: ("primary", 400)
-//         ),
-//         raised-hover-text-color:(
+//         hover-foreground:(
 //             igx-color: ("secondary", 400)
 //         )
 //     )

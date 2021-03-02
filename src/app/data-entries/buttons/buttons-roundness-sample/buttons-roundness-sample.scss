@@ -1,14 +1,35 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-$mySpecialButton: igx-button-theme(
-    $flat-border-radius: .5,
-    $raised-border-radius: 30px,
-    $fab-border-radius: 10%,
-    $icon-border-radius: .5 .2 .5 .2
+$flatBtn: igx-button-theme(
+    $border-radius: .5
 );
 
-:host ::ng-deep {
-    @include igx-button($mySpecialButton);
+$raisedBtn: igx-button-theme(
+    $border-radius: 30px
+);
+
+$fabBtn: igx-button-theme(
+    $border-radius: 10%
+);
+
+$iconBtn: igx-button-theme(
+    $border-radius: .5 .2 .5 .2
+);
+
+.flat {
+    @include igx-button($flatBtn);
+}
+
+.raised {
+    @include igx-button($raisedBtn);
+}
+
+.fab {
+    @include igx-button($fabBtn);
+}
+
+.icon {
+    @include igx-button($iconBtn);
 }
 
 .buttons-sample {
