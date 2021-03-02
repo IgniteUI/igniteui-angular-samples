@@ -440,7 +440,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         // Hierarchical Grid Load on Demand Sample
         configs.push(new Config({
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/services/remote-lod.service.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/services/remote-lod.service.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxHierarchicalGridModule', 'HierarchicalGridLoDSampleComponent', 'RemoteLoDService', 'HttpClientModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['HierarchicalGridLoDSampleComponent'],
@@ -610,7 +610,6 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: [
-                "/src/app/hierarchical-grid/services/data.ts",
                 "/src/app/data/athletesData.ts"
             ],
             appModuleConfig: new AppModuleConfig({

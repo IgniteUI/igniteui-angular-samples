@@ -318,7 +318,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridRemoteVirtualizationSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/services/remoteVirtualization.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/services/remoteVirtualization.service.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridRemoteVirtualizationSampleComponent', 'IgxGridModule', 'IgxToastModule',
                     'IgxBadgeModule', 'HttpClientModule', 'RemoteServiceVirt', 'IgxPreventDocumentScrollModule'],
