@@ -2,7 +2,6 @@
     <igx-grid #grid1
     igxPreventDocumentScroll
     width="100%" height="30%"
-    [autoGenerate]='false'
     displayDensity='compact'
     hiddenColumnsText="Hidden"
     primaryKey='ID'
@@ -72,10 +71,12 @@
             </ng-template>
         </igx-column>
 
-        <igx-column [field]="'Change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'" [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatNumber" [movable]="true">
+        <igx-column [field]="'Change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
+            [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatNumber" [movable]="true">
         </igx-column>
 
-        <igx-column [field]="'Change(%)'" [width]="'110px'" dataType="number" [formatter]="percentage" [movable]="true" [sortable]="true" [cellClasses]="trendsChange">
+        <igx-column [field]="'Change(%)'" [width]="'110px'" dataType="number" [formatter]="percentage" [movable]="true"
+            [sortable]="true" [cellClasses]="trendsChange">
         </igx-column>
 
         <igx-column [field]="'Buy'" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>

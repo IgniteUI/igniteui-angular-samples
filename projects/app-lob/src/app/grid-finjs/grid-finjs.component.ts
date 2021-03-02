@@ -1,7 +1,6 @@
 import { ElementRef, Inject, AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IgxDialogComponent, IDialogEventArgs,
-       OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
+import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { Contract, REGIONS } from '../data/financialData';
 import { FinancialDataService } from '../services/financial.service';
 // tslint:disable-next-line:no-implicit-dependencies
