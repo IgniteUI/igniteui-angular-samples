@@ -1,4 +1,4 @@
-import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild, Renderer2 } from '@angular/core';
+import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { Contract, REGIONS } from '../services/financialData';
@@ -33,7 +33,7 @@ export class GridFinJSComponent implements OnInit {
     @Output() public keyDown = new EventEmitter<any>();
     @Output() public chartColumnKeyDown = new EventEmitter<any>();
 
-    constructor(public finService: LocalDataService, private el: ElementRef, @Inject(DOCUMENT) private document: Document, private renderer: Renderer2) {
+    constructor(public finService: LocalDataService, private el: ElementRef, @Inject(DOCUMENT) private document: Document) {
     }
 
     public ngOnInit() {
