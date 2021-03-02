@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxHierarchicalGridComponent } from "igniteui-angular";
-import { CUSTOMERS } from "../data";
+import { CUSTOMERS } from "../../data/singersData";
 
 @Component({
     selector: "hierarchical-grid-collapsible-column-groups",

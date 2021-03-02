@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { SINGERS } from "../data";
+import { SINGERS } from "../../data/singersData";
 
 @Component({
     selector: "hierarchical-grid-paging",

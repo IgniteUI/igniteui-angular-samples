@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { CUSTOMERS } from "../data";
+import { CUSTOMERS } from "../../data/singersData";
 
 @Component({
     selector: "app-hierarchical-grid-multi-cell-style",

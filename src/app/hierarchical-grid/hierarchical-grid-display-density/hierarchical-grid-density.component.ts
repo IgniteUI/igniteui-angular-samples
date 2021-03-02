@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
-import { CUSTOMERS } from "../data";
+import { CUSTOMERS } from "../../data/singersData";
 
 @Component({
     selector: "hierarchical-grid-density",

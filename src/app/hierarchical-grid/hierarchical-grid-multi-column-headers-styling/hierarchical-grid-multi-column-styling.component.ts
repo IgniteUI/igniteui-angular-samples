@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { CUSTOMERS } from "../data";
+import { CUSTOMERS } from "../../data/singersData";
 
 @Component({
     selector: "hierarchical-grid-multi-column-styling",

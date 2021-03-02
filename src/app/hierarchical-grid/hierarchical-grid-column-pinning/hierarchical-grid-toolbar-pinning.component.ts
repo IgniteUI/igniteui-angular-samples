@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { CUSTOMERS } from "../data";
+import { CUSTOMERS } from "../../data/singersData";
 
 @Component({
     selector: "hierarchical-grid-toolbar-pinning",

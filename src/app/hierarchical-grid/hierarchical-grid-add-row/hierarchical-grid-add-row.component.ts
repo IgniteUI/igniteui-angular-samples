@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { SINGERS } from "../data";
+import { SINGERS } from "../../data/singersData";
 import { Singer } from "../models";
 
 @Component({

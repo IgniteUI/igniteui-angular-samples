@@ -10,7 +10,7 @@ import {
 } from "igniteui-angular";
 import { fromEvent, Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
-import { CUSTOMERS } from "../data";
+import { CUSTOMERS } from "../../data/singersData";
 
 enum GridSection {
     THEAD = "igx-grid__thead-wrapper",
