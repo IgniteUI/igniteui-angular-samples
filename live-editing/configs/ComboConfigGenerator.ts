@@ -70,7 +70,7 @@ export class ComboConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/grid/services/remote.service.ts"],
+            additionalFiles: ["/src/app/services/remoteNwind.service.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxComboModule', 'IgxToastModule', 'ComboRemoteComponent',
                     'HttpClientModule', 'RemoteService'],
