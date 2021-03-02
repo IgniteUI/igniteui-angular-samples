@@ -1,6 +1,7 @@
 import { ElementRef, Inject, AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, IgxDialogComponent, IDialogEventArgs } from 'igniteui-angular';
+import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, IgxDialogComponent, IDialogEventArgs, 
+       OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { Contract, REGIONS } from '../data/financialData';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
 import { FinancialDataService } from '../services/financial.service';
@@ -34,6 +35,13 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
     private resizeContentToFit = new Subject();
     private contentObserver: ResizeObserver;
 
+    public overlaySettings: OverlaySettings = {
+        modal: false
+    };
+
+    @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;
+    @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
+
     @Output() public selectedDataChanged = new EventEmitter<any>();
     @Output() public keyDown = new EventEmitter<any>();
     @Output() public chartColumnKeyDown = new EventEmitter<any>();
@@ -42,6 +50,7 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
     }
 
     public ngOnInit() {
+        this.overlaySettings.outlet = this.outlet;
         this.resizeContentToFit.pipe(takeUntil(this.destroy$)).subscribe(() => {
             const height = `${this.document.body.offsetHeight - this.controlsWrapper.offsetHeight - 5}px`;
             this.renderer.setStyle(this.gridWrapper, 'height', height);
