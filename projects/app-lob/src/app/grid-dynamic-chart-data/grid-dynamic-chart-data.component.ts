@@ -145,7 +145,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
 
         this.chartSelectionDialog.onClose.subscribe((evt) => this.chartPreviewDialog.close());
 
-        this.data = FinancialData().generateData(1000);
+        this.data = FinancialData.generateData(1000);
 
         this.grid.onRangeSelection.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(200))
             .subscribe(range => {
