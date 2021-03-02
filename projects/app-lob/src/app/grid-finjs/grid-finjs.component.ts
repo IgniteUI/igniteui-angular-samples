@@ -4,6 +4,8 @@ import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCell
 import { Contract, REGIONS } from '../services/financialData';
 import { LocalDataService } from './localData.service';
 import { Subject } from 'rxjs';
+import { SignalRService } from './signal-r.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   providers: [LocalDataService],
@@ -15,7 +17,7 @@ export class GridFinJSComponent implements OnInit {
     public selectionMode = "multiple";
     public volume = 1000;
     public frequency = 500;
-    public data = [];
+    public data$: any;
     public contracts = Contract;
     public regions = REGIONS;
     public columnFormat = { digitsInfo: '1.3-3'}
@@ -33,38 +35,50 @@ export class GridFinJSComponent implements OnInit {
     @Output() public keyDown = new EventEmitter<any>();
     @Output() public chartColumnKeyDown = new EventEmitter<any>();
 
-    constructor(public finService: LocalDataService, private el: ElementRef, @Inject(DOCUMENT) private document: Document, private renderer: Renderer2) {
+    constructor(public finService: LocalDataService, private el: ElementRef, @Inject(DOCUMENT) private document: Document,
+        private renderer: Renderer2, public signalRService: SignalRService, private http: HttpClient) {
     }
 
     public ngOnInit() {
+        this.signalRService.startConnection();
+        this.signalRService.addTransferDataListener();
+        this.startHttpRequest();
+
         this.overlaySettings.outlet = this.outlet;
-        if (this.data.length === 0) {
-            this.finService.getData(this.volume);
-            this.subscription$ = this.finService.records.subscribe(x => {
-                this.data = x;
-            });
-        }
+        //if (this.data$.length === 0) {
+            this.data$ = this.signalRService.data;
+            // this.finService.getData(this.volume);
+            // this.subscription$ = this.finService.records.subscribe(x => {
+            //     this.data = x;
+            // });
+        //}
         this.grid.groupingExpressions = [{
             dir: SortingDirection.Desc,
-            fieldName: 'Category',
+            fieldName: 'category',
             ignoreCase: false,
             strategy: DefaultSortingStrategy.instance()
         },
         {
             dir: SortingDirection.Desc,
-            fieldName: 'Type',
+            fieldName: 'type',
             ignoreCase: false,
             strategy: DefaultSortingStrategy.instance()
         },
         {
             dir: SortingDirection.Desc,
-            fieldName: 'Settlement',
+            fieldName: 'settlement',
             ignoreCase: false,
             strategy: DefaultSortingStrategy.instance()
         }
         ];
     }
 
+    private startHttpRequest = () => {
+        this.http.get('https://localhost:5001/webapi')
+            .subscribe(res => {
+                console.log(res);
+            })
+    }
 
     /** Event Handlers and Methods */
     public onChange(event: any) {
@@ -73,19 +87,19 @@ export class GridFinJSComponent implements OnInit {
         } else {
             this.grid.groupingExpressions = [{
                 dir: SortingDirection.Desc,
-                fieldName: 'Category',
+                fieldName: 'category',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: 'Type',
+                fieldName: 'type',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: 'Contract',
+                fieldName: 'contract',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             }
@@ -104,19 +118,19 @@ export class GridFinJSComponent implements OnInit {
         } else {
             this.grid.groupingExpressions = [{
                 dir: SortingDirection.Desc,
-                fieldName: 'Category',
+                fieldName: 'category',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: 'Type',
+                fieldName: 'type',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: 'Contract',
+                fieldName: 'contract',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             }
@@ -157,22 +171,22 @@ export class GridFinJSComponent implements OnInit {
 
     /** Grid CellStyles and CellClasses */
     private negative = (rowData: any): boolean => {
-        return rowData["Change(%)"] < 0;
+        return rowData["changeP"] < 0;
     }
     private positive = (rowData: any): boolean => {
-        return rowData["Change(%)"] > 0;
+        return rowData["changeP"] > 0;
     }
     private changeNegative = (rowData: any): boolean => {
-        return rowData["Change(%)"] < 0 && rowData["Change(%)"] > -1;
+        return rowData["changeP"] < 0 && rowData["changeP"] > -1;
     }
     private changePositive = (rowData: any): boolean => {
-        return rowData["Change(%)"] > 0 && rowData["Change(%)"] < 1;
+        return rowData["changeP"] > 0 && rowData["changeP"] < 1;
     }
     private strongPositive = (rowData: any): boolean => {
-        return rowData["Change(%)"] >= 1;
+        return rowData["changeP"] >= 1;
     }
     private strongNegative = (rowData: any, key: string): boolean => {
-        return rowData["Change(%)"] <= -1;
+        return rowData["changeP"] <= -1;
     }
 
     // tslint:disable:member-ordering

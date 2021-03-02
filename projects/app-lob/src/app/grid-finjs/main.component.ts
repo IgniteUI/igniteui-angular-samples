@@ -33,7 +33,9 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     }
 
     public ngAfterViewInit() {
-        this.selectFirstGroupAndFillChart();
+        setTimeout(() => {
+            this.selectFirstGroupAndFillChart();
+        }, 2000);
     }
 
     public onSwitchChanged(event: any) {
@@ -65,12 +67,12 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     public onPlayAction(event: any) {
         switch (event.action) {
             case 'playAll': {
-                const currData = this.finGrid.data;
+                const currData = this.finGrid.grid.data;
                 this._timer = setInterval(() =>  this.zone.runOutsideAngular(() => this.finGrid.finService.updateAllPriceValues(currData)), this.controller.frequency);
                 break;
             }
             case 'playRandom': {
-                const currData = this.finGrid.grid.filteredSortedData ?? this.finGrid.data;
+                const currData = this.finGrid.grid.filteredSortedData ?? this.finGrid.grid.data;
                 this._timer = setInterval(() => this.zone.runOutsideAngular(() => this.finGrid.finService.updateRandomPriceValues(currData)), this.controller.frequency);
                 break;
             }
@@ -79,6 +81,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
                 break;
             }
             case 'chart': {
+                debugger;
                 this.setChartData(this.finGrid.grid.selectedRows);
                 this.dialog.open()
                 break;
@@ -91,11 +94,12 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     }
 
     public setChartData(args: any[]) {
+        debugger;
         this.chartData = [];
         args.forEach(row => {
-            this.chartData.push(this.finGrid.data[row]);
+            this.chartData.push(this.finGrid.grid.data[row]);
             this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1,
-                this.finGrid.data[row]);
+                this.finGrid.grid.data[row]);
         });
         this.controller.controls[3].disabled = this.chartData.length === 0;
         this.setLabelIntervalAndAngle();
@@ -165,7 +169,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     public openSingleRowChart(rowData: any) {
         this.chartData = [];
         setTimeout(() => {
-            this.chartData = this.finGrid.data.filter(item => item.Region === rowData.Region &&
+            this.chartData = this.finGrid.grid.data.filter(item => item.Region === rowData.Region &&
                 item.Category === rowData.Category);
 
             this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1, {});
