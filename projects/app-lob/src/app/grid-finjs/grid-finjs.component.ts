@@ -19,7 +19,6 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
     public volume = 1000;
     public frequency = 500;
     public data = [];
-    public chartData = [];
     public multiCellSelection: { data: any[] } = { data: [] };
     public contracts = Contract;
     public regions = REGIONS;
@@ -28,7 +27,6 @@ export class GridFinJSComponent implements OnInit, AfterViewInit {
     private subscription$;
     private resizeContentToFit = new Subject();
     private contentObserver: ResizeObserver;
-
     public overlaySettings: OverlaySettings = {
         modal: false
     };
