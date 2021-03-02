@@ -85,7 +85,7 @@ export class DVGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'FinJSDemoComponent',
             dependenciesType: DependenciesType.Charts,
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/grid-finjs/localData.service.ts",
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/services/financial.service.ts",
                 "/projects/app-lob/src/app/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxCategoryChartModule',
