@@ -86,7 +86,7 @@ export class DVGridConfigGenerator implements IConfigGenerator {
             component: 'FinJSDemoComponent',
             dependenciesType: DependenciesType.Charts,
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/services/financial.service.ts",
-                "/projects/app-lob/src/app/services/financialData.ts"],
+                "/projects/app-lob/src/app/data/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxCategoryChartModule',
                     'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',

@@ -51,7 +51,7 @@ export class DVTreeGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/gservices/financial.service.ts",
-                "/projects/app-lob/src/app/services/financialData.ts",
+                "/projects/app-lob/src/app/data/financialData.ts",
                 "/projects/app-lob/src/app/treegrid-finjs/tree-grid-grouping.pipe.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
