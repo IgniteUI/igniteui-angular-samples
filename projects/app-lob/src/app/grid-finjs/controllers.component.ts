@@ -16,6 +16,7 @@ export class ControllerComponent implements OnInit, OnDestroy {
 
     @Output() public switchChanged = new EventEmitter<any>();
     @Output() public volumeChanged = new EventEmitter<any>();
+    @Output() public frequencyChanged = new EventEmitter<any>();
     @Output() public playAction = new EventEmitter<any>();
 
     public volume = 1000;
@@ -23,7 +24,7 @@ export class ControllerComponent implements OnInit, OnDestroy {
     public frequency = 500;
     public controls = [
         {
-            disabled: false,
+            disabled: true,
             icon: 'update',
             label: 'LIVE PRICES',
             selected: false
@@ -51,10 +52,14 @@ export class ControllerComponent implements OnInit, OnDestroy {
     private subscription;
     private selectedButton;
     private volumeChanged$;
+    private frequencyChanged$;
 
     public ngOnInit() {
         this.volumeChanged$ = this.volumeSlider.onValueChange.pipe(debounce(() => timer(200)));
         this.volumeChanged$.subscribe(x => this.volumeChanged.emit(this.volumeSlider.value));
+
+        this.frequencyChanged$ = this.intervalSlider.onValueChange.pipe(debounce(() => timer(200)));
+        this.frequencyChanged$.subscribe(x => this.frequencyChanged.emit(this.intervalSlider.value));
     }
 
     public onButtonSelected(event: any) {
@@ -111,5 +116,6 @@ export class ControllerComponent implements OnInit, OnDestroy {
 
     public ngOnDestroy() {
         this.volumeChanged$.unsubscribe();
+        this.frequencyChanged$.unsubscribe();
     }
 }

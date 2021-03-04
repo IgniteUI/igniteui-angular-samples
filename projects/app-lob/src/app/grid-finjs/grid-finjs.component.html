@@ -76,7 +76,7 @@
         </igx-column>
 
         <igx-column [field]="'changeP'" [width]="'110px'" dataType="percent" [movable]="true"
-            [sortable]="true" [cellClasses]="trendsChange">
+            [pipeArgs]="columnFormat" [sortable]="true" [cellClasses]="trendsChange">
         </igx-column>
 
         <igx-column [field]="'buy'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat" [movable]="true"

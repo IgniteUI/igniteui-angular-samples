@@ -3,6 +3,7 @@ import { IDialogEventArgs, IgxDialogComponent } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
 import { ControllerComponent } from './controllers.component';
 import { GridFinJSComponent } from './grid-finjs.component';
+import { SignalRService } from "./signal-r.service";
 
 @Component({
     selector: "app-finjs-main",
@@ -29,13 +30,16 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     public frequency = 500;
     private _timer;
 
-    constructor(private zone: NgZone) {
+    constructor(private zone: NgZone, public signalRService: SignalRService ) {
     }
 
     public ngAfterViewInit() {
         setTimeout(() => {
             this.selectFirstGroupAndFillChart();
         }, 2000);
+    }
+
+    public ngOnInit() {
     }
 
     public onSwitchChanged(event: any) {
@@ -60,8 +64,11 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     }
 
     public onVolumeChanged(volume: any) {
-        this.finGrid.grid.deselectAllRows();
-        this.finGrid.finService.getData(volume);
+        this.signalRService.broadcastParams(this.controller.frequency, volume);
+    }
+
+    public onFrequencyChanged(frequency: any) {
+        this.signalRService.broadcastParams(frequency, this.controller.volume);
     }
 
     public onPlayAction(event: any) {
@@ -81,7 +88,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
                 break;
             }
             case 'chart': {
-                debugger;
                 this.setChartData(this.finGrid.grid.selectedRows);
                 this.dialog.open()
                 break;
@@ -94,7 +100,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     }
 
     public setChartData(args: any[]) {
-        debugger;
         this.chartData = [];
         args.forEach(row => {
             this.chartData.push(this.finGrid.grid.data[row]);
@@ -127,10 +132,12 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     public selectFirstGroupAndFillChart() {
         this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
         // tslint:disable-next-line: max-line-length
+        if(this.finGrid.grid.groupsRecords.length !== 0) {
         const recordsToBeSelected = this.finGrid.grid.selectionService.getRowIDs(this.finGrid.grid.groupsRecords[0].groups[0].groups[0].records);
-        recordsToBeSelected.forEach(item => {
-            this.finGrid.grid.selectionService.selectRowById(item, false, true);
-        });
+            recordsToBeSelected.forEach(item => {
+                this.finGrid.grid.selectionService.selectRowById(item, false, true);
+            });
+        }
     }
     public setChartConfig(xAsis, yAxis, title) {
         // update label interval and angle based on data
@@ -169,14 +176,14 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     public openSingleRowChart(rowData: any) {
         this.chartData = [];
         setTimeout(() => {
-            this.chartData = this.finGrid.grid.data.filter(item => item.Region === rowData.Region &&
-                item.Category === rowData.Category);
+            this.chartData = this.finGrid.grid.data.filter(item => item.region === rowData.region &&
+                item.category === rowData.category);
 
             this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1, {});
 
             this.setLabelIntervalAndAngle();
-            this.chart.chartTitle = "Data Chart with prices of " + this.chartData[0].Category + " in " +
-                this.chartData[0].Region + " Region";
+            this.chart.chartTitle = "Data Chart with prices of " + this.chartData[0].category + " in " +
+                this.chartData[0].region + " Region";
 
             this.dialog.open();
         }, 200);

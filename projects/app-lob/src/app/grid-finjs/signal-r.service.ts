@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import * as signalR from '@aspnet/signalR';
 import { BehaviorSubject } from 'rxjs';
 import { FinancialData } from '../services/financialData';
@@ -11,7 +11,7 @@ export class SignalRService {
     private hubConnection: signalR.HubConnection;
 
     constructor() {
-        this.data = new BehaviorSubject([]);    
+        this.data = new BehaviorSubject([]);
     }
     public startConnection = () => {
         this.hubConnection = new signalR.HubConnectionBuilder()
@@ -19,13 +19,22 @@ export class SignalRService {
             .withUrl('https://localhost:5001/streamHub')
             .build();
         this.hubConnection
-        .start()
-        .then(() => console.log('Connection started'))
-        .catch(err => console.log('Error while starting the connection:' + err))
+            .start()
+            .then(() => console.log('Connection started'))
+            .catch(err => console.log('Error while starting the connection:' + err))
     }
+
     public addTransferDataListener = () => {
         this.hubConnection.on('transferdata', (data) => {
+            // debugger;
             this.data.next(data);
         })
+    }
+
+    public broadcastParams = (ms, volume) => {
+        console.log("broadcasted volume: " + volume);
+        console.log("broadcasted ms    : " + ms);
+        this.hubConnection.invoke('updateparameters', ms, volume)
+            .catch(err => console.error(err));
     }
 }
