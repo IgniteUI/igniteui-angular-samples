@@ -20,15 +20,12 @@ export class SignalRService {
             .build();
         this.hubConnection
             .start()
-            .then(() => console.log('Connection started'))
+            .then(() => {
+                console.log('Connection started');
+                this.registerSignalEvents();
+                this.broadcastParams(500, 1000);
+            })
             .catch(err => console.log('Error while starting the connection:' + err))
-    }
-
-    public addTransferDataListener = () => {
-        this.hubConnection.on('transferdata', (data) => {
-            // debugger;
-            this.data.next(data);
-        })
     }
 
     public broadcastParams = (ms, volume) => {
@@ -36,5 +33,11 @@ export class SignalRService {
         console.log("broadcasted ms    : " + ms);
         this.hubConnection.invoke('updateparameters', ms, volume)
             .catch(err => console.error(err));
+    }
+
+    private registerSignalEvents() {
+        this.hubConnection.on('transferdata', (data) => {
+            this.data.next(data);
+        })
     }
 }

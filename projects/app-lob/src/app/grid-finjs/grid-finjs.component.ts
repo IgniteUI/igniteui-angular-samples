@@ -41,17 +41,13 @@ export class GridFinJSComponent implements OnInit {
 
     public ngOnInit() {
         this.signalRService.startConnection();
-        this.signalRService.addTransferDataListener();
         this.startHttpRequest();
 
         this.overlaySettings.outlet = this.outlet;
-        //if (this.data$.length === 0) {
-            this.data$ = this.signalRService.data;
-            // this.finService.getData(this.volume);
-            // this.subscription$ = this.finService.records.subscribe(x => {
-            //     this.data = x;
-            // });
-        //}
+
+        // This is not necessary?
+        this.data$ = this.signalRService.data;
+
         this.grid.groupingExpressions = [{
             dir: SortingDirection.Desc,
             fieldName: 'category',
