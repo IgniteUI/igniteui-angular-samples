@@ -3,6 +3,7 @@ import { IgxButtonGroupComponent, IgxSliderComponent
 } from 'igniteui-angular';
 import { timer } from 'rxjs';
 import { debounce } from 'rxjs/operators';
+import { SignalRService } from './signal-r.service';
 
 @Component({
     selector: 'app-finjs-controllers',
@@ -54,6 +55,8 @@ export class ControllerComponent implements OnInit, OnDestroy {
     private volumeChanged$;
     private frequencyChanged$;
 
+    constructor(public signalRService: SignalRService) {
+    }
     public ngOnInit() {
         this.volumeChanged$ = this.volumeSlider.onValueChange.pipe(debounce(() => timer(200)));
         this.volumeChanged$.subscribe(x => this.volumeChanged.emit(this.volumeSlider.value));
@@ -72,11 +75,14 @@ export class ControllerComponent implements OnInit, OnDestroy {
             case 1: {
                 this.disableOtherButtons(event.index, true);
                 this.playAction.emit({ action: 'playAll'});
+
+                this.signalRService.broadcastParams(this.frequency, this.volume, true);
                 break;
             }
             case 2: {
                 this.disableOtherButtons(event.index, false);
                 this.playAction.emit({ action: 'stop'});
+                this.signalRService.stopLiveData();
                 break;
             }
             case 3: {

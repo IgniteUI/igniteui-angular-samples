@@ -64,11 +64,11 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     }
 
     public onVolumeChanged(volume: any) {
-        this.signalRService.broadcastParams(this.controller.frequency, volume);
+        this.signalRService.broadcastParams(this.controller.frequency, volume, false);
     }
 
     public onFrequencyChanged(frequency: any) {
-        this.signalRService.broadcastParams(frequency, this.controller.volume);
+        this.signalRService.broadcastParams(frequency, this.controller.volume, false);
     }
 
     public onPlayAction(event: any) {

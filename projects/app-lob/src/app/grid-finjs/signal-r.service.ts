@@ -23,16 +23,21 @@ export class SignalRService {
             .then(() => {
                 console.log('Connection started');
                 this.registerSignalEvents();
-                this.broadcastParams(500, 1000);
+                this.broadcastParams(500, 1000, false);
             })
             .catch(err => console.log('Error while starting the connection:' + err))
     }
 
-    public broadcastParams = (ms, volume) => {
+    public broadcastParams = (ms, volume, live) => {
         console.log("broadcasted volume: " + volume);
         console.log("broadcasted ms    : " + ms);
-        this.hubConnection.invoke('updateparameters', ms, volume)
+        this.hubConnection.invoke('updateparameters', ms, volume, live)
             .catch(err => console.error(err));
+    }
+
+    public stopLiveData = () => {
+        this.hubConnection.invoke('StopTimer')
+        .catch(err => console.error(err));
     }
 
     private registerSignalEvents() {
