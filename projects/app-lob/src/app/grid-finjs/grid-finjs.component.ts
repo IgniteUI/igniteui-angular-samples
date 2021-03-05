@@ -1,4 +1,4 @@
-import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild, Renderer2 } from '@angular/core';
+import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { Contract, REGIONS } from '../services/financialData';
@@ -36,7 +36,7 @@ export class GridFinJSComponent implements OnInit {
     @Output() public chartColumnKeyDown = new EventEmitter<any>();
 
     constructor(public finService: LocalDataService, private el: ElementRef, @Inject(DOCUMENT) private document: Document,
-        private renderer: Renderer2, public signalRService: SignalRService, private http: HttpClient) {
+        private signalRService: SignalRService, private http: HttpClient ) {
     }
 
     public ngOnInit() {
@@ -185,7 +185,6 @@ export class GridFinJSComponent implements OnInit {
         return rowData["changeP"] <= -1;
     }
 
-    // tslint:disable:member-ordering
     public trends = {
         changeNeg: this.changeNegative,
         changePos: this.changePositive,
@@ -201,7 +200,6 @@ export class GridFinJSComponent implements OnInit {
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
     };
-    // tslint:enable:member-ordering
 
     public ngOnDestroy() {
         if (this.subscription$) {

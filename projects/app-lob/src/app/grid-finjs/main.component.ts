@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, NgZone, OnDestroy, Output, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, EventEmitter, OnDestroy, Output, ViewChild } from "@angular/core";
 import { IDialogEventArgs, IgxDialogComponent } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
 import { ControllerComponent } from './controllers.component';
@@ -30,7 +30,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     public frequency = 500;
     private _timer;
 
-    constructor(private zone: NgZone, public signalRService: SignalRService ) {
+    constructor(public signalRService: SignalRService ) {
     }
 
     public ngAfterViewInit() {
@@ -74,13 +74,13 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     public onPlayAction(event: any) {
         switch (event.action) {
             case 'playAll': {
-                const currData = this.finGrid.grid.data;
-                this._timer = setInterval(() =>  this.zone.runOutsideAngular(() => this.finGrid.finService.updateAllPriceValues(currData)), this.controller.frequency);
+                const currData = this.finGrid.grid.filteredSortedData ?? this.finGrid.grid.data;
+                this._timer = setInterval(() => this.finGrid.finService.updateAllPriceValues(currData), this.controller.frequency);
                 break;
             }
             case 'playRandom': {
                 const currData = this.finGrid.grid.filteredSortedData ?? this.finGrid.grid.data;
-                this._timer = setInterval(() => this.zone.runOutsideAngular(() => this.finGrid.finService.updateRandomPriceValues(currData)), this.controller.frequency);
+                this._timer = setInterval(() => this.finGrid.finService.updateRandomPriceValues(currData), this.controller.frequency);
                 break;
             }
             case 'stop': {

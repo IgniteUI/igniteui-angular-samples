@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, NgZone } from "@angular/core";
 import { BehaviorSubject, Observable} from "rxjs";
 import { FinancialData } from "../services/financialData";
 
@@ -8,7 +8,7 @@ export class LocalDataService {
     public _records: BehaviorSubject<any[]>;
     private financialData: FinancialData = new FinancialData()
 
-    constructor() {
+    constructor(private zone: NgZone) {
         this._records = new BehaviorSubject([]);
         this.records = this._records.asObservable();
     }
@@ -18,10 +18,16 @@ export class LocalDataService {
     }
 
     public updateAllPriceValues(data) {
-        this._records.next(this.financialData.updateAllPrices(data));
+        this.zone.runOutsideAngular(() =>  {
+            const newData = this.financialData.updateAllPrices(data);
+            this._records.next(newData);
+        });
     }
 
     public updateRandomPriceValues(data) {
-        this._records.next(this.financialData.updateRandomPrices(data))
+        this.zone.runOutsideAngular(() =>  {
+            const newData = this.financialData.updateRandomPrices(data);
+            this._records.next(newData);
+        });
     }
 }
