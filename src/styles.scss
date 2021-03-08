@@ -5,7 +5,7 @@
 @include igx-theme($default-palette, $legacy-support: true);
 
 :root {
-    @include css-vars-from-palette($default-palette);
+    @include igx-palette-vars($default-palette);
 }
 
 /* autoprefixer grid: on */

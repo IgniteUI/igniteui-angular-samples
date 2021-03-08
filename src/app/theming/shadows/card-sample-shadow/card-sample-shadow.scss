@@ -4,7 +4,7 @@
 :host ::ng-deep {
 
     $myCard: igx-card-theme(
-        $resting-shadow: igx-elevation($elevations, 10)
+        $resting-shadow: igx-elevation($igx-elevations, 10)
     );
     @include igx-card($myCard);
 
