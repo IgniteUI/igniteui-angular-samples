@@ -1,6 +1,6 @@
 import { Singer } from "./models";
 
-// tslint:disable:object-literal-sort-keys
+/* eslint-disable */
 export const SINGERS: Singer[] = [
     {
         Artist: "Naomí Yepes",

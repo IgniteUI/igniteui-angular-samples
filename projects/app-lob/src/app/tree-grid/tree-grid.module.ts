@@ -5,7 +5,7 @@ import { IgxAvatarModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule
     IgxCsvExporterService, IgxDialogModule, IgxExcelExporterService, IgxGridModule, IgxIconModule,
     IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
     IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule, IgxTreeGridModule } from "igniteui-angular";
-// tslint:disable:max-line-length
+/* eslint-disable max-len */
 import { IgxSparklineCoreModule, IgxSparklineModule } from "igniteui-angular-charts";
 import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 import { RemoteFilteringService } from "./services/remoteFilteringService";

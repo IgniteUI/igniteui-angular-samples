@@ -205,7 +205,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         return rowData["Change(%)"] <= -1;
     }
 
-    // tslint:disable:member-ordering
+    /* eslint-disable @typescript-eslint/member-ordering */
     public trends = {
         changeNeg: this.changeNegative,
         changePos: this.changePositive,
@@ -221,7 +221,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
     };
-    // tslint:enable:member-ordering
+    /* eslint-enable @typescript-eslint/member-ordering */
 
     private disableOtherButtons(ind: number, disableButtons: boolean) {
         if (this.subscription) {

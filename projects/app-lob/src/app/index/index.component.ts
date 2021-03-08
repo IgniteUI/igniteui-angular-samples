@@ -172,7 +172,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
         });
 
         modulesRoutes.forEach((moduleRoutes: any) => {
-            // tslint:disable-next-line:forin
+            // eslint-disable-next-line guard-for-in
             for (const key in moduleRoutes.routesData) {
                 const route: Route = {
                     data: moduleRoutes.routesData[key],

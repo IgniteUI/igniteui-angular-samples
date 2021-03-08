@@ -1,4 +1,4 @@
-// tslint:disable: max-line-length
+/* eslint-disable max-len */
 import { Injectable } from "@angular/core";
 import { IgcDockManagerPoint, IgcSplitPane } from "igniteui-dockmanager";
 

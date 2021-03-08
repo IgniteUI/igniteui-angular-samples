@@ -33,7 +33,7 @@ export const samplesRoutes: Routes = [
     },
     {
         data: ["HierarchicalGridDVModule"],
-        // tslint:disable-next-line: max-line-length
+        // eslint-disable-next-line max-len
         loadChildren: () => import("./hierarchical-grid/hierarchical-grid.module").then(m => m.HierarchicalGridDVModule),
         path: "hierarchical-grid"
     },

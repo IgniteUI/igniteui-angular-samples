@@ -1,8 +1,8 @@
-// tslint:disable: max-line-length
+/* eslint-disable max-len */
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnInit, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IColumnSelectionEventArgs, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxOverlayService, OverlayCancelableEventArgs, OverlayEventArgs, OverlaySettings, VerticalAlignment } from "igniteui-angular";
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from "igniteui-dockmanager";
-// tslint:disable-next-line: no-implicit-dependencies
+// eslint-disable-next-line import/no-extraneous-dependencies
 import ResizeObserver from "resize-observer-polyfill";
 import { merge, noop, Subject } from "rxjs";
 import { debounceTime, filter, takeUntil, tap } from "rxjs/operators";
@@ -106,7 +106,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     private gridEventEmitters;
     private gridResizeNotify = new Subject();
     private contentObserver: ResizeObserver;
-    // tslint:disable-next-line: member-ordering
+    // eslint-disable-next-line @typescript-eslint/member-ordering
     public docLayout: IgcDockManagerLayout = {
         rootPane: {
             type: IgcDockManagerPaneType.splitPane,
@@ -351,7 +351,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
         return "$" + value.toFixed(3);
     }
 
-    // tslint:disable: member-ordering
+    /* eslint-disable @typescript-eslint/member-ordering */
     public chartTypesMenuX;
     public chartTypesMenuY;
 
