@@ -1,4 +1,4 @@
-// tslint:disable: max-line-length
+/* eslint-disable max-len */
 import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, Pipe, PipeTransform, ViewChild } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy,
          HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment, OverlaySettings } from "igniteui-angular";
@@ -204,7 +204,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
         return "$" + value.toFixed(3);
     }
 
-    // tslint:disable: member-ordering
+    /* eslint-disable @typescript-eslint/member-ordering */
     public chartTypesMenuX;
     public chartTypesMenuY;
 

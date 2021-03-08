@@ -121,7 +121,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
 
     public selectFirstGroupAndFillChart() {
         this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
-        // tslint:disable-next-line: max-line-length
+        // eslint-disable-next-line max-len
         const recordsToBeSelected = this.finGrid.grid.selectionService.getRowIDs(this.finGrid.grid.groupsRecords[0].groups[0].groups[0].records);
         recordsToBeSelected.forEach(item => {
             this.finGrid.grid.selectionService.selectRowById(item, false, true);

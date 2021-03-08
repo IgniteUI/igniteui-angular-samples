@@ -1,4 +1,4 @@
-// tslint:disable: max-line-length
+/* eslint-disable max-len */
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { IgxButtonModule, IgxDialogModule, IgxDividerModule, IgxGridModule, IgxTabsModule } from "igniteui-angular";
 import { IgxBarSeriesModule, IgxCategoryChartModule, IgxCategoryXAxisModule,

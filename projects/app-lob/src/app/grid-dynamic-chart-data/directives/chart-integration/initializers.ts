@@ -1,4 +1,4 @@
-// tslint:disable: max-line-length
+/* eslint-disable max-len */
 import { EventEmitter, Type } from "@angular/core";
 import { IgxBarSeriesComponent, IgxBubbleSeriesComponent, IgxCategoryXAxisComponent,
     IgxCategoryYAxisComponent, IgxDataChartComponent, IgxNumericXAxisComponent,

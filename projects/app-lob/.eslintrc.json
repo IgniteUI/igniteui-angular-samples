@@ -1,0 +1,79 @@
+{
+  "extends": "../../.eslintrc.json",
+  "ignorePatterns": [
+    "!**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "projects/app-lob/tsconfig.app.json",
+          "projects/app-lob/tsconfig.spec.json",
+          "projects/app-lob/e2e/tsconfig.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "rules": {
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@typescript-eslint/array-type": [
+          "error",
+          {
+            "default": "array"
+          }
+        ],
+        "@typescript-eslint/dot-notation": "off",
+        "@typescript-eslint/no-this-alias": "error",
+        "@typescript-eslint/no-var-requires": "error",
+        "@typescript-eslint/prefer-for-of": "off",
+        "arrow-parens": [
+          "off",
+          "always"
+        ],
+        "comma-dangle": "error",
+        "id-blacklist": "error",
+        "import/no-extraneous-dependencies": "error",
+        "import/no-internal-modules": "off",
+        "no-bitwise": "off",
+        "no-duplicate-case": "error",
+        "no-duplicate-imports": "error",
+        "no-extra-bind": "error",
+        "no-fallthrough": "off",
+        "no-new-func": "error",
+        "no-redeclare": "error",
+        "no-return-await": "error",
+        "no-sequences": "error",
+        "no-sparse-arrays": "error",
+        "no-template-curly-in-string": "error",
+        "prefer-object-spread": "off",
+        "space-in-parens": [
+          "error",
+          "never"
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "rules": {}
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-// tslint:disable:object-literal-sort-keys
+/* eslint-disable */
 
 export const treeGridRoutesData = {
     "treegrid-childdatakey": { displayName: "TreeGrid ChildDataKey", parentName: "TreeGrid" },

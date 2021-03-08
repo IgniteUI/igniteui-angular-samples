@@ -140,7 +140,7 @@ export class ChartIntegrationDirective {
         };
     }
 
-    // tslint:disable-next-line: member-ordering
+    // eslint-disable-next-line @typescript-eslint/member-ordering
     private dataChartSeriesOptionsModel: IOptions = {
         isHighlightingEnabled: true,
         areaFillOpacity: .4,
@@ -148,13 +148,13 @@ export class ChartIntegrationDirective {
         showDefaultTooltip: true
     };
 
-    // tslint:disable-next-line: member-ordering
+    // eslint-disable-next-line @typescript-eslint/member-ordering
     private scatterChartSeriesOptionsModel: IOptions = {
         markerType: 3,
         showDefaultTooltip: true
     };
 
-    // tslint:disable-next-line: member-ordering
+    // eslint-disable-next-line @typescript-eslint/member-ordering
     private bubbleChartSeriesOptionsModel: IOptions = {
         radiusScale: this._sizeScale
     };

@@ -1,5 +1,5 @@
 
-/* tslint:disable */
+/* eslint-disable */
 export const athletesData = [{
   "Id": 84,
   "Avatar": "assets/images/men/12.jpg",
