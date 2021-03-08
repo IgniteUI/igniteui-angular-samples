@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { browser, by, element } from "protractor";
+import { browser, by, element } from 'protractor';
 
 export class AppPage {
   public navigateTo() {
@@ -7,6 +7,6 @@ export class AppPage {
   }
 
   public getTitleText() {
-    return element(by.css("app-root .content span")).getText() as Promise<string>;
+    return element(by.css('app-root .content span')).getText() as Promise<string>;
   }
 }
