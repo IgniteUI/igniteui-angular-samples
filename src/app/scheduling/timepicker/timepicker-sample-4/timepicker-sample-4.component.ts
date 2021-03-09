@@ -14,6 +14,6 @@ export class TimePickerSample4Component {
     private toast;
 
     public onValidationFailed() {
-        this.toast.show();
+        this.toast.open();
     }
 }
