@@ -42,8 +42,8 @@ export class ControllerComponent implements OnInit, OnDestroy {
         },
         {
             disabled: false,
-            icon: "insert_chart_outlined",
-            label: "Chart",
+            icon: 'insert_chart_outlined',
+            label: 'Chart',
             selected: false
         }
     ];
@@ -90,6 +90,10 @@ export class ControllerComponent implements OnInit, OnDestroy {
         this.switchChanged.emit({action, value: event.checked });
     }
 
+    public ngOnDestroy() {
+        this.volumeChanged$.unsubscribe();
+    }
+
     private disableOtherButtons(ind: number, disableButtons: boolean) {
         if (this.subscription) {
             this.subscription.unsubscribe();
@@ -107,9 +111,5 @@ export class ControllerComponent implements OnInit, OnDestroy {
 
     get buttonSelected(): number {
         return this.selectedButton || this.selectedButton === 0 ? this.selectedButton : -1;
-    }
-
-    public ngOnDestroy() {
-        this.volumeChanged$.unsubscribe();
     }
 }

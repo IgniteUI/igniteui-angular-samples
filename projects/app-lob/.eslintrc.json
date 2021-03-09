@@ -53,6 +53,7 @@
         "import/no-internal-modules": "off",
         "no-bitwise": "off",
         "no-duplicate-case": "error",
+        "no-underscore-dangle": "off",
         "no-duplicate-imports": "error",
         "no-extra-bind": "error",
         "no-fallthrough": "off",

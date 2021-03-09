@@ -1,13 +1,13 @@
-import { DATA, MOCKFINANCEDATA } from "../../services/financialData";
+import { DATA, MOCKFINANCEDATA } from '../../services/financialData';
 
 const contract: any[] = [
-    "Forwards", "Futures", "Options", "Swap", "CFD", "Ticks", "Swaptions", "Asion Option"
+    'Forwards', 'Futures', 'Options', 'Swap', 'CFD', 'Ticks', 'Swaptions', 'Asion Option'
 ];
 
 export class FinancialData {
     public generateData(count: number): any[] {
         const currData = [];
-        const categories = "Categories";
+        const categories = 'Categories';
         for (let i = 0; i < DATA.length; i++) {
             DATA[i].ID = 10 + i;
           }
@@ -36,7 +36,7 @@ export class FinancialData {
     }
 
     private randomizeObjectData(childDataObj) {
-        const changeP = "Change(%)";
+        const changeP = 'Change(%)';
         const res = this.generateNewPrice(childDataObj.Price);
         childDataObj.Change = res.Price - childDataObj.Price;
         childDataObj.Price = res.Price;
@@ -56,6 +56,7 @@ export class FinancialData {
         const changeAmount = oldPrice * (changePercent / 100);
         newPrice = oldPrice + changeAmount;
 
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         const result = {Price: 0, ChangePercent: 0};
         result.Price = parseFloat(newPrice.toFixed(2));
         result.ChangePercent = parseFloat(changePercent.toFixed(2));

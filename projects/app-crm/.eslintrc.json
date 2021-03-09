@@ -52,6 +52,7 @@
         "import/no-extraneous-dependencies": "error",
         "import/no-internal-modules": "off",
         "no-bitwise": "off",
+        "no-underscore-dangle": "off",
         "no-duplicate-case": "error",
         "no-duplicate-imports": "error",
         "no-extra-bind": "error",

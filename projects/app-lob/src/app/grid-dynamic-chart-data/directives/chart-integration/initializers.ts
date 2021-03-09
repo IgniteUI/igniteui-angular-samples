@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
-import { EventEmitter, Type } from "@angular/core";
+import { EventEmitter, Type } from '@angular/core';
 import { IgxBarSeriesComponent, IgxBubbleSeriesComponent, IgxCategoryXAxisComponent,
     IgxCategoryYAxisComponent, IgxDataChartComponent, IgxNumericXAxisComponent,
     IgxNumericYAxisComponent, IgxPieChartComponent, IgxScatterLineSeriesComponent,
     IgxScatterSeriesComponent, IgxStacked100BarSeriesComponent, IgxStackedBarSeriesComponent,
-    IgxStackedFragmentSeriesComponent } from "igniteui-angular-charts";
+    IgxStackedFragmentSeriesComponent } from 'igniteui-angular-charts';
 
 class SeriesFactory {
     public create<T>(type: (new () => T)): T {
