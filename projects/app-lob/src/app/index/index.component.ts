@@ -1,22 +1,22 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
-import { NavigationStart, Route, Router } from "@angular/router";
-import { IgxNavigationDrawerComponent } from "igniteui-angular";
-import { filter } from "rxjs/operators";
-import { gridDynamicChartRoutesData } from "../grid-dynamic-chart-data/grid-dynamic-chart-data-routes-data";
-import { gridfinjsRoutesData} from "../grid-finjs/grid-finjs-routes-data";
-import { gridsRoutesData } from "../grid/grid-routes-data";
-import { hierarchicalGridRoutesData } from "../hierarchical-grid/hierarchical-grid-routes-data";
-import { treeGridRoutesData } from "../tree-grid/tree-grid-routes-data";
-import { treegridfinjsRoutesData } from "../treegrid-finjs/treegrid-finjs-routes-data";
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { NavigationStart, Route, Router } from '@angular/router';
+import { IgxNavigationDrawerComponent } from 'igniteui-angular';
+import { filter } from 'rxjs/operators';
+import { gridDynamicChartRoutesData } from '../grid-dynamic-chart-data/grid-dynamic-chart-data-routes-data';
+import { gridfinjsRoutesData} from '../grid-finjs/grid-finjs-routes-data';
+import { gridsRoutesData } from '../grid/grid-routes-data';
+import { hierarchicalGridRoutesData } from '../hierarchical-grid/hierarchical-grid-routes-data';
+import { treeGridRoutesData } from '../tree-grid/tree-grid-routes-data';
+import { treegridfinjsRoutesData } from '../treegrid-finjs/treegrid-finjs-routes-data';
 
 @Component({
-    selector: "app-index",
-    styleUrls: ["./index.component.scss"],
-    templateUrl: "./index.component.html"
+    selector: 'app-index',
+    styleUrls: ['./index.component.scss'],
+    templateUrl: './index.component.html'
 })
 export class IndexComponent implements OnInit, AfterViewInit {
 
-    @ViewChild("navdrawer", { read: IgxNavigationDrawerComponent, static: true })
+    @ViewChild('navdrawer', { read: IgxNavigationDrawerComponent, static: true })
     public navdrawer: IgxNavigationDrawerComponent;
 
     public homeRouteItem: IRouteItem;
@@ -25,43 +25,51 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
     public selectedDisplayName: string;
 
-    public searchValue: string = "";
+    public searchValue = '';
 
     public drawerState = {
         enableGestures: true,
-        miniWidth: "80px",
+        miniWidth: '80px',
         open: true,
         pin: false,
         pinThreshold: 768,
-        position: "left",
-        width: "300px"
+        position: 'left',
+        width: '300px'
     };
 
     private appRoutes: any[];
 
     private modulesRoutes = [
         {
-            path: "grid",
+            path: 'grid',
             routesData: gridsRoutesData
         },
         {
-            path: "hierarchical-grid",
+            path: 'hierarchical-grid',
             routesData: hierarchicalGridRoutesData
         },
         {
-            path: "tree-grid",
+            path: 'tree-grid',
             routesData: treeGridRoutesData
         },
         {
+<<<<<<< HEAD
             path: "grid-finjs",
             routesData: gridfinjsRoutesData
         },
         {
             path: "treegrid-finjs",
+=======
+            path: 'finjs-sample',
+            routesData: gridfinjsRoutesData
+        },
+        {
+            path: 'treegrid-finjs-sample',
+>>>>>>> 409daa387... chore(*): fix app-lob lint errors
             routesData: treegridfinjsRoutesData
         },
         {
-            path: "grid-dynamic-chart-data",
+            path: 'grid-dynamic-chart-data',
             routesData: gridDynamicChartRoutesData
         }
     ];
@@ -69,8 +77,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
     private allNavItems: INavigationItem[] = [];
 
     constructor(private router: Router, private cdr: ChangeDetectorRef) {
-        this.appRoutes = this.getAllSampleRoutes("/samples",
-            router.config.filter((c) => c.path === "samples")[0].children, this.modulesRoutes);
+        this.appRoutes = this.getAllSampleRoutes('/samples',
+            router.config.filter((c) => c.path === 'samples')[0].children, this.modulesRoutes);
     }
 
     public ngOnInit() {
@@ -89,7 +97,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
                 this.selectedDisplayName = routeItem.displayName;
             }
 
-            if (event.url !== "/" && !this.navdrawer.pin) {
+            if (event.url !== '/' && !this.navdrawer.pin) {
                 // Close drawer when selecting a view on mobile (unpinned)
                 this.navdrawer.close();
             }
@@ -110,8 +118,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
             const loadedChildItem = loadedParentItem.children.filter(
                 (routeItem) => routeItem.displayName === loadedRouteItem.displayName)[0];
 
-            this.toggleParent("header" + loadedParentItem.name);
-            document.getElementById("child" + loadedChildItem.displayName).scrollIntoView();
+            this.toggleParent('header' + loadedParentItem.name);
+            document.getElementById('child' + loadedChildItem.displayName).scrollIntoView();
             this.cdr.detectChanges();
         }
     }
@@ -121,7 +129,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
     }
 
     public clearSearchValue() {
-        this.searchValue = "";
+        this.searchValue = '';
         this.searchValueChanged();
     }
 
@@ -129,10 +137,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
     public toggleParent(nodeId) {
         const theSpan = document.getElementById(nodeId);
         if (theSpan != null) {
-            if (theSpan.style.display === "inline") {
-                theSpan.style.display = "none";
-            } else if (theSpan.style.display === "none") {
-                theSpan.style.display = "inline";
+            if (theSpan.style.display === 'inline') {
+                theSpan.style.display = 'none';
+            } else if (theSpan.style.display === 'none') {
+                theSpan.style.display = 'inline';
             }
         }
     }
@@ -142,17 +150,17 @@ export class IndexComponent implements OnInit, AfterViewInit {
         const theSpan = document.getElementById(nodeId);
         if (theSpan != null) {
             const theSpanDisplay = theSpan.style.display;
-            if (theSpanDisplay === "inline") {
-                return "remove";
-            } else if (theSpanDisplay === "none") {
-                return "add";
+            if (theSpanDisplay === 'inline') {
+                return 'remove';
+            } else if (theSpanDisplay === 'none') {
+                return 'add';
             }
         }
-        return "add";
+        return 'add';
     }
 
     public refresh() {
-        window.dispatchEvent(new Event("resize"));
+        window.dispatchEvent(new Event('resize'));
     }
 
     private getAllSampleRoutes(basePath: string, appModuleRoutes: Route[], modulesRoutes: any[]): any[] {
@@ -162,7 +170,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
                 routes.push({
                     displayName: route.data.displayName,
                     parentName: route.data.parentName,
-                    path: baseRoutePath + "/" + route.path
+                    path: baseRoutePath + '/' + route.path
                 });
             }
         };
@@ -176,10 +184,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
             for (const key in moduleRoutes.routesData) {
                 const route: Route = {
                     data: moduleRoutes.routesData[key],
-                    path: key === "empty-path" ? "" : key
+                    path: key === 'empty-path' ? '' : key
                 };
 
-                pushRoute(route, basePath + "/" + moduleRoutes.path);
+                pushRoute(route, basePath + '/' + moduleRoutes.path);
             }
         });
 
@@ -188,7 +196,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
     private createAllNavItems() {
         // Create home route item
-        this.homeRouteItem = { path: "/samples/home", displayName: "Home" };
+        this.homeRouteItem = { path: '/samples/home', displayName: 'Home' };
 
         // Create all navigation items (headers)
         for (const appRoute of this.appRoutes) {
@@ -213,9 +221,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
     }
 
     private sort(navItems: INavigationItem[]) {
-        return navItems.sort((current, next) => {
-            return current.name.toLowerCase().localeCompare(next.name.toLowerCase());
-        });
+        return navItems.sort((current, next) => current.name.toLowerCase().localeCompare(next.name.toLowerCase()));
     }
 
     private filter(navItems: INavigationItem[]) {

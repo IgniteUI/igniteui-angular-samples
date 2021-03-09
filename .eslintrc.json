@@ -36,6 +36,7 @@
           "always"
         ],
         "comma-dangle": "error",
+        "no-underscore-dangle": "off",
         "id-blacklist": "error",
         "import/no-extraneous-dependencies": "error",
         "import/no-internal-modules": "off",

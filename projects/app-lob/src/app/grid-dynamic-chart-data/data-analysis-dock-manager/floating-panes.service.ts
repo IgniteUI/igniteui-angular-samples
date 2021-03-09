@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
-import { Injectable } from "@angular/core";
-import { IgcDockManagerPoint, IgcSplitPane } from "igniteui-dockmanager";
+import { Injectable } from '@angular/core';
+import { IgcDockManagerPoint, IgcSplitPane } from 'igniteui-dockmanager';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class FloatingPanesService {
 

@@ -1,17 +1,18 @@
-import { NgModule } from "@angular/core";
-import { NavigationStart, Router, RouterModule, Routes } from "@angular/router";
-import { filter } from "rxjs/operators";
-import { HomeComponent } from "./home/home.component";
-import { DocsLayoutComponent } from "./index/docs-layout.component";
-import { IndexComponent } from "./index/index.component";
+import { NgModule } from '@angular/core';
+import { NavigationStart, Router, RouterModule, Routes } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { HomeComponent } from './home/home.component';
+import { DocsLayoutComponent } from './index/docs-layout.component';
+import { IndexComponent } from './index/index.component';
 
 export const samplesRoutes: Routes = [
     {
         component: HomeComponent,
-        data: { displayName: "Home" },
-        path: "home"
+        data: { displayName: 'Home' },
+        path: 'home'
     },
     {
+<<<<<<< HEAD
         data: ["GridFinjsModule"],
         loadChildren: () => import("./grid-finjs/grid-finjs.module").then(m => m.GridFinjsModule),
         path: "grid-finjs"
@@ -20,43 +21,53 @@ export const samplesRoutes: Routes = [
         data: ["TreeGridFinjsModule"],
         loadChildren: () => import("./treegrid-finjs/treegrid-finjs.module").then(m => m.TreeGridFinjsModule),
         path: "treegrid-finjs"
+=======
+        data: ['GridFinjsModule'],
+        loadChildren: () => import('./grid-finjs/grid-finjs.module').then(m => m.GridFinjsModule),
+        path: 'finjs-sample'
     },
     {
-        data: ["TreeGridDVModule"],
-        loadChildren: () => import("./tree-grid/tree-grid.module").then(m => m.TreeGridDVModule),
-        path: "tree-grid"
+        data: ['TreeGridFinjsModule'],
+        loadChildren: () => import('./treegrid-finjs/treegrid-finjs.module').then(m => m.TreeGridFinjsModule),
+        path: 'treegrid-finjs-sample'
+>>>>>>> 409daa387... chore(*): fix app-lob lint errors
     },
     {
-        data: ["GridsDVModule"],
-        loadChildren: () => import("./grid/grids.module").then(m => m.GridsDVModule),
-        path: "grid"
+        data: ['TreeGridDVModule'],
+        loadChildren: () => import('./tree-grid/tree-grid.module').then(m => m.TreeGridDVModule),
+        path: 'tree-grid'
     },
     {
-        data: ["HierarchicalGridDVModule"],
+        data: ['GridsDVModule'],
+        loadChildren: () => import('./grid/grids.module').then(m => m.GridsDVModule),
+        path: 'grid'
+    },
+    {
+        data: ['HierarchicalGridDVModule'],
         // eslint-disable-next-line max-len
-        loadChildren: () => import("./hierarchical-grid/hierarchical-grid.module").then(m => m.HierarchicalGridDVModule),
-        path: "hierarchical-grid"
+        loadChildren: () => import('./hierarchical-grid/hierarchical-grid.module').then(m => m.HierarchicalGridDVModule),
+        path: 'hierarchical-grid'
     },
     {
-        data: ["GridDynamicChartDataModule"],
-        loadChildren: () => import("./grid-dynamic-chart-data/grid-dynamic-chart-data.module")
+        data: ['GridDynamicChartDataModule'],
+        loadChildren: () => import('./grid-dynamic-chart-data/grid-dynamic-chart-data.module')
         .then(m => m.GridDynamicChartDataModule),
-        path: "grid-dynamic-chart-data"
+        path: 'grid-dynamic-chart-data'
     }
 ];
 export const appRoutes: Routes = [
     {
-        path: "", pathMatch: "full", redirectTo: "/samples/home"
+        path: '', pathMatch: 'full', redirectTo: '/samples/home'
     },
     {
         children: samplesRoutes,
         component: DocsLayoutComponent,
-        path: ""
+        path: ''
     },
     {
         children: samplesRoutes,
         component: IndexComponent,
-        path: "samples"
+        path: 'samples'
     }
 ];
 
@@ -75,10 +86,15 @@ export class AppRoutingModule {
     }
 
     public setOverflow(url: string) {
+<<<<<<< HEAD
         if (url.endsWith("finjs")) {
             document.body.style.overflow = "auto";
+=======
+        if (url.endsWith('finjs-sample')) {
+            document.body.style.overflow = 'auto';
+>>>>>>> 409daa387... chore(*): fix app-lob lint errors
         } else {
-            document.body.style.overflow = "hidden";
+            document.body.style.overflow = 'hidden';
         }
     }
 }

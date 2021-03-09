@@ -1,27 +1,27 @@
 /* eslint-disable max-len */
-import { CommonModule } from "@angular/common";
-import { HttpClientModule } from "@angular/common/http";
-import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import {
     IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule,
     IgxChipsModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule,
     IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule,
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
     IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
-} from "igniteui-angular";
+} from 'igniteui-angular';
 
-import { GridComponent } from "./grid-boston-marathon/grid.component";
-import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
+import { GridComponent } from './grid-boston-marathon/grid.component';
+import { GridMasterDetailSampleComponent } from './grid-master-detail/grid-master-detail.component';
 
 import { IgxBarSeriesModule, IgxBollingerBandsOverlayModule, IgxCategoryChartModule, IgxCategoryXAxisComponent, IgxCategoryXAxisModule, IgxDataChartCategoryModule, IgxDataChartComponent,
     IgxDataChartCoreModule, IgxDataChartInteractivityModule, IgxDataChartScatterModule, IgxDataChartStackedModule,
     IgxDoughnutChartComponent, IgxDoughnutChartModule, IgxFinancialPriceSeriesModule, IgxIndicatorsModule, IgxItemLegendComponent, IgxItemLegendModule, IgxLegendComponent,
     IgxLegendModule, IgxNumericXAxisComponent, IgxNumericXAxisModule, IgxNumericYAxisComponent, IgxNumericYAxisModule,
     IgxPieChartComponent, IgxPieChartModule, IgxRingSeriesModule, IgxSparklineCoreModule, IgxSparklineModule
-} from "igniteui-angular-charts";
-import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
-import { GridsDVRoutingModule } from "./grids-routing.module";
+} from 'igniteui-angular-charts';
+import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
+import { GridsDVRoutingModule } from './grids-routing.module';
 
 @NgModule({
     declarations: [

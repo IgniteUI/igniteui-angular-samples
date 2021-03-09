@@ -1,20 +1,20 @@
 /* eslint-disable max-len */
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnInit, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from "@angular/core";
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IColumnSelectionEventArgs, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxOverlayService, OverlayCancelableEventArgs, OverlayEventArgs, OverlaySettings, VerticalAlignment } from "igniteui-angular";
-import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from "igniteui-dockmanager";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy, OnInit, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from '@angular/core';
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IColumnSelectionEventArgs, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxOverlayService, OverlayCancelableEventArgs, OverlayEventArgs, OverlaySettings, VerticalAlignment } from 'igniteui-angular';
+import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import ResizeObserver from "resize-observer-polyfill";
-import { merge, noop, Subject } from "rxjs";
-import { debounceTime, filter, takeUntil, tap } from "rxjs/operators";
-import { FinancialData } from "../../services/financialData";
-import { ChartIntegrationDirective, IDeterminedChartTypesArgs } from "../directives/chart-integration/chart-integration.directive";
-import { CHART_TYPE } from "../directives/chart-integration/chart-types";
-import { ConditionalFormattingDirective } from "../directives/conditional-formatting/conditional-formatting.directive";
-import { DockSlotComponent } from "./dock-slot/dock-slot.component";
-import { FloatingPanesService } from "./floating-panes.service";
+import ResizeObserver from 'resize-observer-polyfill';
+import { merge, noop, Subject } from 'rxjs';
+import { debounceTime, filter, takeUntil, tap } from 'rxjs/operators';
+import { FinancialData } from '../../services/financialData';
+import { ChartIntegrationDirective, IDeterminedChartTypesArgs } from '../directives/chart-integration/chart-integration.directive';
+import { CHART_TYPE } from '../directives/chart-integration/chart-types';
+import { ConditionalFormattingDirective } from '../directives/conditional-formatting/conditional-formatting.directive';
+import { DockSlotComponent } from './dock-slot/dock-slot.component';
+import { FloatingPanesService } from './floating-panes.service';
 
 @Pipe({
-    name: "hastDuplicateLayouts"
+    name: 'hastDuplicateLayouts'
 })
 export class HastDuplicateLayouts implements PipeTransform {
     public transform(contentId: string, layout: IgcDockManagerLayout, chartTypes) {
@@ -29,32 +29,30 @@ export class HastDuplicateLayouts implements PipeTransform {
 
     private hasDuplicateContentID = (ob, contentId, count) => {
 
-        if (ob["contentId"] && ob["contentId"] === contentId) {
+        if (ob['contentId'] && ob['contentId'] === contentId) {
             count++;
         }
 
         for (const i in ob) {
             if (!ob.hasOwnProperty(i)) { continue; }
 
-            if ((typeof ob[i]) === "object") {
+            if ((typeof ob[i]) === 'object') {
                 count = this.hasDuplicateContentID(ob[i], contentId, count);
             }
         }
         return count;
-    }
+    };
 }
 
 @Component({
-    selector: "app-data-analysis-dock-manager",
-    templateUrl: "./data-analysis-dock-manager.component.html",
-    styleUrls: ["./data-analysis-dock-manager.component.scss"],
+    selector: 'app-data-analysis-dock-manager',
+    templateUrl: './data-analysis-dock-manager.component.html',
+    styleUrls: ['./data-analysis-dock-manager.component.scss'],
     providers: [FloatingPanesService]
 })
-export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
+export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, OnDestroy {
 
-    public data;
-
-    @ViewChild("dock", { read: ElementRef })
+    @ViewChild('dock', { read: ElementRef })
     public dockManager: ElementRef<HTMLIgcDockmanagerElement>;
 
     @ViewChild(ConditionalFormattingDirective, { read: ConditionalFormattingDirective, static: true })
@@ -63,24 +61,25 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     @ViewChild(ChartIntegrationDirective, { read: ChartIntegrationDirective, static: true })
     public chartIntegration: ChartIntegrationDirective;
 
-    @ViewChild("grid", { read: IgxGridComponent, static: true })
+    @ViewChild('grid', { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
 
     @ViewChild(IgxOverlayOutletDirective, { static: true })
     public outlet: IgxOverlayOutletDirective;
 
-    @ViewChild("contextDialog", { static: true })
+    @ViewChild('contextDialog', { static: true })
     public contextDialog: IgxDialogComponent;
 
-    @ViewChild("dialogContent", { read: ElementRef })
+    @ViewChild('dialogContent', { read: ElementRef })
     public dialogContent: ElementRef<any>;
 
     @ViewChildren(DockSlotComponent)
     public dockSlots: QueryList<DockSlotComponent>;
 
-    @ViewChild("template", { read: TemplateRef })
+    @ViewChild('template', { read: TemplateRef })
     public emptyChartTemplate: TemplateRef<any>;
 
+    public data;
     public chartData = [];
     public contextmenu = false;
     public contextmenuX = 0;
@@ -121,8 +120,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                         panes: [
                             {
                                 type: IgcDockManagerPaneType.contentPane,
-                                contentId: "grid",
-                                header: "Grid",
+                                contentId: 'grid',
+                                header: 'Grid',
                                 allowClose: false
                             }
                         ]
@@ -130,8 +129,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                 },
                 {
                     type: IgcDockManagerPaneType.contentPane,
-                    contentId: "chart-types-content",
-                    header: "Chart Types",
+                    contentId: 'chart-types-content',
+                    header: 'Chart Types',
                     size: 27,
                     allowClose: false
                 }
@@ -141,7 +140,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     };
 
     constructor(private cdr: ChangeDetectorRef, private paneService: FloatingPanesService,
-                @Inject(IgxOverlayService) private overlayService: IgxOverlayService) {
+        @Inject(IgxOverlayService) private overlayService: IgxOverlayService) {
 
     }
 
@@ -149,14 +148,14 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
 
         this.data = new FinancialData().generateData(1000);
         this.gridResizeNotify.pipe(takeUntil(this.destroy$))
-        .subscribe(() => {
+            .subscribe(() => {
                 if (this.contextmenu) {
                     this.disableContextMenu();
                 }
                 if (this._esfOverlayId) {
                     this.overlayService.hide(this._esfOverlayId);
                 }
-        });
+            });
         this.grid.onRangeSelection.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(30))
             .subscribe(range => {
                 if (this._esfOverlayId) {
@@ -193,13 +192,13 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             });
 
         this.gridEventEmitters = merge(this.grid.onFilteringDone,
-                                       this.grid.onSortingDone,
-                                       this.grid.onColumnMoving,
-                                       this.grid.onPagingDone,
-                                       this.grid.onColumnPinning,
-                                       this.grid.onColumnResized,
-                                       this.grid.onColumnMovingEnd,
-                                       this.grid.onColumnVisibilityChanged);
+            this.grid.onSortingDone,
+            this.grid.onColumnMoving,
+            this.grid.onPagingDone,
+            this.grid.onColumnPinning,
+            this.grid.onColumnResized,
+            this.grid.onColumnMovingEnd,
+            this.grid.onColumnVisibilityChanged);
 
         this.gridEventEmitters.pipe(takeUntil(this.destroy$)).subscribe(() => {
             if (this.grid.selectedCells.length > 0) {
@@ -219,19 +218,19 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
 
         this.overlayService.onOpening.subscribe((evt: OverlayCancelableEventArgs) => {
             if (evt.componentRef && evt.componentRef.instance &&
-                (evt.componentRef.instance as any).className === "igx-excel-filter") {
+                (evt.componentRef.instance as any).className === 'igx-excel-filter') {
                 this.disableContextMenu();
                 this._esfOverlayId = evt.id;
-             }
+            }
         });
 
         this.overlayService.onClosed.subscribe((evt: OverlayEventArgs) => {
             if (evt.componentRef &&
                 evt.componentRef.instance &&
-                (evt.componentRef.instance as any).className === "igx-excel-filter" &&
+                (evt.componentRef.instance as any).className === 'igx-excel-filter' &&
                 evt.id === this._esfOverlayId) {
                 this._esfOverlayId = undefined;
-             }
+            }
         });
     }
 
@@ -241,7 +240,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                 Object.keys(this.selectedCharts).forEach((c: CHART_TYPE) => {
                     const chartHost = this.getChartHostFromSlot(c);
                     if (this.availableCharts.indexOf(c) !== -1) {
-                        if (c !== CHART_TYPE.PIE && typeof this.selectedCharts[c] === "object") {
+                        if (c !== CHART_TYPE.PIE && typeof this.selectedCharts[c] === 'object') {
                             this.selectedCharts[c] = this.chartIntegration.chartFactory(c, null, this.selectedCharts[c]);
                         } else {
                             chartHost.viewContainerRef.clear();
@@ -251,7 +250,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                         chartHost.viewContainerRef.clear();
                         const embeddedView = chartHost.viewContainerRef.createEmbeddedView(this.emptyChartTemplate);
                         embeddedView.detectChanges();
-                        this.selectedCharts[c] = "Empty";
+                        this.selectedCharts[c] = 'Empty';
                     }
                 });
             });
@@ -268,7 +267,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
         this.dialogContent.nativeElement.onpointerdown = event => event.stopPropagation();
 
         this.allCharts = this.chartIntegration.getAllChartTypes();
-        this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
+        this.chartIntegration.chartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
             if (args.chartsAvailabilty.size === 0 || args.chartsForCreation.length === 0) {
                 this.chartIntegration.disableCharts(this.allCharts);
             } else {
@@ -284,35 +283,36 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
         });
         this.cdr.detectChanges();
 
-        this.formatting.onFormattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
+        this.formatting.formattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
         this.grid.onDataPreLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             filter(() => this.range),
             takeUntil(this.destroy$))
-        .subscribe(() => !this.contextmenu ? (this.headersRenderButton ? this.renderHeaderButton() : this.renderButton()) : noop());
+            .subscribe(() => !this.contextmenu ? (this.headersRenderButton ? this.renderHeaderButton() : this.renderButton()) : noop());
         this.grid.parentVirtDir.onChunkLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             filter(() => this.range),
             takeUntil(this.destroy$))
-        .subscribe(() => {
+            .subscribe(() => {
+                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                 if (!this.contextmenu) { this.headersRenderButton ? this.renderHeaderButton() : this.renderButton(); }
-        });
+            });
 
         this.grid.onSelection.pipe(
             filter(() => this.range),
             takeUntil(this.destroy$))
-        .subscribe((args: any) => {
-            if (this.grid.selectedCells.length < 2 || args.expressions) {
-                this.range = undefined;
-                this.disableContextMenu();
-                if (this._esfOverlayId) {
-                    this.overlayService.hide(this._esfOverlayId);
+            .subscribe((args: any) => {
+                if (this.grid.selectedCells.length < 2 || args.expressions) {
+                    this.range = undefined;
+                    this.disableContextMenu();
+                    if (this._esfOverlayId) {
+                        this.overlayService.hide(this._esfOverlayId);
+                    }
+                    this.cdr.detectChanges();
                 }
-                this.cdr.detectChanges();
-            }
-        });
+            });
 
         window.onresize = () => {
             const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 3);
@@ -329,6 +329,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             const handler = (component) => {
                 const _this = component;
                 return {
+                    // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
                     deleteProperty(target, prop) {
                         if (target[prop].type) {
                             _this.paneService.removeChartPane(target[prop]);
@@ -348,7 +349,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     }
 
     public formatCurrency(value: number) {
-        return "$" + value.toFixed(3);
+        return '$' + value.toFixed(3);
     }
 
     /* eslint-disable @typescript-eslint/member-ordering */
@@ -357,7 +358,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
 
     public availableCharts: CHART_TYPE[] = [];
     public allCharts: CHART_TYPE[] = [];
-    public chartTypes = ["Column", "Area", "Bar", "Line", "Scatter", "Pie"];
+    public chartTypes = ['Column', 'Area', 'Bar', 'Line', 'Scatter', 'Pie'];
 
     public toggleContextDialog(btn) {
         if (!this.contextDialog.isOpen) {
@@ -370,11 +371,11 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             };
 
             if (((this.grid.visibleColumns.length - 1) - this.colIndex) < 2 || !this.grid.navigation.isColumnFullyVisible(this.colIndex + 1)) {
-                positionStrategy["horizontalDirection"] = HorizontalAlignment.Left;
-                positionStrategy["horizontalStartPoint"] = HorizontalAlignment.Right;
+                positionStrategy['horizontalDirection'] = HorizontalAlignment.Left;
+                positionStrategy['horizontalStartPoint'] = HorizontalAlignment.Right;
             } else {
-                positionStrategy["horizontalDirection"] = HorizontalAlignment.Center;
-                positionStrategy["horizontalStartPoint"] = HorizontalAlignment.Center;
+                positionStrategy['horizontalDirection'] = HorizontalAlignment.Center;
+                positionStrategy['horizontalStartPoint'] = HorizontalAlignment.Center;
             }
             this._contextDilogOverlaySettings.positionStrategy = new AutoPositionStrategy({ ...positionStrategy });
             this.contextDialog.open(this._contextDilogOverlaySettings);

@@ -1,4 +1,4 @@
-import { Singer } from "./models";
+import { Singer } from './models';
 
 /* eslint-disable */
 export const SINGERS: Singer[] = [
