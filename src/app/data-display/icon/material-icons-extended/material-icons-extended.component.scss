@@ -244,7 +244,7 @@ $clipboardSuccessColor: igx-color($default-palette, 'success');
 
   @include e(grid-item-clipboard, $m: success) {
     background: $clipboardSuccessColor;
-    color: igx-contrast-color($default-palette, $clipboardSuccessColor) !important;
+    color: text-contrast($clipboardSuccessColor) !important;
   }
 
   @include e(grid-icon-name) {
