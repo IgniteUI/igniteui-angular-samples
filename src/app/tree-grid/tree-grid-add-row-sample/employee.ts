@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 export class Employee {
 
     get Age() {
@@ -61,9 +62,9 @@ export class Employee {
         this.age = 21;
         this.hireDate = new Date();
         this.id = 0;
-        this.name = "";
+        this.name = '';
         this.onPTO = false;
         this.parentID = -1;
-        this.title = "";
+        this.title = '';
     }
 }

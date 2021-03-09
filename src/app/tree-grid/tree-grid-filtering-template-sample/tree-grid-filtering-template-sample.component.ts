@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     DataType,
     IgxColumnComponent,
@@ -6,17 +6,18 @@ import {
     IgxNumberFilteringOperand,
     IgxStringFilteringOperand,
     IgxTreeGridComponent
-} from "igniteui-angular";
-import { FOODS_DATA } from "../data/foods";
+} from 'igniteui-angular';
+import { FOODS_DATA } from '../data/foods';
 
 @Component({
-    selector: "tree-grid-filtering-template-sample",
-    styleUrls: ["./tree-grid-filtering-template-sample.component.scss"],
-    templateUrl: "tree-grid-filtering-template-sample.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'tree-grid-filtering-template-sample',
+    styleUrls: ['./tree-grid-filtering-template-sample.component.scss'],
+    templateUrl: 'tree-grid-filtering-template-sample.component.html'
 })
 
 export class TreeGridFilteringTemplateSampleComponent implements OnInit {
-    @ViewChild("treegrid1", { read: IgxTreeGridComponent, static: true })
+    @ViewChild('treegrid1', { read: IgxTreeGridComponent, static: true })
     public treegrid1: IgxTreeGridComponent;
 
     public data: any[];
@@ -30,7 +31,7 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
     }
 
     public formatDate(val: Date) {
-        return new Intl.DateTimeFormat("en-US").format(val);
+        return new Intl.DateTimeFormat('en-US').format(val);
     }
 
     public formatCurrency(val: string) {
@@ -44,7 +45,7 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
     public onInput(input: any, column: IgxColumnComponent) {
         this._filterValues.set(column, input.value);
 
-        if (input.value === "") {
+        if (input.value === '') {
             this.treegrid1.clearFilter(column.field);
             return;
         }
@@ -52,10 +53,10 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
         let operand = null;
         switch (column.dataType) {
             case DataType.Number:
-                operand = IgxNumberFilteringOperand.instance().condition("equals");
+                operand = IgxNumberFilteringOperand.instance().condition('equals');
                 break;
             default:
-                operand = IgxStringFilteringOperand.instance().condition("contains");
+                operand = IgxStringFilteringOperand.instance().condition('contains');
         }
         this.treegrid1.filter(column.field,
             this.transformValue(input.value, column), operand, column.filteringIgnoreCase);
@@ -79,7 +80,7 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
     public onDateSelected(event, column: IgxColumnComponent) {
         this._filterValues.set(column, event);
 
-        this.treegrid1.filter(column.field, event, IgxDateFilteringOperand.instance().condition("equals"),
+        this.treegrid1.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'),
             column.filteringIgnoreCase);
     }
 

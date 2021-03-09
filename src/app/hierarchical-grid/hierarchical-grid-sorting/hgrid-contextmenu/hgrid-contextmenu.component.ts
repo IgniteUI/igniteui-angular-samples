@@ -1,10 +1,11 @@
-import { Component, Input, OnInit} from "@angular/core";
-import { IgxIconModule, SortingDirection } from "igniteui-angular";
+import { Component, Input, OnInit} from '@angular/core';
+import { IgxIconModule, SortingDirection } from 'igniteui-angular';
 
 @Component({
-  selector: "hgrid-contextmenu",
-  styleUrls: ["./hgrid-contextmenu.component.scss"],
-  templateUrl: "./hgrid-contextmenu.component.html"
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'hgrid-contextmenu',
+  styleUrls: ['./hgrid-contextmenu.component.scss'],
+  templateUrl: './hgrid-contextmenu.component.html'
 })
 export class HGridContextmenuComponent implements OnInit {
 
@@ -19,15 +20,15 @@ export class HGridContextmenuComponent implements OnInit {
 
     constructor() { }
 
-    public Sort(eventArgs) {
+    public sort(eventArgs) {
         this.cell.grid.sort({fieldName: this.cell.column.field, dir: SortingDirection.Asc, ignoreCase: true});
     }
 
-    public ClearSort(eventArgs) {
+    public clearSort(eventArgs) {
         this.cell.grid.clearSort(this.cell.column.field);
     }
 
-    public ClearAll(eventArgs) {
+    public clearAll(eventArgs) {
         this.cell.grid.clearSort();
     }
 

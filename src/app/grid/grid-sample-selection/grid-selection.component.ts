@@ -1,8 +1,9 @@
-import { AfterViewInit, Component, Injectable, ViewChild } from "@angular/core";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { AfterViewInit, Component, Injectable, ViewChild, OnInit } from '@angular/core';
 
-import { IgxBannerComponent, IgxGridComponent, IgxSnackbarComponent } from "igniteui-angular";
-import { BehaviorSubject, Observable } from "rxjs";
-import { DATA } from "../services/financialData";
+import { IgxBannerComponent, IgxGridComponent, IgxSnackbarComponent } from 'igniteui-angular';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { DATA } from '../services/financialData';
 
 @Injectable()
 export class LocalService {
@@ -32,12 +33,12 @@ export class LocalService {
         return currData;
     }
     private randomizeObjectData(dataObj, index) {
-        const changeP = "Change(%)";
+        const changeP = 'Change(%)';
         const res = this.generateNewPrice(dataObj.Price);
         dataObj.Change = res.Price - dataObj.Price;
         dataObj.Price = res.Price;
         dataObj[changeP] = res.ChangePercent;
-        dataObj["ID"] = index;
+        dataObj['ID'] = index;
     }
     private generateNewPrice(oldPrice): any {
         const rnd = parseFloat(Math.random().toFixed(2));
@@ -62,16 +63,17 @@ export class LocalService {
 
 @Component({
     providers: [LocalService],
-    selector: "grid-sample",
-    styleUrls: ["./grid-selection.component.scss"],
-    templateUrl: "grid-selection.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'grid-sample',
+    styleUrls: ['./grid-selection.component.scss'],
+    templateUrl: 'grid-selection.component.html'
 })
 
-export class GridSelectionSampleComponent implements AfterViewInit {
-    @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
+export class GridSelectionSampleComponent implements AfterViewInit, OnInit {
+    @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     @ViewChild(IgxSnackbarComponent, { static: true }) public snackbar: IgxSnackbarComponent;
     public data: Observable<any[]>;
-    public selectionMode = "multiple";
+    public selectionMode = 'multiple';
     public selectionModes = [];
     public hideRowSelectors = false;
     public selectedRows = [1, 2, 3];
@@ -80,9 +82,9 @@ export class GridSelectionSampleComponent implements AfterViewInit {
         this.localService.getData(100000);
         this.data = this.localService.records;
         this.selectionModes = [
-            { label: "none", selected: this.selectionMode === "none", togglable: true },
-            { label: "single", selected: this.selectionMode === "single", togglable: true },
-            { label: "multiple", selected: this.selectionMode === "multiple", togglable: true }
+            { label: 'none', selected: this.selectionMode === 'none', togglable: true },
+            { label: 'single', selected: this.selectionMode === 'single', togglable: true },
+            { label: 'multiple', selected: this.selectionMode === 'multiple', togglable: true }
         ];
 
     }
@@ -98,7 +100,7 @@ export class GridSelectionSampleComponent implements AfterViewInit {
         return value.toFixed(2);
     }
     public formatCurrency(value: number) {
-        return "$" + value.toFixed(2);
+        return '$' + value.toFixed(2);
     }
     public handleRowSelection(event) {
         const targetCell = event.cell;

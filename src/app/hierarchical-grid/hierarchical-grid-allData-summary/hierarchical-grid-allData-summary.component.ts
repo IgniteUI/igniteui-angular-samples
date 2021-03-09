@@ -1,9 +1,9 @@
-import {  Component, OnInit, ViewChild } from "@angular/core";
+import {  Component, OnInit, ViewChild } from '@angular/core';
 import { IgxHierarchicalGridComponent,
     IgxNumberSummaryOperand,
     IgxSummaryOperand,
-    IgxSummaryResult } from "igniteui-angular";
-import { SINGERS } from "../data";
+    IgxSummaryResult } from 'igniteui-angular';
+import { SINGERS } from '../data';
 
 class CustomNumberSummary {
 
@@ -17,45 +17,45 @@ class CustomNumberSummary {
 
 class GrammySummary {
 
-    public operate(data?: any[], allData = [], fieldName = ""): IgxSummaryResult[] {
+    public operate(data?: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
         const result = [];
         result.push({
-            key: "nominatedSingers",
-            label: "Nominated Singers",
-            summaryResult: allData.filter((rec) =>  rec["GrammyNominations"] > 0).length
+            key: 'nominatedSingers',
+            label: 'Nominated Singers',
+            summaryResult: allData.filter((rec) =>  rec['GrammyNominations'] > 0).length
         });
         result.push({
-            key: "singersWithAwards",
-            label: "Singers with Awards",
-            summaryResult: allData.filter((rec) =>  rec["GrammyAwards"] > 0).length
+            key: 'singersWithAwards',
+            label: 'Singers with Awards',
+            summaryResult: allData.filter((rec) =>  rec['GrammyAwards'] > 0).length
         });
         result.push({
-            key: "nominations",
-            label: "Total Nominations",
-            summaryResult: IgxNumberSummaryOperand.sum(allData.map(r => r["GrammyNominations"]))
+            key: 'nominations',
+            label: 'Total Nominations',
+            summaryResult: IgxNumberSummaryOperand.sum(allData.map(r => r['GrammyNominations']))
         });
         result.push({
-            key: "awards",
-            label: "Total Awards",
-            summaryResult: IgxNumberSummaryOperand.sum(allData.map(r => r["GrammyAwards"]))
+            key: 'awards',
+            label: 'Total Awards',
+            summaryResult: IgxNumberSummaryOperand.sum(allData.map(r => r['GrammyAwards']))
         });
         return result;
     }
 }
 
 @Component({
-    selector: "hierarchical-grid-allData-summary",
-    styleUrls: ["./hierarchical-grid-allData-summary.component.scss"],
-    templateUrl: "hierarchical-grid-allData-summary.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-allData-summary',
+    styleUrls: ['./hierarchical-grid-allData-summary.component.scss'],
+    templateUrl: 'hierarchical-grid-allData-summary.component.html'
 })
 
 export class HGridAllDataSummaryComponent implements OnInit {
+    @ViewChild('hierarchicalGrid', { static: true })
+    private hierarchicalGrid: IgxHierarchicalGridComponent;
     public localdata;
     public grammySummary = GrammySummary;
     public numberSummary = CustomNumberSummary;
-
-    @ViewChild("hierarchicalGrid", { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {}
 

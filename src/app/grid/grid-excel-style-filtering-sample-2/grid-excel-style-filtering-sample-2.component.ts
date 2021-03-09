@@ -1,15 +1,16 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { DATA } from "../../data/nwindData";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxGridComponent } from 'igniteui-angular';
+import { DATA } from '../../data/nwindData';
 
 @Component({
-    selector: "grid-sample",
-    styleUrls: ["./grid-excel-style-filtering-sample-2.component.scss"],
-    templateUrl: "grid-excel-style-filtering-sample-2.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'grid-sample',
+    styleUrls: ['./grid-excel-style-filtering-sample-2.component.scss'],
+    templateUrl: 'grid-excel-style-filtering-sample-2.component.html'
 })
 
 export class ExcelStyleFilteringSample2Component implements OnInit {
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 
     public data: any[];
@@ -21,8 +22,8 @@ export class ExcelStyleFilteringSample2Component implements OnInit {
     }
 
     public formatDate(val) {
-        if (val !== "Select All") {
-            return new Intl.DateTimeFormat("en-US").format(val);
+        if (val !== 'Select All') {
+            return new Intl.DateTimeFormat('en-US').format(val);
         } else {
             return val;
         }

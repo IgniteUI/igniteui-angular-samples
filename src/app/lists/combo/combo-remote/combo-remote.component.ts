@@ -1,19 +1,19 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxComboComponent, IgxToastComponent } from "igniteui-angular";
-import { RemoteService } from "../../../grid/services/remote.service";
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { IgxComboComponent, IgxToastComponent } from 'igniteui-angular';
+import { RemoteService } from '../../../grid/services/remote.service';
 
 @Component({
     providers: [RemoteService],
-    selector: "app-combo-remote",
-    styleUrls: ["./combo-remote.component.scss"],
-    templateUrl: "./combo-remote.component.html"
+    selector: 'app-combo-remote',
+    styleUrls: ['./combo-remote.component.scss'],
+    templateUrl: './combo-remote.component.html'
 })
-export class ComboRemoteComponent implements OnInit {
+export class ComboRemoteComponent implements OnInit, AfterViewInit {
+    @ViewChild('loadingToast', { read: IgxToastComponent, static: true }) public loadingToast: IgxToastComponent;
+    @ViewChild('remoteCombo', { read: IgxComboComponent, static: true }) public remoteCombo: IgxComboComponent;
 
     public prevRequest: any;
     public rData: any;
-    @ViewChild("loadingToast", { read: IgxToastComponent, static: true }) public loadingToast: IgxToastComponent;
-    @ViewChild("remoteCombo", { read: IgxComboComponent, static: true }) public remoteCombo: IgxComboComponent;
 
     constructor(private remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
 
@@ -25,7 +25,7 @@ export class ComboRemoteComponent implements OnInit {
         const initSize = { startIndex: 0, chunkSize: Math.ceil(250 / this.remoteCombo.itemHeight)};
         this.remoteService.getData(initSize,
             null, (data) => {
-            this.remoteCombo.totalItemCount = data["@odata.count"];
+            this.remoteCombo.totalItemCount = data['@odata.count'];
         });
     }
 
@@ -33,15 +33,15 @@ export class ComboRemoteComponent implements OnInit {
         if (this.prevRequest) {
             this.prevRequest.unsubscribe();
         }
-        this.loadingToast.position = "middle";
+        this.loadingToast.position = 'middle';
         this.loadingToast.autoHide = false;
-        this.loadingToast.show("Loading Remote Data...");
+        this.loadingToast.show('Loading Remote Data...');
         this.cdr.detectChanges();
         this.prevRequest = this.remoteService.getData(
             this.remoteCombo.virtualizationState,
             null,
             (data) => {
-              this.remoteCombo.totalItemCount = data["@odata.count"];
+              this.remoteCombo.totalItemCount = data['@odata.count'];
               this.loadingToast.hide();
               this.cdr.detectChanges();
         });
@@ -49,7 +49,7 @@ export class ComboRemoteComponent implements OnInit {
 
     public searchInput(searchText) {
         this.remoteService.getData(this.remoteCombo.virtualizationState, searchText, (data) => {
-            this.remoteCombo.totalItemCount = data["@odata.count"];
+            this.remoteCombo.totalItemCount = data['@odata.count'];
         });
     }
 }

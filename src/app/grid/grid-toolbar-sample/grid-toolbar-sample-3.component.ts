@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 import {
     CsvFileTypes,
     IColumnExportingEventArgs,
@@ -6,13 +6,14 @@ import {
     IgxCsvExporterOptions,
     IgxExcelExporterOptions,
     IgxExporterOptionsBase
-} from "igniteui-angular";
-import { athletesData } from "../services/data";
+} from 'igniteui-angular';
+import { athletesData } from '../services/data';
 
 @Component({
-  selector: "grid-toolbar-sample-3",
-  styleUrls: ["./grid-toolbar-sample-3.component.scss"],
-  templateUrl: "./grid-toolbar-sample-3.component.html"
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'grid-toolbar-sample-3',
+  styleUrls: ['./grid-toolbar-sample-3.component.scss'],
+  templateUrl: './grid-toolbar-sample-3.component.html'
 })
 export class GridToolbarSample3Component {
 
@@ -25,7 +26,7 @@ export class GridToolbarSample3Component {
     public configureExport(args: IGridToolbarExportEventArgs) {
         // You can customize the exporting from this event
         const options: IgxExporterOptionsBase = args.options ;
-        options.fileName = "Custom Title";
+        options.fileName = 'Custom Title';
 
         if (options instanceof IgxExcelExporterOptions) {
             const excelOptions = options as IgxExcelExporterOptions;
@@ -33,13 +34,13 @@ export class GridToolbarSample3Component {
         } else {
             const csvOptions = options as IgxCsvExporterOptions;
             csvOptions.fileType = CsvFileTypes.TSV;
-            csvOptions.valueDelimiter = "\t";
+            csvOptions.valueDelimiter = '\t';
         }
 
         args.exporter.columnExporting.subscribe((columnArgs: IColumnExportingEventArgs) => {
             // Don't export image fields
-            columnArgs.cancel = columnArgs.header === "Athlete" ||
-                                columnArgs.header === "Country";
+            columnArgs.cancel = columnArgs.header === 'Athlete' ||
+                                columnArgs.header === 'Country';
         });
     }
 }

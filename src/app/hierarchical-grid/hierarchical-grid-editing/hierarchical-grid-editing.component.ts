@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxDialogComponent, IgxHierarchicalGridComponent,
     IgxNumberSummaryOperand, IgxSummaryResult
-} from "igniteui-angular";
-import { SINGERS } from "../data";
-import { Singer } from "../models";
+} from 'igniteui-angular';
+import { SINGERS } from '../data';
+import { Singer } from '../models';
 
 class MySummary {
 
@@ -12,40 +13,41 @@ class MySummary {
         const result = [];
         result.push(
             {
-                key: "min",
-                label: "Min",
+                key: 'min',
+                label: 'Min',
                 summaryResult: IgxNumberSummaryOperand.min(data)
             },
             {
-                key: "max",
-                label: "Max",
+                key: 'max',
+                label: 'Max',
                 summaryResult: IgxNumberSummaryOperand.max(data)
             },
             {
-                key: "avg",
-                label: "Avg",
+                key: 'avg',
+                label: 'Avg',
                 summaryResult: IgxNumberSummaryOperand.average(data)
             });
         return result;
     }
 }
 @Component({
-    selector: "hierarchical-grid-editing",
-    styleUrls: ["./hierarchical-grid-editing.component.scss"],
-    templateUrl: "hierarchical-grid-editing.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-editing',
+    styleUrls: ['./hierarchical-grid-editing.component.scss'],
+    templateUrl: 'hierarchical-grid-editing.component.html'
 })
 
 export class HGridEditingSampleComponent implements OnInit {
+    @ViewChild('hierarchicalGrid', { static: true })
+    private hierarchicalGrid: IgxHierarchicalGridComponent;
+
+    @ViewChild('dialogAdd', { read: IgxDialogComponent, static: true })
+    private dialog: IgxDialogComponent;
+
     public localdata;
     public singer: Singer;
     public mySummary = MySummary;
     private id = 14;
-
-    @ViewChild("hierarchicalGrid", { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
-
-    @ViewChild("dialogAdd", { read: IgxDialogComponent, static: true })
-    private dialog: IgxDialogComponent;
 
     constructor() { }
 
@@ -53,7 +55,7 @@ export class HGridEditingSampleComponent implements OnInit {
         this.localdata = SINGERS;
         this.singer = {
             ID: this.id,
-            Artist: "Mock Jagger",
+            Artist: 'Mock Jagger',
             Debut: 2005,
             GrammyAwards: 4,
             GrammyNominations: 7,
@@ -73,7 +75,7 @@ export class HGridEditingSampleComponent implements OnInit {
         this.dialog.close();
         this.singer = {
             ID: this.id,
-            Artist: "Mock Jagger",
+            Artist: 'Mock Jagger',
             Debut: 2005,
             GrammyAwards: 4,
             GrammyNominations: 7,

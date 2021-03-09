@@ -1,29 +1,30 @@
-import { useAnimation } from "@angular/animations";
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { useAnimation } from '@angular/animations';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CloseScrollStrategy,
     GlobalPositionStrategy,
     IgxDialogComponent,
     IgxOverlayOutletDirective,
     PositionSettings,
     slideInBottom,
-    slideOutTop } from "igniteui-angular";
+    slideOutTop } from 'igniteui-angular';
 
 @Component({
-    selector: "app-dialog-styling-sample",
-    styleUrls: ["./dialog-styling-sample.component.scss"],
-    templateUrl: "./dialog-styling-sample.component.html"
+    selector: 'app-dialog-styling-sample',
+    styleUrls: ['./dialog-styling-sample.component.scss'],
+    templateUrl: './dialog-styling-sample.component.html'
 })
+// eslint-disable-next-line @angular-eslint/component-class-suffix
 export class DialogStylingSample implements OnInit {
 
     @ViewChild(IgxOverlayOutletDirective, { static: true })
     public outlet: IgxOverlayOutletDirective;
 
-    @ViewChild("dialog1", { read: IgxDialogComponent, static: true })
+    @ViewChild('dialog1', { read: IgxDialogComponent, static: true })
     public dialog: IgxDialogComponent;
 
     private _animaitonSettings: PositionSettings = {
-        openAnimation: useAnimation(slideInBottom, { params: { fromPosition: "translateY(100%)" } }),
-        closeAnimation: useAnimation(slideOutTop, { params: { toPosition: "translateY(-100%)" } })
+        openAnimation: useAnimation(slideInBottom, { params: { fromPosition: 'translateY(100%)' } }),
+        closeAnimation: useAnimation(slideOutTop, { params: { toPosition: 'translateY(-100%)' } })
     };
 
     private _dialogOverlaySettings2;

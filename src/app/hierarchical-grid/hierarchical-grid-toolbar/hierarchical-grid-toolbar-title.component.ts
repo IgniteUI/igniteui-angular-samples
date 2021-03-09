@@ -1,10 +1,11 @@
-import { Component } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-toolbar-title",
-    styleUrls: ["./hierarchical-grid-toolbar-title.component.scss"],
-    templateUrl: "hierarchical-grid-toolbar-title.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-toolbar-title',
+    styleUrls: ['./hierarchical-grid-toolbar-title.component.scss'],
+    templateUrl: 'hierarchical-grid-toolbar-title.component.html'
 })
 
 export class HGridToolbarTitleSampleComponent {

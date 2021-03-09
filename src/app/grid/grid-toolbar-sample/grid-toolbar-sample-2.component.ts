@@ -1,10 +1,11 @@
-import { Component } from "@angular/core";
-import { athletesData } from "../services/data";
+import { Component } from '@angular/core';
+import { athletesData } from '../services/data';
 
 @Component({
-  selector: "grid-toolbar-sample-2",
-  styleUrls: ["./grid-toolbar-sample-2.component.scss"],
-  templateUrl: "./grid-toolbar-sample-2.component.html"
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'grid-toolbar-sample-2',
+  styleUrls: ['./grid-toolbar-sample-2.component.scss'],
+  templateUrl: './grid-toolbar-sample-2.component.html'
 })
 export class GridToolbarSample2Component {
 

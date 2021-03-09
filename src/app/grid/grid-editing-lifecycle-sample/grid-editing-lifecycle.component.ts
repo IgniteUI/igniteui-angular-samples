@@ -1,21 +1,23 @@
-import { Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { contains } from '@igniteui/material-icons-extended';
-import { DATA } from "../../data/nwindData";
+import { DATA } from '../../data/nwindData';
 
 @Component({
-    selector: "grid-editing-lifecycle",
-    templateUrl: "grid-editing-lifecycle.component.html",
-    styleUrls: ["grid-editing-lifecycle.component.scss"]
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'grid-editing-lifecycle',
+    templateUrl: 'grid-editing-lifecycle.component.html',
+    styleUrls: ['grid-editing-lifecycle.component.scss']
 })
 export class GridEditingLifecycleComponent {
+    @ViewChild('logger')
+    public logger: ElementRef;
+
     public $rowEditEnter = false;
     public $cellEditEnter = false;
     public $cellEdit = false;
     public $rowEdit = false;
     public data;
 
-    @ViewChild('logger')
-    public logger: ElementRef;
 
     public constructor(private renderer: Renderer2) {
         this.data = DATA;
@@ -63,6 +65,7 @@ export class GridEditingLifecycleComponent {
         this.renderer.insertBefore(container, createElem, container.children[0]);
     }
 
+    // eslint-disable-next-line @typescript-eslint/member-ordering
     public clearLog() {
         const  elements = this.logger.nativeElement.querySelectorAll('p');
         for (let index = 0; index < elements.length; index++) {

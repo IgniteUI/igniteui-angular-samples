@@ -1,12 +1,12 @@
-import { Component, ViewEncapsulation } from "@angular/core";
-import { DefaultSortingStrategy, SortingDirection } from "igniteui-angular";
-import { DATA } from "../../data/customers";
+import { Component, ViewEncapsulation } from '@angular/core';
+import { DefaultSortingStrategy, SortingDirection } from 'igniteui-angular';
+import { DATA } from '../../data/customers';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
-    selector: "app-grid-multi-row-layout-sample",
-    styleUrls: ["./grid-multi-row-layout.component.scss"],
-    templateUrl: "./grid-multi-row-layout.component.html"
+    selector: 'app-grid-multi-row-layout-sample',
+    styleUrls: ['./grid-multi-row-layout.component.scss'],
+    templateUrl: './grid-multi-row-layout.component.html'
 })
 export class GridMultiRowLayoutComponent {
 
@@ -14,7 +14,7 @@ export class GridMultiRowLayoutComponent {
     public group = [
         {
             dir: SortingDirection.Asc,
-            fieldName: "Country",
+            fieldName: 'Country',
             ignoreCase: false,
             strategy: DefaultSortingStrategy.instance()
         }
@@ -22,7 +22,7 @@ export class GridMultiRowLayoutComponent {
     public sort = [
         {
             dir: SortingDirection.Desc,
-            fieldName: "CompanyName",
+            fieldName: 'CompanyName',
             ignoreCase: true
         }
     ];

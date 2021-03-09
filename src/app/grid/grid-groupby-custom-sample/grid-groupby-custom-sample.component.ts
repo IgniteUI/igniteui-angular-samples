@@ -1,43 +1,44 @@
-import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
+/* eslint-disable max-len */
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
     DefaultSortingStrategy,
     IgxGridComponent,
     SortingDirection
-} from "igniteui-angular";
-import { INVOICE_DATA } from "../../data/invoiceData";
+} from 'igniteui-angular';
+import { INVOICE_DATA } from '../../data/invoiceData';
 import { DatePipe } from '@angular/common';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
-    selector: "app-grid-groupby-custom-sample",
-    styleUrls: ["./grid-groupby-custom-sample.component.scss"],
-    templateUrl: "./grid-groupby-custom-sample.component.html"
+    selector: 'app-grid-groupby-custom-sample',
+    styleUrls: ['./grid-groupby-custom-sample.component.scss'],
+    templateUrl: './grid-groupby-custom-sample.component.html'
 })
 export class GridGroupByCustomSampleComponent {
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
     public data;
     public sortingStrategy;
     public groupByOptions = [
-        { name: "Day", ref: DaySortingStrategy.instance() },
-        { name: "Week", ref: WeekSortingStrategy.instance() },
-        { name: "Month", ref: BaseSortingStrategy.instance() },
-        { name: "Year", ref: BaseSortingStrategy.instance() }
+        { name: 'Day', ref: DaySortingStrategy.instance() },
+        { name: 'Week', ref: WeekSortingStrategy.instance() },
+        { name: 'Month', ref: BaseSortingStrategy.instance() },
+        { name: 'Year', ref: BaseSortingStrategy.instance() }
     ];
 
     public groupByMode = this.groupByOptions[0].name;
     public initialExpr;
-    public dateFormatter = "";
+    public dateFormatter = '';
 
     constructor() {
         this.data = INVOICE_DATA;
         this.sortingStrategy = this.groupByOptions[0].ref;
-        this.dateFormatter = "MM/dd/yyyy";
+        this.dateFormatter = 'MM/dd/yyyy';
 
         this.initialExpr = [
             {
                 dir: SortingDirection.Asc,
-                fieldName: "OrderDate",
+                fieldName: 'OrderDate',
                 ignoreCase: true,
                 strategy: this.sortingStrategy,
                 groupingComparer: (a, b) => {
@@ -45,9 +46,9 @@ export class GridGroupByCustomSampleComponent {
                     const dateB = this.sortingStrategy.getParsedDate(b);
                     if (this.groupByMode === 'Month') {
                         return dateA.month === dateB.month ? 0 : -1;
-                    } else if (this.groupByMode === "Year") {
+                    } else if (this.groupByMode === 'Year') {
                         return dateA.year === dateB.year ? 0 : -1;
-                    } else if (this.groupByMode === "Week") {
+                    } else if (this.groupByMode === 'Week') {
                        return this.sortingStrategy.getWeekOfDate(a) === this.sortingStrategy.getWeekOfDate(b) ? 0 : -1;
                     }
                     return dateA.day === dateB.day && dateA.month === dateB.month ? 0 : -1;
@@ -62,7 +63,7 @@ export class GridGroupByCustomSampleComponent {
         this.dateFormatter = this.changeFormatter(this.groupByMode);
         // Changing groupingExpression and calling the setter again
         const expr = this.grid1.groupingExpressions.find(
-            (e) => e.fieldName === "OrderDate"
+            (e) => e.fieldName === 'OrderDate'
         );
         if (expr) {
             expr.strategy = this.sortingStrategy;
@@ -73,9 +74,9 @@ export class GridGroupByCustomSampleComponent {
     }
 
     public changeFormatter(mode: string) {
-        if (this.groupByMode === "Month") {
+        if (this.groupByMode === 'Month') {
             return 'MMMM yyyy';
-        } else if (this.groupByMode === "Year") {
+        } else if (this.groupByMode === 'Year') {
             return 'yyyy';
         } else if (this.groupByMode === 'Week'){
             return  'yyyy \'week\' w';
@@ -121,7 +122,7 @@ class DaySortingStrategy extends BaseSortingStrategy {
 class WeekSortingStrategy extends BaseSortingStrategy {
 
     public getWeekOfDate(a: any) {
-       return parseInt(new DatePipe("en-US").transform(a, 'w'), 10);
+       return parseInt(new DatePipe('en-US').transform(a, 'w'), 10);
     }
 
     compareValues(a: any, b: any) {

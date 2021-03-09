@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { IComboSelectionChangeEventArgs } from "igniteui-angular";
-import { localData } from "./local-data";
+import { Component, OnInit } from '@angular/core';
+import { IComboSelectionChangeEventArgs } from 'igniteui-angular';
+import { localData } from './local-data';
 
 @Component({
-    selector: "app-combo-single-selection",
-    styleUrls: ["./combo-single-selection.component.scss"],
-    templateUrl: "./combo-single-selection.component.html"
+    selector: 'app-combo-single-selection',
+    styleUrls: ['./combo-single-selection.component.scss'],
+    templateUrl: './combo-single-selection.component.html'
 })
 
 export class ComboSingleSelectionComponent implements OnInit {

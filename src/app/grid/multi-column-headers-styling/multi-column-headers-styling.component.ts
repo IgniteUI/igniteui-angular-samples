@@ -1,11 +1,12 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { DATA } from "../../data/customers";
+import { Component, ViewChild } from '@angular/core';
+import { IgxGridComponent } from 'igniteui-angular';
+import { DATA } from '../../data/customers';
 
 @Component({
-    selector: "multi-column-headers-styling",
-    styleUrls: [ "./multi-column-headers-styling.component.scss" ],
-    templateUrl: "./multi-column-headers-styling.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'multi-column-headers-styling',
+    styleUrls: [ './multi-column-headers-styling.component.scss' ],
+    templateUrl: './multi-column-headers-styling.component.html'
 })
 export class GridMultiColumnHeadersStylingComponent {
 

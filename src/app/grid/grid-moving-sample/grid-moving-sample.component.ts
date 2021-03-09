@@ -1,16 +1,16 @@
-import { AfterViewInit, Component, TemplateRef, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
-import { DATA } from "../services/financialData";
+import { AfterViewInit, Component, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { IgxColumnComponent, IgxGridComponent } from 'igniteui-angular';
+import { DATA } from '../services/financialData';
 
 @Component({
-    selector: "app-grid-moving-sample",
-    styleUrls: ["./grid-moving-sample.component.scss"],
-    templateUrl: "./grid-moving-sample.component.html"
+    selector: 'app-grid-moving-sample',
+    styleUrls: ['./grid-moving-sample.component.scss'],
+    templateUrl: './grid-moving-sample.component.html'
 })
 
 export class GridMovingSampleComponent {
+    @ViewChild('dataGrid', { static: true }) public grid: IgxGridComponent;
     public data: any[];
-    @ViewChild("dataGrid", { static: true }) public grid: IgxGridComponent;
 
     constructor() {
         this.data = DATA;
@@ -21,10 +21,11 @@ export class GridMovingSampleComponent {
     }
 
     public formatCurrency(value: number) {
-        return "$" + value.toFixed(2);
+        return '$' + value.toFixed(2);
     }
 
     public toggleColumnPinning(column: IgxColumnComponent) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         column.pinned ? column.unpin() : column.pin();
     }
 }

@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: "app-circular-dynamic-sample",
-    styleUrls: ["./circular-dynamic-sample.component.scss"],
-    templateUrl: "./circular-dynamic-sample.component.html"
+    selector: 'app-circular-dynamic-sample',
+    styleUrls: ['./circular-dynamic-sample.component.scss'],
+    templateUrl: './circular-dynamic-sample.component.html'
 })
 export class CircularDynamicSampleComponent implements OnInit {
 

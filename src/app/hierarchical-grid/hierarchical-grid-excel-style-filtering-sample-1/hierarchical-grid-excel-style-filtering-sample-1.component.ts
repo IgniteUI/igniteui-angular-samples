@@ -1,21 +1,22 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxHierarchicalGridComponent } from "igniteui-angular";
-import { SINGERS } from "../data";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-excel-style-filtering-sample-1",
-    styleUrls: ["./hierarchical-grid-excel-style-filtering-sample-1.component.scss"],
-    templateUrl: "hierarchical-grid-excel-style-filtering-sample-1.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-excel-style-filtering-sample-1',
+    styleUrls: ['./hierarchical-grid-excel-style-filtering-sample-1.component.scss'],
+    templateUrl: 'hierarchical-grid-excel-style-filtering-sample-1.component.html'
 })
 
 export class HGridExcelStyleFilteringSample1Component implements OnInit {
 
-    @ViewChild("hierarchicalGrid", { static: true })
+    @ViewChild('hierarchicalGrid', { static: true })
     public hierarchicalGrid: IgxHierarchicalGridComponent;
 
     public localdata;
 
-    public density = "comfortable";
+    public density = 'comfortable';
     public displayDensities;
 
     constructor() {
@@ -24,18 +25,18 @@ export class HGridExcelStyleFilteringSample1Component implements OnInit {
     public ngOnInit(): void {
         this.displayDensities = [
             {
-                label: "compact",
-                selected: this.density === "compact",
+                label: 'compact',
+                selected: this.density === 'compact',
                 togglable: true
             },
             {
-                label: "cosy",
-                selected: this.density === "cosy",
+                label: 'cosy',
+                selected: this.density === 'cosy',
                 togglable: true
             },
             {
-                label: "comfortable",
-                selected: this.density === "comfortable",
+                label: 'comfortable',
+                selected: this.density === 'comfortable',
                 togglable: true
             }
         ];

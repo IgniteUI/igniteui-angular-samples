@@ -1,16 +1,19 @@
-import { Component, ViewChild } from "@angular/core";
-import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, IgxHierarchicalRowComponent } from "igniteui-angular";
-import { createData, IDrive } from "../../data/files.data";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { Component, ViewChild } from '@angular/core';
+import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, IgxHierarchicalRowComponent } from 'igniteui-angular';
+import { createData, IDrive } from '../../data/files.data';
 
+// eslint-disable-next-line no-shadow
 enum DragIcon {
-    DEFAULT = "drag_handle",
-    ALLOW = "remove"
+    DEFAULT = 'drag_handle',
+    ALLOW = 'remove'
 }
 
 @Component({
-    selector: "hierarchical-grid-row-drag",
-    styleUrls: ["./hierarchical-grid-row-drag.component.scss"],
-    templateUrl: "hierarchical-grid-row-drag.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-row-drag',
+    styleUrls: ['./hierarchical-grid-row-drag.component.scss'],
+    templateUrl: 'hierarchical-grid-row-drag.component.html'
 })
 
 export class HGridDragSampleComponent {
@@ -40,7 +43,7 @@ export class HGridDragSampleComponent {
 
     private changeGhostIcon(ghost, icon: string) {
         if (ghost) {
-            const currentIcon = ghost.querySelector(".igx-grid__drag-indicator > igx-icon");
+            const currentIcon = ghost.querySelector('.igx-grid__drag-indicator > igx-icon');
             if (currentIcon) {
                 currentIcon.innerText = icon;
             }

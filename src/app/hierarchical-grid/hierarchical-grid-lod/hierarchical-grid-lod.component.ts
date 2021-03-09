@@ -1,28 +1,28 @@
-import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import {
     IGridCreatedEventArgs,
     IgxHierarchicalGridComponent,
     IgxRowIslandComponent
-} from "igniteui-angular";
-import { IDataState, RemoteLoDService } from "../services/remote-lod.service";
+} from 'igniteui-angular';
+import { IDataState, RemoteLoDService } from '../services/remote-lod.service';
 
 @Component({
     providers: [RemoteLoDService],
-    selector: "app-hierarchical-grid-lod",
-    styleUrls: ["./hierarchical-grid-lod.component.scss"],
-    templateUrl: "./hierarchical-grid-lod.component.html"
+    selector: 'app-hierarchical-grid-lod',
+    styleUrls: ['./hierarchical-grid-lod.component.scss'],
+    templateUrl: './hierarchical-grid-lod.component.html'
 })
 export class HierarchicalGridLoDSampleComponent implements AfterViewInit {
-    @ViewChild("hGrid", { static: true })
+    @ViewChild('hGrid', { static: true })
     public hGrid: IgxHierarchicalGridComponent;
 
     constructor(private remoteService: RemoteLoDService) { }
 
     public ngAfterViewInit() {
         const dataState: IDataState = {
-            key: "Customers",
-            parentID: "",
-            parentKey: "",
+            key: 'Customers',
+            parentID: '',
+            parentKey: '',
             rootLevel: true
         };
         this.hGrid.isLoading = true;
@@ -41,7 +41,7 @@ export class HierarchicalGridLoDSampleComponent implements AfterViewInit {
     }
 
     public dateFormatter(val: string) {
-        return new Intl.DateTimeFormat("en-US").format(new Date(val));
+        return new Intl.DateTimeFormat('en-US').format(new Date(val));
     }
 
     public gridCreated(event: IGridCreatedEventArgs, _parentKey: string) {

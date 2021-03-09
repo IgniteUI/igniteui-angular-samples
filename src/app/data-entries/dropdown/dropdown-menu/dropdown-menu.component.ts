@@ -1,17 +1,17 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 import {
     ConnectedPositioningStrategy, HorizontalAlignment,
     ISelectionEventArgs, NoOpScrollStrategy, VerticalAlignment
-} from "igniteui-angular";
+} from 'igniteui-angular';
 
 @Component({
-    selector: "app-dropdown-menu",
-    styleUrls: ["./dropdown-menu.component.scss"],
-    templateUrl: "./dropdown-menu.component.html"
+    selector: 'app-dropdown-menu',
+    styleUrls: ['./dropdown-menu.component.scss'],
+    templateUrl: './dropdown-menu.component.html'
 })
 export class DropdownMenuComponent {
     public items: { text: string }[] =
-        [{ text: "Add New Contact" }, { text: "Edit Contact" }, { text: "Refresh" }, { text: "Help" }];
+        [{ text: 'Add New Contact' }, { text: 'Edit Contact' }, { text: 'Refresh' }, { text: 'Help' }];
     public text: string;
     public overlaySettings = {
         positionStrategy: new ConnectedPositioningStrategy({

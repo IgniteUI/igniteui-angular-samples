@@ -1,10 +1,11 @@
-import { Component } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-advanced-filtering-style",
-    styleUrls: ["./hierarchical-grid-advanced-filtering-style.component.scss"],
-    templateUrl: "hierarchical-grid-advanced-filtering-style.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-advanced-filtering-style',
+    styleUrls: ['./hierarchical-grid-advanced-filtering-style.component.scss'],
+    templateUrl: 'hierarchical-grid-advanced-filtering-style.component.html'
 })
 
 export class HGridAdvancedFilteringStyleComponent {

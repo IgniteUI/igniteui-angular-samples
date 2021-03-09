@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     DataType,
     IgxColumnComponent,
@@ -7,20 +7,21 @@ import {
     IgxNumberFilteringOperand,
     IgxStringFilteringOperand,
     OverlaySettings
-} from "igniteui-angular";
-import { SINGERS } from "../data";
+} from 'igniteui-angular';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-filtering-template",
-    styleUrls: ["./hierarchical-grid-filtering-template.component.scss"],
-    templateUrl: "hierarchical-grid-filtering-template.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-filtering-template',
+    styleUrls: ['./hierarchical-grid-filtering-template.component.scss'],
+    templateUrl: 'hierarchical-grid-filtering-template.component.html'
 })
 
 export class HGridFilteringTemplateSampleComponent implements OnInit {
-    public localdata;
-
-    @ViewChild("hierarchicalGrid", { static: true })
+    @ViewChild('hierarchicalGrid', { static: true })
     public hierarchicalGrid: IgxHierarchicalGridComponent;
+
+    public localdata;
     public overlaySettings: OverlaySettings;
 
     private _filterValues = new Map<IgxColumnComponent, any>();
@@ -47,7 +48,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
     public onInput(input: any, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
         this._filterValues.set(column, input.value);
 
-        if (input.value === "") {
+        if (input.value === '') {
             grid.clearFilter(column.field);
             return;
         }
@@ -55,10 +56,10 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
         let operand = null;
         switch (column.dataType) {
             case DataType.Number:
-                operand = IgxNumberFilteringOperand.instance().condition("equals");
+                operand = IgxNumberFilteringOperand.instance().condition('equals');
                 break;
             default:
-                operand = IgxStringFilteringOperand.instance().condition("contains");
+                operand = IgxStringFilteringOperand.instance().condition('contains');
         }
         grid.filter(column.field,
             this.transformValue(input.value, column), operand, column.filteringIgnoreCase);
@@ -78,7 +79,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
     public onDateSelected(event, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
         this._filterValues.set(column, event);
 
-        grid.filter(column.field, event, IgxDateFilteringOperand.instance().condition("equals"),
+        grid.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'),
             column.filteringIgnoreCase);
     }
 

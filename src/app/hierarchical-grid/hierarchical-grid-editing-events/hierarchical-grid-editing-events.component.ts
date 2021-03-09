@@ -1,15 +1,16 @@
-import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { IGridCreatedEventArgs, IGridEditEventArgs,
-    IgxGridBaseDirective, IgxHierarchicalGridComponent, IgxToastComponent } from "igniteui-angular";
-import { Subject } from "rxjs";
-import { takeUntil } from "rxjs/operators";
-import { SINGERS } from "../data";
-import { Singer } from "../models";
+    IgxGridBaseDirective, IgxHierarchicalGridComponent, IgxToastComponent } from 'igniteui-angular';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { SINGERS } from '../data';
+import { Singer } from '../models';
 
 @Component({
-    selector: "hierarchical-grid-editing-events",
-    styleUrls: ["./hierarchical-grid-editing-events.component.scss"],
-    templateUrl: "hierarchical-grid-editing-events.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-editing-events',
+    styleUrls: ['./hierarchical-grid-editing-events.component.scss'],
+    templateUrl: 'hierarchical-grid-editing-events.component.html'
 })
 
 export class HGridEditingEventsComponent implements OnInit, OnDestroy {
@@ -27,7 +28,7 @@ export class HGridEditingEventsComponent implements OnInit, OnDestroy {
 
     public ngOnInit(): void {
         this.localData = SINGERS;
-        this.toast.position = "middle";
+        this.toast.position = 'middle';
     }
 
     public ngOnDestroy(): void {
@@ -40,14 +41,14 @@ export class HGridEditingEventsComponent implements OnInit, OnDestroy {
     public handleCellEdit(event: IGridEditEventArgs) {
         const today = new Date();
         const column = event.column;
-        if (column.field === "Debut") {
+        if (column.field === 'Debut') {
             if (event.newValue > today.getFullYear()) {
-                this.toast.show("The debut date must be in the past!");
+                this.toast.show('The debut date must be in the past!');
                 event.cancel = true;
             }
-        } else if (column.field === "LaunchDate") {
+        } else if (column.field === 'LaunchDate') {
             if (event.newValue > new Date()) {
-                this.toast.show("The launch date must be in the past!");
+                this.toast.show('The launch date must be in the past!');
                 event.cancel = true;
             }
         }

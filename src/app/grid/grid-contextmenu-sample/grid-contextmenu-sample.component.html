@@ -18,7 +18,7 @@
             </igx-column>
         </igx-grid>
         <div *ngIf="contextmenu==true">
-            <contextmenu [x]="contextmenuX" [y]="contextmenuY" [cell]="clickedCell" [selectedCells]="multiCellArgs" (onCellValueCopy)="copy($event)">
+            <contextmenu [x]="contextmenuX" [y]="contextmenuY" [cell]="clickedCell" [selectedCells]="multiCellArgs" (cellValueCopy)="copy($event)">
             </contextmenu>
         </div>
     </div>

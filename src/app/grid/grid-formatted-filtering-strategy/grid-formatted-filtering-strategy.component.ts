@@ -1,14 +1,15 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent, FormattedValuesFilteringStrategy } from "igniteui-angular";
-import { DATA } from "../../data/nwindData";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxGridComponent, FormattedValuesFilteringStrategy } from 'igniteui-angular';
+import { DATA } from '../../data/nwindData';
 
 @Component({
-    selector: "grid-sample",
-    styleUrls: ["./grid-formatted-filtering-strategy.component.scss"],
-    templateUrl: "grid-formatted-filtering-strategy.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'grid-sample',
+    styleUrls: ['./grid-formatted-filtering-strategy.component.scss'],
+    templateUrl: 'grid-formatted-filtering-strategy.component.html'
 })
 export class GridFormattedFilteringStrategyComponent implements OnInit {
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 
     public data: any[];

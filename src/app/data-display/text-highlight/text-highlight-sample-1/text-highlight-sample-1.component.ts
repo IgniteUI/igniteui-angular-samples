@@ -1,12 +1,16 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxTextHighlightDirective } from "igniteui-angular";
+/* eslint-disable max-len */
+import { Component, ViewChild } from '@angular/core';
+import { IgxTextHighlightDirective } from 'igniteui-angular';
 
 @Component({
-    selector: "text-highlight-1",
-    styleUrls: ["./text-highlight-sample-1.component.scss"],
-    templateUrl: "./text-highlight-sample-1.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'text-highlight-1',
+    styleUrls: ['./text-highlight-sample-1.component.scss'],
+    templateUrl: './text-highlight-sample-1.component.html'
 })
 export class TextHighlightSample1Component {
+    @ViewChild(IgxTextHighlightDirective, { read: IgxTextHighlightDirective, static: true })
+    public highlight: IgxTextHighlightDirective;
     // tslint:disable max-line-length
     public html = `
     Use the search box to search for a certain string in this text.
@@ -17,20 +21,18 @@ export class TextHighlightSample1Component {
     `;
     // tslint:enable max-line-length
 
-    @ViewChild(IgxTextHighlightDirective, { read: IgxTextHighlightDirective, static: true })
-    public highlight: IgxTextHighlightDirective;
 
-    public searchText: string = "";
-    public matchCount: number = 0;
-    public caseSensitive: boolean = false;
-    public index: number = 0;
+    public searchText = '';
+    public matchCount = 0;
+    public caseSensitive = false;
+    public index = 0;
 
     public searchKeyDown(ev) {
         if (this.searchText) {
-            if (ev.key === "Enter" || ev.key === "ArrowDown" || ev.key === "ArrowRight") {
+            if (ev.key === 'Enter' || ev.key === 'ArrowDown' || ev.key === 'ArrowRight') {
                 ev.preventDefault();
                 this.findNext();
-            } else if (ev.key === "ArrowUp" || ev.key === "ArrowLeft") {
+            } else if (ev.key === 'ArrowUp' || ev.key === 'ArrowLeft') {
                 ev.preventDefault();
                 this.findPrev();
             }
@@ -48,7 +50,7 @@ export class TextHighlightSample1Component {
     }
 
     public clearSearch() {
-        this.searchText = "";
+        this.searchText = '';
         this.find(0);
     }
 
@@ -73,7 +75,7 @@ export class TextHighlightSample1Component {
             this.index = this.index > this.matchCount - 1 ? 0 : this.index;
 
             if (this.matchCount) {
-                IgxTextHighlightDirective.setActiveHighlight("group1", {
+                IgxTextHighlightDirective.setActiveHighlight('group1', {
                     index: this.index
                 });
             }

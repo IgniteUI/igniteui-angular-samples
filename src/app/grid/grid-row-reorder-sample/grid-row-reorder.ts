@@ -1,16 +1,17 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { DATA } from "../../data/customers";
+import { Component, ViewChild } from '@angular/core';
+import { IgxGridComponent } from 'igniteui-angular';
+import { DATA } from '../../data/customers';
 
 @Component({
-    selector: "grid-row-reorder-sample",
-    styleUrls: ["grid-row-reorder.scss"],
-    templateUrl: "grid-row-reorder.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'grid-row-reorder-sample',
+    styleUrls: ['grid-row-reorder.scss'],
+    templateUrl: 'grid-row-reorder.html'
 })
 export class GridRowReorderComponent {
-    public data: any[];
-    @ViewChild("grid", { read: IgxGridComponent, static : true })
+    @ViewChild('grid', { read: IgxGridComponent, static : true })
     public grid: IgxGridComponent;
+    public data: any[];
 
     constructor() {
         this.data = DATA;

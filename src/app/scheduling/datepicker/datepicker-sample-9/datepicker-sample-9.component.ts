@@ -1,31 +1,32 @@
-import { Component, Pipe, PipeTransform, ViewChild } from "@angular/core";
-import { DateRangeType, IgxCalendarComponent, IgxDropDownComponent } from "igniteui-angular";
+import { Component, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
+import { DateRangeType, IgxCalendarComponent, IgxDropDownComponent } from 'igniteui-angular';
 
 @Component({
-    selector: "datepicker-sample-9",
-    styleUrls: ["./datepicker-sample-9.component.scss"],
-    templateUrl: "./datepicker-sample-9.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'datepicker-sample-9',
+    styleUrls: ['./datepicker-sample-9.component.scss'],
+    templateUrl: './datepicker-sample-9.component.html'
 })
-export class DatepickerSample9Component {
-    @ViewChild("calendar", { static: true }) public calendar: IgxCalendarComponent;
-    @ViewChild("dropDown1", { static: true }) public dropDown1: IgxDropDownComponent;
-    @ViewChild("dropDown2", { static: true }) public dropDown2: IgxDropDownComponent;
+export class DatepickerSample9Component implements OnInit {
+    @ViewChild('calendar', { static: true }) public calendar: IgxCalendarComponent;
+    @ViewChild('dropDown1', { static: true }) public dropDown1: IgxDropDownComponent;
+    @ViewChild('dropDown2', { static: true }) public dropDown2: IgxDropDownComponent;
 
     public startDate: Date = new Date(Date.now());
     public endDate: Date = new Date();
-    public inputStartDate: string = this.startDate.getDate() + "/"
-        + (this.startDate.getMonth() + 1) + "/" + this.startDate.getFullYear();
-    public inputEndDate: string = "One Way";
-    public slash: string = " - ";
+    public inputStartDate: string = this.startDate.getDate() + '/'
+        + (this.startDate.getMonth() + 1) + '/' + this.startDate.getFullYear();
+    public inputEndDate = 'One Way';
+    public slash = ' - ';
     public isClickedTwice: boolean;
-    public oneWayTicket: boolean = true;
+    public oneWayTicket = true;
     public townFrom: string;
     public townTo: string;
     public towns: string[];
     constructor() {
-        this.towns = ["New York", "Washington, D.C.", "London", "Berlin", "Sofia", "Rome", "Kiev",
-            "Copenhagen", "Paris", "Barcelona", "Vienna", "Athens", "Dublin", "Yerevan",
-            "Oslo", "Helsinki", "Stockholm", "Prague", "Istanbul"];
+        this.towns = ['New York', 'Washington, D.C.', 'London', 'Berlin', 'Sofia', 'Rome', 'Kiev',
+            'Copenhagen', 'Paris', 'Barcelona', 'Vienna', 'Athens', 'Dublin', 'Yerevan',
+            'Oslo', 'Helsinki', 'Stockholm', 'Prague', 'Istanbul'];
     }
 
     public ngOnInit() {
@@ -37,7 +38,7 @@ export class DatepickerSample9Component {
         if (this.dropDown1.selectedItem !== null) {
             this.townFrom = this.dropDown1.selectedItem.value;
         } else {
-            this.townFrom = "";
+            this.townFrom = '';
         }
     }
 
@@ -45,7 +46,7 @@ export class DatepickerSample9Component {
         if (this.dropDown2.selectedItem !== null) {
             this.townTo = this.dropDown2.selectedItem.value;
         } else {
-            this.townTo = "";
+            this.townTo = '';
         }
     }
 
@@ -57,19 +58,19 @@ export class DatepickerSample9Component {
             this.isClickedTwice = true;
         }
 
-        this.inputStartDate = this.startDate.getDate() + "/"
-            + (this.startDate.getMonth() + 1) + "/" + this.startDate.getFullYear();
-        this.slash = " - ";
-        this.inputEndDate = "";
+        this.inputStartDate = this.startDate.getDate() + '/'
+            + (this.startDate.getMonth() + 1) + '/' + this.startDate.getFullYear();
+        this.slash = ' - ';
+        this.inputEndDate = '';
         if (this.isClickedTwice) {
-            this.inputEndDate = this.endDate.getDate() + "/"
-                + (this.endDate.getMonth() + 1) + "/" + this.endDate.getFullYear();
+            this.inputEndDate = this.endDate.getDate() + '/'
+                + (this.endDate.getMonth() + 1) + '/' + this.endDate.getFullYear();
         }
         this.oneWayTicket = false;
     }
 
     public oneWay(dropDownCalendar) {
-        this.inputEndDate = "One Way";
+        this.inputEndDate = 'One Way';
         this.oneWayTicket = true;
         if (!this.isClickedTwice) {
             this.calendar.selectDate(this.startDate);
@@ -91,14 +92,14 @@ export class DatepickerSample9Component {
         }
     }
 }
-@Pipe({ name: "startsWith" })
+@Pipe({ name: 'startsWith' })
 export class AutocompletePipeStartsWith implements PipeTransform {
-    public transform(collection: any[], term = "") {
+    public transform(collection: any[], term = '') {
         return collection.filter((item) => item.toString().toLowerCase().startsWith(term.toString().toLowerCase()));
     }
 }
 
-@Pipe({ name: "withoutTownFrom" })
+@Pipe({ name: 'withoutTownFrom' })
 export class PipeWithoutTownFrom implements PipeTransform {
     public transform(collection: any[], townFrom: string) {
         return collection.filter((item) => item !== townFrom);

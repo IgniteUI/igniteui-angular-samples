@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/quotes */
 export const slides: any[] = [
     { description: "30+ Material-based Angular components to code speedy web apps faster.",
       details: "As we continue to focus on helping design teams and developers deliver software" +

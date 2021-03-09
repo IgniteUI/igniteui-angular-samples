@@ -1,11 +1,11 @@
-import { Component, Inject, OnInit } from "@angular/core";
-import { DisplayDensityToken, IDisplayDensityOptions } from "igniteui-angular";
+import { Component, Inject, OnInit } from '@angular/core';
+import { DisplayDensityToken, IDisplayDensityOptions } from 'igniteui-angular';
 
 @Component({
-    providers: [{ provide: DisplayDensityToken, useValue: { displayDensity: "comfortable" } }],
-    selector: "app-display-density",
-    styleUrls: ["./display-density.component.scss"],
-    templateUrl: "./display-density.component.html"
+    providers: [{ provide: DisplayDensityToken, useValue: { displayDensity: 'comfortable' } }],
+    selector: 'app-display-density',
+    styleUrls: ['./display-density.component.scss'],
+    templateUrl: './display-density.component.html'
 })
 
 export class DisplayDensityComponent implements OnInit {
@@ -19,25 +19,25 @@ export class DisplayDensityComponent implements OnInit {
         const initialDensity = this.displayDensityOptions.displayDensity;
         this.displayDensities = [
             {
-                label: "compact",
-                selected: initialDensity === "compact",
+                label: 'compact',
+                selected: initialDensity === 'compact',
                 togglable: true
             },
             {
-                label: "cosy",
-                selected: initialDensity === "cosy",
+                label: 'cosy',
+                selected: initialDensity === 'cosy',
                 togglable: true
             },
             {
-                label: "comfortable",
-                selected: initialDensity === "comfortable",
+                label: 'comfortable',
+                selected: initialDensity === 'comfortable',
                 togglable: true
             }
         ];
 
         this.user = {
-            firstName: "John",
-            lastName: "Smith",
+            firstName: 'John',
+            lastName: 'Smith',
             phone: 888123456
         };
     }

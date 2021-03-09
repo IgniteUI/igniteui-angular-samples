@@ -1,9 +1,10 @@
-import { Component, Pipe, PipeTransform } from "@angular/core";
-import { ConnectedPositioningStrategy, VerticalAlignment } from "igniteui-angular";
+import { Component, Pipe, PipeTransform } from '@angular/core';
+import { ConnectedPositioningStrategy, VerticalAlignment } from 'igniteui-angular';
 @Component({
-    selector: "movie-availability",
-    styleUrls: ["./movie.component.scss"],
-    templateUrl: "./movie.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'movie-availability',
+    styleUrls: ['./movie.component.scss'],
+    templateUrl: './movie.component.html'
 })
 export class MovieComponent {
     public cinemaSelected;
@@ -19,35 +20,35 @@ export class MovieComponent {
 
     public towns = [
         {
-          name: "New York",
+          name: 'New York',
           cinemas: [
-            "Regal Cinemas",
-            "Village East Cinema",
-            "Roxy Cinema",
-            "The Paris Theatre"
+            'Regal Cinemas',
+            'Village East Cinema',
+            'Roxy Cinema',
+            'The Paris Theatre'
         ]},
         {
-            name: "Los Angeles",
+            name: 'Los Angeles',
             cinemas: [
-                "Arc Light",
-                "Pacific Cinerama Dome",
-                "New Beverly Cinema",
-                "Downtown Independent"
+                'Arc Light',
+                'Pacific Cinerama Dome',
+                'New Beverly Cinema',
+                'Downtown Independent'
         ]},
         {
-            name: "Seattle",
+            name: 'Seattle',
             cinemas: [
-                "Central Cinema",
-                "Grand Illusion Cinema",
-                "Ark Lodge Cinemas",
-                "Skyway Outdoor Cinema"
+                'Central Cinema',
+                'Grand Illusion Cinema',
+                'Ark Lodge Cinemas',
+                'Skyway Outdoor Cinema'
         ]}
     ];
 }
 
-@Pipe({ name: "startsWith" })
+@Pipe({ name: 'startsWith' })
 export class AutocompletePipeStartsWith implements PipeTransform {
-    public transform(collection: any[], term = "") {
+    public transform(collection: any[], term = '') {
         return collection.filter((item) => item.toString().toLowerCase().startsWith(term.toString().toLowerCase()));
     }
 }
