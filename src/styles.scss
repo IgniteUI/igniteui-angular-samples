@@ -4,10 +4,6 @@
 @include igx-core();
 @include igx-theme($default-palette, $legacy-support: true);
 
-:root {
-    @include igx-palette-vars($default-palette);
-}
-
 /* autoprefixer grid: on */
 html,
 body {
