@@ -1,22 +1,23 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild } from '@angular/core';
 import {
     IDropDroppedEventArgs,
     IgxHierarchicalGridComponent,
     IgxHierarchicalRowComponent,
     Point
-} from "igniteui-angular";
-import { createData, IDrive } from "../../data/files.data";
+} from 'igniteui-angular';
+import { createData, IDrive } from '../../data/files.data';
 
 @Component({
-    selector: "hierarchical-grid-row-reorder",
-    styleUrls: ["./hierarchical-grid-row-reorder.component.scss"],
-    templateUrl: "hierarchical-grid-row-reorder.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-row-reorder',
+    styleUrls: ['./hierarchical-grid-row-reorder.component.scss'],
+    templateUrl: 'hierarchical-grid-row-reorder.component.html'
 })
 export class HGridRowReorderComponent {
     @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent, static: true })
     public hGrid: IgxHierarchicalGridComponent;
     public localData: IDrive[] = [];
-    public selectionMode = "multiple";
+    public selectionMode = 'multiple';
     constructor() {
         this.localData = createData(3, 12, 8);
     }
@@ -56,8 +57,7 @@ export class HGridRowReorderComponent {
         return rowListArr.indexOf(rowListArr.find((r) => r.rowData.id === targetElem.rowData.id));
     }
 
-    private catchCursorPosOnElem(rowListArr: IgxHierarchicalRowComponent[], cursorPosition: Point)
-        : IgxHierarchicalRowComponent {
+    private catchCursorPosOnElem(rowListArr: IgxHierarchicalRowComponent[], cursorPosition: Point): IgxHierarchicalRowComponent {
         // get the row which the dragged row was dropped on
         for (const row of rowListArr) {
             const rowRect = row.nativeElement.getBoundingClientRect();

@@ -1,5 +1,6 @@
-import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class RemotePagingService {
@@ -32,16 +33,16 @@ export class RemotePagingService {
             date.setMonth(date.getMonth() - i);
             const folder = {
                 Content: [],
-                Name: date.toLocaleString("en-us", { month: "short" }) + " " + date.getFullYear(),
+                Name: date.toLocaleString('en-us', { month: 'short' }) + ' ' + date.getFullYear(),
                 Size: 0,
-                Type: "File folder"
+                Type: 'File folder'
             };
 
             for (let j = 0; j < picsPerMonth; j++) {
                 const file = {
-                    Name: "picture_" + picturesCount-- + ".jpg",
+                    Name: 'picture_' + picturesCount-- + '.jpg',
                     Size: 2000 + Math.floor(Math.random() * 3000),
-                    Type: "JPG File"
+                    Type: 'JPG File'
                 };
                 folder.Size += file.Size;
                 folder.Content.push(file);

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnDestroy, ViewChild } from "@angular/core";
+import { Component, ElementRef, Inject, OnDestroy, ViewChild } from '@angular/core';
 import {
     AbsoluteScrollStrategy,
     AutoPositionStrategy,
@@ -10,29 +10,28 @@ import {
     OverlaySettings,
     PositionSettings,
     VerticalAlignment
-} from "igniteui-angular";
-import { Subject } from "rxjs";
-import { filter, takeUntil } from "rxjs/operators";
+} from 'igniteui-angular';
+import { Subject } from 'rxjs';
+import { filter, takeUntil } from 'rxjs/operators';
 // tslint:disable:object-literal-sort-keys
 @Component({
-    selector: "overlay-sample",
-    styleUrls: ["./overlay-scroll-sample-1.component.scss"],
-    templateUrl: "./overlay-scroll-sample-1.component.html",
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'overlay-sample',
+    styleUrls: ['./overlay-scroll-sample-1.component.scss'],
+    templateUrl: './overlay-scroll-sample-1.component.html',
     providers: [IgxOverlayService]
 })
 export class OverlayScrollSample1Component implements OnDestroy {
-
-    public modalValue = true;
-
-    @ViewChild("modalDemo", { static: true })
+    @ViewChild('modalDemo', { static: true })
     public modalDemo: ElementRef;
 
-    @ViewChild("overlayDemo", { static: true })
+    @ViewChild('overlayDemo', { static: true })
     public overlayDemo: ElementRef;
 
-    @ViewChild("mainContainer", { static: true })
+    @ViewChild('mainContainer', { static: true })
     public mainContainer: ElementRef;
 
+    public modalValue = true;
     private _defaultPositionSettings: PositionSettings = {
         horizontalDirection: HorizontalAlignment.Center,
         horizontalStartPoint: HorizontalAlignment.Center,
@@ -73,13 +72,13 @@ export class OverlayScrollSample1Component implements OnDestroy {
         });
         let positionStrategy;
         switch (strategy) {
-            case ("auto"):
+            case ('auto'):
                 positionStrategy = new AutoPositionStrategy(positionSettings);
                 break;
-            case ("elastic"):
+            case ('elastic'):
                 positionStrategy = new ElasticPositionStrategy(positionSettings);
                 break;
-            case ("connected"):
+            case ('connected'):
                 positionStrategy = new ConnectedPositioningStrategy(positionSettings);
                 break;
             default:

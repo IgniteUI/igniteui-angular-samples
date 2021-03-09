@@ -1,6 +1,6 @@
-import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import {
     IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule,
     IgxDateRangePickerModule, IgxDateTimeEditorModule, IgxDialogModule, IgxDropDownModule, IgxIconModule,
@@ -31,30 +31,30 @@ import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/dat
 import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/datepicker-sample-7.component";
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { AutocompletePipeStartsWith, DatepickerSample9Component, PipeWithoutTownFrom
-} from "./datepicker/datepicker-sample-9/datepicker-sample-9.component";
-import { DatepickerStylingSample } from "./datepicker/datepicker-styling-sample/datepicker-styling-sample.component";
+} from './datepicker/datepicker-sample-9/datepicker-sample-9.component';
+import { DatepickerStylingSample } from './datepicker/datepicker-styling-sample/datepicker-styling-sample.component';
 import {
-    BasicDateRangePickerComponent } from "./daterangepicker/daterangepicker-basic/daterangepicker-basic";
+    BasicDateRangePickerComponent } from './daterangepicker/daterangepicker-basic/daterangepicker-basic';
 import {
-    FlightBookingComponent } from "./daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking";
-import { DateRangePickerModeComponent } from "./daterangepicker/daterangepicker-mode/daterangepicker-mode";
+    FlightBookingComponent } from './daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking';
+import { DateRangePickerModeComponent } from './daterangepicker/daterangepicker-mode/daterangepicker-mode';
 import {
-    DateRangePickerStartEndComponent } from "./daterangepicker/daterangepicker-start-end/daterangepicker-start-end";
-import { StyledDateRangePickerComponent } from "./daterangepicker/daterangepicker-styling/daterangepicker-styling";
+    DateRangePickerStartEndComponent } from './daterangepicker/daterangepicker-start-end/daterangepicker-start-end';
+import { StyledDateRangePickerComponent } from './daterangepicker/daterangepicker-styling/daterangepicker-styling';
 import {
-    DateRangePickerValidationComponent } from "./daterangepicker/daterangepicker-validation/daterangepicker-validation";
-import { DateTimeAdvancedComponent } from "./datetimeeditor/datetime-advanced/datetime-advanced";
-import { DateTimeBasicComponent } from "./datetimeeditor/datetime-basic/datetime-basic.component";
-import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
-import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
-import { MonthpickerStylingComponent } from "./monthpicker/monthpicker-styling/monthpicker-styling.component";
-import { SchedulingRoutingModule } from "./scheduling-routing.module";
-import { TimepickerDropdownComponent } from "./timepicker/timepicker-dropdown/timepicker-dropdown.component";
-import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
-import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
-import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
-import { TimePickerSample6Component } from "./timepicker/timepicker-sample-6/timepicker-sample-6.component";
-import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/timepicker-styling.component";
+    DateRangePickerValidationComponent } from './daterangepicker/daterangepicker-validation/daterangepicker-validation';
+import { DateTimeAdvancedComponent } from './datetimeeditor/datetime-advanced/datetime-advanced';
+import { DateTimeBasicComponent } from './datetimeeditor/datetime-basic/datetime-basic.component';
+import { MonthpickerSample1Component } from './monthpicker/monthpicker-sample-1/monthpicker-sample-1.component';
+import { MonthpickerSample3Component } from './monthpicker/monthpicker-sample-3/monthpicker-sample-3.component';
+import { MonthpickerStylingComponent } from './monthpicker/monthpicker-styling/monthpicker-styling.component';
+import { SchedulingRoutingModule } from './scheduling-routing.module';
+import { TimepickerDropdownComponent } from './timepicker/timepicker-dropdown/timepicker-dropdown.component';
+import { TimePickerSample1Component } from './timepicker/timepicker-sample-1/timepicker-sample-1.component';
+import { TimePickerSample4Component } from './timepicker/timepicker-sample-4/timepicker-sample-4.component';
+import { TimePickerSample5Component } from './timepicker/timepicker-sample-5/timepicker-sample-5.component';
+import { TimePickerSample6Component } from './timepicker/timepicker-sample-6/timepicker-sample-6.component';
+import { TimePickerStylingComponent } from './timepicker/timepicker-styling/timepicker-styling.component';
 
 @NgModule({
     declarations: [

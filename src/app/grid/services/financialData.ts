@@ -1,4 +1,4 @@
-/* tslint:disable */
+/* eslint-disable */
 export const REGIONS: any[] = [
     {
         "Region": "North America",

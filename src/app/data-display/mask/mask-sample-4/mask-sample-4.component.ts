@@ -1,8 +1,8 @@
-import { Component, Pipe, PipeTransform } from "@angular/core";
+import { Component, Pipe, PipeTransform } from '@angular/core';
 
 @Component({
-    selector: "app-mask-sample-4",
-    templateUrl: "./mask-sample-4.component.html"
+    selector: 'app-mask-sample-4',
+    templateUrl: './mask-sample-4.component.html'
 })
 
 export class MaskSample4Component {
@@ -11,14 +11,14 @@ export class MaskSample4Component {
     public inputFormat = new InputFormatPipe();
 }
 
-@Pipe({ name: "displayFormat" })
+@Pipe({ name: 'displayFormat' })
 export class DisplayFormatPipe implements PipeTransform {
     public transform(value: any): string {
-        return value + " %";
+        return value + ' %';
     }
 }
 
-@Pipe({ name: "inputFormat" })
+@Pipe({ name: 'inputFormat' })
 export class InputFormatPipe implements PipeTransform {
     public transform(value: any): string {
         return value;

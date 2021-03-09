@@ -1,15 +1,16 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxStringFilteringOperand, IgxTreeGridComponent } from "igniteui-angular";
-import { FOODS_DATA } from "../data/foods";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxStringFilteringOperand, IgxTreeGridComponent } from 'igniteui-angular';
+import { FOODS_DATA } from '../data/foods';
 
 @Component({
-    selector: "tree-grid-filtering-sample",
-    styleUrls: ["./tree-grid-filtering-sample.component.scss"],
-    templateUrl: "tree-grid-filtering-sample.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'tree-grid-filtering-sample',
+    styleUrls: ['./tree-grid-filtering-sample.component.scss'],
+    templateUrl: 'tree-grid-filtering-sample.component.html'
 })
 
 export class TreeGridFilteringSampleComponent implements OnInit {
-    @ViewChild("treegrid1", { read: IgxTreeGridComponent, static: true })
+    @ViewChild('treegrid1', { read: IgxTreeGridComponent, static: true })
     public treegrid1: IgxTreeGridComponent;
 
     public data: any[];
@@ -21,11 +22,11 @@ export class TreeGridFilteringSampleComponent implements OnInit {
     }
 
     public filter(term) {
-        this.treegrid1.filter("Name", term, IgxStringFilteringOperand.instance().condition("contains"));
+        this.treegrid1.filter('Name', term, IgxStringFilteringOperand.instance().condition('contains'));
     }
 
     public formatDate(val: Date) {
-        return new Intl.DateTimeFormat("en-US").format(val);
+        return new Intl.DateTimeFormat('en-US').format(val);
     }
 
     public formatCurrency(val: string) {

@@ -1,18 +1,19 @@
-import { Component, OnInit } from "@angular/core";
-import { IgxFilterOptions } from "igniteui-angular";
-import { femaleFNames, lastName, maleFNames, middleNames } from "./names";
+import { Component, OnInit } from '@angular/core';
+import { IgxFilterOptions } from 'igniteui-angular';
+import { femaleFNames, lastName, maleFNames, middleNames } from './names';
 
 @Component({
-    selector: "igxFor-list",
-    styleUrls: ["./igxFor.component.scss"],
-    templateUrl: "./igxFor.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'igxFor-list',
+    styleUrls: ['./igxFor.component.scss'],
+    templateUrl: './igxFor.component.html'
 })
 export class IgxForComponent implements OnInit {
     public search: string;
-    public data: object[] = [];
+    public data = [];
     get fo() {
         const _fo = new IgxFilterOptions();
-        _fo.key = "name";
+        _fo.key = 'name';
         _fo.inputValue = this.search;
         return _fo;
     }
@@ -25,26 +26,27 @@ export class IgxForComponent implements OnInit {
         }
         this.data = data;
     }
-    private generatePerson(index): object {
+    private generatePerson(index) {
         const item = new Person();
         item.key = index;
-        const gender = index % 2 === 0 ? "M" : "F";
+        const gender = index % 2 === 0 ? 'M' : 'F';
         item.name = this.generateName(gender);
-        item.avatar = "assets/images/" +
-            (gender === "M" ? "men" : "women") +
-            "/" + Math.floor((Math.random() * 100)) + ".jpg";
+        item.avatar = 'assets/images/' +
+            (gender === 'M' ? 'men' : 'women') +
+            '/' + Math.floor((Math.random() * 100)) + '.jpg';
         item.favorite = Math.floor((Math.random() * 3)) % 3 === 0;
         return item;
     }
     private generateName(gender): string {
-        let name = "";
-        const fNames = gender === "M" ? maleFNames : femaleFNames;
-        name += fNames[Math.floor(Math.random() * fNames.length)] + " ";
-        name += middleNames[Math.floor(Math.random() * middleNames.length)] + " ";
+        let name = '';
+        const fNames = gender === 'M' ? maleFNames : femaleFNames;
+        name += fNames[Math.floor(Math.random() * fNames.length)] + ' ';
+        name += middleNames[Math.floor(Math.random() * middleNames.length)] + ' ';
         name += lastName[Math.floor(Math.random() * lastName.length)];
         return name;
     }
 
+    // eslint-disable-next-line @typescript-eslint/member-ordering
     public toggleFavorite(item: any) {
         item.favorite = !item.favorite;
     }

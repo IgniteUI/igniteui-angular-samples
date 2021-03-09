@@ -1,11 +1,11 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit} from '@angular/core';
 import { DataType } from 'igniteui-angular';
-import { AMINO_DATA } from "./data";
+import { AMINO_DATA } from './data';
 
 @Component({
-    selector: "app-grid-nested-data-bind2",
-    styleUrls: ["./grid-nested-data-bind2.scss"],
-    templateUrl: "./grid-nested-data-bind2.html"
+    selector: 'app-grid-nested-data-bind2',
+    styleUrls: ['./grid-nested-data-bind2.scss'],
+    templateUrl: './grid-nested-data-bind2.html'
 })
 export class GridNestedDataBindAminoacidComponent implements OnInit {
 

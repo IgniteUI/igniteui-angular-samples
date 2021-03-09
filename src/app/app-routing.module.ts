@@ -1,96 +1,96 @@
 // tslint:disable:max-line-length
-import { NgModule } from "@angular/core";
-import { NavigationStart, Router, RouterModule, Routes } from "@angular/router";
-import { filter } from "rxjs/operators";
-import { HomeComponent } from "./home/home.component";
-import { DocsLayoutComponent } from "./index/docs-layout.component";
-import { IndexComponent } from "./index/index.component";
+import { NgModule } from '@angular/core';
+import { NavigationStart, Router, RouterModule, Routes } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { HomeComponent } from './home/home.component';
+import { DocsLayoutComponent } from './index/docs-layout.component';
+import { IndexComponent } from './index/index.component';
 
 export const samplesRoutes: Routes = [
     {
         component: HomeComponent,
-        data: { displayName: "Home" },
-        path: "home"
+        data: { displayName: 'Home' },
+        path: 'home'
     },
     {
-        data: ["DataDisplayModule"],
-        loadChildren: () => import("./data-display/data-display.module").then(m => m.DataDisplayModule),
-        path: "data-display"
+        data: ['DataDisplayModule'],
+        loadChildren: () => import('./data-display/data-display.module').then(m => m.DataDisplayModule),
+        path: 'data-display'
     },
     {
-        data: ["DataEntriesModule"],
-        loadChildren: () => import("./data-entries/data-entries.module").then(m => m.DataEntriesModule),
-        path: "data-entries"
+        data: ['DataEntriesModule'],
+        loadChildren: () => import('./data-entries/data-entries.module').then(m => m.DataEntriesModule),
+        path: 'data-entries'
     },
     {
-        data: ["InteractionsModule"],
-        loadChildren: () => import("./interactions/interactions.module").then(m => m.InteractionsModule),
-        path: "interactions"
+        data: ['InteractionsModule'],
+        loadChildren: () => import('./interactions/interactions.module').then(m => m.InteractionsModule),
+        path: 'interactions'
     },
     {
-        data: ["NotificationsModule"],
-        loadChildren: () => import("./notifications/notifications.module").then(m => m.NotificationsModule),
-        path: "notifications"
+        data: ['NotificationsModule'],
+        loadChildren: () => import('./notifications/notifications.module').then(m => m.NotificationsModule),
+        path: 'notifications'
     },
     {
-        data: ["ListsModule"],
-        loadChildren: () => import("./lists/lists.module").then(m => m.ListsModule),
-        path: "lists"
+        data: ['ListsModule'],
+        loadChildren: () => import('./lists/lists.module').then(m => m.ListsModule),
+        path: 'lists'
     },
     {
-        data: ["ThemingModule"],
-        loadChildren: () => import("./theming/theming.module").then(m => m.ThemingModule),
-        path: "theming"
+        data: ['ThemingModule'],
+        loadChildren: () => import('./theming/theming.module').then(m => m.ThemingModule),
+        path: 'theming'
     },
     {
-        data: ["SchedulingModule"],
-        loadChildren: () => import("./scheduling/scheduling.module").then(m => m.SchedulingModule),
-        path: "scheduling"
+        data: ['SchedulingModule'],
+        loadChildren: () => import('./scheduling/scheduling.module').then(m => m.SchedulingModule),
+        path: 'scheduling'
     },
     {
-        data: ["MenusModule"],
-        loadChildren: () => import("./menus/menus.module").then(m => m.MenusModule),
-        path: "menus"
+        data: ['MenusModule'],
+        loadChildren: () => import('./menus/menus.module').then(m => m.MenusModule),
+        path: 'menus'
     },
     {
-        data: ["LayoutsModule"],
-        loadChildren: () => import("./layouts/layouts.module").then(m => m.LayoutsModule),
-        path: "layouts"
+        data: ['LayoutsModule'],
+        loadChildren: () => import('./layouts/layouts.module').then(m => m.LayoutsModule),
+        path: 'layouts'
     },
     {
-        data: ["ServicesModule"],
-        loadChildren: () => import("./services/services.module").then(m => m.ServicesModule),
-        path: "services"
+        data: ['ServicesModule'],
+        loadChildren: () => import('./services/services.module').then(m => m.ServicesModule),
+        path: 'services'
     },
     {
-        data: ["TreeGridModule"],
-        loadChildren: () => import("./tree-grid/tree-grid.module").then(m => m.TreeGridModule),
-        path: "tree-grid"
+        data: ['TreeGridModule'],
+        loadChildren: () => import('./tree-grid/tree-grid.module').then(m => m.TreeGridModule),
+        path: 'tree-grid'
     },
     {
-        data: ["GridsModule"],
-        loadChildren: () => import("./grid/grids.module").then(m => m.GridsModule),
-        path: "grid"
+        data: ['GridsModule'],
+        loadChildren: () => import('./grid/grids.module').then(m => m.GridsModule),
+        path: 'grid'
     },
     {
-        data: ["HierarchicalGridModule"],
-        loadChildren: () => import("./hierarchical-grid/hierarchical-grid.module").then(m => m.HierarchicalGridModule),
-        path: "hierarchical-grid"
+        data: ['HierarchicalGridModule'],
+        loadChildren: () => import('./hierarchical-grid/hierarchical-grid.module').then(m => m.HierarchicalGridModule),
+        path: 'hierarchical-grid'
     }
 ];
 export const appRoutes: Routes = [
     {
-        path: "", pathMatch: "full", redirectTo: "/samples/home"
+        path: '', pathMatch: 'full', redirectTo: '/samples/home'
     },
     {
         children: samplesRoutes,
         component: DocsLayoutComponent,
-        path: ""
+        path: ''
     },
     {
         children: samplesRoutes,
         component: IndexComponent,
-        path: "samples"
+        path: 'samples'
     }
 ];
 @NgModule({
@@ -109,10 +109,15 @@ export class AppRoutingModule {
     }
 
     public setOverflow(url: string) {
+<<<<<<< HEAD
         if (url.endsWith("finjs")) {
             document.body.style.overflow = "auto";
+=======
+        if (url.endsWith('finjs-sample')) {
+            document.body.style.overflow = 'auto';
+>>>>>>> e131a8393... chore(*) fix lint errors
         } else {
-            document.body.style.overflow = "hidden";
+            document.body.style.overflow = 'hidden';
         }
     }
 }

@@ -1,10 +1,10 @@
-import { Component, QueryList, ViewChildren } from "@angular/core";
-import { IExpansionPanelEventArgs, IgxExpansionPanelComponent } from "igniteui-angular";
+import { Component, QueryList, ViewChildren } from '@angular/core';
+import { IExpansionPanelEventArgs, IgxExpansionPanelComponent } from 'igniteui-angular';
 @Component({
     // tslint:disable-next-line:component-selector
-    selector: "app-expansion-sample-4",
-    styleUrls: ["./expansion-sample-4.component.scss"],
-    templateUrl: "./expansion-sample-4.component.html"
+    selector: 'app-expansion-sample-4',
+    styleUrls: ['./expansion-sample-4.component.scss'],
+    templateUrl: './expansion-sample-4.component.html'
 })
 export class ExpansionPanelSample4Component {
 

@@ -1,10 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { CUSTOMERS } from "../data";
+import { Component, OnInit } from '@angular/core';
+import { CUSTOMERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-multi-column-styling",
-    styleUrls: ["./hierarchical-grid-multi-column-styling.component.scss"],
-    templateUrl: "hierarchical-grid-multi-column-styling.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-multi-column-styling',
+    styleUrls: ['./hierarchical-grid-multi-column-styling.component.scss'],
+    templateUrl: 'hierarchical-grid-multi-column-styling.component.html'
 })
 
 export class HGridMultiHeadersStylingComponent implements OnInit {

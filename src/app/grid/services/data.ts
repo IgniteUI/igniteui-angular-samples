@@ -1,5 +1,7 @@
+/* eslint-disable quote-props */
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/quotes */
 
-/* tslint:disable */
 export const athletesData = [{
   "Id": 84,
   "Avatar": "assets/images/men/12.jpg",

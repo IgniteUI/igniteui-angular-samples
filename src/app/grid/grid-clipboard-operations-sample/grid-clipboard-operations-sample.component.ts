@@ -1,10 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { DATA } from "../../data/nwindData";
+import { Component, OnInit } from '@angular/core';
+import { DATA } from '../../data/nwindData';
 
 @Component({
-    selector: "grid-clipboard-operations-sample",
-    styleUrls: ["grid-clipboard-operations-sample.component.scss"],
-    templateUrl: "./grid-clipboard-operations-sample.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'grid-clipboard-operations-sample',
+    styleUrls: ['grid-clipboard-operations-sample.component.scss'],
+    templateUrl: './grid-clipboard-operations-sample.component.html'
 })
 export class GridClipboardSampleComponent implements OnInit {
 
@@ -13,7 +14,7 @@ export class GridClipboardSampleComponent implements OnInit {
         enabled: true,
         copyHeaders: true,
         copyFormatters: true,
-        separator: "\t"
+        separator: '\t'
     };
 
     constructor() {

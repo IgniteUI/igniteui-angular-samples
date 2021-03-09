@@ -1,21 +1,24 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { DATA } from "../../data/customers";
+
+import { Component, ViewChild } from '@angular/core';
+import { IgxGridComponent } from 'igniteui-angular';
+import { DATA } from '../../data/customers';
 @Component({
-    selector: "grid-multiple-row-drag",
-    styleUrls: ["./grid-multiple-row-drag.component.scss"],
-    templateUrl: "./grid-multiple-row-drag.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'grid-multiple-row-drag',
+    styleUrls: ['./grid-multiple-row-drag.component.scss'],
+    templateUrl: './grid-multiple-row-drag.component.html'
 })
 export class GridMultipleRowDragComponent  {
+    @ViewChild('sourceGrid', { read: IgxGridComponent, static: true })
+    public sourceGrid: IgxGridComponent;
+    @ViewChild('targetGrid', { read: IgxGridComponent, static: true })
+    public targetGrid: IgxGridComponent;
+
     public data1: any[];
     public data2: any[];
-    public countIcon = "drag_indicator";
-    public dragIcon = "arrow_right_alt";
-    @ViewChild("sourceGrid", { read: IgxGridComponent, static: true })
-    public sourceGrid: IgxGridComponent;
-    @ViewChild("targetGrid", { read: IgxGridComponent, static: true })
-    public targetGrid: IgxGridComponent;
-    public selectionMode = "multiple";
+    public countIcon = 'drag_indicator';
+    public dragIcon = 'arrow_right_alt';
+    public selectionMode = 'multiple';
     constructor() {
         this.data1 = DATA;
         this.data2 = [];
@@ -28,9 +31,7 @@ export class GridMultipleRowDragComponent  {
     public onDropAllowed(args) {
         let selected = false;
         const ids = this.sourceGrid.selectedRows;
-        const selectedRowData = this.sourceGrid.data.filter((record) => {
-            return ids.includes(record.ID);
-        });
+        const selectedRowData = this.sourceGrid.data.filter((record) => ids.includes(record.ID));
         selectedRowData.forEach((rowData) => {
             selected = true;
             this.targetGrid.addRow(rowData);
@@ -43,14 +44,14 @@ export class GridMultipleRowDragComponent  {
     }
 
     public onEnter(args) {
-        this.dragIcon = "add";
+        this.dragIcon = 'add';
     }
     public onRowDragStart(args) {
         const count = this.sourceGrid.selectedRows.length || 1;
-        this.countIcon = `filter_${count > 9 ? "9_plus" : `${count}`}`;
+        this.countIcon = `filter_${count > 9 ? '9_plus' : `${count}`}`;
     }
     public onLeave(args) {
         this.onRowDragStart(args);
-        this.dragIcon = "arrow_right_alt";
+        this.dragIcon = 'arrow_right_alt';
     }
 }

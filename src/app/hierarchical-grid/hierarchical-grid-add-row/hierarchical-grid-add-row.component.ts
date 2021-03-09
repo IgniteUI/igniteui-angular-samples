@@ -1,11 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { SINGERS } from "../data";
-import { Singer } from "../models";
+import { Component, OnInit } from '@angular/core';
+import { SINGERS } from '../data';
+import { Singer } from '../models';
 
 @Component({
-    selector: "hierarchical-grid-add-row",
-    styleUrls: ["./hierarchical-grid-add-row.component.scss"],
-    templateUrl: "./hierarchical-grid-add-row.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-add-row',
+    styleUrls: ['./hierarchical-grid-add-row.component.scss'],
+    templateUrl: './hierarchical-grid-add-row.component.html'
 })
 
 export class HGridAddRowSampleComponent implements OnInit {

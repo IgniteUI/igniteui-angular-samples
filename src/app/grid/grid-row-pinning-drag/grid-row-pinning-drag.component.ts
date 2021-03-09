@@ -1,25 +1,24 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxGridComponent,
     IgxGridRowComponent,
     IPinningConfig,
     IRowDragStartEventArgs,
     RowPinningPosition
-} from "igniteui-angular";
-import { DATA } from "../../data/customers";
+} from 'igniteui-angular';
+import { DATA } from '../../data/customers';
 
 @Component({
-    selector: "grid-row-pinning-drag-sample",
-    styleUrls: ["./grid-row-pinning-drag.component.scss"],
-    templateUrl: "grid-row-pinning-drag.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'grid-row-pinning-drag-sample',
+    styleUrls: ['./grid-row-pinning-drag.component.scss'],
+    templateUrl: 'grid-row-pinning-drag.component.html'
 })
 
 export class GridPinningDragSampleComponent implements OnInit {
-    public data: any[];
-
-    @ViewChild("grid1", { static: true })
+    @ViewChild('grid1', { static: true })
     public grid: IgxGridComponent;
-
+    public data: any[];
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top };
 
     constructor() {

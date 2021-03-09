@@ -1,12 +1,12 @@
-import { Component, ViewEncapsulation } from "@angular/core";
-import { IgxColumnComponent, IgxGridComponent, IgxToastComponent } from "igniteui-angular";
-import { DATA } from "../../data/nwindData";
+import { Component, ViewEncapsulation } from '@angular/core';
+import { IgxColumnComponent, IgxGridComponent, IgxToastComponent } from 'igniteui-angular';
+import { DATA } from '../../data/nwindData';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
-    selector: "app-grid-multi-cell-selection-sample",
-    styleUrls: ["./grid-multi-cell-selection.component.scss"],
-    templateUrl: "./grid-multi-cell-selection.component.html"
+    selector: 'app-grid-multi-cell-selection-sample',
+    styleUrls: ['./grid-multi-cell-selection.component.scss'],
+    templateUrl: './grid-multi-cell-selection.component.html'
 })
 export class GridMultiCellSelectionComponent {
 
@@ -18,7 +18,7 @@ export class GridMultiCellSelectionComponent {
         target.shouldGenerate = true;
         target.clearCellSelection();
         this.targetData = source.getSelectedData();
-        notification.position = "middle";
+        notification.position = 'middle';
         notification.displayTime = 1000;
         notification.show(`Transfered ${this.targetData.length} rows`);
     }
@@ -28,7 +28,7 @@ export class GridMultiCellSelectionComponent {
     }
 
     public transferExpressions(source: IgxGridComponent, target: IgxGridComponent, type: string) {
-        if (type === "filter") {
+        if (type === 'filter') {
             target.filteringExpressionsTree = source.filteringExpressionsTree;
         } else {
             target.sortingExpressions = source.sortingExpressions;

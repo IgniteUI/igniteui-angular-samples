@@ -1,15 +1,17 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { DATA } from "../../data/nwindData";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxGridComponent } from 'igniteui-angular';
+import { DATA } from '../../data/nwindData';
 
 @Component({
-    selector: "localization-sample-1",
-    styleUrls: ["./localization-sample-1.component.scss"],
-    templateUrl: "localization-sample-1.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'localization-sample-1',
+    styleUrls: ['./localization-sample-1.component.scss'],
+    templateUrl: 'localization-sample-1.component.html'
 })
 
 export class LocalizationSample1Component implements OnInit {
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
 
     public data: any[];
@@ -20,15 +22,15 @@ export class LocalizationSample1Component implements OnInit {
         this.data = DATA;
 
         const newGridRes = {
-            igx_grid_filter: "[Localized]Filter",
-            igx_grid_filter_row_close: "[Localized]Close"
+            igx_grid_filter: '[Localized]Filter',
+            igx_grid_filter_row_close: '[Localized]Close'
         };
 
         this.grid.resourceStrings = newGridRes;
     }
 
     public formatDate(val: Date) {
-        return new Intl.DateTimeFormat("en-US").format(val);
+        return new Intl.DateTimeFormat('en-US').format(val);
     }
 
     public formatCurrency(val: string) {

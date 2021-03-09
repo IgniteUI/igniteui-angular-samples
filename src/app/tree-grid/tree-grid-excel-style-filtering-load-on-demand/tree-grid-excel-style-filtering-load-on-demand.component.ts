@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { IFilteringExpressionsTree, IgxColumnComponent } from "igniteui-angular";
-import { RemoteValuesService } from "./remoteValues.service";
+import { Component, OnInit } from '@angular/core';
+import { IFilteringExpressionsTree, IgxColumnComponent } from 'igniteui-angular';
+import { RemoteValuesService } from './remoteValues.service';
 
 @Component({
-  selector: "app-tree-grid-excel-style-filtering-load-on-demand",
-  styleUrls: ["./tree-grid-excel-style-filtering-load-on-demand.component.scss"],
-  templateUrl: "./tree-grid-excel-style-filtering-load-on-demand.component.html",
+  selector: 'app-tree-grid-excel-style-filtering-load-on-demand',
+  styleUrls: ['./tree-grid-excel-style-filtering-load-on-demand.component.scss'],
+  templateUrl: './tree-grid-excel-style-filtering-load-on-demand.component.html',
   providers: [RemoteValuesService]
 })
 export class TreeGridExcelStyleFilteringLoadOnDemandComponent implements OnInit {
@@ -23,5 +23,5 @@ export class TreeGridExcelStyleFilteringLoadOnDemandComponent implements OnInit 
                                    done: (uniqueValues: any[]) => void) => {
         // Get specific column data.
         this.remoteValuesService.getColumnData(column, columnExprTree, uniqueValues => done(uniqueValues));
-    }
+    };
 }

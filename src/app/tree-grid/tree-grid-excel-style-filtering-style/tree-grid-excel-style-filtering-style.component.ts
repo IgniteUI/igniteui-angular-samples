@@ -1,15 +1,16 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxTreeGridComponent } from "igniteui-angular";
-import { FOODS_DATA } from "../data/foods";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxTreeGridComponent } from 'igniteui-angular';
+import { FOODS_DATA } from '../data/foods';
 
 @Component({
-    selector: "tree-grid-excel-style-filtering-style",
-    styleUrls: ["./tree-grid-excel-style-filtering-style.component.scss"],
-    templateUrl: "tree-grid-excel-style-filtering-style.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'tree-grid-excel-style-filtering-style',
+    styleUrls: ['./tree-grid-excel-style-filtering-style.component.scss'],
+    templateUrl: 'tree-grid-excel-style-filtering-style.component.html'
 })
 export class TreeGridExcelStyleFilteringStyleComponent implements OnInit {
 
-    @ViewChild("treegrid1", { read: IgxTreeGridComponent, static: true })
+    @ViewChild('treegrid1', { read: IgxTreeGridComponent, static: true })
     public treegrid1: IgxTreeGridComponent;
 
     public data: any[];
@@ -22,8 +23,8 @@ export class TreeGridExcelStyleFilteringStyleComponent implements OnInit {
     }
 
     public formatDate(val) {
-        if (val !== "Select All") {
-            return new Intl.DateTimeFormat("en-US").format(val);
+        if (val !== 'Select All') {
+            return new Intl.DateTimeFormat('en-US').format(val);
         } else {
             return val;
         }

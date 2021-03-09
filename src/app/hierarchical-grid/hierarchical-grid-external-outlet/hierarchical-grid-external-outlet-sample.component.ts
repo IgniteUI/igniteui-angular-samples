@@ -1,10 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component, OnInit } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-external-outlet",
-    styleUrls: ["./hierarchical-grid-external-outlet-sample.component.scss"],
-    templateUrl: "hierarchical-grid-external-outlet-sample.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-external-outlet',
+    styleUrls: ['./hierarchical-grid-external-outlet-sample.component.scss'],
+    templateUrl: 'hierarchical-grid-external-outlet-sample.component.html'
 })
 
 export class HierarchicalGridExternalOutletComponent implements OnInit {

@@ -1,10 +1,11 @@
-import { Component } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-toolbar-options",
-    styleUrls: ["./hierarchical-grid-toolbar-options.component.scss"],
-    templateUrl: "hierarchical-grid-toolbar-options.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-toolbar-options',
+    styleUrls: ['./hierarchical-grid-toolbar-options.component.scss'],
+    templateUrl: 'hierarchical-grid-toolbar-options.component.html'
 })
 
 export class HGridToolbarOptionsSampleComponent {

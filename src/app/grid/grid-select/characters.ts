@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 export class Character {
     get Name() {
-        return this.name
+        return this.name;
     }
 
     set Name(val) {
@@ -46,11 +47,11 @@ export class Character {
     private race: string;
 
     constructor() {
-        this.name = "";
-        this.class = "";
+        this.name = '';
+        this.class = '';
         this.age = 0;
-        this.alignment = "";
-        this.race = "";
+        this.alignment = '';
+        this.race = '';
     }
 
 }

@@ -1,11 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { IRowSelectionEventArgs } from "igniteui-angular";
-import { generateEmployeeFlatData } from "../data/employees-flat";
+import { Component, OnInit } from '@angular/core';
+import { IRowSelectionEventArgs } from 'igniteui-angular';
+import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({
-    selector: "tree-grid-conditional-row-selectors",
-    styleUrls: ["./tree-grid-conditional-row-selectors.component.scss"],
-    templateUrl: "tree-grid-conditional-row-selectors.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'tree-grid-conditional-row-selectors',
+    styleUrls: ['./tree-grid-conditional-row-selectors.component.scss'],
+    templateUrl: 'tree-grid-conditional-row-selectors.component.html'
 })
 
 export class TreeGridConditionalRowSelectorsSampleComponent implements OnInit {

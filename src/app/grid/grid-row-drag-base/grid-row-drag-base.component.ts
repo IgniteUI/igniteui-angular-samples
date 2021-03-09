@@ -1,23 +1,27 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { DATA } from "../../data/customers";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { Component, ViewChild } from '@angular/core';
+import { IgxGridComponent } from 'igniteui-angular';
+import { DATA } from '../../data/customers';
 
+// eslint-disable-next-line no-shadow
 enum DragIcon {
-    DEFAULT = "drag_indicator",
-    ALLOW = "add"
+    DEFAULT = 'drag_indicator',
+    ALLOW = 'add'
 }
 
 @Component({
-    selector: "grid-row-drag-base-sample",
-    styleUrls: ["./grid-row-drag-base.component.scss"],
-    templateUrl: "grid-row-drag-base.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'grid-row-drag-base-sample',
+    styleUrls: ['./grid-row-drag-base.component.scss'],
+    templateUrl: 'grid-row-drag-base.component.html'
 })
 
 export class GridDragBaseSampleComponent {
+    @ViewChild('sourceGrid', { read: IgxGridComponent, static: true }) public sourceGrid: IgxGridComponent;
+    @ViewChild('targetGrid', { read: IgxGridComponent, static: true }) public targetGrid: IgxGridComponent;
     public data1: any[];
     public data2: any[];
-    @ViewChild("sourceGrid", { read: IgxGridComponent, static: true }) public sourceGrid: IgxGridComponent;
-    @ViewChild("targetGrid", { read: IgxGridComponent, static: true }) public targetGrid: IgxGridComponent;
+
     constructor() {
         this.data1 = DATA;
         this.data2 = [];
@@ -42,7 +46,7 @@ export class GridDragBaseSampleComponent {
 
     private changeGhostIcon(ghost, icon: string) {
         if (ghost) {
-            const currentIcon = ghost.querySelector(".igx-grid__drag-indicator > igx-icon");
+            const currentIcon = ghost.querySelector('.igx-grid__drag-indicator > igx-icon');
             if (currentIcon) {
                 currentIcon.innerText = icon;
             }

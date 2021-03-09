@@ -1,10 +1,11 @@
-import { Component } from "@angular/core";
-import { DATA } from "../../data/customers";
+import { Component } from '@angular/core';
+import { DATA } from '../../data/customers';
 
 @Component({
-    selector: "grid-selection-template-excel",
-    styleUrls: ["./grid-sample-selection-template-excel.component.scss"],
-    templateUrl: "grid-sample-selection-template-excel.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'grid-selection-template-excel',
+    styleUrls: ['./grid-sample-selection-template-excel.component.scss'],
+    templateUrl: 'grid-sample-selection-template-excel.component.html'
 })
 
 export class GridSelectionTemplateExcelComponent {

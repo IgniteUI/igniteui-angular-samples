@@ -1,17 +1,21 @@
-import { Component, ViewChild } from "@angular/core";
-import { IDropDroppedEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent } from "igniteui-angular";
-import { FULL_EMPLOYEE_DATA } from "../data/employees";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { Component, ViewChild } from '@angular/core';
+import { IDropDroppedEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent } from 'igniteui-angular';
+import { FULL_EMPLOYEE_DATA } from '../data/employees';
 
+// eslint-disable-next-line no-shadow
 enum DragIcon {
-    DEFAULT = "drag_indicator",
-    ALLOW = "remove"
+    DEFAULT = 'drag_indicator',
+    ALLOW = 'remove'
 }
 
 @Component({
-    selector: "tree-grid-row-drag-base",
-    styleUrls: ["tree-grid-row-drag-base.component.scss"],
-    templateUrl: "tree-grid-row-drag-base.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'tree-grid-row-drag-base',
+    styleUrls: ['tree-grid-row-drag-base.component.scss'],
+    templateUrl: 'tree-grid-row-drag-base.component.html'
 })
+// eslint-disable-next-line @angular-eslint/component-class-suffix
 export class TreeGridRowDragBase {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: true })
     public treeGrid: IgxTreeGridComponent;
@@ -40,7 +44,7 @@ export class TreeGridRowDragBase {
 
     private changeGhostIcon(ghost, icon: string) {
         if (ghost) {
-            const currentIcon = ghost.querySelector(".igx-grid__drag-indicator > igx-icon");
+            const currentIcon = ghost.querySelector('.igx-grid__drag-indicator > igx-icon');
             if (currentIcon) {
                 currentIcon.innerText = icon;
             }

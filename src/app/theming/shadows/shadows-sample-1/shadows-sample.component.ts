@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "shadows-sample",
-  styleUrls: ["./shadows-sample.component.scss"],
-  templateUrl: "./shadows-sample.component.html"
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'shadows-sample',
+  styleUrls: ['./shadows-sample.component.scss'],
+  templateUrl: './shadows-sample.component.html'
 })
 export class ShadowsSampleComponent implements OnInit {
 

@@ -1,5 +1,3 @@
-// tslint:disable:object-literal-sort-keys
-
 export const servicesRoutesData = {
     "export-csv": { displayName: "CSV Export Raw Data", parentName: "CSV Export" },
     "export-csv-sample-1": { displayName: "CSV Export Grid", parentName: "CSV Export" },

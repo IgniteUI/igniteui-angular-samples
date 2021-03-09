@@ -1,20 +1,22 @@
-import { Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hgrid-editing-lifecycle",
-    templateUrl: "hgrid-editing-lifecycle.component.html",
-    styleUrls: ["hgrid-editing-lifecycle.component.scss"]
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hgrid-editing-lifecycle',
+    templateUrl: 'hgrid-editing-lifecycle.component.html',
+    styleUrls: ['hgrid-editing-lifecycle.component.scss']
 })
 export class HGridEditingLifecycleComponent {
+    @ViewChild('logger')
+    public logger: ElementRef;
     public $rowEditEnter = false;
     public $cellEditEnter = false;
     public $cellEdit = false;
     public $rowEdit = false;
     public data;
 
-    @ViewChild('logger')
-    public logger: ElementRef;
+
 
     public constructor(private renderer: Renderer2) {
         this.data = SINGERS;
@@ -48,6 +50,12 @@ export class HGridEditingLifecycleComponent {
     public rowEditExit() {
         this.logAnEvent(`=> 'rowEditExit'  << End of cycle >>`);
     }
+    public clearLog() {
+        const  elements = this.logger.nativeElement.querySelectorAll('p');
+        for (let index = 0; index < elements.length; index++) {
+            this.renderer.removeChild(this.logger.nativeElement, elements[index]);
+        }
+    }
 
     private logAnEvent(msg: string, canceled?: boolean) {
         const createElem = this.renderer.createElement('p');
@@ -60,12 +68,5 @@ export class HGridEditingLifecycleComponent {
         this.renderer.appendChild(createElem, text);
         const container = this.logger.nativeElement;
         this.renderer.insertBefore(container, createElem, container.children[0]);
-    }
-
-    public clearLog() {
-        const  elements = this.logger.nativeElement.querySelectorAll('p');
-        for (let index = 0; index < elements.length; index++) {
-            this.renderer.removeChild(this.logger.nativeElement, elements[index]);
-        }
     }
 }

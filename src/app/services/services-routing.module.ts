@@ -18,48 +18,48 @@ import { TransactionBaseComponent } from "./transaction/transaction-base/transac
 export const servicesRoutes: Routes = [
     {
         component: CsvExportComponent,
-        data: servicesRoutesData["export-csv"],
-        path: "export-csv"
+        data: servicesRoutesData['export-csv'],
+        path: 'export-csv'
     },
     {
         component: CsvExportSample1Component,
-        data: servicesRoutesData["export-csv-sample-1"],
-        path: "export-csv-sample-1"
+        data: servicesRoutesData['export-csv-sample-1'],
+        path: 'export-csv-sample-1'
     },
     {
         component: TreeGridCsvExportSample1Component,
-        data: servicesRoutesData["export-csv-tree-grid-sample"],
-        path: "export-csv-tree-grid-sample"
+        data: servicesRoutesData['export-csv-tree-grid-sample'],
+        path: 'export-csv-tree-grid-sample'
     },
     {
         component: ExcelExportComponent,
-        data: servicesRoutesData["export-excel"],
-        path: "export-excel"
+        data: servicesRoutesData['export-excel'],
+        path: 'export-excel'
     },
     {
         component: ExcelExportSample1Component,
-        data: servicesRoutesData["export-excel-sample-1"],
-        path: "export-excel-sample-1"
+        data: servicesRoutesData['export-excel-sample-1'],
+        path: 'export-excel-sample-1'
     },
     {
         component: TreeGridExcelExportSample1Component,
-        data: servicesRoutesData["export-excel-tree-grid-sample"],
-        path: "export-excel-tree-grid-sample"
+        data: servicesRoutesData['export-excel-tree-grid-sample'],
+        path: 'export-excel-tree-grid-sample'
     },
     {
         component: LocalizationSample1Component,
-        data: servicesRoutesData["localization-sample-1"],
-        path: "localization-sample-1"
+        data: servicesRoutesData['localization-sample-1'],
+        path: 'localization-sample-1'
     },
     {
         component: LocalizationSample2Component,
-        data: servicesRoutesData["localization-sample-2"],
-        path: "localization-sample-2"
+        data: servicesRoutesData['localization-sample-2'],
+        path: 'localization-sample-2'
     },
     {
         component: LocalizationSample3Component,
-        data: servicesRoutesData["localization-sample-3"],
-        path: "localization-sample-3"
+        data: servicesRoutesData['localization-sample-3'],
+        path: 'localization-sample-3'
     },
     {
         component: LocalizationAllResourcesComponent,
@@ -68,8 +68,8 @@ export const servicesRoutes: Routes = [
     },
     {
         component: TransactionBaseComponent,
-        data: servicesRoutesData["transaction-base"],
-        path: "transaction-base"
+        data: servicesRoutesData['transaction-base'],
+        path: 'transaction-base'
     }
 ];
 

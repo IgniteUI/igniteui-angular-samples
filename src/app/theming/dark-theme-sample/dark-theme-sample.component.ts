@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnInit, ViewChild } from "@angular/core";
+import { Component, HostBinding, Input, OnInit, ViewChild } from '@angular/core';
 import {
     CloseScrollStrategy,
     ConnectedPositioningStrategy,
@@ -10,95 +10,93 @@ import {
     IgxSnackbarComponent,
     VerticalAlignment,
     OverlaySettings
-} from "igniteui-angular";
-import { DATA } from ".././data/data";
-import { Record } from ".././data/record";
+} from 'igniteui-angular';
+import { DATA } from '.././data/data';
+import { Record } from '.././data/record';
 @Component({
-  selector: "app-dark-theme-sample",
-  styleUrls: ["./dark-theme-sample.component.scss"],
-  templateUrl: "./dark-theme-sample.component.html"
+    selector: 'app-dark-theme-sample',
+    styleUrls: ['./dark-theme-sample.component.scss'],
+    templateUrl: './dark-theme-sample.component.html'
 })
 export class DarkThemeSampleComponent implements OnInit {
+    @HostBinding('class')
+    public themesClass = 'dark-theme';
 
-  public data: any[] = DATA;
-  public record;
+    @ViewChild('dialog1', { read: IgxDialogComponent, static: true })
+    public dialog: IgxDialogComponent;
 
-  @HostBinding("class")
-  public themesClass = "dark-theme";
+    @ViewChild('outlet', { read: IgxOverlayOutletDirective, static: true })
+    public outlet: IgxOverlayOutletDirective;
 
-  @ViewChild("dialog1", { read: IgxDialogComponent, static: true })
-  public dialog: IgxDialogComponent;
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
+    public grid1: IgxGridComponent;
 
-  @ViewChild("outlet", { read: IgxOverlayOutletDirective, static: true })
-  public outlet: IgxOverlayOutletDirective;
+    @ViewChild('snackbar', { static: true })
+    public snackbar: IgxSnackbarComponent;
 
-  @ViewChild("grid1", { read: IgxGridComponent, static: true })
-  public grid1: IgxGridComponent;
+    public data: any[] = DATA;
+    public record;
+    private deletedRow;
 
-  @ViewChild("snackbar", { static: true })
-  public snackbar: IgxSnackbarComponent;
+    private _dropdownPositionSettings = {
+        horizontalStartPoint: HorizontalAlignment.Left,
+        verticalStartPoint: VerticalAlignment.Bottom
+    };
 
-  private deletedRow;
-
-  private _dropdownPositionSettings = {
-      horizontalStartPoint: HorizontalAlignment.Left,
-      verticalStartPoint: VerticalAlignment.Bottom
-  };
-
-  private _dropDownOverlaySettings: OverlaySettings = {
-      closeOnOutsideClick: true,
-      modal: false,
-      positionStrategy: new ConnectedPositioningStrategy(this._dropdownPositionSettings),
-      scrollStrategy: new CloseScrollStrategy()
-  };
-
-  private _dialogOverlaySettings2;
-
-  constructor() { }
-
-  public toggleDropDown(eventArgs, selectedDropDown: IgxDropDownComponent) {
-      const dropDown = selectedDropDown;
-      this._dropDownOverlaySettings.target = eventArgs.target;
-      dropDown.toggle(this._dropDownOverlaySettings);
-  }
-
-  public addRow() {
-      this.grid1.addRow(this.record);
-      this.cancel();
-  }
-
-  public cancel() {
-      this.dialog.close();
-      this.record = new Record();
-  }
-
-  public openDialog() {
-      this._dialogOverlaySettings2.outlet = this.outlet;
-      this.dialog.open(this._dialogOverlaySettings2);
-  }
-
-  public removeRow(rowIndex) {
-      const row = this.grid1.getRowByIndex(rowIndex);
-      this.deletedRow = row.rowData;
-      row.delete();
-      this.snackbar.message = `Row with index ${rowIndex} has been deleted!`;
-      this.snackbar.show();
-  }
-
-  public restoreRow() {
-      this.grid1.addRow(this.deletedRow);
-      this.snackbar.hide();
-  }
-
-  public ngOnInit() {
-      this.data = DATA;
-      this.record = new Record();
-      this._dialogOverlaySettings2 = {
+    private _dropDownOverlaySettings: OverlaySettings = {
         closeOnOutsideClick: true,
-        modal: true,
-        outlet: this.outlet,
+        modal: false,
+        positionStrategy: new ConnectedPositioningStrategy(this._dropdownPositionSettings),
         scrollStrategy: new CloseScrollStrategy()
     };
-  }
+
+    private _dialogOverlaySettings2;
+
+    constructor() { }
+
+    public toggleDropDown(eventArgs, selectedDropDown: IgxDropDownComponent) {
+        const dropDown = selectedDropDown;
+        this._dropDownOverlaySettings.target = eventArgs.target;
+        dropDown.toggle(this._dropDownOverlaySettings);
+    }
+
+    public addRow() {
+        this.grid1.addRow(this.record);
+        this.cancel();
+    }
+
+    public cancel() {
+        this.dialog.close();
+        this.record = new Record();
+    }
+
+    public openDialog() {
+        this._dialogOverlaySettings2.outlet = this.outlet;
+        this.dialog.open(this._dialogOverlaySettings2);
+    }
+
+    public removeRow(rowIndex) {
+        const row = this.grid1.getRowByIndex(rowIndex);
+        this.deletedRow = row.rowData;
+        row.delete();
+        this.snackbar.message = `Row with index ${rowIndex} has been deleted!`;
+        this.snackbar.show();
+    }
+
+    public restoreRow() {
+        this.grid1.addRow(this.deletedRow);
+        this.snackbar.hide();
+    }
+
+    public ngOnInit() {
+        this.data = DATA;
+        this.record = new Record();
+        this._dialogOverlaySettings2 = {
+            closeOnOutsideClick: true,
+            modal: true,
+            outlet: this.outlet,
+            scrollStrategy: new CloseScrollStrategy()
+        };
+    }
 
 }

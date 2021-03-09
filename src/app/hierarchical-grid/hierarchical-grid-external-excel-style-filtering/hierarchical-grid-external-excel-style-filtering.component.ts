@@ -1,16 +1,17 @@
-import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxHierarchicalGridComponent } from "igniteui-angular";
-import { SINGERS } from "../data";
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { SINGERS } from '../data';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
-    selector: "hierarchical-grid-external-excel-style-filtering",
-    templateUrl: "./hierarchical-grid-external-excel-style-filtering.component.html",
-    styleUrls: ["./hierarchical-grid-external-excel-style-filtering.component.scss"]
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-external-excel-style-filtering',
+    templateUrl: './hierarchical-grid-external-excel-style-filtering.component.html',
+    styleUrls: ['./hierarchical-grid-external-excel-style-filtering.component.scss']
 })
-export class HGridExternalExcelStyleFilteringComponent {
+export class HGridExternalExcelStyleFilteringComponent implements AfterViewInit{
 
-    @ViewChild("hierarchicalGrid", { read: IgxHierarchicalGridComponent, static: true })
+    @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true })
     public hgrid: IgxHierarchicalGridComponent;
 
     public columns: any[];

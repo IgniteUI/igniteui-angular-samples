@@ -1,11 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { IRowSelectionEventArgs } from "igniteui-angular";
-import { SINGERS } from "../data";
+import { Component, OnInit } from '@angular/core';
+import { IRowSelectionEventArgs } from 'igniteui-angular';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-conditional-row-selectors",
-    styleUrls: ["./hierarchical-grid-conditional-row-selectors.component.scss"],
-    templateUrl: "hierarchical-grid-conditional-row-selectors.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'hierarchical-grid-conditional-row-selectors',
+    styleUrls: ['./hierarchical-grid-conditional-row-selectors.component.scss'],
+    templateUrl: 'hierarchical-grid-conditional-row-selectors.component.html'
 })
 
 export class HGridConditionalRowSelectorsComponent implements OnInit {

@@ -1,25 +1,26 @@
-import { formatNumber } from "@angular/common";
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { GridPagingMode, IgxTreeGridComponent } from "igniteui-angular";
-import { Observable } from "rxjs";
-import { RemotePagingService } from "./remotePagingService";
+import { formatNumber } from '@angular/common';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { GridPagingMode, IgxTreeGridComponent } from 'igniteui-angular';
+import { Observable } from 'rxjs';
+import { RemotePagingService } from './remotePagingService';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [RemotePagingService],
-    selector: "tree-grid-remote-paging-default-template",
-    styleUrls: ["./tree-grid-remote-paging-default-template.component.scss"],
-    templateUrl: "./tree-grid-remote-paging-default-template.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'tree-grid-remote-paging-default-template',
+    styleUrls: ['./tree-grid-remote-paging-default-template.component.scss'],
+    templateUrl: './tree-grid-remote-paging-default-template.component.html'
 })
 export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, AfterViewInit, OnDestroy {
+
+    @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
 
     public totalCount = 0;
     public page = 0;
     public data: Observable<any[]>;
     public mode = GridPagingMode.Remote;
     public isLoading = true;
-
-    @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
 
     private _dataLengthSubscriber;
     private _perPage = 10;
@@ -41,7 +42,7 @@ export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, Aft
         this.data = this.remoteService.remoteData.asObservable();
         this.data.subscribe(() => {
             this.isLoading = false;
-        })
+        });
         this._dataLengthSubscriber = this.remoteService.dataLength.subscribe((data) => {
             this.totalCount = data;
         });
@@ -65,6 +66,6 @@ export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, Aft
     }
 
     public formatSize(value: number) {
-        return formatNumber(value, "en") + " KB";
+        return formatNumber(value, 'en') + ' KB';
     }
 }

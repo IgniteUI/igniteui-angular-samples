@@ -1,11 +1,12 @@
-import { Component } from "@angular/core";
-import { IRowSelectionEventArgs } from "igniteui-angular";
-import { DATA } from "../../data/customers";
+import { Component } from '@angular/core';
+import { IRowSelectionEventArgs } from 'igniteui-angular';
+import { DATA } from '../../data/customers';
 
 @Component({
-    selector: "grid-conditional-row-selectors",
-    styleUrls: ["./grid-conditional-row-selectors-sample.component.scss"],
-    templateUrl: "grid-conditional-row-selectors-sample.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'grid-conditional-row-selectors',
+    styleUrls: ['./grid-conditional-row-selectors-sample.component.scss'],
+    templateUrl: 'grid-conditional-row-selectors-sample.component.html'
 })
 
 export class GridConditionalRowSelectorsComponent {
@@ -14,7 +15,7 @@ export class GridConditionalRowSelectorsComponent {
 
     constructor() {
         this.data = DATA;
-        this.data.filter(dataItem => dataItem.ID.indexOf("A") === -1).map((item) => {
+        this.data.filter(dataItem => dataItem.ID.indexOf('A') === -1).map((item) => {
             this.disabledCollection.push(item.ID);
         });
     }

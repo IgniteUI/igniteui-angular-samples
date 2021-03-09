@@ -1,19 +1,20 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy,
     HorizontalAlignment, IgxSelectComponent, OverlaySettings,
     PositionSettings, scaleInTop, scaleOutBottom, VerticalAlignment
-} from "igniteui-angular";
+} from 'igniteui-angular';
 
 @Component({
-    selector: "select-sample-4",
-    styleUrls: ["select-sample-4.component.scss"],
-    templateUrl: "select-sample-4.component.html"
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'select-sample-4',
+    styleUrls: ['select-sample-4.component.scss'],
+    templateUrl: 'select-sample-4.component.html'
 })
 export class SelectSample4Component implements OnInit {
     @ViewChild(IgxSelectComponent, { static: true })
     public igxSelect: IgxSelectComponent;
-    public items: string[] = ["Orange", "Apple", "Banana"];
+    public items: string[] = ['Orange', 'Apple', 'Banana'];
     public customOverlaySettings: OverlaySettings;
 
     public ngOnInit(): void {
