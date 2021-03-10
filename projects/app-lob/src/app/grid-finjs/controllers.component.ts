@@ -3,7 +3,6 @@ import { IgxButtonGroupComponent, IgxSliderComponent
 } from 'igniteui-angular';
 import { timer } from 'rxjs';
 import { debounce } from 'rxjs/operators';
-import { SignalRService } from './signal-r.service';
 
 @Component({
     selector: 'app-finjs-controllers',
@@ -24,12 +23,6 @@ export class ControllerComponent implements OnInit, OnDestroy {
     public theme = false;
     public frequency = 500;
     public controls = [
-        {
-            disabled: true,
-            icon: 'update',
-            label: 'LIVE PRICES',
-            selected: false
-        },
         {
             disabled: false,
             icon: 'update',
@@ -55,7 +48,7 @@ export class ControllerComponent implements OnInit, OnDestroy {
     private volumeChanged$;
     private frequencyChanged$;
 
-    constructor(public signalRService: SignalRService) {
+    constructor() {
     }
     public ngOnInit() {
         this.volumeChanged$ = this.volumeSlider.onValueChange.pipe(debounce(() => timer(200)));
@@ -69,31 +62,20 @@ export class ControllerComponent implements OnInit, OnDestroy {
         switch (event.index) {
             case 0: {
                 this.disableOtherButtons(event.index, true);
-                this.playAction.emit({ action: 'playRandom'});
+                this.playAction.emit({ action: 'playAll'});
                 break;
             }
             case 1: {
-                this.disableOtherButtons(event.index, true);
-                this.playAction.emit({ action: 'playAll'});
-
-                this.signalRService.broadcastParams(this.frequency, this.volume, true);
+                this.disableOtherButtons(event.index, false);
+                this.playAction.emit({ action: 'stop'});
                 break;
             }
             case 2: {
-                this.disableOtherButtons(event.index, false);
-                this.playAction.emit({ action: 'stop'});
-                this.signalRService.stopLiveData();
-                break;
-            }
-            case 3: {
                 this.playAction.emit({ action: 'chart'});
                 this.playButtons.deselectButton(3);
                 break;
             }
-            default:
-                {
-                    break;
-                }
+            default: break;
         }
     }
 
@@ -109,9 +91,9 @@ export class ControllerComponent implements OnInit, OnDestroy {
         this.intervalSlider.disabled = disableButtons;
         this.selectedButton = ind;
         this.playButtons.buttons.forEach((button, index) => {
-            if (index === 2) { button.disabled = !disableButtons; } else {
+            if (index === 1) { button.disabled = !disableButtons; } else {
                 this.playButtons.buttons[0].disabled = disableButtons;
-                this.playButtons.buttons[1].disabled = disableButtons;
+                this.playButtons.buttons[2].disabled = disableButtons;
             }
         });
     }
