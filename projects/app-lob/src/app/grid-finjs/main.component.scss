@@ -1,5 +1,8 @@
 .main__wrapper {
     height: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
     app-finjs-grid {
         height: 100%;
     }
