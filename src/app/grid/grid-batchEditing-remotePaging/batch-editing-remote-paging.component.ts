@@ -7,7 +7,8 @@ import { RemotePagingService } from '../services/remotePagingService';
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [RemotePagingService],
-    selector: this.newProperty,
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'remote-paging-batch-editing',
     styleUrls: ['./batch-editing-remote-paging.component.scss'],
     templateUrl: './batch-editing-remote-paging.component.html'
 })
@@ -16,13 +17,13 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
     @ViewChild(IgxDialogComponent, { static: true }) public dialog: IgxDialogComponent;
     @ViewChild('dialogGrid', { read: IgxGridComponent, static: true })
     public dialogGrid: IgxGridComponent;
+
     public page = 0;
     public totalCount = 0;
     public data: Observable<any[]>;
     public selectOptions = [5, 10, 15, 25, 50];
     public transactionsData: Transaction[] = [];
 
-    private readonly newProperty = 'remote-paging-batch-editing';
     private _perPage = 10;
     private _dataLengthSubscriber;
     private _recordOnServer = 0;
