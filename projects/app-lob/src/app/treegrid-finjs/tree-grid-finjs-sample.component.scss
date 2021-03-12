@@ -1,8 +1,13 @@
 :host ::ng-deep {
     .fin-dark-theme {
         .finjs-slider,
-        .sample-toolbar {
+        .sample-toolbar,
+        .group-drop-area {
             color: rgba(255, 255, 255, 0.87);
+        }
+
+        .group-drop-area {
+            background: #333;
         }
     }
 
@@ -198,10 +203,14 @@
     .igx-excel-filter input {
         font-size: 0.8125rem;
     }
-    
+
     .igx-button--icon {
         width: 2rem;
         height: 2rem;
+    }
+
+    .igx-grid__drag-ghost-image-icon {
+        display: none;
     }
 }
 

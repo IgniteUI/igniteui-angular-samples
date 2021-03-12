@@ -1,5 +1,5 @@
 
-import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
     IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
     PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
@@ -100,7 +100,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     private _timer;
     private volumeChanged;
 
-    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef) {
+    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef, private changeDetectionRef: ChangeDetectorRef) {
         this.subscription = this.localService.getData(this.volume);
         this.localService.records.subscribe((d) => this.data = d);
     }
@@ -117,6 +117,12 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     }
 
     public ngAfterViewInit() {
+        this.groupColumns.forEach(col => {
+            const colIndex = this.grid1.columns.findIndex(c => c.field === col);
+            if (colIndex >= 0) {
+                this.grid1.columns[colIndex].hidden = true;
+            }
+        });
         this.grid1.reflow();
     }
     public onButtonAction(event: any) {
