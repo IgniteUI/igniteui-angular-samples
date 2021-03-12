@@ -109,7 +109,7 @@ export class AppRoutingModule {
     }
 
     public setOverflow(url: string) {
-        if (url.endsWith("finjs-sample")) {
+        if (url.endsWith("grid-finjs")) {
             document.body.style.overflow = "auto";
         } else {
             document.body.style.overflow = "hidden";
