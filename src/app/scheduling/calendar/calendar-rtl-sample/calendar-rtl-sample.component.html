@@ -1,0 +1,10 @@
+<div class="calendar-wrapper">
+    <div class="sample-column" (click)="changeDirectionality()">
+        <button igxButton="raised" igxRipple>Change Directionality</button>
+    </div>
+    <div class="sample-column" [attr.dir]="directionality">
+        <article>
+            <igx-calendar #calendar [weekStart]="1"></igx-calendar>
+        </article>
+    </div>
+</div>
