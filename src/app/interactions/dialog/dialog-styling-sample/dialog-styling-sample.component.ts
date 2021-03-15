@@ -13,8 +13,7 @@ import { CloseScrollStrategy,
     styleUrls: ['./dialog-styling-sample.component.scss'],
     templateUrl: './dialog-styling-sample.component.html'
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class DialogStylingSample implements OnInit {
+export class DialogStylingSampleComponent implements OnInit {
 
     @ViewChild(IgxOverlayOutletDirective, { static: true })
     public outlet: IgxOverlayOutletDirective;

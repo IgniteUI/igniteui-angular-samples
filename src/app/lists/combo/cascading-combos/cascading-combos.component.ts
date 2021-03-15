@@ -6,8 +6,7 @@ import { data } from './local-data';
     styleUrls: ['./cascading-combos.component.scss'],
     templateUrl: './cascading-combos.component.html'
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class CascadingCombos {
+export class CascadingCombosComponent {
     public location: { country: string; province: string; towns: string[] } = { country: '', province: '', towns: [] };
     public data = data;
     public countryData = [];

@@ -14,8 +14,7 @@ enum DragIcon {
     styleUrls: ['tree-grid-row-drag.component.scss'],
     templateUrl: 'tree-grid-row-drag.component.html'
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class TreeGridRowDrag {
+export class TreeGridRowDragComponent {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: true })
     public treeGrid: IgxTreeGridComponent;
 

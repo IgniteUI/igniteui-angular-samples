@@ -8,8 +8,7 @@ import { CUSTOMERS } from '../data';
     templateUrl: 'hierarchical-grid-moving-styled.component.html'
 })
 
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class HGridColumnMovingSampleComponentStyled implements OnInit {
+export class HGridColumnMovingSampleStyledComponent implements OnInit {
     @ViewChild('hierarchicalGrid', { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 

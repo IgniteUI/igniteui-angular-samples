@@ -23,7 +23,7 @@ import { IconSample2Component } from './icon/icon-sample-2/icon-sample-2.compone
 import { IconSample3Component } from './icon/icon-sample-3/icon-sample-3.component';
 import { IconSample4Component } from './icon/icon-sample-4/icon-sample-4.component';
 import { IconSample5Component } from './icon/icon-sample-5/icon-sample-5.component';
-import { IconStylingSample } from './icon/icon-styling-sample/icon-styling-sample.component';
+import { IconStylingSampleComponent } from './icon/icon-styling-sample/icon-styling-sample.component';
 import { SvgIconSampleComponent } from './icon/svg-icon-sample/svg-icon-sample.component';
 import { IgxForComponent } from './igxFor/igxFor.component';
 import { IgxForHorizontalComponent } from './igxFor/igxFor-horizontal-sample/igxFor-horizontal.component';
@@ -202,7 +202,7 @@ export const dataDisplayRoutes: Routes = [
         path: 'text-highlight-style'
     },
     {
-        component: IconStylingSample,
+        component: IconStylingSampleComponent,
         data: dataDisplayRoutesData['icon-styling'],
         path: 'icon-styling'
     },

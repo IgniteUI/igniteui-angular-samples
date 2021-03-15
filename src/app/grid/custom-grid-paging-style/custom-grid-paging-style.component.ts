@@ -8,8 +8,7 @@ import { athletesData } from '../services/data';
     templateUrl: 'custom-grid-paging-style.component.html'
 })
 
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class CustomGridPagingStyleSample implements OnInit{
+export class CustomGridPagingStyleSampleComponent implements OnInit{
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     public data: any[];
 

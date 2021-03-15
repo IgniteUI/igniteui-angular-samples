@@ -7,8 +7,7 @@ import { getHeroWeaponsData, IHeroWeapon } from '../../../data/heroData';
     styleUrls: ['./combo-styling.component.scss'],
     templateUrl: './combo-styling.component.html'
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class ComboStyling implements OnInit {
+export class ComboStylingComponent implements OnInit {
     @ViewChild('loadToast', { read: IgxToastComponent, static: true })
     public loadToast: IgxToastComponent;
 

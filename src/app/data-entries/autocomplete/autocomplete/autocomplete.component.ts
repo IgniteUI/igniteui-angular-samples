@@ -5,8 +5,7 @@ import { Component, Pipe, PipeTransform } from '@angular/core';
     styleUrls: ['./autocomplete.component.scss'],
     templateUrl: './autocomplete.component.html'
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class AutocompleteBasic {
+export class AutocompleteBasicComponent {
     public towns = [];
     public townSelected;
 

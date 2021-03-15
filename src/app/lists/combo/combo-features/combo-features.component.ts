@@ -7,8 +7,7 @@ import { localData } from './local-data';
     styleUrls: ['./combo-features.component.scss'],
     templateUrl: './combo-features.component.html'
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class ComboFeatures implements OnInit{
+export class ComboFeaturesComponent implements OnInit{
     @ViewChild('combo', { read: IgxComboComponent, static: true }) public combo: IgxComboComponent;
     // eslint-disable-next-line @typescript-eslint/naming-convention
     public GROUP_KEY = 'region';

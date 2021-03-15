@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CascadingCombos } from './combo/cascading-combos/cascading-combos.component';
+import { CascadingCombosComponent } from './combo/cascading-combos/cascading-combos.component';
 import { ComboBindingComponent } from './combo/combo-binding/combo-binding.component';
-import { ComboFeatures } from './combo/combo-features/combo-features.component';
+import { ComboFeaturesComponent } from './combo/combo-features/combo-features.component';
 import { ComboMainComponent } from './combo/combo-main/combo-main.component';
 import { ComboOverlayComponent } from './combo/combo-overlay/combo-overlay.component';
 import { ComboRemoteComponent } from './combo/combo-remote/combo-remote.component';
 import { ComboSingleSelectionComponent } from './combo/combo-single-selection/combo-single-selection.component';
-import { ComboStyling } from './combo/combo-styling/combo-styling.component';
+import { ComboStylingComponent } from './combo/combo-styling/combo-styling.component';
 import { ComboValueKeyComponent} from './combo/combo-valuekey/combo-valuekey.component';
 import { ComboTemplateComponent } from './combo/combo-template/combo-template.component';
 import { ListChatSampleComponent } from './list/list-chat-sample/list-chat-sample.component';
@@ -34,12 +34,12 @@ export const listsRoutes: Routes = [
         path: 'combo-binding'
     },
     {
-        component: ComboFeatures,
+        component: ComboFeaturesComponent,
         data: listsRoutesData['combo-features'],
         path: 'combo-features'
     },
     {
-        component: ComboStyling,
+        component: ComboStylingComponent,
         data: listsRoutesData['combo-styling'],
         path: 'combo-styling'
     },
@@ -59,7 +59,7 @@ export const listsRoutes: Routes = [
         path: 'combo-template'
     },
     {
-        component: CascadingCombos,
+        component: CascadingCombosComponent,
         data: listsRoutesData['cascading-combos'],
         path: 'cascading-combos'
     },

@@ -36,8 +36,7 @@ class MySummary {
     templateUrl: 'grid-custom-summaries-selection.component.html'
 })
 
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class GridCustomSummariesSelection implements AfterViewInit, OnInit {
+export class GridCustomSummariesSelectionComponent implements AfterViewInit, OnInit {
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     public data: any[];
     public selectionSummaries = [];

@@ -13,8 +13,7 @@ import { INVOICE_DATA } from '../../data/invoiceData';
     styleUrls: ['./grid-groupby-styling.component.scss'],
     templateUrl: './grid-groupby-styling.component.html'
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class GridGroupByStyling {
+export class GridGroupByStylingComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
     public data;
