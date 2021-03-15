@@ -53,19 +53,11 @@ export class IndexComponent implements OnInit, AfterViewInit {
             routesData: treeGridRoutesData
         },
         {
-<<<<<<< HEAD
-            path: "grid-finjs",
-            routesData: gridfinjsRoutesData
-        },
-        {
-            path: "treegrid-finjs",
-=======
             path: 'finjs-sample',
             routesData: gridfinjsRoutesData
         },
         {
             path: 'treegrid-finjs-sample',
->>>>>>> 409daa387... chore(*): fix app-lob lint errors
             routesData: treegridfinjsRoutesData
         },
         {

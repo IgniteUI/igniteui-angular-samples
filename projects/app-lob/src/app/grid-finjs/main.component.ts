@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { AfterViewInit, Component, ElementRef, EventEmitter, OnDestroy, Output, ViewChild } from "@angular/core";
-=======
 import { AfterViewInit, Component, EventEmitter, OnDestroy, Output, ViewChild } from '@angular/core';
->>>>>>> 409daa387... chore(*): fix app-lob lint errors
 import { IDialogEventArgs, IgxDialogComponent } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
 import { FinancialData } from '../services/financialData';

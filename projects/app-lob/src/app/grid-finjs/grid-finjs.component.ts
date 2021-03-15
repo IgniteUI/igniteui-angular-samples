@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import { ElementRef, Inject, AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild, Renderer2 } from '@angular/core';
-=======
 /* eslint-disable @typescript-eslint/member-ordering */
 import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild, OnDestroy } from '@angular/core';
->>>>>>> 409daa387... chore(*): fix app-lob lint errors
 import { DOCUMENT } from '@angular/common';
 import {
     IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent,
@@ -22,10 +18,6 @@ import { Subject } from 'rxjs';
     templateUrl: './grid-finjs.component.html',
     styleUrls: ['./grid-finjs.component.scss']
 })
-<<<<<<< HEAD
-export class GridFinJSComponent implements OnInit, AfterViewInit {
-    public selectionMode = "multiple";
-=======
 export class GridFinJSComponent implements OnInit, OnDestroy {
     @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;
     @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
@@ -34,23 +26,14 @@ export class GridFinJSComponent implements OnInit, OnDestroy {
     @Output() public chartColumnKeyDown = new EventEmitter<any>();
 
     public selectionMode = 'multiple';
->>>>>>> 409daa387... chore(*): fix app-lob lint errors
     public volume = 1000;
     public frequency = 500;
     public data = [];
     public multiCellSelection: { data: any[] } = { data: [] };
     public contracts = Contract;
     public regions = REGIONS;
-<<<<<<< HEAD
-    public showToolbar = true;
-    protected destroy$ = new Subject<any>();
-    private subscription$;
-    private resizeContentToFit = new Subject();
-    private contentObserver: ResizeObserver;
-=======
     public columnFormat = { digitsInfo: '1.3-3' };
     public showToolbar = true;
->>>>>>> 409daa387... chore(*): fix app-lob lint errors
     public overlaySettings: OverlaySettings = {
         modal: false
     };
