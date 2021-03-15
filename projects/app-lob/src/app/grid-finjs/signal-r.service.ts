@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, NgZone } from '@angular/core';
 import * as signalR from '@aspnet/signalR';
 import { BehaviorSubject } from 'rxjs';
 import { FinancialData } from '../services/financialData';
@@ -8,11 +9,14 @@ import { FinancialData } from '../services/financialData';
 })
 export class SignalRService {
     public data: BehaviorSubject<any[]>;
+    public hasRemoteConnection: boolean;
     private hubConnection: signalR.HubConnection;
+    private financialData: FinancialData = new FinancialData();
 
-    constructor() {
+    constructor(private zone: NgZone, private http: HttpClient) {
         this.data = new BehaviorSubject([]);
     }
+
     public startConnection = () => {
         this.hubConnection = new signalR.HubConnectionBuilder()
             .configureLogging(signalR.LogLevel.Debug)
@@ -21,17 +25,21 @@ export class SignalRService {
         this.hubConnection
             .start()
             .then(() => {
-                console.log('Connection started');
+                this.hasRemoteConnection = true;
                 this.registerSignalEvents();
                 this.broadcastParams(500, 1000, false);
             })
-            .catch(err => console.log('Error while starting the connection:' + err))
+            .catch(() => {
+                this.hasRemoteConnection = false;
+                this.getData(1000);
+            });
+        /* this.http.get('https://localhost:5001/webapi')
+            .subscribe(() => { }); */
     }
 
     public broadcastParams = (ms, volume, live) => {
-        console.log("broadcasted volume: " + volume);
-        console.log("broadcasted ms    : " + ms);
         this.hubConnection.invoke('updateparameters', ms, volume, live)
+            .then(() => console.log('requestLivedata'))
             .catch(err => console.error(err));
     }
 
@@ -41,8 +49,30 @@ export class SignalRService {
     }
 
     private registerSignalEvents() {
+        this.hubConnection.onclose(() => {
+            console.log('CLOSEDCONNECTION');
+            this.hasRemoteConnection = false;
+        });
         this.hubConnection.on('transferdata', (data) => {
             this.data.next(data);
         })
+    }
+
+    public getData(count: number = 10) {
+        this.data.next(this.financialData.generateData(count));
+    }
+
+    public updateAllPriceValues(data) {
+        this.zone.runOutsideAngular(() =>  {
+            const newData = this.financialData.updateAllPrices(data);
+            this.data.next(newData);
+        });
+    }
+
+    public updateRandomPriceValues(data) {
+        this.zone.runOutsideAngular(() =>  {
+            const newData = this.financialData.updateRandomPrices(data);
+            this.data.next(newData);
+        });
     }
 }

@@ -1,14 +1,11 @@
 import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
-import { Contract, REGIONS } from '../services/financialData';
-import { LocalDataService } from './localData.service';
 import { Subject } from 'rxjs';
 import { SignalRService } from './signal-r.service';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
-  providers: [LocalDataService],
+  providers: [SignalRService ],
   selector: 'app-finjs-grid',
   templateUrl: './grid-finjs.component.html',
   styleUrls: ['./grid-finjs.component.scss']
@@ -18,12 +15,9 @@ export class GridFinJSComponent implements OnInit {
     public volume = 1000;
     public frequency = 500;
     public data$: any;
-    public contracts = Contract;
-    public regions = REGIONS;
     public columnFormat = { digitsInfo: '1.3-3'}
     public showToolbar = true;
     protected destroy$ = new Subject<any>();
-    private subscription$;
     public overlaySettings: OverlaySettings = {
         modal: false
     };
@@ -35,18 +29,14 @@ export class GridFinJSComponent implements OnInit {
     @Output() public keyDown = new EventEmitter<any>();
     @Output() public chartColumnKeyDown = new EventEmitter<any>();
 
-    constructor(public finService: LocalDataService, private el: ElementRef, @Inject(DOCUMENT) private document: Document,
-        private signalRService: SignalRService, private http: HttpClient ) {
+    constructor(private el: ElementRef, @Inject(DOCUMENT) private document: Document,
+        public dataService: SignalRService,) {
     }
 
     public ngOnInit() {
-        this.signalRService.startConnection();
-        this.startHttpRequest();
-
+        this.dataService.startConnection();
         this.overlaySettings.outlet = this.outlet;
-
-        // This is not necessary?
-        this.data$ = this.signalRService.data;
+        this.data$ = this.dataService.data;
 
         this.grid.groupingExpressions = [{
             dir: SortingDirection.Desc,
@@ -69,15 +59,8 @@ export class GridFinJSComponent implements OnInit {
         ];
     }
 
-    private startHttpRequest = () => {
-        this.http.get('https://localhost:5001/webapi')
-            .subscribe(res => {
-                console.log(res);
-            })
-    }
-
     /** Event Handlers and Methods */
-    public onChange(event: any) {
+    public onChange() {
         if (this.grid.groupingExpressions.length > 0) {
             this.grid.groupingExpressions = [];
         } else {
@@ -200,10 +183,4 @@ export class GridFinJSComponent implements OnInit {
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
     };
-
-    public ngOnDestroy() {
-        if (this.subscription$) {
-            this.subscription$.unsubscribe();
-        }
-    }
 }

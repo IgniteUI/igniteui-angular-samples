@@ -3,7 +3,6 @@ import { IDialogEventArgs, IgxDialogComponent } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
 import { ControllerComponent } from './controllers.component';
 import { GridFinJSComponent } from './grid-finjs.component';
-import { SignalRService } from "./signal-r.service";
 
 @Component({
     selector: "app-finjs-main",
@@ -23,14 +22,12 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
 
     public properties = ["Price", "Country"];
     public chartData = [];
-    public selectionMode = 'multiple';
-    private subscription$;
     public darkTheme = false;
     public volume = 1000;
     public frequency = 500;
     private _timer;
 
-    constructor(public signalRService: SignalRService ) {
+    constructor() {
     }
 
     public ngAfterViewInit() {
@@ -56,35 +53,32 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
                 this.darkTheme = event.value;
                 break;
             }
-            default:
-                {
-                    break;
-                }
+            default: break;
         }
     }
 
     public onVolumeChanged(volume: any) {
-        this.signalRService.broadcastParams(this.controller.frequency, volume, false);
+        this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService.broadcastParams(this.controller.frequency, volume, false):
+        this.finGrid.dataService.getData(volume);
     }
 
     public onFrequencyChanged(frequency: any) {
-        this.signalRService.broadcastParams(frequency, this.controller.volume, false);
+        this.frequency = frequency;
     }
 
     public onPlayAction(event: any) {
         switch (event.action) {
             case 'playAll': {
-                const currData = this.finGrid.grid.filteredSortedData ?? this.finGrid.grid.data;
-                this._timer = setInterval(() => this.finGrid.finService.updateAllPriceValues(currData), this.controller.frequency);
-                break;
-            }
-            case 'playRandom': {
-                const currData = this.finGrid.grid.filteredSortedData ?? this.finGrid.grid.data;
-                this._timer = setInterval(() => this.finGrid.finService.updateRandomPriceValues(currData), this.controller.frequency);
+                if (this.finGrid.dataService.hasRemoteConnection) {
+                    this.finGrid.dataService.broadcastParams(this.frequency, this.volume, true);
+                } else {
+                    const currData = this.finGrid.grid.filteredSortedData ?? this.finGrid.grid.data;
+                    this._timer = setInterval(() => this.finGrid.dataService.updateAllPriceValues(currData), this.controller.frequency);
+                }
                 break;
             }
             case 'stop': {
-                this.stopFeed();
+                this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService.stopLiveData() : this.stopFeed();
                 break;
             }
             case 'chart': {
@@ -106,7 +100,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
             this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1,
                 this.finGrid.grid.data[row]);
         });
-        this.controller.controls[3].disabled = this.chartData.length === 0;
+        this.controller.controls[2].disabled = this.chartData.length === 0;
         this.setLabelIntervalAndAngle();
         this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
     }
@@ -193,9 +187,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     public stopFeed() {
         if (this._timer) {
             clearInterval(this._timer);
-        }
-        if (this.subscription$) {
-            this.subscription$.unsubscribe();
         }
     }
 
