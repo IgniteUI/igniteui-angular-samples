@@ -11,7 +11,7 @@ export class ToastSample5Component {
   public toastPosition: IgxToastPosition;
 
   public open(toast) {
-    this.toastPosition = "top";
+    this.toastPosition = 'top';
     toast.open();
   }
 }

@@ -109,13 +109,8 @@ export class AppRoutingModule {
     }
 
     public setOverflow(url: string) {
-<<<<<<< HEAD
-        if (url.endsWith("finjs")) {
-            document.body.style.overflow = "auto";
-=======
-        if (url.endsWith('finjs-sample')) {
+        if (url.endsWith('finjs')) {
             document.body.style.overflow = 'auto';
->>>>>>> e131a8393... chore(*) fix lint errors
         } else {
             document.body.style.overflow = 'hidden';
         }

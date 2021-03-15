@@ -42,12 +42,12 @@ export class HGridEditingEventsComponent implements OnInit, OnDestroy {
         const column = event.column;
         if (column.field === 'Debut') {
             if (event.newValue > today.getFullYear()) {
-                this.toast.open("The debut date must be in the past!");
+                this.toast.open('The debut date must be in the past!');
                 event.cancel = true;
             }
         } else if (column.field === 'LaunchDate') {
             if (event.newValue > new Date()) {
-                this.toast.open("The launch date must be in the past!");
+                this.toast.open('The launch date must be in the past!');
                 event.cancel = true;
             }
         }

@@ -89,8 +89,8 @@ export const schedulingRoutes: Routes = [
     },
     {
         component: CalendarRtlSampleComponent,
-        data: schedulingRoutesData["calendar-rtl-sample"],
-        path: "calendar-rtl-sample"
+        data: schedulingRoutesData['calendar-rtl-sample'],
+        path: 'calendar-rtl-sample'
     },
     {
         component: CalendarStylingSampleComponent,

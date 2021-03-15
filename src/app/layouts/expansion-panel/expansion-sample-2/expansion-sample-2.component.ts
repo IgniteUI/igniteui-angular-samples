@@ -16,13 +16,13 @@ export class ExpansionPanelSample2Component {
     public readMore = 'https://en.wikipedia.org/wiki/Hummingbird';
     public handleExpansion(evt?: {event: Event}) {
         this.eventToast.close();
-        console.log("Expanded event thrown ", (evt ? "with event: " + evt.event : "with no event"));
-        this.eventToast.open("Expanded Event Fired!");
+        console.log('Expanded event thrown ', (evt ? 'with event: ' + evt.event : 'with no event'));
+        this.eventToast.open('Expanded Event Fired!');
     }
 
     public handleCollapse(evt?: {event: Event}) {
         this.eventToast.close();
-        console.log("Collapsed event thrown ", (evt ? "with event: " + evt.event : "with no event"));
-        this.eventToast.open("Collapsed Event Fired!");
+        console.log('Collapsed event thrown ', (evt ? 'with event: ' + evt.event : 'with no event'));
+        this.eventToast.open('Collapsed Event Fired!');
     }
 }

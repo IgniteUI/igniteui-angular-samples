@@ -29,8 +29,8 @@ export class BannerAdvancedSampleComponent implements OnInit, OnDestroy {
 
     public showToast() {
         this.eventToast.close();
-        this.toastPosition =  "middle";
-        this.eventToast.open(`Wifi is now ${this.wifiState ? "on" : "off"}`);
+        this.toastPosition =  'middle';
+        this.eventToast.open(`Wifi is now ${this.wifiState ? 'on' : 'off'}`);
     }
 
     public ngOnInit() {

@@ -26,7 +26,7 @@ export class ComboStylingComponent implements OnInit {
 
         if (event.newSelection.length > 2) {
             event.cancel = true;
-            this.loadToast.open("Choose only two items");
+            this.loadToast.open('Choose only two items');
         }
     }
 }

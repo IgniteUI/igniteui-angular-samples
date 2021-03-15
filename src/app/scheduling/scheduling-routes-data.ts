@@ -1,3 +1,4 @@
+/*eslint-disable*/
 export const schedulingRoutesData = {
     "calendar-sample-1": { displayName: "Calendar Multi Selection Mode", parentName: "Calendar" },
     "calendar-sample-2": { displayName: "Customized Dates Display", parentName: "Calendar" },

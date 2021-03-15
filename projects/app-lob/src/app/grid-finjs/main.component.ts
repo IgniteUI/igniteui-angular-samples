@@ -30,7 +30,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     private subscription$;
     private _timer;
 
-    constructor(private elRef: ElementRef) {
+    constructor() {
     }
 
     public ngAfterViewInit() {
@@ -188,15 +188,15 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
         }
     }
 
+    public ngOnDestroy() {
+        this.stopFeed();
+    }
+
     private ticker(data: any) {
         this.finGrid.data = new FinancialData().updateRandomPrices(data);
     }
 
     private tickerAllPrices(data: any) {
         this.finGrid.data = new FinancialData().updateAllPrices(data);
-    }
-
-    public ngOnDestroy() {
-        this.stopFeed();
     }
 }

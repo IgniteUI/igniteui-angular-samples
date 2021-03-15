@@ -1,24 +1,23 @@
 /* eslint-disable @typescript-eslint/member-ordering */
-import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild, OnDestroy } from '@angular/core';
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable max-len */
+import { ElementRef, Inject, AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild, OnDestroy, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import {
-    IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent,
-    IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective
-} from 'igniteui-angular';
+import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { Contract, REGIONS } from '../services/financialData';
 import { LocalDataService } from './localData.service';
 // tslint:disable-next-line:no-implicit-dependencies
-import ResizeObserver from "resize-observer-polyfill";
+import ResizeObserver from 'resize-observer-polyfill';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 @Component({
-    providers: [LocalDataService],
-    selector: 'app-finjs-grid',
-    templateUrl: './grid-finjs.component.html',
-    styleUrls: ['./grid-finjs.component.scss']
+  providers: [LocalDataService],
+  selector: 'app-finjs-grid',
+  templateUrl: './grid-finjs.component.html',
+  styleUrls: ['./grid-finjs.component.scss']
 })
-export class GridFinJSComponent implements OnInit, OnDestroy {
+export class GridFinJSComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;
     @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
     @Output() public selectedDataChanged = new EventEmitter<any>();
@@ -32,13 +31,14 @@ export class GridFinJSComponent implements OnInit, OnDestroy {
     public multiCellSelection: { data: any[] } = { data: [] };
     public contracts = Contract;
     public regions = REGIONS;
-    public columnFormat = { digitsInfo: '1.3-3' };
     public showToolbar = true;
     public overlaySettings: OverlaySettings = {
         modal: false
     };
     protected destroy$ = new Subject<any>();
     private subscription$;
+    private resizeContentToFit = new Subject();
+    private contentObserver: ResizeObserver;
 
     constructor(public finService: LocalDataService, private el: ElementRef, @Inject(DOCUMENT) private document: Document, private renderer: Renderer2) {
     }
@@ -170,11 +170,11 @@ export class GridFinJSComponent implements OnInit, OnDestroy {
     }
 
     public percentage(value: number) {
-        return value.toFixed(2) + "%";
+        return value.toFixed(2) + '%';
     }
 
     public formatCurrency(value: number) {
-        return "$" + value.toFixed(3);
+        return '$' + value.toFixed(3);
     }
 
     get gridWrapper(): HTMLElement {
@@ -185,6 +185,12 @@ export class GridFinJSComponent implements OnInit, OnDestroy {
         return this.document.body.querySelector('.controls-wrapper') as HTMLElement;
     }
 
+    public ngOnDestroy() {
+        if (this.subscription$) {
+            this.subscription$.unsubscribe();
+        }
+    }
+
     /** Grid CellStyles and CellClasses */
     private negative = (rowData: any): boolean => rowData['Change(%)'] < 0;
     private positive = (rowData: any): boolean => rowData['Change(%)'] > 0;
@@ -193,7 +199,6 @@ export class GridFinJSComponent implements OnInit, OnDestroy {
     private strongPositive = (rowData: any): boolean => rowData['Change(%)'] >= 1;
     private strongNegative = (rowData: any, key: string): boolean => rowData['Change(%)'] <= -1;
 
-    // tslint:disable:member-ordering
     public trends = {
         changeNeg: this.changeNegative,
         changePos: this.changePositive,
@@ -209,11 +214,4 @@ export class GridFinJSComponent implements OnInit, OnDestroy {
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
     };
-    // tslint:enable:member-ordering
-
-    public ngOnDestroy() {
-        if (this.subscription$) {
-            this.subscription$.unsubscribe();
-        }
-    }
 }
