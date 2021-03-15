@@ -33,6 +33,16 @@ export class CalendarConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'CalendarRtlSampleComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxCalendarModule', 'IgxPrefixModule', 'IgxSelectModule', 'CalendarRtlSampleComponent'],
+                ngDeclarations: ['CalendarRtlSampleComponent'],
+                ngImports: ['IgxCalendarModule', 'IgxPrefixModule', 'IgxSelectModule']
+            }),
+            shortenComponentPathBy: "/scheduling/calendar/"
+        }));
+
+        configs.push(new Config({
             component: 'CalendarSample3Component',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxCalendarModule', 'IgxDialogModule', 'CalendarSample3Component'],

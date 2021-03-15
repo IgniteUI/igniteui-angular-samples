@@ -17,6 +17,7 @@ import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-
 import { CalendarSample6Component } from "./calendar/calendar-sample-6/calendar-sample-6.component";
 import { CalendarSample7Component } from "./calendar/calendar-sample-7/calendar-sample-7.component";
 import { CalendarSample8Component } from "./calendar/calendar-sample-8/calendar-sample-8.component";
+import { CalendarRtlSampleComponent } from "./calendar/calendar-rtl-sample/calendar-rtl-sample.component";
 import { CalendarStylingSample } from "./calendar/calendar-styling-sample/calendar-styling-sample.component";
 import { CalendarYearsViewComponent } from "./calendar/calendar-years-view/calendar-years-view.component";
 import { CalendarMultiViewComponent } from "./calendar/multiview/multiview.component";
@@ -69,6 +70,7 @@ import { TimePickerStylingComponent } from "./timepicker/timepicker-styling/time
         CalendarSample6Component,
         CalendarSample7Component,
         CalendarSample8Component,
+        CalendarRtlSampleComponent,
         CalendarMultiViewComponent,
         CalendarStylingSample,
         DateTimeAdvancedComponent,
