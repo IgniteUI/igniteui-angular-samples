@@ -44,14 +44,14 @@ export class DropDownRemoteComponent implements OnInit, OnDestroy {
         }
         this.loadingToast.position = "middle";
         this.loadingToast.autoHide = false;
-        this.loadingToast.show("Loading Remote Data...");
+        this.loadingToast.open("Loading Remote Data...");
         this.cdr.detectChanges();
         this.prevRequest = this.remoteService.getData(
             evt,
             null,
             (data) => {
                 this.remoteForDir.totalItemCount = data["@odata.count"];
-                this.loadingToast.hide();
+                this.loadingToast.close();
                 this.cdr.detectChanges();
             });
     }
