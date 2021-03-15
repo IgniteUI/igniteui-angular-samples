@@ -5,5 +5,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./icon-styling-sample.component.scss'],
   templateUrl: './icon-styling-sample.component.html'
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class IconStylingSample { }
+export class IconStylingSampleComponent { }

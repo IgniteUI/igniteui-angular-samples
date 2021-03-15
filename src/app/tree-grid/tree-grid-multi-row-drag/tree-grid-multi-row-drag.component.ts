@@ -7,8 +7,7 @@ import { FULL_EMPLOYEE_DATA } from '../data/employees';
     styleUrls: ['tree-grid-multi-row-drag.component.scss'],
     templateUrl: 'tree-grid-multi-row-drag.component.html'
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class TreeGridMultiRowDrag {
+export class TreeGridMultiRowDragComponent {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: true })
     public treeGrid: IgxTreeGridComponent;
     public selectionMode = 'multiple';

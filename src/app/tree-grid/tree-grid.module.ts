@@ -75,7 +75,7 @@ import { TreeGridMultiCellSelectionComponent } from './tree-grid-multi-cell-sele
 import { TreeGridMultiColumnHeaderTemplateSampleComponent } from './tree-grid-multi-column-header-template-sample/tree-grid-multi-column-header-template-sample.component';
 import { TreeGridMultiColumnHeadersSampleComponent } from './tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component';
 import { TreeGridMultiColumnHeadersStylingComponent } from './tree-grid-multi-column-headers-styling/tree-grid-multi-column-headers-styling.component';
-import { TreeGridMultiRowDrag } from './tree-grid-multi-row-drag/tree-grid-multi-row-drag.component';
+import { TreeGridMultiRowDragComponent } from './tree-grid-multi-row-drag/tree-grid-multi-row-drag.component';
 import { TreeGridPagingSampleComponent } from './tree-grid-paging-sample/tree-grid-paging-sample.component';
 import { TreeGridPagingStyleSampleComponent } from './tree-grid-paging-style/tree-grid-paging-style-sample.component';
 import { TreeGridRemoteFilteringSampleComponent } from './tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component';
@@ -83,8 +83,8 @@ import { TreeGridRemotePagingDefaultTemplateComponent } from './tree-grid-remote
 import { TreeGridRemotePagingSampleComponent } from './tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component';
 import { TreeGridResizeLineStylingSampleComponent } from './tree-grid-resize-line-styling-sample/tree-grid-resize-line-styling-sample.component';
 import { TreeGridRoutingModule } from './tree-grid-routing.module';
-import { TreeGridRowDragBase } from './tree-grid-row-drag-base/tree-grid-row-drag-base.component';
-import { TreeGridRowDrag } from './tree-grid-row-drag/tree-grid-row-drag.component';
+import { TreeGridRowDragBaseComponent } from './tree-grid-row-drag-base/tree-grid-row-drag-base.component';
+import { TreeGridRowDragComponent } from './tree-grid-row-drag/tree-grid-row-drag.component';
 import { TreeGridRowEditStyleComponent } from './tree-grid-row-edit-style/tree-grid-row-edit-style.component';
 import { TreeGridRowEditSampleComponent } from './tree-grid-row-edit/tree-grid-row-editing-sample.component';
 import { TreeGridRowPinningExtraColumnSampleComponent } from './tree-grid-row-pinning-extra-column/tree-grid-row-pinning-extra-column.component';
@@ -166,9 +166,9 @@ import { TreeGridFormattedFilteringStrategyComponent } from './tree-grid-formatt
         TreeGridMultiCellSelectionComponent,
         TreeGridMultiCellSelectionStyleComponent,
         TreeGridLoadOnDemandSampleComponent,
-        TreeGridRowDrag,
-        TreeGridRowDragBase,
-        TreeGridMultiRowDrag,
+        TreeGridRowDragComponent,
+        TreeGridRowDragBaseComponent,
+        TreeGridMultiRowDragComponent,
         TreeGridKBNavigationComponent,
         TreeGridRowReorderComponent,
         TreeGridRemotePagingSampleComponent,

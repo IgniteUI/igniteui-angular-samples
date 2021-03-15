@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AutocompleteBasic } from './autocomplete/autocomplete/autocomplete.component';
+import { AutocompleteBasicComponent } from './autocomplete/autocomplete/autocomplete.component';
 import { MovieComponent } from './autocomplete/movie/movie.component';
 import { ButtonGroupSample1Component } from './buttonGroup/button-group-sample-1/button-group-sample-1.component';
 import { ButtonGroupSample2Component } from './buttonGroup/button-group-sample-2/button-group-sample-2.component';
@@ -60,7 +60,7 @@ import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.c
 
 export const dataEntriesRoutes: Routes = [
     {
-        component: AutocompleteBasic,
+        component: AutocompleteBasicComponent,
         data: dataEntriesRoutesData.autocomplete,
         path: 'autocomplete'
     },

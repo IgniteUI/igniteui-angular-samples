@@ -18,7 +18,7 @@ import { CalendarSample6Component } from './calendar/calendar-sample-6/calendar-
 import { CalendarSample7Component } from './calendar/calendar-sample-7/calendar-sample-7.component';
 import { CalendarSample8Component } from './calendar/calendar-sample-8/calendar-sample-8.component';
 import { CalendarRtlSampleComponent } from './calendar/calendar-rtl-sample/calendar-rtl-sample.component';
-import { CalendarStylingSample } from './calendar/calendar-styling-sample/calendar-styling-sample.component';
+import { CalendarStylingSampleComponent } from './calendar/calendar-styling-sample/calendar-styling-sample.component';
 import { CalendarYearsViewComponent } from './calendar/calendar-years-view/calendar-years-view.component';
 import { CalendarMultiViewComponent } from './calendar/multiview/multiview.component';
 import { DatepickerDropdownComponent } from './datepicker/datepicker-dropdown/datepicker-dropdown.component';
@@ -32,7 +32,7 @@ import { DatepickerSample7Component } from './datepicker/datepicker-sample-7/dat
 import { DatepickerSample8Component } from './datepicker/datepicker-sample-8/datepicker-sample-8.component';
 import { AutocompletePipeStartsWith, DatepickerSample9Component, PipeWithoutTownFrom
 } from './datepicker/datepicker-sample-9/datepicker-sample-9.component';
-import { DatepickerStylingSample } from './datepicker/datepicker-styling-sample/datepicker-styling-sample.component';
+import { DatepickerStylingSampleComponent } from './datepicker/datepicker-styling-sample/datepicker-styling-sample.component';
 import {
     BasicDateRangePickerComponent } from './daterangepicker/daterangepicker-basic/daterangepicker-basic';
 import {
@@ -72,7 +72,7 @@ import { TimePickerStylingComponent } from './timepicker/timepicker-styling/time
         CalendarSample8Component,
         CalendarRtlSampleComponent,
         CalendarMultiViewComponent,
-        CalendarStylingSample,
+        CalendarStylingSampleComponent,
         DateTimeAdvancedComponent,
         DatepickerSample1Component,
         DatepickerSample2Component,
@@ -85,7 +85,7 @@ import { TimePickerStylingComponent } from './timepicker/timepicker-styling/time
         DatepickerSample9Component,
         DateTimeBasicComponent,
         DatepickerDropdownComponent,
-        DatepickerStylingSample,
+        DatepickerStylingSampleComponent,
         TimePickerSample1Component,
         TimePickerSample4Component,
         TimePickerSample5Component,

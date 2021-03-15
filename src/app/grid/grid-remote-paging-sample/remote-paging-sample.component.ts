@@ -9,8 +9,7 @@ import { RemotePagingService } from '../services/remotePagingService';
     styleUrls: ['./remote-paging-sample.component.scss'],
     templateUrl: './remote-paging-sample.component.html'
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy {
+export class RemotePagingGridSampleComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('customPager', { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     public page = 0;

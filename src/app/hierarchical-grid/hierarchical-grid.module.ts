@@ -24,7 +24,7 @@ import { HGridCollapsibleColumnGroupComponent } from './hierarchical-grid-collap
 import { HierarchicalGridColumnHidingToolbarStyleComponent } from './hierarchical-grid-column-hiding-toolbar-style/hierarchical-grid-column-hiding-toolbar-style.component';
 import { HGridCostumHidingSampleComponent } from './hierarchical-grid-column-hiding/hierarchical-grid-custom-hiding.component';
 import { HGridColumnHidingSampleComponent } from './hierarchical-grid-column-hiding/hierarchical-grid-hiding.component';
-import { HGridColumnMovingSampleComponentStyled } from './hierarchical-grid-column-moving-styled/hierarchical-grid-moving-styled.component';
+import { HGridColumnMovingSampleStyledComponent } from './hierarchical-grid-column-moving-styled/hierarchical-grid-moving-styled.component';
 import { HGridColumnMovingSampleComponent } from './hierarchical-grid-column-moving/hierarchical-grid-moving.component';
 import { HGridPinningSampleComponent } from './hierarchical-grid-column-pinning/hierarchical-grid-pinning.component';
 import { HGridToolbarPinningComponent } from './hierarchical-grid-column-pinning/hierarchical-grid-toolbar-pinning.component';
@@ -106,7 +106,7 @@ import { HGridFormattedFilteringStrategyComponent } from './hierarchical-grid-fo
         HGridColumnHidingSampleComponent,
         HGridCostumHidingSampleComponent,
         HGridDisplayDensitySampleComponent,
-        HGridColumnMovingSampleComponentStyled,
+        HGridColumnMovingSampleStyledComponent,
         HGridColumnMovingSampleComponent,
         HGridMultiCellStyleComponent,
         HGridMultiHeadersSampleComponent,

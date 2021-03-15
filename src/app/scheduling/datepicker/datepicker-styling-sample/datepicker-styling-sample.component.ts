@@ -6,7 +6,6 @@ import { IgxOverlayService } from 'igniteui-angular';
   styleUrls: ['./datepicker-styling-sample.component.scss'],
   templateUrl: './datepicker-styling-sample.component.html'
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class DatepickerStylingSample {
+export class DatepickerStylingSampleComponent {
     constructor(public element: ElementRef, private overlayService: IgxOverlayService) { }
  }

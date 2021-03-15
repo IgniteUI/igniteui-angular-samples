@@ -8,7 +8,7 @@ import {
     IgxIconModule, IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule,
     IgxSelectModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
 } from 'igniteui-angular';
-import { AutocompleteBasic, AutocompletePipeStartsWith } from './autocomplete/autocomplete/autocomplete.component';
+import { AutocompleteBasicComponent, AutocompletePipeStartsWith } from './autocomplete/autocomplete/autocomplete.component';
 import { MovieComponent } from './autocomplete/movie/movie.component';
 import { ButtonGroupSample1Component } from './buttonGroup/button-group-sample-1/button-group-sample-1.component';
 import { ButtonGroupSample2Component } from './buttonGroup/button-group-sample-2/button-group-sample-2.component';
@@ -68,7 +68,7 @@ import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.c
 
 @NgModule({
     declarations: [
-        AutocompleteBasic,
+        AutocompleteBasicComponent,
         AutocompletePipeStartsWith,
         ButtonGroupSample1Component,
         ButtonGroupSample2Component,

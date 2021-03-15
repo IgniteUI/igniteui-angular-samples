@@ -15,7 +15,7 @@ import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.dir
 import { GridColumnGroupSelectionComponent } from './column-group-selection-sample/column-group-selection-sample.component';
 import { GridColumnSelectionComponent } from './column-selection-sample/column-selection-sample.component';
 import { GridColumnSelectionStylesComponent } from './column-selection-styles/column-selection-styles.component';
-import { CustomGridPagingStyleSample } from './custom-grid-paging-style/custom-grid-paging-style.component';
+import { CustomGridPagingStyleSampleComponent } from './custom-grid-paging-style/custom-grid-paging-style.component';
 import { GridActionStripSampleComponent } from './grid-action-strip/grid-action-strip-sample';
 import { GridAdvancedFilteringSampleComponent } from './grid-advanced-filtering-sample/grid-advanced-filtering-sample.component';
 import { GridAdvancedFilteringStyleComponent } from './grid-advanced-filtering-style/grid-advanced-filtering-style.component';
@@ -37,14 +37,14 @@ import { ContextmenuComponent } from './grid-contextmenu-sample/contextmenu/cont
 import { GridContextmenuSampleComponent } from './grid-contextmenu-sample/grid-contextmenu-sample.component';
 import { GridCustomFilteringComponent } from './grid-custom-filtering/grid-custom-filtering.component';
 import { GridCustomKBNavigationComponent } from './grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component';
-import { CustomRemotePagingGridSample } from './grid-custom-remote-paging-sample/custom-remote-paging-sample.component';
-import { GridCustomSummariesSelection } from './grid-custom-summaries-selection/grid-custom-summaries-selection.component';
+import { CustomRemotePagingGridSampleComponent } from './grid-custom-remote-paging-sample/custom-remote-paging-sample.component';
+import { GridCustomSummariesSelectionComponent } from './grid-custom-summaries-selection/grid-custom-summaries-selection.component';
 import { GridDisplayDensitySampleComponent } from './grid-displaydensity-sample/grid-displaydensity-sample.component';
 import { GridEditingEventsComponent } from './grid-editing-events/grid-editing-events.component';
 import { GridEditingLifecycleComponent } from './grid-editing-lifecycle-sample/grid-editing-lifecycle.component';
 import { GridEditingSampleComponent } from './grid-editing-sample/grid-editing-sample.component';
 import { GridAddRowSampleComponent } from './grid-add-row-sample/grid-add-row-sample.component';
-import { GridEditingStyleSample } from './grid-editing-style-sample/grid-editing-style-sample.component';
+import { GridEditingStyleSampleComponent } from './grid-editing-style-sample/grid-editing-style-sample.component';
 import { GridExcelStyleFilteringLoadOnDemandComponent } from './grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component';
 import { ExcelStyleFilteringSample1Component } from './grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component';
 import { ExcelStyleFilteringSample2Component } from './grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component';
@@ -59,7 +59,7 @@ import { FilteringTemplateSampleComponent } from './grid-filtering-template-samp
 import { GridGroupByPagingSampleComponent } from './grid-group-by-paging-sample/grid-group-by-paging-sample.component';
 import { GridGroupBySampleComponent } from './grid-groupby-sample/grid-groupby-sample.component';
 import { GridGroupByCustomSampleComponent } from './grid-groupby-custom-sample/grid-groupby-custom-sample.component';
-import { GridGroupByStyling } from './grid-groupby-styling/grid-groupby-styling.component';
+import { GridGroupByStylingComponent } from './grid-groupby-styling/grid-groupby-styling.component';
 import { GridGroupBySummarySampleComponent } from './grid-groupby-summary-sample/grid-groupby-summary-sample.component';
 import { GridGroupBySummaryStylingSampleComponent } from './grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component';
 import { GridKeyboardnavGuide } from './grid-keyboardnav-guide-sample/grid-keyboardnav-sample.component';
@@ -80,7 +80,7 @@ import { GridPasteSampleComponent } from './grid-paste/grid-paste-sample.compone
 import { PasteHandler } from './grid-paste/paste-handler.directive';
 import { RemoteFilteringSampleComponent } from './grid-remote-filtering-sample/remote-filtering-sample.component';
 import { RemotePagingDefaultTemplateComponent } from './grid-remote-paging-defaultTemplate-sample/remote-paging-default-template.component';
-import { RemotePagingGridSample } from './grid-remote-paging-sample/remote-paging-sample.component';
+import { RemotePagingGridSampleComponent } from './grid-remote-paging-sample/remote-paging-sample.component';
 import { GridResizeLineStylingSampleComponent } from './grid-resize-line-styling-sample/grid-resize-line-styling-sample';
 import { ResizingSampleComponent } from './grid-resizing-sample/grid-resizing-sample.component';
 import { GridDragBaseSampleComponent } from './grid-row-drag-base/grid-row-drag-base.component';
@@ -152,14 +152,14 @@ import { GridFormattedFilteringStrategyComponent } from './grid-formatted-filter
         PagingSampleComponent,
         GridPasteSampleComponent,
         RemoteFilteringSampleComponent,
-        RemotePagingGridSample,
-        CustomRemotePagingGridSample,
+        RemotePagingGridSampleComponent,
+        CustomRemotePagingGridSampleComponent,
         ResizingSampleComponent,
         GridResizeLineStylingSampleComponent,
         GridRowEditSampleComponent,
         GridRowEditStyleComponent,
         GridAddRowSampleComponent,
-        GridEditingStyleSample,
+        GridEditingStyleSampleComponent,
         GridEditingEventsComponent,
         FinancialSampleComponent,
         GridSample3Component,
@@ -201,7 +201,7 @@ import { GridFormattedFilteringStrategyComponent } from './grid-formatted-filter
         GridContextmenuSampleComponent,
         GridMRLCustomNavigationComponent,
         ContextmenuComponent,
-        CustomGridPagingStyleSample,
+        CustomGridPagingStyleSampleComponent,
         GridRowReorderComponent,
         GridColumnHidingToolbarStyleComponent,
         GridMultiColumnHeaderTemplateComponent,
@@ -213,10 +213,10 @@ import { GridFormattedFilteringStrategyComponent } from './grid-formatted-filter
         GridExcelStyleFilteringLoadOnDemandComponent,
         GridExternalExcelStyleFilteringComponent,
         GridExternalOutletComponent,
-        GridCustomSummariesSelection,
+        GridCustomSummariesSelectionComponent,
         GridMultiRowLayoutStylingComponent,
         PinningStylingComponent,
-        GridGroupByStyling,
+        GridGroupByStylingComponent,
         GridAdvancedFilteringSampleComponent,
         GridColumnDataTypesSampleComponent,
         GridAdvancedFilteringStyleComponent,

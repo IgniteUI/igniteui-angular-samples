@@ -7,8 +7,7 @@ import { DATA } from '../../data/nwindData';
     styleUrls: ['./grid-editing-style-sample.component.scss'],
     templateUrl: './grid-editing-style-sample.component.html'
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
-export class GridEditingStyleSample implements OnInit {
+export class GridEditingStyleSampleComponent implements OnInit {
 
     @ViewChild('grid', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
