@@ -22,12 +22,12 @@ export class TreeGridEditingEventsComponent implements OnInit {
         if (column.field === "Age") {
             if (event.newValue < 18) {
                 event.cancel = true;
-                this.toast.show("Employees must be at least 18 years old!");
+                this.toast.open("Employees must be at least 18 years old!");
             }
         } else if (column.field === "HireDate") {
             if (event.newValue > new Date().getTime()) {
                 event.cancel = true;
-                this.toast.show("The employee hire date must be in the past!");
+                this.toast.open("The employee hire date must be in the past!");
             }
         }
     }
