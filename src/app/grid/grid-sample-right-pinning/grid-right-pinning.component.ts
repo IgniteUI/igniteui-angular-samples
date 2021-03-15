@@ -6,8 +6,7 @@ import { athletesData } from '../services/data';
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [],
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-sample',
+    selector: 'app-grid-sample',
     styleUrls: ['grid-right-pinning.component.scss'],
     templateUrl: 'grid-right-pinning.component.html'
 })

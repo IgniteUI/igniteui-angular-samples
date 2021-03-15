@@ -5,8 +5,7 @@ import { DATA } from '../../data/customers';
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [],
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-sample',
+    selector: 'app-grid-sample',
     styleUrls: ['grid-toolbar-pinning.component.scss'],
     templateUrl: 'grid-toolbar-pinning.component.html'
 

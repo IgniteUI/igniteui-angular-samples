@@ -22,8 +22,7 @@ class MySummary {
 
 // tslint:disable:object-literal-sort-keys
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'app-hGrid',
+  selector: 'app-hgrid',
   styleUrls: ['./hGrid-state.component.scss'],
   templateUrl: './hGrid-state.component.html'
 })

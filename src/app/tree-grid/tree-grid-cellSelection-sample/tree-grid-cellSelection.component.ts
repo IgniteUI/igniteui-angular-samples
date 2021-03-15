@@ -3,8 +3,7 @@ import { IgxSnackbarComponent, IgxTreeGridComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-cellSelection',
+    selector: 'app-tree-grid-cell-selection',
     styleUrls: ['./tree-grid-cellSelection.component.scss'],
     templateUrl: 'tree-grid-cellSelection.component.html'
 })

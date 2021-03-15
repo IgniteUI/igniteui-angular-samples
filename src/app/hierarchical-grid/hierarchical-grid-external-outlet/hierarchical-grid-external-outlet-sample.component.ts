@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-external-outlet',
+    selector: 'app-hierarchical-grid-external-outlet',
     styleUrls: ['./hierarchical-grid-external-outlet-sample.component.scss'],
     templateUrl: 'hierarchical-grid-external-outlet-sample.component.html'
 })

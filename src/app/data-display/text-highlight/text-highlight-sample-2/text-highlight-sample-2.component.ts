@@ -3,8 +3,7 @@ import { Component, ViewChildren } from '@angular/core';
 import { IgxTextHighlightDirective } from 'igniteui-angular';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'text-highlight-2',
+    selector: 'app-text-highlight-2',
     styleUrls: ['./text-highlight-sample-2.component.scss'],
     templateUrl: './text-highlight-sample-2.component.html'
 })

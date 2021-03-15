@@ -3,8 +3,7 @@ import { changei18n, getCurrentResourceStrings } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'localization-sample-2',
+    selector: 'app-localization-sample-2',
     styleUrls: ['./localization-sample-2.component.scss'],
     templateUrl: 'localization-sample-2.component.html'
 })

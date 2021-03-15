@@ -2,8 +2,7 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tgrid-editing-lifecycle',
+    selector: 'app-tgrid-editing-lifecycle',
     templateUrl: 'tgrid-editing-lifecycle.component.html',
     styleUrls: ['tgrid-editing-lifecycle.component.scss']
 })

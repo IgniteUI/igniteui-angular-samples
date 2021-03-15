@@ -4,8 +4,7 @@ import { DATA } from '../../data/nwindData';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-external-excel-style-filtering',
+    selector: 'app-grid-external-excel-style-filtering',
     templateUrl: './grid-external-excel-style-filtering.component.html',
     styleUrls: ['./grid-external-excel-style-filtering.component.scss']
 })

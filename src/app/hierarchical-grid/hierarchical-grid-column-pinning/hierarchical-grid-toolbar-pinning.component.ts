@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { CUSTOMERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-toolbar-pinning',
+    selector: 'app-hierarchical-grid-toolbar-pinning',
     styleUrls: ['./hierarchical-grid-toolbar-pinning.component.scss'],
     templateUrl: 'hierarchical-grid-toolbar-pinning.component.html'
 })

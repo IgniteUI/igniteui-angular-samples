@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DATA } from '../../data/nwindData';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-external-outlet',
+    selector: 'app-grid-external-outlet',
     styleUrls: ['./grid-external-outlet-sample.component.scss'],
     templateUrl: 'grid-external-outlet-sample.component.html'
 })

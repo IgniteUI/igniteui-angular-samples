@@ -3,8 +3,7 @@ import { IGridKeydownEventArgs, IgxGridCellComponent, IgxTreeGridComponent } fro
 import { EMPLOYEE_DATA } from '../tree-grid-clipboard-operations-sample/data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-keyboard-navigation-sample',
+    selector: 'app-tree-grid-keyboard-navigation-sample',
     styleUrls: ['./tree-grid-keyboard-navigation-sample.component.scss'],
     templateUrl: './tree-grid-keyboard-navigation-sample.component.html'
 })

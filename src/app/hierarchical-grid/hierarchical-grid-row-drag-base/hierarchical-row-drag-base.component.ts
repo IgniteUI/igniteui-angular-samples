@@ -10,8 +10,7 @@ enum DragIcon {
 }
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-row-drag-base',
+    selector: 'app-hierarchical-row-drag-base',
     styleUrls: ['./hierarchical-row-drag-base.component.scss'],
     templateUrl: 'hierarchical-row-drag-base.component.html'
 })

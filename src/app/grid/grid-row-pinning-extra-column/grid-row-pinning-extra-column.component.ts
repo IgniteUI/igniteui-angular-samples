@@ -13,8 +13,7 @@ import { icons } from '../services/svgIcons';
 const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-row-pinning-extra-column',
+    selector: 'app-grid-row-pinning-extra-column',
     templateUrl: 'grid-row-pinning-extra-column.component.html',
     styleUrls: ['./grid-row-pinning-extra-column.component.scss']
 })

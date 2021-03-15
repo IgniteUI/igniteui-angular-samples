@@ -1,7 +1,6 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit } from '@angular/core';
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'select-header-footer',
+    selector: 'app-select-header-footer',
     styleUrls: ['select-header-footer.component.scss'],
     templateUrl: 'select-header-footer.component.html'
 })

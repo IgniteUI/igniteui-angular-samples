@@ -3,8 +3,7 @@ import { IgxDialogComponent } from 'igniteui-angular';
 import { IPlanet } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'planet',
+    selector: 'app-planet',
     styleUrls: ['./planet.component.scss'],
     templateUrl: 'planet.component.html'
 })

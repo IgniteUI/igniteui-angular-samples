@@ -2,8 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxBannerComponent } from 'igniteui-angular';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'banner-sample-1',
+    selector: 'app-banner-sample-1',
     styleUrls: ['../banner-samples.scss'],
     templateUrl: 'banner-sample-1.component.html'
 })

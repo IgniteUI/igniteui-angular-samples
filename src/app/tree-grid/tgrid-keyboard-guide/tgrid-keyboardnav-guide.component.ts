@@ -153,8 +153,7 @@ const summaryCombinations: Item[] = [
 ];
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-keyboardnav',
+    selector: 'app-grid-keyboardnav',
     templateUrl: './tgrid-keyboardnav-guide.component.html',
     styleUrls: ['tgrid-keyboardnav-guide.component.scss'],
     animations: [

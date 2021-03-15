@@ -3,8 +3,7 @@ import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, IgxHierarchicalRow
 import { createData, IDrive } from '../../data/files.data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-multi-row-drag',
+    selector: 'app-hierarchical-grid-multi-row-drag',
     styleUrls: ['./hierarchical-grid-multi-row-drag.component.scss'],
     templateUrl: 'hierarchical-grid-multi-row-drag.component.html'
 })

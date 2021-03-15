@@ -3,8 +3,7 @@ import { IDropDroppedEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent } 
 import { FULL_EMPLOYEE_DATA } from '../data/employees';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-multi-row-drag',
+    selector: 'app-tree-grid-multi-row-drag',
     styleUrls: ['tree-grid-multi-row-drag.component.scss'],
     templateUrl: 'tree-grid-multi-row-drag.component.html'
 })

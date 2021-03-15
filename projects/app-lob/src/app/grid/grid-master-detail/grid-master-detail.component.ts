@@ -5,8 +5,7 @@ import { IgxLegendComponent } from 'igniteui-angular-charts';
 import { data } from '../../services/athletesData';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-master-detail',
+    selector: 'app-grid-master-detail',
     styleUrls: ['./grid-master-detail.component.scss'],
     templateUrl: 'grid-master-detail.component.html'
 })

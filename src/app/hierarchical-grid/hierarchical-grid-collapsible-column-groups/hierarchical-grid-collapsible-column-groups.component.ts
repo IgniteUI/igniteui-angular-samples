@@ -3,8 +3,7 @@ import { IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { CUSTOMERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-collapsible-column-groups',
+    selector: 'app-hierarchical-grid-collapsible-column-groups',
     styleUrls: ['./hierarchical-grid-collapsible-column-groups.component.scss'],
     templateUrl: 'hierarchical-grid-collapsible-column-groups.component.html'
 })

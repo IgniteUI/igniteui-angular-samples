@@ -1,8 +1,7 @@
 import { Component, Pipe, PipeTransform } from '@angular/core';
 import { ConnectedPositioningStrategy, VerticalAlignment } from 'igniteui-angular';
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'movie-availability',
+    selector: 'app-movie-availability',
     styleUrls: ['./movie.component.scss'],
     templateUrl: './movie.component.html'
 })

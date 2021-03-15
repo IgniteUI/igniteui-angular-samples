@@ -6,8 +6,7 @@ import { SINGERS } from '../data';
 import { Singer } from '../models';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-batch-editing',
+    selector: 'app-hierarchical-grid-batch-editing',
     styleUrls: ['./hierarchical-grid-batch-editing.component.scss'],
     templateUrl: 'hierarchical-grid-batch-editing.component.html'
 })

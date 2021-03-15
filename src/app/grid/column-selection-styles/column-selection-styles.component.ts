@@ -3,8 +3,7 @@ import { IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'gird-column-selection-styles',
+    selector: 'app-gird-column-selection-styles',
     templateUrl: './column-selection-styles.component.html',
     styleUrls: ['./column-selection-styles.component.scss']
 })

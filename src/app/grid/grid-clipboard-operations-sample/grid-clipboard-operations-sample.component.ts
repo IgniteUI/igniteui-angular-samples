@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DATA } from '../../data/nwindData';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-clipboard-operations-sample',
+    selector: 'app-grid-clipboard-operations-sample',
     styleUrls: ['grid-clipboard-operations-sample.component.scss'],
     templateUrl: './grid-clipboard-operations-sample.component.html'
 })

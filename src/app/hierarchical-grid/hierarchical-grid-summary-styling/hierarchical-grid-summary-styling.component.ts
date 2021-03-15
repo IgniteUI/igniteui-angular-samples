@@ -41,8 +41,7 @@ class MyChildSummary {
 }
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-summary-styling',
+    selector: 'app-hierarchical-grid-summary-styling',
     styleUrls: ['./hierarchical-grid-summary-styling.component.scss'],
     templateUrl: 'hierarchical-grid-summary-styling.component.html'
 })

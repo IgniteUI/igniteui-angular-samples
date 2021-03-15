@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-selection-template-numbers',
+    selector: 'app-tree-grid-selection-template-numbers',
     styleUrls: ['./tree-grid-selection-template-numbers.component.scss'],
     templateUrl: './tree-grid-selection-template-numbers.component.html'
 })

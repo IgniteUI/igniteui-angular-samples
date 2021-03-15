@@ -3,8 +3,7 @@ import { IgxTreeGridComponent } from 'igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-excel-style-filtering-sample-3',
+    selector: 'app-tree-grid-excel-style-filtering-sample-3',
     styleUrls: ['./tree-grid-excel-style-filtering-sample-3.component.scss'],
     templateUrl: 'tree-grid-excel-style-filtering-sample-3.component.html'
 })

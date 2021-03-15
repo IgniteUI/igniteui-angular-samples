@@ -3,8 +3,7 @@ import { IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-row-reorder-sample',
+    selector: 'app-grid-row-reorder-sample',
     styleUrls: ['grid-row-reorder.scss'],
     templateUrl: 'grid-row-reorder.html'
 })

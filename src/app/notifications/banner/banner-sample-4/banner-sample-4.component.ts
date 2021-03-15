@@ -2,8 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxBannerComponent } from 'igniteui-angular';
 // tslint:disable:object-literal-sort-keys
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'banner-sample-4',
+    selector: 'app-banner-sample-4',
     templateUrl: './banner-sample-4.component.html',
     styleUrls: ['./banner-sample-4.component.scss']
 })

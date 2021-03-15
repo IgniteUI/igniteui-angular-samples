@@ -1,8 +1,7 @@
 import { Component, Pipe, PipeTransform } from '@angular/core';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'autocomplete',
+    selector: 'app-autocomplete',
     styleUrls: ['./autocomplete.component.scss'],
     templateUrl: './autocomplete.component.html'
 })

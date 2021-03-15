@@ -3,8 +3,7 @@ import { IGridEditEventArgs, IgxToastComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-editing-events',
+    selector: 'app-tree-grid-editing-events',
     templateUrl: 'tree-grid-editing-events.component.html',
     styleUrls: ['tree-grid-editing-events.component.scss']
 })

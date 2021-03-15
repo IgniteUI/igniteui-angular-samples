@@ -3,8 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-multiple-row-drag',
+    selector: 'app-grid-multiple-row-drag',
     styleUrls: ['./grid-multiple-row-drag.component.scss'],
     templateUrl: './grid-multiple-row-drag.component.html'
 })

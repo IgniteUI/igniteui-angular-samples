@@ -15,8 +15,7 @@ import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 // tslint:disable:object-literal-sort-keys
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'overlay-sample',
+    selector: 'app-overlay-sample',
     styleUrls: ['./overlay-scroll-sample-1.component.scss'],
     templateUrl: './overlay-scroll-sample-1.component.html',
     providers: [IgxOverlayService]

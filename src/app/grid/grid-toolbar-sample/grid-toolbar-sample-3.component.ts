@@ -10,8 +10,7 @@ import {
 import { athletesData } from '../services/data';
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'grid-toolbar-sample-3',
+  selector: 'app-grid-toolbar-sample-3',
   styleUrls: ['./grid-toolbar-sample-3.component.scss'],
   templateUrl: './grid-toolbar-sample-3.component.html'
 })

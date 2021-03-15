@@ -8,8 +8,7 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [],
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-sample',
+    selector: 'app-grid-sample',
     styleUrls: ['grid-pinning.component.scss'],
     templateUrl: 'grid-pinning.component.html'
 

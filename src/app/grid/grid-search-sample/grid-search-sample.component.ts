@@ -3,8 +3,7 @@ import { IgxGridComponent} from 'igniteui-angular';
 import { MARKET_DATA } from './data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-search-sample',
+    selector: 'app-grid-search-sample',
     styleUrls: ['./grid-search-sample.component.scss'],
     templateUrl: './grid-search-sample.component.html'
 })

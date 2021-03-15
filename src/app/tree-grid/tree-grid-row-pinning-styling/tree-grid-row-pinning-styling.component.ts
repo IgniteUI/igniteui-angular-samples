@@ -8,8 +8,7 @@ import {
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-row-pinning-styling',
+    selector: 'app-tree-grid-row-pinning-styling',
     styleUrls: ['tree-grid-row-pinning-styling.component.scss'],
     templateUrl: 'tree-grid-row-pinning-styling.component.html'
 })

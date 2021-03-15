@@ -9,8 +9,7 @@ import {
 import { DATA } from '../../data/customers';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-row-pinning-drag-sample',
+    selector: 'app-grid-row-pinning-drag-sample',
     styleUrls: ['./grid-row-pinning-drag.component.scss'],
     templateUrl: 'grid-row-pinning-drag.component.html'
 })

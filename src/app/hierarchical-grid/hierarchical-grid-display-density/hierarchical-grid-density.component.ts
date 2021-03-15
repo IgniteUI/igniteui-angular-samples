@@ -3,8 +3,7 @@ import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-an
 import { CUSTOMERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-density',
+    selector: 'app-hierarchical-grid-density',
     styleUrls: ['./hierarchical-grid-density.component.scss'],
     templateUrl: 'hierarchical-grid-density.component.html'
 })

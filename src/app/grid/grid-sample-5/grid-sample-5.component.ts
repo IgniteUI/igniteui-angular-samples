@@ -4,8 +4,7 @@ import { RemoteService } from './remote.service';
 
 @Component({
     providers: [RemoteService],
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-remote-virtualization-sample',
+    selector: 'app-grid-remote-virtualization-sample',
     styleUrls: ['grid-sample-5.component.scss'],
     templateUrl: 'grid-sample-5.component.html'
 })

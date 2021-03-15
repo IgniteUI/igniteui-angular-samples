@@ -2,8 +2,7 @@ import { Component, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core
 import { DateRangeType, IgxCalendarComponent, IgxDropDownComponent } from 'igniteui-angular';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'datepicker-sample-9',
+    selector: 'app-datepicker-sample-9',
     styleUrls: ['./datepicker-sample-9.component.scss'],
     templateUrl: './datepicker-sample-9.component.html'
 })

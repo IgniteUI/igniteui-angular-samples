@@ -6,8 +6,7 @@ import {
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-custom-kb-navigation-sample',
+    selector: 'app-hierarchical-grid-custom-kb-navigation-sample',
     styleUrls: ['./hierarchical-grid-custom-kb-navigation-sample.component.scss'],
     templateUrl: 'hierarchical-grid-custom-kb-navigation-sample.component.html'
 })

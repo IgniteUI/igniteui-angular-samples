@@ -7,8 +7,7 @@ import { RemotePagingService } from './remotePagingService';
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [RemotePagingService],
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-remote-paging-default-template',
+    selector: 'app-tree-grid-remote-paging-default-template',
     styleUrls: ['./tree-grid-remote-paging-default-template.component.scss'],
     templateUrl: './tree-grid-remote-paging-default-template.component.html'
 })

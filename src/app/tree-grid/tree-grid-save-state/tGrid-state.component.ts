@@ -8,8 +8,7 @@ import { EMPLOYEE_DATA } from '../../../../projects/app-lob/src/app/tree-grid/tr
 
 // tslint:disable:object-literal-sort-keys
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'app-hGrid',
+  selector: 'app-tgrid',
   styleUrls: ['./tGrid-state.component.scss'],
   templateUrl: './tGrid-state.component.html'
 })

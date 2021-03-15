@@ -3,8 +3,7 @@ import { IRowSelectionEventArgs } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-conditional-row-selectors',
+    selector: 'app-grid-conditional-row-selectors',
     styleUrls: ['./grid-conditional-row-selectors-sample.component.scss'],
     templateUrl: 'grid-conditional-row-selectors-sample.component.html'
 })

@@ -39,8 +39,7 @@ class PTOSummary {
 }
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'treegrid-allData-summary-sample',
+  selector: 'app-treegrid-all-data-summary-sample',
   styleUrls: ['./treegrid-allData-summary.component.scss'],
   templateUrl: './treegrid-allData-summary.component.html'
 })

@@ -2,8 +2,7 @@ import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
 import { ConnectedPositioningStrategy, IgxOverlayService } from 'igniteui-angular';
 // tslint:disable:object-literal-sort-keys
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'overlay-sample',
+    selector: 'app-overlay-sample',
     templateUrl: `overlay-main-sample-3.component.html`,
     styleUrls: ['overlay-main-sample-3.component.scss']
 })

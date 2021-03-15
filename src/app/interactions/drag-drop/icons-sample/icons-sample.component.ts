@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'icons-sample',
+    selector: 'app-icons-sample',
     styleUrls: ['./icons-sample.component.scss'],
     templateUrl: './icons-sample.component.html'
 })

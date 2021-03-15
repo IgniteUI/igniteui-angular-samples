@@ -2,8 +2,7 @@ import { Component, Pipe, PipeTransform } from '@angular/core';
 import { DateRange } from 'igniteui-angular';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'flight-booking',
+    selector: 'app-flight-booking',
     styleUrls: ['./daterangepicker-flight-booking.scss'],
     templateUrl: './daterangepicker-flight-booking.html'
 })

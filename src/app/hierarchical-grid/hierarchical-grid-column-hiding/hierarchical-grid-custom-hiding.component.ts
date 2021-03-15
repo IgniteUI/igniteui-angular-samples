@@ -3,8 +3,7 @@ import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-an
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-custom-hiding',
+    selector: 'app-hierarchical-grid-custom-hiding',
     styleUrls: ['./hierarchical-grid-custom-hiding.component.scss'],
     templateUrl: 'hierarchical-grid-custom-hiding.component.html'
 })

@@ -4,8 +4,7 @@ import { IGridEditEventArgs, IgxGridComponent, IgxToastComponent } from 'igniteu
 import { DATA } from '../../data/nwindData';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-editing-event',
+    selector: 'app-grid-editing-event',
     templateUrl: 'grid-editing-events.component.html',
     styleUrls: ['grid-editing-events.component.scss']
 })

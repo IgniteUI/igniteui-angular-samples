@@ -7,8 +7,7 @@ import { RemotePagingService } from '../services/remotePagingService';
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [RemotePagingService],
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'remote-paging-batch-editing',
+    selector: 'app-remote-paging-batch-editing',
     styleUrls: ['./batch-editing-remote-paging.component.scss'],
     templateUrl: './batch-editing-remote-paging.component.html'
 })

@@ -3,8 +3,7 @@ import { IgxBannerComponent, IgxToastComponent, slideInLeft, slideOutRight } fro
 import { Subject } from 'rxjs';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'banner-styling',
+    selector: 'app-banner-styling',
     styleUrls: ['banner-styling.component.scss', '../banner-samples.scss'],
     templateUrl: 'banner-styling.component.html'
 })

@@ -3,8 +3,7 @@ import { IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-advanced-filtering-sample',
+    selector: 'app-grid-advanced-filtering-sample',
     styleUrls: ['./grid-advanced-filtering-sample.component.scss'],
     templateUrl: 'grid-advanced-filtering-sample.component.html'
 })

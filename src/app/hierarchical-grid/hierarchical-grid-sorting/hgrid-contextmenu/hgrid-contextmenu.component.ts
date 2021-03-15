@@ -2,8 +2,7 @@ import { Component, Input, OnInit} from '@angular/core';
 import { IgxIconModule, SortingDirection } from 'igniteui-angular';
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'hgrid-contextmenu',
+  selector: 'app-hgrid-contextmenu',
   styleUrls: ['./hgrid-contextmenu.component.scss'],
   templateUrl: './hgrid-contextmenu.component.html'
 })

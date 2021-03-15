@@ -11,8 +11,7 @@ import {
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-filtering-template',
+    selector: 'app-hierarchical-grid-filtering-template',
     styleUrls: ['./hierarchical-grid-filtering-template.component.scss'],
     templateUrl: 'hierarchical-grid-filtering-template.component.html'
 })

@@ -10,8 +10,7 @@ enum DragIcon {
 }
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-row-drag-base-sample',
+    selector: 'app-grid-row-drag-base-sample',
     styleUrls: ['./grid-row-drag-base.component.scss'],
     templateUrl: 'grid-row-drag-base.component.html'
 })

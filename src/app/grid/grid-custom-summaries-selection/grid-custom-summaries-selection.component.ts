@@ -31,8 +31,7 @@ class MySummary {
     }
 }
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-sample',
+    selector: 'app-grid-sample',
     styleUrls: ['./grid-custom-summaries-selection.component.scss'],
     templateUrl: 'grid-custom-summaries-selection.component.html'
 })

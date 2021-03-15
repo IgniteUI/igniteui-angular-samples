@@ -3,8 +3,7 @@ import { contains } from '@igniteui/material-icons-extended';
 import { DATA } from '../../data/nwindData';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-editing-lifecycle',
+    selector: 'app-grid-editing-lifecycle',
     templateUrl: 'grid-editing-lifecycle.component.html',
     styleUrls: ['grid-editing-lifecycle.component.scss']
 })

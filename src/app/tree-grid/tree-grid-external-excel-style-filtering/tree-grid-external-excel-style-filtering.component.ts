@@ -3,8 +3,7 @@ import { FOODS_DATA } from '../data/foods';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-external-excel-style-filtering',
+    selector: 'app-tree-grid-external-excel-style-filtering',
     templateUrl: './tree-grid-external-excel-style-filtering.component.html',
     styleUrls: ['./tree-grid-external-excel-style-filtering.component.scss']
 })

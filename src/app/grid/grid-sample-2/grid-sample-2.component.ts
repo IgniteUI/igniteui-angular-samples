@@ -22,8 +22,7 @@ export class LocalService {
 
 @Component({
     providers: [LocalService],
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-sample',
+    selector: 'app-grid-sample',
     styleUrls: ['./grid-sample-2.component.scss'],
     templateUrl: 'grid-sample-2.component.html'
 })

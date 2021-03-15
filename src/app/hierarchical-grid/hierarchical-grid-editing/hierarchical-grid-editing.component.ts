@@ -31,8 +31,7 @@ class MySummary {
     }
 }
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-editing',
+    selector: 'app-hierarchical-grid-editing',
     styleUrls: ['./hierarchical-grid-editing.component.scss'],
     templateUrl: 'hierarchical-grid-editing.component.html'
 })

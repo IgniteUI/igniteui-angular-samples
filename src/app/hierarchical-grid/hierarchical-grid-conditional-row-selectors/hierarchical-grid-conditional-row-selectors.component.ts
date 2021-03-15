@@ -3,8 +3,7 @@ import { IRowSelectionEventArgs } from 'igniteui-angular';
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-conditional-row-selectors',
+    selector: 'app-hierarchical-grid-conditional-row-selectors',
     styleUrls: ['./hierarchical-grid-conditional-row-selectors.component.scss'],
     templateUrl: 'hierarchical-grid-conditional-row-selectors.component.html'
 })

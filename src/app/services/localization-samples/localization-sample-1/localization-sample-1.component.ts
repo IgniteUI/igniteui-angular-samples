@@ -4,8 +4,7 @@ import { IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'localization-sample-1',
+    selector: 'app-localization-sample-1',
     styleUrls: ['./localization-sample-1.component.scss'],
     templateUrl: 'localization-sample-1.component.html'
 })

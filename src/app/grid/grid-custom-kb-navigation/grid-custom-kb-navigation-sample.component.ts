@@ -3,8 +3,7 @@ import { IGridKeydownEventArgs, IgxGridCellComponent, IgxGridComponent } from 'i
 import { DATA } from '../../data/nwindData';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-custom-kb-navigation-sample',
+    selector: 'app-grid-custom-kb-navigation-sample',
     styleUrls: ['./grid-custom-kb-navigation-sample.component.scss'],
     templateUrl: 'grid-custom-kb-navigation-sample.component.html'
 })

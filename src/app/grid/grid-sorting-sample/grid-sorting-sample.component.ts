@@ -9,8 +9,7 @@ enum TYPE {
     MULTI = 'multiple'
 }
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-sample',
+    selector: 'app-grid-sample',
     styleUrls: ['./grid-sorting-sample.component.scss'],
     templateUrl: 'grid-sorting-sample.component.html'
 })

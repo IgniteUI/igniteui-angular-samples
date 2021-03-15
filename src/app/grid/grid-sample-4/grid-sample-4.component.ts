@@ -5,8 +5,7 @@ import { RemoteServiceVirt } from '../services/remoteService';
 
 @Component({
     providers: [RemoteServiceVirt],
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-remote-virtualization-sample',
+    selector: 'app-grid-remote-virtualization-sample',
     styleUrls: ['grid-sample-4.component.scss'],
     templateUrl: 'grid-sample-4.component.html'
 })

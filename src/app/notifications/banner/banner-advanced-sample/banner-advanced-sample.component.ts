@@ -3,8 +3,7 @@ import { IgxBannerComponent, IgxToastComponent } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'banner-advanced-sample',
+    selector: 'app-banner-advanced-sample',
     styleUrls: ['../banner-samples.scss'],
     templateUrl: 'banner-advanced-sample.component.html'
 })

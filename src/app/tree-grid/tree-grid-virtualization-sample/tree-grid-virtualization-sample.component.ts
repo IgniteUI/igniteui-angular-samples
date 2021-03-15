@@ -5,8 +5,7 @@ import { HierFinancialDataService } from '../services/hierFinancialData.service'
 
 @Component({
     providers: [HierFinancialDataService],
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-virtualization-sample',
+    selector: 'app-tree-grid-virtualization-sample',
     styleUrls: ['./tree-grid-virtualization-sample.component.scss'],
     templateUrl: 'tree-grid-virtualization-sample.component.html'
 })

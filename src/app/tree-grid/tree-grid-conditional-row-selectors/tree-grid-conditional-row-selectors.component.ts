@@ -3,8 +3,7 @@ import { IRowSelectionEventArgs } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-conditional-row-selectors',
+    selector: 'app-tree-grid-conditional-row-selectors',
     styleUrls: ['./tree-grid-conditional-row-selectors.component.scss'],
     templateUrl: 'tree-grid-conditional-row-selectors.component.html'
 })
