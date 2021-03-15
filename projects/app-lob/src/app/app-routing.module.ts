@@ -12,6 +12,7 @@ export const samplesRoutes: Routes = [
         path: 'home'
     },
     {
+<<<<<<< HEAD
         data: ['GridFinjsModule'],
         loadChildren: () => import('./grid-finjs/grid-finjs.module').then(m => m.GridFinjsModule),
         path: 'finjs-sample'
@@ -20,6 +21,16 @@ export const samplesRoutes: Routes = [
         data: ['TreeGridFinjsModule'],
         loadChildren: () => import('./treegrid-finjs/treegrid-finjs.module').then(m => m.TreeGridFinjsModule),
         path: 'treegrid-finjs-sample'
+=======
+        data: ["GridFinjsModule"],
+        loadChildren: () => import("./grid-finjs/grid-finjs.module").then(m => m.GridFinjsModule),
+        path: "grid-finjs"
+    },
+    {
+        data: ["TreeGridFinjsModule"],
+        loadChildren: () => import("./treegrid-finjs/treegrid-finjs.module").then(m => m.TreeGridFinjsModule),
+        path: "treegrid-finjs"
+>>>>>>> bb44fb4f471cf7086d08402d3a2cda5548e09c81
     },
     {
         data: ['TreeGridDVModule'],
@@ -75,8 +86,13 @@ export class AppRoutingModule {
     }
 
     public setOverflow(url: string) {
+<<<<<<< HEAD
         if (url.endsWith('finjs-sample')) {
             document.body.style.overflow = 'auto';
+=======
+        if (url.endsWith("finjs")) {
+            document.body.style.overflow = "auto";
+>>>>>>> bb44fb4f471cf7086d08402d3a2cda5548e09c81
         } else {
             document.body.style.overflow = 'hidden';
         }

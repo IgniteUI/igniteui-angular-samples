@@ -13,6 +13,6 @@ export class TimePickerSample4Component {
     public max = '06:15:30 PM';
 
     public onValidationFailed() {
-        this.toast.show();
+        this.toast.open();
     }
 }
