@@ -3,8 +3,7 @@ import { IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'localization-sample-3',
+    selector: 'app-localization-sample-3',
     styleUrls: ['./localization-sample-3.component.scss'],
     templateUrl: 'localization-sample-3.component.html'
 })

@@ -3,8 +3,7 @@ import { IgxSnackbarComponent, IgxHierarchicalGridComponent } from 'igniteui-ang
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-cellSelection',
+    selector: 'app-hierarchical-grid-cell-selection',
     styleUrls: ['./hierarchical-grid-cellSelection.component.scss'],
     templateUrl: 'hierarchical-grid-cellSelection.component.html'
 })

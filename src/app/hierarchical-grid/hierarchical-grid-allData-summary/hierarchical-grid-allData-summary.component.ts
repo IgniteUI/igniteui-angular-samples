@@ -44,8 +44,7 @@ class GrammySummary {
 }
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-allData-summary',
+    selector: 'app-hierarchical-grid-all-data-summary',
     styleUrls: ['./hierarchical-grid-allData-summary.component.scss'],
     templateUrl: 'hierarchical-grid-allData-summary.component.html'
 })

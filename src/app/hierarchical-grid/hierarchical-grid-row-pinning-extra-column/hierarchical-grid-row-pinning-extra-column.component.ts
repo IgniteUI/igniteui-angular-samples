@@ -12,8 +12,7 @@ import { SINGERS } from '../data';
 const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-row-pinning-extra-column',
+    selector: 'app-hierarchical-grid-row-pinning-extra-column',
     styleUrls: ['./hierarchical-grid-row-pinning-extra-column.component.scss'],
     templateUrl: 'hierarchical-grid-row-pinning-extra-column.component.html'
 })

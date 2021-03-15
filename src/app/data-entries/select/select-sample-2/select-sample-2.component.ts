@@ -3,8 +3,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IgxSelectComponent } from 'igniteui-angular';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'select-sample-2',
+    selector: 'app-select-sample-2',
     styleUrls: ['select-sample-2.component.scss'],
     templateUrl: 'select-sample-2.component.html'
 })

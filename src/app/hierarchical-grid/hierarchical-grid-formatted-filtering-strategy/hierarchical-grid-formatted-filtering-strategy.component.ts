@@ -3,8 +3,7 @@ import { IgxHierarchicalGridComponent, FormattedValuesFilteringStrategy } from '
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-formatted-filtering-strategy',
+    selector: 'app-hierarchical-grid-formatted-filtering-strategy',
     styleUrls: ['./hierarchical-grid-formatted-filtering-strategy.component.scss'],
     templateUrl: 'hierarchical-grid-formatted-filtering-strategy.component.html'
 })

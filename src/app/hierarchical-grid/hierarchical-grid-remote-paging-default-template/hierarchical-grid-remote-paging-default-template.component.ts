@@ -4,8 +4,7 @@ import { RemotePagingService } from './remotePagingService';
 
 @Component({
     providers: [RemotePagingService],
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-remote-paging-default-template',
+    selector: 'app-hierarchical-grid-remote-paging-default-template',
     styleUrls: ['./hierarchical-grid-remote-paging-default-template.component.scss'],
     templateUrl: 'hierarchical-grid-remote-paging-default-template.component.html'
 })

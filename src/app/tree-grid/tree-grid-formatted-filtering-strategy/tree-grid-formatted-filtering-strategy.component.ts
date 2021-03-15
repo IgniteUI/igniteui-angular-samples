@@ -3,8 +3,7 @@ import { IgxTreeGridComponent, TreeGridFormattedValuesFilteringStrategy } from '
 import { FOODS_DATA } from '../data/foods';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-formatted-filtering-strategy',
+    selector: 'app-tree-grid-formatted-filtering-strategy',
     styleUrls: ['./tree-grid-formatted-filtering-strategy.component.scss'],
     templateUrl: 'tree-grid-formatted-filtering-strategy.component.html'
 })

@@ -10,8 +10,7 @@ import {
 import { DATA } from '../../data/nwindData';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-sample',
+    selector: 'app-grid-sample',
     styleUrls: ['./grid-filtering-template-sample.component.scss'],
     templateUrl: 'grid-filtering-template-sample.component.html'
 })

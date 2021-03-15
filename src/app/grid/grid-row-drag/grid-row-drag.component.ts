@@ -10,8 +10,7 @@ enum HoverClassList {
 }
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-row-drag-sample',
+    selector: 'app-grid-row-drag-sample',
     styleUrls: ['./grid-row-drag.component.scss'],
     templateUrl: 'grid-row-drag.component.html'
 })

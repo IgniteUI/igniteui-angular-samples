@@ -2,8 +2,7 @@ import { Component, ElementRef } from '@angular/core';
 import { DateRange } from 'igniteui-angular';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'styled-rangedatepicker',
+    selector: 'app-styled-rangedatepicker',
     styleUrls: ['./daterangepicker-styling.scss'],
     templateUrl: './daterangepicker-styling.html'
 })

@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-excel-style-filtering-sample-3',
+    selector: 'app-hierarchical-grid-excel-style-filtering-sample-3',
     styleUrls: ['./hierarchical-grid-excel-style-filtering-sample-3.component.scss'],
     templateUrl: 'hierarchical-grid-excel-style-filtering-sample-3.component.html'
 })

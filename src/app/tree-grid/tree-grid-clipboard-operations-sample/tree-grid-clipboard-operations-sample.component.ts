@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EMPLOYEE_DATA } from './data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-clipboard-operations-sample',
+    selector: 'app-tree-grid-clipboard-operations-sample',
     styleUrls: ['tree-grid-clipboard-operations-sample.component.scss'],
     templateUrl: './tree-grid-clipboard-operations-sample.component.html'
 })

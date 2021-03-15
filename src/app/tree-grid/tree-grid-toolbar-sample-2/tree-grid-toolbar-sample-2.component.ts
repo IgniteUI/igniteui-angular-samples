@@ -10,8 +10,7 @@ import {
 import { EMPLOYEE_FLAT_AVATARS_DATA } from '../data/employees-flat-avatars';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-toolbar-sample-2',
+    selector: 'app-tree-grid-toolbar-sample-2',
     styleUrls: ['./tree-grid-toolbar-sample-2.component.scss'],
     templateUrl: './tree-grid-toolbar-sample-2.component.html'
 })

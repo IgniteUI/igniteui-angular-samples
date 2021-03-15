@@ -4,8 +4,7 @@ import { IDropDroppedEventArgs,
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-row-reorder',
+    selector: 'app-tree-grid-row-reorder',
     styleUrls: ['tree-grid-row-reorder.component.scss'],
     templateUrl: 'tree-grid-row-reorder.component.html'
 })

@@ -2,8 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxBannerComponent, slideInLeft, slideOutRight } from 'igniteui-angular';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'banner-sample-3',
+    selector: 'app-banner-sample-3',
     styleUrls: ['../banner-samples.scss'],
     templateUrl: 'banner-sample-3.component.html'
 })

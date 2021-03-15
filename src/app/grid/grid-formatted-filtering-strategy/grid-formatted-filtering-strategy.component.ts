@@ -3,8 +3,7 @@ import { IgxGridComponent, FormattedValuesFilteringStrategy } from 'igniteui-ang
 import { DATA } from '../../data/nwindData';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-sample',
+    selector: 'app-grid-sample',
     styleUrls: ['./grid-formatted-filtering-strategy.component.scss'],
     templateUrl: 'grid-formatted-filtering-strategy.component.html'
 })

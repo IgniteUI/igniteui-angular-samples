@@ -2,8 +2,7 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hgrid-editing-lifecycle',
+    selector: 'app-hgrid-editing-lifecycle',
     templateUrl: 'hgrid-editing-lifecycle.component.html',
     styleUrls: ['hgrid-editing-lifecycle.component.scss']
 })

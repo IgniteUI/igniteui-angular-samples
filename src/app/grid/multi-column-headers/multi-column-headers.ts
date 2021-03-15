@@ -3,8 +3,7 @@ import { IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'multi-column-headers',
+    selector: 'app-multi-column-headers',
     styleUrls: [ 'multi-column-headers.scss' ],
     templateUrl: 'multi-column-headers.html'
 })

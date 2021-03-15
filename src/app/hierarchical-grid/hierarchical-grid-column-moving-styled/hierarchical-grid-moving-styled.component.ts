@@ -3,8 +3,7 @@ import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent
 import { CUSTOMERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-moving-styled',
+    selector: 'app-hierarchical-grid-moving-styled',
     styleUrls: ['./hierarchical-grid-moving-styled.component.scss'],
     templateUrl: 'hierarchical-grid-moving-styled.component.html'
 })

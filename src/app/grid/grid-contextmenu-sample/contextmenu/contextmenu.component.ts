@@ -5,8 +5,7 @@ interface ICopyData {
     data: any;
 }
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'contextmenu',
+    selector: 'app-contextmenu',
     styleUrls: ['./contextmenu.component.scss'],
     templateUrl: './contextmenu.component.html'
 })

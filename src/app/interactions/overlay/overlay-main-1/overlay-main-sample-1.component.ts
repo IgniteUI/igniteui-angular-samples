@@ -4,8 +4,7 @@ import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 import { MyDynamicCardComponent} from '../overlay-dynamic-card/overlay-dynamic-card.component';
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'overlay-sample',
+    selector: 'app-overlay-sample',
     templateUrl: `./overlay-main-sample-1.component.html`,
     styleUrls: [`./overlay-main-sample-1.component.scss`]
 })

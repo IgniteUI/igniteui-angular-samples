@@ -7,8 +7,7 @@ import { SINGERS } from '../data';
 import { Singer } from '../models';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-editing-events',
+    selector: 'app-hierarchical-grid-editing-events',
     styleUrls: ['./hierarchical-grid-editing-events.component.scss'],
     templateUrl: 'hierarchical-grid-editing-events.component.html'
 })

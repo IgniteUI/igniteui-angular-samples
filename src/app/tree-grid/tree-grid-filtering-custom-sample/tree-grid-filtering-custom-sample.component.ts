@@ -3,8 +3,7 @@ import { IgxBooleanFilteringOperand, IgxStringFilteringOperand } from 'igniteui-
 import { FOODS_DATA } from '../data/foods';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-filtering-custom-sample',
+    selector: 'app-tree-grid-filtering-custom-sample',
     styleUrls: ['./tree-grid-filtering-custom-sample.component.scss'],
     templateUrl: './tree-grid-filtering-custom-sample.component.html'
 })

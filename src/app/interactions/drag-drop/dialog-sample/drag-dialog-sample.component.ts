@@ -9,8 +9,7 @@ import {
 } from 'igniteui-angular';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'drag-dialog-sample',
+    selector: 'app-drag-dialog-sample',
     templateUrl: './drag-dialog-sample.component.html',
     styleUrls: ['./drag-dialog-sample.component.scss']
 })

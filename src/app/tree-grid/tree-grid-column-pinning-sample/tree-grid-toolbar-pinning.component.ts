@@ -4,8 +4,7 @@ import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detaile
 
 @Component({
     providers: [],
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-sample',
+    selector: 'app-grid-sample',
     styleUrls: ['tree-grid-toolbar-pinning.component.scss'],
     templateUrl: 'tree-grid-toolbar-pinning.component.html'
 

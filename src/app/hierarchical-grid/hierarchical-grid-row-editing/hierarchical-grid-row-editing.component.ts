@@ -3,8 +3,7 @@ import { IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-row-editing',
+    selector: 'app-hierarchical-grid-row-editing',
     styleUrls: ['./hierarchical-grid-row-editing.component.scss'],
     templateUrl: 'hierarchical-grid-row-editing.component.html'
 })

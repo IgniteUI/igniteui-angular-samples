@@ -13,8 +13,7 @@ import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-row-pinning-extra-column',
+    selector: 'app-tree-grid-row-pinning-extra-column',
     styleUrls: ['tree-grid-row-pinning-extra-column.component.scss'],
     templateUrl: 'tree-grid-row-pinning-extra-column.component.html'
 })

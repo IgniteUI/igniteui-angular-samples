@@ -20,8 +20,7 @@ import { Subject } from 'rxjs';
 
 // tslint:disable:object-literal-sort-keys
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'overlay-sample',
+    selector: 'app-overlay-sample',
     styleUrls: ['./overlay-preset-settings-sample.component.scss'],
     templateUrl: './overlay-preset-settings-sample.component.html',
     providers: [IgxOverlayService]

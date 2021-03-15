@@ -10,8 +10,7 @@ import {
 import { FOODS_DATA } from '../data/foods';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-filtering-template-sample',
+    selector: 'app-tree-grid-filtering-template-sample',
     styleUrls: ['./tree-grid-filtering-template-sample.component.scss'],
     templateUrl: 'tree-grid-filtering-template-sample.component.html'
 })

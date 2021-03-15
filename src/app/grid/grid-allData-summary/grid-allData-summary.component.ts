@@ -34,8 +34,7 @@ class DiscontinuedSummary {
   }
 }
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'grid-allData-summary',
+  selector: 'app-grid-all-data-summary',
   styleUrls: ['./grid-allData-summary.component.scss'],
   templateUrl: './grid-allData-summary.component.html'
 })

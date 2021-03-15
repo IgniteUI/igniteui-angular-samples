@@ -4,8 +4,7 @@ import { FOODS_DATA } from '../data/foods';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'tree-grid-paging-sample',
+    selector: 'app-tree-grid-paging-sample',
     styleUrls: ['./tree-grid-paging-sample.component.scss'],
     templateUrl: 'tree-grid-paging-sample.component.html'
 })

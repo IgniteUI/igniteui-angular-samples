@@ -3,8 +3,7 @@ import { IgxFilterOptions } from 'igniteui-angular';
 import { femaleFNames, lastName, maleFNames, middleNames } from './names';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'igxFor-list',
+    selector: 'app-igx-for-list',
     styleUrls: ['./igxFor.component.scss'],
     templateUrl: './igxFor.component.html'
 })

@@ -3,8 +3,7 @@ import { IgxFilterOptions } from 'igniteui-angular';
 import { femaleFNames, lastName, maleFNames } from '../names';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'igxFor-horizontal',
+    selector: 'app-igx-for-horizontal',
     styleUrls: ['./igxFor-horizontal.component.scss'],
     templateUrl: './igxFor-horizontal.component.html'
 })

@@ -3,8 +3,7 @@ import { IgxBooleanFilteringOperand, IgxHierarchicalGridComponent, IgxStringFilt
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-custom-filtering',
+    selector: 'app-hierarchical-grid-custom-filtering',
     styleUrls: ['./hierarchical-grid-custom-filtering.component.scss'],
     templateUrl: 'hierarchical-grid-custom-filtering.component.html'
 })

@@ -2,8 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IgxSelectComponent } from 'igniteui-angular';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'select-input-directives',
+    selector: 'app-select-input-directives',
     styleUrls: ['select-input-directives.scss'],
     templateUrl: 'select-input-directives.html'
 })

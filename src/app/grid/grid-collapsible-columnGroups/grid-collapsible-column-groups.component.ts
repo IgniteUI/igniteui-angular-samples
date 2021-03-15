@@ -3,8 +3,7 @@ import { IgxGridComponent } from 'igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-collapsible-column-groups',
+    selector: 'app-grid-collapsible-column-groups',
     styleUrls: ['./grid-collapsible-column-groups.component.scss'],
     templateUrl: './grid-collapsible-column-groups.component.html'
 })

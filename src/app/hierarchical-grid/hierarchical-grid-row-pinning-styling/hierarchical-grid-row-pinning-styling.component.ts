@@ -8,8 +8,7 @@ import {
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-row-pinning-styling',
+    selector: 'app-hierarchical-grid-row-pinning-styling',
     styleUrls: ['./hierarchical-grid-row-pinning-styling.component.scss'],
     templateUrl: 'hierarchical-grid-row-pinning-styling.component.html'
 })

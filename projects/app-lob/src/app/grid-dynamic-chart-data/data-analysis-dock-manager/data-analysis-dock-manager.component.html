@@ -121,8 +121,8 @@
         </div>
     </div>
 
-    <dock-slot  *ngFor="let chart of allCharts" [id]="chart" >
-    </dock-slot>
+    <app-dock-slot  *ngFor="let chart of allCharts" [id]="chart" >
+    </app-dock-slot>
 </igc-dockmanager>
 
 <span *ngIf="contextmenu" class="analytics-btn" [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}"

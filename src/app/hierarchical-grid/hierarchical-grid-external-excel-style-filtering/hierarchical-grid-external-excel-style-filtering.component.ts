@@ -4,8 +4,7 @@ import { SINGERS } from '../data';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-external-excel-style-filtering',
+    selector: 'app-hierarchical-grid-external-excel-style-filtering',
     templateUrl: './hierarchical-grid-external-excel-style-filtering.component.html',
     styleUrls: ['./hierarchical-grid-external-excel-style-filtering.component.scss']
 })

@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-toolbar-custom',
+    selector: 'app-hierarchical-grid-toolbar-custom',
     styleUrls: ['./hierarchical-grid-toolbar-custom.component.scss'],
     templateUrl: 'hierarchical-grid-toolbar-custom.component.html'
 })

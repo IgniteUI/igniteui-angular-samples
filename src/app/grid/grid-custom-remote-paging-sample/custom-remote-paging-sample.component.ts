@@ -5,8 +5,7 @@ import { RemotePagingService } from '../services/remotePagingService';
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [RemotePagingService],
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'custom-remote-paging-grid-sample',
+    selector: 'app-custom-remote-paging-grid-sample',
     styleUrls: ['./custom-remote-paging-sample.component.scss'],
     templateUrl: './custom-remote-paging-sample.component.html'
 })

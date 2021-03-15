@@ -3,8 +3,7 @@ import { IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-excel-style-filtering-sample-1',
+    selector: 'app-hierarchical-grid-excel-style-filtering-sample-1',
     styleUrls: ['./hierarchical-grid-excel-style-filtering-sample-1.component.scss'],
     templateUrl: 'hierarchical-grid-excel-style-filtering-sample-1.component.html'
 })

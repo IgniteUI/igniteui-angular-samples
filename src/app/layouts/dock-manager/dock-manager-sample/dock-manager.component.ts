@@ -4,8 +4,7 @@ import { IgcDockManagerLayout,
          IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'dock-manager',
+    selector: 'app-dock-manager',
     styleUrls: ['./dock-manager.component.scss'],
     templateUrl: './dock-manager.component.html'
 })

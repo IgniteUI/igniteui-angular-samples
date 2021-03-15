@@ -2,8 +2,7 @@ import { Component, Input, OnInit} from '@angular/core';
 import { IgxIconModule, SortingDirection } from 'igniteui-angular';
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'tree-grid-contextmenu',
+  selector: 'app-tree-grid-contextmenu',
   styleUrls: ['./tree-grid-contextmenu.component.scss'],
   templateUrl: './tree-grid-contextmenu.component.html'
 })

@@ -6,8 +6,7 @@ import {
 } from 'igniteui-angular';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'select-sample-4',
+    selector: 'app-select-sample-4',
     styleUrls: ['select-sample-4.component.scss'],
     templateUrl: 'select-sample-4.component.html'
 })

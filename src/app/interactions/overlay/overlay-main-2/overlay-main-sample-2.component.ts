@@ -5,8 +5,7 @@ import { filter, takeUntil } from 'rxjs/operators';
 import { CardSample1Component } from '../../../layouts/card/card-sample-1/card-sample-1.component';
 // tslint:disable:object-literal-sort-keys
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'overlay-sample',
+    selector: 'app-overlay-sample',
     templateUrl: `./overlay-main-sample-2.component.html`,
     styleUrls: [`./overlay-main-sample-2.component.scss`]
 })

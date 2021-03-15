@@ -3,8 +3,7 @@ import { IgxGridComponent } from 'igniteui-angular';
 import { athletesData } from '../services/data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'custom-grid-paging-style-sample',
+    selector: 'app-custom-grid-paging-style-sample',
     styleUrls: ['custom-grid-paging-style.component.scss'],
     templateUrl: 'custom-grid-paging-style.component.html'
 })

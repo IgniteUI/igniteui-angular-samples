@@ -3,8 +3,7 @@ import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-resizing',
+    selector: 'app-hierarchical-grid-resizing',
     styleUrls: ['./hierarchical-grid-resizing.component.scss'],
     templateUrl: 'hierarchical-grid-resizing.component.html'
 })

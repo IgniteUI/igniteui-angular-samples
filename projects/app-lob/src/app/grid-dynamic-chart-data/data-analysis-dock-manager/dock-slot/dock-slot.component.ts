@@ -2,8 +2,7 @@ import { Component, HostBinding, Input, OnInit, ViewChild } from '@angular/core'
 import { ChartHostDirective } from '../../directives/chart-integration/chart-integration.directive';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'dock-slot',
+    selector: 'app-dock-slot',
     templateUrl: './dock-slot.component.html',
     styleUrls: ['./dock-slot.component.scss']
 })

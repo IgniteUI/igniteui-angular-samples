@@ -8,8 +8,7 @@ import {
 import { createData, IDrive } from '../../data/files.data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-row-reorder',
+    selector: 'app-hierarchical-grid-row-reorder',
     styleUrls: ['./hierarchical-grid-row-reorder.component.scss'],
     templateUrl: 'hierarchical-grid-row-reorder.component.html'
 })

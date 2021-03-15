@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-advanced-filtering',
+    selector: 'app-hierarchical-grid-advanced-filtering',
     styleUrls: ['./hierarchical-grid-advanced-filtering.component.scss'],
     templateUrl: 'hierarchical-grid-advanced-filtering.component.html'
 })

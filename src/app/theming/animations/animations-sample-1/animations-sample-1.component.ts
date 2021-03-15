@@ -26,8 +26,7 @@ import {
 } from 'igniteui-angular';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'animations-sample-1',
+    selector: 'app-animations-sample-1',
     styleUrls: ['./animations-sample-1.component.scss'],
     templateUrl: './animations-sample-1.component.html'
 })

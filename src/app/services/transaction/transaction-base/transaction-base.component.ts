@@ -3,8 +3,7 @@ import { IgxTransactionService, State, Transaction, TransactionType } from 'igni
 import { WISHLIST, WishlistItem } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'transaction-base',
+    selector: 'app-transaction-base',
     styleUrls: ['./transaction-base.component.scss'],
     templateUrl: 'transaction-base.component.html'
 })

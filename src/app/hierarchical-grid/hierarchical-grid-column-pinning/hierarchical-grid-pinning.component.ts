@@ -3,8 +3,7 @@ import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent
 import { CUSTOMERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-pinning',
+    selector: 'app-hierarchical-grid-pinning',
     styleUrls: ['./hierarchical-grid-pinning.component.scss'],
     templateUrl: 'hierarchical-grid-pinning.component.html'
 })

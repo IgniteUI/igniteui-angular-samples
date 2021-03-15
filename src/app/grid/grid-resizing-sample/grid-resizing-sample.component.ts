@@ -3,8 +3,7 @@ import { IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-resizing-sample',
+    selector: 'app-grid-resizing-sample',
     styleUrls: ['./grid-resizing-sample.component.scss'],
     templateUrl: 'grid-resizing-sample.component.html'
 })

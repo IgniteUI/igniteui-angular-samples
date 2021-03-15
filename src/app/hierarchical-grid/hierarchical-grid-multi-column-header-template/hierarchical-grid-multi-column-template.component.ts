@@ -3,8 +3,7 @@ import { IgxColumnGroupComponent, IgxHierarchicalGridComponent } from 'igniteui-
 import { CUSTOMERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-multi-column-template',
+    selector: 'app-hierarchical-grid-multi-column-template',
     styleUrls: ['./hierarchical-grid-multi-column-template.component.scss'],
     templateUrl: 'hierarchical-grid-multi-column-template.component.html'
 })

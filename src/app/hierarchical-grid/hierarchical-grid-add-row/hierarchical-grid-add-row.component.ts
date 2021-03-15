@@ -3,8 +3,7 @@ import { SINGERS } from '../data';
 import { Singer } from '../models';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-add-row',
+    selector: 'app-hierarchical-grid-add-row',
     styleUrls: ['./hierarchical-grid-add-row.component.scss'],
     templateUrl: './hierarchical-grid-add-row.component.html'
 })

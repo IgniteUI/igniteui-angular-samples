@@ -3,8 +3,7 @@ import { IgxGridComponent, IgxSnackbarComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'grid-cellSelection',
+    selector: 'app-grid-cell-selection',
     styleUrls: ['./grid-cellSelection.component.scss'],
     templateUrl: 'grid-cellSelection.component.html'
 })

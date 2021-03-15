@@ -5,8 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 
 @Component({
     providers: [RemotePagingService],
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-remote-paging',
+    selector: 'app-hierarchical-grid-remote-paging',
     styleUrls: ['./hierarchical-grid-remote-paging.component.scss'],
     templateUrl: 'hierarchical-grid-remote-paging.component.html'
 })

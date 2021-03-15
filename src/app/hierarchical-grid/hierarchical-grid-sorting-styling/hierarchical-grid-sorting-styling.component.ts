@@ -3,8 +3,7 @@ import { DefaultSortingStrategy, IgxHierarchicalGridComponent, SortingDirection 
 import { SINGERS } from '../data';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'hierarchical-grid-sorting-styling',
+    selector: 'app-hierarchical-grid-sorting-styling',
     styleUrls: ['./hierarchical-grid-sorting-styling.component.scss'],
     templateUrl: 'hierarchical-grid-sorting-styling.component.html'
 })
