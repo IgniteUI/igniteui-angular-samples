@@ -1,0 +1,18 @@
+
+<igx-chips-area (reorder)="orderChanged($event)"
+    (moveEnd)="onMoveEnd($event)">
+    <igx-chip *ngFor="let chip of groupColumns"
+        [id]="chip"
+        displayDensity='compact'
+        removable='true'
+        [draggable]="'true'"
+        (remove)="onGroupColumnRemoved($event)">
+        {{chip}}
+    </igx-chip>
+</igx-chips-area>
+
+<span class="group-drop-area"
+    igxDrop
+    (enter)="onGroupAreaEnter($event)"
+    (dropped)="onGroupColumnDropped($event)">
+    Drag a column header and drop it here to group by that column.</span>

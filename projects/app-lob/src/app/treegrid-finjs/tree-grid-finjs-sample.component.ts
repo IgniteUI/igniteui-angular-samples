@@ -1,5 +1,4 @@
-
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
     IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
     PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
@@ -16,7 +15,7 @@ import { ITreeGridAggregation } from "./tree-grid-grouping.pipe";
     templateUrl: "./tree-grid-finjs-sample.component.html"
 })
 
-export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
+export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     @ViewChild("grid1", { static: true }) public grid1: IgxTreeGridComponent;
     @ViewChild("buttonGroup1", { static: true }) public buttonGroup1: IgxButtonGroupComponent;
     @ViewChild("slider1", { static: true }) public volumeSlider: IgxSliderComponent;
@@ -100,7 +99,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     private _timer;
     private volumeChanged;
 
-    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef, private changeDetectionRef: ChangeDetectorRef) {
+    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef) {
         this.subscription = this.localService.getData(this.volume);
         this.localService.records.subscribe((d) => this.data = d);
     }
@@ -125,6 +124,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         });
         this.grid1.reflow();
     }
+
     public onButtonAction(event: any) {
         switch (event.index) {
             case 0: {
@@ -190,6 +190,13 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
 
     public toggleToolbar() {
         this.showToolbar = !this.showToolbar;
+    }
+
+    public onColumnHiddenChanged(column: string) {
+        const colIndex = this.grid1.columns.findIndex(c => c.field === column);
+        if (colIndex >= 0) {
+            this.grid1.columns[colIndex].hidden = !this.grid1.columns[colIndex].hidden;
+        }
     }
 
     private negative = (rowData: any): boolean => {
