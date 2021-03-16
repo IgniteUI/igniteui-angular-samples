@@ -95,6 +95,6 @@ export class GridEditingSampleComponent implements OnInit, AfterViewInit {
 
     public show(args) {
         const message = `The product: {name: ${args.data.ProductName}, ID ${args.data.ProductID} } has been removed!`;
-        this.toast.show(message);
+        this.toast.open(message);
     }
 }

@@ -10,9 +10,9 @@ export class ToastStyleComponent {
     public toast: IgxToastComponent;
     public toastPosition: IgxToastPosition;
 
-    showToast(toast: IgxToastComponent, toastPosition: IgxToastPosition) {
+    openToast(toast: IgxToastComponent, toastPosition: IgxToastPosition) {
         toast.position = toastPosition;
-        toast.show();
+        toast.open();
     }
 }
 
