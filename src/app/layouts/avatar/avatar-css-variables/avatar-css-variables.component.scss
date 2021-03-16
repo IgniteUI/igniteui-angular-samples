@@ -5,16 +5,12 @@
 :host {
     --teal-light: #64ffda;
     --teal-dark: #004d40;
-    --green-dark: #558B2F;
-    --gray-light: #fafafa;
 
     ::ng-deep {
         @include igx-avatar(
             igx-avatar-theme(
-                $initials-background: var(--teal-light),
-                $initials-color: var(--teal-dark),
-                $icon-background: var(--green-dark),
-                $icon-color: var(--gray-light)
+                $background: var(--teal-light),
+                $color: var(--teal-dark),
             )
         );
     }
