@@ -58,7 +58,8 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     }
 
     public onVolumeChanged(volume: any) {
-        this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService.broadcastParams(this.controller.frequency, volume, false):
+        this.volume = volume;
+        this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService.broadcastParams(this.controller.frequency, this.volume, false):
         this.finGrid.dataService.getData(volume);
     }
 
