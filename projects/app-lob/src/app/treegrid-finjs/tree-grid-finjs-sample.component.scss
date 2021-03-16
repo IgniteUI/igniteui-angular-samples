@@ -208,10 +208,6 @@
         width: 2rem;
         height: 2rem;
     }
-
-    .igx-grid__drag-ghost-image-icon {
-        display: none;
-    }
 }
 
 .grid__wrapper {
@@ -233,4 +229,8 @@ igx-grid {
     display: flex;
     justify-content: center;
     position: relative;
+}
+
+.grid-toolbar-title {
+    max-width: none;
 }

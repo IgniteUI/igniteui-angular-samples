@@ -1,5 +1,5 @@
 
-<igx-chips-area (reorder)="orderChanged($event)"
+<igx-chips-area class="chips-area" (reorder)="orderChanged($event)"
     (moveEnd)="onMoveEnd($event)">
     <igx-chip *ngFor="let chip of groupColumns"
         [id]="chip"
