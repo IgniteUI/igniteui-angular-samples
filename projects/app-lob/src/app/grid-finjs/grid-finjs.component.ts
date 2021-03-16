@@ -29,9 +29,7 @@ export class GridFinJSComponent implements OnInit {
     @Output() public keyDown = new EventEmitter<any>();
     @Output() public chartColumnKeyDown = new EventEmitter<any>();
 
-    constructor(private el: ElementRef, @Inject(DOCUMENT) private document: Document,
-        public dataService: SignalRService,) {
-    }
+    constructor(private el: ElementRef, @Inject(DOCUMENT) private document: Document, public dataService: SignalRService) { }
 
     public ngOnInit() {
         this.dataService.startConnection();

@@ -59,7 +59,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
 
     public onVolumeChanged(volume: any) {
         this.volume = volume;
-        this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService.broadcastParams(this.controller.frequency, this.volume, false):
+        this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService.broadcastParams(this.controller.frequency, this.volume, false) :
         this.finGrid.dataService.getData(volume);
     }
 
@@ -127,11 +127,9 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     public selectFirstGroupAndFillChart() {
         this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
         // tslint:disable-next-line: max-line-length
-        if(this.finGrid.grid.groupsRecords.length !== 0) {
-        const recordsToBeSelected = this.finGrid.grid.selectionService.getRowIDs(this.finGrid.grid.groupsRecords[0].groups[0].groups[0].records);
-            recordsToBeSelected.forEach(item => {
-                this.finGrid.grid.selectionService.selectRowById(item, false, true);
-            });
+        if (this.finGrid.grid.groupsRecords.length !== 0) {
+            const recordsToBeSelected = this.finGrid.grid.selectionService.getRowIDs(this.finGrid.grid.groupsRecords[0].groups[0].groups[0].records);
+            recordsToBeSelected.forEach(item => this.finGrid.grid.selectionService.selectRowById(item, false, true));
         }
     }
     public setChartConfig(xAsis, yAxis, title) {
