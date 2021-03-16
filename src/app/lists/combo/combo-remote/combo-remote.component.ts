@@ -35,14 +35,14 @@ export class ComboRemoteComponent implements OnInit {
         }
         this.loadingToast.position = "middle";
         this.loadingToast.autoHide = false;
-        this.loadingToast.show("Loading Remote Data...");
+        this.loadingToast.open("Loading Remote Data...");
         this.cdr.detectChanges();
         this.prevRequest = this.remoteService.getData(
             this.remoteCombo.virtualizationState,
             null,
             (data) => {
               this.remoteCombo.totalItemCount = data["@odata.count"];
-              this.loadingToast.hide();
+              this.loadingToast.close();
               this.cdr.detectChanges();
         });
     }
