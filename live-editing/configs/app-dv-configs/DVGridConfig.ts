@@ -86,7 +86,7 @@ export class DVGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'FinJSDemoComponent',
-            dependenciesType: DependenciesType.Charts,
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core", "resize-observer-polyfill"],
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/grid-finjs/localData.service.ts",
                 "/projects/app-lob/src/app/services/financialData.ts","/projects/app-lob/src/app/grid-finjs/controllers.component.ts",
                 "/projects/app-lob/src/app/grid-finjs/grid-finjs.component.ts",
