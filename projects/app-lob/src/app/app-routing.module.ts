@@ -14,12 +14,12 @@ export const samplesRoutes: Routes = [
     {
         data: ["GridFinjsModule"],
         loadChildren: () => import("./grid-finjs/grid-finjs.module").then(m => m.GridFinjsModule),
-        path: "finjs-sample"
+        path: "grid-finjs"
     },
     {
         data: ["TreeGridFinjsModule"],
         loadChildren: () => import("./treegrid-finjs/treegrid-finjs.module").then(m => m.TreeGridFinjsModule),
-        path: "treegrid-finjs-sample"
+        path: "treegrid-finjs"
     },
     {
         data: ["TreeGridDVModule"],
@@ -75,7 +75,7 @@ export class AppRoutingModule {
     }
 
     public setOverflow(url: string) {
-        if (url.endsWith("finjs-sample")) {
+        if (url.endsWith("finjs")) {
             document.body.style.overflow = "auto";
         } else {
             document.body.style.overflow = "hidden";
