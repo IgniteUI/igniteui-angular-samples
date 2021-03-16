@@ -39,7 +39,7 @@ export class GridEditingEventsComponent implements OnInit {
             }
             if (event.newValue > rowData.UnitsInStock) {
                 event.cancel = true;
-                this.toast.show();
+                this.toast.open();
             }
         }
     }

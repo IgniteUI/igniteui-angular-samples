@@ -110,12 +110,12 @@ export const MODULE_ROUTES = [
 export const DV_MODULE_ROUTES = [
     {
         module: GridFinjsModule,
-        path: "finjs-sample",
+        path: "grid-finjs",
         routes: GridFinjsRouting.gridfinjsRoutes
     },
     {
         module: TreeGridFinjsModule,
-        path: "treegrid-finjs-sample",
+        path: "treegrid-finjs",
         routes: TreeGridFinjsRouting.treegridfinjsRoutes
     },
     {

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, NgZone } from '@angular/core';
-import * as signalR from '@aspnet/signalR';
+import * as signalR from '@aspnet/signalr';
 import { BehaviorSubject } from 'rxjs';
 import { FinancialData } from '../services/financialData';
 
@@ -19,8 +19,8 @@ export class SignalRService {
 
     public startConnection = () => {
         this.hubConnection = new signalR.HubConnectionBuilder()
-            .configureLogging(signalR.LogLevel.Debug)
-            .withUrl('https://localhost:5001/streamHub')
+            .configureLogging(signalR.LogLevel.Trace)
+            .withUrl('https://staging.infragistics.com/angular-apis/webapi/streamHub')
             .build();
         this.hubConnection
             .start()
@@ -39,7 +39,7 @@ export class SignalRService {
 
     public broadcastParams = (ms, volume, live) => {
         this.hubConnection.invoke('updateparameters', ms, volume, live)
-            .then(() => console.log('requestLivedata'))
+            .then(() => console.log('requestLivedata', volume))
             .catch(err => console.error(err));
     }
 
@@ -50,7 +50,6 @@ export class SignalRService {
 
     private registerSignalEvents() {
         this.hubConnection.onclose(() => {
-            console.log('CLOSEDCONNECTION');
             this.hasRemoteConnection = false;
         });
         this.hubConnection.on('transferdata', (data) => {
