@@ -1,12 +1,11 @@
 import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
-import { Contract, REGIONS } from '../services/financialData';
-import { LocalDataService } from './localData.service';
 import { Subject } from 'rxjs';
+import { SignalRService } from './signal-r.service';
 
 @Component({
-  providers: [LocalDataService],
+  providers: [SignalRService ],
   selector: 'app-finjs-grid',
   templateUrl: './grid-finjs.component.html',
   styleUrls: ['./grid-finjs.component.scss']
@@ -15,13 +14,10 @@ export class GridFinJSComponent implements OnInit {
     public selectionMode = "multiple";
     public volume = 1000;
     public frequency = 500;
-    public data = [];
-    public contracts = Contract;
-    public regions = REGIONS;
+    public data$: any;
     public columnFormat = { digitsInfo: '1.3-3'}
     public showToolbar = true;
     protected destroy$ = new Subject<any>();
-    private subscription$;
     public overlaySettings: OverlaySettings = {
         modal: false
     };
@@ -33,59 +29,54 @@ export class GridFinJSComponent implements OnInit {
     @Output() public keyDown = new EventEmitter<any>();
     @Output() public chartColumnKeyDown = new EventEmitter<any>();
 
-    constructor(public finService: LocalDataService, private el: ElementRef, @Inject(DOCUMENT) private document: Document) {
-    }
+    constructor(private el: ElementRef, @Inject(DOCUMENT) private document: Document, public dataService: SignalRService) { }
 
     public ngOnInit() {
+        this.dataService.startConnection();
         this.overlaySettings.outlet = this.outlet;
-        if (this.data.length === 0) {
-            this.finService.getData(this.volume);
-            this.subscription$ = this.finService.records.subscribe(x => {
-                this.data = x;
-            });
-        }
+        this.data$ = this.dataService.data;
+
         this.grid.groupingExpressions = [{
             dir: SortingDirection.Desc,
-            fieldName: 'Category',
+            fieldName: 'category',
             ignoreCase: false,
             strategy: DefaultSortingStrategy.instance()
         },
         {
             dir: SortingDirection.Desc,
-            fieldName: 'Type',
+            fieldName: 'type',
             ignoreCase: false,
             strategy: DefaultSortingStrategy.instance()
         },
         {
             dir: SortingDirection.Desc,
-            fieldName: 'Settlement',
+            fieldName: 'settlement',
             ignoreCase: false,
             strategy: DefaultSortingStrategy.instance()
         }
         ];
     }
 
-
     /** Event Handlers and Methods */
-    public onChange(event: any) {
+    public onChange() {
         if (this.grid.groupingExpressions.length > 0) {
             this.grid.groupingExpressions = [];
         } else {
             this.grid.groupingExpressions = [{
                 dir: SortingDirection.Desc,
-                fieldName: 'Category',
+                fieldName: 'category',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: 'Type',
+                fieldName: 'type',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: 'Contract',
+                fieldName: 'contract',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             }
@@ -104,19 +95,19 @@ export class GridFinJSComponent implements OnInit {
         } else {
             this.grid.groupingExpressions = [{
                 dir: SortingDirection.Desc,
-                fieldName: 'Category',
+                fieldName: 'category',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: 'Type',
+                fieldName: 'type',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: 'Contract',
+                fieldName: 'contract',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             }
@@ -157,22 +148,22 @@ export class GridFinJSComponent implements OnInit {
 
     /** Grid CellStyles and CellClasses */
     private negative = (rowData: any): boolean => {
-        return rowData["Change(%)"] < 0;
+        return rowData["changeP"] < 0;
     }
     private positive = (rowData: any): boolean => {
-        return rowData["Change(%)"] > 0;
+        return rowData["changeP"] > 0;
     }
     private changeNegative = (rowData: any): boolean => {
-        return rowData["Change(%)"] < 0 && rowData["Change(%)"] > -1;
+        return rowData["changeP"] < 0 && rowData["changeP"] > -1;
     }
     private changePositive = (rowData: any): boolean => {
-        return rowData["Change(%)"] > 0 && rowData["Change(%)"] < 1;
+        return rowData["changeP"] > 0 && rowData["changeP"] < 1;
     }
     private strongPositive = (rowData: any): boolean => {
-        return rowData["Change(%)"] >= 1;
+        return rowData["changeP"] >= 1;
     }
     private strongNegative = (rowData: any, key: string): boolean => {
-        return rowData["Change(%)"] <= -1;
+        return rowData["changeP"] <= -1;
     }
 
     public trends = {
@@ -190,10 +181,4 @@ export class GridFinJSComponent implements OnInit {
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
     };
-
-    public ngOnDestroy() {
-        if (this.subscription$) {
-            this.subscription$.unsubscribe();
-        }
-    }
 }
