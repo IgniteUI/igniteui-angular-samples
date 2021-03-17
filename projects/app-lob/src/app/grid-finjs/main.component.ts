@@ -31,9 +31,13 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     }
 
     public ngAfterViewInit() {
-        setTimeout(() => {
-            this.selectFirstGroupAndFillChart();
-        }, 2000);
+        this.finGrid.data$.subscribe((data) => {
+            if (data.length !== 0) {
+                setTimeout(()=> {
+                    this.selectFirstGroupAndFillChart();
+                }, 1000);
+            };
+        })
     }
 
     public ngOnInit() {
