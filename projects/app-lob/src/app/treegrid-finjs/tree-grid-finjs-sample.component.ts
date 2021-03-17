@@ -3,11 +3,10 @@ import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } fr
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
     IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
     PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
-import { timer } from "rxjs";
-import { debounce } from "rxjs/operators";
 import { LocalDataService } from "../grid-finjs/localData.service";
 import { Contract, REGIONS } from "../services/financialData";
 import { ITreeGridAggregation } from "./tree-grid-grouping.pipe";
+import { SignalRService } from '../services/signal-r.service';
 
 @Component({
     providers: [LocalDataService],
@@ -28,17 +27,11 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     public theme = false;
     public volume = 1000;
     public frequency = 500;
-    public data: any[] = [];
+    public data$: any;
     public overlaySettings: OverlaySettings = {
         modal: false
     };
     public controls = [
-        {
-            disabled: false,
-            icon: "update",
-            label: "LIVE PRICES",
-            selected: false
-        },
         {
             disabled: false,
             icon: "update",
@@ -94,26 +87,27 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
 
     public contracts = Contract;
     public regions = REGIONS;
+    public isLoading = true;
 
     private subscription;
     private selectedButton;
-    private _timer;
-    private volumeChanged;
 
-    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef) {
-        this.subscription = this.localService.getData(this.volume);
-        this.localService.records.subscribe((d) => this.data = d);
+    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef,
+        public dataService: SignalRService) {
+            this.dataService.startConnection();
+            this.overlaySettings.outlet = this.outlet;
+            this.data$ = this.dataService.data;
+    
+            this.data$.subscribe((data) => {
+                if (data.length !== 0) {
+                    this.isLoading = false
+                };
+            })
     }
 
     public ngOnInit() {
         this.overlaySettings.outlet = this.outlet;
         this.grid1.sortingExpressions = [{ fieldName: this.groupColumnKey, dir: SortingDirection.Desc }];
-        this.volumeChanged = this.volumeSlider.onValueChange.pipe(debounce(() => timer(200)));
-        this.volumeChanged.subscribe(
-            (x) => {
-                this.localService.getData(this.volume);
-            },
-            (err) => console.log("Error: " + err));
     }
 
     public ngAfterViewInit() {
@@ -122,33 +116,21 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     public onButtonAction(event: any) {
         switch (event.index) {
             case 0: {
-                    this.disableOtherButtons(event.index, true);
-                    this._timer = setInterval(() => this.ticker(this.data), this.frequency);
-                    break;
-                }
+                this.disableOtherButtons(event.index, true);
+                this.tickerAllPrices();
+                break;
+            }
             case 1: {
-                    this.disableOtherButtons(event.index, true);
-                    this._timer = setInterval(() => this.tickerAllPrices(this.data), this.frequency);
-                    break;
+                if (this.dataService.hasRemoteConnection) {
+                    this.dataService.stopLiveData();
                 }
-                case 2: {
-                    this.disableOtherButtons(event.index, false);
-                    this.stopFeed();
-                    break;
-                }
+                this.disableOtherButtons(event.index, false);
+                break;
+            }
             default:
                 {
                     break;
                 }
-        }
-    }
-
-    public stopFeed() {
-        if (this._timer) {
-            clearInterval(this._timer);
-        }
-        if (this.subscription) {
-            this.subscription.unsubscribe();
         }
     }
 
@@ -178,8 +160,6 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     }
 
     public ngOnDestroy() {
-        this.stopFeed();
-        this.volumeChanged.unsubscribe();
     }
 
     public toggleToolbar() {
@@ -231,7 +211,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         this.intervalSlider.disabled = disableButtons;
         this.selectedButton = ind;
         this.buttonGroup1.buttons.forEach((button, index) => {
-            if (index === 2) { button.disabled = !disableButtons; } else {
+            if (index === 1) { button.disabled = !disableButtons; } else {
                 button.disabled = disableButtons;
             }
         });
@@ -245,66 +225,13 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         return this.elRef.nativeElement.parentElement.parentElement;
     }
 
-    private ticker(data: any) {
-        this.data = this.updateRandomPrices(data);
-    }
-
-    private tickerAllPrices(data: any) {
-        this.data = this.updateAllPrices(data);
-    }
-
-    /**
-     * Updates values in every record
-     */
-    private updateAllPrices(data: any[]): any {
-        for (const dataRow of data) {
-            this.randomizeObjectData(dataRow);
+    private tickerAllPrices() {
+        if (this.dataService.hasRemoteConnection) {
+            this.dataService.broadcastParams(this.frequency, this.volume, true);
+        } else {
+            const currData = this.grid1.filteredSortedData ?? this.grid1.data;
+            this.dataService.updateAllPriceValues(currData);
         }
-        return Array.from(data);
-    }
-
-    /**
-     * Updates values in random number of records
-     */
-    private updateRandomPrices(data: any[]): any {
-        const newData = data.slice();
-        let y = 0;
-        for (let i = Math.round(Math.random() * 10); i < newData.length; i += Math.round(Math.random() * 10)) {
-            this.randomizeObjectData(newData[i]);
-            y++;
-        }
-        return newData;
-    }
-
-    /**
-     * Generates ne values for Change, Price and ChangeP columns
-     */
-    private randomizeObjectData(dataObj) {
-        const changeP = "changeP";
-        const res = this.generateNewPrice(dataObj.Price);
-        dataObj.Change = res.Price - dataObj.Price;
-        dataObj.Price = res.Price;
-        dataObj[changeP] = res.ChangePercent;
-    }
-
-    private generateNewPrice(oldPrice): any {
-        let rnd = Math.random();
-        rnd = Math.round(rnd * 100) / 100;
-        const volatility = 2;
-        let newPrice = 0;
-        let changePercent = 2 * volatility * rnd;
-        if (changePercent > volatility) {
-            changePercent -= (2 * volatility);
-        }
-        const changeAmount = oldPrice * (changePercent / 100);
-        newPrice = oldPrice + changeAmount;
-        newPrice = Math.round(newPrice * 100) / 100;
-        const result = {Price: 0, ChangePercent: 0};
-        changePercent = Math.round(changePercent * 100) / 100;
-        result.Price = newPrice;
-        result.ChangePercent = changePercent;
-
-        return result;
     }
 
     get buttonSelected(): number {

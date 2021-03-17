@@ -28,15 +28,13 @@
 
     </div>
     <div class="sample-toolbar">
-        <span *ngIf="buttonSelected === 1">Feeding {{volume}} records every {{frequency / 1000}} sec.
-            {{volume}} records updated. </span>
         <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
             ~{{volume/5}} records updated.</span>
     </div>
     <igx-tree-grid #grid1 igxPreventDocumentScroll
-        [data]="data | treeGridGrouping:groupColumns:aggregations:groupColumnKey:primaryKey:childDataKey"
+        [data]="data$ | async | treeGridGrouping:groupColumns:aggregations:groupColumnKey:primaryKey:childDataKey"
         [height]="'calc(100% - 76px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
-        [primaryKey]="primaryKey" [childDataKey]="childDataKey" hiddenColumnsText="Hidden"
+        [primaryKey]="primaryKey" [childDataKey]="childDataKey" hiddenColumnsText="Hidden" [isLoading]="isLoading"
         [rowSelection]="selectionMode" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
         <igx-grid-toolbar *ngIf="showToolbar">
             <igx-grid-toolbar-actions>

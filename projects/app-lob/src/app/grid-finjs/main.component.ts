@@ -25,7 +25,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     public darkTheme = false;
     public volume = 1000;
     public frequency = 500;
-    private _timer;
 
     constructor() {
     }
@@ -78,12 +77,14 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
                     this.finGrid.dataService.broadcastParams(this.frequency, this.volume, true);
                 } else {
                     const currData = this.finGrid.grid.filteredSortedData ?? this.finGrid.grid.data;
-                    this._timer = setInterval(() => this.finGrid.dataService.updateAllPriceValues(currData), this.controller.frequency);
+                    this.finGrid.dataService.updateAllPriceValues(currData);
                 }
                 break;
             }
             case 'stop': {
-                this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService.stopLiveData() : this.stopFeed();
+                if (this.finGrid.dataService.hasRemoteConnection) {
+                    this.finGrid.dataService.stopLiveData();
+                }
                 break;
             }
             case 'chart': {
@@ -189,15 +190,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
             this.dialog.open();
         }, 200);
     }
-
-
-    public stopFeed() {
-        if (this._timer) {
-            clearInterval(this._timer);
-        }
-    }
-
     public ngOnDestroy() {
-        this.stopFeed();
     }
 }
