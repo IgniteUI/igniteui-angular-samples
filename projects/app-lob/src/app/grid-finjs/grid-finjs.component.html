@@ -13,7 +13,8 @@
         [filterMode]="'excelStyleFilter'"
         (onRowSelectionChange)="rowSelectionChanged($event)"
         (keydown)="gridKeydown($event)"
-        (onGridKeydown)="customKeydown($event)">
+        (onGridKeydown)="customKeydown($event)"
+        [isLoading]="isLoading">
 
         <igx-grid-toolbar *ngIf="showToolbar">
             <igx-grid-toolbar-actions>
