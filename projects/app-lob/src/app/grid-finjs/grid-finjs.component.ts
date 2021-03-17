@@ -3,7 +3,6 @@ import { DOCUMENT } from '@angular/common';
 import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { Contract, REGIONS } from '../services/financialData';
 import { LocalDataService } from './localData.service';
-// tslint:disable-next-line:no-implicit-dependencies
 import ResizeObserver from "resize-observer-polyfill";
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';

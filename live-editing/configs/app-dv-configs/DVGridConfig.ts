@@ -26,7 +26,9 @@ import { Config, IConfigGenerator, AppModuleConfig, DependenciesType } from 'ign
 export class DVGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         'LocalDataService': '../../../projects/app-lob/src/app/grid-finjs/localData.service',
-        'IgxPreventDocumentScrollModule': '../../../src/app/directives/prevent-scroll.directive'
+        'IgxPreventDocumentScrollModule': '../../../src/app/directives/prevent-scroll.directive',
+        'ControllerComponent' : '../../../projects/app-lob/src/app/grid-finjs/controllers.component',
+        'GridFinJSComponent' : '../../../projects/app-lob/src/app/grid-finjs/grid-finjs.component'
 };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -84,15 +86,21 @@ export class DVGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'FinJSDemoComponent',
-            dependenciesType: DependenciesType.Charts,
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core", "resize-observer-polyfill"],
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/grid-finjs/localData.service.ts",
-                "/projects/app-lob/src/app/services/financialData.ts"],
+                "/projects/app-lob/src/app/services/financialData.ts","/projects/app-lob/src/app/grid-finjs/controllers.component.ts",
+                "/projects/app-lob/src/app/grid-finjs/grid-finjs.component.ts",
+                "/projects/app-lob/src/app/grid-finjs/controllers.component.html",
+                "/projects/app-lob/src/app/grid-finjs/grid-finjs.component.html",
+                "/projects/app-lob/src/app/grid-finjs/controllers.component.scss",
+                "/projects/app-lob/src/app/grid-finjs/grid-finjs.component.scss"
+            ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxCategoryChartModule',
                     'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxSwitchModule',
-                    'IgxRippleModule', 'FinJSDemoComponent', 'IgxDialogModule', 'LocalDataService'],
-                ngDeclarations: ['FinJSDemoComponent'],
+                    'IgxRippleModule', 'FinJSDemoComponent', 'IgxDialogModule', 'LocalDataService','ControllerComponent', 'GridFinJSComponent'],
+                ngDeclarations: ['FinJSDemoComponent','ControllerComponent', 'GridFinJSComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule', 'IgxCategoryChartModule', 'IgxDialogModule'],
                 ngProviders: ['LocalDataService', 'IgxExcelExporterService', 'IgxCsvExporterService']
