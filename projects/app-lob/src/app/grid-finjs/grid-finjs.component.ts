@@ -16,6 +16,7 @@ export class GridFinJSComponent implements OnInit {
     public frequency = 500;
     public data$: any;
     public columnFormat = { digitsInfo: '1.3-3'}
+    public columnFormatChangeP = { digitsInfo: '3.3-3'}
     public showToolbar = true;
     protected destroy$ = new Subject<any>();
     public overlaySettings: OverlaySettings = {

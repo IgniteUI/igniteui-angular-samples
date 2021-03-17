@@ -33,7 +33,7 @@ export class SignalRService {
                 this.hasRemoteConnection = false;
                 this.getData(1000);
             });
-        /* this.http.get('https://localhost:5001/webapi')
+        /* this.http.get('https://localhost:5001/webapi/streamHub')
             .subscribe(() => { }); */
     }
 
