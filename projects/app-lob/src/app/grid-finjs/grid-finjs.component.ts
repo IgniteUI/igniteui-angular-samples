@@ -2,7 +2,7 @@ import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild 
 import { DOCUMENT } from '@angular/common';
 import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { Subject } from 'rxjs';
-import { SignalRService } from './signal-r.service';
+import { SignalRService } from '../services/signal-r.service';
 
 @Component({
   providers: [SignalRService ],

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, NgZone } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
 import { BehaviorSubject } from 'rxjs';
-import { FinancialData } from '../services/financialData';
+import { FinancialData } from './financialData';
 
 @Injectable({
     providedIn: 'root'
