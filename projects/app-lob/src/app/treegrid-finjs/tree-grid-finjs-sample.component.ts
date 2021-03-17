@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
-import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
+import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment,
     IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
     PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
 import { timer } from "rxjs";
@@ -51,7 +51,26 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
             selected: false
         }
     ];
-    public groupColumns = ["Category", "Type", "Contract"];
+    public groupColumns = [
+        {
+            dir: SortingDirection.Asc,
+            fieldName: 'Category',
+            ignoreCase: false,
+            strategy: DefaultSortingStrategy.instance()
+        },
+        {
+            dir: SortingDirection.Asc,
+            fieldName: 'Type',
+            ignoreCase: false,
+            strategy: DefaultSortingStrategy.instance()
+        },
+        {
+            dir: SortingDirection.Desc,
+            fieldName: 'Contract',
+            ignoreCase: false,
+            strategy: DefaultSortingStrategy.instance()
+        }
+    ];
     public aggregations: ITreeGridAggregation[] = [
         {
             aggregate: (parent: any, data: any[]) => {
@@ -106,7 +125,6 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
 
     public ngOnInit() {
         this.overlaySettings.outlet = this.outlet;
-        this.grid1.sortingExpressions = [{ fieldName: this.groupColumnKey, dir: SortingDirection.Desc }];
         this.volumeChanged = this.volumeSlider.onValueChange.pipe(debounce(() => timer(200)));
         this.volumeChanged.subscribe(
             (x) => {
@@ -117,9 +135,9 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
 
     public ngAfterViewInit() {
         this.groupColumns.forEach(col => {
-            const colIndex = this.grid1.columns.findIndex(c => c.field === col);
-            if (colIndex >= 0) {
-                this.grid1.columns[colIndex].hidden = true;
+            const column = this.grid1.getColumnByName(col.fieldName);
+            if (column) {
+                column.hidden = !column.hidden;
             }
         });
         this.grid1.reflow();
@@ -190,13 +208,6 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
 
     public toggleToolbar() {
         this.showToolbar = !this.showToolbar;
-    }
-
-    public onColumnHiddenChanged(column: string) {
-        const colIndex = this.grid1.columns.findIndex(c => c.field === column);
-        if (colIndex >= 0) {
-            this.grid1.columns[colIndex].hidden = !this.grid1.columns[colIndex].hidden;
-        }
     }
 
     private negative = (rowData: any): boolean => {

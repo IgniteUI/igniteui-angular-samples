@@ -1,18 +1,21 @@
 
 <igx-chips-area class="chips-area" (reorder)="orderChanged($event)"
     (moveEnd)="onMoveEnd($event)">
-    <igx-chip *ngFor="let chip of groupColumns"
-        [id]="chip"
+    <igx-chip *ngFor="let expr of groupColumns"
+        [id]="expr.fieldName"
         displayDensity='compact'
         removable='true'
         [draggable]="'true'"
+        (chipClick)="onGroupColumnClick($event)"
         (remove)="onGroupColumnRemoved($event)">
-        {{chip}}
+        <span>{{ expr.fieldName }}</span>
+        <igx-icon igxSuffix>{{ expr.dir == 1 ? 'arrow_upward' : 'arrow_downward' }}</igx-icon>
     </igx-chip>
 </igx-chips-area>
 
 <span class="group-drop-area"
     igxDrop
     (enter)="onGroupAreaEnter($event)"
+    (leave)="onGroupAreaLeave($event)"
     (dropped)="onGroupColumnDropped($event)">
     Drag a column header and drop it here to group by that column.</span>

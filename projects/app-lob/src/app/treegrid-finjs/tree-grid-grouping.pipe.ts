@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from "@angular/core";
+import { IGroupingExpression, SortingDirection } from "igniteui-angular";
 
 class GroupByRecord {
     public key: any;
@@ -18,7 +19,7 @@ export class ITreeGridAggregation {
 export class TreeGridGroupingPipe implements PipeTransform {
 
     public transform(collection: any[],
-                     groupColumns: string[],
+                     groupColumns: IGroupingExpression[],
                      aggregations: ITreeGridAggregation[],
                      groupKey: string,
                      primaryKey: string,
@@ -65,7 +66,7 @@ export class TreeGridGroupingPipe implements PipeTransform {
         }
     }
 
-    private groupByMultiple(array: any[], fieldNames: string[], index = 0): GroupByRecord[] {
+    private groupByMultiple(array: any[], fieldNames: IGroupingExpression[], index = 0): GroupByRecord[] {
         const res = this.groupBy(array, fieldNames[index]);
 
         if (index + 1 < fieldNames.length) {
@@ -77,11 +78,16 @@ export class TreeGridGroupingPipe implements PipeTransform {
         return res;
     }
 
-    private groupBy(array: any[], fieldName: string): GroupByRecord[] {
+    private groupBy(array: any[], expression: IGroupingExpression): GroupByRecord[] {
         const map: Map<any, GroupByRecord> = new Map<any, GroupByRecord>();
+        if (expression.dir === SortingDirection.Asc) {
+            array.sort((a, b) => a[expression.fieldName] > b[expression.fieldName] ? 1 : -1);
+        } else if (expression.dir === SortingDirection.Desc) {
+            array.sort((a, b) => a[expression.fieldName] > b[expression.fieldName] ? -1 : 1);
+        }
 
         for (const record of array) {
-            const key = record[fieldName];
+            const key = record[expression.fieldName];
             let groupByRecord: GroupByRecord;
 
             if (map.has(key)) {
