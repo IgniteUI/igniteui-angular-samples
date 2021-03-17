@@ -52,30 +52,30 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
             selected: false
         }
     ];
-    public groupColumns = ["Category", "Type", "Contract"];
+    public groupColumns = ["category", "type", "contract"];
     public aggregations: ITreeGridAggregation[] = [
         {
             aggregate: (parent: any, data: any[]) => {
-                return data.map((r) => r.Change).reduce((ty, u) => ty + u, 0);
+                return data.map((r) => r.change).reduce((ty, u) => ty + u, 0);
             },
-            field: "Change"
+            field: "change"
         },
         {
             aggregate: (parent: any, data: any[]) => {
                 return data.map((r) => r.Price).reduce((ty, u) => ty + u, 0);
             },
-            field: "Price"
+            field: "price"
         },
         {
             aggregate: (parent: any, data: any[]) => {
-                return parent.Change / (parent.Price - parent.Change) * 100;
+                return parent.change / (parent.price - parent.change) * 100;
             },
-            field: "Change(%)"
+            field: "changeP"
         }
     ];
-    public primaryKey = "ID";
-    public childDataKey = "Children";
-    public groupColumnKey = "Categories";
+    public primaryKey = "id";
+    public childDataKey = "children";
+    public groupColumnKey = "categories";
 
     public items: any[] = [{field: "Export native"}, { field: "Export JS Excel"}];
 
@@ -187,22 +187,22 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     }
 
     private negative = (rowData: any): boolean => {
-        return rowData["Change(%)"] < 0;
+        return rowData["changeP"] < 0;
     }
     private positive = (rowData: any): boolean => {
-        return rowData["Change(%)"] > 0;
+        return rowData["changeP"] > 0;
     }
     private changeNegative = (rowData: any): boolean => {
-        return rowData["Change(%)"] < 0 && rowData["Change(%)"] > -1;
+        return rowData["changeP"] < 0 && rowData["changeP"] > -1;
     }
     private changePositive = (rowData: any): boolean => {
-        return rowData["Change(%)"] > 0 && rowData["Change(%)"] < 1;
+        return rowData["changeP"] > 0 && rowData["changeP"] < 1;
     }
     private strongPositive = (rowData: any): boolean => {
-        return rowData["Change(%)"] >= 1;
+        return rowData["changeP"] >= 1;
     }
     private strongNegative = (rowData: any, key: string): boolean => {
-        return rowData["Change(%)"] <= -1;
+        return rowData["changeP"] <= -1;
     }
 
     // tslint:disable:member-ordering
@@ -280,7 +280,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
      * Generates ne values for Change, Price and ChangeP columns
      */
     private randomizeObjectData(dataObj) {
-        const changeP = "Change(%)";
+        const changeP = "changeP";
         const res = this.generateNewPrice(dataObj.Price);
         dataObj.Change = res.Price - dataObj.Price;
         dataObj.Price = res.Price;
