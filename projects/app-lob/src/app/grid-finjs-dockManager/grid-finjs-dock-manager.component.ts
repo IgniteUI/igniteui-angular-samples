@@ -14,6 +14,7 @@ import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPaneOrientation }
 export class GridFinJSDockManagerComponent {
     public volume = 1000;
     public frequency = 500;
+    public theme = false;
     public data$: any;
     public columnFormat = { digitsInfo: '1.3-3'}
     public showToolbar = true;
@@ -76,4 +77,6 @@ export class GridFinJSDockManagerComponent {
         },
         floatingPanes: []
     };
+
+
 }

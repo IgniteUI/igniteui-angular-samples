@@ -4,14 +4,15 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { IgxButtonModule, IgxDialogModule, IgxDividerModule, IgxGridModule, IgxSliderModule, IgxSwitchModule, IgxTabsModule } from "igniteui-angular";
 import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
+import { FinJsControllerComponent } from "./finjs-controller-component/finjs-controller.component";
 import { GridFinJSDockManagerRoutingModule } from "./grid-finjs-dock-manager-routing.module";
 import { GridFinJSDockManagerComponent } from "./grid-finjs-dock-manager.component";
 
 
 @NgModule({
     declarations: [
-        GridFinJSDockManagerComponent
-
+        GridFinJSDockManagerComponent,
+        FinJsControllerComponent
     ],
     imports: [
         GridFinJSDockManagerRoutingModule,
