@@ -23,12 +23,14 @@ export class IgxTreeGridGroupAreaComponent {
         this.groupColumns = this.groupColumns.filter(item => item !== columnName);
 
         this.groupColumnsChange.emit(this.groupColumns);
-        this.onColumnHiddenChange(columnName);
+        this.onColumnHiddenChange(columnName, false);
     }
 
     public onGroupAreaEnter(event) {
-        console.log(event);
-        event.drag.icon.innerText = 'group_work';
+        const column: IgxColumnComponent = event.dragData;
+        if (this.groupColumns.indexOf(column.field) < 0) {
+            event.drag.icon.innerText = 'group_work';
+        }
     }
 
     public onGroupAreaLeave(event) {
@@ -44,7 +46,7 @@ export class IgxTreeGridGroupAreaComponent {
                 this.groupColumns = [...this.groupColumns];
 
                 this.groupColumnsChange.emit(this.groupColumns);
-                this.onColumnHiddenChange(column.field);
+                this.onColumnHiddenChange(column.field, true);
             }
         }
     }
@@ -64,10 +66,10 @@ export class IgxTreeGridGroupAreaComponent {
         this.groupColumnsChange.emit(this.groupColumns);
     }
 
-    private onColumnHiddenChange(columnName: string) {
+    private onColumnHiddenChange(columnName: string, hidden: boolean) {
         const column = this.grid.getColumnByName(columnName);
         if (column) {
-            column.hidden = !column.hidden;
+            column.hidden = hidden;
         }
 
         const groupColumn = this.grid.getColumnByName(this.groupColumnKey);
