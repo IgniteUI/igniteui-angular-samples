@@ -1,15 +1,13 @@
 
 <igx-chips-area class="chips-area" (reorder)="orderChanged($event)"
-    (moveEnd)="onMoveEnd($event)">
-    <igx-chip *ngFor="let expr of groupColumns"
-        [id]="expr.fieldName"
+    (moveEnd)="onMoveEnd()">
+    <igx-chip *ngFor="let col of groupColumns"
+        [id]="col"
         displayDensity='compact'
         removable='true'
         [draggable]="'true'"
-        (chipClick)="onGroupColumnClick($event)"
         (remove)="onGroupColumnRemoved($event)">
-        <span>{{ expr.fieldName }}</span>
-        <igx-icon igxSuffix>{{ expr.dir == 1 ? 'arrow_upward' : 'arrow_downward' }}</igx-icon>
+        <span>{{ col }}</span>
     </igx-chip>
 </igx-chips-area>
 

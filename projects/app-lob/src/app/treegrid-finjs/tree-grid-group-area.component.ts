@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import {
-    DefaultSortingStrategy, IBaseChipEventArgs, IChipClickEventArgs, IChipsAreaReorderEventArgs, IGroupingExpression,
-    IgxColumnComponent, IgxDropDirective, IgxTreeGridComponent, SortingDirection
+    IBaseChipEventArgs, IChipsAreaReorderEventArgs, IgxColumnComponent, IgxDropDirective, IgxTreeGridComponent
 } from "igniteui-angular";
 import { LocalDataService } from "../grid-finjs/localData.service";
 
@@ -16,32 +15,19 @@ export class IgxTreeGridGroupAreaComponent {
     @Input() grid: IgxTreeGridComponent;
     @Input() groupColumnKey: string;
 
-    @Input() groupColumns: IGroupingExpression[];
-    @Output() groupColumnsChange = new EventEmitter<IGroupingExpression[]>();
-
-    onGroupColumnClick(event: IChipClickEventArgs) {
-        const columnName = event.owner.id;
-        const index = this.groupColumns.findIndex(item => item.fieldName === columnName);
-        const groupExpr = this.groupColumns[index];
-        if (groupExpr.dir === SortingDirection.Asc) {
-            groupExpr.dir = SortingDirection.Desc
-        } else {
-            groupExpr.dir = SortingDirection.Asc
-        }
-
-        this.groupColumns = [...this.groupColumns];
-        this.groupColumnsChange.emit(this.groupColumns);
-    }
+    @Input() groupColumns: string[];
+    @Output() groupColumnsChange = new EventEmitter<string[]>();
 
     public onGroupColumnRemoved(event: IBaseChipEventArgs) {
         const columnName = event.owner.id;
-        this.groupColumns = this.groupColumns.filter(item => item.fieldName !== columnName);
+        this.groupColumns = this.groupColumns.filter(item => item !== columnName);
 
         this.groupColumnsChange.emit(this.groupColumns);
         this.onColumnHiddenChange(columnName);
     }
 
     public onGroupAreaEnter(event) {
+        console.log(event);
         event.drag.icon.innerText = 'group_work';
     }
 
@@ -53,13 +39,8 @@ export class IgxTreeGridGroupAreaComponent {
         const drag: IgxDropDirective = event.owner;
         if (drag instanceof IgxDropDirective) {
             const column: IgxColumnComponent = event.dragData;
-            if (this.groupColumns.findIndex(c => c.fieldName === column.field) < 0 && column.groupable) {
-                this.groupColumns.push({
-                    dir: SortingDirection.Asc,
-                    fieldName: column.field,
-                    ignoreCase: false,
-                    strategy: DefaultSortingStrategy.instance()
-                });
+            if (this.groupColumns.indexOf(column.field) < 0 && column.groupable) {
+                this.groupColumns.push(column.field);
                 this.groupColumns = [...this.groupColumns];
 
                 this.groupColumnsChange.emit(this.groupColumns);
@@ -72,14 +53,14 @@ export class IgxTreeGridGroupAreaComponent {
         const newColumnGroups = [];
         for (const chip of event.chipsArray) {
             const col = this.groupColumns.filter((item) => {
-                return item.fieldName === chip.id;
+                return item === chip.id;
             })[0];
             newColumnGroups.push(col);
         }
         this.groupColumns = newColumnGroups;
     }
 
-    public onMoveEnd(event: any) {
+    public onMoveEnd() {
         this.groupColumnsChange.emit(this.groupColumns);
     }
 
