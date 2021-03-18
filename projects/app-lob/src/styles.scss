@@ -1,8 +1,21 @@
 // CSS Reset, comment out if not required or using a different module
 // @import '~minireset.css/minireset';
 @import '~igniteui-angular/lib/core/styles/themes/index';
+@import '~igniteui-dockmanager/dist/collection/styles/igc.themes';
+
 @include igx-core();
 @include igx-theme($default-palette, $legacy-support: true);
+
+.light-theme {
+    @include igx-light-theme($default-palette);
+}
+
+.dark-theme {
+    background: #333;
+    color: #fff;
+
+    @include igx-dark-theme($default-palette);
+}
 
 @mixin scrollbar-love($scrollbar-color: null) {
     $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));

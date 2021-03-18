@@ -1,5 +1,50 @@
-<igc-dockmanager #dock class="light-theme dock-m-position" [layout]="docLayout">
-    <div slot="gridStockPrices" style="height: 100%">
-        <app-finjs-grid-controller></app-finjs-grid-controller>
+<div  style="height: 5%;">
+    <igx-switch  [(ngModel)]="theme">Dark Mode</igx-switch>
+</div>
+
+<igc-dockmanager #dock class="{{theme ? 'dark-theme' : 'light-theme'}}  dock-m-position" [layout]="docLayout">
+    <div slot="gridStockPrices" style="height: 100%;">
+        <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'"
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'">
+            <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
+                    [sortable]="c.sortable"
+                    [filterable]="c.filterable"
+                    [dataType]="c.type"
+                    [bodyTemplate]="c.bodyTemplate">
+            </igx-column>
+        </igx-grid>
+    </div>
+    <div slot="forexMarket" style="height: 100%;">
+        <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'"
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'">
+            <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
+                    [sortable]="c.sortable"
+                    [filterable]="c.filterable"
+                    [dataType]="c.type"
+                    [bodyTemplate]="c.bodyTemplate">
+            </igx-column>
+        </igx-grid>
+    </div>
+    <div slot="content4" style="height: 100%;">
+        <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'"
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'">
+            <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
+                    [sortable]="c.sortable"
+                    [filterable]="c.filterable"
+                    [dataType]="c.type"
+                    [bodyTemplate]="c.bodyTemplate">
+            </igx-column>
+        </igx-grid>
+    </div>
+    <div slot="etfStockPrices" style="height: 100%;">
+        <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'"
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'">
+            <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
+                    [sortable]="c.sortable"
+                    [filterable]="c.filterable"
+                    [dataType]="c.type"
+                    [bodyTemplate]="c.bodyTemplate">
+            </igx-column>
+        </igx-grid>
     </div>
 </igc-dockmanager>
