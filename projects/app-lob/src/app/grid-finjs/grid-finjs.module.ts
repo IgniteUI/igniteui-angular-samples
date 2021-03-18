@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxButtonModule, IgxDialogModule, IgxExcelExporterService, IgxGridModule,
-    IgxSliderModule, IgxSwitchModule
+    IgxSliderModule, IgxSwitchModule, IgxToastModule
 } from "igniteui-angular";
 import {
     IgxBollingerBandsOverlayModule, IgxCategoryChartModule, IgxCategoryXAxisModule,
@@ -43,7 +43,8 @@ import { LocalDataService } from './localData.service';
         IgxSliderModule,
         GridFinjsRoutingModule,
         IgxGridModule,
-        IgxDialogModule
+        IgxDialogModule,
+        IgxToastModule
     ],
     providers: [LocalDataService, IgxExcelExporterService]
 })

@@ -1,15 +1,15 @@
-import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
-import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment,
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from "@angular/core";
+import {
+    AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
     IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
-    PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
-import { timer } from "rxjs";
-import { debounce } from "rxjs/operators";
-import { LocalDataService } from "../grid-finjs/localData.service";
+    PositionSettings, SortingDirection, VerticalAlignment
+} from "igniteui-angular";
 import { Contract, REGIONS } from "../services/financialData";
 import { ITreeGridAggregation } from "./tree-grid-grouping.pipe";
+import { SignalRService } from '../services/signal-r.service';
 
 @Component({
-    providers: [LocalDataService],
+    providers: [SignalRService],
     selector: "app-tree-grid-finjs-sample",
     styleUrls: ["./tree-grid-finjs-sample.component.scss"],
     templateUrl: "./tree-grid-finjs-sample.component.html"
@@ -27,17 +27,11 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     public theme = false;
     public volume = 1000;
     public frequency = 500;
-    public data: any[] = [];
+    public data$: any;
     public overlaySettings: OverlaySettings = {
         modal: false
     };
     public controls = [
-        {
-            disabled: false,
-            icon: "update",
-            label: "LIVE PRICES",
-            selected: false
-        },
         {
             disabled: false,
             icon: "update",
@@ -51,51 +45,32 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
             selected: false
         }
     ];
-    public groupColumns = [
-        {
-            dir: SortingDirection.Asc,
-            fieldName: 'Category',
-            ignoreCase: false,
-            strategy: DefaultSortingStrategy.instance()
-        },
-        {
-            dir: SortingDirection.Asc,
-            fieldName: 'Type',
-            ignoreCase: false,
-            strategy: DefaultSortingStrategy.instance()
-        },
-        {
-            dir: SortingDirection.Desc,
-            fieldName: 'Contract',
-            ignoreCase: false,
-            strategy: DefaultSortingStrategy.instance()
-        }
-    ];
+    public groupColumns = ["category", "type", "contract"];
     public aggregations: ITreeGridAggregation[] = [
         {
             aggregate: (parent: any, data: any[]) => {
-                return data.map((r) => r.Change).reduce((ty, u) => ty + u, 0);
+                return data.map((r) => r.change).reduce((ty, u) => ty + u, 0);
             },
-            field: "Change"
+            field: "change"
         },
         {
             aggregate: (parent: any, data: any[]) => {
                 return data.map((r) => r.Price).reduce((ty, u) => ty + u, 0);
             },
-            field: "Price"
+            field: "price"
         },
         {
             aggregate: (parent: any, data: any[]) => {
-                return parent.Change / (parent.Price - parent.Change) * 100;
+                return parent.change / (parent.price - parent.change) * 100;
             },
-            field: "Change(%)"
+            field: "changeP"
         }
     ];
-    public primaryKey = "ID";
-    public childDataKey = "Children";
-    public groupColumnKey = "Categories";
+    public primaryKey = "id";
+    public childDataKey = "children";
+    public groupColumnKey = "categories";
 
-    public items: any[] = [{field: "Export native"}, { field: "Export JS Excel"}];
+    public items: any[] = [{ field: "Export native" }, { field: "Export JS Excel" }];
 
     public _positionSettings: PositionSettings = {
         horizontalDirection: HorizontalAlignment.Left,
@@ -112,30 +87,33 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
 
     public contracts = Contract;
     public regions = REGIONS;
+    public isLoading = true;
 
     private subscription;
     private selectedButton;
     private _timer;
-    private volumeChanged;
 
-    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef) {
-        this.subscription = this.localService.getData(this.volume);
-        this.localService.records.subscribe((d) => this.data = d);
+    constructor(private elRef: ElementRef, public dataService: SignalRService) {
+        this.dataService.startConnection();
+        this.overlaySettings.outlet = this.outlet;
+        this.data$ = this.dataService.data;
+        this.dataService.getData(0);
+
+        this.data$.subscribe((data) => {
+            if (data.length !== 0) {
+                this.isLoading = false;
+            };
+        })
     }
 
     public ngOnInit() {
         this.overlaySettings.outlet = this.outlet;
-        this.volumeChanged = this.volumeSlider.onValueChange.pipe(debounce(() => timer(200)));
-        this.volumeChanged.subscribe(
-            (x) => {
-                this.localService.getData(this.volume);
-            },
-            (err) => console.log("Error: " + err));
+        this.grid1.sortingExpressions = [{ fieldName: this.groupColumnKey, dir: SortingDirection.Desc }];
     }
 
     public ngAfterViewInit() {
         this.groupColumns.forEach(col => {
-            const column = this.grid1.getColumnByName(col.fieldName);
+            const column = this.grid1.getColumnByName(col);
             if (column) {
                 column.hidden = !column.hidden;
             }
@@ -146,25 +124,31 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     public onButtonAction(event: any) {
         switch (event.index) {
             case 0: {
-                    this.disableOtherButtons(event.index, true);
-                    this._timer = setInterval(() => this.ticker(this.data), this.frequency);
-                    break;
+                this.disableOtherButtons(event.index, true);
+                if (this.dataService.hasRemoteConnection) {
+                    this.dataService.broadcastParams(this.frequency, this.volume, true);
+                } else {
+                    const currData = this.grid1.filteredSortedData ?? this.grid1.data;
+                    this._timer = setInterval(() => this.dataService.updateAllPriceValues(currData), this.frequency);
                 }
+                break;
+            }
             case 1: {
-                    this.disableOtherButtons(event.index, true);
-                    this._timer = setInterval(() => this.tickerAllPrices(this.data), this.frequency);
-                    break;
-                }
-                case 2: {
-                    this.disableOtherButtons(event.index, false);
+                if (this.dataService.hasRemoteConnection) {
+                    this.dataService.stopLiveData();
+                } else {
                     this.stopFeed();
-                    break;
                 }
-            default:
-                {
-                    break;
-                }
+                this.disableOtherButtons(event.index, false);
+                break;
+            }
+            default: break;
         }
+    }
+
+    updateVolume() {
+        this.dataService.hasRemoteConnection ? this.dataService.broadcastParams(this.frequency, this.volume, false) :
+        this.dataService.getData(this.volume);
     }
 
     public stopFeed() {
@@ -203,7 +187,6 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
 
     public ngOnDestroy() {
         this.stopFeed();
-        this.volumeChanged.unsubscribe();
     }
 
     public toggleToolbar() {
@@ -211,22 +194,22 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     }
 
     private negative = (rowData: any): boolean => {
-        return rowData["Change(%)"] < 0;
+        return rowData["changeP"] < 0;
     }
     private positive = (rowData: any): boolean => {
-        return rowData["Change(%)"] > 0;
+        return rowData["changeP"] > 0;
     }
     private changeNegative = (rowData: any): boolean => {
-        return rowData["Change(%)"] < 0 && rowData["Change(%)"] > -1;
+        return rowData["changeP"] < 0 && rowData["changeP"] > -1;
     }
     private changePositive = (rowData: any): boolean => {
-        return rowData["Change(%)"] > 0 && rowData["Change(%)"] < 1;
+        return rowData["changeP"] > 0 && rowData["changeP"] < 1;
     }
     private strongPositive = (rowData: any): boolean => {
-        return rowData["Change(%)"] >= 1;
+        return rowData["changeP"] >= 1;
     }
     private strongNegative = (rowData: any, key: string): boolean => {
-        return rowData["Change(%)"] <= -1;
+        return rowData["changeP"] <= -1;
     }
 
     // tslint:disable:member-ordering
@@ -255,7 +238,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
         this.intervalSlider.disabled = disableButtons;
         this.selectedButton = ind;
         this.buttonGroup1.buttons.forEach((button, index) => {
-            if (index === 2) { button.disabled = !disableButtons; } else {
+            if (index === 1) { button.disabled = !disableButtons; } else {
                 button.disabled = disableButtons;
             }
         });
@@ -267,68 +250,6 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
      */
     private parentComponentEl() {
         return this.elRef.nativeElement.parentElement.parentElement;
-    }
-
-    private ticker(data: any) {
-        this.data = this.updateRandomPrices(data);
-    }
-
-    private tickerAllPrices(data: any) {
-        this.data = this.updateAllPrices(data);
-    }
-
-    /**
-     * Updates values in every record
-     */
-    private updateAllPrices(data: any[]): any {
-        for (const dataRow of data) {
-            this.randomizeObjectData(dataRow);
-        }
-        return Array.from(data);
-    }
-
-    /**
-     * Updates values in random number of records
-     */
-    private updateRandomPrices(data: any[]): any {
-        const newData = data.slice();
-        let y = 0;
-        for (let i = Math.round(Math.random() * 10); i < newData.length; i += Math.round(Math.random() * 10)) {
-            this.randomizeObjectData(newData[i]);
-            y++;
-        }
-        return newData;
-    }
-
-    /**
-     * Generates ne values for Change, Price and ChangeP columns
-     */
-    private randomizeObjectData(dataObj) {
-        const changeP = "Change(%)";
-        const res = this.generateNewPrice(dataObj.Price);
-        dataObj.Change = res.Price - dataObj.Price;
-        dataObj.Price = res.Price;
-        dataObj[changeP] = res.ChangePercent;
-    }
-
-    private generateNewPrice(oldPrice): any {
-        let rnd = Math.random();
-        rnd = Math.round(rnd * 100) / 100;
-        const volatility = 2;
-        let newPrice = 0;
-        let changePercent = 2 * volatility * rnd;
-        if (changePercent > volatility) {
-            changePercent -= (2 * volatility);
-        }
-        const changeAmount = oldPrice * (changePercent / 100);
-        newPrice = oldPrice + changeAmount;
-        newPrice = Math.round(newPrice * 100) / 100;
-        const result = {Price: 0, ChangePercent: 0};
-        changePercent = Math.round(changePercent * 100) / 100;
-        result.Price = newPrice;
-        result.ChangePercent = changePercent;
-
-        return result;
     }
 
     get buttonSelected(): number {
