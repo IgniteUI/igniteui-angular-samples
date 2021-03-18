@@ -1,7 +1,8 @@
-import { AfterContentInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
-import { SignalRService } from '../grid-finjs/signal-r.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { SignalRService } from '../services/signal-r.service';
 
 @Component({
   providers: [SignalRService],
@@ -13,19 +14,26 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     public volume = 10000;
     public frequency = 100;
     public theme = false;
+    public isLoading = true;
     public data: any;
-    private _timer;
+    private destroy$ = new Subject<any>();
 
     constructor(public dataService: SignalRService) {}
 
     public ngOnInit() {
-        this.dataService.startConnection();
+        this.dataService.startConnection(this.frequency, this.volume, true);
         this.data = this.dataService.data;
-        this.dataService.getData(this.volume);
+         this.data.pipe(takeUntil(this.destroy$)).subscribe((data) => {
+            if (data.length !== 0) {
+                this.isLoading = false;
+            };
+        });
     }
 
     public ngOnDestroy() {
         this.dataService.stopLiveData();
+        this.destroy$.next(true);
+        this.destroy$.complete();
     }
 
     public docLayout: IgcDockManagerLayout = {
@@ -37,7 +45,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
                     size: 50,
                     type: IgcDockManagerPaneType.contentPane,
                     contentId: "gridStockPrices",
-                    header: "Stock Prices",
+                    header: "Stock Market Data",
                     allowClose: false
                 },
                 {
@@ -58,11 +66,11 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
                                         {
                                             type: IgcDockManagerPaneType.contentPane,
                                             contentId: 'forexMarket',
-                                            header: 'Forex'
+                                            header: 'Market Data 1'
                                         },
                                         {
                                             type: IgcDockManagerPaneType.contentPane,
-                                            contentId: 'content4',
+                                            contentId: 'Market Data 2',
                                             header: 'List'
                                         }
                                     ]
@@ -72,7 +80,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
                        {
                         type: IgcDockManagerPaneType.contentPane,
                         contentId: "etfStockPrices",
-                        header: "ETF",
+                        header: "Market Data 3",
                         size: 50,
                         allowClose: false
                        }
@@ -121,29 +129,6 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
         { field: 'cpn', width: "136px", sortable: false, filterable: false, type: 'string'}
     ];
 
-    public onPlayAction(event: any) {
-        switch (event.action) {
-            case 'playAll': {
-                if (this.dataService.hasRemoteConnection) {
-                    this.dataService.broadcastParams(this.frequency, this.volume, true);
-                } else {
-                   //  this._timer = setInterval(() => this.finGrid.dataService.updateAllPriceValues(currData), this.controller.frequency);
-                }
-                break;
-            }
-            case 'stop': {
-                this.dataService.hasRemoteConnection ? this.dataService.stopLiveData() : this.stopFeed();
-                break;
-            }
-            default: break;
-        }
-    }
-
-    public stopFeed() {
-        if (this._timer) {
-            clearInterval(this._timer);
-        }
-    }
 
 
 }

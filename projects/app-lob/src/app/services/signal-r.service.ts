@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, OnDestroy } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
 import { BehaviorSubject } from 'rxjs';
 import { FinancialData } from './financialData';
@@ -7,17 +7,22 @@ import { FinancialData } from './financialData';
 @Injectable({
     providedIn: 'root'
 })
-export class SignalRService {
+export class SignalRService implements OnDestroy {
     public data: BehaviorSubject<any[]>;
     public hasRemoteConnection: boolean;
     private hubConnection: signalR.HubConnection;
     private financialData: FinancialData = new FinancialData();
+    private _timer;
 
     constructor(private zone: NgZone, private http: HttpClient) {
         this.data = new BehaviorSubject([]);
     }
 
-    public startConnection = () => {
+    public ngOnDestroy() {
+        this.stopLiveData();
+    }
+
+    public startConnection = (interval = 500, volume = 1000, live = false) => {
         this.hubConnection = new signalR.HubConnectionBuilder()
             .configureLogging(signalR.LogLevel.Trace)
             .withUrl('https://staging.infragistics.com/angular-apis/webapi/streamHub')
@@ -27,23 +32,35 @@ export class SignalRService {
             .then(() => {
                 this.hasRemoteConnection = true;
                 this.registerSignalEvents();
-                this.broadcastParams(500, 1000, false);
+                this.broadcastParams(interval, volume, live);
             })
             .catch(() => {
                 this.hasRemoteConnection = false;
-                this.getData(1000);
+                live ? this._timer = setInterval(() => this.updateAllPriceValues(this.financialData.generateData(volume))) : this.getData(volume);
             });
     }
 
-    public broadcastParams = (ms, volume, live) => {
-        this.hubConnection.invoke('updateparameters', ms, volume, live)
-            .then(() => console.log('requestLivedata', volume))
-            .catch(err => console.error(err));
+    public broadcastParams = (frequency, volume, live) => {
+        this.hubConnection.invoke('updateparameters', frequency, volume, live)
+            .then(() => console.log('requestLiveData', volume))
+            .catch(err => {
+                console.error(err);
+            });
     }
 
     public stopLiveData = () => {
-        this.hubConnection.invoke('StopTimer')
-        .catch(err => console.error(err));
+        if (this.hasRemoteConnection) {
+            this.hubConnection.invoke('StopTimer')
+            .catch(err => console.error(err));
+        } else {
+            this.stopFeed();
+        }
+    }
+
+    private stopFeed() {
+        if (this._timer) {
+            clearInterval(this._timer);
+        }
     }
 
     private registerSignalEvents() {
