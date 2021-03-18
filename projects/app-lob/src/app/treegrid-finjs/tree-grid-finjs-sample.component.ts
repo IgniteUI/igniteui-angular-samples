@@ -30,6 +30,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     public volume = 1000;
     public frequency = 500;
     public data$: any;
+    public data: any[] = [];
     public overlaySettings: OverlaySettings = {
         modal: false
     };
@@ -93,6 +94,8 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
 
     private subscription;
     private selectedButton;
+    private _timer;
+    private volumeChanged;
 
     constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef, public dataService: SignalRService) {
         this.dataService.startConnection();
@@ -117,13 +120,22 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     public onButtonAction(event: any) {
         switch (event.index) {
             case 0: {
+                debugger;
                 this.disableOtherButtons(event.index, true);
-                this.tickerAllPrices();
+                if (this.dataService.hasRemoteConnection) {
+                    this.dataService.broadcastParams(this.frequency, this.volume, true);
+                } else {
+                    const currData = this.grid1.filteredSortedData ?? this.grid1.data;
+                    this._timer = setInterval(() => this.dataService.updateAllPriceValues(currData), this.frequency);
+                }
                 break;
             }
             case 1: {
+                debugger;
                 if (this.dataService.hasRemoteConnection) {
                     this.dataService.stopLiveData();
+                } else {
+                    this.stopFeed();
                 }
                 this.disableOtherButtons(event.index, false);
                 break;
@@ -132,6 +144,15 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
                 {
                     break;
                 }
+        }
+    }
+
+    public stopFeed() {
+        if (this._timer) {
+            clearInterval(this._timer);
+        }
+        if (this.subscription) {
+            this.subscription.unsubscribe();
         }
     }
 
@@ -161,6 +182,8 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     }
 
     public ngOnDestroy() {
+        this.stopFeed();
+        this.volumeChanged.unsubscribe();
     }
 
     public toggleToolbar() {
@@ -226,13 +249,68 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
         return this.elRef.nativeElement.parentElement.parentElement;
     }
 
-    private tickerAllPrices() {
-        if (this.dataService.hasRemoteConnection) {
-            this.dataService.broadcastParams(this.frequency, this.volume, true);
-        } else {
-            const currData = this.grid1.filteredSortedData ?? this.grid1.data;
-            this.dataService.updateAllPriceValues(currData);
+    private ticker(data: any) {
+        this.data = this.updateRandomPrices(data);
+    }
+
+    private tickerAllPrices(data: any) {
+        this.data = this.updateAllPrices(data);
+        // const currData = this.grid1.filteredSortedData ?? this.grid1.data;
+        // this.dataService.updateAllPriceValues(currData);
+    }
+
+    /**
+     * Updates values in every record
+     */
+    private updateAllPrices(data: any[]): any {
+        for (const dataRow of data) {
+            this.randomizeObjectData(dataRow);
         }
+        return Array.from(data);
+    }
+
+    /**
+     * Updates values in random number of records
+     */
+    private updateRandomPrices(data: any[]): any {
+        const newData = data.slice();
+        let y = 0;
+        for (let i = Math.round(Math.random() * 10); i < newData.length; i += Math.round(Math.random() * 10)) {
+            this.randomizeObjectData(newData[i]);
+            y++;
+        }
+        return newData;
+    }
+
+    /**
+     * Generates ne values for Change, Price and ChangeP columns
+     */
+    private randomizeObjectData(dataObj) {
+        const changeP = "Change(%)";
+        const res = this.generateNewPrice(dataObj.Price);
+        dataObj.Change = res.Price - dataObj.Price;
+        dataObj.Price = res.Price;
+        dataObj[changeP] = res.ChangePercent;
+    }
+
+    private generateNewPrice(oldPrice): any {
+        let rnd = Math.random();
+        rnd = Math.round(rnd * 100) / 100;
+        const volatility = 2;
+        let newPrice = 0;
+        let changePercent = 2 * volatility * rnd;
+        if (changePercent > volatility) {
+            changePercent -= (2 * volatility);
+        }
+        const changeAmount = oldPrice * (changePercent / 100);
+        newPrice = oldPrice + changeAmount;
+        newPrice = Math.round(newPrice * 100) / 100;
+        const result = { Price: 0, ChangePercent: 0 };
+        changePercent = Math.round(changePercent * 100) / 100;
+        result.Price = newPrice;
+        result.ChangePercent = changePercent;
+
+        return result;
     }
 
     get buttonSelected(): number {
