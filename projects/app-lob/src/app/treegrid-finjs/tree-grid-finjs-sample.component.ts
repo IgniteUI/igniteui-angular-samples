@@ -1,8 +1,10 @@
 
 import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
-import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
+import {
+    AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
     IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
-    PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
+    PositionSettings, SortingDirection, VerticalAlignment
+} from "igniteui-angular";
 import { LocalDataService } from "../grid-finjs/localData.service";
 import { Contract, REGIONS } from "../services/financialData";
 import { ITreeGridAggregation } from "./tree-grid-grouping.pipe";
@@ -15,7 +17,7 @@ import { SignalRService } from '../services/signal-r.service';
     templateUrl: "./tree-grid-finjs-sample.component.html"
 })
 
-export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
+export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     @ViewChild("grid1", { static: true }) public grid1: IgxTreeGridComponent;
     @ViewChild("buttonGroup1", { static: true }) public buttonGroup1: IgxButtonGroupComponent;
     @ViewChild("slider1", { static: true }) public volumeSlider: IgxSliderComponent;
@@ -70,7 +72,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     public childDataKey = "children";
     public groupColumnKey = "categories";
 
-    public items: any[] = [{field: "Export native"}, { field: "Export JS Excel"}];
+    public items: any[] = [{ field: "Export native" }, { field: "Export JS Excel" }];
 
     public _positionSettings: PositionSettings = {
         horizontalDirection: HorizontalAlignment.Left,
@@ -92,17 +94,16 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     private subscription;
     private selectedButton;
 
-    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef,
-        public dataService: SignalRService) {
-            this.dataService.startConnection();
-            this.overlaySettings.outlet = this.outlet;
-            this.data$ = this.dataService.data;
-    
-            this.data$.subscribe((data) => {
-                if (data.length !== 0) {
-                    this.isLoading = false
-                };
-            })
+    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef, public dataService: SignalRService) {
+        this.dataService.startConnection();
+        this.overlaySettings.outlet = this.outlet;
+        this.data$ = this.dataService.data;
+
+        this.data$.subscribe((data) => {
+            if (data.length !== 0) {
+                this.isLoading = false
+            };
+        })
     }
 
     public ngOnInit() {
