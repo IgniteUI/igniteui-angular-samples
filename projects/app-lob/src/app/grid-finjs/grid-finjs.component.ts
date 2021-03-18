@@ -44,6 +44,7 @@ export class GridFinJSComponent implements OnInit {
             };
         })
 
+        // Set initially grouped columns
         this.grid.groupingExpressions = [{
             dir: SortingDirection.Desc,
             fieldName: 'category',

@@ -30,13 +30,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     }
 
     public ngAfterViewInit() {
-        this.finGrid.data$.subscribe((data) => {
-            if (data.length !== 0) {
-                setTimeout(() => {
-                    this.selectFirstGroupAndFillChart();
-                }, 1000);
-            };
-        })
     }
 
     public ngOnInit() {
@@ -133,14 +126,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
         }
     }
 
-    public selectFirstGroupAndFillChart() {
-        this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
-        // tslint:disable-next-line: max-line-length
-        if (this.finGrid.grid.groupsRecords.length !== 0) {
-            const recordsToBeSelected = this.finGrid.grid.selectionService.getRowIDs(this.finGrid.grid.groupsRecords[0].groups[0].groups[0].records);
-            recordsToBeSelected.forEach(item => this.finGrid.grid.selectionService.selectRowById(item, false, true));
-        }
-    }
     public setChartConfig(xAsis, yAxis, title) {
         // update label interval and angle based on data
         this.setLabelIntervalAndAngle();
@@ -148,6 +133,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
         this.chart.yAxisTitle = yAxis;
         this.chart.chartTitle = title;
     }
+
     public setLabelIntervalAndAngle() {
         const intervalSet = this.chartData.length;
         if (intervalSet < 10) {
