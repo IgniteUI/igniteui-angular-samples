@@ -120,7 +120,6 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     public onButtonAction(event: any) {
         switch (event.index) {
             case 0: {
-                debugger;
                 this.disableOtherButtons(event.index, true);
                 if (this.dataService.hasRemoteConnection) {
                     this.dataService.broadcastParams(this.frequency, this.volume, true);
@@ -131,7 +130,6 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
                 break;
             }
             case 1: {
-                debugger;
                 if (this.dataService.hasRemoteConnection) {
                     this.dataService.stopLiveData();
                 } else {
