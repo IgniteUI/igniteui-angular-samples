@@ -12,7 +12,7 @@
             </div>
             <div class="finjs-slider control-item">
                 <label for="slider">Records: {{volume}}</label>
-                <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" [step]="100"
+                <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" (onValueChanged)="updateVolume()" [step]="100"
                     thumbLabelVisibilityDuration="250" [continuous]="true"></igx-slider>
             </div>
             <div class="finjs-slider control-item">
@@ -42,15 +42,11 @@
                 <igx-grid-toolbar-exporter [exportCSV]="false"></igx-grid-toolbar-exporter>
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
-
-
-
         <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
         <!-- <ng-template igxExcelStyleSorting></ng-template>
         <ng-template igxExcelStyleMoving></ng-template>
         <ng-template igxExcelStyleHiding></ng-template>
         <ng-template igxExcelStylePinning></ng-template> -->
-
         <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]='true' [resizable]='true'
             [disableHiding]="true"></igx-column>
         <igx-column [field]="'settlement'" [width]="'100px'" [sortable]='true'></igx-column>
