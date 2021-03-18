@@ -70,8 +70,8 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
                                         },
                                         {
                                             type: IgcDockManagerPaneType.contentPane,
-                                            contentId: 'Market Data 2',
-                                            header: 'List'
+                                            contentId: 'content4',
+                                            header: 'Market Data 2'
                                         }
                                     ]
                                 }
