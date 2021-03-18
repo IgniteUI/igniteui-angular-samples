@@ -1,11 +1,11 @@
-import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild, forwardRef } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { Subject } from 'rxjs';
-import { SignalRService } from './signal-r.service';
+import { SignalRService } from '../services/signal-r.service';
 
 @Component({
-  providers: [SignalRService ],
+  providers: [SignalRService],
   selector: 'app-finjs-grid',
   templateUrl: './grid-finjs.component.html',
   styleUrls: ['./grid-finjs.component.scss']
@@ -16,7 +16,9 @@ export class GridFinJSComponent implements OnInit {
     public frequency = 500;
     public data$: any;
     public columnFormat = { digitsInfo: '1.3-3'}
+    public columnFormatChangeP = { digitsInfo: '3.3-3'}
     public showToolbar = true;
+    public isLoading = true;
     protected destroy$ = new Subject<any>();
     public overlaySettings: OverlaySettings = {
         modal: false
@@ -36,6 +38,13 @@ export class GridFinJSComponent implements OnInit {
         this.overlaySettings.outlet = this.outlet;
         this.data$ = this.dataService.data;
 
+        this.data$.subscribe((data) => {
+            if (data.length !== 0) {
+                this.isLoading = false;
+            };
+        })
+
+        // Set initially grouped columns
         this.grid.groupingExpressions = [{
             dir: SortingDirection.Desc,
             fieldName: 'category',

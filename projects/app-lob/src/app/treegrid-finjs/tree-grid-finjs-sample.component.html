@@ -12,7 +12,7 @@
             </div>
             <div class="finjs-slider control-item">
                 <label for="slider">Records: {{volume}}</label>
-                <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" [step]="100"
+                <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" (onValueChanged)="updateVolume()" [step]="100"
                     thumbLabelVisibilityDuration="250" [continuous]="true"></igx-slider>
             </div>
             <div class="finjs-slider control-item">
@@ -28,15 +28,13 @@
 
     </div>
     <div class="sample-toolbar">
-        <span *ngIf="buttonSelected === 1">Feeding {{volume}} records every {{frequency / 1000}} sec.
-            {{volume}} records updated. </span>
         <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
             ~{{volume/5}} records updated.</span>
     </div>
     <igx-tree-grid #grid1 igxPreventDocumentScroll
-        [data]="data | treeGridGrouping:groupColumns:aggregations:groupColumnKey:primaryKey:childDataKey"
+        [data]="data$ | async | treeGridGrouping:groupColumns:aggregations:groupColumnKey:primaryKey:childDataKey"
         [height]="'calc(100% - 76px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
-        [primaryKey]="primaryKey" [childDataKey]="childDataKey" hiddenColumnsText="Hidden"
+        [primaryKey]="primaryKey" [childDataKey]="childDataKey" hiddenColumnsText="Hidden" [isLoading]="isLoading"
         [rowSelection]="selectionMode" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
         <igx-grid-toolbar *ngIf="showToolbar">
             <igx-grid-toolbar-actions>
@@ -44,35 +42,31 @@
                 <igx-grid-toolbar-exporter [exportCSV]="false"></igx-grid-toolbar-exporter>
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
-
-
-
         <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
         <!-- <ng-template igxExcelStyleSorting></ng-template>
         <ng-template igxExcelStyleMoving></ng-template>
         <ng-template igxExcelStyleHiding></ng-template>
         <ng-template igxExcelStylePinning></ng-template> -->
-
         <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]='true' [resizable]='true'
             [disableHiding]="true"></igx-column>
-        <igx-column [field]="'Settlement'" [width]="'100px'" [sortable]='true'></igx-column>
-        <igx-column [field]="'Country'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
+        <igx-column [field]="'settlement'" [width]="'100px'" [sortable]='true'></igx-column>
+        <igx-column [field]="'country'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
         </igx-column>
-        <igx-column [field]="'Region'" [width]="'110px'" [groupable]='true' [sortable]='true' [editable]='true'>
+        <igx-column [field]="'region'" [width]="'110px'" [groupable]='true' [sortable]='true' [editable]='true'>
             <ng-template igxCellEditor let-cell="cell" let-value>
                 <igx-select [overlaySettings]="overlaySettings" [placeholder]="value" [(ngModel)]="cell.editValue" [igxFocus]="true">
-                    <igx-select-item *ngFor="let r of regions" [value]="r.Region">{{ r.Region }}</igx-select-item>
+                    <igx-select-item *ngFor="let r of regions" [value]="r.Region">{{ r.region }}</igx-select-item>
                 </igx-select>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'LastUpdated'" [width]="'120px'" [editable]='true' header="Last Update" dataType="date">
+        <igx-column [field]="'lastUpdated'" [width]="'120px'" [editable]='true' header="Last Update" dataType="date">
             <ng-template igxCell let-cell="cell">
                 {{ cell.value | date }}
             </ng-template>
         </igx-column>
-        <igx-column [field]="'Open Price'" [width]="'120px'" dataType="number" [formatter]="formatCurrency"
+        <igx-column [field]="'openPrice'" [width]="'120px'" dataType="number" [formatter]="formatCurrency"
             [movable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'Price'" [width]="'130px'" dataType="number" [cellClasses]="trends" [movable]="true"
+        <igx-column [field]="'price'" [width]="'130px'" dataType="number" [cellClasses]="trends" [movable]="true"
             [sortable]="true" [disableHiding]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
@@ -83,31 +77,31 @@
             </ng-template>
         </igx-column>
 
-        <igx-column [field]="'Change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
+        <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
             [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatNumber" [movable]="true">
         </igx-column>
 
-        <igx-column [field]="'Change(%)'" [width]="'110px'" dataType="number" [formatter]="percentage" [movable]="true"
+        <igx-column [field]="'changeP'" [width]="'110px'" dataType="number" [formatter]="percentage" [movable]="true"
             [sortable]="true" [cellClasses]="trendsChange">
         </igx-column>
 
-        <igx-column [field]="'Buy'" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+        <igx-column [field]="'buy'" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
             [sortable]="true"></igx-column>
-        <igx-column [field]="'Sell'" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+        <igx-column [field]="'sell'" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
             [sortable]="true"></igx-column>
-        <igx-column [field]="'Spread'" [width]="'110px'" dataType="number" [formatter]="formatNumber" [movable]="true">
+        <igx-column [field]="'spread'" [width]="'110px'" dataType="number" [formatter]="formatNumber" [movable]="true">
         </igx-column>
-        <igx-column [field]="'Volume'" [width]="'110px'" dataType="number" [formatter]="formatNumber" [movable]="true"
+        <igx-column [field]="'volume'" [width]="'110px'" dataType="number" [formatter]="formatNumber" [movable]="true"
             [sortable]="true"></igx-column>
-        <igx-column [field]="'High(D)'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
+        <igx-column [field]="'highD'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
             [movable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'Low(D)'" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+        <igx-column [field]="'lowD'" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
             [sortable]="true"></igx-column>
-        <igx-column [field]="'High(Y)'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
+        <igx-column [field]="'highY'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
             [movable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'Low(Y)'" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+        <igx-column [field]="'lowY'" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
             [sortable]="true"></igx-column>
-        <igx-column [field]="'Start(Y)'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
+        <igx-column [field]="'startY'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
             [movable]="true" [sortable]="true"></igx-column>
     </igx-tree-grid>
 </div>

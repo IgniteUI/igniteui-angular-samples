@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, NgZone } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
 import { BehaviorSubject } from 'rxjs';
-import { FinancialData } from '../services/financialData';
+import { FinancialData } from './financialData';
 
 @Injectable({
     providedIn: 'root'
@@ -33,8 +33,6 @@ export class SignalRService {
                 this.hasRemoteConnection = false;
                 this.getData(1000);
             });
-        /* this.http.get('https://localhost:5001/webapi')
-            .subscribe(() => { }); */
     }
 
     public broadcastParams = (ms, volume, live) => {
