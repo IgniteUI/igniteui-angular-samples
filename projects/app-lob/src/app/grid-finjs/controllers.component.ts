@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
-import { IgxButtonGroupComponent, IgxSliderComponent
+import { IgxButtonGroupComponent, IgxSliderComponent, IgxToastComponent
 } from 'igniteui-angular';
 import { timer } from 'rxjs';
 import { debounce } from 'rxjs/operators';
@@ -13,6 +13,7 @@ export class ControllerComponent implements OnInit, OnDestroy {
     @ViewChild('buttonGroup1', { static: true }) public playButtons: IgxButtonGroupComponent;
     @ViewChild('slider1', { static: true }) public volumeSlider: IgxSliderComponent;
     @ViewChild('slider2', { static: true }) public intervalSlider: IgxSliderComponent;
+    @ViewChild("toast", { static: true }) public toast: IgxToastComponent;
 
     @Output() public switchChanged = new EventEmitter<any>();
     @Output() public volumeChanged = new EventEmitter<any>();
@@ -72,7 +73,7 @@ export class ControllerComponent implements OnInit, OnDestroy {
             }
             case 2: {
                 this.playAction.emit({ action: 'chart'});
-                this.playButtons.deselectButton(3);
+                this.playButtons.deselectButton(2);
                 break;
             }
             default: break;

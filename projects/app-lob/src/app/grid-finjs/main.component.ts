@@ -20,7 +20,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     @Output() public frequencyTimer = new EventEmitter<any>();
     @Output() public player = new EventEmitter<any>();
 
-    public properties = ["Price", "Country"];
+    public properties = ["price", "country"];
     public chartData = [];
     public darkTheme = false;
     public volume = 1000;
@@ -31,9 +31,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     }
 
     public ngAfterViewInit() {
-        setTimeout(() => {
-            this.selectFirstGroupAndFillChart();
-        }, 2000);
     }
 
     public ngOnInit() {
@@ -83,8 +80,12 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
                 break;
             }
             case 'chart': {
-                this.setChartData(this.finGrid.grid.selectedRows);
-                this.dialog.open()
+                if (this.finGrid.grid.selectedRows.length !== 0) {
+                    this.setChartData(this.finGrid.grid.selectedRows);
+                    this.dialog.open()
+                } else {
+                    this.controller.toast.open("Please select some rows first!");
+                };
                 break;
             }
             default:
@@ -101,7 +102,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
             this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1,
                 this.finGrid.grid.data[row]);
         });
-        this.controller.controls[2].disabled = this.chartData.length === 0;
+        // this.controller.controls[2].disabled = this.chartData.length === 0;
         this.setLabelIntervalAndAngle();
         this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
     }
@@ -124,14 +125,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
         }
     }
 
-    public selectFirstGroupAndFillChart() {
-        this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
-        // tslint:disable-next-line: max-line-length
-        if (this.finGrid.grid.groupsRecords.length !== 0) {
-            const recordsToBeSelected = this.finGrid.grid.selectionService.getRowIDs(this.finGrid.grid.groupsRecords[0].groups[0].groups[0].records);
-            recordsToBeSelected.forEach(item => this.finGrid.grid.selectionService.selectRowById(item, false, true));
-        }
-    }
     public setChartConfig(xAsis, yAxis, title) {
         // update label interval and angle based on data
         this.setLabelIntervalAndAngle();
@@ -139,6 +132,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
         this.chart.yAxisTitle = yAxis;
         this.chart.chartTitle = title;
     }
+
     public setLabelIntervalAndAngle() {
         const intervalSet = this.chartData.length;
         if (intervalSet < 10) {
@@ -181,7 +175,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
             this.dialog.open();
         }, 200);
     }
-
 
     public stopFeed() {
         if (this._timer) {

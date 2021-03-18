@@ -13,7 +13,8 @@
         [filterMode]="'excelStyleFilter'"
         (onRowSelectionChange)="rowSelectionChanged($event)"
         (keydown)="gridKeydown($event)"
-        (onGridKeydown)="customKeydown($event)">
+        (onGridKeydown)="customKeydown($event)"
+        [isLoading]="isLoading">
 
         <igx-grid-toolbar *ngIf="showToolbar">
             <igx-grid-toolbar-actions>
@@ -76,7 +77,7 @@
         </igx-column>
 
         <igx-column [field]="'changeP'" [width]="'110px'" dataType="percent" [movable]="true"
-            [pipeArgs]="columnFormat" [sortable]="true" [cellClasses]="trendsChange">
+            [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
         </igx-column>
 
         <igx-column [field]="'buy'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat" [movable]="true"
