@@ -10,7 +10,7 @@ import { GridFinJSDockManagerComponent } from "./grid-finjs-dock-manager.compone
 
 @NgModule({
     declarations: [
-        GridFinJSDockManagerComponent,
+        GridFinJSDockManagerComponent
     ],
     imports: [
         GridFinJSDockManagerRoutingModule,

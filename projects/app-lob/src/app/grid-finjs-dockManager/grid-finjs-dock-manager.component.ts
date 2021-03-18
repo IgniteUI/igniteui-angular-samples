@@ -23,7 +23,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     public ngOnInit() {
         this.dataService.startConnection(this.frequency, this.volume, true);
         this.data = this.dataService.data;
-         this.data.pipe(takeUntil(this.destroy$)).subscribe((data) => {
+        this.data.pipe(takeUntil(this.destroy$)).subscribe((data) => {
             if (data.length !== 0) {
                 this.isLoading = false;
             };
