@@ -40,7 +40,7 @@ export class GridFinJSComponent implements OnInit {
 
         this.data$.subscribe((data) => {
             if (data.length !== 0) {
-                this.isLoading = false
+                this.isLoading = false;
             };
         })
 
