@@ -16,7 +16,8 @@ IgxRippleModule,
 IgxSliderModule,
 IgxSwitchModule,
 IgxTabsModule,
-IgxToggleModule} from 'igniteui-angular';
+IgxToggleModule,
+IgxToastModule} from 'igniteui-angular';
 import {IgxCategoryChartModule,
 IgxLegendModule,
 IgxPieChartModule,
@@ -28,7 +29,8 @@ export class DVGridConfigGenerator implements IConfigGenerator {
         'LocalDataService': '../../../projects/app-lob/src/app/grid-finjs/localData.service',
         'IgxPreventDocumentScrollModule': '../../../src/app/directives/prevent-scroll.directive',
         'ControllerComponent' : '../../../projects/app-lob/src/app/grid-finjs/controllers.component',
-        'GridFinJSComponent' : '../../../projects/app-lob/src/app/grid-finjs/grid-finjs.component'
+        'GridFinJSComponent' : '../../../projects/app-lob/src/app/grid-finjs/grid-finjs.component',
+        'SignalRService' : '../../../projects/app-lob/src/app/services/signal-r.service'
 };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -86,8 +88,11 @@ export class DVGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'FinJSDemoComponent',
-            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core", "resize-observer-polyfill"],
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core", "resize-observer-polyfill",
+            "@microsoft/signalr"],
+            dependenciesType: DependenciesType.Charts,
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/grid-finjs/localData.service.ts",
+                "/projects/app-lob/src/app/services/signal-r.service.ts",
                 "/projects/app-lob/src/app/services/financialData.ts","/projects/app-lob/src/app/grid-finjs/controllers.component.ts",
                 "/projects/app-lob/src/app/grid-finjs/grid-finjs.component.ts",
                 "/projects/app-lob/src/app/grid-finjs/controllers.component.html",
@@ -99,11 +104,12 @@ export class DVGridConfigGenerator implements IConfigGenerator {
                 imports: ['IgxPreventDocumentScrollModule', 'IgxCategoryChartModule',
                     'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxSwitchModule',
-                    'IgxRippleModule', 'FinJSDemoComponent', 'IgxDialogModule', 'LocalDataService','ControllerComponent', 'GridFinJSComponent'],
+                    'IgxRippleModule', 'FinJSDemoComponent', 'IgxDialogModule', 'LocalDataService','ControllerComponent', 'GridFinJSComponent', 'IgxToastModule',
+                    'HttpClientModule', 'SignalRService'],
                 ngDeclarations: ['FinJSDemoComponent','ControllerComponent', 'GridFinJSComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
-                    'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule', 'IgxCategoryChartModule', 'IgxDialogModule'],
-                ngProviders: ['LocalDataService', 'IgxExcelExporterService', 'IgxCsvExporterService']
+                    'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule', 'IgxCategoryChartModule', 'IgxDialogModule', 'IgxToastModule', 'HttpClientModule'],
+                ngProviders: ['LocalDataService', 'IgxExcelExporterService', 'IgxCsvExporterService', 'SignalRService']
             })
         }));
 
