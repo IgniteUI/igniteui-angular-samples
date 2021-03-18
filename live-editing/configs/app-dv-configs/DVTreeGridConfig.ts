@@ -1,3 +1,4 @@
+import {HttpClientModule} from '@angular/common/http';
 import {IgxButtonGroupModule,
 IgxButtonModule,
 IgxCsvExporterService,
@@ -16,7 +17,8 @@ export class DVTreeGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         'LocalDataService': '../../../projects/app-lob/src/app/grid-finjs/localData.service',
         'TreeGridGroupingPipe': '../../../projects/app-lob/src/app/treegrid-finjs/tree-grid-grouping.pipe',
-        'IgxPreventDocumentScrollModule': '../../../src/app/directives/prevent-scroll.directive'
+        'IgxPreventDocumentScrollModule': '../../../src/app/directives/prevent-scroll.directive',
+        'SignalRService' : '../../../projects/app-lob/src/app/services/signal-r.service'
 };
 
     public generateConfigs(): Config[] {
@@ -50,17 +52,18 @@ export class DVTreeGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            additionalDependencies: ["@microsoft/signalr"],
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/grid-finjs/localData.service.ts",
-                "/projects/app-lob/src/app/services/financialData.ts",
+                "/projects/app-lob/src/app/services/financialData.ts", "/projects/app-lob/src/app/services/signal-r.service.ts",
                 "/projects/app-lob/src/app/treegrid-finjs/tree-grid-grouping.pipe.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxExcelExporterService', 'IgxSwitchModule', 'IgxRippleModule', 'TreeGridFinJSComponent',
-                    'LocalDataService', 'TreeGridGroupingPipe'],
+                    'LocalDataService', 'TreeGridGroupingPipe', 'HttpClientModule', 'SignalRService'],
                 ngDeclarations: ['TreeGridFinJSComponent', 'TreeGridGroupingPipe'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
-                    'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule'],
-                ngProviders: ['LocalDataService', 'IgxExcelExporterService']
+                    'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule', 'HttpClientModule'],
+                ngProviders: ['LocalDataService', 'IgxExcelExporterService', 'SignalRService']
             }),
             component: 'TreeGridFinJSComponent'
         }));
