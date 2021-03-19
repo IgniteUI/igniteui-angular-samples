@@ -1,5 +1,4 @@
-
-import { Component, ElementRef, OnDestroy, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from "@angular/core";
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
     IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
@@ -16,7 +15,7 @@ import { SignalRService } from '../services/signal-r.service';
     templateUrl: "./tree-grid-finjs-sample.component.html"
 })
 
-export class TreeGridFinJSComponent implements OnDestroy {
+export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     @ViewChild("grid1", { static: true }) public grid1: IgxTreeGridComponent;
     @ViewChild("buttonGroup1", { static: true }) public buttonGroup1: IgxButtonGroupComponent;
     @ViewChild("slider1", { static: true }) public volumeSlider: IgxSliderComponent;
@@ -110,6 +109,16 @@ export class TreeGridFinJSComponent implements OnDestroy {
     public ngOnInit() {
         this.overlaySettings.outlet = this.outlet;
         this.grid1.sortingExpressions = [{ fieldName: this.groupColumnKey, dir: SortingDirection.Desc }];
+    }
+
+    public ngAfterViewInit() {
+        this.groupColumns.forEach(col => {
+            const column = this.grid1.getColumnByName(col);
+            if (column) {
+                column.hidden = !column.hidden;
+            }
+        });
+        this.grid1.reflow();
     }
 
     public onButtonAction(event: any) {
