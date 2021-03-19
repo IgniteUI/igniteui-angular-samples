@@ -1,0 +1,176 @@
+<igc-dockmanager #dock class="{{theme ? 'dark-theme' : 'light-theme'}}  dock-m-position" [layout]="docLayout">
+    <div slot="actionPane" style="height: 100%; padding: 20px;">
+        <div class="{{theme ? 'dark-theme' : 'light-theme'}} " style="height: 5%;">
+            <div class="actionItem">
+                Change theme: <igx-switch [(ngModel)]="theme">Dark Mode</igx-switch>
+            </div>
+            <div class="actionItem">
+                Start/Stop live data: <igx-switch [(ngModel)]="liveData" (change)="streamData($event)">{{ liveData ===
+                    true ? 'Streaming' : 'Not Streaming' }}</igx-switch>
+            </div>
+            <div class="actionItem">
+                <!-- Change volume -->
+                <igx-input-group>
+                    <label igxLabel>
+                        Change data volume
+                    </label>
+                    <igx-prefix>
+                        <igx-icon>view_list</igx-icon>
+                    </igx-prefix>
+                    <input #volume igxInput type="number" placeholder="Set data volume" [(ngModel)]="dataVolume"
+                        (ngModelChange)="paramsChanged()">
+                </igx-input-group>
+            </div>
+            <div class="actionItem">
+                <!-- Change frequency -->
+                <igx-input-group>
+                    <label igxLabel>
+                        Change update frequency
+                    </label>
+                    <igx-prefix>
+                        <igx-icon>cell_wifi</igx-icon>
+                    </igx-prefix>
+                    <input #volume igxInput type="number" placeholder="Set data feed frequency" [(ngModel)]="frequency"
+                        (ngModelChange)="paramsChanged()">
+                </igx-input-group>
+            </div>
+            <!-- <div igxButton (click)="stopFeed()">Stop live data</div> -->
+        </div>
+    </div>
+    <div slot="gridStockPrices" style="height: 100%;">
+        <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'">
+            <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
+            <igx-column [field]="'category'" [width]="'120px'" [sortable]='true'></igx-column>
+            <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false'>
+            </igx-column>
+            <igx-column [field]="'contract'" [width]="'100px'" [sortable]='true'>
+            </igx-column>
+            <igx-column [field]="'price'" [width]="'130px'" dataType="number" [cellClasses]="trends"
+                [sortable]="true">
+                <ng-template igxCell let-cell="cell">
+                    <div class="finjs-icons">
+                        <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+                        <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
+                        <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
+                [sortable]="true" [cellClasses]="trendsChange">
+            </igx-column>
+            <igx-column [field]="'changeP'" [width]="'110px'" dataType="percent"
+                [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
+            </igx-column>
+            <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
+                [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type" [cellClasses]="c.cellClasses"
+                [bodyTemplate]="c.bodyTemplate">
+            </igx-column>
+            <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
+                [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type"
+                [cellClasses]="c.cellClasses" [bodyTemplate]="c.bodyTemplate">
+            </igx-column>
+        </igx-grid>
+    </div>
+    <div slot="forexMarket" style="height: 100%;">
+        <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'">
+            <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
+            <igx-column [field]="'category'" [width]="'120px'" [sortable]='true'></igx-column>
+            <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false'>
+            </igx-column>
+            <igx-column [field]="'contract'" [width]="'100px'" [sortable]='true'>
+            </igx-column>
+            <igx-column [field]="'price'" [width]="'120px'" dataType="number" [cellClasses]="trends"
+                [sortable]="true">
+                <ng-template igxCell let-cell="cell">
+                    <div class="finjs-icons">
+                        <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+                        <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
+                        <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
+                [sortable]="true" [cellClasses]="trendsChange">
+            </igx-column>
+            <igx-column [field]="'changeP'" [width]="'110px'" dataType="percent"
+                [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
+            </igx-column>
+            <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
+                [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type" [cellClasses]="c.cellClasses"
+                [bodyTemplate]="c.bodyTemplate">
+            </igx-column>
+            <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
+                [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type"
+                [cellClasses]="c.cellClasses" [bodyTemplate]="c.bodyTemplate">
+            </igx-column>
+        </igx-grid>
+    </div>
+    <div slot="content4" style="height: 100%;">
+        <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'">
+            <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
+            <igx-column [field]="'category'" [width]="'120px'" [sortable]='true'></igx-column>
+            <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false'>
+            </igx-column>
+            <igx-column [field]="'contract'" [width]="'100px'" [sortable]='true'>
+            </igx-column>
+            <igx-column [field]="'price'" [width]="'120px'" dataType="number" [cellClasses]="trends"
+                [sortable]="true">
+                <ng-template igxCell let-cell="cell">
+                    <div class="finjs-icons">
+                        <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+                        <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
+                        <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
+                [sortable]="true" [cellClasses]="trendsChange">
+            </igx-column>
+            <igx-column [field]="'changeP'" [width]="'110px'" dataType="percent"
+                [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
+            </igx-column>
+            <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
+                [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type" [cellClasses]="c.cellClasses"
+                [bodyTemplate]="c.bodyTemplate">
+            </igx-column>
+            <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
+                [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type"
+                [cellClasses]="c.cellClasses" [bodyTemplate]="c.bodyTemplate">
+            </igx-column>
+        </igx-grid>
+    </div>
+    <div slot="etfStockPrices" style="height: 100%;">
+        <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'">
+            <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
+            <igx-column [field]="'category'" [width]="'120px'" [sortable]='true'></igx-column>
+            <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false'>
+            </igx-column>
+            <igx-column [field]="'contract'" [width]="'100px'" [sortable]='true'>
+            </igx-column>
+            <igx-column [field]="'price'" [width]="'120px'" dataType="number" [cellClasses]="trends"
+                [sortable]="true">
+                <ng-template igxCell let-cell="cell">
+                    <div class="finjs-icons">
+                        <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+                        <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
+                        <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
+                [sortable]="true" [cellClasses]="trendsChange">
+            </igx-column>
+            <igx-column [field]="'changeP'" [width]="'110px'" dataType="percent"
+                [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
+            </igx-column>
+            <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
+                [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type" [cellClasses]="c.cellClasses"
+                [bodyTemplate]="c.bodyTemplate">
+            </igx-column>
+        </igx-grid>
+    </div>
+</igc-dockmanager>
