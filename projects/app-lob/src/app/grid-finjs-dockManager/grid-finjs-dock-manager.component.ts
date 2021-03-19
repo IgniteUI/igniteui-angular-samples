@@ -12,7 +12,7 @@ import { SignalRService } from '../services/signal-r.service';
 })
 export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     public dataVolume: number = 1000;
-    public frequency = 5000;
+    public frequency = 500;
     public theme = false;
     public isLoading = true;
     public data: any;
