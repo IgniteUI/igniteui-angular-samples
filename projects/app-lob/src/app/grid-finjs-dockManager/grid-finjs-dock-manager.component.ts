@@ -47,7 +47,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
                 {
                     type: IgcDockManagerPaneType.contentPane,
                     contentId: 'actionPane',
-                    header: 'Pane 1',
+                    header: 'Actions pane',
                     isPinned: false
                 },
                 {
