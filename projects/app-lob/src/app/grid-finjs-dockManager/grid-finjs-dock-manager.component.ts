@@ -100,8 +100,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
         floatingPanes: []
     };
 
-    public columns = [
-        
+    public columns = [        
         { field: 'buy', width: "110px", sortable: false, filterable: false, type: 'currency' },
         { field: 'sell', width: "110px", sortable: false, filterable: false, type: 'currency' },
         { field: 'openPrice', width: "120px", sortable: true, filterable: true, type: 'currency'},
