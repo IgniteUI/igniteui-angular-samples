@@ -11,17 +11,18 @@ import { SignalRService } from '../services/signal-r.service';
   styleUrls: ['./grid-finjs-dock-manager.component.scss']
 })
 export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
-    public volume = 10000;
+    public dataVolume: number = 1000;
     public frequency = 100;
     public theme = false;
     public isLoading = true;
     public data: any;
+    public liveData: boolean = true;
     private destroy$ = new Subject<any>();
 
     constructor(public dataService: SignalRService) {}
 
     public ngOnInit() {
-        this.dataService.startConnection(this.frequency, this.volume, true);
+        this.dataService.startConnection(this.frequency, this.dataVolume, true);
         this.data = this.dataService.data;
         this.data.pipe(takeUntil(this.destroy$)).subscribe((data) => {
             if (data.length !== 0) {
@@ -41,6 +42,12 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
             type: IgcDockManagerPaneType.splitPane,
             orientation: IgcSplitPaneOrientation.horizontal,
             panes: [
+                {
+                    type: IgcDockManagerPaneType.contentPane,
+                    contentId: 'actionPane',
+                    header: 'Pane 1',
+                    isPinned: false
+                },
                 {
                     size: 50,
                     type: IgcDockManagerPaneType.contentPane,
@@ -129,6 +136,23 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
         { field: 'cpn', width: "136px", sortable: false, filterable: false, type: 'string'}
     ];
 
+    public paramsChanged() {
+        this.dataService.stopLiveData();
+        this.dataService.startConnection(this.frequency, this.dataVolume, true);
+        this.data = this.dataService.data;
+    }
 
+    public stopFeed() {
+        this.dataService.stopLiveData();
+    }
 
+    public streamData(event) {
+        if (event.checked) {
+            this.paramsChanged();
+        } else {
+            this.stopFeed();
+        }
+
+        this.liveData = event.checked;
+    }
 }
