@@ -12,11 +12,13 @@ import { SignalRService } from '../services/signal-r.service';
 })
 export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     public dataVolume: number = 1000;
-    public frequency = 100;
+    public frequency = 5000;
     public theme = false;
     public isLoading = true;
     public data: any;
     public liveData: boolean = true;
+    public columnFormat = { digitsInfo: '1.3-3'}
+    public columnFormatChangeP = { digitsInfo: '3.3-3'}
     private destroy$ = new Subject<any>();
 
     constructor(public dataService: SignalRService) {}
@@ -99,13 +101,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     };
 
     public columns = [
-        { field: 'id', width: "136px", sortable: true, filterable: true, type: 'string' },
-        { field: 'category', width: "120px", sortable: true, filterable: true, type: 'string' },
-        { field: 'type', width: "100px", sortable: true, filterable: false, type: 'string' },
-        { field: 'contract', width: "110px", sortable: true, filterable: true, type: 'string'},
-        { field: 'price', width: "110px", sortable: true, filterable: true, type: 'currency' },
-        { field: 'change', width: "120px", sortable: false, filterable: false, type: 'number' },
-        { field: 'changeP', width: "100px", sortable: false, filterable: false, type: 'percent' },
+        
         { field: 'buy', width: "110px", sortable: false, filterable: false, type: 'currency' },
         { field: 'sell', width: "110px", sortable: false, filterable: false, type: 'currency' },
         { field: 'openPrice', width: "120px", sortable: true, filterable: true, type: 'currency'},
@@ -155,4 +151,40 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
 
         this.liveData = event.checked;
     }
+
+    /** Grid CellStyles and CellClasses */
+    private negative = (rowData: any): boolean => {
+        return rowData["changeP"] < 0;
+    }
+    private positive = (rowData: any): boolean => {
+        return rowData["changeP"] > 0;
+    }
+    private changeNegative = (rowData: any): boolean => {
+        return rowData["changeP"] < 0 && rowData["changeP"] > -1;
+    }
+    private changePositive = (rowData: any): boolean => {
+        return rowData["changeP"] > 0 && rowData["changeP"] < 1;
+    }
+    private strongPositive = (rowData: any): boolean => {
+        return rowData["changeP"] >= 1;
+    }
+    private strongNegative = (rowData: any, key: string): boolean => {
+        return rowData["changeP"] <= -1;
+    }
+
+    public trends = {
+        changeNeg: this.changeNegative,
+        changePos: this.changePositive,
+        negative: this.negative,
+        positive: this.positive,
+        strongNegative: this.strongNegative,
+        strongPositive: this.strongPositive
+    };
+
+    public trendsChange = {
+        changeNeg2: this.changeNegative,
+        changePos2: this.changePositive,
+        strongNegative2: this.strongNegative,
+        strongPositive2: this.strongPositive
+    };
 }
