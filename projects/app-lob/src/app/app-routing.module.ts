@@ -33,7 +33,7 @@ export const samplesRoutes: Routes = [
     },
     {
         data: ["GridFinJSDockManagerModule"],
-        loadChildren: () => import("./grid-finjs-dockManager/grid-finjs-dock-manager.module").then(m => m.GridFinJSDockManagerModule),
+        loadChildren: () => import("./grid-finjs-dock-manager/grid-finjs-dock-manager.module").then(m => m.GridFinJSDockManagerModule),
         path: "grid-finjs-dock-manager"
     },
     {
