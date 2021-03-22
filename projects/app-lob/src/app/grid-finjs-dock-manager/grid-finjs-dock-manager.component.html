@@ -39,7 +39,8 @@
     </div>
     <div slot="gridStockPrices" style="height: 100%;">
         <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
-            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'">
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
+            [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
             <igx-column [field]="'category'" [width]="'120px'" [sortable]='true'></igx-column>
             <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false'>
@@ -74,7 +75,8 @@
     </div>
     <div slot="forexMarket" style="height: 100%;">
         <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
-            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'">
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
+            [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
             <igx-column [field]="'category'" [width]="'120px'" [sortable]='true'></igx-column>
             <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false'>
@@ -109,7 +111,8 @@
     </div>
     <div slot="content4" style="height: 100%;">
         <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
-            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'">
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
+            [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
             <igx-column [field]="'category'" [width]="'120px'" [sortable]='true'></igx-column>
             <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false'>
@@ -144,7 +147,8 @@
     </div>
     <div slot="etfStockPrices" style="height: 100%;">
         <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
-            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'">
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
+            [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
             <igx-column [field]="'category'" [width]="'120px'" [sortable]='true'></igx-column>
             <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false'>

@@ -74,18 +74,18 @@
     }
 
     // selected
-    .igx-grid__td--selected.changePos1,
-    .igx-grid__td--selected.changePos2,
-    .igx-grid__td--selected.changePos {
+    .igx-grid__td--column-selected.changePos1,
+    .igx-grid__td--column-selected.changePos2,
+    .igx-grid__td--column-selected.changePos {
         background-color: #335e3b !important;
         .finjs-icons,
         .igx-grid__td-text {
             color: #fff;
         }
     }
-    .igx-grid__td--selected.changeNeg1,
-    .igx-grid__td--selected.changeNeg2,
-    .igx-grid__td--selected.changeNeg {
+    .igx-grid__td--column-selected.changeNeg1,
+    .igx-grid__td--column-selected.changeNeg2,
+    .igx-grid__td--column-selected.changeNeg {
         background-color: #7a1c32 !important;
         .finjs-icons,
         .igx-grid__td-text {
@@ -127,18 +127,18 @@
         }
     }
     // selected
-    .igx-grid__td--selected.strongPositive1,
-    .igx-grid__td--selected.strongPositive2,
-    .igx-grid__td--selected.strongPositive {
+    .igx-grid__td--column-selected.strongPositive1,
+    .igx-grid__td--column-selected.strongPositive2,
+    .igx-grid__td--column-selected.strongPositive {
         background-color: #459a55 !important;
         .finjs-icons,
         .igx-grid__td-text {
             color: #fff;
         }
     }
-    .igx-grid__td--selected.strongNegative1,
-    .igx-grid__td--selected.strongNegative2,
-    .igx-grid__td--selected.strongNegative {
+    .igx-grid__td--column-selected.strongNegative1,
+    .igx-grid__td--column-selected.strongNegative2,
+    .igx-grid__td--column-selected.strongNegative {
         background-color: #d31642 !important;
         .finjs-icons,
         .igx-grid__td-text {
