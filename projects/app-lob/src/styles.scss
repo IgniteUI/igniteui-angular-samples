@@ -1,9 +1,16 @@
 // CSS Reset, comment out if not required or using a different module
 // @import '~minireset.css/minireset';
 @import '~igniteui-angular/lib/core/styles/themes/index';
+@import '~igniteui-dockmanager/dist/collection/styles/igc.themes';
+
 @include igx-core();
 @include igx-theme($default-palette, $legacy-support: true);
 
+.light-theme {
+    @include igx-light-theme($default-palette);
+}
+
+$grays-btn-color: igx-color($green-palette, 'grays', 800);
 @mixin scrollbar-love($scrollbar-color: null) {
     $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
     $scrollbar-thumb: hexrgba(igx-color($default-palette, 'grays', 400));
@@ -23,6 +30,15 @@
         background-color: $scrollbar-thumb;
     }
 }
+
+.dark-theme {
+    background: #333;
+    color: #fff;
+
+    @include scrollbar-love(lighten($grays-btn-color, 20%));
+    @include igx-dark-theme($default-palette);
+}
+
 
 /* autoprefixer grid: on */
 html,
@@ -125,7 +141,6 @@ $green-palette: igx-palette($primary: #09f,$secondary: #72da67, $surface: #333);
 
 .fin-dark-theme {
     @include igx-dark-theme($green-palette, $legacy-support: true);
-    $grays-btn-color: igx-color($green-palette, 'grays', 800);
     @include scrollbar-love(lighten($grays-btn-color, 20%));
 
     background: #333;
