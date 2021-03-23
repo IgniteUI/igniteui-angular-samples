@@ -34,8 +34,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     private destroy$ = new Subject<any>();
     public slotCounter: number = 1;
 
-    constructor(public dataService: SignalRService, private paneService: FloatingPanesService,
-        private cdr: ChangeDetectorRef, private componentFactoryResolver: ComponentFactoryResolver) {}
+    constructor(public dataService: SignalRService, private paneService: FloatingPanesService, private cdr: ChangeDetectorRef, private componentFactoryResolver: ComponentFactoryResolver) {}
 
     public ngOnInit() {
         this.dataService.startConnection(this.frequency, this.dataVolume, true);
