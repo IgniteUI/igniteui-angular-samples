@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
-import { DefaultSortingStrategy, IgxGridComponent, SortingDirection } from 'igniteui-angular';
+import { ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, OnDestroy, OnInit, QueryList, TemplateRef, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
+import { DefaultSortingStrategy, IgxColumnComponent, IgxGridComponent, SortingDirection } from 'igniteui-angular';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { Subject } from 'rxjs';
 import { first, takeUntil } from 'rxjs/operators';
@@ -18,6 +18,8 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     @ViewChild(GridHostDirective) public host: GridHostDirective;
     @ViewChild("dock", { read: ElementRef }) public dockManager: ElementRef<HTMLIgcDockmanagerElement>;
     @ViewChildren(DockSlotComponent) public dockSlots: QueryList<DockSlotComponent>;
+    @ViewChild("priceTemplate", { read: TemplateRef })
+    public priceTemplate: TemplateRef<any>;
 
     public frequencyItems: number[] = [300, 600, 900];
     public frequency = this.frequencyItems[1];
@@ -267,5 +269,14 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
         const componentRef = viewContainerRef.createComponent(componentFactory);
         (componentRef.instance as IgxGridComponent).autoGenerate = true;
         this.dataService.data.pipe(takeUntil(destructor)).subscribe(d => componentRef.instance.data = d);
+        (componentRef.instance as IgxGridComponent).onColumnInit.pipe(takeUntil(destructor)).subscribe((col: IgxColumnComponent) => {
+            if (col.field === 'price') {
+                col.cellClasses = this.trends;
+                col.bodyTemplate = this.priceTemplate;
+            }
+            if (col.field === 'change' || col.field === 'changeP') {
+                col.cellClasses = this.trendsChange;
+            }
+        });
     }
 }

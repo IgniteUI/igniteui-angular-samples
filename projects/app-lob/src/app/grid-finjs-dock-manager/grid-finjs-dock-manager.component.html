@@ -70,7 +70,7 @@
             </igx-column>
             <igx-column [field]="'price'" [width]="'130px'" dataType="number" [cellClasses]="trends"
                 [sortable]="true">
-                <ng-template igxCell let-cell="cell">
+                <ng-template igxCell let-cell="cell" #priceTemplate>
                     <div class="finjs-icons">
                         <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
                         <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
