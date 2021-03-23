@@ -31,7 +31,10 @@ export class DVGridConfigGenerator implements IConfigGenerator {
         'IgxPreventDocumentScrollModule': '../../../src/app/directives/prevent-scroll.directive',
         'ControllerComponent' : '../../../projects/app-lob/src/app/grid-finjs/controllers.component',
         'GridFinJSComponent' : '../../../projects/app-lob/src/app/grid-finjs/grid-finjs.component',
-        'SignalRService' : '../../../projects/app-lob/src/app/services/signal-r.service'
+        'SignalRService' : '../../../projects/app-lob/src/app/services/signal-r.service',
+        'FloatingPanesService' : '../../../projects/app-lob/src/app/services/floating-panes.service',
+        'DockSlotComponent': '../../../projects/app-lob/src/app/grid-finjs-dock-manager/dock-slot.component'
+
 };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -109,12 +112,12 @@ export class DVGridConfigGenerator implements IConfigGenerator {
                     'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxSwitchModule',
                     'IgxRippleModule', 'GridFinJSDockManagerComponent', 'IgxDialogModule', 'IgxToastModule',
-                    'HttpClientModule', 'SignalRService', 'CUSTOM_ELEMENTS_SCHEMA'],
+                    'HttpClientModule', 'SignalRService', 'CUSTOM_ELEMENTS_SCHEMA', 'FloatingPanesService', 'DockSlotComponent'],
                 schemas: ['CUSTOM_ELEMENTS_SCHEMA'],
-                ngDeclarations: ['GridFinJSDockManagerComponent'],
+                ngDeclarations: ['GridFinJSDockManagerComponent', 'DockSlotComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule', 'IgxCategoryChartModule', 'IgxDialogModule', 'IgxToastModule', 'HttpClientModule'],
-                ngProviders: ['IgxExcelExporterService', 'IgxCsvExporterService', 'SignalRService'],
+                ngProviders: ['IgxExcelExporterService', 'IgxCsvExporterService', 'SignalRService', 'FloatingPanesService'],
                 additionalAdjustments: [dockManagerImport, defineCustomElements]
             })
         }));

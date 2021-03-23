@@ -7,7 +7,7 @@ import { FloatingPanesService } from '../services/floating-panes.service';
 import { SignalRService } from '../services/signal-r.service';
 import { DockSlotComponent, GridHostDirective } from './dock-slot.component';
 @Component({
-  providers: [SignalRService],
+  providers: [SignalRService, FloatingPanesService],
   selector: 'app-finjs-dock-manager',
   templateUrl: './grid-finjs-dock-manager.component.html',
   styleUrls: ['./grid-finjs-dock-manager.component.scss']
