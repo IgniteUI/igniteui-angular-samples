@@ -55,7 +55,7 @@
                         (ngModelChange)="paramsChanged()">
                 </igx-input-group> -->
             </div>
-            <!-- <div igxButton (click)="stopFeed()">Stop live data</div> -->
+            <div igxButton (click)="createGrid('someGrid')" [disabled]="slotCounter === 5">Add Floating Pane</div>
         </div>
     </div>
     <div slot="gridStockPrices" style="height: 100%;">
@@ -91,7 +91,7 @@
         </igx-grid>
     </div>
     <div slot="forexMarket" style="height: 100%;">
-        <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
+        <igx-grid #grid2 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
@@ -123,7 +123,7 @@
         </igx-grid>
     </div>
     <div slot="content4" style="height: 100%;">
-        <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
+        <igx-grid #grid3 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
@@ -155,7 +155,7 @@
         </igx-grid>
     </div>
     <div slot="etfStockPrices" style="height: 100%;">
-        <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
+        <igx-grid #grid4 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
@@ -186,4 +186,6 @@
             </igx-column>
         </igx-grid>
     </div>
+    <ng-template #host gridHost>
+    </ng-template>
 </igc-dockmanager>
