@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { DefaultSortingStrategy, IgxGridComponent, SortingDirection } from 'igniteui-angular';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -11,8 +12,11 @@ import { SignalRService } from '../services/signal-r.service';
   styleUrls: ['./grid-finjs-dock-manager.component.scss']
 })
 export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
-    public dataVolume: number = 1000;
-    public frequency = 500;
+    @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
+    public frequencyItems: number[] = [300, 600, 900];
+    public frequency = this.frequencyItems[1];
+    public dataVolumeItems: number[] = [500, 1000, 5000, 10000];
+    public dataVolume:number = this.dataVolumeItems[1];
     public theme = false;
     public isLoading = true;
     public data: any;
@@ -29,6 +33,27 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
         this.data.pipe(takeUntil(this.destroy$)).subscribe((data) => {
             if (data.length !== 0) {
                 this.isLoading = false;
+
+                // Set initially grouped columns
+                this.grid1.groupingExpressions = [{
+                    dir: SortingDirection.Desc,
+                    fieldName: 'category',
+                    ignoreCase: false,
+                    strategy: DefaultSortingStrategy.instance()
+                },
+                {
+                    dir: SortingDirection.Desc,
+                    fieldName: 'type',
+                    ignoreCase: false,
+                    strategy: DefaultSortingStrategy.instance()
+                },
+                {
+                    dir: SortingDirection.Desc,
+                    fieldName: 'settlement',
+                    ignoreCase: false,
+                    strategy: DefaultSortingStrategy.instance()
+                }
+                ];
             };
         });
     }
@@ -107,7 +132,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
         { field: 'lastUpdated', width: "120px", sortable: true, filterable: true, type: 'date'},
         { field: 'spread', width: "110px", sortable: false, filterable: false, type: 'number' },
         { field: 'volume', width: "110px", sortable: true, filterable: false, type: 'number' },
-        { field: 'settlement', width: "100px", sortable: true, filterable: true, type: 'string' },
+        { field: 'settlement', width: "100px", sortable: true, filterable: true, type: 'string', groupable: true },
         { field: 'country', width: "100px", sortable: true, filterable: true, type: 'string'},
         { field: 'highD', width: "110px", sortable: true, filterable: false, type: 'currency' },
         { field: 'lowD', width: "110px", sortable: true, filterable: false, type: 'currency' },

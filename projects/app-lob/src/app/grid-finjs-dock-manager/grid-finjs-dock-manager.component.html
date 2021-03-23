@@ -10,7 +10,17 @@
             </div>
             <div class="actionItem">
                 <!-- Change volume -->
-                <igx-input-group>
+                <igx-select [(ngModel)]="dataVolume" (ngModelChange)="paramsChanged()">
+                    <label igxLabel>Change data volume</label>
+                    <igx-hint></igx-hint>
+                    <igx-prefix>
+                        <igx-icon>view_list</igx-icon>
+                    </igx-prefix>
+                    <igx-select-item *ngFor="let item of dataVolumeItems" [value]="item">
+                        {{item}}
+                    </igx-select-item>
+                </igx-select>
+                <!-- <igx-input-group>
                     <label igxLabel>
                         Change data volume
                     </label>
@@ -19,11 +29,22 @@
                     </igx-prefix>
                     <input #volume igxInput type="number" placeholder="Set data volume" [(ngModel)]="dataVolume"
                         (ngModelChange)="paramsChanged()">
-                </igx-input-group>
+                </igx-input-group> -->
             </div>
             <div class="actionItem">
                 <!-- Change frequency -->
-                <igx-input-group>
+                <igx-select [(ngModel)]="frequency" (ngModelChange)="paramsChanged()">
+                    <label igxLabel>Change update frequency</label>
+                    <igx-hint></igx-hint>
+                    <igx-prefix>
+                        <igx-icon>cell_wifi</igx-icon>
+                    </igx-prefix>
+                    <igx-select-item *ngFor="let item of frequencyItems" [value]="item">
+                        {{item}}
+                    </igx-select-item>
+                </igx-select>
+                
+                <!-- <igx-input-group>
                     <label igxLabel>
                         Change update frequency
                     </label>
@@ -32,7 +53,7 @@
                     </igx-prefix>
                     <input #volume igxInput type="number" placeholder="Set data feed frequency" [(ngModel)]="frequency"
                         (ngModelChange)="paramsChanged()">
-                </igx-input-group>
+                </igx-input-group> -->
             </div>
             <!-- <div igxButton (click)="stopFeed()">Stop live data</div> -->
         </div>
@@ -45,7 +66,7 @@
             <igx-column [field]="'category'" [width]="'120px'" [sortable]='true'></igx-column>
             <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false'>
             </igx-column>
-            <igx-column [field]="'contract'" [width]="'100px'" [sortable]='true'>
+            <igx-column [field]="'contract'" [width]="'100px'" [sortable]='true' [groupable]='true'>
             </igx-column>
             <igx-column [field]="'price'" [width]="'130px'" dataType="number" [cellClasses]="trends"
                 [sortable]="true">
@@ -64,12 +85,8 @@
                 [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
             </igx-column>
             <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
-                [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type" [cellClasses]="c.cellClasses"
-                [bodyTemplate]="c.bodyTemplate">
-            </igx-column>
-            <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
                 [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type"
-                [cellClasses]="c.cellClasses" [bodyTemplate]="c.bodyTemplate">
+                [cellClasses]="c.cellClasses" [bodyTemplate]="c.bodyTemplate" [groupable]="c.groupable">
             </igx-column>
         </igx-grid>
     </div>
@@ -78,10 +95,10 @@
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
-            <igx-column [field]="'category'" [width]="'120px'" [sortable]='true'></igx-column>
-            <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false'>
+            <igx-column [field]="'category'" [width]="'120px'" [sortable]='true' [groupable]='true'></igx-column>
+            <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false' [groupable]='true'>
             </igx-column>
-            <igx-column [field]="'contract'" [width]="'100px'" [sortable]='true'>
+            <igx-column [field]="'contract'" [width]="'100px'" [sortable]='true' [groupable]='true'>
             </igx-column>
             <igx-column [field]="'price'" [width]="'120px'" dataType="number" [cellClasses]="trends"
                 [sortable]="true">
@@ -100,12 +117,8 @@
                 [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
             </igx-column>
             <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
-                [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type" [cellClasses]="c.cellClasses"
-                [bodyTemplate]="c.bodyTemplate">
-            </igx-column>
-            <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
                 [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type"
-                [cellClasses]="c.cellClasses" [bodyTemplate]="c.bodyTemplate">
+                [cellClasses]="c.cellClasses" [bodyTemplate]="c.bodyTemplate" [groupable]="c.groupable">
             </igx-column>
         </igx-grid>
     </div>
@@ -114,10 +127,10 @@
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
-            <igx-column [field]="'category'" [width]="'120px'" [sortable]='true'></igx-column>
-            <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false'>
+            <igx-column [field]="'category'" [width]="'120px'" [sortable]='true' [groupable]='true'></igx-column>
+            <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false' [groupable]='true'>
             </igx-column>
-            <igx-column [field]="'contract'" [width]="'100px'" [sortable]='true'>
+            <igx-column [field]="'contract'" [width]="'100px'" [sortable]='true' [groupable]='true'>
             </igx-column>
             <igx-column [field]="'price'" [width]="'120px'" dataType="number" [cellClasses]="trends"
                 [sortable]="true">
@@ -136,12 +149,8 @@
                 [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
             </igx-column>
             <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
-                [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type" [cellClasses]="c.cellClasses"
-                [bodyTemplate]="c.bodyTemplate">
-            </igx-column>
-            <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
                 [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type"
-                [cellClasses]="c.cellClasses" [bodyTemplate]="c.bodyTemplate">
+                [cellClasses]="c.cellClasses" [bodyTemplate]="c.bodyTemplate" [groupable]="c.groupable">
             </igx-column>
         </igx-grid>
     </div>
@@ -150,10 +159,10 @@
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
-            <igx-column [field]="'category'" [width]="'120px'" [sortable]='true'></igx-column>
-            <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false'>
+            <igx-column [field]="'category'" [width]="'120px'" [sortable]='true' [groupable]='true'></igx-column>
+            <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false' [groupable]='true'>
             </igx-column>
-            <igx-column [field]="'contract'" [width]="'100px'" [sortable]='true'>
+            <igx-column [field]="'contract'" [width]="'100px'" [sortable]='true' [groupable]='true'>
             </igx-column>
             <igx-column [field]="'price'" [width]="'120px'" dataType="number" [cellClasses]="trends"
                 [sortable]="true">
@@ -173,7 +182,7 @@
             </igx-column>
             <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header || c.field" [width]="c.width"
                 [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type" [cellClasses]="c.cellClasses"
-                [bodyTemplate]="c.bodyTemplate">
+                [bodyTemplate]="c.bodyTemplate" [groupable]="c.groupable">
             </igx-column>
         </igx-grid>
     </div>
