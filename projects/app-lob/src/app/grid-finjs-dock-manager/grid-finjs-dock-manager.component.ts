@@ -1,10 +1,11 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ComponentFactoryResolver, Directive, ElementRef, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
 import { DefaultSortingStrategy, IgxGridComponent, SortingDirection } from 'igniteui-angular';
-import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
+import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { FloatingPanesService } from '../services/floating-panes.service';
 import { SignalRService } from '../services/signal-r.service';
-
+import { DockSlotComponent, GridHostDirective } from './dock-slot.component';
 @Component({
   providers: [SignalRService],
   selector: 'app-finjs-dock-manager',
@@ -13,10 +14,14 @@ import { SignalRService } from '../services/signal-r.service';
 })
 export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
+    @ViewChild(GridHostDirective) public host: GridHostDirective;
+    @ViewChild("dock", { read: ElementRef }) public dockManager: ElementRef<HTMLIgcDockmanagerElement>;
+    @ViewChildren(DockSlotComponent) public dockSlots: QueryList<DockSlotComponent>;
+
     public frequencyItems: number[] = [300, 600, 900];
     public frequency = this.frequencyItems[1];
     public dataVolumeItems: number[] = [500, 1000, 5000, 10000];
-    public dataVolume:number = this.dataVolumeItems[1];
+    public dataVolume: number = this.dataVolumeItems[1];
     public theme = false;
     public isLoading = true;
     public data: any;
@@ -24,8 +29,10 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     public columnFormat = { digitsInfo: '1.3-3'}
     public columnFormatChangeP = { digitsInfo: '3.3-3'}
     private destroy$ = new Subject<any>();
+    public slotCounter: number = 1;
 
-    constructor(public dataService: SignalRService) {}
+    constructor(public dataService: SignalRService, private paneService: FloatingPanesService,
+        private cdr: ChangeDetectorRef, private componentFactoryResolver: ComponentFactoryResolver) {}
 
     public ngOnInit() {
         this.dataService.startConnection(this.frequency, this.dataVolume, true);
@@ -62,6 +69,15 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
         this.dataService.stopLiveData();
         this.destroy$.next(true);
         this.destroy$.complete();
+    }
+
+    public ngAfterViewInit() {
+        setTimeout(() => {
+            const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 3);
+            const y = (this.dockManager.nativeElement.getBoundingClientRect().height / 3);
+    
+            this.paneService.initialPanePosition = { x, y };
+        }, 2000);
     }
 
     public docLayout: IgcDockManagerLayout = {
@@ -211,4 +227,43 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
     };
+
+    public createGrid(type) {
+        const id: string = "slot-" + this.slotCounter++;
+        const splitPane: IgcSplitPane = {
+            type: IgcDockManagerPaneType.splitPane,
+            orientation: IgcSplitPaneOrientation.horizontal,
+            floatingWidth: 550,
+            floatingHeight: 350,
+            panes: [
+                {
+                    type: IgcDockManagerPaneType.contentPane,
+                    header: id,
+                    contentId: id
+                }
+            ]
+        };
+
+        this.paneService.appendPane(splitPane);
+
+        this.dockManager.nativeElement.layout.floatingPanes.push(splitPane);
+        this.docLayout = { ...this.dockManager.nativeElement.layout };
+        this.cdr.detectChanges();
+
+        // Create Dock Slot Component
+        const dockSlotComponentFactory = this.componentFactoryResolver.resolveComponentFactory(DockSlotComponent);
+        const dockSlotComponent = this.host.viewContainerRef.createComponent(dockSlotComponentFactory);
+
+        const gridViewContainerRef = dockSlotComponent.instance.gridHost.viewContainerRef;
+        this.loadGridComponent(gridViewContainerRef);
+    }
+
+    public loadGridComponent(viewContainerRef: ViewContainerRef) {
+        const componentFactory = this.componentFactoryResolver.resolveComponentFactory(IgxGridComponent);
+        
+        viewContainerRef.clear();
+        const componentRef = viewContainerRef.createComponent(componentFactory);
+        (componentRef.instance as IgxGridComponent).autoGenerate = true;
+        componentRef.instance.data = this.data;
+    }
 }

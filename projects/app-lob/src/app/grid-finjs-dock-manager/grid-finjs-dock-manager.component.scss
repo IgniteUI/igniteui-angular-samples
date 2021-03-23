@@ -3,6 +3,13 @@
 }
 
 :host ::ng-deep {
+    .grid-area {
+        margin-top: 1rem;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        width: 100%;
+    }
+
     .finjs-icons {
         display: flex;
         align-items: center;
