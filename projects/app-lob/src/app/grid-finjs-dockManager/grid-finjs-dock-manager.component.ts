@@ -25,7 +25,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     public frequency = this.frequencyItems[1];
     public dataVolumeItems: number[] = [500, 1000, 5000, 10000];
     public dataVolume: number = this.dataVolumeItems[1];
-    public theme = false;
+    public theme = true;
     public isLoading = true;
     public data: any;
     public liveData: boolean = true;
@@ -278,5 +278,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
                 col.cellClasses = this.trendsChange;
             }
         });
+        (componentRef.instance as IgxGridComponent).columnSelection = "multiple";
+        (componentRef.instance as IgxGridComponent).cellSelection = "none";
     }
 }
