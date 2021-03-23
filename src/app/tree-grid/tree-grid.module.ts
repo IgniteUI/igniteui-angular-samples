@@ -114,6 +114,7 @@ import { TreeGridExternalOutletComponent } from './tree-grid-external-outlet/tre
 import { TreeGridExportVisualizationComponent } from './tree-grid-export-visualization/tree-grid-export-visualization.component';
 import { TGridEditingLifecycleComponent } from "./tgrid-editing-lifecycle-sample/tgrid-editing-lifecycle.component";
 import { TreeGridFormattedFilteringStrategyComponent } from "./tree-grid-formatted-filtering-strategy/tree-grid-formatted-filtering-strategy.component";
+import { TreeGridSummaryFormatterComponent } from "./tree-grid-summary-formatter/tree-grid-summary-formatter.component";
 
 @NgModule({
     declarations: [
@@ -201,7 +202,8 @@ import { TreeGridFormattedFilteringStrategyComponent } from "./tree-grid-formatt
         TreeGridExternalOutletComponent,
         TreeGridExportVisualizationComponent,
         TGridEditingLifecycleComponent,
-        TreeGridFormattedFilteringStrategyComponent
+        TreeGridFormattedFilteringStrategyComponent,
+        TreeGridSummaryFormatterComponent
     ],
     imports: [
         CommonModule,

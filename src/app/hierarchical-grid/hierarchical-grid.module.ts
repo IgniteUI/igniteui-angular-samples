@@ -83,6 +83,7 @@ import { HierarchicalGridExternalOutletComponent } from './hierarchical-grid-ext
 import { HGridEditingLifecycleComponent } from "./hgrid-editing-lifecycle-sample/hgrid-editing-lifecycle.component";
 import { HierarchicalGridCellSelectionComponent } from './hierarchical-grid-cellSelection-sample/hierarchical-grid-cellSelection.component';
 import { HGridFormattedFilteringStrategyComponent } from "./hierarchical-grid-formatted-filtering-strategy/hierarchical-grid-formatted-filtering-strategy.component";
+import { HGridSummaryFormatterComponent } from "./hierarchical-grid-summary-formatter/hierarchical-grid-summary-formatter.component";
 
 @NgModule({
     declarations: [
@@ -159,7 +160,8 @@ import { HGridFormattedFilteringStrategyComponent } from "./hierarchical-grid-fo
         HGridRemotePagingDefaultTemplateComponent,
         HGridEditingLifecycleComponent,
         HierarchicalGridCellSelectionComponent,
-        HGridFormattedFilteringStrategyComponent
+        HGridFormattedFilteringStrategyComponent,
+        HGridSummaryFormatterComponent
     ],
     imports: [
         CommonModule,
