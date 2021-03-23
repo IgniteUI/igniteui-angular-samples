@@ -1,4 +1,5 @@
-import { Component, Directive, ElementRef, HostBinding, Input, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
+import { AfterViewInit, Component, Directive, EventEmitter, HostBinding, Input, OnInit, Output, ViewChild, ViewContainerRef } from "@angular/core";
+import { Subject } from "rxjs";
 
 @Directive({
     selector: "[gridHost]"
@@ -10,12 +11,15 @@ export class GridHostDirective {
 @Component({
     selector: "dock-slot",
     template: `
-    <div style="width: 100%; height: 100%; padding: 7px; overflow-x: hidden;">
+    <div style="width: 100%; height: 100%; overflow-x: hidden;">
         <ng-template gridHost></ng-template>
-        test
     </div>`
 })
-export class DockSlotComponent implements OnInit {
+export class DockSlotComponent implements OnInit, AfterViewInit {
+    public destroy$ = new Subject<any>();
+
+    @Output()
+    public viewInit = new EventEmitter();
 
     @ViewChild(GridHostDirective)
     public gridHost: GridHostDirective;
@@ -29,5 +33,13 @@ export class DockSlotComponent implements OnInit {
 
     public ngOnInit(): void {
         this.slot = this.id;
+    }
+
+    public ngAfterViewInit() {
+        this.viewInit.emit();
+    }
+    public ngOnDestroy() {
+        this.destroy$.next(true);
+        this.destroy$.complete();
     }
 }

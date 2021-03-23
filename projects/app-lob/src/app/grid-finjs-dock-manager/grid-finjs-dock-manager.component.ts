@@ -1,8 +1,8 @@
-import { ChangeDetectorRef, Component, ComponentFactoryResolver, Directive, ElementRef, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
 import { DefaultSortingStrategy, IgxGridComponent, SortingDirection } from 'igniteui-angular';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { first, takeUntil } from 'rxjs/operators';
 import { FloatingPanesService } from '../services/floating-panes.service';
 import { SignalRService } from '../services/signal-r.service';
 import { DockSlotComponent, GridHostDirective } from './dock-slot.component';
@@ -14,6 +14,7 @@ import { DockSlotComponent, GridHostDirective } from './dock-slot.component';
 })
 export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
+    @ViewChild('grid2', { static: true }) public grid2: IgxGridComponent;
     @ViewChild(GridHostDirective) public host: GridHostDirective;
     @ViewChild("dock", { read: ElementRef }) public dockManager: ElementRef<HTMLIgcDockmanagerElement>;
     @ViewChildren(DockSlotComponent) public dockSlots: QueryList<DockSlotComponent>;
@@ -75,9 +76,10 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
         setTimeout(() => {
             const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 3);
             const y = (this.dockManager.nativeElement.getBoundingClientRect().height / 3);
-    
+
             this.paneService.initialPanePosition = { x, y };
         }, 2000);
+        this.grid2.selectColumns(["price", "change", "changeP"]);
     }
 
     public docLayout: IgcDockManagerLayout = {
@@ -228,7 +230,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
         strongPositive2: this.strongPositive
     };
 
-    public createGrid(type) {
+    public createGrid() {
         const id: string = "slot-" + this.slotCounter++;
         const splitPane: IgcSplitPane = {
             type: IgcDockManagerPaneType.splitPane,
@@ -243,9 +245,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
                 }
             ]
         };
-
         this.paneService.appendPane(splitPane);
-
         this.dockManager.nativeElement.layout.floatingPanes.push(splitPane);
         this.docLayout = { ...this.dockManager.nativeElement.layout };
         this.cdr.detectChanges();
@@ -253,17 +253,19 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
         // Create Dock Slot Component
         const dockSlotComponentFactory = this.componentFactoryResolver.resolveComponentFactory(DockSlotComponent);
         const dockSlotComponent = this.host.viewContainerRef.createComponent(dockSlotComponentFactory);
-
-        const gridViewContainerRef = dockSlotComponent.instance.gridHost.viewContainerRef;
-        this.loadGridComponent(gridViewContainerRef);
+        dockSlotComponent.instance.id = id;
+        dockSlotComponent.instance.viewInit.pipe(first()).subscribe(() => {
+            const gridViewContainerRef = dockSlotComponent.instance.gridHost.viewContainerRef;
+            this.loadGridComponent(gridViewContainerRef, dockSlotComponent.instance.destroy$);
+        });
     }
 
-    public loadGridComponent(viewContainerRef: ViewContainerRef) {
+    public loadGridComponent(viewContainerRef: ViewContainerRef, destructor: Subject<any>) {
         const componentFactory = this.componentFactoryResolver.resolveComponentFactory(IgxGridComponent);
-        
         viewContainerRef.clear();
+
         const componentRef = viewContainerRef.createComponent(componentFactory);
         (componentRef.instance as IgxGridComponent).autoGenerate = true;
-        componentRef.instance.data = this.data;
+        this.dataService.data.pipe(takeUntil(destructor)).subscribe(d => componentRef.instance.data = d);
     }
 }
