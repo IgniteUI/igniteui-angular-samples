@@ -55,7 +55,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
         },
         {
             aggregate: (parent: any, data: any[]) => {
-                return data.map((r) => r.Price).reduce((ty, u) => ty + u, 0);
+                return data.map((r) => r.price).reduce((ty, u) => ty + u, 0);
             },
             field: "price"
         },

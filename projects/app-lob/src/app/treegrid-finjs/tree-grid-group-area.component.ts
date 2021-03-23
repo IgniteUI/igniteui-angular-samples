@@ -28,7 +28,7 @@ export class IgxTreeGridGroupAreaComponent {
 
     public onGroupAreaEnter(event) {
         const column: IgxColumnComponent = event.dragData;
-        if (this.groupColumns.indexOf(column.field) < 0) {
+        if (this.groupColumns.indexOf(column.field) < 0 && column.groupable) {
             event.drag.icon.innerText = 'group_work';
         }
     }
