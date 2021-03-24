@@ -25,8 +25,8 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
 
     public frequencyItems: number[] = [300, 600, 900];
     public frequency = this.frequencyItems[1];
-    public dataVolumeItems: number[] = [500, 1000, 5000, 10000];
-    public dataVolume: number = this.dataVolumeItems[0];
+    public dataVolumeItems: number[] = [100, 500, 1000, 5000, 10000];
+    public dataVolume: number = this.dataVolumeItems[1];
     public theme = true;
     public isLoading = true;
     public data: any;
