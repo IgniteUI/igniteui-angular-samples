@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, OnDestroy, OnInit, QueryList, TemplateRef, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, OnDestroy, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { DefaultSortingStrategy, IgxColumnComponent, IgxGridComponent, SortingDirection } from 'igniteui-angular';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { Subject } from 'rxjs';
@@ -17,7 +17,6 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     @ViewChild('grid2', { static: true }) public grid2: IgxGridComponent;
     @ViewChild(GridHostDirective) public host: GridHostDirective;
     @ViewChild("dock", { read: ElementRef }) public dockManager: ElementRef<HTMLIgcDockmanagerElement>;
-    @ViewChildren(DockSlotComponent) public dockSlots: QueryList<DockSlotComponent>;
     @ViewChild("priceTemplate", { read: TemplateRef })
     public priceTemplate: TemplateRef<any>;
 
@@ -92,7 +91,9 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
                     type: IgcDockManagerPaneType.contentPane,
                     contentId: 'actionPane',
                     header: 'Actions pane',
-                    isPinned: false
+                    size: 20,
+                    isPinned: false,
+                    allowClose: false
                 },
                 {
                     size: 50,
