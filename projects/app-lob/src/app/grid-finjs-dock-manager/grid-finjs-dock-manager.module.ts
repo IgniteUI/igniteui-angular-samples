@@ -6,11 +6,13 @@ import { IgxButtonModule, IgxDialogModule, IgxDividerModule, IgxGridModule, IgxS
 import { IgxPreventDocumentScrollModule } from "../directives/prevent-scroll.directive";
 import { GridFinJSDockManagerRoutingModule } from "./grid-finjs-dock-manager-routing.module";
 import { GridFinJSDockManagerComponent } from "./grid-finjs-dock-manager.component";
-
+import { DockSlotComponent, GridHostDirective } from "./dock-slot.component";
 
 @NgModule({
     declarations: [
-        GridFinJSDockManagerComponent
+        GridFinJSDockManagerComponent,
+        DockSlotComponent,
+        GridHostDirective
     ],
     imports: [
         GridFinJSDockManagerRoutingModule,

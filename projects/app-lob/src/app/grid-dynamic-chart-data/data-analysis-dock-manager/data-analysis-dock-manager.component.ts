@@ -7,11 +7,11 @@ import ResizeObserver from "resize-observer-polyfill";
 import { merge, noop, Subject } from "rxjs";
 import { debounceTime, filter, takeUntil, tap } from "rxjs/operators";
 import { FinancialData } from "../../services/financialData";
+import { FloatingPanesService } from "../../services/floating-panes.service";
 import { ChartIntegrationDirective, IDeterminedChartTypesArgs } from "../directives/chart-integration/chart-integration.directive";
 import { CHART_TYPE } from "../directives/chart-integration/chart-types";
 import { ConditionalFormattingDirective } from "../directives/conditional-formatting/conditional-formatting.directive";
 import { DockSlotComponent } from "./dock-slot/dock-slot.component";
-import { FloatingPanesService } from "./floating-panes.service";
 
 @Pipe({
     name: "hastDuplicateLayouts"
@@ -331,7 +331,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                 return {
                     deleteProperty(target, prop) {
                         if (target[prop].type) {
-                            _this.paneService.removeChartPane(target[prop]);
+                            _this.paneService.removePane(target[prop]);
                             _this.cdr.detectChanges();
                         }
                         return true;
@@ -406,7 +406,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             panes: [floatingPane]
         };
 
-        this.paneService.appendChartPane(splitPane);
+        this.paneService.appendPane(splitPane);
         const chartHost = this.getChartHostFromSlot(type);
         chartHost.viewContainerRef.clear();
         const chart = this.chartIntegration.chartFactory(type, chartHost.viewContainerRef);
