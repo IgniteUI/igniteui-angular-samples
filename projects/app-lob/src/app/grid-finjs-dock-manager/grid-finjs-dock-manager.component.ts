@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, OnDestroy, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
-import { DefaultSortingStrategy, IgxColumnComponent, IgxGridComponent, SortingDirection } from 'igniteui-angular';
+import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, IgxColumnComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxSelectComponent, OverlaySettings, SortingDirection } from 'igniteui-angular';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { Subject } from 'rxjs';
 import { first, takeUntil } from 'rxjs/operators';
@@ -19,10 +19,13 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     @ViewChild("dock", { read: ElementRef }) public dockManager: ElementRef<HTMLIgcDockmanagerElement>;
     @ViewChild("priceTemplate", { read: TemplateRef })
     public priceTemplate: TemplateRef<any>;
+    @ViewChild(IgxSelectComponent) public select: IgxSelectComponent;
+    @ViewChild("freq", { read: IgxSelectComponent }) public selectFrequency: IgxSelectComponent;
+    @ViewChild(IgxOverlayOutletDirective) outlet: IgxOverlayOutletDirective;
 
     public frequencyItems: number[] = [300, 600, 900];
     public frequency = this.frequencyItems[1];
-    public dataVolumeItems: number[] = [500, 1000, 5000, 10000];
+    public dataVolumeItems: number[] = [100, 500, 1000, 5000, 10000];
     public dataVolume: number = this.dataVolumeItems[1];
     public theme = true;
     public isLoading = true;
@@ -32,36 +35,17 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     public columnFormatChangeP = { digitsInfo: '3.3-3'}
     private destroy$ = new Subject<any>();
     public slotCounter: number = 1;
+    public customOverlaySettings: OverlaySettings;
+    public freqOverlaySettings: OverlaySettings;
 
     constructor(public dataService: SignalRService, private paneService: FloatingPanesService, private cdr: ChangeDetectorRef, private componentFactoryResolver: ComponentFactoryResolver) {}
 
     public ngOnInit() {
-        this.dataService.startConnection(this.frequency, this.dataVolume, true);
+        this.dataService.startConnection(this.frequency, this.dataVolume, true, false);
         this.data = this.dataService.data;
         this.data.pipe(takeUntil(this.destroy$)).subscribe((data) => {
             if (data.length !== 0) {
                 this.isLoading = false;
-
-                // Set initially grouped columns
-                this.grid1.groupingExpressions = [{
-                    dir: SortingDirection.Desc,
-                    fieldName: 'category',
-                    ignoreCase: false,
-                    strategy: DefaultSortingStrategy.instance()
-                },
-                {
-                    dir: SortingDirection.Desc,
-                    fieldName: 'type',
-                    ignoreCase: false,
-                    strategy: DefaultSortingStrategy.instance()
-                },
-                {
-                    dir: SortingDirection.Desc,
-                    fieldName: 'settlement',
-                    ignoreCase: false,
-                    strategy: DefaultSortingStrategy.instance()
-                }
-                ];
             };
         });
     }
@@ -80,6 +64,36 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
             this.paneService.initialPanePosition = { x, y };
         }, 2000);
         this.grid2.selectColumns(["price", "change", "changeP"]);
+        this.customOverlaySettings = {
+            target: this.select.inputGroup.element.nativeElement,
+            positionStrategy: new ConnectedPositioningStrategy(),
+            scrollStrategy: new AbsoluteScrollStrategy(),
+            outlet: this.outlet
+        };
+        this.freqOverlaySettings = {
+            target: this.selectFrequency.inputGroup.element.nativeElement,
+            positionStrategy: new ConnectedPositioningStrategy(),
+            scrollStrategy: new AbsoluteScrollStrategy(),
+            outlet: this.outlet
+        };
+        this.grid1.groupingExpressions = [{
+            dir: SortingDirection.Desc,
+            fieldName: 'category',
+            ignoreCase: false,
+            strategy: DefaultSortingStrategy.instance()
+        },
+        {
+            dir: SortingDirection.Desc,
+            fieldName: 'type',
+            ignoreCase: false,
+            strategy: DefaultSortingStrategy.instance()
+        },
+        {
+            dir: SortingDirection.Desc,
+            fieldName: 'settlement',
+            ignoreCase: false,
+            strategy: DefaultSortingStrategy.instance()
+        }];
     }
 
     public docLayout: IgcDockManagerLayout = {
@@ -177,8 +191,8 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     ];
 
     public paramsChanged() {
-        this.dataService.stopLiveData();
-        this.dataService.startConnection(this.frequency, this.dataVolume, true);
+        this.dataService.hasRemoteConnection ? this.dataService.broadcastParams(this.frequency, this.dataVolume, true, false) :
+            this.dataService.startConnection(this.frequency, this.dataVolume, true);
         this.data = this.dataService.data;
     }
 
@@ -187,12 +201,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     }
 
     public streamData(event) {
-        if (event.checked) {
-            this.paramsChanged();
-        } else {
-            this.stopFeed();
-        }
-
+        event.checked ? this.paramsChanged() : this.stopFeed();
         this.liveData = event.checked;
     }
 
@@ -267,9 +276,10 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
         viewContainerRef.clear();
 
         const componentRef = viewContainerRef.createComponent(componentFactory);
-        (componentRef.instance as IgxGridComponent).autoGenerate = true;
-        this.dataService.data.pipe(takeUntil(destructor)).subscribe(d => componentRef.instance.data = d);
-        (componentRef.instance as IgxGridComponent).onColumnInit.pipe(takeUntil(destructor)).subscribe((col: IgxColumnComponent) => {
+        const grid = (componentRef.instance as IgxGridComponent);
+        grid.autoGenerate = true;
+        this.dataService.data.pipe(takeUntil(destructor)).subscribe(d => grid.data = d);
+        grid.onColumnInit.pipe(takeUntil(destructor)).subscribe((col: IgxColumnComponent) => {
             if (col.field === 'price') {
                 col.cellClasses = this.trends;
                 col.bodyTemplate = this.priceTemplate;
@@ -278,7 +288,9 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
                 col.cellClasses = this.trendsChange;
             }
         });
-        (componentRef.instance as IgxGridComponent).columnSelection = "multiple";
-        (componentRef.instance as IgxGridComponent).cellSelection = "none";
+        grid.columnSelection = "multiple";
+        grid.cellSelection = "none";
+        grid.displayDensity = "compact";
+
     }
 }
