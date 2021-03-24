@@ -1,8 +1,7 @@
 <igc-dockmanager #dock class="{{theme ? 'dark-theme' : 'light-theme'}}  dock-m-position" [layout]="docLayout">
-    <div slot="actionPane" style="height: 100%; padding: 20px;">
-        <div class="{{theme ? 'dark-theme' : 'light-theme'}} " style="height: 5%;">
+        <div slot="actionPane" style="height: 100%; padding: 20px;">
             <div class="actionItem">
-                Change theme: <igx-switch [(ngModel)]="theme">Dark Mode</igx-switch>
+                Change theme: <br/> <igx-switch [(ngModel)]="theme">Dark Mode</igx-switch>
             </div>
             <div class="actionItem">
                 Start/Stop live data: <igx-switch [(ngModel)]="liveData" (change)="streamData($event)">{{ liveData ===
@@ -10,9 +9,8 @@
             </div>
             <div class="actionItem">
                 <!-- Change volume -->
-                <igx-select [(ngModel)]="dataVolume" (ngModelChange)="paramsChanged()">
+                <igx-select [(ngModel)]="dataVolume" (ngModelChange)="paramsChanged()" [overlaySettings]="customOverlaySettings">
                     <label igxLabel>Change data volume</label>
-                    <igx-hint></igx-hint>
                     <igx-prefix>
                         <igx-icon>view_list</igx-icon>
                     </igx-prefix>
@@ -20,22 +18,11 @@
                         {{item}}
                     </igx-select-item>
                 </igx-select>
-                <!-- <igx-input-group>
-                    <label igxLabel>
-                        Change data volume
-                    </label>
-                    <igx-prefix>
-                        <igx-icon>view_list</igx-icon>
-                    </igx-prefix>
-                    <input #volume igxInput type="number" placeholder="Set data volume" [(ngModel)]="dataVolume"
-                        (ngModelChange)="paramsChanged()">
-                </igx-input-group> -->
             </div>
             <div class="actionItem">
                 <!-- Change frequency -->
-                <igx-select [(ngModel)]="frequency" (ngModelChange)="paramsChanged()">
+                <igx-select [(ngModel)]="frequency" (ngModelChange)="paramsChanged()" [overlaySettings]="freqOverlaySettings" #freq>
                     <label igxLabel>Change update frequency</label>
-                    <igx-hint></igx-hint>
                     <igx-prefix>
                         <igx-icon>cell_wifi</igx-icon>
                     </igx-prefix>
@@ -43,26 +30,15 @@
                         {{item}}
                     </igx-select-item>
                 </igx-select>
-
-                <!-- <igx-input-group>
-                    <label igxLabel>
-                        Change update frequency
-                    </label>
-                    <igx-prefix>
-                        <igx-icon>cell_wifi</igx-icon>
-                    </igx-prefix>
-                    <input #volume igxInput type="number" placeholder="Set data feed frequency" [(ngModel)]="frequency"
-                        (ngModelChange)="paramsChanged()">
-                </igx-input-group> -->
             </div>
-            <div igxButton (click)="createGrid()" [disabled]="slotCounter === 5">Add Floating Pane</div>
+            <div igxButton (click)="createGrid()" [disabled]="docLayout.floatingPanes.length >= 5">Add Floating Pane</div>
+            <div igxOverlayOutlet #outlet></div>
         </div>
-    </div>
     <div slot="gridStockPrices" style="height: 100%;">
         <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
-            [columnSelection]="'multiple'" [cellSelection]="'none'">
-            <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
+            [columnSelection]="'multiple'" [cellSelection]="'none'" [outlet]="filteringOverlayOutlet">
+            <igx-column [field]="'id'" [width]="'70px'" [hidden]='true' [sortable]='true'></igx-column>
             <igx-column [field]="'category'" [width]="'120px'" [sortable]='true'></igx-column>
             <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false'>
             </igx-column>
@@ -94,7 +70,7 @@
         <igx-grid #grid2 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
-            <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
+            <igx-column [field]="'id'" [width]="'70px'" [hidden]='true' [sortable]='true'></igx-column>
             <igx-column [field]="'category'" [width]="'120px'" [sortable]='true' [groupable]='true'></igx-column>
             <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false' [groupable]='true'>
             </igx-column>
@@ -126,7 +102,7 @@
         <igx-grid #grid3 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
-            <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
+            <igx-column [field]="'id'" [width]="'70px'" [hidden]='true' [sortable]='true'></igx-column>
             <igx-column [field]="'category'" [width]="'120px'" [sortable]='true' [groupable]='true'></igx-column>
             <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false' [groupable]='true'>
             </igx-column>
@@ -155,10 +131,10 @@
         </igx-grid>
     </div>
     <div slot="etfStockPrices" style="height: 100%;">
-        <igx-grid #grid4 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
+        <igx-grid #grid4 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading" [paging]="true"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
-            <igx-column [field]="'id'" [width]="'70px'" [hidden]='false' [sortable]='true'></igx-column>
+            <igx-column [field]="'id'" [width]="'70px'" [hidden]='true' [sortable]='true'></igx-column>
             <igx-column [field]="'category'" [width]="'120px'" [sortable]='true' [groupable]='true'></igx-column>
             <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false' [groupable]='true'>
             </igx-column>
@@ -189,3 +165,4 @@
     <ng-template #host gridHost>
     </ng-template>
 </igc-dockmanager>
+<div class="{{theme ? 'dark-theme' : 'light-theme'}}" #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>
