@@ -20,7 +20,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     @ViewChild("priceTemplate", { read: TemplateRef })
     public priceTemplate: TemplateRef<any>;
     @ViewChild(IgxSelectComponent) public select: IgxSelectComponent;
-    @ViewChild("freq",{ read: IgxSelectComponent }) public selectFrequency: IgxSelectComponent;
+    @ViewChild("freq", { read: IgxSelectComponent }) public selectFrequency: IgxSelectComponent;
     @ViewChild(IgxOverlayOutletDirective) outlet: IgxOverlayOutletDirective;
 
     public frequencyItems: number[] = [300, 600, 900];
@@ -201,7 +201,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     }
 
     public streamData(event) {
-       event.checked ? this.paramsChanged() : this.stopFeed();
+        event.checked ? this.paramsChanged() : this.stopFeed();
         this.liveData = event.checked;
     }
 
