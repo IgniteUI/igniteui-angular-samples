@@ -32,7 +32,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     public data: any;
     public liveData: boolean = true;
     public columnFormat = { digitsInfo: '1.3-3'}
-    public columnFormatChangeP = { digitsInfo: '3.3-3'}
+    public columnFormatChangeP = { digitsInfo: '2.3-3'}
     private destroy$ = new Subject<any>();
     public slotCounter: number = 1;
     public customOverlaySettings: OverlaySettings;
