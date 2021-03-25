@@ -58,7 +58,30 @@
                 }
               ],
               "tsConfig": "src/tsconfig-es5.app.json"
-            }
+            },
+            "es5Prod": {
+                "budgets": [
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "900kb"
+                  }
+                ],
+                "optimization": true,
+                "outputHashing": "all",
+                "sourceMap": false,
+                "namedChunks": false,
+                "aot": true,
+                "extractLicenses": true,
+                "vendorChunk": false,
+                "buildOptimizer": true,
+                "fileReplacements": [
+                  {
+                    "replace": "src/environments/environment.ts",
+                    "with": "src/environments/environment.prod.ts"
+                  }
+                ],
+                "tsConfig": "src/tsconfig-es5.app.json"
+              }
           }
         },
         "serve": {
@@ -72,6 +95,9 @@
             },
             "es5": {
               "browserTarget": "my-app:build:es5"
+            },
+            "es5Prod": {
+                "browserTarget": "my-app:build:es5Prod"
             }
           }
         },
