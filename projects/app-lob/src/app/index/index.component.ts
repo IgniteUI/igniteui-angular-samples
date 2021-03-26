@@ -1,14 +1,14 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
-import { NavigationStart, Route, Router } from "@angular/router";
-import { IgxNavigationDrawerComponent } from "igniteui-angular";
-import { filter } from "rxjs/operators";
-import { gridDynamicChartRoutesData } from "../grid-dynamic-chart-data/grid-dynamic-chart-data-routes-data";
-import { finJsDockManagerGridRoutes } from "../grid-finjs-dock-manager/grid-finjs-dock-manager-routes-data";
-import { gridfinjsRoutesData} from "../grid-finjs/grid-finjs-routes-data";
-import { gridsRoutesData } from "../grid/grid-routes-data";
-import { hierarchicalGridRoutesData } from "../hierarchical-grid/hierarchical-grid-routes-data";
-import { treeGridRoutesData } from "../tree-grid/tree-grid-routes-data";
-import { treegridfinjsRoutesData } from "../treegrid-finjs/treegrid-finjs-routes-data";
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { NavigationStart, Route, Router } from '@angular/router';
+import { IgxNavigationDrawerComponent } from 'igniteui-angular';
+import { filter } from 'rxjs/operators';
+import { gridDynamicChartRoutesData } from '../grid-dynamic-chart-data/grid-dynamic-chart-data-routes-data';
+import { finJsDockManagerGridRoutes } from '../grid-finjs-dock-manager/grid-finjs-dock-manager-routes-data';
+import { gridfinjsRoutesData} from '../grid-finjs/grid-finjs-routes-data';
+import { gridsRoutesData } from '../grid/grid-routes-data';
+import { hierarchicalGridRoutesData } from '../hierarchical-grid/hierarchical-grid-routes-data';
+import { treeGridRoutesData } from '../tree-grid/tree-grid-routes-data';
+import { treegridfinjsRoutesData } from '../treegrid-finjs/treegrid-finjs-routes-data';
 
 @Component({
     selector: 'app-index',
@@ -66,7 +66,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
             routesData: gridDynamicChartRoutesData
         },
         {
-            path: "grid-finjs-dock-manager",
+            path: 'grid-finjs-dock-manager',
             routesData: finJsDockManagerGridRoutes
         }
     ];

@@ -1,14 +1,14 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
     IBaseChipEventArgs, IChipsAreaReorderEventArgs, IgxColumnComponent, IgxDropDirective, IgxTreeGridComponent
-} from "igniteui-angular";
-import { LocalDataService } from "../grid-finjs/localData.service";
+} from 'igniteui-angular';
+import { LocalDataService } from '../grid-finjs/localData.service';
 
 @Component({
     providers: [LocalDataService],
-    selector: "igx-tree-grid-group-area",
-    styleUrls: ["./tree-grid-group-area.component.scss"],
-    templateUrl: "./tree-grid-group-area.component.html"
+    selector: 'app-igx-tree-grid-group-area',
+    styleUrls: ['./tree-grid-group-area.component.scss'],
+    templateUrl: './tree-grid-group-area.component.html'
 })
 
 export class IgxTreeGridGroupAreaComponent {
@@ -54,9 +54,7 @@ export class IgxTreeGridGroupAreaComponent {
     public orderChanged(event: IChipsAreaReorderEventArgs) {
         const newColumnGroups = [];
         for (const chip of event.chipsArray) {
-            const col = this.groupColumns.filter((item) => {
-                return item === chip.id;
-            })[0];
+            const col = this.groupColumns.filter((item) => item === chip.id)[0];
             newColumnGroups.push(col);
         }
         this.groupColumns = newColumnGroups;

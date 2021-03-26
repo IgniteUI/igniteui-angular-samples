@@ -36,9 +36,11 @@ export class SignalRService implements OnDestroy {
             })
             .catch(() => {
                 this.hasRemoteConnection = false;
-                live ? this._timer = setInterval(() => this.updateAllPriceValues(this.financialData.generateData(volume))) : this.getData(volume);
+                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+                live ? this._timer = setInterval(() => this.updateAllPriceValues(this.financialData.generateData(volume))) :
+                    this.getData(volume);
             });
-    }
+    };
 
     public broadcastParams = (frequency, volume, live, updateAll = true) => {
         this.hubConnection.invoke('updateparameters', frequency, volume, live, updateAll)
@@ -46,15 +48,33 @@ export class SignalRService implements OnDestroy {
             .catch(err => {
                 console.error(err);
             });
-    }
+    };
 
     public stopLiveData = () => {
         if (this.hasRemoteConnection) {
             this.hubConnection.invoke('StopTimer')
-            .catch(err => console.error(err));
+                .catch(err => console.error(err));
         } else {
             this.stopFeed();
         }
+    };
+
+    public getData(count: number = 10) {
+        this.data.next(this.financialData.generateData(count));
+    };
+
+    public updateAllPriceValues(data) {
+        this.zone.runOutsideAngular(() => {
+            const newData = this.financialData.updateAllPrices(data);
+            this.data.next(newData);
+        });
+    }
+
+    public updateRandomPriceValues(data) {
+        this.zone.runOutsideAngular(() => {
+            const newData = this.financialData.updateRandomPrices(data);
+            this.data.next(newData);
+        });
     }
 
     private stopFeed() {
@@ -69,24 +89,6 @@ export class SignalRService implements OnDestroy {
         });
         this.hubConnection.on('transferdata', (data) => {
             this.data.next(data);
-        })
-    }
-
-    public getData(count: number = 10) {
-        this.data.next(this.financialData.generateData(count));
-    }
-
-    public updateAllPriceValues(data) {
-        this.zone.runOutsideAngular(() =>  {
-            const newData = this.financialData.updateAllPrices(data);
-            this.data.next(newData);
-        });
-    }
-
-    public updateRandomPriceValues(data) {
-        this.zone.runOutsideAngular(() =>  {
-            const newData = this.financialData.updateRandomPrices(data);
-            this.data.next(newData);
         });
     }
 }

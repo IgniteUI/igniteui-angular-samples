@@ -1,25 +1,25 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
     IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
     PositionSettings, SortingDirection, VerticalAlignment
-} from "igniteui-angular";
-import { Contract, REGIONS } from "../services/financialData";
-import { ITreeGridAggregation } from "./tree-grid-grouping.pipe";
+} from 'igniteui-angular';
+import { Contract, REGIONS } from '../services/financialData';
+import { ITreeGridAggregation } from './tree-grid-grouping.pipe';
 import { SignalRService } from '../services/signal-r.service';
 
 @Component({
     providers: [SignalRService],
-    selector: "app-tree-grid-finjs-sample",
-    styleUrls: ["./tree-grid-finjs-sample.component.scss"],
-    templateUrl: "./tree-grid-finjs-sample.component.html"
+    selector: 'app-tree-grid-finjs-sample',
+    styleUrls: ['./tree-grid-finjs-sample.component.scss'],
+    templateUrl: './tree-grid-finjs-sample.component.html'
 })
 
-export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
-    @ViewChild("grid1", { static: true }) public grid1: IgxTreeGridComponent;
-    @ViewChild("buttonGroup1", { static: true }) public buttonGroup1: IgxButtonGroupComponent;
-    @ViewChild("slider1", { static: true }) public volumeSlider: IgxSliderComponent;
-    @ViewChild("slider2", { static: true }) public intervalSlider: IgxSliderComponent;
+export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy, OnInit {
+    @ViewChild('grid1', { static: true }) public grid1: IgxTreeGridComponent;
+    @ViewChild('buttonGroup1', { static: true }) public buttonGroup1: IgxButtonGroupComponent;
+    @ViewChild('slider1', { static: true }) public volumeSlider: IgxSliderComponent;
+    @ViewChild('slider2', { static: true }) public intervalSlider: IgxSliderComponent;
     @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
 
     public showToolbar = true;
@@ -34,8 +34,8 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     public controls = [
         {
             disabled: false,
-            icon: "update",
-            label: "LIVE ALL PRICES",
+            icon: 'update',
+            label: 'LIVE ALL PRICES',
             selected: false
         },
         {
@@ -45,32 +45,26 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
             selected: false
         }
     ];
-    public groupColumns = ["category", "type", "contract"];
+    public groupColumns = ['category', 'type', 'contract'];
     public aggregations: ITreeGridAggregation[] = [
         {
-            aggregate: (parent: any, data: any[]) => {
-                return data.map((r) => r.change).reduce((ty, u) => ty + u, 0);
-            },
-            field: "change"
+            aggregate: (parent: any, data: any[]) => data.map((r) => r.change).reduce((ty, u) => ty + u, 0),
+            field: 'change'
         },
         {
-            aggregate: (parent: any, data: any[]) => {
-                return data.map((r) => r.price).reduce((ty, u) => ty + u, 0);
-            },
-            field: "price"
+            aggregate: (parent: any, data: any[]) => data.map((r) => r.price).reduce((ty, u) => ty + u, 0),
+            field: 'price'
         },
         {
-            aggregate: (parent: any, data: any[]) => {
-                return parent.change / (parent.price - parent.change) * 100;
-            },
-            field: "changeP"
+            aggregate: (parent: any, data: any[]) => parent.change / (parent.price - parent.change) * 100,
+            field: 'changeP'
         }
     ];
-    public primaryKey = "id";
-    public childDataKey = "children";
-    public groupColumnKey = "categories";
+    public primaryKey = 'id';
+    public childDataKey = 'children';
+    public groupColumnKey = 'categories';
 
-    public items: any[] = [{ field: "Export native" }, { field: "Export JS Excel" }];
+    public items: any[] = [{ field: 'Export native' }, { field: 'Export JS Excel' }];
 
     public _positionSettings: PositionSettings = {
         horizontalDirection: HorizontalAlignment.Left,
@@ -103,7 +97,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
             if (data.length !== 0) {
                 this.isLoading = false;
             };
-        })
+        });
     }
 
     public ngOnInit() {
@@ -147,6 +141,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     }
 
     updateVolume() {
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         this.dataService.hasRemoteConnection ? this.dataService.broadcastParams(this.frequency, this.volume, false) :
         this.dataService.getData(this.volume);
     }
@@ -193,24 +188,12 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
         this.showToolbar = !this.showToolbar;
     }
 
-    private negative = (rowData: any): boolean => {
-        return rowData["changeP"] < 0;
-    }
-    private positive = (rowData: any): boolean => {
-        return rowData["changeP"] > 0;
-    }
-    private changeNegative = (rowData: any): boolean => {
-        return rowData["changeP"] < 0 && rowData["changeP"] > -1;
-    }
-    private changePositive = (rowData: any): boolean => {
-        return rowData["changeP"] > 0 && rowData["changeP"] < 1;
-    }
-    private strongPositive = (rowData: any): boolean => {
-        return rowData["changeP"] >= 1;
-    }
-    private strongNegative = (rowData: any, key: string): boolean => {
-        return rowData["changeP"] <= -1;
-    }
+    private negative = (rowData: any): boolean => rowData['changeP'] < 0;
+    private positive = (rowData: any): boolean => rowData['changeP'] > 0;
+    private changeNegative = (rowData: any): boolean => rowData['changeP'] < 0 && rowData['changeP'] > -1;
+    private changePositive = (rowData: any): boolean => rowData['changeP'] > 0 && rowData['changeP'] < 1;
+    private strongPositive = (rowData: any): boolean => rowData['changeP'] >= 1;
+    private strongNegative = (rowData: any, key: string): boolean => rowData['changeP'] <= -1;
 
     /* eslint-disable @typescript-eslint/member-ordering */
     public trends = {

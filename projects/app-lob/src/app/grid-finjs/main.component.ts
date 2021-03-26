@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, OnDestroy, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { IDialogEventArgs, IgxDialogComponent } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
 import { ControllerComponent } from './controllers.component';
@@ -9,7 +9,7 @@ import { GridFinJSComponent } from './grid-finjs.component';
     styleUrls: ['./main.component.scss'],
     templateUrl: './main.component.html'
 })
-export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
+export class FinJSDemoComponent implements AfterViewInit, OnDestroy, OnInit {
     @ViewChild('finGrid', { static: true }) public finGrid: GridFinJSComponent;
     @ViewChild('controllers', { static: true }) public controller: ControllerComponent;
     @ViewChild('dialog', { static: true }) public dialog: IgxDialogComponent;
@@ -20,7 +20,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     @Output() public frequencyTimer = new EventEmitter<any>();
     @Output() public player = new EventEmitter<any>();
 
-    public properties = ["price", "country"];
+    public properties = ['price', 'country'];
     public chartData = [];
     public darkTheme = false;
     public volume = 1000;
@@ -57,8 +57,9 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
 
     public onVolumeChanged(volume: any) {
         this.volume = volume;
-        this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService.broadcastParams(this.controller.frequency, this.volume, false) :
-        this.finGrid.dataService.getData(volume);
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService
+            .broadcastParams(this.controller.frequency, this.volume, false) : this.finGrid.dataService.getData(volume);
     }
 
     public onFrequencyChanged(frequency: any) {
@@ -77,15 +78,16 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
                 break;
             }
             case 'stop': {
+                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                 this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService.stopLiveData() : this.stopFeed();
                 break;
             }
             case 'chart': {
                 if (this.finGrid.grid.selectedRows.length !== 0) {
                     this.setChartData(this.finGrid.grid.selectedRows);
-                    this.dialog.open()
+                    this.dialog.open();
                 } else {
-                    this.controller.toast.open("Please select some rows first!");
+                    this.controller.toast.open('Please select some rows first!');
                 };
                 break;
             }
@@ -170,8 +172,8 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
             this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1, {});
 
             this.setLabelIntervalAndAngle();
-            this.chart.chartTitle = "Data Chart with prices of " + this.chartData[0].category + " in " +
-                this.chartData[0].region + " Region";
+            this.chart.chartTitle = 'Data Chart with prices of ' + this.chartData[0].category + ' in ' +
+                this.chartData[0].region + ' Region';
 
             this.dialog.open();
         }, 200);
