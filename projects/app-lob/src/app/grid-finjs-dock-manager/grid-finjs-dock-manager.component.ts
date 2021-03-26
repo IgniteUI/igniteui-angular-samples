@@ -32,8 +32,6 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
     public isLoading = true;
     public data: any;
     public liveData = true;
-    public columnFormat = { digitsInfo: '1.3-3'};
-    public columnFormatChangeP = { digitsInfo: '3.3-3'};
     public slotCounter = 1;
     public customOverlaySettings: OverlaySettings;
     public freqOverlaySettings: OverlaySettings;
@@ -131,6 +129,8 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
         { field: 'ticker', width: '136px', sortable: false, filterable: false, type: 'string'},
         { field: 'cpn', width: '136px', sortable: false, filterable: false, type: 'string'}
     ];
+    public columnFormat = { digitsInfo: '1.3-3'};
+    public columnFormatChangeP = { digitsInfo: '2.3-3'};
     private destroy$ = new Subject<any>();
 
     constructor(public dataService: SignalRService, private paneService: FloatingPanesService, private cdr: ChangeDetectorRef, private componentFactoryResolver: ComponentFactoryResolver) {}
