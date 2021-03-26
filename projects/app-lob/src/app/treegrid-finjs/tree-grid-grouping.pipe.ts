@@ -23,8 +23,11 @@ export class TreeGridGroupingPipe implements PipeTransform {
                      groupKey: string,
                      primaryKey: string,
                      childDataKey: string): any[] {
-        const result = [];
+        if (groupColumns.length === 0) {
+            return collection;
+        }
 
+        const result = [];
         const groupedRecords = this.groupByMultiple(collection, groupColumns);
         this.flattenGrouping(groupedRecords, groupKey, primaryKey,
             childDataKey, aggregations, '', result);
@@ -50,7 +53,7 @@ export class TreeGridGroupingPipe implements PipeTransform {
                 parent[aggregation.field] = aggregation.aggregate(parent, children);
             }
 
-            parent[groupKey] = groupRecord.key;
+            parent[groupKey] = groupRecord.key + ` (${groupRecord.records.length})`;
             data.push(parent);
 
             if (groupRecord.groups) {

@@ -1,17 +1,17 @@
-/* eslint-disable max-len */
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy, OnInit, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from '@angular/core';
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IColumnSelectionEventArgs, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxOverlayService, OverlayCancelableEventArgs, OverlayEventArgs, OverlaySettings, VerticalAlignment } from 'igniteui-angular';
-import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import ResizeObserver from 'resize-observer-polyfill';
-import { merge, noop, Subject } from 'rxjs';
-import { debounceTime, filter, takeUntil, tap } from 'rxjs/operators';
-import { FinancialData } from '../../services/financialData';
-import { ChartIntegrationDirective, IDeterminedChartTypesArgs } from '../directives/chart-integration/chart-integration.directive';
-import { CHART_TYPE } from '../directives/chart-integration/chart-types';
-import { ConditionalFormattingDirective } from '../directives/conditional-formatting/conditional-formatting.directive';
-import { DockSlotComponent } from './dock-slot/dock-slot.component';
-import { FloatingPanesService } from './floating-panes.service';
+// tslint:disable: max-line-length
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnInit, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from "@angular/core";
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IColumnSelectionEventArgs, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxOverlayService, OverlayCancelableEventArgs, OverlayEventArgs, OverlaySettings, VerticalAlignment } from "igniteui-angular";
+import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from "igniteui-dockmanager";
+// tslint:disable-next-line: no-implicit-dependencies
+import ResizeObserver from "resize-observer-polyfill";
+import { merge, noop, Subject } from "rxjs";
+import { debounceTime, filter, takeUntil, tap } from "rxjs/operators";
+import { FinancialData } from "../../services/financialData";
+import { FloatingPanesService } from "../../services/floating-panes.service";
+import { ChartIntegrationDirective, IDeterminedChartTypesArgs } from "../directives/chart-integration/chart-integration.directive";
+import { CHART_TYPE } from "../directives/chart-integration/chart-types";
+import { ConditionalFormattingDirective } from "../directives/conditional-formatting/conditional-formatting.directive";
+import { DockSlotComponent } from "./dock-slot/dock-slot.component";
 
 @Pipe({
     name: 'hastDuplicateLayouts'
@@ -332,7 +332,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
                     // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
                     deleteProperty(target, prop) {
                         if (target[prop].type) {
-                            _this.paneService.removeChartPane(target[prop]);
+                            _this.paneService.removePane(target[prop]);
                             _this.cdr.detectChanges();
                         }
                         return true;
@@ -407,7 +407,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
             panes: [floatingPane]
         };
 
-        this.paneService.appendChartPane(splitPane);
+        this.paneService.appendPane(splitPane);
         const chartHost = this.getChartHostFromSlot(type);
         chartHost.viewContainerRef.clear();
         const chart = this.chartIntegration.chartFactory(type, chartHost.viewContainerRef);

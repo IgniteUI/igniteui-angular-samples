@@ -1,19 +1,14 @@
-/* eslint-disable @typescript-eslint/member-ordering */
-import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild, OnDestroy } from '@angular/core';
+import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild, forwardRef } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import {
-    IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent,
-    IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective
-} from 'igniteui-angular';
-import { Contract, REGIONS } from '../services/financialData';
-import { LocalDataService } from './localData.service';
+import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { Subject } from 'rxjs';
+import { SignalRService } from '../services/signal-r.service';
 
 @Component({
-    providers: [LocalDataService],
-    selector: 'app-finjs-grid',
-    templateUrl: './grid-finjs.component.html',
-    styleUrls: ['./grid-finjs.component.scss']
+  providers: [SignalRService],
+  selector: 'app-finjs-grid',
+  templateUrl: './grid-finjs.component.html',
+  styleUrls: ['./grid-finjs.component.scss']
 })
 export class GridFinJSComponent implements OnInit, OnDestroy {
     @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;
@@ -25,70 +20,73 @@ export class GridFinJSComponent implements OnInit, OnDestroy {
     public selectionMode = 'multiple';
     public volume = 1000;
     public frequency = 500;
-    public data = [];
-    public contracts = Contract;
-    public regions = REGIONS;
-    public columnFormat = { digitsInfo: '1.3-3' };
+    public data$: any;
+    public columnFormat = { digitsInfo: '1.3-3'}
+    public columnFormatChangeP = { digitsInfo: '3.3-3'}
     public showToolbar = true;
+    public isLoading = true;
+    protected destroy$ = new Subject<any>();
     public overlaySettings: OverlaySettings = {
         modal: false
     };
     protected destroy$ = new Subject<any>();
     private subscription$;
 
-    constructor(public finService: LocalDataService, private el: ElementRef, @Inject(DOCUMENT) private document: Document) {
-    }
+    constructor(private el: ElementRef, @Inject(DOCUMENT) private document: Document, public dataService: SignalRService) { }
 
     public ngOnInit() {
+        this.dataService.startConnection();
         this.overlaySettings.outlet = this.outlet;
-        if (this.data.length === 0) {
-            this.finService.getData(this.volume);
-            this.subscription$ = this.finService.records.subscribe(x => {
-                this.data = x;
-            });
-        }
+        this.data$ = this.dataService.data;
+
+        this.data$.subscribe((data) => {
+            if (data.length !== 0) {
+                this.isLoading = false;
+            };
+        })
+
+        // Set initially grouped columns
         this.grid.groupingExpressions = [{
             dir: SortingDirection.Desc,
-            fieldName: 'Category',
+            fieldName: 'category',
             ignoreCase: false,
             strategy: DefaultSortingStrategy.instance()
         },
         {
             dir: SortingDirection.Desc,
-            fieldName: 'Type',
+            fieldName: 'type',
             ignoreCase: false,
             strategy: DefaultSortingStrategy.instance()
         },
         {
             dir: SortingDirection.Desc,
-            fieldName: 'Settlement',
+            fieldName: 'settlement',
             ignoreCase: false,
             strategy: DefaultSortingStrategy.instance()
         }
         ];
     }
 
-
     /** Event Handlers and Methods */
-    public onChange(event: any) {
+    public onChange() {
         if (this.grid.groupingExpressions.length > 0) {
             this.grid.groupingExpressions = [];
         } else {
             this.grid.groupingExpressions = [{
                 dir: SortingDirection.Desc,
-                fieldName: 'Category',
+                fieldName: 'category',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: 'Type',
+                fieldName: 'type',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: 'Contract',
+                fieldName: 'contract',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             }
@@ -107,19 +105,19 @@ export class GridFinJSComponent implements OnInit, OnDestroy {
         } else {
             this.grid.groupingExpressions = [{
                 dir: SortingDirection.Desc,
-                fieldName: 'Category',
+                fieldName: 'category',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: 'Type',
+                fieldName: 'type',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: 'Contract',
+                fieldName: 'contract',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             }
@@ -159,12 +157,24 @@ export class GridFinJSComponent implements OnInit, OnDestroy {
     }
 
     /** Grid CellStyles and CellClasses */
-    private negative = (rowData: any): boolean => rowData['Change(%)'] < 0;
-    private positive = (rowData: any): boolean => rowData['Change(%)'] > 0;
-    private changeNegative = (rowData: any): boolean => rowData['Change(%)'] < 0 && rowData['Change(%)'] > -1;
-    private changePositive = (rowData: any): boolean => rowData['Change(%)'] > 0 && rowData['Change(%)'] < 1;
-    private strongPositive = (rowData: any): boolean => rowData['Change(%)'] >= 1;
-    private strongNegative = (rowData: any, key: string): boolean => rowData['Change(%)'] <= -1;
+    private negative = (rowData: any): boolean => {
+        return rowData["changeP"] < 0;
+    }
+    private positive = (rowData: any): boolean => {
+        return rowData["changeP"] > 0;
+    }
+    private changeNegative = (rowData: any): boolean => {
+        return rowData["changeP"] < 0 && rowData["changeP"] > -1;
+    }
+    private changePositive = (rowData: any): boolean => {
+        return rowData["changeP"] > 0 && rowData["changeP"] < 1;
+    }
+    private strongPositive = (rowData: any): boolean => {
+        return rowData["changeP"] >= 1;
+    }
+    private strongNegative = (rowData: any, key: string): boolean => {
+        return rowData["changeP"] <= -1;
+    }
 
     public trends = {
         changeNeg: this.changeNegative,
@@ -181,10 +191,4 @@ export class GridFinJSComponent implements OnInit, OnDestroy {
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
     };
-
-    public ngOnDestroy() {
-        if (this.subscription$) {
-            this.subscription$.unsubscribe();
-        }
-    }
 }

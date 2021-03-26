@@ -32,10 +32,15 @@ export const samplesRoutes: Routes = [
         path: 'grid'
     },
     {
-        data: ['HierarchicalGridDVModule'],
-        // eslint-disable-next-line max-len
-        loadChildren: () => import('./hierarchical-grid/hierarchical-grid.module').then(m => m.HierarchicalGridDVModule),
-        path: 'hierarchical-grid'
+        data: ["GridFinJSDockManagerModule"],
+        loadChildren: () => import("./grid-finjs-dock-manager/grid-finjs-dock-manager.module").then(m => m.GridFinJSDockManagerModule),
+        path: "grid-finjs-dock-manager"
+    },
+    {
+        data: ["HierarchicalGridDVModule"],
+        // tslint:disable-next-line: max-line-length
+        loadChildren: () => import("./hierarchical-grid/hierarchical-grid.module").then(m => m.HierarchicalGridDVModule),
+        path: "hierarchical-grid"
     },
     {
         data: ['GridDynamicChartDataModule'],
