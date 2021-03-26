@@ -36,9 +36,10 @@ export class SignalRService implements OnDestroy {
             })
             .catch(() => {
                 this.hasRemoteConnection = false;
+                if (this._timer) { this.stopFeed(); }
+                const data = this.financialData.generateData(volume);
                 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-                live ? this._timer = setInterval(() => this.updateAllPriceValues(this.financialData.generateData(volume))) :
-                    this.getData(volume);
+                live ? this._timer = setInterval(() => this.updateAllPriceValues(data)) : this.getData(volume);
             });
     };
 
