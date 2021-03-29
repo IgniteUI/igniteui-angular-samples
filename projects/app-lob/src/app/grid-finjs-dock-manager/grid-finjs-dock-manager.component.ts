@@ -35,9 +35,14 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     public columnFormatChangeP = { digitsInfo: '2.3-3'}
     private destroy$ = new Subject<any>();
     public slotCounter: number = 1;
-    public customOverlaySettings: OverlaySettings;
-    public freqOverlaySettings: OverlaySettings;
-
+    public customOverlaySettings: OverlaySettings = {
+        positionStrategy: new ConnectedPositioningStrategy(),
+        scrollStrategy: new AbsoluteScrollStrategy()
+    };
+    public freqOverlaySettings: OverlaySettings = {
+        positionStrategy: new ConnectedPositioningStrategy(),
+        scrollStrategy: new AbsoluteScrollStrategy()
+    };
     constructor(public dataService: SignalRService, private paneService: FloatingPanesService, private cdr: ChangeDetectorRef, private componentFactoryResolver: ComponentFactoryResolver) {}
 
     public ngOnInit() {
@@ -62,38 +67,30 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
             const y = (this.dockManager.nativeElement.getBoundingClientRect().height / 3);
 
             this.paneService.initialPanePosition = { x, y };
-        }, 2000);
-        this.grid2.selectColumns(["price", "change", "changeP"]);
-        this.customOverlaySettings = {
-            target: this.select.inputGroup.element.nativeElement,
-            positionStrategy: new ConnectedPositioningStrategy(),
-            scrollStrategy: new AbsoluteScrollStrategy(),
-            outlet: this.outlet
-        };
-        this.freqOverlaySettings = {
-            target: this.selectFrequency.inputGroup.element.nativeElement,
-            positionStrategy: new ConnectedPositioningStrategy(),
-            scrollStrategy: new AbsoluteScrollStrategy(),
-            outlet: this.outlet
-        };
-        this.grid1.groupingExpressions = [{
-            dir: SortingDirection.Desc,
-            fieldName: 'category',
-            ignoreCase: false,
-            strategy: DefaultSortingStrategy.instance()
-        },
-        {
-            dir: SortingDirection.Desc,
-            fieldName: 'type',
-            ignoreCase: false,
-            strategy: DefaultSortingStrategy.instance()
-        },
-        {
-            dir: SortingDirection.Desc,
-            fieldName: 'settlement',
-            ignoreCase: false,
-            strategy: DefaultSortingStrategy.instance()
-        }];
+            this.grid2.selectColumns(["price", "change", "changeP"]);
+            this.customOverlaySettings.target = this.select.inputGroup.element.nativeElement;
+            this.customOverlaySettings.outlet = this.outlet;
+            this.freqOverlaySettings.target = this.selectFrequency.inputGroup.element.nativeElement;
+            this.freqOverlaySettings.outlet = this.outlet;
+            this.grid1.groupingExpressions = [{
+                dir: SortingDirection.Desc,
+                fieldName: 'category',
+                ignoreCase: false,
+                strategy: DefaultSortingStrategy.instance()
+            },
+            {
+                dir: SortingDirection.Desc,
+                fieldName: 'type',
+                ignoreCase: false,
+                strategy: DefaultSortingStrategy.instance()
+            },
+            {
+                dir: SortingDirection.Desc,
+                fieldName: 'settlement',
+                ignoreCase: false,
+                strategy: DefaultSortingStrategy.instance()
+            }];
+            }, 500);
     }
 
     public docLayout: IgcDockManagerLayout = {
@@ -192,7 +189,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
 
     public paramsChanged() {
         this.dataService.hasRemoteConnection ? this.dataService.broadcastParams(this.frequency, this.dataVolume, true, false) :
-            this.dataService.startConnection(this.frequency, this.dataVolume, true);
+            this.dataService.startConnection(this.frequency, this.dataVolume, true, false);
         this.data = this.dataService.data;
     }
 
