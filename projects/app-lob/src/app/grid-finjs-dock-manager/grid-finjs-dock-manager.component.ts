@@ -62,6 +62,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     }
 
     public ngAfterViewInit() {
+        // This 500ms timeout is used as a workaround for StackBlitz ExpressionChangedAfterItHasBeenChecked Error 
         setTimeout(() => {
             const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 3);
             const y = (this.dockManager.nativeElement.getBoundingClientRect().height / 3);
@@ -90,7 +91,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             }];
-            }, 500);
+        }, 500);
     }
 
     public docLayout: IgcDockManagerLayout = {
@@ -288,6 +289,8 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
         grid.columnSelection = "multiple";
         grid.cellSelection = "none";
         grid.displayDensity = "compact";
+
+        // Use detectChanges because of ExpressionChangedAfterItHasBeenChecked Error when creating a dynamic pane
         this.cdr.detectChanges();
     }
 }
