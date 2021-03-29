@@ -62,7 +62,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
     }
 
     public ngAfterViewInit() {
-        // This 500ms timeout is used as a workaround for StackBlitz ExpressionChangedAfterItHasBeenChecked Error 
+        // This 500ms timeout is used as a workaround for StackBlitz ExpressionChangedAfterItHasBeenChecked Error
         setTimeout(() => {
             const x = (this.dockManager.nativeElement.getBoundingClientRect().width / 3);
             const y = (this.dockManager.nativeElement.getBoundingClientRect().height / 3);
