@@ -288,6 +288,6 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy {
         grid.columnSelection = "multiple";
         grid.cellSelection = "none";
         grid.displayDensity = "compact";
-
+        this.cdr.detectChanges();
     }
 }
