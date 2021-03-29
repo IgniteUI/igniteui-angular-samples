@@ -17,7 +17,8 @@ IgxSliderModule,
 IgxSwitchModule,
 IgxTabsModule,
 IgxToggleModule,
-IgxToastModule} from 'igniteui-angular';
+IgxToastModule,
+IgxGridComponent} from 'igniteui-angular';
 import {IgxCategoryChartModule,
 IgxLegendModule,
 IgxPieChartModule,
@@ -33,7 +34,8 @@ export class DVGridConfigGenerator implements IConfigGenerator {
         'GridFinJSComponent' : '../../../projects/app-lob/src/app/grid-finjs/grid-finjs.component',
         'SignalRService' : '../../../projects/app-lob/src/app/services/signal-r.service',
         'FloatingPanesService' : '../../../projects/app-lob/src/app/services/floating-panes.service',
-        'DockSlotComponent': '../../../projects/app-lob/src/app/grid-finjs-dock-manager/dock-slot.component'
+        'DockSlotComponent': '../../../projects/app-lob/src/app/grid-finjs-dock-manager/dock-slot.component',
+        'GridHostDirective': '../../../projects/app-lob/src/app/grid-finjs-dock-manager/dock-slot.component'
 
 };
     public generateConfigs(): Config[] {
@@ -104,20 +106,24 @@ export class DVGridConfigGenerator implements IConfigGenerator {
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core", "resize-observer-polyfill", "@microsoft/signalr", "igniteui-dockmanager"],
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts",
                 "/projects/app-lob/src/app/services/signal-r.service.ts",
-                "/projects/app-lob/src/app/services/financialData.ts"
+                "/projects/app-lob/src/app/services/financialData.ts",
+                "/projects/app-lob/src/app/services/floating-panes.service.ts",
+                "/projects/app-lob/src/app/grid-finjs-dock-manager/dock-slot.component.ts"
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxCategoryChartModule',
                     'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxSwitchModule',
                     'IgxRippleModule', 'GridFinJSDockManagerComponent', 'IgxDialogModule', 'IgxToastModule',
-                    'HttpClientModule', 'SignalRService', 'CUSTOM_ELEMENTS_SCHEMA', 'FloatingPanesService', 'DockSlotComponent'],
+                    'HttpClientModule', 'SignalRService', 'CUSTOM_ELEMENTS_SCHEMA', 'FloatingPanesService', 'DockSlotComponent',
+                    'IgxGridComponent', 'GridHostDirective'],
                 schemas: ['CUSTOM_ELEMENTS_SCHEMA'],
-                ngDeclarations: ['GridFinJSDockManagerComponent', 'DockSlotComponent'],
+                ngDeclarations: ['GridFinJSDockManagerComponent', 'DockSlotComponent', 'GridHostDirective'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule', 'IgxCategoryChartModule', 'IgxDialogModule', 'IgxToastModule', 'HttpClientModule'],
                 ngProviders: ['IgxExcelExporterService', 'IgxCsvExporterService', 'SignalRService', 'FloatingPanesService'],
-                additionalAdjustments: [dockManagerImport, defineCustomElements]
+                additionalAdjustments: [dockManagerImport, defineCustomElements],
+                ngEntryComponents: ['IgxGridComponent', 'DockSlotComponent']
             })
         }));
 
