@@ -38,7 +38,8 @@ export class SignalRService implements OnDestroy {
                 this.hasRemoteConnection = false;
                 if (this._timer) { this.stopFeed(); }
                 const data = this.financialData.generateData(volume);
-                live ? this._timer = setInterval(() => this.updateAllPriceValues(data)) : this.getData(volume);
+                live ? this._timer = setInterval(() => updateAll ? this.updateAllPriceValues(data) : this.updateRandomPriceValues(data), interval)
+                : this.getData(volume);
             });
     }
 
