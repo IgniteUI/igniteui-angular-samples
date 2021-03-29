@@ -25,8 +25,6 @@
     height: 80%;
 }
 
-
-
 :host ::ng-deep {
     @include igx-fluent-light-theme($fluent-excel-palette);
 
@@ -34,6 +32,10 @@
         igx-grid {
             @include scrollbar(16px, 16px);
         }
+    }
+
+    .igx-dialog__window-content {
+        padding: 0px;
     }
 
     .header {
