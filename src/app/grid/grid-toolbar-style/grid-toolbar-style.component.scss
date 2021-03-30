@@ -11,9 +11,9 @@ $my-dark-color: igx-color($my-dark-palette, 'surface');
 
 $dark-button-theme: igx-button-theme(
     $palette: $my-dark-palette,
-    $outlined-background: igx-color($my-dark-palette, 'secondary'),
-    $outlined-hover-background: igx-color($my-dark-palette, 'grays', 100),
-    $outlined-hover-text-color: igx-color($my-dark-palette, 'secondary')
+    $background: igx-color($my-dark-palette, 'secondary'),
+    $hover-background: igx-color($my-dark-palette, 'grays', 100),
+    $hover-foreground: igx-color($my-dark-palette, 'secondary')
 );
 
 $dark-grid-toolbar-theme: igx-grid-toolbar-theme(

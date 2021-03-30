@@ -13,11 +13,11 @@ $dark-paginator: igx-paginator-theme(
     $border-color: $bg
 );
 $dark-button: igx-button-theme(
-    $icon-color: $yellow,
-    $icon-hover-color: $bg,
-    $icon-hover-background: $yellow,
-    $icon-focus-color: $bg,
-    $icon-focus-background: $yellow,
+    $foreground: $yellow,
+    $hover-foreground: $bg,
+    $hover-background: $yellow,
+    $focus-foreground: $bg,
+    $focus-background: $yellow,
     $disabled-color: #16130C
 );
 $dark-input-group: igx-input-group-theme(

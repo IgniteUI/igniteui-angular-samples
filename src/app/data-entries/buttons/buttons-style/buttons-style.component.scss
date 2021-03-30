@@ -11,12 +11,12 @@
 }
 
 $custom-button-theme: igx-button-theme(
-    $raised-text-color: #fdfdfd,
-    $raised-hover-text-color: #fdfdfd,
-    $raised-background: #345779,
-    $raised-hover-background: #2e4d6b,
-    $raised-focus-text-color: #fdfdfd,
-    $raised-focus-background: #2e4d6b,
+    $foreground: #fdfdfd,
+    $hover-foreground: #fdfdfd,
+    $background: #345779,
+    $hover-background: #2e4d6b,
+    $focus-foreground: #fdfdfd,
+    $focus-background: #2e4d6b,
     $disabled-color: #2e4d6b
 );
 

@@ -22,10 +22,10 @@ $dark-input-group: igx-input-group-theme(
 );
 
 $dark-button: igx-button-theme(
-    $flat-background: $yellow,
-    $flat-text-color: $bg,
-    $flat-hover-background: $bg,
-    $flat-hover-text-color: $yellow
+    $background: $yellow,
+    $foreground: $bg,
+    $hover-background: $bg,
+    $hover-foreground: $yellow
 );
 
 $dark-drop-down-theme: igx-drop-down-theme(
