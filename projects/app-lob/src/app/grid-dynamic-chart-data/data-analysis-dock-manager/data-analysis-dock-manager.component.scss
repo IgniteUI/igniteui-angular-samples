@@ -103,10 +103,6 @@ $custom-badge-theme: igx-badge-theme(
         }
     }
 
-    .igx-dialog__window-content {
-        padding: 0px;
-    }
-
     .analytics-btn {
         @include igx-button(igx-button-theme($palette: $fluent-excel-palette,
                 $icon-color: #fff,

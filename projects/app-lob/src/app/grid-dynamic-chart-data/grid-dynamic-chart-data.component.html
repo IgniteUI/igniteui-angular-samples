@@ -105,7 +105,7 @@
 </span>
 <!-- this block can be moved in another component -->
 <igx-dialog #chartSelectionDialog>
-    <igx-tabs type="fixed">
+    <igx-tabs class="tabs-container">
         <igx-tabs-group label="Conditional Formatting">
             <div class="tab-options-wrapper">
                 <div class="tab-option">
@@ -127,7 +127,7 @@
             </div>
         </igx-tabs-group>
 
-        <igx-tabs-group label="Create Chart" [disabled]="disableCreateChart">
+        <igx-tabs-group label="Create Chart" [disabled]="disableCreateChart" style="margin-right: -1.7rem;">
             <div class="tab-options-wrapper">
                 <div class="tab-option">
                     <div *ngFor="let chart of availableCharts | slice:0:4" class="action">
