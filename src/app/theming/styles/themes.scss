@@ -134,7 +134,7 @@ $dark-input-group-theme: igx-input-group-theme(
 // Define black theme for the input-group
 $black-input-group-theme: igx-input-group-theme(
   $palette: $black-theme-palette,
-  $schema: $my-black-schema  
+  $schema: $my-black-schema
 );
 
 // Define light theme for the button
@@ -142,12 +142,9 @@ $light-button-theme: igx-button-theme(
   $palette: $light-theme-palette,
   $foreground: igx-color($light-theme-palette, "secondary", 700),
   $hover-foreground: igx-color($light-theme-palette, "primary", 500),
-  $hover-background: igx-color($light-theme-palette, "secondary", 500),
+  $hover-background: igx-color($light-theme-palette, "secondary", 100),
   $focus-foreground: igx-color($light-theme-palette, "primary", 500),
   $focus-background: igx-color($light-theme-palette, "secondary", 500),
-  $hover-background: igx-color($light-theme-palette, "secondary", 100),
-  $foreground: igx-color($light-theme-palette, "secondary", 700)
-
 );
 
 // Define dark theme for the button
@@ -240,7 +237,7 @@ $dark-paginator-theme: igx-paginator-theme(
 // Define black theme for the paginator
 $black-paginator-theme: igx-paginator-theme(
   $palette: $black-theme-palette,
-  $schema: $my-black-schema  
+  $schema: $my-black-schema
 );
 
 $light-calendar-theme: igx-calendar-theme(

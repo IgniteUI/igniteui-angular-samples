@@ -18,10 +18,6 @@ $dark-button-theme: igx-button-theme(
     $hover-background: $gray,
     $hover-foreground: $yellow,
     $focus-background: $yellow,
-    $foreground: $yellow,
-    $hover-background: $gray,
-    $hover-foreground: $yellow,
-    $focus-background: $yellow,
     $disabled-foreground: $light-gray
 );
 
@@ -78,9 +74,9 @@ $dark-ripple-theme: igx-ripple-theme(
 //         )
 //     )
 // );
-// 
+//
 // $custom-button-schema: extend($_dark-button,
-//     (           
+//     (
 //         flat-text-color:(
 //             igx-color:("secondary", 500)
 //         ),
@@ -89,7 +85,7 @@ $dark-ripple-theme: igx-ripple-theme(
 //         )
 //     )
 // );
-// 
+//
 // $custom-dark-schema: extend($dark-schema,(
 //     igx-column-actions: $custom-column-actions-schema,
 //     igx-button: $custom-button-schema
