@@ -1,7 +1,6 @@
 // CSS Reset, comment out if not required or using a different module
 // @import '~minireset.css/minireset';
 @import '~igniteui-angular/lib/core/styles/themes/index';
-@import '~igniteui-dockmanager/dist/collection/styles/igc.themes';
 
 @include igx-core();
 @include igx-theme($default-palette, $legacy-support: true);

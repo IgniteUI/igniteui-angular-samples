@@ -1,39 +1,39 @@
 <igc-dockmanager #dock class="{{theme ? 'dark-theme' : 'light-theme'}}  dock-m-position" [layout]="docLayout">
-        <div slot="actionPane" style="height: 100%; padding: 20px;">
-            <div class="actionItem">
-                Change theme: <br/> <igx-switch [(ngModel)]="theme">Dark Mode</igx-switch>
-            </div>
-            <div class="actionItem">
-                Start/Stop live data: <igx-switch [(ngModel)]="liveData" (change)="streamData($event)">{{ liveData ===
-                    true ? 'Streaming' : 'Not Streaming' }}</igx-switch>
-            </div>
-            <div class="actionItem">
-                <!-- Change volume -->
-                <igx-select [(ngModel)]="dataVolume" (ngModelChange)="paramsChanged()" [overlaySettings]="customOverlaySettings">
-                    <label igxLabel>Change data volume</label>
-                    <igx-prefix>
-                        <igx-icon>view_list</igx-icon>
-                    </igx-prefix>
-                    <igx-select-item *ngFor="let item of dataVolumeItems" [value]="item">
-                        {{item}}
-                    </igx-select-item>
-                </igx-select>
-            </div>
-            <div class="actionItem">
-                <!-- Change frequency -->
-                <igx-select [(ngModel)]="frequency" (ngModelChange)="paramsChanged()" [overlaySettings]="freqOverlaySettings" #freq>
-                    <label igxLabel>Change update frequency</label>
-                    <igx-prefix>
-                        <igx-icon>cell_wifi</igx-icon>
-                    </igx-prefix>
-                    <igx-select-item *ngFor="let item of frequencyItems" [value]="item">
-                        {{item}}
-                    </igx-select-item>
-                </igx-select>
-            </div>
-            <div igxButton (click)="createGrid()" [disabled]="docLayout.floatingPanes.length >= 5">Add Floating Pane</div>
-            <div igxOverlayOutlet #outlet></div>
+    <div slot="actionPane" style="height: 100%; padding: 20px;">
+        <div class="actionItem">
+            Change theme: <br/> <igx-switch [(ngModel)]="theme">Dark Mode</igx-switch>
         </div>
+        <div class="actionItem">
+            Start/Stop live data: <igx-switch [(ngModel)]="liveData" (change)="streamData($event)">{{ liveData ===
+                true ? 'Streaming' : 'Not Streaming' }}</igx-switch>
+        </div>
+        <div class="actionItem">
+            <!-- Change volume -->
+            <igx-select [(ngModel)]="dataVolume" (ngModelChange)="paramsChanged()" [overlaySettings]="customOverlaySettings">
+                <label igxLabel>Change data volume</label>
+                <igx-prefix>
+                    <igx-icon>view_list</igx-icon>
+                </igx-prefix>
+                <igx-select-item *ngFor="let item of dataVolumeItems" [value]="item">
+                    {{item}}
+                </igx-select-item>
+            </igx-select>
+        </div>
+        <div class="actionItem">
+            <!-- Change frequency -->
+            <igx-select [(ngModel)]="frequency" (ngModelChange)="paramsChanged()" [overlaySettings]="freqOverlaySettings" #freq>
+                <label igxLabel>Change update frequency</label>
+                <igx-prefix>
+                    <igx-icon>cell_wifi</igx-icon>
+                </igx-prefix>
+                <igx-select-item *ngFor="let item of frequencyItems" [value]="item">
+                    {{item}}
+                </igx-select-item>
+            </igx-select>
+        </div>
+        <div igxButton (click)="createGrid()" [disabled]="docLayout.floatingPanes.length >= 5">Add Floating Pane</div>
+        <div igxOverlayOutlet #outlet></div>
+    </div>
     <div slot="gridStockPrices" style="height: 100%;">
         <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
@@ -68,7 +68,7 @@
     </div>
     <div slot="forexMarket" style="height: 100%;">
         <igx-grid #grid2 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
-            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='true' [sortable]='true'></igx-column>
             <igx-column [field]="'category'" [width]="'120px'" [sortable]='true' [groupable]='true'></igx-column>
@@ -100,7 +100,7 @@
     </div>
     <div slot="content4" style="height: 100%;">
         <igx-grid #grid3 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
-            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='true' [sortable]='true'></igx-column>
             <igx-column [field]="'category'" [width]="'120px'" [sortable]='true' [groupable]='true'></igx-column>
@@ -132,7 +132,7 @@
     </div>
     <div slot="etfStockPrices" style="height: 100%;">
         <igx-grid #grid4 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading" [paging]="true"
-            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
+            [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='true' [sortable]='true'></igx-column>
             <igx-column [field]="'category'" [width]="'120px'" [sortable]='true' [groupable]='true'></igx-column>
