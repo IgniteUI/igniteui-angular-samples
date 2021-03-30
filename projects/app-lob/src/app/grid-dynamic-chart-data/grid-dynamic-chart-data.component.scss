@@ -34,16 +34,14 @@
         }
     }
 
-    .igx-dialog__window-content {
-        padding: 0px;
-    }
-
     .header {
         height: 10%;
         background-color: #e0e0e0;
         display: flex;
         font-size: 1.8rem;
         align-self: center;
+        margin-right: -2rem;
+        margin-left: -2rem;
 
         .action-buttons-wrapper {
             margin-left: auto;
@@ -105,6 +103,7 @@
             transition: all;
             transition-duration: .3s;
             transition-timing-function: ease-in-out;
+            margin-right: -1.5rem;
 
             .config-area-header {
                 margin-bottom: 3px;
@@ -112,6 +111,11 @@
                 text-align: center;
             }
         }
+    }
+    .tabs-container {
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        margin-bottom: -1.4rem;
     }
 
     .igx-grid__grouparea {
