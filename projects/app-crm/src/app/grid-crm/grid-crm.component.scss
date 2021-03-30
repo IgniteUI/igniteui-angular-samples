@@ -10,8 +10,8 @@
     $search-theme: igx-input-group-theme( $search-background: igx-color($crm-grid-palette, "primary", 600), $idle-text-color: igx-color($crm-grid-palette, "primary", 100), $filled-text-color: igx-color($crm-grid-palette, "grays", 600), $focused-text-color: igx-color($crm-grid-palette, "grays", 600));
     $crm-grid-theme: igx-grid-theme( $header-background: #f0f8fe, $header-border-color: #dde5eb);
     $crm-grid-toolbar: igx-grid-toolbar-theme( $background-color: igx-color($crm-grid-palette, "primary", 500));
-    $crm-grid-toolbar-button: igx-button-theme( $outlined-background: igx-color($crm-grid-palette, "primary", 800), $outlined-hover-background: igx-color($crm-grid-palette, "primary", 900), $outlined-focus-text-color: #fff);
-    $crm-grid-search-button: igx-button-theme( $flat-background: transparent, $flat-focus-background: igx-color($crm-grid-palette, "grays", 200), $flat-hover-background: igx-color($crm-grid-palette, "grays", 200));
+    $crm-grid-toolbar-button: igx-button-theme( $background: igx-color($crm-grid-palette, "primary", 800), $hover-background: igx-color($crm-grid-palette, "primary", 900), $focus-foreground: #fff);
+    $crm-grid-search-button: igx-button-theme( $background: transparent, $focus-background: igx-color($crm-grid-palette, "grays", 200), $hover-background: igx-color($crm-grid-palette, "grays", 200));
     $crm-input-drop-down: igx-input-group-theme( $placeholder-color: igx-color($crm-grid-palette, "grays", 500), $idle-text-color: igx-color($crm-grid-palette, "grays", 900));
     @include igx-grid-toolbar($crm-grid-toolbar);
     @include igx-grid($crm-grid-theme);
