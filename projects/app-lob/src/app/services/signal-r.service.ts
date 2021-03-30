@@ -22,7 +22,7 @@ export class SignalRService implements OnDestroy {
         this.stopLiveData();
     }
 
-    public startConnection = (interval = 500, volume = 1000, live = false) => {
+    public startConnection = (interval = 500, volume = 1000, live = false, updateAll = true) => {
         this.hubConnection = new signalR.HubConnectionBuilder()
             .configureLogging(signalR.LogLevel.Trace)
             .withUrl('https://staging.infragistics.com/angular-apis/webapi/streamHub')
@@ -32,16 +32,19 @@ export class SignalRService implements OnDestroy {
             .then(() => {
                 this.hasRemoteConnection = true;
                 this.registerSignalEvents();
-                this.broadcastParams(interval, volume, live);
+                this.broadcastParams(interval, volume, live, updateAll);
             })
             .catch(() => {
                 this.hasRemoteConnection = false;
-                live ? this._timer = setInterval(() => this.updateAllPriceValues(this.financialData.generateData(volume))) : this.getData(volume);
+                if (this._timer) { this.stopFeed(); }
+                const data = this.financialData.generateData(volume);
+                live ? this._timer = setInterval(() => updateAll ? this.updateAllPriceValues(data) : this.updateRandomPriceValues(data), interval)
+                : this.getData(volume);
             });
     }
 
-    public broadcastParams = (frequency, volume, live) => {
-        this.hubConnection.invoke('updateparameters', frequency, volume, live)
+    public broadcastParams = (frequency, volume, live, updateAll = true) => {
+        this.hubConnection.invoke('updateparameters', frequency, volume, live, updateAll)
             .then(() => console.log('requestLiveData', volume))
             .catch(err => {
                 console.error(err);
