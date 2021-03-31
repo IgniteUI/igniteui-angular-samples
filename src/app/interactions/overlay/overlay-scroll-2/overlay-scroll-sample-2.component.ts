@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import {
     AbsoluteScrollStrategy,
     BlockScrollStrategy,
@@ -6,29 +6,27 @@ import {
     ConnectedPositioningStrategy,
     IgxOverlayService,
     NoOpScrollStrategy
-} from "igniteui-angular";
-import { Subject } from "rxjs";
-import { filter, takeUntil } from "rxjs/operators";
-import { MyDynamicCardComponent } from "../overlay-dynamic-card/overlay-dynamic-card.component";
-// tslint:disable:object-literal-sort-keys
+} from 'igniteui-angular';
+import { Subject } from 'rxjs';
+import { filter, takeUntil } from 'rxjs/operators';
+import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 @Component({
-    selector: "overlay-sample",
-    styleUrls: ["./overlay-scroll-sample-2.component.scss"],
-    templateUrl: "./overlay-scroll-sample-2.component.html",
+    selector: 'app-overlay-sample',
+    styleUrls: ['./overlay-scroll-sample-2.component.scss'],
+    templateUrl: './overlay-scroll-sample-2.component.html',
     providers: [IgxOverlayService]
 })
 export class OverlayScrollSample2Component implements OnInit, OnDestroy {
-
-    public previewHidden = false;
-    @ViewChild("scrollDemo", { static: true })
+    @ViewChild('scrollDemo', { static: true })
     public scrollDemo: ElementRef;
 
     @ViewChild(MyDynamicCardComponent, { static: true })
     public overlayDemo: MyDynamicCardComponent;
 
-    @ViewChild("mainContainer", { static: true })
+    @ViewChild('mainContainer', { static: true })
     public mainContainer: ElementRef;
 
+    public previewHidden = false;
     private destroy$ = new Subject<boolean>();
     private _overlayId: string;
     private _target: HTMLElement;
@@ -47,7 +45,7 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
     }
 
     public ngOnInit(): void {
-        (this.mainContainer.nativeElement as HTMLElement).style.height = "450px";
+        (this.mainContainer.nativeElement as HTMLElement).style.height = '450px';
         this.overlay.onOpening.subscribe(() => {
             this.previewHidden = true;
         });
@@ -60,15 +58,15 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
         let scrollStrategy;
         const positionStrategy = new ConnectedPositioningStrategy();
         switch (strategy) {
-            case ("absolute"):
+            case ('absolute'):
                 scrollStrategy = new AbsoluteScrollStrategy();
                 this._target = this.scrollDemo.nativeElement.children[0];
                 break;
-            case ("block"):
+            case ('block'):
                 scrollStrategy = new BlockScrollStrategy();
                 this._target = this.scrollDemo.nativeElement.children[1];
                 break;
-            case ("close"):
+            case ('close'):
                 scrollStrategy = new CloseScrollStrategy(this.mainContainer.nativeElement);
                 this._target = this.scrollDemo.nativeElement.children[2];
                 break;

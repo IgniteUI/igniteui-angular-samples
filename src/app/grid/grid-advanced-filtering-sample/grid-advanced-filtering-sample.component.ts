@@ -1,14 +1,14 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { DATA } from "../../data/nwindData";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxGridComponent } from 'igniteui-angular';
+import { DATA } from '../../data/nwindData';
 
 @Component({
-    selector: "grid-advanced-filtering-sample",
-    styleUrls: ["./grid-advanced-filtering-sample.component.scss"],
-    templateUrl: "grid-advanced-filtering-sample.component.html"
+    selector: 'app-grid-advanced-filtering-sample',
+    styleUrls: ['./grid-advanced-filtering-sample.component.scss'],
+    templateUrl: 'grid-advanced-filtering-sample.component.html'
 })
 export class GridAdvancedFilteringSampleComponent implements OnInit {
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 
     public data: any[];
@@ -20,6 +20,6 @@ export class GridAdvancedFilteringSampleComponent implements OnInit {
     }
 
     public formatCurrency(val: string) {
-        return "$" + parseInt(val, 10).toFixed(2);
+        return '$' + parseInt(val, 10).toFixed(2);
     }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/quotes */
 import { Component } from "@angular/core";
 
 @Component({
@@ -7,21 +8,21 @@ import { Component } from "@angular/core";
 })
 export class TabbarSample2Component {
 
-  public songsList: object[] = [
+  public songsList = [
     { title: "Havana", artist: "Camila Cabello" },
     { title: "Meant To Be", artist: "Bebe Rexha & Florida Georgia Line" },
     { title: "New Rules", artist: "Dua Lipa" },
     { title: "Wolves", artist: "Selena Gomez & Marshmello" }
   ];
 
-  public moviesList: object[] = [
+  public moviesList = [
     { title: "Logan", genre: "Action, Drama, Sci-Fi" },
     { title: "Wonder Woman", genre: "Action, Adventure, Fantasy" },
     { title: "Guardians of the Galaxy Vol. 2", genre: "Action, Adventure, Sci-Fi" },
     { title: "Star Wars: The Last Jedi", genre: "Action, Adventure, Fantasy" }
   ];
 
-  public booksList: object[] = [
+  public booksList = [
     { title: "Wonder", author: "R. J. Palacio" },
     { title: "Milk and Honey", author: "Rupi Kaur" },
     { title: "Giraffes Can't Dance", author: "Jeff Kinne" },

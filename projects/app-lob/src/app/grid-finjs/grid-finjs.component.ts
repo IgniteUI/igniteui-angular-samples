@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild, forwardRef } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
@@ -11,25 +12,25 @@ import { SignalRService } from '../services/signal-r.service';
   styleUrls: ['./grid-finjs.component.scss']
 })
 export class GridFinJSComponent implements OnInit {
-    public selectionMode = "multiple";
-    public volume = 1000;
-    public frequency = 500;
-    public data$: any;
-    public columnFormat = { digitsInfo: '1.3-3'}
-    public columnFormatChangeP = { digitsInfo: '3.3-3'}
-    public showToolbar = true;
-    public isLoading = true;
-    protected destroy$ = new Subject<any>();
-    public overlaySettings: OverlaySettings = {
-        modal: false
-    };
-
     @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;
     @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
-
     @Output() public selectedDataChanged = new EventEmitter<any>();
     @Output() public keyDown = new EventEmitter<any>();
     @Output() public chartColumnKeyDown = new EventEmitter<any>();
+
+    public selectionMode = 'multiple';
+    public volume = 1000;
+    public frequency = 500;
+    public data$: any;
+    public columnFormat = { digitsInfo: '1.3-3'};
+    public columnFormatChangeP = { digitsInfo: '3.3-3'};
+    public showToolbar = true;
+    public isLoading = true;
+    public overlaySettings: OverlaySettings = {
+        modal: false
+    };
+    protected destroy$ = new Subject<any>();
+    private subscription$;
 
     constructor(private el: ElementRef, @Inject(DOCUMENT) private document: Document, public dataService: SignalRService) { }
 
@@ -42,7 +43,7 @@ export class GridFinJSComponent implements OnInit {
             if (data.length !== 0) {
                 this.isLoading = false;
             };
-        })
+        });
 
         // Set initially grouped columns
         this.grid.groupingExpressions = [{
@@ -126,7 +127,7 @@ export class GridFinJSComponent implements OnInit {
 
     public gridKeydown(evt) {
         if (this.grid.selectedRows.length > 0 &&
-            evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === "d") {
+            evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === 'd') {
             evt.preventDefault();
             this.keyDown.emit();
         }
@@ -137,7 +138,7 @@ export class GridFinJSComponent implements OnInit {
         const evt: KeyboardEvent = args.event as KeyboardEvent;
         const type = args.targetType;
 
-        if (type === "dataCell" && target.column.field === "Chart" && evt.key.toLowerCase() === "enter") {
+        if (type === 'dataCell' && target.column.field === 'Chart' && evt.key.toLowerCase() === 'enter') {
             this.grid.selectRows([target.row.rowID], true);
             this.chartColumnAction(target);
         }
@@ -148,33 +149,22 @@ export class GridFinJSComponent implements OnInit {
     }
 
     get gridWrapper(): HTMLElement {
-        return this.el.nativeElement.querySelector(".grid__wrapper") as HTMLElement;
+        return this.el.nativeElement.querySelector('.grid__wrapper') as HTMLElement;
     }
 
     get controlsWrapper(): HTMLElement {
-        return this.document.body.querySelector(".controls-wrapper") as HTMLElement;
+        return this.document.body.querySelector('.controls-wrapper') as HTMLElement;
     }
 
     /** Grid CellStyles and CellClasses */
-    private negative = (rowData: any): boolean => {
-        return rowData["changeP"] < 0;
-    }
-    private positive = (rowData: any): boolean => {
-        return rowData["changeP"] > 0;
-    }
-    private changeNegative = (rowData: any): boolean => {
-        return rowData["changeP"] < 0 && rowData["changeP"] > -1;
-    }
-    private changePositive = (rowData: any): boolean => {
-        return rowData["changeP"] > 0 && rowData["changeP"] < 1;
-    }
-    private strongPositive = (rowData: any): boolean => {
-        return rowData["changeP"] >= 1;
-    }
-    private strongNegative = (rowData: any, key: string): boolean => {
-        return rowData["changeP"] <= -1;
-    }
+    private negative = (rowData: any): boolean => rowData['changeP'] < 0;
+    private positive = (rowData: any): boolean => rowData['changeP'] > 0;
+    private changeNegative = (rowData: any): boolean => rowData['changeP'] < 0 && rowData['changeP'] > -1;
+    private changePositive = (rowData: any): boolean => rowData['changeP'] > 0 && rowData['changeP'] < 1;
+    private strongPositive = (rowData: any): boolean => rowData['changeP'] >= 1;
+    private strongNegative = (rowData: any, key: string): boolean => rowData['changeP'] <= -1;
 
+    // eslint-disable-next-line @typescript-eslint/member-ordering
     public trends = {
         changeNeg: this.changeNegative,
         changePos: this.changePositive,
@@ -184,6 +174,7 @@ export class GridFinJSComponent implements OnInit {
         strongPositive: this.strongPositive
     };
 
+    // eslint-disable-next-line @typescript-eslint/member-ordering
     public trendsChange = {
         changeNeg2: this.changeNegative,
         changePos2: this.changePositive,

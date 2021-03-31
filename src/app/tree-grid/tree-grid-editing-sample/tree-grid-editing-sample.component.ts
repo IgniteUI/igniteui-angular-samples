@@ -1,22 +1,22 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxDialogComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent
-} from "igniteui-angular";
-import { generateEmployeeFlatData } from "../data/employees-flat";
-import { Employee } from "./employee";
+} from 'igniteui-angular';
+import { generateEmployeeFlatData } from '../data/employees-flat';
+import { Employee } from './employee';
 
 class CustomNumberSummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = new IgxSummaryOperand().operate(data);
         result.push({
-            key: "Min",
-            label: "Min",
+            key: 'Min',
+            label: 'Min',
             summaryResult: IgxNumberSummaryOperand.min(data)
         });
         result.push({
-            key: "max",
-            label: "Max",
+            key: 'max',
+            label: 'Max',
             summaryResult: IgxNumberSummaryOperand.max(data)
         });
         return result;
@@ -24,16 +24,15 @@ class CustomNumberSummary {
 }
 
 @Component({
-    selector: "app-tree-grid-editing-sample",
-    styleUrls: ["./tree-grid-editing-sample.component.scss"],
-    templateUrl: "./tree-grid-editing-sample.component.html"
+    selector: 'app-tree-grid-editing-sample',
+    styleUrls: ['./tree-grid-editing-sample.component.scss'],
+    templateUrl: './tree-grid-editing-sample.component.html'
 })
 export class TreeGridEditingSampleComponent implements OnInit {
-
+    @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
+    @ViewChild('dialogAdd', { read: IgxDialogComponent, static: true }) public dialog: IgxDialogComponent;
     public data: any[];
     public numberSummaries = CustomNumberSummary;
-    @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
-    @ViewChild("dialogAdd", { read: IgxDialogComponent, static: true }) public dialog: IgxDialogComponent;
     public employee: Employee;
     private nextRow: number;
 

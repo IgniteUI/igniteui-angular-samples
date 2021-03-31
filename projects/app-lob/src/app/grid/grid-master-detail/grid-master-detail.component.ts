@@ -1,20 +1,21 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxColumnComponent } from "igniteui-angular";
-import { IgxLegendComponent } from "igniteui-angular-charts";
-import { data } from "../../services/athletesData";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { Component, ViewChild } from '@angular/core';
+import { IgxColumnComponent } from 'igniteui-angular';
+import { IgxLegendComponent } from 'igniteui-angular-charts';
+import { data } from '../../services/athletesData';
 
 @Component({
-    selector: "grid-master-detail",
-    styleUrls: ["./grid-master-detail.component.scss"],
-    templateUrl: "grid-master-detail.component.html"
+    selector: 'app-grid-master-detail',
+    styleUrls: ['./grid-master-detail.component.scss'],
+    templateUrl: 'grid-master-detail.component.html'
 })
 
 export class GridMasterDetailSampleComponent {
-    @ViewChild("legend", { static: true })
+    @ViewChild('legend', { static: true })
     public legend: IgxLegendComponent;
 
     public data = [];
-    public include = ["date", "estimated", "actual"];
+    public include = ['date', 'estimated', 'actual'];
     constructor() {
         this.data = data;
     }
@@ -28,22 +29,20 @@ export class GridMasterDetailSampleComponent {
         }
     }
 
-    public formatPieLabel = (args) => {
-        return args.item.Value + " " + args.item.Label;
-    }
+    public formatPieLabel = (args) => args.item.Value + ' ' + args.item.Label;
 
     public formatDateLabel(item: any): string {
-        return item.date.toLocaleDateString(undefined, { month: "short" });
+        return item.date.toLocaleDateString(undefined, { month: 'short' });
     }
 
     public formatValue(val: any): string {
-        return val.toLocaleString("en-us", { maximumFractionDigits: 2 });
+        return val.toLocaleString('en-us', { maximumFractionDigits: 2 });
     }
     public getPieData(dataItem) {
         return [
-            { Label: "Won", Value: dataItem.deals_won },
-            { Label: "Lost", Value: dataItem.deals_lost },
-            { Label: "Pending", Value: dataItem.deals_pending }];
+            { Label: 'Won', Value: dataItem.deals_won },
+            { Label: 'Lost', Value: dataItem.deals_lost },
+            { Label: 'Pending', Value: dataItem.deals_pending }];
     }
 
     public getChartData(dataItem) {
@@ -67,7 +66,7 @@ export class GridMasterDetailSampleComponent {
         let pending = dataItem.deals_pending;
         for (let j = 0; j < 3; j++) {
             detailsData.push({
-                Q: "Q" + (j + 1),
+                Q: 'Q' + (j + 1),
                 Won: this.getRandomNumber(0, won),
                 Lost: this.getRandomNumber(0, lost),
                 Pending: this.getRandomNumber(0, pending)
@@ -77,7 +76,7 @@ export class GridMasterDetailSampleComponent {
             pending -= detailsData[j].Pending;
         }
         detailsData.push({
-            Q: "Q4",
+            Q: 'Q4',
             Won: won,
             Lost: lost,
             Pending: pending
@@ -87,9 +86,9 @@ export class GridMasterDetailSampleComponent {
     }
 
     public columnInit(event: IgxColumnComponent) {
-        if (event.field === "Q") {
-            event.width = "50px";
-            event.header = " ";
+        if (event.field === 'Q') {
+            event.width = '50px';
+            event.header = ' ';
         }
     }
 

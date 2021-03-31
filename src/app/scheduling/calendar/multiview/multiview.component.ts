@@ -1,14 +1,14 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxCalendarComponent, IgxDialogComponent } from "igniteui-angular";
+import { Component, ViewChild } from '@angular/core';
+import { IgxCalendarComponent, IgxDialogComponent } from 'igniteui-angular';
 
 @Component({
-  selector: "app-calendar",
-  styleUrls: ["./multiview.component.scss"],
-  templateUrl: "./multiview.component.html"
+  selector: 'app-calendar',
+  styleUrls: ['./multiview.component.scss'],
+  templateUrl: './multiview.component.html'
 })
 export class CalendarMultiViewComponent {
-    @ViewChild("calendar", { static: true }) public calendar: IgxCalendarComponent;
-    @ViewChild("alert", { static: true }) public dialog: IgxDialogComponent;
+    @ViewChild('calendar', { static: true }) public calendar: IgxCalendarComponent;
+    @ViewChild('alert', { static: true }) public dialog: IgxDialogComponent;
     public range = [];
 
     public selectDates(dates: Date[]) {
@@ -17,17 +17,17 @@ export class CalendarMultiViewComponent {
 
     public submitDates(eventArgs) {
         if (this.range.length < 2) {
-            this.dialog.message = "Select dates from the Calendar first.";
+            this.dialog.message = 'Select dates from the Calendar first.';
         } else {
-            this.dialog.message = "Request for your stay has been submitted !";
+            this.dialog.message = 'Request for your stay has been submitted !';
         }
         this.dialog.open();
     }
 
     public formatDate(date: Date): string {
-        return this.getDatePart(date, this.calendar, "weekday") + " " +
-            this.getDatePart(date, this.calendar, "day") + " " +
-            this.getDatePart(date, this.calendar, "month");
+        return this.getDatePart(date, this.calendar, 'weekday') + ' ' +
+            this.getDatePart(date, this.calendar, 'day') + ' ' +
+            this.getDatePart(date, this.calendar, 'month');
     }
 
     public getDatePart(val: any, component: any, datePart: string) {
@@ -40,7 +40,7 @@ export class CalendarMultiViewComponent {
     }
 
     get action() {
-        return this.range.length < 1 ? "CHECK-IN" : "CHECK-OUT";
+        return this.range.length < 1 ? 'CHECK-IN' : 'CHECK-OUT';
     }
 
     get checkin() {

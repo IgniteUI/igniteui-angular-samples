@@ -1,4 +1,4 @@
-/* tslint:disable:object-literal-sort-keys */
+/*eslint-disable*/
 export const LOCAL_DATA = [{
     Country: "USA",
     ID: 1,

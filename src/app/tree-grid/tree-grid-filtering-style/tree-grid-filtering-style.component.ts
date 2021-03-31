@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { FOODS_DATA } from "../data/foods";
+import { Component, OnInit } from '@angular/core';
+import { FOODS_DATA } from '../data/foods';
 
 @Component({
-  selector: "app-tree-grid-filtering-style",
-  styleUrls: ["./tree-grid-filtering-style.component.scss"],
-  templateUrl: "./tree-grid-filtering-style.component.html"
+  selector: 'app-tree-grid-filtering-style',
+  styleUrls: ['./tree-grid-filtering-style.component.scss'],
+  templateUrl: './tree-grid-filtering-style.component.html'
 })
 export class TreeGridFilteringStyleComponent implements OnInit {
     public data: any[];
@@ -16,7 +16,7 @@ export class TreeGridFilteringStyleComponent implements OnInit {
     }
 
     public formatDate(val: Date) {
-        return new Intl.DateTimeFormat("en-US").format(val);
+        return new Intl.DateTimeFormat('en-US').format(val);
     }
 
     public formatCurrency(val: string) {

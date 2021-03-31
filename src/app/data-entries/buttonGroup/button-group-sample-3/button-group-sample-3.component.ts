@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 interface IButton {
     ripple?: string;
@@ -20,7 +20,7 @@ class ToggleButton {
     private icon: string;
 
     constructor(obj?: IButton) {
-        this.ripple = obj.ripple || "gray";
+        this.ripple = obj.ripple || 'gray';
         this.label = obj.label;
         this.selected = obj.selected || false;
         this.togglable = obj.togglable || true;
@@ -31,9 +31,9 @@ class ToggleButton {
 }
 
 @Component({
-    selector: "app-button-group-sample-3",
-    styleUrls: ["./button-group-sample-3.component.scss"],
-    templateUrl: "./button-group-sample-3.component.html"
+    selector: 'app-button-group-sample-3',
+    styleUrls: ['./button-group-sample-3.component.scss'],
+    templateUrl: './button-group-sample-3.component.html'
 })
 export class ButtonGroupSample3Component implements OnInit {
     public bordersButtons: ToggleButton[];
@@ -41,19 +41,19 @@ export class ButtonGroupSample3Component implements OnInit {
     public ngOnInit() {
         this.bordersButtons = [
             new ToggleButton({
-                icon: "border_top",
+                icon: 'border_top',
                 selected: true
             }),
             new ToggleButton({
-                icon: "border_right",
+                icon: 'border_right',
                 selected: false
             }),
             new ToggleButton({
-                icon: "border_bottom",
+                icon: 'border_bottom',
                 selected: false
             }),
             new ToggleButton({
-                icon: "border_left",
+                icon: 'border_left',
                 selected: false
             })
         ];

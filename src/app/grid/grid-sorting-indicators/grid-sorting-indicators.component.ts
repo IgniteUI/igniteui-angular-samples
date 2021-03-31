@@ -9,28 +9,28 @@ import  {generateRandomInteger, generateRandomFloat} from '../../data/utils';
 })
 export class GridSortingIndicatorsComponent implements OnInit, AfterViewInit {
 
-    @ViewChild("grid1", { static: true }) public grid: IgxGridComponent;
+    @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;
     public data;
 
     public ngOnInit(): void {
-        const typeArr = ["Gold", "Silver", "Coal"];
+        const typeArr = ['Gold', 'Silver', 'Coal'];
         this.data = new FinancialData().generateData(1000).map(dataObj => {
                 const type = typeArr[generateRandomInteger(0, 2)];
                 switch (type) {
-                    case "Gold":
-                        dataObj["Type"] = "Gold";
-                        dataObj["Price"] = generateRandomFloat(1261.78, 1302.76);
-                        dataObj["Buy"] = generateRandomFloat(1261.78, 1280.73);
+                    case 'Gold':
+                        dataObj['Type'] = 'Gold';
+                        dataObj['Price'] = generateRandomFloat(1261.78, 1302.76);
+                        dataObj['Buy'] = generateRandomFloat(1261.78, 1280.73);
                         break;
-                    case "Silver":
-                        dataObj["Type"] = "Silver";
-                        dataObj["Price"] = generateRandomFloat(17.12, 17.73);
-                        dataObj["Buy"] = generateRandomFloat(17.12, 17.43);
+                    case 'Silver':
+                        dataObj['Type'] = 'Silver';
+                        dataObj['Price'] = generateRandomFloat(17.12, 17.73);
+                        dataObj['Buy'] = generateRandomFloat(17.12, 17.43);
                         break;
-                    case "Coal":
-                        dataObj["Type"] = "Coal";
-                        dataObj["Price"] = generateRandomFloat(0.40, 0.42);
-                        dataObj["Buy"] = generateRandomFloat(0.42, 0.46);
+                    case 'Coal':
+                        dataObj['Type'] = 'Coal';
+                        dataObj['Price'] = generateRandomFloat(0.40, 0.42);
+                        dataObj['Buy'] = generateRandomFloat(0.42, 0.46);
                         break;
                 }
                 return dataObj;
@@ -44,14 +44,14 @@ export class GridSortingIndicatorsComponent implements OnInit, AfterViewInit {
             {
                 dir: generateRandomInteger(1, 2), fieldName: c.field,
                 ignoreCase: true, strategy: DefaultSortingStrategy.instance()
-            }
-            expressions.push(sortExpr)
+            };
+            expressions.push(sortExpr);
         });
         this.grid.sortingExpressions = expressions;
         this.grid.cdr.detectChanges();
     }
     public formatCurrency(value: number) {
-        return "$" + value.toFixed(2);
+        return '$' + value.toFixed(2);
     }
 
 }

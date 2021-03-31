@@ -1,4 +1,4 @@
-// tslint:disable:object-literal-sort-keys
+/*eslint-disable*/
 export const DATA: any[] = [
     {
        OrderID: 10524,

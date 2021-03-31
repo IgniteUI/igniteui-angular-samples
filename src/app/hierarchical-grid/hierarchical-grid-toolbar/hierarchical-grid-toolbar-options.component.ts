@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-toolbar-options",
-    styleUrls: ["./hierarchical-grid-toolbar-options.component.scss"],
-    templateUrl: "hierarchical-grid-toolbar-options.component.html"
+    selector: 'app-hierarchical-grid-toolbar-options',
+    styleUrls: ['./hierarchical-grid-toolbar-options.component.scss'],
+    templateUrl: 'hierarchical-grid-toolbar-options.component.html'
 })
 
 export class HGridToolbarOptionsSampleComponent {

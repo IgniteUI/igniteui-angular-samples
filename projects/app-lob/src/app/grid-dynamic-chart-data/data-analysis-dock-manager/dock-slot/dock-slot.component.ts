@@ -1,10 +1,10 @@
-import { Component, HostBinding, Input, OnInit, ViewChild } from "@angular/core";
-import { ChartHostDirective } from "../../directives/chart-integration/chart-integration.directive";
+import { Component, HostBinding, Input, OnInit, ViewChild } from '@angular/core';
+import { ChartHostDirective } from '../../directives/chart-integration/chart-integration.directive';
 
 @Component({
-    selector: "dock-slot",
-    templateUrl: "./dock-slot.component.html",
-    styleUrls: ["./dock-slot.component.scss"]
+    selector: 'app-dock-slot',
+    templateUrl: './dock-slot.component.html',
+    styleUrls: ['./dock-slot.component.scss']
 })
 export class DockSlotComponent implements OnInit {
 
@@ -14,7 +14,7 @@ export class DockSlotComponent implements OnInit {
     @Input()
     public id;
 
-    @HostBinding("slot")
+    @HostBinding('slot')
     public slot;
     constructor() { }
 

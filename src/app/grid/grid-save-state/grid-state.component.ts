@@ -1,18 +1,19 @@
-import { Component, OnInit, ViewChild, ViewChildren, QueryList } from "@angular/core";
-import { NavigationStart, Router } from "@angular/router";
+/* eslint-disable max-len */
+import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
 import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
     IGridState, IGridStateOptions, IgxGridComponent, IgxGridStateDirective,
-    IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent } from "igniteui-angular";
-import { take } from "rxjs/operators";
-import { employeesData } from "./localData";
+    IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent } from 'igniteui-angular';
+import { take } from 'rxjs/operators';
+import { employeesData } from './localData';
 
 class MySummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = new IgxNumberSummaryOperand().operate(data);
         result.push({
-            key: "test",
-            label: "Test",
+            key: 'test',
+            label: 'Test',
             summaryResult: data.filter(rec => rec > 10 && rec < 30).length
         });
         return result;
@@ -21,20 +22,24 @@ class MySummary {
 
 // tslint:disable:object-literal-sort-keys
 @Component({
-  selector: "app-grid",
-  styleUrls: ["./grid-state.component.scss"],
-  templateUrl: "./grid-state.component.html"
+  selector: 'app-grid',
+  styleUrls: ['./grid-state.component.scss'],
+  templateUrl: './grid-state.component.html'
 })
 
-export class GridSaveStateComponent implements OnInit {
+export class GridSaveStateComponent implements OnInit, AfterViewInit {
+    @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
+    @ViewChild(IgxGridComponent, { static: true }) public grid: IgxGridComponent;
+    @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
+
     public localData: any[];
     public columns: any[];
-    public gridId = "grid1";
-    public stateKey = this.gridId + "-state";
+    public gridId = 'grid1';
+    public stateKey = this.gridId + '-state';
     public gridState: IGridState;
     public serialize = true;
 
-    public features: { key: GridFeatures, shortName: string }[] = [
+    public features: { key: GridFeatures; shortName: string }[] = [
         { key: 'advancedFiltering', shortName: 'Adv Filt' },
         { key: 'cellSelection', shortName: 'Cell Sel' },
         { key: 'columns', shortName: 'Columns' } ,
@@ -62,18 +67,14 @@ export class GridSaveStateComponent implements OnInit {
       columnSelection: true
     };
 
-    @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
-    @ViewChild(IgxGridComponent, { static: true }) public grid: IgxGridComponent;
-    @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
-
     public initialColumns: any[] = [
       // tslint:disable:max-line-length
-      { field: "FirstName", header: "First Name", width: "150px", dataType: "string", pinned: true, movable: true, sortable: true, filterable: true},
-      { field: "LastName", header: "Last Name", width: "150px", dataType: "string", pinned: true, movable: true, sortable: true, filterable: true},
-      { field: "Country", header: "Country", width: "140px", dataType: "string", groupable: true, movable: true, sortable: true, filterable: true, resizable: true },
-      { field: "Age", header: "Age", width: "110px", dataType: "number", movable: true, sortable: true, filterable: true, hasSummary: true, resizable: true, summaries: MySummary},
-      { field: "RegistererDate", header: "Registerer Date", width: "180px", dataType: "date", movable: true, sortable: true, filterable: true, resizable: true },
-      { field: "IsActive", header: "Is Active", width: "140px", dataType: "boolean", groupable: true, movable: true, sortable: true, filterable: true }
+      { field: 'FirstName', header: 'First Name', width: '150px', dataType: 'string', pinned: true, movable: true, sortable: true, filterable: true},
+      { field: 'LastName', header: 'Last Name', width: '150px', dataType: 'string', pinned: true, movable: true, sortable: true, filterable: true},
+      { field: 'Country', header: 'Country', width: '140px', dataType: 'string', groupable: true, movable: true, sortable: true, filterable: true, resizable: true },
+      { field: 'Age', header: 'Age', width: '110px', dataType: 'number', movable: true, sortable: true, filterable: true, hasSummary: true, resizable: true, summaries: MySummary},
+      { field: 'RegistererDate', header: 'Registerer Date', width: '180px', dataType: 'date', movable: true, sortable: true, filterable: true, resizable: true },
+      { field: 'IsActive', header: 'Is Active', width: '140px', dataType: 'boolean', groupable: true, movable: true, sortable: true, filterable: true }
       // tslint:enable:max-line-length
     ];
 
@@ -94,7 +95,7 @@ export class GridSaveStateComponent implements OnInit {
     public saveGridState() {
         const state = this.state.getState(this.serialize);
         // const state = this.state.getState(this.serialize, ['sorting', 'filtering']);
-        if (typeof state === "string") {
+        if (typeof state === 'string') {
           window.localStorage.setItem(this.stateKey, state);
         } else {
           window.localStorage.setItem(this.stateKey, JSON.stringify(state));
@@ -125,7 +126,7 @@ export class GridSaveStateComponent implements OnInit {
 
     public resetGridState() {
         const grid: IgxGridComponent = this.grid;
-        const pagingState = {index: 0, recordsPerPage: 15, metadata: { countPages: 3, countRecords: this.localData.length}}
+        const pagingState = {index: 0, recordsPerPage: 15, metadata: { countPages: 3, countRecords: this.localData.length}};
         grid.pagingState = pagingState;
         grid.filteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
         grid.advancedFilteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
@@ -137,10 +138,10 @@ export class GridSaveStateComponent implements OnInit {
       }
 
     public onChange(event: any, action: string) {
-      if (action === "toggleAll") {
+      if (action === 'toggleAll') {
         this.checkboxes.forEach(cb => {
             cb.checked = event.checked;
-        })
+        });
         for (const key of Object.keys(this.options)) {
             this.state.options[key] = event.checked;
         }

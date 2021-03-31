@@ -1,20 +1,20 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent, NoopFilteringStrategy, NoopSortingStrategy } from "igniteui-angular";
-import { Subject } from "rxjs";
-import { debounceTime, takeUntil } from "rxjs/operators";
-import { RemoteFilteringService } from "../services/remoteFilteringService";
+import { ChangeDetectorRef, Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
+import { IgxGridComponent, NoopFilteringStrategy, NoopSortingStrategy } from 'igniteui-angular';
+import { Subject } from 'rxjs';
+import { debounceTime, takeUntil } from 'rxjs/operators';
+import { RemoteFilteringService } from '../services/remoteFilteringService';
 
 const DEBOUNCE_TIME = 300;
 
 @Component({
     providers: [RemoteFilteringService],
-    selector: "app-grid-remote-filtering-sample",
-    styleUrls: ["./remote-filtering-sample.component.scss"],
-    templateUrl: "./remote-filtering-sample.component.html"
+    selector: 'app-grid-remote-filtering-sample',
+    styleUrls: ['./remote-filtering-sample.component.scss'],
+    templateUrl: './remote-filtering-sample.component.html'
 })
-export class RemoteFilteringSampleComponent implements OnInit {
+export class RemoteFilteringSampleComponent implements OnInit, AfterViewInit, OnDestroy {
+    @ViewChild('grid', { static: true }) public grid: IgxGridComponent;
     public remoteData: any;
-    @ViewChild("grid", { static: true }) public grid: IgxGridComponent;
     public noopFilterStrategy = NoopFilteringStrategy.instance();
     public noopSortStrategy = NoopSortingStrategy.instance();
 
@@ -42,7 +42,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
             filteringExpr,
             sortingExpr,
             (data) => {
-                this.grid.totalItemCount = data["@odata.count"];
+                this.grid.totalItemCount = data['@odata.count'];
                 this.grid.isLoading = false;
             });
 
@@ -91,7 +91,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
             filteringExpr,
             sortingExpr,
             (data) => {
-                this.grid.totalItemCount = data["@odata.count"];
+                this.grid.totalItemCount = data['@odata.count'];
                 if (this.grid.isLoading) {
                     this.grid.isLoading = false;
                 }
@@ -103,7 +103,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
     }
 
     public formatCurrency(value: number) {
-        return "$" + value.toFixed(2);
+        return '$' + value.toFixed(2);
     }
 
     public ngOnDestroy() {

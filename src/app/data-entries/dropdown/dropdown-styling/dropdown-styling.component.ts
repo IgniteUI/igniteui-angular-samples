@@ -1,16 +1,16 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { ISelectionEventArgs } from "igniteui-angular";
-import { getHeroClassData, IHeroClass } from "../../../data/heroData";
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ISelectionEventArgs } from 'igniteui-angular';
+import { getHeroClassData, IHeroClass } from '../../../data/heroData';
 
 @Component({
-    selector: "app-dropdown-styling",
-    styleUrls: ["./dropdown-styling.component.scss"],
-    templateUrl: "./dropdown-styling.component.html"
+    selector: 'app-dropdown-styling',
+    styleUrls: ['./dropdown-styling.component.scss'],
+    templateUrl: './dropdown-styling.component.html'
 })
 export class DropDownStylingComponent implements OnInit {
-    @ViewChild("button", { static: true }) public button: ElementRef;
+    @ViewChild('button', { static: true }) public button: ElementRef;
     public heroClasses: IHeroClass[] = [];
-    public hero = "Choose your hero";
+    public hero = 'Choose your hero';
 
     constructor(public elem: ElementRef) {
     }
