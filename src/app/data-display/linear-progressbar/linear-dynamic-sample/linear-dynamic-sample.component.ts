@@ -1,11 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: "app-linear-dynamic-sample",
-    styleUrls: ["./linear-dynamic-sample.component.scss"],
-    templateUrl: "./linear-dynamic-sample.component.html"
+    selector: 'app-linear-dynamic-sample',
+    styleUrls: ['./linear-dynamic-sample.component.scss'],
+    templateUrl: './linear-dynamic-sample.component.html'
 })
-export class LinearDynamicSampleComponent {
+export class LinearDynamicSampleComponent implements OnInit{
 
     public currentValue: number;
 

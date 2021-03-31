@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxHierarchicalGridComponent } from "igniteui-angular";
-import { SINGERS } from "../data";
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { SINGERS } from '../data';
 
 @Component({
-  selector: "app-hierarchical-grid-column-hiding-toolbar-style",
-  styleUrls: ["./hierarchical-grid-column-hiding-toolbar-style.component.scss"],
-  templateUrl: "./hierarchical-grid-column-hiding-toolbar-style.component.html"
+  selector: 'app-hierarchical-grid-column-hiding-toolbar-style',
+  styleUrls: ['./hierarchical-grid-column-hiding-toolbar-style.component.scss'],
+  templateUrl: './hierarchical-grid-column-hiding-toolbar-style.component.html'
 })
 export class HierarchicalGridColumnHidingToolbarStyleComponent implements OnInit {
     public localdata;

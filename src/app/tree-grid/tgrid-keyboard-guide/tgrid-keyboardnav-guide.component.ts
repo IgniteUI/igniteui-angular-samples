@@ -1,6 +1,8 @@
-import { animate, state, style, transition, trigger } from "@angular/animations";
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+/* eslint-disable @angular-eslint/component-class-suffix */
+/* eslint-disable @typescript-eslint/naming-convention */
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     IgxColumnComponent,
     IgxColumnGroupComponent,
@@ -9,17 +11,19 @@ import {
     IgxOverlayService,
     IgxTreeGridComponent,
     IActiveNodeChangeEventArgs
-} from "igniteui-angular";
-import { Subject } from "rxjs";
-import { takeUntil } from "rxjs/operators";
-import { generateEmployeeDetailedFlatData } from "../data/employees-flat-detailed";
+} from 'igniteui-angular';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
+// eslint-disable-next-line no-shadow
 enum GridSection {
-    THEAD = "igx-grid__thead-wrapper",
-    TBODY = "igx-grid__tbody-content",
-    FOOTER = "igx-grid__tfoot"
+    THEAD = 'igx-grid__thead-wrapper',
+    TBODY = 'igx-grid__tbody-content',
+    FOOTER = 'igx-grid__tfoot'
 }
 
+// eslint-disable-next-line no-shadow
 enum ItemAction {
     Filterable,
     Sortable,
@@ -31,9 +35,10 @@ enum ItemAction {
     Always
 }
 
+// eslint-disable-next-line no-shadow
 enum ElementTags {
-    GROUPBY_ROW = "IGX-GRID-GROUPBY-ROW",
-    COLUMN_GROUP = "IGX-COLUMN-GROUP"
+    GROUPBY_ROW = 'IGX-GRID-GROUPBY-ROW',
+    COLUMN_GROUP = 'IGX-COLUMN-GROUP'
 }
 
 class Item {
@@ -94,8 +99,8 @@ class KeyboardHandler {
         this.resetCollection();
         action.forEach(element => {
             this._collection
-            .filter(e => e.action === element)
-            .map(e => e.active = true);
+                .filter(e => e.action === element)
+                .map(e => e.active = true);
         });
     }
 
@@ -124,64 +129,63 @@ class KeyboardHandler {
 }
 
 const theadKeyCombinations = [
-    new Item("space key", "select column", false, ItemAction.Selectable),
-    new Item("ctrl + arrow up/down", "sorts the column asc/desc", false, ItemAction.Sortable),
-    new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header",
+    new Item('space key', 'select column', false, ItemAction.Selectable),
+    new Item('ctrl + arrow up/down', 'sorts the column asc/desc', false, ItemAction.Sortable),
+    new Item('alt + arrow left/right/up/down', 'expand/collapse active multi column header',
         false,
         ItemAction.Collapsible),
-    new Item("ctrl + shift + l", "opens the excel style filtering", false, ItemAction.Filterable),
-    new Item("alt + l", "opens the advanced filtering", false, ItemAction.Filterable)
+    new Item('ctrl + shift + l', 'opens the excel style filtering', false, ItemAction.Filterable),
+    new Item('alt + l', 'opens the advanced filtering', false, ItemAction.Filterable)
 ];
 
 const tbodyKeyCombinations: Item[] = [
-    new Item("enter", "enter in edit mode", false, ItemAction.Editable),
-    new Item("alt + arrow left/up", "collapse row", false, ItemAction.Collapsible),
-    new Item("alt + arrow right/down", "expand row", false, ItemAction.Collapsible),
-    new Item("ctrl + Home/End", "navigates to the upper-left/bottom-right cell", false, ItemAction.Always)
+    new Item('enter', 'enter in edit mode', false, ItemAction.Editable),
+    new Item('alt + arrow left/up', 'collapse row', false, ItemAction.Collapsible),
+    new Item('alt + arrow right/down', 'expand row', false, ItemAction.Collapsible),
+    new Item('ctrl + Home/End', 'navigates to the upper-left/bottom-right cell', false, ItemAction.Always)
 ];
 
 const summaryCombinations: Item[] = [
-    new Item("ArrowLeft", "navigates one summary cell right", false, ItemAction.Always),
-    new Item("ArrowRight", "navigates one summary cell left", false, ItemAction.Always),
-    new Item("Home", "navigates to the first summary cell", false, ItemAction.Always),
-    new Item("End", "navigates to the last summary cell", false, ItemAction.Always)
+    new Item('ArrowLeft', 'navigates one summary cell right', false, ItemAction.Always),
+    new Item('ArrowRight', 'navigates one summary cell left', false, ItemAction.Always),
+    new Item('Home', 'navigates to the first summary cell', false, ItemAction.Always),
+    new Item('End', 'navigates to the last summary cell', false, ItemAction.Always)
 ];
 
 @Component({
-    selector: "grid-keyboardnav",
-    templateUrl: "./tgrid-keyboardnav-guide.component.html",
-    styleUrls: ["tgrid-keyboardnav-guide.component.scss"],
+    selector: 'app-grid-keyboardnav',
+    templateUrl: './tgrid-keyboardnav-guide.component.html',
+    styleUrls: ['tgrid-keyboardnav-guide.component.scss'],
     animations: [
-        trigger("toggle", [
-            state("selected", style({
-                color: "#4eb862"
+        trigger('toggle', [
+            state('selected', style({
+                color: '#4eb862'
             })),
-            state("deselected", style({
-                color: "black"
+            state('deselected', style({
+                color: 'black'
             })),
-            transition("deselected => selected", [
-                animate(".3s")
+            transition('deselected => selected', [
+                animate('.3s')
             ]),
-            transition("selected => deselected", [
-                animate(".3s")
+            transition('selected => deselected', [
+                animate('.3s')
             ])
         ]),
-        trigger("load", [
-            transition(":enter", [
+        trigger('load', [
+            transition(':enter', [
                 style({ opacity: 0 }),
-                animate(".3s", style({ opacity: .4 }))
+                animate('.3s', style({ opacity: .4 }))
             ])
         ])
     ]
 })
 export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
-    public data;
-
     @ViewChild(IgxTreeGridComponent, { static: true })
     public tgrid: IgxTreeGridComponent;
 
     @ViewChild(IgxListComponent, { static: true })
     public listref: IgxListComponent;
+    public data;
 
     public get keyboardCollection() {
         return this._keyboardHandler.collection;
@@ -189,9 +193,9 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
 
     public get headerList() {
         return this._keyboardHandler.gridSection === GridSection.THEAD ?
-            "HEADER COMBINATIONS" : this._keyboardHandler.gridSection === GridSection.TBODY ?
-            "BODY COMBITNATIONS" : this._keyboardHandler.gridSection === GridSection.FOOTER ?
-            "SUMMARY COMBINATIONS" : "";
+            'HEADER COMBINATIONS' : this._keyboardHandler.gridSection === GridSection.TBODY ?
+                'BODY COMBITNATIONS' : this._keyboardHandler.gridSection === GridSection.FOOTER ?
+                    'SUMMARY COMBINATIONS' : '';
     }
 
     private _destroyer = new Subject();
@@ -204,7 +208,8 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
             return;
         }
 
-        const gridSection = evt.row < 0 ? GridSection.THEAD : evt.row === this.tgrid.dataView.length ? GridSection.FOOTER : GridSection.TBODY;
+        const gridSection = evt.row < 0 ? GridSection.THEAD : evt.row === this.tgrid.dataView.length ?
+            GridSection.FOOTER : GridSection.TBODY;
         this.changeKeyboardCollection(gridSection);
         this.toggleHeaderCombinations(evt);
         this.toggleBodyCombinations(evt);
@@ -216,7 +221,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         this.tgrid.onColumnSelectionChange.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 const evt = args.event;
-                if (evt.type === "keydown") {
+                if (evt.type === 'keydown') {
                     this._keyboardHandler.selectItem(0);
                 }
             });
@@ -224,11 +229,11 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         this.tgrid.onRowToggle.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 const evt = args.event as KeyboardEvent;
-                if (evt.type !== "keydown") {
+                if (evt.type !== 'keydown') {
                     return;
                 }
 
-                return evt.code === "ArrowLeft" || evt.code === "ArrowUp" ? this._keyboardHandler.selectItem(1) :
+                return evt.code === 'ArrowLeft' || evt.code === 'ArrowUp' ? this._keyboardHandler.selectItem(1) :
                     this._keyboardHandler.selectItem(2);
             });
 
@@ -274,19 +279,19 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
 
     public gridKeydown(evt) {
         const key = evt.key.toLowerCase();
-        if (key === "tab") { return; }
+        if (key === 'tab') { return; }
         if (this._keyboardHandler.gridSection === GridSection.FOOTER) {
             switch (key) {
-                case "end":
+                case 'end':
                     this._keyboardHandler.selectItem(3);
                     break;
-                case "home":
+                case 'home':
                     this._keyboardHandler.selectItem(2);
                     break;
-                case "arrowleft":
+                case 'arrowleft':
                     this._keyboardHandler.selectItem(0);
                     break;
-                case "arrowright":
+                case 'arrowright':
                     this._keyboardHandler.selectItem(1);
                     break;
                 default:
@@ -296,29 +301,29 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         }
         const activeNode = this.tgrid.navigation.activeNode;
         if (this._keyboardHandler.gridSection === GridSection.THEAD) {
-            if (key === "l" && evt.altKey) {
+            if (key === 'l' && evt.altKey) {
                 this._keyboardHandler.selectItem(4);
                 return;
             }
             const col = this.tgrid.visibleColumns.find
                 (c => c.visibleIndex === activeNode.column && c.level === activeNode.level);
-            if (key === "l" && evt.ctrlKey && evt.shiftKey && col && !col.columnGroup && col.filterable) {
+            if (key === 'l' && evt.ctrlKey && evt.shiftKey && col && !col.columnGroup && col.filterable) {
                 this._keyboardHandler.selectItem(3);
             }
 
-            if ((key === "arrowup" || key === "arrowdown") && evt.ctrlKey && col && !col.columnGroup && col.sortable) {
+            if ((key === 'arrowup' || key === 'arrowdown') && evt.ctrlKey && col && !col.columnGroup && col.sortable) {
                 this._keyboardHandler.selectItem(1);
             }
         }
 
         if (this._keyboardHandler.gridSection === GridSection.TBODY) {
-            if (key === "enter") {
+            if (key === 'enter') {
                 const cell = this.tgrid.getCellByColumnVisibleIndex(activeNode.row, activeNode.column);
                 if (cell && cell.column.editable && cell.editMode) {
                     this._keyboardHandler.selectItem(0);
                 }
             }
-            if ((evt.code === "End" || evt.code === "Home") && evt.ctrlKey) {
+            if ((evt.code === 'End' || evt.code === 'Home') && evt.ctrlKey) {
                 this._keyboardHandler.selectItem(3);
                 this.cdr.detectChanges();
             }

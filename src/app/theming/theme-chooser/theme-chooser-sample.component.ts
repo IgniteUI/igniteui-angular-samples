@@ -1,4 +1,6 @@
-import { Component, HostBinding, Input, OnInit, ViewChild } from "@angular/core";
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable no-shadow */
+import { Component, HostBinding, Input, OnInit, ViewChild } from '@angular/core';
 import {
     CloseScrollStrategy,
     ConnectedPositioningStrategy,
@@ -10,44 +12,42 @@ import {
     IgxOverlayOutletDirective,
     IgxSnackbarComponent,
     VerticalAlignment
-} from "igniteui-angular";
-import { DATA } from ".././data/data";
-import { Record } from ".././data/record";
+} from 'igniteui-angular';
+import { DATA } from '.././data/data';
+import { Record } from '.././data/record';
 
 export enum THEME {
-    LIGHT = "light-theme",
-    DARK = "dark-theme",
-    BLACK = "black-theme"
+    LIGHT = 'light-theme',
+    DARK = 'dark-theme',
+    BLACK = 'black-theme'
 }
 @Component({
-    selector: "app-theme-chooser-sample",
-    styleUrls: ["./theme-chooser-sample.component.scss"],
-    templateUrl: "./theme-chooser-sample.component.html"
+    selector: 'app-theme-chooser-sample',
+    styleUrls: ['./theme-chooser-sample.component.scss'],
+    templateUrl: './theme-chooser-sample.component.html'
 })
 export class ThemeChooserSampleComponent implements OnInit {
-
-    public THEME: typeof THEME = THEME;
-    public data: any[] = DATA;
-    public record;
-    public themes = [THEME.LIGHT, THEME.DARK, THEME.BLACK];
-
-    @HostBinding("class")
+    @HostBinding('class')
     public themesClass: THEME = THEME.LIGHT;
 
-    @ViewChild("dialog1", { read: IgxDialogComponent, static: true })
+    @ViewChild('dialog1', { read: IgxDialogComponent, static: true })
     public dialog: IgxDialogComponent;
 
     @ViewChild(IgxOverlayOutletDirective, { static: true })
     public outlet: IgxOverlayOutletDirective;
 
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 
-    @ViewChild("datePicker", { static: true })
+    @ViewChild('datePicker', { static: true })
     public datePicker: IgxDatePickerComponent;
 
-    @ViewChild("snackbar", { static: true })
+    @ViewChild('snackbar', { static: true })
     public snackbar: IgxSnackbarComponent;
+    public THEME: typeof THEME = THEME;
+    public data: any[] = DATA;
+    public record;
+    public themes = [THEME.LIGHT, THEME.DARK, THEME.BLACK];
 
     private deletedRow;
 

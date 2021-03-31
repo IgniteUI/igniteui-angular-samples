@@ -1,27 +1,32 @@
-import { Component, OnInit, ViewChild, ViewChildren, QueryList } from "@angular/core";
-import { NavigationStart, Router } from "@angular/router";
+import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
 import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
     IGridState, IGridStateOptions, IgxGridStateDirective,
-    IgxTreeGridComponent, IgxCheckboxComponent} from "igniteui-angular";
-import { take } from "rxjs/operators";
-import { EMPLOYEE_DATA } from "../../../../projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data";
+    IgxTreeGridComponent, IgxCheckboxComponent} from 'igniteui-angular';
+import { take } from 'rxjs/operators';
+import { EMPLOYEE_DATA } from '../../../../projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data';
 
 // tslint:disable:object-literal-sort-keys
 @Component({
-  selector: "app-hGrid",
-  styleUrls: ["./tGrid-state.component.scss"],
-  templateUrl: "./tGrid-state.component.html"
+  selector: 'app-tgrid',
+  styleUrls: ['./tGrid-state.component.scss'],
+  templateUrl: './tGrid-state.component.html'
 })
 
-export class TGridSaveStateComponent implements OnInit {
+export class TGridSaveStateComponent implements OnInit, AfterViewInit {
+
+    @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
+    @ViewChild('treeGrid', { static: true }) public tGrid: IgxTreeGridComponent;
+    @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
+
     public localData: any[];
     public columns: any[];
-    public treeGridId = "tGrid1";
-    public stateKey = this.treeGridId + "-state";
+    public treeGridId = 'tGrid1';
+    public stateKey = this.treeGridId + '-state';
     public gridState: IGridState;
     public serialize = true;
 
-    public features: { key: GridFeatures, shortName: string }[] = [
+    public features: { key: GridFeatures; shortName: string }[] = [
         { key: 'advancedFiltering', shortName: 'Adv Filt' },
         { key: 'cellSelection', shortName: 'Cell Sel' },
         { key: 'columns', shortName: 'Columns' } ,
@@ -47,10 +52,6 @@ export class TGridSaveStateComponent implements OnInit {
       columnSelection: true
     };
 
-    @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
-    @ViewChild("treeGrid", { static: true }) public tGrid: IgxTreeGridComponent;
-    @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
-
     constructor(private router: Router) {
         this.localData = EMPLOYEE_DATA;
     }
@@ -67,7 +68,7 @@ export class TGridSaveStateComponent implements OnInit {
 
     public saveGridState() {
         const state = this.state.getState(this.serialize);
-        if (typeof state === "string") {
+        if (typeof state === 'string') {
           window.localStorage.setItem(this.stateKey, state);
         } else {
           window.localStorage.setItem(this.stateKey, JSON.stringify(state));
@@ -106,10 +107,10 @@ export class TGridSaveStateComponent implements OnInit {
       }
 
     public onChange(event: any, action: string) {
-        if (action === "toggleAll") {
+        if (action === 'toggleAll') {
           this.checkboxes.forEach(cb => {
               cb.checked = event.checked;
-          })
+          });
           for (const key of Object.keys(this.options)) {
               this.state.options[key] = event.checked;
           }

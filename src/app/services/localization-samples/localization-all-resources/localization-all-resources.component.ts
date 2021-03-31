@@ -1,5 +1,8 @@
-import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { registerLocaleData } from "@angular/common";
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/member-delimiter-style */
+/* eslint-disable @typescript-eslint/naming-convention */
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
 import localeBG from '@angular/common/locales/bg';
 import localeEN from '@angular/common/locales/en';
 import localeDE from '@angular/common/locales/de';
@@ -10,26 +13,26 @@ import localeJA from '@angular/common/locales/ja';
 import localeKO from '@angular/common/locales/ko';
 import localeHans from '@angular/common/locales/zh-Hans';
 import localeHant from '@angular/common/locales/zh-Hant';
-import { DATA } from "../../data/nwindData";
-import { IgxGridComponent, IResourceStrings, changei18n, getCurrentResourceStrings } from "igniteui-angular";
+import { DATA } from '../../data/nwindData';
+import { IgxGridComponent, IResourceStrings, changei18n, getCurrentResourceStrings } from 'igniteui-angular';
 import {
     IgxResourceStringsDE, IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsIT,
     IgxResourceStringsJA, IgxResourceStringsKO, IgxResourceStringsZHHANS, IgxResourceStringsZHHANT
-} from "igniteui-angular-i18n";
+} from 'igniteui-angular-i18n';
 
 @Component({
-    selector: "localization-all-resources",
-    styleUrls: ["./localization-all-resources.component.scss"],
-    templateUrl: "localization-all-resources.component.html"
+    selector: 'app-localization-all-resources',
+    styleUrls: ['./localization-all-resources.component.scss'],
+    templateUrl: 'localization-all-resources.component.html'
 })
 
 export class LocalizationAllResourcesComponent implements OnInit, OnDestroy {
-    @ViewChild("grid", { read: IgxGridComponent, static: true })
+    @ViewChild('grid', { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
     public data: any[];
     public locale: string;
     public locales: { type: string, resource: object }[];
-    public selectLocales = ["BG", "EN", "DE", "ES", "FR", "IT", "JA", "KO", "zh-Hans", "zh-Hant"];
+    public selectLocales = ['BG', 'EN', 'DE', 'ES', 'FR', 'IT', 'JA', 'KO', 'zh-Hans', 'zh-Hant'];
     public cashedLocalizationEN: IResourceStrings;
     public partialCustomBG: IResourceStrings;
 
@@ -58,19 +61,19 @@ export class LocalizationAllResourcesComponent implements OnInit, OnDestroy {
         };
 
         this.locales = [
-            { type: "BG", resource: this.partialCustomBG },
-            { type: "DE", resource: IgxResourceStringsDE },
-            { type: "ES", resource: IgxResourceStringsES },
-            { type: "FR", resource: IgxResourceStringsFR },
-            { type: "IT", resource: IgxResourceStringsIT },
-            { type: "JA", resource: IgxResourceStringsJA },
-            { type: "KO", resource: IgxResourceStringsKO },
-            { type: "zh-Hans", resource: IgxResourceStringsZHHANS },
-            { type: "zh-Hant", resource: IgxResourceStringsZHHANT },
-            { type: "EN", resource: this.cashedLocalizationEN }
+            { type: 'BG', resource: this.partialCustomBG },
+            { type: 'DE', resource: IgxResourceStringsDE },
+            { type: 'ES', resource: IgxResourceStringsES },
+            { type: 'FR', resource: IgxResourceStringsFR },
+            { type: 'IT', resource: IgxResourceStringsIT },
+            { type: 'JA', resource: IgxResourceStringsJA },
+            { type: 'KO', resource: IgxResourceStringsKO },
+            { type: 'zh-Hans', resource: IgxResourceStringsZHHANS },
+            { type: 'zh-Hant', resource: IgxResourceStringsZHHANT },
+            { type: 'EN', resource: this.cashedLocalizationEN }
         ];
 
-        this.locale = "EN";
+        this.locale = 'EN';
     }
 
     public updateLocale() {

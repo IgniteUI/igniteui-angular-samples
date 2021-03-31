@@ -1,16 +1,16 @@
 import { Character } from './characters';
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { DATA, ALIGNMENTS, RACES, CLASSES } from "./data";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxGridComponent } from 'igniteui-angular';
+import { DATA, ALIGNMENTS, RACES, CLASSES } from './data';
 
 @Component({
-    selector: "app-grid-select-sample",
-    styleUrls: ["./grid-select-sample.component.scss"],
-    templateUrl: "./grid-select-sample.component.html"
+    selector: 'app-grid-select-sample',
+    styleUrls: ['./grid-select-sample.component.scss'],
+    templateUrl: './grid-select-sample.component.html'
 })
 export class GridSelectComponent implements OnInit {
 
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
     public data;
     public alignments;
@@ -27,7 +27,7 @@ export class GridSelectComponent implements OnInit {
             const indexClasses = Math.floor(Math.random() * CLASSES.length);
             e.class = CLASSES[indexClasses];
             return e;
-        })
+        });
     }
 
     public ngOnInit() {

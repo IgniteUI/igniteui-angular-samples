@@ -1,16 +1,16 @@
-import { Component, OnInit, ViewChild} from "@angular/core";
-import { DefaultSortingStrategy, IgxGridComponent, SortingDirection} from "igniteui-angular";
-import { DATA } from "../../data/nwindData";
+import { Component, OnInit, ViewChild} from '@angular/core';
+import { DefaultSortingStrategy, IgxGridComponent, SortingDirection} from 'igniteui-angular';
+import { DATA } from '../../data/nwindData';
 
 @Component({
-    selector: "app-grid-contextmenu-sample",
-    styleUrls: ["./grid-contextmenu-sample.component.scss"],
-    templateUrl: "./grid-contextmenu-sample.component.html"
+    selector: 'app-grid-contextmenu-sample',
+    styleUrls: ['./grid-contextmenu-sample.component.scss'],
+    templateUrl: './grid-contextmenu-sample.component.html'
 
 })
 
 export class GridContextmenuSampleComponent implements OnInit {
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
     public data: any[];
 
@@ -28,14 +28,14 @@ export class GridContextmenuSampleComponent implements OnInit {
         this.data = DATA;
         this.grid1.sortingExpressions = [
             {
-                dir: SortingDirection.Asc, fieldName: "ProductName",
+                dir: SortingDirection.Asc, fieldName: 'ProductName',
                 ignoreCase: true, strategy: DefaultSortingStrategy.instance()
             }
         ];
     }
 
     public formatDate(val: Date) {
-        return new Intl.DateTimeFormat("en-US").format(val);
+        return new Intl.DateTimeFormat('en-US').format(val);
     }
 
     public rightClick(eventArgs: any) {

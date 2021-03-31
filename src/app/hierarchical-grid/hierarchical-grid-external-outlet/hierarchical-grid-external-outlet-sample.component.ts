@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component, OnInit } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-external-outlet",
-    styleUrls: ["./hierarchical-grid-external-outlet-sample.component.scss"],
-    templateUrl: "hierarchical-grid-external-outlet-sample.component.html"
+    selector: 'app-hierarchical-grid-external-outlet',
+    styleUrls: ['./hierarchical-grid-external-outlet-sample.component.scss'],
+    templateUrl: 'hierarchical-grid-external-outlet-sample.component.html'
 })
 
 export class HierarchicalGridExternalOutletComponent implements OnInit {

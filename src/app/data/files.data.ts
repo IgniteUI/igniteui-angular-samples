@@ -1,25 +1,25 @@
-import { generateRandomInteger } from "./utils";
+import { generateRandomInteger } from './utils';
 
-// tslint:disable:object-literal-sort-keys
-const users = ["Administrator", "All Users", "Guest"];
+/*eslint-disable*/
+const users = ['Administrator', 'All Users', 'Guest'];
 const names = {
-    serious: ["Sales", "Clients", "Salaries", "Work", "Management"],
+    serious: ['Sales', 'Clients', 'Salaries', 'Work', 'Management'],
 
-    light: ["Party", "Vacation", "Holiday", "Birthday", "Christmas"]
+    light: ['Party', 'Vacation', 'Holiday', 'Birthday', 'Christmas']
 };
 const types = {
-    serious: ["Memo", "Report", "Quota", "Roadmap"],
-    light: ["Picture", "Anecdote", "Screenshot", "Video"]
+    serious: ['Memo', 'Report', 'Quota', 'Roadmap'],
+    light: ['Picture', 'Anecdote', 'Screenshot', 'Video']
 };
 const extensions = {
-    serious: [".pdf", ".xls", ".doc", ".xlsx", ".shp", ".dbf", ".csv", ".json"],
-    light: ["jpeg", ".wav", ".png", ".mp3"]
+    serious: ['.pdf', '.xls', '.doc', '.xlsx', '.shp', '.dbf', '.csv', '.json'],
+    light: ['jpeg', '.wav', '.png', '.mp3']
 };
-const employees = ["Dave", "Marta", "Andrew", "Ivan", "Pete", "Yavor",
-"Cindy", "Maria", "Karl", "Carol", "Ramesh", "Anna"];
+const employees = ['Dave', 'Marta', 'Andrew', 'Ivan', 'Pete', 'Yavor',
+'Cindy', 'Maria', 'Karl', 'Carol', 'Ramesh', 'Anna'];
 const folderNames = {
-    serious: ["Documents", "Reports", "Work Items", "Data"],
-    light: ["Pictures", "Videos"]
+    serious: ['Documents', 'Reports', 'Work Items', 'Data'],
+    light: ['Pictures', 'Videos']
 };
 const data = {
     employee: () => employees[generateRandomInteger(0, employees.length - 1)],
@@ -52,10 +52,10 @@ const createData = (level1: number, level2: number, level3: number) => {
             folders: []
         };
         for (let j = 0; j < level2; j++) {
-            const isSerious = generateRandomInteger(0, 1) ? "serious" : "light";
+            const isSerious = generateRandomInteger(0, 1) ? 'serious' : 'light';
             const date = getRandomDate();
             const folder = {
-                name: getProp("folderNames", isSerious) + ` ${date}`,
+                name: getProp('folderNames', isSerious) + ` ${date}`,
                 size: 0,
                 createdOn: date,
                 createdBy: data.employee(),
@@ -65,8 +65,8 @@ const createData = (level1: number, level2: number, level3: number) => {
             for (let k = 0; k < level3; k++) {
                 const fileSize = generateRandomInteger(24, 64);
                 const document = {
-                    name: getProp("names", isSerious) + " " + getProp("types", isSerious),
-                    extension: getProp("extensions", isSerious),
+                    name: getProp('names', isSerious) + ' ' + getProp('types', isSerious),
+                    extension: getProp('extensions', isSerious),
                     owner: data.user,
                     id: k,
                     size: fileSize,

@@ -3,6 +3,7 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
 @include igx-core();
+@include igx-typography();
 @include igx-theme($default-palette, $legacy-support: true);
 
 .light-theme {

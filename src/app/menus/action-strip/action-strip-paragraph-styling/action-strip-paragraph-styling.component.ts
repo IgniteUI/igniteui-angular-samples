@@ -1,14 +1,14 @@
-import { Component, ViewChild } from "@angular/core";
-import { DisplayDensity, IgxActionStripComponent } from "igniteui-angular";
+import { Component, ViewChild } from '@angular/core';
+import { DisplayDensity, IgxActionStripComponent } from 'igniteui-angular';
 
 @Component({
-  selector: "app-action-strip-paragraph-styling",
-  styleUrls: ["./action-strip-paragraph-styling.component.scss"],
-  templateUrl: "./action-strip-paragraph-styling.component.html"
+  selector: 'app-action-strip-paragraph-styling',
+  styleUrls: ['./action-strip-paragraph-styling.component.scss'],
+  templateUrl: './action-strip-paragraph-styling.component.html'
 })
 export class ActionStripStylingComponent {
-    @ViewChild("actionstrip") public actionStrip: IgxActionStripComponent;
-    @ViewChild("myParagraph") public paragraph;
+    @ViewChild('actionstrip') public actionStrip: IgxActionStripComponent;
+    @ViewChild('myParagraph') public paragraph;
     public result: string;
     public isVisible = false;
     public textLeft = false;
@@ -17,11 +17,11 @@ export class ActionStripStylingComponent {
     public displayDensity = DisplayDensity.comfortable;
 
     public textDelete() {
-        this.paragraph.nativeElement.classList.add("text-strike-through");
+        this.paragraph.nativeElement.classList.add('text-strike-through');
     }
 
     public textRestore() {
-        this.paragraph.nativeElement.classList.remove("text-strike-through");
+        this.paragraph.nativeElement.classList.remove('text-strike-through');
     }
 
     public showActions() {

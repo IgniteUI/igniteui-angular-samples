@@ -13,7 +13,7 @@ export class ControllerComponent implements OnInit, OnDestroy {
     @ViewChild('buttonGroup1', { static: true }) public playButtons: IgxButtonGroupComponent;
     @ViewChild('slider1', { static: true }) public volumeSlider: IgxSliderComponent;
     @ViewChild('slider2', { static: true }) public intervalSlider: IgxSliderComponent;
-    @ViewChild("toast", { static: true }) public toast: IgxToastComponent;
+    @ViewChild('toast', { static: true }) public toast: IgxToastComponent;
 
     @Output() public switchChanged = new EventEmitter<any>();
     @Output() public volumeChanged = new EventEmitter<any>();
@@ -38,8 +38,8 @@ export class ControllerComponent implements OnInit, OnDestroy {
         },
         {
             disabled: false,
-            icon: "insert_chart_outlined",
-            label: "Chart",
+            icon: 'insert_chart_outlined',
+            label: 'Chart',
             selected: false
         }
     ];
@@ -57,6 +57,11 @@ export class ControllerComponent implements OnInit, OnDestroy {
 
         this.frequencyChanged$ = this.intervalSlider.onValueChange.pipe(debounce(() => timer(200)));
         this.frequencyChanged$.subscribe(x => this.frequencyChanged.emit(this.intervalSlider.value));
+    }
+
+    public ngOnDestroy() {
+        this.volumeChanged$.unsubscribe();
+        this.frequencyChanged$.unsubscribe();
     }
 
     public onButtonSelected(event: any) {
@@ -101,10 +106,5 @@ export class ControllerComponent implements OnInit, OnDestroy {
 
     get buttonSelected(): number {
         return this.selectedButton || this.selectedButton === 0 ? this.selectedButton : -1;
-    }
-
-    public ngOnDestroy() {
-        this.volumeChanged$.unsubscribe();
-        this.frequencyChanged$.unsubscribe();
     }
 }

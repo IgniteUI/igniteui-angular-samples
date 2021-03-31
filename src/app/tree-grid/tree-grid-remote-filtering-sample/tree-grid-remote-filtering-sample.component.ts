@@ -1,20 +1,20 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { IgxTreeGridComponent, NoopFilteringStrategy } from "igniteui-angular";
-import { Observable, Subject } from "rxjs";
-import { debounceTime, takeUntil } from "rxjs/operators";
-import { RemoteFilteringService } from "../services/remoteFilteringService";
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { IgxTreeGridComponent, NoopFilteringStrategy } from 'igniteui-angular';
+import { Observable, Subject } from 'rxjs';
+import { debounceTime, takeUntil } from 'rxjs/operators';
+import { RemoteFilteringService } from '../services/remoteFilteringService';
 
 const DEBOUNCE_TIME = 300;
 
 @Component({
     providers: [RemoteFilteringService],
-    selector: "app-tree-grid-remote-filtering-sample",
-    styleUrls: ["./tree-grid-remote-filtering-sample.component.scss"],
-    templateUrl: "./tree-grid-remote-filtering-sample.component.html"
+    selector: 'app-tree-grid-remote-filtering-sample',
+    styleUrls: ['./tree-grid-remote-filtering-sample.component.scss'],
+    templateUrl: './tree-grid-remote-filtering-sample.component.html'
 })
 export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterViewInit, OnDestroy {
+    @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
     public remoteData: Observable<any[]>;
-    @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
     public noopFilterStrategy = NoopFilteringStrategy.instance();
 
     private destroy$ = new Subject<boolean>();

@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import {
     AfterViewInit,
     Component,
@@ -5,7 +6,7 @@ import {
     OnInit,
     QueryList,
     ViewChild
-} from "@angular/core";
+} from '@angular/core';
 import {
     CloseScrollStrategy,
     ConnectedPositioningStrategy,
@@ -23,11 +24,12 @@ import {
     PositionSettings,
     VerticalAlignment,
     IgxGridCellComponent
-} from "igniteui-angular";
+} from 'igniteui-angular';
 import { data } from './data';
 
+// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 function formatDate(val: Date) {
-    return new Intl.DateTimeFormat("en-US").format(val);
+    return new Intl.DateTimeFormat('en-US').format(val);
 }
 
 class DealsSummary extends IgxNumberSummaryOperand {
@@ -37,11 +39,11 @@ class DealsSummary extends IgxNumberSummaryOperand {
 
     public operate(summaries?: any[]): IgxSummaryResult[] {
         const result = super.operate(summaries).filter((obj) => {
-            if (obj.key === "average" || obj.key === "sum") {
+            if (obj.key === 'average' || obj.key === 'sum') {
                 const summaryResult = obj.summaryResult;
                 // apply formatting to float numbers
                 if (Number(summaryResult) === summaryResult) {
-                    obj.summaryResult = summaryResult.toLocaleString("en-us", { maximumFractionDigits: 2 });
+                    obj.summaryResult = summaryResult.toLocaleString('en-us', { maximumFractionDigits: 2 });
                 }
                 return obj;
             }
@@ -57,7 +59,7 @@ class EarliestSummary extends IgxDateSummaryOperand {
 
     public operate(summaries?: any[]): IgxSummaryResult[] {
         const result = super.operate(summaries).filter((obj) => {
-            if (obj.key === "earliest") {
+            if (obj.key === 'earliest') {
                 obj.summaryResult = formatDate(obj.summaryResult);
                 return obj;
             }
@@ -73,8 +75,8 @@ class SoonSummary extends IgxDateSummaryOperand {
 
     public operate(summaries?: any[]): IgxSummaryResult[] {
         const result = super.operate(summaries).filter((obj) => {
-            if (obj.key === "latest") {
-                obj.label = "Soon";
+            if (obj.key === 'latest') {
+                obj.label = 'Soon';
                 obj.summaryResult = formatDate(obj.summaryResult);
                 return obj;
             }
@@ -84,20 +86,20 @@ class SoonSummary extends IgxDateSummaryOperand {
 }
 
 @Component({
-    selector: "app-grid",
-    styleUrls: ["./grid-crm.component.scss"],
-    templateUrl: "./grid-crm.component.html"
+    selector: 'app-grid',
+    styleUrls: ['./grid-crm.component.scss'],
+    templateUrl: './grid-crm.component.html'
 })
 export class GridCRMComponent implements OnInit, AfterViewInit {
 
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 
-    @ViewChild("toggleRefHiding") public toggleRefHiding: IgxToggleDirective;
-    @ViewChild("toggleRefPinning") public toggleRefPinning: IgxToggleDirective;
+    @ViewChild('toggleRefHiding') public toggleRefHiding: IgxToggleDirective;
+    @ViewChild('toggleRefPinning') public toggleRefPinning: IgxToggleDirective;
 
-    @ViewChild("hidingButton") public hidingButton: ElementRef;
-    @ViewChild("pinningButton") public pinningButton: ElementRef;
+    @ViewChild('hidingButton') public hidingButton: ElementRef;
+    @ViewChild('pinningButton') public pinningButton: ElementRef;
 
     public localData: any[];
     public dealsSummary = DealsSummary;
@@ -108,9 +110,9 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     public hiddenColsLength: number;
     public pinnedColsLength: number;
 
-    public searchText: string = "";
-    public caseSensitive: boolean = false;
-    public selectionMode = "multiple";
+    public searchText = '';
+    public caseSensitive = false;
+    public selectionMode = 'multiple';
 
     public _positionSettings: PositionSettings = {
         horizontalDirection: HorizontalAlignment.Left,
@@ -121,6 +123,7 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     public _overlaySettings: OverlaySettings = {
         closeOnOutsideClick: true,
         modal: false,
+        // eslint-disable-next-line no-underscore-dangle
         positionStrategy: new ConnectedPositioningStrategy(this._positionSettings),
         scrollStrategy: new CloseScrollStrategy()
     };
@@ -189,14 +192,14 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     }
 
     public formatDate(val: Date) {
-        return new Intl.DateTimeFormat("en-US").format(val);
+        return new Intl.DateTimeFormat('en-US').format(val);
     }
 
     public searchKeyDown(ev) {
-        if (ev.key === "Enter" || ev.key === "ArrowDown" || ev.key === "ArrowRight") {
+        if (ev.key === 'Enter' || ev.key === 'ArrowDown' || ev.key === 'ArrowRight') {
             ev.preventDefault();
             this.grid1.findNext(this.searchText, this.caseSensitive);
-        } else if (ev.key === "ArrowUp" || ev.key === "ArrowLeft") {
+        } else if (ev.key === 'ArrowUp' || ev.key === 'ArrowLeft') {
             ev.preventDefault();
             this.grid1.findPrev(this.searchText, this.caseSensitive);
         }
@@ -208,16 +211,16 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     }
 
     public clearSearch() {
-        this.searchText = "";
+        this.searchText = '';
         this.grid1.clearSearch();
     }
 
     public formatValue(val: any): string {
-        return val.toLocaleString("en-us", { maximumFractionDigits: 2 });
+        return val.toLocaleString('en-us', { maximumFractionDigits: 2 });
     }
 
     public getDeals(employee: any): any {
-        employee["Deals"] = this.getDealsData();
+        employee['Deals'] = this.getDealsData();
     }
 
     public getDealsData(months?: number): any[] {
@@ -227,6 +230,7 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         const deals: any[] = [];
         for (let m = 0; m < months; m++) {
             const value = this.getRandomNumber(-20, 30);
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             deals.push({ Deals: value, Month: m });
         }
         return deals;

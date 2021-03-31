@@ -1,6 +1,6 @@
-import { Injectable } from "@angular/core";
-import { FilteringStrategy, IFilteringExpressionsTree, IgxColumnComponent } from "igniteui-angular";
-import { SINGERS } from "../data";
+import { Injectable } from '@angular/core';
+import { FilteringStrategy, IFilteringExpressionsTree, IgxColumnComponent } from 'igniteui-angular';
+import { SINGERS } from '../data';
 
 @Injectable()
 export class RemoteValuesService {
@@ -20,7 +20,7 @@ export class RemoteValuesService {
             if (!parentId) {
                 // Generate unique column values for the singers.
                 filteredData = this._filteringStrategy.filter(this.getSingersData(), columnExprTree, null, null);
-            } else if (key === "Albums") {
+            } else if (key === 'Albums') {
                 // Generate unique column values for the albums of a specific singer.
                 const singer = this.getSingersData().find((rec) => rec.Artist === parentId);
                 const albums = singer ? (singer.Albums ? singer.Albums : []) : [];
