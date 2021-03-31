@@ -7,28 +7,22 @@ $custom-grid: igx-grid-theme(
 );
 
 $custom-button: igx-button-theme(
-    $disabled-color: gray,
+    $disabled-foreground: gray,
 
-    $outlined-text-color: #FFCD0F,
-    $outlined-outline-color: #FFCD0F,
-    $outlined-hover-text-color: #292826,
-    $outlined-hover-background: #FFCD0F,
-    $outlined-focus-text-color: #292826,
-    $outlined-focus-background: #807449,
+    $foreground: #FFCD0F,
+    $border-color: #FFCD0F,
+    $hover-foreground: #292826,
+    $hover-background: #FFCD0F,
+    $focus-foreground: #292826,
+    $focus-background: #807449,
 
-    $icon-color: #FFCD0F,
-    $icon-hover-color: #FFCD0F,
+    $foreground: #FFCD0F,
+    $hover-foreground: #292826,
+    $hover-background: #FFCD0F,
+    $focus-foreground: #292826,
+    $focus-background: #807449,
 
-    $flat-text-color: #FFCD0F,
-    $flat-hover-text-color: #292826,
-    $flat-hover-background: #FFCD0F,
-    $flat-focus-text-color: #292826,
-    $flat-focus-background: #807449,
-
-    $raised-background: #FFCD0F,
-    $raised-text-color: #292826,
-    $raised-hover-background: #ffe482,
-    $raised-hover-text-color: #292826
+    $background: #FFCD0F
 );
 
 $custom-button-group: igx-button-group-theme(
