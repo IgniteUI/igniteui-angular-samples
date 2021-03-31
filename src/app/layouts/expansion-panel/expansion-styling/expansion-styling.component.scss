@@ -22,7 +22,7 @@ $custom-panel-theme: igx-expansion-panel-theme(
     $header-title-color: igx-color($my-color-palette, "secondary"),
     $header-icon-color: igx-color($my-color-palette, "secondary"),
     $body-background: igx-color($my-color-palette, "primary", 700),
-    $body-color: igx-color($my-color-palette, "secondary" 100),
+    $body-color: igx-color($my-color-palette, "secondary", 100),
     $border-radius: .5
 );
 

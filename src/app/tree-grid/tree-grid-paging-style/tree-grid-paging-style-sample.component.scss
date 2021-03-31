@@ -8,7 +8,7 @@
 /*BASIC THEMING*/
 
 $dark-paginator: igx-paginator-theme( $text-color: #F4D45C, $background-color: #575757, $border-color: #292826);
-$dark-button: igx-button-theme( $icon-color: #FFCD0F, $icon-hover-color: #292826, $icon-hover-background: #FFCD0F, $icon-focus-color: #292826, $icon-focus-background: #FFCD0F, $disabled-color: #16130C);
+$dark-button: igx-button-theme( $foreground: #FFCD0F, $hover-foreground: #292826, $hover-background: #FFCD0F, $focus-foreground: #292826, $focus-background: #FFCD0F, $disabled-foreground: #16130C);
 
 /*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 

@@ -17,10 +17,10 @@ $dark-input-group: igx-input-group-theme(
 );
 
 $dark-button: igx-button-theme(
-    $flat-background: #FFCD0F,
-    $flat-text-color: #292826,
-    $flat-hover-background: #292826,
-    $flat-hover-text-color: #FFCD0F
+    $background: #FFCD0F,
+    $foreground: #292826,
+    $hover-background: #292826,
+    $hover-foreground: #FFCD0F
 );
 
 /*ENHANCED APPROACHES*/
