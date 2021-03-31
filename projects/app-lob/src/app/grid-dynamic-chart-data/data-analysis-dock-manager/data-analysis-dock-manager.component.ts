@@ -296,7 +296,6 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
             filter(() => this.range),
             takeUntil(this.destroy$))
             .subscribe(() => {
-                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                 if (!this.contextmenu) { this.headersRenderButton ? this.renderHeaderButton() : this.renderButton(); }
             });
 

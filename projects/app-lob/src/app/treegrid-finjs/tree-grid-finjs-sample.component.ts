@@ -141,7 +141,6 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy, OnInit 
     }
 
     updateVolume() {
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         this.dataService.hasRemoteConnection ? this.dataService.broadcastParams(this.frequency, this.volume, false) :
         this.dataService.getData(this.volume);
     }

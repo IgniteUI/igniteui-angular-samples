@@ -330,7 +330,6 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     public onCheckChange(evt, idx) {
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         evt.checked ? this._keyboardHandler.selectItem(idx) : this._keyboardHandler.deselectItem(idx);
     }
 

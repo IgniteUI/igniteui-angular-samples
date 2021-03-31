@@ -12,7 +12,6 @@ export class CalendarRtlSampleComponent {
     public directionality = 'rtl';
 
     changeDirectionality(){
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         this.directionality === 'rtl' ? this.directionality = 'ltr' : this.directionality = 'rtl';
     }
 }

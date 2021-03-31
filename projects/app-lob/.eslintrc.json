@@ -67,7 +67,9 @@
         "space-in-parens": [
           "error",
           "never"
-        ]
+        ],
+        "no-unused-expressions": "off",
+        "@typescript-eslint/no-unused-expressions": "off"
       }
     },
     {

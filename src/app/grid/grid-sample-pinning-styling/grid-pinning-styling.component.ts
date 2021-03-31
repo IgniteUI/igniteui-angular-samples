@@ -33,7 +33,6 @@ export class PinningStylingComponent implements OnInit{
     }
 
     public toggleColumn(col: IgxColumnComponent) {
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         col.pinned ? col.unpin() : col.pin();
     }
 }

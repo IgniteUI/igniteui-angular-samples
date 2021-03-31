@@ -27,7 +27,6 @@ export class TreeGridRightPinningSampleComponent implements OnInit {
     }
 
     public toggleColumnPinning(col: IgxColumnComponent): void {
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         col.pinned ? col.unpin() : col.pin();
     }
 

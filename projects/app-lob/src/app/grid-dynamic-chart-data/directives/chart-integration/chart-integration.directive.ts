@@ -306,7 +306,6 @@ export class ChartIntegrationDirective {
                     options.push({ ...dataOptions, ...chartOptions.seriesModel });
                 }
             });
-            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
             stacked ? chartOptions.stackedFragmentOptions = options : chartOptions.seriesOptions = options;
         }
         return chartOptions;

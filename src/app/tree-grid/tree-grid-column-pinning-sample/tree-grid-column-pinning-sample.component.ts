@@ -16,7 +16,6 @@ export class TreeGridColumnPinningSampleComponent {
     }
 
     public toggleColumn(column: IgxColumnComponent) {
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         column.pinned ? column.unpin() : column.pin();
     }
 }

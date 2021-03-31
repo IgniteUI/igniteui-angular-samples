@@ -27,6 +27,8 @@
             "default": "array"
           }
         ],
+        "no-unused-expressions": "off",
+        "@typescript-eslint/no-unused-expressions": "off",
         "@typescript-eslint/dot-notation": "off",
         "@typescript-eslint/no-this-alias": "error",
         "@typescript-eslint/no-var-requires": "error",

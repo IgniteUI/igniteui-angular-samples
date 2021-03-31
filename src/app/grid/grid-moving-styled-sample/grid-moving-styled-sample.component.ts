@@ -25,7 +25,6 @@ export class GridMovingStyledSampleComponent {
     }
 
     public toggleColumnPinning(column: IgxColumnComponent) {
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         column.pinned ? column.unpin() : column.pin();
     }
 }

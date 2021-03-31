@@ -43,7 +43,6 @@ export class HierarchicalGridRightPinningSampleComponent implements OnInit{
     }
 
     public toggleColumn(col: IgxColumnComponent): void {
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         col.pinned ? col.unpin() : col.pin();
     }
 

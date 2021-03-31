@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { AfterViewInit, Directive, EventEmitter, Inject, Input, OnDestroy, Output } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular';
 import { Subject } from 'rxjs';

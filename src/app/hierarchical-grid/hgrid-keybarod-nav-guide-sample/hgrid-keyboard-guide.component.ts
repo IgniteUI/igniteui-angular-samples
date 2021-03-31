@@ -241,7 +241,6 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     public onCheckChange(evt, idx) {
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         evt.checked ? this.keyboardHandler.selectItem(idx) : this.keyboardHandler.deselectItem(idx);
     }
 

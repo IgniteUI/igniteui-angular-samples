@@ -57,7 +57,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy, OnInit {
 
     public onVolumeChanged(volume: any) {
         this.volume = volume;
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService
             .broadcastParams(this.controller.frequency, this.volume, false) : this.finGrid.dataService.getData(volume);
     }
@@ -78,7 +77,6 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy, OnInit {
                 break;
             }
             case 'stop': {
-                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                 this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService.stopLiveData() : this.stopFeed();
                 break;
             }

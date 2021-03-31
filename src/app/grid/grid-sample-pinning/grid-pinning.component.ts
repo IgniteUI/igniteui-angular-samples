@@ -49,7 +49,6 @@ export class PinningSampleComponent implements OnInit, AfterViewInit {
     }
 
     public toggleColumn(col: IgxColumnComponent) {
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         col.pinned ? col.unpin() : col.pin();
     }
 }
