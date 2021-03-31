@@ -13,16 +13,12 @@ $dark-column-actions-theme: igx-column-actions-theme(
 );
 
 $dark-button-theme: igx-button-theme(
-    $outlined-background: $yellow,
-    $outlined-text-color: $bg,
-    $outlined-hover-background: $gray,
-    $outlined-hover-text-color: $yellow,
-    $outlined-focus-background: $yellow,
-    $flat-text-color: $yellow,
-    $flat-hover-background: $gray,
-    $flat-hover-text-color: $yellow,
-    $flat-focus-background: $yellow,
-    $disabled-color: $light-gray
+    $background: $yellow,
+    $foreground: $bg,
+    $hover-background: $gray,
+    $hover-foreground: $yellow,
+    $focus-background: $yellow,
+    $disabled-foreground: $light-gray
 );
 
 $dark-input-group: igx-input-group-theme(
@@ -78,9 +74,9 @@ $dark-ripple-theme: igx-ripple-theme(
 //         )
 //     )
 // );
-// 
+//
 // $custom-button-schema: extend($_dark-button,
-//     (           
+//     (
 //         flat-text-color:(
 //             igx-color:("secondary", 500)
 //         ),
@@ -89,7 +85,7 @@ $dark-ripple-theme: igx-ripple-theme(
 //         )
 //     )
 // );
-// 
+//
 // $custom-dark-schema: extend($dark-schema,(
 //     igx-column-actions: $custom-column-actions-schema,
 //     igx-button: $custom-button-schema

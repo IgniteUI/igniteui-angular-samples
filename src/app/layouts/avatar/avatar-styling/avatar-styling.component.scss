@@ -15,11 +15,9 @@
 }
 
 $custom-avatar-theme: igx-avatar-theme(
-    $initials-background: #72da67,
-    $initials-color: #000000,
-    $icon-background: #217346,
-    $icon-color: #ffffff,
-    $border-radius-square: 16px
+    $background: #72da67,
+    $color: #000000,
+    $border-radius: 16px
 );
 
 // :host {
