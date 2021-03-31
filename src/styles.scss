@@ -1,12 +1,40 @@
 // CSS Reset, comment out if not required or using a different module
 // @import '~minireset.css/minireset';
 @import '~igniteui-angular/lib/core/styles/themes/index';
+
 @include igx-core();
+@include igx-typography();
 @include igx-theme($default-palette, $legacy-support: true);
 
 :root {
-    @include css-vars-from-palette($default-palette);
+    @include igx-palette-vars($default-palette);
 }
+
+.light-theme {
+    @include igx-light-theme($default-palette);
+}
+
+$grays-btn-color: igx-color($green-palette, 'grays', 800);
+@mixin scrollbar-love($scrollbar-color: null) {
+    $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
+    $scrollbar-thumb: hexrgba(igx-color($default-palette, 'grays', 400));
+
+    @if $scrollbar-color and luminance($scrollbar-color) < .5 {
+        $scrollbar-track: darken($scrollbar-color, 80%);
+        $scrollbar-thumb: lighten($scrollbar-color, 20%);
+    }
+
+    ::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+        background-color: $scrollbar-track;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $scrollbar-thumb;
+    }
+}
+
 
 /* autoprefixer grid: on */
 html,
@@ -114,6 +142,7 @@ $green-palette: igx-palette($primary: #09f,$secondary: #72da67, $surface: #333);
 .dark-theme {
     background: #333;
     color: #fff;
+    @include scrollbar-love(lighten($grays-btn-color, 20%));
     @include igx-dark-theme($green-palette, $legacy-support: true);
 
     .grid-chart-contextmenu-wrapper{
