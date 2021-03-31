@@ -1,27 +1,26 @@
-import { Component, TemplateRef, ViewChild, ViewEncapsulation } from "@angular/core";
-import { ColumnPinningPosition, IgxColumnComponent, IgxTreeGridComponent, IPinningConfig } from "igniteui-angular";
-import { generateEmployeeDetailedFlatData } from "../data/employees-flat-detailed";
+import { Component, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ColumnPinningPosition, IgxColumnComponent, IgxTreeGridComponent, IPinningConfig } from 'igniteui-angular';
+import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [],
-    selector: "tree-grid-sample",
-    styleUrls: ["tree-grid-right-pinning.component.scss"],
-    templateUrl: "tree-grid-right-pinning.component.html"
+    selector: 'app-tree-grid-sample',
+    styleUrls: ['tree-grid-right-pinning.component.scss'],
+    templateUrl: 'tree-grid-right-pinning.component.html'
 })
 
-export class TreeGridRightPinningSampleComponent {
-    @ViewChild("grid1", { static: true })
+export class TreeGridRightPinningSampleComponent implements OnInit {
+    @ViewChild('grid1', { static: true })
     public grid1: IgxTreeGridComponent;
+    @ViewChild('pinTemplate', { read: TemplateRef, static: true })
+    public pinTemplate: TemplateRef<any>;
 
     public data: any[];
     public columns: any[];
     public pinningConfig: IPinningConfig = { columns: ColumnPinningPosition.End };
 
-    @ViewChild("pinTemplate", { read: TemplateRef, static: true })
-    public pinTemplate: TemplateRef<any>;
-
-    private _columnsPinned: boolean = true;
+    private _columnsPinned = true;
 
     public ngOnInit(): void {
         this.data = generateEmployeeDetailedFlatData();

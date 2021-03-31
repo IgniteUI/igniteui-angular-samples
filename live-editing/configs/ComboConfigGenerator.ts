@@ -18,32 +18,32 @@ export class ComboConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/lists/combo/combo-features/local-data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'IgxSwitchModule', 'ComboFeatures'],
-                ngDeclarations: ['ComboFeatures'],
+                imports: ['IgxComboModule', 'IgxSwitchModule', 'ComboFeaturesComponent'],
+                ngDeclarations: ['ComboFeaturesComponent'],
                 ngImports: ['IgxComboModule', 'IgxSwitchModule']
             }),
-            component: 'ComboFeatures',
+            component: 'ComboFeaturesComponent',
             shortenComponentPathBy: "/lists/combo/"
         }));
 
         configs.push(new Config({
             additionalFiles: ["/src/app/data/heroData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'IgxToastModule', 'ComboStyling'],
-                ngDeclarations: ['ComboStyling'],
+                imports: ['IgxComboModule', 'IgxToastModule', 'ComboStylingComponent'],
+                ngDeclarations: ['ComboStylingComponent'],
                 ngImports: ['IgxComboModule', 'IgxToastModule']
             }),
-            component: 'ComboStyling'
+            component: 'ComboStylingComponent'
         }));
 
         configs.push(new Config({
             additionalFiles: ["/src/app/lists/combo/cascading-combos/local-data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'IgxSelectModule', 'CascadingCombos'],
-                ngDeclarations: ['CascadingCombos'],
+                imports: ['IgxComboModule', 'IgxSelectModule', 'CascadingCombosComponent'],
+                ngDeclarations: ['CascadingCombosComponent'],
                 ngImports: ['IgxComboModule', 'IgxSelectModule']
             }),
-            component: 'CascadingCombos',
+            component: 'CascadingCombosComponent',
             shortenComponentPathBy: "/lists/combo/"
         }));
 

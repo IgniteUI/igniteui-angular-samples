@@ -1,4 +1,4 @@
-/* tslint:disable */
+/* eslint-disable */
 export const DATA = [
     {
       "_id": "56c2ee0991a4474f9ae631de",

@@ -1,15 +1,15 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { DefaultSortingStrategy, IgxTreeGridComponent, SortingDirection } from "igniteui-angular";
-import { FOODS_DATA } from "../data/foods";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { DefaultSortingStrategy, IgxTreeGridComponent, SortingDirection } from 'igniteui-angular';
+import { FOODS_DATA } from '../data/foods';
 
 @Component({
-    selector: "app-tree-grid-sorting-sample",
-    styleUrls: ["./tree-grid-sorting-sample.component.scss"],
-    templateUrl: "tree-grid-sorting-sample.component.html"
+    selector: 'app-tree-grid-sorting-sample',
+    styleUrls: ['./tree-grid-sorting-sample.component.scss'],
+    templateUrl: 'tree-grid-sorting-sample.component.html'
 })
 
 export class TreeGridSortingSampleComponent implements OnInit {
-    @ViewChild("treegrid1", { read: IgxTreeGridComponent, static: true })
+    @ViewChild('treegrid1', { read: IgxTreeGridComponent, static: true })
     public treegrid1: IgxTreeGridComponent;
     public data: any[];
 
@@ -23,13 +23,13 @@ export class TreeGridSortingSampleComponent implements OnInit {
     public ngOnInit(): void {
         this.data = FOODS_DATA();
         this.treegrid1.sortingExpressions = [
-            { dir: SortingDirection.Asc, fieldName: "UnitPrice",
+            { dir: SortingDirection.Asc, fieldName: 'UnitPrice',
               ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
         ];
     }
 
     public formatDate(val: Date) {
-        return new Intl.DateTimeFormat("en-US").format(val);
+        return new Intl.DateTimeFormat('en-US').format(val);
     }
 
     public rightClick(eventArgs) {

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
     DefaultSortingStrategy,
     GridSummaryCalculationMode,
@@ -9,8 +9,8 @@ import {
     IgxSummaryResult,
     ISortingExpression,
     SortingDirection
-} from "igniteui-angular";
-import { INVOICE_DATA } from "../../data/invoiceData";
+} from 'igniteui-angular';
+import { INVOICE_DATA } from '../../data/invoiceData';
 
 class CustomSummary {
 
@@ -18,12 +18,12 @@ class CustomSummary {
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];
         result.push({
-            key: "sum",
-            label: "Sum",
+            key: 'sum',
+            label: 'Sum',
             summaryResult: IgxNumberSummaryOperand.sum(data)
         }, {
-            key: "count",
-            label: "Count",
+            key: 'count',
+            label: 'Count',
             summaryResult: data.length ? data.length : 0
         });
         return result;
@@ -31,12 +31,12 @@ class CustomSummary {
 }
 
 @Component({
-    selector: "app-grid-groupby-summary-sample",
-    styleUrls: ["./grid-groupby-summary-styling-sample.component.scss"],
-    templateUrl: "./grid-groupby-summary-styling-sample.component.html"
+    selector: 'app-grid-groupby-summary-sample',
+    styleUrls: ['./grid-groupby-summary-styling-sample.component.scss'],
+    templateUrl: './grid-groupby-summary-styling-sample.component.html'
 })
 export class GridGroupBySummaryStylingSampleComponent {
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
     public data;
     public expr: ISortingExpression[];
@@ -45,12 +45,12 @@ export class GridGroupBySummaryStylingSampleComponent {
     public summaryPosition: GridSummaryPosition = GridSummaryPosition.bottom;
     public summaryCalcModes;
     public summaryCalculationMode: GridSummaryCalculationMode = GridSummaryCalculationMode.rootAndChildLevels;
-    public selectionMode = "multiple";
+    public selectionMode = 'multiple';
 
     constructor() {
         this.data = INVOICE_DATA;
         this.expr = [
-            { dir: SortingDirection.Asc, fieldName: "ShipCountry", ignoreCase: false,
+            { dir: SortingDirection.Asc, fieldName: 'ShipCountry', ignoreCase: false,
               strategy: DefaultSortingStrategy.instance() }
         ];
 
@@ -69,19 +69,19 @@ export class GridGroupBySummaryStylingSampleComponent {
 
         this.summaryCalcModes = [
             {
-                label: "Root Level Only",
+                label: 'Root Level Only',
                 selected: this.summaryCalculationMode === GridSummaryCalculationMode.rootLevelOnly,
                 togglable: true,
                 value: GridSummaryCalculationMode.rootLevelOnly
             },
             {
-                label: "Child Levels Only",
+                label: 'Child Levels Only',
                 selected: this.summaryCalculationMode === GridSummaryCalculationMode.childLevelsOnly,
                 togglable: true,
                 value: GridSummaryCalculationMode.childLevelsOnly
             },
             {
-                label: "Root And Child Levels",
+                label: 'Root And Child Levels',
                 selected: this.summaryCalculationMode === GridSummaryCalculationMode.rootAndChildLevels,
                 togglable: true,
                 value: GridSummaryCalculationMode.rootAndChildLevels
@@ -100,11 +100,11 @@ export class GridGroupBySummaryStylingSampleComponent {
     }
 
     public formatDate(val: Date) {
-        return new Intl.DateTimeFormat("en-US").format(val);
+        return new Intl.DateTimeFormat('en-US').format(val);
     }
 
     public formatCurrency(value: number) {
-        return "$" + value.toFixed(2);
+        return '$' + value.toFixed(2);
     }
 
     public isDate(value: any) {

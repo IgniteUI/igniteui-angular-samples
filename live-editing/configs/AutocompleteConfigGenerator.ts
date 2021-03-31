@@ -14,11 +14,11 @@ export class AutocompleteConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxAutocompleteModule', 'IgxDropDownModule', 'IgxInputGroupModule',
-                    'AutocompleteBasic', 'AutocompletePipeStartsWith'],
-                ngDeclarations: ['AutocompleteBasic', 'AutocompletePipeStartsWith'],
+                    'AutocompleteBasicComponent', 'AutocompletePipeStartsWith'],
+                ngDeclarations: ['AutocompleteBasicComponent', 'AutocompletePipeStartsWith'],
                 ngImports: ['IgxAutocompleteModule', 'IgxDropDownModule', 'IgxInputGroupModule']
             }),
-            component: 'AutocompleteBasic',
+            component: 'AutocompleteBasicComponent',
             shortenComponentPathBy: "/data-entries/autocomplete/"
         }));
 

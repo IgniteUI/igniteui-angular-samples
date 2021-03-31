@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
-import { DatePart } from "igniteui-angular";
+import { Component } from '@angular/core';
+import { DatePart } from 'igniteui-angular';
 
 @Component({
-    selector: "app-datetime-advanced",
-    styleUrls: ["./datetime-advanced.scss"],
-    templateUrl: "./datetime-advanced.html"
+    selector: 'app-datetime-advanced',
+    styleUrls: ['./datetime-advanced.scss'],
+    templateUrl: './datetime-advanced.html'
 })
 
 export class DateTimeAdvancedComponent {

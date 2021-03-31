@@ -1,4 +1,4 @@
-// tslint:disable: max-line-length
+/*eslint-disable*/
 export interface IPlanet {
     name: string;
     moons: string[];

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/member-ordering */
 import {
     Component,
     Inject,
@@ -5,26 +6,26 @@ import {
     Pipe,
     PipeTransform,
     Renderer2
-} from "@angular/core";
-import * as fileSaver from "file-saver";
-import { DOCUMENT } from "@angular/common";
-import { IgxIconService, ISelectionEventArgs } from "igniteui-angular";
+} from '@angular/core';
+import * as fileSaver from 'file-saver';
+import { DOCUMENT } from '@angular/common';
+import { IgxIconService, ISelectionEventArgs } from 'igniteui-angular';
 
 import {
     all as imxIcons,
     IconCategory,
     IMXIcon
-} from "@igniteui/material-icons-extended";
+} from '@igniteui/material-icons-extended';
 
 interface ICategoryOption {
     text: string;
-    category?: IconCategory | "all";
+    category?: IconCategory | 'all';
 }
 
 @Component({
-    selector: "app-material-icons-extended",
-    templateUrl: "./material-icons-extended.component.html",
-    styleUrls: ["./material-icons-extended.component.scss"]
+    selector: 'app-material-icons-extended',
+    templateUrl: './material-icons-extended.component.html',
+    styleUrls: ['./material-icons-extended.component.scss']
 })
 export class MaterialIconsExtendedComponent implements OnInit {
     constructor(
@@ -35,8 +36,8 @@ export class MaterialIconsExtendedComponent implements OnInit {
 
     public categories: ICategoryOption[] = [
         {
-            text: "All",
-            category: "all"
+            text: 'All',
+            category: 'all'
         }
     ];
 
@@ -45,9 +46,9 @@ export class MaterialIconsExtendedComponent implements OnInit {
             (category) =>
                 ({
                     text: category
-                        .split(" ")
+                        .split(' ')
                         .map((w) => w.replace(/^\w/, (c) => c.toUpperCase()))
-                        .join(" "),
+                        .join(' '),
                     category
                 } as ICategoryOption)
         );
@@ -57,14 +58,14 @@ export class MaterialIconsExtendedComponent implements OnInit {
 
     public allIcons = imxIcons;
 
-    public selectedCategory: IconCategory | "all" = "all";
+    public selectedCategory: IconCategory | 'all' = 'all';
 
     handleSelection(event: ISelectionEventArgs) {
         this.selectedCategory = event.newSelection.value;
     }
 
     resetFilter() {
-        this.selectedCategory = "all";
+        this.selectedCategory = 'all';
     }
 
     addIcons() {
@@ -72,44 +73,44 @@ export class MaterialIconsExtendedComponent implements OnInit {
             this.iconService.addSvgIconFromText(
                 icon.name,
                 icon.value,
-                "imx-icons"
+                'imx-icons'
             );
         }
     }
 
     downloadFile(icon: IMXIcon) {
-        const blob: any = new Blob([icon.value], { type: "image/svg+xml" });
+        const blob: any = new Blob([icon.value], { type: 'image/svg+xml' });
         fileSaver.saveAs(blob, icon.name);
     }
 
     copyValue(event: Event, val: string) {
         const target = event.currentTarget as HTMLButtonElement;
         const element = target.childNodes[0] as HTMLElement;
-        const tempField = this.renderer.createElement("textarea");
+        const tempField = this.renderer.createElement('textarea');
 
-        this.renderer.setStyle(tempField, "position", "fixed");
-        this.renderer.setStyle(tempField, "opacity", "0");
-        this.renderer.setProperty(tempField, "value", val);
+        this.renderer.setStyle(tempField, 'position', 'fixed');
+        this.renderer.setStyle(tempField, 'opacity', '0');
+        this.renderer.setProperty(tempField, 'value', val);
         this.renderer.appendChild(this.document.body, tempField);
 
         tempField.focus();
         tempField.select();
 
-        this.document.execCommand("copy");
+        this.document.execCommand('copy');
         this.renderer.removeChild(this.document.body, tempField);
 
-        if (element.innerText !== "done") {
-            this.renderer.setProperty(element, "innerText", "done");
+        if (element.innerText !== 'done') {
+            this.renderer.setProperty(element, 'innerText', 'done');
             this.renderer.addClass(
                 target,
-                "sample__grid-item-clipboard--success"
+                'sample__grid-item-clipboard--success'
             );
 
             setTimeout(() => {
-                this.renderer.setProperty(element, "innerText", "content_copy");
+                this.renderer.setProperty(element, 'innerText', 'content_copy');
                 this.renderer.removeClass(
                     target,
-                    "sample__grid-item-clipboard--success"
+                    'sample__grid-item-clipboard--success'
                 );
             }, 1500);
         }
@@ -127,7 +128,7 @@ interface IIconsGroup {
 }
 
 @Pipe({
-    name: "categoriesFilter"
+    name: 'categoriesFilter'
 })
 export class CategoriesFilterPipe implements PipeTransform {
     sortIcons(acc: IIconsGroup[], icon: IMXIcon): IIconsGroup[] {
@@ -146,8 +147,8 @@ export class CategoriesFilterPipe implements PipeTransform {
         return acc;
     }
 
-    transform(icons: IMXIcon[], category: IconCategory | "all"): IIconsGroup[] {
-        if (category === "all") {
+    transform(icons: IMXIcon[], category: IconCategory | 'all'): IIconsGroup[] {
+        if (category === 'all') {
             return icons.reduce(this.sortIcons, []);
         } else {
             return icons
@@ -166,7 +167,7 @@ export class CategoriesFilterPipe implements PipeTransform {
 }
 
 @Pipe({
-    name: "filterByName"
+    name: 'filterByName'
 })
 export class FilterByName implements PipeTransform {
     transform(icons: IMXIcon[], name: string): IMXIcon[] {

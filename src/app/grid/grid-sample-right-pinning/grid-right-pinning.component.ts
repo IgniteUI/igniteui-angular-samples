@@ -1,24 +1,25 @@
-import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
-import { ColumnPinningPosition, IgxColumnComponent, IgxGridComponent, IPinningConfig } from "igniteui-angular";
-import { data } from "../../data/athletesData";
-import { athletesData } from "../services/data";
+import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
+import { ColumnPinningPosition, IgxColumnComponent, IgxGridComponent, IPinningConfig } from 'igniteui-angular';
+import { data } from '../../data/athletesData';
+import { athletesData } from '../services/data';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [],
-    selector: "grid-sample",
-    styleUrls: ["grid-right-pinning.component.scss"],
-    templateUrl: "grid-right-pinning.component.html"
+    selector: 'app-grid-sample',
+    styleUrls: ['grid-right-pinning.component.scss'],
+    templateUrl: 'grid-right-pinning.component.html'
 })
 
-export class RightPinningSampleComponent {
-    @ViewChild("grid1", { static: true })
+export class RightPinningSampleComponent implements OnInit{
+    @ViewChild('grid1', { static: true })
     public grid1: IgxGridComponent;
 
     public data: any[];
     public athletesData: any[];
     public columns: any[];
     public pinningConfig: IPinningConfig = { columns: ColumnPinningPosition.End };
+    // eslint-disable-next-line @typescript-eslint/no-inferrable-types
     private _columnsPinned: boolean = true;
 
     public ngOnInit(): void {
@@ -54,7 +55,7 @@ export class RightPinningSampleComponent {
     private generateReadableDate(timestamp: string): Date {
         let dateObj = new Date(timestamp);
         if (isNaN(dateObj.getTime())) {
-            dateObj = new Date(timestamp.split(" ")[0]);
+            dateObj = new Date(timestamp.split(' ')[0]);
         }
         return dateObj;
     }

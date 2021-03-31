@@ -1,11 +1,11 @@
 <div class="contextmenu" [ngStyle]="{'left.px': x, 'top.px': y}">
-    <span class=item (click)="Sort($event)">
+    <span class=item (click)="sort($event)">
         <igx-icon class="icon" family="material">sort_by_alpha</igx-icon>Sort
     </span>
-    <span class="item" (click)="ClearSort($event)">
+    <span class="item" (click)="clearSort($event)">
         <igx-icon class="icon" family="material">clear</igx-icon>Clear Sort
     </span>
-    <span class=item (click)="ClearAll($event)">
+    <span class=item (click)="clearAll($event)">
         <igx-icon class="icon" family="material">cancel</igx-icon>Clear All
     </span>
 </div>

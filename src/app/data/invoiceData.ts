@@ -1,4 +1,4 @@
-/* tslint:disable */
+/* eslint-disable */
 export const INVOICE_DATA = [{
     ShipAddress: "Obere Str. 57",
     ShipCity: "Berlin",

@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { DateParser } from "../../../date-parser";
+import { Component, OnInit } from '@angular/core';
+import { DateParser } from '../../../date-parser';
 
 @Component({
   providers: [DateParser],
-  selector: "app-datepicker-sample-5",
-  styleUrls: ["./datepicker-sample-5.component.scss"],
-  templateUrl: "./datepicker-sample-5.component.html"
+  selector: 'app-datepicker-sample-5',
+  styleUrls: ['./datepicker-sample-5.component.scss'],
+  templateUrl: './datepicker-sample-5.component.html'
 })
 export class DatepickerSample5Component implements OnInit {
   public intlDateTimeFormat = new Intl.DateTimeFormat() as any;

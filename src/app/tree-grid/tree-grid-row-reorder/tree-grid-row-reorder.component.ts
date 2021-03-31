@@ -1,17 +1,17 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild } from '@angular/core';
 import { IDropDroppedEventArgs,
-    IgxTreeGridComponent, IgxTreeGridRowComponent, Point } from "igniteui-angular";
-import { generateEmployeeFlatData } from "../data/employees-flat";
+    IgxTreeGridComponent, IgxTreeGridRowComponent, Point } from 'igniteui-angular';
+import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({
-    selector: "tree-grid-row-reorder",
-    styleUrls: ["tree-grid-row-reorder.component.scss"],
-    templateUrl: "tree-grid-row-reorder.component.html"
+    selector: 'app-tree-grid-row-reorder',
+    styleUrls: ['tree-grid-row-reorder.component.scss'],
+    templateUrl: 'tree-grid-row-reorder.component.html'
 })
 export class TreeGridRowReorderComponent {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static : true })
     public treeGrid: IgxTreeGridComponent;
-    public selectionMode = "multiple";
+    public selectionMode = 'multiple';
     public localData = [];
     constructor() {
         this.localData = generateEmployeeFlatData();
@@ -72,8 +72,7 @@ export class TreeGridRowReorderComponent {
         return this.localData.indexOf(rowData);
     }
 
-    private catchCursorPosOnElem(rowListArr: IgxTreeGridRowComponent[], cursorPosition: Point)
-        : IgxTreeGridRowComponent {
+    private catchCursorPosOnElem(rowListArr: IgxTreeGridRowComponent[], cursorPosition: Point): IgxTreeGridRowComponent {
         for (const row of rowListArr) {
             const rowRect = row.nativeElement.getBoundingClientRect();
             if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&

@@ -1,22 +1,22 @@
-import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { IgxBannerComponent, IgxToastComponent } from "igniteui-angular";
-import { Subject } from "rxjs";
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { IgxBannerComponent, IgxToastComponent } from 'igniteui-angular';
+import { Subject } from 'rxjs';
 
 @Component({
-    selector: "banner-advanced-sample",
-    styleUrls: ["../banner-samples.scss"],
-    templateUrl: "banner-advanced-sample.component.html"
+    selector: 'app-banner-advanced-sample',
+    styleUrls: ['../banner-samples.scss'],
+    templateUrl: 'banner-advanced-sample.component.html'
 })
 
 export class BannerAdvancedSampleComponent implements OnInit, OnDestroy {
 
     @ViewChild(IgxBannerComponent, { static: true }) public banner: IgxBannerComponent;
     @ViewChild(IgxToastComponent, { static: true }) public eventToast: IgxToastComponent;
-    public contentWidth = "384px";
-    public imageUrls = ["assets/images/card/media/the_red_ice_forest.jpg",
-        "assets/images/card/media/yosemite.jpg"];
+    public contentWidth = '384px';
+    public imageUrls = ['assets/images/card/media/the_red_ice_forest.jpg',
+        'assets/images/card/media/yosemite.jpg'];
     public onNetworkStateChange = new Subject();
-    public toastPosition: "middle";
+    public toastPosition: 'middle';
 
     private _wifiState = false;
     public get wifiState(): boolean {
@@ -29,8 +29,8 @@ export class BannerAdvancedSampleComponent implements OnInit, OnDestroy {
 
     public showToast() {
         this.eventToast.close();
-        this.toastPosition =  "middle";
-        this.eventToast.open(`Wifi is now ${this.wifiState ? "on" : "off"}`);
+        this.toastPosition =  'middle';
+        this.eventToast.open(`Wifi is now ${this.wifiState ? 'on' : 'off'}`);
     }
 
     public ngOnInit() {

@@ -1,15 +1,15 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-    selector: "app-checkbox-sample-3",
-    styleUrls: ["./checkbox-sample-3.component.scss"],
-    templateUrl: "./checkbox-sample-3.component.html"
+    selector: 'app-checkbox-sample-3',
+    styleUrls: ['./checkbox-sample-3.component.scss'],
+    templateUrl: './checkbox-sample-3.component.html'
 })
 export class CheckboxSample3Component {
     public tasks = [
-        { done: true, description: "Research" },
-        { done: true, description: "Implement" },
-        { done: false, description: "Test" }
+        { done: true, description: 'Research' },
+        { done: true, description: 'Implement' },
+        { done: false, description: 'Test' }
     ];
 
     public get masterCheckbox() {

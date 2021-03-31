@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/member-delimiter-style */
 import { AnimationReferenceMetadata } from '@angular/animations';
 import { Component, ViewChild } from '@angular/core';
 import {
@@ -25,9 +26,9 @@ import {
 } from 'igniteui-angular';
 
 @Component({
-    selector: "animations-sample-1",
-    styleUrls: ["./animations-sample-1.component.scss"],
-    templateUrl: "./animations-sample-1.component.html"
+    selector: 'app-animations-sample-1',
+    styleUrls: ['./animations-sample-1.component.scss'],
+    templateUrl: './animations-sample-1.component.html'
 })
 export class AnimationsSampleComponent {
     @ViewChild('dialog', { static: true, read: IgxDialogComponent })

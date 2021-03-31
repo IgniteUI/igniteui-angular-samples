@@ -38,10 +38,11 @@ export class SignalRService implements OnDestroy {
                 this.hasRemoteConnection = false;
                 if (this._timer) { this.stopFeed(); }
                 const data = this.financialData.generateData(volume);
-                live ? this._timer = setInterval(() => updateAll ? this.updateAllPriceValues(data) : this.updateRandomPriceValues(data), interval)
-                : this.getData(volume);
+                live ? this._timer = setInterval(() => updateAll ?
+                    this.updateAllPriceValues(data) : this.updateRandomPriceValues(data), interval) :
+                        this.getData(volume);
             });
-    }
+    };
 
     public broadcastParams = (frequency, volume, live, updateAll = true) => {
         this.hubConnection.invoke('updateparameters', frequency, volume, live, updateAll)
@@ -49,7 +50,7 @@ export class SignalRService implements OnDestroy {
             .catch(err => {
                 console.error(err);
             });
-    }
+    };
 
     public stopLiveData = () => {
         if (this.hasRemoteConnection) {
@@ -58,22 +59,8 @@ export class SignalRService implements OnDestroy {
         } else {
             this.stopFeed();
         }
-    }
+    };
 
-    private stopFeed() {
-        if (this._timer) {
-            clearInterval(this._timer);
-        }
-    }
-
-    private registerSignalEvents() {
-        this.hubConnection.onclose(() => {
-            this.hasRemoteConnection = false;
-        });
-        this.hubConnection.on('transferdata', (data) => {
-            this.data.next(data);
-        })
-    }
 
     public getData(count: number = 10) {
         this.data.next(this.financialData.generateData(count));
@@ -90,6 +77,21 @@ export class SignalRService implements OnDestroy {
         this.zone.runOutsideAngular(() =>  {
             const newData = this.financialData.updateRandomPrices(data);
             this.data.next(newData);
+        });
+    }
+
+    private stopFeed() {
+        if (this._timer) {
+            clearInterval(this._timer);
+        }
+    }
+
+    private registerSignalEvents() {
+        this.hubConnection.onclose(() => {
+            this.hasRemoteConnection = false;
+        });
+        this.hubConnection.on('transferdata', (data) => {
+            this.data.next(data);
         });
     }
 }

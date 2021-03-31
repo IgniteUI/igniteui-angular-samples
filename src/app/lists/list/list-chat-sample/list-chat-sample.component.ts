@@ -1,25 +1,27 @@
-import { DOCUMENT } from "@angular/common";
-import { Component, Inject, TemplateRef, ViewChild, ViewEncapsulation } from "@angular/core";
-// import { IgxListComponent } from "igniteui-angular";
-import { ContactsService } from "./services/contacts.service";
-import { IMessage, MessagesService } from "./services/messages.service";
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
+// import { IgxListComponent } from 'igniteui-angular';
+import { ContactsService } from './services/contacts.service';
+import { IMessage, MessagesService } from './services/messages.service';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
-    selector: "app-list-chat-sample",
-    styleUrls: ["./list-chat-sample.component.scss"],
-    templateUrl: "./list-chat-sample.component.html"
+    selector: 'app-list-chat-sample',
+    styleUrls: ['./list-chat-sample.component.scss'],
+    templateUrl: './list-chat-sample.component.html'
 })
 export class ListChatSampleComponent {
-    public message: string;
-    @ViewChild("myMessage", { static: true })
+    @ViewChild('myMessage', { static: true })
     public myMessageTemplate: TemplateRef<any>;
-    @ViewChild("othersMessage", { static: true })
+    @ViewChild('othersMessage', { static: true })
     public othersMessageTemplate: TemplateRef<any>;
-    // @ViewChild("list")
+
+    public message: string;
+
+    // @ViewChild('list')
     // public listComponent: IgxListComponent;
 
-    private myId: number = 4;
+    private myId = 4;
 
     constructor(public messagesService: MessagesService, public contactsService: ContactsService,
                 @Inject(DOCUMENT) private document: any) { }
@@ -49,7 +51,7 @@ export class ListChatSampleComponent {
     }
 
     public onMessageKeypress(event) {
-        if (event.key === "Enter") {
+        if (event.key === 'Enter') {
             this.sendMessage();
         }
     }
@@ -78,7 +80,7 @@ export class ListChatSampleComponent {
 
     private scrollToBottom(): void {
         try {
-            const listElement = this.document.querySelector("igx-list");
+            const listElement = this.document.querySelector('igx-list');
             if (listElement) {
                 listElement.scrollTop = listElement.scrollHeight;
             }

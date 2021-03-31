@@ -1,4 +1,4 @@
-// tslint:disable:object-literal-sort-keys
+/*eslint-disable*/
 
 export const dataDisplayRoutesData = {
     "badge-sample-2": { displayName: "Simple Badge", parentName: "Badge" },

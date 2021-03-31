@@ -1,30 +1,31 @@
-import { AfterViewInit, Component, EventEmitter, OnDestroy, Output, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { IDialogEventArgs, IgxDialogComponent } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
 import { ControllerComponent } from './controllers.component';
 import { GridFinJSComponent } from './grid-finjs.component';
 
 @Component({
-    selector: "app-finjs-main",
-    styleUrls: ["./main.component.scss"],
-    templateUrl: "./main.component.html"
+    selector: 'app-finjs-main',
+    styleUrls: ['./main.component.scss'],
+    templateUrl: './main.component.html'
 })
-export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
+export class FinJSDemoComponent implements AfterViewInit, OnDestroy, OnInit {
     @ViewChild('finGrid', { static: true }) public finGrid: GridFinJSComponent;
     @ViewChild('controllers', { static: true }) public controller: ControllerComponent;
-    @ViewChild("dialog", { static: true }) public dialog: IgxDialogComponent;
-    @ViewChild("chart1", { static: true }) public chart: IgxCategoryChartComponent;
+    @ViewChild('dialog', { static: true }) public dialog: IgxDialogComponent;
+    @ViewChild('chart1', { static: true }) public chart: IgxCategoryChartComponent;
 
     @Output() public switch = new EventEmitter<any>();
     @Output() public recordsVolume = new EventEmitter<any>();
     @Output() public frequencyTimer = new EventEmitter<any>();
     @Output() public player = new EventEmitter<any>();
 
-    public properties = ["price", "country"];
+    public properties = ['price', 'country'];
     public chartData = [];
     public darkTheme = false;
     public volume = 1000;
     public frequency = 500;
+    private subscription$;
     private _timer;
 
     constructor() {
@@ -56,8 +57,8 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
 
     public onVolumeChanged(volume: any) {
         this.volume = volume;
-        this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService.broadcastParams(this.controller.frequency, this.volume, false) :
-        this.finGrid.dataService.getData(volume);
+        this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService
+            .broadcastParams(this.controller.frequency, this.volume, false) : this.finGrid.dataService.getData(volume);
     }
 
     public onFrequencyChanged(frequency: any) {
@@ -82,9 +83,9 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
             case 'chart': {
                 if (this.finGrid.grid.selectedRows.length !== 0) {
                     this.setChartData(this.finGrid.grid.selectedRows);
-                    this.dialog.open()
+                    this.dialog.open();
                 } else {
-                    this.controller.toast.open("Please select some rows first!");
+                    this.controller.toast.open('Please select some rows first!');
                 };
                 break;
             }
@@ -104,7 +105,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
         });
         // this.controller.controls[2].disabled = this.chartData.length === 0;
         this.setLabelIntervalAndAngle();
-        this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
+        this.setChartConfig('Countries', 'Prices (USD)', 'Data Chart with prices by Category and Country');
     }
 
     public onCloseHandler(evt: IDialogEventArgs) {
@@ -119,7 +120,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
 
     public closeDialog(evt) {
         if (this.dialog.isOpen &&
-            evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === "d") {
+            evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === 'd') {
             evt.preventDefault();
             this.dialog.close();
         }
@@ -169,8 +170,8 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
             this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1, {});
 
             this.setLabelIntervalAndAngle();
-            this.chart.chartTitle = "Data Chart with prices of " + this.chartData[0].category + " in " +
-                this.chartData[0].region + " Region";
+            this.chart.chartTitle = 'Data Chart with prices of ' + this.chartData[0].category + ' in ' +
+                this.chartData[0].region + ' Region';
 
             this.dialog.open();
         }, 200);

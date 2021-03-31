@@ -110,10 +110,10 @@ export class DatePickerConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: 'DatepickerStylingSample',
+            component: 'DatepickerStylingSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxDatePickerModule', 'DatepickerStylingSample', 'IgxIconModule'],
-                ngDeclarations: ['DatepickerStylingSample'],
+                imports: ['IgxDatePickerModule', 'DatepickerStylingSampleComponent', 'IgxIconModule'],
+                ngDeclarations: ['DatepickerStylingSampleComponent'],
                 ngImports: ['IgxDatePickerModule', 'IgxIconModule']
             })
         }));
