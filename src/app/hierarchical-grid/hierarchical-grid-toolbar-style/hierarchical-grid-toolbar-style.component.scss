@@ -3,10 +3,10 @@
 /*BASIC THEMING*/
 
 $dark-button-theme: igx-button-theme(
-    $outlined-background: #FFCD0F,
-    $outlined-text-color: #292826,
-    $outlined-hover-background: #404040,
-    $outlined-hover-text-color: #FFCD0F
+    $background: #FFCD0F,
+    $foreground: #292826,
+    $hover-background: #404040,
+    $hover-foreground: #FFCD0F
 );
 
 $dark-grid-toolbar-theme: igx-grid-toolbar-theme(
