@@ -24,8 +24,8 @@ $custom-drop-down-theme: igx-drop-down-theme(
 );
 
 $custom-button-theme: igx-button-theme(
-    $raised-background: #345779,
-    $raised-text-color: #fdfdfd,
+    $background: #345779,
+    $foreground: #fdfdfd,
 );
 
 // :host {
