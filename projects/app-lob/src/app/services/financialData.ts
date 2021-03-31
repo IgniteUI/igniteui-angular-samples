@@ -938,12 +938,11 @@ export class FinancialData {
 
     public updateRandomPrices(data: any[]): any {
         const currData = data.slice(0, data.length + 1);
-        let y = 0;
-        for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10)) {
-          const dataObj = Object.assign({}, data[i]);
-          this.randomizeObjectData(dataObj);
-          currData[i] = dataObj;
-          y++;
+        for (let i = 0; i < 30; i++) {
+            const random = Math.round(Math.random() * data.length);
+            const dataObj = Object.assign({}, data[random]);
+            this.randomizeObjectData(dataObj);
+            currData[random] = dataObj;
         }
        // return {data: currData, recordsUpdated: y };
         return currData;
