@@ -6,9 +6,8 @@
 @include igx-theme($default-palette, $legacy-support: true);
 
 :root {
-    @include css-vars-from-palette($default-palette);
+    @include igx-palette-vars($default-palette);
 }
-
 
 .light-theme {
     @include igx-light-theme($default-palette);
