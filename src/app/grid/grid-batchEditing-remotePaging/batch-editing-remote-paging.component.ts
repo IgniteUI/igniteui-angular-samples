@@ -1,27 +1,27 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxDialogComponent, IgxGridComponent, Transaction } from "igniteui-angular";
-import { Observable } from "rxjs";
-import { RemotePagingService } from "../services/remotePagingService";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { IgxDialogComponent, IgxGridComponent, Transaction } from 'igniteui-angular';
+import { Observable } from 'rxjs';
+import { RemotePagingService } from '../services/remotePagingService';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [RemotePagingService],
-    selector: "remote-paging-batch-editing",
-    styleUrls: ["./batch-editing-remote-paging.component.scss"],
-    templateUrl: "./batch-editing-remote-paging.component.html"
+    selector: 'app-remote-paging-batch-editing',
+    styleUrls: ['./batch-editing-remote-paging.component.scss'],
+    templateUrl: './batch-editing-remote-paging.component.html'
 })
 export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit, OnDestroy {
+    @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
+    @ViewChild(IgxDialogComponent, { static: true }) public dialog: IgxDialogComponent;
+    @ViewChild('dialogGrid', { read: IgxGridComponent, static: true })
+    public dialogGrid: IgxGridComponent;
 
     public page = 0;
     public totalCount = 0;
     public data: Observable<any[]>;
     public selectOptions = [5, 10, 15, 25, 50];
     public transactionsData: Transaction[] = [];
-
-    @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
-    @ViewChild(IgxDialogComponent, { static: true }) public dialog: IgxDialogComponent;
-    @ViewChild("dialogGrid", { read: IgxGridComponent, static: true })
-    public dialogGrid: IgxGridComponent;
 
     private _perPage = 10;
     private _dataLengthSubscriber;
@@ -87,8 +87,8 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
       this.totalCount++;
       const newID = this.generateRandomInteger(this.totalCount, this.totalCount * 100);
       this.grid1.addRow({
-          ID: newID, ProductName: "Product Name", QuantityPerUnit: "Quantity per Unit",
-          SupplierName: "Supplier Name", UnitsInStock: 1, Rating: 1
+          ID: newID, ProductName: 'Product Name', QuantityPerUnit: 'Quantity per Unit',
+          SupplierName: 'Supplier Name', UnitsInStock: 1, Rating: 1
       });
     }
 

@@ -1,10 +1,10 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxSliderComponent, TicksOrientation} from "igniteui-angular";
+import { Component, ViewChild } from '@angular/core';
+import { IgxSliderComponent, TicksOrientation} from 'igniteui-angular';
 
 @Component({
-    selector: "app-slider-styling",
-    styleUrls: ["./app-slider-styling.component.scss"],
-    templateUrl: "./app-slider-styling.component.html"
+    selector: 'app-slider-styling',
+    styleUrls: ['./app-slider-styling.component.scss'],
+    templateUrl: './app-slider-styling.component.html'
 })
 export class AppSliderStylingComponent {
     @ViewChild(IgxSliderComponent, { static: true })

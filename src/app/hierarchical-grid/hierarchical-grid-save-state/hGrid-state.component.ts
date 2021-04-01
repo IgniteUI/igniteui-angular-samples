@@ -1,19 +1,19 @@
-import { Component, OnInit, ViewChild, ViewChildren, QueryList } from "@angular/core";
-import { NavigationStart, Router } from "@angular/router";
+import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
 import { GridFeatures,
     IGridState, IGridStateOptions, IgxGridStateDirective,
     IgxHierarchicalGridComponent, IgxNumberSummaryOperand,
-    IgxSummaryResult, IgxCheckboxComponent} from "igniteui-angular";
-import { take } from "rxjs/operators";
-import { SINGERS } from "../data";
+    IgxSummaryResult, IgxCheckboxComponent} from 'igniteui-angular';
+import { take } from 'rxjs/operators';
+import { SINGERS } from '../data';
 
 class MySummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = new IgxNumberSummaryOperand().operate(data);
         result.push({
-            key: "test",
-            label: "Test",
+            key: 'test',
+            label: 'Test',
             summaryResult: data.filter(rec => rec > 10 && rec < 30).length
         });
         return result;
@@ -22,20 +22,23 @@ class MySummary {
 
 // tslint:disable:object-literal-sort-keys
 @Component({
-  selector: "app-hGrid",
-  styleUrls: ["./hGrid-state.component.scss"],
-  templateUrl: "./hGrid-state.component.html"
+  selector: 'app-hgrid',
+  styleUrls: ['./hGrid-state.component.scss'],
+  templateUrl: './hGrid-state.component.html'
 })
 
-export class HGridSaveStateComponent implements OnInit {
+export class HGridSaveStateComponent implements OnInit, AfterViewInit {
+    @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
+    @ViewChild('hierarchicalGrid', { static: true }) public hGrid: IgxHierarchicalGridComponent;
+    @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
     public localData: any[];
     public columns: any[];
-    public gridId = "hGrid1";
-    public stateKey = this.gridId + "-state";
+    public gridId = 'hGrid1';
+    public stateKey = this.gridId + '-state';
     public gridState: IGridState;
     public serialize = true;
 
-    public features: { key: GridFeatures, shortName: string }[] = [
+    public features: { key: GridFeatures; shortName: string }[] = [
         { key: 'advancedFiltering', shortName: 'Adv Filt' },
         { key: 'cellSelection', shortName: 'Cell Sel' },
         { key: 'columns', shortName: 'Columns' } ,
@@ -62,10 +65,6 @@ export class HGridSaveStateComponent implements OnInit {
       columnSelection: true
     };
 
-    @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
-    @ViewChild("hierarchicalGrid", { static: true }) public hGrid: IgxHierarchicalGridComponent;
-    @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
-
     constructor(private router: Router) {
         this.localData = SINGERS;
     }
@@ -82,7 +81,7 @@ export class HGridSaveStateComponent implements OnInit {
 
     public saveGridState() {
         const state = this.state.getState(this.serialize);
-        if (typeof state === "string") {
+        if (typeof state === 'string') {
           window.localStorage.setItem(this.stateKey, state);
         } else {
           window.localStorage.setItem(this.stateKey, JSON.stringify(state));
@@ -112,10 +111,10 @@ export class HGridSaveStateComponent implements OnInit {
     }
 
     public onChange(event: any, action: string) {
-        if (action === "toggleAll") {
+        if (action === 'toggleAll') {
           this.checkboxes.forEach(cb => {
               cb.checked = event.checked;
-          })
+          });
           for (const key of Object.keys(this.options)) {
               this.state.options[key] = event.checked;
           }

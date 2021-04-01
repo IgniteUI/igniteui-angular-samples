@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample.component";
+import { GridDisplayDensitySampleComponent } from './grid-displaydensity-sample.component';
 
-describe("GridDisplaydensitySampleComponent", () => {
+describe('GridDisplaydensitySampleComponent', () => {
   let component: GridDisplayDensitySampleComponent;
   let fixture: ComponentFixture<GridDisplayDensitySampleComponent>;
 
@@ -19,7 +19,7 @@ describe("GridDisplaydensitySampleComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

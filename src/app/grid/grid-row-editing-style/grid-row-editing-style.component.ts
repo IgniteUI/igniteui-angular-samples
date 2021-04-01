@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
-import { DATA } from "../../data/nwindData";
+import { Component } from '@angular/core';
+import { DATA } from '../../data/nwindData';
 
 @Component({
-    selector: "app-grid-row-edit-style",
+    selector: 'app-grid-row-edit-style',
     styleUrls: [`grid-row-editing-style.component.scss`],
-    templateUrl: "grid-row-editing-style.component.html"
+    templateUrl: 'grid-row-editing-style.component.html'
 })
 export class GridRowEditStyleComponent {
     public data: any[];

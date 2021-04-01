@@ -1,5 +1,6 @@
-// tslint:disable:interface-name
+/* eslint-disable @typescript-eslint/naming-convention */
 export interface Song {
+    // eslint-disable-next-line id-blacklist
     Number: number;
     Title: string;
     Released: Date;

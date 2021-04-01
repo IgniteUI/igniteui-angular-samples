@@ -1,8 +1,8 @@
-import { Component, Injectable, ViewChild } from "@angular/core";
+import { Component, Injectable, ViewChild, OnInit } from '@angular/core';
 
-import { IgxGridComponent } from "igniteui-angular";
-import { BehaviorSubject, Observable } from "rxjs";
-import { FinancialData } from "../services/financialData";
+import { IgxGridComponent } from 'igniteui-angular';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { FinancialData } from '../services/financialData';
 
 @Injectable()
 export class LocalService {
@@ -22,13 +22,13 @@ export class LocalService {
 
 @Component({
     providers: [LocalService],
-    selector: "grid-sample",
-    styleUrls: ["./grid-sample-2.component.scss"],
-    templateUrl: "grid-sample-2.component.html"
+    selector: 'app-grid-sample',
+    styleUrls: ['./grid-sample-2.component.scss'],
+    templateUrl: 'grid-sample-2.component.html'
 })
 
-export class FinancialSampleComponent {
-    @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
+export class FinancialSampleComponent implements OnInit{
+    @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     public data: Observable<any[]>;
     constructor(private localService: LocalService) {
         this.localService.getData(100000);
@@ -40,6 +40,6 @@ export class FinancialSampleComponent {
         return value.toFixed(2);
     }
     public formatCurrency(value: number) {
-        return "$" + value.toFixed(2);
+        return '$' + value.toFixed(2);
     }
 }

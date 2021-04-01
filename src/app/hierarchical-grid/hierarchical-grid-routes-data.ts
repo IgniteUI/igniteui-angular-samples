@@ -1,4 +1,4 @@
-/* tslint:disable:object-literal-sort-keys max-line-length */
+/* eslint-disable max-len */
 
 export const hierarchicalGridRoutesData = {
     "hierarchical-grid-editing": { displayName: "Hierarchical Grid Editing", parentName: "Hierarchical Grid" },

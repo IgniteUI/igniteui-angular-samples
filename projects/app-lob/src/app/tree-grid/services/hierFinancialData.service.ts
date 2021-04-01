@@ -1,6 +1,6 @@
-import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable} from "rxjs";
-import { FinancialData } from "../data/hierFinancialData";
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable} from 'rxjs';
+import { FinancialData } from '../data/hierFinancialData';
 
 @Injectable()
 export class HierFinancialDataService {

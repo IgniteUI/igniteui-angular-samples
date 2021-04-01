@@ -1,20 +1,20 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxBooleanFilteringOperand, IgxHierarchicalGridComponent, IgxStringFilteringOperand } from "igniteui-angular";
-import { SINGERS } from "../data";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxBooleanFilteringOperand, IgxHierarchicalGridComponent, IgxStringFilteringOperand } from 'igniteui-angular';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-custom-filtering",
-    styleUrls: ["./hierarchical-grid-custom-filtering.component.scss"],
-    templateUrl: "hierarchical-grid-custom-filtering.component.html"
+    selector: 'app-hierarchical-grid-custom-filtering',
+    styleUrls: ['./hierarchical-grid-custom-filtering.component.scss'],
+    templateUrl: 'hierarchical-grid-custom-filtering.component.html'
 })
 
 export class HGridCustomFilteringSampleComponent implements OnInit {
+    @ViewChild('hierarchicalGrid', { static: true })
+    private hierarchicalGrid: IgxHierarchicalGridComponent;
+
     public localdata;
     public caseSensitiveFilteringOperand = CaseSensitiveFilteringOperand.instance();
     public booleanFilteringOperand = BooleanFilteringOperand.instance();
-
-    @ViewChild("hierarchicalGrid", { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {
         this.localdata = SINGERS;
@@ -30,7 +30,7 @@ export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
         super();
         const customOperations = [
             {
-                iconName: "contains",
+                iconName: 'contains',
                 isUnary: false,
                 logic: (target: string, searchVal: string, ignoreCase?: boolean) => {
                     ignoreCase = false;
@@ -38,10 +38,10 @@ export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
                     target = IgxStringFilteringOperand.applyIgnoreCase(target, ignoreCase);
                     return target.indexOf(search) !== -1;
                 },
-                name: "Contains (case sensitive)"
+                name: 'Contains (case sensitive)'
             },
             {
-                iconName: "does-not-contain",
+                iconName: 'does-not-contain',
                 isUnary: false,
                 logic: (target: string, searchVal: string, ignoreCase?: boolean) => {
                     ignoreCase = false;
@@ -49,14 +49,14 @@ export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
                     target = IgxStringFilteringOperand.applyIgnoreCase(target, ignoreCase);
                     return target.indexOf(search) === -1;
                 },
-                name: "Does Not Contain (case sensitive)"
+                name: 'Does Not Contain (case sensitive)'
             }
         ];
 
         const emptyOperators = [
-            // "Empty"
+            // 'Empty'
             this.operations[6],
-            // "Not Empty"
+            // 'Not Empty'
             this.operations[7]
         ];
 
@@ -68,11 +68,11 @@ export class BooleanFilteringOperand extends IgxBooleanFilteringOperand {
     private constructor() {
         super();
         this.operations = [
-            // "All"
+            // 'All'
             this.operations[0],
-            // "TRUE"
+            // 'TRUE'
             this.operations[1],
-            // "FALSE"
+            // 'FALSE'
             this.operations[2]
         ];
     }

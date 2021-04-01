@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     DataType,
     IgxColumnComponent,
@@ -6,17 +6,17 @@ import {
     IgxGridComponent,
     IgxNumberFilteringOperand,
     IgxStringFilteringOperand
-} from "igniteui-angular";
-import { DATA } from "../../data/nwindData";
+} from 'igniteui-angular';
+import { DATA } from '../../data/nwindData';
 
 @Component({
-    selector: "grid-sample",
-    styleUrls: ["./grid-filtering-template-sample.component.scss"],
-    templateUrl: "grid-filtering-template-sample.component.html"
+    selector: 'app-grid-sample',
+    styleUrls: ['./grid-filtering-template-sample.component.scss'],
+    templateUrl: 'grid-filtering-template-sample.component.html'
 })
 
 export class FilteringTemplateSampleComponent implements OnInit {
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 
     public data: any[];
@@ -30,7 +30,7 @@ export class FilteringTemplateSampleComponent implements OnInit {
     }
 
     public formatDate(val: Date) {
-        return new Intl.DateTimeFormat("en-US").format(val);
+        return new Intl.DateTimeFormat('en-US').format(val);
     }
 
     public formatCurrency(val: string) {
@@ -48,7 +48,7 @@ export class FilteringTemplateSampleComponent implements OnInit {
     public onInput(input: any, column: IgxColumnComponent) {
         this._filterValues.set(column, input.value);
 
-        if (input.value === "") {
+        if (input.value === '') {
             this.grid1.clearFilter(column.field);
             return;
         }
@@ -56,10 +56,10 @@ export class FilteringTemplateSampleComponent implements OnInit {
         let operand = null;
         switch (column.dataType) {
             case DataType.Number:
-                operand = IgxNumberFilteringOperand.instance().condition("equals");
+                operand = IgxNumberFilteringOperand.instance().condition('equals');
                 break;
             default:
-                operand = IgxStringFilteringOperand.instance().condition("contains");
+                operand = IgxStringFilteringOperand.instance().condition('contains');
         }
         this.grid1.filter(column.field, this.transformValue(input.value, column), operand, column.filteringIgnoreCase);
     }
@@ -78,7 +78,7 @@ export class FilteringTemplateSampleComponent implements OnInit {
     public onDateSelected(event, column: IgxColumnComponent) {
         this._filterValues.set(column, event);
 
-        this.grid1.filter(column.field, event, IgxDateFilteringOperand.instance().condition("equals"),
+        this.grid1.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'),
             column.filteringIgnoreCase);
     }
 

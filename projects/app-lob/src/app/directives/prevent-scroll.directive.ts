@@ -1,10 +1,11 @@
-import { AfterViewInit, Directive, Host, Input, NgModule, Optional } from "@angular/core";
-import { IgxGridBaseDirective } from "igniteui-angular";
+import { AfterViewInit, Directive, Host, Input, NgModule, OnDestroy, Optional } from '@angular/core';
+import { IgxGridBaseDirective } from 'igniteui-angular';
 
 @Directive({
-    selector: "[igxPreventDocumentScroll]"
+    // eslint-disable-next-line @angular-eslint/directive-selector
+    selector: '[igxPreventDocumentScroll]'
 })
-export class IgxPreventDocumentScrollDirective implements AfterViewInit {
+export class IgxPreventDocumentScrollDirective implements AfterViewInit, OnDestroy {
     private _preventScroll = true;
     private gridBody: HTMLElement;
 
@@ -13,11 +14,12 @@ export class IgxPreventDocumentScrollDirective implements AfterViewInit {
      * when grid scroll has reached top or bottom. Defaults to true.
      * ```html
      * <igx-grid igxPreventDocumentScroll></igx-grid>
-     * <igx-grid [igxPreventDocumentScroll]="false"></igx-grid>
+     * <igx-grid [igxPreventDocumentScroll]='false'></igx-grid>
      * ```
      */
-    @Input("igxPreventDocumentScroll")
+    @Input('igxPreventDocumentScroll')
     public set preventScroll(val: boolean) {
+        // eslint-disable-next-line no-underscore-dangle
         if (val === false) { this._preventScroll = false; }
     }
 
@@ -29,13 +31,14 @@ export class IgxPreventDocumentScrollDirective implements AfterViewInit {
     }
 
     public ngAfterViewInit() {
+        // eslint-disable-next-line no-underscore-dangle
         if (this._preventScroll) {
-            this.gridBody.addEventListener("wheel", this.preventDocumentScroll, { passive: false });
+            this.gridBody.addEventListener('wheel', this.preventDocumentScroll, { passive: false });
         }
     }
 
     public ngOnDestroy() {
-        this.gridBody.removeEventListener("wheel", this.preventDocumentScroll);
+        this.gridBody.removeEventListener('wheel', this.preventDocumentScroll);
     }
 
     /**

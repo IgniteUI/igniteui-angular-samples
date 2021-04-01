@@ -1,20 +1,20 @@
-import { Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
-import { generateEmployeeFlatData } from "../data/employees-flat";
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({
-    selector: "tgrid-editing-lifecycle",
-    templateUrl: "tgrid-editing-lifecycle.component.html",
-    styleUrls: ["tgrid-editing-lifecycle.component.scss"]
+    selector: 'app-tgrid-editing-lifecycle',
+    templateUrl: 'tgrid-editing-lifecycle.component.html',
+    styleUrls: ['tgrid-editing-lifecycle.component.scss']
 })
 export class TGridEditingLifecycleComponent {
+    @ViewChild('logger')
+    public logger: ElementRef;
+
     public $rowEditEnter = false;
     public $cellEditEnter = false;
     public $cellEdit = false;
     public $rowEdit = false;
     public data;
-
-    @ViewChild('logger')
-    public logger: ElementRef;
 
     public constructor(private renderer: Renderer2) {
         this.data = generateEmployeeFlatData();
@@ -49,6 +49,13 @@ export class TGridEditingLifecycleComponent {
         this.logAnEvent(`=> 'rowEditExit'  << End of cycle >>`);
     }
 
+    public clearLog() {
+        const  elements = this.logger.nativeElement.querySelectorAll('p');
+        for (let index = 0; index < elements.length; index++) {
+            this.renderer.removeChild(this.logger.nativeElement, elements[index]);
+        }
+    }
+
     private logAnEvent(msg: string, canceled?: boolean) {
         const createElem = this.renderer.createElement('p');
 
@@ -60,12 +67,5 @@ export class TGridEditingLifecycleComponent {
         this.renderer.appendChild(createElem, text);
         const container = this.logger.nativeElement;
         this.renderer.insertBefore(container, createElem, container.children[0]);
-    }
-
-    public clearLog() {
-        const  elements = this.logger.nativeElement.querySelectorAll('p');
-        for (let index = 0; index < elements.length; index++) {
-            this.renderer.removeChild(this.logger.nativeElement, elements[index]);
-        }
     }
 }

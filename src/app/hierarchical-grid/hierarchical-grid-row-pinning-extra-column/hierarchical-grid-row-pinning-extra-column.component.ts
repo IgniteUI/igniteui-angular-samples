@@ -1,23 +1,23 @@
-import { Component } from "@angular/core";
+import { Component,AfterViewInit } from '@angular/core';
 import {
     ColumnPinningPosition,
     IgxHierarchicalRowComponent,
     IgxIconService,
     IPinningConfig,
     RowPinningPosition
-} from "igniteui-angular";
-import { icons } from "../../grid/services/svgIcons";
-import { SINGERS } from "../data";
+} from 'igniteui-angular';
+import { icons } from '../../grid/services/svgIcons';
+import { SINGERS } from '../data';
 
-const FILTERING_ICONS_FONT_SET = "filtering-icons";
+const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 
 @Component({
-    selector: "hierarchical-grid-row-pinning-extra-column",
-    styleUrls: ["./hierarchical-grid-row-pinning-extra-column.component.scss"],
-    templateUrl: "hierarchical-grid-row-pinning-extra-column.component.html"
+    selector: 'app-hierarchical-grid-row-pinning-extra-column',
+    styleUrls: ['./hierarchical-grid-row-pinning-extra-column.component.scss'],
+    templateUrl: 'hierarchical-grid-row-pinning-extra-column.component.html'
 })
 
-export class HGridRowPinningExtraColumnSampleComponent {
+export class HGridRowPinningExtraColumnSampleComponent implements AfterViewInit{
     public localData;
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top, columns: ColumnPinningPosition.End };
 
@@ -26,7 +26,7 @@ export class HGridRowPinningExtraColumnSampleComponent {
     }
 
     public ngAfterViewInit() {
-        const pinnedIcons = icons.filter(icon => icon.name === "pin" || icon.name === "unpin");
+        const pinnedIcons = icons.filter(icon => icon.name === 'pin' || icon.name === 'unpin');
         pinnedIcons.forEach(icon => {
             if (!this.iconService.isSvgIconCached(icon.name, FILTERING_ICONS_FONT_SET)) {
                 this.iconService.addSvgIconFromText(icon.name, icon.value, FILTERING_ICONS_FONT_SET);

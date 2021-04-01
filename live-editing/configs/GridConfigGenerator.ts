@@ -468,11 +468,11 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: 'GridEditingStyleSample',
+            component: 'GridEditingStyleSampleComponent',
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridEditingStyleSample', 'IgxGridModule', 'IgxDatePickerModule', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['GridEditingStyleSample'],
+                imports: ['GridEditingStyleSampleComponent', 'IgxGridModule', 'IgxDatePickerModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['GridEditingStyleSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxDatePickerModule']
             })
         }));
@@ -498,24 +498,24 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: 'RemotePagingGridSample',
+            component: 'RemotePagingGridSampleComponent',
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/remotePagingService.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['RemotePagingGridSample', 'IgxGridModule', 'RouterModule', 'HttpClientModule', 'RemotePagingService',
+                imports: ['RemotePagingGridSampleComponent', 'IgxGridModule', 'RouterModule', 'HttpClientModule', 'RemotePagingService',
                     'IgxSelectModule', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['RemotePagingGridSample'],
+                ngDeclarations: ['RemotePagingGridSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', "RouterModule.forRoot([])", 'IgxGridModule', 'HttpClientModule', 'IgxSelectModule'],
                 ngProviders: ['RemotePagingService']
             })
         }));
 
         configs.push(new Config({
-            component: 'CustomRemotePagingGridSample',
+            component: 'CustomRemotePagingGridSampleComponent',
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/remotePagingService.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['CustomRemotePagingGridSample', 'IgxGridModule', 'RouterModule', 'HttpClientModule',
+                imports: ['CustomRemotePagingGridSampleComponent', 'IgxGridModule', 'RouterModule', 'HttpClientModule',
                     'RemotePagingService', 'IgxSelectModule', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['CustomRemotePagingGridSample'],
+                ngDeclarations: ['CustomRemotePagingGridSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', "RouterModule.forRoot([])", 'IgxGridModule', 'HttpClientModule', 'IgxSelectModule'],
                 ngProviders: ['RemotePagingService']
             })
@@ -585,11 +585,11 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         // Grid Custom Summaries
         configs.push(new Config({
-            component: 'GridCustomSummariesSelection',
+            component: 'GridCustomSummariesSelectionComponent',
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridCustomSummariesSelection', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['GridCustomSummariesSelection'],
+                imports: ['GridCustomSummariesSelectionComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['GridCustomSummariesSelectionComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
             })
         }));
@@ -858,11 +858,11 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: 'CustomGridPagingStyleSample',
+            component: 'CustomGridPagingStyleSampleComponent',
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['CustomGridPagingStyleSample', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['CustomGridPagingStyleSample'],
+                imports: ['CustomGridPagingStyleSampleComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['CustomGridPagingStyleSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
             })
         }));
@@ -930,11 +930,11 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
         configs.push(new Config({
-            component: 'GridGroupByStyling',
+            component: 'GridGroupByStylingComponent',
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridGroupByStyling', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['GridGroupByStyling'],
+                imports: ['GridGroupByStylingComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['GridGroupByStylingComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
             })
         }));

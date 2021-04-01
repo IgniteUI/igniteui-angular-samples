@@ -1,17 +1,17 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { RemoteService } from "./remote.service";
+import { AfterViewInit, ChangeDetectorRef, Component, ViewChild, OnInit } from '@angular/core';
+import { IgxGridComponent } from 'igniteui-angular';
+import { RemoteService } from './remote.service';
 
 @Component({
     providers: [RemoteService],
-    selector: "grid-remote-virtualization-sample",
-    styleUrls: ["grid-sample-5.component.scss"],
-    templateUrl: "grid-sample-5.component.html"
+    selector: 'app-grid-remote-virtualization-sample',
+    styleUrls: ['grid-sample-5.component.scss'],
+    templateUrl: 'grid-sample-5.component.html'
 })
 
-export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewInit {
+export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewInit, OnInit {
 
-    @ViewChild("grid", { static: true })
+    @ViewChild('grid', { static: true })
     public grid: IgxGridComponent;
 
     public remoteData: any;
@@ -36,7 +36,7 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
                 this.grid.data = this._remoteService.getCachedData({startIndex: 0, chunkSize: 10});
                 this.cdr.detectChanges();
                 this.grid.verticalScrollContainer.totalItemCount = this.page * this.pageSize;
-                this.totalItems = request.data["@odata.count"];
+                this.totalItems = request.data['@odata.count'];
                 this.totalPageCount = Math.ceil(this.totalItems / this.pageSize);
                 this.grid.isLoading = false;
             }
@@ -71,6 +71,6 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     }
 
     public formatCurrency(value: number) {
-        return "$" + value.toFixed(2);
+        return '$' + value.toFixed(2);
     }
 }

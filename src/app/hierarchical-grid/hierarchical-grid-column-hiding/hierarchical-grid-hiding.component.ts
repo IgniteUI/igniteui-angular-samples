@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component, OnInit } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-hiding",
-    styleUrls: ["./hierarchical-grid-hiding.component.scss"],
-    templateUrl: "hierarchical-grid-hiding.component.html"
+    selector: 'app-hierarchical-grid-hiding',
+    styleUrls: ['./hierarchical-grid-hiding.component.scss'],
+    templateUrl: 'hierarchical-grid-hiding.component.html'
 })
 
 export class HGridColumnHidingSampleComponent implements OnInit {

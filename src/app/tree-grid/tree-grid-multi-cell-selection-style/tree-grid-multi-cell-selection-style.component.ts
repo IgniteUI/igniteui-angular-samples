@@ -1,11 +1,11 @@
-import { Component } from "@angular/core";
-import { IgxColumnComponent } from "igniteui-angular";
-import { FOODS_DATA } from "../data/foods";
+import { Component } from '@angular/core';
+import { IgxColumnComponent } from 'igniteui-angular';
+import { FOODS_DATA } from '../data/foods';
 
 @Component({
-    selector: "app-tree-grid-multi-cell-selection-style-sample",
-    styleUrls: ["./tree-grid-multi-cell-selection-style.component.scss"],
-    templateUrl: "./tree-grid-multi-cell-selection-style.component.html"
+    selector: 'app-tree-grid-multi-cell-selection-style-sample',
+    styleUrls: ['./tree-grid-multi-cell-selection-style.component.scss'],
+    templateUrl: './tree-grid-multi-cell-selection-style.component.html'
 })
 export class TreeGridMultiCellSelectionStyleComponent {
 
