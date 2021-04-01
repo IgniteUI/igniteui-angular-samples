@@ -19,10 +19,6 @@ export class TreeGridSummaryFormatterComponent implements OnInit {
         this.data = FOODS_DATA();
     }
 
-    public formatPrice(value: number) {
-        return value ? value < 15 ? 'low' : value > 50 ? 'high' : 'medium' : '';
-    }
-
     public dateSummaryFormat(summary: IgxSummaryResult, summaryOperand: IgxSummaryOperand): string {
         const result = summary.summaryResult;
         if (summaryOperand instanceof IgxDateSummaryOperand && summary.key !== 'count'

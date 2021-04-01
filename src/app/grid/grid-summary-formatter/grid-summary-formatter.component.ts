@@ -19,10 +19,6 @@ import { DATA } from "../../data/nwindData";
         this.data = DATA;
     }
 
-    public formatPrice(value: number) {
-        return value < 15 ? 'low' : value > 50 ? 'high' : 'medium';
-    }
-
     public dateSummaryFormat(summary: IgxSummaryResult, summaryOperand: IgxSummaryOperand): string {
         const result = summary.summaryResult;
         if (summaryOperand instanceof IgxDateSummaryOperand && summary.key !== 'count'
