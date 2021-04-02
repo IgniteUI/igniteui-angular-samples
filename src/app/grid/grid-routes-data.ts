@@ -1,7 +1,6 @@
 // tslint:disable:object-literal-sort-keys
 
 export const gridsRoutesData = {
-    'grid-summary': { displayName: 'Grid Summary', parentName: 'Grid' },
     'grid-groupby': { displayName: 'Grid GroupBy', parentName: 'Grid' },
     'grid-groupby-custom': {displayName: 'Grid GroupBy Custom', parentName: 'Grid'},
     'grid-groupby-paging': { displayName: 'Grid GroupBy Paging', parentName: 'Grid' },
@@ -109,5 +108,6 @@ export const gridsRoutesData = {
     'grid-editing-lifecycle': {displayName: 'Grid editing lifecycle', parentName: 'Grid'},
     'grid-select': {displayName: 'Grid with Select as Editor Provider', parentName: 'Grid'},
     'grid-column-data-types': {displayName: 'Grid column data types', parentName: 'Grid'},
-    'grid-formatted-filtering-strategy': { displayName: 'Grid Formatted Filtering Strategy', parentName: 'Grid' }
+    'grid-formatted-filtering-strategy': { displayName: 'Grid Formatted Filtering Strategy', parentName: 'Grid' },
+    'grid-summary-formatter': { displayName: 'Grid Summary Formatter', parentName: 'Grid' }
 };
