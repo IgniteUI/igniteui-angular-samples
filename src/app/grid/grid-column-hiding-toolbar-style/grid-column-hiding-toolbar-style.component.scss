@@ -108,7 +108,7 @@ $dark-ripple-theme: igx-ripple-theme(
         igx-column-actions, igx-grid-toolbar {
             @include igx-checkbox($dark-checkbox-theme);
             @include igx-input-group($dark-input-group);
-            @include igx-button($dark-button-theme);
+            // @include igx-button($dark-button-theme);
             @include igx-ripple($dark-ripple-theme);
         }
     }

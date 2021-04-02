@@ -76,12 +76,12 @@ $dark-drop-down-theme: igx-drop-down-theme(
 // );
 // $dark-button: igx-button-theme(
 //     $palette: $dark-palette,
-//     $icon-color: igx-color($dark-palette, "secondary", 700),
-//     $icon-hover-color: igx-color($dark-palette, "primary", 500),
-//     $icon-hover-background: igx-color($dark-palette, "secondary", 500),
-//     $icon-focus-color: igx-color($dark-palette, "primary", 500),
-//     $icon-focus-background: igx-color($dark-palette, "secondary", 500),
-//     $disabled-color: igx-color($dark-palette, "primary", 700)
+//     $foreground: igx-color($dark-palette, "secondary", 700),
+//     $hover-foreground: igx-color($dark-palette, "primary", 500),
+//     $hover-background: igx-color($dark-palette, "secondary", 500),
+//     $focus-foreground: igx-color($dark-palette, "primary", 500),
+//     $focus-background: igx-color($dark-palette, "secondary", 500),
+//     $disabled-foreground: igx-color($dark-palette, "primary", 700)
 // );
 
 /*SCHEMAS*/
@@ -101,22 +101,22 @@ $dark-drop-down-theme: igx-drop-down-theme(
 // );
 // $dark-button-schema: extend($_dark-button,
 //         (
-//             icon-color:(
+//             foreground:(
 //                 igx-color:("secondary", 700)
 //             ),
-//             icon-hover-color:(
+//             hover-foreground:(
 //                 igx-color:("primary", 500)
 //             ),
-//             icon-hover-background:(
+//             hover-background:(
 //                 igx-color:("secondary", 500)
 //             ),
-//             icon-focus-color:(
+//             focus-foreground:(
 //                 igx-color:("primary", 500)
 //             ),
-//             icon-focus-background:(
+//             focus-background:(
 //                 igx-color:("secondary", 500)
 //             ),
-//             disabled-color:(
+//             disabled-foreground:(
 //                 igx-color:("primary", 700)
 //             )
 //         )
