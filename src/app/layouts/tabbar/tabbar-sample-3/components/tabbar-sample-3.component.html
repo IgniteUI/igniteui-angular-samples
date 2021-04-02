@@ -5,28 +5,33 @@
 
 <router-outlet></router-outlet>
 
+<!--NOTE: This component has been updated by Infragistics migration: v12.0.0
+Please check your template whether all bindings/event handlers are correct.-->
 <igx-bottom-nav #tabs1>
-    <igx-tab
-        label="Item 1"
-        routerLink="tabbar-view1"
+    <igx-bottom-nav-item
         routerLinkActive
         #rla1="routerLinkActive"
-        [isSelected]="rla1.isActive"
-        ></igx-tab>
+        [selected]="rla1.isActive"
+        >
+<igx-bottom-nav-header routerLink="tabbar-view1">
+<span igxBottomNavHeaderLabel>Item 1</span>
+</igx-bottom-nav-header></igx-bottom-nav-item>
 
-    <igx-tab
-    label="Item 2"
-    routerLink="tabbar-view2"
+    <igx-bottom-nav-item
     routerLinkActive
     #rla2="routerLinkActive"
-    [isSelected]="rla2.isActive"
-    ></igx-tab>
+    [selected]="rla2.isActive"
+    >
+<igx-bottom-nav-header routerLink="tabbar-view2">
+<span igxBottomNavHeaderLabel>Item 2</span>
+</igx-bottom-nav-header></igx-bottom-nav-item>
 
-    <igx-tab
-    label="Item 3"
-    routerLink="tabbar-view3"
+    <igx-bottom-nav-item
     routerLinkActive
     #rla3="routerLinkActive"
-    [isSelected]="rla3.isActive"
-    ></igx-tab>
+    [selected]="rla3.isActive"
+    >
+<igx-bottom-nav-header routerLink="tabbar-view3">
+<span igxBottomNavHeaderLabel>Item 3</span>
+</igx-bottom-nav-header></igx-bottom-nav-item>
 </igx-bottom-nav>

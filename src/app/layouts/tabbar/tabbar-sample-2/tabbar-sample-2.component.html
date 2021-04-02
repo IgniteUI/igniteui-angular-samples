@@ -1,24 +1,44 @@
+<!--NOTE: This component has been updated by Infragistics migration: v12.0.0
+Please check your template whether all bindings/event handlers are correct.-->
 <igx-bottom-nav>
 
-  <igx-tab-panel label="Songs" icon="library_music">
+  <igx-bottom-nav-item>
+<igx-bottom-nav-header>
+<igx-icon igxBottomNavHeaderIcon>library_music</igx-icon>
+<span igxBottomNavHeaderLabel>Songs</span>
+</igx-bottom-nav-header>
+<igx-bottom-nav-content>
     <div class="item" *ngFor="let song of songsList">
       <span class="item-line1">{{song.title}}</span><br/>
       <span class="item-line2">{{song.artist}}</span>
     </div>
-  </igx-tab-panel>
+  </igx-bottom-nav-content>
+</igx-bottom-nav-item>
 
-  <igx-tab-panel label="Movies" icon="video_library">
+  <igx-bottom-nav-item>
+<igx-bottom-nav-header>
+<igx-icon igxBottomNavHeaderIcon>video_library</igx-icon>
+<span igxBottomNavHeaderLabel>Movies</span>
+</igx-bottom-nav-header>
+<igx-bottom-nav-content>
     <div class="item" *ngFor="let movie of moviesList">
       <span class="item-line1">{{movie.title}}</span><br/>
       <span class="item-line2">{{movie.genre}}</span>
     </div>
-  </igx-tab-panel>
+  </igx-bottom-nav-content>
+</igx-bottom-nav-item>
 
-  <igx-tab-panel label="Books" icon="library_books">
+  <igx-bottom-nav-item>
+<igx-bottom-nav-header>
+<igx-icon igxBottomNavHeaderIcon>library_books</igx-icon>
+<span igxBottomNavHeaderLabel>Books</span>
+</igx-bottom-nav-header>
+<igx-bottom-nav-content>
     <div class="item" *ngFor="let book of booksList">
       <span class="item-line1">{{book.title}}</span><br/>
       <span class="item-line2">{{book.author}}</span>
     </div>
-  </igx-tab-panel>
+  </igx-bottom-nav-content>
+</igx-bottom-nav-item>
 
 </igx-bottom-nav>

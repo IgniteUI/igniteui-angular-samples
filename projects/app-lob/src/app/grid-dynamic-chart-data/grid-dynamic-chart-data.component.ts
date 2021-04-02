@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
-import { AutoPositionStrategy, CloseScrollStrategy,
-         HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment, OverlaySettings } from 'igniteui-angular';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnDestroy, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment,
+         IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment, OverlaySettings } from 'igniteui-angular';
 import { noop, Subject } from 'rxjs';
 import { debounceTime, takeUntil, tap } from 'rxjs/operators';
 import { FinancialData } from '../services/financialData';
@@ -72,6 +72,10 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
 
     @ViewChild(IgxTabsComponent, { static: true })
     public tabs: IgxTabsComponent;
+
+    @ViewChild(IgxTabsComponent, { static: true })
+    public tabElement: ElementRef<HTMLElement>;
+
     public columnSelectionType = 'multiple';
     public data;
     public opened = true;
@@ -158,7 +162,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
                     this.chartData = this.grid.getSelectedData();
                 }
                 this.range = range;
-                this.tabs.tabs.first.isSelected = true;
+                this.tabs.items.first.selected = true;
                 this.renderButton();
             });
     }
@@ -235,7 +239,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     }
 
     public previewChart(chart: CHART_TYPE) {
-        this._chartPreviewDialogOverlaySettings.target = this.tabs.tabsContainer.nativeElement;
+        this._chartPreviewDialogOverlaySettings.target = this.tabElement.nativeElement;
         this.chartPreviewDialog.toggleRef.element.style.width = (this.chartSelectionDialog.toggleRef as any).elementRef.nativeElement.clientWidth + 'px';
         this.createChart(chart, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }

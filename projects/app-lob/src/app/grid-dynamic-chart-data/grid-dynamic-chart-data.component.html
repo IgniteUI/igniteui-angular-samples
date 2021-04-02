@@ -105,8 +105,14 @@
 </span>
 <!-- this block can be moved in another component -->
 <igx-dialog #chartSelectionDialog>
-    <igx-tabs type="fixed">
-        <igx-tabs-group label="Conditional Formatting">
+    <!--NOTE: This component has been updated by Infragistics migration: v12.0.0
+Please check your template whether all bindings/event handlers are correct.-->
+<igx-tabs tabAlignment="justify">
+        <igx-tab-item>
+<igx-tab-header>
+<span igxTabHeaderLabel>Conditional Formatting</span>
+</igx-tab-header>
+<igx-tab-content>
             <div class="tab-options-wrapper">
                 <div class="tab-option">
                     <div *ngFor="let condition of formattersNames" class="action">
@@ -125,9 +131,14 @@
                     </div>
                 </div>
             </div>
-        </igx-tabs-group>
+        </igx-tab-content>
+</igx-tab-item>
 
-        <igx-tabs-group label="Create Chart" [disabled]="disableCreateChart">
+        <igx-tab-item [disabled]="disableCreateChart">
+<igx-tab-header>
+<span igxTabHeaderLabel>Create Chart</span>
+</igx-tab-header>
+<igx-tab-content>
             <div class="tab-options-wrapper">
                 <div class="tab-option">
                     <div *ngFor="let chart of availableCharts | slice:0:4" class="action">
@@ -155,7 +166,8 @@
                     </div>
                 </div>
             </div>
-        </igx-tabs-group>
+        </igx-tab-content>
+</igx-tab-item>
     </igx-tabs>
 </igx-dialog>
 

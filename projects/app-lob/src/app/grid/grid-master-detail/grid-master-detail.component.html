@@ -7,8 +7,14 @@
         <igx-column field="referred_by" header="Referrer"></igx-column>
         <ng-template igxGridDetail let-dataItem>
             <div style="width:100%;" (keydown)='$event.stopPropagation()' [style.height.px]='getHeight(tabs.selectedIndex)'>
-                <igx-tabs #tabs selectedIndex='0'>
-                    <igx-tabs-group label="Details">
+                <!--NOTE: This component has been updated by Infragistics migration: v12.0.0
+Please check your template whether all bindings/event handlers are correct.-->
+<igx-tabs #tabs selectedIndex='0'>
+                    <igx-tab-item>
+<igx-tab-header>
+<span igxTabHeaderLabel>Details</span>
+</igx-tab-header>
+<igx-tab-content>
                         <div class="tabContent">
                             <div class="avatarContainer">
                                 <igx-avatar src="{{dataItem.avatar}}"
@@ -33,8 +39,13 @@
                                 </div>
                             </div>
                         </div>
-                    </igx-tabs-group>
-                    <igx-tabs-group label="Deals">
+                    </igx-tab-content>
+</igx-tab-item>
+                    <igx-tab-item>
+<igx-tab-header>
+<span igxTabHeaderLabel>Deals</span>
+</igx-tab-header>
+<igx-tab-content>
                         <div class="tabContent">
                             <igx-pie-chart [dataSource]="getPieData(dataItem)" [formatLabel]="formatPieLabel"
                                 [outlines]="['transparent']"
@@ -48,8 +59,13 @@
                                 width="260px" height="206px" (onColumnInit)="columnInit($event)">
                             </igx-grid>
                         </div>
-                    </igx-tabs-group>
-                    <igx-tabs-group label="Sales">
+                    </igx-tab-content>
+</igx-tab-item>
+                    <igx-tab-item>
+<igx-tab-header>
+<span igxTabHeaderLabel>Sales</span>
+</igx-tab-header>
+<igx-tab-content>
                         <div class="tabContent" style="flex-direction: column;">
                             <igx-legend #legend orientation="horizontal"></igx-legend>
                             <igx-category-chart height="250px" [legend]="legend"
@@ -62,7 +78,8 @@
                                 isHorizontalZoomEnabled="false" isVerticalZoomEnabled="false">
                             </igx-category-chart>
                         </div>
-                    </igx-tabs-group>
+                    </igx-tab-content>
+</igx-tab-item>
                 </igx-tabs>
             </div>
         </ng-template>
