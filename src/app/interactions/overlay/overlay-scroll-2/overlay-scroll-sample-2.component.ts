@@ -8,7 +8,7 @@ import {
     NoOpScrollStrategy
 } from 'igniteui-angular';
 import { Subject } from 'rxjs';
-import { filter, takeUntil } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 @Component({
     selector: 'app-overlay-sample',
@@ -32,17 +32,16 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
     private _target: HTMLElement;
 
     constructor(
-        @Inject(IgxOverlayService) public overlay: IgxOverlayService
-    ) {
-        //  overlay service deletes the id when onClosed is called. We should clear our id
-        //  also in same event
-        this.overlay
-            .onClosed
-            .pipe(
-                filter((x) => x.id === this._overlayId),
-                takeUntil(this.destroy$))
-            .subscribe(() => delete this._overlayId);
-    }
+        @Inject(IgxOverlayService) public overlay: IgxOverlayService) {
+            this.overlay.onOpening
+                .pipe(takeUntil(this.destroy$))
+                .subscribe(() => this.previewHidden = true);
+
+            this.overlay
+                .onClosed
+                .pipe(takeUntil(this.destroy$))
+                .subscribe(() => this.previewHidden = false);
+        }
 
     public ngOnInit(): void {
         (this.mainContainer.nativeElement as HTMLElement).style.height = '450px';
@@ -74,24 +73,26 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
                 scrollStrategy = new NoOpScrollStrategy();
                 this._target = this.scrollDemo.nativeElement.children[3];
         }
-        this.overlay.show(this.overlayId, {
+        if (this._overlayId) {
+            this.overlay.detach(this._overlayId);
+            delete this._overlayId;
+        }
+        this._overlayId = this.overlay.attach(MyDynamicCardComponent, {
             target: this._target,
             positionStrategy,
             scrollStrategy,
             modal: false,
             closeOnOutsideClick: true
         });
+        this.overlay.show(this._overlayId);
     }
 
-    private get overlayId(): string {
-        if (!this._overlayId) {
-            this._overlayId = this.overlay.attach(MyDynamicCardComponent);
-        }
-        return this._overlayId;
-    }
-
-    public ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.destroy$.next(true);
         this.destroy$.complete();
+        if (this._overlayId) {
+            this.overlay.detach(this._overlayId);
+            delete this._overlayId;
+        }
     }
 }
