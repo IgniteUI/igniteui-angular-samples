@@ -1,16 +1,16 @@
-import { DatePipe } from "@angular/common";
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxDateSummaryOperand, IgxSummaryResult, IgxSummaryOperand, IgxTreeGridComponent } from "igniteui-angular";
-import { FOODS_DATA } from "../data/foods";
+import { DatePipe } from '@angular/common';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxDateSummaryOperand, IgxSummaryResult, IgxSummaryOperand, IgxTreeGridComponent } from 'igniteui-angular';
+import { FOODS_DATA } from '../data/foods';
 
 @Component({
-    selector: "tree-grid-summary-formatter",
-    styleUrls: ["./tree-grid-summary-formatter.component.scss"],
-    templateUrl: "tree-grid-summary-formatter.component.html"
+    selector: 'tree-grid-summary-formatter',
+    styleUrls: ['./tree-grid-summary-formatter.component.scss'],
+    templateUrl: 'tree-grid-summary-formatter.component.html'
 })
 
 export class TreeGridSummaryFormatterComponent implements OnInit {
-    @ViewChild("treegrid1", { read: IgxTreeGridComponent, static: true })
+    @ViewChild('treegrid1', { read: IgxTreeGridComponent, static: true })
     public treegrid1: IgxTreeGridComponent;
 
     public data: any[];

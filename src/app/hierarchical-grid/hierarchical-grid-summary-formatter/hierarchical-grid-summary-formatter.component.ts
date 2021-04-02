@@ -1,17 +1,17 @@
-import { DatePipe } from "@angular/common";
-import { Component, ViewChild } from "@angular/core";
-import { IgxDateSummaryOperand, IgxHierarchicalGridComponent, IgxSummaryOperand, IgxSummaryResult } from "igniteui-angular";
-import { SINGERS } from "../data";
+import { DatePipe } from '@angular/common';
+import { Component, ViewChild } from '@angular/core';
+import { IgxDateSummaryOperand, IgxHierarchicalGridComponent, IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-summary-formatter",
-    styleUrls: ["./hierarchical-grid-summary-formatter.component.scss"],
-    templateUrl: "hierarchical-grid-summary-formatter.component.html"
+    selector: 'hierarchical-grid-summary-formatter',
+    styleUrls: ['./hierarchical-grid-summary-formatter.component.scss'],
+    templateUrl: 'hierarchical-grid-summary-formatter.component.html'
 })
 
 export class HGridSummaryFormatterComponent {
 
-    @ViewChild("hierarchicalGrid", { static: true })
+    @ViewChild('hierarchicalGrid', { static: true })
     public hierarchicalGrid: IgxHierarchicalGridComponent;
 
     public localdata;

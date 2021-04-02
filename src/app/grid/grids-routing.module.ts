@@ -111,10 +111,10 @@ import {
     GridMultiColumnHeadersStylingComponent
 } from './multi-column-headers-styling/multi-column-headers-styling.component';
 import { GridSortingIndicatorsComponent } from './grid-sorting-indicators/grid-sorting-indicators.component';
-import { GridExportVisualizationComponent } from "./grid-export-visualization/grid-export-visualization.component";
+import { GridExportVisualizationComponent } from './grid-export-visualization/grid-export-visualization.component';
 import { GridSelectComponent } from './grid-select/grid-select-sample.component';
-import { GridFormattedFilteringStrategyComponent } from "./grid-formatted-filtering-strategy/grid-formatted-filtering-strategy.component";
-import { GridSummaryFormatterComponent } from "./grid-summary-formatter/grid-summary-formatter.component";
+import { GridFormattedFilteringStrategyComponent } from './grid-formatted-filtering-strategy/grid-formatted-filtering-strategy.component';
+import { GridSummaryFormatterComponent } from './grid-summary-formatter/grid-summary-formatter.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -655,13 +655,13 @@ export const gridsRoutes: Routes = [
     },
     {
         component: GridFormattedFilteringStrategyComponent,
-        data: gridsRoutesData["grid-formatted-filtering-strategy"],
-        path: "grid-formatted-filtering-strategy"
+        data: gridsRoutesData['grid-formatted-filtering-strategy'],
+        path: 'grid-formatted-filtering-strategy'
     },
     {
         component: GridSummaryFormatterComponent,
-        data: gridsRoutesData["grid-summary-formatter"],
-        path: "grid-summary-formatter"
+        data: gridsRoutesData['grid-summary-formatter'],
+        path: 'grid-summary-formatter'
     }
 ];
 

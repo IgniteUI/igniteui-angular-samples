@@ -1,16 +1,16 @@
-import { DatePipe } from "@angular/common";
-import { Component, ViewChild } from "@angular/core";
-import { IgxDateSummaryOperand, IgxGridComponent, IgxSummaryOperand, IgxSummaryResult } from "igniteui-angular";
-import { DATA } from "../../data/nwindData";
+import { DatePipe } from '@angular/common';
+import { Component, ViewChild } from '@angular/core';
+import { IgxDateSummaryOperand, IgxGridComponent, IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
+import { DATA } from '../../data/nwindData';
 
 @Component({
-    selector: "app-grid-summary-formatter",
-    styleUrls: ["./grid-summary-formatter.component.scss"],
-    templateUrl: "./grid-summary-formatter.component.html"
+    selector: 'app-grid-summary-formatter',
+    styleUrls: ['./grid-summary-formatter.component.scss'],
+    templateUrl: './grid-summary-formatter.component.html'
   })
 
   export class GridSummaryFormatterComponent {
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 
     public data: any[];

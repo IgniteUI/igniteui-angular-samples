@@ -104,11 +104,11 @@ export const treeGridRoutesData = {
     'column-selection-styles': { displayName: 'TreeGrid Column Selection Style', parentName: 'TreeGrid' },
     'tgrid-keyboardnav-guide': { displayName: 'TreeGrid keyboard navigation guide', parentName: 'TreeGrid' },
     // tslint:disable-next-line:max-line-length
-    "tree-grid-remote-paging-default-template": { displayName: "TreeGrid remote paging with default template", parentName: "TreeGrid" },
-    "tree-grid-state": { displayName: "TreeGrid Save State", parentName: "TreeGrid" },
-    "tree-grid-state-about": { displayName: "About", parentName: "TreeGrid" },
-    "tree-grid-exporting-visualization": { displayName: "Exporting Visualization", parentName: "TreeGrid" },
-    "tree-grid-editing-lifecycle": { displayName: "Editing Lifecycle", parentName: "TreeGrid" },
-    "tree-grid-formatted-filtering-strategy": { displayName: "TreeGrid Formatted Filtering Strategy", parentName: "TreeGrid" },
-    "tree-grid-summary-formatter": { displayName: "TreeGrid Summary Formatter", parentName: "TreeGrid" }
+    'tree-grid-remote-paging-default-template': { displayName: 'TreeGrid remote paging with default template', parentName: 'TreeGrid' },
+    'tree-grid-state': { displayName: 'TreeGrid Save State', parentName: 'TreeGrid' },
+    'tree-grid-state-about': { displayName: 'About', parentName: 'TreeGrid' },
+    'tree-grid-exporting-visualization': { displayName: 'Exporting Visualization', parentName: 'TreeGrid' },
+    'tree-grid-editing-lifecycle': { displayName: 'Editing Lifecycle', parentName: 'TreeGrid' },
+    'tree-grid-formatted-filtering-strategy': { displayName: 'TreeGrid Formatted Filtering Strategy', parentName: 'TreeGrid' },
+    'tree-grid-summary-formatter': { displayName: 'TreeGrid Summary Formatter', parentName: 'TreeGrid' }
 };
