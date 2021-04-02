@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { GridGroupBySampleComponent } from "./grid-groupby-sample.component";
+import { GridGroupBySampleComponent } from './grid-groupby-sample.component';
 
-describe("GridGroupBySample", () => {
+describe('GridGroupBySample', () => {
   let component: GridGroupBySampleComponent;
   let fixture: ComponentFixture<GridGroupBySampleComponent>;
 
@@ -19,7 +19,7 @@ describe("GridGroupBySample", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

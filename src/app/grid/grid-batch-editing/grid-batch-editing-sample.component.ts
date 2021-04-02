@@ -1,20 +1,21 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { DATA } from "../../data/nwindData";
-import { generateRandomInteger } from "../../data/utils";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { DATA } from '../../data/nwindData';
+import { generateRandomInteger } from '../../data/utils';
 
-import { IgxDialogComponent, IgxGridComponent, Transaction } from "igniteui-angular";
+import { IgxDialogComponent, IgxGridComponent, Transaction } from 'igniteui-angular';
 
 @Component({
-    selector: "app-grid-row-edit",
+    selector: 'app-grid-row-edit',
     styleUrls: [`grid-batch-editing-sample.component.scss`],
-    templateUrl: "grid-batch-editing-sample.component.html"
+    templateUrl: 'grid-batch-editing-sample.component.html'
 })
 export class GridBatchEditingSampleComponent implements OnInit {
-    @ViewChild("gridRowEditTransaction", { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
+    @ViewChild('gridRowEditTransaction', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
     @ViewChild(IgxDialogComponent, { static: true }) public dialog: IgxDialogComponent;
-    @ViewChild("dialogGrid", { read: IgxGridComponent, static: true }) public dialogGrid: IgxGridComponent;
+    @ViewChild('dialogGrid', { read: IgxGridComponent, static: true }) public dialogGrid: IgxGridComponent;
 
-    public currentActiveGrid: { id: string, transactions: any[] } = { id: "", transactions: [] };
+    public currentActiveGrid: { id: string; transactions: any[] } = { id: '', transactions: [] };
 
     public data: any[];
     public transactionsData: Transaction[] = [];
@@ -40,8 +41,8 @@ export class GridBatchEditingSampleComponent implements OnInit {
             generateRandomInteger(0, 11), generateRandomInteger(1, 25))
             .toISOString().slice(0, 10),
             ProductID: this.addProductId++,
-            ProductName: "Product with index " + generateRandomInteger(0, 20),
-            QuantityPerUnit: (generateRandomInteger(1, 10) * 10).toString() + " pcs.",
+            ProductName: 'Product with index ' + generateRandomInteger(0, 20),
+            QuantityPerUnit: (generateRandomInteger(1, 10) * 10).toString() + ' pcs.',
             ReorderLevel: generateRandomInteger(10, 20),
             SupplierID: generateRandomInteger(1, 20),
             UnitPrice: generateRandomInteger(10, 1000),

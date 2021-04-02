@@ -1,23 +1,23 @@
-import { Component, ViewChild } from "@angular/core";
-import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, IgxHierarchicalRowComponent } from "igniteui-angular";
-import { createData, IDrive } from "../../data/files.data";
+import { Component, ViewChild } from '@angular/core';
+import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, IgxHierarchicalRowComponent } from 'igniteui-angular';
+import { createData, IDrive } from '../../data/files.data';
 
 @Component({
-    selector: "hierarchical-grid-multi-row-drag",
-    styleUrls: ["./hierarchical-grid-multi-row-drag.component.scss"],
-    templateUrl: "hierarchical-grid-multi-row-drag.component.html"
+    selector: 'app-hierarchical-grid-multi-row-drag',
+    styleUrls: ['./hierarchical-grid-multi-row-drag.component.scss'],
+    templateUrl: 'hierarchical-grid-multi-row-drag.component.html'
 })
 
 export class HGridMultiRowDragComponent {
     @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent, static: true })
     public hGrid: IgxHierarchicalGridComponent;
     public localData: IDrive[] = [];
-    public selectionMode = "multiple";
+    public selectionMode = 'multiple';
     public ids;
     public grid;
     public selected = false;
-    public countIcon = "drag_indicator";
-    public dragIcon = "keyboard_backspace";
+    public countIcon = 'drag_indicator';
+    public dragIcon = 'keyboard_backspace';
     constructor() {
         this.localData = createData(3, 12, 8);
     }
@@ -56,16 +56,16 @@ export class HGridMultiRowDragComponent {
             this.countIcon = `filter_1`;
         } else {
             const count = this.ids.length;
-            this.countIcon = `filter_${count > 9 ? "9_plus" : `${count}`}`;
+            this.countIcon = `filter_${count > 9 ? '9_plus' : `${count}`}`;
         }
     }
 
     public onLeaveAllowed(args) {
         this.onRowDragStart(args);
-        this.dragIcon = "keyboard_backspace";
+        this.dragIcon = 'keyboard_backspace';
     }
 
     public onEnterAllowed(args) {
-        this.dragIcon = "remove";
+        this.dragIcon = 'remove';
     }
 }

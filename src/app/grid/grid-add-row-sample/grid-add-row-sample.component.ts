@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
-import { DATA } from "../../data/nwindData";
+import { Component } from '@angular/core';
+import { DATA } from '../../data/nwindData';
 
 @Component({
-    selector: "app-grid-add-row",
+    selector: 'app-grid-add-row',
     styleUrls: [`grid-add-row-sample.component.scss`],
-    templateUrl: "grid-add-row-sample.component.html"
+    templateUrl: 'grid-add-row-sample.component.html'
 })
 export class GridAddRowSampleComponent {
     public data: any[] = DATA;

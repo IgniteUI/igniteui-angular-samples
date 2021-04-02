@@ -1,27 +1,26 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { Observable } from "rxjs";
-import { RemotePagingService } from "../services/remotePagingService";
+import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { IgxGridComponent } from 'igniteui-angular';
+import { Observable } from 'rxjs';
+import { RemotePagingService } from '../services/remotePagingService';
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [RemotePagingService],
-    selector: "custom-remote-paging-grid-sample",
-    styleUrls: ["./custom-remote-paging-sample.component.scss"],
-    templateUrl: "./custom-remote-paging-sample.component.html"
+    selector: 'app-custom-remote-paging-grid-sample',
+    styleUrls: ['./custom-remote-paging-sample.component.scss'],
+    templateUrl: './custom-remote-paging-sample.component.html'
 })
-export class CustomRemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy {
+export class CustomRemotePagingGridSampleComponent implements OnInit, AfterViewInit, OnDestroy {
+    @ViewChild('customPager', { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
+    @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
 
     public page = 0;
     public lastPage = false;
     public firstPage = true;
-    public totalPages: number = 1;
+    public totalPages = 1;
     public totalCount = 0;
     public pages = [];
-    public title = "gridPaging";
+    public title = 'gridPaging';
     public data: Observable<any[]>;
-
-    @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
-    @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
 
     private visibleElements = 5;
     private _perPage = 10;
@@ -125,7 +124,7 @@ export class CustomRemotePagingGridSample implements OnInit, AfterViewInit, OnDe
     }
 
     public activePage(page) {
-        return page === this.page ? "activePage" : "";
+        return page === this.page ? 'activePage' : '';
     }
 
     public setNumberOfPagingItems(currentPage, totalPages) {

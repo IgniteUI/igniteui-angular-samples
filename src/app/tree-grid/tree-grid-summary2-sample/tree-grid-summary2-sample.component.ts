@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     DefaultSortingStrategy,
     GridSummaryCalculationMode,
@@ -9,8 +9,8 @@ import {
     IgxTreeGridComponent,
     ISortingExpression,
     SortingDirection
-} from "igniteui-angular";
-import { FOODS_DATA } from "../data/foods";
+} from 'igniteui-angular';
+import { FOODS_DATA } from '../data/foods';
 
 class AvgSummary {
 
@@ -18,22 +18,22 @@ class AvgSummary {
         const result = [];
         const avg = IgxNumberSummaryOperand.average(data);
         result.push({
-            key: "avg",
-            label: "Average",
-            summaryResult: data.length ? "$" + avg.toFixed(2) : ""
+            key: 'avg',
+            label: 'Average',
+            summaryResult: data.length ? '$' + avg.toFixed(2) : ''
         });
         return result;
     }
 }
 
 @Component({
-    selector: "app-tree-grid-summary2-sample",
-    styleUrls: ["./tree-grid-summary2-sample.component.scss"],
-    templateUrl: "./tree-grid-summary2-sample.component.html"
+    selector: 'app-tree-grid-summary2-sample',
+    styleUrls: ['./tree-grid-summary2-sample.component.scss'],
+    templateUrl: './tree-grid-summary2-sample.component.html'
 })
 export class TreeGridSummary2SampleComponent implements OnInit {
 
-    @ViewChild("treegrid1", { read: IgxTreeGridComponent, static: true })
+    @ViewChild('treegrid1', { read: IgxTreeGridComponent, static: true })
     public grid1: IgxTreeGridComponent;
     public data;
 
@@ -49,7 +49,7 @@ export class TreeGridSummary2SampleComponent implements OnInit {
         this.expr = [
             {
                 dir: SortingDirection.Asc,
-                fieldName: "ShipCountry",
+                fieldName: 'ShipCountry',
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             }
@@ -70,19 +70,19 @@ export class TreeGridSummary2SampleComponent implements OnInit {
 
         this.summaryCalcModes = [
             {
-                label: "Root Level Only",
+                label: 'Root Level Only',
                 selected: this.summaryCalculationMode === GridSummaryCalculationMode.rootLevelOnly,
                 togglable: true,
                 value: GridSummaryCalculationMode.rootLevelOnly
             },
             {
-                label: "Child Levels Only",
+                label: 'Child Levels Only',
                 selected: this.summaryCalculationMode === GridSummaryCalculationMode.childLevelsOnly,
                 togglable: true,
                 value: GridSummaryCalculationMode.childLevelsOnly
             },
             {
-                label: "Root And Child Levels",
+                label: 'Root And Child Levels',
                 selected: this.summaryCalculationMode === GridSummaryCalculationMode.rootAndChildLevels,
                 togglable: true,
                 value: GridSummaryCalculationMode.rootAndChildLevels
@@ -92,7 +92,7 @@ export class TreeGridSummary2SampleComponent implements OnInit {
 
     public ngOnInit() {
         this.grid1.sortingExpressions = [
-            { dir: SortingDirection.Desc, fieldName: "ID",
+            { dir: SortingDirection.Desc, fieldName: 'ID',
               ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
         ];
     }
@@ -112,6 +112,6 @@ export class TreeGridSummary2SampleComponent implements OnInit {
     }
 
     public formatCurrency(value: number) {
-        return "$" + value.toFixed(2);
+        return '$' + value.toFixed(2);
     }
 }

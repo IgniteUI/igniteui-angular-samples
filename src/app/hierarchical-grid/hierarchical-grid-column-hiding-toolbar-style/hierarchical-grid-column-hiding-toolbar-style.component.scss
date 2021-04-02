@@ -6,7 +6,7 @@ $custom-column-actions-theme: igx-column-actions-theme(
     $background-color: steelblue,
     $title-color: gold
 );
-$custom-button: igx-button-theme($flat-text-color: gold, $disabled-color: black);
+$custom-button: igx-button-theme($foreground: gold, $disabled-foreground: black);
 
 /*ENHANCED APPROACHES*/
 

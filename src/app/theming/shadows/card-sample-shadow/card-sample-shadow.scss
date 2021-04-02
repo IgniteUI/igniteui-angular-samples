@@ -6,6 +6,7 @@
     $myCard: igx-card-theme(
         $resting-shadow: igx-elevation($igx-elevations, 10)
     );
+
     @include igx-card($myCard);
 
     // Creating colors for all 3 shadows

@@ -1,22 +1,25 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { FilteringLogic, IForOfState, SortingDirection, FilteringExpressionsTree } from "igniteui-angular";
-import { BehaviorSubject, Observable } from "rxjs";
+/* eslint-disable id-blacklist */
+/* eslint-disable @typescript-eslint/naming-convention */
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { FilteringLogic, IForOfState, SortingDirection, FilteringExpressionsTree } from 'igniteui-angular';
+import { BehaviorSubject, Observable } from 'rxjs';
 
-const DATA_URL = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
-const EMPTY_STRING = "";
+const DATA_URL = 'https://services.odata.org/V4/Northwind/Northwind.svc/Products';
+const EMPTY_STRING = '';
 const NULL_VALUE = null;
+// eslint-disable-next-line no-shadow
 export enum FILTER_OPERATION {
-    CONTAINS = "contains",
-    STARTS_WITH = "startswith",
-    ENDS_WITH = "endswith",
-    EQUALS = "eq",
-    DOES_NOT_EQUAL = "ne",
-    DOES_NOT_CONTAIN = "not contains",
-    GREATER_THAN = "gt",
-    LESS_THAN = "lt",
-    LESS_THAN_EQUAL = "le",
-    GREATER_THAN_EQUAL = "ge"
+    CONTAINS = 'contains',
+    STARTS_WITH = 'startswith',
+    ENDS_WITH = 'endswith',
+    EQUALS = 'eq',
+    DOES_NOT_EQUAL = 'ne',
+    DOES_NOT_CONTAIN = 'not contains',
+    GREATER_THAN = 'gt',
+    LESS_THAN = 'lt',
+    LESS_THAN_EQUAL = 'le',
+    GREATER_THAN_EQUAL = 'ge'
 }
 
 @Injectable()
@@ -41,6 +44,12 @@ export class RemoteFilteringService {
                 }
             });
     }
+    public getFilteringExpressionTreeForColumn(filteringExpression: any) {
+        if (filteringExpression.filteringOperands[0] instanceof FilteringExpressionsTree) {
+            return this.getFilteringExpressionTreeForColumn(filteringExpression.filteringOperands[0]);
+        }
+        return filteringExpression;
+    }
 
     private buildDataUrl(virtualizationArgs: any, filteringArgs: any, sortingArgs: any): string {
         let baseQueryString = `${DATA_URL}?$count=true`;
@@ -59,7 +68,7 @@ export class RemoteFilteringService {
                 if (filter !== EMPTY_STRING) {
                     filter += ` ${FilteringLogic[FilteringLogic.And].toLowerCase()} `;
                 }
-                const exprTree = this.getFilteringExpressionTreeForColumn(columnFilter)
+                const exprTree = this.getFilteringExpressionTreeForColumn(columnFilter);
                 filter += this._buildAdvancedFilterExpression(
                     exprTree.filteringOperands,
                     exprTree.operator);
@@ -85,7 +94,7 @@ export class RemoteFilteringService {
         let filterExpression = EMPTY_STRING;
         operands.forEach((operand) => {
             const value = operand.searchVal;
-            const isNumberValue = (typeof (value) === "number") ? true : false;
+            const isNumberValue = (typeof (value) === 'number') ? true : false;
             const filterValue = (isNumberValue) ? value : `'${value}'`;
             const fieldName = operand.fieldName;
             let filterString;
@@ -95,59 +104,59 @@ export class RemoteFilteringService {
             }
 
             switch (operand.condition.name) {
-                case "contains": {
+                case 'contains': {
                     filterString = `${FILTER_OPERATION.CONTAINS}(${fieldName}, ${filterValue})`;
                     break;
                 }
-                case "startsWith": {
+                case 'startsWith': {
                     filterString = `${FILTER_OPERATION.STARTS_WITH}(${fieldName},${filterValue})`;
                     break;
                 }
-                case "endsWith": {
+                case 'endsWith': {
                     filterString = `${FILTER_OPERATION.ENDS_WITH}(${fieldName},${filterValue})`;
                     break;
                 }
-                case "equals": {
+                case 'equals': {
                     filterString = `${fieldName} ${FILTER_OPERATION.EQUALS} ${filterValue} `;
                     break;
                 }
-                case "doesNotEqual": {
+                case 'doesNotEqual': {
                     filterString = `${fieldName} ${FILTER_OPERATION.DOES_NOT_EQUAL} ${filterValue} `;
                     break;
                 }
-                case "doesNotContain": {
+                case 'doesNotContain': {
                     filterString = `${FILTER_OPERATION.DOES_NOT_CONTAIN}(${fieldName},${filterValue})`;
                     break;
                 }
-                case "greaterThan": {
+                case 'greaterThan': {
                     filterString = `${fieldName} ${FILTER_OPERATION.GREATER_THAN} ${filterValue} `;
                     break;
                 }
-                case "greaterThanOrEqualTo": {
+                case 'greaterThanOrEqualTo': {
                     filterString = `${fieldName} ${FILTER_OPERATION.GREATER_THAN_EQUAL} ${filterValue} `;
                     break;
                 }
-                case "lessThan": {
+                case 'lessThan': {
                     filterString = `${fieldName} ${FILTER_OPERATION.LESS_THAN} ${filterValue} `;
                     break;
                 }
-                case "lessThanOrEqualTo": {
+                case 'lessThanOrEqualTo': {
                     filterString = `${fieldName} ${FILTER_OPERATION.LESS_THAN_EQUAL} ${filterValue} `;
                     break;
                 }
-                case "empty": {
+                case 'empty': {
                     filterString = `length(${fieldName}) ${FILTER_OPERATION.EQUALS} 0`;
                     break;
                 }
-                case "notEmpty": {
+                case 'notEmpty': {
                     filterString = `length(${fieldName}) ${FILTER_OPERATION.GREATER_THAN} 0`;
                     break;
                 }
-                case "null": {
+                case 'null': {
                     filterString = `${fieldName} ${FILTER_OPERATION.EQUALS} ${NULL_VALUE}`;
                     break;
                 }
-                case "notNull": {
+                case 'notNull': {
                     filterString = `${fieldName} ${FILTER_OPERATION.DOES_NOT_EQUAL} ${NULL_VALUE}`;
                     break;
                 }
@@ -178,16 +187,10 @@ export class RemoteFilteringService {
     private _buildScrollExpression(virtualizationArgs): string {
         let requiredChunkSize: number;
         const skip = virtualizationArgs.startIndex;
+        // eslint-disable-next-line prefer-const
         requiredChunkSize = virtualizationArgs.chunkSize === 0 ? 11 : virtualizationArgs.chunkSize;
         const top = requiredChunkSize;
 
         return `$skip=${skip}&$top=${top}`;
-    }
-
-    public getFilteringExpressionTreeForColumn(filteringExpression: any) {
-        if (filteringExpression.filteringOperands[0] instanceof FilteringExpressionsTree) {
-            return this.getFilteringExpressionTreeForColumn(filteringExpression.filteringOperands[0]);
-        }
-        return filteringExpression;
     }
 }

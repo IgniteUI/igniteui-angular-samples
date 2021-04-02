@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component, OnInit } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-excel-style-filtering-sample-2",
-    styleUrls: ["./hierarchical-grid-excel-style-filtering-sample-2.component.scss"],
-    templateUrl: "hierarchical-grid-excel-style-filtering-sample-2.component.html"
+    selector: 'app-hierarchical-grid-excel-style-filtering-sample-2',
+    styleUrls: ['./hierarchical-grid-excel-style-filtering-sample-2.component.scss'],
+    templateUrl: 'hierarchical-grid-excel-style-filtering-sample-2.component.html'
 })
 
 export class HGridExcelStyleFilteringSample2Component implements OnInit {

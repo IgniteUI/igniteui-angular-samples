@@ -1,34 +1,34 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent} from "igniteui-angular";
-import { MARKET_DATA } from "./data";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxGridComponent} from 'igniteui-angular';
+import { MARKET_DATA } from './data';
 
 @Component({
-    selector: "grid-search-sample",
-    styleUrls: ["./grid-search-sample.component.scss"],
-    templateUrl: "./grid-search-sample.component.html"
+    selector: 'app-grid-search-sample',
+    styleUrls: ['./grid-search-sample.component.scss'],
+    templateUrl: './grid-search-sample.component.html'
 })
 export class GridSearchSampleComponent implements OnInit {
 
-    @ViewChild("grid1", { static: true }) public grid: IgxGridComponent;
+    @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;
     public data: any[];
-    public searchText: string = "";
-    public caseSensitive: boolean = false;
-    public exactMatch: boolean = false;
+    public searchText = '';
+    public caseSensitive = false;
+    public exactMatch = false;
 
     public ngOnInit(): void {
         this.data = MARKET_DATA;
     }
 
     public clearSearch() {
-        this.searchText = "";
+        this.searchText = '';
         this.grid.clearSearch();
     }
 
     public searchKeyDown(ev) {
-        if (ev.key === "Enter" || ev.key === "ArrowDown" || ev.key === "ArrowRight") {
+        if (ev.key === 'Enter' || ev.key === 'ArrowDown' || ev.key === 'ArrowRight') {
             ev.preventDefault();
             this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
-        } else if (ev.key === "ArrowUp" || ev.key === "ArrowLeft") {
+        } else if (ev.key === 'ArrowUp' || ev.key === 'ArrowLeft') {
             ev.preventDefault();
             this.grid.findPrev(this.searchText, this.caseSensitive, this.exactMatch);
         }

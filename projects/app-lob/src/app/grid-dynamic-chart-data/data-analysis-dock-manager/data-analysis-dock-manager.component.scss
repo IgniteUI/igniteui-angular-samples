@@ -105,10 +105,10 @@ $custom-badge-theme: igx-badge-theme(
 
     .analytics-btn {
         @include igx-button(igx-button-theme($palette: $fluent-excel-palette,
-                $icon-color: #fff,
-                $icon-background: #335e3b,
-                $icon-hover-background: #459a55,
-                $icon-border-radius: 0));
+                $foreground: #fff,
+                $background: #335e3b,
+                $hover-background: #459a55,
+                $border-radius: 0));
         z-index: 9;
         position: absolute;
     }

@@ -1,17 +1,17 @@
-import { Component } from "@angular/core";
-import { IgxToastPosition } from "igniteui-angular";
+import { Component } from '@angular/core';
+import { IgxToastPosition } from 'igniteui-angular';
 
 @Component({
-  selector: "app-toast-sample-5",
-  styleUrls: ["./toast-sample-5.component.scss"],
-  templateUrl: "./toast-sample-5.component.html"
+  selector: 'app-toast-sample-5',
+  styleUrls: ['./toast-sample-5.component.scss'],
+  templateUrl: './toast-sample-5.component.html'
 })
 
 export class ToastSample5Component {
   public toastPosition: IgxToastPosition;
 
-  public show(toast) {
-    this.toastPosition = "top";
-    toast.show();
+  public open(toast) {
+    this.toastPosition = 'top';
+    toast.open();
   }
 }

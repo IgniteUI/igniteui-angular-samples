@@ -1,18 +1,17 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxComboComponent } from "igniteui-angular";
-import { localData } from "./local-data";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxComboComponent } from 'igniteui-angular';
+import { localData } from './local-data';
 
 @Component({
-    selector: "app-combo",
-    styleUrls: ["./combo-features.component.scss"],
-    templateUrl: "./combo-features.component.html"
+    selector: 'app-combo',
+    styleUrls: ['./combo-features.component.scss'],
+    templateUrl: './combo-features.component.html'
 })
-export class ComboFeatures {
-
-    public GROUP_KEY = "region";
+export class ComboFeaturesComponent implements OnInit{
+    @ViewChild('combo', { read: IgxComboComponent, static: true }) public combo: IgxComboComponent;
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    public GROUP_KEY = 'region';
     public lData: any[];
-    @ViewChild("combo", { read: IgxComboComponent, static: true }) public combo: IgxComboComponent;
-
     public filterable = true;
     public showSearchCaseIcon = false;
     public customValues = true;
@@ -25,6 +24,6 @@ export class ComboFeatures {
     public handleAddition(event) { }
 
     public enableGroups(event) {
-        this.combo.groupKey = event.checked ? this.GROUP_KEY : "";
+        this.combo.groupKey = event.checked ? this.GROUP_KEY : '';
     }
 }

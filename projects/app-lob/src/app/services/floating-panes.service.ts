@@ -1,9 +1,9 @@
-// tslint:disable: max-line-length
-import { Injectable } from "@angular/core";
-import { IgcDockManagerPoint, IgcSplitPane } from "igniteui-dockmanager";
+/* eslint-disable max-len */
+import { Injectable } from '@angular/core';
+import { IgcDockManagerPoint, IgcSplitPane } from 'igniteui-dockmanager';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class FloatingPanesService {
 
@@ -20,7 +20,7 @@ export class FloatingPanesService {
   private _initialPanePosition: IgcDockManagerPoint;
   constructor() { }
 
-  public appendChartPane(pane: IgcSplitPane) {
+  public appendPane(pane: IgcSplitPane) {
 
         if (this.floatingPanes.length) {
             const lastPane = this.floatingPanes[this.floatingPanes.length - 1];
@@ -32,7 +32,7 @@ export class FloatingPanesService {
 
   }
 
-  public removeChartPane(pane: IgcSplitPane) {
+  public removePane(pane: IgcSplitPane) {
     const index = this.floatingPanes.indexOf(this.floatingPanes.find(p => p.id === pane.id));
     this.floatingPanes.splice(index, index + 1);
   }

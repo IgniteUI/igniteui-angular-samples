@@ -1,3 +1,4 @@
+/*eslint-disable*/
 export const MARKET_DATA = [
     {
         Date: new Date(),

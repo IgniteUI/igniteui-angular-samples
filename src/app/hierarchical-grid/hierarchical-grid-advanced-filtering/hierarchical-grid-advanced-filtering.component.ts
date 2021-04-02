@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-advanced-filtering",
-    styleUrls: ["./hierarchical-grid-advanced-filtering.component.scss"],
-    templateUrl: "hierarchical-grid-advanced-filtering.component.html"
+    selector: 'app-hierarchical-grid-advanced-filtering',
+    styleUrls: ['./hierarchical-grid-advanced-filtering.component.scss'],
+    templateUrl: 'hierarchical-grid-advanced-filtering.component.html'
 })
 
 export class HGridAdvancedFilteringSampleComponent {

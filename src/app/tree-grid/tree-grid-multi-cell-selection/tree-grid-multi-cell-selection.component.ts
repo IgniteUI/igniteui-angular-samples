@@ -1,12 +1,12 @@
-import { Component, ViewEncapsulation } from "@angular/core";
-import { IgxColumnComponent, IgxToastComponent, IgxTreeGridComponent } from "igniteui-angular";
-import { FOODS_DATA } from "../data/foods";
+import { Component, ViewEncapsulation } from '@angular/core';
+import { IgxColumnComponent, IgxToastComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { FOODS_DATA } from '../data/foods';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
-    selector: "app-tree-grid-multi-cell-selection-sample",
-    styleUrls: ["./tree-grid-multi-cell-selection.component.scss"],
-    templateUrl: "./tree-grid-multi-cell-selection.component.html"
+    selector: 'app-tree-grid-multi-cell-selection-sample',
+    styleUrls: ['./tree-grid-multi-cell-selection.component.scss'],
+    templateUrl: './tree-grid-multi-cell-selection.component.html'
 })
 export class TreeGridMultiCellSelectionComponent {
 
@@ -18,7 +18,7 @@ export class TreeGridMultiCellSelectionComponent {
         target.shouldGenerate = true;
         target.clearCellSelection();
         this.targetData = source.getSelectedData();
-        notification.position = "middle";
+        notification.position = 'middle';
         notification.displayTime = 1000;
         notification.show(`Transfered ${this.targetData.length} rows`);
     }

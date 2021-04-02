@@ -1,26 +1,25 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { GridPagingMode, IGridCreatedEventArgs, IgxHierarchicalGridComponent } from "igniteui-angular";
-import { RemotePagingService } from "./remotePagingService";
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { GridPagingMode, IGridCreatedEventArgs, IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { RemotePagingService } from './remotePagingService';
 
 @Component({
     providers: [RemotePagingService],
-    selector: "hierarchical-grid-remote-paging-default-template",
-    styleUrls: ["./hierarchical-grid-remote-paging-default-template.component.scss"],
-    templateUrl: "hierarchical-grid-remote-paging-default-template.component.html"
+    selector: 'app-hierarchical-grid-remote-paging-default-template',
+    styleUrls: ['./hierarchical-grid-remote-paging-default-template.component.scss'],
+    templateUrl: 'hierarchical-grid-remote-paging-default-template.component.html'
 })
 
 export class HGridRemotePagingDefaultTemplateComponent implements OnInit, AfterViewInit, OnDestroy {
-
+    @ViewChild('hierarchicalGrid', { static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;
     public totalCount = 0;
     public mode = GridPagingMode.Remote;
-    @ViewChild("hierarchicalGrid", { static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;
     private _dataLengthSubscriber;
 
     constructor(private remoteService: RemotePagingService) { }
 
     public ngOnInit(): void {
         this._dataLengthSubscriber = this.remoteService.getDataLength(
-            { parentID: null, rootLevel: true, key: "Customers" }).subscribe((length) => {
+            { parentID: null, rootLevel: true, key: 'Customers' }).subscribe((length) => {
                 this.totalCount = length;
             });
     }
@@ -34,7 +33,7 @@ export class HGridRemotePagingDefaultTemplateComponent implements OnInit, AfterV
     public ngAfterViewInit() {
         this.hierarchicalGrid.isLoading = true;
         this.remoteService.getData(
-            { parentID: null, rootLevel: true, key: "Customers" }, this.hierarchicalGrid.perPage)
+            { parentID: null, rootLevel: true, key: 'Customers' }, this.hierarchicalGrid.perPage)
             .subscribe((data) => {
                 this.hierarchicalGrid.isLoading = false;
                 this.hierarchicalGrid.data = data;
@@ -48,7 +47,7 @@ export class HGridRemotePagingDefaultTemplateComponent implements OnInit, AfterV
     }
 
     public dateFormatter(val: string) {
-        return new Intl.DateTimeFormat("en-US").format(new Date(val));
+        return new Intl.DateTimeFormat('en-US').format(new Date(val));
     }
 
     public gridCreated(event: IGridCreatedEventArgs, _foreignKey: string) {
@@ -77,7 +76,7 @@ export class HGridRemotePagingDefaultTemplateComponent implements OnInit, AfterV
         const skip = page.current * this.hierarchicalGrid.perPage;
 
         this.remoteService.getData(
-            { parentID: null, rootLevel: true, key: "Customers" }, skip, this.hierarchicalGrid.perPage)
+            { parentID: null, rootLevel: true, key: 'Customers' }, skip, this.hierarchicalGrid.perPage)
             .subscribe((data) => {
                 this.hierarchicalGrid.data = data;
                 this.hierarchicalGrid.cdr.detectChanges();
@@ -92,7 +91,7 @@ export class HGridRemotePagingDefaultTemplateComponent implements OnInit, AfterV
 
     public getFirstPage() {
         this.remoteService.getData(
-            { parentID: null, rootLevel: true, key: "Customers" }, 0, this.hierarchicalGrid.perPage)
+            { parentID: null, rootLevel: true, key: 'Customers' }, 0, this.hierarchicalGrid.perPage)
             .subscribe((data) => {
                 this.hierarchicalGrid.data = data;
                 this.hierarchicalGrid.cdr.detectChanges();
