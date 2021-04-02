@@ -51,15 +51,10 @@ $custom-drop-down: igx-drop-down-theme(
 // );
 
 // $custom-button: igx-button-theme(
-//     $flat-background: igx-color($dark-palette, "secondary", 400),
-//     $flat-text-color: igx-color($dark-palette, "primary", 400),
-//     $flat-hover-background: igx-color($dark-palette, "primary", 400),
-//     $flat-hover-text-color: igx-color($dark-palette, "secondary", 400),
-
-//     $raised-background: igx-color($dark-palette, "secondary", 400),
-//     $raised-text-color: igx-color($dark-palette, "primary", 400),
-//     $raised-hover-background: igx-color($dark-palette, "primary", 400),
-//     $raised-hover-text-color: igx-color($dark-palette, "secondary", 400)
+//     $background: igx-color($dark-palette, "secondary", 400),
+//     $foreground: igx-color($dark-palette, "primary", 400),
+//     $hover-background: igx-color($dark-palette, "primary", 400),
+//     $hover-foreground: igx-color($dark-palette, "secondary", 400)
 // );
 
 // $custom-input-group: igx-input-group-theme(
@@ -99,29 +94,16 @@ $custom-drop-down: igx-drop-down-theme(
 
 // $custom-button-schema: extend($_light-button,
 //     (
-//         flat-background:(
+//         background:(
 //             igx-color: ("secondary", 400)
 //         ),
-//         flat-text-color:(
+//         foreground:(
 //             igx-color: ("primary", 400)
 //         ),
-//         flat-hover-background:(
+//         hover-background:(
 //             igx-color: ("primary", 400)
 //         ),
-//         flat-hover-text-color:(
-//             igx-color: ("secondary", 400)
-//         ),
-
-//         raised-background:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         raised-text-color:(
-//             igx-color: ("primary", 400)
-//         ),
-//         raised-hover-background:(
-//             igx-color: ("primary", 400)
-//         ),
-//         raised-hover-text-color:(
+//         hover-foreground:(
 //             igx-color: ("secondary", 400)
 //         )
 //     )
