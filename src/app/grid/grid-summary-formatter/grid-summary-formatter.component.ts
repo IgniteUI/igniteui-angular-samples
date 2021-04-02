@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxDateSummaryOperand, IgxGridComponent, IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
@@ -9,7 +9,7 @@ import { DATA } from '../../data/nwindData';
     templateUrl: './grid-summary-formatter.component.html'
   })
 
-  export class GridSummaryFormatterComponent {
+  export class GridSummaryFormatterComponent implements OnInit {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 

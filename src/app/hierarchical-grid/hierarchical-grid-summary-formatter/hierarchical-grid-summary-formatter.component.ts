@@ -4,7 +4,7 @@ import { IgxDateSummaryOperand, IgxHierarchicalGridComponent, IgxSummaryOperand,
 import { SINGERS } from '../data';
 
 @Component({
-    selector: 'hierarchical-grid-summary-formatter',
+    selector: 'app-hierarchical-grid-summary-formatter',
     styleUrls: ['./hierarchical-grid-summary-formatter.component.scss'],
     templateUrl: 'hierarchical-grid-summary-formatter.component.html'
 })

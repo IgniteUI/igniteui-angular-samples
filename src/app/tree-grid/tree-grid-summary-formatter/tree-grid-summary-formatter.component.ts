@@ -4,7 +4,7 @@ import { IgxDateSummaryOperand, IgxSummaryResult, IgxSummaryOperand, IgxTreeGrid
 import { FOODS_DATA } from '../data/foods';
 
 @Component({
-    selector: 'tree-grid-summary-formatter',
+    selector: 'app-tree-grid-summary-formatter',
     styleUrls: ['./tree-grid-summary-formatter.component.scss'],
     templateUrl: 'tree-grid-summary-formatter.component.html'
 })
