@@ -1,22 +1,22 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxNavigationDrawerComponent } from "igniteui-angular";
+import { Component, ViewChild } from '@angular/core';
+import { IgxNavigationDrawerComponent } from 'igniteui-angular';
 
 @Component({
-  selector: "app-nav-drawer-simple",
-  styleUrls: ["./nav-drawer-simple.component.scss"],
-  templateUrl: "./nav-drawer-simple.component.html"
+  selector: 'app-nav-drawer-simple',
+  styleUrls: ['./nav-drawer-simple.component.scss'],
+  templateUrl: './nav-drawer-simple.component.html'
 })
 export class NavDrawerSimpleComponent  {
-    public navItems = [
-        { name: "account_circle", text: "Avatar" },
-        { name: "error", text: "Badge" },
-        { name: "group_work", text: "Button Group" }
-    ];
-
-    public selected = "Avatar";
-
     @ViewChild(IgxNavigationDrawerComponent, { static: true })
     public drawer: IgxNavigationDrawerComponent;
+
+    public navItems = [
+        { name: 'account_circle', text: 'Avatar' },
+        { name: 'error', text: 'Badge' },
+        { name: 'group_work', text: 'Button Group' }
+    ];
+
+    public selected = 'Avatar';
 
     public navigate(item) {
         this.selected = item.text;

@@ -10,7 +10,7 @@
         @include igx-avatar(
             igx-avatar-theme(
                 $background: var(--teal-light),
-                $color: var(--teal-dark),
+                $color: var(--teal-dark)
             )
         );
     }

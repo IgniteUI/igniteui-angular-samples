@@ -103,10 +103,10 @@ export class CalendarConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: 'CalendarStylingSample',
+            component: 'CalendarStylingSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxCalendarModule', 'CalendarStylingSample'],
-                ngDeclarations: ['CalendarStylingSample'],
+                imports: ['IgxCalendarModule', 'CalendarStylingSampleComponent'],
+                ngDeclarations: ['CalendarStylingSampleComponent'],
                 ngImports: ['IgxCalendarModule']
             }),
             shortenComponentPathBy: "/scheduling/calendar/"

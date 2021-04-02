@@ -1,7 +1,7 @@
-import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
-import { TabbarComponent } from "./tabbar.component";
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { TabbarComponent } from './tabbar.component';
 
-describe("TabbarComponent", () => {
+describe('TabbarComponent', () => {
   let component: TabbarComponent;
   let fixture: ComponentFixture<TabbarComponent>;
 
@@ -18,7 +18,7 @@ describe("TabbarComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

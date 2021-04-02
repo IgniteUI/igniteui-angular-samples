@@ -1,38 +1,40 @@
-import { AfterViewInit, Component, EventEmitter, OnDestroy, Output, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { IDialogEventArgs, IgxDialogComponent } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
 import { ControllerComponent } from './controllers.component';
 import { GridFinJSComponent } from './grid-finjs.component';
 
 @Component({
-    selector: "app-finjs-main",
-    styleUrls: ["./main.component.scss"],
-    templateUrl: "./main.component.html"
+    selector: 'app-finjs-main',
+    styleUrls: ['./main.component.scss'],
+    templateUrl: './main.component.html'
 })
-export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
+export class FinJSDemoComponent implements AfterViewInit, OnDestroy, OnInit {
     @ViewChild('finGrid', { static: true }) public finGrid: GridFinJSComponent;
     @ViewChild('controllers', { static: true }) public controller: ControllerComponent;
-    @ViewChild("dialog", { static: true }) public dialog: IgxDialogComponent;
-    @ViewChild("chart1", { static: true }) public chart: IgxCategoryChartComponent;
+    @ViewChild('dialog', { static: true }) public dialog: IgxDialogComponent;
+    @ViewChild('chart1', { static: true }) public chart: IgxCategoryChartComponent;
 
     @Output() public switch = new EventEmitter<any>();
     @Output() public recordsVolume = new EventEmitter<any>();
     @Output() public frequencyTimer = new EventEmitter<any>();
     @Output() public player = new EventEmitter<any>();
 
-    public properties = ["Price", "Country"];
+    public properties = ['price', 'country'];
     public chartData = [];
-    public selectionMode = 'multiple';
-    private subscription$;
     public darkTheme = false;
     public volume = 1000;
     public frequency = 500;
+    private subscription$;
     private _timer;
 
-    constructor() { }
+    constructor() {
+    }
 
     public ngAfterViewInit() {
-        this.selectFirstGroupAndFillChart();
+    }
+
+    public ngOnInit() {
     }
 
     public onSwitchChanged(event: any) {
@@ -49,37 +51,42 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
                 this.darkTheme = event.value;
                 break;
             }
-            default:
-                {
-                    break;
-                }
+            default: break;
         }
     }
 
     public onVolumeChanged(volume: any) {
-        this.finGrid.grid.deselectAllRows();
-        this.finGrid.finService.getData(volume);
+        this.volume = volume;
+        this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService
+            .broadcastParams(this.controller.frequency, this.volume, false) : this.finGrid.dataService.getData(volume);
+    }
+
+    public onFrequencyChanged(frequency: any) {
+        this.frequency = frequency;
     }
 
     public onPlayAction(event: any) {
         switch (event.action) {
             case 'playAll': {
-                const currData = this.finGrid.grid.filteredSortedData ?? this.finGrid.data;
-                this._timer = setInterval(() => this.finGrid.finService.updateAllPriceValues(currData), this.controller.frequency);
-                break;
-            }
-            case 'playRandom': {
-                const currData = this.finGrid.grid.filteredSortedData ?? this.finGrid.data;
-                this._timer = setInterval(() => this.finGrid.finService.updateRandomPriceValues(currData), this.controller.frequency);
+                if (this.finGrid.dataService.hasRemoteConnection) {
+                    this.finGrid.dataService.broadcastParams(this.frequency, this.volume, true);
+                } else {
+                    const currData = this.finGrid.grid.filteredSortedData ?? this.finGrid.grid.data;
+                    this._timer = setInterval(() => this.finGrid.dataService.updateAllPriceValues(currData), this.controller.frequency);
+                }
                 break;
             }
             case 'stop': {
-                this.stopFeed();
+                this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService.stopLiveData() : this.stopFeed();
                 break;
             }
             case 'chart': {
-                this.setChartData(this.finGrid.grid.selectedRows);
-                this.dialog.open()
+                if (this.finGrid.grid.selectedRows.length !== 0) {
+                    this.setChartData(this.finGrid.grid.selectedRows);
+                    this.dialog.open();
+                } else {
+                    this.controller.toast.open('Please select some rows first!');
+                };
                 break;
             }
             default:
@@ -92,13 +99,13 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     public setChartData(args: any[]) {
         this.chartData = [];
         args.forEach(row => {
-            this.chartData.push(this.finGrid.data[row]);
+            this.chartData.push(this.finGrid.grid.data[row]);
             this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1,
-                this.finGrid.data[row]);
+                this.finGrid.grid.data[row]);
         });
-        this.controller.controls[3].disabled = this.chartData.length === 0;
+        // this.controller.controls[2].disabled = this.chartData.length === 0;
         this.setLabelIntervalAndAngle();
-        this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
+        this.setChartConfig('Countries', 'Prices (USD)', 'Data Chart with prices by Category and Country');
     }
 
     public onCloseHandler(evt: IDialogEventArgs) {
@@ -113,20 +120,12 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
 
     public closeDialog(evt) {
         if (this.dialog.isOpen &&
-            evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === "d") {
+            evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === 'd') {
             evt.preventDefault();
             this.dialog.close();
         }
     }
 
-    public selectFirstGroupAndFillChart() {
-        this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
-        // tslint:disable-next-line: max-line-length
-        const recordsToBeSelected = this.finGrid.grid.selectionService.getRowIDs(this.finGrid.grid.groupsRecords[0].groups[0].groups[0].records);
-        recordsToBeSelected.forEach(item => {
-            this.finGrid.grid.selectionService.selectRowById(item, false, true);
-        });
-    }
     public setChartConfig(xAsis, yAxis, title) {
         // update label interval and angle based on data
         this.setLabelIntervalAndAngle();
@@ -134,6 +133,7 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
         this.chart.yAxisTitle = yAxis;
         this.chart.chartTitle = title;
     }
+
     public setLabelIntervalAndAngle() {
         const intervalSet = this.chartData.length;
         if (intervalSet < 10) {
@@ -164,26 +164,22 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy {
     public openSingleRowChart(rowData: any) {
         this.chartData = [];
         setTimeout(() => {
-            this.chartData = this.finGrid.data.filter(item => item.Region === rowData.Region &&
-                item.Category === rowData.Category);
+            this.chartData = this.finGrid.grid.data.filter(item => item.region === rowData.region &&
+                item.category === rowData.category);
 
             this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1, {});
 
             this.setLabelIntervalAndAngle();
-            this.chart.chartTitle = "Data Chart with prices of " + this.chartData[0].Category + " in " +
-                this.chartData[0].Region + " Region";
+            this.chart.chartTitle = 'Data Chart with prices of ' + this.chartData[0].category + ' in ' +
+                this.chartData[0].region + ' Region';
 
             this.dialog.open();
         }, 200);
     }
 
-
     public stopFeed() {
         if (this._timer) {
             clearInterval(this._timer);
-        }
-        if (this.subscription$) {
-            this.subscription$.unsubscribe();
         }
     }
 

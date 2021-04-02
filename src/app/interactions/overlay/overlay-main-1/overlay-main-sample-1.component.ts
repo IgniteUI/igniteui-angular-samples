@@ -1,10 +1,10 @@
-import { Component, Inject, OnDestroy } from "@angular/core";
-import { IgxOverlayService } from "igniteui-angular";
-import { Subject } from "rxjs";
-import { filter, takeUntil } from "rxjs/operators";
-import { MyDynamicCardComponent} from "../overlay-dynamic-card/overlay-dynamic-card.component";
+import { Component, Inject, OnDestroy } from '@angular/core';
+import { IgxOverlayService } from 'igniteui-angular';
+import { Subject } from 'rxjs';
+import { filter, takeUntil } from 'rxjs/operators';
+import { MyDynamicCardComponent} from '../overlay-dynamic-card/overlay-dynamic-card.component';
 @Component({
-    selector: "overlay-sample",
+    selector: 'app-overlay-sample',
     templateUrl: `./overlay-main-sample-1.component.html`,
     styleUrls: [`./overlay-main-sample-1.component.scss`]
 })

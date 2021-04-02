@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { localData } from "./local-data";
+import { Component, OnInit } from '@angular/core';
+import { localData } from './local-data';
 
 @Component({
-    selector: "app-combo-main",
-    styleUrls: ["./combo-main.component.scss"],
-    templateUrl: "./combo-main.component.html"
+    selector: 'app-combo-main',
+    styleUrls: ['./combo-main.component.scss'],
+    templateUrl: './combo-main.component.html'
 })
 
 export class ComboMainComponent implements OnInit {

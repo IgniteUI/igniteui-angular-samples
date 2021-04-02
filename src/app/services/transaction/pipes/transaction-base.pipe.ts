@@ -1,9 +1,9 @@
-import { Pipe, PipeTransform } from "@angular/core";
-import { IgxTransactionService, State, Transaction, TransactionType } from "igniteui-angular";
-import { WishlistItem } from "../data";
+import { Pipe, PipeTransform } from '@angular/core';
+import { IgxTransactionService, State, Transaction, TransactionType } from 'igniteui-angular';
+import { WishlistItem } from '../data';
 
 @Pipe({
-    name: "transactionBasePipe",
+    name: 'transactionBasePipe',
     pure: false
 })
 export class TransactionBasePipe implements PipeTransform {

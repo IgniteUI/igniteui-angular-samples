@@ -1,14 +1,17 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { IForOfState, SortingDirection } from "igniteui-angular";
-import { BehaviorSubject, Observable } from "rxjs";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { IForOfState, SortingDirection } from 'igniteui-angular';
+import { BehaviorSubject, Observable } from 'rxjs';
 
-const DATA_URL: string = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
-const EMPTY_STRING: string = "";
+const DATA_URL = 'https://services.odata.org/V4/Northwind/Northwind.svc/Products';
+const EMPTY_STRING = '';
+
+// eslint-disable-next-line no-shadow
 export enum SortOrder {
-    ASC = "asc",
-    DESC = "desc",
-    NONE = ""
+    ASC = 'asc',
+    DESC = 'desc',
+    NONE = ''
 }
 
 @Injectable()
@@ -35,13 +38,13 @@ export class RemoteServiceVirt {
         return areAllItemsInCache;
     }
 
-    public getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean, cb?: (any) => void): any {
+    public getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean, cb?: (arg0: any) => void): any {
         const startIndex = virtualizationArgs.startIndex;
         const endIndex = virtualizationArgs.chunkSize + startIndex;
 
         if (resetData) {
             this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
-                this._cachedData = new Array<any>(data["@odata.count"]).fill(null);
+                this._cachedData = new Array<any>(data['@odata.count']).fill(null);
                 this._updateData(data, startIndex);
                 if (cb) {
                     cb(data);
@@ -99,8 +102,7 @@ export class RemoteServiceVirt {
         if (virtualizationArgs) {
             let requiredChunkSize: number;
             const skip = virtualizationArgs.startIndex;
-            requiredChunkSize = virtualizationArgs.chunkSize === 0 ? 11 : virtualizationArgs.chunkSize;
-            const top = requiredChunkSize;
+            const top = virtualizationArgs.chunkSize === 0 ? 11 : virtualizationArgs.chunkSize;;
             scrollingQuery = `$skip=${skip}&$top=${top}`;
         }
 

@@ -1,23 +1,23 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxExcelExporterOptions,
     IgxExcelExporterService,
     IgxGridComponent,
     ISortingExpression,
     SortingDirection
-} from "igniteui-angular";
-import { INVOICE_DATA } from "../data/invoiceData";
+} from 'igniteui-angular';
+import { INVOICE_DATA } from '../data/invoiceData';
 
 @Component({
-  selector: "app-excel-export-sample-1",
-  styleUrls: ["./excel-export-sample-1.component.scss"],
-  templateUrl: "./excel-export-sample-1.component.html"
+  selector: 'app-excel-export-sample-1',
+  styleUrls: ['./excel-export-sample-1.component.scss'],
+  templateUrl: './excel-export-sample-1.component.html'
 })
 export class ExcelExportSample1Component implements OnInit {
-  @ViewChild("igxGrid1", { static: true }) public igxGrid1: IgxGridComponent;
+  @ViewChild('igxGrid1', { static: true }) public igxGrid1: IgxGridComponent;
 
   public data = [];
-  public groupExpressions : ISortingExpression[];
+  public groupExpressions: ISortingExpression[];
   public columns = [
     { dataType: 'string', field: 'ShipCountry', width: 150, groupable: true },
     { dataType: 'string', field: 'ShipCity', width: 150, groupable: true },
@@ -33,8 +33,8 @@ export class ExcelExportSample1Component implements OnInit {
   public ngOnInit(): void {
     this.data = INVOICE_DATA;
     this.groupExpressions  = [
-        { dir: SortingDirection.Asc, fieldName: "ShipCountry" },
-        { dir: SortingDirection.Asc, fieldName: "ShipCity" }
+        { dir: SortingDirection.Asc, fieldName: 'ShipCountry' },
+        { dir: SortingDirection.Asc, fieldName: 'ShipCity' }
     ];
   }
 
@@ -43,7 +43,7 @@ export class ExcelExportSample1Component implements OnInit {
     The following code demonstrates how to attach event handlers to exporter specific events
     and also how to customize the column export process.
     this.excelExportService.columnExporting.subscribe((args: IColumnExportingEventArgs) => {
-      if (args.header == "Age" && args.columnIndex == 1) {
+      if (args.header == 'Age' && args.columnIndex == 1) {
         args.cancel = true;
       }
     });
@@ -52,7 +52,7 @@ export class ExcelExportSample1Component implements OnInit {
     this.excelExportService.exportEnded.subscribe((args: IExcelExportEndedEventArgs) => {
     });
     */
-    this.excelExportService.export(this.igxGrid1, new IgxExcelExporterOptions("ExportFileFromGrid"));
+    this.excelExportService.export(this.igxGrid1, new IgxExcelExporterOptions('ExportFileFromGrid'));
   }
 }
 

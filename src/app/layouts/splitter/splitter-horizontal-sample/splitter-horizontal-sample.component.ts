@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
-import { SplitterType } from "igniteui-angular";
+import { Component } from '@angular/core';
+import { SplitterType } from 'igniteui-angular';
 
 @Component({
-    selector: "app-splitter-horizontal-sample",
-    styleUrls: ["splitter-horizontal-sample.component.scss"],
-    templateUrl: "splitter-horizontal-sample.component.html"
+    selector: 'app-splitter-horizontal-sample',
+    styleUrls: ['splitter-horizontal-sample.component.scss'],
+    templateUrl: 'splitter-horizontal-sample.component.html'
 })
 export class SplitterHorizontalSampleComponent {
     public type = SplitterType.Horizontal;

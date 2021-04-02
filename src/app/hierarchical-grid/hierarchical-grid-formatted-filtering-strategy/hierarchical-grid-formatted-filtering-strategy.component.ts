@@ -1,16 +1,16 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxHierarchicalGridComponent, FormattedValuesFilteringStrategy } from "igniteui-angular";
-import { SINGERS } from "../data";
+import { Component, ViewChild } from '@angular/core';
+import { IgxHierarchicalGridComponent, FormattedValuesFilteringStrategy } from 'igniteui-angular';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-formatted-filtering-strategy",
-    styleUrls: ["./hierarchical-grid-formatted-filtering-strategy.component.scss"],
-    templateUrl: "hierarchical-grid-formatted-filtering-strategy.component.html"
+    selector: 'app-hierarchical-grid-formatted-filtering-strategy',
+    styleUrls: ['./hierarchical-grid-formatted-filtering-strategy.component.scss'],
+    templateUrl: 'hierarchical-grid-formatted-filtering-strategy.component.html'
 })
 
 export class HGridFormattedFilteringStrategyComponent {
 
-    @ViewChild("hierarchicalGrid", { static: true })
+    @ViewChild('hierarchicalGrid', { static: true })
     public hierarchicalGrid: IgxHierarchicalGridComponent;
 
     public localdata;

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 // tslint:disable:object-literal-sort-keys
 // tslint:disable-next-line:interface-name
@@ -10,9 +10,9 @@ interface DataItem {
 }
 
 @Component({
-  selector: "app-drop-down-virtual",
-  templateUrl: "./drop-down-virtual.component.html",
-  styleUrls: ["./drop-down-virtual.component.scss"]
+  selector: 'app-drop-down-virtual',
+  templateUrl: './drop-down-virtual.component.html',
+  styleUrls: ['./drop-down-virtual.component.scss']
 })
 export class DropDownVirtualComponent {
   public items: DataItem[];

@@ -1,9 +1,9 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-    selector: "icons-sample",
-    styleUrls: ["./icons-sample.component.scss"],
-    templateUrl: "./icons-sample.component.html"
+    selector: 'app-icons-sample',
+    styleUrls: ['./icons-sample.component.scss'],
+    templateUrl: './icons-sample.component.html'
 })
 
 export class IconsSampleComponent {
@@ -11,31 +11,31 @@ export class IconsSampleComponent {
     public dropTileId: number;
     public icons = [
         {
-            id: 0, url: "assets/images/drag-drop/profile.png"
+            id: 0, url: 'assets/images/drag-drop/profile.png'
         },
         {
-            id: 1, url: "assets/images/drag-drop/calendar.png"
+            id: 1, url: 'assets/images/drag-drop/calendar.png'
         },
         {
-            id: 2, url: "assets/images/drag-drop/mail.png"
+            id: 2, url: 'assets/images/drag-drop/mail.png'
         },
         {
-            id: 3, url: "assets/images/drag-drop/photos.png"
+            id: 3, url: 'assets/images/drag-drop/photos.png'
         },
         {
-            id: 4, url: "assets/images/drag-drop/videos.png"
+            id: 4, url: 'assets/images/drag-drop/videos.png'
         },
         {
-            id: 5, url: "assets/images/drag-drop/cloud.png"
+            id: 5, url: 'assets/images/drag-drop/cloud.png'
         },
         {
-            id: 6, url: "assets/images/drag-drop/map.png"
+            id: 6, url: 'assets/images/drag-drop/map.png'
         },
         {
-            id: 7, url: "assets/images/drag-drop/contacts.png"
+            id: 7, url: 'assets/images/drag-drop/contacts.png'
         },
         {
-            id: 8, url: "assets/images/drag-drop/chat.png"
+            id: 8, url: 'assets/images/drag-drop/chat.png'
         }
     ];
 
@@ -49,12 +49,8 @@ export class IconsSampleComponent {
         if (this.dragIconId === this.dropTileId) {
             return;
         }
-        const dragIndex = this.icons.findIndex((iconObj) => {
-            return iconObj.id === this.dragIconId;
-        });
-        const dropIndex = this.icons.findIndex((iconObj) => {
-            return iconObj.id === this.dropTileId;
-        });
+        const dragIndex = this.icons.findIndex((iconObj) => iconObj.id === this.dragIconId);
+        const dropIndex = this.icons.findIndex((iconObj) => iconObj.id === this.dropTileId);
         this.swapIcons(dragIndex, dropIndex);
     }
 
@@ -63,11 +59,11 @@ export class IconsSampleComponent {
     }
 
     public dragEndHandler(dragRef: HTMLElement) {
-        dragRef.style.visibility = "visible";
+        dragRef.style.visibility = 'visible';
     }
 
     public ghostCreateHandler(dragRef: HTMLElement) {
-        dragRef.style.visibility = "hidden";
+        dragRef.style.visibility = 'hidden';
     }
 
     private swapIcons(dragIndex: number, dropIndex: number) {

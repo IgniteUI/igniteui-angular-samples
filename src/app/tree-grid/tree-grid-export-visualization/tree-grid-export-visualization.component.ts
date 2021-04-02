@@ -7,8 +7,8 @@ import { FOODS_DATA } from '../data/foods';
     styleUrls: ['./tree-grid-export-visualization.component.scss']
 })
 export class TreeGridExportVisualizationComponent {
-    private data = FOODS_DATA();
     public localData = [];
+    private data = FOODS_DATA();
 
     constructor() {
         for (let i = 0; i < 15000; i += 3) {

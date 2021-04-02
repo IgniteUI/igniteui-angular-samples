@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { IgxBooleanFilteringOperand, IgxStringFilteringOperand } from "igniteui-angular";
-import { DATA } from "../../data/nwindData";
+import { Component, OnInit } from '@angular/core';
+import { IgxBooleanFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular';
+import { DATA } from '../../data/nwindData';
 
 @Component({
-    selector: "app-grid-custom-filtering",
-    styleUrls: ["./grid-custom-filtering.component.scss"],
-    templateUrl: "./grid-custom-filtering.component.html"
+    selector: 'app-grid-custom-filtering',
+    styleUrls: ['./grid-custom-filtering.component.scss'],
+    templateUrl: './grid-custom-filtering.component.html'
 })
 export class GridCustomFilteringComponent implements OnInit {
     public data: any[];
@@ -17,7 +17,7 @@ export class GridCustomFilteringComponent implements OnInit {
     }
 
     public formatDate(val: Date) {
-        return new Intl.DateTimeFormat("en-US").format(val);
+        return new Intl.DateTimeFormat('en-US').format(val);
     }
 
     public formatCurrency(val: string) {
@@ -30,7 +30,7 @@ export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
         super();
         const customOperations = [
             {
-                iconName: "contains",
+                iconName: 'contains',
                 isUnary: false,
                 logic: (target: string, searchVal: string, ignoreCase?: boolean) => {
                     ignoreCase = false;
@@ -38,10 +38,10 @@ export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
                     target = IgxStringFilteringOperand.applyIgnoreCase(target, ignoreCase);
                     return target.indexOf(search) !== -1;
                 },
-                name: "Contains (case sensitive)"
+                name: 'Contains (case sensitive)'
             },
             {
-                iconName: "does-not-contain",
+                iconName: 'does-not-contain',
                 isUnary: false,
                 logic: (target: string, searchVal: string, ignoreCase?: boolean) => {
                     ignoreCase = false;
@@ -49,14 +49,14 @@ export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
                     target = IgxStringFilteringOperand.applyIgnoreCase(target, ignoreCase);
                     return target.indexOf(search) === -1;
                 },
-                name: "Does Not Contain (case sensitive)"
+                name: 'Does Not Contain (case sensitive)'
             }
         ];
 
         const emptyOperators = [
-            // "Empty"
+            // 'Empty'
             this.operations[6],
-            // "Not Empty"
+            // 'Not Empty'
             this.operations[7]
         ];
 
@@ -68,11 +68,11 @@ export class BooleanFilteringOperand extends IgxBooleanFilteringOperand {
     private constructor() {
         super();
         this.operations = [
-            // "All"
+            // 'All'
             this.operations[0],
-            // "TRUE"
+            // 'TRUE'
             this.operations[1],
-            // "FALSE"
+            // 'FALSE'
             this.operations[2]
         ];
     }

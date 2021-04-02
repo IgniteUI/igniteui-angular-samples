@@ -1,16 +1,16 @@
-/* tslint:disable:max-line-length */
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+/* eslint-disable max-len */
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
-import { hierarchicalGridRoutesData } from "./hierarchical-grid-routes-data";
+import { HGridColumnResizingSampleComponent } from './hierarchical-grid-column-resizing/hierarchical-grid-resizing.component';
+import { hierarchicalGridRoutesData } from './hierarchical-grid-routes-data';
 
 export const hierarchicalGridDVRoutes: Routes = [
     {
         component: HGridColumnResizingSampleComponent,
-        // tslint:disable-next-line:no-string-literal
-        data: hierarchicalGridRoutesData["hierarchical-grid-resizing"],
-        path: "hierarchical-grid-resizing"
+        // eslint-disable-next-line @typescript-eslint/dot-notation
+        data: hierarchicalGridRoutesData['hierarchical-grid-resizing'],
+        path: 'hierarchical-grid-resizing'
     }
 ];
 

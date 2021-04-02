@@ -1,17 +1,17 @@
-import { Component, ViewChild } from "@angular/core";
-import { DATA } from "../../data/nwindData";
+import { Component, ViewChild } from '@angular/core';
+import { DATA } from '../../data/nwindData';
 
-import { IgxGridComponent, IgxGridRowComponent, Transaction } from "igniteui-angular";
+import { IgxGridComponent, IgxGridRowComponent, Transaction } from 'igniteui-angular';
 
 @Component({
-    selector: "app-grid-row-action-strip",
+    selector: 'app-grid-row-action-strip',
     styleUrls: [`grid-action-strip-sample.scss`],
-    templateUrl: "grid-action-strip-sample.html"
+    templateUrl: 'grid-action-strip-sample.html'
 })
 export class GridActionStripSampleComponent {
-    @ViewChild("gridRowEditTransaction", { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
+    @ViewChild('gridRowEditTransaction', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
 
-    public currentActiveGrid: { id: string, transactions: any[] } = { id: "", transactions: [] };
+    public currentActiveGrid: { id: string; transactions: any[] } = { id: '', transactions: [] };
 
     public data: any[];
     public discardedTransactionsPerRecord: Map<number, Transaction[]> = new Map<number, Transaction[]>();

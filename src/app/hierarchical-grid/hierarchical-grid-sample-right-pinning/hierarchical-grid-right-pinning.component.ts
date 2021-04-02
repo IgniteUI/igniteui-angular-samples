@@ -1,30 +1,30 @@
-import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
     ColumnPinningPosition,
     IgxColumnComponent,
     IgxHierarchicalGridComponent,
     IPinningConfig
-} from "igniteui-angular";
-import { data } from "../../data/athletesData";
-import { athletesData } from "../services/data";
+} from 'igniteui-angular';
+import { data } from '../../data/athletesData';
+import { athletesData } from '../services/data';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [],
-    selector: "hierarchical-grid-sample",
-    styleUrls: ["hierarchical-grid-right-pinning.component.scss"],
-    templateUrl: "hierarchical-grid-right-pinning.component.html"
+    selector: 'app-hierarchical-grid-sample',
+    styleUrls: ['hierarchical-grid-right-pinning.component.scss'],
+    templateUrl: 'hierarchical-grid-right-pinning.component.html'
 })
 
-export class HierarchicalGridRightPinningSampleComponent {
-    @ViewChild("grid1", { static: true })
+export class HierarchicalGridRightPinningSampleComponent implements OnInit{
+    @ViewChild('grid1', { static: true })
     public grid1: IgxHierarchicalGridComponent;
 
     public data: any[];
     public athletesData: any[];
     public columns: any[];
     public pinningConfig: IPinningConfig = { columns: ColumnPinningPosition.End };
-    private _columnsPinned: boolean = true;
+    private _columnsPinned = true;
 
     public ngOnInit(): void {
         this.data = athletesData;
@@ -57,7 +57,7 @@ export class HierarchicalGridRightPinningSampleComponent {
     private generateReadableDate(timestamp: string): Date {
         let dateObj = new Date(timestamp);
         if (isNaN(dateObj.getTime())) {
-            dateObj = new Date(timestamp.split(" ")[0]);
+            dateObj = new Date(timestamp.split(' ')[0]);
         }
         return dateObj;
     }

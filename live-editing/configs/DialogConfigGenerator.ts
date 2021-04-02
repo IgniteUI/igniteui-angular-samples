@@ -48,11 +48,11 @@ export class DialogConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: 'DialogStylingSample',
+            component: 'DialogStylingSampleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxButtonModule', 'IgxDialogModule', 'IgxRippleModule',
-                    'DialogStylingSample', 'IgxIconModule', 'IgxToggleModule'],
-                ngDeclarations: ['DialogStylingSample'],
+                    'DialogStylingSampleComponent', 'IgxIconModule', 'IgxToggleModule'],
+                ngDeclarations: ['DialogStylingSampleComponent'],
                 ngImports: ['IgxButtonModule', 'IgxDialogModule', 'IgxRippleModule', 'IgxIconModule', 'IgxToggleModule']
             }),
             shortenComponentPathBy: "/interactions/"

@@ -1,6 +1,7 @@
-import { Singer } from "./models";
+import { Singer } from './models';
 
 // tslint:disable:object-literal-sort-keys
+/* eslint-disable */
 export const SINGERS: Singer[] = [
     {
         ID: 0,

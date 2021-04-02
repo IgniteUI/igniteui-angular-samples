@@ -1,8 +1,8 @@
-import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
-import { IgxBottomNavModule } from "igniteui-angular";
-import { TabbarViewsModule } from "../views/views.module";
-import { TabbarRoutingModule } from "./tabbar.routing.module";
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { IgxBottomNavModule } from 'igniteui-angular';
+import { TabbarViewsModule } from '../views/views.module';
+import { TabbarRoutingModule } from './tabbar.routing.module';
 
 @NgModule({
     exports: [

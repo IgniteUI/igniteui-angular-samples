@@ -1,13 +1,13 @@
-import { Component, EventEmitter, Input, Output} from "@angular/core";
-import { IgxIconModule } from "igniteui-angular";
+import { Component, EventEmitter, Input, Output} from '@angular/core';
+import { IgxIconModule } from 'igniteui-angular';
 
 interface ICopyData {
     data: any;
 }
 @Component({
-    selector: "contextmenu",
-    styleUrls: ["./contextmenu.component.scss"],
-    templateUrl: "./contextmenu.component.html"
+    selector: 'app-contextmenu',
+    styleUrls: ['./contextmenu.component.scss'],
+    templateUrl: './contextmenu.component.html'
 })
 export class ContextmenuComponent {
 
@@ -24,7 +24,7 @@ export class ContextmenuComponent {
     public selectedCells;
 
     @Output()
-    public onCellValueCopy = new EventEmitter<ICopyData>();
+    public cellValueCopy = new EventEmitter<ICopyData>();
 
     public selectedData: ICopyData;
 
@@ -33,19 +33,19 @@ export class ContextmenuComponent {
     public copySelectedCellData(event) {
         const selectedData = { [this.cell.column.field]: this.cell.value };
         this.copyData(JSON.stringify({ [this.cell.column.field]: this.cell.value }));
-        this.onCellValueCopy.emit({ data: selectedData });
+        this.cellValueCopy.emit({ data: selectedData });
     }
 
     public copyRowData(event) {
         const selectedData = this.cell.row.rowData ;
         this.copyData(JSON.stringify(this.cell.row.rowData));
-        this.onCellValueCopy.emit({ data: selectedData });
+        this.cellValueCopy.emit({ data: selectedData });
     }
 
     public copySelectedCells(event) {
         const selectedData = this.selectedCells.data;
         this.copyData(JSON.stringify(selectedData));
-        this.onCellValueCopy.emit({ data: selectedData });
+        this.cellValueCopy.emit({ data: selectedData });
     }
 
     public hasMultiCellSelection() {
@@ -53,12 +53,12 @@ export class ContextmenuComponent {
     }
 
     private copyData(data) {
-        const tempElement = document.createElement("input");
+        const tempElement = document.createElement('input');
         document.body.appendChild(tempElement);
-        tempElement.setAttribute("id", "temp_id");
-        (document.getElementById("temp_id") as HTMLInputElement).value = data;
+        tempElement.setAttribute('id', 'temp_id');
+        (document.getElementById('temp_id') as HTMLInputElement).value = data;
         tempElement.select();
-        document.execCommand("copy");
+        document.execCommand('copy');
         document.body.removeChild(tempElement);
     }
 }

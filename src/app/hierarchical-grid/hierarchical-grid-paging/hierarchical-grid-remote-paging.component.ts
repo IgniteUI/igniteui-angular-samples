@@ -1,28 +1,28 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild } from "@angular/core";
-import { IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
-import { RemotePagingService } from "./remotePagingService";
+import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { RemotePagingService } from './remotePagingService';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
     providers: [RemotePagingService],
-    selector: "hierarchical-grid-remote-paging",
-    styleUrls: ["./hierarchical-grid-remote-paging.component.scss"],
-    templateUrl: "hierarchical-grid-remote-paging.component.html"
+    selector: 'app-hierarchical-grid-remote-paging',
+    styleUrls: ['./hierarchical-grid-remote-paging.component.scss'],
+    templateUrl: 'hierarchical-grid-remote-paging.component.html'
 })
 
 export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, OnDestroy {
+    @ViewChild('customPager', { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
+    @ViewChild('layout1') public layout1: IgxRowIslandComponent;
+    @ViewChild('hierarchicalGrid', { static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;
+
     public page = 0;
     public lastPage = false;
     public firstPage = true;
-    public totalPages: number = 1;
+    public totalPages = 1;
     public totalCount = 0;
-    public title = "gridPaging";
+    public title = 'gridPaging';
     public selectOptions = [5, 10, 25, 50];
     public data: BehaviorSubject<any> = new BehaviorSubject([]);
-
-    @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
-    @ViewChild("layout1") public layout1: IgxRowIslandComponent;
-    @ViewChild("hierarchicalGrid", { static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;
 
     private _perPage = 10;
     private _dataLengthSubscriber;
@@ -40,7 +40,7 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
 
     public ngOnInit(): void {
         this._dataLengthSubscriber = this.remoteService.getDataLength(
-            { parentID: null, rootLevel: true, key: "Customers" }).subscribe((length) => {
+            { parentID: null, rootLevel: true, key: 'Customers' }).subscribe((length) => {
                 this.totalCount = length;
                 this.totalPages = Math.ceil(length / this.perPage);
             });
@@ -55,7 +55,7 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
     public ngAfterViewInit() {
         this.hierarchicalGrid.isLoading = true;
         this.remoteService.getData(
-            { parentID: null, rootLevel: true, key: "Customers" }, 0, this.perPage).subscribe((data) => {
+            { parentID: null, rootLevel: true, key: 'Customers' }, 0, this.perPage).subscribe((data) => {
                 this.hierarchicalGrid.isLoading = false;
                 this.data.next(data);
             },
@@ -68,7 +68,7 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
     }
 
     public dateFormatter(val: string) {
-        return new Intl.DateTimeFormat("en-US").format(new Date(val));
+        return new Intl.DateTimeFormat('en-US').format(new Date(val));
     }
 
     public gridCreated(event: IGridCreatedEventArgs, _foreignKey: string) {
@@ -98,7 +98,7 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
         const skip = this.page * this.perPage;
         const top = this.perPage;
         this.remoteService.getData(
-            { parentID: null, rootLevel: true, key: "Customers" }, skip, top).subscribe((data) => {
+            { parentID: null, rootLevel: true, key: 'Customers' }, skip, top).subscribe((data) => {
                 this.data.next(data);
                 this.hierarchicalGrid.cdr.detectChanges();
             },
