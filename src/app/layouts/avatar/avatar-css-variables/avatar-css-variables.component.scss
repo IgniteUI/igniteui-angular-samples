@@ -5,8 +5,6 @@
 :host {
     --teal-light: #64ffda;
     --teal-dark: #004d40;
-    --green-dark: #558B2F;
-    --gray-light: #fafafa;
 
     ::ng-deep {
         @include igx-avatar(
