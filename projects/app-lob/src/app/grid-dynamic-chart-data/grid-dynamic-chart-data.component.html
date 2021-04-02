@@ -105,69 +105,66 @@
 </span>
 <!-- this block can be moved in another component -->
 <igx-dialog #chartSelectionDialog>
-    <!--NOTE: This component has been updated by Infragistics migration: v12.0.0
-Please check your template whether all bindings/event handlers are correct.-->
-<igx-tabs tabAlignment="justify">
+    <igx-tabs tabAlignment="justify">
         <igx-tab-item>
-<igx-tab-header>
-<span igxTabHeaderLabel>Conditional Formatting</span>
-</igx-tab-header>
-<igx-tab-content>
-            <div class="tab-options-wrapper">
-                <div class="tab-option">
-                    <div *ngFor="let condition of formattersNames" class="action">
-                        <div class="btn condition" (click)="analyse(condition)">
+            <igx-tab-header>
+                <span igxTabHeaderLabel>Conditional Formatting</span>
+            </igx-tab-header>
+            <igx-tab-content>
+                <div class="tab-options-wrapper">
+                    <div class="tab-option">
+                        <div *ngFor="let condition of formattersNames" class="action">
+                            <div class="btn condition" (click)="analyse(condition)">
+                                <img style="width: 36px; height: 36px;"
+                                    src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg" />
+                                <span class="name">{{condition.replace('10', '10%')}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear action">
+                        <div class="btn" (click)="clearFormatting()" [ngClass]="{'disableButton': !currentFormatter}">
                             <img style="width: 36px; height: 36px;"
-                                src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg" />
-                            <span class="name">{{condition.replace('10', '10%')}}</span>
+                                src="assets/images/svg/conditions/Clear.svg" />
+                            <span class="name">Clear All</span>
                         </div>
                     </div>
                 </div>
-                <div class="clear action">
-                    <div class="btn" (click)="clearFormatting()" [ngClass]="{'disableButton': !currentFormatter}">
-                        <img style="width: 36px; height: 36px;"
-                             src="assets/images/svg/conditions/Clear.svg" />
-                         <span class="name">Clear All</span>
-                    </div>
-                </div>
-            </div>
-        </igx-tab-content>
-</igx-tab-item>
-
+            </igx-tab-content>
+        </igx-tab-item>
         <igx-tab-item [disabled]="disableCreateChart">
-<igx-tab-header>
-<span igxTabHeaderLabel>Create Chart</span>
-</igx-tab-header>
-<igx-tab-content>
-            <div class="tab-options-wrapper">
-                <div class="tab-option">
-                    <div *ngFor="let chart of availableCharts | slice:0:4" class="action">
-                        <div class="btn chart"
-                            (pointerdown)="createChart(currentChartType, chartHost, chartDialog, _chartDialogOverlaySettings)"
-                            (mouseleave)="chartPreviewDialog.close();"
-                            (mouseenter)="previewChart(chart)"
-                            [ngClass]="{'selected': chart === currentChartType}">
-                            <img style="width: 48px; height: 48px;"
-                                 src="assets/images/svg/charts/{{chart}}.svg" />
-                            <span class="name">{{chart | name}}</span>
+            <igx-tab-header>
+                <span igxTabHeaderLabel>Create Chart</span>
+            </igx-tab-header>
+            <igx-tab-content>
+                <div class="tab-options-wrapper">
+                    <div class="tab-option">
+                        <div *ngFor="let chart of availableCharts | slice:0:4" class="action">
+                            <div class="btn chart"
+                                (pointerdown)="createChart(currentChartType, chartHost, chartDialog, _chartDialogOverlaySettings)"
+                                (mouseleave)="chartPreviewDialog.close();"
+                                (mouseenter)="previewChart(chart)"
+                                [ngClass]="{'selected': chart === currentChartType}">
+                                <img style="width: 48px; height: 48px;"
+                                    src="assets/images/svg/charts/{{chart}}.svg" />
+                                <span class="name">{{chart | name}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="more-action">
+                        <div class="btn chart">
+                            <button class="more-btn" (click)="createChart(currentChartType, chartHost, chartDialog, _chartDialogOverlaySettings)"
+                                    igxButton="icon"
+                                    igxButtonBackground="#EBEBEB"
+                                    igxButtonColor="black"
+                                    style="width: 36px; height: 36px; border-radius: 50px; align-self: center;">
+                                    <igx-icon class="icon" style="pointer-events: none;" family="material">more_horiz</igx-icon>
+                            </button>
+                            <span class="name">More...</span>
                         </div>
                     </div>
                 </div>
-                <div class="more-action">
-                    <div class="btn chart">
-                        <button class="more-btn" (click)="createChart(currentChartType, chartHost, chartDialog, _chartDialogOverlaySettings)"
-                                igxButton="icon"
-                                igxButtonBackground="#EBEBEB"
-                                igxButtonColor="black"
-                                style="width: 36px; height: 36px; border-radius: 50px; align-self: center;">
-                                <igx-icon class="icon" style="pointer-events: none;" family="material">more_horiz</igx-icon>
-                        </button>
-                        <span class="name">More...</span>
-                    </div>
-                </div>
-            </div>
-        </igx-tab-content>
-</igx-tab-item>
+            </igx-tab-content>
+        </igx-tab-item>
     </igx-tabs>
 </igx-dialog>
 

@@ -3,35 +3,34 @@
     <p class="url__path">http://localhost:4200{{path}}</p>
 </div>
 
-<!--NOTE: This component has been updated by Infragistics migration: v12.0.0
-Please check your template whether all bindings/event handlers are correct.-->
 <igx-tabs #tabs1>
     <igx-tab-item
         routerLinkActive
         #rla1="routerLinkActive"
         [selected]="rla1.isActive"
-      >
-<igx-tab-header routerLink="view1">
-<span igxTabHeaderLabel>Tab 1</span>
-</igx-tab-header></igx-tab-item>
-
-      <igx-tab-item
+    >
+        <igx-tab-header routerLink="view1">
+            <span igxTabHeaderLabel>Tab 1</span>
+        </igx-tab-header>
+    </igx-tab-item>
+    <igx-tab-item
         routerLinkActive
         #rla2="routerLinkActive"
         [selected]="rla2.isActive"
-      >
-<igx-tab-header routerLink="view2">
-<span igxTabHeaderLabel>Tab 2</span>
-</igx-tab-header></igx-tab-item>
-
-      <igx-tab-item
+    >
+        <igx-tab-header routerLink="view2">
+            <span igxTabHeaderLabel>Tab 2</span>
+        </igx-tab-header>
+    </igx-tab-item>
+    <igx-tab-item
         routerLinkActive
         #rla3="routerLinkActive"
         [selected]="rla3.isActive"
-      >
-<igx-tab-header routerLink="view3">
-<span igxTabHeaderLabel>Tab 3</span>
-</igx-tab-header></igx-tab-item>
+    >
+        <igx-tab-header routerLink="view3">
+            <span igxTabHeaderLabel>Tab 3</span>
+        </igx-tab-header>
+    </igx-tab-item>
 </igx-tabs>
 
 <router-outlet></router-outlet>
