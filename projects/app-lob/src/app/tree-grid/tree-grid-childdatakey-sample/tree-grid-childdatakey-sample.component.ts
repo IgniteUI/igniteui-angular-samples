@@ -1,14 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import { EMPLOYEE_DATA } from "./data";
+import { Component, OnInit } from '@angular/core';
+import { EMPLOYEE_DATA } from './data';
 
 @Component({
-    selector: "app-tree-grid-childdatakey-sample",
-    styleUrls: ["./tree-grid-childdatakey-sample.component.scss"],
-    templateUrl: "./tree-grid-childdatakey-sample.component.html"
+    selector: 'app-tree-grid-childdatakey-sample',
+    styleUrls: ['./tree-grid-childdatakey-sample.component.scss'],
+    templateUrl: './tree-grid-childdatakey-sample.component.html'
 })
 export class TreeGridChilddatakeySampleComponent implements OnInit {
     public localData: any[];
-    public selectionMode = "multiple";
+    public selectionMode = 'multiple';
     constructor() { }
 
     public ngOnInit() {
@@ -20,7 +20,7 @@ export class TreeGridChilddatakeySampleComponent implements OnInit {
     }
 
     public getPerformance(employee: any): any {
-        employee["Performance"] = this.getPerformanceData(12);
+        employee['Performance'] = this.getPerformanceData(12);
         const hasEmployees = employee.Employees === undefined;
         if (hasEmployees) {
             return employee;
@@ -38,6 +38,7 @@ export class TreeGridChilddatakeySampleComponent implements OnInit {
         const performance: any[] = [];
         for (let w = 0; w < weeks; w++) {
             const value = this.getRandomNumber(0, 100);
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             performance.push({Points: value, Week: w});
         }
         return performance;

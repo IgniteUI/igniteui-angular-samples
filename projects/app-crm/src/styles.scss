@@ -11,6 +11,7 @@ $include: (igx-avatar,
            igx-grid-toolbar);
 
 @include igx-core();
+@include igx-typography();
 @include igx-theme($default-palette, $exclude: map-keys(map-remove($components, $include...),));
 
 @mixin scrollbar-love($scrollbar-color: null) {

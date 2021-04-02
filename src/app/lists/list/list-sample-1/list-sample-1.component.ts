@@ -1,29 +1,29 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: "app-igx-list-demo",
-  styleUrls: ["./list-sample-1.component.scss"],
-  templateUrl: "./list-sample-1.component.html"
+  selector: 'app-igx-list-demo',
+  styleUrls: ['./list-sample-1.component.scss'],
+  templateUrl: './list-sample-1.component.html'
 })
 export class ListSample1Component implements OnInit {
-  @ViewChild("itemInput") public newItem: ElementRef;
+  @ViewChild('itemInput') public newItem: ElementRef;
 
-  public emptyListMsg = "Please add something";
+  public emptyListMsg = 'Please add something';
   public listItems = [
     {
       heading: true,
-      name: "Contacts"
+      name: 'Contacts'
     },
     {
-      name: "Angelina Jolie"
+      name: 'Angelina Jolie'
     }
   ];
   public counter = 0;
 
   public itemOptions = [
     {
-      actions: "onItemDelete",
-      name: "Delete"
+      actions: 'onItemDelete',
+      name: 'Delete'
     }
   ];
 

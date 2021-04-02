@@ -12,18 +12,14 @@ $dark-column-actions-theme: igx-column-actions-theme(
     $title-color: $yellow
 );
 
-// $dark-button-theme: igx-button-theme(
-//     $outlined-background: $yellow,
-//     $outlined-text-color: $bg,
-//     $outlined-hover-background: $gray,
-//     $outlined-hover-text-color: $yellow,
-//     $outlined-focus-background: $yellow,
-//     $flat-text-color: $yellow,
-//     $flat-hover-background: $gray,
-//     $flat-hover-text-color: $yellow,
-//     $flat-focus-background: $yellow,
-//     $disabled-color: $light-gray
-// );
+$dark-button-theme: igx-button-theme(
+    $background: $yellow,
+    $foreground: $bg,
+    $hover-background: $gray,
+    $hover-foreground: $yellow,
+    $focus-background: $yellow,
+    $disabled-foreground: $light-gray
+);
 
 $dark-input-group: igx-input-group-theme(
     $filled-text-color: $yellow,

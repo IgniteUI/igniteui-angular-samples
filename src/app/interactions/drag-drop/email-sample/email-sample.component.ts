@@ -1,33 +1,33 @@
-import { ChangeDetectorRef, Component, Input, Renderer2 } from "@angular/core";
+import { ChangeDetectorRef, Component, Input, Renderer2 } from '@angular/core';
 
 @Component({
-    selector: "app-email-sample",
-    templateUrl: "./email-sample.component.html",
-    styleUrls: ["./email-sample.component.scss"]
+    selector: 'app-email-sample',
+    templateUrl: './email-sample.component.html',
+    styleUrls: ['./email-sample.component.scss']
 })
 
 export class EmailSampleComponent {
 
     @Input()
     public ghostTemplate: any;
-    public hasChecked: boolean = false;
-    public draggedElements: number = 0;
+    public hasChecked = false;
+    public draggedElements = 0;
 
     public folders: any[] = [
-        { icon: "inbox", text: "Inbox", dropChannel: "inbox"},
-        { icon: "star_rate", text: "Starred", dropChannel: "starred"},
-        { icon: "error", text: "Important", dropChannel: "important"},
-        { icon: "send", text: "Sent", dropChannel: "sent"},
-        { icon: "label", text: "Personal", dropChannel: "personal"},
-        { icon: "label", text: "Work", dropChannel: "work"},
-        { icon: "label", text: "Finances", dropChannel: "finances"}
+        { icon: 'inbox', text: 'Inbox', dropChannel: 'inbox'},
+        { icon: 'star_rate', text: 'Starred', dropChannel: 'starred'},
+        { icon: 'error', text: 'Important', dropChannel: 'important'},
+        { icon: 'send', text: 'Sent', dropChannel: 'sent'},
+        { icon: 'label', text: 'Personal', dropChannel: 'personal'},
+        { icon: 'label', text: 'Work', dropChannel: 'work'},
+        { icon: 'label', text: 'Finances', dropChannel: 'finances'}
     ];
 
     public emails: any[] = [
-        { sender: "Ivan Cornejo", title: "We have exciting news", checked: false},
-        { sender: "Amish Shiravadakar", title: "RE: Document Libraries status", checked: false},
-        { sender: "Elsi Hansdottir", title: "SEO Keywords", checked: false},
-        { sender: "Benito Noboa", title: "Last Chance: Win an Amazon Gift Card", checked: false}
+        { sender: 'Ivan Cornejo', title: 'We have exciting news', checked: false},
+        { sender: 'Amish Shiravadakar', title: 'RE: Document Libraries status', checked: false},
+        { sender: 'Elsi Hansdottir', title: 'SEO Keywords', checked: false},
+        { sender: 'Benito Noboa', title: 'Last Chance: Win an Amazon Gift Card', checked: false}
     ];
 
     constructor(
@@ -57,11 +57,11 @@ export class EmailSampleComponent {
     }
 
     public enterDropZone(event: any): void {
-        this.renderer.addClass(event.owner.element.nativeElement, "drag-enter");
+        this.renderer.addClass(event.owner.element.nativeElement, 'drag-enter');
     }
 
     public leaveDropZone(event: any): void {
-        this.renderer.removeClass(event.owner.element.nativeElement, "drag-enter");
+        this.renderer.removeClass(event.owner.element.nativeElement, 'drag-enter');
     }
 
     public onDragStart(event: any): void {
@@ -74,7 +74,7 @@ export class EmailSampleComponent {
     }
 
     private aggressiveToggle(event: any): void {
-        const checkbox = event.owner.element.nativeElement.parentElement.querySelector("igx-checkbox");
+        const checkbox = event.owner.element.nativeElement.parentElement.querySelector('igx-checkbox');
         event.owner.data.checked = true;
         if (!this.nativeCheckboxChecked(checkbox)) {
             checkbox.click();
@@ -82,7 +82,7 @@ export class EmailSampleComponent {
     }
 
     private nativeCheckboxChecked(nativeElement: any): boolean {
-        return nativeElement.classList.contains("igx-checkbox--checked");
+        return nativeElement.classList.contains('igx-checkbox--checked');
     }
 
 }

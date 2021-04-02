@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 export class Record {
     get IndustrySector() {
         return this.industrySector;
@@ -44,9 +45,9 @@ export class Record {
     private date: Date;
 
     constructor() {
-        this.industryGroup = "";
-        this.industrySector = "";
-        this.sectorType = "";
+        this.industryGroup = '';
+        this.industrySector = '';
+        this.sectorType = '';
         this.krd = 0.0;
         this.marketNotion = 0.0;
         this.date = new Date();

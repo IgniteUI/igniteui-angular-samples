@@ -1,4 +1,4 @@
-// tslint:disable:object-literal-sort-keys
+/*eslint-disable*/
 
 export const dataEntriesRoutesData = {
     "autocomplete": { displayName: "Autocomplete", parentName: "Autocomplete" },

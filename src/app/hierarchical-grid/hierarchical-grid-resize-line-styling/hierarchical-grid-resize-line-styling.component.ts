@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "app-hierarchical-grid-resize-line-styling",
-    styleUrls: ["./hierarchical-grid-resize-line-styling.component.scss"],
-    templateUrl: "./hierarchical-grid-resize-line-styling.component.html"
+    selector: 'app-hierarchical-grid-resize-line-styling',
+    styleUrls: ['./hierarchical-grid-resize-line-styling.component.scss'],
+    templateUrl: './hierarchical-grid-resize-line-styling.component.html'
 })
 export class HGridResizeLineStylingComponent {
     public localData;

@@ -25,7 +25,7 @@ $datepicker-theme: igx-calendar-theme(
 );
 
 $input-theme: igx-input-group-theme(
-    $palette: igx-palette,
+    $palette: $color-palette,
     $filled-text-color: $white,
     $focused-text-color: $white,
     $idle-text-color: $white,

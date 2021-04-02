@@ -13,7 +13,7 @@
         z-index: 0;
 
         &.dragged {
-            box-shadow: igx-elevation($elevations, 8);
+            box-shadow: igx-elevation($igx-elevations, 8);
             z-index: 1;
         }
     }

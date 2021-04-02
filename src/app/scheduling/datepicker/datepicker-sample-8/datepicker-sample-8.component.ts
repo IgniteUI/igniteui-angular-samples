@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
-import { CalendarView, IgxDatePickerComponent } from "igniteui-angular";
+import { Component } from '@angular/core';
+import { CalendarView, IgxDatePickerComponent } from 'igniteui-angular';
 
 @Component({
-    selector: "app-datepicker-sample-8",
-    styleUrls: ["./datepicker-sample-8.component.scss"],
-    templateUrl: "./datepicker-sample-8.component.html"
+    selector: 'app-datepicker-sample-8',
+    styleUrls: ['./datepicker-sample-8.component.scss'],
+    templateUrl: './datepicker-sample-8.component.html'
 })
 
 export class DatepickerSample8Component {

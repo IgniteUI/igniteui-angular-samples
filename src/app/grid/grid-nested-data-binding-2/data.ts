@@ -1,3 +1,4 @@
+/*eslint-disable*/
 export const AMINO_DATA = [
     {
         name: 'Alanine',

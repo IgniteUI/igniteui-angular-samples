@@ -1,13 +1,16 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxTextHighlightDirective } from "igniteui-angular";
+/* eslint-disable max-len */
+import { Component, ViewChild } from '@angular/core';
+import { IgxTextHighlightDirective } from 'igniteui-angular';
 
 @Component({
-    selector: "app-text-highlight-style",
-    styleUrls: ["./text-highlight-style.component.scss"],
-    templateUrl: "./text-highlight-style.component.html"
+    selector: 'app-text-highlight-style',
+    styleUrls: ['./text-highlight-style.component.scss'],
+    templateUrl: './text-highlight-style.component.html'
 })
 export class TextHighlightStyleComponent {
-    // tslint:disable max-line-length
+    @ViewChild(IgxTextHighlightDirective, { read: IgxTextHighlightDirective, static: true })
+    public highlight: IgxTextHighlightDirective;
+
     public html = `
     Use the search box to search for a certain string in this text.
     All the results will be highlighted in the same color with the exception of the
@@ -15,22 +18,19 @@ export class TextHighlightStyleComponent {
     You can use the button in the searchbox to specify if the search will be case sensitive.
     You can move the active highlight by either pressing the buttons on the searchbox or by using the Enter or the arrow keys on your keyboard.
     `;
-    // tslint:enable max-line-length
 
-    @ViewChild(IgxTextHighlightDirective, { read: IgxTextHighlightDirective, static: true })
-    public highlight: IgxTextHighlightDirective;
 
-    public searchText: string = "";
-    public matchCount: number = 0;
-    public caseSensitive: boolean = false;
-    public index: number = 0;
+    public searchText = '';
+    public matchCount = 0;
+    public caseSensitive = false;
+    public index = 0;
 
     public searchKeyDown(ev) {
         if (this.searchText) {
-            if (ev.key === "Enter" || ev.key === "ArrowDown" || ev.key === "ArrowRight") {
+            if (ev.key === 'Enter' || ev.key === 'ArrowDown' || ev.key === 'ArrowRight') {
                 ev.preventDefault();
                 this.findNext();
-            } else if (ev.key === "ArrowUp" || ev.key === "ArrowLeft") {
+            } else if (ev.key === 'ArrowUp' || ev.key === 'ArrowLeft') {
                 ev.preventDefault();
                 this.findPrev();
             }
@@ -48,7 +48,7 @@ export class TextHighlightStyleComponent {
     }
 
     public clearSearch() {
-        this.searchText = "";
+        this.searchText = '';
         this.find(0);
     }
 
@@ -73,7 +73,7 @@ export class TextHighlightStyleComponent {
             this.index = this.index > this.matchCount - 1 ? 0 : this.index;
 
             if (this.matchCount) {
-                IgxTextHighlightDirective.setActiveHighlight("group1", {
+                IgxTextHighlightDirective.setActiveHighlight('group1', {
                     index: this.index
                 });
             }

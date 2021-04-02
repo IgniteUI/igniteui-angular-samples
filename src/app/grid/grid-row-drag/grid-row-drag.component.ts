@@ -1,22 +1,24 @@
-import { Component, ViewChildren } from "@angular/core";
-import { moonData, planetData } from "./data";
-import { PlanetComponent as PlanetComponent } from "./planet/planet.component";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { Component, ViewChildren } from '@angular/core';
+import { moonData, planetData } from './data';
+import { PlanetComponent as PlanetComponent } from './planet/planet.component';
 
+// eslint-disable-next-line no-shadow
 enum HoverClassList {
-    ALLOW = "allow-drop",
-    DENY = "deny-drop"
+    ALLOW = 'allow-drop',
+    DENY = 'deny-drop'
 }
 
 @Component({
-    selector: "grid-row-drag-sample",
-    styleUrls: ["./grid-row-drag.component.scss"],
-    templateUrl: "grid-row-drag.component.html"
+    selector: 'app-grid-row-drag-sample',
+    styleUrls: ['./grid-row-drag.component.scss'],
+    templateUrl: 'grid-row-drag.component.html'
 })
 
 export class GridDragSampleComponent {
+    @ViewChildren(PlanetComponent) public planets: PlanetComponent[];
     public moonData: any[];
     public planetData: any[];
-    @ViewChildren(PlanetComponent) public planets: PlanetComponent[];
 
     constructor() {
         this.moonData = moonData;

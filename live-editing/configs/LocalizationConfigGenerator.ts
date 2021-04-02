@@ -1,11 +1,12 @@
-import {IgxGridModule,
-IgxIconModule,
-IgxInputGroupModule,
-IgxTimePickerModule} from 'igniteui-angular';
+import {
+    IgxGridModule,
+    IgxIconModule,
+    IgxInputGroupModule,
+    IgxTimePickerModule,
+    IgxSelectModule
+} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class LocalizationConfigGenerator implements IConfigGenerator {
-
-
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
@@ -41,7 +42,19 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxInputGroupModule', 'LocalizationSample3Component', 'IgxGridModule', 'IgxIconModule'],
                 ngDeclarations: ['LocalizationSample3Component'],
-                ngImports: ['IgxInputGroupModule', 'IgxGridModule', 'IgxGridModule']
+                ngImports: ['IgxInputGroupModule', 'IgxGridModule', 'IgxIconModule']
+            }),
+            shortenComponentPathBy: "/localization-samples/"
+        }));
+
+        // localization all resources
+        configs.push(new Config({
+            component: 'LocalizationAllResourcesComponent',
+            additionalFiles: ["src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxInputGroupModule', 'LocalizationAllResourcesComponent', 'IgxGridModule', 'IgxIconModule', 'IgxSelectModule'],
+                ngDeclarations: ['LocalizationAllResourcesComponent'],
+                ngImports: ['IgxInputGroupModule', 'IgxGridModule', 'IgxIconModule', 'IgxSelectModule']
             }),
             shortenComponentPathBy: "/localization-samples/"
         }));

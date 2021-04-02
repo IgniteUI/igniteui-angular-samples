@@ -1,36 +1,36 @@
 
-import { Component, ElementRef, ViewChild } from "@angular/core";
-import { IgxSelectComponent } from "igniteui-angular";
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { IgxSelectComponent } from 'igniteui-angular';
 
 @Component({
-    selector: "select-sample-2",
-    styleUrls: ["select-sample-2.component.scss"],
-    templateUrl: "select-sample-2.component.html"
+    selector: 'app-select-sample-2',
+    styleUrls: ['select-sample-2.component.scss'],
+    templateUrl: 'select-sample-2.component.html'
 })
 export class SelectSample2Component {
     @ViewChild(IgxSelectComponent, { static: true })
     public select: IgxSelectComponent;
 
     public greengrocery: {
-        label: string,
-        items: { type: string, origin: string }[]
+        label: string;
+        items: { type: string; origin: string }[];
     }[] = [
         {
-            label: "Fruits",
+            label: 'Fruits',
             items:
             [
-                { type: "Apple", origin: "local" },
-                { type: "Orange", origin: "import" },
-                { type: "Banana", origin: "import"}
+                { type: 'Apple', origin: 'local' },
+                { type: 'Orange', origin: 'import' },
+                { type: 'Banana', origin: 'import'}
             ]
         },
         {
-            label: "Vegetables",
+            label: 'Vegetables',
             items:
             [
-                { type: "Cucumber", origin: "local" },
-                { type: "Potato", origin: "import" },
-                { type: "Pepper", origin: "local" }
+                { type: 'Cucumber', origin: 'local' },
+                { type: 'Potato', origin: 'import' },
+                { type: 'Pepper', origin: 'local' }
             ]
         }
     ];

@@ -1,21 +1,21 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxButtonGroupComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent
-} from "igniteui-angular";
-import { generateEmployeeDetailedFlatData } from "../data/employees-flat-detailed";
+} from 'igniteui-angular';
+import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 class CustomNumberSummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = new IgxSummaryOperand().operate(data);
         result.push({
-            key: "Min",
-            label: "Min",
+            key: 'Min',
+            label: 'Min',
             summaryResult: IgxNumberSummaryOperand.min(data)
         });
         result.push({
-            key: "max",
-            label: "Max",
+            key: 'max',
+            label: 'Max',
             summaryResult: IgxNumberSummaryOperand.max(data)
         });
         return result;
@@ -23,17 +23,17 @@ class CustomNumberSummary {
 }
 
 @Component({
-    selector: "app-tree-grid-displaydensity-sample",
-    styleUrls: ["./tree-grid-displaydensity-sample.component.scss"],
-    templateUrl: "./tree-grid-displaydensity-sample.component.html"
+    selector: 'app-tree-grid-displaydensity-sample',
+    styleUrls: ['./tree-grid-displaydensity-sample.component.scss'],
+    templateUrl: './tree-grid-displaydensity-sample.component.html'
 })
 export class TreeGridDisplaydensitySampleComponent implements OnInit {
 
-    @ViewChild("treeGrid", { read: IgxTreeGridComponent, static: true })
+    @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true })
     public treeGrid: IgxTreeGridComponent;
     @ViewChild(IgxButtonGroupComponent, { static: true }) public buttonGroup: IgxButtonGroupComponent;
     public data;
-    public density = "compact";
+    public density = 'compact';
     public displayDensities;
     public numberSummaries = CustomNumberSummary;
 
@@ -41,18 +41,18 @@ export class TreeGridDisplaydensitySampleComponent implements OnInit {
         this.data = generateEmployeeDetailedFlatData();
         this.displayDensities = [
             {
-                label: "compact",
-                selected: this.density === "compact",
+                label: 'compact',
+                selected: this.density === 'compact',
                 togglable: true
             },
             {
-                label: "cosy",
-                selected: this.density === "cosy",
+                label: 'cosy',
+                selected: this.density === 'cosy',
                 togglable: true
             },
             {
-                label: "comfortable",
-                selected: this.density === "comfortable",
+                label: 'comfortable',
+                selected: this.density === 'comfortable',
                 togglable: true
             }
         ];

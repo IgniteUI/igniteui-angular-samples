@@ -38,6 +38,8 @@ import * as ThemingRouting from "../src/app/theming/theming-routing.module";
 import { ThemingModule } from "../src/app/theming/theming.module";
 import * as TreeGridRouting from "../src/app/tree-grid/tree-grid-routing.module";
 import { TreeGridModule } from "../src/app/tree-grid/tree-grid.module";
+import * as GridFinJSDockManagerRoutingModule from "../projects/app-lob/src/app/grid-finjs-dock-manager/grid-finjs-dock-manager-routing.module";
+import { GridFinJSDockManagerModule } from "../projects/app-lob/src/app/grid-finjs-dock-manager/grid-finjs-dock-manager.module";
 
 export const MODULE_ROUTES = [
     {
@@ -110,12 +112,12 @@ export const MODULE_ROUTES = [
 export const DV_MODULE_ROUTES = [
     {
         module: GridFinjsModule,
-        path: "finjs-sample",
+        path: "grid-finjs",
         routes: GridFinjsRouting.gridfinjsRoutes
     },
     {
         module: TreeGridFinjsModule,
-        path: "treegrid-finjs-sample",
+        path: "treegrid-finjs",
         routes: TreeGridFinjsRouting.treegridfinjsRoutes
     },
     {
@@ -132,5 +134,10 @@ export const DV_MODULE_ROUTES = [
         module: HierarchicalGridDVModule,
         path: "hierarchical-grid",
         routes: HieararchicalGridsDVRouting.hierarchicalGridDVRoutes
+    },
+    {
+        module: GridFinJSDockManagerModule,
+        path: "grid-finjs-dock-manager",
+        routes: GridFinJSDockManagerRoutingModule.gridFinJsDockManagerGridRoutes
     }
 ];
