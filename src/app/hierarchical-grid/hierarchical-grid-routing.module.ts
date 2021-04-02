@@ -87,8 +87,8 @@ import { HGridAboutComponent } from './hierarchical-grid-save-state/about.compon
 import { HierarchicalGridExternalOutletComponent } from './hierarchical-grid-external-outlet/hierarchical-grid-external-outlet-sample.component';
 import { HGridEditingLifecycleComponent } from './hgrid-editing-lifecycle-sample/hgrid-editing-lifecycle.component';
 import { HierarchicalGridCellSelectionComponent } from './hierarchical-grid-cellSelection-sample/hierarchical-grid-cellSelection.component';
-import { HGridFormattedFilteringStrategyComponent } from "./hierarchical-grid-formatted-filtering-strategy/hierarchical-grid-formatted-filtering-strategy.component";
-import { HGridSummaryFormatterComponent } from "./hierarchical-grid-summary-formatter/hierarchical-grid-summary-formatter.component";
+import { HGridFormattedFilteringStrategyComponent } from './hierarchical-grid-formatted-filtering-strategy/hierarchical-grid-formatted-filtering-strategy.component';
+import { HGridSummaryFormatterComponent } from './hierarchical-grid-summary-formatter/hierarchical-grid-summary-formatter.component';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -489,13 +489,13 @@ export const hierarchicalGridRoutes: Routes = [
     },
     {
         component: HGridFormattedFilteringStrategyComponent,
-        data: hierarchicalGridRoutesData["hGrid-formatted-filtering-strategy"],
-        path: "hGrid-formatted-filtering-strategy"
+        data: hierarchicalGridRoutesData['hGrid-formatted-filtering-strategy'],
+        path: 'hGrid-formatted-filtering-strategy'
     },
     {
         component: HGridSummaryFormatterComponent,
-        data: hierarchicalGridRoutesData["hGrid-summary-formatter"],
-        path: "hGrid-summary-formatter"
+        data: hierarchicalGridRoutesData['hGrid-summary-formatter'],
+        path: 'hGrid-summary-formatter'
     }
 ];
 
