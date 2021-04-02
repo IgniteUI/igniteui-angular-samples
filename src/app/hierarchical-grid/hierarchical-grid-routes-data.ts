@@ -71,5 +71,6 @@ export const hierarchicalGridRoutesData = {
     'hGrid-state-about': { displayName: 'HGrid About', parentName: 'Hierarchical Grid' },
     'hGrid-editing-lifecycle': { displayName: 'Hierarchical Grid Editing lifecycle', parentName: 'Hierarchical Grid' },
     'hGrid-cell-selection': {displayName: 'HGrid Cell Selection', parentName: 'Hierarchical Grid'},
-    'hGrid-formatted-filtering-strategy': { displayName: 'HGrid Formatted Filtering Strategy', parentName: 'Hierarchical Grid' }
+    'hGrid-formatted-filtering-strategy': { displayName: 'HGrid Formatted Filtering Strategy', parentName: 'Hierarchical Grid' },
+    'hGrid-summary-formatter': { displayName: 'HGrid Summary Formatter', parentName: 'Hierarchical Grid' }
 };
