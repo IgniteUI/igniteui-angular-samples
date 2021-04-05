@@ -105,7 +105,7 @@
 </span>
 <!-- this block can be moved in another component -->
 <igx-dialog #chartSelectionDialog>
-    <igx-tabs tabAlignment="justify">
+    <igx-tabs tabAlignment="justify" class="tabs-container">
         <igx-tab-item>
             <igx-tab-header>
                 <span igxTabHeaderLabel>Conditional Formatting</span>
@@ -170,7 +170,7 @@
 
 <igx-dialog #chartPreviewDialog>
     <div style="height: 300px;">
-        <div style="margin: 1rem;">
+        <div>
             <h5 igxCardHeaderTitle style="justify-self: center;">Preview Chart</h5>
         </div>
         <ng-template #chartPreview chartHost></ng-template>
