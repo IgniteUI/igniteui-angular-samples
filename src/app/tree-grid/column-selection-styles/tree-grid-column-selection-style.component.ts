@@ -30,9 +30,6 @@ export class TreeGridColumnSelectionStylesComponent implements OnInit, AfterView
     public ngAfterViewInit() {
         this.tGrid.selectColumns(['ID', 'UnitPrice']);
         this.cd.detectChanges();
-        // setTimeout(() => {
-        //     this.tGrid.selectColumns(['ID', 'UnitPrice']);
-        // });
     }
 
     public formatDate(val: Date) {
