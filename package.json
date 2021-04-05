@@ -104,6 +104,7 @@
     "eslint-plugin-jsdoc": "30.7.6",
     "eslint-plugin-prefer-arrow": "1.2.2",
     "event-stream": "^4.0.1",
+    "fibers": "^5.0.0",
     "fs-extra": "^8.1.0",
     "gulp": "^4.0.2",
     "igniteui-live-editing": "^1.0.3",
