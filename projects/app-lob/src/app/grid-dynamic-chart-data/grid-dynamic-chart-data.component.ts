@@ -239,7 +239,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     }
 
     public previewChart(chart: CHART_TYPE) {
-        this._chartPreviewDialogOverlaySettings.target = this.tabElement.nativeElement;
+        this._chartPreviewDialogOverlaySettings.target = this.tabs.headerContainer.nativeElement;
         this.chartPreviewDialog.toggleRef.element.style.width = (this.chartSelectionDialog.toggleRef as any).elementRef.nativeElement.clientWidth + 'px';
         this.createChart(chart, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }
