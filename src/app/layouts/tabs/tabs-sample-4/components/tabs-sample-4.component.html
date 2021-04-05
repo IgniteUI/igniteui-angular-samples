@@ -5,28 +5,32 @@
 
 <igx-tabs #tabs1>
     <igx-tab-item
-        label="Tab 1"
-        routerLink="view1"
         routerLinkActive
         #rla1="routerLinkActive"
-        [isSelected]="rla1.isActive"
-      ></igx-tab-item>
-
-      <igx-tab-item
-        label="Tab 2"
-        routerLink="view2"
+        [selected]="rla1.isActive"
+    >
+        <igx-tab-header routerLink="view1">
+            <span igxTabHeaderLabel>Tab 1</span>
+        </igx-tab-header>
+    </igx-tab-item>
+    <igx-tab-item
         routerLinkActive
         #rla2="routerLinkActive"
-        [isSelected]="rla2.isActive"
-      ></igx-tab-item>
-
-      <igx-tab-item
-        label="Tab 3"
-        routerLink="view3"
+        [selected]="rla2.isActive"
+    >
+        <igx-tab-header routerLink="view2">
+            <span igxTabHeaderLabel>Tab 2</span>
+        </igx-tab-header>
+    </igx-tab-item>
+    <igx-tab-item
         routerLinkActive
         #rla3="routerLinkActive"
-        [isSelected]="rla3.isActive"
-      ></igx-tab-item>
+        [selected]="rla3.isActive"
+    >
+        <igx-tab-header routerLink="view3">
+            <span igxTabHeaderLabel>Tab 3</span>
+        </igx-tab-header>
+    </igx-tab-item>
 </igx-tabs>
 
 <router-outlet></router-outlet>

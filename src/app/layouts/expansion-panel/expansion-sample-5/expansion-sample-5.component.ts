@@ -1,17 +1,17 @@
-import { useAnimation } from "@angular/animations";
-import { Component, ViewChild } from "@angular/core";
+import { useAnimation } from '@angular/animations';
+import { Component, ViewChild } from '@angular/core';
 
 import {
     IgxExpansionPanelComponent,
     slideInLeft,
     slideOutRight
-} from "igniteui-angular";
+} from 'igniteui-angular';
 
 @Component({
     // tslint:disable-next-line:component-selector
-    selector: "app-expansion-sample-5",
-    styleUrls: ["./expansion-sample-5.component.scss"],
-    templateUrl: "./expansion-sample-5.component.html"
+    selector: 'app-expansion-sample-5',
+    styleUrls: ['./expansion-sample-5.component.scss'],
+    templateUrl: './expansion-sample-5.component.html'
 })
 export class ExpansionPanelSample5Component {
 
@@ -21,22 +21,22 @@ export class ExpansionPanelSample5Component {
     public animationSettingsCustom = {
         closeAnimation: useAnimation(slideOutRight, {
                 params: {
-                    duration: "100ms",
-                    toPosition: "translateX(25px)"
+                    duration: '100ms',
+                    toPosition: 'translateX(25px)'
             }
         }),
         openAnimation: useAnimation(slideInLeft, {
                 params: {
-                    duration: "500ms",
-                    fromPosition: "translateX(-15px)",
+                    duration: '500ms',
+                    fromPosition: 'translateX(-15px)',
                     startOpacity: 0.1
                 }
             })
     };
 
     public user = {
-        email: "",
-        fullName: "",
+        email: '',
+        fullName: '',
         phone: undefined
     };
 

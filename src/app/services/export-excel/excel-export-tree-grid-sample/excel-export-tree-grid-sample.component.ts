@@ -1,19 +1,19 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { IgxExcelExporterOptions,
          IgxExcelExporterService,
-         IgxTreeGridComponent } from "igniteui-angular";
+         IgxTreeGridComponent } from 'igniteui-angular';
 
-import { FOODS_DATA } from "../../../tree-grid/data/foods";
+import { FOODS_DATA } from '../../../tree-grid/data/foods';
 
 @Component({
-  selector: "app-excel-export-tree-grid-sample",
-  styleUrls: ["./excel-export-tree-grid-sample.component.scss"],
-  templateUrl: "./excel-export-tree-grid-sample.component.html"
+  selector: 'app-excel-export-tree-grid-sample',
+  styleUrls: ['./excel-export-tree-grid-sample.component.scss'],
+  templateUrl: './excel-export-tree-grid-sample.component.html'
 })
 export class TreeGridExcelExportSample1Component implements OnInit {
 
-  @ViewChild("igxTreeGrid1", { static: true })
+  @ViewChild('igxTreeGrid1', { static: true })
   public igxTreeGrid1: IgxTreeGridComponent;
 
   public data: any[];
@@ -30,7 +30,7 @@ export class TreeGridExcelExportSample1Component implements OnInit {
     The following code demonstrates how to attach event handlers to exporter specific events
     and also how to customize the column export process.
     this.excelExportService.columnExporting.subscribe((args: IColumnExportingEventArgs) => {
-      if (args.header == "Age" && args.columnIndex == 1) {
+      if (args.header == 'Age' && args.columnIndex == 1) {
         args.cancel = true;
       }
     });
@@ -40,7 +40,7 @@ export class TreeGridExcelExportSample1Component implements OnInit {
     });
     */
     this.excelExportService.export(this.igxTreeGrid1,
-        new IgxExcelExporterOptions("ExportFileFromTreeGrid"));
+        new IgxExcelExporterOptions('ExportFileFromTreeGrid'));
   }
 
 }

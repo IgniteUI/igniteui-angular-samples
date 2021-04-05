@@ -1,5 +1,5 @@
 export const DATA = [
-    // tslint:disable:max-line-length
+    /*eslint-disable*/
     {
         ID: "ALFKI",
         CompanyName: "Alfreds Futterkiste",

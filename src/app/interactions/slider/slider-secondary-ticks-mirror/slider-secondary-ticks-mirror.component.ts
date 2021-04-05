@@ -1,10 +1,10 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxSliderComponent, TicksOrientation} from "igniteui-angular";
+import { Component, ViewChild } from '@angular/core';
+import { IgxSliderComponent, TicksOrientation} from 'igniteui-angular';
 
 @Component({
-    selector: "app-slider-bottom-ticks",
-    styleUrls: ["./slider-secondary-ticks-mirror.component.scss"],
-    templateUrl: "./slider-secondary-ticks-mirror.component.html"
+    selector: 'app-slider-bottom-ticks',
+    styleUrls: ['./slider-secondary-ticks-mirror.component.scss'],
+    templateUrl: './slider-secondary-ticks-mirror.component.html'
 })
 export class SliderSecondaryTicksMirrorComponent {
     @ViewChild(IgxSliderComponent, { static: true })

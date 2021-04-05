@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/quotes */
 import {
     AfterViewInit,
     ChangeDetectorRef,
@@ -32,6 +34,7 @@ interface IBlockConfig {
     collection: IColumnConfig[][];
 }
 
+// eslint-disable-next-line no-shadow
 enum DialogType {
     Template = 0,
     JSON = 1
@@ -406,15 +409,13 @@ export class GridMultiRowLayoutConfigurationComponent {
         const fullCollection = [];
         this.blocks.forEach((block) => {
             const flatCollection = this.flattenCollection(block);
-            const mappedCollection = flatCollection.map((row) => {
-                return {
+            const mappedCollection = flatCollection.map((row) => ({
                     key: row.key,
                     rowStart: row.rowStart,
                     rowEnd: row.rowStart + row.rowSpan,
                     colStart: row.colStart,
                     colEnd: row.colStart + row.colSpan
-                };
-            });
+                }));
 
             const fullBlock = {
                 layout: block.key,
@@ -1047,9 +1048,7 @@ export class GridMultiRowLayoutConfigurationComponent {
     public blocksOrderChanged(event) {
         const newBlocksList = [];
         event.chipsArray.forEach((chip) => {
-            const foundBlock = this.blocks.find((block) => {
-                return block.key === chip.id;
-            });
+            const foundBlock = this.blocks.find((block) => block.key === chip.id);
             if (foundBlock) {
                 newBlocksList.push(foundBlock);
             }

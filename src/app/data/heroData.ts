@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const getHeroClassData = () => {
     const generatedData = [{
         name: "Fighter",

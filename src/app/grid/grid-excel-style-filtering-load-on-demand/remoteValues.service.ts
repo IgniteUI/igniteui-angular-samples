@@ -1,6 +1,6 @@
-import { Injectable } from "@angular/core";
-import { FilteringStrategy, IFilteringExpressionsTree, IgxColumnComponent } from "igniteui-angular";
-import { SAMPLE_DATA } from "./employees";
+import { Injectable } from '@angular/core';
+import { FilteringStrategy, IFilteringExpressionsTree, IgxColumnComponent } from 'igniteui-angular';
+import { SAMPLE_DATA } from './employees';
 
 @Injectable()
 export class RemoteValuesService {

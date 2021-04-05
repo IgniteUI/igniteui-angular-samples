@@ -34,8 +34,8 @@
 }
 
 .chart-types-container {
-    overflow-y: auto; 
-    height: 100%; 
+    overflow-y: auto;
+    height: 100%;
     width: 100%;
     padding-left: 15px;
 }
@@ -46,6 +46,7 @@
     width: 100%;
     height: 90%;
     display: inline-flex;
+    position: absolute;
 
     .chart-area {
         margin-top: 1rem;
@@ -70,7 +71,7 @@ $custom-badge-theme: igx-badge-theme(
             &{
                 @include igx-badge($custom-badge-theme);
             }
-    
+
             position: absolute;
             bottom: 0;
             left: 18px;
@@ -79,18 +80,18 @@ $custom-badge-theme: igx-badge-theme(
 
     .wrapper {
         padding: 3px;
-    
+
         .types-section {
-    
+
             display: flex;
             flex-wrap: wrap;
-    
+
             button {
                 margin-right: 4px;
                 margin-top: 4px;
             }
         }
-    
+
         .igx-divider {
             margin-top: 5px !important;
             background: black !important;
@@ -105,10 +106,10 @@ $custom-badge-theme: igx-badge-theme(
 
     .analytics-btn {
         @include igx-button(igx-button-theme($palette: $fluent-excel-palette,
-                $icon-color: #fff,
-                $icon-background: #335e3b,
-                $icon-hover-background: #459a55,
-                $icon-border-radius: 0));
+                $foreground: #fff,
+                $background: #335e3b,
+                $hover-background: #459a55,
+                $border-radius: 0));
         z-index: 9;
         position: absolute;
     }
@@ -153,6 +154,7 @@ $font-family: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
     flex-flow: column;
     max-height: 110px;
     max-width: 310px;
+    margin: -0.8rem -1.5rem -0.8rem -1.5rem;
     .header{
         font-size: 0.7rem;
         display: flex;

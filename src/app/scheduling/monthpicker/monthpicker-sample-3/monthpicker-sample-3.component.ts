@@ -1,16 +1,16 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-    selector: "app-monthpicker-sample-3",
-    styleUrls: ["./monthpicker-sample-3.component.scss"],
-    templateUrl: "./monthpicker-sample-3.component.html"
+    selector: 'app-monthpicker-sample-3',
+    styleUrls: ['./monthpicker-sample-3.component.scss'],
+    templateUrl: './monthpicker-sample-3.component.html'
 })
 export class MonthpickerSample3Component {
     public formatOptions = {
-        month: "long"
+        month: 'long'
     };
 
     public date = new Date();
-    public locales = ["en", "de", "fr", "ar", "zh"];
-    public locale = "en";
+    public locales = ['en', 'de', 'fr', 'ar', 'zh'];
+    public locale = 'en';
 }

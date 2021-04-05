@@ -1,19 +1,19 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { FinJSDemoComponent } from "./main.component";
-import { gridfinjsRoutesData } from "./grid-finjs-routes-data";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { FinJSDemoComponent } from './main.component';
+import { gridfinjsRoutesData } from './grid-finjs-routes-data';
 import { GridFinJSComponent } from './grid-finjs.component';
 
 export const gridfinjsRoutes: Routes = [
     {
         component: FinJSDemoComponent,
-        data: gridfinjsRoutesData["empty-path"],
-        path: ""
+        data: gridfinjsRoutesData['empty-path'],
+        path: ''
     },
     {
         component: GridFinJSComponent,
-        data: gridfinjsRoutesData["grid-finjs-partial"],
-        path: "grid-finjs-partial"
+        data: gridfinjsRoutesData['grid-finjs-partial'],
+        path: 'grid-finjs-partial'
     }
 ];
 

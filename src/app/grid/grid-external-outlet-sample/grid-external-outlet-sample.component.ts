@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { DATA } from "../../data/nwindData";
+import { Component, OnInit } from '@angular/core';
+import { DATA } from '../../data/nwindData';
 
 @Component({
-    selector: "grid-external-outlet",
-    styleUrls: ["./grid-external-outlet-sample.component.scss"],
-    templateUrl: "grid-external-outlet-sample.component.html"
+    selector: 'app-grid-external-outlet',
+    styleUrls: ['./grid-external-outlet-sample.component.scss'],
+    templateUrl: 'grid-external-outlet-sample.component.html'
 })
 
 export class GridExternalOutletComponent implements OnInit {

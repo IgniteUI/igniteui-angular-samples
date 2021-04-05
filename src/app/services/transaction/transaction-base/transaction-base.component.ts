@@ -1,11 +1,11 @@
-import { Component } from "@angular/core";
-import { IgxTransactionService, State, Transaction, TransactionType } from "igniteui-angular";
-import { WISHLIST, WishlistItem } from "../data";
+import { Component } from '@angular/core';
+import { IgxTransactionService, State, Transaction, TransactionType } from 'igniteui-angular';
+import { WISHLIST, WishlistItem } from '../data';
 
 @Component({
-    selector: "transaction-base",
-    styleUrls: ["./transaction-base.component.scss"],
-    templateUrl: "transaction-base.component.html"
+    selector: 'app-transaction-base',
+    styleUrls: ['./transaction-base.component.scss'],
+    templateUrl: 'transaction-base.component.html'
 })
 export class TransactionBaseComponent {
     public wishlist: WishlistItem[];
@@ -40,7 +40,7 @@ export class TransactionBaseComponent {
      * Create an `UPDATE` transaction.
      */
     public onEdit(): void {
-        const newPrice = "$999";
+        const newPrice = '$999';
         // there can be multiple `UPDATE` transactions for the same item `id`
         // the `newValue` property should hold only the changed properties
         const editTransaction: Transaction = {
@@ -57,7 +57,7 @@ export class TransactionBaseComponent {
      */
     public onAdd(): void {
         // it must have a unique 'id' property
-        const item: WishlistItem = { id: 4, name: "Yacht", price: "A lot!" };
+        const item: WishlistItem = { id: 4, name: 'Yacht', price: 'A lot!' };
 
         // in an `ADD` transaction you do not need to provide a `recordRef` argument,
         // since there is nothing to refer to yet

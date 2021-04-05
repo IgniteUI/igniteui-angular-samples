@@ -16,8 +16,8 @@ $my-dialog-theme: igx-dialog-theme(
 );
 
 $dark-button: igx-button-theme(
-    $raised-background: #ECAA53,
-    $raised-text-color: #011627,
+    $background: #ECAA53,
+    $foreground: #011627,
 );
 
 :host {

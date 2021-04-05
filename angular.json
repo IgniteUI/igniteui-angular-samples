@@ -125,17 +125,14 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "builder": "@angular-eslint/builder:lint",
+            "options": {
+              "lintFilePatterns": [
+                "src/**/*.ts",
+                "src/**/*.html"
+              ]
+            }
           }
-        }
       }
     },
     "app-lob": {
@@ -245,15 +242,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/app-lob/tsconfig.app.json",
-              "projects/app-lob/tsconfig.spec.json",
-              "projects/app-lob/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/app-lob/**/*.ts",
+              "projects/app-lob/**/*.html"
             ]
           }
         },
@@ -378,15 +371,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/app-crm/tsconfig.app.json",
-              "projects/app-crm/tsconfig.spec.json",
-              "projects/app-crm/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/app-crm/**/*.ts",
+              "projects/app-crm/**/*.html"
             ]
           }
         },

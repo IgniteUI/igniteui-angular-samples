@@ -1,14 +1,18 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { IForOfState, SortingDirection } from "igniteui-angular";
-import { BehaviorSubject, Observable } from "rxjs";
+/* eslint-disable id-blacklist */
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/no-inferrable-types */
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { IForOfState, SortingDirection } from 'igniteui-angular';
+import { BehaviorSubject, Observable } from 'rxjs';
 
-const DATA_URL: string = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
-const EMPTY_STRING: string = "";
+const DATA_URL: string = 'https://services.odata.org/V4/Northwind/Northwind.svc/Products';
+const EMPTY_STRING: string = '';
+// eslint-disable-next-line no-shadow
 export enum SortOrder {
-    ASC = "asc",
-    DESC = "desc",
-    NONE = ""
+    ASC = 'asc',
+    DESC = 'desc',
+    NONE = ''
 }
 
 @Injectable()
@@ -54,7 +58,7 @@ export class RemoteServiceVirt {
 
         if (resetData) {
             this._http.get(this._buildDataUrl(requestState, sortingArgs)).subscribe((data: any) => {
-                this._cachedData = new Array<any>(data["@odata.count"]).fill({emptyRec: true});
+                this._cachedData = new Array<any>(data['@odata.count']).fill({emptyRec: true});
                 this._updateData(data, startIndex);
                 this._data.next(data.value);
                 if (cb) {
@@ -111,6 +115,7 @@ export class RemoteServiceVirt {
         if (virtualizationArgs) {
             let requiredChunkSize: number;
             const skip = virtualizationArgs.startIndex;
+            // eslint-disable-next-line prefer-const
             requiredChunkSize = virtualizationArgs.chunkSize === 0 ? 11 : virtualizationArgs.chunkSize;
             const top = requiredChunkSize;
             scrollingQuery = `$skip=${skip}&$top=${top}`;

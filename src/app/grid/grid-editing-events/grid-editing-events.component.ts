@@ -1,23 +1,24 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { NgModel } from "@angular/forms";
-import { IGridEditEventArgs, IgxGridComponent, IgxToastComponent } from "igniteui-angular";
-import { DATA } from "../../data/nwindData";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgModel } from '@angular/forms';
+import { IGridEditEventArgs, IgxGridComponent, IgxToastComponent } from 'igniteui-angular';
+import { DATA } from '../../data/nwindData';
 
 @Component({
-    selector: "grid-editing-event",
-    templateUrl: "grid-editing-events.component.html",
-    styleUrls: ["grid-editing-events.component.scss"]
+    selector: 'app-grid-editing-event',
+    templateUrl: 'grid-editing-events.component.html',
+    styleUrls: ['grid-editing-events.component.scss']
 })
 export class GridEditingEventsComponent implements OnInit {
-    public products: any[];
-    public balance: number = 7800;
-    public orderBalance: number;
-
     @ViewChild(IgxToastComponent, { read: IgxToastComponent, static: true })
     public toast: IgxToastComponent;
 
-    @ViewChild("myTemplate", { read: NgModel })
+    @ViewChild('myTemplate', { read: NgModel })
     public myTemplate: NgModel;
+
+    public products: any[];
+    public balance = 7800;
+    public orderBalance: number;
+
 
     public ngOnInit() {
         this.products = DATA.map(e => {
@@ -27,12 +28,12 @@ export class GridEditingEventsComponent implements OnInit {
             e.Ordered = Math.floor(Math.random() * e.UnitsInStock);
             return e;
         });
-        this.toast.position = "middle";
+        this.toast.position = 'middle';
     }
 
     public handleCellEdit(event: IGridEditEventArgs) {
         const column = event.column;
-        if (column.field === "Ordered") {
+        if (column.field === 'Ordered') {
             const rowData = event.rowData;
             if (!rowData) {
                 return;

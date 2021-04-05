@@ -1,15 +1,15 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxTreeGridComponent } from "igniteui-angular";
-import { TreeGridLoadOnDemandService } from "./remoteService";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxTreeGridComponent } from 'igniteui-angular';
+import { TreeGridLoadOnDemandService } from './remoteService';
 
 @Component({
-    selector: "app-tree-grid-load-on-demand-sample",
-    styleUrls: ["./tree-grid-load-on-demand-sample.component.scss"],
-    templateUrl: "./tree-grid-load-on-demand-sample.component.html"
+    selector: 'app-tree-grid-load-on-demand-sample',
+    styleUrls: ['./tree-grid-load-on-demand-sample.component.scss'],
+    templateUrl: './tree-grid-load-on-demand-sample.component.html'
 })
 export class TreeGridLoadOnDemandSampleComponent implements OnInit {
+    @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
     public data = [];
-    @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
     private dataService = new TreeGridLoadOnDemandService();
 
     constructor() { }
@@ -24,5 +24,5 @@ export class TreeGridLoadOnDemandSampleComponent implements OnInit {
 
     public loadChildren = (parentID: any, done: (children: any[]) => void) => {
         this.dataService.getData(parentID, (children) => done(children));
-    }
+    };
 }

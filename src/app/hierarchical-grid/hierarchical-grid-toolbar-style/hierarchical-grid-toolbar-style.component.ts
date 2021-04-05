@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-  selector: "app-hierarchical-grid-toolbar-style",
-  styleUrls: ["./hierarchical-grid-toolbar-style.component.scss"],
-  templateUrl: "./hierarchical-grid-toolbar-style.component.html"
+  selector: 'app-hierarchical-grid-toolbar-style',
+  styleUrls: ['./hierarchical-grid-toolbar-style.component.scss'],
+  templateUrl: './hierarchical-grid-toolbar-style.component.html'
 })
 export class HierarchicalGridToolbarStyleComponent {
     public data: any[];

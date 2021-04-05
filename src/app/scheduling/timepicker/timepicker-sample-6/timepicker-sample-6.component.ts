@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
-import { IgxTimePickerComponent } from "igniteui-angular";
+import { Component } from '@angular/core';
+import { IgxTimePickerComponent } from 'igniteui-angular';
 
 @Component({
-  selector: "app-timepicker-sample-6",
-  styleUrls: ["./timepicker-sample-6.component.scss"],
-  templateUrl: "./timepicker-sample-6.component.html"
+  selector: 'app-timepicker-sample-6',
+  styleUrls: ['./timepicker-sample-6.component.scss'],
+  templateUrl: './timepicker-sample-6.component.html'
 })
 export class TimePickerSample6Component {
 
@@ -19,7 +19,7 @@ export class TimePickerSample6Component {
         if (picker.validHourEntries.indexOf(hour) !== -1 && picker.validMinuteEntries.indexOf(minutes) !== -1) {
             value.setHours(hour, minutes);
         } else {
-            throw new Error("This is not a valid hour.");
+            throw new Error('This is not a valid hour.');
         }
     }
 

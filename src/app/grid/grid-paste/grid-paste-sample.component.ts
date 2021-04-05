@@ -1,31 +1,31 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild } from '@angular/core';
 import {
     IgxExcelExporterOptions,
     IgxExcelExporterService,
     IgxGridComponent,
     IgxGridTransaction,
     IgxTransactionService
-} from "igniteui-angular";
+} from 'igniteui-angular';
 
-import { EXCEL_DATA, LOCAL_DATA } from "./data";
+import { EXCEL_DATA, LOCAL_DATA } from './data';
 
-import { first } from "rxjs/operators";
+import { first } from 'rxjs/operators';
 
 @Component({
     providers: [
         { provide: IgxGridTransaction, useClass: IgxTransactionService }
     ],
-    selector: "app-grid-paste-sample",
-    styleUrls: ["./grid-paste-sample.component.scss"],
-    templateUrl: "./grid-paste-sample.component.html"
+    selector: 'app-grid-paste-sample',
+    styleUrls: ['./grid-paste-sample.component.scss'],
+    templateUrl: './grid-paste-sample.component.html'
 })
 export class GridPasteSampleComponent {
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
     public data;
     public comboData = [
-        "Paste data as new records",
-        "Paste starting from active cell"
+        'Paste data as new records',
+        'Paste starting from active cell'
     ];
     public pasteMode = this.comboData[0];
 
@@ -33,14 +33,12 @@ export class GridPasteSampleComponent {
         this.data = LOCAL_DATA;
     }
 
-    public ngOnInit() {}
-
     public selectionChange(event: any) {
         this.pasteMode = event.newSelection.value;
     }
 
     public dataPasted(processedData) {
-        if (this.pasteMode === "Paste data as new records") {
+        if (this.pasteMode === 'Paste data as new records') {
             this.addRecords(processedData);
         } else {
             this.updateRecords(processedData);
@@ -116,7 +114,7 @@ export class GridPasteSampleComponent {
     public downloadExcel(eventArgs) {
         this.excelExportService.exportData(
             EXCEL_DATA,
-            new IgxExcelExporterOptions("sample-data")
+            new IgxExcelExporterOptions('sample-data')
         );
     }
 
@@ -126,7 +124,7 @@ export class GridPasteSampleComponent {
 
     public redo() {
         this.grid1.transactions.redo();
-        if (this.pasteMode === "Paste starting from active cell") {
+        if (this.pasteMode === 'Paste starting from active cell') {
             return;
         }
         this.grid1.verticalScrollContainer.onDataChanged
