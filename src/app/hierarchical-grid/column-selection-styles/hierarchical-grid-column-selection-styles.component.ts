@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxHierarchicalGridComponent } from "igniteui-angular";
-import { SINGERS } from "../data";
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { SINGERS } from '../data';
 
 @Component({
   selector: "app-hierarchical-grid-column-selection-styles",
@@ -14,6 +14,8 @@ export class HGridColumnSelectionStylesComponent implements OnInit, AfterViewIni
     @ViewChild(IgxHierarchicalGridComponent)
     public hGrid: IgxHierarchicalGridComponent;
 
+    constructor(private cdr: ChangeDetectorRef){}
+
     public formatter = (a) => a;
 
     public ngOnInit() {
@@ -21,7 +23,8 @@ export class HGridColumnSelectionStylesComponent implements OnInit, AfterViewIni
     }
 
     public ngAfterViewInit() {
-        this.hGrid.selectColumns(["Artist", "GrammyNominations"]);
+        this.hGrid.selectColumns(['Artist', 'GrammyNominations']);
+        this.cdr.detectChanges();
     }
 
 }
