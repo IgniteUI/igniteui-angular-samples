@@ -199,6 +199,11 @@
 
     &.condition {
         padding-right: 16px;
+        opacity: .62;
+        &.selected--condition{
+        pointer-events: none;
+        opacity: 1;
+        }
     }
 
     &.chart {

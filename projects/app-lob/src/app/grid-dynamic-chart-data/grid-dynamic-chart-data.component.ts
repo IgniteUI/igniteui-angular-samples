@@ -86,6 +86,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     public range;
     public disableCreateChart = false;
     public currentFormatter;
+    public hasFormatter = false;
     // Dialogs options
     public _chartDialogOverlaySettings = {
         closeOnOutsideClick: false,
@@ -275,11 +276,14 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
 
     public analyse(condition) {
         this.currentFormatter = condition;
+        this.hasFormatter = true;
         this.formatting.formatCells(condition);
     }
 
     public clearFormatting() {
         this.formatting.clearFormatting();
+        this.hasFormatter = false;
+        this.currentFormatter = undefined;
     }
 
     public toggle() {
