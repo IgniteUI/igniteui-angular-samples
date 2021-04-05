@@ -7,8 +7,6 @@ import {
     PositionSettings,
     VerticalAlignment
 } from 'igniteui-angular';
-import { Subject } from 'rxjs';
-import { filter, takeUntil } from 'rxjs/operators';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 @Component({
     selector: 'app-overlay-sample',
@@ -19,21 +17,9 @@ import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-
 export class OverlayPositionSample2Component implements OnDestroy {
     @ViewChild('buttonElement', { static: true })
     private buttonElement: ElementRef;
-    private destroy$ = new Subject<boolean>();
     private _overlayId: string;
 
-    constructor(
-        @Inject(IgxOverlayService) public overlayService: IgxOverlayService
-    ) {
-        //  overlay service deletes the id when onClosed is called. We should clear our id
-        //  also in same event
-        this.overlayService
-            .onClosed
-            .pipe(
-                filter((x) => x.id === this._overlayId),
-                takeUntil(this.destroy$))
-            .subscribe(() => delete this._overlayId);
-    }
+    constructor(@Inject(IgxOverlayService) public overlayService: IgxOverlayService) { }
 
     public showOverlay() {
         if (!this._overlayId) {
@@ -57,8 +43,10 @@ export class OverlayPositionSample2Component implements OnDestroy {
         this.overlayService.show(this._overlayId);
     }
 
-    public ngOnDestroy() {
-        this.destroy$.next(true);
-        this.destroy$.complete();
+    public ngOnDestroy(): void {
+        if (this._overlayId) {
+            this.overlayService.detach(this._overlayId);
+            delete this._overlayId;
+        }
     }
 }

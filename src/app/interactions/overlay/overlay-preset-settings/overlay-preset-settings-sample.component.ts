@@ -15,8 +15,6 @@ import {
     IButtonGroupEventArgs
 } from 'igniteui-angular';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
-import { filter, takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
 
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -63,38 +61,30 @@ export class OverlayPresetSettingsSampleComponent implements OnInit, OnDestroy {
     public relPosition = RelativePosition.Default;
     private _overlayId: string;
     private _overlaySettings: OverlaySettings;
-    private destroy$ = new Subject<boolean>();
 
-    constructor(
-        @Inject(IgxOverlayService) public overlayService: IgxOverlayService
-    ) {
-        //  overlay service deletes the id when onClosed is called. We should clear our id
-        //  also in same event
-        this.overlayService.onClosed
-            .pipe(
-                filter((x) => x.id === this._overlayId),
-                takeUntil(this.destroy$)
-            )
-            .subscribe(() => delete this._overlayId);
-    }
+    constructor(@Inject(IgxOverlayService) public overlayService: IgxOverlayService) { }
 
-    ngOnInit() {
+    public ngOnInit(): void {
         this.setRelativeOverlaySettings();
     }
 
-    ngOnDestroy() {
-        this.destroy$.next(true);
-        this.destroy$.complete();
+    public ngOnDestroy(): void {
+        if (this._overlayId) {
+            this.overlayService.detach(this._overlayId);
+            delete this._overlayId;
+        }
     }
 
     public showOverlay() {
-        if (!this._overlayId) {
-            this._overlayId = this.overlayService.attach(
-                MyDynamicCardComponent
-            );
+        if (this._overlayId) {
+            this.overlayService.detach(this._overlayId);
+            delete this._overlayId;
         }
-
-        this.overlayService.show(this._overlayId, this._overlaySettings);
+        this._overlayId = this.overlayService.attach(
+            MyDynamicCardComponent,
+            this._overlaySettings
+        );
+        this.overlayService.show(this._overlayId);
     }
 
     public selectPositionStrategy(event: IButtonGroupEventArgs) {

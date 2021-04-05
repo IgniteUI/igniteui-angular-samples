@@ -11,8 +11,6 @@ import {
     PositionSettings,
     VerticalAlignment
 } from 'igniteui-angular';
-import { Subject } from 'rxjs';
-import { filter, takeUntil } from 'rxjs/operators';
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: 'app-overlay-sample',
@@ -45,21 +43,10 @@ export class OverlayScrollSample1Component implements OnDestroy {
         closeOnOutsideClick: true
     };
 
-    private destroy$ = new Subject<boolean>();
     private _overlayId: string;
 
     constructor(
-        @Inject(IgxOverlayService) public overlay: IgxOverlayService
-    ) {
-        //  overlay service deletes the id when onClosed is called. We should clear our id
-        //  also in same event
-        this.overlay
-            .onClosed
-            .pipe(
-                filter((x) => x.id === this._overlayId),
-                takeUntil(this.destroy$))
-            .subscribe(() => delete this._overlayId);
-    }
+        @Inject(IgxOverlayService) public overlay: IgxOverlayService) { }
 
     public onClickModal(event: Event, strategy: string) {
         event.stopPropagation();
@@ -91,18 +78,18 @@ export class OverlayScrollSample1Component implements OnDestroy {
             modal: this.modalValue,
             positionStrategy
         });
-        this.overlay.show(this.overlayId, showSettings);
-    }
-
-    private get overlayId(): string {
-        if (!this._overlayId) {
-            this._overlayId = this.overlay.attach(this.overlayDemo);
+        if (this._overlayId) {
+            this.overlay.detach(this._overlayId);
+            delete this._overlayId;
         }
-        return this._overlayId;
+        this._overlayId = this.overlay.attach(this.overlayDemo, showSettings);
+        this.overlay.show(this._overlayId, showSettings);
     }
 
-    public ngOnDestroy() {
-        this.destroy$.next(true);
-        this.destroy$.complete();
+    public ngOnDestroy(): void {
+        if (this._overlayId) {
+            this.overlay.detach(this._overlayId);
+            delete this._overlayId;
+        }
     }
 }
