@@ -23,8 +23,8 @@ $custom-button: igx-button-theme($foreground: gold, $disabled-foreground: black)
 // );
 // $custom-button: igx-button-theme(
 //     $palette: $custom-palette,
-//     $flat-text-color: igx-color($custom-palette, "secondary", 400),
-//     $disabled-color: black
+//     $foreground: igx-color($custom-palette, "secondary", 400),
+//     $disabled-foreground: black
 // );
 
 /*SCHEMAS*/
@@ -39,18 +39,18 @@ $custom-button: igx-button-theme($foreground: gold, $disabled-foreground: black)
 //         )
 //     )
 // );
-// 
+//
 // $custom-button-schema: extend($_dark-button,
-//     (           
-//         flat-text-color:(
+//     (
+//         foreground:(
 //             igx-color:("secondary", 500)
 //         ),
-//         disabled-color:(
+//         disabled-foreground:(
 //             igx-color:("primary", 700)
 //         )
 //     )
 // );
-// 
+//
 // $custom-dark-schema: extend($dark-schema,(
 //     igx-column-actions: $custom-column-actions-schema,
 //     igx-button: $custom-button-schema

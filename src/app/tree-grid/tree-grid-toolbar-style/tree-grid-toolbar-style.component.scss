@@ -23,10 +23,10 @@ $dark-grid-toolbar-theme: igx-grid-toolbar-theme(
 /*PALETTE and IGX-COLOR*/
 
 // $dark-button-theme: igx-button-theme(
-//     $outlined-background: igx-color($dark-palette, "secondary", 400),
-//     $outlined-text-color: igx-color($dark-palette, "primary", 400),
-//     $outlined-hover-background: igx-color($dark-palette, "primary", 400),
-//     $outlined-hover-text-color: igx-color($dark-palette, "secondary", 400)
+//     $background: igx-color($dark-palette, "secondary", 400),
+//     $foreground: igx-color($dark-palette, "primary", 400),
+//     $hover-background: igx-color($dark-palette, "primary", 400),
+//     $hover-foreground: igx-color($dark-palette, "secondary", 400)
 // );
 
 // $dark-grid-toolbar-theme: igx-grid-toolbar-theme(
@@ -49,16 +49,16 @@ $dark-grid-toolbar-theme: igx-grid-toolbar-theme(
 
 // $dark-button-schema: extend($_dark-button,
 //     (
-//         outlined-background: (
+//         background: (
 //             igx-color: ("secondary", 400)
 //         ),
-//         outlined-text-color: (
+//         foreground: (
 //             igx-color: ("primary", 400)
 //         ),
-//         outlined-hover-background: (
+//         hover-background: (
 //             igx-color: ("primary", 400)
 //         ),
-//         outlined-hover-text-color: (
+//         hover-foreground: (
 //             igx-color: ("secondary", 400)
 //         )
 //     )
@@ -87,7 +87,7 @@ $dark-grid-toolbar-theme: igx-grid-toolbar-theme(
 
         .igx-grid-toolbar__actions {
             @include igx-button($dark-button-theme);
-    
+
             .igx-button--outlined {
                 margin-left: 0.5rem;
                 border: none;
