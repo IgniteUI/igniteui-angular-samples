@@ -21,9 +21,9 @@ export class TabsConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'TabsSample1Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxTabsModule', 'TabsSample1Component'],
+                imports: ['IgxIconModule', 'IgxTabsModule', 'TabsSample1Component'],
                 ngDeclarations: ['TabsSample1Component'],
-                ngImports: ['IgxTabsModule']
+                ngImports: ['IgxIconModule', 'IgxTabsModule']
             }),
             shortenComponentPathBy: "/layouts/tabs/"
         }));
@@ -50,9 +50,9 @@ export class TabsConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'TabsSample3Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxTabsModule', 'TabsSample3Component'],
+                imports: ['IgxIconModule', 'IgxTabsModule', 'TabsSample3Component'],
                 ngDeclarations: ['TabsSample3Component'],
-                ngImports: ['IgxTabsModule']
+                ngImports: ['IgxIconModule', 'IgxTabsModule']
             }),
             shortenComponentPathBy: "/layouts/tabs/"
         }));
@@ -99,6 +99,7 @@ export class TabsConfigGenerator implements IConfigGenerator {
             component: 'TabsStyleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: [
+                    'IgxIconModule',
                     'IgxTabsModule',
                     'IgxCardModule',
                     'IgxAvatarModule',
@@ -108,6 +109,7 @@ export class TabsConfigGenerator implements IConfigGenerator {
                 ],
                 ngDeclarations: ['TabsStyleComponent'],
                 ngImports: [
+                    'IgxIconModule',
                     'IgxTabsModule',
                     'IgxCardModule',
                     'IgxAvatarModule',
