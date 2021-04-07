@@ -76,6 +76,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     @ViewChild(IgxTabsComponent, { static: true })
     public tabElement: ElementRef<HTMLElement>;
 
+    @ViewChild ('contentTab') tabsContainer: ElementRef<HTMLElement>;
+
     public columnSelectionType = 'multiple';
     public data;
     public opened = true;
@@ -240,7 +242,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     }
 
     public previewChart(chart: CHART_TYPE) {
-        this._chartPreviewDialogOverlaySettings.target = this.tabs.headerContainer.nativeElement;
+        this._chartPreviewDialogOverlaySettings.target = this.tabsContainer.nativeElement;
         this.chartPreviewDialog.toggleRef.element.style.width = (this.chartSelectionDialog.toggleRef as any).elementRef.nativeElement.clientWidth + 'px';
         this.createChart(chart, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }

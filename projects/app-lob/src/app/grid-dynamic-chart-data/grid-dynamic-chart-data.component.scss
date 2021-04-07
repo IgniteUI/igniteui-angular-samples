@@ -82,6 +82,9 @@
         display: inline-flex;
 
         .chart-area {
+            .igx-data-chart {
+                height: 70% !important;
+            }
             margin-top: 1rem;
             overflow-y: hidden;
             overflow-x: hidden;
@@ -192,6 +195,13 @@
         font-size: .9rem;
         font-weight: 400;
         text-align: center;
+    }
+}
+::ng-deep {
+    .preview-wrapper {
+        .igx-data-chart {
+            height: 200px !important;
+        }
     }
 }
 
