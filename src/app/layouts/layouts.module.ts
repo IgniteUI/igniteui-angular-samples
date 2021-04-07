@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import {
     IgxAvatarModule,
     IgxBottomNavModule,
+    IgxButtonGroupModule,
     IgxButtonModule,
     IgxCardModule,
     IgxCarouselModule,
@@ -77,6 +78,8 @@ import { TabsSample2Component } from './tabs/tabs-sample-2/tabs-sample-2.compone
 import { TabsSample3Component } from './tabs/tabs-sample-3/tabs-sample-3.component';
 import { TabsSample4Component } from './tabs/tabs-sample-4/components/tabs-sample-4.component';
 import { TabsStyleComponent } from './tabs/tabs-style/tabs-style.component';
+import { TabsAlignmentComponent } from './tabs/tabs-alignment/tabs-alignment.component';
+import { TabsHeaderPrefixSuffixComponent } from './tabs/tabs-header-prefix-suffix/tabs-header-prefix-suffix';
 
 @NgModule({
     declarations: [
@@ -126,7 +129,9 @@ import { TabsStyleComponent } from './tabs/tabs-style/tabs-style.component';
         TabsSample4Component,
         CardStylingSampleComponent,
         TabsStyleComponent,
-        TabbarStyleComponent
+        TabbarStyleComponent,
+        TabsAlignmentComponent,
+        TabsHeaderPrefixSuffixComponent
     ],
     exports: [
         CardSample1Component
@@ -137,6 +142,7 @@ import { TabsStyleComponent } from './tabs/tabs-style/tabs-style.component';
         LayoutsRoutingModule,
         IgxAvatarModule,
         IgxBottomNavModule,
+        IgxButtonGroupModule,
         IgxButtonModule,
         IgxCardModule,
         IgxCarouselModule,

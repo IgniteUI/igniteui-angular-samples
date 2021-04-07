@@ -5,8 +5,9 @@ IgxCardModule,
 IgxIconModule,
 IgxNavbarModule,
 IgxRippleModule,
-IgxTabsModule} from 'igniteui-angular';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+IgxTabsModule,
+IgxButtonGroupModule } from 'igniteui-angular';
+import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing';
 export class TabsConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         TabsSample4Module: '../../src/app/layouts/tabs/tabs-sample-4/tabs-sample-4.module',
@@ -110,6 +111,52 @@ export class TabsConfigGenerator implements IConfigGenerator {
                     'IgxTabsModule',
                     'IgxCardModule',
                     'IgxAvatarModule',
+                    'IgxButtonModule',
+                    'IgxRippleModule'
+                ]
+            }),
+            shortenComponentPathBy: "/layouts/tabs/"
+        }));
+
+        configs.push(new Config({
+            component: 'TabsAlignmentComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: [
+                    'IgxButtonGroupModule',
+                    'IgxIconModule',
+                    'IgxTabsModule',
+                    'IgxButtonModule',
+                    'IgxRippleModule',
+                    'TabsAlignmentComponent'
+                ],
+                ngDeclarations: ['TabsAlignmentComponent'],
+                ngImports: [
+                    'IgxButtonGroupModule',
+                    'IgxIconModule',
+                    'IgxTabsModule',
+                    'IgxButtonModule',
+                    'IgxRippleModule'
+                ]
+            }),
+            shortenComponentPathBy: "/layouts/tabs/"
+        }));
+
+        configs.push(new Config({
+            component: 'TabsHeaderPrefixSuffixComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: [
+                    'IgxIconModule',
+                    'IgxTabsModule',
+                    'IgxButtonGroupModule',
+                    'IgxButtonModule',
+                    'IgxRippleModule',
+                    'TabsHeaderPrefixSuffixComponent'
+                ],
+                ngDeclarations: ['TabsHeaderPrefixSuffixComponent'],
+                ngImports: [
+                    'IgxIconModule',
+                    'IgxTabsModule',
+                    'IgxButtonGroupModule',
                     'IgxButtonModule',
                     'IgxRippleModule'
                 ]

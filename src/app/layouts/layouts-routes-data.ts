@@ -38,6 +38,8 @@ export const layoutsRoutesData = {
     'tabs-sample-3': { displayName: 'Tabs Customizing', parentName: 'Tabs' },
     'tabs-sample-4': { displayName: 'Tabs Routing', parentName: 'Tabs' },
     'tabs-style': { displayName: 'Tabs Styling', parentName: 'Tabs' },
+    'tabs-alignment': { displayName: 'Tabs Alignment', parentName: 'Tabs' },
+    'tabs-header-prefix-suffix': { displayName: 'Tabs Suffix/Prefix', parentName: 'Tabs' },
     'card-sample-0': { displayName: 'Elevated Card', parentName: 'Card' },
     'card-sample-1': { displayName: 'Outlined Card', parentName: 'Card' },
     'card-sample-2': { displayName: 'Horizontal Card', parentName: 'Card' },
