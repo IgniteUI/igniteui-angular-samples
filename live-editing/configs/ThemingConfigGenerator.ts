@@ -15,7 +15,7 @@ IgxRippleModule,
 IgxSelectModule,
 IgxSnackbarModule,
 IgxToggleModule} from 'igniteui-angular';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing';
 export class ThemingConfigGenerator implements IConfigGenerator {
 
 
@@ -23,30 +23,8 @@ export class ThemingConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            component: 'ThemeChooserSampleComponent',
-            additionalFiles: ["/src/app/theming/data/data.ts",
-                "/src/app/theming/data/record.ts",
-                "/src/app/theming/styles/themes.scss",
-                "/src/app/theming/styles/theme-classes.scss",
-                "src/app/theming/styles/schemas.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxDropDownModule',
-                    'IgxGridModule', 'IgxDialogModule', 'IgxSnackbarModule', 'IgxLayoutModule', 'ThemeChooserSampleComponent',
-                    'IgxCalendarModule', 'IgxToggleModule', 'IgxIconModule', 'IgxRippleModule', 'IgxButtonModule',
-                    'IgxInputGroupModule', 'IgxDatePickerModule', 'IgxSelectModule'],
-                ngDeclarations: ['ThemeChooserSampleComponent'],
-                ngImports: ['IgxDropDownModule',
-                    'IgxDialogModule', 'IgxSnackbarModule', 'IgxLayoutModule',
-                    'IgxToggleModule', 'IgxIconModule', 'IgxRippleModule', 'IgxButtonModule',
-                    'IgxCalendarModule', 'IgxInputGroupModule', 'IgxDatePickerModule',
-                    'IgxGridModule', 'IgxLayoutModule', 'IgxSelectModule']
-            }),
-            shortenComponentPathBy: "/theming/"
-        }));
-
-        configs.push(new Config({
             component: 'DefaultThemeSampleComponent',
-            additionalFiles: ["/src/app/theming/data/data.ts", "/src/app/theming/data/record.ts"],
+            additionalFiles: ['/src/app/theming/data/data.ts', '/src/app/theming/data/record.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxDropDownModule',
                     'IgxGridModule', 'IgxDialogModule', 'IgxSnackbarModule', 'IgxLayoutModule', 'DefaultThemeSampleComponent',
@@ -59,28 +37,9 @@ export class ThemingConfigGenerator implements IConfigGenerator {
                     'IgxCalendarModule', 'IgxInputGroupModule', 'IgxDatePickerModule',
                     'IgxGridModule', 'IgxLayoutModule']
             }),
-            shortenComponentPathBy: "/theming/"
+            shortenComponentPathBy: '/theming/'
         }));
 
-        configs.push(new Config({
-            component: 'DarkThemeSampleComponent',
-            additionalFiles: ["/src/app/theming/data/data.ts", "/src/app/theming/data/record.ts",
-                "/src/app/theming/styles/dark-theme.scss",
-                "/src/app/theming/styles/dark-theme-class.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxDropDownModule',
-                    'IgxGridModule', 'IgxDialogModule', 'IgxSnackbarModule', 'IgxLayoutModule', 'DarkThemeSampleComponent',
-                    'IgxCalendarModule', 'IgxToggleModule', 'IgxIconModule', 'IgxRippleModule', 'IgxButtonModule',
-                    'IgxInputGroupModule', 'IgxDatePickerModule'],
-                ngDeclarations: ['DarkThemeSampleComponent'],
-                ngImports: ['IgxDropDownModule',
-                    'IgxDialogModule', 'IgxSnackbarModule', 'IgxLayoutModule',
-                    'IgxToggleModule', 'IgxIconModule', 'IgxRippleModule', 'IgxButtonModule',
-                    'IgxCalendarModule', 'IgxInputGroupModule', 'IgxDatePickerModule',
-                    'IgxGridModule', 'IgxLayoutModule']
-            }),
-            shortenComponentPathBy: "/theming/"
-        }));
 
         configs.push(new Config({
             component: 'ShadowsSampleComponent',
@@ -89,7 +48,7 @@ export class ThemingConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['ShadowsSampleComponent'],
                 ngImports: []
             }),
-            shortenComponentPathBy: "/theming/shadows/"
+            shortenComponentPathBy: '/theming/shadows/'
         }));
 
         configs.push(new Config({
@@ -99,7 +58,7 @@ export class ThemingConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['ShadowsSample2Component'],
                 ngImports: []
             }),
-            shortenComponentPathBy: "/theming/shadows/"
+            shortenComponentPathBy: '/theming/shadows/'
         }));
 
         configs.push(new Config({
@@ -109,7 +68,7 @@ export class ThemingConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['CardSampleShadowComponent'],
                 ngImports: ['IgxCardModule', 'IgxIconModule', 'IgxButtonModule']
             }),
-            shortenComponentPathBy: "/theming/shadows/"
+            shortenComponentPathBy: '/theming/shadows/'
         }));
 
         configs.push(new Config({
@@ -119,7 +78,7 @@ export class ThemingConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['DisplayDensityComponent'],
                 ngImports: ['IgxInputGroupModule', 'IgxButtonGroupModule', 'IgxIconModule']
             }),
-            shortenComponentPathBy: "/theming/"
+            shortenComponentPathBy: '/theming/'
         }));
 
         configs.push(new Config({
@@ -129,7 +88,7 @@ export class ThemingConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['AnimationsSampleComponent'],
                 ngImports: ['IgxDialogModule', 'IgxButtonModule', 'IgxListModule']
             }),
-            shortenComponentPathBy: "/theming/animations/"
+            shortenComponentPathBy: '/theming/animations/'
         }));
 
         configs.push(new Config({
@@ -139,7 +98,7 @@ export class ThemingConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['AnimationsSample2Component'],
                 ngImports: ['IgxCardModule', 'IgxButtonModule', 'IgxIconModule', 'IgxDividerModule']
             }),
-            shortenComponentPathBy: "/theming/animations/"
+            shortenComponentPathBy: '/theming/animations/'
         }));
 
         return configs;
