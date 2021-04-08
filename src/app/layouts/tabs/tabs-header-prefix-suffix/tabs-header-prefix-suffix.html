@@ -1,33 +1,14 @@
 <igx-tabs>
-    <igx-tab-item>
+    <igx-tab-item *ngFor="let item of tabs; let i = index">
         <igx-tab-header>
-            <img igxPrefix
-                src="https://static.infragistics.com/marketing/Website/products/ignite-ui-landing/ignite-ui-logo.svg"
-                width="80px" height="40px" />
-            <span>Tab1</span>
-            <igx-icon igxSuffix>close</igx-icon>
+            <img igxPrefix src="{{item.image}}" height="40px" width="80px"/>
+            <h6>{{item.header}}</h6>
+            <button igxButton="icon" igxSuffix (click)="closeTab(i)">
+                <igx-icon>close</igx-icon>
+            </button>
         </igx-tab-header>
         <igx-tab-content>
-            Tab1 Content
-        </igx-tab-content>
-    </igx-tab-item>
-    <igx-tab-item>
-        <igx-tab-header>
-            <span>Tab2</span>
-            <igx-icon igxSuffix>close</igx-icon>
-        </igx-tab-header>
-        <igx-tab-content>
-            Tab2 Content
-        </igx-tab-content>
-    </igx-tab-item>
-    <igx-tab-item>
-        <igx-tab-header>
-            <igx-icon igxPrefix>folder</igx-icon>
-            <span igxTabHeaderLabel>Tab3 Header</span>
-            <igx-icon igxSuffix>close</igx-icon>
-        </igx-tab-header>
-        <igx-tab-content>
-            Tab3 Content
+            {{item.content}}
         </igx-tab-content>
     </igx-tab-item>
 </igx-tabs>
