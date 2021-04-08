@@ -1,6 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
-
-/*BASIC THEMING*/
+@import '../../../variables';
 
 $yellow: #ffcd0f;
 $bg: #292826;
@@ -42,64 +40,6 @@ $dark-checkbox-theme: igx-checkbox-theme(
 $dark-ripple-theme: igx-ripple-theme(
     $color: $gray
 );
-
-/*ENHANCED APPROACHES*/
-
-// $yellow-color: gold;
-// $blue-color: steelblue;
-// $custom-palette: igx-palette($primary: $blue-color, $secondary: $yellow-color);
-
-/*PALETTE and IGX-COLOR*/
-
-// $custom-column-actions-theme: igx-column-actions-theme(
-//     $palette: $custom-palette,
-//     $title-color: igx-color($custom-palette, "secondary", 400),
-//     $background-color: igx-color($custom-palette, "primary", 200)
-// );
-// $custom-button: igx-button-theme(
-//     $palette: $custom-palette,
-//     $flat-text-color: igx-color($custom-palette, "secondary", 400),
-//     $disabled-color: black
-// );
-
-/*SCHEMAS*/
-
-// $custom-column-actions-schema: extend($_dark-column-actions,
-//     (
-//         title-color:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         background-color:(
-//             igx-color: ("primary", 200)
-//         )
-//     )
-// );
-//
-// $custom-button-schema: extend($_dark-button,
-//     (
-//         flat-text-color:(
-//             igx-color:("secondary", 500)
-//         ),
-//         disabled-color:(
-//             igx-color:("primary", 700)
-//         )
-//     )
-// );
-//
-// $custom-dark-schema: extend($dark-schema,(
-//     igx-column-actions: $custom-column-actions-schema,
-//     igx-button: $custom-button-schema
-// ));
-// $custom-column-actions-theme: igx-column-actions-theme(
-//   $palette: $custom-palette,
-//   $schema: $custom-dark-schema
-// );
-// $custom-button: igx-button-theme(
-//   $palette: $custom-palette,
-//   $schema: $custom-dark-schema
-// );
-
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 
 :host {
     ::ng-deep {

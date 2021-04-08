@@ -1,13 +1,13 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 @include igx-dialog(
     igx-dialog-theme(
-        $palette: $default-palette,
-        $schema: $light-schema
+        $palette: $palette,
+        $schema: $schema
     )
 );
 
-@include igx-dialog-typography($default-type-scale);
+@include igx-dialog-typography($material-type-scale);
 
 :host {
     display: block;

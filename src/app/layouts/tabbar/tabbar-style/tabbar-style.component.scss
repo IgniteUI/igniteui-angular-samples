@@ -1,4 +1,8 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
+
+igx-tab-panel {
+    padding: 10px;
+}
 
 .item {
     margin-bottom: 5px;
@@ -12,10 +16,6 @@
 .item-line2 {
     font-size: 12px;
     color: darkgray;
-}
-
-igx-tab-panel {
-    padding: 10px;
 }
 
 $dark-bottom-nav: igx-bottom-nav-theme(
@@ -35,4 +35,3 @@ $dark-bottom-nav: igx-bottom-nav-theme(
 :host ::ng-deep {
    @include igx-bottom-nav($dark-bottom-nav);
 }
-

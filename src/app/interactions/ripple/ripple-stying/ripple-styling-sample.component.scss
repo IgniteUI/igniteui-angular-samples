@@ -1,4 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 .section {
     flex-flow: row wrap;
@@ -19,7 +19,7 @@ h5 {
 }
 
 $custom-ripple-theme: igx-ripple-theme(
-  $color: igx-color($default-palette, 'secondary', 200)
+  $color: igx-color($color: 'secondary', $variant: 200)
 );
 
 // :host {

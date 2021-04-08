@@ -1,4 +1,13 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
+
+:host ::ng-deep {
+    .igx-action-strip__actions {
+        display: flex;
+        flex-direction: column;
+        max-height: 72px;
+    }
+}
+
 .parent {
     display: flex;
     align-items: center;
@@ -10,6 +19,10 @@
     position: relative;
 }
 
+.text-strike-through {
+    text-decoration: line-through;
+}
+
 $custom-strip: igx-action-strip-theme(
     $background: rgba(150, 133, 143, 0.4),
     $actions-background: rgba(109, 121, 147, 0.6),
@@ -19,6 +32,8 @@ $custom-strip: igx-action-strip-theme(
 );
 
 .my-action-strip {
+    @include igx-action-strip($custom-strip);
+
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -26,18 +41,4 @@ $custom-strip: igx-action-strip-theme(
     width: 100%;
     height: 100%;
     align-items: flex-end;
-    @include igx-action-strip($custom-strip);
-}
-
-.text-strike-through {
-    text-decoration: line-through;
-}
-
-
-:host ::ng-deep {
-    .igx-action-strip__actions {
-        display: flex;
-        flex-direction: column;
-        max-height: 72px;
-    }
 }
