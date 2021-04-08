@@ -87,7 +87,9 @@ export class KanbanSampleComponent implements OnInit {
         this.toDoList = this.toDoList.filter((x) => x.id !== 'dummy');
         this.inProgressList = this.inProgressList.filter((x) => x.id !== 'dummy');
         this.doneList = this.doneList.filter((x) => x.id !== 'dummy');
-        this.dragObj.hide = false;
+        if (this.dragObj) {
+            this.dragObj.hide = false;
+        }
     }
 
     public onItemEnter(event: IDropBaseEventArgs) {

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
@@ -13,11 +13,14 @@ export class GridColumnGroupSelectionComponent implements OnInit, AfterViewInit 
 
     public data: any[];
 
+    constructor(private cdr: ChangeDetectorRef){}
+
     public ngOnInit() {
         this.data = DATA;
     }
 
     public ngAfterViewInit() {
         this.grid.selectColumns(['City', 'PostalCode']);
+        this.cdr.detectChanges();
     }
 }

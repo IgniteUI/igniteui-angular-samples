@@ -950,7 +950,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TGridSaveStateComponent', 'TGridAboutComponent'],
                 ngDeclarations: ['TGridSaveStateComponent', 'TGridAboutComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule',
-                    "RouterModule.forRoot([\{component: 'TGridAboutComponent', path: 'tree-grid-about'},\{component: 'TGridSaveStateComponent', path: 'tree-grid-state'},\{ path: '', redirectTo: '/tree-grid-state', pathMatch: 'full' }])]"]
+                    "RouterModule.forRoot([\{component: 'TGridAboutComponent', path: 'tree-grid-state-about'},\{component: 'TGridSaveStateComponent', path: 'tree-grid-state'},\{ path: '', redirectTo: '/tree-grid-state', pathMatch: 'full' }])]"]
             }),
             component: 'TGridSaveStateComponent',
             shortenComponentPathBy: "/tree-grid/"

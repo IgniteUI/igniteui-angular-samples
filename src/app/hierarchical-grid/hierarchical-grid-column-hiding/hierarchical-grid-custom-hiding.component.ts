@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { SINGERS } from '../data';
 
@@ -13,13 +13,14 @@ export class HGridCostumHidingSampleComponent implements OnInit, AfterViewInit {
     private hierarchicalGrid: IgxHierarchicalGridComponent;
     public localdata;
 
-    constructor() {}
+    constructor(private cdr: ChangeDetectorRef) {}
 
     public ngOnInit(): void {
         this.localdata = SINGERS;
     }
     public ngAfterViewInit(): void {
         this.hierarchicalGrid.columnList.forEach((col) => col.width = '20%');
+        this.cdr.detectChanges();
     }
 
     public formatter = (a) => a;
