@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, Output, ViewChild } from '@angular/core';
 import { IDialogEventArgs, IgxDialogComponent } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
 import { ControllerComponent } from './controllers.component';
@@ -9,7 +9,7 @@ import { GridFinJSComponent } from './grid-finjs.component';
     styleUrls: ['./main.component.scss'],
     templateUrl: './main.component.html'
 })
-export class FinJSDemoComponent implements AfterViewInit, OnDestroy, OnInit {
+export class FinJSDemoComponent implements OnDestroy {
     @ViewChild('finGrid', { static: true }) public finGrid: GridFinJSComponent;
     @ViewChild('controllers', { static: true }) public controller: ControllerComponent;
     @ViewChild('dialog', { static: true }) public dialog: IgxDialogComponent;
@@ -25,16 +25,9 @@ export class FinJSDemoComponent implements AfterViewInit, OnDestroy, OnInit {
     public darkTheme = false;
     public volume = 1000;
     public frequency = 500;
-    private subscription$;
     private _timer;
 
     constructor() {
-    }
-
-    public ngAfterViewInit() {
-    }
-
-    public ngOnInit() {
     }
 
     public onSwitchChanged(event: any) {

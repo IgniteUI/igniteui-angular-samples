@@ -1,8 +1,7 @@
 /* eslint-disable max-len */
-import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild, forwardRef } from '@angular/core';
+import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
-import { Subject } from 'rxjs';
 import { SignalRService } from '../services/signal-r.service';
 
 @Component({
@@ -29,13 +28,11 @@ export class GridFinJSComponent implements OnInit {
     public overlaySettings: OverlaySettings = {
         modal: false
     };
-    protected destroy$ = new Subject<any>();
-    private subscription$;
 
     constructor(private el: ElementRef, @Inject(DOCUMENT) private document: Document, public dataService: SignalRService) { }
 
     public ngOnInit() {
-        this.dataService.startConnection();
+        this.dataService.getData(this.volume);
         this.overlaySettings.outlet = this.outlet;
         this.data$ = this.dataService.data;
 
