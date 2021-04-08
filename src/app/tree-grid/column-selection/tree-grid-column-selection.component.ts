@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
@@ -20,12 +20,15 @@ export class TreeGridColumnSelectionComponent implements OnInit, AfterViewInit {
         { field: 'Discontinued', selectable: false }
     ];
 
+    constructor(private cdr: ChangeDetectorRef){}
+
     public ngOnInit(): void {
         this.data = FOODS_DATA();
     }
 
     public ngAfterViewInit(): void {
         this.tGrid.getColumnByName('ID').selected = true;
+        this.cdr.detectChanges();
     }
 
     public formatDate(val: Date) {
