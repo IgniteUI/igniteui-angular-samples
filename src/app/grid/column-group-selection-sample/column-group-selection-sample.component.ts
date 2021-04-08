@@ -1,23 +1,26 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { DATA } from "../../data/customers";
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { IgxGridComponent } from 'igniteui-angular';
+import { DATA } from '../../data/customers';
 
 @Component({
-  selector: "gird-column-group-selection",
-  templateUrl: "./column-group-selection-sample.component.html",
-  styleUrls: ["./column-group-selection-sample.component.scss"]
+    selector: "gird-column-group-selection",
+    templateUrl: "./column-group-selection-sample.component.html",
+    styleUrls: ["./column-group-selection-sample.component.scss"]
 })
 export class GridColumnGroupSelectionComponent implements OnInit, AfterViewInit {
-  public data: any[];
+    public data: any[];
 
-  @ViewChild(IgxGridComponent)
-  public grid: IgxGridComponent;
+    @ViewChild(IgxGridComponent)
+    public grid: IgxGridComponent;
 
-  public ngOnInit() {
-    this.data = DATA;
-  }
+    constructor(private cdr: ChangeDetectorRef) { }
 
-  public ngAfterViewInit() {
-    this.grid.selectColumns(["City", "PostalCode"]);
-  }
+    public ngOnInit() {
+        this.data = DATA;
+    }
+
+    public ngAfterViewInit() {
+        this.grid.selectColumns(['City', 'PostalCode']);
+        this.cdr.detectChanges();
+    }
 }

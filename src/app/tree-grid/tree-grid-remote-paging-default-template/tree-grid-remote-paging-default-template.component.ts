@@ -1,8 +1,8 @@
-import { formatNumber } from "@angular/common";
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { GridPagingMode, IgxTreeGridComponent } from "igniteui-angular";
-import { Observable } from "rxjs";
-import { RemotePagingService } from "./remotePagingService";
+import { formatNumber } from '@angular/common';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { GridPagingMode, IgxTreeGridComponent } from 'igniteui-angular';
+import { Observable } from 'rxjs';
+import { RemotePagingService } from './remotePagingService';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -34,14 +34,15 @@ export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, Aft
     }
 
     constructor(
-        private remoteService: RemotePagingService) {
+        private remoteService: RemotePagingService, private cd: ChangeDetectorRef) {
     }
 
     public ngOnInit() {
         this.data = this.remoteService.remoteData.asObservable();
         this.data.subscribe(() => {
             this.isLoading = false;
-        })
+            this.cd.detectChanges();
+        });
         this._dataLengthSubscriber = this.remoteService.dataLength.subscribe((data) => {
             this.totalCount = data;
         });

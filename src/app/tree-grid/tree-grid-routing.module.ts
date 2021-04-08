@@ -483,8 +483,8 @@ export const treeGridRoutes: Routes = [
     },
     {
         component: TGridAboutComponent,
-        data: treeGridRoutesData["tree-grid-about"],
-        path: "tree-grid-about"
+        data: treeGridRoutesData['tree-grid-state-about'],
+        path: 'tree-grid-state-about'
     },
     {
         component: TreeGridExportVisualizationComponent,
