@@ -105,12 +105,12 @@
 </span>
 <!-- this block can be moved in another component -->
 <igx-dialog #chartSelectionDialog>
-    <igx-tabs type="fixed">
+    <igx-tabs class="tabs-container">
         <igx-tabs-group label="Conditional Formatting">
             <div class="tab-options-wrapper">
                 <div class="tab-option">
                     <div *ngFor="let condition of formattersNames" class="action">
-                        <div class="btn condition" (click)="analyse(condition)">
+                        <div class="btn condition" (click)="analyse(condition)" [ngClass]="{'selected--condition': condition === currentFormatter}">
                             <img style="width: 36px; height: 36px;"
                                 src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg" />
                             <span class="name">{{condition.replace('10', '10%')}}</span>
@@ -127,7 +127,7 @@
             </div>
         </igx-tabs-group>
 
-        <igx-tabs-group label="Create Chart" [disabled]="disableCreateChart">
+        <igx-tabs-group label="Create Chart" [disabled]="disableCreateChart" class="create-chart">
             <div class="tab-options-wrapper">
                 <div class="tab-option">
                     <div *ngFor="let chart of availableCharts | slice:0:4" class="action">
@@ -159,11 +159,8 @@
     </igx-tabs>
 </igx-dialog>
 
-<igx-dialog #chartPreviewDialog>
-    <div style="height: 300px;">
-        <div style="margin: 1rem;">
-            <h5 igxCardHeaderTitle style="justify-self: center;">Preview Chart</h5>
-        </div>
+<igx-dialog #chartPreviewDialog title="Preview Chart">
+    <div class="preview-wrapper">
         <ng-template #chartPreview chartHost></ng-template>
     </div>
 </igx-dialog>
