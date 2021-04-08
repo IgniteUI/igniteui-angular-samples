@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { CUSTOMERS } from '../data';
 
@@ -13,12 +13,15 @@ export class HierarchicalGridColumnGroupSelectionComponent implements OnInit, Af
 
     public data;
 
+    constructor(private cdr: ChangeDetectorRef){}
+
     public ngOnInit(): void {
         this.data = CUSTOMERS;
     }
 
     public ngAfterViewInit() {
         this.hGrid.selectColumns(['CompanyName', 'ContactName', 'ContactTitle', 'City']);
+        this.cdr.detectChanges();
     }
 
 }
