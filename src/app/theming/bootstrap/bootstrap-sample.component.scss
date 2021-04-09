@@ -1,0 +1,48 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$igx-primary: igx-color($light-bootstrap-palette, 'primary');
+$igx-secondary: igx-color($light-bootstrap-palette, 'secondary');
+$igx-success: igx-color($light-bootstrap-palette, 'success');
+$igx-info: igx-color($light-bootstrap-palette, 'info');
+$igx-warning: igx-color($light-bootstrap-palette, 'warn');
+$igx-danger: igx-color($light-bootstrap-palette, 'error');
+
+$theme-colors: (
+  "primary": $igx-primary,
+  "secondary": $igx-secondary,
+  "success": $igx-success,
+  "info": $igx-info,
+  "warning": $igx-warning,
+  "danger": $igx-danger
+);
+
+:host ::ng-deep {
+    @include igx-typography($font-family: $bootstrap-typeface, $type-scale: $bootstrap-type-scale);
+    @include igx-bootstrap-light-theme($light-bootstrap-palette, $legacy-support: false);
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .primary {
+        color: $igx-primary;
+    }
+
+    .success {
+        color: $igx-success;
+    }
+
+    .warning {
+        color: $igx-warning;
+    }
+
+    .igx-list {
+        border: none;
+    }
+
+    /* Importing Bootstrap SCSS file. */
+    @import '~bootstrap/scss/bootstrap';
+}
+
+
