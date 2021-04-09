@@ -1,10 +1,9 @@
+@import '../../../../variables';
+
 //Sample related styling
 igx-switch {
     margin-top: 24px;
 }
-
-// Ignite UI for Angular Theming engine related styling
-@import '~igniteui-angular/lib/core/styles/themes/index';
 
 $custom-switch-theme: igx-switch-theme(
     $thumb-on-color: #ECAA53,
