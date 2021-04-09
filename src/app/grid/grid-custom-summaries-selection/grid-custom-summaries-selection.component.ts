@@ -1,5 +1,5 @@
-import { formatDate } from "@angular/common";
-import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import { formatDate } from '@angular/common';
+import { AfterViewInit, Component, ViewChild, OnInit, ChangeDetectorRef} from '@angular/core';
 import { IgxDateSummaryOperand, IgxGridComponent, IgxNumberSummaryOperand,
     IgxSummaryOperand, IgxSummaryResult } from "igniteui-angular";
 import { DATA } from "../../data/nwindData";
@@ -42,7 +42,7 @@ export class GridCustomSummariesSelection implements AfterViewInit {
     public selectionSummaries = [];
     private customSummary =  new MySummary();
 
-    constructor() { }
+    constructor(private cdr: ChangeDetectorRef) { }
 
     public ngOnInit(): void {
         this.data = DATA;
@@ -53,6 +53,7 @@ export class GridCustomSummariesSelection implements AfterViewInit {
             columnStart: 1, columnEnd: 4
         });
         this.calculateSummary();
+        this.cdr.detectChanges();
     }
     public format(value: any) {
         if (typeof value === "number") {
