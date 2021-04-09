@@ -1,4 +1,5 @@
-import {IgxButtonGroupModule,
+import { IgxAvatarModule,
+IgxButtonGroupModule,
 IgxButtonModule,
 IgxCalendarModule,
 IgxCardModule,
@@ -110,7 +111,7 @@ export class ThemingConfigGenerator implements IConfigGenerator {
                 ngImports: ['BootstrapComponent', 'IgxAvatarModule', 'IgxCardModule', 'IgxButtonModule',
                             'IgxIconModule', 'IgxDialogModule', 'IgxListModule']
             }),
-            additionalDependencies: ['bootstrap'],
+            additionalDependencies: ['bootstrap', '@angular/localize'],
             shortenComponentPathBy: '/theming/bootstrap/'
         }));
 
