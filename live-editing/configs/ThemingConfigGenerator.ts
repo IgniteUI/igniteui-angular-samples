@@ -101,6 +101,19 @@ export class ThemingConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: '/theming/animations/'
         }));
 
+        configs.push(new Config({
+            component: 'BootstrapComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['BootstrapComponent', 'IgxAvatarModule', 'IgxCardModule', 'IgxButtonModule',
+                          'IgxIconModule', 'IgxDialogModule', 'IgxListModule'],
+                ngDeclarations: ['BootstrapComponent'],
+                ngImports: ['BootstrapComponent', 'IgxAvatarModule', 'IgxCardModule', 'IgxButtonModule',
+                            'IgxIconModule', 'IgxDialogModule', 'IgxListModule']
+            }),
+            additionalDependencies: ['bootstrap'],
+            shortenComponentPathBy: '/theming/bootstrap/'
+        }));
+
         return configs;
     }
 }
