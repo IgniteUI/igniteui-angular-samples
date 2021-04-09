@@ -26,8 +26,6 @@
 }
 
 :host ::ng-deep {
-    @include igx-fluent-light-theme($fluent-excel-palette);
-
     .grid-chart-contextmenu-wrapper {
         igx-grid {
             @include scrollbar(16px, 16px);
@@ -42,6 +40,7 @@
         align-self: center;
         margin-right: -2rem;
         margin-left: -2rem;
+        margin-top: -0.8rem;
 
         .action-buttons-wrapper {
             margin-left: auto;
@@ -117,6 +116,7 @@
         margin-left: -1.5rem;
         margin-right: -1.5rem;
         margin-bottom: -1.4rem;
+        margin-top: -1rem;
     }
 
     .create-chart {
@@ -194,11 +194,27 @@
         text-align: center;
     }
 }
+::ng-deep {
+    .preview-wrapper {
+        .igx-data-chart {
+            height: 200px !important;
+        }
+    }
+
+    .igx-toggle{
+        margin-top: -0.8rem;
+    }
+}
 
 .btn {
 
     &.condition {
         padding-right: 16px;
+        opacity: .62;
+        &.selected--condition{
+        pointer-events: none;
+        opacity: 1;
+        }
     }
 
     &.chart {
