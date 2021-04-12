@@ -76,6 +76,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     @ViewChild(IgxTabsComponent, { static: true })
     public tabElement: ElementRef<HTMLElement>;
 
+    @ViewChild ('contentTab') tabsContainer: ElementRef<HTMLElement>;
+
     public columnSelectionType = 'multiple';
     public data;
     public opened = true;
@@ -90,6 +92,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     public range;
     public disableCreateChart = false;
     public currentFormatter;
+    public hasFormatter = false;
     // Dialogs options
     public _chartDialogOverlaySettings = {
         closeOnOutsideClick: false,
@@ -239,7 +242,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     }
 
     public previewChart(chart: CHART_TYPE) {
-        this._chartPreviewDialogOverlaySettings.target = this.tabs.headerContainer.nativeElement;
+        this._chartPreviewDialogOverlaySettings.target = this.tabsContainer.nativeElement;
         this.chartPreviewDialog.toggleRef.element.style.width = (this.chartSelectionDialog.toggleRef as any).elementRef.nativeElement.clientWidth + 'px';
         this.createChart(chart, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }
@@ -279,11 +282,14 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
 
     public analyse(condition) {
         this.currentFormatter = condition;
+        this.hasFormatter = true;
         this.formatting.formatCells(condition);
     }
 
     public clearFormatting() {
         this.formatting.clearFormatting();
+        this.hasFormatter = false;
+        this.currentFormatter = undefined;
     }
 
     public toggle() {

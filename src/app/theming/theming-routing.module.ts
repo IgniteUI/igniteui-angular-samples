@@ -2,30 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AnimationsSampleComponent } from './animations/animations-sample-1/animations-sample-1.component';
 import { AnimationsSample2Component } from './animations/animations-sample-2/animations-sample-2.component';
-import { DarkThemeSampleComponent } from './dark-theme-sample/dark-theme-sample.component';
 import { DefaultThemeSampleComponent } from './default-theme-sample/default-theme-sample.component';
 import { DisplayDensityComponent } from './display-density/display-density.component';
 import { CardSampleShadowComponent} from './shadows/card-sample-shadow/card-sample-shadow';
 import { ShadowsSampleComponent } from './shadows/shadows-sample-1/shadows-sample.component';
 import { ShadowsSample2Component } from './shadows/shadows-sample-2/shadows-sample-2.component';
-import { ThemeChooserSampleComponent } from './theme-chooser/theme-chooser-sample.component';
 import { themingRoutesData } from './theming-routes-data';
 
 export const themingRoutes: Routes = [
     {
-        component: ThemeChooserSampleComponent,
-        data: themingRoutesData['theme-chooser'],
-        path: 'theme-chooser'
-    },
-    {
         component: DefaultThemeSampleComponent,
         data: themingRoutesData['default-theme-sample'],
         path: 'default-theme-sample'
-    },
-    {
-        component: DarkThemeSampleComponent,
-        data: themingRoutesData['dark-theme-sample'],
-        path: 'dark-theme-sample'
     },
     {
         component: ShadowsSampleComponent,
