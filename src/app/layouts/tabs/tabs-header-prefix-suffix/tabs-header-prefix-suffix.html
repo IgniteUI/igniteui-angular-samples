@@ -1,7 +1,7 @@
 <igx-tabs>
     <igx-tab-item *ngFor="let item of tabs; let i = index">
         <igx-tab-header>
-            <img igxPrefix src="{{item.image}}" height="40px" width="80px"/>
+            <img igxPrefix src="{{item.image}}" height="20px" width="20px"/>
             <h6>{{item.header}}</h6>
             <button igxButton="icon" igxSuffix (click)="closeTab(i)">
                 <igx-icon>close</igx-icon>
