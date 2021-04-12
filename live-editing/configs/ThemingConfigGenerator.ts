@@ -17,6 +17,7 @@ IgxSelectModule,
 IgxSnackbarModule,
 IgxToggleModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 export class ThemingConfigGenerator implements IConfigGenerator {
 
 
@@ -106,12 +107,12 @@ export class ThemingConfigGenerator implements IConfigGenerator {
             component: 'BootstrapComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['BootstrapComponent', 'IgxAvatarModule', 'IgxCardModule', 'IgxButtonModule',
-                          'IgxIconModule', 'IgxDialogModule', 'IgxListModule'],
+                          'IgxIconModule', 'IgxDialogModule', 'IgxListModule', 'NgbModule'],
                 ngDeclarations: ['BootstrapComponent'],
-                ngImports: ['BootstrapComponent', 'IgxAvatarModule', 'IgxCardModule', 'IgxButtonModule',
-                            'IgxIconModule', 'IgxDialogModule', 'IgxListModule']
+                ngImports: ['IgxAvatarModule', 'IgxCardModule', 'IgxButtonModule',
+                            'IgxIconModule', 'IgxDialogModule', 'IgxListModule', 'NgbModule']
             }),
-            additionalDependencies: ['bootstrap', '@angular/localize'],
+            additionalDependencies: ['bootstrap', '@ng-bootstrap/ng-bootstrap'],
             shortenComponentPathBy: '/theming/bootstrap/'
         }));
 

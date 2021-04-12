@@ -25,6 +25,11 @@ $theme-colors: (
         align-items: center;
     }
 
+    .card-wrapper {
+        margin: 16px;
+        flex: 1 0 25%;
+    }
+
     .primary {
         color: $igx-primary;
     }
