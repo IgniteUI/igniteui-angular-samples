@@ -18,6 +18,10 @@ igx-tab-panel {
     color: darkgray;
 }
 
+igx-bottom-nav-content {
+    padding: 10px;
+}
+
 $dark-bottom-nav: igx-bottom-nav-theme(
     $background: #292826,
     $active-item-color: #F4D45C
