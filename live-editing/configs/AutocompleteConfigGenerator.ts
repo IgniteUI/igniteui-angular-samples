@@ -6,7 +6,9 @@ import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing
 
 export class AutocompleteConfigGenerator implements IConfigGenerator {
     public additionalImports = {
-        AutocompletePipeStartsWith: '../../src/app/data-entries/autocomplete/autocomplete/autocomplete.component'
+        AutocompletePipeStartsWith: '../../src/app/data-entries/autocomplete/autocomplete/autocomplete.component',
+        AutocompletePipeStartsWith2: '../../src/app/data-entries/autocomplete/movie/movie.component'
+
 };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -28,9 +30,10 @@ export class AutocompleteConfigGenerator implements IConfigGenerator {
                     'IgxAutocompleteModule',
                     'IgxDropDownModule',
                     'IgxInputGroupModule',
-                    'MovieComponent'
+                    'MovieComponent',
+                    'AutocompletePipeStartsWith2'
                 ],
-                ngDeclarations: ['MovieComponent' ],
+                ngDeclarations: ['MovieComponent', 'AutocompletePipeStartsWith2'],
                 ngImports: [
                     'IgxAutocompleteModule',
                     'IgxDropDownModule',
