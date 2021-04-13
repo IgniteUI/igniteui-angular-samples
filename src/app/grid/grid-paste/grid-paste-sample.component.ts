@@ -61,7 +61,7 @@ export class GridPasteSampleComponent {
             this.grid1.addRow(rowData);
         }
         // scroll to last added row
-        this.grid1.verticalScrollContainer.dataChanged
+        this.grid1.verticalScrollContainer.onDataChanged
             .pipe(first())
             .subscribe(() => {
                 this.grid1.verticalScrollContainer.scrollTo(
@@ -127,7 +127,7 @@ export class GridPasteSampleComponent {
         if (this.pasteMode === 'Paste starting from active cell') {
             return;
         }
-        this.grid1.verticalScrollContainer.dataChanged
+        this.grid1.verticalScrollContainer.onDataChanged
             .pipe(first())
             .subscribe(() => {
                 this.grid1.verticalScrollContainer.scrollTo(

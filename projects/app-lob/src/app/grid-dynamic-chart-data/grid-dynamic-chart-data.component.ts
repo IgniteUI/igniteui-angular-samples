@@ -188,12 +188,12 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
         });
         this.formatting.formattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
         this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.range = undefined);
-        this.grid.dataPreLoad.pipe(
+        this.grid.onDataPreLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             takeUntil(this.destroy$))
             .subscribe(() => this.range && !this.contextmenu ? this.renderButton() : noop());
-        this.grid.parentVirtDir.chunkLoad.pipe(
+        this.grid.parentVirtDir.onChunkLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             takeUntil(this.destroy$))

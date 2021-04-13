@@ -1,7 +1,7 @@
 <div class="grid__wrapper">
     <app-grid-with-transactions>
         <igx-grid igxPreventDocumentScroll #gridRowEditTransaction [data]="data" [primaryKey]="'ProductID'" width="100%"
-            height="500px" [rowEditable]="true" [allowFiltering]="true" (dataPreLoad)="actionstrip.hide()">
+            height="500px" [rowEditable]="true" [allowFiltering]="true" (onDataPreLoad)="actionstrip.hide()">
             <igx-column field="ProductID" header="Product ID" [pinned]="true" [hidden]='true' [filterable]="false">
             </igx-column>
             <igx-column field="ProductName" header="Product Name" [dataType]="'string'" [sortable]="true"></igx-column>
