@@ -43,14 +43,14 @@ export class GridRemoteVirtualizationSampleComponent implements OnInit, AfterVie
             chunkSize: 20
         });
 
-        this.grid.onDataPreLoad.pipe().subscribe(() => {
+        this.grid.dataPreLoad.pipe().subscribe(() => {
             this._remoteService.getDataFromCache(this.grid.virtualizationState,
                 this.grid.sortingExpressions[0], false, () => {
                     this.cdr.detectChanges();
                 });
         });
 
-        this.grid.onDataPreLoad.pipe(debounceTime(500)).subscribe(() => {
+        this.grid.dataPreLoad.pipe(debounceTime(500)).subscribe(() => {
             this.processData(false);
         });
     }

@@ -19,7 +19,7 @@
         </igx-action-strip>
 
         <igx-row-island [key]="'Albums'" [autoGenerate]="false" [primaryKey]="'Album'" [pinning]='pinningConfig'
-            [cellSelection]="'none'" (onDataPreLoad)="actionStrip2.hide()">
+            [cellSelection]="'none'" (dataPreLoad)="actionStrip2.hide()">
             <igx-column field="Album"></igx-column>
             <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
