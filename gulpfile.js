@@ -34,7 +34,8 @@ gulp.task("generate-live-editing", async () => {
         configGeneratorPath: "./live-editing/generators/ConfigGenerators.ts",
         module: {
             moduleName: "MODULE_ROUTES", routerPath: './live-editing/Routes.ts',
-        }
+        },
+        additionalSharedStyles: ["_variables.scss", "_app-layout.scss"]
     }
     await generateLiveEditing(liveEditingOptions);
 });
