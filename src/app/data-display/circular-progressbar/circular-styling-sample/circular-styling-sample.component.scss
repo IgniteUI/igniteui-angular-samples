@@ -1,9 +1,8 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 $custom-theme: igx-progress-circular-theme(
-    $base-circle-color: lightgray,
-    $progress-circle-color: rgb(32, 192, 17)
-
+    $base-circle-color: igx-color($color: 'grays', $variant: 300),
+    $progress-circle-color: igx-color($color: 'success')
 );
 
 // :host {
@@ -18,4 +17,3 @@ $custom-theme: igx-progress-circular-theme(
 :host ::ng-deep {
     @include igx-progress-circular($custom-theme);
 }
-

@@ -1,8 +1,8 @@
-@import "~igniteui-angular/lib/core/styles/themes/index";
+@import '../../../variables';
 
-$default-arrow-color: igx-color($default-palette, 'grays', 400);
-$default-arrow-hover-color: igx-color($default-palette, 'grays', 800);
-$default-arrow-all-color: igx-color($default-palette, 'secondary', 100);
+$default-arrow-color: igx-color($color: 'grays', $variant: 400);
+$default-arrow-hover-color: igx-color($color: 'grays', $variant: 800);
+$default-arrow-all-color: igx-color($color: 'secondary', $variant: 100);
 
 @mixin selector($justify, $align) {
     display: flex;

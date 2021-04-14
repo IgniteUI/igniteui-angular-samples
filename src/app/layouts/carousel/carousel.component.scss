@@ -1,33 +1,30 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
-
-.carousel-container{
+.carousel-container {
     width: 70vw;
     height: 80vh;
     margin: 16px auto;
 }
 
 :host ::ng-deep{
-
-    .image-container{
+    .image-container {
         max-width: 85%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .igx-carousel{
+    .igx-carousel {
         max-width: 100%;
         width: unset;
     }
 
-    .igx-nav-dot{
+    .igx-nav-dot {
         background: black;
         box-shadow: none;
         width: 15px;
         height: 15px;
     }
 
-    .igx-slide{
+    .igx-slide {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -35,9 +32,8 @@
         width: unset;
     }
 
-    .igx-slide img{
+    .igx-slide img {
         object-fit: fill;
         max-width: 90%;
     }
-
 }

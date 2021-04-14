@@ -1,4 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 $custom-strip: igx-action-strip-theme(
     $actions-border-radius: 0
@@ -30,7 +30,7 @@ $custom-strip: igx-action-strip-theme(
 .font-italic {
     font-style: italic;
 }
-  
+
 .font-bold {
     font-weight: bold
 }

@@ -1,6 +1,6 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
-.dialog-container{
+.dialog-container {
     display: flex;
 }
 
@@ -10,13 +10,13 @@ igx-icon {
 
 $my-dialog-theme: igx-dialog-theme(
     $background: #011627,
-    $title-color:  #ECAA53,
-    $message-color:  #FEFEFE,
+    $title-color:  #ecaa53,
+    $message-color:  #fefefe,
     $border-radius: .3,
 );
 
 $dark-button: igx-button-theme(
-    $background: #ECAA53,
+    $background: #ecaa53,
     $foreground: #011627,
 );
 

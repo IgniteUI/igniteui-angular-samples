@@ -1,13 +1,15 @@
+@import '../../../../variables';
+
 .layout-box {
     width: 100%;
-    background: var(--igx-grays-200);
+    background: igx-color($color: 'grays', $variant: 200);
     padding: 8px;
 
     .layout-box__el {
         padding: 10px 20px;
         margin: 8px;
-        background: var(--igx-secondary-500);
-        color: var(--igx-surface-500);
+        background: igx-color($color: 'secondary');
+        color: igx-color($color: 'surface');
     }
 
     &.sidebar {

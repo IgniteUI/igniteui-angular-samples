@@ -1,4 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 igx-card {
     width: rem(288px);
@@ -8,8 +8,8 @@ igx-card {
 
     &.drag-ghost {
         transform: scale(1.05);
-        box-shadow: igx-elevation($igx-elevations, 24);
-        color: var(--igx-secondary-300);
+        box-shadow: igx-elevation($elevation: 24);
+        color: igx-color($color: 'secondary', $variant: 300);
     }
 
     &.invisible {
@@ -42,9 +42,9 @@ igx-card {
         max-width: rem(320px);
         min-width: rem(320px);
         padding: 0 rem(16px);
-        background-color: var(--igx-grays-100);
+        background-color: igx-color($color: 'grays', $variant: 100);
         border-radius: rem(8px);
-        border: 1px solid var(--igx-grays-200);
+        border: 1px solid igx-color($color: 'grays', $variant: 200);
         margin: 0 rem(12px);
         overflow: auto;
 
@@ -57,7 +57,7 @@ igx-card {
             align-self: flex-start;
 
             .state-title {
-                @include igx-type-style($default-type-scale, 'subtitle-1') {
+                @include igx-type-style($material-type-scale, 'subtitle-1') {
                     font-weight: 600;
                     margin: 0;
                 };
@@ -71,10 +71,7 @@ igx-card {
         }
 
         &.active {
-            /* IE Fallback color */
-            background-color: #9ba8b0;
-            /* Default color */
-            background-color: var(--igx-navdrawer-item-active-background);
+            background-color: igx-color($color: 'primary', $variant: 100);
         }
     }
 }

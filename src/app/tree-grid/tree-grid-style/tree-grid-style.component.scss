@@ -1,6 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
-
-/*BASIC THEMING*/
+@import '../../../variables';
 
 $custom-theme: igx-grid-theme(
   $cell-active-border-color: #FFCD0F,
@@ -15,56 +13,9 @@ $custom-theme: igx-grid-theme(
   $row-highlight: #FFCD0F
 );
 
-/*ENHANCED APPROACHES*/
-
-// $yellow-color: #FFCD0F;
-// $black-color: #494949;
-// $custom-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
-
-/*PALETTE and IGX-COLOR*/
-
-// $custom-theme: igx-grid-theme(
-//     $cell-active-border-color: igx-color($custom-palette, "secondary", 500),
-//     $cell-selected-background: igx-color($custom-palette, "primary", 300),
-//     $row-hover-background: igx-color($custom-palette, "secondary", 100),
-//     $row-selected-background: igx-color($custom-palette, "primary", 100),
-//     $header-background: igx-color($custom-palette, "primary", 500),
-//     $header-text-color: igx-contrast-color($custom-palette, "primary", 500),
-//     $expand-icon-color: igx-color($custom-palette, "secondary", 500),
-//     $expand-icon-hover-color: igx-color($custom-palette, "secondary", 600),
-//     $resize-line-color: igx-color($custom-palette, "secondary", 500),
-//     $row-highlight: igx-color($custom-palette, "secondary", 500)
-// );
-
-/*SCHEMAS*/
-
-// $custom-grid-schema: extend($_light-grid, (
-//     cell-active-border-color: (igx-color:('secondary', 500)),
-//     cell-selected-background: (igx-color:('primary', 300)),
-//     row-hover-background: (igx-color:('secondary', 100)),
-//     row-selected-background: (igx-color:('primary', 100)),
-//     header-background: (igx-color:('primary', 500)),
-//     header-text-color: (igx-contrast-color:('primary', 500)),
-//     expand-icon-color: (igx-color:('secondary', 500)),
-//     expand-icon-hover-color: (igx-color:('secondary', 600)),
-//     resize-line-color: (igx-color:('secondary', 500)),
-//     row-highlight: (igx-color:('secondary', 500))
-// ));
-
-// $my-custom-schema: extend($light-schema, (
-//     igx-grid: $custom-grid-schema
-// ));
-
-// $custom-theme: igx-grid-theme(
-//     $palette: $custom-palette,
-//     $schema: $my-custom-schema
-// ); 
-
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
-
 :host {
     ::ng-deep {
-        @include igx-grid($custom-theme);  
+        @include igx-grid($custom-theme);
     }
 }
 

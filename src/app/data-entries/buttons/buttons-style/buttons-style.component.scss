@@ -1,4 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 .buttons-sample {
     display: flex;
@@ -17,7 +17,7 @@ $custom-button-theme: igx-button-theme(
     $hover-background: #2e4d6b,
     $focus-foreground: #fdfdfd,
     $focus-background: #2e4d6b,
-    $disabled-foreground: #2e4d6b
+    $disabled-foreground: #bbb
 );
 
 // :host {
@@ -32,4 +32,3 @@ $custom-button-theme: igx-button-theme(
 :host ::ng-deep {
     @include igx-button($custom-button-theme);
 }
-
