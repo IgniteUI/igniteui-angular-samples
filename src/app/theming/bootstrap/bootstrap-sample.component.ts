@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { IgxDialogComponent, IgxOverlayOutletDirective } from 'igniteui-angular';
-
 @Component({
   selector: 'app-bootstrap-sample',
   styleUrls: ['./bootstrap-sample.component.scss'],
   templateUrl: './bootstrap-sample.component.html'
 })
+
 export class BootstrapComponent implements OnInit{
 
     @ViewChild(IgxOverlayOutletDirective, { static: true })
@@ -13,6 +13,9 @@ export class BootstrapComponent implements OnInit{
 
     @ViewChild('dialog', { read: IgxDialogComponent, static: true })
     public dialog: IgxDialogComponent;
+
+    @HostBinding('class')
+    public themesClass = 'light';
 
     public horizontal = true;
 
@@ -32,6 +35,14 @@ export class BootstrapComponent implements OnInit{
     ];
 
     private _dialogOverlaySettings2;
+
+    public lightTheme() {
+        this.themesClass = 'light';
+    }
+
+    public darkTheme() {
+        this.themesClass = 'dark';
+    }
 
     public openDialog() {
         this._dialogOverlaySettings2.outlet = this.outlet;
