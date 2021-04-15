@@ -1,4 +1,4 @@
-@import "~igniteui-angular/lib/core/styles/themes/index";
+@import "../../../variables";
 
 $light-primary: igx-color($light-bootstrap-palette, "primary");
 $light-secondary: igx-color($light-bootstrap-palette, "secondary");
@@ -60,9 +60,6 @@ $dark-secondary: igx-color($custom-dark-palette, "secondary");
                 "warning": $light-warning,
                 "danger": $light-danger
             );
-
-            /* Importing Bootstrap SCSS file. */
-            @import "~bootstrap/scss/bootstrap";
         }
     }
 
@@ -80,7 +77,12 @@ $dark-secondary: igx-color($custom-dark-palette, "secondary");
         }
 
         .igx-card-actions .btn-primary {
-            color: #fff;
+            background-color: $dark-primary;
+            border-color: $dark-primary;
+
+            &:hover {
+                background-color: igx-color($custom-dark-palette, 'primary', 600);
+            }
         }
 
         .navbar-brand {
@@ -119,8 +121,6 @@ $dark-secondary: igx-color($custom-dark-palette, "secondary");
                 "primary": $dark-primary,
                 "secondary": $dark-secondary
             );
-
-            @import "~bootstrap/scss/bootstrap";
         }
     }
 
@@ -146,6 +146,11 @@ $dark-secondary: igx-color($custom-dark-palette, "secondary");
         .dropdown-toggle.theme::after {
             display: none;
         }
+    }
+
+    ::ng-deep{
+        /* Importing Bootstrap .scss file. */
+        @import "~bootstrap/scss/bootstrap";
     }
 }
 
