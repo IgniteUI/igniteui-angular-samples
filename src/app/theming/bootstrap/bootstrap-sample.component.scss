@@ -1,6 +1,5 @@
 @import "~igniteui-angular/lib/core/styles/themes/index";
 
-
 $light-primary: igx-color($light-bootstrap-palette, "primary");
 $light-secondary: igx-color($light-bootstrap-palette, "secondary");
 $light-success: igx-color($light-bootstrap-palette, "success");
@@ -38,8 +37,6 @@ $dark-secondary: igx-color($custom-dark-palette, "secondary");
     @include igx-typography($font-family: $bootstrap-typeface, $type-scale: $bootstrap-type-scale);
 
     &.light {
-        @include igx-bootstrap-light-theme($light-bootstrap-palette);
-
         @include igx-color-classes(
             $palette: $light-bootstrap-palette,
             $prop: 'background',
@@ -53,6 +50,8 @@ $dark-secondary: igx-color($custom-dark-palette, "secondary");
         }
 
         ::ng-deep {
+            @include igx-bootstrap-light-theme($light-bootstrap-palette);
+
             $theme-colors: (
                 "primary": $light-primary,
                 "secondary": $light-secondary,
@@ -68,8 +67,6 @@ $dark-secondary: igx-color($custom-dark-palette, "secondary");
     }
 
     &.dark {
-        @include igx-bootstrap-dark-theme($custom-dark-palette);
-
         @include igx-color-classes(
             $palette: $custom-dark-palette,
             $prop: 'background',
@@ -91,6 +88,8 @@ $dark-secondary: igx-color($custom-dark-palette, "secondary");
         }
 
         ::ng-deep {
+            @include igx-bootstrap-dark-theme($custom-dark-palette);
+
             .accordion {
                 .card-header {
                     background-color: igx-color($custom-dark-palette, 'grays', 200);
