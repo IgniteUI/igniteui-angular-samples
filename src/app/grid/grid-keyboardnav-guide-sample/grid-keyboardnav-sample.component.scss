@@ -1,10 +1,6 @@
+@import '../../../variables';
 
-@import '~igniteui-angular/lib/core/styles/themes/index';
-
-$my-color: igx-color($default-palette, 'success');
-:root {
-    --success-color: igx-color($default-palette, 'success');
-}
+$my-color: igx-color($color: 'success');
 
 $custom-checkbox-theme: igx-checkbox-theme(
     $fill-color: $my-color,
@@ -43,9 +39,7 @@ $custom-checkbox-theme: igx-checkbox-theme(
             }
 
             height: 450px;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2),
-            0 1px 1px 0 rgba(0, 0, 0, 0.14),
-            0 2px 1px -1px rgba(0, 0, 0, 0.12);
+            box-shadow: igx-elevation($elevation: 2);
         }
 
         .empty-list {

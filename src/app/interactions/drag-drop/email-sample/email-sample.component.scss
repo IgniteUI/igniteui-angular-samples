@@ -1,5 +1,4 @@
-@import "~igniteui-angular/lib/core/styles/themes/index";
-
+@import '../../../../variables';
 
 .drag-ghost {
     position: relative;
@@ -7,14 +6,11 @@
     align-items: center;
     justify-content: flex-start;
     width: rem(180px);
-    color: var(--igx-secondary-200-contrast);
+    color: igx-contrast-color($color: 'secondary', $variant: 200);
+    background-color: igx-color($color: 'secondary', $variant: 200);
     font-size: rem(13px);
     padding: rem(8px);
     border-radius: rem(4px);
-    /* IE fallback */
-    background-color: #e41c77;
-    /* Default color */
-    background: var(--igx-secondary-200);
 
     igx-icon {
         margin-right: rem(8px);
@@ -31,10 +27,7 @@
     .folders {
         width: rem(200px);
         padding: 8px;
-        /* IE fallback color */
-        background: igx-color($default-palette, 'grays', 50);
-        /* Default color */
-        background: var(--igx-grays-50);
+        background: igx-color($color: 'grays', $variant: 50);
         border: none;
 
         igx-icon {
@@ -48,17 +41,11 @@
             transition: background .15s $ease-out-quad;
 
             &.drag-enter {
-                /* IE fallback color */
-                background: igx-color($default-palette, 'secondary', 100);
-                /* Default color */
-                background: var(--igx-secondary-100);
+                background: igx-color($color: 'secondary', $variant: 100);
             }
 
             &:hover {
-                /* IE fallback color */
-                background: igx-color($default-palette, 'grays', 100);
-                /* Default color */
-                background: var(--igx-grays-100);
+                background: igx-color($color: 'grays', $variant: 100);
             }
 
             &:nth-child(5) {
@@ -88,12 +75,8 @@
     }
 
     .email-checked {
-        /* IE Fallback */
-        background-color: #ea87b4;
-        /* Default color */
-        color: var(--igx-secondary-100-contrast);
-        background: var(--igx-secondary-100);
+        color: igx-contrast-color($color: 'secondary', $variant: 100);
+        background: igx-color($color: 'secondary', $variant: 100);
         transition: background .1s ease-out;
     }
-
 }

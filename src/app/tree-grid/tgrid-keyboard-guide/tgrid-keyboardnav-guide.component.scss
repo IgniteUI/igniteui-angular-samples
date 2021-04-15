@@ -1,10 +1,6 @@
-
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../variables';
 
 $my-color: igx-color($default-palette, 'success');
-:root {
-    --success-color: igx-color($default-palette, 'success');
-}
 
 $custom-checkbox-theme: igx-checkbox-theme(
     $fill-color: $my-color,

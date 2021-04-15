@@ -1,10 +1,10 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 $custom-checkbox-theme: igx-checkbox-theme(
     $border-radius: 10px,
     $label-color: #011627,
-    $empty-color: #ECAA53,
-    $fill-color: #ECAA53,
+    $empty-color: #ecaa53,
+    $fill-color: #ecaa53,
     $tick-color: #011627,
 );
 

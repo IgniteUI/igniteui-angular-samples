@@ -1,219 +1,43 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../variables';
 
-/*BASIC THEMING*/
+$yellow: #ffcd0f;
+$black: #292826;
 
 $custom-grid: igx-grid-theme(
-    $filtering-row-background: #FFCD0F
+    $filtering-row-background: $yellow
 );
 
 $custom-button: igx-button-theme(
-    $background: #FFCD0F,
-    $foreground: #292826,
-    $hover-background: #292826,
-    $hover-foreground: #FFCD0F
+    $background: $yellow,
+    $foreground: $black,
+    $hover-background: $black,
+    $hover-foreground: $yellow
 );
 
 $custom-input-group: igx-input-group-theme(
-    $box-background: #FFCD0F,
-    $idle-text-color: #292826,
-    $focused-text-color: #292826,
-    $filled-text-color: #292826
+    $box-background: $yellow,
+    $idle-text-color: $black,
+    $focused-text-color: $black,
+    $filled-text-color: $black
 );
 
 $custom-list: igx-list-theme(
-    $background: #FFCD0F
+    $background: $yellow
 );
 
 $custom-checkbox: igx-checkbox-theme(
-    $empty-color: #292826,
-    $fill-color: #292826,
-    $tick-color: #FFCD0F,
-    $label-color: #292826
+    $empty-color: $black,
+    $fill-color: $black,
+    $tick-color: $yellow,
+    $label-color: $black
 );
 
 $custom-drop-down: igx-drop-down-theme(
-    $background-color: #FFCD0F,
-    $item-text-color: #292826,
-    $hover-item-background: #292826,
-    $hover-item-text-color: #FFCD0F
+    $background-color: $yellow,
+    $item-text-color: $black,
+    $hover-item-background: $black,
+    $hover-item-text-color: $yellow
 );
-
-/*ENHANCED APPROACHES*/
-
-// $yellow-color: #FFCD0F;
-// $black-color: #292826;
-// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
-
-/*PALETTE and IGX-COLOR*/
-
-// $custom-grid: igx-grid-theme(
-//     $filtering-row-background: #FFCD0F
-// );
-
-// $custom-button: igx-button-theme(
-//     $background: igx-color($dark-palette, "secondary", 400),
-//     $foreground: igx-color($dark-palette, "primary", 400),
-//     $hover-background: igx-color($dark-palette, "primary", 400),
-//     $hover-foreground: igx-color($dark-palette, "secondary", 400)
-// );
-
-// $custom-input-group: igx-input-group-theme(
-//     $box-background: igx-color($dark-palette, "primary", 400),
-//     $idle-text-color: igx-color($dark-palette, "secondary", 400),
-//     $focused-text-color: igx-color($dark-palette, "secondary", 400),
-//     $filled-text-color: igx-color($dark-palette, "secondary", 400)
-// );
-
-// $custom-list: igx-list-theme(
-//     $background: igx-color($dark-palette, "secondary", 400)
-// );
-
-// $custom-checkbox: igx-checkbox-theme(
-//     $empty-color: igx-color($dark-palette, "primary", 400),
-//     $fill-color: igx-color($dark-palette, "primary", 400),
-//     $tick-color: igx-color($dark-palette, "secondary", 400),
-//     $label-color: igx-color($dark-palette, "primary", 400)
-// );
-
-// $custom-drop-down: igx-drop-down-theme(
-//     $background-color: igx-color($dark-palette, "secondary", 400),
-//     $item-text-color: igx-color($dark-palette, "primary", 400),
-//     $hover-item-background: igx-color($dark-palette, "primary", 400),
-//     $hover-item-text-color: igx-color($dark-palette, "secondary", 400)
-// );
-
-/*SCHEMAS*/
-
-// $custom-grid-schema: extend($_light-grid,
-//     (
-//         filtering-row-background:(
-//             igx-color: ("secondary", 400)
-//         )
-//     )
-// );
-
-// $custom-button-schema: extend($_light-button,
-//     (
-//         background:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         foreground:(
-//             igx-color: ("primary", 400)
-//         ),
-//         hover-background:(
-//             igx-color: ("primary", 400)
-//         ),
-//         hover-foreground:(
-//             igx-color: ("secondary", 400)
-//         )
-//     )
-// );
-
-// $custom-input-group-schema: extend($_light-input-group,
-//     (
-//         box-background:(
-//             igx-color: ("primary", 400)
-//         ),
-//         idle-text-color:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         focused-text-color:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         filled-text-color:(
-//             igx-color: ("secondary", 400)
-//         )
-//     )
-// );
-
-// $custom-list-schema: extend($_light-list,
-//     (
-//         background:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         item-background:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         item-background-hover:(
-//             igx-color: ('secondary', 600)
-//         )
-//     )
-// );
-
-// $custom-checkbox-schema: extend($_light-checkbox,
-//     (
-//         empty-color:(
-//             igx-color: ("primary", 400)
-//         ),
-//         fill-color:(
-//             igx-color: ("primary", 400)
-//         ),
-//         tick-color:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         label-color:(
-//             igx-color: ("primary", 400)
-//         )
-//     )
-// );
-
-// $custom-drop-down-schema: extend($_light-drop-down,
-//     (
-//         background-color:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         item-text-color:(
-//             igx-color: ("primary", 400)
-//         ),
-//         hover-item-background:(
-//             igx-color: ("primary", 400)
-//         ),
-//         hover-item-text-color:(
-//             igx-color: ("secondary", 400)
-//         )
-//     )
-// );
-
-// $custom-light-schema: extend($light-schema,(
-//     igx-grid: $custom-grid-schema,
-//     igx-button: $custom-button-schema,
-//     igx-input-group: $custom-input-group-schema,
-//     igx-checkbox: $custom-checkbox-schema,
-//     igx-drop-down: $custom-drop-down-schema,
-//     igx-list: $custom-list-schema
-// ));
-
-// $custom-grid: igx-grid-theme(
-//     $palette: $dark-palette,
-//     $schema: $custom-light-schema
-// );
-
-// $custom-button: igx-button-theme(
-//     $palette: $dark-palette,
-//     $schema: $custom-light-schema
-// );
-
-// $custom-input-group: igx-input-group-theme(
-//     $palette: $dark-palette,
-//     $schema: $custom-light-schema
-// );
-
-// $custom-list: igx-list-theme(
-//     $palette: $dark-palette,
-//     $schema: $custom-light-schema
-// );
-
-// $custom-checkbox: igx-checkbox-theme(
-//     $palette: $dark-palette,
-//     $schema: $custom-light-schema
-// );
-
-// $custom-drop-down: igx-drop-down-theme(
-//     $palette: $dark-palette,
-//     $schema: $custom-light-schema
-// );
-
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 
 :host {
     ::ng-deep {
@@ -225,7 +49,7 @@ $custom-drop-down: igx-drop-down-theme(
             @include igx-checkbox($custom-checkbox);
             @include igx-list($custom-list);
             .igx-input-group__input::placeholder {
-                color: #292826;
+                color: $black;
             }
         }
     }

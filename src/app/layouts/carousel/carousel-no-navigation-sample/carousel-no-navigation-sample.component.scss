@@ -1,3 +1,5 @@
+@import '../../../../variables';
+
 .carousel-wrapper {
     width: 60%;
 }
@@ -9,10 +11,13 @@
 
 :host ::ng-deep {
     .promo-price {
+        position: relative;
         display: flex;
-        background: rgba(255,255,255,.55);
+        background: rgba(igx-color($palette: $palette, $color: 'surface'), .54);
+        color: igx-contrast-color($color: 'surface');
         padding: 1rem;
         border-bottom: transparent 1px solid;
+        backdrop-filter: blur(10px);
     }
 
     .description {
@@ -29,14 +34,14 @@
         .subTitle{
             font-size: 1rem;
             font-weight: 600;
-            color: #585858cc;
+            color: igx-color($color: 'grays', $variant: 600);
         }
     }
 
     .price {
         padding-left: .5rem;
         font-size: 1.5rem;
-        color: #e41c77;
+        color: igx-color($color: secondary);
     }
 
     igx-list {
@@ -44,8 +49,25 @@
     }
 
     igx-list-item {
+        padding: 0 16px;
+        cursor: pointer;
+        transition: all .25s $ease-out-quad;
+        will-change: filter, opacity;
+        border-radius: 0 8px 8px 0;
+
+        img {
+            margin: 8px;
+            border-radius: 8px;
+        }
+
         &.disabled {
+            filter: blur(2px);
             opacity: .5;
+
+            &:hover {
+                opacity: 1;
+                filter: none;
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 .header-footer-select-sample {
     display: flex;
@@ -12,7 +12,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
- 
+
         span {
             display: flex;
             padding: 8px;
@@ -32,10 +32,10 @@ igx-select {
     justify-content: space-between;
     align-items: center;
     padding: 0 1.5rem;
-    background: igx-color($default-palette, "grays", 100);
+    background: igx-color($color: 'grays', $variant: 100);
     igx-icon {
         &.important-icon {
-            color: igx-color($default-palette, "primary", 500);
+            color: igx-color($color: 'primary', $variant: 500);
         }
     }
 }
@@ -66,25 +66,24 @@ igx-select {
 }
 
 .sample-template-heading {
-    color: igx-color($default-palette, "secondary");
+    color: igx-color($color: 'secondary');
 }
 
 $custom-button-group: igx-button-group-theme(
     $schema: $light-schema,
     $shadow: none,
     $border-radius: 0,
-    $item-background: (igx-color: ('grays', 300)),
-    $item-text-color: (igx-color: ('grays', 700)),
-    $item-hover-background: (igx-color: ('grays', 400)),
-    $item-hover-text-color: (igx-color: ('grays', 700)),
-    $item-border-color: (igx-color: ('grays', 700)),
+    $item-background: igx-color($color: 'grays', $variant: 300),
+    $item-text-color: igx-color($color: 'grays', $variant: 700),
+    $item-hover-background: igx-color($color: 'grays', $variant: 400),
+    $item-hover-text-color: igx-color($color: 'grays', $variant: 700),
+    $item-border-color: igx-color($color:  'grays', $variant: 700),
     $item-selected-text-color: #fff,
-    $item-selected-background: igx-color($default-palette, "primary", 500),
-    $item-selected-border-color: igx-color($default-palette, "primary", 500),
-    $item-selected-hover-background: igx-color($default-palette, "primary", 600)
+    $item-selected-background: igx-color($color: 'primary', $variant: 500),
+    $item-selected-border-color: igx-color($color: 'primary', $variant: 500),
+    $item-selected-hover-background: igx-color($color: 'primary', $variant: 600)
 );
 
-@include igx-button-group($custom-button-group);
 :host ::ng-deep {
     @include igx-button-group($custom-button-group);
 }

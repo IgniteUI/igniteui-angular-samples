@@ -1,5 +1,4 @@
-// Import theming engine functionality
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 // Add your brand colors
 $my-primary-color:#353a4b;
@@ -13,7 +12,6 @@ $my-color-palette: igx-palette(
 
 // Create expansion panel theme
 $custom-panel-theme: igx-expansion-panel-theme(
-    // pass `$my-color-palette` palette
     $palette: $my-color-palette,
 
     // Styling parameters

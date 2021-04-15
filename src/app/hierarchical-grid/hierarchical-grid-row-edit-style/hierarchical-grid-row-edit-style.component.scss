@@ -1,3 +1,5 @@
+@import '../../../variables';
+
 .photo {
     vertical-align: middle;
     max-height: 62px;
@@ -10,8 +12,6 @@
     margin: 0 auto;
     padding: 16px;
 }
-
-@import '~igniteui-angular/lib/core/styles/themes/index';
 
 $my-light-gray: #e3e3e3;
 

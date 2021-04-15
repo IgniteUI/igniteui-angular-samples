@@ -1,4 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 // Browser samples related styling
 .control-wrapper {
@@ -50,4 +50,3 @@ $custom-checkbox-theme: igx-checkbox-theme(
     @include igx-combo($custom-combo-theme);
     @include igx-checkbox($custom-checkbox-theme);
 }
-
