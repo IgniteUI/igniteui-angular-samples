@@ -20,7 +20,8 @@ gulp.task("generate-live-editing", async () => {
     var appDv = argv.appDv !== undefined && argv.appDv.toLowerCase().trim() === "true";
     const liveEditingOptions = appDv ? 
     {
-        platform: 'angular', 
+        platform: 'angular',
+        projectDir: "./projects/app-lob",
         samplesDir: "./projects/app-lob/src/assets",
         configGeneratorPath: "./live-editing/generators/AppDVConfigGenerators.ts",
         module: {
