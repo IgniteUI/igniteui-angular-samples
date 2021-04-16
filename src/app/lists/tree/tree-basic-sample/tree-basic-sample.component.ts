@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DATA } from './local-data';
 
 @Component({
     selector: 'app-tree-basic-sample',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./tree-basic-sample.component.scss']
 })
 export class TreeBasicSampleComponent implements OnInit {
+    public data = DATA;
 
     constructor() { }
 
