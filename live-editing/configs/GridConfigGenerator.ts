@@ -689,6 +689,16 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'HGridExcelExportSampleComponent',
+            additionalFiles: ["/src/app/data/artistData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['HGridExcelExportSampleComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['HGridExcelExportSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
+            })
+        }));
+
+        configs.push(new Config({
             component: 'GridExternalAdvancedFilteringComponent',
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
