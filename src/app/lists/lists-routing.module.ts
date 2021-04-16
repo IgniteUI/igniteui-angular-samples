@@ -22,6 +22,7 @@ import { ListSample8Component } from './list/list-sample-8/list-sample-8.compone
 import { ListComponent } from './list/list.component';
 import { listsRoutesData } from './lists-routes-data';
 import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sample.component';
+import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-advanced-sample.component';
 
 export const listsRoutes: Routes = [
     {
@@ -128,6 +129,11 @@ export const listsRoutes: Routes = [
         component: TreeBasicSampleComponent,
         data: listsRoutesData['tree-basic-sample'],
         path: 'tree-basic-sample'
+    },
+    {
+        component: TreeAdvancedSampleComponent,
+        data: listsRoutesData['tree-advanced-sample'],
+        path: 'tree-advanced-sample'
     }
 ];
 

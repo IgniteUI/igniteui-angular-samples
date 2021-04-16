@@ -22,5 +22,6 @@ export const listsRoutesData = {
     'list-sample-8': { displayName: 'List Theming', parentName: 'List' },
     'list-chat-sample': { displayName: 'Chat Component', parentName: 'List' },
     // eslint-disable-next-line quote-props
-    'tree-basic-sample': { displayName: 'Tree Basic Sample', parentName: 'Tree' }
+    'tree-basic-sample': { displayName: 'Tree Basic Sample', parentName: 'Tree' },
+    'tree-advanced-sample': { displayName: 'Tree Advanced Sample', parentName: 'Tree' }
 };

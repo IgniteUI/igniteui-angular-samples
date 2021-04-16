@@ -1,0 +1,24 @@
+<div class="sample-wrapper">
+    <igx-tree selection="Cascading">
+        <igx-tree-node *ngFor="let root of data" expanded="true">
+            <div class="node">
+                <igx-icon class="tree-node-icon" [family]="family" [name]="root.Icon"></igx-icon>
+                <span class="node-title">{{ root.Folder }}</span>
+            </div>
+            <igx-tree-node #subfolder *ngFor="let folder of root.Subfolders"
+                (expandedChange)="handleExpand(folder, subfolder, $event)">
+                <div class="node">
+                    <igx-icon class="tree-node-icon" [family]="family" [name]="folder.Icon"></igx-icon>
+                    <span class="node-title">{{ folder.Folder }}</span>
+                </div>
+                <igx-tree-node *ngIf="!folder.Files && !subfolder.loading" [disabled]="true"></igx-tree-node>
+                <igx-tree-node *ngFor="let file of folder.Files">
+                    <div class="node">
+                        <igx-icon class="tree-node-icon" [family]="family" [name]="file.Icon"></igx-icon>
+                        <span class="node-title">{{ file.Name }}</span>
+                    </div>
+                </igx-tree-node>
+            </igx-tree-node>
+        </igx-tree-node>
+    </igx-tree>
+</div>

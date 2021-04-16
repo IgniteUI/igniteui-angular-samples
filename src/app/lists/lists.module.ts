@@ -41,6 +41,7 @@ import { ListSample8Component } from './list/list-sample-8/list-sample-8.compone
 import { ListComponent } from './list/list.component';
 import { ListsRoutingModule } from './lists-routing.module';
 import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sample.component';
+import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-advanced-sample.component';
 
 @NgModule({
     declarations: [
@@ -64,7 +65,8 @@ import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sa
         ComboOverlayComponent,
         ComboBindingComponent,
         ComboSingleSelectionComponent,
-        TreeBasicSampleComponent
+        TreeBasicSampleComponent,
+        TreeAdvancedSampleComponent
     ],
     imports: [
         CommonModule,
