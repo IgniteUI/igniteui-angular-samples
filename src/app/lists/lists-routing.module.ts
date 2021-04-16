@@ -8,7 +8,7 @@ import { ComboOverlayComponent } from './combo/combo-overlay/combo-overlay.compo
 import { ComboRemoteComponent } from './combo/combo-remote/combo-remote.component';
 import { ComboSingleSelectionComponent } from './combo/combo-single-selection/combo-single-selection.component';
 import { ComboStylingComponent } from './combo/combo-styling/combo-styling.component';
-import { ComboValueKeyComponent} from './combo/combo-valuekey/combo-valuekey.component';
+import { ComboValueKeyComponent } from './combo/combo-valuekey/combo-valuekey.component';
 import { ComboTemplateComponent } from './combo/combo-template/combo-template.component';
 import { ListChatSampleComponent } from './list/list-chat-sample/list-chat-sample.component';
 import { ListSample1Component } from './list/list-sample-1/list-sample-1.component';
@@ -21,6 +21,7 @@ import { ListSample7Component } from './list/list-sample-7/list-sample-7.compone
 import { ListSample8Component } from './list/list-sample-8/list-sample-8.component';
 import { ListComponent } from './list/list.component';
 import { listsRoutesData } from './lists-routes-data';
+import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sample.component';
 
 export const listsRoutes: Routes = [
     {
@@ -122,6 +123,11 @@ export const listsRoutes: Routes = [
         component: ListChatSampleComponent,
         data: listsRoutesData['list-chat-sample'],
         path: 'list-chat-sample'
+    },
+    {
+        component: TreeBasicSampleComponent,
+        data: listsRoutesData['tree-basic-sample'],
+        path: 'tree-basic-sample'
     }
 ];
 

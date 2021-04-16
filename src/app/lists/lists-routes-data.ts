@@ -10,7 +10,7 @@ export const listsRoutesData = {
     'combo-template': { displayName: 'Templating Combo', parentName: 'Combo' },
     'cascading-combos': { displayName: 'Cascading Combos', parentName: 'Combo' },
     'combo-overlay': { displayName: 'Combo Overlay', parentName: 'Combo' },
-    'combo-single-selection': {displayName: 'Combo Single Selection', parentName: 'Combo'},
+    'combo-single-selection': { displayName: 'Combo Single Selection', parentName: 'Combo' },
     // eslint-disable-next-line quote-props
     'list': { displayName: 'List Overview', parentName: 'List' },
     'list-sample-2': { displayName: 'List Item Header', parentName: 'List' },
@@ -20,5 +20,7 @@ export const listsRoutesData = {
     'list-sample-6': { displayName: 'List Loading', parentName: 'List' },
     'list-sample-7': { displayName: 'List Item Panning', parentName: 'List' },
     'list-sample-8': { displayName: 'List Theming', parentName: 'List' },
-    'list-chat-sample': { displayName: 'Chat Component', parentName: 'List' }
+    'list-chat-sample': { displayName: 'Chat Component', parentName: 'List' },
+    // eslint-disable-next-line quote-props
+    'tree-basic-sample': { displayName: 'Tree Basic Sample', parentName: 'Tree' }
 };
