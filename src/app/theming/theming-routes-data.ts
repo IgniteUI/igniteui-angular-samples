@@ -8,5 +8,6 @@ export const themingRoutesData = {
     'shadows-sample-2': { displayName: 'Shadows sample 2', parentName: 'Shadows' },
     // eslint-disable-next-line quote-props
     'density': { displayName: 'Display density sample', parentName: 'Themes' },
+    'bootstrap-sample': { displayName: 'Bootstrap Theming', parentName: 'Themes' },
     'card-sample-shadow': { displayName: 'card-sample-shadow', parentName: 'Shadows' }
 };
