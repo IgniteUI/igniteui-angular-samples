@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { IgxIconService, IgxTreeNodeComponent } from 'igniteui-angular';
 import { icons } from './services/svgIcons';
 import { DATA, NodeData, REMOTE_ROOT, SelectableNodeData } from './local-data';
@@ -11,7 +11,7 @@ import { take, takeUntil } from 'rxjs/operators';
     styleUrls: ['./tree-advanced-sample.component.scss'],
     providers: [DataService]
 })
-export class TreeAdvancedSampleComponent implements OnInit, AfterViewInit, OnDestroy {
+export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
     public family = 'tree-icons';
     public data = DATA;
     public loading = false;
@@ -24,9 +24,6 @@ export class TreeAdvancedSampleComponent implements OnInit, AfterViewInit, OnDes
             this.loading = false;
             this.remoteData = data;
         });
-    }
-
-    public ngOnInit(): void {
     }
 
     public ngAfterViewInit() {

@@ -18,9 +18,7 @@ export class DataService {
         setTimeout(() => {
             this._data = REMOTE_DATA;
             const passed = this._data.map(e => {
-                const selectionState = {
-                    Selected: undefined
-                };
+                const selectionState: Partial<SelectableNodeData> = {};
                 if (this._selected.has(e.Name)) {
                     selectionState.Selected = true;
                 }
