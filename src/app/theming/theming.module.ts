@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IgxButtonGroupModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule,
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { IgxAvatarModule, IgxButtonGroupModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule,
     IgxDialogModule, IgxDividerModule, IgxDropDownModule, IgxGridModule, IgxIconModule, IgxInputGroupModule,
     IgxLayoutModule, IgxListModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxToggleModule } from 'igniteui-angular';
 import { AnimationsSampleComponent } from './animations/animations-sample-1/animations-sample-1.component';
 import { AnimationsSample2Component } from './animations/animations-sample-2/animations-sample-2.component';
+import { BootstrapComponent } from './bootstrap/bootstrap-sample.component';
 import { DefaultThemeSampleComponent } from './default-theme-sample/default-theme-sample.component';
 import { DisplayDensityComponent } from './display-density/display-density.component';
 import { CardSampleShadowComponent } from './shadows/card-sample-shadow/card-sample-shadow';
@@ -21,7 +23,8 @@ import { ThemingRoutingModule } from './theming-routing.module';
         ShadowsSample2Component,
         CardSampleShadowComponent,
         AnimationsSampleComponent,
-        AnimationsSample2Component
+        AnimationsSample2Component,
+        BootstrapComponent
     ],
     exports: [
         DefaultThemeSampleComponent,
@@ -30,11 +33,13 @@ import { ThemingRoutingModule } from './theming-routing.module';
         ShadowsSample2Component,
         CardSampleShadowComponent,
         AnimationsSampleComponent,
-        AnimationsSample2Component
+        AnimationsSample2Component,
+        BootstrapComponent
     ],
     imports: [
         CommonModule,
         FormsModule,
+        IgxAvatarModule,
         IgxCardModule,
         ThemingRoutingModule,
         IgxButtonGroupModule,
@@ -52,7 +57,8 @@ import { ThemingRoutingModule } from './theming-routing.module';
         IgxRippleModule,
         IgxSnackbarModule,
         IgxToggleModule,
-        IgxSelectModule
+        IgxSelectModule,
+        NgbModule
     ]
 })
 export class ThemingModule {}

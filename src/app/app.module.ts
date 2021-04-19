@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DocsLayoutComponent } from './index/docs-layout.component';
 import { IndexComponent } from './index/index.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -35,7 +36,8 @@ import { IndexComponent } from './index/index.component';
         IgxButtonModule,
         FormsModule,
         HttpClientModule,
-        HammerModule
+        HammerModule,
+        NgbModule
     ],
     providers: []
 })

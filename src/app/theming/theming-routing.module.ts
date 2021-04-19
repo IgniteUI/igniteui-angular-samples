@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AnimationsSampleComponent } from './animations/animations-sample-1/animations-sample-1.component';
 import { AnimationsSample2Component } from './animations/animations-sample-2/animations-sample-2.component';
+import { BootstrapComponent } from './bootstrap/bootstrap-sample.component';
 import { DefaultThemeSampleComponent } from './default-theme-sample/default-theme-sample.component';
 import { DisplayDensityComponent } from './display-density/display-density.component';
 import { CardSampleShadowComponent} from './shadows/card-sample-shadow/card-sample-shadow';
@@ -45,6 +46,11 @@ export const themingRoutes: Routes = [
         component: AnimationsSample2Component,
         data: themingRoutesData['animations-sample-2'],
         path: 'animations-sample-2'
+    },
+    {
+        component: BootstrapComponent,
+        data: themingRoutesData['bootstrap-sample'],
+        path: 'bootstrap-sample'
     }
 ];
 
