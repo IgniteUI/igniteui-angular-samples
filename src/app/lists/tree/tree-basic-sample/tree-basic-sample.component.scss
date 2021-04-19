@@ -1,3 +1,10 @@
+@import '../../../../_variables.scss';
+
+:host {
+    display: block;
+    padding: 16px;
+}
+
 .sample-wrapper {
     margin: 0 auto;
     padding: 10px;

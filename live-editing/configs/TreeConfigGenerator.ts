@@ -22,9 +22,9 @@ export class TreeConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'TreeAdvancedSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxTreeModule', 'IgxIconModule', 'TreeAdvancedSampleComponent'],
+                imports: ['IgxTreeModule', 'IgxIconModule', 'IgxTooltipModule', 'TreeAdvancedSampleComponent'],
                 ngDeclarations: ['TreeAdvancedSampleComponent'],
-                ngImports: ['IgxTreeModule', 'IgxIconModule']
+                ngImports: ['IgxTreeModule', 'IgxIconModule', 'IgxTooltipModule']
             }),
             shortenComponentPathBy: '/lists/tree/'
         }));

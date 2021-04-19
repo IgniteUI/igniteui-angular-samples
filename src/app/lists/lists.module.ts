@@ -17,6 +17,7 @@ import {
     IgxSliderModule,
     IgxSwitchModule,
     IgxToastModule,
+    IgxTooltipModule,
     IgxTreeModule
 } from 'igniteui-angular';
 import { CascadingCombosComponent } from './combo/cascading-combos/cascading-combos.component';
@@ -87,7 +88,8 @@ import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-ad
         HttpClientModule,
         IgxRippleModule,
         IgxCardModule,
-        IgxTreeModule
+        IgxTreeModule,
+        IgxTooltipModule
     ]
 })
 export class ListsModule { }

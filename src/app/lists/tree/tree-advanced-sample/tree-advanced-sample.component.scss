@@ -4,6 +4,12 @@
     vertical-align: middle;
 }
 
+.node-refresh {
+    cursor: pointer;
+    padding: 0px 4px;
+    color: var(--igx-success-500);
+}
+
 .node {
     display: flex;
     align-items: center;

@@ -1,18 +1,56 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { delay } from 'rxjs/operators';
-
-const BIN_DATA = [
-    { Name: 'Track 6', Icon: 'music' },
-    { Name: 'Track 7', Icon: 'music' },
-    { Name: 'Image 106', Icon: 'picture' },
-    { Name: 'Image 107', Icon: 'picture' }
-];
+import { Observable, ReplaySubject } from 'rxjs';
+import { NodeData, REMOTE_DATA, SelectableNodeData } from '../local-data';
 
 @Injectable()
 export class DataService {
-    public getData() {
-        return of(BIN_DATA).pipe(delay(2000));
+
+    private _data: SelectableNodeData[] = [];
+    private _selected: Set<string> = new Set<string>();
+    private _deselected: Set<string> = new Set<string>();
+    private data$: ReplaySubject<SelectableNodeData[]> = new ReplaySubject();
+    public get data(): Observable<SelectableNodeData[]> {
+        return this.data$;
     }
+
+    public getData() {
+        setTimeout(() => {
+            this._data = REMOTE_DATA;
+            const passed = this._data.map(e => {
+                const selectionState = {
+                    Selected: undefined
+                };
+                if (this._selected.has(e.Name)) {
+                    selectionState.Selected = true;
+                }
+                if (this._deselected.has(e.Name)) {
+                    selectionState.Selected = false;
+                }
+                return Object.assign({}, e, selectionState);
+            });
+            this.data$.next(passed);
+        }, 2000);
+    }
+
+    public clearData() {
+        this._data = [];
+        this.data$.next(this._data);
+    }
+
+    public clearSelect() {
+        this._selected = new Set<string>();
+        this._deselected = new Set<string>();
+    }
+
+    public toggleSelected(node: NodeData, state: boolean) {
+        if (state) {
+            this._selected.add(node.Name);
+            this._deselected.delete(node.Name);
+        } else {
+            this._deselected.add(node.Name);
+            this._selected.delete(node.Name);
+        }
+    }
+
 }

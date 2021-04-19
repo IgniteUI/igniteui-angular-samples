@@ -1,10 +1,10 @@
-import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { IgxIconService, IgxTreeNodeComponent } from 'igniteui-angular';
 import { icons } from './services/svgIcons';
-import { DATA } from './local-data';
+import { DATA, NodeData, REMOTE_ROOT, SelectableNodeData } from './local-data';
 import { DataService } from './services/data.service';
-import { Subscription } from 'rxjs';
-
+import { Subject } from 'rxjs';
+import { take, takeUntil } from 'rxjs/operators';
 @Component({
     selector: 'app-tree-advanced-sample',
     templateUrl: './tree-advanced-sample.component.html',
@@ -14,8 +14,17 @@ import { Subscription } from 'rxjs';
 export class TreeAdvancedSampleComponent implements OnInit, AfterViewInit, OnDestroy {
     public family = 'tree-icons';
     public data = DATA;
-    private subscription: Subscription;
-    constructor(private iconService: IgxIconService, private dataService: DataService) { }
+    public loading = false;
+    public showRefresh = false;
+    public remoteRoot = REMOTE_ROOT;
+    public remoteData: SelectableNodeData[] = [];
+    private destroy$ = new Subject<void>();
+    constructor(private iconService: IgxIconService, private dataService: DataService, private cdr: ChangeDetectorRef) {
+        this.dataService.data.pipe(takeUntil(this.destroy$)).subscribe((data) => {
+            this.loading = false;
+            this.remoteData = data;
+        });
+    }
 
     public ngOnInit(): void {
     }
@@ -29,26 +38,42 @@ export class TreeAdvancedSampleComponent implements OnInit, AfterViewInit, OnDes
         });
     }
 
-    public handleExpand(nodeData: any, node: IgxTreeNodeComponent<any>, evt: boolean) {
-        if (nodeData?.Folder !== 'Recycle Bin') {
+    public refreshData(node: IgxTreeNodeComponent<NodeData>) {
+        // clear data and remove cache (this.remoteData);
+        this.dataService.clearData();
+        this.remoteData = [];
+        this.getNodeData(node, true);
+        this.dataService.getData();
+    }
+
+    public getNodeData(node: IgxTreeNodeComponent<any>, evt: boolean) {
+        // cache data
+        if (this.remoteData?.length) {
             return;
         }
         if (evt) {
-            node.loading = true;
-            this.subscription = this.dataService.getData().subscribe(data => {
-                nodeData.Files = data;
-                node.loading = false;
+            this.showRefresh = true;
+            this.loading = true;
+            this.dataService.getData();
+            this.dataService.data.pipe(take(1)).subscribe((data) => {
+                // if node is selected, mark all stateless child nodes as selected
+                if (node.selected) {
+                    data.forEach(e => {
+                        if (e.Selected === undefined) {
+                            e.Selected = true;
+                        }
+                    });
+                }
             });
-        } else {
-            nodeData.Files = null;
         }
+    }
 
+    public handleSelection(node: NodeData, selected: boolean) {
+        this.dataService.toggleSelected(node, selected);
     }
 
     public ngOnDestroy() {
-        if (this.subscription) {
-            this.subscription.unsubscribe();
-        }
+        this.destroy$.next();
+        this.destroy$.complete();
     }
-
 }
