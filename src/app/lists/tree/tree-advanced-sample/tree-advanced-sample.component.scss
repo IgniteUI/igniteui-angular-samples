@@ -24,3 +24,9 @@
     margin: 0 auto;
     padding: 10px;
 }
+
+.tree-root {
+    max-height: 600px;
+    overflow-y: scroll;
+    width: 300px;
+}

@@ -1,5 +1,5 @@
 <div class="sample-wrapper">
-    <igx-tree selection="Cascading">
+    <igx-tree selection="Cascading" class="tree-root">
         <igx-tree-node *ngFor="let root of data" [expanded]="true" [data]="root">
             <ng-template *ngTemplateOutlet="nodeTemplate; context: { $implicit: root }"></ng-template>
             <igx-tree-node #subfolder *ngFor="let folder of root.Files" [data]="folder">

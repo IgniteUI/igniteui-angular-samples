@@ -1,8 +1,12 @@
-@import '../../../../_variables.scss';
-
 :host {
     display: block;
     padding: 16px;
+}
+
+.tree-root {
+    max-height: 500px;
+    overflow-y: scroll;
+    width: 300px;
 }
 
 .sample-wrapper {
