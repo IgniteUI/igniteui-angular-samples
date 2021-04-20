@@ -25,7 +25,7 @@ export class HGridRowReorderComponent {
         const targetRow: RowType = args.dragData;
         // if the row-to-be-dragged is expanded - collapse it
         if (targetRow.expanded) {
-            targetRow.toggle();
+            targetRow.expanded = false;
         }
     }
 
@@ -37,7 +37,7 @@ export class HGridRowReorderComponent {
     }
 
     private moveRow(draggedRow: RowType, cursorPosition: Point): void {
-        const parent: IgxHierarchicalGridComponent = draggedRow.grid;
+        const parent: IgxHierarchicalGridComponent = draggedRow.parent;
         const rowIndex: number = this.getTargetRowIndex(parent.rowList.toArray(), cursorPosition);
         if (rowIndex === -1) { return; }
         // delete the dragged row and then insert it at its new position
