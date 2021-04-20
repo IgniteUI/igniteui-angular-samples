@@ -19,7 +19,8 @@ IgxSnackbarModule,
 IgxSwitchModule,
 IgxToastModule,
 IgxTooltipModule,
-IgxToggleModule} from 'igniteui-angular';
+IgxToggleModule,
+IgxExcelExporterService} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import {Router, RouterModule} from '@angular/router'
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {
@@ -187,9 +188,10 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             component: 'HGridExcelExportSampleComponent',
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/artistData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['HGridExcelExportSampleComponent', 'IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['HGridExcelExportSampleComponent', 'IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule', 'IgxExcelExporterService'],
                 ngDeclarations: ['HGridExcelExportSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule'],
+                ngProviders: ['IgxExcelExporterService']
             })
         }));
 
