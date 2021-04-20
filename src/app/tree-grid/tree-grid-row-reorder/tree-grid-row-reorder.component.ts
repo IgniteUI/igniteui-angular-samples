@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IDropDroppedEventArgs,
-    IgxTreeGridComponent, IgxTreeGridRowComponent, Point } from 'igniteui-angular';
+    IgxTreeGridComponent, RowType, Point } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({
@@ -18,21 +18,21 @@ export class TreeGridRowReorderComponent {
     }
 
     public rowDragStart(args: any): void {
-        const targetRow: IgxTreeGridRowComponent = args.dragData;
+        const targetRow: RowType = args.dragData;
         if (targetRow.expanded) {
             this.treeGrid.collapseRow(targetRow.rowID);
         }
     }
 
     public dropInGrid(args: IDropDroppedEventArgs): void {
-        const draggedRow: IgxTreeGridRowComponent = args.dragData;
+        const draggedRow: RowType = args.dragData;
         const event = args.originalEvent;
         const cursorPosition: Point = { x: event.clientX, y: event.clientY };
         this.moveRow(draggedRow, cursorPosition);
     }
 
-    private moveRow(draggedRow: IgxTreeGridRowComponent, cursorPosition: Point): void {
-        const row: IgxTreeGridRowComponent = this.catchCursorPosOnElem(this.treeGrid.rowList.toArray(), cursorPosition);
+    private moveRow(draggedRow:  cursorPosition: Point): void {
+        const row: RowType = this.catchCursorPosOnElem(this.treeGrid.rowList.toArray(), cursorPosition);
         if (!row) { return; }
 
         if (row.rowData.ID === draggedRow.rowData.ID) {
@@ -59,7 +59,7 @@ export class TreeGridRowReorderComponent {
     }
 
     private performDrop(
-        draggedRow: IgxTreeGridRowComponent, targetRow: IgxTreeGridRowComponent) {
+        draggedRow:  targetRow: RowType) {
         const draggedRowIndex = this.getRowIndex(draggedRow.rowData);
         const targetRowIndex: number = this.getRowIndex(targetRow.rowData);
         if (draggedRowIndex === -1 || targetRowIndex === -1) { return; }
@@ -72,7 +72,7 @@ export class TreeGridRowReorderComponent {
         return this.localData.indexOf(rowData);
     }
 
-    private catchCursorPosOnElem(rowListArr: IgxTreeGridRowComponent[], cursorPosition: Point): IgxTreeGridRowComponent {
+    private catchCursorPosOnElem(rowListArr: RowType[], cursorPosition: Point): RowType {
         for (const row of rowListArr) {
             const rowRect = row.nativeElement.getBoundingClientRect();
             if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&

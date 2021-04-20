@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent } from 'igniteui-angular';
+import { IDropDroppedEventArgs, IgxTreeGridComponent, RowType } from 'igniteui-angular';
 import { FULL_EMPLOYEE_DATA } from '../data/employees';
 
 @Component({

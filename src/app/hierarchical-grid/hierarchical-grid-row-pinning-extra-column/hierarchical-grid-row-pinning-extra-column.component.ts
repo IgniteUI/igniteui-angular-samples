@@ -1,7 +1,7 @@
 import { Component,AfterViewInit } from '@angular/core';
 import {
     ColumnPinningPosition,
-    IgxHierarchicalRowComponent,
+    
     IgxIconService,
     IPinningConfig,
     RowPinningPosition
@@ -34,7 +34,7 @@ export class HGridRowPinningExtraColumnSampleComponent implements AfterViewInit{
         });
     }
 
-    public togglePinning(row: IgxHierarchicalRowComponent, event) {
+    public togglePinning(row: RowType, event) {
         event.preventDefault();
         if (row.pinned) {
             row.unpin();

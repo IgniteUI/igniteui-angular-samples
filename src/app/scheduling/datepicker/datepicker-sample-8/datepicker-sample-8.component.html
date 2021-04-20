@@ -1,5 +1,6 @@
 <div class="date-picker-wrapper">
-    <igx-date-picker #picker [(ngModel)]="date">
+    <igx-date-picker #picker [(ngModel)]="date" mode="dialog">
+        <label igxLabel>Date</label>
         <ng-template igxDatePickerActions>
             <div class="action-buttons">
                 <button igxButton="flat" (click)="monthsView(picker)">months view</button>

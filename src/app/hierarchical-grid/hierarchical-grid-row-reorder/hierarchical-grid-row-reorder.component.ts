@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import {
     IDropDroppedEventArgs,
     IgxHierarchicalGridComponent,
-    IgxHierarchicalRowComponent,
+    
     Point
 } from 'igniteui-angular';
 import { createData, IDrive } from '../../data/files.data';
@@ -22,7 +22,7 @@ export class HGridRowReorderComponent {
     }
 
     public rowDragStart(args: any): void {
-        const targetRow: IgxHierarchicalRowComponent = args.dragData;
+        const targetRow: RowType = args.dragData;
         // if the row-to-be-dragged is expanded - collapse it
         if (targetRow.expanded) {
             targetRow.toggle();
@@ -36,7 +36,7 @@ export class HGridRowReorderComponent {
         this.moveRow(targetRow, cursorPosition);
     }
 
-    private moveRow(draggedRow: IgxHierarchicalRowComponent, cursorPosition: Point): void {
+    private moveRow(draggedRow: RowType, cursorPosition: Point): void {
         const parent: IgxHierarchicalGridComponent = draggedRow.grid;
         const rowIndex: number = this.getTargetRowIndex(parent.rowList.toArray(), cursorPosition);
         if (rowIndex === -1) { return; }
@@ -50,13 +50,13 @@ export class HGridRowReorderComponent {
         }
     }
 
-    private getTargetRowIndex(rowListArr: IgxHierarchicalRowComponent[], cursorPosition: Point): number {
-        const targetElem: IgxHierarchicalRowComponent = this.catchCursorPosOnElem(rowListArr, cursorPosition);
+    private getTargetRowIndex(rowListArr: RowType[], cursorPosition: Point): number {
+        const targetElem: RowType = this.catchCursorPosOnElem(rowListArr, cursorPosition);
         // get the index of the row that has the same ID as the dragged row
         return rowListArr.indexOf(rowListArr.find((r) => r.rowData.id === targetElem.rowData.id));
     }
 
-    private catchCursorPosOnElem(rowListArr: IgxHierarchicalRowComponent[], cursorPosition: Point): IgxHierarchicalRowComponent {
+    private catchCursorPosOnElem(rowListArr: RowType[], cursorPosition: Point): RowType {
         // get the row which the dragged row was dropped on
         for (const row of rowListArr) {
             const rowRect = row.nativeElement.getBoundingClientRect();

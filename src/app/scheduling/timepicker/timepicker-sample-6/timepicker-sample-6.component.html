@@ -1,5 +1,10 @@
-<igx-time-picker #picker [value]="today" format="HH:mm" mode="dropdown">
-    <ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value" let-displayTime="displayTime">
+<igx-time-picker #picker [value]="today" inputFormat="HH:mm" >
+    <label igxLabel>Time</label>
+
+<!-- igxTimePickerTemplate has been removed.
+Label, prefix, suffix and hint can now be projected directly.
+See https://www.infragistics.com/products/ignite-ui-angular/angular/components/time-picker -->
+<ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value" let-displayTime="displayTime">
         <igx-input-group>
             <input #dropDownTarget igxInput [value]="displayTime"
                 (blur)="onBlur(dropDownTarget.value, value, picker)" />
