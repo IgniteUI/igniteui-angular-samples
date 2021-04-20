@@ -2,7 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import {
     IDropDroppedEventArgs,
     IgxHierarchicalGridComponent,
-    
     Point
 } from 'igniteui-angular';
 import { createData, IDrive } from '../../data/files.data';

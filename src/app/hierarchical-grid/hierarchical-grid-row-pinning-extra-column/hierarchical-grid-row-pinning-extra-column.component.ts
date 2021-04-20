@@ -1,7 +1,6 @@
 import { Component,AfterViewInit } from '@angular/core';
 import {
     ColumnPinningPosition,
-    
     IgxIconService,
     IPinningConfig,
     RowPinningPosition

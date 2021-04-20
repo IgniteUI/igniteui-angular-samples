@@ -2,7 +2,6 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import {
     ColumnPinningPosition,
     IgxGridComponent,
-    
     IgxIconService,
     IPinningConfig,
     RowPinningPosition

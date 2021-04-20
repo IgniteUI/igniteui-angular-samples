@@ -31,7 +31,7 @@ export class TreeGridRowReorderComponent {
         this.moveRow(draggedRow, cursorPosition);
     }
 
-    private moveRow(draggedRow:  cursorPosition: Point): void {
+    private moveRow(draggedRow: RowType, cursorPosition: Point): void {
         const row: RowType = this.catchCursorPosOnElem(this.treeGrid.rowList.toArray(), cursorPosition);
         if (!row) { return; }
 

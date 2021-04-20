@@ -3,7 +3,6 @@ import {
     ColumnPinningPosition,
     IgxIconService,
     IgxTreeGridComponent,
-    
     IPinningConfig,
     RowPinningPosition
 } from 'igniteui-angular';
