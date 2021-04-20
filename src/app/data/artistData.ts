@@ -100,7 +100,7 @@ export const SINGERS: Singer[] = [
                         Number: 1,
                         Title: 'Wood Shavings Forever',
                         Released: new Date('9 Jun 2019'),
-                        Genre: '*fdasfsa',
+                        Genre: 'Punk',
                         Album: 'Pushing up daisies'
                     },
                     {
@@ -112,7 +112,7 @@ export const SINGERS: Singer[] = [
                     },
                     {
                         Number: 3,
-                        Title: 'Wfdsafsaings Forever - Remix',
+                        Title: 'Forever - Remix',
                         Released: new Date('7 Jun 2019'),
                         Genre: 'Punk',
                         Album: 'Pushing up daisies'
