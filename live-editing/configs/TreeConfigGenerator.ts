@@ -1,7 +1,7 @@
 import {
     IgxIconModule,
     IgxTreeModule,
-    IgxListModule
+    IgxTooltipModule
 } from 'igniteui-angular';
 import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing';
 export class TreeConfigGenerator implements IConfigGenerator {
@@ -11,6 +11,7 @@ export class TreeConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'TreeBasicSampleComponent',
+            additionalFiles: ['/src/app/lists/tree/tree-basic-sample/local-data.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxTreeModule', 'IgxIconModule', 'TreeBasicSampleComponent'],
                 ngDeclarations: ['TreeBasicSampleComponent'],
@@ -21,6 +22,9 @@ export class TreeConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'TreeAdvancedSampleComponent',
+            additionalFiles: ['/src/app/lists/tree/tree-advanced-sample/local-data.ts',
+            '/src/app/lists/tree/tree-advanced-sample/services/data.service.ts',
+            '/src/app/lists/tree/tree-advanced-sample/services/svgIcons.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxTreeModule', 'IgxIconModule', 'IgxTooltipModule', 'TreeAdvancedSampleComponent'],
                 ngDeclarations: ['TreeAdvancedSampleComponent'],
