@@ -1,13 +1,12 @@
-::ng-deep {
-	:host {
-		.igx-drop-down__item {
-			padding: 0;
-		}
-		.igx-drop-down__list {
-			min-width: 88px;
-		}
-	}
+:host ::ng-deep {
+    .igx-drop-down__item {
+        padding: 0;
+    }
+    .igx-drop-down__list {
+        min-width: 88px;
+    }
 }
+
 .parent {
     display: flex;
     align-items: center;
