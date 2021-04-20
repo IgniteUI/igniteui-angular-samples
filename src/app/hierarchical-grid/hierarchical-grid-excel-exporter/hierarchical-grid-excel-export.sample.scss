@@ -7,9 +7,14 @@
     margin: 0 auto;
     padding: 16px;
     width: 90%;
-    height: 800px;
+    height: 600px;
 }
 
 .hgrid-sample > igx-hierarchical-grid {
     margin-bottom: 30px;
+}
+
+.exportButton {
+    margin-top: 5px;
+    margin-right: auto;
 }

@@ -1,16 +1,6 @@
 <div class="hgrid-sample">
     <igx-hierarchical-grid [data]="data" [allowFiltering]="true"
         [filterMode]="'excelStyleFilter'" #hierarchicalGrid>
-        <igx-grid-toolbar>
-            <igx-grid-toolbar-title>Artists</igx-grid-toolbar-title>
-            <igx-grid-toolbar-actions>
-                <igx-grid-toolbar-exporter [exportCSV]="true" [exportExcel]="true">
-                    <span excelText>Export to Excel 👌</span>
-                    <span csvText>Export to CSV 👍</span>
-                </igx-grid-toolbar-exporter>
-            </igx-grid-toolbar-actions>
-        </igx-grid-toolbar>
-
         <igx-column field="Artist" [filterable]="true" [sortable]="true"></igx-column>
         <igx-column field="Debut" [sortable]="true" dataType="number"></igx-column>
         <igx-column field="GrammyNominations" header="Grammy Nominations" [sortable]="true"></igx-column>
@@ -18,32 +8,12 @@
 
         <igx-row-island [key]="'Albums'" [allowFiltering]='true' [filterMode]="'excelStyleFilter'"
             [autoGenerate]="false" #albumDataHierarchicalGrid>
-            <igx-grid-toolbar [grid]="gridRef" *igxGridToolbar="let gridRef"
-                [displayDensity]="albumDataHierarchicalGrid.displayDensity">
-                <igx-grid-toolbar-title>Albums</igx-grid-toolbar-title>
-                <igx-grid-toolbar-actions>
-                    <igx-grid-toolbar-exporter [exportCSV]="true" [exportExcel]="true">
-                        <span excelText>Export to Excel 👌</span>
-                        <span csvText>Export to CSV 👍</span>
-                    </igx-grid-toolbar-exporter>
-                </igx-grid-toolbar-actions>
-            </igx-grid-toolbar>
             <igx-column field="Album"></igx-column>
             <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
             <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
             <igx-row-island [key]="'Songs'" [allowFiltering]='true' [filterMode]="'excelStyleFilter'"
                 [autoGenerate]="false">
-                <igx-grid-toolbar [grid]="gridRef" *igxGridToolbar="let gridRef"
-                    [displayDensity]="albumDataHierarchicalGrid.displayDensity">
-                    <igx-grid-toolbar-title>Songs</igx-grid-toolbar-title>
-                    <igx-grid-toolbar-actions>
-                        <igx-grid-toolbar-exporter [exportCSV]="true" [exportExcel]="true">
-                            <span excelText>Export to Excel 👌</span>
-                            <span csvText>Export to CSV 👍</span>
-                        </igx-grid-toolbar-exporter>
-                    </igx-grid-toolbar-actions>
-                </igx-grid-toolbar>
                 <igx-column field="Number" header="No."></igx-column>
                 <igx-column field="Title"></igx-column>
                 <igx-column field="Released" dataType="date"></igx-column>
@@ -63,4 +33,6 @@
             </igx-row-island>
         </igx-row-island>
     </igx-hierarchical-grid>
+
+    <button igxButton="raised" (click)="exportButtonHandler()" class="exportButton">Export Grid to Excel</button>
 </div>
