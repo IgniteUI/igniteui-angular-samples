@@ -32,10 +32,10 @@ export class TreeGridRowReorderComponent {
     }
 
     private moveRow(draggedRow: RowType, cursorPosition: Point): void {
-        const row: RowType = this.catchCursorPosOnElem(this.treeGrid.rowList.toArray(), cursorPosition);
+        const row = this.catchCursorPosOnElem(this.treeGrid.rowList.toArray(), cursorPosition);
         if (!row) { return; }
 
-        if (row.rowData.ID === draggedRow.rowData.ID) {
+        if (row.key === draggedRow.key) {
             /** dragged row and targeted row are same */
             return;
         }
@@ -59,7 +59,7 @@ export class TreeGridRowReorderComponent {
     }
 
     private performDrop(
-        draggedRow:  targetRow: RowType) {
+        draggedRow: RowType, targetRow: RowType) {
         const draggedRowIndex = this.getRowIndex(draggedRow.rowData);
         const targetRowIndex: number = this.getRowIndex(targetRow.rowData);
         if (draggedRowIndex === -1 || targetRowIndex === -1) { return; }
@@ -72,7 +72,7 @@ export class TreeGridRowReorderComponent {
         return this.localData.indexOf(rowData);
     }
 
-    private catchCursorPosOnElem(rowListArr: RowType[], cursorPosition: Point): RowType {
+    private catchCursorPosOnElem(rowListArr: any[], cursorPosition: Point): any {
         for (const row of rowListArr) {
             const rowRect = row.nativeElement.getBoundingClientRect();
             if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&

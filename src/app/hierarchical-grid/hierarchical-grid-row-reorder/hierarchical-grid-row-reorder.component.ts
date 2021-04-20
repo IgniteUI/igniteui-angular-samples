@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import {
     IDropDroppedEventArgs,
     IgxHierarchicalGridComponent,
+    RowType,
     Point
 } from 'igniteui-angular';
 import { createData, IDrive } from '../../data/files.data';
@@ -49,13 +50,13 @@ export class HGridRowReorderComponent {
         }
     }
 
-    private getTargetRowIndex(rowListArr: RowType[], cursorPosition: Point): number {
-        const targetElem: RowType = this.catchCursorPosOnElem(rowListArr, cursorPosition);
+    private getTargetRowIndex(rowListArr: any[], cursorPosition: Point): number {
+        const targetElem = this.catchCursorPosOnElem(rowListArr, cursorPosition);
         // get the index of the row that has the same ID as the dragged row
         return rowListArr.indexOf(rowListArr.find((r) => r.rowData.id === targetElem.rowData.id));
     }
 
-    private catchCursorPosOnElem(rowListArr: RowType[], cursorPosition: Point): RowType {
+    private catchCursorPosOnElem(rowListArr: any[], cursorPosition: Point): any {
         // get the row which the dragged row was dropped on
         for (const row of rowListArr) {
             const rowRect = row.nativeElement.getBoundingClientRect();

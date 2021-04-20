@@ -4,6 +4,7 @@ import {
     IgxGridComponent,
     IgxIconService,
     IPinningConfig,
+    RowType,
     RowPinningPosition
 } from 'igniteui-angular';
 import { DATA } from '../../data/customers';

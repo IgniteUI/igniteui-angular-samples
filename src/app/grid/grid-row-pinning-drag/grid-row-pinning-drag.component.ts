@@ -3,7 +3,8 @@ import {
     IgxGridComponent,
     IPinningConfig,
     IRowDragStartEventArgs,
-    RowPinningPosition
+    RowPinningPosition,
+    RowType
 } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 

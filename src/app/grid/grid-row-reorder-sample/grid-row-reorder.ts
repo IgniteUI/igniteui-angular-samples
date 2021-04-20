@@ -22,8 +22,8 @@ export class GridRowReorderComponent {
             { x: event.clientX, y: event.clientY });
         if (currRowIndex === -1) { return; }
         // remove the row that was dragged and place it onto its new location
-        this.grid.deleteRow(args.dragData.rowID);
-        this.data.splice(currRowIndex, 0, args.dragData.rowData);
+        this.grid.deleteRow(args.dragData.key);
+        this.data.splice(currRowIndex, 0, args.dragData.data);
     }
 
     private getCurrentRowIndex(rowList, cursorPosition) {
@@ -32,7 +32,7 @@ export class GridRowReorderComponent {
             if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&
                 cursorPosition.x > rowRect.left + window.scrollX && cursorPosition.x < rowRect.right + window.scrollX) {
                 // return the index of the targeted row
-                return this.data.indexOf(this.data.find((r) => r.ID === row.rowData.ID));
+                return this.data.indexOf(this.data.find((r) => r.ID === row.key));
             }
         }
 

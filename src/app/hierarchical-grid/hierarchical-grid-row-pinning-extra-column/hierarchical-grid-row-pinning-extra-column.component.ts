@@ -1,7 +1,8 @@
-import { Component,AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import {
     ColumnPinningPosition,
     IgxIconService,
+    RowType,
     IPinningConfig,
     RowPinningPosition
 } from 'igniteui-angular';

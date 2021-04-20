@@ -29,7 +29,7 @@ export class GridActionStripSampleComponent {
     }
 
     public isDirty(rowContext: RowType) {
-        return rowContext && (rowContext.dirty || rowContext.deleted);
+        return rowContext && rowContext.deleted;
     }
 
     public isDeleted(rowContext: RowType) {
