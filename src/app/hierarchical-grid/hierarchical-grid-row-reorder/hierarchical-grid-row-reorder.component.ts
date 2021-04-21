@@ -37,16 +37,19 @@ export class HGridRowReorderComponent {
     }
 
     private moveRow(draggedRow: RowType, cursorPosition: Point): void {
-        const parent: IgxHierarchicalGridComponent = draggedRow.parent;
+        // const parent: IgxHierarchicalGridComponent = (draggedRow as any).grid;
+        // const parent = args.drag.ghostContext.grid;
+        const parent = this.hGrid;
         const rowIndex: number = this.getTargetRowIndex(parent.rowList.toArray(), cursorPosition);
         if (rowIndex === -1) { return; }
         // delete the dragged row and then insert it at its new position
+        const wasSelected = draggedRow.selected;
         draggedRow.delete();
-        parent.data.splice(rowIndex, 0, draggedRow.rowData);
-        if (draggedRow.selected) {
+        parent.data.splice(rowIndex, 0, draggedRow.data);
+        if (wasSelected) {
             // find the row that has the same ID as the dragged row and select it
             parent.selectRows([parent.rowList.toArray()
-                .find((r) => r.rowData.id === draggedRow.rowData.id).rowID], false);
+                .find((r) => r.rowID === draggedRow.key).rowID], false);
         }
     }
 
