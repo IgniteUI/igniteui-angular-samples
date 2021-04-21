@@ -85,6 +85,7 @@ import { HGridEditingLifecycleComponent } from './hgrid-editing-lifecycle-sample
 import { HierarchicalGridCellSelectionComponent } from './hierarchical-grid-cellSelection-sample/hierarchical-grid-cellSelection.component';
 import { HGridFormattedFilteringStrategyComponent } from './hierarchical-grid-formatted-filtering-strategy/hierarchical-grid-formatted-filtering-strategy.component';
 import { HGridSummaryFormatterComponent } from './hierarchical-grid-summary-formatter/hierarchical-grid-summary-formatter.component';
+import { HGridExcelExportSampleComponent } from './hierarchical-grid-excel-exporter/hierarchical-grid-excel-export.sample';
 
 @NgModule({
     declarations: [
@@ -130,6 +131,7 @@ import { HGridSummaryFormatterComponent } from './hierarchical-grid-summary-form
         HGridExcelStyleFilteringSample2Component,
         HGridExcelStyleFilteringSample3Component,
         HGridExcelStyleFilteringStyleComponent,
+        HGridExcelExportSampleComponent,
         HGridFilteringTemplateSampleComponent,
         HGridDragSampleComponent,
         HGridRowDragBaseComponent,
