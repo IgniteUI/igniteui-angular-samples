@@ -40,8 +40,13 @@
                 [displayKey]="'type'" [(ngModel)]="user.genres" placeholder="Select your favorite genres"
                 searchPlaceholder="Search..." [type]='"line"'>
             </igx-combo>
-            <igx-date-picker name="date" (onSelection)="onDateSelection($event)">
-                <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value"
+            <igx-date-picker name="date" (valueChange)="onDateSelection($event)" mode="dialog">
+                <label igxLabel>Date</label>
+
+<!-- igxDatePickerTemplate has been removed.
+Label, prefix, suffix and hint can now be projected directly.
+See https://www.infragistics.com/products/ignite-ui-angular/angular/components/date-picker -->
+<ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value"
                     let-displayData="displayData">
                     <igx-input-group (click)="openDialog()">
                         <label igxLabel>Date </label>
@@ -52,8 +57,13 @@
                     </igx-input-group>
                 </ng-template>
             </igx-date-picker>
-            <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)">
-                <ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value"
+            <igx-time-picker name="dateTime" (valueChange)="onTimeSelection($event)" mode="dialog">
+<label igxLabel>Time</label>
+
+<!-- igxTimePickerTemplate has been removed.
+Label, prefix, suffix and hint can now be projected directly.
+See https://www.infragistics.com/products/ignite-ui-angular/angular/components/time-picker -->
+<ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value"
                     let-displayTime="displayTime">
                     <igx-input-group (click)="openDialog()">
                         <label igxLabel>Time </label>

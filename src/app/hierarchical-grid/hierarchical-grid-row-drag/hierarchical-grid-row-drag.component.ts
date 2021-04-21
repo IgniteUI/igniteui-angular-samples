@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, IgxHierarchicalRowComponent } from 'igniteui-angular';
+import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType } from 'igniteui-angular';
 import { createData, IDrive } from '../../data/files.data';
 
 // eslint-disable-next-line no-shadow
@@ -28,7 +28,7 @@ export class HGridDragSampleComponent {
     }
 
     public onDropAllowed(args: IDropDroppedEventArgs) {
-        const draggedRow: IgxHierarchicalRowComponent = args.dragData;
+        const draggedRow: RowType = args.dragData;
         draggedRow.delete();
     }
 
