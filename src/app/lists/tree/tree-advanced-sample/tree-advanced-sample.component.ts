@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { IgxIconService, IgxTreeNodeComponent } from 'igniteui-angular';
 import { icons } from './services/svgIcons';
 import { DATA, NodeData, REMOTE_ROOT, SelectableNodeData } from './local-data';
@@ -19,7 +19,7 @@ export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
     public remoteRoot = REMOTE_ROOT;
     public remoteData: SelectableNodeData[] = [];
     private destroy$ = new Subject<void>();
-    constructor(private iconService: IgxIconService, private dataService: DataService, private cdr: ChangeDetectorRef) {
+    constructor(private iconService: IgxIconService, private dataService: DataService) {
         this.dataService.data.pipe(takeUntil(this.destroy$)).subscribe((data) => {
             this.loading = false;
             this.remoteData = data;
@@ -40,7 +40,6 @@ export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
         this.dataService.clearData();
         this.remoteData = [];
         this.getNodeData(node, true);
-        this.dataService.getData();
     }
 
     public getNodeData(node: IgxTreeNodeComponent<any>, evt: boolean) {
