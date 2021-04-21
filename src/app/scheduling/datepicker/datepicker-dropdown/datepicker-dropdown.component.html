@@ -1,6 +1,7 @@
 <div class="date-picker-wrapper">
-    <igx-date-picker id="editable-date-picker" #editable mode="dropdown" format="longDate" mask="dd-MM-y"
+    <igx-date-picker id="editable-date-picker" #editable  displayFormat="longDate" inputFormat="dd-MM-y"
         [(ngModel)]="date">
+        <label igxLabel>Date</label>
     </igx-date-picker>
     <label>Date: {{ editable.value | date:'fullDate' }}</label>
 </div>

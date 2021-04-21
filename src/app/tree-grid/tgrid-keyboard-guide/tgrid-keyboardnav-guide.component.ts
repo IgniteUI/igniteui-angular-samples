@@ -388,7 +388,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         if (cell.editable) {
             res.push(ItemAction.Editable);
         }
-        if (cell.row.treeRow.children && cell.row.treeRow.children.length) {
+        if (cell.row.children && cell.row.children.length) {
             res.push(ItemAction.Collapsible);
         }
         return res;

@@ -2,9 +2,9 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import {
     ColumnPinningPosition,
     IgxGridComponent,
-    IgxGridRowComponent,
     IgxIconService,
     IPinningConfig,
+    RowType,
     RowPinningPosition
 } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
@@ -28,7 +28,7 @@ export class GridRowPinningExtraColumnSampleComponent implements AfterViewInit {
         this.data = DATA;
     }
 
-    public togglePinning(row: IgxGridRowComponent, event) {
+    public togglePinning(row: RowType, event) {
         event.preventDefault();
         if (row.pinned) {
             row.unpin();

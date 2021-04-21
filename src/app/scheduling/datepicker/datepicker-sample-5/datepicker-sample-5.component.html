@@ -1,5 +1,6 @@
 <div class="date-picker-wrapper">
-    <igx-date-picker locale="ja-JP" [value]="date" #component>
+    <igx-date-picker locale="ja-JP" [value]="date" #component mode="dialog">
+        <label igxLabel>Date</label>
         <ng-container *ngIf="formatParts; else parseTemplate">
             <ng-template igxCalendarHeader let-format>
                 {{ format.month.combined | titlecase }} {{ format.day.combined }} {{ format.weekday.combined }}

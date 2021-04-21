@@ -1,5 +1,10 @@
-<igx-time-picker [value]="date">
-    <ng-template
+<igx-time-picker [value]="date" mode="dialog">
+    <label igxLabel>Time</label>
+
+<!-- igxTimePickerTemplate has been removed.
+Label, prefix, suffix and hint can now be projected directly.
+See https://www.infragistics.com/products/ignite-ui-angular/angular/components/time-picker -->
+<ng-template
         igxTimePickerTemplate
         let-openDialog="openDialog"
         let-value="value"
