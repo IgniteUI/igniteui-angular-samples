@@ -16,11 +16,12 @@ export class TimePickerSample6Component {
         const hour = parseInt(parts[0], 10);
         const minutes = parseInt(parts[1], 10);
 
-        if (picker.validHourEntries.indexOf(hour) !== -1 && picker.validMinuteEntries.indexOf(minutes) !== -1) {
+        // TODO
+        // if (picker.validHourEntries.indexOf(hour) !== -1 && picker.validMinuteEntries.indexOf(minutes) !== -1) {
             value.setHours(hour, minutes);
-        } else {
-            throw new Error('This is not a valid hour.');
-        }
+        // } else {
+            // throw new Error('This is not a valid hour.');
+        // }
     }
 
     public selectNow(timePicker: IgxTimePickerComponent) {

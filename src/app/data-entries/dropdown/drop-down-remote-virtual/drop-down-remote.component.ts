@@ -33,7 +33,7 @@ export class DropDownRemoteComponent implements OnInit, OnDestroy, AfterViewInit
         this.remoteService.getData(initialState, null, (data) => {
             this.remoteForDir.totalItemCount = data['@odata.count'];
         });
-        this.remoteForDir.onChunkPreload.pipe(takeUntil(this.destroy$)).subscribe((data) => {
+        this.remoteForDir.chunkPreload.pipe(takeUntil(this.destroy$)).subscribe((data) => {
             this.dataLoading(data);
         });
     }
