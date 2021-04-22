@@ -22,6 +22,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
 
     public localdata;
     public overlaySettings: OverlaySettings;
+    public displayDateFormat = 'MMM d, y';
 
     private _filterValues = new Map<IgxColumnComponent, any>();
 
@@ -76,14 +77,12 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
     }
 
     public onDateSelected(event, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
-        this._filterValues.set(column, event);
+        if (event) {
+            this._filterValues.set(column, event);
 
-        grid.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'),
-            column.filteringIgnoreCase);
-    }
-
-    public openDatePicker(openDialog: () => void) {
-        openDialog();
+            grid.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'),
+                column.filteringIgnoreCase);
+        }
     }
 
     private transformValue(value: any, column: IgxColumnComponent): any {
