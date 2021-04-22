@@ -40,39 +40,15 @@
                 [displayKey]="'type'" [(ngModel)]="user.genres" placeholder="Select your favorite genres"
                 searchPlaceholder="Search..." [type]='"line"'>
             </igx-combo>
-            <igx-date-picker name="date" (valueChange)="onDateSelection($event)" mode="dialog">
-                <label igxLabel>Date</label>
-
-<!-- igxDatePickerTemplate has been removed.
-Label, prefix, suffix and hint can now be projected directly.
-See https://www.infragistics.com/products/ignite-ui-angular/angular/components/date-picker -->
-<ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value"
-                    let-displayData="displayData">
-                    <igx-input-group (click)="openDialog()">
-                        <label igxLabel>Date </label>
-                        <input igxInput [value]="displayData" />
-                        <igx-suffix>
-                            <igx-icon>today</igx-icon>
-                        </igx-suffix>
-                    </igx-input-group>
-                </ng-template>
+            <igx-date-picker name="date" mode="dialog" placeholder="Date" (valueChange)="onDateSelection($event)">
+                <igx-picker-toggle igxSuffix>
+                    <igx-icon>today</igx-icon>
+                </igx-picker-toggle>
             </igx-date-picker>
-            <igx-time-picker name="dateTime" (valueChange)="onTimeSelection($event)" mode="dialog">
-<label igxLabel>Time</label>
-
-<!-- igxTimePickerTemplate has been removed.
-Label, prefix, suffix and hint can now be projected directly.
-See https://www.infragistics.com/products/ignite-ui-angular/angular/components/time-picker -->
-<ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value"
-                    let-displayTime="displayTime">
-                    <igx-input-group (click)="openDialog()">
-                        <label igxLabel>Time </label>
-                        <input igxInput [value]="displayTime" />
-                        <igx-suffix>
-                            <igx-icon>access_time</igx-icon>
-                        </igx-suffix>
-                    </igx-input-group>
-                </ng-template>
+            <igx-time-picker name="dateTime" mode="dialog" placeholder="Time" (valueChange)="onTimeSelection($event)">
+                <igx-picker-toggle igxSuffix>
+                    <igx-icon>access_time</igx-icon>
+                </igx-picker-toggle>
             </igx-time-picker>
             <igx-input-group>
                 <label igxLabel for="ticket">Ticket Amount</label>

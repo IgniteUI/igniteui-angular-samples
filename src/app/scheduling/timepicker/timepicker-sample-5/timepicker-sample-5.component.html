@@ -1,24 +1,10 @@
 <igx-time-picker [value]="date" mode="dialog">
-    <label igxLabel>Time</label>
-
-<!-- igxTimePickerTemplate has been removed.
-Label, prefix, suffix and hint can now be projected directly.
-See https://www.infragistics.com/products/ignite-ui-angular/angular/components/time-picker -->
-<ng-template
-        igxTimePickerTemplate
-        let-openDialog="openDialog"
-        let-value="value"
-        let-displayTime="displayTime">
-        <igx-input-group (click)="openDialog()">
-            <igx-prefix>
-                <igx-icon>home</igx-icon>
-            </igx-prefix>
-            <label igxLabel>Home Time </label>
-            <input igxInput [value]="displayTime" />
-            <igx-suffix>
-                <igx-icon>access_alarm</igx-icon>
-            </igx-suffix>
-            <igx-hint>{{value}}</igx-hint>
-        </igx-input-group>
-    </ng-template>
+    <igx-picker-toggle igxPrefix>
+        <igx-icon>home</igx-icon>
+    </igx-picker-toggle>
+    <label igxLabel>Home Time </label>
+    <igx-picker-toggle igxSuffix>
+        <igx-icon>access_alarm</igx-icon>
+    </igx-picker-toggle>
+    <igx-hint>{{date.toLocaleString()}}</igx-hint>
 </igx-time-picker>
