@@ -42,15 +42,12 @@
     </ng-template>
     <ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column">
         <div class="filter-cell">
-            <div class="filter-cell">
-                <igx-date-picker [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column)" mode="dialog">
-                    <label igxLabel>Date</label>
-                    <igx-picker-clear igxSuffix (click)="clearInput(column)">
-                        <igx-icon>clear</igx-icon>
-                    </igx-picker-clear>
-                </igx-date-picker>
-            </div>
+            <igx-date-picker [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column)" mode="dialog">
+                <label igxLabel>Date</label>
+                <igx-picker-clear igxSuffix (click)="clearInput(column)">
+                    <igx-icon>clear</igx-icon>
+                </igx-picker-clear>
+            </igx-date-picker>
         </div>
     </ng-template>
 </div>
-
