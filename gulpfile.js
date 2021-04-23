@@ -93,7 +93,7 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                     fs.readFile(file.path, 'utf-8', (err, content) => {
                         // Adjust sample application bundle files
                         const jsonObj = JSON.parse(content);
-                        let additionals = [];
+                        const additionals = [];
                         const packageJson =
                         {
                             "path": "package.json",
