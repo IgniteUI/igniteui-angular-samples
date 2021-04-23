@@ -30,8 +30,7 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['ExcelExportSample1Component'],
                 ngImports: ['IgxGridModule', 'IgxButtonModule'],
                 ngProviders: ['IgxExcelExporterService']
-            }),
-            shortenComponentPathBy: '/export-excel/'
+            })
         }));
 
         configs.push(new Config({

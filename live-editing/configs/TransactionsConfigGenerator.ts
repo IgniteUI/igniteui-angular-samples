@@ -21,8 +21,7 @@ export class TransactionsConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['TransactionBaseComponent', 'TransactionBasePipe'],
                 ngImports: ['IgxListModule', 'IgxCardModule', 'IgxButtonModule', 'IgxIconModule'],
                 ngProviders: ['IgxTransactionService']
-            }),
-            shortenComponentPathBy: 'services/transaction-base'
+            })
         }));
 
         return configs;

@@ -19,8 +19,7 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
                 imports: ['IgxInputGroupModule', 'LocalizationSample1Component', 'IgxGridModule', 'IgxIconModule'],
                 ngDeclarations: ['LocalizationSample1Component'],
                 ngImports: ['IgxInputGroupModule', 'IgxGridModule', 'IgxGridModule']
-            }),
-            shortenComponentPathBy: "/localization-samples/"
+            })
         }));
 
         // localization sample 2
@@ -33,8 +32,7 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
                           'IgxTimePickerModule', 'IgxGridModule'],
                 ngDeclarations: ['LocalizationSample2Component'],
                 ngImports: ['IgxInputGroupModule', 'IgxIconModule', 'IgxTimePickerModule', 'IgxGridModule']
-            }),
-            shortenComponentPathBy: "/localization-samples/"
+            })
         }));
 
         // localization sample 3
@@ -46,8 +44,7 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
                 imports: ['IgxInputGroupModule', 'LocalizationSample3Component', 'IgxGridModule', 'IgxIconModule'],
                 ngDeclarations: ['LocalizationSample3Component'],
                 ngImports: ['IgxInputGroupModule', 'IgxGridModule', 'IgxIconModule']
-            }),
-            shortenComponentPathBy: "/localization-samples/"
+            })
         }));
 
         // localization all resources
@@ -59,8 +56,7 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
                 imports: ['IgxInputGroupModule', 'LocalizationAllResourcesComponent', 'IgxGridModule', 'IgxIconModule', 'IgxSelectModule'],
                 ngDeclarations: ['LocalizationAllResourcesComponent'],
                 ngImports: ['IgxInputGroupModule', 'IgxGridModule', 'IgxIconModule', 'IgxSelectModule']
-            }),
-            shortenComponentPathBy: "/localization-samples/"
+            })
         }));
 
         return configs;
