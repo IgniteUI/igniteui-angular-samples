@@ -9,6 +9,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ReactiveFormsSampleComponent {
     public genres = [];
     public user: FormGroup;
+    public minTime = '06:15:30 PM';
+    public maxTime = '09:15:30 PM';
+    public minDate = '2021-04-21';
+    public maxDate = '2021-04-28';
+    // public minDate = new Date(2021, 3, 21);
+    // public maxDate = new Date(2021, 3, 28);
 
     constructor(fb: FormBuilder) {
         this.user = fb.group({

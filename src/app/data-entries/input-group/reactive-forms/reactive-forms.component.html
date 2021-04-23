@@ -41,12 +41,12 @@
                     [displayKey]="'type'" type="line" formControlName="genres" placeholder="Select your favorite genres"
                     searchPlaceholder="Search...">
                 </igx-combo>
-                <igx-date-picker name="date" formControlName="date" mode="dialog" placeholder="Date">
+                <igx-date-picker name="date" formControlName="date"  [minValue]="minDate" [maxValue]="maxDate" placeholder="Date">
                     <igx-picker-toggle igxSuffix>
                         <igx-icon>today</igx-icon>
                     </igx-picker-toggle>
                 </igx-date-picker>
-                <igx-time-picker name="time" formControlName="dateTime" mode="dialog" placeholder="Time">
+                <igx-time-picker name="time" formControlName="time" [minValue]="minTime" [maxValue]="maxTime" placeholder="Time">
                     <igx-picker-toggle igxSuffix>
                         <igx-icon>access_time</igx-icon>
                     </igx-picker-toggle>
