@@ -4,7 +4,7 @@ IgxDropDownModule,
 IgxExcelExporterService,
 IgxGridModule,
 IgxTreeGridModule} from 'igniteui-angular';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing';
 export class ExportExcelConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         PasteHandler: '../../src/app/grid/grid-paste/paste-handler.directive'
@@ -24,20 +24,20 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'ExcelExportSample1Component',
-            additionalFiles: ["/src/app/services/export-excel/data/invoiceData.ts"],
+            additionalFiles: ['/src/app/data/invoiceData.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxGridModule', 'IgxExcelExporterService', 'ExcelExportSample1Component', 'IgxButtonModule'],
                 ngDeclarations: ['ExcelExportSample1Component'],
                 ngImports: ['IgxGridModule', 'IgxButtonModule'],
                 ngProviders: ['IgxExcelExporterService']
             }),
-            shortenComponentPathBy: "/export-excel/"
+            shortenComponentPathBy: '/export-excel/'
         }));
 
         configs.push(new Config({
             component: 'GridPasteSampleComponent',
-            additionalFiles: ["/src/app/grid/grid-paste/data.ts",
-                "/src/app/grid/grid-paste/paste-handler.directive.ts"],
+            additionalFiles: ['/src/app/grid/grid-paste/data.ts',
+                '/src/app/grid/grid-paste/paste-handler.directive.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxGridModule', 'IgxExcelExporterService', 'GridPasteSampleComponent', 'IgxDropDownComponent',
                     'IgxDropDownModule', 'IgxButtonModule', 'PasteHandler'],
@@ -45,12 +45,12 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
                 ngImports: ['IgxGridModule', 'IgxDropDownModule', 'IgxButtonModule'],
                 ngProviders: ['IgxExcelExporterService']
             }),
-            shortenComponentPathBy: "/grid-paste/"
+            shortenComponentPathBy: '/grid-paste/'
         }));
 
         configs.push(new Config({
             component: 'TreeGridExcelExportSample1Component',
-            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
+            additionalFiles: ['/src/app/tree-grid/data/foods.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxTreeGridModule', 'IgxExcelExporterService', 'TreeGridExcelExportSample1Component',
                      'IgxButtonModule'],

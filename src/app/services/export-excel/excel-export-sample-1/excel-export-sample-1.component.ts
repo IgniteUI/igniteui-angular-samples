@@ -6,7 +6,7 @@ import {
     ISortingExpression,
     SortingDirection
 } from 'igniteui-angular';
-import { INVOICE_DATA } from '../data/invoiceData';
+import { INVOICE_DATA } from '../../../data/invoiceData';
 
 @Component({
   selector: 'app-excel-export-sample-1',

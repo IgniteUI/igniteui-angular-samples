@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IgxTransactionService, State, Transaction, TransactionType } from 'igniteui-angular';
-import { WISHLIST, WishlistItem } from '../data';
+import { WISHLIST, WishlistItem } from '../../../data/wishlist-data';
 
 @Component({
     selector: 'app-transaction-base',
