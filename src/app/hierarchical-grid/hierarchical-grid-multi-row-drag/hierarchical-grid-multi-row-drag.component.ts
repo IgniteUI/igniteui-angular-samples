@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, IgxHierarchicalRowComponent } from 'igniteui-angular';
+import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType } from 'igniteui-angular';
 import { createData, IDrive } from '../../data/files.data';
 
 @Component({
@@ -34,7 +34,7 @@ export class HGridMultiRowDragComponent {
 
     public onDropAllowed(args: IDropDroppedEventArgs) {
         if (this.selected === false) {
-            const draggedRow: IgxHierarchicalRowComponent = args.dragData;
+            const draggedRow: RowType = args.dragData;
             draggedRow.delete();
         } else {
             if (this.grid == null) {

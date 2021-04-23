@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { InteractionMode } from 'igniteui-angular';
+import { PickerInteractionMode } from 'igniteui-angular';
 
 @Component({
     selector: 'app-timepicker-dropdown',
@@ -7,7 +7,7 @@ import { InteractionMode } from 'igniteui-angular';
     templateUrl: './timepicker-dropdown.component.html'
 })
 export class TimepickerDropdownComponent {
-    public mode: InteractionMode = InteractionMode.DropDown;
+    public mode: PickerInteractionMode = PickerInteractionMode.DropDown;
     public format = 'hh:mm tt';
     public date: Date = new Date();
 }

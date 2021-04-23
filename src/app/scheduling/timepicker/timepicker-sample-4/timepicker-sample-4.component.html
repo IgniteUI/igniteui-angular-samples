@@ -1,12 +1,13 @@
 
     <igx-time-picker
     [itemsDelta]="{hours:1, minutes:5}"
-    format="hh:mm:ss tt"
-    [vertical]="true"
+    inputFormat="hh:mm:ss tt"
+    [headerOrientation]="true"
     [minValue]="min"
     [maxValue]="max"
-    (onValidationFailed)="onValidationFailed()"
-    >
+    (validationFailed)="onValidationFailed()"
+     mode="dialog">
+        <label igxLabel>Time</label>
     <label igxLabel>Meeting Start</label>
     </igx-time-picker>
 

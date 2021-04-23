@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxGridComponent,
-    IgxGridRowComponent,
     IPinningConfig,
     IRowDragStartEventArgs,
-    RowPinningPosition
+    RowPinningPosition,
+    RowType
 } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
@@ -31,7 +31,7 @@ export class GridPinningDragSampleComponent implements OnInit {
         this.grid.pinRow(this.data[11].ID);
     }
 
-    public togglePining(row: IgxGridRowComponent, event) {
+    public togglePining(row: RowType, event) {
         event.preventDefault();
         if (row.pinned) {
             row.unpin();
