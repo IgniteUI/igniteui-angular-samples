@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DATA } from './local-data';
+import { DATA } from '../../../data/animations-data';
 
 @Component({
     selector: 'app-tree-basic-sample',

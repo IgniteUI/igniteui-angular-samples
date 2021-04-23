@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { IgxIconService, IgxTreeNodeComponent } from 'igniteui-angular';
 import { icons } from './services/svgIcons';
-import { DATA, NodeData, REMOTE_ROOT, SelectableNodeData } from './local-data';
+import { DATA, NodeData, REMOTE_ROOT, SelectableNodeData } from '../../../data/tree-file-data';
 import { DataService } from './services/data.service';
 import { Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
-import { NodeData, REMOTE_DATA, SelectableNodeData } from '../local-data';
+import { NodeData, REMOTE_DATA, SelectableNodeData } from '../../../../data/tree-file-data';
 
 @Injectable()
 export class DataService {
