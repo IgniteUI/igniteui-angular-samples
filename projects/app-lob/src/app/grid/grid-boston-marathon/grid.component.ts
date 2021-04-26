@@ -111,11 +111,6 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
 
     public isTop3(cell): boolean {
         const top = this.grid1.page === 0 && cell.row.index < 4;
-        if (top) {
-            cell.row.nativeElement.classList.add('top3');
-        } else {
-            cell.row.nativeElement.classList.remove('top3');
-        }
         return top;
     }
 
