@@ -1,0 +1,17 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$legacy-support: true;
+$palette: $light-material-palette;
+$schema: $light-material-schema;
+
+$default-palette: $palette;
+$igx-legacy-support: $legacy-support;
+
+$green-palette: igx-palette(
+    $primary: #09f,
+    $secondary: #72da67,
+    $grays: #fff,
+    $surface: #333
+);
+
+$grays-btn-color: igx-color($green-palette, 'grays', 800);
