@@ -43,12 +43,12 @@
         </ng-template>
         <ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column">
             <div class="filter-cell">
-                <igx-date-picker #dp [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column)" mode="dialog"
-                    [displayDensity]="'compact'" placeholder="Filter..." type="box">
-                    <igx-picker-toggle igxPrefix (click)="dp.open()">
+                <igx-date-picker [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column)" mode="dialog"
+                    [displayDensity]="'compact'" placeholder="Filter..." [displayFormat]="displayDateFormat" type="box">
+                    <igx-picker-toggle igxPrefix>
                         <igx-icon>search</igx-icon>
                     </igx-picker-toggle>
-                    <igx-picker-clear *ngIf="value" igxSuffix (click)="dp.clear()">
+                    <igx-picker-clear *ngIf="value" igxSuffix>
                         <igx-icon>clear</igx-icon>
                     </igx-picker-clear>
                 </igx-date-picker>

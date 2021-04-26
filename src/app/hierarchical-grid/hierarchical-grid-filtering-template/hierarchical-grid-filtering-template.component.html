@@ -15,7 +15,7 @@
 
     <igx-row-island [key]="'Albums'" [autoGenerate]="false" [allowFiltering]='true'>
         <igx-column field="Album" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
-        <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'" [formatter]="formatter" [filterCellTemplate]="dateFilterTemplate"></igx-column>
+        <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'" [filterCellTemplate]="dateFilterTemplate"></igx-column>
         <igx-column field="BillboardReview" header="Billboard Review" dataType="number" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
         <igx-column field="USBillboard200" header="US Billboard 200" dataType="number" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
     <igx-row-island [key]="'Songs'" [autoGenerate]="false" >
@@ -57,12 +57,12 @@
 </ng-template>
 <ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column" let-grid="column.grid">
     <div class="filter-cell">
-        <igx-date-picker #dp [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column, grid)" mode="dialog"
-            [displayDensity]="'compact'" placeholder="Filter..." type="box">
-            <igx-picker-toggle igxPrefix (click)="dp.open()">
+        <igx-date-picker [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column, grid)" mode="dialog"
+            [displayDensity]="'compact'" placeholder="Filter..." [displayFormat]="displayDateFormat" type="box">
+            <igx-picker-toggle igxPrefix>
                 <igx-icon>search</igx-icon>
             </igx-picker-toggle>
-            <igx-picker-clear *ngIf="value" igxSuffix (click)="dp.clear()">
+            <igx-picker-clear *ngIf="value" igxSuffix>
                 <igx-icon>clear</igx-icon>
             </igx-picker-clear>
         </igx-date-picker>

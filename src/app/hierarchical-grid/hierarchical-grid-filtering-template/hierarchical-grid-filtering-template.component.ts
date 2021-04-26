@@ -22,6 +22,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
 
     public localdata;
     public overlaySettings: OverlaySettings;
+    public displayDateFormat = 'MMM d, y';
 
     private _filterValues = new Map<IgxColumnComponent, any>();
 
@@ -34,9 +35,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
         };
     }
 
-    public formatter(date: Date): string {
-        return new Intl.DateTimeFormat('en-US').format(date);
-    };
+    public formatter = (a) => a;
 
     public getFilterValue(column: IgxColumnComponent): any {
         return this._filterValues.has(column) ? this._filterValues.get(column) : null;

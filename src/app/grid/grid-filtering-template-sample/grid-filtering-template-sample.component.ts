@@ -20,6 +20,7 @@ export class FilteringTemplateSampleComponent implements OnInit {
     public grid1: IgxGridComponent;
 
     public data: any[];
+    public displayDateFormat = 'MMM d, y';
 
     private _filterValues = new Map<IgxColumnComponent, any>();
 
