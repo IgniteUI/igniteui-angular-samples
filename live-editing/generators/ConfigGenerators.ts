@@ -55,6 +55,7 @@ import { ToggleConfigGenerator } from '../configs/ToggleConfigGenerator';
 import { TooltipConfigGenerator } from '../configs/TooltipConfigGenerator';
 import { TransactionsConfigGenerator } from '../configs/TransactionsConfigGenerator';
 import { TreeGridConfigGenerator } from '../configs/TreeGridConfigGenerator';
+import { TreeConfigGenerator } from '../configs/TreeConfigGenerator';
 
 export const CONFIG_GENERATORS =
     [
@@ -78,6 +79,7 @@ export const CONFIG_GENERATORS =
         NavdrawerConfigGenerator,
         TabBarConfigGenerator,
         TabsConfigGenerator,
+        TreeConfigGenerator,
 
         // selectors:
         AutocompleteConfigGenerator,
