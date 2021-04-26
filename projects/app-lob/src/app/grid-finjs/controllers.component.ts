@@ -78,11 +78,14 @@ export class ControllerComponent implements OnInit, OnDestroy {
             }
             case 2: {
                 this.playAction.emit({ action: 'chart'});
-                this.playButtons.deselectButton(2);
                 break;
             }
             default: break;
         }
+    }
+
+    public handleHidden(evt){
+        this.playButtons.deselectButton(2);
     }
 
     public onChange(action: string, event: any) {

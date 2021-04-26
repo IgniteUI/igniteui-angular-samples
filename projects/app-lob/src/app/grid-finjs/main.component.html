@@ -13,7 +13,7 @@
 </div>
 
 <igx-dialog #dialog closeOnOutsideSelect="true" (onClose)="onCloseHandler($event)">
-    <div (keydown)="closeDialog($event)" class="chart-container">
+    <div (keydown)="closeDialog()" class="chart-container">
         <igx-dialog-title> Chart </igx-dialog-title>
 
         <div>
@@ -23,7 +23,7 @@
         </div>
 
         <div igxDialogActions>
-            <button igxButton (click)="dialog.close()" [igxFocus]="dialog.isOpen">ОК</button>
+            <button igxButton (click)="closeDialog()" [igxFocus]="dialog.isOpen">ОК</button>
         </div>
     </div>
 </igx-dialog>
