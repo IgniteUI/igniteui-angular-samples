@@ -154,7 +154,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
 
         this.data = new FinancialData().generateData(1000);
 
-        this.grid.onRangeSelection.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(200))
+        this.grid.rangeSelected.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(200))
             .subscribe(range => {
                 const areAllRangesUnderSameColumns = this.grid.getSelectedRanges().every(r => (r.columnEnd === range.columnEnd && r.columnStart === range.columnStart) ||
                                                                                                 r.rowEnd === range.rowEnd && r.rowStart === range.rowStart);
