@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { dateAddDays } from 'igniteui-angular-core';
 
 @Component({
     selector: 'app-reactive-form',
@@ -9,12 +10,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ReactiveFormsSampleComponent {
     public genres = [];
     public user: FormGroup;
-    public minTime = '06:15:30 PM';
-    public maxTime = '09:15:30 PM';
-    public minDate = '2021-04-21';
-    public maxDate = '2021-04-28';
-    // public minDate = new Date(2021, 3, 21);
-    // public maxDate = new Date(2021, 3, 28);
+    public minTime = '06:15:30';
+    public maxTime = '09:15:30';
+    public minDate = new Date();
+    public maxDate = new Date(new Date(this.minDate.getFullYear(), this.minDate.getMonth(), this.minDate.getDate() + 14));
+
 
     constructor(fb: FormBuilder) {
         this.user = fb.group({
