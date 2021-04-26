@@ -78,12 +78,14 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
     }
 
     public onDateSelected(event, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
-        if (event) {
-            this._filterValues.set(column, event);
-
-            grid.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'),
-                column.filteringIgnoreCase);
+        if (!event) {
+            this.clearInput(column, grid);
+            return;
         }
+
+        this._filterValues.set(column, event);
+        grid.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'),
+            column.filteringIgnoreCase);
     }
 
     private transformValue(value: any, column: IgxColumnComponent): any {

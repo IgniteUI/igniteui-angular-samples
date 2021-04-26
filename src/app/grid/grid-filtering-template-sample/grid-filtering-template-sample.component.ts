@@ -76,12 +76,14 @@ export class FilteringTemplateSampleComponent implements OnInit {
     }
 
     public onDateSelected(event, column: IgxColumnComponent) {
-        if(event) {
-            this._filterValues.set(column, event);
-
-            this.grid1.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'),
-                column.filteringIgnoreCase);
+        if(!event) {
+            this.clearInput(column);
+            return;
         }
+
+        this._filterValues.set(column, event);
+        this.grid1.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'),
+            column.filteringIgnoreCase);
     }
 
     private transformValue(value: any, column: IgxColumnComponent): any {
