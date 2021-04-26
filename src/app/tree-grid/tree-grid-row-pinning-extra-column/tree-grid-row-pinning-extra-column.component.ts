@@ -3,9 +3,9 @@ import {
     ColumnPinningPosition,
     IgxIconService,
     IgxTreeGridComponent,
-    IgxTreeGridRowComponent,
     IPinningConfig,
-    RowPinningPosition
+    RowPinningPosition,
+    RowType
 } from 'igniteui-angular';
 import { icons } from '../../grid/services/svgIcons';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
@@ -46,7 +46,7 @@ export class TreeGridRowPinningExtraColumnSampleComponent implements OnInit, Aft
         });
     }
 
-    public togglePinning(row: IgxTreeGridRowComponent, event) {
+    public togglePinning(row: RowType, event) {
         event.preventDefault();
         if (row.pinned) {
             row.unpin();

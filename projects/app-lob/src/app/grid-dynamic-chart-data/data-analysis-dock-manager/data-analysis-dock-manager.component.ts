@@ -284,13 +284,13 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
         this.cdr.detectChanges();
 
         this.formatting.formattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
-        this.grid.onDataPreLoad.pipe(
+        this.grid.dataPreLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             filter(() => this.range),
             takeUntil(this.destroy$))
             .subscribe(() => !this.contextmenu ? (this.headersRenderButton ? this.renderHeaderButton() : this.renderButton()) : noop());
-        this.grid.parentVirtDir.onChunkLoad.pipe(
+        this.grid.parentVirtDir.chunkLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             filter(() => this.range),

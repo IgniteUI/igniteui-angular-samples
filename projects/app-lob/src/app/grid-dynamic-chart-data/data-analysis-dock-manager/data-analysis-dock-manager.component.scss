@@ -126,7 +126,7 @@ $custom-badge-theme: igx-badge-theme(
         height: auto;
     }
 
-    igx-tabs-group {
+    igx-tab-content {
         @include scrollbar(10px, 10px);
     }
 
