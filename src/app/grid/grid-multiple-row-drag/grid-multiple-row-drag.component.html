@@ -1,7 +1,7 @@
 <div class="grid-container">
         <igx-grid igxPreventDocumentScroll #sourceGrid [data]="data1" [height]="'480px'" [autoGenerate]="false"
-            [rowDraggable]="true" [primaryKey]="'ID'" (onRowDragStart)="onRowDragStart($event)"
-            (onRowDragEnd)="onRowDragEnd($event)" [cellSelection]="'none'" [rowSelection]="selectionMode">
+            [rowDraggable]="true" [primaryKey]="'ID'" (rowDragStart)="onRowDragStart($event)"
+            (rowDragEnd)="onRowDragEnd($event)" [cellSelection]="'none'" [rowSelection]="selectionMode">
             <igx-column [field]="'ID'" [header]="'ID'" width="100px"></igx-column>
             <igx-column [field]="'CompanyName'" [header]="'Company Name'" width="100px"></igx-column>
             <igx-column [field]="'ContactName'" [header]="'Contact Name'" width="100px" [minWidth]="'60px'"
