@@ -187,7 +187,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
             }
         });
         this.formatting.formattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
-        this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.range = undefined);
+        this.grid.cellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.range = undefined);
         this.grid.dataPreLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
