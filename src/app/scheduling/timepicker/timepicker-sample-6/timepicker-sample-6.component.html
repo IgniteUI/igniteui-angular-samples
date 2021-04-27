@@ -1,4 +1,5 @@
-<igx-time-picker #picker [value]="today" inputFormat="HH:mm">
+<igx-time-picker #picker [value]="today" inputFormat="HH:mm" mode="dialog">
+<label igxLabel>Time</label>
     <igx-picker-toggle igxSuffix>
         <igx-icon (click)="picker.open()">access_time</igx-icon>
     </igx-picker-toggle>

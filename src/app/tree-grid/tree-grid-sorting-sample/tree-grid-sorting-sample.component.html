@@ -1,6 +1,6 @@
 <div class="grid__wrapper" (window:click)="disableContextMenu()">
     <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
-        primaryKey="ID" foreignKey="ParentID" (onContextMenu)="rightClick($event)">
+        primaryKey="ID" foreignKey="ParentID" (contextMenu)="rightClick($event)">
         <igx-column field="ID" header="Product ID" [sortable]="true">
         </igx-column>
         <igx-column field="Name" header="Product Name" [dataType]="'string'" [sortable]="true">

@@ -41,11 +41,13 @@
                 searchPlaceholder="Search..." [type]='"line"'>
             </igx-combo>
             <igx-date-picker name="date" mode="dialog" placeholder="Date" (valueChange)="onDateSelection($event)">
+<label igxLabel>Date</label>
                 <igx-picker-toggle igxSuffix>
                     <igx-icon>today</igx-icon>
                 </igx-picker-toggle>
             </igx-date-picker>
             <igx-time-picker name="dateTime" mode="dialog" placeholder="Time" (valueChange)="onTimeSelection($event)">
+<label igxLabel>Time</label>
                 <igx-picker-toggle igxSuffix>
                     <igx-icon>access_time</igx-icon>
                 </igx-picker-toggle>
