@@ -42,31 +42,14 @@
     </ng-template>
     <ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column">
         <div class="filter-cell">
-            <igx-date-picker [value]="getFilterValue(column)"
-                             (valueChange)="onDateSelected($event, column)" mode="dialog">
-                <label igxLabel>Date</label>
-
-<!-- igxDatePickerTemplate has been removed.
-Label, prefix, suffix and hint can now be projected directly.
-See https://www.infragistics.com/products/ignite-ui-angular/angular/components/date-picker -->
-<ng-template igxDatePickerTemplate let-openDialog="openDialog" let-displayData="displayData">
-                    <igx-input-group type="box" [displayDensity]="'compact'">
-                        <igx-prefix>
-                            <igx-icon>search</igx-icon>
-                        </igx-prefix>
-                        <input #input
-                            igxInput
-                            (click)="openDatePicker(openDialog)"
-                            placeholder="Filter..."
-                            autocomplete="off"
-                            tabindex="0"
-                            [value]="displayData | date"
-                            [readonly]="true"/>
-                        <igx-suffix *ngIf="input.value || input.value === 0" (click)="clearInput(column)" tabindex="0">
-                            <igx-icon>clear</igx-icon>
-                        </igx-suffix>
-                    </igx-input-group>
-                </ng-template>
+            <igx-date-picker [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column)" mode="dialog"
+                [displayDensity]="'compact'" placeholder="Filter..." [displayFormat]="displayDateFormat" type="box">
+                <igx-picker-toggle igxPrefix>
+                    <igx-icon>search</igx-icon>
+                </igx-picker-toggle>
+                <igx-picker-clear *ngIf="value" igxSuffix>
+                    <igx-icon>clear</igx-icon>
+                </igx-picker-clear>
             </igx-date-picker>
         </div>
     </ng-template>

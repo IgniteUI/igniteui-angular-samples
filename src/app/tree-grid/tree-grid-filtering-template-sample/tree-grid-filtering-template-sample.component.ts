@@ -20,6 +20,7 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
     public treegrid1: IgxTreeGridComponent;
 
     public data: any[];
+    public displayDateFormat = 'M/d/y';
 
     private _filterValues = new Map<IgxColumnComponent, any>();
 
@@ -77,14 +78,14 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
     }
 
     public onDateSelected(event, column: IgxColumnComponent) {
-        this._filterValues.set(column, event);
+        if (!event) {
+            this.clearInput(column);
+            return;
+        }
 
+        this._filterValues.set(column, event);
         this.treegrid1.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'),
             column.filteringIgnoreCase);
-    }
-
-    public openDatePicker(openDialog: () => void) {
-        openDialog();
     }
 
     private transformValue(value: any, column: IgxColumnComponent): any {
