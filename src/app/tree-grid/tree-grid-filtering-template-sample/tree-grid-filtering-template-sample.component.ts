@@ -20,7 +20,7 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
     public treegrid1: IgxTreeGridComponent;
 
     public data: any[];
-    public displayDateFormat = 'MMM d, y';
+    public displayDateFormat = 'M/d/y';
 
     private _filterValues = new Map<IgxColumnComponent, any>();
 
