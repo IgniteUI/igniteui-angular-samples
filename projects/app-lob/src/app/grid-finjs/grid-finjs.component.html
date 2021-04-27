@@ -11,9 +11,9 @@
         [rowSelection]="selectionMode"
         [allowFiltering]="true"
         [filterMode]="'excelStyleFilter'"
-        (onRowSelectionChange)="rowSelectionChanged($event)"
+        (rowSelected)="rowSelectionChanged($event)"
         (keydown)="gridKeydown($event)"
-        (onGridKeydown)="customKeydown($event)"
+        (gridKeydown)="customKeydown($event)"
         [isLoading]="isLoading">
 
         <igx-grid-toolbar *ngIf="showToolbar">

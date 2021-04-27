@@ -16,7 +16,9 @@ import {
     IgxSelectModule,
     IgxSliderModule,
     IgxSwitchModule,
-    IgxToastModule
+    IgxToastModule,
+    IgxTooltipModule,
+    IgxTreeModule
 } from 'igniteui-angular';
 import { CascadingCombosComponent } from './combo/cascading-combos/cascading-combos.component';
 import { ComboBindingComponent } from './combo/combo-binding/combo-binding.component';
@@ -39,6 +41,8 @@ import { ListSample7Component } from './list/list-sample-7/list-sample-7.compone
 import { ListSample8Component } from './list/list-sample-8/list-sample-8.component';
 import { ListComponent } from './list/list.component';
 import { ListsRoutingModule } from './lists-routing.module';
+import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sample.component';
+import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-advanced-sample.component';
 
 @NgModule({
     declarations: [
@@ -61,7 +65,9 @@ import { ListsRoutingModule } from './lists-routing.module';
         ComboTemplateComponent,
         ComboOverlayComponent,
         ComboBindingComponent,
-        ComboSingleSelectionComponent
+        ComboSingleSelectionComponent,
+        TreeBasicSampleComponent,
+        TreeAdvancedSampleComponent
     ],
     imports: [
         CommonModule,
@@ -81,7 +87,9 @@ import { ListsRoutingModule } from './lists-routing.module';
         IgxButtonGroupModule,
         HttpClientModule,
         IgxRippleModule,
-        IgxCardModule
+        IgxCardModule,
+        IgxTreeModule,
+        IgxTooltipModule
     ]
 })
 export class ListsModule { }
