@@ -349,7 +349,7 @@ export class GridUnderManagement {
     }
 
     public subscribe() {
-        this.hGrid.onColumnSelectionChange.pipe(takeUntil(this.destroyer))
+        this.hGrid.columnSelected.pipe(takeUntil(this.destroyer))
             .subscribe((args) => {
                 const evt = args.event;
                 if (evt.type === 'keydown') {
@@ -357,7 +357,7 @@ export class GridUnderManagement {
                 }
             });
 
-        this.hGrid.onRowToggle.pipe(takeUntil(this.destroyer))
+        this.hGrid.rowToggle.pipe(takeUntil(this.destroyer))
             .subscribe((args) => {
                 const evt = args.event as KeyboardEvent;
                 if (!evt || evt.type !== 'keydown') {
