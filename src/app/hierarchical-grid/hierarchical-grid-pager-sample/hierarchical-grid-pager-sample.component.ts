@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { IPaginatorResourceStrings, IgxPaginatorComponent } from 'igniteui-angular';
 import { SINGERS } from '../data';
 
-
 @Component({
     selector: 'app-hierarchical-grid-pager-sample',
     styleUrls: ['./hierarchical-grid-pager-sample.component.scss'],

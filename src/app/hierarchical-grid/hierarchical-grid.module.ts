@@ -169,7 +169,7 @@ import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-
         HierarchicalGridPagerSampleComponent
     ],
     imports: [
-    CommonModule,
+        CommonModule,
         FormsModule,
         HttpClientModule,
         HierarchicalGridRoutingModule,
