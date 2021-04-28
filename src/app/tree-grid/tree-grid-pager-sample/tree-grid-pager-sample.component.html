@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [paging]="true" [perPage]="10" [paginationTemplate]="pager" height="500px" width="100%"
+    <igx-tree-grid igxPreventDocumentScroll #treegrid1 [data]="data" [paging]="true" [perPage]="10" [paginationTemplate]="pager" height="500px" width="100%"
         displayDensity="cosy" primaryKey="ID" foreignKey="ParentID">
         <igx-column field="ID" header="Product ID" [dataType]="'string'">
         </igx-column>
@@ -16,9 +16,9 @@
         <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
             <ng-template igxCell let-cell="cell" let-val>
                 <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
-                <img *ngIf="cell.row.rowData.UnitPrice != 0 && val" src="https://staging.infragistics.com/angular-demos/assets/images/grid/active.png"
+                <img *ngIf="cell.row.rowData.UnitPrice != 0 && val" src="assets/images/grid/active.png"
                     title="Continued" alt="Continued" />
-                <img *ngIf="cell.row.rowData.UnitPrice != 0 && !val" src="https://staging.infragistics.com/angular-demos/assets/images/grid/expired.png"
+                <img *ngIf="cell.row.rowData.UnitPrice != 0 && !val" src="assets/images/grid/expired.png"
                     title="Discontinued" alt="Discontinued" />
             </ng-template>
         </igx-column>
