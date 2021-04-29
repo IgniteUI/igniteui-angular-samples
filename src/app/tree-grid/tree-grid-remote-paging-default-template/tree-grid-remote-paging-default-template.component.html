@@ -3,7 +3,7 @@
         childDataKey="Content" expansionDepth="0" width="100%" height="540px"
         [paging]="true" [(page)]="page" [(perPage)]="perPage" [isLoading]="isLoading"
         [pagingMode]="mode" [totalRecords]="totalCount" 
-        (onPagingDone)="paginate($event.current)">
+        (pagingDone)="paginate($event.current)">
         <igx-column field="Name">
             <ng-template igxCell let-cell="cell" let-val>
                 <igx-icon *ngIf="cell.rowData.Type === 'File folder'" family="material" class="typeIcon">folder

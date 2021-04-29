@@ -116,6 +116,7 @@ import { TreeGridExportVisualizationComponent } from './tree-grid-export-visuali
 import { TGridEditingLifecycleComponent } from './tgrid-editing-lifecycle-sample/tgrid-editing-lifecycle.component';
 import { TreeGridFormattedFilteringStrategyComponent } from './tree-grid-formatted-filtering-strategy/tree-grid-formatted-filtering-strategy.component';
 import { TreeGridSummaryFormatterComponent } from './tree-grid-summary-formatter/tree-grid-summary-formatter.component';
+import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid-pager-sample.component';
 
 @NgModule({
     declarations: [
@@ -157,6 +158,7 @@ import { TreeGridSummaryFormatterComponent } from './tree-grid-summary-formatter
         TreeGridConditionalCellStyleComponent,
         TGridSaveStateComponent,
         TreeGridPagingSampleComponent,
+        TreeGridPagerSampleComponent,
         TreeGridEditingSampleComponent,
         TreeGridEditingStyleComponent,
         TreeGridExcelStyleFilteringSample1Component,

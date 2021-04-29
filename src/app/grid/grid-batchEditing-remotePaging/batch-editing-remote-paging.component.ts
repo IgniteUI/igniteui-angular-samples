@@ -120,7 +120,7 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
     }
 
     public commit() {
-        // this.grid1.transactions.commit(this.data);
+        this.grid1.transactions.commit(this.grid1.data);
         this.dialog.close();
     }
 

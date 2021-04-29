@@ -1,7 +1,7 @@
 <div class="grid__wrapper">
     <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [height]="'530px'" [width]="'100%'"
-        (onSelection)='calculateSummary()'
-        (onRangeSelection)='calculateSummary()'>
+        (selected)='calculateSummary()'
+        (rangeSelected)='calculateSummary()'>
         <igx-column [field]="'ProductID'"></igx-column>
         <igx-column [field]="'ProductName'"></igx-column>
         <igx-column [field]="'UnitPrice'" [dataType]="'number'" [formatter]="formatCurrency"></igx-column>

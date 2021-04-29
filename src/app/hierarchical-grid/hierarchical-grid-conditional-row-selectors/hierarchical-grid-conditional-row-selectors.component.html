@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <igx-hierarchical-grid igxPreventDocumentScroll  [data]="singers" rowSelection="multiple" cellSelection="none" [autoGenerate]="false"
-        height="600px" width="100%" [paging]="true" primaryKey="Artist" (onRowSelectionChange)="onRowSelect($event)">
+        height="600px" width="100%" [paging]="true" primaryKey="Artist" (rowSelected)="onRowSelect($event)">
         <igx-column field="Artist"></igx-column>
         <igx-column field="Debut"></igx-column>
         <igx-column field="GrammyNominations" header="Grammy Nominations"></igx-column>
