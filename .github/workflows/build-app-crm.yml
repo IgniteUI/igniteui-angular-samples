@@ -6,17 +6,17 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master, vNext]
+    branches: [ master, vNext, zkolev/hanging-build]
     paths:
-    - 'projects/app-crm/**'
-    - 'igniteui-angular-samples/live-editing/**'
-    - 'package.json'
+    - '!src/**'
+    - '!live-editing/**'
+    - '!projects/app-lob/**'
   pull_request:
-    branches: [ master, vNext]
+    branches: [ master, vNext, zkolev/hanging-build]
     paths:
-    - 'projects/app-crm/**'
-    - 'igniteui-angular-samples/live-editing/**'
-    - 'package.json'
+    - '!src/**'
+    - '!live-editing/**'
+    - '!projects/app-lob/**'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
