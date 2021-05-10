@@ -9,11 +9,13 @@ on:
     branches: [ master, vNext]
     paths:
     - 'projects/app-crm/**'
+    - 'igniteui-angular-samples/live-editing/**'
     - 'package.json'
   pull_request:
     branches: [ master, vNext]
     paths:
     - 'projects/app-crm/**'
+    - 'igniteui-angular-samples/live-editing/**'
     - 'package.json'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
