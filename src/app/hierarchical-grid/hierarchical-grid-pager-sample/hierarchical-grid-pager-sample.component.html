@@ -1,0 +1,57 @@
+<div class="grid__wrapper">
+    <igx-hierarchical-grid igxPreventDocumentScroll #hGrid [data]="data" [paging]="true" [perPage]="10" [paginationTemplate]="pager" height="500px" width="100%"
+        displayDensity="cosy" primaryKey="ID">
+        <igx-column field="Artist"></igx-column>
+        <igx-column field="Photo">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner_2">
+                    <img [src]="cell.value" class="photo" />
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="Debut" dataType="number"></igx-column>
+        <igx-column field="GrammyNominations" header="Grammy Nominations"></igx-column>
+        <igx-column field="GrammyAwards" header="Grammy Awards"></igx-column>
+        <igx-row-island [key]="'Albums'" [autoGenerate]="false" [paging]="true" [perPage]="5">
+            <igx-column field="Album"></igx-column>
+            <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
+            <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
+            <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
+            <igx-row-island [key]="'Songs'" [autoGenerate]="false" [paging]="true" [perPage]="5">
+                <igx-column field="Number" header="No."></igx-column>
+                <igx-column field="Title"></igx-column>
+                <igx-column field="Released" dataType="date"></igx-column>
+                <igx-column field="Genre"></igx-column>
+            </igx-row-island>
+        </igx-row-island>
+        <igx-row-island [key]="'Tours'" [autoGenerate]="false" [paging]="true" [perPage]="5">
+            <igx-column field="Tour"></igx-column>
+            <igx-column field="StartedOn" header="Started on"></igx-column>
+            <igx-column field="Location"></igx-column>
+            <igx-column field="Headliner"></igx-column>
+        </igx-row-island>
+    </igx-hierarchical-grid>
+
+    <ng-template #pager>
+        <igx-paginator #paginator [(page)]="hGrid.page" [totalRecords]="hGrid.totalRecords" [(perPage)]="hGrid.perPage"
+            [dropdownHidden]="isDropdownHidden" [pagerHidden]="isPagerHidden"
+            [dropdownEnabled]="!isDropdownDisabled" [pagerEnabled]="!isPagerDisabled"
+            [selectOptions]="selectOptions" [displayDensity]="hGrid.displayDensity">
+        </igx-paginator>
+    </ng-template>
+
+    <div class="options-container">
+        <label>Display density:</label>
+        <div class="select-input">
+            <igx-select [(ngModel)]="hGrid.displayDensity">
+                <igx-select-item *ngFor="let density of densityOptions" [value]="density">
+                    {{ density }}
+                </igx-select-item>
+            </igx-select>
+        </div>
+        <igx-switch [(ngModel)]="isDropdownHidden">Hide Dropdown</igx-switch>
+        <igx-switch [(ngModel)]="isPagerHidden">Hide Pager</igx-switch>
+        <igx-switch [(ngModel)]="isDropdownDisabled">Disable Dropdown</igx-switch>
+        <igx-switch [(ngModel)]="isPagerDisabled">Disable Pager</igx-switch>
+    </div>
+</div>
