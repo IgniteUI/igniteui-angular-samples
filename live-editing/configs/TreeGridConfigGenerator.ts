@@ -26,6 +26,7 @@ IgxTreeGridModule,
 IgxToggleModule} from 'igniteui-angular';
 import {IgxSparklineCoreModule,
 IgxSparklineModule} from 'igniteui-angular-charts';
+import {Router, RouterModule} from '@angular/router';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class TreeGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
@@ -944,17 +945,24 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/tree-grid/"
         }));
 
-        configs.push(new Config({
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
+        const treeGridSaveStateSampleConfig = new Config({
+            additionalFiles: [
+                "/src/app/directives/prevent-scroll.directive.ts",
+                "/src/app/tree-grid/tree-grid-save-state/data.ts",
+                "/src/app/tree-grid/tree-grid-save-state/about.component.ts",
+                "/src/app/tree-grid/tree-grid-save-state/about.component.html"],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TGridSaveStateComponent', 'TGridAboutComponent'],
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TGridSaveStateComponent', 'TGridAboutComponent', 'Router', 'RouterModule'],
                 ngDeclarations: ['TGridSaveStateComponent', 'TGridAboutComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule',
-                    "RouterModule.forRoot([\{component: 'TGridAboutComponent', path: 'tree-grid-state-about'},\{component: 'TGridSaveStateComponent', path: 'tree-grid-state'},\{ path: '', redirectTo: '/tree-grid-state', pathMatch: 'full' }])]"]
+                    "RouterModule.forRoot([\{component: TGridAboutComponent, path: 'tree-grid-state-about'},\{component: TGridSaveStateComponent, path: 'tree-grid-state'},\{ path: '', redirectTo: '/tree-grid-state', pathMatch: 'full' }])"]
+
             }),
             component: 'TGridSaveStateComponent',
             shortenComponentPathBy: "/tree-grid/"
-        }));
+        });
+        treeGridSaveStateSampleConfig.usesRouting = true;
+        configs.push(treeGridSaveStateSampleConfig);
 
         configs.push(new Config({
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/tree-grid/data/foods.ts"],
