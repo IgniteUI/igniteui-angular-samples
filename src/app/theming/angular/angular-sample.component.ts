@@ -50,6 +50,7 @@ export class AngularComponent implements OnInit {
 
     public lightTheme() {
         this.themesClass = 'light';
+        this.overlayContainer.getContainerElement().classList.remove('dark');
     }
 
     public darkTheme() {

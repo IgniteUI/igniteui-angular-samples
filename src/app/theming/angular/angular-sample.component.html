@@ -135,16 +135,16 @@
     <igx-expansion-panel-body>
         <div igxLayout>
             <div class="slider-wrapper">
-                <p>Daily withdrawal limit: $900</p>
-                <mat-slider value="50"></mat-slider>
+                <p>Daily withdrawal limit: ${{slider.value}}</p>
+                <mat-slider #slider min="100" max="1000" step="50" value="700"></mat-slider>
             </div>
             <div class="slider-wrapper">
-                <p>Daily purchase limit: $600</p>
-                <mat-slider value="50"></mat-slider>
+                <p>Daily purchase limit: ${{slider2.value}}</p>
+                <mat-slider #slider2 min="100" max="1000" step="50" value="300"></mat-slider>
             </div>
             <div class="slider-wrapper">
-                <p>Total daily limit: $1200</p>
-                <mat-slider value="50"></mat-slider>
+                <p>Total daily limit: ${{slider3.value}}</p>
+                <mat-slider #slider3 min="100" max="1000" step="50" value="1000"></mat-slider>
             </div>
         </div>
         <igx-divider></igx-divider>
