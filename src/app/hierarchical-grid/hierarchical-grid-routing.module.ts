@@ -90,6 +90,7 @@ import { HierarchicalGridCellSelectionComponent } from './hierarchical-grid-cell
 import { HGridFormattedFilteringStrategyComponent } from './hierarchical-grid-formatted-filtering-strategy/hierarchical-grid-formatted-filtering-strategy.component';
 import { HGridSummaryFormatterComponent } from './hierarchical-grid-summary-formatter/hierarchical-grid-summary-formatter.component';
 import { HGridExcelExportSampleComponent } from './hierarchical-grid-excel-exporter/hierarchical-grid-excel-export.sample';
+import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-sample/hierarchical-grid-pager-sample.component';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -210,6 +211,12 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData['hierarchical-grid-remote-paging'],
         path: 'hierarchical-grid-remote-paging'
+    },
+    {
+        component: HierarchicalGridPagerSampleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData['hierarchical-grid-reusable-paginator'],
+        path: 'hierarchical-grid-reusable-paginator'
     },
     {
         component: HGridPinningSampleComponent,

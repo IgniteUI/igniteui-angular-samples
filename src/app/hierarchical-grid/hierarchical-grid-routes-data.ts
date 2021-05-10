@@ -31,6 +31,7 @@ export const hierarchicalGridRoutesData = {
     'hierarchical-grid-summary-styling': { displayName: 'Hierarchical Grid Summary Styling', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-paging': { displayName: 'Hierarchical Grid Paging', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-remote-paging': { displayName: 'Hierarchical Grid Remote Paging', parentName: 'Hierarchical Grid' },
+    'hierarchical-grid-reusable-paginator': { displayName: 'Hierarchical Grid Reusable Paginator', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-density': { displayName: 'Hierarchical Grid Display Density', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-moving': { displayName: 'Hierarchical Grid Column Moving', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-moving-styled': { displayName: 'Hierarchical Grid Column Moving Styled', parentName: 'Hierarchical Grid' },
