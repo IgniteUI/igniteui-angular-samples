@@ -8,21 +8,23 @@ on:
   push:
     branches: [ master, vNext, zkolev/hanging-build]
     paths:
-    - '!src/**'
-    - '!live-editing/configs/**'
-    - 'live-editing/configs/app-dv-configs/**'
-    - '!live-editing/generators/**'
-    - 'live-editing/generators/AppDVConfigGenerators.ts'
-    - '!projects/app-crm/**'
+      - '**'
+      - '!src/**'
+      - '!live-editing/configs/**'
+      - 'live-editing/configs/app-dv-configs/**'
+      - '!live-editing/generators/**'
+      - 'live-editing/generators/AppDVConfigGenerators.ts'
+      - '!projects/app-crm/**'
   pull_request:
     branches: [ master, vNext, zkolev/hanging-build]
     paths:
-    - '!src/**'
-    - '!live-editing/configs/**'
-    - 'live-editing/configs/app-dv-configs/**'
-    - '!live-editing/generators/**'
-    - 'live-editing/generators/AppDVConfigGenerators.ts'
-    - '!projects/app-crm/**'
+      - '**'
+      - '!src/**'
+      - '!live-editing/configs/**'
+      - 'live-editing/configs/app-dv-configs/**'
+      - '!live-editing/generators/**'
+      - 'live-editing/generators/AppDVConfigGenerators.ts'
+      - '!projects/app-crm/**'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
