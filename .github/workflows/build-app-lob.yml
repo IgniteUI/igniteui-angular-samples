@@ -6,7 +6,7 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master, vNext, zkolev/hanging-build]
+    branches: [ master, vNext]
     paths:
       - '**'
       - '!src/**'
@@ -16,7 +16,7 @@ on:
       - 'live-editing/generators/AppDVConfigGenerators.ts'
       - '!projects/app-crm/**'
   pull_request:
-    branches: [ master, vNext, zkolev/hanging-build]
+    branches: [ master, vNext]
     paths:
       - '**'
       - '!src/**'
