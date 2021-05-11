@@ -9,8 +9,9 @@ export class TimePickerSample4Component {
     @ViewChild('toast', { static: true })
     private toast;
 
-    public min = '09:15:30 AM';
-    public max = '06:15:30 PM';
+    public time = '10:00:00';
+    public min = '08:15:30';
+    public max = '18:15:30';
 
     public onValidationFailed() {
         this.toast.open();
