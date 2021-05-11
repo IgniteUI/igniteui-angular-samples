@@ -154,7 +154,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
 
         this.data = new FinancialData().generateData(1000);
 
-        this.grid.onRangeSelection.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(200))
+        this.grid.rangeSelected.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(200))
             .subscribe(range => {
                 const areAllRangesUnderSameColumns = this.grid.getSelectedRanges().every(r => (r.columnEnd === range.columnEnd && r.columnStart === range.columnStart) ||
                                                                                                 r.rowEnd === range.rowEnd && r.rowStart === range.rowStart);
@@ -187,13 +187,13 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
             }
         });
         this.formatting.formattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
-        this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.range = undefined);
-        this.grid.onDataPreLoad.pipe(
+        this.grid.cellClick.pipe(takeUntil(this.destroy$)).subscribe(() => this.range = undefined);
+        this.grid.dataPreLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             takeUntil(this.destroy$))
             .subscribe(() => this.range && !this.contextmenu ? this.renderButton() : noop());
-        this.grid.parentVirtDir.onChunkLoad.pipe(
+        this.grid.parentVirtDir.chunkLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             takeUntil(this.destroy$))

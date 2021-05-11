@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     private onMessage(e: MessageEvent) {
         if (e.origin === e.data.origin && typeof e.data.themeStyle === 'string') {
             this.styleElem.textContent = e.data.themeStyle;
-            const typeface = window.getComputedStyle(this.document.body).fontFamily.replace(/\'/g, '');
+            const typeface = window.getComputedStyle(this.document.body).fontFamily.replace(/[\'\"]/g, '');
             if (!(typeface.match(/,/g) || []).length &&
                 !this.typefacesLoaded.includes(typeface)) {
                 this.typefacesLoaded.push(typeface);

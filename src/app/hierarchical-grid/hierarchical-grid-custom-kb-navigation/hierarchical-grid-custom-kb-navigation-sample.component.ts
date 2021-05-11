@@ -27,7 +27,7 @@ export class HGridCustomKBNavigationComponent implements OnInit {
 
     public childGridCreated(event: IGridCreatedEventArgs) {
         const grid = event.grid;
-        event.grid.onGridKeydown.subscribe((args) => {
+        event.grid.gridKeydown.subscribe((args) => {
             this.customKeydown(args, grid);
         });
     }

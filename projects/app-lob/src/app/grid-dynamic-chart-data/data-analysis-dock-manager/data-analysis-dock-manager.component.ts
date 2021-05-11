@@ -156,7 +156,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
                     this.overlayService.hide(this._esfOverlayId);
                 }
             });
-        this.grid.onRangeSelection.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(30))
+        this.grid.rangeSelected.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(30))
             .subscribe(range => {
                 if (this._esfOverlayId) {
                     this.overlayService.hide(this._esfOverlayId);
@@ -176,7 +176,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
                 this.headersRenderButton = false;
             });
 
-        this.grid.onColumnSelectionChange.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(100))
+        this.grid.columnSelected.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(100))
             .subscribe((args: IColumnSelectionEventArgs) => {
                 if (this._esfOverlayId) {
                     this.overlayService.hide(this._esfOverlayId);
@@ -191,14 +191,14 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
                 this.headersRenderButton = true;
             });
 
-        this.gridEventEmitters = merge(this.grid.onFilteringDone,
-            this.grid.onSortingDone,
-            this.grid.onColumnMoving,
-            this.grid.onPagingDone,
-            this.grid.onColumnPinning,
-            this.grid.onColumnResized,
-            this.grid.onColumnMovingEnd,
-            this.grid.onColumnVisibilityChanged);
+        this.gridEventEmitters = merge(this.grid.filteringDone,
+            this.grid.sortingDone,
+            this.grid.columnMoving,
+            this.grid.pagingDone,
+            this.grid.columnPin,
+            this.grid.columnResized,
+            this.grid.columnMovingEnd,
+            this.grid.columnVisibilityChanged);
 
         this.gridEventEmitters.pipe(takeUntil(this.destroy$)).subscribe(() => {
             if (this.grid.selectedCells.length > 0) {
@@ -284,13 +284,13 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
         this.cdr.detectChanges();
 
         this.formatting.formattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
-        this.grid.onDataPreLoad.pipe(
+        this.grid.dataPreLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             filter(() => this.range),
             takeUntil(this.destroy$))
             .subscribe(() => !this.contextmenu ? (this.headersRenderButton ? this.renderHeaderButton() : this.renderButton()) : noop());
-        this.grid.parentVirtDir.onChunkLoad.pipe(
+        this.grid.parentVirtDir.chunkLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
             filter(() => this.range),
@@ -299,7 +299,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
                 if (!this.contextmenu) { this.headersRenderButton ? this.renderHeaderButton() : this.renderButton(); }
             });
 
-        this.grid.onSelection.pipe(
+        this.grid.selected.pipe(
             filter(() => this.range),
             takeUntil(this.destroy$))
             .subscribe((args: any) => {

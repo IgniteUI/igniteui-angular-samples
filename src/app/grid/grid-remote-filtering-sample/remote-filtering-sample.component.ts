@@ -46,7 +46,7 @@ export class RemoteFilteringSampleComponent implements OnInit, AfterViewInit, On
                 this.grid.isLoading = false;
             });
 
-        this.grid.onDataPreLoad.pipe(
+        this.grid.dataPreLoad.pipe(
             debounceTime(DEBOUNCE_TIME),
             takeUntil(this.destroy$)
         ).subscribe(() => {

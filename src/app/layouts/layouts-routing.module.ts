@@ -56,6 +56,8 @@ import { TabsSample2Component } from './tabs/tabs-sample-2/tabs-sample-2.compone
 import { TabsSample3Component } from './tabs/tabs-sample-3/tabs-sample-3.component';
 import { TabsSample4Component } from './tabs/tabs-sample-4/components/tabs-sample-4.component';
 import { TabsStyleComponent } from './tabs/tabs-style/tabs-style.component';
+import { TabsAlignmentComponent } from './tabs/tabs-alignment/tabs-alignment.component';
+import { TabsHeaderPrefixSuffixComponent } from './tabs/tabs-header-prefix-suffix/tabs-header-prefix-suffix';
 import { View1Component } from './tabs/views/view1/view1.component';
 import { View2Component } from './tabs/views/view2/view2.component';
 import { View3Component } from './tabs/views/view3/view3.component';
@@ -273,6 +275,14 @@ export const layoutsRoutes: Routes = [
     {
         component: TabsStyleComponent,
         path: 'tabs-style'
+    },
+    {
+        component: TabsAlignmentComponent,
+        path: 'tabs-alignment'
+    },
+    {
+        component: TabsHeaderPrefixSuffixComponent,
+        path: 'tabs-header-prefix-suffix'
     },
     {
         component: CardComponent,

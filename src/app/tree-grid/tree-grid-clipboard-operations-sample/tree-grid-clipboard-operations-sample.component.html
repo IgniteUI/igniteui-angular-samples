@@ -13,7 +13,7 @@
                 </igx-hint>
             </igx-input-group>
             <div class="grid-wrapper">
-                <igx-tree-grid igxPreventDocumentScroll  #grid1 [data]="data" childDataKey="Employees" (onColumnInit)="initColumn($event)"
+                <igx-tree-grid igxPreventDocumentScroll  #grid1 [data]="data" childDataKey="Employees" (columnInit)="initColumn($event)"
                     [autoGenerate]="false" [clipboardOptions]="options">
                     <igx-grid-toolbar>
 

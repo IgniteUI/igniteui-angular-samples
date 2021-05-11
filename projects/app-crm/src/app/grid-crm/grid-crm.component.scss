@@ -1,7 +1,8 @@
+@import '../../variables';
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fontawesome.css");
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-regular.css");
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-solid.css");
-@import '~igniteui-angular/lib/core/styles/themes/index';
+
 :host ::ng-deep {
     $crm-grid-palette: igx-palette( $primary: #09f, $secondary: #ffbf00);
     @include igx-theme($crm-grid-palette);

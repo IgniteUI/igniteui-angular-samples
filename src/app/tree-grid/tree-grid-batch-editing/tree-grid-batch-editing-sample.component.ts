@@ -67,12 +67,14 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
     }
 
     public undo() {
-        /* exit edit mode */
-        this.treeGrid.endEdit(/* commit the edit transaction */ false);
+        /* exit edit mode and commit changes */
+        this.treeGrid.endEdit(true);
         this.treeGrid.transactions.undo();
     }
 
     public redo() {
+        /* exit edit mode and commit changes */
+        this.treeGrid.endEdit(true);
         this.treeGrid.transactions.redo();
     }
 
@@ -90,21 +92,9 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
         this.dialog.close();
     }
 
-    public get undoEnabled(): boolean {
-        return this.treeGrid.transactions.canUndo;
-    }
-
-    public get redoEnabled(): boolean {
-        return this.treeGrid.transactions.canRedo;
-    }
-
-    public openCommitDialog() {
+    public openCommitDialog(dialogGrid: IgxTreeGridComponent) {
         this.dialog.open();
-        this.dialogGrid.reflow();
-    }
-
-    public get hasTransactions(): boolean {
-        return this.treeGrid.transactions.getAggregatedChanges(false).length > 0;
+        dialogGrid.reflow();
     }
 
     public stateFormatter(value: string) {

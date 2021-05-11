@@ -1,4 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 .avatars-wrapper {
     display: flex;
@@ -37,4 +37,3 @@ $icon-avatar-theme: igx-avatar-theme(
 .icon{
     @include igx-avatar($icon-avatar-theme);
 }
-

@@ -1,18 +1,12 @@
-<igx-time-picker #picker [value]="today" format="HH:mm" mode="dropdown">
-    <ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value" let-displayTime="displayTime">
-        <igx-input-group>
-            <input #dropDownTarget igxInput [value]="displayTime"
-                (blur)="onBlur(dropDownTarget.value, value, picker)" />
-            <igx-suffix>
-                <igx-icon (click)="openDialog(dropDownTarget)">access_time</igx-icon>
-            </igx-suffix>
-            <igx-hint>{{value}}</igx-hint>
-        </igx-input-group>
-    </ng-template>
+<igx-time-picker #picker [value]="today" inputFormat="HH:mm">
+    <igx-picker-toggle igxSuffix>
+        <igx-icon (click)="picker.open()">access_time</igx-icon>
+    </igx-picker-toggle>
+    <igx-hint>{{today.toLocaleString()}}</igx-hint>
     <ng-template igxTimePickerActions>
         <div class="action-buttons">
             <button igxButton="flat" (click)="picker.cancelButtonClick()">cancel</button>
-            <button igxButton="flat" (click)="picker.okButtonClick()">ok</button>
+            <button igxButton="flat" (click)="picker.close()">ok</button>
             <button igxButton="flat" (click)="selectNow(picker)">now</button>
         </div>
     </ng-template>

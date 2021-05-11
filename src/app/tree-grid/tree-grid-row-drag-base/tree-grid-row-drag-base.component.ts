@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent } from 'igniteui-angular';
+import { IDropDroppedEventArgs, IgxTreeGridComponent, RowType } from 'igniteui-angular';
 import { FULL_EMPLOYEE_DATA } from '../data/employees';
 
 // eslint-disable-next-line no-shadow
@@ -28,7 +28,7 @@ export class TreeGridRowDragBaseComponent {
     }
 
     public onDropAllowed(args: IDropDroppedEventArgs) {
-        const draggedRow: IgxTreeGridRowComponent = args.dragData;
+        const draggedRow: RowType = args.dragData;
         draggedRow.delete();
     }
 

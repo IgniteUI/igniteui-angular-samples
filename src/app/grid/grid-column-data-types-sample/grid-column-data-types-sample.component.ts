@@ -29,25 +29,52 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
     public locales = ["BG", "EN", "DE", "FR", "JA"];
     public locale = "EN";
 
+    // DateTime formats
+    public dateTimeFormats = [
+        { format: "short", eq: "'M/d/yy, h:mm a'" },
+        { format: "long", eq: "'MMMM d, y, h:mm:ss a z'"},
+        { format: "full", eq: "'EEEE, MMMM d, y, h:mm:ss a zzzz'"},
+    ];
+
     // Date formats
     public dateFormats = [
-            { format: "short", eq: "'M/d/yy, h:mm a'" },
-            { format: "shortDate", eq: "'M/d/yy'" },
-            { format: "mediumDate", eq: "'MMMM d, y, h:mm:ss a z'"},
-            { format: "long", eq: "'MMMM d, y, h:mm:ss a z'"},
-            { format: "longDate", eq: "'MMMM d, y'"},
-            { format: "full", eq: "'EEEE, MMMM d, y, h:mm:ss a zzzz'"},
-            { format: "fullDate", eq: "'EEEE, MMMM d, y'"}
-        ];
+        { format: "shortDate", eq: "'M/d/yy'" },
+        { format: "mediumDate", eq: "'MMMM d, y'"},
+        { format: "longDate", eq: "'MMMM d, y'"},
+        { format: "fullDate", eq: "'EEEE, MMMM d, y'"}
+    ];
+    
+    // Time formats
+    public timeFormats = [
+        { format: "shortTime", eq: "'h:mm a'" },
+        { format: "mediumTime", eq: "'h:mm:ss a'"},
+        { format: "longTime", eq: "'h:mm:ss a z'"},
+        { format: "fullTime", eq: "'h:mm:ss a zzzz'"},
+    ];
 
     // Different timezones
     public timezoneFormats = ["GMT", "UTC+9:30/ +10:30", "UTC+0", "UTC-6", "UTC+1", "UTC+3" ];
 
-    public dateOptions = {
+    // DateTime options
+    public dateTimeOptions = {
         format: 'long',
         timezone: 'UTC+0'
     };
+    public formatDateTimeOptions = this.dateTimeOptions;
+
+    // Date options
+    public dateOptions = {
+        format: 'mediumDate',
+        timezone: 'UTC+0'
+    };
     public formatDateOptions = this.dateOptions;
+
+    // Time options
+    public timeOptions = {
+        format: 'shortTime',
+        timezone: 'UTC+0'
+    };
+    public formatTimeOptions = this.timeOptions;
 
     // Currency format options
     public currencyCodes = ["USD", "BGN", "EUR", "JPY"];
@@ -63,7 +90,9 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         UnitsOnOrder: 0.030,
         ReorderLevel: 10,
         Discontinued: false,
-        OrderDate: new Date("2012-02-12")
+        OrderDate: new Date("2012-02-12"),
+        OrderDateDelay: new Date(new Date("2012-02-12").setHours(3, 20)),
+        OrderFullDate: new Date(new Date("2012-02-12").setHours(3, 20))
       }, {
         ProductID: 2,
         ProductName: "Chang",
@@ -75,7 +104,9 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         UnitsOnOrder: 0.040,
         ReorderLevel: 25,
         Discontinued: true,
-        OrderDate: new Date("2003-03-17")
+        OrderDate: new Date("2003-03-17"),
+        OrderDateDelay: new Date(new Date("2003-03-17").setHours(5, 40)),
+        OrderFullDate: new Date(new Date("2003-03-17").setHours(5, 40))
       }, {
         ProductID: 3,
         ProductName: "Aniseed Syrup",
@@ -87,7 +118,9 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         UnitsOnOrder: 0.070,
         ReorderLevel: 25,
         Discontinued: false,
-        OrderDate: new Date("2006-03-17")
+        OrderDate: new Date("2006-03-17"),
+        OrderDateDelay: new Date(new Date("2006-03-17").setHours(1, 55)),
+        OrderFullDate: new Date(new Date("2006-03-17").setHours(1, 55))
       }, {
         ProductID: 4,
         ProductName: "Chef Antons Cajun Seasoning",
@@ -99,7 +132,9 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         UnitsOnOrder: 0.030,
         ReorderLevel: 0,
         Discontinued: false,
-        OrderDate: new Date("2016-03-17")
+        OrderDate: new Date("2016-03-17"),
+        OrderDateDelay: new Date(new Date("2016-03-17").setHours(11, 11)),
+        OrderFullDate: new Date(new Date("2016-03-17").setHours(11, 11))
       }, {
         ProductID: 5,
         ProductName: "Chef Antons Gumbo Mix",
@@ -111,7 +146,9 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         UnitsOnOrder: 0.030,
         ReorderLevel: 0,
         Discontinued: true,
-        OrderDate: new Date("2011-11-11")
+        OrderDate: new Date("2011-11-11"),
+        OrderDateDelay: null,
+        OrderFullDate: null
       }, {
         ProductID: 6,
         ProductName: "Grandmas Boysenberry Spread",
@@ -123,7 +160,9 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         UnitsOnOrder: 0.030,
         ReorderLevel: 25,
         Discontinued: false,
-        OrderDate: new Date("2017-12-17")
+        OrderDate: new Date("2017-12-17"),
+        OrderDateDelay: new Date(new Date("2017-12-17").setHours(2, 15)),
+        OrderFullDate: new Date(new Date("2017-12-17").setHours(2, 15))
       }, {
         ProductID: 7,
         ProductName: "Uncle Bobs Organic Dried Pears",
@@ -135,7 +174,9 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         UnitsOnOrder: 0.030,
         ReorderLevel: 10,
         Discontinued: false,
-        OrderDate: new Date("2016-07-17")
+        OrderDate: new Date("2016-07-17"),
+        OrderDateDelay: undefined,
+        OrderFullDate: new Date(new Date("2016-07-17").setHours(1, 55))
       }, {
         ProductID: 8,
         ProductName: "Northwoods Cranberry Sauce",
@@ -147,7 +188,9 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         UnitsOnOrder: 0.030,
         ReorderLevel: 0,
         Discontinued: false,
-        OrderDate: new Date("2018-01-17")
+        OrderDate: new Date("2018-01-17"),
+        OrderDateDelay: null,
+        OrderFullDate: new Date(new Date("2018-01-17").setHours(1, 55))
       }, {
         ProductID: 9,
         ProductName: "Mishi Kobe Niku",
@@ -159,7 +202,9 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         UnitsOnOrder: 0.030,
         ReorderLevel: 0,
         Discontinued: true,
-        OrderDate: new Date("2010-02-17")
+        OrderDate: new Date("2010-02-17"),
+        OrderDateDelay: new Date(new Date("2010-02-17").setHours(8, 10)),
+        OrderFullDate: new Date(new Date("2010-02-17").setHours(8, 10))
       }
     ];
 
@@ -195,13 +240,23 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
     }
 
     public selectionChanging(event) {
+        this.dateTimeOptions.format = event.newSelection.value;
+        this.formatDateTimeOptions = Object.assign({}, this.formatDateTimeOptions, this.dateTimeOptions);
+    }
+
+    public selectionDateChanging(event) {
         this.dateOptions.format = event.newSelection.value;
         this.formatDateOptions = Object.assign({}, this.formatDateOptions, this.dateOptions);
     }
+    
+    public selectionTimeChanging(event) {
+        this.timeOptions.format = event.newSelection.value;
+        this.formatTimeOptions = Object.assign({}, this.formatTimeOptions, this.timeOptions);
+    }
 
     public timezoneSelectionChanging(event) {
-        this.dateOptions.timezone = event.newSelection.value;
-        this.formatDateOptions = Object.assign({}, this.formatDateOptions, this.dateOptions);
+        this.dateTimeOptions.timezone = event.newSelection.value;
+        this.formatDateTimeOptions = Object.assign({}, this.formatDateTimeOptions, this.dateTimeOptions);
     }
 
     public currencySelectionChanging(event) {

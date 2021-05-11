@@ -218,7 +218,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
     public ngOnInit() {
         this.data = generateEmployeeDetailedFlatData();
 
-        this.tgrid.onColumnSelectionChange.pipe(takeUntil(this._destroyer))
+        this.tgrid.columnSelected.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 const evt = args.event;
                 if (evt.type === 'keydown') {
@@ -226,7 +226,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
                 }
             });
 
-        this.tgrid.onRowToggle.pipe(takeUntil(this._destroyer))
+        this.tgrid.rowToggle.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 const evt = args.event as KeyboardEvent;
                 if (evt.type !== 'keydown') {
@@ -388,7 +388,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         if (cell.editable) {
             res.push(ItemAction.Editable);
         }
-        if (cell.row.treeRow.children && cell.row.treeRow.children.length) {
+        if (cell.row.children && cell.row.children.length) {
             res.push(ItemAction.Collapsible);
         }
         return res;

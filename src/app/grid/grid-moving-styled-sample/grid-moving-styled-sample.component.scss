@@ -1,7 +1,7 @@
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fontawesome.css");
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-regular.css");
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-solid.css");
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../variables';
 
 $yellow-color: #F4D45C;
 $black-color: #575757;
@@ -15,11 +15,11 @@ $dark-grid-column-moving-theme: igx-grid-theme(
 );
 
 :host {
-    ::ng-deep{ 
+    ::ng-deep{
         .igx-grid__th--pinned  {
             .pin-icon {
                 color: #444;
-        
+
                 &:hover {
                     color: #999
                 }
@@ -32,7 +32,7 @@ $dark-grid-column-moving-theme: igx-grid-theme(
           }
     }
 }
-  
+
 .title-inner {
     display: flex;
     justify-content: space-between;
@@ -54,7 +54,7 @@ $dark-grid-column-moving-theme: igx-grid-theme(
 }
 
 .currency-badge-container {
-    width: 80px; 
+    width: 80px;
     float: right;
 }
 

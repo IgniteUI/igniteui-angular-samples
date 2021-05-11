@@ -52,10 +52,10 @@ export class ControllerComponent implements OnInit, OnDestroy {
     constructor() {
     }
     public ngOnInit() {
-        this.volumeChanged$ = this.volumeSlider.onValueChange.pipe(debounce(() => timer(200)));
+        this.volumeChanged$ = this.volumeSlider.valueChange.pipe(debounce(() => timer(200)));
         this.volumeChanged$.subscribe(x => this.volumeChanged.emit(this.volumeSlider.value));
 
-        this.frequencyChanged$ = this.intervalSlider.onValueChange.pipe(debounce(() => timer(200)));
+        this.frequencyChanged$ = this.intervalSlider.valueChange.pipe(debounce(() => timer(200)));
         this.frequencyChanged$.subscribe(x => this.frequencyChanged.emit(this.intervalSlider.value));
     }
 
@@ -78,11 +78,14 @@ export class ControllerComponent implements OnInit, OnDestroy {
             }
             case 2: {
                 this.playAction.emit({ action: 'chart'});
-                this.playButtons.deselectButton(2);
                 break;
             }
             default: break;
         }
+    }
+
+    public handleHidden(evt){
+        this.playButtons.deselectButton(2);
     }
 
     public onChange(action: string, event: any) {
