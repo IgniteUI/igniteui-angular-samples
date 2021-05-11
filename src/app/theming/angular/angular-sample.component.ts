@@ -17,8 +17,6 @@ export class AngularComponent implements OnInit {
     @ViewChild('dialog', { read: IgxDialogComponent, static: true })
     public dialog: IgxDialogComponent;
 
-    @ViewChild(IgxExpansionPanelComponent, { read: IgxExpansionPanelComponent, static: true })
-    public panel: IgxExpansionPanelComponent;
 
     @HostBinding('class')
     public themesClass = 'light';
@@ -69,7 +67,6 @@ export class AngularComponent implements OnInit {
             outlet: this.outlet
         };
 
-        this.panel.collapsed = false;
 
         this.firstFormGroup = this._formBuilder.group({
             firstCtrl: ['', Validators.required]

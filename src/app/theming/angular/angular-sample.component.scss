@@ -8,143 +8,29 @@ $custom-typography: mat-typography-config(
 
 @include mat-core($custom-typography);
 
-$igx-primary-palette: (
-    50: #c0e6ff,
-    100: #a7d9fa,
-    200: #6dbcf1,
-    300: #3ca9f2,
-    400: #1da0f7,
-    500: #09f,
-    600: #0089e5,
-    700: #007ed2,
-    800: #0072be,
-    900: #0065a8,
-    A100: #55bbff,
-    A200: #27a9ff,
-    A400: #008deb,
-    A700: #0066aa,
-    contrast: (
-        50-contrast: black,
-        100-contrast: black,
-        200-contrast: black,
-        300-contrast: black,
-        400-contrast: black,
-        500-contrast: black,
-        600-contrast: black,
-        700-contrast: black,
-        800-contrast: white,
-        900-contrast: white,
-        A100-contrast: black,
-        A200-contrast: black,
-        A400-contrast: black,
-        A700-contrast: white,
-    ),
+$saturations: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 'A100', 'A200', 'A400', 'A700');
+
+@function material-like-palette(
+    $color,
+    $saturations,
+    $palette,
+) {
+    $shade: ();
+    $contrast: ();
+    $result: ();
+    @each $saturation in $saturations {
+        $shade: map-merge($shade, ($saturation: igx-color($palette, $color, $saturation)));
+        $contrast: map-merge($contrast, (#{$saturation}-contrast: igx-color($palette, $color, #{$saturation}-contrast)));
+        $result: map-merge($shade, (contrast: $contrast));
+    }
+
+    @return $result;
+}
+
+$igx-light-palette: igx-palette(
+    $primary: #09f,
+    $secondary: #e41c77
 );
-
-$igx-secondary-palette: (
-    50: #fcc5de,
-    100: #f0b2ce,
-    200: #e17fab,
-    300: #dc5391,
-    400: #df3683,
-    500: #e41c77,
-    600: #dc0a6a,
-    700: #d30060,
-    800: #bf0057,
-    900: #a5044d,
-    A100: #f65fa4,
-    A200: #f3348b,
-    A400: #df0d6d,
-    A700: #a2094f,
-    contrast: (
-        50-contrast: black,
-        100-contrast: black,
-        200-contrast: black,
-        300-contrast: black,
-        400-contrast: black,
-        500-contrast: black,
-        600-contrast: white,
-        700-contrast: white,
-        800-contrast: white,
-        900-contrast: white,
-        A100-contrast: black,
-        A200-contrast: black,
-        A400-contrast: white,
-        A700-contrast: white,
-    ),
-);
-
-$light-palette-primary: mat-palette($igx-primary-palette);
-$light-palette-accent: mat-palette($igx-secondary-palette);
-
-$dark-primary-palette: (
-    50: white,
-    100: #ecf8eb,
-    200: #c0e5bc,
-    300: #9cda96,
-    400: #86d97d,
-    500: #72da67,
-    600: #54e245,
-    700: #39ee26,
-    800: #2aeb15,
-    900: #2ccf1b,
-    "A100": #adf0a6,
-    "A200": #89e97f,
-    "A400": #5ae14c,
-    "A700": #32ca22,
-    contrast: (
-        50-contrast: black,
-        100-contrast: black,
-        200-contrast: black,
-        300-contrast: black,
-        400-contrast: black,
-        500-contrast: black,
-        600-contrast: black,
-        700-contrast: black,
-        800-contrast: black,
-        900-contrast: black,
-        A100-contrast: black,
-        A200-contrast: black,
-        A400-contrast: black,
-        A700-contrast: black,
-    ),
-);
-
-$dark-secondary-palette: (
-    50: #0080e8,
-    100: #106ebb,
-    200: #0f4978,
-    300: #082f4f,
-    400: #042139,
-    500: #011627,
-    600: #00080e,
-    700: black,
-    800: black,
-    900: black,
-    A100: #00457d,
-    A200: #002c4f,
-    A400: #000b14,
-    A700: black,
-    contrast: (
-        50-contrast: black,
-        100-contrast: white,
-        200-contrast: white,
-        300-contrast: white,
-        400-contrast: white,
-        500-contrast: white,
-        600-contrast: white,
-        700-contrast: white,
-        800-contrast: white,
-        900-contrast: white,
-        A100-contrast: white,
-        A200-contrast: white,
-        A400-contrast: white,
-        A700-contrast: white,
-    ),
-);
-
-$dark-palette-primary: mat-palette($dark-primary-palette);
-$dark-palette-accent: mat-palette($dark-secondary-palette);
 
 $custom-dark-palette: igx-palette(
     $primary: #011627,
@@ -152,6 +38,16 @@ $custom-dark-palette: igx-palette(
     $grays: #fff,
     $surface: #222,
 );
+
+$light-palette-primary: mat-palette(material-like-palette('primary', $saturations, $igx-light-palette));
+$light-palette-accent: mat-palette(material-like-palette('secondary', $saturations, $igx-light-palette));
+
+$dark-palette-primary: mat-palette(material-like-palette('primary', $saturations, $custom-dark-palette));
+$dark-palette-accent: mat-palette(material-like-palette('secondary', $saturations, $custom-dark-palette));
+
+.navbar-brand {
+    margin-right: 16px;
+}
 
 mat-toolbar div {
     margin-left: auto;
@@ -174,6 +70,11 @@ mat-toolbar div {
         margin-bottom: 0;
         padding: 0 8px;
     }
+}
+
+.card-panel {
+    margin: 8px 16px;
+    box-shadow: igx-elevation($elevation: 2);
 }
 
 .mat-slider {
@@ -200,28 +101,26 @@ igx-expansion-panel-body {
     @include igx-typography($font-family: $material-typeface, $type-scale: $material-type-scale);
 
     &.light {
-        @include igx-color-classes($palette: $default-palette, $prop: "background", $prefix: "bg");
+        @include igx-color-classes($palette: $igx-light-palette, $prop: "background", $prefix: "bg");
 
-        background: igx-color($default-palette, 'surface');
+        background: igx-color($igx-light-palette, 'surface');
 
-        #TheOceanPearl,
-        #Path-2 {
-            fill: igx-color($default-palette, 'secondary');
+        #Path1 {
+            fill: igx-color($igx-light-palette, 'secondary');
         }
 
-        #Oval,
-        #Path-2 {
-            stroke: igx-color($default-palette, 'secondary');
+        #Path2 {
+            stroke: igx-color($igx-light-palette, 'secondary');
             stroke-width: "0.8";
         }
 
         .primary {
-            color: igx-color($default-palette, 'primary');
+            color: igx-color($igx-light-palette, 'primary');
             margin-left: 32px;
         }
 
         ::ng-deep {
-            @include igx-theme($light-material-palette, $legacy-support: true);
+            @include igx-theme($igx-light-palette, $legacy-support: true);
 
             $custom-mat-light-theme: mat-light-theme($light-palette-primary, $light-palette-accent);
             @include angular-material-theme($custom-mat-light-theme);
@@ -233,13 +132,11 @@ igx-expansion-panel-body {
 
         background: igx-color($custom-dark-palette, 'surface');
 
-        #TheOceanPearl,
-        #Path-2 {
+        #Path1 {
             fill: igx-color($custom-dark-palette, 'secondary');
         }
 
-        #Oval,
-        #Path-2 {
+        #Path2 {
             stroke: igx-color($custom-dark-palette, 'secondary');
             stroke-width: "0.8";
         }
@@ -247,7 +144,7 @@ igx-expansion-panel-body {
         ::ng-deep {
             @include igx-dark-theme($custom-dark-palette, $legacy-support: true);
 
-            $custom-mat-dark-theme: mat-light-theme($dark-palette-primary, $dark-palette-accent);
+            $custom-mat-dark-theme: mat-dark-theme($dark-palette-primary, $dark-palette-accent);
             @include angular-material-theme($custom-mat-dark-theme);
 
             .primary {
@@ -255,54 +152,21 @@ igx-expansion-panel-body {
                 margin-left: 32px;
             }
 
+            .mat-step-header .mat-step-icon-selected {
+                background-color: igx-color($custom-dark-palette, 'secondary');
+            }
+
             .mat-accent .mat-slider-thumb,
             .mat-accent .mat-slider-track-fill {
                 background-color: igx-color($custom-dark-palette, 'primary', 100);
             }
 
-            .mat-stepper-horizontal,
-            .mat-menu-panel {
+            .mat-stepper-horizontal {
                 background: igx-color($custom-dark-palette, 'surface');
             }
 
-            .mat-step-header .mat-step-icon {
-                background-color: igx-color($custom-dark-palette, 'grays', 800);
-                color: igx-color($custom-dark-palette, 'surface');
-            }
-
-            .mat-step-header .mat-step-icon-selected {
-                background-color: igx-color($custom-dark-palette, 'secondary');
-            }
-
-            igx-expansion-panel h5,
-            .mat-step-header .mat-step-label.mat-step-label-active,
-            .mat-form-field-appearance-legacy .mat-form-field-label {
+            igx-expansion-panel h5 {
                 color: igx-color($custom-dark-palette, 'grays', 800);
-            }
-
-            .mat-form-field-appearance-legacy .mat-form-field-underline,
-            .mat-stepper-horizontal-line,
-            .mat-slider-track-background {
-                background-color: igx-color($custom-dark-palette, 'grays', 300);
-                border-top-color: igx-color($custom-dark-palette, 'grays', 300);
-            }
-
-            .mat-slider:hover .mat-slider-track-background,
-            .cdk-focused .mat-slider-track-background {
-                background-color: igx-color($custom-dark-palette, 'grays', 400);
-            }
-
-            #cdk-overlay-1 .mat-menu-panel {
-                background-color: igx-color($custom-dark-palette, 'surface')!important;
-                border-color: igx-color($custom-dark-palette, 'grays', 300);
-
-                .mat-menu-item {
-                    color: igx-color($custom-dark-palette, 'grays', 800);
-
-                    &:hover {
-                        background-color: igx-color($custom-dark-palette, 'grays', 200);
-                    }
-                }
             }
         }
     }
@@ -310,15 +174,15 @@ igx-expansion-panel-body {
     &.light,
     &.dark {
         .success {
-            color: igx-color($default-palette, "success");
+            color: igx-color($igx-light-palette, "success");
         }
 
         .error {
-            color: igx-color($default-palette, "error");
+            color: igx-color($igx-light-palette, "error");
         }
 
         .warning {
-            color: igx-color($default-palette, "warn");
+            color: igx-color($igx-light-palette, "warn");
         }
     }
 }
