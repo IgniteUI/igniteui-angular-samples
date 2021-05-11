@@ -25,12 +25,12 @@ export class HGridSelectionSampleComponent implements OnInit {
     }
     public ngOnInit(): void {
         this.snackbar.autoHide = false;
-        this.snackbar.show();
+        this.snackbar.open();
     }
 
     public selectCellSelectionMode(args) {
         this.selectionMode = this.selectionModes[args.index].label;
-        this.snackbar.show();
+        this.snackbar.open();
     }
 
     public handleRowSelection(event) {

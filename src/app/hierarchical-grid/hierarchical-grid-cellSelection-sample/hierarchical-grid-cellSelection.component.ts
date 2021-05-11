@@ -31,12 +31,12 @@ export class HierarchicalGridCellSelectionComponent implements OnInit {
             { label: 'multiple', selected: this.selectionModeChild === 'multiple', togglable: true }
         ];
         this.snackbar.autoHide = false;
-        this.snackbar.show();
+        this.snackbar.open();
     }
 
     public selectCellSelectionMode(args) {
         this.selectionMode = this.selectionModes[args.index].label;
-        this.snackbar.show();
+        this.snackbar.open();
     }
 
     public selectCellSelectionModeChildGrid(args) {

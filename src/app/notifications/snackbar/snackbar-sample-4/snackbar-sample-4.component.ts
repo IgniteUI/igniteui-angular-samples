@@ -35,12 +35,12 @@ export class SnackbarSample4Component implements OnInit {
   public delete(item) {
     this.deletedItems.push([item, this.navItems.indexOf(item)]);
     this.navItems.splice(this.navItems.indexOf(item), 1);
-    this.snackbar.show();
+    this.snackbar.open();
   }
 
   public restore() {
     const [item, index] = this.deletedItems.pop();
     this.navItems.splice(index, 0, item);
-    this.snackbar.hide();
+    this.snackbar.close();
   }
 }
