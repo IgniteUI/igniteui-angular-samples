@@ -46,7 +46,7 @@ export class MovieComponent {
 }
 
 @Pipe({ name: 'startsWith' })
-export class AutocompletePipeStartsWith implements PipeTransform {
+export class AutocompletePipeStartsWith2 implements PipeTransform {
     public transform(collection: any[], term = '') {
         return collection.filter((item) => item.toString().toLowerCase().startsWith(term.toString().toLowerCase()));
     }
