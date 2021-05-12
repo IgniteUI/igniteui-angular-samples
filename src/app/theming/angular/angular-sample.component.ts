@@ -1,5 +1,5 @@
 import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxExpansionPanelComponent, IgxOverlayOutletDirective } from 'igniteui-angular';
+import { IgxDialogComponent, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OverlayContainer } from '@angular/cdk/overlay';
 
@@ -24,21 +24,6 @@ export class AngularComponent implements OnInit {
     firstFormGroup: FormGroup;
     secondFormGroup: FormGroup;
     thirdFormGroup: FormGroup;
-
-    public contacts = [
-        {
-            name: 'Sticker Mule Italy srl',
-            amount: 85.23
-        },
-        {
-            name: 'Dribbble Holdings Ltd.',
-            amount: 472.99
-        },
-        {
-            name: 'Printify Inc.',
-            amount: 236.89
-        }
-    ];
 
     private _dialogOverlaySettings2;
 
@@ -66,7 +51,6 @@ export class AngularComponent implements OnInit {
             modal: true,
             outlet: this.outlet
         };
-
 
         this.firstFormGroup = this._formBuilder.group({
             firstCtrl: ['', Validators.required]

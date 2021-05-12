@@ -7,16 +7,16 @@
         <igx-icon>expand_more</igx-icon>
     </button>
     <mat-menu #campaigns="matMenu">
-        <a mat-menu-item href="#">Lead generation</a>
-        <a mat-menu-item href="#" [matMenuTriggerFor]="visitors">Landing page visitors</a>
-        <a mat-menu-item href="#">Create backlinks</a>
-        <a mat-menu-item href="#">Improve SEO</a>
+        <a mat-menu-item>Lead generation</a>
+        <a mat-menu-item [matMenuTriggerFor]="visitors">Landing page visitors</a>
+        <a mat-menu-item>Create backlinks</a>
+        <a mat-menu-item>Improve SEO</a>
     </mat-menu>
     <mat-menu #visitors="matMenu" class="mat-dark">
-        <a mat-menu-item href="#">Fall 2020</a>
-        <a mat-menu-item href="#">Christmas 2020</a>
-        <a mat-menu-item href="#">Winter 2021</a>
-        <a mat-menu-item href="#">Easter 2021</a>
+        <a mat-menu-item>Fall 2020</a>
+        <a mat-menu-item>Christmas 2020</a>
+        <a mat-menu-item>Winter 2021</a>
+        <a mat-menu-item>Easter 2021</a>
     </mat-menu>
     <button igxButton="flat">Payouts</button>
     <div igxLayout>
