@@ -269,7 +269,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
         const grid = (componentRef.instance as IgxGridComponent);
         grid.autoGenerate = true;
         this.dataService.data.pipe(takeUntil(destructor)).subscribe(d => grid.data = d);
-        grid.onColumnInit.pipe(takeUntil(destructor)).subscribe((col: IgxColumnComponent) => {
+        grid.columnInit.pipe(takeUntil(destructor)).subscribe((col: IgxColumnComponent) => {
             if (col.field === 'price') {
                 col.cellClasses = this.trends;
                 col.bodyTemplate = this.priceTemplate;

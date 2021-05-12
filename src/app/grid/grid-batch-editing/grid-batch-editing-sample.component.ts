@@ -11,9 +11,8 @@ import { IgxDialogComponent, IgxGridComponent, Transaction } from 'igniteui-angu
     templateUrl: 'grid-batch-editing-sample.component.html'
 })
 export class GridBatchEditingSampleComponent implements OnInit {
-    @ViewChild('gridRowEditTransaction', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
+    @ViewChild('grid', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
     @ViewChild(IgxDialogComponent, { static: true }) public dialog: IgxDialogComponent;
-    @ViewChild('dialogGrid', { read: IgxGridComponent, static: true }) public dialogGrid: IgxGridComponent;
 
     public currentActiveGrid: { id: string; transactions: any[] } = { id: '', transactions: [] };
 
@@ -21,12 +20,9 @@ export class GridBatchEditingSampleComponent implements OnInit {
     public transactionsData: Transaction[] = [];
     private addProductId: number;
 
-    constructor() {
+    public ngOnInit(): void {
         this.data = DATA;
         this.addProductId = this.data.length + 1;
-    }
-
-    public ngOnInit(): void {
         this.transactionsData = this.grid.transactions.getAggregatedChanges(true);
         this.grid.transactions.onStateUpdate.subscribe(() => {
             this.transactionsData = this.grid.transactions.getAggregatedChanges(true);
@@ -51,31 +47,25 @@ export class GridBatchEditingSampleComponent implements OnInit {
         });
     }
 
-    public deleteRow(rowID) {
-        this.grid.deleteRow(rowID);
-    }
-
     public undo() {
-        /* exit edit mode */
-        this.grid.endEdit(/* commit the edit transaction */ false);
+        /* exit edit mode and commit changes */
+        this.grid.endEdit(true);
         this.grid.transactions.undo();
     }
 
     public redo() {
+        /* exit edit mode and commit changes */
+        this.grid.endEdit(true);
         this.grid.transactions.redo();
     }
 
-    public openCommitDialog() {
+    public openCommitDialog(dialogGrid: IgxGridComponent) {
         this.dialog.open();
-        this.dialogGrid.reflow();
+        dialogGrid.reflow();
     }
 
     public commit() {
         this.grid.transactions.commit(this.data);
-        this.dialog.close();
-    }
-
-    public cancel() {
         this.dialog.close();
     }
 
@@ -94,17 +84,5 @@ export class GridBatchEditingSampleComponent implements OnInit {
 
     public classFromType(type: string): string {
         return `transaction--${type.toLowerCase()}`;
-    }
-
-    public get undoEnabled(): boolean {
-        return this.grid.transactions.canUndo;
-    }
-
-    public get redoEnabled(): boolean {
-        return this.grid.transactions.canRedo;
-    }
-
-    public get hasTransactions(): boolean {
-        return this.grid.transactions.getAggregatedChanges(false).length > 0;
     }
 }

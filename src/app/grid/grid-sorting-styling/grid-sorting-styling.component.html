@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
-        (onSortingDone)="removeSorting($event)">
+        (sortingDone)="removeSorting($event)">
         <igx-grid-toolbar>
 
             <igx-select [(ngModel)]="currentSortingType" (onSelection)="sortTypeSelection($event)">

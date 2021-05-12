@@ -17,8 +17,8 @@ export class HGridBatchEditingSampleComponent implements OnInit {
 
     @ViewChild('dialogGrid', { read: IgxGridComponent, static: true }) public dialogGrid: IgxGridComponent;
 
-    @ViewChild('layout1', { static: true })
-    private layout1: IgxRowIslandComponent;
+    @ViewChild('childGrid', { static: true })
+    private childGrid: IgxRowIslandComponent;
 
     @ViewChild('hierarchicalGrid', { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
@@ -39,11 +39,11 @@ export class HGridBatchEditingSampleComponent implements OnInit {
     }
 
     public get hasChildTransactions(): boolean {
-        return this.layout1.hgridAPI.getChildGrids()
+        return this.childGrid.hgridAPI.getChildGrids()
             .find(c => c.transactions.getAggregatedChanges(false).length > 0) !== undefined;
     }
 
-    public localdata: Singer[];
+    public data: Singer[];
     public singer: Singer;
     public transactionsDataAll: Transaction[] = [];
     private id = 14;
@@ -51,7 +51,7 @@ export class HGridBatchEditingSampleComponent implements OnInit {
     constructor() {}
 
     public ngOnInit(): void {
-        this.localdata = SINGERS;
+        this.data = SINGERS;
         this.singer = {
             ID: this.id,
             Artist: 'Mock Jagger',
@@ -65,18 +65,20 @@ export class HGridBatchEditingSampleComponent implements OnInit {
     public formatter = a => a;
 
     public undo(grid: IgxHierarchicalGridComponent) {
-        /* exit edit mode */
-        grid.endEdit(/* commit the edit transaction */ false);
+        /* exit edit mode and commit changes */
+        grid.endEdit(true);
         grid.transactions.undo();
     }
 
     public redo(grid: IgxHierarchicalGridComponent) {
+        /* exit edit mode and commit changes */
+        grid.endEdit(true);
         grid.transactions.redo();
     }
 
     public commit() {
-        this.hierarchicalGrid.transactions.commit(this.localdata);
-        this.layout1.hgridAPI.getChildGrids().forEach((grid) => {
+        this.hierarchicalGrid.transactions.commit(this.data);
+        this.childGrid.hgridAPI.getChildGrids().forEach((grid) => {
             grid.transactions.commit(grid.data);
         });
         this.dialogChanges.close();
@@ -84,7 +86,7 @@ export class HGridBatchEditingSampleComponent implements OnInit {
 
     public discard() {
         this.hierarchicalGrid.transactions.clear();
-        this.layout1.hgridAPI.getChildGrids().forEach((grid) => {
+        this.childGrid.hgridAPI.getChildGrids().forEach((grid) => {
             grid.transactions.clear();
         });
         this.dialogChanges.close();
@@ -92,7 +94,7 @@ export class HGridBatchEditingSampleComponent implements OnInit {
 
     public openCommitDialog() {
         this.transactionsDataAll = [...this.hierarchicalGrid.transactions.getAggregatedChanges(true)];
-        this.layout1.hgridAPI.getChildGrids().forEach((grid) => {
+        this.childGrid.hgridAPI.getChildGrids().forEach((grid) => {
             this.transactionsDataAll = this.transactionsDataAll.concat(grid.transactions.getAggregatedChanges(true));
         });
         this.dialogChanges.open();

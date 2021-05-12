@@ -108,15 +108,13 @@ export class FinJSDemoComponent implements OnDestroy {
             } else {
                 this.finGrid.grid.tbody.nativeElement.focus();
             }
+            this.controller.playButtons.deselectButton(2);
         }
     }
 
-    public closeDialog(evt) {
-        if (this.dialog.isOpen &&
-            evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === 'd') {
-            evt.preventDefault();
-            this.dialog.close();
-        }
+    public closeDialog() {
+        this.controller.playButtons.deselectButton(2);
+        this.dialog.close();
     }
 
     public setChartConfig(xAsis, yAxis, title) {

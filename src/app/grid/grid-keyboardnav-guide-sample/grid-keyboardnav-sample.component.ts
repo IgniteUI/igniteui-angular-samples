@@ -226,7 +226,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
                 }
             });
 
-        this.grid.onColumnSelectionChange.pipe(takeUntil(this._destroyer))
+        this.grid.columnSelected.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 const evt = args.event;
                 if (evt.type === 'keydown') {
@@ -234,7 +234,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
                 }
             });
 
-        this.grid.onRowToggle.pipe(takeUntil(this._destroyer))
+        this.grid.rowToggle.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 const evt = args.event as KeyboardEvent;
                 if (evt.type !== 'keydown') {
