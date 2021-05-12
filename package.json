@@ -81,7 +81,7 @@
     "minireset.css": "0.0.6",
     "rxjs": "^6.6.3",
     "rxjs-compat": "^6.5.4",
-    "tslib": "^2.0.0",
+    "tslib": "^2.2.0",
     "uzip": "0.20200128.0",
     "web-animations-js": "^2.3.2",
     "zone.js": "~0.11.4"
