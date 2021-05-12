@@ -4,7 +4,7 @@ import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
     IGridState, IGridStateOptions, IgxGridStateDirective,
     IgxTreeGridComponent, IgxCheckboxComponent} from "igniteui-angular";
 import { take } from "rxjs/operators";
-import { EMPLOYEE_DATA } from "../../../../projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data";
+import { EMPLOYEE_DATA } from "./data";
 
 // tslint:disable:object-literal-sort-keys
 @Component({
