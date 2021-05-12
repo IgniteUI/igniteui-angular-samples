@@ -104,7 +104,7 @@ export class DVGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridFinJSDockManagerComponent',
-            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core", "resize-observer-polyfill", "@microsoft/signalr", "igniteui-dockmanager"],
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core", "@juggle/resize-observer", "@microsoft/signalr", "igniteui-dockmanager"],
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts",
                 "/projects/app-lob/src/app/services/signal-r.service.ts",
                 "/projects/app-lob/src/app/services/financialData.ts",

@@ -89,7 +89,7 @@ export class GridSelectionSampleComponent implements AfterViewInit, OnInit {
     }
     public ngOnInit(): void {
         this.snackbar.autoHide = false;
-        this.snackbar.show();
+        this.snackbar.open();
     }
 
     public ngAfterViewInit(): void {
@@ -107,6 +107,6 @@ export class GridSelectionSampleComponent implements AfterViewInit, OnInit {
 
     public selectCellSelectionMode(args) {
         this.selectionMode = this.selectionModes[args.index].label;
-        this.snackbar.show();
+        this.snackbar.open();
     }
 }

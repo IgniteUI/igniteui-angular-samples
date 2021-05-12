@@ -34,10 +34,10 @@
             Automatic Replies
         </igx-switch>
 
-        <igx-input-group type="border" [disabled]="true">
+        <igx-input-group type="border">
            <textarea
                class="reply__message"
-               igxInput>{{ automaticReplyText }}
+               igxInput [disabled]="true">{{ automaticReplyText }}
            </textarea>
         </igx-input-group>
     </section>
