@@ -7,7 +7,7 @@
         </igx-suffix>
     </igx-input-group>
     <igx-input-group>
-    <input igxInput #timeEditor="igxDateTimeEditor" type="text" [igxDateTimeEditor]="'HH:mm tt'" [(ngModel)]="date">
+    <input igxInput #timeEditor="igxDateTimeEditor" type="text" [igxDateTimeEditor]="'hh:mm tt'" [(ngModel)]="date" [spinDelta]="{ minutes: 15 }">
     <igx-suffix>
         <igx-icon (click)="timeEditor.increment(datePart.Minutes)">keyboard_arrow_up</igx-icon>
         <igx-icon (click)="timeEditor.decrement(datePart.Minutes)">keyboard_arrow_down</igx-icon>
