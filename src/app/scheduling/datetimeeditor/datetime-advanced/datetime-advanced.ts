@@ -8,6 +8,6 @@ import { DatePart } from 'igniteui-angular';
 })
 
 export class DateTimeAdvancedComponent {
-    public date = new Date();
+    public date = new Date((new Date()).setHours(9, 0, 0, 0));
     public datePart: typeof DatePart = DatePart;
 }
