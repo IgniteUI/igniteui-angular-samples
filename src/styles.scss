@@ -1,18 +1,6 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-$my-app-primary: mat-palette($mat-indigo);
-$my-app-accent: mat-palette($mat-pink, A200, A100, A400);
-
-$my-app-theme: mat-light-theme((
-  color: (
-    primary: $my-app-primary,
-    accent: $my-app-accent,
-  )
-));
-
-@include angular-material-theme($my-app-theme);
-
 @import './variables';
 @import './app-layout';
 

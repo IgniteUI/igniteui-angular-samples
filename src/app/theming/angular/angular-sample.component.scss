@@ -41,9 +41,11 @@ $custom-dark-palette: igx-palette(
 
 $light-palette-primary: mat-palette(material-like-palette('primary', $saturations, $igx-light-palette));
 $light-palette-accent: mat-palette(material-like-palette('secondary', $saturations, $igx-light-palette));
+$custom-mat-light-theme: mat-light-theme($light-palette-primary, $light-palette-accent);
 
 $dark-palette-primary: mat-palette(material-like-palette('primary', $saturations, $custom-dark-palette));
 $dark-palette-accent: mat-palette(material-like-palette('secondary', $saturations, $custom-dark-palette));
+$custom-mat-dark-theme: mat-dark-theme($dark-palette-primary, $dark-palette-accent);
 
 .navbar-brand {
     margin-right: 16px;
@@ -118,13 +120,6 @@ igx-expansion-panel-body {
             color: igx-color($igx-light-palette, 'primary');
             margin-left: 32px;
         }
-
-        ::ng-deep {
-            @include igx-theme($igx-light-palette, $legacy-support: true);
-
-            $custom-mat-light-theme: mat-light-theme($light-palette-primary, $light-palette-accent);
-            @include angular-material-theme($custom-mat-light-theme);
-        }
     }
 
     &.dark {
@@ -142,11 +137,6 @@ igx-expansion-panel-body {
         }
 
         ::ng-deep {
-            @include igx-dark-theme($custom-dark-palette, $legacy-support: true);
-
-            $custom-mat-dark-theme: mat-dark-theme($dark-palette-primary, $dark-palette-accent);
-            @include angular-material-theme($custom-mat-dark-theme);
-
             .primary {
                 color: igx-color($custom-dark-palette, 'primary', 100);
                 margin-left: 32px;
@@ -187,16 +177,12 @@ igx-expansion-panel-body {
     }
 }
 
-::ng-deep .dark {
-    .mat-menu-panel {
-        background-color: igx-color($custom-dark-palette, 'surface')!important;
+::ng-deep {
+    @include igx-theme($igx-light-palette, $legacy-support: true);
+    @include angular-material-theme($custom-mat-light-theme);
 
-        .mat-menu-item, .mat-menu-item-submenu-trigger::after {
-            color: igx-color($custom-dark-palette, 'grays', 800);
-        }
-
-        .mat-menu-item:hover {
-            background-color: igx-color($custom-dark-palette, 'grays', 200);
-        }
+    .dark {
+        @include igx-dark-theme($custom-dark-palette, $legacy-support: true);
+        @include angular-material-theme($custom-mat-dark-theme);
     }
 }
