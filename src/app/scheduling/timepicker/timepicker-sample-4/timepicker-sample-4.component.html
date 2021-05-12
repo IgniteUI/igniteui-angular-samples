@@ -1,13 +1,12 @@
 
     <igx-time-picker
-    [itemsDelta]="{hours:1, minutes:5}"
-    inputFormat="hh:mm:ss tt"
+    [(ngModel)]="time"
+    [itemsDelta]="{hours:2, minutes:5}"
+    [inputFormat]="'H:mm'"
     [headerOrientation]="true"
     [minValue]="min"
     [maxValue]="max"
-    (validationFailed)="onValidationFailed()"
-     mode="dialog">
-        <label igxLabel>Time</label>
+    (validationFailed)="onValidationFailed()">
     <label igxLabel>Meeting Start</label>
     </igx-time-picker>
 

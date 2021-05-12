@@ -14,6 +14,10 @@ export class InputGroupSample6Component extends BaseInputGroupSampleComponent {
         movie: undefined,
         phone: undefined
     };
+    public minTime = '06:15:30';
+    public maxTime = '09:15:30';
+    public minDate = new Date();
+    public maxDate = new Date(new Date(this.minDate.getFullYear(), this.minDate.getMonth(), this.minDate.getDate() + 14));
 
     public genres = [
         { type: 'Action' , movies: ['The Matrix', 'Kill Bill: Vol.1', 'The Dark Knight Rises']},
