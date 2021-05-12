@@ -17,7 +17,6 @@ export class AngularComponent implements OnInit {
     @ViewChild('dialog', { read: IgxDialogComponent, static: true })
     public dialog: IgxDialogComponent;
 
-
     @HostBinding('class')
     public themesClass = 'light';
 

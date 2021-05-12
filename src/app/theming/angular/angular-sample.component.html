@@ -44,7 +44,7 @@
             </igx-card-header>
 
             <igx-card-actions [vertical]="false">
-                <button igxButton="outlined" (click)="openDialog()">More</button>
+                <button mat-stroked-button color="accent" (click)="openDialog()">More</button>
                 <igx-dialog #dialog title="Confirmation" message="Do you want to download the full report?">
                     <div igxDialogActions>
                         <button igxButton="flat" (click)="dialog.close()">Cancel</button>
@@ -67,7 +67,7 @@
             </igx-card-header>
 
             <igx-card-actions [vertical]="false">
-                <button igxButton="outlined" (click)="openDialog()">More</button>
+                <button mat-stroked-button color="accent" (click)="openDialog()">More</button>
                 <igx-dialog #dialog title="Confirmation" message="Do you want to download the full report?">
                     <div igxDialogActions>
                         <button igxButton="flat" (click)="dialog.close()">Cancel</button>
@@ -92,7 +92,7 @@
 
             <igx-card-actions [vertical]="false">
                 <div igxOverlayOutlet>
-                    <button igxButton="outlined" (click)="openDialog()">More</button>
+                    <button mat-stroked-button color="accent" (click)="openDialog()">More</button>
                     <igx-dialog #dialog title="Confirmation" message="Do you want to download the full report?">
                         <div igxDialogActions>
                             <button igxButton="flat" (click)="dialog.close()">Cancel</button>
