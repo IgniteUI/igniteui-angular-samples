@@ -79,12 +79,12 @@ export class DefaultThemeSampleComponent implements OnInit {
         this.deletedRow = row.rowData;
         row.delete();
         this.snackbar.message = `Row with index ${rowIndex} has been deleted!`;
-        this.snackbar.show();
+        this.snackbar.open();
     }
 
     public restoreRow() {
         this.grid1.addRow(this.deletedRow);
-        this.snackbar.hide();
+        this.snackbar.close();
     }
 
     public ngOnInit() {

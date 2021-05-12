@@ -20,7 +20,7 @@ export class GridMultiCellSelectionComponent {
         this.targetData = source.getSelectedData();
         notification.position = 'middle';
         notification.displayTime = 1000;
-        notification.show(`Transfered ${this.targetData.length} rows`);
+        notification.open(`Transfered ${this.targetData.length} rows`);
     }
 
     public initColumn(column: IgxColumnComponent) {

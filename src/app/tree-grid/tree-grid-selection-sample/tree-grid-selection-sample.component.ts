@@ -29,13 +29,13 @@ export class TreeGridSelectionSampleComponent implements OnInit {
 
     public ngOnInit(): void {
         this.snackbar.autoHide = false;
-        this.snackbar.show();
+        this.snackbar.open();
     }
 
     public handleRowSelection(event) { }
 
     public selectCellSelectionMode(args) {
         this.selectionMode = this.selectionModes[args.index].selectMode;
-        this.snackbar.show();
+        this.snackbar.open();
     }
 }
