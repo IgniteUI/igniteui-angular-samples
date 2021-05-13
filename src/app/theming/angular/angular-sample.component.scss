@@ -6,7 +6,7 @@ $custom-typography: mat-typography-config(
     $button: mat-typography-level(14px, $font-weight: 600)
 );
 
-$saturations: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 'A100', 'A200', 'A400', 'A700');
+$saturations: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700);
 
 @function material-like-palette(
     $color,
@@ -18,7 +18,7 @@ $saturations: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 'A100', 'A200', 
     $result: ();
     @each $saturation in $saturations {
         $shade: map-merge($shade, ($saturation: igx-color($palette, $color, $saturation)));
-        $contrast: map-merge($contrast, (#{$saturation}-contrast: igx-color($palette, $color, #{$saturation}-contrast)));
+        $contrast: map-merge($contrast, ($saturation: igx-color($palette, $color, #{$saturation}-contrast)));
         $result: map-merge($shade, (contrast: $contrast));
     }
 
