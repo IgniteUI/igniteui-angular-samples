@@ -1,27 +1,7 @@
 <div class="date-picker-wrapper">
-    <div class="container">
-        <div class="group">
-            <label for="dialogPicker">Dialog Mode</label>
-            <igx-date-picker id="dialogPicker"
-                             cancelButtonLabel="close"
-                             todayButtonLabel="today"
-                             [(ngModel)]="date"
-                             [displayMonthsCount]="2"
-                             [hideOutsideDays]="true"
-                             mode="dialog">
-                            <label igxLabel>Custom label</label>
-            </igx-date-picker>
-        </div>
-        <div class="group">
-            <label for="dropdownPicker">Drop Down Mode</label>
-            <igx-date-picker id="dropdownPicker"
-                             cancelButtonLabel="close"
-                             todayButtonLabel="today"
-                             [(ngModel)]="date"
-                             [displayMonthsCount]="2"
-                             [hideOutsideDays]="true">
-                            <label igxLabel>Date</label>
-            </igx-date-picker>
-        </div>
-    </div>
+    <igx-date-picker 
+        [(ngModel)]="date" 
+        [inputFormat]="'dd/MM/yy'" 
+        [displayFormat]="'shortDate'">
+    </igx-date-picker>
 </div>

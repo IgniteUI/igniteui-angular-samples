@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './datepicker-sample-2.component.html'
 })
 export class DatepickerSample2Component {
-  public date: Date = new Date(Date.now());
+  public date: Date = new Date();
 }
