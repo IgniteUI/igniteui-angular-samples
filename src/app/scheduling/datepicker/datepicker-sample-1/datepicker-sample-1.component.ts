@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./datepicker-sample-1.component.scss'],
   templateUrl: './datepicker-sample-1.component.html'
 })
-export class DatepickerSample1Component { 
+export class DatepickerSample1Component {
     public date = new Date();
 }
