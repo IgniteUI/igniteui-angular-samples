@@ -1,29 +1,4 @@
 <div class="grid__wrapper" [class.fin-dark-theme]="theme">
-    <div class="controls-wrapper">
-    </div>
-    <div class="controls-holder">
-        <div class="switches">
-            <div class="finjs-slider control-item">
-                <label for="slider">Records: {{volume}}</label>
-                <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" (dragFinished)="updateVolume()" [step]="100"
-                    thumbLabelVisibilityDuration="250" [continuous]="true"></igx-slider>
-            </div>
-            <div class="finjs-slider control-item">
-                <label for="slider">Frequency: {{frequency}} ms</label>
-                <igx-slider #slider2 id="slider" [minValue]="100" [maxValue]="3000" [step]="10" [(ngModel)]="frequency"
-                    thumbLabelVisibilityDuration="250" [continuous]="true"></igx-slider>
-            </div>
-        </div>
-        <div class="control-item finjs-play-controls">
-            <igx-buttongroup class="finjssample-btn-group" #buttonGroup1 [multiSelection]="false" [values]="controls"
-                (selected)="onButtonAction($event)"></igx-buttongroup>
-        </div>
-
-    </div>
-    <div class="sample-toolbar">
-        <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
-            ~{{volume/5}} records updated.</span>
-    </div>
     <igx-tree-grid #grid1 igxPreventDocumentScroll
         [data]="data$ | async | treeGridGrouping:groupColumns:aggregations:groupColumnKey:primaryKey:childDataKey"
         [height]="'calc(100% - 76px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
@@ -43,11 +18,6 @@
                 <igx-grid-toolbar-exporter [exportCSV]="false"></igx-grid-toolbar-exporter>
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
-        <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
-        <!-- <ng-template igxExcelStyleSorting></ng-template>
-        <ng-template igxExcelStyleMoving></ng-template>
-        <ng-template igxExcelStyleHiding></ng-template>
-        <ng-template igxExcelStylePinning></ng-template> -->
 
         <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]='true' [resizable]='true'
             [disableHiding]="true"></igx-column>

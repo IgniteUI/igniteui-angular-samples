@@ -9,10 +9,12 @@ import { LocalDataService } from '../grid-finjs/localData.service';
 import { TreeGridFinJSComponent } from './tree-grid-finjs-sample.component';
 import { TreeGridGroupingPipe } from './tree-grid-grouping.pipe';
 import { TreeGridFinjsRoutingModule } from './treegrid-finjs-routing.module';
+import { TreeGridFinJSLoadOnDemandComponent } from './tree-grid-finjs-lod-sample.component';
 
 @NgModule({
     declarations: [
         TreeGridFinJSComponent,
+        TreeGridFinJSLoadOnDemandComponent,
         TreeGridGroupingPipe,
         IgxTreeGridGroupAreaComponent
     ],
