@@ -14,7 +14,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AnimationsSampleComponent } from './animations/animations-sample-1/animations-sample-1.component';
 import { AnimationsSample2Component } from './animations/animations-sample-2/animations-sample-2.component';
-import { AngularComponent } from './angular/angular-sample.component';
+import { AngularMaterialComponent } from './angular/angular-sample.component';
 import { BootstrapComponent } from './bootstrap/bootstrap-sample.component';
 import { DefaultThemeSampleComponent } from './default-theme-sample/default-theme-sample.component';
 import { DisplayDensityComponent } from './display-density/display-density.component';
@@ -32,7 +32,7 @@ import { ThemingRoutingModule } from './theming-routing.module';
         CardSampleShadowComponent,
         AnimationsSampleComponent,
         AnimationsSample2Component,
-        AngularComponent,
+        AngularMaterialComponent,
         BootstrapComponent
     ],
     exports: [
@@ -43,7 +43,7 @@ import { ThemingRoutingModule } from './theming-routing.module';
         CardSampleShadowComponent,
         AnimationsSampleComponent,
         AnimationsSample2Component,
-        AngularComponent,
+        AngularMaterialComponent,
         BootstrapComponent
     ],
     imports: [

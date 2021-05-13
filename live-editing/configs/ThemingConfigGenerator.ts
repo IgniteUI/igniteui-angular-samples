@@ -125,13 +125,13 @@ export class ThemingConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: 'AngularComponent',
+            component: 'AngularMaterialComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['AngularComponent', 'IgxAvatarModule', 'IgxCardModule', 'IgxButtonModule',
+                imports: ['AngularMaterialComponent', 'IgxAvatarModule', 'IgxCardModule', 'IgxButtonModule',
                           'IgxIconModule', 'IgxDialogModule', 'IgxDividerModule', 'IgxExpansionPanelModule',
                           'FormsModule', 'MatButtonModule', 'MatFormFieldModule', 'MatInputModule', 'MatMenuModule',
                           'MatSliderModule', 'MatStepperModule', 'MatToolbarModule', 'ReactiveFormsModule'],
-                ngDeclarations: ['AngularComponent'],
+                ngDeclarations: ['AngularMaterialComponent'],
                 ngImports: ['IgxAvatarModule', 'IgxCardModule', 'IgxButtonModule',
                             'IgxIconModule', 'IgxDialogModule', 'IgxDividerModule', 'IgxExpansionPanelModule',
                             'FormsModule', 'MatButtonModule', 'MatFormFieldModule', 'MatInputModule', 'MatMenuModule',

@@ -9,7 +9,7 @@ import { OverlayContainer } from '@angular/cdk/overlay';
     templateUrl: './angular-sample.component.html'
 })
 
-export class AngularComponent implements OnInit {
+export class AngularMaterialComponent implements OnInit {
 
     @ViewChild(IgxOverlayOutletDirective, { static: true })
     public outlet: IgxOverlayOutletDirective;
