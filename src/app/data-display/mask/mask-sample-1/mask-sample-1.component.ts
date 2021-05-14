@@ -19,6 +19,6 @@ export class MaskSample1Component {
 
     private notify(snackbar, message, input) {
         snackbar.message = message;
-        snackbar.show();
+        snackbar.open();
     }
 }
