@@ -3,8 +3,9 @@ import {
     ElementRef,
     Inject,
     OnDestroy,
+    OnInit,
     ViewChild
-} from "@angular/core";
+} from '@angular/core';
 import {
     AbsolutePosition,
     IgxOverlayService,
@@ -12,33 +13,27 @@ import {
     RelativePosition,
     RelativePositionStrategy,
     IButtonGroupEventArgs
-} from "igniteui-angular";
-import { MyDynamicCardComponent } from "../overlay-dynamic-card/overlay-dynamic-card.component";
-import { filter, takeUntil } from "rxjs/operators";
-import { Subject } from "rxjs";
+} from 'igniteui-angular';
+import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 
 // tslint:disable:object-literal-sort-keys
 @Component({
-    selector: "overlay-sample",
-    styleUrls: ["./overlay-preset-settings-sample.component.scss"],
-    templateUrl: "./overlay-preset-settings-sample.component.html",
+    selector: 'app-overlay-sample',
+    styleUrls: ['./overlay-preset-settings-sample.component.scss'],
+    templateUrl: './overlay-preset-settings-sample.component.html',
     providers: [IgxOverlayService]
 })
-export class OverlayPresetSettingsSampleComponent implements OnDestroy {
-    @ViewChild("anchor", { static: true })
+export class OverlayPresetSettingsSampleComponent implements OnInit, OnDestroy {
+    @ViewChild('anchor', { static: true })
     public anchor: ElementRef;
 
-    @ViewChild("outlet", { static: true })
+    @ViewChild('outlet', { static: true })
     public outlet: ElementRef;
 
-    private _overlayId: string;
-    private _overlaySettings: OverlaySettings;
-    private destroy$ = new Subject<boolean>();
-
-    public positionStrategies = ["relative", "absolute"];
+    public positionStrategies = ['relative', 'absolute'];
     public positionStrategy = this.positionStrategies[0];
 
-    public absStrategies = ["container", "global"];
+    public absStrategies = ['container', 'global'];
 
     public absPositions = [
         AbsolutePosition.Center,
@@ -64,62 +59,32 @@ export class OverlayPresetSettingsSampleComponent implements OnDestroy {
     public absPosition = AbsolutePosition.Center;
     public relPositionStrategy = RelativePositionStrategy.Auto;
     public relPosition = RelativePosition.Default;
+    private _overlayId: string;
+    private _overlaySettings: OverlaySettings;
 
-    constructor(
-        @Inject(IgxOverlayService) public overlayService: IgxOverlayService
-    ) {
-        //  overlay service deletes the id when onClosed is called. We should clear our id
-        //  also in same event
-        this.overlayService.onClosed
-            .pipe(
-                filter((x) => x.id === this._overlayId),
-                takeUntil(this.destroy$)
-            )
-            .subscribe(() => delete this._overlayId);
-    }
+    constructor(@Inject(IgxOverlayService) public overlayService: IgxOverlayService) { }
 
-    ngOnInit() {
+    public ngOnInit(): void {
         this.setRelativeOverlaySettings();
     }
 
-    ngOnDestroy() {
-        this.destroy$.next(true);
-        this.destroy$.complete();
+    public ngOnDestroy(): void {
+        if (this._overlayId) {
+            this.overlayService.detach(this._overlayId);
+            delete this._overlayId;
+        }
     }
 
     public showOverlay() {
-        if (!this._overlayId) {
-            this._overlayId = this.overlayService.attach(
-                MyDynamicCardComponent
-            );
+        if (this._overlayId) {
+            this.overlayService.detach(this._overlayId);
+            delete this._overlayId;
         }
-
-        this.overlayService.show(this._overlayId, this._overlaySettings);
-    }
-
-    private setAbsoluteOverlaySettings(strategy: string) {
-        switch (strategy) {
-            case "container":
-                this._overlaySettings = IgxOverlayService.createAbsoluteOverlaySettings(
-                    this.absPosition,
-                    this.outlet
-                );
-                break;
-            case "global":
-            default:
-                this._overlaySettings = IgxOverlayService.createAbsoluteOverlaySettings(
-                    this.absPosition
-                );
-                break;
-        }
-    }
-
-    private setRelativeOverlaySettings() {
-        this._overlaySettings = IgxOverlayService.createRelativeOverlaySettings(
-            this.anchor.nativeElement,
-            this.relPosition,
-            this.relPositionStrategy
+        this._overlayId = this.overlayService.attach(
+            MyDynamicCardComponent,
+            this._overlaySettings
         );
+        this.overlayService.show(this._overlayId);
     }
 
     public selectPositionStrategy(event: IButtonGroupEventArgs) {
@@ -144,5 +109,30 @@ export class OverlayPresetSettingsSampleComponent implements OnDestroy {
     public selectRelPosition(event: IButtonGroupEventArgs) {
         this.relPosition = this.relPositions[event.index];
         this.setRelativeOverlaySettings();
+    }
+
+    private setAbsoluteOverlaySettings(strategy: string) {
+        switch (strategy) {
+            case 'container':
+                this._overlaySettings = IgxOverlayService.createAbsoluteOverlaySettings(
+                    this.absPosition,
+                    this.outlet
+                );
+                break;
+            case 'global':
+            default:
+                this._overlaySettings = IgxOverlayService.createAbsoluteOverlaySettings(
+                    this.absPosition
+                );
+                break;
+        }
+    }
+
+    private setRelativeOverlaySettings() {
+        this._overlaySettings = IgxOverlayService.createRelativeOverlaySettings(
+            this.anchor.nativeElement,
+            this.relPosition,
+            this.relPositionStrategy
+        );
     }
 }

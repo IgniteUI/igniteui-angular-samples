@@ -1,25 +1,23 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxGridComponent,
-    IgxGridRowComponent,
     IPinningConfig,
     IRowDragStartEventArgs,
-    RowPinningPosition
-} from "igniteui-angular";
-import { DATA } from "../../data/customers";
+    RowPinningPosition,
+    RowType
+} from 'igniteui-angular';
+import { DATA } from '../../data/customers';
 
 @Component({
-    selector: "grid-row-pinning-drag-sample",
-    styleUrls: ["./grid-row-pinning-drag.component.scss"],
-    templateUrl: "grid-row-pinning-drag.component.html"
+    selector: 'app-grid-row-pinning-drag-sample',
+    styleUrls: ['./grid-row-pinning-drag.component.scss'],
+    templateUrl: 'grid-row-pinning-drag.component.html'
 })
 
 export class GridPinningDragSampleComponent implements OnInit {
-    public data: any[];
-
-    @ViewChild("grid1", { static: true })
+    @ViewChild('grid1', { static: true })
     public grid: IgxGridComponent;
-
+    public data: any[];
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top };
 
     constructor() {
@@ -33,7 +31,7 @@ export class GridPinningDragSampleComponent implements OnInit {
         this.grid.pinRow(this.data[11].ID);
     }
 
-    public togglePining(row: IgxGridRowComponent, event) {
+    public togglePining(row: RowType, event) {
         event.preventDefault();
         if (row.pinned) {
             row.unpin();

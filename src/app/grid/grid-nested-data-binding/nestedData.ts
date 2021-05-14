@@ -1,3 +1,4 @@
+/*eslint-disable*/
 export const EMPLOYEE_DATA = [
     {
         Age: 55,

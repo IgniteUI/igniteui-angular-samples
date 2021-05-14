@@ -3,7 +3,7 @@
     <span> <igx-switch [(ngModel)]="hideRowSelectors">Hide Row Selectors</igx-switch></span>
     <span style="display: flex">
         <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
-        <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.hide()">
+        <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.close()">
             <div class="container">
                 <igx-icon>notification_important</igx-icon>
                 <ng-container *ngIf="selectionMode === 'multiple'">
@@ -40,7 +40,7 @@
 </div>
 <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [height]="'600px'" [width]="'100%'" [rowHeight]="'65px'"
 [cellSelection]="'none'" [rowSelection]="selectionMode" [hideRowSelectors]="hideRowSelectors"
-    [allowFiltering]="true" (onRowSelectionChange)="handleRowSelection($event)" #hierarchicalGrid>
+    [allowFiltering]="true" (rowSelected)="handleRowSelection($event)" #hierarchicalGrid>
     <igx-column field="Artist"></igx-column>
     <igx-column field="Photo">
         <ng-template igxCell let-cell="cell">

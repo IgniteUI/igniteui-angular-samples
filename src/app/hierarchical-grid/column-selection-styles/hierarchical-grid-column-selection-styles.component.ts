@@ -3,16 +3,14 @@ import { IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { SINGERS } from '../data';
 
 @Component({
-  selector: "app-hierarchical-grid-column-selection-styles",
-  templateUrl: "./hierarchical-grid-column-selection-styles.component.html",
-  styleUrls: ["./hierarchical-grid-column-selection-styles.component.scss"]
+  selector: 'app-hierarchical-grid-column-selection-styles',
+  templateUrl: './hierarchical-grid-column-selection-styles.component.html',
+  styleUrls: ['./hierarchical-grid-column-selection-styles.component.scss']
 })
 export class HGridColumnSelectionStylesComponent implements OnInit, AfterViewInit {
-
-    public data;
-
     @ViewChild(IgxHierarchicalGridComponent)
     public hGrid: IgxHierarchicalGridComponent;
+    public data;
 
     constructor(private cdr: ChangeDetectorRef){}
 

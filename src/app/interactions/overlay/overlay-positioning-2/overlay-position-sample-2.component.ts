@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnDestroy, ViewChild } from "@angular/core";
+import { Component, ElementRef, Inject, OnDestroy, ViewChild } from '@angular/core';
 import {
     ConnectedPositioningStrategy,
     HorizontalAlignment,
@@ -6,35 +6,20 @@ import {
     OverlaySettings,
     PositionSettings,
     VerticalAlignment
-} from "igniteui-angular";
-import { Subject } from "rxjs";
-import { filter, takeUntil } from "rxjs/operators";
-import { MyDynamicCardComponent } from "../overlay-dynamic-card/overlay-dynamic-card.component";
+} from 'igniteui-angular';
+import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 @Component({
-    selector: "overlay-sample",
-    styleUrls: ["./overlay-position-sample-2.component.scss"],
-    templateUrl: "./overlay-position-sample-2.component.html",
+    selector: 'app-overlay-sample',
+    styleUrls: ['./overlay-position-sample-2.component.scss'],
+    templateUrl: './overlay-position-sample-2.component.html',
     providers: [IgxOverlayService]
 })
 export class OverlayPositionSample2Component implements OnDestroy {
-    private destroy$ = new Subject<boolean>();
+    @ViewChild('buttonElement', { static: true })
+    private buttonElement: ElementRef;
     private _overlayId: string;
 
-    @ViewChild("buttonElement", { static: true })
-    private buttonElement: ElementRef;
-
-    constructor(
-        @Inject(IgxOverlayService) public overlayService: IgxOverlayService
-    ) {
-        //  overlay service deletes the id when onClosed is called. We should clear our id
-        //  also in same event
-        this.overlayService
-            .onClosed
-            .pipe(
-                filter((x) => x.id === this._overlayId),
-                takeUntil(this.destroy$))
-            .subscribe(() => delete this._overlayId);
-    }
+    constructor(@Inject(IgxOverlayService) public overlayService: IgxOverlayService) { }
 
     public showOverlay() {
         if (!this._overlayId) {
@@ -58,8 +43,10 @@ export class OverlayPositionSample2Component implements OnDestroy {
         this.overlayService.show(this._overlayId);
     }
 
-    public ngOnDestroy() {
-        this.destroy$.next(true);
-        this.destroy$.complete();
+    public ngOnDestroy(): void {
+        if (this._overlayId) {
+            this.overlayService.detach(this._overlayId);
+            delete this._overlayId;
+        }
     }
 }

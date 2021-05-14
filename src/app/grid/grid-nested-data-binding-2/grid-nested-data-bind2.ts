@@ -1,11 +1,11 @@
-import {Component, OnInit} from "@angular/core";
-import { DataType } from 'igniteui-angular';
-import { AMINO_DATA } from "./data";
+import {Component, OnInit} from '@angular/core';
+import { GridColumnDataType } from 'igniteui-angular';
+import { AMINO_DATA } from './data';
 
 @Component({
-    selector: "app-grid-nested-data-bind2",
-    styleUrls: ["./grid-nested-data-bind2.scss"],
-    templateUrl: "./grid-nested-data-bind2.html"
+    selector: 'app-grid-nested-data-bind2',
+    styleUrls: ['./grid-nested-data-bind2.scss'],
+    templateUrl: './grid-nested-data-bind2.html'
 })
 export class GridNestedDataBindAminoacidComponent implements OnInit {
 
@@ -22,14 +22,14 @@ export class GridNestedDataBindAminoacidComponent implements OnInit {
         { field: 'name', header: 'Name'},
         { field: 'abbreviation.long', header: 'Abbr. (long)'},
         { field: 'abbreviation.short', header: 'Abbr. (short)'},
-        { field: 'weight.molecular', header: 'Molecular Weight', type: DataType.Number },
+        { field: 'weight.molecular', header: 'Molecular Weight', type: GridColumnDataType.Number },
         { field: 'formula.molecular', header: 'Molecular Formula', formatter: this.number2subscript },
         { field: 'formula.residue', header: 'Residue Formula', formatter: this.number2subscript },
-        { field: 'weight.residue', header: 'Residue Weight (-H2O)', type: DataType.Number },
-        { field: 'p.Ka', type: DataType.Number },
-        { field: 'p.Kb', type: DataType.Number },
-        { field: 'p.Kx', type: DataType.Number },
-        { field: 'p.l', type: DataType.Number }
+        { field: 'weight.residue', header: 'Residue Weight (-H2O)', type: GridColumnDataType.Number },
+        { field: 'p.Ka', type: GridColumnDataType.Number },
+        { field: 'p.Kb', type: GridColumnDataType.Number },
+        { field: 'p.Kx', type: GridColumnDataType.Number },
+        { field: 'p.l', type: GridColumnDataType.Number }
     ];
 
     number2subscript(value: string) {

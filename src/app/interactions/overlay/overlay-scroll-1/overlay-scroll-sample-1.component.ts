@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnDestroy, ViewChild } from "@angular/core";
+import { Component, ElementRef, Inject, OnDestroy, ViewChild } from '@angular/core';
 import {
     AbsoluteScrollStrategy,
     AutoPositionStrategy,
@@ -10,29 +10,25 @@ import {
     OverlaySettings,
     PositionSettings,
     VerticalAlignment
-} from "igniteui-angular";
-import { Subject } from "rxjs";
-import { filter, takeUntil } from "rxjs/operators";
+} from 'igniteui-angular';
 // tslint:disable:object-literal-sort-keys
 @Component({
-    selector: "overlay-sample",
-    styleUrls: ["./overlay-scroll-sample-1.component.scss"],
-    templateUrl: "./overlay-scroll-sample-1.component.html",
+    selector: 'app-overlay-sample',
+    styleUrls: ['./overlay-scroll-sample-1.component.scss'],
+    templateUrl: './overlay-scroll-sample-1.component.html',
     providers: [IgxOverlayService]
 })
 export class OverlayScrollSample1Component implements OnDestroy {
-
-    public modalValue = true;
-
-    @ViewChild("modalDemo", { static: true })
+    @ViewChild('modalDemo', { static: true })
     public modalDemo: ElementRef;
 
-    @ViewChild("overlayDemo", { static: true })
+    @ViewChild('overlayDemo', { static: true })
     public overlayDemo: ElementRef;
 
-    @ViewChild("mainContainer", { static: true })
+    @ViewChild('mainContainer', { static: true })
     public mainContainer: ElementRef;
 
+    public modalValue = true;
     private _defaultPositionSettings: PositionSettings = {
         horizontalDirection: HorizontalAlignment.Center,
         horizontalStartPoint: HorizontalAlignment.Center,
@@ -47,21 +43,10 @@ export class OverlayScrollSample1Component implements OnDestroy {
         closeOnOutsideClick: true
     };
 
-    private destroy$ = new Subject<boolean>();
     private _overlayId: string;
 
     constructor(
-        @Inject(IgxOverlayService) public overlay: IgxOverlayService
-    ) {
-        //  overlay service deletes the id when onClosed is called. We should clear our id
-        //  also in same event
-        this.overlay
-            .onClosed
-            .pipe(
-                filter((x) => x.id === this._overlayId),
-                takeUntil(this.destroy$))
-            .subscribe(() => delete this._overlayId);
-    }
+        @Inject(IgxOverlayService) public overlay: IgxOverlayService) { }
 
     public onClickModal(event: Event, strategy: string) {
         event.stopPropagation();
@@ -73,13 +58,13 @@ export class OverlayScrollSample1Component implements OnDestroy {
         });
         let positionStrategy;
         switch (strategy) {
-            case ("auto"):
+            case ('auto'):
                 positionStrategy = new AutoPositionStrategy(positionSettings);
                 break;
-            case ("elastic"):
+            case ('elastic'):
                 positionStrategy = new ElasticPositionStrategy(positionSettings);
                 break;
-            case ("connected"):
+            case ('connected'):
                 positionStrategy = new ConnectedPositioningStrategy(positionSettings);
                 break;
             default:
@@ -93,18 +78,18 @@ export class OverlayScrollSample1Component implements OnDestroy {
             modal: this.modalValue,
             positionStrategy
         });
-        this.overlay.show(this.overlayId, showSettings);
-    }
-
-    private get overlayId(): string {
-        if (!this._overlayId) {
-            this._overlayId = this.overlay.attach(this.overlayDemo);
+        if (this._overlayId) {
+            this.overlay.detach(this._overlayId);
+            delete this._overlayId;
         }
-        return this._overlayId;
+        this._overlayId = this.overlay.attach(this.overlayDemo, showSettings);
+        this.overlay.show(this._overlayId, showSettings);
     }
 
-    public ngOnDestroy() {
-        this.destroy$.next(true);
-        this.destroy$.complete();
+    public ngOnDestroy(): void {
+        if (this._overlayId) {
+            this.overlay.detach(this._overlayId);
+            delete this._overlayId;
+        }
     }
 }

@@ -1,16 +1,17 @@
-import { AfterViewInit, Directive, EventEmitter, Inject, Input, OnDestroy, Output } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { Subject } from "rxjs";
-import { debounceTime, takeUntil } from "rxjs/operators";
+import { AfterViewInit, Directive, EventEmitter, Inject, Input, OnDestroy, Output } from '@angular/core';
+import { IgxGridComponent } from 'igniteui-angular';
+import { Subject } from 'rxjs';
+import { debounceTime, takeUntil } from 'rxjs/operators';
 
+// eslint-disable-next-line no-shadow
 export enum ConditionalFormattingType {
-    dataBars = "Data Bars",
-    colorScale = "Color Scale",
-    top10 = "Top 10",
-    textContains = "Text Contains",
-    single = "Duplicate Values",
-    unique = "Unique Values",
-    empty = "Empty"
+    dataBars = 'Data Bars',
+    colorScale = 'Color Scale',
+    top10 = 'Top 10',
+    textContains = 'Text Contains',
+    single = 'Duplicate Values',
+    unique = 'Unique Values',
+    empty = 'Empty'
 }
 export interface IFormatColors {
     success: string;
@@ -21,7 +22,8 @@ export interface IFormatColors {
 }
 
 @Directive({
-    selector: "[conditionalFormatting]"
+    // eslint-disable-next-line @angular-eslint/directive-selector
+    selector: '[conditionalFormatting]'
 })
 export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy {
     @Input()
@@ -36,11 +38,11 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     }
 
     @Output()
-    public onFormattersReady = new EventEmitter<string[]>();
+    public formattersReady = new EventEmitter<string[]>();
 
     public colorScale = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (!(typeof cellValue === "number" && this.isWithInFormattedRange(rowIndex, colname))) { return; }
+            if (!(typeof cellValue === 'number' && this.isWithInFormattedRange(rowIndex, colname))) { return; }
             return this.lowTresholdValue >= cellValue ? this.formatColors.error :
                 this.middleTresholdValue >= cellValue ? this.formatColors.warning :  this.formatColors.success;
         }
@@ -48,7 +50,7 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
     public dataBars = {
         backgroundImage: (rowData, colname, cellValue, rowIndex) => {
-            if (!(typeof cellValue === "number" && this.isWithInFormattedRange(rowIndex, colname))) { return; }
+            if (!(typeof cellValue === 'number' && this.isWithInFormattedRange(rowIndex, colname))) { return; }
             const treshold = this.threshold;
             let gradientPercents;
             if (cellValue < 0) {
@@ -64,20 +66,20 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
                     transparent ${treshold + gradientPercents}% 100%)`;
             }
         },
-        backgroundSize: "100% 80%",
-        backgroundRepeat: "no-repeat",
-        backgroundPositionY: "center"
+        backgroundSize: '100% 80%',
+        backgroundRepeat: 'no-repeat',
+        backgroundPositionY: 'center'
     };
 
     public top10Percent = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "number" && this.isWithInFormattedRange(rowIndex, colname)
+            if (typeof cellValue === 'number' && this.isWithInFormattedRange(rowIndex, colname)
                 && cellValue > this.top10PercentTreshold) {
                 return  this.formatColors.info;
             }
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "number" && this.isWithInFormattedRange(rowIndex, colname)
+            if (typeof cellValue === 'number' && this.isWithInFormattedRange(rowIndex, colname)
                 && cellValue > this.top10PercentTreshold) {
                 return  this.formatColors.text;
             }
@@ -86,13 +88,13 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
     public greaterThan = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "number" && this.isWithInFormattedRange(rowIndex, colname)
+            if (typeof cellValue === 'number' && this.isWithInFormattedRange(rowIndex, colname)
             && cellValue > this.avgValue) {
                 return  this.formatColors.info;
             }
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "number" && this.isWithInFormattedRange(rowIndex, colname)
+            if (typeof cellValue === 'number' && this.isWithInFormattedRange(rowIndex, colname)
             && cellValue > this.avgValue) {
                 return  this.formatColors.text;
             }
@@ -115,26 +117,26 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     public duplicates = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
             if (!this.isWithInFormattedRange(rowIndex, colname)) { return; }
-            const arr: any[] = typeof cellValue === "number" ? this.numericData : this.textData;
-            return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ?  this.formatColors.info : "";
+            const arr: any[] = typeof cellValue === 'number' ? this.numericData : this.textData;
+            return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ?  this.formatColors.info : '';
 
         },
         color: (rowData, colname, cellValue, rowIndex) => {
             if (!this.isWithInFormattedRange(rowIndex, colname)) { return; }
-            const arr: any[] = typeof cellValue === "number" ? this.numericData : this.textData;
-            return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ?  this.formatColors.text : "";
+            const arr: any[] = typeof cellValue === 'number' ? this.numericData : this.textData;
+            return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ?  this.formatColors.text : '';
         }
     };
 
     public textContains = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "string" && this.isWithInFormattedRange(rowIndex, colname) &&
+            if (typeof cellValue === 'string' && this.isWithInFormattedRange(rowIndex, colname) &&
                 cellValue.toLowerCase().indexOf(this._valueForComparison.toLowerCase()) !== -1) {
                 return  this.formatColors.info;
             }
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "string" && this.isWithInFormattedRange(rowIndex, colname) &&
+            if (typeof cellValue === 'string' && this.isWithInFormattedRange(rowIndex, colname) &&
                 cellValue.toLowerCase().indexOf(this._valueForComparison.toLowerCase()) !== -1) {
                 return  this.formatColors.text;
             }
@@ -144,13 +146,13 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     public uniques = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
             if (!this.isWithInFormattedRange(rowIndex, colname)) { return; }
-            const arr: any[] = typeof cellValue === "number" ? this.numericData : this.textData;
-            return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ?  this.formatColors.info : "";
+            const arr: any[] = typeof cellValue === 'number' ? this.numericData : this.textData;
+            return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ?  this.formatColors.info : '';
         },
         color: (rowData, colname, cellValue, rowIndex) => {
             if (!this.isWithInFormattedRange(rowIndex, colname)) { return; }
-            const arr: any[] = typeof cellValue === "number" ? this.numericData : this.textData;
-            return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ?  this.formatColors.text : "";
+            const arr: any[] = typeof cellValue === 'number' ? this.numericData : this.textData;
+            return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ?  this.formatColors.text : '';
         }
     };
 
@@ -161,22 +163,22 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     }
 
     private get textData() {
-        return this.selectedData.filter(val => typeof val === "string");
+        return this.selectedData.filter(val => typeof val === 'string');
     }
 
     private get numericData() {
-        return this.selectedData.filter(val => typeof val === "number");
+        return this.selectedData.filter(val => typeof val === 'number');
     }
     private _formatColors: IFormatColors = {
-        success: "#4EB862",
-        error: "#FF134A",
-        warning: "#FBB13C",
-        info: "#1377D5",
-        text: "#FFF"
+        success: '#4EB862',
+        error: '#FF134A',
+        warning: '#FBB13C',
+        info: '#1377D5',
+        text: '#FFF'
     };
-    private _numericFormatters = ["Data Bars", "Color Scale", "Top 10", "Greater Than"];
-    private _textFormatters = ["Text Contains"];
-    private _commonFormattersName = ["Duplicate Values", "Unique Values", "Empty"];
+    private _numericFormatters = ['Data Bars', 'Color Scale', 'Top 10', 'Greater Than'];
+    private _textFormatters = ['Text Contains'];
+    private _commonFormattersName = ['Duplicate Values', 'Unique Values', 'Empty'];
     private _selectedData = [];
     private _minValue;
     private _maxValue;
@@ -188,21 +190,21 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     private formatedRange: Map<number, Set<number>> = new Map<number, Set<number>>();
 
     constructor(@Inject(IgxGridComponent) public grid: IgxGridComponent) {
-        this._formattersData.set("Data Bars", this.dataBars);
-        this._formattersData.set("Color Scale", this.colorScale);
-        this._formattersData.set("Top 10", this.top10Percent);
-        this._formattersData.set("Greater Than", this.greaterThan);
-        this._formattersData.set("Text Contains", this.textContains);
-        this._formattersData.set("Duplicate Values", this.duplicates);
-        this._formattersData.set("Unique Values", this.uniques);
-        this._formattersData.set("Empty", this.empty);
+        this._formattersData.set('Data Bars', this.dataBars);
+        this._formattersData.set('Color Scale', this.colorScale);
+        this._formattersData.set('Top 10', this.top10Percent);
+        this._formattersData.set('Greater Than', this.greaterThan);
+        this._formattersData.set('Text Contains', this.textContains);
+        this._formattersData.set('Duplicate Values', this.duplicates);
+        this._formattersData.set('Unique Values', this.uniques);
+        this._formattersData.set('Empty', this.empty);
     }
 
     public ngAfterViewInit(): void {
-        this.grid.onRangeSelection.pipe(takeUntil(this.destroy$)).subscribe(() => {
+        this.grid.rangeSelected.pipe(takeUntil(this.destroy$)).subscribe(() => {
             this.determineFormatters(false);
         });
-        this.grid.onColumnSelectionChange.pipe(takeUntil(this.destroy$), debounceTime(200)).subscribe(() => {
+        this.grid.columnSelected.pipe(takeUntil(this.destroy$), debounceTime(200)).subscribe(() => {
             this.determineFormatters(true);
         });
         this.grid.cellEdit.pipe(takeUntil(this.destroy$)).subscribe((args: any) => {
@@ -243,17 +245,17 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
 
     public determineFormatters(fromColumn) {
         const data = fromColumn ? this.grid.getSelectedColumnsData() : this.grid.getSelectedData();
-        const numericData = this.toArray(data).some(rec => typeof rec === "number");
-        const textData = this.toArray(data).some(rec => typeof rec === "string");
+        const numericData = this.toArray(data).some(rec => typeof rec === 'number');
+        const textData = this.toArray(data).some(rec => typeof rec === 'string');
         const formatters =  Array.of(...this._commonFormattersName);
         if (!(numericData) && textData) {
             formatters.splice(0, 0, ...this._textFormatters);
         } else if (numericData && !textData) {
             formatters.splice(0, 0, ...this._numericFormatters);
         } else {
-            formatters.splice(0, 0, ...["Data Bars", "Color Scale", "Text Contains"]);
+            formatters.splice(0, 0, ...['Data Bars', 'Color Scale', 'Text Contains']);
         }
-        this.onFormattersReady.emit(formatters);
+        this.formattersReady.emit(formatters);
     }
 
     public recalcCachedValues(clearAll = false) {
@@ -281,7 +283,7 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     }
 
     public isWithInFormattedRange(rowIndex, colID) {
-        const visibleIndex = typeof colID === "string" ? this.grid.getColumnByName(colID).visibleIndex : colID;
+        const visibleIndex = typeof colID === 'string' ? this.grid.getColumnByName(colID).visibleIndex : colID;
         if (!this.formatedRange.size) { return false; }
         return this.formatedRange.has(rowIndex) && this.formatedRange.get(rowIndex).has(visibleIndex);
     }

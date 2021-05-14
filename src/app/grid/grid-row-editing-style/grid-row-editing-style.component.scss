@@ -1,20 +1,17 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../variables';
 
 $my-light-gray: #e3e3e3;
-
 $my-banner-palette: $purple-palette;
-
 $custom-grid: igx-grid-theme(
     $palette: $purple-palette
 );
-
 
 .sample-wrapper {
     margin: 0 auto;
     padding: 16px;
 }
 
-$banner-theme: igx-banner-theme( 
+$banner-theme: igx-banner-theme(
     $banner-background: $my-light-gray,
     $banner-message-color: igx-color($my-banner-palette, "secondary", 600)
 );

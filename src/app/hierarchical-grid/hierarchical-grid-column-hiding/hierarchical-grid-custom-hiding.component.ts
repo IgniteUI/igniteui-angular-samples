@@ -3,15 +3,15 @@ import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-an
 import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-custom-hiding",
-    styleUrls: ["./hierarchical-grid-custom-hiding.component.scss"],
-    templateUrl: "hierarchical-grid-custom-hiding.component.html"
+    selector: 'app-hierarchical-grid-custom-hiding',
+    styleUrls: ['./hierarchical-grid-custom-hiding.component.scss'],
+    templateUrl: 'hierarchical-grid-custom-hiding.component.html'
 })
 
 export class HGridCostumHidingSampleComponent implements OnInit, AfterViewInit {
-    public localdata;
-    @ViewChild("hierarchicalGrid", { static: true })
+    @ViewChild('hierarchicalGrid', { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
+    public localdata;
 
     constructor(private cdr: ChangeDetectorRef) {}
 

@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-selection-template-numbers",
-    styleUrls: ["./hierarchical-grid-selection-template-numbers.component.scss"],
-    templateUrl: "hierarchical-grid-selection-template-numbers.component.html"
+    selector: 'app-hierarchical-grid-selection-template-numbers',
+    styleUrls: ['./hierarchical-grid-selection-template-numbers.component.scss'],
+    templateUrl: 'hierarchical-grid-selection-template-numbers.component.html'
 })
 
 export class HGridSelectionTemplateNumbersSampleComponent {

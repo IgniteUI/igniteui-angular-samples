@@ -1,26 +1,26 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxDialogComponent,
     IgxGridComponent,
     IgxTreeGridComponent,
     Transaction
-} from "igniteui-angular";
-import { generateRandomInteger } from "../../data/utils";
-import { generateEmployeeFlatData, IEmployee } from "../data/employees-flat";
+} from 'igniteui-angular';
+import { generateRandomInteger } from '../../data/utils';
+import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
 @Component({
-    selector: "app-tree-grid-batch-editing-sample",
-    styleUrls: ["tree-grid-batch-editing-sample.component.scss"],
-    templateUrl: "tree-grid-batch-editing-sample.component.html"
+    selector: 'app-tree-grid-batch-editing-sample',
+    styleUrls: ['tree-grid-batch-editing-sample.component.scss'],
+    templateUrl: 'tree-grid-batch-editing-sample.component.html'
 })
 export class TreeGridBatchEditingSampleComponent implements OnInit {
+    @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
+    @ViewChild(IgxDialogComponent, { static: true }) public dialog: IgxDialogComponent;
+    @ViewChild('dialogGrid', { read: IgxGridComponent, static: true }) public dialogGrid: IgxGridComponent;
 
     public data: IEmployee[];
     public transactionsData: Transaction[] = [];
-
-    @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
-    @ViewChild(IgxDialogComponent, { static: true }) public dialog: IgxDialogComponent;
-    @ViewChild("dialogGrid", { read: IgxGridComponent, static: true }) public dialogGrid: IgxGridComponent;
 
     private nextRow = 1;
 
@@ -38,10 +38,10 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
             HireDate: new Date(generateRandomInteger(2008, 2015),
             generateRandomInteger(0, 12), generateRandomInteger(5, 25)),
             ID: this.data.length + this.nextRow++,
-            Name: "John Doe",
+            Name: 'John Doe',
             OnPTO: false,
             ParentID: -1,
-            Title: "Junior Sales Representative"
+            Title: 'Junior Sales Representative'
         };
         this.treeGrid.addRow(addedData);
     }
@@ -52,10 +52,10 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
             HireDate: new Date(generateRandomInteger(2008, 2015),
             generateRandomInteger(0, 12), generateRandomInteger(5, 25)),
             ID: this.data.length + this.nextRow++,
-            Name: "Added Addedington",
+            Name: 'Added Addedington',
             OnPTO: false,
             ParentID: -1,
-            Title: "Intern"
+            Title: 'Intern'
         };
         this.treeGrid.addRow(
             addedData,
@@ -67,12 +67,14 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
     }
 
     public undo() {
-        /* exit edit mode */
-        this.treeGrid.endEdit(/* commit the edit transaction */ false);
+        /* exit edit mode and commit changes */
+        this.treeGrid.endEdit(true);
         this.treeGrid.transactions.undo();
     }
 
     public redo() {
+        /* exit edit mode and commit changes */
+        this.treeGrid.endEdit(true);
         this.treeGrid.transactions.redo();
     }
 
@@ -90,32 +92,20 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
         this.dialog.close();
     }
 
-    public get undoEnabled(): boolean {
-        return this.treeGrid.transactions.canUndo;
-    }
-
-    public get redoEnabled(): boolean {
-        return this.treeGrid.transactions.canRedo;
-    }
-
-    public openCommitDialog() {
+    public openCommitDialog(dialogGrid: IgxTreeGridComponent) {
         this.dialog.open();
-        this.dialogGrid.reflow();
-    }
-
-    public get hasTransactions(): boolean {
-        return this.treeGrid.transactions.getAggregatedChanges(false).length > 0;
+        dialogGrid.reflow();
     }
 
     public stateFormatter(value: string) {
-        return value ? JSON.stringify(value) : "";
+        return value ? JSON.stringify(value) : '';
     }
 
     public typeFormatter(value: string) {
-        return value ? value.toUpperCase() : "";
+        return value ? value.toUpperCase() : '';
     }
 
     public classFromType(type: string): string {
-        return type ? `transaction--${type.toLowerCase()}` : "";
+        return type ? `transaction--${type.toLowerCase()}` : '';
     }
 }

@@ -1,11 +1,11 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../variables';
 
 $grid-sample-theme: igx-grid-theme(
     $row-selected-background: #333,
     $row-selected-text-color: #ddd,
     $row-hover-background: #f8f8f8,
     $row-border-color: #f8f8f8,
-    $cell-selected-background: igx-color($default-palette, grays, 800),
+    $cell-selected-background: igx-color($color: 'grays', $variant: 800),
     $cell-selected-text-color: #fff
 );
 
@@ -148,7 +148,7 @@ $progressBar-sample-theme: igx-progress-linear-theme(
             }
 
             &__player-name {
-                color: igx-color($default-palette, primary, 800);
+                color: igx-color($color: 'primary', $variant: 800);
                 font-size: 18px;
                 margin: 0;
                 white-space: nowrap;

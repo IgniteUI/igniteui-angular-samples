@@ -1,7 +1,7 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { map } from "rxjs/operators";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 interface IDataResponse {
     value: any[];
@@ -27,12 +27,12 @@ export class RemoteLoDService {
     }
 
     public buildUrl(dataState: IDataState) {
-        let qS = "";
+        let qS = '';
         if (dataState) {
             qS += `${dataState.key}?`;
 
             if (!dataState.rootLevel) {
-                if (typeof dataState.parentID === "string") {
+                if (typeof dataState.parentID === 'string') {
                     qS += `$filter=${dataState.parentKey} eq '${dataState.parentID}'`;
                 } else {
                     qS += `$filter=${dataState.parentKey} eq ${dataState.parentID}`;

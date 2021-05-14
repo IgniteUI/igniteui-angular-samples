@@ -1,5 +1,5 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
 @import '~igniteui-dockmanager/dist/collection/styles/igc.themes.css';
+@import '../../../variables';
 
 :host {
   width: 100%;
@@ -7,8 +7,8 @@
 }
 
 @mixin scrollbar($scrollbar-width, $scrollbar-height) {
-    $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
-    $scrollbar-thumb: hexrgba(igx-color($default-palette, 'grays', 400));
+    $scrollbar-track: hexrgba(igx-color($color: 'grays', $variant: 200));
+    $scrollbar-thumb: hexrgba(igx-color($color: 'grays', $variant: 400));
 
     ::-webkit-scrollbar {
         width: $scrollbar-width;
@@ -34,8 +34,8 @@
 }
 
 .chart-types-container {
-    overflow-y: auto; 
-    height: 100%; 
+    overflow-y: auto;
+    height: 100%;
     width: 100%;
     padding-left: 15px;
 }
@@ -71,7 +71,7 @@ $custom-badge-theme: igx-badge-theme(
             &{
                 @include igx-badge($custom-badge-theme);
             }
-    
+
             position: absolute;
             bottom: 0;
             left: 18px;
@@ -80,18 +80,18 @@ $custom-badge-theme: igx-badge-theme(
 
     .wrapper {
         padding: 3px;
-    
+
         .types-section {
-    
+
             display: flex;
             flex-wrap: wrap;
-    
+
             button {
                 margin-right: 4px;
                 margin-top: 4px;
             }
         }
-    
+
         .igx-divider {
             margin-top: 5px !important;
             background: black !important;
@@ -106,10 +106,10 @@ $custom-badge-theme: igx-badge-theme(
 
     .analytics-btn {
         @include igx-button(igx-button-theme($palette: $fluent-excel-palette,
-                $icon-color: #fff,
-                $icon-background: #335e3b,
-                $icon-hover-background: #459a55,
-                $icon-border-radius: 0));
+                $foreground: #fff,
+                $background: #335e3b,
+                $hover-background: #459a55,
+                $border-radius: 0));
         z-index: 9;
         position: absolute;
     }
@@ -126,7 +126,7 @@ $custom-badge-theme: igx-badge-theme(
         height: auto;
     }
 
-    igx-tabs-group {
+    igx-tab-content {
         @include scrollbar(10px, 10px);
     }
 

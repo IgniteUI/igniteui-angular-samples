@@ -1,5 +1,9 @@
-import { animate, state, style, transition, trigger } from "@angular/animations";
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
+/* eslint-disable @angular-eslint/component-class-suffix */
+/* eslint-disable @angular-eslint/component-selector */
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable no-shadow */
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import {
     IgxColumnComponent,
     IgxColumnGroupComponent,
@@ -8,15 +12,15 @@ import {
     IgxListComponent,
     SortingDirection,
     IActiveNodeChangeEventArgs
-} from "igniteui-angular";
-import { Subject } from "rxjs";
-import { takeUntil } from "rxjs/operators";
-import { DATA } from "../../data/customers";
+} from 'igniteui-angular';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { DATA } from '../../data/customers';
 
 enum GridSection {
-    THEAD = "igx-grid__thead-wrapper",
-    TBODY = "igx-grid__tbody-content",
-    FOOTER = "igx-grid__tfoot"
+    THEAD = 'igx-grid__thead-wrapper',
+    TBODY = 'igx-grid__tbody-content',
+    FOOTER = 'igx-grid__tfoot'
 }
 
 enum ItemAction {
@@ -31,8 +35,8 @@ enum ItemAction {
 }
 
 enum ElementTags {
-    GROUPBY_ROW = "IGX-GRID-GROUPBY-ROW",
-    COLUMN_GROUP = "IGX-COLUMN-GROUP"
+    GROUPBY_ROW = 'IGX-GRID-GROUPBY-ROW',
+    COLUMN_GROUP = 'IGX-COLUMN-GROUP'
 }
 
 class Item {
@@ -94,8 +98,8 @@ class KeyboardHandler {
         this.resetCollection();
         action.forEach(element => {
             this._collection
-            .filter(e => e.action === element)
-            .map(e => e.active = true);
+                .filter(e => e.action === element)
+                .map(e => e.active = true);
         });
     }
 
@@ -117,53 +121,53 @@ class KeyboardHandler {
 }
 
 const theadKeyCombinations = [
-    new Item("space key", "select column", false, ItemAction.Selectable),
-    new Item("ctrl + arrow up/down", "sorts the column asc/desc", false, ItemAction.Sortable),
-    new Item("shift + alt + arrow left/right", "group/ungroup the active column", false, ItemAction.Groupable),
-    new Item("alt + arrow left/right/up/down", "expand/collapse active multi column header",
+    new Item('space key', 'select column', false, ItemAction.Selectable),
+    new Item('ctrl + arrow up/down', 'sorts the column asc/desc', false, ItemAction.Sortable),
+    new Item('shift + alt + arrow left/right', 'group/ungroup the active column', false, ItemAction.Groupable),
+    new Item('alt + arrow left/right/up/down', 'expand/collapse active multi column header',
         false, ItemAction.Collapsible),
-    new Item("ctrl + shift + l", "opens the excel style filtering", false, ItemAction.Filterable),
-    new Item("alt + l", "opens the advanced filtering", false, ItemAction.Filterable)
+    new Item('ctrl + shift + l', 'opens the excel style filtering', false, ItemAction.Filterable),
+    new Item('alt + l', 'opens the advanced filtering', false, ItemAction.Filterable)
 ];
 
 const tbodyKeyCombinations: Item[] = [
-    new Item("enter", "enter in edit mode", false, ItemAction.Editable),
-    new Item("alt + arrow left/up", "collapse master details row", false, ItemAction.Collapsible),
-    new Item("alt + arrow right/down", "expand master details row", false, ItemAction.Collapsible),
-    new Item("alt + arrow right/left", "expand/collapse the group row", false, ItemAction.Expandable),
-    new Item("ctrl + Home/End", "navigates to the upper-left/bottom-right cell", false, ItemAction.Always)
+    new Item('enter', 'enter in edit mode', false, ItemAction.Editable),
+    new Item('alt + arrow left/up', 'collapse master details row', false, ItemAction.Collapsible),
+    new Item('alt + arrow right/down', 'expand master details row', false, ItemAction.Collapsible),
+    new Item('alt + arrow right/left', 'expand/collapse the group row', false, ItemAction.Expandable),
+    new Item('ctrl + Home/End', 'navigates to the upper-left/bottom-right cell', false, ItemAction.Always)
 ];
 
 const summaryCombinations: Item[] = [
-    new Item("ArrowLeft", "navigates one summary cell left", false, ItemAction.Always),
-    new Item("ArrowRight", "navigates one summary cell right", false, ItemAction.Always),
-    new Item("Home", "navigates to the first summary cell", false, ItemAction.Always),
-    new Item("End", "navigates to the last summary cell", false, ItemAction.Always)
+    new Item('ArrowLeft', 'navigates one summary cell left', false, ItemAction.Always),
+    new Item('ArrowRight', 'navigates one summary cell right', false, ItemAction.Always),
+    new Item('Home', 'navigates to the first summary cell', false, ItemAction.Always),
+    new Item('End', 'navigates to the last summary cell', false, ItemAction.Always)
 ];
 
 @Component({
-    selector: "grid-keyboardnav",
-    templateUrl: "./grid-keyboardnav-sample.component.html",
-    styleUrls: ["grid-keyboardnav-sample.component.scss"],
+    selector: 'grid-keyboardnav',
+    templateUrl: './grid-keyboardnav-sample.component.html',
+    styleUrls: ['grid-keyboardnav-sample.component.scss'],
     animations: [
-        trigger("toggle", [
-            state("selected", style({
-                color: "#4eb862"
+        trigger('toggle', [
+            state('selected', style({
+                color: '#4eb862'
             })),
-            state("deselected", style({
-                color: "black"
+            state('deselected', style({
+                color: 'black'
             })),
-            transition("deselected => selected", [
-                animate(".3s")
+            transition('deselected => selected', [
+                animate('.3s')
             ]),
-            transition("selected => deselected", [
-                animate(".3s")
+            transition('selected => deselected', [
+                animate('.3s')
             ])
         ]),
-        trigger("load", [
-            transition(":enter", [
+        trigger('load', [
+            transition(':enter', [
                 style({ opacity: 0 }),
-                animate(".3s", style({ opacity: .4 }))
+                animate('.3s', style({ opacity: .4 }))
             ])
         ])
     ]
@@ -182,9 +186,9 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
     public get headerList() {
         return this._keyboardHandler.gridSection === GridSection.THEAD ?
-            "HEADER COMBINATIONS" : this._keyboardHandler.gridSection === GridSection.TBODY ?
-            "BODY COMBITNATIONS" : this._keyboardHandler.gridSection === GridSection.FOOTER ?
-            "SUMMARY COMBINATIONS" : "";
+            'HEADER COMBINATIONS' : this._keyboardHandler.gridSection === GridSection.TBODY ?
+                'BODY COMBITNATIONS' : this._keyboardHandler.gridSection === GridSection.FOOTER ?
+                    'SUMMARY COMBINATIONS' : '';
     }
 
     private _destroyer = new Subject();
@@ -197,7 +201,8 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         if (this.grid.crudService.cell) {
             return;
         }
-        const gridSection = evt.row < 0 ? GridSection.THEAD : evt.row === this.grid.dataView.length ? GridSection.FOOTER : GridSection.TBODY;
+        const gridSection = evt.row < 0 ? GridSection.THEAD : evt.row === this.grid.dataView.length ?
+            GridSection.FOOTER : GridSection.TBODY;
         this.changeCombinationsCollection(gridSection);
         this.toggleHeaderCombinations(evt);
         this.toggleBodyCombinations(evt);
@@ -206,7 +211,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     public ngOnInit() {
         this.grid.data = DATA;
         for (const item of this.grid.data) {
-            const names = item.CompanyName.split(" ");
+            const names = item.CompanyName.split(' ');
             item.FirstName = names[0];
             item.LastName = names[names.length - 1];
             item.FullAddress = `${item.Address}, ${item.City}, ${item.Country}`;
@@ -221,26 +226,26 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
                 }
             });
 
-        this.grid.onColumnSelectionChange.pipe(takeUntil(this._destroyer))
+        this.grid.columnSelected.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 const evt = args.event;
-                if (evt.type === "keydown") {
+                if (evt.type === 'keydown') {
                     this._keyboardHandler.selectItem(0);
                 }
             });
 
-        this.grid.onRowToggle.pipe(takeUntil(this._destroyer))
+        this.grid.rowToggle.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 const evt = args.event as KeyboardEvent;
-                if (evt.type !== "keydown") {
+                if (evt.type !== 'keydown') {
                     return;
                 }
-                return evt.code === "ArrowLeft" || evt.code === "ArrowUp" ? this._keyboardHandler.selectItem(1) :
+                return evt.code === 'ArrowLeft' || evt.code === 'ArrowUp' ? this._keyboardHandler.selectItem(1) :
                     this._keyboardHandler.selectItem(2);
             });
 
         this.grid.groupingExpressions = [
-            { fieldName: "ProductName", dir: SortingDirection.Asc }
+            { fieldName: 'ProductName', dir: SortingDirection.Asc }
         ];
 
 
@@ -260,16 +265,16 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         if (key === 'tab') { return; }
         if (this._keyboardHandler.gridSection === GridSection.FOOTER) {
             switch (key) {
-                case "end":
+                case 'end':
                     this._keyboardHandler.selectItem(3);
                     break;
-                case "home":
+                case 'home':
                     this._keyboardHandler.selectItem(2);
                     break;
-                case "arrowleft":
+                case 'arrowleft':
                     this._keyboardHandler.selectItem(0);
                     break;
-                case "arrowright":
+                case 'arrowright':
                     this._keyboardHandler.selectItem(1);
                     break;
                 default:
@@ -280,22 +285,22 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
         const activeNode = this.grid.navigation.activeNode;
         if (this._keyboardHandler.gridSection === GridSection.THEAD) {
-            if (key === "l" && evt.altKey) {
+            if (key === 'l' && evt.altKey) {
                 this._keyboardHandler.selectItem(5);
                 return;
             }
             const col = this.grid.visibleColumns.find
                 (c => c.visibleIndex === activeNode.column && c.level === activeNode.level);
-            if (key === "l" && evt.ctrlKey && evt.shiftKey  && col && !col.columnGroup && col.filterable) {
-                    this._keyboardHandler.selectItem(4);
+            if (key === 'l' && evt.ctrlKey && evt.shiftKey && col && !col.columnGroup && col.filterable) {
+                this._keyboardHandler.selectItem(4);
             }
 
-            if ((key === "arrowleft" || key === "arrowright") && evt.altKey && evt.shiftKey &&
-            col && !col.columnGroup && col.groupable) {
+            if ((key === 'arrowleft' || key === 'arrowright') && evt.altKey && evt.shiftKey &&
+                col && !col.columnGroup && col.groupable) {
                 this._keyboardHandler.selectItem(2);
             }
 
-            if ((key === "arrowup" || key === "arrowdown") && evt.ctrlKey) {
+            if ((key === 'arrowup' || key === 'arrowdown') && evt.ctrlKey) {
                 if (col && !col.columnGroup && col.sortable) {
                     this._keyboardHandler.selectItem(1);
                 }
@@ -303,13 +308,13 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         }
 
         if (this._keyboardHandler.gridSection === GridSection.TBODY) {
-            if (key === "enter") {
+            if (key === 'enter') {
                 const cell = this.grid.getCellByColumnVisibleIndex(activeNode.row, activeNode.column);
                 if (cell && cell.column.editable && cell.editMode) {
                     this._keyboardHandler.selectItem(0);
                 }
             }
-            if ((key === "end" || key === "home") && evt.ctrlKey) {
+            if ((key === 'end' || key === 'home') && evt.ctrlKey) {
                 this._keyboardHandler.selectItem(4);
                 this.cdr.detectChanges();
             }

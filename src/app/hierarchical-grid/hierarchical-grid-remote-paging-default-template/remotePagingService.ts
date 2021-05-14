@@ -1,18 +1,18 @@
-import { HttpClient} from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { map } from "rxjs/operators";
+import { HttpClient} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class RemotePagingService {
     public url = `https://services.odata.org/V4/Northwind/Northwind.svc/`;
-    private key = "value";
+    private key = 'value';
 
     constructor(private http: HttpClient) {
     }
 
     public buildUrl(dataState, index?: number, perPage?: number) {
-        let qS = "";
+        let qS = '';
         if (dataState) {
             qS += `${dataState.key}?`;
 
@@ -21,7 +21,7 @@ export class RemotePagingService {
             }
 
             if (!dataState.rootLevel) {
-                if (typeof dataState.parentID === "string") {
+                if (typeof dataState.parentID === 'string') {
                     qS += `$filter=${dataState.foreignKey} eq '${dataState.parentID}'`;
                 } else {
                     qS += `$filter=${dataState.foreignKey} eq ${dataState.parentID}`;
@@ -40,9 +40,7 @@ export class RemotePagingService {
 
     public getDataLength(dataState?: any): any {
         return this.http.get(this.url + `${dataState.key}/` + `$count`).pipe(
-            map((response) => {
-                return response;
-            })
+            map((response) => response)
         );
     }
 }

@@ -1,4 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 $sample-width: rem(850px);
 $sample-height: rem(700px);
@@ -17,7 +17,7 @@ $grid-item-margin: $grid-item-padding;
 $grid-body-section-padding: $grid-padding;
 $grid-item-border-width: rem(2px);
 
-$clipboardSuccessColor: igx-color($default-palette, 'success');
+$clipboardSuccessColor: igx-color($color: 'success');
 
 %icon-size {
   width: $grid-icon-size;
@@ -155,7 +155,7 @@ $clipboardSuccessColor: igx-color($default-palette, 'success');
 
     &:hover,
     &:focus {
-      border-color: igx-color($default-palette, 'secondary');
+      border-color: igx-color($color: 'secondary');
       outline-color: transparent;
       outline-width: 0;
 
@@ -208,7 +208,7 @@ $clipboardSuccessColor: igx-color($default-palette, 'success');
   @include e(grid-item-clipboard) {
     @extend %flex-row-center-center;
     border-radius: 50%;
-    background: igx-color($default-palette, 'surface');
+    background: igx-color($color: 'surface');
     box-shadow: none;
     border: none;
     padding: rem(4px);
@@ -238,13 +238,13 @@ $clipboardSuccessColor: igx-color($default-palette, 'success');
       pointer-events: auto;
       visibility: visible;
       opacity: 1;
-      color: igx-color($default-palette, 'secondary');
+      color: igx-color($color: 'secondary');
     }
   }
 
   @include e(grid-item-clipboard, $m: success) {
     background: $clipboardSuccessColor;
-    color: igx-contrast-color($default-palette, $clipboardSuccessColor) !important;
+    color: igx-contrast-color($color: 'success') !important;
   }
 
   @include e(grid-icon-name) {

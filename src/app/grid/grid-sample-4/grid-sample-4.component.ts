@@ -1,29 +1,27 @@
-import { ChangeDetectorRef, Component, TemplateRef, ViewChild } from "@angular/core";
-import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
-import { debounceTime } from "rxjs/operators";
-import { RemoteServiceVirt } from "../services/remoteService";
+import { ChangeDetectorRef, Component, TemplateRef, ViewChild, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import { IgxColumnComponent, IgxGridComponent } from 'igniteui-angular';
+import { debounceTime } from 'rxjs/operators';
+import { RemoteServiceVirt } from '../services/remoteService';
 
 @Component({
     providers: [RemoteServiceVirt],
-    selector: "grid-remote-virtualization-sample",
-    styleUrls: ["grid-sample-4.component.scss"],
-    templateUrl: "grid-sample-4.component.html"
+    selector: 'app-grid-remote-virtualization-sample',
+    styleUrls: ['grid-sample-4.component.scss'],
+    templateUrl: 'grid-sample-4.component.html'
 })
 
-export class GridRemoteVirtualizationSampleComponent {
-    public remoteData: any;
-
-    @ViewChild("grid", { static: true }) public grid: IgxGridComponent;
-
-    @ViewChild("remoteDataLoadingLarge", { read: TemplateRef, static: true })
+export class GridRemoteVirtualizationSampleComponent implements OnInit, AfterViewInit, OnDestroy{
+    @ViewChild('grid', { static: true }) public grid: IgxGridComponent;
+    @ViewChild('remoteDataLoadingLarge', { read: TemplateRef, static: true })
     public remoteDataLoadingLargeTemplate: TemplateRef<any>;
-    @ViewChild("remoteDataLoadingMedium", { read: TemplateRef, static: true })
+    @ViewChild('remoteDataLoadingMedium', { read: TemplateRef, static: true })
     public remoteDataLoadingMediumTemplate: TemplateRef<any>;
-    @ViewChild("remoteDataLoadingSmall", { read: TemplateRef, static: true })
+    @ViewChild('remoteDataLoadingSmall', { read: TemplateRef, static: true })
     public remoteDataLoadingSmallTemplate: TemplateRef<any>;
 
+    public remoteData: any;
+
     private _columnCellCustomTemplates: Map<IgxColumnComponent, TemplateRef<any>>;
-    private _isColumnCellTemplateReset: boolean = false;
     private _prevRequest: any;
 
     constructor(private _remoteService: RemoteServiceVirt, public cdr: ChangeDetectorRef) { }
@@ -38,21 +36,21 @@ export class GridRemoteVirtualizationSampleComponent {
 
         this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true,
         (data) => {
-            this.grid.totalItemCount = data["@odata.count"];
+            this.grid.totalItemCount = data['@odata.count'];
             this.grid.isLoading = false;
         }, {
             startIndex: this.grid.virtualizationState.startIndex,
             chunkSize: 20
         });
 
-        this.grid.onDataPreLoad.pipe().subscribe(() => {
+        this.grid.dataPreLoad.pipe().subscribe(() => {
             this._remoteService.getDataFromCache(this.grid.virtualizationState,
                 this.grid.sortingExpressions[0], false, () => {
                     this.cdr.detectChanges();
                 });
         });
 
-        this.grid.onDataPreLoad.pipe(debounceTime(500)).subscribe(() => {
+        this.grid.dataPreLoad.pipe(debounceTime(500)).subscribe(() => {
             this.processData(false);
         });
     }
@@ -83,7 +81,7 @@ export class GridRemoteVirtualizationSampleComponent {
     }
 
     public formatCurrency(value: number) {
-        return "$" + value.toFixed(2);
+        return '$' + value.toFixed(2);
     }
 
     public ngOnDestroy() {

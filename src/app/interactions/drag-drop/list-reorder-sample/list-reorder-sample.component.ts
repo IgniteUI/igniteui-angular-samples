@@ -4,32 +4,32 @@ import {
     QueryList,
     ViewChild,
     ViewChildren
-} from "@angular/core";
+} from '@angular/core';
 import {
     IDragBaseEventArgs,
     IDragMoveEventArgs,
     IgxDragDirective,
     IgxDragLocation
-} from "igniteui-angular";
+} from 'igniteui-angular';
 
 @Component({
-    selector: "app-list-reorder-sample",
-    templateUrl: "./list-reorder-sample.component.html",
-    styleUrls: ["./list-reorder-sample.component.scss"]
+    selector: 'app-list-reorder-sample',
+    templateUrl: './list-reorder-sample.component.html',
+    styleUrls: ['./list-reorder-sample.component.scss']
 })
 export class ListReorderSampleComponent {
-    @ViewChildren("dragDirRef", { read: IgxDragDirective })
+    @ViewChildren('dragDirRef', { read: IgxDragDirective })
     public dragDirs: QueryList<IgxDragDirective>;
 
-    @ViewChild("listContainer", { read: ElementRef })
+    @ViewChild('listContainer', { read: ElementRef })
     public listContainer: ElementRef;
 
     public employees = [
-        { id: 0, name: "Ivan Cornejo", title: "Senior Product Owner" },
-        { id: 1, name: "Amish Shiravadakar", title: "Business Tools Director" },
-        { id: 2, name: "Elsi Hansdottir", title: "Financial Director" },
-        { id: 3, name: "Benito Noboa", title: "Marketing Specialist" },
-        { id: 4, name: "Beth Murphy", title: "Platform Lead for Web" }
+        { id: 0, name: 'Ivan Cornejo', title: 'Senior Product Owner' },
+        { id: 1, name: 'Amish Shiravadakar', title: 'Business Tools Director' },
+        { id: 2, name: 'Elsi Hansdottir', title: 'Financial Director' },
+        { id: 3, name: 'Benito Noboa', title: 'Marketing Specialist' },
+        { id: 4, name: 'Beth Murphy', title: 'Platform Lead for Web' }
     ];
 
     public newIndex = null;

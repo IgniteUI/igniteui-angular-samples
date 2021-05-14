@@ -2,5 +2,8 @@
 #timePicker
 [(ngModel)]="date"
 [mode]="mode"
-[format]="format">
+[minValue]="'16:00:00'"
+[spinLoop]='false'
+[inputFormat]="format">
+    <label igxLabel>Time</label>
 </igx-time-picker>

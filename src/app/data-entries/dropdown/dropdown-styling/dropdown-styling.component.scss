@@ -1,3 +1,5 @@
+@import '../../../../variables';
+
 .drop-down {
     margin: 8px;
     width: 220px;
@@ -6,8 +8,6 @@
 .drop-down__scroll-container {
     max-height: 280px;
 }
-
-@import "~igniteui-angular/lib/core/styles/themes/index";
 
 $custom-drop-down-theme: igx-drop-down-theme(
     $background-color: #fdfdfd,
@@ -24,8 +24,8 @@ $custom-drop-down-theme: igx-drop-down-theme(
 );
 
 $custom-button-theme: igx-button-theme(
-    $raised-background: #345779,
-    $raised-text-color: #fdfdfd,
+    $background: #345779,
+    $foreground: #fdfdfd,
 );
 
 // :host {

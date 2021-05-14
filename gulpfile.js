@@ -20,7 +20,8 @@ gulp.task("generate-live-editing", async () => {
     var appDv = argv.appDv !== undefined && argv.appDv.toLowerCase().trim() === "true";
     const liveEditingOptions = appDv ? 
     {
-        platform: 'angular', 
+        platform: 'angular',
+        projectDir: "./projects/app-lob",
         samplesDir: "./projects/app-lob/src/assets",
         configGeneratorPath: "./live-editing/generators/AppDVConfigGenerators.ts",
         module: {
@@ -34,7 +35,8 @@ gulp.task("generate-live-editing", async () => {
         configGeneratorPath: "./live-editing/generators/ConfigGenerators.ts",
         module: {
             moduleName: "MODULE_ROUTES", routerPath: './live-editing/Routes.ts',
-        }
+        },
+        additionalSharedStyles: ["_variables.scss", "_app-layout.scss"]
     }
     await generateLiveEditing(liveEditingOptions);
 });
@@ -91,6 +93,7 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                     fs.readFile(file.path, 'utf-8', (err, content) => {
                         // Adjust sample application bundle files
                         const jsonObj = JSON.parse(content);
+                        const additionals = [];
                         const packageJson =
                         {
                             "path": "package.json",
@@ -99,7 +102,13 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                                     "dependencies": JSON.parse(jsonObj.sampleDependencies),
                                     "devDependencies": sharedJson.devDependencies }, null, 2)
                         }
-                        jsonObj.sampleFiles = jsonObj.sampleFiles.concat(sharedJson.files).concat(packageJson);
+                        additionals.push(packageJson);
+
+                        if(jsonObj.addTsConfig) {
+                            additionals.push(sharedJson.tsConfig);
+                        }
+
+                        jsonObj.sampleFiles = jsonObj.sampleFiles.concat(sharedJson.files).concat(additionals);
 
                         // Configure sample application file structure
                         const fileName = file.path.substring(file.base.length + 1).replace(".json", "");

@@ -1,24 +1,23 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     ColumnPinningPosition,
     IgxHierarchicalGridComponent,
     IPinningConfig,
     RowPinningPosition
-} from "igniteui-angular";
-import { SINGERS } from "../data";
+} from 'igniteui-angular';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-row-pinning-styling",
-    styleUrls: ["./hierarchical-grid-row-pinning-styling.component.scss"],
-    templateUrl: "hierarchical-grid-row-pinning-styling.component.html"
+    selector: 'app-hierarchical-grid-row-pinning-styling',
+    styleUrls: ['./hierarchical-grid-row-pinning-styling.component.scss'],
+    templateUrl: 'hierarchical-grid-row-pinning-styling.component.html'
 })
 
 export class HGridRowPinningStylingSampleComponent implements OnInit {
+    @ViewChild('hierarchicalGrid1', { static: true })
+    public hierarchicalGrid: IgxHierarchicalGridComponent;
     public localData;
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top, columns: ColumnPinningPosition.End };
-
-    @ViewChild("hierarchicalGrid1", { static: true })
-    public hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {
         this.localData = SINGERS;

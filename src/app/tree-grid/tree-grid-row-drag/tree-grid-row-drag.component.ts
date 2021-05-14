@@ -1,18 +1,20 @@
-import { Component, ViewChild } from "@angular/core";
-import { IDropDroppedEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent } from "igniteui-angular";
-import { FULL_EMPLOYEE_DATA } from "../data/employees";
+/* eslint-disable @typescript-eslint/naming-convention */
+import { Component, ViewChild } from '@angular/core';
+import { IDropDroppedEventArgs, IgxTreeGridComponent, RowType } from 'igniteui-angular';
+import { FULL_EMPLOYEE_DATA } from '../data/employees';
 
+// eslint-disable-next-line no-shadow
 enum DragIcon {
-    DEFAULT = "drag_handle",
-    ALLOW = "remove"
+    DEFAULT = 'drag_handle',
+    ALLOW = 'remove'
 }
 
 @Component({
-    selector: "tree-grid-row-drag",
-    styleUrls: ["tree-grid-row-drag.component.scss"],
-    templateUrl: "tree-grid-row-drag.component.html"
+    selector: 'app-tree-grid-row-drag',
+    styleUrls: ['tree-grid-row-drag.component.scss'],
+    templateUrl: 'tree-grid-row-drag.component.html'
 })
-export class TreeGridRowDrag {
+export class TreeGridRowDragComponent {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: true })
     public treeGrid: IgxTreeGridComponent;
 
@@ -26,7 +28,7 @@ export class TreeGridRowDrag {
     }
 
     public onDropAllowed(args: IDropDroppedEventArgs) {
-        const draggedRow: IgxTreeGridRowComponent = args.dragData;
+        const draggedRow: RowType = args.dragData;
         draggedRow.delete();
     }
 
@@ -40,7 +42,7 @@ export class TreeGridRowDrag {
 
     private changeGhostIcon(ghost, icon: string) {
         if (ghost) {
-            const currentIcon = ghost.querySelector(".igx-grid__drag-indicator > igx-icon");
+            const currentIcon = ghost.querySelector('.igx-grid__drag-indicator > igx-icon');
             if (currentIcon) {
                 currentIcon.innerText = icon;
             }

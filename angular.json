@@ -11,8 +11,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
-            "sourceMap": false,
             "outputPath": "dist/app",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -25,7 +23,12 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -37,9 +40,7 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -51,10 +52,31 @@
               ]
             },
             "es5": {
+                "budgets": [
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "900kb"
+                  }
+                ],
+                "tsConfig": "src/tsconfig-es5.app.json"
+            },
+            "es5Prod": {
               "budgets": [
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "900kb"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
               ],
               "tsConfig": "src/tsconfig-es5.app.json"
@@ -125,17 +147,14 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "builder": "@angular-eslint/builder:lint",
+            "options": {
+              "lintFilePatterns": [
+                "src/**/*.ts",
+                "src/**/*.html"
+              ]
+            }
           }
-        }
       }
     },
     "app-lob": {
@@ -157,7 +176,6 @@
             "main": "projects/app-lob/src/main.ts",
             "polyfills": "projects/app-lob/src/polyfills.ts",
             "tsConfig": "projects/app-lob/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/app-lob/src/favicon.ico",
               "projects/app-lob/src/assets"
@@ -165,7 +183,13 @@
             "styles": [
               "projects/app-lob/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -179,7 +203,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -245,15 +268,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/app-lob/tsconfig.app.json",
-              "projects/app-lob/tsconfig.spec.json",
-              "projects/app-lob/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/app-lob/**/*.ts",
+              "projects/app-lob/**/*.html"
             ]
           }
         },
@@ -290,7 +309,6 @@
             "main": "projects/app-crm/src/main.ts",
             "polyfills": "projects/app-crm/src/polyfills.ts",
             "tsConfig": "projects/app-crm/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/app-crm/src/favicon.ico",
               "projects/app-crm/src/assets"
@@ -298,7 +316,13 @@
             "styles": [
               "projects/app-crm/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -312,7 +336,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -378,15 +401,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/app-crm/tsconfig.app.json",
-              "projects/app-crm/tsconfig.spec.json",
-              "projects/app-crm/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/app-crm/**/*.ts",
+              "projects/app-crm/**/*.html"
             ]
           }
         },

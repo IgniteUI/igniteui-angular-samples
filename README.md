@@ -99,7 +99,7 @@ All [live-editing capabilities](https://github.com/IgniteUI/igniteui-live-editin
 Live-editing [documentation could be found here](https://github.com/IgniteUI/igniteui-live-editing#live-editing-documentation). If you are interested in how the engine works, read the [following section](https://github.com/IgniteUI/igniteui-live-editing#how-the-live-editing-engine-works).
 
 One of the most important functionality is the Configurator Generator as each Ignite UI for Angular component has a separate configurations (config) generator - [read the following section if you are interested in the actual structure and how to configure it](https://github.com/IgniteUI/igniteui-live-editing#configuration-generator).
-### Live Editing Watcher
+### Live-Editing Watcher
 Use this command to start the server with capability to regenerate [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) JSON files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) when a change related to the samples is made (including IE support):
 
 ```
@@ -112,7 +112,7 @@ To start in modern browsers only, run:
 npm run start:watch-live-editing:es6
 ```
 
-### Generate Live Editing JSON files
+### Generate Live-Editing JSON files
 To generate only the [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) samples files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) run:
 
 #### Default App

@@ -1,4 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 igx-time-picker {
     width: 400px;
@@ -15,8 +15,8 @@ $my-time-picker-theme: igx-time-picker-theme(
 );
 
 $dark-button: igx-button-theme(
-    $flat-text-color: #ECAA53,
-    $flat-hover-background: #ECAA53
+    $foreground: #ECAA53,
+    $hover-background: #ECAA53
 );
 
 // :host {

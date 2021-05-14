@@ -1,0 +1,23 @@
+.grid__wrapper {
+    margin: 0 16px;
+    padding-top: 10px;
+}
+
+igx-switch {
+    margin: 24px;
+} 
+
+.options-container {
+    display: flex; 
+    flex-direction: row; 
+    align-items: baseline; 
+    padding: 0 1rem;
+}
+.options_container * { margin-right: 15px; }
+
+.select-input {
+    max-width: 150px; 
+    padding-top: 5px; 
+    padding-bottom: 5px;
+    margin-left: 15px;
+}

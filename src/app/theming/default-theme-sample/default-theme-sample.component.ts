@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from "@angular/core";
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import {
     CloseScrollStrategy,
     ConnectedPositioningStrategy,
@@ -10,31 +10,30 @@ import {
     IgxSnackbarComponent,
     VerticalAlignment,
     OverlaySettings
-} from "igniteui-angular";
-import { DATA } from "../data/data";
-import { Record } from "../data/record";
+} from 'igniteui-angular';
+import { DATA } from '../data/data';
+import { Record } from '../data/record';
 
 @Component({
-    selector: "app-default-theme-sample",
-    styleUrls: ["./default-theme-sample.component.scss"],
-    templateUrl: "./default-theme-sample.component.html"
+    selector: 'app-default-theme-sample',
+    styleUrls: ['./default-theme-sample.component.scss'],
+    templateUrl: './default-theme-sample.component.html'
 })
 export class DefaultThemeSampleComponent implements OnInit {
+    @ViewChild('dialog1', { read: IgxDialogComponent, static: true })
+    public dialog: IgxDialogComponent;
+
+    @ViewChild('outlet', { read: IgxOverlayOutletDirective, static: true })
+    public outlet: IgxOverlayOutletDirective;
+
+    @ViewChild('grid1', { read: IgxGridComponent, static: true })
+    public grid1: IgxGridComponent;
+
+    @ViewChild('snackbar', { static: true })
+    public snackbar: IgxSnackbarComponent;
 
     public data: any[] = DATA;
     public record;
-
-    @ViewChild("dialog1", { read: IgxDialogComponent, static: true })
-    public dialog: IgxDialogComponent;
-
-    @ViewChild("outlet", { read: IgxOverlayOutletDirective, static: true })
-    public outlet: IgxOverlayOutletDirective;
-
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
-    public grid1: IgxGridComponent;
-
-    @ViewChild("snackbar", { static: true })
-    public snackbar: IgxSnackbarComponent;
 
     private deletedRow;
 
@@ -80,12 +79,12 @@ export class DefaultThemeSampleComponent implements OnInit {
         this.deletedRow = row.rowData;
         row.delete();
         this.snackbar.message = `Row with index ${rowIndex} has been deleted!`;
-        this.snackbar.show();
+        this.snackbar.open();
     }
 
     public restoreRow() {
         this.grid1.addRow(this.deletedRow);
-        this.snackbar.hide();
+        this.snackbar.close();
     }
 
     public ngOnInit() {

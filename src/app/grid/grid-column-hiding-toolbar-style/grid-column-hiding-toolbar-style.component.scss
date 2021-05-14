@@ -1,6 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
-
-/*BASIC THEMING*/
+@import '../../../variables';
 
 $yellow: #ffcd0f;
 $bg: #292826;
@@ -13,16 +11,12 @@ $dark-column-actions-theme: igx-column-actions-theme(
 );
 
 $dark-button-theme: igx-button-theme(
-    $outlined-background: $yellow,
-    $outlined-text-color: $bg,
-    $outlined-hover-background: $gray,
-    $outlined-hover-text-color: $yellow,
-    $outlined-focus-background: $yellow,
-    $flat-text-color: $yellow,
-    $flat-hover-background: $gray,
-    $flat-hover-text-color: $yellow,
-    $flat-focus-background: $yellow,
-    $disabled-color: $light-gray
+    $background: $yellow,
+    $foreground: $bg,
+    $hover-background: $gray,
+    $hover-foreground: $yellow,
+    $focus-background: $yellow,
+    $disabled-foreground: $light-gray
 );
 
 $dark-input-group: igx-input-group-theme(
@@ -47,64 +41,6 @@ $dark-ripple-theme: igx-ripple-theme(
     $color: $gray
 );
 
-/*ENHANCED APPROACHES*/
-
-// $yellow-color: gold;
-// $blue-color: steelblue;
-// $custom-palette: igx-palette($primary: $blue-color, $secondary: $yellow-color);
-
-/*PALETTE and IGX-COLOR*/
-
-// $custom-column-actions-theme: igx-column-actions-theme(
-//     $palette: $custom-palette,
-//     $title-color: igx-color($custom-palette, "secondary", 400),
-//     $background-color: igx-color($custom-palette, "primary", 200)
-// );
-// $custom-button: igx-button-theme(
-//     $palette: $custom-palette,
-//     $flat-text-color: igx-color($custom-palette, "secondary", 400),
-//     $disabled-color: black
-// );
-
-/*SCHEMAS*/
-
-// $custom-column-actions-schema: extend($_dark-column-actions,
-//     (
-//         title-color:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         background-color:(
-//             igx-color: ("primary", 200)
-//         )
-//     )
-// );
-// 
-// $custom-button-schema: extend($_dark-button,
-//     (           
-//         flat-text-color:(
-//             igx-color:("secondary", 500)
-//         ),
-//         disabled-color:(
-//             igx-color:("primary", 700)
-//         )
-//     )
-// );
-// 
-// $custom-dark-schema: extend($dark-schema,(
-//     igx-column-actions: $custom-column-actions-schema,
-//     igx-button: $custom-button-schema
-// ));
-// $custom-column-actions-theme: igx-column-actions-theme(
-//   $palette: $custom-palette,
-//   $schema: $custom-dark-schema
-// );
-// $custom-button: igx-button-theme(
-//   $palette: $custom-palette,
-//   $schema: $custom-dark-schema
-// );
-
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
-
 :host {
     ::ng-deep {
         @include igx-column-actions($dark-column-actions-theme);
@@ -112,7 +48,7 @@ $dark-ripple-theme: igx-ripple-theme(
         igx-column-actions, igx-grid-toolbar {
             @include igx-checkbox($dark-checkbox-theme);
             @include igx-input-group($dark-input-group);
-            @include igx-button($dark-button-theme);
+            // @include igx-button($dark-button-theme);
             @include igx-ripple($dark-ripple-theme);
         }
     }

@@ -1,14 +1,14 @@
-import { Component } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-    selector: "app-radio-group-sample",
-    styleUrls: ["./radio-group-sample.component.scss"],
-    templateUrl: "./radio-group-sample.component.html"
+    selector: 'app-radio-group-sample',
+    styleUrls: ['./radio-group-sample.component.scss'],
+    templateUrl: './radio-group-sample.component.html'
 })
 export class RadioGroupSampleComponent {
     public fruitsForm: FormGroup;
-    public fruits = ["Apple", "Mango", "Banana", "Orange"];
+    public fruits = ['Apple', 'Mango', 'Banana', 'Orange'];
     public newModel: FruitData;
     public model: FruitData;
 
@@ -16,7 +16,7 @@ export class RadioGroupSampleComponent {
         // Simulate getting data from external service
         this.model = {
             favFruit: this.fruits[0],
-            fullName: "John Doe"
+            fullName: 'John Doe'
         };
 
         this.createForm();
@@ -44,8 +44,8 @@ export class RadioGroupSampleComponent {
 
     private createForm() {
         this.fruitsForm = this._formBuilder.group({
-            favoriteFruit: ["", Validators.required],
-            fullName: ""
+            favoriteFruit: ['', Validators.required],
+            fullName: ''
         });
 
         this.fruitsForm.setValue({

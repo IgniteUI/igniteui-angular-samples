@@ -1,7 +1,11 @@
+@import '../../../../variables';
+
+$border-color: igx-color($color: grays, $variant: 300);
+
 .calendar-wrapper {
     max-width: 500px;
     min-width: 200px;
-    border: 1px solid var(--igx-secondary-400);
+    border: 1px solid $border-color;
     border-radius: 6px;
     margin: 8px;
 }

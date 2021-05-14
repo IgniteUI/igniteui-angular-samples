@@ -1,12 +1,12 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../variables';
 
 // :host {
 //   width: 100%;
 // }
 
 @mixin scrollbar($scrollbar-width, $scrollbar-height) {
-    $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
-    $scrollbar-thumb: hexrgba(igx-color($default-palette, 'grays', 400));
+    $scrollbar-track: hexrgba(igx-color($color: 'grays', $variant: 200));
+    $scrollbar-thumb: hexrgba(igx-color($color: 'grays', $variant: 400));
 
     ::-webkit-scrollbar {
         width: $scrollbar-width;
@@ -26,8 +26,6 @@
 }
 
 :host ::ng-deep {
-    @include igx-fluent-light-theme($fluent-excel-palette);
-
     .grid-chart-contextmenu-wrapper {
         igx-grid {
             @include scrollbar(16px, 16px);
@@ -42,6 +40,7 @@
         align-self: center;
         margin-right: -2rem;
         margin-left: -2rem;
+        margin-top: -0.8rem;
 
         .action-buttons-wrapper {
             margin-left: auto;
@@ -58,10 +57,10 @@
 
     .analytics-btn {
         @include igx-button(igx-button-theme($palette: $fluent-excel-palette,
-                $icon-color: #fff,
-                $icon-background: #335e3b,
-                $icon-hover-background: #459a55,
-                $icon-border-radius: 0));
+                $foreground: #fff,
+                $background: #335e3b,
+                $hover-background: #459a55,
+                $border-radius: 0));
         z-index: 9;
         position: absolute;
     }
@@ -116,7 +115,8 @@
     .tabs-container {
         margin-left: -1.5rem;
         margin-right: -1.5rem;
-        margin-bottom: -1.4rem;
+        margin-bottom: -0.8rem;
+        margin-top: -1rem;
     }
 
     .create-chart {
@@ -128,7 +128,7 @@
         height: auto;
     }
 
-    igx-tabs-group {
+    igx-tab-content {
         @include scrollbar(10px, 10px);
     }
 
@@ -192,6 +192,17 @@
         font-size: .9rem;
         font-weight: 400;
         text-align: center;
+    }
+}
+::ng-deep {
+    .preview-wrapper {
+        .igx-data-chart {
+            height: 200px !important;
+        }
+    }
+
+    .igx-toggle{
+        margin-top: -0.8rem;
     }
 }
 

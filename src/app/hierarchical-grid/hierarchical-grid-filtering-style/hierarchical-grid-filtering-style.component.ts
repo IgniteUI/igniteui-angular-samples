@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component, OnInit } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-  selector: "app-hierarchical-grid-filtering-style",
-  styleUrls: ["./hierarchical-grid-filtering-style.component.scss"],
-  templateUrl: "./hierarchical-grid-filtering-style.component.html"
+  selector: 'app-hierarchical-grid-filtering-style',
+  styleUrls: ['./hierarchical-grid-filtering-style.component.scss'],
+  templateUrl: './hierarchical-grid-filtering-style.component.html'
 })
 export class HierarchicalGridFilteringStyleComponent implements OnInit {
     public localdata;

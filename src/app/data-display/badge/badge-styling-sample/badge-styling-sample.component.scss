@@ -1,4 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 .wrapper {
     display: flex;
@@ -22,7 +22,6 @@
 $custom-badge-theme: igx-badge-theme(
     $border-color: white,
     $border-width: 1px,
-    $shadow: 3px 2px 5px 0px rgba(0,0,0,0.4),
     $icon-color: white,
     $text-color: black
 );
@@ -39,4 +38,3 @@ $custom-badge-theme: igx-badge-theme(
 :host ::ng-deep {
     @include igx-badge($custom-badge-theme);
 }
-

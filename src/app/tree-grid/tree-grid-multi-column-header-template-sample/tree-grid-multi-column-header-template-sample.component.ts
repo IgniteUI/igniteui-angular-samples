@@ -1,11 +1,11 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxColumnGroupComponent, IgxTreeGridComponent } from "igniteui-angular";
-import { generateEmployeeDetailedFlatData } from "../data/employees-flat-detailed";
+import { Component, ViewChild } from '@angular/core';
+import { IgxColumnGroupComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
-  selector: "app-tree-grid-multi-column-header-template-sample",
-  styleUrls: ["./tree-grid-multi-column-header-template-sample.component.scss"],
-  templateUrl: "./tree-grid-multi-column-header-template-sample.component.html"
+  selector: 'app-tree-grid-multi-column-header-template-sample',
+  styleUrls: ['./tree-grid-multi-column-header-template-sample.component.scss'],
+  templateUrl: './tree-grid-multi-column-header-template-sample.component.html'
 })
 export class TreeGridMultiColumnHeaderTemplateSampleComponent {
 
@@ -13,7 +13,7 @@ export class TreeGridMultiColumnHeaderTemplateSampleComponent {
     public treeGrid: IgxTreeGridComponent;
     public data: any[] = generateEmployeeDetailedFlatData();
     public columnGroupStates = new Map<IgxColumnGroupComponent, boolean>();
-    public selectionMode =  "none";
+    public selectionMode =  'none';
     constructor() {
         for (const item of this.data) {
             item.Location = `${item.Address}, ${item.City}, ${item.Country}`;
@@ -23,10 +23,10 @@ export class TreeGridMultiColumnHeaderTemplateSampleComponent {
     public toggleColumnGroup(columnGroup: IgxColumnGroupComponent) {
         const columns = columnGroup.children.toArray();
 
-        if (columnGroup.header === "General Information") {
+        if (columnGroup.header === 'General Information') {
             const col = columns[1];
             col.hidden = !col.hidden;
-        } else if (columnGroup.header === "Address Information") {
+        } else if (columnGroup.header === 'Address Information') {
             for (const col of columns) {
                 col.hidden = !col.hidden;
             }

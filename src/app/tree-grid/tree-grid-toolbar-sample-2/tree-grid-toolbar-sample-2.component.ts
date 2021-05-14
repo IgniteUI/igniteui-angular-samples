@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 import {
     CsvFileTypes,
     IColumnExportingEventArgs,
@@ -6,13 +6,13 @@ import {
     IgxCsvExporterOptions,
     IgxExcelExporterOptions,
     IgxExporterOptionsBase
-} from "igniteui-angular";
-import { EMPLOYEE_FLAT_AVATARS_DATA } from "../data/employees-flat-avatars";
+} from 'igniteui-angular';
+import { EMPLOYEE_FLAT_AVATARS_DATA } from '../data/employees-flat-avatars';
 
 @Component({
-    selector: "tree-grid-toolbar-sample-2",
-    styleUrls: ["./tree-grid-toolbar-sample-2.component.scss"],
-    templateUrl: "./tree-grid-toolbar-sample-2.component.html"
+    selector: 'app-tree-grid-toolbar-sample-2',
+    styleUrls: ['./tree-grid-toolbar-sample-2.component.scss'],
+    templateUrl: './tree-grid-toolbar-sample-2.component.html'
 })
 export class TreeGridToolbarSample2Component {
 
@@ -25,7 +25,7 @@ export class TreeGridToolbarSample2Component {
     public configureExport(args: IGridToolbarExportEventArgs) {
         // You can customize the exporting from this event
         const options: IgxExporterOptionsBase = args.options;
-        options.fileName = "Custom Title";
+        options.fileName = 'Custom Title';
 
         if (options instanceof IgxExcelExporterOptions) {
             const excelOptions = options as IgxExcelExporterOptions;
@@ -33,12 +33,12 @@ export class TreeGridToolbarSample2Component {
         } else {
             const csvOptions = options as IgxCsvExporterOptions;
             csvOptions.fileType = CsvFileTypes.TSV;
-            csvOptions.valueDelimiter = "\t";
+            csvOptions.valueDelimiter = '\t';
         }
 
         args.exporter.columnExporting.subscribe((columnArgs: IColumnExportingEventArgs) => {
             // Don't export image field
-            columnArgs.cancel = columnArgs.header === "Name";
+            columnArgs.cancel = columnArgs.header === 'Name';
         });
     }
 }

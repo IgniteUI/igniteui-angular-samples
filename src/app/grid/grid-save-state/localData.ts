@@ -1,4 +1,4 @@
-// tslint:disable:object-literal-sort-keys
+/*eslint-disable*/
 const lastYear = new Date().getFullYear() - 1;
 export const employeesData = [
 {

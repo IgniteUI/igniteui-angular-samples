@@ -1,24 +1,23 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from "@angular/core";
-import { GridPagingMode, IgxGridComponent } from "igniteui-angular";
-import { Observable } from "rxjs";
-import { RemotePagingService } from "../services/remotePagingService";
+import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { GridPagingMode, IgxGridComponent } from 'igniteui-angular';
+import { Observable } from 'rxjs';
+import { RemotePagingService } from '../services/remotePagingService';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [RemotePagingService],
-    selector: "remote-paging-default-template",
-    styleUrls: ["./remote-paging-default-template.component.scss"],
-    templateUrl: "./remote-paging-default-template.component.html"
+    selector: 'app-remote-paging-default-template',
+    styleUrls: ['./remote-paging-default-template.component.scss'],
+    templateUrl: './remote-paging-default-template.component.html'
 })
 export class RemotePagingDefaultTemplateComponent implements OnInit, AfterViewInit, OnDestroy {
-
+    @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
+    @ViewChild('customPager', { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
     public totalCount = 0;
     public page = 0;
     public data: Observable<any[]>;
     public mode = GridPagingMode.Remote;
     public isLoading = true;
-    @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
-    @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
 
     private _dataLengthSubscriber;
     private _perPage = 10;
@@ -39,7 +38,7 @@ export class RemotePagingDefaultTemplateComponent implements OnInit, AfterViewIn
         this.data = this.remoteService.remoteData.asObservable();
         this.data.subscribe(() => {
             this.isLoading = false;
-        })
+        });
         this._dataLengthSubscriber = this.remoteService.getDataLength().subscribe((data) => {
             this.totalCount = data;
         });

@@ -7,7 +7,7 @@
  *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
  *      file.
  *
- * The current setup is for so-called "evergreen" browsers; the last versions of browsers that
+ * The current setup is for so-called 'evergreen' browsers; the last versions of browsers that
  * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
  * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
  *
@@ -18,31 +18,31 @@
 * BROWSER POLYFILLS
 */
 
-import "core-js/es7/object";
+import 'core-js/es7/object';
 
 import 'core-js/es7/array'; // for Array.includes()
 
 /** IE10 and IE11 requires the following for NgClass support on SVG elements */
-import "classlist.js";  // Run `npm install --save classlist.js`.
+import 'classlist.js';  // Run `npm install --save classlist.js`.
 
 /** IE10 and IE11 requires the following for the Reflect API. */
-import "core-js/es6/reflect";
+import 'core-js/es6/reflect';
 
 /* Evergreen browsers require these. */
 // Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
-import "core-js/es7/reflect";
+import 'core-js/es7/reflect';
 
 /*
  * Required to support Web Animations `@angular/platform-browser/animations`.
  * Needed for: All but Chrome, Firefox and Opera. http://caniuse.com/#feat=web-animation
  */
-import "web-animations-js";  // Run `npm install --save web-animations-js`.
+import 'web-animations-js';  // Run `npm install --save web-animations-js`.
 
 /***************************************************************************************************
  * Zone JS is required by Angular itself.
  */
-import "hammerjs/hammer";
-import "zone.js/dist/zone";  // Included with Angular CLI.
+import 'hammerjs/hammer';
+import 'zone.js';  // Included with Angular CLI.
 
 /***************************************************************************************************
  * @angular/animations polyfill
@@ -59,9 +59,9 @@ if (!Element.prototype.matches) {
  * Date, currency, decimal and percent pipes.
  * Needed for: All but Chrome, Firefox, Edge, IE11 and Safari 10
  */
-// import "intl";  // Run `npm install --save intl`.
-// import "intl/locale-data/jsonp/de";
+// import 'intl';  // Run `npm install --save intl`.
+// import 'intl/locale-data/jsonp/de';
 /**
  * Need to import at least one locale-data with intl.
  */
-// import "intl/locale-data/jsonp/en";
+// import 'intl/locale-data/jsonp/en';

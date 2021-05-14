@@ -1,11 +1,11 @@
-import { Component } from "@angular/core";
-import { IgxColumnComponent } from "igniteui-angular";
-import { DATA } from "../../data/customers";
+import { Component } from '@angular/core';
+import { IgxColumnComponent } from 'igniteui-angular';
+import { DATA } from '../../data/customers';
 
 @Component({
-    selector: "grid-resizing-sample",
-    styleUrls: ["./grid-resizing-sample.component.scss"],
-    templateUrl: "grid-resizing-sample.component.html"
+    selector: 'app-grid-resizing-sample',
+    styleUrls: ['./grid-resizing-sample.component.scss'],
+    templateUrl: 'grid-resizing-sample.component.html'
 })
 
 export class ResizingSampleComponent {

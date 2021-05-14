@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { NavigationEnd, Router } from "@angular/router";
-import { filter } from "rxjs/operators";
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
-    selector: "app-tabs-sample-4",
-    styleUrls: ["./tabs-sample-4.component.scss"],
-    templateUrl: "./tabs-sample-4.component.html"
+    selector: 'app-tabs-sample-4',
+    styleUrls: ['./tabs-sample-4.component.scss'],
+    templateUrl: './tabs-sample-4.component.html'
 })
 export class TabsSample4Component implements OnInit {
     public path: string;
@@ -17,6 +17,6 @@ export class TabsSample4Component implements OnInit {
 
         this.router.events.pipe(
             filter(e => e instanceof NavigationEnd)
-        ).subscribe(args => this.path = args["url"]);
+        ).subscribe(args => this.path = args['url']);
     }
 }

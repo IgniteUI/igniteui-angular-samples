@@ -1,4 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 $yellow-color: #F4D45C;
 $black-color: #292826;
@@ -21,7 +21,7 @@ $dark-tabs: igx-tabs-theme(
 );
 
 :host {
-    igx-tabs-group {
+    igx-tab-content {
         padding: 8px;
     }
 

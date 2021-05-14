@@ -1,6 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
-
-.slide-wrapper{
+.slide-wrapper {
     max-height: 600px;
     display: flex;
     align-items: center;
@@ -13,14 +11,14 @@
     }
 }
 
-.carousel-wrapper{
+.carousel-wrapper {
     max-height: 600px;
     height: 100%;
     width: 90%;
     margin: 20px auto;
 }
 
-.action-wrapper{
+.action-wrapper {
     height: 40px;
     width: 70%;
     display: flex;
@@ -29,13 +27,13 @@
     margin-left: 1rem;
 }
 
-.carousel-animation-wrapper{
+.carousel-animation-wrapper {
     height: 700px;
     margin: 16px auto;
     display: flex;
-    flex-flow:column;
+    flex-flow: column;
 }
 
-.igx-card{
+.igx-card {
     box-shadow: none;
 }

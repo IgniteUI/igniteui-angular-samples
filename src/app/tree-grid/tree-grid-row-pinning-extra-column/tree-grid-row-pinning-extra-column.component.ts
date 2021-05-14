@@ -1,28 +1,28 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import {
     ColumnPinningPosition,
     IgxIconService,
     IgxTreeGridComponent,
-    IgxTreeGridRowComponent,
     IPinningConfig,
-    RowPinningPosition
-} from "igniteui-angular";
-import { icons } from "../../grid/services/svgIcons";
-import { generateEmployeeFlatData, IEmployee } from "../data/employees-flat";
+    RowPinningPosition,
+    RowType
+} from 'igniteui-angular';
+import { icons } from '../../grid/services/svgIcons';
+import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
-const FILTERING_ICONS_FONT_SET = "filtering-icons";
+const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 
 @Component({
-    selector: "tree-grid-row-pinning-extra-column",
-    styleUrls: ["tree-grid-row-pinning-extra-column.component.scss"],
-    templateUrl: "tree-grid-row-pinning-extra-column.component.html"
+    selector: 'app-tree-grid-row-pinning-extra-column',
+    styleUrls: ['tree-grid-row-pinning-extra-column.component.scss'],
+    templateUrl: 'tree-grid-row-pinning-extra-column.component.html'
 })
-export class TreeGridRowPinningExtraColumnSampleComponent implements OnInit {
+export class TreeGridRowPinningExtraColumnSampleComponent implements OnInit, AfterViewInit {
 
+    @ViewChild('treeGrid', { static: true }) public treeGrid1: IgxTreeGridComponent;
     public data: IEmployee[];
     public columns: any[];
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top, columns: ColumnPinningPosition.End };
-    @ViewChild("treeGrid", { static: true }) public treeGrid1: IgxTreeGridComponent;
 
     constructor(private iconService: IgxIconService) { }
 
@@ -30,15 +30,15 @@ export class TreeGridRowPinningExtraColumnSampleComponent implements OnInit {
         this.data = generateEmployeeFlatData();
 
         this.columns = [
-            { field: "Name", label: "Full Name", dataType: "string" },
-            { field: "Age", label: "Age", dataType: "number" },
-            { field: "Title", label: "Title", dataType: "string" },
-            { field: "HireDate", label: "Hire Date", dataType: "date" }
+            { field: 'Name', label: 'Full Name', dataType: 'string' },
+            { field: 'Age', label: 'Age', dataType: 'number' },
+            { field: 'Title', label: 'Title', dataType: 'string' },
+            { field: 'HireDate', label: 'Hire Date', dataType: 'date' }
         ];
     }
 
     public ngAfterViewInit() {
-        const pinnedIcons = icons.filter(icon => icon.name === "pin" || icon.name === "unpin");
+        const pinnedIcons = icons.filter(icon => icon.name === 'pin' || icon.name === 'unpin');
         pinnedIcons.forEach(icon => {
             if (!this.iconService.isSvgIconCached(icon.name, FILTERING_ICONS_FONT_SET)) {
                 this.iconService.addSvgIconFromText(icon.name, icon.value, FILTERING_ICONS_FONT_SET);
@@ -46,7 +46,7 @@ export class TreeGridRowPinningExtraColumnSampleComponent implements OnInit {
         });
     }
 
-    public togglePinning(row: IgxTreeGridRowComponent, event) {
+    public togglePinning(row: RowType, event) {
         event.preventDefault();
         if (row.pinned) {
             row.unpin();

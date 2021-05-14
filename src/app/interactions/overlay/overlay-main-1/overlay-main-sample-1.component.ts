@@ -1,29 +1,15 @@
-import { Component, Inject, OnDestroy } from "@angular/core";
-import { IgxOverlayService } from "igniteui-angular";
-import { Subject } from "rxjs";
-import { filter, takeUntil } from "rxjs/operators";
-import { MyDynamicCardComponent} from "../overlay-dynamic-card/overlay-dynamic-card.component";
+import { Component, Inject, OnDestroy } from '@angular/core';
+import { IgxOverlayService } from 'igniteui-angular';
+import { MyDynamicCardComponent} from '../overlay-dynamic-card/overlay-dynamic-card.component';
 @Component({
-    selector: "overlay-sample",
+    selector: 'app-overlay-sample',
     templateUrl: `./overlay-main-sample-1.component.html`,
     styleUrls: [`./overlay-main-sample-1.component.scss`]
 })
 export class OverlaySampleMain1Component implements OnDestroy {
-    private destroy$ = new Subject<boolean>();
     private _overlayId: string;
 
-    constructor(
-        @Inject(IgxOverlayService) public overlayService: IgxOverlayService
-    ) {
-        //  overlay service deletes the id when onClosed is called. We should clear our id
-        //  also in same event
-        this.overlayService
-            .onClosed
-            .pipe(
-                filter((x) => x.id === this._overlayId),
-                takeUntil(this.destroy$))
-            .subscribe(() => delete this._overlayId);
-    }
+    constructor(@Inject(IgxOverlayService) public overlayService: IgxOverlayService) {}
 
     public showOverlay() {
         if (!this._overlayId) {
@@ -33,8 +19,10 @@ export class OverlaySampleMain1Component implements OnDestroy {
         this.overlayService.show(this._overlayId);
     }
 
-    public ngOnDestroy() {
-        this.destroy$.next(true);
-        this.destroy$.complete();
+    public ngOnDestroy(): void {
+        if (this._overlayId) {
+            this.overlayService.detach(this._overlayId);
+            delete this._overlayId;
+        }
     }
 }

@@ -17,8 +17,8 @@ export class GridExportVisualizationComponent {
     }
 
     public formatDate(val) {
-        if (val !== "Select All") {
-            return new Intl.DateTimeFormat("en-US").format(val);
+        if (val !== 'Select All') {
+            return new Intl.DateTimeFormat('en-US').format(val);
         } else {
             return val;
         }

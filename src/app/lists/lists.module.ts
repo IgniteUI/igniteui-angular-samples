@@ -1,7 +1,7 @@
-import { CommonModule } from "@angular/common";
-import { HttpClientModule } from "@angular/common/http";
-import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import {
     IgxAvatarModule,
     IgxButtonGroupModule,
@@ -16,29 +16,33 @@ import {
     IgxSelectModule,
     IgxSliderModule,
     IgxSwitchModule,
-    IgxToastModule
-} from "igniteui-angular";
-import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
-import { ComboBindingComponent } from "./combo/combo-binding/combo-binding.component";
-import { ComboFeatures } from "./combo/combo-features/combo-features.component";
-import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
-import { ComboOverlayComponent } from "./combo/combo-overlay/combo-overlay.component";
-import { ComboRemoteComponent } from "./combo/combo-remote/combo-remote.component";
-import { ComboSingleSelectionComponent } from "./combo/combo-single-selection/combo-single-selection.component";
-import { ComboStyling } from "./combo/combo-styling/combo-styling.component";
-import { ComboValueKeyComponent } from "./combo/combo-valuekey/combo-valuekey.component";
-import { ComboTemplateComponent } from "./combo/combo-template/combo-template.component";
-import { ListChatSampleComponent } from "./list/list-chat-sample/list-chat-sample.component";
-import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
-import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
-import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
-import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
-import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
-import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
-import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
-import { ListSample8Component } from "./list/list-sample-8/list-sample-8.component";
-import { ListComponent } from "./list/list.component";
-import { ListsRoutingModule } from "./lists-routing.module";
+    IgxToastModule,
+    IgxTooltipModule,
+    IgxTreeModule
+} from 'igniteui-angular';
+import { CascadingCombosComponent } from './combo/cascading-combos/cascading-combos.component';
+import { ComboBindingComponent } from './combo/combo-binding/combo-binding.component';
+import { ComboFeaturesComponent } from './combo/combo-features/combo-features.component';
+import { ComboMainComponent } from './combo/combo-main/combo-main.component';
+import { ComboOverlayComponent } from './combo/combo-overlay/combo-overlay.component';
+import { ComboRemoteComponent } from './combo/combo-remote/combo-remote.component';
+import { ComboSingleSelectionComponent } from './combo/combo-single-selection/combo-single-selection.component';
+import { ComboStylingComponent } from './combo/combo-styling/combo-styling.component';
+import { ComboValueKeyComponent } from './combo/combo-valuekey/combo-valuekey.component';
+import { ComboTemplateComponent } from './combo/combo-template/combo-template.component';
+import { ListChatSampleComponent } from './list/list-chat-sample/list-chat-sample.component';
+import { ListSample1Component } from './list/list-sample-1/list-sample-1.component';
+import { ListSample2Component } from './list/list-sample-2/list-sample-2.component';
+import { ListSample3Component } from './list/list-sample-3/list-sample-3.component';
+import { ListSample4Component } from './list/list-sample-4/list-sample-4.component';
+import { ListSample5Component } from './list/list-sample-5/list-sample-5.component';
+import { ListSample6Component } from './list/list-sample-6/list-sample-6.component';
+import { ListSample7Component } from './list/list-sample-7/list-sample-7.component';
+import { ListSample8Component } from './list/list-sample-8/list-sample-8.component';
+import { ListComponent } from './list/list.component';
+import { ListsRoutingModule } from './lists-routing.module';
+import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sample.component';
+import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-advanced-sample.component';
 
 @NgModule({
     declarations: [
@@ -52,16 +56,18 @@ import { ListsRoutingModule } from "./lists-routing.module";
         ListSample7Component,
         ListSample8Component,
         ListChatSampleComponent,
-        CascadingCombos,
-        ComboFeatures,
-        ComboStyling,
+        CascadingCombosComponent,
+        ComboFeaturesComponent,
+        ComboStylingComponent,
         ComboValueKeyComponent,
         ComboMainComponent,
         ComboRemoteComponent,
         ComboTemplateComponent,
         ComboOverlayComponent,
         ComboBindingComponent,
-        ComboSingleSelectionComponent
+        ComboSingleSelectionComponent,
+        TreeBasicSampleComponent,
+        TreeAdvancedSampleComponent
     ],
     imports: [
         CommonModule,
@@ -81,7 +87,9 @@ import { ListsRoutingModule } from "./lists-routing.module";
         IgxButtonGroupModule,
         HttpClientModule,
         IgxRippleModule,
-        IgxCardModule
+        IgxCardModule,
+        IgxTreeModule,
+        IgxTooltipModule
     ]
 })
 export class ListsModule { }

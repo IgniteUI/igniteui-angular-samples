@@ -7,19 +7,19 @@ import { RemotePagingService } from './remotePagingService';
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [RemotePagingService],
-    selector: "tree-grid-remote-paging-default-template",
-    styleUrls: ["./tree-grid-remote-paging-default-template.component.scss"],
-    templateUrl: "./tree-grid-remote-paging-default-template.component.html"
+    selector: 'app-tree-grid-remote-paging-default-template',
+    styleUrls: ['./tree-grid-remote-paging-default-template.component.scss'],
+    templateUrl: './tree-grid-remote-paging-default-template.component.html'
 })
 export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, AfterViewInit, OnDestroy {
+
+    @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
 
     public totalCount = 0;
     public page = 0;
     public data: Observable<any[]>;
     public mode = GridPagingMode.Remote;
     public isLoading = true;
-
-    @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
 
     private _dataLengthSubscriber;
     private _perPage = 10;
@@ -66,6 +66,6 @@ export class TreeGridRemotePagingDefaultTemplateComponent implements OnInit, Aft
     }
 
     public formatSize(value: number) {
-        return formatNumber(value, "en") + " KB";
+        return formatNumber(value, 'en') + ' KB';
     }
 }

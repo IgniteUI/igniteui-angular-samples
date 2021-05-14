@@ -1,8 +1,8 @@
 <div class="wrapper">
     <div class="grid__wrapper" (window:click)="disableContextMenu()">
         <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
-            (onContextMenu)="rightClick($event)" (onRangeSelection)="getCells($event)"
-            (onSelection)="cellSelection($event)">
+            (contextMenu)="rightClick($event)" (rangeSelected)="getCells($event)"
+            (selected)="cellSelection($event)">
             <igx-column field="ProductID" header="Product ID" [headerClasses]="'prodId'">
             </igx-column>
             <igx-column field="ProductName" header="Product Name" [dataType]="'string'" sortable="true">
@@ -18,8 +18,8 @@
             </igx-column>
         </igx-grid>
         <div *ngIf="contextmenu==true">
-            <contextmenu [x]="contextmenuX" [y]="contextmenuY" [cell]="clickedCell" [selectedCells]="multiCellArgs" (onCellValueCopy)="copy($event)">
-            </contextmenu>
+            <app-contextmenu [x]="contextmenuX" [y]="contextmenuY" [cell]="clickedCell" [selectedCells]="multiCellArgs" (cellValueCopy)="copy($event)">
+            </app-contextmenu>
         </div>
     </div>
     <div class="selected-data-area">

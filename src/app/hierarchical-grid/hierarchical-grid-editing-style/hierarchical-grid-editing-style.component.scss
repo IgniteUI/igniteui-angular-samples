@@ -1,5 +1,4 @@
-// custom-grid-paging-style.component.scss
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../variables';
 
 $white: #fff;
 $blue: #4567bb;
@@ -14,7 +13,7 @@ $grid-theme: igx-grid-theme(
 );
 
 $input-theme: igx-input-group-theme(
-    $palette: igx-palette,
+    $palette: $color-palette,
     $filled-text-color: $white,
     $focused-text-color: $white,
     $idle-text-color: $white,

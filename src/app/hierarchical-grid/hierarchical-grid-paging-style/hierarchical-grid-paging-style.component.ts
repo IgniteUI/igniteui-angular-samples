@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
-import { SINGERS } from "../data";
+import { Component } from '@angular/core';
+import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-paging",
-    styleUrls: ["./hierarchical-grid-paging-style.component.scss"],
-    templateUrl: "hierarchical-grid-paging-style.component.html"
+    selector: 'app-hierarchical-grid-paging',
+    styleUrls: ['./hierarchical-grid-paging-style.component.scss'],
+    templateUrl: 'hierarchical-grid-paging-style.component.html'
 })
 
 export class HGridPagingStyleSampleComponent {

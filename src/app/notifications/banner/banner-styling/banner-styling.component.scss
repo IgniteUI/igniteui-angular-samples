@@ -1,4 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@import '../../../../variables';
 
 $custom-banner-theme: igx-banner-theme(
     $banner-message-color: #151515,
@@ -18,4 +18,3 @@ $custom-banner-theme: igx-banner-theme(
 :host ::ng-deep {
     @include igx-banner($custom-banner-theme);
 }
-
