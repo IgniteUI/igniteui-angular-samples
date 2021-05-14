@@ -46,7 +46,8 @@ export class DVGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/grid/services/data.ts",
+                "/projects/app-lob/src/_app-layout.scss", "/projects/app-lob/src/_variables.scss"],
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'HttpClientModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule',
@@ -63,7 +64,8 @@ export class DVGridConfigGenerator implements IConfigGenerator {
         // master-detail sample
         configs.push(new Config({
             component: 'GridMasterDetailSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/services/athletesData.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/services/athletesData.ts",
+                "/projects/app-lob/src/_app-layout.scss", "/projects/app-lob/src/_variables.scss"],
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'GridMasterDetailSampleComponent', 'IgxGridModule', 'IgxCategoryChartModule',
@@ -82,12 +84,13 @@ export class DVGridConfigGenerator implements IConfigGenerator {
             additionalDependencies: ["@microsoft/signalr"],
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/grid-finjs/localData.service.ts",
                 "/projects/app-lob/src/app/services/signal-r.service.ts",
-                "/projects/app-lob/src/app/services/financialData.ts","/projects/app-lob/src/app/grid-finjs/controllers.component.ts",
+                "/projects/app-lob/src/app/services/financialData.ts", "/projects/app-lob/src/app/grid-finjs/controllers.component.ts",
                 "/projects/app-lob/src/app/grid-finjs/grid-finjs.component.ts",
                 "/projects/app-lob/src/app/grid-finjs/controllers.component.html",
                 "/projects/app-lob/src/app/grid-finjs/grid-finjs.component.html",
                 "/projects/app-lob/src/app/grid-finjs/controllers.component.scss",
-                "/projects/app-lob/src/app/grid-finjs/grid-finjs.component.scss"
+                "/projects/app-lob/src/app/grid-finjs/grid-finjs.component.scss",
+                "/projects/app-lob/src/_app-layout.scss", "/projects/app-lob/src/_variables.scss"
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxCategoryChartModule',
@@ -109,7 +112,8 @@ export class DVGridConfigGenerator implements IConfigGenerator {
                 "/projects/app-lob/src/app/services/signal-r.service.ts",
                 "/projects/app-lob/src/app/services/financialData.ts",
                 "/projects/app-lob/src/app/services/floating-panes.service.ts",
-                "/projects/app-lob/src/app/grid-finjs-dock-manager/dock-slot.component.ts"
+                "/projects/app-lob/src/app/grid-finjs-dock-manager/dock-slot.component.ts",
+                "/projects/app-lob/src/_app-layout.scss", "/projects/app-lob/src/_variables.scss"
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxCategoryChartModule',

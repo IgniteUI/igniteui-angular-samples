@@ -27,7 +27,8 @@ export class DVTreeGridConfigGenerator implements IConfigGenerator {
 
                 // TreeGrid ChildDataKey Sample
         configs.push(new Config({
-                    additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
+                    additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts",
+                        "/projects/app-lob/src/_app-layout.scss", "/projects/app-lob/src/_variables.scss"],
                     additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
                     appModuleConfig: new AppModuleConfig({
                         imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridChilddatakeySampleComponent', 'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxSparklineCoreModule', 'IgxSparklineModule'],
@@ -41,7 +42,8 @@ export class DVTreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Primary/Foreign Key Sample
         configs.push(new Config({
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/tree-grid/tree-grid-primaryforeignkey-sample/data.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/tree-grid/tree-grid-primaryforeignkey-sample/data.ts",
+                "/projects/app-lob/src/_app-layout.scss", "/projects/app-lob/src/_variables.scss"],
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridPrimaryforeignkeySampleComponent', 'IgxSparklineCoreModule', 'IgxSparklineModule'],
@@ -57,7 +59,8 @@ export class DVTreeGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/projects/app-lob/src/app/grid-finjs/localData.service.ts",
                 "/projects/app-lob/src/app/services/financialData.ts", "/projects/app-lob/src/app/services/signal-r.service.ts",
                 "/projects/app-lob/src/app/treegrid-finjs/tree-grid-grouping.pipe.ts", "/projects/app-lob/src/app/treegrid-finjs/tree-grid-group-area.component.ts",
-                "/projects/app-lob/src/app/treegrid-finjs/tree-grid-group-area.component.html", "/projects/app-lob/src/app/treegrid-finjs/tree-grid-group-area.component.scss"],
+                "/projects/app-lob/src/app/treegrid-finjs/tree-grid-group-area.component.html", "/projects/app-lob/src/app/treegrid-finjs/tree-grid-group-area.component.scss",
+                "/projects/app-lob/src/_app-layout.scss", "/projects/app-lob/src/_variables.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxExcelExporterService', 'IgxSwitchModule', 'IgxRippleModule', 'TreeGridFinJSComponent',
