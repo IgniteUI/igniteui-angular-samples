@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
-    DataType,
+    GridColumnDataType,
     IgxColumnComponent,
     IgxDateFilteringOperand,
     IgxHierarchicalGridComponent,
@@ -55,7 +55,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
 
         let operand = null;
         switch (column.dataType) {
-            case DataType.Number:
+            case GridColumnDataType.Number:
                 operand = IgxNumberFilteringOperand.instance().condition('equals');
                 break;
             default:
@@ -88,7 +88,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
     }
 
     private transformValue(value: any, column: IgxColumnComponent): any {
-        if (column.dataType === DataType.Number) {
+        if (column.dataType === GridColumnDataType.Number) {
             value = parseFloat(value);
         }
 

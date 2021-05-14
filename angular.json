@@ -11,8 +11,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
-            "sourceMap": false,
             "outputPath": "dist/app",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -25,7 +23,12 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -37,9 +40,7 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -68,9 +69,7 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -154,7 +153,6 @@
             "main": "projects/app-lob/src/main.ts",
             "polyfills": "projects/app-lob/src/polyfills.ts",
             "tsConfig": "projects/app-lob/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/app-lob/src/favicon.ico",
               "projects/app-lob/src/assets"
@@ -162,7 +160,13 @@
             "styles": [
               "projects/app-lob/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -176,7 +180,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -283,7 +286,6 @@
             "main": "projects/app-crm/src/main.ts",
             "polyfills": "projects/app-crm/src/polyfills.ts",
             "tsConfig": "projects/app-crm/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/app-crm/src/favicon.ico",
               "projects/app-crm/src/assets"
@@ -291,7 +293,13 @@
             "styles": [
               "projects/app-crm/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -305,7 +313,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
