@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class SnackbarSample2Component {
   public close(element) {
-    element.hide();
+    element.close();
   }
 }

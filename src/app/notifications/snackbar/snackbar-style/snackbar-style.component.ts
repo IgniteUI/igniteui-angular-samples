@@ -13,6 +13,6 @@ export class SnackbarStyleComponent implements OnInit {
   }
 
   public close(element) {
-    element.hide();
+    element.close();
   }
 }
