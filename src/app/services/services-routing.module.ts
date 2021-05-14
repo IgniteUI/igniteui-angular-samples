@@ -68,8 +68,8 @@ export const servicesRoutes: Routes = [
     },
     {
         component: LocalizationAllResourcesComponent,
-        data: servicesRoutesData["localization-all-resources"],
-        path: "localization-all-resources"
+        data: servicesRoutesData['localization-all-resources'],
+        path: 'localization-all-resources'
     },
     {
         component: TransactionBaseComponent,
