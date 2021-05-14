@@ -1,6 +1,15 @@
 @import './variables';
 @import './app-layout';
 
+.dark-theme {
+    background: #333;
+    color: #fff;
+
+    @include scrollbar-love(lighten($grays-btn-color, 20%));
+    @include igx-dark-theme($default-palette);
+}
+
+
 /* autoprefixer grid: on */
 html,
 body {

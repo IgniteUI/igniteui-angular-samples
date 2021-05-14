@@ -14,6 +14,8 @@ export class HGridColumnSelectionStylesComponent implements OnInit, AfterViewIni
 
     constructor(private cdr: ChangeDetectorRef){}
 
+    constructor(private cdr: ChangeDetectorRef){}
+
     public formatter = (a) => a;
 
     public ngOnInit() {
