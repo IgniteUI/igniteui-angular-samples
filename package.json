@@ -110,7 +110,6 @@
     "eslint-plugin-jsdoc": "30.7.6",
     "eslint-plugin-prefer-arrow": "1.2.2",
     "event-stream": "^4.0.1",
-    "fibers": "^5.0.0",
     "fs-extra": "^8.1.0",
     "gulp": "^4.0.2",
     "jasmine-core": "~3.5.0",
@@ -122,7 +121,7 @@
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "^1.6.0",
     "protractor": "~7.0.0",
-    "sass": "^1.32.13",
+    "sass-embedded": "^1.0.0-beta.1",
     "sass.js": "0.11.1",
     "ts-node": "^8.8.1",
     "typescript": "4.2.4"
