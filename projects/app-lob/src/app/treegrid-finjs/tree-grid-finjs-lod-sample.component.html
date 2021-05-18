@@ -1,10 +1,18 @@
-<div class="grid__wrapper" [class.fin-dark-theme]="theme">
+<div class="grid__wrapper">
     <igx-tree-grid #grid1 igxPreventDocumentScroll
-        [data]="data$ | async | treeGridGrouping:groupColumns:aggregations:groupColumnKey:primaryKey:childDataKey"
-        [height]="'calc(100% - 76px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
-        [primaryKey]="primaryKey" [childDataKey]="childDataKey" hiddenColumnsText="Hidden" [isLoading]="isLoading"
-        [rowSelection]="selectionMode" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
-        <igx-grid-toolbar *ngIf="showToolbar">
+        [data]="data"
+        [loadChildrenOnDemand]="loadChildren"
+        [height]="'calc(100% - 76px)'"
+        width="100%"
+        [autoGenerate]='false'
+        displayDensity='compact'
+        [primaryKey]="primaryKey"
+        [childDataKey]="childDataKey"
+        hiddenColumnsText="Hidden"
+        [rowSelection]="selectionMode"
+        [allowFiltering]="true"
+        [filterMode]="'excelStyleFilter'">
+        <igx-grid-toolbar>
             <igx-grid-toolbar-title class="grid-toolbar-title">
                 <app-igx-tree-grid-group-area
                     [grid]='grid1'
@@ -25,23 +33,18 @@
         </igx-column>
         <igx-column [field]="'type'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
         </igx-column>
-        <igx-column [field]="'contract'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
+        <!-- <igx-column [field]="'contract'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
         </igx-column>
         <igx-column [field]="'settlement'" [width]="'100px'" [sortable]='true'></igx-column>
         <igx-column [field]="'country'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
         </igx-column>
         <igx-column [field]="'region'" [width]="'110px'" [groupable]='true' [sortable]='true' [editable]='true'>
-            <ng-template igxCellEditor let-cell="cell" let-value>
-                <igx-select [overlaySettings]="overlaySettings" [placeholder]="value" [(ngModel)]="cell.editValue" [igxFocus]="true">
-                    <igx-select-item *ngFor="let r of regions" [value]="r.Region">{{ r.region }}</igx-select-item>
-                </igx-select>
-            </ng-template>
         </igx-column>
         <igx-column [field]="'lastUpdated'" [width]="'120px'" [editable]='true' header="Last Update" dataType="date">
             <ng-template igxCell let-cell="cell">
                 {{ cell.value | date }}
             </ng-template>
-        </igx-column>
+        </igx-column> -->
         <igx-column [field]="'openPrice'" [width]="'120px'" dataType="number" [formatter]="formatCurrency"
             [movable]="true" [sortable]="true"></igx-column>
         <igx-column [field]="'price'" [width]="'130px'" dataType="number" [cellClasses]="trends" [movable]="true"
@@ -82,7 +85,4 @@
         <igx-column [field]="'startY'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
             [movable]="true" [sortable]="true"></igx-column>
     </igx-tree-grid>
-</div>
-
-<div igxOverlayOutlet #outlet="overlay-outlet">
 </div>
