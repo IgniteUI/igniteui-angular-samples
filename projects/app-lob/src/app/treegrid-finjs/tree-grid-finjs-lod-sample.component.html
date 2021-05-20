@@ -8,6 +8,7 @@
         displayDensity='compact'
         [primaryKey]="primaryKey"
         [childDataKey]="childDataKey"
+        [hasChildrenKey]="hasChildrenKey"
         hiddenColumnsText="Hidden"
         [rowSelection]="selectionMode"
         [allowFiltering]="true"
@@ -17,7 +18,8 @@
                 <app-igx-tree-grid-group-area
                     [grid]='grid1'
                     [(groupColumns)]='groupColumns'
-                    [groupColumnKey]='groupColumnKey'>
+                    [groupColumnKey]='groupColumnKey'
+                    (groupColumnsChange)="onGroupColumnsChange($event)">
                 </app-igx-tree-grid-group-area>
             </igx-grid-toolbar-title>
 

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnInit, ViewChild } from '@angular/core';
 import { IgxOverlayOutletDirective, IgxTreeGridComponent } from 'igniteui-angular';
 import { TreeGridGroupingLoadOnDemandService, TreeGridGroupingParameters } from './remoteService';
 import { ITreeGridAggregation } from './tree-grid-grouping.pipe';
@@ -31,6 +31,7 @@ export class TreeGridFinJSLoadOnDemandComponent implements AfterViewInit, OnInit
     ];
     public primaryKey = 'id';
     public childDataKey = 'children';
+    public hasChildrenKey = 'children';
     public groupColumnKey = 'categories';
 
     public data = [];
@@ -39,12 +40,7 @@ export class TreeGridFinJSLoadOnDemandComponent implements AfterViewInit, OnInit
     constructor() { }
 
     public ngOnInit() {
-        this.grid1.isLoading = true;
-        const groupingParameters = this.assembleGroupingParameters();
-        this.dataService.getData(null, groupingParameters, (children) => {
-            this.data = children;
-            this.grid1.isLoading = false;
-        });
+        this.reloadData();
         // this.grid1.sortingExpressions = [{ fieldName: this.groupColumnKey, dir: SortingDirection.Desc }];
     }
 
@@ -73,6 +69,19 @@ export class TreeGridFinJSLoadOnDemandComponent implements AfterViewInit, OnInit
 
     public formatCurrency(value: number) {
         return value ? '$' + value.toFixed(3) : '';
+    }
+
+    public onGroupColumnsChange(event: EventEmitter<string[]>) {
+        this.reloadData();
+    }
+
+    private reloadData() {
+        this.grid1.isLoading = true;
+        const groupingParameters = this.assembleGroupingParameters();
+        this.dataService.getData(null, groupingParameters, (children) => {
+            this.data = children;
+            this.grid1.isLoading = false;
+        });
     }
 
     private negative = (rowData: any): boolean => rowData['changeP'] < 0;

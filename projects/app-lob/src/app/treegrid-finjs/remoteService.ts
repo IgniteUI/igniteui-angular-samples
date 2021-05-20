@@ -832,18 +832,19 @@ export const DATA: any[] = [
 
 export class TreeGridGroupingLoadOnDemandService {
     private parentID;
+    private children: any[];
 
     public getData(parentID: any, groupParameters: TreeGridGroupingParameters, done: (children: any[]) => void) {
         setTimeout(() => {
             this.parentID = parentID;
+            this.children = [];
             let groupedData = this.transform(DATA, groupParameters);
-            if (parentID) {
-                groupedData = groupedData.filter((r) => r.id === parentID)[0]?.children;
-            }
 
-            console.log(parentID);
-            console.log(groupedData);
-            done(groupedData);
+            if (this.children.length > 0) {
+                done(this.children);
+            } else {
+                done(groupedData);
+            }
         }, 1000);
     }
 
@@ -880,20 +881,29 @@ export class TreeGridGroupingLoadOnDemandService {
 
             parent[primaryKey] = (parentID ? `${parentID}-` : '') + groupRecord.key;
             parent[childDataKey] = [];
+            parent['ParentID'] = parentID;
+
+            children.forEach((c) => c.ParentID = parent[primaryKey]);
 
             for (const aggregation of aggregations) {
                 parent[aggregation.field] = aggregation.aggregate(parent, children);
             }
 
             parent[groupKey] = groupRecord.key + ` (${groupRecord.records.length})`;
+            parent['hasChildren'] = true;
             data.push(parent);
 
-            if (this.parentID && parent[primaryKey] === this.parentID) {
+            if (this.parentID) {
                 if (groupRecord.groups) {
                     this.flattenGrouping(groupRecord.groups, groupKey, primaryKey, childDataKey,
                         aggregations, parent[primaryKey], parent[childDataKey]);
-                } else {
-                    parent[childDataKey] = children;
+                } else if (parent[primaryKey].startsWith(this.parentID)) {
+                    if (parent[primaryKey] === this.parentID) {
+                        children.forEach((c) => c.hasChildren = false);
+                        this.children = children;
+                    } else {
+                        this.children.push(parent);
+                    }
                 }
             }
         }
