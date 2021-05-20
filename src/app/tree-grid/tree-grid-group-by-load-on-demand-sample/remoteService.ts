@@ -4,14 +4,8 @@ class GroupByRecord {
     public records: any[];
 }
 
-export class ITreeGridAggregation {
-    public field: string;
-    public aggregate: (parent: any, children: any[]) => any;
-}
-
 export class TreeGridGroupingParameters {
     groupColumns: string[];
-    aggregations: ITreeGridAggregation[];
     groupKey: string;
     primaryKey: string;
     childDataKey: string;
@@ -861,7 +855,6 @@ export class TreeGridGroupingLoadOnDemandService {
             groupingParameters.groupKey,
             groupingParameters.primaryKey,
             groupingParameters.childDataKey,
-            groupingParameters.aggregations,
             '',
             result);
 
@@ -872,7 +865,6 @@ export class TreeGridGroupingLoadOnDemandService {
                             groupKey: string,
                             primaryKey: string,
                             childDataKey: string,
-                            aggregations: ITreeGridAggregation[],
                             parentID: any,
                             data: any[]) {
         for (const groupRecord of groupRecords) {
@@ -885,10 +877,6 @@ export class TreeGridGroupingLoadOnDemandService {
 
             children.forEach((c) => c.ParentID = parent[primaryKey]);
 
-            for (const aggregation of aggregations) {
-                parent[aggregation.field] = aggregation.aggregate(parent, children);
-            }
-
             parent[groupKey] = groupRecord.key + ` (${groupRecord.records.length})`;
             parent['hasChildren'] = true;
             data.push(parent);
@@ -896,7 +884,7 @@ export class TreeGridGroupingLoadOnDemandService {
             if (this.parentID) {
                 if (groupRecord.groups) {
                     this.flattenGrouping(groupRecord.groups, groupKey, primaryKey, childDataKey,
-                        aggregations, parent[primaryKey], parent[childDataKey]);
+                        parent[primaryKey], parent[childDataKey]);
                 } else if (parent[primaryKey].startsWith(this.parentID)) {
                     if (parent[primaryKey] === this.parentID) {
                         children.forEach((c) => c.hasChildren = false);

@@ -87,6 +87,7 @@ import { TGridEditingLifecycleComponent } from './tgrid-editing-lifecycle-sample
 import { TreeGridFormattedFilteringStrategyComponent } from './tree-grid-formatted-filtering-strategy/tree-grid-formatted-filtering-strategy.component';
 import { TreeGridSummaryFormatterComponent } from './tree-grid-summary-formatter/tree-grid-summary-formatter.component';
 import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid-pager-sample.component';
+import { TreeGridGroupByLoadOnDemandComponent } from './tree-grid-group-by-load-on-demand-sample/tree-grid-group-by-load-on-demand-sample.component';
 
 export const treeGridRoutes: Routes = [
     {
@@ -348,6 +349,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridLoadOnDemandSampleComponent,
         data: treeGridRoutesData['treegrid-load-on-demand'],
         path: 'treegrid-load-on-demand'
+    },
+    {
+        component: TreeGridGroupByLoadOnDemandComponent,
+        data: treeGridRoutesData['treegrid-group-by-load-on-demand'],
+        path: 'treegrid-group-by-load-on-demand'
     },
     {
         component: TreeGridKBNavigationComponent,
