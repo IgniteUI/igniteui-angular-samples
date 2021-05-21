@@ -20,8 +20,6 @@ export class TreeGridGroupByLoadOnDemandComponent implements AfterViewInit, OnIn
 
     private dataService = new TreeGridGroupingLoadOnDemandService();
 
-    constructor() { }
-
     public ngOnInit() {
         this.reloadData();
     }
@@ -51,14 +49,6 @@ export class TreeGridGroupByLoadOnDemandComponent implements AfterViewInit, OnIn
 
     public formatCurrency(value: number) {
         return value ? '$' + value.toFixed(3) : '';
-    }
-
-    public isDate(value: any) {
-        if (value instanceof Date) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     private reloadData() {

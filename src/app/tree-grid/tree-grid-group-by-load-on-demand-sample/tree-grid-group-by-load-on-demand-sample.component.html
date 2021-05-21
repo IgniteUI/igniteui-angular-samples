@@ -2,7 +2,6 @@
     <igx-tree-grid #treeGrid igxPreventDocumentScroll
         [data]="data"
         [loadChildrenOnDemand]="loadChildren"
-        [height]="'calc(100% - 76px)'"
         width="100%"
         [autoGenerate]='false'
         displayDensity='compact'
@@ -31,15 +30,11 @@
         </igx-column>
         <igx-column field="ShipCountry" header="Ship Country" width="200px" [groupable]="true">
         </igx-column>
-        <igx-column field="OrderDate" header="Order Date" width="200px" [formatter]="formatDate" [groupable]="true">
+        <igx-column field="OrderDate" header="Order Date" width="200px" [formatter]="formatDate">
         </igx-column>
         <igx-column field="PostalCode" header="Postal Code" width="200px" [groupable]="true">
         </igx-column>
         <igx-column field="Discontinued" header="Discontinued" width="200px" [groupable]="true">
-            <ng-template igxCell let-cell="cell" let-val>
-                    <img *ngIf="val === true" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
-                    <img *ngIf="val === false" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
-            </ng-template>
         </igx-column>
         <igx-column field="ShipName" header="Ship Name" width="250px" [groupable]="true">
         </igx-column>
@@ -49,9 +44,9 @@
         </igx-column>
         <igx-column field="Salesperson" header="Salesperson" width="250px" [groupable]="true">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" width="150px" [formatter]="formatCurrency" dataType="number" [groupable]="true">
+        <igx-column field="UnitPrice" header="Unit Price" width="150px" [formatter]="formatCurrency" dataType="number">
         </igx-column>
-        <igx-column field="Quantity" header="Quantity" width="150px" dataType="number" [groupable]="true">
+        <igx-column field="Quantity" header="Quantity" width="150px" dataType="number">
         </igx-column>
     </igx-tree-grid>
 </div>
