@@ -1,4 +1,4 @@
-<div class="main__wrapper igx-scrollbar">
+<div class="main__wrapper igx-scrollbar" [class.fin-dark-theme]="darkTheme">
     <app-finjs-controllers #controllers
         (switchChanged)="onSwitchChanged($event)"
         (volumeChanged)="onVolumeChanged($event)"
