@@ -9,34 +9,31 @@ import { TreeGridGroupingLoadOnDemandService, TreeGridGroupingParameters } from 
 })
 
 export class TreeGridGroupByLoadOnDemandComponent implements AfterViewInit, OnInit {
-    @ViewChild('grid1', { static: true }) public grid1: IgxTreeGridComponent;
-    // @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
+    @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
 
-    public selectionMode = 'multiple';
-    public groupColumns = ['category', 'type'];
+    public groupColumns = ['ShipCountry', 'ShipCity', 'Discontinued'];
     public primaryKey = 'id';
     public childDataKey = 'children';
     public hasChildrenKey = 'children';
-    public groupColumnKey = 'categories';
-
+    public groupColumnKey = '';
     public data = [];
+
     private dataService = new TreeGridGroupingLoadOnDemandService();
 
     constructor() { }
 
     public ngOnInit() {
         this.reloadData();
-        // this.grid1.sortingExpressions = [{ fieldName: this.groupColumnKey, dir: SortingDirection.Desc }];
     }
 
     public ngAfterViewInit() {
         this.groupColumns.forEach(col => {
-            const column = this.grid1.getColumnByName(col);
+            const column = this.treeGrid.getColumnByName(col);
             if (column) {
                 column.hidden = !column.hidden;
             }
         });
-        this.grid1.reflow();
+        this.treeGrid.reflow();
     }
 
     public loadChildren = (parentID: any, done: (children: any[]) => void) => {
@@ -44,28 +41,33 @@ export class TreeGridGroupByLoadOnDemandComponent implements AfterViewInit, OnIn
         this.dataService.getData(parentID, groupingParameters, (children) => done(children));
     };
 
-    public formatNumber(value: number) {
-        return value ? value.toFixed(2) : '';
+    public onGroupColumnsChange(event: EventEmitter<string[]>) {
+        this.reloadData();
     }
 
-    public percentage(value: number) {
-        return value ? value.toFixed(2) + '%' : '';
+    public formatDate(val: Date) {
+        return new Intl.DateTimeFormat('en-US').format(val);
     }
 
     public formatCurrency(value: number) {
         return value ? '$' + value.toFixed(3) : '';
     }
 
-    public onGroupColumnsChange(event: EventEmitter<string[]>) {
-        this.reloadData();
+    public isDate(value: any) {
+        if (value instanceof Date) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private reloadData() {
-        this.grid1.isLoading = true;
+        this.treeGrid.isLoading = true;
+        this.treeGrid.expansionStates.clear();
         const groupingParameters = this.assembleGroupingParameters();
         this.dataService.getData(null, groupingParameters, (children) => {
             this.data = children;
-            this.grid1.isLoading = false;
+            this.treeGrid.isLoading = false;
         });
     }
 
