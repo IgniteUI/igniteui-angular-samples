@@ -31,7 +31,6 @@ export class TreeGridGroupByLoadOnDemandComponent implements AfterViewInit, OnIn
                 column.hidden = !column.hidden;
             }
         });
-        this.treeGrid.reflow();
     }
 
     public loadChildren = (parentID: any, done: (children: any[]) => void) => {
@@ -41,14 +40,6 @@ export class TreeGridGroupByLoadOnDemandComponent implements AfterViewInit, OnIn
 
     public onGroupColumnsChange(event: EventEmitter<string[]>) {
         this.reloadData();
-    }
-
-    public formatDate(val: Date) {
-        return new Intl.DateTimeFormat('en-US').format(val);
-    }
-
-    public formatCurrency(value: number) {
-        return value ? '$' + value.toFixed(3) : '';
     }
 
     private reloadData() {

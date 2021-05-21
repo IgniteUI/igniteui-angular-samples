@@ -3,6 +3,7 @@
         [data]="data"
         [loadChildrenOnDemand]="loadChildren"
         width="100%"
+        height="800px"
         [autoGenerate]='false'
         displayDensity='compact'
         [primaryKey]="primaryKey"
@@ -30,7 +31,7 @@
         </igx-column>
         <igx-column field="ShipCountry" header="Ship Country" width="200px" [groupable]="true">
         </igx-column>
-        <igx-column field="OrderDate" header="Order Date" width="200px" [formatter]="formatDate">
+        <igx-column field="OrderDate" header="Order Date" width="200px" dataType="date">
         </igx-column>
         <igx-column field="PostalCode" header="Postal Code" width="200px" [groupable]="true">
         </igx-column>
@@ -44,7 +45,7 @@
         </igx-column>
         <igx-column field="Salesperson" header="Salesperson" width="250px" [groupable]="true">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" width="150px" [formatter]="formatCurrency" dataType="number">
+        <igx-column field="UnitPrice" header="Unit Price" width="150px" dataType="currency">
         </igx-column>
         <igx-column field="Quantity" header="Quantity" width="150px" dataType="number">
         </igx-column>
