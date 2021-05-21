@@ -1,4 +1,4 @@
-<igc-dockmanager #dock class="{{theme ? 'dark-theme' : 'light-theme'}}  dock-m-position" [layout]="docLayout">
+<igc-dockmanager #dock class="dock-m-position igx-scrollbar" [layout]="docLayout">
     <div slot="actionPane" style="height: 100%; padding: 20px;">
         <div class="actionItem">
             Change theme: <br/> <igx-switch [(ngModel)]="theme">Dark Mode</igx-switch>

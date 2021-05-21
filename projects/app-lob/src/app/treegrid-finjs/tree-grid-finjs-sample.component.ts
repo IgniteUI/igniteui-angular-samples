@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, OnDestroy, ViewChild, HostBinding } from '@angular/core';
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
     IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
@@ -22,9 +22,11 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy, OnInit 
     @ViewChild('slider2', { static: true }) public intervalSlider: IgxSliderComponent;
     @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
 
+    @HostBinding('class.dark-theme')
+    public theme = false;
+
     public showToolbar = true;
     public selectionMode = 'multiple';
-    public theme = false;
     public volume = 1000;
     public frequency = 500;
     public data$: any;

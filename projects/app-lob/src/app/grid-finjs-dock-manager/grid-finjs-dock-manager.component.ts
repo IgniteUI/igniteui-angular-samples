@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, OnDestroy, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, HostBinding, OnDestroy, OnInit, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, IgxColumnComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxSelectComponent, OverlaySettings, SortingDirection } from 'igniteui-angular';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { Subject } from 'rxjs';
@@ -8,6 +8,7 @@ import { FloatingPanesService } from '../services/floating-panes.service';
 import { SignalRService } from '../services/signal-r.service';
 import { DockSlotComponent, GridHostDirective } from './dock-slot.component';
 @Component({
+  encapsulation: ViewEncapsulation.None,
   providers: [SignalRService, FloatingPanesService],
   selector: 'app-finjs-dock-manager',
   templateUrl: './grid-finjs-dock-manager.component.html',
@@ -24,11 +25,13 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
     @ViewChild('freq', { read: IgxSelectComponent }) public selectFrequency: IgxSelectComponent;
     @ViewChild(IgxOverlayOutletDirective) outlet: IgxOverlayOutletDirective;
 
+    @HostBinding('class')
+    public theme = 'dark-theme';
+
     public frequencyItems: number[] = [300, 600, 900];
     public frequency = this.frequencyItems[1];
     public dataVolumeItems: number[] = [100, 500, 1000, 5000, 10000];
     public dataVolume: number = this.dataVolumeItems[1];
-    public theme = true;
     public isLoading = true;
     public data: any;
     public liveData = true;
