@@ -13,10 +13,11 @@ import localeJA from '@angular/common/locales/ja';
 import localeKO from '@angular/common/locales/ko';
 import localeHans from '@angular/common/locales/zh-Hans';
 import localeHant from '@angular/common/locales/zh-Hant';
+import localeHI from '@angular/common/locales/hi';
 import { DATA } from '../../data/nwindData';
 import { IgxGridComponent, IResourceStrings, changei18n, getCurrentResourceStrings } from 'igniteui-angular';
 import {
-    IgxResourceStringsDE, IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsIT,
+    IgxResourceStringsBG, IgxResourceStringsDE, IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsIT,
     IgxResourceStringsJA, IgxResourceStringsKO, IgxResourceStringsZHHANS, IgxResourceStringsZHHANT
 } from 'igniteui-angular-i18n';
 
@@ -32,9 +33,9 @@ export class LocalizationAllResourcesComponent implements OnInit, OnDestroy {
     public data: any[];
     public locale: string;
     public locales: { type: string, resource: object }[];
-    public selectLocales = ['BG', 'EN', 'DE', 'ES', 'FR', 'IT', 'JA', 'KO', 'zh-Hans', 'zh-Hant'];
+    public selectLocales = ['HI', 'BG', 'EN', 'DE', 'ES', 'FR', 'IT', 'JA', 'KO', 'zh-Hans', 'zh-Hant'];
     public cashedLocalizationEN: IResourceStrings;
-    public partialCustomBG: IResourceStrings;
+    public partialCustomHindi: IResourceStrings;
 
     constructor() { }
     public ngOnInit(): void {
@@ -48,20 +49,21 @@ export class LocalizationAllResourcesComponent implements OnInit, OnDestroy {
         registerLocaleData(localeKO);
         registerLocaleData(localeHans);
         registerLocaleData(localeHant);
+        registerLocaleData(localeHI);
         this.data = DATA;
         this.cashedLocalizationEN = Object.assign({}, getCurrentResourceStrings());
-        // Creating a custom locale (BG) for specific grid strings.
-        // Similarly can localize all needed strings in a separate IgxResourceStringsBG file
-        this.partialCustomBG = {
-            igx_grid_summary_count: 'Общ брой',
-            igx_grid_summary_min: 'Минимум',
-            igx_grid_summary_max: 'Максимум',
-            igx_grid_summary_sum: 'Сума',
-            igx_grid_summary_average: 'Средна стойност'
+        // Creating a custom locale (HI) for specific grid strings.
+        // Similarly can localize all needed strings in a separate IgxResourceStringsHI file (feel free to contribute)
+        this.partialCustomHindi = {
+            igx_grid_summary_count: 'गणना',
+            igx_grid_summary_min: 'न्यून',
+            igx_grid_summary_max: 'अधिक',
+            igx_grid_summary_sum: 'योग',
+            igx_grid_summary_average: 'औसत'
         };
 
         this.locales = [
-            { type: 'BG', resource: this.partialCustomBG },
+            { type: 'BG', resource: IgxResourceStringsBG },
             { type: 'DE', resource: IgxResourceStringsDE },
             { type: 'ES', resource: IgxResourceStringsES },
             { type: 'FR', resource: IgxResourceStringsFR },
@@ -70,7 +72,8 @@ export class LocalizationAllResourcesComponent implements OnInit, OnDestroy {
             { type: 'KO', resource: IgxResourceStringsKO },
             { type: 'zh-Hans', resource: IgxResourceStringsZHHANS },
             { type: 'zh-Hant', resource: IgxResourceStringsZHHANT },
-            { type: 'EN', resource: this.cashedLocalizationEN }
+            { type: 'EN', resource: this.cashedLocalizationEN },
+            { type: 'HI', resource: this.partialCustomHindi }
         ];
 
         this.locale = 'EN';
