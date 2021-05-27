@@ -22,12 +22,12 @@ export class DateTimePickerRFSampleComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.dateTimeForm.get("date").valueChanges.subscribe(selectedDate => {
-            this.dateTimeForm.get("time").setValue(selectedDate, { emitEvent: false });
+        this.dateTimeForm.get('date').valueChanges.subscribe(selectedDate => {
+            this.dateTimeForm.get('time').setValue(selectedDate, { emitEvent: false });
         });
 
-        this.dateTimeForm.get("time").valueChanges.subscribe(selectedTime => {
-            this.dateTimeForm.get("date").setValue(selectedTime, { emitEvent: false });
+        this.dateTimeForm.get('time').valueChanges.subscribe(selectedTime => {
+            this.dateTimeForm.get('date').setValue(selectedTime, { emitEvent: false });
         });
     }
 }

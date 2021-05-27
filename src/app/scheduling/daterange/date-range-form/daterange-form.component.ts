@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: "app-daterange-sample",
-  styleUrls: ["./daterange-form.component.scss"],
-  templateUrl: "./daterange-form.component.html"
+  selector: 'app-daterange-sample',
+  styleUrls: ['./daterange-form.component.scss'],
+  templateUrl: './daterange-form.component.html'
 })
 export class DateRangeFormComponent implements OnInit {
   public twoInputForm: FormGroup;
