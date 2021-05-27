@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule,
     IgxDateRangePickerModule, IgxDateTimeEditorModule, IgxDialogModule, IgxDropDownModule, IgxIconModule,
@@ -33,6 +33,8 @@ import { DatepickerSample8Component } from './datepicker/datepicker-sample-8/dat
 import { AutocompletePipeStartsWith, DatepickerSample9Component, PipeWithoutTownFrom
 } from './datepicker/datepicker-sample-9/datepicker-sample-9.component';
 import { DatepickerStylingSampleComponent } from './datepicker/datepicker-styling-sample/datepicker-styling-sample.component';
+import {DateTimePickerTDFSampleComponent} from './datepicker/template-driven-form/template-driven-form.component';
+import {DateTimePickerRFSampleComponent} from './datepicker/reactive-form/reactive-form.component';
 import {
     BasicDateRangePickerComponent } from './daterangepicker/daterangepicker-basic/daterangepicker-basic';
 import {
@@ -83,6 +85,8 @@ import { TimePickerStylingComponent } from './timepicker/timepicker-styling/time
         DatepickerSample7Component,
         DatepickerSample8Component,
         DatepickerSample9Component,
+        DateTimePickerTDFSampleComponent,
+        DateTimePickerRFSampleComponent,
         DateTimeBasicComponent,
         DatepickerDropdownComponent,
         DatepickerStylingSampleComponent,
@@ -107,6 +111,7 @@ import { TimePickerStylingComponent } from './timepicker/timepicker-styling/time
     imports: [
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         SchedulingRoutingModule,
         IgxAutocompleteModule,
         IgxCalendarModule,

@@ -24,6 +24,8 @@ export const schedulingRoutesData = {
     'datepicker-sample-8': { displayName: 'Custom Action Buttons', parentName: 'Datepicker' },
     'datepicker-sample-9': { displayName: 'Range Datepicker', parentName: 'Datepicker' },
     'datepicker-styling-sample': { displayName: 'Datepicker Styling', parentName: 'Datepicker' },
+    'template-driven-form': { displayName: 'DateTimePicker Template Driven Form', parentName: 'Datepicker' },
+    'reactive-form': { displayName: 'DateTimePicker Reactive Form', parentName: 'Datepicker' },
     'datetime-basic': { displayName: 'Date Time Basic', parentName: 'Date Time Editor' },
     'datetime-advanced': { displayName: 'Date Time Advanced', parentName: 'Date Time Editor' },
     'monthpicker-sample-1': { displayName: 'Default Month Picker', parentName: 'Monthpicker' },

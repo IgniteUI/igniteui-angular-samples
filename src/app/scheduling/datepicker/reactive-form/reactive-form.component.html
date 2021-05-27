@@ -1,0 +1,32 @@
+<div class="date-picker-wrapper">
+    <form [formGroup]="dateTimeForm">
+        <div class="form-group">
+            <div class="form-date-picker">
+                <igx-date-picker formControlName="date" [value]="date" [minValue]="minDate" [maxValue]="maxDate">
+                    <label igxLabel>Start Date</label>
+                </igx-date-picker>
+            </div>
+            <div class="form-time-picker">
+                <igx-time-picker formControlName="time" [value]="date" [minValue]="minTime" [maxValue]="maxTime">
+                    <label igxLabel>Start Time</label>
+                </igx-time-picker>
+            </div>
+        </div>
+    </form>
+
+    <div class="form-group">
+        <div class="form-date-picker">
+            <p>
+                Date: {{ dateTimeForm.value.date.toLocaleString() }}
+            </p>
+        </div>
+        <div class="form-time-picker">
+            <p>
+                Time: {{ dateTimeForm.value.time.toLocaleString() }}
+            </p>
+        </div>
+    </div>
+    <p>
+        Form Status: {{ dateTimeForm.status }}
+    </p>
+</div>
