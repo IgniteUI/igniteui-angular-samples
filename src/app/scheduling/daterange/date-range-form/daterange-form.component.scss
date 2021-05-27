@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 200px;
+}
+
+.input-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  order: 1
+}
+.date-range-wrapper {
+  flex: 1;
+  flex-direction: row;
+  order: 2;
+}
+.date-range-wrapper .ng-star-inserted .content-wrap{
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+}
+
+.contentA {
+  flex: 1;
+}
+
+.contentB {
+  flex: 1;
+}
+
+.contentC {
+  flex: 1;
+}
+.contentD {
+  flex: 1;
+}
+
