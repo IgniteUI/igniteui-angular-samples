@@ -33,7 +33,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive',
         TreeGridWithTransactionsComponent: '../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-with-transactions.component',
         RemoteValuesService: '../../src/app/tree-grid/tree-grid-excel-style-filtering-load-on-demand/remoteValues.service',
-        TreeGridContextmenuComponent: '../../src/app/tree-grid/tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component'
+        TreeGridContextmenuComponent: '../../src/app/tree-grid/tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component',
+        IgxTreeGridGroupAreaComponent: '../../src/app/tree-grid/tree-grid-group-by-load-on-demand-sample/tree-grid-group-area.component',
 };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -618,6 +619,24 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule']
             }),
             component: 'TreeGridLoadOnDemandSampleComponent'
+        }));
+
+        // TreeGrid Group By Load On Demand Sample
+        configs.push(new Config({
+            additionalFiles: [
+                "/src/app/directives/prevent-scroll.directive.ts",
+                "/src/app/tree-grid/tree-grid-group-by-load-on-demand-sample/remoteService.ts",
+                "/src/app/tree-grid/tree-grid-group-by-load-on-demand-sample/tree-grid-group-area.component.ts",
+                "/src/app/tree-grid/tree-grid-group-by-load-on-demand-sample/tree-grid-group-area.component.html",
+                "/src/app/tree-grid/tree-grid-group-by-load-on-demand-sample/tree-grid-group-area.component.scss",
+                "/src/app/data/invoiceData.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridGroupByLoadOnDemandComponent', 'IgxTreeGridGroupAreaComponent'],
+                ngDeclarations: ['TreeGridGroupByLoadOnDemandComponent', 'IgxTreeGridGroupAreaComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule']
+            }),
+            component: 'TreeGridGroupByLoadOnDemandComponent'
         }));
 
         // TreeGrid Excel Style Filtering Load On Demand Sample
