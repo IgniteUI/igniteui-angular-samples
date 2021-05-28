@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular';
 import { TreeGridGroupingLoadOnDemandService, TreeGridGroupingParameters } from './remoteService';
 
@@ -8,7 +8,7 @@ import { TreeGridGroupingLoadOnDemandService, TreeGridGroupingParameters } from 
     templateUrl: './tree-grid-group-by-load-on-demand-sample.component.html'
 })
 
-export class TreeGridGroupByLoadOnDemandComponent implements AfterViewInit, OnInit {
+export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
 
     public groupColumns = ['ShipCountry', 'ShipCity', 'Discontinued'];
@@ -22,15 +22,6 @@ export class TreeGridGroupByLoadOnDemandComponent implements AfterViewInit, OnIn
 
     public ngOnInit() {
         this.reloadData();
-    }
-
-    public ngAfterViewInit() {
-        this.groupColumns.forEach(col => {
-            const column = this.treeGrid.getColumnByName(col);
-            if (column) {
-                column.hidden = !column.hidden;
-            }
-        });
     }
 
     public loadChildren = (parentID: any, done: (children: any[]) => void) => {
@@ -49,6 +40,7 @@ export class TreeGridGroupByLoadOnDemandComponent implements AfterViewInit, OnIn
         this.dataService.getData(null, groupingParameters, (children) => {
             this.data = children;
             this.treeGrid.isLoading = false;
+            this.treeGrid.reflow();
         });
     }
 
