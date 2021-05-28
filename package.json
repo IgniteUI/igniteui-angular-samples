@@ -35,7 +35,9 @@
     "repositoryfyAngularDemos": "gulp repositoryfyAngularDemos",
     "repositoryfyAngularDemos:prod": "gulp repositoryfyAngularDemos --configuration production",
     "repositoryfyAngularDemosLob": "gulp repositoryfyAngularDemosLob",
-    "repositoryfyAngularDemosLob:prod": "gulp repositoryfyAngularDemosLob --configuration production"
+    "repositoryfyAngularDemosLob:prod": "gulp repositoryfyAngularDemosLob --configuration production",
+    "build:stats": "ng build --stats-json",
+    "analyze": "webpack-bundle-analyzer dist/app/stats.json"
   },
   "repository": {
     "type": "git",

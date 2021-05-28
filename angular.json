@@ -30,8 +30,8 @@
                         "optimization": false,
                         "namedChunks": true,
                         "sourceMap": {
-                            "scripts": true,
-                            "styles": true,
+                            "scripts": false,
+                            "styles": false,
                             "hidden": false,
                             "vendor": false
                         },
