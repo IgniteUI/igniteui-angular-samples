@@ -41,14 +41,14 @@ gulp.task("generate-live-editing", async () => {
     await generateLiveEditing(liveEditingOptions);
 });
 
-gulp.task("overwrite-package-json", (done) => {
-    const packagesPaths = ["./node_modules/igniteui-angular-charts/package.json", "./node_modules/igniteui-angular-core/package.json", "./node_modules/igniteui-angular-excel/package.json", "./node_modules/igniteui-angular-gauges/package.json", "./node_modules/igniteui-angular-spreadsheet/package.json"];
-    packagesPaths.forEach((packagePath) => {
-        const package = require(packagePath);
-        fs.writeFileSync(packagePath, JSON.stringify(package));
-    });
-    done();
-});
+// gulp.task("overwrite-package-json", (done) => {
+//     const packagesPaths = ["./node_modules/igniteui-angular-charts/package.json", "./node_modules/igniteui-angular-core/package.json", "./node_modules/igniteui-angular-excel/package.json", "./node_modules/igniteui-angular-gauges/package.json", "./node_modules/igniteui-angular-spreadsheet/package.json"];
+//     packagesPaths.forEach((packagePath) => {
+//         const package = require(packagePath);
+//         fs.writeFileSync(packagePath, JSON.stringify(package));
+//     });
+//     done();
+// });
 
 gulp.task("watch-live-editing", gulp.series("generate-live-editing", () => {
     gulp.watch(["./src/**/*.*", "!./src/assets/**", "./live-editing/**/*.*", "package.json"], function () {
