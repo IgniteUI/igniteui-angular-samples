@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+}
+
+.chips-area {
+    width: auto;
+    igx-chip {
+        margin-right: 10px;
+    }
+}
+
+.group-drop-area {
+    padding: 0 10px 0 10px;
+    flex-grow: 1;
+    font-size: 0.8rem;
+    background-color:rgba(0, 0, 0, 0.08);
+}
