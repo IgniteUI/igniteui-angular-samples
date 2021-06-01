@@ -40,6 +40,7 @@ export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
         this.dataService.getData(null, groupingParameters, (children) => {
             this.data = children;
             this.treeGrid.isLoading = false;
+            this.treeGrid.reflow();
         });
     }
 
