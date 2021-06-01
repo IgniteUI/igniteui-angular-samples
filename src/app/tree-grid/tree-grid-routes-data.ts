@@ -82,6 +82,7 @@ export const treeGridRoutesData = {
     // tslint:disable-next-line:max-line-length
     'tree-grid-multi-cell-selection-style': { displayName: 'TreeGrid Multi Cell Selection Style', parentName: 'TreeGrid' },
     'treegrid-load-on-demand': { displayName: 'TreeGrid Load On Demand', parentName: 'TreeGrid' },
+    'treegrid-group-by-load-on-demand': { displayName: 'TreeGrid Group By Load On Demand', parentName: 'TreeGrid' },
     'treegrid-keyboard-navigation': { displayName: 'TreeGrid Keyboard Navigation', parentName: 'TreeGrid' },
     'tree-grid-row-reordering': { displayName: 'TreeGrid Row Reordering', parentName: 'TreeGrid' },
     'treegrid-remote-paging': { displayName: 'TreeGrid Remote Paging', parentName: 'TreeGrid' },
