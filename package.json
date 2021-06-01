@@ -95,7 +95,7 @@
     "@angular-eslint/eslint-plugin-template": "1.2.0",
     "@angular-eslint/schematics": "1.2.0",
     "@angular-eslint/template-parser": "1.2.0",
-    "@angular/cli": "^12.0.0",
+    "@angular/cli": "^12.0.2",
     "@angular/compiler-cli": "^12.0.0",
     "@angular/language-service": "^12.0.0",
     "@igniteui/angular-schematics": "^11.1.711",
