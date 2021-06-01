@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 
 import { IgxGridComponent, IgxSnackbarComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
@@ -13,7 +13,7 @@ import { FinancialDataService } from '../../services/financial.service';
     templateUrl: 'grid-selection.component.html'
 })
 
-export class GridSelectionSampleComponent implements AfterViewInit {
+export class GridSelectionSampleComponent implements AfterViewInit, OnInit {
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     @ViewChild(IgxSnackbarComponent, { static: true }) public snackbar: IgxSnackbarComponent;
     public data: Observable<any[]>;
@@ -34,7 +34,7 @@ export class GridSelectionSampleComponent implements AfterViewInit {
     }
     public ngOnInit(): void {
         this.snackbar.autoHide = false;
-        this.snackbar.show();
+        this.snackbar.open();
     }
 
     public ngAfterViewInit(): void {
@@ -52,6 +52,6 @@ export class GridSelectionSampleComponent implements AfterViewInit {
 
     public selectCellSelectionMode(args) {
         this.selectionMode = this.selectionModes[args.index].label;
-        this.snackbar.show();
+        this.snackbar.open();
     }
 }

@@ -14,7 +14,7 @@ import localeKO from '@angular/common/locales/ko';
 import localeHans from '@angular/common/locales/zh-Hans';
 import localeHant from '@angular/common/locales/zh-Hant';
 import localeHI from '@angular/common/locales/hi';
-import { DATA } from '../../data/nwindData';
+import { DATA } from '../../../data/nwindData';
 import { IgxGridComponent, IResourceStrings, changei18n, getCurrentResourceStrings } from 'igniteui-angular';
 import {
     IgxResourceStringsBG, IgxResourceStringsDE, IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsIT,
