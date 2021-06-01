@@ -117,6 +117,8 @@ import { TGridEditingLifecycleComponent } from './tgrid-editing-lifecycle-sample
 import { TreeGridFormattedFilteringStrategyComponent } from './tree-grid-formatted-filtering-strategy/tree-grid-formatted-filtering-strategy.component';
 import { TreeGridSummaryFormatterComponent } from './tree-grid-summary-formatter/tree-grid-summary-formatter.component';
 import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid-pager-sample.component';
+import { TreeGridGroupByLoadOnDemandComponent } from './tree-grid-group-by-load-on-demand-sample/tree-grid-group-by-load-on-demand-sample.component';
+import { IgxTreeGridGroupAreaComponent } from './tree-grid-group-by-load-on-demand-sample/tree-grid-group-area.component';
 
 @NgModule({
     declarations: [
@@ -169,6 +171,7 @@ import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid
         TreeGridMultiCellSelectionComponent,
         TreeGridMultiCellSelectionStyleComponent,
         TreeGridLoadOnDemandSampleComponent,
+        TreeGridGroupByLoadOnDemandComponent,
         TreeGridRowDragComponent,
         TreeGridRowDragBaseComponent,
         TreeGridMultiRowDragComponent,
@@ -206,7 +209,8 @@ import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid
         TreeGridExportVisualizationComponent,
         TGridEditingLifecycleComponent,
         TreeGridFormattedFilteringStrategyComponent,
-        TreeGridSummaryFormatterComponent
+        TreeGridSummaryFormatterComponent,
+        IgxTreeGridGroupAreaComponent
     ],
     imports: [
         CommonModule,

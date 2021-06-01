@@ -1,0 +1,53 @@
+<div class="grid__wrapper">
+    <igx-tree-grid #treeGrid igxPreventDocumentScroll
+        [data]="data"
+        [loadChildrenOnDemand]="loadChildren"
+        width="100%"
+        height="800px"
+        [autoGenerate]='false'
+        displayDensity='compact'
+        [primaryKey]="primaryKey"
+        [childDataKey]="childDataKey"
+        [hasChildrenKey]="hasChildrenKey"
+        hiddenColumnsText="Hidden">
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-title class="grid-toolbar-title">
+                <app-igx-tree-grid-group-area
+                    [grid]='treeGrid'
+                    [(groupColumns)]='groupColumns'
+                    [groupColumnKey]='groupColumnKey'
+                    (groupColumnsChange)="onGroupColumnsChange($event)">
+                </app-igx-tree-grid-group-area>
+            </igx-grid-toolbar-title>
+
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding title="Indicators"></igx-grid-toolbar-hiding>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
+
+        <igx-column [field]="groupColumnKey" [width]="'180px'" [resizable]='true' [disableHiding]="true"></igx-column>
+
+        <igx-column field="OrderID" header="Order ID">
+        </igx-column>
+        <igx-column field="ShipCountry" header="Ship Country" width="200px" [groupable]="true">
+        </igx-column>
+        <igx-column field="OrderDate" header="Order Date" width="200px" dataType="date">
+        </igx-column>
+        <igx-column field="PostalCode" header="Postal Code" width="200px" [groupable]="true">
+        </igx-column>
+        <igx-column field="Discontinued" header="Discontinued" width="200px" [groupable]="true">
+        </igx-column>
+        <igx-column field="ShipName" header="Ship Name" width="250px" [groupable]="true">
+        </igx-column>
+        <igx-column field="ShipCity" header="Ship City" width="250px" [groupable]="true">
+        </igx-column>
+        <igx-column field="ShipperName" header="Shipper Name" width="250px" [groupable]="true">
+        </igx-column>
+        <igx-column field="Salesperson" header="Salesperson" width="250px" [groupable]="true">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Unit Price" width="150px" dataType="currency">
+        </igx-column>
+        <igx-column field="Quantity" header="Quantity" width="150px" dataType="number">
+        </igx-column>
+    </igx-tree-grid>
+</div>
