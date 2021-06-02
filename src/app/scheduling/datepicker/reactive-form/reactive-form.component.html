@@ -1,31 +1,22 @@
-<div class="date-picker-wrapper">
+<div class="pickers-wrapper">
     <form [formGroup]="dateTimeForm">
         <div class="form-group">
             <div class="form-date-picker">
-                <igx-date-picker formControlName="date" [value]="date" [minValue]="minDate" [maxValue]="maxDate">
-                    <label igxLabel>Start Date</label>
+                <igx-date-picker #datePicker formControlName="date" [value]="date" [minValue]="minDate" [maxValue]="maxDate"
+                (valueChange)="timePicker.value = datePicker.value">
+                    <label igxLabel>Date</label>
                 </igx-date-picker>
+                <span>Date: {{ dateTimeForm.value.date? dateTimeForm.value.date.toLocaleString() : null}}</span>
             </div>
             <div class="form-time-picker">
-                <igx-time-picker formControlName="time" [value]="date" [minValue]="minTime" [maxValue]="maxTime">
-                    <label igxLabel>Start Time</label>
+                <igx-time-picker #timePicker formControlName="time" [value]="date" [minValue]="minTime" [maxValue]="maxTime"
+                [disabled]="dateTimeForm.value.date ? false : true" (valueChange)="datePicker.value = timePicker.value">
+                    <label igxLabel>Time</label>
                 </igx-time-picker>
+                <span>Time: {{ dateTimeForm.value.time ? dateTimeForm.value.time.toLocaleString() : null}}</span>
             </div>
         </div>
     </form>
-
-    <div class="form-group">
-        <div class="form-date-picker">
-            <p>
-                Date: {{ dateTimeForm.value.date.toLocaleString() }}
-            </p>
-        </div>
-        <div class="form-time-picker">
-            <p>
-                Time: {{ dateTimeForm.value.time.toLocaleString() }}
-            </p>
-        </div>
-    </div>
     <p>
         Form Status: {{ dateTimeForm.status }}
     </p>
