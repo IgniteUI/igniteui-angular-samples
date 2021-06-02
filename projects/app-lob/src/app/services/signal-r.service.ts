@@ -11,7 +11,6 @@ export class SignalRService implements OnDestroy {
     public data: BehaviorSubject<any[]>;
     public hasRemoteConnection: boolean;
     private hubConnection: signalR.HubConnection;
-    private financialData: FinancialData = new FinancialData();
     private _timer;
 
     constructor(private zone: NgZone, private http: HttpClient) {
