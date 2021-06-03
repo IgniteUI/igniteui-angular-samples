@@ -37,7 +37,6 @@ import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class GridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive',
-        GridWithTransactionsComponent: '../../src/app/grid/grid-batch-editing/grid-transaction.component',
         ContextmenuComponent: '../../src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component',
         RemoteValuesService: '../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service',
         PlanetComponent: '../../src/app/grid/grid-row-drag/planet/planet.component',
@@ -558,12 +557,11 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid Batch Editing
         configs.push(new Config({
             component: 'GridBatchEditingSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts", "/src/app/data/utils.ts",
-                "/src/app/grid/grid-batch-editing/grid-transaction.component.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts", "/src/app/data/utils.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridBatchEditingSampleComponent', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
-                    'IgxFocusModule', 'GridWithTransactionsComponent', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['GridBatchEditingSampleComponent', 'GridWithTransactionsComponent'],
+                    'IgxFocusModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['GridBatchEditingSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
                     'IgxFocusModule']
             })
@@ -572,12 +570,11 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid with Action Strip
         configs.push(new Config({
             component: 'GridActionStripSampleComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts", "/src/app/data/utils.ts",
-                "/src/app/grid/grid-batch-editing/grid-transaction.component.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts", "/src/app/data/utils.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridActionStripSampleComponent', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
-                    'IgxFocusModule', 'GridWithTransactionsComponent', 'IgxPreventDocumentScrollModule', 'IgxActionStripModule'],
-                ngDeclarations: ['GridActionStripSampleComponent', 'GridWithTransactionsComponent'],
+                    'IgxFocusModule', 'IgxPreventDocumentScrollModule', 'IgxActionStripModule'],
+                ngDeclarations: ['GridActionStripSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule', 'IgxActionStripModule',
                     'IgxFocusModule']
             })
@@ -1158,12 +1155,11 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid Batch Editing with remote paging
         configs.push(new Config({
             component: 'RemotePagingBatchEditingComponent',
-            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts", "/src/app/data/utils.ts",
-                "/src/app/grid/grid-batchEditing-remotePaging/transaction.component.ts"],
+            additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/data/nwindData.ts", "/src/app/data/utils.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['RemotePagingBatchEditingComponent', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
-                    'IgxFocusModule', 'GridWithTransactionsComponent', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['RemotePagingBatchEditingComponent', 'GridWithTransactionsComponent'],
+                    'IgxFocusModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['RemotePagingBatchEditingComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
                     'IgxFocusModule']
             })
