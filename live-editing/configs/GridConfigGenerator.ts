@@ -55,16 +55,17 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'FinancialSampleComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/financialData.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/financialData.ts',
+                '/src/app/services/financial.service.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['HttpClientModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule',
                     'IgxGridModule', 'IgxIconModule', 'IgxInputGroupModule', 'IgxProgressBarModule',
-                    'IgxRippleModule', 'IgxSwitchModule', 'FinancialSampleComponent', 'LocalService', 'IgxPreventDocumentScrollModule'],
+                    'IgxRippleModule', 'IgxSwitchModule', 'FinancialSampleComponent', 'FinancialDataService', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['FinancialSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule', 'IgxGridModule',
                     'IgxIconModule', 'IgxInputGroupModule', 'IgxProgressBarModule',
                     'IgxRippleModule', 'IgxSwitchModule', 'HttpClientModule'],
-                ngProviders: ['LocalService']
+                ngProviders: ['FinancialDataService']
             })
         }));
 
