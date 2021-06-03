@@ -1,12 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
+import { IgxGridComponent, IgxGridTransaction, IgxTransactionService, RowType, Transaction } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
-import { IgxGridComponent, RowType, Transaction } from 'igniteui-angular';
 
 @Component({
     selector: 'app-grid-row-action-strip',
     styleUrls: [`grid-action-strip-sample.scss`],
-    templateUrl: 'grid-action-strip-sample.html'
+    templateUrl: 'grid-action-strip-sample.html',
+    providers: [{ provide: IgxGridTransaction, useClass: IgxTransactionService }],
 })
 export class GridActionStripSampleComponent {
     @ViewChild('gridRowEditTransaction', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;

@@ -21,7 +21,6 @@ import { GridAdvancedFilteringSampleComponent } from './grid-advanced-filtering-
 import { GridAdvancedFilteringStyleComponent } from './grid-advanced-filtering-style/grid-advanced-filtering-style.component';
 import { GridAllDataSummaryComponent } from './grid-allData-summary/grid-allData-summary.component';
 import { GridBatchEditingSampleComponent } from './grid-batch-editing/grid-batch-editing-sample.component';
-import { GridWithTransactionsComponent } from './grid-batch-editing/grid-transaction.component';
 import { RemotePagingBatchEditingComponent } from './grid-batchEditing-remotePaging/batch-editing-remote-paging.component';
 import { GridCellSelectionComponent } from './grid-cellSelection-sample/grid-cellSelection.component';
 import { GridClipboardSampleComponent } from './grid-clipboard-operations-sample/grid-clipboard-operations-sample.component';
@@ -128,7 +127,6 @@ import { GridSummaryFormatterComponent } from './grid-summary-formatter/grid-sum
 
 @NgModule({
     declarations: [
-        GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
         GridActionStripSampleComponent,
         GridColumnHidingSampleComponent,
