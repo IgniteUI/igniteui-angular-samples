@@ -2,7 +2,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxDialogComponent,
-    IgxGridComponent,
+    IgxGridTransaction,
+    IgxHierarchicalTransactionService,
     IgxTreeGridComponent,
     Transaction
 } from 'igniteui-angular';
@@ -12,12 +13,12 @@ import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 @Component({
     selector: 'app-tree-grid-batch-editing-sample',
     styleUrls: ['tree-grid-batch-editing-sample.component.scss'],
-    templateUrl: 'tree-grid-batch-editing-sample.component.html'
+    templateUrl: 'tree-grid-batch-editing-sample.component.html',
+    providers: [{ provide: IgxGridTransaction, useClass: IgxHierarchicalTransactionService }]
 })
 export class TreeGridBatchEditingSampleComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
     @ViewChild(IgxDialogComponent, { static: true }) public dialog: IgxDialogComponent;
-    @ViewChild('dialogGrid', { read: IgxGridComponent, static: true }) public dialogGrid: IgxGridComponent;
 
     public data: IEmployee[];
     public transactionsData: Transaction[] = [];
@@ -26,10 +27,6 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
 
     public ngOnInit(): void {
         this.data = generateEmployeeFlatData();
-        this.transactionsData = this.treeGrid.transactions.getAggregatedChanges(true);
-        this.treeGrid.transactions.onStateUpdate.subscribe(() => {
-            this.transactionsData = this.treeGrid.transactions.getAggregatedChanges(true);
-        });
     }
 
     public addRow() {
@@ -92,12 +89,12 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
         this.dialog.close();
     }
 
-    public openCommitDialog(dialogGrid: IgxTreeGridComponent) {
+    public openCommitDialog() {
+        this.transactionsData = this.treeGrid.transactions.getAggregatedChanges(true);
         this.dialog.open();
-        dialogGrid.reflow();
     }
 
-    public stateFormatter(value: string) {
+    public stateFormatter(value: any) {
         return value ? JSON.stringify(value) : '';
     }
 
