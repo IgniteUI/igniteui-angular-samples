@@ -9,7 +9,7 @@ import { generateRandomInteger } from '../../data/utils';
     selector: 'app-grid-row-edit',
     styleUrls: [`grid-batch-editing-sample.component.scss`],
     templateUrl: 'grid-batch-editing-sample.component.html',
-    providers: [{ provide: IgxGridTransaction, useClass: IgxTransactionService }],
+    providers: [{ provide: IgxGridTransaction, useClass: IgxTransactionService }]
 })
 export class GridBatchEditingSampleComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
