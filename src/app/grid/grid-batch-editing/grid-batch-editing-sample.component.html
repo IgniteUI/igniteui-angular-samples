@@ -28,7 +28,7 @@
         </div>
     </div>
     <igx-dialog #dialog title="Submit the following transactions?">
-        <igx-list style="width: 600px; height: 400px; overflow-y: visible;">
+        <igx-list class="list-container">
             <igx-list-item *ngFor="let transaction of transactionsData">
                 <span igxListLineTitle [class]="classFromType(transaction.type)">
                     ID: {{ transaction.id }} Type: {{ typeFormatter(transaction.type) }}
