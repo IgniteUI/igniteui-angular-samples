@@ -44,7 +44,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         RemoteValuesService: '../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service',
         PlanetComponent: '../../src/app/grid/grid-row-drag/planet/planet.component',
         LocalService: '../../src/app/grid/grid-sample-2/grid-sample-2.component',
-        RemoteService: '../../src/app/grid/grid-sample-5/remote.service',
+        RemoteService: '../../src/app/services/remote.service',
         RemoteFilteringService: '../../src/app/services/remoteFiltering.service',
         RemotePagingService: '../../src/app/services/remotePaging.service',
         RemoteServiceVirt: '../../src/app/services/remoteVirtualization.service'
@@ -1077,7 +1077,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridRemoteVirtualizationAddRowSampleComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/grid/grid-sample-5/remote.service.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/services/remote.service.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridRemoteVirtualizationAddRowSampleComponent', 'IgxGridModule', 'IgxToastModule',
                     'IgxBadgeModule', 'HttpClientModule', 'RemoteService', 'IgxPreventDocumentScrollModule'],
