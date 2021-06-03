@@ -26,7 +26,6 @@ import {Router, RouterModule} from '@angular/router'
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive',
-        HierarchicalGridWithTransactionsComponent: '../../src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-transactions.component',
         RemoteValuesService: '../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-load-on-demand/remoteValues.service',
         HGridContextmenuComponent: '../../src/app/hierarchical-grid/hierarchical-grid-sorting/hgrid-contextmenu/hgrid-contextmenu.component',
         RemoteLoDService: '../../src/app/hierarchical-grid/services/remote-lod.service'
@@ -91,13 +90,12 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ["/src/app/directives/prevent-scroll.directive.ts", "/src/app/hierarchical-grid/data.ts",
-                "/src/app/hierarchical-grid/models.ts",
-                "/src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-transactions.component.ts"],
+                "/src/app/hierarchical-grid/models.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxHierarchicalGridModule', 'HGridBatchEditingSampleComponent',
-                    'HierarchicalGridWithTransactionsComponent', 'IgxButtonModule', 'IgxCheckboxModule',
+                    'IgxButtonModule', 'IgxCheckboxModule',
                     'IgxDatePickerModule', 'IgxGridModule', 'IgxDialogModule', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['HGridBatchEditingSampleComponent', 'HierarchicalGridWithTransactionsComponent'],
+                ngDeclarations: ['HGridBatchEditingSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxButtonModule', 'IgxCheckboxModule',
                     'IgxDatePickerModule', 'IgxGridModule', 'IgxDialogModule']
             }),
