@@ -1,21 +1,25 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxGridComponent, IgxHierarchicalGridComponent,
-    IgxRowIslandComponent, Transaction } from 'igniteui-angular';
+import {
+    IgxDialogComponent,
+    IgxHierarchicalGridComponent,
+    IgxHierarchicalTransactionServiceFactory,
+    IgxRowIslandComponent,
+    Transaction
+} from 'igniteui-angular';
 import { SINGERS } from '../data';
 import { Singer } from '../models';
 
 @Component({
     selector: 'app-hierarchical-grid-batch-editing',
     styleUrls: ['./hierarchical-grid-batch-editing.component.scss'],
-    templateUrl: 'hierarchical-grid-batch-editing.component.html'
+    templateUrl: 'hierarchical-grid-batch-editing.component.html',
+    providers: [ IgxHierarchicalTransactionServiceFactory ]
 })
 
 export class HGridBatchEditingSampleComponent implements OnInit {
     @ViewChild('dialogChanges', { read: IgxDialogComponent, static: true })
     public dialogChanges: IgxDialogComponent;
-
-    @ViewChild('dialogGrid', { read: IgxGridComponent, static: true }) public dialogGrid: IgxGridComponent;
 
     @ViewChild('childGrid', { static: true })
     private childGrid: IgxRowIslandComponent;
@@ -98,7 +102,6 @@ export class HGridBatchEditingSampleComponent implements OnInit {
             this.transactionsDataAll = this.transactionsDataAll.concat(grid.transactions.getAggregatedChanges(true));
         });
         this.dialogChanges.open();
-        this.dialogGrid.reflow();
     }
 
     public addSinger() {
