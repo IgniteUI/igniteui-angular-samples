@@ -7,7 +7,7 @@ import { DATA } from '../../data/nwindData';
     selector: 'app-grid-row-action-strip',
     styleUrls: [`grid-action-strip-sample.scss`],
     templateUrl: 'grid-action-strip-sample.html',
-    providers: [{ provide: IgxGridTransaction, useClass: IgxTransactionService }],
+    providers: [{ provide: IgxGridTransaction, useClass: IgxTransactionService }]
 })
 export class GridActionStripSampleComponent {
     @ViewChild('gridRowEditTransaction', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
