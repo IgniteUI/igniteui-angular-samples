@@ -47,7 +47,8 @@ export class GridConfigGenerator implements IConfigGenerator {
         RemoteService: '../../src/app/services/remote.service',
         RemoteFilteringService: '../../src/app/services/remoteFiltering.service',
         RemotePagingService: '../../src/app/services/remotePaging.service',
-        RemoteServiceVirt: '../../src/app/services/remoteVirtualization.service'
+        RemoteServiceVirt: '../../src/app/services/remoteVirtualization.service',
+        FinancialDataService: '../../src/app/services/financial.service'
 };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -189,14 +190,16 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridSelectionSampleComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/financialData.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/financialData.ts',
+                '/src/app/services/financial.service.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['HttpClientModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule', 'IgxSnackbarModule',
-                    'IgxGridModule', 'IgxIconModule', 'IgxInputGroupModule', 'IgxSwitchModule', 'GridSelectionSampleComponent', 'IgxPreventDocumentScrollModule'],
+                    'IgxGridModule', 'IgxIconModule', 'IgxInputGroupModule', 'IgxSwitchModule', 'GridSelectionSampleComponent', 'IgxPreventDocumentScrollModule',
+                        'FinancialDataService'],
                 ngDeclarations: ['GridSelectionSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule', 'IgxGridModule', 'IgxSnackbarModule',
                     'IgxIconModule', 'IgxInputGroupModule', 'IgxSwitchModule', 'HttpClientModule'],
-                ngProviders: []
+                ngProviders: ['FinancialDataService']
             })
         }));
 

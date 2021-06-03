@@ -1,5 +1,5 @@
-/* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable max-len */
 import {IgxActionStripModule,
 IgxAvatarModule,
 IgxBadgeModule,
