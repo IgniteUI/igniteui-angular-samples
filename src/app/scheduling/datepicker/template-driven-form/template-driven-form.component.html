@@ -1,0 +1,17 @@
+<div class="pickers-wrapper">
+    <div class="form-group">
+        <div class="form-date-picker">
+            <igx-date-picker #datePicker name="date-picker" [(ngModel)]="date">
+                <label igxLabel>Date</label>
+            </igx-date-picker>
+        </div>
+        <div class="form-time-picker">
+            <igx-time-picker name="time-picker" [(ngModel)]="date" [disabled]="datePicker.value ? false : true">
+                <label igxLabel>Time</label>
+            </igx-time-picker>
+        </div>
+    </div>
+    <div class="text">
+        <span>Selected date: {{ date? date.toLocaleString() : null }}</span>
+    </div>
+</div>
