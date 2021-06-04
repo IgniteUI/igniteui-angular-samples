@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class DateTimePickerRFSampleComponent {
     public dateTimeForm: FormGroup;
-    public date = new Date();
+    public date = new Date(2021, 6, 12, 7, 30, 0);
     public minDate = new Date(this.date.getFullYear(), this.date.getMonth(), this.date.getDate() - 10);
     public maxDate = new Date(this.date.getFullYear(), this.date.getMonth(), this.date.getDate() + 15);
     public minTime = '06:15:30';
