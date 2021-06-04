@@ -1,0 +1,18 @@
+.pickers-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    flex: 1;
+}
+
+.form-date-picker {
+    flex: 50%;
+}
+
+.form-time-picker {
+    flex: 50%;
+    margin-left: 20px;
+}
