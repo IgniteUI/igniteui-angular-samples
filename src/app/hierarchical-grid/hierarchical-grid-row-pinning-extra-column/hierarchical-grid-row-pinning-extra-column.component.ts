@@ -6,8 +6,8 @@ import {
     IPinningConfig,
     RowPinningPosition
 } from 'igniteui-angular';
-import { icons } from '../../grid/services/svgIcons';
-import { SINGERS } from '../data';
+import { icons } from '../../services/svgIcons';
+import { SINGERS } from '../../data/singersData';
 
 const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 

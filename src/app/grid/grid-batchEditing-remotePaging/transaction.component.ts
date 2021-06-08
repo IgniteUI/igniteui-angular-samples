@@ -3,7 +3,7 @@ import { IgxGridTransaction, IgxTransactionService } from 'igniteui-angular';
 
 @Component({
     providers: [{ provide: IgxGridTransaction, useClass: IgxTransactionService }],
-    selector: 'app-grid-with-transactions',
+    selector: 'app-grid2-with-transactions',
     template: '<ng-content></ng-content>'
 })
-export class GridWithTransactionsComponent { }
+export class GridWithTransactions2Component { }

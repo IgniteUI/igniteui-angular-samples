@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { IgxHierarchicalGridComponent } from 'igniteui-angular';
-import { CUSTOMERS } from '../data';
+import { DATA } from '../../data/customers';
 
 @Component({
     selector: 'app-hierarchical-grid-column-group-selection',
@@ -16,7 +16,7 @@ export class HierarchicalGridColumnGroupSelectionComponent implements OnInit, Af
     constructor(private cdr: ChangeDetectorRef){}
 
     public ngOnInit(): void {
-        this.data = CUSTOMERS;
+        this.data = DATA;
     }
 
     public ngAfterViewInit() {

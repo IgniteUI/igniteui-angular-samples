@@ -3,7 +3,7 @@ import {
     IGridCreatedEventArgs, IGridKeydownEventArgs,
     IgxGridCellComponent, IgxHierarchicalGridComponent
 } from 'igniteui-angular';
-import { SINGERS } from '../data';
+import { SINGERS } from '../../data/singersData';
 
 @Component({
     selector: 'app-hierarchical-grid-custom-kb-navigation-sample',

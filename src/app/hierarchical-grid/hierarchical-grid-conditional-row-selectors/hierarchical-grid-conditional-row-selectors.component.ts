@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IRowSelectionEventArgs } from 'igniteui-angular';
-import { SINGERS } from '../data';
+import { SINGERS } from '../../data/singersData';
 
 @Component({
     selector: 'app-hierarchical-grid-conditional-row-selectors',
