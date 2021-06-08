@@ -11,7 +11,7 @@ IgxPrefixModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing';
 export class ComboConfigGenerator implements IConfigGenerator {
     public additionalImports = {
-        RemoteService: '../../src/app/services/remote.service'
+        RemoteNWindService: '../../src/app/services/remoteNwind.service'
 };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -71,13 +71,13 @@ export class ComboConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ['/src/app/services/remote.service.ts'],
+            additionalFiles: ['/src/app/services/remoteNwind.service.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxComboModule', 'IgxToastModule', 'ComboRemoteComponent',
-                    'HttpClientModule', 'RemoteService'],
+                    'HttpClientModule', 'RemoteNWindService'],
                 ngDeclarations: ['ComboRemoteComponent'],
                 ngImports: ['IgxComboModule', 'IgxToastModule', 'HttpClientModule'],
-                ngProviders: ['RemoteService']
+                ngProviders: ['RemoteNWindService']
             }),
             component: 'ComboRemoteComponent'
         }));

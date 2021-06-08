@@ -18,7 +18,7 @@ import {
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class DropDownConfigGenerator implements IConfigGenerator {
     public additionalImports = {
-        RemoteService: '../../src/app/services/remote.service'
+        RemoteNWindService: '../../src/app/services/remoteNwind.service'
     };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -111,14 +111,14 @@ export class DropDownConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'DropDownRemoteComponent',
-            additionalFiles: ['/src/app/services/remote.service.ts'],
+            additionalFiles: ['/src/app/services/remoteNwind.service.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxDropDownModule', 'DropDownRemoteComponent',
-                    'IgxButtonModule', 'IgxToggleModule', 'IgxForOfModule', 'IgxToastModule', 'HttpClientModule', 'RemoteService'],
+                    'IgxButtonModule', 'IgxToggleModule', 'IgxForOfModule', 'IgxToastModule', 'HttpClientModule', 'RemoteNWindService'],
                 ngDeclarations: ['DropDownRemoteComponent'],
                 ngImports: ['IgxDropDownModule', 'IgxButtonModule', 'IgxToastModule',
                     'IgxToggleModule', 'IgxForOfModule', 'HttpClientModule'],
-                ngProviders: ['RemoteService']
+                ngProviders: ['RemoteNWindService']
             })
         }));
 

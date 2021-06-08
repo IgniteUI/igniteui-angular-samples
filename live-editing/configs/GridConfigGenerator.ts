@@ -40,6 +40,7 @@ export class GridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive',
         GridWithTransactionsComponent: '../../src/app/grid/grid-batch-editing/grid-transaction.component',
+        GridWithTransactions2Component: '../../src/app/grid/grid-batchEditing-remotePaging/transaction.component',
         ContextmenuComponent: '../../src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component',
         RemoteValuesService: '../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service',
         PlanetComponent: '../../src/app/grid/grid-row-drag/planet/planet.component',
@@ -1163,14 +1164,15 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid Batch Editing with remote paging
         configs.push(new Config({
             component: 'RemotePagingBatchEditingComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/data/utils.ts',
-                '/src/app/grid/grid-batchEditing-remotePaging/transaction.component.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/utils.ts',
+                '/src/app/grid/grid-batchEditing-remotePaging/transaction.component.ts', '/src/app/services/remotePaging.service.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['RemotePagingBatchEditingComponent', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
-                    'IgxFocusModule', 'GridWithTransactionsComponent', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['RemotePagingBatchEditingComponent', 'GridWithTransactionsComponent'],
+                    'GridWithTransactions2Component', 'RemotePagingService', 'HttpClientModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['RemotePagingBatchEditingComponent', 'GridWithTransactions2Component'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
-                    'IgxFocusModule']
+                    'HttpClientModule'],
+                ngProviders: ['RemotePagingService']
             })
         }));
 

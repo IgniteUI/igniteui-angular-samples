@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <app-grid-with-transactions>
+    <app-grid2-with-transactions>
       <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" width="100%" height="580px" [paging]="true" [perPage]="perPage"
       [paginationTemplate]="customPager" [rowEditable]="true" [primaryKey]="'ID'">
         <igx-grid-toolbar>
@@ -22,7 +22,7 @@
           <igx-column field="UnitsInStock"></igx-column>
           <igx-column field="Rating"></igx-column>
       </igx-grid>
-    </app-grid-with-transactions>
+    </app-grid2-with-transactions>
     <ng-template #customPager let-api>
         <igx-paginator #paginator
             [totalRecords]="totalCount"

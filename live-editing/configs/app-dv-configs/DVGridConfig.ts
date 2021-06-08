@@ -65,7 +65,7 @@ export class DVGridConfigGenerator implements IConfigGenerator {
         // master-detail sample
         configs.push(new Config({
             component: 'GridMasterDetailSampleComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/projects/app-lob/src/app/data/employees.ts',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/projects/app-lob/src/app/data/employeesData.ts',
                 '/projects/app-lob/src/_app-layout.scss', '/projects/app-lob/src/_variables.scss'],
             additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core'],
             appModuleConfig: new AppModuleConfig({

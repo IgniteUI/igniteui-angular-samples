@@ -2,7 +2,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IgxColumnComponent } from 'igniteui-angular';
 import { IgxLegendComponent } from 'igniteui-angular-charts';
-import { employeesData } from '../../data/employees';
+import { employeesData } from '../../data/employeesData';
 
 @Component({
     selector: 'app-grid-master-detail',
