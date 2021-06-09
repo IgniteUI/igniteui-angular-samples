@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable */
 export const FULL_EMPLOYEE_DATA = () => ([
     {
         Age: 55,

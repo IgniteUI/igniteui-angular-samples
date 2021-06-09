@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { athletesData } from '../services/data';
+    import { Component, OnInit } from '@angular/core';
+import { athletesData } from '../../data/athletesData';
 
 @Component({
     selector: 'app-grid-resize-line-styling-sample',

@@ -1,9 +1,9 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { IgxComboComponent, IgxToastComponent } from 'igniteui-angular';
-import { RemoteService } from '../../../grid/services/remote.service';
+import { RemoteNWindService } from '../../../services/remoteNwind.service';
 
 @Component({
-    providers: [RemoteService],
+    providers: [RemoteNWindService],
     selector: 'app-combo-remote',
     styleUrls: ['./combo-remote.component.scss'],
     templateUrl: './combo-remote.component.html'
@@ -15,7 +15,7 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
     public prevRequest: any;
     public rData: any;
 
-    constructor(private remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
+    constructor(private remoteService: RemoteNWindService, public cdr: ChangeDetectorRef) { }
 
     public ngOnInit() {
         this.rData = this.remoteService.remoteData;

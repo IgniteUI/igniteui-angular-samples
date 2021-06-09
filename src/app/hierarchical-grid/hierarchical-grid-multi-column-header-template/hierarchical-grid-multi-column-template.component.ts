@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxColumnGroupComponent, IgxHierarchicalGridComponent } from 'igniteui-angular';
-import { CUSTOMERS } from '../data';
+import { DATA } from '../../data/customers';
 
 @Component({
     selector: 'app-hierarchical-grid-multi-column-template',
@@ -19,7 +19,7 @@ export class HGridMultiHeaderTemplateSampleComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.localData = CUSTOMERS;
+        this.localData = DATA;
         for (const item of this.localData) {
             item.Location = `${item.Address}, ${item.City}, ${item.Country}`;
         }

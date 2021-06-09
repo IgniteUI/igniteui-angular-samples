@@ -3,7 +3,7 @@ import { IGridCreatedEventArgs, IGridEditEventArgs,
     IgxGridBaseDirective, IgxHierarchicalGridComponent, IgxToastComponent } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { SINGERS } from '../data';
+import { SINGERS } from '../../data/singersData';
 import { Singer } from '../models';
 
 @Component({

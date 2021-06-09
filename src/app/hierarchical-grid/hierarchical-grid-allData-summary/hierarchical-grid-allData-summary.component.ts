@@ -3,7 +3,7 @@ import { IgxHierarchicalGridComponent,
     IgxNumberSummaryOperand,
     IgxSummaryOperand,
     IgxSummaryResult } from 'igniteui-angular';
-import { SINGERS } from '../data';
+import { SINGERS } from '../../data/singersData';
 
 class CustomNumberSummary {
 

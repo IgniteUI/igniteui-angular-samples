@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SINGERS } from '../data';
-import { Singer } from '../models';
+import { SINGERS } from '../../data/singersData';
 
 @Component({
     selector: 'app-hierarchical-grid-add-row',
