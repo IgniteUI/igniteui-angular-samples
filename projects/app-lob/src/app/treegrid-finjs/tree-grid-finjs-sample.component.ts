@@ -1,11 +1,10 @@
 import { AfterViewInit, Component, ElementRef, OnInit, OnDestroy, ViewChild, HostBinding } from '@angular/core';
 import {
-    AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
-    IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
-    PositionSettings, SortingDirection, VerticalAlignment
+    AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment,
+    IGroupingExpression, IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent,
+    OverlaySettings, PositionSettings, VerticalAlignment
 } from 'igniteui-angular';
 import { Contract, REGIONS } from '../data/financialData';
-import { ITreeGridAggregation } from './tree-grid-grouping.pipe';
 import { SignalRService } from '../services/signal-r.service';
 
 @Component({
@@ -15,7 +14,7 @@ import { SignalRService } from '../services/signal-r.service';
     templateUrl: './tree-grid-finjs-sample.component.html'
 })
 
-export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy, OnInit {
+export class TreeGridFinJSComponent implements OnDestroy, OnInit {
     @ViewChild('grid1', { static: true }) public grid1: IgxTreeGridComponent;
     @ViewChild('buttonGroup1', { static: true }) public buttonGroup1: IgxButtonGroupComponent;
     @ViewChild('slider1', { static: true }) public volumeSlider: IgxSliderComponent;
@@ -48,20 +47,12 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy, OnInit 
         }
     ];
     public groupColumns = ['category', 'type', 'contract'];
-    public aggregations: ITreeGridAggregation[] = [
-        {
-            aggregate: (parent: any, data: any[]) => data.map((r) => r.change).reduce((ty, u) => ty + u, 0),
-            field: 'change'
-        },
-        {
-            aggregate: (parent: any, data: any[]) => data.map((r) => r.price).reduce((ty, u) => ty + u, 0),
-            field: 'price'
-        },
-        {
-            aggregate: (parent: any, data: any[]) => parent.change / (parent.price - parent.change) * 100,
-            field: 'changeP'
-        }
+    public groupingExpressions: IGroupingExpression[] = [
+        { fieldName: 'category', dir: 2, ignoreCase: true, strategy: DefaultSortingStrategy.instance() },
+        { fieldName: 'type', dir: 1, ignoreCase: true, strategy: DefaultSortingStrategy.instance() },
+        { fieldName: 'contract', dir: 1, ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
     ];
+
     public primaryKey = 'id';
     public childDataKey = 'children';
     public groupColumnKey = 'categories';
@@ -104,17 +95,6 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy, OnInit 
 
     public ngOnInit() {
         this.overlaySettings.outlet = this.outlet;
-        this.grid1.sortingExpressions = [{ fieldName: this.groupColumnKey, dir: SortingDirection.Desc }];
-    }
-
-    public ngAfterViewInit() {
-        this.groupColumns.forEach(col => {
-            const column = this.grid1.getColumnByName(col);
-            if (column) {
-                column.hidden = !column.hidden;
-            }
-        });
-        this.grid1.reflow();
     }
 
     public onButtonAction(event: any) {

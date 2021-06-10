@@ -25,19 +25,17 @@
             ~{{volume/5}} records updated.</span>
     </div>
     <igx-tree-grid #grid1 igxPreventDocumentScroll
-        [data]="data$ | async | treeGridGrouping:groupColumns:aggregations:groupColumnKey:primaryKey:childDataKey"
+        [data]="data$ | async | treeGridGrouping:groupingExpressions:groupColumnKey:primaryKey:childDataKey"
         [height]="'calc(100% - 76px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
         [primaryKey]="primaryKey" [childDataKey]="childDataKey" hiddenColumnsText="Hidden" [isLoading]="isLoading"
-        [rowSelection]="selectionMode" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+        [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
         <igx-grid-toolbar *ngIf="showToolbar">
             <igx-grid-toolbar-title class="grid-toolbar-title">
-                <app-igx-tree-grid-group-area
-                    [grid]='grid1'
-                    [(groupColumns)]='groupColumns'
-                    [groupColumnKey]='groupColumnKey'>
-                </app-igx-tree-grid-group-area>
+                <igx-group-area [grid]="grid1"
+                    [(groupingExpressions)]="groupingExpressions"
+                    [hideGroupedColumns]="true">
+                </igx-group-area>
             </igx-grid-toolbar-title>
-
             <igx-grid-toolbar-actions>
                 <igx-grid-toolbar-hiding title="Indicators"></igx-grid-toolbar-hiding>
                 <igx-grid-toolbar-exporter [exportCSV]="false"></igx-grid-toolbar-exporter>
@@ -49,13 +47,13 @@
         <ng-template igxExcelStyleHiding></ng-template>
         <ng-template igxExcelStylePinning></ng-template> -->
 
-        <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]='true' [resizable]='true'
+        <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]='false' [resizable]='true'
             [disableHiding]="true"></igx-column>
-        <igx-column [field]="'category'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
+        <igx-column [field]="'category'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true' [hidden]='true'>
         </igx-column>
-        <igx-column [field]="'type'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
+        <igx-column [field]="'type'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true' [hidden]='true'>
         </igx-column>
-        <igx-column [field]="'contract'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
+        <igx-column [field]="'contract'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true' [hidden]='true'>
         </igx-column>
         <igx-column [field]="'settlement'" [width]="'100px'" [sortable]='true'></igx-column>
         <igx-column [field]="'country'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>

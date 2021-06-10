@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular';
+import { DefaultSortingStrategy, IGroupingExpression, IgxTreeGridComponent } from 'igniteui-angular';
 import { TreeGridGroupingLoadOnDemandService, TreeGridGroupingParameters } from './remoteService';
 
 @Component({
@@ -12,6 +12,11 @@ export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
 
     public groupColumns = ['ShipCountry', 'ShipCity', 'Discontinued'];
+    public groupingExpressions: IGroupingExpression[] = [
+        { fieldName: 'ShipCountry', dir: 2, ignoreCase: true, strategy: DefaultSortingStrategy.instance() },
+        { fieldName: 'ShipCity', dir: 1, ignoreCase: true, strategy: DefaultSortingStrategy.instance() },
+        { fieldName: 'Discontinued', dir: 1, ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
+    ];
     public primaryKey = 'id';
     public childDataKey = 'children';
     public hasChildrenKey = 'children';

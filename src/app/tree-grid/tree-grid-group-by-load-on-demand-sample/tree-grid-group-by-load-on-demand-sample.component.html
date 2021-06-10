@@ -12,19 +12,15 @@
         hiddenColumnsText="Hidden">
         <igx-grid-toolbar>
             <igx-grid-toolbar-title class="grid-toolbar-title">
-                <app-igx-tree-grid-group-area
-                    [grid]='treeGrid'
-                    [(groupColumns)]='groupColumns'
-                    [groupColumnKey]='groupColumnKey'
-                    (groupColumnsChange)="onGroupColumnsChange($event)">
-                </app-igx-tree-grid-group-area>
+                <igx-group-area [grid]="treeGrid"
+                    [(groupingExpressions)]="groupingExpressions"
+                    [hideGroupedColumns]="true">
+                </igx-group-area>
             </igx-grid-toolbar-title>
-
             <igx-grid-toolbar-actions>
                 <igx-grid-toolbar-hiding title="Indicators"></igx-grid-toolbar-hiding>
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
-
         <igx-column [field]="groupColumnKey" [width]="'180px'" [resizable]='true' [disableHiding]="true"></igx-column>
 
         <igx-column field="OrderID" header="Order ID">
