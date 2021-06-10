@@ -19,7 +19,6 @@ export class DVTreeGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         FinancialDataService: '../../../projects/app-lob/src/app/services/financial.service',
         TreeGridGroupingPipe: '../../../projects/app-lob/src/app/treegrid-finjs/tree-grid-grouping.pipe',
-        IgxTreeGridGroupAreaComponent: '../../../projects/app-lob/src/app/treegrid-finjs/tree-grid-group-area.component',
         IgxPreventDocumentScrollModule: '../../../src/app/directives/prevent-scroll.directive',
         SignalRService : '../../../projects/app-lob/src/app/services/signal-r.service'
 };
@@ -60,14 +59,13 @@ export class DVTreeGridConfigGenerator implements IConfigGenerator {
             additionalDependencies: ['@microsoft/signalr'],
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/projects/app-lob/src/app/services/financial.service.ts',
                 '/projects/app-lob/src/app/data/financialData.ts', '/projects/app-lob/src/app/services/signal-r.service.ts',
-                '/projects/app-lob/src/app/treegrid-finjs/tree-grid-grouping.pipe.ts', '/projects/app-lob/src/app/treegrid-finjs/tree-grid-group-area.component.ts',
-                '/projects/app-lob/src/app/treegrid-finjs/tree-grid-group-area.component.html', '/projects/app-lob/src/app/treegrid-finjs/tree-grid-group-area.component.scss',
+                '/projects/app-lob/src/app/treegrid-finjs/tree-grid-grouping.pipe.ts',
                 '/projects/app-lob/src/_app-layout.scss', '/projects/app-lob/src/_variables.scss'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxExcelExporterService', 'IgxSwitchModule', 'IgxRippleModule', 'TreeGridFinJSComponent',
-                    'FinancialDataService', 'TreeGridGroupingPipe', 'HttpClientModule', 'SignalRService', 'IgxTreeGridGroupAreaComponent'],
-                ngDeclarations: ['TreeGridFinJSComponent', 'TreeGridGroupingPipe', 'IgxTreeGridGroupAreaComponent'],
+                    'FinancialDataService', 'TreeGridGroupingPipe', 'HttpClientModule', 'SignalRService'],
+                ngDeclarations: ['TreeGridFinJSComponent', 'TreeGridGroupingPipe'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule', 'HttpClientModule'],
                 ngProviders: ['FinancialDataService', 'IgxExcelExporterService', 'SignalRService']
