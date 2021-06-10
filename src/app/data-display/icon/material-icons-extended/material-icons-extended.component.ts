@@ -32,7 +32,7 @@ export class MaterialIconsExtendedComponent implements OnInit {
         private iconService: IgxIconService,
         @Inject(DOCUMENT) private document: Document,
         private renderer: Renderer2
-    ) {}
+    ) { }
 
     public categories: ICategoryOption[] = [
         {
@@ -44,13 +44,13 @@ export class MaterialIconsExtendedComponent implements OnInit {
     public setCategories() {
         const categories = IconCategory.values().map(
             (category) =>
-                ({
-                    text: category
-                        .split(' ')
-                        .map((w) => w.replace(/^\w/, (c) => c.toUpperCase()))
-                        .join(' '),
-                    category
-                } as ICategoryOption)
+            ({
+                text: category
+                    .split(' ')
+                    .map((w) => w.replace(/^\w/, (c) => c.toUpperCase()))
+                    .join(' '),
+                category
+            } as ICategoryOption)
         );
 
         this.categories = [...this.categories, ...categories];
@@ -170,11 +170,16 @@ export class CategoriesFilterPipe implements PipeTransform {
     name: 'filterByName'
 })
 export class FilterByName implements PipeTransform {
-    transform(icons: IMXIcon[], name: string): IMXIcon[] {
+    transform(icons: IMXIcon[], keyword: any): IMXIcon[] {
         return icons.filter((icon) => {
-            const index = icon.name.indexOf(name);
-            if (index !== -1) {
-                return icon.name;
+            const keywords = [...icon.keywords, icon.name];
+            const index = keywords.indexOf(keyword);
+            if (keyword !== '') {
+                if (index !== -1) {
+                    return icon.keywords;
+                }
+            } else {
+                return icons;
             }
         });
     }
