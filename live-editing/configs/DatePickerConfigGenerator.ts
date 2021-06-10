@@ -118,6 +118,26 @@ export class DatePickerConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        // date & time picker - template driven form
+        configs.push(new Config({
+            component: 'DateTimePickerTDFSampleComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['DateTimePickerTDFSampleComponent'],
+                ngDeclarations: ['DateTimePickerTDFSampleComponent'],
+                ngImports: ['IgxDatePickerModule', 'IgxTimePickerModule']
+            })
+        }));
+
+        // date & time picker - reactive form
+        configs.push(new Config({
+            component: 'DateTimePickerRFSampleComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['DateTimePickerRFSampleComponent'],
+                ngDeclarations: ['DateTimePickerRFSampleComponent'],
+                ngImports: ['IgxDatePickerModule', 'IgxTimePickerModule']
+            })
+        }));
+
         return configs;
     }
 }
