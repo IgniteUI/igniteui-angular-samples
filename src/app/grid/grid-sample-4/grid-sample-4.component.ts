@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, TemplateRef, ViewChild, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { IgxColumnComponent, IgxGridComponent } from 'igniteui-angular';
 import { debounceTime } from 'rxjs/operators';
-import { RemoteServiceVirt } from '../services/remoteService';
+import { RemoteServiceVirt } from '../../services/remoteVirtualization.service';
 
 @Component({
     providers: [RemoteServiceVirt],

@@ -5,7 +5,7 @@ import { IForOfState } from 'igniteui-angular';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
-export class RemoteService {
+export class RemoteNWindService {
     public remoteData: BehaviorSubject<any[]>;
     private url = 'https://services.odata.org/V4/Northwind/Northwind.svc/Products';
 

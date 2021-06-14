@@ -13,37 +13,6 @@ igx-icon {
   cursor: pointer;
 }
 
-.item-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.contact {
-  display: flex;
-  flex: 1 0 240px;
-  align-items: center;
-
-  &__info {
-    display: flex;
-    flex-flow: column nowrap;
-    margin-left: 24px;
-  }
-}
-
-.name {
-  font-weight: 600;
-}
-
-.phone {
-  font-size: 0.875em;
-  line-height: 1;
-}
-
-.search {
-    margin-bottom: 16px;
-}
-
 .listItemLeftPanningStyle {
     display: flex;
     flex-direction: row-reverse;

@@ -889,7 +889,7 @@ interface IResponse {
   }
 /* eslint-enable */
 export class FinancialData {
-    public generateData(count: number): any[] {
+    public static generateData(count: number): any[] {
         const currData = [];
         for (let i = 0; i < count; i++) {
             const rand = Math.floor(Math.random() * Math.floor(DATA.length));
@@ -929,14 +929,70 @@ export class FinancialData {
         return currData;
     }
 
-    public updateAllPrices(data: any[]): any[] {
+    public static generateHierarchicalData(count: number): any[] {
+        const currData = [];
+        const categories = 'Categories';
+        for (let i = 0; i < DATA.length; i++) {
+            DATA[i].ID = 10 + i;
+          }
+
+        for (let i = 0; i < Contract.length; i++) {
+          const rand = Math.floor(Math.random() * Math.floor(DATA.length));
+          const dataObj = Object.assign({}, DATA[rand]);
+          dataObj.category = Contract[i];
+          dataObj[categories] = [];
+          dataObj.ID = i * count;
+
+          // add second level of hier data
+          const childData = this.addHierarchicalData(count / 4, i, dataObj.ID);
+          for (const childDataObj of childData) {
+            childDataObj[categories] = this.addHierarchicalData(childData / 4, i, childDataObj.ID, 4);
+          }
+
+          // add level of hier data
+          dataObj[categories] = childData;
+
+          this.addMockData(dataObj);
+          currData.push(dataObj);
+        }
+
+        return currData;
+    }
+
+    private static addMockData(dataObj) {
+        for (const mockData of MOCKFINANCEDATA) {
+            for (const prop in mockData) {
+                if (mockData.hasOwnProperty(prop)) {
+                    dataObj[prop] = mockData[prop];
+                }
+            }
+        }
+    }
+
+    private static addHierarchicalData(count: number, i: number, parentRowId: number, toAdd?: number): any {
+        const childData = [];
+        const numberToAdd = toAdd ? toAdd : Math.round(count / Contract.length);
+        for (let y = 0; y < numberToAdd; y++) {
+            const rand = Math.floor(Math.random() * Math.floor(DATA.length));
+            const childDataObj = Object.assign({}, DATA[rand]);
+            childDataObj.ID = parentRowId * 10  + y + 1;
+            this.randomizeObjectData(childDataObj);
+            this.addMockData(childDataObj);
+            childData.push(childDataObj);
+        }
+        return childData;
+    }
+
+    // eslint-disable-next-line @typescript-eslint/member-ordering
+    public static updateAllPrices(data: any[]): any[] {
         for (const dataRow of data) {
             this.randomizeObjectData(dataRow);
         }
         return Array.from(data);
     }
 
-    public updateRandomPrices(data: any[]): any {
+    // eslint-disable-next-line @typescript-eslint/member-ordering
+    public static updateRandomPrices(data: any[]): any {
         const currData = data.slice(0, data.length + 1);
         for (let i = 0; i < 30; i++) {
             const random = Math.round(Math.random() * data.length);
@@ -948,14 +1004,14 @@ export class FinancialData {
         return currData;
     }
 
-    private randomizeObjectData(dataObj) {
+    private static randomizeObjectData(dataObj) {
         const changeP = 'changeP';
         const res = this.generateNewPrice(dataObj.price);
         dataObj.change = res.price - dataObj.price;
         dataObj.price = res.price;
         dataObj[changeP] = res.changePercent;
     }
-    private generateNewPrice(oldPrice): any {
+    private static generateNewPrice(oldPrice): any {
         const rnd = parseFloat(Math.random().toFixed(2));
         const volatility = 2;
         let newPrice = 0;
@@ -974,10 +1030,10 @@ export class FinancialData {
 
         return result;
     }
-    private generateRandomNumber(min, max) {
+    private static generateRandomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    private randomizeCountry(region: any) {
+    private static randomizeCountry(region: any) {
         let country;
         switch (region.Region) {
             case 'North America': {
@@ -1007,7 +1063,8 @@ export class FinancialData {
          }
         return country;
     }
-    private randomizeDate() {
+
+    private static randomizeDate() {
         const date = new Date();
         date.setHours(this.generateRandomNumber(0, 23));
         date.setMonth(this.generateRandomNumber(0, date.getMonth()));
