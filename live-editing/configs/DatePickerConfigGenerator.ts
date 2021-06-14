@@ -1,4 +1,4 @@
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import {IgxAutocompleteModule,
 IgxButtonModule,
 IgxCalendarModule,
@@ -124,9 +124,9 @@ export class DatePickerConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'DateTimePickerTDFSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['DateTimePickerTDFSampleComponent', 'IgxDatePickerModule', 'IgxTimePickerModule', 'FormsModule'],
+                imports: ['DateTimePickerTDFSampleComponent', 'IgxDatePickerModule', 'IgxTimePickerModule'],
                 ngDeclarations: ['DateTimePickerTDFSampleComponent'],
-                ngImports: ['IgxDatePickerModule', 'IgxTimePickerModule', 'FormsModule']
+                ngImports: ['IgxDatePickerModule', 'IgxTimePickerModule']
             })
         }));
 
