@@ -170,10 +170,10 @@ export class CategoriesFilterPipe implements PipeTransform {
     name: 'filterByName'
 })
 export class FilterByName implements PipeTransform {
-    transform(icons: IMXIcon[], keyword: any): IMXIcon[] {
+    transform(icons: IMXIcon[], keyword: string): IMXIcon[] {
         return icons.filter((icon) => {
             const keywords = [...icon.keywords, icon.name];
-            const index = keywords.indexOf(keyword);
+            const index = keywords.indexOf(keyword.toLowerCase());
             if (keyword !== '') {
                 if (index !== -1) {
                     return icon.keywords;
