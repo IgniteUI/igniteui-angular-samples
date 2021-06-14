@@ -454,6 +454,10 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
         } else {
             cell = this.grid.getCellByColumn(this.rowIndex, this.grid.visibleColumns[this.colIndex].field);
         }
+
+        if (!cell) {
+            return;
+        }
         this.contextmenuX = cell.element.nativeElement.getClientRects()[0].right;
         this.contextmenuY = cell.element.nativeElement.getClientRects()[0].bottom;
         this.contextmenu = this.isWithInRange(cell.rowIndex, cell.visibleColumnIndex);
