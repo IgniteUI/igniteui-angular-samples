@@ -2,6 +2,7 @@ import {IgxAutocompleteModule,
 IgxButtonModule,
 IgxCalendarModule,
 IgxDatePickerModule,
+IgxTimePickerModule,
 IgxDropDownModule,
 IgxIconModule,
 IgxInputGroupModule,
@@ -122,7 +123,7 @@ export class DatePickerConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'DateTimePickerTDFSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['DateTimePickerTDFSampleComponent'],
+                imports: ['DateTimePickerTDFSampleComponent', 'IgxDatePickerModule', 'IgxTimePickerModule'],
                 ngDeclarations: ['DateTimePickerTDFSampleComponent'],
                 ngImports: ['IgxDatePickerModule', 'IgxTimePickerModule']
             })
@@ -132,7 +133,7 @@ export class DatePickerConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'DateTimePickerRFSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['DateTimePickerRFSampleComponent'],
+                imports: ['DateTimePickerRFSampleComponent', 'IgxDatePickerModule', 'IgxTimePickerModule'],
                 ngDeclarations: ['DateTimePickerRFSampleComponent'],
                 ngImports: ['IgxDatePickerModule', 'IgxTimePickerModule']
             })
