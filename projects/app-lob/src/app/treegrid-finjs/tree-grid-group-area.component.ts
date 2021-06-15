@@ -2,10 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
     IBaseChipEventArgs, IChipsAreaReorderEventArgs, IgxColumnComponent, IgxDropDirective, IgxTreeGridComponent
 } from 'igniteui-angular';
-import { LocalDataService } from '../grid-finjs/localData.service';
 
 @Component({
-    providers: [LocalDataService],
     selector: 'app-igx-tree-grid-group-area',
     styleUrls: ['./tree-grid-group-area.component.scss'],
     templateUrl: './tree-grid-group-area.component.html'

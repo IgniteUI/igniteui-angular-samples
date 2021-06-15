@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { IgxGridComponent, DefaultSortingStrategy } from 'igniteui-angular';
-import { FinancialData } from '../services/financialData';
+import { FinancialData } from '../../data/financialData';
 import  {generateRandomInteger, generateRandomFloat} from '../../data/utils';
+
 @Component({
   selector: 'app-grid-sorting-indicators',
   templateUrl: './grid-sorting-indicators.component.html',
@@ -14,7 +15,7 @@ export class GridSortingIndicatorsComponent implements OnInit, AfterViewInit {
 
     public ngOnInit(): void {
         const typeArr = ['Gold', 'Silver', 'Coal'];
-        this.data = new FinancialData().generateData(1000).map(dataObj => {
+        this.data = FinancialData.generateData(1000).map(dataObj => {
                 const type = typeArr[generateRandomInteger(0, 2)];
                 switch (type) {
                     case 'Gold':

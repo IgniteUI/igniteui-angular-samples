@@ -1,11 +1,10 @@
 /* eslint-disable max-len */
 import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
+import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { SignalRService } from '../services/signal-r.service';
 
 @Component({
-  providers: [SignalRService],
   selector: 'app-finjs-grid',
   templateUrl: './grid-finjs.component.html',
   styleUrls: ['./grid-finjs.component.scss']
@@ -91,7 +90,7 @@ export class GridFinJSComponent implements OnInit {
         }
     }
 
-    public rowSelectionChanged(args: IRowSelectionEventArgs) {
+    public rowSelectionChanged(args) {
         this.grid.clearCellSelection();
         this.selectedDataChanged.emit(args.newSelection);
     }

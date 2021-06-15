@@ -1,5 +1,5 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
-import { SINGERS } from '../data';
+import { SINGERS } from '../../data/singersData';
 
 @Component({
     selector: 'app-hgrid-editing-lifecycle',

@@ -3,11 +3,11 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, AfterViewIn
 import { IForOfState, IgxDropDownComponent, IgxForOfDirective, IgxToastComponent } from 'igniteui-angular';
 import { Subject, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { RemoteService } from '../../../grid/services/remote.service';
+import { RemoteNWindService } from '../../../services/remoteNwind.service';
 
 // tslint:disable:object-literal-sort-keys
 @Component({
-    providers: [RemoteService],
+    providers: [RemoteNWindService],
     selector: 'app-drop-down-remote',
     templateUrl: './drop-down-remote.component.html',
     styleUrls: ['./drop-down-remote.component.scss']
@@ -24,7 +24,7 @@ export class DropDownRemoteComponent implements OnInit, OnDestroy, AfterViewInit
     public prevRequest: Subscription;
     public rData: any;
     private destroy$ = new Subject();
-    constructor(private remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
+    constructor(private remoteService: RemoteNWindService, public cdr: ChangeDetectorRef) { }
 
     public ngAfterViewInit() {
         const initialState: IForOfState = {

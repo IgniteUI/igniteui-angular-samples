@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { GridPagingMode, IgxGridComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
-import { RemotePagingService } from '../services/remotePagingService';
+import { RemotePagingService } from '../../services/remotePaging.service';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -51,8 +51,14 @@ export class RemotePagingDefaultTemplateComponent implements OnInit, AfterViewIn
     }
 
     public ngAfterViewInit() {
+        this.grid1.isLoading = true;
         this.remoteService.getData(0, this.grid1.perPage);
         this.remoteService.getDataLength();
+    }
+
+    public pagingDone(page) {
+        const skip = page.current * this.grid1.perPage;
+        this.remoteService.getData(skip, this.grid1.perPage);
     }
 
     public paginate(page) {

@@ -7,7 +7,7 @@ import {
     RowPinningPosition,
     RowType
 } from 'igniteui-angular';
-import { icons } from '../../grid/services/svgIcons';
+import { icons } from '../../services/svgIcons';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
 const FILTERING_ICONS_FONT_SET = 'filtering-icons';

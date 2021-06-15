@@ -1,11 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
-import { HierFinancialDataService } from '../services/hierFinancialData.service';
+import { FinancialDataService } from '../../services/financial.service';
 
 @Component({
-    providers: [HierFinancialDataService],
-    selector: 'app-tree-grid-virtualization-sample',
+    providers: [FinancialDataService],
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'tree-grid-virtualization-sample',
     styleUrls: ['./tree-grid-virtualization-sample.component.scss'],
     templateUrl: 'tree-grid-virtualization-sample.component.html'
 })
@@ -16,8 +17,8 @@ export class TreeGridVirtualizationSampleComponent {
     public data: Observable<any[]>;
     public volume = 10000;
 
-    constructor(private localService: HierFinancialDataService) {
-        this.localService.getData(this.volume);
+    constructor(private localService: FinancialDataService) {
+        this.localService.getHierarchicalData(this.volume);
         this.data = this.localService.records;
     }
 

@@ -55,7 +55,7 @@ $clipboardSuccessColor: igx-color($color: 'success');
     align-items: center;
   }
   @include e(header-search) {
-    max-width: rem(220px);
+    max-width: rem(300px);
     width: 100%;
     margin-left: rem(8px);
   }
