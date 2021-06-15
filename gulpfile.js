@@ -65,7 +65,7 @@ gulp.task("watch-live-editing", gulp.series("generate-live-editing", () => {
 const excludedDirectories = ["index", "assets", "environment"];
 
 const getSampleNameFromFileName = (fileName, sampleBaseDir) => fileName.replace(sampleBaseDir + "--", "");
-var assetsRegex = new RegExp("\/?assets\/", "g");
+var assetsRegex = new RegExp(/([\.]{0,2}\/)*assets\//g);
 
 const processApp = (projectPath, dest, directoriesToExclude) => {
     if(!fs.existsSync(submodule)) {
