@@ -19,7 +19,7 @@ import {
     AbsolutePosition,
     OverlayClosingEventArgs
 } from 'igniteui-angular';
-import { athletesData } from './../services/data';
+import { athletesData } from '../../data/athletesData';
 
 @Component({
     selector: 'app-grid',

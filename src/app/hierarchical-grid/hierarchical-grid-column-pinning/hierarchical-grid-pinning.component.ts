@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
-import { CUSTOMERS } from '../data';
+import { DATA } from '../../data/customers';
 
 @Component({
     selector: 'app-hierarchical-grid-pinning',
@@ -15,7 +15,7 @@ export class HGridPinningSampleComponent implements OnInit {
     public localdata;
 
     constructor() {
-        this.localdata = CUSTOMERS;
+        this.localdata = DATA;
     }
     public ngOnInit(): void {
 

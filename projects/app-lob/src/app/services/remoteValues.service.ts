@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FilteringStrategy, IFilteringExpressionsTree, IgxColumnComponent } from 'igniteui-angular';
-import { SINGERS } from '../data';
+import { SINGERS } from '../../../../../src/app/data/singersData';
 
 @Injectable()
 export class RemoteValuesService {

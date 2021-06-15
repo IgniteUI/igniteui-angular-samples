@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular';
-import { athletesData } from '../services/data';
+import { athletesData } from '../../data/athletesData';
 
 @Component({
     selector: 'app-grid-conditional-cell-style-2',

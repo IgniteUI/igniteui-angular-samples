@@ -1,41 +1,24 @@
 import { Component, Injectable, ViewChild, OnInit } from '@angular/core';
 
 import { IgxGridComponent } from 'igniteui-angular';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { FinancialData } from '../services/financialData';
-
-@Injectable()
-export class LocalService {
-    public records: Observable<any[]>;
-    private _records: BehaviorSubject<any[]>;
-
-    constructor() {
-        this._records = new BehaviorSubject([]);
-        this.records = this._records.asObservable();
-    }
-
-    public getData(count: number = 100) {
-        const financialData: FinancialData = new FinancialData();
-        this._records.next(financialData.generateData(count));
-    }
-}
+import { Observable } from 'rxjs';
+import { FinancialDataService } from '../../services/financial.service';
 
 @Component({
-    providers: [LocalService],
+    providers: [FinancialDataService],
     selector: 'app-grid-sample',
     styleUrls: ['./grid-sample-2.component.scss'],
     templateUrl: 'grid-sample-2.component.html'
 })
 
-export class FinancialSampleComponent implements OnInit{
+export class FinancialSampleComponent {
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     public data: Observable<any[]>;
-    constructor(private localService: LocalService) {
+    constructor(private localService: FinancialDataService) {
         this.localService.getData(100000);
         this.data = this.localService.records;
     }
-    public ngOnInit(): void {
-    }
+
     public formatNumber(value: number) {
         return value.toFixed(2);
     }

@@ -1,6 +1,6 @@
 import { Component, ViewChild, OnInit} from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular';
-import { athletesData } from '../services/data';
+import { athletesData } from '../../data/athletesData';
 
 @Component({
     selector: 'app-custom-grid-paging-style-sample',

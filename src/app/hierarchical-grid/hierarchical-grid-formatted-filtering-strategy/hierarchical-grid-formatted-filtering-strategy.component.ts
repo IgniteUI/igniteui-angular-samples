@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IgxHierarchicalGridComponent, FormattedValuesFilteringStrategy } from 'igniteui-angular';
-import { SINGERS } from '../data';
+import { SINGERS } from '../../data/singersData';
 
 @Component({
     selector: 'app-hierarchical-grid-formatted-filtering-strategy',
