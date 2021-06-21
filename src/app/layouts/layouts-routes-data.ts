@@ -1,6 +1,9 @@
 /* eslint-disable quote-props */
 
 export const layoutsRoutesData = {
+    'accordion-sample-1': { displayName: 'Accordion 1', parentName: 'Accordion' },
+    'accordion-sample-2': { displayName: 'Accordion 2', parentName: 'Accordion' },
+    'accordion-sample-3': { displayName: 'Accordion 3', parentName: 'Accordion' },
     'avatar-sample-1': { displayName: 'Avatar with Initials', parentName: 'Avatar' },
     'avatar-sample-2': { displayName: 'Avatar with Image', parentName: 'Avatar' },
     'avatar-sample-4': { displayName: 'Avatar with Icon', parentName: 'Avatar' },
@@ -21,11 +24,11 @@ export const layoutsRoutesData = {
     'layout-direction-row': { displayName: 'Layout Direction Row', parentName: 'Layout' },
     'layout-direction-column': { displayName: 'Layout Direction Column', parentName: 'Layout' },
     'layout-custom-order': { displayName: 'Layout Custom Order', parentName: 'Layout' },
-    'layout-content-space' : { displayName: 'Layout Content Space', parentName: 'Layout' },
-    'layout-align-items' : { displayName: 'Layout Align Items', parentName: 'Layout' },
-    'layout-justify-content' : { displayName: 'Layout Justify Content', parentName: 'Layout' },
-    'layout-wrap' : { displayName: 'Layout Wrap', parentName: 'Layout' },
-    'layout-sample' : { displayName: 'Layouts Sample', parentName: 'Layout' },
+    'layout-content-space': { displayName: 'Layout Content Space', parentName: 'Layout' },
+    'layout-align-items': { displayName: 'Layout Align Items', parentName: 'Layout' },
+    'layout-justify-content': { displayName: 'Layout Justify Content', parentName: 'Layout' },
+    'layout-wrap': { displayName: 'Layout Wrap', parentName: 'Layout' },
+    'layout-sample': { displayName: 'Layouts Sample', parentName: 'Layout' },
     'splitter-horizontal-sample': { displayName: 'Splitter Horizontal', parentName: 'Splitter' },
     'splitter-nested-sample': { displayName: 'Splitter Nested Panes', parentName: 'Splitter' },
     'splitter-styling-sample': { displayName: 'Splitter Styling', parentName: 'Splitter' },

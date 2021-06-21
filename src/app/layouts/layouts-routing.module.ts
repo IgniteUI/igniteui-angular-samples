@@ -13,11 +13,14 @@ import { CardSample3Component } from './card/card-sample-3/card-sample-3.compone
 import { CardSample4Component } from './card/card-sample-4/card-sample-4.component';
 import { CardStylingSampleComponent } from './card/card-styling-sample/card-styling-sample.component';
 import { CardComponent } from './card/card.component';
-import { CarouselAnimationsSampleComponent
-    } from './carousel/carousel-animations-sample/carousel-animations-sample.component';
-import { CarouselNoNavigationSampleComponent
-    } from './carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component';
-import { CarouselWithComponentsSampleComponent
+import {
+    CarouselAnimationsSampleComponent
+} from './carousel/carousel-animations-sample/carousel-animations-sample.component';
+import {
+    CarouselNoNavigationSampleComponent
+} from './carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component';
+import {
+    CarouselWithComponentsSampleComponent
 } from './carousel/carousel-with-components-sample/carousel-with-components-sample.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { DividerDashedComponent } from './divider/dashed/divider-dashed.component';
@@ -40,8 +43,9 @@ import { LayoutJustifyContentComponent } from './layout/layout-justify-content/l
 import { LayoutSampleComponent } from './layout/layout-sample/layout-sample.component';
 import { LayoutWrapComponent } from './layout/layout-wrap/layout-wrap.component';
 import { layoutsRoutesData } from './layouts-routes-data';
-import { SplitterHorizontalSampleComponent
-    } from './splitter/splitter-horizontal-sample/splitter-horizontal-sample.component';
+import {
+    SplitterHorizontalSampleComponent
+} from './splitter/splitter-horizontal-sample/splitter-horizontal-sample.component';
 import { SplitterNestedSampleComponent } from './splitter/splitter-nested-sample/splitter-nested-sample.component';
 import { SplitterStylingSampleComponent } from './splitter/splitter-styling-sample/splitter-styling-sample.component';
 import { TabbarSample1Component } from './tabbar/tabbar-sample-1/tabbar-sample-1.component';
@@ -61,8 +65,26 @@ import { TabsHeaderPrefixSuffixComponent } from './tabs/tabs-header-prefix-suffi
 import { View1Component } from './tabs/views/view1/view1.component';
 import { View2Component } from './tabs/views/view2/view2.component';
 import { View3Component } from './tabs/views/view3/view3.component';
+import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
+import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
+import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
 
 export const layoutsRoutes: Routes = [
+    {
+        component: AccordionSample1Component,
+        data: layoutsRoutesData['accordion-sample-1'],
+        path: 'accordion-sample-1'
+    },
+    {
+        component: AccordionSample2Component,
+        data: layoutsRoutesData['accordion-sample-2'],
+        path: 'accordion-sample-2'
+    },
+    {
+        component: AccordionSample3Component,
+        data: layoutsRoutesData['accordion-sample-3'],
+        path: 'accordion-sample-3'
+    },
     {
         component: AvatarSample1Component,
         data: layoutsRoutesData['avatar-sample-1'],

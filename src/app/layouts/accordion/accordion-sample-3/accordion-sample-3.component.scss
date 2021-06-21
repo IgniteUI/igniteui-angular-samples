@@ -1,0 +1,10 @@
+.container {
+    margin: 55px 20px;
+    min-width: 200px;
+}
+
+.categories-container {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 16px;
+}
