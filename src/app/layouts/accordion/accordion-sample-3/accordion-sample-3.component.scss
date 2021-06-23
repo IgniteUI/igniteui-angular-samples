@@ -8,3 +8,10 @@
     flex-flow: column nowrap;
     padding: 16px;
 }
+
+.sample-wrapper {
+    margin: 0 auto;
+    padding: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+}
