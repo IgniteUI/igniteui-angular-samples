@@ -1,17 +1,21 @@
-.container {
-    margin: 55px 20px;
-    min-width: 200px;
+:host {
+    margin: 16px;
+    display: block;
+}
+
+igx-expansion-panel-body {
+    padding: 16px;
+}
+
+igx-slider {
+    margin: 24px;
 }
 
 .categories-container {
     display: flex;
     flex-flow: column nowrap;
-    padding: 16px;
 }
 
-.sample-wrapper {
-    margin: 0 auto;
-    padding: 10px;
-    max-height: 500px;
-    overflow-y: auto;
+igx-checkbox, igx-radio {
+    margin: 4px 0;
 }

@@ -1,10 +1,13 @@
-.nested-accordion {
-    margin-left: 25px;
+:host {
+    margin: 16px;
+    display: block;
 }
 
-.sample-wrapper {
-    margin: 0 auto;
-    padding: 10px;
-    max-height: 500px;
-    overflow-y: auto;
+igx-expansion-panel-body {
+    padding: 16px;
+}
+
+.nested-accordion {
+    margin: 0 16px;
+    padding: 0;
 }
