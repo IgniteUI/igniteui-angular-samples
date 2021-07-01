@@ -1,6 +1,7 @@
-:host {
-    margin: 16px;
-    display: block;
+.sample-wrapper {
+    overflow-y: auto;
+    max-height: 530px;
+    margin: 8px;
 }
 
 igx-expansion-panel-body {

@@ -1,54 +1,56 @@
-<igx-accordion #accordion>
-    <igx-expansion-panel>
-        <igx-expansion-panel-header>
-            <igx-expansion-panel-title>Categories {{ checkedItems }}</igx-expansion-panel-title>
-        </igx-expansion-panel-header>
-        <igx-expansion-panel-body>
-            <div class="categories-container">
-                <igx-checkbox *ngFor="let item of categories" [(ngModel)]="item.checked" (change)="checkedChange()">
-                    {{ item.type }}
-                </igx-checkbox>
-            </div>
-        </igx-expansion-panel-body>
-    </igx-expansion-panel>
+<article class="sample-wrapper">
+    <igx-accordion #accordion>
+        <igx-expansion-panel>
+            <igx-expansion-panel-header>
+                <igx-expansion-panel-title>Categories {{ checkedItems }}</igx-expansion-panel-title>
+            </igx-expansion-panel-header>
+            <igx-expansion-panel-body>
+                <div class="categories-container">
+                    <igx-checkbox *ngFor="let item of categories" [(ngModel)]="item.checked" (change)="checkedChange()">
+                        {{ item.type }}
+                    </igx-checkbox>
+                </div>
+            </igx-expansion-panel-body>
+        </igx-expansion-panel>
 
-    <igx-expansion-panel>
-        <igx-expansion-panel-header>
-            <igx-expansion-panel-title>Cost</igx-expansion-panel-title>
-        </igx-expansion-panel-header>
-        <igx-expansion-panel-body>
+        <igx-expansion-panel>
+            <igx-expansion-panel-header>
+                <igx-expansion-panel-title>Cost</igx-expansion-panel-title>
+            </igx-expansion-panel-header>
+            <igx-expansion-panel-body>
                 <igx-slider id="slider" [type]="sliderType.RANGE" [minValue]="0" [maxValue]="1000"
                     [(ngModel)]="priceRange"></igx-slider>
-        </igx-expansion-panel-body>
-    </igx-expansion-panel>
+            </igx-expansion-panel-body>
+        </igx-expansion-panel>
 
-    <igx-expansion-panel>
-        <igx-expansion-panel-header>
-            <igx-expansion-panel-title>Rating</igx-expansion-panel-title>
-        </igx-expansion-panel-header>
-        <igx-expansion-panel-body>
-            <div *ngFor="let item of [].constructor(4); let i = index">
-                <igx-radio *ngIf="i===0"> {{ i + 1 }} star or more</igx-radio>
-                <igx-radio *ngIf="i>0"> {{ i + 1 }} stars or more</igx-radio>
-                <div style="display:inline-flex;">
-                    <div *ngFor="let fillStar of [].constructor(i + 1)">
-                        <igx-icon>star</igx-icon>
-                    </div>
-                    <igx-icon>star_half</igx-icon>
-                    <div *ngFor="let borderStar of [].constructor(3 - i)">
-                        <igx-icon>star_border</igx-icon>
+        <igx-expansion-panel>
+            <igx-expansion-panel-header>
+                <igx-expansion-panel-title>Rating</igx-expansion-panel-title>
+            </igx-expansion-panel-header>
+            <igx-expansion-panel-body>
+                <div *ngFor="let item of [].constructor(4); let i = index">
+                    <igx-radio *ngIf="i===0"> {{ i + 1 }} star or more</igx-radio>
+                    <igx-radio *ngIf="i>0"> {{ i + 1 }} stars or more</igx-radio>
+                    <div style="display:inline-flex;">
+                        <div *ngFor="let fillStar of [].constructor(i + 1)">
+                            <igx-icon>star</igx-icon>
+                        </div>
+                        <igx-icon>star_half</igx-icon>
+                        <div *ngFor="let borderStar of [].constructor(3 - i)">
+                            <igx-icon>star_border</igx-icon>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </igx-expansion-panel-body>
-    </igx-expansion-panel>
+            </igx-expansion-panel-body>
+        </igx-expansion-panel>
 
-    <igx-expansion-panel>
-        <igx-expansion-panel-header>
-            <igx-expansion-panel-title>Time</igx-expansion-panel-title>
-        </igx-expansion-panel-header>
-        <igx-expansion-panel-body>
-            <igx-time-picker mode="dropdown" inputFormat="hh:mm:ss tt" [spinLoop]='false'></igx-time-picker>
-        </igx-expansion-panel-body>
-    </igx-expansion-panel>
-</igx-accordion>
+        <igx-expansion-panel>
+            <igx-expansion-panel-header>
+                <igx-expansion-panel-title>Time</igx-expansion-panel-title>
+            </igx-expansion-panel-header>
+            <igx-expansion-panel-body>
+                <igx-time-picker mode="dropdown" inputFormat="hh:mm:ss tt" [spinLoop]='false'></igx-time-picker>
+            </igx-expansion-panel-body>
+        </igx-expansion-panel>
+    </igx-accordion>
+</article>
