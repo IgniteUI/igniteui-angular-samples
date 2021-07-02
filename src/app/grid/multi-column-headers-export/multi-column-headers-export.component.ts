@@ -12,15 +12,4 @@ export class GridMultiColumnHeadersExportComponent {
     @ViewChild(IgxGridComponent, { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
     public data = DATA;
-
-    public pinGroup() {
-        const firstColumnGroup = this.grid.columnList.filter((c) => c.header === 'General Information')[0];
-        firstColumnGroup.pinned = !firstColumnGroup.pinned;
-    }
-
-    public hideGroup() {
-        const firstColumnGroup = this.grid.columnList.filter((c) => c.header === 'General Information')[0];
-        firstColumnGroup.hidden = !firstColumnGroup.hidden;
-    }
-
 }
