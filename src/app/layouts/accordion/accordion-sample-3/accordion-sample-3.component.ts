@@ -10,6 +10,9 @@ export class AccordionSample3Component {
     public sliderType = IgxSliderType;
     public priceRange: PriceRange = new PriceRange(200, 800);
     public checkedItems = '';
+    public arriveTime: Date;
+    public rating: string;
+
     public categories = [
         { checked: false, type: 'Bike' },
         { checked: false, type: 'Motorcycle' },
@@ -17,6 +20,7 @@ export class AccordionSample3Component {
         { checked: false, type: 'Taxi' },
         { checked: false, type: 'Public Transport' }
     ];
+
     public checkedChange() {
         this.checkedItems = '';
         this.categories.forEach(item => {
@@ -24,6 +28,11 @@ export class AccordionSample3Component {
                 this.checkedItems = this.checkedItems ? this.checkedItems + ', ' + item.type : ': ' + item.type;
             }
         });
+    }
+
+    public get time() {
+        return this.arriveTime ?
+            ': Arrive before ' + this.arriveTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '';
     }
 }
 class PriceRange {

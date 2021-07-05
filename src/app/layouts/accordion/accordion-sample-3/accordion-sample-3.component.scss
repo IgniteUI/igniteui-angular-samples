@@ -1,3 +1,5 @@
+$ep-sample-border: 1px solid rgba(174, 174, 174, 0.25);
+
 .sample-wrapper {
     overflow-y: auto;
     max-height: 530px;
@@ -17,6 +19,11 @@ igx-slider {
     flex-flow: column nowrap;
 }
 
-igx-checkbox, igx-radio {
+igx-checkbox,
+igx-radio {
     margin: 4px 0;
+}
+
+igx-expansion-panel {
+    border: $ep-sample-border;
 }

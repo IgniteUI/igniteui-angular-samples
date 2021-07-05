@@ -1,9 +1,8 @@
+<igx-switch [(ngModel)]="singleBranchExpand">Single Branch Expand</igx-switch>
 <article class="sample-wrapper">
-    <igx-switch [(ngModel)]="singleBranchExpand">Single Branch Expand</igx-switch>
-
     <igx-accordion #accordion [singleBranchExpand]="singleBranchExpand">
         <igx-expansion-panel>
-            <igx-expansion-panel-header>
+            <igx-expansion-panel-header class="expansion-header">
                 <igx-expansion-panel-title>What has changed about subscription and pricing model?
                 </igx-expansion-panel-title>
             </igx-expansion-panel-header>
@@ -22,7 +21,7 @@
             </igx-expansion-panel-body>
         </igx-expansion-panel>
         <igx-expansion-panel>
-            <igx-expansion-panel-header>
+            <igx-expansion-panel-header class="expansion-header">
                 <igx-expansion-panel-title>Who will the updated changes impact?</igx-expansion-panel-title>
             </igx-expansion-panel-header>
             <igx-expansion-panel-body>
@@ -41,7 +40,7 @@
             </igx-expansion-panel-body>
         </igx-expansion-panel>
         <igx-expansion-panel>
-            <igx-expansion-panel-header>
+            <igx-expansion-panel-header class="expansion-header">
                 <igx-expansion-panel-title>What is the difference between your old model and your current subscription
                     model
                     for Ignite UI?</igx-expansion-panel-title>
@@ -59,7 +58,7 @@
             </igx-expansion-panel-body>
         </igx-expansion-panel>
         <igx-expansion-panel>
-            <igx-expansion-panel-header>
+            <igx-expansion-panel-header class="expansion-header">
                 <igx-expansion-panel-title>What happens if I don’t renew my subscription?</igx-expansion-panel-title>
             </igx-expansion-panel-header>
             <igx-expansion-panel-body>
@@ -68,7 +67,7 @@
             </igx-expansion-panel-body>
         </igx-expansion-panel>
         <igx-expansion-panel>
-            <igx-expansion-panel-header>
+            <igx-expansion-panel-header class="expansion-header">
                 <igx-expansion-panel-title>If I don’t renew my subscription will I still have access to previous
                     versions of
                     Infragistics products?</igx-expansion-panel-title>
@@ -77,54 +76,6 @@
                 Any version of Infragistics software which you have downloaded can continue to be used perpetually.
                 Access to download any new or previous versions through our customer portal and package feeds will
                 require maintaining an active subscription by continuing to renew it.
-            </igx-expansion-panel-body>
-        </igx-expansion-panel>
-        <igx-expansion-panel>
-            <igx-expansion-panel-header>
-                <igx-expansion-panel-title>Will I be automatically charged for my renewal/ Can I be automatically
-                    charged
-                    for renewal?</igx-expansion-panel-title>
-            </igx-expansion-panel-header>
-            <igx-expansion-panel-body>
-                Any new subscriptions purchased online, via our eCommerce system, will renew automatically. Subscription
-                renewal can be canceled, at any time, before the next automatic renewal date. Subscriptions purchased
-                directly from Infragistics or Infragistics’ partners are subject to the renewal terms that were agreed
-                upon as part of that purchase.
-            </igx-expansion-panel-body>
-        </igx-expansion-panel>
-        <igx-expansion-panel>
-            <igx-expansion-panel-header>
-                <igx-expansion-panel-title>I split my work across two computers. Can I install on both using my
-                    single-user
-                    license?</igx-expansion-panel-title>
-            </igx-expansion-panel-header>
-            <igx-expansion-panel-body>
-                The Infragistics Ultimate license is tied to the user, and not the computer. That means you’re welcome
-                to install and use Ignite UI, Infragistics Professional, and Infragistics Ultimate on any computer you
-                use. However, if we notice a large number of activations using the same license, we may contact you to
-                verify this behavior.
-            </igx-expansion-panel-body>
-        </igx-expansion-panel>
-        <igx-expansion-panel>
-            <igx-expansion-panel-header>
-                <igx-expansion-panel-title>I used up my trial for an earlier version of Infragistics Ultimate. Can I
-                    start a
-                    new trial when a major version is released?</igx-expansion-panel-title>
-            </igx-expansion-panel-header>
-            <igx-expansion-panel-body>
-                Yes! If you have tried a previous version in the past, and used up your 30-day trial, you can try the
-                next major version for another 30 days! You can do this in the following two ways:
-
-                <ul>
-                    <li>If you have days remaining in your 30-day trial period for the current version (e.g., the
-                        Version 15.1 Volume Release), use the Check for Update option inside the Platform Installer or
-                        your account. You will be able to start a fresh trial for the next major version (e.g., 20.1
-                        Volume Release)</li>
-                    <li>If you have used up the 30-day trial for the previous major version (e.g., the 19.2 Volume
-                        Release), simply download and install Infragistics Ultimate from our <a
-                            href="https://www.infragistics.com/products/ultimate">website</a> (This will also allow you
-                        to start a new trial.)</li>
-                </ul>
             </igx-expansion-panel-body>
         </igx-expansion-panel>
     </igx-accordion>

@@ -1,12 +1,11 @@
-import {IgxAccordionModule,
-    IgxButtonModule,
-    IgxExpansionPanelModule,
+import {
+    IgxAccordionModule,
     IgxIconModule,
     IgxRadioModule,
     IgxTimePickerModule,
     IgxSliderModule,
-    IgxCheckboxModule,
-    IgxToastModule} from 'igniteui-angular';
+    IgxCheckboxModule
+} from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 
 export class AccordionConfigGenerator implements IConfigGenerator {
@@ -17,9 +16,9 @@ export class AccordionConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'AccordionSample1Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxExpansionPanelModule', 'AccordionSample1Component', 'IgxAccordionModule'],
+                imports: ['AccordionSample1Component', 'IgxAccordionModule'],
                 ngDeclarations: ['AccordionSample1Component'],
-                ngImports: ['IgxExpansionPanelModule', 'IgxAccordionModule']
+                ngImports: ['IgxAccordionModule']
             }),
             shortenComponentPathBy: '/layouts/accordion/'
         }));
@@ -27,9 +26,9 @@ export class AccordionConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'AccordionSample2Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxExpansionPanelModule', 'AccordionSample2Component', 'IgxAccordionModule'],
+                imports: ['AccordionSample2Component', 'IgxAccordionModule'],
                 ngDeclarations: ['AccordionSample2Component'],
-                ngImports: ['IgxExpansionPanelModule', 'IgxAccordionModule']
+                ngImports: ['IgxAccordionModule']
             }),
             shortenComponentPathBy: '/layouts/accordion/'
         }));
@@ -37,10 +36,10 @@ export class AccordionConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'AccordionSample3Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxExpansionPanelModule', 'IgxCheckboxModule', 'IgxSliderModule',
+                imports: ['IgxCheckboxModule', 'IgxSliderModule',
                     'IgxRadioModule', 'IgxIconModule', 'IgxTimePickerModule', 'AccordionSample3Component', 'IgxAccordionModule'],
                 ngDeclarations: ['AccordionSample3Component'],
-                ngImports: ['IgxExpansionPanelModule', 'IgxCheckboxModule', 'IgxSliderModule',
+                ngImports: ['IgxCheckboxModule', 'IgxSliderModule',
                     'IgxRadioModule', 'IgxIconModule', 'IgxTimePickerModule', 'IgxAccordionModule']
             }),
             shortenComponentPathBy: '/layouts/accordion/'
