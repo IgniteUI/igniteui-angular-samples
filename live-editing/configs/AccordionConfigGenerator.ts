@@ -1,6 +1,5 @@
 import {
     IgxAccordionModule,
-    IgxIconModule,
     IgxRadioModule,
     IgxTimePickerModule,
     IgxSliderModule,
@@ -37,10 +36,10 @@ export class AccordionConfigGenerator implements IConfigGenerator {
             component: 'AccordionSample3Component',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxCheckboxModule', 'IgxSliderModule',
-                    'IgxRadioModule', 'IgxIconModule', 'IgxTimePickerModule', 'AccordionSample3Component', 'IgxAccordionModule'],
+                    'IgxRadioModule', 'IgxTimePickerModule', 'AccordionSample3Component', 'IgxAccordionModule'],
                 ngDeclarations: ['AccordionSample3Component'],
                 ngImports: ['IgxCheckboxModule', 'IgxSliderModule',
-                    'IgxRadioModule', 'IgxIconModule', 'IgxTimePickerModule', 'IgxAccordionModule']
+                    'IgxRadioModule', 'IgxTimePickerModule', 'IgxAccordionModule']
             }),
             shortenComponentPathBy: '/layouts/accordion/'
         }));

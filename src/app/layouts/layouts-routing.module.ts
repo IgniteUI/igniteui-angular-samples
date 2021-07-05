@@ -13,14 +13,11 @@ import { CardSample3Component } from './card/card-sample-3/card-sample-3.compone
 import { CardSample4Component } from './card/card-sample-4/card-sample-4.component';
 import { CardStylingSampleComponent } from './card/card-styling-sample/card-styling-sample.component';
 import { CardComponent } from './card/card.component';
-import {
-    CarouselAnimationsSampleComponent
-} from './carousel/carousel-animations-sample/carousel-animations-sample.component';
-import {
-    CarouselNoNavigationSampleComponent
-} from './carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component';
-import {
-    CarouselWithComponentsSampleComponent
+import { CarouselAnimationsSampleComponent
+    } from './carousel/carousel-animations-sample/carousel-animations-sample.component';
+import { CarouselNoNavigationSampleComponent
+    } from './carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component';
+import { CarouselWithComponentsSampleComponent
 } from './carousel/carousel-with-components-sample/carousel-with-components-sample.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { DividerDashedComponent } from './divider/dashed/divider-dashed.component';
@@ -43,9 +40,8 @@ import { LayoutJustifyContentComponent } from './layout/layout-justify-content/l
 import { LayoutSampleComponent } from './layout/layout-sample/layout-sample.component';
 import { LayoutWrapComponent } from './layout/layout-wrap/layout-wrap.component';
 import { layoutsRoutesData } from './layouts-routes-data';
-import {
-    SplitterHorizontalSampleComponent
-} from './splitter/splitter-horizontal-sample/splitter-horizontal-sample.component';
+import { SplitterHorizontalSampleComponent
+    } from './splitter/splitter-horizontal-sample/splitter-horizontal-sample.component';
 import { SplitterNestedSampleComponent } from './splitter/splitter-nested-sample/splitter-nested-sample.component';
 import { SplitterStylingSampleComponent } from './splitter/splitter-styling-sample/splitter-styling-sample.component';
 import { TabbarSample1Component } from './tabbar/tabbar-sample-1/tabbar-sample-1.component';
