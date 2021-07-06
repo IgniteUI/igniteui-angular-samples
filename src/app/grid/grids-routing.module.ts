@@ -115,6 +115,7 @@ import { GridExportVisualizationComponent } from './grid-export-visualization/gr
 import { GridSelectComponent } from './grid-select/grid-select-sample.component';
 import { GridFormattedFilteringStrategyComponent } from './grid-formatted-filtering-strategy/grid-formatted-filtering-strategy.component';
 import { GridSummaryFormatterComponent } from './grid-summary-formatter/grid-summary-formatter.component';
+import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-export/multi-column-headers-export.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -432,6 +433,11 @@ export const gridsRoutes: Routes = [
         component: GridMultiColumnHeadersStylingComponent,
         data: gridsRoutesData['multi-column-headers-styling'],
         path: 'multi-column-headers-styling'
+    },
+    {
+        component: GridMultiColumnHeadersExportComponent,
+        data: gridsRoutesData['multi-column-headers-export'],
+        path: 'multi-column-headers-export'
     },
     {
         component: RemotePagingGridSampleComponent,
