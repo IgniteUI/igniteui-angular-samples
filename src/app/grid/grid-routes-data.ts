@@ -62,6 +62,7 @@ export const gridsRoutesData = {
     'multi-column-headers': { displayName: 'Grid Multi Column Headers', parentName: 'Grid' },
     'multi-column-header-template': { displayName: 'Grid Multi Column Header Template', parentName: 'Grid' },
     'multi-column-headers-styling': { displayName: 'Grid Multi Column Headers Styling', parentName: 'Grid' },
+    'multi-column-headers-export': { displayName: 'Grid Multi Column Headers Export', parentName: 'Grid' },
     'grid-remote-paging-sample': { displayName: 'Grid Remote Paging', parentName: 'Grid' },
     'grid-custom-remote-paging-sample': { displayName: 'Grid Custom Remote Paging', parentName: 'Grid' },
     'grid-paste': { displayName: 'Grid Paste From Excel', parentName: 'Grid' },
