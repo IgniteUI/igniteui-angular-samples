@@ -38,6 +38,7 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
         // localization sample 3
         configs.push(new Config({
             component: 'LocalizationSample3Component',
+            additionalFiles: ['/src/app/data/nwindData.ts'],
             additionalDependencies: ['igniteui-angular-i18n'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxInputGroupModule', 'LocalizationSample3Component', 'IgxGridModule', 'IgxIconModule'],
