@@ -118,6 +118,7 @@ import { TreeGridFormattedFilteringStrategyComponent } from './tree-grid-formatt
 import { TreeGridSummaryFormatterComponent } from './tree-grid-summary-formatter/tree-grid-summary-formatter.component';
 import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid-pager-sample.component';
 import { TreeGridGroupByLoadOnDemandComponent } from './tree-grid-group-by-load-on-demand-sample/tree-grid-group-by-load-on-demand-sample.component';
+import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-column-headers-export/tree-grid-multi-column-headers-export.component';
 
 @NgModule({
     declarations: [
@@ -180,6 +181,7 @@ import { TreeGridGroupByLoadOnDemandComponent } from './tree-grid-group-by-load-
         TreeGridResizeLineStylingSampleComponent,
         TreeGridColumnHidingToolbarStyleComponent,
         TreeGridMultiColumnHeaderTemplateSampleComponent,
+        TreeGridMultiColumnHeadersExportComponent,
         TreeGridClipboardSampleComponent,
         TreeGridToolbarStyleComponent,
         TreeGridFilteringStyleComponent,
