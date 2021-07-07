@@ -59,7 +59,6 @@ export class DVTreeGridConfigGenerator implements IConfigGenerator {
             additionalDependencies: ['@microsoft/signalr'],
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/projects/app-lob/src/app/services/financial.service.ts',
                 '/projects/app-lob/src/app/data/financialData.ts', '/projects/app-lob/src/app/services/signal-r.service.ts',
-                '/projects/app-lob/src/app/treegrid-finjs/tree-grid-grouping.pipe.ts',
                 '/projects/app-lob/src/_app-layout.scss', '/projects/app-lob/src/_variables.scss'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
