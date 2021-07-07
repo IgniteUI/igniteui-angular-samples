@@ -88,6 +88,7 @@ import { TreeGridFormattedFilteringStrategyComponent } from './tree-grid-formatt
 import { TreeGridSummaryFormatterComponent } from './tree-grid-summary-formatter/tree-grid-summary-formatter.component';
 import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid-pager-sample.component';
 import { TreeGridGroupByLoadOnDemandComponent } from './tree-grid-group-by-load-on-demand-sample/tree-grid-group-by-load-on-demand-sample.component';
+import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-column-headers-export/tree-grid-multi-column-headers-export.component';
 
 export const treeGridRoutes: Routes = [
     {
@@ -259,6 +260,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridMultiColumnHeadersStylingComponent,
         data: treeGridRoutesData['treegrid-multi-column-headers-styling'],
         path: 'treegrid-multi-column-headers-styling'
+    },
+    {
+        component: TreeGridMultiColumnHeadersExportComponent,
+        data: treeGridRoutesData['treegrid-multi-column-headers-export'],
+        path: 'treegrid-multi-column-headers-export'
     },
     {
         component: TreeGridVirtualizationSampleComponent,

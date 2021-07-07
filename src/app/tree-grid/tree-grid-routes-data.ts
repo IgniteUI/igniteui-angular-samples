@@ -62,6 +62,7 @@ export const treeGridRoutesData = {
         displayName: 'TreeGrid Multi Column Headers Styling',
         parentName: 'TreeGrid'
     },
+    'treegrid-multi-column-headers-export': { displayName: 'TreeGrid Multi Column Headers Export', parentName: 'TreeGrid' },
     'treegrid-virtualization': { displayName: 'TreeGrid Virtualization', parentName: 'TreeGrid' },
     'treegrid-display-density': { displayName: 'TreeGrid Display Density', parentName: 'TreeGrid' },
     'treegrid-toolbar-1': { displayName: 'TreeGrid Toolbar 1', parentName: 'TreeGrid' },
