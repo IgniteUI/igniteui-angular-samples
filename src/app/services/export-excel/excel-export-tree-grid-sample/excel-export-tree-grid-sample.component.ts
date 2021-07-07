@@ -1,9 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-
-import { IgxExcelExporterOptions,
-         IgxExcelExporterService,
-         IgxTreeGridComponent } from 'igniteui-angular';
-
+import { IgxTreeGridComponent } from 'igniteui-angular';
 import { FOODS_DATA } from '../../../tree-grid/data/foods';
 
 @Component({
@@ -18,14 +14,11 @@ export class TreeGridExcelExportSample1Component implements OnInit {
 
   public data: any[];
 
-  constructor(private excelExportService: IgxExcelExporterService) {
-  }
+  constructor() { }
 
   public ngOnInit(): void {
     this.data = FOODS_DATA();
   }
-
-  public exportButtonHandler() {
     /*
     The following code demonstrates how to attach event handlers to exporter specific events
     and also how to customize the column export process.
@@ -39,8 +32,5 @@ export class TreeGridExcelExportSample1Component implements OnInit {
     this.excelExportService.exportEnded.subscribe((args: IExcelExportEndedEventArgs) => {
     });
     */
-    this.excelExportService.export(this.igxTreeGrid1,
-        new IgxExcelExporterOptions('ExportFileFromTreeGrid'));
-  }
 
 }

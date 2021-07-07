@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GlobalPositionStrategy, scaleInCenter, scaleOutCenter, AbsoluteScrollStrategy, AutoPositionStrategy } from 'igniteui-angular';
 import { athletesData } from '../../data/athletesData';
 
 @Component({
@@ -13,6 +14,24 @@ export class GridToolbarSample2Component {
     enableHiding = true;
     enablePinning = true;
     enableExport = true;
+    public positionStrategyScaleCenter = new GlobalPositionStrategy({
+        openAnimation: scaleInCenter,
+        closeAnimation: scaleOutCenter
+    });
+    public overlaySettingsScaleCenter = {
+        positionStrategy: this.positionStrategyScaleCenter,
+        scrollStrategy: new AbsoluteScrollStrategy(),
+        modal: true,
+        closeOnEscape: true
+    };
+
+    public positionStrategyAuto = new AutoPositionStrategy();
+    public overlaySettingsAuto = {
+        positionStrategy: this.positionStrategyAuto,
+        scrollStrategy: new AbsoluteScrollStrategy(),
+        modal: false,
+        closeOnEscape: false
+    };
 
     constructor() {
         this.data = athletesData;

@@ -380,6 +380,17 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: '/tree-grid/'
         }));
 
+        // TreeGrid Multi Column Headers Export
+        configs.push(new Config({
+            component: 'TreeGridMultiColumnHeadersExportComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['TreeGridMultiColumnHeadersExportComponent', 'IgxTreeGridModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['TreeGridMultiColumnHeadersExportComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule']
+            })
+        }));
+
         // TreeGrid Display Density sample
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts'],
