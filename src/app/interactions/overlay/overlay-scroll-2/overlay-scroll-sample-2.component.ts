@@ -33,7 +33,7 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
 
     constructor(
         @Inject(IgxOverlayService) public overlay: IgxOverlayService) {
-            this.overlay.onOpening
+            this.overlay.opening
                 .pipe(takeUntil(this.destroy$))
                 .subscribe(() => this.previewHidden = true);
 
@@ -45,10 +45,10 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
 
     public ngOnInit(): void {
         (this.mainContainer.nativeElement as HTMLElement).style.height = '450px';
-        this.overlay.onOpening.subscribe(() => {
+        this.overlay.opening.subscribe(() => {
             this.previewHidden = true;
         });
-        this.overlay.onClosing.subscribe(() => {
+        this.overlay.closing.subscribe(() => {
             this.previewHidden = false;
         });
     }

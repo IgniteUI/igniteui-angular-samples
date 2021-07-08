@@ -216,7 +216,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
             }
         });
 
-        this.overlayService.onOpening.subscribe((evt: OverlayCancelableEventArgs) => {
+        this.overlayService.opening.subscribe((evt: OverlayCancelableEventArgs) => {
             if (evt.componentRef && evt.componentRef.instance &&
                 (evt.componentRef.instance as any).className === 'igx-excel-filter') {
                 this.disableContextMenu();
@@ -224,7 +224,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
             }
         });
 
-        this.overlayService.onClosed.subscribe((evt: OverlayEventArgs) => {
+        this.overlayService.closed.subscribe((evt: OverlayEventArgs) => {
             if (evt.componentRef &&
                 evt.componentRef.instance &&
                 (evt.componentRef.instance as any).className === 'igx-excel-filter' &&
