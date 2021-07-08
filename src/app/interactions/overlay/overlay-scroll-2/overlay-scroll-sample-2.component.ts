@@ -38,7 +38,7 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
                 .subscribe(() => this.previewHidden = true);
 
             this.overlay
-                .onClosed
+                .closed
                 .pipe(takeUntil(this.destroy$))
                 .subscribe(() => this.previewHidden = false);
         }
