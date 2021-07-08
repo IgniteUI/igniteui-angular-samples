@@ -492,7 +492,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
             return;
         }
 
-        const headerCell = col.headerCell.elementRef.nativeElement;
+        const headerCell = col.headerCell.nativeElement;
         this.contextmenuX = headerCell.getClientRects()[0].right;
         this.contextmenuY = headerCell.getClientRects()[0].bottom;
         this.contextmenu = true;
