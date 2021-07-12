@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, ViewChild } from '@angular/core';
 import { DefaultSortingStrategy, IGroupingExpression, IgxTreeGridComponent } from 'igniteui-angular';
 import { TreeGridGroupingLoadOnDemandService, TreeGridGroupingParameters } from './remoteService';
 
@@ -10,13 +10,13 @@ import { TreeGridGroupingLoadOnDemandService, TreeGridGroupingParameters } from 
 
 export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
-
-    public groupColumns = ['ShipCountry', 'ShipCity', 'Discontinued'];
+    @Input()
     public groupingExpressions: IGroupingExpression[] = [
         { fieldName: 'ShipCountry', dir: 2, ignoreCase: true, strategy: DefaultSortingStrategy.instance() },
         { fieldName: 'ShipCity', dir: 1, ignoreCase: true, strategy: DefaultSortingStrategy.instance() },
         { fieldName: 'Discontinued', dir: 1, ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
     ];
+
     public primaryKey = 'id';
     public childDataKey = 'children';
     public hasChildrenKey = 'children';
@@ -34,7 +34,7 @@ export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
         this.dataService.getData(parentID, groupingParameters, (children) => done(children));
     };
 
-    public onGroupColumnsChange(event: EventEmitter<string[]>) {
+    public onExpressionsChange(event: EventEmitter<string[]>) {
         this.reloadData();
     }
 
@@ -51,7 +51,7 @@ export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
 
     private assembleGroupingParameters(): TreeGridGroupingParameters {
         const groupingParameters: TreeGridGroupingParameters = {
-            groupColumns: this.groupColumns,
+            groupingExpressions: this.groupingExpressions,
             groupKey: this.groupColumnKey,
             primaryKey: this.primaryKey,
             childDataKey: this.childDataKey

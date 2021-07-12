@@ -12,18 +12,18 @@
         hiddenColumnsText="Hidden">
         <igx-grid-toolbar>
             <igx-grid-toolbar-title class="grid-toolbar-title">
-                <igx-group-area
+                <igx-tree-grid-group-by-area
                     [grid]="treeGrid"
-                    [(groupingExpressions)]="groupingExpressions"
+                    [(expressions)]="groupingExpressions"
+                    (expressionsChange)="onExpressionsChange($event)"
                     [hideGroupedColumns]="true">
-                </igx-group-area>
+                </igx-tree-grid-group-by-area>
             </igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
                 <igx-grid-toolbar-hiding title="Indicators"></igx-grid-toolbar-hiding>
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
         <igx-column [field]="groupColumnKey" [width]="'180px'" [resizable]='true' [disableHiding]="true"></igx-column>
-
         <igx-column field="OrderID" header="Order ID">
         </igx-column>
         <igx-column field="ShipCountry" header="Ship Country" width="200px" [groupable]="true" [hidden]="true">

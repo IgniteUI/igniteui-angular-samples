@@ -1,3 +1,4 @@
+import { DataUtil, IGroupingExpression, IgxSorting, ISortingExpression } from 'igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
 
 class GroupByRecord {
@@ -7,7 +8,7 @@ class GroupByRecord {
 }
 
 export class TreeGridGroupingParameters {
-    groupColumns: string[];
+    groupingExpressions: IGroupingExpression[];
     groupKey: string;
     primaryKey: string;
     childDataKey: string;
@@ -17,11 +18,11 @@ export class TreeGridGroupingLoadOnDemandService {
     private parentID;
     private children: any[];
 
-    public getData(parentID: any, groupParameters: TreeGridGroupingParameters, done: (children: any[]) => void) {
+    public getData(parentID: any, groupingParameters: TreeGridGroupingParameters, done: (children: any[]) => void) {
         setTimeout(() => {
             this.parentID = parentID;
             this.children = [];
-            const groupedData = this.transform(INVOICE_DATA, groupParameters);
+            const groupedData = this.transform(INVOICE_DATA, groupingParameters);
 
             if (this.children.length > 0) {
                 done(this.children);
@@ -32,12 +33,13 @@ export class TreeGridGroupingLoadOnDemandService {
     }
 
     private transform(collection: any[], groupingParameters: TreeGridGroupingParameters): any[] {
-        if (groupingParameters.groupColumns.length === 0) {
+        const groupingExpressions = groupingParameters.groupingExpressions;
+        if (groupingExpressions.length === 0) {
             return collection;
         }
 
         const result = [];
-        const groupedRecords = this.groupByMultiple(collection, groupingParameters.groupColumns);
+        const groupedRecords = this.groupByMultiple(collection, groupingExpressions);
 
         this.flattenGrouping(
             groupedRecords,
@@ -90,23 +92,23 @@ export class TreeGridGroupingLoadOnDemandService {
         }
     }
 
-    private groupByMultiple(array: any[], fieldNames: string[], index = 0): GroupByRecord[] {
-        const res = this.groupBy(array, fieldNames[index]);
+    private groupByMultiple(array: any[], groupingExpressions: IGroupingExpression[], index = 0): GroupByRecord[] {
+        const res = this.groupBy(array, groupingExpressions[index]);
 
-        if (index + 1 < fieldNames.length) {
+        if (index + 1 < groupingExpressions.length) {
            for (const groupByRecord of res) {
-                groupByRecord.groups = this.groupByMultiple(groupByRecord.records, fieldNames, index + 1);
+                groupByRecord.groups = this.groupByMultiple(groupByRecord.records, groupingExpressions, index + 1);
             }
         }
 
         return res;
     }
 
-    private groupBy(array: any[], fieldName: string): GroupByRecord[] {
+    private groupBy(array: any[], groupingExpression: IGroupingExpression): GroupByRecord[] {
         const map: Map<any, GroupByRecord> = new Map<any, GroupByRecord>();
 
         for (const record of array) {
-            const key = record[fieldName];
+            const key = record[groupingExpression.fieldName];
             let groupByRecord: GroupByRecord;
 
             if (map.has(key)) {
@@ -121,6 +123,15 @@ export class TreeGridGroupingLoadOnDemandService {
             groupByRecord.records.push(record);
         }
 
-        return Array.from(map.values());
+        const unsortedData = Array.from(map.values());
+        const sortExpression: ISortingExpression = {
+            fieldName: 'key',
+            dir: groupingExpression.dir,
+            ignoreCase: groupingExpression.ignoreCase,
+            strategy: groupingExpression.strategy
+        };
+        const sortedData = DataUtil.sort(unsortedData, [sortExpression], new IgxSorting());
+
+        return sortedData;
     }
 }
