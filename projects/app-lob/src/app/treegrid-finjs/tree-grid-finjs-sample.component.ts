@@ -1,8 +1,8 @@
-import { AfterViewInit, Component, ElementRef, OnInit, OnDestroy, ViewChild, HostBinding } from '@angular/core';
+import { Component, ElementRef, OnInit, OnDestroy, ViewChild, HostBinding } from '@angular/core';
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment,
-    IGroupingExpression, IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent,
-    OverlaySettings, PositionSettings, VerticalAlignment
+    IGroupingExpression, IgxButtonGroupComponent, IgxGroupedTreeGridSorting, IgxOverlayOutletDirective, IgxSliderComponent,
+    IgxTreeGridComponent, OverlaySettings, PositionSettings, VerticalAlignment
 } from 'igniteui-angular';
 import { Contract, REGIONS } from '../data/financialData';
 import { SignalRService } from '../services/signal-r.service';
@@ -46,16 +46,15 @@ export class TreeGridFinJSComponent implements OnDestroy, OnInit {
             selected: false
         }
     ];
-    public groupColumns = ['category', 'type', 'contract'];
     public groupingExpressions: IGroupingExpression[] = [
         { fieldName: 'category', dir: 2, ignoreCase: true, strategy: DefaultSortingStrategy.instance() },
         { fieldName: 'type', dir: 1, ignoreCase: true, strategy: DefaultSortingStrategy.instance() },
         { fieldName: 'contract', dir: 1, ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
     ];
 
-    public primaryKey = 'id';
     public childDataKey = 'children';
     public groupColumnKey = 'categories';
+    public sorting = IgxGroupedTreeGridSorting.instance();
 
     public items: any[] = [{ field: 'Export native' }, { field: 'Export JS Excel' }];
 
