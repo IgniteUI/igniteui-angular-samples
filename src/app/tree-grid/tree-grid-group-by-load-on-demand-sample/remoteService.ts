@@ -11,16 +11,18 @@ export class TreeGridGroupingParameters {
     groupingExpressions: IGroupingExpression[];
     groupKey: string;
     primaryKey: string;
-    childDataKey: string;
+    foreignKey: string;
 }
 
 export class TreeGridGroupingLoadOnDemandService {
     private parentID;
     private children: any[];
+    private hasChildrenKey: string;
 
-    public getData(parentID: any, groupingParameters: TreeGridGroupingParameters, done: (children: any[]) => void) {
+    public getData(parentID: any, hasChildrenKey, groupingParameters: TreeGridGroupingParameters, done: (children: any[]) => void) {
         setTimeout(() => {
             this.parentID = parentID;
+            this.hasChildrenKey = hasChildrenKey;
             this.children = [];
             const groupedData = this.transform(INVOICE_DATA, groupingParameters);
 
@@ -45,7 +47,7 @@ export class TreeGridGroupingLoadOnDemandService {
             groupedRecords,
             groupingParameters.groupKey,
             groupingParameters.primaryKey,
-            groupingParameters.childDataKey,
+            groupingParameters.foreignKey,
             '',
             result);
 
@@ -55,7 +57,7 @@ export class TreeGridGroupingLoadOnDemandService {
     private flattenGrouping(groupRecords: GroupByRecord[],
                             groupKey: string,
                             primaryKey: string,
-                            childDataKey: string,
+                            foreignKey: string,
                             parentID: any,
                             data: any[]) {
         for (const groupRecord of groupRecords) {
@@ -63,17 +65,16 @@ export class TreeGridGroupingLoadOnDemandService {
             const children = groupRecord.records;
 
             parent[primaryKey] = (parentID ? `${parentID}-` : '') + groupRecord.key;
-            parent[childDataKey] = [];
-            parent['ParentID'] = parentID;
+            parent[foreignKey] = [];
             parent[groupKey] = groupRecord.key + ` (${groupRecord.records.length})`;
-            parent['hasChildren'] = true;
-            children.forEach((c) => c.ParentID = parent[primaryKey]);
+            parent[this.hasChildrenKey] = true;
+            children.forEach((c) => c[foreignKey] = parent[primaryKey]);
 
             data.push(parent);
 
             if (parent[primaryKey] === this.parentID) {
                 if (groupRecord.groups) {
-                    this.flattenGrouping(groupRecord.groups, groupKey, primaryKey, childDataKey,
+                    this.flattenGrouping(groupRecord.groups, groupKey, primaryKey, foreignKey,
                         parent[primaryKey], this.children);
                 } else {
                     children.forEach((c) => c.hasChildren = false);
@@ -85,8 +86,8 @@ export class TreeGridGroupingLoadOnDemandService {
 
             if (this.parentID && !parent[primaryKey].startsWith(this.parentID)) {
                 if (groupRecord.groups) {
-                    this.flattenGrouping(groupRecord.groups, groupKey, primaryKey, childDataKey,
-                        parent[primaryKey], parent[childDataKey]);
+                    this.flattenGrouping(groupRecord.groups, groupKey, primaryKey, foreignKey,
+                        parent[primaryKey], [parent[foreignKey]]);
                 }
             }
         }

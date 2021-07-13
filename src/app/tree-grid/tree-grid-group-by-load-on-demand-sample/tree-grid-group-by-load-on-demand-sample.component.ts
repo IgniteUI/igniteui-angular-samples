@@ -18,7 +18,7 @@ export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
     ];
 
     public primaryKey = 'id';
-    public childDataKey = 'children';
+    public foreignKey = 'parentId';
     public hasChildrenKey = 'children';
     public groupColumnKey = '';
     public data = [];
@@ -31,7 +31,7 @@ export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
 
     public loadChildren = (parentID: any, done: (children: any[]) => void) => {
         const groupingParameters = this.assembleGroupingParameters();
-        this.dataService.getData(parentID, groupingParameters, (children) => done(children));
+        this.dataService.getData(parentID, this.hasChildrenKey, groupingParameters, (children) => done(children));
     };
 
     public onExpressionsChange(event: EventEmitter<string[]>) {
@@ -42,7 +42,7 @@ export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
         this.treeGrid.isLoading = true;
         this.treeGrid.expansionStates.clear();
         const groupingParameters = this.assembleGroupingParameters();
-        this.dataService.getData(null, groupingParameters, (children) => {
+        this.dataService.getData(null, this.hasChildrenKey, groupingParameters, (children) => {
             this.data = children;
             this.treeGrid.isLoading = false;
             this.treeGrid.reflow();
@@ -54,7 +54,7 @@ export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
             groupingExpressions: this.groupingExpressions,
             groupKey: this.groupColumnKey,
             primaryKey: this.primaryKey,
-            childDataKey: this.childDataKey
+            foreignKey: this.foreignKey
         };
 
         return groupingParameters;
