@@ -25,7 +25,7 @@
             ~{{volume/5}} records updated.</span>
     </div>
     <igx-tree-grid #grid1 igxPreventDocumentScroll
-        [data]="data$ | async | treeGridGrouping:groupingExpressions:groupColumnKey:childDataKey:grid1"
+        [data]="data$ | async | treeGridGrouping:groupingExpressions:groupColumnKey:childDataKey:grid1:aggregations"
         [childDataKey]="childDataKey"
         [sortStrategy]="sorting"
         [height]="'calc(100% - 76px)'"

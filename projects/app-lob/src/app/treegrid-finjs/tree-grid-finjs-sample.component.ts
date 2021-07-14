@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, OnDestroy, ViewChild, HostBinding } from
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment,
     IGroupingExpression, IgxButtonGroupComponent, IgxGroupedTreeGridSorting, IgxOverlayOutletDirective, IgxSliderComponent,
-    IgxTreeGridComponent, OverlaySettings, PositionSettings, VerticalAlignment
+    IgxTreeGridComponent, ITreeGridAggregation, OverlaySettings, PositionSettings, VerticalAlignment
 } from 'igniteui-angular';
 import { Contract, REGIONS } from '../data/financialData';
 import { SignalRService } from '../services/signal-r.service';
@@ -50,6 +50,20 @@ export class TreeGridFinJSComponent implements OnDestroy, OnInit {
         { fieldName: 'category', dir: 2, ignoreCase: true, strategy: DefaultSortingStrategy.instance() },
         { fieldName: 'type', dir: 1, ignoreCase: true, strategy: DefaultSortingStrategy.instance() },
         { fieldName: 'contract', dir: 1, ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
+    ];
+    public aggregations: ITreeGridAggregation[] = [
+        {
+            aggregate: (parent: any, data: any[]) => data.map((r) => r.change).reduce((ty, u) => ty + u, 0),
+            field: 'change'
+        },
+        {
+            aggregate: (parent: any, data: any[]) => data.map((r) => r.price).reduce((ty, u) => ty + u, 0),
+            field: 'price'
+        },
+        {
+            aggregate: (parent: any, data: any[]) => parent.change / (parent.price - parent.change) * 100,
+            field: 'changeP'
+        }
     ];
 
     public childDataKey = 'children';
