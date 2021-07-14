@@ -3,7 +3,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxDialogComponent,
     IgxHierarchicalGridComponent,
-    IgxHierarchicalTransactionServiceFactory,
     IgxRowIslandComponent,
     Transaction
 } from 'igniteui-angular';
@@ -13,8 +12,7 @@ import { Singer } from '../models';
 @Component({
     selector: 'app-hierarchical-grid-batch-editing',
     styleUrls: ['./hierarchical-grid-batch-editing.component.scss'],
-    templateUrl: 'hierarchical-grid-batch-editing.component.html',
-    providers: [ IgxHierarchicalTransactionServiceFactory ]
+    templateUrl: 'hierarchical-grid-batch-editing.component.html'
 })
 
 export class HGridBatchEditingSampleComponent implements OnInit {

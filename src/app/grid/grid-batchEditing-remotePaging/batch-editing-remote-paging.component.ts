@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { IgxDialogComponent, IgxGridComponent, IgxGridTransaction, IgxTransactionService, Transaction } from 'igniteui-angular';
+import { IgxDialogComponent, IgxGridComponent, Transaction } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { RemotePagingService } from '../services/remotePagingService';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
-    providers: [RemotePagingService, { provide: IgxGridTransaction, useClass: IgxTransactionService }],
+    providers: [RemotePagingService],
     selector: 'app-remote-paging-batch-editing',
     styleUrls: ['./batch-editing-remote-paging.component.scss'],
     templateUrl: './batch-editing-remote-paging.component.html'

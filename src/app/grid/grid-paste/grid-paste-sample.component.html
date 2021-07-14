@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <div class="grid__menu">
-        <button igxButton="raised" [igxToggleAction]="dropdown" [igxDropDownItemNavigation]="dropdown">Paste Options</button>
+        <button igxButton="raised" [batchEditing]="true" [igxToggleAction]="dropdown" [igxDropDownItemNavigation]="dropdown">Paste Options</button>
         <igx-drop-down #dropdown (onSelection)="selectionChange($event)" >
             <igx-drop-down-item *ngFor="let item of comboData" [value]="item" >
                 {{ item }}

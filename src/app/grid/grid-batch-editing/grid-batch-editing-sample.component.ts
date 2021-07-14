@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxGridComponent, IgxGridTransaction, IgxTransactionService, Transaction } from 'igniteui-angular';
+import { IgxDialogComponent, IgxGridComponent, Transaction } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 import { generateRandomInteger } from '../../data/utils';
 
@@ -8,8 +8,7 @@ import { generateRandomInteger } from '../../data/utils';
 @Component({
     selector: 'app-grid-row-edit',
     styleUrls: [`grid-batch-editing-sample.component.scss`],
-    templateUrl: 'grid-batch-editing-sample.component.html',
-    providers: [{ provide: IgxGridTransaction, useClass: IgxTransactionService }]
+    templateUrl: 'grid-batch-editing-sample.component.html'
 })
 export class GridBatchEditingSampleComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;

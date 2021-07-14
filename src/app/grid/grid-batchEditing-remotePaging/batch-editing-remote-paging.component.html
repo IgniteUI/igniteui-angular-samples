@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
-      <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" width="100%" height="580px" [paging]="true" [perPage]="perPage"
-      [paginationTemplate]="customPager" [rowEditable]="true" [primaryKey]="'ID'">
+      <igx-grid igxPreventDocumentScroll #grid1 [batchEditing]="true" [data]="data | async" width="100%" height="580px"
+      [paging]="true" [perPage]="perPage" [paginationTemplate]="customPager" [rowEditable]="true" [primaryKey]="'ID'">
         <igx-grid-toolbar>
 
             <button igxButton (click)="addRow()">Add Row</button>
@@ -32,16 +32,17 @@
         </igx-paginator>
     </ng-template>
     <igx-dialog title="Submit the following transactions?">
-        <igx-list class="list-container">
-            <igx-list-item *ngFor="let transaction of transactionsData">
-                <span igxListLineTitle [class]="classFromType(transaction.type)">
-                    ID: {{ transaction.id }} Type: {{ typeFormatter(transaction.type) }}
-                </span>
-                <span igxListLineSubTitle class="transaction-log">>
-                    {{ stateFormatter(transaction.newValue) }}
-                </span>
-            </igx-list-item>
-        </igx-list>
+        <igx-grid igxPreventDocumentScroll #dialogGrid [data]="transactionsData" [rowHeight]="64"
+            [primaryKey]="'id'" width="600px" height="300px" [emptyGridMessage]="'No available transactions'">
+            <igx-column field="id" header="ID" [dataType]="'string'" width="100px"></igx-column>
+            <igx-column field="type" header="Type" width="150px" [sortable]="true">
+            </igx-column>
+            <igx-column field="newValue" header="Value" width="900px">
+                <ng-template igxCell let-cell="cell" let-val>
+                    <span class="transaction-log">{{ stateFormatter(val) }}</span>
+                </ng-template>
+            </igx-column>
+        </igx-grid>
         <div class="buttons-wrapper">
             <button igxButton (click)="commit()">Commit</button>
             <button igxButton (click)="discard()">Discard</button>

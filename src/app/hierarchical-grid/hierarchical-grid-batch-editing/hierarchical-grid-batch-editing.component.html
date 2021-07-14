@@ -1,6 +1,6 @@
 <div class="grid-wrapper">
     <button igxButton="raised" (click)="dialogAddSinger.open()" class="addSingerBtn">Add Singer</button>
-    <igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid class="hgrid" [data]="data"
+    <igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid [batchEditing]="true" class="hgrid" [data]="data"
         [primaryKey]="'Artist'" [height]="'550px'" [width]="'100%'" [rowEditable]="true">
         <igx-column width="150px" [editable]="false">
             <ng-template igxCell let-cell="cell" let-val>
@@ -64,16 +64,20 @@
         </div>
     </igx-dialog>
     <igx-dialog #dialogChanges title="Submit the following transactions?">
-        <igx-list class="list-container">
-            <igx-list-item *ngFor="let transaction of transactionsDataAll">
-                <span igxListLineTitle [class]="classFromType(transaction.type)">
-                    ID: {{ transaction.id }} Type: {{ typeFormatter(transaction.type) }}
-                </span>
-                <span igxListLineSubTitle class="transaction-log">>
-                    {{ stateFormatter(transaction.newValue) }}
-                </span>
-            </igx-list-item>
-        </igx-list>
+        <igx-grid igxPreventDocumentScroll #dialogGrid [data]="transactionsDataAll" [rowHeight]="64" [primaryKey]="'id'"
+            width="650px" height="300px" [emptyGridMessage]="'No available transactions'">
+            <igx-column field="id" header="ID" [dataType]="'string'" width="150px"></igx-column>
+            <igx-column field="type" header="Type" width="150px" [sortable]="true">
+                <ng-template igxCell let-cell="cell" let-val>
+                    <span [class]="classFromType(val)">{{ typeFormatter(val) }}</span>
+                </ng-template>
+            </igx-column>
+            <igx-column field="newValue" header="Value" width="900px">
+                <ng-template igxCell let-cell="cell" let-val>
+                    <span class="transaction-log">{{ stateFormatter(val) }}</span>
+                </ng-template>
+            </igx-column>
+        </igx-grid>
         <div class="buttons-wrapper">
             <button igxButton (click)="commit()">Commit</button>
             <button igxButton (click)="discard()">Discard</button>

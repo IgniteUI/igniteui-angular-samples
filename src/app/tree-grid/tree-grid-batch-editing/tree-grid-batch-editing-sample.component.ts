@@ -2,8 +2,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxDialogComponent,
-    IgxGridTransaction,
-    IgxHierarchicalTransactionService,
+    IgxGridComponent,
     IgxTreeGridComponent,
     Transaction
 } from 'igniteui-angular';
@@ -13,12 +12,12 @@ import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 @Component({
     selector: 'app-tree-grid-batch-editing-sample',
     styleUrls: ['tree-grid-batch-editing-sample.component.scss'],
-    templateUrl: 'tree-grid-batch-editing-sample.component.html',
-    providers: [{ provide: IgxGridTransaction, useClass: IgxHierarchicalTransactionService }]
+    templateUrl: 'tree-grid-batch-editing-sample.component.html'
 })
 export class TreeGridBatchEditingSampleComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
     @ViewChild(IgxDialogComponent, { static: true }) public dialog: IgxDialogComponent;
+    @ViewChild('dialogGrid', { read: IgxGridComponent, static: true }) public dialogGrid!: IgxGridComponent;
 
     public data: IEmployee[];
     public transactionsData: Transaction[] = [];
@@ -91,7 +90,7 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
 
     public openCommitDialog() {
         this.transactionsData = this.treeGrid.transactions.getAggregatedChanges(true);
-        this.dialog.open();
+        this.dialogGrid.reflow();
     }
 
     public stateFormatter(value: any) {
