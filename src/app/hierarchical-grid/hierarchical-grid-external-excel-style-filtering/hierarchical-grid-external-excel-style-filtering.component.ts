@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { IgxHierarchicalGridComponent } from 'igniteui-angular';
-import { SINGERS } from '../data';
+import { SINGERS } from '../../data/singersData';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,

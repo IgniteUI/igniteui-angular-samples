@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
+    IgxAccordionModule,
     IgxAvatarModule,
     IgxBottomNavModule,
     IgxButtonGroupModule,
@@ -23,7 +24,9 @@ import {
     IgxSelectModule,
     IgxSliderModule,
     IgxSplitterModule,
+    IgxSwitchModule,
     IgxTabsModule,
+    IgxTimePickerModule,
     IgxToastModule
 } from 'igniteui-angular';
 import { AvatarSample1Component } from './avatar/avatar-sample-1/avatar-sample-1.component';
@@ -80,9 +83,15 @@ import { TabsSample4Component } from './tabs/tabs-sample-4/components/tabs-sampl
 import { TabsStyleComponent } from './tabs/tabs-style/tabs-style.component';
 import { TabsAlignmentComponent } from './tabs/tabs-alignment/tabs-alignment.component';
 import { TabsHeaderPrefixSuffixComponent } from './tabs/tabs-header-prefix-suffix/tabs-header-prefix-suffix';
+import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
+import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
+import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
 
 @NgModule({
     declarations: [
+        AccordionSample1Component,
+        AccordionSample2Component,
+        AccordionSample3Component,
         AvatarSample1Component,
         AvatarSample2Component,
         AvatarSample3Component,
@@ -140,6 +149,7 @@ import { TabsHeaderPrefixSuffixComponent } from './tabs/tabs-header-prefix-suffi
         CommonModule,
         FormsModule,
         LayoutsRoutingModule,
+        IgxAccordionModule,
         IgxAvatarModule,
         IgxBottomNavModule,
         IgxButtonGroupModule,
@@ -161,7 +171,9 @@ import { TabsHeaderPrefixSuffixComponent } from './tabs/tabs-header-prefix-suffi
         IgxSelectModule,
         IgxSliderModule,
         IgxSplitterModule,
+        IgxSwitchModule,
         IgxTabsModule,
+        IgxTimePickerModule,
         IgxToastModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

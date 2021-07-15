@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { athletesData } from '../services/data';
+import { athletesData } from '../../data/athletesData';
 
 @Component({
   selector: 'app-grid-toolbar-sample-4',

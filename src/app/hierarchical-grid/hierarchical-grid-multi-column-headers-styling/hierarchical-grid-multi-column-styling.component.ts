@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CUSTOMERS } from '../data';
+import { DATA } from '../../data/customers';
 
 @Component({
     selector: 'app-hierarchical-grid-multi-column-styling',
@@ -14,6 +14,6 @@ export class HGridMultiHeadersStylingComponent implements OnInit {
 
     }
     public ngOnInit(): void {
-        this.localdata = CUSTOMERS;
+        this.localdata = DATA;
     }
 }

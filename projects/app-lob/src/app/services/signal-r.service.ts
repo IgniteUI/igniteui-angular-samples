@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, NgZone, OnDestroy } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
 import { BehaviorSubject } from 'rxjs';
-import { FinancialData } from './financialData';
+import { FinancialData } from '../data/financialData';
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +11,6 @@ export class SignalRService implements OnDestroy {
     public data: BehaviorSubject<any[]>;
     public hasRemoteConnection: boolean;
     private hubConnection: signalR.HubConnection;
-    private financialData: FinancialData = new FinancialData();
     private _timer;
 
     constructor(private zone: NgZone, private http: HttpClient) {
@@ -37,7 +36,7 @@ export class SignalRService implements OnDestroy {
             .catch(() => {
                 this.hasRemoteConnection = false;
                 if (this._timer) { this.stopFeed(); }
-                const data = this.financialData.generateData(volume);
+                const data = FinancialData.generateData(volume);
                 live ? this._timer = setInterval(() => updateAll ?
                     this.updateAllPriceValues(data) : this.updateRandomPriceValues(data), interval) :
                         this.getData(volume);
@@ -63,19 +62,19 @@ export class SignalRService implements OnDestroy {
 
 
     public getData(count: number = 10) {
-        this.data.next(this.financialData.generateData(count));
+        this.data.next(FinancialData.generateData(count));
     }
 
     public updateAllPriceValues(data) {
         this.zone.runOutsideAngular(() =>  {
-            const newData = this.financialData.updateAllPrices(data);
+            const newData = FinancialData.updateAllPrices(data);
             this.data.next(newData);
         });
     }
 
     public updateRandomPriceValues(data) {
         this.zone.runOutsideAngular(() =>  {
-            const newData = this.financialData.updateRandomPrices(data);
+            const newData = FinancialData.updateRandomPrices(data);
             this.data.next(newData);
         });
     }

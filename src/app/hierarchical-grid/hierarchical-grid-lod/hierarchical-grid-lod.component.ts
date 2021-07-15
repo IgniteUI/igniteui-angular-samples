@@ -4,7 +4,7 @@ import {
     IgxHierarchicalGridComponent,
     IgxRowIslandComponent
 } from 'igniteui-angular';
-import { IDataState, RemoteLoDService } from '../services/remote-lod.service';
+import { IDataState, RemoteLoDService } from '../../services/remote-lod.service';
 
 @Component({
     providers: [RemoteLoDService],

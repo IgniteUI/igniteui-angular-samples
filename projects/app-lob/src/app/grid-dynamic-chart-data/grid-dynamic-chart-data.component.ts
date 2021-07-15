@@ -4,7 +4,7 @@ import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment,
          IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment, OverlaySettings } from 'igniteui-angular';
 import { noop, Subject } from 'rxjs';
 import { debounceTime, takeUntil, tap } from 'rxjs/operators';
-import { FinancialData } from '../services/financialData';
+import { FinancialData } from '../data/financialData';
 import { ChartHostDirective, ChartIntegrationDirective, IDeterminedChartTypesArgs } from './directives/chart-integration/chart-integration.directive';
 import { CHART_TYPE } from './directives/chart-integration/chart-types';
 import { ConditionalFormattingDirective } from './directives/conditional-formatting/conditional-formatting.directive';
@@ -152,7 +152,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
 
         this.chartSelectionDialog.onClose.subscribe((evt) => this.chartPreviewDialog.close());
 
-        this.data = new FinancialData().generateData(1000);
+        this.data = FinancialData.generateData(1000);
 
         this.grid.rangeSelected.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(200))
             .subscribe(range => {
@@ -334,6 +334,10 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
             cell = this.grid.getCellByColumn(lastFullyVisibleRowIndex, field);
         } else {
             cell = this.grid.getCellByColumn(this.rowIndex, this.grid.visibleColumns[this.colIndex].field);
+        }
+
+        if (!cell) {
+            return;
         }
         this.contextmenuX = cell.element.nativeElement.getClientRects()[0].right;
         this.contextmenuY = cell.element.nativeElement.getClientRects()[0].bottom;

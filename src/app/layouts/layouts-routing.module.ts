@@ -61,8 +61,26 @@ import { TabsHeaderPrefixSuffixComponent } from './tabs/tabs-header-prefix-suffi
 import { View1Component } from './tabs/views/view1/view1.component';
 import { View2Component } from './tabs/views/view2/view2.component';
 import { View3Component } from './tabs/views/view3/view3.component';
+import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
+import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
+import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
 
 export const layoutsRoutes: Routes = [
+    {
+        component: AccordionSample1Component,
+        data: layoutsRoutesData['accordion-sample-1'],
+        path: 'accordion-sample-1'
+    },
+    {
+        component: AccordionSample2Component,
+        data: layoutsRoutesData['accordion-sample-2'],
+        path: 'accordion-sample-2'
+    },
+    {
+        component: AccordionSample3Component,
+        data: layoutsRoutesData['accordion-sample-3'],
+        path: 'accordion-sample-3'
+    },
     {
         component: AvatarSample1Component,
         data: layoutsRoutesData['avatar-sample-1'],

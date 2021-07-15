@@ -14,7 +14,7 @@ import {
 } from 'igniteui-angular';
 import { fromEvent, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { CUSTOMERS } from '../data';
+import { DATA } from '../../data/customers';
 
 enum GridSection {
     THEAD = 'igx-grid__thead-wrapper',
@@ -209,7 +209,7 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     public ngOnInit() {
-        this.hGrid.data = CUSTOMERS;
+        this.hGrid.data = DATA;
         for (const item of this.hGrid.data) {
             const names = item.CompanyName.split(' ');
             item.FirstName = names[0];

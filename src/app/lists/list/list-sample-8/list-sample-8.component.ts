@@ -54,27 +54,4 @@ export class ListSample8Component implements OnInit {
     public toggleFavorite(contact: any) {
         contact.isFavorite = !contact.isFavorite;
     }
-
-    public rightPanPerformed(args) {
-        args.keepItem = true;
-        this.toast.open('Dialing ' + this.contacts[args.item.index - 1].name);
-    }
-
-    public leftPanPerformed(args) {
-        args.keepItem = false;
-        setTimeout((idx = args.item.index - 1) => {
-            this.toast.open('Contact ' + this.contacts[idx].name + ' removed.');
-            this.contacts.splice(idx, 1);
-        }, 500);
-    }
-
-    public repopulateHandler() {
-        this.contacts = Object.assign([], this.dataSource);
-    }
-
-    public get panThreshold() {
-        const result = this.list.panEndTriggeringThreshold;
-        return Math.round(result * 100) + '%';
-    }
-
 }

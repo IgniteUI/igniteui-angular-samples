@@ -1,4 +1,10 @@
 <p class="grid__wrapper">
-  <igx-grid igxPreventDocumentScroll #igxGrid1 [data]="localData" [autoGenerate]="true" height="220px"></igx-grid>
-  <button (click)="exportButtonHandler()" class="exportButton">Export Grid to CSV</button>
+  <igx-grid igxPreventDocumentScroll #igxGrid1 [data]="localData" [autoGenerate]="true" height="220px">
+    <igx-grid-toolbar>
+        <igx-grid-toolbar-actions>
+            <igx-grid-toolbar-exporter [exportCSV]="true" [exportExcel]="false">
+            </igx-grid-toolbar-exporter>
+        </igx-grid-toolbar-actions>
+    </igx-grid-toolbar>
+  </igx-grid>
 </p>

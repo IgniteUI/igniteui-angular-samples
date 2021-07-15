@@ -19,7 +19,7 @@ import {
     AbsolutePosition,
     OverlayClosingEventArgs
 } from 'igniteui-angular';
-import { athletesData } from './../services/data';
+import { athletesData } from '../../data/athletesData';
 
 @Component({
     selector: 'app-grid',
@@ -88,7 +88,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         this.localData.forEach(rec => this.getSpeed(rec));
         this.windowWidth = window.innerWidth;
         this._timer = setInterval(() => this.ticker(), 1500);
-        this.overlayService.onClosing.subscribe((event: OverlayClosingEventArgs) => {
+        this.overlayService.closing.subscribe((event: OverlayClosingEventArgs) => {
             this.showOverlay = false;
         });
     }
