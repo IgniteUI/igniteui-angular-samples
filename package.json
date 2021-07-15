@@ -99,7 +99,7 @@
     "@angular/cli": "^12.1.2",
     "@angular/compiler-cli": "^12.1.2",
     "@angular/language-service": "^12.1.2",
-    "@igniteui/angular-schematics": "^11.1.711",
+    "@igniteui/angular-schematics": "^12.0.803",
     "@types/jasmine": "^3.7.7",
     "@types/jasminewd2": "^2.0.9",
     "@types/node": "^13.13.52",
