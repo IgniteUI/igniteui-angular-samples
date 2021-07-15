@@ -89,11 +89,12 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
     }
 
     public openCommitDialog() {
+        this.dialog.open();
         this.transactionsData = this.treeGrid.transactions.getAggregatedChanges(true);
         this.dialogGrid.reflow();
     }
 
-    public stateFormatter(value: any) {
+    public stateFormatter(value: string) {
         return value ? JSON.stringify(value) : '';
     }
 
