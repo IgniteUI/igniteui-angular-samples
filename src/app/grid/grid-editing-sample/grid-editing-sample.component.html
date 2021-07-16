@@ -1,7 +1,7 @@
 <div class="grid__wrapper">
     <div class="sample__header">
-        <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" displayDensity="cosy" width="100%" height="600px"
-            [paging]="true" [primaryKey]="'ProductID'" [perPage]="10" [allowFiltering]="true" (rowDeleted)="show($event)">
+        <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" displayDensity="cosy" width="100%" height="600px" [primaryKey]="'ProductID'" [perPage]="10" [allowFiltering]="true" (rowDeleted)="show($event)">
+<igx-paginator></igx-paginator>
             <igx-grid-toolbar>
 
                 <button igxButton="flat" (click)="dialogAdd.open()" class="addProdBtn"><igx-icon>add</igx-icon> Add Product</button>
