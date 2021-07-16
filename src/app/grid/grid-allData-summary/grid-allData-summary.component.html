@@ -1,5 +1,6 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="600px" width="100%" [paging]="false">
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="600px" width="100%">
+<igx-paginator *ngIf="false"></igx-paginator>
         <igx-column field="ProductID" header="Product ID" width="17%" [headerClasses]="'prodId'">
         </igx-column>
         <igx-column field="ProductName" header="Product Name" width="17%" [headerClasses]="'prodId'" >
