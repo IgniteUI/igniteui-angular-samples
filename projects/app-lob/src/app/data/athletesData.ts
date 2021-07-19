@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+/* tslint:disable */
 export interface Athlete {
 	Id: number;
 	Avatar: string;
@@ -14,7 +16,6 @@ export interface Athlete {
 	Speed?: { Speed: number, Minute: number }[];
 }
 
-/* tslint:disable */
 export const athletesData = [{
   Id: 84,
   Avatar: 'assets/images/men/12.jpg',
