@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, OnDestroy, ViewChild, HostBinding } from '@angular/core';
 import {
-    AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
+    AbsoluteScrollStrategy, ConnectedPositioningStrategy, GridSelectionMode, HorizontalAlignment,
     IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
     PositionSettings, SortingDirection, VerticalAlignment
 } from 'igniteui-angular';
@@ -16,19 +16,19 @@ import { SignalRService } from '../services/signal-r.service';
 })
 
 export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy, OnInit {
-    @ViewChild('grid1', { static: true }) public grid1: IgxTreeGridComponent;
-    @ViewChild('buttonGroup1', { static: true }) public buttonGroup1: IgxButtonGroupComponent;
-    @ViewChild('slider1', { static: true }) public volumeSlider: IgxSliderComponent;
-    @ViewChild('slider2', { static: true }) public intervalSlider: IgxSliderComponent;
-    @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
+    @ViewChild('grid1', { static: true }) public grid1!: IgxTreeGridComponent;
+    @ViewChild('buttonGroup1', { static: true }) public buttonGroup1!: IgxButtonGroupComponent;
+    @ViewChild('slider1', { static: true }) public volumeSlider!: IgxSliderComponent;
+    @ViewChild('slider2', { static: true }) public intervalSlider!: IgxSliderComponent;
+    @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet!: IgxOverlayOutletDirective;
 
     @HostBinding('class.dark-theme')
-    public theme = false;
+    public theme: boolean = false;
 
-    public showToolbar = true;
-    public selectionMode = 'multiple';
-    public volume = 1000;
-    public frequency = 500;
+    public showToolbar: boolean = true;
+    public selectionMode: GridSelectionMode = 'multiple';
+    public volume: number = 1000;
+    public frequency: number = 500;
     public data$: any;
     public overlaySettings: OverlaySettings = {
         modal: false
@@ -85,9 +85,9 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy, OnInit 
     public regions = REGIONS;
     public isLoading = true;
 
-    private subscription;
-    private selectedButton;
-    private _timer;
+    private subscription: any;
+    private selectedButton: number = -1;
+    private _timer: any;
 
     constructor(private elRef: ElementRef, public dataService: SignalRService) {
         this.dataService.startConnection();

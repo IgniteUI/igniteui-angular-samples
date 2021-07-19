@@ -19,7 +19,7 @@ import {
     AbsolutePosition,
     OverlayClosingEventArgs
 } from 'igniteui-angular';
-import { athletesData } from '../../data/athletesData';
+import { Athlete, athletesData } from '../../data/athletesData';
 
 @Component({
     selector: 'app-grid',
@@ -29,30 +29,30 @@ import { athletesData } from '../../data/athletesData';
 export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
 
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
-    public grid1: IgxGridComponent;
+    public grid1!: IgxGridComponent;
 
     @ViewChild('winnerAlert', { static: true })
-    public winnerAlert: ElementRef;
+    public winnerAlert!: ElementRef;
 
     @ViewChild('finishedAlert', { static: true })
-    public finishedAlert: ElementRef;
+    public finishedAlert!: ElementRef;
 
     public topSpeedSummary = CustomTopSpeedSummary;
     public bnpSummary = CustomBPMSummary;
     public speedSummary = CustomSpeedSummary;
-    public localData: any[];
+    public localData: Athlete[] = [];
     public isFinished = false;
     public hasWinner = false;
     public athleteColumnWidth = '30%';
     public showOverlay = false;
     public overlaySettings: OverlaySettings;
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    public winner = { Avatar: null, Name: null };
-    public top3 = [];
+    public winner: Athlete = { Avatar: '', Name: '' } as Athlete;
+    public top3: Athlete[] = [];
     private _live = true;
-    private _timer;
+    private _timer: any;
     private windowWidth: any;
-    private _overlayId: string;
+    private _overlayId: string = '';
 
     get live() {
         return this._live;
@@ -109,7 +109,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         clearInterval(this._timer);
     }
 
-    public isTop3(cell): boolean {
+    public isTop3(cell: IgxGridCellComponent): boolean {
         const top = this.grid1.page === 0 && cell.row.index < 4;
         return top;
     }
@@ -131,29 +131,31 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         this.grid1.selectRows([cell.row.rowID], true);
     }
 
-    public getIconType(cell) {
+    public getIconType(cell: IgxGridCellComponent): string {
         switch (cell.row.rowData.Position) {
-            case 'up':
-                return 'arrow_upward';
-            case 'current':
-                return 'arrow_forward';
-            case 'down':
-                return 'arrow_downward';
-        }
-    }
+		case 'current':
+		  return 'arrow_forward';
+		case 'down':
+		  return 'arrow_downward';
+		case 'up':
+		default:
+		  return 'arrow_upward';
+	  }
+	}
 
-    public getBadgeType(cell) {
+    public getBadgeType(cell: IgxGridCellComponent): string {
         switch (cell.row.rowData.Position) {
-            case 'up':
-                return 'success';
-            case 'current':
-                return 'warning';
-            case 'down':
-                return 'error';
-        }
-    }
+		case 'current':
+		  return 'warning';
+		case 'down':
+		  return 'error';
+		case 'up':
+		default:
+		  return 'success';
+	  }
+	}
 
-    public getSpeed(athlete: any): any {
+    public getSpeed(athlete: Athlete): void {
         athlete['Speed'] = this.addSpeedeData(athlete, 40);
     }
 
@@ -170,7 +172,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         return speed;
     }
 
-    public addSpeedeData(athlete, minutes?: number): any[] {
+    public addSpeedeData(athlete: Athlete, minutes?: number): any[] {
         if (minutes === undefined) {
             minutes = 20;
         }
@@ -190,7 +192,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
 
     // eslint-disable-next-line @typescript-eslint/member-ordering
     @HostListener('window:resize', ['$event'])
-    public onResize(event) {
+    public onResize(event: any) {
         this.windowWidth = event.target.innerWidth;
     }
 
@@ -210,7 +212,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         this.overlayService.hide(this._overlayId);
     }
 
-    private generateRandomNumber(min, max) {
+    private generateRandomNumber(min: number, max: number) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
@@ -254,7 +256,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     private updateData() {
-        const newData = [];
+        const newData: Athlete[] = [];
         this.localData.forEach((rec, index) => {
             rec.LastPosition = index;
             if (rec.TrackProgress < 100) {
@@ -289,6 +291,9 @@ class CustomTopSpeedSummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];
+        if (!data){
+            return result;
+        }
         result.push({
             key: 'max',
             label: 'max',
@@ -303,6 +308,9 @@ export class CustomBPMSummary {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];
+        if (!data){
+            return result;
+        }
         result.push(
             {
                 key: 'average',
@@ -319,6 +327,9 @@ export class CustomSpeedSummary {
     public operate(data?: any[]): IgxSummaryResult[] {
         data = data.reduce((acc, val) => acc.concat(val), []).map(rec => rec.Speed);
         const result = [];
+        if (!data){
+            return result;
+        }
         result.push(
             {
                 key: 'average',

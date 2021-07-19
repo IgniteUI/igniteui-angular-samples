@@ -1004,14 +1004,14 @@ export class FinancialData {
         return currData;
     }
 
-    private static randomizeObjectData(dataObj) {
+    private static randomizeObjectData(dataObj: any) {
         const changeP = 'changeP';
         const res = this.generateNewPrice(dataObj.price);
         dataObj.change = res.price - dataObj.price;
         dataObj.price = res.price;
         dataObj[changeP] = res.changePercent;
     }
-    private static generateNewPrice(oldPrice): any {
+    private static generateNewPrice(oldPrice: number): any {
         const rnd = parseFloat(Math.random().toFixed(2));
         const volatility = 2;
         let newPrice = 0;
@@ -1030,7 +1030,7 @@ export class FinancialData {
 
         return result;
     }
-    private static generateRandomNumber(min, max) {
+    private static generateRandomNumber(min: number, max: number) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     private static randomizeCountry(region: any) {

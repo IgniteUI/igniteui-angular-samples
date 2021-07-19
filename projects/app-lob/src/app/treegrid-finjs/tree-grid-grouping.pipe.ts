@@ -2,13 +2,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 class GroupByRecord {
     public key: any;
-    public groups: GroupByRecord[];
-    public records: any[];
+    public groups: GroupByRecord[] = [];
+    public records: any[] = [];
 }
 
 export class ITreeGridAggregation {
-    public field: string;
-    public aggregate: (parent: any, children: any[]) => any;
+    public field: string = '';
+    public aggregate: (parent: any, children: any[]) => any = [] as any;
 }
 
 @Pipe({
@@ -27,7 +27,7 @@ export class TreeGridGroupingPipe implements PipeTransform {
             return collection;
         }
 
-        const result = [];
+        const result: any[] = [];
         const groupedRecords = this.groupByMultiple(collection, groupColumns);
         this.flattenGrouping(groupedRecords, groupKey, primaryKey,
             childDataKey, aggregations, '', result);
@@ -43,7 +43,7 @@ export class TreeGridGroupingPipe implements PipeTransform {
                             parentID: any,
                             data: any[]) {
         for (const groupRecord of groupRecords) {
-            const parent = {};
+            const parent: { [key: string]: any } = {};
             const children = groupRecord.records;
 
             parent[primaryKey] = parentID + groupRecord.key;
