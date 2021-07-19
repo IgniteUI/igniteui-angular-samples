@@ -124,12 +124,10 @@ import { GridSelectComponent } from './grid-select/grid-select-sample.component'
 import { GridColumnDataTypesSampleComponent } from './grid-column-data-types-sample/grid-column-data-types-sample.component';
 import { GridFormattedFilteringStrategyComponent } from './grid-formatted-filtering-strategy/grid-formatted-filtering-strategy.component';
 import { GridSummaryFormatterComponent } from './grid-summary-formatter/grid-summary-formatter.component';
-import { GridWithTransactions2Component } from './grid-batchEditing-remotePaging/transaction.component';
 import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-export/multi-column-headers-export.component';
 
 @NgModule({
     declarations: [
-        GridWithTransactions2Component,
         GridBatchEditingSampleComponent,
         GridActionStripSampleComponent,
         GridColumnHidingSampleComponent,
