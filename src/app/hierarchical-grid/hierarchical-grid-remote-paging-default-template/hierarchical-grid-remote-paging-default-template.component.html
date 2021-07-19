@@ -1,8 +1,9 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  [paging]="true" [primaryKey]="'CustomerID'"
+    <igx-hierarchical-grid igxPreventDocumentScroll [primaryKey]="'CustomerID'"
         [height]="'550px'" (perPageChange)="getFirstPage()"
         [width]="'100%'" [pagingMode]="mode"  [totalRecords]="totalCount"
         (pagingDone)="pagingDone($event)" #hierarchicalGrid>
+<igx-paginator></igx-paginator>
         <igx-column field="CustomerID"></igx-column>
         <igx-column field="CompanyName"></igx-column>
         <igx-column field="ContactName"></igx-column>
@@ -10,14 +11,20 @@
         <igx-column field="Country"></igx-column>
         <igx-column field="Phone"></igx-column>
         <igx-row-island [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false"
-            (gridCreated)="gridCreated($event, 'CustomerID')" [paging]="true" [perPage]="5">
+            (gridCreated)="gridCreated($event, 'CustomerID')" [perPage]="5">
+<igx-paginator *igxPaginator >
+              </igx-paginator>
+
             <igx-column field="OrderID"></igx-column>
             <igx-column field="OrderDate" [formatter]="dateFormatter"></igx-column>
             <igx-column field="ShipCountry"></igx-column>
             <igx-column field="ShipCity"></igx-column>
             <igx-column field="ShipAddress"></igx-column>
             <igx-row-island [key]="'Order_Details'" [primaryKey]="'ProductID'" [autoGenerate]="false"
-                (gridCreated)="gridCreated($event, 'OrderID')" [paging]="true" [perPage]="5">
+                (gridCreated)="gridCreated($event, 'OrderID')" [perPage]="5">
+<igx-paginator *igxPaginator >
+              </igx-paginator>
+
                 <igx-column field="ProductID"></igx-column>
                 <igx-column field="UnitPrice"></igx-column>
                 <igx-column field="Quantity"></igx-column>

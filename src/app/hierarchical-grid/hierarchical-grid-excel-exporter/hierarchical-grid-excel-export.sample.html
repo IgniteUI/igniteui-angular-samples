@@ -1,6 +1,13 @@
 <div class="hgrid-sample">
     <igx-hierarchical-grid [data]="data" [allowFiltering]="true"
         [filterMode]="'excelStyleFilter'" #hierarchicalGrid>
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-exporter [exportExcel]="true" [exportCSV]="false">
+                </igx-grid-toolbar-exporter>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
+
         <igx-column field="Artist" [filterable]="true" [sortable]="true"></igx-column>
         <igx-column field="Debut" [sortable]="true" dataType="number"></igx-column>
         <igx-column field="GrammyNominations" header="Grammy Nominations" [sortable]="true"></igx-column>
@@ -33,6 +40,4 @@
             </igx-row-island>
         </igx-row-island>
     </igx-hierarchical-grid>
-
-    <button igxButton="raised" (click)="exportButtonHandler()" class="exportButton">Export Grid to Excel</button>
 </div>
