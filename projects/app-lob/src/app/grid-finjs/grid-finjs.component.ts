@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
+import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, IRowSelectionEventArgs, OverlaySettings, IgxOverlayOutletDirective, GridSelectionMode } from 'igniteui-angular';
 import { SignalRService } from '../services/signal-r.service';
 
 @Component({
@@ -10,13 +10,13 @@ import { SignalRService } from '../services/signal-r.service';
   styleUrls: ['./grid-finjs.component.scss']
 })
 export class GridFinJSComponent implements OnInit {
-    @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;
-    @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
+    @ViewChild('grid1', { static: true }) public grid!: IgxGridComponent;
+    @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet!: IgxOverlayOutletDirective;
     @Output() public selectedDataChanged = new EventEmitter<any>();
     @Output() public keyDown = new EventEmitter<any>();
     @Output() public chartColumnKeyDown = new EventEmitter<any>();
 
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     public volume = 1000;
     public frequency = 500;
     public data$: any;
@@ -30,7 +30,7 @@ export class GridFinJSComponent implements OnInit {
 
     constructor(private el: ElementRef, @Inject(DOCUMENT) private document: Document, public dataService: SignalRService) { }
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.dataService.getData(this.volume);
         this.overlaySettings.outlet = this.outlet;
         this.data$ = this.dataService.data;
@@ -64,7 +64,7 @@ export class GridFinJSComponent implements OnInit {
     }
 
     /** Event Handlers and Methods */
-    public onChange() {
+    public onChange(): void {
         if (this.grid.groupingExpressions.length > 0) {
             this.grid.groupingExpressions = [];
         } else {
@@ -90,12 +90,12 @@ export class GridFinJSComponent implements OnInit {
         }
     }
 
-    public rowSelectionChanged(args) {
+    public rowSelectionChanged(args: IRowSelectionEventArgs): void {
         this.grid.clearCellSelection();
         this.selectedDataChanged.emit(args.newSelection);
     }
 
-    public toggleGrouping() {
+    public toggleGrouping(): void {
         if (this.grid.groupingExpressions.length > 0) {
             this.grid.groupingExpressions = [];
         } else {
@@ -121,7 +121,7 @@ export class GridFinJSComponent implements OnInit {
         }
     }
 
-    public gridKeydown(evt) {
+    public gridKeydown(evt: any): void {
         if (this.grid.selectedRows.length > 0 &&
             evt.shiftKey === true && evt.ctrlKey === true && evt.key.toLowerCase() === 'd') {
             evt.preventDefault();
@@ -129,7 +129,7 @@ export class GridFinJSComponent implements OnInit {
         }
     }
 
-    public customKeydown(args: IGridKeydownEventArgs) {
+    public customKeydown(args: IGridKeydownEventArgs): void {
         const target: IgxGridCellComponent = args.target as IgxGridCellComponent;
         const evt: KeyboardEvent = args.event as KeyboardEvent;
         const type = args.targetType;
@@ -140,7 +140,7 @@ export class GridFinJSComponent implements OnInit {
         }
     }
 
-    public chartColumnAction(target) {
+    public chartColumnAction(target): void {
         this.chartColumnKeyDown.emit(target.rowData);
     }
 
