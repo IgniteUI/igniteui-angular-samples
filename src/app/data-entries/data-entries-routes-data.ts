@@ -41,7 +41,7 @@ export const dataEntriesRoutesData = {
     "input-group-sample-5": { displayName: "Input Group Types", parentName: "Input Group" },
     "input-group-sample-6": { displayName: "Input Group Full Form", parentName: "Input Group" },
     "input-group-style": { displayName: "Input Group Style", parentName: "Input Group" },
-    "reactive-forms": { displayName: "Reactive Forms Overview", parentName: "Reactive Forms" },
+    "reactive-forms": { displayName: "Reactive Forms Overview", parentName: "Angular Reactive Forms" },
     "radio-sample-1": { displayName: "Simple Radio Buttons", parentName: "Radio" },
     "radio-sample-2": { displayName: "Radio Button Binding", parentName: "Radio" },
     "radio-sample-3": { displayName: "Radio Label Position", parentName: "Radio" },
