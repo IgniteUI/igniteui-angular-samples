@@ -1,21 +1,25 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" width="100%" height="580px" [perPage]="perPage">
-<igx-paginator>
-<!-- Auto migrated template content. Please, check your bindings! -->
-
-<igx-paginator-content>
-        
-        <igx-paginator #paginator [totalRecords]="totalCount" [(page)]="page" [(perPage)]="perPage" [selectOptions]="selectOptions" [displayDensity]="grid1.displayDensity" (pageChange)="paginate($event)" (perPageChange)="perPageChange($event)">
-        </igx-paginator>
-    
-        </igx-paginator-content>
-</igx-paginator>
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" width="100%" height="580px"
+        [pagingMode]="mode">
         <igx-column field="ID"></igx-column>
         <igx-column field="ProductName"></igx-column>
         <igx-column field="QuantityPerUnit"></igx-column>
         <igx-column field="SupplierName"></igx-column>
         <igx-column field="UnitsInStock"></igx-column>
         <igx-column field="Rating"></igx-column>
+        <igx-paginator #paginator
+            [totalRecords]="totalCount"
+            [(page)]="page"
+            [(perPage)]="perPage"
+            [selectOptions]="selectOptions"
+            [displayDensity]="grid1.displayDensity"
+            (pageChange)="paginate($event)"
+            (perPageChange)="perPageChange($event)">
+            <igx-paginator-content>
+                <igx-page-size></igx-page-size>
+                [This is my custom content]
+                <igx-page-nav></igx-page-nav>
+            </igx-paginator-content>
+        </igx-paginator>
     </igx-grid>
-    
 </div>

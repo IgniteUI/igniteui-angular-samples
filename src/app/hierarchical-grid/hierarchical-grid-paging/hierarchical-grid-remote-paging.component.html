@@ -1,7 +1,6 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll [data]="data | async" 
-        [(perPage)]="perPage" [(page)]="page" [primaryKey]="'CustomerID'" [height]="'550px'" [width]="'100%'" #hierarchicalGrid>
-<igx-paginator></igx-paginator>
+    <igx-hierarchical-grid igxPreventDocumentScroll [data]="data | async"  [primaryKey]="'CustomerID'" [height]="'550px'" [width]="'100%'" #hierarchicalGrid
+            [pagingMode]="mode">
         <igx-column field="CustomerID"></igx-column>
         <igx-column field="CompanyName"></igx-column>
         <igx-column field="ContactName"></igx-column>
@@ -9,26 +8,35 @@
         <igx-column field="Country"></igx-column>
         <igx-column field="Phone"></igx-column>
         <igx-row-island [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false"
-            (gridCreated)="gridCreated($event, 'CustomerID')" [perPage]="5">
-<igx-paginator *igxPaginator >
-              </igx-paginator>
-
+            (gridCreated)="gridCreated($event, 'CustomerID')">
+            <igx-paginator *igxPaginator [perPage]="5"></igx-paginator>
             <igx-column field="OrderID"></igx-column>
             <igx-column field="OrderDate" [formatter]="dateFormatter"></igx-column>
             <igx-column field="ShipCountry"></igx-column>
             <igx-column field="ShipCity"></igx-column>
             <igx-column field="ShipAddress"></igx-column>
             <igx-row-island [key]="'Order_Details'" [primaryKey]="'ProductID'" [autoGenerate]="false"
-                (gridCreated)="gridCreated($event, 'OrderID')" [perPage]="5">
-<igx-paginator *igxPaginator >
-              </igx-paginator>
-
+                (gridCreated)="gridCreated($event, 'OrderID')">
+                <igx-paginator *igxPaginator [perPage]="5"></igx-paginator>
                 <igx-column field="ProductID"></igx-column>
                 <igx-column field="UnitPrice"></igx-column>
                 <igx-column field="Quantity"></igx-column>
                 <igx-column field="Discount"></igx-column>
             </igx-row-island>
         </igx-row-island>
+        <igx-paginator #paginator
+            [totalRecords]="totalCount"
+            [(perPage)]="perPage"
+            [(page)]="page"
+            [selectOptions]="selectOptions"
+            (pageChange)="paginate($event)"
+            (perPageChange)="perPageChange($event)">
+            <igx-paginator-content>
+                <igx-page-size></igx-page-size>
+                [This is my custom content]
+                <igx-page-nav></igx-page-nav>
+            </igx-paginator-content>
+        </igx-paginator>
     </igx-hierarchical-grid>
 </div>
 
