@@ -29,7 +29,7 @@
         </igx-column>
     </igx-tree-grid>
     <igx-dialog #dialogAdd title="New Employee" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'"
-        (onLeftButtonSelect)="cancel()" (onRightButtonSelect)="addRow()">
+        (leftButtonSelect)="cancel()" (rightButtonSelect)="addRow()">
         <div class="dialogNewRecord">
             <igx-input-group>
                 <label igxLabel for="employeeName">Employee Name</label>

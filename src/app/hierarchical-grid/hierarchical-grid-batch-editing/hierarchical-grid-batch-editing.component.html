@@ -42,7 +42,7 @@
         </div>
     </div>
     <igx-dialog #dialogAddSinger title="New Singer" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'"
-        (onLeftButtonSelect)="cancel()" (onRightButtonSelect)="addSinger()">
+        (leftButtonSelect)="cancel()" (rightButtonSelect)="addSinger()">
         <div class="dialogNewSinger">
             <igx-input-group>
                 <label igxLabel for="artist">Artist</label>
