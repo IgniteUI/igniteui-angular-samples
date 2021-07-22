@@ -1,11 +1,11 @@
 <div class="grid__wrapper">
     <igx-grid #grid [data]="data" [autoGenerate]="false" height="520px" width="100%"
-        [allowFiltering]="true" [locale]="locale">
+        [allowFiltering]="true" [locale]="locale" [rowEditable]="true" [primaryKey]="'ProductID'">
         <igx-column field="ProductName" header="Product Name" [dataType]="'string'" [groupable]="true">
         </igx-column>
         <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'" [groupable]="true">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" [sortable]="true" [hasSummary]="true" [editable]="true"
+        <igx-column field="UnitPrice" header="Unit Price" [sortable]="true" [hasSummary]="true"
             [dataType]="'currency'" [groupable]="true">
         </igx-column>
         <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [groupable]="true">
