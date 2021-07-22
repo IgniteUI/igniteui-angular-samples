@@ -23,7 +23,10 @@ import {
     OverlaySettings,
     PositionSettings,
     VerticalAlignment,
-    IgxGridCellComponent
+    IgxGridCellComponent,
+    IgxTreeGridCellComponent,
+    IgxGridExpandableCellComponent,
+    IgxHierarchicalGridCellComponent
 } from 'igniteui-angular';
 import { data } from './data';
 
@@ -154,6 +157,10 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     }
 
     public getPhoto(cell: IgxGridCellComponent) {
+        const cell2 = cell as IgxTreeGridCellComponent;
+        const cell3 = cell as IgxHierarchicalGridCellComponent;
+        const cell4 = cell as IgxGridExpandableCellComponent;
+        const cells = this.grid1.gridAPI.get_row_by_index(1).cells.toArray() as IgxGridCellComponent[];
         return cell.row.rowData.avatar;
     }
 
