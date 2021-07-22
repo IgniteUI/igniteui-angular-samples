@@ -73,7 +73,7 @@ export class GridEditingSampleComponent implements OnInit, AfterViewInit {
         this.grid1.addRow(this.product);
         this.grid1.cdr.detectChanges();
         this.cancel();
-        this.grid1.page = this.grid1.totalPages - 1;
+        this.grid1.paginator.page = this.grid1.paginator.totalPages - 1;
         this.grid1.cdr.detectChanges();
         let row;
         requestAnimationFrame(() => {

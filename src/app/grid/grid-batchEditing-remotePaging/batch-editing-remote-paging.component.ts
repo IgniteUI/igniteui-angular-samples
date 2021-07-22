@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { IgxDialogComponent, IgxGridComponent, Transaction } from 'igniteui-angular';
+import { GridPagingMode, IgxDialogComponent, IgxGridComponent, Transaction } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { RemotePagingService } from '../../services/remotePaging.service';
 
@@ -20,6 +20,7 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
     public data: Observable<any[]>;
     public selectOptions = [5, 10, 15, 25, 50];
     public transactionsData: Transaction[] = [];
+    public mode = GridPagingMode.Remote;
 
     private _perPage = 10;
     private _dataLengthSubscriber;
@@ -66,11 +67,11 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
                 const skipEl = this._totalPagesOnServer * this.perPage;
                 this.remoteService.getData(skipEl, this.perPage);
             }
-            this.grid1.page = page - this._totalPagesOnServer;
+            this.page = page - this._totalPagesOnServer;
             this.page = page;
             return;
         } else {
-            this.grid1.page = 0;
+            this.page = 0;
         }
         this.page = page;
         const skip = this.page * this.perPage;

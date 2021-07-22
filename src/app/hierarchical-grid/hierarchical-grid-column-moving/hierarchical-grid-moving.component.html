@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
-<igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid [data]="localdata" [height]="'630px'" [width]="'100%'" [perPage]="15">
-<igx-paginator></igx-paginator>
+<igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid [data]="localdata" [height]="'630px'" [width]="'100%'">
+    <igx-paginator [perPage]="15"></igx-paginator>
     <igx-column #customerid field="CustomerID" [movable]="true">
         <ng-template igxHeader>
             <div class="title-inner">

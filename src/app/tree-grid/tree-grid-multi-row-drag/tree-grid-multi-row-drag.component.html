@@ -7,7 +7,7 @@
     [rowDraggable]="true" [allowFiltering]="true" [primaryKey]="'ID'"
     (rowDragEnd)="onRowDragEnd($event)" (rowDragStart)="onRowDragStart($event)" 
     [rowSelection]="selectionMode" (rowSelected)="handleRowSelectionChange($event)">
-<igx-paginator></igx-paginator>
+    <igx-paginator></igx-paginator>
     <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true">
     </igx-column>
     <igx-column field="Title" dataType="string" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true">

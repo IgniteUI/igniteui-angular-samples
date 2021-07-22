@@ -1,6 +1,6 @@
 import { formatNumber } from '@angular/common';
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular';
+import { GridPagingMode, IgxTreeGridComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { RemotePagingService } from './remotePagingService';
 
@@ -20,9 +20,9 @@ export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewIni
     public firstPage = true;
     public totalPages = 1;
     public totalCount = 0;
-    public maxPerPage = Number.MAX_SAFE_INTEGER;
     public data: Observable<any[]>;
     public selectOptions = [5, 10, 25, 50];
+    public mode = GridPagingMode.Remote;
     private _perPage = 10;
     private _dataLengthSubscriber;
 

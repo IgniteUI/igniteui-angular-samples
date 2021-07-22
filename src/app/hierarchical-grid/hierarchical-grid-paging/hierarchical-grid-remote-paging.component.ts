@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { GridPagingMode, IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { RemotePagingService } from './remotePagingService';
 import { BehaviorSubject } from 'rxjs';
 
@@ -11,23 +11,52 @@ import { BehaviorSubject } from 'rxjs';
 })
 
 export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, OnDestroy {
-    @ViewChild('customPager', { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
-    @ViewChild('layout1') public layout1: IgxRowIslandComponent;
     @ViewChild('hierarchicalGrid', { static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;
-
     public page = 0;
     public lastPage = false;
     public firstPage = true;
-    public totalPages = 1;
     public totalCount = 0;
     public title = 'gridPaging';
     public selectOptions = [5, 10, 25, 50];
     public data: BehaviorSubject<any> = new BehaviorSubject([]);
+    public mode = GridPagingMode.Remote;
 
     private _perPage = 10;
     private _dataLengthSubscriber;
+    private _dataSubscriber;
 
     constructor(private remoteService: RemotePagingService) { }
+
+    public ngOnInit(): void {
+        this._dataLengthSubscriber = this.remoteService.getDataLength(
+            { parentID: null, rootLevel: true, key: 'Customers' }).subscribe((length) => {
+                this.totalCount = length;
+            });
+    }
+
+    public ngOnDestroy() {
+        if (this._dataLengthSubscriber) {
+            this._dataLengthSubscriber.unsubscribe();
+        }
+
+        if (this._dataSubscriber) {
+            this._dataSubscriber.unsubscribe();
+        }
+    }
+
+    public ngAfterViewInit() {
+        this.hierarchicalGrid.isLoading = true;
+        this._dataSubscriber = this.remoteService.getData({parentID: null, rootLevel: true, key: 'Customers' }, 0, this.perPage)
+            .subscribe((data) => {
+                this.hierarchicalGrid.isLoading = false;
+                this.data.next(data);
+            },(error) => {
+                    this.hierarchicalGrid.emptyGridMessage = error.message;
+                    this.hierarchicalGrid.isLoading = false;
+                    this.hierarchicalGrid.cdr.detectChanges();
+                }
+            );
+    }
 
     public get perPage(): number {
         return this._perPage;
@@ -36,35 +65,6 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
     public set perPage(val: number) {
         this._perPage = val;
         this.paginate(0);
-    }
-
-    public ngOnInit(): void {
-        this._dataLengthSubscriber = this.remoteService.getDataLength(
-            { parentID: null, rootLevel: true, key: 'Customers' }).subscribe((length) => {
-                this.totalCount = length;
-                this.totalPages = Math.ceil(length / this.perPage);
-            });
-    }
-
-    public ngOnDestroy() {
-        if (this._dataLengthSubscriber) {
-            this._dataLengthSubscriber.unsubscribe();
-        }
-    }
-
-    public ngAfterViewInit() {
-        this.hierarchicalGrid.isLoading = true;
-        this.remoteService.getData(
-            { parentID: null, rootLevel: true, key: 'Customers' }, 0, this.perPage).subscribe((data) => {
-                this.hierarchicalGrid.isLoading = false;
-                this.data.next(data);
-            },
-                (error) => {
-                    this.hierarchicalGrid.emptyGridMessage = error.message;
-                    this.hierarchicalGrid.isLoading = false;
-                    this.hierarchicalGrid.cdr.detectChanges();
-                }
-            );
     }
 
     public dateFormatter(val: string) {
@@ -108,5 +108,12 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
                     this.hierarchicalGrid.cdr.detectChanges();
                 }
             );
+    }
+
+    public perPageChange(perPage: number) {
+        const skip = this.page * perPage;
+        const top = perPage;
+
+        this.remoteService.getData(skip, top);
     }
 }
