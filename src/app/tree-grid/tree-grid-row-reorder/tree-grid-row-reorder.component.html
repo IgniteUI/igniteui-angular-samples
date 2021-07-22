@@ -2,7 +2,7 @@
     <igx-tree-grid igxPreventDocumentScroll  #treeGrid igxDrop [data]="localData" childDataKey="Employees" height="530px"
         [autoGenerate]="false" [rowDraggable]="true" foreignKey="ParentID" [rowSelection]="selectionMode"
         [primaryKey]="'ID'" (rowDragStart)="rowDragStart($event)" (dropped)="dropInGrid($event)">
-<igx-paginator></igx-paginator>
+        <igx-paginator></igx-paginator>
         <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [movable]="true"
             [resizable]="true">
         </igx-column>
