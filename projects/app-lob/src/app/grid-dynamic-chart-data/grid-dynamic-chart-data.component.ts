@@ -134,23 +134,23 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     public ngOnInit() {
         (this.tabs.headerContainer.nativeElement as HTMLElement).onpointerdown = event => event.stopPropagation();
 
-        this.chartSelectionDialog.onOpen.subscribe(() => {
+        this.chartSelectionDialog.opening.subscribe(() => {
             this.currentChartType = CHART_TYPE.COLUMN_GROUPED;
         });
 
-        this.dialog.onOpen.subscribe(() => {
+        this.dialog.opening.subscribe(() => {
             this.resetChartDialogInitialDimensions();
             this.chartSelectionDialog.close();
         });
 
-        this.dialog.onClose.subscribe(() => {
+        this.dialog.closing.subscribe(() => {
             this.resetChartDialogInitialDimensions();
             this.contextmenu = true;
             this.chartCondigAreaState = 'opened';
             this.opened = true;
         });
 
-        this.chartSelectionDialog.onClose.subscribe((evt) => this.chartPreviewDialog.close());
+        this.chartSelectionDialog.closing.subscribe((evt) => this.chartPreviewDialog.close());
 
         this.data = FinancialData.generateData(1000);
 

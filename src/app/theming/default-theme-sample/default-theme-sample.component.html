@@ -1,5 +1,5 @@
-<igx-dialog #dialog1 title="New Record" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'" (onLeftButtonSelect)="cancel()"
-    (onRightButtonSelect)="addRow()">
+<igx-dialog #dialog1 title="New Record" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'" (leftButtonSelect)="cancel()"
+    (rightButtonSelect)="addRow()">
     <div class="dialogNewRecord">
         <igx-input-group>
             <label igxLabel for="industrySector">Industry Sector</label>

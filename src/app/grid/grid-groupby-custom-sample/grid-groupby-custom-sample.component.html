@@ -3,7 +3,7 @@
             <igx-grid-toolbar>
 
                     <button igxButton="raised" [igxToggleAction]="dropDown" [igxDropDownItemNavigation]="dropDown">Group By {{ groupByMode }}</button>
-                    <igx-drop-down #dropDown (onSelection)="selectionChange($event)">
+                    <igx-drop-down #dropDown (selecting)="selectionChange($event)">
                         <igx-drop-down-item *ngFor="let item of groupByOptions" [value]="item">
                             {{ item.name }}
                         </igx-drop-down-item>

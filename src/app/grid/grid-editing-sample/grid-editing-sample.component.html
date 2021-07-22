@@ -42,7 +42,7 @@
 
         </igx-grid>
         <igx-toast #toast [autoHide]="true" [position]="position"></igx-toast>
-        <igx-dialog #dialogAdd title="New Product" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'" (onLeftButtonSelect)="cancel()" (onRightButtonSelect)="addRow()">
+        <igx-dialog #dialogAdd title="New Product" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'" (leftButtonSelect)="cancel()" (rightButtonSelect)="addRow()">
             <div class="dialogNewRecord">
                 <igx-input-group>
                     <label igxLabel for="productName">Product Name</label>
