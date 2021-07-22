@@ -3,7 +3,7 @@
         <igx-hierarchical-grid height="440px" width="100%" [allowAdvancedFiltering]="true"
             columnSelection="multiple" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" displayDensity="compact"
             (keydown)="gridKeydown($event)" (activeNodeChange)="onActiveNodeChange($event)">
-<igx-paginator></igx-paginator>
+            <igx-paginator></igx-paginator>
             <igx-grid-toolbar *ngIf="false"></igx-grid-toolbar>
 
             <igx-column field="CustomerID" [filterable]="true" [sortable]="true" [editable]="true"></igx-column>
