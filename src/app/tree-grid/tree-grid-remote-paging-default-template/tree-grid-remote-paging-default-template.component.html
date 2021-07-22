@@ -1,9 +1,12 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data | async"
-        childDataKey="Content" expansionDepth="0" width="100%" height="540px" [(page)]="page" [(perPage)]="perPage" [isLoading]="isLoading"
-        [pagingMode]="mode" [totalRecords]="totalCount" 
-        (pagingDone)="paginate($event.current)">
-<igx-paginator></igx-paginator>
+    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data | async" childDataKey="Content" expansionDepth="0" width="100%"
+        height="540px" [isLoading]="isLoading" [pagingMode]="mode">
+        <igx-paginator
+            [totalRecords]="totalCount" 
+            (pagingDone)="paginate($event.current)"
+            [(page)]="page"
+            [(perPage)]="perPage">
+        </igx-paginator>
         <igx-column field="Name">
             <ng-template igxCell let-cell="cell" let-val>
                 <igx-icon *ngIf="cell.rowData.Type === 'File folder'" family="material" class="typeIcon">folder

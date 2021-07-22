@@ -1,7 +1,7 @@
 <div class="grid__wrapper">
     <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [primaryKey]="'ProductID'" [autoGenerate]="false" [displayDensity]="'cosy'"
         width="100%" height="350px" [rowSelection]="selectionMode" (gridKeydown)="customKeydown($event)">
-<igx-paginator></igx-paginator>
+        <igx-paginator></igx-paginator>
         <igx-column field="ProductID" header="Product ID" width="16%" [headerClasses]="'prodId'"
             [editable]="true">
         </igx-column>
