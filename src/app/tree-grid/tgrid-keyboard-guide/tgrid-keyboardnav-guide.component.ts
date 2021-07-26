@@ -350,7 +350,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         this.toggleCellCombinations(cell);
     }
 
-    public toggleCellCombinations(cell?: CellType) {
+    public toggleCellCombinations(cell?: any) {
         if (this._keyboardHandler.gridSection !== GridSection.TBODY) {
             return;
         }

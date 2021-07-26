@@ -359,7 +359,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
     }
 
-    public toggleCellCombinations(cell?: CellType) {
+    public toggleCellCombinations(cell?: any) {
         const actions = this.extractCellActions(cell);
         this._keyboardHandler.enableActionItems(actions);
     }

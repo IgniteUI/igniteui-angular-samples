@@ -397,7 +397,7 @@ export class GridUnderManagement {
 
     }
 
-    public toggleCellCombinations(cell?: CellType) {
+    public toggleCellCombinations(cell?: any) {
         if (this.keyboardHandler.gridSection !== GridSection.TBODY || !cell) {
             return;
         }
