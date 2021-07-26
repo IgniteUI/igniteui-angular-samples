@@ -20,7 +20,17 @@
             <igx-column-group header="Address Information">
                 <igx-column-group header="Location" [collapsible]="true" [expanded]="false" (expandedChange)="expandChange()">
                     <igx-column field="FullAddress" header="Full Address" [width]="'250px'" [visibleWhenCollapsed]="true"
-                        [dataType]="'string'" [visibleWhenCollapsed]="true" [sortable]="true"></igx-column>
+                        [dataType]="'string'" [visibleWhenCollapsed]="true" [sortable]="true">
+                        <ng-template igxCell let-cell="cell">
+                            <div class="address-container">
+                                <span><strong>Country:</strong> {{cell.row.data.Country}}</span>
+                                <br/>
+                                <span><strong>City:</strong> {{cell.row.data.City}}</span>
+                                <br/>
+                                <span><strong>Postal Code:</strong> {{cell.row.data.Address}}</span>
+                            </div>
+                        </ng-template>
+                    </igx-column>
                     <igx-column field="Country" [visibleWhenCollapsed]="false" [hasSummary]="true" [sortable]="true" [editable]="true"></igx-column>
                     <igx-column field="City" [visibleWhenCollapsed]="false" [hasSummary]="true" [groupable]="true" [editable]="true"></igx-column>
                     <igx-column field="Address" [visibleWhenCollapsed]="false"></igx-column>

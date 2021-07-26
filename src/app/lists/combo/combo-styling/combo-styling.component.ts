@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { IComboSelectionChangeEventArgs, IgxToastComponent } from 'igniteui-angular';
+import { IComboSelectionChangingEventArgs, IgxToastComponent } from 'igniteui-angular';
 import { getHeroWeaponsData, IHeroWeapon } from '../../../data/heroData';
 
 @Component({
@@ -20,7 +20,7 @@ export class ComboStylingComponent implements OnInit {
         this.weaponsData = getHeroWeaponsData();
     }
 
-    public setWeaponsLimit(event: IComboSelectionChangeEventArgs) {
+    public setWeaponsLimit(event: IComboSelectionChangingEventArgs) {
         this.loadToast.position = 'middle';
         // this.loadToast.autoHide = true;
 
