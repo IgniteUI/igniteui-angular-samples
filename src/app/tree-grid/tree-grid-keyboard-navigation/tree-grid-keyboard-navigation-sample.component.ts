@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IGridKeydownEventArgs, IgxGridCellComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { IGridKeydownEventArgs, CellType, IgxTreeGridComponent } from 'igniteui-angular';
 import { EMPLOYEE_DATA } from '../tree-grid-clipboard-operations-sample/data';
 
 @Component({
@@ -19,7 +19,7 @@ export class TreeGridKBNavigationComponent implements OnInit {
     }
 
     public customKeydown(args: IGridKeydownEventArgs) {
-        const target: IgxGridCellComponent = args.target as IgxGridCellComponent;
+        const target: CellType = args.target as CellType;
         const evt: KeyboardEvent = args.event as KeyboardEvent;
         const type = args.targetType;
 

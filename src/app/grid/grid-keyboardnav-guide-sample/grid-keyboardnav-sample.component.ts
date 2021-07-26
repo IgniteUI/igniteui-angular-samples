@@ -7,7 +7,7 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@ang
 import {
     IgxColumnComponent,
     IgxColumnGroupComponent,
-    IgxGridCellComponent,
+    CellType,
     IgxGridComponent,
     IgxListComponent,
     SortingDirection,
@@ -359,7 +359,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
     }
 
-    public toggleCellCombinations(cell?: IgxGridCellComponent) {
+    public toggleCellCombinations(cell?: CellType) {
         const actions = this.extractCellActions(cell);
         this._keyboardHandler.enableActionItems(actions);
     }
@@ -407,7 +407,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         return res;
     }
 
-    public extractCellActions(cell: IgxGridCellComponent) {
+    public extractCellActions(cell: CellType) {
         const res = [];
         if (cell.editable) {
             res.push(ItemAction.Editable);

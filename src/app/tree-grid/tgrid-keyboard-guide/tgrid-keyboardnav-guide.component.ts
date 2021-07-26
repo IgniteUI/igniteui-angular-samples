@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     IgxColumnComponent,
     IgxColumnGroupComponent,
-    IgxGridCellComponent,
+    CellType,
     IgxListComponent,
     IgxOverlayService,
     IgxTreeGridComponent,
@@ -350,7 +350,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         this.toggleCellCombinations(cell);
     }
 
-    public toggleCellCombinations(cell?: IgxGridCellComponent) {
+    public toggleCellCombinations(cell?: CellType) {
         if (this._keyboardHandler.gridSection !== GridSection.TBODY) {
             return;
         }
@@ -383,7 +383,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         return res;
     }
 
-    public extractCellActions(cell: IgxGridCellComponent) {
+    public extractCellActions(cell: CellType) {
         const res = [];
         if (cell.editable) {
             res.push(ItemAction.Editable);

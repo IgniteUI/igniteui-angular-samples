@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     IgxColumnComponent,
     IgxColumnGroupComponent,
-    IgxGridCellComponent,
+    CellType,
     IgxHierarchicalGridComponent,
     IgxListComponent
 } from 'igniteui-angular';
@@ -397,7 +397,7 @@ export class GridUnderManagement {
 
     }
 
-    public toggleCellCombinations(cell?: IgxGridCellComponent) {
+    public toggleCellCombinations(cell?: CellType) {
         if (this.keyboardHandler.gridSection !== GridSection.TBODY || !cell) {
             return;
         }
@@ -431,7 +431,7 @@ export class GridUnderManagement {
         return res;
     }
 
-    public extractCellActions(cell: IgxGridCellComponent) {
+    public extractCellActions(cell: CellType) {
         const res = [];
         if (cell.editable) {
             res.push(ItemAction.Editable);

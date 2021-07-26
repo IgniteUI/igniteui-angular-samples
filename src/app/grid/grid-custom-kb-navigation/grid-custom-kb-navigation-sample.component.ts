@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IGridKeydownEventArgs, IgxGridCellComponent, IgxGridComponent } from 'igniteui-angular';
+import { IGridKeydownEventArgs, CellType, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({
@@ -21,7 +21,7 @@ export class GridCustomKBNavigationComponent implements OnInit {
     }
 
     public customKeydown(args: IGridKeydownEventArgs) {
-        const target: IgxGridCellComponent = args.target as IgxGridCellComponent;
+        const target: CellType = args.target as CellType;
         const evt: KeyboardEvent = args.event as KeyboardEvent;
         const type = args.targetType;
 
