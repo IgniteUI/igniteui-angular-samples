@@ -35,15 +35,15 @@ export class GridCustomKBNavigationComponent implements OnInit {
                 return;
             }
             const cell = evt.shiftKey ?
-                this.grid1.getPreviousCell(target.rowIndex, target.visibleColumnIndex, (col) => col.editable) :
-                this.grid1.getNextCell(target.rowIndex, target.visibleColumnIndex, (col) => col.editable);
+                this.grid1.getPreviousCell(target.row.index, target.column.visibleIndex, (col) => col.editable) :
+                this.grid1.getNextCell(target.row.index, target.column.visibleIndex, (col) => col.editable);
 
             this.grid1.navigateTo(cell.rowIndex, cell.visibleColumnIndex,
                 (obj) => { obj.target.activate(); });
         } else if (type === 'dataCell' && evt.key.toLowerCase() === 'enter') {
             // Perform column based kb navigation with 'enter' key press
             args.cancel = true;
-            this.grid1.navigateTo(target.rowIndex + 1, target.visibleColumnIndex, (obj) => {
+            this.grid1.navigateTo(target.row.index + 1, target.column.visibleIndex, (obj) => {
                 obj.target.activate();
             });
         }
