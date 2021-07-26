@@ -1,5 +1,5 @@
 import { Component, ViewChild, AfterViewInit, OnDestroy, Renderer2 } from '@angular/core';
-import { IDragMoveEventArgs, IgxGridComponent, RowType, IRowDragStartEventArgs, Point } from 'igniteui-angular';
+import { IDragMoveEventArgs, IgxGridComponent, IRowDragStartEventArgs, Point } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 import { Subject, interval, Observable, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -49,7 +49,10 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
       .subscribe(this.handleRowStart.bind(this));
     this.grid.rowDragEnd
       .pipe(takeUntil(this.destroy$))
-      .subscribe(() => this.unsubInterval());
+      .subscribe(() => {
+          this.unsubInterval();
+          this.clearHighlightElement();
+        });
   }
 
   private getRowIndexAtPoint(
@@ -168,7 +171,7 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
       return;
     }
     const rowElement = this.grid.rowList.find(
-      e => e.key === this.grid.data[rowIndex].key
+      e => e.rowData.ID === this.grid.data[rowIndex].ID
     );
     if (rowElement) {
       this.changeHighlightedElement(rowElement.element.nativeElement);
@@ -181,7 +184,6 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
     }
   }
   private setHightlightElement(newElement: HTMLElement) {
-      console.log(newElement);
     this.renderer.addClass(newElement, 'underlined-class');
     this.highlightedRow = newElement;
   }
