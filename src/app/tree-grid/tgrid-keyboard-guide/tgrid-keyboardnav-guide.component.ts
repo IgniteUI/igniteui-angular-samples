@@ -342,15 +342,16 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     public toggleBodyCombinations(activeNode) {
-        const rowRef = this.tgrid.gridAPI.get_row_by_index(activeNode.row);
+        const rowRef = this.tgrid.getRowByIndex(activeNode.row);
         if (this._keyboardHandler.gridSection !== GridSection.TBODY || !rowRef) {
             return;
         }
-        const cell = this.tgrid.gridAPI.get_cell_by_visible_index(activeNode.row, activeNode.column);
+        const cell = this.tgrid.getCellByColumn(activeNode.row,
+            this.tgrid.columnList.find((col) => col.visibleIndex === activeNode.column).field);
         this.toggleCellCombinations(cell);
     }
 
-    public toggleCellCombinations(cell?: any) {
+    public toggleCellCombinations(cell?: CellType) {
         if (this._keyboardHandler.gridSection !== GridSection.TBODY) {
             return;
         }
