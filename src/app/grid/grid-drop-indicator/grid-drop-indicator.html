@@ -1,0 +1,16 @@
+<div class="grid-container">
+    <igx-grid igxPreventDocumentScroll #grid [data]="data" [height]="'800px'" [width]="'1000px'" [autoGenerate]="false" [rowDraggable]="true"
+        [primaryKey]="'ID'" igxDrop (dropped)="onDropAllowed($event)">
+        <igx-column [field]="'ID'" [header]="'ID'" width="100px"></igx-column>
+        <igx-column [field]="'CompanyName'" [header]="'Company Name'" width="100px"></igx-column>
+        <igx-column [field]="'ContactName'" [header]="'Contact Name'" width="100px" [minWidth]="'60px'"
+            [maxWidth]="'230px'"></igx-column>
+        <igx-column [field]="'ContactTitle'" [header]="'Contact Title'" width="100px"></igx-column>
+        <igx-column [field]="'Address'" [header]="'Address'" width="100px"></igx-column>
+        <igx-column [field]="'City'" [header]="'City'" width="100px"></igx-column>
+        <igx-column [field]="'Region'" [header]="'Region'" width="100px"></igx-column>
+        <igx-column [field]="'PostalCode'" [header]="'Postal Code'" width="100px"></igx-column>
+        <igx-column [field]="'Phone'" [header]="'Phone'" width="100px"></igx-column>
+        <igx-column [field]="'Fax'" [header]="'Fax'" width="100px"></igx-column>
+    </igx-grid>
+</div>

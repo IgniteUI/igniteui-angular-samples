@@ -1,5 +1,5 @@
 import { Component, ViewChild, AfterViewInit, OnDestroy, Renderer2 } from '@angular/core';
-import { IDragMoveEventArgs, IgxGridComponent, IgxGridRowComponent, IRowDragStartEventArgs, Point } from 'igniteui-angular';
+import { IDragMoveEventArgs, IgxGridComponent, RowType, IRowDragStartEventArgs, Point } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 import { Subject, interval, Observable, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -47,13 +47,13 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
     this.grid.rowDragStart
       .pipe(takeUntil(this.destroy$))
       .subscribe(this.handleRowStart.bind(this));
-    this.grid.onRowDragEnd
+    this.grid.rowDragEnd
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => this.unsubInterval());
   }
 
   private getRowIndexAtPoint(
-    rowList: IgxGridRowComponent[],
+    rowList: any[],
     cursorPosition: Point
   ): number {
     for (const row of rowList) {
@@ -65,7 +65,7 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
         cursorPosition.x < rowRect.right + window.scrollX
       ) {
         // return the index of the targeted row
-        return this.data.indexOf(this.data.find(r => r.ID === row.rowData.ID));
+        return this.data.indexOf(this.data.find(r => r.ID === row.rowID));
       }
     }
 
@@ -87,11 +87,11 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
    */
   private handleRowStart(e: IRowDragStartEventArgs): void {
     if (e !== null) {
-      this._draggedRow = e.dragData.rowData;
+      this._draggedRow = e.dragData.data;
     }
     const directive = e.dragDirective;
     directive.dragMove
-      .pipe(takeUntil(this.grid.onRowDragEnd))
+      .pipe(takeUntil(this.grid.rowDragEnd))
       .subscribe(this.handleDragMove.bind(this));
   }
 
@@ -167,11 +167,10 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
     if (rowIndex === -1) {
       return;
     }
-    const rowElement: IgxGridRowComponent = this.grid.rowList.find(
-      e => e.rowData?.ID === this.grid.data[rowIndex].ID
+    const rowElement = this.grid.rowList.find(
+      e => e.key === this.grid.data[rowIndex].key
     );
     if (rowElement) {
-      // console.log(rowElement)
       this.changeHighlightedElement(rowElement.element.nativeElement);
     }
   }
@@ -182,6 +181,7 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
     }
   }
   private setHightlightElement(newElement: HTMLElement) {
+      console.log(newElement);
     this.renderer.addClass(newElement, 'underlined-class');
     this.highlightedRow = newElement;
   }
