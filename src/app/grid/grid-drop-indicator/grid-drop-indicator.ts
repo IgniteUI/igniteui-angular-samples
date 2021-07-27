@@ -1,5 +1,5 @@
 import { Component, ViewChild, AfterViewInit, OnDestroy, Renderer2 } from '@angular/core';
-import { IDragMoveEventArgs, IgxGridComponent, IRowDragStartEventArgs, Point } from 'igniteui-angular';
+import { IDragMoveEventArgs, IDropDroppedEventArgs, IgxGridComponent, IRowDragStartEventArgs, Point } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 import { Subject, interval, Observable, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -23,7 +23,7 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
     this.data = DATA;
   }
 
-  public onDropAllowed(args): void {
+  public onDropAllowed(args: IDropDroppedEventArgs): void {
     const event = args.originalEvent;
     const currRowIndex = this.getRowIndexAtPoint(this.grid.rowList.toArray(), {
       x: event.clientX,
