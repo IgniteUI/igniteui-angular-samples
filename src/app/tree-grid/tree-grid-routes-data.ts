@@ -62,6 +62,7 @@ export const treeGridRoutesData = {
         displayName: 'TreeGrid Multi Column Headers Styling',
         parentName: 'TreeGrid'
     },
+    'treegrid-multi-column-headers-export': { displayName: 'TreeGrid Multi Column Headers Export', parentName: 'TreeGrid' },
     'treegrid-virtualization': { displayName: 'TreeGrid Virtualization', parentName: 'TreeGrid' },
     'treegrid-display-density': { displayName: 'TreeGrid Display Density', parentName: 'TreeGrid' },
     'treegrid-toolbar-1': { displayName: 'TreeGrid Toolbar 1', parentName: 'TreeGrid' },
@@ -82,6 +83,7 @@ export const treeGridRoutesData = {
     // tslint:disable-next-line:max-line-length
     'tree-grid-multi-cell-selection-style': { displayName: 'TreeGrid Multi Cell Selection Style', parentName: 'TreeGrid' },
     'treegrid-load-on-demand': { displayName: 'TreeGrid Load On Demand', parentName: 'TreeGrid' },
+    'treegrid-group-by-load-on-demand': { displayName: 'TreeGrid Group By Load On Demand', parentName: 'TreeGrid' },
     'treegrid-keyboard-navigation': { displayName: 'TreeGrid Keyboard Navigation', parentName: 'TreeGrid' },
     'tree-grid-row-reordering': { displayName: 'TreeGrid Row Reordering', parentName: 'TreeGrid' },
     'treegrid-remote-paging': { displayName: 'TreeGrid Remote Paging', parentName: 'TreeGrid' },

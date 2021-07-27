@@ -1,15 +1,8 @@
-<div class="grid__wrapper" [class.fin-dark-theme]="theme">
+<div class="grid__wrapper igx-scrollbar">
     <div class="controls-wrapper">
     </div>
     <div class="controls-holder">
         <div class="switches">
-            <div class="control-item">
-                <igx-switch [checked]="true" [(ngModel)]="theme" (change)="onThemeChanged($event)">Dark</igx-switch>
-            </div>
-            <div class="control-item">
-                <igx-switch [checked]="true" (change)="toggleToolbar()" color="blue" cssClass="finjs-sample-switch">
-                    Toolbar</igx-switch>
-            </div>
             <div class="finjs-slider control-item">
                 <label for="slider">Records: {{volume}}</label>
                 <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" (dragFinished)="updateVolume()" [step]="100"
@@ -32,19 +25,18 @@
             ~{{volume/5}} records updated.</span>
     </div>
     <igx-tree-grid #grid1 igxPreventDocumentScroll
-        [data]="data$ | async | treeGridGrouping:groupColumns:aggregations:groupColumnKey:primaryKey:childDataKey"
-        [height]="'calc(100% - 76px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
-        [primaryKey]="primaryKey" [childDataKey]="childDataKey" hiddenColumnsText="Hidden" [isLoading]="isLoading"
-        [rowSelection]="selectionMode" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+        [data]="data$ | async | treeGridGrouping:groupingExpressions:groupColumnKey:childDataKey:grid1:aggregations"
+        [childDataKey]="childDataKey"
+        [sortStrategy]="sorting"
+        [height]="'calc(100% - 76px)'"
+        width="100%"
+        [autoGenerate]='false'
+        displayDensity='compact'
+        hiddenColumnsText="Hidden"
+        [isLoading]="isLoading"
+        [allowFiltering]="true"
+        [filterMode]="'excelStyleFilter'">
         <igx-grid-toolbar *ngIf="showToolbar">
-            <igx-grid-toolbar-title class="grid-toolbar-title">
-                <app-igx-tree-grid-group-area
-                    [grid]='grid1'
-                    [(groupColumns)]='groupColumns'
-                    [groupColumnKey]='groupColumnKey'>
-                </app-igx-tree-grid-group-area>
-            </igx-grid-toolbar-title>
-
             <igx-grid-toolbar-actions>
                 <igx-grid-toolbar-hiding title="Indicators"></igx-grid-toolbar-hiding>
                 <igx-grid-toolbar-exporter [exportCSV]="false"></igx-grid-toolbar-exporter>
@@ -56,7 +48,13 @@
         <ng-template igxExcelStyleHiding></ng-template>
         <ng-template igxExcelStylePinning></ng-template> -->
 
-        <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]='true' [resizable]='true'
+        <igx-tree-grid-group-by-area
+            [grid]="grid1"
+            [(expressions)]="groupingExpressions"
+            [hideGroupedColumns]="true">
+        </igx-tree-grid-group-by-area>
+
+        <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]='false' [resizable]='true'
             [disableHiding]="true"></igx-column>
         <igx-column [field]="'category'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
         </igx-column>

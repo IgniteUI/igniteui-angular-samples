@@ -1,4 +1,4 @@
-<igc-dockmanager #dock class="{{theme ? 'dark-theme' : 'light-theme'}}  dock-m-position" [layout]="docLayout">
+<igc-dockmanager #dock class="dock-m-position igx-scrollbar" [layout]="docLayout">
     <div slot="actionPane" style="height: 100%; padding: 20px;">
         <div class="actionItem">
             Change theme: <br/> <igx-switch [(ngModel)]="theme">Dark Mode</igx-switch>
@@ -131,9 +131,10 @@
         </igx-grid>
     </div>
     <div slot="etfStockPrices" style="height: 100%;">
-        <igx-grid #grid4 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading" [paging]="true"
+        <igx-grid #grid4 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
+            <igx-paginator></igx-paginator>
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='true' [sortable]='true'></igx-column>
             <igx-column [field]="'category'" [width]="'120px'" [sortable]='true' [groupable]='true'></igx-column>
             <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false' [groupable]='true'>

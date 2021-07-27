@@ -1,9 +1,10 @@
+/* eslint-disable max-len */
 import {IgxActionStripModule,
 IgxRippleModule,
 IgxButtonModule,
 IgxIconModule,
 IgxButtonGroupModule} from 'igniteui-angular';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing';
 export class ActionStripConfigGenerator implements IConfigGenerator {
 
 
@@ -17,7 +18,7 @@ export class ActionStripConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['ActionStripParagraphComponent'],
                 ngImports: ['IgxActionStripModule', 'IgxRippleModule', 'IgxButtonGroupModule', 'IgxButtonModule', 'IgxIconModule']
             }),
-            shortenComponentPathBy: "/menus/action-strip/"
+            shortenComponentPathBy: '/menus/action-strip/'
         }));
 
         configs.push(new Config({
@@ -27,7 +28,7 @@ export class ActionStripConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['ActionStripParagraphMenuComponent'],
                 ngImports: ['IgxActionStripModule', 'IgxRippleModule', 'IgxButtonModule', 'IgxIconModule']
             }),
-            shortenComponentPathBy: "/menus/action-strip/"
+            shortenComponentPathBy: '/menus/action-strip/'
         }));
 
         configs.push(new Config({
@@ -37,7 +38,7 @@ export class ActionStripConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['ActionStripStylingComponent'],
                 ngImports: ['IgxActionStripModule', 'IgxRippleModule', 'IgxButtonModule', 'IgxIconModule']
             }),
-            shortenComponentPathBy: "/menus/action-strip/"
+            shortenComponentPathBy: '/menus/action-strip/'
         }));
 
         return configs;

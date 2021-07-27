@@ -4,7 +4,7 @@ import {
     IgxDialogComponent, IgxHierarchicalGridComponent,
     IgxNumberSummaryOperand, IgxSummaryResult
 } from 'igniteui-angular';
-import { SINGERS } from '../data';
+import { SINGERS } from '../../data/singersData';
 import { Singer } from '../models';
 
 class MySummary {

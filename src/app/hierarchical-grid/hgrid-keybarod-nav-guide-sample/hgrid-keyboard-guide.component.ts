@@ -8,13 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     IgxColumnComponent,
     IgxColumnGroupComponent,
-    IgxGridCellComponent,
+    CellType,
     IgxHierarchicalGridComponent,
     IgxListComponent
 } from 'igniteui-angular';
 import { fromEvent, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { CUSTOMERS } from '../data';
+import { DATA } from '../../data/customers';
 
 enum GridSection {
     THEAD = 'igx-grid__thead-wrapper',
@@ -209,7 +209,7 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     public ngOnInit() {
-        this.hGrid.data = CUSTOMERS;
+        this.hGrid.data = DATA;
         for (const item of this.hGrid.data) {
             const names = item.CompanyName.split(' ');
             item.FirstName = names[0];
@@ -383,21 +383,22 @@ export class GridUnderManagement {
 
     public toggleBodyCombinations(activeNode) {
         const grid = activeNode.owner || this.hGrid;
-        const rowRef = grid.gridAPI.get_row_by_index(activeNode.row);
+        const rowRef = grid.getRowByIndex(activeNode.row);
         if (this.keyboardHandler.gridSection !== GridSection.TBODY || !rowRef) {
             return;
         }
 
-        if (rowRef.nativeElement.tagName === ElementTags.GROUPBY_ROW) {
+        if (rowRef.isGroupByRow) {
             this.keyboardHandler.enableActionItems([ItemAction.Expandable]);
         } else {
-            const cell = grid.gridAPI.get_cell_by_visible_index(activeNode.row, activeNode.column);
+            const cell = grid.getCellByColumn(activeNode.row,
+                grid.columnList.find((col) => col.visibleIndex === activeNode.column).field);
             this.toggleCellCombinations(cell);
         }
 
     }
 
-    public toggleCellCombinations(cell?: IgxGridCellComponent) {
+    public toggleCellCombinations(cell?: CellType) {
         if (this.keyboardHandler.gridSection !== GridSection.TBODY || !cell) {
             return;
         }
@@ -431,7 +432,7 @@ export class GridUnderManagement {
         return res;
     }
 
-    public extractCellActions(cell: IgxGridCellComponent) {
+    public extractCellActions(cell: CellType) {
         const res = [];
         if (cell.editable) {
             res.push(ItemAction.Editable);

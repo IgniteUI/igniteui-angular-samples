@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { GridPagingMode, IgxGridComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
-import { RemotePagingService } from '../services/remotePagingService';
+import { RemotePagingService } from '../../services/remotePaging.service';
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [RemotePagingService],
@@ -10,18 +10,25 @@ import { RemotePagingService } from '../services/remotePagingService';
     templateUrl: './remote-paging-sample.component.html'
 })
 export class RemotePagingGridSampleComponent implements OnInit, AfterViewInit, OnDestroy {
-    @ViewChild('customPager', { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     public page = 0;
     public totalCount = 0;
     public pages = [];
     public data: Observable<any[]>;
     public selectOptions = [5, 10, 15, 25, 50];
-
-    private _perPage = 10;
+    public mode = GridPagingMode.Remote;
+    private _perPage = 15;
     private _dataLengthSubscriber;
 
-    constructor(private remoteService: RemotePagingService) {
+    constructor(private remoteService: RemotePagingService) { }
+
+    public ngOnInit() {
+        this.data = this.remoteService.remoteData.asObservable();
+
+        this._dataLengthSubscriber = this.remoteService.getDataLength().subscribe((data: any) => {
+            this.totalCount = data;
+            this.grid1.isLoading = false;
+        });
     }
 
     public get perPage(): number {
@@ -30,16 +37,7 @@ export class RemotePagingGridSampleComponent implements OnInit, AfterViewInit, O
 
     public set perPage(val: number) {
         this._perPage = val;
-        // this.paginate(0);
-    }
-
-    public ngOnInit() {
-        this.data = this.remoteService.remoteData.asObservable();
-
-        this._dataLengthSubscriber = this.remoteService.getDataLength().subscribe((data) => {
-            this.totalCount = data;
-            this.grid1.isLoading = false;
-        });
+        this.paginate(0);
     }
 
     public ngOnDestroy() {

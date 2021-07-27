@@ -1,25 +1,26 @@
 <div class="grid__wrapper">
 
-    <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [paging]="true" [perPage]="10" height="500px" width="100%"
+    <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" height="500px" width="100%"
         displayDensity="cosy" primaryKey="ID" foreignKey="ParentID">
+        <igx-paginator [perPage]="10"></igx-paginator>
         <igx-column field="ID" header="Product ID" [dataType]="'string'">
         </igx-column>
         <igx-column field="Name" header="Product Name" [dataType]="'string'">
         </igx-column>
         <igx-column field="UnitPrice" header="Unit Price" dataType="number">
             <ng-template igxCell let-cell="cell" let-val>
-                <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
-                <span *ngIf="cell.row.rowData.UnitPrice != 0">${{val}}</span>
+                <span *ngIf="cell.row.rowData.UnitPrice === 0">-</span>
+                <span *ngIf="cell.row.rowData.UnitPrice !== 0">${{val}}</span>
             </ng-template>
         </igx-column>
         <igx-column field="AddedDate" header="Added Date" [dataType]="'date'">
         </igx-column>
         <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
             <ng-template igxCell let-cell="cell" let-val>
-                <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
-                <img *ngIf="cell.row.rowData.UnitPrice != 0 && val" src="assets/images/grid/active.png"
+                <span *ngIf="cell.row.rowData.UnitPrice === 0">-</span>
+                <img *ngIf="cell.row.rowData.UnitPrice !== 0 && val" src="assets/images/grid/active.png"
                     title="Continued" alt="Continued" />
-                <img *ngIf="cell.row.rowData.UnitPrice != 0 && !val" src="assets/images/grid/expired.png"
+                <img *ngIf="cell.row.rowData.UnitPrice !== 0 && !val" src="assets/images/grid/expired.png"
                     title="Discontinued" alt="Discontinued" />
             </ng-template>
         </igx-column>

@@ -55,7 +55,7 @@ $clipboardSuccessColor: igx-color($color: 'success');
     align-items: center;
   }
   @include e(header-search) {
-    max-width: rem(220px);
+    max-width: rem(300px);
     width: 100%;
     margin-left: rem(8px);
   }
@@ -171,7 +171,7 @@ $clipboardSuccessColor: igx-color($color: 'success');
       }
     }
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      $grid-item-padding-IE: $grid-item-padding / 2;
+      $grid-item-padding-IE: private-div($grid-item-padding, 2);
       flex: 1;
       min-width: $grid-item-width + ($grid-item-padding * 2);
       min-height: $grid-item-height;

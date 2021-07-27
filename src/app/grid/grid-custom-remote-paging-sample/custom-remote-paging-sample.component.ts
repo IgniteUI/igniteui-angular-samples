@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
-import { RemotePagingService } from '../services/remotePagingService';
+import { RemotePagingService } from '../../services/remotePaging.service';
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [RemotePagingService],
@@ -10,7 +10,6 @@ import { RemotePagingService } from '../services/remotePagingService';
     templateUrl: './custom-remote-paging-sample.component.html'
 })
 export class CustomRemotePagingGridSampleComponent implements OnInit, AfterViewInit, OnDestroy {
-    @ViewChild('customPager', { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
 
     public page = 0;
@@ -19,7 +18,6 @@ export class CustomRemotePagingGridSampleComponent implements OnInit, AfterViewI
     public totalPages = 1;
     public totalCount = 0;
     public pages = [];
-    public title = 'gridPaging';
     public data: Observable<any[]>;
 
     private visibleElements = 5;
@@ -95,11 +93,11 @@ export class CustomRemotePagingGridSampleComponent implements OnInit, AfterViewI
         this.setNumberOfPagingItems(this.page, this.totalPages);
     }
 
-    public paginate(page: number, recalc = false) {
+    public paginate(page: number, recalculate = false) {
         this.page = page;
         const skip = this.page * this.perPage;
         const top = this.perPage;
-        if (recalc) {
+        if (recalculate) {
             this.totalPages = Math.ceil(this.totalCount / this.perPage);
         }
         this.setNumberOfPagingItems(this.page, this.totalPages);

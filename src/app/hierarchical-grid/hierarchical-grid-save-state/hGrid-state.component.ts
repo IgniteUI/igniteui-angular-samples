@@ -5,7 +5,7 @@ import { GridFeatures,
     IgxHierarchicalGridComponent, IgxNumberSummaryOperand,
     IgxSummaryResult, IgxCheckboxComponent} from 'igniteui-angular';
 import { take } from 'rxjs/operators';
-import { SINGERS } from '../data';
+import { SINGERS } from '../../data/singersData';
 
 class MySummary {
 

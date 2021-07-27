@@ -87,6 +87,8 @@ import { TGridEditingLifecycleComponent } from './tgrid-editing-lifecycle-sample
 import { TreeGridFormattedFilteringStrategyComponent } from './tree-grid-formatted-filtering-strategy/tree-grid-formatted-filtering-strategy.component';
 import { TreeGridSummaryFormatterComponent } from './tree-grid-summary-formatter/tree-grid-summary-formatter.component';
 import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid-pager-sample.component';
+import { TreeGridGroupByLoadOnDemandComponent } from './tree-grid-group-by-load-on-demand-sample/tree-grid-group-by-load-on-demand-sample.component';
+import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-column-headers-export/tree-grid-multi-column-headers-export.component';
 
 export const treeGridRoutes: Routes = [
     {
@@ -260,6 +262,11 @@ export const treeGridRoutes: Routes = [
         path: 'treegrid-multi-column-headers-styling'
     },
     {
+        component: TreeGridMultiColumnHeadersExportComponent,
+        data: treeGridRoutesData['treegrid-multi-column-headers-export'],
+        path: 'treegrid-multi-column-headers-export'
+    },
+    {
         component: TreeGridVirtualizationSampleComponent,
         data: treeGridRoutesData['treegrid-virtualization'],
         path: 'treegrid-virtualization'
@@ -348,6 +355,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridLoadOnDemandSampleComponent,
         data: treeGridRoutesData['treegrid-load-on-demand'],
         path: 'treegrid-load-on-demand'
+    },
+    {
+        component: TreeGridGroupByLoadOnDemandComponent,
+        data: treeGridRoutesData['treegrid-group-by-load-on-demand'],
+        path: 'treegrid-group-by-load-on-demand'
     },
     {
         component: TreeGridKBNavigationComponent,

@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IGridCreatedEventArgs, IGridKeydownEventArgs,
-    IgxGridCellComponent, IgxHierarchicalGridComponent
+    CellType, IgxHierarchicalGridComponent
 } from 'igniteui-angular';
-import { SINGERS } from '../data';
+import { SINGERS } from '../../data/singersData';
 
 @Component({
     selector: 'app-hierarchical-grid-custom-kb-navigation-sample',
@@ -33,7 +33,7 @@ export class HGridCustomKBNavigationComponent implements OnInit {
     }
 
     public customKeydown(args: IGridKeydownEventArgs, grid) {
-        const target: IgxGridCellComponent = args.target as IgxGridCellComponent;
+        const target: CellType = args.target as CellType;
         const evt: KeyboardEvent = args.event as KeyboardEvent;
         const type = args.targetType;
 
@@ -47,16 +47,16 @@ export class HGridCustomKBNavigationComponent implements OnInit {
                 return;
             }
             const cell = evt.shiftKey ?
-                grid.getPreviousCell(target.rowIndex, target.visibleColumnIndex, (col) => col.editable) :
-                grid.getNextCell(target.rowIndex, target.visibleColumnIndex, (col) => col.editable);
+                grid.getPreviousCell(target.row.index, target.column.visibleIndex, (col) => col.editable) :
+                grid.getNextCell(target.row.index, target.column.visibleIndex, (col) => col.editable);
 
             grid.navigateTo(cell.rowIndex, cell.visibleColumnIndex,
                 (obj) => { obj.target.activate(); });
         } else if (type === 'dataCell' && evt.key.toLowerCase() === 'enter') {
             // Perform column based kb navigation with 'enter' key press
             args.cancel = true;
-            const nexRowIndex = target.row.expanded ? target.rowIndex + 2 : target.rowIndex + 1;
-            grid.navigateTo(nexRowIndex, target.visibleColumnIndex,
+            const nexRowIndex = target.row.expanded ? target.row.index + 2 : target.row.index + 1;
+            grid.navigateTo(nexRowIndex, target.column.visibleIndex,
                 (obj) => { obj.target.activate(); });
         }
     }

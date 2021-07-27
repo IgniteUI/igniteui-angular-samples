@@ -24,6 +24,8 @@ import { DatepickerSample6Component } from './datepicker/datepicker-sample-6/dat
 import { DatepickerSample7Component } from './datepicker/datepicker-sample-7/datepicker-sample-7.component';
 import { DatepickerSample8Component } from './datepicker/datepicker-sample-8/datepicker-sample-8.component';
 import { DatepickerStylingSampleComponent } from './datepicker/datepicker-styling-sample/datepicker-styling-sample.component';
+import {  DateTimePickerTDFSampleComponent } from './datepicker/template-driven-form/template-driven-form.component';
+import {  DateTimePickerRFSampleComponent } from './datepicker/reactive-form/reactive-form.component';
 import { BasicDateRangePickerComponent } from './daterangepicker/daterangepicker-basic/daterangepicker-basic';
 import {
     FlightBookingComponent } from './daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking';
@@ -151,6 +153,16 @@ export const schedulingRoutes: Routes = [
         component: DatepickerSample8Component,
         data: schedulingRoutesData['datepicker-sample-8'],
         path: 'datepicker-sample-8'
+    },
+    {
+        component:  DateTimePickerTDFSampleComponent,
+        data: schedulingRoutesData['template-driven-form'],
+        path: 'template-driven-form'
+    },
+    {
+        component:  DateTimePickerRFSampleComponent,
+        data: schedulingRoutesData['reactive-form'],
+        path: 'reactive-form'
     },
     {
         component: DateTimeBasicComponent,

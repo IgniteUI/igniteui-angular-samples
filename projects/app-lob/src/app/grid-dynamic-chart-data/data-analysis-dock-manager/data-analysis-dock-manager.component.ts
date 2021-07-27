@@ -6,7 +6,7 @@ import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPan
 import { ResizeObserver } from '@juggle/resize-observer';
 import { merge, noop, Subject } from 'rxjs';
 import { debounceTime, filter, takeUntil, tap } from 'rxjs/operators';
-import { FinancialData } from '../../services/financialData';
+import { FinancialData } from '../../data/financialData';
 import { FloatingPanesService } from '../../services/floating-panes.service';
 import { ChartIntegrationDirective, IDeterminedChartTypesArgs } from '../directives/chart-integration/chart-integration.directive';
 import { CHART_TYPE } from '../directives/chart-integration/chart-types';
@@ -146,7 +146,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
 
     public ngOnInit() {
 
-        this.data = new FinancialData().generateData(1000);
+        this.data = FinancialData.generateData(1000);
         this.gridResizeNotify.pipe(takeUntil(this.destroy$))
             .subscribe(() => {
                 if (this.contextmenu) {
@@ -216,7 +216,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
             }
         });
 
-        this.overlayService.onOpening.subscribe((evt: OverlayCancelableEventArgs) => {
+        this.overlayService.opening.subscribe((evt: OverlayCancelableEventArgs) => {
             if (evt.componentRef && evt.componentRef.instance &&
                 (evt.componentRef.instance as any).className === 'igx-excel-filter') {
                 this.disableContextMenu();
@@ -224,7 +224,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
             }
         });
 
-        this.overlayService.onClosed.subscribe((evt: OverlayEventArgs) => {
+        this.overlayService.closed.subscribe((evt: OverlayEventArgs) => {
             if (evt.componentRef &&
                 evt.componentRef.instance &&
                 (evt.componentRef.instance as any).className === 'igx-excel-filter' &&
@@ -454,6 +454,10 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
         } else {
             cell = this.grid.getCellByColumn(this.rowIndex, this.grid.visibleColumns[this.colIndex].field);
         }
+
+        if (!cell) {
+            return;
+        }
         this.contextmenuX = cell.element.nativeElement.getClientRects()[0].right;
         this.contextmenuY = cell.element.nativeElement.getClientRects()[0].bottom;
         this.contextmenu = this.isWithInRange(cell.rowIndex, cell.visibleColumnIndex);
@@ -488,7 +492,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
             return;
         }
 
-        const headerCell = col.headerCell.elementRef.nativeElement;
+        const headerCell = col.headerCell.nativeElement;
         this.contextmenuX = headerCell.getClientRects()[0].right;
         this.contextmenuY = headerCell.getClientRects()[0].bottom;
         this.contextmenu = true;

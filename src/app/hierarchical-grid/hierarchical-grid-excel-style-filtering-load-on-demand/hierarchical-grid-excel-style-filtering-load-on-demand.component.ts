@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IFilteringExpressionsTree, IgxColumnComponent } from 'igniteui-angular';
-import { RemoteValuesService } from './remoteValues.service';
+import { RemoteValuesService } from '../../services/remoteValues.service';
 
 @Component({
   selector: 'app-hierarchical-grid-excel-style-filtering-load-on-demand',

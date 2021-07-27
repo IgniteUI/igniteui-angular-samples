@@ -8,7 +8,7 @@
         <igx-buttongroup [values]="selectionModesChildren" (selected)="selectCellSelectionModeChildGrid($event)"></igx-buttongroup>
     </div>
     <span style="display: flex">
-        <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.hide()">
+        <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.close()">
             <div class="container">
                 <igx-icon>notification_important</igx-icon>
                 <ng-container *ngIf="selectionMode === 'multiple'">
@@ -38,15 +38,13 @@
         </igx-snackbar>
     </span>
     <br />
-    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid [data]="data" [height]="'580px'" [width]="'100%'" [cellSelection]="selectionMode" #hgrid>
+    <igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid [data]="data" [height]="'580px'" [width]="'100%'" [cellSelection]="selectionMode" #hgrid>
         <igx-column field="Artist" [dataType]="'string'"></igx-column>
         <igx-column field="HasGrammyAward" header="Has Grammy Award?" [dataType]="'boolean'">
         </igx-column>
-        <igx-column field="Debut" dataType="number" ></igx-column>
-        <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number"
-            [hasSummary]="true" ></igx-column>
-        <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number"
-            [hasSummary]="true" ></igx-column>
+        <igx-column field="Debut" dataType="number"></igx-column>
+        <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number" [hasSummary]="true"></igx-column>
+        <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number" [hasSummary]="true"></igx-column>
         <igx-row-island [key]="'Albums'" [cellSelection]="selectionModeChild">
             <igx-column field="Album" [dataType]="'string'"></igx-column>
             <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>

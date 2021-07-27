@@ -18,6 +18,16 @@
     display: inline;
 }
 
-#numberPager > * {
+#numberPager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#numberPager span {
     margin-left: .5rem;
+}
+
+.fullWidth {
+    width: 100%;
 }

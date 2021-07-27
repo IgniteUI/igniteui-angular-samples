@@ -37,7 +37,6 @@ import { TreeGridAddRowSampleComponent } from './tree-grid-add-row-sample/tree-g
 import { TreeGridAdvancedFilteringSampleComponent } from './tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component';
 import { TreeGridAdvancedFilteringStyleComponent } from './tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component';
 import { TreeGridBatchEditingSampleComponent } from './tree-grid-batch-editing/tree-grid-batch-editing-sample.component';
-import { TreeGridWithTransactionsComponent } from './tree-grid-batch-editing/tree-grid-with-transactions.component';
 import { TreeGridCellSelectionComponent } from './tree-grid-cellSelection-sample/tree-grid-cellSelection.component';
 import { TreeGridClipboardSampleComponent } from './tree-grid-clipboard-operations-sample/tree-grid-clipboard-operations-sample.component';
 import { TreeGridMultiCollapsibleColumnGroupsComponent } from './tree-grid-collapsible-groups/tree-grid-collapsible-column-groups.component';
@@ -117,13 +116,14 @@ import { TGridEditingLifecycleComponent } from './tgrid-editing-lifecycle-sample
 import { TreeGridFormattedFilteringStrategyComponent } from './tree-grid-formatted-filtering-strategy/tree-grid-formatted-filtering-strategy.component';
 import { TreeGridSummaryFormatterComponent } from './tree-grid-summary-formatter/tree-grid-summary-formatter.component';
 import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid-pager-sample.component';
+import { TreeGridGroupByLoadOnDemandComponent } from './tree-grid-group-by-load-on-demand-sample/tree-grid-group-by-load-on-demand-sample.component';
+import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-column-headers-export/tree-grid-multi-column-headers-export.component';
 
 @NgModule({
     declarations: [
         TreeGridRowEditSampleComponent,
         TreeGridRowEditStyleComponent,
         TreeGridBatchEditingSampleComponent,
-        TreeGridWithTransactionsComponent,
         TreeGridEditingEventsComponent,
         TreeGridEmployeesSampleComponent,
         TreeGridPagingStyleSampleComponent,
@@ -169,6 +169,7 @@ import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid
         TreeGridMultiCellSelectionComponent,
         TreeGridMultiCellSelectionStyleComponent,
         TreeGridLoadOnDemandSampleComponent,
+        TreeGridGroupByLoadOnDemandComponent,
         TreeGridRowDragComponent,
         TreeGridRowDragBaseComponent,
         TreeGridMultiRowDragComponent,
@@ -178,6 +179,7 @@ import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid
         TreeGridResizeLineStylingSampleComponent,
         TreeGridColumnHidingToolbarStyleComponent,
         TreeGridMultiColumnHeaderTemplateSampleComponent,
+        TreeGridMultiColumnHeadersExportComponent,
         TreeGridClipboardSampleComponent,
         TreeGridToolbarStyleComponent,
         TreeGridFilteringStyleComponent,

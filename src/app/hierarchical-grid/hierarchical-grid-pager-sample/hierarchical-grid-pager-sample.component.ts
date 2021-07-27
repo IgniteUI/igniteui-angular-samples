@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { IPaginatorResourceStrings, IgxPaginatorComponent } from 'igniteui-angular';
-import { SINGERS } from '../data';
+import { SINGERS } from '../../data/singersData';
 
 @Component({
     selector: 'app-hierarchical-grid-pager-sample',
@@ -15,8 +15,6 @@ export class HierarchicalGridPagerSampleComponent implements OnInit, AfterViewIn
     public densityOptions: string[];
     public isDropdownHidden = false;
     public isPagerHidden = false;
-    public isDropdownDisabled = false;
-    public isPagerDisabled = false;
     public selectOptions = [5, 15, 20, 50];
 
     private paginatorResourceStrings: IPaginatorResourceStrings = {

@@ -1,0 +1,24 @@
+<div class="pickers-wrapper">
+    <form [formGroup]="dateTimeForm">
+        <div class="form-group">
+            <div class="form-date-picker">
+                <igx-date-picker #datePicker formControlName="date" [value]="date" [minValue]="minDate"
+                    [maxValue]="maxDate" (valueChange)="timePicker.value = datePicker.value">
+                    <label igxLabel>Date</label>
+                </igx-date-picker>
+            </div>
+            <div class="form-time-picker">
+                <igx-time-picker #timePicker formControlName="time" [value]="date" [minValue]="minTime"
+                    [maxValue]="maxTime" [disabled]="dateTimeForm.value.date ? false : true"
+                    (valueChange)="datePicker.value = timePicker.value">
+                    <label igxLabel>Time</label>
+                </igx-time-picker>
+            </div>
+        </div>
+    </form>
+    <p>
+        Date picker: {{ dateTimeForm.value.date? dateTimeForm.value.date.toLocaleString() : null}}<br>
+        Time picker: {{ dateTimeForm.value.time? dateTimeForm.value.time.toLocaleString() : null}}<br>
+        Form Status: {{ dateTimeForm.status }}
+    </p>
+</div>

@@ -1,19 +1,19 @@
 <div class="columnWrapper">
     <span>
         <h6>Snackbar Component that uses Content projection</h6>
-        <button igxButton="raised" (click)="snackbar.show()">Send message</button>
+        <button igxButton="raised" (click)="snackbar.open()">Send message</button>
         <igx-snackbar #snackbar [autoHide]="false" actionText="CLOSE" (clicked)="close(snackbar)">Message sent</igx-snackbar>
     </span>
 
     <span>
         <h6>Snackbar Component which dynamically changes the message text</h6>
-        <button igxButton="outlined" igxButtonColor="blue" (click)="snackbar1.show('Hi! This is info message.')">Info Message</button>
-        <button igxButton="outlined" igxButtonColor="green" (click)="snackbar1.show('Hi! This is success message.')">Success Message</button>
+        <button igxButton="outlined" igxButtonColor="blue" (click)="snackbar1.open('Hi! This is info message.')">Info Message</button>
+        <button igxButton="outlined" igxButtonColor="green" (click)="snackbar1.open('Hi! This is success message.')">Success Message</button>
         <igx-snackbar #snackbar1 [autoHide]="true" actionText="CLOSE" (clicked)="close(snackbar1)"></igx-snackbar>
     </span>
     <span>
         <h6>Snackbar Component that uses Content Projection and dynamically changes the message text</h6>
-        <button igxButton="raised" (click)="snackbar2.show('The message was not delivered successfully. Please contact our support team.')">Send message</button>
+        <button igxButton="raised" (click)="snackbar2.open('The message was not delivered successfully. Please contact our support team.')">Send message</button>
         <igx-snackbar #snackbar2 [autoHide]="false" actionText="CLOSE" (clicked)="close(snackbar2)">
             <igx-icon>support_agent</igx-icon>
         </igx-snackbar>

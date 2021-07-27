@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #myGrid [data]="data" primaryKey="ID" rowSelection="multiple" cellSelection="none"
-        [paging]="true" [height]="'510px'" width="100%">
+    <igx-grid igxPreventDocumentScroll #myGrid [data]="data" primaryKey="ID" rowSelection="multiple" cellSelection="none" [height]="'510px'" width="100%">
+        <igx-paginator></igx-paginator>
         <igx-column field='ContactName' width="20%"></igx-column>
         <igx-column field='Country' width="20%"></igx-column>
         <igx-column field='City' width="20%"></igx-column>

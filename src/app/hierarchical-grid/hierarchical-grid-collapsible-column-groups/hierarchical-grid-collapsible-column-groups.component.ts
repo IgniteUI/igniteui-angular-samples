@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxHierarchicalGridComponent } from 'igniteui-angular';
-import { CUSTOMERS } from '../data';
+import { DATA } from '../../data/customers';
 
 @Component({
     selector: 'app-hierarchical-grid-collapsible-column-groups',
@@ -17,7 +17,7 @@ export class HGridCollapsibleColumnGroupComponent implements OnInit {
 
     }
     public ngOnInit(): void {
-        this.localdata = CUSTOMERS;
+        this.localdata = DATA;
         for (const item of this.localdata) {
             const names = item.ContactName.split(' ');
             item.FirstName = names[0];

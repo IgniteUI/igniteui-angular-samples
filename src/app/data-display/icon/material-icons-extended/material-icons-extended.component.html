@@ -2,7 +2,7 @@
     <div class="sample__header">
         <div class="sample__header-title">
             <igx-select
-                (onSelection)="handleSelection($event)"
+                (selectionChanging)="handleSelection($event)"
                 type="box"
                 [value]="selectedCategory"
             >
@@ -16,7 +16,7 @@
             </igx-select>
         </div>
         <igx-input-group class="sample__header-search" type="search">
-            <input #input igxInput placeholder="Search by icon name" />
+            <input #input igxInput placeholder="Search by icon name or keyword" />
             <igx-prefix>
                 <igx-icon>search</igx-icon>
             </igx-prefix>

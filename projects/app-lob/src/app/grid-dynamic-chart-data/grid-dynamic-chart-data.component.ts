@@ -4,7 +4,7 @@ import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment,
          IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment, OverlaySettings } from 'igniteui-angular';
 import { noop, Subject } from 'rxjs';
 import { debounceTime, takeUntil, tap } from 'rxjs/operators';
-import { FinancialData } from '../services/financialData';
+import { FinancialData } from '../data/financialData';
 import { ChartHostDirective, ChartIntegrationDirective, IDeterminedChartTypesArgs } from './directives/chart-integration/chart-integration.directive';
 import { CHART_TYPE } from './directives/chart-integration/chart-types';
 import { ConditionalFormattingDirective } from './directives/conditional-formatting/conditional-formatting.directive';
@@ -134,25 +134,25 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     public ngOnInit() {
         (this.tabs.headerContainer.nativeElement as HTMLElement).onpointerdown = event => event.stopPropagation();
 
-        this.chartSelectionDialog.onOpen.subscribe(() => {
+        this.chartSelectionDialog.opening.subscribe(() => {
             this.currentChartType = CHART_TYPE.COLUMN_GROUPED;
         });
 
-        this.dialog.onOpen.subscribe(() => {
+        this.dialog.opening.subscribe(() => {
             this.resetChartDialogInitialDimensions();
             this.chartSelectionDialog.close();
         });
 
-        this.dialog.onClose.subscribe(() => {
+        this.dialog.closing.subscribe(() => {
             this.resetChartDialogInitialDimensions();
             this.contextmenu = true;
             this.chartCondigAreaState = 'opened';
             this.opened = true;
         });
 
-        this.chartSelectionDialog.onClose.subscribe((evt) => this.chartPreviewDialog.close());
+        this.chartSelectionDialog.closing.subscribe((evt) => this.chartPreviewDialog.close());
 
-        this.data = new FinancialData().generateData(1000);
+        this.data = FinancialData.generateData(1000);
 
         this.grid.rangeSelected.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(200))
             .subscribe(range => {
@@ -334,6 +334,10 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
             cell = this.grid.getCellByColumn(lastFullyVisibleRowIndex, field);
         } else {
             cell = this.grid.getCellByColumn(this.rowIndex, this.grid.visibleColumns[this.colIndex].field);
+        }
+
+        if (!cell) {
+            return;
         }
         this.contextmenuX = cell.element.nativeElement.getClientRects()[0].right;
         this.contextmenuY = cell.element.nativeElement.getClientRects()[0].bottom;

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, HostBinding, OnDestroy, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { IDialogEventArgs, IgxDialogComponent } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
 import { ControllerComponent } from './controllers.component';
@@ -20,9 +20,11 @@ export class FinJSDemoComponent implements OnDestroy {
     @Output() public frequencyTimer = new EventEmitter<any>();
     @Output() public player = new EventEmitter<any>();
 
+    @HostBinding('class.dark-theme')
+    public darkTheme = false;
+
     public properties = ['price', 'country'];
     public chartData = [];
-    public darkTheme = false;
     public volume = 1000;
     public frequency = 500;
     private _timer;

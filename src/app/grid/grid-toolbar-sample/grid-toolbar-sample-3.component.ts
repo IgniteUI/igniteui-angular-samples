@@ -7,7 +7,7 @@ import {
     IgxExcelExporterOptions,
     IgxExporterOptionsBase
 } from 'igniteui-angular';
-import { athletesData } from '../services/data';
+import { athletesData } from '../../data/athletesData';
 
 @Component({
   selector: 'app-grid-toolbar-sample-3',
