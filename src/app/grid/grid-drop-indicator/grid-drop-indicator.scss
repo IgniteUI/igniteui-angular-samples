@@ -17,7 +17,7 @@
     height: 100%;
 }
 
-::ng-deep {
+:host ::ng-deep {
     .underlined-class {
         border-bottom: 52px solid #d3d3d3;
     }
