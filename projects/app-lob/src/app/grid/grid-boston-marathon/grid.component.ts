@@ -13,7 +13,7 @@ import {
     IgxNumberSummaryOperand,
     IgxStringFilteringOperand,
     IgxSummaryResult,
-    IgxGridCellComponent,
+    CellType,
     OverlaySettings,
     IgxOverlayService,
     AbsolutePosition,
@@ -101,7 +101,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         this.overlaySettings.modal = true;
     }
 
-    public getValue(cell: IgxGridCellComponent): number {
+    public getValue(cell: CellType): number {
         const val = cell.value;
         return val;
     }
