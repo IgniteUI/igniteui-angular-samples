@@ -93,6 +93,7 @@ import { GridRowPinningExtraColumnSampleComponent } from './grid-row-pinning-ext
 import { GridRowPinningStylingSampleComponent } from './grid-row-pinning-styling/grid-row-pinning-styling.component';
 import { GridRowPinningSampleComponent } from './grid-row-pinning/grid-row-pinning.component';
 import { GridRowReorderComponent } from './grid-row-reorder-sample/grid-row-reorder';
+import { GridDropIndicatorComponent } from './grid-drop-indicator/grid-drop-indicator';
 import { FinancialSampleComponent } from './grid-sample-2/grid-sample-2.component';
 import { GridSample3Component } from './grid-sample-3/grid-sample-3.component';
 import { GridRemoteVirtualizationSampleComponent } from './grid-sample-4/grid-sample-4.component';
@@ -204,6 +205,7 @@ import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-ex
         ContextmenuComponent,
         CustomGridPagingStyleSampleComponent,
         GridRowReorderComponent,
+        GridDropIndicatorComponent,
         GridColumnHidingToolbarStyleComponent,
         GridMultiColumnHeaderTemplateComponent,
         GridClipboardSampleComponent,

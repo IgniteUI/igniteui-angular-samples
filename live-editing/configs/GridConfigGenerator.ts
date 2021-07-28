@@ -904,6 +904,18 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'GridDropIndicatorComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts',
+                '/src/app/data/customers.ts'
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxGridModule', 'GridDropIndicatorComponent', 'IgxDragDropModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['GridDropIndicatorComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxDragDropModule']
+            })
+        }));
+
+        configs.push(new Config({
             component: 'GridGroupByPagingSampleComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts',
                 '/src/app/data/invoiceData.ts'
