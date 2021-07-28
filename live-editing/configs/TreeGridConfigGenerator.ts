@@ -380,7 +380,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         // TreeGrid Multi Column Headers Export
         configs.push(new Config({
             component: 'TreeGridMultiColumnHeadersExportComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['TreeGridMultiColumnHeadersExportComponent', 'IgxTreeGridModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['TreeGridMultiColumnHeadersExportComponent'],
