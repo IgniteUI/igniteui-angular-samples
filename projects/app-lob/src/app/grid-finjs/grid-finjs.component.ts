@@ -141,7 +141,8 @@ export class GridFinJSComponent implements OnInit {
     }
 
     public chartColumnAction(target) {
-        this.chartColumnKeyDown.emit(target.grid.getRowData(target._rowIndex));
+        this.chartColumnKeyDown.emit(target.grid.getRowData(target.row.index));
+
     }
 
     get gridWrapper(): HTMLElement {
