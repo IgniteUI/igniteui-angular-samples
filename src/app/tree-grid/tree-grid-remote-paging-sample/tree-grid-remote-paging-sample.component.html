@@ -3,9 +3,9 @@
             expansionDepth="0" width="100%" height="540px" [pagingMode]="mode">
         <igx-column field="Name">
             <ng-template igxCell let-cell="cell" let-val>
-                <igx-icon *ngIf="cell.row.rowData.Type === 'File folder'" family="material" class="typeIcon">folder
+                <igx-icon *ngIf="cell.row.data.Type === 'File folder'" family="material" class="typeIcon">folder
                 </igx-icon>
-                <igx-icon *ngIf="cell.row.rowData.Type === 'JPG File'" family="material" class="typeIcon">photo</igx-icon>
+                <igx-icon *ngIf="cell.row.data.Type === 'JPG File'" family="material" class="typeIcon">photo</igx-icon>
                 {{val}}
             </ng-template>
         </igx-column>

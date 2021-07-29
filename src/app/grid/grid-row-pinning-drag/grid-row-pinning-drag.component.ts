@@ -79,7 +79,7 @@ export class GridPinningDragSampleComponent implements OnInit {
             if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&
                 cursorPosition.x > rowRect.left + window.scrollX && cursorPosition.x < rowRect.right + window.scrollX) {
                 // return the index of the targeted row
-                return this.data.indexOf(this.data.find((r) => r.ID === row.rowData.ID));
+                return this.data.indexOf(this.data.find((r) => r.ID === row.data.ID));
             }
         }
 
@@ -92,7 +92,7 @@ export class GridPinningDragSampleComponent implements OnInit {
             if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&
                 cursorPosition.x > rowRect.left + window.scrollX && cursorPosition.x < rowRect.right + window.scrollX) {
                 // return the ID of the targeted row
-                return row.rowData.ID;
+                return row.data.ID;
             }
         }
     }

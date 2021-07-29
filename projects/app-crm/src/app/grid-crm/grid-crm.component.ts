@@ -154,7 +154,7 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     }
 
     public getPhoto(cell: CellType) {
-        return cell.row.rowData.avatar;
+        return cell.row.data.avatar;
     }
 
     public togglePinning() {
