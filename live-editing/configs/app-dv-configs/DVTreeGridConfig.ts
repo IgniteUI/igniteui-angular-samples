@@ -18,7 +18,6 @@ import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing
 export class DVTreeGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         FinancialDataService: '../../../projects/app-lob/src/app/services/financial.service',
-        TreeGridGroupingPipe: '../../../projects/app-lob/src/app/treegrid-finjs/tree-grid-grouping.pipe',
         IgxPreventDocumentScrollModule: '../../../src/app/directives/prevent-scroll.directive',
         SignalRService : '../../../projects/app-lob/src/app/services/signal-r.service'
 };
@@ -63,8 +62,8 @@ export class DVTreeGridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxExcelExporterService', 'IgxSwitchModule', 'IgxRippleModule', 'TreeGridFinJSComponent',
-                    'FinancialDataService', 'TreeGridGroupingPipe', 'HttpClientModule', 'SignalRService'],
-                ngDeclarations: ['TreeGridFinJSComponent', 'TreeGridGroupingPipe'],
+                    'FinancialDataService', 'HttpClientModule', 'SignalRService'],
+                ngDeclarations: ['TreeGridFinJSComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule', 'HttpClientModule'],
                 ngProviders: ['FinancialDataService', 'IgxExcelExporterService', 'SignalRService']
