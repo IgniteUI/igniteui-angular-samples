@@ -8,7 +8,7 @@
         <igx-column [field]="'HireDate'" dataType="date"></igx-column>
         <igx-column [field]="'OnPTO'" dataType="boolean"width="130px">
             <ng-template igxCell let-cell="cell" let-val>
-                <igx-icon [color]="cell.row.rowData.OnPTO? 'red': 'green'">account_circle</igx-icon>                
+                <igx-icon [color]="cell.row.data.OnPTO? 'red': 'green'">account_circle</igx-icon>
             </ng-template>
         </igx-column>
     </igx-tree-grid>

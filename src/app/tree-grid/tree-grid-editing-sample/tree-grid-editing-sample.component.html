@@ -12,7 +12,7 @@
         <igx-column [field]="'HireDate'" dataType="date" [editable]="true" [hasSummary]="true"></igx-column>
         <igx-column [field]="'OnPTO'" dataType="boolean" [editable]="true" [hasSummary]="true" width="130px">
             <ng-template igxCell let-cell="cell" let-val>
-                <igx-icon [color]="cell.row.rowData.OnPTO? 'red': 'green'">account_circle</igx-icon>
+                <igx-icon [color]="cell.row.data.OnPTO? 'red': 'green'">account_circle</igx-icon>
             </ng-template>
         </igx-column>
         <igx-column [filterable]="false" width="130px">
