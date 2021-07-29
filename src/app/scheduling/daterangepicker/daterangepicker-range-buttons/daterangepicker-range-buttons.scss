@@ -1,0 +1,24 @@
+:host {
+    display: block;
+    padding: 1rem;
+    max-width: 600px;
+  
+    ::ng-deep {
+      igx-calendar-container {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+  
+      #actions {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin: 0 10px 0 10px;
+  
+        button {
+          margin: 6px 0;
+        }
+      }
+    }
+  }
+  

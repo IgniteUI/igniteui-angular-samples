@@ -40,6 +40,7 @@ export const schedulingRoutesData = {
     'basic-daterangepicker': { displayName: 'Single Read-Only Input', parentName: 'Date Range Picker' },
     'daterangepicker-start-end': { displayName: 'Separate Editable Inputs', parentName: 'Date Range Picker' },
     'daterangepicker-mode': { displayName: 'Dropdown Mode', parentName: 'Date Range Picker' },
+    'daterangepicker-range-buttons': { displayName: 'Range Buttons', parentName: 'Date Range Picker' },
     'daterangepicker-validation': { displayName: 'Validation', parentName: 'Date Range Picker' },
     'styled-daterangepicker': { displayName: 'Styling', parentName: 'Date Range Picker' },
     'flight-booking': { displayName: 'Flight Booking', parentName: 'Date Range Picker' }

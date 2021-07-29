@@ -1,0 +1,29 @@
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { DateRange, IgxDateRangePickerComponent } from 'igniteui-angular';
+
+@Component({
+    selector: 'app-rangdatepicker-range-buttons',
+    styleUrls: ['./daterangepicker-range-buttons.scss'],
+    templateUrl: './daterangepicker-range-buttons.html'
+})
+export class DateRangePickerRangeButtonsComponent {
+    @ViewChild('rangePicker', { static: true })
+    public dateRangePicker: IgxDateRangePickerComponent;
+
+    public range: DateRange = {
+        start: new Date(),
+        end: new Date(new Date().setDate(new Date().getDate() + 2))
+    };
+
+    constructor(public element: ElementRef) { }
+
+    public selectDays(count: number) {
+        let today: Date = new Date();
+        this.range = {
+            start: new Date(new Date().setDate(today.getDate() - count + 1)),
+            end: today
+        };
+
+        this.dateRangePicker.close();
+    }
+}
