@@ -132,7 +132,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     public getIconType(cell) {
-        switch (cell.row.rowData.Position) {
+        switch (cell.row.data.Position) {
             case 'up':
                 return 'arrow_upward';
             case 'current':
@@ -143,7 +143,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     public getBadgeType(cell) {
-        switch (cell.row.rowData.Position) {
+        switch (cell.row.data.Position) {
             case 'up':
                 return 'success';
             case 'current':

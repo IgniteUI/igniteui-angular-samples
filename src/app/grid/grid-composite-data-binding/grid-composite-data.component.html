@@ -4,10 +4,10 @@
             <igx-column field="ContactName" header="Contact" editable="true">
                 <ng-template #compositeTemp igxCell let-cell="cell">
                     <div class="contact-container">
-                        <span><strong>ContactName:</strong> {{cell.row.rowData.ContactName}}</span>
-                        <span><strong>Job Title:</strong> {{cell.row.rowData.ContactTitle}}</span>
+                        <span><strong>ContactName:</strong> {{cell.row.data.ContactName}}</span>
+                        <span><strong>Job Title:</strong> {{cell.row.data.ContactTitle}}</span>
                         <br />
-                        <span><strong>Company Name:</strong> {{cell.row.rowData.CompanyName}}</span>
+                        <span><strong>Company Name:</strong> {{cell.row.data.CompanyName}}</span>
                         <br />
                     </div>
                 </ng-template>
@@ -15,22 +15,22 @@
                     <div class="contact-container--edit">
                         <div style="display:flex; margin-top:3px">
                             <div>
-                                <strong>Contact Name:</strong> {{cell.row.rowData.ContactName}}
+                                <strong>Contact Name:</strong> {{cell.row.data.ContactName}}
                                 <igx-input-group width="100%">
-                                    <input igxInput [(ngModel)]="cell.row.rowData.ContactName" />
+                                    <input igxInput [(ngModel)]="cell.row.data.ContactName" />
                                 </igx-input-group>
                             </div>
                             <div style="margin-left: 10px">
-                                <strong>Job Title:</strong> {{cell.row.rowData.ContactTitle}}
+                                <strong>Job Title:</strong> {{cell.row.data.ContactTitle}}
                                 <igx-input-group width="100%">
-                                    <input igxInput [(ngModel)]="cell.row.rowData.ContactTitle" />
+                                    <input igxInput [(ngModel)]="cell.row.data.ContactTitle" />
                                 </igx-input-group>
                             </div>
                         </div>
                         <div style="margin-top: 10px">
-                            <strong>Company Name:</strong> {{cell.row.rowData.CompanyName}}
+                            <strong>Company Name:</strong> {{cell.row.data.CompanyName}}
                             <igx-input-group width="100%">
-                                <input igxInput [(ngModel)]="cell.row.rowData.CompanyName" />
+                                <input igxInput [(ngModel)]="cell.row.data.CompanyName" />
                             </igx-input-group>
                         </div>
                     </div>
@@ -40,14 +40,14 @@
                 <ng-template #compositeTemp igxCell let-cell="cell">
                     <div class="address-container">
                         <div class="country-city">
-                            <span><strong>Country:</strong> {{cell.row.rowData.Country}}</span>
+                            <span><strong>Country:</strong> {{cell.row.data.Country}}</span>
                             <br>
-                            <span><strong>City:</strong> {{cell.row.rowData.City}}</span>
+                            <span><strong>City:</strong> {{cell.row.data.City}}</span>
                         </div>
                         <div class="phone-pscode">
-                            <span><strong>Postal Code:</strong> {{cell.row.rowData.PostalCode}} </span>
+                            <span><strong>Postal Code:</strong> {{cell.row.data.PostalCode}} </span>
                             <br>
-                            <span><strong>Phone:</strong> {{cell.row.rowData.Phone}}</span>
+                            <span><strong>Phone:</strong> {{cell.row.data.Phone}}</span>
                         </div>
                         <br />
                     </div>
@@ -55,25 +55,25 @@
                 <ng-template igxCellEditor let-cell="cell">
                     <div class="address-container--edit">
                         <div>
-                            <span><strong>Country:</strong> {{cell.row.rowData.Country}}</span>
+                            <span><strong>Country:</strong> {{cell.row.data.Country}}</span>
                             <igx-input-group width="100%">
-                                <input #country igxInput [(ngModel)]="cell.row.rowData.Country" />
+                                <input #country igxInput [(ngModel)]="cell.row.data.Country" />
                             </igx-input-group>
                             <br>
-                            <span><strong>City:</strong> {{cell.row.rowData.City}}</span>
+                            <span><strong>City:</strong> {{cell.row.data.City}}</span>
                             <igx-input-group width="100%">
-                                <input #city igxInput [(ngModel)]="cell.row.rowData.City" />
+                                <input #city igxInput [(ngModel)]="cell.row.data.City" />
                             </igx-input-group>
                         </div>
                         <div>
-                            <span><strong>Postal Code:</strong> {{cell.row.rowData.PostalCode}}</span>
+                            <span><strong>Postal Code:</strong> {{cell.row.data.PostalCode}}</span>
                             <igx-input-group width="100%">
-                                <input #postalCode igxInput [(ngModel)]="cell.row.rowData.PostalCode" />
+                                <input #postalCode igxInput [(ngModel)]="cell.row.data.PostalCode" />
                             </igx-input-group>
                             <br>
-                            <span><strong>Phone:</strong> {{cell.row.rowData.Phone}}</span>
+                            <span><strong>Phone:</strong> {{cell.row.data.Phone}}</span>
                             <igx-input-group width="100%">
-                                <input #postalCode igxInput [(ngModel)]="cell.row.rowData.Phone" />
+                                <input #postalCode igxInput [(ngModel)]="cell.row.data.Phone" />
                             </igx-input-group>
                         </div>
                         <br>

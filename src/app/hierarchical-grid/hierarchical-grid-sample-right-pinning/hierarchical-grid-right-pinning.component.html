@@ -9,9 +9,9 @@
         <igx-column field="CountryName" header="Team" width="88">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner country-cell">
-                    <img [src]="cell.rowData.CountryFlag" class="country-flag" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef">
+                    <img [src]="cell.row.data.CountryFlag" class="country-flag" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef">
                     <div #tooltipRef="tooltip" igxTooltip>
-                        {{ cell.rowData.CountryName }}
+                        {{ cell.row.data.CountryName }}
                     </div>
                 </div>
             </ng-template>
@@ -19,7 +19,7 @@
         <igx-column field="Avatar" header="Photo" dataType="string" width="80" [disablePinning]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner avatar-cell">
-                    <igx-avatar [src]="cell.rowData.Avatar" [roundShape]="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.Avatar" [roundShape]="true" size="small"></igx-avatar>
                 </div>
             </ng-template>
         </igx-column>
@@ -67,7 +67,7 @@
             <igx-column field="avatar" header="Agent's Photo" width="80">
                 <ng-template igxCell let-cell="cell">
                     <div class="cell__inner avatar-cell">
-                        <igx-avatar [src]="cell.rowData.avatar" [roundShape]="true" size="small"></igx-avatar>
+                        <igx-avatar [src]="cell.row.data.avatar" [roundShape]="true" size="small"></igx-avatar>
                     </div>
                 </ng-template>
             </igx-column>
