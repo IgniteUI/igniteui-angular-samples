@@ -124,7 +124,7 @@ export const REGIONS: Region[] = [
             { Name: 'Croatia' },
             { Name: 'Slovenia' },
             { Name: 'Estonia' },
-            { Name: 'Iceland', }
+            { Name: 'Iceland' }
         ]
     },
     {
@@ -1146,7 +1146,7 @@ export class FinancialData {
         dataObj.changeP = res.changePercent;
     }
 
-    private static generateNewPrice(oldPrice: number): { price: number, changePercent: number } {
+    private static generateNewPrice(oldPrice: number): { price: number; changePercent: number } {
         const rnd = parseFloat(Math.random().toFixed(2));
         const volatility = 2;
         let newPrice = 0;
