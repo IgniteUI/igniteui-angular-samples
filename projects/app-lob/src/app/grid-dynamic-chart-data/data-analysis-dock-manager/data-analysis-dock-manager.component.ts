@@ -268,10 +268,10 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
 
         this.allCharts = this.chartIntegration.getAllChartTypes();
         this.chartIntegration.chartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
-            if (args.chartsAvailabilty.size === 0 || args.chartsForCreation.length === 0) {
+            if (args.chartsAvailability.size === 0 || args.chartsForCreation.length === 0) {
                 this.chartIntegration.disableCharts(this.allCharts);
             } else {
-                args.chartsAvailabilty.forEach((isAvailable, chart) => {
+                args.chartsAvailability.forEach((isAvailable, chart) => {
                     if (args.chartsForCreation.indexOf(chart) === -1) {
                         this.chartIntegration.disableCharts([chart]);
                     } else {
