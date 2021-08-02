@@ -18,11 +18,12 @@ export class PaginationConfigGenerator implements IConfigGenerator {
             component: 'PaginationSampleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPaginatorModule','IgxRippleModule',
-                'IgxButtonGroupModule', 'IgxButtonModule', 'IgxIconModule', 'IgxCardModule'],
+                'IgxButtonGroupModule', 'IgxButtonModule', 'IgxIconModule', 'IgxCardModule', 'PaginationSampleComponent'],
                 ngDeclarations: ['PaginationSampleComponent'],
                 ngImports: ['IgxPaginatorModule', 'IgxRippleModule', 'IgxButtonGroupModule',
                 'IgxButtonModule', 'IgxIconModule', 'IgxCardModule']
-            })
+            }),
+            shortenComponentPathBy: "/paginator/main-pagination/"
         }));
 
         return configs;
