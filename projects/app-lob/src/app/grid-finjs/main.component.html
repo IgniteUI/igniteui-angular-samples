@@ -12,7 +12,7 @@
     </app-finjs-grid>
 </div>
 
-<igx-dialog #dialog closeOnOutsideSelect="true" (onClose)="onCloseHandler($event)">
+<igx-dialog #dialog closeOnOutsideSelect="true" (closing)="onCloseHandler($event)">
     <div (keydown)="closeDialog()" class="chart-container">
         <igx-dialog-title> Chart </igx-dialog-title>
 

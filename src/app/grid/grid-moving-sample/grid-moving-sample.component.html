@@ -5,7 +5,8 @@
     </div>
 </ng-template>
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #dataGrid [data]="data" [autoGenerate]="false" height="620px" width="100%" paging="true" [perPage]="10">
+    <igx-grid igxPreventDocumentScroll #dataGrid [data]="data" [autoGenerate]="false" height="620px" width="100%">
+        <igx-paginator [perPage]="10"></igx-paginator>
         <igx-column [field]="'Category'" [width]="'200px'" [movable]="true" [pinned]="true" [headerTemplate]="pinTemplate"></igx-column>
         <igx-column [field]="'Type'" [movable]="true" [pinned]="true" [headerTemplate]="pinTemplate"></igx-column>
         <igx-column [field]="'Price'" dataType="number" [movable]="true" [formatter]="formatCurrency" [headerTemplate]="pinTemplate"></igx-column>

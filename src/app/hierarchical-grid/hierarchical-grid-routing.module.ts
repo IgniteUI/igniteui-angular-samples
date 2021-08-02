@@ -91,6 +91,7 @@ import { HGridFormattedFilteringStrategyComponent } from './hierarchical-grid-fo
 import { HGridSummaryFormatterComponent } from './hierarchical-grid-summary-formatter/hierarchical-grid-summary-formatter.component';
 import { HGridExcelExportSampleComponent } from './hierarchical-grid-excel-exporter/hierarchical-grid-excel-export.sample';
 import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-sample/hierarchical-grid-pager-sample.component';
+import { HGridMultiColumnHeadersExportComponent } from './hierarchical-grid-multi-column-headers-export/hierarchical-grid-multi-column-export.component';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -300,6 +301,12 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridMultiCellStyleComponent,
         data: hierarchicalGridRoutesData['hierarchical-grid-multi-cell-style'],
         path: 'hierarchical-grid-multi-cell-style'
+    },
+    {
+        component: HGridMultiColumnHeadersExportComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData['hierarchical-grid-multi-column-export'],
+        path: 'hierarchical-grid-multi-column-export'
     },
     {
         component: HGridToolbarTitleSampleComponent,

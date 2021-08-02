@@ -3,12 +3,12 @@
         <igx-column field="Name" width="300px">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.rowData.Avatar" roundShape="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.Avatar" roundShape="true" size="small"></igx-avatar>
                     <span class="name">{{ cell.value }}</span>
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'Title'" dataType="string"></igx-column>        
+        <igx-column [field]="'Title'" dataType="string"></igx-column>
         <igx-column [field]="'Age'" dataType="number"></igx-column>
         <igx-column [field]="'HireDate'" dataType="date"></igx-column>
     </igx-tree-grid>

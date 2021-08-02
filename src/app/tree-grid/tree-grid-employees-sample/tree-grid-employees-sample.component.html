@@ -1,6 +1,7 @@
 <div class="grid__wrapper">
     <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="localData" childDataKey="Employees" width="100%" height="800px"
-                   [autoGenerate]="false" [rowSelection]="selectionMode" [paging]="true" [allowFiltering]="true">
+                   [autoGenerate]="false" [rowSelection]="selectionMode" [allowFiltering]="true">
+        <igx-paginator></igx-paginator>
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>Employees</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
