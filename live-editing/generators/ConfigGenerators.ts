@@ -57,6 +57,7 @@ import { TransactionsConfigGenerator } from '../configs/TransactionsConfigGenera
 import { TreeGridConfigGenerator } from '../configs/TreeGridConfigGenerator';
 import { TreeConfigGenerator } from '../configs/TreeConfigGenerator';
 import { AccordionConfigGenerator } from '../configs/AccordionConfigGenerator';
+import { PaginationConfigGenerator } from '../configs/PaginationConfigGenerator';
 
 export const CONFIG_GENERATORS =
     [
@@ -126,5 +127,6 @@ export const CONFIG_GENERATORS =
         ThemingConfigGenerator,
         TransactionsConfigGenerator,
         SplitterConfigGenerator,
-        DockManagerConfigGenerator
+        DockManagerConfigGenerator,
+        PaginationConfigGenerator
     ];
