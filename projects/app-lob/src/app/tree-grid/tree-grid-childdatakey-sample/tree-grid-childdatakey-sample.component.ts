@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IColumnExportingEventArgs, IgxCsvExporterService, IgxExcelExporterService } from 'igniteui-angular';
 import { EMPLOYEE_DATA } from './data';
 
 @Component({
@@ -9,7 +10,14 @@ import { EMPLOYEE_DATA } from './data';
 export class TreeGridChilddatakeySampleComponent implements OnInit {
     public localData: any[];
     public selectionMode = 'multiple';
-    constructor() { }
+    constructor(private excelExporter: IgxExcelExporterService, private csvExporter: IgxCsvExporterService) {
+        const skipColumnExport = (eventArgs: IColumnExportingEventArgs) => {
+            eventArgs.cancel = eventArgs.header === 'Performance';
+        };
+
+        this.excelExporter.columnExporting.subscribe(skipColumnExport);
+        this.csvExporter.columnExporting.subscribe(skipColumnExport);
+    }
 
     public ngOnInit() {
         const employees = EMPLOYEE_DATA;
