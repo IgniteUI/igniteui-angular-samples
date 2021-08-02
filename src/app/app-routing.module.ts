@@ -76,6 +76,11 @@ export const samplesRoutes: Routes = [
         data: ['HierarchicalGridModule'],
         loadChildren: () => import('./hierarchical-grid/hierarchical-grid.module').then(m => m.HierarchicalGridModule),
         path: 'hierarchical-grid'
+    },
+    {
+        data: ['PaginationModule'],
+        loadChildren: () => import('./pagination/pagination.module').then(m => m.PaginationModule),
+        path: 'paginator'
     }
 ];
 export const appRoutes: Routes = [
