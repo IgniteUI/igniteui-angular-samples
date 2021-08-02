@@ -17,7 +17,7 @@
         </igx-grid-toolbar>
         <igx-column [pinned]="true" [filterable]="false" [editable]="false">
             <ng-template igxCell let-cell="cell" let-val>
-                <button igxButton (click)="deleteRow(cell.cellID.rowID)" [disabled]="cell.row.deleted">Delete</button>
+                <button igxButton (click)="deleteRow(cell.id.rowID)" [disabled]="cell.row.deleted">Delete</button>
             </ng-template>
         </igx-column>
         <igx-column field="ID" editable="false"></igx-column>
