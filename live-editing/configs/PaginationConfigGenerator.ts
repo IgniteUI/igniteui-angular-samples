@@ -5,8 +5,8 @@ import {
     IgxCardModule,
     IgxIconModule,
     IgxPaginatorModule,
-    IgxSliderModule,
-    IgxCheckboxModule
+    IgxRippleModule,
+    IgxSliderModule
 } from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 
