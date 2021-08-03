@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { IgxPaginatorComponent } from 'igniteui-angular';
 import { DATA } from '../../data/product';
 
@@ -7,13 +7,18 @@ import { DATA } from '../../data/product';
     styleUrls: ['./pagination-sample.component.scss'],
     templateUrl: './pagination-sample.component.html'
 })
-export class PaginationSampleComponent implements OnInit{
+export class PaginationSampleComponent {
 
     @ViewChild('paginator', { static: true }) public paginator!: IgxPaginatorComponent;
     public productData = DATA;
     public itemsPerPage = [3, 4, 5];
 
-    public ngOnInit() {
+    constructor(public cdr: ChangeDetectorRef) {
+    }
+
+    // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
+    ngAfterViewInit() {
+        this.cdr.detectChanges();
     }
 
     public get data() {
