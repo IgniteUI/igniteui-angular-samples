@@ -7,11 +7,11 @@
                 </igx-card-media>
 
                 <igx-card-header>
-                    <h3 igxCardHeaderTitle>{{ product.ProductName }}</h3>
+                    <h4 igxCardHeaderTitle>{{ product.ProductName }}</h4>
                 </igx-card-header>
 
                 <igx-card-content>
-                    <h4 igxCardHeaderSubtitle>Price: {{ product.UnitPrice | currency:'USD' }}</h4>
+                    <h5 igxCardHeaderSubtitle>Price: {{ product.UnitPrice | currency:'USD' }}</h5>
                 </igx-card-content>
 
                 <igx-card-actions>
@@ -26,6 +26,11 @@
             </igx-card>
         </ng-container>
     </div>
-    <igx-paginator #paginator [perPage]="4" [selectOptions]="itemsPerPage" [totalRecords]="productData.length" (perPageChange)="navigateToFirstPage()"></igx-paginator>
+    <igx-paginator #paginator
+        [perPage]="4"
+        [selectOptions]="itemsPerPage"
+        [totalRecords]="productData.length"
+        (perPageChange)="navigateToFirstPage()">
+    </igx-paginator>
 </div>
 

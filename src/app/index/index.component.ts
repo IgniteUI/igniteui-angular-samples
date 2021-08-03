@@ -101,7 +101,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
             routesData: treeGridRoutesData
         },
         {
-            path: 'paginator',
+            path: 'pagination',
             routesData: paginationRoutesData
         }
     ];

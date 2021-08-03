@@ -80,7 +80,7 @@ export const samplesRoutes: Routes = [
     {
         data: ['PaginationModule'],
         loadChildren: () => import('./pagination/pagination.module').then(m => m.PaginationModule),
-        path: 'paginator'
+        path: 'pagination'
     }
 ];
 export const appRoutes: Routes = [

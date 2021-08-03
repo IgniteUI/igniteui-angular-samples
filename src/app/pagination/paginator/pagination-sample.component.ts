@@ -11,10 +11,9 @@ export class PaginationSampleComponent implements OnInit{
 
     @ViewChild('paginator', { static: true }) public paginator!: IgxPaginatorComponent;
     public productData = DATA;
-    public itemsPerPage = [3,4,5,6];
+    public itemsPerPage = [3, 4, 5];
 
     public ngOnInit() {
-        this.productData.forEach((prod) => prod.icons = ['favorite', 'share']);
     }
 
     public get data() {

@@ -112,7 +112,7 @@ export const MODULE_ROUTES = [
     },
     {
         module: PaginationModule,
-        path: 'paginator',
+        path: 'pagination',
         routes: PaginatorRouting.paginatorRoutes
     }
 ];
