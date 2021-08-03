@@ -11,6 +11,7 @@ import { layoutsRoutesData } from '../layouts/layouts-routes-data';
 import { listsRoutesData } from '../lists/lists-routes-data';
 import { menusRoutesData } from '../menus/menus-routes-data';
 import { notificationsRoutesData } from '../notifications/notifications-routes-data';
+import { paginationRoutesData } from '../pagination/pagination-routes-data';
 import { schedulingRoutesData } from '../scheduling/scheduling-routes-data';
 import { servicesRoutesData } from '../services/services-routes-data';
 import { themingRoutesData } from '../theming/theming-routes-data';
@@ -98,6 +99,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: 'tree-grid',
             routesData: treeGridRoutesData
+        },
+        {
+            path: 'pagination',
+            routesData: paginationRoutesData
         }
     ];
 
