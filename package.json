@@ -19,7 +19,7 @@
     "watch-live-editing": "gulp watch-live-editing",
     "sass-js-compile-check": "gulp sass-js-compile-check",
     "build": "gulp generate-live-editing && node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng build --configuration production",
-    "build:app-lob": "gulp generate-live-editing --appDv=true && node_modules/@angular/cli/bin/ng build app-lob --configuration production",
+    "build:app-lob": "gulp generate-live-editing --appDv=true && node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng build app-lob --configuration production",
     "build:app-crm": "ng build app-crm --configuration production",
     "test": "ng test",
     "lint": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng lint",
