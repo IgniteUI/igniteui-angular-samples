@@ -23,7 +23,7 @@ import {
     OverlaySettings,
     PositionSettings,
     VerticalAlignment,
-    IgxGridCellComponent
+    CellType
 } from 'igniteui-angular';
 import { data } from './data';
 
@@ -153,8 +153,8 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         this.toggleRefHiding.toggle(this._overlaySettings);
     }
 
-    public getPhoto(cell: IgxGridCellComponent) {
-        return cell.row.rowData.avatar;
+    public getPhoto(cell: CellType) {
+        return cell.row.data.avatar;
     }
 
     public togglePinning() {

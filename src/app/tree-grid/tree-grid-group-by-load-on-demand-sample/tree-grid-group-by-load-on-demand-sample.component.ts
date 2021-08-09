@@ -1,5 +1,5 @@
-import { Component, EventEmitter, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular';
+import { Component, EventEmitter, Input, OnInit, ViewChild } from '@angular/core';
+import { DefaultSortingStrategy, IGroupingExpression, IgxTreeGridComponent } from 'igniteui-angular';
 import { TreeGridGroupingLoadOnDemandService, TreeGridGroupingParameters } from './remoteService';
 
 @Component({
@@ -10,10 +10,15 @@ import { TreeGridGroupingLoadOnDemandService, TreeGridGroupingParameters } from 
 
 export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
+    @Input()
+    public groupingExpressions: IGroupingExpression[] = [
+        { fieldName: 'ShipCountry', dir: 2, ignoreCase: true, strategy: DefaultSortingStrategy.instance() },
+        { fieldName: 'ShipCity', dir: 1, ignoreCase: true, strategy: DefaultSortingStrategy.instance() },
+        { fieldName: 'Discontinued', dir: 1, ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
+    ];
 
-    public groupColumns = ['ShipCountry', 'ShipCity', 'Discontinued'];
     public primaryKey = 'id';
-    public childDataKey = 'children';
+    public foreignKey = 'parentId';
     public hasChildrenKey = 'children';
     public groupColumnKey = '';
     public data = [];
@@ -26,10 +31,10 @@ export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
 
     public loadChildren = (parentID: any, done: (children: any[]) => void) => {
         const groupingParameters = this.assembleGroupingParameters();
-        this.dataService.getData(parentID, groupingParameters, (children) => done(children));
+        this.dataService.getData(parentID, this.hasChildrenKey, groupingParameters, (children) => done(children));
     };
 
-    public onGroupColumnsChange(event: EventEmitter<string[]>) {
+    public onExpressionsChange(event: EventEmitter<string[]>) {
         this.reloadData();
     }
 
@@ -37,7 +42,7 @@ export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
         this.treeGrid.isLoading = true;
         this.treeGrid.expansionStates.clear();
         const groupingParameters = this.assembleGroupingParameters();
-        this.dataService.getData(null, groupingParameters, (children) => {
+        this.dataService.getData(null, this.hasChildrenKey, groupingParameters, (children) => {
             this.data = children;
             this.treeGrid.isLoading = false;
             this.treeGrid.reflow();
@@ -46,10 +51,10 @@ export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
 
     private assembleGroupingParameters(): TreeGridGroupingParameters {
         const groupingParameters: TreeGridGroupingParameters = {
-            groupColumns: this.groupColumns,
+            groupingExpressions: this.groupingExpressions,
             groupKey: this.groupColumnKey,
             primaryKey: this.primaryKey,
-            childDataKey: this.childDataKey
+            foreignKey: this.foreignKey
         };
 
         return groupingParameters;

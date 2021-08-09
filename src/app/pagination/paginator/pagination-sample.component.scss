@@ -1,0 +1,17 @@
+.sample-column {
+    padding-bottom: 50px;
+}
+.card-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.card-wrapper .igx-card {
+    flex: 1 1 0;
+    margin: 5px;
+}
+
+.igx-card-header__subtitle {
+    font-size: 0.999rem;
+}

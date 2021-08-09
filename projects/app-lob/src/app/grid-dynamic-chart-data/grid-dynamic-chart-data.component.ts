@@ -134,23 +134,23 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     public ngOnInit() {
         (this.tabs.headerContainer.nativeElement as HTMLElement).onpointerdown = event => event.stopPropagation();
 
-        this.chartSelectionDialog.onOpen.subscribe(() => {
+        this.chartSelectionDialog.opening.subscribe(() => {
             this.currentChartType = CHART_TYPE.COLUMN_GROUPED;
         });
 
-        this.dialog.onOpen.subscribe(() => {
+        this.dialog.opening.subscribe(() => {
             this.resetChartDialogInitialDimensions();
             this.chartSelectionDialog.close();
         });
 
-        this.dialog.onClose.subscribe(() => {
+        this.dialog.closing.subscribe(() => {
             this.resetChartDialogInitialDimensions();
             this.contextmenu = true;
             this.chartCondigAreaState = 'opened';
             this.opened = true;
         });
 
-        this.chartSelectionDialog.onClose.subscribe((evt) => this.chartPreviewDialog.close());
+        this.chartSelectionDialog.closing.subscribe((evt) => this.chartPreviewDialog.close());
 
         this.data = FinancialData.generateData(1000);
 
@@ -331,9 +331,9 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
         if ((!this.grid.getRowByIndex(this.rowIndex) || (this.grid.rowList.toArray().indexOf(this.grid.getRowByIndex(this.rowIndex)) >= this.grid.rowList.length - 2) && this.rowIndex + 2 < this.grid.dataLength)) {
             const lastFullyVisibleRowIndex = this.grid.rowList.toArray()[this.grid.rowList.length - 3].index;
             const field = this.grid.visibleColumns[this.colIndex].field;
-            cell = this.grid.getCellByColumn(lastFullyVisibleRowIndex, field);
+            cell = this.grid.gridAPI.get_cell_by_index(lastFullyVisibleRowIndex, field);
         } else {
-            cell = this.grid.getCellByColumn(this.rowIndex, this.grid.visibleColumns[this.colIndex].field);
+            cell = this.grid.gridAPI.get_cell_by_index(this.rowIndex, this.grid.visibleColumns[this.colIndex].field);
         }
 
         if (!cell) {

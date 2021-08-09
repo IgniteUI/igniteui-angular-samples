@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IComboSelectionChangeEventArgs } from 'igniteui-angular';
+import { IComboSelectionChangingEventArgs } from 'igniteui-angular';
 import { localData } from './local-data';
 
 @Component({
@@ -15,7 +15,7 @@ export class ComboSingleSelectionComponent implements OnInit {
         this.lData = localData;
     }
 
-    public singleSelection(event: IComboSelectionChangeEventArgs) {
+    public singleSelection(event: IComboSelectionChangingEventArgs) {
       if (event.added.length) {
         event.newSelection = event.added;
       }

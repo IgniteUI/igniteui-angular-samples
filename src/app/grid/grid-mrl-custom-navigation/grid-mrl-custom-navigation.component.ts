@@ -19,8 +19,8 @@ export class GridMRLCustomNavigationComponent {
         if (args.event.key.toLowerCase() === 'enter') {
             args.event.preventDefault();
             args.cancel = true;
-            const rowIndex = target.rowIndex === undefined ? target.index : target.rowIndex;
-            this.grid.navigateTo(args.event.shiftKey ? rowIndex - 1 : rowIndex + 1, target.visibleColumnIndex,
+            const rowIndex = target.row.index === undefined ? target.index : target.row.index;
+            this.grid.navigateTo(args.event.shiftKey ? rowIndex - 1 : rowIndex + 1, target.column.visibleIndex,
                  (obj) => {
                     obj.target.activate();
                 });

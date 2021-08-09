@@ -1,0 +1,29 @@
+$ep-sample-border: 1px solid rgba(174, 174, 174, 0.25);
+
+.sample-wrapper {
+    overflow-y: auto;
+    max-height: 530px;
+    margin: 8px;
+}
+
+igx-expansion-panel-body {
+    padding: 16px;
+}
+
+igx-slider {
+    margin: 24px;
+}
+
+.categories-container {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+igx-checkbox,
+igx-radio {
+    margin: 4px 0;
+}
+
+igx-expansion-panel {
+    border: $ep-sample-border;
+}
