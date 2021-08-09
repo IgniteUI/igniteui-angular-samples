@@ -51,8 +51,8 @@ export class GridDragSampleComponent {
 
     public onDrop(args, planet: PlanetComponent) {
         const row: any = args.dragData;
-        if (this.isDropAllowed(row.rowData.name, planet.name)) {
-            row.rowData.planet = planet.name;
+        if (this.isDropAllowed(row.data.name, planet.name)) {
+            row.data.planet = planet.name;
             row.grid.selectRows([row.rowID]);
 
             planet.moonsCount++;

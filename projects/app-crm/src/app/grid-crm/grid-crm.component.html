@@ -21,9 +21,9 @@
                                 <igx-icon class="prefixIcon" *ngIf="searchText.length > 0" (click)="clearSearch()">clear
                                 </igx-icon>
                             </igx-prefix>
-    
+
                             <input #search1 name="search" id="search1" class="searchInput" igxInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="grid1.findNext(searchText, caseSensitive)" (keydown)="searchKeyDown($event)" />
-    
+
                             <igx-suffix *ngIf="searchText.length > 0">
                                 <div class="resultsText" *ngIf="grid1.lastSearchInfo">
                                     <span *ngIf="grid1.lastSearchInfo.matchInfoCache.length > 0">

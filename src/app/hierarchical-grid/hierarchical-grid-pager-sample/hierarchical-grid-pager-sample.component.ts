@@ -15,8 +15,6 @@ export class HierarchicalGridPagerSampleComponent implements OnInit, AfterViewIn
     public densityOptions: string[];
     public isDropdownHidden = false;
     public isPagerHidden = false;
-    public isDropdownDisabled = false;
-    public isPagerDisabled = false;
     public selectOptions = [5, 15, 20, 50];
 
     private paginatorResourceStrings: IPaginatorResourceStrings = {

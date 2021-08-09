@@ -1,0 +1,36 @@
+<div class="sample-column">
+    <div class="card-wrapper">
+        <ng-container *ngFor="let product of data">
+            <igx-card>
+                <igx-card-media height="300px">
+                    <img [src]="product.ImageURL">
+                </igx-card-media>
+
+                <igx-card-header>
+                    <h4 igxCardHeaderTitle>{{ product.ProductName }}</h4>
+                </igx-card-header>
+
+                <igx-card-content>
+                    <h5 igxCardHeaderSubtitle>Price: {{ product.UnitPrice | currency:'USD' }}</h5>
+                </igx-card-content>
+
+                <igx-card-actions>
+                    <button igxButton="outlined" igxRipple> Buy now</button>
+                    <button igxButton="icon"
+                        igxRipple
+                        igxRippleCentered="true"
+                        *ngFor="let icon of product.icons">
+                        <igx-icon color="#ECAA53">{{icon}}</igx-icon>
+                    </button>
+                </igx-card-actions>
+            </igx-card>
+        </ng-container>
+    </div>
+    <igx-paginator #paginator
+        [perPage]="4"
+        [selectOptions]="itemsPerPage"
+        [totalRecords]="productData.length"
+        (perPageChange)="navigateToFirstPage()">
+    </igx-paginator>
+</div>
+

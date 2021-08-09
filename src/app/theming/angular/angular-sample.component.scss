@@ -1,10 +1,11 @@
+@use '~@angular/material' as mat;
 @import "../../../variables";
 @import "~@angular/material/theming";
 
-// $custom-typography: mat-typography-config(
-//     $font-family: $material-typeface,
-//     $button: mat-typography-level(14px, $font-weight: 600)
-// );
+$custom-typography: mat.define-typography-config(
+    $font-family: $material-typeface,
+    $button: mat.define-typography-level(14px, $font-weight: 600)
+);
 
 $saturations: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700);
 
@@ -37,13 +38,13 @@ $custom-dark-palette: igx-palette(
     $surface: #222,
 );
 
-$light-palette-primary: mat-palette(material-like-palette('primary', $saturations, $igx-light-palette));
-$light-palette-accent: mat-palette(material-like-palette('secondary', $saturations, $igx-light-palette));
-$custom-mat-light-theme: mat-light-theme($light-palette-primary, $light-palette-accent);
+$light-palette-primary: mat.define-palette(material-like-palette('primary', $saturations, $igx-light-palette));
+$light-palette-accent: mat.define-palette(material-like-palette('secondary', $saturations, $igx-light-palette));
+$custom-mat-light-theme: mat.define-light-theme($light-palette-primary, $light-palette-accent);
 
-$dark-palette-primary: mat-palette(material-like-palette('primary', $saturations, $custom-dark-palette));
-$dark-palette-accent: mat-palette(material-like-palette('secondary', $saturations, $custom-dark-palette));
-$custom-mat-dark-theme: mat-dark-theme($dark-palette-primary, $dark-palette-accent);
+$dark-palette-primary: mat.define-palette(material-like-palette('primary', $saturations, $custom-dark-palette));
+$dark-palette-accent: mat.define-palette(material-like-palette('secondary', $saturations, $custom-dark-palette));
+$custom-mat-dark-theme: mat.define-dark-theme($dark-palette-primary, $dark-palette-accent);
 
 .navbar-brand {
     margin-right: 16px;
@@ -176,12 +177,12 @@ igx-expansion-panel-body {
 }
 
 ::ng-deep {
-    // @include mat-core($custom-typography);
+    @include mat.core($custom-typography);
     @include igx-theme($igx-light-palette, $legacy-support: true);
-    // @include angular-material-theme($custom-mat-light-theme);
+    @include mat.all-component-themes($custom-mat-light-theme);
 
     .dark {
         @include igx-dark-theme($custom-dark-palette, $legacy-support: true);
-        // @include angular-material-theme($custom-mat-dark-theme);
+        @include mat.all-component-themes($custom-mat-dark-theme);
     }
 }

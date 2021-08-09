@@ -38,8 +38,11 @@ import * as ThemingRouting from '../src/app/theming/theming-routing.module';
 import { ThemingModule } from '../src/app/theming/theming.module';
 import * as TreeGridRouting from '../src/app/tree-grid/tree-grid-routing.module';
 import { TreeGridModule } from '../src/app/tree-grid/tree-grid.module';
+// eslint-disable-next-line max-len
 import * as GridFinJSDockManagerRoutingModule from '../projects/app-lob/src/app/grid-finjs-dock-manager/grid-finjs-dock-manager-routing.module';
 import { GridFinJSDockManagerModule } from '../projects/app-lob/src/app/grid-finjs-dock-manager/grid-finjs-dock-manager.module';
+import { PaginationModule } from '../src/app/pagination/pagination.module';
+import * as PaginatorRouting from '../src/app/pagination/pagination-routing.module';
 
 export const MODULE_ROUTES = [
     {
@@ -106,6 +109,11 @@ export const MODULE_ROUTES = [
         module: ServicesModule,
         path: 'services',
         routes: ServicesRouting.servicesRoutes
+    },
+    {
+        module: PaginationModule,
+        path: 'pagination',
+        routes: PaginatorRouting.paginatorRoutes
     }
 ];
 

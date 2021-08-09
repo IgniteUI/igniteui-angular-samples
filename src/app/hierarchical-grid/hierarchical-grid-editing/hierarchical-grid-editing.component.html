@@ -12,7 +12,7 @@
         [hasSummary]="true" [summaries]="mySummary"></igx-column>
     <igx-column [width]="'100px'">
         <ng-template igxCell let-cell="cell">
-            <button igxButton="icon" (click)="removeRow(cell.cellID.rowIndex)">
+            <button igxButton="icon" (click)="removeRow(cell.id.rowIndex)">
                 <igx-icon>delete</igx-icon>
             </button>
         </ng-template>
@@ -32,7 +32,7 @@
     </igx-row-island>
 </igx-hierarchical-grid>
 <igx-dialog #dialogAdd title="New Singer" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'"
-(onLeftButtonSelect)="cancel()" (onRightButtonSelect)="addRow()">
+(leftButtonSelect)="cancel()" (rightButtonSelect)="addRow()">
 <div class="dialogNewRecord">
     <igx-input-group>
         <label igxLabel for="artist">Artist</label>
