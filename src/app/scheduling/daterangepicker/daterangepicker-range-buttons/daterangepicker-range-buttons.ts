@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { DateRange, IgxDateRangePickerComponent } from 'igniteui-angular';
+import { DateRange, IgxDateRangePickerComponent, OverlaySettings } from 'igniteui-angular';
 
 @Component({
     selector: 'app-rangdatepicker-range-buttons',
@@ -7,7 +7,7 @@ import { DateRange, IgxDateRangePickerComponent } from 'igniteui-angular';
     templateUrl: './daterangepicker-range-buttons.html'
 })
 export class DateRangePickerRangeButtonsComponent {
-    @ViewChild('rangePicker', { static: true })
+    @ViewChild('rangePicker')
     public dateRangePicker: IgxDateRangePickerComponent;
 
     public range: DateRange = {
@@ -15,10 +15,15 @@ export class DateRangePickerRangeButtonsComponent {
         end: new Date(new Date().setDate(new Date().getDate() + 2))
     };
 
-    constructor(public element: ElementRef) { }
+    public overlaySettings: OverlaySettings = {
+        outlet: this.element,
+        modal: true
+    };
+
+    constructor(private element: ElementRef) { }
 
     public selectDays(count: number) {
-        let today: Date = new Date();
+        const today: Date = new Date();
         this.range = {
             start: new Date(new Date().setDate(today.getDate() - count + 1)),
             end: today

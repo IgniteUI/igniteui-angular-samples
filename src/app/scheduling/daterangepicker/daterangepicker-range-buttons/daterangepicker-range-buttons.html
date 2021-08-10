@@ -1,5 +1,5 @@
 <igx-date-range-picker #rangePicker [mode]="'dialog'" [(ngModel)]="range"
-    [overlaySettings]="{ outlet: element, modal: true }">
+    [overlaySettings]="overlaySettings">
     <ng-template igxPickerActions>
         <div id="actions">
             <button igxButton (click)="selectDays(7)">Last 7 days</button>
