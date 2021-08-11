@@ -29,12 +29,7 @@
                         "buildOptimizer": false,
                         "optimization": false,
                         "namedChunks": true,
-                        "sourceMap": {
-                            "scripts": false,
-                            "styles": false,
-                            "hidden": false,
-                            "vendor": false
-                        },
+                        "sourceMap": true,
                         "progress": true
                     },
                     "configurations": {
