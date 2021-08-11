@@ -59,8 +59,16 @@ export class CRUDSampleComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     public rowDeleted(event: IRowDataEventArgs) {
-        this._crudService.delete(event.data).subscribe((rec) => {
-            this.snackbar.open(`Row with ID of ${rec.ID} was deleted.`);
+        this._crudService.delete(event.data).subscribe({
+            next: (data: any) => {
+                this.snackbar.open(`Row with ID of ${data.ID} was deleted.`);
+            },
+            error: err => {
+                console.log(err);
+            },
+            complete: () => {
+                console.log('Complete notification');
+            }
         });
     }
 
