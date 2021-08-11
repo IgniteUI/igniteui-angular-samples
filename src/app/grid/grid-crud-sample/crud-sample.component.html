@@ -1,0 +1,86 @@
+<div class="grid__wrapper">
+    <igx-grid igxPreventDocumentScroll #grid
+        [data]="data"
+        primaryKey="ID"
+        [isLoading]="true"
+        [height]="'370px'" [width]="'100%'"
+        [autoGenerate]='false'
+        [allowFiltering]="false"
+        [pagingMode]="mode"
+        [totalRecords]="totalCount"
+        [rowEditable]="true"
+        (rowAdded)="rowAdded($event)"
+        (rowDeleted)="rowDeleted($event)"
+        (rowEditDone)="rowEditDone($event)"
+        >
+
+        <igx-paginator #paginator
+            [totalRecords]="totalCount"
+            [(page)]="page"
+            [(perPage)]="perPage"
+            [selectOptions]="selectOptions"
+            [displayDensity]="grid.displayDensity"
+            (pageChange)="paginate($event)"
+            (perPageChange)="perPageChange($event)">
+        </igx-paginator>
+        <!-- <igx-grid-toolbar>
+            <button igxButton="flat" (click)="dialogAdd.open()" class="addProdBtn"><igx-icon>add</igx-icon> Add Product</button>
+        </igx-grid-toolbar> -->
+
+        <!-- <igx-column width="100px" [filterable]="false">
+            <ng-template igxCell let-cell="cell">
+                <button igxButton="icon" (click)="removeRow(cell.row)">
+                    <igx-icon>delete</igx-icon>
+                </button>
+            </ng-template>
+        </igx-column> -->
+        <igx-column field="ID" header="ID" [dataType]="'number'" [sortable]="false">
+        </igx-column>
+        <!-- <igx-column field="CustomerName" header="Customer Name" [dataType]="'string'" [sortable]="false" [hasSummary]="false">
+        </igx-column>
+        <igx-column field="Country" header="Country" [dataType]="'string'" [sortable]="false" [hasSummary]="false">
+        </igx-column>
+        <igx-column field="City" header="City" [dataType]="'string'" [sortable]="false" [hasSummary]="false">
+        </igx-column>
+        <igx-column field="Address" header="Address" [dataType]="'string'" [sortable]="false" [hasSummary]="false">
+        </igx-column>
+        <igx-column field="PostalCode" header="Postal Code" [dataType]="'string'" [sortable]="false" [hasSummary]="false">
+        </igx-column>
+        <igx-column field="Salesperson" header="Sales Person" [dataType]="'string'" [sortable]="false" [hasSummary]="false">
+        </igx-column>
+        <igx-column field="ShipperName" header="Shipper Name" [dataType]="'string'" [sortable]="false" [hasSummary]="false">
+        </igx-column> -->
+        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [sortable]="false" [hasSummary]="false">
+            <ng-template igxCell let-cell="cell" let-val>
+                {{val | date:'dd/MM/yyyy'}}
+            </ng-template>
+        </igx-column>
+        <igx-column field="ProductName" header="Name" [dataType]="'string'" [sortable]="false" [hasSummary]="false"
+            [filterable]="false">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Unit Price" dataType="number" [sortable]="false" [hasSummary]="false"
+             [filterable]="false">
+        </igx-column>
+        <igx-column field="Quantity" header="Quantity" dataType="number" [sortable]="false" [hasSummary]="false"
+            [filterable]="false">
+        </igx-column>
+        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [sortable]="false" [hasSummary]="false">
+        </igx-column>
+        <igx-column field="ShipName" header="Name" [dataType]="'string'" [sortable]="false" [hasSummary]="false">
+        </igx-column>
+        <igx-column field="ShipCountry" header="Country" [dataType]="'string'" [sortable]="false" [hasSummary]="false">
+        </igx-column>
+        <igx-column field="ShipCity" header="City" [dataType]="'string'" [sortable]="false" [hasSummary]="false">
+        </igx-column>
+        <igx-column field="ShipPostalCode" header="Postal Code" [dataType]="'string'" [sortable]="false"
+            [hasSummary]="false">
+        </igx-column>
+
+        <igx-action-strip #actionstrip>
+            <igx-grid-editing-actions [addRow]="true"></igx-grid-editing-actions>
+        </igx-action-strip>
+    </igx-grid>
+    <div>
+        <igx-snackbar #snackbar [outlet]="grid"></igx-snackbar>
+    </div>
+</div>
