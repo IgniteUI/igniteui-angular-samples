@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
-import { GridPagingMode, IGridEditDoneEventArgs, IgxGridComponent, IgxGridRow,
+import { GridPagingMode, IGridEditDoneEventArgs, IGridEditEventArgs, IgxGridComponent, IgxGridRow,
     IgxSnackbarComponent,
     IRowDataEventArgs,
     NoopFilteringStrategy, NoopSortingStrategy } from 'igniteui-angular';
@@ -59,6 +59,7 @@ export class CRUDSampleComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     public rowDeleted(event: IRowDataEventArgs) {
+        this.grid.isLoading = true;
         this._crudService.delete(event.data).subscribe({
             next: (data: any) => {
                 this.snackbar.open(`Row with ID of ${data.ID} was deleted.`);
@@ -67,19 +68,24 @@ export class CRUDSampleComponent implements OnInit, AfterViewInit, OnDestroy {
                 console.log(err);
             },
             complete: () => {
+                this.grid.isLoading = false;
                 console.log('Complete notification');
             }
         });
     }
 
     public rowEditDone(event: IGridEditDoneEventArgs) {
+        this.grid.isLoading = true;
         this._crudService.update(event.newValue).subscribe((rec) => {
+            this.grid.isLoading = false;
             this.snackbar.open(`Row with ID of ${rec.ID} was edited.`);
         });
     }
 
     public removeRow(row: IgxGridRow) {
+        this.grid.isLoading = true;
         this._crudService.delete(row.data).subscribe((rec) => {
+            this.grid.isLoading = false;
             this.snackbar.open(`Row with ID of ${rec.ID} was deleted.`);
         });
     }

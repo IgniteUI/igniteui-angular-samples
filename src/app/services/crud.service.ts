@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { Invoice, INVOICE_DATA } from '../data/invoiceData';
 
 @Injectable()
@@ -48,7 +49,7 @@ export class CRUDService {
             this.dataCollection.push(rec);
             observer.next(this.dataCollection);
             observer.complete();
-        });
+        }).pipe(delay(300));
 
         return data$;
     }
@@ -59,7 +60,7 @@ export class CRUDService {
             Object.assign(targetRec, rec);
             observer.next(rec);
             observer.complete();
-        });
+        }).pipe(delay(300));
 
         return data$;
     }
@@ -70,7 +71,7 @@ export class CRUDService {
             const deletedInstance = this.dataCollection.splice(ind, 1)[0];
             observer.next(deletedInstance);
             observer.complete();
-        });
+        }).pipe(delay(300));
 
         return data$;
     }
