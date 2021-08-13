@@ -117,6 +117,7 @@ import { GridSelectComponent } from './grid-select/grid-select-sample.component'
 import { GridFormattedFilteringStrategyComponent } from './grid-formatted-filtering-strategy/grid-formatted-filtering-strategy.component';
 import { GridSummaryFormatterComponent } from './grid-summary-formatter/grid-summary-formatter.component';
 import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-export/multi-column-headers-export.component';
+import { CRUDSampleComponent } from './grid-crud-sample/crud-sample.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -359,6 +360,11 @@ export const gridsRoutes: Routes = [
         component: RemoteFilteringSampleComponent,
         data: gridsRoutesData['grid-remote-filtering'],
         path: 'grid-remote-filtering'
+    },
+    {
+        component: CRUDSampleComponent,
+        data: gridsRoutesData['grid-crud'],
+        path: 'grid-crud'
     },
     {
         component: GridSelectionSampleComponent,
