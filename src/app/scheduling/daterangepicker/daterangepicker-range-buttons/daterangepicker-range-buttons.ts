@@ -28,7 +28,5 @@ export class DateRangePickerRangeButtonsComponent {
             start: new Date(new Date().setDate(today.getDate() - count + 1)),
             end: today
         };
-
-        this.dateRangePicker.close();
     }
 }
