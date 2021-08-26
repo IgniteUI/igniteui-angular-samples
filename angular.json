@@ -41,6 +41,7 @@
                                 }
                             ],
                             "optimization": true,
+                            "aot": true,
                             "outputHashing": "all",
                             "namedChunks": false,
                             "extractLicenses": true,
