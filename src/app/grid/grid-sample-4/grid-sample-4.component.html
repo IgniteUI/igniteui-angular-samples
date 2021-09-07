@@ -1,5 +1,5 @@
-<ng-template #cellTemplate igxCell let-val let-rowData="cell.row.rowData">
-    <div *ngIf="!rowData.emptyRec; else getDataLoadingTemplate()">
+<ng-template #cellTemplate igxCell let-val let-data="cell.row.data">
+    <div *ngIf="!data.emptyRec; else getDataLoadingTemplate()">
         {{ val }}
     </div>
 </ng-template>
@@ -24,7 +24,7 @@
                 <span class="cellAlignSyle">UnitsInStock</span>
             </ng-template>
             <ng-template igxCell let-val let-cell="cell">
-                <div *ngIf="!cell.row.rowData.emptyRec; else getDataLoadingTemplate()">
+                <div *ngIf="!cell.row.data.emptyRec; else getDataLoadingTemplate()">
                     <div class="currency-badge-container">
                         <igx-badge *ngIf="val>50" type="success" position="bottom-right" icon="arrow_upward" class="badge-left"></igx-badge>
                         <igx-badge *ngIf="val<=50" type="error" position="bottom-right" icon="arrow_downward" class="error badge-left"></igx-badge>
@@ -39,7 +39,7 @@
                 <span class="cellAlignSyle">ReorderLevel</span>
             </ng-template>
             <ng-template igxCell let-val let-cell="cell">
-                <div *ngIf="!cell.row.rowData.emptyRec; else getDataLoadingTemplate()">
+                <div *ngIf="!cell.row.data.emptyRec; else getDataLoadingTemplate()">
                     <div class="currency-badge-container">
                         <igx-badge *ngIf="val>20" type="success" position="bottom-right" icon="arrow_upward" class="badge-left"></igx-badge>
                         <igx-badge *ngIf="val<=20" type="error" position="bottom-right" icon="arrow_downward" class="error badge-left"></igx-badge>

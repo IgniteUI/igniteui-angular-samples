@@ -29,7 +29,6 @@ export class ReactiveFormsSampleComponent {
         this.genres = [
             { type: 'Action', movies: ['The Matrix', 'Kill Bill: Vol.1', 'The Dark Knight Rises'] },
             { type: 'Adventure', movies: ['Interstellar', 'Inglourious Basterds', 'Inception'] },
-            // tslint:disable-next-line:object-literal-sort-keys
             {
                 type: 'Comedy', movies: ['Wild Tales', 'In Bruges', 'Three Billboards Outside Ebbing, Missouri',
                     'Untouchable', '3 idiots']

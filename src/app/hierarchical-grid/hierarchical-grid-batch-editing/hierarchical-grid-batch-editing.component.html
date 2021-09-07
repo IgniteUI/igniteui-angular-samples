@@ -4,7 +4,7 @@
         [primaryKey]="'Artist'" [height]="'550px'" [width]="'100%'" [rowEditable]="true">
         <igx-column width="150px" [editable]="false">
             <ng-template igxCell let-cell="cell" let-val>
-                <button igxButton (click)="removeRow(cell.cellID.rowIndex)"
+                <button igxButton (click)="removeRow(cell.id.rowIndex)"
                     [disabled]="cell.row.deleted">Delete</button>
             </ng-template>
         </igx-column>
