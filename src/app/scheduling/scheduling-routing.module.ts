@@ -30,6 +30,7 @@ import { BasicDateRangePickerComponent } from './daterangepicker/daterangepicker
 import {
     FlightBookingComponent } from './daterangepicker/daterangepicker-flight-booking/daterangepicker-flight-booking';
 import { DateRangePickerModeComponent } from './daterangepicker/daterangepicker-mode/daterangepicker-mode';
+import { DateRangePickerRangeButtonsComponent } from './daterangepicker/daterangepicker-range-buttons/daterangepicker-range-buttons';
 import {
     DateRangePickerStartEndComponent } from './daterangepicker/daterangepicker-start-end/daterangepicker-start-end';
 import { StyledDateRangePickerComponent } from './daterangepicker/daterangepicker-styling/daterangepicker-styling';
@@ -258,6 +259,11 @@ export const schedulingRoutes: Routes = [
         component: StyledDateRangePickerComponent,
         data: schedulingRoutesData['styled-daterangepicker'],
         path: 'styled-daterangepicker'
+    },
+    {
+        component: DateRangePickerRangeButtonsComponent,
+        data: schedulingRoutesData['daterangepicker-range-buttons'],
+        path: 'daterangepicker-range-buttons'
     },
     {
         component: FlightBookingComponent,
