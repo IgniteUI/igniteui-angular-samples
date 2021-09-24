@@ -126,6 +126,7 @@ import { GridColumnDataTypesSampleComponent } from './grid-column-data-types-sam
 import { GridFormattedFilteringStrategyComponent } from './grid-formatted-filtering-strategy/grid-formatted-filtering-strategy.component';
 import { GridSummaryFormatterComponent } from './grid-summary-formatter/grid-summary-formatter.component';
 import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-export/multi-column-headers-export.component';
+import { CRUDSampleComponent } from './grid-crud-sample/crud-sample.component';
 
 @NgModule({
     declarations: [
@@ -153,6 +154,7 @@ import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-ex
         PagingSampleComponent,
         GridPasteSampleComponent,
         RemoteFilteringSampleComponent,
+        CRUDSampleComponent,
         RemotePagingGridSampleComponent,
         CustomRemotePagingGridSampleComponent,
         ResizingSampleComponent,

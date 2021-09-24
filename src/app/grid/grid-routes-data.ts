@@ -111,5 +111,6 @@ export const gridsRoutesData = {
     'grid-select': {displayName: 'Grid with Select as Editor Provider', parentName: 'Grid'},
     'grid-column-data-types': {displayName: 'Grid column data types', parentName: 'Grid'},
     'grid-formatted-filtering-strategy': { displayName: 'Grid Formatted Filtering Strategy', parentName: 'Grid' },
-    'grid-summary-formatter': { displayName: 'Grid Summary Formatter', parentName: 'Grid' }
+    'grid-summary-formatter': { displayName: 'Grid Summary Formatter', parentName: 'Grid' },
+    'grid-crud': { displayName: 'Grid CRUD Operations', parentName: 'Grid'}
 };

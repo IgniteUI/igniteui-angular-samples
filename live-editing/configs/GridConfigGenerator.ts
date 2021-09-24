@@ -47,7 +47,8 @@ export class GridConfigGenerator implements IConfigGenerator {
         RemoteFilteringService: '../../src/app/services/remoteFiltering.service',
         RemotePagingService: '../../src/app/services/remotePaging.service',
         RemoteServiceVirt: '../../src/app/services/remoteVirtualization.service',
-        FinancialDataService: '../../src/app/services/financial.service'
+        FinancialDataService: '../../src/app/services/financial.service',
+        CRUDService: '../../src/app/services/crud.service'
 };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -1286,6 +1287,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: ['GridSummaryFormatterComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridSummaryFormatterComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
+            })
+        }));
+
+        configs.push(new Config({
+            component: 'CRUDSampleComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/services/crud.service.ts',
+                '/src/app/data/invoiceData.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['CRUDSampleComponent', 'IgxActionStripModule', 'HttpClientModule', 'IgxGridModule', 'IgxPreventDocumentScrollModule', 'CRUDService'],
+                ngDeclarations: ['CRUDSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxActionStripModule', 'HttpClientModule'],
+                ngProviders: ['CRUDService']
             })
         }));
 
