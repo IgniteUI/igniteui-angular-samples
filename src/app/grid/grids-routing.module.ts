@@ -59,6 +59,7 @@ import { GridRowPinningExtraColumnSampleComponent } from './grid-row-pinning-ext
 import { GridRowPinningStylingSampleComponent } from './grid-row-pinning-styling/grid-row-pinning-styling.component';
 import { GridRowPinningSampleComponent } from './grid-row-pinning/grid-row-pinning.component';
 import { GridRowReorderComponent } from './grid-row-reorder-sample/grid-row-reorder';
+import { GridDropIndicatorComponent } from './grid-drop-indicator/grid-drop-indicator';
 import { FinancialSampleComponent } from './grid-sample-2/grid-sample-2.component';
 import { GridSample3Component } from './grid-sample-3/grid-sample-3.component';
 import { GridRemoteVirtualizationSampleComponent } from './grid-sample-4/grid-sample-4.component';
@@ -115,6 +116,8 @@ import { GridExportVisualizationComponent } from './grid-export-visualization/gr
 import { GridSelectComponent } from './grid-select/grid-select-sample.component';
 import { GridFormattedFilteringStrategyComponent } from './grid-formatted-filtering-strategy/grid-formatted-filtering-strategy.component';
 import { GridSummaryFormatterComponent } from './grid-summary-formatter/grid-summary-formatter.component';
+import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-export/multi-column-headers-export.component';
+import { CRUDSampleComponent } from './grid-crud-sample/crud-sample.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -207,6 +210,11 @@ export const gridsRoutes: Routes = [
         component: GridRowReorderComponent,
         data: gridsRoutesData['grid-row-reorder'],
         path: 'grid-row-reorder'
+    },
+    {
+        component: GridDropIndicatorComponent,
+        data: gridsRoutesData['grid-drop-indicator'],
+        path: 'grid-drop-indicator'
     },
     {
         component: GridRowPinningSampleComponent,
@@ -354,6 +362,11 @@ export const gridsRoutes: Routes = [
         path: 'grid-remote-filtering'
     },
     {
+        component: CRUDSampleComponent,
+        data: gridsRoutesData['grid-crud'],
+        path: 'grid-crud'
+    },
+    {
         component: GridSelectionSampleComponent,
         data: gridsRoutesData['grid-selection'],
         path: 'grid-selection'
@@ -432,6 +445,11 @@ export const gridsRoutes: Routes = [
         component: GridMultiColumnHeadersStylingComponent,
         data: gridsRoutesData['multi-column-headers-styling'],
         path: 'multi-column-headers-styling'
+    },
+    {
+        component: GridMultiColumnHeadersExportComponent,
+        data: gridsRoutesData['multi-column-headers-export'],
+        path: 'multi-column-headers-export'
     },
     {
         component: RemotePagingGridSampleComponent,

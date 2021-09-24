@@ -121,7 +121,7 @@
         </div>
 
         <igx-dialog #resultDialog title="Result"
-            leftButtonLabel="Copy" (onLeftButtonSelect)="copyToClipboard()" rightButtonLabel="Close" (onRightButtonSelect)="resultDialog.close()"
+            leftButtonLabel="Copy" (leftButtonSelect)="copyToClipboard()" rightButtonLabel="Close" (rightButtonSelect)="resultDialog.close()"
             backgroundClick="true" [closeOnOutsideSelect]="true">
             <div class="login-form">
                 <textarea #textArea rows="20" cols="120" readonly style="margin: 10px; margin-top: 0px;">{{jsonCollection}}</textarea>

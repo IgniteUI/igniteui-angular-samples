@@ -23,10 +23,7 @@ import {
     OverlaySettings,
     PositionSettings,
     VerticalAlignment,
-    IgxGridCellComponent,
-    IgxTreeGridCellComponent,
-    IgxGridExpandableCellComponent,
-    IgxHierarchicalGridCellComponent
+    CellType
 } from 'igniteui-angular';
 import { data } from './data';
 
@@ -156,12 +153,8 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         this.toggleRefHiding.toggle(this._overlaySettings);
     }
 
-    public getPhoto(cell: IgxGridCellComponent) {
-        const cell2 = cell as IgxTreeGridCellComponent;
-        const cell3 = cell as IgxHierarchicalGridCellComponent;
-        const cell4 = cell as IgxGridExpandableCellComponent;
-        const cells = this.grid1.gridAPI.get_row_by_index(1).cells.toArray() as IgxGridCellComponent[];
-        return cell.row.rowData.avatar;
+    public getPhoto(cell: CellType) {
+        return cell.row.data.avatar;
     }
 
     public togglePinning() {

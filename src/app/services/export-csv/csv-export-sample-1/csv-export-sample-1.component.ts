@@ -23,7 +23,6 @@ export class CsvExportSample1Component {
   constructor(private csvExportService: IgxCsvExporterService) {
   }
 
-  public exportButtonHandler() {
     /*
     The following code demonstrates how to attach event handlers to exporter specific events
     and also how to customize the column export process.
@@ -37,7 +36,5 @@ export class CsvExportSample1Component {
     this.csvExportService.exportEnded.subscribe((args: ICsvExportEndedEventArgs) => {
     });
     */
-    this.csvExportService.export(this.igxGrid1, new IgxCsvExporterOptions('ExportFileFromGrid', CsvFileTypes.CSV));
-  }
 
 }

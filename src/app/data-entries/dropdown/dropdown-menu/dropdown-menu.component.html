@@ -4,7 +4,7 @@
             igxButton="icon">
             <igx-icon family="material">more_vert</igx-icon>
         </button>
-        <igx-drop-down #menu (onSelection)="onSelection($event)">
+        <igx-drop-down #menu (selectionChanging)="onSelection($event)">
             <igx-drop-down-item *ngFor="let item of items" [value]="item.text">
                 <div>
                     {{ item.text }}

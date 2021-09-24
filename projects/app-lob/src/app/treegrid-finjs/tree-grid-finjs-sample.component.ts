@@ -1,11 +1,10 @@
-import { AfterViewInit, Component, ElementRef, OnInit, OnDestroy, ViewChild, HostBinding } from '@angular/core';
+import { Component, ElementRef, OnInit, OnDestroy, ViewChild, HostBinding } from '@angular/core';
 import {
-    AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
-    IgxButtonGroupComponent, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
-    PositionSettings, SortingDirection, VerticalAlignment
+    AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment,
+    IGroupingExpression, IgxButtonGroupComponent, IgxGroupedTreeGridSorting, IgxOverlayOutletDirective, IgxSliderComponent,
+    IgxTreeGridComponent, ITreeGridAggregation, OverlaySettings, PositionSettings, VerticalAlignment
 } from 'igniteui-angular';
 import { Contract, REGIONS } from '../data/financialData';
-import { ITreeGridAggregation } from './tree-grid-grouping.pipe';
 import { SignalRService } from '../services/signal-r.service';
 
 @Component({
@@ -15,7 +14,7 @@ import { SignalRService } from '../services/signal-r.service';
     templateUrl: './tree-grid-finjs-sample.component.html'
 })
 
-export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy, OnInit {
+export class TreeGridFinJSComponent implements OnDestroy, OnInit {
     @ViewChild('grid1', { static: true }) public grid1: IgxTreeGridComponent;
     @ViewChild('buttonGroup1', { static: true }) public buttonGroup1: IgxButtonGroupComponent;
     @ViewChild('slider1', { static: true }) public volumeSlider: IgxSliderComponent;
@@ -47,7 +46,11 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy, OnInit 
             selected: false
         }
     ];
-    public groupColumns = ['category', 'type', 'contract'];
+    public groupingExpressions: IGroupingExpression[] = [
+        { fieldName: 'category', dir: 2, ignoreCase: true, strategy: DefaultSortingStrategy.instance() },
+        { fieldName: 'type', dir: 1, ignoreCase: true, strategy: DefaultSortingStrategy.instance() },
+        { fieldName: 'contract', dir: 1, ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
+    ];
     public aggregations: ITreeGridAggregation[] = [
         {
             aggregate: (parent: any, data: any[]) => data.map((r) => r.change).reduce((ty, u) => ty + u, 0),
@@ -62,9 +65,10 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy, OnInit 
             field: 'changeP'
         }
     ];
-    public primaryKey = 'id';
+
     public childDataKey = 'children';
     public groupColumnKey = 'categories';
+    public sorting = IgxGroupedTreeGridSorting.instance();
 
     public items: any[] = [{ field: 'Export native' }, { field: 'Export JS Excel' }];
 
@@ -104,17 +108,6 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy, OnInit 
 
     public ngOnInit() {
         this.overlaySettings.outlet = this.outlet;
-        this.grid1.sortingExpressions = [{ fieldName: this.groupColumnKey, dir: SortingDirection.Desc }];
-    }
-
-    public ngAfterViewInit() {
-        this.groupColumns.forEach(col => {
-            const column = this.grid1.getColumnByName(col);
-            if (column) {
-                column.hidden = !column.hidden;
-            }
-        });
-        this.grid1.reflow();
     }
 
     public onButtonAction(event: any) {

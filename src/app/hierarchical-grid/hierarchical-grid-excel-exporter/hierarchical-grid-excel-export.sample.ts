@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxColumnComponent, IgxExcelExporterOptions, IgxExcelExporterService, IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { IgxColumnComponent, IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { Singer, SINGERS } from '../../data/artistData';
 
 @Component({
@@ -15,7 +15,7 @@ export class HGridExcelExportSampleComponent {
     public pWidth: string;
     public nWidth: string;
 
-    constructor(private excelExportService: IgxExcelExporterService) {
+    constructor() {
         this.data = SINGERS;
     }
 
@@ -26,8 +26,4 @@ export class HGridExcelExportSampleComponent {
     }
 
     public formatter = (a) => a;
-
-    public exportButtonHandler() {
-        this.excelExportService.export(this.igxGrid1, new IgxExcelExporterOptions('ExportFileFromHGrid'));
-    }
 }
