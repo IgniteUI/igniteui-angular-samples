@@ -14,6 +14,7 @@ import localeHU from '@angular/common/locales/hu';
 import localeIT from '@angular/common/locales/it';
 import localeJA from '@angular/common/locales/ja';
 import localeKO from '@angular/common/locales/ko';
+import localeNB from '@angular/common/locales/nb';
 import localeNL from '@angular/common/locales/nl';
 import localePL from '@angular/common/locales/pl';
 import localePT from '@angular/common/locales/pt';
@@ -28,7 +29,7 @@ import { IgxGridComponent, IResourceStrings, changei18n, getCurrentResourceStrin
 import {
     IgxResourceStringsBG, IgxResourceStringsCS, IgxResourceStringsDA, IgxResourceStringsDE,
     IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsHU, IgxResourceStringsIT,
-    IgxResourceStringsJA, IgxResourceStringsKO, IgxResourceStringsNL, IgxResourceStringsPL,
+    IgxResourceStringsJA, IgxResourceStringsKO, IgxResourceStringsNB, IgxResourceStringsNL, IgxResourceStringsPL,
     IgxResourceStringsPT, IgxResourceStringsRO, IgxResourceStringsSV, IgxResourceStringsTR,
     IgxResourceStringsZHHANS, IgxResourceStringsZHHANT
 } from 'igniteui-angular-i18n';
@@ -46,7 +47,8 @@ export class LocalizationAllResourcesComponent implements OnInit, OnDestroy {
     public locale: string;
     public locales: { type: string, resource: object }[];
     public selectLocales = [
-        'HI', 'BG', 'CS', 'DA', 'DE', 'EN', 'ES', 'FR', 'HU', 'IT', 'JA', 'KO', 'NL', 'PL', 'PT', 'RO', 'SV', 'TR', 'zh-Hans', 'zh-Hant'
+        'HI', 'BG', 'CS', 'DA', 'DE', 'EN', 'ES', 'FR', 'HU', 'IT', 'JA', 'KO', 'NB', 'NL',
+        'PL', 'PT', 'RO', 'SV', 'TR', 'zh-Hans', 'zh-Hant'
     ];
     public cashedLocalizationEN: IResourceStrings;
     public partialCustomHindi: IResourceStrings;
@@ -64,6 +66,7 @@ export class LocalizationAllResourcesComponent implements OnInit, OnDestroy {
         registerLocaleData(localeIT);
         registerLocaleData(localeJA);
         registerLocaleData(localeKO);
+        registerLocaleData(localeNB);
         registerLocaleData(localeNL);
         registerLocaleData(localePL);
         registerLocaleData(localePT);
@@ -99,6 +102,7 @@ export class LocalizationAllResourcesComponent implements OnInit, OnDestroy {
             { type: 'KO', resource: IgxResourceStringsKO },
             { type: 'EN', resource: this.cashedLocalizationEN },
             { type: 'HI', resource: this.partialCustomHindi },
+            { type: 'NB', resource: IgxResourceStringsNB },
             { type: 'NL', resource: IgxResourceStringsNL },
             { type: 'PL', resource: IgxResourceStringsPL },
             { type: 'PT', resource: IgxResourceStringsPT },
