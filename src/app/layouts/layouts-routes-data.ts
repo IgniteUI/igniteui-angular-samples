@@ -32,6 +32,7 @@ export const layoutsRoutesData = {
     'splitter-horizontal-sample': { displayName: 'Splitter Horizontal', parentName: 'Splitter' },
     'splitter-nested-sample': { displayName: 'Splitter Nested Panes', parentName: 'Splitter' },
     'splitter-styling-sample': { displayName: 'Splitter Styling', parentName: 'Splitter' },
+    'stepper-sample-1': { displayName: 'Stepper 1', parentName: 'Stepper' },
     'tabbar-sample-1': { displayName: 'Bottom Navigation Simple Panels', parentName: 'Bottom Navigation' },
     'tabbar-sample-2': { displayName: 'Bottom Navigation Customizing Panels', parentName: 'Bottom Navigation' },
     'tabbar-sample-3': { displayName: 'Bottom Navigation Routing', parentName: 'Bottom Navigation' },

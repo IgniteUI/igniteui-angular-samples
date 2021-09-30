@@ -24,6 +24,7 @@ import {
     IgxSelectModule,
     IgxSliderModule,
     IgxSplitterModule,
+    IgxStepperModule,
     IgxSwitchModule,
     IgxTabsModule,
     IgxTimePickerModule,
@@ -86,6 +87,7 @@ import { TabsHeaderPrefixSuffixComponent } from './tabs/tabs-header-prefix-suffi
 import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
 import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
 import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
+import { StepperSample1Component } from './stepper/stepper-sample-1/stepper-sample-1.component';
 
 @NgModule({
     declarations: [
@@ -129,6 +131,7 @@ import { AccordionSample3Component } from './accordion/accordion-sample-3/accord
         SplitterHorizontalSampleComponent,
         SplitterNestedSampleComponent,
         SplitterStylingSampleComponent,
+        StepperSample1Component,
         TabbarSample1Component,
         TabbarSample2Component,
         TabbarSample3Component,
@@ -171,6 +174,7 @@ import { AccordionSample3Component } from './accordion/accordion-sample-3/accord
         IgxSelectModule,
         IgxSliderModule,
         IgxSplitterModule,
+        IgxStepperModule,
         IgxSwitchModule,
         IgxTabsModule,
         IgxTimePickerModule,

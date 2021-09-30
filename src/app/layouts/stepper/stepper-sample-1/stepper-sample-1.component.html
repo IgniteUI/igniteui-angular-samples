@@ -1,0 +1,45 @@
+<igx-stepper #stepper [orientation]="'Horizontal'">
+    <igx-step [active]="true">
+        <span igxStepTitle>Alternatives</span>
+        <div igxStepContent>
+            <button igxButton="raised" (click)="stepper.next()">NEXT
+            </button>
+        </div>
+    </igx-step>
+    <igx-step>
+        <span igxStepTitle>Input</span>
+        <div igxStepContent>
+            <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
+            </button>
+            <button igxButton="raised" (click)="stepper.next()">NEXT
+            </button>
+        </div>
+    </igx-step>
+    <igx-step>
+        <span igxStepTitle>Specification</span>
+        <div igxStepContent>
+            <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
+            </button>
+            <button igxButton="raised" (click)="stepper.next()">NEXT
+            </button>
+        </div>
+    </igx-step>
+    <igx-step>
+        <span igxStepTitle>Indexes</span>
+        <div igxStepContent>
+            <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
+            </button>
+            <button igxButton="raised" (click)="stepper.next()">NEXT
+            </button>
+        </div>
+    </igx-step>
+    <igx-step>
+        <span igxStepTitle>Output Summary</span>
+        <div igxStepContent>
+            <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
+            </button>
+            <button igxButton="raised" (click)="stepper.next()">RESET
+            </button>
+        </div>
+    </igx-step>
+</igx-stepper>
