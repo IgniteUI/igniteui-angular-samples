@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
     templateUrl: './stepper-sample-1.component.html'
 })
 export class StepperSample1Component {
-    public singleBranchExpand = false;
 }

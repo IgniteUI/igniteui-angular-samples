@@ -88,6 +88,7 @@ import { AccordionSample1Component } from './accordion/accordion-sample-1/accord
 import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
 import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
 import { StepperSample1Component } from './stepper/stepper-sample-1/stepper-sample-1.component';
+import { StepperSample2Component } from './stepper/stepper-sample-2/stepper-sample-2.component';
 
 @NgModule({
     declarations: [
@@ -132,6 +133,7 @@ import { StepperSample1Component } from './stepper/stepper-sample-1/stepper-samp
         SplitterNestedSampleComponent,
         SplitterStylingSampleComponent,
         StepperSample1Component,
+        StepperSample2Component,
         TabbarSample1Component,
         TabbarSample2Component,
         TabbarSample3Component,

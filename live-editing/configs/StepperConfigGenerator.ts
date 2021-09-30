@@ -22,15 +22,16 @@ export class StepperConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: '/layouts/stepper/'
         }));
 
-        // configs.push(new Config({
-        //     component: 'AccordionSample2Component',
-        //     appModuleConfig: new AppModuleConfig({
-        //         imports: ['AccordionSample2Component', 'IgxAccordionModule'],
-        //         ngDeclarations: ['AccordionSample2Component'],
-        //         ngImports: ['IgxAccordionModule']
-        //     }),
-        //     shortenComponentPathBy: '/layouts/accordion/'
-        // }));
+        configs.push(new Config({
+            component: 'StepperSample2Component',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['StepperSample2Component', 'IgxStepperModule'],
+                // TODO: add required modules
+                ngDeclarations: ['StepperSample2Component'],
+                ngImports: ['IgxStepperModule']
+            }),
+            shortenComponentPathBy: '/layouts/stepper/'
+        }));
 
         // configs.push(new Config({
         //     component: 'AccordionSample3Component',
