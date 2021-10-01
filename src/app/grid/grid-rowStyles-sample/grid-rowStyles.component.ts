@@ -1,5 +1,4 @@
-import { Component, Injectable, ViewChild, OnInit } from '@angular/core';
-
+import { Component, ViewChild } from '@angular/core';
 import { IgxGridComponent, RowType } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';

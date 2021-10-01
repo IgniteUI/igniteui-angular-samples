@@ -1,11 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
-    ConnectedPositioningStrategy,
-    HorizontalAlignment,
     IgxGridComponent,
-    OverlaySettings,
-    RowType,
-    VerticalAlignment
+    RowType
 } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
@@ -17,17 +13,6 @@ import { DATA } from '../../data/nwindData';
 export class GridRowClassesComponent implements OnInit {
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;
     public data: any[];
-    public _positionSettings = {
-        horizontalStartPoint: HorizontalAlignment.Left,
-        verticalStartPoint: VerticalAlignment.Bottom
-    };
-
-    public _overlaySettings: OverlaySettings = {
-        closeOnOutsideClick: false,
-        modal: false,
-        closeOnEscape: true,
-        positionStrategy: new ConnectedPositioningStrategy(this._positionSettings)
-    };
 
     public constructor() { }
 
