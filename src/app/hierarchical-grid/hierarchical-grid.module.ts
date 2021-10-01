@@ -87,6 +87,8 @@ import { HGridFormattedFilteringStrategyComponent } from './hierarchical-grid-fo
 import { HGridSummaryFormatterComponent } from './hierarchical-grid-summary-formatter/hierarchical-grid-summary-formatter.component';
 import { HGridExcelExportSampleComponent } from './hierarchical-grid-excel-exporter/hierarchical-grid-excel-export.sample';
 import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-sample/hierarchical-grid-pager-sample.component';
+import { HGridRowStylesSampleComponent } from './hgrid-rowStyle-sample/hgrid-rowStyles.component';
+import { HGridRowClassesSampleComponent } from './hgrid-rowClasses-sample/hgrid-rowClasses.component';
 
 @NgModule({
     declarations: [
@@ -166,7 +168,9 @@ import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-
         HierarchicalGridCellSelectionComponent,
         HGridFormattedFilteringStrategyComponent,
         HGridSummaryFormatterComponent,
-        HierarchicalGridPagerSampleComponent
+        HierarchicalGridPagerSampleComponent,
+        HGridRowStylesSampleComponent,
+        HGridRowClassesSampleComponent
     ],
     imports: [
         CommonModule,
