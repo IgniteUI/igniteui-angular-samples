@@ -1314,7 +1314,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridRowStylesComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/services/financial.service.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/services/financial.service.ts',  '/src/app/data/financialData.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: [ 'IgxGridModule', 'GridRowStylesComponent', 'IgxPreventDocumentScrollModule', 'FinancialDataService'],
                 ngDeclarations: ['GridRowStylesComponent'],
