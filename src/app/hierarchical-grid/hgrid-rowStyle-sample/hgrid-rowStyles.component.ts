@@ -2,7 +2,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxHierarchicalGridComponent, RowType } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
-import { Singer } from '../models';
 @Component({
     selector: 'app-hgrid-row-row-styles',
     styleUrls: ['./hgrid-rowStyles.component.scss'],
