@@ -22,7 +22,7 @@ export class RemoteService {
     private _cachedData = [];
     private _prevRequestChunk: number;
 
-    constructor(private _http: HttpClient, private cdr: ChangeDetectorRef) {
+    constructor(private _http: HttpClient) {
         this._data = new BehaviorSubject([]);
         this.data = this._data.asObservable();
     }
