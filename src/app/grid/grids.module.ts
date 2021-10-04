@@ -127,6 +127,8 @@ import { GridFormattedFilteringStrategyComponent } from './grid-formatted-filter
 import { GridSummaryFormatterComponent } from './grid-summary-formatter/grid-summary-formatter.component';
 import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-export/multi-column-headers-export.component';
 import { CRUDSampleComponent } from './grid-crud-sample/crud-sample.component';
+import { GridRowClassesComponent } from './grid-rowClasses-sample/grid-rowClasses.component';
+import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.component';
 
 @NgModule({
     declarations: [
@@ -243,7 +245,9 @@ import { CRUDSampleComponent } from './grid-crud-sample/crud-sample.component';
         GridEditingLifecycleComponent,
         GridSelectComponent,
         GridFormattedFilteringStrategyComponent,
-        GridSummaryFormatterComponent
+        GridSummaryFormatterComponent,
+        GridRowClassesComponent,
+        GridRowStylesComponent
     ],
     imports: [
         CommonModule,

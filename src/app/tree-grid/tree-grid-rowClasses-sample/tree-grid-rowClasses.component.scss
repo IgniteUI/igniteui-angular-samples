@@ -1,0 +1,15 @@
+.grid__wrapper {
+    margin: 16px;
+}
+::ng-deep {
+    .activeRow {
+        border: 1px solid #fc81b8;
+        border-left: 3px solid #e41c77;
+    }
+    .toggle-section {
+        width: 300px;
+        height: 100px;
+        background-color: white;
+    }
+
+}
