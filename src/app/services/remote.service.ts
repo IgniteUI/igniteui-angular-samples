@@ -7,7 +7,7 @@ import { IForOfState } from 'igniteui-angular';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 const DATA_URL: string = 'https://services.odata.org/V4/Northwind/Northwind.svc/Products';
-const EMPTY_STRING: string = '';
+
 // eslint-disable-next-line no-shadow
 export enum SortOrder {
     ASC = 'asc',
