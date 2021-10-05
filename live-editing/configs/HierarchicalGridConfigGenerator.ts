@@ -840,6 +840,26 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             component: 'HierarchicalGridPagerSampleComponent'
         }));
 
+        configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts'],
+            component: 'HGridRowClassesSampleComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'HGridRowClassesSampleComponent'],
+                ngDeclarations: ['HGridRowClassesSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
+            })
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts'],
+            component: 'HGridRowStylesSampleComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'HGridRowStylesSampleComponent'],
+                ngDeclarations: ['HGridRowStylesSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
+            })
+        }));
+
         return configs;
     }
 }

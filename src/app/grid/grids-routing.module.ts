@@ -118,6 +118,8 @@ import { GridFormattedFilteringStrategyComponent } from './grid-formatted-filter
 import { GridSummaryFormatterComponent } from './grid-summary-formatter/grid-summary-formatter.component';
 import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-export/multi-column-headers-export.component';
 import { CRUDSampleComponent } from './grid-crud-sample/crud-sample.component';
+import { GridRowClassesComponent } from './grid-rowClasses-sample/grid-rowClasses.component';
+import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -680,6 +682,16 @@ export const gridsRoutes: Routes = [
         component: GridSummaryFormatterComponent,
         data: gridsRoutesData['grid-summary-formatter'],
         path: 'grid-summary-formatter'
+    },
+    {
+        component: GridRowClassesComponent,
+        data: gridsRoutesData['grid-rowClasses-sample'],
+        path: 'grid-rowClasses-sample'
+    },
+    {
+        component: GridRowStylesComponent,
+        data: gridsRoutesData['grid-rowStyles-sample'],
+        path: 'grid-rowStyles-sample'
     }
 ];
 
