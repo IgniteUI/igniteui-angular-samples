@@ -90,6 +90,7 @@ import { AccordionSample3Component } from './accordion/accordion-sample-3/accord
 import { StepperSample1Component } from './stepper/stepper-sample-1/stepper-sample-1.component';
 import { StepperSample2Component } from './stepper/stepper-sample-2/stepper-sample-2.component';
 import { StepperSample3Component } from './stepper/stepper-sample-3/stepper-sample-3.component';
+import { StepperSample4Component } from './stepper/stepper-sample-4/stepper-sample-4.component';
 
 @NgModule({
     declarations: [
@@ -136,6 +137,7 @@ import { StepperSample3Component } from './stepper/stepper-sample-3/stepper-samp
         StepperSample1Component,
         StepperSample2Component,
         StepperSample3Component,
+        StepperSample4Component,
         TabbarSample1Component,
         TabbarSample2Component,
         TabbarSample3Component,

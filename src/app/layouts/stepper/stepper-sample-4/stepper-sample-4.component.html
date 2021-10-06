@@ -1,8 +1,5 @@
-<igx-buttongroup [values]="stepperTitlePositions" (selected)="toggleTitlePosition($event)">
-</igx-buttongroup>
-<igx-buttongroup [values]="stepperOrientations" (selected)="toggleOrientation($event)">
-</igx-buttongroup>
-<igx-stepper #stepper [horizontalTitlePosition]="titlePosition" [verticalTitlePosition]="titlePosition" [orientation]="orientation">
+<igx-stepper #stepper (activeStepChanging)="activeStepChanging($event)">
+    <ng-template igxStepCompletedIndicator><igx-icon>check</igx-icon></ng-template>
     <igx-step>
         <span igxStepTitle>Order</span>
         <div igxStepContent>
