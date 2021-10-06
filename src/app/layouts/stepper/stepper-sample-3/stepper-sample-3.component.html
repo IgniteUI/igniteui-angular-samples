@@ -1,0 +1,13 @@
+<igx-buttongroup [values]="stepTypes" (selected)="toggleStepType($event)">
+</igx-buttongroup>
+<igx-stepper #stepper [stepType]="stepType">
+    <igx-step>
+        <span igxStepTitle>Pricing Plan</span>
+    </igx-step>
+    <igx-step>
+        <span igxStepTitle>Car Details</span>
+    </igx-step>
+    <igx-step>
+        <span igxStepTitle>Payment</span>
+    </igx-step>
+</igx-stepper>

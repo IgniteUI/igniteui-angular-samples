@@ -66,6 +66,7 @@ import { AccordionSample2Component } from './accordion/accordion-sample-2/accord
 import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
 import { StepperSample1Component } from './stepper/stepper-sample-1/stepper-sample-1.component';
 import { StepperSample2Component } from './stepper/stepper-sample-2/stepper-sample-2.component';
+import { StepperSample3Component } from './stepper/stepper-sample-3/stepper-sample-3.component';
 
 export const layoutsRoutes: Routes = [
     {
@@ -252,6 +253,11 @@ export const layoutsRoutes: Routes = [
         component: StepperSample2Component,
         data: layoutsRoutesData['stepper-sample-2'],
         path: 'stepper-sample-2'
+    },
+    {
+        component: StepperSample3Component,
+        data: layoutsRoutesData['stepper-sample-3'],
+        path: 'stepper-sample-3'
     },
     {
         component: TabbarSample1Component,

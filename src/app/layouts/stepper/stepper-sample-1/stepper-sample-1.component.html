@@ -1,22 +1,17 @@
-<igx-stepper #stepper [orientation]="'Horizontal'">
+<igx-buttongroup [values]="stepperTitlePositions" (selected)="toggleTitlePosition($event)">
+</igx-buttongroup>
+<igx-buttongroup [values]="stepperOrientations" (selected)="toggleOrientation($event)">
+</igx-buttongroup>
+<igx-stepper #stepper [horizontalTitlePosition]="titlePosition" [verticalTitlePosition]="titlePosition" [orientation]="orientation">
     <igx-step>
-        <span igxStepTitle>Alternatives</span>
+        <span igxStepTitle>Order</span>
         <div igxStepContent>
             <button igxButton="raised" (click)="stepper.next()">NEXT
             </button>
         </div>
     </igx-step>
     <igx-step>
-        <span igxStepTitle>Input</span>
-        <div igxStepContent>
-            <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
-            </button>
-            <button igxButton="raised" (click)="stepper.next()">NEXT
-            </button>
-        </div>
-    </igx-step>
-    <igx-step>
-        <span igxStepTitle>Specification</span>
+        <span igxStepTitle>Payment</span>
         <div igxStepContent>
             <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
             </button>
@@ -25,16 +20,7 @@
         </div>
     </igx-step>
     <igx-step>
-        <span igxStepTitle>Indexes</span>
-        <div igxStepContent>
-            <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
-            </button>
-            <button igxButton="raised" (click)="stepper.next()">NEXT
-            </button>
-        </div>
-    </igx-step>
-    <igx-step>
-        <span igxStepTitle>Output Summary</span>
+        <span igxStepTitle>Confirmation</span>
         <div igxStepContent>
             <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
             </button>

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
     templateUrl: './stepper-sample-2.component.html'
 })
 export class StepperSample2Component {
-    public orientation = 'Horizontal';
+    public orientation = 'horizontal';
     public linear = false;
 
     public user = {
@@ -28,12 +28,12 @@ export class StepperSample2Component {
 
     public stepperOrientations = [
         {
-            label: 'Horizontal', orientation: 'Horizontal',
-            selected: this.orientation === 'Horizontal', togglable: true
+            label: 'Horizontal', orientation: 'horizontal',
+            selected: this.orientation === 'horizontal', togglable: true
         },
         {
-            label: 'Vertical', orientation: 'Vertical',
-            selected: this.orientation === 'Vertical', togglable: true
+            label: 'Vertical', orientation: 'vertical',
+            selected: this.orientation === 'vertical', togglable: true
         }
     ];
 
