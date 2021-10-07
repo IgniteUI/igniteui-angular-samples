@@ -1,5 +1,10 @@
 <igx-stepper #stepper (activeStepChanging)="activeStepChanging($event)">
-    <ng-template igxStepCompletedIndicator><igx-icon>check</igx-icon></ng-template>
+    <ng-template igxStepActiveIndicator>
+        <igx-icon>edit</igx-icon>
+    </ng-template>
+    <ng-template igxStepCompletedIndicator>
+        <igx-icon>check</igx-icon>
+    </ng-template>
     <igx-step>
         <span igxStepTitle>Order</span>
         <div igxStepContent>
@@ -21,7 +26,7 @@
         <div igxStepContent>
             <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
             </button>
-            <button igxButton="raised" (click)="stepper.reset()">RESET
+            <button igxButton="raised" (click)="reset()">RESET
             </button>
         </div>
     </igx-step>

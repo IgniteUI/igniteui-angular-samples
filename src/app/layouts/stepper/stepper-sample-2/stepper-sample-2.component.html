@@ -47,6 +47,7 @@
             </button>
             <button igxButton="raised" (click)="stepper.next()" [disabled]="!form2.form.valid && stepper.linear">NEXT
             </button>
+            <button igxButton (click)="stepper.navigateTo(3)">PAYMENT</button>
         </div>
     </igx-step>
 
@@ -69,8 +70,6 @@
             </button>
             <button igxButton="raised" (click)="stepper.next()" [disabled]="!form2.form.valid && stepper.linear">NEXT
             </button>
-
-            <button igxButton (click)="stepper.next()">Skip</button>
         </div>
     </igx-step>
 
@@ -84,7 +83,7 @@
             </igx-radio-group>
             <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
             </button>
-            <button igxButton="raised" (click)="stepper.next()">SUBMIT
+            <button igxButton="raised" (click)="stepper.next()">NEXT
             </button>
         </div>
     </igx-step>
@@ -95,9 +94,9 @@
             <p>Your order is on its way. Expect delivery on 25th September 2021. Delivery address: San Jose, CA 94243.
             </p>
 
-            <button igxButton="raised">Reset
-                <!-- <button igxButton="raised" (click)="stepper.reset()">Reset -->
+            <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
             </button>
+            <button igxButton="raised" (click)="stepper.reset()">Reset</button>
         </div>
     </igx-step>
 

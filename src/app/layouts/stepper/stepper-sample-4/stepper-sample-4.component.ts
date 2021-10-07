@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { IgxStepperComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-stepper-sample-4',
@@ -6,8 +7,19 @@ import { Component } from '@angular/core';
     templateUrl: './stepper-sample-4.component.html'
 })
 export class StepperSample4Component {
+    @ViewChild('stepper', { read: IgxStepperComponent })
+    public stepper: IgxStepperComponent;
 
     public activeStepChanging(evt) {
-        evt.owner.steps[evt.oldIndex].completed = true;
+        this.stepper.steps.forEach(step => {
+            if (step.index >= evt.oldIndex && step.index < evt.newIndex) {
+                step.completed = true;
+            }
+        });
+    }
+
+    public reset() {
+        this.stepper.steps.forEach(step => step.completed = false);
+        this.stepper.reset();
     }
 }
