@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-stepper-sample-1',
-    styleUrls: ['./stepper-sample-1.component.scss'],
-    templateUrl: './stepper-sample-1.component.html'
+    selector: 'app-stepper-label-position-and-orientation-sample',
+    styleUrls: ['./stepper-label-position-and-orientation-sample.component.scss'],
+    templateUrl: './stepper-label-position-and-orientation-sample.component.html'
 })
-export class StepperSample1Component {
+export class StepperLabelPositionSampleComponent {
     public orientation = 'horizontal';
     public titlePosition = 'bottom';
     public stepperOrientations = [

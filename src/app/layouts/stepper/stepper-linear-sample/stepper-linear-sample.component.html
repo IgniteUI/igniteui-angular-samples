@@ -10,7 +10,7 @@
         <igx-icon>edit</igx-icon>
     </ng-template>
 
-    <igx-step #step1 [isValid]="form1.form.valid || !form1.form.touched">
+    <igx-step #step1 [isValid]="form1.form.valid">
         <span igxStepTitle>Personal Info</span>
         <div igxStepContent>
             <form #form1="ngForm">
@@ -29,7 +29,7 @@
         </div>
     </igx-step>
 
-    <igx-step #step2 [isValid]="form2.form.valid || !form2.form.touched">
+    <igx-step #step2 [isValid]="form2.form.valid">
         <span igxStepTitle>Address</span>
         <div igxStepContent>
             <form #form2="ngForm">
@@ -47,7 +47,7 @@
             </button>
             <button igxButton="raised" (click)="stepper.next()" [disabled]="!form2.form.valid && stepper.linear">NEXT
             </button>
-            <button igxButton (click)="stepper.navigateTo(3)">PAYMENT</button>
+            <button igxButton (click)="stepper.navigateTo(3)" [disabled]="!form2.form.valid && stepper.linear">PAYMENT</button>
         </div>
     </igx-step>
 
@@ -68,7 +68,7 @@
             </form>
             <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
             </button>
-            <button igxButton="raised" (click)="stepper.next()" [disabled]="!form2.form.valid && stepper.linear">NEXT
+            <button igxButton="raised" (click)="stepper.next()">NEXT
             </button>
         </div>
     </igx-step>
@@ -96,7 +96,7 @@
 
             <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
             </button>
-            <button igxButton="raised" (click)="stepper.reset()">Reset</button>
+            <button igxButton="raised" (click)="stepper.reset()">RESET</button>
         </div>
     </igx-step>
 

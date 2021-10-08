@@ -64,10 +64,10 @@ import { View3Component } from './tabs/views/view3/view3.component';
 import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
 import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
 import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
-import { StepperSample1Component } from './stepper/stepper-sample-1/stepper-sample-1.component';
-import { StepperSample2Component } from './stepper/stepper-sample-2/stepper-sample-2.component';
-import { StepperSample3Component } from './stepper/stepper-sample-3/stepper-sample-3.component';
-import { StepperSample4Component } from './stepper/stepper-sample-4/stepper-sample-4.component';
+import { StepperLabelPositionSampleComponent } from './stepper/stepper-label-position-and-orientation-sample/stepper-label-position-and-orientation-sample.component';
+import { StepperLinearSampleComponent } from './stepper/stepper-linear-sample/stepper-linear-sample.component';
+import { StepperStepTypeSampleComponent } from './stepper/stepper-stepstypes-sample/stepper-stepstypes-sample.component';
+import { StepperStylingSampleComponent } from './stepper/stepper-styling-sample/stepper-styling-sample.component';
 
 export const layoutsRoutes: Routes = [
     {
@@ -246,24 +246,24 @@ export const layoutsRoutes: Routes = [
         path: 'splitter-styling-sample'
     },
     {
-        component: StepperSample1Component,
-        data: layoutsRoutesData['stepper-sample-1'],
-        path: 'stepper-sample-1'
+        component: StepperLabelPositionSampleComponent,
+        data: layoutsRoutesData['stepper-label-position-and-orientation-sample'],
+        path: 'stepper-label-position-and-orientation-sample'
     },
     {
-        component: StepperSample2Component,
-        data: layoutsRoutesData['stepper-sample-2'],
-        path: 'stepper-sample-2'
+        component: StepperLinearSampleComponent,
+        data: layoutsRoutesData['stepper-linear-sample'],
+        path: 'stepper-linear-sample'
     },
     {
-        component: StepperSample3Component,
-        data: layoutsRoutesData['stepper-sample-3'],
-        path: 'stepper-sample-3'
+        component: StepperStepTypeSampleComponent,
+        data: layoutsRoutesData['stepper-stepstypes-sample'],
+        path: 'stepper-stepstypes-sample'
     },
     {
-        component: StepperSample4Component,
-        data: layoutsRoutesData['stepper-sample-4'],
-        path: 'stepper-sample-4'
+        component: StepperStylingSampleComponent,
+        data: layoutsRoutesData['stepper-styling-sample'],
+        path: 'stepper-styling-sample'
     },
     {
         component: TabbarSample1Component,

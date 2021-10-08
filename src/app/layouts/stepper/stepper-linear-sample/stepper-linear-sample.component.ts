@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 // import { IgxStepperOrienatation } from 'igniteui-angular/lib/stepper/common';
 
 @Component({
-    selector: 'app-stepper-sample-2',
-    styleUrls: ['./stepper-sample-2.component.scss'],
-    templateUrl: './stepper-sample-2.component.html'
+    selector: 'app-stepper-linear-sample',
+    styleUrls: ['./stepper-linear-sample.component.scss'],
+    templateUrl: './stepper-linear-sample.component.html'
 })
-export class StepperSample2Component {
+export class StepperLinearSampleComponent {
     public orientation = 'horizontal';
     public linear = false;
 

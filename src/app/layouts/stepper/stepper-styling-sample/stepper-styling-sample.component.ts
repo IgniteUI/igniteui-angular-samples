@@ -2,11 +2,11 @@ import { Component, ViewChild } from '@angular/core';
 import { IgxStepperComponent } from 'igniteui-angular';
 
 @Component({
-    selector: 'app-stepper-sample-4',
-    styleUrls: ['./stepper-sample-4.component.scss'],
-    templateUrl: './stepper-sample-4.component.html'
+    selector: 'app-stepper-styling-sample',
+    styleUrls: ['./stepper-styling-sample.component.scss'],
+    templateUrl: './stepper-styling-sample.component.html'
 })
-export class StepperSample4Component {
+export class StepperStylingSampleComponent {
     @ViewChild('stepper', { read: IgxStepperComponent })
     public stepper: IgxStepperComponent;
 

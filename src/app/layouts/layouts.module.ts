@@ -87,10 +87,10 @@ import { TabsHeaderPrefixSuffixComponent } from './tabs/tabs-header-prefix-suffi
 import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
 import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
 import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
-import { StepperSample1Component } from './stepper/stepper-sample-1/stepper-sample-1.component';
-import { StepperSample2Component } from './stepper/stepper-sample-2/stepper-sample-2.component';
-import { StepperSample3Component } from './stepper/stepper-sample-3/stepper-sample-3.component';
-import { StepperSample4Component } from './stepper/stepper-sample-4/stepper-sample-4.component';
+import { StepperLabelPositionSampleComponent } from './stepper/stepper-label-position-and-orientation-sample/stepper-label-position-and-orientation-sample.component';
+import { StepperLinearSampleComponent } from './stepper/stepper-linear-sample/stepper-linear-sample.component';
+import { StepperStepTypeSampleComponent } from './stepper/stepper-stepstypes-sample/stepper-stepstypes-sample.component';
+import { StepperStylingSampleComponent } from './stepper/stepper-styling-sample/stepper-styling-sample.component';
 
 @NgModule({
     declarations: [
@@ -134,10 +134,10 @@ import { StepperSample4Component } from './stepper/stepper-sample-4/stepper-samp
         SplitterHorizontalSampleComponent,
         SplitterNestedSampleComponent,
         SplitterStylingSampleComponent,
-        StepperSample1Component,
-        StepperSample2Component,
-        StepperSample3Component,
-        StepperSample4Component,
+        StepperLabelPositionSampleComponent,
+        StepperLinearSampleComponent,
+        StepperStepTypeSampleComponent,
+        StepperStylingSampleComponent,
         TabbarSample1Component,
         TabbarSample2Component,
         TabbarSample3Component,
