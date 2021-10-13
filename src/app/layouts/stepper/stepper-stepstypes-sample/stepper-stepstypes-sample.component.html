@@ -1,5 +1,7 @@
-<igx-buttongroup [values]="stepTypes" (selected)="toggleStepType($event)">
-</igx-buttongroup>
+<div class="sample-split">
+    <igx-buttongroup [values]="stepTypes" (selected)="toggleStepType($event)"></igx-buttongroup>
+</div>
+
 <igx-stepper #stepper [stepType]="stepType">
     <igx-step>
         <span igxStepTitle>Pricing Plan</span>

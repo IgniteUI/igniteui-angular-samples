@@ -1,8 +1,9 @@
-<igx-buttongroup [values]="stepperOrientations" (selected)="toggleOrientation($event)">
-</igx-buttongroup>
-
-<igx-buttongroup [values]="modes" (selected)="toggleModes($event)">
-</igx-buttongroup>
+<div class="sample-split">
+    <igx-buttongroup [values]="stepperOrientations" (selected)="toggleOrientation($event)">
+    </igx-buttongroup>
+    <igx-buttongroup [values]="modes" (selected)="toggleModes($event)">
+    </igx-buttongroup>
+</div>
 
 <igx-stepper #stepper [orientation]="orientation" [linear]="linear">
 
@@ -16,60 +17,58 @@
             <form #form1="ngForm">
                 <igx-input-group>
                     <input igxInput name="fullName" type="text" [(ngModel)]="user.fullName" required />
-                    <label igxLabel for="fullName">Full Name</label>
+                    <label igxLabel for="fullName" id="fullName">Full Name</label>
                 </igx-input-group>
-
                 <igx-input-group>
                     <input igxInput name="email" type="email" [(ngModel)]="user.email" required email />
-                    <label igxLabel for="email">Email</label>
+                    <label igxLabel for="email" id="email">Email</label>
                 </igx-input-group>
             </form>
-            <button igxButton="raised" (click)="stepper.next()" [disabled]="!form1.form.valid && stepper.linear">NEXT
-            </button>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.next()" [disabled]="!form1.form.valid && stepper.linear">NEXT</button>
+            </div>
         </div>
     </igx-step>
 
     <igx-step #step2 [isValid]="form2.form.valid">
-        <span igxStepTitle>Address</span>
+        <span igxStepTitle>Delivery address</span>
         <div igxStepContent>
             <form #form2="ngForm">
                 <igx-input-group>
-                    <input igxInput name="fullName" type="text" [(ngModel)]="user.city" required />
-                    <label igxLabel for="fullName">City</label>
+                    <input igxInput name="city" type="text" [(ngModel)]="user.city" required />
+                    <label igxLabel for="city" id="city">City</label>
                 </igx-input-group>
-
                 <igx-input-group>
-                    <input igxInput name="email" type="text" [(ngModel)]="user.street" required />
-                    <label igxLabel for="email">Street</label>
+                    <input igxInput name="street" type="text" [(ngModel)]="user.street" required />
+                    <label igxLabel for="street" id="street">Street</label>
                 </igx-input-group>
             </form>
-            <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
-            </button>
-            <button igxButton="raised" (click)="stepper.next()" [disabled]="!form2.form.valid && stepper.linear">NEXT
-            </button>
-            <button igxButton (click)="stepper.navigateTo(3)" [disabled]="!form2.form.valid && stepper.linear">PAYMENT</button>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.prev()">Previous</button>
+                <button igxButton="raised" (click)="stepper.next()" [disabled]="!form2.form.valid && stepper.linear">Next</button>
+                <button igxButton (click)="stepper.navigateTo(3)" [disabled]="!form2.form.valid && stepper.linear">Skip</button>
+            </div>
         </div>
     </igx-step>
 
     <igx-step #step3 [optional]="true">
-        <span igxStepTitle>Billing</span>
+        <span igxStepTitle>Billing address</span>
         <span igxStepSubTitle>(optional)</span>
         <div igxStepContent>
             <form #form3="ngForm">
                 <igx-input-group>
-                    <input igxInput name="fullName" type="text" [(ngModel)]="user.city2" />
-                    <label igxLabel for="fullName">City</label>
+                    <input igxInput name="bil-city" type="text" [(ngModel)]="user.city2" />
+                    <label igxLabel for="bil-city" id="bil-city">City</label>
                 </igx-input-group>
-
                 <igx-input-group>
-                    <input igxInput name="email" type="text" [(ngModel)]="user.street2" />
-                    <label igxLabel for="email">Street</label>
+                    <input igxInput name="bil-street" type="text" [(ngModel)]="user.street2" />
+                    <label igxLabel for="bil-street" id="bil-street">Street</label>
                 </igx-input-group>
             </form>
-            <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
-            </button>
-            <button igxButton="raised" (click)="stepper.next()">NEXT
-            </button>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.prev()">Previous</button>
+                <button igxButton="raised" (click)="stepper.next()">Next</button>
+            </div>
         </div>
     </igx-step>
 
@@ -81,22 +80,21 @@
                     {{ paymentType }}
                 </igx-radio>
             </igx-radio-group>
-            <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
-            </button>
-            <button igxButton="raised" (click)="stepper.next()">NEXT
-            </button>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.prev()">Previous</button>
+                <button igxButton="raised" (click)="stepper.next()">Submit</button>
+            </div>
         </div>
     </igx-step>
 
     <igx-step #step5>
-        <span igxStepTitle>Delivery</span>
+        <span igxStepTitle>Delivery status</span>
         <div igxStepContent>
-            <p>Your order is on its way. Expect delivery on 25th September 2021. Delivery address: San Jose, CA 94243.
-            </p>
-
-            <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
-            </button>
-            <button igxButton="raised" (click)="stepper.reset()">RESET</button>
+            <p>Your order is on its way. Expect delivery on 25th September 2021. Delivery address: San Jose, CA 94243.</p>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.prev()">Previous</button>
+                <button igxButton="raised" (click)="stepper.reset()">Reset</button>
+            </div>
         </div>
     </igx-step>
 

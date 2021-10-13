@@ -1,31 +1,34 @@
-<igx-buttongroup [values]="stepperTitlePositions" (selected)="toggleTitlePosition($event)">
-</igx-buttongroup>
-<igx-buttongroup [values]="stepperOrientations" (selected)="toggleOrientation($event)">
-</igx-buttongroup>
+<div class="sample-split">
+    <igx-buttongroup [values]="stepperTitlePositions" (selected)="toggleTitlePosition($event)">
+    </igx-buttongroup>
+    <igx-buttongroup [values]="stepperOrientations" (selected)="toggleOrientation($event)">
+    </igx-buttongroup>
+</div>
 <igx-stepper #stepper [horizontalTitlePosition]="titlePosition" [verticalTitlePosition]="titlePosition" [orientation]="orientation">
     <igx-step>
         <span igxStepTitle>Order</span>
         <div igxStepContent>
-            <button igxButton="raised" (click)="stepper.next()">NEXT
-            </button>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.next()">NEXT</button>
+            </div>
         </div>
     </igx-step>
     <igx-step>
         <span igxStepTitle>Payment</span>
         <div igxStepContent>
-            <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
-            </button>
-            <button igxButton="raised" (click)="stepper.next()">NEXT
-            </button>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.prev()">PREVIOUS</button>
+                <button igxButton="raised" (click)="stepper.next()">NEXT</button>
+            </div>
         </div>
     </igx-step>
     <igx-step>
         <span igxStepTitle>Confirmation</span>
         <div igxStepContent>
-            <button igxButton="raised" (click)="stepper.prev()">PREVIOUS
-            </button>
-            <button igxButton="raised" (click)="stepper.reset()">RESET
-            </button>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.prev()">PREVIOUS</button>
+                <button igxButton="raised" (click)="stepper.reset()">RESET</button>
+            </div>
         </div>
     </igx-step>
 </igx-stepper>
