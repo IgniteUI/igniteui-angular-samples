@@ -1,0 +1,229 @@
+<igx-stepper #stepper [linear]="true">
+
+    <igx-step #step1 [isValid]="selectedCard">
+        <span igxStepTitle>Card Type</span>
+        <div igxStepContent>
+            <h5>Choose your business credit card</h5>
+            <div class="card-wrapper">
+                <igx-card *ngFor="let card of cards" (click)="selectedCard = card"
+                    [ngStyle]="{'background': selectedCard === card ? 'pink' : 'white'}">
+                    <igx-card-media width="300px" height="150px">
+                        <img src="{{card.img}}">
+                    </igx-card-media>
+
+                    <igx-card-header>
+                        <h3 igxCardHeaderTitle>
+                            <p>$ {{card.price}}</p>
+                            <p>{{card.offer}}</p>
+                        </h3>
+                        <h5 igxCardHeaderSubtitle>
+                            <p>{{card.type}}</p>
+                            <p>{{card.description}}</p>
+                        </h5>
+                    </igx-card-header>
+                </igx-card>
+            </div>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.next()" [disabled]="!selectedCard">Continue</button>
+            </div>
+        </div>
+    </igx-step>
+
+    <igx-step #step2 [isValid]="form2.form.valid">
+        <span igxStepTitle>Business information</span>
+        <div igxStepContent>
+            <form #form2="ngForm">
+                <igx-input-group>
+                    <input igxInput name="name" type="text" [(ngModel)]="businessInformation.name" required />
+                    <label igxLabel for="name" id="name">Legal Business Name</label>
+                </igx-input-group>
+                <igx-input-group>
+                    <input igxInput name="physicalAddress" type="text" [(ngModel)]="businessInformation.physicalAddress"
+                        required />
+                    <label igxLabel for="physicalAddress" id="physicalAddress">Business Physical Address</label>
+                </igx-input-group>
+                <igx-input-group>
+                    <input igxInput name="city" type="text" [(ngModel)]="businessInformation.city" required />
+                    <label igxLabel for="city" id="city">City</label>
+                </igx-input-group>
+                <igx-input-group>
+                    <input igxInput name="state" type="text" [(ngModel)]="businessInformation.state" required />
+                    <label igxLabel for="state" id="state">State</label>
+                </igx-input-group>
+                <igx-input-group>
+                    <input igxInput name="zip" type="number" [(ngModel)]="businessInformation.zip" required />
+                    <label igxLabel for="zip" id="zip">ZIP Code</label>
+                </igx-input-group>
+                <igx-checkbox name="differentAddress" [(ngModel)]="businessInformation.differentAddress">
+                    The mailing address is different than the business physical address
+                </igx-checkbox>
+                <igx-input-group>
+                    <input igxInput name="taxIdNumber" type="text" [(ngModel)]="businessInformation.taxIdNumber"
+                        required />
+                    <label igxLabel for="taxIdNumber" id="taxIdNumber">Federal Tax ID Number</label>
+                </igx-input-group>
+                <p>Does this business have any non-U.S. business activity? *</p>
+                <igx-radio-group name="nonUSBusinessActivity" alignment="vertical"
+                    [(ngModel)]="businessInformation.nonUSBusinessActivity" required>
+                    <igx-radio class="radio-sample" value="true">
+                        Yes
+                    </igx-radio>
+                    <igx-radio class="radio-sample" value="false">
+                        No
+                    </igx-radio>
+                </igx-radio-group>
+            </form>
+            <igx-card *ngIf="selectedCard">
+                <igx-card-media width="300px" height="150px">
+                    <img src="{{selectedCard.img}}">
+                </igx-card-media>
+
+                <igx-card-header>
+                    <h3 igxCardHeaderTitle>
+                        <p>$ {{selectedCard.price}}</p>
+                        <p>{{selectedCard.offer}}</p>
+                    </h3>
+                    <h5 igxCardHeaderSubtitle>
+                        <p>{{selectedCard.type}}</p>
+                        <p>{{selectedCard.description}}</p>
+                    </h5>
+                </igx-card-header>
+            </igx-card>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.prev()">Back</button>
+                <button igxButton="raised" (click)="stepper.next()" [disabled]="!form2.form.valid">Continue</button>
+            </div>
+        </div>
+    </igx-step>
+
+    <igx-step #step3 [isValid]="form3.form.valid">
+        <span igxStepTitle>Personal Information</span>
+        <div igxStepContent>
+            <form #form3="ngForm">
+                <igx-input-group>
+                    <input igxInput name="firstName" type="text" [(ngModel)]="personalInformation.firstName" required />
+                    <label igxLabel for="firstName" id="firstName">First Name</label>
+                </igx-input-group>
+                <igx-input-group>
+                    <input igxInput name="lastName" type="text" [(ngModel)]="personalInformation.lastName" required />
+                    <label igxLabel for="lastName" id="lastName">Last Name</label>
+                </igx-input-group>
+                <igx-input-group>
+                    <input igxInput name="jobTitle" type="text" [(ngModel)]="personalInformation.jobTitle" required />
+                    <label igxLabel for="jobTitle" id="jobTitle">Job Title</label>
+                </igx-input-group>
+                <igx-input-group>
+                    <input igxInput name="phoneNumber" type="text" [(ngModel)]="personalInformation.phoneNumber"
+                        required />
+                    <label igxLabel for="phoneNumber" id="phoneNumber">Phone Number</label>
+                </igx-input-group>
+                <igx-input-group>
+                    <input igxInput name="email" type="email" [(ngModel)]="personalInformation.email" required email />
+                    <label igxLabel for="email" id="email">Email Address</label>
+                </igx-input-group>
+                <igx-checkbox name="authorization" [(ngModel)]="personalInformation.authorization" required>
+                    I confirm that I am authorized to borrow on behalf of this business. *
+                </igx-checkbox>
+                <igx-checkbox name="agreementAccepted" [(ngModel)]="personalInformation.agreementAccepted" required>
+                    I agree with the <a [routerLink]="" (click)="$event.stopPropagation()">Terms and Conditions</a> *
+                </igx-checkbox>
+            </form>
+            <igx-card *ngIf="selectedCard">
+                <igx-card-media width="300px" height="150px">
+                    <img src="{{selectedCard.img}}">
+                </igx-card-media>
+
+                <igx-card-header>
+                    <h3 igxCardHeaderTitle>
+                        <p>$ {{selectedCard.price}}</p>
+                        <p>{{selectedCard.offer}}</p>
+                    </h3>
+                    <h5 igxCardHeaderSubtitle>
+                        <p>{{selectedCard.type}}</p>
+                        <p>{{selectedCard.description}}</p>
+                    </h5>
+                </igx-card-header>
+            </igx-card>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.prev()">Back</button>
+                <button igxButton="raised" (click)="stepper.next()" [disabled]="!form2.form.valid">Continue</button>
+            </div>
+        </div>
+    </igx-step>
+
+    <igx-step #step4 [disabled]="!businessInformation.differentAddress" [isValid]="form4.form.valid">
+        <span igxStepTitle>Shipping Details</span>
+        <div igxStepContent>
+            <form #form4="ngForm">
+                <igx-input-group>
+                    <input igxInput name="firstName" type="text" [(ngModel)]="shippingDetails.firstName" required />
+                    <label igxLabel for="firstName" id="firstName">First Name</label>
+                </igx-input-group>
+                <igx-input-group>
+                    <input igxInput name="lastName" type="text" [(ngModel)]="shippingDetails.lastName" required />
+                    <label igxLabel for="lastName" id="lastName">Last Name</label>
+                </igx-input-group>
+                <igx-input-group>
+                    <input igxInput name="mailingAddress" type="text" [(ngModel)]="shippingDetails.mailingAddress"
+                        required />
+                    <label igxLabel for="mailingAddress" id="mailingAddress">Mailing Address</label>
+                </igx-input-group>
+                <igx-input-group>
+                    <input igxInput name="city" type="text" [(ngModel)]="shippingDetails.city" required />
+                    <label igxLabel for="city" id="city">City</label>
+                </igx-input-group>
+                <igx-input-group>
+                    <input igxInput name="state" type="text" [(ngModel)]="shippingDetails.state" required />
+                    <label igxLabel for="state" id="state">State</label>
+                </igx-input-group>
+                <igx-input-group>
+                    <input igxInput name="zip" type="number" [(ngModel)]="shippingDetails.zip" required />
+                    <label igxLabel for="zip" id="zip">ZIP Code</label>
+                </igx-input-group>
+            </form>
+            <igx-card *ngIf="selectedCard">
+                <igx-card-media width="300px" height="150px">
+                    <img src="{{selectedCard.img}}">
+                </igx-card-media>
+
+                <igx-card-header>
+                    <h3 igxCardHeaderTitle>
+                        <p>$ {{selectedCard.price}}</p>
+                        <p>{{selectedCard.offer}}</p>
+                    </h3>
+                    <h5 igxCardHeaderSubtitle>
+                        <p>{{selectedCard.type}}</p>
+                        <p>{{selectedCard.description}}</p>
+                    </h5>
+                </igx-card-header>
+            </igx-card>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.prev()">Back</button>
+                <button igxButton="raised" (click)="stepper.next()" [disabled]="!form2.form.valid">Continue</button>
+            </div>
+        </div>
+    </igx-step>
+
+    <igx-step #step5>
+        <span igxStepTitle>Confirmation</span>
+        <div igxStepContent>
+            <igx-avatar [roundShape]="true" style="background: green;">
+                <igx-icon>check</igx-icon>
+            </igx-avatar>
+            <h5>Thank you for your application!
+            </h5>
+            <p>You will receive a confirmation email soon.</p>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.reset();
+                    selectedCard = null;
+                    form2.reset();
+                    businessInformation.differentAddress = false;
+                    form3.reset();
+                    personalInformation.authorization = false;
+                    personalInformation.agreementAccepted = false;
+                    form4.reset()">Reset</button>
+            </div>
+        </div>
+    </igx-step>
+
+</igx-stepper>

@@ -1,0 +1,43 @@
+$sample-gap: 20px;
+
+:host {
+	display: block;
+	padding: $sample-gap;
+}
+
+.sample-split,
+.sample-step-actions {
+	display: flex;
+	gap: $sample-gap;
+}
+
+.sample-step-actions {
+	margin-top: $sample-gap * 2;
+}
+
+.sample-split {
+	> * {
+		max-width: 380px;
+		flex: 1;
+	}
+
+	margin-bottom: $sample-gap;
+}
+
+form {
+	> * {
+		margin-bottom: calc(#{$sample-gap} / 2);
+	}
+
+	margin-bottom: $sample-gap;
+}
+
+igx-radio {
+	margin-bottom: $sample-gap;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
