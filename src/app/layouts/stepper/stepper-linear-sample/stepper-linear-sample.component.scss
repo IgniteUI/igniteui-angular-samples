@@ -26,7 +26,7 @@ $sample-gap: 20px;
 
 form {
 	> * {
-		margin-bottom: $sample-gap / 2;
+		margin-bottom: calc(#{$sample-gap} / 2);
 	}
 
 	margin-bottom: $sample-gap;
