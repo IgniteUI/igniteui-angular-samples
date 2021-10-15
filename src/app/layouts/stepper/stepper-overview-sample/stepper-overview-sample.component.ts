@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { IgxStepperComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-stepper-overview-sample',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core';
     templateUrl: './stepper-overview-sample.component.html'
 })
 export class StepperOverviewSampleComponent {
+    @ViewChild('stepper', { static: true }) public stepper: IgxStepperComponent;
+
+    public today = new Date();
 
     public cards = [
         {
@@ -13,21 +17,21 @@ export class StepperOverviewSampleComponent {
             price: 400,
             offer: 'STATEMENT CREDIT OFFER',
             type: 'Business Customized Advanced',
-            description: 'Cash Rewards Mastercard'
+            description: 'Cash Mastercard'
         },
         {
             img: 'https://ck-content.imgix.net/pcm/content/ba1b3537d7b1f1778943-OpenSky-UpdatedCreditCardArt__1_.png?auto=compress,format',
             price: 600,
             offer: 'STATEMENT CREDIT OFFER',
             type: 'Business Travel Advanced',
-            description: 'World Rewards Mastercard'
+            description: 'World Mastercard'
         },
         {
             img: 'https://ck-content.imgix.net/pcm/content/ba1b3537d7b1f1778943-OpenSky-UpdatedCreditCardArt__1_.png?auto=compress,format',
             price: 500,
             offer: 'STATEMENT CREDIT OFFER',
-            type: 'Golden',
-            description: 'Business Card Mastercard'
+            type: 'Business Golden',
+            description: 'World Mastercard'
         }
     ];
 
@@ -62,4 +66,25 @@ export class StepperOverviewSampleComponent {
         state: '',
         zip: null
     };
+
+    constructor(private cdr: ChangeDetectorRef) {
+
+    }
+
+    public selectCard(card) {
+        this.selectedCard = card;
+        this.cdr.detectChanges();
+        this.stepper.next();
+    }
+
+    public resetStepper(form1, form2, form3) {
+        this.stepper.reset();
+        this.selectedCard = null;
+        form1.reset();
+        this.businessInformation.differentAddress = false;
+        form2.reset();
+        this.personalInformation.authorization = false;
+        this.personalInformation.agreementAccepted = false;
+        form3.reset();
+    }
 }
