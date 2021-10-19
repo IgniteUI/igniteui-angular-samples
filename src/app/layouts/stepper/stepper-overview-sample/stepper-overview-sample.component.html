@@ -25,64 +25,68 @@
     <igx-step #step2 [isValid]="businessInformationForm.form.valid" [completed]="step2.isValid">
         <span igxStepTitle>Business information</span>
         <div igxStepContent>
-            <form class="flex-form" #businessInformationForm="ngForm">
-                <igx-input-group>
-                    <input igxInput name="name" id="name" type="text" [(ngModel)]="businessInformation.name" required />
-                    <label igxLabel for="name">Legal Business Name</label>
-                </igx-input-group>
-                <igx-input-group>
-                    <input igxInput name="physicalAddress" id="physicalAddress" type="text"
-                        [(ngModel)]="businessInformation.physicalAddress" required />
-                    <label igxLabel for="physicalAddress">Business Physical Address</label>
-                </igx-input-group>
-                <igx-input-group>
-                    <input igxInput name="city" id="city" type="text" [(ngModel)]="businessInformation.city" required />
-                    <label igxLabel for="city">City</label>
-                </igx-input-group>
-                <igx-select name="state" [(ngModel)]="businessInformation.state" required>
-                    <igx-select-item *ngFor="let state of states" [value]="state">
-                        {{state}}
-                    </igx-select-item>
-                    <label igxLabel>State</label>
-                </igx-select>
-                <igx-input-group>
-                    <input igxInput name="zip" id="zip" type="text" pattern="[0-9]{5}" maxlength="5"
-                    [placeholder]="'#####'" [(ngModel)]="businessInformation.zip" required />
-                    <label igxLabel for="zip">ZIP Code</label>
-                </igx-input-group>
-                <igx-checkbox name="differentAddress" [(ngModel)]="businessInformation.differentAddress">
-                    The mailing address is different than the business physical address
-                </igx-checkbox>
-                <igx-input-group>
-                    <input igxInput name="taxIdNumber" id="taxIdNumber" type="text"
-                        pattern="[9]{1}[0-9]{8}" maxlength="9" [placeholder]="'9##-##-####'"
-                        [(ngModel)]="businessInformation.taxIdNumber" required />
-                    <label igxLabel for="taxIdNumber">Federal Tax ID Number</label>
-                </igx-input-group>
-                <p>Does this business operate outside the United States? *</p>
-                <igx-radio-group name="nonUSBusinessActivity" alignment="vertical"
-                    [(ngModel)]="businessInformation.nonUSBusinessActivity" required>
-                    <igx-radio class="radio-sample" value="true">
-                        Yes
-                    </igx-radio>
-                    <igx-radio class="radio-sample" value="false">
-                        No
-                    </igx-radio>
-                </igx-radio-group>
-            </form>
-            <igx-card type="outlined" *ngIf="selectedCard">
-                <igx-card-content>
-                    <div class="sample-row sample-card">
-                        <img src="{{selectedCard.img}}" alt="">
-                        <div>
-                            <span class="card-currency">{{selectedCard.price}}</span>
-                            <span class="card-title">{{selectedCard.offer}}</span>
-                            <p>{{selectedCard.type}}</p>
-                            <p>{{selectedCard.description}}</p>
-                        </div>
+            <div class="sample-row">
+                <form class="flex-form" #businessInformationForm="ngForm">
+                    <igx-input-group type="box">
+                        <input igxInput name="name" id="name" type="text" [(ngModel)]="businessInformation.name" required />
+                        <label igxLabel for="name">Legal Business Name</label>
+                    </igx-input-group>
+                    <igx-input-group type="box">
+                        <input igxInput name="physicalAddress" id="physicalAddress" type="text"
+                            [(ngModel)]="businessInformation.physicalAddress" required />
+                        <label igxLabel for="physicalAddress">Business Physical Address</label>
+                    </igx-input-group>
+                    <div class="form-row">
+                        <igx-input-group type="box">
+                            <input igxInput name="city" id="city" type="text" [(ngModel)]="businessInformation.city" required />
+                            <label igxLabel for="city">City</label>
+                        </igx-input-group>
+                        <igx-select type="box" name="state" [(ngModel)]="businessInformation.state" required>
+                            <igx-select-item *ngFor="let state of states" [value]="state">
+                                {{state}}
+                            </igx-select-item>
+                            <label igxLabel>State</label>
+                        </igx-select>
+                        <igx-input-group type="box">
+                            <input igxInput name="zip" id="zip" type="text" pattern="[0-9]{5}" maxlength="5"
+                                   [placeholder]="'#####'" [(ngModel)]="businessInformation.zip" required />
+                            <label igxLabel for="zip">ZIP Code</label>
+                        </igx-input-group>
                     </div>
-                </igx-card-content>
-            </igx-card>
+                    <igx-checkbox name="differentAddress" [(ngModel)]="businessInformation.differentAddress">
+                        The mailing address is different than the business physical address
+                    </igx-checkbox>
+                    <igx-input-group type="box">
+                        <input igxInput name="taxIdNumber" id="taxIdNumber" type="text"
+                            pattern="[9]{1}[0-9]{8}" maxlength="9" [placeholder]="'9##-##-####'"
+                            [(ngModel)]="businessInformation.taxIdNumber" required />
+                        <label igxLabel for="taxIdNumber">Federal Tax ID Number</label>
+                    </igx-input-group>
+                    <p>Does this business operate outside the United States? *</p>
+                    <igx-radio-group type="box" name="nonUSBusinessActivity" alignment="vertical"
+                        [(ngModel)]="businessInformation.nonUSBusinessActivity" required>
+                        <igx-radio class="radio-sample" value="true">
+                            Yes
+                        </igx-radio>
+                        <igx-radio class="radio-sample" value="false">
+                            No
+                        </igx-radio>
+                    </igx-radio-group>
+                </form>
+                <igx-card type="outlined" *ngIf="selectedCard">
+                    <igx-card-content>
+                        <div class="sample-row sample-card">
+                            <img src="{{selectedCard.img}}" alt="">
+                            <div>
+                                <span class="card-currency">{{selectedCard.price}}</span>
+                                <span class="card-title">{{selectedCard.offer}}</span>
+                                <p>{{selectedCard.type}}</p>
+                                <p>{{selectedCard.description}}</p>
+                            </div>
+                        </div>
+                    </igx-card-content>
+                </igx-card>
+            </div>
             <div class="sample-step-actions">
                 <button igxButton="raised" (click)="stepper.prev()">Back</button>
                 <button igxButton="raised" (click)="stepper.next()"
@@ -154,54 +158,55 @@
         [completed]="step4.isValid || (step4.disabled && step3.completed)">
         <span igxStepTitle>Shipping Details</span>
         <div igxStepContent>
-            <form #shippingDetailsForm="ngForm">
-                <igx-input-group>
-                    <input igxInput name="sfirstName" id="sfirstName" type="text"
-                        [(ngModel)]="shippingDetails.firstName" required />
-                    <label igxLabel for="sfirstName">First Name</label>
-                </igx-input-group>
-                <igx-input-group>
-                    <input igxInput name="slastName" id="slastName" type="text" [(ngModel)]="shippingDetails.lastName"
-                        required />
-                    <label igxLabel for="slastName">Last Name</label>
-                </igx-input-group>
-                <igx-input-group>
-                    <input igxInput name="mailingAddress" type="text" [(ngModel)]="shippingDetails.mailingAddress"
-                        required />
-                    <label igxLabel for="mailingAddress" id="mailingAddress">Mailing Address</label>
-                </igx-input-group>
-                <igx-input-group>
-                    <input igxInput name="scity" id="scity" type="text" [(ngModel)]="shippingDetails.city" required />
-                    <label igxLabel for="scity">City</label>
-                </igx-input-group>
-                <igx-select name="sstate" [(ngModel)]="shippingDetails.state" required>
-                    <igx-select-item *ngFor="let state of states" [value]="state">
-                        {{state}}
-                    </igx-select-item>
-                    <label igxLabel>State</label>
-                </igx-select>
-                <igx-input-group>
-                    <input igxInput name="szip" id="szip" type="text" pattern="[0-9]{5}" maxlength="5"
-                    [placeholder]="'#####'" [(ngModel)]="shippingDetails.zip" required />
-                    <label igxLabel for="szip">ZIP Code</label>
-                </igx-input-group>
-            </form>
-            <igx-card *ngIf="selectedCard">
-                <igx-card-media width="300px" height="150px">
-                    <img src="{{selectedCard.img}}">
-                </igx-card-media>
-
-                <igx-card-header>
-                    <h3 igxCardHeaderTitle>
-                        <p>$ {{selectedCard.price}}</p>
-                        <p>{{selectedCard.offer}}</p>
-                    </h3>
-                    <h5 igxCardHeaderSubtitle>
-                        <p>{{selectedCard.type}}</p>
-                        <p>{{selectedCard.description}}</p>
-                    </h5>
-                </igx-card-header>
-            </igx-card>
+            <div class="sample-row">
+                <form class="flex-form" #shippingDetailsForm="ngForm">
+                    <igx-input-group type="box">
+                        <input igxInput name="sfirstName" id="sfirstName" type="text"
+                               [(ngModel)]="shippingDetails.firstName" required />
+                        <label igxLabel for="sfirstName">First Name</label>
+                    </igx-input-group>
+                    <igx-input-group type="box">
+                        <input igxInput name="slastName" id="slastName" type="text" [(ngModel)]="shippingDetails.lastName"
+                               required />
+                        <label igxLabel for="slastName">Last Name</label>
+                    </igx-input-group>
+                    <igx-input-group type="box">
+                        <input igxInput name="mailingAddress" type="text" [(ngModel)]="shippingDetails.mailingAddress"
+                               required />
+                        <label igxLabel for="mailingAddress" id="mailingAddress">Mailing Address</label>
+                    </igx-input-group>
+                    <div class="form-row">
+                        <igx-input-group type="box">
+                            <input igxInput name="scity" id="scity" type="text" [(ngModel)]="shippingDetails.city" required />
+                            <label igxLabel for="scity">City</label>
+                        </igx-input-group>
+                        <igx-select type="box" name="sstate" [(ngModel)]="shippingDetails.state" required>
+                            <igx-select-item *ngFor="let state of states" [value]="state">
+                                {{state}}
+                            </igx-select-item>
+                            <label igxLabel>State</label>
+                        </igx-select>
+                        <igx-input-group type="box">
+                            <input igxInput name="szip" id="szip" type="text" pattern="[0-9]{5}" maxlength="5"
+                                   [placeholder]="'#####'" [(ngModel)]="shippingDetails.zip" required />
+                            <label igxLabel for="szip">ZIP Code</label>
+                        </igx-input-group>
+                    </div>
+                </form>
+                <igx-card type="outlined" *ngIf="selectedCard">
+                    <igx-card-content>
+                        <div class="sample-row sample-card">
+                            <img src="{{selectedCard.img}}" alt="">
+                            <div>
+                                <span class="card-currency">{{selectedCard.price}}</span>
+                                <span class="card-title">{{selectedCard.offer}}</span>
+                                <p>{{selectedCard.type}}</p>
+                                <p>{{selectedCard.description}}</p>
+                            </div>
+                        </div>
+                    </igx-card-content>
+                </igx-card>
+            </div>
             <div class="sample-step-actions">
                 <button igxButton="raised" (click)="stepper.prev()">Back</button>
                 <button igxButton="raised" (click)="stepper.next()"
