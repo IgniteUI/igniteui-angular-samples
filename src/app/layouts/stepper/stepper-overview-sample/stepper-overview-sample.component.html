@@ -51,7 +51,7 @@
                 </igx-select>
                 <igx-input-group>
                     <input igxInput name="zip" id="zip" type="text" pattern="[0-9]{5}" maxlength="5"
-                        [(ngModel)]="businessInformation.zip" required />
+                    [placeholder]="'#####'" [(ngModel)]="businessInformation.zip" required />
                     <label igxLabel for="zip">ZIP Code</label>
                 </igx-input-group>
                 <igx-checkbox name="differentAddress" [(ngModel)]="businessInformation.differentAddress">
@@ -59,7 +59,7 @@
                 </igx-checkbox>
                 <igx-input-group>
                     <input igxInput name="taxIdNumber" id="taxIdNumber" type="text"
-                        pattern="[9]{1}[0-9]{8}" maxlength="9"
+                        pattern="[9]{1}[0-9]{8}" maxlength="9" [placeholder]="'9##-##-####'"
                         [(ngModel)]="businessInformation.taxIdNumber" required />
                     <label igxLabel for="taxIdNumber">Federal Tax ID Number</label>
                 </igx-input-group>
@@ -190,7 +190,7 @@
                 </igx-select>
                 <igx-input-group>
                     <input igxInput name="szip" id="szip" type="text" pattern="[0-9]{5}" maxlength="5"
-                        [(ngModel)]="shippingDetails.zip" required />
+                    [placeholder]="'#####'" [(ngModel)]="shippingDetails.zip" required />
                     <label igxLabel for="szip">ZIP Code</label>
                 </igx-input-group>
             </form>
