@@ -13,7 +13,7 @@ export class StepperOverviewSampleComponent {
 
     public cards = [
         {
-            img: 'assets/images/stepper/card-blue.png',
+            img: 'assets/images/stepper/card-gold.png',
             price: 400,
             offer: 'STATEMENT CREDIT OFFER',
             type: 'Business Customized Advanced',
@@ -27,7 +27,7 @@ export class StepperOverviewSampleComponent {
             description: 'World Mastercard'
         },
         {
-            img: 'assets/images/stepper/card-gold.png',
+            img: 'assets/images/stepper/card-blue.png',
             price: 500,
             offer: 'STATEMENT CREDIT OFFER',
             type: 'Business Golden',

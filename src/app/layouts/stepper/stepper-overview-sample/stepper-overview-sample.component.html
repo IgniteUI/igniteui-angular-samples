@@ -6,7 +6,7 @@
             <h2 class="sample-step-title">Choose your business credit card</h2>
             <div class="card-wrapper">
                 <igx-card *ngFor="let card of cards" (click)="selectCard(card)"
-                    [ngClass]="selectedCard === card ? 'selected-card' : ''">
+                    [ngClass]="{'selected-card': selectedCard === card}">
                     <igx-card-media>
                         <img src="{{card.img}}" alt="">
                     </igx-card-media>
@@ -28,7 +28,8 @@
             <div class="sample-row">
                 <form class="flex-form" #businessInformationForm="ngForm">
                     <igx-input-group type="box">
-                        <input igxInput name="name" id="name" type="text" [(ngModel)]="businessInformation.name" required />
+                        <input igxInput name="name" id="name" type="text" [(ngModel)]="businessInformation.name"
+                            required />
                         <label igxLabel for="name">Legal Business Name</label>
                     </igx-input-group>
                     <igx-input-group type="box">
@@ -38,7 +39,8 @@
                     </igx-input-group>
                     <div class="form-row">
                         <igx-input-group type="box">
-                            <input igxInput name="city" id="city" type="text" [(ngModel)]="businessInformation.city" required />
+                            <input igxInput name="city" id="city" type="text" [(ngModel)]="businessInformation.city"
+                                required />
                             <label igxLabel for="city">City</label>
                         </igx-input-group>
                         <igx-select type="box" name="state" [(ngModel)]="businessInformation.state" required>
@@ -49,7 +51,7 @@
                         </igx-select>
                         <igx-input-group type="box">
                             <input igxInput name="zip" id="zip" type="text" pattern="[0-9]{5}" maxlength="5"
-                                   [placeholder]="'#####'" [(ngModel)]="businessInformation.zip" required />
+                                [placeholder]="'#####'" [(ngModel)]="businessInformation.zip" required />
                             <label igxLabel for="zip">ZIP Code</label>
                         </igx-input-group>
                     </div>
@@ -57,9 +59,9 @@
                         The mailing address is different than the business physical address
                     </igx-checkbox>
                     <igx-input-group type="box">
-                        <input igxInput name="taxIdNumber" id="taxIdNumber" type="text"
-                            pattern="[9]{1}[0-9]{8}" maxlength="9" [placeholder]="'9##-##-####'"
-                            [(ngModel)]="businessInformation.taxIdNumber" required />
+                        <input igxInput name="taxIdNumber" id="taxIdNumber" type="text" pattern="[9]{1}[0-9]{8}"
+                            maxlength="9" [placeholder]="'9##-##-####'" [(ngModel)]="businessInformation.taxIdNumber"
+                            required />
                         <label igxLabel for="taxIdNumber">Federal Tax ID Number</label>
                     </igx-input-group>
                     <p>Does this business operate outside the United States? *</p>
@@ -90,7 +92,7 @@
             <div class="sample-step-actions">
                 <button igxButton="raised" (click)="stepper.prev()">Back</button>
                 <button igxButton="raised" (click)="stepper.next()"
-                        [disabled]="!businessInformationForm.form.valid">Continue</button>
+                    [disabled]="!businessInformationForm.form.valid">Continue</button>
             </div>
         </div>
     </igx-step>
@@ -106,13 +108,13 @@
                         <label igxLabel for="firstName">First Name</label>
                     </igx-input-group>
                     <igx-input-group type="box">
-                        <input igxInput name="lastName" id="lastName" type="text" [(ngModel)]="personalInformation.lastName"
-                            required />
+                        <input igxInput name="lastName" id="lastName" type="text"
+                            [(ngModel)]="personalInformation.lastName" required />
                         <label igxLabel for="lastName">Last Name</label>
                     </igx-input-group>
                     <igx-input-group type="box">
-                        <input igxInput name="jobTitle" id="jobTitle" type="text" [(ngModel)]="personalInformation.jobTitle"
-                            required />
+                        <input igxInput name="jobTitle" id="jobTitle" type="text"
+                            [(ngModel)]="personalInformation.jobTitle" required />
                         <label igxLabel for="jobTitle">Job Title</label>
                     </igx-input-group>
                     <igx-input-group type="box">
@@ -129,7 +131,8 @@
                         I confirm that I am authorized to borrow on behalf of this business. *
                     </igx-checkbox>
                     <igx-checkbox name="agreementAccepted" [(ngModel)]="personalInformation.agreementAccepted" required>
-                        I agree with the <a [routerLink]="" (click)="$event.stopPropagation()">Terms and Conditions</a> *
+                        I agree with the <a [routerLink]="" (click)="$event.stopPropagation()">Terms and Conditions</a>
+                        *
                     </igx-checkbox>
                 </form>
                 <igx-card type="outlined" *ngIf="selectedCard">
@@ -162,22 +165,23 @@
                 <form class="flex-form" #shippingDetailsForm="ngForm">
                     <igx-input-group type="box">
                         <input igxInput name="sfirstName" id="sfirstName" type="text"
-                               [(ngModel)]="shippingDetails.firstName" required />
+                            [(ngModel)]="shippingDetails.firstName" required />
                         <label igxLabel for="sfirstName">First Name</label>
                     </igx-input-group>
                     <igx-input-group type="box">
-                        <input igxInput name="slastName" id="slastName" type="text" [(ngModel)]="shippingDetails.lastName"
-                               required />
+                        <input igxInput name="slastName" id="slastName" type="text"
+                            [(ngModel)]="shippingDetails.lastName" required />
                         <label igxLabel for="slastName">Last Name</label>
                     </igx-input-group>
                     <igx-input-group type="box">
                         <input igxInput name="mailingAddress" type="text" [(ngModel)]="shippingDetails.mailingAddress"
-                               required />
+                            required />
                         <label igxLabel for="mailingAddress" id="mailingAddress">Mailing Address</label>
                     </igx-input-group>
                     <div class="form-row">
                         <igx-input-group type="box">
-                            <input igxInput name="scity" id="scity" type="text" [(ngModel)]="shippingDetails.city" required />
+                            <input igxInput name="scity" id="scity" type="text" [(ngModel)]="shippingDetails.city"
+                                required />
                             <label igxLabel for="scity">City</label>
                         </igx-input-group>
                         <igx-select type="box" name="sstate" [(ngModel)]="shippingDetails.state" required>
@@ -188,7 +192,7 @@
                         </igx-select>
                         <igx-input-group type="box">
                             <input igxInput name="szip" id="szip" type="text" pattern="[0-9]{5}" maxlength="5"
-                                   [placeholder]="'#####'" [(ngModel)]="shippingDetails.zip" required />
+                                [placeholder]="'#####'" [(ngModel)]="shippingDetails.zip" required />
                             <label igxLabel for="szip">ZIP Code</label>
                         </igx-input-group>
                     </div>
@@ -223,7 +227,8 @@
                     <igx-icon>check</igx-icon>
                 </div>
                 <div class="success-text">
-                    <h2 class="sample-step-title">Your application for a business credit card has been sent successfully!</h2>
+                    <h2 class="sample-step-title">Your application for a business credit card has been sent
+                        successfully!</h2>
                     <p>We will contact you within a few days.</p>
                 </div>
             </div>
