@@ -35,6 +35,12 @@ export class StepperOverviewSampleComponent {
         }
     ];
 
+    public states = [
+        'Alabama', 'Arizona', 'California', 'Colorado', 'Florida',
+        'Georgia', 'Hawaii', 'Illinois', 'Louisiana', 'Minnesota',
+        'Nevada', 'New York', 'New Jersey', 'Ohio', 'Texas', 'Virginia', 'Washington'
+    ];
+
     public selectedCard;
 
     public businessInformation = {
