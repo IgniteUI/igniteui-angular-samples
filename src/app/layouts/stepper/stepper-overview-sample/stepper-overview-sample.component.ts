@@ -13,21 +13,21 @@ export class StepperOverviewSampleComponent {
 
     public cards = [
         {
-            img: 'https://ck-content.imgix.net/pcm/content/ba1b3537d7b1f1778943-OpenSky-UpdatedCreditCardArt__1_.png?auto=compress,format',
+            img: 'assets/images/stepper/card-blue.png',
             price: 400,
             offer: 'STATEMENT CREDIT OFFER',
             type: 'Business Customized Advanced',
             description: 'Cash Mastercard'
         },
         {
-            img: 'https://ck-content.imgix.net/pcm/content/ba1b3537d7b1f1778943-OpenSky-UpdatedCreditCardArt__1_.png?auto=compress,format',
+            img: 'assets/images/stepper/card-red.png',
             price: 600,
             offer: 'STATEMENT CREDIT OFFER',
             type: 'Business Travel Advanced',
             description: 'World Mastercard'
         },
         {
-            img: 'https://ck-content.imgix.net/pcm/content/ba1b3537d7b1f1778943-OpenSky-UpdatedCreditCardArt__1_.png?auto=compress,format',
+            img: 'assets/images/stepper/card-gold.png',
             price: 500,
             offer: 'STATEMENT CREDIT OFFER',
             type: 'Business Golden',

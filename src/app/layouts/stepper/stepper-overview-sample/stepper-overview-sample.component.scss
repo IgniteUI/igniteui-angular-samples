@@ -1,43 +1,187 @@
-$sample-gap: 20px;
+@import '../../../../variables';
 
+$sample-gap: 20px;
 :host {
 	display: block;
 	padding: $sample-gap;
+	max-width: rem(1150px);
+
+	p {
+		margin: 0;
+	}
 }
 
-.sample-split,
-.sample-step-actions {
+.sample-step-actions,
+.card-wrapper,
+.sample-row,
+.flex-form,
+.form-row,
+.success-message,
+.success-text {
 	display: flex;
-	gap: $sample-gap;
+}
+
+.sample-row {
+	align-items: flex-start;
+	gap: rem(50px);
+
+	> * {
+		flex: 1;
+	}
 }
 
 .sample-step-actions {
+	gap: $sample-gap;
 	margin-top: $sample-gap * 2;
 }
 
-.sample-split {
-	> * {
-		max-width: 380px;
-		flex: 1;
-	}
-
-	margin-bottom: $sample-gap;
-}
-
-form {
-	> * {
-		margin-bottom: calc(#{$sample-gap} / 2);
-	}
-
-	margin-bottom: $sample-gap;
-}
-
-igx-radio {
-	margin-bottom: $sample-gap;
-}
-
 .card-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+	gap: rem(30px);
+}
+
+$my-card: igx-card-theme(
+	$palette: $default-palette,
+	$schema: $light-schema,
+	$border-radius: rem(8px),
+	$content-text-color: igx-color($default-palette, 'grays', 900),
+);
+
+@include igx-card($my-card);
+
+.selected-card {
+	border: 1px solid igx-color($default-palette, 'primary', 400);
+}
+
+.igx-card {
+	cursor: pointer;
+	user-select: none;
+	min-width: 280px;
+}
+
+.sample-step-title {
+	font-size: rem(20px);
+	letter-spacing: 0;
+	font-weight: 600;
+	line-height: normal;
+	margin-bottom: rem(24px);
+}
+
+.igx-card__media {
+	max-width: rem(340px);
+	padding: rem(30px) rem(30px) 0 rem(30px);
+}
+
+.igx-card-content {
+	text-align: center;
+
+	p {
+		font-size: rem(16px);
+		line-height: rem(24px);
+	}
+
+	padding: rem(30px);
+}
+
+.card-title {
+	display: block;
+	font-size: rem(14px);
+	font-weight: 500;
+	margin: 0 rem(8px);
+	color: igx-color($default-palette, 'secondary');
+}
+
+.card-currency {
+	display: block;
+	font-size: rem(48px);
+	color: igx-color($default-palette, 'secondary');
+	margin-bottom: rem(8px);
+
+	&::before {
+		content: '$';
+		font-size: rem(34px);
+		margin-right: rem(6px);
+		position: relative;
+		top: rem(-12px);
+	}
+}
+
+.flex-form,
+.form-row {
+	gap: rem(16px);
+}
+
+.flex-form {
+	flex-direction: column;
+}
+
+.sample-card {
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	img {
+		width: rem(200px);
+		max-width: rem(300px);
+		min-width: rem(150px);
+	}
+
+	.card-title {
+		font-size: 12px;
+		margin:0 rem(4px);
+	}
+
+	.card-currency {
+		font-size: rem(36px);
+		margin-bottom: rem(4px);
+
+		&::before {
+			font-size: rem(22px);
+			margin-right: rem(4px);
+		}
+	}
+
+	p {
+		font-size: rem(14px);
+		white-space: nowrap;
+	}
+}
+
+.radio-sample {
+	margin-bottom: rem(16px);
+}
+
+.success-marker {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	width: rem(30px);
+	height: rem(30px);
+	border-radius: rem(15px);
+	background: igx-color($default-palette, 'success');
+	color: #fff;
+	user-select: none;
+}
+
+.success-message {
+	align-items: center;
+	gap: rem(16px);
+	margin-bottom: rem(32px);
+}
+
+.success-text {
+	flex-direction: column;
+
+	.sample-step-title {
+		margin: 0;
+	}
+}
+
+.sample-date {
+	display: block;
+	margin-bottom: rem(16px);
+	text-align: left;
+}
+
+.sample-small-card {
+	max-width: rem(500px);
 }
