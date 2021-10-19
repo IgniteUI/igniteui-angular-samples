@@ -43,13 +43,15 @@
                     <input igxInput name="city" id="city" type="text" [(ngModel)]="businessInformation.city" required />
                     <label igxLabel for="city">City</label>
                 </igx-input-group>
+                <igx-select name="state" [(ngModel)]="businessInformation.state" required>
+                    <igx-select-item *ngFor="let state of states" [value]="state">
+                        {{state}}
+                    </igx-select-item>
+                    <label igxLabel>State</label>
+                </igx-select>
                 <igx-input-group>
-                    <input igxInput name="state" id="state" type="text" [(ngModel)]="businessInformation.state"
-                        required />
-                    <label igxLabel for="state">State</label>
-                </igx-input-group>
-                <igx-input-group>
-                    <input igxInput name="zip" id="zip" type="number" [(ngModel)]="businessInformation.zip" required />
+                    <input igxInput name="zip" id="zip" type="text" pattern="[0-9]{5}" maxlength="5"
+                        [(ngModel)]="businessInformation.zip" required />
                     <label igxLabel for="zip">ZIP Code</label>
                 </igx-input-group>
                 <igx-checkbox name="differentAddress" [(ngModel)]="businessInformation.differentAddress">
@@ -57,6 +59,7 @@
                 </igx-checkbox>
                 <igx-input-group>
                     <input igxInput name="taxIdNumber" id="taxIdNumber" type="text"
+                        pattern="[9]{1}[0-9]{8}" maxlength="9"
                         [(ngModel)]="businessInformation.taxIdNumber" required />
                     <label igxLabel for="taxIdNumber">Federal Tax ID Number</label>
                 </igx-input-group>
@@ -179,13 +182,15 @@
                     <input igxInput name="scity" id="scity" type="text" [(ngModel)]="shippingDetails.city" required />
                     <label igxLabel for="scity">City</label>
                 </igx-input-group>
+                <igx-select name="sstate" [(ngModel)]="shippingDetails.state" required>
+                    <igx-select-item *ngFor="let state of states" [value]="state">
+                        {{state}}
+                    </igx-select-item>
+                    <label igxLabel>State</label>
+                </igx-select>
                 <igx-input-group>
-                    <input igxInput name="sstate" id="sstate" type="text" [(ngModel)]="shippingDetails.state"
-                        required />
-                    <label igxLabel for="sstate">State</label>
-                </igx-input-group>
-                <igx-input-group>
-                    <input igxInput name="szip" id="szip" type="number" [(ngModel)]="shippingDetails.zip" required />
+                    <input igxInput name="szip" id="szip" type="text" pattern="[0-9]{5}" maxlength="5"
+                        [(ngModel)]="shippingDetails.zip" required />
                     <label igxLabel for="szip">ZIP Code</label>
                 </igx-input-group>
             </form>
