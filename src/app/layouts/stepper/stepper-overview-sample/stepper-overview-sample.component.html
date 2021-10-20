@@ -50,7 +50,7 @@
                             <label igxLabel>State</label>
                         </igx-select>
                         <igx-input-group type="box">
-                            <input igxInput name="zip" id="zip" type="text" pattern="[0-9]{5}" maxlength="5"
+                            <input igxInput name="zip" id="zip" type="text" pattern="[0-9]{5}" [igxMask]="'00000'"
                                 [placeholder]="'#####'" [(ngModel)]="businessInformation.zip" required />
                             <label igxLabel for="zip">ZIP Code</label>
                         </igx-input-group>
@@ -60,8 +60,8 @@
                     </igx-checkbox>
                     <igx-input-group type="box">
                         <input igxInput name="taxIdNumber" id="taxIdNumber" type="text" pattern="[9]{1}[0-9]{8}"
-                            maxlength="9" [placeholder]="'9##-##-####'" [(ngModel)]="businessInformation.taxIdNumber"
-                            required />
+                            [placeholder]="'9##-##-####'" [igxMask]="'000-00-0000'"
+                            [(ngModel)]="businessInformation.taxIdNumber" required />
                         <label igxLabel for="taxIdNumber">Federal Tax ID Number</label>
                     </igx-input-group>
                     <p>Does this business operate outside the United States? *</p>
@@ -191,8 +191,8 @@
                             <label igxLabel>State</label>
                         </igx-select>
                         <igx-input-group type="box">
-                            <input igxInput name="szip" id="szip" type="text" pattern="[0-9]{5}" maxlength="5"
-                                [placeholder]="'#####'" [(ngModel)]="shippingDetails.zip" required />
+                            <input igxInput name="szip" id="szip" type="text" pattern="[0-9]{5}" [placeholder]="'#####'"
+                                [igxMask]="'00000'" [(ngModel)]="shippingDetails.zip" required />
                             <label igxLabel for="szip">ZIP Code</label>
                         </igx-input-group>
                     </div>
