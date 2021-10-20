@@ -15,9 +15,9 @@ export class AccordionConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'AccordionSample1Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['AccordionSample1Component', 'IgxAccordionModule'],
+                imports: ['AccordionSample1Component', 'IgxAccordionModule', 'IgxSwitchModule'],
                 ngDeclarations: ['AccordionSample1Component'],
-                ngImports: ['IgxAccordionModule']
+                ngImports: ['IgxAccordionModule', 'IgxSwitchModule']
             }),
             shortenComponentPathBy: '/layouts/accordion/'
         }));
@@ -25,9 +25,9 @@ export class AccordionConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'AccordionSample2Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['AccordionSample2Component', 'IgxAccordionModule'],
+                imports: ['AccordionSample2Component', 'IgxAccordionModule', 'IgxSwitchModule'],
                 ngDeclarations: ['AccordionSample2Component'],
-                ngImports: ['IgxAccordionModule']
+                ngImports: ['IgxAccordionModule', 'IgxSwitchModule']
             }),
             shortenComponentPathBy: '/layouts/accordion/'
         }));
