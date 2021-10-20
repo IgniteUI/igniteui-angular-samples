@@ -2,11 +2,11 @@
 
     <igx-step #step1 [isValid]="!!selectedCard" [completed]="step1.isValid">
         <span igxStepTitle>Card Type</span>
-        <div igxStepContent>
+        <div igxStepContent [tabIndex]="-1">
             <h2 class="sample-step-title">Choose your business credit card</h2>
             <div class="card-wrapper">
                 <igx-card *ngFor="let card of cards" (click)="selectCard(card)"
-                    [ngClass]="{'selected-card': selectedCard === card}">
+                    [ngClass]="{'selected-card': selectedCard === card}" [tabIndex]="0" (keydown)="handleKeyDown($event, card)">
                     <igx-card-media>
                         <img src="{{card.img}}" alt="">
                     </igx-card-media>
@@ -24,7 +24,7 @@
 
     <igx-step #step2 [isValid]="businessInformationForm.form.valid" [completed]="step2.isValid">
         <span igxStepTitle>Business information</span>
-        <div igxStepContent>
+        <div igxStepContent [tabIndex]="-1">
             <div class="sample-row">
                 <form class="flex-form" #businessInformationForm="ngForm">
                     <igx-input-group type="box">
@@ -99,7 +99,7 @@
 
     <igx-step #step3 [isValid]="personalInformationForm.form.valid" [completed]="step3.isValid">
         <span igxStepTitle>Personal Information</span>
-        <div igxStepContent>
+        <div igxStepContent [tabIndex]="-1">
             <div class="sample-row">
                 <form class="flex-form" #personalInformationForm="ngForm">
                     <igx-input-group type="box">
@@ -160,7 +160,7 @@
     <igx-step #step4 [disabled]="!businessInformation.differentAddress" [isValid]="shippingDetailsForm.form.valid"
         [completed]="step4.isValid || (step4.disabled && step3.completed)">
         <span igxStepTitle>Shipping Details</span>
-        <div igxStepContent>
+        <div igxStepContent [tabIndex]="-1">
             <div class="sample-row">
                 <form class="flex-form" #shippingDetailsForm="ngForm">
                     <igx-input-group type="box">
@@ -221,7 +221,7 @@
 
     <igx-step #step5>
         <span igxStepTitle>Confirmation</span>
-        <div igxStepContent>
+        <div igxStepContent [tabIndex]="-1">
             <div class="success-message">
                 <div class="success-marker">
                     <igx-icon>check</igx-icon>

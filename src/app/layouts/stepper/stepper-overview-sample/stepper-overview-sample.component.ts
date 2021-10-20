@@ -93,4 +93,10 @@ export class StepperOverviewSampleComponent {
         this.personalInformation.agreementAccepted = false;
         form3.reset();
     }
+
+    public handleKeyDown(evt, card) {
+        if (evt.key.toLowerCase() === ' ' || evt.key.toLowerCase() === 'spacebar' || evt.key.toLowerCase() === 'space') {
+            this.selectCard(card);
+        }
+    }
 }
