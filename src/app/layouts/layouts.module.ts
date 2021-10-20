@@ -93,10 +93,10 @@ import { AccordionSample1Component } from './accordion/accordion-sample-1/accord
 import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
 import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
 import {
-    StepperLabelPositionSampleComponent
+    StepperLabelPositionAndOrientationSampleComponent
 } from './stepper/stepper-label-position-and-orientation-sample/stepper-label-position-and-orientation-sample.component';
 import { StepperLinearSampleComponent } from './stepper/stepper-linear-sample/stepper-linear-sample.component';
-import { StepperStepTypeSampleComponent } from './stepper/stepper-stepstypes-sample/stepper-stepstypes-sample.component';
+import { StepperStepTypeSampleComponent } from './stepper/stepper-steptype-sample/stepper-steptype-sample.component';
 import { StepperStylingSampleComponent } from './stepper/stepper-styling-sample/stepper-styling-sample.component';
 import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sample/stepper-overview-sample.component';
 
@@ -142,7 +142,7 @@ import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sampl
         SplitterHorizontalSampleComponent,
         SplitterNestedSampleComponent,
         SplitterStylingSampleComponent,
-        StepperLabelPositionSampleComponent,
+        StepperLabelPositionAndOrientationSampleComponent,
         StepperLinearSampleComponent,
         StepperOverviewSampleComponent,
         StepperStepTypeSampleComponent,

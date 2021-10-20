@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-stepper-stepstypes-sample',
-    styleUrls: ['./stepper-stepstypes-sample.component.scss'],
-    templateUrl: './stepper-stepstypes-sample.component.html'
+    selector: 'app-stepper-steptype-sample',
+    styleUrls: ['./stepper-steptype-sample.component.scss'],
+    templateUrl: './stepper-steptype-sample.component.html'
 })
 export class StepperStepTypeSampleComponent {
     public stepType = 'full';

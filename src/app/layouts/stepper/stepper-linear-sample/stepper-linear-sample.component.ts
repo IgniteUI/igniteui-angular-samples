@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-// import { IgxStepperOrienatation } from 'igniteui-angular/lib/stepper/common';
 
 @Component({
     selector: 'app-stepper-linear-sample',
