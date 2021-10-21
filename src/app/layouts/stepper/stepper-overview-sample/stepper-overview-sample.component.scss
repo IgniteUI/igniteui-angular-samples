@@ -49,13 +49,34 @@ $my-card: igx-card-theme(
 @include igx-card($my-card);
 
 .selected-card {
-	border: 1px solid igx-color($default-palette, 'primary', 400);
+	border: 2px solid igx-color($default-palette, 'primary', 400);
+	position: relative;
+	overflow: initial;
+
+	igx-badge {
+		position: absolute;
+		top: rem(-11px);
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		content: 'Current choice';
+		padding: rem(4px) rem(8px);
+		max-width: 50%;
+	}
 }
 
 .igx-card {
 	cursor: pointer;
 	user-select: none;
 	min-width: 280px;
+
+	&:focus {
+		outline: none;
+		box-shadow: inset 0 0 0 1px igx-color($default-palette, 'primary', 400),
+			0 5px 5px -3px rgba(0, 0, 0, 0.26),
+			0 8px 10px 1px rgba(0, 0, 0, 0.12),
+			0 3px 14px 2px rgba(0, 0, 0, 0.08);
+	}
 }
 
 .sample-step-title {
@@ -112,6 +133,10 @@ $my-card: igx-card-theme(
 
 .flex-form {
 	flex-direction: column;
+
+	igx-checkbox {
+		white-space: nowrap;
+	}
 }
 
 .sample-card {
@@ -120,9 +145,9 @@ $my-card: igx-card-theme(
 	flex-wrap: wrap;
 
 	img {
-		width: rem(200px);
+		width: rem(180px);
 		max-width: rem(300px);
-		min-width: rem(150px);
+		min-width: rem(130px);
 	}
 
 	.card-title {
@@ -185,4 +210,25 @@ $my-card: igx-card-theme(
 
 .sample-small-card {
 	max-width: rem(500px);
+}
+
+.sample-terms {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
+	> a {
+		margin-left: rem(8px);
+		color: igx-color($default-palette, 'primary');
+		text-decoration: none;
+
+		&:hover {
+			color: igx-color($default-palette, 'primary', 600);
+		}
+	}
+}
+
+.sample-required {
+	color: igx-color($default-palette, 'error');
+	margin-left: rem(2px);
 }
