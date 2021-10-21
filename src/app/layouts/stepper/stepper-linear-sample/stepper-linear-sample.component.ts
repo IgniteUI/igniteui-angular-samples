@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
     templateUrl: './stepper-linear-sample.component.html'
 })
 export class StepperLinearSampleComponent {
-    public orientation = 'horizontal';
     public linear = false;
 
     public user = {
@@ -25,17 +24,6 @@ export class StepperLinearSampleComponent {
         'MasterCard (**** **** **** 5678; 12/24)'
     ];
 
-    public stepperOrientations = [
-        {
-            label: 'Horizontal', orientation: 'horizontal',
-            selected: this.orientation === 'horizontal', togglable: true
-        },
-        {
-            label: 'Vertical', orientation: 'vertical',
-            selected: this.orientation === 'vertical', togglable: true
-        }
-    ];
-
     public modes = [
         {
             label: 'Linear', linear: true,
@@ -46,10 +34,6 @@ export class StepperLinearSampleComponent {
             selected: this.linear === false, togglable: true
         }
     ];
-
-    public toggleOrientation(event) {
-        this.orientation = this.stepperOrientations[event.index].orientation;
-    }
 
     public toggleModes(event) {
         this.linear = this.modes[event.index].linear;
