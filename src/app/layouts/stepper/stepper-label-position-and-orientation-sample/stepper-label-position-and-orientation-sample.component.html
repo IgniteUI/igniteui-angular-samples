@@ -4,7 +4,7 @@
     <igx-buttongroup [values]="stepperOrientations" (selected)="toggleOrientation($event)">
     </igx-buttongroup>
 </div>
-<igx-stepper #stepper [horizontalTitlePosition]="titlePosition" [verticalTitlePosition]="titlePosition" [orientation]="orientation">
+<igx-stepper #stepper [titlePosition]="titlePosition" [orientation]="orientation">
     <igx-step>
         <span igxStepTitle>Order</span>
         <div igxStepContent>
