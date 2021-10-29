@@ -4,13 +4,13 @@
             [data]="trendLineTypes"
             [(ngModel)]="trendLineType"
         ></igx-simple-combo>
-        <igx-button-group>
+        <igx-buttongroup>
             <button igxButton
                 [selected]="range === selectedRange"
                 (buttonClick)="rangeButtonClick(range)"
                 *ngFor="let range of ranges"
             >{{range}}</button>
-        </igx-button-group>
+        </igx-buttongroup>
     </div>
     <igx-financial-chart
         width="100%"

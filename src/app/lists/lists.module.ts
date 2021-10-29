@@ -46,6 +46,7 @@ import { ListsRoutingModule } from './lists-routing.module';
 import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sample.component';
 import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-advanced-sample.component';
 import { SimpleComboMainComponent } from './combo/simple-combo-main/simple-combo-main.component';
+import { SimpleComboUsageComponent } from './combo/simple-combo-usage/simple-combo-usage.component';
 
 @NgModule({
     declarations: [
@@ -70,6 +71,7 @@ import { SimpleComboMainComponent } from './combo/simple-combo-main/simple-combo
         ComboBindingComponent,
         ComboSingleSelectionComponent,
         SimpleComboMainComponent,
+        SimpleComboUsageComponent,
         TreeBasicSampleComponent,
         TreeAdvancedSampleComponent
     ],
