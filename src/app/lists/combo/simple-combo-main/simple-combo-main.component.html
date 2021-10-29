@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="input-row">
+        <igx-simple-combo
+            [data]="trendLineTypes"
+            [(ngModel)]="trendLineType"
+        ></igx-simple-combo>
+        <igx-button-group>
+            <button igxButton
+                [selected]="range === selectedRange"
+                (buttonClick)="rangeButtonClick(range)"
+                *ngFor="let range of ranges"
+            >{{range}}</button>
+        </igx-button-group>
+    </div>
+    <igx-financial-chart
+        width="100%"
+        height="100%"
+        [dataSource]="data"
+        [trendLineType]="trendLineType"
+        trendLineBrushes="rgba(0, 101, 209, 1)"
+        zoomSliderType="None"
+        [isToolbarVisible]="false"
+        [windowRect]="windowRect"
+    ></igx-financial-chart>
+</div>

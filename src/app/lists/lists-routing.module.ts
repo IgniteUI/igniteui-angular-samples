@@ -23,6 +23,7 @@ import { ListComponent } from './list/list.component';
 import { listsRoutesData } from './lists-routes-data';
 import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sample.component';
 import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-advanced-sample.component';
+import { SimpleComboMainComponent } from './combo/simple-combo-main/simple-combo-main.component';
 
 export const listsRoutes: Routes = [
     {
@@ -74,6 +75,11 @@ export const listsRoutes: Routes = [
         component: ComboSingleSelectionComponent,
         data: listsRoutesData['combo-single-selection'],
         path: 'combo-single-selection'
+    },
+    {
+        component: SimpleComboMainComponent,
+        data: listsRoutesData['simple-combo-main'],
+        path: 'simple-combo-main'
     },
     {
         component: ListComponent,

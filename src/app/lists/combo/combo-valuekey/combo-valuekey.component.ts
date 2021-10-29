@@ -15,6 +15,6 @@ export class ComboValueKeyComponent {
     public selectedValueKey: string[] = ['UK01', 'BG01'];
 
     public selectFavorites() {
-        this.comboValueKey.selectItems(['UK01', 'BG01', 'JP01', 'DE01']);
+        this.comboValueKey.select(['UK01', 'BG01', 'JP01', 'DE01']);
     }
 }

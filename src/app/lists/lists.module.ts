@@ -15,11 +15,13 @@ import {
     IgxRippleModule,
     IgxSelectModule,
     IgxSliderModule,
+    IgxSimpleComboModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxTooltipModule,
     IgxTreeModule
 } from 'igniteui-angular';
+import { IgxFinancialChartModule } from 'igniteui-angular-charts';
 import { CascadingCombosComponent } from './combo/cascading-combos/cascading-combos.component';
 import { ComboBindingComponent } from './combo/combo-binding/combo-binding.component';
 import { ComboFeaturesComponent } from './combo/combo-features/combo-features.component';
@@ -43,6 +45,7 @@ import { ListComponent } from './list/list.component';
 import { ListsRoutingModule } from './lists-routing.module';
 import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sample.component';
 import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-advanced-sample.component';
+import { SimpleComboMainComponent } from './combo/simple-combo-main/simple-combo-main.component';
 
 @NgModule({
     declarations: [
@@ -66,6 +69,7 @@ import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-ad
         ComboOverlayComponent,
         ComboBindingComponent,
         ComboSingleSelectionComponent,
+        SimpleComboMainComponent,
         TreeBasicSampleComponent,
         TreeAdvancedSampleComponent
     ],
@@ -89,7 +93,9 @@ import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-ad
         IgxRippleModule,
         IgxCardModule,
         IgxTreeModule,
-        IgxTooltipModule
+        IgxTooltipModule,
+        IgxFinancialChartModule,
+        IgxSimpleComboModule
     ]
 })
 export class ListsModule { }
