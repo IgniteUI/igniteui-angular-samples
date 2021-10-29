@@ -2,13 +2,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectorRef, Injectable } from '@angular/core';
-import { IForOfState, SortingDirection } from 'igniteui-angular';
+import { Injectable } from '@angular/core';
+import { IForOfState } from 'igniteui-angular';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
 
 const DATA_URL: string = 'https://services.odata.org/V4/Northwind/Northwind.svc/Products';
-const EMPTY_STRING: string = '';
+
 // eslint-disable-next-line no-shadow
 export enum SortOrder {
     ASC = 'asc',
@@ -23,7 +22,7 @@ export class RemoteService {
     private _cachedData = [];
     private _prevRequestChunk: number;
 
-    constructor(private _http: HttpClient, private cdr: ChangeDetectorRef) {
+    constructor(private _http: HttpClient) {
         this._data = new BehaviorSubject([]);
         this.data = this._data.asObservable();
     }

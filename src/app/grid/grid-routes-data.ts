@@ -112,5 +112,7 @@ export const gridsRoutesData = {
     'grid-column-data-types': {displayName: 'Grid column data types', parentName: 'Grid'},
     'grid-formatted-filtering-strategy': { displayName: 'Grid Formatted Filtering Strategy', parentName: 'Grid' },
     'grid-summary-formatter': { displayName: 'Grid Summary Formatter', parentName: 'Grid' },
-    'grid-crud': { displayName: 'Grid CRUD Operations', parentName: 'Grid'}
+    'grid-crud': { displayName: 'Grid CRUD Operations', parentName: 'Grid'},
+    'grid-rowClasses-sample': { displayName: 'Grid rowClasses', parentName: 'Grid'},
+    'grid-rowStyles-sample': { displayName: 'Grid rowStyles', parentName: 'Grid'}
 };
