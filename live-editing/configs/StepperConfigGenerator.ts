@@ -1,10 +1,13 @@
+import { RouterModule } from '@angular/router';
 import {
     IgxStepperModule,
+    IgxBadgeModule,
     IgxInputGroupModule,
     IgxMaskModule,
     IgxRadioModule,
     IgxCardModule,
     IgxButtonModule,
+    IgxButtonGroupModule,
     IgxCheckboxModule,
     IgxSelectModule,
     IgxIconModule
@@ -20,10 +23,12 @@ export class StepperConfigGenerator implements IConfigGenerator {
             component: 'StepperOverviewSampleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['StepperOverviewSampleComponent', 'IgxStepperModule', 'IgxMaskModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                    'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule', 'IgxIconModule'],
+                    'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule',
+                    'IgxIconModule', 'RouterModule', 'IgxBadgeModule'],
                 ngDeclarations: ['StepperOverviewSampleComponent'],
                 ngImports: ['IgxStepperModule', 'IgxMaskModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                    'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule', 'IgxIconModule']
+                    'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule',
+                    'IgxIconModule', 'RouterModule.forRoot([])', 'IgxBadgeModule']
             }),
             shortenComponentPathBy: '/layouts/stepper/'
         }));
@@ -31,9 +36,10 @@ export class StepperConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'StepperLabelPositionAndOrientationSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['StepperLabelPositionAndOrientationSampleComponent', 'IgxStepperModule', 'IgxButtonModule'],
+                imports: ['StepperLabelPositionAndOrientationSampleComponent',
+                    'IgxStepperModule', 'IgxButtonModule', 'IgxButtonGroupModule'],
                 ngDeclarations: ['StepperLabelPositionAndOrientationSampleComponent'],
-                ngImports: ['IgxStepperModule', 'IgxButtonModule']
+                ngImports: ['IgxStepperModule', 'IgxButtonModule', 'IgxButtonGroupModule']
             }),
             shortenComponentPathBy: '/layouts/stepper/'
         }));
@@ -41,20 +47,21 @@ export class StepperConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'StepperLinearSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['StepperLinearSampleComponent', 'IgxStepperModule', 'IgxIconModule', 'IgxButtonModule',
+                imports: ['StepperLinearSampleComponent', 'IgxStepperModule', 'IgxIconModule', 'IgxButtonModule', 'IgxButtonGroupModule',
                     'IgxInputGroupModule', 'IgxRadioModule'],
                 ngDeclarations: ['StepperLinearSampleComponent'],
-                ngImports: ['IgxStepperModule', 'IgxIconModule', 'IgxButtonModule', 'IgxInputGroupModule', 'IgxRadioModule']
+                ngImports: ['IgxStepperModule', 'IgxIconModule', 'IgxButtonModule',
+                    'IgxButtonGroupModule', 'IgxInputGroupModule', 'IgxRadioModule']
             }),
             shortenComponentPathBy: '/layouts/stepper/'
         }));
 
         configs.push(new Config({
-            component: 'StepperStepTypeSampleComponent',
+            component: 'StepperStepTypesSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['StepperStepTypeSampleComponent', 'IgxStepperModule', 'IgxButtonModule'],
-                ngDeclarations: ['StepperStepTypeSampleComponent'],
-                ngImports: ['IgxStepperModule', 'IgxButtonModule']
+                imports: ['StepperStepTypesSampleComponent', 'IgxStepperModule', 'IgxButtonModule', 'IgxButtonGroupModule'],
+                ngDeclarations: ['StepperStepTypesSampleComponent'],
+                ngImports: ['IgxStepperModule', 'IgxButtonModule', 'IgxButtonGroupModule']
             }),
             shortenComponentPathBy: '/layouts/stepper/'
         }));

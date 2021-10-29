@@ -35,7 +35,7 @@ export const layoutsRoutesData = {
     'stepper-overview-sample': { displayName: 'Stepper 1', parentName: 'Stepper' },
     'stepper-label-position-and-orientation-sample': { displayName: 'Stepper 2', parentName: 'Stepper' },
     'stepper-linear-sample': { displayName: 'Stepper 3', parentName: 'Stepper' },
-    'stepper-steptype-sample': { displayName: 'Stepper 4', parentName: 'Stepper' },
+    'stepper-steptypes-sample': { displayName: 'Stepper 4', parentName: 'Stepper' },
     'stepper-styling-sample': { displayName: 'Stepper 5', parentName: 'Stepper' },
     'tabbar-sample-1': { displayName: 'Bottom Navigation Simple Panels', parentName: 'Bottom Navigation' },
     'tabbar-sample-2': { displayName: 'Bottom Navigation Customizing Panels', parentName: 'Bottom Navigation' },

@@ -96,7 +96,7 @@ import {
     StepperLabelPositionAndOrientationSampleComponent
 } from './stepper/stepper-label-position-and-orientation-sample/stepper-label-position-and-orientation-sample.component';
 import { StepperLinearSampleComponent } from './stepper/stepper-linear-sample/stepper-linear-sample.component';
-import { StepperStepTypeSampleComponent } from './stepper/stepper-steptype-sample/stepper-steptype-sample.component';
+import { StepperStepTypesSampleComponent } from './stepper/stepper-steptypes-sample/stepper-steptypes-sample.component';
 import { StepperStylingSampleComponent } from './stepper/stepper-styling-sample/stepper-styling-sample.component';
 import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sample/stepper-overview-sample.component';
 
@@ -145,7 +145,7 @@ import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sampl
         StepperLabelPositionAndOrientationSampleComponent,
         StepperLinearSampleComponent,
         StepperOverviewSampleComponent,
-        StepperStepTypeSampleComponent,
+        StepperStepTypesSampleComponent,
         StepperStylingSampleComponent,
         TabbarSample1Component,
         TabbarSample2Component,
