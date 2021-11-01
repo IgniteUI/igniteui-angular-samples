@@ -1,4 +1,3 @@
-import { RouterModule } from '@angular/router';
 import {
     IgxStepperModule,
     IgxBadgeModule,
@@ -24,11 +23,11 @@ export class StepperConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: ['StepperOverviewSampleComponent', 'IgxStepperModule', 'IgxMaskModule', 'IgxInputGroupModule', 'IgxButtonModule',
                     'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule',
-                    'IgxIconModule', 'RouterModule', 'IgxBadgeModule'],
+                    'IgxIconModule', 'IgxBadgeModule'],
                 ngDeclarations: ['StepperOverviewSampleComponent'],
                 ngImports: ['IgxStepperModule', 'IgxMaskModule', 'IgxInputGroupModule', 'IgxButtonModule',
                     'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule',
-                    'IgxIconModule', 'RouterModule.forRoot([])', 'IgxBadgeModule']
+                    'IgxIconModule', 'IgxBadgeModule']
             }),
             shortenComponentPathBy: '/layouts/stepper/'
         }));
