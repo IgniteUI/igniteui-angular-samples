@@ -150,6 +150,17 @@ export class ComboConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: '/lists/combo'
         }));
 
+        configs.push(new Config({
+            additionalFiles: ['/src/app/data/cities15000-regions-countries.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxComboModule', 'SimpleComboCascadingComponent'],
+                ngDeclarations: ['SimpleComboCascadingComponent'],
+                ngImports: ['IgxComboModule']
+            }),
+            component: 'SimpleComboCascadingComponent',
+            shortenComponentPathBy: '/lists/combo'
+        }));
+
         return configs;
     }
 }

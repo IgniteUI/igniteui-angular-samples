@@ -25,6 +25,7 @@ import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sa
 import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-advanced-sample.component';
 import { SimpleComboMainComponent } from './combo/simple-combo-main/simple-combo-main.component';
 import { SimpleComboUsageComponent } from './combo/simple-combo-usage/simple-combo-usage.component';
+import { SimpleComboCascadingComponent } from './combo/simple-combo-cascading/simple-combo-cascading.component';
 
 export const listsRoutes: Routes = [
     {
@@ -86,6 +87,11 @@ export const listsRoutes: Routes = [
         component: SimpleComboUsageComponent,
         data: listsRoutesData['simple-combo-usage'],
         path: 'simple-combo-usage'
+    },
+    {
+        component: SimpleComboCascadingComponent,
+        data: listsRoutesData['simple-combo-cascading'],
+        path: 'simple-combo-cascading'
     },
     {
         component: ListComponent,

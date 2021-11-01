@@ -151473,6 +151473,15 @@ export const cities: City[] = [
     }
   ];
 
+  export interface Country {
+    name: string;
+}
+
+export interface Region {
+    name: string;
+    country: string;
+}
+
 export interface City {
     name: string;
     country: string;
