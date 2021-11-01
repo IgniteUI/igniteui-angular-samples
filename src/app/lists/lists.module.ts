@@ -13,7 +13,6 @@ import {
     IgxInputGroupModule,
     IgxListModule,
     IgxRippleModule,
-    IgxSelectModule,
     IgxSliderModule,
     IgxSimpleComboModule,
     IgxSwitchModule,
@@ -22,13 +21,11 @@ import {
     IgxTreeModule
 } from 'igniteui-angular';
 import { IgxFinancialChartModule } from 'igniteui-angular-charts';
-import { CascadingCombosComponent } from './combo/cascading-combos/cascading-combos.component';
 import { ComboBindingComponent } from './combo/combo-binding/combo-binding.component';
 import { ComboFeaturesComponent } from './combo/combo-features/combo-features.component';
 import { ComboMainComponent } from './combo/combo-main/combo-main.component';
 import { ComboOverlayComponent } from './combo/combo-overlay/combo-overlay.component';
 import { ComboRemoteComponent } from './combo/combo-remote/combo-remote.component';
-import { ComboSingleSelectionComponent } from './combo/combo-single-selection/combo-single-selection.component';
 import { ComboStylingComponent } from './combo/combo-styling/combo-styling.component';
 import { ComboValueKeyComponent } from './combo/combo-valuekey/combo-valuekey.component';
 import { ComboTemplateComponent } from './combo/combo-template/combo-template.component';
@@ -62,7 +59,6 @@ import { SimpleComboStylingComponent } from './combo/simple-combo-styling/simple
         ListSample7Component,
         ListSample8Component,
         ListChatSampleComponent,
-        CascadingCombosComponent,
         ComboFeaturesComponent,
         ComboStylingComponent,
         ComboValueKeyComponent,
@@ -71,7 +67,6 @@ import { SimpleComboStylingComponent } from './combo/simple-combo-styling/simple
         ComboTemplateComponent,
         ComboOverlayComponent,
         ComboBindingComponent,
-        ComboSingleSelectionComponent,
         SimpleComboMainComponent,
         SimpleComboUsageComponent,
         SimpleComboCascadingComponent,
@@ -92,7 +87,6 @@ import { SimpleComboStylingComponent } from './combo/simple-combo-styling/simple
         IgxSliderModule,
         IgxComboModule,
         IgxSwitchModule,
-        IgxSelectModule,
         IgxToastModule,
         IgxButtonGroupModule,
         HttpClientModule,
