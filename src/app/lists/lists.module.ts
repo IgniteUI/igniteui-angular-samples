@@ -48,6 +48,7 @@ import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-ad
 import { SimpleComboMainComponent } from './combo/simple-combo-main/simple-combo-main.component';
 import { SimpleComboUsageComponent } from './combo/simple-combo-usage/simple-combo-usage.component';
 import { SimpleComboCascadingComponent } from './combo/simple-combo-cascading/simple-combo-cascading.component';
+import { SimpleComboStylingComponent } from './combo/simple-combo-styling/simple-combo-styling.component';
 
 @NgModule({
     declarations: [
@@ -74,6 +75,7 @@ import { SimpleComboCascadingComponent } from './combo/simple-combo-cascading/si
         SimpleComboMainComponent,
         SimpleComboUsageComponent,
         SimpleComboCascadingComponent,
+        SimpleComboStylingComponent,
         TreeBasicSampleComponent,
         TreeAdvancedSampleComponent
     ],
