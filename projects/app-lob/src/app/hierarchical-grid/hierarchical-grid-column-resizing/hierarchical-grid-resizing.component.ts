@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { Component } from '@angular/core';
+import { IgxColumnComponent } from 'igniteui-angular';
 import { RemoteValuesService } from '../../services/remoteValues.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { RemoteValuesService } from '../../services/remoteValues.service';
     providers: [RemoteValuesService]
 })
 
-export class HGridColumnResizingSampleComponent implements OnInit {
+export class HGridColumnResizingSampleComponent {
     public years = 10;
     public localdata: any[];
     public col: IgxColumnComponent;
@@ -23,10 +23,6 @@ export class HGridColumnResizingSampleComponent implements OnInit {
             this.getSales(singer);
         }
         this.localdata = this.singers;
-    }
-
-    public ngOnInit(): void {
-
     }
 
     public onResize(event) {

@@ -2,7 +2,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnInit, OnDestroy, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from '@angular/core';
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IColumnSelectionEventArgs, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxOverlayService, OverlayCancelableEventArgs, OverlayEventArgs, OverlaySettings, VerticalAlignment } from 'igniteui-angular';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { ResizeObserver } from '@juggle/resize-observer';
 import { merge, noop, Subject } from 'rxjs';
 import { debounceTime, filter, takeUntil, tap } from 'rxjs/operators';
@@ -328,7 +327,6 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
             const handler = (component) => {
                 const _this = component;
                 return {
-                    // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
                     deleteProperty(target, prop) {
                         if (target[prop].type) {
                             _this.paneService.removePane(target[prop]);
