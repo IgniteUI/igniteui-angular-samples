@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { GridColumnDataType } from 'igniteui-angular';
-import { AMINO_DATA } from './data';
+import { AMINO_DATA } from '../../data/amino-data';
 
 @Component({
     selector: 'app-grid-nested-data-bind2',
