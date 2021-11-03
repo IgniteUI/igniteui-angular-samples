@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { IgxStepperComponent } from 'igniteui-angular';
 
 @Component({
@@ -7,11 +8,12 @@ import { IgxStepperComponent } from 'igniteui-angular';
     templateUrl: './stepper-overview-sample.component.html'
 })
 export class StepperOverviewSampleComponent {
-    @ViewChild('stepper', { static: true }) public stepper: IgxStepperComponent;
+    @ViewChild('stepper', { static: true })
+    public stepper: IgxStepperComponent;
 
-    public today = new Date();
+    public today: Date = new Date();
 
-    public cards = [
+    public cards: any[] = [
         {
             img: 'assets/images/stepper/card-gold.png',
             price: 400,
@@ -35,15 +37,15 @@ export class StepperOverviewSampleComponent {
         }
     ];
 
-    public states = [
+    public states: string[] = [
         'Alabama', 'Arizona', 'California', 'Colorado', 'Florida',
         'Georgia', 'Hawaii', 'Illinois', 'Louisiana', 'Minnesota',
         'Nevada', 'New York', 'New Jersey', 'Ohio', 'Texas', 'Virginia', 'Washington'
     ];
 
-    public selectedCard;
+    public selectedCard: any;
 
-    public businessInformation = {
+    public businessInformation: any = {
         name: '',
         physicalAddress: '',
         city: '',
@@ -54,7 +56,7 @@ export class StepperOverviewSampleComponent {
         nonUSBusinessActivity: null
     };
 
-    public personalInformation = {
+    public personalInformation: any = {
         firstName: '',
         lastName: '',
         jobTitle: '',
@@ -64,7 +66,7 @@ export class StepperOverviewSampleComponent {
         agreementAccepted: false
     };
 
-    public shippingDetails = {
+    public shippingDetails: any = {
         firstName: '',
         lastName: '',
         mailingAddress: '',
@@ -73,17 +75,15 @@ export class StepperOverviewSampleComponent {
         zip: null
     };
 
-    constructor(private cdr: ChangeDetectorRef) {
+    constructor(private cdr: ChangeDetectorRef) { }
 
-    }
-
-    public selectCard(card) {
+    public selectCard(card: any): void {
         this.selectedCard = card;
         this.cdr.detectChanges();
         this.stepper.next();
     }
 
-    public resetStepper(form1, form2, form3) {
+    public resetStepper(form1: FormGroup, form2: FormGroup, form3: FormGroup): void {
         this.stepper.reset();
         this.selectedCard = null;
         form1.reset();
@@ -94,7 +94,7 @@ export class StepperOverviewSampleComponent {
         form3.reset();
     }
 
-    public handleKeyDown(evt, card) {
+    public handleKeyDown(evt: KeyboardEvent, card: any): void {
         if (evt.key.toLowerCase() === ' ' || evt.key.toLowerCase() === 'spacebar' || evt.key.toLowerCase() === 'space') {
             this.selectCard(card);
         }

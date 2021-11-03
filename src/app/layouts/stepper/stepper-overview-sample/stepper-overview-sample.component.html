@@ -64,6 +64,10 @@
                         <input igxInput name="taxIdNumber" id="taxIdNumber" type="text" pattern="[9]{1}[0-9]{8}"
                             [placeholder]="'9##-##-####'" [igxMask]="'000-00-0000'"
                             [(ngModel)]="businessInformation.taxIdNumber" required />
+                        <igx-hint *ngIf="!businessInformationForm.controls['taxIdNumber']?.pristine
+                            && !businessInformationForm.controls['taxIdNumber']?.valid">
+                            The Federal Tax ID Number should begin with 9
+                        </igx-hint>
                         <label igxLabel for="taxIdNumber">Federal Tax ID Number</label>
                     </igx-input-group>
                     <p>Does this business operate outside the United States? <span class="sample-required">*</span></p>

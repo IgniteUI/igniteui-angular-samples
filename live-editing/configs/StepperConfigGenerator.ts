@@ -58,9 +58,9 @@ export class StepperConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'StepperStepTypesSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['StepperStepTypesSampleComponent', 'IgxStepperModule', 'IgxButtonModule', 'IgxButtonGroupModule'],
+                imports: ['StepperStepTypesSampleComponent', 'IgxStepperModule', 'IgxButtonGroupModule'],
                 ngDeclarations: ['StepperStepTypesSampleComponent'],
-                ngImports: ['IgxStepperModule', 'IgxButtonModule', 'IgxButtonGroupModule']
+                ngImports: ['IgxStepperModule', 'IgxButtonGroupModule']
             }),
             shortenComponentPathBy: '/layouts/stepper/'
         }));

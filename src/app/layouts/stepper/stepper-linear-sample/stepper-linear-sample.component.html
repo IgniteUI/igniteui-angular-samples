@@ -46,8 +46,6 @@
                 <button igxButton="raised" (click)="stepper.prev()">Previous</button>
                 <button igxButton="raised" (click)="stepper.next()"
                     [disabled]="!form2.form.valid && stepper.linear">Next</button>
-                <button igxButton (click)="stepper.navigateTo(3)"
-                    [disabled]="!form2.form.valid && stepper.linear">Skip</button>
             </div>
         </div>
     </igx-step>

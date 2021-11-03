@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IButtonGroupEventArgs } from 'igniteui-angular';
 
 @Component({
     selector: 'app-stepper-linear-sample',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class StepperLinearSampleComponent {
     public linear = false;
 
-    public user = {
+    public user: any = {
         fullName: '',
         email: '',
         city: '',
@@ -18,13 +19,13 @@ export class StepperLinearSampleComponent {
         payment: ''
     };
 
-    public paymentTypes = [
+    public paymentTypes: string[] = [
         'PayPal (n@mail.com; 18/02/2021)',
         'Visa (**** **** **** 1234; 12/23)',
         'MasterCard (**** **** **** 5678; 12/24)'
     ];
 
-    public modes = [
+    public modes: any[] = [
         {
             label: 'Linear', linear: true,
             selected: this.linear === true, togglable: true
@@ -35,7 +36,7 @@ export class StepperLinearSampleComponent {
         }
     ];
 
-    public toggleModes(event) {
+    public toggleModes(event: IButtonGroupEventArgs): void {
         this.linear = this.modes[event.index].linear;
     }
 }

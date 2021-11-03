@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IButtonGroupEventArgs } from 'igniteui-angular';
 
 @Component({
     selector: 'app-stepper-label-position-and-orientation-sample',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class StepperLabelPositionAndOrientationSampleComponent {
     public orientation = 'horizontal';
     public titlePosition = 'bottom';
-    public stepperOrientations = [
+    public stepperOrientations: any[] = [
         {
             label: 'Horizontal', orientation: 'horizontal',
             selected: this.orientation === 'horizontal', togglable: true
@@ -19,7 +20,7 @@ export class StepperLabelPositionAndOrientationSampleComponent {
         }
     ];
 
-    public stepperTitlePositions = [
+    public stepperTitlePositions: any[] = [
         {
             label: 'Bottom', titlePosition: 'bottom',
             selected: this.titlePosition === 'bottom', togglable: true
@@ -38,11 +39,11 @@ export class StepperLabelPositionAndOrientationSampleComponent {
         }
     ];
 
-    public toggleOrientation(event) {
+    public toggleOrientation(event: IButtonGroupEventArgs): void {
         this.orientation = this.stepperOrientations[event.index].orientation;
     }
 
-    public toggleTitlePosition(event) {
+    public toggleTitlePosition(event: IButtonGroupEventArgs): void {
         this.titlePosition = this.stepperTitlePositions[event.index].titlePosition;
     }
 }
