@@ -1,0 +1,37 @@
+<igx-stepper #stepper (activeStepChanging)="activeStepChanging($event)">
+    <ng-template igxStepActiveIndicator>
+        <igx-icon>edit</igx-icon>
+    </ng-template>
+    <ng-template igxStepCompletedIndicator>
+        <igx-icon>check</igx-icon>
+    </ng-template>
+    <igx-step>
+        <span igxStepTitle>Order</span>
+        <span igxStepSubTitle>required</span>
+        <div igxStepContent>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.next()">NEXT</button>
+            </div>
+        </div>
+    </igx-step>
+    <igx-step>
+        <span igxStepTitle>Payment</span>
+        <span igxStepSubTitle>Optional</span>
+        <div igxStepContent>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.prev()">PREVIOUS</button>
+                <button igxButton="raised" (click)="stepper.next()">NEXT</button>
+            </div>
+        </div>
+    </igx-step>
+    <igx-step>
+        <span igxStepTitle>Confirmation</span>
+        <span igxStepSubTitle>required</span>
+        <div igxStepContent>
+            <div class="sample-step-actions">
+                <button igxButton="raised" (click)="stepper.prev()">PREVIOUS</button>
+                <button igxButton="raised" (click)="reset()">RESET</button>
+            </div>
+        </div>
+    </igx-step>
+</igx-stepper>
