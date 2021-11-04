@@ -33,11 +33,10 @@ jobs:
 
       - name: Lint
         run: npm run lint
-      #  env:
-      #      NODE_OPTIONS: --max_old_space_size=4096
 
-      - name: Build
-        run: npm run build
-      #  env:
-      #      NODE_OPTIONS: --max_old_space_size=4096
+      - name: Build LOB Samples
+        run: npm run build:app-lob
+
+      - name: Build CRM Samples
+        run: npm run build:app-crm
 
