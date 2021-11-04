@@ -17,6 +17,7 @@ import {
     IgxInputGroupModule,
     IgxLayoutModule,
     IgxListModule,
+    IgxMaskModule,
     IgxNavbarModule,
     IgxProgressBarModule,
     IgxRadioModule,
@@ -24,6 +25,7 @@ import {
     IgxSelectModule,
     IgxSliderModule,
     IgxSplitterModule,
+    IgxStepperModule,
     IgxSwitchModule,
     IgxTabsModule,
     IgxTimePickerModule,
@@ -41,12 +43,15 @@ import { CardSample3Component } from './card/card-sample-3/card-sample-3.compone
 import { CardSample4Component } from './card/card-sample-4/card-sample-4.component';
 import { CardStylingSampleComponent } from './card/card-styling-sample/card-styling-sample.component';
 import { CardComponent } from './card/card.component';
-import { CarouselAnimationsSampleComponent
-    } from './carousel/carousel-animations-sample/carousel-animations-sample.component';
-import { CarouselNoNavigationSampleComponent
-    } from './carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component';
-import { CarouselWithComponentsSampleComponent
-    } from './carousel/carousel-with-components-sample/carousel-with-components-sample.component';
+import {
+    CarouselAnimationsSampleComponent
+} from './carousel/carousel-animations-sample/carousel-animations-sample.component';
+import {
+    CarouselNoNavigationSampleComponent
+} from './carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component';
+import {
+    CarouselWithComponentsSampleComponent
+} from './carousel/carousel-with-components-sample/carousel-with-components-sample.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { DividerDashedComponent } from './divider/dashed/divider-dashed.component';
 import { DividerDefaultComponent } from './divider/default/divider-default.component';
@@ -68,8 +73,9 @@ import { LayoutJustifyContentComponent } from './layout/layout-justify-content/l
 import { LayoutSampleComponent } from './layout/layout-sample/layout-sample.component';
 import { LayoutWrapComponent } from './layout/layout-wrap/layout-wrap.component';
 import { LayoutsRoutingModule } from './layouts-routing.module';
-import { SplitterHorizontalSampleComponent
-    } from './splitter/splitter-horizontal-sample/splitter-horizontal-sample.component';
+import {
+    SplitterHorizontalSampleComponent
+} from './splitter/splitter-horizontal-sample/splitter-horizontal-sample.component';
 import { SplitterNestedSampleComponent } from './splitter/splitter-nested-sample/splitter-nested-sample.component';
 import { SplitterStylingSampleComponent } from './splitter/splitter-styling-sample/splitter-styling-sample.component';
 import { TabbarSample1Component } from './tabbar/tabbar-sample-1/tabbar-sample-1.component';
@@ -86,6 +92,13 @@ import { TabsHeaderPrefixSuffixComponent } from './tabs/tabs-header-prefix-suffi
 import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
 import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
 import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
+import {
+    StepperLabelPositionAndOrientationSampleComponent
+} from './stepper/stepper-label-position-and-orientation-sample/stepper-label-position-and-orientation-sample.component';
+import { StepperLinearSampleComponent } from './stepper/stepper-linear-sample/stepper-linear-sample.component';
+import { StepperStepTypesSampleComponent } from './stepper/stepper-steptypes-sample/stepper-steptypes-sample.component';
+import { StepperStylingSampleComponent } from './stepper/stepper-styling-sample/stepper-styling-sample.component';
+import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sample/stepper-overview-sample.component';
 
 @NgModule({
     declarations: [
@@ -129,6 +142,11 @@ import { AccordionSample3Component } from './accordion/accordion-sample-3/accord
         SplitterHorizontalSampleComponent,
         SplitterNestedSampleComponent,
         SplitterStylingSampleComponent,
+        StepperLabelPositionAndOrientationSampleComponent,
+        StepperLinearSampleComponent,
+        StepperOverviewSampleComponent,
+        StepperStepTypesSampleComponent,
+        StepperStylingSampleComponent,
         TabbarSample1Component,
         TabbarSample2Component,
         TabbarSample3Component,
@@ -164,6 +182,7 @@ import { AccordionSample3Component } from './accordion/accordion-sample-3/accord
         IgxInputGroupModule,
         IgxLayoutModule,
         IgxListModule,
+        IgxMaskModule,
         IgxNavbarModule,
         IgxProgressBarModule,
         IgxRadioModule,
@@ -171,6 +190,7 @@ import { AccordionSample3Component } from './accordion/accordion-sample-3/accord
         IgxSelectModule,
         IgxSliderModule,
         IgxSplitterModule,
+        IgxStepperModule,
         IgxSwitchModule,
         IgxTabsModule,
         IgxTimePickerModule,
