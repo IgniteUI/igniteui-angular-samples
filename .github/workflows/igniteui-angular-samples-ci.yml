@@ -34,6 +34,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Build Samples
+        run: npm run build
+
       - name: Build LOB Samples
         run: npm run build:app-lob
 
