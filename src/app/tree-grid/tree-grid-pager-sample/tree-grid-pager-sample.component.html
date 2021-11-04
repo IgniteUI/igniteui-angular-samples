@@ -1,36 +1,36 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll #treegrid1 [data]="data" [paging]="true" [perPage]="10" [paginationTemplate]="pager" height="500px" width="100%"
+    <igx-tree-grid igxPreventDocumentScroll #treegrid1 [data]="data" [perPage]="10" height="500px" width="100%"
         displayDensity="cosy" primaryKey="ID" foreignKey="ParentID">
+        <igx-paginator #paginator [(page)]="treegrid1.page" [totalRecords]="treegrid1.totalRecords" [(perPage)]="treegrid1.perPage" [selectOptions]="selectOptions" [displayDensity]="treegrid1.displayDensity">
+            <igx-paginator-content>
+                <igx-page-size *ngIf="!isDropdownHidden"></igx-page-size>
+                <igx-page-nav *ngIf="!isPagerHidden"></igx-page-nav>
+            </igx-paginator-content>
+        </igx-paginator>
         <igx-column field="ID" header="Product ID" [dataType]="'string'">
         </igx-column>
         <igx-column field="Name" header="Product Name" [dataType]="'string'">
         </igx-column>
         <igx-column field="UnitPrice" header="Unit Price" dataType="number">
             <ng-template igxCell let-cell="cell" let-val>
-                <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
-                <span *ngIf="cell.row.rowData.UnitPrice != 0">${{val}}</span>
+                <span *ngIf="cell.row.data.UnitPrice === 0">-</span>
+                <span *ngIf="cell.row.data.UnitPrice !== 0">${{val}}</span>
             </ng-template>
         </igx-column>
         <igx-column field="AddedDate" header="Added Date" [dataType]="'date'">
         </igx-column>
         <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
             <ng-template igxCell let-cell="cell" let-val>
-                <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
-                <img *ngIf="cell.row.rowData.UnitPrice != 0 && val" src="assets/images/grid/active.png"
+                <span *ngIf="cell.row.data.UnitPrice === 0">-</span>
+                <img *ngIf="cell.row.data.UnitPrice !== 0 && val" src="assets/images/grid/active.png"
                     title="Continued" alt="Continued" />
-                <img *ngIf="cell.row.rowData.UnitPrice != 0 && !val" src="assets/images/grid/expired.png"
+                <img *ngIf="cell.row.data.UnitPrice !== 0 && !val" src="assets/images/grid/expired.png"
                     title="Discontinued" alt="Discontinued" />
             </ng-template>
         </igx-column>
     </igx-tree-grid>
 
-    <ng-template #pager>
-        <igx-paginator #paginator [(page)]="treegrid1.page" [totalRecords]="treegrid1.totalRecords" [(perPage)]="treegrid1.perPage"
-            [dropdownHidden]="isDropdownHidden" [pagerHidden]="isPagerHidden"
-            [dropdownEnabled]="!isDropdownDisabled" [pagerEnabled]="!isPagerDisabled"
-            [selectOptions]="selectOptions" [displayDensity]="treegrid1.displayDensity">
-        </igx-paginator>
-    </ng-template>
+
 
     <div class="options-container">
         <label>Display density:</label>
@@ -43,7 +43,5 @@
         </div>
         <igx-switch [(ngModel)]="isDropdownHidden">Hide Dropdown</igx-switch>
         <igx-switch [(ngModel)]="isPagerHidden">Hide Pager</igx-switch>
-        <igx-switch [(ngModel)]="isDropdownDisabled">Disable Dropdown</igx-switch>
-        <igx-switch [(ngModel)]="isPagerDisabled">Disable Pager</igx-switch>
     </div>
 </div>

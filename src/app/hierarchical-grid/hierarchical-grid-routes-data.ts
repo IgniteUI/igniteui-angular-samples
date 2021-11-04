@@ -51,6 +51,7 @@ export const hierarchicalGridRoutesData = {
     'hierarchical-grid-multi-column': { displayName: 'Hierarchical Grid Multi Column Headers', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-multi-column-template': { displayName: 'Hierarchical Grid Multi Column Header Template', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-multi-column-styling': { displayName: 'Hierarchical Grid Multi Column Header Styling', parentName: 'Hierarchical Grid' },
+    'hierarchical-grid-multi-column-export': { displayName: 'Hierarchical Grid Multi Column Headers Export', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-row-edit-style': { displayName: 'HGrid Row Edit Style', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-row-pinning': { displayName: 'Hierarchical Grid Row Pinning', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-row-pinning-styling': { displayName: 'Hierarchical Grid Row Pinning Styling', parentName: 'Hierarchical Grid' },
@@ -74,5 +75,7 @@ export const hierarchicalGridRoutesData = {
     'hGrid-editing-lifecycle': { displayName: 'Hierarchical Grid Editing lifecycle', parentName: 'Hierarchical Grid' },
     'hGrid-cell-selection': {displayName: 'HGrid Cell Selection', parentName: 'Hierarchical Grid'},
     'hGrid-formatted-filtering-strategy': { displayName: 'HGrid Formatted Filtering Strategy', parentName: 'Hierarchical Grid' },
-    'hGrid-summary-formatter': { displayName: 'HGrid Summary Formatter', parentName: 'Hierarchical Grid' }
+    'hGrid-summary-formatter': { displayName: 'HGrid Summary Formatter', parentName: 'Hierarchical Grid' },
+    'hGrid-row-classes': { displayName: 'HGrid RowClasses', parentName: 'Hierarchical Grid' },
+    'hGrid-row-styles': { displayName: 'HGrid RowStyles', parentName: 'Hierarchical Grid' }
 };

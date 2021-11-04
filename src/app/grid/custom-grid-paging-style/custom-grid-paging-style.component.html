@@ -1,5 +1,6 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [paging]="true" [perPage]="10" height="520px" width="100%" displayDensity="cosy">
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [perPage]="10" height="520px" width="100%" displayDensity="cosy">
+        <igx-paginator></igx-paginator>
         <igx-column header="Rank" headerClasses="myClass" field="Id" sortable="true"></igx-column>
         <igx-column field="Name" header="Athlete"></igx-column>
         <igx-column field="BeatsPerMinute" header="Beats per minute" dataType="number">
@@ -27,7 +28,7 @@
         </igx-column>
         <igx-column [field]="'Delete Row'" [filterable]="false">
             <ng-template igxCell let-cell="cell">
-                <button igxButton="icon" (click)="removeRow(cell.cellID.rowIndex)">
+                <button igxButton="icon" (click)="removeRow(cell.id.rowIndex)">
                     <igx-icon>delete</igx-icon>
                 </button>
             </ng-template>

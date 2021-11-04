@@ -19,7 +19,6 @@ import { HGridAdvancedFilteringStyleComponent } from './hierarchical-grid-advanc
 import { HGridAdvancedFilteringSampleComponent } from './hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component';
 import { HGridAllDataSummaryComponent } from './hierarchical-grid-allData-summary/hierarchical-grid-allData-summary.component';
 import { HGridBatchEditingSampleComponent } from './hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component';
-import { HierarchicalGridWithTransactionsComponent } from './hierarchical-grid-batch-editing/hierarchical-grid-transactions.component';
 import { HGridCollapsibleColumnGroupComponent } from './hierarchical-grid-collapsible-column-groups/hierarchical-grid-collapsible-column-groups.component';
 import { HierarchicalGridColumnHidingToolbarStyleComponent } from './hierarchical-grid-column-hiding-toolbar-style/hierarchical-grid-column-hiding-toolbar-style.component';
 import { HGridCostumHidingSampleComponent } from './hierarchical-grid-column-hiding/hierarchical-grid-custom-hiding.component';
@@ -51,6 +50,7 @@ import { HGridMultiHeaderTemplateSampleComponent } from './hierarchical-grid-mul
 import { HGridMultiHeadersStylingComponent } from './hierarchical-grid-multi-column-headers-styling/hierarchical-grid-multi-column-styling.component';
 import { HGridMultiHeadersSampleComponent } from './hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component';
 import { HGridMultiRowDragComponent } from './hierarchical-grid-multi-row-drag/hierarchical-grid-multi-row-drag.component';
+import { HGridMultiColumnHeadersExportComponent } from './hierarchical-grid-multi-column-headers-export/hierarchical-grid-multi-column-export.component';
 import { HGridPagingStyleSampleComponent } from './hierarchical-grid-paging-style/hierarchical-grid-paging-style.component';
 import { HGridPagingSampleComponent } from './hierarchical-grid-paging/hierarchical-grid-paging.component';
 import { HGridRemotePagingSampleComponent } from './hierarchical-grid-paging/hierarchical-grid-remote-paging.component';
@@ -87,6 +87,8 @@ import { HGridFormattedFilteringStrategyComponent } from './hierarchical-grid-fo
 import { HGridSummaryFormatterComponent } from './hierarchical-grid-summary-formatter/hierarchical-grid-summary-formatter.component';
 import { HGridExcelExportSampleComponent } from './hierarchical-grid-excel-exporter/hierarchical-grid-excel-export.sample';
 import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-sample/hierarchical-grid-pager-sample.component';
+import { HGridRowStylesSampleComponent } from './hgrid-rowStyle-sample/hgrid-rowStyles.component';
+import { HGridRowClassesSampleComponent } from './hgrid-rowClasses-sample/hgrid-rowClasses.component';
 
 @NgModule({
     declarations: [
@@ -126,7 +128,6 @@ import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-
         HGridEditingStyleComponent,
         HGridEditingEventsComponent,
         HGridBatchEditingSampleComponent,
-        HierarchicalGridWithTransactionsComponent,
         HierarchicalGridLoDSampleComponent,
         HGridExcelStyleFilteringSample1Component,
         HGridExcelStyleFilteringSample2Component,
@@ -142,6 +143,7 @@ import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-
         HGridResizeLineStylingComponent,
         HierarchicalGridColumnHidingToolbarStyleComponent,
         HGridMultiHeaderTemplateSampleComponent,
+        HGridMultiColumnHeadersExportComponent,
         HierarchicalGridToolbarStyleComponent,
         HierarchicalGridFilteringStyleComponent,
         HierarchicalGridExcelStyleFilteringLoadOnDemandComponent,
@@ -166,7 +168,9 @@ import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-
         HierarchicalGridCellSelectionComponent,
         HGridFormattedFilteringStrategyComponent,
         HGridSummaryFormatterComponent,
-        HierarchicalGridPagerSampleComponent
+        HierarchicalGridPagerSampleComponent,
+        HGridRowStylesSampleComponent,
+        HGridRowClassesSampleComponent
     ],
     imports: [
         CommonModule,

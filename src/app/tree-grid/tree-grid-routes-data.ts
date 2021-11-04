@@ -62,6 +62,7 @@ export const treeGridRoutesData = {
         displayName: 'TreeGrid Multi Column Headers Styling',
         parentName: 'TreeGrid'
     },
+    'treegrid-multi-column-headers-export': { displayName: 'TreeGrid Multi Column Headers Export', parentName: 'TreeGrid' },
     'treegrid-virtualization': { displayName: 'TreeGrid Virtualization', parentName: 'TreeGrid' },
     'treegrid-display-density': { displayName: 'TreeGrid Display Density', parentName: 'TreeGrid' },
     'treegrid-toolbar-1': { displayName: 'TreeGrid Toolbar 1', parentName: 'TreeGrid' },
@@ -112,5 +113,7 @@ export const treeGridRoutesData = {
     'tree-grid-exporting-visualization': { displayName: 'Exporting Visualization', parentName: 'TreeGrid' },
     'tree-grid-editing-lifecycle': { displayName: 'Editing Lifecycle', parentName: 'TreeGrid' },
     'tree-grid-formatted-filtering-strategy': { displayName: 'TreeGrid Formatted Filtering Strategy', parentName: 'TreeGrid' },
-    'tree-grid-summary-formatter': { displayName: 'TreeGrid Summary Formatter', parentName: 'TreeGrid' }
+    'tree-grid-summary-formatter': { displayName: 'TreeGrid Summary Formatter', parentName: 'TreeGrid' },
+    'tree-grid-styles-sample': { displayName: 'TreeGrid RowStyles sample', parentName: 'TreeGrid'},
+    'tree-grid-classes': { displayName: 'TreeGrid RowClasses sample', parentName: 'TreeGrid'}
 };

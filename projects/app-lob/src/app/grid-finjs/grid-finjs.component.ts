@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { ElementRef, Inject, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, IgxGridCellComponent, IGridKeydownEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
+import { IgxGridComponent, SortingDirection, DefaultSortingStrategy, CellType, IGridKeydownEventArgs, OverlaySettings, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { SignalRService } from '../services/signal-r.service';
 
 @Component({
@@ -130,7 +130,7 @@ export class GridFinJSComponent implements OnInit {
     }
 
     public customKeydown(args: IGridKeydownEventArgs) {
-        const target: IgxGridCellComponent = args.target as IgxGridCellComponent;
+        const target: CellType = args.target as CellType;
         const evt: KeyboardEvent = args.event as KeyboardEvent;
         const type = args.targetType;
 
@@ -141,7 +141,9 @@ export class GridFinJSComponent implements OnInit {
     }
 
     public chartColumnAction(target) {
-        this.chartColumnKeyDown.emit(target.rowData);
+        this.chartColumnKeyDown.emit(target.row.data);
+
+
     }
 
     get gridWrapper(): HTMLElement {

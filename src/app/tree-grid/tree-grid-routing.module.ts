@@ -88,6 +88,9 @@ import { TreeGridFormattedFilteringStrategyComponent } from './tree-grid-formatt
 import { TreeGridSummaryFormatterComponent } from './tree-grid-summary-formatter/tree-grid-summary-formatter.component';
 import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid-pager-sample.component';
 import { TreeGridGroupByLoadOnDemandComponent } from './tree-grid-group-by-load-on-demand-sample/tree-grid-group-by-load-on-demand-sample.component';
+import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-column-headers-export/tree-grid-multi-column-headers-export.component';
+import { TreeGridRowClassesComponent } from './tree-grid-rowClasses-sample/tree-grid-rowClasses.component';
+import { TreeGridRowStylesComponent } from './tree-grid-rowStyles-sample/tree-grid-rowStyle.component';
 
 export const treeGridRoutes: Routes = [
     {
@@ -259,6 +262,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridMultiColumnHeadersStylingComponent,
         data: treeGridRoutesData['treegrid-multi-column-headers-styling'],
         path: 'treegrid-multi-column-headers-styling'
+    },
+    {
+        component: TreeGridMultiColumnHeadersExportComponent,
+        data: treeGridRoutesData['treegrid-multi-column-headers-export'],
+        path: 'treegrid-multi-column-headers-export'
     },
     {
         component: TreeGridVirtualizationSampleComponent,
@@ -519,6 +527,16 @@ export const treeGridRoutes: Routes = [
         component: TreeGridSummaryFormatterComponent,
         data: treeGridRoutesData['tree-grid-summary-formatter'],
         path: 'tree-grid-summary-formatter'
+    },
+    {
+        component: TreeGridRowClassesComponent,
+        data: treeGridRoutesData['tree-grid-classes'],
+        path: 'tree-grid-classes'
+    },
+    {
+        component: TreeGridRowStylesComponent,
+        data: treeGridRoutesData['tree-grid-styles-sample'],
+        path: 'tree-grid-styles-sample'
     }
 ];
 

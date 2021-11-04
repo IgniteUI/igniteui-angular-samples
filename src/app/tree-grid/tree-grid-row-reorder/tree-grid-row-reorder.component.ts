@@ -40,14 +40,14 @@ export class TreeGridRowReorderComponent {
             return;
         }
 
-        if (row.rowData.ParentID === -1) {
+        if (row.data.ParentID === -1) {
             this.performDrop(draggedRow, row).ParentID = -1;
         } else {
-            if (row.rowData.ParentID === draggedRow.rowData.ParentID) {
+            if (row.data.ParentID === draggedRow.rowData.ParentID) {
                 this.performDrop(draggedRow, row);
             } else {
                 const rowIndex = this.getRowIndex(draggedRow.rowData);
-                this.localData[rowIndex].ParentID = row.rowData.ParentID;
+                this.localData[rowIndex].ParentID = row.data.ParentID;
             }
         }
         if (draggedRow.selected) {

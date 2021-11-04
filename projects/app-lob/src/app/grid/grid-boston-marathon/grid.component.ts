@@ -13,7 +13,7 @@ import {
     IgxNumberSummaryOperand,
     IgxStringFilteringOperand,
     IgxSummaryResult,
-    IgxGridCellComponent,
+    CellType,
     OverlaySettings,
     IgxOverlayService,
     AbsolutePosition,
@@ -88,7 +88,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         this.localData.forEach(rec => this.getSpeed(rec));
         this.windowWidth = window.innerWidth;
         this._timer = setInterval(() => this.ticker(), 1500);
-        this.overlayService.onClosing.subscribe((event: OverlayClosingEventArgs) => {
+        this.overlayService.closing.subscribe((event: OverlayClosingEventArgs) => {
             this.showOverlay = false;
         });
     }
@@ -101,7 +101,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         this.overlaySettings.modal = true;
     }
 
-    public getValue(cell: IgxGridCellComponent): number {
+    public getValue(cell: CellType): number {
         const val = cell.value;
         return val;
     }
@@ -110,7 +110,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     public isTop3(cell): boolean {
-        const top = this.grid1.page === 0 && cell.row.index < 4;
+        const top = this.grid1.paginator.page === 0 && cell.row.index < 4;
         return top;
     }
 
@@ -132,7 +132,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     public getIconType(cell) {
-        switch (cell.row.rowData.Position) {
+        switch (cell.row.data.Position) {
             case 'up':
                 return 'arrow_upward';
             case 'current':
@@ -143,7 +143,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     public getBadgeType(cell) {
-        switch (cell.row.rowData.Position) {
+        switch (cell.row.data.Position) {
             case 'up':
                 return 'success';
             case 'current':
@@ -220,7 +220,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         }
         if (this.isFinished) {
             this.live = false;
-            this.grid1.page = 0;
+            this.grid1.paginator.page = 0;
             return;
         }
         this.updateData();
@@ -242,7 +242,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         // move grid to next page to monitor players who still run
         const firstOnPage = this.grid1.getCellByColumn(0, 'TrackProgress');
         if (firstOnPage && firstOnPage.value === 100) {
-            this.grid1.page = this.grid1.page + 1;
+            this.grid1.paginator.page = this.grid1.paginator.page + 1;
         }
 
         // show Top 3 players after race has finished

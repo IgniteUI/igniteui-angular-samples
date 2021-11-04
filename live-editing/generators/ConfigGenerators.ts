@@ -56,6 +56,9 @@ import { TooltipConfigGenerator } from '../configs/TooltipConfigGenerator';
 import { TransactionsConfigGenerator } from '../configs/TransactionsConfigGenerator';
 import { TreeGridConfigGenerator } from '../configs/TreeGridConfigGenerator';
 import { TreeConfigGenerator } from '../configs/TreeConfigGenerator';
+import { AccordionConfigGenerator } from '../configs/AccordionConfigGenerator';
+import { StepperConfigGenerator } from '../configs/StepperConfigGenerator';
+import { PaginationConfigGenerator } from '../configs/PaginationConfigGenerator';
 
 export const CONFIG_GENERATORS =
     [
@@ -65,6 +68,7 @@ export const CONFIG_GENERATORS =
         ExportExcelConfigGenerator,
 
         // containers:
+        AccordionConfigGenerator,
         AvatarConfigGenerator,
         BadgeConfigGenerator,
         BannerConfigGenerator,
@@ -77,6 +81,7 @@ export const CONFIG_GENERATORS =
         ListConfigGenerator,
         NavbarConfigGenerator,
         NavdrawerConfigGenerator,
+        StepperConfigGenerator,
         TabBarConfigGenerator,
         TabsConfigGenerator,
         TreeConfigGenerator,
@@ -124,5 +129,6 @@ export const CONFIG_GENERATORS =
         ThemingConfigGenerator,
         TransactionsConfigGenerator,
         SplitterConfigGenerator,
-        DockManagerConfigGenerator
+        DockManagerConfigGenerator,
+        PaginationConfigGenerator
     ];

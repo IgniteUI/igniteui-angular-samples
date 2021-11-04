@@ -16,6 +16,7 @@ export const gridsRoutesData = {
     'grid-row-drag-base': { displayName: 'Grid Row Drag - Base', parentName: 'Grid' },
     'grid-row-drag-to-grid': { displayName: 'Row Drag between Grids', parentName: 'Grid' },
     'grid-row-reorder': { displayName: 'Grid Row Reorder', parentName: 'Grid' },
+    'grid-drop-indicator': { displayName: 'Grid Drop Indicator', parentName: 'Grid' },
     'grid-batch-editing': { displayName: 'Grid Batch Editing', parentName: 'Grid' },
     'grid-action-strip': { displayName: 'Grid with Action Strip', parentName: 'Grid' },
     'grid-displayDensity': { displayName: 'Grid Display Density', parentName: 'Grid' },
@@ -62,6 +63,7 @@ export const gridsRoutesData = {
     'multi-column-headers': { displayName: 'Grid Multi Column Headers', parentName: 'Grid' },
     'multi-column-header-template': { displayName: 'Grid Multi Column Header Template', parentName: 'Grid' },
     'multi-column-headers-styling': { displayName: 'Grid Multi Column Headers Styling', parentName: 'Grid' },
+    'multi-column-headers-export': { displayName: 'Grid Multi Column Headers Export', parentName: 'Grid' },
     'grid-remote-paging-sample': { displayName: 'Grid Remote Paging', parentName: 'Grid' },
     'grid-custom-remote-paging-sample': { displayName: 'Grid Custom Remote Paging', parentName: 'Grid' },
     'grid-paste': { displayName: 'Grid Paste From Excel', parentName: 'Grid' },
@@ -109,5 +111,8 @@ export const gridsRoutesData = {
     'grid-select': {displayName: 'Grid with Select as Editor Provider', parentName: 'Grid'},
     'grid-column-data-types': {displayName: 'Grid column data types', parentName: 'Grid'},
     'grid-formatted-filtering-strategy': { displayName: 'Grid Formatted Filtering Strategy', parentName: 'Grid' },
-    'grid-summary-formatter': { displayName: 'Grid Summary Formatter', parentName: 'Grid' }
+    'grid-summary-formatter': { displayName: 'Grid Summary Formatter', parentName: 'Grid' },
+    'grid-crud': { displayName: 'Grid CRUD Operations', parentName: 'Grid'},
+    'grid-rowClasses-sample': { displayName: 'Grid rowClasses', parentName: 'Grid'},
+    'grid-rowStyles-sample': { displayName: 'Grid rowStyles', parentName: 'Grid'}
 };

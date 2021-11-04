@@ -1,6 +1,9 @@
 /* eslint-disable quote-props */
 
 export const layoutsRoutesData = {
+    'accordion-sample-1': { displayName: 'Accordion 1', parentName: 'Accordion' },
+    'accordion-sample-2': { displayName: 'Accordion 2', parentName: 'Accordion' },
+    'accordion-sample-3': { displayName: 'Accordion 3', parentName: 'Accordion' },
     'avatar-sample-1': { displayName: 'Avatar with Initials', parentName: 'Avatar' },
     'avatar-sample-2': { displayName: 'Avatar with Image', parentName: 'Avatar' },
     'avatar-sample-4': { displayName: 'Avatar with Icon', parentName: 'Avatar' },
@@ -29,6 +32,11 @@ export const layoutsRoutesData = {
     'splitter-horizontal-sample': { displayName: 'Splitter Horizontal', parentName: 'Splitter' },
     'splitter-nested-sample': { displayName: 'Splitter Nested Panes', parentName: 'Splitter' },
     'splitter-styling-sample': { displayName: 'Splitter Styling', parentName: 'Splitter' },
+    'stepper-overview-sample': { displayName: 'Stepper Overview', parentName: 'Stepper' },
+    'stepper-label-position-and-orientation-sample': { displayName: 'Stepper Label Position And Orientation', parentName: 'Stepper' },
+    'stepper-linear-sample': { displayName: 'Linear Stepper', parentName: 'Stepper' },
+    'stepper-steptypes-sample': { displayName: 'Stepper Step Types', parentName: 'Stepper' },
+    'stepper-styling-sample': { displayName: 'Stepper Styling', parentName: 'Stepper' },
     'tabbar-sample-1': { displayName: 'Bottom Navigation Simple Panels', parentName: 'Bottom Navigation' },
     'tabbar-sample-2': { displayName: 'Bottom Navigation Customizing Panels', parentName: 'Bottom Navigation' },
     'tabbar-sample-3': { displayName: 'Bottom Navigation Routing', parentName: 'Bottom Navigation' },
