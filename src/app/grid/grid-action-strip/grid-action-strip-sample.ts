@@ -36,6 +36,17 @@ export class GridActionStripSampleComponent {
         return rowContext && rowContext.deleted;
     }
 
+    public startEdit(row?): void {  
+        const firstEditable = row.cells.filter(cell => cell.editable)[0];
+        const grid = row.grid;
+      
+        if (grid.rowList.filter(r => r === row).length !== 0) {
+            grid.gridAPI.crudService.enterEditMode(firstEditable, event);
+            firstEditable.activate();
+        }
+        row.hide();
+    }
+
     public commit(rowContext: RowType) {
         this.grid.transactions.commit(this.grid.data, rowContext.rowID);
         this.discardedTransactionsPerRecord.set(rowContext.rowID, []);
