@@ -54,36 +54,6 @@
                                     "with": "src/environments/environment.prod.ts"
                                 }
                             ]
-                        },
-                        "es5": {
-                            "budgets": [
-                                {
-                                    "type": "anyComponentStyle",
-                                    "maximumWarning": "900kb"
-                                }
-                            ],
-                            "tsConfig": "src/tsconfig-es5.app.json"
-                        },
-                        "es5Prod": {
-                            "budgets": [
-                                {
-                                    "type": "anyComponentStyle",
-                                    "maximumWarning": "900kb"
-                                }
-                            ],
-                            "optimization": true,
-                            "outputHashing": "all",
-                            "namedChunks": false,
-                            "extractLicenses": true,
-                            "vendorChunk": false,
-                            "buildOptimizer": true,
-                            "fileReplacements": [
-                                {
-                                    "replace": "src/environments/environment.ts",
-                                    "with": "src/environments/environment.prod.ts"
-                                }
-                            ],
-                            "tsConfig": "src/tsconfig-es5.app.json"
                         }
                     }
                 },
@@ -95,12 +65,6 @@
                     "configurations": {
                         "production": {
                             "browserTarget": "my-app:build:production"
-                        },
-                        "es5": {
-                            "browserTarget": "my-app:build:es5"
-                        },
-                        "es5Prod": {
-                            "browserTarget": "my-app:build:es5Prod"
                         }
                     }
                 },
@@ -205,15 +169,6 @@
                                     "maximumError": "900kb"
                                 }
                             ]
-                        },
-                        "es5": {
-                            "budgets": [
-                                {
-                                    "type": "anyComponentStyle",
-                                    "maximumWarning": "900kb"
-                                }
-                            ],
-                            "tsConfig": "projects/app-lob/tsconfig-es5.app.json"
                         }
                     }
                 },
@@ -225,9 +180,6 @@
                     "configurations": {
                         "production": {
                             "browserTarget": "app-lob:build:production"
-                        },
-                        "es5": {
-                            "browserTarget": "app-lob:build:es5"
                         }
                     }
                 },
@@ -344,15 +296,6 @@
                                     "maximumError": "900kb"
                                 }
                             ]
-                        },
-                        "es5": {
-                            "budgets": [
-                                {
-                                    "type": "anyComponentStyle",
-                                    "maximumWarning": "900kb"
-                                }
-                            ],
-                            "tsConfig": "projects/app-crm/tsconfig-es5.app.json"
                         }
                     }
                 },
@@ -364,9 +307,6 @@
                     "configurations": {
                         "production": {
                             "browserTarget": "app-crm:build:production"
-                        },
-                        "es5": {
-                            "browserTarget": "app-crm:build:es5"
                         }
                     }
                 },
