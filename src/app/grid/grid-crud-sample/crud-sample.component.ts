@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
-import { GridPagingMode, IGridEditDoneEventArgs, IGridEditEventArgs, IgxGridComponent, IgxGridRow,
+import { ChangeDetectorRef, Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { GridPagingMode, IGridEditDoneEventArgs, IgxGridComponent, IgxGridRow,
     IgxSnackbarComponent,
     IRowDataEventArgs,
     NoopFilteringStrategy, NoopSortingStrategy } from 'igniteui-angular';
@@ -13,7 +13,7 @@ import { CRUDService } from '../../services/crud.service';
     styleUrls: ['./crud-sample.component.scss'],
     templateUrl: './crud-sample.component.html'
 })
-export class CRUDSampleComponent implements OnInit, AfterViewInit, OnDestroy {
+export class CRUDSampleComponent implements OnInit, OnDestroy {
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;
     @ViewChild('snackbar', { static: false }) public snackbar: IgxSnackbarComponent;
 
@@ -45,11 +45,6 @@ export class CRUDSampleComponent implements OnInit, AfterViewInit, OnDestroy {
             this.data = data;
             this.grid.isLoading = false;
         });
-    }
-
-
-    public ngAfterViewInit() {
-
     }
 
     public rowAdded(event: IRowDataEventArgs) {

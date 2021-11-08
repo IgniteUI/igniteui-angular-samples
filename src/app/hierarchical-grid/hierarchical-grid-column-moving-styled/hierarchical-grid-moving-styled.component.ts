@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { Component } from '@angular/core';
+import { IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({
@@ -8,17 +8,11 @@ import { DATA } from '../../data/customers';
     templateUrl: 'hierarchical-grid-moving-styled.component.html'
 })
 
-export class HGridColumnMovingSampleStyledComponent implements OnInit {
-    @ViewChild('hierarchicalGrid', { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
-
+export class HGridColumnMovingSampleStyledComponent {
     public localdata;
 
     constructor() {
         this.localdata = DATA;
-    }
-    public ngOnInit(): void {
-
     }
 
     public toggleColumn(col: IgxColumnComponent) {

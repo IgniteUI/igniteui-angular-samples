@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DATA } from '../../data/nwindData';
 
 @Component({
@@ -6,8 +6,7 @@ import { DATA } from '../../data/nwindData';
     styleUrls: ['grid-clipboard-operations-sample.component.scss'],
     templateUrl: './grid-clipboard-operations-sample.component.html'
 })
-export class GridClipboardSampleComponent implements OnInit {
-
+export class GridClipboardSampleComponent {
     public data: any[];
     public options = {
         enabled: true,
@@ -18,9 +17,6 @@ export class GridClipboardSampleComponent implements OnInit {
 
     constructor() {
         this.data = DATA;
-    }
-
-    public ngOnInit() {
     }
 
     public formatter = (value: any) => `** ${value} **`;
