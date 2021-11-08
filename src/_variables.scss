@@ -1,11 +1,10 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@use '../node_modules/igniteui-angular/lib/core/styles/themes' as *;
+@forward '../node_modules/igniteui-angular/lib/core/styles/themes';
 
-$legacy-support: true;
 $palette: $light-material-palette;
 $schema: $light-material-schema;
 
 $default-palette: $palette;
-$igx-legacy-support: $legacy-support;
 
 $green-palette: igx-palette(
     $primary: #09f,
