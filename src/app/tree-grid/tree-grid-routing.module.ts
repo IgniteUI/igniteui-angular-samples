@@ -91,6 +91,7 @@ import { TreeGridGroupByLoadOnDemandComponent } from './tree-grid-group-by-load-
 import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-column-headers-export/tree-grid-multi-column-headers-export.component';
 import { TreeGridRowClassesComponent } from './tree-grid-rowClasses-sample/tree-grid-rowClasses.component';
 import { TreeGridRowStylesComponent } from './tree-grid-rowStyles-sample/tree-grid-rowStyle.component';
+import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tree-grid-action-strip-sample';
 
 export const treeGridRoutes: Routes = [
     {
@@ -537,6 +538,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridRowStylesComponent,
         data: treeGridRoutesData['tree-grid-styles-sample'],
         path: 'tree-grid-styles-sample'
+    },
+    {
+        component: TreeGridActionStripSampleComponent,
+        data: treeGridRoutesData['tree-grid-action-strip'],
+        path: 'grid-action-strip'
     }
 ];
 

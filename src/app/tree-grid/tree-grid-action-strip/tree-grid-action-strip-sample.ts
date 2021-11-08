@@ -1,15 +1,15 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent, RowType, Transaction } from 'igniteui-angular';
+import { IgxTreeGridComponent, RowType, Transaction } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 
 @Component({
-    selector: 'app-grid-row-action-strip',
-    styleUrls: [`grid-action-strip-sample.scss`],
-    templateUrl: 'grid-action-strip-sample.html'
+    selector: 'app-tree-grid-row-action-strip',
+    styleUrls: [`tree-grid-action-strip-sample.scss`],
+    templateUrl: 'tree-grid-action-strip-sample.html'
 })
-export class GridActionStripSampleComponent {
-    @ViewChild('gridRowEditTransaction', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
+export class TreeGridActionStripSampleComponent {
+    @ViewChild('gridRowEditTransaction', { read: IgxTreeGridComponent, static: true }) public grid: IgxTreeGridComponent;
 
     public currentActiveGrid: { id: string; transactions: any[] } = { id: '', transactions: [] };
 

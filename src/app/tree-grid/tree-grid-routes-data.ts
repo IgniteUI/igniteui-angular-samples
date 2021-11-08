@@ -115,5 +115,6 @@ export const treeGridRoutesData = {
     'tree-grid-formatted-filtering-strategy': { displayName: 'TreeGrid Formatted Filtering Strategy', parentName: 'TreeGrid' },
     'tree-grid-summary-formatter': { displayName: 'TreeGrid Summary Formatter', parentName: 'TreeGrid' },
     'tree-grid-styles-sample': { displayName: 'TreeGrid RowStyles sample', parentName: 'TreeGrid'},
-    'tree-grid-classes': { displayName: 'TreeGrid RowClasses sample', parentName: 'TreeGrid'}
+    'tree-grid-classes': { displayName: 'TreeGrid RowClasses sample', parentName: 'TreeGrid'},
+    'tree-grid-action-strip': { displayName: 'TreeGrid with Action Strip', parentName: 'TreeGrid' }
 };
