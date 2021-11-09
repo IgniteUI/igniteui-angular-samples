@@ -1,14 +1,13 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent, RowType, Transaction } from 'igniteui-angular';
-import { DATA } from '../../data/nwindData';
-
+import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
     selector: 'app-tree-grid-row-action-strip',
     styleUrls: [`tree-grid-action-strip-sample.scss`],
     templateUrl: 'tree-grid-action-strip-sample.html'
 })
-export class TreeGridActionStripSampleComponent {
+export class TreeGridActionStripSampleComponent implements OnInit {
     @ViewChild('gridRowEditTransaction', { read: IgxTreeGridComponent, static: true }) public grid: IgxTreeGridComponent;
 
     public currentActiveGrid: { id: string; transactions: any[] } = { id: '', transactions: [] };
@@ -16,8 +15,10 @@ export class TreeGridActionStripSampleComponent {
     public data: any[];
     public discardedTransactionsPerRecord: Map<number, Transaction[]> = new Map<number, Transaction[]>();
 
-    constructor() {
-        this.data = DATA;
+    constructor() { }
+
+    public ngOnInit() {
+        this.data = generateEmployeeDetailedFlatData();
     }
 
     public stateFormatter(value: string) {

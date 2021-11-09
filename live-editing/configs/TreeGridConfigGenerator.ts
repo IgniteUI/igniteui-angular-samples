@@ -1095,6 +1095,16 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: '/tree-grid/'
         }));
 
+        configs.push(new Config({
+            component: 'TreeGridActionStripSampleComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts', '/src/app/data/utils.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['TreeGridActionStripSampleComponent', 'IgxTreeGridModule', 'IgxDialogModule', 'IgxButtonModule', 'IgxPreventDocumentScrollModule', 'IgxActionStripModule'],
+                ngDeclarations: ['TreeGridActionStripSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxDialogModule', 'IgxButtonModule', 'IgxActionStripModule']
+            })
+        }));
+
         return configs;
     }
 }
