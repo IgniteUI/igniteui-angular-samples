@@ -29,7 +29,7 @@ body {
     background: #333;
     color: #fff;
     @include igx-dark-theme(
-        $palette: $green-palette,
+        $palette: $green-palette
     );
 
     .grid-chart-contextmenu-wrapper {

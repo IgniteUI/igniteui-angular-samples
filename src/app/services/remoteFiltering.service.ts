@@ -44,12 +44,6 @@ export class RemoteFilteringService {
                 }
             });
     }
-    public getFilteringExpressionTreeForColumn(filteringExpression: any) {
-        if (filteringExpression.filteringOperands[0] instanceof FilteringExpressionsTree) {
-            return this.getFilteringExpressionTreeForColumn(filteringExpression.filteringOperands[0]);
-        }
-        return filteringExpression;
-    }
 
     private buildDataUrl(virtualizationArgs: any, filteringArgs: any, sortingArgs: any): string {
         let baseQueryString = `${DATA_URL}?$count=true`;
@@ -66,12 +60,12 @@ export class RemoteFilteringService {
         if (filteringArgs && filteringArgs.length > 0) {
             filteringArgs.forEach((columnFilter) => {
                 if (filter !== EMPTY_STRING) {
-                    filter += ` ${FilteringLogic[FilteringLogic.And].toLowerCase()} `;
+                    filter += ` ${FilteringLogic[columnFilter.operator].toLowerCase()} `;
                 }
-                const exprTree = this.getFilteringExpressionTreeForColumn(columnFilter);
+
                 filter += this._buildAdvancedFilterExpression(
-                    exprTree.filteringOperands,
-                    exprTree.operator);
+                    columnFilter.filteringOperands,
+                    columnFilter.operator);
             });
 
             filterQuery = `$filter=${filter}`;
@@ -92,7 +86,18 @@ export class RemoteFilteringService {
 
     private _buildAdvancedFilterExpression(operands, operator): string {
         let filterExpression = EMPTY_STRING;
-        operands.forEach((operand) => {
+        operands.forEach((operand, index) => {
+            if (operand instanceof FilteringExpressionsTree) {
+                if (index > 0) {
+                  filterExpression += ` ${FilteringLogic[operator].toLowerCase()} `;
+                }
+                filterExpression += this._buildAdvancedFilterExpression(
+                  operand.filteringOperands,
+                  operand.operator
+                );
+                return filterExpression;
+            }
+
             const value = operand.searchVal;
             const isNumberValue = (typeof (value) === 'number') ? true : false;
             const filterValue = (isNumberValue) ? value : `'${value}'`;

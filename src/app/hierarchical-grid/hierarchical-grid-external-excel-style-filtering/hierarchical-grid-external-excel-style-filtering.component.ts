@@ -21,7 +21,7 @@ export class HGridExternalExcelStyleFilteringComponent implements AfterViewInit{
     }
 
     public ngAfterViewInit() {
-        this.columns = this.hgrid.columns.filter(c => c.filterable);
+        this.columns = this.hgrid.columnsCollection.filter(c => c.filterable);
 
     }
 }
