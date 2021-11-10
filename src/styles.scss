@@ -1,4 +1,4 @@
-@use '../node_modules/igniteui-angular/lib/core/styles/themes' as *;
+@use 'igniteui-angular/theming' as *;
 @use 'variables' as *;
 @use 'app-layout';
 
@@ -11,7 +11,7 @@ body {
 }
 
 @include igx-core();
-@include igx-typography($font-family: $material-typeface, $type-scale: $material-type-scale);
+@include igx-typography();
 @include igx-theme(
     $palette: $palette,
     $schema: $schema
