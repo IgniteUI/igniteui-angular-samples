@@ -34,7 +34,7 @@ To build the application project run:
 npm run build:app-lob
 ```
 
-### These commands will produce an AOT build and [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) samples supporting both Sass and CSS.
+### These commands will produce an AOT build and [live editing](https://github.com/IgniteUI/igniteui-live-editing/blob/master/README.md) samples supporting both Sass and CSS.
 
 ## Dev Server
 
@@ -100,7 +100,7 @@ Live-editing [documentation could be found here](https://github.com/IgniteUI/ign
 
 One of the most important functionality is the Configurator Generator as each Ignite UI for Angular component has a separate configurations (config) generator - [read the following section if you are interested in the actual structure and how to configure it](https://github.com/IgniteUI/igniteui-live-editing#configuration-generator).
 ### Live-Editing Watcher
-Use this command to start the server with capability to regenerate [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) JSON files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) when a change related to the samples is made (including IE support):
+Use this command to start the server with capability to regenerate [live editing](https://github.com/IgniteUI/igniteui-live-editing/blob/master/README.md) JSON files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) when a change related to the samples is made (including IE support):
 
 ```
 npm run start:watch-live-editing
@@ -113,7 +113,7 @@ npm run start:watch-live-editing:es6
 ```
 
 ### Generate Live-Editing JSON files
-To generate only the [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) samples files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) run:
+To generate only the [live editing](https://github.com/IgniteUI/igniteui-live-editing/blob/master/README.md) samples files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) run:
 
 #### Default App
 With **CSS** styling generation
