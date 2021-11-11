@@ -43,7 +43,7 @@ export class SortingStylingComponent implements OnInit {
 
     public removeSorting($event) {
         if (this.currentSortingType === TYPE.SINGLE) {
-            this.grid1.columnsCollection.forEach((col) => {
+            this.grid1.columns.forEach((col) => {
                 if (!(col.field === $event.fieldName)) {
                     this.grid1.clearSort(col.field);
                 }

@@ -2,7 +2,7 @@
     <div class="flex-column">
         <igx-select #gridColums value="ProductID" class="igSelect">
             <label igxLabel>Columns:</label>
-            <igx-select-item *ngFor="let c of grid1.columnsCollection" [value]="c.field">
+            <igx-select-item *ngFor="let c of grid1.columns" [value]="c.field">
                 {{ c.field }}
             </igx-select-item>
         </igx-select>

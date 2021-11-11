@@ -40,7 +40,7 @@ export class GridSortingIndicatorsComponent implements OnInit, AfterViewInit {
 
     public ngAfterViewInit() {
         const expressions = [];
-        this.grid.columnsCollection.forEach(c => {
+        this.grid.columns.forEach(c => {
             const sortExpr =
             {
                 dir: generateRandomInteger(1, 2), fieldName: c.field,
