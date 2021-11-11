@@ -1,27 +1,30 @@
 <div class="container">
     <div class="input-row">
         <igx-simple-combo #country
-            (selectionChanging)="countryChanging($event)"
-            [(ngModel)]="selectedCountry"
             [data]="countriesData"
+            (selectionChanging)="countryChanging($event)"
+            placeholder="Choose Country..."
+            [(ngModel)]="selectedCountry"
             [displayKey]="'name'"></igx-simple-combo>
     </div>
     <div class="input-row">
         <igx-simple-combo #province
-            (selectionChanging)="provinceChanging($event)"
-            [disabled]="regionData.length === 0"
-            [(ngModel)]="selectedRegion"
             [data]="regionData"
-            [displayKey]="'name'">
+            (selectionChanging)="provinceChanging($event)"
+            placeholder="Choose Region..."
+            [(ngModel)]="selectedRegion"
+            [displayKey]="'name'"
+            [disabled]="regionData.length === 0">
         </igx-simple-combo>
     </div>
     <div class="input-row">
         <igx-simple-combo #city
-            placeholder="Choose City..."
-            [disabled]="citiesData.length === 0"
-            [(ngModel)]="selectedCity"
             [data]="citiesData"
-            [displayKey]="'name'">
+            placeholder="Choose City..."
+            [(ngModel)]="selectedCity"
+            [displayKey]="'name'"
+            [valueKey]="'id'"
+            [disabled]="citiesData.length === 0">
         </igx-simple-combo>
     </div>
 </div>

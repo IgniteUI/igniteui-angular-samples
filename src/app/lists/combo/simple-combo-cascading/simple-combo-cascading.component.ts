@@ -1,6 +1,6 @@
 import * as core from '@angular/core';
 import { ISimpleComboSelectionChangingEventArgs } from 'igniteui-angular';
-import { cities, City, Country, Region } from '../../../data/cities15000-regions-countries';
+import { City, Country, getCitiesByCountry, getCountries, Region } from '../../../data/cities15000-regions-countries';
 
 @core.Component({
     selector: 'app-simple-combo-cascading',
@@ -15,30 +15,23 @@ export class SimpleComboCascadingComponent implements core.OnInit {
     public regionData: Region[] = [];
     public citiesData: City[] = [];
     ngOnInit(): void {
-        this.countriesData = cities
-            .filter(c => c.population > 100000)
-            .filter(c => c.country === 'United States' || c.country === 'Bulgaria' || c.country === 'Japan')
-            .map(c => ({ name: c.country }))
-            .filter((v, i, a) => a.findIndex(c => c.name === v.name) === i);
+        this.countriesData = getCountries(['United States', 'Japan', 'United Kingdom']);
     }
 
     public countryChanging(e: ISimpleComboSelectionChangingEventArgs) {
-        // TODO: remove cast to any once arguments are fixed
-        this.selectedCountry = (e.newSelection as any) as Country;
-        this.regionData = cities
-            .filter(c => c.country === this.selectedCountry?.name)
+        this.selectedCountry = e.newSelection as Country;
+        this.regionData = getCitiesByCountry([this.selectedCountry?.name])
             .map(c => ({name: c.region, country: c.country}))
             .filter((v, i, a) => a.findIndex(r => r.name === v.name) === i);
-            this.selectedRegion = null;
-            this.selectedCity = null;
-            this.citiesData = [];
+        this.selectedRegion = null;
+        this.selectedCity = null;
+        this.citiesData = [];
     }
 
     public provinceChanging(e: ISimpleComboSelectionChangingEventArgs) {
-        // TODO: remove cast to any once arguments are fixed
-        this.selectedRegion = (e.newSelection as any) as Region;
-        this.citiesData = cities
-            .filter(c => c.country === this.selectedRegion?.country && c.region === this.selectedRegion?.name);
+        this.selectedRegion = e.newSelection as Region;
+        this.citiesData = getCitiesByCountry([this.selectedCountry?.name])
+            .filter(c => c.region === this.selectedRegion?.name);
         this.selectedCity = null;
     }
 }

@@ -1,5 +1,5 @@
 import * as core from '@angular/core';
-import { cities, City } from '../../../data/cities15000-regions-countries';
+import { City, getCitiesByPopulation } from '../../../data/cities15000-regions-countries';
 
 @core.Component({
     selector: 'app-simple-combo-usage',
@@ -7,10 +7,11 @@ import { cities, City } from '../../../data/cities15000-regions-countries';
     styleUrls: ['simple-combo-usage.component.scss']
 })
 export class SimpleComboUsageComponent implements core.OnInit {
-    public data: City[];
+    public cities: City[];
+    public selectedCity: number;
     ngOnInit(): void {
-        this.data = cities
-            .filter(c => c.population > 10000000)
+        this.cities = getCitiesByPopulation(10000000)
             .sort((a, b) => b.population - a.population);
+        this.selectedCity = this.cities[0].id;
     }
 }

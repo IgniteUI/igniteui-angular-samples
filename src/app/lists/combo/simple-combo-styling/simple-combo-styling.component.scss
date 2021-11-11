@@ -6,6 +6,10 @@
 }
 
 // Ignite UI for Angular Theming engine related styling
+$custom-simple-combo-theme: igx-combo-theme(
+    $empty-list-background: #1a5214
+);
+
 $custom-drop-down-theme: igx-drop-down-theme(
     $background-color: #d9f5d6,
     $header-text-color: #1a5214,
@@ -24,15 +28,7 @@ $custom-drop-down-theme: igx-drop-down-theme(
     $selected-focus-item-text-color: #1a5214,
 );
 
-// :host {
-//   @include igx-css-vars($custom-drop-down-theme);
-// }
-
-/* Using Theme Overrides to provide IE 11 support.
- * NOTE: Theming using this approach will greatly increase the size
- * of the output CSS. If you do not plan to target IE 11,
- * delete this section and use the `igx-css-vars` mixin as shown above.
-**/
-:host ::ng-deep {
-    @include igx-drop-down($custom-drop-down-theme);
+:host {
+    @include igx-css-vars($custom-simple-combo-theme);
+    @include igx-css-vars($custom-drop-down-theme);
 }

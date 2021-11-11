@@ -1,5 +1,6 @@
 <div class="container">
     <div class="input-row">
-        <igx-simple-combo [data]="data" [displayKey]="'name'"></igx-simple-combo>
+        <igx-simple-combo [data]="cities" [displayKey]="'name'" [valueKey]="'id'" [(ngModel)]="selectedCity"></igx-simple-combo>
     </div>
+    <p *ngIf="!!selectedCity">Currently selected city is {{selectedCity}}</p>
 </div>
