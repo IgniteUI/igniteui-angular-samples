@@ -328,7 +328,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
         }
 
         let cell;
-        if ((!this.grid.getRowByIndex(this.rowIndex) || (this.grid.rowList.toArray().indexOf(this.grid.getRowByIndex(this.rowIndex)) >= this.grid.rowList.length - 2) && this.rowIndex + 2 < this.grid.dataLength)) {
+        if ((!this.grid.getRowByIndex(this.rowIndex) || (this.rowIndex >= this.grid.rowList.length - 2) && this.rowIndex + 2 < this.grid.dataLength)) {
             const lastFullyVisibleRowIndex = this.grid.rowList.toArray()[this.grid.rowList.length - 3].index;
             const field = this.grid.visibleColumns[this.colIndex].field;
             cell = this.grid.gridAPI.get_cell_by_index(lastFullyVisibleRowIndex, field);
