@@ -1,4 +1,4 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@use 'igniteui-angular/theming' as *;
 @include fade-in-top();
 
 .sample-column {

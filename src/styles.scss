@@ -1,5 +1,6 @@
-@import './variables';
-@import './app-layout';
+@use 'igniteui-angular/theming' as *;
+@use 'variables' as *;
+@use 'app-layout';
 
 /* autoprefixer grid: on */
 html,
