@@ -114,7 +114,7 @@ export class ComboConfigGenerator implements IConfigGenerator {
                 ngImports: ['IgxButtonGroupModule', 'IgxComboModule', 'IgxFinancialChartModule']
             }),
             component: 'SimpleComboMainComponent',
-            shortenComponentPathBy: '/lists/combo'
+            shortenComponentPathBy: '/lists/combo/'
         }));
 
         configs.push(new Config({
@@ -125,7 +125,7 @@ export class ComboConfigGenerator implements IConfigGenerator {
                 ngImports: ['IgxComboModule']
             }),
             component: 'SimpleComboUsageComponent',
-            shortenComponentPathBy: '/lists/combo'
+            shortenComponentPathBy: '/lists/combo/'
         }));
 
         configs.push(new Config({
@@ -136,7 +136,7 @@ export class ComboConfigGenerator implements IConfigGenerator {
                 ngImports: ['IgxComboModule']
             }),
             component: 'SimpleComboCascadingComponent',
-            shortenComponentPathBy: '/lists/combo'
+            shortenComponentPathBy: '/lists/combo/'
         }));
 
         configs.push(new Config({
@@ -147,7 +147,7 @@ export class ComboConfigGenerator implements IConfigGenerator {
                 ngImports: ['IgxComboModule']
             }),
             component: 'SimpleComboStylingComponent',
-            shortenComponentPathBy: '/lists/combo'
+            shortenComponentPathBy: '/lists/combo/'
         }));
 
         return configs;
