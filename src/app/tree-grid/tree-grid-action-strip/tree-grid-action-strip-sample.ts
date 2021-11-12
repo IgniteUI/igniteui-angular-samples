@@ -1,22 +1,24 @@
-import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent, RowType, Transaction } from 'igniteui-angular';
-import { DATA } from '../../data/nwindData';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxTreeGridComponent, RowType, Transaction } from 'igniteui-angular';
+import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
-    selector: 'app-grid-row-action-strip',
-    styleUrls: [`grid-action-strip-sample.scss`],
-    templateUrl: 'grid-action-strip-sample.html'
+    selector: 'app-tree-grid-row-action-strip',
+    styleUrls: [`tree-grid-action-strip-sample.scss`],
+    templateUrl: 'tree-grid-action-strip-sample.html'
 })
-export class GridActionStripSampleComponent {
-    @ViewChild('gridRowEditTransaction', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
+export class TreeGridActionStripSampleComponent implements OnInit {
+    @ViewChild('gridRowEditTransaction', { read: IgxTreeGridComponent, static: true }) public grid: IgxTreeGridComponent;
 
     public currentActiveGrid: { id: string; transactions: any[] } = { id: '', transactions: [] };
 
     public data: any[];
     public discardedTransactionsPerRecord: Map<number, Transaction[]> = new Map<number, Transaction[]>();
 
-    constructor() {
-        this.data = DATA;
+    constructor() { }
+
+    public ngOnInit() {
+        this.data = generateEmployeeDetailedFlatData();
     }
 
     public stateFormatter(value: string) {

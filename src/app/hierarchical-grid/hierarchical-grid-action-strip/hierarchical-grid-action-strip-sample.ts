@@ -1,14 +1,15 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent, RowType, Transaction } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, RowType, Transaction } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
+
 
 @Component({
     selector: 'app-grid-row-action-strip',
-    styleUrls: [`grid-action-strip-sample.scss`],
-    templateUrl: 'grid-action-strip-sample.html'
+    styleUrls: [`hierarchical-grid-action-strip-sample.scss`],
+    templateUrl: 'hierarchical-grid-action-strip-sample.html'
 })
-export class GridActionStripSampleComponent {
-    @ViewChild('gridRowEditTransaction', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
+export class HGridActionStripSampleComponent {
+    @ViewChild('gridRowEditTransaction', { read: IgxHierarchicalGridComponent, static: true }) public grid: IgxHierarchicalGridComponent;
 
     public currentActiveGrid: { id: string; transactions: any[] } = { id: '', transactions: [] };
 
