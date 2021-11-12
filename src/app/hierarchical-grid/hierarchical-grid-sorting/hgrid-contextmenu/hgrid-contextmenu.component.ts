@@ -1,12 +1,12 @@
-import { Component, Input, OnInit} from '@angular/core';
-import { IgxIconModule, SortingDirection } from 'igniteui-angular';
+import { Component, Input } from '@angular/core';
+import { SortingDirection } from 'igniteui-angular';
 
 @Component({
   selector: 'app-hgrid-contextmenu',
   styleUrls: ['./hgrid-contextmenu.component.scss'],
   templateUrl: './hgrid-contextmenu.component.html'
 })
-export class HGridContextmenuComponent implements OnInit {
+export class HGridContextmenuComponent {
 
     @Input()
     public x = 0;
@@ -29,8 +29,5 @@ export class HGridContextmenuComponent implements OnInit {
 
     public clearAll(eventArgs) {
         this.cell.grid.clearSort();
-    }
-
-    public ngOnInit() {
     }
 }

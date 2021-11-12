@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxBooleanFilteringOperand, IgxHierarchicalGridComponent, IgxStringFilteringOperand } from 'igniteui-angular';
+import { Component } from '@angular/core';
+import { IgxBooleanFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({
@@ -8,18 +8,13 @@ import { SINGERS } from '../../data/singersData';
     templateUrl: 'hierarchical-grid-custom-filtering.component.html'
 })
 
-export class HGridCustomFilteringSampleComponent implements OnInit {
-    @ViewChild('hierarchicalGrid', { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
-
+export class HGridCustomFilteringSampleComponent {
     public localdata;
     public caseSensitiveFilteringOperand = CaseSensitiveFilteringOperand.instance();
     public booleanFilteringOperand = BooleanFilteringOperand.instance();
 
     constructor() {
         this.localdata = SINGERS;
-    }
-    public ngOnInit(): void {
     }
 
     public formatter = (a) => a;

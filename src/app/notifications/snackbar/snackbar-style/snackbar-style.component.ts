@@ -1,16 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-snackbar-style',
   styleUrls: ['./snackbar-style.component.scss'],
   templateUrl: './snackbar-style.component.html'
 })
-export class SnackbarStyleComponent implements OnInit {
+export class SnackbarStyleComponent {
 
   constructor() { }
-
-  public ngOnInit() {
-  }
 
   public close(element) {
     element.close();

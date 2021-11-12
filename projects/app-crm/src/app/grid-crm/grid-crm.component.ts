@@ -27,7 +27,6 @@ import {
 } from 'igniteui-angular';
 import { data } from './data';
 
-// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 function formatDate(val: Date) {
     return new Intl.DateTimeFormat('en-US').format(val);
 }
