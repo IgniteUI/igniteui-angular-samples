@@ -50,7 +50,7 @@ $dark-secondary: igx-color($custom-dark-palette, "secondary");
         }
 
         ::ng-deep {
-            @include igx-bootstrap-light-theme($light-bootstrap-palette, $legacy-support: true);
+            @include igx-bootstrap-light-theme($light-bootstrap-palette);
 
             $theme-colors: (
                 "primary": $light-primary,
@@ -90,7 +90,7 @@ $dark-secondary: igx-color($custom-dark-palette, "secondary");
         }
 
         ::ng-deep {
-            @include igx-bootstrap-dark-theme($custom-dark-palette, $legacy-support: true);
+            @include igx-bootstrap-dark-theme($custom-dark-palette);
 
             .accordion {
                 .card-header {

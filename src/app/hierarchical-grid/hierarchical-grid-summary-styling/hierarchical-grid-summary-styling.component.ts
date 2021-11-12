@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxNumberSummaryOperand,
     IgxSummaryResult } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
@@ -46,16 +46,13 @@ class MyChildSummary {
     templateUrl: 'hierarchical-grid-summary-styling.component.html'
 })
 
-export class HGridSummaryStylingComponent implements OnInit {
+export class HGridSummaryStylingComponent {
     public localdata;
     public mySummary = MySummary;
     public myChildSummary = MyChildSummary;
 
     constructor() {
         this.localdata = SINGERS;
-    }
-    public ngOnInit(): void {
-
     }
 
     public formatter = (a) => a;

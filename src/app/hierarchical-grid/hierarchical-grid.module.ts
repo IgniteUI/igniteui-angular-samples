@@ -89,6 +89,7 @@ import { HGridExcelExportSampleComponent } from './hierarchical-grid-excel-expor
 import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-sample/hierarchical-grid-pager-sample.component';
 import { HGridRowStylesSampleComponent } from './hgrid-rowStyle-sample/hgrid-rowStyles.component';
 import { HGridRowClassesSampleComponent } from './hgrid-rowClasses-sample/hgrid-rowClasses.component';
+import { HGridActionStripSampleComponent } from './hierarchical-grid-action-strip/hierarchical-grid-action-strip-sample';
 
 @NgModule({
     declarations: [
@@ -170,7 +171,8 @@ import { HGridRowClassesSampleComponent } from './hgrid-rowClasses-sample/hgrid-
         HGridSummaryFormatterComponent,
         HierarchicalGridPagerSampleComponent,
         HGridRowStylesSampleComponent,
-        HGridRowClassesSampleComponent
+        HGridRowClassesSampleComponent,
+        HGridActionStripSampleComponent
     ],
     imports: [
         CommonModule,

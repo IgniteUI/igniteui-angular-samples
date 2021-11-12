@@ -79,7 +79,6 @@ export class GridCustomSummariesSelectionComponent implements AfterViewInit, OnI
     }
 }
 
-// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 function isDate(value: any) {
     return Object.prototype.toString.call(value) === '[object Date]';
 }

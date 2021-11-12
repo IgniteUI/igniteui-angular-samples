@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
@@ -7,7 +7,7 @@ import { SINGERS } from '../../data/singersData';
     styleUrls: ['./hierarchical-grid-excel-style-filtering-style.component.scss'],
     templateUrl: 'hierarchical-grid-excel-style-filtering-style.component.html'
 })
-export class HGridExcelStyleFilteringStyleComponent implements OnInit {
+export class HGridExcelStyleFilteringStyleComponent {
 
     @ViewChild('hierarchicalGrid', { static: true })
     public hierarchicalGrid: IgxHierarchicalGridComponent;
@@ -17,8 +17,4 @@ export class HGridExcelStyleFilteringStyleComponent implements OnInit {
     constructor() {
         this.localdata = SINGERS;
     }
-
-    public ngOnInit(): void {
-    }
-
 }

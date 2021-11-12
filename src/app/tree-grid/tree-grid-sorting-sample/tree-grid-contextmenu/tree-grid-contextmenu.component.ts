@@ -1,12 +1,12 @@
-import { Component, Input, OnInit} from '@angular/core';
-import { IgxIconModule, SortingDirection } from 'igniteui-angular';
+import { Component, Input } from '@angular/core';
+import { SortingDirection } from 'igniteui-angular';
 
 @Component({
   selector: 'app-tree-grid-contextmenu',
   styleUrls: ['./tree-grid-contextmenu.component.scss'],
   templateUrl: './tree-grid-contextmenu.component.html'
 })
-export class TreeGridContextmenuComponent implements OnInit {
+export class TreeGridContextmenuComponent {
 
     @Input()
     public x = 0;
@@ -29,8 +29,5 @@ export class TreeGridContextmenuComponent implements OnInit {
 
     public clearAll(eventArgs) {
         this.cell.grid.clearSort();
-    }
-
-    public ngOnInit() {
     }
 }

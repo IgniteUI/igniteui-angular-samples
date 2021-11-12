@@ -133,12 +133,12 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
    * Checks if the grid is scrolled to its upper (-1) or lower (1) edge
    */
   private isGridScrolledToEdge(dir: 1 | -1): boolean {
-    if (this.grid.data[0] === this.grid.rowList.first.data && dir === -1) {
+    if (this.grid.data[0] === this.grid.rowList.first.rowData && dir === -1) {
       return true;
     }
     if (
       this.grid.data[this.grid.data.length - 1] ===
-        this.grid.rowList.last.data &&
+        this.grid.rowList.last.rowData &&
       dir === 1
     ) {
       return true;
