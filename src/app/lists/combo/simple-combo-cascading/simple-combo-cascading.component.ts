@@ -1,13 +1,13 @@
-import * as core from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ISimpleComboSelectionChangingEventArgs } from 'igniteui-angular';
 import { City, Country, getCitiesByCountry, getCountries, Region } from '../../../data/cities15000-regions-countries';
 
-@core.Component({
+@Component({
     selector: 'app-simple-combo-cascading',
     templateUrl: 'simple-combo-cascading.component.html',
     styleUrls: ['simple-combo-cascading.component.scss']
 })
-export class SimpleComboCascadingComponent implements core.OnInit {
+export class SimpleComboCascadingComponent implements OnInit {
     public selectedCountry: Country;
     public selectedRegion: Region;
     public selectedCity: City;

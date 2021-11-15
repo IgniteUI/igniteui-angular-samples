@@ -1,12 +1,12 @@
-import * as core from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { City, getCitiesByPopulation } from '../../../data/cities15000-regions-countries';
 
-@core.Component({
+@Component({
     selector: 'app-simple-combo-usage',
     templateUrl: 'simple-combo-usage.component.html',
     styleUrls: ['simple-combo-usage.component.scss']
 })
-export class SimpleComboUsageComponent implements core.OnInit {
+export class SimpleComboUsageComponent implements OnInit {
     public cities: City[];
     public selectedCity: number;
     ngOnInit(): void {

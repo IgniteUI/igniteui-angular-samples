@@ -1,8 +1,8 @@
-import * as core from '@angular/core';
+import { Component } from '@angular/core';
 import { IgRect } from 'igniteui-angular-core';
 import { StockData, updatedStockData } from '../../../data/stocks-data';
 
-@core.Component({
+@Component({
     selector: 'app-simple-combo-main',
     templateUrl: 'simple-combo-main.component.html',
     styleUrls: ['simple-combo-main.component.scss']
