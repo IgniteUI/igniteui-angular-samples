@@ -542,7 +542,7 @@ export const treeGridRoutes: Routes = [
     {
         component: TreeGridActionStripSampleComponent,
         data: treeGridRoutesData['tree-grid-action-strip'],
-        path: 'grid-action-strip'
+        path: 'tree-grid-action-strip'
     }
 ];
 

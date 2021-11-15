@@ -11,7 +11,7 @@
             (rowDragStart)="rowDragStart($event)">
             <igx-column field="name" header="Name"></igx-column>
             <igx-column field="extension" header="Extension"></igx-column>
-            <igx-column field="size" header="Size" dataType="number" hasSummary='true'></igx-column>
+            <igx-column field="size" header="Size" dataType="number" [hasSummary]="true"></igx-column>
             <igx-column field="createdBy" header="createdBy"></igx-column>
         </igx-row-island>
     </igx-row-island>
