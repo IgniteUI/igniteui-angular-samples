@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
-@import "../../../variables";
-@import "@angular/material/theming";
+@use "../../../variables" as *;
+@use "@angular/material/theming";
 
 $custom-typography: mat.define-typography-config(
     $font-family: $material-typeface,

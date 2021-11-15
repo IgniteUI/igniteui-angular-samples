@@ -1,4 +1,4 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 $custom-column-actions-theme: igx-column-actions-theme(
     $background-color: steelblue,
