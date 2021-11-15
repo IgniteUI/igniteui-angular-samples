@@ -1268,3 +1268,15 @@ export const stockData: StockData[] = [
     { time: new Date(2018, 0, 30), open: 1403.17, high: 1439.25, low: 1392.00, close: 1437.82, volume: 5871942 },
     { time: new Date(2018, 0, 31), open: 1451.30, high: 1472.58, low: 1450.04, close: 1450.89, volume: 6424693 }
 ];
+
+export const updatedStockData: StockData[] = updateStockData(stockData);
+
+function updateStockData (stockData: StockData[]) {
+    const updated = stockData.map((current: StockData, i: number, input: StockData[]) => {
+        const today = new Date(Date.now());
+        today.setDate(today.getDate() - input.length + i + 1);
+        current.time = today;
+        return current;
+    });
+    return updated;
+}

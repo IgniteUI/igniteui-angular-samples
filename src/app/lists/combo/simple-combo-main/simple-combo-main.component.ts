@@ -1,6 +1,6 @@
 import * as core from '@angular/core';
 import { IgRect } from 'igniteui-angular-core';
-import { stockData, StockData } from '../../../data/stocks-data';
+import { StockData, updatedStockData } from '../../../data/stocks-data';
 
 @core.Component({
     selector: 'app-simple-combo-main',
@@ -8,7 +8,7 @@ import { stockData, StockData } from '../../../data/stocks-data';
     styleUrls: ['simple-combo-main.component.scss']
 })
 export class SimpleComboMainComponent {
-    public data: StockData[] = stockData;
+    public data: StockData[] = updatedStockData;
     public selectedRange: string;
     public trendLineType: string;
     public trendLineTypes: string[] = [
@@ -31,27 +31,29 @@ export class SimpleComboMainComponent {
 
     public rangeButtonClick(range: string) {
         this.selectedRange = range;
-        let startDate: Date;
+        let startDate = new Date(Date.now());
         switch (range) {
             case '1M':
-                startDate = new Date('2017/12/31');
+                startDate.setMonth(startDate.getMonth() - 1);
                 break;
             case '3M':
-                startDate = new Date('2017/10/31');
+                startDate.setMonth(startDate.getMonth() - 3);
                 break;
             case '6M':
-                startDate = new Date('2017/7/31');
+                startDate.setMonth(startDate.getMonth() - 6);
                 break;
             case 'YTD':
-                startDate = new Date('2017/1/31');
+                startDate = new Date(startDate.getFullYear(), 0, 1);
                 break;
             case '1Y':
-                startDate = new Date('2017/1/31');
+                startDate.setFullYear(startDate.getFullYear() - 1);
                 break;
             case 'ALL':
-                startDate = new Date('2013/1/31');
+                startDate = this.data[0].time;
                 break;
         }
+        console.log('Start: ', startDate);
+        console.log('End: ', this.data[this.data.length - 1].time);
         this.windowRect = this.getWindowRect(startDate);
     }
 
