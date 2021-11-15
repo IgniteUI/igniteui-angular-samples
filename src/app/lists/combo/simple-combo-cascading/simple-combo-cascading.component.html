@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="input-row">
+<div class="sample-wrapper">
+    <div class="combo-section">
         <igx-simple-combo #country
             [data]="countriesData"
             (selectionChanging)="countryChanging($event)"
@@ -7,7 +7,7 @@
             [(ngModel)]="selectedCountry"
             [displayKey]="'name'"></igx-simple-combo>
     </div>
-    <div class="input-row">
+    <div class="combo-section">
         <igx-simple-combo #province
             [data]="regionData"
             (selectionChanging)="provinceChanging($event)"
@@ -17,7 +17,7 @@
             [disabled]="regionData.length === 0">
         </igx-simple-combo>
     </div>
-    <div class="input-row">
+    <div class="combo-section">
         <igx-simple-combo #city
             [data]="citiesData"
             placeholder="Choose City..."
