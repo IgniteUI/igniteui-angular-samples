@@ -1,5 +1,5 @@
 // Stepper theme
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 $stepper-theme: igx-stepper-theme(
 	$indicator-background: #fff,

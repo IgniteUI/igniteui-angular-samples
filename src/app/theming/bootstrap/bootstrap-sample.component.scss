@@ -1,4 +1,4 @@
-@import "../../../variables";
+@use "../../../variables" as *;
 
 $light-primary: igx-color($light-bootstrap-palette, "primary");
 $light-secondary: igx-color($light-bootstrap-palette, "secondary");

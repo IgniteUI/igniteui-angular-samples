@@ -1,4 +1,4 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 $custom-theme: igx-grid-summary-theme(
     $background-color: #e0f3ff,

@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 .wrap-row {
     width: calc(50% - 16px);

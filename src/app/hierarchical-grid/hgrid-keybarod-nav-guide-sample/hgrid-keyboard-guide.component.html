@@ -65,7 +65,7 @@
     </div>
     <div class="list-sample">
         <igx-list>
-            <igx-list-item *ngIf="keyboardCollection.length > 0" isHeader=true>{{headerList}}</igx-list-item>
+            <igx-list-item *ngIf="keyboardCollection.length > 0" [isHeader]="true">{{headerList}}</igx-list-item>
             <igx-list-item @load *ngFor="let c of keyboardCollection; let idx=index" [ngClass]="{ 'active': c.active, 'disabled': !c.active}" [@toggle]="c.completed ? 'selected' : 'deselected'">
                 <h4 igxListLineTitle>{{ c.title }}</h4>
                 <p igxListLineSubTitle>{{ c.subTitle }}</p>
