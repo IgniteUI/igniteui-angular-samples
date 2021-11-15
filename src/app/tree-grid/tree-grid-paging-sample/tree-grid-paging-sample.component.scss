@@ -1,4 +1,4 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 $progressBar-sample-theme: igx-progress-linear-theme(
     $track-color: rgba(181,181,181, .5),
