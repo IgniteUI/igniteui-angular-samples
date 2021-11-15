@@ -14,7 +14,7 @@ export class SimpleComboCascadingComponent implements core.OnInit {
     public countriesData: Country[];
     public regionData: Region[] = [];
     public citiesData: City[] = [];
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.countriesData = getCountries(['United States', 'Japan', 'United Kingdom']);
     }
 
