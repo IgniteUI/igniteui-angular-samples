@@ -43,7 +43,7 @@
 <div class="grid__wrapper">
     <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" [height]="'530px'" [primaryKey]="'ID'" width="100%" [cellSelection]="'none'"
         [rowSelection]="selectionMode" [selectedRows]="selectedRows" [hideRowSelectors]="hideRowSelectors" [allowFiltering]="true"
-        (rowSelected)="handleRowSelection($event)">
+        (rowSelectionChanging)="handleRowSelection($event)">
         <igx-column [field]="'Category'"></igx-column>
         <igx-column [field]="'Type'" [filterable]='false'></igx-column>
         <igx-column [field]="'Price'" dataType="number" [formatter]="formatCurrency"></igx-column>

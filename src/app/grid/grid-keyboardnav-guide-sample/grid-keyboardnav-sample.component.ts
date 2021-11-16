@@ -226,7 +226,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
                 }
             });
 
-        this.grid.columnSelected.pipe(takeUntil(this._destroyer))
+        this.grid.columnSelectionChanging.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 const evt = args.event;
                 if (evt.type === 'keydown') {

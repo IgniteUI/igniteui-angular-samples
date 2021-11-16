@@ -5,8 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule,
-    IgxChipsModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService,
-    IgxFocusModule, IgxGridModule, IgxHierarchicalGridAPIService, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule,
+    IgxChipsModule, IgxComboModule, IgxDatePickerModule, IgxDialogModule,
+    IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule,
     IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
     IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from 'igniteui-angular';
 import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
@@ -208,10 +208,6 @@ import { HGridActionStripSampleComponent } from './hierarchical-grid-action-stri
         IgxTooltipModule,
         IgxTabsModule,
         IgxListModule
-    ],
-    providers: [
-        IgxCsvExporterService,
-        IgxExcelExporterService
     ]
 })
 export class HierarchicalGridModule { }

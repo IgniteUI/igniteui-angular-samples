@@ -27,7 +27,6 @@ export class TreeGridConditionalRowSelectorsSampleComponent implements OnInit {
             return;
         }
         const originalAddedLength = event.added.length;
-        event.added = event.added.filter(x => this.isSelectionAllowed(x));
 
         // update selection to contain only allowed rows
         event.newSelection = event.newSelection.filter(x => this.isSelectionAllowed(x));

@@ -11,7 +11,7 @@
         [rowSelection]="selectionMode"
         [allowFiltering]="true"
         [filterMode]="'excelStyleFilter'"
-        (rowSelected)="rowSelectionChanged($event)"
+        (rowSelectionChanging)="rowSelectionChanged($event)"
         (keydown)="gridKeydown($event)"
         (gridKeydown)="customKeydown($event)"
         [isLoading]="isLoading">
