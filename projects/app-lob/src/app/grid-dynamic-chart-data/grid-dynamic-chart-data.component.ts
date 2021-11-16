@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnDestroy, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
 import {
-    AutoPositionStrategy, CloseScrollStrategy, GridSelectionRange, HorizontalAlignment,
+    AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment,
     IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, OverlaySettings, PositionSettings, VerticalAlignment
 } from 'igniteui-angular';
 import { noop, Subject } from 'rxjs';
@@ -91,7 +91,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
     public contextmenuY = 0;
     public currentChartType: CHART_TYPE = CHART_TYPE.COLUMN_GROUPED;
     public fullScreenOpened = false;
-    public range: GridSelectionRange;
+    public range;
     public disableCreateChart = false;
     public currentFormatter: string | undefined;
     public hasFormatter = false;
