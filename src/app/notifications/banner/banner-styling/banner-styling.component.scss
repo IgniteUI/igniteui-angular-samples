@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 $custom-banner-theme: igx-banner-theme(
     $banner-message-color: #151515,

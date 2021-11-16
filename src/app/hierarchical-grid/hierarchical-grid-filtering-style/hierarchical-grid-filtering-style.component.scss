@@ -1,4 +1,4 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 $custom-grid: igx-grid-theme(
     $filtering-row-text-color: #292826,

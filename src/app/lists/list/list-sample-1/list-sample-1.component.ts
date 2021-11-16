@@ -1,11 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-igx-list-demo',
   styleUrls: ['./list-sample-1.component.scss'],
   templateUrl: './list-sample-1.component.html'
 })
-export class ListSample1Component implements OnInit {
+export class ListSample1Component {
   @ViewChild('itemInput') public newItem: ElementRef;
 
   public emptyListMsg = 'Please add something';
@@ -28,8 +28,6 @@ export class ListSample1Component implements OnInit {
   ];
 
   constructor() {}
-
-  public ngOnInit() {}
 
   public addItem() {}
 }

@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { browser, by, element } from 'protractor';
 
 export class AppPage {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxFilterOptions } from 'igniteui-angular';
 
 @Component({
@@ -6,7 +6,7 @@ import { IgxFilterOptions } from 'igniteui-angular';
     styleUrls: ['./list.component.scss'],
     templateUrl: './list.component.html'
 })
-export class ListComponent implements OnInit {
+export class ListComponent {
 
     public search1: string;
 
@@ -89,8 +89,5 @@ export class ListComponent implements OnInit {
         return _fo;
     }
     constructor() { }
-
-    public ngOnInit() {
-    }
 
 }

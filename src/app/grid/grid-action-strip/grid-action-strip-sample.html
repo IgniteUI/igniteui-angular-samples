@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #gridRowEditTransaction [batchEditing]="true" [data]="data" [primaryKey]="'ProductID'" width="100%"
+    <igx-grid igxPreventDocumentScroll #gridRowEditTransaction [batchEditing]="true" [data]="data" width="100%"
         height="500px" [rowEditable]="true" [allowFiltering]="true" (onDataPreLoad)="actionstrip.hide()">
         <igx-column field="ProductID" header="Product ID" [pinned]="true" [hidden]='true' [filterable]="false">
         </igx-column>
@@ -19,6 +19,11 @@
         <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [filterable]="false">
         </igx-column>
         <igx-action-strip #actionstrip>
+            <igx-grid-pinning-actions></igx-grid-pinning-actions>
+            <button title="Edit" igxButton="icon" igxRipple 
+                (click)='startEdit(actionstrip.context)'>
+                <igx-icon>edit</igx-icon>
+            </button>
             <button title="Undo All" igxButton="icon" igxRipple *ngIf='isDirty(actionstrip.context)'
                 (click)='undo(actionstrip.context)'>
                 <igx-icon>undo</igx-icon>

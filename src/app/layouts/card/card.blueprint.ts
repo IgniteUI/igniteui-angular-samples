@@ -1,4 +1,3 @@
-/* eslint-disable prefer-arrow/prefer-arrow-functions */
 interface ICard {
     title?: string;
     subtitle?: string;

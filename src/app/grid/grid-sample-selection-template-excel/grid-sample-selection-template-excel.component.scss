@@ -1,4 +1,4 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 $default-arrow-color: igx-color($color: 'grays', $variant: 400);
 $default-arrow-hover-color: igx-color($color: 'grays', $variant: 800);

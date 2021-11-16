@@ -588,7 +588,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid with Action Strip
         configs.push(new Config({
             component: 'GridActionStripSampleComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/data/utils.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridActionStripSampleComponent', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
                     'IgxFocusModule', 'IgxPreventDocumentScrollModule', 'IgxActionStripModule'],
@@ -785,7 +785,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridNestedDataBindComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/grid/grid-nested-data-binding/nestedData.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nested-employee-data.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridNestedDataBindComponent', 'IgxGridModule', 'IgxInputGroupModule', 'IgxExpansionPanelModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridNestedDataBindComponent'],
@@ -795,7 +795,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridNestedDataBindAminoacidComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/grid/grid-nested-data-binding-2/data.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/amino-data.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridNestedDataBindAminoacidComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridNestedDataBindAminoacidComponent'],

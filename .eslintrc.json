@@ -16,8 +16,7 @@
         "createDefaultProgram": true
       },
       "extends": [
-        "plugin:@angular-eslint/ng-cli-compat",
-        "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+        "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
@@ -40,7 +39,6 @@
         "comma-dangle": "error",
         "no-underscore-dangle": "off",
         "id-blacklist": "error",
-        "import/no-extraneous-dependencies": "error",
         "import/no-internal-modules": "off",
         "no-bitwise": "off",
         "no-duplicate-case": "error",
