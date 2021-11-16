@@ -1,6 +1,19 @@
-pool:
-  vmImage: 'ubuntu-latest'
+name: Angular Samples CI
 
+on:
+  push:
+    branches: [ master, vNext ]
+  pull_request:
+    branches: [ master, vNext ]
+
+jobs:
+  build-and-lint:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 16.x ]
 steps:
 
 - script: npm config set @infragistics:registry $(npmRegistry)
