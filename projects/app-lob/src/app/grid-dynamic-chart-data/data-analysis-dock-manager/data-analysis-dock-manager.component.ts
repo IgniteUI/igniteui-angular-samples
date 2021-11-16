@@ -175,7 +175,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
                 this.headersRenderButton = false;
             });
 
-        this.grid.columnSelected.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(100))
+        this.grid.columnSelectionChanging.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(100))
             .subscribe((args: IColumnSelectionEventArgs) => {
                 if (this._esfOverlayId) {
                     this.overlayService.hide(this._esfOverlayId);
