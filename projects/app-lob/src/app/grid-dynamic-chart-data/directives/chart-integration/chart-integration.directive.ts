@@ -13,7 +13,7 @@ import { ChartInitializer, IChartComponentOptions, IgxDataChartInitializer,
     IgxPieChartInitializer, IgxStackedDataChartInitializer, IOptions } from './initializers';
 
 export interface IDeterminedChartTypesArgs {
-    chartsAvailabilty: Map<CHART_TYPE, boolean>;
+    chartsAvailability: Map<CHART_TYPE, boolean>;
     chartsForCreation: CHART_TYPE[];
 }
 
@@ -41,7 +41,7 @@ export class ChartIntegrationDirective {
         this._valueMemberPaths = Object.keys(dataModel).filter(key => typeof dataModel[key] === 'number');
         this._chartData = selectedData.map((dataRecord, index) => this.addIndexMemberPath(dataRecord, index + 1));
         const args: IDeterminedChartTypesArgs = {
-            chartsAvailabilty: new Map<CHART_TYPE, boolean>(),
+            chartsAvailability: new Map<CHART_TYPE, boolean>(),
             chartsForCreation: []
         };
 
@@ -76,7 +76,7 @@ export class ChartIntegrationDirective {
             charts.delete(CHART_TYPE.SCATTER_BUBBLE);
         }
 
-        args.chartsAvailabilty = this.chartTypesAvailability;
+        args.chartsAvailability = this.chartTypesAvailability;
         args.chartsForCreation = [...charts];
         this.chartTypesDetermined.emit(args);
     }
