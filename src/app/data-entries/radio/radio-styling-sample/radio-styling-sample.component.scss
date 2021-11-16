@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 igx-radio + igx-radio {
     margin-top: 16px;

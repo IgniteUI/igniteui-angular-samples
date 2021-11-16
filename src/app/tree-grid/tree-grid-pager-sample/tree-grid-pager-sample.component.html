@@ -1,7 +1,8 @@
 <div class="grid__wrapper">
     <igx-tree-grid igxPreventDocumentScroll #treegrid1 [data]="data" [perPage]="10" height="500px" width="100%"
         displayDensity="cosy" primaryKey="ID" foreignKey="ParentID">
-        <igx-paginator #paginator [(page)]="treegrid1.page" [totalRecords]="treegrid1.totalRecords" [(perPage)]="treegrid1.perPage" [selectOptions]="selectOptions" [displayDensity]="treegrid1.displayDensity">
+        <igx-paginator #paginator [(page)]="treegrid1.page" [totalRecords]="treegrid1.totalRecords"
+            [(perPage)]="treegrid1.perPage" [selectOptions]="selectOptions" [displayDensity]="treegrid1.displayDensity">
             <igx-paginator-content>
                 <igx-page-size *ngIf="!isDropdownHidden"></igx-page-size>
                 <igx-page-nav *ngIf="!isPagerHidden"></igx-page-nav>
@@ -11,7 +12,7 @@
         </igx-column>
         <igx-column field="Name" header="Product Name" [dataType]="'string'">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" dataType="number">
+        <igx-column field="UnitPrice" header="Unit Price" [dataType]="'number'">
             <ng-template igxCell let-cell="cell" let-val>
                 <span *ngIf="cell.row.data.UnitPrice === 0">-</span>
                 <span *ngIf="cell.row.data.UnitPrice !== 0">${{val}}</span>
@@ -22,8 +23,8 @@
         <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
             <ng-template igxCell let-cell="cell" let-val>
                 <span *ngIf="cell.row.data.UnitPrice === 0">-</span>
-                <img *ngIf="cell.row.data.UnitPrice !== 0 && val" src="assets/images/grid/active.png"
-                    title="Continued" alt="Continued" />
+                <img *ngIf="cell.row.data.UnitPrice !== 0 && val" src="assets/images/grid/active.png" title="Continued"
+                    alt="Continued" />
                 <img *ngIf="cell.row.data.UnitPrice !== 0 && !val" src="assets/images/grid/expired.png"
                     title="Discontinued" alt="Discontinued" />
             </ng-template>

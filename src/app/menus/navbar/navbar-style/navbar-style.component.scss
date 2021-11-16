@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 $custom-navbar-theme: igx-navbar-theme(
     $text-color: #151515,

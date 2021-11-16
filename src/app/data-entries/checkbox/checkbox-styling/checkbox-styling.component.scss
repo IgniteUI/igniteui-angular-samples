@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 $custom-checkbox-theme: igx-checkbox-theme(
     $border-radius: 10px,

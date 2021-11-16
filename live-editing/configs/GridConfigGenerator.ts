@@ -588,7 +588,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid with Action Strip
         configs.push(new Config({
             component: 'GridActionStripSampleComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/data/utils.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridActionStripSampleComponent', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
                     'IgxFocusModule', 'IgxPreventDocumentScrollModule', 'IgxActionStripModule'],

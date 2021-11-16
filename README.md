@@ -39,7 +39,7 @@ npm run build:app-lob
 ## Dev Server
 
 ### Default App
-To start the application dev server (including IE support) run:
+To start the application dev server run:
 
 ```
 npm run start
@@ -53,7 +53,7 @@ npm run start:es6
 
 ### Line of Business App
 
-To start the application dev server (including IE support) run:
+To start the application dev server run:
 ```
 npm run start:app-lob
 ```
@@ -64,7 +64,7 @@ npm run start:app-lob
 
 ### Default App
 
-To generate the live editing applications along with the dev server (including IE support) run:
+To generate the live editing applications along with the dev server run:
 ```
 npm run start:live-editing
 ```
@@ -76,14 +76,14 @@ npm run start:live-editing:es6
 ```
 
 
-To generate live editing applications, using only **Sass** for styling (excluding IE and Edge support) run:
+To generate live editing applications, using only **Sass** for styling run:
 ```
 npm run start:live-editing:noCss
 ```
 
 ### Line of Business App
 
-To generate the live editing applications along with the dev server (including IE support) run:
+To generate the live editing applications along with the dev server run:
 ```
 npm run start:app-lob:live-editing
 ```
@@ -100,7 +100,7 @@ Live-editing [documentation could be found here](https://github.com/IgniteUI/ign
 
 One of the most important functionality is the Configurator Generator as each Ignite UI for Angular component has a separate configurations (config) generator - [read the following section if you are interested in the actual structure and how to configure it](https://github.com/IgniteUI/igniteui-live-editing#configuration-generator).
 ### Live-Editing Watcher
-Use this command to start the server with capability to regenerate [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) JSON files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) when a change related to the samples is made (including IE support):
+Use this command to start the server with capability to regenerate [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) JSON files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) when a change related to the samples is made:
 
 ```
 npm run start:watch-live-editing

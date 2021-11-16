@@ -1,6 +1,6 @@
-@use '~@angular/material' as mat;
-@import "../../../variables";
-@import "~@angular/material/theming";
+@use '@angular/material' as mat;
+@use "../../../variables" as *;
+@use "@angular/material/theming";
 
 $custom-typography: mat.define-typography-config(
     $font-family: $material-typeface,
@@ -178,11 +178,11 @@ igx-expansion-panel-body {
 
 ::ng-deep {
     @include mat.core($custom-typography);
-    @include igx-theme($igx-light-palette, $legacy-support: true);
+    @include igx-theme($igx-light-palette);
     @include mat.all-component-themes($custom-mat-light-theme);
 
     .dark {
-        @include igx-dark-theme($custom-dark-palette, $legacy-support: true);
+        @include igx-dark-theme($custom-dark-palette);
         @include mat.all-component-themes($custom-mat-dark-theme);
     }
 }

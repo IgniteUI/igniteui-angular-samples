@@ -1,4 +1,4 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 $dark-button-theme: igx-button-theme(
     $background: #FFCD0F,

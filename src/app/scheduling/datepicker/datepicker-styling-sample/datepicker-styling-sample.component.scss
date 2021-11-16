@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 .date-picker-wrapper {
     padding: 1rem;

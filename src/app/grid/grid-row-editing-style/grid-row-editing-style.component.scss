@@ -1,4 +1,4 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 $my-light-gray: #e3e3e3;
 $my-banner-palette: $purple-palette;

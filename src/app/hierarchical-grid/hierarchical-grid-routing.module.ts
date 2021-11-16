@@ -94,6 +94,7 @@ import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-
 import { HGridMultiColumnHeadersExportComponent } from './hierarchical-grid-multi-column-headers-export/hierarchical-grid-multi-column-export.component';
 import { HGridRowStylesSampleComponent } from './hgrid-rowStyle-sample/hgrid-rowStyles.component';
 import { HGridRowClassesSampleComponent } from './hgrid-rowClasses-sample/hgrid-rowClasses.component';
+import { HGridActionStripSampleComponent } from './hierarchical-grid-action-strip/hierarchical-grid-action-strip-sample';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -529,6 +530,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridRowClassesSampleComponent,
         data: hierarchicalGridRoutesData['hGrid-row-classes'],
         path: 'hGrid-row-classes'
+    },
+    {
+        component: HGridActionStripSampleComponent,
+        data: hierarchicalGridRoutesData['hGrid-action-strip'],
+        path: 'hGrid-action-strip'
     }
 ];
 
