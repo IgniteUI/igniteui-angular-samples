@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
-    IgxButtonModule, IgxDialogModule, IgxExcelExporterService, IgxGridModule,
+    IgxButtonModule, IgxDialogModule, IgxGridModule,
     IgxSliderModule, IgxSwitchModule, IgxToastModule
 } from 'igniteui-angular';
 import {
@@ -46,6 +46,6 @@ import { FinancialDataService } from '../services/financial.service';
         IgxDialogModule,
         IgxToastModule
     ],
-    providers: [FinancialDataService, IgxExcelExporterService]
+    providers: [FinancialDataService]
 })
 export class GridFinjsModule { }

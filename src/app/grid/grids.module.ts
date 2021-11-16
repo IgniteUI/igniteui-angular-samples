@@ -6,8 +6,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
     IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule,
-    IgxCheckboxModule, IgxChipsModule, IgxComboModule, IgxCsvExporterService,
-    IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule,
+    IgxCheckboxModule, IgxChipsModule, IgxComboModule,
+    IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxExpansionPanelModule, IgxFocusModule,
     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule,
     IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from 'igniteui-angular';
@@ -286,10 +286,6 @@ import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.c
         IgxDividerModule,
         IgxActionStripModule,
         IgxListModule
-    ],
-    providers: [
-        IgxCsvExporterService,
-        IgxExcelExporterService
     ]
 })
 export class GridsModule { }

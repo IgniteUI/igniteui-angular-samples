@@ -9,9 +9,7 @@ import {
     IgxBannerModule,
     IgxButtonGroupModule,
     IgxButtonModule,
-    IgxCsvExporterService,
     IgxDialogModule,
-    IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
     IgxListModule,
@@ -241,6 +239,6 @@ import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tre
         IgxTooltipModule,
         IgxListModule
     ],
-    providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
+    providers: [RemoteFilteringService]
 })
 export class TreeGridModule { }
