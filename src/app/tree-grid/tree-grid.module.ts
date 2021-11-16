@@ -120,6 +120,7 @@ import { TreeGridGroupByLoadOnDemandComponent } from './tree-grid-group-by-load-
 import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-column-headers-export/tree-grid-multi-column-headers-export.component';
 import { TreeGridRowStylesComponent } from './tree-grid-rowStyles-sample/tree-grid-rowStyle.component';
 import { TreeGridRowClassesComponent } from './tree-grid-rowClasses-sample/tree-grid-rowClasses.component';
+import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tree-grid-action-strip-sample';
 
 @NgModule({
     declarations: [
@@ -212,7 +213,8 @@ import { TreeGridRowClassesComponent } from './tree-grid-rowClasses-sample/tree-
         TreeGridFormattedFilteringStrategyComponent,
         TreeGridSummaryFormatterComponent,
         TreeGridRowStylesComponent,
-        TreeGridRowClassesComponent
+        TreeGridRowClassesComponent,
+        TreeGridActionStripSampleComponent
     ],
     imports: [
         CommonModule,

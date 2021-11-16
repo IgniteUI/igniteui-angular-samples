@@ -1,4 +1,4 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 $text-color: igx-contrast-color($color: 'primary', $variant: 900);
 $background-color: igx-color($color: "primary", $variant: 900);

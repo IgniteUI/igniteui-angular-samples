@@ -1,17 +1,14 @@
 <div class="grid__wrapper">
         <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [width]="'100%'" [height]="'570px'" [groupingExpressions]="initialExpr">
             <igx-grid-toolbar>
-
-                    <button igxButton="raised" [igxToggleAction]="dropDown" [igxDropDownItemNavigation]="dropDown">Group By {{ groupByMode }}</button>
-                    <igx-drop-down #dropDown (selectionChanging)="selectionChange($event)">
-                        <igx-drop-down-item *ngFor="let item of groupByOptions" [value]="item">
-                            {{ item.name }}
-                        </igx-drop-down-item>
-                    </igx-drop-down>
-
+                <button igxButton="raised" [igxToggleAction]="dropDown" [igxDropDownItemNavigation]="dropDown">Group By {{ groupByMode }}</button>
+                <igx-drop-down #dropDown (selectionChanging)="selectionChange($event)">
+                    <igx-drop-down-item *ngFor="let item of groupByOptions" [value]="item">
+                        {{ item.name }}
+                    </igx-drop-down-item>
+                </igx-drop-down>
             </igx-grid-toolbar>
-
-            <igx-column field="OrderID" header="Order ID" hidden=true >
+            <igx-column field="OrderID" header="Order ID" [hidden]="true" >
             </igx-column>
             <igx-column field="ShipCountry" header="Ship Country" width="200px" [groupable]="true">
             </igx-column>
@@ -43,16 +40,15 @@
             </igx-column>
             <igx-column field="Quantity" header="Quantity" width="150px" dataType="number" [groupable]="true">
             </igx-column>
-                <ng-template igxGroupByRow let-groupRow>
-                        <div class="igx-group-label">
-                            <igx-icon family="material" class="igx-group-label__icon">group_work</igx-icon>
-                            <span class="igx-group-label__column-name">
-                            {{ groupRow.expression.fieldName }}:
-                            </span>
-                            <span class="igx-group-label__text">{{ isDate(groupRow.value) ? (groupRow.value | date: dateFormatter)  : groupRow.value }}</span>
-                            <igx-badge [value]="groupRow.records.length" class='igx-group-label__count-badge'></igx-badge>
-                        </div>
-                </ng-template>
-
+            <ng-template igxGroupByRow let-groupRow>
+                <div class="igx-group-label">
+                    <igx-icon family="material" class="igx-group-label__icon">group_work</igx-icon>
+                    <span class="igx-group-label__column-name">
+                    {{ groupRow.expression.fieldName }}:
+                    </span>
+                    <span class="igx-group-label__text">{{ isDate(groupRow.value) ? (groupRow.value | date: dateFormatter)  : groupRow.value }}</span>
+                    <igx-badge [value]="groupRow.records.length" class='igx-group-label__count-badge'></igx-badge>
+                </div>
+            </ng-template>
         </igx-grid>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DATA } from '../../../data/animations-data';
 
 @Component({
@@ -6,12 +6,9 @@ import { DATA } from '../../../data/animations-data';
     templateUrl: './tree-basic-sample.component.html',
     styleUrls: ['./tree-basic-sample.component.scss']
 })
-export class TreeBasicSampleComponent implements OnInit {
+export class TreeBasicSampleComponent {
     public data = DATA;
 
     constructor() { }
-
-    ngOnInit(): void {
-    }
 
 }

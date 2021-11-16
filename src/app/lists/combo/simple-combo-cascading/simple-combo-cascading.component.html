@@ -1,0 +1,30 @@
+<div class="sample-wrapper">
+    <div class="combo-section">
+        <igx-simple-combo #country
+            [data]="countriesData"
+            (selectionChanging)="countryChanging($event)"
+            placeholder="Choose Country..."
+            [(ngModel)]="selectedCountry"
+            [displayKey]="'name'"></igx-simple-combo>
+    </div>
+    <div class="combo-section">
+        <igx-simple-combo #province
+            [data]="regionData"
+            (selectionChanging)="provinceChanging($event)"
+            placeholder="Choose Region..."
+            [(ngModel)]="selectedRegion"
+            [displayKey]="'name'"
+            [disabled]="regionData.length === 0">
+        </igx-simple-combo>
+    </div>
+    <div class="combo-section">
+        <igx-simple-combo #city
+            [data]="citiesData"
+            placeholder="Choose City..."
+            [(ngModel)]="selectedCity"
+            [displayKey]="'name'"
+            [valueKey]="'id'"
+            [disabled]="citiesData.length === 0">
+        </igx-simple-combo>
+    </div>
+</div>

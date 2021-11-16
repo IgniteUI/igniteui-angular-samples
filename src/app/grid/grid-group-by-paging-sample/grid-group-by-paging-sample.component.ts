@@ -44,7 +44,4 @@ export class GridGroupByPagingSampleComponent {
         const endDate = new Date('12/31/2017');
         return values.filter((x) => x.OrderDate >= startDate && x.OrderDate <= endDate).length;
     }
-    public toggleSummary(column: IgxColumnComponent) {
-        column.hasSummary = !column.hasSummary;
-    }
 }

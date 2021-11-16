@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 $dark-highlight: igx-highlight-theme(
     $resting-background: #FFCD0F,

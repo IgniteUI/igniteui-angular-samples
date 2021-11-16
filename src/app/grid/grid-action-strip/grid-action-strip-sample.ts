@@ -2,7 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { IgxGridComponent, RowType, Transaction } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
-
 @Component({
     selector: 'app-grid-row-action-strip',
     styleUrls: [`grid-action-strip-sample.scss`],
@@ -34,6 +33,17 @@ export class GridActionStripSampleComponent {
 
     public isDeleted(rowContext: RowType) {
         return rowContext && rowContext.deleted;
+    }
+
+    public startEdit(row?): void {
+        const firstEditable = row.cells.filter(cell => cell.editable)[0];
+        const grid = row.grid;
+
+        if (grid.rowList.filter(r => r === row).length !== 0) {
+            grid.gridAPI.crudService.enterEditMode(firstEditable, event);
+            firstEditable.activate();
+        }
+        row.hide();
     }
 
     public commit(rowContext: RowType) {
