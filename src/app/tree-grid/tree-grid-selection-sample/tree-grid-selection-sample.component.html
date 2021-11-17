@@ -52,7 +52,7 @@
 </div>
 <div class="grid__wrapper">
     <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" [selectedRows]="selectedRows" primaryKey="ID" foreignKey="ParentID" [height]="'550px'" width="100%" [cellSelection]="'none'" [rowSelection]="selectionMode" [hideRowSelectors]="hideRowSelectors"
-    [allowFiltering]="true" (rowSelected)="handleRowSelection($event)">
+    [allowFiltering]="true" (rowSelectionChanging)="handleRowSelection($event)">
         <igx-column [field]="'Name'" dataType="string" [sortable]="true"></igx-column>
         <igx-column [field]="'Title'" dataType="string" [sortable]="true"></igx-column>
         <igx-column [field]="'HireDate'" dataType="date" [sortable]="true"></igx-column>

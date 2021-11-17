@@ -4,7 +4,7 @@ import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     IgxAutocompleteModule, IgxButtonModule, IgxIconModule, IgxInputGroupModule, IgxLayoutModule,
-    IgxRippleModule, IgxGridModule, IgxExcelExporterService, IgxCsvExporterService, IgxAvatarModule
+    IgxRippleModule, IgxGridModule, IgxAvatarModule
 } from 'igniteui-angular';
 import { AppComponent } from './app.component';
 import { GridCRMComponent } from './grid-crm/grid-crm.component';
@@ -28,8 +28,7 @@ import { GridCRMComponent } from './grid-crm/grid-crm.component';
         IgxButtonModule,
         FormsModule,
         HammerModule
-    ],
-    providers: [IgxExcelExporterService, IgxCsvExporterService]
+    ]
 })
 export class AppModule { }
 

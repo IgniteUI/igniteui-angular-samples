@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IgxAvatarModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule,
-    IgxCsvExporterService, IgxDialogModule, IgxExcelExporterService, IgxGridModule, IgxIconModule,
+    IgxDialogModule, IgxGridModule, IgxIconModule,
     IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
     IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule, IgxTreeGridModule } from 'igniteui-angular';
 /* eslint-disable max-len */
@@ -43,6 +43,6 @@ import { TreeGridDvRoutingModule } from './tree-grid-routing.module';
         IgxSnackbarModule,
         IgxTooltipModule
     ],
-    providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
+    providers: [RemoteFilteringService]
 })
 export class TreeGridDVModule { }

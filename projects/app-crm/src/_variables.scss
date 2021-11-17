@@ -1,5 +1,6 @@
-@use 'igniteui-angular/theming' as *;
-@forward 'igniteui-angular/theming';
+@use '~igniteui-angular/lib/core/styles/themes/index' as *;
+@forward '~igniteui-angular/lib/core/styles/themes/index';
+
 
 $legacy-support: true;
 $palette: $light-material-palette;

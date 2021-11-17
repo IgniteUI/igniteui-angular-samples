@@ -26,15 +26,6 @@ $custom-badge-theme: igx-badge-theme(
     $text-color: black
 );
 
-// :host {
-//     @include igx-css-vars($custom-badge-theme);
-// }
-
-/* Using Theme Overrides to provide IE 11 support.
- * NOTE: Theming using this approach will greatly increase the size
- * of the output CSS. If you do not plan to target IE 11,
- * delete this section and use the `igx-css-vars` mixin as shown above.
-**/
-:host ::ng-deep {
-    @include igx-badge($custom-badge-theme);
+:host {
+    @include igx-css-vars($custom-badge-theme);
 }
