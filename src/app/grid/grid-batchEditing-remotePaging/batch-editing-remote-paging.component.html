@@ -10,6 +10,7 @@
             (pageChange)="paginate($event)">
         </igx-paginator>
         <igx-grid-toolbar>
+            <igx-grid-toolbar-title>{{ title }}</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
                 <button igxButton (click)="addRow()">Add Row</button>
                 <button igxButton [disabled]="!grid1.transactions.canUndo" (click)="undo()">Undo</button>
