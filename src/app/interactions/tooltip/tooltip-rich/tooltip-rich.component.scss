@@ -1,3 +1,5 @@
+@import '../../../../variables';
+
 .location:hover {
     cursor: pointer;
 }
@@ -15,7 +17,7 @@
 
 .locationTooltip {
     width: 310px;
-    background-color: var(--igx-grays-700);
+    background-color: igx-color($color: grays, $variant: 700);
     padding: 3px;
     font-size: 13px;
 }
