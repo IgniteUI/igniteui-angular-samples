@@ -9,14 +9,14 @@
             [displayDensity]="grid1.displayDensity"
             (pageChange)="paginate($event)">
         </igx-paginator>
-            <igx-grid-toolbar>
-                <igx-grid-toolbar-actions>
-                    <button igxButton (click)="addRow()">Add Row</button>
-                    <button igxButton [disabled]="!grid1.transactions.canUndo" (click)="undo()">Undo</button>
-                    <button igxButton [disabled]="!grid1.transactions.canRedo" (click)="redo()">Redo</button>
-                    <button igxButton [disabled]="!hasTransactions" (click)="openCommitDialog()">Commit</button>
-                </igx-grid-toolbar-actions>
-            </igx-grid-toolbar>
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-actions>
+                <button igxButton (click)="addRow()">Add Row</button>
+                <button igxButton [disabled]="!grid1.transactions.canUndo" (click)="undo()">Undo</button>
+                <button igxButton [disabled]="!grid1.transactions.canRedo" (click)="redo()">Redo</button>
+                <button igxButton [disabled]="!hasTransactions" (click)="openCommitDialog()">Commit</button>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
         <igx-column [pinned]="true" [filterable]="false" [editable]="false">
             <ng-template igxCell let-cell="cell" let-val>
                 <button igxButton (click)="deleteRow(cell.id.rowID)" [disabled]="cell.row.deleted">Delete</button>
