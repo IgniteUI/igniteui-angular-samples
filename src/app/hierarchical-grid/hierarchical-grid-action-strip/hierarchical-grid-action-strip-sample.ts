@@ -1,5 +1,5 @@
-import { Component, ViewChild, ChangeDetectorRef, AfterViewInit } from '@angular/core';
-import { IgxHierarchicalGridComponent, RowType, Transaction } from 'igniteui-angular';
+import { Component, ViewChild, ChangeDetectorRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { IgxHierarchicalGridComponent, RowType, Transaction, IgxColumnComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({
@@ -11,6 +11,9 @@ export class HGridActionStripSampleComponent implements AfterViewInit{
     @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true }) 
     public grid: IgxHierarchicalGridComponent;
 
+    @ViewChildren(IgxColumnComponent, { read: IgxColumnComponent })
+    public columns: QueryList<IgxColumnComponent>;
+
     public currentActiveGrid: { id: string; transactions: any[] } = { id: '', transactions: [] };
 
     public data: any[];
@@ -21,7 +24,7 @@ export class HGridActionStripSampleComponent implements AfterViewInit{
     }
 
     public ngAfterViewInit(): void {
-        this.grid.columnList.forEach((col) => col.width = '20%');
+        this.columns.forEach((col) => col.width = '19%');
         this.cdr.detectChanges();
     }
 
