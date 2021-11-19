@@ -52,7 +52,7 @@ export class TreeGridRowReorderComponent {
         }
         if (draggedRow.selected) {
             this.treeGrid.selectRows([this.treeGrid.rowList.toArray()
-                .find((r) => r.key === draggedRow.key).rowID], false);
+                .find((r) => r.key === draggedRow.key).key], false);
         }
 
         this.localData = [...this.localData];
