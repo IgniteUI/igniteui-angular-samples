@@ -1,5 +1,4 @@
-@use '~igniteui-angular/lib/core/styles/themes/index' as *;
-@forward '~igniteui-angular/lib/core/styles/themes/index';
+@use 'igniteui-angular/theming' as *;
 @use 'variables' as *;
 @use 'app-layout';
 
