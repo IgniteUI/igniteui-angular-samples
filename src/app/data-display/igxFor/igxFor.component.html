@@ -20,7 +20,7 @@
                 *igxFor="let item of data | igxFilter: fo; scrollOrientation : 'vertical'; containerSize: '500px'; itemSize: '50px'">
                 <igx-avatar igxListThumbnail [src]="item.avatar" roundShape="true"></igx-avatar>
             <span igxListLineTitle>{{ item.name }}</span>
-            <igx-icon igxListAction [color]="item.favorite ? 'orange' : 'lightgray'" (click)="toggleFavorite(item)">star</igx-icon>
+            <igx-icon igxListAction [style.color]="item.favorite ? 'orange' : 'lightgray'" (click)="toggleFavorite(item)">star</igx-icon>
             </igx-list-item>
         </div>
     </igx-list>
