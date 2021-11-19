@@ -10,7 +10,7 @@
     <div class="combo-section">
         <igx-simple-combo #province
             [data]="regionData"
-            (selectionChanging)="provinceChanging($event)"
+            (selectionChanging)="regionChanging($event)"
             placeholder="Choose Region..."
             [(ngModel)]="selectedRegion"
             [displayKey]="'name'"

@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 // Browser samples related styling
 .sample-wrapper {
@@ -29,7 +29,7 @@ $custom-drop-down-theme: igx-drop-down-theme(
     $selected-focus-item-text-color: #1a5214,
 );
 
-:host {
+:host ::ng-deep {
     @include igx-css-vars($custom-simple-combo-theme);
     @include igx-css-vars($custom-drop-down-theme);
 }
