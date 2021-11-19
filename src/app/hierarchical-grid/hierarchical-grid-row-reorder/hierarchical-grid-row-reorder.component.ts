@@ -49,7 +49,7 @@ export class HGridRowReorderComponent {
         if (wasSelected) {
             // find the row that has the same ID as the dragged row and select it
             parent.selectRows([parent.rowList.toArray()
-                .find((r) => r.rowID === draggedRow.key).rowID], false);
+                .find((r) => r.key === draggedRow.key).key], false);
         }
     }
 
