@@ -2,6 +2,11 @@
     <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="data" height="480px" rowHeight="65px">
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>Singers</igx-grid-toolbar-title>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+                <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+            </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
 
         <igx-column field="Artist" width="150px"></igx-column>
@@ -19,6 +24,11 @@
         <igx-row-island key="Albums" [autoGenerate]="false">
             <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
                 <igx-grid-toolbar-title>Albums</igx-grid-toolbar-title>
+                <igx-grid-toolbar-actions>
+                    <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+                    <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+                    <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+                </igx-grid-toolbar-actions>
             </igx-grid-toolbar>
 
             <igx-column field="Album"></igx-column>
@@ -29,6 +39,11 @@
         <igx-row-island key="Songs" [autoGenerate]="false">
             <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
                 <igx-grid-toolbar-title>Songs</igx-grid-toolbar-title>
+                <igx-grid-toolbar-actions>
+                    <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+                    <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+                    <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+                </igx-grid-toolbar-actions>
             </igx-grid-toolbar>
 
                 <igx-column field="Number" header="No."></igx-column>

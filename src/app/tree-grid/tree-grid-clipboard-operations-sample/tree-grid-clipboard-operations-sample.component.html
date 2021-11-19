@@ -16,7 +16,11 @@
                 <igx-tree-grid igxPreventDocumentScroll  #grid1 [data]="data" childDataKey="Employees" (columnInit)="initColumn($event)"
                     [autoGenerate]="false" [clipboardOptions]="options">
                     <igx-grid-toolbar>
-
+                        <igx-grid-toolbar-actions>
+                            <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+                            <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+                            <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+                        </igx-grid-toolbar-actions>
                         <div class="tlb">
                             <igx-switch [(ngModel)]="options.enabled">Grid copy behavior</igx-switch>
                             <igx-switch [(ngModel)]="options.copyHeaders">Copying of header labels</igx-switch>

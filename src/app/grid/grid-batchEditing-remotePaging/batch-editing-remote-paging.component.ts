@@ -21,7 +21,6 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
     public selectOptions = [5, 10, 15, 25, 50];
     public transactionsData: Transaction[] = [];
     public mode = GridPagingMode.Remote;
-    public title = 'Remote paging with batch editing';
 
     private _perPage = 10;
     private _dataLengthSubscriber;

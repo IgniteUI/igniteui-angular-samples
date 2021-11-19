@@ -1,7 +1,7 @@
 <div class="grid__wrapper">
     <igx-grid igxPreventDocumentScroll #grid1 [batchEditing]="true" [data]="data | async" width="100%" height="580px" [pagingMode]="mode"
         [rowEditable]="true" [primaryKey]="'ID'">
-        <igx-paginator #paginator 
+        <igx-paginator #paginator
             [totalRecords]="totalCount"
             [page]="page"
             [(perPage)]="perPage"
@@ -10,7 +10,6 @@
             (pageChange)="paginate($event)">
         </igx-paginator>
         <igx-grid-toolbar>
-            <igx-grid-toolbar-title>{{ title }}</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
                 <button igxButton (click)="addRow()">Add Row</button>
                 <button igxButton [disabled]="!grid1.transactions.canUndo" (click)="undo()">Undo</button>
