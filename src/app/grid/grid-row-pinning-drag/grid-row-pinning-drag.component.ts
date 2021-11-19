@@ -50,7 +50,7 @@ export class GridPinningDragSampleComponent implements OnInit {
         const currRowID = this.getCurrentRowID(this.grid.rowList.toArray(),
             { x: event.clientX, y: event.clientY });
 
-        const currentRow = this.grid.rowList.toArray().find((r) => r.rowID === currRowID);
+        const currentRow = this.grid.rowList.toArray().find((r) => r.key === currRowID);
         if (currentRow.pinned) {
             currRowPinnedIndex = this.grid.pinnedRows.indexOf(this.grid.pinnedRows.find((r) => r.rowID === currRowID));
         }
