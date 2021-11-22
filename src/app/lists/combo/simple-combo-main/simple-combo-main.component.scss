@@ -8,3 +8,8 @@
     justify-content: space-between;
     margin-bottom: 3rem;
 }
+
+.input-container {
+    flex-grow: 1;
+    max-width: 300px;
+}
