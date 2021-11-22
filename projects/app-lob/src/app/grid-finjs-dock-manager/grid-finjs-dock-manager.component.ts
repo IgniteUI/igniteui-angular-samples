@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, HostBinding, OnDestroy, OnInit, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, Renderer2, OnDestroy, OnInit, DoCheck, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, IgxColumnComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxSelectComponent, OverlaySettings, SortingDirection } from 'igniteui-angular';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { Subject } from 'rxjs';
@@ -14,7 +14,7 @@ import { DockSlotComponent, GridHostDirective } from './dock-slot.component';
   templateUrl: './grid-finjs-dock-manager.component.html',
   styleUrls: ['./grid-finjs-dock-manager.component.scss']
 })
-export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterViewInit {
+export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterViewInit, DoCheck {
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     @ViewChild('grid2', { static: true }) public grid2: IgxGridComponent;
     @ViewChild(GridHostDirective) public host: GridHostDirective;
@@ -25,8 +25,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
     @ViewChild('freq', { read: IgxSelectComponent }) public selectFrequency: IgxSelectComponent;
     @ViewChild(IgxOverlayOutletDirective) outlet: IgxOverlayOutletDirective;
 
-    @HostBinding('class')
-    public theme = 'dark-theme';
+    public isDarkTheme = true;
 
     public frequencyItems: number[] = [300, 600, 900];
     public frequency = this.frequencyItems[1];
@@ -143,7 +142,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
 
     private destroy$ = new Subject<any>();
 
-    constructor(public dataService: SignalRService, private paneService: FloatingPanesService, private cdr: ChangeDetectorRef, private componentFactoryResolver: ComponentFactoryResolver) {}
+    constructor(public dataService: SignalRService, private paneService: FloatingPanesService, private cdr: ChangeDetectorRef, private componentFactoryResolver: ComponentFactoryResolver, private elementRef: ElementRef, private renderer:Renderer2) {}
 
     public ngOnInit() {
         this.dataService.startConnection(this.frequency, this.dataVolume, true, false);
@@ -159,6 +158,17 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
         this.dataService.stopLiveData();
         this.destroy$.next(true);
         this.destroy$.complete();
+    }
+
+    public ngDoCheck() {
+        if (this.isDarkTheme) {
+            this.renderer.removeClass(this.elementRef.nativeElement, 'light-theme');
+            this.renderer.addClass(this.elementRef.nativeElement, 'dark-theme');
+        }
+        else {
+            this.renderer.removeClass(this.elementRef.nativeElement, 'dark-theme');
+            this.renderer.addClass(this.elementRef.nativeElement, 'light-theme');
+        }
     }
 
     public ngAfterViewInit() {
