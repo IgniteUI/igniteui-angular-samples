@@ -13,6 +13,7 @@ export class HGridToolbarOptionsSampleComponent {
     enableHiding = true;
     enablePinning = true;
     enableExport = true;
+    enableFiltering = true;
 
     constructor() {
         this.data = SINGERS;
