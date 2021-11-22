@@ -1,8 +1,8 @@
 <div class="gallery__wrapper">
-    <igx-navbar title="Gallery">
-        <igx-icon (click)="connectionBanner.open()">refresh</igx-icon>
-    </igx-navbar>
     <div class="gallery__content">
+        <igx-navbar title="Gallery">
+            <igx-icon (click)="connectionBanner.open()">refresh</igx-icon>
+        </igx-navbar>
         <igx-banner class="offline-banner" #connectionBanner>
             You are currently offline.
         </igx-banner>
