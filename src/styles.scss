@@ -2,6 +2,13 @@
 @use 'variables' as *;
 @use 'app-layout';
 
+
+.light-theme {
+    @include igx-light-theme($default-palette);
+}
+
+$grays-btn-color: igx-color($green-palette, 'grays', 800);
+
 /* autoprefixer grid: on */
 html,
 body {
