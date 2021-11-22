@@ -56,7 +56,7 @@ export class HGridRowReorderComponent {
     private getTargetRowIndex(rowListArr: any[], cursorPosition: Point): number {
         const targetElem = this.catchCursorPosOnElem(rowListArr, cursorPosition);
         // get the index of the row that has the same ID as the dragged row
-        return rowListArr.indexOf(rowListArr.find((r) => r.rowData.id === targetElem.rowData.id));
+        return rowListArr.indexOf(rowListArr.find((r) => r.key === targetElem.key));
     }
 
     private catchCursorPosOnElem(rowListArr: any[], cursorPosition: Point): any {

@@ -3,6 +3,7 @@ import { IDragMoveEventArgs, IDropDroppedEventArgs, IgxGridComponent, IRowDragSt
 import { DATA } from '../../data/customers';
 import { Subject, interval, Observable, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { IgxRowDirective } from 'igniteui-angular/lib/grids/row.directive';
 
 @Component({
     selector: 'app-grid-drop-indicator',
@@ -56,7 +57,7 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
   }
 
   private getRowIndexAtPoint(
-    rowList: any[],
+    rowList: IgxRowDirective[],
     cursorPosition: Point
   ): number {
     for (const row of rowList) {
@@ -68,7 +69,7 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
         cursorPosition.x < rowRect.right + window.scrollX
       ) {
         // return the index of the targeted row
-        return this.data.indexOf(this.data.find(r => r.ID === row.rowID));
+        return this.data.indexOf(this.data.find(r => r.ID === row.key));
       }
     }
 
