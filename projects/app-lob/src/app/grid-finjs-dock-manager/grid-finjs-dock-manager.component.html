@@ -1,7 +1,7 @@
 <igc-dockmanager #dock class="dock-m-position igx-scrollbar" [layout]="docLayout">
-    <div slot="actionPane" style="height: 100%; padding: 20px;">
+    <div class="actionPane" slot="actionPane" style="height: 100%; padding: 20px;">
         <div class="actionItem">
-            Change theme: <br/> <igx-switch [(ngModel)]="theme">Dark Mode</igx-switch>
+            Change theme: <br/> <igx-switch [(ngModel)]="isDarkTheme">Dark Mode</igx-switch>
         </div>
         <div class="actionItem">
             Start/Stop live data: <igx-switch [(ngModel)]="liveData" (change)="streamData($event)">{{ liveData ===
@@ -166,4 +166,4 @@
     <ng-template #host gridHost>
     </ng-template>
 </igc-dockmanager>
-<div class="{{theme ? 'dark-theme' : 'light-theme'}}" #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>
+<div class="dark-theme" #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>
