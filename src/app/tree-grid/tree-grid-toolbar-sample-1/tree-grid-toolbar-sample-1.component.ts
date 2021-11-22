@@ -13,6 +13,7 @@ export class TreeGridToolbarSample1Component {
     enableHiding = true;
     enablePinning = true;
     enableExport = true;
+    enableFiltering = true;
 
     constructor() {
         this.data = EMPLOYEE_FLAT_AVATARS_DATA();
