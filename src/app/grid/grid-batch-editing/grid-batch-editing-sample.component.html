@@ -3,7 +3,7 @@
         [rowEditable]="true">
         <igx-column [editable]="false">
             <ng-template igxCell let-cell="cell" let-val>
-                <button igxButton (click)="deleteRow(cell)"
+                <button igxButton (click)="cell.id.rowID"
                     [disabled]="cell.row.deleted">Delete</button>
             </ng-template>
         </igx-column>

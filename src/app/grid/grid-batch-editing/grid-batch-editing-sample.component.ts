@@ -41,10 +41,6 @@ export class GridBatchEditingSampleComponent implements OnInit {
         });
     }
 
-    public deleteRow(cell: any) {
-        this.grid.deleteRow(cell.id.rowID)
-    }
-
     public undo() {
         /* exit edit mode and commit changes */
         this.grid.endEdit(true);
