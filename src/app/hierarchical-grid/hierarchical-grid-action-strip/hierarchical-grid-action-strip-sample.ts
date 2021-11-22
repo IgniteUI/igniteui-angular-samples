@@ -1,24 +1,34 @@
-import { Component, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent, RowType, Transaction } from 'igniteui-angular';
-import { DATA } from '../../data/nwindData';
-
+import { Component, ViewChild, ChangeDetectorRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { IgxHierarchicalGridComponent, RowType, Transaction, IgxColumnComponent } from 'igniteui-angular';
+import { SINGERS } from '../../data/singersData';
 
 @Component({
     selector: 'app-grid-row-action-strip',
     styleUrls: [`hierarchical-grid-action-strip-sample.scss`],
     templateUrl: 'hierarchical-grid-action-strip-sample.html'
 })
-export class HGridActionStripSampleComponent {
-    @ViewChild('gridRowEditTransaction', { read: IgxHierarchicalGridComponent, static: true }) public grid: IgxHierarchicalGridComponent;
+export class HGridActionStripSampleComponent implements AfterViewInit{
+    @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true }) 
+    public grid: IgxHierarchicalGridComponent;
+
+    @ViewChildren(IgxColumnComponent, { read: IgxColumnComponent })
+    public columns: QueryList<IgxColumnComponent>;
 
     public currentActiveGrid: { id: string; transactions: any[] } = { id: '', transactions: [] };
 
     public data: any[];
     public discardedTransactionsPerRecord: Map<number, Transaction[]> = new Map<number, Transaction[]>();
 
-    constructor() {
-        this.data = DATA;
+    constructor(private cdr: ChangeDetectorRef) {
+        this.data = SINGERS;
     }
+
+    public ngAfterViewInit(): void {
+        this.columns.forEach((col) => col.width = '19%');
+        this.cdr.detectChanges();
+    }
+
+    public formatter = (a) => a;
 
     public stateFormatter(value: string) {
         return JSON.stringify(value);
