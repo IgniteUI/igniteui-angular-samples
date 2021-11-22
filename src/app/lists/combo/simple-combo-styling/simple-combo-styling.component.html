@@ -1,5 +1,8 @@
 <div class="sample-wrapper">
     <div class="input-row">
-        <igx-simple-combo [data]="cities" [displayKey]="'name'"></igx-simple-combo>
+        <igx-simple-combo
+            [overlaySettings]="{ outlet: element.nativeElement }"
+            [data]="cities" [displayKey]="'name'">
+        </igx-simple-combo>
     </div>
 </div>

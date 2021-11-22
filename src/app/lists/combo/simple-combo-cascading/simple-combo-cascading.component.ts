@@ -28,7 +28,7 @@ export class SimpleComboCascadingComponent implements OnInit {
         this.citiesData = [];
     }
 
-    public provinceChanging(e: ISimpleComboSelectionChangingEventArgs) {
+    public regionChanging(e: ISimpleComboSelectionChangingEventArgs) {
         this.selectedRegion = e.newSelection as Region;
         this.citiesData = getCitiesByCountry([this.selectedCountry?.name])
             .filter(c => c.region === this.selectedRegion?.name);

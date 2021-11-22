@@ -176719,7 +176719,8 @@ export const cities: City[] = [
 ];
 
 export const getCitiesByPopulation = (population = 100000): City[] => cities
-    .filter(c => c.population > population);
+    .filter(c => c.population > population)
+    .sort((a, b) => b.population - a.population);
 
 export const getCountries = (countries: string[], population = 100000): Country[] => getCitiesByPopulation(population)
     .filter(c => countries.findIndex(s => s === c.country) > -1)

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IgRect } from 'igniteui-angular-core';
 import { StockData, updatedStockData } from '../../../data/stocks-data';
 
@@ -7,7 +7,7 @@ import { StockData, updatedStockData } from '../../../data/stocks-data';
     templateUrl: 'simple-combo-main.component.html',
     styleUrls: ['simple-combo-main.component.scss']
 })
-export class SimpleComboMainComponent {
+export class SimpleComboMainComponent implements OnInit {
     public data: StockData[] = updatedStockData;
     public selectedRange: string;
     public trendLineType: string;
@@ -52,8 +52,6 @@ export class SimpleComboMainComponent {
                 startDate = this.data[0].time;
                 break;
         }
-        console.log('Start: ', startDate);
-        console.log('End: ', this.data[this.data.length - 1].time);
         this.windowRect = this.getWindowRect(startDate);
     }
 
