@@ -14,6 +14,7 @@ export class GridToolbarSample2Component {
     enableHiding = true;
     enablePinning = true;
     enableExport = true;
+    advancedFiltering = true;
     public positionStrategyScaleCenter = new GlobalPositionStrategy({
         openAnimation: scaleInCenter,
         closeAnimation: scaleOutCenter
