@@ -10,7 +10,7 @@
 .info {
     display: flex;
     justify-content: center;
-    background: var(--igx-surface-500);
+    background: hsla(var(--igx-surface-500));
 }
 
 .info > span {

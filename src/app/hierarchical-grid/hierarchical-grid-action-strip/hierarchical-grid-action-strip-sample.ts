@@ -1,24 +1,34 @@
-import { Component, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent, RowType, Transaction } from 'igniteui-angular';
-import { DATA } from '../../data/nwindData';
-
+import { Component, ViewChild, ChangeDetectorRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { IgxHierarchicalGridComponent, RowType, Transaction, IgxColumnComponent } from 'igniteui-angular';
+import { SINGERS } from '../../data/singersData';
 
 @Component({
     selector: 'app-grid-row-action-strip',
     styleUrls: [`hierarchical-grid-action-strip-sample.scss`],
     templateUrl: 'hierarchical-grid-action-strip-sample.html'
 })
-export class HGridActionStripSampleComponent {
-    @ViewChild('gridRowEditTransaction', { read: IgxHierarchicalGridComponent, static: true }) public grid: IgxHierarchicalGridComponent;
+export class HGridActionStripSampleComponent implements AfterViewInit{
+    @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true }) 
+    public grid: IgxHierarchicalGridComponent;
+
+    @ViewChildren(IgxColumnComponent, { read: IgxColumnComponent })
+    public columns: QueryList<IgxColumnComponent>;
 
     public currentActiveGrid: { id: string; transactions: any[] } = { id: '', transactions: [] };
 
     public data: any[];
     public discardedTransactionsPerRecord: Map<number, Transaction[]> = new Map<number, Transaction[]>();
 
-    constructor() {
-        this.data = DATA;
+    constructor(private cdr: ChangeDetectorRef) {
+        this.data = SINGERS;
     }
+
+    public ngAfterViewInit(): void {
+        this.columns.forEach((col) => col.width = '19%');
+        this.cdr.detectChanges();
+    }
+
+    public formatter = (a) => a;
 
     public stateFormatter(value: string) {
         return JSON.stringify(value);
@@ -48,12 +58,12 @@ export class HGridActionStripSampleComponent {
     }
 
     public commit(rowContext: RowType) {
-        this.grid.transactions.commit(this.grid.data, rowContext.rowID);
-        this.discardedTransactionsPerRecord.set(rowContext.rowID, []);
+        this.grid.transactions.commit(this.grid.data, rowContext.key);
+        this.discardedTransactionsPerRecord.set(rowContext.key, []);
     }
 
     public redo(rowContext: RowType) {
-        const rowID = rowContext.rowID;
+        const rowID = rowContext.key;
         const lastDiscarded = this.discardedTransactionsPerRecord.get(rowID);
         lastDiscarded.forEach((transaction) => {
             const recRef = this.grid.gridAPI.get_rec_by_id(transaction.id);
@@ -64,14 +74,14 @@ export class HGridActionStripSampleComponent {
 
     public hasDiscardedTransactions(rowContext: RowType) {
         if (!rowContext) { return false; }
-        const lastDiscarded = this.discardedTransactionsPerRecord.get(rowContext.rowID);
+        const lastDiscarded = this.discardedTransactionsPerRecord.get(rowContext.key);
         return lastDiscarded && lastDiscarded.length > 0;
     }
 
     public undo(rowContext: RowType) {
         const transactionsToDiscard = this.grid.transactions.getAggregatedChanges(true)
-        .filter(x => x.id === rowContext.rowID);
-        this.discardedTransactionsPerRecord.set(rowContext.rowID, transactionsToDiscard);
-        this.grid.transactions.clear(rowContext.rowID);
+        .filter(x => x.id === rowContext.key);
+        this.discardedTransactionsPerRecord.set(rowContext.key, transactionsToDiscard);
+        this.grid.transactions.clear(rowContext.key);
     }
 }

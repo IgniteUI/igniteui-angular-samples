@@ -217,7 +217,6 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
 
     public ngOnInit() {
         this.data = generateEmployeeDetailedFlatData();
-
         this.tgrid.columnSelectionChanging.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 const evt = args.event;

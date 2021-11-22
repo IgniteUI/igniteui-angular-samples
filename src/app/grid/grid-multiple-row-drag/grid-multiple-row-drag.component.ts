@@ -1,6 +1,6 @@
 
 import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { IDropDroppedEventArgs, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 @Component({
     selector: 'app-grid-multiple-row-drag',
@@ -27,7 +27,7 @@ export class GridMultipleRowDragComponent  {
         args.animation = true;
     }
 
-    public onDropAllowed(args) {
+    public onDropAllowed(args: IDropDroppedEventArgs) {
         let selected = false;
         const ids = this.sourceGrid.selectedRows;
         const selectedRowData = this.sourceGrid.data.filter((record) => ids.includes(record.ID));
@@ -37,8 +37,8 @@ export class GridMultipleRowDragComponent  {
             this.sourceGrid.deleteRow(rowData.ID);
         });
         if (selected === false) {
-            this.targetGrid.addRow(args.dragData.rowData);
-            this.sourceGrid.deleteRow(args.dragData.rowID);
+            this.targetGrid.addRow(args.dragData.data);
+            this.sourceGrid.deleteRow(args.dragData.key);
         }
     }
 

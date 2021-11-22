@@ -3,6 +3,7 @@ import { IDragMoveEventArgs, IDropDroppedEventArgs, IgxGridComponent, IRowDragSt
 import { DATA } from '../../data/customers';
 import { Subject, interval, Observable, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { IgxRowDirective } from 'igniteui-angular/lib/grids/row.directive';
 
 @Component({
     selector: 'app-grid-drop-indicator',
@@ -56,7 +57,7 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
   }
 
   private getRowIndexAtPoint(
-    rowList: any[],
+    rowList: IgxRowDirective[],
     cursorPosition: Point
   ): number {
     for (const row of rowList) {
@@ -68,7 +69,7 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
         cursorPosition.x < rowRect.right + window.scrollX
       ) {
         // return the index of the targeted row
-        return this.data.indexOf(this.data.find(r => r.ID === row.rowID));
+        return this.data.indexOf(this.data.find(r => r.ID === row.key));
       }
     }
 
@@ -133,12 +134,12 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
    * Checks if the grid is scrolled to its upper (-1) or lower (1) edge
    */
   private isGridScrolledToEdge(dir: 1 | -1): boolean {
-    if (this.grid.data[0] === this.grid.rowList.first.rowData && dir === -1) {
+    if (this.grid.data[0] === this.grid.rowList.first.data && dir === -1) {
       return true;
     }
     if (
       this.grid.data[this.grid.data.length - 1] ===
-        this.grid.rowList.last.rowData &&
+        this.grid.rowList.last.data &&
       dir === 1
     ) {
       return true;
@@ -171,7 +172,7 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
       return;
     }
     const rowElement = this.grid.rowList.find(
-      e => e.rowData.ID === this.grid.data[rowIndex].ID
+      e => e.data.ID === this.grid.data[rowIndex].ID
     );
     if (rowElement) {
       this.changeHighlightedElement(rowElement.element.nativeElement);

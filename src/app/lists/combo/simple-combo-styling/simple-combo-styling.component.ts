@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { City, getCitiesByPopulation } from '../../../data/cities15000-regions-countries';
 
 @Component({
@@ -8,6 +8,9 @@ import { City, getCitiesByPopulation } from '../../../data/cities15000-regions-c
 })
 export class SimpleComboStylingComponent implements OnInit {
     public cities: City[];
+
+    constructor(public element: ElementRef) { }
+
     ngOnInit(): void {
         this.cities = getCitiesByPopulation(10000000);
     }

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChildren } from '@angular/core';
+import { RowType } from 'igniteui-angular';
 import { moonData, planetData } from './data';
 import { PlanetComponent as PlanetComponent } from './planet/planet.component';
 
@@ -37,7 +38,7 @@ export class GridDragSampleComponent {
 
     public onEnter(args, planet: PlanetComponent) {
         args.drag.ghostElement.classList.add(
-            this.isDropAllowed(args.dragData.rowData.name, planet.name) ? HoverClassList.ALLOW : HoverClassList.DENY);
+            this.isDropAllowed(args.dragData.data.name, planet.name) ? HoverClassList.ALLOW : HoverClassList.DENY);
     }
 
     public onLeave(args) {
@@ -50,10 +51,10 @@ export class GridDragSampleComponent {
     }
 
     public onDrop(args, planet: PlanetComponent) {
-        const row: any = args.dragData;
+        const row: RowType = args.dragData;
         if (this.isDropAllowed(row.data.name, planet.name)) {
             row.data.planet = planet.name;
-            row.grid.selectRows([row.rowID]);
+            row.grid.selectRows([row.key]);
 
             planet.moonsCount++;
         }

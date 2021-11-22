@@ -1,12 +1,3 @@
-:host ::ng-deep {
-    .igx-drop-down__item {
-        padding: 0;
-    }
-    .igx-drop-down__list {
-        min-width: 88px;
-    }
-}
-
 .parent {
     display: flex;
     align-items: center;
@@ -38,4 +29,12 @@
 
 .text-align-right {
     text-align: right;
+}
+
+.menu-button {
+    display: flex;
+
+    igx-icon + span {
+        margin-inline-start: 16px;
+    }
 }
