@@ -43,6 +43,10 @@ $dark-grid-theme: igx-grid-theme(
     .grid-chart-contextmenu-wrapper {
         @include igx-fluent-dark-theme($fluent-excel-palette);
     }
+
+    .actionPane {
+        background-color: #212121;
+    }
 }
 
 .fin-dark-theme {
