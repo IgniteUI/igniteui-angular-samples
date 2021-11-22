@@ -93,7 +93,7 @@ export class GridFinJSComponent implements OnInit {
         const type = args.targetType;
 
         if (type === 'dataCell' && target.column.field === 'Chart' && evt.key.toLowerCase() === 'enter') {
-            this.grid.selectRows([target.row.rowID], true);
+            this.grid.selectRows([target.row.key], true);
             this.chartColumnAction(target);
         }
     }
