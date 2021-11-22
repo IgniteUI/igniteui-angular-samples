@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
+    IDropDroppedEventArgs,
     IgxGridComponent,
     IPinningConfig,
     IRowDragStartEventArgs,
     RowPinningPosition,
     RowType
 } from 'igniteui-angular';
+import { IgxRowDirective } from 'igniteui-angular/lib/grids/row.directive';
 import { DATA } from '../../data/customers';
 
 @Component({
@@ -40,7 +42,7 @@ export class GridPinningDragSampleComponent implements OnInit {
         }
     }
 
-    public onDropAllowed(args) {
+    public onDropAllowed(args: IDropDroppedEventArgs) {
         const event = args.originalEvent;
         let currRowPinnedIndex;
         const currRowIndex = this.getCurrentRowIndex(this.grid.rowList.toArray(),
@@ -55,15 +57,15 @@ export class GridPinningDragSampleComponent implements OnInit {
             currRowPinnedIndex = this.grid.pinnedRows.indexOf(this.grid.pinnedRows.find((r) => r.key === currRowID));
         }
         // remove the row that was dragged and place it onto its new location
-        this.grid.deleteRow(args.dragData.rowID);
-        this.data.splice(currRowIndex, 0, args.dragData.rowData);
+        this.grid.deleteRow((args.dragData as RowType).key);
+        this.data.splice(currRowIndex, 0, args.dragData.data);
         if (currentRow.pinned && !args.dragData.pinned) {
-            this.grid.pinRow(args.dragData.rowID, currRowPinnedIndex);
+            this.grid.pinRow(args.dragData.key, currRowPinnedIndex);
         } else if (!currentRow.pinned && args.dragData.pinned) {
-            this.grid.unpinRow(args.dragData.rowID);
+            this.grid.unpinRow(args.dragData.key);
         } else if (currentRow.pinned && args.dragData.pinned) {
-            this.grid.unpinRow(args.dragData.rowID);
-            this.grid.pinRow(args.dragData.rowID, currRowPinnedIndex);
+            this.grid.unpinRow(args.dragData.key);
+            this.grid.pinRow(args.dragData.key, currRowPinnedIndex);
         }
     }
 
@@ -79,20 +81,20 @@ export class GridPinningDragSampleComponent implements OnInit {
             if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&
                 cursorPosition.x > rowRect.left + window.scrollX && cursorPosition.x < rowRect.right + window.scrollX) {
                 // return the index of the targeted row
-                return this.data.indexOf(this.data.find((r) => r.ID === row.rowData.ID));
+                return this.data.indexOf(this.data.find((r) => r.ID === row.key));
             }
         }
 
         return -1;
     }
 
-    private getCurrentRowID(rowList, cursorPosition) {
+    private getCurrentRowID(rowList: IgxRowDirective[], cursorPosition) {
         for (const row of rowList) {
             const rowRect = row.nativeElement.getBoundingClientRect();
             if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&
                 cursorPosition.x > rowRect.left + window.scrollX && cursorPosition.x < rowRect.right + window.scrollX) {
                 // return the ID of the targeted row
-                return row.rowData.ID;
+                return row.key;
             }
         }
     }
