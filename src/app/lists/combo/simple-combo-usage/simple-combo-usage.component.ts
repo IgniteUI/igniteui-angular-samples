@@ -9,9 +9,9 @@ import { City, getCitiesByPopulation } from '../../../data/cities15000-regions-c
 export class SimpleComboUsageComponent implements OnInit {
     public cities: City[];
     public selectedCity: number;
+
     public ngOnInit(): void {
-        this.cities = getCitiesByPopulation(10000000)
-            .sort((a, b) => b.population - a.population);
+        this.cities = getCitiesByPopulation(10000000);
         this.selectedCity = this.cities[0].id;
     }
 }

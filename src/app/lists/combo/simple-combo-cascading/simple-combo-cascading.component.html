@@ -5,10 +5,11 @@
             (selectionChanging)="countryChanging($event)"
             placeholder="Choose Country..."
             [(ngModel)]="selectedCountry"
-            [displayKey]="'name'"></igx-simple-combo>
+            [displayKey]="'name'">
+        </igx-simple-combo>
     </div>
     <div class="combo-section">
-        <igx-simple-combo #province
+        <igx-simple-combo #region
             [data]="regionData"
             (selectionChanging)="regionChanging($event)"
             placeholder="Choose Region..."
@@ -23,7 +24,6 @@
             placeholder="Choose City..."
             [(ngModel)]="selectedCity"
             [displayKey]="'name'"
-            [valueKey]="'id'"
             [disabled]="citiesData.length === 0">
         </igx-simple-combo>
     </div>
