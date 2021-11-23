@@ -57,6 +57,7 @@ import { TransactionsConfigGenerator } from '../configs/TransactionsConfigGenera
 import { TreeGridConfigGenerator } from '../configs/TreeGridConfigGenerator';
 import { TreeConfigGenerator } from '../configs/TreeConfigGenerator';
 import { AccordionConfigGenerator } from '../configs/AccordionConfigGenerator';
+import { StepperConfigGenerator } from '../configs/StepperConfigGenerator';
 import { PaginationConfigGenerator } from '../configs/PaginationConfigGenerator';
 
 export const CONFIG_GENERATORS =
@@ -80,6 +81,7 @@ export const CONFIG_GENERATORS =
         ListConfigGenerator,
         NavbarConfigGenerator,
         NavdrawerConfigGenerator,
+        StepperConfigGenerator,
         TabBarConfigGenerator,
         TabsConfigGenerator,
         TreeConfigGenerator,

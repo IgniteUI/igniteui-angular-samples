@@ -3,37 +3,37 @@
     <div>Drag a row here to delete it</div>
 </div>
 <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [allowFiltering]='true' #grid1 [data]="localData" [primaryKey]="'id'" [rowDraggable]="true"
-    [height]="'580px'" [width]="'100%'" #hGrid (rowDragStart)="onRowDragStart($event)" (rowDragEnd)="onRowDragEnd($event)" [rowSelection]="selectionMode" 
-    (rowSelected)="handleRowSelectionChange($event)">
+    [height]="'580px'" [width]="'100%'" #hGrid (rowDragStart)="onRowDragStart($event)" (rowDragEnd)="onRowDragEnd($event)" [rowSelection]="selectionMode"
+    (rowSelectionChanging)="handleRowSelectionChange($event)">
     <igx-column field="name" header="Name"></igx-column>
     <igx-column field="system" header="Is System Drive"></igx-column>
-    
+
     <igx-row-island [rowDraggable]="true" [primaryKey]="'id'" igxDrop [key]="'folders'" #layout1 [rowSelection]="selectionMode"
-    (rowSelected)="handleRowSelectionChange($event)" (rowDragStart)="onRowDragStart($event)">
+    (rowSelectionChanging)="handleRowSelectionChange($event)" (rowDragStart)="onRowDragStart($event)">
         <igx-column field="name" header="Name"></igx-column>
         <igx-column field="createdOn" header="Created On"></igx-column>
         <igx-column field="createdBy" header="Created By"></igx-column>
         <ng-template let-data igxRowDragGhost>
-            <div class="allow-drop"> 
-                <igx-icon family="material">{{dragIcon}}{{countIcon}}</igx-icon> 
+            <div class="allow-drop">
+                <igx-icon family="material">{{dragIcon}}{{countIcon}}</igx-icon>
             </div>
         </ng-template>
         <igx-row-island [rowDraggable]="true" [primaryKey]="'id'" igxDrop [key]="'files'" [rowSelection]="selectionMode"
-        (rowSelected)="handleRowSelectionChange($event)" (rowDragStart)="onRowDragStart($event)">
+        (rowSelectionChanging)="handleRowSelectionChange($event)" (rowDragStart)="onRowDragStart($event)">
             <igx-column field="name" header="Name"></igx-column>
             <igx-column field="extension" header="Extension"></igx-column>
-            <igx-column field="size" header="Size" dataType="number" hasSummary='true'></igx-column>
+            <igx-column field="size" header="Size" dataType="number" [hasSummary]="true"></igx-column>
             <igx-column field="createdBy" header="createdBy"></igx-column>
             <ng-template let-data igxRowDragGhost>
-                <div class="allow-drop"> 
-                    <igx-icon family="material">{{dragIcon}}{{countIcon}}</igx-icon> 
+                <div class="allow-drop">
+                    <igx-icon family="material">{{dragIcon}}{{countIcon}}</igx-icon>
                 </div>
             </ng-template>
         </igx-row-island>
     </igx-row-island>
     <ng-template let-data igxRowDragGhost>
-        <div class="allow-drop"> 
-            <igx-icon family="material">{{dragIcon}}{{countIcon}}</igx-icon> 
+        <div class="allow-drop">
+            <igx-icon family="material">{{dragIcon}}{{countIcon}}</igx-icon>
         </div>
     </ng-template>
 </igx-hierarchical-grid>

@@ -15,7 +15,6 @@
             <div class="grid-wrapper">
                 <igx-grid igxPreventDocumentScroll #grid [data]="data" primaryKey="ProductID" rowEditable="true" (columnInit)="initColumn($event)" [clipboardOptions]="options" [autoGenerate]="true">
                     <igx-grid-toolbar>
-
                         <div class="tlb">
                             <igx-switch [(ngModel)]="options.enabled">Grid copy behavior</igx-switch>
                             <igx-switch [(ngModel)]="options.copyHeaders">Copying of header labels</igx-switch>

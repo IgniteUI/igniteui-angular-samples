@@ -1,27 +1,26 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable, NgZone, OnDestroy } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
 import { BehaviorSubject } from 'rxjs';
-import { FinancialData } from '../data/financialData';
+import { FinancialData, Stock } from '../data/financialData';
 
 @Injectable({
     providedIn: 'root'
 })
 export class SignalRService implements OnDestroy {
-    public data: BehaviorSubject<any[]>;
+    public data: BehaviorSubject<Stock[]>;
     public hasRemoteConnection: boolean;
-    private hubConnection: signalR.HubConnection;
-    private _timer;
+    private hubConnection!: signalR.HubConnection;
+    private _timer!: ReturnType<typeof setInterval>;
 
-    constructor(private zone: NgZone, private http: HttpClient) {
-        this.data = new BehaviorSubject([]);
+    constructor(private zone: NgZone) {
+        this.data = new BehaviorSubject([] as Stock[]);
     }
 
-    public ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.stopLiveData();
     }
 
-    public startConnection = (interval = 500, volume = 1000, live = false, updateAll = true) => {
+    public startConnection = (interval = 500, volume = 1000, live = false, updateAll = true): void => {
         this.hubConnection = new signalR.HubConnectionBuilder()
             .configureLogging(signalR.LogLevel.Trace)
             .withUrl('https://staging.infragistics.com/angular-apis/webapi/streamHub')
@@ -43,7 +42,7 @@ export class SignalRService implements OnDestroy {
             });
     };
 
-    public broadcastParams = (frequency, volume, live, updateAll = true) => {
+    public broadcastParams = (frequency, volume, live, updateAll = true): void => {
         this.hubConnection.invoke('updateparameters', frequency, volume, live, updateAll)
             .then(() => console.log('requestLiveData', volume))
             .catch(err => {
@@ -51,7 +50,7 @@ export class SignalRService implements OnDestroy {
             });
     };
 
-    public stopLiveData = () => {
+    public stopLiveData = (): void => {
         if (this.hasRemoteConnection) {
             this.hubConnection.invoke('StopTimer')
             .catch(err => console.error(err));
@@ -60,36 +59,35 @@ export class SignalRService implements OnDestroy {
         }
     };
 
-
-    public getData(count: number = 10) {
+    public getData(count: number = 10): void {
         this.data.next(FinancialData.generateData(count));
     }
 
-    public updateAllPriceValues(data) {
+    public updateAllPriceValues(data: Stock[]): void {
         this.zone.runOutsideAngular(() =>  {
             const newData = FinancialData.updateAllPrices(data);
             this.data.next(newData);
         });
     }
 
-    public updateRandomPriceValues(data) {
+    public updateRandomPriceValues(data: Stock[]): void {
         this.zone.runOutsideAngular(() =>  {
             const newData = FinancialData.updateRandomPrices(data);
             this.data.next(newData);
         });
     }
 
-    private stopFeed() {
+    private stopFeed(): void {
         if (this._timer) {
             clearInterval(this._timer);
         }
     }
 
-    private registerSignalEvents() {
+    private registerSignalEvents(): void {
         this.hubConnection.onclose(() => {
             this.hasRemoteConnection = false;
         });
-        this.hubConnection.on('transferdata', (data) => {
+        this.hubConnection.on('transferdata', (data: Stock[]) => {
             this.data.next(data);
         });
     }

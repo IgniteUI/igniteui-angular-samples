@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { EMPLOYEE_DATA } from './data';
 
 @Component({
@@ -6,7 +6,7 @@ import { EMPLOYEE_DATA } from './data';
     styleUrls: ['tree-grid-clipboard-operations-sample.component.scss'],
     templateUrl: './tree-grid-clipboard-operations-sample.component.html'
 })
-export class TreeGridClipboardSampleComponent implements OnInit {
+export class TreeGridClipboardSampleComponent {
 
     public data: any[];
     public options = {
@@ -19,9 +19,6 @@ export class TreeGridClipboardSampleComponent implements OnInit {
 
     constructor() {
         this.data = EMPLOYEE_DATA;
-    }
-
-    public ngOnInit() {
     }
 
     public formatter = (value: any) => `** ${value} **`;

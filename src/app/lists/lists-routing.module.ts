@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CascadingCombosComponent } from './combo/cascading-combos/cascading-combos.component';
 import { ComboBindingComponent } from './combo/combo-binding/combo-binding.component';
 import { ComboFeaturesComponent } from './combo/combo-features/combo-features.component';
 import { ComboMainComponent } from './combo/combo-main/combo-main.component';
 import { ComboOverlayComponent } from './combo/combo-overlay/combo-overlay.component';
 import { ComboRemoteComponent } from './combo/combo-remote/combo-remote.component';
-import { ComboSingleSelectionComponent } from './combo/combo-single-selection/combo-single-selection.component';
 import { ComboStylingComponent } from './combo/combo-styling/combo-styling.component';
 import { ComboValueKeyComponent } from './combo/combo-valuekey/combo-valuekey.component';
 import { ComboTemplateComponent } from './combo/combo-template/combo-template.component';
@@ -23,6 +21,10 @@ import { ListComponent } from './list/list.component';
 import { listsRoutesData } from './lists-routes-data';
 import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sample.component';
 import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-advanced-sample.component';
+import { SimpleComboMainComponent } from './combo/simple-combo-main/simple-combo-main.component';
+import { SimpleComboUsageComponent } from './combo/simple-combo-usage/simple-combo-usage.component';
+import { SimpleComboCascadingComponent } from './combo/simple-combo-cascading/simple-combo-cascading.component';
+import { SimpleComboStylingComponent } from './combo/simple-combo-styling/simple-combo-styling.component';
 
 export const listsRoutes: Routes = [
     {
@@ -61,19 +63,29 @@ export const listsRoutes: Routes = [
         path: 'combo-template'
     },
     {
-        component: CascadingCombosComponent,
-        data: listsRoutesData['cascading-combos'],
-        path: 'cascading-combos'
-    },
-    {
         component: ComboOverlayComponent,
         data: listsRoutesData['combo-overlay'],
         path: 'combo-overlay'
     },
     {
-        component: ComboSingleSelectionComponent,
-        data: listsRoutesData['combo-single-selection'],
-        path: 'combo-single-selection'
+        component: SimpleComboMainComponent,
+        data: listsRoutesData['simple-combo-main'],
+        path: 'simple-combo-main'
+    },
+    {
+        component: SimpleComboUsageComponent,
+        data: listsRoutesData['simple-combo-usage'],
+        path: 'simple-combo-usage'
+    },
+    {
+        component: SimpleComboCascadingComponent,
+        data: listsRoutesData['simple-combo-cascading'],
+        path: 'simple-combo-cascading'
+    },
+    {
+        component: SimpleComboStylingComponent,
+        data: listsRoutesData['simple-combo-styling'],
+        path: 'simple-combo-styling'
     },
     {
         component: ListComponent,

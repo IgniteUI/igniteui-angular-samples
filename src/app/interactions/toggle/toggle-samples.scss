@@ -25,7 +25,7 @@
 
     .custom-body & {
         color: var(--igx-surface-500-contrast);
-        background-color: var(--igx-surface-500);
+        background-color: hsla(var(--igx-surface-500));
     }
 }
 

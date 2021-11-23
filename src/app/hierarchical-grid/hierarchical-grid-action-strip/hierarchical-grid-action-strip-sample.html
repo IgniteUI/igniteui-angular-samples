@@ -1,0 +1,60 @@
+<div class="grid__wrapper">
+    <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="data"
+        [height]="'500px'" [width]="'100%'" [rowEditable]="true" [allowFiltering]="true" #hierarchicalGrid>
+            <igx-column field="Artist" [sortable]="true" [disableHiding]="true" [width]="'200px'"></igx-column>
+            <igx-column field="Photo" [width]="'200px'">
+                <ng-template igxCell let-cell="cell">
+                    <div class="cell__inner_2">
+                        <img [src]="cell.value" class="photo" />
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column field="Debut" [sortable]="true" [width]="'200px'" [formatter]="formatter"></igx-column>
+            <igx-column field="GrammyNominations" header="Grammy Nominations" [sortable]="true" dataType="number" [width]="'200px'"></igx-column>
+            <igx-column field="GrammyAwards" header="Grammy Awards" [sortable]="true" dataType="number" [width]="'200px'"></igx-column>
+
+            <igx-row-island [key]="'Albums'" [autoGenerate]="false">
+                <igx-column field="Album" [sortable]="true"></igx-column>
+                <igx-column field="LaunchDate" header="Launch Date" [sortable]="true" [dataType]="'date'"></igx-column>
+                <igx-column field="BillboardReview" header="Billboard Review" [sortable]="true"></igx-column>
+                <igx-column field="USBillboard200" header="US Billboard 200" [sortable]="true"></igx-column>
+            <igx-row-island [key]="'Songs'" [autoGenerate]="false">
+                    <igx-column field="Number" header="No."></igx-column>
+                    <igx-column field="Title"></igx-column>
+                    <igx-column field="Released" dataType="date"></igx-column>
+                    <igx-column field="Genre"></igx-column>
+            </igx-row-island>
+        </igx-row-island>
+
+        <igx-row-island [key]="'Tours'" [autoGenerate]="false">
+            <igx-column field="Tour"></igx-column>
+            <igx-column field="StartedOn" header="Started on"></igx-column>
+            <igx-column field="Location"></igx-column>
+            <igx-column field="Headliner"></igx-column>
+        </igx-row-island>
+        <igx-action-strip #actionstrip>
+            <igx-grid-pinning-actions></igx-grid-pinning-actions>
+            <button title="Edit" igxButton="icon" igxRipple 
+                (click)='startEdit(actionstrip.context)'>
+                <igx-icon>edit</igx-icon>
+            </button>
+            <button title="Undo All" igxButton="icon" igxRipple *ngIf='isDirty(actionstrip.context)'
+                (click)='undo(actionstrip.context)'>
+                <igx-icon>undo</igx-icon>
+            </button>
+            <button title="Redo All" igxButton="icon" igxRipple
+                *ngIf='!isDirty(actionstrip.context) && hasDiscardedTransactions(actionstrip.context)'
+                (click)='redo(actionstrip.context)'>
+                <igx-icon>redo</igx-icon>
+            </button>
+            <button title='Save' igxButton="icon" igxRipple *ngIf='isDirty(actionstrip.context)'
+                (click)='commit(actionstrip.context)'>
+                <igx-icon>save</igx-icon>
+            </button>
+            <button title="Delete" igxButton="icon" igxRipple *ngIf='!isDeleted(actionstrip.context)'
+                (click)='actionstrip.context.delete()'>
+                <igx-icon>delete</igx-icon>
+            </button>
+        </igx-action-strip>
+        </igx-hierarchical-grid>
+</div>

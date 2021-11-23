@@ -1,5 +1,6 @@
-@import './variables';
-@import './app-layout';
+@use 'igniteui-angular/theming' as *;
+@use 'variables' as *;
+@use 'app-layout';
 
 
 .light-theme {
@@ -20,8 +21,7 @@ body {
 @include igx-typography();
 @include igx-theme(
     $palette: $palette,
-    $schema: $schema,
-    $legacy-support: $legacy-support
+    $schema: $schema
 );
 
 :root {
@@ -36,8 +36,7 @@ body {
     background: #333;
     color: #fff;
     @include igx-dark-theme(
-        $palette: $green-palette,
-        $legacy-support: $legacy-support
+        $palette: $green-palette
     );
 
     .grid-chart-contextmenu-wrapper {

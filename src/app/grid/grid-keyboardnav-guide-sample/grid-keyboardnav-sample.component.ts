@@ -226,7 +226,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
                 }
             });
 
-        this.grid.columnSelected.pipe(takeUntil(this._destroyer))
+        this.grid.columnSelectionChanging.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 const evt = args.event;
                 if (evt.type === 'keydown') {
@@ -309,6 +309,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         if (this._keyboardHandler.gridSection === GridSection.TBODY) {
             if (key === 'enter') {
                 const cell = this.grid.getCellByColumnVisibleIndex(activeNode.row, activeNode.column);
+                const isCellSelected = cell.selected;
                 if (cell && cell.column.editable && cell.editMode) {
                     this._keyboardHandler.selectItem(0);
                 }

@@ -1,12 +1,11 @@
-@import './variables';
-@import './app-layout';
-
+@use 'igniteui-angular/theming' as *;
+@use 'variables' as *;
+@use 'app-layout';
 @include igx-core();
 @include igx-typography();
 @include igx-theme(
     $palette: $palette,
-    $schema: $schema,
-    $legacy-support: $legacy-support
+    $schema: $schema
 );
 
 

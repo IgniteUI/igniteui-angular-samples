@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 $flatBtn: igx-button-theme(
     $border-radius: .5

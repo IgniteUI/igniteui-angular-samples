@@ -1,4 +1,4 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 $yellow: #ffcd0f;
 $black: #292826;
@@ -97,7 +97,8 @@ $custom-drop-down: igx-drop-down-theme(
             }
 
             .igx-advanced-filter__header {
-                color: $yellow
+                color: $yellow;
+                background-color: $black;
             }
 
             .igx-filter-tree__expression-actions igx-icon {

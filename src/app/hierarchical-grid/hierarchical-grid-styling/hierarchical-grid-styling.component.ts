@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { Component } from '@angular/core';
+import { IgxColumnComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({
@@ -8,9 +8,7 @@ import { SINGERS } from '../../data/singersData';
     templateUrl: 'hierarchical-grid-styling.component.html'
 })
 
-export class HGridStylingComponent implements OnInit {
-    @ViewChild('hierarchicalGrid', { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
+export class HGridStylingComponent {
     public localdata;
     public col: IgxColumnComponent;
     public pWidth: string;
@@ -18,10 +16,6 @@ export class HGridStylingComponent implements OnInit {
 
     constructor() {
         this.localdata = SINGERS;
-    }
-
-    public ngOnInit(): void {
-
     }
 
     public onResize(event) {

@@ -1,6 +1,7 @@
-import { Component, EventEmitter, HostBinding, OnDestroy, Output, ViewChild } from '@angular/core';
-import { IDialogEventArgs, IgxDialogComponent } from 'igniteui-angular';
+import { Component, HostBinding, OnDestroy, ViewChild } from '@angular/core';
+import { IgxDialogComponent } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
+import { Stock } from '../data/financialData';
 import { ControllerComponent } from './controllers.component';
 import { GridFinJSComponent } from './grid-finjs.component';
 
@@ -15,24 +16,16 @@ export class FinJSDemoComponent implements OnDestroy {
     @ViewChild('dialog', { static: true }) public dialog: IgxDialogComponent;
     @ViewChild('chart1', { static: true }) public chart: IgxCategoryChartComponent;
 
-    @Output() public switch = new EventEmitter<any>();
-    @Output() public recordsVolume = new EventEmitter<any>();
-    @Output() public frequencyTimer = new EventEmitter<any>();
-    @Output() public player = new EventEmitter<any>();
-
     @HostBinding('class.dark-theme')
     public darkTheme = false;
 
     public properties = ['price', 'country'];
-    public chartData = [];
+    public chartData: Stock[] = [];
     public volume = 1000;
     public frequency = 500;
-    private _timer;
+    private _timer: ReturnType<typeof setInterval>;
 
-    constructor() {
-    }
-
-    public onSwitchChanged(event: any) {
+    public onSwitchChanged(event: { action: string; value: boolean }): void {
         switch (event.action) {
             case 'toolbar': {
                 this.finGrid.showToolbar = event.value;
@@ -50,23 +43,23 @@ export class FinJSDemoComponent implements OnDestroy {
         }
     }
 
-    public onVolumeChanged(volume: any) {
+    public onVolumeChanged(volume: number): void {
         this.volume = volume;
         this.finGrid.dataService.hasRemoteConnection ? this.finGrid.dataService
             .broadcastParams(this.controller.frequency, this.volume, false) : this.finGrid.dataService.getData(volume);
     }
 
-    public onFrequencyChanged(frequency: any) {
+    public onFrequencyChanged(frequency: number): void {
         this.frequency = frequency;
     }
 
-    public onPlayAction(event: any) {
+    public onPlayAction(event: { action: string }): void {
         switch (event.action) {
             case 'playAll': {
                 if (this.finGrid.dataService.hasRemoteConnection) {
                     this.finGrid.dataService.broadcastParams(this.frequency, this.volume, true);
                 } else {
-                    const currData = this.finGrid.grid.filteredSortedData ?? this.finGrid.grid.data;
+                    const currData: Stock[] = this.finGrid.grid.filteredSortedData ?? this.finGrid.grid.data;
                     this._timer = setInterval(() => this.finGrid.dataService.updateAllPriceValues(currData), this.controller.frequency);
                 }
                 break;
@@ -84,14 +77,13 @@ export class FinJSDemoComponent implements OnDestroy {
                 };
                 break;
             }
-            default:
-                {
-                    break;
-                }
+            default: {
+                break;
+            }
         }
     }
 
-    public setChartData(args: any[]) {
+    public setChartData(args: number[]): void {
         this.chartData = [];
         args.forEach(row => {
             this.chartData.push(this.finGrid.grid.data[row]);
@@ -103,7 +95,7 @@ export class FinJSDemoComponent implements OnDestroy {
         this.setChartConfig('Countries', 'Prices (USD)', 'Data Chart with prices by Category and Country');
     }
 
-    public onCloseHandler(evt: IDialogEventArgs) {
+    public onCloseHandler(): void {
         if (this.finGrid.grid.navigation.activeNode) {
             if (this.finGrid.grid.navigation.activeNode.row === -1) {
                 this.finGrid.grid.theadRow.nativeElement.focus();
@@ -114,12 +106,12 @@ export class FinJSDemoComponent implements OnDestroy {
         }
     }
 
-    public closeDialog() {
+    public closeDialog(): void {
         this.controller.playButtons.deselectButton(2);
         this.dialog.close();
     }
 
-    public setChartConfig(xAsis, yAxis, title) {
+    public setChartConfig(xAsis: string, yAxis: string, title: string): void {
         // update label interval and angle based on data
         this.setLabelIntervalAndAngle();
         this.chart.xAxisTitle = xAsis;
@@ -127,7 +119,7 @@ export class FinJSDemoComponent implements OnDestroy {
         this.chart.chartTitle = title;
     }
 
-    public setLabelIntervalAndAngle() {
+    public setLabelIntervalAndAngle(): void {
         const intervalSet = this.chartData.length;
         if (intervalSet < 10) {
             this.chart.xAxisLabelAngle = 0;
@@ -154,7 +146,7 @@ export class FinJSDemoComponent implements OnDestroy {
         this.chart.yAxisAbbreviateLargeNumbers = true;
     }
 
-    public openSingleRowChart(rowData: any) {
+    public openSingleRowChart(rowData: Stock): void {
         this.chartData = [];
         setTimeout(() => {
             this.chartData = this.finGrid.grid.data.filter(item => item.region === rowData.region &&
@@ -170,13 +162,13 @@ export class FinJSDemoComponent implements OnDestroy {
         }, 200);
     }
 
-    public stopFeed() {
+    public stopFeed(): void {
         if (this._timer) {
             clearInterval(this._timer);
         }
     }
 
-    public ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.stopFeed();
     }
 }

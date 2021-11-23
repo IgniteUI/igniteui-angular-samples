@@ -2,7 +2,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnInit, OnDestroy, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from '@angular/core';
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IColumnSelectionEventArgs, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxOverlayService, OverlayCancelableEventArgs, OverlayEventArgs, OverlaySettings, VerticalAlignment } from 'igniteui-angular';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { ResizeObserver } from '@juggle/resize-observer';
 import { merge, noop, Subject } from 'rxjs';
 import { debounceTime, filter, takeUntil, tap } from 'rxjs/operators';
@@ -131,7 +130,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
                     type: IgcDockManagerPaneType.contentPane,
                     contentId: 'chart-types-content',
                     header: 'Chart Types',
-                    size: 27,
+                    size: 25,
                     allowClose: false
                 }
             ]
@@ -176,7 +175,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
                 this.headersRenderButton = false;
             });
 
-        this.grid.columnSelected.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(100))
+        this.grid.columnSelectionChanging.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(100))
             .subscribe((args: IColumnSelectionEventArgs) => {
                 if (this._esfOverlayId) {
                     this.overlayService.hide(this._esfOverlayId);
@@ -268,10 +267,10 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
 
         this.allCharts = this.chartIntegration.getAllChartTypes();
         this.chartIntegration.chartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
-            if (args.chartsAvailabilty.size === 0 || args.chartsForCreation.length === 0) {
+            if (args.chartsAvailability.size === 0 || args.chartsForCreation.length === 0) {
                 this.chartIntegration.disableCharts(this.allCharts);
             } else {
-                args.chartsAvailabilty.forEach((isAvailable, chart) => {
+                args.chartsAvailability.forEach((isAvailable, chart) => {
                     if (args.chartsForCreation.indexOf(chart) === -1) {
                         this.chartIntegration.disableCharts([chart]);
                     } else {
@@ -328,7 +327,6 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
             const handler = (component) => {
                 const _this = component;
                 return {
-                    // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
                     deleteProperty(target, prop) {
                         if (target[prop].type) {
                             _this.paneService.removePane(target[prop]);
@@ -447,7 +445,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit, 
         }
 
         let cell;
-        if ((!this.grid.getRowByIndex(this.rowIndex) || (this.grid.rowList.toArray().indexOf(this.grid.getRowByIndex(this.rowIndex)) >= this.grid.rowList.length - 2) && this.rowIndex + 2 < this.grid.dataLength)) {
+        if ((!this.grid.getRowByIndex(this.rowIndex) || (this.rowIndex >= this.grid.rowList.length - 2) && this.rowIndex + 2 < this.grid.dataLength)) {
             const lastFullyVisibleRowIndex = this.grid.rowList.toArray()[this.grid.rowList.length - 3].index;
             const field = this.grid.visibleColumns[this.colIndex].field;
             cell = this.grid.gridAPI.get_cell_by_index(lastFullyVisibleRowIndex, field);

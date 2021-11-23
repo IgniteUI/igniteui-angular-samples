@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { Component } from '@angular/core';
+import { IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({
@@ -8,17 +8,11 @@ import { DATA } from '../../data/customers';
     templateUrl: 'hierarchical-grid-pinning.component.html'
 })
 
-export class HGridPinningSampleComponent implements OnInit {
-    @ViewChild('hierarchicalGrid', { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
-
+export class HGridPinningSampleComponent {
     public localdata;
 
     constructor() {
         this.localdata = DATA;
-    }
-    public ngOnInit(): void {
-
     }
 
     public toggleColumn(col: IgxColumnComponent) {

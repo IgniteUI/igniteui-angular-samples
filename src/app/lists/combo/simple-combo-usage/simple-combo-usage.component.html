@@ -1,0 +1,10 @@
+<div class="sample-wrapper">
+    <div class="combo-section">
+        <igx-simple-combo [data]="cities" [displayKey]="'name'" [valueKey]="'id'" [(ngModel)]="selectedCity">
+        </igx-simple-combo>
+    </div>
+    <div *ngIf="!!selectedCity">
+        <h6>Selected City's Id:</h6>
+        <div>{{ selectedCity }}</div>
+    </div>
+</div>

@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 @Component({
   selector: 'app-contact-list',
   styleUrls: ['./list-sample-3.component.scss'],
   templateUrl: './list-sample-3.component.html'
 })
-export class ListSample3Component implements OnInit {
+export class ListSample3Component {
   public contacts = [
     {
       name: 'Terrance Orta',
@@ -29,6 +29,4 @@ export class ListSample3Component implements OnInit {
   ];
 
   constructor() { }
-
-  public ngOnInit() { }
 }

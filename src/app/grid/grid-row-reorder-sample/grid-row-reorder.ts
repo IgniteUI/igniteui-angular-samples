@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { Component, QueryList, ViewChild } from '@angular/core';
+import { IgxGridComponent, RowType } from 'igniteui-angular';
+import { IgxRowDirective } from 'igniteui-angular/lib/grids/row.directive';
 import { DATA } from '../../data/customers';
 
 @Component({
@@ -26,13 +27,13 @@ export class GridRowReorderComponent {
         this.data.splice(currRowIndex, 0, args.dragData.data);
     }
 
-    private getCurrentRowIndex(rowList, cursorPosition) {
+    private getCurrentRowIndex(rowList: IgxRowDirective[], cursorPosition) {
         for (const row of rowList) {
             const rowRect = row.nativeElement.getBoundingClientRect();
             if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&
                 cursorPosition.x > rowRect.left + window.scrollX && cursorPosition.x < rowRect.right + window.scrollX) {
                 // return the index of the targeted row
-                return this.data.indexOf(this.data.find((r) => r.ID === row.rowID));
+                return this.data.indexOf(this.data.find((r) => r.ID === row.key));
             }
         }
 

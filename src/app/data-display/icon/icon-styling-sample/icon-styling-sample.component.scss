@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 $custom-icon-theme: igx-icon-theme(
   $color: #1481b8,

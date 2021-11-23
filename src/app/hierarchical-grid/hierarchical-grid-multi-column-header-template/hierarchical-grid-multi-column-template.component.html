@@ -19,8 +19,8 @@
             </igx-column-group>
         </igx-column-group>
         <igx-column-group header="Address Information" [headerTemplate]="columnGroupTemplate">
-            <igx-column sortable="true" resizable="true" field="Location" hidden="true"></igx-column>
-            <igx-column sortable="true" resizable="true" field="Phone" hidden="true"></igx-column>
+            <igx-column sortable="true" resizable="true" field="Location" [hidden]="true"></igx-column>
+            <igx-column sortable="true" resizable="true" field="Phone" [hidden]="true"></igx-column>
             <igx-column-group header="Location">
                 <igx-column field="Address" [movable]="true" sortable="true" resizable="true"></igx-column>
                 <igx-column field="City" [movable]="true" sortable="true" resizable="true"></igx-column>
@@ -32,7 +32,7 @@
                 <igx-column field="Fax" sortable="true" resizable="true"></igx-column>
             </igx-column-group>
         </igx-column-group>
-    
+
         <igx-row-island [key]="'Orders'" [autoGenerate]="false">
             <igx-column-group header="Order Information">
                 <igx-column-group header="Order Details" [headerTemplate]="columnGroupTemplate">
@@ -61,6 +61,6 @@
                     <igx-column field="Discount" sortable="true" resizable="true"></igx-column>
             </igx-row-island>
         </igx-row-island>
-    
+
     </igx-hierarchical-grid>
 </div>

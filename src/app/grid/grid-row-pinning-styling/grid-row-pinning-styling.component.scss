@@ -1,4 +1,4 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 $custom-theme: igx-grid-theme(
     $pinned-border-width: 5px,
