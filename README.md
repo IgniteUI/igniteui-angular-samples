@@ -1,5 +1,4 @@
 [![Build Status](https://dev.azure.com/IgniteUI/igniteui-angular/_apis/build/status/IgniteUI.igniteui-angular-samples?branchName=master)](https://dev.azure.com/IgniteUI/igniteui-angular/_build/latest?definitionId=4&branchName=master)
-[![Build Status](https://travis-ci.org/IgniteUI/igniteui-angular-samples.svg?branch=master)](https://travis-ci.org/IgniteUI/igniteui-angular-samples)
 
 # Ignite UI for Angular - Samples
 
@@ -8,7 +7,7 @@ This project is using Ignite UI for Angular components to demonstrate different 
 The project is divided into two separate applications:
 
 
-- A `default application`, which uses all the [igniteui-angular](https://travis-ci.org/IgniteUI/igniteui-angular) components to demonstrate sample applications
+- A `default application`, which uses all the [igniteui-angular](https://www.infragistics.com/products/ignite-ui-angular) components to demonstrate sample applications
 
 - A `Line of Business` application, complemented with UI and functionality from the **Ignite UI for Angular Charts** and **Ignite UI for Angular Excel library**.
 
