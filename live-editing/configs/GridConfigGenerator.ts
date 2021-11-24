@@ -1044,7 +1044,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: ['GridSummaryTemplateComponent', 'IgxGridModule', 'IgxInputGroupModule',
                     'IgxButtonGroupModule', 'IgxSwitchModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridSummaryTemplateComponent'],
-                ngImports: ['IgxGridModule', 'IgxInputGroupModule', 'IgxButtonGroupModule', 'IgxSwitchModule', 'IgxPreventDocumentScrollModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxInputGroupModule', 'IgxButtonGroupModule', 'IgxSwitchModule']
             })
         }));
 
