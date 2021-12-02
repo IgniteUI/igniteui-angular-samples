@@ -50,7 +50,7 @@ export class TreeGridSummaryTemplateComponent implements OnInit {
     public data;
     public d;
     public ptoSummary = PTOSummary;
-    public summaryHeight = 150;
+    public summaryHeight = 0;
     public displayDensity = 'cosy';
     public displayDensities;
     public hasSummary = true;

@@ -42,7 +42,7 @@ export class GridSummaryTemplateComponent implements OnInit {
     public grid1: IgxGridComponent;
     public discontinuedSummary = DiscontinuedSummary;
     public data;
-    public summaryHeight = 150;
+    public summaryHeight = 220;
     public displayDensity = 'cosy';
     public displayDensities;
     public hasSummary = true;

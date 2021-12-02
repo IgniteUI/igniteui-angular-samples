@@ -1,6 +1,13 @@
-<div class="grid__wrapper">
-    <igx-buttongroup [values]="displayDensities" (selected)="selectDensity($event)" [displayDensity]="displayDensity">
-    </igx-buttongroup>
+<div class="sample__wrapper">
+    <div class="controls-wrapper">
+        <igx-input-group>
+            <label igxLabel for="height">Summary Row Height</label>
+            <input igxInput name="height" type="number" [(ngModel)]="summaryHeight">
+        </igx-input-group>
+        <igx-switch [(ngModel)]="hasSummary">Toggle Summaries</igx-switch>
+        <igx-buttongroup [values]="displayDensities" (selected)="selectDensity($event)" [displayDensity]="displayDensity">
+        </igx-buttongroup>
+    </div>
     <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [displayDensity]="displayDensity"
         [summaryRowHeight]="summaryHeight" [autoGenerate]="false" height="550px" width="100%">
         <igx-paginator *ngIf="false"></igx-paginator>
@@ -17,17 +24,12 @@
         </igx-column>
         <igx-column field="OrderDate" width="18%" [dataType]="'date'" [hasSummary]="hasSummary">
             <ng-template igxSummary let-summaryResult>
-                <span>{{ summaryResult[0].label }} - {{ summaryResult[0].summaryResult }}</span>
-                <span>{{ summaryResult[1].label }} - {{ summaryResult[1].summaryResult }}</span>
-                <span>{{ summaryResult[2].label }} - {{ summaryResult[2].summaryResult }}</span>
+                <div class="summary-temp">
+                    <span><strong>{{ summaryResult[0].label }}</strong><span>{{ summaryResult[0].summaryResult }}</span></span>
+                    <span><strong>{{ summaryResult[1].label }}</strong><span>{{ summaryResult[1].summaryResult }}</span></span>
+                    <span><strong>{{ summaryResult[2].label }}</strong><span>{{ summaryResult[2].summaryResult }}</span></span>
+                </div>
             </ng-template>
         </igx-column>
     </igx-grid>
-</div>
-<div class="controls-wrapper">
-    <igx-input-group>
-        <label igxLabel for="height">Summary Row Height</label>
-        <input igxInput name="height" type="number" [(ngModel)]="summaryHeight">
-    </igx-input-group>
-    <igx-switch [(ngModel)]="hasSummary">Toggle Summaries</igx-switch>
 </div>
