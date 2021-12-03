@@ -31,7 +31,5 @@ $custom-toast-theme: igx-toast-theme(
  * of the output CSS. If you do not plan to target IE 11,
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
-:host ::ng-deep {
-    @include igx-toast($custom-toast-theme);
-}
+@include igx-css-vars($custom-toast-theme);
 
