@@ -1,9 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    IgxGridComponent,
-    IgxNumberSummaryOperand,
-    IgxSummaryResult
-} from 'igniteui-angular';
+import { Component, OnInit } from '@angular/core';
+import { IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 class DiscontinuedSummary {
@@ -38,11 +34,9 @@ class DiscontinuedSummary {
     templateUrl: './grid-summary-template.component.html'
 })
 export class GridSummaryTemplateComponent implements OnInit {
-    @ViewChild('grid1', { read: IgxGridComponent, static: true })
-    public grid1: IgxGridComponent;
     public discontinuedSummary = DiscontinuedSummary;
     public data;
-    public summaryHeight = 220;
+    public summaryHeight = 135;
     public displayDensity = 'cosy';
     public displayDensities;
     public hasSummary = true;
@@ -59,7 +53,7 @@ export class GridSummaryTemplateComponent implements OnInit {
         ];
     }
 
-    public selectDensity(event) {
+    public selectDensity(event): void {
         this.displayDensity = this.displayDensities[event.index].label;
     }
 }

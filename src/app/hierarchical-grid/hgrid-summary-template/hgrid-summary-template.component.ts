@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
-    IgxHierarchicalGridComponent,
     IgxNumberSummaryOperand,
     IgxSummaryResult
 } from 'igniteui-angular';
@@ -51,12 +50,10 @@ class GrammySummary {
 })
 
 export class HGridSummaryTemplateComponent implements OnInit {
-    @ViewChild('hierarchicalGrid', { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
     public localdata;
     public grammySummary = GrammySummary;
     public numberSummary = CustomNumberSummary;
-    public summaryHeight = 150;
+    public summaryHeight = 120;
     public displayDensity = 'cosy';
     public displayDensities;
     public hasSummary = true;
@@ -72,7 +69,7 @@ export class HGridSummaryTemplateComponent implements OnInit {
         ];
     }
 
-    public selectDensity(event) {
+    public selectDensity(event): void {
         this.displayDensity = this.displayDensities[event.index].label;
     }
 }

@@ -22,11 +22,11 @@
         <igx-column field="Debut"></igx-column>
         <igx-column field="GrammyNominations" header="Grammy Nominations" [hasSummary]='hasSummary'
             [dataType]="'number'" [summaries]="numberSummary">
-            <ng-template igxSummary let-summaryResult>
+            <ng-template igxSummary let-summaryResults>
                 <div class="summary-temp">
-                    <span><strong>{{ summaryResult[0].label }}</strong><span>{{ summaryResult[0].summaryResult }}</span></span>
-                    <span><strong>{{ summaryResult[1].label }}</strong><span>{{ summaryResult[1].summaryResult }}</span></span>
-                    <span><strong>{{ summaryResult[2].label }}</strong><span>{{ summaryResult[2].summaryResult }}</span></span>
+                    <span><strong>{{ summaryResults[0].label }}</strong><span>{{ summaryResults[0].summaryResult }}</span></span>
+                    <span><strong>{{ summaryResults[1].label }}</strong><span>{{ summaryResults[1].summaryResult }}</span></span>
+                    <span><strong>{{ summaryResults[2].label }}</strong><span>{{ summaryResults[2].summaryResult }}</span></span>
                 </div>
             </ng-template>
         </igx-column>
@@ -36,11 +36,10 @@
         <igx-row-island [key]="'Albums'" [summaryRowHeight]="summaryHeight">
             <igx-column field="Album" [hasSummary]='hasSummary'></igx-column>
             <igx-column field="LaunchDate" header="Launch Date" [hasSummary]='hasSummary' [dataType]="'date'">
-                <ng-template igxSummary let-summaryResult>
+                <ng-template igxSummary let-summaryResults>
                     <div class="summary-temp">
-                        <span><strong>{{ summaryResult[0].label }}</strong><span>{{ summaryResult[0].summaryResult }}</span></span>
-                        <span><strong>{{ summaryResult[1].label }}</strong><span>{{ summaryResult[1].summaryResult }}</span></span>
-                        <span><strong>{{ summaryResult[2].label }}</strong><span>{{ summaryResult[2].summaryResult }}</span></span>
+                        <span><strong>{{ summaryResults[0].label }}</strong><span>{{ summaryResults[0].summaryResult }}</span></span>
+                        <span><strong>{{ summaryResults[1].label }}</strong><span>{{ summaryResults[1].summaryResult }}</span></span>
                     </div>
                 </ng-template>
             </igx-column>

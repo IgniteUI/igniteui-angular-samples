@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent } from 'igniteui-angular';
+import { Component, OnInit } from '@angular/core';
+import { IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 class PTOSummary {
@@ -44,20 +44,17 @@ class PTOSummary {
     templateUrl: './treegrid-summary-template.component.html'
 })
 export class TreeGridSummaryTemplateComponent implements OnInit {
-
-    @ViewChild('treegrid1', { read: IgxTreeGridComponent, static: true })
-    public grid1: IgxTreeGridComponent;
     public data;
     public d;
     public ptoSummary = PTOSummary;
-    public summaryHeight = 0;
+    public summaryHeight = 150;
     public displayDensity = 'cosy';
     public displayDensities;
     public hasSummary = true;
 
     constructor() { }
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.data = generateEmployeeFlatData();
         this.data.forEach(rec => rec.Title = rec.Title.includes('Localiza') ? 'Software Developer' : rec.Title);
         this.displayDensities = [
@@ -66,7 +63,8 @@ export class TreeGridSummaryTemplateComponent implements OnInit {
             { label: 'comfortable', selected: this.displayDensity === 'comfortable', togglable: true }
         ];
     }
-    public selectDensity(event) {
+
+    public selectDensity(event): void {
         this.displayDensity = this.displayDensities[event.index].label;
     }
 }

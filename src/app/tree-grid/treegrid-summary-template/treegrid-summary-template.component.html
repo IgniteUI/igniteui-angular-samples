@@ -13,17 +13,18 @@
         foreignKey="ParentID" height="520px" width="100%" [summaryRowHeight]="summaryHeight"
         [displayDensity]="displayDensity">
         <igx-column field="Name"></igx-column>
-        <igx-column field="Age" width="15%"></igx-column>
-        <igx-column field="Title" [hasSummary]="hasSummary" [summaries]="ptoSummary"></igx-column>
-        <igx-column field="HireDate" [dataType]="'date'" [hasSummary]="hasSummary">
-            <ng-template igxSummary let-summaryResult>
-                    <div class="summary-temp">
-                        <span><strong>{{ summaryResult[0].label }}</strong><span>{{ summaryResult[0].summaryResult }}</span></span>
-                        <span><strong>{{ summaryResult[1].label }}</strong><span>{{ summaryResult[1].summaryResult }}</span></span>
-                        <span><strong>{{ summaryResult[2].label }}</strong><span>{{ summaryResult[2].summaryResult }}</span></span>
-                    </div>
+        <igx-column field="Age" dataType="number" width="15%" [hasSummary]="hasSummary">
+            <ng-template igxSummary let-summaryResults>
+                <div class="summary-temp">
+                    <span><strong>{{ summaryResults[0].label }}</strong><span>{{ summaryResults[0].summaryResult }}</span></span>
+                    <span><strong>{{ summaryResults[1].label }}</strong><span>{{ summaryResults[1].summaryResult }}</span></span>
+                    <span><strong>{{ summaryResults[2].label }}</strong><span>{{ summaryResults[2].summaryResult }}</span></span>
+                    <span><strong>{{ summaryResults[3].label }}</strong><span>{{ summaryResults[3].summaryResult }}</span></span>
+                </div>
             </ng-template>
         </igx-column>
+        <igx-column field="Title" [hasSummary]="hasSummary" [summaries]="ptoSummary"></igx-column>
+        <igx-column field="HireDate" [dataType]="'date'"></igx-column>
         <igx-column field="OnPTO" width="15%" [dataType]="'boolean'" [editable]="true" [hasSummary]="hasSummary">
         </igx-column>
     </igx-tree-grid>
