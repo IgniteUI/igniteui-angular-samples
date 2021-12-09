@@ -1,5 +1,9 @@
 <div class="sample-column">
-    <igx-navbar title="Ignite UI for Angular" actionButtonIcon="arrow_back" [isActionButtonVisible]="canGoBack()"
-        (action)="navigateBack()">
+    <igx-navbar title="Ignite UI for Angular">
+        <igx-navbar-action>
+            <button igxButton="icon" (click)="navigateBack()">
+                <igx-icon>arrow_back</igx-icon>
+            </button>
+        </igx-navbar-action>
     </igx-navbar>
 </div>

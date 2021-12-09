@@ -1,11 +1,19 @@
 <div class="sample-column">
-    <igx-navbar title="Sample App" actionButtonIcon="menu" [isActionButtonVisible]="true">
-        <igx-icon>search</igx-icon>
-        <igx-icon>favorite</igx-icon>
-        <igx-icon>more_vert</igx-icon>
-
+    <igx-navbar title="Sample App">
         <igx-navbar-action>
-            <igx-icon class="customIcon" family="fa" name="fa-home"></igx-icon>
+            <button igxButton="icon">
+                <igx-icon class="customIcon" family="fa" name="fa-home"></igx-icon>
+            </button>
         </igx-navbar-action>
+        
+        <button igxButton="icon">
+            <igx-icon>search</igx-icon>
+        </button>
+        <button igxButton="icon">
+            <igx-icon>favorite</igx-icon>
+        </button>
+        <button igxButton="icon">
+            <igx-icon>more_vert</igx-icon>
+        </button>
     </igx-navbar>
 </div>
