@@ -33,7 +33,7 @@
             </igx-column-group>
         </igx-column-group>
 
-        <igx-row-island [key]="'Orders'" [autoGenerate]="false">
+        <igx-row-island [key]="'Orders'" [autoGenerate]="false" [moving]="true">
             <igx-column-group header="Order Information">
                 <igx-column-group header="Order Details" [headerTemplate]="columnGroupTemplate">
                     <igx-column field="OrderID" sortable="true" resizable="true"></igx-column>
