@@ -92,6 +92,7 @@ import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-col
 import { TreeGridRowClassesComponent } from './tree-grid-rowClasses-sample/tree-grid-rowClasses.component';
 import { TreeGridRowStylesComponent } from './tree-grid-rowStyles-sample/tree-grid-rowStyle.component';
 import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tree-grid-action-strip-sample';
+import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/treegrid-summary-template.component';
 
 export const treeGridRoutes: Routes = [
     {
@@ -468,6 +469,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridAllDataSummaryComponent,
         data: treeGridRoutesData['tree-grid-allData-summary'],
         path: 'tree-grid-allData-summary'
+    },
+    {
+        component: TreeGridSummaryTemplateComponent,
+        data: treeGridRoutesData['tree-grid-summary-template'],
+        path: 'tree-grid-summary-template'
     },
     {
         component: TreeGridRightPinningSampleComponent,
