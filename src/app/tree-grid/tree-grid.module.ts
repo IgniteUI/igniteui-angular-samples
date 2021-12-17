@@ -119,6 +119,7 @@ import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-col
 import { TreeGridRowStylesComponent } from './tree-grid-rowStyles-sample/tree-grid-rowStyle.component';
 import { TreeGridRowClassesComponent } from './tree-grid-rowClasses-sample/tree-grid-rowClasses.component';
 import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tree-grid-action-strip-sample';
+import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/treegrid-summary-template.component';
 
 @NgModule({
     declarations: [
@@ -196,6 +197,7 @@ import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tre
         TreeGridConditionalCellStyle2Component,
         TreeGridMultiCollapsibleColumnGroupsComponent,
         TreeGridAllDataSummaryComponent,
+        TreeGridSummaryTemplateComponent,
         TreeGridRowPinningSampleComponent,
         TreeGridRowPinningStylingSampleComponent,
         TreeGridRowPinningExtraColumnSampleComponent,
