@@ -83,6 +83,7 @@ export class SignalRService implements OnDestroy {
         }
     }
 
+    // Register signalR events
     private registerSignalEvents(): void {
         this.hubConnection.onclose(() => {
             this.hasRemoteConnection = false;
