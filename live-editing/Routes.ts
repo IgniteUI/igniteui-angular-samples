@@ -17,6 +17,7 @@ import { DataDisplayModule } from '../src/app/data-display/data-display.module';
 import * as DataEntriesRouting from '../src/app/data-entries/data-entries-routing.module';
 import { DataEntriesModule } from '../src/app/data-entries/data-entries.module';
 import * as GridRouting from '../src/app/grid/grids-routing.module';
+import * as PivotGridRouting from '../src/app/pivot-grid/pivot-grids-routing.module';
 import { GridsModule } from '../src/app/grid/grids.module';
 import * as HierarchicalGridRouting from '../src/app/hierarchical-grid/hierarchical-grid-routing.module';
 import { HierarchicalGridModule } from '../src/app/hierarchical-grid/hierarchical-grid.module';
@@ -43,6 +44,8 @@ import * as GridFinJSDockManagerRoutingModule from '../projects/app-lob/src/app/
 import { GridFinJSDockManagerModule } from '../projects/app-lob/src/app/grid-finjs-dock-manager/grid-finjs-dock-manager.module';
 import { PaginationModule } from '../src/app/pagination/pagination.module';
 import * as PaginatorRouting from '../src/app/pagination/pagination-routing.module';
+import { PivotGridsModule } from '../src/app/pivot-grid/pivot-grids.module';
+import { PivotGridsRoutingModule } from '../src/app/pivot-grid/pivot-grids-routing.module';
 
 export const MODULE_ROUTES = [
     {
@@ -99,6 +102,11 @@ export const MODULE_ROUTES = [
         module: GridsModule,
         path: 'grid',
         routes: GridRouting.gridsRoutes
+    },
+    {
+        module: PivotGridsModule,
+        path: 'pivot-grid',
+        routes: PivotGridRouting.gridsRoutes
     },
     {
         module: HierarchicalGridModule,
