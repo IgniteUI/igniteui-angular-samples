@@ -24,7 +24,7 @@ export class PivotGridBasicSampleComponent {
             {
                 memberName: 'Seller',
                 memberFunction: (data) => data.Seller.Name,
-                enabled: true,
+                enabled: true
             }
         ],
         values: [
