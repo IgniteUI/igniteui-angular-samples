@@ -14,7 +14,7 @@
         (rowSelectionChanging)="rowSelectionChanged($event)"
         (keydown)="gridKeydown($event)"
         (gridKeydown)="customKeydown($event)"
-        [isLoading]="isLoading">
+        [isLoading]="isLoading" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true">
 
         <igx-grid-toolbar *ngIf="showToolbar">
             <igx-grid-toolbar-actions>
@@ -53,8 +53,8 @@
             </ng-template>
         </igx-column>
         <igx-column [field]="'lastUpdated'" [width]="'120px'" [editable]='true' header="Last Update" dataType="date"></igx-column>
-        <igx-column [field]="'openPrice'" [width]="'120px'" dataType="currency" [pipeArgs]="columnFormat" [movable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'price'" [width]="'110px'" dataType="number" [cellClasses]="trends" [movable]="true"
+        <igx-column [field]="'openPrice'" [width]="'120px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
+        <igx-column [field]="'price'" [width]="'110px'" dataType="number" [cellClasses]="trends" 
             [sortable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
@@ -73,26 +73,26 @@
         </igx-column>
 
         <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
-            [sortable]="true" [cellClasses]="trendsChange" [movable]="true">
+            [sortable]="true" [cellClasses]="trendsChange" >
         </igx-column>
 
-        <igx-column [field]="'changeP'" [width]="'110px'" dataType="percent" [movable]="true"
+        <igx-column [field]="'changeP'" [width]="'110px'" dataType="percent" 
             [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
         </igx-column>
 
-        <igx-column [field]="'buy'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat" [movable]="true"
+        <igx-column [field]="'buy'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat" 
             [sortable]="true"></igx-column>
-        <igx-column [field]="'sell'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat" [movable]="true"
+        <igx-column [field]="'sell'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat" 
             [sortable]="true"></igx-column>
-        <igx-column [field]="'spread'" [width]="'110px'" dataType="number"  [pipeArgs]="columnFormat" [movable]="true">
+        <igx-column [field]="'spread'" [width]="'110px'" dataType="number"  [pipeArgs]="columnFormat" >
         </igx-column>
-        <igx-column [field]="'volume'" [width]="'110px'" dataType="number"  [pipeArgs]="columnFormat" [movable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'highD'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat" [movable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'lowD'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat" [movable]="true"
+        <igx-column [field]="'volume'" [width]="'110px'" dataType="number"  [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
+        <igx-column [field]="'highD'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
+        <igx-column [field]="'lowD'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat" 
             [sortable]="true"></igx-column>
-        <igx-column [field]="'highY'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat" [movable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'lowY'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat" [movable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'startY'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat" [movable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'highY'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
+        <igx-column [field]="'lowY'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
+        <igx-column [field]="'startY'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
         <!-- <igx-column [field]="'Grid'" [width]="'80px'" [hidden]="false" [filterable]='false'>
             <ng-template igxCell let-cell="cell" class="center-text">
                 <button class="button-icon" igxButton="icon" igxRippleCentered="true">
