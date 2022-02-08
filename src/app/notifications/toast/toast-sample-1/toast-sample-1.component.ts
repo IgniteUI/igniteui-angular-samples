@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxToastComponent, IgxToastPosition } from 'igniteui-angular';
+import { IgxToastComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-toast-sample-1',
@@ -8,10 +8,8 @@ import { IgxToastComponent, IgxToastPosition } from 'igniteui-angular';
 })
 export class ToastSample1Component {
     public toast: IgxToastComponent;
-    public toastPosition: IgxToastPosition;
 
-    openToast(toast: IgxToastComponent, toastPosition: IgxToastPosition) {
-        toast.position = toastPosition;
+    openToast(toast: IgxToastComponent, toastPosition: any) {
         toast.open();
     }
 }

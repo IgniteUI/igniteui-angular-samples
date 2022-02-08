@@ -42,7 +42,7 @@ export class DropDownRemoteComponent implements OnInit, OnDestroy, AfterViewInit
         if (this.prevRequest) {
             this.prevRequest.unsubscribe();
         }
-        this.loadingToast.position = 'middle';
+        //this.loadingToast.position = 'middle';
         this.loadingToast.autoHide = false;
         this.loadingToast.open('Loading Remote Data...');
         this.cdr.detectChanges();

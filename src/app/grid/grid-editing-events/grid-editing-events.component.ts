@@ -28,7 +28,7 @@ export class GridEditingEventsComponent implements OnInit {
             e.Ordered = Math.floor(Math.random() * e.UnitsInStock);
             return e;
         });
-        this.toast.position = 'middle';
+        //this.toast.position = 'middle';
     }
 
     public handleCellEdit(event: IGridEditEventArgs) {

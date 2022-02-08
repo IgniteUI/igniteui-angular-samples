@@ -21,7 +21,7 @@ export class ComboStylingComponent implements OnInit {
     }
 
     public setWeaponsLimit(event: IComboSelectionChangingEventArgs) {
-        this.loadToast.position = 'middle';
+        // this.loadToast.position = 'middle';
         // this.loadToast.autoHide = true;
 
         if (event.newSelection.length > 2) {
