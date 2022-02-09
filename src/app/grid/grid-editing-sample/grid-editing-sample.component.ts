@@ -42,7 +42,6 @@ export class GridEditingSampleComponent implements OnInit, AfterViewInit {
     public product;
     public customOverlaySettings;
     public id;
-    public position = VerticalAlignment.Middle;
     public numSummary = NumberSummary;
 
     public ngOnInit() {
@@ -96,6 +95,7 @@ export class GridEditingSampleComponent implements OnInit, AfterViewInit {
 
     public show(args) {
         const message = `The product: {name: ${args.data.ProductName}, ID ${args.data.ProductID} } has been removed!`;
+        this.toast.positionSettings.verticalDirection = VerticalAlignment.Middle;
         this.toast.open(message);
     }
 }

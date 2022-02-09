@@ -14,7 +14,6 @@ export class BannerStylingComponent implements OnInit, OnDestroy {
     public contentWidth = '384px';
     public imageUrls = ['assets/images/card/media/the_red_ice_forest.jpg',
         'assets/images/card/media/yosemite.jpg'];
-    public toastPosition: 'middle';
     public animationSettings = {
         closeAnimation: slideOutRight,
         openAnimation: slideInLeft

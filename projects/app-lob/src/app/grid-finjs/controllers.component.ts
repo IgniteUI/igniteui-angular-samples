@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import {
     IButtonGroupEventArgs, IChangeSwitchEventArgs, IgxButtonGroupComponent,
-    IgxSliderComponent, IgxToastComponent, ISliderValueChangeEventArgs }
+    IgxSliderComponent, IgxToastComponent, ISliderValueChangeEventArgs, VerticalAlignment }
 from 'igniteui-angular';
 import { Observable, Subscription, timer } from 'rxjs';
 import { debounce } from 'rxjs/operators';
@@ -59,6 +59,8 @@ export class ControllerComponent implements OnInit, OnDestroy {
         this.frequencyChanged$ = this.intervalSlider.valueChange.pipe(debounce(() => timer(200)));
         this.frequencyChangedSubscription = this.frequencyChanged$
             .subscribe(() => this.frequencyChanged.emit(this.intervalSlider.value as number));
+        
+        this.toast.positionSettings.verticalDirection = VerticalAlignment.Middle;
     }
 
     public ngOnDestroy(): void {
