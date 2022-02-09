@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgModel } from '@angular/forms';
-import { IGridEditEventArgs, IgxGridComponent, IgxToastComponent } from 'igniteui-angular';
+import { IGridEditEventArgs, IgxGridComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({
@@ -28,7 +28,7 @@ export class GridEditingEventsComponent implements OnInit {
             e.Ordered = Math.floor(Math.random() * e.UnitsInStock);
             return e;
         });
-        this.toast.position = 'middle';
+        this.toast.positionSettings.verticalDirection = VerticalAlignment.Middle;
     }
 
     public handleCellEdit(event: IGridEditEventArgs) {

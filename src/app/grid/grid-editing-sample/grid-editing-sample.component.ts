@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxGridComponent, IgxSummaryResult, IgxNumberSummaryOperand, IgxToastComponent } from 'igniteui-angular';
+import { IgxDialogComponent, IgxGridComponent, IgxSummaryResult, IgxNumberSummaryOperand, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 import { DATA, LOCATIONS } from './data';
 import { Product } from './product';
 
@@ -42,7 +42,7 @@ export class GridEditingSampleComponent implements OnInit, AfterViewInit {
     public product;
     public customOverlaySettings;
     public id;
-    public position = 'middle';
+    public position = VerticalAlignment.Middle;
     public numSummary = NumberSummary;
 
     public ngOnInit() {
