@@ -1,4 +1,23 @@
 :host {
     display: block;
     padding: 8px;
+
+    ::ng-deep {
+        .upFontValue {
+            color: lightgreen;
+        }
+
+        .downFontValue {
+            color: lightcoral;
+        }
+
+        .upFontAmountofSale {
+            color: skyblue;
+        }
+
+        .downFontAmountofSale {
+            color: yellow;
+        }
+    }
+    
 }

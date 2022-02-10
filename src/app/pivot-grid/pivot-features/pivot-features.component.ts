@@ -1,18 +1,21 @@
 import { Component } from "@angular/core";
 
-import { IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate, IgxPivotDateDimension, IPivotDimension } from "igniteui-angular"
-import { DATA_TO_ANALYZE, SALES_DATA } from "../../data/dataToAnalyze";
+import {
+    IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate,
+    IgxPivotDateDimension, FilteringExpressionsTree, FilteringLogic, IgxStringFilteringOperand
+} from "igniteui-angular"
+import { SALES_DATA } from "../../data/dataToAnalyze";
 
 export class IgxTotalSaleAggregate {
     public static totalSale: PivotAggregation = (members, data: any) =>
-        data.reduce((accumulator, value) => accumulator + value.UnitPrice * value.UnitsSold, 0);
+        data.reduce((accumulator, value) => accumulator + value.Product.UnitPrice * value.NumberOfUnits, 0);
 
     public static totalMin: PivotAggregation = (members, data: any) => {
         let min = 0;
         if (data.length === 1) {
-            min = data[0].UnitPrice * data[0].UnitsSold;
+            min = data[0].Product.UnitPrice * data[0].NumberOfUnits;
         } else if (data.length > 1) {
-            const mappedData = data.map(x => x.UnitPrice * x.UnitsSold);
+            const mappedData = data.map(x => x.Product.UnitPrice * x.NumberOfUnits);
             min = mappedData.reduce((a, b) => Math.min(a, b));
         }
         return min;
@@ -21,10 +24,10 @@ export class IgxTotalSaleAggregate {
     public static totalMax: PivotAggregation = (members, data: any) => {
         let max = 0;
         if (data.length === 1) {
-            max = data[0].UnitPrice * data[0].UnitsSold;
+            max = data[0].Product.UnitPrice * data[0].NumberOfUnits;
         } else if (data.length > 1) {
-            const mappedData = data.map(x => x.UnitPrice * x.UnitsSold);
-            max = mappedData.reduce((a, b) => Math.max(a,b));
+            const mappedData = data.map(x => x.Product.UnitPrice * x.NumberOfUnits);
+            max = mappedData.reduce((a, b) => Math.max(a, b));
         }
         return max;
     };
@@ -36,53 +39,45 @@ export class IgxTotalSaleAggregate {
     templateUrl: './pivot-features.component.html'
 })
 export class PivotFeaturesComponent {
-    // public data = DATA;
     public data = SALES_DATA;
 
-    public dimensions: IPivotDimension[] = [
-        {
-            memberName: 'Country',
-            enabled: true
-        },
-        new IgxPivotDateDimension(
-            {
-                memberName: 'Date',
-                enabled: true,
-                memberFunction: (data) => new Date(data.Date).toLocaleDateString()
-            },
-            {
-                months: false
-            }
-        ),
-        {
-            memberFunction: () => 'All Products',
-            memberName: 'AllProducts',
-            enabled: true,
-            width: '25%',
-            childLevel: {
-                memberFunction: (data) => data.Product.Name,
-                memberName: 'ProductCategory',
-                enabled: true
-            }
-        },
-        {
-            memberName: 'AllSeller',
-            memberFunction: () => 'All Sellers',
-            enabled: true,
-            childLevel: {
-                enabled: true,
-                memberName: 'SellerName'
-            }
-        }
-    ];
+    public filterExpTree = new FilteringExpressionsTree(FilteringLogic.Or);
 
+    constructor() {
+        this.filterExpTree.filteringOperands = [
+            {
+                condition: IgxStringFilteringOperand.instance().condition('doesNotContain'),
+                fieldName: 'SellerName',
+                searchVal: 'Benjamin'
+            }
+        ];
+    }
 
     public pivotConfig: IPivotConfiguration = {
         columns: [
-            this.dimensions[1]
+            new IgxPivotDateDimension(
+                {
+                    memberName: 'Date',
+                    enabled: true
+                },
+                {
+                    months: false,
+                    quarters: true,
+                    fullDate: false
+                }
+            )
         ],
         rows: [
-            this.dimensions[2],
+            {
+                memberFunction: () => 'All Products',
+                memberName: 'AllProducts',
+                enabled: true,
+                childLevel: {
+                    memberFunction: (data) => data.Product.Name,
+                    memberName: 'ProductCategory',
+                    enabled: true
+                }
+            },
             {
                 memberName: 'City',
                 memberFunction: (data) => data.Seller.City,
@@ -91,22 +86,26 @@ export class PivotFeaturesComponent {
         ],
         values: [
             {
-                member: 'Total Sales',
+                member: 'Value',
                 aggregate: {
                     key: 'SUM',
                     aggregator: IgxPivotNumericAggregate.sum,
                     label: 'Sum'
                 },
+                aggregateList: [{
+                    key: 'SUM',
+                    aggregator: IgxPivotNumericAggregate.sum,
+                    label: 'Sum'
+                }],
                 enabled: true,
                 styles: {
-                    upFont: (rowData: any, columnKey: any): boolean => rowData[columnKey] > 300,
-                    downFont: (rowData: any, columnKey: any): boolean => rowData[columnKey] <= 300
+                    upFontValue: (rowData: any, columnKey: any): boolean => rowData[columnKey] > 300,
+                    downFontValue: (rowData: any, columnKey: any): boolean => rowData[columnKey] <= 300
                 },
-                // dataType: 'currency',
-                formatter: (value) => value ? value + '$' : undefined
+                formatter: (value) => value ? '$' + parseFloat(value).toFixed(3) : undefined
             },
             {
-                member: 'AmountOfSale',
+                member: 'AmountofSale',
                 displayName: 'Amount of Sale',
                 aggregate: {
                     key: 'SUM',
@@ -129,50 +128,18 @@ export class PivotFeaturesComponent {
                 enabled: true,
                 dataType: 'currency',
                 styles: {
-                    upFont1: (rowData: any, columnKey: any): boolean => rowData[columnKey] > 50,
-                    downFont1: (rowData: any, columnKey: any): boolean => rowData[columnKey] <= 50
+                    upFontAmountofSale: (rowData: any, columnKey: any): boolean => rowData[columnKey] > 50,
+                    downFontAmountofSale: (rowData: any, columnKey: any): boolean => rowData[columnKey] <= 50
                 }
             }
         ],
         filters: [
             {
-                memberName: 'Sales Teritorry City',
-                memberFunction: (data) => data.Seller.City,
-                enabled: true
-                //filter: this.filterExpTree
+                memberName: 'SellerName',
+                memberFunction: (data) => data.Seller.Name,
+                enabled: true,
+                filter: this.filterExpTree
             }
         ]
     };
-
-    // public pivotConfigHierarchy: IPivotConfiguration = {
-    //     columns: [
-    //         {
-
-    //             memberName: 'Product',
-    //             memberFunction: (data) => data.Product.Name,
-    //             enabled: true
-    //         }
-
-    //     ],
-    //     rows: [
-    //         {
-    //             memberName: 'Seller',
-    //             memberFunction: (data) => data.Seller.Name,
-    //             enabled: true
-    //         }
-    //     ],
-    //     values: [
-    //         {
-    //             member: 'NumberOfUnits',
-    //             aggregate: {
-    //                 aggregator: IgxPivotNumericAggregate.sum,
-    //                 key: 'sum',
-    //                 label: 'Sum'
-    //             },
-    //             enabled: true
-
-    //         }
-    //     ],
-    //     filters: null
-    // };
 }
