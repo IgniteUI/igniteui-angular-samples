@@ -19,7 +19,7 @@ import { PivotGridsRoutingModule } from './pivot-grids-routing.module';
         FormsModule,
         HttpClientModule,
         PivotGridsRoutingModule,
-        IgxPivotGridModule,
+        IgxPivotGridModule
     ]
 })
 export class PivotGridsModule { }

@@ -21,6 +21,16 @@ export class PivotGridConfigGenerator implements IConfigGenerator {
             component: 'PivotGridBasicSampleComponent'
         }));
 
+        configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/dataToAnalyze.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPivotGridModule', 'PivotFeaturesComponent', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['PivotFeaturesComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxPivotGridModule']
+            }),
+            component: 'PivotFeaturesComponent'
+        }));
+
         return configs;
     }
 }
