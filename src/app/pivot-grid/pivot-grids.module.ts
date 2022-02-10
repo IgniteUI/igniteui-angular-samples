@@ -5,19 +5,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IgxPivotGridModule } from 'igniteui-angular';
+import { PivotFeaturesComponent } from './pivot-features/pivot-features.component';
 import { PivotGridBasicSampleComponent } from './pivot-basic-sample/pivot-grid-basic-sample.component';
 import { PivotGridsRoutingModule } from './pivot-grids-routing.module';
 
 @NgModule({
     declarations: [
-        PivotGridBasicSampleComponent
+        PivotGridBasicSampleComponent,
+        PivotFeaturesComponent
     ],
     imports: [
         CommonModule,
         FormsModule,
         HttpClientModule,
         PivotGridsRoutingModule,
-        IgxPivotGridModule
+        IgxPivotGridModule,
     ]
 })
 export class PivotGridsModule { }
