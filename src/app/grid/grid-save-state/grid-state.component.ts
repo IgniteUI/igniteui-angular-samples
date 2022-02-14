@@ -69,12 +69,12 @@ export class GridSaveStateComponent implements OnInit, AfterViewInit {
 
     public initialColumns: any[] = [
       // tslint:disable:max-line-length
-      { field: 'FirstName', header: 'First Name', width: '150px', dataType: 'string', pinned: true, movable: true, sortable: true, filterable: true},
-      { field: 'LastName', header: 'Last Name', width: '150px', dataType: 'string', pinned: true, movable: true, sortable: true, filterable: true},
-      { field: 'Country', header: 'Country', width: '140px', dataType: 'string', groupable: true, movable: true, sortable: true, filterable: true, resizable: true },
-      { field: 'Age', header: 'Age', width: '110px', dataType: 'number', movable: true, sortable: true, filterable: true, hasSummary: true, resizable: true, summaries: MySummary},
-      { field: 'RegistererDate', header: 'Registerer Date', width: '180px', dataType: 'date', movable: true, sortable: true, filterable: true, resizable: true },
-      { field: 'IsActive', header: 'Is Active', width: '140px', dataType: 'boolean', groupable: true, movable: true, sortable: true, filterable: true }
+      { field: 'FirstName', header: 'First Name', width: '150px', dataType: 'string', pinned: true, sortable: true, filterable: true},
+      { field: 'LastName', header: 'Last Name', width: '150px', dataType: 'string', pinned: true, sortable: true, filterable: true},
+      { field: 'Country', header: 'Country', width: '140px', dataType: 'string', groupable: true, sortable: true, filterable: true, resizable: true },
+      { field: 'Age', header: 'Age', width: '110px', dataType: 'number', sortable: true, filterable: true, hasSummary: true, resizable: true, summaries: MySummary},
+      { field: 'RegistererDate', header: 'Registerer Date', width: '180px', dataType: 'date', sortable: true, filterable: true, resizable: true },
+      { field: 'IsActive', header: 'Is Active', width: '140px', dataType: 'boolean', groupable: true, sortable: true, filterable: true }
       // tslint:enable:max-line-length
     ];
 
