@@ -3,22 +3,22 @@
     </igx-advanced-filtering-dialog>
 
     <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [autoGenerate]="false" height="400px" [allowFiltering]="true"
-        primaryKey="ID" foreignKey="ParentID" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true">
-        <igx-column field="ID" header="Product ID" [dataType]="'string'" [sortable]="true" >
+        primaryKey="ID" foreignKey="ParentID">
+        <igx-column field="ID" header="Product ID" [dataType]="'string'" [sortable]="true" [movable]="true">
         </igx-column>
-        <igx-column field="Name" header="Product Name" [dataType]="'string'" [sortable]="true" >
+        <igx-column field="Name" header="Product Name" [dataType]="'string'" [sortable]="true" [movable]="true">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" dataType="number" [sortable]="true" >
+        <igx-column field="UnitPrice" header="Unit Price" dataType="number" [sortable]="true" [movable]="true">
             <ng-template igxCell let-cell="cell" let-val>
                 <span *ngIf="cell.row.data.UnitPrice === 0">-</span>
                 <span *ngIf="cell.row.data.UnitPrice !== 0">${{val}}</span>
             </ng-template>
         </igx-column>
         <igx-column field="AddedDate" header="Added Date" [dataType]="'date'" [sortable]="true"
-            >
+            [movable]="true">
         </igx-column>
         <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [sortable]="true"
-            >
+            [movable]="true">
             <ng-template igxCell let-cell="cell" let-val>
                 <span *ngIf="cell.row.data.UnitPrice === 0">-</span>
                 <img *ngIf="cell.row.data.UnitPrice !== 0 && val" src="assets/images/grid/active.png"
