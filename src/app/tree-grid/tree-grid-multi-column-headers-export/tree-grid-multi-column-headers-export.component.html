@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [rowSelection]="selectionMode" height="740px"
-        displayDensity="compact" [allowFiltering]="true" width="100%" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true" [moving]="true">
+        displayDensity="compact" [allowFiltering]="true" width="100%">
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>
                 <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
@@ -9,8 +9,8 @@
                 </igx-grid-toolbar-exporter>
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
-        <igx-column field="ID" dataType="number"  [resizable]="true" [filterable]="false"></igx-column>
-        <igx-column field="Name" dataType="string"  [sortable]="true" [resizable]="true" width="200px"></igx-column>
+        <igx-column field="ID" dataType="number" [movable]="true" [resizable]="true" [filterable]="false"></igx-column>
+        <igx-column field="Name" dataType="string" [movable]="true" [sortable]="true" [resizable]="true" width="200px"></igx-column>
         <igx-column-group [movable]="true" [pinned]="false" header="General Information">
             <igx-column field="HireDate" dataType="date" [movable]="true" [sortable]="true" [resizable]="true"></igx-column>
             <igx-column-group [movable]="true" header="Personal Details">
