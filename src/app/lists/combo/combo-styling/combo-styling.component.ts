@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { IComboSelectionChangingEventArgs, IgxToastComponent } from 'igniteui-angular';
+import { IComboSelectionChangingEventArgs, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 import { getHeroWeaponsData, IHeroWeapon } from '../../../data/heroData';
 
 @Component({
@@ -21,7 +21,7 @@ export class ComboStylingComponent implements OnInit {
     }
 
     public setWeaponsLimit(event: IComboSelectionChangingEventArgs) {
-        this.loadToast.position = 'middle';
+        this.loadToast.positionSettings.verticalDirection = VerticalAlignment.Middle;
         // this.loadToast.autoHide = true;
 
         if (event.newSelection.length > 2) {

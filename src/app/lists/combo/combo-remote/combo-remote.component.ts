@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxComboComponent, IgxToastComponent } from 'igniteui-angular';
+import { IgxComboComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 import { RemoteNWindService } from '../../../services/remoteNwind.service';
 
 @Component({
@@ -33,7 +33,7 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
         if (this.prevRequest) {
             this.prevRequest.unsubscribe();
         }
-        this.loadingToast.position = 'middle';
+        this.loadingToast.positionSettings.verticalDirection = VerticalAlignment.Middle;
         this.loadingToast.autoHide = false;
         this.loadingToast.open('Loading Remote Data...');
         this.cdr.detectChanges();

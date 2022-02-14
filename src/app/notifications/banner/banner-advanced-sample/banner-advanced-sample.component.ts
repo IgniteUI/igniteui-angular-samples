@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IgxBannerComponent, IgxToastComponent } from 'igniteui-angular';
+import { IgxBannerComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -16,7 +16,6 @@ export class BannerAdvancedSampleComponent implements OnInit, OnDestroy {
     public imageUrls = ['assets/images/card/media/the_red_ice_forest.jpg',
         'assets/images/card/media/yosemite.jpg'];
     public onNetworkStateChange = new Subject();
-    public toastPosition: 'middle';
 
     private _wifiState = false;
     public get wifiState(): boolean {
@@ -29,7 +28,7 @@ export class BannerAdvancedSampleComponent implements OnInit, OnDestroy {
 
     public showToast() {
         this.eventToast.close();
-        this.toastPosition =  'middle';
+        this.eventToast.positionSettings.verticalDirection = VerticalAlignment.Middle;
         this.eventToast.open(`Wifi is now ${this.wifiState ? 'on' : 'off'}`);
     }
 
