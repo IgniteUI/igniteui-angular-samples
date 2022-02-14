@@ -73,6 +73,11 @@ export const samplesRoutes: Routes = [
         path: 'grid'
     },
     {
+        data: ['PivotGridsModule'],
+        loadChildren: () => import('./pivot-grid/pivot-grids.module').then(m => m.PivotGridsModule),
+        path: 'pivot-grid'
+    },
+    {
         data: ['HierarchicalGridModule'],
         loadChildren: () => import('./hierarchical-grid/hierarchical-grid.module').then(m => m.HierarchicalGridModule),
         path: 'hierarchical-grid'
