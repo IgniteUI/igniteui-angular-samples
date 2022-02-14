@@ -9,7 +9,7 @@
         </div>
     </ng-template>
 
-    <igx-grid igxPreventDocumentScroll [rowSelection]="selectionMode" #grid height="500px" [data]="data" displayDensity="compact" [allowFiltering]="true">
+    <igx-grid igxPreventDocumentScroll [rowSelection]="selectionMode" #grid height="500px" [moving]="true" [data]="data" displayDensity="compact" [allowFiltering]="true">
         <igx-column [resizable]="true" field="ID" [filterable]="false"></igx-column>
         <igx-column-group [pinned]="false" header="General Information" [headerTemplate]="columnGroupTemplate">
             <igx-column sortable="true" resizable="true" field="CompanyName"></igx-column>
