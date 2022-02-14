@@ -27,6 +27,7 @@ export class HGridEditingEventsComponent implements OnInit, OnDestroy {
 
     public ngOnInit(): void {
         this.localData = SINGERS;
+        this.toast.position = 'middle';
     }
 
     public ngOnDestroy(): void {

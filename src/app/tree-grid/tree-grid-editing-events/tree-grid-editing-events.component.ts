@@ -14,7 +14,7 @@ export class TreeGridEditingEventsComponent implements OnInit {
     public data: IEmployee[] = [];
     public ngOnInit() {
         this.data = generateEmployeeFlatData();
-        //this.toast.position = 'middle';
+        this.toast.position = 'middle';
     }
 
     public handleEdit(event: IGridEditEventArgs) {

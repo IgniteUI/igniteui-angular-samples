@@ -18,7 +18,7 @@ export class GridMultiCellSelectionComponent {
         target.shouldGenerate = true;
         target.clearCellSelection();
         this.targetData = source.getSelectedData();
-        //notification.position = 'middle';
+        notification.position = 'middle';
         notification.displayTime = 1000;
         notification.open(`Transfered ${this.targetData.length} rows`);
     }
