@@ -41,18 +41,6 @@ export class IgxTotalSaleAggregate {
 export class PivotFeaturesComponent {
     public data = SALES_DATA;
 
-    public filterExpTree = new FilteringExpressionsTree(FilteringLogic.Or);
-
-    constructor() {
-        this.filterExpTree.filteringOperands = [
-            {
-                condition: IgxStringFilteringOperand.instance().condition('doesNotContain'),
-                fieldName: 'SellerName',
-                searchVal: 'Benjamin'
-            }
-        ];
-    }
-
     public pivotConfig: IPivotConfiguration = {
         columns: [
             new IgxPivotDateDimension(
@@ -137,8 +125,7 @@ export class PivotFeaturesComponent {
             {
                 memberName: 'SellerName',
                 memberFunction: (data) => data.Seller.Name,
-                enabled: true,
-                filter: this.filterExpTree
+                enabled: true
             }
         ]
     };
