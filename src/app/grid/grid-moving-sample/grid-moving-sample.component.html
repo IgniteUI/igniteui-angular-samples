@@ -5,15 +5,15 @@
     </div>
 </ng-template>
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #dataGrid [data]="data" [autoGenerate]="false" height="620px" width="100%">
+    <igx-grid igxPreventDocumentScroll #dataGrid [data]="data" [moving]="true" [autoGenerate]="false" height="620px" width="100%">
         <igx-paginator [perPage]="10"></igx-paginator>
-        <igx-column [field]="'Category'" [width]="'200px'" [movable]="true" [pinned]="true" [headerTemplate]="pinTemplate"></igx-column>
-        <igx-column [field]="'Type'" [movable]="true" [pinned]="true" [headerTemplate]="pinTemplate"></igx-column>
-        <igx-column [field]="'Price'" dataType="number" [movable]="true" [formatter]="formatCurrency" [headerTemplate]="pinTemplate"></igx-column>
-        <igx-column [field]="'Buy'" dataType="number" [movable]="true" [formatter]="formatCurrency" [headerTemplate]="pinTemplate"></igx-column>
-        <igx-column [field]="'Sell'" dataType="number" [movable]="true" [formatter]="formatCurrency" [headerTemplate]="pinTemplate"></igx-column>
-        <igx-column [field]="'Spread'" dataType="number" [movable]="true" [headerTemplate]="pinTemplate"></igx-column>
-        <igx-column [field]="'Change'" dataType="number" [movable]="true" [headerTemplate]="pinTemplate">
+        <igx-column [field]="'Category'" [width]="'200px'" [pinned]="true" [headerTemplate]="pinTemplate"></igx-column>
+        <igx-column [field]="'Type'"  [pinned]="true" [headerTemplate]="pinTemplate"></igx-column>
+        <igx-column [field]="'Price'" dataType="number" [formatter]="formatCurrency" [headerTemplate]="pinTemplate"></igx-column>
+        <igx-column [field]="'Buy'" dataType="number" [formatter]="formatCurrency" [headerTemplate]="pinTemplate"></igx-column>
+        <igx-column [field]="'Sell'" dataType="number" [formatter]="formatCurrency" [headerTemplate]="pinTemplate"></igx-column>
+        <igx-column [field]="'Spread'" dataType="number" [headerTemplate]="pinTemplate"></igx-column>
+        <igx-column [field]="'Change'" dataType="number" [headerTemplate]="pinTemplate">
             <ng-template igxCell let-val>
                 <div class="currency-badge-container">
                     <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward" class="badge-left"></igx-badge>
@@ -22,12 +22,12 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'Change(%)'" [width]="'150px'" dataType="number" [movable]="true" [formatter]="formatNumber" [headerTemplate]="pinTemplate">
+        <igx-column [field]="'Change(%)'" [width]="'150px'" dataType="number"  [formatter]="formatNumber" [headerTemplate]="pinTemplate">
             <ng-template igxCell let-val>
                 <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}%</span>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'Change On Year(%)'" [width]="'170px'" dataType="number" [movable]="true" [formatter]="formatNumber" [headerTemplate]="pinTemplate">
+        <igx-column [field]="'Change On Year(%)'" [width]="'170px'" dataType="number"  [formatter]="formatNumber" [headerTemplate]="pinTemplate">
             <ng-template igxCell let-val>
                 <div class="currency-badge-container">
                     <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward" class="badge-left"></igx-badge>
