@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IgxColumnComponent, IgxGridComponent, IgxToastComponent } from 'igniteui-angular';
+import { IgxColumnComponent, IgxGridComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({
@@ -18,7 +18,7 @@ export class GridMultiCellSelectionComponent {
         target.shouldGenerate = true;
         target.clearCellSelection();
         this.targetData = source.getSelectedData();
-        //notification.position = 'middle';
+        notification.positionSettings.verticalDirection = VerticalAlignment.Middle;
         notification.displayTime = 1000;
         notification.open(`Transfered ${this.targetData.length} rows`);
     }

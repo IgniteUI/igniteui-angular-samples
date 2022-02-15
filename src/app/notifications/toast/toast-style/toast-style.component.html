@@ -4,7 +4,7 @@
             <h5 class="title">Bottom Position</h5>
             <div class="preview bottom"></div>
             <div class="btn-group">
-                <button igxButton="raised" igxRipple="white" (click)="openToast(toast, 'bottom')" [disabled]="toast.isVisible">Show Toast</button>
+                <button igxButton="raised" igxRipple="white" (click)="openToast(toast, position.Bottom)" [disabled]="toast.isVisible">Show Toast</button>
                 <button igxButton="raised" igxRipple="white" (click)="toast.close()" [disabled]="!toast.isVisible">Hide Toast</button>
             </div>
         </article>
@@ -12,7 +12,7 @@
             <h5 class="title">Middle Position</h5>
             <div class="preview middle"></div>
             <div class="btn-group">
-                <button igxButton="raised" igxRipple="white" (click)="openToast(toast, 'middle')" [disabled]="toast.isVisible">Show Toast</button>
+                <button igxButton="raised" igxRipple="white" (click)="openToast(toast, position.Middle)" [disabled]="toast.isVisible">Show Toast</button>
                 <button igxButton="raised" igxRipple="white" (click)="toast.close()" [disabled]="!toast.isVisible">Hide Toast</button>
             </div>
         </article>
@@ -20,7 +20,7 @@
             <h5 class="title"> Top Position</h5>
             <div class="preview top"></div>
             <div class="btn-group">
-                <button igxButton="raised" igxRipple="white" (click)="openToast(toast, 'top')" [disabled]="toast.isVisible">Show Toast</button>
+                <button igxButton="raised" igxRipple="white" (click)="openToast(toast, position.Top)" [disabled]="toast.isVisible">Show Toast</button>
                 <button igxButton="raised" igxRipple="white" (click)="toast.close()" [disabled]="!toast.isVisible">Hide Toast</button>
             </div>
         </article>

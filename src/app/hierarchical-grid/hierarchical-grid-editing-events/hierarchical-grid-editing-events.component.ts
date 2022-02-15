@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { IGridCreatedEventArgs, IGridEditEventArgs,
-    IgxGridBaseDirective, IgxHierarchicalGridComponent, IgxToastComponent } from 'igniteui-angular';
+    IgxGridBaseDirective, IgxHierarchicalGridComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { SINGERS } from '../../data/singersData';
@@ -27,6 +27,7 @@ export class HGridEditingEventsComponent implements OnInit, OnDestroy {
 
     public ngOnInit(): void {
         this.localData = SINGERS;
+        this.toast.positionSettings.verticalDirection = VerticalAlignment.Middle;
     }
 
     public ngOnDestroy(): void {

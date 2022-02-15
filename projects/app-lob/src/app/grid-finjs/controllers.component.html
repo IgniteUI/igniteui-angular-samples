@@ -30,5 +30,5 @@
         <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
             ~{{volume/5}} records updated.</span>
     </div>
-    <igx-toast #toast [position]="'middle'" (onClosed)="handleHidden()"></igx-toast>
+    <igx-toast #toast (onClosed)="handleHidden()"></igx-toast>
 </div>
