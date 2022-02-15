@@ -3,16 +3,16 @@
     <igx-icon>delete</igx-icon>
     <div>Drag a row here to delete it</div>
 </div>
-<igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="localData" childDataKey="Employees" width="800px" height="540px" [autoGenerate]="false"
-    [rowDraggable]="true" [allowFiltering]="true" 
+<igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="localData" [moving]="true" childDataKey="Employees" width="800px" height="540px" [autoGenerate]="false"
+    [rowDraggable]="true" [allowFiltering]="true"
     (rowDragEnd)="onRowDragEnd($event)">
     <igx-paginator></igx-paginator>
-    <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true">
+    <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [resizable]="true">
     </igx-column>
-    <igx-column field="Title" dataType="string" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true">
+    <igx-column field="Title" dataType="string" [sortable]="true" [editable]="true" [resizable]="true">
     </igx-column>
-    <igx-column field="HireDate" header="Hire Date" dataType="date" [sortable]="true" [editable]="true" [movable]="true"
+    <igx-column field="HireDate" header="Hire Date" dataType="date" [sortable]="true" [editable]="true"
         [resizable]="true" width="150px"></igx-column>
-    <igx-column field="Age" dataType="number" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true"
+    <igx-column field="Age" dataType="number" [sortable]="true" [editable]="true" [resizable]="true"
         width="100px"></igx-column>
 </igx-tree-grid>
