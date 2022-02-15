@@ -22,9 +22,8 @@ export class PivotGridNoopSampleComponent implements AfterViewInit {
             {
                 memberName: 'Country',
                 enabled: true
-            },
-        ]
-        ,
+            }
+        ],
         rows: [
             {
                 memberFunction: () => 'All',
@@ -45,7 +44,7 @@ export class PivotGridNoopSampleComponent implements AfterViewInit {
                     enabled: true,
                     memberName: 'SellerName'
                 }
-            },
+            }
         ],
         values: [
             {
@@ -56,7 +55,7 @@ export class PivotGridNoopSampleComponent implements AfterViewInit {
                     label: 'Sum'
                 },
                 enabled: true
-            },
+            }
         ],
         filters: null
     };
