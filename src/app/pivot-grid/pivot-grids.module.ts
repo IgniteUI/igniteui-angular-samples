@@ -6,11 +6,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IgxPivotGridModule } from 'igniteui-angular';
 import { PivotGridBasicSampleComponent } from './pivot-basic-sample/pivot-grid-basic-sample.component';
+import { PivotDatasourceSampleComponent } from './pivot-datasource/pivot-datasource-sample.component';
 import { PivotGridsRoutingModule } from './pivot-grids-routing.module';
 
 @NgModule({
     declarations: [
-        PivotGridBasicSampleComponent
+        PivotGridBasicSampleComponent,
+        PivotDatasourceSampleComponent
     ],
     imports: [
         CommonModule,
