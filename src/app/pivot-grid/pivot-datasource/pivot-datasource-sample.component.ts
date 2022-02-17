@@ -1,44 +1,60 @@
 import { Component } from "@angular/core";
-import { DATA } from '../../data/pivot-data';
+import { IgxPivotDateAggregate, IgxPivotNumericAggregate, IPivotConfiguration } from "igniteui-angular";
+import { DATA_TO_ANALYZE } from "../../data/dataToAnalyze";
 
-import { IPivotConfiguration, IgxPivotNumericAggregate } from "igniteui-angular"
 
 @Component({
-  selector: 'app-pivot-datasource-sample',
-  styleUrls: ['./pivot-datasource-sample.component.scss'],
-  templateUrl: './pivot-datasource-sample.component.html'
+    selector: 'app-pivot-datasource-sample',
+    styleUrls: ['./pivot-datasource-sample.component.scss'],
+    templateUrl: './pivot-datasource-sample.component.html'
 })
 export class PivotDatasourceSampleComponent {
-    public data = DATA;
+    public data = DATA_TO_ANALYZE;
     public pivotConfigHierarchy: IPivotConfiguration = {
         columns: [
-            {
 
-                memberName: 'Product',
-                memberFunction: (data) => data.Product.Name,
+            {
+                memberName: 'Region',
+                memberFunction: (data) => data.Region,
                 enabled: true
             }
-            
         ],
         rows: [
             {
-                memberName: 'Seller',
-                memberFunction: (data) => data.Seller.Name,
+
+                memberName: 'Item',
+                memberFunction: (data) => data.Item,
                 enabled: true
             }
         ],
         values: [
             {
-                member: 'NumberOfUnits',
+                member: 'Units',
                 aggregate: {
                     aggregator: IgxPivotNumericAggregate.sum,
-                    key: 'sum',
-                    label: 'Sum'
+                    key: 'Amount',
+                    label: 'Total'
+                },
+                enabled: true
+
+            },
+            {
+                member: 'Date',
+                aggregate: {
+                    aggregator: IgxPivotDateAggregate.latest,
+                    key: 'As Of',
+                    label: 'Latest'
                 },
                 enabled: true
 
             }
         ],
-        filters: []
+        filters: [
+            {
+                memberName: 'Rep',
+                memberFunction: (data) => data.Rep,
+                enabled: true
+            }
+        ]
     };
 }
