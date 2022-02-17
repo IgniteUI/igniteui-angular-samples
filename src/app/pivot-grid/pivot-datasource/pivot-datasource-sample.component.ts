@@ -15,7 +15,6 @@ export class PivotDatasourceSampleComponent {
 
             {
                 memberName: 'Region',
-                memberFunction: (data) => data.Region,
                 enabled: true
             }
         ],
@@ -23,7 +22,6 @@ export class PivotDatasourceSampleComponent {
             {
 
                 memberName: 'Item',
-                memberFunction: (data) => data.Item,
                 enabled: true
             }
         ],
@@ -52,7 +50,6 @@ export class PivotDatasourceSampleComponent {
         filters: [
             {
                 memberName: 'Rep',
-                memberFunction: (data) => data.Rep,
                 enabled: true
             }
         ]
