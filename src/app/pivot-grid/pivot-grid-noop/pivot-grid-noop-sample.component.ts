@@ -53,7 +53,8 @@ export class PivotGridNoopSampleComponent implements AfterViewInit {
                     key: 'sum',
                     label: 'Sum'
                 },
-                enabled: true
+                enabled: true,
+                formatter: (value) => value ? value : 0
             }
         ],
         filters: null
