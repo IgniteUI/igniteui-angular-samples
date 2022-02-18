@@ -1,10 +1,7 @@
-<igx-pivot-grid
-    #grid1
-    [data]="data"
-    [height]="'600px'"
-    [pivotConfiguration]="pivotConfig"
-    [rowSelection]="'single'"
-    [columnSelection]="'single'"
-    [superCompactMode]="true"
-    [defaultExpandState]='true'>
-</igx-pivot-grid>
+<div class="pivot-container">
+    <igx-pivot-grid #grid1 [data]="data" [height]="'850px'" [pivotConfiguration]="pivotConfig" [rowSelection]="'single'"
+        [columnSelection]="'single'" [superCompactMode]="true" [defaultExpandState]='true'>
+    </igx-pivot-grid>
+    <igx-pivot-data-selector [grid]="grid1" displayDensity="compact">
+    </igx-pivot-data-selector>
+</div>

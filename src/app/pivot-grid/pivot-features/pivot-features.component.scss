@@ -1,6 +1,7 @@
 :host {
-    display: block;
     padding: 8px;
+    display: flex;
+    flex-direction: column;
 
     ::ng-deep {
         .upFontValue {
@@ -18,6 +19,22 @@
         .downFontAmountofSale {
             color: yellow;
         }
+
+        igx-pivot-data-selector {
+            border: 1px solid hsla(var(--igx-grays-200));
+            margin: 0 8px;
+        }
     }
-    
+
+}
+
+igx-pivot-grid {
+    flex: 1;
+}
+
+.pivot-container {
+    display: flex;
+    align-items: flex-start;
+    flex: 1 1 auto;
+    order: 0;
 }

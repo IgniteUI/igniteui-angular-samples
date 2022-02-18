@@ -60,6 +60,7 @@ export class PivotFeaturesComponent {
                 memberFunction: () => 'All Products',
                 memberName: 'AllProducts',
                 enabled: true,
+                width: "150px",
                 childLevel: {
                     memberFunction: (data) => data.Product.Name,
                     memberName: 'ProductCategory',
@@ -68,6 +69,7 @@ export class PivotFeaturesComponent {
             },
             {
                 memberName: 'City',
+                width: "150px",
                 memberFunction: (data) => data.Seller.City,
                 enabled: true
             }
