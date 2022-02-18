@@ -11,7 +11,7 @@ export const DATA = [
                     { 'SellerName': 'Stanley', 'Austria': 400, 'Germany': 240, 'Bulgaria': 282, ' USA': 330 },
                     { 'SellerName': 'Elisa', 'USA': 296, 'Uruguay': 530, 'France': 430, 'Germany': 230 },
                     { 'SellerName': 'John', 'France': 361, 'USA': 240, 'Bulgaria': 190, 'Uruguay': 90 },
-                    { 'SellerName': 'Larry', 'Uruguay': 456, 'France': 100, 'Austria': 70, 'Bulgaria': 210 },
+                    { 'SellerName': 'Larry', 'Uruguay': 456, 'France': 100, 'Austria': 70, 'Bulgaria': 210 }
                 ]
             }
         ],
@@ -28,7 +28,7 @@ export const DATA = [
                         'AllSeller_records': [
                             { 'SellerName': 'David', 'USA': 293 },
                             { 'SellerName': 'Stanley', 'USA': 330, 'Austria': 400 },
-                            { 'SellerName': 'Larry', 'France': 100, 'Bulgaria': 210 },
+                            { 'SellerName': 'Larry', 'France': 100, 'Bulgaria': 210 }
                         ]
                     }
                 ]
@@ -71,7 +71,7 @@ export const DATA = [
                             { 'SellerName': 'Elisa', 'USA': 296, 'Uruguay': 530, 'France': 430, 'Germany': 230 },
                             { 'SellerName': 'Lydia', 'Bulgaria': 220 },
                             { 'SellerName': 'Larry', 'Uruguay': 456, 'Austria': 70 },
-                            { 'SellerName': 'Stanley', 'Germany': 240, 'Bulgaria': 282 },
+                            { 'SellerName': 'Stanley', 'Germany': 240, 'Bulgaria': 282 }
                         ]
                     }
                 ]
