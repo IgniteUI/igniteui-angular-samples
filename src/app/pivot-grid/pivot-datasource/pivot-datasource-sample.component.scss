@@ -6,6 +6,10 @@
     margin-right: 10px;
 }
 
+.flex-container div:nth-child(1) {
+    z-index: 0;
+}
+
 :host {
     display: block;
     padding: 8px;
