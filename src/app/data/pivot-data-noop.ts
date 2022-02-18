@@ -6,14 +6,14 @@ export const DATA = [
                 'AllSeller': 'All Sellers',
                 'USA': 829, 'Uruguay': 524, 'Bulgaria': 282, 'France': 701, 'Germany': 340, 'Austria': 920,
                 'AllSeller_records': [
-                    { 'SellerName': 'David', 'USA': 293, },
+                    { 'SellerName': 'David', 'USA': 293 },
                     { 'SellerName': 'George', 'France': 240 },
                     { 'SellerName': 'Peter', 'Germany': 120 },
                     { 'SellerName': 'Tobias', 'Austria': 400 },
                     { 'SellerName': 'Lydia', 'Uruguay': 68 },
                     { 'SellerName': 'Elisa', 'USA': 296 },
                     { 'SellerName': 'Martin', 'France': 361 },
-                    { 'SellerName': 'Fischer', 'Germany': 240, },
+                    { 'SellerName': 'Fischer', 'Germany': 240 },
                     { 'SellerName': 'Maximilian', 'Austria': 270 },
                     { 'SellerName': 'Larry', 'Uruguay': 456 },
                     { 'SellerName': 'Stanley', 'Bulgaria': 282 },
@@ -38,7 +38,7 @@ export const DATA = [
                             { 'SellerName': 'Tobias', 'Austria': 400 }
                         ]
                     }
-                ],
+                ]
             },
             {
                 'ProductCategory': 'Bikes',
@@ -57,7 +57,7 @@ export const DATA = [
                             { 'SellerName': 'Lydia', 'Uruguay': 68 },
                             { 'SellerName': 'Martin', 'France': 361 },
                             { 'SellerName': 'Peter', 'Germany': 120 },
-                            { 'SellerName': 'Maximilian', 'Austria': 270 },
+                            { 'SellerName': 'Maximilian', 'Austria': 270 }
                         ]
                     }
                 ]
@@ -94,7 +94,7 @@ export const DATA = [
                         'AllSeller_records': [
                             { 'SellerName': 'John', 'USA': 240 },
                             { 'SellerName': 'George', 'France': 240 },
-                            { 'SellerName': 'Lukas', 'Austria': 250 },
+                            { 'SellerName': 'Lukas', 'Austria': 250 }
                         ]
                     }
                 ]
