@@ -1,6 +1,8 @@
 <div class="flex-container">
     <div>
-        <igx-pivot-grid #grid1 [data]="data" [pivotConfiguration]="pivotConfigHierarchy" height="500px">
+        <igx-pivot-grid #grid1 [data]="data" [pivotConfiguration]="pivotConfigHierarchy" height="500px"
+            [rowSelection]="'single'" [columnSelection]="'single'" [superCompactMode]="true"
+            [defaultExpandState]='true'>
         </igx-pivot-grid>
     </div>
     <div>

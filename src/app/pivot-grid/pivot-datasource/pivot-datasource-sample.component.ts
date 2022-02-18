@@ -54,7 +54,8 @@ export class PivotDatasourceSampleComponent {
         ],
         filters: [
             {
-                memberName: 'Month Name',
+                memberName: 'Month',
+                memberFunction: (data) => data['Month Name'],
                 enabled: true
             }
         ]
