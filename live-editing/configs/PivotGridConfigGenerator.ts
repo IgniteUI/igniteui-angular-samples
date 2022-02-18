@@ -6,7 +6,8 @@ import {
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class PivotGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
-        IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive'
+        IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive',
+        PivotDataService: '../../src/app/services/pivotRemoteData.service'
     };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -29,6 +30,17 @@ export class PivotGridConfigGenerator implements IConfigGenerator {
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxPivotGridModule']
             }),
             component: 'PivotFeaturesComponent'
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/pivot-data-noop.ts', '/src/app/services/pivotRemoteData.service.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPivotGridModule', 'PivotGridNoopSampleComponent', 'IgxPreventDocumentScrollModule', 'PivotDataService'],
+                ngDeclarations: ['PivotGridNoopSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxPivotGridModule'],
+                ngProviders: ['PivotDataService']
+            }),
+            component: 'PivotGridNoopSampleComponent'
         }));
 
         return configs;
