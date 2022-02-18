@@ -89,8 +89,8 @@ export class PivotFeaturesComponent {
                 }],
                 enabled: true,
                 styles: {
-                    upFontValue: (rowData: any, columnKey: any): boolean => rowData[columnKey] > 300,
-                    downFontValue: (rowData: any, columnKey: any): boolean => rowData[columnKey] <= 300
+                    upFontValue: (rowData: any, columnKey: any): boolean => rowData[columnKey] > 150,
+                    downFontValue: (rowData: any, columnKey: any): boolean => rowData[columnKey] <= 150
                 },
                 formatter: (value) => value ? '$' + parseFloat(value).toFixed(3) : undefined
             },
@@ -116,11 +116,7 @@ export class PivotFeaturesComponent {
                     label: 'Maximum of Sale'
                 }],
                 enabled: true,
-                dataType: 'currency',
-                styles: {
-                    upFontAmountofSale: (rowData: any, columnKey: any): boolean => rowData[columnKey] > 50,
-                    downFontAmountofSale: (rowData: any, columnKey: any): boolean => rowData[columnKey] <= 50
-                }
+                dataType: 'currency'
             }
         ],
         filters: [

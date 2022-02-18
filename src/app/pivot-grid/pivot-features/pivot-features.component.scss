@@ -5,19 +5,11 @@
 
     ::ng-deep {
         .upFontValue {
-            color: lightgreen;
+            color: hsla(var(--igx-success-500));
         }
 
         .downFontValue {
-            color: lightcoral;
-        }
-
-        .upFontAmountofSale {
-            color: skyblue;
-        }
-
-        .downFontAmountofSale {
-            color: yellow;
+            color: hsla(var(--igx-error-500));
         }
 
         igx-pivot-data-selector {
