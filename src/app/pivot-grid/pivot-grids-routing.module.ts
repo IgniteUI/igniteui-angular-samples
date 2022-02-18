@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PivotGridBasicSampleComponent } from './pivot-basic-sample/pivot-grid-basic-sample.component';
 import { PivotDatasourceSampleComponent } from './pivot-datasource/pivot-datasource-sample.component';
+import { PivotGridNoopSampleComponent } from './pivot-grid-noop/pivot-grid-noop-sample.component';
 import { pivotGridsRoutesData } from './pivot-grid-routes-data';
 // tslint:enable:max-line-length
 
@@ -16,6 +17,11 @@ export const gridsRoutes: Routes = [
         component: PivotDatasourceSampleComponent,
         data: pivotGridsRoutesData['pivot-grid-datasource'],
         path: 'pivot-grid-datasource'
+    },
+    {
+        component: PivotGridNoopSampleComponent,
+        data: pivotGridsRoutesData['pivot-grid-noop'],
+        path: 'pivot-grid-noop'
     }
 
 ];

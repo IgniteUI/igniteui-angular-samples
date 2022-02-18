@@ -7,12 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { IgxPivotGridModule } from 'igniteui-angular';
 import { PivotGridBasicSampleComponent } from './pivot-basic-sample/pivot-grid-basic-sample.component';
 import { PivotDatasourceSampleComponent } from './pivot-datasource/pivot-datasource-sample.component';
+import { PivotGridNoopSampleComponent } from './pivot-grid-noop/pivot-grid-noop-sample.component';
 import { PivotGridsRoutingModule } from './pivot-grids-routing.module';
 
 @NgModule({
     declarations: [
         PivotGridBasicSampleComponent,
-        PivotDatasourceSampleComponent
+        PivotDatasourceSampleComponent,
+        PivotGridNoopSampleComponent
     ],
     imports: [
         CommonModule,
