@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PivotGridBasicSampleComponent } from './pivot-basic-sample/pivot-grid-basic-sample.component';
-import { PivotDatasourceSampleComponent } from './pivot-datasource/pivot-datasource-sample.component';
+import { PivotDataSelectorSampleComponent } from './pivot-datasource/pivot-data-selector-sample.component';
 import { PivotFeaturesComponent } from './pivot-features/pivot-features.component';
 import { PivotGridNoopSampleComponent } from './pivot-grid-noop/pivot-grid-noop-sample.component';
 import { pivotGridsRoutesData } from './pivot-grid-routes-data';
@@ -20,7 +20,7 @@ export const gridsRoutes: Routes = [
         path: 'pivot-grid-features'
     },
     {
-        component: PivotDatasourceSampleComponent,
+        component: PivotDataSelectorSampleComponent,
         data: pivotGridsRoutesData['pivot-grid-datasource'],
         path: 'pivot-grid-datasource'
     },
