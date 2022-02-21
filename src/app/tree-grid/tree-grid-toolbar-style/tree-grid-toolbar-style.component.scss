@@ -14,10 +14,10 @@ $dark-grid-toolbar-theme: igx-grid-toolbar-theme(
 
 :host {
     ::ng-deep {
-        @include igx-grid-toolbar($dark-grid-toolbar-theme);
+        @include grid-toolbar($dark-grid-toolbar-theme);
 
         .igx-grid-toolbar__actions {
-            @include igx-button($dark-button-theme);
+            @include button($dark-button-theme);
 
             .igx-button--outlined {
                 margin-left: 0.5rem;

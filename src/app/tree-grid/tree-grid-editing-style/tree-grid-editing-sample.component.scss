@@ -39,11 +39,11 @@ $input-theme: igx-input-group-theme(
     padding: 3px 10px;
     ::ng-deep {
         .igx-grid__tbody{
-            @include igx-input-group($input-theme);
+            @include input-group($input-theme);
         }
-        @include igx-checkbox($checkbox-theme);
-        @include igx-calendar($datepicker-theme);
-        @include igx-grid($grid-theme);
+        @include checkbox($checkbox-theme);
+        @include calendar($datepicker-theme);
+        @include grid($grid-theme);
     }
 }
 

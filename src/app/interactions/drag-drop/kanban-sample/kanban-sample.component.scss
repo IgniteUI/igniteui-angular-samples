@@ -57,7 +57,7 @@ igx-card {
             align-self: flex-start;
 
             .state-title {
-                @include igx-type-style($material-type-scale, 'subtitle-1') {
+                @include type-style($material-type-scale, 'subtitle-1') {
                     font-weight: 600;
                     margin: 0;
                 };

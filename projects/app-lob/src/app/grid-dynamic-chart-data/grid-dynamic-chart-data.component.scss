@@ -56,7 +56,7 @@
     }
 
     .analytics-btn {
-        @include igx-button(igx-button-theme($palette: $fluent-excel-palette,
+        @include button(igx-button-theme($palette: $fluent-excel-palette,
                 $foreground: #fff,
                 $background: #335e3b,
                 $hover-background: #459a55,

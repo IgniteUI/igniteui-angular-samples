@@ -22,7 +22,7 @@ body {
 }
 
 .light-theme {
-    @include igx-light-theme($palette);
+    @include light-theme($palette);
 }
 
 $dark-grid-theme: grid-theme(

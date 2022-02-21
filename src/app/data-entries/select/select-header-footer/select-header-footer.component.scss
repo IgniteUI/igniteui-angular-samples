@@ -85,5 +85,5 @@ $custom-button-group: igx-button-group-theme(
 );
 
 :host ::ng-deep {
-    @include igx-button-group($custom-button-group);
+    @include button-group($custom-button-group);
 }

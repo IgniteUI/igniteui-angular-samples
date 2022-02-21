@@ -46,7 +46,7 @@ $my-card: igx-card-theme(
 	$content-text-color: igx-color($default-palette, 'grays', 900),
 );
 
-@include igx-card($my-card);
+@include card($my-card);
 
 .selected-card {
 	border: 2px solid igx-color($default-palette, 'primary', 400);

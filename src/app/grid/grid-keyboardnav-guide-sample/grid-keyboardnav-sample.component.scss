@@ -8,7 +8,7 @@ $custom-checkbox-theme: igx-checkbox-theme(
 );
 
 .list-sample ::ng-deep {
-    @include igx-checkbox($custom-checkbox-theme);
+    @include checkbox($custom-checkbox-theme);
 }
 
 .sample {

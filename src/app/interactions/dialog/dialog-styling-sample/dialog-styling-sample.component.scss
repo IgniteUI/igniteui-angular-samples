@@ -24,10 +24,10 @@ $dark-button: igx-button-theme(
     display: block;
     padding: 16px;
 
-    // @include igx-css-vars($my-dialog-theme);
+    // @include css-vars($my-dialog-theme);
 
     // .dialog-container {
-    //     @include igx-css-vars($dark-button);
+    //     @include css-vars($dark-button);
     // }
 
     /* Using Theme Overrides to provide IE 11 support.
@@ -36,10 +36,10 @@ $dark-button: igx-button-theme(
      * delete this section and use the `igx-css-vars` mixin as shown above.
     **/
     ::ng-deep {
-        @include igx-dialog($my-dialog-theme);
+        @include dialog($my-dialog-theme);
 
         .dialog-container {
-            @include igx-button($dark-button);
+            @include button($dark-button);
         }
     }
 }
