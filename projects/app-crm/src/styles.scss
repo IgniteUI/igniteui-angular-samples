@@ -2,7 +2,7 @@
 @use 'variables' as *;
 @use 'app-layout';
 @include core();
-@include _typography();
+@include typography();
 @include theme(
     $palette: $palette,
     $schema: $schema

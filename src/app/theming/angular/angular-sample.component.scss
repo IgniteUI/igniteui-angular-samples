@@ -99,7 +99,7 @@ igx-expansion-panel-body {
     height: auto;
     min-height: 100%;
 
-    @include _typography($font-family: $material-typeface, $type-scale: $material-type-scale);
+    @include typography($font-family: $material-typeface, $type-scale: $material-type-scale);
 
     &.light {
         @include color-classes($palette: $igx-light-palette, $prop: "background", $prefix: "bg");

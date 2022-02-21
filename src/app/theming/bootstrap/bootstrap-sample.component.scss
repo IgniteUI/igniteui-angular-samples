@@ -34,7 +34,7 @@ $dark-secondary: color($custom-dark-palette, "secondary");
     height: auto;
     min-height: 100%;
 
-    @include _typography($font-family: $bootstrap-typeface, $type-scale: $bootstrap-type-scale);
+    @include typography($font-family: $bootstrap-typeface, $type-scale: $bootstrap-type-scale);
 
     &.light {
         @include color-classes(
