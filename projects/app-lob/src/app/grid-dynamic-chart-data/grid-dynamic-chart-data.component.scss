@@ -5,8 +5,8 @@
 // }
 
 @mixin scrollbar($scrollbar-width, $scrollbar-height) {
-    $scrollbar-track: hexrgba(igx-color($color: 'grays', $variant: 200));
-    $scrollbar-thumb: hexrgba(igx-color($color: 'grays', $variant: 400));
+    $scrollbar-track: hexrgba(color($color: 'grays', $variant: 200));
+    $scrollbar-thumb: hexrgba(color($color: 'grays', $variant: 400));
 
     ::-webkit-scrollbar {
         width: $scrollbar-width;
