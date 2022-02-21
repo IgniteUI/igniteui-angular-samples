@@ -10,15 +10,15 @@ body {
     margin: 0;
 }
 
-@include igx-core();
-@include igx-typography();
-@include igx-theme(
+@include core();
+@include _typography();
+@include theme(
     $palette: $palette,
     $schema: $schema
 );
 
 :root {
-    @include igx-palette-vars($palette);
+    @include palette-vars($palette);
 }
 
 .light-theme {
@@ -28,17 +28,17 @@ body {
 .dark-theme {
     background: #333;
     color: #fff;
-    @include igx-dark-theme(
+    @include dark-theme(
         $palette: $green-palette
     );
 
     .grid-chart-contextmenu-wrapper {
-        @include igx-fluent-dark-theme($fluent-excel-palette);
+        @include fluent-dark-theme($fluent-excel-palette);
     }
 }
 
 .fin-dark-theme {
-    @include igx-dark-theme($green-palette);
+    @include dark-theme($green-palette);
     background: #333;
 
     ::-moz-placeholder {

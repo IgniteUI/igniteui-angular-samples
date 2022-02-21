@@ -18,20 +18,20 @@ $saturations: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400
     $contrast: ();
     $result: ();
     @each $saturation in $saturations {
-        $shade: map-merge($shade, ($saturation: igx-color($palette, $color, $saturation)));
-        $contrast: map-merge($contrast, ($saturation: igx-color($palette, $color, #{$saturation}-contrast)));
+        $shade: map-merge($shade, ($saturation: color($palette, $color, $saturation)));
+        $contrast: map-merge($contrast, ($saturation: color($palette, $color, #{$saturation}-contrast)));
         $result: map-merge($shade, (contrast: $contrast));
     }
 
     @return $result;
 }
 
-$igx-light-palette: igx-palette(
+$igx-light-palette: palette(
     $primary: #09f,
     $secondary: #e41c77
 );
 
-$custom-dark-palette: igx-palette(
+$custom-dark-palette: palette(
     $primary: #011627,
     $secondary: #72da67,
     $grays: #fff,
@@ -75,7 +75,7 @@ mat-toolbar div {
 
 .card-panel {
     margin: 8px 16px;
-    box-shadow: igx-elevation($elevation: 2);
+    box-shadow: elevation($elevation: 2);
 }
 
 .mat-slider {
@@ -99,63 +99,63 @@ igx-expansion-panel-body {
     height: auto;
     min-height: 100%;
 
-    @include igx-typography($font-family: $material-typeface, $type-scale: $material-type-scale);
+    @include _typography($font-family: $material-typeface, $type-scale: $material-type-scale);
 
     &.light {
-        @include igx-color-classes($palette: $igx-light-palette, $prop: "background", $prefix: "bg");
+        @include color-classes($palette: $igx-light-palette, $prop: "background", $prefix: "bg");
 
-        background: igx-color($igx-light-palette, 'surface');
+        background: color($igx-light-palette, 'surface');
 
         #Path1 {
-            fill: igx-color($igx-light-palette, 'secondary');
+            fill: color($igx-light-palette, 'secondary');
         }
 
         #Path2 {
-            stroke: igx-color($igx-light-palette, 'secondary');
+            stroke: color($igx-light-palette, 'secondary');
             stroke-width: "0.8";
         }
 
         .primary {
-            color: igx-color($igx-light-palette, 'primary');
+            color: color($igx-light-palette, 'primary');
             margin-left: 32px;
         }
     }
 
     &.dark {
-        @include igx-color-classes($palette: $custom-dark-palette, $prop: "background", $prefix: "bg");
+        @include color-classes($palette: $custom-dark-palette, $prop: "background", $prefix: "bg");
 
-        background: igx-color($custom-dark-palette, 'surface');
+        background: color($custom-dark-palette, 'surface');
 
         #Path1 {
-            fill: igx-color($custom-dark-palette, 'secondary');
+            fill: color($custom-dark-palette, 'secondary');
         }
 
         #Path2 {
-            stroke: igx-color($custom-dark-palette, 'secondary');
+            stroke: color($custom-dark-palette, 'secondary');
             stroke-width: "0.8";
         }
 
         ::ng-deep {
             .primary {
-                color: igx-color($custom-dark-palette, 'primary', 100);
+                color: color($custom-dark-palette, 'primary', 100);
                 margin-left: 32px;
             }
 
             .mat-step-header .mat-step-icon-selected {
-                background-color: igx-color($custom-dark-palette, 'secondary');
+                background-color: color($custom-dark-palette, 'secondary');
             }
 
             .mat-accent .mat-slider-thumb,
             .mat-accent .mat-slider-track-fill {
-                background-color: igx-color($custom-dark-palette, 'primary', 100);
+                background-color: color($custom-dark-palette, 'primary', 100);
             }
 
             .mat-stepper-horizontal {
-                background: igx-color($custom-dark-palette, 'surface');
+                background: color($custom-dark-palette, 'surface');
             }
 
             igx-expansion-panel h5 {
-                color: igx-color($custom-dark-palette, 'grays', 800);
+                color: color($custom-dark-palette, 'grays', 800);
             }
         }
     }
@@ -163,26 +163,26 @@ igx-expansion-panel-body {
     &.light,
     &.dark {
         .success {
-            color: igx-color($igx-light-palette, "success");
+            color: color($igx-light-palette, "success");
         }
 
         .error {
-            color: igx-color($igx-light-palette, "error");
+            color: color($igx-light-palette, "error");
         }
 
         .warning {
-            color: igx-color($igx-light-palette, "warn");
+            color: color($igx-light-palette, "warn");
         }
     }
 }
 
 ::ng-deep {
     @include mat.core($custom-typography);
-    @include igx-theme($igx-light-palette);
+    @include theme($igx-light-palette);
     @include mat.all-component-themes($custom-mat-light-theme);
 
     .dark {
-        @include igx-dark-theme($custom-dark-palette);
+        @include dark-theme($custom-dark-palette);
         @include mat.all-component-themes($custom-mat-dark-theme);
     }
 }

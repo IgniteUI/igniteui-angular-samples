@@ -10,22 +10,22 @@ body {
     margin: 0;
 }
 
-@include igx-core();
-@include igx-typography();
-@include igx-theme(
+@include core();
+@include _typography();
+@include theme(
     $palette: $palette,
     $schema: $schema
 );
 
 :root {
-    @include igx-palette-vars($palette);
+    @include palette-vars($palette);
 }
 
 .light-theme {
     @include igx-light-theme($palette);
 }
 
-$dark-grid-theme: igx-grid-theme(
+$dark-grid-theme: grid-theme(
 	$palette: $green-palette,
 	$schema: $dark-schema,
 	$row-selected-background: #1f3823,
@@ -41,7 +41,7 @@ $dark-grid-theme: igx-grid-theme(
 
 .dark-theme {
     .grid-chart-contextmenu-wrapper {
-        @include igx-fluent-dark-theme($fluent-excel-palette);
+        @include fluent-dark-theme($fluent-excel-palette);
     }
 
     .actionPane {
@@ -59,6 +59,6 @@ $dark-grid-theme: igx-grid-theme(
 .fin-dark-theme {
 	background: #333;
 	color: #fff;
-	@include igx-dark-theme($palette: $green-palette);
-	@include igx-css-vars($dark-grid-theme);
+	@include dark-theme($palette: $green-palette);
+	@include css-vars($dark-grid-theme);
 }

@@ -1,6 +1,6 @@
 @use '../../../../variables' as *;
 
-$custom-navbar-theme: igx-navbar-theme(
+$custom-navbar-theme: navbar-theme(
     $text-color: #151515,
     $background: #dedede,
     $idle-icon-color: #151515,
@@ -8,7 +8,7 @@ $custom-navbar-theme: igx-navbar-theme(
 );
 
 // :host {
-//     @include igx-css-vars($custom-navbar-theme);
+//     @include css-vars($custom-navbar-theme);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -17,6 +17,6 @@ $custom-navbar-theme: igx-navbar-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-navbar($custom-navbar-theme);
+    @include navbar($custom-navbar-theme);
 }
 
