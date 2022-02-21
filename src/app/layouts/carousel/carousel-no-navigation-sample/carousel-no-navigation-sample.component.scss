@@ -14,7 +14,7 @@
         position: relative;
         display: flex;
         background: rgba(igx-color($palette: $palette, $color: 'surface'), .54);
-        color: igx-contrast-color($color: 'surface');
+        color: contrast-color($color: 'surface');
         padding: 1rem;
         border-bottom: transparent 1px solid;
         backdrop-filter: blur(10px);
@@ -34,14 +34,14 @@
         .subTitle{
             font-size: 1rem;
             font-weight: 600;
-            color: igx-color($color: 'grays', $variant: 600);
+            color: color($color: 'grays', $variant: 600);
         }
     }
 
     .price {
         padding-left: .5rem;
         font-size: 1.5rem;
-        color: igx-color($color: secondary);
+        color: color($color: secondary);
     }
 
     igx-list {

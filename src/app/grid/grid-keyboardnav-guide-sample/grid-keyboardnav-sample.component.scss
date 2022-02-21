@@ -1,8 +1,8 @@
 @use '../../../variables' as *;
 
-$my-color: igx-color($color: 'success');
+$my-color: color($color: 'success');
 
-$custom-checkbox-theme: igx-checkbox-theme(
+$custom-checkbox-theme: checkbox-theme(
     $fill-color: $my-color,
     $border-radius: 10px
 );
@@ -39,7 +39,7 @@ $custom-checkbox-theme: igx-checkbox-theme(
             }
 
             height: 450px;
-            box-shadow: igx-elevation($elevation: 2);
+            box-shadow: elevation($elevation: 2);
         }
 
         .empty-list {

@@ -8,8 +8,8 @@ igx-card {
 
     &.drag-ghost {
         transform: scale(1.05);
-        box-shadow: igx-elevation($elevation: 24);
-        color: igx-color($color: 'secondary', $variant: 300);
+        box-shadow: elevation($elevation: 24);
+        color: color($color: 'secondary', $variant: 300);
     }
 
     &.invisible {
@@ -42,7 +42,7 @@ igx-card {
         max-width: rem(320px);
         min-width: rem(320px);
         padding: 0 rem(16px);
-        background-color: igx-color($color: 'grays', $variant: 100);
+        background-color: color($color: 'grays', $variant: 100);
         border-radius: rem(8px);
         border: 1px solid igx-color($color: 'grays', $variant: 200);
         margin: 0 rem(12px);
@@ -71,7 +71,7 @@ igx-card {
         }
 
         &.active {
-            background-color: igx-color($color: 'primary', $variant: 100);
+            background-color: color($color: 'primary', $variant: 100);
         }
     }
 }

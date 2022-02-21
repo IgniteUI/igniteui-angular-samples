@@ -5,7 +5,7 @@ igx-buttongroup{
     width: 200px;
 }
 
-$custom-button-group: igx-button-group-theme(
+$custom-button-group: button-group-theme(
     $item-text-color: #fdfdfd,
     $item-background: #2f4d6a,
     $item-hover-text-color: #fdfdfd,

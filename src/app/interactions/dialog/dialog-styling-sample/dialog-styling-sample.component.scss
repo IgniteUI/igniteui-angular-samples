@@ -8,14 +8,14 @@ igx-icon {
     margin-right: 8px;
 }
 
-$my-dialog-theme: igx-dialog-theme(
+$my-dialog-theme: dialog-theme(
     $background: #011627,
     $title-color:  #ecaa53,
     $message-color:  #fefefe,
     $border-radius: .3,
 );
 
-$dark-button: igx-button-theme(
+$dark-button: button-theme(
     $background: #ecaa53,
     $foreground: #011627,
 );
