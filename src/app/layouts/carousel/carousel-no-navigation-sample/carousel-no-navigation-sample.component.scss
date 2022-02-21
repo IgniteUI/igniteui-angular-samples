@@ -13,7 +13,7 @@
     .promo-price {
         position: relative;
         display: flex;
-        background: rgba(igx-color($palette: $palette, $color: 'surface'), .54);
+        background: rgba(color($palette: $palette, $color: 'surface'), .54);
         color: contrast-color($color: 'surface');
         padding: 1rem;
         border-bottom: transparent 1px solid;
