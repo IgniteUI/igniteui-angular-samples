@@ -105,7 +105,7 @@ $custom-badge-theme: badge-theme(
     }
 
     .analytics-btn {
-        @include button(igx-button-theme($palette: $fluent-excel-palette,
+        @include button(button-theme($palette: $fluent-excel-palette,
                 $foreground: #fff,
                 $background: #335e3b,
                 $hover-background: #459a55,
