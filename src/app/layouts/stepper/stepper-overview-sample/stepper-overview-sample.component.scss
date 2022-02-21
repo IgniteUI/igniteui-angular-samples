@@ -49,7 +49,7 @@ $my-card: card-theme(
 @include card($my-card);
 
 .selected-card {
-	border: 2px solid igx-color($default-palette, 'primary', 400);
+	border: 2px solid color($default-palette, 'primary', 400);
 	position: relative;
 	overflow: initial;
 
@@ -72,7 +72,7 @@ $my-card: card-theme(
 
 	&:focus {
 		outline: none;
-		box-shadow: inset 0 0 0 1px igx-color($default-palette, 'primary', 400),
+		box-shadow: inset 0 0 0 1px color($default-palette, 'primary', 400),
 			0 5px 5px -3px rgba(0, 0, 0, 0.26),
 			0 8px 10px 1px rgba(0, 0, 0, 0.12),
 			0 3px 14px 2px rgba(0, 0, 0, 0.08);

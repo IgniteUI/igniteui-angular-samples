@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: center;
     background: color($color: 'grays', $variant: 100);
-    border: 2px dashed igx-color($color: 'grays', $variant: 200);
+    border: 2px dashed color($color: 'grays', $variant: 200);
     border-radius: rem(8px);
     padding: rem(12px);
     height: 376px;
@@ -25,7 +25,7 @@
         width: rem(80px);
         height: rem(80px);
         margin-bottom: rem(24px);
-        border: 2px dashed igx-color($color: 'grays', $variant: 300);
+        border: 2px dashed color($color: 'grays', $variant: 300);
         border-radius: rem(8px);
         color: color($color: 'grays', $variant: 800);
 

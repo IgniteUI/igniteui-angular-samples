@@ -44,7 +44,7 @@ igx-card {
         padding: 0 rem(16px);
         background-color: color($color: 'grays', $variant: 100);
         border-radius: rem(8px);
-        border: 1px solid igx-color($color: 'grays', $variant: 200);
+        border: 1px solid color($color: 'grays', $variant: 200);
         margin: 0 rem(12px);
         overflow: auto;
 
