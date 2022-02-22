@@ -23,3 +23,8 @@ igx-pivot-grid {
     flex: 1 1 auto;
     order: 0;
 }
+
+.pivot-grid-wrapper {
+    position: relative;
+    z-index: 0;
+}

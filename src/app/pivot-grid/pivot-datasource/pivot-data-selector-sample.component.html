@@ -1,7 +1,8 @@
 <div class="pivot-container">
-    <igx-pivot-grid #grid1 [data]="data" [pivotConfiguration]="pivotConfigHierarchy" [height]="'850px'"
-        [rowSelection]="'single'" [columnSelection]="'single'" [superCompactMode]="true"
-        [defaultExpandState]='true'>
-    </igx-pivot-grid>
+    <div class="pivot-grid-wrapper">
+        <igx-pivot-grid #grid1 [data]="data" [pivotConfiguration]="pivotConfigHierarchy" [height]="'850px'" 
+            [superCompactMode]="true" [defaultExpandState]='true'>
+        </igx-pivot-grid>
+    </div>
     <igx-pivot-data-selector [grid]="grid1"></igx-pivot-data-selector>
 </div>

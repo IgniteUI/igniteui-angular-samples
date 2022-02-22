@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { GridColumnDataType, IgxPivotNumericAggregate, IPivotConfiguration } from "igniteui-angular";
+import { GridColumnDataType, IgxPivotDateDimension, IgxPivotNumericAggregate, IPivotConfiguration } from "igniteui-angular";
 import { SALES_DATA_NEW } from '../../data/salesDataNew';
 @Component({
     selector: 'app-pivot-data-selector-sample',
@@ -11,11 +11,23 @@ export class PivotDataSelectorSampleComponent {
 
     public pivotConfigHierarchy: IPivotConfiguration;
 
+    public dateDimension: IgxPivotDateDimension;
+
     constructor() {
+        this.dateDimension = new IgxPivotDateDimension({
+            memberName: 'Date',
+            enabled: true
+        }, {
+            months: true,
+            quarters: true,
+            years: true
+        });
+
         this.pivotConfigHierarchy = {
             columns: [
+
                 {
-                    memberName: 'Year',
+                    memberName: 'Country',
                     enabled: true
                 },
                 {
@@ -25,14 +37,7 @@ export class PivotDataSelectorSampleComponent {
                 }
             ],
             rows: [
-                {
-                    memberName: 'Country',
-                    enabled: true,
-                    childLevel: {
-                        memberName: 'Date',
-                        enabled: true
-                    }
-                }
+                this.dateDimension
             ],
             values: [
                 {
