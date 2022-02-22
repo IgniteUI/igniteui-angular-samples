@@ -3,7 +3,7 @@
 $black-color: #000000;
 $aqua-color: #00BFFF;
 
-$black-theme-palette: igx-palette($primary: $black-color, $secondary: $aqua-color, $grays: #fff);
+$black-theme-palette: palette($primary: $black-color, $secondary: $aqua-color, $grays: #fff);
 
 $_black-snackbar-schema: extend($dark-snackbar,
         (

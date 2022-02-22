@@ -1,10 +1,10 @@
 @use '../../../variables' as *;
 
-$text-color: igx-contrast-color($color: 'primary', $variant: 900);
-$background-color: igx-color($color: "primary", $variant: 900);
+$text-color: contrast-color($color: 'primary', $variant: 900);
+$background-color: color($color: "primary", $variant: 900);
 $border-yellow: #f2c43c;
 
-$custom-grid-theme: igx-grid-theme(
+$custom-grid-theme: grid-theme(
     $palette: $palette,
     $cell-selected-text-color: $text-color,
     $cell-active-border-color: $border-yellow,
@@ -14,7 +14,7 @@ $custom-grid-theme: igx-grid-theme(
 
 :host {
     ::ng-deep {
-        @include igx-grid($custom-grid-theme);
+        @include grid($custom-grid-theme);
     }
 }
 

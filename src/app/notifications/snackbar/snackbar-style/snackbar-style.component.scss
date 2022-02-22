@@ -1,6 +1,6 @@
 @use '../../../../variables' as *;
 
-$dark-snackbar: igx-snackbar-theme(
+$dark-snackbar: snackbar-theme(
     $text-color: #FFCD0F,
     $background: #292826,
     $button-color: #FFCD0F,
@@ -8,7 +8,7 @@ $dark-snackbar: igx-snackbar-theme(
 );
 
 // :host {
-//     @include igx-css-vars($dark-snackbar);
+//     @include css-vars($dark-snackbar);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -17,6 +17,6 @@ $dark-snackbar: igx-snackbar-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-snackbar($dark-snackbar);
+    @include snackbar($dark-snackbar);
 }
 

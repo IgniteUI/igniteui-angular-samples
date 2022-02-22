@@ -4,14 +4,14 @@ igx-linear-bar {
     margin-top: 20px;
 }
 
-$custom-theme: igx-progress-linear-theme(
+$custom-theme: progress-linear-theme(
     $track-color: #D3D3D3,
     $fill-color-default: #ECAA53,
     $text-color: #ECAA53
 );
 
 // :host {
-//     @include igx-css-vars($custom-theme);
+//     @include css-vars($custom-theme);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -20,5 +20,5 @@ $custom-theme: igx-progress-linear-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-progress-linear($custom-theme);
+    @include progress-linear($custom-theme);
 }

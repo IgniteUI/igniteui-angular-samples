@@ -5,7 +5,7 @@ igx-buttongroup{
     width: 200px;
 }
 
-$custom-button-group: igx-button-group-theme(
+$custom-button-group: button-group-theme(
     $item-text-color: #fdfdfd,
     $item-background: #2f4d6a,
     $item-hover-text-color: #fdfdfd,
@@ -18,7 +18,7 @@ $custom-button-group: igx-button-group-theme(
 );
 
 // :host {
-//   @include igx-css-vars($custom-button-group);
+//   @include css-vars($custom-button-group);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -27,6 +27,6 @@ $custom-button-group: igx-button-group-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-  @include igx-button-group($custom-button-group);
+  @include button-group($custom-button-group);
 }
 

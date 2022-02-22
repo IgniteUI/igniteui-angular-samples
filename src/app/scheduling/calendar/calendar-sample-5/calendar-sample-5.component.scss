@@ -1,6 +1,6 @@
 @use '../../../../variables' as *;
 
-$border-color: igx-color($color: grays, $variant: 300);
+$border-color: color($color: grays, $variant: 300);
 
 .calendar-wrapper {
     max-width: 500px;
