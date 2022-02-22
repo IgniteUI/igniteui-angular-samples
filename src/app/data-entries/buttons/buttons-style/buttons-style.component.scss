@@ -10,7 +10,7 @@
     margin-right: 16px;
 }
 
-$custom-button-theme: igx-button-theme(
+$custom-button-theme: button-theme(
     $foreground: #fdfdfd,
     $hover-foreground: #fdfdfd,
     $background: #345779,
@@ -21,7 +21,7 @@ $custom-button-theme: igx-button-theme(
 );
 
 // :host {
-//     @include igx-css-vars($custom-button-theme);
+//     @include css-vars($custom-button-theme);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -30,5 +30,5 @@ $custom-button-theme: igx-button-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-button($custom-button-theme);
+    @include button($custom-button-theme);
 }

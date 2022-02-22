@@ -1,20 +1,20 @@
 @use '../../../variables' as *;
 
-$custom-grid: igx-grid-theme(
+$custom-grid: grid-theme(
     $filtering-row-text-color: #292826,
     $filtering-row-background: #FFCD0F,
     $filtering-header-text-color: #292826,
     $filtering-header-background: #FFCD0F
 );
 
-$dark-input-group: igx-input-group-theme(
+$dark-input-group: input-group-theme(
     $box-background: #FFCD0F,
     $idle-text-color: #292826,
     $focused-text-color: #292826,
     $filled-text-color: #292826
 );
 
-$dark-button: igx-button-theme(
+$dark-button: button-theme(
     $background: #FFCD0F,
     $foreground: #292826,
     $hover-background: #292826,
@@ -23,10 +23,10 @@ $dark-button: igx-button-theme(
 
 :host {
      ::ng-deep {
-        @include igx-grid($custom-grid);
+        @include grid($custom-grid);
         .igx-grid__filtering-row {
-            @include igx-button($dark-button);
-            @include igx-input-group($dark-input-group);
+            @include button($dark-button);
+            @include input-group($dark-input-group);
             .igx-input-group__input::placeholder {
                 color: #292826;
             }

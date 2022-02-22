@@ -1,18 +1,18 @@
 @use '../../../variables' as *;
 
-$custom-theme: igx-grid-summary-theme(
+$custom-theme: grid-summary-theme(
     $background-color: #e0f3ff,
     $focus-background-color: rgba( #94d1f7, .3 ),
-    $label-color: igx-color($color: 'secondary'),
+    $label-color: color($color: 'secondary'),
     $result-color: black,
     $pinned-border-width: 2px,
     $pinned-border-style: dotted,
-    $pinned-border-color: igx-color($color: 'secondary')
+    $pinned-border-color: color($color: 'secondary')
 );
 
 :host {
     ::ng-deep {
-        @include igx-grid-summary($custom-theme);
+        @include grid-summary($custom-theme);
     }
     display: block;
     padding: 16px;

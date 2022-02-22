@@ -4,7 +4,7 @@ igx-time-picker {
     width: 400px;
 }
 
-$my-time-picker-theme: igx-time-picker-theme(
+$my-time-picker-theme: time-picker-theme(
   $text-color: #e4c8a5,
   $hover-text-color: #ECAA53,
   $selected-text-color: #ECAA53,
@@ -14,14 +14,14 @@ $my-time-picker-theme: igx-time-picker-theme(
   $background-color: #011627
 );
 
-$dark-button: igx-button-theme(
+$dark-button: button-theme(
     $foreground: #ECAA53,
     $hover-background: #ECAA53
 );
 
 // :host {
-//     @include igx-css-vars($my-time-picker-theme);
-//     @include igx-css-vars($dark-button);
+//     @include css-vars($my-time-picker-theme);
+//     @include css-vars($dark-button);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -30,7 +30,7 @@ $dark-button: igx-button-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-time-picker($my-time-picker-theme);
-    @include igx-button($dark-button);
+    @include time-picker($my-time-picker-theme);
+    @include button($dark-button);
 }
 

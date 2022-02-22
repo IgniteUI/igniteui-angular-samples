@@ -3,14 +3,14 @@
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-regular.css");
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-solid.css");
 
-$custom-theme: igx-grid-theme(
+$custom-theme: grid-theme(
     $pinned-border-width: 5px,
     $pinned-border-style: double,
     $pinned-border-color: #FFCD0F,
     $cell-active-border-color: #FFCD0F
 );
 
-@include igx-grid($custom-theme);
+@include grid($custom-theme);
 
 .header-icon {
     font-size: 1.1em;

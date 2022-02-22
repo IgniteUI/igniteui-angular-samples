@@ -5,7 +5,7 @@ igx-switch {
     margin-top: 24px;
 }
 
-$custom-switch-theme: igx-switch-theme(
+$custom-switch-theme: switch-theme(
     $thumb-on-color: #ECAA53,
     $track-on-color: #F0CB9C
 );
@@ -15,7 +15,7 @@ $custom-switch-theme: igx-switch-theme(
     flex-flow: column nowrap;
     padding: 16px;
 
-    // @include igx-css-vars($custom-switch-theme);
+    // @include css-vars($custom-switch-theme);
 
     /* Using Theme Overrides to provide IE 11 support.
      * NOTE: Theming using this approach will greatly increase the size
@@ -23,7 +23,7 @@ $custom-switch-theme: igx-switch-theme(
      * delete this section and use the `igx-css-vars` mixin as shown above.
     **/
     ::ng-deep {
-        @include igx-switch($custom-switch-theme);
+        @include switch($custom-switch-theme);
     }
 }
 

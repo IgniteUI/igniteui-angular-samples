@@ -4,7 +4,7 @@
     padding: 16px;
 }
 
-$custom-grid-theme: igx-grid-theme(
+$custom-grid-theme: grid-theme(
     $row-selected-background: #011627,
     $row-selected-text-color: #ECAA53,
     $row-selected-hover-background: #011627,
@@ -13,7 +13,7 @@ $custom-grid-theme: igx-grid-theme(
 );
 
 // :host {
-//     @include igx-css-vars($custom-grid-theme);
+//     @include css-vars($custom-grid-theme);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -22,6 +22,6 @@ $custom-grid-theme: igx-grid-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-grid($custom-grid-theme);
+    @include grid($custom-grid-theme);
 }
 

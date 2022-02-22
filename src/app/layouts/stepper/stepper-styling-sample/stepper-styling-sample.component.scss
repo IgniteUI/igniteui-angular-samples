@@ -1,7 +1,7 @@
 // Stepper theme
 @use '../../../../variables' as *;
 
-$stepper-theme: igx-stepper-theme(
+$stepper-theme: stepper-theme(
 	$indicator-background: #fff,
 
 	$current-indicator-background: #f6cd28,
@@ -24,7 +24,7 @@ $stepper-theme: igx-stepper-theme(
 );
 
 :host {
-	// @include igx-css-vars($stepper-theme);
+	// @include css-vars($stepper-theme);
 
 	/* Using Theme Overrides to provide IE 11 support.
 	 * NOTE: Theming using this approach will greatly increase the size
@@ -32,7 +32,7 @@ $stepper-theme: igx-stepper-theme(
 	 * delete this section and use the `igx-css-vars` mixin as shown above.
 	**/
 	::ng-deep {
-		@include igx-stepper($stepper-theme);
+		@include stepper($stepper-theme);
 	}
 }
 
