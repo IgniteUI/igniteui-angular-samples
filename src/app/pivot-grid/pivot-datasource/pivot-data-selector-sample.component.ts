@@ -18,7 +18,7 @@ export class PivotDataSelectorSampleComponent {
             memberName: 'Date',
             enabled: true
         }, {
-            months: true,
+            months: false,
             quarters: true,
             years: true
         });
