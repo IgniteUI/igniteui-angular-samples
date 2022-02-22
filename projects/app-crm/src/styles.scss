@@ -1,9 +1,9 @@
 @use 'igniteui-angular/theming' as *;
 @use 'variables' as *;
 @use 'app-layout';
-@include igx-core();
-@include igx-typography();
-@include igx-theme(
+@include core();
+@include typography();
+@include theme(
     $palette: $palette,
     $schema: $schema
 );

@@ -39,17 +39,17 @@ $sample-gap: 20px;
 	gap: rem(30px);
 }
 
-$my-card: igx-card-theme(
+$my-card: card-theme(
 	$palette: $default-palette,
 	$schema: $light-schema,
 	$border-radius: rem(8px),
-	$content-text-color: igx-color($default-palette, 'grays', 900),
+	$content-text-color: color($default-palette, 'grays', 900),
 );
 
-@include igx-card($my-card);
+@include card($my-card);
 
 .selected-card {
-	border: 2px solid igx-color($default-palette, 'primary', 400);
+	border: 2px solid color($default-palette, 'primary', 400);
 	position: relative;
 	overflow: initial;
 
@@ -72,7 +72,7 @@ $my-card: igx-card-theme(
 
 	&:focus {
 		outline: none;
-		box-shadow: inset 0 0 0 1px igx-color($default-palette, 'primary', 400),
+		box-shadow: inset 0 0 0 1px color($default-palette, 'primary', 400),
 			0 5px 5px -3px rgba(0, 0, 0, 0.26),
 			0 8px 10px 1px rgba(0, 0, 0, 0.12),
 			0 3px 14px 2px rgba(0, 0, 0, 0.08);
@@ -108,13 +108,13 @@ $my-card: igx-card-theme(
 	font-size: rem(14px);
 	font-weight: 500;
 	margin: 0 rem(8px);
-	color: igx-color($default-palette, 'secondary');
+	color: color($default-palette, 'secondary');
 }
 
 .card-currency {
 	display: block;
 	font-size: rem(48px);
-	color: igx-color($default-palette, 'secondary');
+	color: color($default-palette, 'secondary');
 	margin-bottom: rem(8px);
 
 	&::before {
@@ -182,7 +182,7 @@ $my-card: igx-card-theme(
 	width: rem(30px);
 	height: rem(30px);
 	border-radius: rem(15px);
-	background: igx-color($default-palette, 'success');
+	background: color($default-palette, 'success');
 	color: #fff;
 	user-select: none;
 }
@@ -219,16 +219,16 @@ $my-card: igx-card-theme(
 
 	> a {
 		margin-left: rem(8px);
-		color: igx-color($default-palette, 'primary');
+		color: color($default-palette, 'primary');
 		text-decoration: none;
 
 		&:hover {
-			color: igx-color($default-palette, 'primary', 600);
+			color: color($default-palette, 'primary', 600);
 		}
 	}
 }
 
 .sample-required {
-	color: igx-color($default-palette, 'error');
+	color: color($default-palette, 'error');
 	margin-left: rem(2px);
 }

@@ -1,50 +1,50 @@
 @use '../../../variables' as *;
 
-$my-dark-palette: igx-palette(
+$my-dark-palette: palette(
     $primary: #2466ff,
     $secondary: #FFCD0F,
     $surface: #2a2b2f,
     $grays: #fff,
 );
 
-$my-dark-color: igx-color($my-dark-palette, 'surface');
+$my-dark-color: color($my-dark-palette, 'surface');
 
-$dark-button-theme: igx-button-theme(
+$dark-button-theme: button-theme(
     $palette: $my-dark-palette,
-    $background: igx-color($my-dark-palette, 'secondary'),
-    $hover-background: igx-color($my-dark-palette, 'grays', 100),
-    $hover-foreground: igx-color($my-dark-palette, 'secondary')
+    $background: color($my-dark-palette, 'secondary'),
+    $hover-background: color($my-dark-palette, 'grays', 100),
+    $hover-foreground: color($my-dark-palette, 'secondary')
 );
 
-$dark-grid-toolbar-theme: igx-grid-toolbar-theme(
+$dark-grid-toolbar-theme: grid-toolbar-theme(
     $palette: $my-dark-palette,
     $background-color: $my-dark-color,
-    $title-text-color: igx-color($my-dark-palette, 'secondary'),
+    $title-text-color: color($my-dark-palette, 'secondary'),
     $dropdown-background: $my-dark-color,
 );
 
-$dark-column-actions-theme: igx-column-actions-theme(
+$dark-column-actions-theme: column-actions-theme(
     $palette: $my-dark-palette,
-    $title-color: igx-color($my-dark-palette, 'secondary'),
-    $background-color: igx-color($my-dark-palette, 'surface')
+    $title-color: color($my-dark-palette, 'secondary'),
+    $background-color: color($my-dark-palette, 'surface')
 );
 
-$dark-checkbox-theme: igx-checkbox-theme(
+$dark-checkbox-theme: checkbox-theme(
     $palette: $my-dark-palette,
     $tick-color: $my-dark-color,
 );
 
-$dark-input-group-theme: igx-input-group-theme(
+$dark-input-group-theme: input-group-theme(
     $palette: $my-dark-palette
 );
 
 :host {
     ::ng-deep {
-        @include igx-grid-toolbar($dark-grid-toolbar-theme);
-        @include igx-column-actions($dark-column-actions-theme);
-        @include igx-checkbox($dark-checkbox-theme);
-        @include igx-input-group($dark-input-group-theme);
-        @include igx-button($dark-button-theme);
+        @include grid-toolbar($dark-grid-toolbar-theme);
+        @include column-actions($dark-column-actions-theme);
+        @include checkbox($dark-checkbox-theme);
+        @include input-group($dark-input-group-theme);
+        @include button($dark-button-theme);
 
         .igx-grid-toolbar__actions {
             .igx-button--outlined {

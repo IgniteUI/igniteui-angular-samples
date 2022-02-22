@@ -6,8 +6,8 @@
     align-items: center;
     justify-content: flex-start;
     width: rem(180px);
-    color: igx-contrast-color($color: 'secondary', $variant: 200);
-    background-color: igx-color($color: 'secondary', $variant: 200);
+    color: contrast-color($color: 'secondary', $variant: 200);
+    background-color: color($color: 'secondary', $variant: 200);
     font-size: rem(13px);
     padding: rem(8px);
     border-radius: rem(4px);
@@ -27,7 +27,7 @@
     .folders {
         width: rem(200px);
         padding: 8px;
-        background: igx-color($color: 'grays', $variant: 50);
+        background: color($color: 'grays', $variant: 50);
         border: none;
 
         igx-icon {
@@ -41,11 +41,11 @@
             transition: background .15s $ease-out-quad;
 
             &.drag-enter {
-                background: igx-color($color: 'secondary', $variant: 100);
+                background: color($color: 'secondary', $variant: 100);
             }
 
             &:hover {
-                background: igx-color($color: 'grays', $variant: 100);
+                background: color($color: 'grays', $variant: 100);
             }
 
             &:nth-child(5) {
@@ -75,8 +75,8 @@
     }
 
     .email-checked {
-        color: igx-contrast-color($color: 'secondary', $variant: 100);
-        background: igx-color($color: 'secondary', $variant: 100);
+        color: contrast-color($color: 'secondary', $variant: 100);
+        background: color($color: 'secondary', $variant: 100);
         transition: background .1s ease-out;
     }
 }
