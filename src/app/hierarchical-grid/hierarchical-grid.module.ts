@@ -90,6 +90,7 @@ import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-
 import { HGridRowStylesSampleComponent } from './hgrid-rowStyle-sample/hgrid-rowStyles.component';
 import { HGridRowClassesSampleComponent } from './hgrid-rowClasses-sample/hgrid-rowClasses.component';
 import { HGridActionStripSampleComponent } from './hierarchical-grid-action-strip/hierarchical-grid-action-strip-sample';
+import { HGridSummaryTemplateComponent } from './hgrid-summary-template/hgrid-summary-template.component';
 
 @NgModule({
     declarations: [
@@ -159,6 +160,7 @@ import { HGridActionStripSampleComponent } from './hierarchical-grid-action-stri
         HGridExternalExcelStyleFilteringComponent,
         HGridCollapsibleColumnGroupComponent,
         HGridAllDataSummaryComponent,
+        HGridSummaryTemplateComponent,
         HierarchicalGridRightPinningSampleComponent,
         HierarchicalGridColumnSelectionComponent,
         HierarchicalGridColumnGroupSelectionComponent,

@@ -1,6 +1,6 @@
 @use '../../../variables' as *;
 
-$custom-theme: igx-grid-theme(
+$custom-theme: grid-theme(
   $cell-active-border-color: #ffcd0f,
   $cell-selected-background: #6f6f6f,
   $row-hover-background: #f8e495,
@@ -16,7 +16,7 @@ $custom-theme: igx-grid-theme(
 
 :host {
     ::ng-deep {
-        @include igx-grid($custom-theme);
+        @include grid($custom-theme);
     }
 }
 

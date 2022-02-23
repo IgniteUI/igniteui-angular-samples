@@ -2,14 +2,14 @@
 
 .layout-box {
     width: 100%;
-    background: igx-color($color: 'grays', $variant: 200);
+    background: color($color: 'grays', $variant: 200);
     padding: 8px;
 
     .layout-box__el {
         padding: 10px 20px;
         margin: 8px;
-        background: igx-color($color: 'secondary');
-        color: igx-color($color: 'surface');
+        background: color($color: 'secondary');
+        color: color($color: 'surface');
     }
 
     &.sidebar {

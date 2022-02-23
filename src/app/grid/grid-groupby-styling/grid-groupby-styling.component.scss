@@ -5,7 +5,7 @@ $gray: #494949;
 $light-gray: #f8f8f8;
 $black: #222;
 
-$custom-theme: igx-grid-theme(
+$custom-theme: grid-theme(
     $group-row-background: $gray,
     $group-row-selected-background: #383838,
     $group-label-column-name-text: $light-gray,
@@ -21,7 +21,7 @@ $custom-theme: igx-grid-theme(
     $drop-indicator-color: $yellow
 );
 
-$custom-chips-theme: igx-chip-theme(
+$custom-chips-theme: chip-theme(
     $background: $gray,
     $text-color: $light-gray,
     $hover-text-color: #e7e7e7
@@ -33,7 +33,7 @@ $custom-chips-theme: igx-chip-theme(
     margin: 0 16px;
 
     ::ng-deep {
-        @include igx-grid($custom-theme);
-        @include igx-chip($custom-chips-theme);
+        @include grid($custom-theme);
+        @include chip($custom-chips-theme);
     }
 }

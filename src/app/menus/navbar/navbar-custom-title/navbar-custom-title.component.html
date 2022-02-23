@@ -1,14 +1,26 @@
 <div class="sample-column">
-    <igx-navbar actionButtonIcon="menu" [isActionButtonVisible]="true">
+    <igx-navbar>
+        <igx-navbar-action>
+            <button igxButton="icon">
+                <igx-icon>menu</igx-icon>
+            </button>
+        </igx-navbar-action>
+        
         <div igxNavbarTitle>
             <a href="https://www.infragistics.com/products/ignite-ui-angular" target="_blank">
                 <img src="https://static.infragistics.com/marketing/Website/products/ignite-ui-landing/ignite-ui-logo.svg"
-                     width="120px" height="50px" alt="" style="margin-top: 7px;">
+                    width="120px" height="50px" alt="" style="margin-top: 7px;">
             </a>
         </div>
-
-        <igx-icon>search</igx-icon>
-        <igx-icon>favorite</igx-icon>
-        <igx-icon>more_vert</igx-icon>
+        
+        <button igxButton="icon">
+            <igx-icon>search</igx-icon>
+        </button>
+        <button igxButton="icon">
+            <igx-icon>favorite</igx-icon>
+        </button>
+        <button igxButton="icon">
+            <igx-icon>more_vert</igx-icon>
+        </button>
     </igx-navbar>
 </div>

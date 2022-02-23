@@ -32,10 +32,10 @@ export class TreeGridRowStylesComponent implements OnInit {
         this.data = generateEmployeeFlatData();
 
         this.columns = [
-            { field: 'Name', label: 'Full Name', resizable: true, movable: true, filterable: true, editable: true, dataType: 'string' },
-            { field: 'Age', label: 'Age', resizable: false, movable: false, filterable: false, editable: true, dataType: 'number' },
-            { field: 'Title', label: 'Title', resizable: true, movable: true,  filterable: true, editable: true, dataType: 'string' },
-            { field: 'HireDate', label: 'Hire Date', resizable: true, movable: true, filterable: true, editable: true, dataType: 'date' }
+            { field: 'Name', label: 'Full Name', resizable: true, filterable: true, editable: true, dataType: 'string' },
+            { field: 'Age', label: 'Age', resizable: false, filterable: false, editable: true, dataType: 'number' },
+            { field: 'Title', label: 'Title', resizable: true,  filterable: true, editable: true, dataType: 'string' },
+            { field: 'HireDate', label: 'Hire Date', resizable: true, filterable: true, editable: true, dataType: 'date' }
         ];
     }
 }

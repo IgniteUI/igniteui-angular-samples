@@ -4,7 +4,7 @@
     max-width: 550px;
 }
 
-$custom-input-group: igx-input-group-theme(
+$custom-input-group: input-group-theme(
   $filled-text-color: #288a54,
   $focused-text-color: #174f30,
   $idle-text-color: #288a54,
@@ -16,7 +16,7 @@ $custom-input-group: igx-input-group-theme(
 );
 
 // :host {
-//     @include igx-css-vars($custom-input-group);
+//     @include css-vars($custom-input-group);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -25,6 +25,6 @@ $custom-input-group: igx-input-group-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-input-group($custom-input-group);
+    @include input-group($custom-input-group);
 }
 

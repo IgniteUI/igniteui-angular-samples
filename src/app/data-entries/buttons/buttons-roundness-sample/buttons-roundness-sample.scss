@@ -1,35 +1,35 @@
 @use '../../../../variables' as *;
 
-$flatBtn: igx-button-theme(
+$flatBtn: button-theme(
     $border-radius: .5
 );
 
-$raisedBtn: igx-button-theme(
+$raisedBtn: button-theme(
     $border-radius: 30px
 );
 
-$fabBtn: igx-button-theme(
+$fabBtn: button-theme(
     $border-radius: 10%
 );
 
-$iconBtn: igx-button-theme(
+$iconBtn: button-theme(
     $border-radius: .5 .2 .5 .2
 );
 
 .flat {
-    @include igx-button($flatBtn);
+    @include button($flatBtn);
 }
 
 .raised {
-    @include igx-button($raisedBtn);
+    @include button($raisedBtn);
 }
 
 .fab {
-    @include igx-button($fabBtn);
+    @include button($fabBtn);
 }
 
 .icon {
-    @include igx-button($iconBtn);
+    @include button($iconBtn);
 }
 
 .buttons-sample {

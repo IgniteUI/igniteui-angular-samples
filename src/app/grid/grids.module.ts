@@ -129,6 +129,7 @@ import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-ex
 import { CRUDSampleComponent } from './grid-crud-sample/crud-sample.component';
 import { GridRowClassesComponent } from './grid-rowClasses-sample/grid-rowClasses.component';
 import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.component';
+import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summary-template.component';
 
 @NgModule({
     declarations: [
@@ -233,6 +234,7 @@ import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.c
         GridExternalAdvancedFilteringComponent,
         GridCollapsibleColumnGroupsComponent,
         GridAllDataSummaryComponent,
+        GridSummaryTemplateComponent,
         RightPinningSampleComponent,
         GridColumnSelectionComponent,
         GridColumnGroupSelectionComponent,

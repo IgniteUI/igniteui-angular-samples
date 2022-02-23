@@ -5,7 +5,7 @@
     min-width: 220px;
 }
 
-$colorful-card: igx-card-theme(
+$colorful-card: card-theme(
     $background: #011627,
     $header-text-color: #FEFEFE,
     $subtitle-text-color: #ECAA53,
@@ -13,7 +13,7 @@ $colorful-card: igx-card-theme(
 );
 
 // :host {
-//     @include igx-css-vars($colorful-card);
+//     @include css-vars($colorful-card);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -22,5 +22,5 @@ $colorful-card: igx-card-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-card($colorful-card);
+    @include card($colorful-card);
 }

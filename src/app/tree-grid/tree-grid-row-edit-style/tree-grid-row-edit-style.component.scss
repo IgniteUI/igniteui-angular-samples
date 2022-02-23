@@ -4,7 +4,7 @@ $my-light-gray: #e3e3e3;
 
 $my-banner-palette: $purple-palette;
 
-$custom-grid: igx-grid-theme(
+$custom-grid: grid-theme(
     $palette: $purple-palette
 );
 
@@ -14,28 +14,28 @@ $custom-grid: igx-grid-theme(
     padding: 16px;
 }
 
-$banner-theme: igx-banner-theme(
+$banner-theme: banner-theme(
     $banner-background: $my-light-gray,
-    $banner-message-color: igx-color($my-banner-palette, "secondary", 600)
+    $banner-message-color: color($my-banner-palette, "secondary", 600)
 );
 
-$button-theme: igx-button-theme(
+$button-theme: button-theme(
   $palette: $purple-palette
 );
 
-$custom-checkbox: igx-checkbox-theme(
+$custom-checkbox: checkbox-theme(
   $palette: $my-banner-palette
 );
 
 .custom-buttons {
-    @include igx-button($button-theme);
+    @include button($button-theme);
   }
 
 :host {
   ::ng-deep {
-          @include igx-checkbox($custom-checkbox);
-          @include igx-grid($custom-grid);
-          @include igx-banner($banner-theme);
+          @include checkbox($custom-checkbox);
+          @include grid($custom-grid);
+          @include banner($banner-theme);
 
   }
 }

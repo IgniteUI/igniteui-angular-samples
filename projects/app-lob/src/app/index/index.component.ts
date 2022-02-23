@@ -2,6 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '
 import { NavigationStart, Route, Router } from '@angular/router';
 import { IgxNavigationDrawerComponent } from 'igniteui-angular';
 import { filter } from 'rxjs/operators';
+import { pivotGridsRoutesData } from '../../../../../src/app/pivot-grid/pivot-grid-routes-data';
 import { gridDynamicChartRoutesData } from '../grid-dynamic-chart-data/grid-dynamic-chart-data-routes-data';
 import { finJsDockManagerGridRoutes } from '../grid-finjs-dock-manager/grid-finjs-dock-manager-routes-data';
 import { gridfinjsRoutesData} from '../grid-finjs/grid-finjs-routes-data';
@@ -52,6 +53,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: 'tree-grid',
             routesData: treeGridRoutesData
+        },
+        {
+            path: 'pivot-grid',
+            routesData: pivotGridsRoutesData
         },
         {
             path: 'grid-finjs',

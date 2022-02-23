@@ -875,6 +875,20 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts',
+                '/src/app/tree-grid/data/employees-flat.ts'
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxInputGroupModule',
+                    'IgxButtonGroupModule', 'IgxSwitchModule', 'TreeGridSummaryTemplateComponent'],
+                ngDeclarations: ['TreeGridSummaryTemplateComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxInputGroupModule',
+                    'IgxButtonGroupModule', 'IgxSwitchModule']
+            }),
+            component: 'TreeGridSummaryTemplateComponent'
+        }));
+
+        configs.push(new Config({
             additionalFiles: [
                 '/src/app/data/athletesData.ts',
                 '/src/app/tree-grid/data/employees-flat-detailed.ts'

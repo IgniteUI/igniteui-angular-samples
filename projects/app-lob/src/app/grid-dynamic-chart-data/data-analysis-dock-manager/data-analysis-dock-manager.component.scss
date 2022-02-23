@@ -7,8 +7,8 @@
 }
 
 @mixin scrollbar($scrollbar-width, $scrollbar-height) {
-    $scrollbar-track: hexrgba(igx-color($color: 'grays', $variant: 200));
-    $scrollbar-thumb: hexrgba(igx-color($color: 'grays', $variant: 400));
+    $scrollbar-track: hexrgba(color($color: 'grays', $variant: 200));
+    $scrollbar-thumb: hexrgba(color($color: 'grays', $variant: 400));
 
     ::-webkit-scrollbar {
         width: $scrollbar-width;
@@ -57,7 +57,7 @@
 
 
 }
-$custom-badge-theme: igx-badge-theme(
+$custom-badge-theme: badge-theme(
     $border-color: white,
     $border-width: 2px,
     $icon-color: white,
@@ -69,7 +69,7 @@ $custom-badge-theme: igx-badge-theme(
     .selected {
         igx-badge{
             &{
-                @include igx-badge($custom-badge-theme);
+                @include badge($custom-badge-theme);
             }
 
             position: absolute;
@@ -105,7 +105,7 @@ $custom-badge-theme: igx-badge-theme(
     }
 
     .analytics-btn {
-        @include igx-button(igx-button-theme($palette: $fluent-excel-palette,
+        @include button(button-theme($palette: $fluent-excel-palette,
                 $foreground: #fff,
                 $background: #335e3b,
                 $hover-background: #459a55,
