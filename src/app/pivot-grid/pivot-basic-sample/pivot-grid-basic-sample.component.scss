@@ -1,4 +1,16 @@
 :host {
     display: block;
     padding: 8px;
+    ::ng-deep {
+        igx-grid-excel-style-filtering {
+            max-height: 450px !important;
+        }
+        .igx-excel-filter__menu {
+            min-height: 430px !important;
+        }
+    }
+}
+
+div {
+    height: 600px;
 }
