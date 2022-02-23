@@ -34,4 +34,5 @@ $custom-toast-theme: toast-theme(
 :host ::ng-deep {
     @include toast($custom-toast-theme);
 }
+@include css-vars($custom-toast-theme);
 
