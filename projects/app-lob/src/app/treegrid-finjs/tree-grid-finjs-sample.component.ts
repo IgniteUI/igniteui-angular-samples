@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, OnDestroy, ViewChild, HostBinding } from
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment,
     IGroupingExpression, IgxButtonGroupComponent, IgxGroupedTreeGridSorting, IgxOverlayOutletDirective, IgxSliderComponent,
-    IgxTreeGridComponent, ITreeGridAggregation, OverlaySettings, PositionSettings, VerticalAlignment
+    IgxTreeGridComponent, ITreeGridAggregation, OverlaySettings, PositionSettings, TreeGridFilteringStrategy, VerticalAlignment
 } from 'igniteui-angular';
 import { Contract, REGIONS } from '../data/financialData';
 import { SignalRService } from '../services/signal-r.service';
@@ -69,6 +69,7 @@ export class TreeGridFinJSComponent implements OnDestroy, OnInit {
     public childDataKey = 'children';
     public groupColumnKey = 'categories';
     public sorting = IgxGroupedTreeGridSorting.instance();
+    public filterStrategy: TreeGridFilteringStrategy;
 
     public items: any[] = [{ field: 'Export native' }, { field: 'Export JS Excel' }];
 
@@ -94,6 +95,8 @@ export class TreeGridFinJSComponent implements OnDestroy, OnInit {
     private _timer;
 
     constructor(private elRef: ElementRef, public dataService: SignalRService) {
+        this.filterStrategy = new TreeGridFilteringStrategy([this.groupColumnKey]);
+
         this.dataService.startConnection();
         this.overlaySettings.outlet = this.outlet;
         this.data$ = this.dataService.data;
