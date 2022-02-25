@@ -5,7 +5,11 @@
 
         <igx-column field="Name" header="Product Name" [dataType]="'string'" [sortable]="true" [disableHiding]="true">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price Category" dataType="string" [sortable]="true" [disableHiding]="true">
+        <igx-column field="UnitPrice" header="Unit Price Category" dataType="number" [sortable]="true" [disableHiding]="true">
+            <ng-template igxCell let-cell="cell" let-val>
+                <span *ngIf="cell.row.data.UnitPrice === 0">-</span>
+                <span *ngIf="cell.row.data.UnitPrice !== 0">${{val}}</span>
+            </ng-template>
         </igx-column>
         <igx-column field="AddedDate" header="Added Date" [dataType]="'date'" [sortable]="true" [disableHiding]="true">
         </igx-column>
