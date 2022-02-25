@@ -3,12 +3,12 @@ import { IgxTreeGridComponent, TreeGridFilteringStrategy } from 'igniteui-angula
 import { FOODS_DATA } from '../data/foods';
 
 @Component({
-    selector: 'app-tree-grid-hierarchical-search',
-    styleUrls: ['./tree-grid-hierarchical-search.component.scss'],
-    templateUrl: 'tree-grid-hierarchical-search.component.html'
+    selector: 'app-tree-grid-tree-filter-view',
+    styleUrls: ['./tree-grid-tree-filter-view.component.scss'],
+    templateUrl: 'tree-grid-tree-filter-view.component.html'
 })
 
-export class TreeGridHierarchicalSearchComponent implements OnInit {
+export class TreeGridTreeFilterViewComponent implements OnInit {
     @ViewChild('treegrid1', { read: IgxTreeGridComponent, static: true })
     public treegrid1: IgxTreeGridComponent;
 
@@ -16,7 +16,7 @@ export class TreeGridHierarchicalSearchComponent implements OnInit {
     public filterStrategy = new TreeGridFilteringStrategy();
 
     public ngOnInit(): void {
-        this.filterStrategy = new TreeGridFilteringStrategy(['ID']);
+        this.filterStrategy = new TreeGridFilteringStrategy(['Name']);
         this.data = FOODS_DATA();
     }
 
