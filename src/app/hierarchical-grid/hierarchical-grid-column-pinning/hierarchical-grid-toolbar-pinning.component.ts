@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DATA } from '../../data/customers';
+import { CUSTOMERS } from '../../data/hierarchical-data';
 
 @Component({
     selector: 'app-hierarchical-grid-toolbar-pinning',
@@ -10,6 +10,6 @@ export class HGridToolbarPinningComponent {
     public localdata;
 
     constructor() {
-        this.localdata = DATA;
+        this.localdata = CUSTOMERS;
     }
 }
