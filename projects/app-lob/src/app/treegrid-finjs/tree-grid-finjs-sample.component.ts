@@ -69,7 +69,7 @@ export class TreeGridFinJSComponent implements OnDestroy, OnInit {
     public childDataKey = 'children';
     public groupColumnKey = 'categories';
     public sorting = IgxGroupedTreeGridSorting.instance();
-    public filterStrategy: TreeGridFilteringStrategy;
+    public filterStrategy = new TreeGridFilteringStrategy([this.groupColumnKey]);
 
     public items: any[] = [{ field: 'Export native' }, { field: 'Export JS Excel' }];
 
@@ -95,8 +95,6 @@ export class TreeGridFinJSComponent implements OnDestroy, OnInit {
     private _timer;
 
     constructor(private elRef: ElementRef, public dataService: SignalRService) {
-        this.filterStrategy = new TreeGridFilteringStrategy([this.groupColumnKey]);
-
         this.dataService.startConnection();
         this.overlaySettings.outlet = this.outlet;
         this.data$ = this.dataService.data;

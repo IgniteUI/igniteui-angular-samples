@@ -13,14 +13,9 @@ export class TreeGridTreeFilterViewComponent implements OnInit {
     public treegrid1: IgxTreeGridComponent;
 
     public data: any[];
-    public filterStrategy = new TreeGridFilteringStrategy();
+    public filterStrategy = new TreeGridFilteringStrategy(['Name']);
 
     public ngOnInit(): void {
-        this.filterStrategy = new TreeGridFilteringStrategy(['Name']);
         this.data = FOODS_DATA();
-    }
-
-    public formatPrice(value: number) {
-        return value ? value < 15 ? 'low' : value > 50 ? 'high' : 'medium' : '';
     }
 }
