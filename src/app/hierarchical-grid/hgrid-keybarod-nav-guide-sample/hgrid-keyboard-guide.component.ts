@@ -4,17 +4,14 @@
 /* eslint-disable no-shadow */
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-    IgxColumnComponent,
-    IgxColumnGroupComponent,
-    CellType,
-    IgxHierarchicalGridComponent,
+    CellType, IgxColumnComponent,
+    IgxColumnGroupComponent, IgxHierarchicalGridComponent,
     IgxListComponent
 } from 'igniteui-angular';
 import { fromEvent, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { DATA } from '../../data/customers';
+import { CUSTOMERS } from '../../data/hierarchical-data';
 
 enum GridSection {
     THEAD = 'igx-grid__thead-wrapper',
@@ -209,7 +206,7 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     public ngOnInit() {
-        this.hGrid.data = DATA;
+        this.hGrid.data = CUSTOMERS;
         for (const item of this.hGrid.data) {
             const names = item.CompanyName.split(' ');
             item.FirstName = names[0];
