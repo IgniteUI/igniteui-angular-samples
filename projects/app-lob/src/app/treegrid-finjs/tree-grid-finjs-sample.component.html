@@ -36,7 +36,8 @@
         hiddenColumnsText="Hidden"
         [isLoading]="isLoading"
         [allowFiltering]="true"
-        [filterMode]="'excelStyleFilter'">
+        [filterMode]="'excelStyleFilter'"
+        [filterStrategy]="filterStrategy">
         <igx-grid-toolbar *ngIf="showToolbar">
             <igx-grid-toolbar-actions>
                 <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
