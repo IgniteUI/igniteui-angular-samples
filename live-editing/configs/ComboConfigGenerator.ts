@@ -108,6 +108,7 @@ export class ComboConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ['/src/app/data/stocks-data.ts'],
+            additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxButtonGroupModule', 'IgxComboModule', 'IgxFinancialChartModule', 'SimpleComboMainComponent'],
                 ngDeclarations: ['SimpleComboMainComponent'],
