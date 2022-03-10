@@ -9,7 +9,8 @@ import {
     IgxSwitchModule,
     IgxToastModule,
     IgxIconModule,
-    IgxPrefixModule
+    IgxPrefixModule,
+    IgxSimpleComboModule
 } from 'igniteui-angular';
 import { IgxFinancialChartModule } from 'igniteui-angular-charts';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
@@ -110,45 +111,41 @@ export class ComboConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/data/stocks-data.ts'],
             additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxButtonGroupModule', 'IgxComboModule', 'IgxFinancialChartModule', 'SimpleComboMainComponent'],
+                imports: ['IgxButtonGroupModule', 'IgxComboModule', 'IgxFinancialChartModule', 'IgxSimpleComboModule', 'SimpleComboMainComponent'],
                 ngDeclarations: ['SimpleComboMainComponent'],
-                ngImports: ['IgxButtonGroupModule', 'IgxComboModule', 'IgxFinancialChartModule']
+                ngImports: ['IgxButtonGroupModule', 'IgxComboModule', 'IgxFinancialChartModule', 'IgxSimpleComboModule']
             }),
-            component: 'SimpleComboMainComponent',
-            shortenComponentPathBy: '/lists/combo/'
+            component: 'SimpleComboMainComponent'
         }));
 
         configs.push(new Config({
             additionalFiles: ['/src/app/data/cities15000-regions-countries.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'SimpleComboUsageComponent'],
+                imports: ['IgxComboModule', 'SimpleComboUsageComponent', 'IgxSimpleComboModule'],
                 ngDeclarations: ['SimpleComboUsageComponent'],
-                ngImports: ['IgxComboModule']
+                ngImports: ['IgxComboModule', 'IgxSimpleComboModule']
             }),
-            component: 'SimpleComboUsageComponent',
-            shortenComponentPathBy: '/lists/combo/'
+            component: 'SimpleComboUsageComponent'
         }));
 
         configs.push(new Config({
             additionalFiles: ['/src/app/data/cities15000-regions-countries.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'SimpleComboCascadingComponent'],
+                imports: ['IgxComboModule', 'IgxSimpleComboModule', 'SimpleComboCascadingComponent'],
                 ngDeclarations: ['SimpleComboCascadingComponent'],
-                ngImports: ['IgxComboModule']
+                ngImports: ['IgxComboModule', 'IgxSimpleComboModule']
             }),
-            component: 'SimpleComboCascadingComponent',
-            shortenComponentPathBy: '/lists/combo/'
+            component: 'SimpleComboCascadingComponent'
         }));
 
         configs.push(new Config({
             additionalFiles: ['/src/app/data/cities15000-regions-countries.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'SimpleComboStylingComponent'],
+                imports: ['IgxComboModule', 'IgxSimpleComboModule', 'SimpleComboStylingComponent'],
                 ngDeclarations: ['SimpleComboStylingComponent'],
-                ngImports: ['IgxComboModule']
+                ngImports: ['IgxComboModule', 'IgxSimpleComboModule']
             }),
-            component: 'SimpleComboStylingComponent',
-            shortenComponentPathBy: '/lists/combo/'
+            component: 'SimpleComboStylingComponent'
         }));
 
         return configs;
