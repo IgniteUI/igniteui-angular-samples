@@ -699,6 +699,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'HierarchicalGridColumnSelectionComponent',
             additionalFiles: [
+                '/src/app/directives/prevent-scroll.directive.ts',
                 '/src/app/data/singersData.ts',
                 '/src/app/hierarchical-grid/models.ts'
             ],
@@ -726,6 +727,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'HGridColumnSelectionStylesComponent',
             additionalFiles: [
+                '/src/app/directives/prevent-scroll.directive.ts',
                 '/src/app/data/singersData.ts',
                 '/src/app/hierarchical-grid/models.ts'
             ],
