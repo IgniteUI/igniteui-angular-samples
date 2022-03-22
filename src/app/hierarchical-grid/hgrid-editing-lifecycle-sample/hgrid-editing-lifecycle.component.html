@@ -25,7 +25,7 @@
                 <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number"></igx-column>
                 <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number"></igx-column>
 
-                <igx-row-island key="Albums" primaryKey="Album" [autoGenerate]="false"
+                <igx-row-island [height]="null" key="Albums" primaryKey="Album" [autoGenerate]="false"
                     rowEditable="true"
                     (rowEditEnter)="rowEditEnter($event)"
                     (cellEditEnter)="cellEditEnter($event)"

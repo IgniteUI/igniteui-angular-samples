@@ -13,12 +13,12 @@
     <igx-column field="Grammy Nominations" [dataType]="'number'"></igx-column>
     <igx-column field="Grammy Awards" [dataType]="'number'"></igx-column>
 
-    <igx-row-island [key]="'Albums'" [autoGenerate]="false" [primaryKey]="'Album'" [rowEditable]="true">
+    <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false" [primaryKey]="'Album'" [rowEditable]="true">
         <igx-column field="Album"></igx-column>
         <igx-column field="Launch Date" [dataType]="'date'"></igx-column>
         <igx-column field="Billboard Review"></igx-column>
         <igx-column field="US Billboard 200"></igx-column>
-        <igx-row-island [key]="'Songs'" [autoGenerate]="false">
+        <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false">
             <igx-column field="No."></igx-column>
             <igx-column field="Title"></igx-column>
             <igx-column field="Released"></igx-column>
@@ -26,7 +26,7 @@
         </igx-row-island>
     </igx-row-island>
 
-    <igx-row-island [key]="'Tours'" [autoGenerate]="false">
+    <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false">
         <igx-column field="Tour"></igx-column>
         <igx-column field="Started on"></igx-column>
         <igx-column field="Location"></igx-column>

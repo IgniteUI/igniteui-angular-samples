@@ -45,7 +45,7 @@
         <igx-column field="Debut" dataType="number"></igx-column>
         <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number" [hasSummary]="true"></igx-column>
         <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number" [hasSummary]="true"></igx-column>
-        <igx-row-island [key]="'Albums'" [cellSelection]="selectionModeChild">
+        <igx-row-island [height]="null" [key]="'Albums'" [cellSelection]="selectionModeChild">
             <igx-column field="Album" [dataType]="'string'"></igx-column>
             <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review" dataType="number"></igx-column>

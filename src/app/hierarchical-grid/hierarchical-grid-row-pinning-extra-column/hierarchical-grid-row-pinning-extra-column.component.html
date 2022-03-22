@@ -23,7 +23,7 @@
         <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number"></igx-column>
         <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number"></igx-column>
 
-        <igx-row-island [key]="'Albums'" [autoGenerate]="false" [primaryKey]="'Album'" [pinning]='pinningConfig'
+        <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false" [primaryKey]="'Album'" [pinning]='pinningConfig'
             [cellSelection]="'none'">
             <igx-column width='70px' [filterable]='false' [pinned]="true">
                 <ng-template igxCell let-cell="cell" let-val>
@@ -36,7 +36,7 @@
             <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
             <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
-            <igx-row-island [key]="'Songs'" [autoGenerate]="false" [primaryKey]="'Number'" [pinning]='pinningConfig'
+            <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false" [primaryKey]="'Number'" [pinning]='pinningConfig'
                 [cellSelection]="'none'">
                 <igx-column width='70px' [filterable]='false' [pinned]="true">
                     <ng-template igxCell let-cell="cell" let-val>
@@ -52,7 +52,7 @@
             </igx-row-island>
         </igx-row-island>
 
-        <igx-row-island [key]="'Tours'" [autoGenerate]="false" [primaryKey]="'Tour'" [pinning]='pinningConfig'
+        <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false" [primaryKey]="'Tour'" [pinning]='pinningConfig'
             [cellSelection]="'none'">
             <igx-column width='70px' [filterable]='false' [pinned]="true">
                 <ng-template igxCell let-cell="cell" let-val>

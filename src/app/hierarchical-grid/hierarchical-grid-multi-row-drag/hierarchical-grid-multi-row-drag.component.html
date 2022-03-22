@@ -8,7 +8,7 @@
     <igx-column field="name" header="Name"></igx-column>
     <igx-column field="system" header="Is System Drive"></igx-column>
 
-    <igx-row-island [rowDraggable]="true" [primaryKey]="'id'" igxDrop [key]="'folders'" #layout1 [rowSelection]="selectionMode"
+    <igx-row-island [height]="null" [rowDraggable]="true" [primaryKey]="'id'" igxDrop [key]="'folders'" #layout1 [rowSelection]="selectionMode"
     (rowSelectionChanging)="handleRowSelectionChange($event)" (rowDragStart)="onRowDragStart($event)">
         <igx-column field="name" header="Name"></igx-column>
         <igx-column field="createdOn" header="Created On"></igx-column>
@@ -18,7 +18,7 @@
                 <igx-icon family="material">{{dragIcon}}{{countIcon}}</igx-icon>
             </div>
         </ng-template>
-        <igx-row-island [rowDraggable]="true" [primaryKey]="'id'" igxDrop [key]="'files'" [rowSelection]="selectionMode"
+        <igx-row-island [height]="null" [rowDraggable]="true" [primaryKey]="'id'" igxDrop [key]="'files'" [rowSelection]="selectionMode"
         (rowSelectionChanging)="handleRowSelectionChange($event)" (rowDragStart)="onRowDragStart($event)">
             <igx-column field="name" header="Name"></igx-column>
             <igx-column field="extension" header="Extension"></igx-column>
