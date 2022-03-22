@@ -6,20 +6,6 @@
   overflow-y: auto;
 }
 
-@mixin scrollbar($scrollbar-width, $scrollbar-height) {
-    $scrollbar-track: hexrgba(color($color: 'grays', $variant: 200));
-    $scrollbar-thumb: hexrgba(color($color: 'grays', $variant: 400));
-
-    ::-webkit-scrollbar {
-        width: $scrollbar-width;
-        height: $scrollbar-height;
-        background-color: $scrollbar-track;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: $scrollbar-thumb;
-    }
-}
 
 .grid-chart-contextmenu-wrapper {
     width: 100%;
@@ -42,7 +28,7 @@
 
 .selection-area {
 
-    @include scrollbar(6px, 6px);
+    @include scrollbar(scrollbar-theme($size: 6px));
     width: 100%;
     height: 90%;
     display: inline-flex;
@@ -100,7 +86,7 @@ $custom-badge-theme: badge-theme(
     }
     .grid-chart-contextmenu-wrapper {
         igx-grid {
-            @include scrollbar(16px, 16px);
+            @include scrollbar(scrollbar-theme($size: 16px));
         }
     }
 
@@ -127,7 +113,7 @@ $custom-badge-theme: badge-theme(
     }
 
     igx-tab-content {
-        @include scrollbar(10px, 10px);
+        @include scrollbar(scrollbar-theme($size: 10px));
     }
 
 }
@@ -148,7 +134,7 @@ $custom-badge-theme: badge-theme(
 
 $font-family: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
 .tab-options-wrapper{
-    @include scrollbar(6px, 6px);
+    @include scrollbar(scrollbar-theme($size: 6px));
 
     display: flex;
     flex-flow: column;
