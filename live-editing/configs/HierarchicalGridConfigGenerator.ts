@@ -926,7 +926,8 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'HGridActionStripSampleComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/data/utils.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
+                '/src/app/hierarchical-grid/models.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['HGridActionStripSampleComponent', 'IgxHierarchicalGridModule', 'IgxDialogModule', 'IgxButtonModule', 'IgxPreventDocumentScrollModule', 'IgxActionStripModule'],
                 ngDeclarations: ['HGridActionStripSampleComponent'],
