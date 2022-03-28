@@ -12,7 +12,7 @@
             </igx-column>
             <igx-column field="ShipCountry" header="Ship Country" width="200px" [groupable]="true">
             </igx-column>
-            <igx-column field="OrderDate" header="Order Date" width="200px" [groupable]="true">
+            <igx-column field="OrderDate" header="Order Date" width="200px" [groupable]="true" dataType="date">
                 <ng-template igxCell let-value>
                     {{ value | date:'shortDate' }}
                 </ng-template>
