@@ -576,8 +576,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['HGridPagingStyleSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
             }),
-            component: 'HGridPagingStyleSampleComponent',
-            shortenComponentPathBy: '/hierarchical-grid/'
+            component: 'HGridPagingStyleSampleComponent'
         }));
 
         configs.push(new Config({
