@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IgxColumnComponent } from 'igniteui-angular';
-import { DATA } from '../../data/customers';
+import { CUSTOMERS } from '../../data/hierarchical-data';
 
 @Component({
     selector: 'app-hierarchical-grid-pinning',
@@ -12,7 +12,7 @@ export class HGridPinningSampleComponent {
     public localdata;
 
     constructor() {
-        this.localdata = DATA;
+        this.localdata = CUSTOMERS;
     }
 
     public toggleColumn(col: IgxColumnComponent) {

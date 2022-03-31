@@ -2,7 +2,7 @@
 :host {
     display: block;
     margin: 16px;
-    box-shadow: elevation($igx-elevations, 12);
+    box-shadow: elevation($elevations, 12);
     //Set the dark themes for the components.
     &.dark-theme {
         background: $dark-color;

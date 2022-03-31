@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
-import { DATA } from '../../data/customers';
+import { IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { CUSTOMERS } from '../../data/hierarchical-data';
 
 @Component({
     selector: 'app-hierarchical-grid-density',
@@ -20,7 +20,7 @@ export class HGridDisplayDensitySampleComponent implements OnInit {
 
     }
     public ngOnInit(): void {
-        this.localdata = DATA;
+        this.localdata = CUSTOMERS;
         this.displayDensities = [
             {
                 label: 'compact',
