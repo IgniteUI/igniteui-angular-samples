@@ -19,4 +19,5 @@ $dark-snackbar: snackbar-theme(
 :host ::ng-deep {
     @include snackbar($dark-snackbar);
 }
+@include css-vars($dark-snackbar);
 

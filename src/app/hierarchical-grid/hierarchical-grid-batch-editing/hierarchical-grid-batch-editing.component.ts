@@ -41,7 +41,7 @@ export class HGridBatchEditingSampleComponent implements OnInit {
     }
 
     public get hasChildTransactions(): boolean {
-        return this.childGrid.hgridAPI.getChildGrids()
+        return this.childGrid.gridAPI.getChildGrids()
             .find(c => c.transactions.getAggregatedChanges(false).length > 0) !== undefined;
     }
 
@@ -80,7 +80,7 @@ export class HGridBatchEditingSampleComponent implements OnInit {
 
     public commit() {
         this.hierarchicalGrid.transactions.commit(this.data);
-        this.childGrid.hgridAPI.getChildGrids().forEach((grid) => {
+        this.childGrid.gridAPI.getChildGrids().forEach((grid) => {
             grid.transactions.commit(grid.data);
         });
         this.dialogChanges.close();
@@ -88,7 +88,7 @@ export class HGridBatchEditingSampleComponent implements OnInit {
 
     public discard() {
         this.hierarchicalGrid.transactions.clear();
-        this.childGrid.hgridAPI.getChildGrids().forEach((grid) => {
+        this.childGrid.gridAPI.getChildGrids().forEach((grid) => {
             grid.transactions.clear();
         });
         this.dialogChanges.close();
@@ -96,7 +96,7 @@ export class HGridBatchEditingSampleComponent implements OnInit {
 
     public openCommitDialog() {
         this.transactionsDataAll = [...this.hierarchicalGrid.transactions.getAggregatedChanges(true)];
-        this.childGrid.hgridAPI.getChildGrids().forEach((grid) => {
+        this.childGrid.gridAPI.getChildGrids().forEach((grid) => {
             this.transactionsDataAll = this.transactionsDataAll.concat(grid.transactions.getAggregatedChanges(true));
         });
         this.dialogChanges.open();
