@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid height="750px" [data]="data" displayDensity="compact" [allowFiltering]="true">
+    <igx-grid igxPreventDocumentScroll #grid height="750px" [data]="data" [moving]="true" displayDensity="compact" [allowFiltering]="true">
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>
                 <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
@@ -9,13 +9,13 @@
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
 
-        <igx-column [movable]="true" [resizable]="true" field="ID" [filterable]="false"></igx-column>
-        <igx-column-group [movable]="true" header="General Information" [collapsible]="true" [expanded]="true">
-            <igx-column [movable]="true" field="CompanyName" [visibleWhenCollapsed]="true"></igx-column>
-            <igx-column-group [movable]="true" header="Personal Details" [collapsible]="true" [expanded]="false"
+        <igx-column [resizable]="true" field="ID" [filterable]="false"></igx-column>
+        <igx-column-group header="General Information" [collapsible]="true" [expanded]="true">
+            <igx-column field="CompanyName" [visibleWhenCollapsed]="true"></igx-column>
+            <igx-column-group header="Personal Details" [collapsible]="true" [expanded]="false"
                 [visibleWhenCollapsed]="false">
-                <igx-column [movable]="true" field="ContactName"></igx-column>
-                <igx-column [movable]="true" field="ContactTitle"></igx-column>
+                <igx-column field="ContactName"></igx-column>
+                <igx-column field="ContactTitle"></igx-column>
             </igx-column-group>
         </igx-column-group>
         <igx-column-group header="Address Information">

@@ -3,50 +3,50 @@
 $yellow: #ffcd0f;
 $black: #292826;
 
-$custom-grid: igx-grid-theme(
+$custom-grid: grid-theme(
     $filtering-row-background: $yellow
 );
 
-$custom-flat-button: igx-button-theme(
+$custom-flat-button: button-theme(
     $background: $yellow,
     $foreground: $black,
     $hover-background: $black,
     $hover-foreground: $yellow
 );
 
-$custom-raised-button: igx-button-theme(
+$custom-raised-button: button-theme(
     $background: $black,
     $foreground: $yellow,
     $hover-background: $black,
     $hover-foreground: $yellow
 );
 
-$custom-button-group: igx-button-group-theme(
+$custom-button-group: button-group-theme(
     $item-background: $yellow,
     $item-text-color: $black,
     $item-hover-background: $black,
     $item-hover-text-color: $yellow
 );
 
-$custom-input-group: igx-input-group-theme(
+$custom-input-group: input-group-theme(
     $box-background: $yellow,
     $idle-text-color: $black,
     $focused-text-color: $black,
     $filled-text-color: $black
 );
 
-$custom-list: igx-list-theme(
+$custom-list: list-theme(
     $background: $yellow
 );
 
-$custom-checkbox: igx-checkbox-theme(
+$custom-checkbox: checkbox-theme(
     $empty-color: $black,
     $fill-color: $black,
     $tick-color: $yellow,
     $label-color: $black
 );
 
-$custom-drop-down: igx-drop-down-theme(
+$custom-drop-down: drop-down-theme(
     $background-color: $yellow,
     $selected-item-background: lighten($black, 10%),
     $selected-focus-item-background: lighten($black, 15%),
@@ -57,16 +57,16 @@ $custom-drop-down: igx-drop-down-theme(
 
 :host {
     ::ng-deep {
-        @include igx-grid($custom-grid);
-        @include igx-drop-down($custom-drop-down);
-        @include igx-input-group($custom-input-group);
-        @include igx-checkbox($custom-checkbox);
-        @include igx-list($custom-list);
-        @include igx-button($custom-flat-button);
-        @include igx-button-group($custom-button-group);
+        @include grid($custom-grid);
+        @include drop-down($custom-drop-down);
+        @include input-group($custom-input-group);
+        @include checkbox($custom-checkbox);
+        @include list($custom-list);
+        @include button($custom-flat-button);
+        @include button-group($custom-button-group);
 
         .igx-excel-filter__apply {
-            @include igx-button($custom-raised-button);
+            @include button($custom-raised-button);
         }
     }
 }

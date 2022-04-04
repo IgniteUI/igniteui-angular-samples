@@ -22,13 +22,13 @@ igx-bottom-nav-content {
     padding: 10px;
 }
 
-$dark-bottom-nav: igx-bottom-nav-theme(
+$dark-bottom-nav: bottom-nav-theme(
     $background: #292826,
     $active-item-color: #F4D45C
 );
 
 // :host {
-//     @include igx-css-vars($dark-bottom-nav);
+//     @include css-vars($dark-bottom-nav);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -37,5 +37,5 @@ $dark-bottom-nav: igx-bottom-nav-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-   @include igx-bottom-nav($dark-bottom-nav);
+   @include bottom-nav($dark-bottom-nav);
 }

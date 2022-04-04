@@ -1,0 +1,33 @@
+<div class="sample__wrapper">
+    <div class="controls-wrapper">
+        <igx-input-group>
+            <label igxLabel for="height">Summary Row Height</label>
+            <input igxInput name="height" type="number" [(ngModel)]="summaryHeight">
+        </igx-input-group>
+        <igx-switch [(ngModel)]="hasSummary">Toggle Summaries</igx-switch>
+        <igx-buttongroup [values]="displayDensities" (selected)="selectDensity($event)" [displayDensity]="displayDensity">
+        </igx-buttongroup>
+    </div>
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [displayDensity]="displayDensity"
+        [summaryRowHeight]="summaryHeight" [autoGenerate]="false" height="550px" width="100%">
+        <igx-column field="ProductID" header="Product ID" width="10%" [headerClasses]="'prodId'" [groupable]="true">
+        </igx-column>
+        <igx-column field="ProductName" header="Product Name" width="17%" [headerClasses]="'prodId'" [groupable]="true">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Price" [filterable]="false" width="17%" editable="true" dataType="number" [groupable]="true">
+        </igx-column>
+        <igx-column field="UnitsInStock" header="Units In Stock" width="21%" dataType="number" editable="true"
+            [hasSummary]="hasSummary" [summaries]="discontinuedSummary" [groupable]="true">
+        </igx-column>
+        <igx-column field="Discontinued" header="Discontinued" [editable]="true" width="17%" [dataType]="'boolean'" [groupable]="true">
+        </igx-column>
+        <igx-column field="OrderDate" width="18%" [dataType]="'date'" [hasSummary]="hasSummary" [groupable]="true">
+            <ng-template igxSummary let-summaryResults>
+                <div class="summary-temp">
+                    <span><strong>{{ summaryResults[0].label }}</strong><span>{{ summaryResults[0].summaryResult }}</span></span>
+                    <span><strong>{{ summaryResults[1].label }}</strong><span>{{ summaryResults[1].summaryResult }}</span></span>
+                </div>
+            </ng-template>
+        </igx-column>
+    </igx-grid>
+</div>

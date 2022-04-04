@@ -18,12 +18,12 @@ h5 {
     margin-bottom: 16px;
 }
 
-$custom-ripple-theme: igx-ripple-theme(
-  $color: igx-color($color: 'secondary', $variant: 200)
+$custom-ripple-theme: ripple-theme(
+  $color: color($color: 'secondary', $variant: 200)
 );
 
 // :host {
-//     @include igx-css-vars($custom-ripple-theme);
+//     @include css-vars($custom-ripple-theme);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -32,5 +32,5 @@ $custom-ripple-theme: igx-ripple-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-ripple($custom-ripple-theme);
+    @include ripple($custom-ripple-theme);
 }

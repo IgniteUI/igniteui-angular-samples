@@ -59,6 +59,7 @@ import { TreeConfigGenerator } from '../configs/TreeConfigGenerator';
 import { AccordionConfigGenerator } from '../configs/AccordionConfigGenerator';
 import { StepperConfigGenerator } from '../configs/StepperConfigGenerator';
 import { PaginationConfigGenerator } from '../configs/PaginationConfigGenerator';
+import { PivotGridConfigGenerator } from '../configs/PivotGridConfigGenerator';
 
 export const CONFIG_GENERATORS =
     [
@@ -111,6 +112,7 @@ export const CONFIG_GENERATORS =
         GridConfigGenerator,
         HierarchicalGridConfigGenerator,
         TreeGridConfigGenerator,
+        PivotGridConfigGenerator,
 
         // other:
         ActionStripConfigGenerator,

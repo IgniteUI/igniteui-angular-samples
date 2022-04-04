@@ -7,11 +7,11 @@
 }
 
 // Ignite UI for Angular Theming engine related styling
-$custom-simple-combo-theme: igx-combo-theme(
+$custom-simple-combo-theme: combo-theme(
     $empty-list-background: #1a5214
 );
 
-$custom-drop-down-theme: igx-drop-down-theme(
+$custom-drop-down-theme: drop-down-theme(
     $background-color: #d9f5d6,
     $header-text-color: #1a5214,
     $item-text-color: #1a5214,
@@ -30,6 +30,6 @@ $custom-drop-down-theme: igx-drop-down-theme(
 );
 
 :host ::ng-deep {
-    @include igx-css-vars($custom-simple-combo-theme);
-    @include igx-css-vars($custom-drop-down-theme);
+    @include css-vars($custom-simple-combo-theme);
+    @include css-vars($custom-drop-down-theme);
 }
