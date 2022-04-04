@@ -34,7 +34,7 @@ export class GridConditionalRowSelectorsComponent {
         event.newSelection = event.newSelection.filter(x => this.isSelectionAllowed(x));
 
         // cleanup selection if all conditionally selectable rows are already selected
-        if (event.added.length === 0
+        if (event.newSelection.length
             && !event.newSelection.filter(x => event.oldSelection.indexOf(x) === -1).length
             && originalAddedLength > 1) {
                 // all selected from header, deselect instead
