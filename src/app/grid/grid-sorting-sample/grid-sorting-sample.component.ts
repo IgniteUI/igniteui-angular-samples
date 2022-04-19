@@ -1,13 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IgxGridComponent, IgxSelectComponent, SortingDirection } from 'igniteui-angular';
+import { DefaultSortingStrategy, IgxGridComponent, IgxSelectComponent, ISortingExpression, ISortingOptions, SortingDirection } from 'igniteui-angular';
 import { DATA } from '../../data/localData';
 
-// eslint-disable-next-line no-shadow
-enum TYPE {
-    SINGLE = 'single',
-    MULTI = 'multiple'
-}
 @Component({
     selector: 'app-grid-sample',
     styleUrls: ['./grid-sorting-sample.component.scss'],
@@ -22,11 +17,12 @@ export class SortingSampleComponent implements OnInit {
     public igxSelect: IgxSelectComponent;
 
     public data: any[];
-    public sortingTypes = [{ name: 'Multiple Sort', value: TYPE.MULTI }, { name: 'Single Sort', value: TYPE.SINGLE }];
-    public currentSortingType: TYPE = TYPE.SINGLE;
+    public sortingTypes = ['SINGLE', 'MULTIPLE'];
+    public expr: ISortingExpression[];
+    public sortingOptions: ISortingOptions = {mode: 'multiple'};
 
-    constructor() {
-    }
+    constructor() { }
+
     public ngOnInit(): void {
         this.data = DATA;
         this.grid1.sortingExpressions = [
@@ -39,19 +35,5 @@ export class SortingSampleComponent implements OnInit {
 
     public formatDate(val: Date) {
         return new Intl.DateTimeFormat('en-US').format(val);
-    }
-
-    public removeSorting($event) {
-        if (this.currentSortingType === TYPE.SINGLE) {
-            this.grid1.columns.forEach((col) => {
-                if (!(col.field === $event.fieldName)) {
-                    this.grid1.clearSort(col.field);
-                }
-            });
-        }
-    }
-
-    public sortTypeSelection(event) {
-            this.grid1.clearSort();
     }
 }
