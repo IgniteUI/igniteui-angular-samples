@@ -1,17 +1,18 @@
 <div class="grid__wrapper" (window:click)="disableContextMenu()">
-    <button class="button-opitions" igxButton="raised" (click)="treegrid1.sortingExpressions = []">
-        Clear Sorting
-    </button>
-    - To clear sorting only
-    <br />
-
     <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
         primaryKey="ID" foreignKey="ParentID" (contextMenu)="rightClick($event)" [sortingOptions]="sortingOptions">
         <igx-grid-toolbar>
+            <button class="button-opitions" igxButton="raised" (click)="treegrid1.sortingExpressions = []">
+                Clear Sorting
+            </button>
+
+            <button class="button-opitions" igxButton="raised" (click)="groupArea.expressions = []">
+                Clear Grouped columns
+            </button>
             <igx-grid-toolbar-actions>
                 <igx-select (selectionChanging)="treegrid1.sortingExpressions = []">
                     <label igxLabel>Select Sorting Type</label>
-                    <igx-select-item (click)="sortingOptions = sortingOptions.mode ==='single' ? {mode: 'multiple'} : {mode: 'single'}" *ngFor="let type of sortingTypes" [value]="type">
+                    <igx-select-item (click)="sortingOptions = type.toLocaleLowerCase() ==='single' ? {mode: 'single'} : {mode: 'multiple'}" *ngFor="let type of sortingTypes" [value]="type">
                         {{type}}
                     </igx-select-item>
                 </igx-select>

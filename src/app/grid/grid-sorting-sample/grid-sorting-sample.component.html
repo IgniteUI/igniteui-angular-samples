@@ -1,24 +1,17 @@
 <div class="grid__wrapper">
-    <button class="button-opitions" igxButton="raised" (click)="grid1.sortingExpressions = []">
-        Clear Sorting
-    </button>
-    - To clear sorting only
-    <br />
-
-    <button class="button-opitions" igxButton="raised" (click)="grid1.groupingExpressions = []">
-        Clear Grouped columns
-    </button>
-    - To clear grouped columns only
-    <br />
-
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
-        [groupingExpressions]='expr' sortable="true" [sortingOptions]="sortingOptions">
-
+    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="500px" width="100%" sortable="true" [sortingOptions]="sortingOptions">
         <igx-grid-toolbar>
+            <button class="button-opitions" igxButton="raised" (click)="grid1.sortingExpressions = []">
+                Clear Sorting
+            </button>
+
+            <button class="button-opitions" igxButton="raised" (click)="grid1.groupingExpressions = []">
+                Clear Grouped columns
+            </button>
             <igx-grid-toolbar-actions>
-                <igx-select (selectionChanging)="grid1.sortingExpressions = []">
+                <igx-select (closed)="grid1.sortingExpressions = []">
                     <label igxLabel>Select Sorting Type</label>
-                    <igx-select-item (click)="sortingOptions = sortingOptions.mode ==='single' ? {mode: 'multiple'} : {mode: 'single'}" *ngFor="let type of sortingTypes" [value]="type">
+                    <igx-select-item (click)="sortingOptions = type.toLocaleLowerCase() ==='single' ? {mode: 'single'} : {mode: 'multiple'}" *ngFor="let type of sortingTypes" [value]="type">
                         {{type}}
                     </igx-select-item>
                 </igx-select>

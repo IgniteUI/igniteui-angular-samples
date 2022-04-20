@@ -3,6 +3,10 @@
     padding: 16px;
 }
 
-.button-opitions {
-    margin-bottom: 20px;
+.igx-grid-toolbar ::ng-deep {
+    .igx-grid-toolbar__custom-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
 }

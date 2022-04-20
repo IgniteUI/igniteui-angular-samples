@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IgxGridComponent, IgxSelectComponent, ISortingExpression, ISortingOptions, SortingDirection } from 'igniteui-angular';
+import { DefaultSortingStrategy, IgxGridComponent, ISortingOptions, SortingDirection } from 'igniteui-angular';
 import { DATA } from '../../data/localData';
 
 @Component({
@@ -12,13 +12,8 @@ import { DATA } from '../../data/localData';
 export class SortingSampleComponent implements OnInit {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
-
-    @ViewChild(IgxSelectComponent)
-    public igxSelect: IgxSelectComponent;
-
     public data: any[];
     public sortingTypes = ['SINGLE', 'MULTIPLE'];
-    public expr: ISortingExpression[];
     public sortingOptions: ISortingOptions = {mode: 'multiple'};
 
     constructor() { }
