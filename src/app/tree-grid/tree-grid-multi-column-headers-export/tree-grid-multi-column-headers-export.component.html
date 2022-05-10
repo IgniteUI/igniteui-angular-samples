@@ -3,9 +3,10 @@
         displayDensity="compact" [allowFiltering]="true" width="100%">
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>
+                <igx-switch [(ngModel)]="exportHeaders">Export multi-column headers</igx-switch>
                 <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
                 <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
-                <igx-grid-toolbar-exporter [exportCSV]="false" [exportExcel]="true">
+                <igx-grid-toolbar-exporter [exportCSV]="false" [exportExcel]="true" (exportStarted)="exportStarted($event)">
                 </igx-grid-toolbar-exporter>
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
