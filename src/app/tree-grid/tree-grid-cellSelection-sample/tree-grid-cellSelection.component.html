@@ -1,36 +1,7 @@
 <div class="grid__wrapper">
-    <span style="display: flex">
+    <span class="button-group-wrapper">
         <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
-        <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.close()">
-            <div class="container">
-                <igx-icon>notification_important</igx-icon>
-                <ng-container *ngIf="selectionMode === 'multiple'">
-                    <ul>
-                        <li><b>This is the default selection behavior.</b></li>
-                        <li>Click on a cell and while pressing the mouse key perform drag action.
-                        </li>
-                        <li>Select a cell and press Shift + Arrow down key, this will start range selection as well.
-                        </li>
-                    </ul>
-                </ng-container>
-                <ng-container *ngIf="selectionMode === 'single'">
-                    <ul>
-                        <li><b>Now you can select only one cell within the grid.</b></li>
-                        <li>On single cell click the previous selection state will be cleared.</li>
-                        <li>The mouse drag will not work and instead of selecting a cell, this will make default text
-                            selection.</li>
-                    </ul>
-                </ng-container>
-                <ng-container *ngIf="selectionMode === 'none'">
-                    <ul>
-                        <li><b>Now you are unable to select a cell while interacting with grid UI.</b></li>
-                        <li>If you need to select a cell, you can use the grid API methods.</li>
-                    </ul>
-                </ng-container>
-            </div>
-        </igx-snackbar>
     </span>
-    <br />
     <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" [height]="'530px'" [width]="'100%'" primaryKey="ID" foreignKey="ParentID"
         [cellSelection]="selectionMode">
         <igx-column [field]="'ID'"></igx-column>
@@ -42,3 +13,32 @@
         <igx-column [field]="'OnPTO'" [dataType]="'date'"></igx-column>
     </igx-tree-grid>
 </div>
+
+<igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.close()">
+    <div class="container">
+        <igx-icon>notification_important</igx-icon>
+        <ng-container *ngIf="selectionMode === 'multiple'">
+            <ul>
+                <li><b>This is the default selection behavior.</b></li>
+                <li>Click on a cell and while pressing the mouse key perform drag action.
+                </li>
+                <li>Select a cell and press Shift + Arrow down key, this will start range selection as well.
+                </li>
+            </ul>
+        </ng-container>
+        <ng-container *ngIf="selectionMode === 'single'">
+            <ul>
+                <li><b>Now you can select only one cell within the grid.</b></li>
+                <li>On single cell click the previous selection state will be cleared.</li>
+                <li>The mouse drag will not work and instead of selecting a cell, this will make default text
+                    selection.</li>
+            </ul>
+        </ng-container>
+        <ng-container *ngIf="selectionMode === 'none'">
+            <ul>
+                <li><b>Now you are unable to select a cell while interacting with grid UI.</b></li>
+                <li>If you need to select a cell, you can use the grid API methods.</li>
+            </ul>
+        </ng-container>
+    </div>
+</igx-snackbar>
