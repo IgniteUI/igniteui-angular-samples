@@ -8,15 +8,10 @@ import { IgxSliderType } from 'igniteui-angular';
 })
 export class SliderSample4Component {
   public sliderType = IgxSliderType;
-  public priceRange: PriceRange = new PriceRange(200, 800);
+  public priceRange = {
+      lower: 200,
+      upper: 800
+  };
 
   constructor() { }
-}
-
-class PriceRange {
-  constructor(
-    public lower: number,
-    public upper: number
-  ) {
-  }
 }
