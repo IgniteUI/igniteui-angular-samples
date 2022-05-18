@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IgxTreeGridComponent, SortingDirection } from 'igniteui-angular';
+import { DefaultSortingStrategy, IgxTreeGridComponent, ISortingOptions, SortingDirection } from 'igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 @Component({
@@ -12,14 +12,15 @@ export class TreeGridSortingSampleComponent implements OnInit {
     @ViewChild('treegrid1', { read: IgxTreeGridComponent, static: true })
     public treegrid1: IgxTreeGridComponent;
     public data: any[];
-
     public contextmenu = false;
     public contextmenuX = 0;
     public contextmenuY = 0;
     public clickedCell = null;
+    public sortingOptions: ISortingOptions = {mode: 'multiple'};
+    public sortingTypes = ['SINGLE', 'MULTIPLE'];
 
-    constructor() {
-    }
+    constructor() { }
+
     public ngOnInit(): void {
         this.data = FOODS_DATA();
         this.treegrid1.sortingExpressions = [
@@ -42,5 +43,5 @@ export class TreeGridSortingSampleComponent implements OnInit {
 
     public disableContextMenu() {
       this.contextmenu = false;
-   }
+    }
 }
