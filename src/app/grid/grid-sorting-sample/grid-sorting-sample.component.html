@@ -10,7 +10,7 @@
             </button>
             <igx-grid-toolbar-actions>
                 <igx-select (closed)="grid1.sortingExpressions = []">
-                    <label igxLabel>Select Sorting Type</label>
+                    <label igxLabel>MULTIPLE</label>
                     <igx-select-item (click)="sortingOptions = type.toLocaleLowerCase() ==='single' ? {mode: 'single'} : {mode: 'multiple'}" *ngFor="let type of sortingTypes" [value]="type">
                         {{type}}
                     </igx-select-item>
