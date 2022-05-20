@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IgxTreeGridComponent, ISortingOptions, SortingDirection } from 'igniteui-angular';
+import { DefaultSortingStrategy, IgxTreeGridComponent, ISimpleComboSelectionChangingEventArgs, ISortingOptions, SortingDirection } from 'igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 @Component({
@@ -17,7 +17,13 @@ export class TreeGridSortingSampleComponent implements OnInit {
     public contextmenuY = 0;
     public clickedCell = null;
     public sortingOptions: ISortingOptions = {mode: 'multiple'};
-    public sortingTypes = ['SINGLE', 'MULTIPLE'];
+    public sortingTypes = [
+        {
+            mode: "SINGLE"
+        }, {
+            mode: "MULTIPLE"
+        }
+    ];
 
     constructor() { }
 
@@ -43,5 +49,9 @@ export class TreeGridSortingSampleComponent implements OnInit {
 
     public disableContextMenu() {
       this.contextmenu = false;
+    }
+
+    handleDropDownSelection(event: ISimpleComboSelectionChangingEventArgs) {
+        return this.sortingOptions = event.displayText.toLocaleLowerCase()  === "single" ? {mode: 'single'} : {mode: 'multiple'};
     }
 }

@@ -16,6 +16,7 @@ import {
     IgxRadioModule,
     IgxRippleModule,
     IgxSelectModule,
+    IgxSimpleComboModule,
     IgxSliderModule,
     IgxSnackbarModule,
     IgxSwitchModule,
@@ -241,7 +242,8 @@ import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/tr
         IgxBannerModule,
         IgxSnackbarModule,
         IgxTooltipModule,
-        IgxListModule
+        IgxListModule,
+        IgxSimpleComboModule
     ],
     providers: [RemoteFilteringService]
 })
