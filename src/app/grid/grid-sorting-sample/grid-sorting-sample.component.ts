@@ -13,14 +13,14 @@ export class SortingSampleComponent implements OnInit {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
     public data: any[];
-    public sortingOptions: ISortingOptions = {mode: 'multiple'};
-    public sortingTypes = [
+    public sortingTypes: ISortingOptions[] = [
         {
-            mode: "SINGLE"
+            mode: 'single'
         }, {
-            mode: "MULTIPLE"
+            mode: 'multiple'
         }
     ];
+    public sortingOptions: ISortingOptions = this.sortingTypes[1];
 
     constructor() { }
 
@@ -39,6 +39,6 @@ export class SortingSampleComponent implements OnInit {
     }
 
     handleDropDownSelection(event: ISimpleComboSelectionChangingEventArgs) {
-        return this.sortingOptions = event.displayText.toLocaleLowerCase()  === "single" ? {mode: 'single'} : {mode: 'multiple'};
+        this.sortingOptions = event.newSelection;
     }
 }

@@ -16,14 +16,14 @@ export class TreeGridSortingSampleComponent implements OnInit {
     public contextmenuX = 0;
     public contextmenuY = 0;
     public clickedCell = null;
-    public sortingOptions: ISortingOptions = {mode: 'multiple'};
-    public sortingTypes = [
+    public sortingTypes: ISortingOptions[] = [
         {
-            mode: "SINGLE"
+            mode: 'single'
         }, {
-            mode: "MULTIPLE"
+            mode: 'multiple'
         }
     ];
+    public sortingOptions: ISortingOptions = this.sortingTypes[1];
 
     constructor() { }
 
@@ -52,6 +52,6 @@ export class TreeGridSortingSampleComponent implements OnInit {
     }
 
     handleDropDownSelection(event: ISimpleComboSelectionChangingEventArgs) {
-        return this.sortingOptions = event.displayText.toLocaleLowerCase()  === "single" ? {mode: 'single'} : {mode: 'multiple'};
+        this.sortingOptions = event.newSelection;
     }
 }

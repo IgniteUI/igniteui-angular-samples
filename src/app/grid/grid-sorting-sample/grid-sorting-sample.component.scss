@@ -10,3 +10,8 @@
         justify-content: flex-start;
     }
 }
+
+.sorting-values ::ng-deep .igx-input-group__input,
+::ng-deep .igx-drop-down__item .igx-drop-down__inner {
+    text-transform: uppercase;
+}

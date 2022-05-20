@@ -9,11 +9,14 @@
                 Clear Grouped columns
             </button>
             <igx-grid-toolbar-actions>
-                <igx-simple-combo class="input-container"
+                <igx-simple-combo #comboItem class="sorting-values"
                     [data]="sortingTypes"
                     [displayKey]="'mode'"
-                    [(ngModel)]="sortingTypes[1]"
+                    [(ngModel)]="sortingOptions"
                     (selectionChanging)="handleDropDownSelection($event)">
+                    <ng-template igxComboClearIcon>
+                        <igx-icon></igx-icon>
+                    </ng-template>
                 </igx-simple-combo>
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
