@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IgxGridComponent, ISimpleComboSelectionChangingEventArgs, ISortingOptions, SortingDirection } from 'igniteui-angular';
+import { DefaultSortingStrategy, IgxGridComponent, ISortingOptions, SortingDirection } from 'igniteui-angular';
 import { DATA } from '../../data/localData';
 
 @Component({
@@ -38,7 +38,7 @@ export class SortingSampleComponent implements OnInit {
         return new Intl.DateTimeFormat('en-US').format(val);
     }
 
-    handleDropDownSelection(event: ISimpleComboSelectionChangingEventArgs) {
-        this.sortingOptions = event.newSelection;
+    handleSearchResults(event: KeyboardEvent) {
+        event.preventDefault();
     }
 }

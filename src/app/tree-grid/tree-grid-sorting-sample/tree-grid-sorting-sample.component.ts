@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IgxTreeGridComponent, ISimpleComboSelectionChangingEventArgs, ISortingOptions, SortingDirection } from 'igniteui-angular';
+import { DefaultSortingStrategy, IgxTreeGridComponent, ISortingOptions, SortingDirection } from 'igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 @Component({
@@ -51,7 +51,7 @@ export class TreeGridSortingSampleComponent implements OnInit {
       this.contextmenu = false;
     }
 
-    handleDropDownSelection(event: ISimpleComboSelectionChangingEventArgs) {
-        this.sortingOptions = event.newSelection;
+    handleSearchResults(event: KeyboardEvent) {
+        event.preventDefault();
     }
 }
