@@ -13,8 +13,14 @@ export class SortingSampleComponent implements OnInit {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
     public data: any[];
-    public sortingTypes = ['SINGLE', 'MULTIPLE'];
-    public sortingOptions: ISortingOptions = {mode: 'multiple'};
+    public sortingTypes: ISortingOptions[] = [
+        {
+            mode: 'single'
+        }, {
+            mode: 'multiple'
+        }
+    ];
+    public sortingOptions: ISortingOptions = this.sortingTypes[1];
 
     constructor() { }
 
@@ -30,5 +36,9 @@ export class SortingSampleComponent implements OnInit {
 
     public formatDate(val: Date) {
         return new Intl.DateTimeFormat('en-US').format(val);
+    }
+
+    handleSearchResults(event: KeyboardEvent) {
+        event.preventDefault();
     }
 }

@@ -9,12 +9,16 @@
                 Clear Grouped columns
             </button>
             <igx-grid-toolbar-actions>
-                <igx-select (closed)="grid1.sortingExpressions = []">
-                    <label igxLabel>Select Sorting Type</label>
-                    <igx-select-item (click)="sortingOptions = type.toLocaleLowerCase() ==='single' ? {mode: 'single'} : {mode: 'multiple'}" *ngFor="let type of sortingTypes" [value]="type">
-                        {{type}}
-                    </igx-select-item>
-                </igx-select>
+                <igx-simple-combo #comboItem
+                    [data]="sortingTypes"
+                    [displayKey]="'mode'"
+                    [(ngModel)]="sortingOptions"
+                    (keydown)="handleSearchResults($event)">
+                    <ng-template igxComboClearIcon></ng-template>
+                    <ng-template igxComboItem let-item>
+                        <div>{{ item.mode | uppercase }}</div>
+                    </ng-template>
+                </igx-simple-combo>
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
 

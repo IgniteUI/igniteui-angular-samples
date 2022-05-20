@@ -16,8 +16,14 @@ export class TreeGridSortingSampleComponent implements OnInit {
     public contextmenuX = 0;
     public contextmenuY = 0;
     public clickedCell = null;
-    public sortingOptions: ISortingOptions = {mode: 'multiple'};
-    public sortingTypes = ['SINGLE', 'MULTIPLE'];
+    public sortingTypes: ISortingOptions[] = [
+        {
+            mode: 'single'
+        }, {
+            mode: 'multiple'
+        }
+    ];
+    public sortingOptions: ISortingOptions = this.sortingTypes[1];
 
     constructor() { }
 
@@ -43,5 +49,9 @@ export class TreeGridSortingSampleComponent implements OnInit {
 
     public disableContextMenu() {
       this.contextmenu = false;
+    }
+
+    handleSearchResults(event: KeyboardEvent) {
+        event.preventDefault();
     }
 }
