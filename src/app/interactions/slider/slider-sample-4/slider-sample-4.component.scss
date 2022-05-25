@@ -2,3 +2,9 @@
     margin: 55px 20px;
     min-width: 200px;
 }
+
+.row-container {
+    display: grid;
+    column-gap: 12px;
+    grid-template-columns: 50% 50%;
+}
