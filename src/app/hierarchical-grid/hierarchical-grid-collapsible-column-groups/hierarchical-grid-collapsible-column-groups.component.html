@@ -31,7 +31,7 @@
                         <igx-column field="PostalCode" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
                     </igx-column-group>
                 </igx-column-group>
-                <igx-row-island [key]="'Orders'" [autoGenerate]="false" [moving]="true">
+                <igx-row-island [height]="null" [key]="'Orders'" [autoGenerate]="false" [moving]="true">
                     <igx-column-group header="Order Information">
                         <igx-column-group header="Order Details">
                             <igx-column field="OrderID" sortable="true" resizable="true"></igx-column>
@@ -52,7 +52,7 @@
                             <igx-column field="ShipCountry" sortable="true" resizable="true"></igx-column>
                         </igx-column-group>
                     </igx-column-group>
-                    <igx-row-island [key]="'OrderDetails'" [autoGenerate]="false">
+                    <igx-row-island [height]="null" [key]="'OrderDetails'" [autoGenerate]="false">
                             <igx-column field="ProductID" sortable="true" resizable="true"></igx-column>
                             <igx-column field="UnitPrice" sortable="true" resizable="true"></igx-column>
                             <igx-column field="Quantity" sortable="true" resizable="true"></igx-column>

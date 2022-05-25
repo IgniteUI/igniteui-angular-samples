@@ -33,7 +33,7 @@
         <igx-column field="GrammyAwards" header="Grammy Awards" [hasSummary]='hasSummary' [dataType]="'number'"
             [summaries]="numberSummary"></igx-column>
 
-        <igx-row-island [key]="'Albums'" [summaryRowHeight]="summaryHeight">
+        <igx-row-island [height]="null" [key]="'Albums'" [summaryRowHeight]="summaryHeight">
             <igx-column field="Album" [hasSummary]='hasSummary'></igx-column>
             <igx-column field="LaunchDate" header="Launch Date" [hasSummary]='hasSummary' [dataType]="'date'">
                 <ng-template igxSummary let-summaryResults>
@@ -45,7 +45,7 @@
             </igx-column>
             <igx-column field="BillboardReview" header="Billboard Review" [hasSummary]='hasSummary'></igx-column>
             <igx-column field="USBillboard200" header="US Billboard 200" [hasSummary]='hasSummary'></igx-column>
-            <igx-row-island [key]="'Songs'">
+            <igx-row-island [height]="null" [key]="'Songs'">
                 <igx-column field="Number" header="No." [hasSummary]='hasSummary'></igx-column>
                 <igx-column field="Title" [hasSummary]='hasSummary'></igx-column>
                 <igx-column field="Released" dataType="date" [hasSummary]='hasSummary'></igx-column>
