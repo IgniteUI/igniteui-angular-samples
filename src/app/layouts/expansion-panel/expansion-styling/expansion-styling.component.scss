@@ -65,7 +65,6 @@ $custom-button-theme: button-theme(
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 16px;
     border-top: 1px solid color($my-color-palette, 'primary');
     ::selection  {
         background: color($my-color-palette, 'secondary', 200)
