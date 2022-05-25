@@ -41,5 +41,6 @@ export class HierarchicalGridCellSelectionComponent implements OnInit {
 
     public selectCellSelectionModeChildGrid(args) {
         this.selectionModeChild = this.selectionModes[args.index].label;
+        this.snackbar.open();
     }
 }

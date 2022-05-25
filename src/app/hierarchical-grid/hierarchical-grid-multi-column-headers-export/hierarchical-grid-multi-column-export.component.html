@@ -2,9 +2,10 @@
     <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid [data]="localdata" [moving]="true" [height]="'740px'" [width]="'100%'" displayDensity="compact" [allowFiltering]="true">
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>
+                <igx-switch [(ngModel)]="exportHeaders">Export multi-column headers</igx-switch>
                 <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
                 <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
-                <igx-grid-toolbar-exporter [exportCSV]="false" [exportExcel]="true">
+                <igx-grid-toolbar-exporter [exportCSV]="false" [exportExcel]="true" (exportStarted)="exportStarted($event)">
                 </igx-grid-toolbar-exporter>
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
