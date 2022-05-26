@@ -1,16 +1,24 @@
 <div class="sample-center">
     <div class="container">
-        <igx-slider id="slider" [type]="sliderType.RANGE" [minValue]="0" [maxValue]="1000" [lowerBound]="100" [upperBound]="900" [(ngModel)]="priceRange"></igx-slider>
+        <igx-slider id="slider"
+                    [type]="sliderType.RANGE"
+                    [minValue]="0"
+                    [maxValue]="1000"
+                    [lowerBound]="100"
+                    [upperBound]="900"
+                    [(lowerValue)]="priceRange.lower"
+                    [(upperValue)]="priceRange.upper">
+        </igx-slider>
         <div class="wrapper">
             <igx-input-group type="border">
-                <igx-prefix>USD</igx-prefix>
-                <input #lowerInput igxInput type="number" id="lowerInput" [ngModel]="priceRange.lower" />
                 <label igxLabel for="lowerInput">Lower price:</label>
+                <igx-prefix>$</igx-prefix>
+                <input igxInput type="number" id="lowerInput" min="100" [max]="priceRange.upper" [(ngModel)]="priceRange.lower" />
             </igx-input-group>
             <igx-input-group type="border">
-                <igx-prefix>USD</igx-prefix>
-                <input #upperInput igxInput type="number" id="upperInput" [ngModel]="priceRange.upper" />
                 <label igxLabel for="upperInput">Upper price:</label>
+                <igx-prefix>$</igx-prefix>
+                <input igxInput type="number" id="upperInput" [min]="priceRange.lower" max="900" [(ngModel)]="priceRange.upper" />
             </igx-input-group>
         </div>
     </div>

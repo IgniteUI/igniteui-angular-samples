@@ -16,7 +16,7 @@
     <igx-column field="Country" width="150px"></igx-column>
     <igx-column field="Phone" width="150px"></igx-column>
     <igx-column field="Fax" width="150px"></igx-column>
-    <igx-row-island [key]="'Orders'" [autoGenerate]="false">
+    <igx-row-island [height]="null" [key]="'Orders'" [autoGenerate]="false">
             <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" width="150px"></igx-column>
             <igx-column field="RequiredDate" header="Required Date" [dataType]="'date'" width="150px"></igx-column>
             <igx-column field="ShippedDate" header="Shipped Date" [dataType]="'date'" width="150px"></igx-column>
@@ -27,7 +27,7 @@
             <igx-column field="ShipCity" header="Ship City" width="150px"></igx-column>
             <igx-column field="ShipPostalCode" header="Ship Postal Code" width="150px"></igx-column>
             <igx-column field="ShipCountry" header="Ship Country" width="150px"></igx-column>
-        <igx-row-island [key]="'OrderDetails'" [autoGenerate]="false">
+        <igx-row-island [height]="null" [key]="'OrderDetails'" [autoGenerate]="false">
                 <igx-column field="UnitPrice" header="Unit Price" width="150px"></igx-column>
                 <igx-column field="Quantity" width="150px"></igx-column>
                 <igx-column field="Discount" width="150px"></igx-column>

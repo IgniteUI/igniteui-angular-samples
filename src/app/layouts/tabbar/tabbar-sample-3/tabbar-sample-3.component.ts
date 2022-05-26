@@ -43,10 +43,10 @@ export class TabbarSample3Component implements OnInit {
     template: `
         <br>
         <igx-grid igxPreventDocumentScroll [data]='data'>
-            <igx-column [field]=''Flight'' width='100'></igx-column>
-            <igx-column [field]=''From'' width='120'></igx-column>
-            <igx-column [field]=''Time'' width='100'></igx-column>
-            <igx-column [field]=''Status'' width='120'></igx-column>
+            <igx-column [field]="'Flight'" width='100'></igx-column>
+            <igx-column [field]="'From'" width='120'></igx-column>
+            <igx-column [field]="'Time'" width='100'></igx-column>
+            <igx-column [field]="'Status'" width='120'></igx-column>
         </igx-grid>
     `
 })
@@ -64,10 +64,10 @@ export class BottomNavRoutingView1Component {
     template: `
         <br>
         <igx-grid igxPreventDocumentScroll [data]='data'>
-            <igx-column [field]=''Flight'' width='100'></igx-column>
-            <igx-column [field]=''From'' width='120'></igx-column>
-            <igx-column [field]=''Time'' width='100'></igx-column>
-            <igx-column [field]=''Status'' width='120'></igx-column>
+            <igx-column [field]="'Flight'" width='100'></igx-column>
+            <igx-column [field]="'From'" width='120'></igx-column>
+            <igx-column [field]="'Time'" width='100'></igx-column>
+            <igx-column [field]="'Status'" width='120'></igx-column>
         </igx-grid>
     `
 })
@@ -86,10 +86,10 @@ export class BottomNavRoutingView2Component {
     template: `
         <br>
         <igx-grid igxPreventDocumentScroll [data]='data'>
-            <igx-column [field]=''Flight'' width='100'></igx-column>
-            <igx-column [field]=''From'' width='120'></igx-column>
-            <igx-column [field]=''Time'' width='100'></igx-column>
-            <igx-column [field]=''Status'' width='120'></igx-column>
+            <igx-column [field]="'Flight'" width='100'></igx-column>
+            <igx-column [field]="'From'" width='120'></igx-column>
+            <igx-column [field]="'Time'" width='100'></igx-column>
+            <igx-column [field]="'Status'" width='120'></igx-column>
         </igx-grid>
     `
 })

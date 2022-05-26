@@ -1,4 +1,5 @@
-[![Build Status](https://dev.azure.com/IgniteUI/igniteui-angular/_apis/build/status/IgniteUI.igniteui-angular-samples?branchName=master)](https://dev.azure.com/IgniteUI/igniteui-angular/_build/latest?definitionId=4&branchName=master)
+[![CI](https://github.com/IgniteUI/igniteui-angular-samples/actions/workflows/build-app-lob.yml/badge.svg)](https://github.com/IgniteUI/igniteui-angular-samples/actions/workflows/build-app-lob.yml)
+[![Build Status](https://dev.azure.com/IgniteUI/igniteui-angular/_apis/build/status/IgniteUI.igniteui-angular-samples?branchName=refs%2Fpull%2F2995%2Fmerge)](https://dev.azure.com/IgniteUI/igniteui-angular/_build/latest?definitionId=4&branchName=refs%2Fpull%2F2995%2Fmerge)
 
 # Ignite UI for Angular - Samples
 

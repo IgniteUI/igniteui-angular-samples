@@ -1,6 +1,6 @@
 <div class="sample">
     <div class="grid_wrapper">
-        <igx-hierarchical-grid height="440px" width="100%" [allowAdvancedFiltering]="true"
+        <igx-hierarchical-grid height="570px" width="100%" [allowAdvancedFiltering]="true"
             columnSelection="multiple" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" displayDensity="compact"
             (keydown)="gridKeydown($event)" (activeNodeChange)="onActiveNodeChange($event)">
             <igx-paginator></igx-paginator>
@@ -29,7 +29,7 @@
                 </igx-column-group>
             </igx-column-group>
 
-            <igx-row-island [key]="'Orders'" [autoGenerate]="false" columnSelection="multi" (gridCreated)="onGridCreated($event)" (activeNodeChange)="onActiveNodeChange($event)" [allowAdvancedFiltering]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+            <igx-row-island [height]="null" [key]="'Orders'" [autoGenerate]="false" columnSelection="multi" (gridCreated)="onGridCreated($event)" (activeNodeChange)="onActiveNodeChange($event)" [allowAdvancedFiltering]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
                 <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid"></igx-grid-toolbar>
 
                 <igx-column-group header="Order Information">
@@ -52,7 +52,7 @@
                         <igx-column field="ShipCountry"></igx-column>
                     </igx-column-group>
                 </igx-column-group>
-                <igx-row-island [key]="'OrderDetails'" [autoGenerate]="false" columnSelection="single" (gridCreated)="onGridCreated($event)" [allowAdvancedFiltering]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" (activeNodeChange)="onActiveNodeChange($event)">
+                <igx-row-island [height]="null" [key]="'OrderDetails'" [autoGenerate]="false" columnSelection="single" (gridCreated)="onGridCreated($event)" [allowAdvancedFiltering]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" (activeNodeChange)="onActiveNodeChange($event)">
 <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid"></igx-grid-toolbar>
 
                         <igx-column [editable]="true" [sortable]="true" field="ProductID" ></igx-column>
