@@ -8,7 +8,7 @@ import {
     IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule,
     IgxCheckboxModule, IgxChipsModule, IgxComboModule,
     IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxExpansionPanelModule, IgxFocusModule,
-    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule,
+    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSimpleComboModule, IgxSliderModule,
     IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from 'igniteui-angular';
 import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
@@ -129,6 +129,7 @@ import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-ex
 import { CRUDSampleComponent } from './grid-crud-sample/crud-sample.component';
 import { GridRowClassesComponent } from './grid-rowClasses-sample/grid-rowClasses.component';
 import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.component';
+import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summary-template.component';
 
 @NgModule({
     declarations: [
@@ -233,6 +234,7 @@ import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.c
         GridExternalAdvancedFilteringComponent,
         GridCollapsibleColumnGroupsComponent,
         GridAllDataSummaryComponent,
+        GridSummaryTemplateComponent,
         RightPinningSampleComponent,
         GridColumnSelectionComponent,
         GridColumnGroupSelectionComponent,
@@ -285,7 +287,8 @@ import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.c
         IgxCardModule,
         IgxDividerModule,
         IgxActionStripModule,
-        IgxListModule
+        IgxListModule,
+        IgxSimpleComboModule
     ]
 })
 export class GridsModule { }

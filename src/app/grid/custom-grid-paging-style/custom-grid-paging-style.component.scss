@@ -5,12 +5,12 @@ $bg: #292826;
 $gray: #404040;
 $light-gray: rgba(255, 255, 255, .54);
 
-$dark-paginator: igx-paginator-theme(
+$dark-paginator: paginator-theme(
     $text-color: $yellow,
     $background-color: $gray,
     $border-color: $bg
 );
-$dark-button: igx-button-theme(
+$dark-button: button-theme(
     $foreground: $yellow,
     $hover-foreground: $bg,
     $hover-background: $yellow,
@@ -18,7 +18,7 @@ $dark-button: igx-button-theme(
     $focus-background: $yellow,
     $disabled-foreground: #16130C
 );
-$dark-input-group: igx-input-group-theme(
+$dark-input-group: input-group-theme(
     $filled-text-color: $light-gray,
     $idle-text-color: $light-gray,
     $focused-text-color: $yellow,
@@ -26,7 +26,7 @@ $dark-input-group: igx-input-group-theme(
     $hover-border-color: $yellow,
     $focused-border-color: $yellow
 );
-$dark-drop-down-theme: igx-drop-down-theme(
+$dark-drop-down-theme: drop-down-theme(
     $background-color: $bg,
     $item-text-color: $yellow,
     $selected-item-background: $yellow,
@@ -42,12 +42,12 @@ $dark-drop-down-theme: igx-drop-down-theme(
 
 :host {
      ::ng-deep {
-        @include igx-paginator($dark-paginator);
-        @include igx-drop-down($dark-drop-down-theme);
+        @include paginator($dark-paginator);
+        @include drop-down($dark-drop-down-theme);
 
         igx-paginator {
-            @include igx-button($dark-button);
-            @include igx-input-group($dark-input-group);
+            @include button($dark-button);
+            @include input-group($dark-input-group);
         }
     }
 }

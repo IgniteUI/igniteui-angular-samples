@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IgxExporterEvent } from 'igniteui-angular';
 import { HIERARCHICAL_DATA } from '../../data/hierarchical-data';
 
 @Component({
@@ -9,6 +10,11 @@ import { HIERARCHICAL_DATA } from '../../data/hierarchical-data';
 
 export class HGridMultiColumnHeadersExportComponent implements OnInit {
     public localdata = [];
+    public exportHeaders = true;
+
+    public exportStarted(args: IgxExporterEvent) {
+        args.options.ignoreMultiColumnHeaders = !this.exportHeaders;
+    }
 
     public ngOnInit(): void {
         this.localdata = HIERARCHICAL_DATA;

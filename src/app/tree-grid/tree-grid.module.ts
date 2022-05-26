@@ -16,6 +16,7 @@ import {
     IgxRadioModule,
     IgxRippleModule,
     IgxSelectModule,
+    IgxSimpleComboModule,
     IgxSliderModule,
     IgxSnackbarModule,
     IgxSwitchModule,
@@ -112,6 +113,7 @@ import { TreeGridExternalOutletComponent } from './tree-grid-external-outlet/tre
 import { TreeGridExportVisualizationComponent } from './tree-grid-export-visualization/tree-grid-export-visualization.component';
 import { TGridEditingLifecycleComponent } from './tgrid-editing-lifecycle-sample/tgrid-editing-lifecycle.component';
 import { TreeGridFormattedFilteringStrategyComponent } from './tree-grid-formatted-filtering-strategy/tree-grid-formatted-filtering-strategy.component';
+import { TreeGridTreeFilterViewComponent } from './tree-grid-tree-filter-view/tree-grid-tree-filter-view.component';
 import { TreeGridSummaryFormatterComponent } from './tree-grid-summary-formatter/tree-grid-summary-formatter.component';
 import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid-pager-sample.component';
 import { TreeGridGroupByLoadOnDemandComponent } from './tree-grid-group-by-load-on-demand-sample/tree-grid-group-by-load-on-demand-sample.component';
@@ -119,6 +121,7 @@ import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-col
 import { TreeGridRowStylesComponent } from './tree-grid-rowStyles-sample/tree-grid-rowStyle.component';
 import { TreeGridRowClassesComponent } from './tree-grid-rowClasses-sample/tree-grid-rowClasses.component';
 import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tree-grid-action-strip-sample';
+import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/treegrid-summary-template.component';
 
 @NgModule({
     declarations: [
@@ -196,6 +199,7 @@ import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tre
         TreeGridConditionalCellStyle2Component,
         TreeGridMultiCollapsibleColumnGroupsComponent,
         TreeGridAllDataSummaryComponent,
+        TreeGridSummaryTemplateComponent,
         TreeGridRowPinningSampleComponent,
         TreeGridRowPinningStylingSampleComponent,
         TreeGridRowPinningExtraColumnSampleComponent,
@@ -209,6 +213,7 @@ import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tre
         TreeGridExportVisualizationComponent,
         TGridEditingLifecycleComponent,
         TreeGridFormattedFilteringStrategyComponent,
+        TreeGridTreeFilterViewComponent,
         TreeGridSummaryFormatterComponent,
         TreeGridRowStylesComponent,
         TreeGridRowClassesComponent,
@@ -237,7 +242,8 @@ import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tre
         IgxBannerModule,
         IgxSnackbarModule,
         IgxTooltipModule,
-        IgxListModule
+        IgxListModule,
+        IgxSimpleComboModule
     ],
     providers: [RemoteFilteringService]
 })

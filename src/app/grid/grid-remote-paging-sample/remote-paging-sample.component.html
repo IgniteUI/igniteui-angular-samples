@@ -7,7 +7,7 @@
         <igx-column field="UnitsInStock"></igx-column>
         <igx-column field="Rating"></igx-column>
         <igx-paginator #paginator
-            [totalRecords]="totalCount"
+        [totalRecords]="totalCount"
             [(page)]="page"
             [(perPage)]="perPage"
             [selectOptions]="selectOptions"
@@ -16,7 +16,7 @@
             (perPageChange)="perPageChange($event)">
             <igx-paginator-content>
                 <igx-page-size></igx-page-size>
-                [This is my custom content]
+                    [This is my custom content]
                 <igx-page-nav></igx-page-nav>
             </igx-paginator-content>
         </igx-paginator>

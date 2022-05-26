@@ -4,7 +4,7 @@ igx-radio + igx-radio {
     margin-top: 16px;
 }
 
-$custom-radio-theme: igx-radio-theme(
+$custom-radio-theme: radio-theme(
     $disabled-color: lightgray,
     $empty-color:  #345779,
     $fill-color: #2dabe8,
@@ -18,7 +18,7 @@ $custom-radio-theme: igx-radio-theme(
     flex-flow: column nowrap;
     padding: 16px;
 
-    // @include igx-css-vars($custom-radio-theme);
+    // @include css-vars($custom-radio-theme);
 
     /* Using Theme Overrides to provide IE 11 support.
      * NOTE: Theming using this approach will greatly increase the size
@@ -26,7 +26,7 @@ $custom-radio-theme: igx-radio-theme(
      * delete this section and use the `igx-css-vars` mixin as shown above.
     **/
     ::ng-deep {
-        @include igx-radio($custom-radio-theme);
+        @include radio($custom-radio-theme);
     }
 }
 

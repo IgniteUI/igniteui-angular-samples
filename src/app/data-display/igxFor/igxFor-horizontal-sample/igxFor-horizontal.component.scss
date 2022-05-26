@@ -1,6 +1,17 @@
 :host {
     display: block;
     padding: 16px;
+    ::ng-deep {
+        .list-container {
+            display: flex;
+            flex-direction: column;
+            padding: 16px 8px 0;
+            > igx-display-container {
+                flex-direction: row;
+                overflow: visible;
+            }
+        }
+    }
 }
 
 .sample-content{
@@ -19,12 +30,6 @@
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
         0px 1px 1px 0px rgba(0, 0, 0, 0.14),
         0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-}
-
-.list-container {
-    display: flex;
-    flex-direction: column;
-    padding: 16px 8px 0;
 }
 
 .item-container {

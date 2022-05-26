@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IgxBannerComponent, IgxToastComponent, slideInLeft, slideOutRight } from 'igniteui-angular';
+import { IgxBannerComponent, IgxToastComponent, slideInLeft, slideOutRight, VerticalAlignment } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -14,7 +14,6 @@ export class BannerStylingComponent implements OnInit, OnDestroy {
     public contentWidth = '384px';
     public imageUrls = ['assets/images/card/media/the_red_ice_forest.jpg',
         'assets/images/card/media/yosemite.jpg'];
-    public toastPosition: 'middle';
     public animationSettings = {
         closeAnimation: slideOutRight,
         openAnimation: slideInLeft
@@ -32,7 +31,7 @@ export class BannerStylingComponent implements OnInit, OnDestroy {
 
     public showToast() {
         this.eventToast.close();
-        this.toastPosition = 'middle';
+        this.eventToast.positionSettings.verticalDirection = VerticalAlignment.Middle;
         this.eventToast.open(`Wifi is now ${this.wifiState ? 'on' : 'off'}`);
     }
 

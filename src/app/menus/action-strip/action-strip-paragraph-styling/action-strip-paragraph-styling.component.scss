@@ -23,7 +23,7 @@
     text-decoration: line-through;
 }
 
-$custom-strip: igx-action-strip-theme(
+$custom-strip: action-strip-theme(
     $background: rgba(150, 133, 143, 0.4),
     $actions-background: rgba(109, 121, 147, 0.6),
     $icon-color:  null,
@@ -32,7 +32,7 @@ $custom-strip: igx-action-strip-theme(
 );
 
 .my-action-strip {
-    @include igx-action-strip($custom-strip);
+    @include action-strip($custom-strip);
 
     display: flex;
     align-items: flex-start;

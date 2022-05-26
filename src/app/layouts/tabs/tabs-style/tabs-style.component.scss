@@ -3,21 +3,21 @@
 $yellow-color: #F4D45C;
 $black-color: #292826;
 
-$dark-palette: igx-palette(
+$dark-palette: palette(
     $primary: $black-color,
     $secondary: $yellow-color
 );
 
-$dark-tabs: igx-tabs-theme(
+$dark-tabs: tabs-theme(
     $palette: $dark-palette,
-    $item-text-color: igx-color($dark-palette, "secondary", 400),
-    $item-background: igx-color($dark-palette, "primary", 400),
-    $item-hover-background: igx-color($dark-palette, "secondary", 400),
-    $item-hover-color: igx-color($dark-palette, "primary", 400),
-    $item-active-color: igx-color($dark-palette, "secondary", 400),
-    $item-active-icon-color: igx-color($dark-palette, "secondary", 400),
-    $indicator-color: igx-color($dark-palette, "secondary", 400),
-    $tab-ripple-color: igx-color($dark-palette, "secondary", 400)
+    $item-text-color: color($dark-palette, "secondary", 400),
+    $item-background: color($dark-palette, "primary", 400),
+    $item-hover-background: color($dark-palette, "secondary", 400),
+    $item-hover-color: color($dark-palette, "primary", 400),
+    $item-active-color: color($dark-palette, "secondary", 400),
+    $item-active-icon-color: color($dark-palette, "secondary", 400),
+    $indicator-color: color($dark-palette, "secondary", 400),
+    $tab-ripple-color: color($dark-palette, "secondary", 400)
 );
 
 :host {
@@ -26,7 +26,7 @@ $dark-tabs: igx-tabs-theme(
     }
 
     ::ng-deep {
-        @include igx-tabs($dark-tabs);
+        @include tabs($dark-tabs);
     }
 }
 

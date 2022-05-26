@@ -8,11 +8,11 @@ $schema: $light-material-schema;
 $default-palette: $palette;
 $igx-legacy-support: $legacy-support;
 
-$green-palette: igx-palette(
+$green-palette: palette(
     $primary: #09f,
     $secondary: #72da67,
     $grays: #fff,
     $surface: #333
 );
 
-$grays-btn-color: igx-color($green-palette, 'grays', 800);
+$grays-btn-color: color($green-palette, 'grays', 800);
