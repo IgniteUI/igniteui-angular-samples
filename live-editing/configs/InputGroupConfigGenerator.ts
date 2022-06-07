@@ -68,11 +68,11 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxIconModule', 'IgxInputGroupModule', 'IgxButtonModule',
                      'IgxRippleModule', 'ReactiveFormsSampleComponent', 'IgxDatePickerModule', 'IgxTimePickerModule',
-                     'IgxComboModule', 'FormsModule', 'ReactiveFormsModule', 'IgxDropDownModule', 'IgxSelectModule'],
+                     'IgxComboModule', 'ReactiveFormsModule', 'IgxDropDownModule', 'IgxSelectModule'],
+
                 ngDeclarations: ['ReactiveFormsSampleComponent'],
                 ngImports: ['IgxIconModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                     'IgxRippleModule', 'IgxDatePickerModule', 'IgxTimePickerModule', 'IgxComboModule',
-                     'FormsModule', 'ReactiveFormsModule', 'IgxDropDownModule', 'IgxSelectModule']
+                     'IgxRippleModule', 'IgxDatePickerModule', 'IgxTimePickerModule', 'IgxComboModule', 'ReactiveFormsModule', 'IgxDropDownModule', 'IgxSelectModule']
             }),
             shortenComponentPathBy: "/data-entries/"
         }));
