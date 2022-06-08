@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { IgxStepperComponent } from 'igniteui-angular';
 
 @Component({
@@ -83,7 +83,7 @@ export class StepperOverviewSampleComponent {
         this.stepper.next();
     }
 
-    public resetStepper(form1: UntypedFormGroup, form2: UntypedFormGroup, form3: UntypedFormGroup): void {
+    public resetStepper(form1: NgForm, form2: NgForm, form3: NgForm): void {
         this.stepper.reset();
         this.selectedCard = null;
         form1.reset();
