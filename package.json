@@ -66,7 +66,7 @@
     "igniteui-angular-charts": "^13.1.1",
     "igniteui-angular-core": "^13.1.1",
     "igniteui-angular-i18n": "^12.2.4",
-    "igniteui-dockmanager": "^1.7.0",
+    "igniteui-dockmanager": "^1.8.0",
     "igniteui-live-editing": "^2.0.0",
     "immediate": "^3.2.3",
     "intl": "^1.2.5",
