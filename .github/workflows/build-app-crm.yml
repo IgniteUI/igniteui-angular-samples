@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: npm ci --legacy-peer-dep
+        run: npm ci --force
 
       - name: Run lint
         run: npm run lint
