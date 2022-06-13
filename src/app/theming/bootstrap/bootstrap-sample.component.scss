@@ -92,13 +92,13 @@ $dark-secondary: color($custom-dark-palette, "secondary");
         ::ng-deep {
             @include bootstrap-dark-theme($custom-dark-palette);
 
-            .accordion {
-                .card-header {
+            ngb-accordion {
+                .accordion-header {
                     background-color: color($custom-dark-palette, 'grays', 200);
                     color: color($custom-dark-palette, 'grays', 900);
                 }
 
-                .card {
+                .accordion-item {
                     background-color: color($custom-dark-palette, 'surface');
                     border-color: color($custom-dark-palette, 'grays', 300);
                 }
