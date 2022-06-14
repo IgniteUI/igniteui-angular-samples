@@ -5,7 +5,7 @@ import {
 import { generateEmployeeFlatData } from '../data/employees-flat';
 import { Employee } from './employee';
 
-class CustomNumberSummary {
+class CustomNumberSummary extends IgxSummaryOperand {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = new IgxSummaryOperand().operate(data);

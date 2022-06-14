@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
+import {IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult} from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
-class DiscontinuedSummary {
+class DiscontinuedSummary extends IgxSummaryOperand {
     public operate(data?: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
         const result = [];
         result.push({

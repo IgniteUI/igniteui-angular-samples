@@ -1,9 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent, IgxNumberSummaryOperand,
-    IgxSummaryResult } from 'igniteui-angular';
+import {
+    IgxHierarchicalGridComponent, IgxNumberSummaryOperand, IgxSummaryOperand,
+    IgxSummaryResult
+} from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
-class MySummary  {
+class MySummary extends IgxSummaryOperand {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];
@@ -26,7 +28,7 @@ class MySummary  {
         return result;
     }
 }
-class MyChildSummary {
+class MyChildSummary extends IgxSummaryOperand {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];

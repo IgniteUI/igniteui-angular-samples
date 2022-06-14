@@ -1,13 +1,15 @@
 import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
-import { GridFeatures,
+import {
+    GridFeatures,
     IGridState, IGridStateOptions, IgxGridStateDirective,
     IgxHierarchicalGridComponent, IgxNumberSummaryOperand,
-    IgxSummaryResult, IgxCheckboxComponent} from 'igniteui-angular';
+    IgxSummaryResult, IgxCheckboxComponent, IgxSummaryOperand
+} from 'igniteui-angular';
 import { take } from 'rxjs/operators';
 import { SINGERS } from '../../data/singersData';
 
-class MySummary {
+class MySummary extends IgxSummaryOperand {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = new IgxNumberSummaryOperand().operate(data);

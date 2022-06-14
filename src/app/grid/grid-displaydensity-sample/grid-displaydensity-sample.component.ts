@@ -3,7 +3,7 @@ import { IgxButtonGroupComponent, IgxGridComponent, IgxNumberSummaryOperand,
     IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
 
-class CustomNumberSummary {
+class CustomNumberSummary extends IgxSummaryOperand {
     public operate(data?: any[]): IgxSummaryResult[] {
       const result = new IgxSummaryOperand().operate(data);
       result.push({

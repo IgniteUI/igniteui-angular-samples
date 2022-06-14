@@ -17,7 +17,7 @@ import {
     OverlaySettings,
     IgxOverlayService,
     AbsolutePosition,
-    OverlayClosingEventArgs
+    OverlayClosingEventArgs, IgxSummaryOperand
 } from 'igniteui-angular';
 import { athletesData } from '../../data/athletesData';
 
@@ -284,7 +284,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 }
 
-class CustomTopSpeedSummary {
+class CustomTopSpeedSummary extends IgxSummaryOperand {
 
 
     public operate(data?: any[]): IgxSummaryResult[] {
@@ -299,7 +299,7 @@ class CustomTopSpeedSummary {
     }
 }
 
-export class CustomBPMSummary {
+export class CustomBPMSummary extends IgxSummaryOperand {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];
@@ -314,7 +314,7 @@ export class CustomBPMSummary {
     }
 }
 
-export class CustomSpeedSummary {
+export class CustomSpeedSummary extends IgxSummaryOperand {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         data = data.reduce((acc, val) => acc.concat(val), []).map(rec => rec.Speed);

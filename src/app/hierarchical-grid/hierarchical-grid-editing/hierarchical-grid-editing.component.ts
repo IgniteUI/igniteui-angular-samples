@@ -2,12 +2,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxDialogComponent, IgxHierarchicalGridComponent,
-    IgxNumberSummaryOperand, IgxSummaryResult
+    IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult
 } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { Singer } from '../models';
 
-class MySummary {
+class MySummary extends IgxSummaryOperand {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];

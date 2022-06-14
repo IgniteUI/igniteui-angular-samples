@@ -1,9 +1,17 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxGridComponent, IgxSummaryResult, IgxNumberSummaryOperand, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import {
+    IgxDialogComponent,
+    IgxGridComponent,
+    IgxSummaryResult,
+    IgxNumberSummaryOperand,
+    IgxToastComponent,
+    VerticalAlignment,
+    IgxSummaryOperand
+} from 'igniteui-angular';
 import { DATA, LOCATIONS } from './data';
 import { Product } from './product';
 
-class NumberSummary {
+class NumberSummary extends IgxSummaryOperand {
     public operate(data: any[]): IgxSummaryResult[] {
       const result = [];
       result.push({

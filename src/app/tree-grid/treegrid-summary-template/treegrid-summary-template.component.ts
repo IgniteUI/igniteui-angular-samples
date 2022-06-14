@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
-class PTOSummary {
+class PTOSummary extends IgxSummaryOperand {
 
     public operate(data?: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
         const result = [];

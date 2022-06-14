@@ -3,11 +3,11 @@ import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit } 
 import { NavigationStart, Router } from '@angular/router';
 import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
     IGridState, IGridStateOptions, IgxGridComponent, IgxGridStateDirective,
-    IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent } from 'igniteui-angular';
+    IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent, IgxSummaryOperand } from 'igniteui-angular';
 import { take } from 'rxjs/operators';
 import { employeesData } from './localData';
 
-class MySummary {
+class MySummary extends IgxSummaryOperand {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = new IgxNumberSummaryOperand().operate(data);

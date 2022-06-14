@@ -2,11 +2,12 @@ import { Component, ViewChild } from '@angular/core';
 import {
     IgxColumnComponent,
     IgxGridComponent,
-    IgxNumberSummaryOperand,
-    IgxSummaryResult } from 'igniteui-angular';
+    IgxNumberSummaryOperand, IgxSummaryOperand,
+    IgxSummaryResult
+} from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
-class MySummary  {
+class MySummary extends IgxSummaryOperand {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = new IgxNumberSummaryOperand().operate(data);
