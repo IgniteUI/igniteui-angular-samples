@@ -51,12 +51,6 @@ import { FilterTypePipe, GridDynamicChartDataComponent, NamePipe } from './grid-
         GridDynamicChartDataRoutingModule
     ],
     providers: [],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    entryComponents: [
-        IgxDataChartComponent,
-        IgxItemLegendComponent,
-        IgxLegendComponent,
-        IgxPieChartComponent
-    ]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridDynamicChartDataModule {}

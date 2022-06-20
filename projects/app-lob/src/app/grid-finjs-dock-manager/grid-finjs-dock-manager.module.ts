@@ -29,10 +29,6 @@ import { DockSlotComponent, GridHostDirective } from './dock-slot.component';
         IgxTabsModule
     ],
     providers: [],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    entryComponents: [
-        IgxGridComponent,
-        DockSlotComponent
-    ]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridFinJSDockManagerModule { }

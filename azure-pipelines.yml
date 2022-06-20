@@ -12,7 +12,7 @@ steps:
 - script: npm config set $(igScope):_auth=$(token)
   displayName: 'Npm config auth'
 
-- script: npm ci
+- script: npm ci --force
   displayName: 'Install dependencies'
   env:
     AZURE_PIPELINES: "true"
