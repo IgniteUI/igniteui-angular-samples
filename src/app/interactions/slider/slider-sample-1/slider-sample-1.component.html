@@ -11,14 +11,14 @@
         </igx-slider>
         <div class="wrapper">
             <igx-input-group type="border">
-                <label igxLabel for="lowerInput">Lower price:</label>
+                <label igxLabel for="lowerInput">Lower price (updates on blur):</label>
                 <igx-prefix>$</igx-prefix>
-                <input igxInput type="number" id="lowerInput" min="100" [max]="priceRange.upper" [(ngModel)]="priceRange.lower" />
+                <input igxInput type="number" id="lowerInput" min="100" [max]="priceRange.upper" [(ngModel)]="priceRange.lower" [ngModelOptions]="{ updateOn: 'blur' }" />
             </igx-input-group>
             <igx-input-group type="border">
-                <label igxLabel for="upperInput">Upper price:</label>
+                <label igxLabel for="upperInput">Upper price (updates on blur):</label>
                 <igx-prefix>$</igx-prefix>
-                <input igxInput type="number" id="upperInput" [min]="priceRange.lower" max="900" [(ngModel)]="priceRange.upper" />
+                <input igxInput type="number" id="upperInput" [min]="priceRange.lower" max="900" [(ngModel)]="priceRange.upper" [ngModelOptions]="{ updateOn: 'blur' }" />
             </igx-input-group>
         </div>
     </div>
