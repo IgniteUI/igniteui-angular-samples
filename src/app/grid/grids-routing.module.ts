@@ -121,6 +121,7 @@ import { CRUDSampleComponent } from './grid-crud-sample/crud-sample.component';
 import { GridRowClassesComponent } from './grid-rowClasses-sample/grid-rowClasses.component';
 import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.component';
 import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summary-template.component';
+import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-editing-excel-style.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -168,6 +169,11 @@ export const gridsRoutes: Routes = [
         component: GridEditingStyleSampleComponent,
         data: gridsRoutesData['grid-editing-style'],
         path: 'grid-editing-style'
+    },
+    {
+        component: GridExcelStyleEditingComponent,
+        data: gridsRoutesData['grid-editing-excel-style'],
+        path: 'grid-editing-excel-style'
     },
     {
         component: GridAddRowSampleComponent,
