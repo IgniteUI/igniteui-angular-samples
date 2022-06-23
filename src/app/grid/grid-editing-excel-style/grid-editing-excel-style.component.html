@@ -1,0 +1,48 @@
+<div class="grid__wrapper">
+    <igx-grid
+      igxPreventDocumentScroll
+      #grid
+      [data]="data"
+      [primaryKey]="'ProductID'"
+      width="100%"
+      height="500px"
+      (keydown)="keydownHandler($event)"
+      (activeNodeChange)="activeNodeChange($event)"
+    >
+      <igx-column
+        field="ProductID"
+        header="Product ID"
+        [editable]="true"
+        [groupable]="true"
+        [hidden]="true"
+      ></igx-column>
+      <igx-column
+        field="ProductName"
+        header="Product Name"
+        [groupable]="true"
+        [dataType]="'string'"
+        [editable]="true"
+      ></igx-column>
+      <igx-column
+        field="UnitPrice"
+        header="Unit Price"
+        [groupable]="true"
+        [dataType]="'string'"
+        [editable]="true"
+      ></igx-column>
+      <igx-column
+        field="QuantityPerUnit"
+        header="Quantity Per Unit"
+        [groupable]="true"
+        [dataType]="'string'"
+        [editable]="true"
+      ></igx-column>
+      <igx-column
+        field="ReorderLevel"
+        header="Reorder Level"
+        dataType="number"
+        [groupable]="true"
+        [editable]="true"
+      ></igx-column>
+    </igx-grid>
+  </div>

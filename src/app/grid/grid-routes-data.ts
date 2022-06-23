@@ -8,6 +8,7 @@ export const gridsRoutesData = {
     'grid-groupby-summary': { displayName: 'Grid GroupBy Summary', parentName: 'Grid' },
     'grid-groupby-summary-styling': { displayName: 'Grid GroupBy Summary Styling', parentName: 'Grid' },
     'grid-editing': { displayName: 'Grid Editing', parentName: 'Grid' },
+    'grid-editing-excel-style': { displayName: 'Grid Excel Style Editing', parentName: 'Grid' },
     'grid-editing-events': { displayName: 'Grid Editing Events', parentName: 'Grid' },
     'grid-editing-style': { displayName: 'Grid Editing Style', parentName: 'Grid' },
     'grid-row-editing': { displayName: 'Grid Row Editing', parentName: 'Grid' },
