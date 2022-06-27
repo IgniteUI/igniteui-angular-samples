@@ -1,5 +1,5 @@
-import { Component, EventEmitter, HostListener, Input, Output, ViewChild } from '@angular/core';
-import { ConnectedPositioningStrategy, IgxDropDownComponent, OverlaySettings } from 'igniteui-angular';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { ConnectedPositioningStrategy, HorizontalAlignment, IgxDropDownComponent, OverlaySettings, PositionSettings, VerticalAlignment } from 'igniteui-angular';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -11,29 +11,21 @@ export class DropDownSample2Component {
     @ViewChild('nestedDropdown', { read: IgxDropDownComponent }) public nestedDropdown: IgxDropDownComponent;
     @Input() parentDropdown: IgxDropDownComponent;
 
-    @Output() shouldClose = new EventEmitter<void>();
+    @Output() selection = new EventEmitter<string>();
 
-    public isHovered = false;
-
-    public ngAfterViewInit() {
-        document.getElementById(this.nestedDropdown.id + '-list').addEventListener('mouseenter', () => {
-            this.isHovered = true;
-        });
-
-        document.getElementById(this.nestedDropdown.id + '-list').addEventListener('mouseleave', () => {
-            this.isHovered = false;
-            this.shouldClose.emit();
-        });
+    private posSettings: PositionSettings = {
+        horizontalStartPoint: HorizontalAlignment.Right,
+        verticalStartPoint: VerticalAlignment.Top
     }
 
     private overlaySettings: OverlaySettings = {
-        positionStrategy: new ConnectedPositioningStrategy(),
+        positionStrategy: new ConnectedPositioningStrategy(this.posSettings),
         closeOnOutsideClick: true,
         modal: false
     };
 
     public open(el: any) {
-        this.nestedDropdown.open({...this.overlaySettings, target: el});
+        this.nestedDropdown.open({ ...this.overlaySettings, target: el });
     }
 
     public close() {
@@ -41,13 +33,14 @@ export class DropDownSample2Component {
     }
 
     public nestedSelection(ev) {
-        this.nestedDropdown.close();
+        if (!ev.newSelection) {
+            return;
+        }
+        this.selection.emit(ev.newSelection.value);
+        this.parentDropdown.close();
     }
 
-    public onClosing(ev) {
-        // console.log(this.isHovered);
-        if(this.isHovered) {
-            ev.cancel = true;
-        }
+    public clearSelection() {
+        this.nestedDropdown.clearSelection();
     }
 }

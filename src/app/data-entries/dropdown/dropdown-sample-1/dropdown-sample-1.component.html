@@ -1,11 +1,14 @@
 <button class="button" igxButton="raised" [igxToggleAction]="dropdown"
     [igxDropDownItemNavigation]="dropdown">Options</button>
 <igx-drop-down #dropdown>
-    <igx-drop-down-item *ngFor="let item of items">
+    <igx-drop-down-item *ngFor="let item of items" [value]="item.field">
         {{ item.field }}
     </igx-drop-down-item>
-    <igx-drop-down-item #item (mouseenter)="onMouseEnter($event)" (mouseleave)="onMouseLeave($event)">
-        ASD
+    <igx-drop-down-item>
+        Nested >>
     </igx-drop-down-item>
 </igx-drop-down>
-<app-dropdown-sample-2 #nested [parentDropdown]="dropdown" (shouldClose)="shouldClose()"></app-dropdown-sample-2>
+<app-dropdown-sample-2 #nested [parentDropdown]="dropdown" (selection)="onNestedSelection($event)">
+</app-dropdown-sample-2>
+
+{{ selectedItem }}

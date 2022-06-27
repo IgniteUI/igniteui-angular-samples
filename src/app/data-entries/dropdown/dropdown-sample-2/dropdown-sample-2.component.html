@@ -1,5 +1,11 @@
-<igx-drop-down #nestedDropdown (selectionChanging)="nestedSelection($event)" (closing)="onClosing($event)">
-    <igx-drop-down-item>
+<igx-drop-down #nestedDropdown (selectionChanging)="nestedSelection($event)">
+    <igx-drop-down-item [value]="'Item1'">
         Item1
+    </igx-drop-down-item>
+    <igx-drop-down-item [value]="'Item2'">
+        Item2
+    </igx-drop-down-item>
+    <igx-drop-down-item [value]="'Item3'">
+        Item3
     </igx-drop-down-item>
 </igx-drop-down>
