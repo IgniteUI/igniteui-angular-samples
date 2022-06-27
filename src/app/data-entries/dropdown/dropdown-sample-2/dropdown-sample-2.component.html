@@ -1,7 +1,5 @@
-<button class="button" igxButton="raised" [igxToggleAction]="dropdown"
-    [igxDropDownItemNavigation]="dropdown">Options</button>
-<igx-drop-down #dropdown (opening)="dropdown.setSelectedItem(0)">
-    <igx-drop-down-item *ngFor="let item of items">
-        {{ item.field }}
+<igx-drop-down #nestedDropdown (selectionChanging)="nestedSelection($event)" (closing)="onClosing($event)">
+    <igx-drop-down-item>
+        Item1
     </igx-drop-down-item>
 </igx-drop-down>
