@@ -464,12 +464,22 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: 'GridEditingEventsComponent',
+            component: 'GridExcelStyleEditing',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxGridModule', 'IgxToastModule', 'GridEditingEventsComponent', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridEditingEventsComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxToastModule']
+            })
+        }));
+
+        configs.push(new Config({
+            component: 'GridExcelStyleEditingComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['GridExcelStyleEditingComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['GridExcelStyleEditingComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
             })
         }));
 
