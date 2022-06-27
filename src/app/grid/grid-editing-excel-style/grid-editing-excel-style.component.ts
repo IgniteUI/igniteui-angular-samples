@@ -4,7 +4,7 @@ import {
   IgxGridComponent,
   Transaction
 } from 'igniteui-angular';
-import { DATA } from './data';
+import { DATA } from './../../data/nwindData';
 
 @Component({
   selector: 'app-grid-excel-style-editing-sample',
@@ -14,16 +14,11 @@ import { DATA } from './data';
 export class GridExcelStyleEditingComponent implements OnInit {
   @ViewChild('grid', { read: IgxGridComponent, static: true })
   public grid: IgxGridComponent;
-  @ViewChild(IgxDialogComponent, { static: true })
-  public dialog: IgxDialogComponent;
 
   public data: any[];
-  public transactionsData: Transaction[] = [];
-  private addProductId: number;
 
   public ngOnInit(): void {
     this.data = DATA;
-    this.addProductId = this.data.length + 1;
   }
 
   public keydownHandler(event) {
@@ -64,7 +59,6 @@ export class GridExcelStyleEditingComponent implements OnInit {
       if (nextRow < maxRows) {
         requestAnimationFrame(() => {
             this.grid.navigateTo(nextRow, column);
-            this.grid.tbody.nativeElement.focus();
             this.grid.navigation.setActiveNode({
             gridID:grid.id,
             row: nextRow,
