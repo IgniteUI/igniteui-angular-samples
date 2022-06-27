@@ -38,7 +38,7 @@ import { DropDownVirtualComponent } from './dropdown/drop-down-virtual/drop-down
 import { DropdownMenuComponent } from './dropdown/dropdown-menu/dropdown-menu.component';
 import { DropDownSample1Component } from './dropdown/dropdown-sample-1/dropdown-sample-1.component';
 import { DropDownSample2Component } from './dropdown/dropdown-sample-2/dropdown-sample-2.component';
-import { DropDownSample3Component } from './dropdown/dropdown-sample-3/dropdown-sample-3.component';
+import { TriggerForDirective } from './dropdown/dropdown-sample-3/dropdown-sample-3.component';
 import { DropDownSample4Component } from './dropdown/dropdown-sample-4/dropdown-sample-4.component';
 import { DropDownSample5Component } from './dropdown/dropdown-sample-5/dropdown-sample-5.component';
 import { DropDownStylingComponent } from './dropdown/dropdown-styling/dropdown-styling.component';
@@ -93,7 +93,7 @@ import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.c
         DropdownMenuComponent,
         DropDownSample1Component,
         DropDownSample2Component,
-        DropDownSample3Component,
+        TriggerForDirective,
         DropDownSample4Component,
         DropDownSample5Component,
         DropDownStylingComponent,

@@ -1,14 +1,49 @@
 <button class="button" igxButton="raised" [igxToggleAction]="dropdown"
     [igxDropDownItemNavigation]="dropdown">Options</button>
-<igx-drop-down #dropdown>
+
+<igx-drop-down id="root" #dropdown>
     <igx-drop-down-item *ngFor="let item of items" [value]="item.field">
         {{ item.field }}
     </igx-drop-down-item>
-    <igx-drop-down-item>
+    <igx-drop-down-item [triggerFor]="nestedDropdown">
         Nested >>
     </igx-drop-down-item>
 </igx-drop-down>
-<app-dropdown-sample-2 #nested [parentDropdown]="dropdown" (selection)="onNestedSelection($event)">
-</app-dropdown-sample-2>
+
+<igx-drop-down #nestedDropdown>
+    <igx-drop-down-item [value]="'Item1'">
+        Item1
+    </igx-drop-down-item>
+    <igx-drop-down-item [value]="'Item2'" [triggerFor]="nestedDropdown1">
+        Item2 >>
+    </igx-drop-down-item>
+    <igx-drop-down-item [value]="'Item3'">
+        Item3
+    </igx-drop-down-item>
+</igx-drop-down>
+
+<igx-drop-down #nestedDropdown1>
+    <igx-drop-down-item [value]="'Item1'">
+        Item1
+    </igx-drop-down-item>
+    <igx-drop-down-item [value]="'Item2'">
+        Item2
+    </igx-drop-down-item>
+    <igx-drop-down-item [value]="'Item3'" [triggerFor]="nestedDropdown2">
+        Item3 >>
+    </igx-drop-down-item>
+</igx-drop-down>
+
+<igx-drop-down #nestedDropdown2>
+    <igx-drop-down-item [value]="'Item1'">
+        Item1
+    </igx-drop-down-item>
+    <igx-drop-down-item [value]="'Item2'">
+        Item2
+    </igx-drop-down-item>
+    <igx-drop-down-item [value]="'Item3'">
+        Item3
+    </igx-drop-down-item>
+</igx-drop-down>
 
 {{ selectedItem }}

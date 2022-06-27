@@ -18,32 +18,4 @@ export class DropDownSample1Component {
         { field: 'Option 2' },
         { field: 'Option 3' }
     ];
-
-    private shouldSelect = false;
-
-    public ngAfterViewInit() {
-        this.dropDown.selectionChanging.subscribe(ev => {
-            if (ev.newSelection.id === 'igx-drop-down-item-0') {
-                if (this.shouldSelect) {
-                    this.shouldSelect = false;
-                    return;
-                }
-                ev.cancel = true;
-                if (this.nested.nestedDropdown.collapsed) {
-                    this.nested.open(ev.newSelection.element.nativeElement);
-                } else {
-                    this.nested.close();
-                }
-            } else {
-                this.selectedItem = ev.newSelection.value;
-                this.nested.clearSelection();
-            }
-        });
-    }
-
-    public onNestedSelection(ev) {
-        this.selectedItem = ev;
-        this.shouldSelect = true;
-        this.dropDown.setSelectedItem(3);
-    }
 }
