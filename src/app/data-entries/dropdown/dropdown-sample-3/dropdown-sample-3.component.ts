@@ -1,11 +1,12 @@
 import { AfterViewInit, Directive, Input, OnDestroy, Renderer2 } from '@angular/core';
 import { ConnectedPositioningStrategy, HorizontalAlignment, IgxDropDownComponent, IgxDropDownItemComponent, OverlaySettings, PositionSettings, VerticalAlignment } from 'igniteui-angular';
+import { fromEvent, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Directive({
     selector: '[triggerFor]'
 })
 export class TriggerForDirective implements AfterViewInit, OnDestroy {
-
     private globalInstance: any;
 
     private posSettings: PositionSettings = {
@@ -18,27 +19,39 @@ export class TriggerForDirective implements AfterViewInit, OnDestroy {
         modal: false
     };
 
+    private sub = new Subject();
+
     @Input()
     public triggerFor: IgxDropDownComponent;
-
-    private isRoot = false;
 
     constructor(private host: IgxDropDownItemComponent, private renderer: Renderer2) { }
 
     ngAfterViewInit() {
-        if ((this.host as any).dropDown.id === 'root') {
-            this.isRoot = true;
-        }
+        // debugger;
+        this.subToMouseOver();
+        (this.host as any).dropDown.closing.subscribe(() => {
+            this.sub.next();
+        });
 
-        if (this.isRoot) {
-            (this.host as any).dropDown.closing.subscribe(ev => {
-                if (((this.host as any).dropDown.selectedItem.element.nativeElement as any).attributes.getNamedItem('ng-reflect-trigger-for')) {
-                    ev.cancel = true;
-                }
-            });
-        }
+        (this.host as any).dropDown.closed.subscribe(() => {
+            this.subToMouseOver();
+        });
 
-        this.globalInstance = this.renderer.listen(this.host.element.nativeElement, 'click', () => {
+        this.triggerFor.closed.subscribe(ev => {
+            console.log(ev);
+            (this.host as any).dropDown.close();
+        });
+    }
+
+    ngOnDestroy() {
+        this.sub.next();
+        this.sub.complete();
+        this.globalInstance();
+    }
+
+    private subToMouseOver() {
+        fromEvent(this.host.element.nativeElement, 'mouseover').pipe(takeUntil(this.sub)).subscribe(() => {
+            this.overlaySettings.positionStrategy.settings.closeAnimation = null;
             if (this.triggerFor.collapsed) {
                 this.triggerFor.open({
                     ...this.overlaySettings,
@@ -46,49 +59,5 @@ export class TriggerForDirective implements AfterViewInit, OnDestroy {
                 });
             }
         });
-
-        // child dropdown
-        this.triggerFor.closing.subscribe(ev => {
-            if ((this.triggerFor.selectedItem?.element.nativeElement as any).attributes.getNamedItem('ng-reflect-trigger-for')) {
-                if (!this.triggerFor.collapsed) {
-                    ev.cancel = true;
-                } else {
-                    (this.host as any).dropDown.close();
-                }
-            }
-        });
-
-        this.triggerFor.closed.subscribe(ev => {
-            console.log(ev);
-            (this.host as any).dropDown.close();
-        });
-
-        // parent dropdown
-        // (this.host as any).dropDown.selectionChanging.subscribe(ev => {
-        //     if (!(ev.newSelection.element.nativeElement as any).attributes.getNamedItem('ng-reflect-trigger-for')) {
-        //         this.shouldCloseParent.emit(true);
-        //     } else {
-        //         ev.cancel = true;
-        //         if (this.triggerFor.collapsed) {
-        //             this.triggerFor.open({
-        //                 ...this.overlaySettings,
-        //                 target: this.host.element.nativeElement
-        //             });
-        //         } else {
-        //             this.shouldCloseParent.emit(false);
-        //         }
-        //     }
-        // });
-
-        // (this.host as any).dropDown.selectionChanging.subscribe(ev => {
-        //     if (ev.newSelection === this.host) {
-        //         ev.cancel = true;
-        //     }
-        // });
     }
-
-    ngOnDestroy() {
-        this.globalInstance.unlisten();
-    }
-
 }
