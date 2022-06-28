@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { IgxSnackbarComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
@@ -8,7 +8,7 @@ import { SINGERS } from '../../data/singersData';
     templateUrl: 'hierarchical-grid-selection.component.html'
 })
 
-export class HGridSelectionSampleComponent implements OnInit {
+export class HGridSelectionSampleComponent implements OnInit, OnDestroy {
     @ViewChild(IgxSnackbarComponent, { static: true }) public snackbar: IgxSnackbarComponent;
     public localdata;
     public selectionMode = 'multiple';
@@ -28,6 +28,10 @@ export class HGridSelectionSampleComponent implements OnInit {
         this.snackbar.open();
     }
 
+    public ngOnDestroy(): void {
+        this.snackbar.close();
+    }
+
     public selectCellSelectionMode(args) {
         this.selectionMode = this.selectionModes[args.index].label;
         this.snackbar.open();
@@ -38,4 +42,5 @@ export class HGridSelectionSampleComponent implements OnInit {
     }
 
     public formatter = (a) => a;
+
 }
