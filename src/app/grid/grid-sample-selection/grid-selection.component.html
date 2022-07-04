@@ -52,7 +52,10 @@
 <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.close()">
     <div class="container">
         <igx-icon>notification_important</igx-icon>
-        <ng-container *ngIf="selectionMode === 'multiple'">
+        <ng-container *ngIf="selectionMode === 'multiple' && selectedRowsCount!==undefined">
+            <p>Number of rows selected: {{selectedRowsCount}}</p>
+        </ng-container>
+        <ng-container *ngIf="selectionMode === 'multiple' && selectedRowsCount===undefined">
             <ul>
                 <li><b>Now you can select multiple rows within a grid.</b></li>
                 <li>Click on row selector field or press SPACE key when some cell is active to toggle row

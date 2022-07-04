@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { IgxGridComponent, IgxSnackbarComponent } from 'igniteui-angular';
+import { IgxGridComponent, IgxSnackbarComponent, IRowSelectionEventArgs } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
 
@@ -21,6 +21,7 @@ export class GridSelectionSampleComponent implements OnInit {
     public selectionModes = [];
     public hideRowSelectors = false;
     public selectedRows = [1, 2, 3];
+    public selectedRowsCount;
 
     constructor(private localService: FinancialDataService) {
         this.localService.getData(100000);
@@ -33,22 +34,23 @@ export class GridSelectionSampleComponent implements OnInit {
 
     }
     public ngOnInit(): void {
-        this.snackbar.autoHide = false;
+        this.snackbar.autoHide = true;
         this.snackbar.open();
     }
-
     public formatNumber(value: number) {
         return value.toFixed(2);
     }
     public formatCurrency(value: number) {
         return '$' + value.toFixed(2);
     }
-    public handleRowSelection(event) {
-        const targetCell = event.cell;
+    public handleRowSelection(event:IRowSelectionEventArgs) {
+        this.selectedRowsCount = event.newSelection.length;
+        this.snackbar.open();
     }
 
     public selectCellSelectionMode(args) {
         this.selectionMode = this.selectionModes[args.index].label;
         this.snackbar.open();
+        this.selectedRowsCount = undefined;
     }
 }
