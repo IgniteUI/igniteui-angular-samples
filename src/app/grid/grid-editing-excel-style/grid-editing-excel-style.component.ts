@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import {
   IgxDialogComponent,
   IgxGridComponent,
@@ -21,6 +21,8 @@ export class GridExcelStyleEditingComponent implements OnInit {
       this.data = DATA;
     }
 
+    constructor(private cdr:ChangeDetectorRef){}
+
     public keydownHandler(event) {
       const key = event.keyCode;
       const grid = this.grid;
@@ -42,7 +44,6 @@ export class GridExcelStyleEditingComponent implements OnInit {
       }
 
       if (key == 13) {
-        this.grid.clearCellSelection();
         let thisRow = activeElem.row;
         const column = activeElem.column;
         const rowInfo = grid.dataView;
@@ -51,11 +52,14 @@ export class GridExcelStyleEditingComponent implements OnInit {
 
         this.grid.navigateTo(nextRow, column, (obj) => {
           obj.target.activate();
+          this.grid.clearCellSelection();
+          this.cdr.detectChanges();
           });
       }
       }
 
     public activeNodeChange() {
+      this.grid.clearCellSelection();
       this.grid.endEdit();
     }
 
