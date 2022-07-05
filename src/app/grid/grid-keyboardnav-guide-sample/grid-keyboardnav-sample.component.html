@@ -1,7 +1,7 @@
 <div class="sample">
     <div class="grid_wrapper">
         <igx-grid height="450px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" displayDensity="compact"
-            summaryCalculationMode="rootLevelOnly" columnSelection="single" [allowAdvancedFiltering]="true"
+            summaryCalculationMode="rootLevelOnly" columnSelection="single" [allowAdvancedFiltering]="true" [moving]="true"
             (keydown)="gridKeydown($event)" (activeNodeChange)="onActiveNodeChange($event)">
             <igx-paginator></igx-paginator>
             <igx-grid-toolbar *ngIf="false"></igx-grid-toolbar>
@@ -14,7 +14,7 @@
             </ng-template>
             <igx-column-group header="General Information">
                 <igx-column field="CompanyName" [hasSummary]="true" [groupable]="true" [editable]="true" [sortable]="true" [selectable]="false"></igx-column>
-                <igx-column-group [movable]="true" header="Personel Details" [collapsible]="true"
+                <igx-column-group header="Personel Details" [collapsible]="true"
                         dataType="string" [expanded]="true" (expandedChange)="expandChange()">
                     <igx-column field="PersonelDetails" [width]="'250px'" [groupable]="true"
                         [selectable]="false"[visibleWhenCollapsed]="true" [sortable]="true"></igx-column>

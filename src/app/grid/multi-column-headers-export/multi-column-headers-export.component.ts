@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { IgxExporterEvent, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({
@@ -12,4 +12,9 @@ export class GridMultiColumnHeadersExportComponent {
     @ViewChild(IgxGridComponent, { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
     public data = DATA;
+    public exportHeaders = true;
+
+    public exportStarted(args: IgxExporterEvent) {
+        args.options.ignoreMultiColumnHeaders = !this.exportHeaders;
+    }
 }

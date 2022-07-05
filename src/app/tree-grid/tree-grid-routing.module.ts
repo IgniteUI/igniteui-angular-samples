@@ -85,6 +85,7 @@ import { TreeGridExternalOutletComponent } from './tree-grid-external-outlet/tre
 import { TreeGridExportVisualizationComponent } from './tree-grid-export-visualization/tree-grid-export-visualization.component';
 import { TGridEditingLifecycleComponent } from './tgrid-editing-lifecycle-sample/tgrid-editing-lifecycle.component';
 import { TreeGridFormattedFilteringStrategyComponent } from './tree-grid-formatted-filtering-strategy/tree-grid-formatted-filtering-strategy.component';
+import { TreeGridTreeFilterViewComponent } from './tree-grid-tree-filter-view/tree-grid-tree-filter-view.component';
 import { TreeGridSummaryFormatterComponent } from './tree-grid-summary-formatter/tree-grid-summary-formatter.component';
 import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid-pager-sample.component';
 import { TreeGridGroupByLoadOnDemandComponent } from './tree-grid-group-by-load-on-demand-sample/tree-grid-group-by-load-on-demand-sample.component';
@@ -529,6 +530,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridFormattedFilteringStrategyComponent,
         data: treeGridRoutesData['tree-grid-formatted-filtering-strategy'],
         path: 'tree-grid-formatted-filtering-strategy'
+    },
+    {
+        component: TreeGridTreeFilterViewComponent,
+        data: treeGridRoutesData['tree-grid-tree-filter-view'],
+        path: 'tree-grid-tree-filter-view'
     },
     {
         component: TreeGridSummaryFormatterComponent,

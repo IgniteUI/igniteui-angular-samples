@@ -82,16 +82,6 @@ import { GridsDVRoutingModule } from './grids-routing.module';
         IgxDataChartScatterModule,
         IgxBarSeriesModule,
         IgxCategoryChartModule
-    ],
-    entryComponents: [
-        IgxDoughnutChartComponent,
-        IgxDataChartComponent,
-        IgxCategoryXAxisComponent,
-        IgxNumericYAxisComponent,
-        IgxItemLegendComponent,
-        IgxLegendComponent,
-        IgxNumericXAxisComponent,
-        IgxPieChartComponent
     ]
 })
 export class GridsDVModule { }

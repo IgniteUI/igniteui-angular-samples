@@ -12,12 +12,12 @@
         <igx-grid-editing-actions [addRow]="true"></igx-grid-editing-actions>
     </igx-action-strip>
 
-    <igx-row-island [key]="'Albums'" [autoGenerate]="false" [primaryKey]="'USBillboard200'" [rowEditable]="true">
+    <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false" [primaryKey]="'USBillboard200'" [rowEditable]="true">
         <igx-column field="Album" [dataType]="'string'"></igx-column>
         <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
         <igx-column field="BillboardReview" header="Billboard Review" dataType="number"></igx-column>
         <igx-column field="USBillboard200" header="US Billboard 200" dataType="number"></igx-column>
-        <igx-row-island [key]="'Songs'" [autoGenerate]="false" [primaryKey]="'Number'" [rowEditable]="true">
+        <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false" [primaryKey]="'Number'" [rowEditable]="true">
             <igx-column field="Number" header="No." dataType="number"></igx-column>
             <igx-column field="Title" [dataType]="'string'"></igx-column>
             <igx-column field="Released" [dataType]="'date'"></igx-column>

@@ -1,38 +1,37 @@
 .cellAlignSyle {
     text-align: right;
-    float:right;
+    float: right;
 }
+
 .cellAlignSyle > span {
-    float:right;
+    float: right;
 }
+
 .up {
     color: green;
 }
+
 .down {
     color: red;
 }
+
 .headerAlignSyle {
     text-align: right !important;
 }
 
 .sample-container {
-    width: 20%;
-    display: flex;
-
-    margin: 0% 0% 20px 10px
+    margin: 16px;
 }
 
 .grid-controls {
     display: flex;
     justify-content: space-between;
-    margin: 0 16px 24px;
     flex-flow: column;
     align-items: flex-start;
-    position:relative;
-}
-
-.grid__wrapper {
-    margin: 0 16px;
+    position: relative;
+    > * {
+        margin-bottom: 16px;
+    }
 }
 
 .currency-badge-container {
@@ -43,17 +42,10 @@
 .badge-left {
     float: left;
 }
+
 ul {
     padding: 0;
     list-style-type: none;
-}
-
-igx-snackbar {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 2;
 }
 
 .igx-snackbar {

@@ -1,3 +1,17 @@
 <div class="container">
-  <igx-slider id="slider" [type]="sliderType.RANGE" [minValue]="0" [maxValue]="1000" [(ngModel)]="priceRange"></igx-slider>
+    <igx-slider id="slider" [type]="sliderType.RANGE" [minValue]="0" [maxValue]="1000" [(lowerValue)]="priceRange.lower" [(upperValue)]="priceRange.upper"></igx-slider>
+
+    <div class="row-container">
+        <igx-input-group type="border">
+            <label igxLabel for="lowerRange">Lowest price (updates on blur):</label>
+            <igx-prefix>$</igx-prefix>
+            <input igxInput id="lowerRange" type="number" min="0" [max]="priceRange.upper" [(ngModel)]="priceRange.lower" [ngModelOptions]="{ updateOn: 'blur' }" />
+        </igx-input-group>
+
+        <igx-input-group type="border">
+            <label igxLabel for="upperRange">Highest price (updates on blur):</label>
+            <igx-prefix>$</igx-prefix>
+            <input igxInput id="upperRange" type="number" [min]="priceRange.lower" max="1000" [(ngModel)]="priceRange.upper" [ngModelOptions]="{ updateOn: 'blur' }" />
+        </igx-input-group>
+    </div>
 </div>

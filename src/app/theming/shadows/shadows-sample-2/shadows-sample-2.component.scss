@@ -4,7 +4,7 @@ $color-1: #99BFAA;
 $color-2: #5C868D;
 $color-3: #5C3D46;
 
-$colorful-elevations: igx-elevations($color-1, $color-2, $color-3);
+$colorful-elevations: elevations($color-1, $color-2, $color-3);
 
 :host {
     display: flex;
@@ -17,7 +17,7 @@ div {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: igx-elevation(
+    box-shadow: elevation(
         $elevations: $colorful-elevations,
         $elevation: 24
     );

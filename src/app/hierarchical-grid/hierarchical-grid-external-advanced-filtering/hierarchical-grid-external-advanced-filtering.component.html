@@ -16,14 +16,14 @@
         <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number"></igx-column>
         <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number"></igx-column>
 
-        <igx-row-island [key]="'Albums'" [autoGenerate]="false">
+        <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false">
             <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid"></igx-grid-toolbar>
 
             <igx-column field="Album"></igx-column>
             <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review" dataType="number"></igx-column>
             <igx-column field="USBillboard200" header="US Billboard 200" dataType="number"></igx-column>
-            <igx-row-island [key]="'Songs'" [autoGenerate]="false">
+            <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false">
                 <igx-column field="Number" header="No."></igx-column>
                 <igx-column field="Title"></igx-column>
                 <igx-column field="Released" dataType="date"></igx-column>
@@ -31,7 +31,7 @@
             </igx-row-island>
         </igx-row-island>
 
-        <igx-row-island [key]="'Tours'" [autoGenerate]="false">
+        <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false">
             <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid"></igx-grid-toolbar>
 
             <igx-column field="Tour"></igx-column>

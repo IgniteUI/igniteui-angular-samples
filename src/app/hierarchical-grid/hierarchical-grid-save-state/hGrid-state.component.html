@@ -70,7 +70,7 @@
             <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number" [sortable]="true"></igx-column>
             <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number" [sortable]="true"></igx-column>
 
-            <igx-row-island [key]="'Albums'"
+            <igx-row-island [height]="null" [key]="'Albums'"
                 [autoGenerate]="false"
                 [primaryKey]="'Album'"
                 rowSelection='multiple'
@@ -81,7 +81,7 @@
                 <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'" [sortable]="true"></igx-column>
                 <igx-column field="BillboardReview" header="Billboard Review" [sortable]="true"></igx-column>
                 <igx-column field="USBillboard200" header="US Billboard 200" [sortable]="true"></igx-column>
-            <igx-row-island [key]="'Songs'"
+            <igx-row-island [height]="null" [key]="'Songs'"
                 [autoGenerate]="false"
                 [primaryKey]="'Number'"
                 rowSelection='multiple'
@@ -95,7 +95,7 @@
             </igx-row-island>
         </igx-row-island>
 
-        <igx-row-island [key]="'Tours'"
+        <igx-row-island [height]="null" [key]="'Tours'"
             [autoGenerate]="false"
             [primaryKey]="'Tour'"
             rowSelection='multiple'

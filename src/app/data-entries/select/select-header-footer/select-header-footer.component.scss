@@ -32,10 +32,10 @@ igx-select {
     justify-content: space-between;
     align-items: center;
     padding: 0 1.5rem;
-    background: igx-color($color: 'grays', $variant: 100);
+    background: color($color: 'grays', $variant: 100);
     igx-icon {
         &.important-icon {
-            color: igx-color($color: 'primary', $variant: 500);
+            color: color($color: 'primary', $variant: 500);
         }
     }
 }
@@ -66,24 +66,24 @@ igx-select {
 }
 
 .sample-template-heading {
-    color: igx-color($color: 'secondary');
+    color: color($color: 'secondary');
 }
 
-$custom-button-group: igx-button-group-theme(
+$custom-button-group: button-group-theme(
     $schema: $light-schema,
     $shadow: none,
     $border-radius: 0,
-    $item-background: igx-color($color: 'grays', $variant: 300),
-    $item-text-color: igx-color($color: 'grays', $variant: 700),
-    $item-hover-background: igx-color($color: 'grays', $variant: 400),
-    $item-hover-text-color: igx-color($color: 'grays', $variant: 700),
-    $item-border-color: igx-color($color:  'grays', $variant: 700),
+    $item-background: color($color: 'grays', $variant: 300),
+    $item-text-color: color($color: 'grays', $variant: 700),
+    $item-hover-background: color($color: 'grays', $variant: 400),
+    $item-hover-text-color: color($color: 'grays', $variant: 700),
+    $item-border-color: color($color:  'grays', $variant: 700),
     $item-selected-text-color: #fff,
-    $item-selected-background: igx-color($color: 'primary', $variant: 500),
-    $item-selected-border-color: igx-color($color: 'primary', $variant: 500),
-    $item-selected-hover-background: igx-color($color: 'primary', $variant: 600)
+    $item-selected-background: color($color: 'primary', $variant: 500),
+    $item-selected-border-color: color($color: 'primary', $variant: 500),
+    $item-selected-hover-background: color($color: 'primary', $variant: 600)
 );
 
 :host ::ng-deep {
-    @include igx-button-group($custom-button-group);
+    @include button-group($custom-button-group);
 }

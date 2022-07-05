@@ -13,7 +13,7 @@
         <igx-column field="Debut" dataType="number" [formatter]="formatter"></igx-column>
         <igx-column field="GrammyNominations" header="Grammy Nominations"></igx-column>
         <igx-column field="GrammyAwards" header="Grammy Awards"></igx-column>
-        <igx-row-island [key]="'Albums'" [autoGenerate]="false">
+        <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false">
             <igx-paginator *igxPaginator [perPage]="5">
             </igx-paginator>
 
@@ -21,7 +21,7 @@
             <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
             <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
-            <igx-row-island [key]="'Songs'" [autoGenerate]="false">
+            <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false">
                 <igx-paginator *igxPaginator [perPage]="5">
                 </igx-paginator>
 
@@ -31,7 +31,7 @@
                 <igx-column field="Genre"></igx-column>
             </igx-row-island>
         </igx-row-island>
-        <igx-row-island [key]="'Tours'" [autoGenerate]="false">
+        <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false">
             <igx-paginator *igxPaginator [perPage]="5">
             </igx-paginator>
 
