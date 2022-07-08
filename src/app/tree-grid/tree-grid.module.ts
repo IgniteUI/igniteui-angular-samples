@@ -9,15 +9,14 @@ import {
     IgxBannerModule,
     IgxButtonGroupModule,
     IgxButtonModule,
-    IgxCsvExporterService,
     IgxDialogModule,
-    IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
     IgxListModule,
     IgxRadioModule,
     IgxRippleModule,
     IgxSelectModule,
+    IgxSimpleComboModule,
     IgxSliderModule,
     IgxSnackbarModule,
     IgxSwitchModule,
@@ -114,10 +113,15 @@ import { TreeGridExternalOutletComponent } from './tree-grid-external-outlet/tre
 import { TreeGridExportVisualizationComponent } from './tree-grid-export-visualization/tree-grid-export-visualization.component';
 import { TGridEditingLifecycleComponent } from './tgrid-editing-lifecycle-sample/tgrid-editing-lifecycle.component';
 import { TreeGridFormattedFilteringStrategyComponent } from './tree-grid-formatted-filtering-strategy/tree-grid-formatted-filtering-strategy.component';
+import { TreeGridTreeFilterViewComponent } from './tree-grid-tree-filter-view/tree-grid-tree-filter-view.component';
 import { TreeGridSummaryFormatterComponent } from './tree-grid-summary-formatter/tree-grid-summary-formatter.component';
 import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid-pager-sample.component';
 import { TreeGridGroupByLoadOnDemandComponent } from './tree-grid-group-by-load-on-demand-sample/tree-grid-group-by-load-on-demand-sample.component';
 import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-column-headers-export/tree-grid-multi-column-headers-export.component';
+import { TreeGridRowStylesComponent } from './tree-grid-rowStyles-sample/tree-grid-rowStyle.component';
+import { TreeGridRowClassesComponent } from './tree-grid-rowClasses-sample/tree-grid-rowClasses.component';
+import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tree-grid-action-strip-sample';
+import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/treegrid-summary-template.component';
 
 @NgModule({
     declarations: [
@@ -195,6 +199,7 @@ import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-col
         TreeGridConditionalCellStyle2Component,
         TreeGridMultiCollapsibleColumnGroupsComponent,
         TreeGridAllDataSummaryComponent,
+        TreeGridSummaryTemplateComponent,
         TreeGridRowPinningSampleComponent,
         TreeGridRowPinningStylingSampleComponent,
         TreeGridRowPinningExtraColumnSampleComponent,
@@ -208,7 +213,11 @@ import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-col
         TreeGridExportVisualizationComponent,
         TGridEditingLifecycleComponent,
         TreeGridFormattedFilteringStrategyComponent,
-        TreeGridSummaryFormatterComponent
+        TreeGridTreeFilterViewComponent,
+        TreeGridSummaryFormatterComponent,
+        TreeGridRowStylesComponent,
+        TreeGridRowClassesComponent,
+        TreeGridActionStripSampleComponent
     ],
     imports: [
         CommonModule,
@@ -233,8 +242,9 @@ import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-col
         IgxBannerModule,
         IgxSnackbarModule,
         IgxTooltipModule,
-        IgxListModule
+        IgxListModule,
+        IgxSimpleComboModule
     ],
-    providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
+    providers: [RemoteFilteringService]
 })
 export class TreeGridModule { }

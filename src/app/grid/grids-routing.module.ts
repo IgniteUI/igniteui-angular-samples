@@ -117,6 +117,10 @@ import { GridSelectComponent } from './grid-select/grid-select-sample.component'
 import { GridFormattedFilteringStrategyComponent } from './grid-formatted-filtering-strategy/grid-formatted-filtering-strategy.component';
 import { GridSummaryFormatterComponent } from './grid-summary-formatter/grid-summary-formatter.component';
 import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-export/multi-column-headers-export.component';
+import { CRUDSampleComponent } from './grid-crud-sample/crud-sample.component';
+import { GridRowClassesComponent } from './grid-rowClasses-sample/grid-rowClasses.component';
+import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.component';
+import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summary-template.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -359,6 +363,11 @@ export const gridsRoutes: Routes = [
         component: RemoteFilteringSampleComponent,
         data: gridsRoutesData['grid-remote-filtering'],
         path: 'grid-remote-filtering'
+    },
+    {
+        component: CRUDSampleComponent,
+        data: gridsRoutesData['grid-crud'],
+        path: 'grid-crud'
     },
     {
         component: GridSelectionSampleComponent,
@@ -606,6 +615,11 @@ export const gridsRoutes: Routes = [
         path: 'grid-alldata-summaries'
     },
     {
+        component: GridSummaryTemplateComponent,
+        data: gridsRoutesData['grid-summary-template'],
+        path: 'grid-summary-template'
+    },
+    {
         component: GridColumnSelectionComponent,
         data: gridsRoutesData['column-selection'],
         path: 'column-selection'
@@ -674,6 +688,16 @@ export const gridsRoutes: Routes = [
         component: GridSummaryFormatterComponent,
         data: gridsRoutesData['grid-summary-formatter'],
         path: 'grid-summary-formatter'
+    },
+    {
+        component: GridRowClassesComponent,
+        data: gridsRoutesData['grid-rowClasses-sample'],
+        path: 'grid-rowClasses-sample'
+    },
+    {
+        component: GridRowStylesComponent,
+        data: gridsRoutesData['grid-rowStyles-sample'],
+        path: 'grid-rowStyles-sample'
     }
 ];
 

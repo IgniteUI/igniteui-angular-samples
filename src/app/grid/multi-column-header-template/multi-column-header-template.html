@@ -9,18 +9,18 @@
         </div>
     </ng-template>
 
-    <igx-grid igxPreventDocumentScroll [rowSelection]="selectionMode" #grid height="500px" [data]="data" displayDensity="compact" [allowFiltering]="true">
-        <igx-column [movable]="true" [resizable]="true" field="ID" [filterable]="false"></igx-column>
-        <igx-column-group [movable]="true" [pinned]="false" header="General Information" [headerTemplate]="columnGroupTemplate">
-            <igx-column [movable]="true" sortable="true" resizable="true" field="CompanyName"></igx-column>
-            <igx-column-group [movable]="true" header="Personal Details">
-                <igx-column [movable]="true" [pinned]="false" sortable="true" resizable="true" field="ContactName"></igx-column>
-                <igx-column [movable]="true" sortable="true" resizable="true" field="ContactTitle"></igx-column>
+    <igx-grid igxPreventDocumentScroll [rowSelection]="selectionMode" #grid height="500px" [moving]="true" [data]="data" displayDensity="compact" [allowFiltering]="true">
+        <igx-column [resizable]="true" field="ID" [filterable]="false"></igx-column>
+        <igx-column-group [pinned]="false" header="General Information" [headerTemplate]="columnGroupTemplate">
+            <igx-column sortable="true" resizable="true" field="CompanyName"></igx-column>
+            <igx-column-group header="Personal Details">
+                <igx-column [pinned]="false" sortable="true" resizable="true" field="ContactName"></igx-column>
+                <igx-column sortable="true" resizable="true" field="ContactTitle"></igx-column>
             </igx-column-group>
         </igx-column-group>
         <igx-column-group header="Address Information" [headerTemplate]="columnGroupTemplate">
-            <igx-column sortable="true" resizable="true" field="Location" hidden="true"></igx-column>
-            <igx-column sortable="true" resizable="true" field="Phone" hidden="true"></igx-column>
+            <igx-column sortable="true" resizable="true" field="Location" [hidden]="true"></igx-column>
+            <igx-column sortable="true" resizable="true" field="Phone" [hidden]="true"></igx-column>
             <igx-column-group header="Location">
                 <igx-column sortable="true" resizable="true" field="Country"></igx-column>
                 <igx-column sortable="true" resizable="true" field="Region"></igx-column>

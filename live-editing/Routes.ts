@@ -17,6 +17,7 @@ import { DataDisplayModule } from '../src/app/data-display/data-display.module';
 import * as DataEntriesRouting from '../src/app/data-entries/data-entries-routing.module';
 import { DataEntriesModule } from '../src/app/data-entries/data-entries.module';
 import * as GridRouting from '../src/app/grid/grids-routing.module';
+import * as PivotGridRouting from '../src/app/pivot-grid/pivot-grids-routing.module';
 import { GridsModule } from '../src/app/grid/grids.module';
 import * as HierarchicalGridRouting from '../src/app/hierarchical-grid/hierarchical-grid-routing.module';
 import { HierarchicalGridModule } from '../src/app/hierarchical-grid/hierarchical-grid.module';
@@ -38,8 +39,13 @@ import * as ThemingRouting from '../src/app/theming/theming-routing.module';
 import { ThemingModule } from '../src/app/theming/theming.module';
 import * as TreeGridRouting from '../src/app/tree-grid/tree-grid-routing.module';
 import { TreeGridModule } from '../src/app/tree-grid/tree-grid.module';
+// eslint-disable-next-line max-len
 import * as GridFinJSDockManagerRoutingModule from '../projects/app-lob/src/app/grid-finjs-dock-manager/grid-finjs-dock-manager-routing.module';
 import { GridFinJSDockManagerModule } from '../projects/app-lob/src/app/grid-finjs-dock-manager/grid-finjs-dock-manager.module';
+import { PaginationModule } from '../src/app/pagination/pagination.module';
+import * as PaginatorRouting from '../src/app/pagination/pagination-routing.module';
+import { PivotGridsModule } from '../src/app/pivot-grid/pivot-grids.module';
+import { PivotGridsRoutingModule } from '../src/app/pivot-grid/pivot-grids-routing.module';
 
 export const MODULE_ROUTES = [
     {
@@ -98,6 +104,11 @@ export const MODULE_ROUTES = [
         routes: GridRouting.gridsRoutes
     },
     {
+        module: PivotGridsModule,
+        path: 'pivot-grid',
+        routes: PivotGridRouting.gridsRoutes
+    },
+    {
         module: HierarchicalGridModule,
         path: 'hierarchical-grid',
         routes: HierarchicalGridRouting.hierarchicalGridRoutes
@@ -106,6 +117,11 @@ export const MODULE_ROUTES = [
         module: ServicesModule,
         path: 'services',
         routes: ServicesRouting.servicesRoutes
+    },
+    {
+        module: PaginationModule,
+        path: 'pagination',
+        routes: PaginatorRouting.paginatorRoutes
     }
 ];
 

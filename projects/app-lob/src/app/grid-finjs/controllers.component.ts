@@ -1,7 +1,9 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
-import { IgxButtonGroupComponent, IgxSliderComponent, IgxToastComponent
-} from 'igniteui-angular';
-import { timer } from 'rxjs';
+import {
+    IButtonGroupEventArgs, IChangeSwitchEventArgs, IgxButtonGroupComponent,
+    IgxSliderComponent, IgxToastComponent, ISliderValueChangeEventArgs, VerticalAlignment }
+from 'igniteui-angular';
+import { Observable, Subscription, timer } from 'rxjs';
 import { debounce } from 'rxjs/operators';
 
 @Component({
@@ -15,10 +17,10 @@ export class ControllerComponent implements OnInit, OnDestroy {
     @ViewChild('slider2', { static: true }) public intervalSlider: IgxSliderComponent;
     @ViewChild('toast', { static: true }) public toast: IgxToastComponent;
 
-    @Output() public switchChanged = new EventEmitter<any>();
-    @Output() public volumeChanged = new EventEmitter<any>();
-    @Output() public frequencyChanged = new EventEmitter<any>();
-    @Output() public playAction = new EventEmitter<any>();
+    @Output() public switchChanged = new EventEmitter<{ action: string; value: boolean }>();
+    @Output() public volumeChanged = new EventEmitter<number>();
+    @Output() public frequencyChanged = new EventEmitter<number>();
+    @Output() public playAction = new EventEmitter<{ action: string }>();
 
     public volume = 1000;
     public theme = false;
@@ -44,27 +46,29 @@ export class ControllerComponent implements OnInit, OnDestroy {
         }
     ];
 
-    private subscription;
-    private selectedButton;
-    private volumeChanged$;
-    private frequencyChanged$;
+    private selectedButton: number;
+    private volumeChanged$: Observable<ISliderValueChangeEventArgs>;
+    private volumeChangedSubscription: Subscription;
+    private frequencyChanged$: Observable<ISliderValueChangeEventArgs>;
+    private frequencyChangedSubscription: Subscription;
 
-    constructor() {
-    }
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.volumeChanged$ = this.volumeSlider.valueChange.pipe(debounce(() => timer(200)));
-        this.volumeChanged$.subscribe(x => this.volumeChanged.emit(this.volumeSlider.value));
+        this.volumeChangedSubscription = this.volumeChanged$.subscribe(x => this.volumeChanged.emit(this.volumeSlider.value as number));
 
         this.frequencyChanged$ = this.intervalSlider.valueChange.pipe(debounce(() => timer(200)));
-        this.frequencyChanged$.subscribe(x => this.frequencyChanged.emit(this.intervalSlider.value));
+        this.frequencyChangedSubscription = this.frequencyChanged$
+            .subscribe(() => this.frequencyChanged.emit(this.intervalSlider.value as number));
+        
+        this.toast.positionSettings.verticalDirection = VerticalAlignment.Middle;
     }
 
-    public ngOnDestroy() {
-        this.volumeChanged$.unsubscribe();
-        this.frequencyChanged$.unsubscribe();
+    public ngOnDestroy(): void {
+        this.volumeChangedSubscription.unsubscribe();
+        this.frequencyChangedSubscription.unsubscribe();
     }
 
-    public onButtonSelected(event: any) {
+    public onButtonSelected(event: IButtonGroupEventArgs): void {
         switch (event.index) {
             case 0: {
                 this.disableOtherButtons(event.index, true);
@@ -84,18 +88,15 @@ export class ControllerComponent implements OnInit, OnDestroy {
         }
     }
 
-    public handleHidden(evt){
+    public handleHidden(): void {
         this.playButtons.deselectButton(2);
     }
 
-    public onChange(action: string, event: any) {
+    public onChange(action: string, event: IChangeSwitchEventArgs): void {
         this.switchChanged.emit({action, value: event.checked });
     }
 
-    private disableOtherButtons(ind: number, disableButtons: boolean) {
-        if (this.subscription) {
-            this.subscription.unsubscribe();
-        }
+    private disableOtherButtons(ind: number, disableButtons: boolean): void {
         this.volumeSlider.disabled = disableButtons;
         this.intervalSlider.disabled = disableButtons;
         this.selectedButton = ind;

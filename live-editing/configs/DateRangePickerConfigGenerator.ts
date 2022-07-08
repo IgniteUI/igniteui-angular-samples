@@ -36,6 +36,18 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
 
         configs.push(
             new Config({
+                component: 'DateRangePickerRangeButtonsComponent',
+                appModuleConfig: new AppModuleConfig({
+                    imports: ['IgxDateRangePickerModule', 'DateRangePickerRangeButtonsComponent'],
+                    ngDeclarations: ['DateRangePickerRangeButtonsComponent'],
+                    ngImports: ['IgxDateRangePickerModule']
+                }),
+                shortenComponentPathBy: "/scheduling/daterangepicker/"
+            })
+        );
+
+        configs.push(
+            new Config({
                 component: 'DateRangePickerStartEndComponent',
                 appModuleConfig: new AppModuleConfig({
                     imports: ['IgxDateRangePickerModule', 'DateRangePickerStartEndComponent',

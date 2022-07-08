@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 .content-wrap {
     display: flex;
@@ -18,13 +18,13 @@ main {
     display: block;
     height: 100%;
 
-    $custom-theme: igx-navdrawer-theme(
+    $custom-theme: navdrawer-theme(
         $background: #2d313a,
         $item-active-background: #ecc256,
         $item-header-text-color: #f3c03e
     );
 
-    // @include igx-css-vars($custom-theme);
+    // @include css-vars($custom-theme);
 
     /* Using Theme Overrides to provide IE 11 support.
      * NOTE: Theming using this approach will greatly increase the size
@@ -32,7 +32,7 @@ main {
      * delete this section and use the `igx-css-vars` mixin as shown above.
     **/
     ::ng-deep {
-        @include igx-navdrawer($custom-theme);
+        @include navdrawer($custom-theme);
     }
 }
 

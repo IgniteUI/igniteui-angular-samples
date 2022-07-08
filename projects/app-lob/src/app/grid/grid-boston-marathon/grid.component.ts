@@ -128,7 +128,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
 
     public cellSelection(evt) {
         const cell = evt.cell;
-        this.grid1.selectRows([cell.row.rowID], true);
+        this.grid1.selectRows([cell.row.key], true);
     }
 
     public getIconType(cell) {

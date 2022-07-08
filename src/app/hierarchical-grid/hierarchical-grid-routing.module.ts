@@ -92,6 +92,10 @@ import { HGridSummaryFormatterComponent } from './hierarchical-grid-summary-form
 import { HGridExcelExportSampleComponent } from './hierarchical-grid-excel-exporter/hierarchical-grid-excel-export.sample';
 import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-sample/hierarchical-grid-pager-sample.component';
 import { HGridMultiColumnHeadersExportComponent } from './hierarchical-grid-multi-column-headers-export/hierarchical-grid-multi-column-export.component';
+import { HGridRowStylesSampleComponent } from './hgrid-rowStyle-sample/hgrid-rowStyles.component';
+import { HGridRowClassesSampleComponent } from './hgrid-rowClasses-sample/hgrid-rowClasses.component';
+import { HGridActionStripSampleComponent } from './hierarchical-grid-action-strip/hierarchical-grid-action-strip-sample';
+import { HGridSummaryTemplateComponent } from './hgrid-summary-template/hgrid-summary-template.component';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -459,6 +463,11 @@ export const hierarchicalGridRoutes: Routes = [
         path: 'hierarchical-grid-allData-summary'
     },
     {
+        component: HGridSummaryTemplateComponent,
+        data: hierarchicalGridRoutesData['hgrid-summary-template'],
+        path: 'hgrid-summary-template'
+    },
+    {
         component: HierarchicalGridRightPinningSampleComponent,
         data: hierarchicalGridRoutesData['hierarchical-grid-sample-right-pinning'],
         path: 'hierarchical-grid-sample-right-pinning'
@@ -517,6 +526,21 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridSummaryFormatterComponent,
         data: hierarchicalGridRoutesData['hGrid-summary-formatter'],
         path: 'hGrid-summary-formatter'
+    },
+    {
+        component: HGridRowStylesSampleComponent,
+        data: hierarchicalGridRoutesData['hGrid-row-styles'],
+        path: 'hGrid-row-styles'
+    },
+    {
+        component: HGridRowClassesSampleComponent,
+        data: hierarchicalGridRoutesData['hGrid-row-classes'],
+        path: 'hGrid-row-classes'
+    },
+    {
+        component: HGridActionStripSampleComponent,
+        data: hierarchicalGridRoutesData['hGrid-action-strip'],
+        path: 'hGrid-action-strip'
     }
 ];
 

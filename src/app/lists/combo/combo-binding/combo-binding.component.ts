@@ -16,6 +16,6 @@ export class ComboBindingComponent {
 
     public selectFavorites() {
         const selectedItems: ICity[] = this.cities.filter((e: ICity) => ['UK01', 'BG01', 'JP01', 'DE01'].indexOf(e.id) > -1);
-        this.comboNoValueKey.selectItems(selectedItems);
+        this.comboNoValueKey.select(selectedItems);
     }
 }

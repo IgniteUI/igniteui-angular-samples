@@ -1,11 +1,11 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 .date-picker-wrapper {
     padding: 1rem;
     max-width: 600px;
 }
 
-$custom-datepicker-theme: igx-calendar-theme(
+$custom-datepicker-theme: calendar-theme(
     $header-background: #345779,
     $content-background: #fdfdfd,
     $header-text-color: #ffffff,
@@ -23,7 +23,7 @@ $custom-datepicker-theme: igx-calendar-theme(
 );
 
 // :host {
-//     @include igx-css-vars($custom-datepicker-theme);
+//     @include css-vars($custom-datepicker-theme);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -32,6 +32,6 @@ $custom-datepicker-theme: igx-calendar-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-calendar($custom-datepicker-theme);
+    @include calendar($custom-datepicker-theme);
 }
 

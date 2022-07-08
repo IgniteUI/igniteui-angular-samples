@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxSliderType } from 'igniteui-angular';
 
 @Component({
@@ -6,20 +6,12 @@ import { IgxSliderType } from 'igniteui-angular';
   styleUrls: ['./slider-sample-5.component.scss'],
   templateUrl: './slider-sample-5.component.html'
 })
-export class SliderSample5Component implements OnInit {
+export class SliderSample5Component {
   public sliderType = IgxSliderType;
-  public priceRange: PriceRange = new PriceRange(200, 800);
+  public priceRange = {
+      lower: 200,
+      upper: 800
+  };
 
   constructor() { }
-
-  public ngOnInit() {
-  }
-}
-
-class PriceRange {
-  constructor(
-    public lower: number,
-    public upper: number
-  ) {
-  }
 }

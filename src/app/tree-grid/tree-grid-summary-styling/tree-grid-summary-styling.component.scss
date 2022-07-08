@@ -1,6 +1,6 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
-$custom-theme: igx-grid-summary-theme(
+$custom-theme: grid-summary-theme(
     $background-color: #e0f3ff,
     $focus-background-color: rgba( #94d1f7, .3 ),
     $label-color: #e41c77,
@@ -12,7 +12,7 @@ $custom-theme: igx-grid-summary-theme(
 
 :host{
     ::ng-deep {
-        @include igx-grid-summary($custom-theme);
+        @include grid-summary($custom-theme);
         .grid-controls {
             display: flex;
             flex-flow: column nowrap;

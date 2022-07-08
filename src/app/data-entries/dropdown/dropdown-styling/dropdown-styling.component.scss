@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 .drop-down {
     margin: 8px;
@@ -9,7 +9,7 @@
     max-height: 280px;
 }
 
-$custom-drop-down-theme: igx-drop-down-theme(
+$custom-drop-down-theme: drop-down-theme(
     $background-color: #fdfdfd,
     $header-text-color: #345779,
     $item-text-color: #2dabe8,
@@ -23,13 +23,13 @@ $custom-drop-down-theme: igx-drop-down-theme(
     $hover-item-text-color: #345779,
 );
 
-$custom-button-theme: igx-button-theme(
+$custom-button-theme: button-theme(
     $background: #345779,
     $foreground: #fdfdfd,
 );
 
 // :host {
-//     @include igx-css-vars($custom-drop-down-theme);
+//     @include css-vars($custom-drop-down-theme);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -38,6 +38,6 @@ $custom-button-theme: igx-button-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host  ::ng-deep {
-    @include igx-drop-down($custom-drop-down-theme);
-    @include igx-button($custom-button-theme);
+    @include drop-down($custom-drop-down-theme);
+    @include button($custom-button-theme);
 }

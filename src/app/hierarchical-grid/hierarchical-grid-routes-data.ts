@@ -64,6 +64,7 @@ export const hierarchicalGridRoutesData = {
     'hierarchical-grid-conditional-row-selectors': { displayName: 'HGrid Conditional Row Selectors', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-collapsible-column-groups': { displayName: 'HGrid Collapsible Column Grous', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-allData-summary': {displayName: 'HGrid All Data Custom Summaries', parentName: 'Hierarchical Grid'},
+    'hgrid-summary-template': {displayName: 'HGrid Summary Template', parentName: 'Hierarchical Grid'},
     'hierarchical-grid-sample-right-pinning': { displayName: 'Hierarchical Grid Right Side Pinning', parentName: 'Hierarchical Grid' },
     'column-selection': { displayName: 'HGrid Column Selection', parentName: 'Hierarchical Grid' },
     'column-group-selection': { displayName: 'HGrid Column Group Selection', parentName: 'Hierarchical Grid' },
@@ -75,5 +76,8 @@ export const hierarchicalGridRoutesData = {
     'hGrid-editing-lifecycle': { displayName: 'Hierarchical Grid Editing lifecycle', parentName: 'Hierarchical Grid' },
     'hGrid-cell-selection': {displayName: 'HGrid Cell Selection', parentName: 'Hierarchical Grid'},
     'hGrid-formatted-filtering-strategy': { displayName: 'HGrid Formatted Filtering Strategy', parentName: 'Hierarchical Grid' },
-    'hGrid-summary-formatter': { displayName: 'HGrid Summary Formatter', parentName: 'Hierarchical Grid' }
+    'hGrid-summary-formatter': { displayName: 'HGrid Summary Formatter', parentName: 'Hierarchical Grid' },
+    'hGrid-row-classes': { displayName: 'HGrid RowClasses', parentName: 'Hierarchical Grid' },
+    'hGrid-row-styles': { displayName: 'HGrid RowStyles', parentName: 'Hierarchical Grid' },
+    'hGrid-action-strip': { displayName: 'HGrid with Action Strip', parentName: 'Hierarchical Grid' }
 };

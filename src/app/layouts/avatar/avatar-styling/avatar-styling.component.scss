@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 .avatars-wrapper {
     display: flex;
@@ -14,13 +14,13 @@
     margin: 15px 0;
 }
 
-$initials-avatar-theme: igx-avatar-theme(
+$initials-avatar-theme: avatar-theme(
     $background: #72da67,
     $color: #000000,
     $border-radius: 16px
 );
 
-$icon-avatar-theme: igx-avatar-theme(
+$icon-avatar-theme: avatar-theme(
     $background: #217346,
     $color: #ffffff
 );
@@ -31,9 +31,9 @@ $icon-avatar-theme: igx-avatar-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 .initials{
-    @include igx-avatar($initials-avatar-theme);
+    @include avatar($initials-avatar-theme);
 }
 
 .icon{
-    @include igx-avatar($icon-avatar-theme);
+    @include avatar($icon-avatar-theme);
 }

@@ -30,14 +30,17 @@
         [sortStrategy]="sorting"
         [height]="'calc(100% - 76px)'"
         width="100%"
+        [moving]="true"
         [autoGenerate]='false'
         displayDensity='compact'
         hiddenColumnsText="Hidden"
         [isLoading]="isLoading"
         [allowFiltering]="true"
-        [filterMode]="'excelStyleFilter'">
+        [filterMode]="'excelStyleFilter'"
+        [filterStrategy]="filterStrategy">
         <igx-grid-toolbar *ngIf="showToolbar">
             <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
                 <igx-grid-toolbar-hiding title="Indicators"></igx-grid-toolbar-hiding>
                 <igx-grid-toolbar-exporter [exportCSV]="false"></igx-grid-toolbar-exporter>
             </igx-grid-toolbar-actions>
@@ -78,8 +81,8 @@
             </ng-template>
         </igx-column>
         <igx-column [field]="'openPrice'" [width]="'120px'" dataType="number" [formatter]="formatCurrency"
-            [movable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'price'" [width]="'130px'" dataType="number" [cellClasses]="trends" [movable]="true"
+             [sortable]="true"></igx-column>
+        <igx-column [field]="'price'" [width]="'130px'" dataType="number" [cellClasses]="trends"
             [sortable]="true" [disableHiding]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
@@ -91,31 +94,31 @@
         </igx-column>
 
         <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
-            [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatNumber" [movable]="true">
+            [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatNumber" >
         </igx-column>
 
-        <igx-column [field]="'changeP'" [width]="'110px'" dataType="number" [formatter]="percentage" [movable]="true"
+        <igx-column [field]="'changeP'" [width]="'110px'" dataType="number" [formatter]="percentage"
             [sortable]="true" [cellClasses]="trendsChange">
         </igx-column>
 
-        <igx-column [field]="'buy'" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+        <igx-column [field]="'buy'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
             [sortable]="true"></igx-column>
-        <igx-column [field]="'sell'" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+        <igx-column [field]="'sell'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
             [sortable]="true"></igx-column>
-        <igx-column [field]="'spread'" [width]="'110px'" dataType="number" [formatter]="formatNumber" [movable]="true">
+        <igx-column [field]="'spread'" [width]="'110px'" dataType="number" [formatter]="formatNumber" >
         </igx-column>
-        <igx-column [field]="'volume'" [width]="'110px'" dataType="number" [formatter]="formatNumber" [movable]="true"
+        <igx-column [field]="'volume'" [width]="'110px'" dataType="number" [formatter]="formatNumber"
             [sortable]="true"></igx-column>
         <igx-column [field]="'highD'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
-            [movable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'lowD'" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+             [sortable]="true"></igx-column>
+        <igx-column [field]="'lowD'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
             [sortable]="true"></igx-column>
         <igx-column [field]="'highY'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
-            [movable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'lowY'" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+             [sortable]="true"></igx-column>
+        <igx-column [field]="'lowY'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
             [sortable]="true"></igx-column>
         <igx-column [field]="'startY'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
-            [movable]="true" [sortable]="true"></igx-column>
+             [sortable]="true"></igx-column>
     </igx-tree-grid>
 </div>
 

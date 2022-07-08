@@ -97,6 +97,7 @@ export const gridsRoutesData = {
     'grid-multiple-row-drag': { displayName: 'Grid Multi Row Drag', parentName: 'Grid' },
     'grid-collapsible-groups': { displayName: 'Grid Collapsible Column Groups', parentName: 'Grid' },
     'grid-alldata-summaries': { displayName: 'Grid AllData Summaries', parentName: 'Grid' },
+    'grid-summary-template': { displayName: 'Grid Summary Template', parentName: 'Grid' },
     'grid-sample-right-pinning': { displayName: 'Right Pinning', parentName: 'Grid' },
     'column-selection': { displayName: 'Column Selection', parentName: 'Grid' },
     'column-group-selection': { displayName: 'Column Group Selection', parentName: 'Grid' },
@@ -111,5 +112,8 @@ export const gridsRoutesData = {
     'grid-select': {displayName: 'Grid with Select as Editor Provider', parentName: 'Grid'},
     'grid-column-data-types': {displayName: 'Grid column data types', parentName: 'Grid'},
     'grid-formatted-filtering-strategy': { displayName: 'Grid Formatted Filtering Strategy', parentName: 'Grid' },
-    'grid-summary-formatter': { displayName: 'Grid Summary Formatter', parentName: 'Grid' }
+    'grid-summary-formatter': { displayName: 'Grid Summary Formatter', parentName: 'Grid' },
+    'grid-crud': { displayName: 'Grid CRUD Operations', parentName: 'Grid'},
+    'grid-rowClasses-sample': { displayName: 'Grid rowClasses', parentName: 'Grid'},
+    'grid-rowStyles-sample': { displayName: 'Grid rowStyles', parentName: 'Grid'}
 };

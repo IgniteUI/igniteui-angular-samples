@@ -1,12 +1,12 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
-$custom-theme: igx-progress-circular-theme(
-    $base-circle-color: igx-color($color: 'grays', $variant: 300),
-    $progress-circle-color: igx-color($color: 'success')
+$custom-theme: progress-circular-theme(
+    $base-circle-color: color($color: 'grays', $variant: 300),
+    $progress-circle-color: color($color: 'success')
 );
 
 // :host {
-//     @include igx-css-vars($custom-theme);
+//     @include css-vars($custom-theme);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -15,5 +15,5 @@ $custom-theme: igx-progress-circular-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-progress-circular($custom-theme);
+    @include progress-circular($custom-theme);
 }

@@ -204,7 +204,7 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
         this.grid.rangeSelected.pipe(takeUntil(this.destroy$)).subscribe(() => {
             this.determineFormatters(false);
         });
-        this.grid.columnSelected.pipe(takeUntil(this.destroy$), debounceTime(200)).subscribe(() => {
+        this.grid.columnSelectionChanging.pipe(takeUntil(this.destroy$), debounceTime(200)).subscribe(() => {
             this.determineFormatters(true);
         });
         this.grid.cellEdit.pipe(takeUntil(this.destroy$)).subscribe((args: any) => {

@@ -1,13 +1,13 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 .grid__wrapper {
     margin: 0 16px;
     padding-top: 10px;
 }
 
-$dark-paginator: igx-paginator-theme( $text-color: #F4D45C, $background-color: #575757, $border-color: #292826);
+$dark-paginator: paginator-theme( $text-color: #F4D45C, $background-color: #575757, $border-color: #292826);
 
-$dark-button: igx-button-theme(
+$dark-button: button-theme(
     $foreground: #FFCD0F,
     $hover-foreground: #292826,
     $hover-background: #FFCD0F,
@@ -18,9 +18,9 @@ $dark-button: igx-button-theme(
 
 :host {
      ::ng-deep {
-        @include igx-paginator($dark-paginator);
+        @include paginator($dark-paginator);
         .igx-paginator__pager {
-            @include igx-button($dark-button);
+            @include button($dark-button);
         }
     }
 }

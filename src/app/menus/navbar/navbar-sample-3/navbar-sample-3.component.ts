@@ -1,5 +1,5 @@
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   providers: [Location, { provide: LocationStrategy, useClass: PathLocationStrategy }],
@@ -7,11 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar-sample-3.component.scss'],
   templateUrl: './navbar-sample-3.component.html'
 })
-export class NavbarSample3Component implements OnInit{
+export class NavbarSample3Component {
 
   constructor(private _location: Location) { }
-
-  public ngOnInit() {  }
 
   public navigateBack() {
     this._location.back();

@@ -6,9 +6,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
     IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule,
-    IgxCheckboxModule, IgxChipsModule, IgxComboModule, IgxCsvExporterService,
-    IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule,
-    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule,
+    IgxCheckboxModule, IgxChipsModule, IgxComboModule,
+    IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxExpansionPanelModule, IgxFocusModule,
+    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSimpleComboModule, IgxSliderModule,
     IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from 'igniteui-angular';
 import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
@@ -126,6 +126,10 @@ import { GridColumnDataTypesSampleComponent } from './grid-column-data-types-sam
 import { GridFormattedFilteringStrategyComponent } from './grid-formatted-filtering-strategy/grid-formatted-filtering-strategy.component';
 import { GridSummaryFormatterComponent } from './grid-summary-formatter/grid-summary-formatter.component';
 import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-export/multi-column-headers-export.component';
+import { CRUDSampleComponent } from './grid-crud-sample/crud-sample.component';
+import { GridRowClassesComponent } from './grid-rowClasses-sample/grid-rowClasses.component';
+import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.component';
+import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summary-template.component';
 
 @NgModule({
     declarations: [
@@ -153,6 +157,7 @@ import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-ex
         PagingSampleComponent,
         GridPasteSampleComponent,
         RemoteFilteringSampleComponent,
+        CRUDSampleComponent,
         RemotePagingGridSampleComponent,
         CustomRemotePagingGridSampleComponent,
         ResizingSampleComponent,
@@ -229,6 +234,7 @@ import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-ex
         GridExternalAdvancedFilteringComponent,
         GridCollapsibleColumnGroupsComponent,
         GridAllDataSummaryComponent,
+        GridSummaryTemplateComponent,
         RightPinningSampleComponent,
         GridColumnSelectionComponent,
         GridColumnGroupSelectionComponent,
@@ -241,7 +247,9 @@ import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-ex
         GridEditingLifecycleComponent,
         GridSelectComponent,
         GridFormattedFilteringStrategyComponent,
-        GridSummaryFormatterComponent
+        GridSummaryFormatterComponent,
+        GridRowClassesComponent,
+        GridRowStylesComponent
     ],
     imports: [
         CommonModule,
@@ -279,11 +287,8 @@ import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-ex
         IgxCardModule,
         IgxDividerModule,
         IgxActionStripModule,
-        IgxListModule
-    ],
-    providers: [
-        IgxCsvExporterService,
-        IgxExcelExporterService
+        IgxListModule,
+        IgxSimpleComboModule
     ]
 })
 export class GridsModule { }

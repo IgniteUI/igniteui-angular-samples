@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { IDropDroppedEventArgs, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 // eslint-disable-next-line no-shadow
@@ -30,9 +30,9 @@ export class GridDragToGridSampleComponent {
         args.animation = true;
     }
 
-    public onDropAllowed(args) {
-        this.targetGrid.addRow(args.dragData.rowData);
-        this.sourceGrid.deleteRow(args.dragData.rowID);
+    public onDropAllowed(args: IDropDroppedEventArgs) {
+        this.targetGrid.addRow(args.dragData.data);
+        this.sourceGrid.deleteRow(args.dragData.key);
     }
 
     public onEnterAllowed(args) {

@@ -1,14 +1,14 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
-$my-color: igx-color($color: 'success');
+$my-color: color($color: 'success');
 
-$custom-checkbox-theme: igx-checkbox-theme(
+$custom-checkbox-theme: checkbox-theme(
     $fill-color: $my-color,
     $border-radius: 10px
 );
 
 .list-sample ::ng-deep {
-    @include igx-checkbox($custom-checkbox-theme);
+    @include checkbox($custom-checkbox-theme);
 }
 
 .sample {
@@ -38,7 +38,7 @@ $custom-checkbox-theme: igx-checkbox-theme(
                 font-size: 13px;
             }
 
-            height: 450px;
+            height: 570px;
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2),
             0 1px 1px 0 rgba(0, 0, 0, 0.14),
             0 2px 1px -1px rgba(0, 0, 0, 0.12);

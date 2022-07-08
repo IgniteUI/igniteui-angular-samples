@@ -1,11 +1,11 @@
-@import '~igniteui-angular/lib/core/styles/themes/utilities';
+@use 'igniteui-angular/theming' as *;
 
 $black-color: #000000;
 $aqua-color: #00BFFF;
 
-$black-theme-palette: igx-palette($primary: $black-color, $secondary: $aqua-color, $grays: #fff);
+$black-theme-palette: palette($primary: $black-color, $secondary: $aqua-color, $grays: #fff);
 
-$_black-snackbar-schema: extend($_dark-snackbar,
+$_black-snackbar-schema: extend($dark-snackbar,
         (
             background:(
                 igx-color:("primary", 100)
@@ -16,7 +16,7 @@ $_black-snackbar-schema: extend($_dark-snackbar,
         )
 );
 
-$_black-dialog-schema: extend($_dark-dialog,
+$_black-dialog-schema: extend($dark-dialog,
         (
             background:(
                 igx-color:("primary", 100)
@@ -30,7 +30,7 @@ $_black-dialog-schema: extend($_dark-dialog,
         )
 );
 
-$_black-input-group-schema: extend($_dark-input-group,
+$_black-input-group-schema: extend($dark-input-group,
         (
             box-background:(
                 igx-color:("primary", 100)
@@ -57,10 +57,10 @@ $_black-input-group-schema: extend($_dark-input-group,
 );
 
 $_black-button-schema: extend(
-    $_dark-button,
+    $dark-button,
     (
         icon: extend(
-            $_material-icon-button-dark,
+            $material-icon-button-dark,
             (
                 foreground: (
                     igx-color: ("secondary", 700)
@@ -88,7 +88,7 @@ $_black-button-schema: extend(
     )
 );
 
-$_black-button-group-schema: extend($_dark-button-group,
+$_black-button-group-schema: extend($dark-button-group,
         (
             item-text-color:(
                 igx-color:("primary", 500)
@@ -105,7 +105,7 @@ $_black-button-group-schema: extend($_dark-button-group,
         )
 );
 
-$_black-grid-schema: extend($_dark-grid,
+$_black-grid-schema: extend($dark-grid,
         (
             content-background:(
                 igx-color:("primary", 100)
@@ -135,7 +135,7 @@ $_black-grid-schema: extend($_dark-grid,
         )
 );
 
-$_black-paginator-schema: extend($_dark-pagination,
+$_black-paginator-schema: extend($dark-pagination,
         (
             text-color:(
                 igx-color: ("secondary", 700)
@@ -149,7 +149,7 @@ $_black-paginator-schema: extend($_dark-pagination,
         )
 );
 
-$_black-calendar-schema: extend($_dark-calendar,
+$_black-calendar-schema: extend($dark-calendar,
         (
             content-background:(
                 igx-color:("primary", 100)

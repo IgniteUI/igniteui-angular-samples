@@ -1,6 +1,6 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
-$custom-checkbox-theme: igx-checkbox-theme(
+$custom-checkbox-theme: checkbox-theme(
     $border-radius: 10px,
     $label-color: #011627,
     $empty-color: #ecaa53,
@@ -12,7 +12,7 @@ $custom-checkbox-theme: igx-checkbox-theme(
     display: flex;
     padding: 16px;
 
-    // @include igx-css-vars($custom-checkbox-theme);
+    // @include css-vars($custom-checkbox-theme);
 
     /* Using Theme Overrides to provide IE 11 support.
      * NOTE: Theming using this approach will greatly increase the size
@@ -20,7 +20,7 @@ $custom-checkbox-theme: igx-checkbox-theme(
      * delete this section and use the `igx-css-vars` mixin as shown above.
     **/
     ::ng-deep {
-        @include igx-checkbox($custom-checkbox-theme);
+        @include checkbox($custom-checkbox-theme);
     }
 }
 

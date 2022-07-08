@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IgxExporterEvent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
@@ -9,4 +10,9 @@ import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detaile
 export class TreeGridMultiColumnHeadersExportComponent {
     public data = generateEmployeeDetailedFlatData();
     public selectionMode = 'none';
+    public exportHeaders = true;
+
+    public exportStarted(args: IgxExporterEvent) {
+        args.options.ignoreMultiColumnHeaders = !this.exportHeaders;
+    }
 }

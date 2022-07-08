@@ -1,6 +1,6 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
-$dark-highlight: igx-highlight-theme(
+$dark-highlight: highlight-theme(
     $resting-background: #FFCD0F,
     $resting-color: #292826,
     $active-background: #292826,
@@ -12,7 +12,7 @@ $dark-highlight: igx-highlight-theme(
     padding: 4px;
 
     ::ng-deep {
-        @include igx-highlight($dark-highlight);
+        @include highlight($dark-highlight);
 
         .custom-highlight {
             border: 1px solid #FFCD0F;

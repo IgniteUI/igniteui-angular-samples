@@ -1,11 +1,11 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
-$custom-strip: igx-action-strip-theme(
+$custom-strip: action-strip-theme(
     $actions-border-radius: 0
 );
 
 .my-action-strip {
-    @include igx-action-strip($custom-strip);
+    @include action-strip($custom-strip);
     display: flex;
     align-items: flex-start;
     justify-content: center;

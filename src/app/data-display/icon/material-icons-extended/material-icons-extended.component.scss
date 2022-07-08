@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 $sample-width: rem(850px);
 $sample-height: rem(700px);
@@ -17,7 +17,7 @@ $grid-item-margin: $grid-item-padding;
 $grid-body-section-padding: $grid-padding;
 $grid-item-border-width: rem(2px);
 
-$clipboardSuccessColor: igx-color($color: 'success');
+$clipboardSuccessColor: color($color: 'success');
 
 %icon-size {
   width: $grid-icon-size;
@@ -155,7 +155,7 @@ $clipboardSuccessColor: igx-color($color: 'success');
 
     &:hover,
     &:focus {
-      border-color: igx-color($color: 'secondary');
+      border-color: color($color: 'secondary');
       outline-color: transparent;
       outline-width: 0;
 
@@ -208,7 +208,7 @@ $clipboardSuccessColor: igx-color($color: 'success');
   @include e(grid-item-clipboard) {
     @extend %flex-row-center-center;
     border-radius: 50%;
-    background: igx-color($color: 'surface');
+    background: color($color: 'surface');
     box-shadow: none;
     border: none;
     padding: rem(4px);
@@ -238,13 +238,13 @@ $clipboardSuccessColor: igx-color($color: 'success');
       pointer-events: auto;
       visibility: visible;
       opacity: 1;
-      color: igx-color($color: 'secondary');
+      color: color($color: 'secondary');
     }
   }
 
   @include e(grid-item-clipboard, $m: success) {
     background: $clipboardSuccessColor;
-    color: igx-contrast-color($color: 'success') !important;
+    color: contrast-color($color: 'success') !important;
   }
 
   @include e(grid-icon-name) {

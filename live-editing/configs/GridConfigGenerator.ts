@@ -47,7 +47,8 @@ export class GridConfigGenerator implements IConfigGenerator {
         RemoteFilteringService: '../../src/app/services/remoteFiltering.service',
         RemotePagingService: '../../src/app/services/remotePaging.service',
         RemoteServiceVirt: '../../src/app/services/remoteVirtualization.service',
-        FinancialDataService: '../../src/app/services/financial.service'
+        FinancialDataService: '../../src/app/services/financial.service',
+        CRUDService: '../../src/app/services/crud.service'
 };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -587,7 +588,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid with Action Strip
         configs.push(new Config({
             component: 'GridActionStripSampleComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/data/utils.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridActionStripSampleComponent', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
                     'IgxFocusModule', 'IgxPreventDocumentScrollModule', 'IgxActionStripModule'],
@@ -784,7 +785,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridNestedDataBindComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/grid/grid-nested-data-binding/nestedData.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nested-employee-data.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridNestedDataBindComponent', 'IgxGridModule', 'IgxInputGroupModule', 'IgxExpansionPanelModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridNestedDataBindComponent'],
@@ -794,7 +795,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridNestedDataBindAminoacidComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/grid/grid-nested-data-binding-2/data.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/amino-data.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridNestedDataBindAminoacidComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridNestedDataBindAminoacidComponent'],
@@ -1033,6 +1034,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: ['GridAllDataSummaryComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridAllDataSummaryComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
+            })
+        }));
+
+        configs.push(new Config({
+            component: 'GridSummaryTemplateComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['GridSummaryTemplateComponent', 'IgxGridModule', 'IgxInputGroupModule',
+                    'IgxButtonGroupModule', 'IgxSwitchModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['GridSummaryTemplateComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxInputGroupModule', 'IgxButtonGroupModule', 'IgxSwitchModule']
             })
         }));
 
@@ -1286,6 +1298,39 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: ['GridSummaryFormatterComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridSummaryFormatterComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
+            })
+        }));
+
+        configs.push(new Config({
+            component: 'CRUDSampleComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/services/crud.service.ts',
+                '/src/app/data/invoiceData.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['CRUDSampleComponent', 'IgxActionStripModule', 'HttpClientModule', 'IgxGridModule', 'IgxPreventDocumentScrollModule', 'CRUDService'],
+                ngDeclarations: ['CRUDSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxActionStripModule', 'HttpClientModule'],
+                ngProviders: ['CRUDService']
+            })
+        }));
+
+        configs.push(new Config({
+            component: 'GridRowClassesComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ 'IgxGridModule', 'GridRowClassesComponent', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['GridRowClassesComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
+            })
+        }));
+
+        configs.push(new Config({
+            component: 'GridRowStylesComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/services/financial.service.ts',  '/src/app/data/financialData.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ 'IgxGridModule', 'GridRowStylesComponent', 'IgxPreventDocumentScrollModule', 'FinancialDataService'],
+                ngDeclarations: ['GridRowStylesComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule'],
+                ngProviders: ['FinancialDataService']
             })
         }));
 

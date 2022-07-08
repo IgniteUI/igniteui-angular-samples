@@ -85,10 +85,15 @@ import { TreeGridExternalOutletComponent } from './tree-grid-external-outlet/tre
 import { TreeGridExportVisualizationComponent } from './tree-grid-export-visualization/tree-grid-export-visualization.component';
 import { TGridEditingLifecycleComponent } from './tgrid-editing-lifecycle-sample/tgrid-editing-lifecycle.component';
 import { TreeGridFormattedFilteringStrategyComponent } from './tree-grid-formatted-filtering-strategy/tree-grid-formatted-filtering-strategy.component';
+import { TreeGridTreeFilterViewComponent } from './tree-grid-tree-filter-view/tree-grid-tree-filter-view.component';
 import { TreeGridSummaryFormatterComponent } from './tree-grid-summary-formatter/tree-grid-summary-formatter.component';
 import { TreeGridPagerSampleComponent } from './tree-grid-pager-sample/tree-grid-pager-sample.component';
 import { TreeGridGroupByLoadOnDemandComponent } from './tree-grid-group-by-load-on-demand-sample/tree-grid-group-by-load-on-demand-sample.component';
 import { TreeGridMultiColumnHeadersExportComponent } from './tree-grid-multi-column-headers-export/tree-grid-multi-column-headers-export.component';
+import { TreeGridRowClassesComponent } from './tree-grid-rowClasses-sample/tree-grid-rowClasses.component';
+import { TreeGridRowStylesComponent } from './tree-grid-rowStyles-sample/tree-grid-rowStyle.component';
+import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tree-grid-action-strip-sample';
+import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/treegrid-summary-template.component';
 
 export const treeGridRoutes: Routes = [
     {
@@ -467,6 +472,11 @@ export const treeGridRoutes: Routes = [
         path: 'tree-grid-allData-summary'
     },
     {
+        component: TreeGridSummaryTemplateComponent,
+        data: treeGridRoutesData['tree-grid-summary-template'],
+        path: 'tree-grid-summary-template'
+    },
+    {
         component: TreeGridRightPinningSampleComponent,
         data: treeGridRoutesData['tree-grid-sample-right-pinning'],
         path: 'tree-grid-sample-right-pinning'
@@ -522,9 +532,29 @@ export const treeGridRoutes: Routes = [
         path: 'tree-grid-formatted-filtering-strategy'
     },
     {
+        component: TreeGridTreeFilterViewComponent,
+        data: treeGridRoutesData['tree-grid-tree-filter-view'],
+        path: 'tree-grid-tree-filter-view'
+    },
+    {
         component: TreeGridSummaryFormatterComponent,
         data: treeGridRoutesData['tree-grid-summary-formatter'],
         path: 'tree-grid-summary-formatter'
+    },
+    {
+        component: TreeGridRowClassesComponent,
+        data: treeGridRoutesData['tree-grid-classes'],
+        path: 'tree-grid-classes'
+    },
+    {
+        component: TreeGridRowStylesComponent,
+        data: treeGridRoutesData['tree-grid-styles-sample'],
+        path: 'tree-grid-styles-sample'
+    },
+    {
+        component: TreeGridActionStripSampleComponent,
+        data: treeGridRoutesData['tree-grid-action-strip'],
+        path: 'tree-grid-action-strip'
     }
 ];
 

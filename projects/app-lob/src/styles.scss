@@ -1,5 +1,6 @@
-@import './variables';
-@import './app-layout';
+@use 'igniteui-angular/theming' as *;
+@use 'variables' as *;
+@use 'app-layout';
 
 /* autoprefixer grid: on */
 html,
@@ -9,40 +10,55 @@ body {
     margin: 0;
 }
 
-@include igx-core();
-@include igx-typography();
-@include igx-theme(
+@include core();
+@include typography();
+@include theme(
     $palette: $palette,
-    $schema: $schema,
-    $legacy-support: $legacy-support
+    $schema: $schema
 );
 
 :root {
-    @include igx-palette-vars($palette);
+    @include palette-vars($palette);
 }
 
 .light-theme {
-    @include igx-light-theme($palette);
+    @include light-theme($palette);
 }
 
-.dark-theme {
-    background: #333;
-    color: #fff;
-    @include igx-dark-theme(
-        $palette: $green-palette,
-        $legacy-support: $legacy-support
-    );
+$dark-grid-theme: grid-theme(
+	$palette: $green-palette,
+	$schema: $dark-schema,
+	$row-selected-background: #1f3823,
+	$row-selected-hover-background: #244229,
+	$cell-selected-within-background: #1f3823,
+	$header-selected-background: #476744,
+	$row-odd-background: #222222,
+	$row-even-background: #222222,
+	$header-background: #2a2a2a,
+	$row-hover-background:#2a2a2a,
+	$drop-area-background: #323232
+);
 
+.dark-theme {
     .grid-chart-contextmenu-wrapper {
-        @include igx-fluent-dark-theme($fluent-excel-palette);
+        @include fluent-dark-theme($fluent-excel-palette);
+    }
+
+    .actionPane {
+        background-color: #212121;
     }
 }
 
 .fin-dark-theme {
-    @include igx-dark-theme($green-palette);
-    background: #333;
+	::-moz-placeholder {
+		opacity: 1;
+	}
+}
 
-    ::-moz-placeholder {
-        opacity: 1;
-    }
+.dark-theme,
+.fin-dark-theme {
+	background: #333;
+	color: #fff;
+	@include dark-theme($palette: $green-palette);
+	@include css-vars($dark-grid-theme);
 }

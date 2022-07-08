@@ -1,17 +1,17 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
-$custom-column-actions-theme: igx-column-actions-theme(
+$custom-column-actions-theme: column-actions-theme(
     $background-color: steelblue,
     $title-color: gold
 );
 
-$custom-button: igx-button-theme($foreground: gold, $disabled-foreground: black);
+$custom-button: button-theme($foreground: gold, $disabled-foreground: black);
 
 :host {
     ::ng-deep {
-        @include igx-column-actions($custom-column-actions-theme);
+        @include column-actions($custom-column-actions-theme);
         .igx-column-actions {
-            @include igx-button($custom-button);
+            @include button($custom-button);
         }
     }
 }

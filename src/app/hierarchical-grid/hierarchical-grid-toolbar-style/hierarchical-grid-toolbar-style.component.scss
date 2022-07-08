@@ -1,23 +1,23 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
-$dark-button-theme: igx-button-theme(
+$dark-button-theme: button-theme(
     $background: #FFCD0F,
     $foreground: #292826,
     $hover-background: #404040,
     $hover-foreground: #FFCD0F
 );
 
-$dark-grid-toolbar-theme: igx-grid-toolbar-theme(
+$dark-grid-toolbar-theme: grid-toolbar-theme(
     $background-color: #292826,
     $title-text-color: #FFCD0F
 );
 
 :host {
     ::ng-deep {
-        @include igx-grid-toolbar($dark-grid-toolbar-theme);
+        @include grid-toolbar($dark-grid-toolbar-theme);
 
         .igx-grid-toolbar__actions {
-            @include igx-button($dark-button-theme);
+            @include button($dark-button-theme);
 
             .igx-button--outlined {
                 margin-left: 0.5rem;

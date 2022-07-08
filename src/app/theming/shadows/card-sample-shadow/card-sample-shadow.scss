@@ -1,16 +1,16 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 // Creating colors for all 3 shadows
 $color-1: #bcb8ce;
 $color-2: #917898;
 $color-3: #4c394f;
 
-// Use igx-elevations to generate sass maps for all three
+// Use elevations to generate sass maps for all three
 // box-shadows with the costume colors
-$colorful-elevations: igx-elevations($color-1, $color-2, $color-3);
+$colorful-elevations: elevations($color-1, $color-2, $color-3);
 
-// Use the igx-elevation to set the desired elevation level
-$custom-theme: igx-card-theme(
+// Use the elevation to set the desired elevation level
+$custom-theme: card-theme(
     $elevations: $colorful-elevations
 );
 
@@ -34,7 +34,7 @@ $custom-theme: igx-card-theme(
 
     ::ng-deep {
         .custom-card {
-            @include igx-card($custom-theme);
+            @include card($custom-theme);
         }
     }
 }

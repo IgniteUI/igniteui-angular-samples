@@ -1,0 +1,57 @@
+<div class="sample__wrapper">
+    <div class="controls-wrapper">
+        <igx-input-group>
+            <label igxLabel for="height">Summary Row Height</label>
+            <input igxInput name="height" type="number" [(ngModel)]="summaryHeight">
+        </igx-input-group>
+        <igx-switch [(ngModel)]="hasSummary">Toggle Summaries</igx-switch>
+        <igx-buttongroup [values]="displayDensities" (selected)="selectDensity($event)" [displayDensity]="displayDensity">
+        </igx-buttongroup>
+    </div>
+
+    <igx-hierarchical-grid igxPreventDocumentScroll [data]="localdata" [displayDensity]="displayDensity"
+        [summaryRowHeight]="summaryHeight" [height]="'550px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
+        <igx-column field="Artist" [hasSummary]='hasSummary'></igx-column>
+        <igx-column field="Photo" [hasSummary]='hasSummary' [summaries]="grammySummary">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner_2">
+                    <img [src]="cell.value" class="photo" />
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="Debut"></igx-column>
+        <igx-column field="GrammyNominations" header="Grammy Nominations" [hasSummary]='hasSummary'
+            [dataType]="'number'" [summaries]="numberSummary">
+            <ng-template igxSummary let-summaryResults>
+                <div class="summary-temp">
+                    <span><strong>{{ summaryResults[0].label }}</strong><span>{{ summaryResults[0].summaryResult }}</span></span>
+                    <span><strong>{{ summaryResults[1].label }}</strong><span>{{ summaryResults[1].summaryResult }}</span></span>
+                    <span><strong>{{ summaryResults[2].label }}</strong><span>{{ summaryResults[2].summaryResult }}</span></span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="GrammyAwards" header="Grammy Awards" [hasSummary]='hasSummary' [dataType]="'number'"
+            [summaries]="numberSummary"></igx-column>
+
+        <igx-row-island [height]="null" [key]="'Albums'" [summaryRowHeight]="summaryHeight">
+            <igx-column field="Album" [hasSummary]='hasSummary'></igx-column>
+            <igx-column field="LaunchDate" header="Launch Date" [hasSummary]='hasSummary' [dataType]="'date'">
+                <ng-template igxSummary let-summaryResults>
+                    <div class="summary-temp">
+                        <span><strong>{{ summaryResults[0].label }}</strong><span>{{ summaryResults[0].summaryResult }}</span></span>
+                        <span><strong>{{ summaryResults[1].label }}</strong><span>{{ summaryResults[1].summaryResult }}</span></span>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column field="BillboardReview" header="Billboard Review" [hasSummary]='hasSummary'></igx-column>
+            <igx-column field="USBillboard200" header="US Billboard 200" [hasSummary]='hasSummary'></igx-column>
+            <igx-row-island [height]="null" [key]="'Songs'">
+                <igx-column field="Number" header="No." [hasSummary]='hasSummary'></igx-column>
+                <igx-column field="Title" [hasSummary]='hasSummary'></igx-column>
+                <igx-column field="Released" dataType="date" [hasSummary]='hasSummary'></igx-column>
+                <igx-column field="Genre" [hasSummary]='hasSummary'></igx-column>
+            </igx-row-island>
+        </igx-row-island>
+    </igx-hierarchical-grid>
+</div>
+

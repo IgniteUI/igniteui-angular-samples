@@ -1,39 +1,39 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 // Add your brand colors
 $my-primary-color:#353a4b;
 $my-secondary-color: #ffd351;
 
 // Create custom palette
-$my-color-palette: igx-palette(
+$my-color-palette: palette(
     $primary: $my-primary-color,
     $secondary: $my-secondary-color
 );
 
 // Create expansion panel theme
-$custom-panel-theme: igx-expansion-panel-theme(
+$custom-panel-theme: expansion-panel-theme(
     $palette: $my-color-palette,
 
     // Styling parameters
-    $header-background: igx-color($my-color-palette, "primary", 700),
-    $header-focus-background: igx-color($my-color-palette, "primary", 700),
-    $header-title-color: igx-color($my-color-palette, "secondary"),
-    $header-icon-color: igx-color($my-color-palette, "secondary"),
-    $body-background: igx-color($my-color-palette, "primary", 700),
-    $body-color: igx-color($my-color-palette, "secondary", 100),
+    $header-background: color($my-color-palette, "primary", 700),
+    $header-focus-background: color($my-color-palette, "primary", 700),
+    $header-title-color: color($my-color-palette, "secondary"),
+    $header-icon-color: color($my-color-palette, "secondary"),
+    $body-background: color($my-color-palette, "primary", 700),
+    $body-color: color($my-color-palette, "secondary", 100),
     $border-radius: .5
 );
 
 // Since we use igxButton in our sample we need to create button component theme to fit our styling
 // NOTE: If we define our palette in our main sass file we don't have to do that.
-$custom-button-theme: igx-button-theme(
+$custom-button-theme: button-theme(
     $palette: $my-color-palette,
 );
 
 // NOTE: comment this if you need IE11 support
 // :host {
-//     @include igx-css-vars($custom-panel-theme);
-//     @include igx-css-vars($custom-button-theme);
+//     @include css-vars($custom-panel-theme);
+//     @include css-vars($custom-button-theme);
 // }
 
 // NOTE: Uncomment this if you need to support IE11
@@ -42,8 +42,8 @@ $custom-button-theme: igx-button-theme(
     // Penetrate the ViewEncapsulation
     ::ng-deep {
         // Apply the custom themes to the compoents mixins.
-        @include igx-expansion-panel($custom-panel-theme);
-        @include igx-button($custom-button-theme);
+        @include expansion-panel($custom-panel-theme);
+        @include button($custom-button-theme);
     }
 }
 
@@ -65,10 +65,9 @@ $custom-button-theme: igx-button-theme(
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 16px;
-    border-top: 1px solid igx-color($my-color-palette, 'primary');
+    border-top: 1px solid color($my-color-palette, 'primary');
     ::selection  {
-        background: igx-color($my-color-palette, 'secondary', 200)
+        background: color($my-color-palette, 'secondary', 200)
     }
     span {
         display: block;

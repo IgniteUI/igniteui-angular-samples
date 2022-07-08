@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 // tslint:disable-next-line:max-line-length
-import { IForOfState, IgxDropDownComponent, IgxForOfDirective, IgxToastComponent } from 'igniteui-angular';
+import { IForOfState, IgxDropDownComponent, IgxForOfDirective, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 import { Subject, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { RemoteNWindService } from '../../../services/remoteNwind.service';
@@ -42,7 +42,7 @@ export class DropDownRemoteComponent implements OnInit, OnDestroy, AfterViewInit
         if (this.prevRequest) {
             this.prevRequest.unsubscribe();
         }
-        this.loadingToast.position = 'middle';
+        this.loadingToast.positionSettings.verticalDirection = VerticalAlignment.Middle;
         this.loadingToast.autoHide = false;
         this.loadingToast.open('Loading Remote Data...');
         this.cdr.detectChanges();

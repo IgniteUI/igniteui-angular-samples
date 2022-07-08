@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 :host {
     display: block;
@@ -13,7 +13,7 @@
         z-index: 0;
 
         &.dragged {
-            box-shadow: igx-elevation($elevation: 8);
+            box-shadow: elevation($elevation: 8);
             z-index: 1;
         }
     }

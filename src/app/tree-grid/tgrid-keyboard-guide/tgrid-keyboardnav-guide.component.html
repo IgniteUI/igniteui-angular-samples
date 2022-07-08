@@ -1,6 +1,6 @@
 <div class="sample">
     <div class="grid_wrapper">
-        <igx-tree-grid [data]="data" height="450px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" displayDensity="compact"
+        <igx-tree-grid [data]="data" height="450px" width="100%" [moving]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" displayDensity="compact"
             summaryCalculationMode="rootLevelOnly" primaryKey="ID" foreignKey="ParentID" columnSelection="single" [allowAdvancedFiltering]="true"
             (keydown)="gridKeydown($event)" (activeNodeChange)="onActiveNodeChange($event)">
             <igx-paginator></igx-paginator>
@@ -9,11 +9,11 @@
             <igx-column field="Name" [hasSummary]="true" [editable]="true" [sortable]="true"></igx-column>
             <igx-column-group header="General Information" >
                 <igx-column field="HireDate" [hasSummary]="true" [editable]="true" [sortable]="true"></igx-column>
-                <igx-column-group [movable]="true" header="Personel Details" [collapsible]="true"
+                <igx-column-group header="Personel Details" [collapsible]="true"
                         dataType="string" [expanded]="false" (expandedChange)="expandChange()">
                     <igx-column field="ID" [width]="'250px'" [visibleWhenCollapsed]="true" [sortable]="true"></igx-column>
                     <igx-column field="Title" [visibleWhenCollapsed]="false"
-                        [hasSummary]="true" [sortable]="true" [editable]=true></igx-column>
+                        [hasSummary]="true" [sortable]="true" [editable]="true"></igx-column>
                     <igx-column field="Age" [visibleWhenCollapsed]="false" [sortable]="true" [groupable]="true" [editable]="true"></igx-column>
                 </igx-column-group>
             </igx-column-group>
@@ -45,7 +45,7 @@
     </div>
     <div class="list-sample">
         <igx-list>
-            <igx-list-item *ngIf="keyboardCollection.length > 0" isHeader=true>{{ headerList }}</igx-list-item>
+            <igx-list-item *ngIf="keyboardCollection.length > 0" [isHeader]="true">{{ headerList }}</igx-list-item>
             <igx-list-item @load *ngFor="let c of keyboardCollection; let idx=index" [ngClass]="{ 'active': c.active, 'disabled': !c.active}" [@toggle]="c.completed ? 'selected' : 'deselected'">
                 <h4 igxListLineTitle>{{ c.title }}</h4>
                 <p igxListLineSubTitle>{{ c.subTitle }}</p>

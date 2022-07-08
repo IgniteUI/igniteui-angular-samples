@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 igx-buttongroup {
     display: block;
@@ -7,7 +7,7 @@ igx-buttongroup {
 
 .layout-box {
     width: 100%;
-    background: igx-color($color: 'grays', $variant: 200);
+    background: color($color: 'grays', $variant: 200);
     padding: 8px;
     border-radius: 6px;
     margin-top: 24px;
@@ -17,6 +17,6 @@ igx-buttongroup {
     height: 48px;
     padding: 10px 20px;
     margin: 8px;
-    background: igx-color($color: 'secondary');
-    color: igx-color($color: 'surface');
+    background: color($color: 'secondary');
+    color: color($color: 'surface');
 }

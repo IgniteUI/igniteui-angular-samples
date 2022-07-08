@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 .sample-content{
     margin: 10% auto 0;
@@ -16,14 +16,14 @@
 }
 
 
-$custom-toast-theme: igx-toast-theme(
+$custom-toast-theme: toast-theme(
     $background: #dedede,
     $text-color: #151515,
     $border-radius: 12px
 );
 
 // :host {
-//     @include igx-css-vars($custom-toast-theme);
+//     @include css-vars($custom-toast-theme);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -32,6 +32,7 @@ $custom-toast-theme: igx-toast-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-toast($custom-toast-theme);
+    @include toast($custom-toast-theme);
 }
+@include css-vars($custom-toast-theme);
 

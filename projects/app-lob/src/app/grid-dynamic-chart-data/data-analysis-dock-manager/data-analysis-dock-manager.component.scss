@@ -1,25 +1,11 @@
+@use '../../../variables' as *;
 @import '~igniteui-dockmanager/dist/collection/styles/igc.themes.css';
-@import '../../../variables';
 
 :host {
   width: 100%;
   overflow-y: auto;
 }
 
-@mixin scrollbar($scrollbar-width, $scrollbar-height) {
-    $scrollbar-track: hexrgba(igx-color($color: 'grays', $variant: 200));
-    $scrollbar-thumb: hexrgba(igx-color($color: 'grays', $variant: 400));
-
-    ::-webkit-scrollbar {
-        width: $scrollbar-width;
-        height: $scrollbar-height;
-        background-color: $scrollbar-track;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: $scrollbar-thumb;
-    }
-}
 
 .grid-chart-contextmenu-wrapper {
     width: 100%;
@@ -42,7 +28,7 @@
 
 .selection-area {
 
-    @include scrollbar(6px, 6px);
+    @include scrollbar(scrollbar-theme($size: 6px));
     width: 100%;
     height: 90%;
     display: inline-flex;
@@ -57,7 +43,7 @@
 
 
 }
-$custom-badge-theme: igx-badge-theme(
+$custom-badge-theme: badge-theme(
     $border-color: white,
     $border-width: 2px,
     $icon-color: white,
@@ -69,7 +55,7 @@ $custom-badge-theme: igx-badge-theme(
     .selected {
         igx-badge{
             &{
-                @include igx-badge($custom-badge-theme);
+                @include badge($custom-badge-theme);
             }
 
             position: absolute;
@@ -100,12 +86,12 @@ $custom-badge-theme: igx-badge-theme(
     }
     .grid-chart-contextmenu-wrapper {
         igx-grid {
-            @include scrollbar(16px, 16px);
+            @include scrollbar(scrollbar-theme($size: 16px));
         }
     }
 
     .analytics-btn {
-        @include igx-button(igx-button-theme($palette: $fluent-excel-palette,
+        @include button(button-theme($palette: $fluent-excel-palette,
                 $foreground: #fff,
                 $background: #335e3b,
                 $hover-background: #459a55,
@@ -127,7 +113,7 @@ $custom-badge-theme: igx-badge-theme(
     }
 
     igx-tab-content {
-        @include scrollbar(10px, 10px);
+        @include scrollbar(scrollbar-theme($size: 10px));
     }
 
 }
@@ -148,7 +134,7 @@ $custom-badge-theme: igx-badge-theme(
 
 $font-family: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
 .tab-options-wrapper{
-    @include scrollbar(6px, 6px);
+    @include scrollbar(scrollbar-theme($size: 6px));
 
     display: flex;
     flex-flow: column;

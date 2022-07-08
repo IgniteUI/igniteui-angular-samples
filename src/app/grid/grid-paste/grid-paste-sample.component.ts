@@ -72,7 +72,7 @@ export class GridPasteSampleComponent {
             return;
         }
         const rowIndex = cell.row.index;
-        // const rowPkValue = cell.row.rowData[pk];
+        // const rowPkValue = cell.row.key;
         const cellIndex = cell.column.visibleIndex;
         const columns = this.grid1.visibleColumns;
         let index = 0;

@@ -1,13 +1,13 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
-@include igx-dialog(
-    igx-dialog-theme(
+@include dialog(
+    dialog-theme(
         $palette: $palette,
         $schema: $schema
     )
 );
 
-@include igx-dialog-typography($material-type-scale);
+@include dialog-typography($material-type-scale);
 
 :host {
     display: block;

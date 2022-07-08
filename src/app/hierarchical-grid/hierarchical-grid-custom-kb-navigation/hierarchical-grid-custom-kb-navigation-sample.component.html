@@ -13,7 +13,7 @@
            <igx-column field="GrammyNominations" header="Grammy Nominations" editable="true" dataType="number" width="20%"></igx-column>
            <igx-column field="GrammyAwards" header="Grammy Awards" editable="true" dataType="number" width="20%"></igx-column>
 
-           <igx-row-island [key]="'Albums'" [autoGenerate]="false" (gridCreated)="childGridCreated($event)">
+           <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false" (gridCreated)="childGridCreated($event)">
         <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
             <igx-grid-toolbar-title>Employees</igx-grid-toolbar-title>
         </igx-grid-toolbar>
