@@ -22,7 +22,7 @@
             </igx-column-group>
         </igx-column-group>
 
-        <igx-row-island [key]="'Orders'" [autoGenerate]="false" columnSelection="multi">
+        <igx-row-island [height]="null" [key]="'Orders'" [autoGenerate]="false" columnSelection="multi">
             <igx-column-group header="Order Information">
                 <igx-column-group header="Order Details">
                     <igx-column field="OrderID"></igx-column>
@@ -43,7 +43,7 @@
                     <igx-column field="ShipCountry"></igx-column>
                 </igx-column-group>
             </igx-column-group>
-            <igx-row-island [key]="'OrderDetails'" [autoGenerate]="false" columnSelection="single">
+            <igx-row-island [height]="null" [key]="'OrderDetails'" [autoGenerate]="false" columnSelection="single">
                     <igx-column field="ProductID" ></igx-column>
                     <igx-column field="UnitPrice"></igx-column>
                     <igx-column field="Quantity" [selectable]="false"></igx-column>

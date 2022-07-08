@@ -25,7 +25,7 @@
 
 
 
-        <igx-row-island key="Albums" [autoGenerate]="false">
+        <igx-row-island [height]="null" key="Albums" [autoGenerate]="false">
             <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
                 <igx-grid-toolbar-title>Albums</igx-grid-toolbar-title>
                 <button igxButton="flat" igxRipple igxRippleCentered="true" (click)="childGrid.clearSort()">
@@ -41,7 +41,7 @@
             <igx-column field="LaunchDate" header="Launch Date" dataType="date" [sortable]="true"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review" [sortable]="true"></igx-column>
             <igx-column field="USBillboard200" header="US Billboard 200" [sortable]="true"></igx-column>
-            <igx-row-island [key]="'Songs'" [autoGenerate]="false">
+            <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false">
                 <igx-column field="Number" header="No."></igx-column>
                 <igx-column field="Title"></igx-column>
                 <igx-column field="Released" dataType="date"></igx-column>
@@ -50,7 +50,7 @@
 
     </igx-row-island>
 
-    <igx-row-island key="Tours" [autoGenerate]="false">
+    <igx-row-island [height]="null" key="Tours" [autoGenerate]="false">
         <igx-column field="Tour"></igx-column>
         <igx-column field="StartedOn" header="Started on"></igx-column>
         <igx-column field="Location"></igx-column>

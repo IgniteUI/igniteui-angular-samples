@@ -1,8 +1,8 @@
 @use '../../../variables' as *;
 
-$default-arrow-color: igx-color($color: 'grays', $variant: 400);
-$default-arrow-hover-color: igx-color($color: 'grays', $variant: 800);
-$default-arrow-all-color: igx-color($color: 'secondary', $variant: 100);
+$default-arrow-color: color($color: 'grays', $variant: 400);
+$default-arrow-hover-color: color($color: 'grays', $variant: 800);
+$default-arrow-all-color: color($color: 'secondary', $variant: 100);
 
 @mixin selector($justify, $align) {
     display: flex;

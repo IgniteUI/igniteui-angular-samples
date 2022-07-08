@@ -5,7 +5,7 @@ igx-month-picker {
     margin: 20px;
 }
 
-$my-calendar-theme: igx-calendar-theme(
+$my-calendar-theme: calendar-theme(
   $border-radius: 15px,
   $content-background: #011627,
   $picker-background-color: #011627,
@@ -20,7 +20,7 @@ $my-calendar-theme: igx-calendar-theme(
 );
 
 // :host {
-//     @include igx-css-vars($my-calendar-theme);
+//     @include css-vars($my-calendar-theme);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -29,6 +29,6 @@ $my-calendar-theme: igx-calendar-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-calendar($my-calendar-theme);
+    @include calendar($my-calendar-theme);
 }
 

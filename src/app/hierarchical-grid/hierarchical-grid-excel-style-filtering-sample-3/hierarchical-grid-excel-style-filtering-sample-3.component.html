@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter"
+    <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [moving]="true" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter"
     height="650px" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>
@@ -28,7 +28,7 @@
             </igx-excel-style-filter-operations>
         </igx-grid-excel-style-filtering>
 
-        <igx-column field="Artist" [filterable]='true' [sortable]="true" [movable]="true"></igx-column>
+        <igx-column field="Artist" [filterable]='true' [sortable]="true"></igx-column>
         <igx-column field="Photo" [filterable]='false'>
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner_2">
@@ -37,10 +37,10 @@
             </ng-template>
         </igx-column>
         <igx-column field="Debut" [filterable]='true' [disablePinning]="true" [disableHiding]="true" dataType="number" [formatter]="formatter"></igx-column>
-        <igx-column field="GrammyNominations" header="Grammy Nominations" [filterable]='true' dataType="number" [sortable]="false" [movable]="false"></igx-column>
+        <igx-column field="GrammyNominations" header="Grammy Nominations" [filterable]='true' dataType="number" [sortable]="false"></igx-column>
         <igx-column field="GrammyAwards" header="Grammy Awards" [filterable]='true' dataType="number"></igx-column>
 
-        <igx-row-island [key]="'Albums'" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter">
+        <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter">
 
             <igx-grid-excel-style-filtering [minHeight]="'380px'" [maxHeight]="'500px'">
                 <igx-excel-style-column-operations>
@@ -62,7 +62,7 @@
             <igx-column field="LaunchDate" header="Launch Date" [filterable]='true' [dataType]="'date'"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review" [filterable]='true' dataType="number"></igx-column>
             <igx-column field="USBillboard200" header="US Billboard 200" [filterable]='true' dataType="number"></igx-column>
-        <igx-row-island [key]="'Songs'" [autoGenerate]="false" >
+        <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false" >
                 <igx-column field="Number" header="No."></igx-column>
                 <igx-column field="Title"></igx-column>
                 <igx-column field="Released" dataType="date"></igx-column>
@@ -70,7 +70,7 @@
         </igx-row-island>
         </igx-row-island>
 
-        <igx-row-island [key]="'Tours'" [autoGenerate]="false">
+        <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false">
             <igx-column field="Tour"></igx-column>
             <igx-column field="StartedOn" header="Started on"></igx-column>
             <igx-column field="Location"></igx-column>

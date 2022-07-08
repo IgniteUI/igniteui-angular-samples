@@ -4,20 +4,6 @@
 //   width: 100%;
 // }
 
-@mixin scrollbar($scrollbar-width, $scrollbar-height) {
-    $scrollbar-track: hexrgba(igx-color($color: 'grays', $variant: 200));
-    $scrollbar-thumb: hexrgba(igx-color($color: 'grays', $variant: 400));
-
-    ::-webkit-scrollbar {
-        width: $scrollbar-width;
-        height: $scrollbar-height;
-        background-color: $scrollbar-track;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: $scrollbar-thumb;
-    }
-}
 
 .grid-chart-contextmenu-wrapper {
     width: 90%;
@@ -28,7 +14,7 @@
 :host ::ng-deep {
     .grid-chart-contextmenu-wrapper {
         igx-grid {
-            @include scrollbar(16px, 16px);
+            @include scrollbar(scrollbar-theme($size: 16px));
         }
     }
 
@@ -56,7 +42,7 @@
     }
 
     .analytics-btn {
-        @include igx-button(igx-button-theme($palette: $fluent-excel-palette,
+        @include button(button-theme($palette: $fluent-excel-palette,
                 $foreground: #fff,
                 $background: #335e3b,
                 $hover-background: #459a55,
@@ -74,7 +60,7 @@
 
     .selection-area {
 
-        @include scrollbar(6px, 6px);
+        @include scrollbar(scrollbar-theme($size: 6px));
         width: 100%;
         height: 95%;
         position: absolute;
@@ -129,7 +115,7 @@
     }
 
     igx-tab-content {
-        @include scrollbar(10px, 10px);
+        @include scrollbar(scrollbar-theme($size: 10px));
     }
 
 }
@@ -203,6 +189,14 @@
 
     .igx-toggle{
         margin-top: -0.8rem;
+    }
+}
+
+::ng-deep {
+    .preview-wrapper {
+        .igx-data-chart {
+            height: 200px !important;
+        }
     }
 }
 

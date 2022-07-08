@@ -5,12 +5,12 @@ $bg: #292826;
 $gray: #404040;
 $light-gray: rgba(255, 255, 255, .54);
 
-$dark-column-actions-theme: igx-column-actions-theme(
+$dark-column-actions-theme: column-actions-theme(
     $background-color: $bg,
     $title-color: $yellow
 );
 
-$dark-button-theme: igx-button-theme(
+$dark-button-theme: button-theme(
     $background: $yellow,
     $foreground: $bg,
     $hover-background: $gray,
@@ -19,7 +19,7 @@ $dark-button-theme: igx-button-theme(
     $disabled-foreground: $light-gray
 );
 
-$dark-input-group: igx-input-group-theme(
+$dark-input-group: input-group-theme(
     $filled-text-color: $yellow,
     $focused-text-color: $yellow,
     $idle-text-color: $yellow,
@@ -30,26 +30,26 @@ $dark-input-group: igx-input-group-theme(
     $box-background: $bg
 );
 
-$dark-checkbox-theme: igx-checkbox-theme(
+$dark-checkbox-theme: checkbox-theme(
     $label-color: $yellow,
     $empty-color: $yellow,
     $fill-color: $yellow,
     $tick-color: $bg
 );
 
-$dark-ripple-theme: igx-ripple-theme(
+$dark-ripple-theme: ripple-theme(
     $color: $gray
 );
 
 :host {
     ::ng-deep {
-        @include igx-column-actions($dark-column-actions-theme);
+        @include column-actions($dark-column-actions-theme);
 
         igx-column-actions, igx-grid-toolbar {
-            @include igx-checkbox($dark-checkbox-theme);
-            @include igx-input-group($dark-input-group);
-            // @include igx-button($dark-button-theme);
-            @include igx-ripple($dark-ripple-theme);
+            @include checkbox($dark-checkbox-theme);
+            @include input-group($dark-input-group);
+            // @include button($dark-button-theme);
+            @include ripple($dark-ripple-theme);
         }
     }
 }

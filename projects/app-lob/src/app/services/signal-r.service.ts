@@ -23,7 +23,7 @@ export class SignalRService implements OnDestroy {
     public startConnection = (interval = 500, volume = 1000, live = false, updateAll = true): void => {
         this.hubConnection = new signalR.HubConnectionBuilder()
             .configureLogging(signalR.LogLevel.Trace)
-            .withUrl('https://staging.infragistics.com/angular-apis/webapi/streamHub')
+            .withUrl('https://www.infragistics.com/angular-apis/webapi/streamHub')
             .build();
         this.hubConnection
             .start()
@@ -83,6 +83,7 @@ export class SignalRService implements OnDestroy {
         }
     }
 
+    // Register signalR events
     private registerSignalEvents(): void {
         this.hubConnection.onclose(() => {
             this.hasRemoteConnection = false;

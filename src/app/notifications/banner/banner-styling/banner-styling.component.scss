@@ -1,13 +1,13 @@
 @use '../../../../variables' as *;
 
-$custom-banner-theme: igx-banner-theme(
+$custom-banner-theme: banner-theme(
     $banner-message-color: #151515,
     $banner-background: #dedede,
     $banner-illustration-color: #666666
 );
 
 // :host {
-//     @include igx-css-vars($custom-banner-theme);
+//     @include css-vars($custom-banner-theme);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -16,5 +16,5 @@ $custom-banner-theme: igx-banner-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-banner($custom-banner-theme);
+    @include banner($custom-banner-theme);
 }

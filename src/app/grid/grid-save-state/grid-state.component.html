@@ -48,7 +48,7 @@
     </div>
 
     <igx-grid igxPreventDocumentScroll [id]="gridId" #grid1 [igxGridState]="options"
-        width="98%" height="530px" [autoGenerate]="false"
+        width="98%" height="530px" [autoGenerate]="false" [moving]="true"
         [data]="localData"
         [primaryKey]="'EmployeeID'"
         [rowEditable]="false"
@@ -67,7 +67,6 @@
 
         <igx-column *ngFor="let c of columns"
             [sortable]="c.sortable"
-            [movable]="c.movable"
             [editable]="true"
             [hasSummary]="c.hasSummary"
             [filterable]="c.filterable"

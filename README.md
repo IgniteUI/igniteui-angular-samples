@@ -1,5 +1,5 @@
-[![Build Status](https://dev.azure.com/IgniteUI/igniteui-angular/_apis/build/status/IgniteUI.igniteui-angular-samples?branchName=master)](https://dev.azure.com/IgniteUI/igniteui-angular/_build/latest?definitionId=4&branchName=master)
-[![Build Status](https://travis-ci.org/IgniteUI/igniteui-angular-samples.svg?branch=master)](https://travis-ci.org/IgniteUI/igniteui-angular-samples)
+[![CI](https://github.com/IgniteUI/igniteui-angular-samples/actions/workflows/build-app-lob.yml/badge.svg)](https://github.com/IgniteUI/igniteui-angular-samples/actions/workflows/build-app-lob.yml)
+[![Build Status](https://dev.azure.com/IgniteUI/igniteui-angular/_apis/build/status/IgniteUI.igniteui-angular-samples?branchName=refs%2Fpull%2F2995%2Fmerge)](https://dev.azure.com/IgniteUI/igniteui-angular/_build/latest?definitionId=4&branchName=refs%2Fpull%2F2995%2Fmerge)
 
 # Ignite UI for Angular - Samples
 
@@ -8,7 +8,7 @@ This project is using Ignite UI for Angular components to demonstrate different 
 The project is divided into two separate applications:
 
 
-- A `default application`, which uses all the [igniteui-angular](https://travis-ci.org/IgniteUI/igniteui-angular) components to demonstrate sample applications
+- A `default application`, which uses all the [igniteui-angular](https://www.infragistics.com/products/ignite-ui-angular) components to demonstrate sample applications
 
 - A `Line of Business` application, complemented with UI and functionality from the **Ignite UI for Angular Charts** and **Ignite UI for Angular Excel library**.
 
@@ -34,7 +34,7 @@ To build the application project run:
 npm run build:app-lob
 ```
 
-### These commands will produce an AOT build and [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) samples supporting both Sass and CSS.
+### These commands will produce an AOT build and [live editing](https://github.com/IgniteUI/igniteui-live-editing/blob/master/README.md) samples supporting both Sass and CSS.
 
 ## Dev Server
 
@@ -113,7 +113,7 @@ npm run start:watch-live-editing:es6
 ```
 
 ### Generate Live-Editing JSON files
-To generate only the [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) samples files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) run:
+To generate only the [live editing](https://github.com/IgniteUI/igniteui-live-editing/blob/master/README.md) samples files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) run:
 
 #### Default App
 With **CSS** styling generation

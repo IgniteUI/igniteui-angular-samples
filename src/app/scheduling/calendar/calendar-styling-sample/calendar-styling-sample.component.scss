@@ -7,10 +7,10 @@
 }
 
 .igx-calendar {
-    box-shadow: igx-elevation($elevation: 4);
+    box-shadow: elevation($elevation: 4);
 }
 
-$custom-calendar-theme: igx-calendar-theme(
+$custom-calendar-theme: calendar-theme(
     $header-background: #345779,
     $content-background: #fdfdfd,
     $header-text-color: #ffffff,
@@ -28,7 +28,7 @@ $custom-calendar-theme: igx-calendar-theme(
 );
 
 // :host {
-//     @include igx-css-vars($custom-calendar-theme);
+//     @include css-vars($custom-calendar-theme);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -37,6 +37,6 @@ $custom-calendar-theme: igx-calendar-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-calendar($custom-calendar-theme);
+    @include calendar($custom-calendar-theme);
 }
 

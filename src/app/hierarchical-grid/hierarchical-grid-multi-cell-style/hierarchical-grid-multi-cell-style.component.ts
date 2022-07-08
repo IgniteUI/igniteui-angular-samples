@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DATA } from '../../data/customers';
+import { CUSTOMERS } from '../../data/hierarchical-data';
 
 @Component({
     selector: 'app-hierarchical-grid-multi-cell-style',
@@ -10,6 +10,6 @@ import { DATA } from '../../data/customers';
 export class HGridMultiCellStyleComponent implements OnInit {
     public localdata;
     public ngOnInit(): void {
-        this.localdata = DATA;
+        this.localdata = CUSTOMERS;
     }
 }

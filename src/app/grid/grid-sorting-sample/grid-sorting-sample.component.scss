@@ -2,3 +2,11 @@
     margin: 0 auto;
     padding: 16px;
 }
+
+.igx-grid-toolbar ::ng-deep {
+    .igx-grid-toolbar__custom-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+}

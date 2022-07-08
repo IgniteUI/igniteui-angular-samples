@@ -19,7 +19,7 @@
   left: 40px;
 }
 
-$custom-badge-theme: igx-badge-theme(
+$custom-badge-theme: badge-theme(
     $border-color: white,
     $border-width: 1px,
     $icon-color: white,
@@ -27,5 +27,5 @@ $custom-badge-theme: igx-badge-theme(
 );
 
 :host {
-    @include igx-css-vars($custom-badge-theme);
+    @include css-vars($custom-badge-theme);
 }
