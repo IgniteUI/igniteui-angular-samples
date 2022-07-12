@@ -17,7 +17,6 @@ export class GridSelectionSampleComponent implements OnInit {
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     @ViewChild('snackbarRowCount', { static: true }) public snackbarRowCount: IgxSnackbarComponent;
     @ViewChild('snackbar', { static: true }) public snackbar: IgxSnackbarComponent;
-    //@ViewChild(IgxSnackbarComponent, { static: true }) public snackbar: IgxSnackbarComponent;
     public data: Observable<any[]>;
     public selectionMode = 'multiple';
     public selectionModes = [];
