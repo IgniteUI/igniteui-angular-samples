@@ -23,6 +23,7 @@ export class GridSelectionSampleComponent implements OnInit {
     public hideRowSelectors = false;
     public selectedRows = [1, 2, 3];
     public selectedRowsCount;
+    public selectedRowIndex;
 
     constructor(private localService: FinancialDataService) {
         this.localService.getData(100000);
@@ -48,6 +49,7 @@ export class GridSelectionSampleComponent implements OnInit {
     }
     public handleRowSelection(event:IRowSelectionEventArgs) {
         this.selectedRowsCount = event.newSelection.length;
+        this.selectedRowIndex = event.newSelection[0];
         this.snackbarRowCount.open();
         this.snackbar.close();
     }
@@ -57,5 +59,6 @@ export class GridSelectionSampleComponent implements OnInit {
         this.snackbar.open();
         this.snackbarRowCount.close();
         this.selectedRowsCount = undefined;
+        this.selectedRowIndex = undefined;
     }
 }
