@@ -15,12 +15,15 @@ import { FinancialDataService } from '../../services/financial.service';
 
 export class GridSelectionSampleComponent implements OnInit {
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
-    @ViewChild(IgxSnackbarComponent, { static: true }) public snackbar: IgxSnackbarComponent;
+    @ViewChild('snackbarRowCount', { static: true }) public snackbarRowCount: IgxSnackbarComponent;
+    @ViewChild('snackbar', { static: true }) public snackbar: IgxSnackbarComponent;
     public data: Observable<any[]>;
     public selectionMode = 'multiple';
     public selectionModes = [];
     public hideRowSelectors = false;
     public selectedRows = [1, 2, 3];
+    public selectedRowsCount;
+    public selectedRowIndex;
 
     constructor(private localService: FinancialDataService) {
         this.localService.getData(100000);
@@ -44,11 +47,17 @@ export class GridSelectionSampleComponent implements OnInit {
         return '$' + value.toFixed(2);
     }
     public handleRowSelection(event) {
-        const targetCell = event.cell;
+        this.selectedRowsCount = event.newSelection.length;
+        this.selectedRowIndex = event.newSelection[0];
+        this.snackbarRowCount.open();
+        this.snackbar.close();
     }
 
     public selectCellSelectionMode(args) {
         this.selectionMode = this.selectionModes[args.index].label;
         this.snackbar.open();
+        this.snackbarRowCount.close();
+        this.selectedRowsCount = undefined;
+        this.selectedRowIndex = undefined;
     }
 }
