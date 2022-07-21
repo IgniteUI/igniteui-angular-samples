@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IgxSnackbarComponent } from 'igniteui-angular';
+import { IgxSnackbarComponent, IRowSelectionEventArgs } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({
@@ -43,7 +43,7 @@ export class HGridSelectionSampleComponent implements OnInit, OnDestroy {
         this.selectedRowIndex = undefined;
     }
 
-    public handleRowSelection(event) {
+    public handleRowSelection(event:IRowSelectionEventArgs) {
         this.selectedRowsCount = event.newSelection.length;
         if(event.newSelection.length > 0){
             this.selectedRowIndex = event.newSelection[0].ID;

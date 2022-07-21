@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { IgxGridComponent, IgxSnackbarComponent } from 'igniteui-angular';
+import { IgxGridComponent, IgxSnackbarComponent, IRowSelectionEventArgs } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
 
@@ -46,7 +46,7 @@ export class GridSelectionSampleComponent implements OnInit {
     public formatCurrency(value: number) {
         return '$' + value.toFixed(2);
     }
-    public handleRowSelection(event) {
+    public handleRowSelection(event:IRowSelectionEventArgs) {
         this.selectedRowsCount = event.newSelection.length;
         this.selectedRowIndex = event.newSelection[0];
         this.snackbarRowCount.open();
