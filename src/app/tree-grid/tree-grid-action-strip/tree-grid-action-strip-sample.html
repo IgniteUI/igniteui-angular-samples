@@ -1,40 +1,42 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll [batchEditing]="true" [data]="data" primaryKey="ID" foreignKey="ParentID"  width="100%"
-        height="500px" [rowEditable]="true" [allowFiltering]="true" >
+    <igx-tree-grid igxPreventDocumentScroll #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" width="100%"
+        height="500px" [rowEditable]="true" [batchEditing]="true" [allowFiltering]="true">
         <igx-column [field]="'Name'" dataType="string" [sortable]="true" [disableHiding]="true"></igx-column>
-            <igx-column [field]="'ID'" dataType="number" [sortable]="true"></igx-column>
-            <igx-column [field]="'Title'" dataType="string" [sortable]="true" [disableHiding]="true"></igx-column>
-            <igx-column [field]="'HireDate'" dataType="date" [sortable]="true" [hidden]="true"></igx-column>
-            <igx-column [field]="'Age'" dataType="number" [sortable]="true" [hidden]="true"></igx-column>
-            <igx-column [field]="'Address'" dataType="string" [sortable]="true"></igx-column>
-            <igx-column [field]="'City'" dataType="string" [sortable]="true"></igx-column>
-            <igx-column [field]="'Country'" dataType="string" [sortable]="true"></igx-column>
-            <igx-column [field]="'Fax'" dataType="string" [sortable]="true"></igx-column>
-            <igx-column [field]="'PostalCode'" dataType="string" [sortable]="true"></igx-column>
-            <igx-column [field]="'Phone'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'ID'" dataType="number" [sortable]="true"></igx-column>
+        <igx-column [field]="'Title'" dataType="string" [sortable]="true" [disableHiding]="true"></igx-column>
+        <igx-column [field]="'HireDate'" dataType="date" [sortable]="true" [hidden]="true"></igx-column>
+        <igx-column [field]="'Age'" dataType="number" [sortable]="true" [hidden]="true"></igx-column>
+        <igx-column [field]="'Address'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'City'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'Country'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'Fax'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'PostalCode'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'Phone'" dataType="string" [sortable]="true"></igx-column>
         <igx-action-strip #actionstrip>
             <igx-grid-pinning-actions></igx-grid-pinning-actions>
-            <button title="Edit" igxButton="icon" igxRipple 
-                (click)='startEdit(actionstrip.context)'>
-                <igx-icon>edit</igx-icon>
-            </button>
-            <button title="Undo All" igxButton="icon" igxRipple *ngIf='isDirty(actionstrip.context)'
-                (click)='undo(actionstrip.context)'>
-                <igx-icon>undo</igx-icon>
-            </button>
-            <button title="Redo All" igxButton="icon" igxRipple
-                *ngIf='!isDirty(actionstrip.context) && hasDiscardedTransactions(actionstrip.context)'
-                (click)='redo(actionstrip.context)'>
-                <igx-icon>redo</igx-icon>
-            </button>
-            <button title='Save' igxButton="icon" igxRipple *ngIf='isDirty(actionstrip.context)'
-                (click)='commit(actionstrip.context)'>
-                <igx-icon>save</igx-icon>
-            </button>
-            <button title="Delete" igxButton="icon" igxRipple *ngIf='!isDeleted(actionstrip.context)'
-                (click)='actionstrip.context.delete()'>
-                <igx-icon>delete</igx-icon>
-            </button>
+            <ng-container *ngIf="!inEditMode(actionstrip.context)">
+                <button title="Edit" igxButton="icon" igxRipple
+                    (click)='startEdit(actionstrip.context)'>
+                    <igx-icon>edit</igx-icon>
+                </button>
+                <button title="Undo All" igxButton="icon" igxRipple *ngIf='isDirty(actionstrip.context)'
+                    (click)='undo(actionstrip.context)'>
+                    <igx-icon>undo</igx-icon>
+                </button>
+                <button title="Redo All" igxButton="icon" igxRipple
+                    *ngIf='!isDirty(actionstrip.context) && hasDiscardedTransactions(actionstrip.context)'
+                    (click)='redo(actionstrip.context)'>
+                    <igx-icon>redo</igx-icon>
+                </button>
+                <button title='Saveeeeeeee' igxButton="icon" igxRipple *ngIf='isDirty(actionstrip.context)'
+                    (click)='commit(actionstrip.context)'>
+                    <igx-icon>save</igx-icon>
+                </button>
+                <button title="Delete" igxButton="icon" igxRipple *ngIf='!isDeleted(actionstrip.context)'
+                    (click)='actionstrip.context.delete()'>
+                    <igx-icon>delete</igx-icon>
+                </button>
+            </ng-container>
         </igx-action-strip>
     </igx-tree-grid>
 </div>
