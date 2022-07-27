@@ -18,7 +18,7 @@ export class GridActionStripSampleComponent {
     }
 
     public isDirty(rowContext: RowType) {
-        const isRowEdited = this.grid.transactions.getAggregatedChanges(true).find(x => x.id === rowContext.key);
+        const isRowEdited = this.grid.transactions.getAggregatedChanges(true).find(x => x.id === rowContext?.key);
         return rowContext && (rowContext.deleted || isRowEdited);
     }
 

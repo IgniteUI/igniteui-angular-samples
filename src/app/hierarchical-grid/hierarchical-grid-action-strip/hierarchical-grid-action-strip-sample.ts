@@ -29,7 +29,7 @@ export class HGridActionStripSampleComponent implements AfterViewInit{
     public formatter = (a) => a;
 
     public isDirty(rowContext: RowType) {
-        const isRowEdited = this.grid.transactions.getAggregatedChanges(true).find(x => x.id === rowContext.key);
+        const isRowEdited = this.grid.transactions.getAggregatedChanges(true).find(x => x.id === rowContext?.key);
         return rowContext && (rowContext.deleted || isRowEdited);
     }
 

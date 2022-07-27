@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent, RowType, Transaction } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
@@ -18,7 +18,7 @@ export class TreeGridActionStripSampleComponent {
     }
 
     public isDirty(rowContext: RowType) {
-        const isRowEdited = this.grid.transactions.getAggregatedChanges(true).find(x => x.id === rowContext.key);
+        const isRowEdited = this.grid.transactions.getAggregatedChanges(true).find(x => x.id === rowContext?.key);
         return rowContext && (rowContext.deleted || isRowEdited);
     }
 
