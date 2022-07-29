@@ -8,9 +8,7 @@ import { DATA } from '../../data/nwindData';
     templateUrl: 'grid-action-strip-sample.html'
 })
 export class GridActionStripSampleComponent {
-    @ViewChild('gridRowEditTransaction', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
-
-    public currentActiveGrid: { id: string; transactions: any[] } = { id: '', transactions: [] };
+    @ViewChild('grid', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
 
     public data: any[];
     public discardedTransactionsPerRecord: Map<number, Transaction[]> = new Map<number, Transaction[]>();
@@ -19,31 +17,27 @@ export class GridActionStripSampleComponent {
         this.data = DATA;
     }
 
-    public stateFormatter(value: string) {
-        return JSON.stringify(value);
-    }
-
-    public typeFormatter(value: string) {
-        return value.toUpperCase();
-    }
-
     public isDirty(rowContext: RowType) {
-        return rowContext && rowContext.deleted;
+        const isRowEdited = this.grid.transactions.getAggregatedChanges(true).find(x => x.id === rowContext?.key);
+        return rowContext && (rowContext.deleted || isRowEdited);
     }
 
     public isDeleted(rowContext: RowType) {
         return rowContext && rowContext.deleted;
     }
 
-    public startEdit(row?): void {
-        const firstEditable = row.cells.filter(cell => cell.editable)[0];
-        const grid = row.grid;
+    public inEditMode(rowContext: RowType) {
+        return rowContext && rowContext.inEditMode;
+    }
 
-        if (grid.rowList.filter(r => r === row).length !== 0) {
-            grid.gridAPI.crudService.enterEditMode(firstEditable, event);
-            firstEditable.activate();
+    public startEdit(rowContext: RowType): void {
+        const firstEditable = rowContext.cells.filter(cell => cell.editable)[0];
+        const grid = rowContext.grid;
+
+        if (grid.rowList.filter(r => r === rowContext).length !== 0) {
+            grid.gridAPI.crudService.enterEditMode(firstEditable);
+            firstEditable.activate(null);
         }
-        row.hide();
     }
 
     public commit(rowContext: RowType) {
