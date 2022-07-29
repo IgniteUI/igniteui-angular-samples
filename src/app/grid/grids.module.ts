@@ -130,6 +130,7 @@ import { CRUDSampleComponent } from './grid-crud-sample/crud-sample.component';
 import { GridRowClassesComponent } from './grid-rowClasses-sample/grid-rowClasses.component';
 import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.component';
 import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summary-template.component';
+import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-editing-excel-style.component';
 
 @NgModule({
     declarations: [
@@ -167,6 +168,7 @@ import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summa
         GridAddRowSampleComponent,
         GridEditingStyleSampleComponent,
         GridEditingEventsComponent,
+        GridExcelStyleEditingComponent,
         FinancialSampleComponent,
         GridSample3Component,
         GridRemoteVirtualizationSampleComponent,
