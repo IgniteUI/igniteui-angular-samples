@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import {IgxIconModule,
 IgxInputGroupModule,
 IgxButtonModule,
@@ -26,9 +27,9 @@ export class IconConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SvgIconSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxIconModule', 'SvgIconSampleComponent'],
+                imports: ['IgxIconModule', 'SvgIconSampleComponent', 'HttpClientModule'],
                 ngDeclarations: ['SvgIconSampleComponent'],
-                ngImports: ['IgxIconModule']
+                ngImports: ['IgxIconModule', 'HttpClientModule']
             }),
             shortenComponentPathBy: "/data-display/icon/"
         }));
