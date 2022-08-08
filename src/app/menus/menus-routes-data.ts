@@ -6,5 +6,10 @@ export const menusRoutesData = {
     'navbar-custom-title': {displayName: 'Navbar Custom Title', parentName: 'Navbar'},
     'action-strip-paragraph': { displayName: 'Action Strip Paragraph', parentName: 'Action Strip' },
     'action-strip-paragraph-menu': { displayName: 'Action Strip Paragraph Menu', parentName: 'Action Strip' },
-    'action-strip-styling': { displayName: 'Action Strip Styling', parentName: 'Action Strip' }
+    'action-strip-styling': { displayName: 'Action Strip Styling', parentName: 'Action Strip' },
+    'navigation-drawer-simple': { displayName: 'Drawer 1', parentName: 'NavDrawer' },
+    'navigation-drawer-routing': { displayName: 'Drawer 2', parentName: 'NavDrawer' },
+    'navigation-drawer-pin': { displayName: 'Drawer 3', parentName: 'NavDrawer' },
+    'navigation-drawer-styling': { displayName: 'Drawer 4', parentName: 'NavDrawer' },
+    'navigation-drawer-mini': { displayName: 'Drawer 5', parentName: 'NavDrawer' }
 };

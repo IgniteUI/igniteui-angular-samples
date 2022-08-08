@@ -25,32 +25,34 @@ import { NavbarCustomTitleComponent } from './navbar/navbar-custom-title/navbar-
 export const menusRoutes: Routes = [
     {
         component: NavDrawerSimpleComponent,
+        data: menusRoutesData['navigation-drawer-simple'],
         path: 'navigation-drawer-simple'
     },
-    {
-        component: NavDrawerRoutingComponent,
-        path: 'navigation-drawer-routing',
-        children: [
-            { path: '', redirectTo: 'avatar' },
-            { path: 'avatar', component: null},
-            { path: 'badge', component:  null},
-            { path: 'button-group', component:  null}
-        ]
-    },
+    // {
+    //     component: NavDrawerRoutingComponent,
+    //     data: menusRoutesData['navigation-drawer-routing'],
+    //     path: 'navigation-drawer-routing',
+    //     children: [
+    //         { path: '', redirectTo: 'avatar' },
+    //         { path: 'avatar', component: null},
+    //         { path: 'badge', component:  null},
+    //         { path: 'button-group', component:  null}
+    //     ]
+    // },
     {
         component: NavDrawerPinComponent,
         path: 'navigation-drawer-pin'
     },
-    {
-        component: NavDrawerStylingComponent,
-        path: 'navigation-drawer-styling',
-        children: [
-            { path: '', redirectTo: 'avatar' },
-            { path: 'avatar', component: null },
-            { path: 'badge', component: null },
-            { path: 'button-group', component: null }
-        ]
-    },
+    // {
+    //     component: NavDrawerStylingComponent,
+    //     path: 'navigation-drawer-styling',
+    //     children: [
+    //         { path: '', redirectTo: 'avatar' },
+    //         { path: 'avatar', component: null },
+    //         { path: 'badge', component: null },
+    //         { path: 'button-group', component: null }
+    //     ]
+    // },
     {
         component: NavDrawerMiniComponent,
         path: 'navigation-drawer-mini'
