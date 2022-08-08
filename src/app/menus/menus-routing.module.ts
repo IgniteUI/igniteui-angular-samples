@@ -21,43 +21,53 @@ import { NavDrawerRoutingComponent } from './navdrawer/nav-drawer-routing/nav-dr
 import { NavDrawerSimpleComponent } from './navdrawer/nav-drawer-simple/nav-drawer-simple.component';
 import { NavDrawerStylingComponent } from './navdrawer/nav-drawer-styling/nav-drawer-styling.component';
 import { NavbarCustomTitleComponent } from './navbar/navbar-custom-title/navbar-custom-title.component';
+import { NavDrawerHierarchicalComponent } from './navdrawer/nav-drawer-hierarchical/nav-drawer-hierarchical.component';
 
 export const menusRoutes: Routes = [
     {
+        component: NavDrawerHierarchicalComponent,
+        path: 'navigation-drawer-hierarchical',
+        data: { displayName: 'Hierachical Drawer Menu' }
+    },
+    {
         component: NavDrawerSimpleComponent,
-        path: 'navigation-drawer-simple'
+        path: 'navigation-drawer-simple',
+        data: { displayName: 'Simple Nav Drawer' }
     },
     {
         component: NavDrawerRoutingComponent,
         path: 'navigation-drawer-routing',
+        data: { displayName: 'Nav Drawer Routing' },
         children: [
-            { path: '', redirectTo: 'avatar' },
-            { path: 'avatar', component: null},
-            { path: 'badge', component:  null},
-            { path: 'button-group', component:  null}
+            { path: '', redirectTo: 'avatar', pathMatch: 'full', data: { displayName: 'Redirect to Avatar' } },
+            { path: 'avatar', component: NavDrawerRoutingComponent, data: { displayName: 'Avatar' } },
+            { path: 'badge', component:  NavDrawerRoutingComponent, data: { displayName: 'Badge' } },
+            { path: 'button-group', component:  NavDrawerRoutingComponent, data: { displayName: 'Button Group' } }
         ]
     },
     {
         component: NavDrawerPinComponent,
-        path: 'navigation-drawer-pin'
+        path: 'navigation-drawer-pin',
+        data: { displayName: 'Pinned Nav Drawer' }
     },
     {
         component: NavDrawerStylingComponent,
         path: 'navigation-drawer-styling',
+        data: { displayName: 'Nav Drawer Styling' },
         children: [
-            { path: '', redirectTo: 'avatar' },
-            { path: 'avatar', component: null },
-            { path: 'badge', component: null },
-            { path: 'button-group', component: null }
+            { path: '', redirectTo: 'avatar', pathMatch: 'full', data: { displayName: 'Redirect to Avatar' } },
+            { path: 'avatar', component: NavDrawerStylingComponent, data: { displayName: 'Avatar' } },
+            { path: 'badge', component: NavDrawerStylingComponent, data: { displayName: 'Badge' } },
+            { path: 'button-group', component: NavDrawerStylingComponent, data: { displayName: 'Button Group' } }
         ]
     },
     {
         component: NavDrawerMiniComponent,
-        path: 'navigation-drawer-mini'
+        path: 'navigation-drawer-mini',
+        data: { displayName: 'Mini Nav Drawer' }
     },
     {
         component: NavbarComponent,
-        // tslint:disable-next-line:no-string-literal
         data: menusRoutesData['navbar'],
         path: 'navbar'
     },
