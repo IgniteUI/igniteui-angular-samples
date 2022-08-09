@@ -1,12 +1,20 @@
-<igx-nav-drawer [isOpen]="true" [enableGestures]="true" width="280px">
-    <ng-template igxDrawer>
-        <igx-tree>
-            <igx-tree-node *ngFor="let route of routes">
-                <a igxTreeNodeLink [routerLink]="route.path">{{ route.data?.displayName }}</a>
-                <igx-tree-node *ngFor="let child of route.children">
-                    <a igxTreeNodeLink [routerLink]="[route.path, child.path]">{{ child.data?.displayName }}</a>
+<div class="content-wrap" igxLayout>
+    <igx-nav-drawer #drawer [isOpen]="true" [enableGestures]="true" width="280px">
+        <ng-template igxDrawer>
+            <igx-tree>
+                <igx-tree-node *ngFor="let topic of topicLinks">
+                    <a igxTreeNodeLink [href]="topic.path" target="_blank">{{ topic.data }}</a>
+                    <igx-tree-node *ngFor="let child of topic.children">
+                        <a igxTreeNodeLink [href]="child.path" target="_blank">{{ child.data }}</a>
+                    </igx-tree-node>
                 </igx-tree-node>
-            </igx-tree-node>
-        </igx-tree>
-    </ng-template>
-</igx-nav-drawer>
+            </igx-tree>
+        </ng-template>
+    </igx-nav-drawer>
+
+    <main igxFlex>
+        <span igxButton="icon" igxToggleAction="navigation" (click)="drawer.toggle()">
+            <igx-icon family="material">menu</igx-icon>
+        </span>
+    </main>
+</div>
