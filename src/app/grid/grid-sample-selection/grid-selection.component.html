@@ -49,6 +49,21 @@
     </igx-grid>
 </div>
 
+<igx-snackbar #snackbarRowCount actionText="Got it. Thanks!" (clicked)="snackbarRowCount.close()">
+    <div class="container">
+        <igx-icon>notification_important</igx-icon>
+        <ng-container *ngIf="selectionMode === 'multiple'">
+           <p>Number of selected rows: {{selectedRowsCount}}</p>
+        </ng-container>
+        <ng-container *ngIf="selectionMode === 'single' && this.selectedRowIndex !== undefined">
+            <p>Currently selected row index: {{selectedRowIndex}}</p>
+        </ng-container>
+        <ng-container *ngIf="selectionMode === 'single' && this.selectedRowIndex === undefined">
+            <p>There is no currently selected row.</p>
+        </ng-container>
+    </div>
+</igx-snackbar>
+
 <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.close()">
     <div class="container">
         <igx-icon>notification_important</igx-icon>

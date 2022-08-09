@@ -42,6 +42,7 @@ import { InputGroupSample5Component } from './input-group/input-group-sample-5/i
 import { InputGroupSample6Component } from './input-group/input-group-sample-6/input-group-sample-6.component';
 import { InputGroupStyleComponent } from './input-group/input-group-styling/input-group-styling.component';
 import { InputTextSelectionComponent } from './input-group/input-text-selection/input-text-selection.component';
+import { TypedFormComponent } from './input-group/typed-form/typed-form.component';
 import { ReactiveFormsSampleComponent } from '../how-to/reactive-forms/reactive-forms.component';
 import { RadioGroupVerticalComponent } from './radio/radio-group-vertical/radio-group-vertical.component';
 import { RadioGroupSampleComponent } from './radio/radio-group-sample/radio-group-sample.component';
@@ -338,6 +339,11 @@ export const dataEntriesRoutes: Routes = [
         component: InputTextSelectionComponent,
         data: dataEntriesRoutesData['input-text-selection'],
         path: 'input-text-selection'
+    },
+    {
+        component: TypedFormComponent,
+        data: dataEntriesRoutesData['typed-form'],
+        path: 'typed-form'
     }
 ];
 
