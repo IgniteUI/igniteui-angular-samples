@@ -28,7 +28,7 @@
                     <igx-tree-node [data]="item.name" *ngFor="let item of currentNavItems">
                         {{ item.name }}
                         <igx-tree-node [data]="route.displayName" *ngFor="let route of item.children">
-                            <a igxTreeNodeLink [routerLink]="route.path" igxRipple>{{ route.displayName }}</a>
+                            <a igxTreeNodeLink [routerLink]="route.path">{{ route.displayName }}</a>
                         </igx-tree-node>
                     </igx-tree-node>
                 </igx-tree>
