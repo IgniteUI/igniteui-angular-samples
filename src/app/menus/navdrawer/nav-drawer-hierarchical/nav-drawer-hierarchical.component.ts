@@ -31,7 +31,7 @@ export class NavDrawerHierarchicalComponent implements AfterViewInit {
             ]
         },
         {
-            path: 'ineractions', displayName: 'Ineractions',
+            path: 'interactions', displayName: 'Interactions',
             children: [
                 { path: 'action-strip', displayName: 'Action Strip' },
                 { path: 'dialog', displayName: 'Dialog' },
