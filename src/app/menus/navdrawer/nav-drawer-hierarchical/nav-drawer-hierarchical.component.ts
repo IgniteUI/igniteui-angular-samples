@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { IgxTreeComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-nav-drawer-hierarchical',
     templateUrl: './nav-drawer-hierarchical.component.html',
     styleUrls: ['./nav-drawer-hierarchical.component.scss']
 })
-export class NavDrawerHierarchicalComponent implements OnInit {
+export class NavDrawerHierarchicalComponent implements AfterViewInit {
+    @ViewChild('tree') public tree: IgxTreeComponent;
 
     public selectedContent = 'Home';
+
     public routes = [
         {
             path: 'grids', displayName: 'Grids',
@@ -54,14 +56,11 @@ export class NavDrawerHierarchicalComponent implements OnInit {
         }
     ]
 
-    constructor(private route: Router) { }
+    constructor() { }
 
-    public ngOnInit() {
-        this.route.events.subscribe(event => {
-            if (event instanceof NavigationEnd) {
-                const url = event.url.split('/');
-                this.selectedContent = url[url.length - 1];
-            }
-        });
+    public ngAfterViewInit() {
+        this.tree.activeNodeChanged.subscribe(node => {
+            this.selectedContent = node.data;
+        })
     }
 }
