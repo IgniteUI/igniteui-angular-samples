@@ -187,7 +187,12 @@ export class IndexComponent implements OnInit, AfterViewInit {
             this.searchSub = debouncedInput.subscribe(() => {
                 this.currentNavItems = this.filter(this.allNavItems);
                 this.cdr.detectChanges();
-                this.tree.expandAll();
+
+                if (this.searchValue !== '') {
+                    this.tree.expandAll();
+                } else {
+                    this.tree.collapseAll();
+                }
             });
         }
     }
