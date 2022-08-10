@@ -4,7 +4,8 @@ IgxIconModule,
 IgxLayoutModule,
 IgxNavigationDrawerModule,
 IgxRippleModule,
-IgxToggleModule} from 'igniteui-angular';
+IgxToggleModule,
+IgxTreeModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class NavdrawerConfigGenerator implements IConfigGenerator {
 
@@ -120,6 +121,19 @@ export class NavdrawerConfigGenerator implements IConfigGenerator {
                     ])
                     `
                 ]
+            }),
+            shortenComponentPathBy: "/menus/navdrawer/"
+        }));
+
+        configs.push(new Config({
+            component: 'NavDrawerHierarchicalComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxButtonModule', 'IgxIconModule', 'IgxLayoutModule',
+                    'IgxNavigationDrawerModule', 'IgxRippleModule', 'IgxToggleModule',
+                    'NavDrawerHierarchicalComponent', 'IgxTreeModule'],
+                ngDeclarations: ['NavDrawerHierarchicalComponent'],
+                ngImports: ['IgxButtonModule', 'IgxIconModule', 'IgxLayoutModule',
+                    'IgxNavigationDrawerModule', 'IgxRippleModule', 'IgxToggleModule', 'IgxTreeModule']
             }),
             shortenComponentPathBy: "/menus/navdrawer/"
         }));

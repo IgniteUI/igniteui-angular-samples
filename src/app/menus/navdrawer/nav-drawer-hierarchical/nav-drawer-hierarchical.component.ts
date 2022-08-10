@@ -9,45 +9,45 @@ export class NavDrawerHierarchicalComponent {
 
     public topicLinks = [
         {
-            path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/grids-and-lists', data: 'Grids',
+            name: 'Grids',
             children: [
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/grid', data: 'Data Grid' },
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/treegrid/tree-grid', data: 'Tree Grid' },
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/hierarchicalgrid/hierarchical-grid', data: 'Hierarchical Grid' },
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/pivotGrid/pivot-grid', data: 'Pivot Grid' }
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/grid', name: 'Data Grid' },
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/treegrid/tree-grid', name: 'Tree Grid' },
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/hierarchicalgrid/hierarchical-grid', name: 'Hierarchical Grid' },
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/pivotGrid/pivot-grid', name: 'Pivot Grid' }
             ]
         },
         {
-            path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/charts/chart-overview', data: 'Charts',
+            name: 'Charts',
             children: [
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/charts/types/area-chart', data: 'Area Chart' },
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/charts/types/bar-chart', data: 'Bar Chart' },
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/charts/types/column-chart', data: 'Column Chart' },
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/charts/types/pie-chart', data: 'Pie Chart' }
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/charts/types/area-chart', name: 'Area Chart' },
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/charts/types/bar-chart', name: 'Bar Chart' },
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/charts/types/column-chart', name: 'Column Chart' },
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/charts/types/pie-chart', name: 'Pie Chart' }
             ]
         },
         {
-            path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/charts/chart-overview', data: 'Ineractions',
+            name: 'Ineractions',
             children: [
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/action-strip', data: 'Action Strip' },
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/dialog', data: 'Dialog' },
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/drag-drop', data: 'Drag and Drop' }
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/action-strip', name: 'Action Strip' },
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/dialog', name: 'Dialog' },
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/drag-drop', name: 'Drag and Drop' }
             ]
         },
         {
-            path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/charts/chart-overview', data: 'Layouts',
+            name: 'Layouts',
             children: [
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/dock-manager', data: 'Dock Manager' },
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/expansion-panel', data: 'Exspansion Panel' },
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/layout', data: 'Layout Manager' }
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/dock-manager', name: 'Dock Manager' },
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/expansion-panel', name: 'Exspansion Panel' },
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/layout', name: 'Layout Manager' }
             ]
         },
         {
-            path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/charts/chart-overview', data: 'Notifications',
+            name: 'Notifications',
             children: [
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/banner', data: 'Banner' },
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/snackbar', data: 'Snackbar' },
-                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/toast', data: 'Toast' }
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/banner', name: 'Banner' },
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/snackbar', name: 'Snackbar' },
+                { path: 'https://www.infragistics.com/products/ignite-ui-angular/angular/components/toast', name: 'Toast' }
             ]
         }
     ]

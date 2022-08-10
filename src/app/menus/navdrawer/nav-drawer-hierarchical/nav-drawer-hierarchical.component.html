@@ -3,9 +3,9 @@
         <ng-template igxDrawer>
             <igx-tree>
                 <igx-tree-node *ngFor="let topic of topicLinks">
-                    <a igxTreeNodeLink [href]="topic.path" target="_blank">{{ topic.data }}</a>
+                    {{ topic.name }}
                     <igx-tree-node *ngFor="let child of topic.children">
-                        <a igxTreeNodeLink [href]="child.path" target="_blank">{{ child.data }}</a>
+                        <a igxTreeNodeLink [href]="child.path" target="_blank">{{ child.name }}</a>
                     </igx-tree-node>
                 </igx-tree-node>
             </igx-tree>
