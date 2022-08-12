@@ -1,0 +1,26 @@
+.sample-column {
+    padding-bottom: 50px;
+}
+
+.igx-card {
+    flex: 1 1 0;
+    margin: 5px;
+    width: 500px;
+}
+
+.igx-card-header__subtitle {
+    font-size: 0.999rem;
+}
+
+igx-card-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+span[igxCardHeaderSubtitle] {
+    flex-basis: 50%;
+    min-width: 50%;
+    padding-left: 8px;
+}
