@@ -131,6 +131,7 @@ import { GridRowClassesComponent } from './grid-rowClasses-sample/grid-rowClasse
 import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.component';
 import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summary-template.component';
 import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-editing-excel-style.component';
+import { GridValidatorServiceComponent } from './grid-validator-service/grid-validator-service.component';
 
 @NgModule({
     declarations: [
@@ -251,7 +252,8 @@ import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-
         GridFormattedFilteringStrategyComponent,
         GridSummaryFormatterComponent,
         GridRowClassesComponent,
-        GridRowStylesComponent
+        GridRowStylesComponent,
+        GridValidatorServiceComponent
     ],
     imports: [
         CommonModule,
