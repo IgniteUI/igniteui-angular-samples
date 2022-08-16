@@ -22,4 +22,11 @@ export class RatingInFormComponent {
         OrderDate: new Date("2005-03-17"),
         icons: ['favorite', 'share']
     };
+
+    public get productRating(): string {
+        const rating = this.product.AverageRating +
+            ((this.product.UserRating || this.product.AverageRating) - this.product.AverageRating) /
+            (this.product.TotalReviews + 1);
+        return rating.toFixed(1);
+    }
 }

@@ -12,8 +12,7 @@
             <igx-card-content>
                 <span igxCardHeaderSubtitle>Price: {{ product.UnitPrice | currency:'USD' }}</span>
                 <span igxCardHeaderSubtitle>
-                    User Rating: {{ (product.AverageRating + ((product.UserRating || product.AverageRating) - product.AverageRating) /
-                        (product.TotalReviews + 1)).toFixed(1) }} from {{ product.TotalReviews + (product.UserRating !== 0 ? 1 : 0) }} users
+                    User Rating: {{ productRating }} from {{ product.TotalReviews + (product.UserRating !== 0 ? 1 : 0) }} users
                 </span>
                 <igc-rating [(ngModel)]="product.UserRating" name="userRating"></igc-rating>
             </igx-card-content>
