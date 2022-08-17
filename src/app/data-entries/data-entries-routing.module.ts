@@ -57,6 +57,7 @@ import { SelectSample4Component } from './select/select-sample-4/select-sample-4
 import { SwitchSample1Component } from './switch/switch-sample-1/switch-sample-1.component';
 import { SwitchSample2Component } from './switch/switch-sample-2/switch-sample-2.component';
 import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.component';
+import { RatingInFormComponent } from './rating/rating-form/rating-form.component';
 
 export const dataEntriesRoutes: Routes = [
     {
@@ -293,6 +294,11 @@ export const dataEntriesRoutes: Routes = [
         component: RadioStylingSampleComponent,
         data: dataEntriesRoutesData['radio-styling-sample'],
         path: 'radio-styling-sample'
+    },
+    {
+        component: RatingInFormComponent,
+        data: dataEntriesRoutesData['rating-in-form'],
+        path: 'rating-form'
     },
     {
         component: SwitchSample1Component,
