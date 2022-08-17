@@ -18,13 +18,13 @@
         <igx-column field="created_on" header="Date of Registration" width="170" [editable]="true"
             [dataType]="'dateTime'" required>
             <ng-template igxCell let-cell>
-                {{ cell | date:'longDate' }}
+                {{ cell | date: 'longDate' }}
             </ng-template>
         </igx-column>
         <igx-column field="last_activity" header="Last Active" width="170" [editable]="true" [dataType]="'dateTime'"
             required>
             <ng-template igxCell let-cell>
-                {{ cell | date:'longDate' }}
+                {{ cell | date: 'longDate' }}
             </ng-template>
         </igx-column>
         <igx-column field="estimated_sales" header="Estimated Sales" [editable]="true"></igx-column>
