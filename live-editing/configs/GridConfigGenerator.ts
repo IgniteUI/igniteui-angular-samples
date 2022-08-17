@@ -1350,13 +1350,16 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridValidatorServiceComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/services/validator.service.ts', '/src/app/services/crud.service.ts',
-                '/src/app/data/invoiceData.ts'],
+            additionalFiles: [
+                '/src/app/directives/prevent-scroll.directive.ts',
+                '/src/app/data/employeesData.ts',
+                '/src/app/data/athletesData.ts'
+
+            ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxActionStripModule', 'GridValidatorServiceComponent', 'HttpClientModule', 'IgxGridModule', 'IgxPreventDocumentScrollModule', 'CRUDService'],
+                imports: ['GridValidatorServiceComponent', 'IgxGridModule', 'IgxFocusModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridValidatorServiceComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxActionStripModule', 'HttpClientModule'],
-                ngProviders: ['CRUDService']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxFocusModule']
             })
         }));
 
