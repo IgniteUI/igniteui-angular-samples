@@ -122,6 +122,7 @@ import { GridRowClassesComponent } from './grid-rowClasses-sample/grid-rowClasse
 import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.component';
 import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summary-template.component';
 import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-editing-excel-style.component';
+import { GridColumnAutosizingComponent } from './grid-column-autosizing/grid-column-autosizing.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -704,6 +705,11 @@ export const gridsRoutes: Routes = [
         component: GridRowStylesComponent,
         data: gridsRoutesData['grid-rowStyles-sample'],
         path: 'grid-rowStyles-sample'
+    },
+    {
+        component: GridColumnAutosizingComponent,
+        data: gridsRoutesData['grid-columnAutoResizing-sample'],
+        path: 'grid-columnAutoResizing-sample'
     }
 ];
 

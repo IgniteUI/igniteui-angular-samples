@@ -1,0 +1,14 @@
+<div class="grid__wrapper">
+    <igx-grid igxPreventDocumentScroll [data]="data" [autoGenerate]="false" height="500px" width="100%" >
+        <igx-column [field]="'ID'" [header]="'ID'" [resizable]="true" width="auto" ></igx-column>
+        <igx-column [field]="'CompanyName'" [header]="'Company Name'" width="auto" [resizable]="true"></igx-column>
+        <igx-column [field]="'ContactName'" [header]="'Contact Name'" width="auto" [resizable]="true" [minWidth]="'60px'" [maxWidth]="'230px'"></igx-column>
+        <igx-column [field]="'ContactTitle'" [header]="'Contact Title'" width="auto" [resizable]="true"></igx-column>
+        <igx-column [field]="'Address'" [header]="'Address'" width="auto" [resizable]="true"></igx-column>
+        <igx-column [field]="'City'" [header]="'City'" width="auto" [resizable]="true"></igx-column>
+        <igx-column [field]="'Region'" [header]="'Region'" width="auto" [resizable]="true"></igx-column>
+        <igx-column [field]="'PostalCode'" [header]="'Postal Code'" width="auto" [resizable]="true"></igx-column>
+        <igx-column [field]="'Phone'" [header]="'Phone'" width="auto" [resizable]="true"></igx-column>
+        <igx-column [field]="'Fax'" [header]="'Fax'" width="auto" [resizable]="true"></igx-column>
+    </igx-grid>
+</div>
