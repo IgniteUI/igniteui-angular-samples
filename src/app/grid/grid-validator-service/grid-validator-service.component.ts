@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { employeesData } from '../../data/employeesData';
-import { athletesData } from '../../data/athletesData';
 
 @Component({
     selector: 'app-grid-validator-service',
@@ -14,13 +13,5 @@ export class GridValidatorServiceComponent {
 
     constructor() {
         this.data = employeesData;
-    }
-
-    private generateReadableDate(timestamp: string): Date {
-        let dateObj = new Date(timestamp);
-        if (isNaN(dateObj.getTime())) {
-            dateObj = new Date(timestamp.split(' ')[0]);
-        }
-        return dateObj;
     }
 }
