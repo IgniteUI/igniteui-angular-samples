@@ -132,6 +132,7 @@ import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.c
 import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summary-template.component';
 import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-editing-excel-style.component';
 import { GridColumnAutosizingComponent } from './grid-column-autosizing/grid-column-autosizing.component';
+import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.component';
 
 @NgModule({
     declarations: [
@@ -254,6 +255,7 @@ import { GridColumnAutosizingComponent } from './grid-column-autosizing/grid-col
         GridRowClassesComponent,
         GridRowStylesComponent,
         GridColumnAutosizingComponent
+        GridWithRatingComponent
     ],
     imports: [
         CommonModule,
