@@ -94,6 +94,7 @@ import { TreeGridRowClassesComponent } from './tree-grid-rowClasses-sample/tree-
 import { TreeGridRowStylesComponent } from './tree-grid-rowStyles-sample/tree-grid-rowStyle.component';
 import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tree-grid-action-strip-sample';
 import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/treegrid-summary-template.component';
+import { TreeGridColumnAutoSizingSampleComponent } from './treegrid-column-autosizing/treegrid-column-autosizing.component';
 
 export const treeGridRoutes: Routes = [
     {
@@ -552,9 +553,9 @@ export const treeGridRoutes: Routes = [
         path: 'tree-grid-styles-sample'
     },
     {
-        component: TreeGridActionStripSampleComponent,
-        data: treeGridRoutesData['tree-grid-action-strip'],
-        path: 'tree-grid-action-strip'
+        component: TreeGridColumnAutoSizingSampleComponent,
+        data: treeGridRoutesData['tree-grid-columnAutoSizing-sample'],
+        path: 'tree-grid-columnAutoSizing-sample'
     }
 ];
 

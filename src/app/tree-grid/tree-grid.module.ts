@@ -122,6 +122,7 @@ import { TreeGridRowStylesComponent } from './tree-grid-rowStyles-sample/tree-gr
 import { TreeGridRowClassesComponent } from './tree-grid-rowClasses-sample/tree-grid-rowClasses.component';
 import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tree-grid-action-strip-sample';
 import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/treegrid-summary-template.component';
+import { TreeGridColumnAutoSizingSampleComponent } from './treegrid-column-autosizing/treegrid-column-autosizing.component';
 
 @NgModule({
     declarations: [
@@ -217,7 +218,8 @@ import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/tr
         TreeGridSummaryFormatterComponent,
         TreeGridRowStylesComponent,
         TreeGridRowClassesComponent,
-        TreeGridActionStripSampleComponent
+        TreeGridActionStripSampleComponent,
+        TreeGridColumnAutoSizingSampleComponent
     ],
     imports: [
         CommonModule,

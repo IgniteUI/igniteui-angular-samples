@@ -96,6 +96,7 @@ import { HGridRowStylesSampleComponent } from './hgrid-rowStyle-sample/hgrid-row
 import { HGridRowClassesSampleComponent } from './hgrid-rowClasses-sample/hgrid-rowClasses.component';
 import { HGridActionStripSampleComponent } from './hierarchical-grid-action-strip/hierarchical-grid-action-strip-sample';
 import { HGridSummaryTemplateComponent } from './hgrid-summary-template/hgrid-summary-template.component';
+import { HGridColumnAutoSizingSampleComponent } from './hgrid-column-autosizing/hgrid-column-autosizing.component';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -537,11 +538,11 @@ export const hierarchicalGridRoutes: Routes = [
         data: hierarchicalGridRoutesData['hGrid-row-classes'],
         path: 'hGrid-row-classes'
     },
-    {
-        component: HGridActionStripSampleComponent,
-        data: hierarchicalGridRoutesData['hGrid-action-strip'],
-        path: 'hGrid-action-strip'
-    }
+   {
+    component: HGridColumnAutoSizingSampleComponent,
+    data: hierarchicalGridRoutesData['hGrid-columnAutosizing-sample'],
+    path: 'hGrid-columnAutosizing-sample'
+}
 ];
 
 @NgModule({
