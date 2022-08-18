@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { DATA } from '../../data/customers';
 
 @Component({
@@ -8,16 +8,10 @@ import { DATA } from '../../data/customers';
 })
 
 export class GridColumnAutosizingComponent {
-    @ViewChild('widthValue', { static: true }) public widthValue: ElementRef;
-
     public data: any[];
 
     constructor() {
         this.data = DATA;
-        }
-
-
-    public autosizeAllColumns(){
-        this.widthValue.nativeElement.value = "auto"
     }
 }
+

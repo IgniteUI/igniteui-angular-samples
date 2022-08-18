@@ -553,6 +553,11 @@ export const treeGridRoutes: Routes = [
         path: 'tree-grid-styles-sample'
     },
     {
+        component: TreeGridActionStripSampleComponent,
+        data: treeGridRoutesData['tree-grid-action-strip'],
+        path: 'tree-grid-action-strip'
+    },
+    {
         component: TreeGridColumnAutoSizingSampleComponent,
         data: treeGridRoutesData['tree-grid-columnAutoSizing-sample'],
         path: 'tree-grid-columnAutoSizing-sample'

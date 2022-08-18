@@ -538,11 +538,16 @@ export const hierarchicalGridRoutes: Routes = [
         data: hierarchicalGridRoutesData['hGrid-row-classes'],
         path: 'hGrid-row-classes'
     },
-   {
-    component: HGridColumnAutoSizingSampleComponent,
-    data: hierarchicalGridRoutesData['hGrid-columnAutosizing-sample'],
-    path: 'hGrid-columnAutosizing-sample'
-}
+    {
+        component: HGridActionStripSampleComponent,
+        data: hierarchicalGridRoutesData['hGrid-action-strip'],
+        path: 'hGrid-action-strip'
+    },
+    {
+        component: HGridColumnAutoSizingSampleComponent,
+        data: hierarchicalGridRoutesData['hGrid-columnAutosizing-sample'],
+        path: 'hGrid-columnAutosizing-sample'
+    }
 ];
 
 @NgModule({
