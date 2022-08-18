@@ -141,7 +141,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
                 const chilren = this.tree.findNodes(this.selectedDisplayName);
                 this.tree.deselectAll();
                 if (chilren?.length) {
-                    chilren[0].selected = true;
+                    children[0].selected = true;
                 }
             }
 
