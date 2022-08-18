@@ -124,6 +124,7 @@ import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summa
 import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-editing-excel-style.component';
 import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.component';
 import { GridValidatorServiceComponent } from './grid-validator-service/grid-validator-service.component';
+import { GridValidatorServiceExtendedComponent } from './grid-validator-service-extended/grid-validator-service-extended.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -716,6 +717,11 @@ export const gridsRoutes: Routes = [
         component: GridValidatorServiceComponent,
         data: gridsRoutesData['grid-validator-service'],
         path: 'grid-validator-service'
+    },
+    {
+        component: GridValidatorServiceExtendedComponent,
+        data: gridsRoutesData['grid-validator-service-extended'],
+        path: 'grid-validator-service-extended'
     }
 ];
 

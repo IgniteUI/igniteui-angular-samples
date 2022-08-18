@@ -1363,6 +1363,21 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        configs.push(new Config({
+            component: 'GridValidatorServiceExtendedComponent',
+            additionalFiles: [
+                '/src/app/directives/prevent-scroll.directive.ts',
+                '/src/app/data/employeesData.ts',
+                '/src/app/data/athletesData.ts'
+
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['GridValidatorServiceExtendedComponent', 'IgxGridModule', 'IgxFocusModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['GridValidatorServiceExtendedComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxFocusModule']
+            })
+        }));
+
         return configs;
     }
 }
