@@ -1,20 +1,20 @@
 <div class="grid__wrapper">
     <igx-hierarchical-grid igxPreventDocumentScroll class="hierarchicalGrid" [data]="localdata" (columnResized)="onResize($event)" [autoGenerate]="false"
-        [height]="'480px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
+        [height]="'480px'" [rowHeight]="'65px'" #hierarchicalGrid>
         <igx-column field="Artist" [resizable]="true"></igx-column>
-        <igx-column field="Photo" [resizable]="true" [minWidth]="'115px'">
+        <igx-column field="Photo" [resizable]="true" [minWidth]="'115px'" [width]="'auto'">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner_2">
                     <img [src]="cell.value" class="photo" />
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="Debut" width="auto" [resizable]="true" [minWidth]="'88px'" [maxWidth]="'230px'" dataType="number" [formatter]="formatter"></igx-column>
-        <igx-column field="GrammyNominations" width="auto" header="Grammy Nominations" [resizable]="true"></igx-column>
-        <igx-column field="GrammyAwards" width="auto" header="Grammy Awards" [resizable]="true"></igx-column>
-        <igx-column field="Sales" width="auto" header="Album Sales in last {{ this.years }} years" [width]="'230px'" [filterable]="false" >
+        <igx-column field="Debut" [resizable]="true" [width]="'auto'" [minWidth]="'88px'" [maxWidth]="'230px'" dataType="number" [formatter]="formatter"></igx-column>
+        <igx-column field="GrammyNominations" [width]="'auto'" header="Grammy Nominations" [resizable]="true"></igx-column>
+        <igx-column field="GrammyAwards" [width]="'auto'" header="Grammy Awards" [resizable]="true"></igx-column>
+        <igx-column field="Sales" [width]="'auto'" header="Album Sales in last {{ this.years }} years" [filterable]="false" >
             <ng-template igxCell let-val>
-                <igx-sparkline height="40px" width="220px"
+                <igx-sparkline height="40px"
                     [dataSource]="val"
                     valueMemberPath="Copies"
                     displayType="Line"

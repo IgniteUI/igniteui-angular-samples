@@ -254,7 +254,7 @@ import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.com
         GridSummaryFormatterComponent,
         GridRowClassesComponent,
         GridRowStylesComponent,
-        GridColumnAutosizingComponent
+        GridColumnAutosizingComponent,
         GridWithRatingComponent
     ],
     imports: [
