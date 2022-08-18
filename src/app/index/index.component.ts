@@ -138,7 +138,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
                 (route: any) => route.path === event.url)[0];
             if (routeItem) {
                 this.selectedDisplayName = routeItem.displayName;
-                const chilren = this.tree.findNodes(this.selectedDisplayName);
+                const children = this.tree.findNodes(this.selectedDisplayName);
                 this.tree.deselectAll();
                 if (chilren?.length) {
                     children[0].selected = true;
