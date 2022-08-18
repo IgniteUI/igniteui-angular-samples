@@ -172,7 +172,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
                 parents[0].nativeElement.scrollIntoView();
             }
             const chilren = this.tree.findNodes(loadedChildItem.displayName);
-            if (chilren?.length) {
+            if (children?.length) {
                 chilren[0].selected = true;
             }
             this.cdr.detectChanges();
