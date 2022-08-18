@@ -133,7 +133,7 @@ import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summa
 import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-editing-excel-style.component';
 import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.component';
 import { GridValidatorServiceComponent } from './grid-validator-service/grid-validator-service.component';
-import { GridValidatorServiceExtendedComponent } from './grid-validator-service-extended/grid-validator-service-extended.component';
+import { ForbiddenValidatorDirective, GridValidatorServiceExtendedComponent } from './grid-validator-service-extended/grid-validator-service-extended.component';
 
 @NgModule({
     declarations: [
@@ -257,7 +257,8 @@ import { GridValidatorServiceExtendedComponent } from './grid-validator-service-
         GridRowStylesComponent,
         GridWithRatingComponent,
         GridValidatorServiceComponent,
-        GridValidatorServiceExtendedComponent
+        GridValidatorServiceExtendedComponent,
+        ForbiddenValidatorDirective
     ],
     imports: [
         CommonModule,

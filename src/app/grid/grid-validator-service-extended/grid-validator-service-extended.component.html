@@ -1,9 +1,6 @@
-<div class="top-row">
-    <igx-switch [(ngModel)]="rowEdit">Row edit</igx-switch>
-</div>
 <div class="grid__wrapper">
     <igx-grid #grid1 [data]="data" [width]="'100%'" [height]="'480px'" [autoGenerate]="false" [batchEditing]="true"
-        [rowEditable]="rowEdit" [primaryKey]="'id'">
+        [primaryKey]="'id'" (onFormGroupCreate)='formCreateHandler($event)'>
         <igx-column field="Avatar" header="Photo" dataType="string" width="80" [editable]="false">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner avatar-cell">
@@ -11,10 +8,26 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="name" header="Name" [editable]="true" required></igx-column>
+        <igx-column field="name" forbiddenName="josh" header="Name" [editable]="true" required>
+            <ng-template igxCellValidationError let-cell='cell'>
+                <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
+                </ng-container>
+                <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['forbiddenName']">
+                    This name is forbidden.
+                </div>
+            </ng-template>
+        </igx-column>
         <igx-column field="company" header="Company" [editable]="true"></igx-column>
         <igx-column field="email" width="190" header="Email" [editable]="true" required email></igx-column>
-        <igx-column field="fax" header="Phone" [editable]="true"></igx-column>
+        <igx-column field="fax" header="Phone" [editable]="true">
+            <ng-template igxCellValidationError let-cell='cell'>
+                <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
+                </ng-container>
+                <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['forbiddenFax']">
+                    Please, submit a valid American fax number.
+                </div>
+            </ng-template>
+        </igx-column>
         <igx-column field="created_on" header="Date of Registration" width="170" [editable]="true"
             [dataType]="'dateTime'" required>
             <ng-template igxCell let-cell>
@@ -27,7 +40,8 @@
                 {{ cell | date: 'longDate' }}
             </ng-template>
         </igx-column>
-        <igx-column field="estimated_sales" header="Estimated Sales" [editable]="true" [dataType]="'number'" required min="0"></igx-column>
+        <igx-column field="estimated_sales" header="Estimated Sales" [editable]="true" [dataType]="'number'" required
+            min="0"></igx-column>
         <igx-column field="deals_lost" header="Deals Lost" [editable]="true" [dataType]="'number'" required min="0">
         </igx-column>
         <igx-column field="deals_won" header="Deals Won" [editable]="true" [dataType]="'number'" required min="0">
@@ -36,3 +50,6 @@
             min="0"></igx-column>
     </igx-grid>
 </div>
+
+<button igxButton [disabled]="grid1.transactions.getAggregatedChanges(false).length < 1"
+    (click)="commit()">Commit</button>
