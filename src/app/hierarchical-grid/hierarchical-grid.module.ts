@@ -91,6 +91,7 @@ import { HGridRowStylesSampleComponent } from './hgrid-rowStyle-sample/hgrid-row
 import { HGridRowClassesSampleComponent } from './hgrid-rowClasses-sample/hgrid-rowClasses.component';
 import { HGridActionStripSampleComponent } from './hierarchical-grid-action-strip/hierarchical-grid-action-strip-sample';
 import { HGridSummaryTemplateComponent } from './hgrid-summary-template/hgrid-summary-template.component';
+import { HGridColumnAutoSizingSampleComponent } from './hgrid-column-autosizing/hgrid-column-autosizing.component';
 
 @NgModule({
     declarations: [
@@ -174,7 +175,8 @@ import { HGridSummaryTemplateComponent } from './hgrid-summary-template/hgrid-su
         HierarchicalGridPagerSampleComponent,
         HGridRowStylesSampleComponent,
         HGridRowClassesSampleComponent,
-        HGridActionStripSampleComponent
+        HGridActionStripSampleComponent,
+        HGridColumnAutoSizingSampleComponent
     ],
     imports: [
         CommonModule,
