@@ -33,11 +33,28 @@
             <ng-template igxCell let-cell>
                 {{ cell | date: 'longDate' }}
             </ng-template>
+            <ng-template igxCellValidationError let-cell='cell'>
+                <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
+                </ng-container>
+                <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['forbiddenDate']">
+                    The date cannot be in the future.
+                </div>
+            </ng-template>
         </igx-column>
         <igx-column field="last_activity" header="Last Active" width="170" [editable]="true" [dataType]="'dateTime'"
             required>
             <ng-template igxCell let-cell>
                 {{ cell | date: 'longDate' }}
+            </ng-template>
+            <ng-template igxCellValidationError let-cell='cell'>
+                <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
+                </ng-container>
+                <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['forbiddenDate']">
+                    The date cannot be in the future.
+                </div>
+                <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['beyondThreshold']">
+                    The date cannot be past the date of registration.
+                </div>
             </ng-template>
         </igx-column>
         <igx-column field="estimated_sales" header="Estimated Sales" [editable]="true" [dataType]="'number'" required

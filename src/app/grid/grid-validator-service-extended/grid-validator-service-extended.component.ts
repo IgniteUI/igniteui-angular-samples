@@ -3,6 +3,13 @@ import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorF
 import { IgxColumnValidator, IgxGridComponent } from 'igniteui-angular';
 import { employeesData } from '../../data/employeesData';
 
+export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+        const forbidden = nameRe.test(control.value);
+        return forbidden ? { forbiddenName: { value: control.value } } : null;
+    };
+}
+
 @Directive({
     selector: '[forbiddenName]',
     providers: [{ provide: NG_VALIDATORS, useExisting: ForbiddenValidatorDirective, multi: true }]
@@ -11,16 +18,9 @@ export class ForbiddenValidatorDirective extends IgxColumnValidator {
     @Input('forbiddenName')
     public forbiddenNameString = '';
 
-    validate(control: AbstractControl): ValidationErrors | null {
-        return this.forbiddenNameString ? this._forbiddenNameValidator(new RegExp(this.forbiddenNameString, 'i'))(control)
+    public validate(control: AbstractControl): ValidationErrors | null {
+        return this.forbiddenNameString ? forbiddenNameValidator(new RegExp(this.forbiddenNameString, 'i'))(control)
             : null;
-    }
-
-    private _forbiddenNameValidator(regExp: RegExp): ValidatorFn {
-        return (control: AbstractControl): ValidationErrors | null => {
-            const forbidden = regExp.test(control.value);
-            return forbidden ? { forbiddenName: { value: control.value } } : null;
-        }
     }
 }
 
@@ -43,10 +43,12 @@ export class GridValidatorServiceExtendedComponent {
     }
 
     public formCreateHandler(formGroup: FormGroup) {
-        const nameRecord = formGroup.get('name');
         const faxRecord = formGroup.get('fax');
-        nameRecord.addValidators(this._testName());
+        const createdOnRecord = formGroup.get('created_on');
+        const lastActiveRecord = formGroup.get('last_activity');
         faxRecord.addValidators(this._testFax());
+        createdOnRecord.addValidators(this._testDateRecord());
+        lastActiveRecord.addValidators(this._testDateRecord(createdOnRecord.value));
     }
 
     /**
@@ -73,13 +75,6 @@ export class GridValidatorServiceExtendedComponent {
         }
     }
 
-    private _testName(): ValidatorFn {
-        return (control: AbstractControl): ValidationErrors | null => {
-            const match = this._regexValidationFunction(control.value, /bob/i);
-            return match ? { forbiddenName: { value: control.value } } : null;
-        }
-    }
-
     private _testFax(): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
             const match = this._regexValidationFunction(control.value, /\+\d{1}\-(?!0)(\d{3})\-(\d{3})\-(\d{4})\b/i);
@@ -90,5 +85,13 @@ export class GridValidatorServiceExtendedComponent {
     private _regexValidationFunction(value: any, rgx: RegExp): boolean {
         const match = rgx?.test(value);
         return !!match;
+    }
+
+    private _testDateRecord(thresholdVal?: any): ValidatorFn {
+        return (control: AbstractControl): ValidationErrors | null => {
+            const date = control.value;
+            const exceedingThreshold = !!thresholdVal ? date < thresholdVal : false;
+            return !exceedingThreshold ? date < new Date() ? null : { forbiddenDate: { value: control.value } } : { beyondThreshold: { value: control.value } };
+        }
     }
 }
