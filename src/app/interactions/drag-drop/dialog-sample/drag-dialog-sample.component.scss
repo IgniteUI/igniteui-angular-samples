@@ -7,7 +7,7 @@
     )
 );
 
-@include dialog-typography($material-type-scale);
+@include dialog-typography();
 
 :host {
     display: block;

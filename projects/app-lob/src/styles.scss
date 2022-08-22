@@ -18,7 +18,7 @@ body {
 );
 
 :root {
-    @include palette-vars($palette);
+    @include palette($palette);
 }
 
 .light-theme {

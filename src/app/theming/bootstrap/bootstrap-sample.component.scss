@@ -10,7 +10,7 @@ $light-danger: color($light-bootstrap-palette, "error");
 $custom-dark-palette: palette(
     $primary: #ecaa53,
     $secondary: #011627,
-    $grays: #fff,
+    $gray: #fff,
     $surface: #222
 );
 
@@ -94,25 +94,25 @@ $dark-secondary: color($custom-dark-palette, "secondary");
 
             ngb-accordion {
                 .accordion-header {
-                    background-color: color($custom-dark-palette, 'grays', 200);
-                    color: color($custom-dark-palette, 'grays', 900);
+                    background-color: color($custom-dark-palette, 'gray', 200);
+                    color: color($custom-dark-palette, 'gray', 900);
                 }
 
                 .accordion-item {
                     background-color: color($custom-dark-palette, 'surface');
-                    border-color: color($custom-dark-palette, 'grays', 300);
+                    border-color: color($custom-dark-palette, 'gray', 300);
                 }
             }
 
             .dropdown .dropdown-menu {
                 background-color: color($custom-dark-palette, 'surface');
-                border-color: color($custom-dark-palette, 'grays', 300);
+                border-color: color($custom-dark-palette, 'gray', 300);
 
                 .dropdown-item {
-                    color: color($custom-dark-palette, 'grays', 800);
+                    color: color($custom-dark-palette, 'gray', 800);
 
                     &:hover {
-                        background-color: color($custom-dark-palette, 'grays', 200);
+                        background-color: color($custom-dark-palette, 'gray', 200);
                     }
                 }
             }

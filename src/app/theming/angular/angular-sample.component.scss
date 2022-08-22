@@ -28,14 +28,22 @@ $saturations: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400
 
 $igx-light-palette: palette(
     $primary: #09f,
-    $secondary: #e41c77
+    $secondary: #e41c77,
+    $surface: #fff,
+    $info: #1377d5,
+    $success: #4eb862,
+    $warn: #fbb13c,
+    $error: #ff134a,
 );
 
 $custom-dark-palette: palette(
     $primary: #011627,
     $secondary: #72da67,
-    $grays: #fff,
     $surface: #222,
+    $info: #1377d5,
+    $success: #4eb862,
+    $warn: #fbb13c,
+    $error: #ff134a,
 );
 
 $light-palette-primary: mat.define-palette(material-like-palette('primary', $saturations, $igx-light-palette));
@@ -75,7 +83,7 @@ mat-toolbar div {
 
 .card-panel {
     margin: 8px 16px;
-    box-shadow: elevation($elevation: 2);
+    box-shadow: elevation( 2);
 }
 
 .mat-slider {
@@ -155,7 +163,7 @@ igx-expansion-panel-body {
             }
 
             igx-expansion-panel h5 {
-                color: color($custom-dark-palette, 'grays', 800);
+                color: color($custom-dark-palette, 'gray', 800);
             }
         }
     }

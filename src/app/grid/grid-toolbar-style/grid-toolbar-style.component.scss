@@ -4,7 +4,7 @@ $my-dark-palette: palette(
     $primary: #2466ff,
     $secondary: #FFCD0F,
     $surface: #2a2b2f,
-    $grays: #fff,
+    $gray: #fff,
 );
 
 $my-dark-color: color($my-dark-palette, 'surface');
@@ -12,7 +12,7 @@ $my-dark-color: color($my-dark-palette, 'surface');
 $dark-button-theme: button-theme(
     $palette: $my-dark-palette,
     $background: color($my-dark-palette, 'secondary'),
-    $hover-background: color($my-dark-palette, 'grays', 100),
+    $hover-background: color($my-dark-palette, 'gray', 100),
     $hover-foreground: color($my-dark-palette, 'secondary')
 );
 

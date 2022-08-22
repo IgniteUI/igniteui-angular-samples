@@ -6,7 +6,8 @@ $blue: #61aedb;
 
 $custom-palette: palette(
     $primary: $blue,
-    $secondary: $purple
+    $secondary: $purple,
+    $surface: #fff
 );
 
 $today-text: color($custom-palette, 'primary', 500);

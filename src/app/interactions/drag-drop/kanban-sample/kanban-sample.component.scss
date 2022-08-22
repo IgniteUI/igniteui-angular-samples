@@ -8,7 +8,7 @@ igx-card {
 
     &.drag-ghost {
         transform: scale(1.05);
-        box-shadow: elevation($elevation: 24);
+        box-shadow: elevation( 24);
         color: color($color: 'secondary', $variant: 300);
     }
 
@@ -42,9 +42,9 @@ igx-card {
         max-width: rem(320px);
         min-width: rem(320px);
         padding: 0 rem(16px);
-        background-color: color($color: 'grays', $variant: 100);
+        background-color: color($color: 'gray', $variant: 100);
         border-radius: rem(8px);
-        border: 1px solid color($color: 'grays', $variant: 200);
+        border: 1px solid color($color: 'gray', $variant: 200);
         margin: 0 rem(12px);
         overflow: auto;
 
@@ -57,7 +57,7 @@ igx-card {
             align-self: flex-start;
 
             .state-title {
-                @include type-style($material-type-scale, 'subtitle-1') {
+                @include type-style('subtitle-1') {
                     font-weight: 600;
                     margin: 0;
                 };
