@@ -1,37 +1,60 @@
-@use "../../../variables" as *;
-
-$my-light-gray: #e3e3e3;
-$my-banner-palette: $purple-palette;
-$custom-grid: grid-theme(
-    $palette: $purple-palette,
-);
-
-.sample-wrapper {
-    margin: 0 auto;
-    padding: 16px;
+h4 {
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.buttons-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+}
+.buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 0;
 }
 
-$banner-theme: banner-theme(
-    $banner-background: $my-light-gray,
-    $banner-message-color: color($my-banner-palette, "secondary", 600),
-);
-
-$button-theme: button-theme(
-    $palette: $purple-palette,
-);
-
-$custom-checkbox: checkbox-theme(
-    $palette: $my-banner-palette,
-);
-
-.custom-buttons {
-    @include button($button-theme);
+.addSingerBtn.igx-button--raised {
+    margin-bottom: 10px;
 }
 
-:host {
-    ::ng-deep {
-        @include checkbox($custom-checkbox);
-        @include grid($custom-grid);
-        @include banner($banner-theme);
+.dialogNewSinger {
+    > * {
+        margin-bottom: 8px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
+}
+
+.igx-checkbox {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+}
+
+.transaction--update,
+.transaction--delete,
+.transaction--add {
+    font-weight: 600;
+}
+.transaction--add {
+    color: #6b3;
+}
+.transaction--update {
+    color: #4a71b9;
+}
+.transaction--delete {
+    color: #ee4920;
+}
+.transaction-log {
+    word-wrap: none;
+}
+
+.grid-wrapper {
+    padding: 16px;
 }
