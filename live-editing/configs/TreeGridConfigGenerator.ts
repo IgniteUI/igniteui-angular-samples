@@ -250,6 +250,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: '/tree-grid/'
         }));
 
+        //TreeGrid Column Autosizing sample
+        configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridColumnAutoSizingSampleComponent'],
+                ngDeclarations: ['TreeGridColumnAutoSizingSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule']
+            }),
+            component: 'TreeGridColumnAutoSizingSampleComponent',
+            shortenComponentPathBy: '/tree-grid/'
+        }));
+
         // TreeGrid Column Resizing Line Styling sample
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts'],
@@ -1075,7 +1087,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             component: 'TreeGridFormattedFilteringStrategyComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
-        
+
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/foods.ts'],
             appModuleConfig: new AppModuleConfig({

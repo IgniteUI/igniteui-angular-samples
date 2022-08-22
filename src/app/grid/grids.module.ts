@@ -131,6 +131,7 @@ import { GridRowClassesComponent } from './grid-rowClasses-sample/grid-rowClasse
 import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.component';
 import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summary-template.component';
 import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-editing-excel-style.component';
+import { GridColumnAutosizingComponent } from './grid-column-autosizing/grid-column-autosizing.component';
 import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.component';
 import { GridValidatorServiceComponent } from './grid-validator-service/grid-validator-service.component';
 
@@ -254,6 +255,7 @@ import { GridValidatorServiceComponent } from './grid-validator-service/grid-val
         GridSummaryFormatterComponent,
         GridRowClassesComponent,
         GridRowStylesComponent,
+        GridColumnAutosizingComponent,
         GridWithRatingComponent,
         GridValidatorServiceComponent
     ],

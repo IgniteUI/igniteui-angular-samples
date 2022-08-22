@@ -97,6 +97,7 @@ import { HGridRowClassesSampleComponent } from './hgrid-rowClasses-sample/hgrid-
 import { HGridActionStripSampleComponent } from './hierarchical-grid-action-strip/hierarchical-grid-action-strip-sample';
 import { HGridSummaryTemplateComponent } from './hgrid-summary-template/hgrid-summary-template.component';
 import { HierarchicalGridValidatorServiceComponent } from './hierarchical-grid-validator-service/hierarchical-grid-validator-service.component';
+import { HGridColumnAutoSizingSampleComponent } from './hgrid-column-autosizing/hgrid-column-autosizing.component';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -547,6 +548,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HierarchicalGridValidatorServiceComponent,
         data: hierarchicalGridRoutesData['hierarchical-grid-validator-service'],
         path: 'hierarchical-grid-validator-service'
+    },
+    {
+        component: HGridColumnAutoSizingSampleComponent,
+        data: hierarchicalGridRoutesData['hGrid-columnAutosizing-sample'],
+        path: 'hGrid-columnAutosizing-sample'
     }
 ];
 
