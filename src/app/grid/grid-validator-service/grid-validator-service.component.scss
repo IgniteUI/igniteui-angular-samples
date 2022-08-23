@@ -6,6 +6,11 @@ $custom-grid: grid-theme(
     $palette: $purple-palette,
 );
 
+.top-row,
+.grid-wrapper {
+    padding: 16px;
+}
+
 .sample-wrapper {
     margin: 0 auto;
     padding: 16px;

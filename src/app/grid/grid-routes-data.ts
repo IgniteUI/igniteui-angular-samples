@@ -117,6 +117,7 @@ export const gridsRoutesData = {
     'grid-crud': { displayName: 'Grid CRUD Operations', parentName: 'Grid'},
     'grid-rowClasses-sample': { displayName: 'Grid rowClasses', parentName: 'Grid'},
     'grid-rowStyles-sample': { displayName: 'Grid rowStyles', parentName: 'Grid'},
+    'grid-columnAutoResizing-sample': { displayName: 'Grid Column Autoresizing', parentName: 'Grid'},
     'grid-with-rating': { displayName: 'Grid with Rating', parentName: 'Rating' },
     'grid-validator-service': { displayName: 'Grid Validator Service', parentName: 'Grid'},
     'grid-validator-service-extended': { displayName: 'Grid Validator Service Extended', parentName: 'Grid'}

@@ -1,0 +1,36 @@
+<div class="grid__wrapper">
+    <igx-hierarchical-grid igxPreventDocumentScroll  class="hierarchicalGrid" [data]="localData" [autoGenerate]="false" [height]="'520px'"
+        [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
+        <igx-column field="Artist" width="auto" [resizable]="true"></igx-column>
+        <igx-column field="Photo" width="auto" [resizable]="true" [minWidth]="'115px'">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner_2">
+                    <img [src]="cell.value" class="photo" />
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="Debut" width="auto" [resizable]="true" [minWidth]="'88px'" [maxWidth]="'230px'" dataType="number" [formatter]="formatter"></igx-column>
+        <igx-column field="GrammyNominations" header="Grammy Nominations" width="auto" [resizable]="true"></igx-column>
+        <igx-column field="GrammyAwards" header="Grammy Awards" width="auto" [resizable]="true"></igx-column>
+
+        <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false">
+            <igx-column field="Album" width="auto" [resizable]="true"></igx-column>
+            <igx-column field="LaunchDate" header="Launch Date" width="auto" [resizable]="true" [dataType]="'date'"></igx-column>
+            <igx-column field="BillboardReview" header="Billboard Review" width="auto" [resizable]="true"></igx-column>
+            <igx-column field="USBillboard200" header="US Billboard 200" width="auto" [resizable]="true"></igx-column>
+            <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false">
+                <igx-column field="Number" header="No." width="auto" [resizable]="true"></igx-column>
+                <igx-column field="Title" width="auto" [resizable]="true"></igx-column>
+                <igx-column field="Released" dataType="date" width="auto" [resizable]="true"></igx-column>
+                <igx-column field="Genre" width="auto" [resizable]="true"></igx-column>
+            </igx-row-island>
+        </igx-row-island>
+
+        <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false">
+            <igx-column field="Tour" width="auto" [resizable]="true"></igx-column>
+            <igx-column field="StartedOn" header="Started on" width="auto" [resizable]="true"></igx-column>
+            <igx-column field="Location" width="auto" [resizable]="true"></igx-column>
+            <igx-column field="Headliner" width="auto" [resizable]="true"></igx-column>
+        </igx-row-island>
+    </igx-hierarchical-grid>
+</div>

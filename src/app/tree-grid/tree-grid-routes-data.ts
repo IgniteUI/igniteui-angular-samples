@@ -118,5 +118,7 @@ export const treeGridRoutesData = {
     'tree-grid-summary-formatter': { displayName: 'TreeGrid Summary Formatter', parentName: 'TreeGrid' },
     'tree-grid-styles-sample': { displayName: 'TreeGrid RowStyles sample', parentName: 'TreeGrid'},
     'tree-grid-classes': { displayName: 'TreeGrid RowClasses sample', parentName: 'TreeGrid'},
-    'tree-grid-action-strip': { displayName: 'TreeGrid with Action Strip', parentName: 'TreeGrid' }
+    'tree-grid-action-strip': { displayName: 'TreeGrid with Action Strip', parentName: 'TreeGrid' },
+    'tree-grid-columnAutoSizing-sample': { displayName: 'TreeGrid with Column Autosizing', parentName: 'TreeGrid' },
+    'tree-grid-validator-service': { displayName: 'Tree Grid Validator Service', parentName: 'TreeGrid' }
 };
