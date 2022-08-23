@@ -30,7 +30,10 @@
             "optimization": false,
             "namedChunks": true,
             "sourceMap": false,
-            "progress": true
+            "progress": true,
+            "stylePreprocessorOptions": {
+                "includePaths": ["node_modules"]
+            }
           },
           "configurations": {
             "production": {
