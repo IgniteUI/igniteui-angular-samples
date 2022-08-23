@@ -16,12 +16,12 @@
         <igx-column field="email" width="190" header="Email" [editable]="true" required email></igx-column>
         <igx-column field="fax" header="Phone" [editable]="true"></igx-column>
         <igx-column field="created_on" header="Date of Registration" width="170" [editable]="true"
-            [dataType]="'dateTime'" required>
+            [dataType]="'date'" required>
             <ng-template igxCell let-cell>
                 {{ cell | date: 'longDate' }}
             </ng-template>
         </igx-column>
-        <igx-column field="last_activity" header="Last Active" width="170" [editable]="true" [dataType]="'dateTime'"
+        <igx-column field="last_activity" header="Last Active" width="170" [editable]="true" [dataType]="'date'"
             required>
             <ng-template igxCell let-cell>
                 {{ cell | date: 'longDate' }}
