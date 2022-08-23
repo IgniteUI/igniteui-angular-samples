@@ -1352,8 +1352,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridValidatorServiceComponent',
             additionalFiles: [
                 '/src/app/directives/prevent-scroll.directive.ts',
-                '/src/app/data/employeesData.ts',
-                '/src/app/data/athletesData.ts'
+                '/src/app/data/employeesData.ts'
 
             ],
             appModuleConfig: new AppModuleConfig({
@@ -1367,7 +1366,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridColumnAutosizingComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: [ 'IgxGridModule', 'GridColumnAutosizingComponent', 'IgxPreventDocumentScrollModule'],
+                imports: ['IgxGridModule', 'GridColumnAutosizingComponent', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridColumnAutosizingComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
             })
