@@ -938,9 +938,8 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             component: 'HierarchicalGridValidatorServiceComponent',
             additionalFiles: [
                 '/src/app/directives/prevent-scroll.directive.ts',
-                '/src/app/data/employeesData.ts',
-                '/src/app/data/athletesData.ts'
-
+                '/src/app/data/singersData.ts',
+                '/src/app/hierarchical-grid/models.ts'
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['HierarchicalGridValidatorServiceComponent', 'IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule'],
