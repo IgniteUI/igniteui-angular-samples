@@ -91,7 +91,10 @@ export class GridValidatorServiceExtendedComponent {
         return (control: AbstractControl): ValidationErrors | null => {
             const date = control.value;
             const exceedingThreshold = !!thresholdVal ? date < thresholdVal : false;
-            return !exceedingThreshold ? date < new Date() ? null : { forbiddenDate: { value: control.value } } : { beyondThreshold: { value: control.value } };
+            if (!exceedingThreshold) {
+                return date < new Date() ? null : { forbiddenDate: { value: control.value } };
+            }
+            return { beyondThreshold: { value: control.value } };
         }
     }
 }
