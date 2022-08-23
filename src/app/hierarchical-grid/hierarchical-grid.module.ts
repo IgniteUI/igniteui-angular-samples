@@ -93,6 +93,7 @@ import { HGridActionStripSampleComponent } from './hierarchical-grid-action-stri
 import { HGridSummaryTemplateComponent } from './hgrid-summary-template/hgrid-summary-template.component';
 import { HierarchicalGridValidatorServiceComponent } from './hierarchical-grid-validator-service/hierarchical-grid-validator-service.component';
 import { HGridColumnAutoSizingSampleComponent } from './hgrid-column-autosizing/hgrid-column-autosizing.component';
+import { HierarchicalGridValidatorServiceExtendedComponent } from './hierarchical-grid-validator-service-extended/hierarchical-grid-validator-service-extended.component';
 
 @NgModule({
     declarations: [
@@ -178,6 +179,7 @@ import { HGridColumnAutoSizingSampleComponent } from './hgrid-column-autosizing/
         HGridRowClassesSampleComponent,
         HGridActionStripSampleComponent,
         HierarchicalGridValidatorServiceComponent,
+        HierarchicalGridValidatorServiceExtendedComponent,
         HGridColumnAutoSizingSampleComponent
     ],
     imports: [
