@@ -15,7 +15,7 @@
         <igx-column field="Title" header="Title" dataType="string" [editable]="true" required></igx-column>
         <igx-column field="HireDate" header="Hire Date" dataType="date" [editable]="true" required>
             <ng-template igxCellValidationError>
-                <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['forbiddenDate']">
+                <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.forbiddenDate">
                     The date is invalid.
                 </div>
             </ng-template>

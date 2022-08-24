@@ -1,8 +1,7 @@
 import { Component, Directive, Input, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { IgxColumnValidator, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
-import { SINGERS } from '../../data/singersData';
-import { Singer } from '../models';
+import { CUSTOMERS } from '../../data/hierarchical-data';
 export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
         const forbidden = nameRe.test(control.value);
@@ -30,48 +29,41 @@ export class ForbiddenValidatorDirective extends IgxColumnValidator {
     templateUrl: './hierarchical-grid-validator-service-extended.component.html'
 })
 export class HierarchicalGridValidatorServiceExtendedComponent implements OnInit {
-    @ViewChild('childGrid', { static: true })
-    private childGrid: IgxRowIslandComponent;
 
     @ViewChild('hierarchicalGrid', { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
-    public data: Singer[];
-
-    public rowEdit: boolean = false;
-
-    constructor() { }
-
     public ngOnInit(): void {
-        this.data = SINGERS;
+        this.hierarchicalGrid.data = CUSTOMERS;
+        for (const item of this.hierarchicalGrid.data) {
+            const names = item.CompanyName.split(' ');
+            item.FirstName = names[0];
+            item.LastName = names[names.length - 1];
+            item.FullAddress = `${item.Address}, ${item.City}, ${item.Country}`;
+            item.PersonelDetails = `${item.ContactTitle}: ${item.ContactName}`;
+            item.CompanysAnnualProfit = (100000 + (Math.random() * Math.floor(1000000))).toFixed(0);
+        }
     }
-
-    public formatter = a => a;
 
     public formCreateHandler(formGroup: FormGroup) {
-        const debutRecord = formGroup.get('Debut');
-        const launchDateRecord = formGroup.get('LaunchDate');
-        debutRecord?.addValidators(this._validateDate());
-        launchDateRecord?.addValidators(this._validateDate(debutRecord));
+        const orderDateRecord = formGroup.get('OrderDate');
+        const requiredDateRecord = formGroup.get('RequiredDate');
+        const shippedDateRecord = formGroup.get('ShippedDate');
+
+        orderDateRecord.addValidators(this._testDateRecord());
+        requiredDateRecord.addValidators(this._testDateRecord(orderDateRecord?.value));
+        shippedDateRecord.addValidators(this._testDateRecord(orderDateRecord?.value));
     }
 
-    private _validateDate(debutRecord?: AbstractControl): ValidatorFn {
+    private _testDateRecord(thresholdVal?: any): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
-            if (typeof control.value === 'number') {
-                if (control.value >= 1870 && control.value <= new Date().getFullYear()) {
-                    return null;
-                } else {
-                    return { invalidYear: { value: control.value } };
-                }
+            const date = control.value;
+            const exceedingThreshold = !!thresholdVal ? date < thresholdVal : false;
+            if (!exceedingThreshold) {
+                return date < new Date() ? null : { invalidDate: { value: control.value } };
             }
-            if (control.value instanceof Date) {
-                if (control.value <= new Date()) {
-                    return null;
-                } else {
-                    return { invalidAlbumYr: { value: control.value } };
-                }
-            }
-        };
+            return { beyondThreshold: { value: control.value } };
+        }
     }
 
 }
