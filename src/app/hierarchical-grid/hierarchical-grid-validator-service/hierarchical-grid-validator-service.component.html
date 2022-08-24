@@ -1,27 +1,38 @@
 <div class="top-row">
     <igx-switch [(ngModel)]="rowEdit">Row edit</igx-switch>
 </div>
+
 <div class="grid-wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid [batchEditing]="true" class="hgrid" [data]="data"
-        [primaryKey]="'Artist'" [height]="'550px'" [width]="'100%'" [rowEditable]="rowEdit">
-        <igx-column field="Artist" header="Artist" [editable]="false" [dataType]="'string'"></igx-column>
-        <igx-column field="HasGrammyAward" header="Has Grammy Award?" [editable]="true" [dataType]="'boolean'">
+    <igx-hierarchical-grid #hierarchicalGrid height="570px" width="100%" [primaryKey]="'CustomerID'"
+        [batchEditing]="true" [rowEditable]="true" [rowEditable]="rowEdit">
+        <igx-column field="CustomerID" [editable]="true"></igx-column>
+        <igx-column field="CompanyName" [editable]="true" required></igx-column>
+        <igx-column field="ContactName" [editable]="true" required>
         </igx-column>
-        <igx-column field="Debut" header="Debut" [editable]="true" dataType="number" [formatter]="formatter" required>
-        </igx-column>
-        <igx-column field="GrammyNominations" header="Grammy Nominations" [editable]="true" dataType="number" required
-            min="0">
-        </igx-column>
-        <igx-column field="GrammyAwards" header="Grammy Awards" [editable]="true" dataType="number" required min="0">
-        </igx-column>
-        <igx-row-island [height]="null" #childGrid [key]="'Albums'" [primaryKey]="'Album'" [rowEditable]="true">
-            <igx-column field="Album" [editable]="false" [dataType]="'string'"></igx-column>
-            <igx-column field="LaunchDate" header="Launch Date" [editable]="true" [dataType]="'date'" required>
+        <igx-column field="ContactTitle" [editable]="true" required></igx-column>
+        <igx-column field="Phone" [editable]="true" required></igx-column>
+        <igx-column field="Fax" [editable]="true"></igx-column>
+
+        <igx-row-island [height]="null" [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false"
+            [batchEditing]="true" [rowEditable]="true" [rowEditable]="rowEdit">
+            <igx-column [editable]="false" field="OrderID"></igx-column>
+            <igx-column [editable]="true" field="EmployeeID" [editable]="true" required></igx-column>
+            <igx-column [editable]="true" field="OrderDate" [dataType]="'date'" [editable]="true" required>
             </igx-column>
-            <igx-column field="BillboardReview" header="Billboard Review" [editable]="true" dataType="number" min="1">
+            <igx-column [editable]="true" field="RequiredDate" [dataType]="'date'" [editable]="true" required>
             </igx-column>
-            <igx-column field="USBillboard200" header="US Billboard 200" [editable]="true" dataType="number" min="1">
+            <igx-column field="ShippedDate" [dataType]="'date'" [editable]="true">
             </igx-column>
+            <igx-column field="ShipVia" [selectable]="false" [editable]="true" min="0" max="10"></igx-column>
+            <igx-column field="Freight" [selectable]="false" [editable]="true"></igx-column>
+
+            <igx-row-island [height]="null" [key]="'OrderDetails'" [primaryKey]="'ProductID'" [autoGenerate]="false"
+                [batchEditing]="true" [rowEditable]="true" [primaryKey]="'ProductID'" [rowEditable]="rowEdit">
+                <igx-column [editable]="true" field="ProductID" [editable]="false" required></igx-column>
+                <igx-column [editable]="true" field="UnitPrice" [editable]="true" required></igx-column>
+                <igx-column [editable]="true" field="Quantity" [editable]="true" required></igx-column>
+                <igx-column [editable]="true" field="Discount" [editable]="true"></igx-column>
+            </igx-row-island>
         </igx-row-island>
     </igx-hierarchical-grid>
 </div>
