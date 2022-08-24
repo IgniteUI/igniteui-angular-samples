@@ -1381,7 +1381,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridValidatorServiceExtendedComponent', 'IgxGridModule', 'IgxFocusModule', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['GridValidatorServiceExtendedComponent'],
+                ngDeclarations: ['GridValidatorServiceExtendedComponent', 'ForbiddenValidatorDirective'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxFocusModule']
             })
         }));
