@@ -6,6 +6,8 @@ import { PivotDataSelectorSampleComponent } from './pivot-datasource/pivot-data-
 import { PivotFeaturesComponent } from './pivot-features/pivot-features.component';
 import { PivotGridNoopSampleComponent } from './pivot-grid-noop/pivot-grid-noop-sample.component';
 import { pivotGridsRoutesData } from './pivot-grid-routes-data';
+import { PivotGridAboutComponent } from './pivot-state-persistance/about.component';
+import { PivotGridStatePersistanceSampleComponent } from './pivot-state-persistance/pivot-grid-state-persistance-sample.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -14,7 +16,7 @@ export const gridsRoutes: Routes = [
         data: pivotGridsRoutesData['pivot-grid-basic'],
         path: 'pivot-grid-basic'
     },
-    { 
+    {
         component: PivotFeaturesComponent,
         data: pivotGridsRoutesData['pivot-grid-features'],
         path: 'pivot-grid-features'
@@ -28,8 +30,17 @@ export const gridsRoutes: Routes = [
         component: PivotGridNoopSampleComponent,
         data: pivotGridsRoutesData['pivot-grid-noop'],
         path: 'pivot-grid-noop'
+    },
+    {
+        component: PivotGridStatePersistanceSampleComponent,
+        data: pivotGridsRoutesData['pivot-grid-features'],
+        path: 'pivot-grid-state-persistance'
+    },
+    {
+        component: PivotGridAboutComponent,
+        data: pivotGridsRoutesData['pivot-grid-about'],
+        path: 'pivot-state-about'
     }
-
 ];
 
 @NgModule({

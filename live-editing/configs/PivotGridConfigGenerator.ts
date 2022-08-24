@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable max-len */
+import {Router,
+    RouterModule} from '@angular/router';
 import {
-    IgxPivotGridModule
+    IgxPivotGridModule,
+    IgxTooltipModule,
+    IgxToastModule,
+    IgxSwitchModule
 } from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class PivotGridConfigGenerator implements IConfigGenerator {
@@ -30,6 +35,19 @@ export class PivotGridConfigGenerator implements IConfigGenerator {
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxPivotGridModule']
             }),
             component: 'PivotFeaturesComponent'
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/dataToAnalyze.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPivotGridModule', 'PivotGridStatePersistanceSampleComponent', 'PivotGridAboutComponent', 'IgxPreventDocumentScrollModule', 'IgxTooltipModule',
+                    'IgxToastModule', 'IgxSwitchModule', 'Router', 'RouterModule'],
+                ngDeclarations: ['PivotGridStatePersistanceSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxPivotGridModule', 'IgxTooltipModule', 'PivotGridAboutComponent',
+                'RouterModule.forRoot([\{component: PivotGridAboutComponent, path: \'pivot-grid-about\'},\{component: PivotGridStatePersistanceSampleComponent, path: \'pivot-grid-state-persistance\'},\{ path: \'\', redirectTo: \'/pivot-grid-state-persistance\', pathMatch: \'full\' }])',
+                    'IgxToastModule', 'IgxSwitchModule']
+            }),
+            component: 'PivotGridStatePersistanceSampleComponent'
         }));
 
         configs.push(new Config({
