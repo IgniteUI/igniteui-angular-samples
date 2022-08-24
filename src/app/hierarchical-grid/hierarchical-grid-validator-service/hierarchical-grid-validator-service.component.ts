@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
-import { SINGERS } from '../../data/singersData';
-import { Singer } from '../models';
+import { IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { CUSTOMERS } from '../../data/hierarchical-data';
 
 @Component({
     selector: 'app-hierarchical-grid-validator-service',
@@ -9,22 +8,22 @@ import { Singer } from '../models';
     templateUrl: './hierarchical-grid-validator-service.component.html'
 })
 export class HierarchicalGridValidatorServiceComponent implements OnInit {
-    @ViewChild('childGrid', { static: true })
-    private childGrid: IgxRowIslandComponent;
 
     @ViewChild('hierarchicalGrid', { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
-    public data: Singer[];
-
     public rowEdit: boolean = false;
 
-    constructor() { }
-
     public ngOnInit(): void {
-        this.data = SINGERS;
+        this.hierarchicalGrid.data = CUSTOMERS;
+        for (const item of this.hierarchicalGrid.data) {
+            const names = item.CompanyName.split(' ');
+            item.FirstName = names[0];
+            item.LastName = names[names.length - 1];
+            item.FullAddress = `${item.Address}, ${item.City}, ${item.Country}`;
+            item.PersonelDetails = `${item.ContactTitle}: ${item.ContactName}`;
+            item.CompanysAnnualProfit = (100000 + (Math.random() * Math.floor(1000000))).toFixed(0);
+        }
     }
-
-    public formatter = a => a;
 
 }
