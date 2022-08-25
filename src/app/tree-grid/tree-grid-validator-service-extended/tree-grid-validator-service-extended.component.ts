@@ -47,6 +47,19 @@ export class TreeGridValidatorServiceExtendedComponent implements OnInit {
         hireDateRecord.addValidators(this._testDateRecord())
     }
 
+    /**
+     * Bind this handler to `cellEdit` output of the grid
+     * in order to cancel cell editing in case the submitted
+     * value is invalid.
+     * 
+     * @param evt 
+     */
+    public cellEdit(evt) {
+        if (!evt.isValid) {
+            evt.cancel = true;
+        }
+    }
+
     private _testDateRecord(): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
             const date = control.value;

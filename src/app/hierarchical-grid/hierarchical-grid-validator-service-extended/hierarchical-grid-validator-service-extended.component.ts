@@ -55,6 +55,19 @@ export class HierarchicalGridValidatorServiceExtendedComponent implements OnInit
         shippedDateRecord.addValidators(this._testDateRecord(orderDateRecord?.value));
     }
 
+    /**
+     * Bind this handler to `cellEdit` output of the grid
+     * in order to cancel cell editing in case the submitted
+     * value is invalid.
+     * 
+     * @param evt 
+     */
+    public cellEdit(evt) {
+        if (!evt.isValid) {
+            evt.cancel = true;
+        }
+    }
+
     private _testDateRecord(thresholdVal?: any): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
             const date = control.value;
