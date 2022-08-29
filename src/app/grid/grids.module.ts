@@ -134,7 +134,7 @@ import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-
 import { GridColumnAutosizingComponent } from './grid-column-autosizing/grid-column-autosizing.component';
 import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.component';
 import { GridValidatorServiceComponent } from './grid-validator-service/grid-validator-service.component';
-import { ForbiddenValidatorDirective, GridValidatorServiceExtendedComponent } from './grid-validator-service-extended/grid-validator-service-extended.component';
+import { GridValidatorServiceExtendedComponent, PhoneFormatDirective } from './grid-validator-service-extended/grid-validator-service-extended.component';
 
 @NgModule({
     declarations: [
@@ -260,7 +260,7 @@ import { ForbiddenValidatorDirective, GridValidatorServiceExtendedComponent } fr
         GridWithRatingComponent,
         GridValidatorServiceComponent,
         GridValidatorServiceExtendedComponent,
-        ForbiddenValidatorDirective
+        PhoneFormatDirective
     ],
     imports: [
         CommonModule,

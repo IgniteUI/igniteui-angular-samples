@@ -1,25 +1,25 @@
 import { Component, Directive, Input, ViewChild } from '@angular/core';
-import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn } from '@angular/forms';
-import { IgxColumnValidator, IgxGridComponent } from 'igniteui-angular';
+import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { IgxGridComponent } from 'igniteui-angular';
 import { employeesData } from '../../data/employeesData';
 
-export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-        const forbidden = nameRe.test(control.value);
-        return forbidden ? { forbiddenName: { value: control.value } } : null;
-    };
+        const match = phoneReg.test(control.value);
+        return match ? null : { phoneFormat: { value: control.value } } ;
+    }
 }
 
 @Directive({
-    selector: '[forbiddenName]',
-    providers: [{ provide: NG_VALIDATORS, useExisting: ForbiddenValidatorDirective, multi: true }]
+    selector: '[phoneFormat]',
+    providers: [{ provide: NG_VALIDATORS, useExisting: PhoneFormatDirective, multi: true }]
 })
-export class ForbiddenValidatorDirective extends IgxColumnValidator {
-    @Input('forbiddenName')
-    public forbiddenNameString = '';
+export class PhoneFormatDirective extends Validators {
+    @Input('phoneFormat')
+    public phoneFormatString = '';
 
     public validate(control: AbstractControl): ValidationErrors | null {
-        return this.forbiddenNameString ? forbiddenNameValidator(new RegExp(this.forbiddenNameString, 'i'))(control)
+        return this.phoneFormatString ? phoneFormatValidator(new RegExp(this.phoneFormatString, 'i'))(control)
             : null;
     }
 }
@@ -43,10 +43,8 @@ export class GridValidatorServiceExtendedComponent {
     }
 
     public formCreateHandler(formGroup: FormGroup) {
-        const faxRecord = formGroup.get('fax');
         const createdOnRecord = formGroup.get('created_on');
         const lastActiveRecord = formGroup.get('last_activity');
-        faxRecord.addValidators(this._testFax());
         createdOnRecord.addValidators(this._testDateRecord());
         lastActiveRecord.addValidators(this._testDateRecord(createdOnRecord.value));
     }
@@ -55,46 +53,37 @@ export class GridValidatorServiceExtendedComponent {
      * Bind this handler to `cellEdit` output of the grid
      * in order to cancel cell editing in case the submitted
      * value is invalid.
-     * 
-     * @param evt 
+     *
+     * @param evt
      */
+
     public cellEdit(evt) {
-        if (!evt.isValid) {
+        if (!evt.valid) {
             evt.cancel = true;
         }
     }
 
     public commit() {
-        const invalidTransactions = this.grid.transactions.getInvalidTransactionLog();
+        const invalidTransactions = this.grid.validation.getInvalid();
         if (invalidTransactions.length > 0) {
             if (confirm('You\'re commiting invalid transactions. Are you sure?')) {
-                this.grid.transactions.commit(this.transactionData);
+                this.grid.validation.clear();
             }
         } else {
-            this.grid.transactions.commit(this.transactionData);
+            this.grid.validation.clear();
         }
     }
 
-    private _testFax(): ValidatorFn {
-        return (control: AbstractControl): ValidationErrors | null => {
-            const match = this._regexValidationFunction(control.value, /\+\d{1}\-(?!0)(\d{3})\-(\d{3})\-(\d{4})\b/i);
-            return !match ? { forbiddenFax: { value: control.value } } : null;
-        }
-    }
-
-    private _regexValidationFunction(value: any, rgx: RegExp): boolean {
-        const match = rgx?.test(value);
-        return !!match;
-    }
-
-    private _testDateRecord(thresholdVal?: any): ValidatorFn {
+    public _testDateRecord(thresholdVal?: any): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
             const date = control.value;
-            const exceedingThreshold = !!thresholdVal ? date < thresholdVal : false;
-            if (!exceedingThreshold) {
-                return date < new Date() ? null : { forbiddenDate: { value: control.value } };
+            if(date > new Date()){
+                return { beyondThreshold: { value: control.value } };
             }
-            return { beyondThreshold: { value: control.value } };
+            if(thresholdVal){
+                return thresholdVal < date ? null : { priorThreshold: { value: control.value } }
+            }
+            return null;
         }
     }
 }

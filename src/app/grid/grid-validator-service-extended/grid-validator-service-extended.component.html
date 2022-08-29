@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <igx-grid #grid1 [data]="data" [width]="'100%'" [height]="'480px'" [autoGenerate]="false" [batchEditing]="true"
-        [primaryKey]="'id'" (onFormGroupCreate)='formCreateHandler($event)'>
+        [primaryKey]="'id'" (formGroupCreated)='formCreateHandler($event)'>
         <igx-column field="Avatar" header="Photo" dataType="string" width="80" [editable]="false">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner avatar-cell">
@@ -8,37 +8,31 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="name" forbiddenName="josh" header="Name" [editable]="true" required>
-            <ng-template igxCellValidationError let-cell='cell'>
-                <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
-                </ng-container>
-                <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['forbiddenName']">
-                    This name is forbidden.
-                </div>
-            </ng-template>
+        <igx-column field="name" header="Name" [editable]="true" required>
         </igx-column>
         <igx-column field="company" header="Company" [editable]="true"></igx-column>
         <igx-column field="email" width="190" header="Email" [editable]="true" required email></igx-column>
-        <igx-column field="fax" header="Phone" [editable]="true">
+        <igx-column field="fax" header="Phone" [editable]="true" phoneFormat="\+\d{1}\-(?!0)(\d{3})\-(\d{3})\-(\d{4})\b">
             <ng-template igxCellValidationError let-cell='cell'>
                 <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
                 </ng-container>
-                <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['forbiddenFax']">
-                    Please, submit a valid American fax number.
+                <div *ngIf="cell.errors?.['phoneFormat']">
+                    Please enter correct phone format
                 </div>
             </ng-template>
         </igx-column>
         <igx-column field="created_on" header="Date of Registration" width="170" [editable]="true"
             [dataType]="'dateTime'" required>
-            <ng-template igxCell let-cell>
-                {{ cell | date: 'longDate' }}
-            </ng-template>
-            <ng-template igxCellValidationError let-cell='cell'>
-                <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
+            <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
+                <ng-container *ngTemplateOutlet="defaultErr" >
+                    Invalid Date
                 </ng-container>
-                <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['forbiddenDate']">
+                <div *ngIf="cell.errors?.['beyondThreshold']">
                     The date cannot be in the future.
                 </div>
+            </ng-template>
+            <ng-template igxCell let-cell>
+                {{ cell | date: 'longDate' }}
             </ng-template>
         </igx-column>
         <igx-column field="last_activity" header="Last Active" width="170" [editable]="true" [dataType]="'dateTime'"
@@ -49,11 +43,11 @@
             <ng-template igxCellValidationError let-cell='cell'>
                 <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
                 </ng-container>
-                <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['forbiddenDate']">
+                <div *ngIf="cell.errors?.['beyondThreshold']">
                     The date cannot be in the future.
                 </div>
-                <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['beyondThreshold']">
-                    The date cannot be past the date of registration.
+                <div *ngIf="cell.errors?.['priorThreshold']">
+                    The date cannot be prior the date of registration.
                 </div>
             </ng-template>
         </igx-column>

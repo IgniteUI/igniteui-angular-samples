@@ -1,29 +1,26 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, Directive, Input, OnInit, ViewChild } from '@angular/core';
-import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn } from '@angular/forms';
-import {
-    IgxColumnValidator,
-    IgxTreeGridComponent
-} from 'igniteui-angular';
+import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { IgxTreeGridComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
-export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+export function minAgeValidator(age: number): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-        const forbidden = nameRe.test(control.value);
-        return forbidden ? { forbiddenName: { value: control.value } } : null;
+        const isOfAge = age < control.value;
+        return isOfAge ? null : { minAge: { value: control.value } } ;
     };
 }
 
 @Directive({
-    selector: '[forbiddenName]',
+    selector: '[minAge]',
     providers: [{ provide: NG_VALIDATORS, useExisting: ForbiddenValidatorDirective, multi: true }]
 })
-export class ForbiddenValidatorDirective extends IgxColumnValidator {
-    @Input('forbiddenName')
-    public forbiddenNameString = '';
+export class ForbiddenValidatorDirective extends Validators {
+    @Input('minAge')
+    public minAgeValue: number;
 
     public validate(control: AbstractControl): ValidationErrors | null {
-        return this.forbiddenNameString ? forbiddenNameValidator(new RegExp(this.forbiddenNameString, 'i'))(control)
+        return this.minAgeValue ? minAgeValidator(this.minAgeValue)(control)
             : null;
     }
 }
@@ -51,11 +48,11 @@ export class TreeGridValidatorServiceExtendedComponent implements OnInit {
      * Bind this handler to `cellEdit` output of the grid
      * in order to cancel cell editing in case the submitted
      * value is invalid.
-     * 
-     * @param evt 
+     *
+     * @param evt
      */
     public cellEdit(evt) {
-        if (!evt.isValid) {
+        if (!evt.valid) {
             evt.cancel = true;
         }
     }

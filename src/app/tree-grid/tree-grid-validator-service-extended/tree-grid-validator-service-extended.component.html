@@ -3,7 +3,14 @@
         foreignKey="ParentID" [width]="'100%'" [height]="'500px'" [rowEditable]="true"
         (onFormGroupCreate)="formCreateHandler($event)">
         <igx-column field="ID" header="ID" dataType="number" [editable]="false"></igx-column>
-        <igx-column field="Age" header="Age" dataType="number" [editable]="true" required min="18" max="99">
+        <igx-column field="Age" header="Age" dataType="number" minAge="18" [editable]="true" required max="99">
+            <ng-template igxCellValidationError let-cell='cell'>
+                <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
+                </ng-container>
+                <div *ngIf="cell.errors?.['minAge']">
+                    Min age is 18
+                </div>
+            </ng-template>
         </igx-column>
         <igx-column field="Name" header="Full Name" dataType="string" [editable]="true" forbiddenName="bob" required>
             <ng-template igxCellValidationError>

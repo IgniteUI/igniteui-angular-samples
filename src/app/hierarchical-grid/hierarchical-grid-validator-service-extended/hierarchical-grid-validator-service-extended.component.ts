@@ -1,24 +1,25 @@
 import { Component, Directive, Input, OnInit, ViewChild } from '@angular/core';
-import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn } from '@angular/forms';
-import { IgxColumnValidator, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { CUSTOMERS } from '../../data/hierarchical-data';
-export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+
+export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-        const forbidden = nameRe.test(control.value);
-        return forbidden ? { forbiddenName: { value: control.value } } : null;
-    };
+        const match = phoneReg.test(control.value);
+        return match ? null : { phoneFormat: { value: control.value } } ;
+    }
 }
 
 @Directive({
-    selector: '[forbiddenName]',
-    providers: [{ provide: NG_VALIDATORS, useExisting: ForbiddenValidatorDirective, multi: true }]
+    selector: '[phoneFormat]',
+    providers: [{ provide: NG_VALIDATORS, useExisting: PhoneFormatDirective, multi: true }]
 })
-export class ForbiddenValidatorDirective extends IgxColumnValidator {
-    @Input('forbiddenName')
-    public forbiddenNameString = '';
+export class PhoneFormatDirective extends Validators {
+    @Input('phoneFormat')
+    public phoneFormatString = '';
 
     public validate(control: AbstractControl): ValidationErrors | null {
-        return this.forbiddenNameString ? forbiddenNameValidator(new RegExp(this.forbiddenNameString, 'i'))(control)
+        return this.phoneFormatString ? phoneFormatValidator(new RegExp(this.phoneFormatString, 'i'))(control)
             : null;
     }
 }
@@ -59,23 +60,25 @@ export class HierarchicalGridValidatorServiceExtendedComponent implements OnInit
      * Bind this handler to `cellEdit` output of the grid
      * in order to cancel cell editing in case the submitted
      * value is invalid.
-     * 
-     * @param evt 
+     *
+     * @param evt
      */
     public cellEdit(evt) {
-        if (!evt.isValid) {
+        if (!evt.valid) {
             evt.cancel = true;
         }
     }
 
-    private _testDateRecord(thresholdVal?: any): ValidatorFn {
+    public _testDateRecord(thresholdVal?: any): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
             const date = control.value;
-            const exceedingThreshold = !!thresholdVal ? date < thresholdVal : false;
-            if (!exceedingThreshold) {
-                return date < new Date() ? null : { invalidDate: { value: control.value } };
+            if(date > new Date()){
+                return { beyondThreshold: { value: control.value } };
             }
-            return { beyondThreshold: { value: control.value } };
+            if(thresholdVal){
+                return thresholdVal < date ? null : { priorThreshold: { value: control.value } }
+            }
+            return null;
         }
     }
 

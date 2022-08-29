@@ -1,23 +1,32 @@
 <div class="grid-wrapper">
-    <igx-hierarchical-grid #hierarchicalGrid height="570px" width="100%" [primaryKey]="'CustomerID'"
+    <igx-hierarchical-grid #hierarchicalGrid height="570px" width="100%" [primaryKey]="'CustomerID'" (formGroupCreated)="formCreateHandler($event)"
         [batchEditing]="true" [rowEditable]="true">
         <igx-column field="CustomerID" [editable]="false"></igx-column>
         <igx-column field="CompanyName" [editable]="true" required></igx-column>
-        <igx-column field="ContactName" [editable]="true" forbiddenName="bob" required>
+        <igx-column field="ContactName" [editable]="true" required>
         </igx-column>
         <igx-column field="ContactTitle" [editable]="true" required></igx-column>
-        <igx-column field="Phone" [editable]="true" required></igx-column>
+        <igx-column field="Phone" [editable]="true" required phoneFormat="\(?\d{3}\)?-? *\d{3}-? *-?\d{4}">
+            <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
+                <ng-container *ngTemplateOutlet="defaultErr" >
+                    This Field is required
+                </ng-container>
+                <div *ngIf="cell.errors?.['phoneFormat']">
+                    Please enter correct phone format
+                </div>
+            </ng-template>
+        </igx-column>
         <igx-column field="Fax" [editable]="true"></igx-column>
 
         <igx-row-island [height]="null" [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false"
-            [batchEditing]="true" [rowEditable]="true" (onFormGroupCreate)="formCreateHandler($event)">
+            [batchEditing]="true" [rowEditable]="true" (formGroupCreated)="formCreateHandler($event)">
             <igx-column [editable]="false" field="OrderID"></igx-column>
             <igx-column [editable]="true" field="EmployeeID" [editable]="true" required></igx-column>
             <igx-column [editable]="true" field="OrderDate" [dataType]="'date'" [editable]="true" required>
                 <ng-template igxCellValidationError let-cell='cell'>
                     <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
                     </ng-container>
-                    <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['invalidDate']">
+                    <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['beyondThreshold']">
                         The date cannot be in the future.
                     </div>
                 </ng-template>
@@ -26,10 +35,10 @@
                 <ng-template igxCellValidationError let-cell='cell'>
                     <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
                     </ng-container>
-                    <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['invalidDate']">
+                    <div *ngIf="cell.errors?.['beyondThreshold']">
                         The date cannot be in the future.
                     </div>
-                    <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['beyondThreshold']">
+                    <div *ngIf="cell.errors?.['priorThreshold']">
                         The date cannot be past the order date.
                     </div>
                 </ng-template>
@@ -38,10 +47,10 @@
                 <ng-template igxCellValidationError let-cell='cell'>
                     <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
                     </ng-container>
-                    <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['invalidDate']">
+                    <div *ngIf="cell.errors?.['beyondThreshold']">
                         The date cannot be in the future.
                     </div>
-                    <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['beyondThreshold']">
+                    <div *ngIf="cell.errors?.['priorThreshold']">
                         The date cannot be past the order date.
                     </div>
                 </ng-template>
