@@ -1,12 +1,12 @@
 <div class="top-row">
     <igx-switch [(ngModel)]="rowEdit">Row edit</igx-switch>
 </div>
-<div class="grid__wrapper">
+<div class="grid-wrapper">
     <igx-grid #grid1 [data]="data" [width]="'100%'" [height]="'480px'" [autoGenerate]="false" [batchEditing]="true"
         [rowEditable]="rowEdit" [primaryKey]="'id'">
         <igx-column field="Avatar" header="Photo" dataType="string" width="80" [editable]="false">
             <ng-template igxCell let-cell="cell">
-                <div class="cell__inner avatar-cell">
+                <div>
                     <igx-avatar [src]="cell.row.data.avatar" [roundShape]="true" size="small"></igx-avatar>
                 </div>
             </ng-template>
