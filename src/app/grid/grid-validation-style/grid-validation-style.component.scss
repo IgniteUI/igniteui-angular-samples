@@ -1,0 +1,25 @@
+@use '../../../variables' as *;
+
+$orange-palette: palette($primary: color($purple-palette, 'primary'),
+        $secondary: color($purple-palette, 'secondary'),
+        $error: #ECAA53) !default;
+
+$grid: grid-theme(
+    $palette: palette($primary: color($purple-palette, 'primary'), $secondary: transparent),
+    $cell-active-border-color: 'transparent');
+
+.sample-wrapper {
+    margin: 0 auto;
+    padding: 16px;
+}
+:host ::ng-deep {
+    .igx-grid__td--invalid {
+        @include theme($orange-palette);
+    }
+    .igx-grid__td--editing {
+        @include grid($grid);
+    }
+    .validator-container {
+        color: #ECAA53;
+    }
+}

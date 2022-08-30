@@ -118,5 +118,6 @@ export const gridsRoutesData = {
     'grid-rowClasses-sample': { displayName: 'Grid rowClasses', parentName: 'Grid'},
     'grid-rowStyles-sample': { displayName: 'Grid rowStyles', parentName: 'Grid'},
     'grid-columnAutoResizing-sample': { displayName: 'Grid Column Autoresizing', parentName: 'Grid'},
-    'grid-with-rating': { displayName: 'Grid with Rating', parentName: 'Rating' }
+    'grid-with-rating': { displayName: 'Grid with Rating', parentName: 'Rating' },
+    'grid-validation-style': { displayName: 'Grid with Validation Styles', parentName: 'Grid' }
 };
