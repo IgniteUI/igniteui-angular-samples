@@ -45,22 +45,8 @@ export class GridValidatorServiceExtendedComponent {
     public formCreateHandler(formGroup: FormGroup) {
         const createdOnRecord = formGroup.get('created_on');
         const lastActiveRecord = formGroup.get('last_activity');
-        createdOnRecord.addValidators(this._testDateRecord());
-        lastActiveRecord.addValidators(this._testDateRecord(createdOnRecord.value));
-    }
-
-    /**
-     * Bind this handler to `cellEdit` output of the grid
-     * in order to cancel cell editing in case the submitted
-     * value is invalid.
-     *
-     * @param evt
-     */
-
-    public cellEdit(evt) {
-        if (!evt.valid) {
-            evt.cancel = true;
-        }
+        createdOnRecord.addValidators(this.futureDateValidator());
+        lastActiveRecord.addValidators([this.pastDateValidator(), this.futureDateValidator()]);
     }
 
     public commit() {
@@ -74,16 +60,35 @@ export class GridValidatorServiceExtendedComponent {
         }
     }
 
-    public _testDateRecord(thresholdVal?: any): ValidatorFn {
+    public undo() {
+        /* exit edit mode and commit changes */
+        this.grid.endEdit(true);
+        this.grid.transactions.undo();
+    }
+
+    public redo() {
+        /* exit edit mode and commit changes */
+        this.grid.endEdit(true);
+        this.grid.transactions.redo();
+    }
+
+    public futureDateValidator(): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
             const date = control.value;
             if(date > new Date()){
-                return { beyondThreshold: { value: control.value } };
-            }
-            if(thresholdVal){
-                return thresholdVal < date ? null : { priorThreshold: { value: control.value } }
+                return { futureDate: { value: control.value } };
             }
             return null;
+        }
+    }
+
+    public pastDateValidator(): ValidatorFn {
+        return (control: AbstractControl): ValidationErrors | null => {
+            const date = control.value;
+            let pastDate = new Date('Nov 5 2010');
+            if(pastDate){
+                return pastDate < date ? null : { pastDate: { value: control.value } }
+            } else return null;
         }
     }
 }

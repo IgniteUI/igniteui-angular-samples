@@ -1,3 +1,10 @@
 .top-row, .grid__wrapper {
     margin: 15px;
 }
+
+.buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding: 10px 0;
+}

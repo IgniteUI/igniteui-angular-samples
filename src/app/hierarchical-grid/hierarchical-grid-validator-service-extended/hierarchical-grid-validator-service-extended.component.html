@@ -6,10 +6,9 @@
         <igx-column field="ContactName" [editable]="true" required>
         </igx-column>
         <igx-column field="ContactTitle" [editable]="true" required></igx-column>
-        <igx-column field="Phone" [editable]="true" required phoneFormat="\(?\d{3}\)?-? *\d{3}-? *-?\d{4}">
-            <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
-                <ng-container *ngTemplateOutlet="defaultErr" >
-                    This Field is required
+        <igx-column field="Phone" [editable]="true" required phoneFormat="^[^a-zA-Z]*$">
+            <ng-template igxCellValidationError let-cell='cell' let-defaultErr>
+                <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
                 </ng-container>
                 <div *ngIf="cell.errors?.['phoneFormat']">
                     Please enter correct phone format
@@ -26,7 +25,7 @@
                 <ng-template igxCellValidationError let-cell='cell'>
                     <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
                     </ng-container>
-                    <div *ngIf="cell.formGroup?.get(cell.column?.field).errors?.['beyondThreshold']">
+                    <div *ngIf="cell.errors?.['beyondThreshold']">
                         The date cannot be in the future.
                     </div>
                 </ng-template>
@@ -35,11 +34,11 @@
                 <ng-template igxCellValidationError let-cell='cell'>
                     <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
                     </ng-container>
-                    <div *ngIf="cell.errors?.['beyondThreshold']">
+                    <div *ngIf="cell.errors?.['futureDate']">
                         The date cannot be in the future.
                     </div>
-                    <div *ngIf="cell.errors?.['priorThreshold']">
-                        The date cannot be past the order date.
+                    <div *ngIf="cell.errors?.['pastDate']">
+                        The date cannot be before the 5th of November 2010
                     </div>
                 </ng-template>
             </igx-column>
@@ -47,11 +46,11 @@
                 <ng-template igxCellValidationError let-cell='cell'>
                     <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
                     </ng-container>
-                    <div *ngIf="cell.errors?.['beyondThreshold']">
+                    <div *ngIf="cell.errors?.['futureDate']">
                         The date cannot be in the future.
                     </div>
-                    <div *ngIf="cell.errors?.['priorThreshold']">
-                        The date cannot be past the order date.
+                    <div *ngIf="cell.errors?.['pastDate']">
+                        The date cannot be before the 5th of November 2010
                     </div>
                 </ng-template>
             </igx-column>
@@ -67,4 +66,10 @@
             </igx-row-island>
         </igx-row-island>
     </igx-hierarchical-grid>
+
+    <div class="buttons-wrapper">
+        <button igxButton [disabled]="!hierarchicalGrid.transactions.canUndo" (click)="undo()">Undo</button>
+        <button igxButton [disabled]="!hierarchicalGrid.transactions.canRedo" (click)="redo()">Redo</button>
+        <button igxButton [disabled]="hierarchicalGrid.transactions.getAggregatedChanges(false).length < 1" (click)="commit()">Commit</button>
+    </div>
 </div>

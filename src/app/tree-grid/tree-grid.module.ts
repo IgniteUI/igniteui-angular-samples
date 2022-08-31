@@ -119,7 +119,7 @@ import { TreeGridToolbarSample3Component } from './tree-grid-toolbar-sample-3/tr
 import { TreeGridToolbarSample4Component } from './tree-grid-toolbar-sample-4/tree-grid-toolbar-sample-4.component';
 import { TreeGridToolbarStyleComponent } from './tree-grid-toolbar-style/tree-grid-toolbar-style.component';
 import { TreeGridTreeFilterViewComponent } from './tree-grid-tree-filter-view/tree-grid-tree-filter-view.component';
-import { ForbiddenValidatorDirective, TreeGridValidatorServiceExtendedComponent } from './tree-grid-validator-service-extended/tree-grid-validator-service-extended.component';
+import { TGridPhoneFormatDirective, TreeGridValidatorServiceExtendedComponent } from './tree-grid-validator-service-extended/tree-grid-validator-service-extended.component';
 import { TreeGridValidatorServiceComponent } from './tree-grid-validator-service/tree-grid-validator-service.component';
 import { TreeGridVirtualizationSampleComponent } from './tree-grid-virtualization-sample/tree-grid-virtualization-sample.component';
 import { TreeGridAllDataSummaryComponent } from './treegrid-allData-summary/treegrid-allData-summary.component';
@@ -224,7 +224,7 @@ import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/tr
         TreeGridColumnAutoSizingSampleComponent,
         TreeGridValidatorServiceComponent,
         TreeGridValidatorServiceExtendedComponent,
-        ForbiddenValidatorDirective
+        TGridPhoneFormatDirective
     ],
     imports: [
         CommonModule,

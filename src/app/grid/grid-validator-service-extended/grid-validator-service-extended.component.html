@@ -43,11 +43,11 @@
             <ng-template igxCellValidationError let-cell='cell'>
                 <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
                 </ng-container>
-                <div *ngIf="cell.errors?.['beyondThreshold']">
+                <div *ngIf="cell.errors?.['futureDate']">
                     The date cannot be in the future.
                 </div>
-                <div *ngIf="cell.errors?.['priorThreshold']">
-                    The date cannot be prior the date of registration.
+                <div *ngIf="cell.errors?.['pastDate']">
+                    The date cannot be before the 5th of November 2010
                 </div>
             </ng-template>
         </igx-column>
@@ -62,5 +62,8 @@
     </igx-grid>
 </div>
 
-<button igxButton [disabled]="grid1.transactions.getAggregatedChanges(false).length < 1"
-    (click)="commit()">Commit</button>
+<div class="buttons-wrapper">
+    <button igxButton [disabled]="!grid1.transactions.canUndo" (click)="undo()">Undo</button>
+    <button igxButton [disabled]="!grid1.transactions.canRedo" (click)="redo()">Redo</button>
+    <button igxButton [disabled]="grid1.transactions.getAggregatedChanges(false).length < 1" (click)="commit()">Commit</button>
+</div>

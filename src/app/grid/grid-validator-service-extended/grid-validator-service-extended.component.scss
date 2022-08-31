@@ -24,6 +24,13 @@ $custom-checkbox: checkbox-theme(
     $palette: $my-banner-palette,
 );
 
+.buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding: 10px 0;
+}
+
 .custom-buttons {
     @include button($button-theme);
 }

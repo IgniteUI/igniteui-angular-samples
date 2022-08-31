@@ -1,6 +1,6 @@
 import { Component, Directive, Input, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 
 export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
@@ -12,9 +12,9 @@ export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
 
 @Directive({
     selector: '[phoneFormat]',
-    providers: [{ provide: NG_VALIDATORS, useExisting: PhoneFormatDirective, multi: true }]
+    providers: [{ provide: NG_VALIDATORS, useExisting: HGridPhoneFormatDirective, multi: true }]
 })
-export class PhoneFormatDirective extends Validators {
+export class HGridPhoneFormatDirective extends Validators {
     @Input('phoneFormat')
     public phoneFormatString = '';
 
@@ -51,34 +51,51 @@ export class HierarchicalGridValidatorServiceExtendedComponent implements OnInit
         const requiredDateRecord = formGroup.get('RequiredDate');
         const shippedDateRecord = formGroup.get('ShippedDate');
 
-        orderDateRecord.addValidators(this._testDateRecord());
-        requiredDateRecord.addValidators(this._testDateRecord(orderDateRecord?.value));
-        shippedDateRecord.addValidators(this._testDateRecord(orderDateRecord?.value));
+        orderDateRecord.addValidators(this.futureDateValidator());
+        requiredDateRecord.addValidators(this.pastDateValidator());
+        shippedDateRecord.addValidators(this.pastDateValidator());
     }
 
-    /**
-     * Bind this handler to `cellEdit` output of the grid
-     * in order to cancel cell editing in case the submitted
-     * value is invalid.
-     *
-     * @param evt
-     */
-    public cellEdit(evt) {
-        if (!evt.valid) {
-            evt.cancel = true;
+    public commit() {
+        const invalidTransactions = this.hierarchicalGrid.validation.getInvalid();
+        if (invalidTransactions.length > 0) {
+            if (confirm('You\'re commiting invalid transactions. Are you sure?')) {
+                this.hierarchicalGrid.validation.clear();
+            }
+        } else {
+            this.hierarchicalGrid.validation.clear();
         }
     }
 
-    public _testDateRecord(thresholdVal?: any): ValidatorFn {
+    public undo() {
+        /* exit edit mode and commit changes */
+        this.hierarchicalGrid.endEdit(true);
+        this.hierarchicalGrid.transactions.undo();
+    }
+
+    public redo() {
+        /* exit edit mode and commit changes */
+        this.hierarchicalGrid.endEdit(true);
+        this.hierarchicalGrid.transactions.redo();
+    }
+
+    public futureDateValidator(): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
             const date = control.value;
             if(date > new Date()){
-                return { beyondThreshold: { value: control.value } };
-            }
-            if(thresholdVal){
-                return thresholdVal < date ? null : { priorThreshold: { value: control.value } }
+                return { futureDate: { value: control.value } };
             }
             return null;
+        }
+    }
+
+    public pastDateValidator(): ValidatorFn {
+        return (control: AbstractControl): ValidationErrors | null => {
+            const date = control.value;
+            let pastDate = new Date('Nov 5 2010');
+            if(pastDate){
+                return pastDate < date ? null : { pastDate: { value: control.value } }
+            } else return null;
         }
     }
 

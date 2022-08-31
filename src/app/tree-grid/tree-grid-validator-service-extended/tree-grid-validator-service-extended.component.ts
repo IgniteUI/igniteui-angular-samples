@@ -4,23 +4,24 @@ import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorF
 import { IgxTreeGridComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
-export function minAgeValidator(age: number): ValidatorFn {
+export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-        const isOfAge = age < control.value;
-        return isOfAge ? null : { minAge: { value: control.value } } ;
-    };
+        const match = phoneReg.test(control.value);
+        return match ? null : { phoneFormat: { value: control.value } } ;
+    }
 }
 
 @Directive({
-    selector: '[minAge]',
-    providers: [{ provide: NG_VALIDATORS, useExisting: ForbiddenValidatorDirective, multi: true }]
+    selector: '[phoneFormat]',
+    providers: [{ provide: NG_VALIDATORS, useExisting: TGridPhoneFormatDirective, multi: true }]
 })
-export class ForbiddenValidatorDirective extends Validators {
-    @Input('minAge')
-    public minAgeValue: number;
+
+export class TGridPhoneFormatDirective extends Validators {
+    @Input('phoneFormat')
+    public phoneFormatString = '';
 
     public validate(control: AbstractControl): ValidationErrors | null {
-        return this.minAgeValue ? minAgeValidator(this.minAgeValue)(control)
+        return this.phoneFormatString ? phoneFormatValidator(new RegExp(this.phoneFormatString, 'i'))(control)
             : null;
     }
 }
@@ -41,26 +42,49 @@ export class TreeGridValidatorServiceExtendedComponent implements OnInit {
 
     public formCreateHandler(formGroup: FormGroup) {
         const hireDateRecord = formGroup.get('HireDate');
-        hireDateRecord.addValidators(this._testDateRecord())
+        hireDateRecord.addValidators([this.futureDateValidator(), this.pastDateValidator()]);
     }
 
-    /**
-     * Bind this handler to `cellEdit` output of the grid
-     * in order to cancel cell editing in case the submitted
-     * value is invalid.
-     *
-     * @param evt
-     */
-    public cellEdit(evt) {
-        if (!evt.valid) {
-            evt.cancel = true;
+    public commit() {
+        const invalidTransactions = this.treeGrid.validation.getInvalid();
+        if (invalidTransactions.length > 0) {
+            if (confirm('You\'re commiting invalid transactions. Are you sure?')) {
+                this.treeGrid.validation.clear();
+            }
+        } else {
+            this.treeGrid.validation.clear();
         }
     }
 
-    private _testDateRecord(): ValidatorFn {
+    public undo() {
+        /* exit edit mode and commit changes */
+        this.treeGrid.endEdit(true);
+        this.treeGrid.transactions.undo();
+    }
+
+    public redo() {
+        /* exit edit mode and commit changes */
+        this.treeGrid.endEdit(true);
+        this.treeGrid.transactions.redo();
+    }
+
+    public futureDateValidator(): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
             const date = control.value;
-            return date < new Date() ? null : { forbiddenDate: { value: control.value } };
+            if(date > new Date()){
+                return { futureDate: { value: control.value } };
+            }
+            return null;
+        }
+    }
+
+    public pastDateValidator(): ValidatorFn {
+        return (control: AbstractControl): ValidationErrors | null => {
+            const date = control.value;
+            let pastDate = new Date('Sept 1 2004');
+            if(pastDate){
+                return pastDate < date ? null : { pastDate: { value: control.value } }
+            } else return null;
         }
     }
 }
