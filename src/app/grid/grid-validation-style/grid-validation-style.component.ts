@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DATA } from '../../data/nwindData';
+import { RowType } from 'igniteui-angular';
 
 @Component({
     selector: 'app-grid-validation-style',
@@ -8,6 +9,9 @@ import { DATA } from '../../data/nwindData';
 })
 export class GridValidationStyleComponent {
     public data: any[];
+    public rowStyles = {
+        background: (row: RowType) => (row.errors) ? '#FF000088' : '#00000000'
+    };
 
     constructor() {
         this.data = DATA;

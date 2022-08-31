@@ -1,6 +1,6 @@
 <div class="sample-wrapper">
     <igx-grid igxPreventDocumentScroll #gridRowEdit [data]="data" [primaryKey]="'ProductID'" width="100%" height="500px"
-        [rowEditable]="true">
+        [rowEditable]="true" [rowStyles]="rowStyles">
         <igx-column field="ProductID" header="Product ID"></igx-column>
         <igx-column field="ReorderLevel" header="ReorderLever" [dataType]="'number'" required>
             <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
