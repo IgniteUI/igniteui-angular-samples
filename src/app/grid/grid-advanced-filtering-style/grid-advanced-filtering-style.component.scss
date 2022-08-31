@@ -38,7 +38,6 @@ $custom-button-group: button-group-theme(
 );
 
 $custom-input-group: input-group-theme(
-    $palette: $dark-material-palette,
     $schema: $dark-material-schema,
     $idle-text-color: $yellow,
     $focused-text-color: $yellow,

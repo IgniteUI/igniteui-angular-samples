@@ -30,11 +30,8 @@ $dark-checkbox-theme: checkbox-theme(
     $tick-color: $my-dark-color,
 );
 
-$dark-input-group-theme: input-group-theme(
-    $palette: $my-dark-palette
-);
-
 :host {
+    @include palette($my-dark-palette);
     ::ng-deep {
         @include grid-toolbar($dark-grid-toolbar-theme);
         @include column-actions($dark-column-actions-theme);

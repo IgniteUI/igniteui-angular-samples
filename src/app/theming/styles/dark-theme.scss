@@ -83,7 +83,6 @@ $message-color: color($dark-theme-palette, "secondary", 600)
 
 // Define dark theme for the input-group
 $dark-input-group-theme: input-group-theme(
-$palette: $dark-theme-palette,
 $box-background:  color($dark-theme-palette, "primary", 100),
 $disabled-border-color: color($dark-theme-palette, "primary", 500),
 $box-disabled-background: color($dark-theme-palette, "secondary", 100),

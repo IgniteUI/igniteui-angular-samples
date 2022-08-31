@@ -104,7 +104,6 @@ $black-dialog-theme: dialog-theme(
 
 // Define light theme for the input-group
 $light-input-group-theme: input-group-theme(
-  $palette: $light-theme-palette,
   $disabled-border-color: color($light-theme-palette, "primary", 500),
   $box-disabled-background: color($light-theme-palette, "secondary", 100),
   $hover-bottom-line-color: color($light-theme-palette, "secondary", 700),
@@ -115,7 +114,6 @@ $light-input-group-theme: input-group-theme(
 
 // Define dark theme for the input-group
 $dark-input-group-theme: input-group-theme(
-  $palette: $dark-theme-palette,
   $box-background:  color($dark-theme-palette, "primary", 100),
   $disabled-border-color: color($dark-theme-palette, "primary", 500),
   $box-disabled-background: color($dark-theme-palette, "secondary", 100),
@@ -127,7 +125,6 @@ $dark-input-group-theme: input-group-theme(
 
 // Define black theme for the input-group
 $black-input-group-theme: input-group-theme(
-  $palette: $black-theme-palette,
   $schema: $my-black-schema
 );
 
