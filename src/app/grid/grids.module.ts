@@ -133,6 +133,7 @@ import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summa
 import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-editing-excel-style.component';
 import { GridColumnAutosizingComponent } from './grid-column-autosizing/grid-column-autosizing.component';
 import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.component';
+import { GridValidatorServiceCrossCellComponent, DealsRatioDirective } from './grid-validator-service-cross-cell/grid-validator-service-cross-cell.component';
 
 @NgModule({
     declarations: [
@@ -255,7 +256,9 @@ import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.com
         GridRowClassesComponent,
         GridRowStylesComponent,
         GridColumnAutosizingComponent,
-        GridWithRatingComponent
+        GridWithRatingComponent,
+        GridValidatorServiceCrossCellComponent,
+        DealsRatioDirective
     ],
     imports: [
         CommonModule,
