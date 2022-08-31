@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { SINGERS } from '../../data/singersData';
-
+import { CUSTOMERS } from '../../data/hierarchical-data';
 @Component({
     selector: 'hierarchical-grid-column-autosizing',
     styleUrls: ['./hgrid-column-autosizing.component.scss'],
@@ -8,10 +7,9 @@ import { SINGERS } from '../../data/singersData';
 })
 
 export class HGridColumnAutoSizingSampleComponent {
-    public localData;
-    constructor() {
-        this.localData = SINGERS;
-    }
+    public localdata;
 
-    public formatter = (a) => a;
+    constructor() {
+        this.localdata = CUSTOMERS;
+    }
 }
