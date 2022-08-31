@@ -17,10 +17,6 @@ body {
     $schema: $schema
 );
 
-:root {
-    @include palette($palette);
-}
-
 .light-theme {
     @include light-theme($palette);
 }

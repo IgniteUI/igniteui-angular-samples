@@ -1,19 +1,18 @@
 @use 'igniteui-angular/theming' as *;
 @forward 'igniteui-angular/theming';
 
-
-$legacy-support: true;
 $palette: $light-material-palette;
 $schema: $light-material-schema;
-
-$default-palette: $palette;
-$igx-legacy-support: $legacy-support;
 
 $green-palette: palette(
     $primary: #09f,
     $secondary: #72da67,
     $gray: #fff,
-    $surface: #333
+    $surface: #333,
+    $info: color($palette, 'info'),
+    $success: color($palette, 'success'),
+    $warn: color($palette, 'warn'),
+    $error: color($palette, 'error'),
 );
 
 $gray-btn-color: color($green-palette, 'gray', 800);

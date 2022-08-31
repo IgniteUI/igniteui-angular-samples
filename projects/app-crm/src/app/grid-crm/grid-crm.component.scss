@@ -4,7 +4,7 @@
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-solid.css");
 
 :host ::ng-deep {
-    $crm-grid-palette: palette( $primary: #09f, $secondary: #ffbf00);
+    $crm-grid-palette: palette($primary: #09f, $secondary: #ffbf00, $surface: #fff);
     @include theme($crm-grid-palette);
     $checkbox-theme: checkbox-theme( $fill-color: color($crm-grid-palette, "secondary", 500), $tick-color: black);
     $summary-theme: grid-summary-theme( $background-color: #f0f8fe, $result-color: color($crm-grid-palette, "primary", 500));
