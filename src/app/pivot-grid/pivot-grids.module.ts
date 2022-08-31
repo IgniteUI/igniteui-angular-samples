@@ -10,17 +10,19 @@ import { PivotGridBasicSampleComponent } from './pivot-basic-sample/pivot-grid-b
 import { PivotDataSelectorSampleComponent } from './pivot-datasource/pivot-data-selector-sample.component';
 import { PivotGridNoopSampleComponent } from './pivot-grid-noop/pivot-grid-noop-sample.component';
 import { PivotGridsRoutingModule } from './pivot-grids-routing.module';
-import { PivotGridStatePersistanceSampleComponent } from './pivot-state-persistance/pivot-grid-state-persistance-sample.component';
-import { PivotGridAboutComponent } from './pivot-state-persistance/about.component';
+import { PivotGridStatePersistenceSampleComponent } from './pivot-state-persistence/pivot-grid-state-persistence-sample.component';
+import { PivotGridAboutComponent } from './pivot-state-persistence/about.component';
+import { PivotGridNoopPersistenceSampleComponent } from './pivot-grid-noop-persistence/pivot-grid-noop-persistence-sample.component';
 
 @NgModule({
     declarations: [
         PivotGridBasicSampleComponent,
         PivotDataSelectorSampleComponent,
         PivotFeaturesComponent,
-        PivotGridStatePersistanceSampleComponent,
+        PivotGridStatePersistenceSampleComponent,
         PivotGridNoopSampleComponent,
-        PivotGridAboutComponent
+        PivotGridAboutComponent,
+        PivotGridNoopPersistenceSampleComponent
     ],
     imports: [
         CommonModule,

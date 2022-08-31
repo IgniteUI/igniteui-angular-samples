@@ -4,10 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { PivotGridBasicSampleComponent } from './pivot-basic-sample/pivot-grid-basic-sample.component';
 import { PivotDataSelectorSampleComponent } from './pivot-datasource/pivot-data-selector-sample.component';
 import { PivotFeaturesComponent } from './pivot-features/pivot-features.component';
+import { PivotGridNoopPersistenceSampleComponent } from './pivot-grid-noop-persistence/pivot-grid-noop-persistence-sample.component';
 import { PivotGridNoopSampleComponent } from './pivot-grid-noop/pivot-grid-noop-sample.component';
 import { pivotGridsRoutesData } from './pivot-grid-routes-data';
-import { PivotGridAboutComponent } from './pivot-state-persistance/about.component';
-import { PivotGridStatePersistanceSampleComponent } from './pivot-state-persistance/pivot-grid-state-persistance-sample.component';
+import { PivotGridAboutComponent } from './pivot-state-persistence/about.component';
+import { PivotGridStatePersistenceSampleComponent } from './pivot-state-persistence/pivot-grid-state-persistence-sample.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -32,9 +33,14 @@ export const gridsRoutes: Routes = [
         path: 'pivot-grid-noop'
     },
     {
-        component: PivotGridStatePersistanceSampleComponent,
+        component: PivotGridStatePersistenceSampleComponent,
         data: pivotGridsRoutesData['pivot-grid-features'],
-        path: 'pivot-grid-state-persistance'
+        path: 'pivot-grid-state-persistence'
+    },
+    {
+        component: PivotGridNoopPersistenceSampleComponent,
+        data: pivotGridsRoutesData['pivot-grid-noop-persistence'],
+        path: 'pivot-grid-noop-persistence'
     },
     {
         component: PivotGridAboutComponent,

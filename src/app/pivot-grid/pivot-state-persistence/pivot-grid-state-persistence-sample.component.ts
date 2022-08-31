@@ -3,7 +3,7 @@ import { NavigationStart, Router } from "@angular/router";
 
 import {
     IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate,
-    IgxPivotDateDimension, FilteringExpressionsTree, FilteringLogic, IgxStringFilteringOperand, IgxGridStateDirective, IgxPivotGridComponent, IgxCheckboxComponent, GridFeatures, IGridStateOptions, IGridState, IPivotValue, IPivotDimension, IPivotAggregator, GridColumnDataType
+    IgxPivotDateDimension, IgxGridStateDirective, IgxPivotGridComponent, IgxCheckboxComponent, GridFeatures, IGridStateOptions, IGridState, IPivotValue, IPivotDimension, IPivotAggregator, GridColumnDataType
 } from "igniteui-angular"
 import { take } from "rxjs/operators";
 import { SALES_DATA } from "../../data/dataToAnalyze";
@@ -36,11 +36,11 @@ export class IgxTotalSaleAggregate {
 }
 
 @Component({
-    selector: 'app-pivot-grid-state-persistance-sample',
-    styleUrls: ['./pivot-grid-state-persistance-sample.component.scss'],
-    templateUrl: './pivot-grid-state-persistance-sample.component.html'
+    selector: 'app-pivot-grid-state-persistence-sample',
+    styleUrls: ['./pivot-grid-state-persistence-sample.component.scss'],
+    templateUrl: './pivot-grid-state-persistence-sample.component.html'
 })
-export class PivotGridStatePersistanceSampleComponent implements OnInit, AfterViewInit {
+export class PivotGridStatePersistenceSampleComponent implements OnInit, AfterViewInit {
     @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
     @ViewChild(IgxPivotGridComponent, { static: true }) public grid: IgxPivotGridComponent;
     @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
@@ -118,8 +118,8 @@ export class PivotGridStatePersistanceSampleComponent implements OnInit, AfterVi
                 enabled: true,
                 dataType: GridColumnDataType.Number,
                 styles: {
-                    upFontValue: (rowData: any, columnKey: any): boolean => rowData[columnKey] > 150,
-                    downFontValue: (rowData: any, columnKey: any): boolean => rowData[columnKey] <= 150
+                    downFontValue: (rowData: any, columnKey: any): boolean => parseFloat(rowData.aggregationValues.get(columnKey.field)) <= 150,
+                    upFontValue: (rowData: any, columnKey: any): boolean => parseFloat(rowData.aggregationValues.get(columnKey.field)) > 150
                 },
                 formatter: (value) => value ? '$' + parseFloat(value).toFixed(3) : undefined
             },
@@ -172,14 +172,14 @@ export class PivotGridStatePersistanceSampleComponent implements OnInit, AfterVi
     public saveGridState() {
         const state = this.state.getState(this.serialize);
         if (typeof state === 'string') {
-            window.localStorage.setItem(this.stateKey, state);
+            window.sessionStorage.setItem(this.stateKey, state);
         } else {
-            window.localStorage.setItem(this.stateKey, JSON.stringify(state));
+            window.sessionStorage.setItem(this.stateKey, JSON.stringify(state));
         }
     }
 
     public restoreGridState() {
-        const state = window.localStorage.getItem(this.stateKey);
+        const state = window.sessionStorage.getItem(this.stateKey);
         if (state) {
             this.state.setState(state);
         }
@@ -195,7 +195,7 @@ export class PivotGridStatePersistanceSampleComponent implements OnInit, AfterVi
     }
 
     public getFeatureState(stateKey: string, feature: string) {
-        let state = window.localStorage.getItem(stateKey);
+        let state = window.sessionStorage.getItem(stateKey);
         state = state ? JSON.parse(state)[feature] : null;
         return state;
     }
@@ -214,7 +214,7 @@ export class PivotGridStatePersistanceSampleComponent implements OnInit, AfterVi
     }
 
     public clearStorage() {
-        window.localStorage.removeItem(this.stateKey);
+        window.sessionStorage.removeItem(this.stateKey);
     }
 
     public reloadPage() {
@@ -222,7 +222,6 @@ export class PivotGridStatePersistanceSampleComponent implements OnInit, AfterVi
     }
 
     public onValueInit(value: IPivotValue) {
-        console.log("minah")
         // Needed only for custom aggregators, formatter or styles.
         if (value.member === 'AmountofSale') {
             value.aggregate.aggregator = IgxTotalSaleAggregate.totalSale;
@@ -241,8 +240,8 @@ export class PivotGridStatePersistanceSampleComponent implements OnInit, AfterVi
             });
         } else if (value.member === 'Value') {
             value.formatter = (value) => value ? '$' + parseFloat(value).toFixed(3) : undefined;
-            value.styles.upFrontValue = (rowData: any, columnKey: any): boolean => rowData[columnKey] > 150;
-            value.styles.downFontValue = (rowData: any, columnKey: any): boolean => rowData[columnKey] <= 150;
+            value.styles.upFontValue = (rowData: any, columnKey: any): boolean => parseFloat(rowData.aggregationValues.get(columnKey.field)) > 150
+            value.styles.downFontValue = (rowData: any, columnKey: any): boolean => parseFloat(rowData.aggregationValues.get(columnKey.field)) <= 150;
         }
     }
 
