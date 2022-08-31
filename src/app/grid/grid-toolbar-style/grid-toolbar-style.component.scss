@@ -36,7 +36,6 @@ $dark-checkbox-theme: checkbox-theme(
         @include grid-toolbar($dark-grid-toolbar-theme);
         @include column-actions($dark-column-actions-theme);
         @include checkbox($dark-checkbox-theme);
-        @include input-group($dark-input-group-theme);
         @include button($dark-button-theme);
 
         .igx-grid-toolbar__actions {
