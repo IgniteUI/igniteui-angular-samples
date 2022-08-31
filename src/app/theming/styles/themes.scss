@@ -67,7 +67,6 @@ $dark-theme-palette: palette($primary: $dark-color, $secondary: $orange-color);
 
 // Define light theme for the snackbar
 $light-snackbar-theme: snackbar-theme(
-  $palette: $light-theme-palette,
   $background: color($light-theme-palette, "secondary", 500),
   $text-color: color($light-theme-palette, "primary", 500),
   $button-color: color($light-theme-palette, "primary", 500)
@@ -75,20 +74,17 @@ $light-snackbar-theme: snackbar-theme(
 
 // Define dark theme for the snackbar
 $dark-snackbar-theme: snackbar-theme(
-  $palette: $dark-theme-palette,
   $background: color($dark-theme-palette, "primary", 100),
   $text-color: color($dark-theme-palette, "secondary", 500)
 );
 
 // Define black theme with schema for the snackbar
 $black-snackbar-theme: snackbar-theme(
-  $palette:  $black-theme-palette,
   $schema: $my-black-schema
 );
 
 // Define light theme for the dialog
 $light-dialog-theme: dialog-theme(
-  $palette: $light-theme-palette,
   $background: color($light-theme-palette, "primary", 100),
   $title-color: color($light-theme-palette, "secondary", 500),
   $message-color: color($light-theme-palette, "secondary", 600)
@@ -96,7 +92,6 @@ $light-dialog-theme: dialog-theme(
 
 // Define dark theme for the dialog
 $dark-dialog-theme: dialog-theme(
-  $palette: $dark-theme-palette,
   $background: color($dark-theme-palette, "primary", 100),
   $title-color: color($dark-theme-palette, "secondary", 500),
   $message-color: color($dark-theme-palette, "secondary", 600)
@@ -104,7 +99,6 @@ $dark-dialog-theme: dialog-theme(
 
 // Define black theme for the dialog
 $black-dialog-theme: dialog-theme(
-  $palette: $black-theme-palette,
   $schema:  $my-black-schema
 );
 
@@ -139,7 +133,6 @@ $black-input-group-theme: input-group-theme(
 
 // Define light theme for the button
 $light-button-theme: button-theme(
-  $palette: $light-theme-palette,
   $foreground: color($light-theme-palette, "secondary", 700),
   $hover-foreground: color($light-theme-palette, "primary", 500),
   $hover-background: color($light-theme-palette, "secondary", 100),
@@ -149,7 +142,6 @@ $light-button-theme: button-theme(
 
 // Define dark theme for the button
 $dark-button-theme: button-theme(
-  $palette: $dark-theme-palette,
   $foreground: color($dark-theme-palette, "secondary", 700),
   $hover-foreground: color($dark-theme-palette, "primary", 500),
   $hover-background: color($dark-theme-palette, "secondary", 500),
@@ -161,13 +153,11 @@ $dark-button-theme: button-theme(
 
 // Define black theme for the button
 $black-button-theme: button-theme(
-  $palette: $black-theme-palette,
   $schema: $my-black-schema
 );
 
 // Define light theme for the button-group
 $light-button-group-theme: button-group-theme(
-  $palette: $light-theme-palette,
   $item-text-color: color($light-theme-palette, "primary", 500),
   $item-background: color($light-theme-palette, "secondary", 500),
   $item-selected-background: color($light-theme-palette, "primary", 200),
@@ -176,7 +166,6 @@ $light-button-group-theme: button-group-theme(
 
 // Define dark theme for the button-group
 $dark-button-group-theme: button-group-theme(
-  $palette: $dark-theme-palette,
   $item-text-color: color($dark-theme-palette, "primary", 500),
   $item-background: color($dark-theme-palette, "secondary", 500),
   $item-selected-background: color($dark-theme-palette, "primary", 200),
@@ -185,14 +174,12 @@ $dark-button-group-theme: button-group-theme(
 
 // Define black theme for the button-group
 $black-button-group-theme: button-group-theme(
-  $palette: $black-theme-palette,
   $schema: $my-black-schema
 
 );
 
 // Define light theme for the grid
 $light-grid-theme: grid-theme(
-  $palette: $light-theme-palette,
   $header-background: color($light-theme-palette, "secondary", 700),
   $header-text-color:color($light-theme-palette, "primary", 600),
   $cell-selected-background: color($light-theme-palette, "secondary", 200),
@@ -203,7 +190,6 @@ $light-grid-theme: grid-theme(
 
 // Define dark theme for the grid
 $dark-grid-theme: grid-theme(
-  $palette: $dark-theme-palette,
   $content-background: color($dark-theme-palette, "secondary", 100),
   $header-background: color($dark-theme-palette, "primary", 500),
   $header-text-color: color($dark-theme-palette, "secondary", 600),
@@ -215,20 +201,17 @@ $dark-grid-theme: grid-theme(
 
 // Define black theme for the grid
 $black-grid-theme: grid-theme(
-  $palette: $black-theme-palette,
   $schema: $my-black-schema
 );
 
 // Define light theme for the paginator
 $light-paginator-theme: paginator-theme(
-  $palette: $light-theme-palette,
   $background-color:color($light-theme-palette, "primary", 100),
   $border-color: color($light-theme-palette, "secondary", 500)
 );
 
 // Define dark theme for the paginator
 $dark-paginator-theme: paginator-theme(
-  $palette: $dark-theme-palette,
   $text-color: color($dark-theme-palette, "secondary", 700),
   $background-color:color($dark-theme-palette, "primary", 500),
   $border-color: color($dark-theme-palette, "secondary", 500)
@@ -236,12 +219,10 @@ $dark-paginator-theme: paginator-theme(
 
 // Define black theme for the paginator
 $black-paginator-theme: paginator-theme(
-  $palette: $black-theme-palette,
   $schema: $my-black-schema
 );
 
 $light-calendar-theme: calendar-theme(
-    $palette: $light-theme-palette,
     $content-background: color($light-theme-palette, "primary", 500),
     $content-text-color: color($light-theme-palette, "secondary", 600),
     $header-background: color($light-theme-palette, "secondary", 500),
@@ -255,7 +236,6 @@ $light-calendar-theme: calendar-theme(
 );
 
 $dark-calendar-theme: calendar-theme(
-    $palette: $dark-theme-palette,
     $content-background: color($dark-theme-palette, "primary", 100),
     $content-text-color: color($dark-theme-palette, "secondary", 500),
     $inactive-text-color: color($dark-theme-palette, "primary", 700),
@@ -267,60 +247,47 @@ $dark-calendar-theme: calendar-theme(
 );
 
 $black-calendar-theme: calendar-theme(
-    $palette: $black-theme-palette,
     $schema: $my-black-schema
 );
 
 $light-icon-theme: icon-theme(
-    $palette: $light-theme-palette
 );
 
 $dark-icon-theme: icon-theme(
-    $palette: $dark-theme-palette
 );
 
 $black-icon-theme: icon-theme(
-    $palette: $black-theme-palette
 );
 
 $light-chip-theme: chip-theme(
-    $palette: $light-theme-palette,
     $text-color: color($light-theme-palette, "primary", 500)
 );
 
 $dark-chip-theme: chip-theme(
-    $palette: $dark-theme-palette,
     $text-color: color($dark-theme-palette, "primary", 500),
     $background: color($dark-theme-palette, "secondary", 500),
 );
 
 $black-chip-theme: chip-theme(
-    $palette: $black-theme-palette
 );
 
 $light-drop-down-theme: drop-down-theme(
-    $palette: $light-theme-palette
 );
 
 $dark-drop-down-theme: drop-down-theme(
-    $palette: $dark-theme-palette
 );
 
 $black-drop-down-theme: drop-down-theme(
-    $palette: $black-theme-palette
 );
 
 $light-badge-theme: badge-theme(
-    $palette: $light-theme-palette,
     $background-color: color($light-theme-palette, "secondary", 700),
 );
 
 $dark-badge-theme: badge-theme(
-    $palette: $dark-theme-palette,
     $background-color: color($dark-theme-palette, "secondary", 500)
 );
 
 $black-badge-theme: badge-theme(
-    $palette: $black-theme-palette,
     $schema: $my-black-schema
 );

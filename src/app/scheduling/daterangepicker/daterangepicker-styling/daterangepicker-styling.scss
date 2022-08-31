@@ -33,7 +33,6 @@ $custom-input-group-theme: input-group-theme(
 
 // CALENDAR styling specific overlay component requires outlet -> [overlaySettings]="{ outlet: element }"
 $custom-calendar-theme: calendar-theme(
-    $palette: $custom-palette,
     $date-current-text-color: $today-text,
     $border-radius: 0.5,
     $date-border-radius: 0.5

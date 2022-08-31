@@ -2,7 +2,6 @@
 
 @include dialog(
     dialog-theme(
-        $palette: $palette,
         $schema: $schema
     )
 );

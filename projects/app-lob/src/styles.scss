@@ -26,7 +26,6 @@ body {
 }
 
 $dark-grid-theme: grid-theme(
-	$palette: $green-palette,
 	$schema: $dark-schema,
 	$row-selected-background: #1f3823,
 	$row-selected-hover-background: #244229,

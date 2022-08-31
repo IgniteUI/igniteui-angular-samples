@@ -10,27 +10,23 @@ $my-dark-palette: palette(
 $my-dark-color: color($my-dark-palette, 'surface');
 
 $dark-button-theme: button-theme(
-    $palette: $my-dark-palette,
     $background: color($my-dark-palette, 'secondary'),
     $hover-background: color($my-dark-palette, 'gray', 100),
     $hover-foreground: color($my-dark-palette, 'secondary')
 );
 
 $dark-grid-toolbar-theme: grid-toolbar-theme(
-    $palette: $my-dark-palette,
     $background-color: $my-dark-color,
     $title-text-color: color($my-dark-palette, 'secondary'),
     $dropdown-background: $my-dark-color,
 );
 
 $dark-column-actions-theme: column-actions-theme(
-    $palette: $my-dark-palette,
     $title-color: color($my-dark-palette, 'secondary'),
     $background-color: color($my-dark-palette, 'surface')
 );
 
 $dark-checkbox-theme: checkbox-theme(
-    $palette: $my-dark-palette,
     $tick-color: $my-dark-color,
 );
 
