@@ -54,14 +54,12 @@ export class PivotGridStatePersistenceSampleComponent implements OnInit, AfterVi
         { key: 'columnSelection', shortName: 'Cols Sel' },
         { key: 'expansion', shortName: 'Expansion' },
         { key: 'filtering', shortName: 'Filt' },
-        { key: 'rowSelection', shortName: 'Row Sel' },
         { key: 'sorting', shortName: 'Sorting' },
         { key: 'pivotConfiguration', shortName: 'Pivot Configuration' }
     ];
 
     public options: IGridStateOptions = {
         cellSelection: true,
-        rowSelection: true,
         filtering: true,
         sorting: true,
         expansion: true,
