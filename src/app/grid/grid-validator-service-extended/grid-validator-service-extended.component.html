@@ -27,7 +27,7 @@
                 <ng-container *ngTemplateOutlet="defaultErr" >
                     Invalid Date
                 </ng-container>
-                <div *ngIf="cell.errors?.['beyondThreshold']">
+                <div *ngIf="cell.errors?.['futureDate']">
                     The date cannot be in the future.
                 </div>
             </ng-template>

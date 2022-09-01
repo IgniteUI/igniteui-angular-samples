@@ -33,9 +33,11 @@ export class HierarchicalGridValidatorServiceExtendedComponent implements OnInit
 
     @ViewChild('hierarchicalGrid', { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
+    public data:any;
 
     public ngOnInit(): void {
-        this.hierarchicalGrid.data = CUSTOMERS;
+        this.data = CUSTOMERS;
+        this.hierarchicalGrid.data = this.data;
         for (const item of this.hierarchicalGrid.data) {
             const names = item.CompanyName.split(' ');
             item.FirstName = names[0];
@@ -60,23 +62,23 @@ export class HierarchicalGridValidatorServiceExtendedComponent implements OnInit
         const invalidTransactions = this.hierarchicalGrid.validation.getInvalid();
         if (invalidTransactions.length > 0) {
             if (confirm('You\'re commiting invalid transactions. Are you sure?')) {
-                this.hierarchicalGrid.validation.clear();
+                this.hierarchicalGrid.transactions.commit(this.data);
             }
         } else {
             this.hierarchicalGrid.validation.clear();
         }
     }
 
-    public undo() {
+    public undo(grid: IgxHierarchicalGridComponent) {
         /* exit edit mode and commit changes */
-        this.hierarchicalGrid.endEdit(true);
-        this.hierarchicalGrid.transactions.undo();
+        grid.endEdit(true);
+        grid.transactions.undo();
     }
 
-    public redo() {
+    public redo(grid: IgxHierarchicalGridComponent) {
         /* exit edit mode and commit changes */
-        this.hierarchicalGrid.endEdit(true);
-        this.hierarchicalGrid.transactions.redo();
+        grid.endEdit(true);
+        grid.transactions.redo();
     }
 
     public futureDateValidator(): ValidatorFn {

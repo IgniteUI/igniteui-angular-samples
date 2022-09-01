@@ -49,7 +49,7 @@ export class TreeGridValidatorServiceExtendedComponent implements OnInit {
         const invalidTransactions = this.treeGrid.validation.getInvalid();
         if (invalidTransactions.length > 0) {
             if (confirm('You\'re commiting invalid transactions. Are you sure?')) {
-                this.treeGrid.validation.clear();
+                this.treeGrid.transactions.commit(this.data);
             }
         } else {
             this.treeGrid.validation.clear();

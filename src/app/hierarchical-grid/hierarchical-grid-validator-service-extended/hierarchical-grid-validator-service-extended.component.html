@@ -7,7 +7,7 @@
         </igx-column>
         <igx-column field="ContactTitle" [editable]="true" required></igx-column>
         <igx-column field="Phone" [editable]="true" required phoneFormat="^[^a-zA-Z]*$">
-            <ng-template igxCellValidationError let-cell='cell' let-defaultErr>
+            <ng-template igxCellValidationError let-cell='cell' let-defaultErr="defaultErrorTemplate">
                 <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
                 </ng-container>
                 <div *ngIf="cell.errors?.['phoneFormat']">
@@ -17,8 +17,12 @@
         </igx-column>
         <igx-column field="Fax" [editable]="true"></igx-column>
 
-        <igx-row-island [height]="null" [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false"
+        <igx-row-island [height]="null" #grid1 [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false"
             [batchEditing]="true" [rowEditable]="true" (formGroupCreated)="formCreateHandler($event)">
+            <igx-grid-toolbar [grid]="grid" *igxGridToolbar="let grid">
+                <button igxButton [disabled]="!grid.transactions.canUndo" (click)="undo(grid1)">Undo</button>
+                <button igxButton [disabled]="!grid.transactions.canRedo" (click)="redo(grid1)">Redo</button>
+            </igx-grid-toolbar>
             <igx-column [editable]="false" field="OrderID"></igx-column>
             <igx-column [editable]="true" field="EmployeeID" [editable]="true" required></igx-column>
             <igx-column [editable]="true" field="OrderDate" [dataType]="'date'" [editable]="true" required>
@@ -57,8 +61,12 @@
             <igx-column field="ShipVia" [selectable]="false" [editable]="true"></igx-column>
             <igx-column field="Freight" [selectable]="false" [editable]="true"></igx-column>
 
-            <igx-row-island [height]="null" [key]="'OrderDetails'" [primaryKey]="'ProductID'" [autoGenerate]="false"
+            <igx-row-island [height]="null" #grid2 [key]="'OrderDetails'" [primaryKey]="'ProductID'" [autoGenerate]="false"
                 [batchEditing]="true" [rowEditable]="true" [primaryKey]="'ProductID'">
+                <igx-grid-toolbar [grid]="grid" *igxGridToolbar="let grid">
+                    <button igxButton [disabled]="!grid.transactions.canUndo" (click)="undo(grid2)">Undo</button>
+                    <button igxButton [disabled]="!grid.transactions.canRedo" (click)="redo(grid2)">Redo</button>
+                </igx-grid-toolbar>
                 <igx-column [editable]="true" field="ProductID" [editable]="false" required></igx-column>
                 <igx-column [editable]="true" field="UnitPrice" [editable]="true" required></igx-column>
                 <igx-column [editable]="true" field="Quantity" [editable]="true" required></igx-column>
@@ -68,8 +76,8 @@
     </igx-hierarchical-grid>
 
     <div class="buttons-wrapper">
-        <button igxButton [disabled]="!hierarchicalGrid.transactions.canUndo" (click)="undo()">Undo</button>
-        <button igxButton [disabled]="!hierarchicalGrid.transactions.canRedo" (click)="redo()">Redo</button>
+        <button igxButton [disabled]="!hierarchicalGrid.transactions.canUndo" (click)="undo(hierarchicalGrid)">Undo</button>
+        <button igxButton [disabled]="!hierarchicalGrid.transactions.canRedo" (click)="redo(hierarchicalGrid)">Redo</button>
         <button igxButton [disabled]="hierarchicalGrid.transactions.getAggregatedChanges(false).length < 1" (click)="commit()">Commit</button>
     </div>
 </div>
