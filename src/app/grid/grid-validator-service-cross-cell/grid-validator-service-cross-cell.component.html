@@ -8,15 +8,15 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="name" header="Name" [editable]="true" required>
-        </igx-column>
+        <igx-column field="name" header="Name" [editable]="true" required></igx-column>
         <igx-column field="company" header="Company" [editable]="true"></igx-column>
+        <igx-column field="country" header="Country" [editable]="true"></igx-column>
+        <igx-column field="city" header="City" [editable]="true"></igx-column>
         <igx-column field="email" width="190" header="Email" [editable]="true" required email></igx-column>
         <igx-column field="created_on" header="Date of Registration" width="170" [editable]="true"
             [dataType]="'dateTime'" required>
             <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
                 <ng-container *ngTemplateOutlet="defaultErr" >
-                    Invalid Date
                 </ng-container>
                 <div *ngIf="cell.errors?.['beyondThreshold']">
                     The date cannot be in the future.
@@ -31,35 +31,44 @@
             <ng-template igxCell let-cell>
                 {{ cell | date: 'longDate' }}
             </ng-template>
-            <ng-template igxCellValidationError let-cell='cell'>
-                <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
+            <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
+                <ng-container *ngTemplateOutlet="defaultErr">
                 </ng-container>
                 <div *ngIf="cell.errors?.['beyondThreshold']">
                     The date cannot be in the future.
                 </div>
-                <div *ngIf="cell.errors?.['priorThreshold']">
-                    The date cannot be prior the date of registration.
-                </div>
             </ng-template>
         </igx-column>
-        <igx-column field="estimated_sales" header="Estimated Sales" [editable]="true" [dataType]="'number'" required
-            min="0"></igx-column>
+        <igx-column field="estimated_sales" header="Estimated Sales" [editable]="true" [dataType]="'number'" required min="0"></igx-column>
+        <igx-column field="actual_sales" header="Actual Sales" [editable]="true" [dataType]="'number'" required min="0"></igx-column>
         <igx-column field="deals_lost" header="Deals Lost" [editable]="true" [dataType]="'number'" required min="0">
         </igx-column>
         <igx-column field="deals_won" header="Deals Won" [editable]="true" [dataType]="'number'" required min="0">
         </igx-column>
-        <igx-column field="deals_ratio" header="Deals Ratio" [editable]="false" [dataType]="'number'" [dealsRatio]="minDealsRatio">
-            <ng-template igxCell let-cell="cell">
-                {{ getDealsRatio(cell) }}
+        <igx-column field="row_valid" header=" " [editable]="false" [dataType]="'number'" [employeeValid]="minDealsRatio" [pinned]="true" [width]="'50px'">
+            <ng-template igxCell let-cell="cell" class="validatorCell">
+                <div *ngIf="getValidRow(cell)" style="margin-right: '-10px';">
+                    <img width="18" src="assets/images/grid/active.png" title="Ok" />
+                </div>
             </ng-template>
             <ng-template igxCellValidationError let-cell='cell'>
-                <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
-                </ng-container>
-                <div *ngIf="cell.errors?.['estimatedSalesZero']">
-                    The estimated sales cannot be 0 when the deals ratio is greater than 0.
+                <div *ngIf="cell.errors?.['createdInvalid']">
+                    The registration date cannot be in the future.
+                </div>
+                <div *ngIf="cell.errors?.['lastActiveInvalid']">
+                    The last active date cannot be in the future.
+                </div>
+                <div *ngIf="cell.errors?.['createdLastActiveInvalid']">
+                    The registration date cannot be greater than the last active date.
+                </div>
+                <div *ngIf="cell.errors?.['salesZero']">
+                    The actual sales cannot be 0 when the deals ratio is greater than 0.
+                </div>
+                <div *ngIf="cell.errors?.['salesNotZero']">
+                    The actual sales cannot be greater than 0 when the deals ratio is 0.
                 </div>
                 <div *ngIf="cell.errors?.['dealsRatio']">
-                    The deals ratio cannot be {{ minDealsRatio }} or less with current estimated sales.
+                    The deals ratio cannot be {{ minDealsRatio }} or less.
                 </div>
             </ng-template>
         </igx-column>

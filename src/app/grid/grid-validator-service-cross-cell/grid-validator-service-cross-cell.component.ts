@@ -1,5 +1,6 @@
 import { Component, Directive, Input, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { ok } from 'assert';
 import { IgxGridCell, IgxGridComponent, IgxGridRow } from 'igniteui-angular';
 import { IgxGridCellComponent } from 'igniteui-angular/lib/grids/cell.component';
 import { IgxCell } from 'igniteui-angular/lib/grids/common/crud.service';
@@ -10,30 +11,58 @@ export function calculateDealsRatio(dealsWon, dealsLost) {
     return Math.round(dealsWon / dealsLost * 100) / 100;
 }
 
-export function dealsRatioValidator(minDealsRatio, dealsRatio, estimatedSale): ValidatorFn {
+export function employeeValidator(minDealsRatio: number, formGroup: AbstractControl): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-        if (estimatedSale === 0 && dealsRatio > 0) {
-            return { estimatedSalesZero: { value: control.value } };
+        let returnObject = {};
+        const createdOnRecord = formGroup.get('created_on');
+        const lastActiveRecord = formGroup.get('last_activity');
+        const winControl = formGroup.get('deals_won');
+        const loseControl = formGroup.get('deals_lost');
+        const actualSalesControl = formGroup.get('actual_sales');
+
+        // Validate dates
+        const curDate = new Date();
+        if (createdOnRecord.value > curDate) {
+            // The created on date shouldn't be greater than current date.
+            returnObject = { ...returnObject, ...{ createdInvalid: { value: createdOnRecord.value } }};
         }
-        return dealsRatio > minDealsRatio ? null : { dealsRatio: { value: control.value } };
+        if (lastActiveRecord.value > curDate) {
+            // The last active date shouldn't be greater than current date.
+            returnObject = { ...returnObject, ...{ lastActiveInvalid: { value: lastActiveRecord.value } }};
+        }
+        if (createdOnRecord.value > lastActiveRecord.value) {
+            // The created on date shouldn't be greater than last active date.
+            returnObject = { ...returnObject, ...{ createdLastActiveInvalid: { value: createdOnRecord.value } }};
+        }
+        
+        // Validate deals
+        const dealsRatio = calculateDealsRatio(winControl.value, loseControl.value);
+        if (actualSalesControl.value === 0 && dealsRatio > 0) {
+            returnObject = { ...returnObject, ...{ salesZero: { value: actualSalesControl.value } }};
+        }
+        if (actualSalesControl.value > 0 && dealsRatio == 0 ) {
+            returnObject = { ...returnObject, ...{ salesNotZero: { value: actualSalesControl.value } }};
+        }
+        if (dealsRatio < minDealsRatio) {
+            returnObject = { ...returnObject, ...{ dealsRatio: { value: dealsRatio } }};
+        }
+        
+        return Object.entries(returnObject).length == 0 ? null : returnObject;
     };
 }
 
-
 @Directive({
-    selector: '[dealsRatio]',
+    selector: '[employeeValid]',
     providers: [{ provide: NG_VALIDATORS, useExisting: DealsRatioDirective, multi: true }]
 })
 export class DealsRatioDirective extends Validators {
-    @Input('dealsRatio')
+    @Input('employeeValid')
     public minDealsRatio = 0;
 
     public validate(control: AbstractControl): ValidationErrors | null {
         const formGroup = control.parent;
-        const winControl = formGroup.get('deals_won');
-        const loseControl = formGroup.get('deals_lost');
-        const estimatedControl = formGroup.get('estimated_sales');
-        return dealsRatioValidator(this.minDealsRatio, calculateDealsRatio(winControl.value, loseControl.value), estimatedControl.value)(control);
+
+        return employeeValidator(this.minDealsRatio, formGroup)(control);
     }
 }
 
@@ -59,20 +88,29 @@ export class GridValidatorServiceCrossCellComponent {
     public formCreateHandler(formGroup: FormGroup) {
         const createdOnRecord = formGroup.get('created_on');
         const lastActiveRecord = formGroup.get('last_activity');
-        const dealsRatio = formGroup.get('deals_ratio');
+        const rowValid = formGroup.get('row_valid');
         const dealsLost = formGroup.get('deals_lost');
         const dealsWon = formGroup.get('deals_won');
-        const estimatedSales = formGroup.get('estimated_sales');
-        createdOnRecord.addValidators(this._testDateRecord());
-        lastActiveRecord.addValidators(this._testDateRecord(createdOnRecord.value));
+        const actualSales = formGroup.get('actual_sales');
+        createdOnRecord.addValidators(this.testDateRecord());
+        lastActiveRecord.addValidators(this.testDateRecord());
+
+        // Subscribe to change on cells that are cross validated to show error even while editing.
+        // Can be omitted for performance optimization on rowEditDone only.
+        createdOnRecord.statusChanges.subscribe(() => {
+            rowValid.updateValueAndValidity();
+        });
+        lastActiveRecord.statusChanges.subscribe(() => {
+            rowValid.updateValueAndValidity();
+        });
         dealsLost.statusChanges.subscribe(() => {
-            dealsRatio.updateValueAndValidity();
+            rowValid.updateValueAndValidity();
         });
         dealsWon.statusChanges.subscribe(() => {
-            dealsRatio.updateValueAndValidity();
+            rowValid.updateValueAndValidity();
         });
-        estimatedSales.statusChanges.subscribe(() => {
-            dealsRatio.updateValueAndValidity();
+        actualSales.statusChanges.subscribe(() => {
+            rowValid.updateValueAndValidity();
         });
     }
 
@@ -101,28 +139,25 @@ export class GridValidatorServiceCrossCellComponent {
         }
     }
 
-    public _testDateRecord(thresholdVal?: any): ValidatorFn {
+    private testDateRecord(): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
             const date = control.value;
             if(date > new Date()){
                 return { beyondThreshold: { value: control.value } };
             }
-            if(thresholdVal){
-                return thresholdVal < date ? null : { priorThreshold: { value: control.value } }
-            }
             return null;
         }
     }
 
-    public getDealsRatio(cell: IgxGridCell) {
+    public getValidRow(cell: IgxGridCell) {
         const formGroup = this.grid.validation.getFormGroup(cell.id.rowID);
         if (formGroup) {
-            return calculateDealsRatio(formGroup.get('deals_won').value, formGroup.get('deals_lost').value);
+            return !formGroup.get('row_valid').invalid;
         }
-        return calculateDealsRatio(cell.row.data['deals_won'], cell.row.data['deals_lost']);
+        return true;
     }
 
     public editEnterHandler(event) {
-        this.grid.validation.markAsTouched(event.rowID, 'deals_ratio');
+        this.grid.validation.markAsTouched(event.rowID, 'row_valid');
     }
 }

@@ -28,6 +28,11 @@ $custom-checkbox: checkbox-theme(
     @include button($button-theme);
 }
 
+.validatorCell igx-icon {
+    position: relative;
+    left: -10px;
+}
+
 :host {
     ::ng-deep {
         @include checkbox($custom-checkbox);
