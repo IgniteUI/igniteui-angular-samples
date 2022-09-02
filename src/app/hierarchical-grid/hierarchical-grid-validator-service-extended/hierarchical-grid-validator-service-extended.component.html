@@ -17,11 +17,11 @@
         </igx-column>
         <igx-column field="Fax" [editable]="true"></igx-column>
 
-        <igx-row-island [height]="null" #grid1 [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false"
+        <igx-row-island [height]="null" [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false"
             [batchEditing]="true" [rowEditable]="true" (formGroupCreated)="formCreateHandler($event)">
             <igx-grid-toolbar [grid]="grid" *igxGridToolbar="let grid">
-                <button igxButton [disabled]="!grid.transactions.canUndo" (click)="undo(grid1)">Undo</button>
-                <button igxButton [disabled]="!grid.transactions.canRedo" (click)="redo(grid1)">Redo</button>
+                <button igxButton [disabled]="!grid.transactions.canUndo" (click)="undo(grid)">Undo</button>
+                <button igxButton [disabled]="!grid.transactions.canRedo" (click)="redo(grid)">Redo</button>
             </igx-grid-toolbar>
             <igx-column [editable]="false" field="OrderID"></igx-column>
             <igx-column [editable]="true" field="EmployeeID" [editable]="true" required></igx-column>
@@ -61,11 +61,11 @@
             <igx-column field="ShipVia" [selectable]="false" [editable]="true"></igx-column>
             <igx-column field="Freight" [selectable]="false" [editable]="true"></igx-column>
 
-            <igx-row-island [height]="null" #grid2 [key]="'OrderDetails'" [primaryKey]="'ProductID'" [autoGenerate]="false"
+            <igx-row-island [height]="null" [key]="'OrderDetails'" [primaryKey]="'ProductID'" [autoGenerate]="false"
                 [batchEditing]="true" [rowEditable]="true" [primaryKey]="'ProductID'">
                 <igx-grid-toolbar [grid]="grid" *igxGridToolbar="let grid">
-                    <button igxButton [disabled]="!grid.transactions.canUndo" (click)="undo(grid2)">Undo</button>
-                    <button igxButton [disabled]="!grid.transactions.canRedo" (click)="redo(grid2)">Redo</button>
+                    <button igxButton [disabled]="!grid.transactions.canUndo" (click)="undo(grid)">Undo</button>
+                    <button igxButton [disabled]="!grid.transactions.canRedo" (click)="redo(grid)">Redo</button>
                 </igx-grid-toolbar>
                 <igx-column [editable]="true" field="ProductID" [editable]="false" required></igx-column>
                 <igx-column [editable]="true" field="UnitPrice" [editable]="true" required></igx-column>
