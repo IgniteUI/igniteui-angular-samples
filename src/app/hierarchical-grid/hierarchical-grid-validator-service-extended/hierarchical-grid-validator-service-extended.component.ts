@@ -63,9 +63,10 @@ export class HierarchicalGridValidatorServiceExtendedComponent implements OnInit
         if (invalidTransactions.length > 0) {
             if (confirm('You\'re commiting invalid transactions. Are you sure?')) {
                 this.hierarchicalGrid.transactions.commit(this.data);
+                this.hierarchicalGrid.validation.clear();
             }
         } else {
-            this.hierarchicalGrid.validation.clear();
+            this.hierarchicalGrid.transactions.commit(this.data);
         }
     }
 

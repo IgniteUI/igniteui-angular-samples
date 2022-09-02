@@ -54,9 +54,10 @@ export class GridValidatorServiceExtendedComponent {
         if (invalidTransactions.length > 0) {
             if (confirm('You\'re commiting invalid transactions. Are you sure?')) {
                 this.grid.transactions.commit(this.data);
+                this.grid.validation.clear();
             }
         } else {
-            this.grid.validation.clear();
+            this.grid.transactions.commit(this.data);
         }
     }
 
