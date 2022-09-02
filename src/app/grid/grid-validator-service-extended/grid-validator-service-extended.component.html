@@ -13,8 +13,8 @@
         <igx-column field="company" header="Company" [editable]="true"></igx-column>
         <igx-column field="email" width="190" header="Email" [editable]="true" required email></igx-column>
         <igx-column field="fax" header="Phone" [editable]="true" phoneFormat="\+\d{1}\-(?!0)(\d{3})\-(\d{3})\-(\d{4})\b">
-            <ng-template igxCellValidationError let-cell='cell'>
-                <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
+            <ng-template igxCellValidationError let-cell='cell' let-defaultErr="defaultErrorTemplate">
+                <ng-container *ngTemplateOutlet="defaultErr" >
                 </ng-container>
                 <div *ngIf="cell.errors?.['phoneFormat']">
                     Please enter correct phone format
@@ -40,8 +40,8 @@
             <ng-template igxCell let-cell>
                 {{ cell | date: 'longDate' }}
             </ng-template>
-            <ng-template igxCellValidationError let-cell='cell'>
-                <ng-container *ngTemplateOutlet="cell.defaultErrorTemplate">
+            <ng-template igxCellValidationError let-cell='cell' let-defaultErr="defaultErrorTemplate">
+                <ng-container *ngTemplateOutlet="defaultErr">
                 </ng-container>
                 <div *ngIf="cell.errors?.['futureDate']">
                     The date cannot be in the future.

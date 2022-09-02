@@ -9,7 +9,7 @@
         </igx-column>
         <igx-column field="Phone" header="Phone" dataType="string" [editable]="true" required phoneFormat="^[^a-zA-Z]*$">
             <ng-template igxCellValidationError let-cell='cell' let-defaultErr="defaultErrorTemplate">
-                <ng-container *ngTemplateOutlet="cell.defaultErr">
+                <ng-container *ngTemplateOutlet="defaultErr">
                 </ng-container>
                 <div *ngIf="cell.errors?.['phoneFormat']">
                     Please enter correct phone format
@@ -19,7 +19,7 @@
         <igx-column field="Title" header="Title" dataType="string" [editable]="true" required></igx-column>
         <igx-column field="HireDate" header="Hire Date" dataType="date" [editable]="true" required>
             <ng-template igxCellValidationError let-cell="cell" let-defaultErr="defaultErrorTemplate">
-                <ng-container *ngTemplateOutlet="cell.defaultErr" >
+                <ng-container *ngTemplateOutlet="defaultErr" >
                 </ng-container>
                 <div *ngIf="cell.errors?.['futureDate']">
                     The date cannot be in the future!
