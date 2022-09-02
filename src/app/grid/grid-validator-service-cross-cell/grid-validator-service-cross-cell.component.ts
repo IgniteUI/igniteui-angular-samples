@@ -61,7 +61,6 @@ export class DealsRatioDirective extends Validators {
 
     public validate(control: AbstractControl): ValidationErrors | null {
         const formGroup = control.parent;
-
         return employeeValidator(this.minDealsRatio, formGroup)(control);
     }
 }
@@ -77,12 +76,9 @@ export class GridValidatorServiceCrossCellComponent {
     public grid: IgxGridComponent;
 
     public minDealsRatio = 0;
-    public data: any[];
-    public employeesData: any[];
     public transactionData = JSON.parse(JSON.stringify(employeesData));
 
     constructor() {
-        this.data = employeesData;
     }
 
     public formCreateHandler(formGroup: FormGroup) {
@@ -92,8 +88,8 @@ export class GridValidatorServiceCrossCellComponent {
         const dealsLost = formGroup.get('deals_lost');
         const dealsWon = formGroup.get('deals_won');
         const actualSales = formGroup.get('actual_sales');
-        createdOnRecord.addValidators(this.testDateRecord());
-        lastActiveRecord.addValidators(this.testDateRecord());
+        createdOnRecord.addValidators(this.futureDateValidator());
+        lastActiveRecord.addValidators(this.futureDateValidator());
 
         // Subscribe to change on cells that are cross validated to show error even while editing.
         // Can be omitted for performance optimization on rowEditDone only.
@@ -132,14 +128,25 @@ export class GridValidatorServiceCrossCellComponent {
         const invalidTransactions = this.grid.validation.getInvalid();
         if (invalidTransactions.length > 0) {
             if (confirm('You\'re commiting invalid transactions. Are you sure?')) {
+                this.grid.transactions.commit(this.transactionData);
                 this.grid.validation.clear();
             }
         } else {
+            this.grid.transactions.commit(this.transactionData);
             this.grid.validation.clear();
         }
     }
 
-    private testDateRecord(): ValidatorFn {
+    public getDealsRatio(cell: IgxGridCell) {
+        const formGroup = this.grid.validation.getFormGroup(cell.id.rowID);
+        if (formGroup) {
+            // This will update the value runtime during edit of any of the related columns
+            return calculateDealsRatio(formGroup.get('deals_won').value, formGroup.get('deals_lost').value);
+        }
+        return calculateDealsRatio(cell.row.data['deals_won'], cell.row.data['deals_lost']);
+    }
+
+    private futureDateValidator(): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
             const date = control.value;
             if(date > new Date()){
