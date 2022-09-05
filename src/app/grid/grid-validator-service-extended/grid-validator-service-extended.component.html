@@ -8,8 +8,7 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="name" header="Name" [editable]="true" required>
-        </igx-column>
+        <igx-column field="name" header="Name" [editable]="true" required></igx-column>
         <igx-column field="company" header="Company" [editable]="true"></igx-column>
         <igx-column field="email" width="190" header="Email" [editable]="true" required email></igx-column>
         <igx-column field="fax" header="Phone" [editable]="true" phoneFormat="\+\d{1}\-(?!0)(\d{3})\-(\d{3})\-(\d{4})\b">
@@ -21,11 +20,9 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="created_on" header="Date of Registration" width="170" [editable]="true"
-            [dataType]="'dateTime'" required>
+        <igx-column field="created_on" header="Date of Registration" width="170" [editable]="true" [dataType]="'date'" required>
             <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
                 <ng-container *ngTemplateOutlet="defaultErr" >
-                    Invalid Date
                 </ng-container>
                 <div *ngIf="cell.errors?.['futureDate']">
                     The date cannot be in the future.
@@ -35,8 +32,7 @@
                 {{ cell | date: 'longDate' }}
             </ng-template>
         </igx-column>
-        <igx-column field="last_activity" header="Last Active" width="170" [editable]="true" [dataType]="'dateTime'"
-            required>
+        <igx-column field="last_activity" header="Last Active" width="170" [editable]="true" [dataType]="'date'" required>
             <ng-template igxCell let-cell>
                 {{ cell | date: 'longDate' }}
             </ng-template>
@@ -51,14 +47,14 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="estimated_sales" header="Estimated Sales" [editable]="true" [dataType]="'number'" required
-            min="0"></igx-column>
+        <igx-column field="estimated_sales" header="Estimated Sales" [editable]="true" [dataType]="'number'" required min="0">
+        </igx-column>
         <igx-column field="deals_lost" header="Deals Lost" [editable]="true" [dataType]="'number'" required min="0">
         </igx-column>
         <igx-column field="deals_won" header="Deals Won" [editable]="true" [dataType]="'number'" required min="0">
         </igx-column>
-        <igx-column field="deals_pending" header="Deals Pending" [editable]="true" [dataType]="'number'" required
-            min="0"></igx-column>
+        <igx-column field="deals_pending" header="Deals Pending" [editable]="true" [dataType]="'number'" required min="0">
+        </igx-column>
     </igx-grid>
 </div>
 

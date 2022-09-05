@@ -29,24 +29,11 @@ export class HGridPhoneFormatDirective extends Validators {
     styleUrls: ['./hierarchical-grid-validator-service-extended.component.scss'],
     templateUrl: './hierarchical-grid-validator-service-extended.component.html'
 })
-export class HierarchicalGridValidatorServiceExtendedComponent implements OnInit {
+export class HierarchicalGridValidatorServiceExtendedComponent {
 
     @ViewChild('hierarchicalGrid', { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
-    public data:any;
-
-    public ngOnInit(): void {
-        this.data = CUSTOMERS;
-        this.hierarchicalGrid.data = this.data;
-        for (const item of this.hierarchicalGrid.data) {
-            const names = item.CompanyName.split(' ');
-            item.FirstName = names[0];
-            item.LastName = names[names.length - 1];
-            item.FullAddress = `${item.Address}, ${item.City}, ${item.Country}`;
-            item.PersonelDetails = `${item.ContactTitle}: ${item.ContactName}`;
-            item.CompanysAnnualProfit = (100000 + (Math.random() * Math.floor(1000000))).toFixed(0);
-        }
-    }
+    public data = CUSTOMERS;
 
     public formCreateHandler(formGroup: FormGroup) {
         const orderDateRecord = formGroup.get('OrderDate');
@@ -60,15 +47,12 @@ export class HierarchicalGridValidatorServiceExtendedComponent implements OnInit
 
     public commit() {
         const invalidTransactions = this.hierarchicalGrid.validation.getInvalid();
-        if (invalidTransactions.length > 0) {
-            if (confirm('You\'re commiting invalid transactions. Are you sure?')) {
-                this.hierarchicalGrid.transactions.commit(this.data);
-                this.hierarchicalGrid.validation.clear();
-            }
-        } else {
-            this.hierarchicalGrid.transactions.commit(this.data);
-            this.hierarchicalGrid.validation.clear();
+        if (invalidTransactions.length > 0 && !confirm('You\'re committing invalid transactions. Are you sure?')) {
+            return;
         }
+
+        this.hierarchicalGrid.transactions.commit(this.data);
+        this.hierarchicalGrid.validation.clear();
     }
 
     public undo(grid: IgxHierarchicalGridComponent) {

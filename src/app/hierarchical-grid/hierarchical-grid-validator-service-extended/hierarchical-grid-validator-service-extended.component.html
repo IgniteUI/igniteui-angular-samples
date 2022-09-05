@@ -1,10 +1,10 @@
 <div class="grid-wrapper">
-    <igx-hierarchical-grid #hierarchicalGrid height="570px" width="100%" [primaryKey]="'CustomerID'" (formGroupCreated)="formCreateHandler($event)"
-        [batchEditing]="true" [rowEditable]="true">
+    <igx-hierarchical-grid #hierarchicalGrid [height]="'570px'" [width]="'100%'" [data]="data"
+        [primaryKey]="'CustomerID'" [batchEditing]="true" [rowEditable]="true"
+        (formGroupCreated)="formCreateHandler($event)">
         <igx-column field="CustomerID" [editable]="false"></igx-column>
         <igx-column field="CompanyName" [editable]="true" required></igx-column>
-        <igx-column field="ContactName" [editable]="true" required>
-        </igx-column>
+        <igx-column field="ContactName" [editable]="true" required></igx-column>
         <igx-column field="ContactTitle" [editable]="true" required></igx-column>
         <igx-column field="Phone" [editable]="true" required phoneFormat="^[^a-zA-Z]*$">
             <ng-template igxCellValidationError let-cell='cell' let-defaultErr="defaultErrorTemplate">

@@ -34,13 +34,7 @@ export class GridValidatorServiceExtendedComponent {
     @ViewChild('grid1', { read: IgxGridComponent })
     public grid: IgxGridComponent;
 
-    public data: any[];
-    public employeesData: any[];
-    public transactionData = JSON.parse(JSON.stringify(employeesData));
-
-    constructor() {
-        this.data = employeesData;
-    }
+    public data = employeesData;
 
     public formCreateHandler(formGroup: FormGroup) {
         const createdOnRecord = formGroup.get('created_on');
@@ -51,15 +45,12 @@ export class GridValidatorServiceExtendedComponent {
 
     public commit() {
         const invalidTransactions = this.grid.validation.getInvalid();
-        if (invalidTransactions.length > 0) {
-            if (confirm('You\'re commiting invalid transactions. Are you sure?')) {
-                this.grid.transactions.commit(this.data);
-                this.grid.validation.clear();
-            }
-        } else {
-            this.grid.transactions.commit(this.data);
-            this.grid.validation.clear();
+        if (invalidTransactions.length > 0 && !confirm('You\'re committing invalid transactions. Are you sure?')) {
+            return;
         }
+        
+        this.grid.transactions.commit(this.data);
+        this.grid.validation.clear();
     }
 
     public undo() {
