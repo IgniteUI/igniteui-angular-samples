@@ -1,44 +1,11 @@
-@use "../../../variables" as *;
-
-$my-light-gray: #e3e3e3;
-$my-banner-palette: $purple-palette;
-$custom-grid: grid-theme(
-    $palette: $purple-palette,
-);
-
-.sample-wrapper {
+.grid-wrapper {
     margin: 0 auto;
     padding: 16px;
 }
-
-$banner-theme: banner-theme(
-    $banner-background: $my-light-gray,
-    $banner-message-color: color($my-banner-palette, "secondary", 600),
-);
-
-$button-theme: button-theme(
-    $palette: $purple-palette,
-);
-
-$custom-checkbox: checkbox-theme(
-    $palette: $my-banner-palette,
-);
 
 .buttons-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: left;
     padding: 10px 0;
-}
-
-.custom-buttons {
-    @include button($button-theme);
-}
-
-:host {
-    ::ng-deep {
-        @include checkbox($custom-checkbox);
-        @include grid($custom-grid);
-        @include banner($banner-theme);
-    }
 }
