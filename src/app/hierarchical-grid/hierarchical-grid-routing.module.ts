@@ -559,7 +559,7 @@ export const hierarchicalGridRoutes: Routes = [
         component: HierarchicalGridValidatorServiceCrossCellComponent,
         data: hierarchicalGridRoutesData['hierarchical-grid-cross-field-validation'],
         path: 'hierarchical-grid-cross-field-validation'
-    },
+    }
 ];
 
 @NgModule({
