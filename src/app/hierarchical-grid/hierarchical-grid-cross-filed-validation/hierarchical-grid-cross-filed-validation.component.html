@@ -1,0 +1,66 @@
+<div class="grid__wrapper">
+<igx-hierarchical-grid (formGroupCreated)='formCreateCustomerHandler($event)' igxPreventDocumentScroll [primaryKey]="'CustomerID'" [rowEditable]="true" [batchEditing]='true'  #hierarchicalGrid [data]="localdata" [height]="'470px'" [width]="'100%'" displayDensity="compact">
+    <igx-column field="row_valid" header=" " [editable]="false" [dataType]="'number'" [pinned]="true" [width]="'50px'">
+        <ng-template igxCell let-cell="cell">
+            <div *ngIf="!(cell.row.errors)" style="margin-right: '-10px';" [igxTooltipTarget]="tooltipRef"
+            >
+                <img width="18" src="assets/images/grid/active.png"/>
+            </div>
+            <div *ngIf="cell.row.errors" style="margin-right: '-10px';" [igxTooltipTarget]="tooltipRef"
+            >
+                <img width="18" src="assets/images/grid/expired.png"/>
+            </div>
+            <div #tooltipRef="tooltip" igxTooltip [style.width]="'max-content'">
+               <div *ngFor="let message of stateMessage(cell)">
+                   {{message}}
+               </div>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column field="CustomerID" [hidden]='true'></igx-column>
+    <igx-column field="ContactName" editable='true' required></igx-column>
+    <igx-column field="ContactTitle"  editable='true' required></igx-column>
+    <igx-column field="City"  editable='true'>
+        <ng-template igxCellEditor let-cell="cell" let-value let-fc='formControl'>
+            <igx-select [(ngModel)]="cell.editValue" [igxFocus]="true">
+                <igx-select-item *ngFor="let city of cities" [value]="city">
+                    {{ city }}
+                </igx-select-item>
+            </igx-select>
+        </ng-template>
+    </igx-column>
+    <igx-column field="Country"  editable='true'>
+        <ng-template igxCellEditor let-cell="cell" let-value let-fc='formControl'>
+            <igx-select [(ngModel)]="cell.editValue" [igxFocus]="true">
+                <igx-select-item *ngFor="let country of countries" [value]="country">
+                    {{ country }}
+                </igx-select-item>
+            </igx-select>
+        </ng-template> 
+    </igx-column>
+    
+    <igx-column field="PostalCode"  editable='true' required></igx-column>
+    <igx-column field="Phone"  editable='true' required></igx-column>
+    <igx-row-island [primaryKey]="'OrderID'" [height]="null" [key]="'Orders'" [autoGenerate]="false" [rowEditable]="true">
+        <igx-column field="OrderID" [hidden]='true'></igx-column>
+        <igx-column field="EmployeeID" [hidden]='true'></igx-column>
+        <igx-column field="OrderDate" [dataType]="'date'" editable='true'></igx-column>
+        <igx-column field="ShippedDate" [dataType]="'date'" editable='true'></igx-column>
+        <igx-column field="ShipVia" editable='true'></igx-column>
+        <igx-column field="Freight" editable='true'></igx-column>
+        <igx-column field="ShipName" editable='true'></igx-column>
+        <igx-column field="ShipAddress" editable='true'></igx-column>
+        <igx-column field="ShipCity" editable='true'></igx-column>
+        <igx-column field="ShipPostalCode" editable='true'></igx-column>
+        <igx-column field="ShipCountry" editable='true'></igx-column>
+        <igx-row-island [primaryKey]="'ProductID'" [height]="null" [key]="'OrderDetails'" [autoGenerate]="false" [rowEditable]="true">
+                <igx-column field="ProductID" [hidden]='true'></igx-column>
+                <igx-column field="UnitPrice" editable='true'></igx-column>
+                <igx-column field="Quantity" editable='true'></igx-column>
+                <igx-column field="Discount" editable='true'></igx-column>
+        </igx-row-island>
+    </igx-row-island>
+</igx-hierarchical-grid>
+</div>
+
+<button igxButton [disabled]="hierarchicalGrid.transactions.getAggregatedChanges(false).length < 1" (click)="commit()">Commit</button>

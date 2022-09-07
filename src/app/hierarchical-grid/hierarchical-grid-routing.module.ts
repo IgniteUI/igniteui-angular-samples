@@ -98,6 +98,7 @@ import { HGridActionStripSampleComponent } from './hierarchical-grid-action-stri
 import { HGridSummaryTemplateComponent } from './hgrid-summary-template/hgrid-summary-template.component';
 import { HierarchicalGridValidatorServiceComponent } from './hierarchical-grid-validator-service/hierarchical-grid-validator-service.component';
 import { HGridColumnAutoSizingSampleComponent } from './hgrid-column-autosizing/hgrid-column-autosizing.component';
+import { HierarchicalGridValidatorServiceCrossCellComponent } from './hierarchical-grid-cross-filed-validation/hierarchical-grid-cross-filed-validationcomponent';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -553,7 +554,12 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridColumnAutoSizingSampleComponent,
         data: hierarchicalGridRoutesData['hGrid-columnAutosizing-sample'],
         path: 'hGrid-columnAutosizing-sample'
-    }
+    },
+    {
+        component: HierarchicalGridValidatorServiceCrossCellComponent,
+        data: hierarchicalGridRoutesData['hierarchical-grid-cross-filed-validation'],
+        path: 'hierarchical-grid-cross-filed-validation'
+    },
 ];
 
 @NgModule({
