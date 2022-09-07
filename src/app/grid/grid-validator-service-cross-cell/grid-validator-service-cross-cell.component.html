@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <igx-grid #grid1 [data]="transactionData" [width]="'100%'" [height]="'480px'" [autoGenerate]="false" [batchEditing]="true" [rowEditable]="true"
-        [primaryKey]="'id'" (formGroupCreated)='formCreateHandler($event)' (rowEditEnter)="editEnterHandler($event)">
+        [primaryKey]="'id'" (formGroupCreated)='formCreateHandler($event)' (rowEditEnter)="editEnterHandler($event)" (rowEditDone)="editEndHandler($event)" (rowEditExit)="editEndHandler($event)">
         <igx-column field="Avatar" header="Photo" dataType="string" width="80" [editable]="false">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner avatar-cell">
@@ -13,8 +13,7 @@
         <igx-column field="country" header="Country" [editable]="true"></igx-column>
         <igx-column field="city" header="City" [editable]="true"></igx-column>
         <igx-column field="email" width="190" header="Email" [editable]="true" required email></igx-column>
-        <igx-column field="created_on" header="Date of Registration" width="170" [editable]="true"
-            [dataType]="'dateTime'" required>
+        <igx-column field="created_on" header="Date of Registration" width="170" [editable]="true" [dataType]="'date'" required>
             <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
                 <ng-container *ngTemplateOutlet="defaultErr" >
                 </ng-container>
@@ -26,8 +25,7 @@
                 {{ cell | date: 'longDate' }}
             </ng-template>
         </igx-column>
-        <igx-column field="last_activity" header="Last Active" width="170" [editable]="true" [dataType]="'dateTime'"
-            required>
+        <igx-column field="last_activity" header="Last Active" width="170" [editable]="true" [dataType]="'date'" required>
             <ng-template igxCell let-cell>
                 {{ cell | date: 'longDate' }}
             </ng-template>
@@ -41,44 +39,49 @@
         </igx-column>
         <igx-column field="estimated_sales" header="Estimated Sales" [editable]="true" [dataType]="'number'" required min="0"></igx-column>
         <igx-column field="actual_sales" header="Actual Sales" [editable]="true" [dataType]="'number'" required min="0"></igx-column>
-        <igx-column field="deals_lost" header="Deals Lost" [editable]="true" [dataType]="'number'" required min="0">
-        </igx-column>
-        <igx-column field="deals_won" header="Deals Won" [editable]="true" [dataType]="'number'" required min="0">
-        </igx-column>
+        <igx-column field="deals_lost" header="Deals Lost" [editable]="true" [dataType]="'number'" required min="0"></igx-column>
+        <igx-column field="deals_won" header="Deals Won" [editable]="true" [dataType]="'number'" required min="0"></igx-column>
         <igx-column field="deals_ratio" header="Deals Ratio" [editable]="false" [dataType]="'number'" >
             <ng-template igxCell let-cell="cell">
                 {{ getDealsRatio(cell) }}
             </ng-template>
         </igx-column>
-        <igx-column field="row_valid" header=" " [editable]="false" [dataType]="'number'" [employeeValid]="minDealsRatio" [pinned]="true" [width]="'50px'">
+        <igx-column field="row_valid" header=" " [editable]="false" [dataType]="'number'" [pinned]="true" [width]="'50px'" employeeValid>
             <ng-template igxCell let-cell="cell" class="validatorCell">
-                <div *ngIf="getValidRow(cell)" style="margin-right: '-10px';">
+                <div *ngIf="isRowValid(cell.id.rowID)" style="margin-right: '-10px';">
                     <img width="18" src="assets/images/grid/active.png" title="Ok" />
                 </div>
             </ng-template>
             <ng-template igxCellValidationError let-cell='cell'>
+                <ng-container *ngIf="cell.errors?.['columnErrors'].length > 0">
+                    <ng-container *ngFor="let colError of cell.errors?.['columnErrors']">
+                        <div *ngIf="colError.errors?.required">
+                            The `{{ getColumnHeader(colError.column) }}` column is required.
+                        </div>
+                        <div *ngIf="colError.errors?.min">
+                            A value of at least {{ colError.errors?.min?.min }} should be entered for `{{ getColumnHeader(colError.column) }}` column.
+                        </div>
+                    </ng-container>
+                </ng-container>
+
                 <div *ngIf="cell.errors?.['createdInvalid']">
-                    The registration date cannot be in the future.
+                    The `Date of Registration` date cannot be in the future.
                 </div>
                 <div *ngIf="cell.errors?.['lastActiveInvalid']">
-                    The last active date cannot be in the future.
+                    The `Last Active` date cannot be in the future.
                 </div>
                 <div *ngIf="cell.errors?.['createdLastActiveInvalid']">
-                    The registration date cannot be greater than the last active date.
+                    The `Date of Registration` cannot be greater than the `Last Active` date.
                 </div>
                 <div *ngIf="cell.errors?.['salesZero']">
-                    The actual sales cannot be 0 when the deals ratio is greater than 0.
+                    The `Actual Sales` cannot be 0 when the deals ratio is greater than 0.
                 </div>
                 <div *ngIf="cell.errors?.['salesNotZero']">
-                    The actual sales cannot be greater than 0 when the deals ratio is 0.
-                </div>
-                <div *ngIf="cell.errors?.['dealsRatio']">
-                    The deals ratio cannot be {{ minDealsRatio }} or less.
+                    The `Actual Sales` cannot be greater than 0 when the deals ratio is 0.
                 </div>
             </ng-template>
         </igx-column>
     </igx-grid>
 </div>
 
-<button igxButton [disabled]="grid1.transactions.getAggregatedChanges(false).length < 1"
-    (click)="commit()">Commit</button>
+<button igxButton [disabled]="grid1.transactions.getAggregatedChanges(false).length < 1" (click)="commit()">Commit</button>

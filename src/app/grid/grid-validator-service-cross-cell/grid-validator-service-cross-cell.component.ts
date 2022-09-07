@@ -4,6 +4,7 @@ import { ok } from 'assert';
 import { IgxGridCell, IgxGridComponent, IgxGridRow } from 'igniteui-angular';
 import { IgxGridCellComponent } from 'igniteui-angular/lib/grids/cell.component';
 import { IgxCell } from 'igniteui-angular/lib/grids/common/crud.service';
+import { forEach } from 'jszip';
 import { employeesData } from '../../data/employeesData';
 
 export function calculateDealsRatio(dealsWon, dealsLost) {
@@ -11,9 +12,21 @@ export function calculateDealsRatio(dealsWon, dealsLost) {
     return Math.round(dealsWon / dealsLost * 100) / 100;
 }
 
-export function employeeValidator(minDealsRatio: number, formGroup: AbstractControl): ValidatorFn {
+export function employeeValidator(formGroup: FormGroup): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-        let returnObject = {};
+        let returnObject = formGroup.valid ? {} :  { columnErrors: []};
+
+         // Get single cell errors for grid columns
+        if (!formGroup.valid) {
+            Object.keys(formGroup.controls).forEach(controlKey => {
+                const formControl = formGroup.get(controlKey);
+                if (formControl.invalid && formControl.errors) {
+                    returnObject.columnErrors.push({column: controlKey, errors: formControl.errors });
+                }
+            });
+        }
+
+        // Cross cell validation
         const createdOnRecord = formGroup.get('created_on');
         const lastActiveRecord = formGroup.get('last_activity');
         const winControl = formGroup.get('deals_won');
@@ -22,15 +35,15 @@ export function employeeValidator(minDealsRatio: number, formGroup: AbstractCont
 
         // Validate dates
         const curDate = new Date();
-        if (createdOnRecord.value > curDate) {
+        if (new Date(createdOnRecord.value) > curDate) {
             // The created on date shouldn't be greater than current date.
             returnObject = { ...returnObject, ...{ createdInvalid: { value: createdOnRecord.value } }};
         }
-        if (lastActiveRecord.value > curDate) {
+        if (new Date(lastActiveRecord.value) > curDate) {
             // The last active date shouldn't be greater than current date.
             returnObject = { ...returnObject, ...{ lastActiveInvalid: { value: lastActiveRecord.value } }};
         }
-        if (createdOnRecord.value > lastActiveRecord.value) {
+        if (new Date(createdOnRecord.value) > new Date(lastActiveRecord.value)) {
             // The created on date shouldn't be greater than last active date.
             returnObject = { ...returnObject, ...{ createdLastActiveInvalid: { value: createdOnRecord.value } }};
         }
@@ -43,11 +56,8 @@ export function employeeValidator(minDealsRatio: number, formGroup: AbstractCont
         if (actualSalesControl.value > 0 && dealsRatio == 0 ) {
             returnObject = { ...returnObject, ...{ salesNotZero: { value: actualSalesControl.value } }};
         }
-        if (dealsRatio < minDealsRatio) {
-            returnObject = { ...returnObject, ...{ dealsRatio: { value: dealsRatio } }};
-        }
         
-        return Object.entries(returnObject).length == 0 ? null : returnObject;
+        return Object.entries(returnObject).length === 0 ? null : returnObject;
     };
 }
 
@@ -56,12 +66,9 @@ export function employeeValidator(minDealsRatio: number, formGroup: AbstractCont
     providers: [{ provide: NG_VALIDATORS, useExisting: DealsRatioDirective, multi: true }]
 })
 export class DealsRatioDirective extends Validators {
-    @Input('employeeValid')
-    public minDealsRatio = 0;
-
     public validate(control: AbstractControl): ValidationErrors | null {
-        const formGroup = control.parent;
-        return employeeValidator(this.minDealsRatio, formGroup)(control);
+        const formGroup = control.parent as FormGroup;
+        return employeeValidator(formGroup)(control);
     }
 }
 
@@ -74,6 +81,20 @@ export class GridValidatorServiceCrossCellComponent {
 
     @ViewChild('grid1', { read: IgxGridComponent })
     public grid: IgxGridComponent;
+    public columns = new Map([
+        [ 'name', { header: 'Name' }],
+        [ 'company', { header: 'Company' }],
+        [ 'country', { header: 'Country' }],
+        [ 'city', { header: 'City' }], 
+        [ 'email', { header: 'Email' }],
+        [ 'created_on', { header: 'Date of Registration' }],
+        [ 'last_activity', { header: 'Last Active' }],
+        [ 'estimated_sales', { header: 'Estimated Sales' }],
+        [ 'actual_sales', { header: 'Actual Sales' }],
+        [ 'deals_lost', { header: 'Deals Lost' }],
+        [ 'deals_won', { header: 'Deals Won' }],
+        [ 'deals_ratio', { header: 'Deals Ratio' }]
+    ]);
 
     public minDealsRatio = 0;
     public transactionData = JSON.parse(JSON.stringify(employeesData));
@@ -84,57 +105,18 @@ export class GridValidatorServiceCrossCellComponent {
     public formCreateHandler(formGroup: FormGroup) {
         const createdOnRecord = formGroup.get('created_on');
         const lastActiveRecord = formGroup.get('last_activity');
-        const rowValid = formGroup.get('row_valid');
-        const dealsLost = formGroup.get('deals_lost');
-        const dealsWon = formGroup.get('deals_won');
-        const actualSales = formGroup.get('actual_sales');
         createdOnRecord.addValidators(this.futureDateValidator());
         lastActiveRecord.addValidators(this.futureDateValidator());
-
-        // Subscribe to change on cells that are cross validated to show error even while editing.
-        // Can be omitted for performance optimization on rowEditDone only.
-        createdOnRecord.statusChanges.subscribe(() => {
-            rowValid.updateValueAndValidity();
-        });
-        lastActiveRecord.statusChanges.subscribe(() => {
-            rowValid.updateValueAndValidity();
-        });
-        dealsLost.statusChanges.subscribe(() => {
-            rowValid.updateValueAndValidity();
-        });
-        dealsWon.statusChanges.subscribe(() => {
-            rowValid.updateValueAndValidity();
-        });
-        actualSales.statusChanges.subscribe(() => {
-            rowValid.updateValueAndValidity();
-        });
-    }
-
-    /**
-     * Bind this handler to `cellEdit` output of the grid
-     * in order to cancel cell editing in case the submitted
-     * value is invalid.
-     *
-     * @param evt
-     */
-
-    public cellEdit(evt) {
-        if (!evt.valid) {
-            evt.cancel = true;
-        }
     }
 
     public commit() {
         const invalidTransactions = this.grid.validation.getInvalid();
-        if (invalidTransactions.length > 0) {
-            if (confirm('You\'re commiting invalid transactions. Are you sure?')) {
-                this.grid.transactions.commit(this.transactionData);
-                this.grid.validation.clear();
-            }
-        } else {
-            this.grid.transactions.commit(this.transactionData);
-            this.grid.validation.clear();
-        }
+        if (invalidTransactions.length > 0 && !confirm('You\'re commiting invalid transactions. Are you sure?')) {
+            return;
+        } 
+
+        this.grid.transactions.commit(this.transactionData);
+        this.grid.validation.clear();
     }
 
     public getDealsRatio(cell: IgxGridCell) {
@@ -156,8 +138,8 @@ export class GridValidatorServiceCrossCellComponent {
         }
     }
 
-    public getValidRow(cell: IgxGridCell) {
-        const formGroup = this.grid.validation.getFormGroup(cell.id.rowID);
+    public isRowValid(rowID: string) {
+        const formGroup = this.grid.validation.getFormGroup(rowID);
         if (formGroup) {
             return !formGroup.get('row_valid').invalid;
         }
@@ -165,6 +147,16 @@ export class GridValidatorServiceCrossCellComponent {
     }
 
     public editEnterHandler(event) {
+        // To trigger the validator for the row valid cell, we need to mark it as touch
         this.grid.validation.markAsTouched(event.rowID, 'row_valid');
+    }
+
+    public editEndHandler(event) {
+        // If the edit is ended(canceled or confirmed), we need to trigger the validator row valid cell again
+        this.grid.validation.getFormGroup(event.rowID).get('row_valid').updateValueAndValidity();
+    }
+
+    public getColumnHeader(columnField: string): string {
+        return this.columns.get(columnField).header;
     }
 }
