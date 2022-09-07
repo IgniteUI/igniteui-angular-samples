@@ -39,6 +39,11 @@ export class HierarchicalGridValidatorServiceCrossCellComponent implements OnIni
         formGroup.addValidators(this.addressValidator());
     }
 
+    public formCreateOrderHandler(event: IGridFormGroupCreatedEventArgs) {
+        const formGroup = event.formGroup;
+        formGroup.addValidators(this.dateValidator());
+    }
+
     public addressValidator(): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
             const formGroup = control;
@@ -53,11 +58,32 @@ export class HierarchicalGridValidatorServiceCrossCellComponent implements OnIni
         }
     }
 
+    public dateValidator(): ValidatorFn {
+        return (control: AbstractControl): ValidationErrors | null => {
+            const formGroup = control;
+            let returnObject = {};
+            const orderDate = formGroup.get('OrderDate').value;
+            const shippedDate = formGroup.get('ShippedDate').value;
+            if (new Date(shippedDate) < new Date(orderDate)) {
+                returnObject['invalidRange'] = true;
+            }
+            return returnObject;
+        }
+    }
+
+    public isRowValid(cell: IgxGridCell) {
+        const hasErrors = !!cell.row.errors || cell.row.cells.some(x => !!x.errors);
+        return !hasErrors;
+    }
+
     public stateMessage(cell: IgxGridCell) {
         const messages = [];
         const row = cell.row;
         if  (row.errors?.invalidAddress) {
             messages.push('The address information is invalid. City does not match the Country.');
+        }
+        if  (row.errors?.invalidRange) {
+            messages.push('The ShippedDate cannot be before the OrderDate.');
         }
         const cellValidationErrors = row.cells.filter(x => !!x.errors);
         if (cellValidationErrors && cellValidationErrors.length > 0) {
@@ -72,13 +98,13 @@ export class HierarchicalGridValidatorServiceCrossCellComponent implements OnIni
         return messages;
     }
 
-    public commit() {
-        const invalidTransactions = this.grid.validation.getInvalid();
+    public commit(grid: IgxHierarchicalGridComponent) {
+        const invalidTransactions = grid.validation.getInvalid();
         if (invalidTransactions.length > 0 && !confirm('You\'re commiting invalid transactions. Are you sure?')) {
             return;
         }
 
-        this.grid.transactions.commit(this.localdata);
-        this.grid.validation.clear();
+        grid.transactions.commit(this.localdata);
+        grid.validation.clear();
     }
 }
