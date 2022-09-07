@@ -2,6 +2,7 @@
 import { Component, Directive, Input, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { IgxTreeGridComponent } from 'igniteui-angular';
+import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
 export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
@@ -40,8 +41,8 @@ export class TreeGridValidatorServiceExtendedComponent implements OnInit {
         this.data = generateEmployeeFlatData();
     }
 
-    public formCreateHandler(formGroup: FormGroup) {
-        const hireDateRecord = formGroup.get('HireDate');
+    public formCreateHandler(formGroupArgs: IGridFormGroupCreatedEventArgs) {
+        const hireDateRecord = formGroupArgs.formGroup.get('HireDate');
         hireDateRecord.addValidators([this.futureDateValidator(), this.pastDateValidator()]);
     }
 
@@ -50,7 +51,7 @@ export class TreeGridValidatorServiceExtendedComponent implements OnInit {
         if (invalidTransactions.length > 0 && !confirm('You\'re committing invalid transactions. Are you sure?')) {
             return;
         }
-        
+
         this.treeGrid.transactions.commit(this.data);
         this.treeGrid.validation.clear();
     }

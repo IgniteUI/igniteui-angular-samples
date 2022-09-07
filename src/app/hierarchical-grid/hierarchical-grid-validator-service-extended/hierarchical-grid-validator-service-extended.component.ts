@@ -1,6 +1,7 @@
 import { Component, Directive, Input, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 
 export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
@@ -35,10 +36,10 @@ export class HierarchicalGridValidatorServiceExtendedComponent {
     private hierarchicalGrid: IgxHierarchicalGridComponent;
     public data = CUSTOMERS;
 
-    public formCreateHandler(formGroup: FormGroup) {
-        const orderDateRecord = formGroup.get('OrderDate');
-        const requiredDateRecord = formGroup.get('RequiredDate');
-        const shippedDateRecord = formGroup.get('ShippedDate');
+    public formCreateHandler(formGroupArgs: IGridFormGroupCreatedEventArgs) {
+        const orderDateRecord = formGroupArgs.formGroup.get('OrderDate');
+        const requiredDateRecord = formGroupArgs.formGroup.get('RequiredDate');
+        const shippedDateRecord = formGroupArgs.formGroup.get('ShippedDate');
 
         orderDateRecord.addValidators(this.futureDateValidator());
         requiredDateRecord.addValidators(this.pastDateValidator());

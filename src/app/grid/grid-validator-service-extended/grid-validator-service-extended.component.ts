@@ -1,6 +1,7 @@
 import { Component, Directive, Input, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { IgxGridComponent } from 'igniteui-angular';
+import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { employeesData } from '../../data/employeesData';
 
 export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
@@ -36,9 +37,9 @@ export class GridValidatorServiceExtendedComponent {
 
     public data = employeesData;
 
-    public formCreateHandler(formGroup: FormGroup) {
-        const createdOnRecord = formGroup.get('created_on');
-        const lastActiveRecord = formGroup.get('last_activity');
+    public formCreateHandler(formGroupArgs: IGridFormGroupCreatedEventArgs) {
+        const createdOnRecord = formGroupArgs.formGroup.get('created_on');
+        const lastActiveRecord = formGroupArgs.formGroup.get('last_activity');
         createdOnRecord.addValidators(this.futureDateValidator());
         lastActiveRecord.addValidators([this.pastDateValidator(), this.futureDateValidator()]);
     }
@@ -48,7 +49,7 @@ export class GridValidatorServiceExtendedComponent {
         if (invalidTransactions.length > 0 && !confirm('You\'re committing invalid transactions. Are you sure?')) {
             return;
         }
-        
+
         this.grid.transactions.commit(this.data);
         this.grid.validation.clear();
     }
