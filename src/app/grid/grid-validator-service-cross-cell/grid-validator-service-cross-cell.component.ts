@@ -4,6 +4,7 @@ import { ok } from 'assert';
 import { IgxGridCell, IgxGridComponent, IgxGridRow } from 'igniteui-angular';
 import { IgxGridCellComponent } from 'igniteui-angular/lib/grids/cell.component';
 import { IgxCell } from 'igniteui-angular/lib/grids/common/crud.service';
+import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { forEach } from 'jszip';
 import { employeesData } from '../../data/employeesData';
 
@@ -102,9 +103,9 @@ export class GridValidatorServiceCrossCellComponent {
     constructor() {
     }
 
-    public formCreateHandler(formGroup: FormGroup) {
-        const createdOnRecord = formGroup.get('created_on');
-        const lastActiveRecord = formGroup.get('last_activity');
+    public formCreateHandler(evt: IGridFormGroupCreatedEventArgs) {
+        const createdOnRecord = evt.formGroup.get('created_on');
+        const lastActiveRecord = evt.formGroup.get('last_activity');
         createdOnRecord.addValidators(this.futureDateValidator());
         lastActiveRecord.addValidators(this.futureDateValidator());
     }

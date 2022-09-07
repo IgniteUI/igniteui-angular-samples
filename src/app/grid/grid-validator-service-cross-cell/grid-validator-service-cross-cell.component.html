@@ -1,6 +1,7 @@
 <div class="grid__wrapper">
     <igx-grid #grid1 [data]="transactionData" [width]="'100%'" [height]="'480px'" [autoGenerate]="false" [batchEditing]="true" [rowEditable]="true"
-        [primaryKey]="'id'" (formGroupCreated)='formCreateHandler($event)' (rowEditEnter)="editEnterHandler($event)" (rowEditDone)="editEndHandler($event)" (rowEditExit)="editEndHandler($event)">
+        [primaryKey]="'id'" (formGroupCreated)='formCreateHandler($event)' (rowEditEnter)="editEnterHandler($event)"
+        (rowEditDone)="editEndHandler($event)" (rowEditExit)="editEndHandler($event)">
         <igx-column field="Avatar" header="Photo" dataType="string" width="80" [editable]="false">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner avatar-cell">
