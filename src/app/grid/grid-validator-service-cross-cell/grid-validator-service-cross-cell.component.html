@@ -47,7 +47,7 @@
                 {{ getDealsRatio(cell) }}
             </ng-template>
         </igx-column>
-        <igx-column field="row_valid" header=" " [editable]="false" [dataType]="'number'" [pinned]="true" [width]="'50px'" employeeValid>
+        <igx-column field="row_valid" header=" " [editable]="false" [dataType]="'number'" [pinned]="true" [width]="'50px'" validEmployee>
             <ng-template igxCell let-cell="cell" class="validatorCell">
                 <div *ngIf="isRowValid(cell.id.rowID)" style="margin-right: '-10px';">
                     <img width="18" src="assets/images/grid/active.png" title="Ok" />

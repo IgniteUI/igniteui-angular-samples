@@ -63,10 +63,10 @@ export function employeeValidator(formGroup: FormGroup): ValidatorFn {
 }
 
 @Directive({
-    selector: '[employeeValid]',
-    providers: [{ provide: NG_VALIDATORS, useExisting: DealsRatioDirective, multi: true }]
+    selector: '[validEmployee]',
+    providers: [{ provide: NG_VALIDATORS, useExisting: ValidEmployeeDirective, multi: true }]
 })
-export class DealsRatioDirective extends Validators {
+export class ValidEmployeeDirective extends Validators {
     public validate(control: AbstractControl): ValidationErrors | null {
         const formGroup = control.parent as FormGroup;
         return employeeValidator(formGroup)(control);
