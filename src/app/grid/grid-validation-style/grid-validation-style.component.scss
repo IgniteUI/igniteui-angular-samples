@@ -4,9 +4,9 @@
     margin: 0 auto;
     padding: 16px;
 }
+.validator-container {
+    color: hsl(34, 80%, 63%);
+}
 :host ::ng-deep {
     --igx-error-500: 34, 80%, 63%;
-    .validator-container {
-        color: #ECAA53;
-    }
 }
