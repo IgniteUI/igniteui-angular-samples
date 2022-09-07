@@ -1,24 +1,12 @@
 @use '../../../variables' as *;
 
-$orange-palette: palette($primary: color($purple-palette, 'primary'),
-        $secondary: color($purple-palette, 'secondary'),
-        $error: #ECAA53) !default;
-
-$grid: grid-theme(
-    $palette: palette($primary: color($purple-palette, 'primary'), $secondary: transparent),
-    $cell-active-border-color: 'transparent');
-
-:host ::ng-deep {
-    .igx-grid__td--invalid {
-        @include theme($orange-palette);
-    }
-    .igx-grid__td--editing {
-        @include grid($grid);
-    }
-    .validator-container {
-        color: #ECAA53;
-    }
+.validator-container {
+    color: hsl(34, 80%, 63%);
 }
+:host ::ng-deep {
+    --igx-error-500: 34, 80%, 63%;
+}
+
 
 .grid__wrapper {
     margin: 0 auto;
