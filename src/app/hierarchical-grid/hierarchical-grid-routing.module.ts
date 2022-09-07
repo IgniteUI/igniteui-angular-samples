@@ -98,7 +98,7 @@ import { HGridActionStripSampleComponent } from './hierarchical-grid-action-stri
 import { HGridSummaryTemplateComponent } from './hgrid-summary-template/hgrid-summary-template.component';
 import { HierarchicalGridValidatorServiceComponent } from './hierarchical-grid-validator-service/hierarchical-grid-validator-service.component';
 import { HGridColumnAutoSizingSampleComponent } from './hgrid-column-autosizing/hgrid-column-autosizing.component';
-import { HierarchicalGridValidatorServiceCrossCellComponent } from './hierarchical-grid-cross-filed-validation/hierarchical-grid-cross-filed-validationcomponent';
+import { HierarchicalGridValidatorServiceCrossCellComponent } from './hierarchical-grid-cross-field-validation/hierarchical-grid-cross-field-validation.component';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -557,8 +557,8 @@ export const hierarchicalGridRoutes: Routes = [
     },
     {
         component: HierarchicalGridValidatorServiceCrossCellComponent,
-        data: hierarchicalGridRoutesData['hierarchical-grid-cross-filed-validation'],
-        path: 'hierarchical-grid-cross-filed-validation'
+        data: hierarchicalGridRoutesData['hierarchical-grid-cross-field-validation'],
+        path: 'hierarchical-grid-cross-field-validation'
     },
 ];
 

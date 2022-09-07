@@ -5,9 +5,9 @@ import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/commo
 import { CUSTOMERS } from '../../data/hierarchical-data';
 
 @Component({
-    selector: 'hierarchical-grid-cross-filed-validation',
-    styleUrls: ['./hierarchical-grid-cross-filed-validation.component.scss'],
-    templateUrl: 'hierarchical-grid-cross-filed-validation.component.html'
+    selector: 'hierarchical-grid-cross-field-validation',
+    styleUrls: ['./hierarchical-grid-cross-field-validation.component.scss'],
+    templateUrl: 'hierarchical-grid-cross-field-validation.component.html'
 })
 
 export class HierarchicalGridValidatorServiceCrossCellComponent implements OnInit {

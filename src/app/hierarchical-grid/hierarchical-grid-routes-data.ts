@@ -82,5 +82,5 @@ export const hierarchicalGridRoutesData = {
     'hGrid-action-strip': { displayName: 'HGrid with Action Strip', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-validator-service': { displayName: 'Hierarchical Grid Validator Service', parentName: 'Hierarchical Grid' },
     'hGrid-columnAutosizing-sample': { displayName: 'HGrid Column Autosizing Sample', parentName: 'Hierarchical Grid' },
-    'hierarchical-grid-cross-filed-validation': { displayName: 'Hierarchical Grid Cross-field Validation', parentName: 'Hierarchical Grid' }
+    'hierarchical-grid-cross-field-validation': { displayName: 'Hierarchical Grid Cross-field Validation', parentName: 'Hierarchical Grid' }
 };
