@@ -47,11 +47,10 @@ export class ListItemSelectionComponent {
       }
     ];
 
-    public displayDensities;
-
     constructor(private cdr: ChangeDetectorRef) { }
 
-    public toggleFavorite(contact: any) {
+    public toggleFavorite(contact: any, event: Event) {
+      event.stopPropagation();
       contact.isFavorite = !contact.isFavorite;
     }
 
