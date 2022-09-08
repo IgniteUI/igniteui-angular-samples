@@ -86,8 +86,8 @@ import { TreeGridRowDragComponent } from './tree-grid-row-drag/tree-grid-row-dra
 import { TreeGridRowEditStyleComponent } from './tree-grid-row-edit-style/tree-grid-row-edit-style.component';
 import { TreeGridRowEditSampleComponent } from './tree-grid-row-edit/tree-grid-row-editing-sample.component';
 import { TreeGridRowPinningExtraColumnSampleComponent } from './tree-grid-row-pinning-extra-column/tree-grid-row-pinning-extra-column.component';
-import { TreeGridRowPinningStylingSampleComponent} from './tree-grid-row-pinning-styling/tree-grid-row-pinning-styling.component';
-import { TreeGridRowPinningSampleComponent} from './tree-grid-row-pinning/tree-grid-row-pinning.component';
+import { TreeGridRowPinningStylingSampleComponent } from './tree-grid-row-pinning-styling/tree-grid-row-pinning-styling.component';
+import { TreeGridRowPinningSampleComponent } from './tree-grid-row-pinning/tree-grid-row-pinning.component';
 import { TreeGridRowReorderComponent } from './tree-grid-row-reorder/tree-grid-row-reorder.component';
 import { TreeGridRightPinningSampleComponent } from './tree-grid-sample-right-pinning/tree-grid-right-pinning.component';
 import { TGridSaveStateComponent } from './tree-grid-save-state/tGrid-state.component';
@@ -122,6 +122,8 @@ import { TreeGridRowStylesComponent } from './tree-grid-rowStyles-sample/tree-gr
 import { TreeGridRowClassesComponent } from './tree-grid-rowClasses-sample/tree-grid-rowClasses.component';
 import { TreeGridActionStripSampleComponent } from './tree-grid-action-strip/tree-grid-action-strip-sample';
 import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/treegrid-summary-template.component';
+import { TreeGridColumnAutoSizingSampleComponent } from './treegrid-column-autosizing/treegrid-column-autosizing.component';
+import { TreeGridValidatorServiceComponent } from './tree-grid-validator-service/tree-grid-validator-service.component';
 
 @NgModule({
     declarations: [
@@ -217,7 +219,9 @@ import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/tr
         TreeGridSummaryFormatterComponent,
         TreeGridRowStylesComponent,
         TreeGridRowClassesComponent,
-        TreeGridActionStripSampleComponent
+        TreeGridActionStripSampleComponent,
+        TreeGridColumnAutoSizingSampleComponent,
+        TreeGridValidatorServiceComponent
     ],
     imports: [
         CommonModule,
