@@ -25,6 +25,10 @@ export class HGridPhoneFormatDirective extends Validators {
     }
 }
 
+export function unique(value, index, self) {
+    return self.findIndex(v => v.CustomerID === value.CustomerID) === index;
+}
+
 @Component({
     selector: 'app-hierarchical-grid-validator-service-extended',
     styleUrls: ['./hierarchical-grid-validator-service-extended.component.scss'],
@@ -34,7 +38,7 @@ export class HierarchicalGridValidatorServiceExtendedComponent {
 
     @ViewChild('hierarchicalGrid', { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
-    public data = CUSTOMERS;
+    public data = CUSTOMERS.filter(unique);
 
     public formCreateHandler(formGroupArgs: IGridFormGroupCreatedEventArgs) {
         const orderDateRecord = formGroupArgs.formGroup.get('OrderDate');
@@ -42,8 +46,8 @@ export class HierarchicalGridValidatorServiceExtendedComponent {
         const shippedDateRecord = formGroupArgs.formGroup.get('ShippedDate');
 
         orderDateRecord.addValidators(this.futureDateValidator());
-        requiredDateRecord.addValidators(this.pastDateValidator());
-        shippedDateRecord.addValidators(this.pastDateValidator());
+        requiredDateRecord.addValidators([this.futureDateValidator(), this.pastDateValidator()]);
+        shippedDateRecord.addValidators([this.futureDateValidator(), this.pastDateValidator()]);
     }
 
     public commit() {
