@@ -80,6 +80,9 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
                 if (cell.errors.min) {
                     messages.push(`A value of at least ${cell.errors.min.min} should be entered for \`${cell.column.header}\` column.`);
                 }
+                if (cell.errors.max) {
+                    messages.push(`A value of at maximum ${cell.errors.max.max} should be entered for \`${cell.column.header}\` column.`);
+                }
             }
         });
 

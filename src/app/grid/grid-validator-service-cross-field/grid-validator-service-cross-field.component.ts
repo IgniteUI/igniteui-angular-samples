@@ -85,7 +85,7 @@ export class GridValidatorServiceCrossFieldComponent {
             if (actualSalesControl.value === 0 && dealsRatio > 0) {
                 returnObject['salesZero'] = true;
             }
-            if (actualSalesControl.value > 0 && dealsRatio == 0 ) {
+            if (actualSalesControl.value > 0 && dealsRatio === 0) {
                 returnObject['salesNotZero'] = true;
             }
             
