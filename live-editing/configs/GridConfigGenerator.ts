@@ -1373,15 +1373,15 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: 'GridValidatorServiceCrossCellComponent',
+            component: 'GridValidatorServiceCrossFieldComponent',
             additionalFiles: [
                 '/src/app/directives/prevent-scroll.directive.ts',
                 '/src/app/data/employeesData.ts'
 
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridValidatorServiceCrossCellComponent', 'IgxGridModule', 'IgxFocusModule', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['GridValidatorServiceCrossCellComponent', 'ForbiddenValidatorDirective'],
+                imports: ['GridValidatorServiceCrossFieldComponent', 'IgxGridModule', 'IgxFocusModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['GridValidatorServiceCrossFieldComponent', 'ForbiddenValidatorDirective'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxFocusModule']
             })
         }));
