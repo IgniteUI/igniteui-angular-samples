@@ -1,0 +1,14 @@
+@use '../../../variables' as *;
+
+.validator-container {
+    color: hsl(34, 80%, 63%);
+}
+:host ::ng-deep {
+    --igx-error-500: 34, 80%, 63%;
+}
+
+
+.grid__wrapper {
+    margin: 0 auto;
+    padding: 16px;
+}

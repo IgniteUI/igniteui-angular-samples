@@ -1,0 +1,13 @@
+<div class="grid__wrapper">
+    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" width="100%" height="520px"
+        [rowEditable]="true" [rowSelection]="selectionMode" [rowStyles]="rowStyles">
+        <igx-column *ngFor="let c of columns" [field]="c.field" [dataType]="c.dataType" [header]="c.label" [required]="c.required">
+            <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
+                <div class="validator-container">
+                    <ng-container *ngTemplateOutlet="defaultErr">
+                    </ng-container>
+                </div>
+            </ng-template>
+        </igx-column>
+    </igx-tree-grid>
+</div>
