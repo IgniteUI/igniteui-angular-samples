@@ -26,7 +26,7 @@
         <igx-column field="Title" header="Title" dataType="string" [editable]="true" required></igx-column>
         <igx-column field="HireDate" header="Hire Date" dataType="date" [editable]="true" required></igx-column>
         <igx-column field="OnPTO" header="On PTO" dataType="boolean" [editable]="true"></igx-column>
-        <igx-column field="row_valid" header=" " [editable]="false" [dataType]="'number'" [pinned]="true" [width]="'150px'">
+        <igx-column field="row_valid" header=" " [editable]="false" [pinned]="true" [width]="'150px'">
             <ng-template igxCell let-cell="cell">
                 <div *ngIf="isRowValid(cell)" [igxTooltipTarget]="tooltipRef"  style="margin: 'auto';">
                     <img width="18" src="assets/images/grid/active.png"/>

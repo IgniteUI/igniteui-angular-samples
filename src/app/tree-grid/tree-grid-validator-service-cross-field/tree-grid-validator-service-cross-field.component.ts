@@ -49,7 +49,7 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
             
             const age = formGroup.get('Age');
             const hireDate = formGroup.get('HireDate');
-            if(new Date().getFullYear() - new Date(hireDate.value).getFullYear() >= age.value) {
+            if((new Date().getFullYear() - new Date(hireDate.value).getFullYear()) + 18 >= age.value) {
                 returnObject['ageLessHireDate'] = true;
             }
 
@@ -60,7 +60,7 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
                 returnObject['invalidAddress'] = true;
             }
 
-            return Object.entries(returnObject).length === 0 ? null : returnObject;
+            return returnObject;
         };
     }
 
@@ -87,7 +87,7 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
         });
 
         if (row.errors?.ageLessHireDate) {
-            messages.push(`\`Age\` cannot be less than the hire duration.`);
+            messages.push(`\`Age\` cannot be less than 18 when the person was hired.`);
         }
         if (row.errors?.invalidAddress) {
             messages.push(`Selected \`City\` does not match the \`Country\`.`);
