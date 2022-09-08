@@ -23,7 +23,7 @@ export class HierarchicalGridValidatorServiceCrossCellComponent implements OnIni
 
     }
     public ngOnInit(): void {
-        this.localdata = CUSTOMERS;
+        this.localdata = CUSTOMERS.filter((rec, index, arr) => arr.findIndex(x => x.CustomerID === rec.CustomerID) === index);
         this.countryData = new Map(this.localdata.map(i => [i.Country, {}]));
         this.localdata.forEach(rec => {
             const country = rec.Country;
