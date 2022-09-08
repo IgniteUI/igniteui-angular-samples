@@ -4,12 +4,15 @@
     margin: 0 auto;
     padding: 16px;
 }
+
 .validator-container {
-    color: hsl(34, 80%, 63%);
+    color: color($color: error);
 }
+
 :host ::ng-deep {
-    --igx-error-500: 34, 80%, 63%;
+    --igx-error-500: 34deg, 80%, 63%;
+
     .invalid-cell {
-        box-shadow: inset 0 0 0 0.125rem hsl(34, 80%, 63%);
+        box-shadow: inset 0 0 0 0.125rem color($color: error);
     }
 }
