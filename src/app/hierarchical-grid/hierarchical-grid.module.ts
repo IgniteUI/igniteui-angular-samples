@@ -3,7 +3,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule,
     IgxChipsModule, IgxComboModule, IgxDatePickerModule, IgxDialogModule,
     IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule,
@@ -185,6 +185,7 @@ import { HierarchicalGridValidatorServiceCrossCellComponent } from './hierarchic
     imports: [
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpClientModule,
         HierarchicalGridRoutingModule,
         IgxPreventDocumentScrollModule,

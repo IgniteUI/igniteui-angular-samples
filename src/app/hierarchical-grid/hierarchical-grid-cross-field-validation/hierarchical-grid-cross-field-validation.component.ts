@@ -104,7 +104,7 @@ export class HierarchicalGridValidatorServiceCrossCellComponent implements OnIni
             return;
         }
 
-        grid.transactions.commit(this.localdata);
+        grid.transactions.commit(grid.data);
         grid.validation.clear();
     }
 }
