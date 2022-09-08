@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { RowType } from 'igniteui-angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxTreeGridComponent, RowType } from 'igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
 @Component({
@@ -9,12 +9,20 @@ import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 })
 export class TreeGridValidationStyleComponent implements OnInit {
 
+    @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true }) public treeGrid: IgxTreeGridComponent;
     public data: IEmployee[];
     public columns: any[];
     public selectionMode = 'multiple';
     public rowStyles = {
         background: (row: RowType) => row.cells.find(c => c.errors !== null && c.errors !== undefined) ? '#FF000033' : '#00000000'
     };
+    public cellStyles = {
+        'invalid-cell': (rowData, columnKey, cellValue, rowIndex) => {
+            const pKey = this.treeGrid.primaryKey;
+            const cell = this.treeGrid.getCellByKey(rowData[pKey], columnKey);
+            return cell && cell.errors !== null && cell.errors !== undefined;
+        }
+    }
     public ngOnInit(): void {
         this.data = generateEmployeeFlatData();
 

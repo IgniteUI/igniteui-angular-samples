@@ -1,7 +1,7 @@
 <div class="grid__wrapper">
 <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="localData" [autoGenerate]="false" [height]="'600px'"
     [width]="'100%'" [rowStyles]="rowStyles">
-    <igx-column field="Artist" [editable]="true" [dataType]="'string'" required>
+    <igx-column field="Artist" [editable]="true" [dataType]="'string'" required [cellClasses]="cellStyles">
         <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
             <div class="validator-container">
                 <ng-container *ngTemplateOutlet="defaultErr">
@@ -14,8 +14,8 @@
     <igx-column field="Debut" [editable]="true" dataType="number" [formatter]="formatter"></igx-column>
     <igx-column field="GrammyNominations" header="Grammy Nominations" [editable]="true" dataType="number"></igx-column>
     <igx-column field="GrammyAwards" header="Grammy Awards" [editable]="true" dataType="number"></igx-column>
-    <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false" [rowStyles]="rowStyles">
-        <igx-column field="Album" [editable]="true" [dataType]="'string'" required>
+    <igx-row-island #childGrid [height]="null" [key]="'Albums'" [autoGenerate]="false" [rowStyles]="rowStyles">
+        <igx-column field="Album" [editable]="true" [dataType]="'string'" required [cellClasses]="cellStyles">
             <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
                 <div class="validator-container">
                     <ng-container *ngTemplateOutlet="defaultErr">
@@ -23,7 +23,7 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="LaunchDate" header="Launch Date" [editable]="true" [dataType]="'date'" required>
+        <igx-column field="LaunchDate" header="Launch Date" [editable]="true" [dataType]="'date'" required [cellClasses]="cellStyles">
             <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
                 <div class="validator-container">
                     <ng-container *ngTemplateOutlet="defaultErr">
@@ -31,7 +31,7 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="BillboardReview" header="Billboard Review" [editable]="true" dataType="number" required>
+        <igx-column field="BillboardReview" header="Billboard Review" [editable]="true" dataType="number" required [cellClasses]="cellStyles">
             <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
                 <div class="validator-container">
                     <ng-container *ngTemplateOutlet="defaultErr">
