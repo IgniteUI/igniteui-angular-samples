@@ -1160,6 +1160,20 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        configs.push(new Config({
+            component: 'TreeGridValidatorServiceCrossFieldComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts',
+                '/src/app/data/utils.ts',
+                '/src/app/tree-grid/data/employees-flat.ts'
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridValidatorServiceCrossFieldComponent',
+                    'IgxButtonModule'],
+                ngDeclarations: ['TreeGridValidatorServiceCrossFieldComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule']
+            })
+        }));
+
         // TreeGrid Validation Style
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat.ts'],
