@@ -125,6 +125,7 @@ import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-
 import { GridColumnAutosizingComponent } from './grid-column-autosizing/grid-column-autosizing.component';
 import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.component';
 import { GridValidatorServiceComponent } from './grid-validator-service/grid-validator-service.component';
+import { GridValidatorServiceCrossFieldComponent } from './grid-validator-service-cross-field/grid-validator-service-cross-field.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -722,6 +723,11 @@ export const gridsRoutes: Routes = [
         component: GridValidatorServiceComponent,
         data: gridsRoutesData['grid-validator-service'],
         path: 'grid-validator-service'
+    },
+    {
+        component: GridValidatorServiceCrossFieldComponent,
+        data: gridsRoutesData['grid-validator-service-cross-field'],
+        path: 'grid-cross-field-validator-service'
     }
 ];
 
