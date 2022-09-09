@@ -15,7 +15,7 @@
             <ng-template igxCellValidationError let-cell='cell' let-defaultErr="defaultErrorTemplate">
                 <ng-container *ngTemplateOutlet="defaultErr" >
                 </ng-container>
-                <div *ngIf="cell.errors?.['phoneFormat']">
+                <div *ngIf="cell.validation.errors?.['phoneFormat']">
                     Please enter correct phone format
                 </div>
             </ng-template>
@@ -24,7 +24,7 @@
             <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
                 <ng-container *ngTemplateOutlet="defaultErr" >
                 </ng-container>
-                <div *ngIf="cell.errors?.['futureDate']">
+                <div *ngIf="cell.validation.errors?.['futureDate']">
                     The date cannot be in the future.
                 </div>
             </ng-template>
@@ -39,10 +39,10 @@
             <ng-template igxCellValidationError let-cell='cell' let-defaultErr="defaultErrorTemplate">
                 <ng-container *ngTemplateOutlet="defaultErr">
                 </ng-container>
-                <div *ngIf="cell.errors?.['futureDate']">
+                <div *ngIf="cell.validation.errors?.['futureDate']">
                     The date cannot be in the future.
                 </div>
-                <div *ngIf="cell.errors?.['pastDate']">
+                <div *ngIf="cell.validation.errors?.['pastDate']">
                     The date cannot be before the 5th of November 2010
                 </div>
             </ng-template>

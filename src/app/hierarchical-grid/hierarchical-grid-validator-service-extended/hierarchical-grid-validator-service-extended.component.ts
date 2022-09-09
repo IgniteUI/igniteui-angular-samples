@@ -1,6 +1,6 @@
-import { Component, Directive, Input, OnInit, ViewChild } from '@angular/core';
-import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { Component, Directive, Input, ViewChild } from '@angular/core';
+import { AbstractControl, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 
@@ -38,6 +38,9 @@ export class HierarchicalGridValidatorServiceExtendedComponent {
 
     @ViewChild('hierarchicalGrid', { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
+    @ViewChild('childGrid', { static: true })
+    private childGrid: IgxRowIslandComponent;
+
     public data = CUSTOMERS.filter(unique);
 
     public formCreateHandler(formGroupArgs: IGridFormGroupCreatedEventArgs) {
@@ -50,6 +53,15 @@ export class HierarchicalGridValidatorServiceExtendedComponent {
         shippedDateRecord.addValidators([this.futureDateValidator(), this.pastDateValidator()]);
     }
 
+    public get hasTransactions(): boolean {
+        return this.hierarchicalGrid.transactions.getAggregatedChanges(false).length > 0 || this.hasChildTransactions;
+    }
+
+    public get hasChildTransactions(): boolean {
+         return this.childGrid.gridAPI.getChildGrids()
+             .find(c => c.transactions.getAggregatedChanges(false).length > 0) !== undefined;
+    }
+
     public commit() {
         const invalidTransactions = this.hierarchicalGrid.validation.getInvalid();
         if (invalidTransactions.length > 0 && !confirm('You\'re committing invalid transactions. Are you sure?')) {
@@ -57,6 +69,9 @@ export class HierarchicalGridValidatorServiceExtendedComponent {
         }
 
         this.hierarchicalGrid.transactions.commit(this.data);
+        this.childGrid.gridAPI.getChildGrids().forEach((grid) => {
+            grid.transactions.commit(grid.data);
+        });
         this.hierarchicalGrid.validation.clear();
     }
 
