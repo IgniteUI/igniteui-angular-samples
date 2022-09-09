@@ -89,8 +89,8 @@ export class PivotFeaturesComponent {
                 }],
                 enabled: true,
                 styles: {
-                    upFontValue: (rowData: any, columnKey: any): boolean => rowData[columnKey] > 150,
-                    downFontValue: (rowData: any, columnKey: any): boolean => rowData[columnKey] <= 150
+                    downFontValue: (rowData: any, columnKey: any): boolean => parseFloat(rowData.aggregationValues.get(columnKey.field)) <= 150,
+                    upFontValue: (rowData: any, columnKey: any): boolean => parseFloat(rowData.aggregationValues.get(columnKey.field)) > 150
                 },
                 formatter: (value) => value ? '$' + parseFloat(value).toFixed(3) : undefined
             },

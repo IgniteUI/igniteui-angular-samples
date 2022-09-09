@@ -1,0 +1,18 @@
+<div class="switches">
+    <button igxButton="raised" (click)="restoreState()">
+        <igx-icon class="btn-icon">restore</igx-icon>
+        <span>Restore</span>
+    </button>
+    <button igxButton="raised" (click)="saveState()">
+        <igx-icon class="btn-icon">save</igx-icon>
+        <span>Save</span>
+    </button>
+    <button igxButton="raised" (click)="clearStorage()">
+        <igx-icon class="btn-icon">delete</igx-icon>
+        <span>Clear</span>
+    </button>
+</div>
+
+<igx-pivot-grid #grid [data]="data" [pivotConfiguration]="pivotConfigHierarchy" [defaultExpandState]='true'
+    [igxGridState]="options" [sortStrategy]="customStrategy" [showPivotConfigurationUI]='false' [superCompactMode]="true" [height]="'500px'">
+</igx-pivot-grid>
