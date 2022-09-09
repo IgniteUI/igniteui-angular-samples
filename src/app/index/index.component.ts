@@ -1,7 +1,8 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { NavigationStart, Route, Router } from '@angular/router';
-import { IgxNavigationDrawerComponent } from 'igniteui-angular';
-import { filter } from 'rxjs/operators';
+import { IgxNavigationDrawerComponent, IgxTreeComponent } from 'igniteui-angular';
+import { fromEvent, Subscription } from 'rxjs';
+import { filter, map, debounceTime } from 'rxjs/operators';
 import { dataDisplayRoutesData } from '../data-display/data-display-routes-data';
 import { dataEntriesRoutesData } from '../data-entries/data-entries-routes-data';
 import { gridsRoutesData } from '../grid/grid-routes-data';
@@ -27,6 +28,9 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
     @ViewChild('navdrawer', { read: IgxNavigationDrawerComponent, static: true })
     public navdrawer: IgxNavigationDrawerComponent;
+
+    @ViewChild('tree', { read: IgxTreeComponent, static: false })
+    public tree: IgxTreeComponent;
 
     public homeRouteItem: IRouteItem;
 
@@ -113,6 +117,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
     private allNavItems: INavigationItem[] = [];
 
+    private searchSub: Subscription;
+
     constructor(private router: Router, private cdr: ChangeDetectorRef) {
         this.appRoutes = this.getAllSampleRoutes('/samples',
             router.config.filter((c) => c.path === 'samples')[0].children, this.modulesRoutes);
@@ -132,6 +138,11 @@ export class IndexComponent implements OnInit, AfterViewInit {
                 (route: any) => route.path === event.url)[0];
             if (routeItem) {
                 this.selectedDisplayName = routeItem.displayName;
+                const children = this.tree.findNodes(this.selectedDisplayName);
+                this.tree.deselectAll();
+                if (children?.length) {
+                    children[0].selected = true;
+                }
             }
 
             if (event.url !== '/' && !this.navdrawer.pin) {
@@ -155,19 +166,41 @@ export class IndexComponent implements OnInit, AfterViewInit {
             const loadedChildItem = loadedParentItem.children.filter(
                 (routeItem) => routeItem.displayName === loadedRouteItem.displayName)[0];
 
-            this.toggleParent('header' + loadedParentItem.name);
-            document.getElementById('child' + loadedChildItem.displayName).scrollIntoView();
+            const parents = this.tree.findNodes(loadedParentItem.name);
+            if (parents?.length) {
+                parents[0].expanded = true;
+                parents[0].nativeElement.scrollIntoView();
+            }
+            const children = this.tree.findNodes(loadedChildItem.displayName);
+            if (children?.length) {
+                children[0].selected = true;
+            }
             this.cdr.detectChanges();
         }
     }
 
-    public searchValueChanged() {
-        this.currentNavItems = this.filter(this.allNavItems);
+    public createSearchSub(searchInput: Element) {
+        if (!this.searchSub) {
+            const input = fromEvent(searchInput, 'keyup')
+                        .pipe(map<Event, string>(e => (e.currentTarget as HTMLInputElement).value));
+            const debouncedInput = input.pipe(debounceTime(150));
+            this.searchSub = debouncedInput.subscribe(() => {
+                this.currentNavItems = this.filter(this.allNavItems);
+                this.cdr.detectChanges();
+
+                if (this.searchValue !== '') {
+                    this.tree.expandAll();
+                } else {
+                    this.tree.collapseAll();
+                }
+            });
+        }
     }
 
     public clearSearchValue() {
         this.searchValue = '';
-        this.searchValueChanged();
+        this.currentNavItems = this.filter(this.allNavItems);
+        this.tree.collapseAll();
     }
 
     // toggle a header element from the navigation
