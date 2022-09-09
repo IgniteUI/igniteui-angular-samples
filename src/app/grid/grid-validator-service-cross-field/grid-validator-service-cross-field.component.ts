@@ -94,40 +94,40 @@ export class GridValidatorServiceCrossFieldComponent {
     }
 
     public isRowValid(cell: IgxGridCell) {
-        return !cell.row.errors && !cell.row.cells.some(c => !!c.errors);
+        return !cell.row.validation.errors && !cell.row.cells.some(c => !!c.validation.errors);
     }
 
     public stateMessage(cell: IgxGridCell) {
         const messages = [];
-        const row = cell.row;
-        const cellValidationErrors = row.cells.filter(x => !!x.errors);
+
+        const cellValidationErrors = cell.row.cells.filter(x => !!x.validation.errors);
         cellValidationErrors.forEach(cell => {
-            if (cell.errors) {
-                if (cell.errors.required) {
-                    messages.push(`The \`${cell.column.header}\` column is required.`);
-                }
-                if (cell.errors.min) {
-                    messages.push(`A value of at least ${cell.errors.min.min} should be entered for \`${cell.column.header}\` column.`);
-                }
-                if (cell.errors.email) {
-                    messages.push(`Please enter a valid email for \`${cell.column.header}\` column.`);
-                }
+            const cellErrors = cell.validation.errors;
+            if (cellErrors?.required) {
+                messages.push(`The \`${cell.column.header}\` column is required.`);
+            }
+            if (cellErrors?.min) {
+                messages.push(`A value of at least ${cellErrors.min.min} should be entered for \`${cell.column.header}\` column.`);
+            }
+            if (cellErrors?.email) {
+                messages.push(`Please enter a valid email for \`${cell.column.header}\` column.`);
             }
         });
 
-        if (row.errors?.createdInvalid) {
+        const rowErrors = cell.row.validation.errors;
+        if (rowErrors?.createdInvalid) {
             messages.push(`The \`Date of Registration\` date cannot be in the future.`);
         }
-        if (row.errors?.lastActiveInvalid) {
+        if (rowErrors?.lastActiveInvalid) {
             messages.push(`The \`Last Active\` date cannot be in the future.`);
         }
-        if (row.errors?.createdLastActiveInvalid) {
+        if (rowErrors?.createdLastActiveInvalid) {
             messages.push(`The \`Date of Registration\` cannot be greater than the \`Last Active\` date.`);
         }
-        if (row.errors?.salesZero) {
+        if (rowErrors?.salesZero) {
             messages.push(`The \`Actual Sales\` cannot be 0 when the deals ratio is greater than 0.`);
         }
-        if (row.errors?.salesNotZero) {
+        if (rowErrors?.salesNotZero) {
             messages.push(`The \`Actual Sales\` cannot be greater than 0 when the deals ratio is 0.`);
         }
 

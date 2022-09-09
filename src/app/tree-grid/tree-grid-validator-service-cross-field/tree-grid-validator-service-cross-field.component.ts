@@ -65,31 +65,31 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
     }
 
     public isRowValid(cell: IgxGridCell) {
-        return !cell.row.errors && !cell.row.cells.some(c => !!c.errors);
+        return !cell.row.validation.errors && !cell.row.cells.some(c => !!c.validation.errors);
     }
 
     public stateMessage(cell: IgxGridCell) {
         const messages = [];
-        const row = cell.row;
-        const cellValidationErrors = row.cells.filter(x => !!x.errors);
+
+        const cellValidationErrors = cell.row.cells.filter(x => !!x.validation.errors);
         cellValidationErrors.forEach(cell => {
-            if (cell.errors) {
-                if (cell.errors.required) {
-                    messages.push(`The \`${cell.column.header}\` column is required.`);
-                }
-                if (cell.errors.min) {
-                    messages.push(`A value of at least ${cell.errors.min.min} should be entered for \`${cell.column.header}\` column.`);
-                }
-                if (cell.errors.max) {
-                    messages.push(`A value of at maximum ${cell.errors.max.max} should be entered for \`${cell.column.header}\` column.`);
-                }
+            const cellErrors = cell.validation.errors;
+            if (cellErrors?.required) {
+                messages.push(`The \`${cell.column.header}\` column is required.`);
+            }
+            if (cellErrors?.min) {
+                messages.push(`A value of at least ${cellErrors.min.min} should be entered for \`${cell.column.header}\` column.`);
+            }
+            if (cellErrors?.max) {
+                messages.push(`A value of at maximum ${cellErrors.max.max} should be entered for \`${cell.column.header}\` column.`);
             }
         });
 
-        if (row.errors?.ageLessHireDate) {
+        const rowErrors = cell.row.validation.errors;
+        if (rowErrors?.ageLessHireDate) {
             messages.push(`\`Age\` cannot be less than 18 when the person was hired.`);
         }
-        if (row.errors?.invalidAddress) {
+        if (rowErrors?.invalidAddress) {
             messages.push(`Selected \`City\` does not match the \`Country\`.`);
         }
 
