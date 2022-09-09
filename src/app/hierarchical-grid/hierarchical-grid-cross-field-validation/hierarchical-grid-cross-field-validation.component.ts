@@ -72,20 +72,20 @@ export class HierarchicalGridValidatorServiceCrossCellComponent implements OnIni
     }
 
     public isRowValid(cell: IgxGridCell) {
-        const hasErrors = !!cell.row.errors || cell.row.cells.some(x => !!x.errors);
+        const hasErrors = !!cell.row.validation.errors || cell.row.cells.some(x => !!x.validation.errors);
         return !hasErrors;
     }
 
     public stateMessage(cell: IgxGridCell) {
         const messages = [];
         const row = cell.row;
-        if  (row.errors?.invalidAddress) {
+        if (row.validation.errors?.invalidAddress) {
             messages.push('The address information is invalid. City does not match the Country.');
         }
-        if  (row.errors?.invalidRange) {
+        if (row.validation.errors?.invalidRange) {
             messages.push('The ShippedDate cannot be before the OrderDate.');
         }
-        const cellValidationErrors = row.cells.filter(x => !!x.errors);
+        const cellValidationErrors = row.cells.filter(x => !!x.validation.errors);
         if (cellValidationErrors && cellValidationErrors.length > 0) {
             const fields = cellValidationErrors.map(x => x.column.field).join(',');
             messages.push('The following fields are required: ' + fields);
