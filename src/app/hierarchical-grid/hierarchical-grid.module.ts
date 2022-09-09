@@ -3,7 +3,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule,
     IgxChipsModule, IgxComboModule, IgxDatePickerModule, IgxDialogModule,
     IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule,
@@ -93,6 +93,7 @@ import { HGridActionStripSampleComponent } from './hierarchical-grid-action-stri
 import { HGridSummaryTemplateComponent } from './hgrid-summary-template/hgrid-summary-template.component';
 import { HierarchicalGridValidatorServiceComponent } from './hierarchical-grid-validator-service/hierarchical-grid-validator-service.component';
 import { HGridColumnAutoSizingSampleComponent } from './hgrid-column-autosizing/hgrid-column-autosizing.component';
+import { HierarchicalGridValidatorServiceCrossCellComponent } from './hierarchical-grid-cross-field-validation/hierarchical-grid-cross-field-validation.component';
 import { HGridValidationStyleComponent } from './hierarchical-grid-validation-style/hierarchical-grid-validation-style.component';
 
 @NgModule({
@@ -180,11 +181,13 @@ import { HGridValidationStyleComponent } from './hierarchical-grid-validation-st
         HGridActionStripSampleComponent,
         HierarchicalGridValidatorServiceComponent,
         HGridColumnAutoSizingSampleComponent,
+        HierarchicalGridValidatorServiceCrossCellComponent,
         HGridValidationStyleComponent
     ],
     imports: [
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpClientModule,
         HierarchicalGridRoutingModule,
         IgxPreventDocumentScrollModule,
