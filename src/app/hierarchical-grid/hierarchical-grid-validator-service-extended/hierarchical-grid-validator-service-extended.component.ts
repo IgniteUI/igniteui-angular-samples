@@ -63,7 +63,12 @@ export class HierarchicalGridValidatorServiceExtendedComponent {
     }
 
     public commit() {
-        const invalidTransactions = this.hierarchicalGrid.validation.getInvalid();
+        const invalidParentTransactions = this.hierarchicalGrid.validation.getInvalid();
+        let invalidChildTransactions = [];
+        this.childGrid.gridAPI.getChildGrids().forEach((grid) => {
+            invalidChildTransactions = [... invalidChildTransactions, ...grid.validation.getInvalid()];
+        });
+        const invalidTransactions = [...invalidParentTransactions, ...invalidChildTransactions];
         if (invalidTransactions.length > 0 && !confirm('You\'re committing invalid transactions. Are you sure?')) {
             return;
         }
@@ -71,6 +76,7 @@ export class HierarchicalGridValidatorServiceExtendedComponent {
         this.hierarchicalGrid.transactions.commit(this.data);
         this.childGrid.gridAPI.getChildGrids().forEach((grid) => {
             grid.transactions.commit(grid.data);
+            grid.validation.clear();
         });
         this.hierarchicalGrid.validation.clear();
     }
