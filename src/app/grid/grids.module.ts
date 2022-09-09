@@ -134,6 +134,7 @@ import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-
 import { GridColumnAutosizingComponent } from './grid-column-autosizing/grid-column-autosizing.component';
 import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.component';
 import { GridValidatorServiceComponent } from './grid-validator-service/grid-validator-service.component';
+import { GridValidatorServiceCrossFieldComponent } from './grid-validator-service-cross-field/grid-validator-service-cross-field.component';
 
 @NgModule({
     declarations: [
@@ -257,7 +258,8 @@ import { GridValidatorServiceComponent } from './grid-validator-service/grid-val
         GridRowStylesComponent,
         GridColumnAutosizingComponent,
         GridWithRatingComponent,
-        GridValidatorServiceComponent
+        GridValidatorServiceComponent,
+        GridValidatorServiceCrossFieldComponent
     ],
     imports: [
         CommonModule,

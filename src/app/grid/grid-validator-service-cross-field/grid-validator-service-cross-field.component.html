@@ -1,0 +1,67 @@
+<div class="grid__wrapper">
+    <igx-grid #grid1 [data]="transactionData" [width]="'100%'" [height]="'480px'" [autoGenerate]="false" [batchEditing]="true" [rowEditable]="true"
+        [primaryKey]="'id'" (formGroupCreated)='formCreateHandler($event)'>
+        <igx-column field="Avatar" header="Photo" dataType="string" width="80" [editable]="false">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner avatar-cell">
+                    <igx-avatar [src]="cell.row.data.avatar" [roundShape]="true" size="small"></igx-avatar>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="name" header="Name" [editable]="true" required></igx-column>
+        <igx-column field="company" header="Company" [editable]="true"></igx-column>
+        <igx-column field="country" header="Country" [editable]="true"></igx-column>
+        <igx-column field="city" header="City" [editable]="true"></igx-column>
+        <igx-column field="email" width="190" header="Email" [editable]="true" required email></igx-column>
+        <igx-column field="created_on" header="Date of Registration" width="170" [editable]="true" [dataType]="'date'" required>
+            <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
+                <ng-container *ngTemplateOutlet="defaultErr" >
+                </ng-container>
+                <div *ngIf="cell.errors?.['beyondThreshold']">
+                    The date cannot be in the future.
+                </div>
+            </ng-template>
+            <ng-template igxCell let-cell>
+                {{ cell | date: 'longDate' }}
+            </ng-template>
+        </igx-column>
+        <igx-column field="last_activity" header="Last Active" width="170" [editable]="true" [dataType]="'date'" required>
+            <ng-template igxCell let-cell>
+                {{ cell | date: 'longDate' }}
+            </ng-template>
+            <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>
+                <ng-container *ngTemplateOutlet="defaultErr">
+                </ng-container>
+                <div *ngIf="cell.errors?.['beyondThreshold']">
+                    The date cannot be in the future.
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="estimated_sales" header="Estimated Sales" [editable]="true" [dataType]="'number'" required min="0"></igx-column>
+        <igx-column field="actual_sales" header="Actual Sales" [editable]="true" [dataType]="'number'" required min="0"></igx-column>
+        <igx-column field="deals_lost" header="Deals Lost" [editable]="true" [dataType]="'number'" required min="0"></igx-column>
+        <igx-column field="deals_won" header="Deals Won" [editable]="true" [dataType]="'number'" required min="0"></igx-column>
+        <igx-column field="deals_ratio" header="Deals Ratio" [editable]="false" [dataType]="'number'" >
+            <ng-template igxCell let-cell="cell">
+                {{ getDealsRatio(cell) }}
+            </ng-template>
+        </igx-column>
+        <igx-column field="row_valid" header=" " [editable]="false" [pinned]="true" [width]="'50px'">
+            <ng-template igxCell let-cell="cell">
+                <div *ngIf="isRowValid(cell)" [igxTooltipTarget]="tooltipRef"  style="margin-right: '-10px';">
+                    <img width="18" src="assets/images/grid/active.png"/>
+                </div>
+                <div *ngIf="!isRowValid(cell)" [igxTooltipTarget]="tooltipRef" style="margin-right: '-10px';">
+                    <img width="18" src="assets/images/grid/expired.png"/>
+                </div>
+                <div #tooltipRef="tooltip" igxTooltip [style.width]="'max-content'">
+                   <div *ngFor="let message of stateMessage(cell)">
+                       {{message}}
+                   </div>
+                </div>
+            </ng-template>
+        </igx-column>
+    </igx-grid>
+</div>
+
+<button igxButton [disabled]="grid1.transactions.getAggregatedChanges(false).length < 1" (click)="commit()">Commit</button>
