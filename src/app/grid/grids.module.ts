@@ -135,6 +135,7 @@ import { GridColumnAutosizingComponent } from './grid-column-autosizing/grid-col
 import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.component';
 import { GridValidatorServiceComponent } from './grid-validator-service/grid-validator-service.component';
 import { GridValidatorServiceCrossFieldComponent } from './grid-validator-service-cross-field/grid-validator-service-cross-field.component';
+import { GridValidationStyleComponent } from './grid-validation-style/grid-validation-style.component';
 import { GridValidatorServiceExtendedComponent, PhoneFormatDirective } from './grid-validator-service-extended/grid-validator-service-extended.component';
 
 @NgModule({
@@ -261,6 +262,7 @@ import { GridValidatorServiceExtendedComponent, PhoneFormatDirective } from './g
         GridWithRatingComponent,
         GridValidatorServiceComponent,
         GridValidatorServiceCrossFieldComponent,
+        GridValidationStyleComponent,
         GridValidatorServiceExtendedComponent,
         PhoneFormatDirective
     ],

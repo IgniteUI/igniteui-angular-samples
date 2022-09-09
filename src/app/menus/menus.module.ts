@@ -12,7 +12,8 @@ import {
     IgxRadioModule,
     IgxRippleModule,
     IgxSwitchModule,
-    IgxToggleModule
+    IgxToggleModule,
+    IgxTreeModule
 } from 'igniteui-angular';
 import {
     ActionStripParagraphMenuComponent
@@ -35,6 +36,7 @@ import { NavDrawerRoutingComponent } from './navdrawer/nav-drawer-routing/nav-dr
 import { NavDrawerSimpleComponent } from './navdrawer/nav-drawer-simple/nav-drawer-simple.component';
 import { NavDrawerStylingComponent } from './navdrawer/nav-drawer-styling/nav-drawer-styling.component';
 import { NavbarCustomTitleComponent } from './navbar/navbar-custom-title/navbar-custom-title.component';
+import { NavDrawerHierarchicalComponent } from './navdrawer/nav-drawer-hierarchical/nav-drawer-hierarchical.component';
 
 @NgModule({
     declarations: [
@@ -51,7 +53,8 @@ import { NavbarCustomTitleComponent } from './navbar/navbar-custom-title/navbar-
         ActionStripParagraphComponent,
         ActionStripParagraphMenuComponent,
         ActionStripStylingComponent,
-        NavbarCustomTitleComponent
+        NavbarCustomTitleComponent,
+        NavDrawerHierarchicalComponent
     ],
     imports: [
         CommonModule,
@@ -67,7 +70,8 @@ import { NavbarCustomTitleComponent } from './navbar/navbar-custom-title/navbar-
         IgxRippleModule,
         IgxSwitchModule,
         IgxToggleModule,
-        IgxNavbarModule
+        IgxNavbarModule,
+        IgxTreeModule
     ]
 })
 export class MenusModule { }
