@@ -125,6 +125,7 @@ import { TreeGridVirtualizationSampleComponent } from './tree-grid-virtualizatio
 import { TreeGridAllDataSummaryComponent } from './treegrid-allData-summary/treegrid-allData-summary.component';
 import { TreeGridColumnAutoSizingSampleComponent } from './treegrid-column-autosizing/treegrid-column-autosizing.component';
 import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/treegrid-summary-template.component';
+import { TreeGridValidatorServiceCrossFieldComponent } from './tree-grid-validator-service-cross-field/tree-grid-validator-service-cross-field.component';
 
 @NgModule({
     declarations: [
@@ -223,6 +224,7 @@ import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/tr
         TreeGridActionStripSampleComponent,
         TreeGridColumnAutoSizingSampleComponent,
         TreeGridValidatorServiceComponent,
+        TreeGridValidatorServiceCrossFieldComponent,
         TreeGridValidatorServiceExtendedComponent,
         TGridPhoneFormatDirective
     ],
