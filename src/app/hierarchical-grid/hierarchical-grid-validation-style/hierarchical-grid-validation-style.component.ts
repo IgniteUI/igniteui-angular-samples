@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { lessThan } from '@igniteui/material-icons-extended';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent, RowType } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { Singer } from '../models';
@@ -14,10 +13,10 @@ export class HGridValidationStyleComponent {
     @ViewChild('childGrid', { static: true }) private childGrid: IgxRowIslandComponent;
     public localData: Singer[];
     public rowStyles = {
-        background: (row: RowType) => row.cells.find(c => c.errors !== null && c.errors !== undefined) ? '#FF000033' : '#00000000'
+        background: (row: RowType) => row.validation.status === 'INVALID' ? '#FF000033' : '#00000000'
     };
     public cellStyles = {
-        'invalid-cell': (rowData, columnKey, cellValue, rowIndex) => {
+        'invalid-cell': (rowData, columnKey) => {
             let cell = this.hierarchicalGrid.getCellByKey(rowData, columnKey);
             // search in child grids
             if (!cell) {
@@ -26,7 +25,7 @@ export class HGridValidationStyleComponent {
                     if (cell) break;
                 }
             }
-            return cell && cell.errors !== null && cell.errors !== undefined;
+            return cell && cell.validation.status === 'INVALID';
         }
     }
 
