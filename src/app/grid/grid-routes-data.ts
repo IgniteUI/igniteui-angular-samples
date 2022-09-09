@@ -120,5 +120,6 @@ export const gridsRoutesData = {
     'grid-columnAutoResizing-sample': { displayName: 'Grid Column Autoresizing', parentName: 'Grid'},
     'grid-with-rating': { displayName: 'Grid with Rating', parentName: 'Rating' },
     'grid-validator-service': { displayName: 'Grid Validator Service', parentName: 'Grid' },
-    'grid-cross-field-validator-service': { displayName: 'Grid Cross Field Validator Service ', parentName: 'Grid' }
+    'grid-cross-field-validator-service': { displayName: 'Grid Cross Field Validator Service ', parentName: 'Grid' },
+    'grid-validation-style': { displayName: 'Grid with Validation Styles', parentName: 'Grid' }
 };

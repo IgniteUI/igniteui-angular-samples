@@ -1174,6 +1174,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        // TreeGrid Validation Style
+        configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridValidationStyleComponent'],
+                ngDeclarations: ['TreeGridValidationStyleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule']
+            }),
+            component: 'TreeGridValidationStyleComponent',
+            shortenComponentPathBy: '/tree-grid/'
+        }));
+
         return configs;
     }
 }

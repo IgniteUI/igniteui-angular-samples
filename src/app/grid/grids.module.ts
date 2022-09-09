@@ -135,6 +135,7 @@ import { GridColumnAutosizingComponent } from './grid-column-autosizing/grid-col
 import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.component';
 import { GridValidatorServiceComponent } from './grid-validator-service/grid-validator-service.component';
 import { GridValidatorServiceCrossFieldComponent } from './grid-validator-service-cross-field/grid-validator-service-cross-field.component';
+import { GridValidationStyleComponent } from './grid-validation-style/grid-validation-style.component';
 
 @NgModule({
     declarations: [
@@ -259,7 +260,8 @@ import { GridValidatorServiceCrossFieldComponent } from './grid-validator-servic
         GridColumnAutosizingComponent,
         GridWithRatingComponent,
         GridValidatorServiceComponent,
-        GridValidatorServiceCrossFieldComponent
+        GridValidatorServiceCrossFieldComponent,
+        GridValidationStyleComponent
     ],
     imports: [
         CommonModule,

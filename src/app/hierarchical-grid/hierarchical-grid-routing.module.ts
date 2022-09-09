@@ -99,6 +99,7 @@ import { HGridSummaryTemplateComponent } from './hgrid-summary-template/hgrid-su
 import { HierarchicalGridValidatorServiceComponent } from './hierarchical-grid-validator-service/hierarchical-grid-validator-service.component';
 import { HGridColumnAutoSizingSampleComponent } from './hgrid-column-autosizing/hgrid-column-autosizing.component';
 import { HierarchicalGridValidatorServiceCrossCellComponent } from './hierarchical-grid-cross-field-validation/hierarchical-grid-cross-field-validation.component';
+import { HGridValidationStyleComponent } from './hierarchical-grid-validation-style/hierarchical-grid-validation-style.component';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -195,6 +196,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridSelectionTemplateNumbersSampleComponent,
         data: hierarchicalGridRoutesData['hierarchical-grid-selection-template-numbers'],
         path: 'hierarchical-grid-selection-template-numbers'
+    },
+    {
+        component: HGridValidationStyleComponent,
+        data: hierarchicalGridRoutesData['hierarchical-grid-validation-style'],
+        path: 'hierarchical-grid-validation-style'
     },
     {
         component: HGridSummarySampleComponent,
