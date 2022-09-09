@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxFilterOptions } from 'igniteui-angular';
 
 @Component({
@@ -47,7 +47,7 @@ export class ListItemSelectionComponent {
       }
     ];
 
-    constructor(private cdr: ChangeDetectorRef) { }
+    constructor() { }
 
     public toggleFavorite(contact: any, event: Event) {
       event.stopPropagation();
@@ -56,9 +56,8 @@ export class ListItemSelectionComponent {
 
     public selectItem(item) {
       if (!item.selected) {
-        this.contacts.forEach((c) => (c.selected = false));
+        this.contacts.forEach(c => c.selected = false);
         item.selected = true;
-        this.cdr.detectChanges();
       }
     }
 
