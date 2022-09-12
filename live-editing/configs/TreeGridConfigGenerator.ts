@@ -1164,13 +1164,13 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             component: 'TreeGridValidatorServiceCrossFieldComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts',
                 '/src/app/data/utils.ts',
-                '/src/app/tree-grid/data/employees-flat.ts'
+                '/src/app/tree-grid/data/employees-flat-detailed.ts'
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridValidatorServiceCrossFieldComponent',
-                    'IgxButtonModule'],
+                    'IgxButtonModule', 'IgxTooltipModule'],
                 ngDeclarations: ['TreeGridValidatorServiceCrossFieldComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule', 'IgxTooltipModule']
             })
         }));
 
@@ -1195,7 +1195,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridValidatorServiceExtendedComponent',
                     'IgxButtonModule'],
-                ngDeclarations: ['TreeGridValidatorServiceExtendedComponent', 'ForbiddenValidatorDirective'],
+                ngDeclarations: ['TreeGridValidatorServiceExtendedComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule']
             })
         }));

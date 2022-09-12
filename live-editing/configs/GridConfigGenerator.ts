@@ -1380,9 +1380,9 @@ export class GridConfigGenerator implements IConfigGenerator {
 
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridValidatorServiceCrossFieldComponent', 'IgxGridModule', 'IgxFocusModule', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['GridValidatorServiceCrossFieldComponent', 'ForbiddenValidatorDirective'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxFocusModule']
+                imports: ['GridValidatorServiceCrossFieldComponent', 'IgxGridModule', 'IgxTooltipModule', 'IgxFocusModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['GridValidatorServiceCrossFieldComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxFocusModule', 'IgxTooltipModule']
             })
         }));
 
@@ -1405,7 +1405,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridValidatorServiceExtendedComponent', 'IgxGridModule', 'IgxFocusModule', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['GridValidatorServiceExtendedComponent', 'ForbiddenValidatorDirective'],
+                ngDeclarations: ['GridValidatorServiceExtendedComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxFocusModule']
             })
         }));
