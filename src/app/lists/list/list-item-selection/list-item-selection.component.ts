@@ -47,8 +47,6 @@ export class ListItemSelectionComponent {
       }
     ];
 
-    constructor() { }
-
     public toggleFavorite(contact: any, event: Event) {
       event.stopPropagation();
       contact.isFavorite = !contact.isFavorite;
