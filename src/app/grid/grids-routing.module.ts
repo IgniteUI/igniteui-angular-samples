@@ -127,6 +127,7 @@ import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.com
 import { GridValidatorServiceComponent } from './grid-validator-service/grid-validator-service.component';
 import { GridValidatorServiceCrossFieldComponent } from './grid-validator-service-cross-field/grid-validator-service-cross-field.component';
 import { GridValidationStyleComponent } from './grid-validation-style/grid-validation-style.component';
+import { GridValidatorServiceExtendedComponent } from './grid-validator-service-extended/grid-validator-service-extended.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -734,6 +735,11 @@ export const gridsRoutes: Routes = [
         component: GridValidationStyleComponent,
         data: gridsRoutesData['grid-validation-style'],
         path: 'grid-validation-style'
+    },
+    {
+        component: GridValidatorServiceExtendedComponent,
+        data: gridsRoutesData['grid-validator-service-extended'],
+        path: 'grid-validator-service-extended'
     }
 ];
 

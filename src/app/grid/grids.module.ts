@@ -136,6 +136,7 @@ import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.com
 import { GridValidatorServiceComponent } from './grid-validator-service/grid-validator-service.component';
 import { GridValidatorServiceCrossFieldComponent } from './grid-validator-service-cross-field/grid-validator-service-cross-field.component';
 import { GridValidationStyleComponent } from './grid-validation-style/grid-validation-style.component';
+import { GridValidatorServiceExtendedComponent, PhoneFormatDirective } from './grid-validator-service-extended/grid-validator-service-extended.component';
 
 @NgModule({
     declarations: [
@@ -261,7 +262,9 @@ import { GridValidationStyleComponent } from './grid-validation-style/grid-valid
         GridWithRatingComponent,
         GridValidatorServiceComponent,
         GridValidatorServiceCrossFieldComponent,
-        GridValidationStyleComponent
+        GridValidationStyleComponent,
+        GridValidatorServiceExtendedComponent,
+        PhoneFormatDirective
     ],
     imports: [
         CommonModule,

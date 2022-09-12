@@ -984,6 +984,20 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             component: 'HGridValidationStyleComponent'
         }));
 
+        configs.push(new Config({
+            component: 'HierarchicalGridValidatorServiceExtendedComponent',
+            additionalFiles: [
+                '/src/app/directives/prevent-scroll.directive.ts',
+                '/src/app/data/hierarchical-data.ts'
+
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['HierarchicalGridValidatorServiceExtendedComponent', 'IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['HierarchicalGridValidatorServiceExtendedComponent', 'ForbiddenValidatorDirective'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
+            })
+        }));
+
         return configs;
     }
 }
