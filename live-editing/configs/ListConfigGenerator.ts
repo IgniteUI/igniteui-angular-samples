@@ -141,7 +141,7 @@ export class ListConfigGenerator implements IConfigGenerator {
                     'IgxInputGroupModule', 'ListItemSelectionComponent'],
                 ngDeclarations: ['ListItemSelectionComponent'],
                 ngImports: ['IgxAvatarModule', 'IgxFilterModule', 'IgxIconModule', 'IgxListModule',
-                    'IgxInputGroupModule', 'IgxRippleModule']
+                    'IgxInputGroupModule']
             }),
             shortenComponentPathBy: "/lists/list/"
         }));
