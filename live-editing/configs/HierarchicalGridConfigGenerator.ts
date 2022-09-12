@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable max-len */
+import {ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
     IgxActionStripModule,
@@ -967,9 +968,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['HierarchicalGridValidatorServiceCrossCellComponent', 'IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['HierarchicalGridValidatorServiceCrossCellComponent', 'IgxHierarchicalGridModule', 'IgxTooltipModule', 'ReactiveFormsModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['HierarchicalGridValidatorServiceCrossCellComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxTooltipModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxTooltipModule', 'ReactiveFormsModule']
             })
         }));
 
@@ -993,7 +994,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['HierarchicalGridValidatorServiceExtendedComponent', 'IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['HierarchicalGridValidatorServiceExtendedComponent', 'ForbiddenValidatorDirective'],
+                ngDeclarations: ['HierarchicalGridValidatorServiceExtendedComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
             })
         }));
