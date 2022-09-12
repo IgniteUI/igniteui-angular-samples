@@ -1,0 +1,71 @@
+<div class="grid-wrapper">
+    <igx-hierarchical-grid #hierarchicalGrid [height]="'570px'" [width]="'100%'" [data]="data"
+        [primaryKey]="'CustomerID'" [batchEditing]="true" [rowEditable]="true"
+        (formGroupCreated)="formCreateHandler($event)">
+        <igx-column field="CustomerID" [editable]="false"></igx-column>
+        <igx-column field="CompanyName" [editable]="true" required></igx-column>
+        <igx-column field="ContactName" [editable]="true" required></igx-column>
+        <igx-column field="ContactTitle" [editable]="true" required></igx-column>
+        <igx-column field="Phone" [editable]="true" required phoneFormat="^[^a-zA-Z]*$">
+            <ng-template igxCellValidationError let-cell='cell' let-defaultErr="defaultErrorTemplate">
+                <ng-container *ngTemplateOutlet="defaultErr">
+                </ng-container>
+                <div *ngIf="cell.validations.errors?.['phoneFormat']">
+                    Please enter correct phone format
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="Fax" [editable]="true"></igx-column>
+
+        <igx-row-island #childGrid [height]="null" [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false"
+            [batchEditing]="true" [rowEditable]="true" (formGroupCreated)="formCreateHandler($event)">
+            <igx-grid-toolbar [grid]="grid" *igxGridToolbar="let grid">
+                <button igxButton [disabled]="!grid.transactions.canUndo" (click)="undo(grid)">Undo</button>
+                <button igxButton [disabled]="!grid.transactions.canRedo" (click)="redo(grid)">Redo</button>
+            </igx-grid-toolbar>
+            <igx-column [editable]="false" field="OrderID"></igx-column>
+            <igx-column [editable]="true" field="EmployeeID" [editable]="true" required></igx-column>
+            <igx-column [editable]="true" field="OrderDate" [dataType]="'date'" [editable]="true" required>
+                <ng-template igxCellValidationError let-cell='cell' let-defaultErr="defaultErrorTemplate">
+                    <ng-container *ngTemplateOutlet="defaultErr">
+                    </ng-container>
+                    <div *ngIf="cell.validation.errors?.['futureDate']">
+                        The date cannot be in the future.
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [editable]="true" field="RequiredDate" [dataType]="'date'" [editable]="true" required>
+                <ng-template igxCellValidationError let-cell='cell' let-defaultErr="defaultErrorTemplate">
+                    <ng-container *ngTemplateOutlet="defaultErr">
+                    </ng-container>
+                    <div *ngIf="cell.validation.errors?.['futureDate']">
+                        The date cannot be in the future.
+                    </div>
+                    <div *ngIf="cell.validation.errors?.['pastDate']">
+                        The date cannot be before the 5th of November 2010
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column field="ShippedDate" [dataType]="'date'" [editable]="true">
+                <ng-template igxCellValidationError let-cell='cell' let-defaultErr="defaultErrorTemplate">
+                    <ng-container *ngTemplateOutlet="defaultErr">
+                    </ng-container>
+                    <div *ngIf="cell.validation.errors?.['futureDate']">
+                        The date cannot be in the future.
+                    </div>
+                    <div *ngIf="cell.validation.errors?.['pastDate']">
+                        The date cannot be before the 5th of November 2010
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column field="ShipVia" [selectable]="false" [editable]="true"></igx-column>
+            <igx-column field="Freight" [selectable]="false" [editable]="true"></igx-column>
+        </igx-row-island>
+    </igx-hierarchical-grid>
+
+    <div class="buttons-wrapper">
+        <button igxButton [disabled]="!hierarchicalGrid.transactions.canUndo" (click)="undo(hierarchicalGrid)">Undo</button>
+        <button igxButton [disabled]="!hierarchicalGrid.transactions.canRedo" (click)="redo(hierarchicalGrid)">Redo</button>
+        <button igxButton [disabled]="!hasTransactions" (click)="commit()">Commit</button>
+    </div>
+</div>
