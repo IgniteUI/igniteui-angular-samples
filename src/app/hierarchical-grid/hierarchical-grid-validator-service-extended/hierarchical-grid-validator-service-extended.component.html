@@ -10,7 +10,7 @@
             <ng-template igxCellValidationError let-cell='cell' let-defaultErr="defaultErrorTemplate">
                 <ng-container *ngTemplateOutlet="defaultErr">
                 </ng-container>
-                <div *ngIf="cell.validations.errors?.['phoneFormat']">
+                <div *ngIf="cell.validation.errors?.['phoneFormat']">
                     Please enter correct phone format
                 </div>
             </ng-template>
