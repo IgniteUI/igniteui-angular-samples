@@ -6,8 +6,8 @@
         <igx-column field="Age" header="Age" dataType="number" [editable]="true" required min="18" max="99"></igx-column>
         <igx-column field="Name" header="Full Name" dataType="string" [editable]="true" required></igx-column>
         <igx-column field="City" header="City" dataType="string" [editable]="true" required>
-            <ng-template igxCellEditor let-cell="cell" >
-                <igx-select [(ngModel)]="cell.editValue" [igxFocus]="true">
+            <ng-template igxCellEditor let-cell="cell" let-fc='formControl'>
+                <igx-select [formControl]="fc" [igxFocus]="true" >
                     <igx-select-item *ngFor="let city of cities" [value]="city">
                         {{ city }}
                     </igx-select-item>
@@ -15,8 +15,8 @@
             </ng-template>
         </igx-column>
         <igx-column field="Country" header="Country" dataType="string" [editable]="true" required>
-            <ng-template igxCellEditor let-cell="cell">
-                <igx-select [(ngModel)]="cell.editValue" [igxFocus]="true">
+            <ng-template igxCellEditor let-cell="cell" let-fc='formControl'>
+                <igx-select [formControl]="fc" [igxFocus]="true">
                     <igx-select-item *ngFor="let country of countries" [value]="country">
                         {{ country }}
                     </igx-select-item>

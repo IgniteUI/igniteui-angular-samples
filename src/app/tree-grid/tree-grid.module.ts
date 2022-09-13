@@ -2,7 +2,7 @@
 // tslint:disable:max-line-length
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     IgxActionStripModule,
     IgxAvatarModule,
@@ -233,6 +233,7 @@ import { TreeGridValidationStyleComponent } from './tree-grid-validation-style/t
     imports: [
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         IgxPreventDocumentScrollModule,
         TreeGridRoutingModule,
         IgxTreeGridModule,
