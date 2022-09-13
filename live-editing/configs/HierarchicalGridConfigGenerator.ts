@@ -993,9 +993,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['HierarchicalGridValidatorServiceExtendedComponent', 'IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule', 'ReactiveFormsModule'],
+                imports: ['HierarchicalGridValidatorServiceExtendedComponent', 'IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['HierarchicalGridValidatorServiceExtendedComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'ReactiveFormsModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
             })
         }));
 
