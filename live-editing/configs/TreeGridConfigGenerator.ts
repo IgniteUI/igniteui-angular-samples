@@ -33,6 +33,7 @@ import {
     IgxSparklineModule
 } from 'igniteui-angular-charts';
 import { Router, RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class TreeGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
@@ -1168,9 +1169,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridValidatorServiceCrossFieldComponent',
-                    'IgxButtonModule', 'IgxTooltipModule'],
+                    'IgxButtonModule', 'IgxTooltipModule', 'ReactiveFormsModule'],
                 ngDeclarations: ['TreeGridValidatorServiceCrossFieldComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule', 'IgxTooltipModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule', 'IgxTooltipModule', 'ReactiveFormsModule']
             })
         }));
 

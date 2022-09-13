@@ -48,9 +48,9 @@ export class HierarchicalGridValidatorServiceExtendedComponent {
         const requiredDateRecord = formGroupArgs.formGroup.get('RequiredDate');
         const shippedDateRecord = formGroupArgs.formGroup.get('ShippedDate');
 
-        orderDateRecord.addValidators(this.futureDateValidator());
-        requiredDateRecord.addValidators([this.futureDateValidator(), this.pastDateValidator()]);
-        shippedDateRecord.addValidators([this.futureDateValidator(), this.pastDateValidator()]);
+        orderDateRecord?.addValidators(this.futureDateValidator());
+        requiredDateRecord?.addValidators([this.futureDateValidator(), this.pastDateValidator()]);
+        shippedDateRecord?.addValidators([this.futureDateValidator(), this.pastDateValidator()]);
     }
 
     public get hasTransactions(): boolean {
