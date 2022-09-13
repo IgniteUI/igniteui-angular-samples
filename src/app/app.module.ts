@@ -5,7 +5,7 @@ import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     IgxAutocompleteModule, IgxButtonModule, IgxDropDownModule,
-    IgxIconModule, IgxInputGroupModule, IgxLayoutModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxRippleModule
+    IgxIconModule, IgxInputGroupModule, IgxLayoutModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxRippleModule, IgxTreeModule
 } from 'igniteui-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +31,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         IgxIconModule,
         IgxLayoutModule,
         IgxInputGroupModule,
+        IgxTreeModule,
         BrowserModule,
         BrowserAnimationsModule,
         IgxButtonModule,

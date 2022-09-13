@@ -43,9 +43,9 @@ export class HGridSelectionSampleComponent implements OnInit, OnDestroy {
         this.selectedRowIndex = undefined;
     }
 
-    public handleRowSelection(event:IRowSelectionEventArgs) {
+    public handleRowSelection(event: IRowSelectionEventArgs) {
         this.selectedRowsCount = event.newSelection.length;
-        if(event.newSelection.length > 0){
+        if (event.newSelection.length > 0) {
             this.selectedRowIndex = event.newSelection[0].ID;
         }
         else this.selectedRowIndex = undefined;

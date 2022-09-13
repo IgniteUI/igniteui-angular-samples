@@ -38,8 +38,9 @@ export class GridSelectionSampleComponent implements OnInit {
     public ngOnInit(): void {
         this.snackbar.autoHide = false;
         this.snackbar.open();
+        this.snackbarRowCount.autoHide = true;
+        this.snackbarRowCount.close();
     }
-
     public formatNumber(value: number) {
         return value.toFixed(2);
     }

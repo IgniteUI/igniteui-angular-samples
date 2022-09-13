@@ -35,7 +35,7 @@ export class TreeGridSelectionSampleComponent implements OnInit {
         this.snackbar.open();
     }
 
-    public handleRowSelection(event:IRowSelectionEventArgs) {
+    public handleRowSelection(event: IRowSelectionEventArgs) {
         this.selectedRowsCount = event.newSelection.length;
         this.selectedRowIndex = event.newSelection[0];
         this.snackbarRowCount.open();

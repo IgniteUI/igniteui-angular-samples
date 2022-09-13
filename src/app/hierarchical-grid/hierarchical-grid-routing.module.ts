@@ -96,6 +96,11 @@ import { HGridRowStylesSampleComponent } from './hgrid-rowStyle-sample/hgrid-row
 import { HGridRowClassesSampleComponent } from './hgrid-rowClasses-sample/hgrid-rowClasses.component';
 import { HGridActionStripSampleComponent } from './hierarchical-grid-action-strip/hierarchical-grid-action-strip-sample';
 import { HGridSummaryTemplateComponent } from './hgrid-summary-template/hgrid-summary-template.component';
+import { HierarchicalGridValidatorServiceComponent } from './hierarchical-grid-validator-service/hierarchical-grid-validator-service.component';
+import { HGridColumnAutoSizingSampleComponent } from './hgrid-column-autosizing/hgrid-column-autosizing.component';
+import { HierarchicalGridValidatorServiceCrossCellComponent } from './hierarchical-grid-cross-field-validation/hierarchical-grid-cross-field-validation.component';
+import { HGridValidationStyleComponent } from './hierarchical-grid-validation-style/hierarchical-grid-validation-style.component';
+import { HierarchicalGridValidatorServiceExtendedComponent } from './hierarchical-grid-validator-service-extended/hierarchical-grid-validator-service-extended.component';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -192,6 +197,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridSelectionTemplateNumbersSampleComponent,
         data: hierarchicalGridRoutesData['hierarchical-grid-selection-template-numbers'],
         path: 'hierarchical-grid-selection-template-numbers'
+    },
+    {
+        component: HGridValidationStyleComponent,
+        data: hierarchicalGridRoutesData['hierarchical-grid-validation-style'],
+        path: 'hierarchical-grid-validation-style'
     },
     {
         component: HGridSummarySampleComponent,
@@ -541,6 +551,26 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridActionStripSampleComponent,
         data: hierarchicalGridRoutesData['hGrid-action-strip'],
         path: 'hGrid-action-strip'
+    },
+    {
+        component: HierarchicalGridValidatorServiceComponent,
+        data: hierarchicalGridRoutesData['hierarchical-grid-validator-service'],
+        path: 'hierarchical-grid-validator-service'
+    },
+    {
+        component: HierarchicalGridValidatorServiceExtendedComponent,
+        data: hierarchicalGridRoutesData['hierarchical-grid-validator-service-extended'],
+        path: 'hierarchical-grid-validator-service-extended'
+    },
+    {
+        component: HGridColumnAutoSizingSampleComponent,
+        data: hierarchicalGridRoutesData['hGrid-columnAutosizing-sample'],
+        path: 'hGrid-columnAutosizing-sample'
+    },
+    {
+        component: HierarchicalGridValidatorServiceCrossCellComponent,
+        data: hierarchicalGridRoutesData['hierarchical-grid-cross-field-validation'],
+        path: 'hierarchical-grid-cross-field-validation'
     }
 ];
 
