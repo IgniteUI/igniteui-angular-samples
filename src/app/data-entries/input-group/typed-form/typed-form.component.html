@@ -1,0 +1,45 @@
+<article class="sample-column">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <h4>Registration Form</h4>
+        <div class="container">
+            <igx-input-group>
+                <label igxLabel for="fName">First Name</label>
+                <input igxInput name="fName" type="text" formControlName="fName" required />
+            </igx-input-group>
+
+            <igx-input-group>
+                <label igxLabel for="lName">Last Name</label>
+                <input igxInput name="lName" type="text" formControlName="lName" required />
+            </igx-input-group>
+
+            <igx-input-group>
+                <label igxLabel for="email">Email</label>
+                <input igxInput name="email" type="text" formControlName="email" required />
+            </igx-input-group>
+
+            <igx-input-group>
+                <label igxLabel for="number">Phone Number</label>
+                <input igxInput name="number" type="number" formControlName="number" />
+            </igx-input-group>
+
+            <igx-input-group>
+                <label igxLabel for="company">Company</label>
+                <input igxInput name="company" type="text" formControlName="company" />
+            </igx-input-group>
+
+            <igx-date-picker name="date" [maxValue]="maxDate">
+                <label igxLabel for="date">Date of Birth</label>
+                <igx-picker-toggle igxSuffix>
+                    <igx-icon>today</igx-icon>
+                </igx-picker-toggle>
+            </igx-date-picker>
+
+            <igx-input-group>
+                <label igxLabel for="password">Password</label>
+                <input igxInput name="password" type="password" formControlName="password" required />
+            </igx-input-group>
+        
+            <button igxButton="raised" igxRipple type="submit">Submit</button>
+        </div>
+    </form>
+</article>

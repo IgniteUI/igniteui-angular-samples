@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-radio-group-sample',
@@ -7,12 +7,12 @@ import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms
     templateUrl: './radio-group-sample.component.html'
 })
 export class RadioGroupSampleComponent {
-    public fruitsForm: UntypedFormGroup;
+    public fruitsForm: FormGroup;
     public fruits = ['Apple', 'Mango', 'Banana', 'Orange'];
     public newModel: FruitData;
     public model: FruitData;
 
-    constructor(private _formBuilder: UntypedFormBuilder) {
+    constructor(private _formBuilder: FormBuilder) {
         // Simulate getting data from external service
         this.model = {
             favFruit: this.fruits[0],
