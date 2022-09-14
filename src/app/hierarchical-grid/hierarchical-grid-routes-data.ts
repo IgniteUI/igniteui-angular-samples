@@ -64,6 +64,7 @@ export const hierarchicalGridRoutesData = {
     'hierarchical-grid-conditional-row-selectors': { displayName: 'HGrid Conditional Row Selectors', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-collapsible-column-groups': { displayName: 'HGrid Collapsible Column Grous', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-allData-summary': {displayName: 'HGrid All Data Custom Summaries', parentName: 'Hierarchical Grid'},
+    'hierarchical-grid-validation-style': { displayName: 'Hierarchical Grid Validation Style', parentName: 'Hierarchical Grid' },
     'hgrid-summary-template': {displayName: 'HGrid Summary Template', parentName: 'Hierarchical Grid'},
     'hierarchical-grid-sample-right-pinning': { displayName: 'Hierarchical Grid Right Side Pinning', parentName: 'Hierarchical Grid' },
     'column-selection': { displayName: 'HGrid Column Selection', parentName: 'Hierarchical Grid' },
@@ -81,5 +82,7 @@ export const hierarchicalGridRoutesData = {
     'hGrid-row-styles': { displayName: 'HGrid RowStyles', parentName: 'Hierarchical Grid' },
     'hGrid-action-strip': { displayName: 'HGrid with Action Strip', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-validator-service': { displayName: 'Hierarchical Grid Validator Service', parentName: 'Hierarchical Grid' },
-    'hGrid-columnAutosizing-sample': { displayName: 'HGrid Column Autosizing Sample', parentName: 'Hierarchical Grid' }
+    'hierarchical-grid-validator-service-extended': { displayName: 'Hierarchical Grid Validator Service Extended', parentName: 'Hierarchical Grid' },
+    'hGrid-columnAutosizing-sample': { displayName: 'HGrid Column Autosizing Sample', parentName: 'Hierarchical Grid' },
+    'hierarchical-grid-cross-field-validation': { displayName: 'Hierarchical Grid Cross-field Validation', parentName: 'Hierarchical Grid' }
 };

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable max-len */
+import {ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
     IgxActionStripModule,
@@ -956,6 +957,46 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule'],
             }),
             component: 'HGridColumnAutoSizingSampleComponent'
+        }));
+
+
+        configs.push(new Config({
+            component: 'HierarchicalGridValidatorServiceCrossCellComponent',
+            additionalFiles: [
+                '/src/app/directives/prevent-scroll.directive.ts',
+                '/src/app/data/hierarchical-data.ts'
+
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['HierarchicalGridValidatorServiceCrossCellComponent', 'IgxHierarchicalGridModule', 'IgxTooltipModule', 'ReactiveFormsModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['HierarchicalGridValidatorServiceCrossCellComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxTooltipModule', 'ReactiveFormsModule']
+            })
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
+                '/src/app/hierarchical-grid/models.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxHierarchicalGridModule', 'HGridValidationStyleComponent', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['HGridValidationStyleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
+            }),
+            component: 'HGridValidationStyleComponent'
+        }));
+
+        configs.push(new Config({
+            component: 'HierarchicalGridValidatorServiceExtendedComponent',
+            additionalFiles: [
+                '/src/app/directives/prevent-scroll.directive.ts',
+                '/src/app/data/hierarchical-data.ts'
+
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['HierarchicalGridValidatorServiceExtendedComponent', 'IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['HierarchicalGridValidatorServiceExtendedComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
+            })
         }));
 
         return configs;

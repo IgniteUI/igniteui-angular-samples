@@ -35,6 +35,7 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
             generateRandomInteger(0, 12), generateRandomInteger(5, 25)),
             ID: this.data.length + this.nextRow++,
             Name: 'John Doe',
+            Phone: '(91) 745 6200',
             OnPTO: false,
             ParentID: -1,
             Title: 'Junior Sales Representative'
@@ -49,6 +50,7 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
             generateRandomInteger(0, 12), generateRandomInteger(5, 25)),
             ID: this.data.length + this.nextRow++,
             Name: 'Added Addedington',
+            Phone: '(91) 745 6200',
             OnPTO: false,
             ParentID: -1,
             Title: 'Intern'

@@ -1,0 +1,15 @@
+@use '../../../../variables' as *;
+
+.container > * {
+    margin-top: 32px;
+}
+
+form {
+    box-shadow: elevation($elevation: 4);
+    padding: 24px;
+    margin-bottom: 48px;
+}
+
+h4 {
+    margin-top: 0;
+}

@@ -23,6 +23,7 @@ export const listsRoutesData = {
     'list-sample-7': { displayName: 'List Item Panning', parentName: 'List' },
     'list-sample-8': { displayName: 'List Theming', parentName: 'List' },
     'list-chat-sample': { displayName: 'Chat Component', parentName: 'List' },
+    'list-item-selection': { displayName: 'List Item Selection', parentName: 'List' },
     // eslint-disable-next-line quote-props
     'tree-basic-sample': { displayName: 'Tree Basic Sample', parentName: 'Tree' },
     'tree-advanced-sample': { displayName: 'Tree Advanced Sample', parentName: 'Tree' }

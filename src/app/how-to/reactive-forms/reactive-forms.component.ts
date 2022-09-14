@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-reactive-form',
@@ -8,14 +8,14 @@ import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms
 })
 export class ReactiveFormsSampleComponent {
     public genres = [];
-    public user: UntypedFormGroup;
+    public user: FormGroup;
     public minTime = '06:15:30';
     public maxTime = '09:15:30';
     public minDate = new Date();
     public maxDate = new Date(new Date(this.minDate.getFullYear(), this.minDate.getMonth(), this.minDate.getDate() + 14));
 
 
-    constructor(fb: UntypedFormBuilder) {
+    constructor(fb: FormBuilder) {
         this.user = fb.group({
             date: ['', Validators.required],
             time: ['', Validators.required],
