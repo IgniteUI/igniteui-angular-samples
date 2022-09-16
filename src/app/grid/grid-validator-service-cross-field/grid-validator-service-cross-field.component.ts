@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
-import { IgxGridCell, IgxGridComponent, IgxGridRow } from 'igniteui-angular';
+import { IGridEditEventArgs, IgxGridCell, IgxGridComponent, IgxGridRow } from 'igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { employeesData } from '../../data/employeesData';
 
@@ -21,6 +21,12 @@ export class GridValidatorServiceCrossFieldComponent {
         createdOnRecord.addValidators(this.futureDateValidator());
         lastActiveRecord.addValidators(this.futureDateValidator());
         evt.formGroup.addValidators(this.rowValidator());
+    }
+
+    public rowEditHandler(event: IGridEditEventArgs) {
+        if (!event.valid) {
+            event.cancel = true;
+        }
     }
 
     public commit() {
