@@ -4,7 +4,7 @@
 export interface SpeedDescriptor {
     Speed: number;
     Minute: number;
-  }
+}
 
 export interface Athlete {
     Id: number;
