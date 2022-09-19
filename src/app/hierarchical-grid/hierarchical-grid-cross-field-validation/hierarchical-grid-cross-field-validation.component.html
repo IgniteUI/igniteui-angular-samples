@@ -1,5 +1,7 @@
 <div class="grid__wrapper">
-<igx-hierarchical-grid (formGroupCreated)='formCreateCustomerHandler($event)' igxPreventDocumentScroll [primaryKey]="'CustomerID'" [rowEditable]="true" [batchEditing]='true'  #hierarchicalGrid [data]="localdata" [height]="'470px'" [width]="'100%'" displayDensity="compact">
+<igx-hierarchical-grid  igxPreventDocumentScroll [primaryKey]="'CustomerID'" [rowEditable]="true" [batchEditing]='true' 
+    #hierarchicalGrid [data]="localdata" [height]="'470px'" [width]="'100%'" displayDensity="compact"
+    (formGroupCreated)="formCreateCustomerHandler($event)" (rowEdit)="rowEditHandler($event)">
     <igx-column field="row_valid" header=" " [editable]="false" [dataType]="'number'" [pinned]="true" [width]="'50px'">
         <ng-template igxCell let-cell="cell">
             <div *ngIf="isRowValid(cell)" [igxTooltipTarget]="tooltipRef"
@@ -41,7 +43,8 @@
     
     <igx-column field="PostalCode"  editable='true' required></igx-column>
     <igx-column field="Phone"  editable='true' required></igx-column>
-    <igx-row-island (formGroupCreated)='formCreateOrderHandler($event)' [primaryKey]="'OrderID'" [height]="null" [key]="'Orders'" [autoGenerate]="false" [rowEditable]="true">
+    <igx-row-island [primaryKey]="'OrderID'" [height]="null" [key]="'Orders'" [autoGenerate]="false" [rowEditable]="true"
+        (formGroupCreated)='formCreateOrderHandler($event)' (rowEdit)="rowEditHandler($event)">
         <igx-grid-toolbar [grid]="grid" *igxGridToolbar="let grid">
             <button igxButton [disabled]="grid.transactions.getAggregatedChanges(false).length < 1" (click)="commit(grid)">Commit</button>
         </igx-grid-toolbar>
