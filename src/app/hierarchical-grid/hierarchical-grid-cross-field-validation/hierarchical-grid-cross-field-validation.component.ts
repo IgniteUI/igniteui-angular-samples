@@ -11,6 +11,7 @@ import { CUSTOMERS } from '../../data/hierarchical-data';
 })
 
 export class HierarchicalGridValidatorServiceCrossCellComponent implements OnInit {
+    public rowEdit: boolean = true;
     public localdata;
     public countryData: Map<string, object>;
     public countries = [];
@@ -32,6 +33,12 @@ export class HierarchicalGridValidatorServiceCrossCellComponent implements OnIni
         });
         this.countries = [...new Set(this.localdata.map(x => x.Country))];
         this.cities = [...new Set(this.localdata.map(x => x.City))];
+    }
+
+    public editHandler(event: IGridEditEventArgs) {
+        if (!event.valid) {
+            event.cancel = true;
+        }
     }
 
     public rowEditHandler(event: IGridEditEventArgs) {
