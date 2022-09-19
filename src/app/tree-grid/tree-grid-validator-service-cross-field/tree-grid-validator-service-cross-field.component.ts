@@ -40,7 +40,7 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
         this.cities = [...new Set(this.data.map(x => x.City))];
     }
 
-    public rowEditHandler(event: IGridEditEventArgs) {
+    public editHandler(event: IGridEditEventArgs) {
         if (!event.valid) {
             event.cancel = true;
         }

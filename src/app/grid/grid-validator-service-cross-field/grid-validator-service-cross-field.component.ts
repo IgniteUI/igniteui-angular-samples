@@ -14,6 +14,7 @@ export class GridValidatorServiceCrossFieldComponent {
     @ViewChild('grid1', { read: IgxGridComponent })
     public grid: IgxGridComponent;
     public transactionData = JSON.parse(JSON.stringify(employeesData));
+    public rowEdit: boolean = true;
 
     public formCreateHandler(evt: IGridFormGroupCreatedEventArgs) {
         const createdOnRecord = evt.formGroup.get('created_on');
@@ -23,7 +24,7 @@ export class GridValidatorServiceCrossFieldComponent {
         evt.formGroup.addValidators(this.rowValidator());
     }
 
-    public rowEditHandler(event: IGridEditEventArgs) {
+    public editHandler(event: IGridEditEventArgs) {
         if (!event.valid) {
             event.cancel = true;
         }
