@@ -7,7 +7,7 @@
 <div class="sample-wrapper">
     <div class="grid-wrapper">
         <div>
-            <igx-hierarchical-grid igxPreventDocumentScroll  [data]="data" [autoGenerate]="false"
+            <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  [data]="data" [autoGenerate]="false"
                 height="560px" width="100%" primaryKey="Artist" primaryKey="Artist"
                 rowEditable="true"
                 (rowEditEnter)="rowEditEnter($event)"

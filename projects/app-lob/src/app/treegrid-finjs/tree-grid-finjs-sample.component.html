@@ -24,7 +24,7 @@
         <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
             ~{{volume/5}} records updated.</span>
     </div>
-    <igx-tree-grid #grid1 igxPreventDocumentScroll
+    <igx-tree-grid #grid1 [igxPreventDocumentScroll]="true"
         [data]="data$ | async | treeGridGrouping:groupingExpressions:groupColumnKey:childDataKey:grid1:aggregations"
         [childDataKey]="childDataKey"
         [sortStrategy]="sorting"

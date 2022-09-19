@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxColumnGroupComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxColumnGroupComponent, IgxTreeGridComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
@@ -13,7 +13,7 @@ export class TreeGridMultiColumnHeaderTemplateSampleComponent {
     public treeGrid: IgxTreeGridComponent;
     public data: any[] = generateEmployeeDetailedFlatData();
     public columnGroupStates = new Map<IgxColumnGroupComponent, boolean>();
-    public selectionMode =  'none';
+    public selectionMode: GridSelectionMode = 'none';
     constructor() {
         for (const item of this.data) {
             item.Location = `${item.Address}, ${item.City}, ${item.Country}`;

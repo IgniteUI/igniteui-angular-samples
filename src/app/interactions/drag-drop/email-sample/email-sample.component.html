@@ -17,7 +17,7 @@
 </igx-list>
 
 <igx-list class="emails">
-    <igx-list-item isHeader="true">Today</igx-list-item>
+    <igx-list-item [isHeader]="true">Today</igx-list-item>
 
     <igx-list-item *ngFor="let email of emails"
         [class.email-checked]="email.checked"

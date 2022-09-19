@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <igx-grid #grid1
-        igxPreventDocumentScroll
+        [igxPreventDocumentScroll]="true"
         width="100%" height="100%"
         displayDensity='compact'
         hiddenColumnsText="Hidden"
@@ -67,7 +67,7 @@
         </igx-column>
         <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [filterable]='false'>
             <ng-template igxCell let-cell="cell" class="center-text">
-                <button class="button-icon" igxButton="icon" igxRippleCentered="true" tabindex="-1">
+                <button class="button-icon" igxButton="icon" [igxRippleCentered]="true" tabindex="-1">
                     <igx-icon family="material" (click)="chartColumnAction(cell)">insert_chart_outlined</igx-icon>
                 </button>
             </ng-template>
@@ -96,7 +96,7 @@
         <igx-column [field]="'startY'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
         <!-- <igx-column [field]="'Grid'" [width]="'80px'" [hidden]="false" [filterable]='false'>
             <ng-template igxCell let-cell="cell" class="center-text">
-                <button class="button-icon" igxButton="icon" igxRippleCentered="true">
+                <button class="button-icon" igxButton="icon" [igxRippleCentered]="true">
                     <igx-icon (click)="chartClick(cell)" family="material">table_charttable_chart</igx-icon>
                 </button>
             </ng-template>

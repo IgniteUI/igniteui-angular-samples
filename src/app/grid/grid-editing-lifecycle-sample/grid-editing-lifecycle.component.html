@@ -7,7 +7,7 @@
 <div class="sample-wrapper">
     <div class="grid-wrapper">
         <div>
-            <igx-grid igxPreventDocumentScroll [data]="data" height="550px" primaryKey="ProductID"
+            <igx-grid [igxPreventDocumentScroll]="true" [data]="data" height="550px" primaryKey="ProductID"
                 [rowEditable]="true"
                 (rowEditEnter)="rowEditEnter($event)"
                 (cellEditEnter)="cellEditEnter($event)"

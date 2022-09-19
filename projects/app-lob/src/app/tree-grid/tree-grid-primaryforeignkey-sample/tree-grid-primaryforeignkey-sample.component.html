@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll #treeGrid [data]="data" [allowFiltering]="true" [moving]="true"
+    <igx-tree-grid [igxPreventDocumentScroll]="true" #treeGrid [data]="data" [allowFiltering]="true" [moving]="true"
         primaryKey="ID" foreignKey="ParentID" width="100%" height="400px"
         [rowSelection]="selectionMode">
         <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [resizable]="true" ></igx-column>

@@ -9,7 +9,7 @@
         </igx-buttongroup>
     </div>
 
-    <igx-hierarchical-grid igxPreventDocumentScroll [data]="localdata" [displayDensity]="displayDensity"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" [data]="localdata" [displayDensity]="displayDensity"
         [summaryRowHeight]="summaryHeight" [height]="'550px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
         <igx-column field="Artist" [hasSummary]='hasSummary'></igx-column>
         <igx-column field="Photo" [hasSummary]='hasSummary' [summaries]="grammySummary">

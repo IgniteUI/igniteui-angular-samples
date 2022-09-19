@@ -21,7 +21,7 @@
                             <igx-switch [(ngModel)]="options.enabled">Grid copy behavior</igx-switch>
                             <igx-switch [(ngModel)]="options.copyHeaders">Copying of header labels</igx-switch>
                             <igx-switch [(ngModel)]="options.copyFormatters">Copying column formatters</igx-switch>
-                            <button igxButton="outlined" igxRippleCentered="true" (click)="grid1.clearCellSelection()">
+                            <button igxButton="outlined" [igxRippleCentered]="true" (click)="grid1.clearCellSelection()">
                                 <igx-icon family="material">clear</igx-icon>
                                 <span>Selection</span>
                             </button>

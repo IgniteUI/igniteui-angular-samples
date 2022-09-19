@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="500px" width="100%" sortable="true" [sortingOptions]="sortingOptions">
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [autoGenerate]="false" height="500px" width="100%" [sortable]="true" [sortingOptions]="sortingOptions">
         <igx-grid-toolbar>
             <button class="button-opitions" igxButton="raised" (click)="grid1.sortingExpressions = []">
                 Clear Sorting
@@ -22,20 +22,20 @@
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
 
-        <igx-column field="OrderID" header="Order ID" [groupable]="true"  sortable="true">
+        <igx-column field="OrderID" header="Order ID" [groupable]="true"  [sortable]="true">
         </igx-column>
-        <igx-column field="CategoryName" header="Category Name" [dataType]="'string'" [groupable]="true" sortable="true">
+        <igx-column field="CategoryName" header="Category Name" [dataType]="'string'" [groupable]="true" [sortable]="true">
         </igx-column>
-        <igx-column field="CompanyName" header="Company Name" [dataType]="'string'" [groupable]="true" sortable="true">
+        <igx-column field="CompanyName" header="Company Name" [dataType]="'string'" [groupable]="true" [sortable]="true">
         </igx-column>
-        <igx-column field="ShipCountry" header="Ship Country" [dataType]="'string'" [groupable]="true" sortable="true">
+        <igx-column field="ShipCountry" header="Ship Country" [dataType]="'string'" [groupable]="true" [sortable]="true">
         </igx-column>
-        <igx-column field="SaleAmount" header="Sale Amount" dataType="number" [groupable]="true" sortable="true">
+        <igx-column field="SaleAmount" header="Sale Amount" dataType="number" [groupable]="true" [sortable]="true">
             <ng-template igxCell let-cell="cell" let-val let-row>
                 ${{val}}
             </ng-template>
         </igx-column>
-        <igx-column field="ShippedDate" header="Shipped Date" [dataType]="'date'" [formatter]="formatDate" sortable="true">
+        <igx-column field="ShippedDate" header="Shipped Date" [dataType]="'date'" [formatter]="formatDate" [sortable]="true">
         </igx-column>
     </igx-grid>
 </div>

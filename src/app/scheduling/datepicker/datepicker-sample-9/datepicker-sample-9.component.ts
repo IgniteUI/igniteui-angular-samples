@@ -49,7 +49,8 @@ export class DatepickerSample9Component implements OnInit {
         }
     }
 
-    public verifyRange(dates: Date[]) {
+    public verifyRange(dates: Date | Date[]) {
+        dates = dates as Date[];
         this.startDate = dates[0];
         this.isClickedTwice = false;
         if (this.startDate !== dates[dates.length - 1]) {

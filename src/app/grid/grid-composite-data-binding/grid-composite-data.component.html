@@ -1,7 +1,7 @@
 <div class="sample-wrapper">
     <div class="grid__wrapper">
-        <igx-grid igxPreventDocumentScroll #grid1 width="100%" height="500px" [data]="data">
-            <igx-column field="ContactName" header="Contact" editable="true">
+        <igx-grid [igxPreventDocumentScroll]="true" #grid1 width="100%" height="500px" [data]="data">
+            <igx-column field="ContactName" header="Contact" [editable]="true">
                 <ng-template #compositeTemp igxCell let-cell="cell">
                     <div class="contact-container">
                         <span><strong>ContactName:</strong> {{cell.row.data.ContactName}}</span>
@@ -36,7 +36,7 @@
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field="Address" header="Address" editable="true">
+            <igx-column field="Address" header="Address" [editable]="true">
                 <ng-template #compositeTemp igxCell let-cell="cell">
                     <div class="address-container">
                         <div class="country-city">

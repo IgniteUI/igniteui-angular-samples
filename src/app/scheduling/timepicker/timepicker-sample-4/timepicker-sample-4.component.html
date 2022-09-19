@@ -1,13 +1,12 @@
 
     <igx-time-picker
-    [(ngModel)]="time"
-    [itemsDelta]="{hours:2, minutes:5}"
-    [inputFormat]="'H:mm'"
-    [headerOrientation]="true"
-    [minValue]="min"
-    [maxValue]="max"
-    (validationFailed)="onValidationFailed()">
-    <label igxLabel>Meeting Start</label>
+        [(ngModel)]="time"
+        [itemsDelta]="{hours:2, minutes:5}"
+        [inputFormat]="'H:mm'"
+        [minValue]="min"
+        [maxValue]="max"
+        (validationFailed)="onValidationFailed()">
+        <label igxLabel>Meeting Start</label>
     </igx-time-picker>
 
     <igx-toast #toast>Value must be between {{min}} and {{max}}.</igx-toast>

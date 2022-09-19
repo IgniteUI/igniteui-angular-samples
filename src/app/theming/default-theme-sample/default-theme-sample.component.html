@@ -49,6 +49,6 @@
             </ng-template>
         </igx-column>
     </igx-grid>
-    <igx-snackbar #snackbar [outlet]="outlet" displayTime="2500" actionText="Undo" (clicked)="restoreRow()">
+    <igx-snackbar #snackbar [outlet]="outlet" [displayTime]="2500" actionText="Undo" (clicked)="restoreRow()">
     </igx-snackbar>
 </div>

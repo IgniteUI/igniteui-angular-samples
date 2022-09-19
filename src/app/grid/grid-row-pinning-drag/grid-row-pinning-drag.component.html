@@ -1,5 +1,5 @@
 <div class="grid-container">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [pinning]='pinningConfig' [height]="'470px'" [width]="'100%'"
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [pinning]='pinningConfig' [height]="'470px'" [width]="'100%'"
         [autoGenerate]="false" [rowDraggable]="true" [primaryKey]="'ID'" [cellSelection]="false" igxDrop
         (rowDragStart)="onRowDragStart($event)" (dropped)="onDropAllowed($event)"
         (dataPreLoad)="actionStrip1.hide()">

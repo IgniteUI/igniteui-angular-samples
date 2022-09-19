@@ -11,15 +11,15 @@
         vel pulvinar urna. Morbi tincidunt fringilla tortor, at ultricies neque rhoncus ac.
     </p>
     <igx-action-strip [(displayDensity)]="displayDensity" class="my-action-strip" #actionStrip [hidden]="true">
-        <div *igxActionStripMenuItem class="menu-button" (click)="alignTextLeft()" [igxRipple]="rippleColor">
+        <div *igxActionStripMenuItem class="menu-button" (click)="alignTextLeft()" igxRipple>
             <igx-icon>format_align_left</igx-icon>
             <span>Left</span>
         </div>
-        <div *igxActionStripMenuItem class="menu-button" (click)="alignTextCenter()" [igxRipple]="rippleColor">
+        <div *igxActionStripMenuItem class="menu-button" (click)="alignTextCenter()" igxRipple>
             <igx-icon>format_align_center</igx-icon>
             <span>Center</span>
         </div>
-        <div *igxActionStripMenuItem class="menu-button" (click)="alignTextRight()" [igxRipple]="rippleColor">
+        <div *igxActionStripMenuItem class="menu-button" (click)="alignTextRight()" igxRipple>
             <igx-icon>format_align_right</igx-icon>
             <span>Right</span>
         </div>

@@ -6,7 +6,7 @@
             (click)="toggleColumn(column)"></igx-icon>
     </div>
 </ng-template>
-<igx-hierarchical-grid igxPreventDocumentScroll  class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
+<igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
     [height]="'480px'" [width]="'100%'" #hierarchicalGrid>
     <igx-column field="CompanyName" header="Company Name" [headerTemplate]="pinTemplate" width="200px" [pinned]="true"></igx-column>
     <igx-column field="ContactName" header="Contact Name" [headerTemplate]="pinTemplate" width="150px"></igx-column>

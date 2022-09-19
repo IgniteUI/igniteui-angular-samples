@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll [data]="data" (columnResized)="onResize($event)" [autoGenerate]="false" height="500px" width="100%">
+    <igx-grid [igxPreventDocumentScroll]="true" [data]="data" (columnResized)="onResize($event)" [autoGenerate]="false" height="500px" width="100%">
         <igx-column [field]="'ID'" [header]="'ID'" [resizable]="true"></igx-column>
         <igx-column [field]="'CompanyName'" [header]="'Company Name'" [resizable]="true"></igx-column>
         <igx-column [field]="'ContactName'" [header]="'Contact Name'" [resizable]="true" [minWidth]="'60px'" [maxWidth]="'230px'"></igx-column>

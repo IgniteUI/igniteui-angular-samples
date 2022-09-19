@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 id="grid1" [data]="data" [autoGenerate]="false" height="400px">
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 id="grid1" [data]="data" [autoGenerate]="false" height="400px">
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>Athletes</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
@@ -13,44 +13,44 @@
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
 
-        <igx-column field="Name" header="Athlete" width="200" sortable="true">
+        <igx-column field="Name" header="Athlete" width="200" [sortable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.data.Avatar" roundShape="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.Avatar" [roundShape]="true" size="small"></igx-avatar>
                     <span class="athlete_name">{{ cell.value }}</span>
                 </div>
             </ng-template>
         </igx-column>
 
-        <igx-column field="CountryName" header="Country" width="200" sortable="true">
+        <igx-column field="CountryName" header="Country" width="200" [sortable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.data.CountryFlag" roundShape="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.CountryFlag" [roundShape]="true" size="small"></igx-avatar>
                     <span class="country_name">{{ cell.value }}</span>
                 </div>
             </ng-template>
         </igx-column>
 
-        <igx-column field="BeatsPerMinute" header="Beats Per Minute" sortable="true">
+        <igx-column field="BeatsPerMinute" header="Beats Per Minute" [sortable]="true">
             <ng-template igxCell let-val>
                 <div class="cell__inner">{{ val }}</div>
             </ng-template>
         </igx-column>
 
-        <igx-column field="TopSpeed" header="Top Speed" sortable="true">
+        <igx-column field="TopSpeed" header="Top Speed" [sortable]="true">
             <ng-template igxCell let-val>
                 <div class="cell__inner">{{ val }}</div>
             </ng-template>
 
         </igx-column>
 
-        <igx-column field="AthleteNumber" header="ID" sortable="true">
+        <igx-column field="AthleteNumber" header="ID" [sortable]="true">
             <ng-template igxCell let-val>
                 <div class="cell__inner">{{ val }}</div>
             </ng-template>
         </igx-column>
 
-        <igx-column field="TrackProgress" header="Progress" sortable="true">
+        <igx-column field="TrackProgress" header="Progress" [sortable]="true">
             <ng-template igxCell let-val>
                 <div class="cell__inner">{{ val }}</div>
             </ng-template>

@@ -13,8 +13,9 @@ export class CalendarSample3Component {
     @ViewChild('alert', { static: true }) public dialog: IgxDialogComponent;
     public loggerHeader = `Interact with the calendar to see the events logged here in sequence:`;
 
-    public onSelection(dates: Date[]) {
+    public onSelection(dates: Date | Date[]) {
       const logger: HTMLElement = document.querySelector('.logger');
+      dates = dates as Date[];
       logger.innerHTML = `<span> => 'onSelectionChanged': ${dates.length} dates selected.<br>${logger.innerHTML}`;
     }
 

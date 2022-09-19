@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-<igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="localData" rowSelection="multiple"
+<igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid class="hgrid" [data]="localData" rowSelection="multiple"
     cellSelection="none" [autoGenerate]="false" height="580px" width="100%">
     <igx-paginator></igx-paginator>
     <igx-column field="Artist"></igx-column>
