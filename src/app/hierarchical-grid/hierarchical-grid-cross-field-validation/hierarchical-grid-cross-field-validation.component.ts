@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
-import { IgxGridCell, IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { IGridEditEventArgs, IgxGridCell, IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 
@@ -32,6 +32,12 @@ export class HierarchicalGridValidatorServiceCrossCellComponent implements OnIni
         });
         this.countries = [...new Set(this.localdata.map(x => x.Country))];
         this.cities = [...new Set(this.localdata.map(x => x.City))];
+    }
+
+    public rowEditHandler(event: IGridEditEventArgs) {
+        if (!event.valid) {
+            event.cancel = true;
+        }
     }
 
     public formCreateCustomerHandler(event: IGridFormGroupCreatedEventArgs) {

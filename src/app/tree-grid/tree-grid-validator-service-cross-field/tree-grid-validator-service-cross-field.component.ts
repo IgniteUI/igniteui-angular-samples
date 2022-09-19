@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
 import {
     ColumnPinningPosition,
+    IGridEditEventArgs,
     IgxGridCell,
     IgxTreeGridComponent,
     IPinningConfig
@@ -37,6 +38,12 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
         });
         this.countries = [...new Set(this.data.map(x => x.Country))];
         this.cities = [...new Set(this.data.map(x => x.City))];
+    }
+
+    public rowEditHandler(event: IGridEditEventArgs) {
+        if (!event.valid) {
+            event.cancel = true;
+        }
     }
 
     public formCreateHandler(evt: IGridFormGroupCreatedEventArgs) {
