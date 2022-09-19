@@ -11,7 +11,7 @@
             <igx-switch [(ngModel)]="enableExport">Exporting</igx-switch>
         </div>
     </div>
-    <igx-tree-grid igxPreventDocumentScroll #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" height="310px">
+    <igx-tree-grid [igxPreventDocumentScroll]="true" #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" height="310px">
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>{{ toolbarTitle }}</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>

@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" rowSelection="multiple" cellSelection="none" primaryKey="ID"
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid [data]="data" rowSelection="multiple" cellSelection="none" primaryKey="ID"
         foreignKey="ParentID" height="530px" width="100%" [autoGenerate]="false">
         <igx-paginator></igx-paginator>
         <igx-column field="Name"></igx-column>

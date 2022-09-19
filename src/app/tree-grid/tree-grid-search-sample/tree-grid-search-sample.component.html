@@ -39,7 +39,7 @@
         </igx-suffix>
     </igx-input-group>
 
-    <igx-tree-grid igxPreventDocumentScroll  #treeGrid1 [data]="data" [autoGenerate]="false" primaryKey="ID" foreignKey="ParentID" height="480px" width="100%" [allowFiltering]="true">
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid1 [data]="data" [autoGenerate]="false" primaryKey="ID" foreignKey="ParentID" height="480px" width="100%" [allowFiltering]="true">
         <igx-column [field]="'Name'" dataType="string" [sortable]="true"></igx-column>
         <igx-column [field]="'ID'" dataType="number" [sortable]="true"></igx-column>
         <igx-column [field]="'Title'" dataType="string" [sortable]="true"></igx-column>

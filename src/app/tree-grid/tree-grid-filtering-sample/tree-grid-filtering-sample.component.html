@@ -4,7 +4,7 @@
             <input class="gridSample__filter" igxInput type="text" placeholder="Filter by product name" (input)="filter($event.target.value)">
         </igx-input-group><br>
     </div>
-    <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [autoGenerate]="false" height="480px" width="100%" [allowFiltering]="true"
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  #treegrid1 [data]="data" [autoGenerate]="false" height="480px" width="100%" [allowFiltering]="true"
         primaryKey="ID" foreignKey="ParentID">
         <igx-column field="ID" header="Product ID" [dataType]="'string'">
         </igx-column>

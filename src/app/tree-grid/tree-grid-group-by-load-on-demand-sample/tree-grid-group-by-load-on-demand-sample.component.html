@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-tree-grid #treeGrid igxPreventDocumentScroll
+    <igx-tree-grid #treeGrid [igxPreventDocumentScroll]="true"
         [data]="data"
         [loadChildrenOnDemand]="loadChildren"
         [primaryKey]="primaryKey"

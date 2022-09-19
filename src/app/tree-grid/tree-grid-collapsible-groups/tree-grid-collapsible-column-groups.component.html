@@ -1,7 +1,7 @@
 <div class="wrapper theme">
     <div class="sample-content">
         <div class="sample-column">
-            <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" [moving]="true" primaryKey="ID" foreignKey="ParentID" [rowSelection]="selectionMode" height="550px"
+            <igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid [data]="data" [moving]="true" primaryKey="ID" foreignKey="ParentID" [rowSelection]="selectionMode" height="550px"
             displayDensity="compact">
                 <igx-column-group [pinned]="false" header="General Information" [collapsible]="true" [expanded]="false">
                     <ng-template igxCollapsibleIndicator let-column="column">

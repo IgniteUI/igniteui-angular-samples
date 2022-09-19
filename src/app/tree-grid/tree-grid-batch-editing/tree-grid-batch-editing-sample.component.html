@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll #treeGrid [batchEditing]="true" [data]="data" primaryKey="ID" foreignKey="ParentID"
+    <igx-tree-grid [igxPreventDocumentScroll]="true" #treeGrid [batchEditing]="true" [data]="data" primaryKey="ID" foreignKey="ParentID"
         [width]="'100%'" [height]="'500px'" [rowEditable]="true">
         <igx-column [filterable]="false" width="150" [editable]="false">
             <ng-template igxCell let-cell="cell" let-val>
@@ -30,7 +30,7 @@
         </div>
     </div>
     <igx-dialog title="Submit the following transactions?">
-        <igx-grid igxPreventDocumentScroll #dialogGrid [data]="transactionsData" [rowHeight]="64" [primaryKey]="'id'"
+        <igx-grid [igxPreventDocumentScroll]="true" #dialogGrid [data]="transactionsData" [rowHeight]="64" [primaryKey]="'id'"
             width="600px" height="300px" [emptyGridMessage]="'No available transactions'">
             <igx-column field="id" header="ID" [dataType]="'string'" width="100px"></igx-column>
             <igx-column field="type" header="Type" width="150px" [sortable]="true">

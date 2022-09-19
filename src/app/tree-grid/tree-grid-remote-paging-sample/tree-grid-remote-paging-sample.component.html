@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll #treeGrid [data]="data | async" childDataKey="Content"
+    <igx-tree-grid [igxPreventDocumentScroll]="true" #treeGrid [data]="data | async" childDataKey="Content"
             [expansionDepth]="0" width="100%" height="540px" [pagingMode]="mode">
         <igx-column field="Name">
             <ng-template igxCell let-cell="cell" let-val>

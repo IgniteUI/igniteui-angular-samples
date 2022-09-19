@@ -13,7 +13,7 @@
                 </igx-hint>
             </igx-input-group>
             <div class="grid-wrapper">
-                <igx-tree-grid igxPreventDocumentScroll  #grid1 [data]="data" childDataKey="Employees" (columnInit)="initColumn($event)"
+                <igx-tree-grid [igxPreventDocumentScroll]="true"  #grid1 [data]="data" childDataKey="Employees" (columnInit)="initColumn($event)"
                     [autoGenerate]="false" [clipboardOptions]="options">
                     <igx-grid-toolbar>
 
@@ -21,7 +21,7 @@
                             <igx-switch [(ngModel)]="options.enabled">Grid copy behavior</igx-switch>
                             <igx-switch [(ngModel)]="options.copyHeaders">Copying of header labels</igx-switch>
                             <igx-switch [(ngModel)]="options.copyFormatters">Copying column formatters</igx-switch>
-                            <button igxButton="outlined" [igxRippleCentered]="true" (click)="grid1.clearCellSelection()">
+                            <button igxButton="outlined" igxRipple [igxRippleCentered]="true" (click)="grid1.clearCellSelection()">
                                 <igx-icon family="material">clear</igx-icon>
                                 <span>Selection</span>
                             </button>

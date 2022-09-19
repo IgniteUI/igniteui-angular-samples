@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" height="400px">
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" height="400px">
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>Tree Grid Toolbar</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
