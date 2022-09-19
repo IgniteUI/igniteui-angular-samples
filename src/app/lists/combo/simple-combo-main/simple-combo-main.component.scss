@@ -1,0 +1,15 @@
+.sample-wrapper {
+    padding: 1rem 1rem 6rem 1rem;
+    width: 100%;
+    height: 100%;
+}
+.combo-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.input-container {
+    flex-grow: 1;
+    max-width: 300px;
+}

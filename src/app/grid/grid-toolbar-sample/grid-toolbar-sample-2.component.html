@@ -5,6 +5,7 @@
             <input name="toolbarTitle" id="toolbarTitle" type="text" igxInput [(ngModel)]="toolbarTitle" />
         </igx-input-group>
         <div class="control-panel__switches">
+            <igx-switch [(ngModel)]="enableFiltering">Advanced Filtering</igx-switch>
             <igx-switch [(ngModel)]="enableHiding">Column hiding</igx-switch>
             <igx-switch [(ngModel)]="enablePinning">Column pinning</igx-switch>
             <igx-switch [(ngModel)]="enableExport">Exporting</igx-switch>
@@ -14,6 +15,7 @@
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>{{ toolbarTitle }}</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-advanced-filtering *ngIf="enableFiltering" [overlaySettings]="overlaySettingsAuto"></igx-grid-toolbar-advanced-filtering>
                 <igx-grid-toolbar-hiding *ngIf="enableHiding" [overlaySettings]="overlaySettingsAuto"></igx-grid-toolbar-hiding>
                 <igx-grid-toolbar-pinning *ngIf="enablePinning" [overlaySettings]="overlaySettingsScaleCenter"></igx-grid-toolbar-pinning>
                 <igx-grid-toolbar-exporter *ngIf="enableExport"></igx-grid-toolbar-exporter>
@@ -24,7 +26,7 @@
         <igx-column field="Name" header="Athlete" width="200">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.rowData.Avatar" roundShape="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.Avatar" roundShape="true" size="small"></igx-avatar>
                     <span class="athlete-name">{{ cell.value }}</span>
                 </div>
             </ng-template>
@@ -33,7 +35,7 @@
         <igx-column field="CountryName" header="Country" width="200">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.rowData.CountryFlag" roundShape="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.CountryFlag" roundShape="true" size="small"></igx-avatar>
                     <span class="country-name">{{ cell.value }}</span>
                 </div>
             </ng-template>

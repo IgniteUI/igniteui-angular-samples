@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     IgxColumnComponent,
     IgxColumnGroupComponent,
-    IgxGridCellComponent,
+    CellType,
     IgxListComponent,
     IgxOverlayService,
     IgxTreeGridComponent,
@@ -217,8 +217,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
 
     public ngOnInit() {
         this.data = generateEmployeeDetailedFlatData();
-
-        this.tgrid.columnSelected.pipe(takeUntil(this._destroyer))
+        this.tgrid.columnSelectionChanging.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 const evt = args.event;
                 if (evt.type === 'keydown') {
@@ -342,15 +341,16 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     public toggleBodyCombinations(activeNode) {
-        const rowRef = this.tgrid.gridAPI.get_row_by_index(activeNode.row);
+        const rowRef = this.tgrid.getRowByIndex(activeNode.row);
         if (this._keyboardHandler.gridSection !== GridSection.TBODY || !rowRef) {
             return;
         }
-        const cell = this.tgrid.gridAPI.get_cell_by_visible_index(activeNode.row, activeNode.column);
+        const cell = this.tgrid.getCellByColumn(activeNode.row,
+            this.tgrid.columnList.find((col) => col.visibleIndex === activeNode.column).field);
         this.toggleCellCombinations(cell);
     }
 
-    public toggleCellCombinations(cell?: IgxGridCellComponent) {
+    public toggleCellCombinations(cell?: CellType) {
         if (this._keyboardHandler.gridSection !== GridSection.TBODY) {
             return;
         }
@@ -383,7 +383,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
         return res;
     }
 
-    public extractCellActions(cell: IgxGridCellComponent) {
+    public extractCellActions(cell: CellType) {
         const res = [];
         if (cell.editable) {
             res.push(ItemAction.Editable);

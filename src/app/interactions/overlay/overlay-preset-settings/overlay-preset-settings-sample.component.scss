@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 :host {
     position: relative;
@@ -12,8 +12,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: igx-color($color: 'grays', $variant: 100);
-    border: 2px dashed igx-color($color: 'grays', $variant: 200);
+    background: color($color: 'grays', $variant: 100);
+    border: 2px dashed color($color: 'grays', $variant: 200);
     border-radius: rem(8px);
     padding: rem(12px);
     height: 376px;
@@ -25,9 +25,9 @@
         width: rem(80px);
         height: rem(80px);
         margin-bottom: rem(24px);
-        border: 2px dashed igx-color($color: 'grays', $variant: 300);
+        border: 2px dashed color($color: 'grays', $variant: 300);
         border-radius: rem(8px);
-        color: igx-color($color: 'grays', $variant: 800);
+        color: color($color: 'grays', $variant: 800);
 
         igx-icon {
             font-size: 64px;
@@ -37,23 +37,23 @@
     }
 
     @include e(anchor, active) {
-        border-color: igx-color($color: 'primary');
+        border-color: color($color: 'primary');
     }
 
     @include e(title) {
         text-align: center;
         margin: 0;
-        color: igx-color($color: 'grays', $variant: 800);
+        color: color($color: 'grays', $variant: 800);
     }
 
     @include e(subtitle) {
         text-align: center;
         margin: 0;
-        color: igx-color($color: 'grays', $variant: 600);
+        color: color($color: 'grays', $variant: 600);
     }
 
     @include m(active) {
-        border-color: igx-color($color: 'primary');
+        border-color: color($color: 'primary');
     }
 }
 

@@ -1,13 +1,13 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
-$custom-theme: igx-grid-theme(
+$custom-theme: grid-theme(
     $sorted-header-icon-color: #ffb06a,
     $sortable-header-icon-hover-color: black
 );
 
 :host {
   ::ng-deep {
-    @include igx-grid($custom-theme);
+    @include grid($custom-theme);
   }
 }
 

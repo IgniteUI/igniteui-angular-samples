@@ -59,6 +59,7 @@ import { GridRowPinningExtraColumnSampleComponent } from './grid-row-pinning-ext
 import { GridRowPinningStylingSampleComponent } from './grid-row-pinning-styling/grid-row-pinning-styling.component';
 import { GridRowPinningSampleComponent } from './grid-row-pinning/grid-row-pinning.component';
 import { GridRowReorderComponent } from './grid-row-reorder-sample/grid-row-reorder';
+import { GridDropIndicatorComponent } from './grid-drop-indicator/grid-drop-indicator';
 import { FinancialSampleComponent } from './grid-sample-2/grid-sample-2.component';
 import { GridSample3Component } from './grid-sample-3/grid-sample-3.component';
 import { GridRemoteVirtualizationSampleComponent } from './grid-sample-4/grid-sample-4.component';
@@ -116,6 +117,17 @@ import { GridSelectComponent } from './grid-select/grid-select-sample.component'
 import { GridFormattedFilteringStrategyComponent } from './grid-formatted-filtering-strategy/grid-formatted-filtering-strategy.component';
 import { GridSummaryFormatterComponent } from './grid-summary-formatter/grid-summary-formatter.component';
 import { GridMultiColumnHeadersExportComponent } from './multi-column-headers-export/multi-column-headers-export.component';
+import { CRUDSampleComponent } from './grid-crud-sample/crud-sample.component';
+import { GridRowClassesComponent } from './grid-rowClasses-sample/grid-rowClasses.component';
+import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.component';
+import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summary-template.component';
+import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-editing-excel-style.component';
+import { GridColumnAutosizingComponent } from './grid-column-autosizing/grid-column-autosizing.component';
+import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.component';
+import { GridValidatorServiceComponent } from './grid-validator-service/grid-validator-service.component';
+import { GridValidatorServiceCrossFieldComponent } from './grid-validator-service-cross-field/grid-validator-service-cross-field.component';
+import { GridValidationStyleComponent } from './grid-validation-style/grid-validation-style.component';
+import { GridValidatorServiceExtendedComponent } from './grid-validator-service-extended/grid-validator-service-extended.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -165,6 +177,11 @@ export const gridsRoutes: Routes = [
         path: 'grid-editing-style'
     },
     {
+        component: GridExcelStyleEditingComponent,
+        data: gridsRoutesData['grid-editing-excel-style'],
+        path: 'grid-editing-excel-style'
+    },
+    {
         component: GridAddRowSampleComponent,
         data: gridsRoutesData['grid-add-row'],
         path: 'grid-add-row'
@@ -208,6 +225,11 @@ export const gridsRoutes: Routes = [
         component: GridRowReorderComponent,
         data: gridsRoutesData['grid-row-reorder'],
         path: 'grid-row-reorder'
+    },
+    {
+        component: GridDropIndicatorComponent,
+        data: gridsRoutesData['grid-drop-indicator'],
+        path: 'grid-drop-indicator'
     },
     {
         component: GridRowPinningSampleComponent,
@@ -353,6 +375,11 @@ export const gridsRoutes: Routes = [
         component: RemoteFilteringSampleComponent,
         data: gridsRoutesData['grid-remote-filtering'],
         path: 'grid-remote-filtering'
+    },
+    {
+        component: CRUDSampleComponent,
+        data: gridsRoutesData['grid-crud'],
+        path: 'grid-crud'
     },
     {
         component: GridSelectionSampleComponent,
@@ -600,6 +627,11 @@ export const gridsRoutes: Routes = [
         path: 'grid-alldata-summaries'
     },
     {
+        component: GridSummaryTemplateComponent,
+        data: gridsRoutesData['grid-summary-template'],
+        path: 'grid-summary-template'
+    },
+    {
         component: GridColumnSelectionComponent,
         data: gridsRoutesData['column-selection'],
         path: 'column-selection'
@@ -668,6 +700,46 @@ export const gridsRoutes: Routes = [
         component: GridSummaryFormatterComponent,
         data: gridsRoutesData['grid-summary-formatter'],
         path: 'grid-summary-formatter'
+    },
+    {
+        component: GridRowClassesComponent,
+        data: gridsRoutesData['grid-rowClasses-sample'],
+        path: 'grid-rowClasses-sample'
+    },
+    {
+        component: GridRowStylesComponent,
+        data: gridsRoutesData['grid-rowStyles-sample'],
+        path: 'grid-rowStyles-sample'
+    },
+    {
+        component: GridColumnAutosizingComponent,
+        data: gridsRoutesData['grid-columnAutoResizing-sample'],
+        path: 'grid-columnAutoResizing-sample'
+    },
+    {
+        component: GridWithRatingComponent,
+        data: gridsRoutesData['grid-with-rating'],
+        path: 'grid-with-rating'
+    },
+    {
+        component: GridValidatorServiceComponent,
+        data: gridsRoutesData['grid-validator-service'],
+        path: 'grid-validator-service'
+    },
+    {
+        component: GridValidatorServiceCrossFieldComponent,
+        data: gridsRoutesData['grid-validator-service-cross-field'],
+        path: 'grid-cross-field-validator-service'
+    },
+    {
+        component: GridValidationStyleComponent,
+        data: gridsRoutesData['grid-validation-style'],
+        path: 'grid-validation-style'
+    },
+    {
+        component: GridValidatorServiceExtendedComponent,
+        data: gridsRoutesData['grid-validator-service-extended'],
+        path: 'grid-validator-service-extended'
     }
 ];
 

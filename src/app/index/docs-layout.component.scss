@@ -1,6 +1,6 @@
 ::ng-deep {
-    .custom-body {
-        color: var(--igx-grays-800);
-        background-color: var(--igx-background-500);
-    }
+	.custom-body {
+		color: var(--igx-surface-500-contrast);
+		background: hsla(var(--igx-surface-500));
+	}
 }

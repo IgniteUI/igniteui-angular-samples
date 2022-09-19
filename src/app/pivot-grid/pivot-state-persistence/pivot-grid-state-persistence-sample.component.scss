@@ -1,0 +1,62 @@
+:host {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+
+    ::ng-deep {
+        .upFontValue {
+            color: hsla(var(--igx-success-500));
+        }
+
+        .downFontValue {
+            color: hsla(var(--igx-error-500));
+        }
+    }
+
+}
+
+igx-pivot-grid {
+    flex: 1;
+}
+
+.pivot-container {
+    display: flex;
+    align-items: flex-start;
+    flex: 1 1 auto;
+    order: 0;
+}
+
+.controls-holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.switches {
+    display: flex;
+    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1 0 0%;
+    min-width: 100%;
+    padding-right: 20px;
+    font-size: 0.9rem;
+    margin-top: 0;
+
+    >button {
+        margin-right: 10px;
+    }
+}
+
+.control-item {
+    display: block;
+    padding: 8px 0px;
+
+    >span {
+        cursor: pointer;
+    }
+
+    margin-right: 10px;
+}

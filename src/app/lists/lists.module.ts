@@ -13,20 +13,19 @@ import {
     IgxInputGroupModule,
     IgxListModule,
     IgxRippleModule,
-    IgxSelectModule,
     IgxSliderModule,
+    IgxSimpleComboModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxTooltipModule,
     IgxTreeModule
 } from 'igniteui-angular';
-import { CascadingCombosComponent } from './combo/cascading-combos/cascading-combos.component';
+import { IgxFinancialChartModule } from 'igniteui-angular-charts';
 import { ComboBindingComponent } from './combo/combo-binding/combo-binding.component';
 import { ComboFeaturesComponent } from './combo/combo-features/combo-features.component';
 import { ComboMainComponent } from './combo/combo-main/combo-main.component';
 import { ComboOverlayComponent } from './combo/combo-overlay/combo-overlay.component';
 import { ComboRemoteComponent } from './combo/combo-remote/combo-remote.component';
-import { ComboSingleSelectionComponent } from './combo/combo-single-selection/combo-single-selection.component';
 import { ComboStylingComponent } from './combo/combo-styling/combo-styling.component';
 import { ComboValueKeyComponent } from './combo/combo-valuekey/combo-valuekey.component';
 import { ComboTemplateComponent } from './combo/combo-template/combo-template.component';
@@ -43,6 +42,11 @@ import { ListComponent } from './list/list.component';
 import { ListsRoutingModule } from './lists-routing.module';
 import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sample.component';
 import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-advanced-sample.component';
+import { SimpleComboMainComponent } from './combo/simple-combo-main/simple-combo-main.component';
+import { SimpleComboUsageComponent } from './combo/simple-combo-usage/simple-combo-usage.component';
+import { SimpleComboCascadingComponent } from './combo/simple-combo-cascading/simple-combo-cascading.component';
+import { SimpleComboStylingComponent } from './combo/simple-combo-styling/simple-combo-styling.component';
+import { ListItemSelectionComponent } from './list/list-item-selection/list-item-selection.component';
 
 @NgModule({
     declarations: [
@@ -56,7 +60,6 @@ import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-ad
         ListSample7Component,
         ListSample8Component,
         ListChatSampleComponent,
-        CascadingCombosComponent,
         ComboFeaturesComponent,
         ComboStylingComponent,
         ComboValueKeyComponent,
@@ -65,9 +68,13 @@ import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-ad
         ComboTemplateComponent,
         ComboOverlayComponent,
         ComboBindingComponent,
-        ComboSingleSelectionComponent,
+        SimpleComboMainComponent,
+        SimpleComboUsageComponent,
+        SimpleComboCascadingComponent,
+        SimpleComboStylingComponent,
         TreeBasicSampleComponent,
-        TreeAdvancedSampleComponent
+        TreeAdvancedSampleComponent,
+        ListItemSelectionComponent
     ],
     imports: [
         CommonModule,
@@ -82,14 +89,15 @@ import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-ad
         IgxSliderModule,
         IgxComboModule,
         IgxSwitchModule,
-        IgxSelectModule,
         IgxToastModule,
         IgxButtonGroupModule,
         HttpClientModule,
         IgxRippleModule,
         IgxCardModule,
         IgxTreeModule,
-        IgxTooltipModule
+        IgxTooltipModule,
+        IgxFinancialChartModule,
+        IgxSimpleComboModule
     ]
 })
 export class ListsModule { }

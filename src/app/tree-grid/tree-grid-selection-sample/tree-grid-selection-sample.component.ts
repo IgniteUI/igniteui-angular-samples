@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxSnackbarComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { IgxSnackbarComponent, IgxTreeGridComponent, IRowSelectionEventArgs } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({
@@ -9,12 +9,15 @@ import { generateEmployeeFlatData } from '../data/employees-flat';
 })
 export class TreeGridSelectionSampleComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
-    @ViewChild(IgxSnackbarComponent, { static: true }) public snackbar: IgxSnackbarComponent;
+    @ViewChild('snackbarRowCount', { static: true }) public snackbarRowCount: IgxSnackbarComponent;
+    @ViewChild('snackbar', { static: true }) public snackbar: IgxSnackbarComponent;
     public data: any[];
     public selectionMode = 'multiple';
     public selectionModes = [];
     public hideRowSelectors = false;
     public selectedRows = [1, 2, 3];
+    public selectedRowsCount;
+    public selectedRowIndex;
 
     constructor() {
         this.data = generateEmployeeFlatData();
@@ -32,10 +35,18 @@ export class TreeGridSelectionSampleComponent implements OnInit {
         this.snackbar.open();
     }
 
-    public handleRowSelection(event) { }
+    public handleRowSelection(event: IRowSelectionEventArgs) {
+        this.selectedRowsCount = event.newSelection.length;
+        this.selectedRowIndex = event.newSelection[0];
+        this.snackbarRowCount.open();
+        this.snackbar.close();
+    }
 
     public selectCellSelectionMode(args) {
         this.selectionMode = this.selectionModes[args.index].selectMode;
+        this.snackbarRowCount.close();
         this.snackbar.open();
+        this.selectedRowsCount = undefined;
+        this.selectedRowIndex = undefined;
     }
 }

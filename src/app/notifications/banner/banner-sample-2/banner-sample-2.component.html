@@ -1,8 +1,8 @@
 <div class="gallery__wrapper">
-    <igx-navbar title="Gallery">
-        <igx-icon (click)="connectionBanner.open()">refresh</igx-icon>
-    </igx-navbar>
     <div class="gallery__content">
+        <igx-navbar title="Gallery">
+            <igx-icon (click)="connectionBanner.open()">refresh</igx-icon>
+        </igx-navbar>
         <igx-banner class="offline-banner" #connectionBanner>
             <igx-icon>signal_wifi_off</igx-icon>
             You have lost connection to the internet. This app is offline.

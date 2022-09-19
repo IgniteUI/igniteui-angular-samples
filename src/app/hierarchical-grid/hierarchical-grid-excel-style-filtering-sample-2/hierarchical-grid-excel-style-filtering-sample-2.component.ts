@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SINGERS } from '../../data/singersData';
 
 @Component({
@@ -7,14 +7,11 @@ import { SINGERS } from '../../data/singersData';
     templateUrl: 'hierarchical-grid-excel-style-filtering-sample-2.component.html'
 })
 
-export class HGridExcelStyleFilteringSample2Component implements OnInit {
+export class HGridExcelStyleFilteringSample2Component {
     public localdata;
 
     constructor() {
         this.localdata = SINGERS;
-    }
-    public ngOnInit(): void {
-
     }
 
     public formatter = (a) => a;

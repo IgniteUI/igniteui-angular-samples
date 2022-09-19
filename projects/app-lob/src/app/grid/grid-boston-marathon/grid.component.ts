@@ -13,12 +13,13 @@ import {
     IgxNumberSummaryOperand,
     IgxStringFilteringOperand,
     IgxSummaryResult,
-    IgxGridCellComponent,
+    CellType,
     OverlaySettings,
     IgxOverlayService,
     AbsolutePosition,
     OverlayClosingEventArgs
 } from 'igniteui-angular';
+import { IgxGridCellComponent } from 'igniteui-angular/lib/grids/cell.component';
 import { Athlete, АthletesData, SpeedDescriptor } from '../../data/athletesData';
 
 @Component({
@@ -101,7 +102,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         this.overlaySettings.modal = true;
     }
 
-    public getValue(cell: IgxGridCellComponent): number {
+    public getValue(cell: CellType): number {
         const val = cell.value;
         return val;
     }
@@ -110,7 +111,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     public isTop3(cell: IgxGridCellComponent): boolean {
-        const top = this.grid1.page === 0 && cell.row.index < 4;
+        const top = this.grid1.paginator.page === 0 && cell.row.index < 4;
         return top;
     }
 
@@ -129,11 +130,11 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
 
     public cellSelection(evt) {
         const cell = evt.cell;
-        this.grid1.selectRows([cell.row.rowID], true);
+        this.grid1.selectRows([cell.row.key], true);
     }
 
     public getIconType(cell: IgxGridCellComponent): string {
-        switch (cell.row.rowData.Position) {
+        switch (cell.row.data.Position) {
             case 'up':
                 return 'arrow_upward';
             case 'current':
@@ -144,7 +145,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     public getBadgeType(cell: IgxGridCellComponent): string {
-        switch (cell.row.rowData.Position) {
+        switch (cell.row.data.Position) {
             case 'up':
                 return 'success';
             case 'current':
@@ -155,7 +156,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     public getSpeed(athlete: Athlete): void {
-        athlete['Speed'] = this.addSpeedData(athlete, 40);
+        athlete.Speed = this.addSpeedData(athlete, 40)[0];
     }
 
     public getSpeedeData(minutes?: number): SpeedDescriptor[] {
@@ -221,7 +222,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         }
         if (this.isFinished) {
             this.live = false;
-            this.grid1.page = 0;
+            this.grid1.paginator.page = 0;
             return;
         }
         this.updateData();
@@ -243,7 +244,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         // move grid to next page to monitor players who still run
         const firstOnPage = this.grid1.getCellByColumn(0, 'TrackProgress');
         if (firstOnPage && firstOnPage.value === 100) {
-            this.grid1.page = this.grid1.page + 1;
+            this.grid1.paginator.page = this.grid1.paginator.page + 1;
         }
 
         // show Top 3 players after race has finished
@@ -259,7 +260,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         this.localData.forEach((rec, index) => {
             rec.LastPosition = index;
             if (rec.TrackProgress < 100) {
-                rec.Speed = this.addSpeedData(rec, 3);
+                rec.Speed = this.addSpeedData(rec, 3)[0];
                 rec.BeatsPerMinute += this.generateRandomNumber(-5, 5);
                 if (rec.Id < this.grid1.perPage + 1) {
                     rec.TrackProgress = Math.min(rec.TrackProgress + this.generateRandomNumber(15, 20), 100);

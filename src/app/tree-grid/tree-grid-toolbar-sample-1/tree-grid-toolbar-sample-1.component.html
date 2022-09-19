@@ -5,6 +5,7 @@
             <input name="toolbarTitle" type="text" igxInput [(ngModel)]="toolbarTitle" />
         </igx-input-group>
         <div>
+            <igx-switch [(ngModel)]="enableFiltering">Advanced Filtering</igx-switch>
             <igx-switch [(ngModel)]="enableHiding">Column hiding</igx-switch>
             <igx-switch [(ngModel)]="enablePinning">Column pinning</igx-switch>
             <igx-switch [(ngModel)]="enableExport">Exporting</igx-switch>
@@ -14,6 +15,7 @@
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>{{ toolbarTitle }}</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-advanced-filtering *ngIf="enableFiltering" [overlaySettings]="overlaySettingsAuto"></igx-grid-toolbar-advanced-filtering>
                 <igx-grid-toolbar-hiding *ngIf="enableHiding"></igx-grid-toolbar-hiding>
                 <igx-grid-toolbar-pinning *ngIf="enablePinning"></igx-grid-toolbar-pinning>
                 <igx-grid-toolbar-exporter *ngIf="enableExport"></igx-grid-toolbar-exporter>
@@ -23,7 +25,7 @@
         <igx-column field="Name" width="25%">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.rowData.Avatar" roundShape="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.Avatar" roundShape="true" size="small"></igx-avatar>
                     <span class="name">{{ cell.value }}</span>
                 </div>
             </ng-template>

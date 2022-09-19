@@ -1,0 +1,33 @@
+<div class="grid__wrapper">
+    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="localdata" [autoGenerate]="false"
+        [height]="'580px'" [width]="'100%'" (contextMenu)="handleLeftClick($event)" (activeNodeChange)="handleChange()" [rowClasses]="rowClasses">
+        <igx-column field="Artist" [editable]="true" [dataType]="'string'"></igx-column>
+        <igx-column field="HasGrammyAward" header="Has Grammy Award?" [editable]="true" [dataType]="'boolean'">
+        </igx-column>
+        <igx-column field="Debut" [editable]="true" dataType="number"></igx-column>
+        <igx-column field="GrammyNominations" header="Grammy Nominations" [editable]="true" dataType="number"
+            [hasSummary]="true"></igx-column>
+        <igx-column field="GrammyAwards" header="Grammy Awards" [editable]="true" dataType="number"
+            [hasSummary]="true" ></igx-column>
+        <igx-column [width]="'100px'">
+            <ng-template igxCell let-cell="cell">
+                <button igxButton="icon" (click)="removeRow(cell.id.rowIndex)">
+                    <igx-icon>delete</igx-icon>
+                </button>
+            </ng-template>
+        </igx-column>
+
+        <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false">
+            <igx-column field="Album" [editable]="true" [dataType]="'string'"></igx-column>
+            <igx-column field="LaunchDate" header="Launch Date" [editable]="true" [dataType]="'date'"></igx-column>
+            <igx-column field="BillboardReview" header="Billboard Review" [editable]="true" dataType="number"></igx-column>
+            <igx-column field="USBillboard200" header="US Billboard 200" [editable]="true" dataType="number"></igx-column>
+            <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false">
+                    <igx-column field="Number" header="No." [editable]="true" dataType="number"></igx-column>
+                    <igx-column field="Title" [editable]="true" [dataType]="'string'"></igx-column>
+                    <igx-column field="Released" [editable]="true" [dataType]="'date'"></igx-column>
+                    <igx-column field="Genre" [editable]="true" [dataType]="'string'"></igx-column>
+            </igx-row-island>
+        </igx-row-island>
+    </igx-hierarchical-grid>
+    </div>

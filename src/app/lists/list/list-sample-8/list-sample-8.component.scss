@@ -1,11 +1,11 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 :host ::ng-deep {
-    $my-list-theme: igx-list-theme(
+    $my-list-theme: list-theme(
         $background: #0568ab
     );
 
-    @include igx-list($my-list-theme);
+    @include list($my-list-theme);
 }
 
 :host {
@@ -14,7 +14,7 @@
 }
 
 .list-sample {
-    box-shadow: igx-elevation($elevation: 2);
+    box-shadow: elevation($elevation: 2);
 }
 
 igx-icon {

@@ -49,14 +49,14 @@ export class HGridRowReorderComponent {
         if (wasSelected) {
             // find the row that has the same ID as the dragged row and select it
             parent.selectRows([parent.rowList.toArray()
-                .find((r) => r.rowID === draggedRow.key).rowID], false);
+                .find((r) => r.key === draggedRow.key).key], false);
         }
     }
 
     private getTargetRowIndex(rowListArr: any[], cursorPosition: Point): number {
         const targetElem = this.catchCursorPosOnElem(rowListArr, cursorPosition);
         // get the index of the row that has the same ID as the dragged row
-        return rowListArr.indexOf(rowListArr.find((r) => r.rowData.id === targetElem.rowData.id));
+        return rowListArr.indexOf(rowListArr.find((r) => r.key === targetElem.key));
     }
 
     private catchCursorPosOnElem(rowListArr: any[], cursorPosition: Point): any {

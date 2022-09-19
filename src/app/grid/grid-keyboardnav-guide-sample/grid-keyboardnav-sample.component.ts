@@ -7,7 +7,7 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@ang
 import {
     IgxColumnComponent,
     IgxColumnGroupComponent,
-    IgxGridCellComponent,
+    CellType,
     IgxGridComponent,
     IgxListComponent,
     SortingDirection,
@@ -226,7 +226,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
                 }
             });
 
-        this.grid.columnSelected.pipe(takeUntil(this._destroyer))
+        this.grid.columnSelectionChanging.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
                 const evt = args.event;
                 if (evt.type === 'keydown') {
@@ -245,9 +245,8 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
             });
 
         this.grid.groupingExpressions = [
-            { fieldName: 'ProductName', dir: SortingDirection.Asc }
+            { fieldName: 'ContactTitle', dir: SortingDirection.Asc }
         ];
-
 
         this.listref.itemClicked.pipe(takeUntil(this._destroyer))
             .subscribe((args) => {
@@ -310,6 +309,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         if (this._keyboardHandler.gridSection === GridSection.TBODY) {
             if (key === 'enter') {
                 const cell = this.grid.getCellByColumnVisibleIndex(activeNode.row, activeNode.column);
+                const isCellSelected = cell.selected;
                 if (cell && cell.column.editable && cell.editMode) {
                     this._keyboardHandler.selectItem(0);
                 }
@@ -345,21 +345,22 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
     }
 
     public toggleBodyCombinations(activeNode) {
-        const rowRef = this.grid.gridAPI.get_row_by_index(activeNode.row);
+        const rowRef = this.grid.getRowByIndex(activeNode.row);
         if (this._keyboardHandler.gridSection !== GridSection.TBODY || !rowRef) {
             return;
         }
 
-        if (rowRef.nativeElement.tagName === ElementTags.GROUPBY_ROW) {
+        if (rowRef.isGroupByRow) {
             this._keyboardHandler.enableActionItems([ItemAction.Expandable]);
         } else {
-            const cell = this.grid.gridAPI.get_cell_by_visible_index(activeNode.row, activeNode.column);
+            const cell = this.grid.getCellByColumn(activeNode.row,
+                this.grid.columnList.find((col) => col.visibleIndex === activeNode.column).field);
             this.toggleCellCombinations(cell);
         }
 
     }
 
-    public toggleCellCombinations(cell?: IgxGridCellComponent) {
+    public toggleCellCombinations(cell?: CellType) {
         const actions = this.extractCellActions(cell);
         this._keyboardHandler.enableActionItems(actions);
     }
@@ -407,7 +408,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
         return res;
     }
 
-    public extractCellActions(cell: IgxGridCellComponent) {
+    public extractCellActions(cell: CellType) {
         const res = [];
         if (cell.editable) {
             res.push(ItemAction.Editable);

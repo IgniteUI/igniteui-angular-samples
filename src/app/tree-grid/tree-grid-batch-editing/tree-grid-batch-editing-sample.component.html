@@ -3,13 +3,13 @@
         [width]="'100%'" [height]="'500px'" [rowEditable]="true">
         <igx-column filterable="false" width="150" [editable]="false">
             <ng-template igxCell let-cell="cell" let-val>
-                <button igxButton (click)="deleteRow(cell.cellID.rowID)"
+                <button igxButton (click)="deleteRow(cell.id.rowID)"
                     [disabled]="cell.row.deleted">Delete</button>
             </ng-template>
         </igx-column>
         <igx-column filterable="false" width="180" [editable]="false">
             <ng-template igxCell let-cell="cell" let-val>
-                <button igxButton (click)="addChildRow(cell.cellID.rowID)" [disabled]="cell.row.deleted">Add Child
+                <button igxButton (click)="addChildRow(cell.id.rowID)" [disabled]="cell.row.deleted">Add Child
                     Row</button>
             </ng-template>
         </igx-column>

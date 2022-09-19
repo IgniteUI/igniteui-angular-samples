@@ -1,49 +1,12 @@
-<div class="grid-controls"> <br />
-    <span>
+
+<div class="sample-container">
+    <div class="grid-controls">
         <igx-switch [(ngModel)]="hideRowSelectors">Hide Row Selectors</igx-switch>
-    </span>
-    <br />
-    <span style="display: flex">
         <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
-        <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.close()">
-            <div class="container">
-                <igx-icon>notification_important</igx-icon>
-                <ng-container *ngIf="selectionMode === 'multiple'">
-                    <ul>
-                        <li><b>Now you can select multiple rows within a grid.</b></li>
-                        <li>Click on row selector field or press SPACE key when some cell is active to toggle row
-                            selection.
-                        </li>
-                        <li>On cell click the row get selected and previous selection state is cleared.</li>
-                        <li>On cell click holding ctrl key, the row get selected and previous selection state is
-                            preserved.
-                        </li>
-                        <li>Shift + click select a range of rows.</li>
-                    </ul>
-                </ng-container>
-                <ng-container *ngIf="selectionMode === 'single'">
-                    <ul>
-                        <li><b>Now you can select only one row within a grid.</b></li>
-                        <li>Click on row selector field or press SPACE key when some cell is active to toggle row
-                            selection.
-                        </li>
-                        <li>On cell click the row get selected and previous selection state is cleared.</li>
-                    </ul>
-                </ng-container>
-                <ng-container *ngIf="selectionMode === 'none'">
-                    <ul>
-                        <li><b>Now you are unable to select a row while interacting with grid UI.</b></li>
-                        <li>If you need to select a row use grid API methods.</li>
-                    </ul>
-                </ng-container>
-            </div>
-        </igx-snackbar>
-    </span>
-</div>
-<div class="grid__wrapper">
+    </div>
     <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" [height]="'530px'" [primaryKey]="'ID'" width="100%" [cellSelection]="'none'"
         [rowSelection]="selectionMode" [selectedRows]="selectedRows" [hideRowSelectors]="hideRowSelectors" [allowFiltering]="true"
-        (rowSelected)="handleRowSelection($event)">
+        (rowSelectionChanging)="handleRowSelection($event)">
         <igx-column [field]="'Category'"></igx-column>
         <igx-column [field]="'Type'" [filterable]='false'></igx-column>
         <igx-column [field]="'Price'" dataType="number" [formatter]="formatCurrency"></igx-column>
@@ -85,3 +48,52 @@
         </igx-column>
     </igx-grid>
 </div>
+
+<igx-snackbar #snackbarRowCount actionText="Got it. Thanks!" (clicked)="snackbarRowCount.close()">
+    <div class="container">
+        <igx-icon>notification_important</igx-icon>
+        <ng-container *ngIf="selectionMode === 'multiple'">
+           <p>Number of selected rows: {{selectedRowsCount}}</p>
+        </ng-container>
+        <ng-container *ngIf="selectionMode === 'single' && this.selectedRowIndex !== undefined">
+            <p>Currently selected row index: {{selectedRowIndex}}</p>
+        </ng-container>
+        <ng-container *ngIf="selectionMode === 'single' && this.selectedRowIndex === undefined">
+            <p>There is no currently selected row.</p>
+        </ng-container>
+    </div>
+</igx-snackbar>
+
+<igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.close()">
+    <div class="container">
+        <igx-icon>notification_important</igx-icon>
+        <ng-container *ngIf="selectionMode === 'multiple'">
+            <ul>
+                <li><b>Now you can select multiple rows within a grid.</b></li>
+                <li>Click on row selector field or press SPACE key when some cell is active to toggle row
+                    selection.
+                </li>
+                <li>On cell click the row get selected and previous selection state is cleared.</li>
+                <li>On cell click holding ctrl key, the row get selected and previous selection state is
+                    preserved.
+                </li>
+                <li>Shift + click select a range of rows.</li>
+            </ul>
+        </ng-container>
+        <ng-container *ngIf="selectionMode === 'single'">
+            <ul>
+                <li><b>Now you can select only one row within a grid.</b></li>
+                <li>Click on row selector field or press SPACE key when some cell is active to toggle row
+                    selection.
+                </li>
+                <li>On cell click the row get selected and previous selection state is cleared.</li>
+            </ul>
+        </ng-container>
+        <ng-container *ngIf="selectionMode === 'none'">
+            <ul>
+                <li><b>Now you are unable to select a row while interacting with grid UI.</b></li>
+                <li>If you need to select a row use grid API methods.</li>
+            </ul>
+        </ng-container>
+    </div>
+</igx-snackbar>

@@ -1,25 +1,20 @@
 .grid-controls {
     display: flex;
     justify-content: space-between;
-    padding-top: 16px;
-    margin: 0 16px 24px;
     flex-flow: column;
     align-items: flex-start;
     position: relative;
+    > * {
+        margin-bottom: 16px;
+    }
 }
 
-.grid__wrapper {
-    margin: 0 16px;
+.sample-container {
+    margin: 16px;
 }
-igx-buttongroup{
+
+igx-buttongroup {
     width: 500px;
-}
-igx-snackbar {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 2;
 }
 
 .igx-snackbar {
@@ -31,4 +26,8 @@ igx-snackbar {
     igx-icon {
         margin: 20px;
     }
+}
+
+.container p {
+    margin-top: 20px;
 }

@@ -28,7 +28,9 @@
             "extractLicenses": false,
             "buildOptimizer": false,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "sourceMap": false,
+            "progress": true
           },
           "configurations": {
             "production": {
@@ -39,47 +41,19 @@
                 }
               ],
               "optimization": true,
+              "aot": true,
               "outputHashing": "all",
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "sourceMap": false,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
               ]
-            },
-            "es5": {
-                "budgets": [
-                  {
-                    "type": "anyComponentStyle",
-                    "maximumWarning": "900kb"
-                  }
-                ],
-                "tsConfig": "src/tsconfig-es5.app.json"
-            },
-            "es5Prod": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "900kb"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "tsConfig": "src/tsconfig-es5.app.json"
             }
           }
         },
@@ -91,12 +65,6 @@
           "configurations": {
             "production": {
               "browserTarget": "my-app:build:production"
-            },
-            "es5": {
-              "browserTarget": "my-app:build:es5"
-            },
-            "es5Prod": {
-                "browserTarget": "my-app:build:es5Prod"
             }
           }
         },
@@ -124,14 +92,14 @@
           }
         },
         "lint": {
-            "builder": "@angular-eslint/builder:lint",
-            "options": {
-              "lintFilePatterns": [
-                "src/**/*.ts",
-                "src/**/*.html"
-              ]
-            }
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
+        }
       }
     },
     "app-lob": {
@@ -164,7 +132,13 @@
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,
-            "sourceMap": true,
+            "sourceMap": {
+              "scripts": true,
+              "styles": true,
+              "hidden": false,
+              "vendor": false
+            },
+            "progress": true,
             "optimization": false,
             "namedChunks": true
           },
@@ -186,8 +160,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "7mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -195,15 +169,6 @@
                   "maximumError": "900kb"
                 }
               ]
-            },
-            "es5": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "900kb"
-                }
-              ],
-              "tsConfig": "projects/app-lob/tsconfig-es5.app.json"
             }
           }
         },
@@ -215,9 +180,6 @@
           "configurations": {
             "production": {
               "browserTarget": "app-lob:build:production"
-            },
-            "es5": {
-              "browserTarget": "app-lob:build:es5"
             }
           }
         },
@@ -297,7 +259,13 @@
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,
-            "sourceMap": true,
+            "sourceMap": {
+              "scripts": true,
+              "styles": true,
+              "hidden": false,
+              "vendor": false
+            },
+            "progress": true,
             "optimization": false,
             "namedChunks": true
           },
@@ -319,7 +287,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
+                  "maximumWarning": "3mb",
                   "maximumError": "5mb"
                 },
                 {
@@ -328,15 +296,6 @@
                   "maximumError": "900kb"
                 }
               ]
-            },
-            "es5": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "900kb"
-                }
-              ],
-              "tsConfig": "projects/app-crm/tsconfig-es5.app.json"
             }
           }
         },
@@ -348,9 +307,6 @@
           "configurations": {
             "production": {
               "browserTarget": "app-crm:build:production"
-            },
-            "es5": {
-              "browserTarget": "app-crm:build:es5"
             }
           }
         },
@@ -401,7 +357,6 @@
       }
     }
   },
-  "defaultProject": "my-app",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

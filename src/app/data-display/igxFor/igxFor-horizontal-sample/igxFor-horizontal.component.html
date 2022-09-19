@@ -15,7 +15,10 @@
         <igx-list-item [isHeader]="true">Contacts: {{(data | igxFilter: fo).length}} </igx-list-item>
         <div class="list-container" [style.width]="'880px'" [style.overflow]="'hidden'" [style.position]="'relative'">
             <igx-list-item
+                style="overflow: hidden;"
+                [style.min-width]="'220px'"
                 [style.width]="'220px'"
+                [style.max-width]="'220px'"
                 *igxFor="let item of data | igxFilter: fo; scrollOrientation : 'horizontal'; containerSize: '880px'; itemSize: '220px'">
                 <div class="item-container">
                     <div class="contact">

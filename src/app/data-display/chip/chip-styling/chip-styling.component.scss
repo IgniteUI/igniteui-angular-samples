@@ -1,11 +1,11 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 igx-chip {
     margin-right: 5px;
     margin-top: 20px;
 }
 
-$custom-theme: igx-chip-theme(
+$custom-theme: chip-theme(
     $background: #011627,
     $hover-background:  #011627dc,
     $focus-background: #0116276c,
@@ -19,7 +19,7 @@ $custom-theme: igx-chip-theme(
 
 
 // :host {
-//     @include igx-css-vars($custom-theme);
+//     @include css-vars($custom-theme);
 // }
 
 
@@ -29,5 +29,5 @@ $custom-theme: igx-chip-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-chip($custom-theme);
+    @include chip($custom-theme);
 }

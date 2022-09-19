@@ -1,56 +1,56 @@
-@import 'schemas';
+@use 'schemas';
 
 // Import grid component and theme styles
-@import '~igniteui-angular/lib/core/styles/components/grid/grid-component';
-@import '~igniteui-angular/lib/core/styles//components/grid/grid-theme';
+@use '~igniteui-angular/lib/core/styles/components/grid/grid-component';
+@use '~igniteui-angular/lib/core/styles//components/grid/grid-theme';
 
 // Import grid snackbar and theme styles
-@import '~igniteui-angular/lib/core/styles//components/snackbar/snackbar-component';
-@import '~igniteui-angular/lib/core/styles//components/snackbar/snackbar-theme';
+@use '~igniteui-angular/lib/core/styles//components/snackbar/snackbar-component';
+@use '~igniteui-angular/lib/core/styles//components/snackbar/snackbar-theme';
 
 // Import input-group component and theme styles
-@import '~igniteui-angular/lib/core/styles//components/input/input-group-component';
-@import '~igniteui-angular/lib/core/styles//components/input/input-group-theme';
+@use '~igniteui-angular/lib/core/styles//components/input/input-group-component';
+@use '~igniteui-angular/lib/core/styles//components/input/input-group-theme';
 
 // Import dialog-group component and theme styles
-@import '~igniteui-angular/lib/core/styles//components/dialog/dialog-component';
-@import '~igniteui-angular/lib/core/styles//components/dialog/dialog-theme';
+@use '~igniteui-angular/lib/core/styles//components/dialog/dialog-component';
+@use '~igniteui-angular/lib/core/styles//components/dialog/dialog-theme';
 
 // Import paginator component and theme styles
-@import '~igniteui-angular/lib/core/styles//components/paginator/paginator-component';
-@import '~igniteui-angular/lib/core/styles//components/paginator/paginator-theme';
+@use '~igniteui-angular/lib/core/styles//components/paginator/paginator-component';
+@use '~igniteui-angular/lib/core/styles//components/paginator/paginator-theme';
 
 // Import button component and theme styles
-@import '~igniteui-angular/lib/core/styles//components/button/button-component';
-@import '~igniteui-angular/lib/core/styles//components/button/button-theme';
+@use '~igniteui-angular/lib/core/styles//components/button/button-component';
+@use '~igniteui-angular/lib/core/styles//components/button/button-theme';
 
 // Import button-group component and theme styles
-@import '~igniteui-angular/lib/core/styles//components/button-group/button-group-component';
-@import '~igniteui-angular/lib/core/styles//components/button-group/button-group-theme';
+@use '~igniteui-angular/lib/core/styles//components/button-group/button-group-component';
+@use '~igniteui-angular/lib/core/styles//components/button-group/button-group-theme';
 
 // Import drop-down component and theme styles
-@import '~igniteui-angular/lib/core/styles//components/drop-down/drop-down-component';
-@import '~igniteui-angular/lib/core/styles//components/drop-down/drop-down-theme';
+@use '~igniteui-angular/lib/core/styles//components/drop-down/drop-down-component';
+@use '~igniteui-angular/lib/core/styles//components/drop-down/drop-down-theme';
 
 // Import calendar component and theme styles
-@import '~igniteui-angular/lib/core/styles/components/calendar/calendar-component';
-@import '~igniteui-angular/lib/core/styles/components/calendar/calendar-theme';
+@use '~igniteui-angular/lib/core/styles/components/calendar/calendar-component';
+@use '~igniteui-angular/lib/core/styles/components/calendar/calendar-theme';
 
 // Import chip component and theme styles
-@import '~igniteui-angular/lib/core/styles/components/chip/chip-component';
-@import '~igniteui-angular/lib/core/styles/components/chip/chip-theme';
+@use '~igniteui-angular/lib/core/styles/components/chip/chip-component';
+@use '~igniteui-angular/lib/core/styles/components/chip/chip-theme';
 
 // Import icon component and theme styles
-@import '~igniteui-angular/lib/core/styles/components/icon/icon-component';
-@import '~igniteui-angular/lib/core/styles/components/icon/icon-theme';
+@use '~igniteui-angular/lib/core/styles/components/icon/icon-component';
+@use '~igniteui-angular/lib/core/styles/components/icon/icon-theme';
 
 // Import drop-down component and theme styles
-@import '~igniteui-angular/lib/core/styles/components/drop-down/drop-down-component';
-@import '~igniteui-angular/lib/core/styles/components/drop-down/drop-down-theme';
+@use '~igniteui-angular/lib/core/styles/components/drop-down/drop-down-component';
+@use '~igniteui-angular/lib/core/styles/components/drop-down/drop-down-theme';
 
 // Import badge component and theme styles
-@import '~igniteui-angular/lib/core/styles/components/badge/badge-component';
-@import '~igniteui-angular/lib/core/styles/components/badge/badge-theme';
+@use '~igniteui-angular/lib/core/styles/components/badge/badge-component';
+@use '~igniteui-angular/lib/core/styles/components/badge/badge-theme';
 
 
 // Define the primary colors
@@ -62,265 +62,265 @@ $royalblue-color: #4169E1;
 $orange-color: #FFA500;
 
 // Define the palettes:
-$light-theme-palette: igx-palette($primary: $light-color, $secondary: $royalblue-color);
-$dark-theme-palette: igx-palette($primary: $dark-color, $secondary: $orange-color);
+$light-theme-palette: palette($primary: $light-color, $secondary: $royalblue-color);
+$dark-theme-palette: palette($primary: $dark-color, $secondary: $orange-color);
 
 // Define light theme for the snackbar
-$light-snackbar-theme: igx-snackbar-theme(
+$light-snackbar-theme: snackbar-theme(
   $palette: $light-theme-palette,
-  $background: igx-color($light-theme-palette, "secondary", 500),
-  $text-color: igx-color($light-theme-palette, "primary", 500),
-  $button-color: igx-color($light-theme-palette, "primary", 500)
+  $background: color($light-theme-palette, "secondary", 500),
+  $text-color: color($light-theme-palette, "primary", 500),
+  $button-color: color($light-theme-palette, "primary", 500)
 );
 
 // Define dark theme for the snackbar
-$dark-snackbar-theme: igx-snackbar-theme(
+$dark-snackbar-theme: snackbar-theme(
   $palette: $dark-theme-palette,
-  $background: igx-color($dark-theme-palette, "primary", 100),
-  $text-color: igx-color($dark-theme-palette, "secondary", 500)
+  $background: color($dark-theme-palette, "primary", 100),
+  $text-color: color($dark-theme-palette, "secondary", 500)
 );
 
 // Define black theme with schema for the snackbar
-$black-snackbar-theme: igx-snackbar-theme(
+$black-snackbar-theme: snackbar-theme(
   $palette:  $black-theme-palette,
   $schema: $my-black-schema
 );
 
 // Define light theme for the dialog
-$light-dialog-theme: igx-dialog-theme(
+$light-dialog-theme: dialog-theme(
   $palette: $light-theme-palette,
-  $background: igx-color($light-theme-palette, "primary", 100),
-  $title-color: igx-color($light-theme-palette, "secondary", 500),
-  $message-color: igx-color($light-theme-palette, "secondary", 600)
+  $background: color($light-theme-palette, "primary", 100),
+  $title-color: color($light-theme-palette, "secondary", 500),
+  $message-color: color($light-theme-palette, "secondary", 600)
 );
 
 // Define dark theme for the dialog
-$dark-dialog-theme: igx-dialog-theme(
+$dark-dialog-theme: dialog-theme(
   $palette: $dark-theme-palette,
-  $background: igx-color($dark-theme-palette, "primary", 100),
-  $title-color: igx-color($dark-theme-palette, "secondary", 500),
-  $message-color: igx-color($dark-theme-palette, "secondary", 600)
+  $background: color($dark-theme-palette, "primary", 100),
+  $title-color: color($dark-theme-palette, "secondary", 500),
+  $message-color: color($dark-theme-palette, "secondary", 600)
 );
 
 // Define black theme for the dialog
-$black-dialog-theme: igx-dialog-theme(
+$black-dialog-theme: dialog-theme(
   $palette: $black-theme-palette,
   $schema:  $my-black-schema
 );
 
 // Define light theme for the input-group
-$light-input-group-theme: igx-input-group-theme(
+$light-input-group-theme: input-group-theme(
   $palette: $light-theme-palette,
-  $disabled-border-color: igx-color($light-theme-palette, "primary", 500),
-  $box-disabled-background: igx-color($light-theme-palette, "secondary", 100),
-  $hover-bottom-line-color: igx-color($light-theme-palette, "secondary", 700),
-  $focused-bottom-line-color: igx-color($light-theme-palette, "secondary", 700),
-  $focused-text-color: igx-color($light-theme-palette, "secondary", 500),
-  $focused-secondary-color: igx-color($light-theme-palette, "secondary", 500)
+  $disabled-border-color: color($light-theme-palette, "primary", 500),
+  $box-disabled-background: color($light-theme-palette, "secondary", 100),
+  $hover-bottom-line-color: color($light-theme-palette, "secondary", 700),
+  $focused-bottom-line-color: color($light-theme-palette, "secondary", 700),
+  $focused-text-color: color($light-theme-palette, "secondary", 500),
+  $focused-secondary-color: color($light-theme-palette, "secondary", 500)
 );
 
 // Define dark theme for the input-group
-$dark-input-group-theme: igx-input-group-theme(
+$dark-input-group-theme: input-group-theme(
   $palette: $dark-theme-palette,
-  $box-background:  igx-color($dark-theme-palette, "primary", 100),
-  $disabled-border-color: igx-color($dark-theme-palette, "primary", 500),
-  $box-disabled-background: igx-color($dark-theme-palette, "secondary", 100),
-  $hover-bottom-line-color: igx-color($dark-theme-palette, "secondary", 700),
-  $focused-bottom-line-color: igx-color($dark-theme-palette, "secondary", 700),
-  $focused-text-color: igx-color($dark-theme-palette, "secondary", 500),
-  $idle-text-color: igx-color($dark-theme-palette, "secondary", 700)
+  $box-background:  color($dark-theme-palette, "primary", 100),
+  $disabled-border-color: color($dark-theme-palette, "primary", 500),
+  $box-disabled-background: color($dark-theme-palette, "secondary", 100),
+  $hover-bottom-line-color: color($dark-theme-palette, "secondary", 700),
+  $focused-bottom-line-color: color($dark-theme-palette, "secondary", 700),
+  $focused-text-color: color($dark-theme-palette, "secondary", 500),
+  $idle-text-color: color($dark-theme-palette, "secondary", 700)
 );
 
 // Define black theme for the input-group
-$black-input-group-theme: igx-input-group-theme(
+$black-input-group-theme: input-group-theme(
   $palette: $black-theme-palette,
   $schema: $my-black-schema
 );
 
 // Define light theme for the button
-$light-button-theme: igx-button-theme(
+$light-button-theme: button-theme(
   $palette: $light-theme-palette,
-  $foreground: igx-color($light-theme-palette, "secondary", 700),
-  $hover-foreground: igx-color($light-theme-palette, "primary", 500),
-  $hover-background: igx-color($light-theme-palette, "secondary", 100),
-  $focus-foreground: igx-color($light-theme-palette, "primary", 500),
-  $focus-background: igx-color($light-theme-palette, "secondary", 500),
+  $foreground: color($light-theme-palette, "secondary", 700),
+  $hover-foreground: color($light-theme-palette, "primary", 500),
+  $hover-background: color($light-theme-palette, "secondary", 100),
+  $focus-foreground: color($light-theme-palette, "primary", 500),
+  $focus-background: color($light-theme-palette, "secondary", 500),
 );
 
 // Define dark theme for the button
-$dark-button-theme: igx-button-theme(
+$dark-button-theme: button-theme(
   $palette: $dark-theme-palette,
-  $foreground: igx-color($dark-theme-palette, "secondary", 700),
-  $hover-foreground: igx-color($dark-theme-palette, "primary", 500),
-  $hover-background: igx-color($dark-theme-palette, "secondary", 500),
-  $focus-foreground: igx-color($dark-theme-palette, "primary", 500),
-  $focus-background: igx-color($dark-theme-palette, "secondary", 500),
-  $disabled-background: igx-color($dark-theme-palette, "primary", 400),
-  $disabled-foreground: igx-color($black-theme-palette, "primary", 700)
+  $foreground: color($dark-theme-palette, "secondary", 700),
+  $hover-foreground: color($dark-theme-palette, "primary", 500),
+  $hover-background: color($dark-theme-palette, "secondary", 500),
+  $focus-foreground: color($dark-theme-palette, "primary", 500),
+  $focus-background: color($dark-theme-palette, "secondary", 500),
+  $disabled-background: color($dark-theme-palette, "primary", 400),
+  $disabled-foreground: color($black-theme-palette, "primary", 700)
 );
 
 // Define black theme for the button
-$black-button-theme: igx-button-theme(
+$black-button-theme: button-theme(
   $palette: $black-theme-palette,
   $schema: $my-black-schema
 );
 
 // Define light theme for the button-group
-$light-button-group-theme: igx-button-group-theme(
+$light-button-group-theme: button-group-theme(
   $palette: $light-theme-palette,
-  $item-text-color: igx-color($light-theme-palette, "primary", 500),
-  $item-background: igx-color($light-theme-palette, "secondary", 500),
-  $item-selected-background: igx-color($light-theme-palette, "primary", 200),
-  $item-selected-text-color: igx-color($light-theme-palette, "secondary", 500)
+  $item-text-color: color($light-theme-palette, "primary", 500),
+  $item-background: color($light-theme-palette, "secondary", 500),
+  $item-selected-background: color($light-theme-palette, "primary", 200),
+  $item-selected-text-color: color($light-theme-palette, "secondary", 500)
 );
 
 // Define dark theme for the button-group
-$dark-button-group-theme: igx-button-group-theme(
+$dark-button-group-theme: button-group-theme(
   $palette: $dark-theme-palette,
-  $item-text-color: igx-color($dark-theme-palette, "primary", 500),
-  $item-background: igx-color($dark-theme-palette, "secondary", 500),
-  $item-selected-background: igx-color($dark-theme-palette, "primary", 200),
-  $item-selected-text-color: igx-color($dark-theme-palette, "secondary", 500)
+  $item-text-color: color($dark-theme-palette, "primary", 500),
+  $item-background: color($dark-theme-palette, "secondary", 500),
+  $item-selected-background: color($dark-theme-palette, "primary", 200),
+  $item-selected-text-color: color($dark-theme-palette, "secondary", 500)
 );
 
 // Define black theme for the button-group
-$black-button-group-theme: igx-button-group-theme(
+$black-button-group-theme: button-group-theme(
   $palette: $black-theme-palette,
   $schema: $my-black-schema
 
 );
 
 // Define light theme for the grid
-$light-grid-theme: igx-grid-theme(
+$light-grid-theme: grid-theme(
   $palette: $light-theme-palette,
-  $header-background: igx-color($light-theme-palette, "secondary", 700),
-  $header-text-color:igx-color($light-theme-palette, "primary", 600),
-  $cell-selected-background: igx-color($light-theme-palette, "secondary", 200),
-  $cell-selected-text-color: igx-color($light-theme-palette, "primary", 500),
-  $row-hover-background: igx-color($light-theme-palette, "secondary", 100),
-  $header-border-color: igx-color($light-theme-palette, "primary", 600)
+  $header-background: color($light-theme-palette, "secondary", 700),
+  $header-text-color:color($light-theme-palette, "primary", 600),
+  $cell-selected-background: color($light-theme-palette, "secondary", 200),
+  $cell-selected-text-color: color($light-theme-palette, "primary", 500),
+  $row-hover-background: color($light-theme-palette, "secondary", 100),
+  $header-border-color: color($light-theme-palette, "primary", 600)
   );
 
 // Define dark theme for the grid
-$dark-grid-theme: igx-grid-theme(
+$dark-grid-theme: grid-theme(
   $palette: $dark-theme-palette,
-  $content-background: igx-color($dark-theme-palette, "secondary", 100),
-  $header-background: igx-color($dark-theme-palette, "primary", 500),
-  $header-text-color: igx-color($dark-theme-palette, "secondary", 600),
-  $cell-selected-background: igx-color($dark-theme-palette, "primary", 500),
-  $cell-selected-text-color: igx-color($dark-theme-palette, "secondary", 500),
-  $row-hover-background: igx-color($dark-theme-palette, "primary", 100),
-  $header-border-color: igx-color($dark-theme-palette, "primary", 600)
+  $content-background: color($dark-theme-palette, "secondary", 100),
+  $header-background: color($dark-theme-palette, "primary", 500),
+  $header-text-color: color($dark-theme-palette, "secondary", 600),
+  $cell-selected-background: color($dark-theme-palette, "primary", 500),
+  $cell-selected-text-color: color($dark-theme-palette, "secondary", 500),
+  $row-hover-background: color($dark-theme-palette, "primary", 100),
+  $header-border-color: color($dark-theme-palette, "primary", 600)
 );
 
 // Define black theme for the grid
-$black-grid-theme: igx-grid-theme(
+$black-grid-theme: grid-theme(
   $palette: $black-theme-palette,
   $schema: $my-black-schema
 );
 
 // Define light theme for the paginator
-$light-paginator-theme: igx-paginator-theme(
+$light-paginator-theme: paginator-theme(
   $palette: $light-theme-palette,
-  $background-color:igx-color($light-theme-palette, "primary", 100),
-  $border-color: igx-color($light-theme-palette, "secondary", 500)
+  $background-color:color($light-theme-palette, "primary", 100),
+  $border-color: color($light-theme-palette, "secondary", 500)
 );
 
 // Define dark theme for the paginator
-$dark-paginator-theme: igx-paginator-theme(
+$dark-paginator-theme: paginator-theme(
   $palette: $dark-theme-palette,
-  $text-color: igx-color($dark-theme-palette, "secondary", 700),
-  $background-color:igx-color($dark-theme-palette, "primary", 500),
-  $border-color: igx-color($dark-theme-palette, "secondary", 500)
+  $text-color: color($dark-theme-palette, "secondary", 700),
+  $background-color:color($dark-theme-palette, "primary", 500),
+  $border-color: color($dark-theme-palette, "secondary", 500)
 );
 
 // Define black theme for the paginator
-$black-paginator-theme: igx-paginator-theme(
+$black-paginator-theme: paginator-theme(
   $palette: $black-theme-palette,
   $schema: $my-black-schema
 );
 
-$light-calendar-theme: igx-calendar-theme(
+$light-calendar-theme: calendar-theme(
     $palette: $light-theme-palette,
-    $content-background: igx-color($light-theme-palette, "primary", 500),
-    $content-text-color: igx-color($light-theme-palette, "secondary", 600),
-    $header-background: igx-color($light-theme-palette, "secondary", 500),
-    $header-text-color: igx-color($light-theme-palette, "primary", 500),
-    $picker-arrow-hover-color: igx-color($light-theme-palette, "secondary", 100),
-    $inactive-text-color: igx-color($light-theme-palette, "secondary", 200),
-    $picker-text-hover-color: igx-color($light-theme-palette, "secondary", 100),
-    $year-current-text-color: igx-color($light-theme-palette, "secondary", 500),
-    $weekend-text-color: igx-color($light-theme-palette, "secondary", 500)
+    $content-background: color($light-theme-palette, "primary", 500),
+    $content-text-color: color($light-theme-palette, "secondary", 600),
+    $header-background: color($light-theme-palette, "secondary", 500),
+    $header-text-color: color($light-theme-palette, "primary", 500),
+    $picker-arrow-hover-color: color($light-theme-palette, "secondary", 100),
+    $inactive-text-color: color($light-theme-palette, "secondary", 200),
+    $picker-text-hover-color: color($light-theme-palette, "secondary", 100),
+    $year-current-text-color: color($light-theme-palette, "secondary", 500),
+    $weekend-text-color: color($light-theme-palette, "secondary", 500)
 
 );
 
-$dark-calendar-theme: igx-calendar-theme(
+$dark-calendar-theme: calendar-theme(
     $palette: $dark-theme-palette,
-    $content-background: igx-color($dark-theme-palette, "primary", 100),
-    $content-text-color: igx-color($dark-theme-palette, "secondary", 500),
-    $inactive-text-color: igx-color($dark-theme-palette, "primary", 700),
-    $picker-arrow-color: igx-color($dark-theme-palette, "primary", 700),
-    $picker-arrow-hover-color: igx-color($dark-theme-palette, "secondary", 500),
-    $picker-text-color: igx-color($dark-theme-palette, "primary", 700),
-    $picker-text-hover-color:igx-color($dark-theme-palette, "secondary", 500)
+    $content-background: color($dark-theme-palette, "primary", 100),
+    $content-text-color: color($dark-theme-palette, "secondary", 500),
+    $inactive-text-color: color($dark-theme-palette, "primary", 700),
+    $picker-arrow-color: color($dark-theme-palette, "primary", 700),
+    $picker-arrow-hover-color: color($dark-theme-palette, "secondary", 500),
+    $picker-text-color: color($dark-theme-palette, "primary", 700),
+    $picker-text-hover-color:color($dark-theme-palette, "secondary", 500)
 
 );
 
-$black-calendar-theme: igx-calendar-theme(
+$black-calendar-theme: calendar-theme(
     $palette: $black-theme-palette,
     $schema: $my-black-schema
 );
 
-$light-icon-theme: igx-icon-theme(
+$light-icon-theme: icon-theme(
     $palette: $light-theme-palette
 );
 
-$dark-icon-theme: igx-icon-theme(
+$dark-icon-theme: icon-theme(
     $palette: $dark-theme-palette
 );
 
-$black-icon-theme: igx-icon-theme(
+$black-icon-theme: icon-theme(
     $palette: $black-theme-palette
 );
 
-$light-chip-theme: igx-chip-theme(
+$light-chip-theme: chip-theme(
     $palette: $light-theme-palette,
-    $text-color: igx-color($light-theme-palette, "primary", 500)
+    $text-color: color($light-theme-palette, "primary", 500)
 );
 
-$dark-chip-theme: igx-chip-theme(
+$dark-chip-theme: chip-theme(
     $palette: $dark-theme-palette,
-    $text-color: igx-color($dark-theme-palette, "primary", 500),
-    $background: igx-color($dark-theme-palette, "secondary", 500),
+    $text-color: color($dark-theme-palette, "primary", 500),
+    $background: color($dark-theme-palette, "secondary", 500),
 );
 
-$black-chip-theme: igx-chip-theme(
+$black-chip-theme: chip-theme(
     $palette: $black-theme-palette
 );
 
-$light-drop-down-theme: igx-drop-down-theme(
+$light-drop-down-theme: drop-down-theme(
     $palette: $light-theme-palette
 );
 
-$dark-drop-down-theme: igx-drop-down-theme(
+$dark-drop-down-theme: drop-down-theme(
     $palette: $dark-theme-palette
 );
 
-$black-drop-down-theme: igx-drop-down-theme(
+$black-drop-down-theme: drop-down-theme(
     $palette: $black-theme-palette
 );
 
-$light-badge-theme: igx-badge-theme(
+$light-badge-theme: badge-theme(
     $palette: $light-theme-palette,
-    $background-color: igx-color($light-theme-palette, "secondary", 700),
+    $background-color: color($light-theme-palette, "secondary", 700),
 );
 
-$dark-badge-theme: igx-badge-theme(
+$dark-badge-theme: badge-theme(
     $palette: $dark-theme-palette,
-    $background-color: igx-color($dark-theme-palette, "secondary", 500)
+    $background-color: color($dark-theme-palette, "secondary", 500)
 );
 
-$black-badge-theme: igx-badge-theme(
+$black-badge-theme: badge-theme(
     $palette: $black-theme-palette,
     $schema: $my-black-schema
 );

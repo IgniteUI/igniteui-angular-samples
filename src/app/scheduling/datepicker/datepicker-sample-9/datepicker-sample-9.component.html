@@ -12,7 +12,7 @@
             </igx-suffix>
         </igx-input-group>
 
-        <igx-drop-down #dropDown1 (onClosing)="saveTownFrom()" [width]="'180px'" [maxHeight]="'400px'">
+        <igx-drop-down #dropDown1 (closing)="saveTownFrom()" [width]="'180px'" [maxHeight]="'400px'">
             <igx-drop-down-item *ngFor="let town of towns | startsWith:townFrom" [value]="town">
                 {{ town }}
             </igx-drop-down-item>
@@ -30,7 +30,7 @@
             </igx-suffix>
         </igx-input-group>
 
-        <igx-drop-down #dropDown2 (onClosing)="saveTownTo()" [width]="'180px'" [maxHeight]="'400px'">
+        <igx-drop-down #dropDown2 (closing)="saveTownTo()" [width]="'180px'" [maxHeight]="'400px'">
             <igx-drop-down-item *ngFor="let town of towns | withoutTownFrom:townFrom | startsWith:townTo"
                 [value]="town">
                 {{ town }}
@@ -45,7 +45,7 @@
         </igx-prefix>
     </igx-input-group>
 
-    <igx-drop-down #dropDownCalendar (onClosing)="onClosing()" >
+    <igx-drop-down #dropDownCalendar (closing)="onClosing()" >
         <igx-calendar #calendar class="calendar" selection="range" [monthsViewNumber]="2"
             (selected)="verifyRange($event)">
         </igx-calendar>

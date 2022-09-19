@@ -2,16 +2,13 @@ import { Component, ViewChild } from '@angular/core';
 import { IgxGridComponent, RowType, Transaction } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
-
 @Component({
     selector: 'app-grid-row-action-strip',
     styleUrls: [`grid-action-strip-sample.scss`],
     templateUrl: 'grid-action-strip-sample.html'
 })
 export class GridActionStripSampleComponent {
-    @ViewChild('gridRowEditTransaction', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
-
-    public currentActiveGrid: { id: string; transactions: any[] } = { id: '', transactions: [] };
+    @ViewChild('grid', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
 
     public data: any[];
     public discardedTransactionsPerRecord: Map<number, Transaction[]> = new Map<number, Transaction[]>();
@@ -20,29 +17,36 @@ export class GridActionStripSampleComponent {
         this.data = DATA;
     }
 
-    public stateFormatter(value: string) {
-        return JSON.stringify(value);
-    }
-
-    public typeFormatter(value: string) {
-        return value.toUpperCase();
-    }
-
     public isDirty(rowContext: RowType) {
-        return rowContext && rowContext.deleted;
+        const isRowEdited = this.grid.transactions.getAggregatedChanges(true).find(x => x.id === rowContext?.key);
+        return rowContext && (rowContext.deleted || isRowEdited);
     }
 
     public isDeleted(rowContext: RowType) {
         return rowContext && rowContext.deleted;
     }
 
+    public inEditMode(rowContext: RowType) {
+        return rowContext && rowContext.inEditMode;
+    }
+
+    public startEdit(rowContext: RowType): void {
+        const firstEditable = rowContext.cells.filter(cell => cell.editable)[0];
+        const grid = rowContext.grid;
+
+        if (grid.rowList.filter(r => r === rowContext).length !== 0) {
+            grid.gridAPI.crudService.enterEditMode(firstEditable);
+            firstEditable.activate(null);
+        }
+    }
+
     public commit(rowContext: RowType) {
-        this.grid.transactions.commit(this.grid.data, rowContext.rowID);
-        this.discardedTransactionsPerRecord.set(rowContext.rowID, []);
+        this.grid.transactions.commit(this.grid.data, rowContext.key);
+        this.discardedTransactionsPerRecord.set(rowContext.key, []);
     }
 
     public redo(rowContext: RowType) {
-        const rowID = rowContext.rowID;
+        const rowID = rowContext.key;
         const lastDiscarded = this.discardedTransactionsPerRecord.get(rowID);
         lastDiscarded.forEach((transaction) => {
             const recRef = this.grid.gridAPI.get_rec_by_id(transaction.id);
@@ -53,14 +57,14 @@ export class GridActionStripSampleComponent {
 
     public hasDiscardedTransactions(rowContext: RowType) {
         if (!rowContext) { return false; }
-        const lastDiscarded = this.discardedTransactionsPerRecord.get(rowContext.rowID);
+        const lastDiscarded = this.discardedTransactionsPerRecord.get(rowContext.key);
         return lastDiscarded && lastDiscarded.length > 0;
     }
 
     public undo(rowContext: RowType) {
         const transactionsToDiscard = this.grid.transactions.getAggregatedChanges(true)
-        .filter(x => x.id === rowContext.rowID);
-        this.discardedTransactionsPerRecord.set(rowContext.rowID, transactionsToDiscard);
-        this.grid.transactions.clear(rowContext.rowID);
+        .filter(x => x.id === rowContext.key);
+        this.discardedTransactionsPerRecord.set(rowContext.key, transactionsToDiscard);
+        this.grid.transactions.clear(rowContext.key);
     }
 }

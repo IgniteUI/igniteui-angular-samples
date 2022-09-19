@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 // Browser samples related styling
 .control-wrapper {
@@ -6,7 +6,7 @@
 }
 
 // Ignite UI for Angular Theming engine related styling
-$custom-drop-down-theme: igx-drop-down-theme(
+$custom-drop-down-theme: drop-down-theme(
     $background-color: #d9f5d6,
     $header-text-color: #1a5214,
     $item-text-color: #1a5214,
@@ -24,20 +24,20 @@ $custom-drop-down-theme: igx-drop-down-theme(
     $selected-focus-item-text-color: #1a5214,
 );
 
-$custom-combo-theme: igx-combo-theme(
+$custom-combo-theme: combo-theme(
     $search-separator-border-color: #1a5214
 );
 
-$custom-checkbox-theme: igx-checkbox-theme(
+$custom-checkbox-theme: checkbox-theme(
     $border-radius: 10px,
     $fill-color: #1a5214,
     $empty-color: #1a5214,
 );
 
 // :host {
-//   @include igx-css-vars($custom-drop-down-theme);
-//   @include igx-css-vars($custom-combo-theme);
-//   @include igx-css-vars($custom-checkbox-theme);
+//   @include css-vars($custom-drop-down-theme);
+//   @include css-vars($custom-combo-theme);
+//   @include css-vars($custom-checkbox-theme);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -46,7 +46,7 @@ $custom-checkbox-theme: igx-checkbox-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-drop-down($custom-drop-down-theme);
-    @include igx-combo($custom-combo-theme);
-    @include igx-checkbox($custom-checkbox-theme);
+    @include drop-down($custom-drop-down-theme);
+    @include combo($custom-combo-theme);
+    @include checkbox($custom-checkbox-theme);
 }

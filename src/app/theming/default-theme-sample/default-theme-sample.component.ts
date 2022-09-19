@@ -76,7 +76,7 @@ export class DefaultThemeSampleComponent implements OnInit {
 
     public removeRow(rowIndex) {
         const row = this.grid1.getRowByIndex(rowIndex);
-        this.deletedRow = row.rowData;
+        this.deletedRow = row.data;
         row.delete();
         this.snackbar.open(`Row with index ${rowIndex} has been deleted!`);
     }

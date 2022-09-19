@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxColumnComponent, IgxTreeGridComponent } from 'igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
@@ -7,7 +7,7 @@ import { FOODS_DATA } from '../data/foods';
   styleUrls: ['./tree-grid-summary-sample.component.scss'],
   templateUrl: './tree-grid-summary-sample.component.html'
 })
-export class TreeGridSummarySampleComponent implements OnInit {
+export class TreeGridSummarySampleComponent {
 
   @ViewChild('treegrid1', { read: IgxTreeGridComponent, static: true })
   public grid1: IgxTreeGridComponent;
@@ -15,9 +15,6 @@ export class TreeGridSummarySampleComponent implements OnInit {
 
   constructor() {
     this.data = FOODS_DATA();
-  }
-
-  public ngOnInit() {
   }
 
   public toggleSummary(column: IgxColumnComponent) {

@@ -1,17 +1,17 @@
+@use '../../../variables' as *;
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fontawesome.css");
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-regular.css");
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-solid.css");
-@import '../../../variables';
 
 $yellow-color: #F4D45C;
 $black-color: #575757;
 
-$dark-palette: igx-palette($primary: $yellow-color, $secondary: $black-color);
-$dark-grid-column-moving-theme: igx-grid-theme(
+$dark-palette: palette($primary: $yellow-color, $secondary: $black-color);
+$dark-grid-column-moving-theme: grid-theme(
     $palette: $dark-palette,
-    $ghost-header-text-color: igx-color($dark-palette, "primary", 400),
-    $ghost-header-background: igx-color($dark-palette, "secondary", 200),
-    $ghost-header-icon-color:  igx-color($dark-palette, "primary", 500)
+    $ghost-header-text-color: color($dark-palette, "primary", 400),
+    $ghost-header-background: color($dark-palette, "secondary", 200),
+    $ghost-header-icon-color:  color($dark-palette, "primary", 500)
 );
 
 :host {
@@ -28,7 +28,7 @@ $dark-grid-column-moving-theme: igx-grid-theme(
 
         .grid__wrapper {
             padding: 16px;
-            @include igx-grid($dark-grid-column-moving-theme);
+            @include grid($dark-grid-column-moving-theme);
           }
     }
 }

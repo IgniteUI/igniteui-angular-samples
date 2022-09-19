@@ -9,7 +9,7 @@
             </ng-template>
             <ng-template igxHeader let-col>
                 <div class="text">{{col.field}}</div>
-                <igx-icon class="header-icon" color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
+                <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
             </ng-template>
         </igx-column>
         <igx-column #col field="UnitPrice" header="Price" [filterable]="false" editable="true" dataType="number"
@@ -19,7 +19,7 @@
             </ng-template>
             <ng-template igxHeader let-col>
                 <div class="text">Price</div>
-                <igx-icon class="header-icon" color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
+                <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
             </ng-template>
         </igx-column>
         <igx-column #col field="Discontinued" header="Discontinued" [hasSummary]="true" [dataType]="'boolean'">
@@ -29,7 +29,7 @@
             </ng-template>
             <ng-template igxHeader let-col>
                 <div class="text">{{ col.field }}</div>
-                <igx-icon class="header-icon" color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
+                <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
             </ng-template>
         </igx-column>
         <igx-column #col field="AddedDate" header="Added Date" [dataType]="'date'" [hasSummary]="true">
@@ -38,7 +38,7 @@
             </ng-template>
             <ng-template igxHeader let-col>
                 <div class="text">Added Date</div>
-                <igx-icon class="header-icon" color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
+                <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
             </ng-template>
         </igx-column>
     </igx-tree-grid>

@@ -1,10 +1,10 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@use '../../../variables' as *;
 
-$text-color: igx-contrast-color($default-palette, 'primary', 900);
-$background-color: igx-color($default-palette, "primary", 900);
+$text-color: contrast-color($default-palette, 'primary', 900);
+$background-color: color($default-palette, "primary", 900);
 $border-yellow: #f2c43c;
 
-$custom-grid-theme: igx-grid-theme(
+$custom-grid-theme: grid-theme(
     $palette: $default-palette,
     $cell-selected-text-color: $text-color,
     $cell-active-border-color: $border-yellow,
@@ -17,6 +17,6 @@ $custom-grid-theme: igx-grid-theme(
     padding: 8px;
 
     ::ng-deep {
-        @include igx-grid($custom-grid-theme);
+        @include grid($custom-grid-theme);
     }
 }

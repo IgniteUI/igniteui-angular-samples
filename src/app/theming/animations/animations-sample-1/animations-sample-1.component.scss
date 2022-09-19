@@ -1,4 +1,5 @@
-@import '~igniteui-angular/lib/core/styles/themes/utilities';
+@use '~igniteui-angular/lib/core/styles/themes/index' as *;
+@forward '~igniteui-angular/lib/core/styles/themes/index';
 
 :host {
     display: flex;
@@ -9,7 +10,7 @@ h5 {
 }
 
 igx-list {
-    box-shadow: igx-elevation($igx-elevations, 2);
+    box-shadow: elevation($elevations, 2);
     max-height: 352px;
 }
 

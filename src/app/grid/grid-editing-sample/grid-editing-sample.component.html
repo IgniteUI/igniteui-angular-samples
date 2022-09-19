@@ -1,7 +1,7 @@
 <div class="grid__wrapper">
     <div class="sample__header">
-        <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" displayDensity="cosy" width="100%" height="600px" [primaryKey]="'ProductID'" [perPage]="10" [allowFiltering]="true" (rowDeleted)="show($event)">
-<igx-paginator></igx-paginator>
+        <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" displayDensity="cosy" width="100%" height="600px" [primaryKey]="'ProductID'" [allowFiltering]="true" (rowDeleted)="show($event)">
+            <igx-paginator [perPage]="10"></igx-paginator>
             <igx-grid-toolbar>
 
                 <button igxButton="flat" (click)="dialogAdd.open()" class="addProdBtn"><igx-icon>add</igx-icon> Add Product</button>
@@ -34,15 +34,15 @@
             </igx-column>
             <igx-column width="100px" [filterable]="false">
                 <ng-template igxCell let-cell="cell">
-                    <button igxButton="icon" (click)="removeRow(cell.cellID.rowIndex)">
+                    <button igxButton="icon" (click)="removeRow(cell.id.rowIndex)">
                         <igx-icon>delete</igx-icon>
                     </button>
                 </ng-template>
             </igx-column>
 
         </igx-grid>
-        <igx-toast #toast [autoHide]="true" [position]="position"></igx-toast>
-        <igx-dialog #dialogAdd title="New Product" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'" (onLeftButtonSelect)="cancel()" (onRightButtonSelect)="addRow()">
+        <igx-toast #toast [autoHide]="true"></igx-toast>
+        <igx-dialog #dialogAdd title="New Product" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'" (leftButtonSelect)="cancel()" (rightButtonSelect)="addRow()">
             <div class="dialogNewRecord">
                 <igx-input-group>
                     <label igxLabel for="productName">Product Name</label>

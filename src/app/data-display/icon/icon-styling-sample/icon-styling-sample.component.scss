@@ -1,6 +1,6 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
-$custom-icon-theme: igx-icon-theme(
+$custom-icon-theme: icon-theme(
   $color: #1481b8,
   $disabled-color: #494949
 );
@@ -25,7 +25,7 @@ $custom-icon-theme: igx-icon-theme(
       color: #0a415c;
     }
 
-    // @include igx-css-vars($custom-icon-theme);
+    // @include css-vars($custom-icon-theme);
 
     /* Using Theme Overrides to provide IE 11 support.
      * NOTE: Theming using this approach will greatly increase the size
@@ -33,7 +33,7 @@ $custom-icon-theme: igx-icon-theme(
      * delete this section and use the `igx-css-vars` mixin as shown above.
     **/
     ::ng-deep {
-        @include igx-icon($custom-icon-theme);
+        @include icon($custom-icon-theme);
     }
 }
 

@@ -101,6 +101,7 @@ export const treeGridRoutesData = {
     'tree-grid-cell-cellStyling': { displayName: 'TreeGrid Conditional Cell Styling', parentName: 'TreeGrid' },
     'tree-grid-collapsible-groups': { displayName: 'TreeGrid Collapsible Column Groups', parentName: 'TreeGrid' },
     'tree-grid-allData-summary': { displayName: 'TreeGrid All Data Custom Summaries', parentName: 'TreeGrid' },
+    'tree-grid-summary-template': { displayName: 'TreeGrid Summary Template', parentName: 'TreeGrid' },
     'tree-grid-sample-right-pinning': { displayName: 'TreeGrid Right Side Pinning', parentName: 'TreeGrid' },
     'column-selection': { displayName: 'TreeGrid Column Selection', parentName: 'TreeGrid' },
     'column-group-selection': { displayName: 'TreeGrid Column Group Selection', parentName: 'TreeGrid' },
@@ -113,5 +114,14 @@ export const treeGridRoutesData = {
     'tree-grid-exporting-visualization': { displayName: 'Exporting Visualization', parentName: 'TreeGrid' },
     'tree-grid-editing-lifecycle': { displayName: 'Editing Lifecycle', parentName: 'TreeGrid' },
     'tree-grid-formatted-filtering-strategy': { displayName: 'TreeGrid Formatted Filtering Strategy', parentName: 'TreeGrid' },
-    'tree-grid-summary-formatter': { displayName: 'TreeGrid Summary Formatter', parentName: 'TreeGrid' }
+    'tree-grid-tree-filter-view': { displayName: 'TreeGrid Tree Filter View', parentName: 'TreeGrid' },
+    'tree-grid-summary-formatter': { displayName: 'TreeGrid Summary Formatter', parentName: 'TreeGrid' },
+    'tree-grid-styles-sample': { displayName: 'TreeGrid RowStyles sample', parentName: 'TreeGrid'},
+    'tree-grid-classes': { displayName: 'TreeGrid RowClasses sample', parentName: 'TreeGrid'},
+    'tree-grid-action-strip': { displayName: 'TreeGrid with Action Strip', parentName: 'TreeGrid' },
+    'tree-grid-columnAutoSizing-sample': { displayName: 'TreeGrid with Column Autosizing', parentName: 'TreeGrid' },
+    'tree-grid-validator-service': { displayName: 'Tree Grid Validator Service', parentName: 'TreeGrid' },
+    'tree-grid-cross-field-validator-service': { displayName: 'Tree Grid Cross Field Validator Service', parentName: 'TreeGrid' },
+    'tree-grid-validation-style': { displayName: 'Tree Grid Validation Styles', parentName: 'TreeGrid' },
+    'tree-grid-validator-service-extended': { displayName: 'Tree Grid Validator Service Extended', parentName: 'TreeGrid' }
 };

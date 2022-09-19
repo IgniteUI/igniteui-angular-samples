@@ -1,7 +1,7 @@
 <igc-dockmanager #dock class="dock-m-position igx-scrollbar" [layout]="docLayout">
-    <div slot="actionPane" style="height: 100%; padding: 20px;">
+    <div class="actionPane" slot="actionPane" style="height: 100%; padding: 20px;">
         <div class="actionItem">
-            Change theme: <br/> <igx-switch [(ngModel)]="theme">Dark Mode</igx-switch>
+            Change theme: <br/> <igx-switch [(ngModel)]="isDarkTheme">Dark Mode</igx-switch>
         </div>
         <div class="actionItem">
             Start/Stop live data: <igx-switch [(ngModel)]="liveData" (change)="streamData($event)">{{ liveData ===
@@ -49,8 +49,8 @@
                 <ng-template igxCell let-cell="cell" #priceTemplate>
                     <div class="finjs-icons">
                         <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-                        <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
-                        <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
+                        <igx-icon *ngIf="trends.positive(cell.row.data)">trending_up</igx-icon>
+                        <igx-icon *ngIf="trends.negative(cell.row.data)">trending_down</igx-icon>
                     </div>
                 </ng-template>
             </igx-column>
@@ -81,8 +81,8 @@
                 <ng-template igxCell let-cell="cell">
                     <div class="finjs-icons">
                         <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-                        <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
-                        <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
+                        <igx-icon *ngIf="trends.positive(cell.row.data)">trending_up</igx-icon>
+                        <igx-icon *ngIf="trends.negative(cell.row.data)">trending_down</igx-icon>
                     </div>
                 </ng-template>
             </igx-column>
@@ -113,8 +113,8 @@
                 <ng-template igxCell let-cell="cell">
                     <div class="finjs-icons">
                         <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-                        <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
-                        <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
+                        <igx-icon *ngIf="trends.positive(cell.row.data)">trending_up</igx-icon>
+                        <igx-icon *ngIf="trends.negative(cell.row.data)">trending_down</igx-icon>
                     </div>
                 </ng-template>
             </igx-column>
@@ -134,7 +134,7 @@
         <igx-grid #grid4 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
-<igx-paginator></igx-paginator>
+            <igx-paginator></igx-paginator>
             <igx-column [field]="'id'" [width]="'70px'" [hidden]='true' [sortable]='true'></igx-column>
             <igx-column [field]="'category'" [width]="'120px'" [sortable]='true' [groupable]='true'></igx-column>
             <igx-column [field]="'type'" [width]="'100px'" [sortable]='true' [filterable]='false' [groupable]='true'>
@@ -146,8 +146,8 @@
                 <ng-template igxCell let-cell="cell">
                     <div class="finjs-icons">
                         <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-                        <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
-                        <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
+                        <igx-icon *ngIf="trends.positive(cell.row.data)">trending_up</igx-icon>
+                        <igx-icon *ngIf="trends.negative(cell.row.data)">trending_down</igx-icon>
                     </div>
                 </ng-template>
             </igx-column>
@@ -166,4 +166,4 @@
     <ng-template #host gridHost>
     </ng-template>
 </igc-dockmanager>
-<div class="{{theme ? 'dark-theme' : 'light-theme'}}" #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>
+<div class="dark-theme" #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>

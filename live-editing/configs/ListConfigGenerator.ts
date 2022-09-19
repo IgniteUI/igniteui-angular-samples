@@ -7,7 +7,8 @@ IgxIconModule,
 IgxInputGroupModule,
 IgxListModule,
 IgxSliderModule,
-IgxToastModule} from 'igniteui-angular';
+IgxToastModule,
+IgxRippleModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class ListConfigGenerator implements IConfigGenerator {
 
@@ -53,9 +54,9 @@ export class ListConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ListSample3Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxListModule', 'ListSample3Component'],
+                imports: ['IgxListModule', 'IgxRippleModule', 'ListSample3Component'],
                 ngDeclarations: ['ListSample3Component'],
-                ngImports: ['IgxListModule']
+                ngImports: ['IgxListModule', 'IgxRippleModule' ]
             }),
             shortenComponentPathBy: "/lists/list/"
         }));
@@ -65,10 +66,10 @@ export class ListConfigGenerator implements IConfigGenerator {
             component: 'ListSample4Component',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxAvatarModule', 'IgxFilterModule', 'IgxIconModule', 'IgxListModule',
-                    'IgxInputGroupModule', 'IgxButtonGroupModule', 'ListSample4Component'],
+                    'IgxInputGroupModule', 'IgxButtonGroupModule', 'IgxRippleModule', 'ListSample4Component'],
                 ngDeclarations: ['ListSample4Component'],
                 ngImports: ['IgxAvatarModule', 'IgxFilterModule', 'IgxIconModule', 'IgxListModule',
-                    'IgxInputGroupModule', 'IgxButtonGroupModule']
+                    'IgxInputGroupModule', 'IgxButtonGroupModule', 'IgxRippleModule']
             }),
             shortenComponentPathBy: "/lists/list/"
         }));
@@ -88,9 +89,9 @@ export class ListConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ListSample6Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxButtonModule', 'IgxListModule', 'ListSample6Component'],
+                imports: ['IgxButtonModule', 'IgxListModule', 'IgxRippleModule', 'ListSample6Component'],
                 ngDeclarations: ['ListSample6Component'],
-                ngImports: ['IgxButtonModule', 'IgxListModule']
+                ngImports: ['IgxButtonModule', 'IgxListModule', 'IgxRippleModule']
             }),
             shortenComponentPathBy: "/lists/list/"
         }));
@@ -99,10 +100,10 @@ export class ListConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ListSample7Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxAvatarModule', 'IgxIconModule', 'IgxListModule',
+                imports: ['IgxAvatarModule', 'IgxIconModule', 'IgxListModule', 'IgxRippleModule',
                     'ListSample7Component', 'IgxSliderModule', 'IgxToastModule', 'IgxButtonModule'],
                 ngDeclarations: ['ListSample7Component'],
-                ngImports: ['IgxAvatarModule', 'IgxIconModule', 'IgxListModule',
+                ngImports: ['IgxAvatarModule', 'IgxIconModule', 'IgxListModule', 'IgxRippleModule',
                     'IgxSliderModule', 'IgxToastModule', 'IgxButtonModule']
             }),
             shortenComponentPathBy: "/lists/list/"
@@ -128,6 +129,19 @@ export class ListConfigGenerator implements IConfigGenerator {
                 imports: ['IgxToastModule', 'IgxListModule', 'IgxIconModule', 'ListSample8Component', 'IgxAvatarModule'],
                 ngDeclarations: ['ListSample8Component'],
                 ngImports: ['IgxToastModule', 'IgxListModule', 'IgxIconModule', 'IgxAvatarModule']
+            }),
+            shortenComponentPathBy: "/lists/list/"
+        }));
+
+        // list item selection
+        configs.push(new Config({
+            component: 'ListItemSelectionComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxAvatarModule', 'IgxFilterModule', 'IgxIconModule', 'IgxListModule',
+                    'IgxInputGroupModule', 'ListItemSelectionComponent'],
+                ngDeclarations: ['ListItemSelectionComponent'],
+                ngImports: ['IgxAvatarModule', 'IgxFilterModule', 'IgxIconModule', 'IgxListModule',
+                    'IgxInputGroupModule']
             }),
             shortenComponentPathBy: "/lists/list/"
         }));

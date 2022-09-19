@@ -1,10 +1,10 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 .wrapper {
     padding: 16px;
 }
 
-$custom-theme: igx-grid-theme(
+$custom-theme: grid-theme(
   $cell-active-border-color: #ffcd0f,
   $cell-selected-background: #6f6f6f,
   $row-hover-background: #fde069,
@@ -15,4 +15,4 @@ $custom-theme: igx-grid-theme(
   $sortable-header-icon-hover-color: #e9bd0d
 );
 
-@include igx-grid($custom-theme);
+@include grid($custom-theme);

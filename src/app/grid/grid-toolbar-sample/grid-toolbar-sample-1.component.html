@@ -3,12 +3,18 @@
 
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>Grid Toolbar</igx-grid-toolbar-title>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+                <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+            </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
 
         <igx-column field="Name" header="Athlete" width="200">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.rowData.Avatar" roundShape="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.Avatar" roundShape="true" size="small"></igx-avatar>
                     <span class="athlete_name">{{ cell.value }}</span>
                 </div>
             </ng-template>
@@ -17,7 +23,7 @@
         <igx-column field="CountryName" header="Country" width="200">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.rowData.CountryFlag" roundShape="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.CountryFlag" roundShape="true" size="small"></igx-avatar>
                     <span class="country_name">{{ cell.value }}</span>
                 </div>
             </ng-template>

@@ -4,7 +4,7 @@
         [primaryKey]="'Artist'" [height]="'550px'" [width]="'100%'" [rowEditable]="true">
         <igx-column width="150px" [editable]="false">
             <ng-template igxCell let-cell="cell" let-val>
-                <button igxButton (click)="removeRow(cell.cellID.rowIndex)"
+                <button igxButton (click)="removeRow(cell.id.rowIndex)"
                     [disabled]="cell.row.deleted">Delete</button>
             </ng-template>
         </igx-column>
@@ -17,7 +17,7 @@
         </igx-column>
         <igx-column field="GrammyAwards" header="Grammy Awards" [editable]="true" dataType="number"></igx-column>
 
-        <igx-row-island #childGrid [key]="'Albums'" [primaryKey]="'Album'" [rowEditable]="true">
+        <igx-row-island [height]="null" #childGrid [key]="'Albums'" [primaryKey]="'Album'" [rowEditable]="true">
             <igx-grid-toolbar [grid]="grid" *igxGridToolbar="let grid">
 
                 <button igxButton [disabled]="!grid.transactions.canUndo" (click)="undo(grid)">Undo</button>
@@ -42,7 +42,7 @@
         </div>
     </div>
     <igx-dialog #dialogAddSinger title="New Singer" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'"
-        (onLeftButtonSelect)="cancel()" (onRightButtonSelect)="addSinger()">
+        (leftButtonSelect)="cancel()" (rightButtonSelect)="addSinger()">
         <div class="dialogNewSinger">
             <igx-input-group>
                 <label igxLabel for="artist">Artist</label>

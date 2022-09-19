@@ -2,28 +2,24 @@
     vertical-align: middle;
     max-height: 62px;
 }
+
 .cell__inner_2 {
     margin: 1px
 }
+
 .grid-controls {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
     flex-flow: column;
     align-items: flex-start;
     position: relative;
+    > * {
+        margin-bottom: 16px;
+    }
 }
 
 .grid__wrapper{
     padding: 16px;
-}
-
-igx-snackbar {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 2;
 }
 
 .igx-snackbar {
@@ -35,4 +31,8 @@ igx-snackbar {
     igx-icon {
         margin: 20px;
     }
+}
+
+.container p {
+    margin-top: 20px;
 }

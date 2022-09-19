@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxGridComponent, IgxSummaryResult, IgxNumberSummaryOperand, IgxToastComponent } from 'igniteui-angular';
+import { IgxDialogComponent, IgxGridComponent, IgxSummaryResult, IgxNumberSummaryOperand, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 import { DATA, LOCATIONS } from './data';
 import { Product } from './product';
 
@@ -42,7 +42,6 @@ export class GridEditingSampleComponent implements OnInit, AfterViewInit {
     public product;
     public customOverlaySettings;
     public id;
-    public position = 'middle';
     public numSummary = NumberSummary;
 
     public ngOnInit() {
@@ -73,7 +72,7 @@ export class GridEditingSampleComponent implements OnInit, AfterViewInit {
         this.grid1.addRow(this.product);
         this.grid1.cdr.detectChanges();
         this.cancel();
-        this.grid1.page = this.grid1.totalPages - 1;
+        this.grid1.paginator.page = this.grid1.paginator.totalPages - 1;
         this.grid1.cdr.detectChanges();
         let row;
         requestAnimationFrame(() => {
@@ -96,6 +95,7 @@ export class GridEditingSampleComponent implements OnInit, AfterViewInit {
 
     public show(args) {
         const message = `The product: {name: ${args.data.ProductName}, ID ${args.data.ProductID} } has been removed!`;
+        this.toast.positionSettings.verticalDirection = VerticalAlignment.Middle;
         this.toast.open(message);
     }
 }

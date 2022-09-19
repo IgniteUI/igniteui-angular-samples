@@ -49,7 +49,6 @@
         ],
         "comma-dangle": "error",
         "id-blacklist": "error",
-        "import/no-extraneous-dependencies": "error",
         "import/no-internal-modules": "off",
         "no-bitwise": "off",
         "no-duplicate-case": "error",

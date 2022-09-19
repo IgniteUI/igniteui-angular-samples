@@ -4,24 +4,24 @@
         <span>Add Root Employee</span>
     </button>
     <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" displayDensity="comfortable"
-        width="100%" height="800px" [perPage]="10" [allowFiltering]="true">
-<igx-paginator></igx-paginator>
+        width="100%" height="800px" [allowFiltering]="true">
+        <igx-paginator [perPage]="10"></igx-paginator>
         <igx-column [field]="'Name'" dataType="string" [editable]="true" [hasSummary]="true"></igx-column>
         <igx-column [field]="'Title'" dataType="string" [editable]="true" [hasSummary]="true"></igx-column>
         <igx-column [field]="'Age'" dataType="number" [editable]="true" [hasSummary]="true" [summaries]="numberSummaries"></igx-column>
         <igx-column [field]="'HireDate'" dataType="date" [editable]="true" [hasSummary]="true"></igx-column>
         <igx-column [field]="'OnPTO'" dataType="boolean" [editable]="true" [hasSummary]="true" width="130px">
             <ng-template igxCell let-cell="cell" let-val>
-                <igx-icon [color]="cell.row.rowData.OnPTO? 'red': 'green'">account_circle</igx-icon>
+                <igx-icon [style.color]="cell.row.data.OnPTO? 'red': 'green'">account_circle</igx-icon>
             </ng-template>
         </igx-column>
         <igx-column [filterable]="false" width="130px">
             <ng-template igxCell let-cell="cell">
                 <div class="buttonsArea">
-                    <button igxButton="icon" (click)="openDialog(cell.row.rowID)" class="emplBtn">
+                    <button igxButton="icon" (click)="openDialog(cell.row.key)" class="emplBtn">
                         <igx-icon>person_add</igx-icon>
                     </button>
-                    <button igxButton="icon" (click)="deleteRow(cell.row.rowID)" class="emplBtn">
+                    <button igxButton="icon" (click)="deleteRow(cell.row.key)" class="emplBtn">
                         <igx-icon>delete</igx-icon>
                     </button>
                 </div>
@@ -29,7 +29,7 @@
         </igx-column>
     </igx-tree-grid>
     <igx-dialog #dialogAdd title="New Employee" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'"
-        (onLeftButtonSelect)="cancel()" (onRightButtonSelect)="addRow()">
+        (leftButtonSelect)="cancel()" (rightButtonSelect)="addRow()">
         <div class="dialogNewRecord">
             <igx-input-group>
                 <label igxLabel for="employeeName">Employee Name</label>

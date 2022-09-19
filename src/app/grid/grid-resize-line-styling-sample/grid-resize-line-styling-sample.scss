@@ -1,21 +1,21 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 $primary-color: #0288D1;
 $secondary-color: #BDBDBD;
 
-$custom-theme-palette: igx-palette(
+$custom-theme-palette: palette(
     $primary: $primary-color,
     $secondary: $secondary-color
 );
 
-$custom-grid-theme: igx-grid-theme(
+$custom-grid-theme: grid-theme(
     $palette: $custom-theme-palette,
-    $resize-line-color: igx-color($custom-theme-palette, 'secondary', 500)
+    $resize-line-color: color($custom-theme-palette, 'secondary', 500)
 );
 
 :host {
     ::ng-deep {
-        @include igx-grid($custom-grid-theme);
+        @include grid($custom-grid-theme);
     }
 }
 

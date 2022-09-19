@@ -3,10 +3,10 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule,
-    IgxChipsModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService,
-    IgxFocusModule, IgxGridModule, IgxHierarchicalGridAPIService, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule,
+    IgxChipsModule, IgxComboModule, IgxDatePickerModule, IgxDialogModule,
+    IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule,
     IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
     IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from 'igniteui-angular';
 import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
@@ -87,6 +87,15 @@ import { HGridFormattedFilteringStrategyComponent } from './hierarchical-grid-fo
 import { HGridSummaryFormatterComponent } from './hierarchical-grid-summary-formatter/hierarchical-grid-summary-formatter.component';
 import { HGridExcelExportSampleComponent } from './hierarchical-grid-excel-exporter/hierarchical-grid-excel-export.sample';
 import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-sample/hierarchical-grid-pager-sample.component';
+import { HGridRowStylesSampleComponent } from './hgrid-rowStyle-sample/hgrid-rowStyles.component';
+import { HGridRowClassesSampleComponent } from './hgrid-rowClasses-sample/hgrid-rowClasses.component';
+import { HGridActionStripSampleComponent } from './hierarchical-grid-action-strip/hierarchical-grid-action-strip-sample';
+import { HGridSummaryTemplateComponent } from './hgrid-summary-template/hgrid-summary-template.component';
+import { HierarchicalGridValidatorServiceComponent } from './hierarchical-grid-validator-service/hierarchical-grid-validator-service.component';
+import { HGridColumnAutoSizingSampleComponent } from './hgrid-column-autosizing/hgrid-column-autosizing.component';
+import { HierarchicalGridValidatorServiceCrossCellComponent } from './hierarchical-grid-cross-field-validation/hierarchical-grid-cross-field-validation.component';
+import { HGridValidationStyleComponent } from './hierarchical-grid-validation-style/hierarchical-grid-validation-style.component';
+import { HGridPhoneFormatDirective, HierarchicalGridValidatorServiceExtendedComponent } from './hierarchical-grid-validator-service-extended/hierarchical-grid-validator-service-extended.component';
 
 @NgModule({
     declarations: [
@@ -156,6 +165,7 @@ import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-
         HGridExternalExcelStyleFilteringComponent,
         HGridCollapsibleColumnGroupComponent,
         HGridAllDataSummaryComponent,
+        HGridSummaryTemplateComponent,
         HierarchicalGridRightPinningSampleComponent,
         HierarchicalGridColumnSelectionComponent,
         HierarchicalGridColumnGroupSelectionComponent,
@@ -166,11 +176,21 @@ import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-
         HierarchicalGridCellSelectionComponent,
         HGridFormattedFilteringStrategyComponent,
         HGridSummaryFormatterComponent,
-        HierarchicalGridPagerSampleComponent
+        HierarchicalGridPagerSampleComponent,
+        HGridRowStylesSampleComponent,
+        HGridRowClassesSampleComponent,
+        HGridActionStripSampleComponent,
+        HierarchicalGridValidatorServiceComponent,
+        HierarchicalGridValidatorServiceExtendedComponent,
+        HGridColumnAutoSizingSampleComponent,
+        HierarchicalGridValidatorServiceCrossCellComponent,
+        HGridValidationStyleComponent,
+        HGridPhoneFormatDirective
     ],
     imports: [
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpClientModule,
         HierarchicalGridRoutingModule,
         IgxPreventDocumentScrollModule,
@@ -202,10 +222,6 @@ import { HierarchicalGridPagerSampleComponent } from './hierarchical-grid-pager-
         IgxTooltipModule,
         IgxTabsModule,
         IgxListModule
-    ],
-    providers: [
-        IgxCsvExporterService,
-        IgxExcelExporterService
     ]
 })
 export class HierarchicalGridModule { }

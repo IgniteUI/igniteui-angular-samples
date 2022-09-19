@@ -1,13 +1,13 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
-$dark-tooltip: igx-tooltip-theme(
+$dark-tooltip: tooltip-theme(
     $text-color: #ECAA53,
     $background: #011627,
     $border-radius: 6px
 );
 
 // :host {
-//     @include igx-css-vars($dark-tooltip);
+//     @include css-vars($dark-tooltip);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -16,6 +16,6 @@ $dark-tooltip: igx-tooltip-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-tooltip($dark-tooltip);
+    @include tooltip($dark-tooltip);
 }
 

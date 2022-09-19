@@ -2,12 +2,18 @@
     <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" height="400px">
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>Tree Grid Toolbar</igx-grid-toolbar-title>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+                <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+            </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
 
         <igx-column field="Name" width="25%">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.rowData.Avatar" roundShape="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.Avatar" roundShape="true" size="small"></igx-avatar>
                     <span class="name">{{ cell.value }}</span>
                 </div>
             </ng-template>

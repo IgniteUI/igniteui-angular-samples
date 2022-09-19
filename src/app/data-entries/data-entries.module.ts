@@ -3,7 +3,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
-    IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxComboModule,
+    IgcFormsModule,
+    IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxComboModule,
     IgxDatePickerModule, IgxDialogModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
     IgxIconModule, IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule,
     IgxSelectModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
@@ -50,7 +51,7 @@ import { InputGroupSample5Component } from './input-group/input-group-sample-5/i
 import { InputGroupSample6Component } from './input-group/input-group-sample-6/input-group-sample-6.component';
 import { InputGroupStyleComponent } from './input-group/input-group-styling/input-group-styling.component';
 import { InputTextSelectionComponent } from './input-group/input-text-selection/input-text-selection.component';
-import { ReactiveFormsSampleComponent } from './input-group/reactive-forms/reactive-forms.component';
+import { ReactiveFormsSampleComponent } from '../how-to/reactive-forms/reactive-forms.component';
 import { RadioGroupVerticalComponent } from './radio/radio-group-vertical/radio-group-vertical.component';
 import { RadioGroupSampleComponent } from './radio/radio-group-sample/radio-group-sample.component';
 import { RadioSample1Component } from './radio/radio-sample-1/radio-sample-1.component';
@@ -65,6 +66,8 @@ import { SelectSample4Component } from './select/select-sample-4/select-sample-4
 import { SwitchSample1Component } from './switch/switch-sample-1/switch-sample-1.component';
 import { SwitchSample2Component } from './switch/switch-sample-2/switch-sample-2.component';
 import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.component';
+import { TypedFormComponent } from './input-group/typed-form/typed-form.component';
+import { RatingInFormComponent } from './rating/rating-form/rating-form.component';
 
 @NgModule({
     declarations: [
@@ -112,6 +115,7 @@ import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.c
         RadioSample2Component,
         RadioSample3Component,
         RadioStylingSampleComponent,
+        RatingInFormComponent,
         SwitchSample1Component,
         SwitchSample2Component,
         SwitchStylingComponent,
@@ -124,7 +128,8 @@ import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.c
         ButtonsDisplayDensityComponent,
         ButtonsStyleComponent,
         ButtonGroupStyleComponent,
-        InputTextSelectionComponent
+        InputTextSelectionComponent,
+        TypedFormComponent
     ],
     imports: [
         CommonModule,
@@ -153,7 +158,9 @@ import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.c
         IgxProgressBarModule,
         IgxForOfModule,
         IgxTextSelectionModule,
-        IgxFocusModule
+        IgxFocusModule,
+        IgxCardModule,
+        IgcFormsModule
     ]
 })
 export class DataEntriesModule { }

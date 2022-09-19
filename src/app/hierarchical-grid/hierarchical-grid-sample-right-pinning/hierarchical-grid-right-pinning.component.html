@@ -9,9 +9,9 @@
         <igx-column field="CountryName" header="Team" width="88">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner country-cell">
-                    <img [src]="cell.rowData.CountryFlag" class="country-flag" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef">
+                    <img [src]="cell.row.data.CountryFlag" class="country-flag" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef">
                     <div #tooltipRef="tooltip" igxTooltip>
-                        {{ cell.rowData.CountryName }}
+                        {{ cell.row.data.CountryName }}
                     </div>
                 </div>
             </ng-template>
@@ -19,7 +19,7 @@
         <igx-column field="Avatar" header="Photo" dataType="string" width="80" [disablePinning]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner avatar-cell">
-                    <igx-avatar [src]="cell.rowData.Avatar" [roundShape]="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.Avatar" [roundShape]="true" size="small"></igx-avatar>
                 </div>
             </ng-template>
         </igx-column>
@@ -43,7 +43,7 @@
             <ng-template igxHeader>
                 <div class="title-inner">
                     <span style="float:left">{{ goldColumn.header }}</span>
-                    <igx-icon color="#d2c206">emoji_events</igx-icon>
+                    <igx-icon [style.color]="'#d2c206'">emoji_events</igx-icon>
                 </div>
             </ng-template>
         </igx-column>
@@ -51,7 +51,7 @@
             <ng-template igxHeader>
                 <div class="title-inner">
                     <span style="float:left">{{ silverColumn.header }}</span>
-                    <igx-icon color="#c5c5c5">emoji_events</igx-icon>
+                    <igx-icon [style.color]="'#c5c5c5'">emoji_events</igx-icon>
                 </div>
             </ng-template>
         </igx-column>
@@ -59,15 +59,15 @@
             <ng-template igxHeader>
                 <div class="title-inner">
                     <span style="float:left">{{ bronzeColumn.header }}</span>
-                    <igx-icon color="#bb8b1d">emoji_events</igx-icon>
+                    <igx-icon [style.color]="'#bb8b1d'">emoji_events</igx-icon>
                 </div>
             </ng-template>
         </igx-column>
-        <igx-row-island [key]="'AgentData'" [autoGenerate]="false" [pinning]="pinningConfig">
+        <igx-row-island [height]="null" [key]="'AgentData'" [autoGenerate]="false" [pinning]="pinningConfig">
             <igx-column field="avatar" header="Agent's Photo" width="80">
                 <ng-template igxCell let-cell="cell">
                     <div class="cell__inner avatar-cell">
-                        <igx-avatar [src]="cell.rowData.avatar" [roundShape]="true" size="small"></igx-avatar>
+                        <igx-avatar [src]="cell.row.data.avatar" [roundShape]="true" size="small"></igx-avatar>
                     </div>
                 </ng-template>
             </igx-column>

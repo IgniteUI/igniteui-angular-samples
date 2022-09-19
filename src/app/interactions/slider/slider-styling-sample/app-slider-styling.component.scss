@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 .container {
     display: flex;
@@ -8,7 +8,7 @@
     height: 100%;
 }
 
-$custom-slider-theme: igx-slider-theme(
+$custom-slider-theme: slider-theme(
     $track-color: #ff7400,
     $track-hover-color: #ff7400,
 
@@ -18,14 +18,12 @@ $custom-slider-theme: igx-slider-theme(
     $base-track-hover-color: #ccc,
 
     $tick-label-color: #b246c2,
-    $tick-label-color-tall: #ff7400,
 
-    $tick-color: #b246c2,
-    $tick-color-tall: #ff7400,
+    $tick-color: #b246c2
 );
 
 // :host {
-//     @include igx-css-vars($custom-slider-theme);
+//     @include css-vars($custom-slider-theme);
 // }
 
 /* Using Theme Overrides to provide IE 11 support.
@@ -34,6 +32,6 @@ $custom-slider-theme: igx-slider-theme(
  * delete this section and use the `igx-css-vars` mixin as shown above.
 **/
 :host ::ng-deep {
-    @include igx-slider($custom-slider-theme);
+    @include slider($custom-slider-theme);
 }
 

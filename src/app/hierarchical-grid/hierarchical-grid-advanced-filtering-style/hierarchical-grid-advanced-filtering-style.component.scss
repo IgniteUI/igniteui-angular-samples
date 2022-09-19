@@ -1,14 +1,14 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 $yellow: #ffcd0f;
 $black: #292826;
 $muted-yellow: #ffe482;
 
-$custom-grid: igx-grid-theme(
+$custom-grid: grid-theme(
     $filtering-row-background: $black
 );
 
-$custom-button: igx-button-theme(
+$custom-button: button-theme(
     $palette: $dark-material-palette,
     $schema: $dark-material-schema,
     $background: $black,
@@ -20,7 +20,7 @@ $custom-button: igx-button-theme(
     $border-color: $yellow
 );
 
-$custom-raised-button: igx-button-theme(
+$custom-raised-button: button-theme(
     $palette: $dark-material-palette,
     $schema: $dark-material-schema,
     $background: $yellow,
@@ -29,7 +29,7 @@ $custom-raised-button: igx-button-theme(
     $hover-foreground: $black
 );
 
-$custom-button-group: igx-button-group-theme(
+$custom-button-group: button-group-theme(
     $palette: $dark-material-palette,
     $schema: $dark-material-schema,
     $item-background:  $black,
@@ -40,7 +40,7 @@ $custom-button-group: igx-button-group-theme(
     $item-selected-hover-background: $yellow
 );
 
-$custom-input-group: igx-input-group-theme(
+$custom-input-group: input-group-theme(
     $palette: $dark-material-palette,
     $schema: $dark-material-schema,
     $idle-text-color: $yellow,
@@ -50,14 +50,14 @@ $custom-input-group: igx-input-group-theme(
     $focused-secondary-color: $yellow
 );
 
-$custom-chip: igx-chip-theme(
+$custom-chip: chip-theme(
     $palette: $dark-material-palette,
     $schema: $dark-material-schema,
     $background: $yellow,
     $text-color: $black
 );
 
-$custom-drop-down: igx-drop-down-theme(
+$custom-drop-down: drop-down-theme(
     $palette: $dark-material-palette,
     $schema: $dark-material-schema,
     $background-color: $black,
@@ -79,17 +79,17 @@ $custom-drop-down: igx-drop-down-theme(
     margin: 16px;
 
     ::ng-deep {
-        @include igx-grid($custom-grid);
+        @include grid($custom-grid);
 
         igx-advanced-filtering-dialog {
-            @include igx-button($custom-button);
-            @include igx-button-group($custom-button-group);
-            @include igx-input-group($custom-input-group);
-            @include igx-chip($custom-chip);
-            @include igx-drop-down($custom-drop-down);
+            @include button($custom-button);
+            @include button-group($custom-button-group);
+            @include input-group($custom-input-group);
+            @include chip($custom-chip);
+            @include drop-down($custom-drop-down);
 
             .igx-excel-filter__apply {
-                @include igx-button($custom-raised-button);
+                @include button($custom-raised-button);
             }
 
             .igx-filter-empty__title {
@@ -97,7 +97,8 @@ $custom-drop-down: igx-drop-down-theme(
             }
 
             .igx-advanced-filter__header {
-                color: $yellow
+                color: $yellow;
+                background-color: $black;
             }
 
             .igx-filter-tree__expression-actions igx-icon {

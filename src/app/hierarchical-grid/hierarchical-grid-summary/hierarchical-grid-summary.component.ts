@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxHierarchicalGridComponent, IgxNumberSummaryOperand,
     IgxSummaryResult } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
@@ -46,7 +46,7 @@ class MyChildSummary {
     templateUrl: 'hierarchical-grid-summary.component.html'
 })
 
-export class HGridSummarySampleComponent implements OnInit {
+export class HGridSummarySampleComponent {
     @ViewChild('hierarchicalGrid', { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
@@ -56,9 +56,6 @@ export class HGridSummarySampleComponent implements OnInit {
 
     constructor() {
         this.localdata = SINGERS;
-    }
-    public ngOnInit(): void {
-
     }
 
     public formatter = (a) => a;

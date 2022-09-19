@@ -1,29 +1,29 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 $white: #fff;
 $blue: #4567bb;
 
-$color-palette: igx-palette($primary: $white, $secondary: $blue);
+$color-palette: palette($primary: $white, $secondary: $blue);
 
-$grid-theme: igx-grid-theme(
+$grid-theme: grid-theme(
     $cell-editing-background: $blue,
     $cell-active-border-color: $white,
     $cell-edited-value-color: $white,
-    $edit-mode-color: igx-color($color-palette, "secondary", 200)
+    $edit-mode-color: color($color-palette, "secondary", 200)
 );
 
-$checkbox-theme: igx-checkbox-theme(
-    $empty-color: igx-color($color-palette, "secondary", 200),
+$checkbox-theme: checkbox-theme(
+    $empty-color: color($color-palette, "secondary", 200),
     $fill-color: $white,
     $tick-color: $blue
 );
 
-$datepicker-theme: igx-calendar-theme(
+$datepicker-theme: calendar-theme(
     $date-selected-text-color: $white,
     $date-selected-background: $blue
 );
 
-$input-theme: igx-input-group-theme(
+$input-theme: input-group-theme(
     $palette: $color-palette,
     $filled-text-color: $white,
     $focused-text-color: $white,
@@ -39,11 +39,11 @@ $input-theme: igx-input-group-theme(
     padding: 3px 10px;
     ::ng-deep {
         .igx-grid__tbody{
-            @include igx-input-group($input-theme);
+            @include input-group($input-theme);
         }
-        @include igx-checkbox($checkbox-theme);
-        @include igx-calendar($datepicker-theme);
-        @include igx-grid($grid-theme);
+        @include checkbox($checkbox-theme);
+        @include calendar($datepicker-theme);
+        @include grid($grid-theme);
     }
 }
 

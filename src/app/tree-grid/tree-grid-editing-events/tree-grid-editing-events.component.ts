@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IGridEditEventArgs, IgxToastComponent } from 'igniteui-angular';
+import { IGridEditEventArgs, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
 @Component({
@@ -14,7 +14,7 @@ export class TreeGridEditingEventsComponent implements OnInit {
     public data: IEmployee[] = [];
     public ngOnInit() {
         this.data = generateEmployeeFlatData();
-        this.toast.position = 'middle';
+        this.toast.positionSettings.verticalDirection = VerticalAlignment.Middle;
     }
 
     public handleEdit(event: IGridEditEventArgs) {

@@ -130,7 +130,6 @@ import { TooltipStyleComponent } from './tooltip/tooltip-style/tooltip-style.com
         DialogStylingSampleComponent,
         TooltipStyleComponent
     ],
-    entryComponents: [MyDynamicCardComponent],
     imports: [
         CommonModule,
         FormsModule,

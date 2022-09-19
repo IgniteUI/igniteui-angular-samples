@@ -1,16 +1,16 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 $orange: #eaa417;
 $blue: #09f;
 
-$my-palette: igx-palette($primary: $orange, $secondary: $blue);
+$my-palette: palette($primary: $orange, $secondary: $blue);
 
-$my-drop-down-theme: igx-drop-down-theme(
+$my-drop-down-theme: drop-down-theme(
     $palette: $my-palette,
-    $header-text-color: igx-color($my-palette, "secondary", 500)
+    $header-text-color: color($my-palette, "secondary", 500)
 );
 
-$my-overlay-theme: igx-overlay-theme(
+$my-overlay-theme: overlay-theme(
         $background-color: rgba(0, 153, 255, 0.3)
 );
 
@@ -18,8 +18,8 @@ $my-overlay-theme: igx-overlay-theme(
     display: block;
     padding: 16px;
 
-    // @include igx-css-vars($my-drop-down-theme);
-    // @include igx-css-vars($my-overlay-theme);
+    // @include css-vars($my-drop-down-theme);
+    // @include css-vars($my-overlay-theme);
 
     /* Using Theme Overrides to provide IE 11 support.
      * NOTE: Theming using this approach will greatly increase the size
@@ -27,7 +27,7 @@ $my-overlay-theme: igx-overlay-theme(
      * delete this section and use the `igx-css-vars` mixin as shown above.
     **/
     ::ng-deep {
-        @include igx-drop-down($my-drop-down-theme);
-        @include igx-overlay($my-overlay-theme);
+        @include drop-down($my-drop-down-theme);
+        @include overlay($my-overlay-theme);
     }
 }

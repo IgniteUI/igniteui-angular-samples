@@ -23,11 +23,10 @@ import {
     OverlaySettings,
     PositionSettings,
     VerticalAlignment,
-    IgxGridCellComponent
+    CellType
 } from 'igniteui-angular';
 import { data, Employee } from './data';
 
-// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 function formatDate(val: Date) {
     return new Intl.DateTimeFormat('en-US').format(val);
 }
@@ -153,8 +152,8 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         this.toggleRefHiding.toggle(this._overlaySettings);
     }
 
-    public getPhoto(cell: IgxGridCellComponent) {
-        return cell.row.rowData.avatar;
+    public getPhoto(cell: CellType) {
+        return cell.row.data.avatar;
     }
 
     public togglePinning() {

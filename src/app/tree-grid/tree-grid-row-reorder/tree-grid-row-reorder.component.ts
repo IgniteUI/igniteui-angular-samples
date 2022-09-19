@@ -20,7 +20,7 @@ export class TreeGridRowReorderComponent {
     public rowDragStart(args: any): void {
         const targetRow: RowType = args.dragData;
         if (targetRow.expanded) {
-            this.treeGrid.collapseRow(targetRow.rowID);
+            this.treeGrid.collapseRow(targetRow.key);
         }
     }
 
@@ -40,19 +40,19 @@ export class TreeGridRowReorderComponent {
             return;
         }
 
-        if (row.rowData.ParentID === -1) {
+        if (row.data.ParentID === -1) {
             this.performDrop(draggedRow, row).ParentID = -1;
         } else {
-            if (row.rowData.ParentID === draggedRow.rowData.ParentID) {
+            if (row.data.ParentID === draggedRow.data.ParentID) {
                 this.performDrop(draggedRow, row);
             } else {
-                const rowIndex = this.getRowIndex(draggedRow.rowData);
-                this.localData[rowIndex].ParentID = row.rowData.ParentID;
+                const rowIndex = this.getRowIndex(draggedRow.data);
+                this.localData[rowIndex].ParentID = row.data.ParentID;
             }
         }
         if (draggedRow.selected) {
             this.treeGrid.selectRows([this.treeGrid.rowList.toArray()
-                .find((r) => r.rowID === draggedRow.key).rowID], false);
+                .find((r) => r.key === draggedRow.key).key], false);
         }
 
         this.localData = [...this.localData];
@@ -60,11 +60,11 @@ export class TreeGridRowReorderComponent {
 
     private performDrop(
         draggedRow: RowType, targetRow: RowType) {
-        const draggedRowIndex = this.getRowIndex(draggedRow.rowData);
-        const targetRowIndex: number = this.getRowIndex(targetRow.rowData);
+        const draggedRowIndex = this.getRowIndex(draggedRow.data);
+        const targetRowIndex: number = this.getRowIndex(targetRow.data);
         if (draggedRowIndex === -1 || targetRowIndex === -1) { return; }
         this.localData.splice(draggedRowIndex, 1);
-        this.localData.splice(targetRowIndex, 0, draggedRow.rowData);
+        this.localData.splice(targetRowIndex, 0, draggedRow.data);
         return this.localData[targetRowIndex];
     }
 

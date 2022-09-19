@@ -1,12 +1,12 @@
-@import '../../../../variables';
+@use '../../../../variables' as *;
 
 :host {
     --teal-light: #64ffda;
     --teal-dark: #004d40;
 
     ::ng-deep {
-        @include igx-avatar(
-            igx-avatar-theme(
+        @include avatar(
+            avatar-theme(
                 $background: var(--teal-light),
                 $color: var(--teal-dark)
             )

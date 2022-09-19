@@ -12,7 +12,7 @@
     </app-finjs-grid>
 </div>
 
-<igx-dialog #dialog closeOnOutsideSelect="true" (onClose)="onCloseHandler($event)">
+<igx-dialog #dialog closeOnOutsideSelect="true" (closing)="onCloseHandler()">
     <div (keydown)="closeDialog()" class="chart-container">
         <igx-dialog-title> Chart </igx-dialog-title>
 
@@ -31,13 +31,13 @@
 <ng-template let-series="series" let-item="item" #seriesTooltip>
     <div class="tooltipTable">
         <div class="tooltipRow">
-            <div><b>Category:</b> {{ item.Category }}</div>
+            <div><b>Category:</b> {{ item.category }}</div>
         </div>
         <div class="tooltipRow">
-            <div><b>Country:</b> {{ item.Country }}</div>
+            <div><b>Country:</b> {{ item.country }}</div>
         </div>
         <div class="tooltipRow">
-            <div><b>Price:</b> ${{ item.Price }}</div>
+            <div><b>Price:</b> ${{ item.price }}</div>
         </div>
     </div>
 </ng-template>
