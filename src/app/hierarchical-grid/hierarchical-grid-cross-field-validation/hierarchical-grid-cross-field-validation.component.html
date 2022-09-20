@@ -47,7 +47,7 @@
         <igx-column field="PostalCode"  editable='true' required></igx-column>
         <igx-column field="Phone"  editable='true' required></igx-column>
         <igx-row-island [primaryKey]="'OrderID'" [height]="null" [key]="'Orders'" [autoGenerate]="false" [rowEditable]="rowEdit"
-            (formGroupCreated)='formCreateOrderHandler($event)' (rowEdit)="rowEditHandler($event)">
+            (formGroupCreated)='formCreateOrderHandler($event)' (cellEdit)="editHandler($event)" (rowEdit)="editHandler($event)">
             <igx-grid-toolbar [grid]="grid" *igxGridToolbar="let grid">
                 <button igxButton [disabled]="grid.transactions.getAggregatedChanges(false).length < 1" (click)="commit(grid)">Commit</button>
             </igx-grid-toolbar>
