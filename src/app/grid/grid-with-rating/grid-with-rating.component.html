@@ -5,7 +5,7 @@
         <igx-column [field]="'UnitPrice'" [dataType]="'number'"></igx-column>
         <igx-column [field]="'Rating'" [dataType]="'number'" width="250px">
             <ng-template igxCell let-cell="cell" let-val>
-                <igc-rating [value]="val" min="0" max="5" (igcChange)="ratingChanged($event, cell);"></igc-rating>
+                <igc-rating [ngModel]="val" min="0" max="5" (igcChange)="ratingChanged($event, cell);"></igc-rating>
             </ng-template>
         </igx-column>
         <igx-column [field]="'OrderDate'" [dataType]="'date'"></igx-column>
