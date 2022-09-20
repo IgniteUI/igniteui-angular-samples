@@ -28,21 +28,9 @@
 @use '~igniteui-angular/lib/core/styles/components/button-group/button-group-component';
 @use '~igniteui-angular/lib/core/styles/components/button-group/button-group-theme';
 
-// Import calendar component and theme styles
-@use '~igniteui-angular/lib/core/styles/components/calendar/calendar-component';
-@use '~igniteui-angular/lib/core/styles/components/calendar/calendar-theme';
-
 // Import chip component and theme styles
 @use '~igniteui-angular/lib/core/styles/components/chip/chip-component';
 @use '~igniteui-angular/lib/core/styles/components/chip/chip-theme';
-
-// Import icon component and theme styles
-@use '~igniteui-angular/lib/core/styles/components/icon/icon-component';
-@use '~igniteui-angular/lib/core/styles/components/icon/icon-theme';
-
-// Import drop-down component and theme styles
-@use '~igniteui-angular/lib/core/styles/components/drop-down/drop-down-component';
-@use '~igniteui-angular/lib/core/styles/components/drop-down/drop-down-theme';
 
 // Import badge component and theme styles
 @use '~igniteui-angular/lib/core/styles/components/badge/badge-component';
@@ -70,7 +58,7 @@ $header-border-color: color($dark-theme-palette, "primary", 600)
 // Define dark theme for the paginator
 $dark-paginator-theme: paginator-theme(
   $text-color: color($dark-theme-palette, "secondary", 700),
-  $background-color:color($dark-theme-palette, "primary", 500),
+  $background-color: color($dark-theme-palette, "primary", 500),
   $border-color: color($dark-theme-palette, "secondary", 500)
 );
 
@@ -117,22 +105,10 @@ $disabled-background: color($dark-theme-palette, "primary", 400),
 $disabled-foreground: color($dark-theme-palette, "primary", 700)
 );
 
-// Define dark theme for the calendar
-$dark-calendar-theme: calendar-theme(
-);
-
-// Define dark theme for the icon
-$dark-icon-theme: icon-theme(
-);
-
 // Define dark theme for the chip
 $dark-chip-theme: chip-theme(
     $text-color: color($dark-theme-palette, "primary", 500),
     $background: color($dark-theme-palette, "secondary", 500),
-);
-
-// Define dark theme for the drop-down
-$dark-drop-down-theme: drop-down-theme(
 );
 
 // Define dark theme for the badge

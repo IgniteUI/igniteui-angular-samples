@@ -8,7 +8,7 @@ igx-card {
 
     &.drag-ghost {
         transform: scale(1.05);
-        box-shadow: elevation( 24);
+        box-shadow: elevation(24);
         color: color($color: 'secondary', $variant: 300);
     }
 
