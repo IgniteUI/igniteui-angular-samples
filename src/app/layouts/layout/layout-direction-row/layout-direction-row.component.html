@@ -11,7 +11,7 @@
 </div>
 
 <div *ngIf="layout === 'row-reverse'">
-    <div class="layout-box" igxLayout igxLayoutDir="row" igxLayoutReverse="true">
+    <div class="layout-box" igxLayout igxLayoutDir="row" [igxLayoutReverse]="true">
         <div class="layout-box__el" igxFlex>1</div>
         <div class="layout-box__el" igxFlex>2</div>
         <div class="layout-box__el" igxFlex>3</div>

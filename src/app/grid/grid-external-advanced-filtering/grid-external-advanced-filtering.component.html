@@ -2,7 +2,7 @@
     <igx-advanced-filtering-dialog [grid]="grid1" class="advanced-dialog">
     </igx-advanced-filtering-dialog>
 
-    <igx-grid [igxPreventDocumentScroll]="true" #grid1 autoGenerate="false" [data]="data" height="400px">
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [autoGenerate]="false" [data]="data" height="400px">
         <igx-column field="ProductName" header="Product Name" [dataType]="'string'">
         </igx-column>
         <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'">

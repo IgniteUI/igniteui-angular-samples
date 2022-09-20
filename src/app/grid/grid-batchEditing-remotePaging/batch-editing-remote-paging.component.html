@@ -22,7 +22,7 @@
                 <button igxButton (click)="deleteRow(cell.id.rowID)" [disabled]="cell.row.deleted">Delete</button>
             </ng-template>
         </igx-column>
-        <igx-column field="ID" editable="false"></igx-column>
+        <igx-column field="ID" [editable]="false"></igx-column>
         <igx-column field="ProductName"></igx-column>
         <igx-column field="QuantityPerUnit"></igx-column>
         <igx-column field="SupplierName"></igx-column>

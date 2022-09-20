@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IgxSnackbarComponent, IRowSelectionEventArgs } from 'igniteui-angular';
+import { GridSelectionMode, IgxSnackbarComponent, IRowSelectionEventArgs } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({
@@ -12,7 +12,7 @@ export class HGridSelectionSampleComponent implements OnInit, OnDestroy {
     @ViewChild('snackbarRowCount', { static: true }) public snackbarRowCount: IgxSnackbarComponent;
     @ViewChild('snackbar', { static: true }) public snackbar: IgxSnackbarComponent;
     public localdata;
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     public selectionModes = [];
     public hideRowSelectors = false;
     public selectedRowsCount;

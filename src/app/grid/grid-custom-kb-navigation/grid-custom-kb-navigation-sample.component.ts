@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IGridKeydownEventArgs, CellType, IgxGridComponent } from 'igniteui-angular';
+import { IGridKeydownEventArgs, CellType, IgxGridComponent, GridSelectionMode } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({
@@ -11,7 +11,7 @@ import { DATA } from '../../data/nwindData';
 export class GridCustomKBNavigationComponent implements OnInit {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     public data: any[];
 
     constructor() {

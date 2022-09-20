@@ -1,6 +1,6 @@
 <div class="grid-container">
     <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [pinning]='pinningConfig' [height]="'470px'" [width]="'100%'"
-        [autoGenerate]="false" [rowDraggable]="true" [primaryKey]="'ID'" [cellSelection]="false" igxDrop
+        [autoGenerate]="false" [rowDraggable]="true" [primaryKey]="'ID'" [cellSelection]="'none'" igxDrop
         (rowDragStart)="onRowDragStart($event)" (dropped)="onDropAllowed($event)"
         (dataPreLoad)="actionStrip1.hide()">
         <igx-column [field]="'CompanyName'" [header]="'Company Name'"></igx-column>

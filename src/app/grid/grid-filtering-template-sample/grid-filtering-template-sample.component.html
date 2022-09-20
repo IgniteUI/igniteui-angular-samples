@@ -34,7 +34,7 @@
                     (input)="onInput(input, column)"
                     (click)="onClick(inputGr)"
                     (keydown)="onKeyDown($event)"/>
-                <igx-suffix *ngIf="input.value || input.value === 0" (click)="clearInput(column)" tabindex="0">
+                <igx-suffix *ngIf="input.value || input.value === '0'" (click)="clearInput(column)" tabindex="0">
                     <igx-icon>clear</igx-icon>
                 </igx-suffix>
             </igx-input-group>
@@ -42,12 +42,12 @@
     </ng-template>
     <ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column">
         <div class="filter-cell">
-            <igx-date-picker [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column)" mode="dialog"
+            <igx-date-picker #picker [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column)" mode="dialog"
                 [displayDensity]="'compact'" placeholder="Filter..." [displayFormat]="displayDateFormat" type="box">
                 <igx-picker-toggle igxPrefix>
                     <igx-icon>search</igx-icon>
                 </igx-picker-toggle>
-                <igx-picker-clear *ngIf="value" igxSuffix>
+                <igx-picker-clear *ngIf="picker.value" igxSuffix>
                     <igx-icon>clear</igx-icon>
                 </igx-picker-clear>
             </igx-date-picker>

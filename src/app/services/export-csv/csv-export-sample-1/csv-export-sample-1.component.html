@@ -1,5 +1,5 @@
 <p class="grid__wrapper">
-  <igx-grid igxPreventDocumentScroll #igxGrid1 [data]="localData" [autoGenerate]="true" height="220px">
+  <igx-grid [igxPreventDocumentScroll]="true" #igxGrid1 [data]="localData" [autoGenerate]="true" height="220px">
     <igx-grid-toolbar>
         <igx-grid-toolbar-actions>
             <igx-grid-toolbar-exporter [exportCSV]="true" [exportExcel]="false">
