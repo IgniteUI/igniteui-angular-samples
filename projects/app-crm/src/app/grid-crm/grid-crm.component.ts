@@ -23,7 +23,8 @@ import {
     OverlaySettings,
     PositionSettings,
     VerticalAlignment,
-    CellType
+    CellType,
+    GridSelectionMode
 } from 'igniteui-angular';
 import { data, Employee } from './data';
 
@@ -111,7 +112,7 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
 
     public searchText = '';
     public caseSensitive = false;
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
 
     public _positionSettings: PositionSettings = {
         horizontalDirection: HorizontalAlignment.Left,

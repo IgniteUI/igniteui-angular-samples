@@ -6,6 +6,7 @@ import {
     IgxAutocompleteModule, IgxButtonModule, IgxIconModule, IgxInputGroupModule, IgxLayoutModule,
     IgxRippleModule, IgxGridModule, IgxAvatarModule
 } from 'igniteui-angular';
+import { IgxPreventDocumentScrollModule } from '../../../app-lob/src/app/directives/prevent-scroll.directive';
 import { AppComponent } from './app.component';
 import { GridCRMComponent } from './grid-crm/grid-crm.component';
 
@@ -27,6 +28,7 @@ import { GridCRMComponent } from './grid-crm/grid-crm.component';
         BrowserAnimationsModule,
         IgxButtonModule,
         FormsModule,
+        IgxPreventDocumentScrollModule,
         HammerModule
     ]
 })
