@@ -2,7 +2,7 @@
     <igx-switch [(ngModel)]="rowEdit">Row edit</igx-switch>
 </div>
 <div class="grid__wrapper">
-    <igx-grid #grid1 [data]="transactionData" [width]="'100%'" [height]="'480px'" [autoGenerate]="false" [batchEditing]="true" [rowEditable]="rowEdit"
+    <igx-grid #grid1 [data]="transactionData" [width]="'100%'" [height]="'500px'" [autoGenerate]="false" [batchEditing]="true" [rowEditable]="rowEdit"
         [primaryKey]="'id'" (formGroupCreated)="formCreateHandler($event)" (cellEdit)="editHandler($event)" (rowEdit)="editHandler($event)">
         <igx-column field="Avatar" header="Photo" dataType="string" width="80" [editable]="false">
             <ng-template igxCell let-cell="cell">
@@ -65,6 +65,8 @@
             </ng-template>
         </igx-column>
     </igx-grid>
+    <div class="buttons-wrapper">
+        <button igxButton [disabled]="grid1.transactions.getAggregatedChanges(false).length < 1" (click)="commit()">Commit</button>
+    </div>
 </div>
 
-<button igxButton [disabled]="grid1.transactions.getAggregatedChanges(false).length < 1" (click)="commit()">Commit</button>
