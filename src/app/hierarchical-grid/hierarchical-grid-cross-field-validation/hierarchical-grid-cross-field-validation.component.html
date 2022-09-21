@@ -77,6 +77,6 @@
             <igx-column field="ShipName" editable='true' required></igx-column>
         </igx-row-island>
     </igx-hierarchical-grid>
-    <button igxButton [disabled]="hierarchicalGrid.transactions.getAggregatedChanges(false).length < 1" (click)="commit(hierarchicalGrid)">Commit</button>
 </div>
 
+<button igxButton [disabled]="hierarchicalGrid.transactions.getAggregatedChanges(false).length < 1" (click)="commit(hierarchicalGrid)">Commit</button>
