@@ -196,8 +196,8 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         this.windowWidth = event.target.innerWidth;
     }
 
-    public filter(term): void {
-        this.grid1.filter('CountryName', term, IgxStringFilteringOperand.instance().condition('contains'), true);
+    public filter(target: EventTarget): void {
+        this.grid1.filter('CountryName', (target as HTMLInputElement).value, IgxStringFilteringOperand.instance().condition('contains'), true);
         this.grid1.markForCheck();
     }
 

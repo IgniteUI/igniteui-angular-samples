@@ -33,27 +33,27 @@
         <ng-template igxExcelStyleHiding></ng-template>
         <ng-template igxExcelStylePinning></ng-template> -->
 
-        <igx-column [field]="'id'" [hidden]='false' [sortable]='true' [groupable]='true'></igx-column>
-        <igx-column [field]="'category'" [width]="'120px'" [groupable]='true' [sortable]='true'></igx-column>
-        <igx-column [field]="'type'" [width]="'100px'" [groupable]='true' [sortable]='true' [filterable]='false'>
+        <igx-column [field]="'id'" [sortable]="true" [groupable]="true"></igx-column>
+        <igx-column [field]="'category'" [width]="'120px'" [groupable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'type'" [width]="'100px'" [groupable]="true" [sortable]="true" [filterable]="false">
         </igx-column>
-        <igx-column [field]="'contract'" [width]="'110px'" [groupable]='true' [sortable]='true' [editable]='true'>
+        <igx-column [field]="'contract'" [width]="'110px'" [groupable]="true" [sortable]="true" [editable]="true">
             <ng-template igxCellEditor let-cell="cell" let-value>
                 <igx-select [overlaySettings]="overlaySettings" [placeholder]="value" [(ngModel)]="cell.editValue" [igxFocus]="true">
                     <igx-select-item *ngFor="let c of contracts" [value]="c">{{ c }}</igx-select-item>
                 </igx-select>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'settlement'" [width]="'100px'" [groupable]='true' [sortable]='true'></igx-column>
-        <igx-column [field]="'country'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'></igx-column>
-        <igx-column [field]="'region'" [width]="'110px'" [groupable]='true' [sortable]='true' [editable]='true'>
+        <igx-column [field]="'settlement'" [width]="'100px'" [groupable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'country'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true"></igx-column>
+        <igx-column [field]="'region'" [width]="'110px'" [groupable]="true" [sortable]="true" [editable]="true">
             <ng-template igxCellEditor let-cell="cell" let-value>
                 <igx-select [overlaySettings]="overlaySettings" [placeholder]="value" [(ngModel)]="cell.editValue" [igxFocus]="true">
-                    <igx-select-item *ngFor="let r of regions" [value]="r.Region">{{ r.Region }}</igx-select-item>
+                    <igx-select-item *ngFor="let r of regions" [value]="r.Name">{{ r.Name }}</igx-select-item>
                 </igx-select>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'lastUpdated'" [width]="'120px'" [editable]='true' header="Last Update" dataType="date"></igx-column>
+        <igx-column [field]="'lastUpdated'" [width]="'120px'" [editable]="true" header="Last Update" dataType="date"></igx-column>
         <igx-column [field]="'openPrice'" [width]="'120px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
         <igx-column [field]="'price'" [width]="'110px'" dataType="number" [cellClasses]="trends"
             [sortable]="true">
@@ -67,7 +67,7 @@
         </igx-column>
         <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [filterable]='false'>
             <ng-template igxCell let-cell="cell" class="center-text">
-                <button class="button-icon" igxButton="icon" [igxRippleCentered]="true" tabindex="-1">
+                <button class="button-icon" igxButton="icon" tabindex="-1">
                     <igx-icon family="material" (click)="chartColumnAction(cell)">insert_chart_outlined</igx-icon>
                 </button>
             </ng-template>
@@ -102,10 +102,10 @@
             </ng-template>
         </igx-column> -->
         <igx-column [field]="'indGrou'" [width]="'100px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'indSect'" [width]="'120px'" [filterable]='false' [resizable]='true'></igx-column>
+        <igx-column [field]="'indSect'" [width]="'120px'" [filterable]='false' [resizable]="true"></igx-column>
         <igx-column [field]="'indSubg'" [width]="'100px'" [filterable]='false'></igx-column>
         <igx-column [field]="'secType'" [width]="'90px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'issuerN'" [width]="'170px'" [filterable]='false' [resizable]='true'></igx-column>
+        <igx-column [field]="'issuerN'" [width]="'170px'" [filterable]='false' [resizable]="true"></igx-column>
         <igx-column [field]="'moodys'" [width]="'60px'" [filterable]='false'></igx-column>
         <igx-column [field]="'fitch'" [width]="'60px'" [filterable]='false'></igx-column>
         <igx-column [field]="'dbrs'" [width]="'60px'" [filterable]='false'></igx-column>
@@ -122,10 +122,10 @@
         <igx-column [field]="'kRD_5YR'" [width]="'50px'" [filterable]='false'></igx-column>
         <igx-column [field]="'kRD_1YR'" [width]="'80px'" [filterable]='false'></igx-column>
         <igx-column [field]="'indGrou'" [width]="'100px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'indSect'" [width]="'100px'" [filterable]='false' [resizable]='true'></igx-column>
+        <igx-column [field]="'indSect'" [width]="'100px'" [filterable]='false' [resizable]="true"></igx-column>
         <igx-column [field]="'indSubg'" [width]="'100px'" [filterable]='false'></igx-column>
         <igx-column [field]="'secType'" [width]="'90px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'issuerN'" [width]="'170px'" [filterable]='false' [resizable]='true'></igx-column>
+        <igx-column [field]="'issuerN'" [width]="'170px'" [filterable]='false' [resizable]="true"></igx-column>
         <igx-column [field]="'moodys'" [width]="'60px'" [filterable]='false'></igx-column>
         <igx-column [field]="'fitch'" [width]="'60px'" [filterable]='false'></igx-column>
         <igx-column [field]="'dbrs'" [width]="'60px'" [filterable]='false'></igx-column>
