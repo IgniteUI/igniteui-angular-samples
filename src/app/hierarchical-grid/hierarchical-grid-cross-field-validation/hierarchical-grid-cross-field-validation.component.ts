@@ -41,12 +41,6 @@ export class HierarchicalGridValidatorServiceCrossCellComponent implements OnIni
         }
     }
 
-    public rowEditHandler(event: IGridEditEventArgs) {
-        if (!event.valid) {
-            event.cancel = true;
-        }
-    }
-
     public formCreateCustomerHandler(event: IGridFormGroupCreatedEventArgs) {
         const formGroup = event.formGroup;
         formGroup.addValidators(this.addressValidator());
