@@ -1,8 +1,15 @@
-.grid__wrapper {
-    margin: 0 auto;
+.top-row, .grid__wrapper {
     padding: 16px;
+    padding-bottom: 0;
 }
 
 .valid-image {
     margin-left: -5px;
+}
+
+.buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding: 10px 0;
 }

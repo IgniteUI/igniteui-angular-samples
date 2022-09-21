@@ -45,6 +45,8 @@
             </ng-template>
         </igx-column>
     </igx-tree-grid>
+    <div class="buttons-wrapper">
+        <button igxButton [disabled]="treeGrid.transactions.getAggregatedChanges(false).length < 1" (click)="commit()">Commit</button>
+    </div>
 </div>
 
-<button igxButton [disabled]="treeGrid.transactions.getAggregatedChanges(false).length < 1" (click)="commit()">Commit</button>
