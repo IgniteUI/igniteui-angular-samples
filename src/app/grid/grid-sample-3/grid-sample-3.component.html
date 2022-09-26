@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="600px" width="100%">
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [autoGenerate]="false" height="600px" width="100%">
         <igx-paginator></igx-paginator>
         <igx-column #col field="ProductID" header="Product ID" width="17%" [headerClasses]="'prodId'">
         </igx-column>
@@ -12,7 +12,7 @@
                 <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
             </ng-template>
         </igx-column>
-        <igx-column #col field="UnitPrice" header="Price" [filterable]="false" width="17%" editable="true" dataType="number"
+        <igx-column #col field="UnitPrice" header="Price" [filterable]="false" width="17%" [editable]="true" dataType="number"
             [hasSummary]="true">
             <ng-template igxCell let-cell="cell" let-val let-row>
                 ${{val}}
@@ -22,7 +22,7 @@
                 <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
             </ng-template>
         </igx-column>
-        <igx-column #col field="UnitsInStock" header="Units In Stock" width="17%" dataType="number" editable="true"
+        <igx-column #col field="UnitsInStock" header="Units In Stock" width="17%" dataType="number" [editable]="true"
             [hasSummary]="false" [summaries]="mySummary">
             <ng-template igxCell let-cell="cell" let-val let-row>
                 {{val}}

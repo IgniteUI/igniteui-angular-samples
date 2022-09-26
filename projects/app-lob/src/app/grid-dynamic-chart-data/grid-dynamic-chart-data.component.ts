@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnDestroy, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
 import {
-    AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment,
+    AutoPositionStrategy, CloseScrollStrategy, GridSelectionMode, HorizontalAlignment,
     IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, OverlaySettings, PositionSettings, VerticalAlignment
 } from 'igniteui-angular';
 import { noop, Subject } from 'rxjs';
@@ -34,7 +34,7 @@ export class NamePipe implements PipeTransform {
     name: 'filterType'
 })
 export class FilterTypePipe implements PipeTransform {
-    public transform(collection: string[], type: string): string[] {
+    public transform(collection: CHART_TYPE[], type: string): CHART_TYPE[] {
         return collection.filter(types => types.indexOf(type) !== -1 && types.indexOf(type, type.length - 1) === -1);
       }
 }
@@ -80,7 +80,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
 
     @ViewChild ('contentTab') tabsContainer: ElementRef<HTMLElement>;
 
-    public columnSelectionType = 'multiple';
+    public columnSelectionType: GridSelectionMode = 'multiple';
     public data: Stock[];
     public opened = true;
 

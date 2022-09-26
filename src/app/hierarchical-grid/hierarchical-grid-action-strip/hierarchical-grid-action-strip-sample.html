@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid [data]="data" [primaryKey]="'ID'"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hierarchicalGrid [data]="data" [primaryKey]="'ID'"
         [height]="'500px'" [width]="'100%'" [rowEditable]="true" [batchEditing]="true" [allowFiltering]="true">
             <igx-column field="Artist" [sortable]="true" [disableHiding]="true" [width]="'200px'"></igx-column>
             <igx-column field="Photo" [width]="'200px'">

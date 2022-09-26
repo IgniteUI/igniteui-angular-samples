@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll  [data]="data" primaryKey="ID" foreignKey="ParentID" (columnResized)="onResize($event)"
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  [data]="data" primaryKey="ID" foreignKey="ParentID" (columnResized)="onResize($event)"
         [autoGenerate]="false" height="500px" width="100%">
         <igx-column [field]="'Name'" [header]="'Name'" dataType="string" [resizable]="true" [width]="'220px'"
             [minWidth]="'200px'" [maxWidth]="'250px'"></igx-column>

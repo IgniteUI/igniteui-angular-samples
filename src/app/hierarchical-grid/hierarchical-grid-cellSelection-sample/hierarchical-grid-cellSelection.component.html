@@ -7,7 +7,7 @@
         <h6>Child Grid cell selection mode: </h6>
         <igx-buttongroup [values]="selectionModesChildren" (selected)="selectCellSelectionModeChildGrid($event)"></igx-buttongroup>
     </div>
-    <igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid [data]="data" [height]="'560px'" [width]="'100%'" [cellSelection]="selectionMode" #hgrid>
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hierarchicalGrid [data]="data" [height]="'560px'" [width]="'100%'" [cellSelection]="selectionMode" #hgrid>
         <igx-column field="Artist" [dataType]="'string'"></igx-column>
         <igx-column field="HasGrammyAward" header="Has Grammy Award?" [dataType]="'boolean'">
         </igx-column>

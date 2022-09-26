@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { DisplayDensity, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({
@@ -14,7 +14,7 @@ export class ExcelStyleFilteringSample1Component implements OnInit {
 
     public data: any[];
 
-    public density = 'comfortable';
+    public density: DisplayDensity = 'comfortable';
     public displayDensities;
 
     constructor() {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DisplayDensity } from 'igniteui-angular';
 
 @Component({
     selector: 'app-buttons-display-density',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './buttons-display-density.component.html'
 })
 export class ButtonsDisplayDensityComponent implements OnInit {
-    public density = 'comfortable';
+    public density: DisplayDensity = 'comfortable';
     public displayDensities;
 
     public ngOnInit(): void {

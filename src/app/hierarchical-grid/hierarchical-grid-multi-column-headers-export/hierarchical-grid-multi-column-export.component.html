@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid [data]="localdata" [moving]="true" [height]="'740px'" [width]="'100%'" displayDensity="compact" [allowFiltering]="true">
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid [data]="localdata" [moving]="true" [height]="'740px'" [width]="'100%'" displayDensity="compact" [allowFiltering]="true">
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>
                 <igx-switch [(ngModel)]="exportHeaders">Export multi-column headers</igx-switch>
@@ -10,63 +10,63 @@
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
         <igx-column-group [pinned]="false" header="General Information">
-            <igx-column field="CompanyName" sortable="true" resizable="true"></igx-column>
+            <igx-column field="CompanyName" [sortable]="true" [resizable]="true"></igx-column>
             <igx-column-group header="Personal Details">
-                <igx-column field="ContactName" sortable="true" resizable="true"></igx-column>
-                <igx-column field="ContactTitle" sortable="true" resizable="true"></igx-column>
+                <igx-column field="ContactName" [sortable]="true" [resizable]="true"></igx-column>
+                <igx-column field="ContactTitle" [sortable]="true" [resizable]="true"></igx-column>
             </igx-column-group>
         </igx-column-group>
         <igx-column-group header="Address Information">
             <igx-column-group header="Location">
-                <igx-column field="Address" sortable="true" resizable="true"></igx-column>
-                <igx-column field="City" sortable="true" resizable="true"></igx-column>
-                <igx-column field="PostalCode" sortable="true" resizable="true"></igx-column>
-                <igx-column field="Country" sortable="true" resizable="true"></igx-column>
+                <igx-column field="Address" [sortable]="true" [resizable]="true"></igx-column>
+                <igx-column field="City" [sortable]="true" [resizable]="true"></igx-column>
+                <igx-column field="PostalCode" [sortable]="true" [resizable]="true"></igx-column>
+                <igx-column field="Country" [sortable]="true" [resizable]="true"></igx-column>
             </igx-column-group>
             <igx-column-group header="Contact Information">
-                <igx-column field="Phone" sortable="true" resizable="true"></igx-column>
-                <igx-column field="Fax" sortable="true" resizable="true"></igx-column>
+                <igx-column field="Phone" [sortable]="true" [resizable]="true"></igx-column>
+                <igx-column field="Fax" [sortable]="true" [resizable]="true"></igx-column>
             </igx-column-group>
         </igx-column-group>
 
         <igx-row-island [height]="null" [key]="'ChildCompanies'" [moving]="true" [autoGenerate]="false">
             <igx-column-group [pinned]="false" header="General Information">
-                <igx-column field="CompanyName" sortable="true" resizable="true"></igx-column>
+                <igx-column field="CompanyName" [sortable]="true" [resizable]="true"></igx-column>
                 <igx-column-group header="Personal Details">
-                    <igx-column field="ContactName" sortable="true" resizable="true"></igx-column>
-                    <igx-column field="ContactTitle" sortable="true" resizable="true"></igx-column>
+                    <igx-column field="ContactName" [sortable]="true" [resizable]="true"></igx-column>
+                    <igx-column field="ContactTitle" [sortable]="true" [resizable]="true"></igx-column>
                 </igx-column-group>
             </igx-column-group>
             <igx-column-group header="Address Information">
                 <igx-column-group header="Location">
-                    <igx-column field="Address" sortable="true" resizable="true"></igx-column>
-                    <igx-column field="City" sortable="true" resizable="true"></igx-column>
-                    <igx-column field="PostalCode" sortable="true" resizable="true"></igx-column>
-                    <igx-column field="Country" sortable="true" resizable="true"></igx-column>
+                    <igx-column field="Address" [sortable]="true" [resizable]="true"></igx-column>
+                    <igx-column field="City" [sortable]="true" [resizable]="true"></igx-column>
+                    <igx-column field="PostalCode" [sortable]="true" [resizable]="true"></igx-column>
+                    <igx-column field="Country" [sortable]="true" [resizable]="true"></igx-column>
                 </igx-column-group>
                 <igx-column-group header="Contact Information">
-                    <igx-column field="Phone" sortable="true" resizable="true"></igx-column>
-                    <igx-column field="Fax" sortable="true" resizable="true"></igx-column>
+                    <igx-column field="Phone" [sortable]="true" [resizable]="true"></igx-column>
+                    <igx-column field="Fax" [sortable]="true" [resizable]="true"></igx-column>
                 </igx-column-group>
             </igx-column-group>
             <igx-row-island [height]="null" [key]="'ChildCompanies'" [moving]="true" [autoGenerate]="false">
                 <igx-column-group [pinned]="false" header="General Information">
-                    <igx-column field="CompanyName" sortable="true" resizable="true"></igx-column>
+                    <igx-column field="CompanyName" [sortable]="true" [resizable]="true"></igx-column>
                     <igx-column-group header="Personal Details">
-                        <igx-column field="ContactName" sortable="true" resizable="true"></igx-column>
-                        <igx-column field="ContactTitle" sortable="true" resizable="true"></igx-column>
+                        <igx-column field="ContactName" [sortable]="true" [resizable]="true"></igx-column>
+                        <igx-column field="ContactTitle" [sortable]="true" [resizable]="true"></igx-column>
                     </igx-column-group>
                 </igx-column-group>
                 <igx-column-group header="Address Information">
                     <igx-column-group header="Location">
-                        <igx-column field="Address" sortable="true" resizable="true"></igx-column>
-                        <igx-column field="City" sortable="true" resizable="true"></igx-column>
-                        <igx-column field="PostalCode" sortable="true" resizable="true"></igx-column>
-                        <igx-column field="Country" sortable="true" resizable="true"></igx-column>
+                        <igx-column field="Address" [sortable]="true" [resizable]="true"></igx-column>
+                        <igx-column field="City" [sortable]="true" [resizable]="true"></igx-column>
+                        <igx-column field="PostalCode" [sortable]="true" [resizable]="true"></igx-column>
+                        <igx-column field="Country" [sortable]="true" [resizable]="true"></igx-column>
                     </igx-column-group>
                     <igx-column-group header="Contact Information">
-                        <igx-column field="Phone" sortable="true" resizable="true"></igx-column>
-                        <igx-column field="Fax" sortable="true" resizable="true"></igx-column>
+                        <igx-column field="Phone" [sortable]="true" [resizable]="true"></igx-column>
+                        <igx-column field="Fax" [sortable]="true" [resizable]="true"></igx-column>
                     </igx-column-group>
                 </igx-column-group>
             </igx-row-island>

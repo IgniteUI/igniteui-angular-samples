@@ -1,4 +1,4 @@
-<igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" igxDrop #grid1 [data]="localData" [primaryKey]="'id'"
+<igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" igxDrop #grid1 [data]="localData" [primaryKey]="'id'"
     [rowDraggable]="true" [rowSelection]="selectionMode" (rowDragStart)="rowDragStart($event)" (dropped)="rowDrop($event)"
     [height]="'540px'" [width]="'100%'" #hGrid>
     <igx-column field="name" header="Name"></igx-column>

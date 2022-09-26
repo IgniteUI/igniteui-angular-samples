@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <igx-grid igxPreventDocumentScroll [id]="gridId" #grid1 [igxGridState]="options"
+    <igx-grid [igxPreventDocumentScroll]="true" [id]="gridId" #grid1 [igxGridState]="options"
         width="98%" height="530px" [autoGenerate]="false" [moving]="true"
         [data]="localData"
         [primaryKey]="'EmployeeID'"

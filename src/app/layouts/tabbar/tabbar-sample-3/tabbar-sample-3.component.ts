@@ -42,7 +42,7 @@ export class TabbarSample3Component implements OnInit {
 @Component({
     template: `
         <br>
-        <igx-grid igxPreventDocumentScroll [data]='data'>
+        <igx-grid [igxPreventDocumentScroll]="true" [data]='data'>
             <igx-column [field]="'Flight'" width='100'></igx-column>
             <igx-column [field]="'From'" width='120'></igx-column>
             <igx-column [field]="'Time'" width='100'></igx-column>
@@ -63,7 +63,7 @@ export class BottomNavRoutingView1Component {
 @Component({
     template: `
         <br>
-        <igx-grid igxPreventDocumentScroll [data]='data'>
+        <igx-grid [igxPreventDocumentScroll]="true" [data]='data'>
             <igx-column [field]="'Flight'" width='100'></igx-column>
             <igx-column [field]="'From'" width='120'></igx-column>
             <igx-column [field]="'Time'" width='100'></igx-column>
@@ -85,7 +85,7 @@ export class BottomNavRoutingView2Component {
 @Component({
     template: `
         <br>
-        <igx-grid igxPreventDocumentScroll [data]='data'>
+        <igx-grid [igxPreventDocumentScroll]="true" [data]='data'>
             <igx-column [field]="'Flight'" width='100'></igx-column>
             <igx-column [field]="'From'" width='120'></igx-column>
             <igx-column [field]="'Time'" width='100'></igx-column>

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
     DefaultSortingStrategy,
+    GridSelectionMode,
     IgxGridComponent,
     ISortingExpression,
     SortingDirection
@@ -18,7 +19,7 @@ export class GridGroupBySampleComponent {
     public grid1: IgxGridComponent;
     public data;
     public expr: ISortingExpression[];
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
 
     constructor() {
         this.data = INVOICE_DATA;

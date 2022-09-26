@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxColumnGroupComponent, IgxGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxColumnGroupComponent, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({
@@ -13,7 +13,7 @@ export class GridMultiColumnHeaderTemplateComponent {
     public grid: IgxGridComponent;
     public data: any[] = DATA;
     public columnGroupStates = new Map<IgxColumnGroupComponent, boolean>();
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
 
     constructor() {
         for (const item of this.data) {

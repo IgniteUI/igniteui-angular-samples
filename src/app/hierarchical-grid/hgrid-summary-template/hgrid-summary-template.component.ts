@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
+    DisplayDensity,
     IgxNumberSummaryOperand,
     IgxSummaryResult
 } from 'igniteui-angular';
@@ -54,7 +55,7 @@ export class HGridSummaryTemplateComponent implements OnInit {
     public grammySummary = GrammySummary;
     public numberSummary = CustomNumberSummary;
     public summaryHeight = 120;
-    public displayDensity = 'cosy';
+    public displayDensity: DisplayDensity = 'cosy';
     public displayDensities;
     public hasSummary = true;
 

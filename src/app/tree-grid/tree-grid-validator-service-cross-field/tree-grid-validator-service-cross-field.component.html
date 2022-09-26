@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll #treeGrid [batchEditing]="true" [data]="data" primaryKey="ID"
+    <igx-tree-grid [igxPreventDocumentScroll]="true" #treeGrid [batchEditing]="true" [data]="data" primaryKey="ID"
         foreignKey="ParentID" [width]="'100%'" [height]="'500px'" [rowEditable]="true" [pinning]="pinningConfig"
         (formGroupCreated)="formCreateHandler($event)">
         <igx-column field="ID" header="ID" dataType="number" [editable]="false"></igx-column>
@@ -21,7 +21,7 @@
                         {{ country }}
                     </igx-select-item>
                 </igx-select>
-            </ng-template> 
+            </ng-template>
         </igx-column>
         <igx-column field="Title" header="Title" dataType="string" [editable]="true" required></igx-column>
         <igx-column field="HireDate" header="Hire Date" dataType="date" [editable]="true" required></igx-column>

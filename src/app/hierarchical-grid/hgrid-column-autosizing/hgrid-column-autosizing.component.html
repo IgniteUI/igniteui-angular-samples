@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid [data]="localdata"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hierarchicalGrid [data]="localdata"
         [height]="'490px'" [width]="'100%'">
         <igx-column field="CustomerID" width="auto" [resizable]="true"></igx-column>
         <igx-column field="CompanyName" width="auto" [resizable]="true"></igx-column>

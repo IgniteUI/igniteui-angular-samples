@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IButtonGroupEventArgs } from 'igniteui-angular';
+import { IButtonGroupEventArgs, IgxStepType } from 'igniteui-angular';
 
 @Component({
     selector: 'app-stepper-steptypes-sample',
@@ -7,7 +7,7 @@ import { IButtonGroupEventArgs } from 'igniteui-angular';
     templateUrl: './stepper-steptypes-sample.component.html'
 })
 export class StepperStepTypesSampleComponent {
-    public stepType = 'full';
+    public stepType: IgxStepType = 'full';
     public stepTypes: any[] = [
         {
             label: 'Indicator', stepType: 'indicator',

@@ -2,7 +2,7 @@
     (dropped)="onDropAllowed($event)">
     <div>Drag a row here to delete it</div>
 </div>
-<igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [allowFiltering]='true' #grid1 [data]="localData" [primaryKey]="'id'" [rowDraggable]="true"
+<igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [allowFiltering]='true' #grid1 [data]="localData" [primaryKey]="'id'" [rowDraggable]="true"
     [height]="'580px'" [width]="'100%'" #hGrid (rowDragStart)="onRowDragStart($event)" (rowDragEnd)="onRowDragEnd($event)" [rowSelection]="selectionMode"
     (rowSelectionChanging)="handleRowSelectionChange($event)">
     <igx-column field="name" header="Name"></igx-column>

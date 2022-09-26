@@ -2,13 +2,13 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { IgxButtonModule, IgxDialogModule, IgxDividerModule, IgxGridModule, IgxTabsModule } from 'igniteui-angular';
 import { IgxBarSeriesModule, IgxCategoryChartModule, IgxCategoryXAxisModule,
-         IgxDataChartCategoryModule, IgxDataChartComponent, IgxDataChartCoreModule,
+         IgxDataChartCategoryModule, IgxDataChartCoreModule,
          IgxDataChartInteractivityModule, IgxDataChartScatterModule,
-         IgxDataChartStackedModule, IgxItemLegendComponent, IgxItemLegendModule,
-         IgxLegendComponent, IgxLegendModule, IgxNumericXAxisModule,
-         IgxNumericYAxisModule, IgxPieChartComponent } from 'igniteui-angular-charts';
+         IgxDataChartStackedModule, IgxItemLegendModule,
+         IgxLegendModule, IgxNumericXAxisModule,
+         IgxNumericYAxisModule } from 'igniteui-angular-charts';
 import { IgxPieChartModule } from 'igniteui-angular-charts/';
-import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
+import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
 import { DataAnalysisDockManagerComponent, HastDuplicateLayouts } from './data-analysis-dock-manager/data-analysis-dock-manager.component';
 import { DockSlotComponent } from './data-analysis-dock-manager/dock-slot/dock-slot.component';
 import { ChartHostDirective, ChartIntegrationDirective } from './directives/chart-integration/chart-integration.directive';

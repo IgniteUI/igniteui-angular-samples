@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxSnackbarComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxSnackbarComponent, IgxTreeGridComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({
@@ -14,7 +14,7 @@ export class TreeGridCellSelectionComponent implements OnInit {
 
     public data: any[];
     public selection = true;
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     public selectionModes = [];
 
     constructor() { }

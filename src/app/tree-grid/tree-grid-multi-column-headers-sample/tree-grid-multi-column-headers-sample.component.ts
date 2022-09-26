@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent} from 'igniteui-angular';
+import { GridSelectionMode, IgxTreeGridComponent} from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
@@ -12,7 +12,7 @@ export class TreeGridMultiColumnHeadersSampleComponent {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: true })
     public treeGrid: IgxTreeGridComponent;
     public data = generateEmployeeDetailedFlatData();
-    public selectionMode = 'none';
+    public selectionMode: GridSelectionMode = 'none';
 
     public pinUnpinGroup() {
         const firstColumnGroup = this.treeGrid.columnList.filter((c) => c.header === 'General Information')[0];

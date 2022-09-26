@@ -1,10 +1,10 @@
 <div class="control-wrapper">
     <igx-combo [width]="'430px'" [data]="weaponsData" [displayKey]="'field'" [valueKey]="'field'" [overlaySettings]="{outlet: elem}"
         [groupKey]="'weaponRange'" placeholder="Pick up two weapons" searchPlaceholder="Search..." [filterable]="true"
-        [itemsMaxHeight]="255" (selectionChange)="setWeaponsLimit($event)">
+        [itemsMaxHeight]="255" (selectionChanging)="setWeaponsLimit($event)">
     </igx-combo>
 
-    <igx-toast #loadToast displayTime="1200"></igx-toast>
+    <igx-toast #loadToast [displayTime]="1200"></igx-toast>
 </div>
 
 

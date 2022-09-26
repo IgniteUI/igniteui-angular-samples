@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="hgridContainer">
-        <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata"
+        <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="localdata"
         [height]="'500px'" [width]="'100%'" [allowFiltering]="true" #hierarchicalGrid>
             <igx-column field="Artist" [sortable]="true" [disableHiding]="true" [width]="'200px'"></igx-column>
             <igx-column field="Photo" [width]="'200px'">

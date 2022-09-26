@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid class="hgrid" igxGridState
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hierarchicalGrid class="hgrid" igxGridState
         [data]="localData" [height]="'500px'" [width]="'98%'" [rowHeight]="'65px'"
         [primaryKey]="'Photo'"
         [autoGenerate]="false"

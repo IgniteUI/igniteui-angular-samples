@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  [data]="singers" rowSelection="multiple" cellSelection="none" [autoGenerate]="false"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  [data]="singers" rowSelection="multiple" cellSelection="none" [autoGenerate]="false"
         height="600px" width="100%" primaryKey="Artist" (rowSelectionChanging)="onRowSelect($event)">
         <igx-paginator></igx-paginator>
         <igx-column field="Artist"></igx-column>
