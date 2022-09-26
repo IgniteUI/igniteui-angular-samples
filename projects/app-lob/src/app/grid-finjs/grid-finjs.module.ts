@@ -10,12 +10,12 @@ import {
     IgxDataChartCategoryModule, IgxDataChartCoreModule, IgxDataChartInteractivityModule, IgxFinancialPriceSeriesModule,
     IgxIndicatorsModule, IgxLegendModule, IgxNumericXAxisModule, IgxNumericYAxisModule
 } from 'igniteui-angular-charts';
-import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
 import { FinJSDemoComponent } from './main.component';
 import { GridFinjsRoutingModule } from './grid-finjs-routing.module';
 import { GridFinJSComponent } from './grid-finjs.component';
 import { ControllerComponent } from './controllers.component';
 import { FinancialDataService } from '../services/financial.service';
+import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
 
 @NgModule({
     declarations: [
