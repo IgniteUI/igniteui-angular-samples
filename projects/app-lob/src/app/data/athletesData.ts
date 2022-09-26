@@ -19,7 +19,7 @@ export interface Athlete {
     CountryFlag: string;
     CountryName: string;
     LastPosition?: number;
-    Speed?: SpeedDescriptor;
+    Speed?: SpeedDescriptor[];
 }
 
 export const АthletesData = [{

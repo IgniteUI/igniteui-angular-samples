@@ -156,7 +156,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     public getSpeed(athlete: Athlete): void {
-        athlete.Speed = this.addSpeedData(athlete, 40)[0];
+        athlete.Speed = this.addSpeedData(athlete, 40);
     }
 
     public getSpeedeData(minutes?: number): SpeedDescriptor[] {
@@ -172,7 +172,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         return speed;
     }
 
-    public addSpeedData(athlete, minutes?: number): SpeedDescriptor[] {
+    public addSpeedData(athlete: Athlete, minutes?: number): SpeedDescriptor[] {
         if (minutes === undefined) {
             minutes = 20;
         }
@@ -260,7 +260,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         this.localData.forEach((rec, index) => {
             rec.LastPosition = index;
             if (rec.TrackProgress < 100) {
-                rec.Speed = this.addSpeedData(rec, 3)[0];
+                rec.Speed = this.addSpeedData(rec, 3);
                 rec.BeatsPerMinute += this.generateRandomNumber(-5, 5);
                 if (rec.Id < this.grid1.perPage + 1) {
                     rec.TrackProgress = Math.min(rec.TrackProgress + this.generateRandomNumber(15, 20), 100);
