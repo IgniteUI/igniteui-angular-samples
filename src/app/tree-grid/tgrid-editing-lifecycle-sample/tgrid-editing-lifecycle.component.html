@@ -7,7 +7,7 @@
 <div class="sample-wrapper">
     <div class="grid-wrapper">
         <div>
-            <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" width="100%"
+            <igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" width="100%"
                 height="550px"
                 [rowEditable]="true"
                 (rowEditEnter)="rowEditEnter($event)"

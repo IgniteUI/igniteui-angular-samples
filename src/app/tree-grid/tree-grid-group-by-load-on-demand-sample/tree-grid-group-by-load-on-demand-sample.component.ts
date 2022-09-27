@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { DefaultSortingStrategy, IGroupingExpression, IgxTreeGridComponent } from 'igniteui-angular';
 import { TreeGridGroupingLoadOnDemandService, TreeGridGroupingParameters } from './remoteService';
 
@@ -34,7 +34,7 @@ export class TreeGridGroupByLoadOnDemandComponent implements OnInit {
         this.dataService.getData(parentID, this.hasChildrenKey, groupingParameters, (children) => done(children));
     };
 
-    public onExpressionsChange(event: EventEmitter<string[]>) {
+    public onExpressionsChange(event: IGroupingExpression[]) {
         this.reloadData();
     }
 

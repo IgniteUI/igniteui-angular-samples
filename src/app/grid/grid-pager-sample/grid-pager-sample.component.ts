@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { athletesData } from '../../data/athletesData';
 import { IPaginatorResourceStrings, IgxPaginatorComponent } from 'igniteui-angular';
 
@@ -22,6 +22,8 @@ export class GridPagerSampleComponent implements OnInit, AfterViewInit {
         igx_paginator_label: 'Records per page'
     };
 
+    constructor(private cdr: ChangeDetectorRef) {}
+
     public ngOnInit(): void {
         this.data = athletesData;
         this.densityOptions = ['compact', 'cosy', 'comfortable'];
@@ -31,5 +33,6 @@ export class GridPagerSampleComponent implements OnInit, AfterViewInit {
         requestAnimationFrame(() => {
             this.paginator.resourceStrings = this.paginatorResourceStrings;
         });
+        this.cdr.detectChanges();
     }
 }

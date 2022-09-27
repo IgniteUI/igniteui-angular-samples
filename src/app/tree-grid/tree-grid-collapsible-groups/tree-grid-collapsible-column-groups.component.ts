@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxTreeGridComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
@@ -12,7 +12,7 @@ export class TreeGridMultiCollapsibleColumnGroupsComponent implements OnInit {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: true })
     public treeGrid: IgxTreeGridComponent;
     public data = generateEmployeeDetailedFlatData();
-    public selectionMode = 'none';
+    public selectionMode: GridSelectionMode = 'none';
     public ngOnInit() {
         for (const item of this.data) {
             const names = item.Name.split(' ');

@@ -1,6 +1,6 @@
 import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { IgxDialogComponent, IgxOverlayOutletDirective } from 'igniteui-angular';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
@@ -20,13 +20,13 @@ export class AngularMaterialComponent implements OnInit {
     @HostBinding('class')
     public themesClass = 'light';
 
-    firstFormGroup: UntypedFormGroup;
-    secondFormGroup: UntypedFormGroup;
-    thirdFormGroup: UntypedFormGroup;
+    firstFormGroup: FormGroup;
+    secondFormGroup: FormGroup;
+    thirdFormGroup: FormGroup;
 
     private _dialogOverlaySettings2;
 
-    constructor(private _formBuilder: UntypedFormBuilder,
+    constructor(private _formBuilder: FormBuilder,
         private overlayContainer: OverlayContainer) {
     }
 
@@ -62,4 +62,3 @@ export class AngularMaterialComponent implements OnInit {
         });
     }
 }
-

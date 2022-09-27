@@ -13,13 +13,13 @@
                 </igx-hint>
             </igx-input-group>
             <div class="grid-wrapper">
-                <igx-grid igxPreventDocumentScroll #grid [data]="data" primaryKey="ProductID" rowEditable="true" (columnInit)="initColumn($event)" [clipboardOptions]="options" [autoGenerate]="true">
+                <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" primaryKey="ProductID" [rowEditable]="true" (columnInit)="initColumn($event)" [clipboardOptions]="options" [autoGenerate]="true">
                     <igx-grid-toolbar>
                         <div class="tlb">
                             <igx-switch [(ngModel)]="options.enabled">Grid copy behavior</igx-switch>
                             <igx-switch [(ngModel)]="options.copyHeaders">Copying of header labels</igx-switch>
                             <igx-switch [(ngModel)]="options.copyFormatters">Copying column formatters</igx-switch>
-                            <button igxButton="outlined" igxRippleCentered="true" (click)="grid.clearCellSelection()">
+                            <button igxButton="outlined" (click)="grid.clearCellSelection()">
                                 <igx-icon family="material">clear</igx-icon>
                                 <span>Selection</span>
                             </button>

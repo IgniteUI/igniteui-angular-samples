@@ -4,7 +4,7 @@
         <igx-switch [(ngModel)]="hideRowSelectors">Hide Row Selectors</igx-switch>
         <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
     </div>
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" [height]="'530px'" [primaryKey]="'ID'" width="100%" [cellSelection]="'none'"
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data | async" [height]="'530px'" [primaryKey]="'ID'" width="100%" [cellSelection]="'none'"
         [rowSelection]="selectionMode" [selectedRows]="selectedRows" [hideRowSelectors]="hideRowSelectors" [allowFiltering]="true"
         (rowSelectionChanging)="handleRowSelection($event)">
         <igx-column [field]="'Category'"></igx-column>
@@ -48,6 +48,21 @@
         </igx-column>
     </igx-grid>
 </div>
+
+<igx-snackbar #snackbarRowCount actionText="Got it. Thanks!" (clicked)="snackbarRowCount.close()">
+    <div class="container">
+        <igx-icon>notification_important</igx-icon>
+        <ng-container *ngIf="selectionMode === 'multiple'">
+           <p>Number of selected rows: {{selectedRowsCount}}</p>
+        </ng-container>
+        <ng-container *ngIf="selectionMode === 'single' && this.selectedRowIndex !== undefined">
+            <p>Currently selected row index: {{selectedRowIndex}}</p>
+        </ng-container>
+        <ng-container *ngIf="selectionMode === 'single' && this.selectedRowIndex === undefined">
+            <p>There is no currently selected row.</p>
+        </ng-container>
+    </div>
+</igx-snackbar>
 
 <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.close()">
     <div class="container">

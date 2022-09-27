@@ -1,0 +1,16 @@
+<div class="grid__wrapper">
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  [data]="data" primaryKey="ID" foreignKey="ParentID"
+        [autoGenerate]="false" height="500px" width="100%">
+        <igx-column [field]="'Name'" [header]="'Name'" dataType="string" [resizable]="true" [width]="'220px'"
+            [minWidth]="'200px'" [maxWidth]="'250px'"></igx-column>
+        <igx-column [field]="'Title'" width="auto" [header]="'Title'" dataType="string" [resizable]="true"></igx-column>
+        <igx-column [field]="'HireDate'" width="auto" [header]="'Hire Date'" dataType="date" [resizable]="true"></igx-column>
+        <igx-column [field]="'Age'" width="auto" [header]="'Age'" dataType="number" [resizable]="true"></igx-column>
+        <igx-column [field]="'Address'" width="auto" [header]="'Address'" dataType="string" [resizable]="true"></igx-column>
+        <igx-column [field]="'City' "width="auto" [header]="'City'" dataType="string" [resizable]="true"></igx-column>
+        <igx-column [field]="'Country'" width="auto" [header]="'Country'" dataType="string" [resizable]="true"></igx-column>
+        <igx-column [field]="'Fax'" width="auto" [header]="'Fax'" dataType="string" [resizable]="true"></igx-column>
+        <igx-column [field]="'PostalCode'" width="auto" [header]="'Postal Code'" dataType="string" [resizable]="true"></igx-column>
+        <igx-column [field]="'Phone'" width="auto" [header]="'Phone'" dataType="string" [resizable]="true"></igx-column>
+    </igx-tree-grid>
+</div>

@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  #hGrid [primaryKey]="'CustomerID'" [autoGenerate]="false" [height]="'580px'" [width]="'100%'">
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hGrid [primaryKey]="'CustomerID'" [autoGenerate]="false" [height]="'580px'" [width]="'100%'">
         <igx-column field="CustomerID" [hidden]="true"></igx-column>
         <igx-column field="CompanyName"></igx-column>
         <igx-column field="ContactName"></igx-column>

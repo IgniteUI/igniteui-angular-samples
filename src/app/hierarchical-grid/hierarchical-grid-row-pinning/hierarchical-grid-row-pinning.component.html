@@ -2,7 +2,7 @@
     <igx-switch (change)='changePinningPosition()' style="padding-left: 20px">Bottom Row Pinning toggle</igx-switch>
 </div>
 <div class="grid-container">
-    <igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid1 [data]="localData" [primaryKey]="'Photo'"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hierarchicalGrid1 [data]="localData" [primaryKey]="'Photo'"
         [autoGenerate]="false" [height]="'520px'" [width]="'100%'" [rowHeight]="'65px'" [pinning]='pinningConfig'
         [cellSelection]="'none'" (dataPreLoad)="actionStrip1.hide()">
         <igx-column field="Artist"></igx-column>

@@ -1,7 +1,7 @@
 <div class="wrapper theme">
     <div class="sample-content">
         <div class="sample-column">
-            <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid [data]="localdata" [moving]="true" [height]="'560px'" displayDensity="compact" [allowFiltering]="true">
+            <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid [data]="localdata" [moving]="true" [height]="'560px'" displayDensity="compact" [allowFiltering]="true">
                 <igx-column-group [pinned]="false" header="General Information" [collapsible]="true" [expanded]="false">
                     <ng-template igxCollapsibleIndicator let-column="column">
                         <igx-icon [attr.draggable]="false" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef" [showDelay]="0" [hideDelay]="0">{{column.expanded ? 'expand_more' : 'chevron_right'}} </igx-icon>
@@ -34,29 +34,29 @@
                 <igx-row-island [height]="null" [key]="'Orders'" [autoGenerate]="false" [moving]="true">
                     <igx-column-group header="Order Information">
                         <igx-column-group header="Order Details">
-                            <igx-column field="OrderID" sortable="true" resizable="true"></igx-column>
-                            <igx-column field="EmployeeID" sortable="true" resizable="true"></igx-column>
-                            <igx-column field="OrderDate" sortable="true" resizable="true" [dataType]="'date'"></igx-column>
-                            <igx-column field="RequiredDate" sortable="true" resizable="true" [dataType]="'date'"></igx-column>
+                            <igx-column field="OrderID" [sortable]="true" [resizable]="true"></igx-column>
+                            <igx-column field="EmployeeID" [sortable]="true" [resizable]="true"></igx-column>
+                            <igx-column field="OrderDate" [sortable]="true" [resizable]="true" [dataType]="'date'"></igx-column>
+                            <igx-column field="RequiredDate" [sortable]="true" [resizable]="true" [dataType]="'date'"></igx-column>
                         </igx-column-group>
                         <igx-column-group header="General Shipping Information">
-                            <igx-column field="ShippedDate" sortable="true" resizable="true" [dataType]="'date'"></igx-column>
-                            <igx-column field="ShipVia" sortable="true" resizable="true"></igx-column>
-                            <igx-column field="Freight" sortable="true" resizable="true"></igx-column>
-                            <igx-column field="ShipName" sortable="true" resizable="true"></igx-column>
+                            <igx-column field="ShippedDate" [sortable]="true" [resizable]="true" [dataType]="'date'"></igx-column>
+                            <igx-column field="ShipVia" [sortable]="true" [resizable]="true"></igx-column>
+                            <igx-column field="Freight" [sortable]="true" [resizable]="true"></igx-column>
+                            <igx-column field="ShipName" [sortable]="true" [resizable]="true"></igx-column>
                         </igx-column-group>
                         <igx-column-group header="Shipping Location">
-                            <igx-column field="ShipAddress" sortable="true" resizable="true"></igx-column>
-                            <igx-column field="ShipCity" sortable="true" resizable="true"></igx-column>
-                            <igx-column field="ShipPostalCode" sortable="true" resizable="true"></igx-column>
-                            <igx-column field="ShipCountry" sortable="true" resizable="true"></igx-column>
+                            <igx-column field="ShipAddress" [sortable]="true" [resizable]="true"></igx-column>
+                            <igx-column field="ShipCity" [sortable]="true" [resizable]="true"></igx-column>
+                            <igx-column field="ShipPostalCode" [sortable]="true" [resizable]="true"></igx-column>
+                            <igx-column field="ShipCountry" [sortable]="true" [resizable]="true"></igx-column>
                         </igx-column-group>
                     </igx-column-group>
                     <igx-row-island [height]="null" [key]="'OrderDetails'" [autoGenerate]="false">
-                            <igx-column field="ProductID" sortable="true" resizable="true"></igx-column>
-                            <igx-column field="UnitPrice" sortable="true" resizable="true"></igx-column>
-                            <igx-column field="Quantity" sortable="true" resizable="true"></igx-column>
-                            <igx-column field="Discount" sortable="true" resizable="true"></igx-column>
+                            <igx-column field="ProductID" [sortable]="true" [resizable]="true"></igx-column>
+                            <igx-column field="UnitPrice" [sortable]="true" [resizable]="true"></igx-column>
+                            <igx-column field="Quantity" [sortable]="true" [resizable]="true"></igx-column>
+                            <igx-column field="Discount" [sortable]="true" [resizable]="true"></igx-column>
                     </igx-row-island>
                 </igx-row-island>
 

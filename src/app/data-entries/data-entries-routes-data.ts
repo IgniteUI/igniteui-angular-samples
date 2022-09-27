@@ -48,6 +48,7 @@ export const dataEntriesRoutesData = {
     "radio-group-sample": { displayName: "Radio Group", parentName: "Radio" },
     "radio-group-vertical": { displayName: "Vertical Radio Group", parentName: "Radio" },
     "radio-styling-sample": { displayName: "Styling Radio Buttons", parentName: "Radio" },
+    "rating-form": { displayName: "Rating in Form", parentName: "Rating" },
     "switch-sample-1": { displayName: "Switch Overview", parentName: "Switch" },
     "switch-sample-2": { displayName: "Multiple Switches", parentName: "Switch" },
     "switch-styling": { displayName: "Styled Switches", parentName: "Switch" },
@@ -56,5 +57,6 @@ export const dataEntriesRoutesData = {
     "select-sample-4": { displayName: "Custom Overlay Settings", parentName: "Select" },
     "select-input-directives": { displayName: "Select Input Directives", parentName: "Select" },
     "select-header-footer": { displayName: "Select with Header&Footer Templates", parentName: "Select" },
-    "input-text-selection": {displayName: "Input with Text Selection", parentName: "Input Group"}
+    "input-text-selection": { displayName: "Input with Text Selection", parentName: "Input Group" },
+    "typed-form": { displayName: "Typed Form", parentName: "Input Group" }
 };

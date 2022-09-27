@@ -1,0 +1,15 @@
+<div class="grid__wrapper">
+    <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" [height]="'500px'" [width]="'100%'">
+        <igx-column [field]="'ProductName'"></igx-column>
+        <igx-column [field]="'UnitsInStock'" [dataType]="'number'"></igx-column>
+        <igx-column [field]="'UnitPrice'" [dataType]="'number'"></igx-column>
+        <igx-column [field]="'Rating'" [dataType]="'number'" width="250px">
+            <ng-template igxCell let-cell="cell" let-val>
+                <igc-rating [ngModel]="val" min="0" max="5" (igcChange)="ratingChanged($event, cell);"></igc-rating>
+            </ng-template>
+        </igx-column>
+        <igx-column [field]="'OrderDate'" [dataType]="'date'"></igx-column>
+        <igx-toast #toast [autoHide]="true">{{ message }}</igx-toast>
+    </igx-grid>
+
+</div>

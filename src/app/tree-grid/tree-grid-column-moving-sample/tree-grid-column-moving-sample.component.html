@@ -6,7 +6,7 @@
     </div>
 </ng-template>
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" [moving]="true" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" height="620px"
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid [data]="data" [moving]="true" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" height="620px"
         width="100%" [perPage]="10">
         <igx-paginator></igx-paginator>
         <igx-column [field]="'Name'" dataType="string" [headerTemplate]="pinTemplate" width="250px"></igx-column>

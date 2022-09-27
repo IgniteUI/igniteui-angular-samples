@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [moving]="true" [height]="'750px'" [displayDensity]="'cosy'"
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [moving]="true" [height]="'750px'" [displayDensity]="'cosy'"
                 [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
                 [uniqueColumnValuesStrategy]="columnValuesStrategy">
         <igx-grid-toolbar>

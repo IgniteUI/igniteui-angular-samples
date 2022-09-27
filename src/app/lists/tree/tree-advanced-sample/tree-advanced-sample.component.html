@@ -1,11 +1,11 @@
 <div class="sample-wrapper">
     <igx-tree selection="Cascading" class="tree-root">
         <igx-tree-node *ngFor="let root of data" [expanded]="true" [active]="true" [data]="root">
-            <ng-template *ngTemplateOutlet="nodeTemplate; context: { $implicit: root }"></ng-template>
+            <ng-container *ngTemplateOutlet="nodeTemplate; context: { $implicit: root }"></ng-container>
             <igx-tree-node #subfolder *ngFor="let folder of root.Files" [data]="folder">
-                <ng-template *ngTemplateOutlet="nodeTemplate; context: { $implicit: folder }"></ng-template>
+                <ng-container *ngTemplateOutlet="nodeTemplate; context: { $implicit: folder }"></ng-container>
                 <igx-tree-node *ngFor="let file of folder.Files" [data]="file">
-                    <ng-template *ngTemplateOutlet="nodeTemplate; context: { $implicit: file }"></ng-template>
+                    <ng-container *ngTemplateOutlet="nodeTemplate; context: { $implicit: file }"></ng-container>
                 </igx-tree-node>
             </igx-tree-node>
         </igx-tree-node>
@@ -21,7 +21,7 @@
             </igx-tree-node>
             <igx-tree-node *ngFor="let entry of remoteData" [data]="entry" [selected]="!!entry.Selected"
                 (selectedChange)="handleSelection(entry, $event)">
-                <ng-template *ngTemplateOutlet="nodeTemplate; context: { $implicit: entry }"></ng-template>
+                <ng-container *ngTemplateOutlet="nodeTemplate; context: { $implicit: entry }"></ng-container>
             </igx-tree-node>
         </igx-tree-node>
     </igx-tree>

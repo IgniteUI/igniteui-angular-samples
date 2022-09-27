@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll [primaryKey]="'CustomerID'"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" [primaryKey]="'CustomerID'"
         [height]="'550px'" [width]="'100%'" [pagingMode]="mode" #hierarchicalGrid>
         <igx-paginator
             [totalRecords]="totalCount"

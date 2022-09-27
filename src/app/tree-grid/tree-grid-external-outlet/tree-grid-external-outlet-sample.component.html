@@ -1,5 +1,5 @@
 <div>
-    <igx-tree-grid igxPreventDocumentScroll #tGrid1 [data]="data" [autoGenerate]="false" height="300px" width="100%"
+    <igx-tree-grid [igxPreventDocumentScroll]="true" #tGrid1 [data]="data" [autoGenerate]="false" height="300px" width="100%"
         [allowFiltering]="true" primaryKey="ID" [moving]="true" foreignKey="ParentID" filterMode="excelStyleFilter"
         [outlet]="filteringOverlayOutlet">
         <igx-grid-toolbar>
@@ -34,7 +34,7 @@
 
     <br>
 
-    <igx-tree-grid igxPreventDocumentScroll #tGrid2 [data]="data" [autoGenerate]="false" height="300px" width="100%"
+    <igx-tree-grid [igxPreventDocumentScroll]="true" #tGrid2 [data]="data" [autoGenerate]="false" height="300px" width="100%"
         [allowFiltering]="true" primaryKey="ID" foreignKey="ParentID" filterMode="excelStyleFilter"
         [outlet]="filteringOverlayOutlet">
         <igx-grid-toolbar>

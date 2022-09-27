@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid
+    <igx-grid [igxPreventDocumentScroll]="true" #grid
         [data]="data"
         primaryKey="ID"
         [isLoading]="true"

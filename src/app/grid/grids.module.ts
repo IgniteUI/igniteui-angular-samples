@@ -130,6 +130,13 @@ import { CRUDSampleComponent } from './grid-crud-sample/crud-sample.component';
 import { GridRowClassesComponent } from './grid-rowClasses-sample/grid-rowClasses.component';
 import { GridRowStylesComponent } from './grid-rowStyles-sample/grid-rowStyles.component';
 import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summary-template.component';
+import { GridExcelStyleEditingComponent } from './grid-editing-excel-style/grid-editing-excel-style.component';
+import { GridColumnAutosizingComponent } from './grid-column-autosizing/grid-column-autosizing.component';
+import { GridWithRatingComponent } from './grid-with-rating/grid-with-rating.component';
+import { GridValidatorServiceComponent } from './grid-validator-service/grid-validator-service.component';
+import { GridValidatorServiceCrossFieldComponent } from './grid-validator-service-cross-field/grid-validator-service-cross-field.component';
+import { GridValidationStyleComponent } from './grid-validation-style/grid-validation-style.component';
+import { GridValidatorServiceExtendedComponent, PhoneFormatDirective } from './grid-validator-service-extended/grid-validator-service-extended.component';
 
 @NgModule({
     declarations: [
@@ -167,6 +174,7 @@ import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summa
         GridAddRowSampleComponent,
         GridEditingStyleSampleComponent,
         GridEditingEventsComponent,
+        GridExcelStyleEditingComponent,
         FinancialSampleComponent,
         GridSample3Component,
         GridRemoteVirtualizationSampleComponent,
@@ -249,7 +257,14 @@ import { GridSummaryTemplateComponent } from './grid-summary-template/grid-summa
         GridFormattedFilteringStrategyComponent,
         GridSummaryFormatterComponent,
         GridRowClassesComponent,
-        GridRowStylesComponent
+        GridRowStylesComponent,
+        GridColumnAutosizingComponent,
+        GridWithRatingComponent,
+        GridValidatorServiceComponent,
+        GridValidatorServiceCrossFieldComponent,
+        GridValidationStyleComponent,
+        GridValidatorServiceExtendedComponent,
+        PhoneFormatDirective
     ],
     imports: [
         CommonModule,

@@ -3,7 +3,8 @@ import {
     IDropDroppedEventArgs,
     IgxHierarchicalGridComponent,
     RowType,
-    Point
+    Point,
+    GridSelectionMode
 } from 'igniteui-angular';
 import { createData, IDrive } from '../../data/files.data';
 
@@ -16,7 +17,7 @@ export class HGridRowReorderComponent {
     @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent, static: true })
     public hGrid: IgxHierarchicalGridComponent;
     public localData: IDrive[] = [];
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     constructor() {
         this.localData = createData(3, 12, 8);
     }
