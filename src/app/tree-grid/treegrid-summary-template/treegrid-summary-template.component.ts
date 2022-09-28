@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
+import { DisplayDensity, IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 class PTOSummary {
@@ -48,7 +48,7 @@ export class TreeGridSummaryTemplateComponent implements OnInit {
     public d;
     public ptoSummary = PTOSummary;
     public summaryHeight = 150;
-    public displayDensity = 'cosy';
+    public displayDensity: DisplayDensity = 'cosy';
     public displayDensities;
     public hasSummary = true;
 

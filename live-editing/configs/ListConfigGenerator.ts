@@ -133,6 +133,19 @@ export class ListConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/lists/list/"
         }));
 
+        // list item selection
+        configs.push(new Config({
+            component: 'ListItemSelectionComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxAvatarModule', 'IgxFilterModule', 'IgxIconModule', 'IgxListModule',
+                    'IgxInputGroupModule', 'ListItemSelectionComponent'],
+                ngDeclarations: ['ListItemSelectionComponent'],
+                ngImports: ['IgxAvatarModule', 'IgxFilterModule', 'IgxIconModule', 'IgxListModule',
+                    'IgxInputGroupModule']
+            }),
+            shortenComponentPathBy: "/lists/list/"
+        }));
+
         return configs;
     }
 }

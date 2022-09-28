@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
-    IgxExcelExporterOptions,
+    GridColumnDataType,
     IgxExcelExporterService,
     IgxGridComponent,
     ISortingExpression,
@@ -18,13 +18,13 @@ export class ExcelExportSample1Component implements OnInit {
 
   public data = [];
   public groupExpressions: ISortingExpression[];
-  public columns = [
-    { dataType: 'string', field: 'ShipCountry', width: 150, groupable: true },
-    { dataType: 'string', field: 'ShipCity', width: 150, groupable: true },
-    { dataType: 'string', field: 'ShipAddress', width: 150, groupable: true},
-    { dataType: 'string', field: 'PostalCode', width: 150, groupable: true },
-    { dataType: 'date', field: 'OrderDate', width: 150, groupable: true },
-    { dataType: 'number', field: 'Quantity', width: 150, groupable: true }
+  public columns: { dataType: GridColumnDataType, field: string, width: string, groupable: boolean, hidden?: boolean }[] = [
+    { dataType: GridColumnDataType.String, field: 'ShipCountry', width: '150', groupable: true },
+    { dataType: GridColumnDataType.String, field: 'ShipCity', width: '150', groupable: true },
+    { dataType: GridColumnDataType.String, field: 'ShipAddress', width: '150', groupable: true},
+    { dataType: GridColumnDataType.String, field: 'PostalCode', width: '150', groupable: true },
+    { dataType: GridColumnDataType.Date, field: 'OrderDate', width: '150', groupable: true },
+    { dataType: GridColumnDataType.Number, field: 'Quantity', width: '150', groupable: true }
   ];
 
   constructor(private excelExportService: IgxExcelExporterService) {

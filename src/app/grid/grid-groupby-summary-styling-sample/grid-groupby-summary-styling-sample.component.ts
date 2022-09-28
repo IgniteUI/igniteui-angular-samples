@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
     DefaultSortingStrategy,
+    GridSelectionMode,
     GridSummaryCalculationMode,
     GridSummaryPosition,
     IgxGridComponent,
@@ -45,7 +46,7 @@ export class GridGroupBySummaryStylingSampleComponent {
     public summaryPosition: GridSummaryPosition = GridSummaryPosition.bottom;
     public summaryCalcModes;
     public summaryCalculationMode: GridSummaryCalculationMode = GridSummaryCalculationMode.rootAndChildLevels;
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
 
     constructor() {
         this.data = INVOICE_DATA;

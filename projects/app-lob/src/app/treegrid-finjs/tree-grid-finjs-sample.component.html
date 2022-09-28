@@ -6,12 +6,12 @@
             <div class="finjs-slider control-item">
                 <label for="slider">Records: {{volume}}</label>
                 <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" (dragFinished)="updateVolume()" [step]="100"
-                    thumbLabelVisibilityDuration="250" [continuous]="true"></igx-slider>
+                    [thumbLabelVisibilityDuration]="250" [continuous]="true"></igx-slider>
             </div>
             <div class="finjs-slider control-item">
                 <label for="slider">Frequency: {{frequency}} ms</label>
                 <igx-slider #slider2 id="slider" [minValue]="100" [maxValue]="3000" [step]="10" [(ngModel)]="frequency"
-                    thumbLabelVisibilityDuration="250" [continuous]="true"></igx-slider>
+                    [thumbLabelVisibilityDuration]="250" [continuous]="true"></igx-slider>
             </div>
         </div>
         <div class="control-item finjs-play-controls">
@@ -24,7 +24,7 @@
         <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
             ~{{volume/5}} records updated.</span>
     </div>
-    <igx-tree-grid #grid1 igxPreventDocumentScroll
+    <igx-tree-grid #grid1 [igxPreventDocumentScroll]="true"
         [data]="data$ | async | treeGridGrouping:groupingExpressions:groupColumnKey:childDataKey:grid1:aggregations"
         [childDataKey]="childDataKey"
         [sortStrategy]="sorting"
@@ -57,25 +57,25 @@
             [hideGroupedColumns]="true">
         </igx-tree-grid-group-by-area>
 
-        <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]='false' [resizable]='true'
+        <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]="false" [resizable]="true"
             [disableHiding]="true"></igx-column>
-        <igx-column [field]="'category'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
+        <igx-column [field]="'category'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true">
         </igx-column>
-        <igx-column [field]="'type'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
+        <igx-column [field]="'type'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true">
         </igx-column>
-        <igx-column [field]="'contract'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
+        <igx-column [field]="'contract'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true">
         </igx-column>
-        <igx-column [field]="'settlement'" [width]="'100px'" [sortable]='true'></igx-column>
-        <igx-column [field]="'country'" [width]="'100px'" [groupable]='true' [sortable]='true' [editable]='true'>
+        <igx-column [field]="'settlement'" [width]="'100px'" [sortable]="true"></igx-column>
+        <igx-column [field]="'country'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true">
         </igx-column>
-        <igx-column [field]="'region'" [width]="'110px'" [groupable]='true' [sortable]='true' [editable]='true'>
+        <igx-column [field]="'region'" [width]="'110px'" [groupable]="true" [sortable]="true" [editable]="true">
             <ng-template igxCellEditor let-cell="cell" let-value>
                 <igx-select [overlaySettings]="overlaySettings" [placeholder]="value" [(ngModel)]="cell.editValue" [igxFocus]="true">
-                    <igx-select-item *ngFor="let r of regions" [value]="r.Region">{{ r.region }}</igx-select-item>
+                    <igx-select-item *ngFor="let r of regions" [value]="r.Name">{{ r.Name }}</igx-select-item>
                 </igx-select>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'lastUpdated'" [width]="'120px'" [editable]='true' header="Last Update" dataType="date">
+        <igx-column [field]="'lastUpdated'" [width]="'120px'" [editable]="true" header="Last Update" dataType="date">
             <ng-template igxCell let-cell="cell">
                 {{ cell.value | date }}
             </ng-template>

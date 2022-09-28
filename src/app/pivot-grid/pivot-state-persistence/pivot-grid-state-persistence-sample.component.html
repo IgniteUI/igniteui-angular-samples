@@ -1,0 +1,50 @@
+<div class="controls-holder">
+    <div class="switches">
+        <button igxButton="raised" (click)="restoreGridState()">
+            <igx-icon class="btn-icon">restore</igx-icon>
+            <span>Restore</span>
+        </button>
+        <button igxButton="raised" (click)="saveGridState()">
+            <igx-icon class="btn-icon">save</igx-icon>
+            <span>Save</span>
+        </button>
+        <button igxButton="raised" [routerLink]="['../pivot-state-about']">
+            <igx-icon class="btn-icon">forward</igx-icon>
+            <span>Leave</span>
+        </button>
+        <button igxButton="raised" (click)="clearStorage()">
+            <igx-icon class="btn-icon">delete</igx-icon>
+            <span>Clear</span>
+        </button>
+        <button igxButton="raised" (click)="reloadPage()">
+            <igx-icon class="btn-icon">refresh</igx-icon>
+            <span>Reload</span>
+        </button>
+    </div>
+
+    <div class="switches">
+        <ul>
+            <li>Clicking the SAVE button or leaving the page <a
+                    [routerLink]="['../pivot-state-about']"><strong>here</strong></a> will save grid state to
+                localStorage.</li>
+            <li>Use the control buttons to SAVE / RESTORE / DELETE / grid state or LEAVE the page.</li>
+            <li>Select/Deselect checkboxes to control saving / restoring feature state.</li>
+        </ul>
+    </div>
+
+    <div class="switches">
+        <div class="control-item">
+            <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">All</igx-checkbox>
+        </div>
+        <div class="control-item" *ngFor="let f of features">
+            <igx-checkbox (change)="onChange($event, f.key)" [checked]="options[f.key]">
+                {{ f.shortName }}
+            </igx-checkbox>
+        </div>
+    </div>
+</div>
+
+<igx-pivot-grid #grid1 [data]="data" [pivotConfiguration]="pivotConfig" [rowSelection]="'single'" [height]="'600px'"
+    [superCompactMode]="true" [defaultExpandState]='true' [columnSelection]="'single'" [igxGridState]="options"
+    (valueInit)='onValueInit($event)' (dimensionInit)='onDimensionInit($event)'>
+</igx-pivot-grid>

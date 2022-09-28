@@ -1,0 +1,40 @@
+<div class="grid__wrapper">
+    <igx-tree-grid [igxPreventDocumentScroll]="true" #treeGrid [width]="'100%'" [height]="'500px'" [data]="data" primaryKey="ID"
+        foreignKey="ParentID" [autoGenerate]="false" [batchEditing]="true" [rowEditable]="true"
+        (formGroupCreated)="formCreateHandler($event)">
+        <igx-column field="ID" header="ID" dataType="number" [editable]="false"></igx-column>
+        <igx-column field="Age" header="Age" dataType="number" min="18" [editable]="true" required max="99">
+        </igx-column>
+        <igx-column field="Name" header="Full Name" dataType="string" [editable]="true" required>
+        </igx-column>
+        <igx-column field="Phone" header="Phone" dataType="string" [editable]="true" required phoneFormat="^[^a-zA-Z]*$">
+            <ng-template igxCellValidationError let-cell='cell' let-defaultErr="defaultErrorTemplate">
+                <ng-container *ngTemplateOutlet="defaultErr">
+                </ng-container>
+                <div *ngIf="cell.validation.errors?.['phoneFormat']">
+                    Please enter correct phone format
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="Title" header="Title" dataType="string" [editable]="true" required></igx-column>
+        <igx-column field="HireDate" header="Hire Date" dataType="date" [editable]="true" required>
+            <ng-template igxCellValidationError let-cell="cell" let-defaultErr="defaultErrorTemplate">
+                <ng-container *ngTemplateOutlet="defaultErr" >
+                </ng-container>
+                <div *ngIf="cell.validation.errors?.['futureDate']">
+                    The date cannot be in the future!
+                </div>
+                <div *ngIf="cell.validation.errors?.['pastDate']">
+                    The date cannot be before 1st Sept 2004
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="OnPTO" header="On PTO" dataType="boolean" [editable]="true"></igx-column>
+    </igx-tree-grid>
+
+    <div class="buttons-wrapper">
+        <button igxButton [disabled]="!treeGrid.transactions.canUndo" (click)="undo()">Undo</button>
+        <button igxButton [disabled]="!treeGrid.transactions.canRedo" (click)="redo()">Redo</button>
+        <button igxButton [disabled]="treeGrid.transactions.getAggregatedChanges(false).length < 1" (click)="commit()">Commit</button>
+    </div>
+</div>

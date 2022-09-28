@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GridSelectionMode } from 'igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
 @Component({
@@ -10,7 +11,7 @@ export class TreeGridRowEditStyleComponent implements OnInit {
 
     public data: IEmployee[];
     public columns: any[];
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     public ngOnInit(): void {
         this.data = generateEmployeeFlatData();
 

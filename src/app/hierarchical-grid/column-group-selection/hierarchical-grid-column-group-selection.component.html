@@ -1,5 +1,5 @@
 <div class="grid-wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll [data]="data" height="530px" width="100%"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" [data]="data" height="530px" width="100%"
         columnSelection="multiple">
         <igx-column field="CustomerID"></igx-column>
         <igx-column-group header="General Information">
@@ -22,7 +22,7 @@
             </igx-column-group>
         </igx-column-group>
 
-        <igx-row-island [height]="null" [key]="'Orders'" [autoGenerate]="false" columnSelection="multi">
+        <igx-row-island [height]="null" [key]="'Orders'" [autoGenerate]="false" columnSelection="multiple">
             <igx-column-group header="Order Information">
                 <igx-column-group header="Order Details">
                     <igx-column field="OrderID"></igx-column>

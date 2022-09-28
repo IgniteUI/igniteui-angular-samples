@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxSnackbarComponent } from 'igniteui-angular';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { GridSelectionMode, IgxSnackbarComponent, IRowSelectionEventArgs } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({
@@ -8,11 +8,11 @@ import { SINGERS } from '../../data/singersData';
     templateUrl: 'hierarchical-grid-selection.component.html'
 })
 
-export class HGridSelectionSampleComponent implements OnInit {
+export class HGridSelectionSampleComponent implements OnInit, OnDestroy {
     @ViewChild('snackbarRowCount', { static: true }) public snackbarRowCount: IgxSnackbarComponent;
     @ViewChild('snackbar', { static: true }) public snackbar: IgxSnackbarComponent;
     public localdata;
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     public selectionModes = [];
     public hideRowSelectors = false;
     public selectedRowsCount;
@@ -31,6 +31,10 @@ export class HGridSelectionSampleComponent implements OnInit {
         this.snackbar.open();
     }
 
+    public ngOnDestroy(): void {
+        this.snackbar.close();
+    }
+
     public selectCellSelectionMode(args) {
         this.selectionMode = this.selectionModes[args.index].label;
         this.snackbarRowCount.close();
@@ -39,9 +43,9 @@ export class HGridSelectionSampleComponent implements OnInit {
         this.selectedRowIndex = undefined;
     }
 
-    public handleRowSelection(event) {
+    public handleRowSelection(event: IRowSelectionEventArgs) {
         this.selectedRowsCount = event.newSelection.length;
-        if(event.newSelection.length > 0){
+        if (event.newSelection.length > 0) {
             this.selectedRowIndex = event.newSelection[0].ID;
         }
         else this.selectedRowIndex = undefined;
@@ -50,4 +54,5 @@ export class HGridSelectionSampleComponent implements OnInit {
     }
 
     public formatter = (a) => a;
+
 }

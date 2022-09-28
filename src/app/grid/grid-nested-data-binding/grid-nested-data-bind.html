@@ -1,6 +1,6 @@
 <div class="sample-wrapper">
     <div class="grid__wrapper">
-        <igx-grid igxPreventDocumentScroll #grid1 height="400px" [data]="data">
+        <igx-grid [igxPreventDocumentScroll]="true" #grid1 height="400px" [data]="data">
             <igx-column field="Name" header="Name"></igx-column>
             <igx-column field="Title" header="Title" width="20%"></igx-column>
             <igx-column field="Employees" header="Employees" [cellClasses]="{ expand: true }" width="40%">

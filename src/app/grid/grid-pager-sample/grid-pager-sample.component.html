@@ -1,14 +1,14 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid [data]="data" height="500px"
+    <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" height="500px"
         width="100%" displayDensity="cosy">
-        <igx-paginator #paginator [(page)]="grid.page" [totalRecords]="grid.totalRecords" [(perPage)]="grid.perPage" 
+        <igx-paginator #paginator [(page)]="grid.page" [totalRecords]="grid.totalRecords" [(perPage)]="grid.perPage"
             [selectOptions]="selectOptions" [displayDensity]="grid.displayDensity">
             <igx-paginator-content>
                 <igx-page-size *ngIf="!isDropdownHidden"></igx-page-size>
                 <igx-page-nav *ngIf="!isPagerHidden"></igx-page-nav>
             </igx-paginator-content>
         </igx-paginator>
-        <igx-column header="Rank" headerClasses="myClass" field="Id" sortable="true"></igx-column>
+        <igx-column header="Rank" headerClasses="myClass" field="Id" [sortable]="true"></igx-column>
         <igx-column field="Name" header="Athlete"></igx-column>
         <igx-column field="BeatsPerMinute" header="Beats per minute" dataType="number">
             <ng-template igxCell let-val>
@@ -26,7 +26,7 @@
         </igx-column>
     </igx-grid>
 
-    
+
 
     <div class="options-container">
         <label>Display density:</label>

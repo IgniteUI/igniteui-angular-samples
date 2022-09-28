@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({
@@ -12,7 +12,7 @@ export class GridMultiColumnHeadersComponent {
     @ViewChild(IgxGridComponent, { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
     public data = DATA;
-    public selectionMode = 'none';
+    public selectionMode: GridSelectionMode = 'none';
     public pinGroup() {
         const firstColumnGroup = this.grid.columnList.filter((c) => c.header === 'General Information')[0];
         firstColumnGroup.pinned = !firstColumnGroup.pinned;

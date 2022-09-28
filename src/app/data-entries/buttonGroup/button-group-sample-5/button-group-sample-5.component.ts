@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DisplayDensity } from 'igniteui-angular';
 
 @Component({
     selector: 'app-button-group-sample-5',
@@ -9,7 +10,7 @@ export class ButtonGroupSample5Component implements OnInit {
 
     public rippleColor = 'grey';
 
-    public displayDensity = 'comfortable';
+    public displayDensity: DisplayDensity = 'comfortable';
     public displayDensities;
 
     public ngOnInit() {

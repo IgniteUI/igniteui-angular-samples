@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 id="grid1" [data]="data" [autoGenerate]="false" height="400px"
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 id="grid1" [data]="data" [autoGenerate]="false" height="400px"
         (toolbarExporting)="configureExport($event)"
     >
         <igx-grid-toolbar>
@@ -13,7 +13,7 @@
         <igx-column field="Name" header="Athlete" width="200">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.data.Avatar" roundShape="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.Avatar" [roundShape]="true" size="small"></igx-avatar>
                     <span class="athlete_name">{{ cell.value }}</span>
                 </div>
             </ng-template>
@@ -22,7 +22,7 @@
         <igx-column field="CountryName" header="Country" width="200">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.data.CountryFlag" roundShape="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.CountryFlag" [roundShape]="true" size="small"></igx-avatar>
                     <span class="country_name">{{ cell.value }}</span>
                 </div>
             </ng-template>

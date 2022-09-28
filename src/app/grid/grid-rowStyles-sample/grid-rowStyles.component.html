@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" [height]="'500px'" width="100%"
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data | async" [height]="'500px'" width="100%"
         [autoGenerate]="false" [allowFiltering]="true" [rowStyles]="rowStyles">
         <igx-column [field]="'Category'" [width]="'120px'"></igx-column>
         <igx-column [field]="'Type'" [width]="'150px'" [filterable]="false"></igx-column>

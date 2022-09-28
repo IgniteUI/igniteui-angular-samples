@@ -574,49 +574,6 @@ export const CUSTOMERS = [{
         }]
     }]
 }, {
-    CustomerID: "HANAR",
-    CompanyName: "Hanari Carnes",
-    ContactName: "Mario Pontes",
-    ContactTitle: "Accounting Manager",
-    Address: "Rua do Paço, 67",
-    City: "Rio de Janeiro",
-    Region: "RJ",
-    PostalCode: "05454-876",
-    Country: "Brazil",
-    Phone: "(21) 555-0091",
-    Fax: "(21) 555-8765",
-    Orders: [{
-        OrderID: 10253,
-        EmployeeID: 3,
-        OrderDate: new Date("1996-07-10T00:00:00"),
-        RequiredDate: new Date("1996-07-24T00:00:00"),
-        ShippedDate: new Date("1996-07-16T00:00:00"),
-        ShipVia: 2,
-        Freight: 58.1700,
-        ShipName: "Hanari Carnes",
-        ShipAddress: "Rua do Paço, 67",
-        ShipCity: "Rio de Janeiro",
-        ShipRegion: "RJ",
-        ShipPostalCode: "05454-876",
-        ShipCountry: "Brazil",
-        OrderDetails: [{
-            ProductID: 31,
-            UnitPrice: 10.0000,
-            Quantity: 20,
-            Discount: 0.0000000e+000
-        }, {
-            ProductID: 39,
-            UnitPrice: 14.4000,
-            Quantity: 42,
-            Discount: 0.0000000e+000
-        }, {
-            ProductID: 49,
-            UnitPrice: 16.0000,
-            Quantity: 40,
-            Discount: 0.0000000e+000
-        }]
-    }]
-}, {
     CustomerID: "CHOPS",
     CompanyName: "Chop-suey Chinese",
     ContactName: "Yang Wang",

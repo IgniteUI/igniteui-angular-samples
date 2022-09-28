@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxFilterOptions } from 'igniteui-angular';
+import { DisplayDensity, IgxFilterOptions } from 'igniteui-angular';
 @Component({
   selector: 'app-contact-list2',
   styleUrls: ['./list-sample-4.component.scss'],
@@ -41,7 +41,7 @@ export class ListSample4Component implements OnInit {
     }
   ];
 
-  public density = 'comfortable';
+  public density: DisplayDensity = 'comfortable';
   public displayDensities;
 
   constructor() { }

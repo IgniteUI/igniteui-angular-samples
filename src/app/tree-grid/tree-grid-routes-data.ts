@@ -120,5 +120,8 @@ export const treeGridRoutesData = {
     'tree-grid-classes': { displayName: 'TreeGrid RowClasses sample', parentName: 'TreeGrid'},
     'tree-grid-action-strip': { displayName: 'TreeGrid with Action Strip', parentName: 'TreeGrid' },
     'tree-grid-columnAutoSizing-sample': { displayName: 'TreeGrid with Column Autosizing', parentName: 'TreeGrid' },
-    'tree-grid-validator-service': { displayName: 'Tree Grid Validator Service', parentName: 'TreeGrid' }
+    'tree-grid-validator-service': { displayName: 'Tree Grid Validator Service', parentName: 'TreeGrid' },
+    'tree-grid-cross-field-validator-service': { displayName: 'Tree Grid Cross Field Validator Service', parentName: 'TreeGrid' },
+    'tree-grid-validation-style': { displayName: 'Tree Grid Validation Styles', parentName: 'TreeGrid' },
+    'tree-grid-validator-service-extended': { displayName: 'Tree Grid Validator Service Extended', parentName: 'TreeGrid' }
 };

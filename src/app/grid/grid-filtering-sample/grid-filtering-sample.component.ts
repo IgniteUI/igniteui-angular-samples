@@ -20,8 +20,8 @@ export class FilteringSampleComponent implements OnInit {
         this.data = DATA;
     }
 
-    public filter(term) {
-        this.grid1.filter('ProductName', term, IgxStringFilteringOperand.instance().condition('contains'));
+    public filter(target: EventTarget) {
+        this.grid1.filter('ProductName', (target as HTMLInputElement).value, IgxStringFilteringOperand.instance().condition('contains'));
     }
 
     public formatDate(val: Date) {

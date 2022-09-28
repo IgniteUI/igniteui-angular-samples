@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     IgcFormsModule,
     IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxComboModule,
-    IgxDatePickerModule, IgxDialogModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
+    IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
     IgxIconModule, IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule,
     IgxSelectModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
 } from 'igniteui-angular';
@@ -66,6 +66,7 @@ import { SelectSample4Component } from './select/select-sample-4/select-sample-4
 import { SwitchSample1Component } from './switch/switch-sample-1/switch-sample-1.component';
 import { SwitchSample2Component } from './switch/switch-sample-2/switch-sample-2.component';
 import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.component';
+import { TypedFormComponent } from './input-group/typed-form/typed-form.component';
 import { RatingInFormComponent } from './rating/rating-form/rating-form.component';
 
 @NgModule({
@@ -127,7 +128,8 @@ import { RatingInFormComponent } from './rating/rating-form/rating-form.componen
         ButtonsDisplayDensityComponent,
         ButtonsStyleComponent,
         ButtonGroupStyleComponent,
-        InputTextSelectionComponent
+        InputTextSelectionComponent,
+        TypedFormComponent
     ],
     imports: [
         CommonModule,
@@ -158,6 +160,7 @@ import { RatingInFormComponent } from './rating/rating-form/rating-form.componen
         IgxTextSelectionModule,
         IgxFocusModule,
         IgxCardModule,
+        IgxDividerModule,
         IgcFormsModule
     ]
 })

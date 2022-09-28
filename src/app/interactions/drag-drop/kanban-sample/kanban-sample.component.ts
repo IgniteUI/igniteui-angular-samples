@@ -12,6 +12,7 @@ interface IListItem {
     id: string;
     text: string;
     state: state;
+    hide?: boolean;
 }
 @Component({
     selector: 'app-kanban-sample',
@@ -19,15 +20,6 @@ interface IListItem {
     styleUrls: ['./kanban-sample.component.scss']
 })
 export class KanbanSampleComponent implements OnInit {
-    @ViewChild('toDo')
-    private toDo: ElementRef;
-
-    @ViewChild('inProgress')
-    private inProgress: ElementRef;
-
-    @ViewChild('done')
-    private done: ElementRef;
-
     public toDoList: IListItem[];
     public inProgressList: IListItem[];
     public doneList: IListItem[];
@@ -58,7 +50,7 @@ export class KanbanSampleComponent implements OnInit {
         this.currentList = '';
     }
 
-    public onStateContainerEnter(event: IDropDroppedEventArgs) {
+    public onStateContainerEnter(event: IDropBaseEventArgs) {
         // If we have entered another list container, we have to remove the 'dummy' object from the previous one
         if (this.currentList !== event.owner.element.nativeElement.id) {
             this[this.currentList] = this[this.currentList].filter((item) => item.id !== 'dummy');
@@ -70,7 +62,7 @@ export class KanbanSampleComponent implements OnInit {
         this.renderer.addClass(event.owner.element.nativeElement, 'active');
     }
 
-    public onStateContainerLeave(event: IDropDroppedEventArgs) {
+    public onStateContainerLeave(event: IDropBaseEventArgs) {
         // This event also gets raised when the user drags a task over another task tile.
         // That means we have to re-apply the 'active' class in the `onItemEnter` event handler
         this.renderer.removeClass(event.owner.element.nativeElement,  'active');
