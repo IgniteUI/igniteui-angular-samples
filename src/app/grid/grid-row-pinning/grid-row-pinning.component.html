@@ -2,7 +2,7 @@
     <igx-switch (change)='changePinningPosition()' style="padding-left: 20px">Bottom Row Pinning toggle</igx-switch>
 </div>
 <div class="grid-container">
-    <igx-grid #grid1 igxPreventDocumentScroll [data]="data" [pinning]='pinningConfig' [height]="'520px'" [width]="'100%'" [autoGenerate]="false"
+    <igx-grid #grid1 [igxPreventDocumentScroll]="true" [data]="data" [pinning]='pinningConfig' [height]="'520px'" [width]="'100%'" [autoGenerate]="false"
         [primaryKey]="'ID'" [cellSelection]="'none'" [rowEditable]="true"
         (dataPreLoad)="actionStrip1.hide()">
         <igx-column [field]="'CompanyName'" [header]="'Company Name'" [width]="'300px'"></igx-column>

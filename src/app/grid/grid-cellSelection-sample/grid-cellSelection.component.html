@@ -2,7 +2,7 @@
     <span class="button-group-wrapper">
         <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
     </span>
-    <igx-grid igxPreventDocumentScroll #grid [data]="data" [height]="'600px'" [width]="'100%'" [cellSelection]="selectionMode">
+    <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" [height]="'600px'" [width]="'100%'" [cellSelection]="selectionMode">
         <igx-column [field]="'ProductID'"></igx-column>
         <igx-column [field]="'ProductName'"></igx-column>
         <igx-column [field]="'UnitsInStock'" [dataType]="'number'"></igx-column>

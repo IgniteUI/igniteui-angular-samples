@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IColumnExportingEventArgs, IgxCsvExporterService, IgxExcelExporterService } from 'igniteui-angular';
+import { GridSelectionMode, IColumnExportingEventArgs, IgxCsvExporterService, IgxExcelExporterService } from 'igniteui-angular';
 import { EMPLOYEE_DATA } from './data';
 
 @Component({
@@ -9,7 +9,7 @@ import { EMPLOYEE_DATA } from './data';
 })
 export class TreeGridChilddatakeySampleComponent implements OnInit {
     public localData: any[];
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     constructor(private excelExporter: IgxExcelExporterService, private csvExporter: IgxCsvExporterService) {
         const skipColumnExport = (eventArgs: IColumnExportingEventArgs) => {
             eventArgs.cancel = eventArgs.header === 'Performance';

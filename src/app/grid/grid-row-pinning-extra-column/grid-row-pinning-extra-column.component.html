@@ -2,7 +2,7 @@
     <igx-switch (change)='changePinningPosition()' style="padding-left: 20px"> Bottom Row Pinning toggle</igx-switch>
 </div>
 <div class="grid-container">
-    <igx-grid #grid igxPreventDocumentScroll [data]="data" [pinning]='pinningConfig' [height]="'520px'" [width]="'100%'"
+    <igx-grid #grid [igxPreventDocumentScroll]="true" [data]="data" [pinning]='pinningConfig' [height]="'520px'" [width]="'100%'"
         [autoGenerate]="false" [primaryKey]="'ID'" [cellSelection]="'none'">
         <igx-column width='70px' [filterable]='false' [pinned]="true">
             <ng-template igxCell let-cell="cell" let-val>

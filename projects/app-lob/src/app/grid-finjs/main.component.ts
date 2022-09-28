@@ -83,12 +83,11 @@ export class FinJSDemoComponent implements OnDestroy {
         }
     }
 
-    public setChartData(args: number[]): void {
+    public setChartData(args: Stock[]): void {
         this.chartData = [];
         args.forEach(row => {
-            this.chartData.push(this.finGrid.grid.data[row]);
-            this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1,
-                this.finGrid.grid.data[row]);
+            this.chartData.push(row);
+            this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1, row);
         });
         // this.controller.controls[2].disabled = this.chartData.length === 0;
         this.setLabelIntervalAndAngle();

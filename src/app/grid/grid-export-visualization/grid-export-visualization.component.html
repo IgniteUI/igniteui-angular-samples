@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll [data]="localData" [moving]="true" [autoGenerate]="false" height="350px" width="100%">
+    <igx-grid [igxPreventDocumentScroll]="true" [data]="localData" [moving]="true" [autoGenerate]="false" height="350px" width="100%">
         <igx-grid-toolbar #toolbar>
             <igx-grid-toolbar-actions>
                 <button [disabled]="toolbar.showProgress" (click)="longRunning(toolbar)" igxButton>

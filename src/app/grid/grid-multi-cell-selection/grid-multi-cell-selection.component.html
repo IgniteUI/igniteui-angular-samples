@@ -3,7 +3,7 @@
 </div>
 <div class="wrapper">
     <div class="left">
-        <igx-grid igxPreventDocumentScroll #source
+        <igx-grid [igxPreventDocumentScroll]="true" #source
             width="100%"
             [allowFiltering]="true"
             filterMode="excelStyleFilter"
@@ -11,12 +11,12 @@
             (columnInit)="initColumn($event)"
             (sortingDone)="transferExpressions(source, target, 'sort')"
             (filteringDone)="transferExpressions(source, target, 'filter')"
-            [data]="sourceData" height="600px" autoGenerate="true">
+            [data]="sourceData" height="600px" [autoGenerate]="true">
         </igx-grid>
     </div>
     <div class="right">
-        <igx-grid igxPreventDocumentScroll #target width="100%"
-            [data]="targetData" height="600px" autoGenerate="true"
+        <igx-grid [igxPreventDocumentScroll]="true" #target width="100%"
+            [data]="targetData" height="600px" [autoGenerate]="true"
             (columnInit)="initColumn($event)">
         </igx-grid>
     </div>

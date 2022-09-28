@@ -11,11 +11,11 @@
             <igx-switch [(ngModel)]="enableExport">Exporting</igx-switch>
         </div>
     </div>
-    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="data" height="390px" width="100%" rowHeight="65px">
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid class="hgrid" [data]="data" height="390px" width="100%" rowHeight="65px">
     <igx-grid-toolbar>
         <igx-grid-toolbar-title>{{ toolbarTitle }}</igx-grid-toolbar-title>
         <igx-grid-toolbar-actions>
-            <igx-grid-toolbar-advanced-filtering *ngIf="enableFiltering" [overlaySettings]="overlaySettingsAuto"></igx-grid-toolbar-advanced-filtering>
+            <igx-grid-toolbar-advanced-filtering *ngIf="enableFiltering"></igx-grid-toolbar-advanced-filtering>
             <igx-grid-toolbar-hiding *ngIf="enableHiding"></igx-grid-toolbar-hiding>
             <igx-grid-toolbar-pinning *ngIf="enablePinning"></igx-grid-toolbar-pinning>
             <igx-grid-toolbar-exporter *ngIf="enableExport"></igx-grid-toolbar-exporter>

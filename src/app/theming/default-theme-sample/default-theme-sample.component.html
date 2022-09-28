@@ -24,7 +24,7 @@
         <igx-date-picker id="date"  [(ngModel)]="record.Date" mode="dialog"><label igxLabel>Date</label></igx-date-picker>
     </div>
 </igx-dialog>
-<div igxOverlayOutlet #outlet>
+<div igxOverlayOutlet #outlet="overlay-outlet">
     <div class="grid-options" igxLayout igxLayoutDir="row" igxLayoutWrap="wrap">
         <button igxButton="flat" class="addProdBtn" (click)="openDialog()">Add New Product</button>
     </div>
@@ -49,6 +49,6 @@
             </ng-template>
         </igx-column>
     </igx-grid>
-    <igx-snackbar #snackbar [outlet]="outlet" displayTime="2500" actionText="Undo" (clicked)="restoreRow()">
+    <igx-snackbar #snackbar [outlet]="outlet" [displayTime]="2500" actionText="Undo" (clicked)="restoreRow()">
     </igx-snackbar>
 </div>

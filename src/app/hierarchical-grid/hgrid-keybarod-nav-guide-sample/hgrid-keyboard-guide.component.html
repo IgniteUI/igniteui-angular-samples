@@ -29,7 +29,7 @@
                 </igx-column-group>
             </igx-column-group>
 
-            <igx-row-island [height]="null" [key]="'Orders'" [autoGenerate]="false" columnSelection="multi" (gridCreated)="onGridCreated($event)" (activeNodeChange)="onActiveNodeChange($event)" [allowAdvancedFiltering]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+            <igx-row-island [height]="null" [key]="'Orders'" [autoGenerate]="false" columnSelection="multiple" (gridCreated)="onGridCreated($event)" (activeNodeChange)="onActiveNodeChange($event)" [allowAdvancedFiltering]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
                 <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid"></igx-grid-toolbar>
 
                 <igx-column-group header="Order Information">

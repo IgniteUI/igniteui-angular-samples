@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GridSelectionMode } from 'igniteui-angular';
 import { FULL_EMPLOYEE_DATA } from '../data/employees';
 
 @Component({
@@ -8,7 +9,7 @@ import { FULL_EMPLOYEE_DATA } from '../data/employees';
 })
 export class TreeGridEmployeesSampleComponent implements OnInit {
     public localData: any[];
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     constructor() { }
 
     public ngOnInit() {

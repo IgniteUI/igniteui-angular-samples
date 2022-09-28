@@ -3,8 +3,8 @@
 </div>
 <div class="wrapper">
     <div class="left">
-        <igx-tree-grid igxPreventDocumentScroll  #source width="100%" (rangeSelected)="transferData(source, target, notification)" (columnInit)="initColumn($event)"
-            (sortingDone)="transferExpressions(source, target, 'sort')"
+        <igx-tree-grid [igxPreventDocumentScroll]="true"  #source width="100%" (rangeSelected)="transferData(source, target, notification)" (columnInit)="initColumn($event)"
+            (sortingDone)="transferExpressions(source, target)"
             [data]="sourceData" height="600px"
             [autoGenerate]="false" primaryKey="ID" foreignKey="ParentID">
             <igx-column field="ID" header="Product ID" [dataType]="'string'">
@@ -21,7 +21,7 @@
         </igx-tree-grid>
     </div>
     <div class="right">
-        <igx-grid igxPreventDocumentScroll #target width="100%" [data]="targetData" height="600px" autoGenerate="true"
+        <igx-grid [igxPreventDocumentScroll]="true" #target width="100%" [data]="targetData" height="600px" [autoGenerate]="true"
             (columnInit)="initColumn($event)">
         </igx-grid>
     </div>

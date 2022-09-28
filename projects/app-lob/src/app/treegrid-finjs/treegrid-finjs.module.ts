@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IgxButtonModule, IgxSliderModule,
     IgxSwitchModule, IgxTreeGridModule } from 'igniteui-angular';
-import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
+import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
 import { TreeGridFinJSComponent } from './tree-grid-finjs-sample.component';
 import { TreeGridFinjsRoutingModule } from './treegrid-finjs-routing.module';
 

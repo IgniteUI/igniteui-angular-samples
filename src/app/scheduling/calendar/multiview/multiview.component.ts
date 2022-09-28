@@ -11,11 +11,11 @@ export class CalendarMultiViewComponent {
     @ViewChild('alert', { static: true }) public dialog: IgxDialogComponent;
     public range = [];
 
-    public selectDates(dates: Date[]) {
-        this.range = dates;
+    public selectDates(dates: Date | Date[]) {
+        this.range = dates as Date[];
     }
 
-    public submitDates(eventArgs) {
+    public submitDates() {
         if (this.range.length < 2) {
             this.dialog.message = 'Select dates from the Calendar first.';
         } else {

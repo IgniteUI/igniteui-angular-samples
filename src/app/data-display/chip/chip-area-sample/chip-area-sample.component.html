@@ -8,12 +8,12 @@
         [removable]="true"
         [removeIcon]="myRemoveIcon"
         (remove)="chipRemoved($event)"
-        [draggable]="'true'">
+        [draggable]="true">
             <igx-avatar
             class="chip-avatar-resized"
             igxPrefix
             [src]="chip.photo"
-            roundShape="true"
+            [roundShape]="true"
             ></igx-avatar>
             {{chip.name}}
         </igx-chip>

@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
 
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" [moving]="true" height="850px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [autoGenerate]="false" [moving]="true" height="850px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
         <igx-column field="ProductName" header="Product Name" [sortable]="true" [dataType]="'string'">
         </igx-column>
         <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [sortable]="true" [dataType]="'string'">

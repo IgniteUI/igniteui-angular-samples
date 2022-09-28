@@ -14,7 +14,7 @@
         <div class="remote-data-loading-template-small"></div>
     </ng-template>
 
-    <igx-grid igxPreventDocumentScroll #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false'
+    <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false'
         (sortingDone)="processData(true)">
         <igx-column [field]="'ProductID'" [sortable]="true" [cellTemplate]="cellTemplate"></igx-column>
         <igx-column [field]="'ProductName'" [sortable]="true" [cellTemplate]="cellTemplate"></igx-column>

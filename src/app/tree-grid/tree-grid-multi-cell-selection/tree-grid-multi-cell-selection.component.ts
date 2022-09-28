@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IgxColumnComponent, IgxToastComponent, IgxTreeGridComponent, VerticalAlignment } from 'igniteui-angular';
+import { IgxColumnComponent, IgxGridComponent, IgxToastComponent, IgxTreeGridComponent, VerticalAlignment } from 'igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 @Component({
@@ -13,7 +13,7 @@ export class TreeGridMultiCellSelectionComponent {
     public sourceData = FOODS_DATA();
     public targetData = [];
 
-    public transferData(source: IgxTreeGridComponent, target: IgxTreeGridComponent,
+    public transferData(source: IgxTreeGridComponent, target: IgxGridComponent,
                         notification: IgxToastComponent) {
         target.shouldGenerate = true;
         target.clearCellSelection();
@@ -27,7 +27,7 @@ export class TreeGridMultiCellSelectionComponent {
         column.sortable = true;
     }
 
-    public transferExpressions(source: IgxTreeGridComponent, target: IgxTreeGridComponent, type: string) {
+    public transferExpressions(source: IgxTreeGridComponent, target: IgxGridComponent) {
         target.sortingExpressions = source.sortingExpressions;
     }
 }

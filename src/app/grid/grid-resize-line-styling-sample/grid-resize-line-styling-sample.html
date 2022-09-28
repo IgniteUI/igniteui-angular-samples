@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll [data]="data" [autoGenerate]="false" height="510px" width="100%" displayDensity="cosy">
+    <igx-grid [igxPreventDocumentScroll]="true" [data]="data" [autoGenerate]="false" height="510px" width="100%" displayDensity="cosy">
         <igx-column [field]="'Id'" [header]="'Rank'" [resizable]="true"></igx-column>
         <igx-column [field]="'Name'" [header]="'Athlete'" [resizable]="true"></igx-column>
         <igx-column [field]="'BeatsPerMinute'" [header]="'Beats per minute'" [resizable]="true"></igx-column>

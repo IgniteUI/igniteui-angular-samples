@@ -14,14 +14,14 @@ import {
 import { GridComponent } from './grid-boston-marathon/grid.component';
 import { GridMasterDetailSampleComponent } from './grid-master-detail/grid-master-detail.component';
 
-import { IgxBarSeriesModule, IgxBollingerBandsOverlayModule, IgxCategoryChartModule, IgxCategoryXAxisComponent, IgxCategoryXAxisModule, IgxDataChartCategoryModule, IgxDataChartComponent,
+import { IgxBarSeriesModule, IgxBollingerBandsOverlayModule, IgxCategoryChartModule, IgxCategoryXAxisModule, IgxDataChartCategoryModule,
     IgxDataChartCoreModule, IgxDataChartInteractivityModule, IgxDataChartScatterModule, IgxDataChartStackedModule,
-    IgxDoughnutChartComponent, IgxDoughnutChartModule, IgxFinancialPriceSeriesModule, IgxIndicatorsModule, IgxItemLegendComponent, IgxItemLegendModule, IgxLegendComponent,
-    IgxLegendModule, IgxNumericXAxisComponent, IgxNumericXAxisModule, IgxNumericYAxisComponent, IgxNumericYAxisModule,
-    IgxPieChartComponent, IgxPieChartModule, IgxRingSeriesModule, IgxSparklineCoreModule, IgxSparklineModule
+    IgxDoughnutChartModule, IgxFinancialPriceSeriesModule, IgxIndicatorsModule, IgxItemLegendModule,
+    IgxLegendModule, IgxNumericXAxisModule, IgxNumericYAxisModule,
+    IgxPieChartModule, IgxRingSeriesModule, IgxSparklineCoreModule, IgxSparklineModule
 } from 'igniteui-angular-charts';
-import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
 import { GridsDVRoutingModule } from './grids-routing.module';
+import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
 
 @NgModule({
     declarations: [

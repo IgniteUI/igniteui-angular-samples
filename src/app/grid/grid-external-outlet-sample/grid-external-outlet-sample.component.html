@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="300px" width="100%"
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [autoGenerate]="false" height="300px" width="100%"
               [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [outlet]="filteringOverlayOutlet">
         <igx-column field="ProductName" header="Product Name" [dataType]="'string'">
         </igx-column>
@@ -22,7 +22,7 @@
 
     <br>
 
-    <igx-grid igxPreventDocumentScroll #grid2 [data]="data" [autoGenerate]="false" height="300px" width="100%"
+    <igx-grid [igxPreventDocumentScroll]="true" #grid2 [data]="data" [autoGenerate]="false" height="300px" width="100%"
               [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [outlet]="filteringOverlayOutlet">
         <igx-column field="ProductName" header="Product Name" [dataType]="'string'">
         </igx-column>

@@ -11,11 +11,11 @@ export class CalendarSample7Component {
     @ViewChild('alert', { static: true }) public dialog: IgxDialogComponent;
     public range = [];
 
-    public selectPTOdays(dates: Date[]) {
-        this.range = dates;
+    public selectPTOdays(dates: Date | Date[]) {
+        this.range = dates as Date[];
     }
 
-    public submitPTOdays(eventArgs) {
+    public submitPTOdays() {
         this.calendar.specialDates =
             [{ type: DateRangeType.Specific, dateRange: this.range }];
 

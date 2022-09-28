@@ -20,7 +20,7 @@
                 <button igxButton="outlined" igxRipple>Buy again</button>
                 <button igxButton="icon"
                     igxRipple
-                    igxRippleCentered="true"
+                    [igxRippleCentered]="true"
                     *ngFor="let icon of product.icons">
                     <igx-icon [style.color]="'#ECAA53'">{{icon}}</igx-icon>
                 </button>

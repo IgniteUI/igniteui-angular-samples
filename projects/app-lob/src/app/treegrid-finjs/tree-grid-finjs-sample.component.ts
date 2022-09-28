@@ -15,11 +15,11 @@ import { SignalRService } from '../services/signal-r.service';
 })
 
 export class TreeGridFinJSComponent implements OnDestroy, OnInit {
-    @ViewChild('grid1', { static: true }) public grid1: IgxTreeGridComponent;
-    @ViewChild('buttonGroup1', { static: true }) public buttonGroup1: IgxButtonGroupComponent;
-    @ViewChild('slider1', { static: true }) public volumeSlider: IgxSliderComponent;
-    @ViewChild('slider2', { static: true }) public intervalSlider: IgxSliderComponent;
-    @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
+    @ViewChild('grid1', { static: true }) public grid1!: IgxTreeGridComponent;
+    @ViewChild('buttonGroup1', { static: true }) public buttonGroup1!: IgxButtonGroupComponent;
+    @ViewChild('slider1', { static: true }) public volumeSlider!: IgxSliderComponent;
+    @ViewChild('slider2', { static: true }) public intervalSlider!: IgxSliderComponent;
+    @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet!: IgxOverlayOutletDirective;
 
     @HostBinding('class.dark-theme')
     public theme = false;
@@ -90,9 +90,9 @@ export class TreeGridFinJSComponent implements OnDestroy, OnInit {
     public regions = REGIONS;
     public isLoading = true;
 
-    private subscription;
-    private selectedButton;
-    private _timer;
+    private subscription: any;
+    private selectedButton: number;
+    private _timer: any;
 
     constructor(private elRef: ElementRef, public dataService: SignalRService) {
         this.dataService.startConnection();
@@ -107,11 +107,11 @@ export class TreeGridFinJSComponent implements OnDestroy, OnInit {
         });
     }
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.overlaySettings.outlet = this.outlet;
     }
 
-    public onButtonAction(event: any) {
+    public onButtonAction(event: any): void {
         switch (event.index) {
             case 0: {
                 this.disableOtherButtons(event.index, true);
@@ -136,12 +136,12 @@ export class TreeGridFinJSComponent implements OnDestroy, OnInit {
         }
     }
 
-    updateVolume() {
+    updateVolume(): void {
         this.dataService.hasRemoteConnection ? this.dataService.broadcastParams(this.frequency, this.volume, false) :
         this.dataService.getData(this.volume);
     }
 
-    public stopFeed() {
+    public stopFeed(): void {
         if (this._timer) {
             clearInterval(this._timer);
         }
