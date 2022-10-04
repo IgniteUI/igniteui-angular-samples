@@ -15,6 +15,7 @@ import {
     IgxInputGroupModule,
     IgxListModule,
     IgxOverlayService,
+    IgxQueryBuilderModule,
     IgxRippleModule,
     IgxSliderModule,
     IgxSwitchModule,
@@ -43,6 +44,8 @@ import { OverlayPresetSettingsSampleComponent } from './overlay/overlay-preset-s
 import { OverlayScrollSample1Component } from './overlay/overlay-scroll-1/overlay-scroll-sample-1.component';
 import { OverlayScrollSample2Component } from './overlay/overlay-scroll-2/overlay-scroll-sample-2.component';
 import { OverlayStylingComponent } from './overlay/overlay-styling/overlay-styling.component';
+import { QueryBuilderSample1Component } from './query-builder/query-builder-sample-1/query-builder-sample-1.component';
+import { QueryBuilderStyleComponent } from './query-builder/query-builder-style/query-builder-style.component';
 import { RippleSample2Component } from './ripple/ripple-sample-2/ripple-sample-2.component';
 import { RippleSample3Component } from './ripple/ripple-sample-3/ripple-sample-3.component';
 import { RippleSample4Component } from './ripple/ripple-sample-4/ripple-sample-4.component';
@@ -103,6 +106,8 @@ import { TooltipStyleComponent } from './tooltip/tooltip-style/tooltip-style.com
         SliderPrimaryTicksTopComponent,
         SliderTimeframeComponent,
         TickLabelsTemplateComponent,
+        QueryBuilderSample1Component,
+        QueryBuilderStyleComponent,
         RippleSample2Component,
         RippleSample3Component,
         RippleSample4Component,
@@ -145,6 +150,7 @@ import { TooltipStyleComponent } from './tooltip/tooltip-style/tooltip-style.com
         IgxIconModule,
         IgxInputGroupModule,
         IgxListModule,
+        IgxQueryBuilderModule,
         IgxRippleModule,
         IgxSliderModule,
         IgxSwitchModule,
