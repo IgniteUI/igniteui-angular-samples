@@ -32,6 +32,17 @@ export class PivotGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/dataToAnalyze.ts'],
             appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPivotGridModule', 'PivotExportComponent', 'IgxPreventDocumentScrollModule', 'IgxExcelExporterService'],
+                ngDeclarations: ['PivotExportComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxPivotGridModule'],
+                ngProviders: ['IgxExcelExporterService']
+            }),
+            component: 'PivotExportComponent'
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/dataToAnalyze.ts'],
+            appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPivotGridModule', 'PivotFeaturesComponent', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['PivotFeaturesComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxPivotGridModule']
