@@ -5,7 +5,9 @@ $black: #292826;
 $muted-yellow: #ffe482;
 
 $custom-query-builder: query-builder-theme(
-    $background: $black
+    $background: $black,
+    $header-background: $black,
+    $header-foreground: $yellow
 );
 
 $custom-button: button-theme(
@@ -25,8 +27,14 @@ $custom-raised-button: button-theme(
     $schema: $dark-material-schema,
     $background: $yellow,
     $foreground: $black,
-    $hover-background: $yellow,
-    $hover-foreground: $black
+    $active-background: $muted-yellow,
+    $active-foreground: $black,
+    $hover-background: $muted-yellow,
+    $hover-foreground: $black,
+    $border-color: $yellow,
+    $active-border-color: $muted-yellow,
+    $hover-border-color: $muted-yellow,
+    $focus-border-color: $yellow
 );
 
 $custom-button-group: button-group-theme(
@@ -80,27 +88,18 @@ $custom-drop-down: drop-down-theme(
     margin: 16px;
 
     ::ng-deep {
-        @include drop-down($custom-drop-down);
-        @include query-builder($custom-query-builder);
+        @include css-vars($custom-drop-down);
+        @include css-vars($custom-query-builder);
+        @include css-vars($custom-button);
+        @include css-vars($custom-button-group);
+        @include css-vars($custom-input-group);
+        @include css-vars($custom-chip);
+        @include css-vars($custom-drop-down);
+        @include css-vars($custom-raised-button);
 
         igx-query-builder {
-            @include button($custom-button);
-            @include button-group($custom-button-group);
-            @include input-group($custom-input-group);
-            @include chip($custom-chip);
-            @include drop-down($custom-drop-down);
-
-            .igx-excel-filter__apply {
-                @include button($custom-raised-button);
-            }
-
-            .igx-filter-empty__title {
+            h6 {
                 color: $yellow
-            }
-
-            .igx-query-builder__header {
-                color: $yellow;
-                background-color: $black;
             }
 
             .igx-filter-tree__expression-actions igx-icon {
@@ -120,9 +119,10 @@ $custom-drop-down: drop-down-theme(
             }
 
             .igx-filter-contextual-menu__close-btn {
-                position: absolute !important;
-                background: $black !important;
-                border-color: $yellow !important;
+                position: absolute;
+                background: $black;
+                border-color: $yellow;
+                color: $yellow;
             }
         }
     }
