@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType } from 'igniteui-angular';
+import { GridSelectionMode, IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType } from 'igniteui-angular';
 import { createData, IDrive } from '../../data/files.data';
 
 @Component({
@@ -12,7 +12,7 @@ export class HGridMultiRowDragComponent {
     @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent, static: true })
     public hGrid: IgxHierarchicalGridComponent;
     public localData: IDrive[] = [];
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     public ids;
     public grid;
     public selected = false;

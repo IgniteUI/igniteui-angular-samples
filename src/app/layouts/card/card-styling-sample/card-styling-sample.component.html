@@ -16,7 +16,7 @@
         <igx-card-actions>
             <button igxButton="icon"
                 igxRipple
-                igxRippleCentered="true"
+                [igxRippleCentered]="true"
                 *ngFor="let icon of card.icons">
                 <igx-icon [style.color]="'#ECAA53'">{{icon}}</igx-icon>
             </button>

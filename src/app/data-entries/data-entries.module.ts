@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     IgcFormsModule,
     IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxComboModule,
-    IgxDatePickerModule, IgxDialogModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
+    IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
     IgxIconModule, IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule,
     IgxSelectModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
 } from 'igniteui-angular';
@@ -160,6 +160,7 @@ import { RatingInFormComponent } from './rating/rating-form/rating-form.componen
         IgxTextSelectionModule,
         IgxFocusModule,
         IgxCardModule,
+        IgxDividerModule,
         IgcFormsModule
     ]
 })

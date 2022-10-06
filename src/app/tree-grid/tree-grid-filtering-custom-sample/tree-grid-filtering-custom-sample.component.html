@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll  #grid1 [data]="data" [autoGenerate]="false" height="550px" width="100%" [allowFiltering]="true"
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  #grid1 [data]="data" [autoGenerate]="false" height="550px" width="100%" [allowFiltering]="true"
         primaryKey="ID" foreignKey="ParentID">
         <igx-column field="ID" header="Product ID" [dataType]="'string'">
         </igx-column>

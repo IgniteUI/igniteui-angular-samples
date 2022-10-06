@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" height="500px" width="100%" [autoGenerate]="false">
-        <igx-column header="Rank" field="Id" sortable="true" [editable]="true" [sortable]="true" [cellClasses]="rankClasses"></igx-column>
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" height="500px" width="100%" [autoGenerate]="false">
+        <igx-column header="Rank" field="Id" [sortable]="true" [editable]="true" [sortable]="true" [cellClasses]="rankClasses"></igx-column>
         <igx-column field="Name" header="Athlete" [sortable]="true"></igx-column>
         <igx-column field="BeatsPerMinute" header="Beats per minute" dataType="number" [editable]="true" [sortable]="true"
             [cellClasses]="beatsPerMinuteClasses"></igx-column>

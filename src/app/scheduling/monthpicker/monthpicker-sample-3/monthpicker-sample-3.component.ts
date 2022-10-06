@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IFormattingOptions } from 'igniteui-angular';
 
 @Component({
     selector: 'app-monthpicker-sample-3',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
     templateUrl: './monthpicker-sample-3.component.html'
 })
 export class MonthpickerSample3Component {
-    public formatOptions = {
+    public formatOptions: IFormattingOptions = {
         month: 'long'
     };
 

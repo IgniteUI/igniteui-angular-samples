@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GridSelectionMode } from 'igniteui-angular';
 import { Data } from './data';
 
 @Component({
@@ -8,7 +9,7 @@ import { Data } from './data';
 })
 export class TreeGridPrimaryforeignkeySampleComponent implements OnInit {
     public data: any[];
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     constructor() { }
 
     public ngOnInit() {

@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll #treeGrid [width]="'100%'" [height]="'500px'" [data]="data" primaryKey="ID"
+    <igx-tree-grid [igxPreventDocumentScroll]="true" #treeGrid [width]="'100%'" [height]="'500px'" [data]="data" primaryKey="ID"
         foreignKey="ParentID" [autoGenerate]="false" [batchEditing]="true" [rowEditable]="true"
         (formGroupCreated)="formCreateHandler($event)">
         <igx-column field="ID" header="ID" dataType="number" [editable]="false"></igx-column>

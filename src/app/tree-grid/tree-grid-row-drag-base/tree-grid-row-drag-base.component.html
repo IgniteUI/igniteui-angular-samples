@@ -3,7 +3,7 @@
     <igx-icon>delete</igx-icon>
     <div>Drag a row here to delete it</div>
 </div>
-<igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="localData" [moving]="true" childDataKey="Employees" width="800px" height="540px" [autoGenerate]="false"
+<igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid [data]="localData" [moving]="true" childDataKey="Employees" width="800px" height="540px" [autoGenerate]="false"
     [rowDraggable]="true" [allowFiltering]="true"
     (rowDragEnd)="onRowDragEnd($event)">
     <igx-paginator></igx-paginator>

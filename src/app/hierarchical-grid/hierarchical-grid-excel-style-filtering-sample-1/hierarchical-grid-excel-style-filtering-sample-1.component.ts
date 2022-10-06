@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { DisplayDensity, IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({
@@ -15,7 +15,7 @@ export class HGridExcelStyleFilteringSample1Component implements OnInit {
 
     public localdata;
 
-    public density = 'comfortable';
+    public density: DisplayDensity = 'comfortable';
     public displayDensities;
 
     constructor() {

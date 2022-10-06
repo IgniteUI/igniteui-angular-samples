@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll [data]="data" height="510px" width="100%" cellSelection="none" primaryKey="ID" rowSelection="multiple" (rowSelectionChanging)="onRowSelect($event)">
+    <igx-grid [igxPreventDocumentScroll]="true" [data]="data" height="510px" width="100%" cellSelection="none" primaryKey="ID" rowSelection="multiple" (rowSelectionChanging)="onRowSelect($event)">
         <igx-paginator></igx-paginator>
         <igx-column field="ContactName" width="20%"></igx-column>
         <igx-column field="Country" width="20%"></igx-column>

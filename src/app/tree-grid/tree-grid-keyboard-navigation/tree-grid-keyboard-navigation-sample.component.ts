@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IGridKeydownEventArgs, CellType, IgxTreeGridComponent } from 'igniteui-angular';
+import { IGridKeydownEventArgs, CellType, IgxTreeGridComponent, GridSelectionMode } from 'igniteui-angular';
 import { EMPLOYEE_DATA } from './data';
 
 @Component({
@@ -11,7 +11,7 @@ export class TreeGridKBNavigationComponent implements OnInit {
     @ViewChild('grid1', { read: IgxTreeGridComponent, static: true })
     public grid1: IgxTreeGridComponent;
     public localData: any[];
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     constructor() { }
 
     public ngOnInit() {

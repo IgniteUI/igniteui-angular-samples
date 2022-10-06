@@ -1,10 +1,10 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data | async" width="100%" 
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data | async" width="100%"
         height="580px" [isLoading]="isLoading" [pagingMode]="mode">
         <igx-paginator
             [(page)]="page"
             [(perPage)]="perPage"
-            [totalRecords]="totalCount" 
+            [totalRecords]="totalCount"
             (pagingDone)="paginate($event.current)">
         </igx-paginator>
         <igx-column field="ID"></igx-column>

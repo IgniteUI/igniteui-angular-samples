@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxTreeGridComponent } from 'igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 @Component({
@@ -11,7 +11,7 @@ export class TreeGridColumnSelectionComponent implements OnInit, AfterViewInit {
     @ViewChild(IgxTreeGridComponent)
     public tGrid: IgxTreeGridComponent;
     public data;
-    public currentColumnSelection = 'single';
+    public currentColumnSelection: GridSelectionMode = 'single';
     public columnConfig = [
         { field: 'ID', selectable: true },
         { field: 'Name', selectable: true },

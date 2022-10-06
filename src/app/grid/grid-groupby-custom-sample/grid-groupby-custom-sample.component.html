@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-        <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [width]="'100%'" [height]="'570px'" [groupingExpressions]="initialExpr">
+        <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [width]="'100%'" [height]="'570px'" [groupingExpressions]="initialExpr">
             <igx-grid-toolbar>
                 <button igxButton="raised" [igxToggleAction]="dropDown" [igxDropDownItemNavigation]="dropDown">Group By {{ groupByMode }}</button>
                 <igx-drop-down #dropDown (selectionChanging)="selectionChange($event)">

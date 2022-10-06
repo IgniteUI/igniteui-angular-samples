@@ -1,14 +1,14 @@
 <div class="grid__wrapper">
 <button igxButton="raised" (click)="dialogAdd.open()" class="addSingerBtn">Add New Singer</button>
-<igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="localdata" [autoGenerate]="false"
+<igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid class="hgrid" [data]="localdata" [autoGenerate]="false"
     [height]="'580px'" [width]="'100%'">
     <igx-column field="Artist" [editable]="true" [dataType]="'string'"></igx-column>
     <igx-column field="HasGrammyAward" header="Has Grammy Award?" [editable]="true" [dataType]="'boolean'">
     </igx-column>
     <igx-column field="Debut" [editable]="true" dataType="number" [formatter]="formatter"></igx-column>
-    <igx-column field="GrammyNominations" header="Grammy Nominations" [editable]="true" dataType="number" 
+    <igx-column field="GrammyNominations" header="Grammy Nominations" [editable]="true" dataType="number"
         [hasSummary]="true" [summaries]="mySummary"></igx-column>
-    <igx-column field="GrammyAwards" header="Grammy Awards" [editable]="true" dataType="number" 
+    <igx-column field="GrammyAwards" header="Grammy Awards" [editable]="true" dataType="number"
         [hasSummary]="true" [summaries]="mySummary"></igx-column>
     <igx-column [width]="'100px'">
         <ng-template igxCell let-cell="cell">

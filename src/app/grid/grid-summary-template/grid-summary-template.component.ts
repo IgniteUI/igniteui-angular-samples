@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
+import { DisplayDensity, IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 class DiscontinuedSummary {
@@ -37,7 +37,7 @@ export class GridSummaryTemplateComponent implements OnInit {
     public discontinuedSummary = DiscontinuedSummary;
     public data;
     public summaryHeight = 135;
-    public displayDensity = 'cosy';
+    public displayDensity: DisplayDensity = 'cosy';
     public displayDensities;
     public hasSummary = true;
 

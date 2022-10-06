@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 import { DOCUMENT } from '@angular/common';
 import { Component, ElementRef, EventEmitter, Inject, OnInit, Output, ViewChild } from '@angular/core';
-import { CellType, DefaultSortingStrategy, IGridKeydownEventArgs, IgxGridComponent, IgxOverlayOutletDirective, IRowSelectionEventArgs, OverlaySettings, SortingDirection } from 'igniteui-angular';
+import { CellType, DefaultSortingStrategy, GridSelectionMode, IGridKeydownEventArgs, IgxGridComponent, IgxOverlayOutletDirective, IRowSelectionEventArgs, OverlaySettings, SortingDirection } from 'igniteui-angular';
 import { BehaviorSubject } from 'rxjs';
-import { Stock } from '../data/financialData';
+import { Contract, REGIONS, Stock } from '../data/financialData';
 import { SignalRService } from '../services/signal-r.service';
 
 @Component({
@@ -18,7 +18,9 @@ export class GridFinJSComponent implements OnInit {
     @Output() public keyDown = new EventEmitter();
     @Output() public chartColumnKeyDown = new EventEmitter<Stock>();
 
-    public selectionMode = 'multiple';
+    public contracts = Contract;
+    public regions = REGIONS;
+    public selectionMode: GridSelectionMode = 'multiple';
     public volume = 1000;
     public frequency = 500;
     public data$: BehaviorSubject<Stock[]>;

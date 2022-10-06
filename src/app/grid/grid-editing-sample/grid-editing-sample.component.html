@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <div class="sample__header">
-        <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" displayDensity="cosy" width="100%" height="600px" [primaryKey]="'ProductID'" [allowFiltering]="true" (rowDeleted)="show($event)">
+        <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [autoGenerate]="false" displayDensity="cosy" width="100%" height="600px" [primaryKey]="'ProductID'" [allowFiltering]="true" (rowDeleted)="show($event)">
             <igx-paginator [perPage]="10"></igx-paginator>
             <igx-grid-toolbar>
 

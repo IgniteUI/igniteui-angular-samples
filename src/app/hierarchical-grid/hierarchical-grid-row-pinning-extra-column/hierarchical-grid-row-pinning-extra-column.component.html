@@ -2,7 +2,7 @@
     <igx-switch (change)='changePinningPosition()' style="padding-left: 20px">Bottom Row Pinning toggle</igx-switch>
 </div>
 <div class="grid-container">
-    <igx-hierarchical-grid igxPreventDocumentScroll #hierarchicalGrid [data]="localData" [primaryKey]="'Photo'" [autoGenerate]="false"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hierarchicalGrid [data]="localData" [primaryKey]="'Photo'" [autoGenerate]="false"
         [height]="'520px'" [width]="'100%'" [rowHeight]="'65px'" [pinning]='pinningConfig' [cellSelection]="'none'">
         <igx-column width='70px' [filterable]='false' [pinned]="true">
             <ng-template igxCell let-cell="cell" let-val>

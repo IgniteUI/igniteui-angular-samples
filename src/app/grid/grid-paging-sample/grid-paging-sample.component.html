@@ -1,8 +1,8 @@
 <div class="grid__wrapper">
 
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" height="500px" width="100%" displayDensity="cosy">
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" height="500px" width="100%" displayDensity="cosy">
         <igx-paginator [perPage]="10"></igx-paginator>
-        <igx-column header="Rank" headerClasses="myClass" field="Id" sortable="true"></igx-column>
+        <igx-column header="Rank" headerClasses="myClass" field="Id" [sortable]="true"></igx-column>
         <igx-column field="Name" header="Athlete"></igx-column>
         <igx-column field="BeatsPerMinute" header="Beats per minute" dataType="number">
             <ng-template igxCell let-val>

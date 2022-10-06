@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-<igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="localData" [autoGenerate]="false" [height]="'600px'"
+<igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid class="hgrid" [data]="localData" [autoGenerate]="false" [height]="'600px'"
     [width]="'100%'" [rowStyles]="rowStyles">
     <igx-column field="Artist" [editable]="true" [dataType]="'string'" required [cellClasses]="cellStyles">
         <ng-template igxCellValidationError let-cell='cell' let-defaultErr='defaultErrorTemplate'>

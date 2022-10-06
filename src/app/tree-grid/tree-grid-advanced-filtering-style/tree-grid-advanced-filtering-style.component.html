@@ -1,5 +1,5 @@
 
-<igx-tree-grid igxPreventDocumentScroll  #treeGrid1 [data]="data" [autoGenerate]="false" primaryKey="ID" foreignKey="ParentID" [allowAdvancedFiltering]="true" height="480px" width="100%" >
+<igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid1 [data]="data" [autoGenerate]="false" primaryKey="ID" foreignKey="ParentID" [allowAdvancedFiltering]="true" height="480px" width="100%" >
     <igx-grid-toolbar></igx-grid-toolbar>
 
     <igx-column [field]="'Name'" dataType="string" [sortable]="true"></igx-column>

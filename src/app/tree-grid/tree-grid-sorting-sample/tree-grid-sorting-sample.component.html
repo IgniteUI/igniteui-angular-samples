@@ -1,5 +1,5 @@
 <div class="grid__wrapper" (window:click)="disableContextMenu()">
-    <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  #treegrid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
         primaryKey="ID" foreignKey="ParentID" (contextMenu)="rightClick($event)" [sortingOptions]="sortingOptions">
         <igx-grid-toolbar>
             <button class="button-opitions" igxButton="raised" (click)="treegrid1.sortingExpressions = []">

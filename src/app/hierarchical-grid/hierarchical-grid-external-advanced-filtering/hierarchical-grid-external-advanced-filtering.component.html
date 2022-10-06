@@ -2,7 +2,7 @@
     <igx-advanced-filtering-dialog class="advanced-dialog" [grid]="hierarchicalGrid">
     </igx-advanced-filtering-dialog>
 
-    <igx-hierarchical-grid igxPreventDocumentScroll  [data]="localdata" [autoGenerate]="false" [height]="'400px'"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  [data]="localdata" [autoGenerate]="false" [height]="'400px'"
         [rowHeight]="'65px'" #hierarchicalGrid>
         <igx-column field="Artist"></igx-column>
         <igx-column field="Photo" [filterable]="false">

@@ -77,31 +77,31 @@
     </span>
 
     <span class="grid-wrapper">
-        <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [allowFiltering]="true" [locale]="locale"
+        <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [allowFiltering]="true" [locale]="locale"
             [filterMode]="'excelStyleFilter'" [autoGenerate]="false" [height]="null" displayDensity="compact">
             <igx-column field="ProductName" [width]="'120px'" header="Prod. Name" [sortable]="true" [hasSummary]="true"
-                [editable]="true" [dataType]="'string'" resizable="true">
+                [editable]="true" [dataType]="'string'" [resizable]="true">
             </igx-column>
             <igx-column field="UnitPrice" [width]="'100px'" header="Unit Price" [sortable]="true" [hasSummary]="true" [editable]="true"
-                [pipeArgs]="formatOptions" [dataType]="'number'" resizable="true">
+                [pipeArgs]="formatOptions" [dataType]="'number'" [resizable]="true">
             </igx-column>
             <igx-column field="OrderFullDate" [width]="'250px'" header="Order Full Date" [sortable]="true" [hasSummary]="true" [editable]="true"
-                [pipeArgs]="formatDateTimeOptions" [dataType]="'dateTime'" resizable="true">
+                [pipeArgs]="formatDateTimeOptions" [dataType]="'dateTime'" [resizable]="true">
             </igx-column>
             <igx-column field="OrderDate" [width]="'160px'" header="Order Date" [sortable]="true" [hasSummary]="true" [editable]="true"
-                [pipeArgs]="formatDateOptions" [dataType]="'date'" resizable="true">
+                [pipeArgs]="formatDateOptions" [dataType]="'date'" [resizable]="true">
             </igx-column>
             <igx-column field="OrderDateDelay" [width]="'120px'" header="Order Time" [sortable]="true" [hasSummary]="true" [editable]="true"
-                [pipeArgs]="formatTimeOptions" [dataType]="'time'" resizable="true">
+                [pipeArgs]="formatTimeOptions" [dataType]="'time'" [resizable]="true">
             </igx-column>
             <igx-column field="UnitsInStock" [width]="'120px'" header="Stock Value" [sortable]="true" [hasSummary]="true"
-                [editable]="true" [pipeArgs]="formatOptions" [dataType]="'currency'" resizable="true">
+                [editable]="true" [pipeArgs]="formatOptions" [dataType]="'currency'" [resizable]="true">
             </igx-column>
             <igx-column field="UnitsOnOrder" [width]="'120px'" header="% Change" [sortable]="true" [hasSummary]="true"
-                [editable]="true" [pipeArgs]="formatOptions" [dataType]="'percent'" resizable="true">
+                [editable]="true" [pipeArgs]="formatOptions" [dataType]="'percent'" [resizable]="true">
             </igx-column>
             <igx-column field="Discontinued" [width]="'120px'" header="Discontinued" [sortable]="true" [hasSummary]="true"
-                [editable]="true" [dataType]="'boolean'" resizable="true">
+                [editable]="true" [dataType]="'boolean'" [resizable]="true">
             </igx-column>
         </igx-grid>
     </span>
