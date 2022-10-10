@@ -70,11 +70,13 @@ export class CRUDSampleComponent implements OnInit, OnDestroy {
     }
 
     public rowEditDone(event: IGridEditDoneEventArgs) {
-        this.grid.isLoading = true;
-        this._crudService.update(event.newValue).subscribe((rec) => {
-            this.grid.isLoading = false;
-            this.snackbar.open(`Row with ID of ${rec.ID} was edited.`);
-        });
+        if (!event.isAddRow) {
+            this.grid.isLoading = true;
+            this._crudService.update(event.newValue).subscribe((rec) => {
+                this.grid.isLoading = false;
+                this.snackbar.open(`Row with ID of ${rec.ID} was edited.`);
+            });
+        }
     }
 
     public removeRow(row: IgxGridRow) {
