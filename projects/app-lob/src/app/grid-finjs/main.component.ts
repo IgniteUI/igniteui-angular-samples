@@ -20,7 +20,7 @@ export class FinJSDemoComponent implements OnDestroy {
     public darkTheme = false;
 
     public properties = ['price', 'country'];
-    public chartData: Stock[] = [];
+    public chartData: any[] = [];
     public volume = 1000;
     public frequency = 500;
     private _timer: ReturnType<typeof setInterval>;
@@ -86,7 +86,14 @@ export class FinJSDemoComponent implements OnDestroy {
     public setChartData(args: Stock[]): void {
         this.chartData = [];
         args.forEach(row => {
-            this.chartData.push(row);
+            this.finGrid.grid.data.filter(data => {
+                if (data.id === row) {
+                    this.chartData.push({
+                        country: data.country,
+                        price: data.price
+                    });
+                }
+            });
             this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1, row);
         });
         // this.controller.controls[2].disabled = this.chartData.length === 0;
