@@ -5,11 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
-    IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule,
-    IgxCheckboxModule, IgxChipsModule, IgxComboModule,
-    IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxExpansionPanelModule, IgxFocusModule,
-    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSimpleComboModule, IgxSliderModule,
-    IgxSnackbarModule, IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
+    IgcFormsModule, IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule,
+    IgxCardModule, IgxCheckboxModule, IgxChipsModule, IgxComboModule, IgxDatePickerModule, IgxDialogModule, IgxDividerModule,
+    IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule,
+    IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSimpleComboModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
+    IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from 'igniteui-angular';
 import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
 import { GridColumnGroupSelectionComponent } from './column-group-selection-sample/column-group-selection-sample.component';
@@ -272,6 +272,7 @@ import { GridValidatorServiceExtendedComponent, PhoneFormatDirective } from './g
         IgxPreventDocumentScrollModule,
         HttpClientModule,
         GridsRoutingModule,
+        IgcFormsModule,
         IgxActionStripModule,
         IgxAvatarModule,
         IgxBadgeModule,
