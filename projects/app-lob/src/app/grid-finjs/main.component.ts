@@ -1,5 +1,5 @@
-import { Component, HostBinding, OnDestroy, ViewChild } from '@angular/core';
-import { IgxDialogComponent } from 'igniteui-angular';
+import { AfterViewInit, Component, HostBinding, OnDestroy, ViewChild } from '@angular/core';
+import { IgxDialogComponent, IgxOverlayOutletDirective, OverlaySettings } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
 import { Stock } from '../data/financialData';
 import { ControllerComponent } from './controllers.component';
@@ -10,11 +10,12 @@ import { GridFinJSComponent } from './grid-finjs.component';
     styleUrls: ['./main.component.scss'],
     templateUrl: './main.component.html'
 })
-export class FinJSDemoComponent implements OnDestroy {
+export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
     @ViewChild('finGrid', { static: true }) public finGrid: GridFinJSComponent;
     @ViewChild('controllers', { static: true }) public controller: ControllerComponent;
     @ViewChild('dialog', { static: true }) public dialog: IgxDialogComponent;
     @ViewChild('chart1', { static: true }) public chart: IgxCategoryChartComponent;
+    @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
 
     @HostBinding('class.dark-theme')
     public darkTheme = false;
@@ -42,6 +43,16 @@ export class FinJSDemoComponent implements OnDestroy {
             default: break;
         }
     }
+
+    public ngAfterViewInit(): void {
+        this.overlaySettings.outlet = this.outlet;
+
+    }
+
+    public overlaySettings: OverlaySettings = {
+        modal: false,
+        closeOnOutsideClick: true
+    };
 
     public onVolumeChanged(volume: number): void {
         this.volume = volume;
@@ -71,7 +82,7 @@ export class FinJSDemoComponent implements OnDestroy {
             case 'chart': {
                 if (this.finGrid.grid.selectedRows.length !== 0) {
                     this.setChartData(this.finGrid.grid.selectedRows);
-                    this.dialog.open();
+                    this.dialog.open(this.overlaySettings);
                 } else {
                     this.controller.toast.open('Please select some rows first!');
                 };
