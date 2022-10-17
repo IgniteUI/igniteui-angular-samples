@@ -46,7 +46,6 @@ export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
 
     public ngAfterViewInit(): void {
         this.overlaySettings.outlet = this.outlet;
-
     }
 
     public overlaySettings: OverlaySettings = {
