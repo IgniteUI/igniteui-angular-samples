@@ -9,8 +9,13 @@
 }
 
 .chart-container {
-
     width: 50vw;
+}
+
+::ng-deep {
+    .igx-dialog__window:has(.igx-dialog__window-content):has(.chart-container.fin-dark-theme) {
+        background-color: rgb(51, 51, 51);
+    }
 }
 
 :host ::ng-deep {

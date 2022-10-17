@@ -13,7 +13,7 @@
 </div>
 
 <igx-dialog #dialog [closeOnOutsideSelect]="true" (closing)="onCloseHandler()">
-    <div (keydown)="closeDialog()" class="chart-container">
+    <div (keydown)="closeDialog()" class="chart-container" [class.fin-dark-theme]="darkTheme">
         <igx-dialog-title> Chart </igx-dialog-title>
 
         <div>
