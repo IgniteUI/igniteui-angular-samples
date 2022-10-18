@@ -17,6 +17,11 @@ export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
     @ViewChild('chart1', { static: true }) public chart: IgxCategoryChartComponent;
     @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
 
+    public overlaySettings: OverlaySettings = {
+        modal: false,
+        closeOnOutsideClick: true
+    };
+
     @HostBinding('class.dark-theme')
     public darkTheme = false;
 
@@ -47,11 +52,6 @@ export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
     public ngAfterViewInit(): void {
         this.overlaySettings.outlet = this.outlet;
     }
-
-    public overlaySettings: OverlaySettings = {
-        modal: false,
-        closeOnOutsideClick: true
-    };
 
     public onVolumeChanged(volume: number): void {
         this.volume = volume;
