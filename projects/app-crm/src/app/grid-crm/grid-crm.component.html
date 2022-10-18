@@ -1,4 +1,4 @@
-<div class="grid__wrapper">
+<div [ngClass]="{'grid__wrapper': true, 'dark_grid': dark === true }">
     <igx-grid #grid1 [igxPreventDocumentScroll]="true" id="grid1" [data]="localData" [height]="'430px'" [moving]="true" [width]="'100%'" [rowSelection]="selectionMode" displayDensity="cosy" rowHeight="50" [allowFiltering]="true">
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>
