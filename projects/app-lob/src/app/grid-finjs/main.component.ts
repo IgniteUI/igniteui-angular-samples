@@ -26,7 +26,7 @@ export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
     public darkTheme = false;
 
     public properties = ['price', 'country'];
-    public chartData = [];
+    public chartData: Stock[] = [];
     public volume = 1000;
     public frequency = 500;
     private _timer: ReturnType<typeof setInterval>;
@@ -95,15 +95,11 @@ export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
 
     public setChartData(args: Stock[]): void {
         this.chartData = [];
-        this.finGrid.grid.data.filter(data => {
-            if (args.indexOf(data.id) > -1) {
-                this.chartData.push({
-                    country: data.country,
-                    price: data.price
-                });
-            }
+        args.forEach(rowKey => {
+            const row: Stock = this.finGrid.grid.getRowByKey(rowKey).data;
+            this.chartData.push(row);
+            this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1, row);
         });
-        this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1, [...args]);
         // this.controller.controls[2].disabled = this.chartData.length === 0;
         this.setLabelIntervalAndAngle();
         this.setChartConfig('Countries', 'Prices (USD)', 'Data Chart with prices by Category and Country');
