@@ -123,6 +123,6 @@ export class PivotExportComponent {
     }
 
     public exportButtonHandler() {
-        this.excelExportService.export(this.grid, new IgxExcelExporterOptions('ExportedPivotGrid'));
+        this.excelExportService.export(this.grid, new IgxExcelExporterOptions('ExportedDataFile'));
     }
 }
