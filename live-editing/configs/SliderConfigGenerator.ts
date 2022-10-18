@@ -2,9 +2,9 @@ import {IgxButtonModule,
 IgxIconModule,
 IgxInputGroupModule,
 IgxSliderModule} from 'igniteui-angular';
+import { HammerModule } from '@angular/platform-browser';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class SliderConfigGenerator implements IConfigGenerator {
-
 
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -13,9 +13,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SliderSample1Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxInputGroupModule', 'IgxSliderModule', 'SliderSample1Component'],
+                imports: ['IgxInputGroupModule', 'IgxSliderModule', 'SliderSample1Component', 'HammerModule'],
                 ngDeclarations: ['SliderSample1Component'],
-                ngImports: ['IgxInputGroupModule', 'IgxSliderModule']
+                ngImports: ['IgxInputGroupModule', 'IgxSliderModule', 'HammerModule']
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
@@ -24,9 +24,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SliderSample2Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSliderModule', 'SliderSample2Component'],
+                imports: ['IgxSliderModule', 'SliderSample2Component', 'HammerModule'],
                 ngDeclarations: ['SliderSample2Component'],
-                ngImports: ['IgxSliderModule']
+                ngImports: ['IgxSliderModule', 'HammerModule']
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
@@ -35,9 +35,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SliderSample3Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxInputGroupModule', 'IgxSliderModule', 'SliderSample3Component'],
+                imports: ['IgxInputGroupModule', 'IgxSliderModule', 'SliderSample3Component', 'HammerModule'],
                 ngDeclarations: ['SliderSample3Component'],
-                ngImports: ['IgxInputGroupModule', 'IgxSliderModule']
+                ngImports: ['IgxInputGroupModule', 'IgxSliderModule', 'HammerModule']
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
@@ -46,9 +46,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SliderSample4Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSliderModule', 'SliderSample4Component'],
+                imports: ['IgxSliderModule', 'SliderSample4Component', 'HammerModule'],
                 ngDeclarations: ['SliderSample4Component'],
-                ngImports: ['IgxSliderModule']
+                ngImports: ['IgxSliderModule', 'HammerModule']
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
@@ -57,9 +57,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SliderSample5Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSliderModule', 'SliderSample5Component'],
+                imports: ['IgxSliderModule', 'SliderSample5Component', 'HammerModule'],
                 ngDeclarations: ['SliderSample5Component'],
-                ngImports: ['IgxSliderModule']
+                ngImports: ['IgxSliderModule', 'HammerModule']
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
@@ -68,9 +68,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SliderSample6Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSliderModule', 'SliderSample6Component'],
+                imports: ['IgxSliderModule', 'SliderSample6Component', 'HammerModule'],
                 ngDeclarations: ['SliderSample6Component'],
-                ngImports: ['IgxSliderModule']
+                ngImports: ['IgxSliderModule', 'HammerModule']
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
@@ -78,9 +78,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SliderSecondaryTicksMirrorComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxButtonModule', 'IgxIconModule', 'IgxSliderModule', 'SliderSecondaryTicksMirrorComponent'],
+                imports: ['IgxButtonModule', 'IgxIconModule', 'IgxSliderModule', 'SliderSecondaryTicksMirrorComponent', 'HammerModule'],
                 ngDeclarations: ['SliderSecondaryTicksMirrorComponent'],
-                ngImports: ['IgxButtonModule', 'IgxIconModule', 'IgxSliderModule']
+                ngImports: ['IgxButtonModule', 'IgxIconModule', 'IgxSliderModule', 'HammerModule']
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
@@ -88,9 +88,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SliderDiscreteTicksBottomComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSliderModule', 'SliderDiscreteTicksBottomComponent'],
+                imports: ['IgxSliderModule', 'SliderDiscreteTicksBottomComponent', 'HammerModule'],
                 ngDeclarations: ['SliderDiscreteTicksBottomComponent'],
-                ngImports: ['IgxSliderModule']
+                ngImports: ['IgxSliderModule', 'HammerModule']
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
@@ -98,9 +98,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SliderTicksBottomtotopLabelsComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxInputGroupModule', 'IgxSliderModule', 'SliderTicksBottomtotopLabelsComponent'],
+                imports: ['IgxInputGroupModule', 'IgxSliderModule', 'SliderTicksBottomtotopLabelsComponent', 'HammerModule'],
                 ngDeclarations: ['SliderTicksBottomtotopLabelsComponent'],
-                ngImports: ['IgxInputGroupModule', 'IgxSliderModule']
+                ngImports: ['IgxInputGroupModule', 'IgxSliderModule', 'HammerModule']
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
@@ -108,9 +108,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SliderPrimaryTicksTopComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSliderModule', 'SliderPrimaryTicksTopComponent'],
+                imports: ['IgxSliderModule', 'SliderPrimaryTicksTopComponent', 'HammerModule'],
                 ngDeclarations: ['SliderPrimaryTicksTopComponent'],
-                ngImports: ['IgxSliderModule']
+                ngImports: ['IgxSliderModule', 'HammerModule']
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
@@ -118,9 +118,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SliderTimeframeComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSliderModule', 'SliderTimeframeComponent'],
+                imports: ['IgxSliderModule', 'SliderTimeframeComponent', 'HammerModule'],
                 ngDeclarations: ['SliderTimeframeComponent'],
-                ngImports: ['IgxSliderModule']
+                ngImports: ['IgxSliderModule', 'HammerModule']
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
@@ -128,9 +128,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'TickLabelsTemplateComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSliderModule', 'TickLabelsTemplateComponent'],
+                imports: ['IgxSliderModule', 'TickLabelsTemplateComponent', 'HammerModule'],
                 ngDeclarations: ['TickLabelsTemplateComponent'],
-                ngImports: ['IgxSliderModule']
+                ngImports: ['IgxSliderModule', 'HammerModule']
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
@@ -138,9 +138,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'AppSliderStylingComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSliderModule', 'AppSliderStylingComponent'],
+                imports: ['IgxSliderModule', 'AppSliderStylingComponent', 'HammerModule'],
                 ngDeclarations: ['AppSliderStylingComponent'],
-                ngImports: ['IgxSliderModule']
+                ngImports: ['IgxSliderModule', 'HammerModule']
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
