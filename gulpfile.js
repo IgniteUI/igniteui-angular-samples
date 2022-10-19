@@ -61,7 +61,6 @@ const createPrependerdLobStructure = (cb) => {
     folders.forEach(dir => {
         if (!fs.existsSync(dir)) {
             fs.mkdirSync(dir);
-            console.log('📁  folder created:', dir);
         }
     });
     cb();
@@ -73,8 +72,6 @@ const addPrerenderedLobPages = (cb) => {
 
     // read in the index.html file
     fs.readFile(indexFilePath, 'utf8', function (err, data) {
-        console.log('Read in index.html');
-
         if (err) {
             return console.error(err);
         }

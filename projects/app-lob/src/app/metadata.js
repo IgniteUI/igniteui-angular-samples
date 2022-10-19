@@ -1,17 +1,4 @@
 const Routes = {
-    // Landing: '/',
-    // GridFinjs: '/grid-finjs',
-    // TreeGridFinjs: '/treegrid-finjs',
-    // TreeGridChilddatakey: '/tree-grid/treegrid-childdatakey',
-    // TreeGridPrimaryforeignkey: '/tree-grid/treegrid-primaryforeignkey',
-    // BostonMarathon: '/grid/grid',
-    // MasterDetail: '/grid/grid-master-detail',
-    // FinJsDockManagerGrid: '/grid-finjs-dock-manager/grid-finjs-dock-manager',
-    // HierarchicalGrid: '/hierarchical-grid/hierarchical-grid-resizing',
-
-    // GridDynamicChartDataAnalysis: '/custom-product-space',
-    // GridDynamicChartDataAnalysisDockmanager: '/custom-industry-space',
-
     Landing: '/',
     GridFinjs: '/grid-finjs',
     TreeGridFinjs: '/treegrid-finjs',
