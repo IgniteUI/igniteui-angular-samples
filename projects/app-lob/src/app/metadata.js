@@ -25,52 +25,71 @@ const Routes = {
 
 const defaultTitle = 'Data Grids built with Ignite UI for Angular';
 const defaultDescription = 'Data Grids built with Ignite UI for Angular Description';
+const defaultOgUrl = 'https://www.infragistics.com';
 
 const metadata = [
     {
         url: Routes.Landing,
         title: defaultTitle,
-        description: defaultDescription
+        description: defaultDescription,
+        og_url: defaultOgUrl,
+        folder: ''
     },
     {
         url: Routes.GridFinjs,
-        title: 'GridFinjs | ' + defaultTitle,
-        description: 'GridFinjs' + defaultDescription
+        title: 'Real-Time Financial Analysis Data Grid built with Ignite UI for Angular',
+        description: 'Real-Time Financial Analysis Data Grid built with Ignite UI for Angular',
+        og_url: 'https://www.infragistics.com/angular-demos-lob/grid-finjs',
+        folder: ''
     },
     {
         url: Routes.TreeGridFinjs,
-        title: 'TreeGridFinjs | ' + defaultTitle,
-        description: 'TreeGridFinjs' + defaultDescription
+        title: 'Angular Tree Grid Example built with Ignite UI for Angular',
+        description: 'Angular Tree Grid Example built with Ignite UI for Angular',
+        og_url: 'https://www.infragistics.com/angular-demos-lob/treegrid-finjs',
+        folder: ''
     },
     {
         url: Routes.TreeGridChilddatakey,
-        title: 'TreeGridChilddatakey | ' + defaultTitle,
-        description: 'TreeGridChilddatakey' + defaultDescription
+        title: 'Build Better Modern Web Experiences, Faster with Angular Components',
+        description: 'Create feature-rich, progressive web apps with Ignite UI for Angular! A complete library for Angular native UI components, including the fastest Angular data grid and 60+ high-performance charts.',
+        og_url: 'https://www.infragistics.com/angular-demos-lob/tree-grid/treegrid-childdatakey',
+        folder: 'tree-grid'
     },
     {
         url: Routes.TreeGridPrimaryforeignkey,
-        title: 'TreeGridPrimaryforeignkey | ' + defaultTitle,
-        description: 'TreeGridPrimaryforeignkey' + defaultDescription
+        title: 'Build Better Modern Web Experiences, Faster with Angular Components',
+        description: 'Create feature-rich, progressive web apps with Ignite UI for Angular! A complete library for Angular native UI components, including the fastest Angular data grid and 60+ high-performance charts.',
+        og_url: 'https://www.infragistics.com/angular-demos-lob/tree-grid/treegrid-primaryforeignkey',
+        folder: 'tree-grid'
     },
     {
         url: Routes.BostonMarathon,
-        title: 'BostonMarathon | ' + defaultTitle,
-        description: 'BostonMarathon' + defaultDescription
+        title: 'Boston Marathon 2020 – Angular Data Grid Example',
+        description: 'Boston Marathon 2020 – Angular Data Grid Example',
+        og_url: 'https://www.infragistics.com/angular-demos-lob/grid/grid',
+        folder: 'grid'
     },
     {
         url: Routes.MasterDetail,
-        title: 'MasterDetail | ' + defaultTitle,
-        description: 'MasterDetail' + defaultDescription
+        title: 'Angular Grid Master-Detail Example built with Ignite UI for Angular',
+        description: 'Angular Grid Master-Detail Example built with Ignite UI for Angular',
+        og_url: 'https://www.infragistics.com/angular-demos-lob/grid/grid-master-detail',
+        folder: 'grid'
     },
     {
         url: Routes.FinJsDockManagerGrid,
-        title: 'FinJsDockManagerGrid | ' + defaultTitle,
-        description: 'FinJsDockManagerGrid' + defaultDescription
+        title: 'Build Better Modern Web Experiences, Faster with Angular Components',
+        description: 'Create feature-rich, progressive web apps with Ignite UI for Angular! A complete library for Angular native UI components, including the fastest Angular data grid and 60+ high-performance charts.',
+        og_url: 'https://www.infragistics.com/angular-demos-lob/grid-finjs-dock-manager/grid-finjs-dock-manager',
+        folder: 'grid-finjs-dock-manager'
     },
     {
         url: Routes.HierarchicalGrid,
-        title: 'HierarchicalGrid | ' + defaultTitle,
-        description: 'HierarchicalGrid' + defaultDescription
+        title: 'Build Better Modern Web Experiences, Faster with Angular Components',
+        description: 'Create feature-rich, progressive web apps with Ignite UI for Angular! A complete library for Angular native UI components, including the fastest Angular data grid and 60+ high-performance charts.',
+        og_url: 'https://www.infragistics.com/angular-demos-lob/hierarchical-grid/hierarchical-grid-resizing',
+        folder: 'hierarchical-grid'
     }
 ];
 
@@ -82,7 +101,8 @@ const get = (route) => {
         return {
             url: route,
             title: defaultTitle,
-            description: defaultDescription
+            description: defaultDescription,
+            og_url: defaultOgUrl
         }
     }
 }

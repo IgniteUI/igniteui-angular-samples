@@ -34,7 +34,7 @@
     "repositoryfyAngularDemosLob:prod": "gulp repositoryfyAngularDemosLob --configuration production",
     "build:stats": "ng build --stats-json",
     "analyze": "webpack-bundle-analyzer dist/app/stats.json",
-    "postbuild:app-lob": "node prerender-metadata.js"
+    "postbuild:app-lob": "gulp prerenderPages"
   },
   "repository": {
     "type": "git",
