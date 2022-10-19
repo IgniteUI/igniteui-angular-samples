@@ -50,6 +50,69 @@ gulp.task("overwrite-package-json", (done) => {
     done();
 });
 
+const createPrependerdLobStructure = (cb) => {
+    const folders = [
+        './dist/app-lob/angular-demos-lob',
+        './dist/app-lob/angular-demos-lob/grid',
+        './dist/app-lob/angular-demos-lob/tree-grid',
+        './dist/app-lob/angular-demos-lob/grid-finjs-dock-manager',
+        './dist/app-lob/angular-demos-lob/hierarchical-grid'
+    ];
+    folders.forEach(dir => {
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir);
+        }
+    });
+    cb();
+}
+
+const addPrerenderedLobPages = (cb) => {
+    const { metadata } = require('./projects/app-lob/src/app/metadata');
+    const indexFilePath = path.resolve(__dirname, './', 'dist/app-lob', 'index.html');
+
+    // read in the index.html file
+    fs.readFile(indexFilePath, 'utf8', function (err, data) {
+        if (err) {
+            return console.error(err);
+        }
+
+        metadata.forEach(({ url, title, description, og_url, folder }) => {
+            let result = data;
+            result = result.replace(/\$OG_TITLE/g, title);
+            result = result.replace(/\$OG_DESCRIPTION/g, description);
+            result = result.replace(/\$OG_URL/g, og_url);
+
+            let filename = url.substring(1).replace(/\//g, '-');
+            if (filename.length) {
+                filename = filename + '.html';
+            } else {
+                filename = 'index.html';
+            }
+
+            if (folder) {
+                fs.writeFile(path.resolve(__dirname, './', './dist/app-lob/angular-demos-lob/' + folder, filename), result, (err) => {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log('Saved ' + filename);
+                    }
+                });
+            } else {
+                fs.writeFile(path.resolve(__dirname, './', 'dist/app-lob/angular-demos-lob', filename), result, (err) => {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log('Saved ' + filename);
+                    }
+                });
+            }
+        })
+    })
+    cb();
+}
+
+exports.prerenderPages = gulp.series(createPrependerdLobStructure, addPrerenderedLobPages);
+
 gulp.task("watch-live-editing", gulp.series("generate-live-editing", () => {
     gulp.watch(["./src/**/*.*", "!./src/assets/**", "./live-editing/**/*.*", "package.json"], function () {
         Object.keys(require.cache).forEach(function (key) {
