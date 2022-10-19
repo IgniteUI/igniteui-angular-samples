@@ -1,0 +1,13 @@
+<igx-simple-combo #remoteSimpleCombo class="combo" 
+    [itemsMaxHeight]="250"
+    [itemHeight]="48"
+    [data]="rData | async"
+    [valueKey]="'ProductID'"
+    [displayKey]="'ProductName'"    
+    placeholder="Product"
+    (dataPreLoad)="dataLoading()"
+    (closing)="onClosing()" (opening)="onOpening()"
+    (selectionChanging)="handleSelectionChanging($event)"
+    (searchInputUpdate)="searchInput($event)">
+</igx-simple-combo>
+<igx-toast #loadingToast></igx-toast>

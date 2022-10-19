@@ -23,6 +23,7 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
 
     private searchText: string = null;
     private defaultVirtState: IForOfState = { chunkSize: 6, startIndex: 0 };
+    private currentVirtState: IForOfState = { chunkSize: 6, startIndex: 0 };
 
     private hasSelection: boolean;
 
@@ -76,9 +77,9 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
         );
     }
 
-    public onOpening() {
-        this.remoteService.getData(
-            this.hasSelection ? this.remoteCombo.virtualizationState : this.defaultVirtState,
+    public onOpening() {        
+        this.remoteService.getData(           
+           this.hasSelection ? this.currentVirtState : this.defaultVirtState,
             this.searchText,
             (data) => {
                 this.remoteCombo.totalItemCount = data['@odata.count'];
@@ -91,6 +92,10 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
     }
 
     public handleSelectionChanging(evt: IComboSelectionChangingEventArgs) {
-        this.hasSelection = !!evt?.newSelection.length;
+        this.hasSelection = !!evt?.newSelection.length;                   
+        this.currentVirtState.chunkSize = Math.ceil(this.remoteCombo.itemsMaxHeight / this.remoteCombo.itemHeight);
+        this.searchText === null || this.searchText ==='' ?
+        this.currentVirtState.startIndex = this.remoteCombo.virtualizationState.startIndex :
+        this.currentVirtState.startIndex = evt.newSelection[evt.newSelection.length-1] - this.currentVirtState.chunkSize/2;
     }
 }

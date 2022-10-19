@@ -47,6 +47,7 @@ import { SimpleComboUsageComponent } from './combo/simple-combo-usage/simple-com
 import { SimpleComboCascadingComponent } from './combo/simple-combo-cascading/simple-combo-cascading.component';
 import { SimpleComboStylingComponent } from './combo/simple-combo-styling/simple-combo-styling.component';
 import { ListItemSelectionComponent } from './list/list-item-selection/list-item-selection.component';
+import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-combo-remote.component';
 
 @NgModule({
     declarations: [
@@ -74,7 +75,8 @@ import { ListItemSelectionComponent } from './list/list-item-selection/list-item
         SimpleComboStylingComponent,
         TreeBasicSampleComponent,
         TreeAdvancedSampleComponent,
-        ListItemSelectionComponent
+        ListItemSelectionComponent,
+        SimpleComboRemoteComponent
     ],
     imports: [
         CommonModule,
