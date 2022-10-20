@@ -93,16 +93,12 @@ const addPrerenderedLobPages = (cb) => {
                 fs.writeFile(path.resolve(__dirname, './', './dist/app-lob/angular-demos-lob/' + folder, filename), result, (err) => {
                     if (err) {
                         console.log(err);
-                    } else {
-                        console.log('Saved ' + filename);
                     }
                 });
             } else {
                 fs.writeFile(path.resolve(__dirname, './', 'dist/app-lob/angular-demos-lob', filename), result, (err) => {
                     if (err) {
                         console.log(err);
-                    } else {
-                        console.log('Saved ' + filename);
                     }
                 });
             }
