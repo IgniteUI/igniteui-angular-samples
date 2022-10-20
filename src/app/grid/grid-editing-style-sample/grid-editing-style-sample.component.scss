@@ -7,7 +7,7 @@ $color-palette: palette($primary: $white, $secondary: $blue);
 
 $grid-theme: grid-theme(
     $cell-editing-background: $blue,
-    $cell-active-border-color: $white,
+    $cell-active-border-color: $blue,
     $cell-edited-value-color: $white,
     $edit-mode-color: color($color-palette, "secondary", 200)
 );
@@ -38,11 +38,11 @@ $input-theme: input-group-theme(
 :host {
     ::ng-deep {
         .igx-grid__tbody{
-            @include input-group($input-theme);
+            @include css-vars($input-theme);
         }
-        @include checkbox($checkbox-theme);
-        @include calendar($datepicker-theme);
-        @include grid($grid-theme);
+        @include css-vars($checkbox-theme);
+        @include css-vars($datepicker-theme);
+        @include css-vars($grid-theme);
     }
 }
 
