@@ -17,10 +17,10 @@ export class SEOService {
         this.title.setTitle(title ?? this.defaultTitle);
         this.meta.updateTag({ name: 'description', content: desc ?? this.defaultDesc });
         this.meta.updateTag({property: 'og:image', content: 'https://avatars0.githubusercontent.com/u/5366066?s=400&amp;v=4'});
-        this.meta.updateTag({property: 'og:type', content: 'website'});
+        this.meta.updateTag({property: 'og:site_name', content: 'Infragistics'});
+        this.meta.updateTag({property: 'og:type', content: 'object'});
         this.meta.updateTag({property: 'og:title', content: title ?? this.defaultTitle});
         this.meta.updateTag({property: 'og:url', content: url});
         this.meta.updateTag({property: 'og:description', content: desc ?? this.defaultDesc});
-        this.meta.updateTag({property: 'twitter:card', content: 'summary_large_image'});
     }
 }
