@@ -7,7 +7,7 @@ $color-palette: palette($primary: $white, $secondary: $blue, $surface: #fff);
 
 $grid-theme: grid-theme(
     $cell-editing-background: $blue,
-    $cell-active-border-color: $white,
+    $cell-active-border-color: $blue,
     $cell-edited-value-color: $white,
     $edit-mode-color: color($color-palette, "secondary", 200)
 );
