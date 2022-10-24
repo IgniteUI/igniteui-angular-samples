@@ -52,11 +52,15 @@ gulp.task("overwrite-package-json", (done) => {
 
 const createPrependerdLobStructure = (cb) => {
     const folders = [
-        './dist/app-lob/angular-demos-lob',
-        './dist/app-lob/angular-demos-lob/grid',
-        './dist/app-lob/angular-demos-lob/tree-grid',
-        './dist/app-lob/angular-demos-lob/grid-finjs-dock-manager',
-        './dist/app-lob/angular-demos-lob/hierarchical-grid'
+        './dist/app-lob/samples',
+        './dist/app-lob/samples/grid',
+        './dist/app-lob/samples/tree-grid',
+        './dist/app-lob/samples/grid-finjs-dock-manager',
+        './dist/app-lob/samples/hierarchical-grid',
+        './dist/app-lob/grid',
+        './dist/app-lob/tree-grid',
+        './dist/app-lob/grid-finjs-dock-manager',
+        './dist/app-lob/hierarchical-grid'
     ];
     folders.forEach(dir => {
         if (!fs.existsSync(dir)) {
@@ -89,19 +93,16 @@ const addPrerenderedLobPages = (cb) => {
                 filename = 'index.html';
             }
 
-            if (folder) {
-                fs.writeFile(path.resolve(__dirname, './', './dist/app-lob/angular-demos-lob/' + folder, filename), result, (err) => {
-                    if (err) {
-                        console.log(err);
-                    }
-                });
-            } else {
-                fs.writeFile(path.resolve(__dirname, './', 'dist/app-lob/angular-demos-lob', filename), result, (err) => {
-                    if (err) {
-                        console.log(err);
-                    }
-                });
-            }
+            fs.writeFile(path.resolve(__dirname, './', './dist/app-lob/samples/' + folder, filename), result, (err) => {
+                if (err) {
+                    console.log(err);
+                }
+            });
+            fs.writeFile(path.resolve(__dirname, './', './dist/app-lob/' + folder, filename), result, (err) => {
+                if (err) {
+                    console.log(err);
+                }
+            });
         })
     })
     cb();
