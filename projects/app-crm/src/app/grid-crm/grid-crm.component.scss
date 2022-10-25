@@ -59,6 +59,26 @@
 		}
 	}
 
+	.sample-flex-container {
+		display: flex;
+		align-self: center;
+		justify-content: flex-end;
+		max-width: 500px;
+		width: 70%
+	}
+
+	@include grid-toolbar($crm-grid-toolbar);
+
+	.igx-grid-toolbar__actions {
+		.igx-button--outlined {
+			border: none;
+		}
+	}
+
+	.igx-grid-toolbar__title {
+		max-width: 68ch;
+	}
+
 	.igx-grid-toolbar__button-space {
 		.igx-icon {
 			font-size: 1rem;
@@ -68,12 +88,24 @@
 		}
 	}
 
-	.sample-flex-container {
-		display: flex;
-		align-self: center;
-		justify-content: flex-end;
-		max-width: 500px;
-		width: 70%
+	.igx-grid-toolbar__custom-content {
+		flex: 1 0 0%;
+	}
+
+	.igx-grid-toolbar__actions {
+		.igx-button--outlined {
+			margin-left: 0.5rem;
+		}
+	}
+
+	.igx-grid-toolbar__actions {
+		.igx-button--outlined {
+			border: none;
+		}
+	}
+
+	.igx-grid-toolbar__actions {
+		@include button($crm-grid-toolbar-button);
 	}
 
 	.crm-sample-toolbar__title {
@@ -88,16 +120,6 @@
 		@include ellipsis();
 		opacity: 0;
 		animation: slide-fade 1.25s .25s ease-out forwards;
-	}
-
-	.igx-grid-toolbar__custom-content {
-		flex: 1 0 0%;
-	}
-
-	.igx-grid-toolbar__actions {
-		.igx-button--outlined {
-			margin-left: 0.5rem;
-		}
 	}
 
 	.igx-input-group--search {
@@ -153,145 +175,113 @@
 		margin-left: 4px;
 	}
 
-	.igx-grid-toolbar__title {
-		max-width: 68ch;
+	@include input-group($search-theme);
+
+	.case-sensitive--active {
+		background: color($crm-grid-palette, 'primary', 200);
+	}
+
+	.igx-grid__th-resize-line {
+		background: color($crm-grid-palette, 'secondary', 500);
+	}
+
+	.igx-input-group--search .igx-input-group__bundle,
+	.igx-input-group--search .igx-input-group__bundle:hover {
+		box-shadow: none;
+	}
+
+	.igx-drop-down__list {
+		@include input-group($crm-input-drop-down)
+	}
+
+	.sample-flex-container {
+		.igx-input-group,
+		.igx-input-group--focused {
+			.igx-input-group__bundle {
+				transition: all 250ms ease-in-out;
+			}
+
+			igx-icon {
+				color: color($crm-grid-palette, 'primary', 200);
+			}
+		}
+
+		.igx-input-group__textarea,
+		.igx-input-group__input {
+			color: color($crm-grid-palette, 'primary', 100);
+		}
+
+		.igx-input-group {
+			igx-icon {
+				color: white;
+			}
+
+			&:hover,
+			&:focus,
+			&.igx-input-group--focused {
+				igx-icon {
+					color: color($crm-grid-palette, 'grays', 600);
+				}
+
+				.igx-input-group__bundle {
+					background: contrast-color($crm-grid-palette, 'grays', 900);
+					color: color($crm-grid-palette, 'grays', 600);
+				}
+
+				.igx-input-group__input {
+					&::placeholder {
+						color: color($crm-grid-palette, 'grays', 600);
+						opacity: 1;
+					}
+				}
+
+				.igx-input-group__textarea,
+				.igx-input-group__input {
+					color: color($crm-grid-palette, 'grays', 600);
+				}
+
+				.igx-button--icon {
+					&:focus,
+					&:active {
+						color: color($crm-grid-palette, 'grays', 600);
+					}
+				}
+			}
+		}
+
+		.igx-button--icon {
+			&:focus,
+			&:active {
+				color: color($crm-grid-palette, 'primary', 100);
+				background: transparent;
+			}
+		}
+
+		.igx-input-group__input {
+			&::placeholder {
+				color: white;
+				opacity: 1;
+			}
+		}
+	}
+
+	.igx-input-group--search .igx-input-group__bundle {
+		background-color: color($crm-grid-palette, 'primary', 800);
+
+		@include button($crm-grid-search-button);
 	}
 
 	// Not dark theme
 	.grid__wrapper:not(.dark_grid) {
-		@include grid-toolbar($crm-grid-toolbar);
 		@include grid($crm-grid-theme);
 		@include grid-summary($summary-theme);
-		@include input-group($search-theme);
-		@include grid-toolbar($crm-grid-toolbar);
-
-		.case-sensitive--active {
-			background: color($crm-grid-palette, 'primary', 200);
-		}
-
-		.igx-grid-toolbar__actions {
-			.igx-button--outlined {
-				border: none;
-			}
-		}
-
-		.igx-grid__th-resize-line {
-			background: color($crm-grid-palette, 'secondary', 500);
-		}
-
-		.igx-input-group--search .igx-input-group__bundle,
-		.igx-input-group--search .igx-input-group__bundle:hover {
-			box-shadow: none;
-		}
-
-		.igx-drop-down__list {
-			@include input-group($crm-input-drop-down)
-		}
-
-		.igx-grid-toolbar__actions {
-			@include button($crm-grid-toolbar-button);
-		}
-
-		.sample-flex-container {
-			.igx-input-group,
-			.igx-input-group--focused {
-				.igx-input-group__bundle {
-					transition: background 500ms ease-in-out;
-				}
-
-				igx-icon {
-					color: color($crm-grid-palette, 'primary', 200);
-				}
-			}
-
-			.igx-input-group__textarea,
-			.igx-input-group__input {
-				color: color($crm-grid-palette, 'primary', 100);
-			}
-
-			.igx-input-group {
-				igx-icon {
-					color: white;
-				}
-
-				&:hover,
-				&:focus,
-				&.igx-input-group--focused {
-					igx-icon {
-						color: color($crm-grid-palette, 'grays', 600);
-					}
-
-					.igx-input-group__bundle {
-						background: contrast-color($crm-grid-palette, 'grays', 900);
-						color: color($crm-grid-palette, 'grays', 600);
-					}
-
-					.igx-input-group__input {
-						&::placeholder {
-							color: color($crm-grid-palette, 'grays', 600);
-							opacity: 1;
-						}
-					}
-
-					.igx-input-group__textarea,
-					.igx-input-group__input {
-						color: color($crm-grid-palette, 'grays', 600);
-					}
-
-					.igx-button--icon {
-						&:focus,
-						&:active {
-							color: color($crm-grid-palette, 'grays', 600);
-						}
-					}
-				}
-			}
-
-			.igx-button--icon {
-				&:focus,
-				&:active {
-					color: color($crm-grid-palette, 'primary', 100);
-					background: transparent;
-				}
-			}
-
-			.igx-input-group__input {
-				&::placeholder {
-					color: white;
-					opacity: 1;
-				}
-			}
-		}
-
-		.igx-input-group--search .igx-input-group__bundle {
-			background-color: color($crm-grid-palette, 'primary', 800);
-
-			@include button($crm-grid-search-button);
-		}
 	}
 
 	.dark_grid {
 		@include dark-theme($dark-material-palette);
-
-		.case-sensitive--active {
-			background: color($dark-material-palette, 'secondary', 500);
-		}
-
-		.sample-flex-container {
-			.igx-input-group {
-				.igx-input-group__bundle {
-					background: color($crm-grid-palette, 'grays', 800);
-					transition: background-color 250ms ease-in-out;
-				}
-
-				&:hover,
-				&:focus,
-				&.igx-input-group--focused {
-					.igx-input-group__bundle {
-						background: color($crm-grid-palette, 'grays', 800, .7);
-					}
-				}
-			}
+		@include grid-toolbar($crm-grid-toolbar);
+		.igx-grid-toolbar__actions {
+			@include button($crm-grid-toolbar-button);
 		}
 	}
 }
