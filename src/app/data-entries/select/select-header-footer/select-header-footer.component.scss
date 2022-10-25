@@ -85,5 +85,5 @@ $custom-button-group: button-group-theme(
 );
 
 :host ::ng-deep {
-    @include button-group($custom-button-group);
+    @include css-vars($custom-button-group);
 }

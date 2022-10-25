@@ -28,7 +28,7 @@ $dark-grid-column-moving-theme: grid-theme(
 
         .grid__wrapper {
             padding: 16px;
-            @include grid($dark-grid-column-moving-theme);
+            @include css-vars($dark-grid-column-moving-theme);
           }
     }
 }
@@ -43,12 +43,15 @@ $dark-grid-column-moving-theme: grid-theme(
     text-align: right;
     float:right;
 }
+
 .cellAlignSyle > span {
     float:right;
 }
+
 .up {
     color: green;
 }
+
 .down {
     color: red;
 }

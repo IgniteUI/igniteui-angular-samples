@@ -37,10 +37,10 @@ $datepicker-theme: calendar-theme(
 
 :host {
     ::ng-deep {
-        @include checkbox($checkbox-theme);
-        @include input-group($input-theme);
-        @include calendar($datepicker-theme);
-        @include grid($grid-theme);
+        @include css-vars($checkbox-theme);
+        @include css-vars($input-theme);
+        @include css-vars($datepicker-theme);
+        @include css-vars($grid-theme);
     }
 }
 

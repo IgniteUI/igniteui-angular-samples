@@ -31,11 +31,8 @@ $custom-checkbox: checkbox-theme(
     @include button($button-theme);
   }
 
-:host {
-  ::ng-deep {
-          @include checkbox($custom-checkbox);
-          @include grid($custom-grid);
-          @include banner($banner-theme);
-
-  }
+:host ::ng-deep {
+	@include css-vars($custom-checkbox);
+	@include css-vars($custom-grid);
+	@include css-vars($banner-theme);
 }

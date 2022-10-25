@@ -10,10 +10,8 @@ $custom-grid-theme: grid-theme(
     $resize-line-color: color($custom-theme-palette, 'secondary', 500)
 );
 
-:host {
-    ::ng-deep {
-        @include grid($custom-grid-theme);
-    }
+:host ::ng-deep {
+	@include css-vars($custom-grid-theme);
 }
 
 .grid__wrapper {

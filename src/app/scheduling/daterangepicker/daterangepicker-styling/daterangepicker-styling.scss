@@ -43,8 +43,8 @@ $custom-calendar-theme: calendar-theme(
     padding: 1rem;
 
     ::ng-deep {
-        @include date-range-picker($custom-date-range-theme);
-        @include input-group($custom-input-group-theme);
-        @include calendar($custom-calendar-theme);
+        @include css-vars($custom-date-range-theme);
+        @include css-vars($custom-input-group-theme);
+        @include css-vars($custom-calendar-theme);
     }
 }

@@ -21,18 +21,15 @@ $button-theme: button-theme(
 );
 
 $custom-checkbox: checkbox-theme(
-  $palette: $my-banner-palette
+	$palette: $my-banner-palette
 );
 
 .custom-buttons {
-    @include button($button-theme);
-  }
+	@include button($button-theme);
+}
 
-:host {
-  ::ng-deep {
-          @include checkbox($custom-checkbox);
-          @include grid($custom-grid);
-          @include banner($banner-theme);
-
-  }
+:host ::ng-deep {
+	@include css-vars($custom-checkbox);
+	@include css-vars($custom-grid);
+	@include css-vars($banner-theme);
 }

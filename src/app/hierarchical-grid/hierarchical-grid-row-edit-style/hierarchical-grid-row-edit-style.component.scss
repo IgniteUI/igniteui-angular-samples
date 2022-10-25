@@ -4,6 +4,7 @@
     vertical-align: middle;
     max-height: 62px;
 }
+
 .cell__inner_2 {
     margin: 1px
 }
@@ -27,28 +28,25 @@ $custom-grid: grid-theme(
     padding: 5px;
 }
 
-$banner-theme: banner-theme( 
+$banner-theme: banner-theme(
     $banner-background: $my-light-gray,
     $banner-message-color: color($my-banner-palette, "secondary", 600)
 );
 
 $button-theme: button-theme(
-  $palette: $purple-palette
+	$palette: $purple-palette
 );
 
 $custom-checkbox: checkbox-theme(
-  $palette: $my-banner-palette
+	$palette: $my-banner-palette
 );
 
 .custom-buttons {
-    @include button($button-theme);
-  }
+	@include css-vars($button-theme);
+}
 
-:host {
-  ::ng-deep {
-          @include checkbox($custom-checkbox);
-          @include grid($custom-grid);
-          @include banner($banner-theme);
-
-  }
+:host ::ng-deep {
+	@include css-vars($custom-checkbox);
+	@include css-vars($custom-grid);
+	@include css-vars($banner-theme);
 }

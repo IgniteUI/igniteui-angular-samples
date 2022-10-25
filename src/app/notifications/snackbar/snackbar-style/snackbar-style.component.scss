@@ -7,17 +7,7 @@ $dark-snackbar: snackbar-theme(
     $border-radius: 12px
 );
 
-// :host {
-//     @include css-vars($dark-snackbar);
-// }
-
-/* Using Theme Overrides to provide IE 11 support.
- * NOTE: Theming using this approach will greatly increase the size
- * of the output CSS. If you do not plan to target IE 11,
- * delete this section and use the `igx-css-vars` mixin as shown above.
-**/
-:host ::ng-deep {
-    @include snackbar($dark-snackbar);
+:host {
+    @include css-vars($dark-snackbar);
 }
-@include css-vars($dark-snackbar);
 

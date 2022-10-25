@@ -17,7 +17,7 @@ $dark-grid-column-moving-theme: grid-theme(
 
 :host {
     ::ng-deep {
-        @include grid($dark-grid-column-moving-theme);
+        @include css-vars($dark-grid-column-moving-theme);
     }
 }
 

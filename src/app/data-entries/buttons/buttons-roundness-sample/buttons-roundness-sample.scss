@@ -17,19 +17,19 @@ $iconBtn: button-theme(
 );
 
 .flat {
-    @include button($flatBtn);
+    @include css-vars($flatBtn);
 }
 
 .raised {
-    @include button($raisedBtn);
+    @include css-vars($raisedBtn);
 }
 
 .fab {
-    @include button($fabBtn);
+    @include css-vars($fabBtn);
 }
 
 .icon {
-    @include button($iconBtn);
+    @include css-vars($iconBtn);
 }
 
 .buttons-sample {

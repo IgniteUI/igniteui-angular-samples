@@ -40,11 +40,11 @@ $dark-input-group-theme: input-group-theme(
 
 :host {
     ::ng-deep {
-        @include grid-toolbar($dark-grid-toolbar-theme);
-        @include column-actions($dark-column-actions-theme);
-        @include checkbox($dark-checkbox-theme);
-        @include input-group($dark-input-group-theme);
-        @include button($dark-button-theme);
+        @include css-vars($dark-grid-toolbar-theme);
+        @include css-vars($dark-column-actions-theme);
+        @include css-vars($dark-checkbox-theme);
+        @include css-vars($dark-input-group-theme);
+        @include css-vars($dark-button-theme);
 
         .igx-grid-toolbar__actions {
             .igx-button--outlined {

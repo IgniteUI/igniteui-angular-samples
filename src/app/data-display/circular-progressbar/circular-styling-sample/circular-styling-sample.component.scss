@@ -5,15 +5,6 @@ $custom-theme: progress-circular-theme(
     $progress-circle-color: color($color: 'success')
 );
 
-// :host {
-//     @include css-vars($custom-theme);
-// }
-
-/* Using Theme Overrides to provide IE 11 support.
- * NOTE: Theming using this approach will greatly increase the size
- * of the output CSS. If you do not plan to target IE 11,
- * delete this section and use the `igx-css-vars` mixin as shown above.
-**/
 :host ::ng-deep {
-    @include progress-circular($custom-theme);
+    @include css-vars($custom-theme);
 }
