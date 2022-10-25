@@ -25,7 +25,7 @@ $custom-checkbox: checkbox-theme(
 );
 
 .custom-buttons {
-	@include button($button-theme);
+	@include css-vars($button-theme);
 }
 
 :host ::ng-deep {

@@ -42,8 +42,8 @@ $custom-button-theme: button-theme(
     // Penetrate the ViewEncapsulation
     ::ng-deep {
         // Apply the custom themes to the compoents mixins.
-        @include expansion-panel($custom-panel-theme);
-        @include button($custom-button-theme);
+        @include css-vars($custom-panel-theme);
+        @include css-vars($custom-button-theme);
     }
 }
 
