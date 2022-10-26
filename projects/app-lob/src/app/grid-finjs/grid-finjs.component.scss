@@ -1,174 +1,208 @@
+@use 'igniteui-angular/theming' as *;
+
 .grid__wrapper {
-    position: relative;
-    width: 100%;
-    height: 98%;
-    top: 0;
-    left: 0;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    app-finjs-grid {
-        height: 100%;
-    }
+	position: relative;
+	width: 100%;
+	height: 98%;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	padding: rem(15px);
+	display: flex;
+	flex-direction: column;
+
+	app-finjs-grid {
+		height: 100%;
+	}
 }
 
 :host ::ng-deep {
-    .finjs-icons {
-        display: flex;
-        align-items: center;
-        igx-icon {
-            font-size: 16px;
-            width: 16px;
-            height: 16px;
-            margin-left: 4px;
-        }
-    }
-    .igx-grid__grouparea {
-        max-height: 100%;
-        height: auto;
-    }
-    .changePos,
-    .changeNeg,
-    .strongPositive,
-    .strongNegative {
-        color: #fff !important;
-        .igx-grid__td-text {
-            padding: 2px 5px;
-        }
-    }
-    .positive {
-        color: #4eb862 !important;
-    }
-    .positive.strongPositive {
-        .igx-grid__td-text {
-            color: rgba(78, 184, 98, 0.8) !important;
-        }
-    }
-    .negative {
-        color: #d31642 !important;
-    }
-    .negative.strongNegative {
-        .igx-grid__td-text {
-            color: rgba(255, 19, 74, 0.8) !important;
-        }
-    }
-    // NORMAL
-    // positive
-    .changePos {
-        .igx-grid__td-text {
-            background: #335e3b;
-        }
-    }
-    .changePos1 {
-        background: #335e3b;
-        color: #fff;
-    }
-    .changePos2 {
-        .igx-grid__td-text {
-            border-right: 4px solid #335e3b;
-            padding-right: 15px;
-        }
-    }
-    // negative
-    .changeNeg {
-        .igx-grid__td-text {
-            background: #7a1c32;
-        }
-    }
-    .changeNeg1 {
-        color: #fff;
-        background: #7a1c32;
-    }
-    .changeNeg2 {
-        .igx-grid__td-text {
-            border-right: 4px solid #7a1c32;
-            padding-right: 9px;
-        }
-    }
-    // selected
-    .igx-grid__td--selected.changePos1,
-    .igx-grid__td--selected.changePos2,
-    .igx-grid__td--selected.changePos {
-        background-color: #335e3b !important;
-        .finjs-icons,
-        .igx-grid__td-text {
-            color: #fff;
-        }
-    }
-    .igx-grid__td--selected.changeNeg1,
-    .igx-grid__td--selected.changeNeg2,
-    .igx-grid__td--selected.changeNeg {
-        background-color: #7a1c32 !important;
-        .finjs-icons,
-        .igx-grid__td-text {
-            color: #fff;
-        }
-    }
-    // STRONG
-    // positive
-    .strongPositive {
-        .igx-grid__td-text {
-            background: #459a55;
-        }
-    }
-    .strongPositive1 {
-        background: #459a55;
-        color: #fff;
-    }
-    .strongPositive2 {
-        .igx-grid__td-text {
-            border-right: 4px solid #459a55;
-            padding-right: 15px;
-        }
-    }
-    // negative
-    .strongNegative {
-        .igx-grid__td-text {
-            background: #d31642;
-            color: #fff;
-        }
-    }
-    .strongNegative1 {
-        background: #d31642;
-        color: #fff;
-    }
-    .strongNegative2 {
-        .igx-grid__td-text {
-            border-right: 4px solid #d31642;
-            padding-right: 9px;
-        }
-    }
-    // selected
-    .igx-grid__td--selected.strongPositive1,
-    .igx-grid__td--selected.strongPositive2,
-    .igx-grid__td--selected.strongPositive {
-        background-color: #459a55 !important;
-        .finjs-icons,
-        .igx-grid__td-text {
-            color: #fff;
-        }
-    }
-    .igx-grid__td--selected.strongNegative1,
-    .igx-grid__td--selected.strongNegative2,
-    .igx-grid__td--selected.strongNegative {
-        background-color: #d31642 !important;
-        .finjs-icons,
-        .igx-grid__td-text {
-            color: #fff;
-        }
-    }
-    .igx-grid__outlet span,
-    .igx-excel-filter span,
-    .igx-excel-filter header,
-    .igx-excel-filter input {
-        font-size: 0.8125rem;
-    }
-    .igx-button--icon {
-        width: 2rem;
-        height: 2rem;
-    }
+	.finjs-icons {
+		display: flex;
+		align-items: center;
+
+		igx-icon {
+			font-size: rem(16px);
+			width: rem(16px);
+			height: rem(16px);
+			margin-inline-start: rem(4px);
+		}
+	}
+
+	.igx-grid__grouparea {
+		max-height: 100%;
+		height: auto;
+	}
+
+	.changePos,
+	.changeNeg,
+	.strongPositive,
+	.strongNegative {
+		color: contrast-color(null, 'grays', 50) !important;
+
+		.igx-grid__td-text {
+			padding: rem(2px) rem(5px);
+		}
+	}
+
+	.positive {
+		color: color(null, 'success', 500) !important;
+	}
+
+	.positive.strongPositive {
+		.igx-grid__td-text {
+			color: color(null, 'success', 500, .8) !important;
+		}
+	}
+
+	.negative {
+		color: color(null, 'error', 500) !important;
+	}
+
+	.negative.strongNegative {
+		.igx-grid__td-text {
+			color: color(null, 'error', 500, .8) !important;
+		}
+	}
+
+	// NORMAL
+	// positive
+	.changePos {
+		.igx-grid__td-text {
+			background: color(null, 'success', 500, .5);
+		}
+	}
+
+	.changePos1 {
+		background: color(null, 'success', 500, .5);
+		color: contrast-color(null, 'grays', 900);
+	}
+
+	.changePos2 {
+		.igx-grid__td-text {
+			--igx-success-l: 40%;
+			border-inline-end: rem(4px) solid color(null, 'success', 500, .5);
+			padding-inline-end: rem(15px);
+		}
+	}
+
+	// negative
+	.changeNeg {
+		.igx-grid__td-text {
+			background: color(null, 'error', 500, .5);
+		}
+	}
+
+	.changeNeg1 {
+		background: color(null, 'error', 500, .5);
+		color: contrast-color(null, 'grays', 900);
+	}
+
+	.changeNeg2 {
+		.igx-grid__td-text {
+			border-inline-end: rem(4px) solid color(null, 'error', 500, .5);
+			padding-inline-end: rem(9px);
+		}
+	}
+
+	// selected
+	.igx-grid__td--selected.changePos1,
+	.igx-grid__td--selected.changePos2,
+	.igx-grid__td--selected.changePos {
+		background-color: color(null, 'success', 500) !important;
+
+		.finjs-icons,
+		.igx-grid__td-text {
+			color: contrast-color(null, 'grays', 900);
+		}
+	}
+
+	.igx-grid__td--selected.changeNeg1,
+	.igx-grid__td--selected.changeNeg2,
+	.igx-grid__td--selected.changeNeg {
+		background-color: color(null, 'error', 500) !important;
+
+		.finjs-icons,
+		.igx-grid__td-text {
+			color: contrast-color(null, 'grays', 900);
+		}
+	}
+
+	// STRONG
+	// positive
+	.strongPositive {
+		.igx-grid__td-text {
+			background: color(null, 'success', 500);
+		}
+	}
+
+	.strongPositive1 {
+		background: color(null, 'success', 500);
+		color: contrast-color(null, 'grays', 900);
+	}
+
+	.strongPositive2 {
+		.igx-grid__td-text {
+			border-inline-end: rem(4px) solid color(null, 'success', 500);
+			padding-inline-end: rem(15px);
+		}
+	}
+
+	// negative
+	.strongNegative {
+		.igx-grid__td-text {
+			background: color(null, 'error', 500);
+			color: contrast-color(null, 'grays', 900);
+		}
+	}
+
+	.strongNegative1 {
+		background: color(null, 'error', 500);
+		color: contrast-color(null, 'grays', 900);
+	}
+
+	.strongNegative2 {
+		.igx-grid__td-text {
+			border-inline-end: rem(4px) solid color(null, 'error', 500);
+			padding-inline-end: rem(9px);
+		}
+	}
+
+	// selected
+	.igx-grid__td--selected.strongPositive1,
+	.igx-grid__td--selected.strongPositive2,
+	.igx-grid__td--selected.strongPositive {
+		background-color: color(null, 'success', 500) !important;
+
+		.finjs-icons,
+		.igx-grid__td-text {
+			color: contrast-color(null, 'grays', 900);
+		}
+	}
+
+	.igx-grid__td--selected.strongNegative1,
+	.igx-grid__td--selected.strongNegative2,
+	.igx-grid__td--selected.strongNegative {
+		background-color: color(null, 'error', 500) !important;
+
+		.finjs-icons,
+		.igx-grid__td-text {
+			color: contrast-color(null, 'grays', 900);
+		}
+	}
+
+	.igx-grid__outlet span,
+	.igx-excel-filter span,
+	.igx-excel-filter header,
+	.igx-excel-filter input {
+		font-size: 0.8125rem;
+	}
+
+	.igx-button--icon {
+		width: 2rem;
+		height: 2rem;
+	}
 }
 
 igx-grid {
-    flex: 1 0 0%;
+	flex: 1 0 0%;
 }

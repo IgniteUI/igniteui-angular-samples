@@ -1,12 +1,10 @@
 @use 'igniteui-angular/theming' as *;
 @forward 'igniteui-angular/theming';
 
-$legacy-support: true;
 $palette: $light-material-palette;
 $schema: $light-material-schema;
 
 $default-palette: $palette;
-$igx-legacy-support: $legacy-support;
 
 $green-palette: palette(
     $primary: #09f,
