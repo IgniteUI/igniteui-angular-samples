@@ -79,9 +79,14 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
     public handleSelectionChanging(evt: ISimpleComboSelectionChangingEventArgs) {
         this.hasSelection =  evt.newSelection!== undefined;        
         this.currentVirtState.chunkSize = Math.ceil(this.remoteSimpleCombo.itemsMaxHeight / this.remoteSimpleCombo.itemHeight);
-        this.searchText === null || this.searchText ==='' ?
-        this.currentVirtState.startIndex = this.remoteSimpleCombo.virtualizationState.startIndex :
-        this.currentVirtState.startIndex = evt.newSelection - this.currentVirtState.chunkSize/2;
+        
+        if(this.searchText === null || this.searchText ===''){
+            this.currentVirtState.startIndex = this.remoteSimpleCombo.virtualizationState.startIndex
+        } else {
+            evt.newSelection - this.currentVirtState.chunkSize/2>0 ?
+            this.currentVirtState.startIndex = evt.newSelection - this.currentVirtState.chunkSize/2:
+            this.currentVirtState.startIndex = 0;
+        }
     }
 
     public searchInput(searchData: IComboSearchInputEventArgs) {

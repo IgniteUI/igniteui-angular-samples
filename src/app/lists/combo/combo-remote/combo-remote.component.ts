@@ -94,8 +94,13 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
     public handleSelectionChanging(evt: IComboSelectionChangingEventArgs) {
         this.hasSelection = !!evt?.newSelection.length;                   
         this.currentVirtState.chunkSize = Math.ceil(this.remoteCombo.itemsMaxHeight / this.remoteCombo.itemHeight);
-        this.searchText === null || this.searchText ==='' ?
-        this.currentVirtState.startIndex = this.remoteCombo.virtualizationState.startIndex :
-        this.currentVirtState.startIndex = evt.newSelection[evt.newSelection.length-1] - this.currentVirtState.chunkSize/2;
+        
+        if(this.searchText === null || this.searchText ===''){
+            this.currentVirtState.startIndex = this.remoteCombo.virtualizationState.startIndex
+        } else {
+            evt.newSelection[evt.newSelection.length-1] - this.currentVirtState.chunkSize/2>0 ?
+            this.currentVirtState.startIndex = evt.newSelection[evt.newSelection.length-1] - this.currentVirtState.chunkSize/2:
+            this.currentVirtState.startIndex = 0;
+        }
     }
 }
