@@ -2,8 +2,8 @@
 @import '~igniteui-dockmanager/dist/collection/styles/igc.themes.css';
 
 :host {
-  width: 100%;
-  overflow-y: auto;
+    width: 100%;
+    overflow-y: auto;
 }
 
 
@@ -15,15 +15,15 @@
 .dock-m-position {
     width: 100vw;
     height: 100vh;
-    padding: 0px 8px 8px 8px;
-    --igc-pane-content-background: #fff;
+    padding: 0 rem(8px) rem(8px) rem(8px);
+    --igc-pane-content-background: #{contrast-color(null, 'grays', 900)};
 }
 
 .chart-types-container {
     overflow-y: auto;
     height: 100%;
     width: 100%;
-    padding-left: 15px;
+    padding-left: rem(15px);
 }
 
 .selection-area {
@@ -43,18 +43,19 @@
 
 
 }
+
 $custom-badge-theme: badge-theme(
-    $border-color: white,
-    $border-width: 2px,
-    $icon-color: white,
-    $text-color: black,
-    $background-color: black,
+    $border-color: contrast-color(null, 'grays', 900),
+    $border-width: #{rem(2px)},
+    $icon-color: contrast-color(null, 'grays', 900),
+    $text-color: contrast-color(null, 'grays', 50),
+    $background-color: contrast-color(null, 'grays', 500),
     $border-radius: 50%
-    );
+);
 :host ::ng-deep {
     .selected {
-        igx-badge{
-            &{
+        igx-badge {
+            & {
                 @include badge($custom-badge-theme);
             }
 
@@ -80,10 +81,11 @@ $custom-badge-theme: badge-theme(
 
         .igx-divider {
             margin-top: 5px !important;
-            background: black !important;
+            background: contrast-color(null, 'grays', 50) !important;
             width: 95% !important;
         }
     }
+
     .grid-chart-contextmenu-wrapper {
         igx-grid {
             @include scrollbar(scrollbar-theme($size: 16px));
@@ -91,11 +93,15 @@ $custom-badge-theme: badge-theme(
     }
 
     .analytics-btn {
-        @include button(button-theme($palette: $fluent-excel-palette,
-                $foreground: #fff,
-                $background: #335e3b,
-                $hover-background: #459a55,
-                $border-radius: 0));
+        @include css-vars(
+            button-theme(
+                $foreground: contrast-color(null, 'grays', 900),
+                $background: color(null, 'success', 500, .8),
+                $hover-background: color(null, 'success'),
+                $hover-foreground: contrast-color(null, 'grays', 900),
+                $border-radius: 0
+            )
+        );
         z-index: 9;
         position: absolute;
     }
@@ -122,7 +128,7 @@ $custom-badge-theme: badge-theme(
     pointer-events: none;
 }
 
-.disabled{
+.disabled {
     opacity: .5;
 }
 
@@ -132,33 +138,35 @@ $custom-badge-theme: badge-theme(
     pointer-events: none;
 }
 
-$font-family: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
-.tab-options-wrapper{
+$font-family: 'Titillium Web', 'Roboto', 'Helvetica Neue', sans-serif;
+
+.tab-options-wrapper {
     @include scrollbar(scrollbar-theme($size: 6px));
 
     display: flex;
     flex-flow: column;
-    max-height: 110px;
-    max-width: 310px;
+    max-height: rem(110px);
+    max-width: rem(310px);
     margin: -0.8rem -1.5rem -0.8rem -1.5rem;
-    .header{
+
+    .header {
         font-size: 0.7rem;
         display: flex;
         width: 100%;
         padding: 0 0.2rem 0 0.4rem;
         font-weight: 650;
-        border-bottom: 1px solid #BDBDBD;
+        border-bottom: 1px solid color(null, 'grays', 100);
         align-self: center;
         font-family: $font-family;
         letter-spacing: 1.7px;
-        color: rgba(0, 0, 0, 0.87);
+        color: contrast-color(null, 'grays', 50, .87);
     }
 }
 
 .tab-option {
     padding: .5rem 0.4rem 0.4rem 0.4rem;
-    height: 110px;
-    width: 310px;
+    height: rem(110px);
+    width: rem(310px);
     display: inline-flex;
     overflow-x: auto;
     overflow-y: hidden;
@@ -170,7 +178,8 @@ $font-family: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
     cursor: pointer;
 
     opacity: .62;
-    &.selected--condition{
+
+    &.selected--condition {
         pointer-events: none;
         opacity: 1;
     }
@@ -183,7 +192,7 @@ $font-family: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
     }
 }
 
-.clear-action{
+.clear-action {
     cursor: pointer;
     display: flex;
     flex-flow: column;
@@ -202,7 +211,7 @@ $font-family: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
     flex-flow: column;
     align-items: center;
 
-    img{
+    img {
         pointer-events: none;
     }
 

@@ -1,12 +1,14 @@
+@use '../../../variables' as *;
+
 .categoryStyle{
     font-weight: 600;
 }
 
 .tabContent {
-    padding: 24px 8px;
+    padding: rem(24px) rem(8px);
     display: flex;
     justify-content: flex-start;
-    margin: 10px;
+    margin: rem(10px);
 }
 
 .avatarContainer {
@@ -16,7 +18,7 @@
 }
 
 igx-divider {
-    margin: 0 24px !important;
+    margin: 0 rem(24px) !important;
 }
 
 h6 {
@@ -24,18 +26,19 @@ h6 {
 }
 
 .details-chart {
-    width: 200px;
-    background: rgba(0, 0, 0, .04);
-    padding: 16px;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, .08);
+    width: rem(200px);
+    background: contrast-color(null, 'grays' 900, .04);
+    background: contrast-color(null, 'grays' 900, .4);
+    padding: rem(16px);
+    border-radius: rem(4px);
+    border: rem(1px) solid contrast-color(null, 'grays' 900, .8);
 }
 
 .tabContent igx-grid {
     box-shadow: none;
-    border: 1px solid rgba(0, 0, 0, .08);
+    border: rem(1px) solid contrast-color(null, 'grays' 900, .08);
 }
 
 .grid__wrapper {
-    margin: 4px 16px;
+    margin: rem(4px) rem(16px);
 }

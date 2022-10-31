@@ -1,61 +1,60 @@
-:host ::ng-deep {
-    .fin-dark-theme {
-        .finjs-slider,
-        .sample-toolbar {
-            color: rgba(255, 255, 255, 0.87);
-        }
-    }
+@use '../../variables' as *;
 
-    .controls-holder {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 100%;
-        padding-bottom: 15px;
-    }
-    .switches {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex: 1 0 0%;
-        padding-right: 20px;
-        font-size: 0.9rem;
-    }
-    .control-item:not(:last-child) {
-        padding-right: 20px;
-    }
-    .igx-slider,
-    .igx-slider--disabled {
-        height: 24px;
-    }
-    .finjs-slider {
-        width: 40%;
-        min-width: 145px;
-    }
-    .finjs-play-controls {
-        width: 45%;
-        min-width: 620px;
-        margin-top: 10px;
-    }
-    .sample-toolbar {
-        height: 20px;
-        font-size: 0.8rem;
-        line-height: 20px;
-        /* position: absolute; */
-        /* bottom: 10px; */
-        /* left: 10px; */
-        margin-top: 11px;
-    }
-    .igx-button--icon {
-        width: 2rem;
-        height: 2rem;
-    }
+:host ::ng-deep {
+	.controls-holder {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		width: 100%;
+		padding-block-end: rem(15px);
+	}
+
+	.switches {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex: 1 0 0%;
+		padding-inline-end: rem(20px);
+		font-size: 0.9rem;
+	}
+
+	.control-item:not(:last-child) {
+		padding-inline-end: rem(20px);
+	}
+
+	.igx-slider,
+	.igx-slider--disabled {
+		height: rem(24px);
+	}
+
+	.finjs-slider {
+		width: 40%;
+		min-width: rem(145px);
+	}
+
+	.finjs-play-controls {
+		width: 45%;
+		min-width: rem(620px);
+		margin-block-start: rem(10px);
+	}
+
+	.sample-toolbar {
+		height: rem(20px);
+		font-size: 0.8rem;
+		line-height: rem(20px);
+		margin-block-start: rem(11px);
+	}
+
+	.igx-button--icon {
+		width: 2rem;
+		height: 2rem;
+	}
 }
 
 .controls-wrapper {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    padding: 0px 15px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	padding: 0 15px;
 }

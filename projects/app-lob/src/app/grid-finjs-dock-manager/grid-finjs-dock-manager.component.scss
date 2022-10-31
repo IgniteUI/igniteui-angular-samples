@@ -1,5 +1,5 @@
 @use '~igniteui-dockmanager/dist/collection/styles/igc.themes';
-@use 'igniteui-angular/theming' as *;
+@use '../../variables' as *;
 
 .actionItem {
 	margin-block-end: rem(20px);
