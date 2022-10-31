@@ -1,11 +1,5 @@
 @use '../../../../variables' as *;
 
-$color-1: #99BFAA;
-$color-2: #5C868D;
-$color-3: #5C3D46;
-
-$colorful-elevations: elevations($color-1, $color-2, $color-3);
-
 :host {
     display: flex;
     justify-content: center;
@@ -17,10 +11,7 @@ div {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: elevation(
-        $elevations: $colorful-elevations,
-        $elevation: 24
-    );
+    box-shadow: elevation(24);
     width: 250px;
     height: 250px;
     border-radius: 20px;

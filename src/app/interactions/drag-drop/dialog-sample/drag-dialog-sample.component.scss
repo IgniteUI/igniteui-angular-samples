@@ -2,12 +2,11 @@
 
 @include dialog(
     dialog-theme(
-        $palette: $palette,
         $schema: $schema
     )
 );
 
-@include dialog-typography($material-type-scale);
+@include dialog-typography();
 
 :host {
     display: block;

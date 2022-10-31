@@ -91,7 +91,7 @@ $custom-badge-theme: badge-theme(
     }
 
     .analytics-btn {
-        @include button(button-theme($palette: $fluent-excel-palette,
+        @include button(button-theme(
                 $foreground: #fff,
                 $background: #335e3b,
                 $hover-background: #459a55,

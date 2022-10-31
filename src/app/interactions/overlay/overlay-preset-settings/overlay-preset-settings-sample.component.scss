@@ -12,8 +12,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: color($color: 'grays', $variant: 100);
-    border: 2px dashed color($color: 'grays', $variant: 200);
+    background: color($color: 'gray', $variant: 100);
+    border: 2px dashed color($color: 'gray', $variant: 200);
     border-radius: rem(8px);
     padding: rem(12px);
     height: 376px;
@@ -25,9 +25,9 @@
         width: rem(80px);
         height: rem(80px);
         margin-bottom: rem(24px);
-        border: 2px dashed color($color: 'grays', $variant: 300);
+        border: 2px dashed color($color: 'gray', $variant: 300);
         border-radius: rem(8px);
-        color: color($color: 'grays', $variant: 800);
+        color: color($color: 'gray', $variant: 800);
 
         igx-icon {
             font-size: 64px;
@@ -43,13 +43,13 @@
     @include e(title) {
         text-align: center;
         margin: 0;
-        color: color($color: 'grays', $variant: 800);
+        color: color($color: 'gray', $variant: 800);
     }
 
     @include e(subtitle) {
         text-align: center;
         margin: 0;
-        color: color($color: 'grays', $variant: 600);
+        color: color($color: 'gray', $variant: 600);
     }
 
     @include m(active) {
