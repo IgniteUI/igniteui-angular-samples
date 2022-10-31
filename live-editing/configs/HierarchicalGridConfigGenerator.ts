@@ -999,6 +999,18 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
+                '/src/app/hierarchical-grid/models.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxHierarchicalGridModule', 'HGridSummaryExportComponent', 'IgxPreventDocumentScrollModule'],
+                ngDeclarations: ['HGridSummaryExportComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxExcelExporterService'],
+                ngProviders: ['IgxExcelExporterService']
+            }),
+            component: 'HGridSummaryExportComponent'
+        }));
+
         return configs;
     }
 }
