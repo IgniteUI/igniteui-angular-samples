@@ -4,74 +4,50 @@
 @import url('https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-solid.css');
 
 :host ::ng-deep {
-	$crm-grid-palette: palette(
+	$light-palette: palette(
         $primary: #09f,
         $secondary: #ffbf00,
         $surface: #fff
     );
-	$crm-grid-dark-palette: palette(
-        $primary: #09f,
-        $secondary: #fff,
-        $surface: #222
-    );
-	@include palette($crm-grid-palette);
+
+	@include palette($light-palette);
 
 	$checkbox-theme: checkbox-theme(
         $fill-color: color($color: 'secondary', $variant: 500),
         $tick-color: contrast-color($color: 'secondary', $variant: 500)
     );
-	$checkbox-dark-theme: checkbox-theme(
-        $fill-color: color($color: 'gray', $variant: 900),
-        $tick-color: contrast-color($color: 'gray', $variant: 900)
-    );
+
 	$summary-theme: grid-summary-theme(
         $background-color: #f0f8fe,
         $result-color: color($color: 'primary', $variant: 500)
     );
-	$search-theme: input-group-theme(
-        $search-background: color($color: 'primary', $variant: 600),
-        $idle-text-color: color($color: 'primary', $variant: 100),
-        $filled-text-color: color($color: 'gray', $variant: 600),
-        $focused-text-color: color($color: 'gray', $variant: 600)
-    );
-
-    @debug $search-theme;
 
 	$crm-grid-theme: grid-theme(
         $header-background: #f0f8fe,
         $header-border-color: #dde5eb
     );
-	$crm-dark-grid-theme: grid-theme(
-		$row-selected-background: color($crm-grid-palette, 'gray', 800),
-		$row-hover-background: color($crm-grid-palette, 'gray', 700),
-		$row-selected-hover-background: color($crm-grid-palette, 'gray', 700),
-		$cell-active-border-color: color($crm-grid-palette, 'primary', 50),
-		$cell-selected-background: color($crm-grid-palette, 'gray', 50),
-	);
+
 	$crm-grid-toolbar: grid-toolbar-theme(
-        $background-color: color($crm-grid-palette, 'primary', 500)
+        $background-color: color($color: 'primary', $variant: 500),
+        $title-text-color: contrast-color($color: 'primary', $variant: 500)
     );
+
 	$crm-grid-toolbar-button: button-theme(
-        $background: color($crm-grid-palette, 'primary', 800),
-        $hover-background: color($crm-grid-palette, 'primary', 900),
-        $focus-foreground: #fff
+        $background: color($light-palette, 'primary', 800),
+        $hover-background: color($light-palette, 'primary', 900),
+        $active-foreground: contrast-color($light-palette, 'primary', 900),
+        $focus-foreground: contrast-color($light-palette, 'primary', 900)
     );
+
 	$crm-grid-search-button: button-theme(
         $background: transparent,
-        $focus-background: color($crm-grid-palette, 'gray', 200),
-        $hover-background: color($crm-grid-palette, 'gray', 200)
+        $focus-background: color($light-palette, 'gray', 200),
+        $hover-background: color($light-palette, 'gray', 200)
     );
-	$crm-grid-dark-button: button-theme(
-		$foreground: color($crm-grid-dark-palette, 'primary', 500),
-		$hover-foreground: color($crm-grid-dark-palette, 'primary', 500),
-		$focus-foreground: color($crm-grid-dark-palette, 'primary', 500),
-	);
-	$crm-grid-dark-progress: progress-linear-theme(
-		$track-color: color($crm-grid-palette, 'gray', 500)
-	);
+
 	$crm-input-drop-down: input-group-theme(
-        $placeholder-color: color($crm-grid-palette, 'gray', 500),
-        $idle-text-color: color($crm-grid-palette, 'gray', 900)
+        $placeholder-color: color($light-palette, 'gray', 500),
+        $idle-text-color: color($light-palette, 'gray', 900)
     );
 
 	.grid__wrapper {
@@ -233,8 +209,6 @@
 		margin-left: 4px;
 	}
 
-	@include css-vars($search-theme);
-
 	.case-sensitive--active {
 		background: color($color: 'primary', $variant: 200);
 	}
@@ -248,9 +222,9 @@
 		box-shadow: none;
 	}
 
-	.igx-drop-down__list {
-		@include css-vars($crm-input-drop-down)
-	}
+
+    @include css-vars($crm-input-drop-down);
+
 
 	.sample-flex-container {
 		.igx-input-group,
@@ -271,7 +245,7 @@
 
 		.igx-input-group {
 			igx-icon {
-				color: white;
+				color: contrast-color($color: 'gray', $variant: 900);
 			}
 
 			&:hover,
@@ -317,7 +291,7 @@
 
 		.igx-input-group__input {
 			&::placeholder {
-				color: white;
+				color: contrast-color($color: 'gray', $variant: 900);
 				opacity: 1;
 			}
 		}
@@ -329,17 +303,50 @@
 		@include css-vars($crm-grid-search-button);
 	}
 
-	// Not dark theme
 	.grid__wrapper:not(.dark_grid) {
 		@include css-vars($crm-grid-theme);
 		@include css-vars($summary-theme);
 		@include css-vars($checkbox-theme);
 	}
 
+
+    // DARK THEME
+    $dark-palette: palette(
+        $primary: #09f,
+        $secondary: #fff,
+        $surface: #222,
+    );
+
+    $checkbox-dark-theme: checkbox-theme(
+        $fill-color: color($color: 'gray', $variant: 900),
+        $tick-color: contrast-color($color: 'gray', $variant: 900)
+    );
+
+    $crm-dark-grid-theme: grid-theme(
+        $row-selected-background: color($color: 'gray', $variant: 100),
+        $row-selected-text-color: contrast-color($color: 'gray', $variant: 100),
+        $row-hover-background: color($color: 'gray', $variant: 200),
+        $row-hover-text-color: contrast-color($color: 'gray', $variant: 200),
+        $row-selected-hover-background: color($color: 'gray', $variant: 200),
+        $row-selected-hover-text-color: contrast-color($color: 'gray', $variant: 200),
+        $cell-selected-background: color($color: 'gray', $variant: 900),
+        $cell-selected-text-color: contrast-color($color: 'gray', $variant: 900),
+        $cell-active-border-color: color($color: 'gray', $variant: 900),
+    );
+
+    $crm-grid-dark-button: button-theme(
+        $foreground: color($color: 'primary', $variant: 500),
+        $hover-foreground: color($color: 'primary', $variant: 500),
+        $focus-foreground: color($color: 'primary', $variant: 500),
+    );
+
+    $crm-grid-dark-progress: progress-linear-theme(
+        $track-color: color($color: 'gray', $variant: 500)
+    );
+
 	.dark_grid {
-        @include palette($crm-grid-dark-palette);
+        @include palette($dark-palette);
 		@include css-vars($checkbox-dark-theme);
-		@include css-vars($crm-grid-toolbar);
 		@include css-vars($crm-dark-grid-theme);
 		@include css-vars($crm-grid-dark-button);
 		@include css-vars($crm-grid-dark-progress);
@@ -347,7 +354,64 @@
 		.igx-grid-toolbar__actions {
 			@include css-vars($crm-grid-toolbar-button);
 		}
-	}
+
+        .sample-flex-container {
+            .igx-input-group,
+            .igx-input-group--focused {
+                igx-icon {
+                    color: color($color: 'primary', $variant: 200);
+                }
+            }
+
+            .igx-input-group__textarea,
+            .igx-input-group__input {
+                color: color($color: 'primary', $variant: 100);
+            }
+
+            .igx-input-group {
+                igx-icon {
+                    color: contrast-color($color: 'gray', $variant: 50);
+                }
+
+                &:hover,
+                &:focus,
+                &.igx-input-group--focused {
+                    igx-icon {
+                        color: color($color: 'gray', $variant: 400);
+                    }
+
+                    .igx-input-group__bundle {
+                        background: contrast-color($color: 'gray', $variant: 50);
+                        color: color($color: 'gray', $variant: 400);
+                    }
+
+                    .igx-input-group__input {
+                        &::placeholder {
+                            color: color($color: 'gray', $variant: 400);
+                        }
+                    }
+
+                    .igx-input-group__textarea,
+                    .igx-input-group__input {
+                        color: color($color: 'gray', $variant: 400);
+                    }
+
+                    .igx-button--icon {
+                        &:focus,
+                        &:active {
+                            color: color($color: 'gray', $variant: 400);
+                        }
+                    }
+                }
+            }
+
+            .igx-input-group__input {
+                &::placeholder {
+                    color: contrast-color($color: 'gray', $variant: 50);
+                }
+            }
+        }
+    }
 }
 
 .animated-fan {
