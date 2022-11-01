@@ -15,7 +15,7 @@
 
     .header {
         height: 10%;
-        background-color: color(null, 'grays', 50);
+        background-color: color($color: 'gray', $variant: 50);
         display: flex;
         font-size: 1.8rem;
         align-self: center;
@@ -39,10 +39,12 @@
     .analytics-btn {
         @include css-vars(
             button-theme(
-                $foreground: contrast-color(null, 'grays', 900),
-                $background: color(null, 'success', 500, .8),
-                $hover-background: color(null, 'success'),
-                $hover-foreground: contrast-color(null, 'grays', 900),
+                $foreground: contrast-color($color: 'gray', $variant: 900),
+                $background: color($color: 'success', $variant: 500, $opacity: .8),
+                $hover-background: color($color: 'success'),
+                $hover-foreground: contrast-color($color: 'gray', $variant: 900),
+                $focus-background: color($color: 'success'),
+                $focus-foreground: contrast-color($color: 'gray', $variant: 900),
                 $border-radius: 0
             )
         );
@@ -146,7 +148,7 @@
 
     .igx-divider {
         margin: rem(5px) !important;
-        background: contrast-color(null, 'grays', 50) !important;
+        background: contrast-color($color: 'gray', $variant: 50) !important;
     }
 }
 
@@ -235,7 +237,7 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
-    border-left: rem(1px) solid color(null, 'grays', 100);
+    border-left: rem(1px) solid color($color: 'gray', $variant: 100);
 
     .btn, .more-btn {
         width: rem(68px);

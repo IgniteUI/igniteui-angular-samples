@@ -28,21 +28,9 @@
 @use '~igniteui-angular/lib/core/styles/components/button-group/button-group-component';
 @use '~igniteui-angular/lib/core/styles/components/button-group/button-group-theme';
 
-// Import calendar component and theme styles
-@use '~igniteui-angular/lib/core/styles/components/calendar/calendar-component';
-@use '~igniteui-angular/lib/core/styles/components/calendar/calendar-theme';
-
 // Import chip component and theme styles
 @use '~igniteui-angular/lib/core/styles/components/chip/chip-component';
 @use '~igniteui-angular/lib/core/styles/components/chip/chip-theme';
-
-// Import icon component and theme styles
-@use '~igniteui-angular/lib/core/styles/components/icon/icon-component';
-@use '~igniteui-angular/lib/core/styles/components/icon/icon-theme';
-
-// Import drop-down component and theme styles
-@use '~igniteui-angular/lib/core/styles/components/drop-down/drop-down-component';
-@use '~igniteui-angular/lib/core/styles/components/drop-down/drop-down-theme';
 
 // Import badge component and theme styles
 @use '~igniteui-angular/lib/core/styles/components/badge/badge-component';
@@ -58,7 +46,6 @@ $orange-color: #FFA500;
 $dark-theme-palette: palette($primary: $dark-color, $secondary: $orange-color);
 
 $dark-grid-theme: grid-theme(
-$palette: $dark-theme-palette,
 $content-background: color($dark-theme-palette, "secondary", 100),
 $header-background: color($dark-theme-palette, "primary", 500),
 $header-text-color: color($dark-theme-palette, "secondary", 600),
@@ -70,15 +57,13 @@ $header-border-color: color($dark-theme-palette, "primary", 600)
 
 // Define dark theme for the paginator
 $dark-paginator-theme: paginator-theme(
-  $palette: $dark-theme-palette,
   $text-color: color($dark-theme-palette, "secondary", 700),
-  $background-color:color($dark-theme-palette, "primary", 500),
+  $background-color: color($dark-theme-palette, "primary", 500),
   $border-color: color($dark-theme-palette, "secondary", 500)
 );
 
 // Define dark theme for the dialog
 $dark-dialog-theme: dialog-theme(
-$palette: $dark-theme-palette,
 $background: color($dark-theme-palette, "primary", 100),
 $title-color: color($dark-theme-palette, "secondary", 500),
 $message-color: color($dark-theme-palette, "secondary", 600)
@@ -86,7 +71,6 @@ $message-color: color($dark-theme-palette, "secondary", 600)
 
 // Define dark theme for the input-group
 $dark-input-group-theme: input-group-theme(
-$palette: $dark-theme-palette,
 $box-background:  color($dark-theme-palette, "primary", 100),
 $disabled-border-color: color($dark-theme-palette, "primary", 500),
 $box-disabled-background: color($dark-theme-palette, "secondary", 100),
@@ -98,14 +82,12 @@ $idle-text-color: color($dark-theme-palette, "secondary", 700)
 
 // Define dark theme for the snackbar
 $dark-snackbar-theme: snackbar-theme(
-$palette: $dark-theme-palette,
 $background: color($dark-theme-palette, "primary", 100),
 $text-color: color($dark-theme-palette, "secondary", 500)
 );
 
 // Define dark theme for the button-group
 $dark-button-group-theme: button-group-theme(
-$palette: $dark-theme-palette,
 $item-text-color: color($dark-theme-palette, "primary", 500),
 $item-background: color($dark-theme-palette, "secondary", 500),
 $item-selected-background: color($dark-theme-palette, "primary", 200),
@@ -114,7 +96,6 @@ $item-selected-text-color: color($dark-theme-palette, "secondary", 500)
 
 // Define dark theme for the button
 $dark-button-theme: button-theme(
-$palette: $dark-theme-palette,
 $foreground: color($dark-theme-palette, "secondary", 700),
 $hover-foreground: color($dark-theme-palette, "primary", 500),
 $hover-background: color($dark-theme-palette, "secondary", 500),
@@ -124,30 +105,13 @@ $disabled-background: color($dark-theme-palette, "primary", 400),
 $disabled-foreground: color($dark-theme-palette, "primary", 700)
 );
 
-// Define dark theme for the calendar
-$dark-calendar-theme: calendar-theme(
-    $palette: $dark-theme-palette
-);
-
-// Define dark theme for the icon
-$dark-icon-theme: icon-theme(
-    $palette: $dark-theme-palette
-);
-
 // Define dark theme for the chip
 $dark-chip-theme: chip-theme(
-    $palette: $dark-theme-palette,
     $text-color: color($dark-theme-palette, "primary", 500),
     $background: color($dark-theme-palette, "secondary", 500),
 );
 
-// Define dark theme for the drop-down
-$dark-drop-down-theme: drop-down-theme(
-    $palette: $dark-theme-palette
-);
-
 // Define dark theme for the badge
 $dark-badge-theme: badge-theme(
-    $palette: $dark-theme-palette,
     $background-color: color($dark-theme-palette, "secondary", 500)
 );

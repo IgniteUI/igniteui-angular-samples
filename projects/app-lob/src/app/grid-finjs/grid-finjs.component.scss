@@ -37,7 +37,7 @@
 	.changeNeg,
 	.strongPositive,
 	.strongNegative {
-		color: contrast-color(null, 'grays', 50) !important;
+		color: contrast-color(null, 'gray', 50) !important;
 
 		.igx-grid__td-text {
 			padding: rem(2px) rem(5px);
@@ -74,7 +74,7 @@
 
 	.changePos1 {
 		background: color(null, 'success', 500, .5);
-		color: contrast-color(null, 'grays', 900);
+		color: contrast-color(null, 'gray', 900);
 	}
 
 	.changePos2 {
@@ -94,7 +94,7 @@
 
 	.changeNeg1 {
 		background: color(null, 'error', 500, .5);
-		color: contrast-color(null, 'grays', 900);
+		color: contrast-color(null, 'gray', 900);
 	}
 
 	.changeNeg2 {
@@ -112,7 +112,7 @@
 
 		.finjs-icons,
 		.igx-grid__td-text {
-			color: contrast-color(null, 'grays', 900);
+			color: contrast-color(null, 'gray', 900);
 		}
 	}
 
@@ -123,7 +123,7 @@
 
 		.finjs-icons,
 		.igx-grid__td-text {
-			color: contrast-color(null, 'grays', 900);
+			color: contrast-color(null, 'gray', 900);
 		}
 	}
 
@@ -137,7 +137,7 @@
 
 	.strongPositive1 {
 		background: color(null, 'success', 500);
-		color: contrast-color(null, 'grays', 900);
+		color: contrast-color(null, 'gray', 900);
 	}
 
 	.strongPositive2 {
@@ -151,13 +151,13 @@
 	.strongNegative {
 		.igx-grid__td-text {
 			background: color(null, 'error', 500);
-			color: contrast-color(null, 'grays', 900);
+			color: contrast-color(null, 'gray', 900);
 		}
 	}
 
 	.strongNegative1 {
 		background: color(null, 'error', 500);
-		color: contrast-color(null, 'grays', 900);
+		color: contrast-color(null, 'gray', 900);
 	}
 
 	.strongNegative2 {
@@ -175,7 +175,7 @@
 
 		.finjs-icons,
 		.igx-grid__td-text {
-			color: contrast-color(null, 'grays', 900);
+			color: contrast-color(null, 'gray', 900);
 		}
 	}
 
@@ -186,7 +186,7 @@
 
 		.finjs-icons,
 		.igx-grid__td-text {
-			color: contrast-color(null, 'grays', 900);
+			color: contrast-color(null, 'gray', 900);
 		}
 	}
 

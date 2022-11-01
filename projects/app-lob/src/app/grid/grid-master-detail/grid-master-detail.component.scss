@@ -27,16 +27,16 @@ h6 {
 
 .details-chart {
     width: rem(200px);
-    background: contrast-color(null, 'grays' 900, .04);
-    background: contrast-color(null, 'grays' 900, .4);
+    background: contrast-color($color: 'gray', $variant: 900);
+    background: contrast-color($color: 'gray', $variant: 900);
     padding: rem(16px);
     border-radius: rem(4px);
-    border: rem(1px) solid contrast-color(null, 'grays' 900, .8);
+    border: rem(1px) solid contrast-color($color: 'gray', $variant: 900);
 }
 
 .tabContent igx-grid {
     box-shadow: none;
-    border: rem(1px) solid contrast-color(null, 'grays' 900, .08);
+    border: rem(1px) solid contrast-color($color: 'gray', $variant: 900);
 }
 
 .grid__wrapper {

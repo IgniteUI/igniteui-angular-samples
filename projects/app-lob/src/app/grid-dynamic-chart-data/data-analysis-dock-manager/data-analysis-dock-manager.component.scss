@@ -16,7 +16,7 @@
     width: 100vw;
     height: 100vh;
     padding: 0 rem(8px) rem(8px) rem(8px);
-    --igc-pane-content-background: #{contrast-color(null, 'grays', 900)};
+    --igc-pane-content-background: #{contrast-color($color: 'gray', $variant: 900)};
 }
 
 .chart-types-container {
@@ -45,11 +45,11 @@
 }
 
 $custom-badge-theme: badge-theme(
-    $border-color: contrast-color(null, 'grays', 900),
+    $border-color: contrast-color($color: 'gray', $variant: 900),
     $border-width: #{rem(2px)},
-    $icon-color: contrast-color(null, 'grays', 900),
-    $text-color: contrast-color(null, 'grays', 50),
-    $background-color: contrast-color(null, 'grays', 500),
+    $icon-color: contrast-color($color: 'gray', $variant: 900),
+    $text-color: contrast-color($color: 'gray', $variant: 50),
+    $background-color: contrast-color($color: 'gray', $variant: 500),
     $border-radius: 50%
 );
 :host ::ng-deep {
@@ -81,7 +81,7 @@ $custom-badge-theme: badge-theme(
 
         .igx-divider {
             margin-top: 5px !important;
-            background: contrast-color(null, 'grays', 50) !important;
+            background: contrast-color($color: 'gray', $variant: 50) !important;
             width: 95% !important;
         }
     }
@@ -95,10 +95,12 @@ $custom-badge-theme: badge-theme(
     .analytics-btn {
         @include css-vars(
             button-theme(
-                $foreground: contrast-color(null, 'grays', 900),
-                $background: color(null, 'success', 500, .8),
-                $hover-background: color(null, 'success'),
-                $hover-foreground: contrast-color(null, 'grays', 900),
+                $foreground: contrast-color($color: 'gray', $variant: 900),
+                $background: color($color: 'success', $variant: 500, $opacity: .8),
+                $hover-background: color($color: 'success'),
+                $hover-foreground: contrast-color($color: 'gray', $variant: 900),
+                $focus-background: color($color: 'success'),
+                $focus-foreground: contrast-color($color: 'gray', $variant: 900),
                 $border-radius: 0
             )
         );
@@ -155,11 +157,11 @@ $font-family: 'Titillium Web', 'Roboto', 'Helvetica Neue', sans-serif;
         width: 100%;
         padding: 0 0.2rem 0 0.4rem;
         font-weight: 650;
-        border-bottom: 1px solid color(null, 'grays', 100);
+        border-bottom: 1px solid color($color: 'gray', $variant: 100);
         align-self: center;
         font-family: $font-family;
         letter-spacing: 1.7px;
-        color: contrast-color(null, 'grays', 50, .87);
+        color: contrast-color($color: 'gray', $variant: 50);
     }
 }
 
