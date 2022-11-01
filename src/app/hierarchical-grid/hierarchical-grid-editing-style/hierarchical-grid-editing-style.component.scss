@@ -3,7 +3,7 @@
 $white: #fff;
 $blue: #4567bb;
 
-$color-palette: palette($primary: $white, $secondary: $blue);
+$color-palette: palette($primary: $white, $secondary: $blue, $surface: #fff);
 
 $grid-theme: grid-theme(
     $cell-editing-background: $blue,
@@ -13,7 +13,6 @@ $grid-theme: grid-theme(
 );
 
 $input-theme: input-group-theme(
-    $palette: $color-palette,
     $filled-text-color: $white,
     $focused-text-color: $white,
     $idle-text-color: $white,
@@ -36,11 +35,12 @@ $datepicker-theme: calendar-theme(
 );
 
 :host {
+    @include palette($color-palette);
     ::ng-deep {
-        @include checkbox($checkbox-theme);
-        @include input-group($input-theme);
-        @include calendar($datepicker-theme);
-        @include grid($grid-theme);
+        @include css-vars($checkbox-theme);
+        @include css-vars($input-theme);
+        @include css-vars($datepicker-theme);
+        @include css-vars($grid-theme);
     }
 }
 

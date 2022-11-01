@@ -17,16 +17,11 @@ body {
     $schema: $schema
 );
 
-:root {
-    @include palette-vars($palette);
-}
-
 .light-theme {
     @include light-theme($palette);
 }
 
 $dark-grid-theme: grid-theme(
-	$palette: $green-palette,
 	$schema: $dark-schema,
 	$row-selected-background: #1f3823,
 	$row-selected-hover-background: #244229,

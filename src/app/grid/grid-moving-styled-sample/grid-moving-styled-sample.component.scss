@@ -6,15 +6,15 @@
 $yellow-color: #F4D45C;
 $black-color: #575757;
 
-$dark-palette: palette($primary: $yellow-color, $secondary: $black-color);
+$dark-palette: palette($primary: $yellow-color, $secondary: $black-color, $surface: #222);
 $dark-grid-column-moving-theme: grid-theme(
-    $palette: $dark-palette,
     $ghost-header-text-color: color($dark-palette, "primary", 400),
     $ghost-header-background: color($dark-palette, "secondary", 200),
     $ghost-header-icon-color:  color($dark-palette, "primary", 500)
 );
 
 :host {
+    @include palette($dark-palette);
     ::ng-deep{
         .igx-grid__th--pinned  {
             .pin-icon {
@@ -28,7 +28,7 @@ $dark-grid-column-moving-theme: grid-theme(
 
         .grid__wrapper {
             padding: 16px;
-            @include grid($dark-grid-column-moving-theme);
+            @include css-vars($dark-grid-column-moving-theme);
           }
     }
 }

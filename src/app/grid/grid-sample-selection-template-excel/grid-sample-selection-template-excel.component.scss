@@ -1,7 +1,7 @@
 @use '../../../variables' as *;
 
-$default-arrow-color: color($color: 'grays', $variant: 400);
-$default-arrow-hover-color: color($color: 'grays', $variant: 800);
+$default-arrow-color: color($color: 'gray', $variant: 400);
+$default-arrow-hover-color: color($color: 'gray', $variant: 800);
 $default-arrow-all-color: color($color: 'secondary', $variant: 100);
 
 @mixin selector($justify, $align) {
