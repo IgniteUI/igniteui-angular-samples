@@ -1,0 +1,15 @@
+.pivotgrid-sample {
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
+    height: 80%;
+
+    .button-container {
+        align-items: flex-start;
+        margin: 25px auto;
+    }
+
+    igx-pivot-grid {
+        align-items: center;
+    }
+}

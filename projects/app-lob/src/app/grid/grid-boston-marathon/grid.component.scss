@@ -5,7 +5,7 @@ $grid-sample-theme: grid-theme(
     $row-selected-text-color: #ddd,
     $row-hover-background: #f8f8f8,
     $row-border-color: #f8f8f8,
-    $cell-selected-background: color($color: 'grays', $variant: 800),
+    $cell-selected-background: color($color: 'gray', $variant: 800),
     $cell-selected-text-color: #fff
 );
 
@@ -80,6 +80,7 @@ $progressBar-sample-theme: progress-linear-theme(
                     linear-gradient(-45deg, transparent 75%, #222 75%);
                     background-size: 20px 20px;
                     background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+                    color: #000;
                 }
 
                 > span {
@@ -89,6 +90,7 @@ $progressBar-sample-theme: progress-linear-theme(
 
                     > span {
                         margin: 0 rem(8px);
+                        color: #000;
                     }
                 }
             }

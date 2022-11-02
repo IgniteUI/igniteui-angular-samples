@@ -1,0 +1,10 @@
+<div class="pivotgrid-sample">
+    <div class="button-container">
+        <button igxButton="raised" (click)="exportButtonHandler()">Export To Excel</button>
+        Press the button to export the Pivot Grid as .xlsx file.
+    </div>
+
+    <igx-pivot-grid #grid [data]="data" [pivotConfiguration]="pivotConfig" [rowSelection]="'single'"
+        [superCompactMode]="true" [defaultExpandState]='true'>
+    </igx-pivot-grid>
+</div>

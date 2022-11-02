@@ -60,6 +60,7 @@ import { AccordionConfigGenerator } from '../configs/AccordionConfigGenerator';
 import { StepperConfigGenerator } from '../configs/StepperConfigGenerator';
 import { PaginationConfigGenerator } from '../configs/PaginationConfigGenerator';
 import { PivotGridConfigGenerator } from '../configs/PivotGridConfigGenerator';
+import { QueryBuilderConfigGenerator } from '../configs/QueryBuilderConfigGenerator';
 
 export const CONFIG_GENERATORS =
     [
@@ -132,5 +133,6 @@ export const CONFIG_GENERATORS =
         TransactionsConfigGenerator,
         SplitterConfigGenerator,
         DockManagerConfigGenerator,
-        PaginationConfigGenerator
+        PaginationConfigGenerator,
+        QueryBuilderConfigGenerator
     ];
