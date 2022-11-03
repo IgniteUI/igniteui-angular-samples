@@ -1,159 +1,183 @@
 @use '~igniteui-dockmanager/dist/collection/styles/igc.themes';
+@use '../../variables' as *;
 
 .actionItem {
-    margin-bottom: 20px;
+	margin-block-end: rem(20px);
 }
 
 .finjs-icons {
-    display: flex;
-    align-items: center;
-    igx-icon {
-        font-size: 16px;
-        width: 16px;
-        height: 16px;
-        margin-left: 4px;
-    }
+	display: flex;
+	align-items: center;
+
+	igx-icon {
+		font-size: rem(16px);
+		width: rem(16px);
+		height: rem(16px);
+		margin-inline-start: rem(4px);
+	}
 }
 
 .changePos,
 .changeNeg,
 .strongPositive,
 .strongNegative {
-    color: #fff !important;
-    .igx-grid__td-text {
-        padding: 2px 5px;
-    }
+	color: contrast-color(null, 'gray', 500) !important;
+
+	.igx-grid__td-text {
+		padding: rem(2px) rem(5px);
+	}
 }
+
 .positive {
-    color: #4eb862 !important;
+	color: color(null, 'success', 500) !important;
 }
+
 .positive.strongPositive {
-    .igx-grid__td-text {
-        color: rgba(78, 184, 98, 0.8) !important;
-    }
+	.igx-grid__td-text {
+		color: color(null, 'success', 500, .8) !important;
+	}
 }
+
 .negative {
-    color: #d31642 !important;
+	color: color(null, 'error', 500) !important;
 }
+
 .negative.strongNegative {
-    .igx-grid__td-text {
-        color: rgba(255, 19, 74, 0.8) !important;
-    }
+	.igx-grid__td-text {
+		color: color(null, 'success', 500, .8) !important;
+	}
 }
+
 // NORMAL
 // positive
 .changePos {
-    .igx-grid__td-text {
-        background: #335e3b;
-    }
+	.igx-grid__td-text {
+		background: color(null, 'success', 500, .5);
+	}
 }
+
 .changePos1 {
-    background: #335e3b;
-    color: #fff;
+	background: color(null, 'success', 500, .5);
+	color: contrast-color(null, 'gray', 900);
 }
+
 .changePos2 {
-    .igx-grid__td-text {
-        border-right: 4px solid #335e3b;
-        padding-right: 15px;
-    }
+	.igx-grid__td-text {
+		border-inline-end: rem(4px) solid color(null, 'success', 500, .5);
+		padding-inline-end: rem(15px);
+	}
 }
+
 // negative
 .changeNeg {
-    .igx-grid__td-text {
-        background: #7a1c32;
-    }
+	.igx-grid__td-text {
+		background: color(null, 'error', 500, .5);
+	}
 }
+
 .changeNeg1 {
-    color: #fff;
-    background: #7a1c32;
+	background: color(null, 'error', 500, .5);
+	color: contrast-color(null, 'gray', 900);
 }
+
 .changeNeg2 {
-    .igx-grid__td-text {
-        border-right: 4px solid #7a1c32;
-        padding-right: 9px;
-    }
+	.igx-grid__td-text {
+		border-inline-end: rem(4px) solid color(null, 'error', 500, .5);
+		padding-inline-end: rem(9px);
+	}
 }
 
 // STRONG
 // positive
 .strongPositive {
-    .igx-grid__td-text {
-        background: #459a55;
-    }
+	.igx-grid__td-text {
+		background: color(null, 'success', 500);
+	}
 }
+
 .strongPositive1 {
-    background: #459a55;
-    color: #fff;
+	background: color(null, 'success', 500);
+	color: contrast-color(null, 'gray', 900);
 }
+
 .strongPositive2 {
-    .igx-grid__td-text {
-        border-right: 4px solid #459a55;
-        padding-right: 15px;
-    }
+	.igx-grid__td-text {
+		border-inline-end: rem(4px) solid color(null, 'success', 500);
+		padding-inline-end: rem(15px);
+	}
 }
+
 // negative
 .strongNegative {
-    .igx-grid__td-text {
-        background: #d31642;
-        color: #fff;
-    }
+	.igx-grid__td-text {
+		background: color(null, 'error', 500);
+		color: contrast-color(null, 'gray', 900);
+	}
 }
+
 .strongNegative1 {
-    background: #d31642;
-    color: #fff;
+	background: color(null, 'error', 500);
+	color: contrast-color(null, 'gray', 900);
 }
+
 .strongNegative2 {
-    .igx-grid__td-text {
-        border-right: 4px solid #d31642;
-        padding-right: 9px;
-    }
+	.igx-grid__td-text {
+		border-inline-end: rem(4px) solid color(null, 'error', 500);
+		padding-inline-end: rem(9px);
+	}
 }
 
 :host ::ng-deep {
-    .grid-area {
-        margin-top: 1rem;
-        overflow-y: hidden;
-        overflow-x: hidden;
-        width: 100%;
-    }
+	.grid-area {
+		margin-block-start: 1rem;
+		overflow-y: hidden;
+		overflow-x: hidden;
+		width: 100%;
+	}
 
-    // selected
-    .igx-grid__td--column-selected.changePos1,
-    .igx-grid__td--column-selected.changePos2,
-    .igx-grid__td--column-selected.changePos {
-        background-color: #335e3b !important;
-        .finjs-icons,
-        .igx-grid__td-text {
-            color: #fff;
-        }
-    }
-    .igx-grid__td--column-selected.changeNeg1,
-    .igx-grid__td--column-selected.changeNeg2,
-    .igx-grid__td--column-selected.changeNeg {
-        background-color: #7a1c32 !important;
-        .finjs-icons,
-        .igx-grid__td-text {
-            color: #fff;
-        }
-    }
-    
-    // selected
-    .igx-grid__td--column-selected.strongPositive1,
-    .igx-grid__td--column-selected.strongPositive2,
-    .igx-grid__td--column-selected.strongPositive {
-        background-color: #459a55 !important;
-        .finjs-icons,
-        .igx-grid__td-text {
-            color: #fff;
-        }
-    }
-    .igx-grid__td--column-selected.strongNegative1,
-    .igx-grid__td--column-selected.strongNegative2,
-    .igx-grid__td--column-selected.strongNegative {
-        background-color: #d31642 !important;
-        .finjs-icons,
-        .igx-grid__td-text {
-            color: #fff;
-        }
-    }
+	// selected
+	.igx-grid__td--column-selected.changePos1,
+	.igx-grid__td--column-selected.changePos2,
+	.igx-grid__td--column-selected.changePos {
+		background-color: color(null, 'success', 500) !important;
+
+		.finjs-icons,
+		.igx-grid__td-text {
+			color: contrast-color(null, 'gray', 900);;
+		}
+	}
+
+	.igx-grid__td--column-selected.changeNeg1,
+	.igx-grid__td--column-selected.changeNeg2,
+	.igx-grid__td--column-selected.changeNeg {
+		background-color: color(null, 'error', 500) !important;
+
+		.finjs-icons,
+		.igx-grid__td-text {
+			color: contrast-color(null, 'gray', 900);
+		}
+	}
+
+	// selected
+	.igx-grid__td--column-selected.strongPositive1,
+	.igx-grid__td--column-selected.strongPositive2,
+	.igx-grid__td--column-selected.strongPositive {
+		background-color: color(null, 'success', 500) !important;
+
+		.finjs-icons,
+		.igx-grid__td-text {
+			color: contrast-color(null, 'gray', 900);
+		}
+	}
+
+	.igx-grid__td--column-selected.strongNegative1,
+	.igx-grid__td--column-selected.strongNegative2,
+	.igx-grid__td--column-selected.strongNegative {
+		background-color: color(null, 'error', 500) !important;
+
+		.finjs-icons,
+		.igx-grid__td-text {
+			color: contrast-color(null, 'gray', 900);
+		}
+	}
 }
