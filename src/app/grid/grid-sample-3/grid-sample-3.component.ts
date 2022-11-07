@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import {
-    IgxColumnComponent,
+    ColumnType,
     IgxGridComponent,
     IgxNumberSummaryOperand,
     IgxSummaryResult } from 'igniteui-angular';
@@ -36,7 +36,7 @@ export class GridSample3Component {
         this.productId = DATA.length;
     }
 
-    public toggleSummary(column: IgxColumnComponent) {
+    public toggleSummary(column: ColumnType) {
         column.hasSummary = !column.hasSummary;
     }
 }

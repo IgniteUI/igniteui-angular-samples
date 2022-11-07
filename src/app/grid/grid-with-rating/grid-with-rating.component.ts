@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridRow, IgxToastComponent, IgxGridCell } from 'igniteui-angular';
-import { IgxCell } from 'igniteui-angular/lib/grids/common/crud.service';
+import { IgxToastComponent, CellType } from 'igniteui-angular';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { DATA } from '../../data/nwindData';
 
@@ -24,7 +23,7 @@ export class GridWithRatingComponent implements OnInit {
         this.data.map(r => r.Rating = Math.floor(Math.random() * 5) + 1)
     }
 
-    public ratingChanged(event: CustomEvent, cell: IgxGridCell) {
+    public ratingChanged(event: CustomEvent, cell: CellType) {
         cell.value = event.detail;
         this.message = `You rated ${cell.row.data.ProductName} with score: ${event.detail}`;
         this.toast.open();

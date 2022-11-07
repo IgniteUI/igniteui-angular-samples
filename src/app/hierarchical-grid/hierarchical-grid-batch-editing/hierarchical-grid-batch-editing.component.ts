@@ -4,7 +4,8 @@ import {
     IgxDialogComponent,
     IgxHierarchicalGridComponent,
     IgxRowIslandComponent,
-    Transaction
+    Transaction,
+    GridType
 } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { Singer } from '../models';
@@ -66,13 +67,13 @@ export class HGridBatchEditingSampleComponent implements OnInit {
 
     public formatter = a => a;
 
-    public undo(grid: IgxHierarchicalGridComponent) {
+    public undo(grid: GridType) {
         /* exit edit mode and commit changes */
         grid.endEdit(true);
         grid.transactions.undo();
     }
 
-    public redo(grid: IgxHierarchicalGridComponent) {
+    public redo(grid: GridType) {
         /* exit edit mode and commit changes */
         grid.endEdit(true);
         grid.transactions.redo();
