@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     GridColumnDataType,
-    IgxColumnComponent,
+    ColumnType,
     IgxDateFilteringOperand,
     IgxHierarchicalGridComponent,
+    GridType,
     IgxNumberFilteringOperand,
     IgxStringFilteringOperand,
     OverlaySettings
@@ -24,7 +25,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
     public overlaySettings: OverlaySettings;
     public displayDateFormat = 'MMM d, y';
 
-    private _filterValues = new Map<IgxColumnComponent, any>();
+    private _filterValues = new Map<ColumnType, any>();
 
     constructor() {
         this.localdata = SINGERS;
@@ -37,7 +38,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
 
     public formatter = (a) => a;
 
-    public getFilterValue(column: IgxColumnComponent): any {
+    public getFilterValue(column: ColumnType): any {
         return this._filterValues.has(column) ? this._filterValues.get(column) : null;
     }
 
@@ -45,7 +46,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
         event.stopImmediatePropagation();
     }
 
-    public onInput(input: any, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
+    public onInput(input: any, column: ColumnType, grid: GridType) {
         this._filterValues.set(column, input.value);
 
         if (input.value === '') {
@@ -65,7 +66,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
             this.transformValue(input.value, column), operand, column.filteringIgnoreCase);
     }
 
-    public clearInput(column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
+    public clearInput(column: ColumnType, grid: GridType) {
         this._filterValues.delete(column);
         grid.clearFilter(column.field);
     }
@@ -76,7 +77,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
         }
     }
 
-    public onDateSelected(event, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
+    public onDateSelected(event, column: ColumnType, grid: GridType) {
         if (!event) {
             this.clearInput(column, grid);
             return;
@@ -87,7 +88,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
             column.filteringIgnoreCase);
     }
 
-    private transformValue(value: any, column: IgxColumnComponent): any {
+    private transformValue(value: any, column: ColumnType): any {
         if (column.dataType === GridColumnDataType.Number) {
             value = parseFloat(value);
         }
