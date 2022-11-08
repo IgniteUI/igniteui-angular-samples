@@ -24,6 +24,8 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
     private searchText: string = null;
     private defaultVirtState: IForOfState = { chunkSize: 6, startIndex: 0 };
     private currentVirtState: IForOfState = { chunkSize: 6, startIndex: 0 };
+    private itemID: number = 0;
+    private itemCount:number = 0;
 
     private hasSelection: boolean;
 
@@ -33,7 +35,7 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
     ) { }
 
     public ngOnInit() {
-        this.rData = this.remoteService.remoteData;
+        this.rData = this.remoteService.remoteData;        
     }
 
     public ngAfterViewInit() {
@@ -43,7 +45,8 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
         };
         this.remoteService.getData(initSize, null, (data) => {
             this.remoteCombo.totalItemCount = data['@odata.count'];
-        });
+            this.itemCount = this.remoteCombo.totalItemCount;
+        });        
     }
 
     public dataLoading() {
@@ -83,6 +86,8 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
             this.searchText,
             (data) => {
                 this.remoteCombo.totalItemCount = data['@odata.count'];
+                const scroll = this.remoteCombo.virtualScrollContainer.getScrollForIndex(this.itemID -1);
+                this.remoteCombo.virtualScrollContainer.scrollPosition = scroll;
             }
         );
     }
@@ -96,11 +101,12 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
         this.currentVirtState.chunkSize = Math.ceil(this.remoteCombo.itemsMaxHeight / this.remoteCombo.itemHeight);
         
         if(this.searchText === null || this.searchText ===''){
-            this.currentVirtState.startIndex = this.remoteCombo.virtualizationState.startIndex
+            this.currentVirtState.startIndex = this.remoteCombo.virtualizationState.startIndex;
+            this.itemID = evt.newSelection[evt.newSelection.length-1];
         } else {
-            evt.newSelection[evt.newSelection.length-1] - this.currentVirtState.chunkSize/2>0 ?
-            this.currentVirtState.startIndex = evt.newSelection[evt.newSelection.length-1] - this.currentVirtState.chunkSize/2:
-            this.currentVirtState.startIndex = 0;
+            this.itemCount -  evt.newSelection[evt.newSelection.length-1] >= this.currentVirtState.chunkSize -1?
+            this.itemID = this.currentVirtState.startIndex = evt.newSelection[evt.newSelection.length-1] - 1:
+            this.itemID = this.currentVirtState.startIndex = this.itemCount - (this.currentVirtState.chunkSize-1);
         }
     }
 }
