@@ -1,18 +1,6 @@
 @use '../../variables' as *;
 
 :host ::ng-deep {
-	.fin-dark-theme {
-		.finjs-slider,
-		.sample-toolbar,
-		.group-drop-area {
-			color: contrast-color(null, 'gray', 900);
-		}
-
-		.group-drop-area {
-			background: color(null, 'surface', 500);
-		}
-	}
-
 	.finjs-icons {
 		display: flex;
 		align-items: center;
