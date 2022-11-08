@@ -22,9 +22,6 @@ export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
         closeOnOutsideClick: true
     };
 
-    @HostBinding('class.dark-theme')
-    public darkTheme = false;
-
     public properties = ['price', 'country'];
     public chartData: Stock[] = [];
     public volume = 1000;
@@ -39,10 +36,6 @@ export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
             }
             case 'grouped': {
                 this.finGrid.toggleGrouping();
-                break;
-            }
-            case 'theme': {
-                this.darkTheme = event.value;
                 break;
             }
             default: break;
