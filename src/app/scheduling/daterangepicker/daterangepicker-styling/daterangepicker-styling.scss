@@ -6,7 +6,8 @@ $blue: #61aedb;
 
 $custom-palette: palette(
     $primary: $blue,
-    $secondary: $purple
+    $secondary: $purple,
+    $surface: #fff
 );
 
 $today-text: color($custom-palette, 'primary', 500);
@@ -21,7 +22,6 @@ $custom-date-range-theme: date-range-picker-theme(
 
 // INPUT GROUP
 $custom-input-group-theme: input-group-theme(
-  $palette: $custom-palette,
   $filled-text-color: $text-color,
   $idle-text-color: $text-color,
   $focused-text-color: $color-focused,
@@ -32,7 +32,6 @@ $custom-input-group-theme: input-group-theme(
 
 // CALENDAR styling specific overlay component requires outlet -> [overlaySettings]="{ outlet: element }"
 $custom-calendar-theme: calendar-theme(
-    $palette: $custom-palette,
     $date-current-text-color: $today-text,
     $border-radius: 0.5,
     $date-border-radius: 0.5

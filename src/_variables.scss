@@ -9,8 +9,11 @@ $default-palette: $palette;
 $green-palette: palette(
     $primary: #09f,
     $secondary: #72da67,
-    $grays: #fff,
-    $surface: #333
+    $surface: #333,
+    $info: #1377d5,
+    $success: #4eb862,
+    $warn: #fbb13c,
+    $error: #ff134a,
 );
 
-$grays-btn-color: color($green-palette, 'grays', 800);
+$gray-btn-color: color($green-palette, 'gray', 800);

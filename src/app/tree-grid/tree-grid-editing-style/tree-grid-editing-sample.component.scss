@@ -3,7 +3,7 @@
 $white: #fff;
 $blue: #4567bb;
 
-$color-palette: palette($primary: $white, $secondary: $blue);
+$color-palette: palette($primary: $white, $secondary: $blue, $surface: #fff);
 
 $grid-theme: grid-theme(
     $cell-editing-background: $blue,
@@ -24,7 +24,6 @@ $datepicker-theme: calendar-theme(
 );
 
 $input-theme: input-group-theme(
-    $palette: $color-palette,
     $filled-text-color: $white,
     $focused-text-color: $white,
     $idle-text-color: $white,
@@ -37,6 +36,7 @@ $input-theme: input-group-theme(
 
 :host {
     padding: 3px 10px;
+    @include palette($color-palette);
     ::ng-deep {
         .igx-grid__tbody{
             @include css-vars($input-theme);

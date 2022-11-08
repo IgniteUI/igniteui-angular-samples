@@ -3,15 +3,18 @@
 $primary-color: #0288D1;
 $secondary-color: #BDBDBD;
 
-$custom-theme-palette: palette($primary: $primary-color, $secondary: $secondary-color);
+$custom-theme-palette: palette($primary: $primary-color, $secondary: $secondary-color, $surface: #fff);
 
 $custom-grid-theme: grid-theme(
-    $palette: $custom-theme-palette,
     $resize-line-color: color($custom-theme-palette, 'secondary', 500)
 );
 
-:host ::ng-deep {
-	@include css-vars($custom-grid-theme);
+:host {
+    @include palette($custom-theme-palette);
+
+    ::ng-deep {
+        @include css-vars($custom-grid-theme);
+    }
 }
 
 .grid__wrapper {

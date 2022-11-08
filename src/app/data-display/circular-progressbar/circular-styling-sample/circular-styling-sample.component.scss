@@ -1,7 +1,7 @@
 @use '../../../../variables' as *;
 
 $custom-theme: progress-circular-theme(
-    $base-circle-color: color($color: 'grays', $variant: 300),
+    $base-circle-color: color($color: 'gray', $variant: 300),
     $progress-circle-color: color($color: 'success')
 );
 

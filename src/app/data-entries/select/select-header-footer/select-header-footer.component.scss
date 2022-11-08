@@ -32,7 +32,7 @@ igx-select {
     justify-content: space-between;
     align-items: center;
     padding: 0 1.5rem;
-    background: color($color: 'grays', $variant: 100);
+    background: color($color: 'gray', $variant: 100);
     igx-icon {
         &.important-icon {
             color: color($color: 'primary', $variant: 500);
@@ -73,11 +73,11 @@ $custom-button-group: button-group-theme(
     $schema: $light-schema,
     $shadow: none,
     $border-radius: 0,
-    $item-background: color($color: 'grays', $variant: 300),
-    $item-text-color: color($color: 'grays', $variant: 700),
-    $item-hover-background: color($color: 'grays', $variant: 400),
-    $item-hover-text-color: color($color: 'grays', $variant: 700),
-    $item-border-color: color($color:  'grays', $variant: 700),
+    $item-background: color($color: 'gray', $variant: 300),
+    $item-text-color: color($color: 'gray', $variant: 700),
+    $item-hover-background: color($color: 'gray', $variant: 400),
+    $item-hover-text-color: color($color: 'gray', $variant: 700),
+    $item-border-color: color($color:  'gray', $variant: 700),
     $item-selected-text-color: #fff,
     $item-selected-background: color($color: 'primary', $variant: 500),
     $item-selected-border-color: color($color: 'primary', $variant: 500),

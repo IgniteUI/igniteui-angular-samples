@@ -27,7 +27,7 @@
     .folders {
         width: rem(200px);
         padding: 8px;
-        background: color($color: 'grays', $variant: 50);
+        background: color($color: 'gray', $variant: 50);
         border: none;
 
         igx-icon {
@@ -45,7 +45,7 @@
             }
 
             &:hover {
-                background: color($color: 'grays', $variant: 100);
+                background: color($color: 'gray', $variant: 100);
             }
 
             &:nth-child(5) {
