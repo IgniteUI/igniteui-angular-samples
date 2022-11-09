@@ -5,11 +5,11 @@ $black-color: #292826;
 
 $dark-palette: palette(
     $primary: $black-color,
-    $secondary: $yellow-color
+    $secondary: $yellow-color,
+    $surface: #222
 );
 
 $dark-tabs: tabs-theme(
-    $palette: $dark-palette,
     $item-text-color: color($dark-palette, "secondary", 400),
     $item-background: color($dark-palette, "primary", 400),
     $item-hover-background: color($dark-palette, "secondary", 400),
@@ -21,12 +21,13 @@ $dark-tabs: tabs-theme(
 );
 
 :host {
+    @include palette($dark-palette);
     igx-tab-content {
         padding: 8px;
     }
 
     ::ng-deep {
-        @include tabs($dark-tabs);
+        @include css-vars($dark-tabs);
     }
 }
 
