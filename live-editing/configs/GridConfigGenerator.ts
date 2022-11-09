@@ -1414,8 +1414,8 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridSummaryExportComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxGridModule', 'GridColumnAutosizingComponent', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['GridColumnAutosizingComponent'],
+                imports: ['IgxGridModule', 'GridSummaryExportComponent', 'IgxPreventDocumentScrollModule', 'IgxExcelExporterService'],
+                ngDeclarations: ['GridSummaryExportComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxExcelExporterService'],
                 ngProviders: ['IgxExcelExporterService']
             })
