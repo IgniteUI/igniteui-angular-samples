@@ -91,14 +91,17 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
         if (this.searchText === null || this.searchText === '') {
             this.currentVirtState.startIndex = this.remoteSimpleCombo.virtualizationState.startIndex
             this.isFiltered = false;
-        } else {
-            this.isFiltered = true;
-            if (this.itemCount - evt.newSelection >= this.currentVirtState.chunkSize - 1) {
-                this.itemID = this.currentVirtState.startIndex = evt.newSelection - 1;
-            }
-            else
-                this.itemID = this.currentVirtState.startIndex = this.itemCount - (this.currentVirtState.chunkSize - 1);
+            return;
         }
+
+        this.isFiltered = true;
+        if (this.itemCount - evt.newSelection >= this.currentVirtState.chunkSize - 1) {
+            this.itemID = this.currentVirtState.startIndex = evt.newSelection - 1;
+        }
+        else {
+            this.itemID = this.currentVirtState.startIndex = this.itemCount - (this.currentVirtState.chunkSize - 1);
+        }
+
     }
 
     public searchInput(searchData: IComboSearchInputEventArgs) {

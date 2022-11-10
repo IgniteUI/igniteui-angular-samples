@@ -106,13 +106,15 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
         if (this.searchText === null || this.searchText === '') {
             this.currentVirtState.startIndex = this.remoteCombo.virtualizationState.startIndex;
             this.isFiltered = false;
-        } else {
-            this.isFiltered = true;
-            if (this.itemCount - evt.newSelection[evt.newSelection.length - 1] >= this.currentVirtState.chunkSize - 1) {
-                this.itemID = this.currentVirtState.startIndex = evt.newSelection[evt.newSelection.length - 1] - 1;
-            }
-            else
-                this.itemID = this.currentVirtState.startIndex = this.itemCount - (this.currentVirtState.chunkSize);
+            return;
+        }
+
+        this.isFiltered = true;
+        if (this.itemCount - evt.newSelection[evt.newSelection.length - 1] >= this.currentVirtState.chunkSize - 1) {
+            this.itemID = this.currentVirtState.startIndex = evt.newSelection[evt.newSelection.length - 1] - 1;
+        }
+        else {
+            this.itemID = this.currentVirtState.startIndex = this.itemCount - (this.currentVirtState.chunkSize);
         }
     }
 }
