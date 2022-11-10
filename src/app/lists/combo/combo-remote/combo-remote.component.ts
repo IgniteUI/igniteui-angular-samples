@@ -112,8 +112,7 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
         this.isFiltered = true;
         if (this.itemCount - evt.newSelection[evt.newSelection.length - 1] >= this.currentVirtState.chunkSize - 1) {
             this.itemID = this.currentVirtState.startIndex = evt.newSelection[evt.newSelection.length - 1] - 1;
-        }
-        else {
+        } else {
             this.itemID = this.currentVirtState.startIndex = this.itemCount - (this.currentVirtState.chunkSize);
         }
     }

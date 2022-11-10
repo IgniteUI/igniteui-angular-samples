@@ -97,11 +97,9 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
         this.isFiltered = true;
         if (this.itemCount - evt.newSelection >= this.currentVirtState.chunkSize - 1) {
             this.itemID = this.currentVirtState.startIndex = evt.newSelection - 1;
-        }
-        else {
+        } else {
             this.itemID = this.currentVirtState.startIndex = this.itemCount - (this.currentVirtState.chunkSize - 1);
         }
-
     }
 
     public searchInput(searchData: IComboSearchInputEventArgs) {
