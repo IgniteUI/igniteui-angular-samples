@@ -77,7 +77,6 @@ export class CRUDSampleComponent implements OnInit, OnDestroy {
                 this.snackbar.open(`Row with ID of ${rec.ID} was edited.`);
             });
         }
-
     }
 
     public removeRow(row: IgxGridRow) {

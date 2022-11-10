@@ -10,7 +10,7 @@ h5 {
 }
 
 igx-list {
-    box-shadow: elevation($elevations, 2);
+    box-shadow: elevation(2);
     max-height: 352px;
 }
 
@@ -19,5 +19,5 @@ igx-list {
 }
 
 igx-list-item {
-    border-bottom: 1px solid var(--igx-grays-100);
+    border-bottom: 1px solid var(--igx-gray-100);
 }

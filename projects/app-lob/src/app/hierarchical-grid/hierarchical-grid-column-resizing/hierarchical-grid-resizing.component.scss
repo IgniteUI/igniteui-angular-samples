@@ -1,11 +1,13 @@
+@use '../../../variables' as *;
+
 .photo {
     vertical-align: middle;
-    max-height: 62px;
+    max-height: rem(62px);
 }
 .cell__inner_2 {
-    margin: 1px
+    margin: rem(1px)
 }
 
 .grid__wrapper{
-    padding: 16px;
+    padding: rem(16px);
 }
