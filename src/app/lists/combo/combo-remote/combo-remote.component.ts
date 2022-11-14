@@ -86,11 +86,12 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
             this.searchText,
             (data) => {
                 this.remoteCombo.totalItemCount = data['@odata.count'];
-                if (this.isFiltered) {
-                    const scroll = this.remoteCombo.virtualScrollContainer.getScrollForIndex(this.itemID);
-                    this.remoteCombo.virtualScrollContainer.scrollPosition = scroll;
-                    this.cdr.detectChanges();
-                }
+                let scroll: number = 0;
+                this.isFiltered ?
+                    scroll = this.remoteCombo.virtualScrollContainer.getScrollForIndex(this.itemID) :
+                    scroll = this.remoteCombo.virtualScrollContainer.getScrollForIndex(this.itemID - 1);
+                this.remoteCombo.virtualScrollContainer.scrollPosition = scroll;
+                this.cdr.detectChanges();
             }
         );
     }
@@ -105,6 +106,7 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
 
         if (this.searchText === null || this.searchText === '') {
             this.currentVirtState.startIndex = this.remoteCombo.virtualizationState.startIndex;
+            this.itemID = evt.newSelection[evt.newSelection.length - 1];
             this.isFiltered = false;
             return;
         }

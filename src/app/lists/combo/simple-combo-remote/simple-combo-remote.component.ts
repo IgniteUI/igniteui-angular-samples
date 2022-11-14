@@ -71,11 +71,12 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
             this.searchText,
             (data) => {
                 this.remoteSimpleCombo.totalItemCount = data['@odata.count'];
-                if (this.isFiltered) {
-                    const scroll = this.remoteSimpleCombo.virtualScrollContainer.getScrollForIndex(this.itemID);
-                    this.remoteSimpleCombo.virtualScrollContainer.scrollPosition = scroll;
-                    this.cdr.detectChanges();
-                }
+                let scroll: number = 0;
+                this.isFiltered ?
+                    scroll = this.remoteSimpleCombo.virtualScrollContainer.getScrollForIndex(this.itemID) :
+                    scroll = this.remoteSimpleCombo.virtualScrollContainer.getScrollForIndex(this.itemID - 1);
+                this.remoteSimpleCombo.virtualScrollContainer.scrollPosition = scroll;
+                this.cdr.detectChanges();
             }
         );
     }
@@ -89,7 +90,8 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
         this.currentVirtState.chunkSize = Math.ceil(this.remoteSimpleCombo.itemsMaxHeight / this.remoteSimpleCombo.itemHeight);
 
         if (this.searchText === null || this.searchText === '') {
-            this.currentVirtState.startIndex = this.remoteSimpleCombo.virtualizationState.startIndex
+            this.currentVirtState.startIndex = this.remoteSimpleCombo.virtualizationState.startIndex;
+            this.itemID = evt.newSelection;
             this.isFiltered = false;
             return;
         }
