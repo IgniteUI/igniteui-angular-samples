@@ -89,14 +89,11 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
         this.hasSelection = evt.newSelection !== undefined;
         this.currentVirtState.chunkSize = Math.ceil(this.remoteSimpleCombo.itemsMaxHeight / this.remoteSimpleCombo.itemHeight);
 
-        if (this.searchText === null || this.searchText === '') {
-            this.currentVirtState.startIndex = this.remoteSimpleCombo.virtualizationState.startIndex;
+        if (!this.isFiltered) {
             this.itemID = evt.newSelection;
-            this.isFiltered = false;
             return;
         }
 
-        this.isFiltered = true;
         if (this.itemCount - evt.newSelection >= this.currentVirtState.chunkSize - 1) {
             this.itemID = this.currentVirtState.startIndex = evt.newSelection - 1;
         } else {
@@ -104,7 +101,7 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
         }
     }
 
-    public searchInput(searchData: IComboSearchInputEventArgs) {
+    public handleSearchInputUpdate(searchData: IComboSearchInputEventArgs) {
         this.searchText = searchData?.searchText || '';
         this.remoteService.getData(
             this.searchText ? this.remoteSimpleCombo.virtualizationState : this.defaultVirtState,
@@ -113,5 +110,10 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
                 this.remoteSimpleCombo.totalItemCount = data['@odata.count'];
             }
         );
+
+        this.isFiltered = this.searchText !== null || this.searchText !== '';
+        if (!this.isFiltered) {
+            this.currentVirtState.startIndex = this.remoteSimpleCombo.virtualizationState.startIndex;
+        }
     }
 }

@@ -69,7 +69,7 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
         );
     }
 
-    public searchInput(searchData: IComboSearchInputEventArgs) {
+    public handleSearchInputUpdate(searchData: IComboSearchInputEventArgs) {
         this.searchText = searchData?.searchText || '';
         this.remoteService.getData(
             this.searchText ? this.remoteCombo.virtualizationState : this.defaultVirtState,
@@ -78,6 +78,11 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
                 this.remoteCombo.totalItemCount = data['@odata.count'];
             }
         );
+
+        this.isFiltered = this.searchText !== null || this.searchText !== '';
+        if (!this.isFiltered) {
+            this.currentVirtState.startIndex = this.remoteCombo.virtualizationState.startIndex;
+        }
     }
 
     public onOpening() {
@@ -104,14 +109,11 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
         this.hasSelection = !!evt?.newSelection.length;
         this.currentVirtState.chunkSize = Math.ceil(this.remoteCombo.itemsMaxHeight / this.remoteCombo.itemHeight);
 
-        if (this.searchText === null || this.searchText === '') {
-            this.currentVirtState.startIndex = this.remoteCombo.virtualizationState.startIndex;
+        if (!this.isFiltered) {
             this.itemID = evt.newSelection[evt.newSelection.length - 1];
-            this.isFiltered = false;
             return;
         }
 
-        this.isFiltered = true;
         if (this.itemCount - evt.newSelection[evt.newSelection.length - 1] >= this.currentVirtState.chunkSize - 1) {
             this.itemID = this.currentVirtState.startIndex = evt.newSelection[evt.newSelection.length - 1] - 1;
         } else {

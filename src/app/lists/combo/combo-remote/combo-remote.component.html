@@ -5,7 +5,7 @@
     [valueKey]="'ProductID'"
     [displayKey]="'ProductName'"
     (dataPreLoad)="dataLoading()"
-    (searchInputUpdate)="searchInput($event)"
+    (searchInputUpdate)="handleSearchInputUpdate($event)"
     (selectionChanging)="handleSelectionChanging($event)"
     (closing)="onClosing()" (opening)="onOpening()"
     placeholder="Location(s)"
