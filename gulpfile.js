@@ -18,18 +18,8 @@ const submodule = "igniteui-live-editing-samples";
 
 gulp.task("generate-live-editing", async () => {
     var appDv = argv.appDv !== undefined && argv.appDv.toLowerCase().trim() === "true";
-    const liveEditingOptions = appDv ? 
-    {
-        platform: 'angular',
-        projectDir: "./projects/app-lob",
-        samplesDir: "./projects/app-lob/src/assets",
-        configGeneratorPath: "./live-editing/generators/AppDVConfigGenerators.ts",
-        module: {
-            moduleName: "DV_MODULE_ROUTES", routerPath: './live-editing/Routes.ts',
-        }
-    }
-        :
-    {
+    var appCrm = argv.appCrm !== undefined && argv.appCrm.toLowerCase().trim() === "true";
+    let liveEditingOptions = {
         platform: 'angular', 
         samplesDir: "./src/assets",
         configGeneratorPath: "./live-editing/generators/ConfigGenerators.ts",
@@ -37,7 +27,34 @@ gulp.task("generate-live-editing", async () => {
             moduleName: "MODULE_ROUTES", routerPath: './live-editing/Routes.ts',
         },
         additionalSharedStyles: ["_variables.scss", "_app-layout.scss"]
+    };
+
+    if (appDv) {
+        liveEditingOptions = {
+            platform: 'angular',
+            projectDir: "./projects/app-lob",
+            samplesDir: "./projects/app-lob/src/assets",
+            configGeneratorPath: "./live-editing/generators/AppDVConfigGenerators.ts",
+            module: {
+                moduleName: "DV_MODULE_ROUTES", 
+                routerPath: './live-editing/Routes.ts',
+            }
+        }
     }
+    else if (appCrm) {
+        liveEditingOptions = {
+            platform: 'angular',
+            projectDir: "./projects/app-crm",
+            samplesDir: "./projects/app-crm/src/assets",
+            configGeneratorPath: "./live-editing/generators/AppCrmGenerator.ts",
+            module: {
+                moduleName: "CRM_MODULE_ROUTES", 
+                routerPath: './live-editing/Routes.ts',
+            }
+        }
+    }
+    
+    
     await generateLiveEditing(liveEditingOptions);
 });
 
