@@ -4,7 +4,6 @@ import {
     ColumnType,
     IgxDateFilteringOperand,
     IgxHierarchicalGridComponent,
-    GridType,
     IgxNumberFilteringOperand,
     IgxStringFilteringOperand,
     OverlaySettings
@@ -46,11 +45,11 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
         event.stopImmediatePropagation();
     }
 
-    public onInput(input: any, column: ColumnType, grid: GridType) {
+    public onInput(input: any, column: ColumnType) {
         this._filterValues.set(column, input.value);
 
         if (input.value === '') {
-            grid.clearFilter(column.field);
+            column.grid.clearFilter(column.field);
             return;
         }
 
@@ -62,13 +61,13 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
             default:
                 operand = IgxStringFilteringOperand.instance().condition('contains');
         }
-        grid.filter(column.field,
+        column.grid.filter(column.field,
             this.transformValue(input.value, column), operand, column.filteringIgnoreCase);
     }
 
-    public clearInput(column: ColumnType, grid: GridType) {
+    public clearInput(column: ColumnType) {
         this._filterValues.delete(column);
-        grid.clearFilter(column.field);
+        column.grid.clearFilter(column.field);
     }
 
     public onClick(inputGroup) {
@@ -77,14 +76,14 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
         }
     }
 
-    public onDateSelected(event, column: ColumnType, grid: GridType) {
+    public onDateSelected(event, column: ColumnType) {
         if (!event) {
-            this.clearInput(column, grid);
+            this.clearInput(column);
             return;
         }
 
         this._filterValues.set(column, event);
-        grid.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'),
+        column.grid.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'),
             column.filteringIgnoreCase);
     }
 

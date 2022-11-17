@@ -1,6 +1,6 @@
 import { Component, Directive, Input, ViewChild } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { GridType, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 
@@ -81,13 +81,13 @@ export class HierarchicalGridValidatorServiceExtendedComponent {
         this.hierarchicalGrid.validation.clear();
     }
 
-    public undo(grid: GridType) {
+    public undo(grid: IgxHierarchicalGridComponent) {
         /* exit edit mode and commit changes */
         grid.endEdit(true);
         grid.transactions.undo();
     }
 
-    public redo(grid: GridType) {
+    public redo(grid: IgxHierarchicalGridComponent) {
         /* exit edit mode and commit changes */
         grid.endEdit(true);
         grid.transactions.redo();
