@@ -45,7 +45,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
         event.stopImmediatePropagation();
     }
 
-    public onInput(input: any, column: ColumnType) {
+    public onInput(input: any, column: any) {
         this._filterValues.set(column, input.value);
 
         if (input.value === '') {
@@ -65,7 +65,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
             this.transformValue(input.value, column), operand, column.filteringIgnoreCase);
     }
 
-    public clearInput(column: ColumnType) {
+    public clearInput(column: any) {
         this._filterValues.delete(column);
         column.grid.clearFilter(column.field);
     }
@@ -76,7 +76,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
         }
     }
 
-    public onDateSelected(event, column: ColumnType) {
+    public onDateSelected(event, column: any) {
         if (!event) {
             this.clearInput(column);
             return;
