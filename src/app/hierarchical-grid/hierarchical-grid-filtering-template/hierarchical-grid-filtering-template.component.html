@@ -55,9 +55,9 @@
         </igx-input-group>
     </div>
 </ng-template>
-<ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column" let-grid="column.grid">
+<ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column">
     <div class="filter-cell">
-        <igx-date-picker #picker [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column, grid)" mode="dialog"
+        <igx-date-picker #picker [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column)" mode="dialog"
             [displayDensity]="'compact'" placeholder="Filter..." [displayFormat]="displayDateFormat" type="box">
             <igx-picker-toggle igxPrefix>
                 <igx-icon>search</igx-icon>

@@ -53,7 +53,7 @@
     "@angular/router": "^15.0.0",
     "@igniteui/material-icons-extended": "^2.10.0",
     "@microsoft/signalr": "^5.0.11",
-    "@ng-bootstrap/ng-bootstrap": "^13.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^13.1.1",
     "@popperjs/core": "2.11.6",
     "@types/file-saver": "^2.0.2",
     "@types/hammerjs": "^2.0.39",
