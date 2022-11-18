@@ -1,5 +1,5 @@
-@use '~igniteui-angular/lib/core/styles/themes/index' as *;
-@forward '~igniteui-angular/lib/core/styles/themes/index';
+@use 'igniteui-angular/lib/core/styles/themes/index' as *;
+@forward 'igniteui-angular/lib/core/styles/themes/index';
 
 :host {
     display: flex;

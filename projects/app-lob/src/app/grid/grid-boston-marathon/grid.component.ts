@@ -110,7 +110,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         clearInterval(this._timer);
     }
 
-    public isTop3(cell: IgxGridCellComponent): boolean {
+    public isTop3(cell: CellType): boolean {
         const top = this.grid1.paginator.page === 0 && cell.row.index < 4;
         return top;
     }
@@ -133,7 +133,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         this.grid1.selectRows([cell.row.key], true);
     }
 
-    public getIconType(cell: IgxGridCellComponent): string {
+    public getIconType(cell: CellType): string {
         switch (cell.row.data.Position) {
             case 'up':
                 return 'arrow_upward';
@@ -144,7 +144,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         }
     }
 
-    public getBadgeType(cell: IgxGridCellComponent): string {
+    public getBadgeType(cell: CellType): string {
         switch (cell.row.data.Position) {
             case 'up':
                 return 'success';

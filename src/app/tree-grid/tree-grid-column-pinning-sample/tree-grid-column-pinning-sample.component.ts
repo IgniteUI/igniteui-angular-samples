@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxColumnComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { ColumnType, IgxTreeGridComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
@@ -15,7 +15,7 @@ export class TreeGridColumnPinningSampleComponent {
         this.data = generateEmployeeDetailedFlatData();
     }
 
-    public toggleColumn(column: IgxColumnComponent) {
+    public toggleColumn(column: ColumnType) {
         column.pinned ? column.unpin() : column.pin();
     }
 }
