@@ -43,7 +43,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         { format: "longDate", eq: "'MMMM d, y'"},
         { format: "fullDate", eq: "'EEEE, MMMM d, y'"}
     ];
-    
+
     // Time formats
     public timeFormats = [
         { format: "shortTime", eq: "'h:mm a'" },
@@ -208,7 +208,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }
     ];
 
-    private regEx = new RegExp('^[0-9]+\.[0-9]+\-[0-9]$')
+    private regEx = new RegExp('^[0-9]+.[0-9]+-[0-9]$')
 
     constructor() {
     }
@@ -248,7 +248,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         this.dateOptions.format = event.newSelection.value;
         this.formatDateOptions = Object.assign({}, this.formatDateOptions, this.dateOptions);
     }
-    
+
     public selectionTimeChanging(event) {
         this.timeOptions.format = event.newSelection.value;
         this.formatTimeOptions = Object.assign({}, this.formatTimeOptions, this.timeOptions);
