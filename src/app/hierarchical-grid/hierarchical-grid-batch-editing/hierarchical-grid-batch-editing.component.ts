@@ -66,16 +66,18 @@ export class HGridBatchEditingSampleComponent implements OnInit {
 
     public formatter = a => a;
 
-    public undo(grid: IgxHierarchicalGridComponent) {
+    public undo(grid: any) {
         /* exit edit mode and commit changes */
-        grid.endEdit(true);
-        grid.transactions.undo();
+        const hGrid = grid as IgxHierarchicalGridComponent;
+        hGrid.endEdit(true);
+        hGrid.transactions.undo();
     }
 
-    public redo(grid: IgxHierarchicalGridComponent) {
+    public redo(grid: any) {
         /* exit edit mode and commit changes */
-        grid.endEdit(true);
-        grid.transactions.redo();
+        const hGrid = grid as IgxHierarchicalGridComponent;
+        hGrid.endEdit(true);
+        hGrid.transactions.redo();
     }
 
     public commit() {
