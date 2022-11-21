@@ -79,25 +79,30 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
         );
     }
 
-    public onOpening() {
+    public onOpened() {
+        if (this.itemID === 1) {
+            this.remoteCombo.virtualScrollContainer.scrollPosition = 0;
+        } else {
+            const scroll: number = this.remoteCombo.virtualScrollContainer.getScrollForIndex(this.itemID - 1);
+            this.remoteCombo.virtualScrollContainer.scrollPosition = scroll;
+        }
+        this.cdr.detectChanges();
+    }
+
+    public onClosing() {
+        this.searchText = '';
+    }
+
+    public onClosed() {
+        this.currentVirtState.startIndex = (this.itemID || 1) - 1;
         this.remoteService.getData(
             this.hasSelection ? this.currentVirtState : this.defaultVirtState,
             this.searchText,
             (data) => {
                 this.remoteCombo.totalItemCount = data['@odata.count'];
-                if (this.itemID === 1) {
-                    this.remoteCombo.virtualScrollContainer.scrollPosition = 0;
-                } else {
-                    const scroll: number = this.remoteCombo.virtualScrollContainer.getScrollForIndex(this.itemID - 1);
-                    this.remoteCombo.virtualScrollContainer.scrollPosition = scroll;
-                }
                 this.cdr.detectChanges();
             }
         );
-    }
-
-    public onClosing() {
-        this.searchText = '';
     }
 
     public handleSelectionChanging(evt: IComboSelectionChangingEventArgs) {

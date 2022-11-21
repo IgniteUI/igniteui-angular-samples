@@ -6,7 +6,8 @@
     [displayKey]="'ProductName'"    
     placeholder="Product"
     (dataPreLoad)="dataLoading()"
-    (closing)="onClosing()" (opening)="onOpening()"
+    (closing)="onClosing()" (opened)="onOpened()"
+    (closed)="onClosed()"
     (selectionChanging)="handleSelectionChanging($event)"
     (searchInputUpdate)="handleSearchInputUpdate($event)">
 </igx-simple-combo>
