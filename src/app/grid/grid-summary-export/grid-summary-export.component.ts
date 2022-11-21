@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import {
-    IgxColumnComponent,
+    ColumnType,
     IgxExcelExporterOptions,
     IgxExcelExporterService,
     IgxGridComponent,
@@ -39,7 +39,7 @@ export class GridSummaryExportComponent {
         this.productId = DATA.length;
     }
 
-    public toggleSummary(column: IgxColumnComponent) {
+    public toggleSummary(column: ColumnType) {
         column.hasSummary = !column.hasSummary;
     }
 

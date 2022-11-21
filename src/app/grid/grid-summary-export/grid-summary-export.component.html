@@ -4,8 +4,7 @@
         Press the button to export the Grid as a .xlsx file.
     </div>
 
-    <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" [autoGenerate]="false" height="700px" width="100%">
-        <igx-paginator></igx-paginator>
+    <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" [autoGenerate]="false" height="650px" width="100%">
         <igx-column #col field="ProductID" header="Product ID" [headerClasses]="'prodId'">
         </igx-column>
         <igx-column #col field="ProductName" header="Product Name" [headerClasses]="'prodId'" [hasSummary]="true">

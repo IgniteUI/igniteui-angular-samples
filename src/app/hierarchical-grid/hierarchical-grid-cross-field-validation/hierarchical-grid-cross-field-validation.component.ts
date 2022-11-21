@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
-import { IgxGridCell, IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { CellType, IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 
@@ -71,12 +71,12 @@ export class HierarchicalGridValidatorServiceCrossCellComponent implements OnIni
         }
     }
 
-    public isRowValid(cell: IgxGridCell) {
+    public isRowValid(cell: CellType) {
         const hasErrors = !!cell.row.validation.errors || cell.row.cells.some(x => !!x.validation.errors);
         return !hasErrors;
     }
 
-    public stateMessage(cell: IgxGridCell) {
+    public stateMessage(cell: CellType) {
         const messages = [];
         const row = cell.row;
         if (row.validation.errors?.invalidAddress) {
@@ -98,13 +98,14 @@ export class HierarchicalGridValidatorServiceCrossCellComponent implements OnIni
         return messages;
     }
 
-    public commit(grid: IgxHierarchicalGridComponent) {
-        const invalidTransactions = grid.validation.getInvalid();
+    public commit(grid: any) {
+        const hGrid = grid as IgxHierarchicalGridComponent;
+        const invalidTransactions = hGrid.validation.getInvalid();
         if (invalidTransactions.length > 0 && !confirm('You\'re commiting invalid transactions. Are you sure?')) {
             return;
         }
 
-        grid.transactions.commit(grid.data);
-        grid.validation.clear();
+        hGrid.transactions.commit(hGrid.data);
+        hGrid.validation.clear();
     }
 }
