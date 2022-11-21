@@ -96,6 +96,7 @@ import { HGridColumnAutoSizingSampleComponent } from './hgrid-column-autosizing/
 import { HierarchicalGridValidatorServiceCrossCellComponent } from './hierarchical-grid-cross-field-validation/hierarchical-grid-cross-field-validation.component';
 import { HGridValidationStyleComponent } from './hierarchical-grid-validation-style/hierarchical-grid-validation-style.component';
 import { HGridPhoneFormatDirective, HierarchicalGridValidatorServiceExtendedComponent } from './hierarchical-grid-validator-service-extended/hierarchical-grid-validator-service-extended.component';
+import { HGridSummaryExportComponent } from './hgrid-summary-export/hgrid-summary-export.component';
 
 @NgModule({
     declarations: [
@@ -185,7 +186,8 @@ import { HGridPhoneFormatDirective, HierarchicalGridValidatorServiceExtendedComp
         HGridColumnAutoSizingSampleComponent,
         HierarchicalGridValidatorServiceCrossCellComponent,
         HGridValidationStyleComponent,
-        HGridPhoneFormatDirective
+        HGridPhoneFormatDirective,
+        HGridSummaryExportComponent
     ],
     imports: [
         CommonModule,

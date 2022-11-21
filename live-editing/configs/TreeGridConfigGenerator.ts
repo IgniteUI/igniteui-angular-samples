@@ -1201,6 +1201,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+         configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/foods.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridSummaryExportComponent', 'IgxIconModule', 'IgxExcelExporterService'],
+                ngDeclarations: ['TreeGridSummaryExportComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxIconModule', 'IgxExcelExporterService'],
+                ngProviders: ['IgxExcelExporterService']
+            }),
+            component: 'TreeGridSummaryExportComponent',
+            shortenComponentPathBy: '/tree-grid/'
+        }));
+
         return configs;
     }
 }
