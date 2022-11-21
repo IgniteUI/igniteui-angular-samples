@@ -14,24 +14,44 @@ export class SimpleComboCascadingComponent implements OnInit {
     public countriesData: Country[];
     public regionData: Region[] = [];
     public citiesData: City[] = [];
+    public isLoadingRegions: boolean = false;
+    public isLoadingCities: boolean = false;
+    private loadingTime = 0;
+
     public ngOnInit(): void {
         this.countriesData = getCountries(['United States', 'Japan', 'United Kingdom']);
     }
 
     public countryChanging(e: ISimpleComboSelectionChangingEventArgs) {
         this.selectedCountry = e.newSelection as Country;
-        this.regionData = getCitiesByCountry([this.selectedCountry?.name])
+        if(e.newSelection){
+            this.isLoadingRegions = true;
+            this.loadingTime = 2000;
+        }
+        setTimeout(() => {
+            this.regionData = getCitiesByCountry([this.selectedCountry?.name])
             .map(c => ({name: c.region, country: c.country}))
             .filter((v, i, a) => a.findIndex(r => r.name === v.name) === i);
+            this.isLoadingRegions = false;
+        }, this.loadingTime)
         this.selectedRegion = null;
         this.selectedCity = null;
         this.citiesData = [];
+        this.loadingTime = 0;
     }
 
     public regionChanging(e: ISimpleComboSelectionChangingEventArgs) {
         this.selectedRegion = e.newSelection as Region;
-        this.citiesData = getCitiesByCountry([this.selectedCountry?.name])
+        if(e.newSelection){
+            this.isLoadingCities = true;
+            this.loadingTime = 2000;
+        }
+        setTimeout(() => {
+            this.citiesData = getCitiesByCountry([this.selectedCountry?.name])
             .filter(c => c.region === this.selectedRegion?.name);
+            this.isLoadingCities = false;
+        }, this.loadingTime)
         this.selectedCity = null;
+        this.loadingTime = 0;
     }
 }
