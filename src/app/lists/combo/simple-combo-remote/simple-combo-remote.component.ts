@@ -20,9 +20,8 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
     private searchText: string = null;
     private defaultVirtState: IForOfState = { chunkSize: 6, startIndex: 0 };
     private currentVirtState: IForOfState = { chunkSize: 6, startIndex: 0 };
-    private itemID = 0;
+    private itemID = 1;
     private itemCount: number = 0;
-    private isFiltered: boolean = false;
     private hasSelection: boolean;
 
     constructor(
@@ -71,11 +70,12 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
             this.searchText,
             (data) => {
                 this.remoteSimpleCombo.totalItemCount = data['@odata.count'];
-                let scroll: number = 0;
-                this.isFiltered ?
-                    scroll = this.remoteSimpleCombo.virtualScrollContainer.getScrollForIndex(this.itemID) :
-                    scroll = this.remoteSimpleCombo.virtualScrollContainer.getScrollForIndex(this.itemID - 1);
-                this.remoteSimpleCombo.virtualScrollContainer.scrollPosition = scroll;
+                if (this.itemID === 1) {
+                    this.remoteSimpleCombo.virtualScrollContainer.scrollPosition = 0;
+                } else {
+                    const scroll: number = this.remoteSimpleCombo.virtualScrollContainer.getScrollForIndex(this.itemID - 1);
+                    this.remoteSimpleCombo.virtualScrollContainer.scrollPosition = scroll;
+                }
                 this.cdr.detectChanges();
             }
         );
@@ -89,13 +89,14 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
         this.hasSelection = evt.newSelection !== undefined;
         this.currentVirtState.chunkSize = Math.ceil(this.remoteSimpleCombo.itemsMaxHeight / this.remoteSimpleCombo.itemHeight);
 
-        if (!this.isFiltered) {
-            this.itemID = evt.newSelection;
+        if (evt.newSelection === 1 || !this.hasSelection) {
+            this.itemID = 1;
+            this.currentVirtState.startIndex = 0;
             return;
         }
 
         if (this.itemCount - evt.newSelection >= this.currentVirtState.chunkSize - 1) {
-            this.itemID = this.currentVirtState.startIndex = evt.newSelection - 1;
+            this.itemID = this.currentVirtState.startIndex = evt.newSelection;
         } else {
             this.itemID = this.currentVirtState.startIndex = this.itemCount - (this.currentVirtState.chunkSize - 1);
         }
@@ -110,10 +111,5 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
                 this.remoteSimpleCombo.totalItemCount = data['@odata.count'];
             }
         );
-
-        this.isFiltered = this.searchText !== null || this.searchText !== '';
-        if (!this.isFiltered) {
-            this.currentVirtState.startIndex = this.remoteSimpleCombo.virtualizationState.startIndex;
-        }
     }
 }

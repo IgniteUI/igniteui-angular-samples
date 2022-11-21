@@ -24,9 +24,8 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
     private searchText: string = null;
     private defaultVirtState: IForOfState = { chunkSize: 6, startIndex: 0 };
     private currentVirtState: IForOfState = { chunkSize: 6, startIndex: 0 };
-    private itemID: number = 0;
+    private itemID: number = 1;
     private itemCount: number = 0;
-    private isFiltered: boolean = false;
     private hasSelection: boolean;
 
     constructor(
@@ -78,11 +77,6 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
                 this.remoteCombo.totalItemCount = data['@odata.count'];
             }
         );
-
-        this.isFiltered = this.searchText !== null || this.searchText !== '';
-        if (!this.isFiltered) {
-            this.currentVirtState.startIndex = this.remoteCombo.virtualizationState.startIndex;
-        }
     }
 
     public onOpening() {
@@ -91,11 +85,12 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
             this.searchText,
             (data) => {
                 this.remoteCombo.totalItemCount = data['@odata.count'];
-                let scroll: number = 0;
-                this.isFiltered ?
-                    scroll = this.remoteCombo.virtualScrollContainer.getScrollForIndex(this.itemID) :
-                    scroll = this.remoteCombo.virtualScrollContainer.getScrollForIndex(this.itemID - 1);
-                this.remoteCombo.virtualScrollContainer.scrollPosition = scroll;
+                if (this.itemID === 1) {
+                    this.remoteCombo.virtualScrollContainer.scrollPosition = 0;
+                } else {
+                    const scroll: number = this.remoteCombo.virtualScrollContainer.getScrollForIndex(this.itemID - 1);
+                    this.remoteCombo.virtualScrollContainer.scrollPosition = scroll;
+                }
                 this.cdr.detectChanges();
             }
         );
@@ -109,15 +104,16 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
         this.hasSelection = !!evt?.newSelection.length;
         this.currentVirtState.chunkSize = Math.ceil(this.remoteCombo.itemsMaxHeight / this.remoteCombo.itemHeight);
 
-        if (!this.isFiltered) {
-            this.itemID = evt.newSelection[evt.newSelection.length - 1];
+        if (evt.newSelection[evt.newSelection.length - 1] === 1 || !this.hasSelection) {
+            this.itemID = 1;
+            this.currentVirtState.startIndex = 0;
             return;
         }
 
         if (this.itemCount - evt.newSelection[evt.newSelection.length - 1] >= this.currentVirtState.chunkSize - 1) {
-            this.itemID = this.currentVirtState.startIndex = evt.newSelection[evt.newSelection.length - 1] - 1;
+            this.itemID = this.currentVirtState.startIndex = evt.newSelection[evt.newSelection.length - 1];
         } else {
-            this.itemID = this.currentVirtState.startIndex = this.itemCount - (this.currentVirtState.chunkSize);
+            this.itemID = this.currentVirtState.startIndex = this.itemCount - (this.currentVirtState.chunkSize - 1);
         }
     }
 }
