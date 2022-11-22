@@ -1,8 +1,13 @@
-# <a name='#workflow'>Workflow</a>
+## In this topic
+ ### 1. [Development - applicable to issues and pull requests](#development)
+ ### 2. [Testing - applicable to pull requests](#testing)
+ ### 3. [Fixing bugs and adding new samples](#fixing)
+ ### 3.1. [Bug fixing guidelines](#bug)
+ ### 3.2. [Adding new samples guidelines](#new-sample)
 
-When working on an issue for the Ignite UI Angular Samples, you need to be aware of and to follow a correct status workflow. We have created a number of status labels in order to communicate well what the current status of a single issue/pull request is. The statuses are as follows:
+When working on an issue/new sample for the Ignite UI Angular Samples, you need to be aware of and to follow a correct status workflow. We have created a number of status labels in order to communicate well what the current status of a single issue/pull request is. The statuses are as follows:
 
-## Development - applicable to issues and pull requests
+# <a name='#development'>Development - applicable to issues and pull requests</a>
 
 1. `status: in-review` this is the initial status of an issue. If the label is not placed, go ahead and place it.
 2. `status: in-development` this is the status once you start working on an issue. Assign the issue to yourself if it hasn't been assigned already, remove the previous status and assign status: in-development.
@@ -24,7 +29,7 @@ Example status workflows:
 
 `status: in-review` => `status: not-to-fix` (Issue can be closed)
 
-## Testing - applicable to pull requests
+# <a name='#testing'>Testing - applicable to pull requests</a>
 1. `status: awaiting-test` this is the initial status of pull requests. If you're performing the pull request, please place this status on it. Pull requests are accepted if and only if all status checks pass, review is performed, and the pull request has been tested and contains `status: verified`.
 2. `status: in-test` place this status once you pick up the pull request for testing.
 3. `status: verified` place this status once you've tested the pull request, have verified that the issue is fixed, and have included all necessary automated tests for the issue.
@@ -39,3 +44,25 @@ Example status workflows:
 
 > Note: Testing a PR from Angular Samples (when new sample is added) with combination of PR related to topic update (or when new topic is added).
 Open both repositories ([DocFX Site Builder](https://github.com/IgniteUI/igniteui-docfx) and [Angular Demos](https://github.com/IgniteUI/igniteui-angular-samples)) and perform `npm start`. This will start both projects and you will see the embed sample in your topic under `localhost`.
+
+# <a name='#fixing'> Fixing bugs and adding new samples</a>
+## <a name='#bug'> Bug fixing guidelines</a>
+
+1. Depending on where the bug was found `the current version` or the `ongoing release version`, checkout a development branches from `vNext` or/and `master` branch. `vNext` is the version that is going to be used upon release (next version), and `master` is the branch with the current state (current version). If the change/fix is applicable only to the ongoing release branch (`vNext`) there is no need to cherry-pick to `master` branch as the change/fix/feature will be pushed to `master` branch upon release.
+2. Run lint
+3. Pull request your changes and reference the issue. Use the enforced commit message format with applicable type, scope, etc.
+4. Don't forget to make the necessary status updates, as described in the workflow section.
+
+**Example workflow**
+When bug fixes are applicable to both `vNext` and `master` branches the process will look like this:
+
+1.	Checkout new branch from `vNext`. For code example purposes let's say the new branch is called `fixing-bug-5423-vNext`.
+2.	Commit your changes to your `fixing-bug-5423-vNext` branch.
+3.	Push and PR to the `vNext` branch.
+4.	Switch to the `master` branch.
+5.  Create a new branch from `master`. For code example purposes let's say the new branch is called `fixing-bug-5423-master`.
+6.  Cherry pick your commit from the `fixing-bug-5423-vNext` branch: `git cherry-pick ..`
+7.  Push to your `fixing-bug-5423-master` branch and PR to the `master` branch.
+
+## <a name='#new-sample'> Adding new samples guidelines </a>
+Depending on where the the new sample should be added, `the current version` or the `ongoing release version`, checkout a development branches from `vNext` or/and `master` branch. `vNext` is the version that is going to be used upon release (next version), and `master` is the branch with the current state (current version). If the new sample is applicable only to the ongoing release branch (`vNext`) there is no need to cherry-pick to `master` branch as the new sample will be pushed to `master` branch upon release.
