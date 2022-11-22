@@ -1416,7 +1416,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxGridModule', 'GridSummaryExportComponent', 'IgxPreventDocumentScrollModule', 'IgxExcelExporterService'],
                 ngDeclarations: ['GridSummaryExportComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxExcelExporterService'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule'],
                 ngProviders: ['IgxExcelExporterService']
             })
         }));
