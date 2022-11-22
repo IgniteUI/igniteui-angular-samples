@@ -25,6 +25,7 @@ export class SimpleComboCascadingComponent implements OnInit {
     public countryChanging(e: ISimpleComboSelectionChangingEventArgs) {
         this.selectedCountry = e.newSelection as Country;
         if (e.newSelection){
+            this.regionData = [];
             this.isLoadingRegions = true;
             this.loadingTime = 2000;
         }
@@ -43,6 +44,7 @@ export class SimpleComboCascadingComponent implements OnInit {
     public regionChanging(e: ISimpleComboSelectionChangingEventArgs) {
         this.selectedRegion = e.newSelection as Region;
         if (e.newSelection){
+            this.citiesData = [];
             this.isLoadingCities = true;
             this.loadingTime = 2000;
         }
