@@ -33,7 +33,7 @@
         <igx-column field="Headliner"></igx-column>
     </igx-row-island>
 </igx-hierarchical-grid>
-<ng-template #defaultFilterTemplate igxFilterCellTemplate let-column="column" let-grid="column.grid">
+<ng-template #defaultFilterTemplate igxFilterCellTemplate let-column="column">
     <div class="filter-cell">
         <igx-input-group #inputGr type="box" [displayDensity]="'compact'">
             <igx-prefix>
@@ -46,18 +46,18 @@
                 placeholder="Filter..."
                 autocomplete="off"
                 [value]="getFilterValue(column)"
-                (input)="onInput(input, column, grid)"
+                (input)="onInput(input, column)"
                 (click)="onClick(inputGr)"
                 (keydown)="onKeyDown($event)" />
-            <igx-suffix *ngIf="input.value || input.value === '0'" (click)="clearInput(column, grid)" tabindex="0">
+            <igx-suffix *ngIf="input.value || input.value === '0'" (click)="clearInput(column)" tabindex="0">
                 <igx-icon>clear</igx-icon>
             </igx-suffix>
         </igx-input-group>
     </div>
 </ng-template>
-<ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column" let-grid="column.grid">
+<ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column">
     <div class="filter-cell">
-        <igx-date-picker #picker [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column, grid)" mode="dialog"
+        <igx-date-picker #picker [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column)" mode="dialog"
             [displayDensity]="'compact'" placeholder="Filter..." [displayFormat]="displayDateFormat" type="box">
             <igx-picker-toggle igxPrefix>
                 <igx-icon>search</igx-icon>

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent, RowType } from 'igniteui-angular';
+import { IgxGridComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent, RowType } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { Singer } from '../models';
 
@@ -21,7 +21,7 @@ export class HGridValidationStyleComponent {
             // search in child grids
             if (!cell) {
                 for (let grid of this.childGrid.gridAPI.getChildGrids()) {
-                    cell = grid.getCellByKey(rowData, columnKey);
+                    cell = (grid as IgxGridComponent).getCellByKey(rowData, columnKey);
                     if (cell) break;
                 }
             }

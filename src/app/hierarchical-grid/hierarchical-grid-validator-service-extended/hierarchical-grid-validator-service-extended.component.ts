@@ -81,13 +81,13 @@ export class HierarchicalGridValidatorServiceExtendedComponent {
         this.hierarchicalGrid.validation.clear();
     }
 
-    public undo(grid: IgxHierarchicalGridComponent) {
+    public undo(grid: any) {
         /* exit edit mode and commit changes */
         grid.endEdit(true);
         grid.transactions.undo();
     }
 
-    public redo(grid: IgxHierarchicalGridComponent) {
+    public redo(grid: any) {
         /* exit edit mode and commit changes */
         grid.endEdit(true);
         grid.transactions.redo();
