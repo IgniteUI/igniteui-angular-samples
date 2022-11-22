@@ -3,8 +3,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
-    IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxComboModule,
-    IgxDatePickerModule, IgxDialogModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
+    IgcFormsModule,
+    IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxComboModule,
+    IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
     IgxIconModule, IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule,
     IgxSelectModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
 } from 'igniteui-angular';
@@ -66,6 +67,7 @@ import { SwitchSample1Component } from './switch/switch-sample-1/switch-sample-1
 import { SwitchSample2Component } from './switch/switch-sample-2/switch-sample-2.component';
 import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.component';
 import { TypedFormComponent } from './input-group/typed-form/typed-form.component';
+import { RatingInFormComponent } from './rating/rating-form/rating-form.component';
 
 @NgModule({
     declarations: [
@@ -113,6 +115,7 @@ import { TypedFormComponent } from './input-group/typed-form/typed-form.componen
         RadioSample2Component,
         RadioSample3Component,
         RadioStylingSampleComponent,
+        RatingInFormComponent,
         SwitchSample1Component,
         SwitchSample2Component,
         SwitchStylingComponent,
@@ -155,7 +158,10 @@ import { TypedFormComponent } from './input-group/typed-form/typed-form.componen
         IgxProgressBarModule,
         IgxForOfModule,
         IgxTextSelectionModule,
-        IgxFocusModule
+        IgxFocusModule,
+        IgxCardModule,
+        IgxDividerModule,
+        IgcFormsModule
     ]
 })
 export class DataEntriesModule { }

@@ -2,7 +2,7 @@
     <div class="density-chooser">
         <igx-buttongroup [values]="displayDensities" (selected)="selectDensity($event)"></igx-buttongroup>
     </div>
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [displayDensity]="density" [moving]="true" [autoGenerate]="false" height="850px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [displayDensity]="density" [moving]="true" [autoGenerate]="false" height="850px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>
                 <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>

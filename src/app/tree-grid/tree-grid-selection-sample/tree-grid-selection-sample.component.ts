@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxSnackbarComponent, IgxTreeGridComponent, IRowSelectionEventArgs } from 'igniteui-angular';
+import { GridSelectionMode, IgxSnackbarComponent, IgxTreeGridComponent, IRowSelectionEventArgs } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({
@@ -12,7 +12,7 @@ export class TreeGridSelectionSampleComponent implements OnInit {
     @ViewChild('snackbarRowCount', { static: true }) public snackbarRowCount: IgxSnackbarComponent;
     @ViewChild('snackbar', { static: true }) public snackbar: IgxSnackbarComponent;
     public data: any[];
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     public selectionModes = [];
     public hideRowSelectors = false;
     public selectedRows = [1, 2, 3];
@@ -35,7 +35,7 @@ export class TreeGridSelectionSampleComponent implements OnInit {
         this.snackbar.open();
     }
 
-    public handleRowSelection(event:IRowSelectionEventArgs) {
+    public handleRowSelection(event: IRowSelectionEventArgs) {
         this.selectedRowsCount = event.newSelection.length;
         this.selectedRowIndex = event.newSelection[0];
         this.snackbarRowCount.open();

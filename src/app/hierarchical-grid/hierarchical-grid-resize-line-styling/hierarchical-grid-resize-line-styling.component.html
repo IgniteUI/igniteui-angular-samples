@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  class="hierarchicalGrid" [data]="localData" [autoGenerate]="false" [height]="'520px'"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hierarchicalGrid" [data]="localData" [autoGenerate]="false" [height]="'520px'"
         [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
         <igx-column field="Artist" [resizable]="true"></igx-column>
         <igx-column field="Photo" [resizable]="true" [minWidth]="'115px'">

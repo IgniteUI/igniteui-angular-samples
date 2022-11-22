@@ -7,6 +7,7 @@ import {
     QueryList,
     ViewChild
 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {
     CloseScrollStrategy,
     ConnectedPositioningStrategy,
@@ -23,9 +24,10 @@ import {
     OverlaySettings,
     PositionSettings,
     VerticalAlignment,
-    CellType
+    CellType,
+    GridSelectionMode
 } from 'igniteui-angular';
-import { data } from './data';
+import { data, Employee } from './data';
 
 function formatDate(val: Date) {
     return new Intl.DateTimeFormat('en-US').format(val);
@@ -92,26 +94,28 @@ class SoonSummary extends IgxDateSummaryOperand {
 export class GridCRMComponent implements OnInit, AfterViewInit {
 
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
-    public grid1: IgxGridComponent;
+    public grid1!: IgxGridComponent;
 
-    @ViewChild('toggleRefHiding') public toggleRefHiding: IgxToggleDirective;
-    @ViewChild('toggleRefPinning') public toggleRefPinning: IgxToggleDirective;
+    @ViewChild('toggleRefHiding') public toggleRefHiding!: IgxToggleDirective;
+    @ViewChild('toggleRefPinning') public toggleRefPinning!: IgxToggleDirective;
 
-    @ViewChild('hidingButton') public hidingButton: ElementRef;
-    @ViewChild('pinningButton') public pinningButton: ElementRef;
+    @ViewChild('hidingButton') public hidingButton!: ElementRef;
+    @ViewChild('pinningButton') public pinningButton!: ElementRef;
 
-    public localData: any[];
+    public localData: Employee[] = [];
     public dealsSummary = DealsSummary;
     public earliestSummary = EarliestSummary;
     public soonSummary = SoonSummary;
 
-    public cols: QueryList<IgxColumnComponent>;
+    public cols!: QueryList<IgxColumnComponent>;
     public hiddenColsLength: number;
     public pinnedColsLength: number;
 
+    public dark = false;
+
     public searchText = '';
     public caseSensitive = false;
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
 
     public _positionSettings: PositionSettings = {
         horizontalDirection: HorizontalAlignment.Left,
@@ -129,7 +133,8 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
 
     constructor(
         private csvExporter: IgxCsvExporterService,
-        private excelExporter: IgxExcelExporterService) {
+        private excelExporter: IgxExcelExporterService,
+        private activatedRoute: ActivatedRoute) {
 
         const exporterCb = (args: IColumnExportingEventArgs) => {
             if (args.field === 'Deals') { args.cancel = true; }
@@ -140,11 +145,14 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     }
 
     public ngOnInit() {
-        const employees = data;
+        const employees: Employee[] = data;
         for (const employee of employees) {
             this.getDeals(employee);
         }
         this.localData = employees;
+        this.activatedRoute.queryParams.subscribe(params => {
+            this.dark = !!params.dark;
+        });
     }
 
     public toggleHiding() {
@@ -176,7 +184,7 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         col.hidden = !col.hidden;
     }
 
-    public togglePin(col: IgxColumnComponent, evt) {
+    public togglePin(col: IgxColumnComponent, evt: any) {
         if (col.pinned) {
             this.grid1.unpinColumn(col.field);
             this.pinnedColsLength--;
@@ -194,7 +202,7 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         return new Intl.DateTimeFormat('en-US').format(val);
     }
 
-    public searchKeyDown(ev) {
+    public searchKeyDown(ev: KeyboardEvent) {
         if (ev.key === 'Enter' || ev.key === 'ArrowDown' || ev.key === 'ArrowRight') {
             ev.preventDefault();
             this.grid1.findNext(this.searchText, this.caseSensitive);
@@ -218,8 +226,8 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         return val.toLocaleString('en-us', { maximumFractionDigits: 2 });
     }
 
-    public getDeals(employee: any): any {
-        employee['Deals'] = this.getDealsData();
+    public getDeals(employee: Employee): any {
+        employee.deals = this.getDealsData();
     }
 
     public getDealsData(months?: number): any[] {

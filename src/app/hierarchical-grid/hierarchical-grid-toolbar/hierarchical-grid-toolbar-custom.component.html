@@ -1,5 +1,5 @@
 <div class="hgrid__wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="data" height="480px" width="100%" rowHeight="65px">
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid class="hgrid" [data]="data" height="480px" width="100%" rowHeight="65px">
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>Singers</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
@@ -11,7 +11,7 @@
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
 
-        <igx-column field="Artist" width="150px" sortable="true"></igx-column>
+        <igx-column field="Artist" width="150px" [sortable]="true"></igx-column>
         <igx-column field="Photo">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner_2">
@@ -19,16 +19,16 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="Debut" sortable="true"></igx-column>
-        <igx-column field="GrammyNominations" header="Grammy Nominations" width="200px" sortable="true"></igx-column>
-        <igx-column field="GrammyAwards" header="Grammy Awards" width="200px" sortable="true"></igx-column>
+        <igx-column field="Debut" [sortable]="true"></igx-column>
+        <igx-column field="GrammyNominations" header="Grammy Nominations" width="200px" [sortable]="true"></igx-column>
+        <igx-column field="GrammyAwards" header="Grammy Awards" width="200px" [sortable]="true"></igx-column>
 
 
 
         <igx-row-island [height]="null" key="Albums" [autoGenerate]="false">
             <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
                 <igx-grid-toolbar-title>Albums</igx-grid-toolbar-title>
-                <button igxButton="flat" igxRipple igxRippleCentered="true" (click)="childGrid.clearSort()">
+                <button igxButton="flat" igxRipple [igxRippleCentered]="true" (click)="childGrid.clearSort()">
                     <igx-icon family="material">clear</igx-icon>
                     <span>Clear Sort</span>
                 </button>

@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxTreeGridComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
 @Component({
@@ -13,7 +13,7 @@ export class TreeGridRowEditSampleComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid1: IgxTreeGridComponent;
     public data: IEmployee[];
     public columns: any[];
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
 
     public ngOnInit(): void {
         this.data = generateEmployeeFlatData();

@@ -3,7 +3,7 @@
         <igx-switch [(ngModel)]="hideRowSelectors">Hide Row Selectors</igx-switch>
         <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
     </div>
-    <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [height]="'580px'" [width]="'100%'" [rowHeight]="'65px'"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="localdata" [height]="'580px'" [width]="'100%'" [rowHeight]="'65px'"
     [cellSelection]="'none'" [rowSelection]="selectionMode" [hideRowSelectors]="hideRowSelectors"
         [allowFiltering]="true" (rowSelectionChanging)="handleRowSelection($event)" #hierarchicalGrid>
         <igx-column field="Artist"></igx-column>

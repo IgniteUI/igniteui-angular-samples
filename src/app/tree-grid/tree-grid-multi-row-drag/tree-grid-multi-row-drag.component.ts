@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs, IgxTreeGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IDropDroppedEventArgs, IgxTreeGridComponent } from 'igniteui-angular';
 import { FULL_EMPLOYEE_DATA } from '../data/employees';
 
 @Component({
@@ -10,7 +10,7 @@ import { FULL_EMPLOYEE_DATA } from '../data/employees';
 export class TreeGridMultiRowDragComponent {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: true })
     public treeGrid: IgxTreeGridComponent;
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     public selected = false;
     public ids;
     public countIcon = 'drag_indicator';

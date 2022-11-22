@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, Renderer2, OnDestroy, OnInit, DoCheck, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
-import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, IgxColumnComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxSelectComponent, OverlaySettings, SortingDirection } from 'igniteui-angular';
+import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, GridColumnDataType, IgxColumnComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxSelectComponent, OverlaySettings, SortingDirection } from 'igniteui-angular';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { Subject } from 'rxjs';
 import { first, takeUntil } from 'rxjs/operators';
@@ -109,7 +109,14 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
         floatingPanes: []
     };
 
-    public columns = [
+    public columns: { field: string,
+                    width: string,
+                    sortable: boolean,
+                    filterable: boolean,
+                    type: GridColumnDataType,
+                    groupable?: boolean,
+                    cellClasses?: string,
+                    bodyTemplate?: string } [] = [
         { field: 'buy', width: '110px', sortable: false, filterable: false, type: 'currency' },
         { field: 'sell', width: '110px', sortable: false, filterable: false, type: 'currency' },
         { field: 'openPrice', width: '120px', sortable: true, filterable: true, type: 'currency'},

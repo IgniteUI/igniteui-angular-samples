@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [autoGenerate]="false"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="localdata" [autoGenerate]="false"
         [allowFiltering]='true' filterMode="excelStyleFilter" [expandChildren]="true"
         height="600px" [width]="'100%'" #hierarchicalGrid>
         <igx-column field="Artist" [sortable]="true" [disableHiding]="true"></igx-column>

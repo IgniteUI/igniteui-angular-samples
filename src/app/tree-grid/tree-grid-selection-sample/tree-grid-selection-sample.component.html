@@ -3,7 +3,7 @@
         <igx-switch [(ngModel)]="hideRowSelectors">Hide Row Selectors</igx-switch>
         <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
     </div>
-    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" [selectedRows]="selectedRows" primaryKey="ID" foreignKey="ParentID" [height]="'550px'" width="100%" [cellSelection]="'none'" [rowSelection]="selectionMode" [hideRowSelectors]="hideRowSelectors"
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid [data]="data" [selectedRows]="selectedRows" primaryKey="ID" foreignKey="ParentID" [height]="'550px'" width="100%" [cellSelection]="'none'" [rowSelection]="selectionMode" [hideRowSelectors]="hideRowSelectors"
     [allowFiltering]="true" (rowSelectionChanging)="handleRowSelection($event)">
         <igx-column [field]="'Name'" dataType="string" [sortable]="true"></igx-column>
         <igx-column [field]="'Title'" dataType="string" [sortable]="true"></igx-column>

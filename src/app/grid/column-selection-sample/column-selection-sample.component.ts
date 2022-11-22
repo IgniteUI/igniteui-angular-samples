@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent, IgxSelectComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({
@@ -11,7 +11,7 @@ export class GridColumnSelectionComponent implements OnInit, AfterViewInit {
     @ViewChild(IgxGridComponent)
     public grid: IgxGridComponent;
     public data: any[];
-    public columnSelectionType = 'single';
+    public columnSelectionType: GridSelectionMode = 'single';
 
     constructor(private cdr: ChangeDetectorRef) {}
 

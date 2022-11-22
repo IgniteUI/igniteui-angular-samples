@@ -1,6 +1,6 @@
 <div class="sample-wrapper">
     <div class="grid__wrapper">
-        <igx-grid displayDensity="compact" igxPreventDocumentScroll [data]="data" [allowFiltering]="true" filterMode="excelStyleFilter">
+        <igx-grid displayDensity="compact" [igxPreventDocumentScroll]="true" [data]="data" [allowFiltering]="true" filterMode="excelStyleFilter">
             <igx-column *ngFor="let each of nestedConfigColumns"
                 [sortable]="true"
                 [field]="each.field"

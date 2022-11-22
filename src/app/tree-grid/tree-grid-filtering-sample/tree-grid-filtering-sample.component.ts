@@ -20,8 +20,8 @@ export class TreeGridFilteringSampleComponent implements OnInit {
         this.data = FOODS_DATA();
     }
 
-    public filter(term) {
-        this.treegrid1.filter('Name', term, IgxStringFilteringOperand.instance().condition('contains'));
+    public filter(element: EventTarget) {
+        this.treegrid1.filter('Name', (element as HTMLInputElement).value, IgxStringFilteringOperand.instance().condition('contains'));
     }
 
     public formatDate(val: Date) {

@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #myGrid [data]="data" primaryKey="ID" rowSelection="multiple" cellSelection="none" [height]="'510px'" width="100%">
+    <igx-grid [igxPreventDocumentScroll]="true" #myGrid [data]="data" primaryKey="ID" rowSelection="multiple" cellSelection="none" [height]="'510px'" width="100%">
         <igx-paginator></igx-paginator>
         <igx-column field='ContactName' width="20%"></igx-column>
         <igx-column field='Country' width="20%"></igx-column>
@@ -19,7 +19,7 @@
                 <igx-checkbox class="row-selector-checkbox"
                     [checked]="rowContext.selected"
                     [readonly]="true"
-                    disableRipple="true" [disableTransitions]="myGrid.disableTransitions">
+                    [disableRipple]="true" [disableTransitions]="myGrid.disableTransitions">
                 </igx-checkbox>
             </div>
         </ng-template>

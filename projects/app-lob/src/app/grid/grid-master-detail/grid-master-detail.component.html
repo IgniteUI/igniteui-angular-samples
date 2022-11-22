@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll displayDensity="cosy" [data]="data" [autoGenerate]="false" height="592px" width="100%">
+    <igx-grid [igxPreventDocumentScroll]="true" displayDensity="cosy" [data]="data" [autoGenerate]="false" height="592px" width="100%">
         <igx-column field="name" header="Name" width="250px"></igx-column>
         <igx-column field="position" header="Position"></igx-column>
         <igx-column field="company" header="Company"></igx-column>
@@ -7,7 +7,7 @@
         <igx-column field="referred_by" header="Referrer"></igx-column>
         <ng-template igxGridDetail let-dataItem>
             <div style="width:100%;" (keydown)='$event.stopPropagation()' [style.height.px]='getHeight(tabs.selectedIndex)'>
-                <igx-tabs #tabs selectedIndex='0'>
+                <igx-tabs #tabs [selectedIndex]="0">
                     <igx-tab-item>
                         <igx-tab-header>
                             <span igxTabHeaderLabel>Details</span>
@@ -16,7 +16,7 @@
                             <div class="tabContent">
                                 <div class="avatarContainer">
                                     <igx-avatar src="{{dataItem.avatar}}"
-                                        roundShape="false" size="large"></igx-avatar>
+                                        [roundShape]="false" size="large"></igx-avatar>
                                     <h6>{{dataItem.name}}</h6>
                                 </div>
                                 <igx-divider [vertical]="true"></igx-divider>

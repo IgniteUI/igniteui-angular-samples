@@ -8,6 +8,7 @@ export const gridsRoutesData = {
     'grid-groupby-summary': { displayName: 'Grid GroupBy Summary', parentName: 'Grid' },
     'grid-groupby-summary-styling': { displayName: 'Grid GroupBy Summary Styling', parentName: 'Grid' },
     'grid-editing': { displayName: 'Grid Editing', parentName: 'Grid' },
+    'grid-editing-excel-style': { displayName: 'Grid Excel Style Editing', parentName: 'Grid' },
     'grid-editing-events': { displayName: 'Grid Editing Events', parentName: 'Grid' },
     'grid-editing-style': { displayName: 'Grid Editing Style', parentName: 'Grid' },
     'grid-row-editing': { displayName: 'Grid Row Editing', parentName: 'Grid' },
@@ -115,5 +116,11 @@ export const gridsRoutesData = {
     'grid-summary-formatter': { displayName: 'Grid Summary Formatter', parentName: 'Grid' },
     'grid-crud': { displayName: 'Grid CRUD Operations', parentName: 'Grid'},
     'grid-rowClasses-sample': { displayName: 'Grid rowClasses', parentName: 'Grid'},
-    'grid-rowStyles-sample': { displayName: 'Grid rowStyles', parentName: 'Grid'}
+    'grid-rowStyles-sample': { displayName: 'Grid rowStyles', parentName: 'Grid'},
+    'grid-columnAutoResizing-sample': { displayName: 'Grid Column Autoresizing', parentName: 'Grid'},
+    'grid-with-rating': { displayName: 'Grid with Rating', parentName: 'Rating' },
+    'grid-validator-service': { displayName: 'Grid Validator Service', parentName: 'Grid' },
+    'grid-cross-field-validator-service': { displayName: 'Grid Cross Field Validator Service ', parentName: 'Grid' },
+    'grid-validation-style': { displayName: 'Grid with Validation Styles', parentName: 'Grid' },
+    'grid-validator-service-extended': { displayName: 'Grid Validator Service Extended', parentName: 'Grid'}
 };

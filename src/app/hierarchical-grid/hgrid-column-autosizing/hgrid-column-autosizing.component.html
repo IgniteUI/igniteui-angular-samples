@@ -1,0 +1,35 @@
+<div class="grid__wrapper">
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hierarchicalGrid [data]="localdata"
+        [height]="'490px'" [width]="'100%'">
+        <igx-column field="CustomerID" width="auto" [resizable]="true"></igx-column>
+        <igx-column field="CompanyName" width="auto" [resizable]="true"></igx-column>
+        <igx-column field="ContactName" width="auto" [resizable]="true"></igx-column>
+        <igx-column field="ContactTitle" width="auto" [resizable]="true"></igx-column>
+        <igx-column field="Address" width="auto" [resizable]="true"></igx-column>
+        <igx-column field="City" width="auto" [resizable]="true"></igx-column>
+        <igx-column field="PostalCode" width="auto" [resizable]="true"></igx-column>
+        <igx-column field="Country" width="auto" [resizable]="true"></igx-column>
+        <igx-column field="Phone" width="auto" [resizable]="true"></igx-column>
+        <igx-column field="Fax" width="auto" [resizable]="true"></igx-column>
+        <igx-row-island [height]="null" [key]="'Orders'" [autoGenerate]="false">
+            <igx-column field="OrderID" width="auto" [resizable]="true"></igx-column>
+            <igx-column field="EmployeeID" width="auto" [resizable]="true"></igx-column>
+            <igx-column field="OrderDate" width="auto" [dataType]="'date'" [resizable]="true"></igx-column>
+            <igx-column field="RequiredDate" width="auto" [dataType]="'date'" [resizable]="true"></igx-column>
+            <igx-column field="ShippedDate" width="auto" [dataType]="'date'" [resizable]="true"></igx-column>
+            <igx-column field="ShipVia" width="auto" [resizable]="true"></igx-column>
+            <igx-column field="Freight" width="auto" [resizable]="true"></igx-column>
+            <igx-column field="ShipName" width="auto" [resizable]="true"></igx-column>
+            <igx-column field="ShipAddress" width="auto" [resizable]="true"></igx-column>
+            <igx-column field="ShipCity" width="auto" [resizable]="true"></igx-column>
+            <igx-column field="ShipPostalCode" width="auto" [resizable]="true"></igx-column>
+            <igx-column field="ShipCountry" width="auto" [resizable]="true"></igx-column>
+            <igx-row-island [height]="null" [key]="'OrderDetails'" [autoGenerate]="false" [moving]="true">
+                <igx-column field="ProductID" width="auto" [resizable]="true"></igx-column>
+                <igx-column field="UnitPrice" width="auto" [resizable]="true"></igx-column>
+                <igx-column field="Quantity" width="auto" [resizable]="true"></igx-column>
+                <igx-column field="Discount" width="auto" [resizable]="true"></igx-column>
+            </igx-row-island>
+        </igx-row-island>
+    </igx-hierarchical-grid>
+</div>
