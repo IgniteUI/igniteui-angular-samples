@@ -1155,9 +1155,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridValidatorServiceComponent',
-                    'IgxButtonModule'],
+                    'IgxButtonModule', 'IgxSwitchModule'],
                 ngDeclarations: ['TreeGridValidatorServiceComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule', 'IgxSwitchModule']
             })
         }));
 
