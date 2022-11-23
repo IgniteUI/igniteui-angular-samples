@@ -17,6 +17,11 @@
             [displayKey]="'name'"
             [disabled]="regionData.length === 0">
         </igx-simple-combo>
+        <igx-linear-bar
+            *ngIf="isLoadingRegions"
+            type="info"
+            [indeterminate]="true">
+        </igx-linear-bar>
     </div>
     <div class="combo-section">
         <igx-simple-combo #city
@@ -26,5 +31,10 @@
             [displayKey]="'name'"
             [disabled]="citiesData.length === 0">
         </igx-simple-combo>
+        <igx-linear-bar
+            *ngIf="isLoadingCities"
+            type="info"
+            [indeterminate]="true">
+        </igx-linear-bar>
     </div>
 </div>
