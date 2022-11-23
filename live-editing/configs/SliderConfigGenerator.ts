@@ -6,7 +6,6 @@ import { HammerModule } from '@angular/platform-browser';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class SliderConfigGenerator implements IConfigGenerator {
 
-
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

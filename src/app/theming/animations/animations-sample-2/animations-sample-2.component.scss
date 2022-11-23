@@ -1,5 +1,6 @@
-@use '~igniteui-angular/lib/core/styles/themes/index' as *;
-@forward '~igniteui-angular/lib/core/styles/themes/index';
+@use 'igniteui-angular/lib/core/styles/themes/index' as *;
+@forward 'igniteui-angular/lib/core/styles/themes/index';
+
 @include fade-in-top();
 
 .sample-column {
