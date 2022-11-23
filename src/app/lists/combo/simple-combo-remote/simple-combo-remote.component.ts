@@ -23,6 +23,7 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
     private itemID = 1;
     private itemCount: number = 0;
     private hasSelection: boolean;
+    private additionalScroll: number = 0;
 
     constructor(
         private remoteService: RemoteNWindService,
@@ -65,12 +66,8 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
     }
 
     public onOpened() {
-        if (this.itemID === 1) {
-            this.remoteSimpleCombo.virtualScrollContainer.scrollPosition = 0;
-        } else {
-            const scroll: number = this.remoteSimpleCombo.virtualScrollContainer.getScrollForIndex(this.itemID - 1);
-            this.remoteSimpleCombo.virtualScrollContainer.scrollPosition = scroll;
-        }
+        const scroll: number = this.remoteSimpleCombo.virtualScrollContainer.getScrollForIndex(this.itemID - 1);
+        this.remoteSimpleCombo.virtualScrollContainer.scrollPosition = scroll + this.additionalScroll;
         this.cdr.detectChanges();
     }
 
@@ -81,7 +78,7 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
     public onClosed() {
         this.currentVirtState.startIndex = (this.itemID || 1) - 1;
         this.remoteService.getData(
-            this.hasSelection ? this.currentVirtState : this.defaultVirtState,
+            this.currentVirtState,
             this.searchText,
             (data) => {
                 this.remoteSimpleCombo.totalItemCount = data['@odata.count'];
@@ -92,13 +89,18 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
 
     public handleSelectionChanging(evt: ISimpleComboSelectionChangingEventArgs) {
         this.hasSelection = evt.newSelection !== undefined;
-        this.currentVirtState.chunkSize = Math.ceil(this.remoteSimpleCombo.itemsMaxHeight / this.remoteSimpleCombo.itemHeight);
 
-        if (evt.newSelection === 1 || !this.hasSelection) {
+        if (!this.hasSelection) {
             this.itemID = 1;
-            this.currentVirtState.startIndex = 0;
+            this.currentVirtState = this.defaultVirtState;
             return;
         }
+
+        this.currentVirtState.chunkSize = Math.ceil(this.remoteSimpleCombo.itemsMaxHeight / this.remoteSimpleCombo.itemHeight);
+
+        this.itemCount === evt.newSelection ?
+            this.additionalScroll = this.remoteSimpleCombo.itemHeight :
+            this.additionalScroll = 0;
 
         if (this.itemCount - evt.newSelection >= this.currentVirtState.chunkSize - 1) {
             this.itemID = this.currentVirtState.startIndex = evt.newSelection;
@@ -108,9 +110,11 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
     }
 
     public handleSearchInputUpdate(searchData: IComboSearchInputEventArgs) {
+        this.currentVirtState.startIndex = 0;
+        this.currentVirtState.chunkSize = Math.ceil(this.remoteSimpleCombo.itemsMaxHeight / this.remoteSimpleCombo.itemHeight);
         this.searchText = searchData?.searchText || '';
         this.remoteService.getData(
-            this.searchText ? this.remoteSimpleCombo.virtualizationState : this.defaultVirtState,
+            this.searchText ? this.currentVirtState : this.defaultVirtState,
             this.searchText,
             (data) => {
                 this.remoteSimpleCombo.totalItemCount = data['@odata.count'];

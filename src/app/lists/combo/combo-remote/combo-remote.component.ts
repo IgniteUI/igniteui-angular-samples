@@ -27,6 +27,7 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
     private itemID: number = 1;
     private itemCount: number = 0;
     private hasSelection: boolean;
+    private additionalScroll: number = 0;
 
     constructor(
         private remoteService: RemoteNWindService,
@@ -69,9 +70,11 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
     }
 
     public handleSearchInputUpdate(searchData: IComboSearchInputEventArgs) {
+        this.currentVirtState.startIndex = 0;
+        this.currentVirtState.chunkSize = Math.ceil(this.remoteCombo.itemsMaxHeight / this.remoteCombo.itemHeight);
         this.searchText = searchData?.searchText || '';
         this.remoteService.getData(
-            this.searchText ? this.remoteCombo.virtualizationState : this.defaultVirtState,
+            this.searchText ? this.currentVirtState : this.defaultVirtState,
             this.searchText,
             (data) => {
                 this.remoteCombo.totalItemCount = data['@odata.count'];
@@ -80,12 +83,8 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
     }
 
     public onOpened() {
-        if (this.itemID === 1) {
-            this.remoteCombo.virtualScrollContainer.scrollPosition = 0;
-        } else {
-            const scroll: number = this.remoteCombo.virtualScrollContainer.getScrollForIndex(this.itemID - 1);
-            this.remoteCombo.virtualScrollContainer.scrollPosition = scroll;
-        }
+        const scroll: number = this.remoteCombo.virtualScrollContainer.getScrollForIndex(this.itemID - 1);
+        this.remoteCombo.virtualScrollContainer.scrollPosition = scroll + this.additionalScroll;
         this.cdr.detectChanges();
     }
 
@@ -96,7 +95,7 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
     public onClosed() {
         this.currentVirtState.startIndex = (this.itemID || 1) - 1;
         this.remoteService.getData(
-            this.hasSelection ? this.currentVirtState : this.defaultVirtState,
+            this.currentVirtState,
             this.searchText,
             (data) => {
                 this.remoteCombo.totalItemCount = data['@odata.count'];
@@ -107,16 +106,22 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
 
     public handleSelectionChanging(evt: IComboSelectionChangingEventArgs) {
         this.hasSelection = !!evt?.newSelection.length;
-        this.currentVirtState.chunkSize = Math.ceil(this.remoteCombo.itemsMaxHeight / this.remoteCombo.itemHeight);
 
-        if (evt.newSelection[evt.newSelection.length - 1] === 1 || !this.hasSelection) {
+        if (!this.hasSelection) {
             this.itemID = 1;
-            this.currentVirtState.startIndex = 0;
+            this.currentVirtState = this.defaultVirtState;
             return;
         }
 
-        if (this.itemCount - evt.newSelection[evt.newSelection.length - 1] >= this.currentVirtState.chunkSize - 1) {
-            this.itemID = this.currentVirtState.startIndex = evt.newSelection[evt.newSelection.length - 1];
+        const currentSelection = evt.newSelection[evt.newSelection.length - 1]
+        this.currentVirtState.chunkSize = Math.ceil(this.remoteCombo.itemsMaxHeight / this.remoteCombo.itemHeight);
+
+        this.itemCount === currentSelection ?
+            this.additionalScroll = this.remoteCombo.itemHeight :
+            this.additionalScroll = 0;
+
+        if (this.itemCount - currentSelection >= this.currentVirtState.chunkSize - 1) {
+            this.itemID = this.currentVirtState.startIndex = currentSelection;
         } else {
             this.itemID = this.currentVirtState.startIndex = this.itemCount - (this.currentVirtState.chunkSize - 1);
         }
