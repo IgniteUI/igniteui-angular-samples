@@ -1,11 +1,11 @@
+import { registerLocaleData } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { IFormattingOptions } from 'igniteui-angular';
 import localeDE from '@angular/common/locales/de';
 import localeFR from '@angular/common/locales/fr';
+import localeJA from '@angular/common/locales/ja';
 import localeAR from '@angular/common/locales/ar';
 import localeZH from '@angular/common/locales/zh';
-import { registerLocaleData } from '@angular/common';
-
 
 @Component({
     selector: 'app-monthpicker-sample-3',
@@ -21,10 +21,10 @@ export class MonthpickerSample3Component implements OnInit {
     public locales = ['en', 'de', 'fr', 'ar', 'zh'];
     public locale = 'en';
 
-
     public ngOnInit(): void {
         registerLocaleData(localeDE);
         registerLocaleData(localeFR);
+        registerLocaleData(localeJA);
         registerLocaleData(localeAR);
         registerLocaleData(localeZH);
     }
