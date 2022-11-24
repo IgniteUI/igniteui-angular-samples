@@ -18,7 +18,8 @@ import {
     IgxSwitchModule,
     IgxToastModule,
     IgxTooltipModule,
-    IgxTreeModule
+    IgxTreeModule,
+    IgxProgressBarModule
 } from 'igniteui-angular';
 import { IgxFinancialChartModule } from 'igniteui-angular-charts';
 import { ComboBindingComponent } from './combo/combo-binding/combo-binding.component';
@@ -99,7 +100,8 @@ import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-c
         IgxTreeModule,
         IgxTooltipModule,
         IgxFinancialChartModule,
-        IgxSimpleComboModule
+        IgxSimpleComboModule,
+        IgxProgressBarModule
     ]
 })
 export class ListsModule { }
