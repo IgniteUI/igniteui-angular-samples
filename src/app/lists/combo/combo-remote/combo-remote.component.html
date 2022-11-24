@@ -5,10 +5,11 @@
     [valueKey]="'ProductID'"
     [displayKey]="'ProductName'"
     (dataPreLoad)="dataLoading()"
-    (searchInputUpdate)="searchInput($event)"
+    (searchInputUpdate)="handleSearchInputUpdate($event)"
     (selectionChanging)="handleSelectionChanging($event)"
-    (closing)="onClosing()" (opening)="onOpening()"
+    (closing)="onClosing()" (opened)="onOpened()"
+    (closed)="onClosed()"
     placeholder="Location(s)"
-    [filterable]="false">
+    [filterable]="true">
 </igx-combo>
 <igx-toast #loadingToast></igx-toast>
