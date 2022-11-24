@@ -221,7 +221,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Column Pinning sample
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts', '/src/app/services/svgIcons.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridColumnPinningSampleComponent', 'IgxIconModule'],
                 ngDeclarations: ['TreeGridColumnPinningSampleComponent'],

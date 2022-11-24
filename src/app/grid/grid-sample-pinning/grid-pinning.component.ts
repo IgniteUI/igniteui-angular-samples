@@ -26,8 +26,8 @@ export class PinningSampleComponent implements OnInit, AfterViewInit {
     public ngOnInit(): void {
         this.columns = [
             { field: 'ID', header: 'ID', width: 100, hidden: true },
-            { field: 'CompanyName', header: 'Company Name', width: 300 },
-            { field: 'ContactName', header: 'Contact Name', width: 200, pinned: true },
+            { field: 'CompanyName', header: 'Company Name' },
+            { field: 'ContactName', header: 'Contact Name', pinned: true },
             { field: 'ContactTitle', header: 'Contact Title', width: 200, pinned: true },
             { field: 'Address', header: 'Address', width: 300 },
             { field: 'City', header: 'City', width: 120 },
