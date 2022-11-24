@@ -26,6 +26,7 @@ import { SimpleComboUsageComponent } from './combo/simple-combo-usage/simple-com
 import { SimpleComboCascadingComponent } from './combo/simple-combo-cascading/simple-combo-cascading.component';
 import { SimpleComboStylingComponent } from './combo/simple-combo-styling/simple-combo-styling.component';
 import { ListItemSelectionComponent } from './list/list-item-selection/list-item-selection.component';
+import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-combo-remote.component';
 
 export const listsRoutes: Routes = [
     {
@@ -87,6 +88,11 @@ export const listsRoutes: Routes = [
         component: SimpleComboStylingComponent,
         data: listsRoutesData['simple-combo-styling'],
         path: 'simple-combo-styling'
+    },
+    {
+        component: SimpleComboRemoteComponent,
+        data: listsRoutesData['simple-combo-remote'],
+        path: 'simple-combo-remote'
     },
     {
         component: ListComponent,
