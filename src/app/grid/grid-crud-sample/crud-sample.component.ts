@@ -47,13 +47,13 @@ export class CRUDSampleComponent implements OnInit, OnDestroy {
         });
     }
 
-    public rowAdded(event: IRowDataEventArgs) {
+    public rowAdded(event: IRowDataEventArgs): void {
         this._crudService.add(event.data).subscribe((rec) => {
             // this.snackbar.open(`Row with ID of ${rec.ID} was created.`);
         });
     }
 
-    public rowDeleted(event: IRowDataEventArgs) {
+    public rowDeleted(event: IRowDataEventArgs): void {
         this.grid.isLoading = true;
         this._crudService.delete(event.data).subscribe({
             next: (data: any) => {
@@ -69,7 +69,7 @@ export class CRUDSampleComponent implements OnInit, OnDestroy {
         });
     }
 
-    public rowEditDone(event: IGridEditDoneEventArgs) {
+    public rowEditDone(event: IGridEditDoneEventArgs): void {
         if (!event.isAddRow) {
             this.grid.isLoading = true;
             this._crudService.update(event.newValue).subscribe((rec) => {

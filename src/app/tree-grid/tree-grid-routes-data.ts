@@ -123,5 +123,6 @@ export const treeGridRoutesData = {
     'tree-grid-validator-service': { displayName: 'Tree Grid Validator Service', parentName: 'TreeGrid' },
     'tree-grid-cross-field-validator-service': { displayName: 'Tree Grid Cross Field Validator Service', parentName: 'TreeGrid' },
     'tree-grid-validation-style': { displayName: 'Tree Grid Validation Styles', parentName: 'TreeGrid' },
-    'tree-grid-validator-service-extended': { displayName: 'Tree Grid Validator Service Extended', parentName: 'TreeGrid' }
+    'tree-grid-validator-service-extended': { displayName: 'Tree Grid Validator Service Extended', parentName: 'TreeGrid' },
+    'treegrid-summary-export': { displayName: 'Tree Grid Summary Export', parentName: 'TreeGrid' }
 };

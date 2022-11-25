@@ -1,9 +1,10 @@
 <div class="grid__wrapper">
 <ng-template igxHeader let-column #pinTemplate>
     <div class="title-inner">
-        <span style="float:left">{{column.header || column.field}}</span>
-        <igx-icon class="pin-icon" [class.pinned]="column.pinned" [class.unpinned]="!column.pinned" family="fas" name="fa-thumbtack"
-            (click)="toggleColumn(column)"></igx-icon>
+        <span class="header-text">{{column.header || column.field}}</span>
+        <igx-icon class="pin-icon" [class.pinned]="column.pinned" [class.unpinned]="!column.pinned"
+            family="filtering-icons" name="{{column.pinned ? 'unpin' : 'pin'}}" (click)="toggleColumn(column)">
+        </igx-icon>
     </div>
 </ng-template>
 <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
