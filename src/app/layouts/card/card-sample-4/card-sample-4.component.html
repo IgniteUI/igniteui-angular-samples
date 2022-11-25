@@ -85,7 +85,7 @@
 
                 <igx-divider class="content-divider"></igx-divider>
 
-                <span class="chip-label igx-typography__subtitle-1"> Tonight's availability</span>
+                <span class="chip-label ig-typography__subtitle-1"> Tonight's availability</span>
 
                 <div class="chip-holder">
                     <igx-chip *ngFor="let chip of cards[0].chips">
@@ -103,7 +103,7 @@
     <article class="sample-column card-wrapper">
         <igx-card>
             <igx-card-header>
-                <igx-avatar src="assets/images/card/avatars/photographer.jpg" roundShape="true"></igx-avatar>
+                <igx-avatar src="assets/images/card/avatars/photographer.jpg" [roundShape]="true"></igx-avatar>
                 <h4 igxCardHeaderTitle>Frank Carter</h4>
                 <h5 igxCardHeaderSubtitle>Photographer</h5>
             </igx-card-header>

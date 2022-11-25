@@ -11,7 +11,7 @@
         </igx-grid-excel-style-filtering>
     </div>
 
-    <igx-tree-grid igxPreventDocumentScroll [data]="data" [autoGenerate]="false" height="653px" width="800px" primaryKey="ID"
+    <igx-tree-grid [igxPreventDocumentScroll]="true" [data]="data" [autoGenerate]="false" height="653px" width="800px" primaryKey="ID"
         foreignKey="ParentID" #tGrid>
         <igx-column field="ID" header="Product ID" [dataType]="'string'">
         </igx-column>

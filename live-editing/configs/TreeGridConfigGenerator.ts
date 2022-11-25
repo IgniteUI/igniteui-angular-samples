@@ -1155,9 +1155,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridValidatorServiceComponent',
-                    'IgxButtonModule'],
+                    'IgxButtonModule', 'IgxSwitchModule'],
                 ngDeclarations: ['TreeGridValidatorServiceComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule', 'IgxSwitchModule']
             })
         }));
 
@@ -1199,6 +1199,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['TreeGridValidatorServiceExtendedComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule']
             })
+        }));
+
+         configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/foods.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridSummaryExportComponent', 'IgxIconModule', 'IgxExcelExporterService'],
+                ngDeclarations: ['TreeGridSummaryExportComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxIconModule'],
+                ngProviders: ['IgxExcelExporterService']
+            }),
+            component: 'TreeGridSummaryExportComponent',
+            shortenComponentPathBy: '/tree-grid/'
         }));
 
         return configs;

@@ -2,8 +2,8 @@
     <igx-switch [(ngModel)]="rowEdit">Row edit</igx-switch>
 </div>
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll #treeGrid [batchEditing]="true" [data]="data" primaryKey="ID"
-        foreignKey="ParentID" [width]="'100%'" [height]="'500px'" [rowEditable]="rowEdit" [pinning]="pinningConfig"
+    <igx-tree-grid [igxPreventDocumentScroll]="true" #treeGrid [batchEditing]="true" [data]="data" primaryKey="ID"
+        foreignKey="ParentID" [width]="'100%'" [height]="'500px'" [rowEditable]="true" [pinning]="pinningConfig"
         (formGroupCreated)="formCreateHandler($event)" (cellEdit)="editHandler($event)" (rowEdit)="editHandler($event)">
         <igx-column field="ID" header="ID" dataType="number" [editable]="false"></igx-column>
         <igx-column field="Age" header="Age" dataType="number" [editable]="true" required min="18" max="99"></igx-column>
@@ -24,7 +24,7 @@
                         {{ country }}
                     </igx-select-item>
                 </igx-select>
-            </ng-template> 
+            </ng-template>
         </igx-column>
         <igx-column field="Title" header="Title" dataType="string" [editable]="true" required></igx-column>
         <igx-column field="HireDate" header="Hire Date" dataType="date" [editable]="true" required></igx-column>

@@ -1,4 +1,4 @@
-<igx-hierarchical-grid igxPreventDocumentScroll  [data]="localData" [autoGenerate]="false"
+<igx-hierarchical-grid [igxPreventDocumentScroll]="true"  [data]="localData" [autoGenerate]="false"
     height="600px" width="100%" primaryKey="Artist" (cellEdit)="handleCellEdit($event)">
     <igx-column field="Artist" dataType="string"></igx-column>
     <igx-column field="HasGrammyAward" header="Has Grammy Award?" [editable]="true" dataType="boolean">

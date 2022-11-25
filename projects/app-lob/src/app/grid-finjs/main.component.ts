@@ -1,5 +1,5 @@
-import { Component, HostBinding, OnDestroy, ViewChild } from '@angular/core';
-import { IgxDialogComponent } from 'igniteui-angular';
+import { AfterViewInit, Component, HostBinding, OnDestroy, ViewChild } from '@angular/core';
+import { IgxDialogComponent, IgxOverlayOutletDirective, OverlaySettings } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
 import { Stock } from '../data/financialData';
 import { ControllerComponent } from './controllers.component';
@@ -10,14 +10,17 @@ import { GridFinJSComponent } from './grid-finjs.component';
     styleUrls: ['./main.component.scss'],
     templateUrl: './main.component.html'
 })
-export class FinJSDemoComponent implements OnDestroy {
+export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
     @ViewChild('finGrid', { static: true }) public finGrid: GridFinJSComponent;
     @ViewChild('controllers', { static: true }) public controller: ControllerComponent;
     @ViewChild('dialog', { static: true }) public dialog: IgxDialogComponent;
     @ViewChild('chart1', { static: true }) public chart: IgxCategoryChartComponent;
+    @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
 
-    @HostBinding('class.dark-theme')
-    public darkTheme = false;
+    public overlaySettings: OverlaySettings = {
+        modal: false,
+        closeOnOutsideClick: true
+    };
 
     public properties = ['price', 'country'];
     public chartData: Stock[] = [];
@@ -35,12 +38,12 @@ export class FinJSDemoComponent implements OnDestroy {
                 this.finGrid.toggleGrouping();
                 break;
             }
-            case 'theme': {
-                this.darkTheme = event.value;
-                break;
-            }
             default: break;
         }
+    }
+
+    public ngAfterViewInit(): void {
+        this.overlaySettings.outlet = this.outlet;
     }
 
     public onVolumeChanged(volume: number): void {
@@ -71,7 +74,7 @@ export class FinJSDemoComponent implements OnDestroy {
             case 'chart': {
                 if (this.finGrid.grid.selectedRows.length !== 0) {
                     this.setChartData(this.finGrid.grid.selectedRows);
-                    this.dialog.open();
+                    this.dialog.open(this.overlaySettings);
                 } else {
                     this.controller.toast.open('Please select some rows first!');
                 };
@@ -83,12 +86,12 @@ export class FinJSDemoComponent implements OnDestroy {
         }
     }
 
-    public setChartData(args: number[]): void {
+    public setChartData(args: Stock[]): void {
         this.chartData = [];
-        args.forEach(row => {
-            this.chartData.push(this.finGrid.grid.data[row]);
-            this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1,
-                this.finGrid.grid.data[row]);
+        args.forEach(rowKey => {
+            const row: Stock = this.finGrid.grid.getRowByKey(rowKey).data;
+            this.chartData.push(row);
+            this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1, row);
         });
         // this.controller.controls[2].disabled = this.chartData.length === 0;
         this.setLabelIntervalAndAngle();

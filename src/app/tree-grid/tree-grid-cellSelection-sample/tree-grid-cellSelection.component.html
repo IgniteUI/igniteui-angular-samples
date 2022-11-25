@@ -2,7 +2,7 @@
     <span class="button-group-wrapper">
         <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
     </span>
-    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" [height]="'530px'" [width]="'100%'" primaryKey="ID" foreignKey="ParentID"
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid [data]="data" [height]="'530px'" [width]="'100%'" primaryKey="ID" foreignKey="ParentID"
         [cellSelection]="selectionMode">
         <igx-column [field]="'ID'"></igx-column>
         <igx-column [field]="'Name'"></igx-column>

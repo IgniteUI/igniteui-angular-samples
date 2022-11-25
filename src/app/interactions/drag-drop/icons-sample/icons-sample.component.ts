@@ -54,8 +54,8 @@ export class IconsSampleComponent {
         this.swapIcons(dragIndex, dropIndex);
     }
 
-    public dragStartHandler(id: string): void {
-        this.dragIconId = parseInt(id, 10);
+    public dragStartHandler(id: number): void {
+        this.dragIconId = id;
     }
 
     public dragEndHandler(dragRef: HTMLElement) {

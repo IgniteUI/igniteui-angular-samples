@@ -1,7 +1,7 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll  #grid1 [data]="data | async" [height]="'500px'" width="100%" [autoGenerate]='false' [allowFiltering]="true"
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  #grid1 [data]="data | async" [height]="'500px'" width="100%" [autoGenerate]='false' [allowFiltering]="true"
                     childDataKey="Categories" primaryKey='ID'>
-        <igx-column [field]="'Category'" [width]="'200px'" [resizable]='true'></igx-column>
+        <igx-column [field]="'Category'" [width]="'200px'" [resizable]="true"></igx-column>
         <igx-column [field]="'Type'" [width]="'150px'" [filterable]='false'></igx-column>
         <igx-column [field]="'Open Price'" [width]="'120px'" dataType="number" [formatter]="formatCurrency"></igx-column>
         <igx-column [field]="'Price'" [width]="'120px'" dataType="number" [formatter]="formatCurrency"></igx-column>

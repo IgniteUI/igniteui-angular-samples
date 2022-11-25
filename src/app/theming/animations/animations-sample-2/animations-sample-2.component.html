@@ -1,6 +1,6 @@
 <div class="sample-column card-wrapper">
     <igx-card type="outlined" [horizontal]="horizontal">
-        <div igxLayout igxLayoutDir="column" igxFlex igxFlexGrow="1">
+        <div igxLayout igxLayoutDir="column" igxFlex [igxFlexGrow]="1">
             <igx-card-header>
                 <div class="igx-card-header__tgroup">
                     <h5 class="igx-card-header__title">Rozes</h5>
@@ -20,13 +20,13 @@
         <igx-divider [vertical]="horizontal"></igx-divider>
 
         <igx-card-actions layout="justify">
-            <button igxButton="icon" igxRipple igxRippleCentered="true">
+            <button igxButton="icon" igxRipple [igxRippleCentered]="true">
                 <igx-icon family="material">skip_previous</igx-icon>
             </button>
-            <button igxButton="icon" igxRipple igxRippleCentered="true">
+            <button igxButton="icon" igxRipple [igxRippleCentered]="true">
                 <igx-icon family="material">play_arrow</igx-icon>
             </button>
-            <button igxButton="icon" igxRipple igxRippleCentered="true">
+            <button igxButton="icon" igxRipple [igxRippleCentered]="true">
                 <igx-icon family="material">skip_next</igx-icon>
             </button>
         </igx-card-actions>

@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  #hierarchicalGrid class="hgrid" [data]="localdata" [autoGenerate]="false"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid class="hgrid" [data]="localdata" [autoGenerate]="false"
         [height]="'580px'" [width]="'100%'" [rowStyles]="rowStyles">
         <igx-column field="Artist" [editable]="true" [dataType]="'string'"></igx-column>
         <igx-column field="HasGrammyAward" header="Has Grammy Award?" [editable]="true" [dataType]="'boolean'">

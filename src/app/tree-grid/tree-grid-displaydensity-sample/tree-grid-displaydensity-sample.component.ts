@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
+    DisplayDensity,
     IgxButtonGroupComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent
 } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
@@ -33,7 +34,7 @@ export class TreeGridDisplaydensitySampleComponent implements OnInit {
     public treeGrid: IgxTreeGridComponent;
     @ViewChild(IgxButtonGroupComponent, { static: true }) public buttonGroup: IgxButtonGroupComponent;
     public data;
-    public density = 'compact';
+    public density: DisplayDensity = 'compact';
     public displayDensities;
     public numberSummaries = CustomNumberSummary;
 

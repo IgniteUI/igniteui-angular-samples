@@ -1,4 +1,4 @@
-<div class="main__wrapper igx-scrollbar" [class.fin-dark-theme]="darkTheme">
+<div class="main__wrapper igx-scrollbar">
     <app-finjs-controllers #controllers
         (switchChanged)="onSwitchChanged($event)"
         (volumeChanged)="onVolumeChanged($event)"
@@ -12,22 +12,23 @@
     </app-finjs-grid>
 </div>
 
-<igx-dialog #dialog closeOnOutsideSelect="true" (closing)="onCloseHandler()">
-    <div (keydown)="closeDialog()" class="chart-container">
-        <igx-dialog-title> Chart </igx-dialog-title>
+<div igxOverlayOutlet #outlet="overlay-outlet">
+    <igx-dialog #dialog [closeOnOutsideSelect]="true" (closing)="onCloseHandler()">
+        <div (keydown)="closeDialog()" class="chart-container">
+            <igx-dialog-title> Chart </igx-dialog-title>
 
-        <div>
-            <igx-category-chart #chart1 [dataSource]="chartData" width="100%" chartType="column" xAxisInterval="20"
-                xAxisLabelAngle="90" [includedProperties]="properties" height="400px" [tooltipTemplate]="seriesTooltip">
-            </igx-category-chart>
+            <div>
+                <igx-category-chart #chart1 [dataSource]="chartData" width="100%" chartType="column" xAxisInterval="20"
+                    xAxisLabelAngle="90" [includedProperties]="properties" height="400px" [tooltipTemplate]="seriesTooltip">
+                </igx-category-chart>
+            </div>
+
+            <div igxDialogActions>
+                <button igxButton (click)="closeDialog()" [igxFocus]="dialog.isOpen">ОК</button>
+            </div>
         </div>
-
-        <div igxDialogActions>
-            <button igxButton (click)="closeDialog()" [igxFocus]="dialog.isOpen">ОК</button>
-        </div>
-    </div>
-</igx-dialog>
-
+    </igx-dialog>
+</div>
 <ng-template let-series="series" let-item="item" #seriesTooltip>
     <div class="tooltipTable">
         <div class="tooltipRow">

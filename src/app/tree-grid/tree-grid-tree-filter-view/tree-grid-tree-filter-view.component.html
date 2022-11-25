@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-tree-grid igxPreventDocumentScroll  #treegrid1 [data]="data" [autoGenerate]="false" height="600px" width="100%"
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  #treegrid1 [data]="data" [autoGenerate]="false" height="600px" width="100%"
         [allowFiltering]="true" filterMode="excelStyleFilter" [filterStrategy]="filterStrategy"
         primaryKey="ID" foreignKey="ParentID">
 

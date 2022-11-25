@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({
@@ -11,7 +11,7 @@ export class HierarchicalGridColumnSelectionComponent implements OnInit, AfterVi
     @ViewChild(IgxHierarchicalGridComponent)
     public hGrid: IgxHierarchicalGridComponent;
     public data;
-    public currentColumnSelection = 'single';
+    public currentColumnSelection: GridSelectionMode = 'single';
 
     constructor(private cdr: ChangeDetectorRef){}
 

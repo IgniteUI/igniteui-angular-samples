@@ -47,5 +47,7 @@ export const interactionsRoutesData = {
     'kanban-sample': { displayName: 'Kanban sample', parentName: 'Drag and Drop' },
     'list-reorder-sample': { displayName: 'List Reorder sample', parentName: 'Drag and Drop' },
     'drag-dialog-sample': { displayName: 'Drag Dialog Sample', parentName: 'Drag and Drop'},
-    'icons-sample': { displayName: 'Icons sample', parentName: 'Drag and Drop' }
+    'icons-sample': { displayName: 'Icons sample', parentName: 'Drag and Drop' },
+    'query-builder-sample-1': { displayName: 'Query Builder Sample 1', parentName: 'Query Builder' },
+    'query-builder-style': { displayName: 'Query Builder Style Sample', parentName: 'Query Builder' }
 };

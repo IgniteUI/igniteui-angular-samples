@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
-import { IGridEditEventArgs, IgxGridCell, IgxGridComponent, IgxGridRow } from 'igniteui-angular';
+import { CellType, IgxGridComponent, IGridEditEventArgs } from 'igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { employeesData } from '../../data/employeesData';
 
@@ -45,7 +45,7 @@ export class GridValidatorServiceCrossFieldComponent {
         return Math.round(dealsWon / dealsLost * 100) / 100;
     }
 
-    public getDealsRatio(cell: IgxGridCell) {
+    public getDealsRatio(cell: CellType) {
         const dealsWon = cell.row.cells.find(c => c.column.field === 'deals_won');
         const dealsLost = cell.row.cells.find(c => c.column.field === 'deals_lost');
         const dealsWonValue = dealsWon.editValue != null ? dealsWon.editValue : dealsWon.value;
@@ -100,11 +100,11 @@ export class GridValidatorServiceCrossFieldComponent {
         };
     }
 
-    public isRowValid(cell: IgxGridCell) {
+    public isRowValid(cell: CellType) {
         return !cell.row.validation.errors && !cell.row.cells.some(c => !!c.validation.errors);
     }
 
-    public stateMessage(cell: IgxGridCell) {
+    public stateMessage(cell: CellType) {
         const messages = [];
 
         const cellValidationErrors = cell.row.cells.filter(x => !!x.validation.errors);

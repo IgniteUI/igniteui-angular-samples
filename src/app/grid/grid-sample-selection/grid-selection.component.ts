@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { IgxGridComponent, IgxSnackbarComponent, IRowSelectionEventArgs } from 'igniteui-angular';
+import { GridSelectionMode, IgxGridComponent, IgxSnackbarComponent, IRowSelectionEventArgs } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
 
@@ -18,7 +18,7 @@ export class GridSelectionSampleComponent implements OnInit {
     @ViewChild('snackbarRowCount', { static: true }) public snackbarRowCount: IgxSnackbarComponent;
     @ViewChild('snackbar', { static: true }) public snackbar: IgxSnackbarComponent;
     public data: Observable<any[]>;
-    public selectionMode = 'multiple';
+    public selectionMode: GridSelectionMode = 'multiple';
     public selectionModes = [];
     public hideRowSelectors = false;
     public selectedRows = [1, 2, 3];

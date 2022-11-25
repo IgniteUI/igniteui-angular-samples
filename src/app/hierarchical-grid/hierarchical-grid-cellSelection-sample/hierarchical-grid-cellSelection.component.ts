@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxSnackbarComponent, IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { IgxSnackbarComponent, IgxHierarchicalGridComponent, GridSelectionMode } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({
@@ -11,8 +11,8 @@ export class HierarchicalGridCellSelectionComponent implements OnInit {
     @ViewChild('hgrid', { static: true }) public hGrid: IgxHierarchicalGridComponent;
     @ViewChild(IgxSnackbarComponent, { static: true }) public snackbar: IgxSnackbarComponent;
     public data: any[];
-    public selectionMode = 'multiple';
-    public selectionModeChild = 'single';
+    public selectionMode: GridSelectionMode = 'multiple';
+    public selectionModeChild: GridSelectionMode = 'single';
     public selectionModes = [];
     public selectionModesChildren = [];
 

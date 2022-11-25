@@ -9,7 +9,7 @@
         </div>
     </ng-template>
 
-    <igx-tree-grid igxPreventDocumentScroll  #treeGrid [data]="data" primaryKey="ID" [moving]="true" foreignKey="ParentID" [rowSelection]="selectionMode" height="520px"
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid [data]="data" primaryKey="ID" [moving]="true" foreignKey="ParentID" [rowSelection]="selectionMode" height="520px"
         displayDensity="compact" [allowFiltering]="true" width="100%">
         <igx-column field="Name" dataType="string" [sortable]="true" [resizable]="true" width="200px"></igx-column>
         <igx-column-group [pinned]="false" header="General Information" [headerTemplate]="columnGroupTemplate">
@@ -21,8 +21,8 @@
             </igx-column-group>
         </igx-column-group>
         <igx-column-group header="Address Information" [headerTemplate]="columnGroupTemplate">
-            <igx-column sortable="true" resizable="true" field="Location" [hidden]="true"></igx-column>
-            <igx-column sortable="true" resizable="true" field="Phone" [hidden]="true"></igx-column>
+            <igx-column [sortable]="true" [resizable]="true" field="Location" [hidden]="true"></igx-column>
+            <igx-column [sortable]="true" [resizable]="true" field="Phone" [hidden]="true"></igx-column>
             <igx-column-group header="Location">
                 <igx-column field="Country" dataType="string" [sortable]="true" [resizable]="true"></igx-column>
                 <igx-column field="City" dataType="string" [sortable]="true" [resizable]="true"></igx-column>

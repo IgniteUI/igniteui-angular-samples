@@ -1,11 +1,11 @@
 <div class="grid__wrapper">
     <div class="sample__header">
         <igx-input-group>
-            <input class="gridSample__filter" igxInput type="text" placeholder="Filter by product name" (input)="filter($event.target.value)">
+            <input class="gridSample__filter" igxInput type="text" placeholder="Filter by product name" (input)="filter($event.target)">
         </igx-input-group><br>
     </div>
 
-    <igx-grid igxPreventDocumentScroll #grid1 [data]="data" [autoGenerate]="false" height="480px" width="100%" [allowFiltering]="true">
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [autoGenerate]="false" height="480px" width="100%" [allowFiltering]="true">
         <igx-column field="ProductName" header="Product Name" [dataType]="'string'">
         </igx-column>
         <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'">

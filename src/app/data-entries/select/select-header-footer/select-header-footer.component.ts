@@ -40,7 +40,8 @@ export class SelectHeaderFooterComponent implements OnInit {
         this.fruits = this.fruitsDS;
     }
 
-    public filter(value) {
+    public filter(target: EventTarget) {
+        let value = (target as HTMLButtonElement).title;
         if (this.selected === value) {
             this.fruits = this.fruitsDS;
             this.selected = 'allData';

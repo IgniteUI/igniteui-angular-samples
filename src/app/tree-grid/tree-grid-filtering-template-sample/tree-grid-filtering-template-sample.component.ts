@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     GridColumnDataType,
+    ColumnType,
     IgxColumnComponent,
     IgxDateFilteringOperand,
     IgxNumberFilteringOperand,
@@ -22,7 +23,7 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
     public data: any[];
     public displayDateFormat = 'M/d/y';
 
-    private _filterValues = new Map<IgxColumnComponent, any>();
+    private _filterValues = new Map<ColumnType, any>();
 
     constructor() {
     }
@@ -38,11 +39,11 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
         return parseInt(val, 10).toFixed(2);
     }
 
-    public getFilterValue(column: IgxColumnComponent): any {
+    public getFilterValue(column: ColumnType): any {
         return this._filterValues.has(column) ? this._filterValues.get(column) : null;
     }
 
-    public onInput(input: any, column: IgxColumnComponent) {
+    public onInput(input: any, column: ColumnType) {
         this._filterValues.set(column, input.value);
 
         if (input.value === '') {
@@ -62,7 +63,7 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
             this.transformValue(input.value, column), operand, column.filteringIgnoreCase);
     }
 
-    public clearInput(column: IgxColumnComponent) {
+    public clearInput(column: ColumnType) {
         this._filterValues.delete(column);
         this.treegrid1.clearFilter(column.field);
     }
@@ -77,7 +78,7 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
         }
     }
 
-    public onDateSelected(event, column: IgxColumnComponent) {
+    public onDateSelected(event, column: ColumnType) {
         if (!event) {
             this.clearInput(column);
             return;
@@ -88,7 +89,7 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
             column.filteringIgnoreCase);
     }
 
-    private transformValue(value: any, column: IgxColumnComponent): any {
+    private transformValue(value: any, column: ColumnType): any {
         if (column.dataType === GridColumnDataType.Number) {
             value = parseFloat(value);
         }

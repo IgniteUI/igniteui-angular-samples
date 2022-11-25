@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid [data]="data" [primaryKey]="'ProductID'" width="100%"
+    <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" [primaryKey]="'ProductID'" width="100%"
         height="500px" [rowEditable]="true" [batchEditing]="true" [allowFiltering]="true">
         <igx-column field="ProductID" header="Product ID" [pinned]="true" [hidden]='true' [filterable]="false">
         </igx-column>

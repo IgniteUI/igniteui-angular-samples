@@ -11,7 +11,7 @@
         </igx-grid-excel-style-filtering>
     </div>
 
-    <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="localdata"
         [autoGenerate]="false" height="640px" [rowHeight]="'65px'" #hierarchicalGrid>
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>

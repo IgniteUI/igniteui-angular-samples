@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <igx-hierarchical-grid igxPreventDocumentScroll  class="hgrid" [data]="localdata" [moving]="true" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="localdata" [moving]="true" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter"
     height="650px" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>

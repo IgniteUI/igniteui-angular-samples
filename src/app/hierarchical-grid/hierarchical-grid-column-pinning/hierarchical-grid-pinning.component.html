@@ -6,7 +6,7 @@
             (click)="toggleColumn(column)"></igx-icon>
     </div>
 </ng-template>
-<igx-hierarchical-grid igxPreventDocumentScroll  class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
+<igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
     [height]="'480px'" [width]="'100%'" #hierarchicalGrid>
     <igx-column field="CompanyName" header="Company Name" [headerTemplate]="pinTemplate" width="200px" [pinned]="true"></igx-column>
     <igx-column field="ContactName" header="Contact Name" [headerTemplate]="pinTemplate" width="150px"></igx-column>
@@ -23,7 +23,7 @@
             <igx-column field="ShippedDate" header="Shipped Date" [headerTemplate]="pinTemplate" [dataType]="'date'" width="150px"></igx-column>
             <igx-column field="ShipVia" header="Ship Via" [headerTemplate]="pinTemplate" width="150px"></igx-column>
             <igx-column field="Freight" [headerTemplate]="pinTemplate" width="150px"></igx-column>
-            <igx-column field="ShipName" header="Ship Name" [headerTemplate]="pinTemplate" width="200px" pinned="true"></igx-column>
+            <igx-column field="ShipName" header="Ship Name" [headerTemplate]="pinTemplate" width="200px" [pinned]="true"></igx-column>
             <igx-column field="ShipAddress" header="Ship Address" [headerTemplate]="pinTemplate" width="150px"></igx-column>
             <igx-column field="ShipCity" header="Ship City" [headerTemplate]="pinTemplate" width="150px"></igx-column>
             <igx-column field="ShipPostalCode" header="Ship Postal Code" [headerTemplate]="pinTemplate" width="150px"></igx-column>

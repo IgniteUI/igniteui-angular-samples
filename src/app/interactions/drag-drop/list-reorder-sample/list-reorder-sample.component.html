@@ -1,6 +1,6 @@
 <igx-list #listContainer>
     <igx-list-item *ngFor="let employee of employees; index as targetIndex;"
-        #dragDirRef
+        #dragDirRef="drag"
         igxDrop
         [igxDrag]="{ id: employee.id, dragged: false }"
         (dragStart)="onDragStart($event, targetIndex)"

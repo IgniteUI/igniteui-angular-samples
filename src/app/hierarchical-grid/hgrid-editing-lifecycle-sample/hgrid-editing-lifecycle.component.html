@@ -7,9 +7,9 @@
 <div class="sample-wrapper">
     <div class="grid-wrapper">
         <div>
-            <igx-hierarchical-grid igxPreventDocumentScroll  [data]="data" [autoGenerate]="false"
+            <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  [data]="data" [autoGenerate]="false"
                 height="560px" width="100%" primaryKey="Artist" primaryKey="Artist"
-                rowEditable="true"
+                [rowEditable]="true"
                 (rowEditEnter)="rowEditEnter($event)"
                 (cellEditEnter)="cellEditEnter($event)"
                 (cellEdit)="cellEdit($event)"
@@ -26,7 +26,7 @@
                 <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number"></igx-column>
 
                 <igx-row-island [height]="null" key="Albums" primaryKey="Album" [autoGenerate]="false"
-                    rowEditable="true"
+                    [rowEditable]="true"
                     (rowEditEnter)="rowEditEnter($event)"
                     (cellEditEnter)="cellEditEnter($event)"
                     (cellEdit)="cellEdit($event)"

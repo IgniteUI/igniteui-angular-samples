@@ -11,7 +11,7 @@
         <igx-divider></igx-divider>
 
         <igx-card-actions layout="justify">
-            <button *ngFor="let icon of card.icons;" igxButton="icon" igxRipple igxRippleCentered="true">
+            <button *ngFor="let icon of card.icons;" igxButton="icon" igxRipple [igxRippleCentered]="true">
                 <igx-icon>{{icon}}</igx-icon>
             </button>
         </igx-card-actions>

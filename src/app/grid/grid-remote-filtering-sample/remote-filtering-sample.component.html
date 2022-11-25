@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid igxPreventDocumentScroll #grid [data]="remoteData | async" [height]="'460px'" [width]="'100%'" [autoGenerate]='false'
+    <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="remoteData | async" [height]="'460px'" [width]="'100%'" [autoGenerate]='false'
         [filterStrategy]="noopFilterStrategy"
         [sortStrategy]="noopSortStrategy"
         [allowFiltering]="true">

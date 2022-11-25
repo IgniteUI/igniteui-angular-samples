@@ -9,7 +9,7 @@
         </igx-buttongroup>
     </div>
 
-    <igx-tree-grid igxPreventDocumentScroll #treeGrid [data]="data" cellSelection="single" primaryKey="ID"
+    <igx-tree-grid [igxPreventDocumentScroll]="true" #treeGrid [data]="data" cellSelection="single" primaryKey="ID"
         foreignKey="ParentID" height="520px" width="100%" [summaryRowHeight]="summaryHeight"
         [displayDensity]="displayDensity">
         <igx-column field="Name"></igx-column>

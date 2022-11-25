@@ -8,7 +8,8 @@ import {
     IgxPivotGridModule,
     IgxTooltipModule,
     IgxToastModule,
-    IgxSwitchModule
+    IgxSwitchModule,
+    IgxExcelExporterService
 } from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class PivotGridConfigGenerator implements IConfigGenerator {
@@ -27,6 +28,17 @@ export class PivotGridConfigGenerator implements IConfigGenerator {
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxPivotGridModule']
             }),
             component: 'PivotGridBasicSampleComponent'
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/dataToAnalyze.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPivotGridModule', 'PivotExportComponent', 'IgxPreventDocumentScrollModule', 'IgxExcelExporterService'],
+                ngDeclarations: ['PivotExportComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxPivotGridModule'],
+                ngProviders: ['IgxExcelExporterService']
+            }),
+            component: 'PivotExportComponent'
         }));
 
         configs.push(new Config({

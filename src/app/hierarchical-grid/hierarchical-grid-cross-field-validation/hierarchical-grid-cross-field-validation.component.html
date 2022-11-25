@@ -2,30 +2,28 @@
     <igx-switch [(ngModel)]="rowEdit">Row edit</igx-switch>
 </div>
 <div class="grid__wrapper">
-    <igx-hierarchical-grid  igxPreventDocumentScroll [primaryKey]="'CustomerID'" [rowEditable]="rowEdit" [batchEditing]='true' 
+    <igx-hierarchical-grid  [igxPreventDocumentScroll]="true" [primaryKey]="'CustomerID'" [rowEditable]="rowEdit" [batchEditing]="true"
         #hierarchicalGrid [data]="localdata" [height]="'500px'" [width]="'100%'" displayDensity="compact"
         (formGroupCreated)="formCreateCustomerHandler($event)" (cellEdit)="editHandler($event)" (rowEdit)="editHandler($event)">
         <igx-column field="row_valid" header=" " [editable]="false" [dataType]="'number'" [pinned]="true" [width]="'50px'">
             <ng-template igxCell let-cell="cell">
-                <div *ngIf="isRowValid(cell)" [igxTooltipTarget]="tooltipRef"
-                >
+                <div *ngIf="isRowValid(cell)" [igxTooltipTarget]="tooltipRef">
                     <img width="18" src="assets/images/grid/active.png"/>
                 </div>
-                <div *ngIf="!isRowValid(cell)" [igxTooltipTarget]="tooltipRef"
-                >
+                <div *ngIf="!isRowValid(cell)" [igxTooltipTarget]="tooltipRef">
                     <img width="18" src="assets/images/grid/expired.png"/>
                 </div>
                 <div #tooltipRef="tooltip" igxTooltip [style.width]="'max-content'">
-                <div *ngFor="let message of stateMessage(cell)">
-                    {{message}}
-                </div>
+                    <div *ngFor="let message of stateMessage(cell)">
+                        {{message}}
+                    </div>
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="CustomerID" [hidden]='true'></igx-column>
-        <igx-column field="ContactName" editable='true' required></igx-column>
-        <igx-column field="ContactTitle"  editable='true' required></igx-column>
-        <igx-column field="City"  editable='true'>
+        <igx-column field="CustomerID" [hidden]="true"></igx-column>
+        <igx-column field="ContactName" [editable]="true" required></igx-column>
+        <igx-column field="ContactTitle"  [editable]="true" required></igx-column>
+        <igx-column field="City"  [editable]="true">
             <ng-template igxCellEditor let-cell="cell" let-value let-fc='formControl'>
                 <igx-select [formControl]="fc" [igxFocus]="true">
                     <igx-select-item *ngFor="let city of cities" [value]="city">
@@ -34,33 +32,31 @@
                 </igx-select>
             </ng-template>
         </igx-column>
-        <igx-column field="Country"  editable='true'>
+        <igx-column field="Country"  [editable]="true">
             <ng-template igxCellEditor let-cell="cell" let-value let-fc='formControl'>
                 <igx-select  [formControl]="fc" [igxFocus]="true">
                     <igx-select-item *ngFor="let country of countries" [value]="country">
                         {{ country }}
                     </igx-select-item>
                 </igx-select>
-            </ng-template> 
+            </ng-template>
         </igx-column>
-        
-        <igx-column field="PostalCode"  editable='true' required></igx-column>
-        <igx-column field="Phone"  editable='true' required></igx-column>
+
+        <igx-column field="PostalCode"  [editable]="true" required></igx-column>
+        <igx-column field="Phone"  [editable]="true" required></igx-column>
         <igx-row-island [primaryKey]="'OrderID'" [height]="null" [key]="'Orders'" [autoGenerate]="false" [rowEditable]="rowEdit"
             (formGroupCreated)='formCreateOrderHandler($event)' (cellEdit)="editHandler($event)" (rowEdit)="editHandler($event)">
             <igx-grid-toolbar [grid]="grid" *igxGridToolbar="let grid">
                 <button igxButton [disabled]="grid.transactions.getAggregatedChanges(false).length < 1" (click)="commit(grid)">Commit</button>
             </igx-grid-toolbar>
-            <igx-column field="OrderID" [hidden]='true'></igx-column>
-            <igx-column field="EmployeeID" [hidden]='true'></igx-column>
+            <igx-column field="OrderID" [hidden]="true"></igx-column>
+            <igx-column field="EmployeeID" [hidden]="true"></igx-column>
             <igx-column field="row_valid" header=" " [editable]="false" [dataType]="'number'" [pinned]="true" [width]="'50px'">
                 <ng-template igxCell let-cell="cell">
-                    <div *ngIf="isRowValid(cell)" [igxTooltipTarget]="tooltipRef"
-                    >
+                    <div *ngIf="isRowValid(cell)" [igxTooltipTarget]="tooltipRef">
                         <img width="18" src="assets/images/grid/active.png"/>
                     </div>
-                    <div *ngIf="!isRowValid(cell)" [igxTooltipTarget]="tooltipRef"
-                    >
+                    <div *ngIf="!isRowValid(cell)" [igxTooltipTarget]="tooltipRef">
                         <img width="18" src="assets/images/grid/expired.png"/>
                     </div>
                     <div #tooltipRef="tooltip" igxTooltip [style.width]="'max-content'">
@@ -70,11 +66,11 @@
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field="OrderDate" [dataType]="'date'" editable='true' required></igx-column>
-            <igx-column field="ShippedDate" [dataType]="'date'" editable='true' required></igx-column>
-            <igx-column field="ShipVia" editable='true' required></igx-column>
-            <igx-column field="Freight" editable='true' required></igx-column>
-            <igx-column field="ShipName" editable='true' required></igx-column>
+            <igx-column field="OrderDate" [dataType]="'date'" [editable]="true" required></igx-column>
+            <igx-column field="ShippedDate" [dataType]="'date'" [editable]="true" required></igx-column>
+            <igx-column field="ShipVia" [editable]="true" required></igx-column>
+            <igx-column field="Freight" [editable]="true" required></igx-column>
+            <igx-column field="ShipName" [editable]="true" required></igx-column>
         </igx-row-island>
     </igx-hierarchical-grid>
     <div class="buttons-wrapper">
