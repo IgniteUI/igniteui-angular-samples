@@ -9,8 +9,8 @@
 </ng-template>
 <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
     [height]="'480px'" [width]="'100%'" #hierarchicalGrid>
-    <igx-column field="CompanyName" header="Company Name" [headerTemplate]="pinTemplate" [pinned]="true"></igx-column>
-    <igx-column field="ContactName" header="Contact Name" [headerTemplate]="pinTemplate"></igx-column>
+    <igx-column field="CompanyName" header="Company Name" [headerTemplate]="pinTemplate" width="200px" [pinned]="true"></igx-column>
+    <igx-column field="ContactName" header="Contact Name" [headerTemplate]="pinTemplate" width="150px"></igx-column>
     <igx-column field="ContactTitle" header="Contact Title" [headerTemplate]="pinTemplate" width="200px"></igx-column>
     <igx-column field="Address" [headerTemplate]="pinTemplate" width="200px"></igx-column>
     <igx-column field="City" [headerTemplate]="pinTemplate" width="150px"></igx-column>
