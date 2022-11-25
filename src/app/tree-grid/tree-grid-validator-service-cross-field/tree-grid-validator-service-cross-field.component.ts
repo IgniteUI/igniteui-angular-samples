@@ -4,6 +4,7 @@ import { FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
 import {
     ColumnPinningPosition,
     CellType,
+    IGridEditEventArgs,
     IgxTreeGridComponent,
     IPinningConfig
 } from 'igniteui-angular';
@@ -37,6 +38,12 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
         });
         this.countries = [...new Set(this.data.map(x => x.Country))];
         this.cities = [...new Set(this.data.map(x => x.City))];
+    }
+
+    public editHandler(event: IGridEditEventArgs) {
+        if (!event.valid) {
+            event.cancel = true;
+        }
     }
 
     public formCreateHandler(evt: IGridFormGroupCreatedEventArgs) {
