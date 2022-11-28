@@ -13,6 +13,7 @@ export const listsRoutesData = {
     'simple-combo-usage': { displayName: 'Usage Simple Combo', parentName: 'Combo'},
     'simple-combo-cascading': { displayName: 'Cascading Simple Combo', parentName: 'Combo'},
     'simple-combo-styling': { displayName: 'Simple Combo Styling', parentName: 'Combo'},
+    'simple-combo-remote': { displayName: 'Remote Simple Combo', parentName: 'Combo'},
     // eslint-disable-next-line quote-props
     'list': { displayName: 'List Overview', parentName: 'List' },
     'list-sample-2': { displayName: 'List Item Header', parentName: 'List' },

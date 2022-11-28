@@ -1,4 +1,12 @@
 
-.grid__wrapper {
+.top-row, .grid__wrapper {
     padding: 16px;
+    padding-bottom: 0;
+}
+
+.buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding: 10px 0;
 }
