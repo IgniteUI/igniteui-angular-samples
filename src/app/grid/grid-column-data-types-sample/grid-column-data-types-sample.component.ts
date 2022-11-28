@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { registerLocaleData} from "@angular/common";
 import localeBG from '@angular/common/locales/bg';
 import localeDE from '@angular/common/locales/de';
