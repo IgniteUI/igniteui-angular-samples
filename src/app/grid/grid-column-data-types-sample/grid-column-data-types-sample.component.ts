@@ -5,7 +5,6 @@ import localeBG from '@angular/common/locales/bg';
 import localeDE from '@angular/common/locales/de';
 import localeFR from '@angular/common/locales/fr';
 import localeJA from '@angular/common/locales/ja';
-import { IgxGridComponent } from "igniteui-angular";
 
 @Component({
     selector: "grid-column-data-types-sample",
@@ -13,8 +12,6 @@ import { IgxGridComponent } from "igniteui-angular";
     templateUrl: "grid-column-data-types-sample.component.html"
 })
 export class GridColumnDataTypesSampleComponent implements OnInit {
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
-    public grid1: IgxGridComponent;
 
     public digitsInfoMessage: string = 'Applicable to number, currency and percent type columns';
 
