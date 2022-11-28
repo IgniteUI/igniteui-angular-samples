@@ -85,6 +85,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         SupplierID: 1,
         CategoryID: 1,
         QuantityPerUnit: "10 boxes x 20 bags",
+        ProductImage: "/assets/images/products/chai.jpg",
         UnitPrice: 18.0000,
         UnitsInStock: 39,
         UnitsOnOrder: 0.030,
@@ -96,6 +97,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 2,
         ProductName: "Chang",
+        ProductImage: "/assets/images/products/chang.jpg",
         SupplierID: 1,
         CategoryID: 1,
         QuantityPerUnit: "24 - 12 oz bottles",
@@ -110,6 +112,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 3,
         ProductName: "Aniseed Syrup",
+        ProductImage: "/assets/images/products/aniseed.jpg",
         SupplierID: 1,
         CategoryID: 2,
         QuantityPerUnit: "12 - 550 ml bottles",
@@ -124,6 +127,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 4,
         ProductName: "Chef Antons Cajun Seasoning",
+        ProductImage: "/assets/images/products/cajun-seasoning.jpg",
         SupplierID: 2,
         CategoryID: 2,
         QuantityPerUnit: "48 - 6 oz jars",
@@ -138,6 +142,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 5,
         ProductName: "Chef Antons Gumbo Mix",
+        ProductImage: "/assets/images/products/chef-antons-gumbo-mix.jpg",
         SupplierID: 2,
         CategoryID: 2,
         QuantityPerUnit: "36 boxes",
@@ -152,6 +157,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 6,
         ProductName: "Grandmas Boysenberry Spread",
+        ProductImage: "/assets/images/products/grandmas-boysenberry-spread.jpg",
         SupplierID: 3,
         CategoryID: 2,
         QuantityPerUnit: "12 - 8 oz jars",
@@ -166,6 +172,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 7,
         ProductName: "Uncle Bobs Organic Dried Pears",
+        ProductImage: "/assets/images/products/uncle-bobs-organic-dried-pears.jpg",
         SupplierID: 3,
         CategoryID: 7,
         QuantityPerUnit: "12 - 1 lb pkgs.",
@@ -180,6 +187,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 8,
         ProductName: "Northwoods Cranberry Sauce",
+        ProductImage: "/assets/images/products/cranberry-sauce.jpg",
         SupplierID: 3,
         CategoryID: 2,
         QuantityPerUnit: "12 - 12 oz jars",
@@ -194,6 +202,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 9,
         ProductName: "Mishi Kobe Niku",
+        ProductImage: "/assets/images/products/mishi-kobe-niku.jpg",
         SupplierID: 4,
         CategoryID: 6,
         QuantityPerUnit: "18 - 500 g pkgs.",
