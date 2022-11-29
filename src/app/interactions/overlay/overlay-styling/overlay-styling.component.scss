@@ -3,18 +3,18 @@
 $orange: #eaa417;
 $blue: #09f;
 
-$my-palette: palette($primary: $orange, $secondary: $blue);
+$my-palette: palette($primary: $orange, $secondary: $blue, $surface: #fff);
 
 $my-drop-down-theme: drop-down-theme(
-    $palette: $my-palette,
     $header-text-color: color($my-palette, "secondary", 500)
 );
 
 $my-overlay-theme: overlay-theme(
-        $background-color: rgba(0, 153, 255, 0.3)
+    $background-color: rgba(0, 153, 255, 0.3)
 );
 
 :host {
+    @include palette($my-palette);
     display: block;
     padding: 16px;
 

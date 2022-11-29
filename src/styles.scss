@@ -18,7 +18,7 @@ body {
 );
 
 :root {
-    @include palette-vars($palette);
+    @include palette($palette);
 }
 
 .light-theme {
@@ -34,14 +34,5 @@ body {
 
     .grid-chart-contextmenu-wrapper {
         @include fluent-dark-theme($fluent-excel-palette);
-    }
-}
-
-.fin-dark-theme {
-    @include dark-theme($green-palette);
-    background: #333;
-
-    ::-moz-placeholder {
-        opacity: 1;
     }
 }
