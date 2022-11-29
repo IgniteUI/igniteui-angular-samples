@@ -48,13 +48,15 @@ Open both repositories ([DocFX Site Builder](https://github.com/IgniteUI/igniteu
 # <a name='#fixing'> Fixing bugs and adding new samples</a>
 ## <a name='#bug'> Bug fixing guidelines</a>
 
-1. Depending on where the bug was found `the current version` or the `ongoing release version`, checkout a development branches from `vNext` or/and `master` branch. `vNext` is the version that is going to be used upon release (next version), and `master` is the branch with the current state (current version). If the change/fix is applicable only to the ongoing release branch (`vNext`) there is no need to cherry-pick to `master` branch as the change/fix/feature will be pushed to `master` branch upon release.
+1. Depending on where the bug was found `the current version` or the `ongoing release version`, checkout a development branches from `vNext` or/and `master` branch. `vNext` is the version that is going to be used upon release (next version), and `master` is the branch with the current state (current version available on production). If the change/fix is applicable only to the ongoing release branch (`vNext`) there is no need to cherry-pick to `master` branch as the change/fix/feature will be pushed to `master` branch upon release.
 2. Run lint
 3. Pull request your changes and reference the issue. Use the enforced commit message format with applicable type, scope, etc.
 4. Don't forget to make the necessary status updates, as described in the workflow section.
 
-**Example workflow**
-When bug fixes are applicable to both `vNext` and `master` branches the process will look like this:
+> Note: Cherry-pick to `master` branch only changes with **high priority**. There is no need to cherry-pick into `master` every bug fix/change from `vNext`> A regular mass merge PRs are going to be made from `vNext` into `master`.
+
+**Example workflow for a bug with high priority**
+The process will look like this:
 
 1.	Checkout new branch from `vNext`. For code example purposes let's say the new branch is called `fixing-bug-5423-vNext`.
 2.	Commit your changes to your `fixing-bug-5423-vNext` branch.
