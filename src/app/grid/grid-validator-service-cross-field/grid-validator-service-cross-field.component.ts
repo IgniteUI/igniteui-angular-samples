@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
-import { CellType, IgxGridComponent } from 'igniteui-angular';
+import { CellType, IgxGridComponent, IGridEditEventArgs } from 'igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { employeesData } from '../../data/employeesData';
 
@@ -14,6 +14,7 @@ export class GridValidatorServiceCrossFieldComponent {
     @ViewChild('grid1', { read: IgxGridComponent })
     public grid: IgxGridComponent;
     public transactionData = JSON.parse(JSON.stringify(employeesData));
+    public rowEdit: boolean = true;
 
     public formCreateHandler(evt: IGridFormGroupCreatedEventArgs) {
         const createdOnRecord = evt.formGroup.get('created_on');
@@ -21,6 +22,12 @@ export class GridValidatorServiceCrossFieldComponent {
         createdOnRecord.addValidators(this.futureDateValidator());
         lastActiveRecord.addValidators(this.futureDateValidator());
         evt.formGroup.addValidators(this.rowValidator());
+    }
+
+    public editHandler(event: IGridEditEventArgs) {
+        if (!event.valid) {
+            event.cancel = true;
+        }
     }
 
     public commit() {
