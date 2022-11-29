@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxColumnComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { ColumnType, IgxTreeGridComponent } from 'igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 @Component({
@@ -17,7 +17,7 @@ export class TreeGridSummarySampleComponent {
     this.data = FOODS_DATA();
   }
 
-  public toggleSummary(column: IgxColumnComponent) {
+  public toggleSummary(column: ColumnType) {
     column.hasSummary = !column.hasSummary;
   }
 }
