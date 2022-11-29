@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { IFormattingOptions } from 'igniteui-angular';
 import localeDE from '@angular/common/locales/de';
 import localeFR from '@angular/common/locales/fr';
-import localeJA from '@angular/common/locales/ja';
 import localeAR from '@angular/common/locales/ar';
 import localeZH from '@angular/common/locales/zh';
 
@@ -24,7 +23,6 @@ export class MonthpickerSample3Component implements OnInit {
     public ngOnInit(): void {
         registerLocaleData(localeDE);
         registerLocaleData(localeFR);
-        registerLocaleData(localeJA);
         registerLocaleData(localeAR);
         registerLocaleData(localeZH);
     }
