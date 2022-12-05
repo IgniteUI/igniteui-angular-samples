@@ -1,0 +1,23 @@
+<div class="button-wrapper">
+    <igx-chips-area>
+      <igx-chip *ngFor="let node of selectedNodes" [id]="node.data.ID" [removable]="true" (remove)="chipRemoved($event)">{{node.data.Artist}}</igx-chip>
+    </igx-chips-area>
+
+    <button class="button" igxButton="raised" [igxToggleAction]="singersDropDown" [igxDropDownItemNavigation]="singersDropDown">
+      IgxTree
+    </button>
+</div>
+
+<igx-drop-down #singersDropDown [height]="'500px'" [width]="'300px'">
+    <igx-tree #igxTree selection="Cascading" (nodeSelection)="onNodeSelection($event)">
+        <igx-tree-node *ngFor="let singer of singers" [data]="singer" [expanded]="true">
+            {{ singer.Artist }}
+            <igx-tree-node *ngFor="let album of singer.Albums" [data]="album" [expanded]="false">
+                {{ album.Album }}
+                <igx-tree-node *ngFor="let song of album.Songs" [data]="song">
+                    {{ song.Title }}
+                </igx-tree-node>
+            </igx-tree-node>
+        </igx-tree-node>
+    </igx-tree>
+</igx-drop-down>

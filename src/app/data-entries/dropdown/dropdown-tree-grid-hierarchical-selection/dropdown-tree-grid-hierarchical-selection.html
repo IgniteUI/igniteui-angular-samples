@@ -1,0 +1,19 @@
+<div class="button-wrapper">
+    <igx-chips-area>
+      <igx-chip *ngFor="let row of selectedRows" [id]="row.ID" [removable]="true" (remove)="chipRemoved($event)">{{row.Name}}</igx-chip>
+    </igx-chips-area>
+
+    <button class="button" igxButton="raised" [igxToggleAction]="employeesDropDown" [igxDropDownItemNavigation]="employeesDropDown" [igxToggleOutlet]="outlet">
+      IgxTree
+    </button>
+</div>
+
+<igx-drop-down #employeesDropDown [width]="'300px'">
+    <igx-tree-grid #treeGrid igxPreventDocumentScroll [data]="employees" childDataKey="Employees" primaryKey="ID"
+      width="100%" height="400px" [autoGenerate]="false" [expansionDepth]="1" [rowSelection]="'multiple'"
+      (rowSelectionChanging)="onRowSelectionChanging($event, treeGrid)">
+      <igx-column field="Name" dataType="string"></igx-column>
+    </igx-tree-grid>
+</igx-drop-down>
+  
+<div class="overlayOutlet" igxOverlayOutlet #outlet="overlay-outlet"></div>
