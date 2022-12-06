@@ -23,7 +23,7 @@ import { GridCRMComponent } from './grid-crm.component';
         IgxInputGroupModule,
         IgxButtonModule,
         FormsModule,
-        IgxPreventDocumentScrollModule,
+        IgxPreventDocumentScrollModule
     ]
 })
 export class GridsCrmModule { }
