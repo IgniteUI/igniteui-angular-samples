@@ -16,8 +16,6 @@ export class DropdownTreeHierarchicalSelectionComponent implements OnInit {
     }
 
     public onNodeSelection(args: ITreeNodeSelectionEvent) {
-        this.selectedNodes = args.newSelection.filter(
-            (node) => node.data.Name && node.data.ID
-        );
+        this.selectedNodes = args.newSelection;
     }
 }
