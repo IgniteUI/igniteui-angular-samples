@@ -4,7 +4,7 @@ import { GridFinjsModule } from '../projects/app-lob/src/app/grid-finjs/grid-fin
 import * as TreeGridFinjsRouting from '../projects/app-lob/src/app/treegrid-finjs/treegrid-finjs-routing.module';
 import { TreeGridFinjsModule } from '../projects/app-lob/src/app/treegrid-finjs/treegrid-finjs.module';
 
-import * as GridCRMRouting from '../projects/app-crm/src/app/app.routing.module';
+import * as GridCRMRouting from '../projects/app-crm/src/app/grid-crm/grid-crm-routing.module';
 
 import * as GridsDVRouting from '../projects/app-lob/src/app/grid/grids-routing.module';
 import { GridsDVModule } from '../projects/app-lob/src/app/grid/grids.module';
@@ -50,6 +50,7 @@ import { PivotGridsModule } from '../src/app/pivot-grid/pivot-grids.module';
 import { PivotGridsRoutingModule } from '../src/app/pivot-grid/pivot-grids-routing.module';
 import { GridCRMComponent } from '../projects/app-crm/src/app/grid-crm/grid-crm.component';
 import { AppModule } from '../projects/app-crm/src/app/app.module';
+import { GridsCrmModule } from '../projects/app-crm/src/app/grid-crm/grid-crm.module';
 
 export const MODULE_ROUTES = [
     {
@@ -164,8 +165,8 @@ export const DV_MODULE_ROUTES = [
 
 export const CRM_MODULE_ROUTES = [
     {
-        module: AppModule,
+        module: GridsCrmModule,
         path: 'grid-crm',
-        routes: GridCRMRouting.appRoutes
+        routes: GridCRMRouting.gridCrmRoutes
     }
 ];
