@@ -23,6 +23,7 @@ export class ControllerComponent implements OnInit, OnDestroy {
     @Output() public playAction = new EventEmitter<{ action: string }>();
 
     public volume = 1000;
+    public theme = false;
     public frequency = 500;
     public controls = [
         {

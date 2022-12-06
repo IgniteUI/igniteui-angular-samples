@@ -36,3 +36,12 @@ body {
         @include fluent-dark-theme($fluent-excel-palette);
     }
 }
+
+.fin-dark-theme {
+    @include dark-theme($green-palette);
+    background: #333;
+
+    ::-moz-placeholder {
+        opacity: 1;
+    }
+}
