@@ -3,11 +3,11 @@
         .finjs-slider,
         .sample-toolbar,
         .group-drop-area {
-            color: rgba(255, 255, 255, 0.87);
+            color: contrast-color(null, 'gray', 900);
         }
 
         .group-drop-area {
-            background: #333;
+            background: color(null, 'surface', 500);
         }
     }
 
@@ -21,6 +21,7 @@
             margin-left: 4px;
         }
     }
+
     .igx-grid__grouparea {
         max-height: 100%;
         height: auto;
