@@ -9,6 +9,7 @@ import {
 } from 'igniteui-angular';
 import { IgxPreventDocumentScrollModule } from '../../../../src/app/directives/prevent-scroll.directive';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app.routing.module';
 import { GridCRMComponent } from './grid-crm/grid-crm.component';
 
 @NgModule({
@@ -26,7 +27,7 @@ import { GridCRMComponent } from './grid-crm/grid-crm.component';
         IgxAvatarModule,
         IgxInputGroupModule,
         BrowserModule,
-        RouterModule.forRoot([]),
+        AppRoutingModule,
         BrowserAnimationsModule,
         IgxButtonModule,
         FormsModule,
