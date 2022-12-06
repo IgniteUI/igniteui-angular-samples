@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IBaseChipEventArgs, IgxTreeComponent, ITreeNodeSelectionEvent } from 'igniteui-angular';
-import { SINGERS } from '../../../data/singersData';
+import { Component, OnInit } from '@angular/core';
+import { ITreeNodeSelectionEvent } from 'igniteui-angular';
+import { COUNTRIES } from '../../../data/countries';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-tree-hierarchical-selection',
@@ -8,28 +8,16 @@ import { SINGERS } from '../../../data/singersData';
     templateUrl: './dropdown-tree-hierarchical-selection.html'
 })
 export class DropdownTreeHierarchicalSelectionComponent implements OnInit {
-    @ViewChild('igxTree', { static: true })
-    public igxTree: IgxTreeComponent;
-
-    public singers!: any[];
+    public countries!: any[];
     public selectedNodes!: any[];
 
     public ngOnInit(): void {
-        this.singers = SINGERS;
+        this.countries = COUNTRIES;
     }
 
     public onNodeSelection(args: ITreeNodeSelectionEvent) {
         this.selectedNodes = args.newSelection.filter(
-            (node) => node.data.Artist && !node.data.Album
+            (node) => node.data.Name && node.data.ID
         );
-    }
-
-    public chipRemoved(event: IBaseChipEventArgs) {
-        this.selectedNodes = this.selectedNodes.filter((node) => {
-            if (node.data.ID === event.owner.id){
-                this.igxTree.deselectAll([node]);
-            }
-            return node.data.ID !== event.owner.id;
-        });
     }
 }
