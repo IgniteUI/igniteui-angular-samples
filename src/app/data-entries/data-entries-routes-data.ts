@@ -58,5 +58,8 @@ export const dataEntriesRoutesData = {
     "select-input-directives": { displayName: "Select Input Directives", parentName: "Select" },
     "select-header-footer": { displayName: "Select with Header&Footer Templates", parentName: "Select" },
     "input-text-selection": { displayName: "Input with Text Selection", parentName: "Input Group" },
-    "typed-form": { displayName: "Typed Form", parentName: "Input Group" }
+    "typed-form": { displayName: "Typed Form", parentName: "Input Group" },
+    "template-driven-form-validation": { displayName: "Template Driven Form Validation", parentName: "Input Group" },
+    "reactive-form-validation": { displayName: "Reactive Form Validation", parentName: "Input Group" },
+    "reactive-form-custom-validation": { displayName: "Reactive Form Custom Validation", parentName: "Input Group" }
 };

@@ -1,0 +1,9 @@
+<article class="sample-column">
+    <form [formGroup]="registrationForm">
+        <igx-input-group>
+            <label igxLabel for="username">Username</label>
+            <input igxInput name="username" type="text" formControlName="username" />
+            <igx-hint *ngIf="username.errors?.username">This username is not allowed</igx-hint>
+        </igx-input-group>
+    </form>
+</article>

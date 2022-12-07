@@ -1,0 +1,30 @@
+<article>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <h4>Registration Form</h4>
+        <div class="container">
+            <igx-input-group>
+                <label igxLabel for="fullName">Full Name</label>
+                <input igxInput name="fullName" type="text" formControlName="fullName" />
+            </igx-input-group>
+
+            <igx-input-group>
+                <label igxLabel for="username">Username</label>
+                <input igxInput name="username" type="text" formControlName="username" />
+            </igx-input-group>
+
+            <igx-input-group>
+                <label igxLabel for="email">Email</label>
+                <input igxInput name="email" type="email" formControlName="email" />
+                <igx-hint *ngIf="email.errors?.email">Please enter a valid email</igx-hint>
+            </igx-input-group>
+
+            <igx-input-group>
+                <label igxLabel for="password">Password</label>
+                <input igxInput name="password" type="password" formControlName="password" />
+                <igx-hint *ngIf="password.errors?.minlength">Password should be at least 8 characters</igx-hint>
+            </igx-input-group>
+
+            <button igxButton="raised" igxRipple type="submit" [disabled]="!registrationForm.valid">Submit</button>
+        </div>
+    </form>
+</article>

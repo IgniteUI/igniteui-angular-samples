@@ -59,6 +59,9 @@ import { SwitchSample1Component } from './switch/switch-sample-1/switch-sample-1
 import { SwitchSample2Component } from './switch/switch-sample-2/switch-sample-2.component';
 import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.component';
 import { RatingInFormComponent } from './rating/rating-form/rating-form.component';
+import { TemplateDrivenFormValidationComponent } from './input-group/template-driven-form-validation/template-driven-form-validation.component';
+import { ReactiveFormValidationComponent } from './input-group/reactive-form-validation/reactive-form-validation.component';
+import { ReactiveFormCustomValidationComponent } from './input-group/reactive-form-custom-validation/reactive-form-custom-validation.component';
 
 export const dataEntriesRoutes: Routes = [
     {
@@ -350,6 +353,21 @@ export const dataEntriesRoutes: Routes = [
         component: TypedFormComponent,
         data: dataEntriesRoutesData['typed-form'],
         path: 'typed-form'
+    },
+    {
+        component: TemplateDrivenFormValidationComponent,
+        data: dataEntriesRoutesData['template-driven-form-validation'],
+        path: 'template-driven-form-validation'
+    },
+    {
+        component: ReactiveFormValidationComponent,
+        data: dataEntriesRoutesData['reactive-form-validation'],
+        path: 'reactive-form-validation'
+    },
+    {
+        component: ReactiveFormCustomValidationComponent,
+        data: dataEntriesRoutesData['reactive-form-custom-validation'],
+        path: 'reactive-form-custom-validation'
     }
 ];
 
