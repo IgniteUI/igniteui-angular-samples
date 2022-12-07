@@ -12,7 +12,7 @@ $custom-theme: grid-summary-theme(
 
 :host{
     ::ng-deep {
-        @include grid-summary($custom-theme);
+        @include css-vars($custom-theme);
         .grid-controls {
             display: flex;
             flex-flow: column nowrap;

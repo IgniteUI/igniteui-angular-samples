@@ -18,7 +18,7 @@ const submodule = "igniteui-live-editing-samples";
 
 gulp.task("generate-live-editing", async () => {
     var appDv = argv.appDv !== undefined && argv.appDv.toLowerCase().trim() === "true";
-    const liveEditingOptions = appDv ? 
+    const liveEditingOptions = appDv ?
     {
         platform: 'angular',
         projectDir: "./projects/app-lob",
@@ -30,7 +30,7 @@ gulp.task("generate-live-editing", async () => {
     }
         :
     {
-        platform: 'angular', 
+        platform: 'angular',
         samplesDir: "./src/assets",
         configGeneratorPath: "./live-editing/generators/ConfigGenerators.ts",
         module: {

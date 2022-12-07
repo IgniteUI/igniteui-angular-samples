@@ -5,7 +5,7 @@
         $background: #0568ab
     );
 
-    @include list($my-list-theme);
+    @include css-vars($my-list-theme);
 }
 
 :host {

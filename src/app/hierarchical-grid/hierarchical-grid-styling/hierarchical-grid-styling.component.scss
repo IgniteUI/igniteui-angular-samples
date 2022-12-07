@@ -14,10 +14,8 @@ $custom-theme: grid-theme(
 );
 
 
-:host {
-    ::ng-deep {
-        @include grid($custom-theme);
-    }
+:host ::ng-deep {
+	@include css-vars($custom-theme);
 }
 
 .photo {
