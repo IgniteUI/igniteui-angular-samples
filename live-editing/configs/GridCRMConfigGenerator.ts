@@ -28,7 +28,8 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
                 '/src/app/directives/prevent-scroll.directive.ts',
                 '/projects/app-crm/src/_app-layout.scss', 
                 '/projects/app-crm/src/_variables.scss',
-                '/projects/app-crm/src/app/grid-crm/data.ts'
+                '/projects/app-crm/src/app/grid-crm/data.ts',
+                '/projects/app-crm/src/assets/images/propeller-logo.svg'
             ],
             additionalDependencies: [],
             appModuleConfig: new AppModuleConfig({
@@ -36,12 +37,12 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
                     'RouterModule', 'HammerModule', 'IgxAutocompleteModule', 'IgxRippleModule', 
                     'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
                     'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                    'IgxPreventDocumentScrollModule', 'GridsCrmModule'
+                    'IgxPreventDocumentScrollModule', 'GridCRMComponent'
                 ],
-                ngDeclarations: [],
+                ngDeclarations: ['GridCRMComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxRippleModule', 
                 'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
-                'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule', 'GridsCrmModule']
+                'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule']
             })
         }));
 

@@ -139,7 +139,6 @@ const getSampleNameFromFileName = (fileName, sampleBaseDir) => fileName.replace(
 var assetsRegex = new RegExp(/([\.]{0,2}\/)*assets\//g);
 
 const processApp = (projectPath, dest, directoriesToExclude) => {
-    console.log('process start')
     if (!fs.existsSync(submodule)) {
         return console.error("No submodule found");
     }
@@ -186,16 +185,12 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
 
                 // Configure sample application file structure
                 const fileName = file.path.substring(file.base.length + 1).replace(".json", "");
-                console.log(fileName)
                 let sampleBaseDir = fileName.indexOf("--") !== -1 ? fileName.substring(0, fileName.indexOf("--")) : "";
-                console.log(sampleBaseDir)
                 if (sampleBaseDir && !fs.existsSync(submoduleAppDest + sampleBaseDir)) {
                     fs.mkdirSync(submoduleAppDest + sampleBaseDir);
                 }
                 const sampleName = sampleBaseDir ? getSampleNameFromFileName(fileName, sampleBaseDir) : fileName;
-                console.log(sampleName)
                 const sampleAppPath = submoduleAppDest + sampleBaseDir + "/" + sampleName;
-                console.log(sampleAppPath)
 
                 if (!fs.existsSync(sampleAppPath)) {
                     fs.mkdirSync(sampleAppPath);
@@ -234,9 +229,11 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
 
 const processDemosWithScss = () => processApp("src", "angular-demos", "data");
 const processDemosLobWithScss = () => processApp("projects/app-lob/src", "angular-demos-lob", "services");
+const processDemosCrmWithScss = () => processApp("projects/app-crm/src", "angular-demos-grid-crm");
 
 let repositoryfyAngularDemos;
 let repositoryfyAngularDemosLob;
+let repositoryfyAngularDemosCrm;
 
 const cleanupAngularDemos = (cb) => {
     fsExtra.removeSync(submodule + "/angular-demos");
@@ -249,5 +246,13 @@ const cleanupAngularDemosLob = (cb) => {
     fsExtra.mkdirSync(submodule + "/angular-demos-lob");
     cb();
 }
+
+const cleanupAngularDemosCrm = (cb) => {
+    fsExtra.removeSync(submodule + "/angular-demos-grid-crm");
+    fsExtra.mkdirSync(submodule + "/angular-demos-grid-crm");
+    cb();
+}
+
 exports.repositoryfyAngularDemos = repositoryfyAngularDemos = gulp.series(cleanupAngularDemos, processDemosWithScss);
 exports.repositoryfyAngularDemosLob = repositoryfyAngularDemosLob = gulp.series(cleanupAngularDemosLob, processDemosLobWithScss);
+exports.repositoryfyAngularDemosCrm = repositoryfyAngularDemosCrm = gulp.series(cleanupAngularDemosCrm, processDemosCrmWithScss);
