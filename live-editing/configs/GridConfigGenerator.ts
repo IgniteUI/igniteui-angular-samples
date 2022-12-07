@@ -1356,9 +1356,9 @@ export class GridConfigGenerator implements IConfigGenerator {
 
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridValidatorServiceComponent', 'IgxGridModule', 'IgxFocusModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['GridValidatorServiceComponent', 'IgxGridModule', 'IgxFocusModule', 'IgxPreventDocumentScrollModule', 'IgxSwitchModule'],
                 ngDeclarations: ['GridValidatorServiceComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxFocusModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxFocusModule', 'IgxSwitchModule']
             })
         }));
 
@@ -1409,6 +1409,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxFocusModule']
             })
         }));
+
+        configs.push(new Config({
+            component: 'GridSummaryExportComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxGridModule', 'GridSummaryExportComponent', 'IgxPreventDocumentScrollModule', 'IgxExcelExporterService'],
+                ngDeclarations: ['GridSummaryExportComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule'],
+                ngProviders: ['IgxExcelExporterService']
+            })
+        }));
+
 
         return configs;
     }

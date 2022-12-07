@@ -99,6 +99,7 @@ import { TreeGridColumnAutoSizingSampleComponent } from './treegrid-column-autos
 import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/treegrid-summary-template.component';
 import { TreeGridValidatorServiceCrossFieldComponent } from './tree-grid-validator-service-cross-field/tree-grid-validator-service-cross-field.component';
 import { TreeGridValidationStyleComponent } from './tree-grid-validation-style/tree-grid-validation-style.component';
+import { TreeGridSummaryExportComponent } from './tree-grid-summary-export/tree-grid-summary-export.component';
 
 export const treeGridRoutes: Routes = [
     {
@@ -585,6 +586,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridValidatorServiceExtendedComponent,
         data: treeGridRoutesData['tree-grid-validator-service-extended'],
         path: 'tree-grid-validator-service-extended'
+    },
+    {
+        component: TreeGridSummaryExportComponent,
+        data: treeGridRoutesData['treegrid-summary-export'],
+        path: 'treegrid-summary-export'
     }
 ];
 

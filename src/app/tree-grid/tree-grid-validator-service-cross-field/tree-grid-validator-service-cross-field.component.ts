@@ -3,7 +3,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
 import {
     ColumnPinningPosition,
-    IgxGridCell,
+    CellType,
+    IGridEditEventArgs,
     IgxTreeGridComponent,
     IPinningConfig
 } from 'igniteui-angular';
@@ -39,6 +40,12 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
         this.cities = [...new Set(this.data.map(x => x.City))];
     }
 
+    public editHandler(event: IGridEditEventArgs) {
+        if (!event.valid) {
+            event.cancel = true;
+        }
+    }
+
     public formCreateHandler(evt: IGridFormGroupCreatedEventArgs) {
         evt.formGroup.addValidators(this.rowValidator());
     }
@@ -64,11 +71,11 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
         };
     }
 
-    public isRowValid(cell: IgxGridCell) {
+    public isRowValid(cell: CellType) {
         return !cell.row.validation.errors && !cell.row.cells.some(c => !!c.validation.errors);
     }
 
-    public stateMessage(cell: IgxGridCell) {
+    public stateMessage(cell: CellType) {
         const messages = [];
 
         const cellValidationErrors = cell.row.cells.filter(x => !!x.validation.errors);

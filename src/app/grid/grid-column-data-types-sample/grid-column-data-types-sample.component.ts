@@ -1,11 +1,10 @@
 /*eslint-disable*/
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { registerLocaleData} from "@angular/common";
 import localeBG from '@angular/common/locales/bg';
 import localeDE from '@angular/common/locales/de';
 import localeFR from '@angular/common/locales/fr';
 import localeJA from '@angular/common/locales/ja';
-import { IgxGridComponent } from "igniteui-angular";
 
 @Component({
     selector: "grid-column-data-types-sample",
@@ -13,8 +12,6 @@ import { IgxGridComponent } from "igniteui-angular";
     templateUrl: "grid-column-data-types-sample.component.html"
 })
 export class GridColumnDataTypesSampleComponent implements OnInit {
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
-    public grid1: IgxGridComponent;
 
     public digitsInfoMessage: string = 'Applicable to number, currency and percent type columns';
 
@@ -43,7 +40,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         { format: "longDate", eq: "'MMMM d, y'"},
         { format: "fullDate", eq: "'EEEE, MMMM d, y'"}
     ];
-    
+
     // Time formats
     public timeFormats = [
         { format: "shortTime", eq: "'h:mm a'" },
@@ -85,6 +82,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         SupplierID: 1,
         CategoryID: 1,
         QuantityPerUnit: "10 boxes x 20 bags",
+        ProductImage: "/assets/images/products/chai.jpg",
         UnitPrice: 18.0000,
         UnitsInStock: 39,
         UnitsOnOrder: 0.030,
@@ -96,6 +94,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 2,
         ProductName: "Chang",
+        ProductImage: "/assets/images/products/chang.jpg",
         SupplierID: 1,
         CategoryID: 1,
         QuantityPerUnit: "24 - 12 oz bottles",
@@ -110,6 +109,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 3,
         ProductName: "Aniseed Syrup",
+        ProductImage: "/assets/images/products/aniseed.jpg",
         SupplierID: 1,
         CategoryID: 2,
         QuantityPerUnit: "12 - 550 ml bottles",
@@ -124,6 +124,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 4,
         ProductName: "Chef Antons Cajun Seasoning",
+        ProductImage: "/assets/images/products/cajun-seasoning.jpg",
         SupplierID: 2,
         CategoryID: 2,
         QuantityPerUnit: "48 - 6 oz jars",
@@ -138,6 +139,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 5,
         ProductName: "Chef Antons Gumbo Mix",
+        ProductImage: "/assets/images/products/chef-antons-gumbo-mix.jpg",
         SupplierID: 2,
         CategoryID: 2,
         QuantityPerUnit: "36 boxes",
@@ -152,6 +154,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 6,
         ProductName: "Grandmas Boysenberry Spread",
+        ProductImage: "/assets/images/products/grandmas-boysenberry-spread.jpg",
         SupplierID: 3,
         CategoryID: 2,
         QuantityPerUnit: "12 - 8 oz jars",
@@ -166,6 +169,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 7,
         ProductName: "Uncle Bobs Organic Dried Pears",
+        ProductImage: "/assets/images/products/uncle-bobs-organic-dried-pears.jpg",
         SupplierID: 3,
         CategoryID: 7,
         QuantityPerUnit: "12 - 1 lb pkgs.",
@@ -180,6 +184,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 8,
         ProductName: "Northwoods Cranberry Sauce",
+        ProductImage: "/assets/images/products/cranberry-sauce.jpg",
         SupplierID: 3,
         CategoryID: 2,
         QuantityPerUnit: "12 - 12 oz jars",
@@ -194,6 +199,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }, {
         ProductID: 9,
         ProductName: "Mishi Kobe Niku",
+        ProductImage: "/assets/images/products/mishi-kobe-niku.jpg",
         SupplierID: 4,
         CategoryID: 6,
         QuantityPerUnit: "18 - 500 g pkgs.",
@@ -208,7 +214,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
       }
     ];
 
-    private regEx = new RegExp('^[0-9]+\.[0-9]+\-[0-9]$')
+    private regEx = new RegExp('^[0-9]+.[0-9]+-[0-9]$')
 
     constructor() {
     }
@@ -248,7 +254,7 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         this.dateOptions.format = event.newSelection.value;
         this.formatDateOptions = Object.assign({}, this.formatDateOptions, this.dateOptions);
     }
-    
+
     public selectionTimeChanging(event) {
         this.timeOptions.format = event.newSelection.value;
         this.formatTimeOptions = Object.assign({}, this.formatTimeOptions, this.timeOptions);

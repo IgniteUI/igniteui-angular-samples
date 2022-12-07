@@ -18,7 +18,8 @@ import {
     IgxSwitchModule,
     IgxToastModule,
     IgxTooltipModule,
-    IgxTreeModule
+    IgxTreeModule,
+    IgxProgressBarModule
 } from 'igniteui-angular';
 import { IgxFinancialChartModule } from 'igniteui-angular-charts';
 import { ComboBindingComponent } from './combo/combo-binding/combo-binding.component';
@@ -47,6 +48,7 @@ import { SimpleComboUsageComponent } from './combo/simple-combo-usage/simple-com
 import { SimpleComboCascadingComponent } from './combo/simple-combo-cascading/simple-combo-cascading.component';
 import { SimpleComboStylingComponent } from './combo/simple-combo-styling/simple-combo-styling.component';
 import { ListItemSelectionComponent } from './list/list-item-selection/list-item-selection.component';
+import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-combo-remote.component';
 
 @NgModule({
     declarations: [
@@ -74,7 +76,8 @@ import { ListItemSelectionComponent } from './list/list-item-selection/list-item
         SimpleComboStylingComponent,
         TreeBasicSampleComponent,
         TreeAdvancedSampleComponent,
-        ListItemSelectionComponent
+        ListItemSelectionComponent,
+        SimpleComboRemoteComponent
     ],
     imports: [
         CommonModule,
@@ -97,7 +100,8 @@ import { ListItemSelectionComponent } from './list/list-item-selection/list-item
         IgxTreeModule,
         IgxTooltipModule,
         IgxFinancialChartModule,
-        IgxSimpleComboModule
+        IgxSimpleComboModule,
+        IgxProgressBarModule
     ]
 })
 export class ListsModule { }
