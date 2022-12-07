@@ -35,7 +35,7 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
             additionalDependencies: [],
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    'RouterModule', 'HammerModule', 'IgxAutocompleteModule', 'IgxRippleModule', 
+                    'IgxRippleModule', 
                     'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
                     'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule',
                     'IgxPreventDocumentScrollModule', 'GridCRMComponent', 'RouterTestingModule'
