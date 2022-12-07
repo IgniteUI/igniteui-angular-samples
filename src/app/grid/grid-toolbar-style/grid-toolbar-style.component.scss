@@ -33,10 +33,10 @@ $dark-checkbox-theme: checkbox-theme(
 :host {
     @include palette($my-dark-palette);
     ::ng-deep {
-        @include grid-toolbar($dark-grid-toolbar-theme);
-        @include column-actions($dark-column-actions-theme);
-        @include checkbox($dark-checkbox-theme);
-        @include button($dark-button-theme);
+        @include css-vars($dark-grid-toolbar-theme);
+        @include css-vars($dark-column-actions-theme);
+        @include css-vars($dark-checkbox-theme);
+        @include css-vars($dark-button-theme);
 
         .igx-grid-toolbar__actions {
             .igx-button--outlined {

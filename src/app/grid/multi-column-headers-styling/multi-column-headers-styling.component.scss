@@ -8,10 +8,8 @@ $custom-theme: grid-theme(
     $header-border-color: rgba(0, 0, 0, 0.08)
 );
 
-:host {
-  ::ng-deep {
-    @include grid($custom-theme);
-  }
+:host ::ng-deep {
+	@include css-vars($custom-theme);
 }
 
 .grid__wrapper {

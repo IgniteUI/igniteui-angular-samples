@@ -18,16 +18,6 @@ $my-overlay-theme: overlay-theme(
     display: block;
     padding: 16px;
 
-    // @include css-vars($my-drop-down-theme);
-    // @include css-vars($my-overlay-theme);
-
-    /* Using Theme Overrides to provide IE 11 support.
-     * NOTE: Theming using this approach will greatly increase the size
-     * of the output CSS. If you do not plan to target IE 11,
-     * delete this section and use the `igx-css-vars` mixin as shown above.
-    **/
-    ::ng-deep {
-        @include drop-down($my-drop-down-theme);
-        @include overlay($my-overlay-theme);
-    }
+	@include css-vars($my-drop-down-theme);
+	@include css-vars($my-overlay-theme);
 }

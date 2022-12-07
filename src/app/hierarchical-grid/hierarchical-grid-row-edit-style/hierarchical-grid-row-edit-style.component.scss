@@ -4,6 +4,7 @@
     vertical-align: middle;
     max-height: 62px;
 }
+
 .cell__inner_2 {
     margin: 1px
 }
@@ -27,6 +28,6 @@ $banner-theme: banner-theme(
     @include palette($purple-palette);
 
     ::ng-deep {
-        @include banner($banner-theme);
+        @include css-vars($banner-theme);
     }
 }

@@ -57,16 +57,16 @@ $custom-drop-down: drop-down-theme(
 
 :host {
     ::ng-deep {
-        @include grid($custom-grid);
-        @include drop-down($custom-drop-down);
-        @include input-group($custom-input-group);
-        @include checkbox($custom-checkbox);
-        @include list($custom-list);
-        @include button($custom-flat-button);
-        @include button-group($custom-button-group);
+        @include css-vars($custom-grid);
+        @include css-vars($custom-drop-down);
+        @include css-vars($custom-input-group);
+        @include css-vars($custom-checkbox);
+        @include css-vars($custom-list);
+        @include css-vars($custom-flat-button);
+        @include css-vars($custom-button-group);
 
         .igx-excel-filter__apply {
-            @include button($custom-raised-button);
+            @include css-vars($custom-raised-button);
         }
     }
 }

@@ -8,7 +8,7 @@ $my-secondary-color: #ffd351;
 $my-color-palette: palette(
     $primary: $my-primary-color,
     $secondary: $my-secondary-color,
-    $surface: #fff
+	$surface: #000
 );
 
 // Create expansion panel theme
@@ -27,7 +27,7 @@ $custom-panel-theme: expansion-panel-theme(
     // Penetrate the ViewEncapsulation
     ::ng-deep {
         // Apply the custom themes to the compoents mixins.
-        @include expansion-panel($custom-panel-theme);
+        @include css-vars($custom-panel-theme);
     }
 }
 

@@ -7,10 +7,8 @@ $custom-theme: grid-theme(
     $cell-active-border-color: #FFCD0F
 );
 
-:host {
-    ::ng-deep{
-        @include grid($custom-theme);
-    }
+:host ::ng-deep {
+	@include css-vars($custom-theme);
 }
 
 .grid-container {

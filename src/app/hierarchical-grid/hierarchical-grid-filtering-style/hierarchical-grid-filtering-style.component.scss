@@ -23,10 +23,10 @@ $dark-button: button-theme(
 
 :host {
      ::ng-deep {
-        @include grid($custom-grid);
+        @include css-vars($custom-grid);
         .igx-grid__filtering-row {
-            @include button($dark-button);
-            @include input-group($dark-input-group);
+            @include css-vars($dark-button);
+            @include css-vars($dark-input-group);
             .igx-input-group__input::placeholder {
                 color: #292826;
             }
