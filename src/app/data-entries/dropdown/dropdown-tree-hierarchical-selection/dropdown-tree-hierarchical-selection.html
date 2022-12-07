@@ -1,6 +1,6 @@
 <div class="button-wrapper">
     <igx-chips-area>
-      <igx-chip *ngFor="let node of selectedNodes" [id]="node.ID" [removable]="true">{{node.data.Name}}</igx-chip>
+      <igx-chip *ngFor="let node of selectedNodes" [id]="node.data.ID" [removable]="true" (remove)="chipRemoved($event)">{{node.data.Name}}</igx-chip>
     </igx-chips-area>
 
     <button class="button" igxButton="raised" [igxToggleAction]="countriesDropDown" [igxDropDownItemNavigation]="countriesDropDown">

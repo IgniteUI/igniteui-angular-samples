@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ITreeNodeSelectionEvent } from 'igniteui-angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IBaseChipEventArgs, IgxTreeComponent, ITreeNodeSelectionEvent } from 'igniteui-angular';
 import { COUNTRIES } from '../../../data/countries';
 @Component({
     // tslint:disable-next-line:component-selector
@@ -8,6 +8,9 @@ import { COUNTRIES } from '../../../data/countries';
     templateUrl: './dropdown-tree-hierarchical-selection.html'
 })
 export class DropdownTreeHierarchicalSelectionComponent implements OnInit {
+    @ViewChild('igxTree', { static: true })
+    public igxTree: IgxTreeComponent;
+    
     public countries!: any[];
     public selectedNodes!: any[];
 
@@ -17,5 +20,14 @@ export class DropdownTreeHierarchicalSelectionComponent implements OnInit {
 
     public onNodeSelection(args: ITreeNodeSelectionEvent) {
         this.selectedNodes = args.newSelection;
+    }
+
+    public chipRemoved(event: IBaseChipEventArgs) {
+        this.selectedNodes = this.selectedNodes.filter((node) => {
+            if (node.data.ID === event.owner.id){
+                this.igxTree.deselectAll([node]);
+            }
+            return node.data.ID !== event.owner.id;
+        });
     }
 }
