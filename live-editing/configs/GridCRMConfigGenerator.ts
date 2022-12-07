@@ -10,6 +10,7 @@ import {
     IgxAvatarModule,
     IgxInputGroupModule,
     IgxButtonModule } from 'igniteui-angular';
+import { RouterTestingModule } from "@angular/router/testing";
 import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -37,12 +38,12 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
                     'RouterModule', 'HammerModule', 'IgxAutocompleteModule', 'IgxRippleModule', 
                     'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
                     'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                    'IgxPreventDocumentScrollModule', 'GridCRMComponent'
+                    'IgxPreventDocumentScrollModule', 'GridCRMComponent', 'RouterTestingModule'
                 ],
                 ngDeclarations: ['GridCRMComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxRippleModule', 
                 'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
-                'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule']
+                'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule', 'RouterTestingModule']
             })
         }));
 

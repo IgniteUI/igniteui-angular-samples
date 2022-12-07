@@ -7,6 +7,7 @@ import {
     QueryList,
     ViewChild
 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {
     CloseScrollStrategy,
     ConnectedPositioningStrategy,
@@ -132,7 +133,8 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
 
     constructor(
         private csvExporter: IgxCsvExporterService,
-        private excelExporter: IgxExcelExporterService) {
+        private excelExporter: IgxExcelExporterService,
+        private activatedRoute: ActivatedRoute) {
 
         const exporterCb = (args: IColumnExportingEventArgs) => {
             if (args.field === 'Deals') { args.cancel = true; }
@@ -148,6 +150,9 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
             this.getDeals(employee);
         }
         this.localData = employees;
+        this.activatedRoute.queryParams.subscribe(params => {
+            this.dark = !!params.dark;
+        });
     }
 
     public toggleHiding() {
