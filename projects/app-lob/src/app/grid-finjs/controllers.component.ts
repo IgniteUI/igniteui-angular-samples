@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
     IButtonGroupEventArgs, IChangeSwitchEventArgs, IgxButtonGroupComponent,
@@ -54,7 +54,7 @@ export class ControllerComponent implements OnInit, OnDestroy {
     private frequencyChanged$: Observable<ISliderValueChangeEventArgs>;
     private frequencyChangedSubscription: Subscription;
 
-    constructor(private router: ActivatedRoute, private elRef: ElementRef) {}
+    constructor(private router: ActivatedRoute) {}
 
     public ngOnInit(): void {
         this.volumeChanged$ = this.volumeSlider.valueChange.pipe(debounce(() => timer(200)));
