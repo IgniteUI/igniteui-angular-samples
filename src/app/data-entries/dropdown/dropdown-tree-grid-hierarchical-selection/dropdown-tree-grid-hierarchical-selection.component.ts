@@ -4,8 +4,8 @@ import { EMPLOYEE_DATA } from '../../../data/nested-employee-data';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-tree-grid-hierarchical-selection',
-    styleUrls: ['./dropdown-tree-grid-hierarchical-selection.scss'],
-    templateUrl: './dropdown-tree-grid-hierarchical-selection.html'
+    styleUrls: ['./dropdown-tree-grid-hierarchical-selection.component.scss'],
+    templateUrl: './dropdown-tree-grid-hierarchical-selection.component.html'
 })
 export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit {
     @ViewChild('treeGrid', { static: true })

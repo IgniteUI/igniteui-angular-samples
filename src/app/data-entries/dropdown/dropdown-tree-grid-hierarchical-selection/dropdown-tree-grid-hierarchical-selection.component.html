@@ -1,10 +1,11 @@
-<div class="button-wrapper">
-    <igx-chips-area>
-      <igx-chip *ngFor="let row of selectedRows" [id]="row.ID" [removable]="true" (remove)="chipRemoved($event)">{{row.Name}}</igx-chip>
-    </igx-chips-area>
-
-    <button class="button" igxButton="raised" [igxToggleAction]="employeesDropDown" [igxDropDownItemNavigation]="employeesDropDown" [igxToggleOutlet]="outlet">
-      IgxTree
+<div class="container">
+    <div class="chip-container">
+        <igx-chips-area>
+            <igx-chip *ngFor="let row of selectedRows" [id]="row.ID" [removable]="true" (remove)="chipRemoved($event)">{{row.Name}}</igx-chip>
+        </igx-chips-area>
+    </div>
+    <button igxButton="icon" [igxToggleAction]="employeesDropDown" [igxDropDownItemNavigation]="employeesDropDown" [igxToggleOutlet]="outlet">
+        <igx-icon fontSet="material">expand_more</igx-icon>
     </button>
 </div>
 

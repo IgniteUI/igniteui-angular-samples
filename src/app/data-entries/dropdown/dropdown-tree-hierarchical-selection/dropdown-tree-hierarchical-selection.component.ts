@@ -4,8 +4,8 @@ import { COUNTRIES } from '../../../data/countries';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-tree-hierarchical-selection',
-    styleUrls: ['./dropdown-tree-hierarchical-selection.scss'],
-    templateUrl: './dropdown-tree-hierarchical-selection.html'
+    styleUrls: ['./dropdown-tree-hierarchical-selection.component.scss'],
+    templateUrl: './dropdown-tree-hierarchical-selection.component.html'
 })
 export class DropdownTreeHierarchicalSelectionComponent implements OnInit {
     @ViewChild('igxTree', { static: true })
