@@ -67,7 +67,7 @@ export class ControllerComponent implements OnInit, OnDestroy {
         this.toast.positionSettings.verticalDirection = VerticalAlignment.Middle;
 
         // Hide theme switcher
-        if (this.router.snapshot.queryParamMap.get('theme-switch')) {
+        if (this.router.snapshot.queryParamMap.get('theme-switch') === 'false') {
             this.isThemeSwitchVisible = false;
         }
     }
