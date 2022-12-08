@@ -3,7 +3,6 @@ import { NgForm } from '@angular/forms';
 
 export interface User
 {
-    fullName: string;
     username: string;
     email: string;
     password: string;
@@ -18,7 +17,6 @@ export class TemplateDrivenFormValidationComponent {
     @ViewChild('registrationForm', { read: NgForm, static: true }) public registrationForm: NgForm;
 
     public user: User = {
-        fullName: '',
         username: '',
         email: '',
         password: ''

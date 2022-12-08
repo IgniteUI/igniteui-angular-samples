@@ -3,7 +3,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 export interface User
 {
-    fullName: FormControl<string>;
     username: FormControl<string>;
     email: FormControl<string>;
     password: FormControl<string>;
@@ -16,7 +15,6 @@ export interface User
 })
 export class ReactiveFormValidationComponent {
     public registrationForm = new FormGroup<User>({
-        fullName: new FormControl<string>('', { nonNullable: true, validators: [Validators.required] }),
         username: new FormControl<string>('', { nonNullable: true, validators: [Validators.required] }),
         email: new FormControl<string>('', { nonNullable: true, validators: [Validators.required, Validators.email] }),
         password: new FormControl<string>('', { nonNullable: true, validators: [Validators.required, Validators.minLength(8)] })
