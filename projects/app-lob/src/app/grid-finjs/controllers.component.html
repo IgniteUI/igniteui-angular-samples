@@ -1,10 +1,9 @@
 <div class="controls-wrapper">
     <div class="controls-holder">
         <div class="switches">
-            <div class="test" *ngIf="isThemeSwitchVisible">
-                <div class="control-item" >
-                    <igx-switch class="theme-switch" [checked]="false" [(ngModel)]="theme" (change)="onChange('theme', $event)">Dark</igx-switch>
-                </div>
+            <div class="control-item" *ngIf="isThemeSwitchVisible">
+                <igx-switch class="theme-switch" [checked]="false" [(ngModel)]="theme"
+                    (change)="onChange('theme', $event)">Dark</igx-switch>
             </div>
             <div class="control-item">
                 <igx-switch [checked]="true" (change)="onChange('grouped', $event)" color="blue"
