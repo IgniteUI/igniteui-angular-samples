@@ -13,7 +13,7 @@ $custom-grid-theme: grid-theme(
 
 :host {
     ::ng-deep {
-        @include grid($custom-grid-theme);
+        @include css-vars($custom-grid-theme);
     }
 }
 

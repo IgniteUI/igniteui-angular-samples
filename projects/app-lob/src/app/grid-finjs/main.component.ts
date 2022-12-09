@@ -24,8 +24,7 @@ export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
     };
 
     @HostBinding('class.dark-theme')
-    public darkTheme = false;  
-
+    public darkTheme = false;
 
     public properties = ['price', 'country'];
     public chartData: Stock[] = [];
@@ -33,7 +32,7 @@ export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
     public frequency = 500;
     private _timer: ReturnType<typeof setInterval>;
 
-    
+
     public onSwitchChanged(event: { action: string; value: boolean }): void {
         switch (event.action) {
             case 'toolbar': {

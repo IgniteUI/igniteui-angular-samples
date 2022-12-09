@@ -10,10 +10,8 @@ $custom-theme: grid-summary-theme(
     $pinned-border-color: #e41c77
 );
 
-:host {
-    ::ng-deep {
-        @include grid-summary($custom-theme);
-    }
+:host ::ng-deep {
+	@include css-vars($custom-theme);
 }
 
 .photo {

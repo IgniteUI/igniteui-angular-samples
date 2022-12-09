@@ -174,7 +174,6 @@ export class TreeGridFinJSComponent implements OnDestroy, OnInit {
             parentEl.classList.remove('fin-dark-theme');
         }
     }
-    
     public ngOnDestroy() {
         this.stopFeed();
     }

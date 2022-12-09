@@ -56,7 +56,7 @@ $custom-badge-theme: badge-theme(
     .selected {
         igx-badge {
             & {
-                @include badge($custom-badge-theme);
+                @include css-vars($custom-badge-theme);
             }
 
             position: absolute;

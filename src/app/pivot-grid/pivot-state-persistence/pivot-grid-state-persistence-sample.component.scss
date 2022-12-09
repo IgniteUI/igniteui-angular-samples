@@ -5,11 +5,11 @@
 
     ::ng-deep {
         .upFontValue {
-            color: hsla(var(--igx-success-500));
+            color: hsla(var(--ig-success-500));
         }
 
         .downFontValue {
-            color: hsla(var(--igx-error-500));
+            color: hsla(var(--ig-error-500));
         }
     }
 
@@ -36,7 +36,6 @@ igx-pivot-grid {
 
 .switches {
     display: flex;
-    justify-content: space-between;
     justify-content: flex-start;
     align-items: center;
     flex: 1 0 0%;
@@ -52,7 +51,7 @@ igx-pivot-grid {
 
 .control-item {
     display: block;
-    padding: 8px 0px;
+    padding: 8px 0;
 
     >span {
         cursor: pointer;
