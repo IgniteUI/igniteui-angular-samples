@@ -12,16 +12,7 @@ $custom-grid-theme: grid-theme(
     $header-selected-background: #011627
 );
 
-// :host {
-//     @include css-vars($custom-grid-theme);
-// }
-
-/* Using Theme Overrides to provide IE 11 support.
- * NOTE: Theming using this approach will greatly increase the size
- * of the output CSS. If you do not plan to target IE 11,
- * delete this section and use the `igx-css-vars` mixin as shown above.
-**/
 :host ::ng-deep {
-    @include grid($custom-grid-theme);
+    @include css-vars($custom-grid-theme);
 }
 

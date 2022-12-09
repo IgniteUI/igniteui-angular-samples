@@ -11,9 +11,10 @@ $custom-theme: grid-summary-theme(
 );
 
 :host {
-    ::ng-deep {
-        @include grid-summary($custom-theme);
-    }
+	::ng-deep {
+		@include css-vars($custom-theme);
+	}
+
     display: block;
     padding: 16px;
 }

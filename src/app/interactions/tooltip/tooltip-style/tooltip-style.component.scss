@@ -6,16 +6,7 @@ $dark-tooltip: tooltip-theme(
     $border-radius: 6px
 );
 
-// :host {
-//     @include css-vars($dark-tooltip);
-// }
-
-/* Using Theme Overrides to provide IE 11 support.
- * NOTE: Theming using this approach will greatly increase the size
- * of the output CSS. If you do not plan to target IE 11,
- * delete this section and use the `igx-css-vars` mixin as shown above.
-**/
-:host ::ng-deep {
-    @include tooltip($dark-tooltip);
+:host {
+	@include css-vars($dark-tooltip);
 }
 
