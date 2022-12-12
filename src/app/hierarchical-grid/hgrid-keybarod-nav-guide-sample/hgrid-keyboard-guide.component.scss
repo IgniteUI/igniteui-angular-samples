@@ -8,7 +8,7 @@ $custom-checkbox-theme: checkbox-theme(
 );
 
 .list-sample ::ng-deep {
-    @include checkbox($custom-checkbox-theme);
+    @include css-vars($custom-checkbox-theme);
 }
 
 .sample {

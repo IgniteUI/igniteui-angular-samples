@@ -9,9 +9,9 @@ $custom-button: button-theme($foreground: gold, $disabled-foreground: black);
 
 :host {
     ::ng-deep {
-        @include column-actions($custom-column-actions-theme);
+        @include css-vars($custom-column-actions-theme);
         .igx-column-actions {
-            @include button($custom-button);
+            @include css-vars($custom-button);
         }
     }
 }

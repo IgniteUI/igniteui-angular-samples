@@ -5,11 +5,11 @@
 
     ::ng-deep {
         .upFontValue {
-            color: hsla(var(--igx-success-500));
+            color: hsla(var(--ig-success-500));
         }
 
         .downFontValue {
-            color: hsla(var(--igx-error-500));
+            color: hsla(var(--ig-error-500));
         }
 
         igx-pivot-data-selector {

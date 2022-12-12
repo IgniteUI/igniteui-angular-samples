@@ -40,17 +40,19 @@ $dark-drop-down-theme: drop-down-theme(
 );
 
 :host {
-     ::ng-deep {
-        @include grid($custom-grid);
-        @include drop-down($dark-drop-down-theme);
-        igx-grid-filtering-row {
-            @include button($dark-button);
-            @include input-group($dark-input-group);
-            .igx-input-group__input::placeholder {
-                color: $bg;
-            }
-        }
-    }
+	::ng-deep {
+		@include css-vars($custom-grid);
+		@include css-vars($dark-drop-down-theme);
+
+		igx-grid-filtering-row {
+			@include css-vars($dark-button);
+			@include css-vars($dark-input-group);
+
+			.igx-input-group__input::placeholder {
+				color: $bg;
+			}
+		}
+	}
 }
 
 .grid__wrapper {

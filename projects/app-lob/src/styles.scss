@@ -1,7 +1,6 @@
 @use 'igniteui-angular/theming' as *;
 @use 'variables' as *;
 @use 'app-layout';
-
 /* autoprefixer grid: on */
 html,
 body {
@@ -9,10 +8,34 @@ body {
     overflow: hidden;
     margin: 0;
 }
-
 @include core();
 @include typography();
 @include theme(
     $palette: $palette,
     $schema: $schema
 );
+:root {
+    @include palette($palette);
+}
+.light-theme {
+    @include light-theme($palette);
+}
+.dark-theme {
+    background: #333;
+    color: #fff;
+    @include dark-theme(
+        $palette: $green-palette
+    );
+    .grid-chart-contextmenu-wrapper {
+        @include fluent-dark-theme($fluent-excel-palette);
+    }
+}
+
+.fin-dark-theme {
+    @include dark-theme($green-palette);
+    background: #333;
+
+    ::-moz-placeholder {
+        opacity: 1;
+    }
+}

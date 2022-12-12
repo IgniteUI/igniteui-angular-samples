@@ -19,16 +19,7 @@ $my-calendar-theme: calendar-theme(
   $picker-text-color: #ECAA53
 );
 
-// :host {
-//     @include css-vars($my-calendar-theme);
-// }
-
-/* Using Theme Overrides to provide IE 11 support.
- * NOTE: Theming using this approach will greatly increase the size
- * of the output CSS. If you do not plan to target IE 11,
- * delete this section and use the `igx-css-vars` mixin as shown above.
-**/
 :host ::ng-deep {
-    @include calendar($my-calendar-theme);
+    @include css-vars($my-calendar-theme);
 }
 
