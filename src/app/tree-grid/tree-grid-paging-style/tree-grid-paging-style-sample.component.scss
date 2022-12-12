@@ -16,11 +16,9 @@ $dark-button: button-theme(
     $disabled-foreground: #16130C
 );
 
-:host {
-     ::ng-deep {
-        @include paginator($dark-paginator);
-        .igx-paginator__pager{
-            @include button($dark-button);
-        }
-    }
+:host ::ng-deep {
+	@include css-vars($dark-paginator);
+	.igx-paginator__pager{
+		@include css-vars($dark-button);
+	}
 }

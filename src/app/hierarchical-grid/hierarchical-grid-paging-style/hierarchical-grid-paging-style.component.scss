@@ -18,9 +18,10 @@ $dark-button: button-theme(
 
 :host {
      ::ng-deep {
-        @include paginator($dark-paginator);
+        @include css-vars($dark-paginator);
+
         .igx-paginator__pager {
-            @include button($dark-button);
+            @include css-vars($dark-button);
         }
     }
 }

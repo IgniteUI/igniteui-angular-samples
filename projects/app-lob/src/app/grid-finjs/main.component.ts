@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, HostBinding, OnDestroy, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { IgxDialogComponent, IgxOverlayOutletDirective, OverlaySettings } from 'igniteui-angular';
 import { IgxCategoryChartComponent } from 'igniteui-angular-charts';
 import { Stock } from '../data/financialData';
@@ -22,11 +23,15 @@ export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
         closeOnOutsideClick: true
     };
 
+    @HostBinding('class.dark-theme')
+    public darkTheme = false;
+
     public properties = ['price', 'country'];
     public chartData: Stock[] = [];
     public volume = 1000;
     public frequency = 500;
     private _timer: ReturnType<typeof setInterval>;
+
 
     public onSwitchChanged(event: { action: string; value: boolean }): void {
         switch (event.action) {
@@ -36,6 +41,10 @@ export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
             }
             case 'grouped': {
                 this.finGrid.toggleGrouping();
+                break;
+            }
+            case 'theme': {
+                this.darkTheme = event.value;
                 break;
             }
             default: break;

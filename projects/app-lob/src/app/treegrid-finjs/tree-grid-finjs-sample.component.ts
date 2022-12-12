@@ -21,6 +21,9 @@ export class TreeGridFinJSComponent implements OnDestroy, OnInit {
     @ViewChild('slider2', { static: true }) public intervalSlider!: IgxSliderComponent;
     @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet!: IgxOverlayOutletDirective;
 
+    @HostBinding('class.dark-theme')
+    public theme = false;
+
     public showToolbar = true;
     public selectionMode = 'multiple';
     public volume = 1000;
@@ -159,6 +162,18 @@ export class TreeGridFinJSComponent implements OnDestroy, OnInit {
         return value ? '$' + value.toFixed(3) : '';
     }
 
+    /**
+     * the below code is needed when accessing the sample through the navigation
+     * it will style all the space below the sample component element, but not the navigation menu
+     */
+     public onThemeChanged(event: any) {
+        const parentEl = this.parentComponentEl();
+        if (event.checked && parentEl.classList.contains('main')) {
+            parentEl.classList.add('fin-dark-theme');
+        } else {
+            parentEl.classList.remove('fin-dark-theme');
+        }
+    }
     public ngOnDestroy() {
         this.stopFeed();
     }
