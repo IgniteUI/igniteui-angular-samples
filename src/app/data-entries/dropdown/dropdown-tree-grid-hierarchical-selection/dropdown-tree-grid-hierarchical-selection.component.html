@@ -9,7 +9,7 @@
     </button>
 </div>
 
-<igx-drop-down #employeesDropDown [width]="'300px'">
+<igx-drop-down #employeesDropDown [width]="'300px'" (closing)="handleClosing($event)">
     <igx-tree-grid #treeGrid igxPreventDocumentScroll [data]="employees" childDataKey="Employees" primaryKey="ID"
       width="100%" height="400px" [autoGenerate]="false" [expansionDepth]="1" [rowSelection]="'multiple'"
       (rowSelectionChanging)="onRowSelectionChanging($event, treeGrid)">
