@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IBaseChipEventArgs, IgxTreeComponent, ITreeNodeSelectionEvent } from 'igniteui-angular';
+import { IBaseChipEventArgs, IgxChipComponent, IgxTreeComponent, ITreeNodeSelectionEvent } from 'igniteui-angular';
+import { IBaseCancelableBrowserEventArgs } from 'igniteui-angular/lib/core/utils';
 import { COUNTRIES } from '../../../data/countries';
 @Component({
     // tslint:disable-next-line:component-selector
@@ -29,5 +30,12 @@ export class DropdownTreeHierarchicalSelectionComponent implements OnInit {
             }
             return node.data.ID !== event.owner.id;
         });
+    }
+
+    public handleClosing(event: IBaseCancelableBrowserEventArgs) {
+        var eventTarget = event.event.target as HTMLElement;
+        if (eventTarget.parentElement.classList.contains('igx-chip__remove')) {
+            event.cancel = true;
+        }
     }
 }
