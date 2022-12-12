@@ -16,6 +16,6 @@ $custom-grid-theme: grid-theme(
     padding: 8px;
 
     ::ng-deep {
-        @include grid($custom-grid-theme);
+        @include css-vars($custom-grid-theme);
     }
 }
