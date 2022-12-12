@@ -1,16 +1,36 @@
-<div class="grid__wrapper">
-    <span class="button-group-wrapper">
-        <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
-    </span>
-    <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" [height]="'600px'" [width]="'100%'" [cellSelection]="selectionMode">
-        <igx-column [field]="'ProductID'"></igx-column>
-        <igx-column [field]="'ProductName'"></igx-column>
-        <igx-column [field]="'UnitsInStock'" [dataType]="'number'"></igx-column>
-        <igx-column [field]="'UnitPrice'" [dataType]="'number'"></igx-column>
-        <igx-column [field]="'Discontinued'" [dataType]="'boolean'">
-        </igx-column>
-        <igx-column [field]="'OrderDate'" [dataType]="'date'"></igx-column>
-    </igx-grid>
+<span class="button-group-wrapper">
+    <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
+</span>
+<div class="sample-wrapper">
+    <div class="grid-wrapper">
+        <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" [height]="'550px'" [cellSelection]="selectionMode"
+            (rangeSelected)="onRangeSelected()"
+            (selected)="onCellSelected($event)"
+            >
+            <igx-column [field]="'ProductID'"></igx-column>
+            <igx-column [field]="'ProductName'"></igx-column>
+            <igx-column [field]="'UnitsInStock'" [dataType]="'number'"></igx-column>
+            <igx-column [field]="'UnitPrice'" [dataType]="'number'"></igx-column>
+            <igx-column [field]="'Discontinued'" [dataType]="'boolean'">
+            </igx-column>
+            <igx-column [field]="'OrderDate'" [dataType]="'date'"></igx-column>
+        </igx-grid>
+    </div>
+    <div class="log-wrapper">
+        <div class="selected-data-area">
+            <div class="logContainer">
+                <div class="highlight">
+                    <span>Events execution sequence</span>
+                    <button class="clearBtn" igxButton="flat" (click)="clearLog()">
+                        <igx-icon>clear</igx-icon>
+                        <span>Clear log</span>
+                    </button>
+                </div>
+                <hr />
+                <div #logger class="logger"></div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.close()">
