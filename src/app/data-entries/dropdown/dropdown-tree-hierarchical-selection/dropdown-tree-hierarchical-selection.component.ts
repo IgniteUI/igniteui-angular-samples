@@ -33,9 +33,6 @@ export class DropdownTreeHierarchicalSelectionComponent implements OnInit {
     }
 
     public handleClosing(event: IBaseCancelableBrowserEventArgs) {
-        var eventTarget = event.event.target as HTMLElement;
-        if (eventTarget.parentElement.classList.contains('igx-chip__remove')) {
-            event.cancel = true;
-        }
+        event.cancel = event.event.composedPath().some(e => (e as HTMLElement).nodeName.toLowerCase() === 'igx-chip');
     }
 }
