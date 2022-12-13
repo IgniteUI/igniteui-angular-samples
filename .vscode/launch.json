@@ -28,6 +28,19 @@
             "console": "internalConsole",
         },
         {
+            "name": "Launch App CRM Live-editing",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "stopOnEntry": false,
+            "args": ["generate-live-editing", "--appCrm=true"],
+            "cwd": "${workspaceRoot}",
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "console": "internalConsole",
+        },
+        {
             "name": "Launch Repositoryfy",
             "type": "node",
             "request": "launch",

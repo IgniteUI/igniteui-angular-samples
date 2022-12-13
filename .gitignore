@@ -11,6 +11,7 @@
 # samples assets
 /src/assets/samples
 /projects/app-lob/src/assets/samples
+/projects/app-crm/src/assets/samples
 
 # IDEs and editors
 /.idea
