@@ -34,6 +34,8 @@ import { DropDownSample3Component } from './dropdown/dropdown-sample-3/dropdown-
 import { DropDownSample4Component } from './dropdown/dropdown-sample-4/dropdown-sample-4.component';
 import { DropDownSample5Component } from './dropdown/dropdown-sample-5/dropdown-sample-5.component';
 import { DropDownStylingComponent } from './dropdown/dropdown-styling/dropdown-styling.component';
+import { DropdownTreeHierarchicalSelectionComponent } from './dropdown/dropdown-tree-hierarchical-selection/dropdown-tree-hierarchical-selection.component';
+import { DropdownTreeGridHierarchicalSelectionComponent } from './dropdown/dropdown-tree-grid-hierarchical-selection/dropdown-tree-grid-hierarchical-selection.component';
 import { InputGroupSample1Component } from './input-group/input-group-sample-1/input-group-sample-1.component';
 import { InputGroupSample2Component } from './input-group/input-group-sample-2/input-group-sample-2.component';
 import { InputGroupSample3Component } from './input-group/input-group-sample-3/input-group-sample-3.component';
@@ -213,6 +215,16 @@ export const dataEntriesRoutes: Routes = [
         component: DropDownStylingComponent,
         data: dataEntriesRoutesData['dropdown-styling'],
         path: 'dropdown-styling'
+    },
+    {
+        component: DropdownTreeHierarchicalSelectionComponent,
+        data: dataEntriesRoutesData['dropdown-tree-hierarchical-selection'],
+        path: 'dropdown-tree-hierarchical-selection'
+    },
+    {
+        component: DropdownTreeGridHierarchicalSelectionComponent,
+        data: dataEntriesRoutesData['dropdown-tree-grid-hierarchical-selection'],
+        path: 'dropdown-tree-grid-hierarchical-selection'
     },
     {
         component: DropDownSample4Component,

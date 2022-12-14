@@ -4,10 +4,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     IgcFormsModule,
-    IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxComboModule,
+    IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxChipsAreaComponent, IgxChipsModule, IgxComboModule,
     IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
     IgxIconModule, IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule,
-    IgxSelectModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule
+    IgxSelectModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule, IgxTreeGridModule, IgxTreeModule
 } from 'igniteui-angular';
 import { AutocompleteBasicComponent, AutocompletePipeStartsWith } from './autocomplete/autocomplete/autocomplete.component';
 import { MovieComponent } from './autocomplete/movie/movie.component';
@@ -43,6 +43,8 @@ import { DropDownSample3Component } from './dropdown/dropdown-sample-3/dropdown-
 import { DropDownSample4Component } from './dropdown/dropdown-sample-4/dropdown-sample-4.component';
 import { DropDownSample5Component } from './dropdown/dropdown-sample-5/dropdown-sample-5.component';
 import { DropDownStylingComponent } from './dropdown/dropdown-styling/dropdown-styling.component';
+import { DropdownTreeHierarchicalSelectionComponent } from './dropdown/dropdown-tree-hierarchical-selection/dropdown-tree-hierarchical-selection.component';
+import { DropdownTreeGridHierarchicalSelectionComponent } from './dropdown/dropdown-tree-grid-hierarchical-selection/dropdown-tree-grid-hierarchical-selection.component';
 import { InputGroupSample1Component } from './input-group/input-group-sample-1/input-group-sample-1.component';
 import { InputGroupSample2Component } from './input-group/input-group-sample-2/input-group-sample-2.component';
 import { InputGroupSample3Component } from './input-group/input-group-sample-3/input-group-sample-3.component';
@@ -103,6 +105,8 @@ import { ReactiveFormCustomValidationComponent } from './input-group/reactive-fo
         DropDownSample4Component,
         DropDownSample5Component,
         DropDownStylingComponent,
+        DropdownTreeHierarchicalSelectionComponent,
+        DropdownTreeGridHierarchicalSelectionComponent,
         InputGroupSample1Component,
         InputGroupSample2Component,
         InputGroupSample3Component,
@@ -167,7 +171,10 @@ import { ReactiveFormCustomValidationComponent } from './input-group/reactive-fo
         IgxFocusModule,
         IgxCardModule,
         IgxDividerModule,
-        IgcFormsModule
+        IgcFormsModule,
+        IgxChipsModule,
+        IgxTreeModule,
+        IgxTreeGridModule
     ]
 })
 export class DataEntriesModule { }
