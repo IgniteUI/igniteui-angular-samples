@@ -47,7 +47,7 @@ export class RadioConfigGenerator implements IConfigGenerator {
             component: 'RadioGroupVerticalComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxRadioModule', 'RadioGroupVerticalComponent'],
-                ngDeclarations: ['RadioGroupSampleComponent'],
+                ngDeclarations: ['RadioGroupVerticalComponent'],
                 ngImports: ['IgxRadioModule']
             }),
             shortenComponentPathBy: "/data-entries/radio/"
