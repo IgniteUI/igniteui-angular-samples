@@ -1,15 +1,17 @@
 <article>
     <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
         <igx-input-group>
-            <label igxLabel for="username">Username</label>
-            <input igxInput name="username" type="text" formControlName="username" />
-            <igx-hint *ngIf="username.errors?.username">This username is not allowed</igx-hint>
+            <label igxLabel for="email">Email</label>
+            <input igxInput name="email" type="email" formControlName="email" />
+            <igx-hint *ngIf="email.errors?.email">Please enter a valid email address</igx-hint>
+            <igx-hint *ngIf="!email.errors?.email && email.errors?.localPart">This email address is not allowed</igx-hint>
+            <igx-hint *ngIf="!email.errors?.email && email.errors?.domain">This domain is not allowed</igx-hint>
         </igx-input-group>
 
         <igx-input-group>
             <label igxLabel for="password">Password</label>
             <input igxInput name="password" type="text" formControlName="password" />
-            <igx-hint *ngIf="password.errors?.password">Should not contain the username</igx-hint>
+            <igx-hint *ngIf="password.errors?.containsEmail">Should not contain the email address</igx-hint>
             <igx-hint *ngIf="password.errors?.minlength">Should be at least 8 characters</igx-hint>
             <igx-hint *ngIf="password.errors?.pattern">Should contain a digit and a special character</igx-hint>
         </igx-input-group>
@@ -17,7 +19,7 @@
         <igx-input-group>
             <label igxLabel for="repeatPassword">Repeat password</label>
             <input igxInput name="repeatPassword" type="text" formControlName="repeatPassword" />
-            <igx-hint *ngIf="repeatPassword.errors?.match && !repeatPassword.pristine">Passwords do not match</igx-hint>
+            <igx-hint *ngIf="repeatPassword.errors?.mismatch && !repeatPassword.pristine">Passwords do not match</igx-hint>
         </igx-input-group>
 
         <button igxButton="raised" igxRipple type="submit" [disabled]="!registrationForm.valid">Submit</button>

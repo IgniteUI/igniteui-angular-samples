@@ -3,7 +3,7 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn,
 
 export interface User
 {
-    username: FormControl<string>;
+    email: FormControl<string>;
     password: FormControl<string>;
     repeatPassword: FormControl<string>;
 }
@@ -17,11 +17,12 @@ export class ReactiveFormCustomValidationComponent {
     private pattern = `^(?=.*[A-Za-z])(?=.*\\d)(?=.*[~!@?#+$"'%^&:;*\\-_=.,<>])[A-Za-z\\d~!@?#+$"'%^&:;*\\-_=.,<>]+$`;
 
     public registrationForm = new FormGroup<User>({
-        username: new FormControl<string>('', {
+        email: new FormControl<string>('', {
             nonNullable: true,
             validators: [
                 Validators.required,
-                this.usernameValidator('infragistics')
+                Validators.email,
+                this.emailValidator('infragistics')
             ]
         }),
         password: new FormControl<string>('', {
@@ -38,12 +39,12 @@ export class ReactiveFormCustomValidationComponent {
         })
     },
     {
-        validators: [this.passwordValidator(), this.matchPasswordsValidator()]
+        validators: [this.passwordValidator()]
     });
 
 
-    get username() {
-        return this.registrationForm.get('username');
+    get email() {
+        return this.registrationForm.get('email');
     }
 
     get password() {
@@ -59,75 +60,66 @@ export class ReactiveFormCustomValidationComponent {
         this.registrationForm.reset();
     }
 
-    private usernameValidator(val: string): ValidatorFn {
+    private emailValidator(val: string): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
-            if (control.value?.toLowerCase().includes(val)) {
-                return { username: true };
+            const value = control.value?.toLowerCase();
+            const localPartRegex = new RegExp(`(?<=(${val})).*[@]`);
+            const domainRegex = new RegExp(`(?<=[@])(?=.*(${val}))`);
+
+            const returnObj = {};
+
+            if (value && localPartRegex.test(value)) {
+                returnObj['localPart'] = true;
             }
 
-            return null;
+            if (value && domainRegex.test(value)) {
+                returnObj['domain'] = true;
+            }
+
+            return returnObj;
         }
     }
 
     private passwordValidator(): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
-            const username = control.get('username');
-            const password = control.get('password');
-
-            if (username.value &&
-                password.value &&
-                password.value.toLowerCase().includes(username.value)) {
-
-                const errors = { ...password.errors };
-                errors.password = true;
-                password.setErrors(errors);
-
-                return { password: true };
-            }
-
-            if (password.errors) {
-
-                if (password.errors.password) {
-                    delete password.errors.password;
-                }
-
-                if (!Object.keys(password.errors).length) {
-                    password.setErrors(null);
-                }
-            }
-
-            return null;
-        }
-    }
-
-    private matchPasswordsValidator(): ValidatorFn {
-        return (control: AbstractControl): ValidationErrors | null => {
+            const email = control.get('email');
             const password = control.get('password');
             const repeatPassword = control.get('repeatPassword');
+            const returnObj = {};
+
+            if (email.value &&
+                password.value &&
+                password.value.toLowerCase().includes(email.value)) {
+
+                password.setErrors({ ...password.errors, containsEmail: true });
+
+                returnObj['containsEmail'] = true;
+            }
 
             if (password &&
                 repeatPassword &&
                 password.value !== repeatPassword.value) {
 
-                const errors = { ...repeatPassword.errors };
-                errors.match = true;
-                repeatPassword.setErrors(errors);
+                repeatPassword.setErrors({ ...repeatPassword.errors, mismatch: true });
 
-                return { match: true };
+                returnObj['mismatch'] = true;
             }
 
-            if (repeatPassword.errors) {
+            if (!returnObj['containsEmail'] &&
+                password.errors?.containsEmail &&
+                Object.keys(password.errors).length === 1) {
 
-                if (repeatPassword.errors.match) {
-                    delete repeatPassword.errors.match;
-                }
-
-                if (!Object.keys(repeatPassword.errors).length) {
-                    repeatPassword.setErrors(null);
-                }
+                password.setErrors(null);
             }
 
-            return null;
+            if (!returnObj['mismatch'] &&
+                repeatPassword.errors?.mismatch &&
+                Object.keys(repeatPassword.errors).length === 1) {
+
+                repeatPassword.setErrors(null);
+            }
+
+            return returnObj;
         }
     }
 }
