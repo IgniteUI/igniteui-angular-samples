@@ -13,7 +13,9 @@ import {
     IgxPrefixModule,
     IgxSuffixModule,
     IgxToastModule,
-    IgxToggleModule
+    IgxToggleModule,
+    IgxTreeModule,
+    IgxTreeGridModule
 } from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class DropDownConfigGenerator implements IConfigGenerator {
@@ -120,6 +122,28 @@ export class DropDownConfigGenerator implements IConfigGenerator {
                     'IgxToggleModule', 'IgxForOfModule', 'HttpClientModule'],
                 ngProviders: ['RemoteNWindService']
             })
+        }));
+
+        configs.push(new Config({
+            component: 'DropdownTreeHierarchicalSelectionComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxDropDownModule', 'DropdownTreeHierarchicalSelectionComponent',
+                    'IgxButtonModule', 'IgxToggleModule', 'IgxTreeModule', 'IgxChipsModule'],
+                ngDeclarations: ['DropdownTreeHierarchicalSelectionComponent'],
+                ngImports: ['IgxDropDownModule', 'IgxButtonModule', 'IgxToggleModule', 'IgxTreeModule', 'IgxChipsModule']
+            }),
+            shortenComponentPathBy: '/data-entries/dropdown/'
+        }));
+
+        configs.push(new Config({
+            component: 'DropdownTreeGridHierarchicalSelectionComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxDropDownModule', 'DropdownTreeGridHierarchicalSelectionComponent',
+                    'IgxButtonModule', 'IgxToggleModule', 'IgxTreeGridModule', 'IgxChipsModule'],
+                ngDeclarations: ['DropdownTreeGridHierarchicalSelectionComponent'],
+                ngImports: ['IgxDropDownModule', 'IgxButtonModule', 'IgxToggleModule', 'IgxTreeGridModule', 'IgxChipsModule']
+            }),
+            shortenComponentPathBy: '/data-entries/dropdown/'
         }));
 
         return configs;
