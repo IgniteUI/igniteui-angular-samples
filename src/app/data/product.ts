@@ -124,7 +124,7 @@ export const DATA: any[] = [{
     ProductName: "Succulent",
     UnitPrice: 15.00,
     UnitsInStock: 52,
-    ImageURL: 'https://cdn.pixabay.com/photo/2015/12/08/00/35/plant-1081856_960_720.jpg',
+    ImageURL: 'https://cdn.pixabay.com/photo/2017/01/24/03/53/plant-2004483_640.jpg',
     OrderDate: new Date("2018-03-28"),
     icons: ['favorite', 'share']
   }, {
@@ -141,7 +141,7 @@ export const DATA: any[] = [{
     ProductName: "Nightstand",
     UnitPrice: 47.000,
     UnitsInStock: 0,
-    ImageURL: 'https://cdn.pixabay.com/photo/2016/02/18/22/15/bedside-1208194_960_720.jpg',
+    ImageURL: 'https://cdn.pixabay.com/photo/2018/01/23/20/48/hotel-3102377_640.jpg',
     OrderDate: new Date("2005-09-27"),
     icons: ['favorite', 'share']
   }, {
