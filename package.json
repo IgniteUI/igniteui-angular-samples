@@ -37,7 +37,8 @@
     "repositoryfyAngularDemosCrm": "gulp repositoryfyAngularDemosCrm",
     "repositoryfyAngularDemosCrm:prod": "gulp repositoryfyAngularDemosCrm --configuration production",
     "build:stats": "ng build --stats-json",
-    "analyze": "webpack-bundle-analyzer dist/app/stats.json"
+    "analyze": "webpack-bundle-analyzer dist/app/stats.json",
+    "postinstall": "gulp copyGitHooks"
   },
   "repository": {
     "type": "git",
