@@ -128,9 +128,9 @@ export class DropDownConfigGenerator implements IConfigGenerator {
             component: 'DropdownTreeHierarchicalSelectionComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxDropDownModule', 'DropdownTreeHierarchicalSelectionComponent',
-                    'IgxButtonModule', 'IgxToggleModule', 'IgxTreeModule', 'IgxChipsModule'],
+                    'IgxButtonModule', 'IgxToggleModule', 'IgxTreeModule', 'IgxChipModule'],
                 ngDeclarations: ['DropdownTreeHierarchicalSelectionComponent'],
-                ngImports: ['IgxDropDownModule', 'IgxButtonModule', 'IgxToggleModule', 'IgxTreeModule', 'IgxChipsModule']
+                ngImports: ['IgxDropDownModule', 'IgxButtonModule', 'IgxToggleModule', 'IgxTreeModule', 'IgxChipModule']
             }),
             shortenComponentPathBy: '/data-entries/dropdown/'
         }));
@@ -139,9 +139,9 @@ export class DropDownConfigGenerator implements IConfigGenerator {
             component: 'DropdownTreeGridHierarchicalSelectionComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxDropDownModule', 'DropdownTreeGridHierarchicalSelectionComponent',
-                    'IgxButtonModule', 'IgxToggleModule', 'IgxTreeGridModule', 'IgxChipsModule'],
+                    'IgxButtonModule', 'IgxToggleModule', 'IgxTreeGridModule', 'IgxChipModule'],
                 ngDeclarations: ['DropdownTreeGridHierarchicalSelectionComponent'],
-                ngImports: ['IgxDropDownModule', 'IgxButtonModule', 'IgxToggleModule', 'IgxTreeGridModule', 'IgxChipsModule']
+                ngImports: ['IgxDropDownModule', 'IgxButtonModule', 'IgxToggleModule', 'IgxTreeGridModule', 'IgxChipModule']
             }),
             shortenComponentPathBy: '/data-entries/dropdown/'
         }));
