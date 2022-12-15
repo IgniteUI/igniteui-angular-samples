@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { IGridStateOptions, IgxGridStateDirective, IgxGridComponent, NoopSortingStrategy } from 'igniteui-angular';
+import { IGridStateOptions, IgxGridStateDirective, IgxGridComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { FinancialDataService } from '../../services/financial.service';
@@ -17,7 +17,6 @@ export class GridStatePersistenceSampleComponent {
     public grid: IgxGridComponent;
     @ViewChild(IgxGridStateDirective, { static: true })
     public state!: IgxGridStateDirective;
-    public customStrategy = NoopSortingStrategy.instance();
     public data: Observable<any[]>;
     public options: IGridStateOptions = {
         rowSelection: true,
@@ -47,7 +46,9 @@ export class GridStatePersistenceSampleComponent {
     public restoreState() {
         const state = window.sessionStorage.getItem('grid-state');
         this.state.stateParsed.pipe(take(1)).subscribe(parsedState => {
-            parsedState.sorting.forEach(expression => expression.strategy = NoopSortingStrategy.instance());
+            parsedState.columns.forEach(column => {
+                column.sortable = false;
+            });
         });
         this.state.setState(state as string);
     }
