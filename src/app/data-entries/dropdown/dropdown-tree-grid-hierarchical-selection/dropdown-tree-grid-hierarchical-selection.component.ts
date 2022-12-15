@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IBaseChipEventArgs, IgxTreeGridComponent, IRowSelectionEventArgs } from 'igniteui-angular';
 import { IBaseCancelableBrowserEventArgs } from 'igniteui-angular/lib/core/utils';
-import { EMPLOYEE_DATA } from '../../../data/nested-employee-data';
+import { EMPLOYEE_DATA } from './nested-employee-data';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-tree-grid-hierarchical-selection',

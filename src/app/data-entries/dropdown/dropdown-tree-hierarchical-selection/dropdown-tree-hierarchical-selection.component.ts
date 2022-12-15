@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IBaseChipEventArgs, IgxChipComponent, IgxTreeComponent, ITreeNodeSelectionEvent } from 'igniteui-angular';
 import { IBaseCancelableBrowserEventArgs } from 'igniteui-angular/lib/core/utils';
-import { COUNTRIES } from '../../../data/countries';
+import { COUNTRIES } from './countries';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-tree-hierarchical-selection',
