@@ -126,6 +126,7 @@ export class DropDownConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            additionalFiles: ['/src/app/data-entries/dropdown/dropdown-tree-hierarchical-selection/countries.ts'],
             component: 'DropdownTreeHierarchicalSelectionComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxDropDownModule', 'DropdownTreeHierarchicalSelectionComponent',
@@ -137,6 +138,7 @@ export class DropDownConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            additionalFiles: ['/src/app/data-entries/dropdown/dropdown-tree-grid-hierarchical-selection/nested-employee-data.ts'],
             component: 'DropdownTreeGridHierarchicalSelectionComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxDropDownModule', 'DropdownTreeGridHierarchicalSelectionComponent',
