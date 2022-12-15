@@ -19,7 +19,6 @@ export class GridStatePersistenceSampleComponent {
     public state!: IgxGridStateDirective;
     
     public data: Observable<any[]>;
-    public customStrategy = NoopSortingStrategy.instance();
     public options: IGridStateOptions = {
         rowSelection: true,
         filtering: true,
