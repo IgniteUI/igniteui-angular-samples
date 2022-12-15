@@ -6,7 +6,7 @@
     </div>
     <div class="sample-wrapper">
         <div class="grid-wrapper">
-            <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data | async" [height]="'550px'" width="100%" [cellSelection]="'none'"
+            <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data | async" [height]="'550px'" [primaryKey]="'ID'" width="100%" [cellSelection]="'none'"
             [rowSelection]="selectionMode" [selectedRows]="selectedRows" [hideRowSelectors]="hideRowSelectors" [allowFiltering]="true"
             (rowSelectionChanging)="handleRowSelection($event)">
             <igx-column [field]="'Category'"></igx-column>
