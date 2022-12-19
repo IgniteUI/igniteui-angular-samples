@@ -68,11 +68,11 @@ export class ReactiveFormCustomValidationComponent {
     }
 
     public get togglePasswordVisibility() {
-        return this.showPassword ? 'visibility' : 'visibility_off';
+        return this.showPassword ? 'visibility_off' : 'visibility';
     }
 
     public get toggleRepeatVisibility() {
-        return this.showRepeat ? 'visibility' : 'visibility_off';
+        return this.showRepeat ? 'visibility_off' : 'visibility';
     }
 
     public onSubmit() {

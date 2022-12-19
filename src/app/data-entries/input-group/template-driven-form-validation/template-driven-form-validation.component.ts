@@ -26,7 +26,7 @@ export class TemplateDrivenFormValidationComponent {
     };
 
     public get togglePasswordVisibility() {
-        return this.showPassword ? 'visibility' : 'visibility_off';
+        return this.showPassword ? 'visibility_off' : 'visibility';
     }
 
     public onSubmit() {
