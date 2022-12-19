@@ -8,6 +8,14 @@ export interface User
     repeatPassword: FormControl<string>;
 }
 
+export interface ValidatorErrors
+{
+    localPart?: boolean;
+    domain?: boolean;
+    containsEmail?: boolean;
+    mismatch?: boolean;
+}
+
 @Component({
   selector: 'app-reactive-form-custom-validation',
   templateUrl: './reactive-form-custom-validation.component.html',
@@ -65,15 +73,14 @@ export class ReactiveFormCustomValidationComponent {
             const value = control.value?.toLowerCase();
             const localPartRegex = new RegExp(`(?<=(${val})).*[@]`);
             const domainRegex = new RegExp(`(?<=[@])(?=.*(${val}))`);
-
-            const returnObj = {};
+            const returnObj: ValidatorErrors = {};
 
             if (value && localPartRegex.test(value)) {
-                returnObj['localPart'] = true;
+                returnObj.localPart = true;
             }
 
             if (value && domainRegex.test(value)) {
-                returnObj['domain'] = true;
+                returnObj.domain = true;
             }
 
             return returnObj;
@@ -85,15 +92,14 @@ export class ReactiveFormCustomValidationComponent {
             const email = control.get('email');
             const password = control.get('password');
             const repeatPassword = control.get('repeatPassword');
-            const returnObj = {};
+            const returnObj: ValidatorErrors = {};
 
             if (email.value &&
                 password.value &&
                 password.value.toLowerCase().includes(email.value)) {
 
                 password.setErrors({ ...password.errors, containsEmail: true });
-
-                returnObj['containsEmail'] = true;
+                returnObj.containsEmail = true;
             }
 
             if (password &&
@@ -101,22 +107,15 @@ export class ReactiveFormCustomValidationComponent {
                 password.value !== repeatPassword.value) {
 
                 repeatPassword.setErrors({ ...repeatPassword.errors, mismatch: true });
-
-                returnObj['mismatch'] = true;
+                returnObj.mismatch = true;
             }
 
-            if (!returnObj['containsEmail'] &&
-                password.errors?.containsEmail &&
-                Object.keys(password.errors).length === 1) {
-
-                password.setErrors(null);
+            if (!returnObj.containsEmail && password.errors?.containsEmail) {
+                password.setValue(password.value);
             }
 
-            if (!returnObj['mismatch'] &&
-                repeatPassword.errors?.mismatch &&
-                Object.keys(repeatPassword.errors).length === 1) {
-
-                repeatPassword.setErrors(null);
+            if (!returnObj.mismatch && repeatPassword.errors?.mismatch) {
+                repeatPassword.setValue(repeatPassword.value);
             }
 
             return returnObj;
