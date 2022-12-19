@@ -15,8 +15,11 @@
 
             <igx-input-group>
                 <label igxLabel for="password">Password</label>
-                <input igxInput name="password" type="password" formControlName="password" />
+                <input igxInput name="password" [type]="showPassword ? 'text' : 'password'" formControlName="password" />
                 <igx-hint *ngIf="password.errors?.minlength">Password should be at least 8 characters</igx-hint>
+                <igx-icon *ngIf="password.value" igxSuffix (click)="showPassword = !showPassword">
+                    {{ togglePasswordVisibility }}
+                </igx-icon>
             </igx-input-group>
 
             <button igxButton="raised" igxRipple type="submit" [disabled]="!registrationForm.valid">Submit</button>

@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
-export interface User
+interface User
 {
     email: FormControl<string>;
     password: FormControl<string>;
     repeatPassword: FormControl<string>;
 }
 
-export interface ValidatorErrors
+interface ValidatorErrors
 {
     localPart?: boolean;
     domain?: boolean;
@@ -23,44 +23,56 @@ export interface ValidatorErrors
 })
 export class ReactiveFormCustomValidationComponent {
     private pattern = `^(?=.*[A-Za-z])(?=.*\\d)(?=.*[~!@?#+$"'%^&:;*\\-_=.,<>])[A-Za-z\\d~!@?#+$"'%^&:;*\\-_=.,<>]+$`;
+    public registrationForm: FormGroup<User>;
+    public showPassword: boolean = false;
+    public showRepeat: boolean = false;
 
-    public registrationForm = new FormGroup<User>({
-        email: new FormControl<string>('', {
-            nonNullable: true,
-            validators: [
-                Validators.required,
-                Validators.email,
-                this.emailValidator('infragistics')
-            ]
-        }),
-        password: new FormControl<string>('', {
-            nonNullable: true,
-            validators: [
-                Validators.required,
-                Validators.minLength(8),
-                Validators.pattern(this.pattern)
-            ]
-        }),
-        repeatPassword: new FormControl<string>('', {
-            nonNullable: true,
-            validators: [Validators.required]
-        })
-    },
-    {
-        validators: [this.passwordValidator()]
-    });
+    constructor(fb: FormBuilder) {
+        this.registrationForm = fb.group({
+            email: ['', {
+                nonNullable: true,
+                validators: [
+                    Validators.required,
+                    Validators.email,
+                    this.emailValidator('infragistics')
+                ]
+            }],
+            password: ['', {
+                nonNullable: true,
+                validators: [
+                    Validators.required,
+                    Validators.minLength(8),
+                    Validators.pattern(this.pattern)
+                ]
+            }],
+            repeatPassword: ['', {
+                nonNullable: true,
+                validators: [Validators.required]
+            }]
+        },
+        {
+            validators: [this.passwordValidator()]
+        });
+    }
 
-
-    get email() {
+    public get email() {
         return this.registrationForm.get('email');
     }
 
-    get password() {
+    public get password() {
         return this.registrationForm.get('password');
     }
 
-    get repeatPassword() {
+    public get repeatPassword() {
         return this.registrationForm.get('repeatPassword');
+    }
+
+    public get togglePasswordVisibility() {
+        return this.showPassword ? 'visibility' : 'visibility_off';
+    }
+
+    public get toggleRepeatVisibility() {
+        return this.showRepeat ? 'visibility' : 'visibility_off';
     }
 
     public onSubmit() {
@@ -94,18 +106,16 @@ export class ReactiveFormCustomValidationComponent {
             const repeatPassword = control.get('repeatPassword');
             const returnObj: ValidatorErrors = {};
 
-            if (email.value &&
-                password.value &&
-                password.value.toLowerCase().includes(email.value)) {
-
+            if (email.value
+                && password.value
+                && password.value.toLowerCase().includes(email.value)) {
                 password.setErrors({ ...password.errors, containsEmail: true });
                 returnObj.containsEmail = true;
             }
 
-            if (password &&
-                repeatPassword &&
-                password.value !== repeatPassword.value) {
-
+            if (password
+                && repeatPassword
+                && password.value !== repeatPassword.value) {
                 repeatPassword.setErrors({ ...repeatPassword.errors, mismatch: true });
                 returnObj.mismatch = true;
             }
