@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     GridColumnDataType,
-    IgxColumnComponent,
+    ColumnType,
     IgxDateFilteringOperand,
     IgxHierarchicalGridComponent,
     IgxNumberFilteringOperand,
@@ -24,7 +24,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
     public overlaySettings: OverlaySettings;
     public displayDateFormat = 'MMM d, y';
 
-    private _filterValues = new Map<IgxColumnComponent, any>();
+    private _filterValues = new Map<ColumnType, any>();
 
     constructor() {
         this.localdata = SINGERS;
@@ -37,7 +37,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
 
     public formatter = (a) => a;
 
-    public getFilterValue(column: IgxColumnComponent): any {
+    public getFilterValue(column: ColumnType): any {
         return this._filterValues.has(column) ? this._filterValues.get(column) : null;
     }
 
@@ -45,11 +45,11 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
         event.stopImmediatePropagation();
     }
 
-    public onInput(input: any, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
+    public onInput(input: any, column: any) {
         this._filterValues.set(column, input.value);
 
         if (input.value === '') {
-            grid.clearFilter(column.field);
+            column.grid.clearFilter(column.field);
             return;
         }
 
@@ -61,13 +61,13 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
             default:
                 operand = IgxStringFilteringOperand.instance().condition('contains');
         }
-        grid.filter(column.field,
+        column.grid.filter(column.field,
             this.transformValue(input.value, column), operand, column.filteringIgnoreCase);
     }
 
-    public clearInput(column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
+    public clearInput(column: any) {
         this._filterValues.delete(column);
-        grid.clearFilter(column.field);
+        column.grid.clearFilter(column.field);
     }
 
     public onClick(inputGroup) {
@@ -76,18 +76,18 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
         }
     }
 
-    public onDateSelected(event, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
+    public onDateSelected(event, column: any) {
         if (!event) {
-            this.clearInput(column, grid);
+            this.clearInput(column);
             return;
         }
 
         this._filterValues.set(column, event);
-        grid.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'),
+        column.grid.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'),
             column.filteringIgnoreCase);
     }
 
-    private transformValue(value: any, column: IgxColumnComponent): any {
+    private transformValue(value: any, column: ColumnType): any {
         if (column.dataType === GridColumnDataType.Number) {
             value = parseFloat(value);
         }

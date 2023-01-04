@@ -1,5 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxCalendarComponent } from 'igniteui-angular';
+import { registerLocaleData } from '@angular/common';
+import localeDE from '@angular/common/locales/de';
+import localeFR from '@angular/common/locales/fr';
+import localeAR from '@angular/common/locales/ar';
+import localeZH from '@angular/common/locales/zh';
 
 @Component({
     selector: 'app-calendar',
@@ -17,5 +22,10 @@ export class CalendarSample2Component implements OnInit{
     public ngOnInit() {
         this.formatOptions = { day: '2-digit', month: 'long', weekday: 'long', year: 'numeric' };
         this.formatViews = { day: true, month: true, year: true };
+
+        registerLocaleData(localeDE);
+        registerLocaleData(localeFR);
+        registerLocaleData(localeAR);
+        registerLocaleData(localeZH);
     }
 }

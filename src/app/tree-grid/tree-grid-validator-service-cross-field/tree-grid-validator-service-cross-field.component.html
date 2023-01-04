@@ -1,7 +1,10 @@
+<div class="top-row">
+    <igx-switch [(ngModel)]="rowEdit">Row edit</igx-switch>
+</div>
 <div class="grid__wrapper">
     <igx-tree-grid [igxPreventDocumentScroll]="true" #treeGrid [batchEditing]="true" [data]="data" primaryKey="ID"
         foreignKey="ParentID" [width]="'100%'" [height]="'500px'" [rowEditable]="true" [pinning]="pinningConfig"
-        (formGroupCreated)="formCreateHandler($event)">
+        (formGroupCreated)="formCreateHandler($event)" (cellEdit)="editHandler($event)" (rowEdit)="editHandler($event)">
         <igx-column field="ID" header="ID" dataType="number" [editable]="false"></igx-column>
         <igx-column field="Age" header="Age" dataType="number" [editable]="true" required min="18" max="99"></igx-column>
         <igx-column field="Name" header="Full Name" dataType="string" [editable]="true" required></igx-column>
@@ -42,6 +45,8 @@
             </ng-template>
         </igx-column>
     </igx-tree-grid>
+    <div class="buttons-wrapper">
+        <button igxButton [disabled]="treeGrid.transactions.getAggregatedChanges(false).length < 1" (click)="commit()">Commit</button>
+    </div>
 </div>
 
-<button igxButton [disabled]="treeGrid.transactions.getAggregatedChanges(false).length < 1" (click)="commit()">Commit</button>

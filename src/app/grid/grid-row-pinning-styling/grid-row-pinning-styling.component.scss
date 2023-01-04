@@ -9,7 +9,7 @@ $custom-theme: grid-theme(
 
 :host {
     ::ng-deep{
-        @include grid($custom-theme);
+        @include css-vars($custom-theme);
     }
 }
 

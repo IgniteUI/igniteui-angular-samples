@@ -10,7 +10,9 @@ $custom-theme: grid-theme(
     $cell-active-border-color: #FFCD0F
 );
 
-@include grid($custom-theme);
+:host {
+	@include css-vars($custom-theme);
+}
 
 .header-icon {
     font-size: 1.1em;

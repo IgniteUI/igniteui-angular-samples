@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxColumnComponent, IgxGridComponent } from 'igniteui-angular';
+import { ColumnType, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/financialData';
 
 @Component({
@@ -24,7 +24,7 @@ export class GridMovingSampleComponent {
         return '$' + value.toFixed(2);
     }
 
-    public toggleColumnPinning(column: IgxColumnComponent) {
+    public toggleColumnPinning(column: ColumnType) {
         column.pinned ? column.unpin() : column.pin();
     }
 }

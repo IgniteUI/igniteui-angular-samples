@@ -5,7 +5,7 @@
         $background: #0568ab
     );
 
-    @include list($my-list-theme);
+    @include css-vars($my-list-theme);
 }
 
 :host {
@@ -14,7 +14,7 @@
 }
 
 .list-sample {
-    box-shadow: elevation($elevation: 2);
+    box-shadow: elevation(2);
 }
 
 igx-icon {

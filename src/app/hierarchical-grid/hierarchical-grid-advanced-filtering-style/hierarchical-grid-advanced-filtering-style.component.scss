@@ -9,7 +9,6 @@ $custom-grid: grid-theme(
 );
 
 $custom-button: button-theme(
-    $palette: $dark-material-palette,
     $schema: $dark-material-schema,
     $background: $black,
     $foreground: $yellow,
@@ -21,7 +20,6 @@ $custom-button: button-theme(
 );
 
 $custom-raised-button: button-theme(
-    $palette: $dark-material-palette,
     $schema: $dark-material-schema,
     $background: $yellow,
     $foreground: $black,
@@ -30,7 +28,6 @@ $custom-raised-button: button-theme(
 );
 
 $custom-button-group: button-group-theme(
-    $palette: $dark-material-palette,
     $schema: $dark-material-schema,
     $item-background:  $black,
     $item-text-color: $yellow,
@@ -41,7 +38,6 @@ $custom-button-group: button-group-theme(
 );
 
 $custom-input-group: input-group-theme(
-    $palette: $dark-material-palette,
     $schema: $dark-material-schema,
     $idle-text-color: $yellow,
     $focused-text-color: $yellow,
@@ -51,14 +47,12 @@ $custom-input-group: input-group-theme(
 );
 
 $custom-chip: chip-theme(
-    $palette: $dark-material-palette,
     $schema: $dark-material-schema,
     $background: $yellow,
     $text-color: $black
 );
 
 $custom-drop-down: drop-down-theme(
-    $palette: $dark-material-palette,
     $schema: $dark-material-schema,
     $background-color: $black,
     $item-text-color: $yellow,
@@ -79,17 +73,17 @@ $custom-drop-down: drop-down-theme(
     margin: 16px;
 
     ::ng-deep {
-        @include grid($custom-grid);
+        @include css-vars($custom-grid);
 
         igx-advanced-filtering-dialog {
-            @include button($custom-button);
-            @include button-group($custom-button-group);
-            @include input-group($custom-input-group);
-            @include chip($custom-chip);
-            @include drop-down($custom-drop-down);
+            @include css-vars($custom-button);
+            @include css-vars($custom-button-group);
+            @include css-vars($custom-input-group);
+            @include css-vars($custom-chip);
+            @include css-vars($custom-drop-down);
 
             .igx-excel-filter__apply {
-                @include button($custom-raised-button);
+                @include css-vars($custom-raised-button);
             }
 
             .igx-filter-empty__title {

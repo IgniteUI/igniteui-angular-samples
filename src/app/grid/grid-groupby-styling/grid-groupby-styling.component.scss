@@ -32,8 +32,8 @@ $custom-chips-theme: chip-theme(
     padding-top: 16px;
     margin: 0 16px;
 
-    ::ng-deep {
-        @include grid($custom-theme);
-        @include chip($custom-chips-theme);
-    }
+	::ng-deep {
+		@include css-vars($custom-theme);
+		@include css-vars($custom-chips-theme);
+	}
 }

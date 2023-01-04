@@ -7,13 +7,12 @@ $custom-column-actions-theme: column-actions-theme(
 
 $custom-button: button-theme($foreground: gold, $disabled-foreground: black);
 
-:host {
-    ::ng-deep {
-        @include column-actions($custom-column-actions-theme);
-        .igx-column-actions {
-            @include button($custom-button);
-        }
-    }
+:host ::ng-deep {
+	@include css-vars($custom-column-actions-theme);
+
+	.igx-column-actions {
+		@include css-vars($custom-button);
+	}
 }
 
 .hgrid_wrapper {

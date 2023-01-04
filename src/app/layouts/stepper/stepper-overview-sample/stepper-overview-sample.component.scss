@@ -40,10 +40,9 @@ $sample-gap: 20px;
 }
 
 $my-card: card-theme(
-	$palette: $default-palette,
 	$schema: $light-schema,
 	$border-radius: rem(8px),
-	$content-text-color: color($default-palette, 'grays', 900),
+	$content-text-color: color($default-palette, 'gray', 900),
 );
 
 @include card($my-card);

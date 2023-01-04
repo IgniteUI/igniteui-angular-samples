@@ -34,6 +34,8 @@ import { TriggerForDirective } from './dropdown/dropdown-sample-3/dropdown-sampl
 import { DropDownSample4Component } from './dropdown/dropdown-sample-4/dropdown-sample-4.component';
 import { DropDownSample5Component } from './dropdown/dropdown-sample-5/dropdown-sample-5.component';
 import { DropDownStylingComponent } from './dropdown/dropdown-styling/dropdown-styling.component';
+import { DropdownTreeHierarchicalSelectionComponent } from './dropdown/dropdown-tree-hierarchical-selection/dropdown-tree-hierarchical-selection.component';
+import { DropdownTreeGridHierarchicalSelectionComponent } from './dropdown/dropdown-tree-grid-hierarchical-selection/dropdown-tree-grid-hierarchical-selection.component';
 import { InputGroupSample1Component } from './input-group/input-group-sample-1/input-group-sample-1.component';
 import { InputGroupSample2Component } from './input-group/input-group-sample-2/input-group-sample-2.component';
 import { InputGroupSample3Component } from './input-group/input-group-sample-3/input-group-sample-3.component';
@@ -59,6 +61,9 @@ import { SwitchSample1Component } from './switch/switch-sample-1/switch-sample-1
 import { SwitchSample2Component } from './switch/switch-sample-2/switch-sample-2.component';
 import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.component';
 import { RatingInFormComponent } from './rating/rating-form/rating-form.component';
+import { TemplateDrivenFormValidationComponent } from './input-group/template-driven-form-validation/template-driven-form-validation.component';
+import { ReactiveFormValidationComponent } from './input-group/reactive-form-validation/reactive-form-validation.component';
+import { ReactiveFormCustomValidationComponent } from './input-group/reactive-form-custom-validation/reactive-form-custom-validation.component';
 
 export const dataEntriesRoutes: Routes = [
     {
@@ -212,6 +217,16 @@ export const dataEntriesRoutes: Routes = [
         path: 'dropdown-styling'
     },
     {
+        component: DropdownTreeHierarchicalSelectionComponent,
+        data: dataEntriesRoutesData['dropdown-tree-hierarchical-selection'],
+        path: 'dropdown-tree-hierarchical-selection'
+    },
+    {
+        component: DropdownTreeGridHierarchicalSelectionComponent,
+        data: dataEntriesRoutesData['dropdown-tree-grid-hierarchical-selection'],
+        path: 'dropdown-tree-grid-hierarchical-selection'
+    },
+    {
         component: DropDownSample4Component,
         data: dataEntriesRoutesData['dropdown-sample-4'],
         path: 'dropdown-sample-4'
@@ -350,6 +365,21 @@ export const dataEntriesRoutes: Routes = [
         component: TypedFormComponent,
         data: dataEntriesRoutesData['typed-form'],
         path: 'typed-form'
+    },
+    {
+        component: TemplateDrivenFormValidationComponent,
+        data: dataEntriesRoutesData['template-driven-form-validation'],
+        path: 'template-driven-form-validation'
+    },
+    {
+        component: ReactiveFormValidationComponent,
+        data: dataEntriesRoutesData['reactive-form-validation'],
+        path: 'reactive-form-validation'
+    },
+    {
+        component: ReactiveFormCustomValidationComponent,
+        data: dataEntriesRoutesData['reactive-form-custom-validation'],
+        path: 'reactive-form-custom-validation'
     }
 ];
 

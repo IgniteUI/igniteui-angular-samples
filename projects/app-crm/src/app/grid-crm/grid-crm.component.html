@@ -1,4 +1,4 @@
-<div class="grid__wrapper">
+<div [ngClass]="{'grid__wrapper': true, 'dark_grid': dark === true }">
     <igx-grid #grid1 [igxPreventDocumentScroll]="true" id="grid1" [data]="localData" [height]="'430px'" [moving]="true" [width]="'100%'" [rowSelection]="selectionMode" displayDensity="cosy" rowHeight="50" [allowFiltering]="true">
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>
@@ -10,7 +10,7 @@
                 <div class="crm-toolbar-template">
                     <div class="crm-sample-toolbar__title">
                         <span class="logo-propeller">
-                            <img width="28px" height="28px" src="assets/images/propeller-logo.svg" class="animated-fan" />
+                            <img width="28px" height="28px" src="assets/images/grid-crm/propeller-logo.svg" class="animated-fan" />
                         </span>
                         <span class="crm-sample-toolbar__ellipsis">Business Propeller</span>
                     </div>
@@ -35,7 +35,7 @@
                                     </span>
                                 </div>
                                 <div class="caseSensitiveButton">
-                                    <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="updateSearch()" [igxButtonBackground]="caseSensitive? 'rgb(73, 180, 254)' : 'transparent'">
+                                    <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="updateSearch()" [class]="caseSensitive? 'case-sensitive--active' : ''">
                                         <igx-icon class="caseSensitiveIcon" family="material">text_fields</igx-icon>
                                     </button>
                                 </div>
@@ -141,7 +141,7 @@
         </igx-column>
 
         <igx-column field="estimated_sales" header="Possible Sales ($)" [sortable]="true" width="150" dataType="number" [hasSummary]="false" [summaries]="dealsSummary" [resizable]="true"  [filterable]="false">
-            <ng-template igxCell let-cell="call" let-val>
+            <ng-template igxCell let-cell="cell" let-val>
                 {{ formatValue(val) }}
             </ng-template>
         </igx-column>

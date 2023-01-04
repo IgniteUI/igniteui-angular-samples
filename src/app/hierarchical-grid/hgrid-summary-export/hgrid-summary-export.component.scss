@@ -1,0 +1,76 @@
+.sample__wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding: 16px;
+	height: 100%;
+	overflow-y: auto;
+}
+
+igx-buttongroup {
+	max-width: 450px;
+	flex: 1;
+}
+
+.summary-temp {
+	display: flex;
+	flex-direction: column;
+	margin: 0 1px;
+	font-size: 14px;
+	line-height: 24px;
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	span {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 4px;
+		justify-content: space-between;
+		color: hsla(var(--ig-gray-900));
+
+		span {
+			user-select: all;
+			max-width: 300px;
+			padding-right: 8px;
+		}
+
+		strong {
+			font-size: 12px;
+			text-transform: uppercase;
+			min-width: 70px;
+			justify-self: flex-start;
+			text-align: left;
+			color: hsla(var(--ig-secondary-600));
+			user-select: none;
+		}
+	}
+
+	> * {
+		padding: 8px 0;
+		line-height: 18px;
+		border-bottom: 1px dashed hsla(var(--ig-gray-400));
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+
+}
+
+::-webkit-scrollbar {
+	width: 5px !important;
+	height: 5px !important;
+}
+
+.controls-wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	gap: 16px;
+}
+
+.button-container {
+    margin: 25px auto;
+}

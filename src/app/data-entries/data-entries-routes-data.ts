@@ -33,6 +33,8 @@ export const dataEntriesRoutesData = {
     "dropdown-sample-3": { displayName: "Dropdown Headers", parentName: "Dropdown" },
     "dropdown-sample-5": { displayName: "Dropdown Groups", parentName: "Dropdown" },
     "dropdown-styling": { displayName: "Dropdown Styling", parentName: "Dropdown" },
+    "dropdown-tree-hierarchical-selection": { displayName: "Dropdown Tree Hierarchical Selection", parentName: "Dropdown" },
+    "dropdown-tree-grid-hierarchical-selection": { displayName: "Dropdown Tree Grid Hierarchical Selection", parentName: "Dropdown" },
     "dropdown-sample-4": { displayName: "Input Dropdown Selection", parentName: "Dropdown" },
     "input-group-sample-1": { displayName: "Simple Input Group", parentName: "Input Group" },
     "input-group-sample-2": { displayName: "Input Required", parentName: "Input Group" },
@@ -58,5 +60,8 @@ export const dataEntriesRoutesData = {
     "select-input-directives": { displayName: "Select Input Directives", parentName: "Select" },
     "select-header-footer": { displayName: "Select with Header&Footer Templates", parentName: "Select" },
     "input-text-selection": { displayName: "Input with Text Selection", parentName: "Input Group" },
-    "typed-form": { displayName: "Typed Form", parentName: "Input Group" }
+    "typed-form": { displayName: "Typed Form", parentName: "Input Group" },
+    "template-driven-form-validation": { displayName: "Template Driven Form Validation", parentName: "Input Group" },
+    "reactive-form-validation": { displayName: "Reactive Form Validation", parentName: "Input Group" },
+    "reactive-form-custom-validation": { displayName: "Reactive Form Custom Validation", parentName: "Input Group" }
 };

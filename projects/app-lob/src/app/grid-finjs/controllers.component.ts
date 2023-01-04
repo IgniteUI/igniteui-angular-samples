@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {
     IButtonGroupEventArgs, IChangeSwitchEventArgs, IgxButtonGroupComponent,
     IgxSliderComponent, IgxToastComponent, ISliderValueChangeEventArgs, VerticalAlignment }
@@ -24,6 +25,7 @@ export class ControllerComponent implements OnInit, OnDestroy {
 
     public volume = 1000;
     public theme = false;
+    public isThemeSwitchVisible = true;
     public frequency = 500;
     public controls = [
         {
@@ -52,6 +54,8 @@ export class ControllerComponent implements OnInit, OnDestroy {
     private frequencyChanged$: Observable<ISliderValueChangeEventArgs>;
     private frequencyChangedSubscription: Subscription;
 
+    constructor(private router: ActivatedRoute) {}
+
     public ngOnInit(): void {
         this.volumeChanged$ = this.volumeSlider.valueChange.pipe(debounce(() => timer(200)));
         this.volumeChangedSubscription = this.volumeChanged$.subscribe(x => this.volumeChanged.emit(this.volumeSlider.value as number));
@@ -61,6 +65,11 @@ export class ControllerComponent implements OnInit, OnDestroy {
             .subscribe(() => this.frequencyChanged.emit(this.intervalSlider.value as number));
         
         this.toast.positionSettings.verticalDirection = VerticalAlignment.Middle;
+
+        // Hide theme switcher
+        if (this.router.snapshot.queryParamMap.get('theme-switch') === 'false') {
+            this.isThemeSwitchVisible = false;
+        }
     }
 
     public ngOnDestroy(): void {

@@ -3,31 +3,21 @@
 $orange: #eaa417;
 $blue: #09f;
 
-$my-palette: palette($primary: $orange, $secondary: $blue);
+$my-palette: palette($primary: $orange, $secondary: $blue, $surface: #fff);
 
 $my-drop-down-theme: drop-down-theme(
-    $palette: $my-palette,
     $header-text-color: color($my-palette, "secondary", 500)
 );
 
 $my-overlay-theme: overlay-theme(
-        $background-color: rgba(0, 153, 255, 0.3)
+    $background-color: rgba(0, 153, 255, 0.3)
 );
 
 :host {
+    @include palette($my-palette);
     display: block;
     padding: 16px;
 
-    // @include css-vars($my-drop-down-theme);
-    // @include css-vars($my-overlay-theme);
-
-    /* Using Theme Overrides to provide IE 11 support.
-     * NOTE: Theming using this approach will greatly increase the size
-     * of the output CSS. If you do not plan to target IE 11,
-     * delete this section and use the `igx-css-vars` mixin as shown above.
-    **/
-    ::ng-deep {
-        @include drop-down($my-drop-down-theme);
-        @include overlay($my-overlay-theme);
-    }
+	@include css-vars($my-drop-down-theme);
+	@include css-vars($my-overlay-theme);
 }

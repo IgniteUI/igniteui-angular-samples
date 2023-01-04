@@ -7,14 +7,12 @@ $my-secondary-color: #ffd351;
 // Create custom palette
 $my-color-palette: palette(
     $primary: $my-primary-color,
-    $secondary: $my-secondary-color
+    $secondary: $my-secondary-color,
+	$surface: #000
 );
 
 // Create expansion panel theme
 $custom-panel-theme: expansion-panel-theme(
-    $palette: $my-color-palette,
-
-    // Styling parameters
     $header-background: color($my-color-palette, "primary", 700),
     $header-focus-background: color($my-color-palette, "primary", 700),
     $header-title-color: color($my-color-palette, "secondary"),
@@ -24,26 +22,12 @@ $custom-panel-theme: expansion-panel-theme(
     $border-radius: .5
 );
 
-// Since we use igxButton in our sample we need to create button component theme to fit our styling
-// NOTE: If we define our palette in our main sass file we don't have to do that.
-$custom-button-theme: button-theme(
-    $palette: $my-color-palette,
-);
-
-// NOTE: comment this if you need IE11 support
-// :host {
-//     @include css-vars($custom-panel-theme);
-//     @include css-vars($custom-button-theme);
-// }
-
-// NOTE: Uncomment this if you need to support IE11
-// The `:host` here makes sure that all the theming will affect only this component after the ViewEncapsulation Penetration.
 :host {
+    @include palette($my-color-palette);
     // Penetrate the ViewEncapsulation
     ::ng-deep {
         // Apply the custom themes to the compoents mixins.
-        @include expansion-panel($custom-panel-theme);
-        @include button($custom-button-theme);
+        @include css-vars($custom-panel-theme);
     }
 }
 

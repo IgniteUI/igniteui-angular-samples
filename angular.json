@@ -29,8 +29,11 @@
             "buildOptimizer": false,
             "optimization": false,
             "namedChunks": true,
-            "sourceMap": false,
-            "progress": true
+            "sourceMap": true,
+            "progress": true,
+            "stylePreprocessorOptions": {
+                "includePaths": ["node_modules"]
+            }
           },
           "configurations": {
             "production": {
@@ -140,7 +143,10 @@
             },
             "progress": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "stylePreprocessorOptions": {
+                "includePaths": ["node_modules"]
+            }
           },
           "configurations": {
             "production": {
@@ -267,7 +273,10 @@
             },
             "progress": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "stylePreprocessorOptions": {
+                "includePaths": ["node_modules"]
+            }
           },
           "configurations": {
             "production": {

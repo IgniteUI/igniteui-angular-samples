@@ -4,47 +4,39 @@ $my-dark-palette: palette(
     $primary: #2466ff,
     $secondary: #FFCD0F,
     $surface: #2a2b2f,
-    $grays: #fff,
+    $gray: #fff,
 );
 
 $my-dark-color: color($my-dark-palette, 'surface');
 
 $dark-button-theme: button-theme(
-    $palette: $my-dark-palette,
     $background: color($my-dark-palette, 'secondary'),
-    $hover-background: color($my-dark-palette, 'grays', 100),
+    $hover-background: color($my-dark-palette, 'gray', 100),
     $hover-foreground: color($my-dark-palette, 'secondary')
 );
 
 $dark-grid-toolbar-theme: grid-toolbar-theme(
-    $palette: $my-dark-palette,
     $background-color: $my-dark-color,
     $title-text-color: color($my-dark-palette, 'secondary'),
     $dropdown-background: $my-dark-color,
 );
 
 $dark-column-actions-theme: column-actions-theme(
-    $palette: $my-dark-palette,
     $title-color: color($my-dark-palette, 'secondary'),
     $background-color: color($my-dark-palette, 'surface')
 );
 
 $dark-checkbox-theme: checkbox-theme(
-    $palette: $my-dark-palette,
     $tick-color: $my-dark-color,
 );
 
-$dark-input-group-theme: input-group-theme(
-    $palette: $my-dark-palette
-);
-
 :host {
+    @include palette($my-dark-palette);
     ::ng-deep {
-        @include grid-toolbar($dark-grid-toolbar-theme);
-        @include column-actions($dark-column-actions-theme);
-        @include checkbox($dark-checkbox-theme);
-        @include input-group($dark-input-group-theme);
-        @include button($dark-button-theme);
+        @include css-vars($dark-grid-toolbar-theme);
+        @include css-vars($dark-column-actions-theme);
+        @include css-vars($dark-checkbox-theme);
+        @include css-vars($dark-button-theme);
 
         .igx-grid-toolbar__actions {
             .igx-button--outlined {
