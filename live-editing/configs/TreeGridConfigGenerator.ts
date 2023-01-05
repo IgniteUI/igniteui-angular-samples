@@ -654,7 +654,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             additionalFiles: [
                 '/src/app/directives/prevent-scroll.directive.ts',
                 '/src/app/tree-grid/tree-grid-group-by-load-on-demand-sample/remoteService.ts',
-                '/src/app/data/invoiceData.ts'
+                '/src/app/data/invoiceData.ts',
+                '/src/_variables.scss',
+                '/src/_app-layout.scss'
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridGroupByLoadOnDemandComponent'],
