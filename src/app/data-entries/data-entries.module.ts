@@ -70,6 +70,9 @@ import { SwitchSample2Component } from './switch/switch-sample-2/switch-sample-2
 import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.component';
 import { TypedFormComponent } from './input-group/typed-form/typed-form.component';
 import { RatingInFormComponent } from './rating/rating-form/rating-form.component';
+import { TemplateDrivenFormValidationComponent } from './input-group/template-driven-form-validation/template-driven-form-validation.component';
+import { ReactiveFormValidationComponent } from './input-group/reactive-form-validation/reactive-form-validation.component';
+import { ReactiveFormCustomValidationComponent } from './input-group/reactive-form-custom-validation/reactive-form-custom-validation.component';
 
 @NgModule({
     declarations: [
@@ -133,7 +136,10 @@ import { RatingInFormComponent } from './rating/rating-form/rating-form.componen
         ButtonsStyleComponent,
         ButtonGroupStyleComponent,
         InputTextSelectionComponent,
-        TypedFormComponent
+        TypedFormComponent,
+        TemplateDrivenFormValidationComponent,
+        ReactiveFormValidationComponent,
+        ReactiveFormCustomValidationComponent
     ],
     imports: [
         CommonModule,
