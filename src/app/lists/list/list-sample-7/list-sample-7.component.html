@@ -1,5 +1,6 @@
 <div style="width:300px; margin-bottom:20px">
-    <igx-slider id="slider" [minValue]="0.1" [maxValue]="0.9" [step]="0.1" [continuous]="true" [(ngModel)]="mainIgxList.panEndTriggeringThreshold"></igx-slider>
+    <igx-slider id="slider" [minValue]="0.1" [maxValue]="0.9" [step]="0.1" [continuous]="true"
+        [(ngModel)]="mainIgxList.panEndTriggeringThreshold"></igx-slider>
     <label>Threshold: {{panThreshold}}</label>
 </div>
 
@@ -17,11 +18,15 @@
             </div>
         </ng-template>
         <igx-list-item [isHeader]="true">Contacts</igx-list-item>
-        <igx-list-item #item *ngFor="let contact of contacts" igxRipple="pink" igxRippleTarget=".igx-list__item-content">
-            <igx-avatar igxListThumbnail [src]="contact.photo" [roundShape]="true"></igx-avatar>
+        <igx-list-item #item *ngFor="let contact of contacts" igxRipple="pink"
+            igxRippleTarget=".igx-list__item-content">
+            <igx-avatar igxListThumbnail [src]="contact.photo" [roundShape]="true" igxRipple="white"
+                [igxRippleCentered]="true" (mousedown)="thumbnailMousedown($event)"></igx-avatar>
             <span igxListLineTitle>{{ contact.name }}</span>
             <span igxListLineSubTitle>{{ contact.phone }}</span>
-            <igx-icon igxListAction [style.color]="contact.isFavorite ? 'orange' : 'lightgray'" (click)="toggleFavorite(contact)">star</igx-icon>
+            <igx-icon igxListAction [style.color]="contact.isFavorite ? 'orange' : 'lightgray'" igxRipple="pink"
+                [igxRippleCentered]="true" igxRippleTarget=".igx-list__item-actions"
+                (click)="toggleFavorite(contact, $event)" (mousedown)="mousedown($event)">star</igx-icon>
         </igx-list-item>
     </igx-list>
     <igx-toast #toast></igx-toast>
