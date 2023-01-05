@@ -17,21 +17,6 @@ export class GridStatePersistenceSampleComponent {
     public grid: IgxGridComponent;
     @ViewChild(IgxGridStateDirective, { static: true })
     public state!: IgxGridStateDirective;
-
-    @ViewChild('price', { static: true }) public priceTemplate: TemplateRef<any>;
-    @ViewChild('change', { static: true }) public changeTemplate: TemplateRef<any>;
-    @ViewChild('buy', { static: true }) public buyTemplate: TemplateRef<any>;
-    @ViewChild('sell', { static: true }) public sellTemplate: TemplateRef<any>;
-    @ViewChild('spread', { static: true }) public spreadTemplate: TemplateRef<any>;
-    @ViewChild('volume', { static: true }) public volumeTemplate: TemplateRef<any>;
-    @ViewChild('highD', { static: true }) public highDTemplate: TemplateRef<any>;
-    @ViewChild('lowD', { static: true }) public lowDTemplate: TemplateRef<any>;
-    @ViewChild('highY', { static: true }) public highYTemplate: TemplateRef<any>;
-    @ViewChild('lowY', { static: true }) public lowYTemplate: TemplateRef<any>;
-    @ViewChild('startY', { static: true }) public startYTemplate: TemplateRef<any>;
-    @ViewChild('changeOnYear', { static: true }) public changeOnYearTemplate: TemplateRef<any>;
-    @ViewChild('changePercentage', { static: true }) public changePercentageTemplate: TemplateRef<any>;
-    
     public data: Observable<any[]>;
     public customStrategy = NoopSortingStrategy.instance();
     public options: IGridStateOptions = {
@@ -70,6 +55,20 @@ export class GridStatePersistenceSampleComponent {
     public clearStorage() {
         window.sessionStorage.removeItem('grid-state');
     }
+
+    @ViewChild('price', { static: true }) public priceTemplate: TemplateRef<any>;
+    @ViewChild('change', { static: true }) public changeTemplate: TemplateRef<any>;
+    @ViewChild('buy', { static: true }) public buyTemplate: TemplateRef<any>;
+    @ViewChild('sell', { static: true }) public sellTemplate: TemplateRef<any>;
+    @ViewChild('spread', { static: true }) public spreadTemplate: TemplateRef<any>;
+    @ViewChild('volume', { static: true }) public volumeTemplate: TemplateRef<any>;
+    @ViewChild('highD', { static: true }) public highDTemplate: TemplateRef<any>;
+    @ViewChild('lowD', { static: true }) public lowDTemplate: TemplateRef<any>;
+    @ViewChild('highY', { static: true }) public highYTemplate: TemplateRef<any>;
+    @ViewChild('lowY', { static: true }) public lowYTemplate: TemplateRef<any>;
+    @ViewChild('startY', { static: true }) public startYTemplate: TemplateRef<any>;
+    @ViewChild('changeOnYear', { static: true }) public changeOnYearTemplate: TemplateRef<any>;
+    @ViewChild('changePercentage', { static: true }) public changePercentageTemplate: TemplateRef<any>;
 
     public onColumnInit(column: IgxColumnComponent) {
         if (column.field === 'Price') {
