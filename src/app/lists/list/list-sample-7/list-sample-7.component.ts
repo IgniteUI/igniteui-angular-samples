@@ -81,8 +81,4 @@ export class ListSample7Component implements OnInit {
     public mousedown(event: Event) {
         event.stopPropagation();
     }
-
-    public thumbnailMousedown(event: Event) {
-        event.stopPropagation();
-    }
 }

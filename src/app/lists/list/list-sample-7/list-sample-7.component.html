@@ -20,13 +20,12 @@
         <igx-list-item [isHeader]="true">Contacts</igx-list-item>
         <igx-list-item #item *ngFor="let contact of contacts" igxRipple="pink"
             igxRippleTarget=".igx-list__item-content">
-            <igx-avatar igxListThumbnail [src]="contact.photo" [roundShape]="true" igxRipple="white"
-                [igxRippleCentered]="true" (mousedown)="thumbnailMousedown($event)"></igx-avatar>
+            <igx-avatar igxListThumbnail [src]="contact.photo" [roundShape]="true"></igx-avatar>
             <span igxListLineTitle>{{ contact.name }}</span>
             <span igxListLineSubTitle>{{ contact.phone }}</span>
             <igx-icon igxListAction [style.color]="contact.isFavorite ? 'orange' : 'lightgray'" igxRipple="pink"
-                [igxRippleCentered]="true" igxRippleTarget=".igx-list__item-actions"
-                (click)="toggleFavorite(contact, $event)" (mousedown)="mousedown($event)">star</igx-icon>
+                [igxRippleCentered]="true" (click)="toggleFavorite(contact, $event)"
+                (mousedown)="mousedown($event)">star</igx-icon>
         </igx-list-item>
     </igx-list>
     <igx-toast #toast></igx-toast>
