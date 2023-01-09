@@ -51,7 +51,8 @@ export class ListSample7Component implements OnInit {
         this.contacts = Object.assign([], this.dataSource);
     }
 
-    public toggleFavorite(contact: any) {
+    public toggleFavorite(contact: any, event: Event) {
+        event.stopPropagation();
         contact.isFavorite = !contact.isFavorite;
     }
 
@@ -77,4 +78,7 @@ export class ListSample7Component implements OnInit {
         return Math.round(result * 100) + '%';
     }
 
+    public mousedown(event: Event) {
+        event.stopPropagation();
+    }
 }
