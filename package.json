@@ -107,7 +107,7 @@
     "eslint-plugin-prefer-arrow": "1.2.3",
     "event-stream": "^4.0.1",
     "fs-extra": "^8.1.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "jasmine-core": "~4.2.0",
     "karma": "^6.4.1",
     "karma-chrome-launcher": "~3.1.0",
