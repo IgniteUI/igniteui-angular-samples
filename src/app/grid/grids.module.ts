@@ -138,6 +138,7 @@ import { GridValidatorServiceCrossFieldComponent } from './grid-validator-servic
 import { GridValidationStyleComponent } from './grid-validation-style/grid-validation-style.component';
 import { GridValidatorServiceExtendedComponent, PhoneFormatDirective } from './grid-validator-service-extended/grid-validator-service-extended.component';
 import { GridSummaryExportComponent } from './grid-summary-export/grid-summary-export.component';
+import { GridStatePersistenceSampleComponent } from './grid-state-persistence-sample/grid-state-persistance-sample.component';
 
 @NgModule({
     declarations: [
@@ -266,7 +267,8 @@ import { GridSummaryExportComponent } from './grid-summary-export/grid-summary-e
         GridValidationStyleComponent,
         GridValidatorServiceExtendedComponent,
         PhoneFormatDirective,
-        GridSummaryExportComponent
+        GridSummaryExportComponent,
+        GridStatePersistenceSampleComponent
     ],
     imports: [
         CommonModule,

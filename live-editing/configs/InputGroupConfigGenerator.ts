@@ -100,6 +100,48 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/data-entries/"
         }));
 
+        // template-driven form validation
+        configs.push(new Config({
+            component: 'TemplateDrivenFormValidationComponent',
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxInputGroupModule', 'IgxButtonModule', 'IgxRippleModule', 'TemplateDrivenFormValidationComponent'],
+                ngDeclarations: ['TemplateDrivenFormValidationComponent'],
+                ngImports: ['IgxInputGroupModule', 'IgxButtonModule', 'IgxRippleModule']
+            }),
+            shortenComponentPathBy: "/data-entries/"
+        }));
+
+        // reactive form validation
+        configs.push(new Config({
+            component: 'ReactiveFormValidationComponent',
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxInputGroupModule', 'IgxButtonModule', 'IgxRippleModule', 'ReactiveFormsModule', 'ReactiveFormValidationComponent'],
+                ngDeclarations: ['ReactiveFormValidationComponent'],
+                ngImports: ['IgxInputGroupModule', 'IgxButtonModule', 'IgxRippleModule', 'ReactiveFormsModule']
+            }),
+            shortenComponentPathBy: "/data-entries/"
+        }));
+
+        // reactive form custom validation
+        configs.push(new Config({
+            component: 'ReactiveFormCustomValidationComponent',
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxInputGroupModule', 'IgxButtonModule', 'IgxRippleModule', 'ReactiveFormsModule', 'ReactiveFormCustomValidationComponent'],
+                ngDeclarations: ['ReactiveFormCustomValidationComponent'],
+                ngImports: ['IgxInputGroupModule', 'IgxButtonModule', 'IgxRippleModule', 'ReactiveFormsModule']
+            }),
+            shortenComponentPathBy: "/data-entries/"
+        }));
+
         return configs;
     }
 }
