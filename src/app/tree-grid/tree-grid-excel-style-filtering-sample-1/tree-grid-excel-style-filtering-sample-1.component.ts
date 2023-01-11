@@ -13,6 +13,7 @@ export class TreeGridExcelStyleFilteringSample1Component implements OnInit {
     public treegrid1: IgxTreeGridComponent;
 
     public data: any[];
+    public filterStrategy = new TreeGridFilteringStrategy(['Name']);
 
     public density: DisplayDensity = 'comfortable';
     public displayDensities;
