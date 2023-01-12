@@ -924,7 +924,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'TreeGridColumnSelectionComponent',
             additionalFiles: [
-                '/src/app/tree-grid/data/foods.ts'
+                '/src/app/tree-grid/data/orders.ts'
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['TreeGridColumnSelectionComponent', 'IgxTreeGridModule'],

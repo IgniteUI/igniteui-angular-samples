@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { GridSelectionMode, IgxTreeGridComponent } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-column-selection',
@@ -15,15 +15,18 @@ export class TreeGridColumnSelectionComponent implements OnInit, AfterViewInit {
     public columnConfig = [
         { field: 'ID', selectable: true },
         { field: 'Name', selectable: true },
+        { field: 'Category', selectable: true },
+        { field: 'Units', selectable: false },
         { field: 'UnitPrice', selectable: false },
-        { field: 'AddedDate', selectable: true, formatter: this.formatDate },
-        { field: 'Discontinued', selectable: false }
+        { field: 'Price', selectable: false },
+        { field: 'OrderDate', selectable: true, formatter: this.formatDate },
+        { field: 'Delivered', selectable: false }
     ];
 
     constructor(private cdr: ChangeDetectorRef){}
 
     public ngOnInit(): void {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA();
     }
 
     public ngAfterViewInit(): void {
