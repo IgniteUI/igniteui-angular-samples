@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DisplayDensity, IgxTreeGridComponent } from 'igniteui-angular';
+import { DisplayDensity, IgxTreeGridComponent, TreeGridFilteringStrategy } from 'igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 @Component({
@@ -13,6 +13,7 @@ export class TreeGridExcelStyleFilteringSample1Component implements OnInit {
     public treegrid1: IgxTreeGridComponent;
 
     public data: any[];
+    public filterStrategy = new TreeGridFilteringStrategy(['ID', 'Name']);
 
     public density: DisplayDensity = 'comfortable';
     public displayDensities;
