@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DisplayDensity, IgxTreeGridComponent } from 'igniteui-angular';
+import { DisplayDensity, IgxTreeGridComponent, TreeGridFilteringStrategy } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
 
 @Component({
