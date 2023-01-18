@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxDateSummaryOperand, IgxSummaryResult, IgxSummaryOperand, IgxTreeGridComponent } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-summary-formatter',
@@ -16,7 +16,7 @@ export class TreeGridSummaryFormatterComponent implements OnInit {
     public data: any[];
 
     public ngOnInit(): void {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA();
     }
 
     public dateSummaryFormat(summary: IgxSummaryResult, summaryOperand: IgxSummaryOperand): string {

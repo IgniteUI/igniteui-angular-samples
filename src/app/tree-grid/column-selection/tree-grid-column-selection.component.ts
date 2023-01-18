@@ -13,14 +13,14 @@ export class TreeGridColumnSelectionComponent implements OnInit, AfterViewInit {
     public data;
     public currentColumnSelection: GridSelectionMode = 'single';
     public columnConfig = [
-        { field: 'ID', selectable: true },
-        { field: 'Name', selectable: true },
-        { field: 'Category', selectable: true },
-        { field: 'Units', selectable: false },
-        { field: 'UnitPrice', selectable: false },
-        { field: 'Price', selectable: false },
-        { field: 'OrderDate', selectable: true, formatter: this.formatDate },
-        { field: 'Delivered', selectable: false }
+        { field: 'ID', header: 'ID', selectable: true },
+        { field: 'Name', header: 'Order Product', selectable: true },
+        { field: 'Category', header: 'Category', selectable: true },
+        { field: 'Units', header: 'Units', selectable: false },
+        { field: 'UnitPrice', header: 'Unit Price', selectable: false, formatter: this.formatCurrency },
+        { field: 'Price', header: 'Price', selectable: true, formatter: this.formatCurrency },
+        { field: 'OrderDate', header: 'Order Date', selectable: true, formatter: this.formatDate },
+        { field: 'Delivered', header: 'Delivered', selectable: false }
     ];
 
     constructor(private cdr: ChangeDetectorRef){}
@@ -38,4 +38,7 @@ export class TreeGridColumnSelectionComponent implements OnInit, AfterViewInit {
         return new Intl.DateTimeFormat('en-US').format(val);
     }
 
+    public formatCurrency(value: number) {
+        return `$${value.toFixed(2)}`;
+    }
 }

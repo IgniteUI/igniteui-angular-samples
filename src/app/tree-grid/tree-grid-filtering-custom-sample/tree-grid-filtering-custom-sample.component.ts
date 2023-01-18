@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IgxBooleanFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-filtering-custom-sample',
@@ -12,16 +12,18 @@ export class TreeGridFilteringCustomSampleComponent implements OnInit {
     public caseSensitiveFilteringOperand = CaseSensitiveFilteringOperand.instance();
     public booleanFilteringOperand = BooleanFilteringOperand.instance();
 
+    public options = {
+        digitsInfo: '1.2-2',
+        currencyCode: 'USD'
+    };
+    public formatOptions = this.options;
+
     public ngOnInit() {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA();
     }
 
     public formatDate(val: Date) {
         return new Intl.DateTimeFormat('en-US').format(val);
-    }
-
-    public formatCurrency(val: string) {
-        return parseInt(val, 10).toFixed(2);
     }
 }
 

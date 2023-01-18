@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -13,7 +13,14 @@ export class TreeGridPagingSampleComponent implements OnInit {
     @ViewChild('treegrid1', { static: true }) public grid1: IgxTreeGridComponent;
     public data: any[];
 
+    public options = {
+        digitsInfo: '1.2-2',
+        currencyCode: 'USD'
+    };
+    public formatOptions = this.options;
+
+
     public ngOnInit(): void {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA();
     }
 }

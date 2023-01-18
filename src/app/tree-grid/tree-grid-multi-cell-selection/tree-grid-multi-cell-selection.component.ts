@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { IgxColumnComponent, IgxGridComponent, IgxToastComponent, IgxTreeGridComponent, VerticalAlignment } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -9,9 +9,14 @@ import { FOODS_DATA } from '../data/foods';
     templateUrl: './tree-grid-multi-cell-selection.component.html'
 })
 export class TreeGridMultiCellSelectionComponent {
-
-    public sourceData = FOODS_DATA();
+    public sourceData = ORDERS_DATA();
     public targetData = [];
+
+    public options = {
+        digitsInfo: '1.2-2',
+        currencyCode: 'USD'
+    };
+    public formatOptions = this.options;
 
     public transferData(source: IgxTreeGridComponent, target: IgxGridComponent,
                         notification: IgxToastComponent) {

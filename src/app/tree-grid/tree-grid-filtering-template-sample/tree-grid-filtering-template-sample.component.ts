@@ -2,13 +2,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     GridColumnDataType,
     ColumnType,
-    IgxColumnComponent,
     IgxDateFilteringOperand,
     IgxNumberFilteringOperand,
     IgxStringFilteringOperand,
     IgxTreeGridComponent
 } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-filtering-template-sample',
@@ -28,15 +27,11 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
     constructor() {
     }
     public ngOnInit(): void {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA();
     }
 
     public formatDate(val: Date) {
         return new Intl.DateTimeFormat('en-US').format(val);
-    }
-
-    public formatCurrency(val: string) {
-        return parseInt(val, 10).toFixed(2);
     }
 
     public getFilterValue(column: ColumnType): any {

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent, TreeGridFilteringStrategy } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-tree-filter-view',
@@ -15,7 +15,13 @@ export class TreeGridTreeFilterViewComponent implements OnInit {
     public data: any[];
     public filterStrategy = new TreeGridFilteringStrategy(['Name']);
 
+    public options = {
+        digitsInfo: '1.2-2',
+        currencyCode: 'USD'
+    };
+    public formatOptions = this.options;
+
     public ngOnInit(): void {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA();
     }
 }

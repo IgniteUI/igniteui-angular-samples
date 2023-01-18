@@ -1,21 +1,30 @@
 <div class="grid__wrapper">
     <igx-tree-grid [igxPreventDocumentScroll]="true"  #treegrid1 [data]="data" [autoGenerate]="false" height="460px" width="100%" [allowFiltering]="true"
         primaryKey="ID" foreignKey="ParentID">
-        <igx-column field="ID" header="Product ID" [dataType]="'string'" [filterCellTemplate]="defaultFilterTemplate">
+        <igx-column field="ID" header="Order ID" [dataType]="'string'" [filterCellTemplate]="defaultFilterTemplate">
             </igx-column>
-            <igx-column field="Name" header="Product Name" [dataType]="'string'" [filterCellTemplate]="defaultFilterTemplate">
+            <igx-column field="Name" header="Order Product" [dataType]="'string'" [filterCellTemplate]="defaultFilterTemplate">
+            </igx-column>
+            <igx-column field="Category" header="Category" [dataType]="'string'" [filterCellTemplate]="defaultFilterTemplate">
+            </igx-column>
+            <igx-column field="Units" header="Units" dataType="number" [filterCellTemplate]="defaultFilterTemplate">
             </igx-column>
             <igx-column field="UnitPrice" header="Unit Price" dataType="number" [filterCellTemplate]="defaultFilterTemplate">
                 <ng-template igxCell let-cell="cell" let-val let-row>
                     {{+val | currency}}
                 </ng-template>
             </igx-column>
-            <igx-column field="AddedDate" header="Added Date" [dataType]="'date'" [formatter]="formatDate" [filterCellTemplate]="dateFilterTemplate">
+            <igx-column field="Price" header="Price" dataType="number" [filterCellTemplate]="defaultFilterTemplate">
+                <ng-template igxCell let-cell="cell" let-val let-row>
+                    {{+val | currency}}
+                </ng-template>
             </igx-column>
-            <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
+            <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [formatter]="formatDate" [filterCellTemplate]="dateFilterTemplate">
+            </igx-column>
+            <igx-column field="Delivered" header="Deliverued" [dataType]="'boolean'">
                 <ng-template igxCell let-cell="cell" let-val>
-                    <img *ngIf="val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
-                    <img *ngIf="!val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+                    <img *ngIf="val" src="assets/images/grid/active.png" title="Delivered" alt="Delivered" />
+                    <img *ngIf="!val" src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered" />
                 </ng-template>
             </igx-column>
         </igx-tree-grid>

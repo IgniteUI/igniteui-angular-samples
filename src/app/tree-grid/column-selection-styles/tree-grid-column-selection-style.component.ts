@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-column-selection-style',
@@ -13,18 +13,21 @@ export class TreeGridColumnSelectionStylesComponent implements OnInit, AfterView
     public data;
 
     public columnConfig = [
-        { field: 'ID', selectable: true },
-        { field: 'Name', selectable: true },
-        { field: 'UnitPrice', selectable: true },
-        { field: 'AddedDate', selectable: false, formatter: this.formatDate },
-        { field: 'Discontinued', selectable: true }
+        { field: 'ID', header: 'ID', selectable: true },
+        { field: 'Name', header: 'Order Product', selectable: true },
+        { field: 'Category', header: 'Category', selectable: true },
+        { field: 'Units', header: 'Units', selectable: true },
+        { field: 'UnitPrice', header: 'Unit Price', selectable: true, formatter: this.formatCurrency },
+        { field: 'Price', header: 'Price', selectable: true, formatter: this.formatCurrency },
+        { field: 'OrderDate', header: 'Order Date', selectable: false, formatter: this.formatDate },
+        { field: 'Delivered', header: 'Delivered', selectable: true }
     ];
 
     constructor(private cd: ChangeDetectorRef) {
     }
 
     public ngOnInit(): void {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA();
     }
 
     public ngAfterViewInit() {
@@ -36,4 +39,7 @@ export class TreeGridColumnSelectionStylesComponent implements OnInit, AfterView
         return new Intl.DateTimeFormat('en-US').format(val);
     }
 
+    public formatCurrency(value: number) {
+        return `$${value.toFixed(2)}`;
+    }
 }

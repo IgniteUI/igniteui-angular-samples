@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent, TreeGridFormattedValuesFilteringStrategy } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-formatted-filtering-strategy',
@@ -16,10 +16,10 @@ export class TreeGridFormattedFilteringStrategyComponent implements OnInit {
     public filterStrategy = new TreeGridFormattedValuesFilteringStrategy();
 
     public ngOnInit(): void {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA();
     }
 
     public formatPrice(value: number) {
-        return value ? value < 15 ? 'low' : value > 50 ? 'high' : 'medium' : '';
+        return value ? value < 3 ? 'low' : value > 5 ? 'high' : 'medium' : '';
     }
 }

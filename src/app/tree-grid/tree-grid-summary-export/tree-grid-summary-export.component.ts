@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ColumnType, IgxExcelExporterOptions, IgxExcelExporterService, IgxTreeGridComponent } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
   selector: 'app-tree-grid-summary-export',
@@ -14,7 +14,7 @@ export class TreeGridSummaryExportComponent {
   public data;
 
   constructor(private excelExportService: IgxExcelExporterService) {
-    this.data = FOODS_DATA();
+    this.data = ORDERS_DATA();
   }
 
   public toggleSummary(column: ColumnType) {
@@ -23,5 +23,5 @@ export class TreeGridSummaryExportComponent {
 
   public exportButtonHandler() {
     this.excelExportService.export(this.tGrid, new IgxExcelExporterOptions('ExportedFile'));
-}
+  }
 }

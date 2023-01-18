@@ -10,16 +10,25 @@
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
 
-        <igx-column field="ID" header="Product ID" [dataType]="'string'">
+        <igx-column field="ID" header="Order ID" [dataType]="'string'">
         </igx-column>
-        <igx-column field="Name" header="Product Name" [dataType]="'string'">
+        <igx-column field="Name" header="Order Product" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="Category" header="Category" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="Units" header="Units" [dataType]="'number'">
         </igx-column>
         <igx-column field="UnitPrice" header="Unit Price" dataType="number">
             <ng-template igxCell let-cell="cell" let-val let-row>
                 {{+val | currency}}
             </ng-template>
         </igx-column>
-        <igx-column field="AddedDate" header="Added Date" [dataType]="'date'">
+        <igx-column field="Price" header="Price" dataType="number">
+            <ng-template igxCell let-cell="cell" let-val let-row>
+                {{+val | currency}}
+            </ng-template>
+        </igx-column>
+        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'">
         </igx-column>
     </igx-tree-grid>
 </div>
