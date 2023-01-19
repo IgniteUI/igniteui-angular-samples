@@ -21,6 +21,7 @@ import {
     IgxRadioModule,
     IgxRippleModule,
     IgxSelectModule,
+    IgxSimpleComboModule,
     IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule,
