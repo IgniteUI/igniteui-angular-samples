@@ -17,7 +17,7 @@
     "sass-js-compile-check": "gulp sass-js-compile-check",
     "build": "gulp generate-live-editing && gulp overwrite-package-json && node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng build --configuration production",
     "build:app-lob": "gulp generate-live-editing --appDv=true && gulp overwrite-package-json && node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng build app-lob --configuration production && gulp prerenderPages",
-    "build:app-crm": "ng build app-crm --configuration production",
+    "build:app-crm": "gulp generate-live-editing --appCrm=true && gulp overwrite-package-json && node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng build app-crm --configuration production",
     "test": "ng test",
     "lint": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng lint",
     "lint:app-lob": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng lint app-lob",
