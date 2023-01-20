@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 export const appRoutes: Routes = [
     {
-        path: '', pathMatch: 'full', redirectTo: '/grid-crm'
+        path: '', pathMatch: 'full', loadChildren: () => import('./grid-crm/grid-crm.module').then(m => m.GridsCrmModule)
     },
     {
-        loadChildren: () => import('./grid-crm/grid-crm.module').then(m => m.GridsCrmModule),
-        path: 'grid-crm'
-    }
+        path: 'grid-crm', loadChildren: () => import('./grid-crm/grid-crm.module').then(m => m.GridsCrmModule)
+    },
+    { 
+        path: '**', redirectTo: ''
+    } 
 ];
 @NgModule({
     exports: [
