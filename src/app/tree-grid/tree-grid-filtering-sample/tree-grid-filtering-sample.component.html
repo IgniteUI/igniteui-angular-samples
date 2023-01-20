@@ -1,7 +1,7 @@
 <div class="grid__wrapper">
     <div class="sample__header">
         <igx-input-group>
-            <input class="gridSample__filter" igxInput type="text" placeholder="Filter by product name" (input)="filter($event.target)">
+            <input class="gridSample__filter" igxInput type="text" placeholder="Filter by order product" (input)="filter($event.target)">
         </igx-input-group><br>
     </div>
     <igx-tree-grid [igxPreventDocumentScroll]="true"  #treegrid1 [data]="data" [autoGenerate]="false" height="480px" width="100%" [allowFiltering]="true"
