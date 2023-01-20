@@ -11,7 +11,7 @@
 
 <igx-drop-down #countriesDropDown [height]="'500px'" [width]="'300px'" (closing)="handleClosing($event)">
     <igx-tree #igxTree selection="BiState" (nodeSelection)="onNodeSelection($event)">
-        <igx-tree-node *ngFor="let country of countries" [data]="country" [expanded]="true">
+        <igx-tree-node *ngFor="let country of countries" [data]="country" [expanded]="true" [selected]="true">
             {{ country.Name }}
             <igx-tree-node *ngFor="let city of country.Cities" [data]="city">
                 {{ city.Name }}
