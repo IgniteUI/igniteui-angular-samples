@@ -48,6 +48,8 @@ import { PaginationModule } from '../src/app/pagination/pagination.module';
 import * as PaginatorRouting from '../src/app/pagination/pagination-routing.module';
 import { PivotGridsModule } from '../src/app/pivot-grid/pivot-grids.module';
 import { PivotGridsRoutingModule } from '../src/app/pivot-grid/pivot-grids-routing.module';
+import { GridCRMComponent } from '../projects/app-crm/src/app/grid-crm/grid-crm.component';
+import { AppModule } from '../projects/app-crm/src/app/app.module';
 import { GridsCrmModule } from '../projects/app-crm/src/app/grid-crm/grid-crm.module';
 
 export const MODULE_ROUTES = [
