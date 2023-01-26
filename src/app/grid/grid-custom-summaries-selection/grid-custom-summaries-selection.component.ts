@@ -1,7 +1,7 @@
 import { formatDate } from '@angular/common';
 import { AfterViewInit, Component, ViewChild, OnInit, ChangeDetectorRef} from '@angular/core';
 import { IgxDateSummaryOperand, IgxGridComponent, IgxNumberSummaryOperand,
-    IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
+    IgxSummaryOperand, IgxSummaryResult } from '@infragistics/igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 class MySummary {

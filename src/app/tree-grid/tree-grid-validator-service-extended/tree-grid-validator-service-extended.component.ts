@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, Directive, Input, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { IgxTreeGridComponent } from 'igniteui-angular';
+import { IgxTreeGridComponent } from '@infragistics/igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 

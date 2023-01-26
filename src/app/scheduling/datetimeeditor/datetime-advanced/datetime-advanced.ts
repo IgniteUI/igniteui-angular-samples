@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DatePart } from 'igniteui-angular';
+import { DatePart } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-datetime-advanced',

@@ -2,7 +2,7 @@ import {  Component, OnInit, ViewChild } from '@angular/core';
 import { IgxHierarchicalGridComponent,
     IgxNumberSummaryOperand,
     IgxSummaryOperand,
-    IgxSummaryResult } from 'igniteui-angular';
+    IgxSummaryResult } from '@infragistics/igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 class CustomNumberSummary {

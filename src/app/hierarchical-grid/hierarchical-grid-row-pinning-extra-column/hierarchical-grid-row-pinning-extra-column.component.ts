@@ -5,7 +5,7 @@ import {
     RowType,
     IPinningConfig,
     RowPinningPosition
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { icons } from '../../services/svgIcons';
 import { SINGERS } from '../../data/singersData';
 

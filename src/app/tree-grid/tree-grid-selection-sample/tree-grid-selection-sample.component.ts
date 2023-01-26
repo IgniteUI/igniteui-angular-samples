@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxSnackbarComponent, IgxTreeGridComponent, IRowSelectionEventArgs } from 'igniteui-angular';
+import { GridSelectionMode, IgxSnackbarComponent, IgxTreeGridComponent, IRowSelectionEventArgs } from '@infragistics/igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({

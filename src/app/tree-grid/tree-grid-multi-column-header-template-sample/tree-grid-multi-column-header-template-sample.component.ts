@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxColumnGroupComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxColumnGroupComponent, IgxTreeGridComponent } from '@infragistics/igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IgxButtonModule, IgxDialogModule, IgxDividerModule, IgxGridModule, IgxSliderModule,
-    IgxSwitchModule, IgxTabsModule } from 'igniteui-angular';
+    IgxSwitchModule, IgxTabsModule } from '@infragistics/igniteui-angular';
 import { GridFinJSDockManagerRoutingModule } from './grid-finjs-dock-manager-routing.module';
 import { GridFinJSDockManagerComponent } from './grid-finjs-dock-manager.component';
 import { DockSlotComponent, GridHostDirective } from './dock-slot.component';

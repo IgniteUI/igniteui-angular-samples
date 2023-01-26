@@ -3,7 +3,7 @@ import {IgxActionStripModule,
 IgxRippleModule,
 IgxButtonModule,
 IgxIconModule,
-IgxButtonGroupModule} from 'igniteui-angular';
+IgxButtonGroupModule} from '@infragistics/igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing';
 export class ActionStripConfigGenerator implements IConfigGenerator {
 

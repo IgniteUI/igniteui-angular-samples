@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgModel } from '@angular/forms';
-import { IGridEditEventArgs, IgxGridComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IGridEditEventArgs, IgxGridComponent, IgxToastComponent, VerticalAlignment } from '@infragistics/igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({

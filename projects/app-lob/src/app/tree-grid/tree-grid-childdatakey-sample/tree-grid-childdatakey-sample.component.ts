@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GridSelectionMode, IColumnExportingEventArgs, IgxCsvExporterService, IgxExcelExporterService } from 'igniteui-angular';
+import { GridSelectionMode, IColumnExportingEventArgs, IgxCsvExporterService, IgxExcelExporterService } from '@infragistics/igniteui-angular';
 import { EMPLOYEE_DATA } from './data';
 
 @Component({

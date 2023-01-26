@@ -21,7 +21,7 @@ import {
     IgxSwitchModule,
     IgxToggleModule,
     IgxTooltipModule
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { LayoutsModule } from '../layouts/layouts.module';
 import { DialogSample1Component } from './dialog/dialog-sample-1/dialog-sample-1.component';
 import { DialogSample2Component } from './dialog/dialog-sample-2/dialog-sample-2.component';

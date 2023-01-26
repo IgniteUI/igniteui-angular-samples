@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import * as fileSaver from 'file-saver';
 import { DOCUMENT } from '@angular/common';
-import { IgxIconService, ISelectionEventArgs } from 'igniteui-angular';
+import { IgxIconService, ISelectionEventArgs } from '@infragistics/igniteui-angular';
 
 import {
     all as imxIcons,

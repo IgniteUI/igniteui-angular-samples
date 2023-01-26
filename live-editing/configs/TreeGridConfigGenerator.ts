@@ -27,7 +27,7 @@ import {
     IgxTooltipModule,
     IgxTreeGridModule,
     IgxToggleModule
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import {
     IgxSparklineCoreModule,
     IgxSparklineModule

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IGroupingExpression, IgxTreeGridComponent } from 'igniteui-angular';
+import { DefaultSortingStrategy, IGroupingExpression, IgxTreeGridComponent } from '@infragistics/igniteui-angular';
 import { TreeGridGroupingLoadOnDemandService, TreeGridGroupingParameters } from './remoteService';
 
 @Component({

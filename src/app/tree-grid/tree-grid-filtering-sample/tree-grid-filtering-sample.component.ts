@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxStringFilteringOperand, IgxTreeGridComponent } from 'igniteui-angular';
+import { IgxStringFilteringOperand, IgxTreeGridComponent } from '@infragistics/igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 @Component({

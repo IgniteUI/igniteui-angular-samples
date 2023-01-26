@@ -2,7 +2,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxTreeGridComponent
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
 @Component({

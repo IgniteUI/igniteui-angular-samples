@@ -1,7 +1,7 @@
 import {IgxButtonModule,
 IgxIconModule,
 IgxInputGroupModule,
-IgxSliderModule} from 'igniteui-angular';
+IgxSliderModule} from '@infragistics/igniteui-angular';
 import { HammerModule } from '@angular/platform-browser';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class SliderConfigGenerator implements IConfigGenerator {

@@ -1,5 +1,5 @@
-@use 'igniteui-angular/theming' as *;
-@forward 'igniteui-angular/theming';
+@use '@infragistics/igniteui-angular/theming' as *;
+@forward '@infragistics/igniteui-angular/theming';
 
 $palette: $light-material-palette;
 $schema: $light-material-schema;

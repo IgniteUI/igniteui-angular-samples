@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { NavigationStart, Route, Router } from '@angular/router';
-import { IgxNavigationDrawerComponent } from 'igniteui-angular';
+import { IgxNavigationDrawerComponent } from '@infragistics/igniteui-angular';
 import { filter } from 'rxjs/operators';
 import { pivotGridsRoutesData } from '../../../../../src/app/pivot-grid/pivot-grid-routes-data';
 import { gridDynamicChartRoutesData } from '../grid-dynamic-chart-data/grid-dynamic-chart-data-routes-data';

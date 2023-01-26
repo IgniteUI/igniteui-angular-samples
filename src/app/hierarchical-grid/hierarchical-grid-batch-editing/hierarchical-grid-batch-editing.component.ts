@@ -5,7 +5,7 @@ import {
     IgxHierarchicalGridComponent,
     IgxRowIslandComponent,
     Transaction
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { Singer } from '../models';
 

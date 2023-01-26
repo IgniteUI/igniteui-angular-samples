@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IGridCreatedEventArgs, IGridKeydownEventArgs,
     CellType, IgxHierarchicalGridComponent
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({

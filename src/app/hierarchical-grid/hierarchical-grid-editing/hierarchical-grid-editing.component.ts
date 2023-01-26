@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxDialogComponent, IgxHierarchicalGridComponent,
     IgxNumberSummaryOperand, IgxSummaryResult
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { Singer } from '../models';
 

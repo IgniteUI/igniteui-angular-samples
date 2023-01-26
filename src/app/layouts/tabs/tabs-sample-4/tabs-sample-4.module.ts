@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { IgxTabsModule } from 'igniteui-angular';
+import { IgxTabsModule } from '@infragistics/igniteui-angular';
 import { ViewsModule } from '../views/views.module';
 
 @NgModule({

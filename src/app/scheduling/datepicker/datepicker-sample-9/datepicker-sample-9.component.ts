@@ -1,5 +1,5 @@
 import { Component, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
-import { DateRangeType, IgxCalendarComponent, IgxDropDownComponent } from 'igniteui-angular';
+import { DateRangeType, IgxCalendarComponent, IgxDropDownComponent } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-datepicker-sample-9',

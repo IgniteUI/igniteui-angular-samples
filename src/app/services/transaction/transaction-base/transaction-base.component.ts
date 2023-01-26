@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxTransactionService, State, Transaction, TransactionType } from 'igniteui-angular';
+import { IgxTransactionService, State, Transaction, TransactionType } from '@infragistics/igniteui-angular';
 import { WISHLIST, WishlistItem } from '../data';
 
 @Component({

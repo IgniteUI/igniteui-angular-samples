@@ -6,7 +6,7 @@ import { CloseScrollStrategy,
     IgxOverlayOutletDirective,
     PositionSettings,
     slideInBottom,
-    slideOutTop } from 'igniteui-angular';
+    slideOutTop } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-dialog-styling-sample',

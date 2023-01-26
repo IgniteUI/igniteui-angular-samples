@@ -1,5 +1,5 @@
 import { AfterViewInit, Directive, Host, Input, NgModule, Optional, OnDestroy, Inject } from '@angular/core';
-import { IgxGridBaseDirective, IgxGridComponent, IGX_GRID_BASE } from 'igniteui-angular';
+import { IgxGridBaseDirective, IgxGridComponent, IGX_GRID_BASE } from '@infragistics/igniteui-angular';
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxSliderType } from 'igniteui-angular';
+import { IgxSliderType } from '@infragistics/igniteui-angular';
 
 @Component({
   selector: 'app-slider-sample-4',

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxBannerComponent } from 'igniteui-angular';
+import { IgxBannerComponent } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-banner-sample-2',

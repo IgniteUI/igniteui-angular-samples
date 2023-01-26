@@ -3,7 +3,7 @@ IgxButtonModule,
 IgxDropDownModule,
 IgxIconModule,
 IgxInputGroupModule,
-IgxSelectModule} from 'igniteui-angular';
+IgxSelectModule} from '@infragistics/igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class SelectConfigGenerator implements IConfigGenerator {
 

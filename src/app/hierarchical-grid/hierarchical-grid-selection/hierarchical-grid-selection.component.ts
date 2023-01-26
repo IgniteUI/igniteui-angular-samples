@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxSnackbarComponent, IRowSelectionEventArgs } from 'igniteui-angular';
+import { GridSelectionMode, IgxSnackbarComponent, IRowSelectionEventArgs } from '@infragistics/igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({

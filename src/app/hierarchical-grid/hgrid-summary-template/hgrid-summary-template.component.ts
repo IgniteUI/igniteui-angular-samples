@@ -3,7 +3,7 @@ import {
     DisplayDensity,
     IgxNumberSummaryOperand,
     IgxSummaryResult
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 class CustomNumberSummary {

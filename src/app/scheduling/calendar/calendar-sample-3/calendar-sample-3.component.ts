@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxCalendarComponent, IgxDialogComponent, IgxCalendarView } from 'igniteui-angular';
+import { IgxCalendarComponent, IgxDialogComponent, IgxCalendarView } from '@infragistics/igniteui-angular';
 import { IViewDateChangeEventArgs } from 'igniteui-angular/lib/calendar/calendar-base';
 
 @Component({

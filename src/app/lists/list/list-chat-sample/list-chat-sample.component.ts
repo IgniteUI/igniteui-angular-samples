@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
-// import { IgxListComponent } from 'igniteui-angular';
+// import { IgxListComponent } from '@infragistics/igniteui-angular';
 import { ContactsService } from './services/contacts.service';
 import { IMessage, MessagesService } from './services/messages.service';
 

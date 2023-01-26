@@ -33,7 +33,7 @@
             "progress": true,
             "stylePreprocessorOptions": {
                 "includePaths": ["node_modules"]
-            }
+            },
           },
           "configurations": {
             "production": {
@@ -151,7 +151,8 @@
             "namedChunks": true,
             "stylePreprocessorOptions": {
                 "includePaths": ["node_modules"]
-            }
+            },
+            "preserveSymlinks": true
           },
           "configurations": {
             "production": {

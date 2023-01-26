@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IGridEditEventArgs, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IGridEditEventArgs, IgxToastComponent, VerticalAlignment } from '@infragistics/igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
 @Component({

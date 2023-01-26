@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/naming-convention */
-import {IgxHierarchicalGridModule} from 'igniteui-angular';
+import {IgxHierarchicalGridModule} from '@infragistics/igniteui-angular';
 import {IgxSparklineCoreModule,
 IgxSparklineModule} from 'igniteui-angular-charts';
 import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing';

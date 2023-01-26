@@ -10,7 +10,7 @@ import {
     IgxToastModule,
     IgxSwitchModule,
     IgxExcelExporterService
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class PivotGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {

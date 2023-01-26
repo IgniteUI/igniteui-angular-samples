@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
-import { CellType, IgxHierarchicalGridComponent, IGridEditEventArgs } from 'igniteui-angular';
+import { CellType, IgxHierarchicalGridComponent, IGridEditEventArgs } from '@infragistics/igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 

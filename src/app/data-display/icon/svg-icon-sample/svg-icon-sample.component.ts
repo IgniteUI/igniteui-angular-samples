@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxIconService } from 'igniteui-angular';
+import { IgxIconService } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-svg-icon-sample',

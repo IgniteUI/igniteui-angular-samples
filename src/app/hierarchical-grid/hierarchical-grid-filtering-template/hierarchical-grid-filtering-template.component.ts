@@ -7,7 +7,7 @@ import {
     IgxNumberFilteringOperand,
     IgxStringFilteringOperand,
     OverlaySettings
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({

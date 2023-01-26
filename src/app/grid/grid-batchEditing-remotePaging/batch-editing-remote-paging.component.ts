@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { GridPagingMode, IgxDialogComponent, IgxGridComponent, Transaction } from 'igniteui-angular';
+import { GridPagingMode, IgxDialogComponent, IgxGridComponent, Transaction } from '@infragistics/igniteui-angular';
 import { Observable } from 'rxjs';
 import { RemotePagingService } from '../../services/remotePaging.service';
 

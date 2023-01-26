@@ -1,5 +1,5 @@
 import { Component, ElementRef } from '@angular/core';
-import { DateRange } from 'igniteui-angular';
+import { DateRange } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-styled-rangedatepicker',

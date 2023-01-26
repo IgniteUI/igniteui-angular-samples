@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxDialogComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 import { Employee } from './employee';
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IFilteringExpressionsTree, IgxColumnComponent } from 'igniteui-angular';
+import { IFilteringExpressionsTree, IgxColumnComponent } from '@infragistics/igniteui-angular';
 import { RemoteValuesService } from './remoteValues.service';
 
 @Component({

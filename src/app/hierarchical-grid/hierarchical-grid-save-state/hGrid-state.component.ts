@@ -3,7 +3,7 @@ import { NavigationStart, Router } from '@angular/router';
 import { GridFeatures,
     IGridState, IGridStateOptions, IgxGridStateDirective,
     IgxHierarchicalGridComponent, IgxNumberSummaryOperand,
-    IgxSummaryResult, IgxCheckboxComponent} from 'igniteui-angular';
+    IgxSummaryResult, IgxCheckboxComponent} from '@infragistics/igniteui-angular';
 import { take } from 'rxjs/operators';
 import { SINGERS } from '../../data/singersData';
 

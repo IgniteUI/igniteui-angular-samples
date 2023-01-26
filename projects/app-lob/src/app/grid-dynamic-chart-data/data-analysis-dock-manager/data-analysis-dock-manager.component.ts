@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnInit, OnDestroy, Pipe, PipeTransform, QueryList, TemplateRef, ViewChild, ViewChildren } from '@angular/core';
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IColumnSelectionEventArgs, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxOverlayService, OverlayCancelableEventArgs, OverlayEventArgs, OverlaySettings, VerticalAlignment } from 'igniteui-angular';
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IColumnSelectionEventArgs, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxOverlayService, OverlayCancelableEventArgs, OverlayEventArgs, OverlaySettings, VerticalAlignment } from '@infragistics/igniteui-angular';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { ResizeObserver } from '@juggle/resize-observer';
 import { merge, noop, Subject } from 'rxjs';
@@ -11,6 +11,35 @@ import { ChartIntegrationDirective, IDeterminedChartTypesArgs } from '../directi
 import { CHART_TYPE } from '../directives/chart-integration/chart-types';
 import { ConditionalFormattingDirective } from '../directives/conditional-formatting/conditional-formatting.directive';
 import { DockSlotComponent } from './dock-slot/dock-slot.component';
+
+@Pipe({
+    name: 'name'
+})
+export class NamePipe implements PipeTransform {
+    public transform(name: string): string {
+        let res = '';
+        const upperCaseChars = name.match(/[A-Z0-9]{1,}/g);
+        for (let index = 0; index < upperCaseChars.length; index++) {
+          if (!(index === upperCaseChars.length - 1)) {
+            res += name.substring(name.indexOf(upperCaseChars[index]),
+              name.indexOf(upperCaseChars[index + 1])) + ' ';
+          } else {
+            res += name.substring(name.indexOf(upperCaseChars[index]));
+          }
+        }
+        return res;
+      }
+}
+
+@Pipe({
+    name: 'filterType'
+})
+export class FilterTypePipe implements PipeTransform {
+    public transform(collection: CHART_TYPE[], type: string): CHART_TYPE[] {
+        return collection.filter(types => types.indexOf(type) !== -1 && types.indexOf(type, type.length - 1) === -1);
+      }
+}
+
 
 @Pipe({
     name: 'hastDuplicateLayouts'

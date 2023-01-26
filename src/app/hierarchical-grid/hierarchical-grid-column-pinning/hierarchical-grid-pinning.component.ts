@@ -1,6 +1,6 @@
 
 import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
-import { ColumnType, IgxIconService } from 'igniteui-angular';
+import { ColumnType, IgxIconService } from '@infragistics/igniteui-angular';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 import { icons } from "../../services/svgIcons";
 

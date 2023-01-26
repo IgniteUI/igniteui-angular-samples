@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChild } from '@angular/core';
-import { IgxColumnComponent } from 'igniteui-angular';
+import { IgxColumnComponent } from '@infragistics/igniteui-angular';
 import { IgxLegendComponent } from 'igniteui-angular-charts';
 import { employeesData } from '../../data/employeesData';
 

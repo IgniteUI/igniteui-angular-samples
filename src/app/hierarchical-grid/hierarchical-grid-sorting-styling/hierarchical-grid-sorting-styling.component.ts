@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IgxHierarchicalGridComponent, SortingDirection } from 'igniteui-angular';
+import { DefaultSortingStrategy, IgxHierarchicalGridComponent, SortingDirection } from '@infragistics/igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({

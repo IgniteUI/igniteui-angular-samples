@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IgxBannerComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IgxBannerComponent, IgxToastComponent, VerticalAlignment } from '@infragistics/igniteui-angular';
 import { Subject } from 'rxjs';
 
 @Component({

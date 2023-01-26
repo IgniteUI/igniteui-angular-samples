@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IgxColumnComponent, IgxGridComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IgxColumnComponent, IgxGridComponent, IgxToastComponent, VerticalAlignment } from '@infragistics/igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({

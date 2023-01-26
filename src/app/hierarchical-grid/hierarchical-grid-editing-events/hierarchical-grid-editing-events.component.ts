@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { IGridCreatedEventArgs, IGridEditEventArgs,
-    IgxGridBaseDirective, IgxHierarchicalGridComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+    IgxGridBaseDirective, IgxHierarchicalGridComponent, IgxToastComponent, VerticalAlignment } from '@infragistics/igniteui-angular';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { SINGERS } from '../../data/singersData';

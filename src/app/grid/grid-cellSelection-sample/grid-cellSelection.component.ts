@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxGridComponent, IgxSnackbarComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxGridComponent, IgxSnackbarComponent } from '@infragistics/igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({

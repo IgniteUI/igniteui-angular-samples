@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxColumnComponent } from 'igniteui-angular';
+import { IgxColumnComponent } from '@infragistics/igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({

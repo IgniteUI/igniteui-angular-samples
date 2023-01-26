@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxBooleanFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular';
+import { IgxBooleanFilteringOperand, IgxStringFilteringOperand } from '@infragistics/igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({

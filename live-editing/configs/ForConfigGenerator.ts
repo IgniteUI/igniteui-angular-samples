@@ -4,7 +4,7 @@ IgxForOfModule,
 IgxIconModule,
 IgxInputGroupModule,
 IgxListModule,
-IgxRippleModule} from 'igniteui-angular';
+IgxRippleModule} from '@infragistics/igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class ForConfigGenerator implements IConfigGenerator {
 

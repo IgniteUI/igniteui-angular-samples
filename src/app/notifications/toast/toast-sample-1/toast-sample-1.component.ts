@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IgxToastComponent, VerticalAlignment } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-toast-sample-1',

@@ -10,7 +10,7 @@ IgxRippleModule,
 IgxSliderModule,
 IgxSwitchModule,
 IgxToggleModule,
-IgxTreeGridModule} from 'igniteui-angular';
+IgxTreeGridModule} from '@infragistics/igniteui-angular';
 import {IgxSparklineCoreModule,
 IgxSparklineModule} from 'igniteui-angular-charts';
 import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing';

@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 // tslint:disable-next-line:max-line-length
-import { IForOfState, IgxDropDownComponent, IgxForOfDirective, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IForOfState, IgxDropDownComponent, IgxForOfDirective, IgxToastComponent, VerticalAlignment } from '@infragistics/igniteui-angular';
 import { Subject, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { RemoteNWindService } from '../../../services/remoteNwind.service';

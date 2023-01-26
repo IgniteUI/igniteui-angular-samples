@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GridColumnDataType } from 'igniteui-angular';
+import { GridColumnDataType } from '@infragistics/igniteui-angular';
 import { AMINO_DATA } from '../../data/amino-data';
 
 @Component({

@@ -6,7 +6,7 @@ import {
     IgxCsvExporterOptions,
     IgxExcelExporterOptions,
     IgxExporterOptionsBase
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { EMPLOYEE_FLAT_AVATARS_DATA } from '../data/employees-flat-avatars';
 
 @Component({

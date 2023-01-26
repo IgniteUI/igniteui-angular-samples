@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxGridComponent, IgxSummaryResult, IgxNumberSummaryOperand, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IgxDialogComponent, IgxGridComponent, IgxSummaryResult, IgxNumberSummaryOperand, IgxToastComponent, VerticalAlignment } from '@infragistics/igniteui-angular';
 import { DATA, LOCATIONS } from './data';
 import { Product } from './product';
 

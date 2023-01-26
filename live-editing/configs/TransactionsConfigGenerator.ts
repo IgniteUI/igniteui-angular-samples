@@ -3,7 +3,7 @@ import {IgxButtonModule,
 IgxCardModule,
 IgxIconModule,
 IgxListModule,
-IgxTransactionService} from 'igniteui-angular';
+IgxTransactionService} from '@infragistics/igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing';
 export class TransactionsConfigGenerator implements IConfigGenerator {
     public additionalImports = {

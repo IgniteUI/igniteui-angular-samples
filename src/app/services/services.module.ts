@@ -2,7 +2,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IgxCardModule, IgxGridModule, IgxIconModule, IgxListModule, IgxTimePickerModule, IgxTransactionService, IgxTreeGridModule } from 'igniteui-angular';
+import { IgxCardModule, IgxGridModule, IgxIconModule, IgxListModule, IgxTimePickerModule, IgxTransactionService, IgxTreeGridModule } from '@infragistics/igniteui-angular';
 import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
 import { CsvExportSample1Component } from './export-csv/csv-export-sample-1/csv-export-sample-1.component';
 import { TreeGridCsvExportSample1Component } from './export-csv/csv-export-tree-grid-sample/csv-export-tree-grid-sample.component';

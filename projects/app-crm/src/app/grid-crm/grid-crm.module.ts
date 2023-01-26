@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import {
     IgxAvatarModule, IgxButtonModule, IgxGridModule,
     IgxIconModule, IgxInputGroupModule, IgxRippleModule
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 
 import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
 import { GridsCrmRoutingModule } from './grid-crm-routing.module';

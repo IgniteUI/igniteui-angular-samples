@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxBannerComponent } from 'igniteui-angular';
+import { IgxBannerComponent } from '@infragistics/igniteui-angular';
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: 'app-banner-sample-4',

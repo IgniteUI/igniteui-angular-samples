@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { IgxStepperComponent } from 'igniteui-angular';
+import { IgxStepperComponent } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-stepper-overview-sample',

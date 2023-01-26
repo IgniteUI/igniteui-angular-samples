@@ -22,7 +22,7 @@ import {
     IgxTextHighlightModule,
     IgxTextSelectionModule,
     IgxToastModule
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { BadgeSample2Component } from './badge/badge-sample-2/badge-sample-2.component';
 import { BadgeSample3Component } from './badge/badge-sample-3/badge-sample-3.component';
 import { BadgeStylingSampleComponent } from './badge/badge-styling-sample/badge-styling-sample.component';

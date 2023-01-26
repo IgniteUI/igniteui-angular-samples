@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, OnInit, ViewChild, OnDestroy } from '@ang
 import { GridPagingMode, IGridEditDoneEventArgs, IgxGridComponent, IgxGridRow,
     IgxSnackbarComponent,
     IRowDataEventArgs,
-    NoopFilteringStrategy, NoopSortingStrategy } from 'igniteui-angular';
+    NoopFilteringStrategy, NoopSortingStrategy } from '@infragistics/igniteui-angular';
 import { Observable, Subject } from 'rxjs';
 import { Invoice } from '../../data/invoiceData';
 import { CRUDService } from '../../services/crud.service';

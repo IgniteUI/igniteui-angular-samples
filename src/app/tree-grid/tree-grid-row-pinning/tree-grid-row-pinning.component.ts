@@ -4,7 +4,7 @@ import {
     IgxTreeGridComponent,
     IPinningConfig,
     RowPinningPosition
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
 @Component({

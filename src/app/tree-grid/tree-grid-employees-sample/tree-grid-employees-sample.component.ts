@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GridSelectionMode } from 'igniteui-angular';
+import { GridSelectionMode } from '@infragistics/igniteui-angular';
 import { FULL_EMPLOYEE_DATA } from '../data/employees';
 
 @Component({

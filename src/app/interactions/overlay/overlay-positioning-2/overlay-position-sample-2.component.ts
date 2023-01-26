@@ -6,7 +6,7 @@ import {
     OverlaySettings,
     PositionSettings,
     VerticalAlignment
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 @Component({
     selector: 'app-overlay-sample',

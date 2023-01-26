@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxExpansionPanelComponent, IgxIconService } from 'igniteui-angular';
+import { IgxExpansionPanelComponent, IgxIconService } from '@infragistics/igniteui-angular';
 
 import {
     Card,

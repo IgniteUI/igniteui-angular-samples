@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular';
+import { IgxTreeGridComponent } from '@infragistics/igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 @Component({

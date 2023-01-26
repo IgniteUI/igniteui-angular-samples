@@ -3,7 +3,7 @@ import {
     ConnectedPositioningStrategy,
     IgxDropDownComponent,
     IgxInputGroupComponent
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-sample-4',

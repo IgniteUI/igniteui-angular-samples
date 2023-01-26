@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
-import { IgxIconModule } from 'igniteui-angular';
+import { IgxIconModule } from '@infragistics/igniteui-angular';
 
 interface ICopyData {
     data: any;

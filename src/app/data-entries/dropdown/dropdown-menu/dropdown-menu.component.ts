@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {
     ConnectedPositioningStrategy, HorizontalAlignment,
     ISelectionEventArgs, NoOpScrollStrategy, VerticalAlignment
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-dropdown-menu',

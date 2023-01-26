@@ -9,7 +9,7 @@ import {
     IgxTreeGridComponent,
     ISortingExpression,
     SortingDirection
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 class AvgSummary {

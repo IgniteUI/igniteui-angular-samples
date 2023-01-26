@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { IgxListComponent, IgxToastComponent } from 'igniteui-angular';
+import { IgxListComponent, IgxToastComponent } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-contact-list2',

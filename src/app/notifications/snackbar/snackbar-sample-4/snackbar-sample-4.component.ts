@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxSnackbarComponent } from 'igniteui-angular';
+import { IgxSnackbarComponent } from '@infragistics/igniteui-angular';
 
 @Component({
   selector: 'app-snackbar-sample-4',

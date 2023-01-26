@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxTimePickerComponent } from 'igniteui-angular';
+import { IgxTimePickerComponent } from '@infragistics/igniteui-angular';
 
 @Component({
   selector: 'app-timepicker-sample-6',

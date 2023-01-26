@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { IgxGridComponent } from '@infragistics/igniteui-angular';
 import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-external-advanced-filtering',

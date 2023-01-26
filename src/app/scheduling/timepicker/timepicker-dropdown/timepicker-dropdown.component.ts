@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PickerInteractionMode } from 'igniteui-angular';
+import { PickerInteractionMode } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-timepicker-dropdown',

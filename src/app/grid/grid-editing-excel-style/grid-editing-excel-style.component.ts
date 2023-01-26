@@ -3,7 +3,7 @@ import {
   IgxDialogComponent,
   IgxGridComponent,
   Transaction
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { DATA } from './../../data/nwindData';
 
 @Component({

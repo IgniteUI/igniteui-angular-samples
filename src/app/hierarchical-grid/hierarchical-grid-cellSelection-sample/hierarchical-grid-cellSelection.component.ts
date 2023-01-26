@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxSnackbarComponent, IgxHierarchicalGridComponent, GridSelectionMode } from 'igniteui-angular';
+import { IgxSnackbarComponent, IgxHierarchicalGridComponent, GridSelectionMode } from '@infragistics/igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({

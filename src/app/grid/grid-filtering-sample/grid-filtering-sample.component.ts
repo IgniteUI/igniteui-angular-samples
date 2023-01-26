@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent, IgxStringFilteringOperand } from 'igniteui-angular';
+import { IgxGridComponent, IgxStringFilteringOperand } from '@infragistics/igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({

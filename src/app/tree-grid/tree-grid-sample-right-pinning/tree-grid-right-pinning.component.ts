@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ColumnPinningPosition, IgxColumnComponent, IgxTreeGridComponent, IPinningConfig } from 'igniteui-angular';
+import { ColumnPinningPosition, IgxColumnComponent, IgxTreeGridComponent, IPinningConfig } from '@infragistics/igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({

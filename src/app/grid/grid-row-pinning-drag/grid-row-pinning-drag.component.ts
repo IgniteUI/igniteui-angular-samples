@@ -6,7 +6,7 @@ import {
     IRowDragStartEventArgs,
     RowPinningPosition,
     RowType
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { IgxRowDirective } from 'igniteui-angular/lib/grids/row.directive';
 import { DATA } from '../../data/customers';
 

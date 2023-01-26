@@ -2,7 +2,7 @@ import {
     IgxIconModule,
     IgxTreeModule,
     IgxTooltipModule
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing';
 export class TreeConfigGenerator implements IConfigGenerator {
 

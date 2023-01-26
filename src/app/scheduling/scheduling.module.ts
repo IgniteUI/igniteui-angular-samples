@@ -6,7 +6,7 @@ import {
     IgxDateRangePickerModule, IgxDateTimeEditorModule, IgxDialogModule, IgxDropDownModule, IgxIconModule,
     IgxInputGroupModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTextSelectionModule,
     IgxTimePickerModule, IgxToastModule, IgxToggleModule
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { CalendarDaysViewComponent } from './calendar/calendar-days-view/calendar-days-view.component';
 import { CalendarMonthsViewComponent } from './calendar/calendar-months-view/calendar-months-view.component';
 import { CalendarSample1Component } from './calendar/calendar-sample-1/calendar-sample-1.component';

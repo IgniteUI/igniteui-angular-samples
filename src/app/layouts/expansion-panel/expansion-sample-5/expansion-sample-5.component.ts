@@ -5,7 +5,7 @@ import {
     IgxExpansionPanelComponent,
     slideInLeft,
     slideOutRight
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 
 @Component({
     // tslint:disable-next-line:component-selector

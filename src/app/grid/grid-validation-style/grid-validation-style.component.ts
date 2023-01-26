@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { DATA } from '../../data/nwindData';
-import { IgxGridComponent, RowType } from 'igniteui-angular';
+import { IgxGridComponent, RowType } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-grid-validation-style',

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChildren } from '@angular/core';
-import { RowType } from 'igniteui-angular';
+import { RowType } from '@infragistics/igniteui-angular';
 import { moonData, planetData } from './data';
 import { PlanetComponent as PlanetComponent } from './planet/planet.component';
 

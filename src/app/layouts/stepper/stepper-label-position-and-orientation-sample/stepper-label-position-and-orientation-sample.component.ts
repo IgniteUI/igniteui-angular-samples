@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IButtonGroupEventArgs, IgxStepperOrientation, IgxStepperTitlePosition } from 'igniteui-angular';
+import { IButtonGroupEventArgs, IgxStepperOrientation, IgxStepperTitlePosition } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-stepper-label-position-and-orientation-sample',

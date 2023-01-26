@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
-import { CellType, IgxGridComponent, IGridEditEventArgs } from 'igniteui-angular';
+import { CellType, IgxGridComponent, IGridEditEventArgs } from '@infragistics/igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { employeesData } from '../../data/employeesData';
 

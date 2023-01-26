@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
-import { ColumnPinningPosition, IgxColumnComponent, IgxGridComponent, IPinningConfig } from 'igniteui-angular';
+import { ColumnPinningPosition, IgxColumnComponent, IgxGridComponent, IPinningConfig } from '@infragistics/igniteui-angular';
 import { employeesData } from '../../data/employeesData';
 import { athletesData } from '../../data/athletesData';
 

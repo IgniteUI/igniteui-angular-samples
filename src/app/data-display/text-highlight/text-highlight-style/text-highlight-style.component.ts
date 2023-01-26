@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { Component, ViewChild } from '@angular/core';
-import { IgxTextHighlightDirective } from 'igniteui-angular';
+import { IgxTextHighlightDirective } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-text-highlight-style',

@@ -6,7 +6,7 @@ import {
     IgxToggleDirective,
     NoOpScrollStrategy,
     OverlaySettings
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-drag-dialog-sample',

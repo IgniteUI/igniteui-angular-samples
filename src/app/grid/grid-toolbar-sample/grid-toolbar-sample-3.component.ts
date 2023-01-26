@@ -6,7 +6,7 @@ import {
     IgxCsvExporterOptions,
     IgxExcelExporterOptions,
     IgxExporterOptionsBase
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { athletesData } from '../../data/athletesData';
 
 @Component({

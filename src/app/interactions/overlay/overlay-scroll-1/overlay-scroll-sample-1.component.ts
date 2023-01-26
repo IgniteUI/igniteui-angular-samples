@@ -10,7 +10,7 @@ import {
     OverlaySettings,
     PositionSettings,
     VerticalAlignment
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: 'app-overlay-sample',

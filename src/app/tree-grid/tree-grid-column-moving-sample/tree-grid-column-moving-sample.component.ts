@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ColumnType, IgxTreeGridComponent } from 'igniteui-angular';
+import { ColumnType, IgxTreeGridComponent } from '@infragistics/igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({

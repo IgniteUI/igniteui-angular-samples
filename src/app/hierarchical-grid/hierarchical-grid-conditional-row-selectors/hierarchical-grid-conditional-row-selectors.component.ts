@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IRowSelectionEventArgs } from 'igniteui-angular';
+import { IRowSelectionEventArgs } from '@infragistics/igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({

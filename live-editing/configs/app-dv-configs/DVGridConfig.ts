@@ -20,7 +20,7 @@ IgxSwitchModule,
 IgxTabsModule,
 IgxToggleModule,
 IgxToastModule,
-IgxGridComponent} from 'igniteui-angular';
+IgxGridComponent} from '@infragistics/igniteui-angular';
 import {IgxCategoryChartModule,
 IgxLegendModule,
 IgxPieChartModule,

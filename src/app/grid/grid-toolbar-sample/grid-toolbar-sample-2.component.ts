@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GlobalPositionStrategy, scaleInCenter, scaleOutCenter, AbsoluteScrollStrategy, AutoPositionStrategy } from 'igniteui-angular';
+import { GlobalPositionStrategy, scaleInCenter, scaleOutCenter, AbsoluteScrollStrategy, AutoPositionStrategy } from '@infragistics/igniteui-angular';
 import { athletesData } from '../../data/athletesData';
 
 @Component({

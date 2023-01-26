@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxTreeGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxTreeGridComponent } from '@infragistics/igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 
 @Component({

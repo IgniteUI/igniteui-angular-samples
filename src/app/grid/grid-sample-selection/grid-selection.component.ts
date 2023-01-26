@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 
-import { GridSelectionMode, IgxGridComponent, IgxSnackbarComponent, IRowSelectionEventArgs } from 'igniteui-angular';
+import { GridSelectionMode, IgxGridComponent, IgxSnackbarComponent, IRowSelectionEventArgs } from '@infragistics/igniteui-angular';
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
 

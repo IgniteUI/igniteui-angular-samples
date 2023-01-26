@@ -4,7 +4,7 @@ import {
     DefaultSortingStrategy,
     IgxGridComponent,
     SortingDirection
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
 import { DatePipe } from '@angular/common';
 

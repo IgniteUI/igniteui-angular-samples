@@ -4,7 +4,7 @@ import {
     IgxColumnComponent,
     IgxHierarchicalGridComponent,
     IPinningConfig
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { employeesData } from '../../data/employeesData';
 import { athletesData } from '../../data/athletesData';
 

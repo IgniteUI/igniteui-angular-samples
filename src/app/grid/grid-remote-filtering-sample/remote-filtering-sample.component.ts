@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
-import { IgxGridComponent, NoopFilteringStrategy, NoopSortingStrategy } from 'igniteui-angular';
+import { IgxGridComponent, NoopFilteringStrategy, NoopSortingStrategy } from '@infragistics/igniteui-angular';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 import { RemoteFilteringService } from '../../services/remoteFiltering.service';

@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
-import { GridPagingMode, IgxGridComponent } from 'igniteui-angular';
+import { GridPagingMode, IgxGridComponent } from '@infragistics/igniteui-angular';
 import { Observable } from 'rxjs';
 import { RemotePagingService } from '../../services/remotePaging.service';
 @Component({

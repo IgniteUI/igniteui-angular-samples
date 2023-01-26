@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import {
     IgxGridComponent,
     IgxNumberSummaryOperand,
-    IgxSummaryResult } from 'igniteui-angular';
+    IgxSummaryResult } from '@infragistics/igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 class DiscontinuedSummary {

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxGridComponent } from '@infragistics/igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({

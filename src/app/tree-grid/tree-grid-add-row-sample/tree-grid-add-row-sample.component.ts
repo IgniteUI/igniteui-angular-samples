@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxActionStripComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { IgxActionStripComponent, IgxTreeGridComponent } from '@infragistics/igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({

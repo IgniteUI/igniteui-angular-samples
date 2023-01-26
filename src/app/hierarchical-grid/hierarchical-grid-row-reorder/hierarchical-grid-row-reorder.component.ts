@@ -5,7 +5,7 @@ import {
     RowType,
     Point,
     GridSelectionMode
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { createData, IDrive } from '../../data/files.data';
 
 @Component({

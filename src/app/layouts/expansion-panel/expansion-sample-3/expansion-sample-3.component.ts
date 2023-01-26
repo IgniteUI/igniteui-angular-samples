@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxExpansionPanelComponent } from 'igniteui-angular';
+import { IgxExpansionPanelComponent } from '@infragistics/igniteui-angular';
 
 @Component({
     // tslint:disable-next-line:component-selector

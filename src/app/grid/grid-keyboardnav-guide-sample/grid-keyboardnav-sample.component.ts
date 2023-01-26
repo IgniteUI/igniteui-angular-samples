@@ -12,7 +12,7 @@ import {
     IgxListComponent,
     SortingDirection,
     IActiveNodeChangeEventArgs
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { DATA } from '../../data/customers';

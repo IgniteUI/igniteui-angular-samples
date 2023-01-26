@@ -6,7 +6,7 @@ import {
     IgxToggleDirective,
     VerticalAlignment,
     OverlaySettings
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 
 @Component({
   selector: 'app-toggle',

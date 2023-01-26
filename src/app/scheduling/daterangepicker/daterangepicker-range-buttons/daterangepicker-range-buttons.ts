@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { DateRange, IgxDateRangePickerComponent, OverlaySettings } from 'igniteui-angular';
+import { DateRange, IgxDateRangePickerComponent, OverlaySettings } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-rangdatepicker-range-buttons',

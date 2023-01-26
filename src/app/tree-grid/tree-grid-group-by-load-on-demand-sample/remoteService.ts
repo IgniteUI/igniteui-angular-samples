@@ -1,4 +1,4 @@
-import { DataUtil, IGroupingExpression, IgxSorting, ISortingExpression } from 'igniteui-angular';
+import { DataUtil, IGroupingExpression, IgxSorting, ISortingExpression } from '@infragistics/igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
 
 class GroupByRecord {

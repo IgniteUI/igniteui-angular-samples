@@ -1,7 +1,7 @@
 import {IgxDateRangePickerModule,
 IgxIconModule,
 IgxInputGroupModule,
-IgxSelectModule} from 'igniteui-angular';
+IgxSelectModule} from '@infragistics/igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class DateRangePickerConfigGenerator implements IConfigGenerator {
     public additionalImports = {

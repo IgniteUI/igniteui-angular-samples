@@ -1,7 +1,7 @@
 import {IgxDateTimeEditorModule,
 IgxIconModule,
 IgxInputGroupModule,
-IgxTextSelectionModule} from 'igniteui-angular';
+IgxTextSelectionModule} from '@infragistics/igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class DateTimeEditorConfigGenerator implements IConfigGenerator {
 

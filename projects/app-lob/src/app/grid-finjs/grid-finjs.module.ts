@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import {
     IgxButtonModule, IgxDialogModule, IgxGridModule,
     IgxSliderModule, IgxSwitchModule, IgxToastModule
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import {
     IgxBollingerBandsOverlayModule, IgxCategoryChartModule, IgxCategoryXAxisModule,
     IgxDataChartCategoryModule, IgxDataChartCoreModule, IgxDataChartInteractivityModule, IgxFinancialPriceSeriesModule,

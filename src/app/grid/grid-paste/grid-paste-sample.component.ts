@@ -3,7 +3,7 @@ import {
     IgxExcelExporterOptions,
     IgxExcelExporterService,
     IgxGridComponent
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 
 import { EXCEL_DATA, LOCAL_DATA } from './data';
 

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxSelectComponent } from 'igniteui-angular';
+import { IgxSelectComponent } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-select-input-directives',

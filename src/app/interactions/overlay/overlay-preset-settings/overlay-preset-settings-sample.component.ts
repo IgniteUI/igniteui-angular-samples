@@ -13,7 +13,7 @@ import {
     RelativePosition,
     RelativePositionStrategy,
     IButtonGroupEventArgs
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 
 // tslint:disable:object-literal-sort-keys

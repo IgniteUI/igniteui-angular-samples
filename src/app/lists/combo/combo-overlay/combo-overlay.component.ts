@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GlobalPositionStrategy, OverlaySettings, scaleInCenter, scaleOutCenter } from 'igniteui-angular';
+import { GlobalPositionStrategy, OverlaySettings, scaleInCenter, scaleOutCenter } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-combo-overlay',

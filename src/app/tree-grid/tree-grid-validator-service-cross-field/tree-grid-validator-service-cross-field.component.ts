@@ -7,7 +7,7 @@ import {
     IGridEditEventArgs,
     IgxTreeGridComponent,
     IPinningConfig
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 

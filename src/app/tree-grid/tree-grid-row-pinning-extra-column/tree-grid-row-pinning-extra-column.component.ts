@@ -6,7 +6,7 @@ import {
     IPinningConfig,
     RowPinningPosition,
     RowType
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { icons } from '../../services/svgIcons';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 

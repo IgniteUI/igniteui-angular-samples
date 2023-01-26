@@ -1,6 +1,6 @@
 import { registerLocaleData } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { IFormattingOptions } from 'igniteui-angular';
+import { IFormattingOptions } from '@infragistics/igniteui-angular';
 import localeDE from '@angular/common/locales/de';
 import localeFR from '@angular/common/locales/fr';
 import localeAR from '@angular/common/locales/ar';

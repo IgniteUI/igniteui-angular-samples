@@ -26,7 +26,7 @@ import {
     VerticalAlignment,
     CellType,
     GridSelectionMode
-} from 'igniteui-angular';
+} from '@infragistics/igniteui-angular';
 import { data, Employee } from './data';
 
 function formatDate(val: Date) {

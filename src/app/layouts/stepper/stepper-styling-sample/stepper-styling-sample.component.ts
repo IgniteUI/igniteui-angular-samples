@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxStepperComponent, IStepChangingEventArgs } from 'igniteui-angular';
+import { IgxStepperComponent, IStepChangingEventArgs } from '@infragistics/igniteui-angular';
 
 @Component({
     selector: 'app-stepper-styling-sample',
