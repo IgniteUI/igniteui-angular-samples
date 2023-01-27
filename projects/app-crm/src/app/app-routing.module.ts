@@ -8,7 +8,7 @@ export const gridCrmRoutes: Routes = [
     },
     {
         path: 'grid-crm', component: GridCRMComponent
-    },
+    }
 ];
 @NgModule({
     exports: [
