@@ -8,10 +8,10 @@ import { IgxListComponent, IgxToastComponent } from 'igniteui-angular';
     templateUrl: './list-sample-8.component.html'
 })
 export class ListSample8Component implements OnInit {
-    @ViewChild('toast', { static : true })
+    @ViewChild('toast', { static: true })
     public toast: IgxToastComponent;
 
-    @ViewChild('mainIgxList', { static : true })
+    @ViewChild('mainIgxList', { static: true })
     public list: IgxListComponent;
 
     public contacts;
@@ -51,7 +51,12 @@ export class ListSample8Component implements OnInit {
         this.contacts = Object.assign([], this.dataSource);
     }
 
-    public toggleFavorite(contact: any) {
+    public toggleFavorite(contact: any, event: Event) {
+        event.stopPropagation();
         contact.isFavorite = !contact.isFavorite;
+    }
+
+    public mousedown(event: Event) {
+        event.stopPropagation();
     }
 }

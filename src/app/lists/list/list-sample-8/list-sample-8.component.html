@@ -5,7 +5,9 @@
             <igx-avatar igxListThumbnail [src]="contact.photo" [roundShape]="true"></igx-avatar>
             <span igxListLineTitle>{{ contact.name }}</span>
             <span igxListLineSubTitle>{{ contact.phone }}</span>
-            <igx-icon igxListAction [style.color]="contact.isFavorite ? 'orange' : 'lightgray'" (click)="toggleFavorite(contact)">star</igx-icon>
+            <igx-icon igxListAction [style.color]="contact.isFavorite ? 'orange' : 'lightgray'" igxRipple="white"
+                [igxRippleCentered]="true" (click)="toggleFavorite(contact, $event)"
+                (mousedown)="mousedown($event)">star</igx-icon>
         </igx-list-item>
     </igx-list>
 </div>
