@@ -14,7 +14,7 @@
     primaryKey="ID" foreignKey="ParentID">
     <igx-column #col field="ID" header="Order ID" [sortable]="true">
     </igx-column>
-    <igx-column #col field="Name" header="Product Name" [hasSummary]="true">
+    <igx-column #col field="Name" header="Order Product" [hasSummary]="true">
     </igx-column>
     <igx-column #col field="UnitPrice" header="Price" [formatter]="formatCurrency" [filterable]="false" [editable]="true" dataType="number"
                 [hasSummary]="true" [summaries]="avgSummary">
