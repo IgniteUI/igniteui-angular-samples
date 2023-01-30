@@ -19,10 +19,10 @@
     <igx-column #col field="UnitPrice" header="Price" [formatter]="formatCurrency" [filterable]="false" [editable]="true" dataType="number"
                 [hasSummary]="true" [summaries]="avgSummary">
     </igx-column>
-    <igx-column #col field="Discontinued" header="Discontinued" [dataType]="'boolean'">
+    <igx-column #col field="Delivered" header="Delivered" [dataType]="'boolean'">
         <ng-template igxCell let-cell="cell" let-val>
-            <img *ngIf="val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
-            <img *ngIf="!val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+            <img *ngIf="val" src="assets/images/grid/active.png" title="Delivered" alt="Delivered" />
+            <img *ngIf="!val" src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered" />
         </ng-template>
     </igx-column>
     <igx-column #col field="AddedDate" header="Added Date" [dataType]="'date'">
