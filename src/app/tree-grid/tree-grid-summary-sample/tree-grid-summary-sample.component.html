@@ -3,7 +3,7 @@
         primaryKey="ID" foreignKey="ParentID">
         <igx-column #col field="ID" header="Order ID">
         </igx-column>
-        <igx-column #col field="Name" header="Product Name" [hasSummary]="true">
+        <igx-column #col field="Name" header="Order Product" [hasSummary]="true">
             <ng-template igxCell let-cell="cell" let-val>
                 {{ val }}
             </ng-template>
