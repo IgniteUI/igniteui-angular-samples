@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
 import {
     IgxAutocompleteModule, IgxButtonModule, IgxIconModule, IgxInputGroupModule, IgxLayoutModule,
     IgxRippleModule, IgxGridModule, IgxAvatarModule
@@ -10,6 +9,7 @@ import {
 import { IgxPreventDocumentScrollModule } from '../../../../src/app/directives/prevent-scroll.directive';
 import { AppComponent } from './app.component';
 import { GridCRMComponent } from './grid-crm/grid-crm.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -26,13 +26,14 @@ import { GridCRMComponent } from './grid-crm/grid-crm.component';
         IgxAvatarModule,
         IgxInputGroupModule,
         BrowserModule,
-        RouterModule.forRoot([]),
+        AppRoutingModule,
         BrowserAnimationsModule,
         IgxButtonModule,
         FormsModule,
         IgxPreventDocumentScrollModule,
         HammerModule
-    ]
+    ],
+    providers: []
 })
 export class AppModule { }
 

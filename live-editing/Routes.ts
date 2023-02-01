@@ -3,6 +3,7 @@ import * as GridFinjsRouting from '../projects/app-lob/src/app/grid-finjs/grid-f
 import { GridFinjsModule } from '../projects/app-lob/src/app/grid-finjs/grid-finjs.module';
 import * as TreeGridFinjsRouting from '../projects/app-lob/src/app/treegrid-finjs/treegrid-finjs-routing.module';
 import { TreeGridFinjsModule } from '../projects/app-lob/src/app/treegrid-finjs/treegrid-finjs.module';
+import * as GridCRMRouting from '../projects/app-crm/src/app/app-routing.module';
 
 import * as GridsDVRouting from '../projects/app-lob/src/app/grid/grids-routing.module';
 import { GridsDVModule } from '../projects/app-lob/src/app/grid/grids.module';
@@ -46,6 +47,7 @@ import { PaginationModule } from '../src/app/pagination/pagination.module';
 import * as PaginatorRouting from '../src/app/pagination/pagination-routing.module';
 import { PivotGridsModule } from '../src/app/pivot-grid/pivot-grids.module';
 import { PivotGridsRoutingModule } from '../src/app/pivot-grid/pivot-grids-routing.module';
+import { AppModule } from '../projects/app-crm/src/app/app.module';
 
 export const MODULE_ROUTES = [
     {
@@ -155,5 +157,13 @@ export const DV_MODULE_ROUTES = [
         module: GridFinJSDockManagerModule,
         path: 'grid-finjs-dock-manager',
         routes: GridFinJSDockManagerRoutingModule.gridFinJsDockManagerGridRoutes
+    }
+];
+
+export const CRM_MODULE_ROUTES = [
+    {
+        module: AppModule,
+        path: 'grid-crm',
+        routes: GridCRMRouting.gridCrmRoutes
     }
 ];
