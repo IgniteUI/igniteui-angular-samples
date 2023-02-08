@@ -6,7 +6,7 @@ IgxIconModule,
 IgxNavbarModule,
 IgxRippleModule,
 IgxTabsModule,
-IgxButtonGroupModule } from '@infragistics/igniteui-angular';
+IgxButtonGroupModule } from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing';
 export class TabsConfigGenerator implements IConfigGenerator {
     public additionalImports = {

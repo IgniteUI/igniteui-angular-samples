@@ -9,7 +9,7 @@ import {
     IgxDialogModule, IgxDividerModule, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule,
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
     IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 
 import { GridComponent } from './grid-boston-marathon/grid.component';
 import { GridMasterDetailSampleComponent } from './grid-master-detail/grid-master-detail.component';

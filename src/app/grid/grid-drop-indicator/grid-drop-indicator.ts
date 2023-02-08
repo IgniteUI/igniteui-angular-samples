@@ -1,5 +1,5 @@
 import { Component, ViewChild, AfterViewInit, OnDestroy, Renderer2 } from '@angular/core';
-import { IDragMoveEventArgs, IDropDroppedEventArgs, IgxGridComponent, IRowDragStartEventArgs, Point } from '@infragistics/igniteui-angular';
+import { IDragMoveEventArgs, IDropDroppedEventArgs, IgxGridComponent, IRowDragStartEventArgs, Point } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 import { Subject, interval, Observable, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';

@@ -1,5 +1,5 @@
 import { Component, QueryList, ViewChildren } from '@angular/core';
-import { IExpansionPanelEventArgs, IgxExpansionPanelComponent } from '@infragistics/igniteui-angular';
+import { IExpansionPanelEventArgs, IgxExpansionPanelComponent } from 'igniteui-angular';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-expansion-sample-4',

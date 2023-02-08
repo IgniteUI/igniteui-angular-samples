@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SplitterType } from '@infragistics/igniteui-angular';
+import { SplitterType } from 'igniteui-angular';
 
 @Component({
     selector: 'app-splitter-styling-sample',

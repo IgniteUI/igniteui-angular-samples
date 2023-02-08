@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { NavigationStart, Route, Router } from '@angular/router';
-import { IgxNavigationDrawerComponent, IgxTreeComponent } from '@infragistics/igniteui-angular';
+import { IgxNavigationDrawerComponent, IgxTreeComponent } from 'igniteui-angular';
 import { fromEvent, Subscription } from 'rxjs';
 import { filter, map, debounceTime } from 'rxjs/operators';
 import { dataDisplayRoutesData } from '../data-display/data-display-routes-data';

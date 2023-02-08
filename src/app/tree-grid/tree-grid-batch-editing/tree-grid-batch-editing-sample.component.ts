@@ -5,7 +5,7 @@ import {
     IgxGridComponent,
     IgxTreeGridComponent,
     Transaction
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { generateRandomInteger } from '../../data/utils';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 

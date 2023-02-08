@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxBannerComponent, slideInLeft, slideOutRight } from '@infragistics/igniteui-angular';
+import { IgxBannerComponent, slideInLeft, slideOutRight } from 'igniteui-angular';
 
 @Component({
     selector: 'app-banner-sample-3',

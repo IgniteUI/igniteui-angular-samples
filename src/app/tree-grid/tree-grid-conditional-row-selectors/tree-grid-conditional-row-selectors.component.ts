@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IRowSelectionEventArgs } from '@infragistics/igniteui-angular';
+import { IRowSelectionEventArgs } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({

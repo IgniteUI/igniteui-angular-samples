@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent, RowType, Transaction } from '@infragistics/igniteui-angular';
+import { IgxGridComponent, RowType, Transaction } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({

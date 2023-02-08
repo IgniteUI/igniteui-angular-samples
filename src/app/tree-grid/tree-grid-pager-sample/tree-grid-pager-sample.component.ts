@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { IPaginatorResourceStrings, IgxPaginatorComponent } from '@infragistics/igniteui-angular';
+import { IPaginatorResourceStrings, IgxPaginatorComponent } from 'igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 @Component({

@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxHierarchicalGridComponent } from '@infragistics/igniteui-angular';
+import { GridSelectionMode, IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({

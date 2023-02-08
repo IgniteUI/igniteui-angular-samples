@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IBaseChipEventArgs, IgxChipComponent, IgxTreeComponent, ITreeNodeSelectionEvent } from '@infragistics/igniteui-angular';
+import { IBaseChipEventArgs, IgxChipComponent, IgxTreeComponent, ITreeNodeSelectionEvent } from 'igniteui-angular';
 import { IBaseCancelableBrowserEventArgs } from 'igniteui-angular/lib/core/utils';
 import { COUNTRIES } from './countries';
 @Component({

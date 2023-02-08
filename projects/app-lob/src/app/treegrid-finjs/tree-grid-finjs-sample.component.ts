@@ -3,7 +3,7 @@ import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment,
     IGroupingExpression, IgxButtonGroupComponent, IgxGroupedTreeGridSorting, IgxOverlayOutletDirective, IgxSliderComponent,
     IgxTreeGridComponent, ITreeGridAggregation, OverlaySettings, PositionSettings, TreeGridFilteringStrategy, VerticalAlignment
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { Contract, REGIONS } from '../data/financialData';
 import { SignalRService } from '../services/signal-r.service';
 

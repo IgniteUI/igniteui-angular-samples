@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IgxGridComponent, IgxSelectComponent, SortingDirection } from '@infragistics/igniteui-angular';
+import { DefaultSortingStrategy, IgxGridComponent, IgxSelectComponent, SortingDirection } from 'igniteui-angular';
 import { DATA } from '../../data/localData';
 
 // eslint-disable-next-line no-shadow

@@ -1,5 +1,5 @@
 import { Component, ElementRef } from '@angular/core';
-import { IgxCardModule } from '@infragistics/igniteui-angular';
+import { IgxCardModule } from 'igniteui-angular';
 @Component({
     selector: `app-overlay-dynamic-card-component`,
     templateUrl: `overlay-dynamic-card.component.html`,

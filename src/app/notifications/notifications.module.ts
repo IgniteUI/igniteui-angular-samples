@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IgxAvatarModule, IgxBannerModule, IgxButtonModule, IgxCardModule, IgxIconModule, IgxInputGroupModule,
      IgxListModule, IgxNavbarModule, IgxRippleModule, IgxSnackbarModule,
-     IgxSwitchModule, IgxToastModule } from '@infragistics/igniteui-angular';
+     IgxSwitchModule, IgxToastModule } from 'igniteui-angular';
 import { BannerAdvancedSampleComponent } from './banner/banner-advanced-sample/banner-advanced-sample.component';
 import { BannerSample1Component } from './banner/banner-sample-1/banner-sample-1.component';
 import { BannerSample2Component } from './banner/banner-sample-2/banner-sample-2.component';

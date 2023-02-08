@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GridSelectionMode, IgxExporterEvent } from '@infragistics/igniteui-angular';
+import { GridSelectionMode, IgxExporterEvent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({

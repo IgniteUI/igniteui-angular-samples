@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     IgxGridComponent,
     RowType
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({

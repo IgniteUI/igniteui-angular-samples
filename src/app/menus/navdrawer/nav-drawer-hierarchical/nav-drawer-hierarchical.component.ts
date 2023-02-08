@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { IgxTreeComponent } from '@infragistics/igniteui-angular';
+import { IgxTreeComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-nav-drawer-hierarchical',

@@ -10,7 +10,7 @@ import {
     IgxSnackbarComponent,
     VerticalAlignment,
     OverlaySettings
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { DATA } from '../data/data';
 import { Record } from '../data/record';
 

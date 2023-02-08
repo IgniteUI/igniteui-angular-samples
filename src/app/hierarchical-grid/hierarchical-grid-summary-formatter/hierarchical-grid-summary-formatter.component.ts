@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
-import { IgxDateSummaryOperand, IgxHierarchicalGridComponent, IgxSummaryOperand, IgxSummaryResult } from '@infragistics/igniteui-angular';
+import { IgxDateSummaryOperand, IgxHierarchicalGridComponent, IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({

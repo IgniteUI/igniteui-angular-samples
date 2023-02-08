@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IButtonGroupEventArgs } from '@infragistics/igniteui-angular';
+import { IButtonGroupEventArgs } from 'igniteui-angular';
 
 @Component({
     selector: 'app-stepper-linear-sample',

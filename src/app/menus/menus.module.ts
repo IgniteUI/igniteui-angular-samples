@@ -14,7 +14,7 @@ import {
     IgxSwitchModule,
     IgxToggleModule,
     IgxTreeModule
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import {
     ActionStripParagraphMenuComponent
 } from './action-strip/action-strip-paragraph-menu/action-strip-paragraph-menu.component';

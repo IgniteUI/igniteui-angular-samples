@@ -16,7 +16,7 @@ IgxListModule,
 IgxRippleModule,
 IgxSelectModule,
 IgxSnackbarModule,
-IgxToggleModule} from '@infragistics/igniteui-angular';
+IgxToggleModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';

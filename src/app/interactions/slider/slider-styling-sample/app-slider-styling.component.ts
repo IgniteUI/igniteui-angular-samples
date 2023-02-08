@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxSliderComponent, TicksOrientation} from '@infragistics/igniteui-angular';
+import { IgxSliderComponent, TicksOrientation} from 'igniteui-angular';
 
 @Component({
     selector: 'app-slider-styling',

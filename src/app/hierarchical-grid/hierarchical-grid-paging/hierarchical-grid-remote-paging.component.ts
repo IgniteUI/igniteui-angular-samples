@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { GridPagingMode, IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent } from '@infragistics/igniteui-angular';
+import { GridPagingMode, IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { RemotePagingService } from './remotePagingService';
 import { BehaviorSubject } from 'rxjs';
 

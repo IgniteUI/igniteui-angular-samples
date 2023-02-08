@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '
 import {
     IComboSearchInputEventArgs, IComboSelectionChangingEventArgs, IForOfState,
     IgxComboComponent, IgxToastComponent, VerticalAlignment
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { RemoteNWindService } from '../../../services/remoteNwind.service';
 
 @Component({

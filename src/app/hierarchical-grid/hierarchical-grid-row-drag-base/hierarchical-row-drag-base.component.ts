@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType } from '@infragistics/igniteui-angular';
+import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType } from 'igniteui-angular';
 import { createData, IDrive } from '../../data/files.data';
 
 // eslint-disable-next-line no-shadow

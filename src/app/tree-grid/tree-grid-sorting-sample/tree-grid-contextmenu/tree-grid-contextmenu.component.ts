@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SortingDirection } from '@infragistics/igniteui-angular';
+import { SortingDirection } from 'igniteui-angular';
 
 @Component({
   selector: 'app-tree-grid-contextmenu',

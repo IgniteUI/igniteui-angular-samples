@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxColumnComponent } from '@infragistics/igniteui-angular';
+import { IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({

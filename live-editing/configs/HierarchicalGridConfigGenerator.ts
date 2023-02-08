@@ -25,7 +25,7 @@ import {
     IgxTooltipModule,
     IgxToggleModule,
     IgxExcelExporterService
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 import { Router, RouterModule } from '@angular/router';
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxComboComponent } from '@infragistics/igniteui-angular';
+import { IgxComboComponent } from 'igniteui-angular';
 import { CITIES, ICity } from './cities';
 
 @Component({

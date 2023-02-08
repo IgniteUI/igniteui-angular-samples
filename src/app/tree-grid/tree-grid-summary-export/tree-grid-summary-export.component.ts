@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ColumnType, IgxExcelExporterOptions, IgxExcelExporterService, IgxTreeGridComponent } from '@infragistics/igniteui-angular';
+import { ColumnType, IgxExcelExporterOptions, IgxExcelExporterService, IgxTreeGridComponent } from 'igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 @Component({

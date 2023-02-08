@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxInputDirective, IgxSliderComponent } from '@infragistics/igniteui-angular';
+import { IgxInputDirective, IgxSliderComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-slider-sample-3',

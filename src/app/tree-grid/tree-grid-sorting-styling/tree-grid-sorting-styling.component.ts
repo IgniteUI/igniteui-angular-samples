@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IgxTreeGridComponent, SortingDirection } from '@infragistics/igniteui-angular';
+import { DefaultSortingStrategy, IgxTreeGridComponent, SortingDirection } from 'igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 @Component({

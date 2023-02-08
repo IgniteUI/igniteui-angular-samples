@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxExporterEvent, IgxGridComponent } from '@infragistics/igniteui-angular';
+import { IgxExporterEvent, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({

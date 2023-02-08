@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { GridSelectionMode, IDropDroppedEventArgs, IgxTreeGridComponent } from '@infragistics/igniteui-angular';
+import { GridSelectionMode, IDropDroppedEventArgs, IgxTreeGridComponent } from 'igniteui-angular';
 import { FULL_EMPLOYEE_DATA } from '../data/employees';
 
 @Component({

@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     IgxButtonModule, IgxIconModule, IgxInputGroupModule,
     IgxLayoutModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxRippleModule
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { IgxExtrasModule } from '@infragistics/igniteui-angular-extras';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { DisplayDensity, IgxActionStripComponent } from '@infragistics/igniteui-angular';
+import { DisplayDensity, IgxActionStripComponent } from 'igniteui-angular';
 
 @Component({
   selector: 'app-action-strip-paragraph-styling',

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent, RowType } from '@infragistics/igniteui-angular';
+import { IgxHierarchicalGridComponent, RowType } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hgrid-row-classes',

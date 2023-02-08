@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseInputGroupSampleComponent } from '../base-input.component';
-import { IGX_INPUT_GROUP_TYPE } from '@infragistics/igniteui-angular';
+import { IGX_INPUT_GROUP_TYPE } from 'igniteui-angular';
 
 @Component({
     selector: 'app-input-group-sample-5',

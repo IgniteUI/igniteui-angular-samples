@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxExporterEvent } from '@infragistics/igniteui-angular';
+import { IgxExporterEvent } from 'igniteui-angular';
 import { HIERARCHICAL_DATA } from '../../data/hierarchical-data';
 
 @Component({

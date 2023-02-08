@@ -1,6 +1,6 @@
 import { Character } from './characters';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent } from '@infragistics/igniteui-angular';
+import { IgxGridComponent } from 'igniteui-angular';
 import { DATA, ALIGNMENTS, RACES, CLASSES } from './data';
 
 @Component({

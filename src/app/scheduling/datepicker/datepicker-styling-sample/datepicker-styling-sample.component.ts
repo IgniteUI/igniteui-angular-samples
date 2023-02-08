@@ -1,5 +1,5 @@
 import { Component, ElementRef } from '@angular/core';
-import { IgxOverlayService } from '@infragistics/igniteui-angular';
+import { IgxOverlayService } from 'igniteui-angular';
 
 @Component({
   selector: 'app-datepicker-sample-1',

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ButtonGroupAlignment } from '@infragistics/igniteui-angular';
+import { ButtonGroupAlignment } from 'igniteui-angular';
 
 @Component({
   encapsulation: ViewEncapsulation.None,

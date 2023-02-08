@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ISimpleComboSelectionChangingEventArgs } from '@infragistics/igniteui-angular';
+import { ISimpleComboSelectionChangingEventArgs } from 'igniteui-angular';
 import { City, Country, getCitiesByCountry, getCountries, Region } from '../../../data/cities15000-regions-countries';
 
 @Component({

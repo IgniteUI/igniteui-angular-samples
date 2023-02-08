@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DisplayDensity, IgxNumberSummaryOperand, IgxSummaryResult } from '@infragistics/igniteui-angular';
+import { DisplayDensity, IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 class DiscontinuedSummary {

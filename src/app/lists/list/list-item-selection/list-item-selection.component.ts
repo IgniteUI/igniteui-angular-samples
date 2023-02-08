@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxFilterOptions } from '@infragistics/igniteui-angular';
+import { IgxFilterOptions } from 'igniteui-angular';
 
 @Component({
     selector: 'app-list-item-selection',

@@ -18,8 +18,8 @@ import {
     IgxOverlayService,
     AbsolutePosition,
     OverlayClosingEventArgs
-} from '@infragistics/igniteui-angular';
-import { IgxGridCellComponent } from '@infragistics/igniteui-angular/lib/grids/cell.component';
+} from 'igniteui-angular';
+import { IgxGridCellComponent } from 'igniteui-angular/lib/grids/cell.component';
 import { Athlete, АthletesData, SpeedDescriptor } from '../../data/athletesData';
 
 @Component({

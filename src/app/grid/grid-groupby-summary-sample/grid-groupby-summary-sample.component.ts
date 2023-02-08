@@ -10,7 +10,7 @@ import {
     IgxSummaryResult,
     ISortingExpression,
     SortingDirection
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
 
 class AvgSummary {

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent, FormattedValuesFilteringStrategy } from '@infragistics/igniteui-angular';
+import { IgxHierarchicalGridComponent, FormattedValuesFilteringStrategy } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({

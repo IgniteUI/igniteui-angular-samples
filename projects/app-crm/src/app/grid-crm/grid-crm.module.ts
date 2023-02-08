@@ -4,10 +4,9 @@ import { FormsModule } from '@angular/forms';
 import {
     IgxAvatarModule, IgxButtonModule, IgxGridModule,
     IgxIconModule, IgxInputGroupModule, IgxRippleModule
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 
 import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
-import { GridsCrmRoutingModule } from './grid-crm-routing.module';
 import { GridCRMComponent } from './grid-crm.component';
 
 @NgModule({
@@ -16,7 +15,6 @@ import { GridCRMComponent } from './grid-crm.component';
     ],
     imports: [
         IgxRippleModule,
-        GridsCrmRoutingModule,
         IgxGridModule,
         IgxIconModule,
         IgxAvatarModule,

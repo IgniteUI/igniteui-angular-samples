@@ -3,7 +3,7 @@ import {
     ColumnType,
     IgxGridComponent,
     IgxNumberSummaryOperand,
-    IgxSummaryResult } from '@infragistics/igniteui-angular';
+    IgxSummaryResult } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 class MySummary  {

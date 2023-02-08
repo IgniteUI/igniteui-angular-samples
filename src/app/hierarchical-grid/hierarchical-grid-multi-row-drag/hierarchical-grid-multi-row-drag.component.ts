@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { GridSelectionMode, IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType } from '@infragistics/igniteui-angular';
+import { GridSelectionMode, IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType } from 'igniteui-angular';
 import { createData, IDrive } from '../../data/files.data';
 
 @Component({

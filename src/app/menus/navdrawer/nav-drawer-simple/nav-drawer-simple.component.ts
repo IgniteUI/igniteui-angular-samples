@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxNavigationDrawerComponent } from '@infragistics/igniteui-angular';
+import { IgxNavigationDrawerComponent } from 'igniteui-angular';
 
 @Component({
   selector: 'app-nav-drawer-simple',

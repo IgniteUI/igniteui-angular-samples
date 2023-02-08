@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SINGERS } from '../../data/singersData';
-import { IgxExcelExporterOptions, IgxExcelExporterService, IgxHierarchicalGridComponent, IgxNumberSummaryOperand, IgxSummaryResult } from '@infragistics/igniteui-angular';
+import { IgxExcelExporterOptions, IgxExcelExporterService, IgxHierarchicalGridComponent, IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 
 class MySummary  {
     public operate(data?: any[]): IgxSummaryResult[] {

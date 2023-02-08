@@ -1,6 +1,6 @@
 
 import { Component, ViewChild } from '@angular/core';
-import { GridSelectionMode, IDropDroppedEventArgs, IgxGridComponent } from '@infragistics/igniteui-angular';
+import { GridSelectionMode, IDropDroppedEventArgs, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 @Component({
     selector: 'app-grid-multiple-row-drag',

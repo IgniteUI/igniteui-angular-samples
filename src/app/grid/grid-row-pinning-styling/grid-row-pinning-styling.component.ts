@@ -3,7 +3,7 @@ import {
     IgxGridComponent,
     IPinningConfig,
     RowPinningPosition
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({

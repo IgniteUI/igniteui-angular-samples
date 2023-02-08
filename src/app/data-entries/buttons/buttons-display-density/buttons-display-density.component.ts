@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DisplayDensity } from '@infragistics/igniteui-angular';
+import { DisplayDensity } from 'igniteui-angular';
 
 @Component({
     selector: 'app-buttons-display-density',

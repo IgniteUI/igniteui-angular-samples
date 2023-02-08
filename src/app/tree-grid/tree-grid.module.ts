@@ -24,7 +24,7 @@ import {
     IgxToggleModule,
     IgxTooltipModule,
     IgxTreeGridModule
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
 import { TreeGridColumnGroupSelectionComponent } from './column-group-selection/column-group-selection.component';
 import { TreeGridColumnSelectionStylesComponent } from './column-selection-styles/tree-grid-column-selection-style.component';

@@ -1,5 +1,5 @@
 import { Component, ViewChild, ChangeDetectorRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
-import { IgxHierarchicalGridComponent, RowType, Transaction, IgxColumnComponent } from '@infragistics/igniteui-angular';
+import { IgxHierarchicalGridComponent, RowType, Transaction, IgxColumnComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({

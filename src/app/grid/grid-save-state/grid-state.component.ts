@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit } 
 import { NavigationStart, Router } from '@angular/router';
 import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
     IGridState, IGridStateOptions, IgxGridComponent, IgxGridStateDirective,
-    IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent } from '@infragistics/igniteui-angular';
+    IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent } from 'igniteui-angular';
 import { take } from 'rxjs/operators';
 import { employeesData } from './localData';
 

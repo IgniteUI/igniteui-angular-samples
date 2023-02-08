@@ -1,6 +1,6 @@
 import {IgxAutocompleteModule,
     IgxDropDownModule,
-    IgxInputGroupModule} from '@infragistics/igniteui-angular';
+    IgxInputGroupModule} from 'igniteui-angular';
     
     import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing';
     

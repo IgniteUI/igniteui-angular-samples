@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { IgxTransactionService, State, Transaction, TransactionType } from '@infragistics/igniteui-angular';
+import { IgxTransactionService, State, Transaction, TransactionType } from 'igniteui-angular';
 import { WishlistItem } from '../data';
 
 @Pipe({

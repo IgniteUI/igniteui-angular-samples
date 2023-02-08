@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { IgxHierarchicalGridComponent } from '@infragistics/igniteui-angular';
+import { IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({

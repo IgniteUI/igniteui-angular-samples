@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent } from '@infragistics/igniteui-angular';
+import { IgxTreeGridComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
 

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component } from '@angular/core';
 
-import { CsvFileTypes, IgxCsvExporterOptions, IgxCsvExporterService } from '@infragistics/igniteui-angular';
+import { CsvFileTypes, IgxCsvExporterOptions, IgxCsvExporterService } from 'igniteui-angular';
 
 @Component({
   selector: 'app-csv-export',

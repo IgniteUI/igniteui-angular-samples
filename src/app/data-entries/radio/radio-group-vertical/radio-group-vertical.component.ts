@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RadioGroupAlignment } from '@infragistics/igniteui-angular';
+import { RadioGroupAlignment } from 'igniteui-angular';
 
 @Component({
     selector: 'app-radio-group-vertical',

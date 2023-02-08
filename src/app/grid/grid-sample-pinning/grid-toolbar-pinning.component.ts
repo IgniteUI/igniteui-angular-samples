@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
-import { IgxColumnComponent, IgxGridComponent } from '@infragistics/igniteui-angular';
+import { IgxColumnComponent, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({

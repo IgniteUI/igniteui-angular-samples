@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxGridComponent, Transaction } from '@infragistics/igniteui-angular';
+import { IgxDialogComponent, IgxGridComponent, Transaction } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 import { generateRandomInteger } from '../../data/utils';
 

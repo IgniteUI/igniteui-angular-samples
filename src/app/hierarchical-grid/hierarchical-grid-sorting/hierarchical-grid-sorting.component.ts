@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { DefaultSortingStrategy, IgxHierarchicalGridComponent,
-    IgxRowIslandComponent, SortingDirection } from '@infragistics/igniteui-angular';
+    IgxRowIslandComponent, SortingDirection } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 @Component({

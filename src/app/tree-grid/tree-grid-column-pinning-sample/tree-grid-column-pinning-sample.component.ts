@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
-import { ColumnType, IgxIconService, IgxTreeGridComponent } from '@infragistics/igniteui-angular';
+import { ColumnType, IgxIconService, IgxTreeGridComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 import { icons } from "../../services/svgIcons";
 

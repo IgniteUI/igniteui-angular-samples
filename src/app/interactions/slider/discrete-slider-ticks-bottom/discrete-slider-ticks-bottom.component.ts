@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxSliderType } from '@infragistics/igniteui-angular';
+import { IgxSliderType } from 'igniteui-angular';
 
 @Component({
     selector: 'app-discrete-slider-bottom-ticks',

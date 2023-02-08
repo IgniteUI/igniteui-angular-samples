@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IgxAvatarModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule,
     IgxDialogModule, IgxGridModule, IgxIconModule,
     IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
-    IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule, IgxTreeGridModule } from '@infragistics/igniteui-angular';
+    IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule, IgxTreeGridModule } from 'igniteui-angular';
 /* eslint-disable max-len */
 import { IgxSparklineCoreModule, IgxSparklineModule } from 'igniteui-angular-charts';
 import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';

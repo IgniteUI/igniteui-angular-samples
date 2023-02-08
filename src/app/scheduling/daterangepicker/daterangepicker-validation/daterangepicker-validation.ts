@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DateRange } from '@infragistics/igniteui-angular';
+import { DateRange } from 'igniteui-angular';
 
 @Component({
     selector: 'app-daterangepicker-validation',

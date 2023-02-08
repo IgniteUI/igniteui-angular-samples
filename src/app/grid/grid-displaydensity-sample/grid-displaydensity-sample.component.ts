@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DisplayDensity, IgxButtonGroupComponent, IgxGridComponent, IgxNumberSummaryOperand,
-    IgxSummaryOperand, IgxSummaryResult } from '@infragistics/igniteui-angular';
+    IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
 
 class CustomNumberSummary {

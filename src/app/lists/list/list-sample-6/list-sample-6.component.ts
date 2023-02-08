@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxListComponent } from '@infragistics/igniteui-angular';
+import { IgxListComponent } from 'igniteui-angular';
 
 @Component({
   selector: 'app-list-sample-6',

@@ -7,7 +7,7 @@ import {
     IgxNumberFilteringOperand,
     IgxStringFilteringOperand,
     IgxTreeGridComponent
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { FOODS_DATA } from '../data/foods';
 
 @Component({

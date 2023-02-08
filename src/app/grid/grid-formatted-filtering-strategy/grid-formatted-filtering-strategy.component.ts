@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent, FormattedValuesFilteringStrategy } from '@infragistics/igniteui-angular';
+import { IgxGridComponent, FormattedValuesFilteringStrategy } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({

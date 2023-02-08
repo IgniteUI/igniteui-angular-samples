@@ -11,7 +11,7 @@ import {
     IgxOverlayService,
     IgxTreeGridComponent,
     IActiveNodeChangeEventArgs
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';

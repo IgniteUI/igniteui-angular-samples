@@ -10,7 +10,7 @@ import {
     IDragMoveEventArgs,
     IgxDragDirective,
     IgxDragLocation
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 
 @Component({
     selector: 'app-list-reorder-sample',

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { DefaultSortingStrategy, SortingDirection } from '@infragistics/igniteui-angular';
+import { DefaultSortingStrategy, SortingDirection } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({

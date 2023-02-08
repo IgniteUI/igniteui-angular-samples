@@ -3,7 +3,7 @@ import {
     IGridCreatedEventArgs,
     IgxHierarchicalGridComponent,
     IgxRowIslandComponent
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { IDataState, RemoteLoDService } from '../../services/remote-lod.service';
 
 @Component({

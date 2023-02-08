@@ -2,7 +2,7 @@ import {IgxButtonModule,
 IgxIconModule,
 IgxInputGroupModule,
 IgxRippleModule,
-IgxTextHighlightModule} from '@infragistics/igniteui-angular';
+IgxTextHighlightModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class TextHighlightConfigGenerator implements IConfigGenerator {
 

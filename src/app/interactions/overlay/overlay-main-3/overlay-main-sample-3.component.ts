@@ -1,5 +1,5 @@
 import { Component, ElementRef, Inject, OnDestroy, ViewChild } from '@angular/core';
-import { ConnectedPositioningStrategy, IgxOverlayService } from '@infragistics/igniteui-angular';
+import { ConnectedPositioningStrategy, IgxOverlayService } from 'igniteui-angular';
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: 'app-overlay-sample',

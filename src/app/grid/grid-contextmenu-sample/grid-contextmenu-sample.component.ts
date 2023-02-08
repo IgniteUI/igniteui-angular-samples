@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
-import { DefaultSortingStrategy, IgxGridComponent, SortingDirection} from '@infragistics/igniteui-angular';
+import { DefaultSortingStrategy, IgxGridComponent, SortingDirection} from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({

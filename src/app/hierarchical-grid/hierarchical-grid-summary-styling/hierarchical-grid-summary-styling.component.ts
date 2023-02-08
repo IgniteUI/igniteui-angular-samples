@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IgxNumberSummaryOperand,
-    IgxSummaryResult } from '@infragistics/igniteui-angular';
+    IgxSummaryResult } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 
 class MySummary {

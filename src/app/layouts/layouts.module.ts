@@ -30,7 +30,7 @@ import {
     IgxTabsModule,
     IgxTimePickerModule,
     IgxToastModule
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { AvatarSample1Component } from './avatar/avatar-sample-1/avatar-sample-1.component';
 import { AvatarSample2Component } from './avatar/avatar-sample-2/avatar-sample-2.component';
 import { AvatarSample3Component } from './avatar/avatar-sample-3/avatar-sample-3.component';

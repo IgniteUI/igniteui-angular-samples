@@ -7,7 +7,7 @@ import {
     IgxNumberFilteringOperand,
     IgxStringFilteringOperand,
     ColumnType
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({

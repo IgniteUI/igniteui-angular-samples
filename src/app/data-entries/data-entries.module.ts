@@ -8,7 +8,7 @@ import {
     IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
     IgxIconModule, IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule,
     IgxSelectModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule, IgxTreeGridModule, IgxTreeModule
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { AutocompleteBasicComponent, AutocompletePipeStartsWith } from './autocomplete/autocomplete/autocomplete.component';
 import { MovieComponent } from './autocomplete/movie/movie.component';
 import { ButtonGroupSample1Component } from './buttonGroup/button-group-sample-1/button-group-sample-1.component';

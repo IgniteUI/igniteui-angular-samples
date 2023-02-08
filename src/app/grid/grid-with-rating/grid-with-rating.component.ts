@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxToastComponent, CellType } from '@infragistics/igniteui-angular';
+import { IgxToastComponent, CellType } from 'igniteui-angular';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { DATA } from '../../data/nwindData';
 

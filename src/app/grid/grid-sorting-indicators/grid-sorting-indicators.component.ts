@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { IgxGridComponent, DefaultSortingStrategy } from '@infragistics/igniteui-angular';
+import { IgxGridComponent, DefaultSortingStrategy } from 'igniteui-angular';
 import { FinancialData } from '../../data/financialData';
 import  {generateRandomInteger, generateRandomFloat} from '../../data/utils';
 

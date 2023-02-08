@@ -1,7 +1,7 @@
 import {ReactiveFormsModule} from '@angular/forms';
 import {IgxButtonModule,
 IgxInputGroupModule,
-IgxRadioModule} from '@infragistics/igniteui-angular';
+IgxRadioModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class RadioConfigGenerator implements IConfigGenerator {
 

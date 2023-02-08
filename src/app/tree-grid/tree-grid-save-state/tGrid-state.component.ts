@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit } 
 import { NavigationStart, Router } from '@angular/router';
 import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
     IGridState, IGridStateOptions, IgxGridStateDirective,
-    IgxTreeGridComponent, IgxCheckboxComponent} from '@infragistics/igniteui-angular';
+    IgxTreeGridComponent, IgxCheckboxComponent} from 'igniteui-angular';
 import { take } from 'rxjs/operators';
 import { EMPLOYEE_DATA } from './data';
 

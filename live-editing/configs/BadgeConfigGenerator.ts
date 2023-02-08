@@ -1,6 +1,6 @@
 import {IgxAvatarModule,
 IgxBadgeModule,
-IgxListModule} from '@infragistics/igniteui-angular';
+IgxListModule} from 'igniteui-angular';
 import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing';
 export class BadgeConfigGenerator implements IConfigGenerator {
 

@@ -11,7 +11,7 @@ import {
     IgxIconModule,
     IgxPrefixModule,
     IgxSimpleComboModule
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { IgxFinancialChartModule } from 'igniteui-angular-charts';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class ComboConfigGenerator implements IConfigGenerator {

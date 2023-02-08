@@ -3,7 +3,7 @@ IgxDialogModule,
 IgxIconModule,
 IgxInputGroupModule,
 IgxRippleModule,
-IgxToggleModule} from '@infragistics/igniteui-angular';
+IgxToggleModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class DialogConfigGenerator implements IConfigGenerator {
 

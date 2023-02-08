@@ -6,7 +6,7 @@ import {
     ConnectedPositioningStrategy,
     IgxOverlayService,
     NoOpScrollStrategy
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';

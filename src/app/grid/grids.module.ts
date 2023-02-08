@@ -10,7 +10,7 @@ import {
     IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule,
     IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSimpleComboModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
     IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
 import { GridColumnGroupSelectionComponent } from './column-group-selection-sample/column-group-selection-sample.component';
 import { GridColumnSelectionComponent } from './column-selection-sample/column-selection-sample.component';

@@ -8,7 +8,7 @@ import {
     CellType, IgxColumnComponent,
     IgxColumnGroupComponent, IgxHierarchicalGridComponent,
     IgxListComponent
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { fromEvent, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { CUSTOMERS } from '../../data/hierarchical-data';

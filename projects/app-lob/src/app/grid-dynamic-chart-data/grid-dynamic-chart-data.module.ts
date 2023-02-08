@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { IgxExtrasModule } from '@infragistics/igniteui-angular-extras';
-import { IgxButtonModule, IgxDialogModule, IgxDividerModule, IgxGridModule, IgxTabsModule } from '@infragistics/igniteui-angular';
+import { IgxButtonModule, IgxDialogModule, IgxDividerModule, IgxGridModule, IgxTabsModule } from 'igniteui-angular';
 import { IgxBarSeriesModule, IgxCategoryChartModule, IgxCategoryXAxisModule,
          IgxDataChartCategoryModule, IgxDataChartCoreModule,
          IgxDataChartInteractivityModule, IgxDataChartScatterModule,

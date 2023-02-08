@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DisplayDensity, IgxHierarchicalGridComponent } from '@infragistics/igniteui-angular';
+import { DisplayDensity, IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 
 @Component({

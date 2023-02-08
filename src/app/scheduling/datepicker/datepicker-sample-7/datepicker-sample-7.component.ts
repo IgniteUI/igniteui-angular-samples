@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxDatePickerComponent, IgxSnackbarComponent } from '@infragistics/igniteui-angular';
+import { IgxDatePickerComponent, IgxSnackbarComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-datepicker-sample-7',

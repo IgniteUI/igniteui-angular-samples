@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { VerticalAlignment } from '@infragistics/igniteui-angular';
+import { VerticalAlignment } from 'igniteui-angular';
 @Component({
   selector: 'app-toast-sample-5',
   styleUrls: ['./toast-sample-5.component.scss'],

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FilteringStrategy, IFilteringExpressionsTree, IgxColumnComponent } from '@infragistics/igniteui-angular';
+import { FilteringStrategy, IFilteringExpressionsTree, IgxColumnComponent } from 'igniteui-angular';
 import { SINGERS } from '../data/singersData';
 
 @Injectable()

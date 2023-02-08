@@ -1,5 +1,5 @@
 import { Component, Pipe, PipeTransform } from '@angular/core';
-import { ConnectedPositioningStrategy, VerticalAlignment } from '@infragistics/igniteui-angular';
+import { ConnectedPositioningStrategy, VerticalAlignment } from 'igniteui-angular';
 @Component({
     selector: 'app-movie-availability',
     styleUrls: ['./movie.component.scss'],

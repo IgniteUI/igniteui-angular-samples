@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent  } from '@infragistics/igniteui-angular';
+import { IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent  } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 class PTOSummary {

@@ -9,7 +9,7 @@ import {
     IgxLayoutModule,
     IgxAvatarModule,
     IgxInputGroupModule,
-    IgxButtonModule } from '@infragistics/igniteui-angular';
+    IgxButtonModule } from 'igniteui-angular';
 import { RouterTestingModule } from "@angular/router/testing";
 import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';

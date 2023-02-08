@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
-import { IgxIconService, IgxTreeNodeComponent } from '@infragistics/igniteui-angular';
+import { IgxIconService, IgxTreeNodeComponent } from 'igniteui-angular';
 import { icons } from './services/svgIcons';
 import { DATA, NodeData, REMOTE_ROOT, SelectableNodeData } from '../../../data/tree-file-data';
 import { DataService } from './services/data.service';

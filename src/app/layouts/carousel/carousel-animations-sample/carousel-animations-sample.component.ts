@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxCarouselComponent } from '@infragistics/igniteui-angular';
+import { IgxCarouselComponent } from 'igniteui-angular';
 
 @Component({
   selector: 'app-carousel',

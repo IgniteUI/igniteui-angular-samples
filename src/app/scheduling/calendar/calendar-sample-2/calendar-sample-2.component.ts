@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxCalendarComponent } from '@infragistics/igniteui-angular';
+import { IgxCalendarComponent } from 'igniteui-angular';
 import { registerLocaleData } from '@angular/common';
 import localeDE from '@angular/common/locales/de';
 import localeFR from '@angular/common/locales/fr';

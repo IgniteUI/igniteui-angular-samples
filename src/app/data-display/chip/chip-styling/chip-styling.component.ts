@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { IBaseChipEventArgs, IChipsAreaReorderEventArgs } from '@infragistics/igniteui-angular';
+import { IBaseChipEventArgs, IChipsAreaReorderEventArgs } from 'igniteui-angular';
 
 @Component({
     selector: 'app-chip',

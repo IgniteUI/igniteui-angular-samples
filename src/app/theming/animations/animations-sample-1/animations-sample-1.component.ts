@@ -23,7 +23,7 @@ import {
     swingInBottomFwd, swingInLeftBck, swingInLeftFwd, swingInRightBck, swingInRightFwd,
     swingInTopBck, swingInTopFwd, swingOutBottomBck, swingOutBottomFwd, swingOutLeftBck,
     swingOutLefttFwd, swingOutRightBck, swingOutRightFwd, swingOutTopBck, swingOutTopFwd
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 
 @Component({
     selector: 'app-animations-sample-1',

@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IDropDroppedEventArgs,
-    IgxTreeGridComponent, RowType, Point, GridSelectionMode } from '@infragistics/igniteui-angular';
+    IgxTreeGridComponent, RowType, Point, GridSelectionMode } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Component({

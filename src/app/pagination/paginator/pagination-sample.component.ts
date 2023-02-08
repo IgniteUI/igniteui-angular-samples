@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxPaginatorComponent } from '@infragistics/igniteui-angular';
+import { IgxPaginatorComponent } from 'igniteui-angular';
 import { DATA } from '../../data/product';
 
 @Component({

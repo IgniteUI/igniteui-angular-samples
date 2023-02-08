@@ -8,7 +8,7 @@ import { IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule,
     IgxChipsModule, IgxComboModule, IgxDatePickerModule, IgxDialogModule,
     IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule,
     IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
-    IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from '@infragistics/igniteui-angular';
+    IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from 'igniteui-angular';
 import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
 import { HierarchicalGridColumnGroupSelectionComponent } from './column-group-selection/hierarchical-grid-column-group-selection.component';
 import { HGridColumnSelectionStylesComponent } from './column-selection-styles/hierarchical-grid-column-selection-styles.component';

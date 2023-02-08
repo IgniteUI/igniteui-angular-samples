@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ISelectionEventArgs } from '@infragistics/igniteui-angular';
+import { ISelectionEventArgs } from 'igniteui-angular';
 import { getHeroClassData, IHeroClass } from '../../../data/heroData';
 
 @Component({

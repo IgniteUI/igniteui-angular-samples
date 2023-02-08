@@ -1,5 +1,5 @@
 import { Component, QueryList, ViewChild } from '@angular/core';
-import { IgxGridComponent, RowType } from '@infragistics/igniteui-angular';
+import { IgxGridComponent, RowType } from 'igniteui-angular';
 import { IgxRowDirective } from 'igniteui-angular/lib/grids/row.directive';
 import { DATA } from '../../data/customers';
 

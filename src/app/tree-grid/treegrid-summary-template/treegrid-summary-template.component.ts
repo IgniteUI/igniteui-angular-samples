@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DisplayDensity, IgxSummaryOperand, IgxSummaryResult } from '@infragistics/igniteui-angular';
+import { DisplayDensity, IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 class PTOSummary {

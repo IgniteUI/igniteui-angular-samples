@@ -20,7 +20,7 @@ import {
     IgxTooltipModule,
     IgxTreeModule,
     IgxProgressBarModule
-} from '@infragistics/igniteui-angular';
+} from 'igniteui-angular';
 import { IgxFinancialChartModule } from 'igniteui-angular-charts';
 import { ComboBindingComponent } from './combo/combo-binding/combo-binding.component';
 import { ComboFeaturesComponent } from './combo/combo-features/combo-features.component';

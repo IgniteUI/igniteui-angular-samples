@@ -1,6 +1,6 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 
-import { IGridStateOptions, IgxGridStateDirective, IgxGridComponent, NoopSortingStrategy, IgxColumnComponent } from '@infragistics/igniteui-angular';
+import { IGridStateOptions, IgxGridStateDirective, IgxGridComponent, NoopSortingStrategy, IgxColumnComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { FinancialDataService } from '../../services/financial.service';

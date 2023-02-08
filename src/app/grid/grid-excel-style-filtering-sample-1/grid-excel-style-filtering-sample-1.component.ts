@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DisplayDensity, IgxGridComponent } from '@infragistics/igniteui-angular';
+import { DisplayDensity, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({

@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import {
     IButtonGroupEventArgs, IChangeSwitchEventArgs, IgxButtonGroupComponent,
     IgxSliderComponent, IgxToastComponent, ISliderValueChangeEventArgs, VerticalAlignment }
-from '@infragistics/igniteui-angular';
+from 'igniteui-angular';
 import { Observable, Subscription, timer } from 'rxjs';
 import { debounce } from 'rxjs/operators';
 
