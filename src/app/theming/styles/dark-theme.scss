@@ -1,36 +1,36 @@
-@use '@infragistics/igniteui-angular/theming' as *;
+@use 'igniteui-angular/theming' as *;
 
 // Import grid component and theme styles
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/grid/grid-component';
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/grid/grid-theme';
+@use '~igniteui-angular/lib/core/styles/components/grid/grid-component';
+@use '~igniteui-angular/lib/core/styles/components/grid/grid-theme';
 
 // Import paginator component and theme styles
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/paginator/paginator-component';
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/paginator/paginator-theme';
+@use '~igniteui-angular/lib/core/styles/components/paginator/paginator-component';
+@use '~igniteui-angular/lib/core/styles/components/paginator/paginator-theme';
 
 // Import dialog-group component and theme styles
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/dialog/dialog-component';
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/dialog/dialog-theme';
+@use '~igniteui-angular/lib/core/styles/components/dialog/dialog-component';
+@use '~igniteui-angular/lib/core/styles/components/dialog/dialog-theme';
 
 // Import input-group component and theme styles
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/input/input-group-component';
+@use '~igniteui-angular/lib/core/styles/components/input/input-group-component';
 @use '~@infragistics/igniteui-angular/lib/core/styles/components/input/input-group-theme';
 
 // Import grid snackbar and theme styles
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/snackbar/snackbar-component';
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/snackbar/snackbar-theme';
+@use '~igniteui-angular/lib/core/styles/components/snackbar/snackbar-component';
+@use '~igniteui-angular/lib/core/styles/components/snackbar/snackbar-theme';
 
 // Import button component and theme styles
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/button/button-component';
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/button/button-theme';
+@use '~igniteui-angular/lib/core/styles/components/button/button-component';
+@use '~igniteui-angular/lib/core/styles/components/button/button-theme';
 
 // Import button-group component and theme styles
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/button-group/button-group-component';
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/button-group/button-group-theme';
+@use '~igniteui-angular/lib/core/styles/components/button-group/button-group-component';
+@use '~igniteui-angular/lib/core/styles/components/button-group/button-group-theme';
 
 // Import chip component and theme styles
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/chip/chip-component';
-@use '~@infragistics/igniteui-angular/lib/core/styles/components/chip/chip-theme';
+@use '~igniteui-angular/lib/core/styles/components/chip/chip-component';
+@use '~igniteui-angular/lib/core/styles/components/chip/chip-theme';
 
 // Import badge component and theme styles
 @use '~igniteui-angular/lib/core/styles/components/badge/badge-component';
