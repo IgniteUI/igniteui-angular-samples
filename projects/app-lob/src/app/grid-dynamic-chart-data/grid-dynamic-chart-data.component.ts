@@ -27,7 +27,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         sliceClick: (evt) => { evt.args.isExploded = !evt.args.isExploded; },
         formatLabel: (context) => `${context.percentValue.toFixed(2)}%`
       };
-      console.log(this.chartDirective)
+
       this.chartDirective.setChartComponentOptions(CHART_TYPE.PIE, OPTIONS_TYPE.CHART, pieChartOptions);
       this.chartDirective.getAvailableCharts()
                          .filter(chart => chart.indexOf('Scatter') === -1 ||
