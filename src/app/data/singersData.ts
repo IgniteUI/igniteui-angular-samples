@@ -111,7 +111,7 @@ export const SINGERS: Singer[] = [
                     Released: new Date('03 Jun 2015'),
                     Genre: 'Dance-pop R&B',
                     Album: 'Initiation'
-                }],
+                }]
             },
             {
                 Album: 'Dream Driven',
@@ -687,7 +687,7 @@ export const SINGERS: Singer[] = [
                     Released: new Date('22 Apr 2006'),
                     Genre: 'Rock',
                     Album: 'Bursting bubbles'
-                }],
+                }]
             }
         ]
     },
@@ -740,7 +740,7 @@ export const SINGERS: Singer[] = [
                     Released: new Date('30 Nov 2017'),
                     Genre: 'Hip-hop',
                     Album: 'Here we go again'
-                }],
+                }]
             }
         ]
     },
@@ -793,7 +793,7 @@ export const SINGERS: Singer[] = [
                     Released: new Date('30 Dec 2017'),
                     Genre: 'Hip-hop',
                     Album: 'Trouble'
-                }],
+                }]
             }
         ]
     },
@@ -1025,7 +1025,7 @@ export const SINGERS: Singer[] = [
                     Released: new Date('05 Nov 2002'),
                     Genre: 'old emo-garage ',
                     Album: 'Dark matters'
-                }],
+                }]
             }
         ]
     },
@@ -1085,7 +1085,7 @@ export const SINGERS: Singer[] = [
                     Released: new Date('03 Jan 2004'),
                     Genre: 'Hip-hop',
                     Album: 'Library of liberty'
-                }],
+                }]
             }
         ]
     },
@@ -1138,7 +1138,7 @@ export const SINGERS: Singer[] = [
                     Released: new Date('06 May 2019'),
                     Genre: 'Metal',
                     Album: 'Just a tease'
-                }],
+                }]
             }
         ]
     },
@@ -1383,7 +1383,7 @@ export const SINGERS: Singer[] = [
                     Released: new Date('25 Aug 2017'),
                     Genre: '*',
                     Album: 'Fluke'
-                }],
+                }]
             },
             {
                 Album: 'Crowd control',
@@ -1498,7 +1498,7 @@ export const SINGERS: Singer[] = [
                     Released: new Date('22 Mar 2016'),
                     Genre: '*',
                     Album: 'Pushing up daisies'
-                }],
+                }]
             }
         ]
     },
@@ -1559,7 +1559,7 @@ export const SINGERS: Singer[] = [
                     Released: new Date('22 Avg 2004'),
                     Genre: 'Heavy metal',
                     Album: 'Nemesis'
-                }],
+                }]
             },
             {
                 Album: 'First chance',
@@ -1745,7 +1745,7 @@ export const SINGERS: Singer[] = [
                     Released: new Date('22 Dec 2005'),
                     Genre: '*',
                     Album: 'Forever alone'
-                }],
+                }]
             }
         ]
     },
@@ -1835,7 +1835,7 @@ export const SINGERS: Singer[] = [
                     Released: new Date('22 Dec 2008'),
                     Genre: '*',
                     Album: 'Decisions decisions'
-                }],
+                }]
             },
             {
                 Album: 'Climate changed',
@@ -1884,7 +1884,7 @@ export const SINGERS: Singer[] = [
                     Released: new Date('22 Jul 2015'),
                     Genre: 'hip-hop',
                     Album: 'Climate changed'
-                }],
+                }]
             }
         ]
     }
