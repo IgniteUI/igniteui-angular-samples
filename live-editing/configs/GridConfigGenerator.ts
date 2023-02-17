@@ -52,7 +52,8 @@ export class GridConfigGenerator implements IConfigGenerator {
         RemotePagingService: '../../src/app/services/remotePaging.service',
         RemoteServiceVirt: '../../src/app/services/remoteVirtualization.service',
         FinancialDataService: '../../src/app/services/financial.service',
-        CRUDService: '../../src/app/services/crud.service'
+        CRUDService: '../../src/app/services/crud.service',
+        RemotePagingWithBatchEditingService: '../../src/app/services/remotePagingWithBatchEditing.service'
     };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -1209,14 +1210,13 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid Batch Editing with remote paging
         configs.push(new Config({
             component: 'RemotePagingBatchEditingComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/utils.ts', '/src/app/services/remotePaging.service.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/utils.ts', '/src/app/data/foods.ts', '/src/app/services/remotePagingWithBatchEditing.service.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['RemotePagingBatchEditingComponent', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
-                    'RemotePagingService', 'HttpClientModule', 'IgxPreventDocumentScrollModule'],
+                    'RemotePagingWithBatchEditingService', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['RemotePagingBatchEditingComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
-                    'HttpClientModule'],
-                ngProviders: ['RemotePagingService']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule'],
+                ngProviders: ['RemotePagingWithBatchEditingService']
             })
         }));
 
