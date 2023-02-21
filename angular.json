@@ -91,7 +91,12 @@
             "assets": [
               "src/assets",
               "src/favicon.ico"
-            ]
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
+            }
           }
         },
         "lint": {
@@ -209,7 +214,12 @@
             "styles": [
               "projects/app-lob/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
+            }
           }
         },
         "lint": {
@@ -339,7 +349,12 @@
             "styles": [
               "projects/app-crm/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
+            }
           }
         },
         "lint": {

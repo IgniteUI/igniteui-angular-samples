@@ -1421,6 +1421,17 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        configs.push(new Config({
+            component: 'GridStatePersistenceSampleComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/financialData.ts', '/src/app/services/financial.service.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['GridStatePersistenceSampleComponent', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule',
+                    'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxPreventDocumentScrollModule', 'FinancialDataService'],
+                ngDeclarations: ['GridStatePersistenceSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule'],
+                ngProviders: ['FinancialDataService']
+            })
+        }));
 
         return configs;
     }

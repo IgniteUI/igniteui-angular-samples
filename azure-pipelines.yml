@@ -6,7 +6,7 @@ steps:
 - script: npm config set @infragistics:registry $(npmRegistry)
   displayName: 'Npm add registry'
 
-# - script: npm config set $(igScope)
+# - script: npm config set $(igScope):always-auth=true
 #   displayName: 'Npm config'
 
 - script: npm config set $(igScope):_auth=$(token)
