@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 
 @Component({
@@ -9,7 +9,17 @@ import { CUSTOMERS } from '../../data/hierarchical-data';
 export class HGridToolbarPinningComponent {
     public localdata;
 
-    constructor() {
+    constructor(private elRef: ElementRef) {
         this.localdata = CUSTOMERS;
     }
+
+    private parentComponentEl() {
+        return this.elRef.nativeElement.parentElement.parentElement;
+    }
+
+    public onThemeChanged() {
+        const parentEl = this.parentComponentEl();
+        parentEl.classList.toggle('dark-theme')
+    }
 }
+
