@@ -1,25 +1,25 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CUSTOMERS } from '../../data/hierarchical-data';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-hierarchical-grid-toolbar-pinning',
     styleUrls: ['./hierarchical-grid-toolbar-pinning.component.scss'],
     templateUrl: 'hierarchical-grid-toolbar-pinning.component.html'
 })
-export class HGridToolbarPinningComponent {
+export class HGridToolbarPinningComponent implements OnInit {
     public localdata;
+    dark: boolean;
 
-    constructor(private elRef: ElementRef) {
+    constructor(private activatedRoute: ActivatedRoute) {
         this.localdata = CUSTOMERS;
     }
 
-    private parentComponentEl() {
-        return this.elRef.nativeElement.parentElement.parentElement;
+    public ngOnInit(): void {
+        this.activatedRoute.queryParams.subscribe(params => {
+            this.dark = !!params.dark;
+        });
     }
 
-    public onThemeChanged() {
-        const parentEl = this.parentComponentEl();
-        parentEl.classList.toggle('dark-theme')
-    }
 }
 

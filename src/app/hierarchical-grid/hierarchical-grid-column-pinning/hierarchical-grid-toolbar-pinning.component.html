@@ -1,10 +1,9 @@
-<div class="grid__wrapper">
+<div [ngClass]="{'grid__wrapper': true, 'dark-theme': dark === true }">
 <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
     [height]="'100%'" [width]="'100%'" #hierarchicalGrid>
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>
                 <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
-                <igx-switch (click)="onThemeChanged()"></igx-switch>
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
 
