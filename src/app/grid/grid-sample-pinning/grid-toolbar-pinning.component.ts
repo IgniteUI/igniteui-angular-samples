@@ -1,6 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
 import { IgxColumnComponent, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -14,8 +15,12 @@ import { DATA } from '../../data/customers';
 export class PinningToolbarSampleComponent implements OnInit{
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
 
+    public dark = false;
     public data: any[];
     public columns: any[];
+
+    constructor(private activatedRoute: ActivatedRoute) {}
+
     public ngOnInit(): void {
         this.columns = [
             { field: 'CompanyName', header: 'Company Name', width: 300 },
@@ -29,6 +34,10 @@ export class PinningToolbarSampleComponent implements OnInit{
             { field: 'Fax', header: 'Fax', width: 150 }
         ];
         this.data = DATA;
+
+        this.activatedRoute.queryParams.subscribe(params => {
+            this.dark = !!params.dark;
+        });
     }
 
     public toggleColumn(col: IgxColumnComponent) {
