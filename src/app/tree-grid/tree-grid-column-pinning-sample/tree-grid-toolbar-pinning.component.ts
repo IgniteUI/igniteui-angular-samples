@@ -14,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 export class TreeGridPinningToolbarSampleComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
     public data: any[];
-    public dark = "";
+    public dark: boolean = false;
 
     constructor(private activatedRoute: ActivatedRoute) {
         this.data = generateEmployeeDetailedFlatData();
@@ -22,7 +22,7 @@ export class TreeGridPinningToolbarSampleComponent implements OnInit {
 
     public ngOnInit(): void {
         this.activatedRoute.queryParams.subscribe(params => {
-            this.dark = params.dark;
+            this.dark = params.dark === 'true' ? true : false;
         });
     }
 }
