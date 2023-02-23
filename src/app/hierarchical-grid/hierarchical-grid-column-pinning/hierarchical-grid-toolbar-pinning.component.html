@@ -1,4 +1,4 @@
-<div [ngClass]="{'grid__wrapper': true, 'dark-theme': dark === true }">
+<div [ngClass]="{'grid__wrapper': true, 'dark-theme': dark === 'true' }">
 <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
     [height]="'100%'" [width]="'100%'" #hierarchicalGrid>
         <igx-grid-toolbar>
@@ -31,6 +31,9 @@
                 <igx-column field="UnitPrice" header="Unit Price" width="150px"></igx-column>
                 <igx-column field="Quantity" width="150px"></igx-column>
                 <igx-column field="Discount" width="150px"></igx-column>
+                <igx-column field="Weight" width="150px"></igx-column>
+                <igx-column field="Length" width="150px"></igx-column>
+                <igx-column field="TotalPrice" width="150px"></igx-column>
         </igx-row-island>
     </igx-row-island>
 </igx-hierarchical-grid>

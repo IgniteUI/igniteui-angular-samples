@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HGridToolbarPinningComponent implements OnInit {
     public localdata;
-    public dark = false;
+    public dark = "";
 
     constructor(private activatedRoute: ActivatedRoute) {
         this.localdata = CUSTOMERS;
@@ -17,7 +17,8 @@ export class HGridToolbarPinningComponent implements OnInit {
 
     public ngOnInit(): void {
         this.activatedRoute.queryParams.subscribe(params => {
-            this.dark = !!params.dark;
+            console.log(this.activatedRoute.queryParams);
+            this.dark = params.dark;
         });
     }
 
