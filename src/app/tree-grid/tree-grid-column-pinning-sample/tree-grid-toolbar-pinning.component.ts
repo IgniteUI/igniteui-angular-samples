@@ -1,6 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     providers: [],
@@ -10,11 +11,18 @@ import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detaile
 
 })
 
-export class TreeGridPinningToolbarSampleComponent {
+export class TreeGridPinningToolbarSampleComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
     public data: any[];
+    public dark = false;
 
-    constructor() {
+    constructor(private activatedRoute: ActivatedRoute) {
         this.data = generateEmployeeDetailedFlatData();
+    }
+
+    public ngOnInit(): void {
+        this.activatedRoute.queryParams.subscribe(params => {
+            this.dark = !!params.dark;
+        });
     }
 }

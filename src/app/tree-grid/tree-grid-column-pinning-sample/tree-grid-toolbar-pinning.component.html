@@ -1,4 +1,4 @@
-<div class="grid__wrapper">
+<div [ngClass]="{'grid__wrapper': true, 'dark-theme': dark === true }">
     <igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" height="600px"
         width="100%">
         <igx-grid-toolbar>
