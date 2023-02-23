@@ -15,7 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PinningToolbarSampleComponent implements OnInit{
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
 
-    public dark = false;
+    public dark = "";
     public data: any[];
     public columns: any[];
 
@@ -36,7 +36,7 @@ export class PinningToolbarSampleComponent implements OnInit{
         this.data = DATA;
 
         this.activatedRoute.queryParams.subscribe(params => {
-            this.dark = !!params.dark;
+            this.dark = params.dark;
         });
     }
 
