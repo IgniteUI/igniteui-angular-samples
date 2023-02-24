@@ -68,17 +68,17 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
                 const skipEl = this._totalPagesOnServer * this.perPage;
                 this.remoteService.getData(skipEl, skipEl + this.perPage);
             }
+            this.grid1.isLoading = false;
             this.grid1.paginator.page = page - this._totalPagesOnServer;
             this.page = page;
             return;
-        } else {
-            if (this.grid1.paginator) {
-                this.grid1.paginator.page = page - this._totalPagesOnServer;
-            }
+        } else if (this.grid1.paginator) {
+            const newPage = page - this._totalPagesOnServer > -1 ? page - this._totalPagesOnServer : 0;
+            this.grid1.paginator.page = newPage;
         }
-        this.page = page;
-        const skip = this.page * this.perPage;
+        const skip = page * this.perPage;
         this.remoteService.getData(skip, skip + this.perPage);
+        this.page = page;
     }
 
     public addRow() {
