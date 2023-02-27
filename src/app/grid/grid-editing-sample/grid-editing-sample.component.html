@@ -1,66 +1,63 @@
 <div class="grid__wrapper">
-    <div class="sample__header">
-        <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [autoGenerate]="false" displayDensity="cosy" width="100%" height="600px" [primaryKey]="'ProductID'" [allowFiltering]="true" (rowDeleted)="show($event)">
-            <igx-paginator [perPage]="10"></igx-paginator>
-            <igx-grid-toolbar>
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [autoGenerate]="false" displayDensity="cosy" width="100%" height="100%" [primaryKey]="'ProductID'" [allowFiltering]="true" (rowDeleted)="show($event)">
+        <igx-paginator [perPage]="10"></igx-paginator>
+        <igx-grid-toolbar>
 
-                <button igxButton="flat" (click)="dialogAdd.open()" class="addProdBtn"><igx-icon>add</igx-icon> Add Product</button>
+            <button igxButton="flat" (click)="dialogAdd.open()" class="addProdBtn"><igx-icon>add</igx-icon> Add Product</button>
 
-            </igx-grid-toolbar>
+        </igx-grid-toolbar>
 
-            <igx-column field="ProductName" header="Product Name" [dataType]="'string'" [sortable]="true" [hasSummary]="true" [editable]="true" [resizable]="true">
-            </igx-column>
-            <igx-column field="UnitsInStock" header="Units In Stock" dataType="number" [sortable]="true" [hasSummary]="true" [summaries]="numSummary" [editable]="true" [resizable]="true">
-            </igx-column>
-            <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [sortable]="true" [hasSummary]="true" [editable]="true" [resizable]="true">
-                <ng-template igxCell let-cell="cell" let-val>
-                    {{val | date:'dd/MM/yyyy'}}
-                </ng-template>
-            </igx-column>
-            <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [sortable]="true" [hasSummary]="true" [editable]="true">
-            </igx-column>
-            <igx-column field="ReorderLevel" header="Reorder Level" dataType="number"  [summaries]="numSummary" [sortable]="true" [hasSummary]="true" [editable]="true" [filterable]="false">
-                <ng-template igxCellEditor let-cell="cell">
-                    <input type="number" [(ngModel)]="cell.editValue" class="reorderLevelInput" />
-                </ng-template>
-            </igx-column>
-            <igx-column field="Locations" header="Available At" [editable]="true" [filterable]="false" width="220px">
-                <ng-template igxCell let-cell="cell">
-                    {{ parseArray(cell.value) }}
-                </ng-template>
-                <ng-template igxCellEditor let-cell="cell" let-value>
-                    <igx-combo type="line" [(ngModel)]="cell.editValue" [displayKey]="'shop'" [data]="locations" width="220px" [igxFocus]="true" [overlaySettings]="customOverlaySettings"></igx-combo>
-                </ng-template>
-            </igx-column>
-            <igx-column width="100px" [filterable]="false">
-                <ng-template igxCell let-cell="cell">
-                    <button igxButton="icon" (click)="removeRow(cell.id.rowIndex)">
-                        <igx-icon>delete</igx-icon>
-                    </button>
-                </ng-template>
-            </igx-column>
-
-        </igx-grid>
-        <igx-toast #toast [autoHide]="true"></igx-toast>
-        <igx-dialog #dialogAdd title="New Product" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'" (leftButtonSelect)="cancel()" (rightButtonSelect)="addRow()">
-            <div class="dialogNewRecord">
-                <igx-input-group>
-                    <label igxLabel for="productName">Product Name</label>
-                    <input igxInput id="productName" type="text" [(ngModel)]="product.ProductName" />
-                </igx-input-group>
-                <igx-input-group>
-                    <label igxLabel for="unitsInStock">Units In Stock</label>
-                    <input igxInput id="unitsInStock" type="number" [(ngModel)]="product.UnitsInStock" />
-                </igx-input-group>
-                <igx-combo id="availableAt" [displayKey]="'shop'" [placeholder]="'Available @'" [data]="locations" [(ngModel)]="product.Locations" [itemsMaxHeight]="200"></igx-combo>
-                <igx-date-picker id="orderDate"  [(ngModel)]="product.OrderDate" mode="dialog">
-                    <label igxLabel>Order Date</label></igx-date-picker>
-                <igx-checkbox id="discontinued" [(ngModel)]="product.Discontinued">Discontinued</igx-checkbox>
-                <igx-input-group>
-                    <label igxLabel for="reorderLevel">Reorder Level</label>
-                    <input igxInput id="reorderLevel" [(ngModel)]="product.ReorderLevel" />
-                </igx-input-group>
-            </div>
-        </igx-dialog>
-    </div>
+        <igx-column field="ProductName" header="Product Name" [dataType]="'string'" [sortable]="true" [hasSummary]="true" [editable]="true" [resizable]="true">
+        </igx-column>
+        <igx-column field="UnitsInStock" header="Units In Stock" dataType="number" [sortable]="true" [hasSummary]="true" [summaries]="numSummary" [editable]="true" [resizable]="true">
+        </igx-column>
+        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [sortable]="true" [hasSummary]="true" [editable]="true" [resizable]="true">
+            <ng-template igxCell let-cell="cell" let-val>
+                {{val | date:'dd/MM/yyyy'}}
+            </ng-template>
+        </igx-column>
+        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [sortable]="true" [hasSummary]="true" [editable]="true">
+        </igx-column>
+        <igx-column field="ReorderLevel" header="Reorder Level" dataType="number"  [summaries]="numSummary" [sortable]="true" [hasSummary]="true" [editable]="true" [filterable]="false">
+            <ng-template igxCellEditor let-cell="cell">
+                <input type="number" [(ngModel)]="cell.editValue" class="reorderLevelInput" />
+            </ng-template>
+        </igx-column>
+        <igx-column field="Locations" header="Available At" [editable]="true" [filterable]="false" width="220px">
+            <ng-template igxCell let-cell="cell">
+                {{ parseArray(cell.value) }}
+            </ng-template>
+            <ng-template igxCellEditor let-cell="cell" let-value>
+                <igx-combo type="line" [(ngModel)]="cell.editValue" [displayKey]="'shop'" [data]="locations" width="220px" [igxFocus]="true" [overlaySettings]="customOverlaySettings"></igx-combo>
+            </ng-template>
+        </igx-column>
+        <igx-column width="100px" [filterable]="false">
+        <ng-template igxCell let-cell="cell">
+            <button igxButton="icon" (click)="removeRow(cell.id.rowIndex)">
+                <igx-icon>delete</igx-icon>
+                </button>
+            </ng-template>
+        </igx-column>
+    </igx-grid>
+    <igx-toast #toast [autoHide]="true"></igx-toast>
+    <igx-dialog #dialogAdd title="New Product" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'" (leftButtonSelect)="cancel()" (rightButtonSelect)="addRow()">
+        <div class="dialogNewRecord">
+            <igx-input-group>
+                <label igxLabel for="productName">Product Name</label>
+                <input igxInput id="productName" type="text" [(ngModel)]="product.ProductName" />
+            </igx-input-group>
+            <igx-input-group>
+                <label igxLabel for="unitsInStock">Units In Stock</label>
+                <input igxInput id="unitsInStock" type="number" [(ngModel)]="product.UnitsInStock" />
+            </igx-input-group>
+            <igx-combo id="availableAt" [displayKey]="'shop'" [placeholder]="'Available @'" [data]="locations" [(ngModel)]="product.Locations" [itemsMaxHeight]="200"></igx-combo>
+            <igx-date-picker id="orderDate"  [(ngModel)]="product.OrderDate" mode="dialog">
+                <label igxLabel>Order Date</label></igx-date-picker>
+            <igx-checkbox id="discontinued" [(ngModel)]="product.Discontinued">Discontinued</igx-checkbox>
+            <igx-input-group>
+                <label igxLabel for="reorderLevel">Reorder Level</label>
+                <input igxInput id="reorderLevel" [(ngModel)]="product.ReorderLevel" />
+            </igx-input-group>
+        </div>
+    </igx-dialog>
 </div>

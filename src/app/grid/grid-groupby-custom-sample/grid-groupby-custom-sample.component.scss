@@ -10,13 +10,6 @@
 
 }
 
-.grid__wrapper {
-    padding-top: 16px;
-    margin: 0 16px;
-}
-
-
-
 .header {
     height: 100%;
 }
@@ -24,4 +17,8 @@
 .igx-grid__th .title {
     width: 100%;
     cursor: auto;
+}
+
+.igx-grid__tbody-content {
+    height: 100% !important;
 }

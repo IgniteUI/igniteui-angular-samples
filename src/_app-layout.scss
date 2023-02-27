@@ -78,7 +78,12 @@
     }
 }
 
-.headerAlignSyle {
+.headerAlignStyle {
     text-align: right !important;
 }
 
+.grid__wrapper {
+    padding-top: 1rem;
+    margin: 1rem 1rem 5rem;
+    height: 95vh;
+}

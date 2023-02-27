@@ -28,9 +28,6 @@ $custom-chips-theme: chip-theme(
 );
 
 :host {
-    display: block;
-    padding-top: 16px;
-    margin: 0 16px;
 
 	::ng-deep {
 		@include css-vars($custom-theme);
