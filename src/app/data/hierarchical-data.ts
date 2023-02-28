@@ -395,19 +395,28 @@ export const CUSTOMERS = [{
             ProductID: 11,
             UnitPrice: 14.0000,
             Quantity: 12,
-            Discount: 0.0000000e+000
+            Discount: 0.0000000e+000,
+            Weight: 2.5,
+            Length: 25.6,
+            TotalPrice: 225.75
         },
         {
             ProductID: 42,
             UnitPrice: 9.8000,
             Quantity: 10,
-            Discount: 0.0000000e+000
+            Discount: 0.0000000e+000,
+            Weight: 2.1,
+            Length: 29.3,
+            TotalPrice: 250.50
         },
         {
             ProductID: 72,
             UnitPrice: 34.8000,
             Quantity: 5,
-            Discount: 0.0000000e+000
+            Discount: 0.0000000e+000,
+            Weight: 2.7,
+            Length: 24.8,
+            TotalPrice: 220.25
         }
         ]
     }]
@@ -440,12 +449,18 @@ export const CUSTOMERS = [{
             ProductID: 14,
             UnitPrice: 18.6000,
             Quantity: 9,
-            Discount: 0.0000000e+000
+            Discount: 0.0000000e+000,
+            Weight: 3.2,
+            Length: 28.6,
+            TotalPrice: 253.75
         }, {
             ProductID: 51,
             UnitPrice: 42.4000,
             Quantity: 40,
-            Discount: 0.0000000e+000
+            Discount: 0.0000000e+000,
+            Weight: 2.5,
+            Length: 25.6,
+            TotalPrice: 225.75
         }]
     }]
 }, {
@@ -478,17 +493,26 @@ export const CUSTOMERS = [{
             ProductID: 41,
             UnitPrice: 7.7000,
             Quantity: 10,
-            Discount: 0.0000000e+000
+            Discount: 0.0000000e+000,
+            Weight: 2.9,
+            Length: 26.9,
+            TotalPrice: 233.50
         }, {
             ProductID: 51,
             UnitPrice: 42.4000,
             Quantity: 35,
-            Discount: 1.5000001e-001
+            Discount: 1.5000001e-001,
+            Weight: 3.5,
+            Length: 27.4,
+            TotalPrice: 261.25
         }, {
             ProductID: 65,
             UnitPrice: 16.8000,
             Quantity: 15,
-            Discount: 1.5000001e-001
+            Discount: 1.5000001e-001,
+            Weight: 2.2,
+            Length: 30.2,
+            TotalPrice: 249.75
         }]
     }]
 }, {
@@ -519,17 +543,26 @@ export const CUSTOMERS = [{
             ProductID: 22,
             UnitPrice: 16.8000,
             Quantity: 6,
-            Discount: 5.0000001e-002
+            Discount: 5.0000001e-002,
+            Weight: 2.6,
+            Length: 26.8,
+            TotalPrice: 226.50
         }, {
             ProductID: 57,
             UnitPrice: 15.6000,
             Quantity: 15,
-            Discount: 5.0000001e-002
+            Discount: 5.0000001e-002,
+            Weight: 3.1,
+            Length: 24.3,
+            TotalPrice: 219.25
         }, {
             ProductID: 65,
             UnitPrice: 16.8000,
             Quantity: 20,
-            Discount: 0.0000000e+000
+            Discount: 0.0000000e+000,
+            Weight: 2.4,
+            Length: 23.7,
+            TotalPrice: 207.00
         }]
     }]
 }, {
