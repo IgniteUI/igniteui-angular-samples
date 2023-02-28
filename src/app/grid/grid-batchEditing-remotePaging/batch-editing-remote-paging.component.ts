@@ -23,7 +23,7 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
 
     private _perPage = 10;
     private _dataLengthSubscriber;
-    private _recordOnServer = 0;
+    private _recordsOnServer = 0;
     private _totalPagesOnServer = 0;
     constructor(private remoteService: RemotePagingWithBatchEditingService) {
     }
@@ -34,7 +34,7 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
 
     public set perPage(val: number) {
         this._perPage = val;
-        this._totalPagesOnServer = Math.floor(this._recordOnServer / this.perPage);
+        this._totalPagesOnServer = Math.floor(this._recordsOnServer / this.perPage);
         this.paginate(0);
     }
 
@@ -42,7 +42,7 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
         this.data = this.remoteService.data$;
         this._dataLengthSubscriber = this.remoteService.getDataLength().subscribe((data) => {
             this.totalCount = data;
-            this._recordOnServer = data;
+            this._recordsOnServer = data;
             this._totalPagesOnServer = Math.floor(this.totalCount / this.perPage);
         });
         this.remoteService.getData(0, this.perPage).subscribe(() => {
@@ -107,11 +107,13 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
 
     public undo() {
         this.grid1.transactions.undo();
+        this.computeTotalCount();
         this.preventDisplayingEmptyPages();
     }
 
     public redo() {
         this.grid1.transactions.redo();
+        this.computeTotalCount();
         this.preventDisplayingEmptyPages();
     }
 
@@ -127,7 +129,7 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
         this.remoteService.processBatch(aggregatedChanges).subscribe({
             next: (count: number) => {
                 this.totalCount = count;
-                this._recordOnServer = count;
+                this._recordsOnServer = count;
                 console.log(count)
                 this.grid1.transactions.commit(this.grid1.data);
                 this.preventDisplayingEmptyPages();
@@ -147,7 +149,7 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
 
     public discard() {
         this.grid1.transactions.clear();
-        this.totalCount = this._recordOnServer;
+        this.totalCount = this._recordsOnServer;
         this.preventDisplayingEmptyPages();
         this.dialog.close();
     }
@@ -169,12 +171,18 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
     }
 
     private preventDisplayingEmptyPages() {
-        this._totalPagesOnServer = Math.floor(this._recordOnServer / this.perPage);
+        this._totalPagesOnServer = Math.floor(this._recordsOnServer / this.perPage);
+
+        const totalPages = Math.floor(this.totalCount / this.perPage);
         if (this.page > 0 &&
-            (this.page > this._totalPagesOnServer ||
-                (this.page === this._totalPagesOnServer &&
-                    this._recordOnServer % 10 === 0))) {
-            this.paginate(this._totalPagesOnServer - 1);
+            (this.page > totalPages ||
+                (this.page === totalPages &&
+                    this.totalCount % this.perPage === 0))) {
+            this.paginate(totalPages - 1);
         }
+    }
+
+    private computeTotalCount() {
+        this.totalCount = this._recordsOnServer + this.grid1.transactions.getAggregatedChanges(true).filter(rec => rec.type === 'add').length;
     }
 }
