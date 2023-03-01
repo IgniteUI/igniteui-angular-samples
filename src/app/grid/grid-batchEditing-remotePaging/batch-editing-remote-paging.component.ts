@@ -130,7 +130,6 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
             next: (count: number) => {
                 this.totalCount = count;
                 this._recordsOnServer = count;
-                console.log(count)
                 this.grid1.transactions.commit(this.grid1.data);
                 this.preventDisplayingEmptyPages();
             },
