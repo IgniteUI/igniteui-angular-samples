@@ -17,6 +17,10 @@ export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit {
 
     public ngOnInit(): void {
         this.employees = EMPLOYEE_DATA;
+        
+        this.igxTreeGrid.selectRows([1,4], true); 
+        this.selectedRows = [];
+        this.igxTreeGrid.selectedRows.forEach((row) => this.selectedRows.push(this.employees.find(employee => employee.ID == row)));
     }
 
     public onRowSelectionChanging(args: IRowSelectionEventArgs, grid: IgxTreeGridComponent) {
@@ -34,6 +38,6 @@ export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit {
     }
 
     public handleClosing(event: IBaseCancelableBrowserEventArgs) {
-        event.cancel = event.event.composedPath().some(e => (e as HTMLElement).nodeName.toLowerCase() === 'igx-chip');
+        event.cancel = event.event.composedPath().some(e => (e as HTMLElement).nodeName?.toLowerCase() === 'igx-chip');
     }
 }
