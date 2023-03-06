@@ -9,8 +9,15 @@ steps:
 - script: npm config set $(igScope):_auth=$(token)
   displayName: 'Npm config auth'
 
-- script: npm ci
-  displayName: 'Install dependencies'
+#- script: npm ci
+#  displayName: 'Install dependencies'
+#  env:
+#    AZURE_PIPELINES: "true"
+
+- task: Npm@1
+  inputs:
+    command: 'ci'
+    customEndpoint: 'public proget'
   env:
     AZURE_PIPELINES: "true"
 
