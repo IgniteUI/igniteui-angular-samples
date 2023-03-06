@@ -83,7 +83,35 @@ export const SINGERS: Singer[] = [
                 LaunchDate: new Date('September 3, 2013'),
                 BillboardReview: 86,
                 USBillboard200: 1,
-                Artist: 'Naomí Yepes'
+                Artist: 'Naomí Yepes',
+                Songs: [{
+                    Number: 1,
+                    Title: 'Ambitious',
+                    Released: new Date('28 Apr 2015'),
+                    Genre: 'Dance-pop R&B',
+                    Album: 'Initiation'
+                },
+                {
+                    Number: 2,
+                    Title: 'My heart will go on',
+                    Released: new Date('24 May 2015'),
+                    Genre: 'Dance-pop R&B',
+                    Album: 'Initiation'
+                },
+                {
+                    Number: 3,
+                    Title: 'Sing to me',
+                    Released: new Date('28 May 2015'),
+                    Genre: 'Dance-pop R&B',
+                    Album: 'Initiation'
+                },
+                {
+                    Number: 4,
+                    Title: 'Want to dance with somebody',
+                    Released: new Date('03 Jun 2015'),
+                    Genre: 'Dance-pop R&B',
+                    Album: 'Initiation'
+                }]
             },
             {
                 Album: 'Dream Driven',
@@ -181,7 +209,35 @@ export const SINGERS: Singer[] = [
                 LaunchDate: new Date('May 20, 2016'),
                 BillboardReview: 60,
                 USBillboard200: 2,
-                Artist: 'Naomí Yepes'
+                Artist: 'Naomí Yepes',
+                Songs: [{
+                    Number: 1,
+                    Title: 'My dream',
+                    Released: new Date('13 Jan 2017'),
+                    Genre: 'Dance-pop EDM',
+                    Album: 'The dragon journey'
+                },
+                {
+                    Number: 2,
+                    Title: 'My passion',
+                    Released: new Date('23 Sep 2017'),
+                    Genre: 'Crunk reggaeton',
+                    Album: 'The dragon journey'
+                },
+                {
+                    Number: 3,
+                    Title: 'What is love',
+                    Released: new Date('28 Nov 2018'),
+                    Genre: 'Dance-pop R&B',
+                    Album: 'The dragon journey'
+                },
+                {
+                    Number: 4,
+                    Title: 'Negative',
+                    Released: new Date('01 Dec 2018'),
+                    Genre: 'Dance-pop EDM',
+                    Album: 'The dragon journey'
+                }]
             },
             {
                 Album: 'Organic me',
@@ -272,7 +328,49 @@ export const SINGERS: Singer[] = [
                 LaunchDate: new Date('December 7, 2019'),
                 BillboardReview: 75,
                 USBillboard200: 12,
-                Artist: 'Naomí Yepes'
+                Artist: 'Naomí Yepes',
+                Songs: [{
+                    Number: 1,
+                    Title: 'Goals',
+                    Released: new Date('07 Dec 2019'),
+                    Genre: '*',
+                    Album: 'Curiosity'
+                },
+                {
+                    Number: 2,
+                    Title: 'Explorer',
+                    Released: new Date('08 Dec 2019'),
+                    Genre: 'Crunk reggaeton',
+                    Album: 'Curiosity'
+                },
+                {
+                    Number: 3,
+                    Title: 'I need to know',
+                    Released: new Date('09 Dec 2019'),
+                    Genre: 'Dance-pop R&B',
+                    Album: 'Curiosity'
+                },
+                {
+                    Number: 4,
+                    Title: 'Finding my purpose',
+                    Released: new Date('10 Dec 2019'),
+                    Genre: 'Heavy metal',
+                    Album: 'Curiosity'
+                },
+                {
+                    Number: 5,
+                    Title: 'Faster than the speed of love',
+                    Released: new Date('21 Dec 2019'),
+                    Genre: 'Dance-pop EDM',
+                    Album: 'Curiosity'
+                },
+                {
+                    Number: 6,
+                    Title: 'I like it',
+                    Released: new Date('01 Jan 2020'),
+                    Genre: 'Dance-pop EDM',
+                    Album: 'Curiosity'
+                }]
             }
         ]
     },
@@ -407,77 +505,77 @@ export const SINGERS: Singer[] = [
                 Songs: [{
                     Number: 1,
                     Title: 'Men Sound Better With You',
-                    Released: new Date('20 Oct 2019'),
+                    Released: new Date('20 Oct 2016'),
                     Genre: 'rap-hop',
                     Album: 'Death\'s dead'
                 },
                 {
                     Number: 2,
                     Title: 'Ghost in My Rod',
-                    Released: new Date('5 Oct 2019'),
+                    Released: new Date('5 Oct 2016'),
                     Genre: 'enigmatic rock-and-roll',
                     Album: 'Death\'s dead'
                 },
                 {
                     Number: 3,
                     Title: 'Bed of Men',
-                    Released: new Date('14 Nov 2019'),
+                    Released: new Date('14 Nov 2016'),
                     Genre: 'whimsical comedy-grass ',
                     Album: 'Death\'s dead'
                 },
                 {
                     Number: 4,
                     Title: 'Don\'t Push',
-                    Released: new Date('2 Jan 2020'),
+                    Released: new Date('2 Jan 2017'),
                     Genre: 'unblack electronic-trip-hop',
                     Album: 'Death\'s dead'
                 },
                 {
                     Number: 5,
                     Title: 'Nice Weather For Men',
-                    Released: new Date('18 Dec 2019'),
+                    Released: new Date('18 Dec 2017'),
                     Genre: '*',
                     Album: 'Death\'s dead'
                 },
                 {
                     Number: 6,
                     Title: 'Rancid Rhapsody',
-                    Released: new Date('10 Mar 2019'),
+                    Released: new Date('10 Mar 2017'),
                     Genre: '*',
                     Album: 'Death\'s dead'
                 },
                 {
                     Number: 7,
                     Title: 'Push, Push, Push!',
-                    Released: new Date('21 Feb 2019'),
+                    Released: new Date('21 Feb 2017'),
                     Genre: '*',
                     Album: 'Death\'s dead'
                 },
                 {
                     Number: 8,
                     Title: 'My Name is Sarah',
-                    Released: new Date('15 Nov 2019'),
+                    Released: new Date('15 Nov 2017'),
                     Genre: '*',
                     Album: 'Death\'s dead'
                 },
                 {
                     Number: 9,
                     Title: 'The Girl From My Hotel',
-                    Released: new Date('6 Nov 2019'),
+                    Released: new Date('6 Nov 2017'),
                     Genre: '*',
                     Album: 'Death\'s dead'
                 },
                 {
                     Number: 10,
                     Title: 'Free Box',
-                    Released: new Date('18 Apr 2019'),
+                    Released: new Date('18 Apr 2017'),
                     Genre: 'splitter-funk',
                     Album: 'Death\'s dead'
                 },
                 {
                     Number: 11,
                     Title: 'Hotel Cardiff',
-                    Released: new Date('30 Dec 2019'),
+                    Released: new Date('30 Dec 2017'),
                     Genre: 'guilty pleasure ebm',
                     Album: 'Death\'s dead'
                 }]
@@ -498,14 +596,98 @@ export const SINGERS: Singer[] = [
                 LaunchDate: new Date('March 6, 2004'),
                 BillboardReview: 98,
                 USBillboard200: 69,
-                Artist: 'Ahmad Nazeri'
+                Artist: 'Ahmad Nazeri',
+                Songs: [{
+                    Number: 1,
+                    Title: 'I am machine',
+                    Released: new Date('20 Oct 2004'),
+                    Genre: 'Heavy metal',
+                    Album: 'Emergency'
+                },
+                {
+                    Number: 2,
+                    Title: 'I wish I knew',
+                    Released: new Date('21 Oct 2004'),
+                    Genre: 'rap-hop',
+                    Album: 'Emergency'
+                },
+                {
+                    Number: 3,
+                    Title: 'How I feel',
+                    Released: new Date('22 Oct 2004'),
+                    Genre: 'Heavy metal',
+                    Album: 'Emergency'
+                },
+                {
+                    Number: 4,
+                    Title: 'I am machine',
+                    Released: new Date('30 Oct 2004'),
+                    Genre: 'Heavy metal',
+                    Album: 'Emergency'
+                },
+                {
+                    Number: 5,
+                    Title: 'Monsters under my bed',
+                    Released: new Date('01 Nov 2004'),
+                    Genre: 'rap-hop',
+                    Album: 'Emergency'
+                },
+                {
+                    Number: 6,
+                    Title: 'I know what you want',
+                    Released: new Date('20 Nov 2004'),
+                    Genre: 'rap-hop',
+                    Album: 'Emergency'
+                },
+                {
+                    Number: 7,
+                    Title: 'Lies',
+                    Released: new Date('21 Nov 2004'),
+                    Genre: 'Heavy metal',
+                    Album: 'Emergency'
+                },
+                {
+                    Number: 8,
+                    Title: 'I did it for you',
+                    Released: new Date('22 Nov 2004'),
+                    Genre: 'rap-hop',
+                    Album: 'Emergency'
+                }]
             },
             {
                 Album: 'Bursting bubbles',
                 LaunchDate: new Date('April 17, 2006'),
                 BillboardReview: 69,
                 USBillboard200: 39,
-                Artist: 'Ahmad Nazeri'
+                Artist: 'Ahmad Nazeri',
+                Songs: [{
+                    Number: 1,
+                    Title: 'Ghosts',
+                    Released: new Date('20 Apr 2006'),
+                    Genre: 'Hip-hop',
+                    Album: 'Bursting bubbles'
+                },
+                {
+                    Number: 2,
+                    Title: 'What goes around comes around',
+                    Released: new Date('20 Apr 2006'),
+                    Genre: 'Heavy metal',
+                    Album: 'Bursting bubbles'
+                },
+                {
+                    Number: 3,
+                    Title: 'I want nothing',
+                    Released: new Date('21 Apr 2006'),
+                    Genre: 'Heavy metal',
+                    Album: 'Bursting bubbles'
+                },
+                {
+                    Number: 4,
+                    Title: 'Me and you',
+                    Released: new Date('22 Apr 2006'),
+                    Genre: 'Rock',
+                    Album: 'Bursting bubbles'
+                }]
             }
         ]
     },
@@ -523,7 +705,42 @@ export const SINGERS: Singer[] = [
                 LaunchDate: new Date('November 18, 2017'),
                 BillboardReview: 68,
                 USBillboard200: 1,
-                Artist: 'Kimmy McIlmorie'
+                Artist: 'Kimmy McIlmorie',
+                Songs: [{
+                    Number: 1,
+                    Title: 'Same old love',
+                    Released: new Date('20 Nov 2017'),
+                    Genre: 'Hip-hop',
+                    Album: 'Here we go again'
+                },
+                {
+                    Number: 2,
+                    Title: 'Sick of it',
+                    Released: new Date('20 Nov 2017'),
+                    Genre: 'Hip-hop',
+                    Album: 'Here we go again'
+                },
+                {
+                    Number: 3,
+                    Title: 'No one',
+                    Released: new Date('21 Nov 2017'),
+                    Genre: 'Metal',
+                    Album: 'Here we go again'
+                },
+                {
+                    Number: 4,
+                    Title: 'Circles',
+                    Released: new Date('22 Nov 2017'),
+                    Genre: 'Heavy metal',
+                    Album: 'Here we go again'
+                },
+                {
+                    Number: 5,
+                    Title: 'Coming for you',
+                    Released: new Date('30 Nov 2017'),
+                    Genre: 'Hip-hop',
+                    Album: 'Here we go again'
+                }]
             }
         ]
     },
@@ -534,7 +751,51 @@ export const SINGERS: Singer[] = [
         Debut: 1996,
         GrammyNominations: 14,
         GrammyAwards: 2,
-        HasGrammyAward: true
+        HasGrammyAward: true,
+        Albums: [
+            {
+                Album: 'Trouble',
+                LaunchDate: new Date('November 18, 2017'),
+                BillboardReview: 65,
+                USBillboard200: 2,
+                Artist: 'Mar Rueda',
+                Songs: [{
+                    Number: 1,
+                    Title: 'You knew I was trouble',
+                    Released: new Date('20 Nov 2017'),
+                    Genre: 'Pop',
+                    Album: 'Trouble'
+                },
+                {
+                    Number: 2,
+                    Title: 'Cannot live without you',
+                    Released: new Date('20 Nov 2017'),
+                    Genre: 'Pop',
+                    Album: 'Trouble'
+                },
+                {
+                    Number: 3,
+                    Title: 'Lost you',
+                    Released: new Date('21 Nov 2017'),
+                    Genre: 'Metal',
+                    Album: 'Trouble'
+                },
+                {
+                    Number: 4,
+                    Title: 'Happiness starts with you',
+                    Released: new Date('22 Nov 2017'),
+                    Genre: '*',
+                    Album: 'Trouble'
+                },
+                {
+                    Number: 5,
+                    Title: 'I saw it coming',
+                    Released: new Date('30 Dec 2017'),
+                    Genre: 'Hip-hop',
+                    Album: 'Trouble'
+                }]
+            }
+        ]
     },
     {
         ID: 5,
@@ -736,7 +997,35 @@ export const SINGERS: Singer[] = [
                 LaunchDate: new Date('November 3, 2002'),
                 BillboardReview: 79,
                 USBillboard200: 85,
-                Artist: 'Izabella Tabakova'
+                Artist: 'Izabella Tabakova',
+                Songs: [{
+                    Number: 1,
+                    Title: 'The Sun',
+                    Released: new Date('31 Oct 2002'),
+                    Genre: 'old emo-garage ',
+                    Album: 'Dark matters'
+                },
+                {
+                    Number: 2,
+                    Title: 'I will survive',
+                    Released: new Date('03 Nov 2002'),
+                    Genre: 'old emo-garage ',
+                    Album: 'Dark matters'
+                },
+                {
+                    Number: 3,
+                    Title: 'Try',
+                    Released: new Date('04 Nov 2002'),
+                    Genre: 'old emo-garage ',
+                    Album: 'Dark matters'
+                },
+                {
+                    Number: 4,
+                    Title: 'Miracle',
+                    Released: new Date('05 Nov 2002'),
+                    Genre: 'old emo-garage ',
+                    Album: 'Dark matters'
+                }]
             }
         ]
     },
@@ -754,7 +1043,49 @@ export const SINGERS: Singer[] = [
                 LaunchDate: new Date('December 22, 2003'),
                 BillboardReview: 93,
                 USBillboard200: 5,
-                Artist: 'Nguyễn Diệp Chi'
+                Artist: 'Nguyễn Diệp Chi',
+                Songs: [{
+                    Number: 1,
+                    Title: 'Book of love',
+                    Released: new Date('31 Dec 2003'),
+                    Genre: 'Hip-hop',
+                    Album: 'Library of liberty'
+                },
+                {
+                    Number: 2,
+                    Title: 'Commitment',
+                    Released: new Date('01 Jan 2004'),
+                    Genre: 'Hip-hop',
+                    Album: 'Library of liberty'
+                },
+                {
+                    Number: 3,
+                    Title: 'Satisfaction',
+                    Released: new Date('01 Jan 2004'),
+                    Genre: 'Hip-hop',
+                    Album: 'Library of liberty'
+                },
+                {
+                    Number: 4,
+                    Title: 'Obsession',
+                    Released: new Date('01 Jan 2004'),
+                    Genre: 'Hip-hop',
+                    Album: 'Library of liberty'
+                },
+                {
+                    Number: 5,
+                    Title: 'Oblivion',
+                    Released: new Date('02 Jan 2004'),
+                    Genre: 'Hip-hop',
+                    Album: 'Library of liberty'
+                },
+                {
+                    Number: 6,
+                    Title: 'Energy',
+                    Released: new Date('03 Jan 2004'),
+                    Genre: 'Hip-hop',
+                    Album: 'Library of liberty'
+                }]
             }
         ]
     },
@@ -772,7 +1103,42 @@ export const SINGERS: Singer[] = [
                 LaunchDate: new Date('May 3, 2001'),
                 BillboardReview: 91,
                 USBillboard200: 29,
-                Artist: 'Eva Lee'
+                Artist: 'Eva Lee',
+                Songs: [{
+                    Number: 1,
+                    Title: 'We shall see',
+                    Released: new Date('03 May 2001'),
+                    Genre: 'rap-hop',
+                    Album: 'Just a tease'
+                },
+                {
+                    Number: 2,
+                    Title: 'Hopeless',
+                    Released: new Date('04 May 2001'),
+                    Genre: 'rap-hop',
+                    Album: 'Just a tease'
+                },
+                {
+                    Number: 3,
+                    Title: 'Ignorant',
+                    Released: new Date('04 May 2001'),
+                    Genre: 'rap-hop',
+                    Album: 'Just a tease'
+                },
+                {
+                    Number: 4,
+                    Title: 'Dance',
+                    Released: new Date('05 May 2019'),
+                    Genre: 'Metal',
+                    Album: 'Just a tease'
+                },
+                {
+                    Number: 5,
+                    Title: 'Fire',
+                    Released: new Date('06 May 2019'),
+                    Genre: 'Metal',
+                    Album: 'Just a tease'
+                }]
             }
         ]
     },
@@ -996,7 +1362,28 @@ export const SINGERS: Singer[] = [
                 LaunchDate: new Date('August 4, 2017'),
                 BillboardReview: 93,
                 USBillboard200: 98,
-                Artist: 'Pablo Cambeiro'
+                Artist: 'Pablo Cambeiro',
+                Songs: [{
+                    Number: 1,
+                    Title: 'Silence',
+                    Released: new Date('25 Aug 2017'),
+                    Genre: 'rap-hop',
+                    Album: 'Fluke'
+                },
+                {
+                    Number: 2,
+                    Title: 'Nothing matters anymore',
+                    Released: new Date('25 Aug 2017'),
+                    Genre: '*',
+                    Album: 'Fluke'
+                },
+                {
+                    Number: 3,
+                    Title: 'Everything wrong with me',
+                    Released: new Date('25 Aug 2017'),
+                    Genre: '*',
+                    Album: 'Fluke'
+                }]
             },
             {
                 Album: 'Crowd control',
@@ -1083,7 +1470,35 @@ export const SINGERS: Singer[] = [
                 LaunchDate: new Date('February 24, 2016'),
                 BillboardReview: 74,
                 USBillboard200: 77,
-                Artist: 'Athar Malakooti'
+                Artist: 'Athar Malakooti',
+                Songs: [{
+                    Number: 1,
+                    Title: 'Actions',
+                    Released: new Date('25 Feb 2016'),
+                    Genre: 'ethno-tunes',
+                    Album: 'Pushing up daisies'
+                },
+                {
+                    Number: 2,
+                    Title: 'Blinding lights',
+                    Released: new Date('28 Feb 2016'),
+                    Genre: 'neuro-tunes',
+                    Album: 'Pushing up daisies'
+                },
+                {
+                    Number: 3,
+                    Title: 'I want more',
+                    Released: new Date('5 Mar 2016'),
+                    Genre: '*',
+                    Album: 'Pushing up daisies'
+                },
+                {
+                    Number: 4,
+                    Title: 'House by the lake',
+                    Released: new Date('22 Mar 2016'),
+                    Genre: '*',
+                    Album: 'Pushing up daisies'
+                }]
             }
         ]
     },
@@ -1116,7 +1531,35 @@ export const SINGERS: Singer[] = [
                 LaunchDate: new Date('June 30, 2004'),
                 BillboardReview: 94,
                 USBillboard200: 9,
-                Artist: 'Marti Valencia'
+                Artist: 'Marti Valencia',
+                Songs: [{
+                    Number: 1,
+                    Title: 'Love in motion',
+                    Released: new Date('25 Jun 2004'),
+                    Genre: 'ethno-tunes',
+                    Album: 'Nemesis'
+                },
+                {
+                    Number: 2,
+                    Title: 'The picture',
+                    Released: new Date('28 Jun 2004'),
+                    Genre: 'neuro-tunes',
+                    Album: 'Nemesis'
+                },
+                {
+                    Number: 3,
+                    Title: 'Flowers',
+                    Released: new Date('5 Jul 2004'),
+                    Genre: '*',
+                    Album: 'Nemesis'
+                },
+                {
+                    Number: 4,
+                    Title: 'Regret',
+                    Released: new Date('22 Avg 2004'),
+                    Genre: 'Heavy metal',
+                    Album: 'Nemesis'
+                }]
             },
             {
                 Album: 'First chance',
@@ -1214,7 +1657,49 @@ export const SINGERS: Singer[] = [
                 LaunchDate: new Date('April 29, 2007'),
                 BillboardReview: 66,
                 USBillboard200: 37,
-                Artist: 'Marti Valencia'
+                Artist: 'Marti Valencia',
+                Songs: [{
+                    Number: 1,
+                    Title: 'Destiny',
+                    Released: new Date('07 May 2007'),
+                    Genre: '*',
+                    Album: 'God\'s advocate'
+                },
+                {
+                    Number: 2,
+                    Title: 'I am the chosen one',
+                    Released: new Date('08 May 2007'),
+                    Genre: 'Heavy metal',
+                    Album: 'God\'s advocate'
+                },
+                {
+                    Number: 3,
+                    Title: 'New me',
+                    Released: new Date('09 May 2007'),
+                    Genre: 'Dance-pop R&B',
+                    Album: 'God\'s advocate'
+                },
+                {
+                    Number: 4,
+                    Title: 'Miss you',
+                    Released: new Date('10 May 2007'),
+                    Genre: 'Heavy metal',
+                    Album: 'God\'s advocate'
+                },
+                {
+                    Number: 5,
+                    Title: 'Turn back the time',
+                    Released: new Date('21 May 2007'),
+                    Genre: 'Dance-pop EDM',
+                    Album: 'God\'s advocate'
+                },
+                {
+                    Number: 6,
+                    Title: 'Let us have fun',
+                    Released: new Date('01 Jun 2007'),
+                    Genre: 'Dance-pop EDM',
+                    Album: 'God\'s advocate'
+                }]
             }
         ]
     },
@@ -1232,7 +1717,35 @@ export const SINGERS: Singer[] = [
                 LaunchDate: new Date('November 3, 2005'),
                 BillboardReview: 82,
                 USBillboard200: 7,
-                Artist: 'Alicia Stanger'
+                Artist: 'Alicia Stanger',
+                Songs: [{
+                    Number: 1,
+                    Title: 'Brothers',
+                    Released: new Date('25 Oct 2005'),
+                    Genre: 'Hip-hop',
+                    Album: 'Forever alone'
+                },
+                {
+                    Number: 2,
+                    Title: 'Alone',
+                    Released: new Date('28 Oct 2005'),
+                    Genre: 'Heavy metal',
+                    Album: 'Forever alone'
+                },
+                {
+                    Number: 3,
+                    Title: 'I will go on',
+                    Released: new Date('5 Nov 2005'),
+                    Genre: 'Heavy metal',
+                    Album: 'Forever alone'
+                },
+                {
+                    Number: 4,
+                    Title: 'Horses',
+                    Released: new Date('22 Dec 2005'),
+                    Genre: '*',
+                    Album: 'Forever alone'
+                }]
             }
         ]
     },
@@ -1294,14 +1807,84 @@ export const SINGERS: Singer[] = [
                 LaunchDate: new Date('April 10, 2008'),
                 BillboardReview: 85,
                 USBillboard200: 35,
-                Artist: 'Peter Taylor'
+                Artist: 'Peter Taylor',
+                Songs: [{
+                    Number: 1,
+                    Title: 'Now that I am alone',
+                    Released: new Date('25 Apr 2008'),
+                    Genre: '*',
+                    Album: 'Decisions decisions'
+                },
+                {
+                    Number: 2,
+                    Title: 'Hopefully',
+                    Released: new Date('26 Apr 2008'),
+                    Genre: '*',
+                    Album: 'Decisions decisions'
+                },
+                {
+                    Number: 3,
+                    Title: 'Wonderful life',
+                    Released: new Date('5 May 2008'),
+                    Genre: '*',
+                    Album: 'Decisions decisions'
+                },
+                {
+                    Number: 4,
+                    Title: 'Amazing world',
+                    Released: new Date('22 Dec 2008'),
+                    Genre: '*',
+                    Album: 'Decisions decisions'
+                }]
             },
             {
                 Album: 'Climate changed',
                 LaunchDate: new Date('June 20, 2015'),
                 BillboardReview: 66,
                 USBillboard200: 89,
-                Artist: 'Peter Taylor'
+                Artist: 'Peter Taylor',
+                Songs: [{
+                    Number: 1,
+                    Title: 'This is how I am now',
+                    Released: new Date('22 Jun 2015'),
+                    Genre: 'Hip-hop',
+                    Album: 'Climate changed'
+                },
+                {
+                    Number: 2,
+                    Title: 'I feel',
+                    Released: new Date('26 Jun 2015'),
+                    Genre: 'rap-hop',
+                    Album: 'Climate changed'
+                },
+                {
+                    Number: 3,
+                    Title: 'Do I want to know',
+                    Released: new Date('5 Jul 2015'),
+                    Genre: 'rap-hop',
+                    Album: 'Climate changed'
+                },
+                {
+                    Number: 4,
+                    Title: 'Natural love',
+                    Released: new Date('22 Jul 2015'),
+                    Genre: '*',
+                    Album: 'Climate changed'
+                },
+                {
+                    Number: 5,
+                    Title: 'I will help',
+                    Released: new Date('22 Jul 2015'),
+                    Genre: '*',
+                    Album: 'Climate changed'
+                },
+                {
+                    Number: 6,
+                    Title: 'No matter what',
+                    Released: new Date('22 Jul 2015'),
+                    Genre: 'hip-hop',
+                    Album: 'Climate changed'
+                }]
             }
         ]
     }
