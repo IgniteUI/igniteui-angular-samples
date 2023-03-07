@@ -1,16 +1,8 @@
 const gulp = require("gulp");
 const fs = require("fs");
 const path = require("path");
-const domino = require('domino');
 const es = require('event-stream');
 const fsExtra = require("fs-extra");
-const tsNode = require('ts-node').register({
-    transpileOnly: true,
-    compilerOptions: {
-        module: "commonjs",
-        allowJs: true
-    }
-});
 const { generateLiveEditing } = require('igniteui-live-editing');
 const argv = require("yargs").argv;
 
@@ -151,7 +143,7 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                 directories.push(child);
             }
         });
-        
+
     const jsonSamplesPath = path.join(__dirname, `${projectPath}/assets/samples`);
     const sharedJson = JSON.parse(fs.readFileSync(path.join(jsonSamplesPath, "/shared.json")));
     const submoduleAppDest = submodule + `/${dest}/`;
