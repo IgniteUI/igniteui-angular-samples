@@ -4,7 +4,7 @@
             <ng-template #othersMessage let-message="message" let-contact="contact" let-messageIndex="index">
                 <igx-list-item class="contact" *ngIf="isFirstMessage(messageIndex)">
                     <div class="contact__panel">
-                        <igx-avatar [src]="contact.photo" [roundShape]="true"></igx-avatar>
+                        <igx-avatar [src]="contact.photo" shape="circle"></igx-avatar>
                         <span class="message__info">
                             {{ contact.name }}, {{ message.timestamp | date: 'shortTime'}}
                         </span>
