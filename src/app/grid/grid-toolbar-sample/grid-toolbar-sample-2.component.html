@@ -26,7 +26,7 @@
         <igx-column field="Name" header="Athlete" width="200">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.data.Avatar" [roundShape]="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.Avatar" shape="circle" size="small"></igx-avatar>
                     <span class="athlete-name">{{ cell.value }}</span>
                 </div>
             </ng-template>
@@ -35,7 +35,7 @@
         <igx-column field="CountryName" header="Country" width="200">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.data.CountryFlag" [roundShape]="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.CountryFlag" shape="circle" size="small"></igx-avatar>
                     <span class="country-name">{{ cell.value }}</span>
                 </div>
             </ng-template>
