@@ -60,7 +60,7 @@
         <igx-column field="avatar" header="Photo" width="88" [pinned]="true" [resizable]="true" [searchable]="false" [filterable]="false">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner avatar-cell">
-                    <igx-avatar [src]="getPhoto(cell)" [roundShape]="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="getPhoto(cell)" shape="circle" size="small"></igx-avatar>
                 </div>
             </ng-template>
         </igx-column>
