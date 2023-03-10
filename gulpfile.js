@@ -1,16 +1,17 @@
 const gulp = require("gulp");
 const fs = require("fs");
 const path = require("path");
-const domino = require('domino');
 const es = require('event-stream');
 const fsExtra = require("fs-extra");
-const tsNode = require('ts-node').register({
+
+require('ts-node').register({
     transpileOnly: true,
     compilerOptions: {
         module: "commonjs",
         allowJs: true
     }
 });
+
 const { generateLiveEditing } = require('igniteui-live-editing');
 const argv = require("yargs").argv;
 
