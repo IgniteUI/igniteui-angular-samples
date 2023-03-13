@@ -9,7 +9,7 @@ import { ORDERS_DATA } from '../data/orders';
     templateUrl: './tree-grid-multi-cell-selection.component.html'
 })
 export class TreeGridMultiCellSelectionComponent {
-    public sourceData = ORDERS_DATA();
+    public sourceData = ORDERS_DATA;
     public targetData = [];
 
     public options = {

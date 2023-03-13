@@ -19,6 +19,6 @@ export class TreeGridExternalOutletComponent implements OnInit {
     constructor() {
     }
     public ngOnInit(): void {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
     }
 }

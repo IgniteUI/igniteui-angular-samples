@@ -19,7 +19,7 @@ export class TreeGridFilteringCustomSampleComponent implements OnInit {
     public formatOptions = this.options;
 
     public ngOnInit() {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
     }
 
     public formatDate(val: Date) {

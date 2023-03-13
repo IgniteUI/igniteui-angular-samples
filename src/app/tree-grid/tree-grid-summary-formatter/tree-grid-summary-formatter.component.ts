@@ -16,7 +16,7 @@ export class TreeGridSummaryFormatterComponent implements OnInit {
     public data: any[];
 
     public ngOnInit(): void {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
     }
 
     public dateSummaryFormat(summary: IgxSummaryResult, summaryOperand: IgxSummaryOperand): string {

@@ -14,7 +14,7 @@ export class TreeGridSummaryStylingComponent {
   public data;
 
   constructor() {
-    this.data = ORDERS_DATA();
+    this.data = ORDERS_DATA;
   }
 
   public toggleSummary(column: ColumnType) {

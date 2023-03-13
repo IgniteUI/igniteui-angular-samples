@@ -26,7 +26,7 @@ export class TreeGridConditionalCellStyle2Component implements OnInit {
     };
 
     public ngOnInit() {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
         this.columns = [
             { field: 'ID' },
             { field: 'Name', header: 'Order Product' },
@@ -55,7 +55,7 @@ export class TreeGridConditionalCellStyle2Component implements OnInit {
     public formatDate(value) {
             return new Intl.DateTimeFormat('en-US').format(value);
     }
-    
+
     public init(column: IgxColumnComponent) {
         console.log(column);
         switch (column.field) {

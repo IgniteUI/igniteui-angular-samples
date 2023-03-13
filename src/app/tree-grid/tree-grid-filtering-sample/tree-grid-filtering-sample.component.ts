@@ -23,7 +23,7 @@ export class TreeGridFilteringSampleComponent implements OnInit {
     constructor() {
     }
     public ngOnInit(): void {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
     }
 
     public filter(element: EventTarget) {

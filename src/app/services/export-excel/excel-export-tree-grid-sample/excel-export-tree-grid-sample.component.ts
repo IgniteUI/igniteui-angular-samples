@@ -24,7 +24,7 @@ export class TreeGridExcelExportSample1Component implements OnInit {
   constructor() { }
 
   public ngOnInit(): void {
-    this.data = ORDERS_DATA();
+    this.data = ORDERS_DATA;
   }
     /*
     The following code demonstrates how to attach event handlers to exporter specific events

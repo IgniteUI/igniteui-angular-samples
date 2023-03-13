@@ -18,6 +18,6 @@ export class TreeGridPagingStyleSampleComponent implements OnInit {
 
 
     public ngOnInit(): void {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
     }
 }

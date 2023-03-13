@@ -16,6 +16,6 @@ export class TreeGridExternalAdvancedFilteringComponent {
     public formatOptions = this.options;
 
     constructor() {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
     }
 }

@@ -8,7 +8,7 @@ import { ORDERS_DATA } from '../data/orders';
     templateUrl: './tree-grid-multi-cell-selection-style.component.html'
 })
 export class TreeGridMultiCellSelectionStyleComponent {
-    public sourceData = ORDERS_DATA();
+    public sourceData = ORDERS_DATA;
 
     public options = {
         digitsInfo: '1.2-2',

@@ -13,22 +13,22 @@ export class TreeGridExcelStyleFilteringSample1Component implements OnInit {
     public treegrid1: IgxTreeGridComponent;
 
     public data: any[];
-    
+
     public options = {
         digitsInfo: '1.2-2',
         currencyCode: 'USD'
     };
     public formatOptions = this.options;
-    
+
     public filterStrategy = new TreeGridFilteringStrategy(['ID', 'Name']);
-    
+
     public density: DisplayDensity = 'comfortable';
     public displayDensities;
 
     constructor() {
     }
     public ngOnInit(): void {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
         this.displayDensities = [
             {
                 label: 'compact',

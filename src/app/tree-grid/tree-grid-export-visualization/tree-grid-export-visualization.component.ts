@@ -8,7 +8,7 @@ import { ORDERS_DATA } from '../data/orders';
 })
 export class TreeGridExportVisualizationComponent {
     public localData = [];
-    private data = ORDERS_DATA();
+    private data = ORDERS_DATA;
 
     constructor() {
         for (let i = 0; i < 15000; i += 3) {

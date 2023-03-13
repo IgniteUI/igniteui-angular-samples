@@ -27,7 +27,7 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
     constructor() {
     }
     public ngOnInit(): void {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
     }
 
     public formatDate(val: Date) {

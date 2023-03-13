@@ -27,7 +27,7 @@ export class TreeGridColumnSelectionStylesComponent implements OnInit, AfterView
     }
 
     public ngOnInit(): void {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
     }
 
     public ngAfterViewInit() {

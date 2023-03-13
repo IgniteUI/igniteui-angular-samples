@@ -16,7 +16,7 @@ export class TreeGridFormattedFilteringStrategyComponent implements OnInit {
     public filterStrategy = new TreeGridFormattedValuesFilteringStrategy();
 
     public ngOnInit(): void {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
     }
 
     public formatPrice(value: number) {

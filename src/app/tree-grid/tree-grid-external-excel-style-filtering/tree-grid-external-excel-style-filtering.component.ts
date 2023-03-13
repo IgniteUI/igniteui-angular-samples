@@ -19,6 +19,6 @@ export class TreeGridExternalExcelStyleFilteringComponent implements OnInit {
     constructor() { }
 
     public ngOnInit() {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
     }
 }

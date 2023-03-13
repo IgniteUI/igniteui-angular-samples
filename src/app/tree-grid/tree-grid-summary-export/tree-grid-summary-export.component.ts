@@ -14,7 +14,7 @@ export class TreeGridSummaryExportComponent {
   public data;
 
   constructor(private excelExportService: IgxExcelExporterService) {
-    this.data = ORDERS_DATA();
+    this.data = ORDERS_DATA;
   }
 
   public toggleSummary(column: ColumnType) {

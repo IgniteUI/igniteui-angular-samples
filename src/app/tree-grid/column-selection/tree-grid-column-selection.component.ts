@@ -26,7 +26,7 @@ export class TreeGridColumnSelectionComponent implements OnInit, AfterViewInit {
     constructor(private cdr: ChangeDetectorRef){}
 
     public ngOnInit(): void {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
     }
 
     public ngAfterViewInit(): void {

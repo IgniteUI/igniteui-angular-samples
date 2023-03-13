@@ -29,7 +29,7 @@ export class TreeGridPagerSampleComponent implements OnInit, AfterViewInit {
     };
 
     public ngOnInit(): void {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
         this.densityOptions = ['compact', 'cosy', 'comfortable'];
     }
 

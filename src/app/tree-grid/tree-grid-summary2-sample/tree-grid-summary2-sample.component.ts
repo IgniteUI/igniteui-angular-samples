@@ -45,7 +45,7 @@ export class TreeGridSummary2SampleComponent implements OnInit {
     public summaryCalculationMode: GridSummaryCalculationMode = GridSummaryCalculationMode.rootAndChildLevels;
 
     constructor() {
-        this.data = ORDERS_DATA();
+        this.data = ORDERS_DATA;
         this.expr = [
             {
                 dir: SortingDirection.Asc,
