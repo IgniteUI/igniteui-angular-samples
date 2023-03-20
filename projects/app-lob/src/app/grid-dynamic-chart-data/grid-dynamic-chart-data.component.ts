@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { AfterViewInit, Component, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
-import { IgxChartIntegrationDirective, OPTIONS_TYPE, CHART_TYPE } from '@infragistics/igniteui-angular-extras';
+import { IgxChartIntegrationDirective, OPTIONS_TYPE, CHART_TYPE } from 'igniteui-angular-extras';
 
 import { FinancialData } from '../data/financialData';
 
