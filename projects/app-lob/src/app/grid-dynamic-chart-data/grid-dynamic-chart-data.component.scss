@@ -9,7 +9,7 @@
 :host ::ng-deep {
     .grid-chart-contextmenu-wrapper {
         igx-grid {
-            @include scrollbar(scrollbar-theme($size: 16px));
+            @include scrollbar(scrollbar-theme($scrollbar-size: 16px));
         }
     }
 
@@ -62,7 +62,7 @@
 
     .selection-area {
 
-        @include scrollbar(scrollbar-theme($size: 6px));
+        @include scrollbar(scrollbar-theme($scrollbar-size: 6px));
         width: 100%;
         height: 95%;
         position: absolute;
@@ -118,7 +118,7 @@
     }
 
     igx-tab-content {
-        @include scrollbar(scrollbar-theme($size: 10px));
+        @include scrollbar(scrollbar-theme($scrollbar-size: 10px));
     }
 
 }
