@@ -7,7 +7,7 @@ import {
     IgxButtonModule, IgxIconModule, IgxInputGroupModule,
     IgxLayoutModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxRippleModule
 } from 'igniteui-angular';
-import { IgxExtrasModule } from '@infragistics/igniteui-angular-extras';
+import { IgxExtrasModule } from 'igniteui-angular-extras';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
