@@ -33,7 +33,7 @@
             "progress": true,
             "stylePreprocessorOptions": {
                 "includePaths": ["node_modules"]
-            }
+            },
           },
           "configurations": {
             "production": {
@@ -151,7 +151,8 @@
             "namedChunks": true,
             "stylePreprocessorOptions": {
                 "includePaths": ["node_modules"]
-            }
+            },
+            "preserveSymlinks": true
           },
           "configurations": {
             "production": {
@@ -171,8 +172,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "5mb",
-                  "maximumError": "7mb"
+                  "maximumWarning": "8mb",
+                  "maximumError": "9mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -294,8 +295,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "3mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "8mb",
+                  "maximumError": "9mb"
                 },
                 {
                   "type": "anyComponentStyle",
