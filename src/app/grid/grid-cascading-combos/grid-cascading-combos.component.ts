@@ -1,7 +1,7 @@
-import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { IgxGridComponent, IgxLinearProgressBarComponent, IgxSimpleComboComponent, ISimpleComboSelectionChangingEventArgs } from 'igniteui-angular';
+import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { IgxSimpleComboComponent, ISimpleComboSelectionChangingEventArgs } from 'igniteui-angular';
 import { City, Country, getCitiesByCountry, getCountries, Region } from '../../data/cities15000-regions-countries';
-import { DATA } from './data';
+import { DATA } from '../../data/data';
 
 @Component({
     selector: 'grid-cascading-combos',
@@ -11,10 +11,6 @@ import { DATA } from './data';
 export class GridCascadingCombosComponent implements OnInit {
     @ViewChildren(IgxSimpleComboComponent)
     public combos: QueryList<IgxSimpleComboComponent>;
-    @ViewChildren(IgxLinearProgressBarComponent)
-    public progressBars: QueryList<IgxLinearProgressBarComponent>;
-    @ViewChild('grid1', { read: IgxGridComponent, static: true })
-    public grid1: IgxGridComponent;
 
     public selectedCountry: Country;
     public selectedRegion: Region;
