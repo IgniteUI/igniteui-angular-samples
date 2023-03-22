@@ -25,7 +25,7 @@ export class CarouselNoNavigationSampleComponent implements OnInit {
         this.carousel.select(this.carousel.get(this.currentIndex));
     });
 
-    this.carousel.onSlideChanged.subscribe((args: ISlideEventArgs) => {
+    this.carousel.slideChanged.subscribe((args: ISlideEventArgs) => {
         this.currentIndex = args.slide.index;
     });
   }

@@ -13,6 +13,35 @@ import { ConditionalFormattingDirective } from '../directives/conditional-format
 import { DockSlotComponent } from './dock-slot/dock-slot.component';
 
 @Pipe({
+    name: 'name'
+})
+export class NamePipe implements PipeTransform {
+    public transform(name: string): string {
+        let res = '';
+        const upperCaseChars = name.match(/[A-Z0-9]{1,}/g);
+        for (let index = 0; index < upperCaseChars.length; index++) {
+          if (!(index === upperCaseChars.length - 1)) {
+            res += name.substring(name.indexOf(upperCaseChars[index]),
+              name.indexOf(upperCaseChars[index + 1])) + ' ';
+          } else {
+            res += name.substring(name.indexOf(upperCaseChars[index]));
+          }
+        }
+        return res;
+      }
+}
+
+@Pipe({
+    name: 'filterType'
+})
+export class FilterTypePipe implements PipeTransform {
+    public transform(collection: CHART_TYPE[], type: string): CHART_TYPE[] {
+        return collection.filter(types => types.indexOf(type) !== -1 && types.indexOf(type, type.length - 1) === -1);
+      }
+}
+
+
+@Pipe({
     name: 'hastDuplicateLayouts'
 })
 export class HastDuplicateLayouts implements PipeTransform {
