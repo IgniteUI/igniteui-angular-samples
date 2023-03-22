@@ -33,7 +33,7 @@
             "progress": true,
             "stylePreprocessorOptions": {
                 "includePaths": ["node_modules"]
-            },
+            }
           },
           "configurations": {
             "production": {
