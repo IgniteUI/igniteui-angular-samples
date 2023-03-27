@@ -12,6 +12,7 @@
                 <igx-simple-combo #comboItem
                     [data]="sortingTypes"
                     [displayKey]="'mode'"
+                    [displayDensity]="'compact'"
                     [(ngModel)]="sortingOptions"
                     (keydown)="handleSearchResults($event)">
                     <ng-template igxComboClearIcon></ng-template>
