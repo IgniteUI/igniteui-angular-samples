@@ -139,6 +139,7 @@ import { GridValidationStyleComponent } from './grid-validation-style/grid-valid
 import { GridValidatorServiceExtendedComponent, PhoneFormatDirective } from './grid-validator-service-extended/grid-validator-service-extended.component';
 import { GridSummaryExportComponent } from './grid-summary-export/grid-summary-export.component';
 import { GridStatePersistenceSampleComponent } from './grid-state-persistence-sample/grid-state-persistance-sample.component';
+import { GridCascadingCombosComponent } from './grid-cascading-combos/grid-cascading-combos.component';
 
 @NgModule({
     declarations: [
@@ -268,7 +269,8 @@ import { GridStatePersistenceSampleComponent } from './grid-state-persistence-sa
         GridValidatorServiceExtendedComponent,
         PhoneFormatDirective,
         GridSummaryExportComponent,
-        GridStatePersistenceSampleComponent
+        GridStatePersistenceSampleComponent,
+        GridCascadingCombosComponent
     ],
     imports: [
         CommonModule,

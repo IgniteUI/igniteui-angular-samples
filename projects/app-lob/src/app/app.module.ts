@@ -7,12 +7,12 @@ import {
     IgxButtonModule, IgxIconModule, IgxInputGroupModule,
     IgxLayoutModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxRippleModule
 } from 'igniteui-angular';
+import { IgxExtrasModule } from 'igniteui-angular-extras';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DocsLayoutComponent } from './index/docs-layout.component';
 import { IndexComponent } from './index/index.component';
-
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
@@ -34,7 +34,8 @@ import { IndexComponent } from './index/index.component';
         IgxButtonModule,
         FormsModule,
         HttpClientModule,
-        HammerModule
+        HammerModule,
+        IgxExtrasModule
     ]
 })
 export class AppModule { }

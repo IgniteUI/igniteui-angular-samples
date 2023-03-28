@@ -11,7 +11,7 @@ export class CardComponent {
         buttons: ['read more'],
         content: `New York City comprises 5 boroughs sitting where the
                   Hudson River meets the Atlantic Ocean. At its core is Manhattan,
-                  a densely populated borough that’s among the world’s major commercial,
+                  a densely populated borough that's among the world's major commercial,
                   financial and cultural centers.`,
         icons: ['favorite', 'share'],
         imageUrl: 'assets/images/card/media/ny.jpg',
