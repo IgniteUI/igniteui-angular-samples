@@ -6,7 +6,7 @@ name: App LOB CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master, vNext ]
+    branches: [ master, vnext ]
     paths:
       - '**'
       - '!src/**'
@@ -16,7 +16,7 @@ on:
       - 'live-editing/generators/AppDVConfigGenerators.ts'
       - '!projects/app-crm/**'
   pull_request:
-    branches: [ master, vNext ]
+    branches: [ master, vnext ]
     paths:
       - '**'
       - '!src/**'
@@ -39,13 +39,19 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
             node-version: ${{ matrix.node-version }}
             cache: 'npm'
+
+      - name: Npm add registry
+        run: npm config set @infragistics:registry https://${{secrets.IG_SCOPE}}
+
+      - name: Npm config auth
+        run: npm config set ${{secrets.IG_SCOPE}}:_auth=${{secrets.IG_TOKEN}}
 
       - name: Install dependencies
         run: npm ci

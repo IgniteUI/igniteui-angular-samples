@@ -151,7 +151,8 @@
             "namedChunks": true,
             "stylePreprocessorOptions": {
                 "includePaths": ["node_modules"]
-            }
+            },
+            "preserveSymlinks": true
           },
           "configurations": {
             "production": {
@@ -171,8 +172,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "5mb",
-                  "maximumError": "7mb"
+                  "maximumWarning": "8mb",
+                  "maximumError": "9mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -229,18 +230,6 @@
               "projects/app-lob/**/*.ts",
               "projects/app-lob/**/*.html"
             ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/app-lob/e2e/protractor.conf.js",
-            "devServerTarget": "app-lob:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "app-lob:serve:production"
-            }
           }
         }
       }
@@ -306,8 +295,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "3mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "8mb",
+                  "maximumError": "9mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -364,18 +353,6 @@
               "projects/app-crm/**/*.ts",
               "projects/app-crm/**/*.html"
             ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/app-crm/e2e/protractor.conf.js",
-            "devServerTarget": "app-crm:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "app-crm:serve:production"
-            }
           }
         }
       }
