@@ -15,7 +15,7 @@
                         <span class="crm-sample-toolbar__ellipsis">Business Propeller</span>
                     </div>
                     <div class="sample-flex-container">
-                        <igx-input-group type="search" class="searchInputGroup">
+                        <igx-input-group type="search" class="searchInputGroup" displayDensity="compact">
                             <igx-prefix>
                                 <igx-icon class="prefixIcon" *ngIf="searchText.length === 0">search</igx-icon>
                                 <igx-icon class="prefixIcon" *ngIf="searchText.length > 0" (click)="clearSearch()">clear
@@ -34,11 +34,13 @@
                                         No results
                                     </span>
                                 </div>
+
                                 <div class="caseSensitiveButton">
                                     <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="updateSearch()" [class]="caseSensitive? 'case-sensitive--active' : ''">
                                         <igx-icon class="caseSensitiveIcon" family="material">text_fields</igx-icon>
                                     </button>
                                 </div>
+
                                 <div class="searchButtons">
                                     <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="grid1.findPrev(searchText, caseSensitive)">
                                         <igx-icon family="material">navigate_before</igx-icon>
