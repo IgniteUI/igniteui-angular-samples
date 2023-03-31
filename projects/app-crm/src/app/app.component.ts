@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SEOService } from '../../../app-lob/src/app/seo.service';
+
 @Component({
     selector: 'app-root',
     styleUrls: ['./app.component.scss'],
