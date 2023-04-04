@@ -17,3 +17,4 @@ export class AppComponent implements OnInit {
         this.seoService.updateHeadProperties(this.title, this.metaDesc, window.location.href);
     }
 }
+
