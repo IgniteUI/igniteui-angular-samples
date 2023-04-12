@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SEOService } from '../../../app-lob/src/app/seo.service';
+
 @Component({
     selector: 'app-root',
     styleUrls: ['./app.component.scss'],
@@ -16,3 +17,4 @@ export class AppComponent implements OnInit {
         this.seoService.updateHeadProperties(this.title, this.metaDesc, window.location.href);
     }
 }
+
