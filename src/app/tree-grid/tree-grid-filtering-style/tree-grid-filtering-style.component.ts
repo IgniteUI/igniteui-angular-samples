@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
   selector: 'app-tree-grid-filtering-style',
@@ -8,18 +8,20 @@ import { FOODS_DATA } from '../data/foods';
 })
 export class TreeGridFilteringStyleComponent implements OnInit {
     public data: any[];
+    public options = {
+        digitsInfo: '1.2-2',
+        currencyCode: 'USD'
+    };
+    public formatOptions = this.options;
+
 
     constructor() {
     }
     public ngOnInit(): void {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA;
     }
 
     public formatDate(val: Date) {
         return new Intl.DateTimeFormat('en-US').format(val);
-    }
-
-    public formatCurrency(val: string) {
-        return parseInt(val, 10).toFixed(2);
     }
 }

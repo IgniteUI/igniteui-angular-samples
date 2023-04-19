@@ -10,7 +10,7 @@ import {
     ISortingExpression,
     SortingDirection
 } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 class AvgSummary {
 
@@ -45,7 +45,7 @@ export class TreeGridSummary2SampleComponent implements OnInit {
     public summaryCalculationMode: GridSummaryCalculationMode = GridSummaryCalculationMode.rootAndChildLevels;
 
     constructor() {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA;
         this.expr = [
             {
                 dir: SortingDirection.Asc,

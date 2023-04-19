@@ -8,7 +8,7 @@
                     columnSelection="multiple">
         <igx-column *ngFor="let c of columnConfig"
                     [field] = "c.field"
-                    [header] = "c.field"
+                    [header] = "c.header"
                     [selectable] = "c.selectable"
                     [formatter] = "c?.formatter">
         </igx-column>
