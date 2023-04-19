@@ -1,5 +1,5 @@
 <div class="grid__wrapper" (window:click)="disableContextMenu()">
-    <igx-tree-grid [igxPreventDocumentScroll]="true"  #treegrid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
+    <igx-tree-grid [igxPreventDocumentScroll]="true" #treegrid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
         primaryKey="ID" foreignKey="ParentID" (contextMenu)="rightClick($event)" [sortingOptions]="sortingOptions">
         <igx-grid-toolbar>
             <button class="button-opitions" igxButton="raised" (click)="treegrid1.sortingExpressions = []">
@@ -13,6 +13,7 @@
                 <igx-simple-combo #comboItem
                     [data]="sortingTypes"
                     [displayKey]="'mode'"
+                    [displayDensity]="'compact'"
                     [(ngModel)]="sortingOptions"
                     (keydown)="handleSearchResults($event)">
                     <ng-template igxComboClearIcon></ng-template>
@@ -29,23 +30,24 @@
             [hideGroupedColumns]="true">
         </igx-tree-grid-group-by-area>
 
-        <igx-column field="ID" header="Product ID" [groupable]="true" [sortable]="true">
+        <igx-column field="ID" header="Order ID" [groupable]="true" [sortable]="true">
         </igx-column>
-        <igx-column field="Name" header="Product Name" [dataType]="'string'" [groupable]="true" [sortable]="true">
+        <igx-column field="Name" header="Order Product" [groupable]="true" [sortable]="true">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" dataType="number" [groupable]="true" [sortable]="true">
+        <igx-column field="Category" header="Category" [groupable]="true" [sortable]="true">
+        </igx-column>
+        <igx-column field="Units" header="Units" [dataType]="'number'" [groupable]="true" [sortable]="true">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Unit Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [groupable]="true" [sortable]="true">
+        </igx-column>
+        <igx-column field="Price" header="Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [groupable]="true" [sortable]="true">
+        </igx-column>
+        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [formatter]="formatDate" [groupable]="true" [sortable]="true">
+        </igx-column>
+        <igx-column field="Delivered" header="Delivered" [dataType]="'boolean'" [groupable]="true" [sortable]="true">
             <ng-template igxCell let-cell="cell" let-val>
-                <span *ngIf="cell.row.data.UnitPrice === 0">-</span>
-                <span *ngIf="cell.row.data.UnitPrice !== 0">${{val}}</span>
-            </ng-template>
-        </igx-column>
-        <igx-column field="AddedDate" header="Added Date" [dataType]="'date'" [formatter]="formatDate" [groupable]="true" [sortable]="true">
-        </igx-column>
-        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [groupable]="true" [sortable]="true">
-            <ng-template igxCell let-cell="cell" let-val>
-                <span *ngIf="cell.row.data.UnitPrice === 0">-</span>
-                <img *ngIf="cell.row.data.UnitPrice !== 0 && val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
-                <img *ngIf="cell.row.data.UnitPrice !== 0 && !val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+                <img *ngIf="val" src="assets/images/grid/active.png" title="Delivered" alt="Delivered" />
+                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered" />
             </ng-template>
         </igx-column>
     </igx-tree-grid>

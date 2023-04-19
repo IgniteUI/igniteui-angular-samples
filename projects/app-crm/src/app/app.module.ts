@@ -10,6 +10,7 @@ import { IgxPreventDocumentScrollModule } from '../../../../src/app/directives/p
 import { AppComponent } from './app.component';
 import { GridCRMComponent } from './grid-crm/grid-crm.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SEOService } from '../../../app-lob/src/app/seo.service';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -33,7 +34,7 @@ import { AppRoutingModule } from './app-routing.module';
         IgxPreventDocumentScrollModule,
         HammerModule
     ],
-    providers: []
+    providers: [SEOService]
 })
 export class AppModule { }
 

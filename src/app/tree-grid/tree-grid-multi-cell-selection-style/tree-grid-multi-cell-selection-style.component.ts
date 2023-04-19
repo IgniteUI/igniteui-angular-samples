@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IgxColumnComponent } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-multi-cell-selection-style-sample',
@@ -8,8 +8,13 @@ import { FOODS_DATA } from '../data/foods';
     templateUrl: './tree-grid-multi-cell-selection-style.component.html'
 })
 export class TreeGridMultiCellSelectionStyleComponent {
+    public sourceData = ORDERS_DATA;
 
-    public sourceData = FOODS_DATA();
+    public options = {
+        digitsInfo: '1.2-2',
+        currencyCode: 'USD'
+    };
+    public formatOptions = this.options;
 
     public initColumn(column: IgxColumnComponent) {
         column.sortable = true;

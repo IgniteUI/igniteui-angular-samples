@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-external-outlet',
@@ -10,9 +10,15 @@ import { FOODS_DATA } from '../data/foods';
 export class TreeGridExternalOutletComponent implements OnInit {
     public data: any[];
 
+    public options = {
+        digitsInfo: '1.2-2',
+        currencyCode: 'USD'
+    };
+    public formatOptions = this.options;
+
     constructor() {
     }
     public ngOnInit(): void {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA;
     }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { IPaginatorResourceStrings, IgxPaginatorComponent } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-pager-sample',
@@ -17,13 +17,19 @@ export class TreeGridPagerSampleComponent implements OnInit, AfterViewInit {
     public isPagerHidden = false;
     public selectOptions = [5, 15, 20, 50];
 
+    public options = {
+        digitsInfo: '1.2-2',
+        currencyCode: 'USD'
+    };
+    public formatOptions = this.options;
+
     private paginatorResourceStrings: IPaginatorResourceStrings = {
         // eslint-disable-next-line @typescript-eslint/naming-convention
         igx_paginator_label: 'Records per page'
     };
 
     public ngOnInit(): void {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA;
         this.densityOptions = ['compact', 'cosy', 'comfortable'];
     }
 
