@@ -1,11 +1,11 @@
 <div class="grid__wrapper">
     <igx-tree-grid [igxPreventDocumentScroll]="true"  #treegrid1 [data]="data" [autoGenerate]="false" height="460px" width="100%" [allowFiltering]="true"
         primaryKey="ID" foreignKey="ParentID">
-        <igx-column field="ID" header="Order ID" [dataType]="'string'" [filterCellTemplate]="defaultFilterTemplate">
+        <igx-column field="ID" header="Order ID" [filterCellTemplate]="defaultFilterTemplate">
             </igx-column>
-            <igx-column field="Name" header="Order Product" [dataType]="'string'" [filterCellTemplate]="defaultFilterTemplate">
+            <igx-column field="Name" header="Order Product" [filterCellTemplate]="defaultFilterTemplate">
             </igx-column>
-            <igx-column field="Category" header="Category" [dataType]="'string'" [filterCellTemplate]="defaultFilterTemplate">
+            <igx-column field="Category" header="Category" [filterCellTemplate]="defaultFilterTemplate">
             </igx-column>
             <igx-column field="Units" header="Units" dataType="number" [filterCellTemplate]="defaultFilterTemplate">
             </igx-column>
