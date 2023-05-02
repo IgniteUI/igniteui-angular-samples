@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DocsLayoutComponent } from './index/docs-layout.component';
 import { IndexComponent } from './index/index.component';
+import { SEOService } from './seo.service';
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
@@ -36,6 +37,9 @@ import { IndexComponent } from './index/index.component';
         HttpClientModule,
         HammerModule,
         IgxExtrasModule
+    ],
+    providers: [
+        SEOService
     ]
 })
 export class AppModule { }

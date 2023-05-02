@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxStringFilteringOperand, IgxTreeGridComponent } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-filtering-sample',
@@ -14,10 +14,16 @@ export class TreeGridFilteringSampleComponent implements OnInit {
 
     public data: any[];
 
+    public options = {
+        digitsInfo: '1.2-2',
+        currencyCode: 'USD'
+    };
+    public formatOptions = this.options;
+
     constructor() {
     }
     public ngOnInit(): void {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA;
     }
 
     public filter(element: EventTarget) {
@@ -26,9 +32,5 @@ export class TreeGridFilteringSampleComponent implements OnInit {
 
     public formatDate(val: Date) {
         return new Intl.DateTimeFormat('en-US').format(val);
-    }
-
-    public formatCurrency(val: string) {
-        return parseInt(val, 10).toFixed(2);
     }
 }

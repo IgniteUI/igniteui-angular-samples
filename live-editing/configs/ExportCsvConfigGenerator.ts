@@ -31,7 +31,7 @@ export class ExportCsvConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'TreeGridCsvExportSample1Component',
-            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
+            additionalFiles: ["/src/app/tree-grid/data/orders.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxTreeGridModule', 'IgxCsvExporterService', 'TreeGridCsvExportSample1Component'],
                 ngDeclarations: ['TreeGridCsvExportSample1Component'],

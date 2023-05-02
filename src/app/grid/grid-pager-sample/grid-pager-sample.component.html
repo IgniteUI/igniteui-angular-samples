@@ -31,7 +31,7 @@
     <div class="options-container">
         <label>Display density:</label>
         <div class="select-input">
-            <igx-select [(ngModel)]="grid.displayDensity">
+            <igx-select [(ngModel)]="grid.displayDensity" [displayDensity]="'compact'">
                 <igx-select-item *ngFor="let density of densityOptions" [value]="density">
                     {{ density }}
                 </igx-select-item>

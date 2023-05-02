@@ -15,6 +15,7 @@ import {
     IgxCheckboxModule,
     IgxChipsModule,
     IgxComboModule,
+    IgxSimpleComboModule,
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
@@ -1430,6 +1431,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['GridStatePersistenceSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule'],
                 ngProviders: ['FinancialDataService']
+            })
+        }));
+
+        configs.push(new Config({
+            component: 'GridCascadingCombosComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/cities15000-regions-countries.ts', '/src/app/data/data.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxGridModule', 'GridCascadingCombosComponent', 'IgxPreventDocumentScrollModule', 'IgxComboModule', 'IgxSimpleComboModule'],
+                ngDeclarations: ['GridCascadingCombosComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxComboModule', 'IgxSimpleComboModule']
             })
         }));
 
