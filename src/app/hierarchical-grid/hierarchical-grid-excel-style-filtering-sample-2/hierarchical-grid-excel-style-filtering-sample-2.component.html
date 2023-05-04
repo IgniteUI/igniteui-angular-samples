@@ -8,7 +8,7 @@
         </igx-grid-toolbar>
 
         <igx-column field="Artist" [filterable]='true' [sortable]="true"></igx-column>
-        <igx-column field="Photo" [filterable]='false'>
+        <igx-column field="Photo" [filterable]="false">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner_2">
                     <img [src]="cell.value" class="photo" />

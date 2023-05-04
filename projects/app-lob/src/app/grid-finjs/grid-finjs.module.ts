@@ -2,8 +2,11 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
-    IgxButtonModule, IgxDialogModule, IgxGridModule,
-    IgxSliderModule, IgxSwitchModule, IgxToastModule
+    IgxButtonGroupModule,
+    IgxButtonModule, IgxDialogModule, IgxFocusModule, IgxGridModule,
+    IgxIconModule,
+    IgxSelectModule,
+    IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule
 } from 'igniteui-angular';
 import {
     IgxBollingerBandsOverlayModule, IgxCategoryChartModule, IgxCategoryXAxisModule,
@@ -44,7 +47,12 @@ import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directive
         GridFinjsRoutingModule,
         IgxGridModule,
         IgxDialogModule,
-        IgxToastModule
+        IgxToastModule,
+        IgxIconModule,
+        IgxSelectModule,
+        IgxToggleModule,
+        IgxFocusModule,
+        IgxButtonGroupModule
     ],
     providers: [FinancialDataService]
 })
