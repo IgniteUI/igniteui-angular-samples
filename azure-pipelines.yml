@@ -16,7 +16,8 @@ steps:
 
 - task: Npm@1
   inputs:
-    command: 'ci --legacy-peer-deps'
+    command: 'ci'
+    arguments: '--legacy-peer-deps'
     customEndpoint: 'public proget'
   env:
     AZURE_PIPELINES: "true"
