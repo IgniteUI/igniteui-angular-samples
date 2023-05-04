@@ -16,6 +16,7 @@ import { ConditionalFormattingDirective } from './directives/conditional-formatt
 import { GridDynamicChartDataRoutingModule } from './grid-dynamic-chart-data-routing.module';
 import { GridDynamicChartDataComponent } from './grid-dynamic-chart-data.component';
 import { CommonModule } from '@angular/common';
+
 @NgModule({
     declarations: [
         GridDynamicChartDataComponent,
