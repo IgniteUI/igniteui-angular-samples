@@ -4,7 +4,7 @@
 <div class="grid-container">
     <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hierarchicalGrid [data]="localData" [primaryKey]="'Photo'" [autoGenerate]="false"
         [height]="'520px'" [width]="'100%'" [rowHeight]="'65px'" [pinning]='pinningConfig' [cellSelection]="'none'">
-        <igx-column width='70px' [filterable]='false' [pinned]="true">
+        <igx-column width='70px' [filterable]="false" [pinned]="true">
             <ng-template igxCell let-cell="cell" let-val>
                 <igx-icon class="pin-icon" family="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}"
                     (mouseup)="togglePinning(cell.row, $event)">
@@ -25,7 +25,7 @@
 
         <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false" [primaryKey]="'Album'" [pinning]='pinningConfig'
             [cellSelection]="'none'">
-            <igx-column width='70px' [filterable]='false' [pinned]="true">
+            <igx-column width='70px' [filterable]="false" [pinned]="true">
                 <ng-template igxCell let-cell="cell" let-val>
                     <igx-icon class="pin-icon" family="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}"
                         (mouseup)="togglePinning(cell.row, $event)">
@@ -38,7 +38,7 @@
             <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
             <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false" [primaryKey]="'Number'" [pinning]='pinningConfig'
                 [cellSelection]="'none'">
-                <igx-column width='70px' [filterable]='false' [pinned]="true">
+                <igx-column width='70px' [filterable]="false" [pinned]="true">
                     <ng-template igxCell let-cell="cell" let-val>
                         <igx-icon class="pin-icon" family="filtering-icons"
                             name="{{cell.row.pinned ? 'unpin' : 'pin'}}" (mouseup)="togglePinning(cell.row, $event)">
@@ -54,7 +54,7 @@
 
         <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false" [primaryKey]="'Tour'" [pinning]='pinningConfig'
             [cellSelection]="'none'">
-            <igx-column width='70px' [filterable]='false' [pinned]="true">
+            <igx-column width='70px' [filterable]="false" [pinned]="true">
                 <ng-template igxCell let-cell="cell" let-val>
                     <igx-icon class="pin-icon" family="filtering-icons" name="{{cell.row.pinned ? 'unpin' : 'pin'}}"
                         (mouseup)="togglePinning(cell.row, $event)">

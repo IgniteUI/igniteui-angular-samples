@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IgxButtonModule, IgxSliderModule,
-    IgxSwitchModule, IgxTreeGridModule } from 'igniteui-angular';
+import { IgxButtonGroupModule, IgxButtonModule, IgxFocusModule, IgxIconModule, IgxSelectModule, IgxSliderModule,
+    IgxSwitchModule, IgxToggleModule, IgxTreeGridModule } from 'igniteui-angular';
 import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
 import { TreeGridFinJSComponent } from './tree-grid-finjs-sample.component';
 import { TreeGridFinjsRoutingModule } from './treegrid-finjs-routing.module';
@@ -19,7 +19,12 @@ import { TreeGridFinjsRoutingModule } from './treegrid-finjs-routing.module';
         IgxSwitchModule,
         IgxSliderModule,
         TreeGridFinjsRoutingModule,
-        IgxTreeGridModule
+        IgxTreeGridModule,
+        IgxIconModule,
+        IgxToggleModule,
+        IgxSelectModule,
+        IgxFocusModule,
+        IgxButtonGroupModule
     ]
 })
 export class TreeGridFinjsModule {}
