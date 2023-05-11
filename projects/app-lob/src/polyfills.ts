@@ -18,16 +18,16 @@
 * BROWSER POLYFILLS
 */
 
-import 'core-js/es7/object';
+//import 'core-js/es7/object';
 
-import 'core-js/es7/array'; // for Array.includes()  // Run `npm install --save classlist.js`.
+//import 'core-js/es7/array'; // for Array.includes()  // Run `npm install --save classlist.js`.
 
 /** IE10 and IE11 requires the following for the Reflect API. */
-import 'core-js/es6/reflect';
+//import 'core-js/es6/reflect';
 
 /* Evergreen browsers require these. */
 // Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
-import 'core-js/es7/reflect';  // Run `npm install --save web-animations-js`.
+//import 'core-js/es7/reflect';  // Run `npm install --save web-animations-js`.
 
 /***************************************************************************************************
  * Zone JS is required by Angular itself.
@@ -38,9 +38,9 @@ import 'zone.js';  // Included with Angular CLI.
 /***************************************************************************************************
  * @angular/animations polyfill
  */
-if (!Element.prototype.matches) {
-    Element.prototype.matches = (Element.prototype as any).msMatchesSelector;
-}
+// if (!Element.prototype.matches) {
+//     Element.prototype.matches = (Element.prototype as any).msMatchesSelector;
+// }
 
 /***************************************************************************************************
  * APPLICATION IMPORTS

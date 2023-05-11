@@ -1,20 +1,22 @@
 /* eslint-disable max-len */
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { IgxExtrasModule } from 'igniteui-angular-extras';
 import { IgxButtonModule, IgxDialogModule, IgxDividerModule, IgxGridModule, IgxTabsModule } from 'igniteui-angular';
 import { IgxBarSeriesModule, IgxCategoryChartModule, IgxCategoryXAxisModule,
          IgxDataChartCategoryModule, IgxDataChartCoreModule,
          IgxDataChartInteractivityModule, IgxDataChartScatterModule,
          IgxDataChartStackedModule, IgxItemLegendModule,
          IgxLegendModule, IgxNumericXAxisModule,
-         IgxNumericYAxisModule } from 'igniteui-angular-charts';
-import { IgxPieChartModule } from 'igniteui-angular-charts/';
+         IgxNumericYAxisModule, IgxPieChartModule } from 'igniteui-angular-charts';
 import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
-import { DataAnalysisDockManagerComponent, HastDuplicateLayouts } from './data-analysis-dock-manager/data-analysis-dock-manager.component';
+import { DataAnalysisDockManagerComponent, FilterTypePipe, HastDuplicateLayouts, NamePipe } from './data-analysis-dock-manager/data-analysis-dock-manager.component';
 import { DockSlotComponent } from './data-analysis-dock-manager/dock-slot/dock-slot.component';
 import { ChartHostDirective, ChartIntegrationDirective } from './directives/chart-integration/chart-integration.directive';
 import { ConditionalFormattingDirective } from './directives/conditional-formatting/conditional-formatting.directive';
 import { GridDynamicChartDataRoutingModule } from './grid-dynamic-chart-data-routing.module';
-import { FilterTypePipe, GridDynamicChartDataComponent, NamePipe } from './grid-dynamic-chart-data.component';
+import { GridDynamicChartDataComponent } from './grid-dynamic-chart-data.component';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
     declarations: [
         GridDynamicChartDataComponent,
@@ -48,7 +50,9 @@ import { FilterTypePipe, GridDynamicChartDataComponent, NamePipe } from './grid-
         IgxDataChartScatterModule,
         IgxBarSeriesModule,
         IgxCategoryChartModule,
-        GridDynamicChartDataRoutingModule
+        GridDynamicChartDataRoutingModule,
+        IgxExtrasModule,
+        CommonModule
     ],
     providers: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

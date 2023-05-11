@@ -29,7 +29,7 @@
             "buildOptimizer": false,
             "optimization": false,
             "namedChunks": true,
-            "sourceMap": false,
+            "sourceMap": true,
             "progress": true,
             "stylePreprocessorOptions": {
                 "includePaths": ["node_modules"]
@@ -91,7 +91,12 @@
             "assets": [
               "src/assets",
               "src/favicon.ico"
-            ]
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
+            }
           }
         },
         "lint": {
@@ -146,7 +151,8 @@
             "namedChunks": true,
             "stylePreprocessorOptions": {
                 "includePaths": ["node_modules"]
-            }
+            },
+            "preserveSymlinks": true
           },
           "configurations": {
             "production": {
@@ -166,8 +172,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "5mb",
-                  "maximumError": "7mb"
+                  "maximumWarning": "8mb",
+                  "maximumError": "9mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -209,7 +215,12 @@
             "styles": [
               "projects/app-lob/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
+            }
           }
         },
         "lint": {
@@ -219,18 +230,6 @@
               "projects/app-lob/**/*.ts",
               "projects/app-lob/**/*.html"
             ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/app-lob/e2e/protractor.conf.js",
-            "devServerTarget": "app-lob:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "app-lob:serve:production"
-            }
           }
         }
       }
@@ -296,8 +295,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "3mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "8mb",
+                  "maximumError": "9mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -339,7 +338,12 @@
             "styles": [
               "projects/app-crm/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
+            }
           }
         },
         "lint": {
@@ -349,18 +353,6 @@
               "projects/app-crm/**/*.ts",
               "projects/app-crm/**/*.html"
             ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/app-crm/e2e/protractor.conf.js",
-            "devServerTarget": "app-crm:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "app-crm:serve:production"
-            }
           }
         }
       }

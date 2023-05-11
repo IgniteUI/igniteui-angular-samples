@@ -1,54 +1,67 @@
 @use '../../../variables' as *;
 
-$yellow: #ffcd0f;
-$bg: #292826;
-$gray: #404040;
-$light-gray: rgba(255, 255, 255, .54);
+$my-secondary: #d0ab23;
+$dark-gray: #333;
+$my-primary: #231c2c;
+$light-gray: #999;
+$inactive-color: #9b7829;
 
 $dark-paginator: paginator-theme(
-    $text-color: $yellow,
-    $background-color: $gray,
-    $border-color: $bg
+    $text-color: $my-secondary,
+    $background-color: $my-primary,
+    $border-color: $my-secondary
 );
+
 $dark-button: button-theme(
-    $foreground: $yellow,
-    $hover-foreground: $bg,
-    $hover-background: $yellow,
-    $focus-foreground: $bg,
-    $focus-background: $yellow,
-    $disabled-foreground: #16130C
+    $foreground: $my-secondary,
+    $hover-foreground: $dark-gray,
+    $hover-background: $my-secondary,
+    $focus-foreground: $dark-gray,
+    $focus-background: $my-secondary,
+    $border-color: $my-secondary,
+    $hover-border-color: $my-secondary,
+    $focus-border-color: $my-secondary,
+    $disabled-foreground: $inactive-color
 );
+
+$dark-select: select-theme(
+    $toggle-button-background: $my-primary,
+    $toggle-button-foreground: $inactive-color,
+);
+
 $dark-input-group: input-group-theme(
-    $filled-text-color: $light-gray,
-    $idle-text-color: $light-gray,
-    $focused-text-color: $yellow,
-    $border-color: $light-gray,
-    $hover-border-color: $yellow,
-    $focused-border-color: $yellow
+    $filled-text-color: $my-secondary,
+    $idle-text-color: $my-secondary,
+    $focused-text-color: $my-secondary,
+    $border-color: darken($inactive-color, 10%),
+    $focused-border-color: $my-secondary,
+    $input-suffix-color: $my-secondary,
 );
+
 $dark-drop-down-theme: drop-down-theme(
-    $background-color: $bg,
-    $item-text-color: $yellow,
-    $selected-item-background: $yellow,
-    $selected-item-text-color: $bg,
-    $focused-item-background: $yellow,
-    $focused-item-text-color: $bg,
-    $selected-focus-item-background: $yellow,
-    $selected-focus-item-text-color: $bg,
-    $selected-hover-item-background: $yellow,
-    $selected-hover-item-text-color: $bg
+    $background-color: $my-primary,
+    $item-text-color: $my-secondary,
+    $selected-item-background: $my-secondary,
+    $selected-item-text-color: $dark-gray,
+    $focused-item-background: $my-secondary,
+    $focused-item-text-color: $dark-gray,
+    $selected-focus-item-background: $my-secondary,
+    $selected-focus-item-text-color: $dark-gray,
+    $selected-hover-item-background: $my-secondary,
+    $selected-hover-item-text-color: $dark-gray
 );
 /*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 
 :host {
 	::ng-deep {
-		@include css-vars($dark-paginator);
 		@include css-vars($dark-drop-down-theme);
 
 		igx-paginator {
-			@include css-vars($dark-button);
-			@include css-vars($dark-input-group);
-		}
+            @include css-vars($dark-button);
+            @include css-vars($dark-input-group);
+            @include css-vars($dark-select);
+            @include css-vars($dark-paginator);
+        }
 	}
 }
 

@@ -11,7 +11,7 @@
         <igx-column field="Name" header="Name" width="25%">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.data.Avatar" [roundShape]="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.Avatar" shape="circle" size="small"></igx-avatar>
                     <span class="name">{{ cell.value }}</span>
                 </div>
             </ng-template>

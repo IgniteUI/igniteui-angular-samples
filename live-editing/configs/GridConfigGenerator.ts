@@ -15,6 +15,7 @@ import {
     IgxCheckboxModule,
     IgxChipsModule,
     IgxComboModule,
+    IgxSimpleComboModule,
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
@@ -52,7 +53,8 @@ export class GridConfigGenerator implements IConfigGenerator {
         RemotePagingService: '../../src/app/services/remotePaging.service',
         RemoteServiceVirt: '../../src/app/services/remoteVirtualization.service',
         FinancialDataService: '../../src/app/services/financial.service',
-        CRUDService: '../../src/app/services/crud.service'
+        CRUDService: '../../src/app/services/crud.service',
+        RemotePagingWithBatchEditingService: '../../src/app/services/remotePagingWithBatchEditing.service'
     };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -1209,14 +1211,13 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid Batch Editing with remote paging
         configs.push(new Config({
             component: 'RemotePagingBatchEditingComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/utils.ts', '/src/app/services/remotePaging.service.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/utils.ts', '/src/app/data/foods.ts', '/src/app/services/remotePagingWithBatchEditing.service.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['RemotePagingBatchEditingComponent', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
-                    'RemotePagingService', 'HttpClientModule', 'IgxPreventDocumentScrollModule'],
+                    'RemotePagingWithBatchEditingService', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['RemotePagingBatchEditingComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
-                    'HttpClientModule'],
-                ngProviders: ['RemotePagingService']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule'],
+                ngProviders: ['RemotePagingWithBatchEditingService']
             })
         }));
 
@@ -1421,6 +1422,27 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        configs.push(new Config({
+            component: 'GridStatePersistenceSampleComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/financialData.ts', '/src/app/services/financial.service.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['GridStatePersistenceSampleComponent', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule',
+                    'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxPreventDocumentScrollModule', 'FinancialDataService'],
+                ngDeclarations: ['GridStatePersistenceSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule'],
+                ngProviders: ['FinancialDataService']
+            })
+        }));
+
+        configs.push(new Config({
+            component: 'GridCascadingCombosComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/cities15000-regions-countries.ts', '/src/app/data/data.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxGridModule', 'GridCascadingCombosComponent', 'IgxPreventDocumentScrollModule', 'IgxComboModule', 'IgxSimpleComboModule'],
+                ngDeclarations: ['GridCascadingCombosComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxComboModule', 'IgxSimpleComboModule']
+            })
+        }));
 
         return configs;
     }

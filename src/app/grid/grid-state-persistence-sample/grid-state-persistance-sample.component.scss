@@ -1,0 +1,45 @@
+.cellAlignSyle {
+    text-align: right;
+    float:right;
+}
+.cellAlignSyle > span {
+    float:right;
+}
+.up {
+    color: green;
+}
+.down {
+    color: red;
+}
+.headerAlignSyle {
+    text-align: right !important;
+}
+
+.grid__wrapper {
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.currency-badge-container {
+    width: 80px; 
+    float: right;
+}
+
+.badge-left {
+    float: left;
+}
+
+.switches {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1 0 0%;
+    min-width: 100%;
+    padding-right: 20px;
+    font-size: 0.9rem;
+    margin: 10px;
+
+    >button {
+        margin-right: 10px;
+    }
+}
