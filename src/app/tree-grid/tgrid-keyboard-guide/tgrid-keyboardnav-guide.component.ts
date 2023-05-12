@@ -317,7 +317,9 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
 
         if (this._keyboardHandler.gridSection === GridSection.TBODY) {
             if (key === 'enter') {
-                const cell = this.tgrid.getCellByColumnVisibleIndex(activeNode.row, activeNode.column);
+                const columnName = this.tgrid.getColumnByVisibleIndex(activeNode.column).field;
+                const cell = this.tgrid.getCellByColumn(activeNode.row, columnName);
+
                 if (cell && cell.column.editable && cell.editMode) {
                     this._keyboardHandler.selectItem(0);
                 }
