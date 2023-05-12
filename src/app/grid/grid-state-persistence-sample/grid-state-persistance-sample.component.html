@@ -22,7 +22,7 @@
     <igx-grid [igxPreventDocumentScroll]="true" [igxGridState]="options" #grid [data]="data | async" [height]="'500px'"
         width="100%" [autoGenerate]='false' [allowFiltering]="true" (columnInit)="onColumnInit($event)">
         <igx-column [field]="'Category'" [sortable]="true" [width]="'120px'"></igx-column>
-        <igx-column [field]="'Type'" [sortable]="true" [width]="'150px'" [filterable]='false'></igx-column>
+        <igx-column [field]="'Type'" [sortable]="true" [width]="'150px'" [filterable]="false"></igx-column>
         <igx-column [field]="'Open Price'" [sortable]="true" [width]="'120px'" dataType="number">
         </igx-column>
         <igx-column [field]="'Price'" [sortable]="true" [width]="'120px'" dataType="number">

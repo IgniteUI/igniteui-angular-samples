@@ -13,19 +13,20 @@ export class TreeGridRowStylesComponent implements OnInit {
     public data: IEmployee[];
     public columns: any[];
 
-    public background = (row: RowType) => row.data.data['Title'] === 'CEO' ? '#6c757d' :
-        row.data.data['Title'].includes('President') ? '#adb5bd' : row.data.data['Title'].includes('Director') ?  '#ced4da' :
-        row.data.data['Title'].includes('Manager') ? '#dee2e6' :
-        row.data.data['Title'].includes('Lead') ? '#e9ecef' :
-        row.data.data['Title'].includes('Senior') ? '#f8f9fa' : null;
+    public background = (row: RowType) => row.data['Title'] === 'CEO' ? '#6c757d' :
+        row.data['Title'].includes('President') ? '#adb5bd' :
+        row.data['Title'].includes('Director') ?  '#ced4da' :
+        row.data['Title'].includes('Manager') ? '#dee2e6' :
+        row.data['Title'].includes('Lead') ? '#e9ecef' :
+        row.data['Title'].includes('Senior') ? '#f8f9fa' : null;
 
     // eslint-disable-next-line @typescript-eslint/member-ordering
     public  rowStyles = {
         background: this.background,
-        'border-left': (row: RowType) => row.data.data['Title'] === 'CEO' || row.data.data['Title'].includes('President') ?
+        'border-left': (row: RowType) => row.data['Title'] === 'CEO' || row.data['Title'].includes('President') ?
             '2px solid' : null,
-        'border-color': (row: RowType) => row.data.data['Title'] === 'CEO' ? '#495057' : null,
-        color: (row: RowType) => row.data.data['Title'] === 'CEO' ? '#fff' : null
+        'border-color': (row: RowType) => row.data['Title'] === 'CEO' ? '#495057' : null,
+        color: (row: RowType) => row.data['Title'] === 'CEO' ? '#fff' : null
     };
 
     public ngOnInit(): void {

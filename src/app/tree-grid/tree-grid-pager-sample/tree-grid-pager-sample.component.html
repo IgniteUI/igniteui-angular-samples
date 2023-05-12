@@ -1,8 +1,8 @@
 <div class="grid__wrapper">
-    <igx-tree-grid [igxPreventDocumentScroll]="true" #treegrid1 [data]="data" [perPage]="10" height="500px" width="100%"
+    <igx-tree-grid [igxPreventDocumentScroll]="true" #treegrid1 [data]="data" height="500px" width="100%"
         displayDensity="cosy" primaryKey="ID" foreignKey="ParentID">
         <igx-paginator #paginator [(page)]="treegrid1.page" [totalRecords]="treegrid1.totalRecords"
-            [(perPage)]="treegrid1.perPage" [selectOptions]="selectOptions" [displayDensity]="treegrid1.displayDensity">
+            [perPage]="10" [selectOptions]="selectOptions" [displayDensity]="treegrid1.displayDensity">
             <igx-paginator-content>
                 <igx-page-size *ngIf="!isDropdownHidden"></igx-page-size>
                 <igx-page-nav *ngIf="!isPagerHidden"></igx-page-nav>
