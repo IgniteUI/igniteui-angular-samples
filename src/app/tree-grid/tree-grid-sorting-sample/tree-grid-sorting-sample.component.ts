@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { DefaultSortingStrategy, IgxTreeGridComponent, ISortingOptions, SortingDirection } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
 
@@ -8,7 +8,7 @@ import { ORDERS_DATA } from '../data/orders';
     templateUrl: 'tree-grid-sorting-sample.component.html'
 })
 
-export class TreeGridSortingSampleComponent implements OnInit {
+export class TreeGridSortingSampleComponent implements OnInit, AfterViewInit {
     @ViewChild('treegrid1', { read: IgxTreeGridComponent, static: true })
     public treegrid1: IgxTreeGridComponent;
     public data: any[];
@@ -35,6 +35,9 @@ export class TreeGridSortingSampleComponent implements OnInit {
 
     public ngOnInit(): void {
         this.data = ORDERS_DATA;
+    }
+
+    public ngAfterViewInit(): void {
         this.treegrid1.sortingExpressions = [
             { dir: SortingDirection.Asc, fieldName: 'UnitPrice',
               ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
