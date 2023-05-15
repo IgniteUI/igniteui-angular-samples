@@ -15,6 +15,8 @@ import { ChartHostDirective, ChartIntegrationDirective } from './directives/char
 import { ConditionalFormattingDirective } from './directives/conditional-formatting/conditional-formatting.directive';
 import { GridDynamicChartDataRoutingModule } from './grid-dynamic-chart-data-routing.module';
 import { GridDynamicChartDataComponent } from './grid-dynamic-chart-data.component';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
     declarations: [
         GridDynamicChartDataComponent,
@@ -49,7 +51,8 @@ import { GridDynamicChartDataComponent } from './grid-dynamic-chart-data.compone
         IgxBarSeriesModule,
         IgxCategoryChartModule,
         GridDynamicChartDataRoutingModule,
-        IgxExtrasModule
+        IgxExtrasModule,
+        CommonModule
     ],
     providers: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

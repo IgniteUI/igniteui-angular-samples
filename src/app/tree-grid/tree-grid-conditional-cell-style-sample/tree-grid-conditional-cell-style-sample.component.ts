@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-conditional-cell-style-sample',
@@ -9,19 +9,25 @@ import { FOODS_DATA } from '../data/foods';
 
 export class TreeGridConditionalCellStyleComponent implements OnInit {
     public data: any[];
-    public allergenItems = ['Grandmas Boysenberry Spread', 'Mishi Kobe Niku', 'Carnarvon Tigers', 'Ikura'];
+    public allergenItems = ['Frozen Shrimps', 'Wild Salmon Fillets', 'Fresh Cheese', 'Skimmed Milk 1L', 'Butter'];
+
+    public options = {
+        digitsInfo: '1.2-2',
+        currencyCode: 'USD'
+    };
+    public formatOptions = this.options;
 
     public ngOnInit() {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA;
     }
 
     public formatDate(val: Date) {
         return new Intl.DateTimeFormat('en-US').format(val);
     }
 
-    private upPriceCondition = (rowData: any, columnKey: any): boolean => rowData[columnKey] > 25;
+    private upPriceCondition = (rowData: any, columnKey: any): boolean => rowData[columnKey] > 5;
 
-    private downPriceCondition = (rowData: any, columnKey: any): boolean => rowData[columnKey] <= 25;
+    private downPriceCondition = (rowData: any, columnKey: any): boolean => rowData[columnKey] <= 5;
 
     private allergenCondition = (rowData: any, columnKey: any): boolean => this.allergenItems.indexOf(rowData[columnKey]) >= 0;
 

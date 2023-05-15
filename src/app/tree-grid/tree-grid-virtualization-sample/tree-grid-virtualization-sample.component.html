@@ -1,8 +1,8 @@
 <div class="grid__wrapper">
-    <igx-tree-grid [igxPreventDocumentScroll]="true"  #grid1 [data]="data | async" [height]="'500px'" width="100%" [autoGenerate]='false' [allowFiltering]="true"
-                    childDataKey="Categories" primaryKey='ID'>
+    <igx-tree-grid [igxPreventDocumentScroll]="true"  #grid1 [data]="data | async" [height]="'500px'" width="100%" [autoGenerate]="false" [allowFiltering]="true"
+                    childDataKey="Categories" primaryKey="ID">
         <igx-column [field]="'Category'" [width]="'200px'" [resizable]="true"></igx-column>
-        <igx-column [field]="'Type'" [width]="'150px'" [filterable]='false'></igx-column>
+        <igx-column [field]="'Type'" [width]="'150px'" [filterable]="false"></igx-column>
         <igx-column [field]="'Open Price'" [width]="'120px'" dataType="number" [formatter]="formatCurrency"></igx-column>
         <igx-column [field]="'Price'" [width]="'120px'" dataType="number" [formatter]="formatCurrency"></igx-column>
         <igx-column [field]="'Change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'">
@@ -14,7 +14,7 @@
                 <div class="currency-badge-container">
                     <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward" class="badge-left"></igx-badge>
                     <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward" class="error badge-left"></igx-badge>
-                    <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}</span>
+                    <span class="cellAlignSyle" [class.up]="val > 0" [class.down]="val < 0">{{ formatNumber(val) }}</span>
                 </div>
             </ng-template>
         </igx-column>

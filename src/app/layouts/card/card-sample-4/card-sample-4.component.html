@@ -64,7 +64,7 @@
             <igx-divider></igx-divider>
 
             <igx-card-actions>
-                <button (click)="toggleDetails()" igxButton igxRipple>{{cards[1].buttons}}</button>
+                <button (click)="toggleDetails()" igxButton igxRipple igxStart>{{cards[1].buttons}}</button>
             </igx-card-actions>
         </igx-card>
     </article>
@@ -95,7 +95,7 @@
             </igx-card-content>
 
             <igx-card-actions>
-                <button igxButton igxRipple *ngFor="let button of cards[0].buttons">{{ button }}</button>
+                <button igxButton igxRipple *ngFor="let button of cards[0].buttons" igxStart>{{ button }}</button>
             </igx-card-actions>
         </igx-card>
     </article>
@@ -117,8 +117,8 @@
             </igx-card-content>
 
             <igx-card-actions>
-                <button igxButton>Like</button>
-                <button igxButton>Share</button>
+                <button igxButton igxStart>Like</button>
+                <button igxButton igxStart>Share</button>
             </igx-card-actions>
         </igx-card>
     </article>

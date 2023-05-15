@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { IgxColumnComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-grid-conditional-cell-style-2',
@@ -26,12 +26,12 @@ export class TreeGridConditionalCellStyle2Component implements OnInit {
     };
 
     public ngOnInit() {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA;
         this.columns = [
             { field: 'ID' },
-            { field: 'Name' },
-            { field: 'UnitPrice' },
-            { field: 'AddedDate' }
+            { field: 'Name', header: 'Order Product' },
+            { field: 'UnitPrice', header: 'Unit Price' },
+            { field: 'OrderDate', header: 'Order Date' }
         ];
 
         this.applyCSS();
@@ -46,5 +46,27 @@ export class TreeGridConditionalCellStyle2Component implements OnInit {
         this.oddColStyles = {...this.oddColStyles, ...JSON.parse(css)};
         this.evenColStyles = {...this.evenColStyles, ...JSON.parse(css)};
         this.applyCSS();
+    }
+
+    public formatCurrency(value: number) {
+        return `$${value.toFixed(2)}`;
+    }
+
+    public formatDate(value) {
+            return new Intl.DateTimeFormat('en-US').format(value);
+    }
+
+    public init(column: IgxColumnComponent) {
+        console.log(column);
+        switch (column.field) {
+            case 'UnitPrice':
+                column.formatter = this.formatCurrency;
+                break;
+            case 'OrderDate':
+                column.formatter = this.formatDate;
+                break;
+            default:
+                return;
+        }
     }
 }

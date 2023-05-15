@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="localdata" [autoGenerate]="false" [perPage]="10"
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="localdata" [autoGenerate]="false"
         [height]="'550px'" [width]="'100%'" #hierarchicalGrid>
         <igx-column field="Artist"></igx-column>
         <igx-column field="Photo">
@@ -33,6 +33,6 @@
             <igx-column field="Location"></igx-column>
             <igx-column field="Headliner"></igx-column>
         </igx-row-island>
-        <igx-paginator></igx-paginator>
+        <igx-paginator [perPage]="10"></igx-paginator>
     </igx-hierarchical-grid>
 </div>

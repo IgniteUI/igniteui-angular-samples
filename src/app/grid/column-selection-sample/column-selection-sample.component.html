@@ -2,7 +2,7 @@
     <igx-grid #grid [columnSelection]="columnSelectionType" [data]="data" height="530px" width="100%">
         <igx-grid-toolbar>
 
-                <igx-select [(ngModel)]="columnSelectionType">
+                <igx-select [(ngModel)]="columnSelectionType" [displayDensity]="'compact'">
                     <label igxLabel>Column Selection</label>
                     <igx-select-item value="none">None</igx-select-item>
                     <igx-select-item value="single">Single</igx-select-item>

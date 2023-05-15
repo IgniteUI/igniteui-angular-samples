@@ -1,5 +1,5 @@
 <p class="grid__wrapper">
-    <igx-tree-grid [igxPreventDocumentScroll]="true" #igxTreeGrid1 [data]="data" [autoGenerate]="false" height="280px" width="100%"
+    <igx-tree-grid #igxTreeGrid1 [igxPreventDocumentScroll]="true" [data]="data" [autoGenerate]="false" height="280px" width="100%"
         primaryKey="ID" foreignKey="ParentID">
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>
@@ -8,23 +8,24 @@
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
 
-        <igx-column field="ID" header="Product ID" [dataType]="'string'">
+        <igx-column field="ID" header="Order ID">
         </igx-column>
-        <igx-column field="Name" header="Product Name" [dataType]="'string'">
+        <igx-column field="Name" header="Order Product">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" dataType="number">
+        <igx-column field="Category" header="Category">
+        </igx-column>
+        <igx-column field="Units" header="Units" [dataType]="'number'">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Unit Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [sortable]="false">
+        </igx-column>
+        <igx-column field="Price" header="Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [sortable]="false">
+        </igx-column>
+        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'">
+        </igx-column>
+        <igx-column field="Delivered" header="Delivered" [dataType]="'boolean'">
             <ng-template igxCell let-cell="cell" let-val>
-                <span *ngIf="cell.row.data.UnitPrice === 0">-</span>
-                <span *ngIf="cell.row.data.UnitPrice !== 0">${{val}}</span>
-            </ng-template>
-        </igx-column>
-        <igx-column field="AddedDate" header="Added Date" [dataType]="'date'">
-        </igx-column>
-        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
-            <ng-template igxCell let-cell="cell" let-val>
-                <span *ngIf="cell.row.data.UnitPrice === 0">-</span>
-                <img *ngIf="cell.row.data.UnitPrice !== 0 && val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
-                <img *ngIf="cell.row.data.UnitPrice !== 0 && !val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+                <img *ngIf="val" src="assets/images/grid/active.png" title="Delivered" alt="Delivered"/>
+                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered"/>
             </ng-template>
         </igx-column>
     </igx-tree-grid>
