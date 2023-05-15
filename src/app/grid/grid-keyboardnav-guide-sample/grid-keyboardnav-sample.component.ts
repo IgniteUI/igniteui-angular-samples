@@ -308,8 +308,9 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
         if (this._keyboardHandler.gridSection === GridSection.TBODY) {
             if (key === 'enter') {
-                const cell = this.grid.getCellByColumnVisibleIndex(activeNode.row, activeNode.column);
-                const isCellSelected = cell.selected;
+                const columnName = this.grid.getColumnByVisibleIndex(activeNode.column).field;
+                const cell = this.grid.getCellByColumn(activeNode.row, columnName);
+
                 if (cell && cell.column.editable && cell.editMode) {
                     this._keyboardHandler.selectItem(0);
                 }
