@@ -987,7 +987,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: ['GridCellSelectionComponent', 'IgxGridModule', 'IgxSwitchModule',
                     'IgxIconModule', 'IgxButtonGroupModule', 'IgxAvatarModule', 'IgxSnackbarModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridCellSelectionComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSnackbarModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSnackbarModule', 'IgxIconModule', 'IgxButtonGroupModule']
             })
         }));
 
