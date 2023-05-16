@@ -102,10 +102,10 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxHierarchicalGridModule', 'HGridBatchEditingSampleComponent',
                     'IgxButtonModule', 'IgxCheckboxModule',
-                    'IgxDatePickerModule', 'IgxGridModule', 'IgxDialogModule', 'IgxPreventDocumentScrollModule'],
+                    'IgxDatePickerModule', 'IgxGridModule', 'IgxDialogModule', 'IgxPreventDocumentScrollModule','IgxInputGroupModule'],
                 ngDeclarations: ['HGridBatchEditingSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxButtonModule', 'IgxCheckboxModule',
-                    'IgxDatePickerModule', 'IgxGridModule', 'IgxDialogModule']
+                    'IgxDatePickerModule', 'IgxGridModule', 'IgxDialogModule', 'IgxInputGroupModule']
             }),
             component: 'HGridBatchEditingSampleComponent'
         }));

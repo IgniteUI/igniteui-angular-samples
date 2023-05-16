@@ -698,9 +698,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridRowDragBaseComponent', 'IgxButtonModule',
-                    'IgxInputGroupModule', 'IgxDragDropModule'],
+                    'IgxInputGroupModule', 'IgxDragDropModule', 'IgxIconModule'],
                 ngDeclarations: ['TreeGridRowDragBaseComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule', 'IgxInputGroupModule', 'IgxDragDropModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule', 'IgxInputGroupModule', 'IgxDragDropModule', 'IgxIconModule']
             }),
             component: 'TreeGridRowDragBaseComponent',
             shortenComponentPathBy: '/tree-grid/'
