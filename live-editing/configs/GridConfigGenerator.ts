@@ -38,7 +38,8 @@ import {
     IgxTabsModule,
     IgxToastModule,
     IgxTooltipModule,
-    IgxToggleModule
+    IgxToggleModule,
+    IgxDropDownModule
 } from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class GridConfigGenerator implements IConfigGenerator {
@@ -92,9 +93,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/invoiceData.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxButtonModule', 'IgxGridModule',
-                    'IgxSwitchModule', 'GridGroupBySampleComponent', 'IgxIconModule', 'IgxBadgeModule', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['GridGroupBySampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxButtonModule', 'IgxGridModule', 'IgxIconModule', 'IgxBadgeModule']
+                    'IgxSwitchModule', 'GridGroupBySampleComponent', 'IgxIconModule', 'IgxBadgeModule', 'IgxPreventDocumentScrollModule', 'IgxDropDownModule', 'IgxToggleModule'],
+                ngDeclarations: ['GridGroupByCustomSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxButtonModule', 'IgxGridModule', 'IgxIconModule', 'IgxBadgeModule', 'IgxDropDownModule','IgxToggleModule' ]
             })
         }));
 
