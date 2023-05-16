@@ -926,9 +926,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             component: 'TreeGridColumnSelectionComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['TreeGridColumnSelectionComponent', 'IgxTreeGridModule'],
+                imports: ['TreeGridColumnSelectionComponent', 'IgxTreeGridModule', 'IgxPreventDocumentScrollModule', 'IgxInputGroupModule', 'IgxSelectModule'],
                 ngDeclarations: ['TreeGridColumnSelectionComponent'],
-                ngImports: ['IgxTreeGridModule'],
+                ngImports: ['IgxTreeGridModule', 'IgxPreventDocumentScrollModule', 'IgxInputGroupModule', 'IgxSelectModule'],
                 ngProviders: []
             })
         }));
@@ -939,9 +939,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 '/src/app/tree-grid/data/employees-flat-detailed.ts'
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['TreeGridColumnGroupSelectionComponent', 'IgxTreeGridModule'],
+                imports: ['TreeGridColumnGroupSelectionComponent', 'IgxTreeGridModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['TreeGridColumnGroupSelectionComponent'],
-                ngImports: ['IgxTreeGridModule'],
+                ngImports: ['IgxTreeGridModule', 'IgxPreventDocumentScrollModule'],
                 ngProviders: []
             })
         }));
@@ -950,9 +950,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             component: 'TreeGridColumnSelectionStylesComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['TreeGridColumnSelectionStylesComponent', 'IgxTreeGridModule'],
+                imports: ['TreeGridColumnSelectionStylesComponent', 'IgxTreeGridModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['TreeGridColumnSelectionStylesComponent'],
-                ngImports: ['IgxTreeGridModule'],
+                ngImports: ['IgxTreeGridModule', 'IgxPreventDocumentScrollModule'],
                 ngProviders: []
             })
         }));
