@@ -767,10 +767,10 @@ export class GridConfigGenerator implements IConfigGenerator {
                 '/src/app/grid/grid-save-state/about.component.html'
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridSaveStateComponent', 'IgxGridModule', 'IgxTooltipModule',
+                imports: ['GridSaveStateComponent', 'IgxGridModule', 'IgxTooltipModule', 'IgxCheckboxModule', 'IgxIconModule',
                     'IgxToastModule', 'IgxSwitchModule', 'AboutComponent', 'Router', 'RouterModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridSaveStateComponent', 'AboutComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxTooltipModule',
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxTooltipModule', 'IgxCheckboxModule', 'IgxIconModule',
                     'RouterModule.forRoot([\{component: AboutComponent, path: \'grid-about\'},\{component: GridSaveStateComponent, path: \'grid-state\'},\{ path: \'\', redirectTo: \'/grid-state\', pathMatch: \'full\' }])',
                     'IgxToastModule', 'IgxSwitchModule']
             })

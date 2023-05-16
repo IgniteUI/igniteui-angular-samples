@@ -162,9 +162,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridSelectionSampleComponent',
-                    'IgxSwitchModule', 'IgxSnackbarModule', 'IgxButtonGroupModule'],
+                    'IgxSwitchModule', 'IgxSnackbarModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxCheckboxModule'],
                 ngDeclarations: ['TreeGridSelectionSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxSwitchModule', 'IgxSnackbarModule', 'IgxButtonGroupModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxSwitchModule', 'IgxSnackbarModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxCheckboxModule']
             }),
             component: 'TreeGridSelectionSampleComponent',
             shortenComponentPathBy: '/tree-grid/'
@@ -1021,9 +1021,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 '/src/app/tree-grid/tree-grid-save-state/about.component.ts',
                 '/src/app/tree-grid/tree-grid-save-state/about.component.html'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TGridSaveStateComponent', 'TGridAboutComponent', 'Router', 'RouterModule'],
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxCheckboxModule', 'IgxIconModule', 'TGridSaveStateComponent', 'TGridAboutComponent', 'Router', 'RouterModule'],
                 ngDeclarations: ['TGridSaveStateComponent', 'TGridAboutComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule',
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxCheckboxModule', 'IgxIconModule',
                     'RouterModule.forRoot([\{component: TGridAboutComponent, path: \'tree-grid-state-about\'},\{component: TGridSaveStateComponent, path: \'tree-grid-state\'},\{ path: \'\', redirectTo: \'/tree-grid-state\', pathMatch: \'full\' }])']
 
             }),
