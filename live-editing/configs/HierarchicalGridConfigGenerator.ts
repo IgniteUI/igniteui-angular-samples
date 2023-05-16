@@ -462,9 +462,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
                 '/src/app/hierarchical-grid/models.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxHierarchicalGridModule', 'HGridToolbarOptionsSampleComponent', 'IgxPreventDocumentScrollModule', 'IgxSwitchModule'],
+                imports: ['IgxHierarchicalGridModule', 'HGridToolbarOptionsSampleComponent', 'IgxPreventDocumentScrollModule', 'IgxSwitchModule', 'IgxInputGroupModule'],
                 ngDeclarations: ['HGridToolbarOptionsSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxSwitchModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxSwitchModule', 'IgxInputGroupModule']
             }),
             component: 'HGridToolbarOptionsSampleComponent'
         }));
@@ -473,9 +473,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
                 '/src/app/hierarchical-grid/models.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxHierarchicalGridModule', 'HGridToolbarCustomSampleComponent', 'IgxButtonModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['IgxHierarchicalGridModule', 'HGridToolbarCustomSampleComponent', 'IgxButtonModule', 'IgxPreventDocumentScrollModule', 'IgxIconModule'],
                 ngDeclarations: ['HGridToolbarCustomSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxButtonModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxButtonModule', 'IgxIconModule']
             }),
             component: 'HGridToolbarCustomSampleComponent'
         }));

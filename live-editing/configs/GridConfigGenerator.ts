@@ -413,9 +413,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/athletesData.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridToolbarSample2Component', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule',
-                    'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxPreventDocumentScrollModule'],
+                    'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxPreventDocumentScrollModule', 'IgxInputGroupModule'],
                 ngDeclarations: ['GridToolbarSample2Component'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule', 'IgxInputGroupModule'],
                 ngProviders: ['IgxExcelExporterService', 'IgxCsvExporterService']
             })
         }));
