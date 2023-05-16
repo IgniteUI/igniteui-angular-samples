@@ -367,9 +367,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'PinningToolbarSampleComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['PinningToolbarSampleComponent', 'IgxGridModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['PinningToolbarSampleComponent', 'IgxGridModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule', 'RouterModule'],
                 ngDeclarations: ['PinningToolbarSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxIconModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxIconModule', 'RouterModule', 'RouterModule.forRoot([])'],
                 ngProviders: []
             })
         }));
