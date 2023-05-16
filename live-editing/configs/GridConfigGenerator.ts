@@ -713,9 +713,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridExternalExcelStyleFilteringComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridExternalExcelStyleFilteringComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['GridExternalExcelStyleFilteringComponent', 'IgxGridModule', 'IgxSelectModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridExternalExcelStyleFilteringComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSelectModule']
             })
         }));
 
@@ -957,9 +957,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridClipboardSampleComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridClipboardSampleComponent', 'IgxGridModule', 'IgxSwitchModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['GridClipboardSampleComponent', 'IgxGridModule', 'IgxSwitchModule', 'IgxInputGroupModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridClipboardSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSwitchModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSwitchModule', 'IgxInputGroupModule', 'IgxIconModule']
             })
         }));
         configs.push(new Config({
