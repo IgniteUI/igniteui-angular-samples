@@ -314,9 +314,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/hierarchical-data.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxHierarchicalGridModule', 'HGridDisplayDensitySampleComponent', 'IgxPreventDocumentScrollModule'],
+                imports: ['IgxHierarchicalGridModule', 'HGridDisplayDensitySampleComponent', 'IgxPreventDocumentScrollModule', 'IgxButtonGroupModule'],
                 ngDeclarations: ['HGridDisplayDensitySampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxButtonGroupModule']
             }),
             component: 'HGridDisplayDensitySampleComponent'
         }));
@@ -846,9 +846,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
                 '/src/app/hierarchical-grid/models.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule', 'HGridEditingLifecycleComponent', 'IgxSwitchModule', 'IgxIconModule'],
+                imports: ['IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule', 'HGridEditingLifecycleComponent', 'IgxSwitchModule', 'IgxIconModule', 'IgxButtonModule'],
                 ngDeclarations: ['HGridEditingLifecycleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxSwitchModule', 'IgxIconModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxSwitchModule', 'IgxIconModule', 'IgxButtonModule'],
                 ngProviders: []
             }),
             component: 'HGridEditingLifecycleComponent'
