@@ -783,9 +783,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/tree-grid-clipboard-operations-sample/data.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridClipboardSampleComponent', 'IgxSwitchModule' , 'IgxInputGroupModule', 'IgxIconModule', 'IgxRippleModule'],
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridClipboardSampleComponent', 'IgxSwitchModule' , 'IgxInputGroupModule', 'IgxIconModule', 'IgxRippleModule', 'IgxButtonModule'],
                 ngDeclarations: ['TreeGridClipboardSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxSwitchModule', 'IgxInputGroupModule', 'IgxIconModule', 'IgxRippleModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxSwitchModule', 'IgxInputGroupModule', 'IgxIconModule', 'IgxRippleModule', 'IgxButtonModule']
             }),
             component: 'TreeGridClipboardSampleComponent',
             shortenComponentPathBy: '/tree-grid/'
