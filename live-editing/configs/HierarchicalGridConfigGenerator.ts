@@ -809,9 +809,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 '/src/app/hierarchical-grid/hierarchical-grid-save-state/about.component.html'
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxHierarchicalGridModule', 'IgxCheckboxModule', 'HGridSaveStateComponent', 'IgxIconModule', 'HGridAboutComponent', 'IgxPreventDocumentScrollModule', 'Router', 'RouterModule'],
+                imports: ['IgxHierarchicalGridModule', 'IgxCheckboxModule', 'HGridSaveStateComponent', 'IgxIconModule', 'IgxButtonModule', 'HGridAboutComponent', 'IgxPreventDocumentScrollModule', 'Router', 'RouterModule'],
                 ngDeclarations: ['HGridSaveStateComponent', 'HGridAboutComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxCheckboxModule', 'IgxIconModule',
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxCheckboxModule', 'IgxIconModule', 'IgxButtonModule',
                     'RouterModule.forRoot([\{component: HGridAboutComponent, path: \'hGrid-state-about\'},\{component: HGridSaveStateComponent, path: \'hGrid-state\'},\{ path: \'\', redirectTo: \'/hGrid-state\', pathMatch: \'full\' }])']
             }),
             component: 'HGridSaveStateComponent'
