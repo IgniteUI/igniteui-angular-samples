@@ -25,9 +25,9 @@ export class CalendarConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'CalendarSample2Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxCalendarModule', 'IgxPrefixModule', 'IgxSelectModule', 'CalendarSample2Component'],
+                imports: ['IgxCalendarModule', 'IgxSelectModule', 'CalendarSample2Component'],
                 ngDeclarations: ['CalendarSample2Component'],
-                ngImports: ['IgxCalendarModule', 'IgxPrefixModule', 'IgxSelectModule']
+                ngImports: ['IgxCalendarModule', 'IgxSelectModule']
             }),
             shortenComponentPathBy: "/scheduling/calendar/"
         }));
