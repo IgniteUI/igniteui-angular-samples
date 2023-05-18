@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import {
     IgcFormsModule, IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule,
     IgxCardModule, IgxCheckboxModule, IgxChipsModule, IgxComboModule, IgxDatePickerModule, IgxDialogModule, IgxDividerModule,
+    IgxDragDropModule,
+    IgxDropDownModule,
     IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule,
     IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSimpleComboModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
     IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
@@ -310,7 +312,9 @@ import { GridCascadingCombosComponent } from './grid-cascading-combos/grid-casca
         IgxDividerModule,
         IgxActionStripModule,
         IgxListModule,
-        IgxSimpleComboModule
+        IgxSimpleComboModule,
+        IgxDragDropModule,
+        IgxDropDownModule
     ]
 })
 export class GridsModule { }

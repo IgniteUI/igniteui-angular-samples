@@ -1,8 +1,8 @@
 <div class="grid__wrapper">
     <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [autoGenerate]="false" height="520px" width="100%" [allowFiltering]="true">
-        <igx-column field="ProductName" header="Product Name" [dataType]="'string'" [groupable]="true">
+        <igx-column field="ProductName" header="Product Name" [groupable]="true">
         </igx-column>
-        <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'" [groupable]="true">
+        <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [groupable]="true">
         </igx-column>
         <igx-column field="UnitPrice" header="Unit Price" dataType="number" [groupable]="true">
             <ng-template igxCell let-cell="cell" let-val let-row>

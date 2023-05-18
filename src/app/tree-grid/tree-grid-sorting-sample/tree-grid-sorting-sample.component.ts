@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { DefaultSortingStrategy, IgxTreeGridComponent, ISortingOptions, SortingDirection } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-sorting-sample',
@@ -8,7 +8,7 @@ import { FOODS_DATA } from '../data/foods';
     templateUrl: 'tree-grid-sorting-sample.component.html'
 })
 
-export class TreeGridSortingSampleComponent implements OnInit {
+export class TreeGridSortingSampleComponent implements OnInit, AfterViewInit {
     @ViewChild('treegrid1', { read: IgxTreeGridComponent, static: true })
     public treegrid1: IgxTreeGridComponent;
     public data: any[];
@@ -25,10 +25,19 @@ export class TreeGridSortingSampleComponent implements OnInit {
     ];
     public sortingOptions: ISortingOptions = this.sortingTypes[1];
 
+    public options = {
+        digitsInfo: '1.2-2',
+        currencyCode: 'USD'
+    };
+    public formatOptions = this.options;
+
     constructor() { }
 
     public ngOnInit(): void {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA;
+    }
+
+    public ngAfterViewInit(): void {
         this.treegrid1.sortingExpressions = [
             { dir: SortingDirection.Asc, fieldName: 'UnitPrice',
               ignoreCase: true, strategy: DefaultSortingStrategy.instance() }

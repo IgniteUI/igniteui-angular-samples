@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-external-advanced-filtering',
@@ -7,9 +7,15 @@ import { FOODS_DATA } from '../data/foods';
     styleUrls: ['./tree-grid-external-advanced-filtering.component.scss']
 })
 export class TreeGridExternalAdvancedFilteringComponent {
-
     public data: any[];
+
+    public options = {
+        digitsInfo: '1.2-2',
+        currencyCode: 'USD'
+    };
+    public formatOptions = this.options;
+
     constructor() {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA;
     }
 }
