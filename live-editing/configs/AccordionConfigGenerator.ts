@@ -4,7 +4,8 @@ import {
     IgxTimePickerModule,
     IgxSliderModule,
     IgxCheckboxModule,
-    IgxSwitchModule
+    IgxSwitchModule,
+    IgxIconModule
 } from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 
