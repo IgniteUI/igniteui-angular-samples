@@ -166,4 +166,4 @@
     <ng-template #host gridHost>
     </ng-template>
 </igc-dockmanager>
-<div class="dark-theme" #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>
+<div [class]="isDarkTheme ? 'dark-theme' : 'light-theme'" #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>
