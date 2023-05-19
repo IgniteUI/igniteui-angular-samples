@@ -1016,9 +1016,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridColumnDataTypesSampleComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridColumnDataTypesSampleComponent', 'IgxGridModule', 'IgxTooltipModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['GridColumnDataTypesSampleComponent', 'IgxGridModule', 'IgxTooltipModule', 'IgxInputGroupModule', 'IgxSelectModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridColumnDataTypesSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxTooltipModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxTooltipModule', 'IgxInputGroupModule', 'IgxSelectModule']
             })
         }));
 

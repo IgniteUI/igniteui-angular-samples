@@ -1,6 +1,8 @@
 import {IgxDateRangePickerModule,
 IgxIconModule,
 IgxInputGroupModule,
+IgxDateTimeEditorModule,
+IgxDatePickerModule,
 IgxSelectModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class DateRangePickerConfigGenerator implements IConfigGenerator {
@@ -50,10 +52,10 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
             new Config({
                 component: 'DateRangePickerStartEndComponent',
                 appModuleConfig: new AppModuleConfig({
-                    imports: ['IgxDateRangePickerModule', 'DateRangePickerStartEndComponent',
+                    imports: ['IgxDateRangePickerModule', 'DateRangePickerStartEndComponent', 'IgxDatePickerModule', 'IgxDateTimeEditorModule',
                         'IgxInputGroupModule', 'IgxIconModule' ],
                     ngDeclarations: ['DateRangePickerStartEndComponent'],
-                    ngImports: ['IgxDateRangePickerModule', 'IgxInputGroupModule', 'IgxIconModule']
+                    ngImports: ['IgxDateRangePickerModule', 'IgxDatePickerModule', 'IgxDateTimeEditorModule', 'IgxInputGroupModule', 'IgxIconModule']
                 }),
                 shortenComponentPathBy: "/scheduling/daterangepicker/"
             })
@@ -63,10 +65,10 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
             new Config({
                 component: 'DateRangePickerValidationComponent',
                 appModuleConfig: new AppModuleConfig({
-                    imports: ['IgxDateRangePickerModule', 'DateRangePickerValidationComponent',
-                        'IgxInputGroupModule', 'IgxIconModule'],
+                    imports: ['IgxDateRangePickerModule', 'DateRangePickerValidationComponent', 'IgxDatePickerModule',
+                        'IgxInputGroupModule', 'IgxIconModule', 'IgxDateTimeEditorModule'],
                     ngDeclarations: ['DateRangePickerValidationComponent'],
-                    ngImports: ['IgxDateRangePickerModule', 'IgxInputGroupModule', 'IgxIconModule']
+                    ngImports: ['IgxDateRangePickerModule', 'IgxDatePickerModule', 'IgxInputGroupModule', 'IgxIconModule', 'IgxDateTimeEditorModule']
                 }),
                 shortenComponentPathBy: "/scheduling/daterangepicker/"
             })
@@ -77,9 +79,9 @@ export class DateRangePickerConfigGenerator implements IConfigGenerator {
                 component: 'StyledDateRangePickerComponent',
                 appModuleConfig: new AppModuleConfig({
                     imports: ['IgxDateRangePickerModule', 'StyledDateRangePickerComponent',
-                        'IgxInputGroupModule', 'IgxIconModule'],
+                        'IgxInputGroupModule', 'IgxIconModule', 'IgxDatePickerModule' , 'IgxDateTimeEditorModule'],
                     ngDeclarations: ['StyledDateRangePickerComponent'],
-                    ngImports: ['IgxDateRangePickerModule', 'IgxInputGroupModule', 'IgxIconModule']
+                    ngImports: ['IgxDateRangePickerModule', 'IgxDatePickerModule', 'IgxDateTimeEditorModule', 'IgxInputGroupModule', 'IgxIconModule']
                 }),
                 shortenComponentPathBy: "/scheduling/daterangepicker/"
             })
