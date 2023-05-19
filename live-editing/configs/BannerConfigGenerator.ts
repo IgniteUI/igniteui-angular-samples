@@ -88,8 +88,7 @@ export class BannerConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/notifications/banner/banner-samples.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxBannerModule', 'IgxCardModule', 'IgxToastModule', 'IgxNavbarModule', 'IgxButtonModule',
-                    'IgxRippleModule', 'IgxIconModule', 'IgxButtonModule',
-                    'IgxRippleModule', 'BannerStylingComponent'],
+                    'IgxRippleModule', 'IgxIconModule', 'BannerStylingComponent'],
                 ngDeclarations: ['BannerStylingComponent'],
                 ngImports: ['IgxBannerModule', 'IgxCardModule', 'IgxToastModule',  'IgxNavbarModule', 'IgxButtonModule',
                     'IgxRippleModule', 'IgxIconModule', 'IgxButtonModule',
