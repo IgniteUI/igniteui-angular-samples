@@ -2,7 +2,7 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IgxButtonModule, IgxDialogModule, IgxDividerModule, IgxGridModule, IgxSliderModule,
+import { IgxButtonModule, IgxDialogModule, IgxDividerModule, IgxGridModule, IgxIconModule, IgxSelectModule, IgxSliderModule,
     IgxSwitchModule, IgxTabsModule, IgxToggleModule } from 'igniteui-angular';
 import { GridFinJSDockManagerRoutingModule } from './grid-finjs-dock-manager-routing.module';
 import { GridFinJSDockManagerComponent } from './grid-finjs-dock-manager.component';
@@ -27,7 +27,9 @@ import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directive
         IgxDialogModule,
         IgxDividerModule,
         IgxTabsModule,
-        IgxToggleModule
+        IgxToggleModule,
+        IgxSelectModule,
+        IgxIconModule
     ],
     providers: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

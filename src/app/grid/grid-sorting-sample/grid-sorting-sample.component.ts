@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { DefaultSortingStrategy, IgxGridComponent, ISortingOptions, SortingDirection } from 'igniteui-angular';
 import { DATA } from '../../data/localData';
 
@@ -9,7 +9,7 @@ import { DATA } from '../../data/localData';
     templateUrl: 'grid-sorting-sample.component.html'
 })
 
-export class SortingSampleComponent implements OnInit {
+export class SortingSampleComponent implements OnInit, AfterViewInit {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
     public data: any[];
@@ -26,6 +26,9 @@ export class SortingSampleComponent implements OnInit {
 
     public ngOnInit(): void {
         this.data = DATA;
+    }
+    
+    public ngAfterViewInit(): void {
         this.grid1.sortingExpressions = [
             {
                 dir: SortingDirection.Asc, fieldName: 'CategoryName',
