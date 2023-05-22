@@ -29,8 +29,15 @@ body {
     .grid-chart-contextmenu-wrapper {
         @include fluent-dark-theme($fluent-excel-palette);
     }
+    igx-grid,
+    igx-hierarchical-grid,
+    igx-pivot-grid,
+    igx-tree-grid {
+        --igx-chip-disabled-background: #616161;
+        --igx-chip-disabled-border-color: #616161;
+        --igx-chip-disabled-text-color: #BDBDBD;
+    }
 }
-
 .fin-dark-theme {
     @include dark-theme($green-palette);
     background: #333;
