@@ -127,13 +127,7 @@
 	}
 }
 
-.dark-theme {
-    --igx-grid-row-selected-background: #084d8d;
-    --igx-grid-row-selected-hover-background: #0d78db;
-    --igx-grid-header-selected-background: #0d78db;
-}
-
-:host ::ng-deep {
+igx-grid {
 	.grid-area {
 		margin-block-start: 1rem;
 		overflow-y: hidden;
