@@ -32,8 +32,8 @@ export class NavbarConfigGenerator implements IConfigGenerator {
             component: 'NavbarSample2Component',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxIconModule', 'IgxNavbarModule', 'IgxButtonModule', 'NavbarSample2Component'],
-                ngDeclarations: ['NavbarSample2Component', 'IgxButtonModule' ],
-                ngImports: ['IgxIconModule', 'IgxNavbarModule']
+                ngDeclarations: ['NavbarSample2Component'],
+                ngImports: ['IgxIconModule', 'IgxNavbarModule', 'IgxButtonModule' ]
             }),
             shortenComponentPathBy: "/menus/navbar/"
         }));
