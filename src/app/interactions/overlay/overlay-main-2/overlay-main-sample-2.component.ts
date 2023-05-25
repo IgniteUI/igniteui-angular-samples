@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnDestroy, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, OnDestroy, ViewChild, ViewContainerRef } from '@angular/core';
 import { ConnectedPositioningStrategy, IgxOverlayService } from 'igniteui-angular';
 import { CardSample1Component } from '../../../layouts/card/card-sample-1/card-sample-1.component';
 // tslint:disable:object-literal-sort-keys
@@ -16,13 +16,15 @@ export class OverlaySampleMain2Component implements OnDestroy {
 
 
     constructor(
-        @Inject(IgxOverlayService) public overlayService: IgxOverlayService) {}
+        @Inject(IgxOverlayService) public overlayService: IgxOverlayService,
+        public viewContainerRef: ViewContainerRef
+    ) { }
 
     public toggleOverlay() {
         if (this._cardHidden) {
             if (!this._overlayId) {
                 const positionStrategy = new ConnectedPositioningStrategy();
-                this._overlayId = this.overlayService.attach(CardSample1Component, {
+                this._overlayId = this.overlayService.attach(CardSample1Component, this.viewContainerRef, {
                     target: this.buttonElement.nativeElement,
                     positionStrategy,
                     modal: false,

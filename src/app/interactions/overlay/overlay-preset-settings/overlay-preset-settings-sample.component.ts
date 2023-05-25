@@ -4,7 +4,8 @@ import {
     Inject,
     OnDestroy,
     OnInit,
-    ViewChild
+    ViewChild,
+    ViewContainerRef
 } from '@angular/core';
 import {
     AbsolutePosition,
@@ -62,7 +63,10 @@ export class OverlayPresetSettingsSampleComponent implements OnInit, OnDestroy {
     private _overlayId: string;
     private _overlaySettings: OverlaySettings;
 
-    constructor(@Inject(IgxOverlayService) public overlayService: IgxOverlayService) { }
+    constructor(
+        @Inject(IgxOverlayService) public overlayService: IgxOverlayService,
+        public viewContainerRef: ViewContainerRef
+    ) { }
 
     public ngOnInit(): void {
         this.setRelativeOverlaySettings();
@@ -82,6 +86,7 @@ export class OverlayPresetSettingsSampleComponent implements OnInit, OnDestroy {
         }
         this._overlayId = this.overlayService.attach(
             MyDynamicCardComponent,
+            this.viewContainerRef,
             this._overlaySettings
         );
         this.overlayService.show(this._overlayId);

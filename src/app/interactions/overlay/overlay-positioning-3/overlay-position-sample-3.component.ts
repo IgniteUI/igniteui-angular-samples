@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnDestroy, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, OnDestroy, ViewChild, ViewContainerRef } from '@angular/core';
 import { AutoPositionStrategy, IgxOverlayService } from 'igniteui-angular';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 @Component({
@@ -12,13 +12,16 @@ export class OverlayPositionSample3Component implements OnDestroy {
     private buttonElement: ElementRef;
     private _overlayId: string;
 
-    constructor(@Inject(IgxOverlayService) public overlayService: IgxOverlayService) { }
+    constructor(
+        @Inject(IgxOverlayService) public overlayService: IgxOverlayService,
+        public viewContainerRef: ViewContainerRef
+    ) { }
 
     public showOverlay() {
         if (!this._overlayId) {
             const myPositionStrategy = new AutoPositionStrategy();
             this._overlayId = this.overlayService.attach(
-                MyDynamicCardComponent, {
+                MyDynamicCardComponent, this.viewContainerRef, {
                     target: this.buttonElement.nativeElement,
                     positionStrategy: myPositionStrategy
                 });

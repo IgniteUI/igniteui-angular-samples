@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnDestroy, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, OnDestroy, ViewChild, ViewContainerRef } from '@angular/core';
 import { ConnectedPositioningStrategy, IgxOverlayService, OverlaySettings } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
@@ -13,7 +13,10 @@ export class OverlayPositionSample1Component implements OnDestroy {
     private buttonElement: ElementRef;
     private _overlayId: string;
 
-    constructor(@Inject(IgxOverlayService) public overlayService: IgxOverlayService) { }
+    constructor(
+        @Inject(IgxOverlayService) public overlayService: IgxOverlayService,
+        public viewContainerRef: ViewContainerRef
+    ) { }
 
     public showOverlay() {
         if (!this._overlayId) {
@@ -24,7 +27,7 @@ export class OverlayPositionSample1Component implements OnDestroy {
                 // Pass in the positioning strategy
                 positionStrategy: new ConnectedPositioningStrategy()
             };
-            this._overlayId = this.overlayService.attach(MyDynamicCardComponent, overlaySettings);
+            this._overlayId = this.overlayService.attach(MyDynamicCardComponent, this.viewContainerRef, overlaySettings);
         }
 
         this.overlayService.show(this._overlayId);
