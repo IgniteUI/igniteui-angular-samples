@@ -32,8 +32,8 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
     private _target: HTMLElement;
 
     constructor(
-        @Inject(IgxOverlayService) public overlay: IgxOverlayService,
-        public viewContainerRef: ViewContainerRef
+        @Inject(IgxOverlayService) private overlay: IgxOverlayService,
+        private viewContainerRef: ViewContainerRef
     ) {
         this.overlay.opening
             .pipe(takeUntil(this.destroy$))

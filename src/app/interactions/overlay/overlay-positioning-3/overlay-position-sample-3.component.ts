@@ -13,8 +13,8 @@ export class OverlayPositionSample3Component implements OnDestroy {
     private _overlayId: string;
 
     constructor(
-        @Inject(IgxOverlayService) public overlayService: IgxOverlayService,
-        public viewContainerRef: ViewContainerRef
+        @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
+        private viewContainerRef: ViewContainerRef
     ) { }
 
     public showOverlay() {

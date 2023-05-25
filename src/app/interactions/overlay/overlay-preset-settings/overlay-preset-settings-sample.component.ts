@@ -64,8 +64,8 @@ export class OverlayPresetSettingsSampleComponent implements OnInit, OnDestroy {
     private _overlaySettings: OverlaySettings;
 
     constructor(
-        @Inject(IgxOverlayService) public overlayService: IgxOverlayService,
-        public viewContainerRef: ViewContainerRef
+        @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
+        private viewContainerRef: ViewContainerRef
     ) { }
 
     public ngOnInit(): void {

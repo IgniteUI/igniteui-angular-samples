@@ -16,8 +16,8 @@ export class OverlaySampleMain2Component implements OnDestroy {
 
 
     constructor(
-        @Inject(IgxOverlayService) public overlayService: IgxOverlayService,
-        public viewContainerRef: ViewContainerRef
+        @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
+        private viewContainerRef: ViewContainerRef
     ) { }
 
     public toggleOverlay() {
