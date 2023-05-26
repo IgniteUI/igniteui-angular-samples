@@ -45,8 +45,7 @@ export class OverlayScrollSample1Component implements OnDestroy {
 
     private _overlayId: string;
 
-    constructor(
-        @Inject(IgxOverlayService) public overlay: IgxOverlayService) { }
+    constructor(@Inject(IgxOverlayService) private overlay: IgxOverlayService) { }
 
     public onClickModal(event: Event, strategy: string) {
         event.stopPropagation();
