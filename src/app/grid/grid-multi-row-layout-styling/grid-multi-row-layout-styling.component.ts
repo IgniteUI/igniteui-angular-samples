@@ -3,7 +3,6 @@ import { DefaultSortingStrategy, SortingDirection } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: 'app-grid-multi-row-layout-styling-sample',
     styleUrls: ['./grid-multi-row-layout-styling.component.scss'],
     templateUrl: './grid-multi-row-layout-styling.component.html'
