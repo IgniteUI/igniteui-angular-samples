@@ -3,12 +3,9 @@ import { IgxColumnComponent, IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
-    providers: [],
     selector: 'app-grid-sample',
     styleUrls: ['grid-pinning-styling.component.scss'],
     templateUrl: 'grid-pinning-styling.component.html'
-
 })
 
 export class PinningStylingComponent implements OnInit{
