@@ -5,7 +5,8 @@ import {
     IgxDropDownModule,
     IgxExcelExporterService,
     IgxGridModule,
-    IgxTreeGridModule
+    IgxTreeGridModule,
+    IgxToggleModule 
 } from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class ExportExcelConfigGenerator implements IConfigGenerator {
@@ -44,9 +45,9 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
                 '/src/app/grid/grid-paste/paste-handler.directive.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxGridModule', 'IgxExcelExporterService', 'GridPasteSampleComponent', 'IgxDropDownComponent',
-                    'IgxDropDownModule', 'IgxButtonModule', 'PasteHandler'],
+                    'IgxDropDownModule', 'IgxButtonModule', 'PasteHandler', 'IgxToggleModule','IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridPasteSampleComponent', 'PasteHandler'],
-                ngImports: ['IgxGridModule', 'IgxDropDownModule', 'IgxButtonModule'],
+                ngImports: ['IgxGridModule', 'IgxDropDownModule', 'IgxButtonModule', 'IgxToggleModule', 'IgxPreventDocumentScrollModule'],
                 ngProviders: ['IgxExcelExporterService']
             }),
             shortenComponentPathBy: '/grid-paste/'
