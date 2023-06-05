@@ -42,13 +42,16 @@ $dark-ripple-theme: ripple-theme(
 );
 
 :host {
-	@include css-vars($dark-column-actions-theme);
+    ::ng-deep {
+	    @include css-vars($dark-column-actions-theme);
 
-	igx-column-actions, igx-grid-toolbar {
-		@include css-vars($dark-checkbox-theme);
-		@include css-vars($dark-input-group);
-		@include css-vars($dark-ripple-theme);
-	}
+	    igx-column-actions, igx-grid-toolbar {
+            @include css-vars($dark-button-theme);
+		    @include css-vars($dark-input-group);
+		    @include css-vars($dark-checkbox-theme);
+		    @include css-vars($dark-ripple-theme);
+	    }
+    }
 }
 
 .grid__wrapper {
