@@ -214,7 +214,7 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                     let tempPath = "";
                     paths.forEach(p => {
                         tempPath += p + "/";
-                        if (p.indexOf(".") !== -1 && p !== codesandboxConfiFolder) {
+                        if (p.indexOf(".") !== -1 && p !== codesandboxConfigFolder) {
                             fs.writeFileSync(sampleAppPath + "/" + tempPath, sampleContent);
                         } else
                             if (!fs.existsSync(sampleAppPath + "/" + tempPath)) {
