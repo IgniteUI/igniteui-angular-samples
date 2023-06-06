@@ -198,7 +198,7 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                     fs.mkdirSync(sampleAppPath);
                 }
 
-                fs.mkdirSync(`${sampleAppPath}/${codesandboxConfiFolder}`);
+                fs.mkdirSync(`${sampleAppPath}/${codesandboxConfigFolder}`);
 
                 // Distribute Sample Files
                 jsonObj.sampleFiles.forEach(sampleFile => {
