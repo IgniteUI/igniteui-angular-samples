@@ -166,6 +166,7 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
             fs.readFile(file.path, 'utf-8', (err, content) => {
                 // Adjust sample application bundle files
                 const jsonObj = JSON.parse(content);
+                const codesandboxConfigFolder = '.codesandbox';
                 const additionals = [];
                 const packageJson =
                 {
@@ -197,6 +198,8 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                     fs.mkdirSync(sampleAppPath);
                 }
 
+                fs.mkdirSync(`${sampleAppPath}/${codesandboxConfigFolder}`);
+
                 // Distribute Sample Files
                 jsonObj.sampleFiles.forEach(sampleFile => {
                     let sampleContent;
@@ -211,7 +214,7 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                     let tempPath = "";
                     paths.forEach(p => {
                         tempPath += p + "/";
-                        if (p.indexOf(".") !== -1) {
+                        if (p.indexOf(".") !== -1 && p !== codesandboxConfigFolder) {
                             fs.writeFileSync(sampleAppPath + "/" + tempPath, sampleContent);
                         } else
                             if (!fs.existsSync(sampleAppPath + "/" + tempPath)) {
