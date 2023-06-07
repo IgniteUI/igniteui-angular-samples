@@ -114,15 +114,6 @@
 		max-width: 68ch;
 	}
 
-	.igx-grid-toolbar__button-space {
-		.igx-icon {
-			font-size: 1rem;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-	}
-
 	.igx-grid-toolbar__custom-content {
 		flex: 1 0 0%;
 	}
@@ -161,28 +152,11 @@
 		width: 100%;
 	}
 
-	.igx-input-group--search .igx-input-group__bundle {
-		height: rem(36px);
-		width: 100%;
-		overflow: hidden;
-
-		.igx-input-group__bundle-main {
-			padding-top: 0.6rem;
-			height: 36px;
-		}
-	}
-
 	.sample-flex-container {
 		.igx-input-group,
 		.igx-input-group--focused {
 			font-size: 13px;
 			overflow: hidden;
-
-			igx-icon {
-				font-size: 1rem;
-				width: 1rem;
-				height: 1rem;
-			}
 		}
 
 		.igx-input-group__input {

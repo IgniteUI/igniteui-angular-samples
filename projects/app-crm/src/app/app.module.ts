@@ -4,12 +4,13 @@ import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     IgxAutocompleteModule, IgxButtonModule, IgxIconModule, IgxInputGroupModule, IgxLayoutModule,
-    IgxRippleModule, IgxGridModule, IgxAvatarModule
+    IgxRippleModule, IgxGridModule, IgxAvatarModule, IgxProgressBarModule
 } from 'igniteui-angular';
 import { IgxPreventDocumentScrollModule } from '../../../../src/app/directives/prevent-scroll.directive';
 import { AppComponent } from './app.component';
 import { GridCRMComponent } from './grid-crm/grid-crm.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SEOService } from '../../../app-lob/src/app/seo.service';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -29,11 +30,12 @@ import { AppRoutingModule } from './app-routing.module';
         AppRoutingModule,
         BrowserAnimationsModule,
         IgxButtonModule,
+        IgxProgressBarModule,
         FormsModule,
         IgxPreventDocumentScrollModule,
         HammerModule
     ],
-    providers: []
+    providers: [SEOService]
 })
 export class AppModule { }
 

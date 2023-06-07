@@ -29,8 +29,16 @@ body {
     .grid-chart-contextmenu-wrapper {
         @include fluent-dark-theme($fluent-excel-palette);
     }
+    // remove this workaround after resolving https://github.com/IgniteUI/igniteui-angular/issues/13039
+    igx-grid,
+    igx-hierarchical-grid,
+    igx-pivot-grid,
+    igx-tree-grid {
+        --igx-chip-disabled-background: #616161;
+        --igx-chip-disabled-border-color: #616161;
+        --igx-chip-disabled-text-color: #BDBDBD;
+    }
 }
-
 .fin-dark-theme {
     @include dark-theme($green-palette);
     background: #333;

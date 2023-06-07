@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import {
     IgcFormsModule, IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule,
     IgxCardModule, IgxCheckboxModule, IgxChipsModule, IgxComboModule, IgxDatePickerModule, IgxDialogModule, IgxDividerModule,
+    IgxDragDropModule,
+    IgxDropDownModule,
     IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule,
     IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSimpleComboModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
     IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
@@ -139,6 +141,7 @@ import { GridValidationStyleComponent } from './grid-validation-style/grid-valid
 import { GridValidatorServiceExtendedComponent, PhoneFormatDirective } from './grid-validator-service-extended/grid-validator-service-extended.component';
 import { GridSummaryExportComponent } from './grid-summary-export/grid-summary-export.component';
 import { GridStatePersistenceSampleComponent } from './grid-state-persistence-sample/grid-state-persistance-sample.component';
+import { GridCascadingCombosComponent } from './grid-cascading-combos/grid-cascading-combos.component';
 
 @NgModule({
     declarations: [
@@ -268,7 +271,8 @@ import { GridStatePersistenceSampleComponent } from './grid-state-persistence-sa
         GridValidatorServiceExtendedComponent,
         PhoneFormatDirective,
         GridSummaryExportComponent,
-        GridStatePersistenceSampleComponent
+        GridStatePersistenceSampleComponent,
+        GridCascadingCombosComponent
     ],
     imports: [
         CommonModule,
@@ -308,7 +312,9 @@ import { GridStatePersistenceSampleComponent } from './grid-state-persistence-sa
         IgxDividerModule,
         IgxActionStripModule,
         IgxListModule,
-        IgxSimpleComboModule
+        IgxSimpleComboModule,
+        IgxDragDropModule,
+        IgxDropDownModule
     ]
 })
 export class GridsModule { }

@@ -8,7 +8,7 @@
                     [columnSelection]="currentColumnSelection">
         <igx-grid-toolbar>
 
-            <igx-select [(ngModel)]="currentColumnSelection">
+            <igx-select [(ngModel)]="currentColumnSelection" [displayDensity]="'compact'">
                 <label igxLabel>Column Selection</label>
                 <igx-select-item value="none">None</igx-select-item>
                 <igx-select-item value="single">Single</igx-select-item>
@@ -19,7 +19,7 @@
 
         <igx-column *ngFor="let c of columnConfig"
                     [field] = "c.field"
-                    [header] = "c.field"
+                    [header] = "c.header"
                     [selectable] = "c.selectable"
                     [formatter] = "c?.formatter">
         </igx-column>

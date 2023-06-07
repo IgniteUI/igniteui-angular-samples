@@ -9,7 +9,9 @@ import {
     IgxTooltipModule,
     IgxToastModule,
     IgxSwitchModule,
-    IgxExcelExporterService
+    IgxExcelExporterService,
+    IgxIconModule,
+    IgxCheckboxModule
 } from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class PivotGridConfigGenerator implements IConfigGenerator {
@@ -52,12 +54,18 @@ export class PivotGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/dataToAnalyze.ts'],
+            additionalFiles: 
+            [
+                '/src/app/directives/prevent-scroll.directive.ts',
+                '/src/app/data/dataToAnalyze.ts',
+                '/src/app/pivot-grid/pivot-state-persistence/about.component.ts',
+                '/src/app/pivot-grid/pivot-state-persistence/about.component.html',
+            ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPivotGridModule', 'PivotGridStatePersistenceSampleComponent', 'PivotGridAboutComponent', 'IgxPreventDocumentScrollModule', 'IgxTooltipModule',
-                    'IgxToastModule', 'IgxSwitchModule', 'Router', 'RouterModule'],
-                ngDeclarations: ['PivotGridStatePersistenceSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxPivotGridModule', 'IgxTooltipModule', 'PivotGridAboutComponent',
+                    'IgxToastModule', 'IgxSwitchModule', 'IgxCheckboxModule', 'IgxIconModule', 'Router', 'RouterModule'],
+                ngDeclarations: ['PivotGridStatePersistenceSampleComponent', 'PivotGridAboutComponent',],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxPivotGridModule', 'IgxTooltipModule', 'IgxCheckboxModule', 'IgxIconModule', 
                     'RouterModule.forRoot([\{component: PivotGridAboutComponent, path: \'pivot-grid-about\'},\{component: PivotGridStatePersistenceSampleComponent, path: \'pivot-grid-state-persistance\'},\{ path: \'\', redirectTo: \'/pivot-grid-state-persistance\', pathMatch: \'full\' }])',
                     'IgxToastModule', 'IgxSwitchModule']
             }),
@@ -78,9 +86,9 @@ export class PivotGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/pivot-data-noop.ts', '/src/app/services/pivotRemoteData.service.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPivotGridModule', 'PivotGridNoopPersistenceSampleComponent', 'IgxPreventDocumentScrollModule', 'PivotDataService'],
+                imports: ['IgxPivotGridModule', 'PivotGridNoopPersistenceSampleComponent', 'IgxPreventDocumentScrollModule', 'PivotDataService', 'IgxIconModule'],
                 ngDeclarations: ['PivotGridNoopPersistenceSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxPivotGridModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxPivotGridModule', 'IgxIconModule'],
                 ngProviders: ['PivotDataService']
             }),
             component: 'PivotGridNoopPersistenceSampleComponent'

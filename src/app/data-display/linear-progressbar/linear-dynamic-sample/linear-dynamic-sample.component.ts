@@ -10,7 +10,7 @@ export class LinearDynamicSampleComponent implements OnInit{
     public currentValue: number;
 
     public ngOnInit() {
-        this.currentValue = 0;
+        this.currentValue = 50;
     }
 
     public incrementProgress() {
