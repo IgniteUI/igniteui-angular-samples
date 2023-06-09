@@ -67,6 +67,7 @@ import {
     CategoriesFilterPipe,
     FilterByName
 } from './icon/material-icons-extended/material-icons-extended.component';
+import { MaterialSymbolsComponent } from './icon/material-symbols/material-symbols.component';
 
 @NgModule({
     declarations: [
@@ -106,7 +107,8 @@ import {
         TextHighlightStyleComponent,
         MaterialIconsExtendedComponent,
         CategoriesFilterPipe,
-        FilterByName
+        FilterByName,
+        MaterialSymbolsComponent
     ],
     imports: [
         CommonModule,
