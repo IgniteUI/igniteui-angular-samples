@@ -72,7 +72,7 @@
     "igniteui-angular-i18n": "^16.0.0",
     "igniteui-dockmanager": "^1.12.4",
     "igniteui-live-editing": "^2.0.9-beta.0",
-    "igniteui-theming": "^1.2.0",
+    "igniteui-theming": "^2.0.0",
     "igniteui-webcomponents": "^4.2.3",
     "minireset.css": "0.0.6",
     "rxjs": "^6.6.7",
