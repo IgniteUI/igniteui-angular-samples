@@ -6,6 +6,6 @@ $custom-banner-theme: banner-theme(
     $banner-illustration-color: #666666
 );
 
-:host {
+igx-banner {
     @include css-vars($custom-banner-theme);
 }
