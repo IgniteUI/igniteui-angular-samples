@@ -93,7 +93,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/invoiceData.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxButtonModule', 'IgxGridModule',
-                    'IgxSwitchModule', 'GridGroupBySampleComponent', 'IgxIconModule', 'IgxBadgeModule', 'IgxPreventDocumentScrollModule', 'IgxDropDownModule', 'IgxToggleModule'],
+                    'IgxSwitchModule', 'GridGroupByCustomSampleComponent', 'IgxIconModule', 'IgxBadgeModule', 'IgxPreventDocumentScrollModule', 'IgxDropDownModule', 'IgxToggleModule'],
                 ngDeclarations: ['GridGroupByCustomSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxButtonModule', 'IgxGridModule', 'IgxIconModule', 'IgxBadgeModule', 'IgxDropDownModule','IgxToggleModule' ]
             })
