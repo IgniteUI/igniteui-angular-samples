@@ -53,8 +53,9 @@
                     <input igxInput id="unitsInStock" type="number" [(ngModel)]="product.UnitsInStock" />
                 </igx-input-group>
                 <igx-combo id="availableAt" [displayKey]="'shop'" [placeholder]="'Available @'" [data]="locations" [(ngModel)]="product.Locations" [itemsMaxHeight]="200"></igx-combo>
-                <igx-date-picker id="orderDate"  [(ngModel)]="product.OrderDate" mode="dialog">
-                    <label igxLabel>Order Date</label></igx-date-picker>
+                <igx-date-picker id="orderDate" [(ngModel)]="product.OrderDate" mode="dialog">
+                    <label igxLabel>Order Date</label>
+                </igx-date-picker>
                 <igx-checkbox id="discontinued" [(ngModel)]="product.Discontinued">Discontinued</igx-checkbox>
                 <igx-input-group>
                     <label igxLabel for="reorderLevel">Reorder Level</label>
