@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DisplayDensity, IgxTreeGridComponent } from 'igniteui-angular';
-import { FOODS_DATA } from '../data/foods';
+import { DisplayDensity, IgxTreeGridComponent, TreeGridFilteringStrategy } from 'igniteui-angular';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-excel-style-filtering-sample-1',
@@ -14,13 +14,21 @@ export class TreeGridExcelStyleFilteringSample1Component implements OnInit {
 
     public data: any[];
 
+    public options = {
+        digitsInfo: '1.2-2',
+        currencyCode: 'USD'
+    };
+    public formatOptions = this.options;
+
+    public filterStrategy = new TreeGridFilteringStrategy(['ID', 'Name']);
+
     public density: DisplayDensity = 'comfortable';
     public displayDensities;
 
     constructor() {
     }
     public ngOnInit(): void {
-        this.data = FOODS_DATA();
+        this.data = ORDERS_DATA;
         this.displayDensities = [
             {
                 label: 'compact',
@@ -52,9 +60,5 @@ export class TreeGridExcelStyleFilteringSample1Component implements OnInit {
         } else {
             return val;
         }
-    }
-
-    public formatCurrency(val: string) {
-        return parseInt(val, 10).toFixed(2);
     }
 }

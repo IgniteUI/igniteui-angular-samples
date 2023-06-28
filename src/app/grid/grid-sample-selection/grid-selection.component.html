@@ -4,49 +4,68 @@
         <igx-switch [(ngModel)]="hideRowSelectors">Hide Row Selectors</igx-switch>
         <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
     </div>
-    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data | async" [height]="'530px'" [primaryKey]="'ID'" width="100%" [cellSelection]="'none'"
-        [rowSelection]="selectionMode" [selectedRows]="selectedRows" [hideRowSelectors]="hideRowSelectors" [allowFiltering]="true"
-        (rowSelectionChanging)="handleRowSelection($event)">
-        <igx-column [field]="'Category'"></igx-column>
-        <igx-column [field]="'Type'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Price'" dataType="number" [formatter]="formatCurrency"></igx-column>
-        <igx-column [field]="'Buy'" dataType="number" [formatter]="formatCurrency"></igx-column>
-        <igx-column [field]="'Sell'" dataType="number" [formatter]="formatCurrency"></igx-column>
-        <igx-column [field]="'Change'" dataType="number" [headerClasses]="'headerAlignSyle'">
-            <ng-template igxHeader>
-                <span>Change</span>
-            </ng-template>
-            <ng-template igxCell let-val>
-                <div class="currency-badge-container">
-                    <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward"
-                        class="badge-left"></igx-badge>
-                    <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward"
-                        class="error badge-left"></igx-badge>
-                    <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}</span>
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column [field]="'Change(%)'" dataType="number" [formatter]="formatNumber">
-            <ng-template igxHeader>
-                <span>Change(%)</span>
-            </ng-template>
+    <div class="sample-wrapper">
+        <div class="grid-wrapper">
+            <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data | async" [height]="'550px'" [primaryKey]="'ID'" width="100%" [cellSelection]="'none'"
+            [rowSelection]="selectionMode" [selectedRows]="selectedRows" [hideRowSelectors]="hideRowSelectors" [allowFiltering]="true"
+            (rowSelectionChanging)="handleRowSelection($event)">
+            <igx-column [field]="'Category'"></igx-column>
+            <igx-column [field]="'Type'" [filterable]="false"></igx-column>
+            <igx-column [field]="'Price'" dataType="number" [formatter]="formatCurrency"></igx-column>
+            <igx-column [field]="'Buy'" dataType="number" [formatter]="formatCurrency"></igx-column>
+            <igx-column [field]="'Sell'" dataType="number" [formatter]="formatCurrency"></igx-column>
+            <igx-column [field]="'Change'" dataType="number" [headerClasses]="'headerAlignSyle'">
+                <ng-template igxHeader>
+                    <span>Change</span>
+                </ng-template>
+                <ng-template igxCell let-val>
+                    <div class="currency-badge-container">
+                        <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward"
+                            class="badge-left"></igx-badge>
+                        <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward"
+                            class="error badge-left"></igx-badge>
+                        <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}</span>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column [field]="'Change(%)'" dataType="number" [formatter]="formatNumber">
+                <ng-template igxHeader>
+                    <span>Change(%)</span>
+                </ng-template>
 
-            <ng-template igxCell let-val>
-                <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}%</span>
-            </ng-template>
-        </igx-column>
-        <igx-column [field]="'Change On Year(%)'" dataType="number" [formatter]="formatNumber">
-            <ng-template igxCell let-val>
-                <div class="currency-badge-container">
-                    <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward"
-                        class="badge-left"></igx-badge>
-                    <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward"
-                        class="error badge-left"></igx-badge>
+                <ng-template igxCell let-val>
                     <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}%</span>
+                </ng-template>
+            </igx-column>
+            <igx-column [field]="'Change On Year(%)'" dataType="number" [formatter]="formatNumber">
+                <ng-template igxCell let-val>
+                    <div class="currency-badge-container">
+                        <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward"
+                            class="badge-left"></igx-badge>
+                        <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward"
+                            class="error badge-left"></igx-badge>
+                        <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}%</span>
+                    </div>
+                </ng-template>
+            </igx-column>
+        </igx-grid>
+        </div>
+        <div class="log-wrapper">
+            <div class="selected-data-area">
+                <div class="logContainer">
+                    <div class="highlight">
+                        <span>Events execution sequence</span>
+                        <button class="clearBtn" igxButton="flat" (click)="clearLog()">
+                            <igx-icon>clear</igx-icon>
+                            <span>Clear log</span>
+                        </button>
+                    </div>
+                    <hr />
+                    <div #logger class="logger"></div>
                 </div>
-            </ng-template>
-        </igx-column>
-    </igx-grid>
+            </div>
+        </div>
+    </div>
 </div>
 
 <igx-snackbar #snackbarRowCount actionText="Got it. Thanks!" (clicked)="snackbarRowCount.close()">

@@ -123,5 +123,7 @@ export const gridsRoutesData = {
     'grid-cross-field-validator-service': { displayName: 'Grid Cross Field Validator Service ', parentName: 'Grid' },
     'grid-validation-style': { displayName: 'Grid with Validation Styles', parentName: 'Grid' },
     'grid-validator-service-extended': { displayName: 'Grid Validator Service Extended', parentName: 'Grid'},
-    'grid-summary-export': { displayName: 'Grid Summary Export', parentName: 'Grid'}
+    'grid-summary-export': { displayName: 'Grid Summary Export', parentName: 'Grid'},
+    'grid-state-persistence': { displayName: 'Grid State Persistence', parentName: 'Grid'},
+    'grid-cascading-combos': { displayName: 'Grid Editing with Cascading Combos', parentName: 'Grid'}
 };

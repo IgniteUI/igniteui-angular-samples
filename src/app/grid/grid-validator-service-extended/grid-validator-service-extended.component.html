@@ -4,7 +4,7 @@
         <igx-column field="Avatar" header="Photo" dataType="string" width="80" [editable]="false">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner avatar-cell">
-                    <igx-avatar [src]="cell.row.data.avatar" [roundShape]="true" size="small"></igx-avatar>
+                    <igx-avatar [src]="cell.row.data.avatar" shape="circle" size="small"></igx-avatar>
                 </div>
             </ng-template>
         </igx-column>

@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="remoteData | async" [height]="'460px'" [width]="'100%'" [autoGenerate]='false'
+    <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="remoteData | async" [height]="'460px'" [width]="'100%'" [autoGenerate]="false"
         [filterStrategy]="noopFilterStrategy"
         [sortStrategy]="noopSortStrategy"
         [allowFiltering]="true">
@@ -18,7 +18,7 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'QuantityPerUnit'" [sortable]="true"></igx-column >
+        <igx-column [field]="'QuantityPerUnit'" [sortable]="true"></igx-column>
         <igx-column [field]="'ReorderLevel'" dataType="number" [headerClasses]="'headerAlignSyle'" [sortable]="true">
             <ng-template igxHeader>
                 <span class="cellAlignSyle">ReorderLevel</span>

@@ -139,6 +139,18 @@ export class ComboConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            additionalFiles: ['/src/app/services/remoteNwind.service.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxComboModule', 'IgxSimpleComboModule', 'IgxToastModule',
+                    'HttpClientModule', 'RemoteNWindService', 'SimpleComboRemoteComponent'],
+                ngDeclarations: ['SimpleComboRemoteComponent'],
+                ngImports: ['IgxComboModule', 'IgxSimpleComboModule', 'IgxToastModule', 'HttpClientModule'],
+                ngProviders: ['RemoteNWindService']
+            }),
+            component: 'SimpleComboRemoteComponent'
+        }));
+
+        configs.push(new Config({
             additionalFiles: ['/src/app/data/cities15000-regions-countries.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxComboModule', 'IgxSimpleComboModule', 'SimpleComboStylingComponent'],

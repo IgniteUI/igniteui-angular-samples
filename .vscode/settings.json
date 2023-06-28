@@ -7,5 +7,6 @@
         "angular",
         "igniteui",
         "igniteui-angular"
-    ]
+    ],
+    "typescript.tsdk": "node_modules\\typescript\\lib"
 }

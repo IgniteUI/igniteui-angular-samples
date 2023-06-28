@@ -43,10 +43,10 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 '/src/app/hierarchical-grid/models.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxHierarchicalGridModule', 'HGridEditingSampleComponent', 'IgxDialogModule',
-                    'IgxButtonModule', 'IgxCheckboxModule', 'IgxDatePickerModule', 'IgxPreventDocumentScrollModule'],
+                    'IgxButtonModule', 'IgxCheckboxModule', 'IgxDatePickerModule', 'IgxPreventDocumentScrollModule', 'IgxInputGroupModule'],
                 ngDeclarations: ['HGridEditingSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxDialogModule', 'IgxButtonModule', 'IgxCheckboxModule',
-                    'IgxDatePickerModule']
+                    'IgxDatePickerModule', 'IgxInputGroupModule']
             }),
             component: 'HGridEditingSampleComponent'
         }));
@@ -55,9 +55,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
                 '/src/app/hierarchical-grid/models.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxHierarchicalGridModule', 'HGridEditingEventsComponent', 'IgxToastModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['IgxHierarchicalGridModule', 'HGridEditingEventsComponent', 'IgxToastModule', 'IgxPreventDocumentScrollModule', 'IgxIconModule', 'IgxInputGroupModule'],
                 ngDeclarations: ['HGridEditingEventsComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxToastModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxToastModule', 'IgxIconModule', 'IgxInputGroupModule']
             }),
             component: 'HGridEditingEventsComponent'
         }));
@@ -102,10 +102,10 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxHierarchicalGridModule', 'HGridBatchEditingSampleComponent',
                     'IgxButtonModule', 'IgxCheckboxModule',
-                    'IgxDatePickerModule', 'IgxGridModule', 'IgxDialogModule', 'IgxPreventDocumentScrollModule'],
+                    'IgxDatePickerModule', 'IgxGridModule', 'IgxDialogModule', 'IgxPreventDocumentScrollModule','IgxInputGroupModule'],
                 ngDeclarations: ['HGridBatchEditingSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxButtonModule', 'IgxCheckboxModule',
-                    'IgxDatePickerModule', 'IgxGridModule', 'IgxDialogModule']
+                    'IgxDatePickerModule', 'IgxGridModule', 'IgxDialogModule', 'IgxInputGroupModule']
             }),
             component: 'HGridBatchEditingSampleComponent'
         }));
@@ -191,9 +191,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
                 '/src/app/hierarchical-grid/models.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxHierarchicalGridModule', 'HGridExternalExcelStyleFilteringComponent', 'IgxPreventDocumentScrollModule'],
+                imports: ['IgxHierarchicalGridModule', 'HGridExternalExcelStyleFilteringComponent', 'IgxSelectModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['HGridExternalExcelStyleFilteringComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxSelectModule']
             }),
             component: 'HGridExternalExcelStyleFilteringComponent'
         }));
@@ -261,9 +261,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 '/src/app/hierarchical-grid/models.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxHierarchicalGridModule', 'HGridSelectionSampleComponent', 'IgxSwitchModule',
-                    'IgxSnackbarModule', 'IgxButtonGroupModule', 'IgxPreventDocumentScrollModule'],
+                    'IgxSnackbarModule', 'IgxButtonGroupModule', 'IgxPreventDocumentScrollModule', 'IgxIconModule'],
                 ngDeclarations: ['HGridSelectionSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxSwitchModule', 'IgxSnackbarModule', 'IgxButtonGroupModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxSwitchModule', 'IgxSnackbarModule', 'IgxButtonGroupModule', 'IgxIconModule']
             }),
             component: 'HGridSelectionSampleComponent'
         }));
@@ -314,9 +314,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/hierarchical-data.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxHierarchicalGridModule', 'HGridDisplayDensitySampleComponent', 'IgxPreventDocumentScrollModule'],
+                imports: ['IgxHierarchicalGridModule', 'HGridDisplayDensitySampleComponent', 'IgxPreventDocumentScrollModule', 'IgxButtonGroupModule'],
                 ngDeclarations: ['HGridDisplayDensitySampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxButtonGroupModule']
             }),
             component: 'HGridDisplayDensitySampleComponent'
         }));
@@ -354,9 +354,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/hierarchical-data.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxHierarchicalGridModule', 'HGridToolbarPinningComponent', 'IgxPreventDocumentScrollModule'],
+                imports: ['IgxHierarchicalGridModule', 'HGridToolbarPinningComponent', 'IgxPreventDocumentScrollModule', 'RouterModule'],
                 ngDeclarations: ['HGridToolbarPinningComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'RouterModule', 'RouterModule.forRoot([])']
             }),
             component: 'HGridToolbarPinningComponent'
         }));
@@ -462,9 +462,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
                 '/src/app/hierarchical-grid/models.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxHierarchicalGridModule', 'HGridToolbarOptionsSampleComponent', 'IgxPreventDocumentScrollModule', 'IgxSwitchModule'],
+                imports: ['IgxHierarchicalGridModule', 'HGridToolbarOptionsSampleComponent', 'IgxPreventDocumentScrollModule', 'IgxSwitchModule', 'IgxInputGroupModule'],
                 ngDeclarations: ['HGridToolbarOptionsSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxSwitchModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxSwitchModule', 'IgxInputGroupModule']
             }),
             component: 'HGridToolbarOptionsSampleComponent'
         }));
@@ -473,9 +473,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
                 '/src/app/hierarchical-grid/models.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxHierarchicalGridModule', 'HGridToolbarCustomSampleComponent', 'IgxButtonModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['IgxHierarchicalGridModule', 'HGridToolbarCustomSampleComponent', 'IgxButtonModule', 'IgxPreventDocumentScrollModule', 'IgxIconModule'],
                 ngDeclarations: ['HGridToolbarCustomSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxButtonModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxButtonModule', 'IgxIconModule']
             }),
             component: 'HGridToolbarCustomSampleComponent'
         }));
@@ -529,9 +529,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/utils.ts', '/src/app/data/files.data.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxHierarchicalGridModule', 'HGridRowDragBaseComponent', 'IgxDragDropModule', 'IgxButtonModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['IgxHierarchicalGridModule', 'HGridRowDragBaseComponent', 'IgxDragDropModule', 'IgxButtonModule', 'IgxPreventDocumentScrollModule', 'IgxIconModule'],
                 ngDeclarations: ['HGridRowDragBaseComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxDragDropModule', 'IgxButtonModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxDragDropModule', 'IgxButtonModule', 'IgxIconModule']
             }),
             component: 'HGridRowDragBaseComponent'
         }));
@@ -704,9 +704,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 '/src/app/hierarchical-grid/models.ts'
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['HierarchicalGridColumnSelectionComponent', 'IgxHierarchicalGridModule'],
+                imports: ['HierarchicalGridColumnSelectionComponent', 'IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule', 'IgxSelectModule'],
                 ngDeclarations: ['HierarchicalGridColumnSelectionComponent'],
-                ngImports: ['IgxHierarchicalGridModule'],
+                ngImports: ['IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule', 'IgxSelectModule'],
                 ngProviders: []
             })
         }));
@@ -809,9 +809,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 '/src/app/hierarchical-grid/hierarchical-grid-save-state/about.component.html'
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxHierarchicalGridModule', 'HGridSaveStateComponent', 'HGridAboutComponent', 'IgxPreventDocumentScrollModule', 'Router', 'RouterModule'],
+                imports: ['IgxHierarchicalGridModule', 'IgxCheckboxModule', 'HGridSaveStateComponent', 'IgxIconModule', 'IgxButtonModule', 'HGridAboutComponent', 'IgxPreventDocumentScrollModule', 'Router', 'RouterModule'],
                 ngDeclarations: ['HGridSaveStateComponent', 'HGridAboutComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule',
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxCheckboxModule', 'IgxIconModule', 'IgxButtonModule',
                     'RouterModule.forRoot([\{component: HGridAboutComponent, path: \'hGrid-state-about\'},\{component: HGridSaveStateComponent, path: \'hGrid-state\'},\{ path: \'\', redirectTo: \'/hGrid-state\', pathMatch: \'full\' }])']
             }),
             component: 'HGridSaveStateComponent'
@@ -846,9 +846,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
                 '/src/app/hierarchical-grid/models.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule', 'HGridEditingLifecycleComponent', 'IgxSwitchModule'],
+                imports: ['IgxHierarchicalGridModule', 'IgxPreventDocumentScrollModule', 'HGridEditingLifecycleComponent', 'IgxSwitchModule', 'IgxIconModule', 'IgxButtonModule'],
                 ngDeclarations: ['HGridEditingLifecycleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxSwitchModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxSwitchModule', 'IgxIconModule', 'IgxButtonModule'],
                 ngProviders: []
             }),
             component: 'HGridEditingLifecycleComponent'

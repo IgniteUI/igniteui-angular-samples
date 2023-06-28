@@ -4,7 +4,8 @@ import {
     IgxTimePickerModule,
     IgxSliderModule,
     IgxCheckboxModule,
-    IgxSwitchModule
+    IgxSwitchModule,
+    IgxIconModule
 } from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 
@@ -37,10 +38,10 @@ export class AccordionConfigGenerator implements IConfigGenerator {
             component: 'AccordionSample3Component',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxCheckboxModule', 'IgxSliderModule',
-                    'IgxRadioModule', 'IgxTimePickerModule', 'AccordionSample3Component', 'IgxAccordionModule'],
+                    'IgxRadioModule', 'IgxTimePickerModule', 'AccordionSample3Component', 'IgxAccordionModule', 'IgxIconModule'],
                 ngDeclarations: ['AccordionSample3Component'],
                 ngImports: ['IgxCheckboxModule', 'IgxSliderModule',
-                    'IgxRadioModule', 'IgxTimePickerModule', 'IgxAccordionModule']
+                    'IgxRadioModule', 'IgxTimePickerModule', 'IgxAccordionModule', 'IgxIconModule']
             }),
             shortenComponentPathBy: '/layouts/accordion/'
         }));

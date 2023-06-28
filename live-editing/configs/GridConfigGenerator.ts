@@ -15,6 +15,7 @@ import {
     IgxCheckboxModule,
     IgxChipsModule,
     IgxComboModule,
+    IgxSimpleComboModule,
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
@@ -37,7 +38,8 @@ import {
     IgxTabsModule,
     IgxToastModule,
     IgxTooltipModule,
-    IgxToggleModule
+    IgxToggleModule,
+    IgxDropDownModule
 } from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class GridConfigGenerator implements IConfigGenerator {
@@ -52,7 +54,8 @@ export class GridConfigGenerator implements IConfigGenerator {
         RemotePagingService: '../../src/app/services/remotePaging.service',
         RemoteServiceVirt: '../../src/app/services/remoteVirtualization.service',
         FinancialDataService: '../../src/app/services/financial.service',
-        CRUDService: '../../src/app/services/crud.service'
+        CRUDService: '../../src/app/services/crud.service',
+        RemotePagingWithBatchEditingService: '../../src/app/services/remotePagingWithBatchEditing.service'
     };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -90,9 +93,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/invoiceData.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxButtonModule', 'IgxGridModule',
-                    'IgxSwitchModule', 'GridGroupBySampleComponent', 'IgxIconModule', 'IgxBadgeModule', 'IgxPreventDocumentScrollModule'],
-                ngDeclarations: ['GridGroupBySampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxButtonModule', 'IgxGridModule', 'IgxIconModule', 'IgxBadgeModule']
+                    'IgxSwitchModule', 'GridGroupBySampleComponent', 'IgxIconModule', 'IgxBadgeModule', 'IgxPreventDocumentScrollModule', 'IgxDropDownModule', 'IgxToggleModule'],
+                ngDeclarations: ['GridGroupByCustomSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxButtonModule', 'IgxGridModule', 'IgxIconModule', 'IgxBadgeModule', 'IgxDropDownModule','IgxToggleModule' ]
             })
         }));
 
@@ -112,7 +115,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/invoiceData.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxButtonModule', 'IgxButtonGroupModule', 'IgxGridModule',
-                    'IgxSwitchModule', 'GridGroupBySummarySampleComponent', 'IgxIconModule', 'IgxBadgeModule', 'IgxPreventDocumentScrollModule', 'IgxSwitchModule'],
+                    'IgxSwitchModule', 'GridGroupBySummarySampleComponent', 'IgxIconModule', 'IgxBadgeModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridGroupBySummarySampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxButtonModule', 'IgxButtonGroupModule', 'IgxGridModule',
                     'IgxIconModule', 'IgxBadgeModule', 'IgxSwitchModule']
@@ -200,10 +203,10 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: ['HttpClientModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule', 'IgxSnackbarModule',
                     'IgxGridModule', 'IgxIconModule', 'IgxInputGroupModule', 'IgxSwitchModule', 'GridSelectionSampleComponent', 'IgxPreventDocumentScrollModule',
-                    'FinancialDataService'],
+                    'FinancialDataService', 'IgxButtonGroupModule'],
                 ngDeclarations: ['GridSelectionSampleComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule', 'IgxGridModule', 'IgxSnackbarModule',
-                    'IgxIconModule', 'IgxInputGroupModule', 'IgxSwitchModule', 'HttpClientModule'],
+                    'IgxIconModule', 'IgxInputGroupModule', 'IgxSwitchModule', 'IgxButtonGroupModule', 'HttpClientModule'],
                 ngProviders: ['FinancialDataService']
             })
         }));
@@ -307,9 +310,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/localData.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxGridModule', 'IgxIconModule', 'IgxRippleModule',
-                    'SortingSampleComponent', 'IgxInputGroupModule', 'IgxSelectModule', 'IgxPreventDocumentScrollModule'],
+                    'SortingSampleComponent', 'IgxInputGroupModule', 'IgxSelectModule', 'IgxPreventDocumentScrollModule', 'IgxSimpleComboModule'],
                 ngDeclarations: ['SortingSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxRippleModule', 'IgxIconModule', 'IgxInputGroupModule', 'IgxSelectModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxRippleModule', 'IgxIconModule', 'IgxInputGroupModule', 'IgxSelectModule', 'IgxSimpleComboModule'],
                 ngProviders: []
             })
         }));
@@ -365,9 +368,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'PinningToolbarSampleComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['PinningToolbarSampleComponent', 'IgxGridModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['PinningToolbarSampleComponent', 'IgxGridModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule', 'RouterModule'],
                 ngDeclarations: ['PinningToolbarSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxIconModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxIconModule', 'RouterModule', 'RouterModule.forRoot([])'],
                 ngProviders: []
             })
         }));
@@ -411,9 +414,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/athletesData.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['GridToolbarSample2Component', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule',
-                    'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxPreventDocumentScrollModule'],
+                    'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxPreventDocumentScrollModule', 'IgxInputGroupModule'],
                 ngDeclarations: ['GridToolbarSample2Component'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule', 'IgxInputGroupModule'],
                 ngProviders: ['IgxExcelExporterService', 'IgxCsvExporterService']
             })
         }));
@@ -434,9 +437,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridToolbarSample4Component',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/athletesData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridToolbarSample4Component', 'IgxAvatarModule', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['GridToolbarSample4Component', 'IgxAvatarModule', 'IgxGridModule', 'IgxPreventDocumentScrollModule', 'IgxIconModule'],
                 ngDeclarations: ['GridToolbarSample4Component'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxGridModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxGridModule', 'IgxIconModule'],
                 ngProviders: []
             })
         }));
@@ -711,9 +714,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridExternalExcelStyleFilteringComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridExternalExcelStyleFilteringComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['GridExternalExcelStyleFilteringComponent', 'IgxGridModule', 'IgxSelectModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridExternalExcelStyleFilteringComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSelectModule']
             })
         }));
 
@@ -765,10 +768,10 @@ export class GridConfigGenerator implements IConfigGenerator {
                 '/src/app/grid/grid-save-state/about.component.html'
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridSaveStateComponent', 'IgxGridModule', 'IgxTooltipModule',
+                imports: ['GridSaveStateComponent', 'IgxGridModule', 'IgxTooltipModule', 'IgxCheckboxModule', 'IgxIconModule',
                     'IgxToastModule', 'IgxSwitchModule', 'AboutComponent', 'Router', 'RouterModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridSaveStateComponent', 'AboutComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxTooltipModule',
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxTooltipModule', 'IgxCheckboxModule', 'IgxIconModule',
                     'RouterModule.forRoot([\{component: AboutComponent, path: \'grid-about\'},\{component: GridSaveStateComponent, path: \'grid-state\'},\{ path: \'\', redirectTo: \'/grid-state\', pathMatch: \'full\' }])',
                     'IgxToastModule', 'IgxSwitchModule']
             })
@@ -889,9 +892,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'CustomGridPagingStyleSampleComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/athletesData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['CustomGridPagingStyleSampleComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['CustomGridPagingStyleSampleComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule', 'IgxIconModule'],
                 ngDeclarations: ['CustomGridPagingStyleSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxIconModule']
             })
         }));
 
@@ -946,18 +949,18 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridMultiColumnHeaderTemplateComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridMultiColumnHeaderTemplateComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['GridMultiColumnHeaderTemplateComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule', 'IgxIconModule'],
                 ngDeclarations: ['GridMultiColumnHeaderTemplateComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxIconModule']
             })
         }));
         configs.push(new Config({
             component: 'GridClipboardSampleComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridClipboardSampleComponent', 'IgxGridModule', 'IgxSwitchModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['GridClipboardSampleComponent', 'IgxGridModule', 'IgxSwitchModule', 'IgxInputGroupModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridClipboardSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSwitchModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSwitchModule', 'IgxInputGroupModule', 'IgxIconModule']
             })
         }));
         configs.push(new Config({
@@ -985,7 +988,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: ['GridCellSelectionComponent', 'IgxGridModule', 'IgxSwitchModule',
                     'IgxIconModule', 'IgxButtonGroupModule', 'IgxAvatarModule', 'IgxSnackbarModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridCellSelectionComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSnackbarModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSnackbarModule', 'IgxIconModule', 'IgxButtonGroupModule']
             })
         }));
 
@@ -1013,9 +1016,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridColumnDataTypesSampleComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridColumnDataTypesSampleComponent', 'IgxGridModule', 'IgxTooltipModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['GridColumnDataTypesSampleComponent', 'IgxGridModule', 'IgxTooltipModule', 'IgxInputGroupModule', 'IgxSelectModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridColumnDataTypesSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxTooltipModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxTooltipModule', 'IgxInputGroupModule', 'IgxSelectModule']
             })
         }));
 
@@ -1092,9 +1095,9 @@ export class GridConfigGenerator implements IConfigGenerator {
                 '/src/app/data/customers.ts'
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridColumnSelectionComponent', 'IgxGridModule'],
+                imports: ['GridColumnSelectionComponent', 'IgxGridModule', 'IgxSelectModule'],
                 ngDeclarations: ['GridColumnSelectionComponent'],
-                ngImports: ['IgxGridModule'],
+                ngImports: ['IgxGridModule', 'IgxSelectModule'],
                 ngProviders: []
             })
         }));
@@ -1209,14 +1212,13 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid Batch Editing with remote paging
         configs.push(new Config({
             component: 'RemotePagingBatchEditingComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/utils.ts', '/src/app/services/remotePaging.service.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/utils.ts', '/src/app/data/foods.ts', '/src/app/services/remotePagingWithBatchEditing.service.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['RemotePagingBatchEditingComponent', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
-                    'RemotePagingService', 'HttpClientModule', 'IgxPreventDocumentScrollModule'],
+                    'RemotePagingWithBatchEditingService', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['RemotePagingBatchEditingComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule',
-                    'HttpClientModule'],
-                ngProviders: ['RemotePagingService']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxDialogModule', 'IgxButtonModule'],
+                ngProviders: ['RemotePagingWithBatchEditingService']
             })
         }));
 
@@ -1257,9 +1259,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridExportVisualizationComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/utils.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridExportVisualizationComponent', 'IgxGridModule', 'IgxPreventDocumentScrollModule', 'IgxExcelExporterService', 'IgxCsvExporterService'],
+                imports: ['GridExportVisualizationComponent', 'IgxGridModule', 'IgxButtonModule', 'IgxPreventDocumentScrollModule', 'IgxExcelExporterService', 'IgxCsvExporterService'],
                 ngDeclarations: ['GridExportVisualizationComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxButtonModule'],
                 ngProviders: ['IgxExcelExporterService', 'IgxCsvExporterService']
             })
         }));
@@ -1278,9 +1280,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridEditingLifecycleComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxGridModule', 'IgxPreventDocumentScrollModule', 'GridEditingLifecycleComponent', 'IgxSwitchModule'],
+                imports: ['IgxGridModule', 'IgxPreventDocumentScrollModule', 'GridEditingLifecycleComponent', 'IgxSwitchModule', 'IgxIconModule'],
                 ngDeclarations: ['GridEditingLifecycleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSwitchModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSwitchModule', 'IgxIconModule'],
                 ngProviders: []
             })
         }));
@@ -1421,6 +1423,27 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        configs.push(new Config({
+            component: 'GridStatePersistenceSampleComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/financialData.ts', '/src/app/services/financial.service.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['GridStatePersistenceSampleComponent', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule', 'IgxIconModule', 'IgxButtonModule',
+                    'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxPreventDocumentScrollModule', 'FinancialDataService'],
+                ngDeclarations: ['GridStatePersistenceSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxGridModule', 'IgxSwitchModule', 'IgxIconModule', 'IgxButtonModule'],
+                ngProviders: ['FinancialDataService']
+            })
+        }));
+
+        configs.push(new Config({
+            component: 'GridCascadingCombosComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/cities15000-regions-countries.ts', '/src/app/data/data.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxGridModule', 'GridCascadingCombosComponent', 'IgxPreventDocumentScrollModule', 'IgxComboModule', 'IgxSimpleComboModule'],
+                ngDeclarations: ['GridCascadingCombosComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxComboModule', 'IgxSimpleComboModule']
+            })
+        }));
 
         return configs;
     }

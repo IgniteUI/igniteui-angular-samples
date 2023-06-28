@@ -1,23 +1,36 @@
 <div class="grid__wrapper">
-    <igx-tree-grid [igxPreventDocumentScroll]="true"  #treegrid1 [data]="data" [autoGenerate]="false" height="600px" width="100%"
-        [allowFiltering]="true" filterMode="excelStyleFilter" [filterStrategy]="filterStrategy"
-        primaryKey="ID" foreignKey="ParentID">
+    <div class="flex-column">
+        <igx-select #gridColumns value="ID" class="igSelect">
+            <label igxLabel>Columns:</label>
+            <igx-select-item *ngFor="let c of tGrid.columns" [value]="c.field">
+                {{ c.field }}
+            </igx-select-item>
+        </igx-select>
 
-        <igx-column field="Name" header="Product Name" [dataType]="'string'" [sortable]="true" [disableHiding]="true">
+        <igx-grid-excel-style-filtering [column]="tGrid.getColumnByName(gridColumns.value)">
+        </igx-grid-excel-style-filtering>
+    </div>
+
+    <igx-tree-grid [igxPreventDocumentScroll]="true" [data]="data" [autoGenerate]="false" height="653px" width="800px" primaryKey="ID"
+        foreignKey="ParentID" #tGrid>
+        <igx-column field="ID" header="Order ID">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price Category" dataType="number" [sortable]="true" [disableHiding]="true">
+        <igx-column field="Name" header="Order Product">
+        </igx-column>
+        <igx-column field="Category" header="Category">
+        </igx-column>
+        <igx-column field="Units" header="Units" dataType="number">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Unit Price" [dataType]="'currency'" [pipeArgs]="formatOptions">
+        </igx-column>
+        <igx-column field="Price" header="Price" [dataType]="'currency'" [pipeArgs]="formatOptions">
+        </igx-column>
+        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'">
+        </igx-column>
+        <igx-column field="Delivered" header="Delivered" [dataType]="'boolean'">
             <ng-template igxCell let-cell="cell" let-val>
-                <span *ngIf="cell.row.data.UnitPrice === 0">-</span>
-                <span *ngIf="cell.row.data.UnitPrice !== 0">${{val}}</span>
-            </ng-template>
-        </igx-column>
-        <igx-column field="AddedDate" header="Added Date" [dataType]="'date'" [sortable]="true" [disableHiding]="true">
-        </igx-column>
-        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [sortable]="true" [disableHiding]="true">
-            <ng-template igxCell let-cell="cell" let-val>
-                <span *ngIf="cell.row.data.UnitPrice === 0">-</span>
-                <img *ngIf="cell.row.data.UnitPrice !== 0 && val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
-                <img *ngIf="cell.row.data.UnitPrice !== 0 && !val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+                <img *ngIf="val" src="assets/images/grid/active.png" title="Delivered" alt="Delivered" />
+                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered" />
             </ng-template>
         </igx-column>
     </igx-tree-grid>
