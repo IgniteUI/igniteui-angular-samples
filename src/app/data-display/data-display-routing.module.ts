@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BadgeIconComponent } from './badge/badge-icon/badge-icon.component';
 import { BadgeSample2Component } from './badge/badge-sample-2/badge-sample-2.component';
 import { BadgeSample3Component } from './badge/badge-sample-3/badge-sample-3.component';
 import {
@@ -52,6 +53,11 @@ import { MaterialSymbolsComponent } from './icon/material-symbols/material-symbo
 import { MaterialIconsExtendedComponent } from './icon/material-icons-extended/material-icons-extended.component';
 
 export const dataDisplayRoutes: Routes = [
+    {
+        component: BadgeIconComponent,
+        data: dataDisplayRoutesData['badge-icon'],
+        path: 'badge-icon'
+    },
     {
         component: BadgeSample2Component,
         data: dataDisplayRoutesData['badge-sample-2'],
