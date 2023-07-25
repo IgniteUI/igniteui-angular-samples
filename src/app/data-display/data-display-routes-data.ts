@@ -1,6 +1,7 @@
 /*eslint-disable*/
 
 export const dataDisplayRoutesData = {
+    "badge-icon": { displayName: "Badge Icon Sample", parentName: "Badge" },
     "badge-sample-2": { displayName: "Simple Badge", parentName: "Badge" },
     "badge-sample-3": { displayName: "Badge for List Items", parentName: "Badge" },
     "badge-styling-sample": { displayName: "Badge Styling Sample", parentName: "Badge" },

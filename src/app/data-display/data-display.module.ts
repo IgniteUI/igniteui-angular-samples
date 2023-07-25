@@ -23,6 +23,7 @@ import {
     IgxTextSelectionModule,
     IgxToastModule
 } from 'igniteui-angular';
+import { BadgeIconComponent } from './badge/badge-icon/badge-icon.component';
 import { BadgeSample2Component } from './badge/badge-sample-2/badge-sample-2.component';
 import { BadgeSample3Component } from './badge/badge-sample-3/badge-sample-3.component';
 import { BadgeStylingSampleComponent } from './badge/badge-styling-sample/badge-styling-sample.component';
@@ -73,6 +74,7 @@ import { MaterialSymbolsComponent } from './icon/material-symbols/material-symbo
     declarations: [
         DisplayFormatPipe,
         InputFormatPipe,
+        BadgeIconComponent,
         BadgeSample2Component,
         BadgeSample3Component,
         BadgeStylingSampleComponent,
