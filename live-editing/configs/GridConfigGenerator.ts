@@ -958,9 +958,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridClipboardSampleComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridClipboardSampleComponent', 'IgxGridModule', 'IgxSwitchModule', 'IgxInputGroupModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['GridClipboardSampleComponent', 'IgxGridModule', 'IgxSwitchModule', 'IgxInputGroupModule', 'IgxIconModule', 'IgxPreventDocumentScrollModule', 'IgxButtonModule'],
                 ngDeclarations: ['GridClipboardSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSwitchModule', 'IgxInputGroupModule', 'IgxIconModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxSwitchModule', 'IgxInputGroupModule', 'IgxIconModule', 'IgxButtonModule']
             })
         }));
         configs.push(new Config({
