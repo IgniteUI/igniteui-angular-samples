@@ -12,6 +12,8 @@ igx-pivot-grid {
     igx-pivot-data-selector {
         border: 1px solid hsla(var(--igx-gray-200));
         margin: 0 8px;
+        --ig-spacing-inline-large: null;
+        --ig-spacing-block-large: null;
     }
 }
 
