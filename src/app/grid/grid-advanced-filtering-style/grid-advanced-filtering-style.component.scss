@@ -4,10 +4,6 @@ $yellow: #ffcd0f;
 $black: #292826;
 $muted-yellow: #ffe482;
 
-$custom-grid: grid-theme(
-    $filtering-row-background: $black
-);
-
 $custom-button: button-theme(
     $schema: $dark-material-schema,
     $background: $black,
@@ -16,15 +12,12 @@ $custom-button: button-theme(
     $hover-background: $yellow,
     $focus-foreground: $yellow,
     $focus-background: $black,
-    $border-color: $yellow
-);
-
-$custom-raised-button: button-theme(
-    $schema: $dark-material-schema,
-    $background: $yellow,
-    $foreground: $black,
-    $hover-background: $yellow,
-    $hover-foreground: $black
+    $active-background: $yellow,
+    $active-foreground: $black,
+    $border-color: $yellow,
+    $hover-border-color: $yellow,
+    $focus-border-color: $yellow,
+    $active-border-color: $yellow
 );
 
 $custom-button-group: button-group-theme(
@@ -34,7 +27,9 @@ $custom-button-group: button-group-theme(
     $item-border-color: $yellow,
     $item-selected-background: $yellow,
     $item-hover-background: $yellow,
-    $item-selected-hover-background: $yellow
+    $item-selected-hover-background: $yellow,
+    $item-disabled-border: $yellow,
+    $item-selected-border-color: $yellow
 );
 
 $custom-input-group: input-group-theme(
@@ -74,49 +69,17 @@ $custom-drop-down: drop-down-theme(
     margin: 16px;
 
 	::ng-deep {
-		@include css-vars($custom-grid);
 
         igx-advanced-filtering-dialog {
-			@include css-vars($custom-button);
+            @include theme(
+            $palette: $dark-material-palette
+            );
+
+            @include css-vars($custom-button);
 			@include css-vars($custom-button-group);
 			@include css-vars($custom-input-group);
 			@include css-vars($custom-chip);
 			@include css-vars($custom-drop-down);
-
-			.igx-excel-filter__apply {
-				@include css-vars($custom-raised-button);
-			}
-
-            .igx-filter-empty__title {
-                color: $yellow
-            }
-
-            .igx-advanced-filter__header {
-                color: $yellow;
-                background-color: $black;
-            }
-
-            .igx-filter-tree__expression-actions igx-icon {
-                color: $yellow
-            }
-
-            .igx-filter-tree__expression-actions igx-icon:hover {
-                color: $muted-yellow
-            }
-
-            .igx-filter-tree__expression-actions igx-icon:focus {
-                color: $muted-yellow
-            }
-
-            .igx-filter-contextual-menu {
-                border: 1px solid $yellow
-            }
-
-            .igx-filter-contextual-menu__close-btn {
-                position: absolute !important;
-                background: $black !important;
-                border-color: $yellow !important;
-            }
         }
     }
 }
