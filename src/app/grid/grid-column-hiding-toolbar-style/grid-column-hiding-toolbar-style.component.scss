@@ -37,20 +37,61 @@ $dark-checkbox-theme: checkbox-theme(
     $tick-color: $bg
 );
 
+$dark-radio-theme: radio-theme(
+    $label-color: $yellow,
+    $empty-color: $yellow,
+    $fill-color: $yellow
+);
+
 $dark-ripple-theme: ripple-theme(
     $color: $gray
 );
 
 :host {
 	@include css-vars($dark-column-actions-theme);
+    @include css-vars($dark-radio-theme);
 
-	igx-column-actions, igx-grid-toolbar {
-		@include css-vars($dark-checkbox-theme);
-		@include css-vars($dark-input-group);
-		@include css-vars($dark-ripple-theme);
-	}
+    ::ng-deep {
+        igx-column-actions, igx-grid-toolbar {
+            @include css-vars($dark-button-theme);
+            @include css-vars($dark-checkbox-theme);
+            @include css-vars($dark-input-group);
+            @include css-vars($dark-ripple-theme);
+        }
+    }
 }
 
 .grid__wrapper {
-    margin: 10px;
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.columnHidingContainer {
+    min-width: 250px;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px gray;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 2px rgba(50, 50, 50, 0.25);
+    igx-column-actions {
+        height: 460px;
+    }
+    background-color: $bg;
+}
+
+.columnsOrderOptionsContainer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.gridContainer {
+    width: 100%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
 }

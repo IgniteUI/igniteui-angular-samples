@@ -301,7 +301,7 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
             if ((key === 'arrowup' || key === 'arrowdown') && evt.ctrlKey) {
                 if (col && !col.columnGroup && col.sortable) {
-                    this._keyboardHandler.selectItem(1);IgxColumnGroupComponent
+                    this._keyboardHandler.selectItem(1);
                 }
             }
         }

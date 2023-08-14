@@ -102,14 +102,16 @@ export class CardConfigGenerator implements IConfigGenerator {
                     'IgxButtonModule',
                     'IgxCardModule',
                     'IgxRippleModule',
-                    'CardSample3Component'
+                    'CardSample3Component',
+                    'IgxLayoutModule',
                 ],
                 ngDeclarations: ['CardSample3Component'],
                 ngImports: [
                     'IgxAvatarModule',
                     'IgxButtonModule',
                     'IgxCardModule',
-                    'IgxRippleModule'
+                    'IgxRippleModule',
+                    'IgxLayoutModule',
                 ]
             }),
             additionalFiles: [

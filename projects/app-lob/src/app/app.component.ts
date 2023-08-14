@@ -36,4 +36,3 @@ export class AppComponent extends ThemableDirective implements OnInit {
         super.ngOnInit();
     }
 }
-

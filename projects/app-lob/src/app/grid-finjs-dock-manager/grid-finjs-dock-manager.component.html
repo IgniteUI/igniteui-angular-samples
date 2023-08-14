@@ -9,7 +9,7 @@
         </div>
         <div class="actionItem">
             <!-- Change volume -->
-            <igx-select [(ngModel)]="dataVolume" (ngModelChange)="paramsChanged()" [overlaySettings]="customOverlaySettings">
+            <igx-select [(ngModel)]="dataVolume" (ngModelChange)="paramsChanged()" [overlaySettings]="customOverlaySettings" [displayDensity]="'compact'">
                 <label igxLabel>Change data volume</label>
                 <igx-prefix>
                     <igx-icon>view_list</igx-icon>
@@ -21,7 +21,7 @@
         </div>
         <div class="actionItem">
             <!-- Change frequency -->
-            <igx-select [(ngModel)]="frequency" (ngModelChange)="paramsChanged()" [overlaySettings]="freqOverlaySettings" #freq>
+            <igx-select [(ngModel)]="frequency" (ngModelChange)="paramsChanged()" [overlaySettings]="freqOverlaySettings" [displayDensity]="'compact'" #freq>
                 <label igxLabel>Change update frequency</label>
                 <igx-prefix>
                     <igx-icon>cell_wifi</igx-icon>
@@ -166,4 +166,4 @@
     <ng-template #host gridHost>
     </ng-template>
 </igc-dockmanager>
-<div class="dark-theme" #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>
+<div [class]="isDarkTheme ? 'dark-theme' : 'light-theme'" #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>

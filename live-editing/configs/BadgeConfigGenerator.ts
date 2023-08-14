@@ -8,6 +8,18 @@ export class BadgeConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
+        // badge icon sample
+        configs.push(new Config({
+            component: 'BadgeIconComponent',
+            additionalFiles: ["src/app/data-display/badge/model/member.model.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxBadgeModule', 'IgxAvatarModule', 'BadgeIconComponent'],
+                ngDeclarations: ['BadgeIconComponent'],
+                ngImports: ['IgxBadgeModule', 'IgxAvatarModule']
+            }),
+            shortenComponentPathBy: "/data-display/badge/"
+        }));
+
         // badge sample 2
         configs.push(new Config({
             component: 'BadgeSample2Component',
