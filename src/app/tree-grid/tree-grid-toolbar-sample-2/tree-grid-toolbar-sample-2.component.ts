@@ -25,7 +25,8 @@ export class TreeGridToolbarSample2Component {
     public configureExport(args: IGridToolbarExportEventArgs) {
         // You can customize the exporting from this event
         const options: IgxExporterOptionsBase = args.options;
-        options.fileName = 'Custom Title';
+        
+        options.fileName = `Report_${new Date().toDateString()}`;
 
         if (options instanceof IgxExcelExporterOptions) {
             const excelOptions = options as IgxExcelExporterOptions;
