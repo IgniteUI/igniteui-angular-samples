@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BadgeIconComponent } from './badge/badge-icon/badge-icon.component';
 import { BadgeSample2Component } from './badge/badge-sample-2/badge-sample-2.component';
 import { BadgeSample3Component } from './badge/badge-sample-3/badge-sample-3.component';
 import {
@@ -48,9 +49,15 @@ import { TextHighlightSample1Component
 import { TextHighlightSample2Component
 } from './text-highlight/text-highlight-sample-2/text-highlight-sample-2.component';
 import { TextHighlightStyleComponent } from './text-highlight/text-highlight-style/text-highlight-style.component';
+import { MaterialSymbolsComponent } from './icon/material-symbols/material-symbols.component';
 import { MaterialIconsExtendedComponent } from './icon/material-icons-extended/material-icons-extended.component';
 
 export const dataDisplayRoutes: Routes = [
+    {
+        component: BadgeIconComponent,
+        data: dataDisplayRoutesData['badge-icon'],
+        path: 'badge-icon'
+    },
     {
         component: BadgeSample2Component,
         data: dataDisplayRoutesData['badge-sample-2'],
@@ -210,6 +217,11 @@ export const dataDisplayRoutes: Routes = [
         component: ChipStylingSampleComponent,
         data: dataDisplayRoutesData['chip-styling'],
         path: 'chip-styling'
+    },
+    {
+        component: MaterialSymbolsComponent,
+        data: dataDisplayRoutesData['material-symbols'],
+        path: 'material-symbols'
     },
     {
         component: MaterialIconsExtendedComponent,

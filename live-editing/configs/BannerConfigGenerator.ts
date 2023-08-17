@@ -91,8 +91,7 @@ export class BannerConfigGenerator implements IConfigGenerator {
                     'IgxRippleModule', 'IgxIconModule', 'BannerStylingComponent'],
                 ngDeclarations: ['BannerStylingComponent'],
                 ngImports: ['IgxBannerModule', 'IgxCardModule', 'IgxToastModule',  'IgxNavbarModule', 'IgxButtonModule',
-                    'IgxRippleModule', 'IgxIconModule', 'IgxButtonModule',
-                    'IgxRippleModule']
+                    'IgxRippleModule', 'IgxIconModule']
             }),
             shortenComponentPathBy: "/notifications/banner/"
         }));
