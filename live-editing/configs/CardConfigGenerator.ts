@@ -5,6 +5,7 @@ IgxChipsModule,
 IgxDividerModule,
 IgxExpansionPanelModule,
 IgxIconModule,
+IgxLayoutModule,
 IgxListModule,
 IgxRippleModule,
 IgxSliderModule} from 'igniteui-angular';
@@ -74,6 +75,7 @@ export class CardConfigGenerator implements IConfigGenerator {
                     'IgxIconModule',
                     'IgxCardModule',
                     'IgxDividerModule',
+                    'IgxLayoutModule',
                     'CardSample2Component'
                 ],
                 ngDeclarations: ['CardSample2Component'],
@@ -81,7 +83,8 @@ export class CardConfigGenerator implements IConfigGenerator {
                     'IgxButtonModule',
                     'IgxIconModule',
                     'IgxCardModule',
-                    'IgxDividerModule'
+                    'IgxDividerModule',
+                    'IgxLayoutModule',
                 ]
             }),
             additionalFiles: [
@@ -99,14 +102,16 @@ export class CardConfigGenerator implements IConfigGenerator {
                     'IgxButtonModule',
                     'IgxCardModule',
                     'IgxRippleModule',
-                    'CardSample3Component'
+                    'CardSample3Component',
+                    'IgxLayoutModule',
                 ],
                 ngDeclarations: ['CardSample3Component'],
                 ngImports: [
                     'IgxAvatarModule',
                     'IgxButtonModule',
                     'IgxCardModule',
-                    'IgxRippleModule'
+                    'IgxRippleModule',
+                    'IgxLayoutModule',
                 ]
             }),
             additionalFiles: [

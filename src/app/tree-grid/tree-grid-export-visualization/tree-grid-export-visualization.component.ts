@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FOODS_DATA } from '../data/foods';
+import { ORDERS_DATA } from '../data/orders';
 
 @Component({
     selector: 'app-tree-grid-export-visualization',
@@ -8,7 +8,7 @@ import { FOODS_DATA } from '../data/foods';
 })
 export class TreeGridExportVisualizationComponent {
     public localData = [];
-    private data = FOODS_DATA();
+    private data = ORDERS_DATA;
 
     constructor() {
         for (let i = 0; i < 15000; i += 3) {

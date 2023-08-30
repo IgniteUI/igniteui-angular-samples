@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import {
     AbsoluteScrollStrategy,
     BlockScrollStrategy,
@@ -32,16 +32,18 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
     private _target: HTMLElement;
 
     constructor(
-        @Inject(IgxOverlayService) public overlay: IgxOverlayService) {
-            this.overlay.opening
-                .pipe(takeUntil(this.destroy$))
-                .subscribe(() => this.previewHidden = true);
+        @Inject(IgxOverlayService) private overlay: IgxOverlayService,
+        private viewContainerRef: ViewContainerRef
+    ) {
+        this.overlay.opening
+            .pipe(takeUntil(this.destroy$))
+            .subscribe(() => this.previewHidden = true);
 
-            this.overlay
-                .closed
-                .pipe(takeUntil(this.destroy$))
-                .subscribe(() => this.previewHidden = false);
-        }
+        this.overlay
+            .closed
+            .pipe(takeUntil(this.destroy$))
+            .subscribe(() => this.previewHidden = false);
+    }
 
     public ngOnInit(): void {
         (this.mainContainer.nativeElement as HTMLElement).style.height = '450px';
@@ -77,7 +79,7 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
             this.overlay.detach(this._overlayId);
             delete this._overlayId;
         }
-        this._overlayId = this.overlay.attach(MyDynamicCardComponent, {
+        this._overlayId = this.overlay.attach(MyDynamicCardComponent, this.viewContainerRef, {
             target: this._target,
             positionStrategy,
             scrollStrategy,

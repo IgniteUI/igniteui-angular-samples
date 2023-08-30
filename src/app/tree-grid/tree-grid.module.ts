@@ -6,12 +6,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     IgxActionStripModule,
     IgxAvatarModule,
+    IgxBadgeModule,
     IgxBannerModule,
     IgxButtonGroupModule,
     IgxButtonModule,
+    IgxCheckboxModule,
+    IgxChipsModule,
+    IgxDatePickerModule,
     IgxDialogModule,
+    IgxDragDropModule,
+    IgxFocusModule,
     IgxGridModule,
     IgxIconModule,
+    IgxInputGroupModule,
     IgxListModule,
     IgxRadioModule,
     IgxRippleModule,
@@ -254,10 +261,17 @@ import { TreeGridSummaryExportComponent } from './tree-grid-summary-export/tree-
         IgxToastModule,
         IgxSelectModule,
         IgxBannerModule,
+        IgxBadgeModule,
+        IgxCheckboxModule,
         IgxSnackbarModule,
         IgxTooltipModule,
         IgxListModule,
-        IgxSimpleComboModule
+        IgxChipsModule,
+        IgxDatePickerModule,
+        IgxSimpleComboModule,
+        IgxInputGroupModule,
+        IgxDragDropModule,
+        IgxFocusModule
     ],
     providers: [RemoteFilteringService]
 })

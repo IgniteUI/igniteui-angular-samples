@@ -1,16 +1,17 @@
 const gulp = require("gulp");
 const fs = require("fs");
 const path = require("path");
-const domino = require('domino');
 const es = require('event-stream');
 const fsExtra = require("fs-extra");
-const tsNode = require('ts-node').register({
+
+require('ts-node').register({
     transpileOnly: true,
     compilerOptions: {
         module: "commonjs",
         allowJs: true
     }
 });
+
 const { generateLiveEditing } = require('igniteui-live-editing');
 const argv = require("yargs").argv;
 
@@ -151,7 +152,7 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                 directories.push(child);
             }
         });
-        
+
     const jsonSamplesPath = path.join(__dirname, `${projectPath}/assets/samples`);
     const sharedJson = JSON.parse(fs.readFileSync(path.join(jsonSamplesPath, "/shared.json")));
     const submoduleAppDest = submodule + `/${dest}/`;
@@ -165,6 +166,7 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
             fs.readFile(file.path, 'utf-8', (err, content) => {
                 // Adjust sample application bundle files
                 const jsonObj = JSON.parse(content);
+                const codesandboxConfigFolder = '.codesandbox';
                 const additionals = [];
                 const packageJson =
                 {
@@ -196,6 +198,8 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                     fs.mkdirSync(sampleAppPath);
                 }
 
+                fs.mkdirSync(`${sampleAppPath}/${codesandboxConfigFolder}`);
+
                 // Distribute Sample Files
                 jsonObj.sampleFiles.forEach(sampleFile => {
                     let sampleContent;
@@ -210,10 +214,12 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                     let tempPath = "";
                     paths.forEach(p => {
                         tempPath += p + "/";
-                        if (p.indexOf(".") !== -1) {
+                        if (p.indexOf(".") !== -1 && p !== codesandboxConfigFolder) {
                             fs.writeFileSync(sampleAppPath + "/" + tempPath, sampleContent);
                         } else
-                            if (!fs.existsSync(sampleAppPath + "/" + tempPath)) {
+                            if (p === 'Dockerfile') {
+                                fs.writeFileSync(sampleAppPath + "/" + tempPath, sampleContent);
+                            } else if (!fs.existsSync(sampleAppPath + "/" + tempPath)) {
                                 fs.mkdirSync(sampleAppPath + "/" + tempPath)
                             }
                     })
@@ -234,6 +240,58 @@ const processDemosCrmWithScss = () => processApp("projects/app-crm/src", "angula
 let repositoryfyAngularDemos;
 let repositoryfyAngularDemosLob;
 let repositoryfyAngularDemosCrm;
+
+const copyGitHooks = async (cb) => {
+
+    if (process.env.AZURE_PIPELINES || process.env.TRAVIS || process.env.CI || !fs.existsSync('.git')) {
+        return;
+    }
+
+    const gitHooksDir = './.git/hooks/';
+    const defaultCopyHookDir = gitHooksDir + 'scripts/';
+    const dirs = [
+        gitHooksDir,
+        defaultCopyHookDir,
+        defaultCopyHookDir + 'templates',
+        defaultCopyHookDir + 'templateValidators',
+        defaultCopyHookDir + 'utils'
+    ];
+
+    dirs.forEach((dir) => {
+        if (!fs.existsSync(dir)) {
+            fs.mkdir(dir, (err) => {
+                if (err) {
+                    throw err;
+                }
+            });
+        }
+    });
+
+    const defaultHookDir = './.hooks/scripts/';
+
+    fs.copyFileSync(defaultHookDir + 'templates/default.js',
+        defaultCopyHookDir + 'templates/default.js');
+
+    fs.copyFileSync(defaultHookDir + 'templateValidators/default-style-validator.js',
+        defaultCopyHookDir + 'templateValidators/default-style-validator.js');
+
+    fs.copyFileSync(defaultHookDir + 'utils/issue-validator.js',
+        defaultCopyHookDir + 'utils/issue-validator.js');
+
+    fs.copyFileSync(defaultHookDir + 'utils/line-limits.js',
+        defaultCopyHookDir + 'utils/line-limits.js');
+
+    fs.copyFileSync(defaultHookDir + 'common.js',
+        defaultCopyHookDir + 'common.js');
+
+    fs.copyFileSync(defaultHookDir + 'validate.js',
+        defaultCopyHookDir + 'validate.js');
+
+    fs.copyFileSync('./.hooks/prepare-commit-msg',
+        './.git/hooks/prepare-commit-msg');
+
+    return await cb();
+};
 
 const cleanupAngularDemos = (cb) => {
     fsExtra.removeSync(submodule + "/angular-demos");
@@ -256,3 +314,4 @@ const cleanupAngularDemosCrm = (cb) => {
 exports.repositoryfyAngularDemos = repositoryfyAngularDemos = gulp.series(cleanupAngularDemos, processDemosWithScss);
 exports.repositoryfyAngularDemosLob = repositoryfyAngularDemosLob = gulp.series(cleanupAngularDemosLob, processDemosLobWithScss);
 exports.repositoryfyAngularDemosCrm = repositoryfyAngularDemosCrm = gulp.series(cleanupAngularDemosCrm, processDemosCrmWithScss);
+exports.copyGitHooks = copyGitHooks;

@@ -45,6 +45,17 @@ export class IconConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/data-display/icon/"
         }));
 
+        // Material Symbols Sample
+        configs.push(new Config({
+            component: 'MaterialSymbolsComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxIconModule', 'MaterialSymbolsComponent'],
+                ngDeclarations: ['MaterialSymbolsComponent'],
+                ngImports: ['IgxIconModule']
+            }),
+            shortenComponentPathBy: "/data-display/material-symbols/"
+        }));
+
         // Material icons extended sample
         configs.push(new Config({
             component: 'MaterialIconsExtendedComponent',

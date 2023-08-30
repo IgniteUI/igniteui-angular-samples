@@ -6,14 +6,19 @@ steps:
 - script: npm config set @infragistics:registry $(npmRegistry)
   displayName: 'Npm add registry'
 
-- script: npm config set $(igScope):always-auth=true
-  displayName: 'Npm config'
-
 - script: npm config set $(igScope):_auth=$(token)
   displayName: 'Npm config auth'
 
-- script: npm ci
-  displayName: 'Install dependencies'
+#- script: npm ci
+#  displayName: 'Install dependencies'
+#  env:
+#    AZURE_PIPELINES: "true"
+
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'install  --legacy-peer-deps'
+    customEndpoint: 'public proget'
   env:
     AZURE_PIPELINES: "true"
 

@@ -1,7 +1,7 @@
 <div class="grid__wrapper">
     <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data | async" [height]="'500px'" width="100%" [autoGenerate]='false' [allowFiltering]="true">
         <igx-column [field]="'Category'" [width]="'120px'"></igx-column>
-        <igx-column [field]="'Type'" [width]="'150px'" [filterable]='false'></igx-column>
+        <igx-column [field]="'Type'" [width]="'150px'" [filterable]="false"></igx-column>
         <igx-column [field]="'Open Price'" [width]="'120px'" dataType="number" [formatter]="formatCurrency">
         </igx-column>
         <igx-column [field]="'Price'" [width]="'120px'" dataType="number" [formatter]="formatCurrency"></igx-column>

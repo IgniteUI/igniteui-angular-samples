@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-snackbar-style',
@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SnackbarStyleComponent {
 
-  constructor() { }
+  constructor(public elem: ElementRef) { }
 
   public close(element) {
     element.close();

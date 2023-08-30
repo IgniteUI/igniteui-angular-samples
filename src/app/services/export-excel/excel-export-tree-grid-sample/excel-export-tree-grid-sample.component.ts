@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular';
-import { FOODS_DATA } from '../../../tree-grid/data/foods';
+import { ORDERS_DATA } from '../../../tree-grid/data/orders';
 
 @Component({
   selector: 'app-excel-export-tree-grid-sample',
@@ -14,10 +14,17 @@ export class TreeGridExcelExportSample1Component implements OnInit {
 
   public data: any[];
 
+  public options = {
+    digitsInfo: '1.2-2',
+    currencyCode: 'USD'
+  };
+  public formatOptions = this.options;
+
+
   constructor() { }
 
   public ngOnInit(): void {
-    this.data = FOODS_DATA();
+    this.data = ORDERS_DATA;
   }
     /*
     The following code demonstrates how to attach event handlers to exporter specific events

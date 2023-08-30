@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import {
     IgcFormsModule, IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule,
     IgxCardModule, IgxCheckboxModule, IgxChipsModule, IgxComboModule, IgxDatePickerModule, IgxDialogModule, IgxDividerModule,
+    IgxDragDropModule,
+    IgxDropDownModule,
     IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule,
     IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSimpleComboModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
     IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
@@ -138,6 +140,8 @@ import { GridValidatorServiceCrossFieldComponent } from './grid-validator-servic
 import { GridValidationStyleComponent } from './grid-validation-style/grid-validation-style.component';
 import { GridValidatorServiceExtendedComponent, PhoneFormatDirective } from './grid-validator-service-extended/grid-validator-service-extended.component';
 import { GridSummaryExportComponent } from './grid-summary-export/grid-summary-export.component';
+import { GridStatePersistenceSampleComponent } from './grid-state-persistence-sample/grid-state-persistance-sample.component';
+import { GridCascadingCombosComponent } from './grid-cascading-combos/grid-cascading-combos.component';
 
 @NgModule({
     declarations: [
@@ -266,7 +270,9 @@ import { GridSummaryExportComponent } from './grid-summary-export/grid-summary-e
         GridValidationStyleComponent,
         GridValidatorServiceExtendedComponent,
         PhoneFormatDirective,
-        GridSummaryExportComponent
+        GridSummaryExportComponent,
+        GridStatePersistenceSampleComponent,
+        GridCascadingCombosComponent
     ],
     imports: [
         CommonModule,
@@ -306,7 +312,9 @@ import { GridSummaryExportComponent } from './grid-summary-export/grid-summary-e
         IgxDividerModule,
         IgxActionStripModule,
         IgxListModule,
-        IgxSimpleComboModule
+        IgxSimpleComboModule,
+        IgxDragDropModule,
+        IgxDropDownModule
     ]
 })
 export class GridsModule { }

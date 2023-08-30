@@ -1,9 +1,9 @@
 <div class="grid__wrapper">
     <igx-grid #grid [data]="data" [autoGenerate]="false" height="520px" width="100%"
         [allowFiltering]="true" [locale]="locale" [rowEditable]="true" [primaryKey]="'ProductID'">
-        <igx-column field="ProductName" header="Product Name" [dataType]="'string'" [groupable]="true">
+        <igx-column field="ProductName" header="Product Name" [groupable]="true">
         </igx-column>
-        <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'" [groupable]="true">
+        <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [groupable]="true">
         </igx-column>
         <igx-column field="UnitPrice" header="Unit Price" [sortable]="true" [hasSummary]="true"
             [dataType]="'currency'" [groupable]="true">
@@ -13,7 +13,7 @@
         <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [groupable]="true">
         </igx-column>
     </igx-grid>
-    <igx-select [(ngModel)]="locale" (ngModelChange)="updateLocale()">
+    <igx-select [(ngModel)]="locale" (ngModelChange)="updateLocale()" [displayDensity]="'compact'">
         <igx-select-item *ngFor="let locale of selectLocales" [value]="locale">
             {{ locale }}
         </igx-select-item>

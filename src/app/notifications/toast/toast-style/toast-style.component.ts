@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 
 @Component({
@@ -9,6 +9,8 @@ import { IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 export class ToastStyleComponent {
     public toast: IgxToastComponent;
     public position = VerticalAlignment;
+
+    constructor(public elem: ElementRef) { }
 
     openToast(toast: IgxToastComponent, pos: VerticalAlignment) {
         toast.positionSettings.verticalDirection = pos;

@@ -52,8 +52,8 @@ const metadata = [
     },
     {
         url: Routes.BostonMarathon,
-        title: 'Boston Marathon 2020 – Angular Data Grid Example',
-        description: 'Boston Marathon 2020 – Angular Data Grid Example',
+        title: 'Boston Marathon 2023 – Angular Data Grid Example',
+        description: 'Boston Marathon 2023 – Angular Data Grid Example',
         og_url: 'https://www.infragistics.com/angular-demos-lob/grid/grid',
         folder: 'grid'
     },

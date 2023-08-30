@@ -1,5 +1,5 @@
 
-<igx-combo #templateCombo class="combo" [data]="lData" [valueKey]="'field'"
+<igx-combo #templateCombo class="combo" [data]="lData" [valueKey]="'field'" [groupKey]="'region'"
            [itemsMaxHeight]="250" searchPlaceholder="Search..." [allowCustomValues]="true">
            <label igxLabel>Locations</label>
            <igx-prefix><igx-icon>pin_drop</igx-icon></igx-prefix>
@@ -8,6 +8,10 @@
             <span class="state">{{ display[key] }} - </span>
             <span class="region">{{ display.region }}</span>
         </div>
+    </ng-template>
+
+    <ng-template igxComboHeaderItem let-display let-key="groupKey">
+        <div class="header-item">Region: {{ display[key] }}</div>
     </ng-template>
 
     <ng-template igxComboHeader>
@@ -32,9 +36,7 @@
         <igx-icon>cancel</igx-icon>
     </ng-template>
 
-    <igx-combo>
-        <ng-template igxComboEmpty>
-            <span class="empty-class">No available states</span>
-        </ng-template>
-    </igx-combo>
+    <ng-template igxComboEmpty>
+        <span class="empty-class">No available states</span>
+    </ng-template>
 </igx-combo>

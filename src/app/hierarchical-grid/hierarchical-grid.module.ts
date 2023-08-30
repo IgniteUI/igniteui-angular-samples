@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule,
     IgxChipsModule, IgxComboModule, IgxDatePickerModule, IgxDialogModule,
+    IgxDragDropModule,
     IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule,
     IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
     IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from 'igniteui-angular';
@@ -223,7 +224,8 @@ import { HGridSummaryExportComponent } from './hgrid-summary-export/hgrid-summar
         IgxSnackbarModule,
         IgxTooltipModule,
         IgxTabsModule,
-        IgxListModule
+        IgxListModule,
+        IgxDragDropModule
     ]
 })
 export class HierarchicalGridModule { }

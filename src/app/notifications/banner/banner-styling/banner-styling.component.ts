@@ -1,11 +1,12 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { IgxBannerComponent, IgxToastComponent, slideInLeft, slideOutRight, VerticalAlignment } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 
 @Component({
     selector: 'app-banner-styling',
     styleUrls: ['banner-styling.component.scss', '../banner-samples.scss'],
-    templateUrl: 'banner-styling.component.html'
+    templateUrl: 'banner-styling.component.html',
+    encapsulation: ViewEncapsulation.None
 })
 
 export class BannerStylingComponent implements OnInit, OnDestroy {

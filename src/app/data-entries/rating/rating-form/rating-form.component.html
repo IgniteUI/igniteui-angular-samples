@@ -17,11 +17,11 @@
                 <igc-rating [(ngModel)]="product.UserRating" name="userRating"></igc-rating>
             </igx-card-content>
             <igx-card-actions>
-                <button igxButton="outlined" igxRipple>Buy again</button>
+                <button igxButton="outlined" igxRipple igxStart>Buy again</button>
                 <button igxButton="icon"
                     igxRipple
                     [igxRippleCentered]="true"
-                    *ngFor="let icon of product.icons">
+                    *ngFor="let icon of product.icons" igxEnd>
                     <igx-icon [style.color]="'#ECAA53'">{{icon}}</igx-icon>
                 </button>
             </igx-card-actions>

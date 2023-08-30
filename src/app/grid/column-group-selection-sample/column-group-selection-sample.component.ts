@@ -24,3 +24,4 @@ export class GridColumnGroupSelectionComponent implements OnInit, AfterViewInit 
         this.cdr.detectChanges();
     }
 }
+

@@ -1,6 +1,7 @@
 /*eslint-disable*/
 
 export const dataDisplayRoutesData = {
+    "badge-icon": { displayName: "Badge Icon Sample", parentName: "Badge" },
     "badge-sample-2": { displayName: "Simple Badge", parentName: "Badge" },
     "badge-sample-3": { displayName: "Badge for List Items", parentName: "Badge" },
     "badge-styling-sample": { displayName: "Badge Styling Sample", parentName: "Badge" },
@@ -15,6 +16,7 @@ export const dataDisplayRoutesData = {
     "icon-sample-1": { displayName: "Simple Icons", parentName: "Icon" },
     "icon-styling": { displayName: "Icon Styling", parentName: "Icon" },
     "svg-icon-sample": { displayName: "SVG Icons", parentName: "Icon" },
+    "material-symbols": { displayName: "Material Symbols", parentName: "Icon" },
     "material-icons-extended": { displayName: "Material Icons Extended", parentName: "Icon" },
     "igx-for-sample-1": { displayName: "List with igxFor directive", parentName: "For" },
     "igx-for-sample-2": { displayName: "IgxFor Horizontal virtualization", parentName: "For" },

@@ -10,10 +10,11 @@
     <igx-tree-grid [igxPreventDocumentScroll]="true"
         #grid1 [data]="data"
         primaryKey="ID" foreignKey="ParentID"
-        height="350px">
+        height="350px"
+        (columnInit)="init($event)">
         <igx-column *ngFor="let c of columns"
             [field]="c.field"
-            [header]="c.field"
+            [header]="c.header"
             [cellStyles]="c.cellStyles">
         </igx-column>
     </igx-tree-grid>

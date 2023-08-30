@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnDestroy, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, OnDestroy, ViewChild, ViewContainerRef } from '@angular/core';
 import {
     ConnectedPositioningStrategy,
     HorizontalAlignment,
@@ -19,7 +19,10 @@ export class OverlayPositionSample2Component implements OnDestroy {
     private buttonElement: ElementRef;
     private _overlayId: string;
 
-    constructor(@Inject(IgxOverlayService) public overlayService: IgxOverlayService) { }
+    constructor(
+        @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
+        private viewContainerRef: ViewContainerRef
+    ) { }
 
     public showOverlay() {
         if (!this._overlayId) {
@@ -37,7 +40,7 @@ export class OverlayPositionSample2Component implements OnDestroy {
                 // Pass in the positioning strategy
                 positionStrategy: strategy
             };
-            this._overlayId = this.overlayService.attach(MyDynamicCardComponent, overlaySettings);
+            this._overlayId = this.overlayService.attach(MyDynamicCardComponent, this.viewContainerRef, overlaySettings);
         }
 
         this.overlayService.show(this._overlayId);
