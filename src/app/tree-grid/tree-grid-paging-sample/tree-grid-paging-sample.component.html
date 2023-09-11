@@ -1,7 +1,6 @@
 <div class="grid__wrapper">
-
     <igx-tree-grid [igxPreventDocumentScroll]="true"  #treegrid1 [data]="data" height="500px" width="100%"
-        displayDensity="cosy" primaryKey="ID" foreignKey="ParentID">
+        primaryKey="ID" foreignKey="ParentID">
         <igx-paginator [perPage]="10"></igx-paginator>
         <igx-column field="ID" header="Order ID">
         </igx-column>

@@ -1,5 +1,5 @@
 <div [ngClass]="{'grid__wrapper': true, 'dark_grid': dark === true }">
-    <igx-grid #grid1 [igxPreventDocumentScroll]="true" id="grid1" [data]="localData" [height]="'100%'" [moving]="true" [width]="'100%'" [rowSelection]="selectionMode" displayDensity="cosy" rowHeight="50" [allowFiltering]="true">
+    <igx-grid #grid1 [igxPreventDocumentScroll]="true" id="grid1" [data]="localData" [height]="'100%'" [moving]="true" [width]="'100%'" [rowSelection]="selectionMode" rowHeight="50" [allowFiltering]="true">
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>
                 <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
@@ -15,7 +15,7 @@
                         <span class="crm-sample-toolbar__ellipsis">Business Propeller</span>
                     </div>
                     <div class="sample-flex-container">
-                        <igx-input-group type="search" class="searchInputGroup" displayDensity="compact">
+                        <igx-input-group type="search">
                             <igx-prefix>
                                 <igx-icon class="prefixIcon" *ngIf="searchText.length === 0">search</igx-icon>
                                 <igx-icon class="prefixIcon" *ngIf="searchText.length > 0" (click)="clearSearch()">clear

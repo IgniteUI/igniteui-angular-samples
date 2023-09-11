@@ -50,7 +50,12 @@
         $idle-text-color: color($light-palette, 'gray', 900)
     );
 
+    input-group[type="search"] {
+        --ig-size: var(--ig-size-small);
+    }
+
 	.grid__wrapper {
+        --ig-size: var(--ig-size-medium);
 		width: inherit;
 		position: relative;
 		height: 100%;

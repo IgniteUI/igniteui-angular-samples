@@ -253,6 +253,10 @@
 	padding: rem(15px);
 	display: flex;
 	flex-direction: column;
+
+    igx-tree-grid {
+        --ig-size: var(--ig-size-small);
+    }
 }
 
 igx-grid {

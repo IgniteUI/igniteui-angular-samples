@@ -1,6 +1,5 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hGrid [data]="data" height="500px" width="100%"
-        displayDensity="cosy" primaryKey="ID">
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hGrid [data]="data" height="500px" width="100%" primaryKey="ID">
         <igx-paginator #paginator [(page)]="hGrid.page" [totalRecords]="hGrid.totalRecords" [perPage]="10" [selectOptions]="selectOptions" [displayDensity]="hGrid.displayDensity">
             <igx-paginator-content>
                 <igx-page-size *ngIf="!isDropdownHidden"></igx-page-size>

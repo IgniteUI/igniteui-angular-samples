@@ -7,6 +7,8 @@ $progressBar-sample-theme: progress-linear-theme(
 
 .grid__wrapper {
     @include progress-linear($progressBar-sample-theme);
+
+    --ig-size: var(--ig-size-medium);
     margin: 0 16px;
     padding-top: 10px;
 }

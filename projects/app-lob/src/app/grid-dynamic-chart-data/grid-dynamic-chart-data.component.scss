@@ -1,5 +1,6 @@
 :host ::ng-deep {
     .grid-chart-contextmenu-wrapper {
+        --ig-size: var(--ig-size-small);
         width: 90%;
         margin: 50px auto;
         height: 80%;

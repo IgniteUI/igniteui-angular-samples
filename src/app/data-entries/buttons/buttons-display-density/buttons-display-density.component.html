@@ -1,22 +1,24 @@
 <article class="sample-column">
     <div class="density-chooser">
-        <igx-buttongroup [values]="displayDensities" (selected)="selectDensity($event)"></igx-buttongroup>
+        <igx-buttongroup [values]="sizes" (selected)="selectSize($event)"></igx-buttongroup>
     </div>
     <div class="button-sample">
         <div class="button-sample">
-            <button igxButton="flat" igxRipple [displayDensity]="density">Flat</button>
+            <button igxButton="flat" igxRipple>Flat</button>
         </div>
         <div class="button-sample">
-            <button igxButton="raised" igxRipple [displayDensity]="density">Raised</button>
+            <button igxButton="raised" igxRipple>Raised</button>
         </div>
         <div class="button-sample">
-            <button igxButton="outlined" igxRipple [displayDensity]="density">Outlined</button>
+            <button igxButton="outlined" igxRipple>Outlined</button>
         </div>
         <div class="button-sample">
-            <button igxButton="fab" igxRipple [displayDensity]="density"><igx-icon family="material">edit</igx-icon></button>
+            <button igxButton="fab" igxRipple>
+                <igx-icon family="material">edit</igx-icon>
+            </button>
         </div>
         <div class="button-sample">
-            <button igxButton="fab" igxRipple [displayDensity]="density">
+            <button igxButton="fab" igxRipple>
                 <span>Like</span>
                 <igx-icon family="material">favorite</igx-icon>
             </button>

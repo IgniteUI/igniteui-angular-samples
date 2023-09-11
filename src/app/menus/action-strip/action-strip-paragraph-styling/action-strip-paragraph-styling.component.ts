@@ -14,7 +14,6 @@ export class ActionStripStylingComponent {
     public textLeft = false;
     public textCenter = false;
     public textRight = false;
-    public displayDensity = DisplayDensity.comfortable;
 
     public textDelete() {
         this.paragraph.nativeElement.classList.add('text-strike-through');

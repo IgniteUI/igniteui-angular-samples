@@ -1,7 +1,7 @@
 <igc-dockmanager #dock class="light-theme dock-m-position" [layout]="docLayout">
     <div slot="grid" igxOverlayOutlet style="height: 100%">
         <igx-grid #grid columnSelection="multiple" [moving]="true" chartIntegration conditionalFormatting [formatter]="currentFormatter"
-            [chartData]="chartData" primaryKey="id" displayDensity="compact" [data]="data"
+            [chartData]="chartData" primaryKey="id" [data]="data"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
             <igx-column [sortable]="true"  [disablePinning]="true" [disableHiding]="true" field="id" [hidden]="true"></igx-column>
             <igx-column [sortable]="true"  [disablePinning]="true" [disableHiding]="true" field="category" [width]="'110px'"></igx-column>

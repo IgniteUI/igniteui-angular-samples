@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { DisplayDensity, IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
+import { IgxHierarchicalGridComponent } from 'igniteui-angular';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 
 @Component({
@@ -13,37 +13,40 @@ export class HGridDisplayDensitySampleComponent implements OnInit {
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     public localdata;
-    public density: DisplayDensity = 'compact';
-    public displayDensities;
+    public size = 'small';
+    public sizes;
 
     constructor() {
 
     }
     public ngOnInit(): void {
         this.localdata = CUSTOMERS;
-        this.displayDensities = [
+        this.sizes = [
             {
-                label: 'compact',
-                selected: this.density === 'compact',
+                label: 'small',
+                selected: this.size === 'small',
                 togglable: true
             },
             {
-                label: 'cosy',
-                selected: this.density === 'cosy',
+                label: 'medium',
+                selected: this.size === 'medium',
                 togglable: true
             },
             {
-                label: 'comfortable',
-                selected: this.density === 'comfortable',
+                label: 'large',
+                selected: this.size === 'large',
                 togglable: true
             }
         ];
     }
 
-    public selectDensity(event) {
-        this.density = this.displayDensities[event.index].label;
-        this.hierarchicalGrid.displayDensity = this.displayDensities[event.index].label;
-        this.hierarchicalGrid.reflow();
+    @HostBinding('style.--ig-size')
+    protected get sizeStyle() {
+        return `var(--ig-size-${this.size})`;
     }
 
+    public selectSize(event: any) {
+        this.size = this.sizes[event.index].label;
+        this.hierarchicalGrid.reflow();
+    }
 }

@@ -1,6 +1,7 @@
 @use '../../../variables' as *;
 
 .grid-wrapper {
+    --ig-size: var(--ig-size-small);
     margin: 15px;
 }
 
