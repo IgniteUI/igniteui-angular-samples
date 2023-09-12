@@ -1,6 +1,6 @@
 <div class="wrapper">
     <span class="location-wrapper">
-        <igx-select #select [(ngModel)]="locale" [displayDensity]="'compact'">
+        <igx-select #select [(ngModel)]="locale">
             <igx-prefix class="ellipsis">Locale: </igx-prefix>
             <igx-select-item *ngFor="let locale of locales" [value]="locale">
                 {{ locale }}
@@ -8,7 +8,7 @@
             <igx-hint>Applicable to date, number, currency and percent type columns</igx-hint>
         </igx-select>
 
-        <igx-select #select [(ngModel)]="dateTimeOptions.format" [displayDensity]="'compact'" (selectionChanging)="selectionChanging($event)">
+        <igx-select #select [(ngModel)]="dateTimeOptions.format" (selectionChanging)="selectionChanging($event)">
             <igx-prefix class="ellipsis">DateTime format: </igx-prefix>
             <igx-select-item *ngFor="let dateFormat of dateTimeFormats" [value]="dateFormat.format"
                 [text]="dateFormat.format + ' ---> ' + dateFormat.eq">
@@ -17,7 +17,7 @@
             <igx-hint>Applied to 'dateTime' type column only</igx-hint>
         </igx-select>
 
-        <igx-select #select [(ngModel)]="dateOptions.format" [displayDensity]="'compact'" (selectionChanging)="selectionDateChanging($event)">
+        <igx-select #select [(ngModel)]="dateOptions.format" (selectionChanging)="selectionDateChanging($event)">
             <igx-prefix class="ellipsis">Date format: </igx-prefix>
             <igx-select-item *ngFor="let dateFormat of dateFormats" [value]="dateFormat.format"
                 [text]="dateFormat.format + ' ---> ' + dateFormat.eq">
@@ -26,7 +26,7 @@
             <igx-hint>Applied to 'date' type column only</igx-hint>
         </igx-select>
 
-        <igx-select #select [(ngModel)]="timeOptions.format" [displayDensity]="'compact'" (selectionChanging)="selectionTimeChanging($event)">
+        <igx-select #select [(ngModel)]="timeOptions.format" (selectionChanging)="selectionTimeChanging($event)">
             <igx-prefix class="ellipsis">Time format: </igx-prefix>
             <igx-select-item *ngFor="let timeFormat of timeFormats" [value]="timeFormat.format"
                 [text]="timeFormat.format + ' ---> ' + timeFormat.eq">
@@ -35,7 +35,7 @@
             <igx-hint>Applied to 'time' type column only</igx-hint>
         </igx-select>
 
-        <igx-select #select [(ngModel)]="dateTimeOptions.timezone" [displayDensity]="'compact'" (selectionChanging)="timezoneSelectionChanging($event)">
+        <igx-select #select [(ngModel)]="dateTimeOptions.timezone" (selectionChanging)="timezoneSelectionChanging($event)">
             <igx-prefix class="ellipsis">Timezone: </igx-prefix>
             <igx-select-item *ngFor="let timezone of timezoneFormats" [value]="timezone" [text]="timezone">
                 {{ timezone }}
@@ -43,7 +43,7 @@
             <igx-hint>Applicable to dateTime type columns only</igx-hint>
         </igx-select>
 
-        <igx-select #select [(ngModel)]="options.currencyCode" [displayDensity]="'compact'" (selectionChanging)="currencySelectionChanging($event)">
+        <igx-select #select [(ngModel)]="options.currencyCode" (selectionChanging)="currencySelectionChanging($event)">
             <igx-prefix class="ellipsis">Currency Code: </igx-prefix>
             <igx-select-item *ngFor="let currencyCode of currencyCodes" [value]="currencyCode">
                 {{ currencyCode }}
@@ -55,7 +55,7 @@
             </igx-suffix>
         </igx-select>
         <br />
-        <igx-input-group type="search" class="searchInputGroup" [displayDensity]="'compact'">
+        <igx-input-group type="search" class="searchInputGroup">
             <igx-prefix class="ellipsis">
                 <div #target="tooltipTarget" [igxTooltipTarget]="tooltipRef" [showDelay]="0" [hideDelay]="0">Set digits
                     info
@@ -72,7 +72,6 @@
                 </igx-icon>
             </igx-suffix>
             <igx-hint [ngClass]="warningClass()" position="start">{{ digitsInfoMessage }}</igx-hint>
-
         </igx-input-group>
     </span>
 

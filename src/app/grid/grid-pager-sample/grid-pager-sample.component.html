@@ -2,7 +2,7 @@
     <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" height="500px"
         width="100%">
         <igx-paginator #paginator [(page)]="grid.page" [totalRecords]="grid.totalRecords" [(perPage)]="grid.perPage"
-            [selectOptions]="selectOptions" [displayDensity]="grid.displayDensity">
+            [selectOptions]="selectOptions">
             <igx-paginator-content>
                 <igx-page-size *ngIf="!isDropdownHidden"></igx-page-size>
                 <igx-page-nav *ngIf="!isPagerHidden"></igx-page-nav>
@@ -29,14 +29,6 @@
 
 
     <div class="options-container">
-        <label>Display density:</label>
-        <div class="select-input">
-            <igx-select [(ngModel)]="grid.displayDensity" [displayDensity]="'compact'">
-                <igx-select-item *ngFor="let density of densityOptions" [value]="density">
-                    {{ density }}
-                </igx-select-item>
-            </igx-select>
-        </div>
         <igx-switch [(ngModel)]="isDropdownHidden">Hide Dropdown</igx-switch>
         <igx-switch [(ngModel)]="isPagerHidden">Hide Pager</igx-switch>
     </div>

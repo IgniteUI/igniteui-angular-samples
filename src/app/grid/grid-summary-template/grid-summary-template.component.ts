@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DisplayDensity, IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 class DiscontinuedSummary {
@@ -37,8 +37,8 @@ export class GridSummaryTemplateComponent implements OnInit {
     public discontinuedSummary = DiscontinuedSummary;
     public data;
     public summaryHeight = 135;
-    public displayDensity: DisplayDensity = 'cosy';
-    public displayDensities;
+    public size = 'medium';
+    public sizes;
     public hasSummary = true;
 
     constructor() {
@@ -46,14 +46,19 @@ export class GridSummaryTemplateComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.displayDensities = [
-            { label: 'compact', selected: this.displayDensity === 'compact', togglable: true },
-            { label: 'cosy', selected: this.displayDensity === 'cosy', togglable: true },
-            { label: 'comfortable', selected: this.displayDensity === 'comfortable', togglable: true }
+        this.sizes = [
+            { label: 'small', selected: this.size === 'small', togglable: true },
+            { label: 'medium', selected: this.size === 'medium', togglable: true },
+            { label: 'large', selected: this.size === 'large', togglable: true }
         ];
     }
 
-    public selectDensity(event): void {
-        this.displayDensity = this.displayDensities[event.index].label;
+    public selectSize(event): void {
+        this.size = this.sizes[event.index].label;
+    }
+
+    @HostBinding('style.--ig-size')
+    protected get sizeStyle() {
+        return `var(--ig-size-${this.size})`;
     }
 }
