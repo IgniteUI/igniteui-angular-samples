@@ -1,8 +1,7 @@
 <igc-dockmanager #dock class="light-theme dock-m-position" [layout]="docLayout">
     <div slot="grid" igxOverlayOutlet style="height: 100%">
-        <igx-grid #grid columnSelection="multiple" [moving]="true" chartIntegration conditionalFormatting [formatter]="currentFormatter"
-            [chartData]="chartData" primaryKey="id" [data]="data"
-            [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+        <igx-grid #grid columnSelection="multiple" [moving]="true" igxChartIntegration igxConditionalFormatting igxContextMenu
+            [chartData]="chartData" primaryKey="id" [data]="data" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
             <igx-column [sortable]="true"  [disablePinning]="true" [disableHiding]="true" field="id" [hidden]="true"></igx-column>
             <igx-column [sortable]="true"  [disablePinning]="true" [disableHiding]="true" field="category" [width]="'110px'"></igx-column>
             <igx-column [sortable]="true"  [disablePinning]="true" [disableHiding]="true" field="type" [filterable]="false" [width]="'130px'"></igx-column>
@@ -108,8 +107,8 @@
                 <div class="types-section">
                     <div *ngFor="let chart of (allCharts | filterType: chartType); let i=index"
                         (click)="createChart(chart)"
-                        title="{{chart | name}}"
-                        [ngClass]="{'disabled': availableCharts.indexOf(chart) === -1, 'selected': chart | hastDuplicateLayouts: dock.layout: selectedCharts}"
+                        title="{{chart}}"
+                        [ngClass]="{'disabled': allCharts.indexOf(chart) === -1, 'selected': chart | hastDuplicateLayouts: dock.layout: selectedCharts}"
                         style="width: 60px; margin-right: 20px; cursor: pointer; position: relative;">
                         <img src="assets/images/svg/charts/{{chart}}.svg" />
                         <igx-badge *ngIf="selectedCharts[chart]" icon="check"></igx-badge>
@@ -124,36 +123,3 @@
     </app-dock-slot>
 </igc-dockmanager>
 
-<span *ngIf="contextmenu" class="analytics-btn" [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}"
-    (click)="toggleContextDialog(button)">
-    <button #button igxButton="icon">
-        <igx-icon #icon style="pointer-events: none;" class="icon" family="material">insert_chart_outlined</igx-icon>
-    </button>
-</span>
-
-<!-- this block can be moved in another component -->
-<igx-dialog #contextDialog>
-        <div #dialogContent class="tab-options-wrapper">
-            <div class="header">
-                <span>CONDITIONAL FORMATTING</span>
-                <div class="clear-action" [ngClass]="{'disableButton': !hasFormatter}">
-                    <div class="btn" (click)="clearFormatting()">
-                        <img style="width: 18px; height: 18px;" src="assets/images/svg/conditions/Clear.svg" />
-                    </div>
-                </div>
-            </div>
-            <div class="tab-option">
-                <div *ngFor="let condition of formattersNames" class="action" [ngClass]="{'selected--condition': condition === currentFormatter}">
-                    <div class="btn condition" (click)="analyse(condition)">
-                        <img style="width: 36px; height: 36px;"
-                            src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg" />
-                        <span class="name">{{condition.replace('10', '10%')}}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-</igx-dialog>
-
-<ng-template #template>
-    <span>Incompatible data</span>
-</ng-template>
