@@ -28,6 +28,7 @@ export const dataEntriesRoutesData = {
     "dropdown-remote": { displayName: "Virtual Dropdown - Remote Data", parentName: "Dropdown" },
     "dropdown-virtual": { displayName: "Virtual Dropdown", parentName: "Dropdown" },
     "dropdown-menu": { displayName: "Dropdown as Menu", parentName: "Dropdown" },
+    "dropdown-multi-level-menu": { displayName: "Multi-Level Dropdown Menu", parentName: "Dropdown" },
     "dropdown-sample-1": { displayName: "Simple Dropdown", parentName: "Dropdown" },
     "dropdown-sample-2": { displayName: "Dropdown Selection", parentName: "Dropdown" },
     "dropdown-sample-3": { displayName: "Dropdown Headers", parentName: "Dropdown" },

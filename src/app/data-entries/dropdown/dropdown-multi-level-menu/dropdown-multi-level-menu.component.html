@@ -1,0 +1,104 @@
+<div class="container">
+  <igx-navbar>
+    <div igxNavbarTitle>
+      <img width="160px" src="https://static.infragistics.com/marketing/Website/General/Infragistics-horizontal.svg" />
+    </div>
+
+    <button igxButton [igxToggleAction]="dropdown1" [overlaySettings]="overlaySettings">
+      <span>Design & Development</span> <igx-icon>expand_more</igx-icon>
+    </button>
+    <button igxButton [igxToggleAction]="dropdown2" [overlaySettings]="overlaySettings">
+      <span>UX</span> <igx-icon>expand_more</igx-icon>
+    </button>
+    <button igxButton [igxToggleAction]="dropdown3" [overlaySettings]="overlaySettings">
+      <span>Support</span> <igx-icon>expand_more</igx-icon>
+    </button>
+    <button igxButton [igxToggleAction]="dropdown4" [overlaySettings]="overlaySettings">
+      <span>Pricing</span> <igx-icon>expand_more</igx-icon>
+    </button>
+  </igx-navbar>
+
+  <div class="container">
+    <p>{{ text }}</p>
+  </div>
+
+  <!-- Drop Down Level 1 -->
+  <igx-drop-down #dropdown1 [width]="'170px'">
+    <igx-drop-down-item [value]="'Web'" multiLevel [innerDropdown]="web">
+      Web <igx-icon igxSuffix>expand_more</igx-icon>
+    </igx-drop-down-item>
+
+    <igx-drop-down-item [value]="'Desktop'" multiLevel [innerDropdown]="desktop">
+      Desktop <igx-icon igxSuffix>expand_more</igx-icon>
+    </igx-drop-down-item>
+
+    <igx-drop-down-item [value]="'Cross Platform'" multiLevel [innerDropdown]="crossPlatform">
+      Cross Platform <igx-icon igxSuffix>expand_more</igx-icon>
+    </igx-drop-down-item>
+
+    <igx-drop-down-item [value]="'Design to Code'" multiLevel [innerDropdown]="designToCode">
+      Design to Code <igx-icon igxSuffix>expand_more</igx-icon>
+    </igx-drop-down-item>
+
+    <igx-drop-down-item [value]="'Testing Tools'" multiLevel [innerDropdown]="testingTools">
+      Testing Tools <igx-icon igxSuffix>expand_more</igx-icon>
+    </igx-drop-down-item>
+  </igx-drop-down>
+
+  <igx-drop-down #dropdown2>
+    <igx-drop-down-item [value]="'Indigo.Design'">Indigo.Design</igx-drop-down-item>
+    <igx-drop-down-item [value]="'App Builder'">App Builder</igx-drop-down-item>
+  </igx-drop-down>
+
+  <igx-drop-down #dropdown3>
+    <igx-drop-down-item *ngFor="let item of supportData" [value]="item">
+      {{ item }}
+    </igx-drop-down-item>
+  </igx-drop-down>
+
+  <igx-drop-down #dropdown4>
+    <igx-drop-down-item [value]="'Product Pricing'">Product Pricing</igx-drop-down-item>
+    <igx-drop-down-item [value]="'Contact Us'">Contact Us</igx-drop-down-item>
+  </igx-drop-down>
+
+  <!-- Drop Down Level 2 -->
+  <igx-drop-down #web>
+    <igx-drop-down-item [value]="'App Builder'">
+      App Builder
+    </igx-drop-down-item>
+    <igx-drop-down-item class="item" [value]="'Ignite UI'" multiLevel [innerDropdown]="igniteUI">
+      Ignite UI <igx-icon igxSuffix>expand_more</igx-icon>
+    </igx-drop-down-item>
+  </igx-drop-down>
+
+  <igx-drop-down #desktop>
+    <igx-drop-down-item *ngFor="let item of desktopData" [value]="item">
+      {{ item }}
+    </igx-drop-down-item>
+  </igx-drop-down>
+
+  <igx-drop-down #crossPlatform>
+    <igx-drop-down-item *ngFor="let item of crossPlatformData" [value]="item">
+      {{ item }}
+    </igx-drop-down-item>
+  </igx-drop-down>
+
+  <igx-drop-down #designToCode>
+    <igx-drop-down-item *ngFor="let item of designToCodeData" [value]="item">
+      {{ item }}
+    </igx-drop-down-item>
+  </igx-drop-down>
+
+  <igx-drop-down #testingTools>
+    <igx-drop-down-item *ngFor="let item of testingToolsData" [value]="item">
+      {{ item }}
+    </igx-drop-down-item>
+  </igx-drop-down>
+
+  <!-- Drop Down Level 3 -->
+  <igx-drop-down #igniteUI>
+    <igx-drop-down-item *ngFor="let item of igniteUIData" [value]="item">
+      {{ item }}
+    </igx-drop-down-item>
+  </igx-drop-down>
+</div>
