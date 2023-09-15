@@ -27,6 +27,14 @@ $progressBar-sample-theme: progress-linear-theme(
     justify-content: center;
 }
 
+igx-grid {
+    --ig-size: var(--ig-size-medium);
+}
+
+igx-avatar {
+    --ig-size: var(--ig-size-small);
+}
+
 :host {
     ::ng-deep {
         .igx-paginator > * {

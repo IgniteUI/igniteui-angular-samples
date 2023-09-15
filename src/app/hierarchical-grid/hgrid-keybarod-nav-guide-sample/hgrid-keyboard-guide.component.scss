@@ -16,6 +16,7 @@ $custom-checkbox-theme: checkbox-theme(
 
 
     .grid_wrapper {
+        --ig-size: var(--ig-size-small);
         padding-left: 15px;
         padding-top: 15px;
         width: 75%;

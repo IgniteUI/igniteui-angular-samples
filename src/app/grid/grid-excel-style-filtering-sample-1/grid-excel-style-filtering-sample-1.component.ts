@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { DisplayDensity, IgxGridComponent } from 'igniteui-angular';
+import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
+import { IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 
 @Component({
@@ -14,35 +14,39 @@ export class ExcelStyleFilteringSample1Component implements OnInit {
 
     public data: any[];
 
-    public density: DisplayDensity = 'comfortable';
-    public displayDensities;
+    public size = 'large';
+    public sizes;
 
     constructor() {
     }
     public ngOnInit(): void {
         this.data = DATA;
-        this.displayDensities = [
+        this.sizes = [
             {
-                label: 'compact',
-                selected: this.density === 'compact',
+                label: 'small',
+                selected: this.size === 'small',
                 togglable: true
             },
             {
-                label: 'cosy',
-                selected: this.density === 'cosy',
+                label: 'medium',
+                selected: this.size === 'medium',
                 togglable: true
             },
             {
-                label: 'comfortable',
-                selected: this.density === 'comfortable',
+                label: 'large',
+                selected: this.size === 'large',
                 togglable: true
             }
         ];
     }
 
-    public selectDensity(event) {
-        this.density = this.displayDensities[event.index].label;
-        this.grid1.displayDensity = this.displayDensities[event.index].label;
+    @HostBinding('style.--ig-size')
+    protected get sizeStyle() {
+        return `var(--ig-size-${this.size})`;
+    }
+
+    public selectSize(event) {
+        this.size = this.sizes[event.index].label;
         this.grid1.reflow();
     }
 

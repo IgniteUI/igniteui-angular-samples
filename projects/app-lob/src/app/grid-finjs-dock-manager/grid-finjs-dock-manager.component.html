@@ -9,7 +9,7 @@
         </div>
         <div class="actionItem">
             <!-- Change volume -->
-            <igx-select [(ngModel)]="dataVolume" (ngModelChange)="paramsChanged()" [overlaySettings]="customOverlaySettings" [displayDensity]="'compact'">
+            <igx-select [(ngModel)]="dataVolume" (ngModelChange)="paramsChanged()" [overlaySettings]="customOverlaySettings">
                 <label igxLabel>Change data volume</label>
                 <igx-prefix>
                     <igx-icon>view_list</igx-icon>
@@ -21,7 +21,7 @@
         </div>
         <div class="actionItem">
             <!-- Change frequency -->
-            <igx-select [(ngModel)]="frequency" (ngModelChange)="paramsChanged()" [overlaySettings]="freqOverlaySettings" [displayDensity]="'compact'" #freq>
+            <igx-select [(ngModel)]="frequency" (ngModelChange)="paramsChanged()" [overlaySettings]="freqOverlaySettings" #freq>
                 <label igxLabel>Change update frequency</label>
                 <igx-prefix>
                     <igx-icon>cell_wifi</igx-icon>
@@ -35,7 +35,7 @@
         <div igxOverlayOutlet #outlet></div>
     </div>
     <div slot="gridStockPrices" style="height: 100%;">
-        <igx-grid #grid1 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
+        <igx-grid #grid1 [data]="data | async" [isLoading]="isLoading"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
             [columnSelection]="'multiple'" [cellSelection]="'none'" [outlet]="filteringOverlayOutlet">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]="true" [sortable]="true"></igx-column>
@@ -67,7 +67,7 @@
         </igx-grid>
     </div>
     <div slot="forexMarket" style="height: 100%;">
-        <igx-grid #grid2 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
+        <igx-grid #grid2 [data]="data | async" [isLoading]="isLoading"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]="true" [sortable]="true"></igx-column>
@@ -99,7 +99,7 @@
         </igx-grid>
     </div>
     <div slot="content4" style="height: 100%;">
-        <igx-grid #grid3 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
+        <igx-grid #grid3 [data]="data | async" [isLoading]="isLoading"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]="true" [sortable]="true"></igx-column>
@@ -131,7 +131,7 @@
         </igx-grid>
     </div>
     <div slot="etfStockPrices" style="height: 100%;">
-        <igx-grid #grid4 [data]="data | async" [displayDensity]="'compact'" [isLoading]="isLoading"
+        <igx-grid #grid4 [data]="data | async" [isLoading]="isLoading"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-paginator></igx-paginator>

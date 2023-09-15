@@ -12,4 +12,8 @@ $custom-theme: grid-theme(
 .grid__wrapper {
     margin: 0 auto;
     padding: 16px;
+
+    igx-select {
+        --ig-size: var(--ig-size-small);
+    }
 }
