@@ -31,7 +31,7 @@ export class GridConditionalRowSelectorsComponent {
         const originalAddedLength = event.added.length;
 
         // update selection to contain only allowed rows
-        event.newSelection = event.newSelection.filter(x => this.isSelectionAllowed(x));
+        event.newSelection = event.newSelection.filter(x => this.isSelectionAllowed(x.ID));
 
         // cleanup selection if all conditionally selectable rows are already selected
         if (event.newSelection.length
