@@ -28,7 +28,7 @@ export const DESIGN_TO_CODE_DATA = [
 ];
 
 export const TESTING_TOOLS_DATA = [
-    "Test automation for Micro Focus UFT: Windows Forms",
+    "Test automation for Micro Focus UFT: Win Forms",
     "Test automation for Micro Focus UFT: WPF",
     "Test automation for IBM RFT: Windows Forms"
 ];

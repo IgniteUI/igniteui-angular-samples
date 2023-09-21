@@ -73,7 +73,7 @@ export class MultiLevelDirective implements AfterViewInit, OnDestroy {
   public mouseleave(event: MouseEvent) {
     const target = event.relatedTarget as any;
     const innerDropdownItem = this.innerDropdown.items.some(
-      (item) => item.id === target.id
+      (item) => item.id === target?.id
     );
 
     if (!this.innerDropdown.collapsed && !innerDropdownItem) {
