@@ -1,7 +1,6 @@
-import { AfterViewInit, Component, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import {
   IgxDropDownComponent,
-  ISelectionEventArgs,
   OverlaySettings,
   ConnectedPositioningStrategy,
   HorizontalAlignment,
@@ -25,15 +24,10 @@ import { MultiLevelService } from './multi-level.service';
 })
 export class DropdownMultiLevelMenuComponent implements AfterViewInit {
   @ViewChildren(IgxDropDownComponent, { read: IgxDropDownComponent })
-  private _dropdowns!: QueryList<IgxDropDownComponent>;
+  private _dropdowns: QueryList<IgxDropDownComponent>;
 
-  private _categories: string[] = [
-    'Web',
-    'Desktop',
-    'Cross Platform',
-    'Design to Code',
-    'Testing Tools'
-  ];
+  @ViewChild('dropdown1', { read: IgxDropDownComponent })
+  private _multiLevelDropdown: IgxDropDownComponent;
 
   public supportData: string[] = SUPPORT_DATA;
   public desktopData: string[] = DESKTOP_DATA;
@@ -43,35 +37,43 @@ export class DropdownMultiLevelMenuComponent implements AfterViewInit {
   public igniteUIData: string[] = IGNITE_UI_DATA;
 
   public overlaySettings: OverlaySettings = {
-    closeOnOutsideClick: true,
     modal: false,
     positionStrategy: new ConnectedPositioningStrategy({
       horizontalStartPoint: HorizontalAlignment.Center,
       horizontalDirection: HorizontalAlignment.Center,
-      verticalStartPoint: VerticalAlignment.Bottom
+      verticalStartPoint: VerticalAlignment.Bottom,
+      closeAnimation: undefined
     })
   };
 
-  public text: string = '';
+  public selection: string = '';
+
+  constructor(private _multiLevelService: MultiLevelService) { }
 
   public ngAfterViewInit(): void {
     this._dropdowns.forEach((dropdown) => {
-      dropdown.selectionChanging.subscribe((args: ISelectionEventArgs) => {
+      dropdown.selectionChanging.subscribe((args) => {
         args.cancel = true;
         const value = args.newSelection.value;
+        const categories = this._multiLevelService.categories;
 
-        if (this._categories.includes(value)) {
-          this.text = '';
+        if (categories.includes(value)) {
+          this.selection = '';
           return;
         }
 
-        this.text = value;
-        this._dropdowns.forEach((d) => {
-          if (!d.collapsed) {
-            d.close();
-          }
-        });
+        if (this._multiLevelService.isMultiLevel(dropdown)) {
+          this._multiLevelService.handleSelection();
+        } else {
+          dropdown.close();
+        }
+
+        this.selection = value;
       });
+    });
+
+    this._multiLevelDropdown.closing.subscribe((args) => {
+        this._multiLevelService.handleSelection(args);
     });
   }
 }

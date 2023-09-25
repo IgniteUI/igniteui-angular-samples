@@ -19,7 +19,7 @@
   </igx-navbar>
 
   <div class="container">
-    <p>{{ text }}</p>
+    <p>{{ selection }}</p>
   </div>
 
   <!-- Drop Down Level 1 -->
@@ -66,7 +66,7 @@
     <igx-drop-down-item [value]="'App Builder'">
       App Builder
     </igx-drop-down-item>
-    <igx-drop-down-item class="item" [value]="'Ignite UI'" multiLevel [innerDropdown]="igniteUI">
+    <igx-drop-down-item [value]="'Ignite UI'" multiLevel [innerDropdown]="igniteUI">
       Ignite UI <igx-icon igxSuffix>chevron_right</igx-icon>
     </igx-drop-down-item>
   </igx-drop-down>

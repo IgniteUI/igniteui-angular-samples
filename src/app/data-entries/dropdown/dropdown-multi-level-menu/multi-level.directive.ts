@@ -35,7 +35,7 @@ export class MultiLevelDirective implements AfterViewInit, OnDestroy {
   constructor(
     private _host: IgxDropDownItemComponent,
     private _multiLevelService: MultiLevelService
-  ) {}
+  ) { }
 
   public ngAfterViewInit(): void {
     this._multiLevelService.add(this.innerDropdown);
