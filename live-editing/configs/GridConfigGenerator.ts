@@ -683,9 +683,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'ExcelStyleFilteringSample3Component',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['ExcelStyleFilteringSample3Component', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['ExcelStyleFilteringSample3Component', 'IgxGridModule', 'IgxPreventDocumentScrollModule', 'IgxIconModule'],
                 ngDeclarations: ['ExcelStyleFilteringSample3Component'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxIconModule']
             })
         }));
 
