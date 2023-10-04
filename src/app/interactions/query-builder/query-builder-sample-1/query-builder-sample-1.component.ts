@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxQueryBuilderComponent, IgxStringFilteringOperand } from 'igniteui-angular';
 
 @Component({
@@ -56,5 +56,9 @@ export class QueryBuilderSample1Component implements OnInit {
         });
 
         this.expressionTree = tree;
+    }
+
+    public printExpressionTree(tree: IExpressionTree) {
+        return tree ? JSON.stringify(tree, null, 2) : 'Please add an expression!';
     }
 }
