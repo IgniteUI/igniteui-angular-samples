@@ -40,7 +40,8 @@ import {
     IgxTooltipModule,
     IgxToggleModule,
     IgxDropDownModule,
-    IgxCardModule
+    IgxCardModule,
+    IgcFormsModule
 } from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class GridConfigGenerator implements IConfigGenerator {
@@ -1451,9 +1452,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             additionalDependencies: ['igniteui-webcomponents'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxGridModule', 'IgxToastModule', 'GridWithRatingComponent', 'IgxPreventDocumentScrollModule'],
+                imports: ['IgxGridModule', 'IgxToastModule', 'GridWithRatingComponent', 'IgxPreventDocumentScrollModule', 'IgcFormsModule'],
                 ngDeclarations: ['GridWithRatingComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxToastModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxToastModule', 'IgcFormsModule']
             })
         }));
 
@@ -1462,9 +1463,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: [],
             additionalDependencies: ['igniteui-webcomponents'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxButtonModule', 'RatingInFormComponent', 'IgxCardModule'],
+                imports: ['IgxButtonModule', 'RatingInFormComponent', 'IgxCardModule', 'IgcFormsModule'],
                 ngDeclarations: ['RatingInFormComponent'],
-                ngImports: ['IgxButtonModule', 'IgxCardModule']
+                ngImports: ['IgxButtonModule', 'IgxCardModule', 'IgcFormsModule']
             })
         }));
 
