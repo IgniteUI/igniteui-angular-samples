@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class ButtonGroupSampleComponent {
     public rippleColor = 'grey';
-    public selectionMode = 'single';
+    public selectionMode: 'single' | 'singleRequired' | 'multi' = 'single';
 }
