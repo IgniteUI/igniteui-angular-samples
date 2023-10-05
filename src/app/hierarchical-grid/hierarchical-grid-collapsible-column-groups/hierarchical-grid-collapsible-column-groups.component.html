@@ -1,7 +1,7 @@
 <div class="wrapper theme">
     <div class="sample-content">
         <div class="sample-column">
-            <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid [data]="localdata" [moving]="true" [height]="'560px'" displayDensity="compact" [allowFiltering]="true">
+            <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid [data]="localdata" [moving]="true" [height]="'560px'" [allowFiltering]="true">
                 <igx-column-group [pinned]="false" header="General Information" [collapsible]="true" [expanded]="false">
                     <ng-template igxCollapsibleIndicator let-column="column">
                         <igx-icon [attr.draggable]="false" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef" [showDelay]="0" [hideDelay]="0">{{column.expanded ? 'expand_more' : 'chevron_right'}} </igx-icon>

@@ -1,4 +1,5 @@
 .grid__wrapper {
+    --ig-size: var(--ig-size-medium);
     padding: 16px;
 }
 
@@ -12,7 +13,7 @@
     }
 
     #discontinued {
-        margin-top: 15px; 
+        margin-top: 15px;
     }
 }
 

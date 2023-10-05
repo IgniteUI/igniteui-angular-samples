@@ -23,6 +23,8 @@ $custom-datepicker-theme: calendar-theme(
 );
 
 :host {
-    @include css-vars($custom-datepicker-theme);
+    ::ng-deep {
+        @include css-vars($custom-datepicker-theme);
+    }
 }
 

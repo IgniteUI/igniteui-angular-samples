@@ -12,7 +12,6 @@ export class GridPagerSampleComponent implements OnInit, AfterViewInit {
     paginator: IgxPaginatorComponent;
 
     public data: any[];
-    public densityOptions: string[];
     public isDropdownHidden = false;
     public isPagerHidden = false;
     public selectOptions = [5, 15, 20, 50];
@@ -26,7 +25,6 @@ export class GridPagerSampleComponent implements OnInit, AfterViewInit {
 
     public ngOnInit(): void {
         this.data = athletesData;
-        this.densityOptions = ['compact', 'cosy', 'comfortable'];
     }
 
     public ngAfterViewInit(): void {

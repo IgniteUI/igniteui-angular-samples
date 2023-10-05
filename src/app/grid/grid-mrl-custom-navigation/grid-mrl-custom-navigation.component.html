@@ -4,7 +4,7 @@
         height="570px"
         [data]="sourceData"
         [autoGenerate]="false"
-        [displayDensity]="'cosy'" (gridKeydown)="customNavigation($event)" >
+        (gridKeydown)="customNavigation($event)">
         <igx-column-layout [header]="'Company'">
             <igx-column [rowStart]="1" [colStart]="1" [colEnd]="3" field="company" header='Company'></igx-column>
             <igx-column [rowStart]="2" [colStart]="1"field="country" header='Country'></igx-column>

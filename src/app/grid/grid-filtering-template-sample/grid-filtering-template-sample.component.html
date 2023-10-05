@@ -20,7 +20,7 @@
     </igx-grid>
     <ng-template #defaultFilterTemplate igxFilterCellTemplate let-column="column">
         <div class="filter-cell">
-            <igx-input-group #inputGr class="filter-input" type="box" [displayDensity]="'compact'">
+            <igx-input-group #inputGr class="filter-input" type="box">
                 <igx-prefix>
                     <igx-icon>search</igx-icon>
                 </igx-prefix>
@@ -43,7 +43,7 @@
     <ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column">
         <div class="filter-cell">
             <igx-date-picker #picker [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column)" mode="dialog"
-                [displayDensity]="'compact'" placeholder="Filter..." [displayFormat]="displayDateFormat" type="box">
+                placeholder="Filter..." [displayFormat]="displayDateFormat" type="box">
                 <igx-picker-toggle igxPrefix>
                     <igx-icon>search</igx-icon>
                 </igx-picker-toggle>

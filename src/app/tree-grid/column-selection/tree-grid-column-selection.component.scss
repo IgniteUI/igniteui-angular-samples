@@ -1,3 +1,7 @@
 .grid-wrapper{
     padding: 16px;
+
+    igx-select {
+        --ig-size: var(--ig-size-small);
+    }
 }

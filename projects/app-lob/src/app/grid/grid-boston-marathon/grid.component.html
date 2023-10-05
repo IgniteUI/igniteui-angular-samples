@@ -10,7 +10,7 @@
         </igx-input-group>
     </div>
     <div class="grid__wrapper__inner">
-        <igx-grid #grid1 [igxPreventDocumentScroll]="true" [data]="localData" height="600px" displayDensity="cosy" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [allowAdvancedFiltering]="true">
+        <igx-grid #grid1 [igxPreventDocumentScroll]="true" [data]="localData" height="600px" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [allowAdvancedFiltering]="true">
             <igx-paginator [perPage]="10"></igx-paginator>
             <igx-column header="Rank" [width]="'12%'" field="Id" [sortable]="true" [filterable]="false">
                 <ng-template igxCell let-cell="cell">
