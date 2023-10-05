@@ -1,7 +1,7 @@
 <div class="density-chooser">
-    <igx-buttongroup [values]="displayDensities" (selected)="selectDensity($event)"></igx-buttongroup>
+    <igx-buttongroup [values]="sizes" (selected)="selectSize($event)"></igx-buttongroup>
 </div>
-<igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [displayDensity]="density" width="100%"
+<igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" width="100%"
     height="550px" [allowFiltering]="true">
     <igx-column field="Name" dataType="string" [sortable]="true" [hasSummary]="true" width="200px"></igx-column>
     <igx-column-group [pinned]="false" header="General Information">

@@ -24,6 +24,10 @@ igx-pivot-grid {
     flex: 1;
 }
 
+igx-pivot-data-selector {
+    --ig-size: var(--ig-size-small);
+}
+
 .pivot-container {
     display: flex;
     align-items: flex-start;

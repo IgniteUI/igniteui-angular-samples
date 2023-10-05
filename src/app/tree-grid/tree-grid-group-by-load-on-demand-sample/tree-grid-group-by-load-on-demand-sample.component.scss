@@ -6,6 +6,8 @@
 }
 
 .grid__wrapper {
+    --ig-size: var(--ig-size-small);
+
     position: relative;
     width: 100%;
     height: 100%;

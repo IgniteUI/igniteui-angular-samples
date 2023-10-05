@@ -1,36 +1,31 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { DisplayDensityToken, IDisplayDensityOptions } from 'igniteui-angular';
+import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
-    providers: [{ provide: DisplayDensityToken, useValue: { displayDensity: 'comfortable' } }],
     selector: 'app-display-density',
     styleUrls: ['./display-density.component.scss'],
     templateUrl: './display-density.component.html'
 })
 
 export class DisplayDensityComponent implements OnInit {
-    public displayDensities;
-    public density: any;
-    public user;
-
-    constructor(@Inject(DisplayDensityToken) public displayDensityOptions: IDisplayDensityOptions) { }
+    public sizes: any[];
+    public size = 'large';
+    public user: any;
 
     public ngOnInit() {
-        const initialDensity = this.displayDensityOptions.displayDensity;
-        this.displayDensities = [
+        this.sizes = [
             {
-                label: 'compact',
-                selected: initialDensity === 'compact',
+                label: 'small',
+                selected: this.size === 'small',
                 togglable: true
             },
             {
-                label: 'cosy',
-                selected: initialDensity === 'cosy',
+                label: 'medium',
+                selected: this.size === 'medium',
                 togglable: true
             },
             {
-                label: 'comfortable',
-                selected: initialDensity === 'comfortable',
+                label: 'large',
+                selected: this.size === 'large',
                 togglable: true
             }
         ];
@@ -42,8 +37,12 @@ export class DisplayDensityComponent implements OnInit {
         };
     }
 
-    public changeDensity(eventArgs) {
-        this.density = this.displayDensities[eventArgs.index].label;
-        this.displayDensityOptions.displayDensity = this.density;
+    @HostBinding('style.--ig-size')
+    protected get sizeStyle() {
+        return `var(--ig-size-${this.size})`;
+    }
+
+    public selectSize(eventArgs: any) {
+        this.size = this.sizes[eventArgs.index].label;
     }
 }

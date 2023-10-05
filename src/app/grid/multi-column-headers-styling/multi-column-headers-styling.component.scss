@@ -13,5 +13,6 @@ $custom-theme: grid-theme(
 }
 
 .grid__wrapper {
+    --ig-size: var(--ig-size-small);
     margin: 16px;
 }

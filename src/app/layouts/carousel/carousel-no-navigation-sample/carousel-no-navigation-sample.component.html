@@ -13,7 +13,7 @@
         </igx-carousel>
     </div>
     <div class="list-wrapper">
-        <igx-list displayDensity="compact">
+        <igx-list>
             <igx-list-item *ngFor="let item of slides; let i=index" [ngClass]="{'disabled': i !== currentIndex }" >
                 <img igxListThumbnail src="{{item.thumb}}" />
                 <div class="titles">

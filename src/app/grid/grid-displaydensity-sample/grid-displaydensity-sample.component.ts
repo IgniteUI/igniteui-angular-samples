@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { DisplayDensity, IgxButtonGroupComponent, IgxGridComponent, IgxNumberSummaryOperand,
+import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
+import { IgxButtonGroupComponent, IgxGridComponent, IgxNumberSummaryOperand,
     IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
 
@@ -25,39 +25,44 @@ class CustomNumberSummary {
   templateUrl: './grid-displaydensity-sample.component.html'
 })
 export class GridDisplayDensitySampleComponent implements OnInit {
-
     @ViewChild('grid', { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
+
     @ViewChild(IgxButtonGroupComponent, { static: true }) public buttonGroup: IgxButtonGroupComponent;
     public data;
-    public density: DisplayDensity = 'compact';
-    public displayDensities;
+
+    public size = 'small';
+    public sizes;
     public numberSummaries = CustomNumberSummary;
 
     public ngOnInit() {
         this.data = INVOICE_DATA;
-        this.displayDensities = [
+        this.sizes = [
             {
-                label: 'compact',
-                selected: this.density === 'compact',
+                label: 'small',
+                selected: this.size === 'small',
                 togglable: true
             },
             {
-                label: 'cosy',
-                selected: this.density === 'cosy',
+                label: 'medium',
+                selected: this.size === 'medium',
                 togglable: true
             },
             {
-                label: 'comfortable',
-                selected: this.density === 'comfortable',
+                label: 'large',
+                selected: this.size === 'large',
                 togglable: true
             }
         ];
     }
 
-    public selectDensity(event) {
-        this.density = this.displayDensities[event.index].label;
-        this.grid.displayDensity = this.displayDensities[event.index].label;
+    @HostBinding('style.--ig-size')
+    protected get sizeStyle() {
+        return `var(--ig-size-${this.size})`;
+    }
+
+    public selectSize(event) {
+        this.size = this.sizes[event.index].label;
         this.grid.reflow();
     }
 

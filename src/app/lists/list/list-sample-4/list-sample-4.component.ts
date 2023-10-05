@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DisplayDensity, IgxFilterOptions } from 'igniteui-angular';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { IgxFilterOptions } from 'igniteui-angular';
 @Component({
     selector: 'app-contact-list2',
     styleUrls: ['./list-sample-4.component.scss'],
@@ -41,21 +41,26 @@ export class ListSample4Component implements OnInit {
         }
     ];
 
-    public density: DisplayDensity = 'comfortable';
-    public displayDensities;
+    public size = 'large';
+    public sizes;
 
     constructor() { }
 
     public ngOnInit() {
-        this.displayDensities = [
-            { label: 'comfortable', selected: this.density === 'comfortable', togglable: true },
-            { label: 'cosy', selected: this.density === 'cosy', togglable: true },
-            { label: 'compact', selected: this.density === 'compact', togglable: true }
+        this.sizes = [
+            { label: 'large', selected: this.size === 'large', togglable: true },
+            { label: 'medium', selected: this.size === 'medium', togglable: true },
+            { label: 'small', selected: this.size === 'small', togglable: true }
         ];
     }
 
-    public selectDensity(event) {
-        this.density = this.displayDensities[event.index].label;
+    @HostBinding('style.--ig-size')
+    protected get sizeStyle() {
+        return `var(--ig-size-${this.size})`;
+    }
+
+    public selectSize(event) {
+        this.size = this.sizes[event.index].label;
     }
 
     public toggleFavorite(contact: any, event: Event) {

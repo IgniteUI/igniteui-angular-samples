@@ -34,4 +34,8 @@
     margin: 0 16px;
     padding-top: 16px;
     width: 100%;
+
+    igx-grid {
+        --ig-size: var(--ig-size-medium);
+    }
 }

@@ -47,10 +47,16 @@
 
 	$crm-input-drop-down: input-group-theme(
         $placeholder-color: color($light-palette, 'gray', 500),
-        $idle-text-color: color($light-palette, 'gray', 900)
+        $idle-text-color: color($light-palette, 'gray', 900),
+        $size: sizable(rem(24px), rem(32px), rem(40px))
     );
 
+    input-group[type="search"] {
+        --ig-size: var(--ig-size-small);
+    }
+
 	.grid__wrapper {
+        --ig-size: var(--ig-size-medium);
 		width: inherit;
 		position: relative;
 		height: 100%;
@@ -59,6 +65,8 @@
 	}
 
 	.avatar-cell {
+        --ig-size: var(--ig-size-small);
+
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -197,9 +205,7 @@
 		box-shadow: none;
 	}
 
-
     @include css-vars($crm-input-drop-down);
-
 
 	.sample-flex-container {
 		.igx-input-group,

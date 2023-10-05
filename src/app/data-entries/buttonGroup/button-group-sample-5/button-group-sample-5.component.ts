@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { DisplayDensity } from 'igniteui-angular';
+import { Component, HostBinding, OnInit } from '@angular/core';
+
+type Button = {
+    label: string,
+    selected: boolean,
+    togglable: boolean
+}
 
 @Component({
     selector: 'app-button-group-sample-5',
@@ -7,22 +12,25 @@ import { DisplayDensity } from 'igniteui-angular';
     templateUrl: './button-group-sample-5.component.html'
 })
 export class ButtonGroupSample5Component implements OnInit {
-
     public rippleColor = 'grey';
-
-    public displayDensity: DisplayDensity = 'comfortable';
-    public displayDensities;
+    public size = 'large';
+    public sizes: Button[];
 
     public ngOnInit() {
-        this.displayDensities = [
-            { label: 'compact', selected: this.displayDensity === 'compact', togglable: true },
-            { label: 'cosy', selected: this.displayDensity === 'cosy', togglable: true },
-            { label: 'comfortable', selected: this.displayDensity === 'comfortable', togglable: true }
+        this.sizes = [
+            { label: 'small', selected: this.size === 'small', togglable: true },
+            { label: 'medium', selected: this.size === 'medium', togglable: true },
+            { label: 'large', selected: this.size === 'large', togglable: true }
         ];
     }
 
-    public selectDensity(event) {
-        this.displayDensity = this.displayDensities[event.index].label;
+    public selectSize(event: any) {
+        this.size = this.sizes[event.index].label;
     }
 
+
+    @HostBinding('style.--ig-size')
+    protected get sizeStyle() {
+        return `var(--ig-size-${this.size})`;
+    }
 }

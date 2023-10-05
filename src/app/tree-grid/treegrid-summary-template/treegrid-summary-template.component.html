@@ -5,13 +5,11 @@
             <input igxInput id="height" name="height" type="number" [(ngModel)]="summaryHeight">
         </igx-input-group>
         <igx-switch [(ngModel)]="hasSummary">Toggle Summaries</igx-switch>
-        <igx-buttongroup [values]="displayDensities" (selected)="selectDensity($event)" [displayDensity]="displayDensity">
-        </igx-buttongroup>
+        <igx-buttongroup [values]="sizes" (selected)="selectSize($event)"></igx-buttongroup>
     </div>
 
     <igx-tree-grid [igxPreventDocumentScroll]="true" #treeGrid [data]="data" cellSelection="single" primaryKey="ID"
-        foreignKey="ParentID" height="520px" width="100%" [summaryRowHeight]="summaryHeight"
-        [displayDensity]="displayDensity">
+        foreignKey="ParentID" height="520px" width="100%" [summaryRowHeight]="summaryHeight">
         <igx-column field="Name"></igx-column>
         <igx-column field="Age" dataType="number" width="15%" [hasSummary]="hasSummary">
             <ng-template igxSummary let-summaryResults>

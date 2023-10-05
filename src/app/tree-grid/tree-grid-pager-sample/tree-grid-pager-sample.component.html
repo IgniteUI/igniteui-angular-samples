@@ -1,8 +1,7 @@
 <div class="grid__wrapper">
-    <igx-tree-grid [igxPreventDocumentScroll]="true" #treegrid1 [data]="data" height="500px" width="100%"
-        displayDensity="cosy" primaryKey="ID" foreignKey="ParentID">
+    <igx-tree-grid [igxPreventDocumentScroll]="true" #treegrid1 [data]="data" height="500px" width="100%" primaryKey="ID" foreignKey="ParentID">
         <igx-paginator #paginator [(page)]="treegrid1.page" [totalRecords]="treegrid1.totalRecords"
-            [perPage]="10" [selectOptions]="selectOptions" [displayDensity]="treegrid1.displayDensity">
+            [perPage]="10" [selectOptions]="selectOptions">
             <igx-paginator-content>
                 <igx-page-size *ngIf="!isDropdownHidden"></igx-page-size>
                 <igx-page-nav *ngIf="!isPagerHidden"></igx-page-nav>
@@ -33,14 +32,6 @@
 
 
     <div class="options-container">
-        <label>Display density:</label>
-        <div class="select-input">
-            <igx-select [(ngModel)]="treegrid1.displayDensity" [displayDensity]="'compact'">
-                <igx-select-item *ngFor="let density of densityOptions" [value]="density">
-                    {{ density }}
-                </igx-select-item>
-            </igx-select>
-        </div>
         <igx-switch [(ngModel)]="isDropdownHidden">Hide Dropdown</igx-switch>
         <igx-switch [(ngModel)]="isPagerHidden">Hide Pager</igx-switch>
     </div>
