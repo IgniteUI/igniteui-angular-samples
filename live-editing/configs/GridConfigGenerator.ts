@@ -1463,9 +1463,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: [],
             additionalDependencies: ['igniteui-webcomponents'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxButtonModule', 'RatingInFormComponent', 'IgxCardModule', 'IgcFormsModule'],
+                imports: ['IgxButtonModule', 'RatingInFormComponent', 'IgxCardModule', 'IgcFormsModule', 'IgxIconModule'],
                 ngDeclarations: ['RatingInFormComponent'],
-                ngImports: ['IgxButtonModule', 'IgxCardModule', 'IgcFormsModule']
+                ngImports: ['IgxButtonModule', 'IgxCardModule', 'IgcFormsModule', 'IgxIconModule']
             })
         }));
 
