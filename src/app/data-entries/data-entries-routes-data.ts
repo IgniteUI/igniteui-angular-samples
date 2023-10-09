@@ -6,7 +6,7 @@ export const dataEntriesRoutesData = {
     "button-group-sample-1": { displayName: "Button Group Overview", parentName: "Button Group" },
     "button-group-sample-2": { displayName: "Vertical Button Group", parentName: "Button Group" },
     "button-group-sample-3": { displayName: "Horizontal Button Group", parentName: "Button Group" },
-    "button-group-sample-4": { displayName: "Multiple Selection", parentName: "Button Group" },
+    "button-group-sample-4": { displayName: "Selection Mode", parentName: "Button Group" },
     "button-group-sample-5": { displayName: "Display Density", parentName: "Button Group" },
     "button-group-style": { displayName: "Button Group Style", parentName: "Button Group" },
     "buttons-sample-1": { displayName: "Overview", parentName: "Buttons" },

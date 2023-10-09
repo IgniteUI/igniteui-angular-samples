@@ -1,7 +1,8 @@
 import {IgxButtonGroupModule,
 IgxButtonModule,
 IgxIconModule,
-IgxRippleModule} from 'igniteui-angular';
+IgxRippleModule,
+IgxRadioModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class ButtonGroupConfigGenerator implements IConfigGenerator {
 
@@ -48,9 +49,9 @@ export class ButtonGroupConfigGenerator implements IConfigGenerator {
             component: 'ButtonGroupSampleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxButtonGroupModule', 'ButtonGroupSampleComponent', 'IgxIconModule',
-                    'IgxButtonModule', 'IgxRippleModule'],
+                    'IgxButtonModule', 'IgxRippleModule', 'IgxRadioModule'],
                 ngDeclarations: ['ButtonGroupSampleComponent'],
-                ngImports: ['IgxButtonGroupModule', 'IgxIconModule', 'IgxButtonModule', 'IgxRippleModule']
+                ngImports: ['IgxButtonGroupModule', 'IgxIconModule', 'IgxButtonModule', 'IgxRippleModule', 'IgxRadioModule']
             }),
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
