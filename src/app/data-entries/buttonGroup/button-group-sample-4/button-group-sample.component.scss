@@ -1,8 +1,10 @@
-igx-buttongroup{
-    display: inline-block;
-    width: 200px;
+.sample-column,
+.radio-buttons {
+    display: flex;
+    gap: 16px;
 }
 
-.radio-buttons{
-    margin: 1rem 0.5rem;
+.sample-column {
+    flex-direction: column;
+    align-items: flex-start;
 }
