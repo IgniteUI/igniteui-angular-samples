@@ -26,7 +26,12 @@ export class MultiLevelService {
     return this._dropdowns.some((d) => d.id === dropdown.id);
   }
 
-  public handleSelection(args?: any): void {
+  public handleSelection(): void {
+    // close all inner dropdowns on selection
+    this.closeAll();
+  }
+
+  public handleClosing(args: any): void {
     // do not close the main dropdown if a host item is selected
     if (args && args.event) {
       const target = args.event.composedPath()
@@ -35,14 +40,6 @@ export class MultiLevelService {
       if (target?.hasAttribute('multiLevel')) {
         args.cancel = true;
       }
-
-    } else {
-      // close all inner dropdowns on selection
-      this._dropdowns.forEach((dropdown) => {
-        if (!dropdown.collapsed) {
-          dropdown.close();
-        }
-      });
     }
   }
 
@@ -55,16 +52,20 @@ export class MultiLevelService {
 
     // hover outside of dropdown -> close all inner dropdowns
     if (!target?.id) {
-      this._dropdowns.forEach((d) => {
-        if (!d.collapsed) {
-          d.close();
-        }
-      });
+      this.closeAll();
 
     } else if (target?.hasAttribute('multiLevel') && target?.id !== host.id) {
       // hover back to parent dropdown
       // if the target is not the host -> close inner dropdown
       dropdown.close();
     }
+  }
+
+  private closeAll() {
+    this._dropdowns.forEach((dropdown) => {
+        if (!dropdown.collapsed) {
+          dropdown.close();
+        }
+    });
   }
 }

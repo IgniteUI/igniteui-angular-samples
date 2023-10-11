@@ -73,7 +73,7 @@ export class DropdownMultiLevelMenuComponent implements AfterViewInit {
     });
 
     this._multiLevelDropdown.closing.subscribe((args) => {
-        this._multiLevelService.handleSelection(args);
+        this._multiLevelService.handleClosing(args);
     });
   }
 }
