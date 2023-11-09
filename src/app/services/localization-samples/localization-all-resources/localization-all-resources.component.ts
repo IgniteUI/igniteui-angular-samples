@@ -25,7 +25,7 @@ import localeHI from '@angular/common/locales/hi';
 import localeHans from '@angular/common/locales/zh-Hans';
 import localeHant from '@angular/common/locales/zh-Hant';
 import { DATA } from '../../../data/nwindData';
-import { IgxGridComponent, IResourceStrings, changei18n, GridResourceStringsEN, IGridResourceStrings } from 'igniteui-angular';
+import { IgxGridComponent, IResourceStrings, GridResourceStringsEN, IGridResourceStrings } from 'igniteui-angular';
 import {
     IgxResourceStringsBG, IgxResourceStringsCS, IgxResourceStringsDA, IgxResourceStringsDE,
     IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsHU, IgxResourceStringsIT,
@@ -39,7 +39,6 @@ import {
     styleUrls: ['./localization-all-resources.component.scss'],
     templateUrl: 'localization-all-resources.component.html'
 })
-
 export class LocalizationAllResourcesComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
