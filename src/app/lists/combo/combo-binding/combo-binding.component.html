@@ -7,7 +7,7 @@
     </div>
     <h6>Selected Cities:</h6>
     <div class="cities-container">
-        <igx-card  *ngFor="let city of selectedNoValueKey">
+        <igx-card  *ngFor="let city of selectedNoValueKey" elevated>
             <igx-card-header>
                 <h5 igxCardHeaderTitle>{{ city.name }}</h5>
                 <h5 igxCardHeaderSubtitle>{{ city.country }}</h5>
