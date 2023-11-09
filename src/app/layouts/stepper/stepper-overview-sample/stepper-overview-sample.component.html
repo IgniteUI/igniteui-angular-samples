@@ -81,7 +81,7 @@
                         </igx-radio>
                     </igx-radio-group>
                 </form>
-                <igx-card  *ngIf="selectedCard" elevated>
+                <igx-card  *ngIf="selectedCard">
                     <igx-card-content>
                         <div class="sample-row sample-card">
                             <img src="{{selectedCard.img}}" alt="">
@@ -145,7 +145,7 @@
                         <a (click)="$event.stopPropagation()">Terms and Conditions</a>
                     </div>
                 </form>
-                <igx-card  *ngIf="selectedCard" elevated>
+                <igx-card  *ngIf="selectedCard">
                     <igx-card-content>
                         <div class="sample-row sample-card">
                             <img src="{{selectedCard.img}}" alt="">
@@ -207,7 +207,7 @@
                         </igx-input-group>
                     </div>
                 </form>
-                <igx-card  *ngIf="selectedCard" elevated>
+                <igx-card  *ngIf="selectedCard">
                     <igx-card-content>
                         <div class="sample-row sample-card">
                             <img src="{{selectedCard.img}}" alt="">
@@ -242,7 +242,7 @@
                     <p>We will contact you within a few days.</p>
                 </div>
             </div>
-            <igx-card class="sample-small-card"  *ngIf="selectedCard" elevated>
+            <igx-card class="sample-small-card"  *ngIf="selectedCard">
                 <igx-card-content>
                     <strong class="sample-date">Application date: {{ today | date:'d MMM y' }}</strong>
                     <div class="sample-row sample-card">
