@@ -25,7 +25,7 @@ import localeHI from '@angular/common/locales/hi';
 import localeHans from '@angular/common/locales/zh-Hans';
 import localeHant from '@angular/common/locales/zh-Hant';
 import { DATA } from '../../../data/nwindData';
-import { IgxGridComponent, IResourceStrings, GridResourceStringsEN, IGridResourceStrings, changei18n } from 'igniteui-angular';
+import { IgxGridComponent, GridResourceStringsEN, IGridResourceStrings, changei18n } from 'igniteui-angular';
 import {
     IgxResourceStringsBG, IgxResourceStringsCS, IgxResourceStringsDA, IgxResourceStringsDE,
     IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsHU, IgxResourceStringsIT,
@@ -49,7 +49,7 @@ export class LocalizationAllResourcesComponent implements OnInit {
         'HI', 'BG', 'CS', 'DA', 'DE', 'EN', 'ES', 'FR', 'HU', 'IT', 'JA', 'KO', 'NB', 'NL',
         'PL', 'PT', 'RO', 'SV', 'TR', 'zh-Hans', 'zh-Hant'
     ];
-    public partialCustomHindi: IResourceStrings;
+    public partialCustomHindi: IGridResourceStrings;
 
     constructor() { }
     public ngOnInit(): void {
@@ -85,7 +85,7 @@ export class LocalizationAllResourcesComponent implements OnInit {
             igx_grid_summary_max: 'अधिक',
             igx_grid_summary_sum: 'योग',
             igx_grid_summary_average: 'औसत'
-        } as IGridResourceStrings;
+        };
 
         this.locales = [
             { type: 'BG', resource: IgxResourceStringsBG },
