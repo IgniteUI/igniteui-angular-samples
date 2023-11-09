@@ -121,50 +121,62 @@
     </div>
 </div>
 <div class="sample-column">
-    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" id="accordion">
-        <ngb-panel panelId="ngb-panel-0">
-            <ng-template ngbPanelHeader let-opened="opened">
-                <div class="d-flex align-items-center justify-content-between">
-                    <div igxLayout igxLayoutItemAlign="center">
-                        <button igxButton="icon" class="mr-2" ngbPanelToggle>
-                            <igx-icon>{{ opened ? 'expand_less' : 'expand_more' }}</igx-icon>
-                        </button>
-                        <h5 class="m-0">Visa Gold</h5>
+    <div ngbAccordion #acc="ngbAccordion" activeIds="ngb-panel-0" id="accordion">
+        <div ngbAccordionItem panelId="ngb-panel-0">
+            <div ngbAccordionHeader>
+                <ng-template let-opened="opened">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div igxLayout igxLayoutItemAlign="center">
+                            <button igxButton="icon" class="mr-2" ngbPanelToggle>
+                                <igx-icon>{{ opened ? 'expand_less' : 'expand_more' }}</igx-icon>
+                            </button>
+                            <h5 class="m-0">Visa Gold</h5>
+                        </div>
+                        <h5>Balance: <span class="ml-1 primary">$ 3543.51</span></h5>
                     </div>
-                    <h5>Balance: <span class="ml-1 primary">$ 3543.51</span></h5>
+                </ng-template>
+            </div>
+            <div ngbAccordionCollapse>
+                <div ngbAccordionBody>
+                    <ng-template>
+                        <igx-list>
+                            <igx-list-item *ngFor="let contact of contacts">
+                                <span igxListLineTitle>{{ contact.name }}</span>
+                                <span igxListAction>{{ contact.amount }}</span>
+                            </igx-list-item>
+                        </igx-list>
+                        <button igxButton="raised" class="mt-3">Show more</button>
+                    </ng-template>
                 </div>
-            </ng-template>
-            <ng-template ngbPanelContent>
-                <igx-list>
-                    <igx-list-item *ngFor="let contact of contacts">
-                        <span igxListLineTitle>{{ contact.name }}</span>
-                        <span igxListAction>{{ contact.amount }}</span>
-                    </igx-list-item>
-                </igx-list>
-                <button igxButton="raised" class="mt-3">Show more</button>
-            </ng-template>
-        </ngb-panel>
-        <ngb-panel panelId="ngb-panel-1">
-            <ng-template ngbPanelHeader let-opened="opened">
-                <div class="d-flex align-items-center justify-content-between">
-                    <div igxLayout igxLayoutItemAlign="center">
-                        <button igxButton="icon" class="mr-2" ngbPanelToggle>
-                            <igx-icon>{{ opened ? 'expand_less' : 'expand_more' }}</igx-icon>
-                        </button>
-                        <h5 class="m-0">Mastercard</h5>
+            </div>
+        </div>
+        <div ngbAccordionItem panelId="ngb-panel-1">
+            <div ngbAccordionHeader>
+                <ng-template ngbAccordionHeader let-opened="opened">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div igxLayout igxLayoutItemAlign="center">
+                            <button igxButton="icon" class="mr-2" ngbPanelToggle>
+                                <igx-icon>{{ opened ? 'expand_less' : 'expand_more' }}</igx-icon>
+                            </button>
+                            <h5 class="m-0">Mastercard</h5>
+                        </div>
+                        <h5>Balance: <span class="ml-1 primary">$ 12,354.32</span></h5>
                     </div>
-                    <h5>Balance: <span class="ml-1 primary">$ 12,354.32</span></h5>
+                </ng-template>
+            </div>
+            <div ngbAccordionCollapse>
+                <div ngbAccordionBody>
+                    <ng-template ngbPanelContent>
+                        <igx-list>
+                            <igx-list-item *ngFor="let contact of contacts">
+                                <span igxListLineTitle>{{ contact.name }}</span>
+                                <span igxListAction>{{ contact.amount }}</span>
+                            </igx-list-item>
+                        </igx-list>
+                        <button igxButton="raised" class="mt-3">Show more</button>
+                    </ng-template>
                 </div>
-            </ng-template>
-            <ng-template ngbPanelContent>
-                <igx-list>
-                    <igx-list-item *ngFor="let contact of contacts">
-                        <span igxListLineTitle>{{ contact.name }}</span>
-                        <span igxListAction>{{ contact.amount }}</span>
-                    </igx-list-item>
-                </igx-list>
-                <button igxButton="raised" class="mt-3">Show more</button>
-            </ng-template>
-        </ngb-panel>
-    </ngb-accordion>
+            </div>
+        </div>
+    </div>
 </div>
