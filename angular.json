@@ -7,6 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -15,7 +16,10 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+                "zone.js",
+                "hammerjs"
+            ],
             "assets": [
               "src/assets",
               "src/favicon.ico"
@@ -44,7 +48,6 @@
                 }
               ],
               "optimization": true,
-              "aot": true,
               "outputHashing": "all",
               "namedChunks": false,
               "extractLicenses": true,

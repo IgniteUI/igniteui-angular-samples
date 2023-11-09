@@ -1,9 +1,7 @@
-igx-select {
-    --ig-size: var(--ig-size-small);
-    margin-top: 10px;
-    width: 192px;
-}
+:host {
+    .grid__wrapper {
+        margin: 16px 32px;
+    }
 
-.grid__wrapper {
-    margin: 16px 32px;
+    --ig-size: var(--ig-size-small);
 }
