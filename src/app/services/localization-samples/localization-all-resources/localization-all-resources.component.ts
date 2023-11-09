@@ -25,7 +25,7 @@ import localeHI from '@angular/common/locales/hi';
 import localeHans from '@angular/common/locales/zh-Hans';
 import localeHant from '@angular/common/locales/zh-Hant';
 import { DATA } from '../../../data/nwindData';
-import { IgxGridComponent, IResourceStrings, GridResourceStringsEN, IGridResourceStrings } from 'igniteui-angular';
+import { IgxGridComponent, IResourceStrings, GridResourceStringsEN, IGridResourceStrings, changei18n } from 'igniteui-angular';
 import {
     IgxResourceStringsBG, IgxResourceStringsCS, IgxResourceStringsDA, IgxResourceStringsDE,
     IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsHU, IgxResourceStringsIT,
@@ -49,7 +49,6 @@ export class LocalizationAllResourcesComponent implements OnInit {
         'HI', 'BG', 'CS', 'DA', 'DE', 'EN', 'ES', 'FR', 'HU', 'IT', 'JA', 'KO', 'NB', 'NL',
         'PL', 'PT', 'RO', 'SV', 'TR', 'zh-Hans', 'zh-Hant'
     ];
-    public cashedLocalizationEN: IResourceStrings;
     public partialCustomHindi: IResourceStrings;
 
     constructor() { }
