@@ -20,7 +20,7 @@ export class LocalizationSample2Component implements OnInit {
         const currentRS = {
             ...GridResourceStringsEN,
             ...TimePickerResourceStringsEN
-        }
+        };
 
         for (const key of Object.keys(currentRS)) {
             if (currentRS[key].indexOf('[Localized]') === -1) {

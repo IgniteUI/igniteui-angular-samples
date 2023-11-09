@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "update": "ng update",
-    "start": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng serve -o",
+    "start": "ng serve -o",
     "startProd": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng serveProd -o",
     "start:live-editing": "gulp generate-live-editing && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve -o",
     "start:watch-live-editing": "gulp watch-live-editing && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve -o",
@@ -15,7 +15,7 @@
     "generate-live-editing:app-crm": "gulp generate-live-editing --appCrm=true",
     "watch-live-editing": "gulp watch-live-editing",
     "sass-js-compile-check": "gulp sass-js-compile-check",
-    "build": "gulp generate-live-editing && gulp overwrite-package-json && node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng build --configuration production",
+    "build": "gulp generate-live-editing && gulp overwrite-package-json && ng build --configuration production",
     "build:app-lob": "gulp generate-live-editing --appDv=true && gulp overwrite-package-json && node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng build app-lob --configuration production && gulp prerenderPages",
     "build:app-crm": "gulp generate-live-editing --appCrm=true && gulp overwrite-package-json && node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng build app-crm --configuration production",
     "test": "ng test",
