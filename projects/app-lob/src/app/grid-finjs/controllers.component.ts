@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
-    IButtonGroupEventArgs, IChangeSwitchEventArgs, IgxButtonGroupComponent,
+    IButtonGroupEventArgs, IChangeCheckboxEventArgs, IgxButtonGroupComponent,
     IgxSliderComponent, IgxToastComponent, ISliderValueChangeEventArgs, VerticalAlignment }
 from 'igniteui-angular';
 import { Observable, Subscription, timer } from 'rxjs';
@@ -101,7 +101,7 @@ export class ControllerComponent implements OnInit, OnDestroy {
         this.playButtons.deselectButton(2);
     }
 
-    public onChange(action: string, event: IChangeSwitchEventArgs): void {
+    public onChange(action: string, event: IChangeCheckboxEventArgs): void {
         this.switchChanged.emit({action, value: event.checked });
     }
 

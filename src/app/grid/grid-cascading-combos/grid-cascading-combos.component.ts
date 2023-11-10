@@ -37,9 +37,9 @@ export class GridCascadingCombosComponent implements OnInit {
             (combo) => combo.id === 'city-' + ID
         )[0];
         this.clearOldData(cell, nextRegionCombo, nextCityCombo);
-        this.selectedCountry = e.newSelection as Country;
-        cell.update(e.newSelection ? e.newSelection : '');
-        if (e.newSelection) {
+        this.selectedCountry = e.newValue as Country;
+        cell.update(e.newValue ? e.newValue : '');
+        if (e.newValue) {
             document.getElementById('region-progress-' + ID).style.visibility = 'visible';
             this.loadingTime = 2000;
         }
@@ -61,9 +61,9 @@ export class GridCascadingCombosComponent implements OnInit {
         )[0];
         this.clearOldData(cell, null, cityCombo);
 
-        this.selectedRegion = e.newSelection as Region;
-        cell.update(e.newSelection ? e.newSelection : '');
-        if (e.newSelection) {
+        this.selectedRegion = e.newValue as Region;
+        cell.update(e.newValue ? e.newValue : '');
+        if (e.newValue) {
             document.getElementById(
                 'city-progress-' + cell.row.data.ID
             ).style.visibility = 'visible';

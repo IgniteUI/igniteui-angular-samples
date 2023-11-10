@@ -7,7 +7,7 @@
             <div class="card-wrapper">
                 <igx-card *ngFor="let card of cards" (click)="selectCard(card)"
                     [ngClass]="{'selected-card': selectedCard === card}" [tabIndex]="0"
-                    (keydown)="handleKeyDown($event, card)">
+                    (keydown)="handleKeyDown($event, card)" elevated>
                     <igx-badge *ngIf="selectedCard === card" value="Your current choice"></igx-badge>
                     <igx-card-media>
                         <img src="{{card.img}}" alt="">
@@ -81,7 +81,7 @@
                         </igx-radio>
                     </igx-radio-group>
                 </form>
-                <igx-card type="outlined" *ngIf="selectedCard">
+                <igx-card  *ngIf="selectedCard">
                     <igx-card-content>
                         <div class="sample-row sample-card">
                             <img src="{{selectedCard.img}}" alt="">
@@ -145,7 +145,7 @@
                         <a (click)="$event.stopPropagation()">Terms and Conditions</a>
                     </div>
                 </form>
-                <igx-card type="outlined" *ngIf="selectedCard">
+                <igx-card  *ngIf="selectedCard">
                     <igx-card-content>
                         <div class="sample-row sample-card">
                             <img src="{{selectedCard.img}}" alt="">
@@ -207,7 +207,7 @@
                         </igx-input-group>
                     </div>
                 </form>
-                <igx-card type="outlined" *ngIf="selectedCard">
+                <igx-card  *ngIf="selectedCard">
                     <igx-card-content>
                         <div class="sample-row sample-card">
                             <img src="{{selectedCard.img}}" alt="">
@@ -242,7 +242,7 @@
                     <p>We will contact you within a few days.</p>
                 </div>
             </div>
-            <igx-card class="sample-small-card" type="outlined" *ngIf="selectedCard">
+            <igx-card class="sample-small-card"  *ngIf="selectedCard">
                 <igx-card-content>
                     <strong class="sample-date">Application date: {{ today | date:'d MMM y' }}</strong>
                     <div class="sample-row sample-card">

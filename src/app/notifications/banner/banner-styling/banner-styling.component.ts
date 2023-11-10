@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { IgxBannerComponent, IgxToastComponent, slideInLeft, slideOutRight, VerticalAlignment } from 'igniteui-angular';
+import { IgxBannerComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { slideInLeft, slideOutRight } from 'igniteui-angular/animations';
 import { Subject } from 'rxjs';
 
 @Component({
