@@ -4,9 +4,8 @@ import { CloseScrollStrategy,
     GlobalPositionStrategy,
     IgxDialogComponent,
     IgxOverlayOutletDirective,
-    PositionSettings,
-    slideInBottom,
-    slideOutTop } from 'igniteui-angular';
+    PositionSettings } from 'igniteui-angular';
+import { slideInBottom, slideOutTop } from 'igniteui-angular/animations';
 
 @Component({
     selector: 'app-dialog-styling-sample',

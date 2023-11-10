@@ -7,6 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -15,7 +16,10 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+                "zone.js",
+                "hammerjs"
+            ],
             "assets": [
               "src/assets",
               "src/favicon.ico"
@@ -44,7 +48,6 @@
                 }
               ],
               "optimization": true,
-              "aot": true,
               "outputHashing": "all",
               "namedChunks": false,
               "extractLicenses": true,
@@ -63,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "my-app:build"
+            "buildTarget": "my-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "my-app:build:production"
+              "buildTarget": "my-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "my-app:build"
+            "buildTarget": "my-app:build"
           }
         },
         "test": {
@@ -187,18 +190,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app-lob:build"
+            "buildTarget": "app-lob:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app-lob:build:production"
+              "buildTarget": "app-lob:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-lob:build"
+            "buildTarget": "app-lob:build"
           }
         },
         "test": {
@@ -310,18 +313,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app-crm:build"
+            "buildTarget": "app-crm:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app-crm:build:production"
+              "buildTarget": "app-crm:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-crm:build"
+            "buildTarget": "app-crm:build"
           }
         },
         "test": {

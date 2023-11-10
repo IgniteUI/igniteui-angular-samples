@@ -33,7 +33,7 @@
 
 <div igxLayout>
     <div class="card-wrapper">
-        <igx-card>
+        <igx-card elevated>
             <igx-card-media height="180px">
                 <img src="assets/images/card/media/card-image1.png">
             </igx-card-media>
@@ -56,7 +56,7 @@
         </igx-card>
     </div>
     <div class="card-wrapper">
-        <igx-card>
+        <igx-card elevated>
             <igx-card-media height="180px">
                 <img src="assets/images/card/media/card-image2.png">
             </igx-card-media>
@@ -80,7 +80,7 @@
         </igx-card>
     </div>
     <div class="card-wrapper">
-        <igx-card>
+        <igx-card elevated>
             <igx-card-media height="180px">
                 <img src="assets/images/card/media/card-image3.png">
             </igx-card-media>
@@ -119,15 +119,21 @@
         <div igxLayout>
             <div class="slider-wrapper">
                 <p>Daily withdrawal limit: ${{slider.value}}</p>
-                <mat-slider #slider min="100" max="1000" step="50" value="700"></mat-slider>
+                <mat-slider min="100" max="1000" step="50">
+                    <input matSliderThumb value="700" #slider>
+                </mat-slider>
             </div>
             <div class="slider-wrapper">
                 <p>Daily purchase limit: ${{slider2.value}}</p>
-                <mat-slider #slider2 min="100" max="1000" step="50" value="300"></mat-slider>
+                <mat-slider min="100" max="1000" step="50">
+                    <input matSliderThumb value="300" #slider2>
+                </mat-slider>
             </div>
             <div class="slider-wrapper">
                 <p>Total daily limit: ${{slider3.value}}</p>
-                <mat-slider #slider3 min="100" max="1000" step="50" value="1000"></mat-slider>
+                <mat-slider min="100" max="1000" step="50">
+                    <input matSliderThumb value="1000" #slider3>
+                </mat-slider>
             </div>
         </div>
         <igx-divider></igx-divider>
@@ -187,15 +193,21 @@
         <div igxLayout>
             <div class="slider-wrapper">
                 <p>Daily withdrawal limit: ${{slider4.value}}</p>
-                <mat-slider #slider4 min="100" max="1000" step="50" value="200"></mat-slider>
+                <mat-slider min="100" max="1000" step="50">
+                    <input matSliderThumb value="200" #slider4>
+                </mat-slider>
             </div>
             <div class="slider-wrapper">
                 <p>Daily purchase limit: ${{slider5.value}}</p>
-                <mat-slider #slider5 min="100" max="1000" step="50" value="700"></mat-slider>
+                <mat-slider min="100" max="1000" step="50">
+                    <input matSliderThumb value="700" #slider5>
+                </mat-slider>
             </div>
             <div class="slider-wrapper">
                 <p>Total daily limit: ${{slider6.value}}</p>
-                <mat-slider #slider6 min="100" max="1000" step="50" value="900"></mat-slider>
+                <mat-slider min="100" max="1000" step="50">
+                    <input matSliderThumb value="900" #slider6>
+                </mat-slider>
             </div>
         </div>
         <igx-divider></igx-divider>
