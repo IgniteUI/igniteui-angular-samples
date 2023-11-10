@@ -1,5 +1,5 @@
 import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxOverlayOutletDirective } from 'igniteui-angular';
+import { ConnectedPositioningStrategy, HorizontalAlignment, IgxDialogComponent, IgxOverlayOutletDirective, NoOpScrollStrategy, VerticalAlignment } from 'igniteui-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OverlayContainer } from '@angular/cdk/overlay';
 
@@ -10,7 +10,6 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 })
 
 export class AngularMaterialComponent implements OnInit {
-
     @ViewChild(IgxOverlayOutletDirective, { static: true })
     public outlet: IgxOverlayOutletDirective;
 
@@ -19,6 +18,15 @@ export class AngularMaterialComponent implements OnInit {
 
     @HostBinding('class')
     public themesClass = 'light';
+
+    public overlaySettings = {
+        positionStrategy: new ConnectedPositioningStrategy({
+            horizontalDirection: HorizontalAlignment.Left,
+            horizontalStartPoint: HorizontalAlignment.Right,
+            verticalStartPoint: VerticalAlignment.Bottom
+        }),
+        scrollStrategy: new NoOpScrollStrategy()
+    };
 
     firstFormGroup: FormGroup;
     secondFormGroup: FormGroup;
