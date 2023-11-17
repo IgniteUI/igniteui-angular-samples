@@ -1,7 +1,6 @@
 import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxOverlayOutletDirective } from 'igniteui-angular';
+import { ConnectedPositioningStrategy, HorizontalAlignment, IgxDialogComponent, IgxDropDownComponent, IgxOverlayOutletDirective, NoOpScrollStrategy, VerticalAlignment } from 'igniteui-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
     selector: 'app-angular-sample',
@@ -10,12 +9,20 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 })
 
 export class AngularMaterialComponent implements OnInit {
-
     @ViewChild(IgxOverlayOutletDirective, { static: true })
     public outlet: IgxOverlayOutletDirective;
 
     @ViewChild('dialog', { read: IgxDialogComponent, static: true })
     public dialog: IgxDialogComponent;
+
+    @ViewChild('dropdown', { read: IgxDropDownComponent, static: true })
+    public dropdown: IgxDropDownComponent;
+
+    @ViewChild(IgxOverlayOutletDirective, { static: true })
+    private igxOverlayOutlet: IgxOverlayOutletDirective;
+
+    @ViewChild(IgxOverlayOutletDirective, { static: true })
+    private igxOverlayOutlet1: IgxOverlayOutletDirective;
 
     @HostBinding('class')
     public themesClass = 'light';
@@ -24,20 +31,18 @@ export class AngularMaterialComponent implements OnInit {
     secondFormGroup: FormGroup;
     thirdFormGroup: FormGroup;
 
+    public themeOverlaySettings;
+    public dropDownSetting;
     private _dialogOverlaySettings2;
 
-    constructor(private _formBuilder: FormBuilder,
-        private overlayContainer: OverlayContainer) {
-    }
+    constructor(private _formBuilder: FormBuilder) {}
 
     public lightTheme() {
         this.themesClass = 'light';
-        this.overlayContainer.getContainerElement().classList.remove('dark');
     }
 
     public darkTheme() {
         this.themesClass = 'dark';
-        this.overlayContainer.getContainerElement().classList.add('dark');
     }
 
     public openDialog() {
@@ -49,6 +54,26 @@ export class AngularMaterialComponent implements OnInit {
         this._dialogOverlaySettings2 = {
             modal: true,
             outlet: this.outlet
+        };
+
+        this.dropDownSetting = {
+            positionStrategy: new ConnectedPositioningStrategy(),
+            scrollStrategy: new NoOpScrollStrategy(),
+            closeOnOutsideClick: true,
+            modal: false,
+            outlet: this.igxOverlayOutlet
+        };
+
+        this.themeOverlaySettings = {
+            positionStrategy: new ConnectedPositioningStrategy({
+                horizontalDirection: HorizontalAlignment.Left,
+                horizontalStartPoint: HorizontalAlignment.Right,
+                verticalStartPoint: VerticalAlignment.Bottom
+            }),
+            scrollStrategy: new NoOpScrollStrategy(),
+            closeOnOutsideClick: true,
+            modal: false,
+            outlet: this.igxOverlayOutlet1
         };
 
         this.firstFormGroup = this._formBuilder.group({

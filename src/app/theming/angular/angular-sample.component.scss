@@ -36,7 +36,7 @@ $igx-light-palette: palette(
 );
 
 $custom-dark-palette: palette(
-    $primary: #011627,
+    $primary: #206094,
     $secondary: #72da67,
     $surface: #222,
     $info: #1377d5,
@@ -47,11 +47,27 @@ $custom-dark-palette: palette(
 
 $light-palette-primary: mat.define-palette(material-like-palette('primary', $saturations, $igx-light-palette));
 $light-palette-accent: mat.define-palette(material-like-palette('secondary', $saturations, $igx-light-palette));
-$custom-mat-light-theme: mat.define-light-theme($light-palette-primary, $light-palette-accent);
+$light-palette-warn: mat.define-palette(material-like-palette('warn', $saturations, $igx-light-palette));
+$custom-mat-light-theme: mat.define-light-theme((
+    color: (
+        primary: $light-palette-primary,
+        accent: $light-palette-accent,
+        warn: $light-palette-warn,
+    ),
+    typography: $custom-typography,
+    density: 0,
+));
 
 $dark-palette-primary: mat.define-palette(material-like-palette('primary', $saturations, $custom-dark-palette));
 $dark-palette-accent: mat.define-palette(material-like-palette('secondary', $saturations, $custom-dark-palette));
-$custom-mat-dark-theme: mat.define-dark-theme($dark-palette-primary, $dark-palette-accent);
+$dark-palette-warn: mat.define-palette(material-like-palette('warn', $saturations, $custom-dark-palette));
+$custom-mat-dark-theme: mat.define-dark-theme((
+    color: (
+        primary: $dark-palette-primary, 
+        accent: $dark-palette-accent,
+        warn: $dark-palette-warn
+    )
+));
 
 .navbar-brand {
     margin-right: 16px;
@@ -143,6 +159,9 @@ igx-expansion-panel-body {
         }
 
         ::ng-deep {
+            @include dark-theme($custom-dark-palette);
+            @include mat.all-component-themes($custom-mat-dark-theme);
+
             .primary {
                 color: color($custom-dark-palette, 'primary', 100);
                 margin-left: 32px;
@@ -181,16 +200,10 @@ igx-expansion-panel-body {
             color: color($igx-light-palette, "warn");
         }
     }
-}
 
-::ng-deep {
-    @include mat.all-component-typographies($custom-typography);
-    @include mat.core();
-    @include theme($igx-light-palette);
-    @include mat.all-component-themes($custom-mat-light-theme);
-
-    .dark {
-        @include dark-theme($custom-dark-palette);
-        @include mat.all-component-themes($custom-mat-dark-theme);
+    ::ng-deep {
+        @include mat.core();
+        @include theme($igx-light-palette);
+        @include mat.all-component-themes($custom-mat-light-theme);
     }
 }
