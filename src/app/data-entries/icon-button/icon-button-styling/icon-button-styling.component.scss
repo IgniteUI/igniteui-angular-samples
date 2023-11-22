@@ -1,0 +1,48 @@
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.button-sample {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 30%;
+    margin: 16px 0;
+}
+
+[igxIconButton="flat"] {
+    --foreground: #011627;
+    --background: #FEFEFE;
+    --hover-background: #ECAA53;
+    --focus-foreground: #011627dc;
+    --focus-background: #ECAA53;
+    --active-foreground: #011627dc;
+    --active-background: #ECAA53;
+}
+
+[igxIconButton="contained"] {
+    --background: #011627;
+    --foreground: #FEFEFE;
+    --hover-foreground:  #011627dc;
+    --hover-background: #ECAA53;
+    --focus-foreground: #011627dc;
+    --focus-background: #ECAA53;
+    --focus-border-color:  #0116276c;
+    --active-foreground: #011627dc;
+    --active-background: #ECAA53;
+}
+
+[igxIconButton="outlined"] {
+    --foreground: #011627;
+    --background: #FEFEFE;
+    --border-color: #011627;
+    --hover-foreground:  #011627dc;
+    --hover-background: #ECAA53;
+    --focus-foreground: #011627dc;
+    --focus-background: #ECAA53;
+    --focus-border-color:  #0116276c;
+    --active-foreground: #011627dc;
+    --active-background: #ECAA53;
+}
