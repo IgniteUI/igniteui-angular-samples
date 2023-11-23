@@ -19,7 +19,8 @@ import {
     IgxToastModule,
     IgxTooltipModule,
     IgxTreeModule,
-    IgxProgressBarModule
+    IgxProgressBarModule,
+    IgxIconButtonDirective
 } from 'igniteui-angular';
 import { IgxFinancialChartModule } from 'igniteui-angular-charts';
 import { ComboBindingComponent } from './combo/combo-binding/combo-binding.component';
@@ -101,7 +102,8 @@ import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-c
         IgxTooltipModule,
         IgxFinancialChartModule,
         IgxSimpleComboModule,
-        IgxProgressBarModule
+        IgxProgressBarModule,
+        IgxIconButtonDirective
     ]
 })
 export class ListsModule { }

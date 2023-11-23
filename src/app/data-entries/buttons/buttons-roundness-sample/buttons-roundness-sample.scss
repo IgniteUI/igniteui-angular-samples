@@ -12,8 +12,8 @@ $fabBtn: button-theme(
     $border-radius: 10%
 );
 
-$iconBtn: button-theme(
-    $border-radius: .5 .2 .5 .2
+$iconBtn: icon-button-theme(
+    $border-radius: 12px
 );
 
 .flat {

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IgxAvatarModule, IgxButtonGroupModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule,
-    IgxDialogModule, IgxDividerModule, IgxDropDownModule, IgxExpansionPanelModule, IgxGridModule, IgxIconModule, IgxInputGroupModule,
+    IgxDialogModule, IgxDividerModule, IgxDropDownModule, IgxExpansionPanelModule, IgxGridModule, IgxIconButtonDirective, IgxIconModule, IgxInputGroupModule,
     IgxLayoutModule, IgxListModule, IgxRippleModule, IgxSelectModule, IgxSnackbarModule, IgxToggleModule } from 'igniteui-angular';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -77,6 +77,7 @@ import { ThemingRoutingModule } from './theming-routing.module';
         MatSliderModule,
         MatStepperModule,
         MatToolbarModule,
+        IgxIconButtonDirective,
         NgbModule
     ]
 })
