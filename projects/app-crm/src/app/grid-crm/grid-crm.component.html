@@ -36,16 +36,16 @@
                                 </div>
 
                                 <div class="caseSensitiveButton">
-                                    <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="updateSearch()" [class]="caseSensitive? 'case-sensitive--active' : ''">
+                                    <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="updateSearch()" [class]="caseSensitive? 'case-sensitive--active' : ''">
                                         <igx-icon class="caseSensitiveIcon" family="material">text_fields</igx-icon>
                                     </button>
                                 </div>
 
                                 <div class="searchButtons">
-                                    <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="grid1.findPrev(searchText, caseSensitive)">
+                                    <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="grid1.findPrev(searchText, caseSensitive)">
                                         <igx-icon family="material">navigate_before</igx-icon>
                                     </button>
-                                    <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="grid1.findNext(searchText, caseSensitive)">
+                                    <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="grid1.findNext(searchText, caseSensitive)">
                                         <igx-icon family="material">navigate_next</igx-icon>
                                     </button>
                                 </div>

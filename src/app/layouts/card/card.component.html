@@ -15,7 +15,7 @@
 
         <igx-card-actions>
             <button igxButton igxRipple *ngFor="let button of card.buttons" igxStart>{{ button }}</button>
-            <button igxButton="icon"
+            <button igxIconButton="flat"
                 igxRipple
                 [igxRippleCentered]="true"
                 *ngFor="let icon of card.icons" igxEnd>

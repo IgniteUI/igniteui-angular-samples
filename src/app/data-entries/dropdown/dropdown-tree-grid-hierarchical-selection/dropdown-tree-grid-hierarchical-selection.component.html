@@ -4,7 +4,7 @@
             <igx-chip *ngFor="let row of selectedRows" [id]="row.ID" [removable]="true" (remove)="chipRemoved($event)">{{row.Name}}</igx-chip>
         </igx-chips-area>
     </div>
-    <button igxButton="icon" [igxToggleAction]="employeesDropDown" [igxDropDownItemNavigation]="employeesDropDown" [igxToggleOutlet]="outlet">
+    <button igxIconButton="flat" [igxToggleAction]="employeesDropDown" [igxDropDownItemNavigation]="employeesDropDown" [igxToggleOutlet]="outlet">
         <igx-icon fontSet="material">expand_more</igx-icon>
     </button>
 </div>
