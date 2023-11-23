@@ -15,24 +15,24 @@
         <igx-action-strip #actionstrip>
             <igx-grid-pinning-actions></igx-grid-pinning-actions>
             <ng-container *ngIf="!inEditMode(actionstrip.context)">
-                <button title="Edit" igxButton="icon" igxRipple
+                <button title="Edit" igxIconButton="flat" igxRipple
                     (click)='startEdit(actionstrip.context)'>
                     <igx-icon>edit</igx-icon>
                 </button>
-                <button title="Undo All" igxButton="icon" igxRipple *ngIf='isDirty(actionstrip.context)'
+                <button title="Undo All" igxIconButton="flat" igxRipple *ngIf='isDirty(actionstrip.context)'
                     (click)='undo(actionstrip.context)'>
                     <igx-icon>undo</igx-icon>
                 </button>
-                <button title="Redo All" igxButton="icon" igxRipple
+                <button title="Redo All" igxIconButton="flat" igxRipple
                     *ngIf='!isDirty(actionstrip.context) && hasDiscardedTransactions(actionstrip.context)'
                     (click)='redo(actionstrip.context)'>
                     <igx-icon>redo</igx-icon>
                 </button>
-                <button title='Save' igxButton="icon" igxRipple *ngIf='isDirty(actionstrip.context)'
+                <button title='Save' igxIconButton="flat" igxRipple *ngIf='isDirty(actionstrip.context)'
                     (click)='commit(actionstrip.context)'>
                     <igx-icon>save</igx-icon>
                 </button>
-                <button title="Delete" igxButton="icon" igxRipple *ngIf='!isDeleted(actionstrip.context)'
+                <button title="Delete" igxIconButton="flat" igxRipple *ngIf='!isDeleted(actionstrip.context)'
                     (click)='actionstrip.context.delete()'>
                     <igx-icon>delete</igx-icon>
                 </button>
