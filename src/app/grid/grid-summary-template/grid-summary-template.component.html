@@ -5,10 +5,10 @@
             <input igxInput name="height" type="number" [(ngModel)]="summaryHeight">
         </igx-input-group>
         <igx-switch [(ngModel)]="hasSummary">Toggle Summaries</igx-switch>
-        <igx-buttongroup [values]="displayDensities" (selected)="selectDensity($event)" [displayDensity]="displayDensity">
+        <igx-buttongroup [values]="sizes" (selected)="selectSize($event)">
         </igx-buttongroup>
     </div>
-    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [displayDensity]="displayDensity"
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data"
         [summaryRowHeight]="summaryHeight" [autoGenerate]="false" height="550px" width="100%">
         <igx-column field="ProductID" header="Product ID" width="10%" [headerClasses]="'prodId'" [groupable]="true">
         </igx-column>

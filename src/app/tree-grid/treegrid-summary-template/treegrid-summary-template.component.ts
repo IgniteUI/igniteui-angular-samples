@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DisplayDensity, IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 class PTOSummary {
@@ -48,8 +48,8 @@ export class TreeGridSummaryTemplateComponent implements OnInit {
     public d;
     public ptoSummary = PTOSummary;
     public summaryHeight = 150;
-    public displayDensity: DisplayDensity = 'cosy';
-    public displayDensities;
+    public size = 'medium';
+    public sizes;
     public hasSummary = true;
 
     constructor() { }
@@ -57,14 +57,19 @@ export class TreeGridSummaryTemplateComponent implements OnInit {
     public ngOnInit(): void {
         this.data = generateEmployeeFlatData();
         this.data.forEach(rec => rec.Title = rec.Title.includes('Localiza') ? 'Software Developer' : rec.Title);
-        this.displayDensities = [
-            { label: 'compact', selected: this.displayDensity === 'compact', togglable: true },
-            { label: 'cosy', selected: this.displayDensity === 'cosy', togglable: true },
-            { label: 'comfortable', selected: this.displayDensity === 'comfortable', togglable: true }
+        this.sizes = [
+            { label: 'small', selected: this.size === 'small', togglable: true },
+            { label: 'medium', selected: this.size === 'medium', togglable: true },
+            { label: 'large', selected: this.size === 'large', togglable: true }
         ];
     }
 
-    public selectDensity(event): void {
-        this.displayDensity = this.displayDensities[event.index].label;
+    @HostBinding('style.--ig-size')
+    protected get sizeStyle() {
+        return `var(--ig-size-${this.size})`;
+    }
+
+    public selectSize(event): void {
+        this.size = this.sizes[event.index].label;
     }
 }

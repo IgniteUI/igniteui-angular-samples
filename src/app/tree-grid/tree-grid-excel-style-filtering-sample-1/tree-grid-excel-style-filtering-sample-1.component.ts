@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { DisplayDensity, IgxTreeGridComponent, TreeGridFilteringStrategy } from 'igniteui-angular';
+import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
+import { IgxTreeGridComponent, TreeGridFilteringStrategy } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
 
 @Component({
@@ -22,35 +22,39 @@ export class TreeGridExcelStyleFilteringSample1Component implements OnInit {
 
     public filterStrategy = new TreeGridFilteringStrategy(['ID', 'Name']);
 
-    public density: DisplayDensity = 'comfortable';
-    public displayDensities;
+    public size = 'large';
+    public sizes: any[];
 
     constructor() {
     }
     public ngOnInit(): void {
         this.data = ORDERS_DATA;
-        this.displayDensities = [
+        this.sizes = [
             {
-                label: 'compact',
-                selected: this.density === 'compact',
+                label: 'small',
+                selected: this.size === 'small',
                 togglable: true
             },
             {
-                label: 'cosy',
-                selected: this.density === 'cosy',
+                label: 'medium',
+                selected: this.size === 'medium',
                 togglable: true
             },
             {
-                label: 'comfortable',
-                selected: this.density === 'comfortable',
+                label: 'large',
+                selected: this.size === 'large',
                 togglable: true
             }
         ];
     }
 
-    public selectDensity(event) {
-        this.density = this.displayDensities[event.index].label;
-        this.treegrid1.displayDensity = this.displayDensities[event.index].label;
+    @HostBinding('style.--ig-size')
+    protected get sizeStyle() {
+        return `var(--ig-size-${this.size})`;
+    }
+
+    public selectSize(event: any) {
+        this.size = this.sizes[event.index].label;
         this.treegrid1.reflow();
     }
 

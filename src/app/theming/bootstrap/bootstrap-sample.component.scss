@@ -17,9 +17,18 @@ $custom-dark-palette: palette(
 $dark-primary: color($custom-dark-palette, "primary");
 $dark-secondary: color($custom-dark-palette, "secondary");
 
+.d-flex.align-items-center {
+    width: 100%;
+    padding: 0 16px;
+}
+
 .card-wrapper {
     margin: 16px;
     flex: 1 0 25%;
+}
+
+.navbar {
+    margin: 0 16px;
 }
 
 .navbar-brand {
@@ -27,6 +36,10 @@ $dark-secondary: color($custom-dark-palette, "secondary");
     background-repeat: no-repeat;
     width: 120px;
     height: 20px;
+}
+
+.navbar-collapse {
+    justify-content: space-between;
 }
 
 :host {
@@ -92,8 +105,9 @@ $dark-secondary: color($custom-dark-palette, "secondary");
         ::ng-deep {
             @include bootstrap-dark-theme($custom-dark-palette);
 
-            ngb-accordion {
-                .accordion-header {
+            .accordion {
+                .accordion-header,
+                .accordion-button {
                     background-color: color($custom-dark-palette, 'gray', 200);
                     color: color($custom-dark-palette, 'gray', 900);
                 }
@@ -147,10 +161,9 @@ $dark-secondary: color($custom-dark-palette, "secondary");
             display: none;
         }
     }
-
-    ::ng-deep{
-        /* Importing Bootstrap .scss file. */
-        @import "bootstrap/scss/bootstrap";
-    }
 }
 
+::ng-deep{
+    /* Importing Bootstrap .scss file. */
+    @import "bootstrap/scss/bootstrap";
+}

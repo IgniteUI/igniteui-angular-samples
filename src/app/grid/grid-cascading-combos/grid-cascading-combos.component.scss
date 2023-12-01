@@ -1,5 +1,10 @@
 .grid__wrapper {
+    --ig-size: var(--ig-size-medium);
     padding: 16px;
+
+    igx-simple-combo {
+        --ig-size: var(--ig-size-small);
+    }
 }
 
 .dialogNewRecord {

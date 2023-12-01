@@ -1,5 +1,11 @@
 <article class="sample-column">
-    <igx-buttongroup [multiSelection]="true">
+    <h6>Selection Mode</h6>
+    <div class="radio-buttons">
+        <igx-radio [(ngModel)]="selectionMode" value="single">Single</igx-radio>
+        <igx-radio [(ngModel)]="selectionMode" value="singleRequired">Single-Required</igx-radio>
+        <igx-radio [(ngModel)]="selectionMode" value="multi">Multi</igx-radio>
+    </div>
+    <igx-buttongroup [selectionMode]="selectionMode">
         <button igxButton [igxRipple]="rippleColor">
             <igx-icon>format_bold</igx-icon>
         </button>

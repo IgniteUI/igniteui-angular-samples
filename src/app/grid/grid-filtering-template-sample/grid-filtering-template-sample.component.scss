@@ -1,10 +1,15 @@
+igx-input-group,
+igx-date-picker {
+    --ig-size: var(--ig-size-small);
+}
+
 .grid__wrapper {
     padding-top: 16px;
     margin: 0 16px;
 }
 
 .gridSample__filter {
-    width: rem(200px);
+    width: 200px;
 }
 
 .cell__inner,

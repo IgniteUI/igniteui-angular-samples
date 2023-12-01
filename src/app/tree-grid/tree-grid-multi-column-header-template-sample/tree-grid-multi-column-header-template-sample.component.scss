@@ -1,9 +1,10 @@
 .grid__wrapper {
+    --ig-size: var(--ig-size-small);
     margin: 10px;
 }
 
 .column-group-template__container {
-    display: flex; 
+    display: flex;
     align-items: center;
 }
 

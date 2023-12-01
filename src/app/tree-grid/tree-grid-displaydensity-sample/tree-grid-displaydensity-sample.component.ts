@@ -1,12 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
 import {
-    DisplayDensity,
     IgxButtonGroupComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent
 } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 class CustomNumberSummary {
-
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = new IgxSummaryOperand().operate(data);
         result.push({
@@ -29,39 +27,42 @@ class CustomNumberSummary {
     templateUrl: './tree-grid-displaydensity-sample.component.html'
 })
 export class TreeGridDisplaydensitySampleComponent implements OnInit {
-
     @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true })
     public treeGrid: IgxTreeGridComponent;
     @ViewChild(IgxButtonGroupComponent, { static: true }) public buttonGroup: IgxButtonGroupComponent;
     public data;
-    public density: DisplayDensity = 'compact';
-    public displayDensities;
+    public size = 'small';
+    public sizes;
     public numberSummaries = CustomNumberSummary;
 
     public ngOnInit() {
         this.data = generateEmployeeDetailedFlatData();
-        this.displayDensities = [
+        this.sizes = [
             {
-                label: 'compact',
-                selected: this.density === 'compact',
+                label: 'small',
+                selected: this.size === 'small',
                 togglable: true
             },
             {
-                label: 'cosy',
-                selected: this.density === 'cosy',
+                label: 'medium',
+                selected: this.size === 'medium',
                 togglable: true
             },
             {
-                label: 'comfortable',
-                selected: this.density === 'comfortable',
+                label: 'large',
+                selected: this.size === 'large',
                 togglable: true
             }
         ];
     }
 
-    public selectDensity(event) {
-        this.density = this.displayDensities[event.index].label;
-        this.treeGrid.displayDensity = this.displayDensities[event.index].label;
+    @HostBinding('style.--ig-size')
+    protected get sizeStyle() {
+        return `var(--ig-size-${this.size})`;
+    }
+
+    public selectSize(event) {
+        this.size = this.sizes[event.index].label;
         this.treeGrid.reflow();
     }
 }

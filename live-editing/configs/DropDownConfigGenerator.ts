@@ -21,7 +21,8 @@ import {
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class DropDownConfigGenerator implements IConfigGenerator {
     public additionalImports = {
-        RemoteNWindService: '../../src/app/services/remoteNwind.service'
+        RemoteNWindService: '../../src/app/services/remoteNwind.service',
+        MultiLevelDirective: '../../src/app/data-entries/dropdown/dropdown-multi-level-menu/multi-level.directive'
     };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -102,6 +103,20 @@ export class DropDownConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'DropdownMultiLevelMenuComponent',
+            additionalFiles: ['/src/app/data-entries/dropdown/dropdown-multi-level-menu/data.ts',
+                '/src/app/data-entries/dropdown/dropdown-multi-level-menu/multi-level.directive.ts',
+                '/src/app/data-entries/dropdown/dropdown-multi-level-menu/multi-level.service.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['DropdownMultiLevelMenuComponent', 'MultiLevelDirective',
+                    'IgxDropDownModule', 'IgxIconModule', 'IgxNavbarModule', 'IgxButtonModule', 'IgxToggleModule'],
+                ngDeclarations: ['DropdownMultiLevelMenuComponent', 'MultiLevelDirective'],
+                ngImports: ['IgxDropDownModule', 'IgxIconModule', 'IgxNavbarModule', 'IgxButtonModule', 'IgxToggleModule']
+            }),
+            shortenComponentPathBy: '/data-entries/dropdown/'
+        }));
+
+        configs.push(new Config({
             component: 'DropDownVirtualComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxDropDownModule', 'DropDownVirtualComponent',
@@ -142,9 +157,9 @@ export class DropDownConfigGenerator implements IConfigGenerator {
             component: 'DropdownTreeGridHierarchicalSelectionComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxDropDownModule', 'DropdownTreeGridHierarchicalSelectionComponent',
-                    'IgxButtonModule', 'IgxToggleModule', 'IgxTreeGridModule', 'IgxChipsModule'],
+                    'IgxButtonModule', 'IgxToggleModule', 'IgxTreeGridModule', 'IgxChipsModule', 'IgxIconModule'],
                 ngDeclarations: ['DropdownTreeGridHierarchicalSelectionComponent'],
-                ngImports: ['IgxDropDownModule', 'IgxButtonModule', 'IgxToggleModule', 'IgxTreeGridModule', 'IgxChipsModule']
+                ngImports: ['IgxDropDownModule', 'IgxButtonModule', 'IgxToggleModule', 'IgxTreeGridModule', 'IgxChipsModule', 'IgxIconModule']
             }),
             shortenComponentPathBy: '/data-entries/dropdown/'
         }));

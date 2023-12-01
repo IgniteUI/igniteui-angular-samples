@@ -2,8 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy,
     HorizontalAlignment, IgxSelectComponent, OverlaySettings,
-    PositionSettings, scaleInTop, scaleOutBottom, VerticalAlignment
+    PositionSettings, VerticalAlignment
 } from 'igniteui-angular';
+import { scaleInTop, scaleOutBottom } from 'igniteui-angular/animations';
 
 @Component({
     selector: 'app-select-sample-4',

@@ -23,12 +23,4 @@ export class LocalizationSample3Component implements OnInit {
         currentRS.igx_grid_filter = '[Localized]Filter';
         currentRS.igx_grid_filter_row_close = '[Localized]Close';
     }
-
-    public formatDate(val: Date) {
-        return new Intl.DateTimeFormat('en-US').format(val);
-    }
-
-    public formatCurrency(val: string) {
-        return parseInt(val, 10).toFixed(2);
-    }
 }

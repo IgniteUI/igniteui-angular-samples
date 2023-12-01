@@ -105,7 +105,7 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
     }
 
     public handleSelectionChanging(evt: IComboSelectionChangingEventArgs) {
-        this.hasSelection = !!evt?.newSelection.length;
+        this.hasSelection = !!evt?.newValue.length;
 
         if (!this.hasSelection) {
             this.itemID = 1;
@@ -113,7 +113,7 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
             return;
         }
 
-        const currentSelection = evt.newSelection[evt.newSelection.length - 1]
+        const currentSelection = evt.newValue[evt.newValue.length - 1]
         this.currentVirtState.chunkSize = Math.ceil(this.remoteCombo.itemsMaxHeight / this.remoteCombo.itemHeight);
 
         this.itemCount === currentSelection ?

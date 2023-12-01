@@ -25,7 +25,7 @@ export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit {
 
     public onRowSelectionChanging(args: IRowSelectionEventArgs, grid: IgxTreeGridComponent) {
         this.selectedRows = [];
-        args.newSelection.forEach((val) => this.selectedRows.push(grid.getRowData(val)));
+        args.newSelection.forEach((val) => this.selectedRows.push(grid.getRowData(val.ID)));
       }
 
     public chipRemoved(event: IBaseChipEventArgs) {

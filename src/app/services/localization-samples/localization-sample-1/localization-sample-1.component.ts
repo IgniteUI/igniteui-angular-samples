@@ -27,12 +27,4 @@ export class LocalizationSample1Component implements OnInit {
 
         this.grid.resourceStrings = newGridRes;
     }
-
-    public formatDate(val: Date) {
-        return new Intl.DateTimeFormat('en-US').format(val);
-    }
-
-    public formatCurrency(val: string) {
-        return parseInt(val, 10).toFixed(2);
-    }
 }

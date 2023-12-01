@@ -300,7 +300,6 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
         });
         grid.columnSelection = 'multiple';
         grid.cellSelection = 'none';
-        grid.displayDensity = 'compact';
 
         // Use detectChanges because of ExpressionChangedAfterItHasBeenChecked Error when creating a dynamic pane
         this.cdr.detectChanges();

@@ -28,6 +28,7 @@ import { dataEntriesRoutesData } from './data-entries-routes-data';
 import { DropDownRemoteComponent } from './dropdown/drop-down-remote-virtual/drop-down-remote.component';
 import { DropDownVirtualComponent } from './dropdown/drop-down-virtual/drop-down-virtual.component';
 import { DropdownMenuComponent } from './dropdown/dropdown-menu/dropdown-menu.component';
+import { DropdownMultiLevelMenuComponent } from './dropdown/dropdown-multi-level-menu/dropdown-multi-level-menu.component';
 import { DropDownSample1Component } from './dropdown/dropdown-sample-1/dropdown-sample-1.component';
 import { DropDownSample2Component } from './dropdown/dropdown-sample-2/dropdown-sample-2.component';
 import { DropDownSample3Component } from './dropdown/dropdown-sample-3/dropdown-sample-3.component';
@@ -190,6 +191,11 @@ export const dataEntriesRoutes: Routes = [
         component: DropdownMenuComponent,
         data: dataEntriesRoutesData['dropdown-menu'],
         path: 'dropdown-menu'
+    },
+    {
+        component: DropdownMultiLevelMenuComponent,
+        data: dataEntriesRoutesData['dropdown-multi-level-menu'],
+        path: 'dropdown-multi-level-menu'
     },
     {
         component: DropDownSample1Component,

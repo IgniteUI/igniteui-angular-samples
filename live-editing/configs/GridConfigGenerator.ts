@@ -39,7 +39,9 @@ import {
     IgxToastModule,
     IgxTooltipModule,
     IgxToggleModule,
-    IgxDropDownModule
+    IgxDropDownModule,
+    IgxCardModule,
+    IgcFormsModule
 } from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 export class GridConfigGenerator implements IConfigGenerator {
@@ -310,9 +312,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/localData.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxGridModule', 'IgxIconModule', 'IgxRippleModule',
-                    'SortingSampleComponent', 'IgxInputGroupModule', 'IgxSelectModule', 'IgxPreventDocumentScrollModule', 'IgxSimpleComboModule'],
+                    'SortingSampleComponent', 'IgxInputGroupModule', 'IgxSelectModule', 'IgxPreventDocumentScrollModule', 'IgxSimpleComboModule', 'IgxButtonModule'],
                 ngDeclarations: ['SortingSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxRippleModule', 'IgxIconModule', 'IgxInputGroupModule', 'IgxSelectModule', 'IgxSimpleComboModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxRippleModule', 'IgxIconModule', 'IgxInputGroupModule', 'IgxSelectModule', 'IgxSimpleComboModule', 'IgxButtonModule'],
                 ngProviders: []
             })
         }));
@@ -682,9 +684,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'ExcelStyleFilteringSample3Component',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['ExcelStyleFilteringSample3Component', 'IgxGridModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['ExcelStyleFilteringSample3Component', 'IgxGridModule', 'IgxPreventDocumentScrollModule', 'IgxIconModule'],
                 ngDeclarations: ['ExcelStyleFilteringSample3Component'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxIconModule']
             })
         }));
 
@@ -768,10 +770,10 @@ export class GridConfigGenerator implements IConfigGenerator {
                 '/src/app/grid/grid-save-state/about.component.html'
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridSaveStateComponent', 'IgxGridModule', 'IgxTooltipModule', 'IgxCheckboxModule', 'IgxIconModule',
+                imports: ['GridSaveStateComponent', 'IgxGridModule', 'IgxTooltipModule', 'IgxCheckboxModule', 'IgxIconModule', 'IgxButtonModule',
                     'IgxToastModule', 'IgxSwitchModule', 'AboutComponent', 'Router', 'RouterModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridSaveStateComponent', 'AboutComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxTooltipModule', 'IgxCheckboxModule', 'IgxIconModule',
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxTooltipModule', 'IgxCheckboxModule', 'IgxIconModule', 'IgxButtonModule',
                     'RouterModule.forRoot([\{component: AboutComponent, path: \'grid-about\'},\{component: GridSaveStateComponent, path: \'grid-state\'},\{ path: \'\', redirectTo: \'/grid-state\', pathMatch: \'full\' }])',
                     'IgxToastModule', 'IgxSwitchModule']
             })
@@ -1442,6 +1444,28 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: ['IgxGridModule', 'GridCascadingCombosComponent', 'IgxPreventDocumentScrollModule', 'IgxComboModule', 'IgxSimpleComboModule'],
                 ngDeclarations: ['GridCascadingCombosComponent'],
                 ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxComboModule', 'IgxSimpleComboModule']
+            })
+        }));
+
+        configs.push(new Config({
+            component: 'GridWithRatingComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
+            additionalDependencies: ['igniteui-webcomponents'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxGridModule', 'IgxToastModule', 'GridWithRatingComponent', 'IgxPreventDocumentScrollModule', 'IgcFormsModule'],
+                ngDeclarations: ['GridWithRatingComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxToastModule', 'IgcFormsModule']
+            })
+        }));
+
+        configs.push(new Config({
+            component: 'RatingInFormComponent',
+            additionalFiles: [],
+            additionalDependencies: ['igniteui-webcomponents'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxButtonModule', 'RatingInFormComponent', 'IgxCardModule', 'IgcFormsModule', 'IgxIconModule'],
+                ngDeclarations: ['RatingInFormComponent'],
+                ngImports: ['IgxButtonModule', 'IgxCardModule', 'IgcFormsModule', 'IgxIconModule']
             })
         }));
 

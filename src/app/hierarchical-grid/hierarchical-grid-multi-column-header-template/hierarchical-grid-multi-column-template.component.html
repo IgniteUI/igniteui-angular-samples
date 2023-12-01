@@ -9,7 +9,7 @@
         </div>
     </ng-template>
 
-    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid [data]="localData" [moving]="true" [height]="'500px'" [width]="'100%'" displayDensity="compact" [allowFiltering]="true">
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid [data]="localData" [moving]="true" [height]="'500px'" [width]="'100%'" [allowFiltering]="true">
         <igx-column field="CustomerID" [sortable]="true" [resizable]="true"></igx-column>
         <igx-column-group [pinned]="false" header="General Information" [headerTemplate]="columnGroupTemplate">
             <igx-column field="CompanyName" [sortable]="true" [resizable]="true"></igx-column>

@@ -1,0 +1,39 @@
+@use "../../../../variables" as *;
+
+.container {
+    padding: 16px;
+}
+
+igx-icon {
+    --size: 18px;
+}
+
+[igxButton] {
+    margin-inline-start: 0px;
+}
+
+[multiLevel] {
+    cursor: default;
+}
+
+$custom-navbar-theme: navbar-theme(
+    $background: #f8f9fa,
+);
+
+$custom-button-theme: button-theme(
+    $foreground: #666,
+    $hover-foreground: #0099ff,
+    $focus-foreground: #0099ff,
+    $active-foreground: #0099ff,
+    $background: transparent,
+    $hover-background: transparent,
+    $focus-background: transparent,
+    $active-background: transparent,
+);
+
+:host::ng-deep {
+    --ig-button-font-size: 0.75rem;
+
+    @include css-vars($custom-navbar-theme);
+    @include css-vars($custom-button-theme);
+}

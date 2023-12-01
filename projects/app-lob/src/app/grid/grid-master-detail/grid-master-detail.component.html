@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid [igxPreventDocumentScroll]="true" displayDensity="cosy" [data]="data" [autoGenerate]="false" height="592px" width="100%">
+    <igx-grid [igxPreventDocumentScroll]="true" [data]="data" [autoGenerate]="false" height="592px" width="100%">
         <igx-column field="name" header="Name" width="250px"></igx-column>
         <igx-column field="position" header="Position"></igx-column>
         <igx-column field="company" header="Company"></igx-column>
@@ -53,7 +53,7 @@
                                 </igx-pie-chart>
                                 <igx-divider [vertical]="true"></igx-divider>
                                 <igx-grid [data]="dataItem.gridData ? dataItem.gridData: gridData(dataItem)"
-                                    [autoGenerate]="true" class="details-grid" columnWidth="70px" displayDensity="cosy"
+                                    [autoGenerate]="true" class="details-grid" columnWidth="70px"
                                     width="260px" height="206px" (columnInit)="columnInit($event)">
                                 </igx-grid>
                             </div>
