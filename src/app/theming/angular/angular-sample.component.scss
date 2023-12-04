@@ -47,25 +47,20 @@ $custom-dark-palette: palette(
 
 $light-palette-primary: mat.define-palette(material-like-palette('primary', $saturations, $igx-light-palette));
 $light-palette-accent: mat.define-palette(material-like-palette('secondary', $saturations, $igx-light-palette));
-$light-palette-warn: mat.define-palette(material-like-palette('warn', $saturations, $igx-light-palette));
 $custom-mat-light-theme: mat.define-light-theme((
     color: (
         primary: $light-palette-primary,
-        accent: $light-palette-accent,
-        warn: $light-palette-warn,
+        accent: $light-palette-accent
     ),
-    typography: $custom-typography,
-    density: 0,
+    typography: $custom-typography
 ));
 
 $dark-palette-primary: mat.define-palette(material-like-palette('primary', $saturations, $custom-dark-palette));
 $dark-palette-accent: mat.define-palette(material-like-palette('secondary', $saturations, $custom-dark-palette));
-$dark-palette-warn: mat.define-palette(material-like-palette('warn', $saturations, $custom-dark-palette));
 $custom-mat-dark-theme: mat.define-dark-theme((
     color: (
         primary: $dark-palette-primary, 
-        accent: $dark-palette-accent,
-        warn: $dark-palette-warn
+        accent: $dark-palette-accent
     )
 ));
 
