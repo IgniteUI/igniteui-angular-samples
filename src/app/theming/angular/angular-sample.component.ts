@@ -26,7 +26,7 @@ export class AngularMaterialComponent implements OnInit {
     private _dialogOverlaySettings2;
 
     constructor(private _formBuilder: FormBuilder, private overlayContainer: OverlayContainer) {
-        overlayContainer.getContainerElement().classList.add('light-menu-theme');
+        this.toggleOverlayClasses(this.themesClass);
     }
 
     public lightTheme() {
