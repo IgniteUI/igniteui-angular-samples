@@ -17,7 +17,7 @@ export class AngularMaterialComponent implements OnInit {
     public dialog: IgxDialogComponent;
 
     @HostBinding('class')
-    public themesClass = 'light';
+    public themesClass: 'light' | 'dark' = 'light';
 
     firstFormGroup: FormGroup;
     secondFormGroup: FormGroup;
@@ -26,17 +26,32 @@ export class AngularMaterialComponent implements OnInit {
     private _dialogOverlaySettings2;
 
     constructor(private _formBuilder: FormBuilder, private overlayContainer: OverlayContainer) {
-        overlayContainer.getContainerElement().classList.add('menu-theme');
+        overlayContainer.getContainerElement().classList.add('light-menu-theme');
     }
 
     public lightTheme() {
         this.themesClass = 'light';
-        this.overlayContainer.getContainerElement().classList.remove('dark-menu-theme');
+        this.toggleOverlayClasses(this.themesClass);
     }
 
     public darkTheme() {
         this.themesClass = 'dark';
-        this.overlayContainer.getContainerElement().classList.add('dark-menu-theme');
+        this.toggleOverlayClasses(this.themesClass);
+    }
+
+    private toggleOverlayClasses(theme: 'light' | 'dark') {
+        const overlayClasses = this.overlayContainer.getContainerElement().classList;
+    
+        switch (theme) {
+            case 'light':
+                overlayClasses.remove('dark-menu-theme');
+                overlayClasses.add('light-menu-theme');
+                break;
+            case 'dark':
+                overlayClasses.remove('light-menu-theme');
+                overlayClasses.add('dark-menu-theme');
+                break;
+        }
     }
 
     public openDialog() {

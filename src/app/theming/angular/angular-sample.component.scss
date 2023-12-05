@@ -67,7 +67,7 @@ $custom-mat-dark-theme: mat.define-dark-theme((
 ::ng-deep {
     @include mat.core();
 
-    .menu-theme {
+    .light-menu-theme {
         @include mat.menu-theme($custom-mat-light-theme);
     }
 
