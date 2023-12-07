@@ -37,8 +37,8 @@ export class GridExcelStyleEditingComponent implements OnInit {
 
         const columnName = grid.getColumnByVisibleIndex(activeElem.column).field;
         const cell = grid.getCellByColumn(activeElem.row, columnName);
-        if (cell && !grid.crudService.cellInEditMode) {
-          grid.crudService.enterEditMode(cell);
+        if (cell && !cell.editMode) {
+          cell.editMode = true;
           cell.editValue = event.key;
         }
       }
