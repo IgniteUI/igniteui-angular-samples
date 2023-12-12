@@ -16,6 +16,7 @@ export class GridExcelStyleEditingComponent implements OnInit {
     public grid: IgxGridComponent;
 
     public data: any[];
+    public shouldAppendValue = false;
 
     public ngOnInit(): void {
       this.data = DATA;
@@ -40,7 +41,12 @@ export class GridExcelStyleEditingComponent implements OnInit {
         if (cell && !cell.editMode) {
           cell.editMode = true;
           cell.editValue = event.key;
-        }
+          this.shouldAppendValue = true;
+        } else if (cell && cell.editMode && this.shouldAppendValue) {
+            event.preventDefault();
+            cell.editValue = cell.editValue + event.key;
+            this.shouldAppendValue = false;
+          }
       }
 
       if (key == 13) {
