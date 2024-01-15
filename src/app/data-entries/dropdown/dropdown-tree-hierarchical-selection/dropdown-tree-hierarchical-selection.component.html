@@ -1,15 +1,14 @@
-<div class="container">
-    <div class="chip-container">
-        <igx-chips-area>
-            <igx-chip *ngFor="let node of selectedNodes" [id]="node.data.ID" [removable]="true" (remove)="chipRemoved($event)">{{node.data.Name}}</igx-chip>
-        </igx-chips-area>
-    </div>
-    <button igxButton="icon" [igxToggleAction]="countriesDropDown" [igxDropDownItemNavigation]="countriesDropDown">
-        <igx-icon fontSet="material">expand_more</igx-icon>
-    </button>
+<button class="button" #button igxButton="raised" [igxToggleAction]="countriesDropDown" 
+[igxDropDownItemNavigation]="countriesDropDown">
+    Countries<igx-icon fontSet="material">expand_more</igx-icon>
+</button>
+<div class="chip-container">
+    <igx-chips-area>
+        <igx-chip *ngFor="let node of selectedNodes" [id]="node.data.ID" [removable]="true" (remove)="chipRemoved($event)">{{node.data.Name}}</igx-chip>
+    </igx-chips-area>
 </div>
 
-<igx-drop-down #countriesDropDown [height]="'500px'" [width]="'300px'" (closing)="handleClosing($event)">
+<igx-drop-down #countriesDropDown [height]="'400px'" [width]="'250px'">
     <igx-tree #igxTree selection="BiState" (nodeSelection)="onNodeSelection($event)">
         <igx-tree-node *ngFor="let country of countries" [data]="country" [expanded]="true" [selected]="true">
             {{ country.Name }}
