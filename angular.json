@@ -25,7 +25,47 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "bundleName": "material-light",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-angular.css"
+              },
+              {
+                "bundleName": "material-dark",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-angular-dark.css"
+              },
+              {
+                "bundleName": "bootstrap-light",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-bootstrap-light.css"
+              },
+              {
+                "bundleName": "bootstrap-dark",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-bootstrap-dark.css"
+              },
+              {
+                "bundleName": "fluent-light",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-fluent-light.css"
+              },
+              {
+                "bundleName": "fluent-dark",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-fluent-dark.css"
+              },
+              {
+                "bundleName": "indigo-light",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-indigo-light.css"
+              },
+              {
+                "bundleName": "indigo-dark",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-indigo-dark.css"
+              }
             ],
             "scripts": [],
             "vendorChunk": true,
@@ -137,7 +177,47 @@
               "projects/app-lob/src/assets"
             ],
             "styles": [
-              "projects/app-lob/src/styles.scss"
+              "projects/app-lob/src/styles.scss",
+              {
+                "bundleName": "material-light",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-angular.css"
+              },
+              {
+                "bundleName": "material-dark",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-angular-dark.css"
+              },
+              {
+                "bundleName": "bootstrap-light",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-bootstrap-light.css"
+              },
+              {
+                "bundleName": "bootstrap-dark",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-bootstrap-dark.css"
+              },
+              {
+                "bundleName": "fluent-light",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-fluent-light.css"
+              },
+              {
+                "bundleName": "fluent-dark",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-fluent-dark.css"
+              },
+              {
+                "bundleName": "indigo-light",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-indigo-light.css"
+              },
+              {
+                "bundleName": "indigo-dark",
+                "inject": false,
+                "input": "node_modules/igniteui-angular/styles/igniteui-indigo-dark.css"
+              }
             ],
             "scripts": [],
             "vendorChunk": true,
