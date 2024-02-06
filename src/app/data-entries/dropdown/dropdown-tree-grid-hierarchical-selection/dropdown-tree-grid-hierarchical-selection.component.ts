@@ -1,5 +1,5 @@
 import { AfterViewInit, Component,ElementRef, OnInit, ViewChild } from '@angular/core';
-import { IBaseChipEventArgs,IgxDropDownComponent,OverlaySettings, IgxTreeGridComponent, IRowSelectionEventArgs, ConnectedPositioningStrategy } from 'igniteui-angular';
+import { IBaseChipEventArgs, IgxDropDownComponent, OverlaySettings, IgxTreeGridComponent, IRowSelectionEventArgs, ConnectedPositioningStrategy } from 'igniteui-angular';
 import { EMPLOYEE_DATA } from './nested-employee-data';
 
 @Component({
@@ -10,7 +10,7 @@ import { EMPLOYEE_DATA } from './nested-employee-data';
 })
 export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit, AfterViewInit {
     @ViewChild('treeGrid', { static: true })
-    public igxTreeGrid: IgxTreeGridComponent;    
+    public igxTreeGrid: IgxTreeGridComponent;
     @ViewChild(IgxDropDownComponent, { static: true }) public igxDropDown: IgxDropDownComponent;
     @ViewChild('button', { static: true }) public igxButton: ElementRef;
 
@@ -19,8 +19,8 @@ export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit, A
 
     public ngOnInit(): void {
         this.employees = EMPLOYEE_DATA;
-        
-        this.igxTreeGrid.selectRows([1,4], true); 
+
+        this.igxTreeGrid.selectRows([1,4], true);
         this.selectedRows = [];
         this.igxTreeGrid.selectedRows.forEach((row) => this.selectedRows.push(this.employees.find(employee => employee.ID == row)));
     }
@@ -47,6 +47,6 @@ export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit, A
     public _overlaySettings: OverlaySettings = {
         modal: false,
         positionStrategy: new ConnectedPositioningStrategy(),
-        closeOnOutsideClick: false        
+        closeOnOutsideClick: false
     };
 }
