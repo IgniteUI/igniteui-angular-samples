@@ -1,15 +1,13 @@
-<div class="container">
-    <div class="chip-container">
-        <igx-chips-area>
-            <igx-chip *ngFor="let row of selectedRows" [id]="row.ID" [removable]="true" (remove)="chipRemoved($event)">{{row.Name}}</igx-chip>
-        </igx-chips-area>
-    </div>
-    <button igxButton="icon" [igxToggleAction]="employeesDropDown" [igxDropDownItemNavigation]="employeesDropDown" [igxToggleOutlet]="outlet">
-        <igx-icon fontSet="material">expand_more</igx-icon>
-    </button>
+<button #button igxButton="raised" [igxToggleAction]="employeesDropDown" [igxDropDownItemNavigation]="employeesDropDown">
+    Employees<igx-icon fontSet="material">expand_more</igx-icon>
+</button>
+<div class="chip-container">
+    <igx-chips-area>
+        <igx-chip *ngFor="let row of selectedRows" [id]="row.ID" [removable]="true" (remove)="chipRemoved($event)">{{row.Name}}</igx-chip>
+    </igx-chips-area>
 </div>
 
-<igx-drop-down #employeesDropDown [width]="'300px'" (closing)="handleClosing($event)">
+<igx-drop-down #employeesDropDown [width]="'300px'">
     <igx-tree-grid #treeGrid igxPreventDocumentScroll [data]="employees" childDataKey="Employees" primaryKey="ID"
       width="100%" height="400px" [autoGenerate]="false" [expansionDepth]="1" [rowSelection]="'multiple'"
       (rowSelectionChanging)="onRowSelectionChanging($event, treeGrid)">
@@ -17,4 +15,3 @@
     </igx-tree-grid>
 </igx-drop-down>
   
-<div class="overlayOutlet" igxOverlayOutlet #outlet="overlay-outlet"></div>
