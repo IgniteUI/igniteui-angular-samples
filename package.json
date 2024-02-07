@@ -93,8 +93,8 @@
     "@types/jasmine": "^5.1.2",
     "@types/jasminewd2": "^2.0.13",
     "@types/node": "^13.13.52",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.53.0",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jsdoc": "39.3.3",
@@ -109,7 +109,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "^2.0.0",
     "ts-node": "^10.9.1",
-    "typescript": "5.2.2",
+    "typescript": "5.3.3",
     "webpack-bundle-analyzer": "^4.10.0"
   }
 }
