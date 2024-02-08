@@ -102,7 +102,6 @@
     "event-stream": "^4.0.1",
     "fs-extra": "^8.1.0",
     "gulp": "^4.0.2",
-    "igniteui-theming": "^3.0.3",
     "jasmine-core": "~5.1.1",
     "karma": "^6.4.2",
     "karma-chrome-launcher": "~3.2.0",
