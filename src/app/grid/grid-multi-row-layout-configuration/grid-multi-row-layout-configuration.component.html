@@ -15,7 +15,7 @@
                         <div class="material-icons igx-icon"
                             [style.opacity]="chip.data.hovered ? '1' : '0'" [style.z-index]="chip.data.hovered ? '1' : '-1'" [style.width]="chip.data.hovered ? '24px' : '0px'"
                             style="transition: opacity 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955); transition: width 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);"
-                            igxSuffix igxButton="icon" (pointerdown)="onRemovePointerDown($event)" (mousedown)="onRemovePointerDown($event)" (click)="onRemoveClickBlock(blockIndex)">
+                            igxSuffix igxIconButton="flat" (pointerdown)="onRemovePointerDown($event)" (mousedown)="onRemovePointerDown($event)" (click)="onRemoveClickBlock(blockIndex)">
                             <igx-icon  id="igx-icon-150" >cancel</igx-icon>
                         </div>
                     </igx-chip>
@@ -101,7 +101,7 @@
                     <div class="material-icons igx-icon"
                         [style.opacity]="chip.data.hovered ? '1' : '0'" [style.z-index]="chip.data.hovered ? '1' : '-1'" [style.width]="chip.data.hovered ? '24px' : '0px'"
                         style="transition: opacity 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955); transition: width 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);"
-                        igxSuffix igxButton="icon" (pointerdown)="onRemovePointerDown($event)" (mousedown)="onRemovePointerDown($event)" (click)="onRemoveClickColumn(colIndex)">
+                        igxSuffix igxIconButton="flat" (pointerdown)="onRemovePointerDown($event)" (mousedown)="onRemovePointerDown($event)" (click)="onRemoveClickColumn(colIndex)">
                         <igx-icon  id="igx-icon-150" >cancel</igx-icon>
                     </div>
                 </igx-chip>
@@ -115,9 +115,9 @@
             </igx-chips-area>
         </div>
         <div style="width: 100%; text-align: center; margin: 10px;">
-            <span igxButton="raised" class="bottomButton" (click)="resetCollections()" [igxButtonBackground]="'#ff134a'" [igxButtonColor]="'white'">Clear Layout</span>
-            <span igxButton="raised" class="bottomButton" (click)="getColumnLayoutTemplate()" [igxButtonBackground]="'#1377d5'" [igxButtonColor]="'white'">Template</span>
-            <span igxButton="raised" class="bottomButton" (click)="renderJson()" [igxButtonBackground]="'#1377d5'" [igxButtonColor]="'white'">JSON</span>
+            <span igxButton="contained" class="bottomButton" (click)="resetCollections()" [igxButtonBackground]="'#ff134a'" [igxButtonColor]="'white'">Clear Layout</span>
+            <span igxButton="contained" class="bottomButton" (click)="getColumnLayoutTemplate()" [igxButtonBackground]="'#1377d5'" [igxButtonColor]="'white'">Template</span>
+            <span igxButton="contained" class="bottomButton" (click)="renderJson()" [igxButtonBackground]="'#1377d5'" [igxButtonColor]="'white'">JSON</span>
         </div>
 
         <igx-dialog #resultDialog title="Result"

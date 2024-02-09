@@ -66,7 +66,7 @@
         </igx-column>
         <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [filterable]="false">
             <ng-template igxCell let-cell="cell" class="center-text">
-                <button class="button-icon" igxButton="icon" tabindex="-1">
+                <button class="button-icon" igxIconButton="flat" tabindex="-1">
                     <igx-icon family="material" (click)="chartColumnAction(cell)">insert_chart_outlined</igx-icon>
                 </button>
             </ng-template>
