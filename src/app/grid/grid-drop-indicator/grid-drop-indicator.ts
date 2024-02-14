@@ -14,7 +14,7 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
   @ViewChild('grid', { read: IgxGridComponent, static: true })
   public grid: IgxGridComponent;
   public data: any[];
-  private destroy$ = new Subject();
+  private destroy$ = new Subject<void>();
   private intervalSub: Subscription;
   private interval$: Observable<number>;
   private _draggedRow: any;

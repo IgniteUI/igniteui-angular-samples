@@ -198,7 +198,7 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
                     'SUMMARY COMBINATIONS' : '';
     }
 
-    private _destroyer = new Subject();
+    private _destroyer = new Subject<void>();
     private _keyboardHandler = new KeyboardHandler([], GridSection.THEAD);
 
     public constructor(private cdr: ChangeDetectorRef, private _overlay: IgxOverlayService) { }
