@@ -585,9 +585,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridConditionalCellStyle2Component',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/athletesData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxGridModule', 'GridConditionalCellStyle2Component', 'IgxPreventDocumentScrollModule'],
+                imports: ['IgxGridModule', 'GridConditionalCellStyle2Component', 'IgxPreventDocumentScrollModule', 'IgxButtonModule', 'IgxInputGroupModule'],
                 ngDeclarations: ['GridConditionalCellStyle2Component'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxButtonModule', 'IgxInputGroupModule']
             })
         }));
 
@@ -1345,9 +1345,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridRowStylesComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/services/financial.service.ts', '/src/app/data/financialData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxGridModule', 'GridRowStylesComponent', 'IgxPreventDocumentScrollModule', 'FinancialDataService'],
+                imports: ['IgxGridModule', 'GridRowStylesComponent', 'IgxPreventDocumentScrollModule', 'IgxBadgeModule', 'FinancialDataService'],
                 ngDeclarations: ['GridRowStylesComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxBadgeModule'],
                 ngProviders: ['FinancialDataService']
             })
         }));
