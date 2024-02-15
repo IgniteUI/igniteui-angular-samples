@@ -907,9 +907,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 '/src/app/hierarchical-grid/models.ts'],
             component: 'HGridRowClassesSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'HGridRowClassesSampleComponent'],
+                imports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxIconModule', 'IgxButtonModule', 'HGridRowClassesSampleComponent'],
                 ngDeclarations: ['HGridRowClassesSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxIconModule', 'IgxButtonModule']
             })
         }));
 
@@ -918,9 +918,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 '/src/app/hierarchical-grid/models.ts'],
             component: 'HGridRowStylesSampleComponent',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'HGridRowStylesSampleComponent'],
+                imports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxIconModule', 'IgxButtonModule', 'HGridRowStylesSampleComponent'],
                 ngDeclarations: ['HGridRowStylesSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxIconModule', 'IgxButtonModule']
             })
         }));
 
