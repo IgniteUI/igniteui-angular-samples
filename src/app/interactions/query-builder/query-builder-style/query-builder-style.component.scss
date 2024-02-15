@@ -21,7 +21,7 @@ $custom-button: button-theme(
     $border-color: $yellow
 );
 
-$custom-raised-button: button-theme(
+$custom-contained-button: button-theme(
     $schema: $dark-material-schema,
     $background: $yellow,
     $foreground: $black,
@@ -93,8 +93,8 @@ $custom-drop-down: drop-down-theme(
             @include css-vars($custom-button);
         }
 
-        [igxButton="raised"] {
-            @include css-vars($custom-raised-button);
+        [igxButton="contained"] {
+            @include css-vars($custom-contained-button);
         }
 
         igx-query-builder {

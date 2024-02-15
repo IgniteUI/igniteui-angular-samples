@@ -21,7 +21,8 @@ import {
     IgxSwitchModule,
     IgxTextHighlightModule,
     IgxTextSelectionModule,
-    IgxToastModule
+    IgxToastModule,
+    IgxIconButtonDirective
 } from 'igniteui-angular';
 import { BadgeIconComponent } from './badge/badge-icon/badge-icon.component';
 import { BadgeSample2Component } from './badge/badge-sample-2/badge-sample-2.component';
@@ -136,7 +137,8 @@ import { MaterialSymbolsComponent } from './icon/material-symbols/material-symbo
         IgxSnackbarModule,
         IgxSwitchModule,
         IgxButtonModule,
-        IgxTextHighlightModule
+        IgxTextHighlightModule,
+        IgxIconButtonDirective
     ]
 })
 export class DataDisplayModule {}

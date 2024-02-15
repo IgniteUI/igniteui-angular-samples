@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxIconModule, IgxPaginatorModule, IgxRippleModule } from 'igniteui-angular';
+import { IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxIconButtonDirective, IgxIconModule, IgxPaginatorModule, IgxRippleModule } from 'igniteui-angular';
 import { PaginatorRoutingModule } from './pagination-routing.module';
 import { PaginationSampleComponent } from './paginator/pagination-sample.component';
 
@@ -20,7 +20,8 @@ import { PaginationSampleComponent } from './paginator/pagination-sample.compone
         IgxButtonModule,
         IgxButtonGroupModule,
         IgxIconModule,
-        IgxRippleModule
+        IgxRippleModule,
+        IgxIconButtonDirective
     ]
 })
 export class PaginationModule { }
