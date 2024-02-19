@@ -18,7 +18,7 @@
         <igx-column field="GrammyAwards" header="Grammy Awards" [editable]="true" dataType="number"></igx-column>
 
         <igx-row-island [height]="null" #childGrid [key]="'Albums'" [primaryKey]="'Album'" [rowEditable]="true">
-            <igx-grid-toolbar [grid]="grid" *igxGridToolbar="let grid">
+            <igx-grid-toolbar *igxGridToolbar="let grid">
 
                 <button igxButton [disabled]="!grid.transactions.canUndo" (click)="undo(grid)">Undo</button>
                 <button igxButton [disabled]="!grid.transactions.canRedo" (click)="redo(grid)">Redo</button>
