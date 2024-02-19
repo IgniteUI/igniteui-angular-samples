@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { Component, ViewChildren } from '@angular/core';
-import { IgxTextHighlightDirective } from 'igniteui-angular';
+import { IgxTextHighlightDirective, IgxTextHighlightService } from 'igniteui-angular';
 
 @Component({
     selector: 'app-text-highlight-2',
@@ -31,6 +31,8 @@ export class TextHighlightSample2Component {
     public matchCount = 0;
     public caseSensitive = false;
     public index = 0;
+
+    constructor(private highlightService: IgxTextHighlightService) { }
 
     public searchKeyDown(ev) {
         if (this.searchText) {
@@ -98,7 +100,7 @@ export class TextHighlightSample2Component {
 
                 const actualIndex = row === 0 ? this.index : this.index - matchesArray[row - 1];
 
-                IgxTextHighlightDirective.setActiveHighlight('group1', { index: actualIndex, row });
+                this.highlightService.setActiveHighlight('group1', { index: actualIndex, row });
             }
         } else {
             this.highlights.forEach((h) => {
