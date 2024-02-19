@@ -18,10 +18,10 @@
         <igx-column [filterable]="false" width="130px">
             <ng-template igxCell let-cell="cell">
                 <div class="buttonsArea">
-                    <button igxButton="icon" (click)="openDialog(cell.row.key)" class="emplBtn">
+                    <button igxIconButton="flat" (click)="openDialog(cell.row.key)" class="emplBtn">
                         <igx-icon>person_add</igx-icon>
                     </button>
-                    <button igxButton="icon" (click)="deleteRow(cell.row.key)" class="emplBtn">
+                    <button igxIconButton="flat" (click)="deleteRow(cell.row.key)" class="emplBtn">
                         <igx-icon>delete</igx-icon>
                     </button>
                 </div>

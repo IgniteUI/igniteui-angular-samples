@@ -3,7 +3,7 @@
         <igx-combo class="combo" #noValueKey [data]="cities" displayKey="name"
                    groupKey="country" [(ngModel)]="selectedNoValueKey">
         </igx-combo>
-        <button igxButton="raised" (click)="selectFavorites()">Select Favorites</button>
+        <button igxButton="contained" (click)="selectFavorites()">Select Favorites</button>
     </div>
     <h6>Selected Cities:</h6>
     <div class="cities-container">

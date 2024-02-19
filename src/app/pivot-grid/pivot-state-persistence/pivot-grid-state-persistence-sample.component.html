@@ -1,22 +1,22 @@
 <div class="controls-holder">
     <div class="switches">
-        <button igxButton="raised" (click)="restoreGridState()">
+        <button igxButton="contained" (click)="restoreGridState()">
             <igx-icon class="btn-icon">restore</igx-icon>
             <span>Restore</span>
         </button>
-        <button igxButton="raised" (click)="saveGridState()">
+        <button igxButton="contained" (click)="saveGridState()">
             <igx-icon class="btn-icon">save</igx-icon>
             <span>Save</span>
         </button>
-        <button igxButton="raised" [routerLink]="['../pivot-state-about']">
+        <button igxButton="contained" [routerLink]="['../pivot-state-about']">
             <igx-icon class="btn-icon">forward</igx-icon>
             <span>Leave</span>
         </button>
-        <button igxButton="raised" (click)="clearStorage()">
+        <button igxButton="contained" (click)="clearStorage()">
             <igx-icon class="btn-icon">delete</igx-icon>
             <span>Clear</span>
         </button>
-        <button igxButton="raised" (click)="reloadPage()">
+        <button igxButton="contained" (click)="reloadPage()">
             <igx-icon class="btn-icon">refresh</igx-icon>
             <span>Reload</span>
         </button>

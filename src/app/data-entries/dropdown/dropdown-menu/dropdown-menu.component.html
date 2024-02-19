@@ -1,7 +1,7 @@
 <div class="drop-down-wrapper">
     <igx-navbar title="Contacts">
         <button [igxToggleAction]="menu" [igxToggleOutlet]="outlet" [overlaySettings]="overlaySettings" [igxDropDownItemNavigation]="menu"
-            igxButton="icon">
+            igxIconButton="flat">
             <igx-icon family="material">more_vert</igx-icon>
         </button>
         <igx-drop-down #menu (selectionChanging)="onSelection($event)">

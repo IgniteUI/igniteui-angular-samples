@@ -17,7 +17,7 @@
         <igx-column field="GrammyAwards" header="Grammy Awards" width="200px"></igx-column>
 
         <igx-row-island [height]="null" key="Albums" [autoGenerate]="false">
-            <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
+            <igx-grid-toolbar *igxGridToolbar="let childGrid">
                 <igx-grid-toolbar-title>Albums</igx-grid-toolbar-title>
             </igx-grid-toolbar>
 
@@ -27,7 +27,7 @@
             <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
 
         <igx-row-island [height]="null" key="Songs" [autoGenerate]="false">
-            <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
+            <igx-grid-toolbar *igxGridToolbar="let childGrid">
                 <igx-grid-toolbar-title>Songs</igx-grid-toolbar-title>
             </igx-grid-toolbar>
 
@@ -39,7 +39,7 @@
     </igx-row-island>
 
     <igx-row-island [height]="null" key="Tours" [autoGenerate]="false">
-        <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
+        <igx-grid-toolbar *igxGridToolbar="let childGrid">
             <igx-grid-toolbar-title>Tours</igx-grid-toolbar-title>
         </igx-grid-toolbar>
 

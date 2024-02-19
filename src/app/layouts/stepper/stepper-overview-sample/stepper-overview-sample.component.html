@@ -96,8 +96,8 @@
                 </igx-card>
             </div>
             <div class="sample-step-actions">
-                <button igxButton="raised" (click)="stepper.prev()">Back</button>
-                <button igxButton="raised" (click)="stepper.next()"
+                <button igxButton="contained" (click)="stepper.prev()">Back</button>
+                <button igxButton="contained" (click)="stepper.next()"
                     [disabled]="!businessInformationForm.form.valid">Continue</button>
             </div>
         </div>
@@ -160,8 +160,8 @@
                 </igx-card>
             </div>
             <div class="sample-step-actions">
-                <button igxButton="raised" (click)="stepper.prev()">Back</button>
-                <button igxButton="raised" (click)="stepper.next()"
+                <button igxButton="contained" (click)="stepper.prev()">Back</button>
+                <button igxButton="contained" (click)="stepper.next()"
                     [disabled]="!personalInformationForm.form.valid">Continue</button>
             </div>
         </div>
@@ -222,8 +222,8 @@
                 </igx-card>
             </div>
             <div class="sample-step-actions">
-                <button igxButton="raised" (click)="stepper.prev()">Back</button>
-                <button igxButton="raised" (click)="stepper.next()"
+                <button igxButton="contained" (click)="stepper.prev()">Back</button>
+                <button igxButton="contained" (click)="stepper.next()"
                     [disabled]="!shippingDetailsForm.form.valid">Continue</button>
             </div>
         </div>
@@ -257,7 +257,7 @@
                 </igx-card-content>
             </igx-card>
             <div class="sample-step-actions">
-                <button igxButton="raised"
+                <button igxButton="contained"
                     (click)="resetStepper(businessInformationForm, personalInformationForm, shippingDetailsForm)">Reset</button>
             </div>
         </div>

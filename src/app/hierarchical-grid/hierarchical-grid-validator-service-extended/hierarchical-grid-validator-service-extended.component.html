@@ -19,7 +19,7 @@
 
         <igx-row-island #childGrid [height]="null" [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false"
             [batchEditing]="true" [rowEditable]="true" (formGroupCreated)="formCreateHandler($event)">
-            <igx-grid-toolbar [grid]="grid" *igxGridToolbar="let grid">
+            <igx-grid-toolbar *igxGridToolbar="let grid">
                 <button igxButton [disabled]="!grid.transactions.canUndo" (click)="undo(grid)">Undo</button>
                 <button igxButton [disabled]="!grid.transactions.canRedo" (click)="redo(grid)">Redo</button>
             </igx-grid-toolbar>

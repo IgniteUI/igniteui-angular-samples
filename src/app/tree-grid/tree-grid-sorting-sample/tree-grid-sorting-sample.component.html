@@ -2,11 +2,11 @@
     <igx-tree-grid [igxPreventDocumentScroll]="true" #treegrid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
         primaryKey="ID" foreignKey="ParentID" (contextMenu)="rightClick($event)" [sortingOptions]="sortingOptions">
         <igx-grid-toolbar>
-            <button class="button-opitions" igxButton="raised" (click)="treegrid1.sortingExpressions = []">
+            <button class="button-opitions" igxButton="contained" (click)="treegrid1.sortingExpressions = []">
                 Clear Sorting
             </button>
 
-            <button class="button-opitions" igxButton="raised" (click)="groupArea.expressions = []">
+            <button class="button-opitions" igxButton="contained" (click)="groupArea.expressions = []">
                 Clear Grouped columns
             </button>
             <igx-grid-toolbar-actions>

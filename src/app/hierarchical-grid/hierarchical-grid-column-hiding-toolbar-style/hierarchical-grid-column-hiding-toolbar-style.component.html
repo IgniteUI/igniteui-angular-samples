@@ -20,7 +20,7 @@
         <igx-column field="GrammyAwards" header="Grammy Awards" [sortable]="true" dataType="number"></igx-column>
 
         <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false" hiddenColumnsText="Hidden">
-        <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
+        <igx-grid-toolbar *igxGridToolbar="let childGrid">
             <igx-grid-toolbar-title>Albums</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
                 <igx-grid-toolbar-hiding title="Column Hiding"></igx-grid-toolbar-hiding>
@@ -32,7 +32,7 @@
             <igx-column field="BillboardReview" header="Billboard Review" [sortable]="true"></igx-column>
             <igx-column field="USBillboard200" header="US Billboard 200" [sortable]="true"></igx-column>
         <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false" hiddenColumnsText="Hidden">
-        <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid">
+        <igx-grid-toolbar *igxGridToolbar="let childGrid">
             <igx-grid-toolbar-title>Songs</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
                 <igx-grid-toolbar-hiding title="Column Hiding"></igx-grid-toolbar-hiding>

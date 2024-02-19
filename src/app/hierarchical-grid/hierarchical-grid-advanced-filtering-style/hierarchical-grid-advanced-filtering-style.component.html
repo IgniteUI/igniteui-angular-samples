@@ -15,7 +15,7 @@
     <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number"></igx-column>
 
     <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false" [allowAdvancedFiltering]="true">
-    <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid"></igx-grid-toolbar>
+    <igx-grid-toolbar *igxGridToolbar="let childGrid"></igx-grid-toolbar>
 
         <igx-column field="Album"></igx-column>
         <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
@@ -30,7 +30,7 @@
     </igx-row-island>
 
     <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false" [allowAdvancedFiltering]="true">
-    <igx-grid-toolbar [grid]="childGrid" *igxGridToolbar="let childGrid"></igx-grid-toolbar>
+    <igx-grid-toolbar *igxGridToolbar="let childGrid"></igx-grid-toolbar>
 
         <igx-column field="Tour"></igx-column>
         <igx-column field="StartedOn" header="Started on"></igx-column>

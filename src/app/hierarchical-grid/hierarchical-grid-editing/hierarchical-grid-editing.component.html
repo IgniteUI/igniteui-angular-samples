@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-<button igxButton="raised" (click)="dialogAdd.open()" class="addSingerBtn">Add New Singer</button>
+<button igxButton="contained" (click)="dialogAdd.open()" class="addSingerBtn">Add New Singer</button>
 <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid class="hgrid" [data]="localdata" [autoGenerate]="false"
     [height]="'580px'" [width]="'100%'">
     <igx-column field="Artist" [editable]="true" [dataType]="'string'"></igx-column>
@@ -12,7 +12,7 @@
         [hasSummary]="true" [summaries]="mySummary"></igx-column>
     <igx-column [width]="'100px'">
         <ng-template igxCell let-cell="cell">
-            <button igxButton="icon" (click)="removeRow(cell.id.rowIndex)">
+            <button igxIconButton="flat" (click)="removeRow(cell.id.rowIndex)">
                 <igx-icon>delete</igx-icon>
             </button>
         </ng-template>

@@ -44,7 +44,7 @@
                 <input class="input-round-box" placeholder="Send message" autocomplete="off" igxInput #newMessage name="newMessage"
                     [(ngModel)]="message" (keypress)="onMessageKeypress($event)" />
             </igx-input-group>
-            <button class="send-message-button" igxButton="icon" igxButtonColor="#09f" igxButtonBackground="#fff"
+            <button class="send-message-button" igxIconButton="flat" igxButtonColor="#09f" igxButtonBackground="#fff"
                 igxRipple="#09f" [igxRippleCentered]="true" (click)="onSendButtonClick()">
                 <igx-icon family="material">send</igx-icon>
             </button>
