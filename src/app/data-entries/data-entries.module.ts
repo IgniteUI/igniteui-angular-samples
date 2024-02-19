@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     IgcFormsModule,
-    IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxChipsAreaComponent, IgxChipsModule, IgxComboModule,
+    IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxIconButtonDirective, IgxCardModule, IgxCheckboxModule, IgxChipsAreaComponent, IgxChipsModule, IgxComboModule,
     IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
     IgxIconModule, IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule,
     IgxSelectModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule, IgxTreeGridModule, IgxTreeModule
@@ -75,6 +75,14 @@ import { RatingInFormComponent } from './rating/rating-form/rating-form.componen
 import { TemplateDrivenFormValidationComponent } from './input-group/template-driven-form-validation/template-driven-form-validation.component';
 import { ReactiveFormValidationComponent } from './input-group/reactive-form-validation/reactive-form-validation.component';
 import { ReactiveFormCustomValidationComponent } from './input-group/reactive-form-custom-validation/reactive-form-custom-validation.component';
+import { IconButtonOverviewComponent } from './icon-button/icon-button-overview/icon-button-overview.component';
+import { FlatIconButtonComponent } from './icon-button/flat-icon-button/flat-icon-button.component';
+import { ContainedIconButtonComponent } from './icon-button/contained-icon-button/contained-icon-button.component';
+import { OutlinedIconButtonComponent } from './icon-button/outlined-icon-button/outlined-icon-button.component';
+import { DisabledIconButtonComponent } from './icon-button/disabled-icon-button/disabled-icon-button.component';
+import { SVGIconButtonComponent } from './icon-button/svg-icon-button/svg-icon-button.component';
+import { IconButtonSizeComponent } from './icon-button/icon-button-size/icon-button-size.component';
+import { IconButtonStylingComponent } from './icon-button/icon-button-styling/icon-button-styling.component';
 
 @NgModule({
     declarations: [
@@ -111,6 +119,14 @@ import { ReactiveFormCustomValidationComponent } from './input-group/reactive-fo
         DropDownStylingComponent,
         DropdownTreeHierarchicalSelectionComponent,
         DropdownTreeGridHierarchicalSelectionComponent,
+        IconButtonOverviewComponent,
+        FlatIconButtonComponent,
+        ContainedIconButtonComponent,
+        OutlinedIconButtonComponent,
+        DisabledIconButtonComponent,
+        SVGIconButtonComponent,
+        IconButtonSizeComponent,
+        IconButtonStylingComponent,
         InputGroupSample1Component,
         InputGroupSample2Component,
         InputGroupSample3Component,
@@ -154,6 +170,7 @@ import { ReactiveFormCustomValidationComponent } from './input-group/reactive-fo
         IgxAutocompleteModule,
         IgxButtonGroupModule,
         IgxButtonModule,
+        IgxIconButtonDirective,
         IgxDialogModule,
         IgxIconModule,
         IgxRippleModule,

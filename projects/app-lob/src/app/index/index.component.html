@@ -9,7 +9,7 @@
 
                 <!-- Home -->
                 <span igxDrawerItem igxRipple routerLink="{{homeRouteItem.path}}" routerLinkActive="igx-nav-drawer__item--active">
-                    <button igxButton="icon" igxRipple [igxRippleCentered]="true">
+                    <button igxIconButton="flat" igxRipple [igxRippleCentered]="true">
                         <igx-icon family="material">home</igx-icon>
                     </button>
                     {{homeRouteItem.displayName}}
@@ -29,7 +29,7 @@
                 <span *ngFor="let navItem of currentNavItems">
                     <!-- Header -->
                     <span igxDrawerItem igxRipple routerLinkActive="igx-nav-drawer__item--active" (click)="toggleParent('header' + navItem.name)">
-                        <button igxButton="icon" igxRipple [igxRippleCentered]="true" style="vertical-align: middle">
+                        <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" style="vertical-align: middle">
                             <igx-icon family="material">{{convertNodeStateToIcon('header' + navItem.name)}}</igx-icon>
                         </button>
                         <span style="vertical-align: middle">{{navItem.name}}</span>

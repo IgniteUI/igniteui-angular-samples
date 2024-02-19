@@ -20,7 +20,7 @@ export class BannerStylingComponent implements OnInit, OnDestroy {
         closeAnimation: slideOutRight,
         openAnimation: slideInLeft
     };
-    public onNetworkStateChange = new Subject();
+    public onNetworkStateChange = new Subject<void>();
     private _wifiState = false;
 
     public get wifiState(): boolean {

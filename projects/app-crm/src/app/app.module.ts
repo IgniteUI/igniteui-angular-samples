@@ -4,7 +4,7 @@ import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     IgxAutocompleteModule, IgxButtonModule, IgxIconModule, IgxInputGroupModule, IgxLayoutModule,
-    IgxRippleModule, IgxGridModule, IgxAvatarModule, IgxProgressBarModule
+    IgxRippleModule, IgxGridModule, IgxAvatarModule, IgxProgressBarModule, IgxIconButtonDirective
 } from 'igniteui-angular';
 import { IgxPreventDocumentScrollModule } from '../../../../src/app/directives/prevent-scroll.directive';
 import { AppComponent } from './app.component';
@@ -33,7 +33,8 @@ import { SEOService } from '../../../app-lob/src/app/seo.service';
         IgxProgressBarModule,
         FormsModule,
         IgxPreventDocumentScrollModule,
-        HammerModule
+        HammerModule,
+        IgxIconButtonDirective
     ],
     providers: [SEOService]
 })

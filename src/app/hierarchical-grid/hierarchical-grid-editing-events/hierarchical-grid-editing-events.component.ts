@@ -21,7 +21,7 @@ export class HGridEditingEventsComponent implements OnInit, OnDestroy {
 
     public localData: Singer[];
 
-    private destroy$ = new Subject();
+    private destroy$ = new Subject<void>();
 
     constructor() { }
 

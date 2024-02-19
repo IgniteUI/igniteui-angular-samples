@@ -9,7 +9,7 @@ import {
     IgxCardModule, IgxCheckboxModule, IgxChipsModule, IgxComboModule, IgxDatePickerModule, IgxDialogModule, IgxDividerModule,
     IgxDragDropModule,
     IgxDropDownModule,
-    IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule,
+    IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconButtonDirective, IgxIconModule, IgxInputGroupModule, IgxListModule, IgxProgressBarModule,
     IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSimpleComboModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
     IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from 'igniteui-angular';
@@ -314,7 +314,8 @@ import { GridCascadingCombosComponent } from './grid-cascading-combos/grid-casca
         IgxListModule,
         IgxSimpleComboModule,
         IgxDragDropModule,
-        IgxDropDownModule
+        IgxDropDownModule,
+        IgxIconButtonDirective
     ]
 })
 export class GridsModule { }

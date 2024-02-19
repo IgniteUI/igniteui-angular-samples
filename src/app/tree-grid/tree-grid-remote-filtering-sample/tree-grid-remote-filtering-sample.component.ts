@@ -17,7 +17,7 @@ export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterView
     public remoteData: Observable<any[]>;
     public noopFilterStrategy = NoopFilteringStrategy.instance();
 
-    private destroy$ = new Subject<boolean>();
+    private destroy$ = new Subject<void>();
 
     constructor(private _remoteService: RemoteFilteringService, private _cdr: ChangeDetectorRef) {
     }

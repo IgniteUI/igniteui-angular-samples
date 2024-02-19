@@ -19,7 +19,7 @@ $custom-button: button-theme(
     $border-color: $yellow
 );
 
-$custom-raised-button: button-theme(
+$custom-contained-button: button-theme(
     $schema: $dark-material-schema,
     $background: $yellow,
     $foreground: $black,
@@ -84,7 +84,7 @@ $custom-drop-down: drop-down-theme(
             @include css-vars($custom-drop-down);
 
             .igx-excel-filter__apply {
-                @include css-vars($custom-raised-button);
+                @include css-vars($custom-contained-button);
             }
 
             .igx-filter-empty__title {

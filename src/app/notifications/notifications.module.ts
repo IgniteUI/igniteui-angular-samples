@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IgxAvatarModule, IgxBannerModule, IgxButtonModule, IgxCardModule, IgxIconModule, IgxInputGroupModule,
+import { IgxAvatarModule, IgxBannerModule, IgxButtonModule, IgxCardModule, IgxIconButtonDirective, IgxIconModule, IgxInputGroupModule,
      IgxListModule, IgxNavbarModule, IgxRippleModule, IgxSnackbarModule,
      IgxSwitchModule, IgxToastModule } from 'igniteui-angular';
 import { BannerAdvancedSampleComponent } from './banner/banner-advanced-sample/banner-advanced-sample.component';
@@ -58,7 +58,8 @@ import { ToastStyleComponent } from './toast/toast-style/toast-style.component';
         IgxRippleModule,
         IgxSnackbarModule,
         IgxSwitchModule,
-        IgxToastModule
+        IgxToastModule,
+        IgxIconButtonDirective
     ]
 })
 export class NotificationsModule {}

@@ -10,8 +10,8 @@
                 {{fruit}}
             </igx-radio>
         </igx-radio-group>
-        <button igxButton="raised" igxRipple type="submit">Submit</button>
-        <button igxButton="raised" igxRipple type="button" (click)="onReset()">Reset</button>
+        <button igxButton="contained" igxRipple type="submit">Submit</button>
+        <button igxButton="contained" igxRipple type="button" (click)="onReset()">Reset</button>
     </form>
     <label igxLabel *ngIf="newModel">{{newModel.fullName}} favourite fruit is {{newModel.favFruit}}.</label>
 </div>
