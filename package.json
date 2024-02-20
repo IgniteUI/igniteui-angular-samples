@@ -88,7 +88,7 @@
     "@angular/cli": "^17.2.0",
     "@angular/compiler-cli": "^17.2.1",
     "@angular/language-service": "^17.2.1",
-    "@igniteui/angular-schematics": "17.1.1316-beta.2",
+    "@igniteui/angular-schematics": "17.1.1316-rc.0",
     "@juggle/resize-observer": "^3.3.1",
     "@types/jasmine": "^5.1.2",
     "@types/jasminewd2": "^2.0.13",
