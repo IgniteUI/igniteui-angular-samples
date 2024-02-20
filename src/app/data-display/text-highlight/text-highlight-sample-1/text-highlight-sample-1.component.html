@@ -9,8 +9,8 @@
 
     <igx-suffix>
         <div class="caseSensitiveButton">
-            <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="updateSearch()"
-                [style.background]="caseSensitive ? 'rgb(73, 180, 254)' : 'transparent'">
+            <button type="button" igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="updateSearch()"
+                [style.background]="caseSensitive ? 'rgb(73, 180, 254)' : 'transparent'" title="Match case">
                 <igx-icon class="caseSensitiveIcon" family="material">text_fields</igx-icon>
             </button>
         </div>
