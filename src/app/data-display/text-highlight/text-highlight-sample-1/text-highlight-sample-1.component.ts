@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnDestroy, ViewChild } from '@angular/core';
 import { IgxTextHighlightDirective, IgxTextHighlightService } from 'igniteui-angular';
 
 @Component({
@@ -7,7 +7,7 @@ import { IgxTextHighlightDirective, IgxTextHighlightService } from 'igniteui-ang
     styleUrls: ['./text-highlight-sample-1.component.scss'],
     templateUrl: './text-highlight-sample-1.component.html'
 })
-export class TextHighlightSample1Component {
+export class TextHighlightSample1Component implements OnDestroy {
     @ViewChild(IgxTextHighlightDirective, { read: IgxTextHighlightDirective, static: true })
     public highlight: IgxTextHighlightDirective;
     // tslint:disable max-line-length
@@ -27,6 +27,10 @@ export class TextHighlightSample1Component {
     public index = 0;
 
     constructor(private highlightService: IgxTextHighlightService) { }
+
+    public ngOnDestroy() {
+        this.highlightService.destroyGroup('group1');
+    }
 
     public searchKeyDown(ev) {
         if (this.searchText) {
