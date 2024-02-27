@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule,
     IgxChipsModule, IgxComboModule, IgxDatePickerModule, IgxDialogModule,
     IgxDragDropModule,
-    IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule,
+    IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconButtonDirective, IgxIconModule, IgxInputGroupModule,
     IgxListModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
     IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from 'igniteui-angular';
 import { IgxPreventDocumentScrollModule } from '../directives/prevent-scroll.directive';
@@ -225,7 +225,8 @@ import { HGridSummaryExportComponent } from './hgrid-summary-export/hgrid-summar
         IgxTooltipModule,
         IgxTabsModule,
         IgxListModule,
-        IgxDragDropModule
+        IgxDragDropModule,
+        IgxIconButtonDirective
     ]
 })
 export class HierarchicalGridModule { }

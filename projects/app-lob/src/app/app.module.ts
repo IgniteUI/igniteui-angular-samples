@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-    IgxButtonModule, IgxFocusModule, IgxIconModule, IgxInputGroupModule,
+    IgxButtonModule, IgxFocusModule, IgxIconButtonDirective, IgxIconModule, IgxInputGroupModule,
     IgxLayoutModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule
 } from 'igniteui-angular';
 import { IgxExtrasModule } from 'igniteui-angular-extras';
@@ -38,7 +38,8 @@ import { SEOService } from './seo.service';
         HammerModule,
         IgxExtrasModule,
         IgxFocusModule,
-        IgxToggleModule
+        IgxToggleModule,
+        IgxIconButtonDirective
     ],
     providers: [
         SEOService

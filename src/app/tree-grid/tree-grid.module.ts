@@ -17,6 +17,7 @@ import {
     IgxDragDropModule,
     IgxFocusModule,
     IgxGridModule,
+    IgxIconButtonDirective,
     IgxIconModule,
     IgxInputGroupModule,
     IgxListModule,
@@ -271,7 +272,8 @@ import { TreeGridSummaryExportComponent } from './tree-grid-summary-export/tree-
         IgxSimpleComboModule,
         IgxInputGroupModule,
         IgxDragDropModule,
-        IgxFocusModule
+        IgxFocusModule,
+        IgxIconButtonDirective
     ],
     providers: [RemoteFilteringService]
 })

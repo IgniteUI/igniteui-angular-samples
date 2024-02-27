@@ -1,5 +1,5 @@
 <div igxOverlayOutlet>
-    <button igxButton="raised" igxRipple="white" (click)="openDialog()">Show Styled Dialog</button>
+    <button igxButton="contained" igxRipple="white" (click)="openDialog()">Show Styled Dialog</button>
     <igx-dialog #dialog1 message="This will create a new social media account.">
         <igx-dialog-title>
             <div class="dialog-container">
@@ -8,8 +8,8 @@
             </div>
         </igx-dialog-title>
         <div  igxDialogActions class="dialog-container dialog-actions">
-            <button igxButton="raised" igxRipple="white" (click)="dialog.close()">CREATE</button>
-            <button igxButton="raised" igxRipple="white" (click)="dialog.close()">CANCEL</button>
+            <button igxButton="contained" igxRipple="white" (click)="dialog.close()">CREATE</button>
+            <button igxButton="contained" igxRipple="white" (click)="dialog.close()">CANCEL</button>
         </div>
     </igx-dialog>
 </div>

@@ -1,13 +1,13 @@
 /* eslint-disable max-len */
-import { Component, ViewChildren } from '@angular/core';
-import { IgxTextHighlightDirective } from 'igniteui-angular';
+import { Component, OnDestroy, ViewChildren } from '@angular/core';
+import { IgxTextHighlightDirective, IgxTextHighlightService } from 'igniteui-angular';
 
 @Component({
     selector: 'app-text-highlight-2',
     styleUrls: ['./text-highlight-sample-2.component.scss'],
     templateUrl: './text-highlight-sample-2.component.html'
 })
-export class TextHighlightSample2Component {
+export class TextHighlightSample2Component implements OnDestroy {
     @ViewChildren(IgxTextHighlightDirective)
     public highlights;
     // tslint:disable max-line-length
@@ -31,6 +31,12 @@ export class TextHighlightSample2Component {
     public matchCount = 0;
     public caseSensitive = false;
     public index = 0;
+
+    constructor(private highlightService: IgxTextHighlightService) { }
+
+    public ngOnDestroy() {
+        this.highlightService.destroyGroup('group1');
+    }
 
     public searchKeyDown(ev) {
         if (this.searchText) {
@@ -98,7 +104,7 @@ export class TextHighlightSample2Component {
 
                 const actualIndex = row === 0 ? this.index : this.index - matchesArray[row - 1];
 
-                IgxTextHighlightDirective.setActiveHighlight('group1', { index: actualIndex, row });
+                this.highlightService.setActiveHighlight('group1', { index: actualIndex, row });
             }
         } else {
             this.highlights.forEach((h) => {

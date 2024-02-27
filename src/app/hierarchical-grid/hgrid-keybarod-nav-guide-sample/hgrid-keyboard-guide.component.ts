@@ -188,7 +188,7 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
 
     public gridTarget: GridUnderManagement;
 
-    private _destroyer = new Subject<boolean>();
+    private _destroyer = new Subject<void>();
     private keyboardHandler = new KeyboardHandler([], GridSection.THEAD);
 
     public constructor(
@@ -334,12 +334,12 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
 
 export class GridUnderManagement {
     public hGrid: IgxHierarchicalGridComponent;
-    public destroyer = new Subject();
+    public destroyer = new Subject<void>();
     public keyboardHandler: KeyboardHandler;
     public cdr: ChangeDetectorRef;
 
     constructor(hGrid: IgxHierarchicalGridComponent, keyboardHandler: KeyboardHandler,
-                destroyer: Subject<boolean>, cdr: ChangeDetectorRef) {
+                destroyer: Subject<void>, cdr: ChangeDetectorRef) {
         this.hGrid = hGrid;
         this.keyboardHandler = keyboardHandler;
         this.destroyer = destroyer;

@@ -23,7 +23,7 @@ export class DropDownRemoteComponent implements OnInit, OnDestroy, AfterViewInit
     public itemsMaxHeight = 320;
     public prevRequest: Subscription;
     public rData: any;
-    private destroy$ = new Subject();
+    private destroy$ = new Subject<void>();
     constructor(private remoteService: RemoteNWindService, public cdr: ChangeDetectorRef) { }
 
     public ngAfterViewInit() {

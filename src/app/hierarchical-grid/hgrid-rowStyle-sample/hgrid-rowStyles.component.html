@@ -11,7 +11,7 @@
             [hasSummary]="true" ></igx-column>
         <igx-column [width]="'100px'">
             <ng-template igxCell let-cell="cell">
-                <button igxButton="icon" (click)="removeRow(cell.id.rowIndex)">
+                <button igxIconButton="flat" (click)="removeRow(cell.id.rowIndex)">
                     <igx-icon>delete</igx-icon>
                 </button>
             </ng-template>

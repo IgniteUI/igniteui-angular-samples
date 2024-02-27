@@ -29,7 +29,7 @@ export class CRUDSampleComponent implements OnInit, OnDestroy {
     public noopSortStrategy = NoopSortingStrategy.instance();
 
     private _prevRequest: any;
-    private destroy$ = new Subject<boolean>();
+    private destroy$ = new Subject<void>();
 
     private _perPage = 10;
 

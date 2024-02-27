@@ -1,8 +1,16 @@
 .chip-container{
-    width : 400px;
-    height: 150px;
-    resize: both;
+    width : 500px;
     overflow: auto;
     border: 1px solid #ccc;
     background-color: #FFFBFA;
+    display: inline-flex;
+    margin-left:10px;
+}
+igx-chip {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+button {
+    width: 300px;
+    border: #ccc;
 }

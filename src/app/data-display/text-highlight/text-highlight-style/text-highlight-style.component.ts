@@ -1,13 +1,13 @@
 /* eslint-disable max-len */
-import { Component, ViewChild } from '@angular/core';
-import { IgxTextHighlightDirective } from 'igniteui-angular';
+import { Component, OnDestroy, ViewChild } from '@angular/core';
+import { IgxTextHighlightDirective, IgxTextHighlightService } from 'igniteui-angular';
 
 @Component({
     selector: 'app-text-highlight-style',
     styleUrls: ['./text-highlight-style.component.scss'],
     templateUrl: './text-highlight-style.component.html'
 })
-export class TextHighlightStyleComponent {
+export class TextHighlightStyleComponent implements OnDestroy {
     @ViewChild(IgxTextHighlightDirective, { read: IgxTextHighlightDirective, static: true })
     public highlight: IgxTextHighlightDirective;
 
@@ -24,6 +24,12 @@ export class TextHighlightStyleComponent {
     public matchCount = 0;
     public caseSensitive = false;
     public index = 0;
+
+    constructor(private highlightService: IgxTextHighlightService) { }
+
+    public ngOnDestroy() {
+        this.highlightService.destroyGroup('group1');
+    }
 
     public searchKeyDown(ev) {
         if (this.searchText) {
@@ -73,7 +79,7 @@ export class TextHighlightStyleComponent {
             this.index = this.index > this.matchCount - 1 ? 0 : this.index;
 
             if (this.matchCount) {
-                IgxTextHighlightDirective.setActiveHighlight('group1', {
+                this.highlightService.setActiveHighlight('group1', {
                     index: this.index
                 });
             }

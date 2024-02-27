@@ -4,7 +4,7 @@ $flatBtn: button-theme(
     $border-radius: .5
 );
 
-$raisedBtn: button-theme(
+$containedBtn: button-theme(
     $border-radius: 30px
 );
 
@@ -12,16 +12,16 @@ $fabBtn: button-theme(
     $border-radius: 10%
 );
 
-$iconBtn: button-theme(
-    $border-radius: .5 .2 .5 .2
+$iconBtn: icon-button-theme(
+    $border-radius: 12px
 );
 
 .flat {
     @include css-vars($flatBtn);
 }
 
-.raised {
-    @include css-vars($raisedBtn);
+.contained {
+    @include css-vars($containedBtn);
 }
 
 .fab {

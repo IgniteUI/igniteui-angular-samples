@@ -13,6 +13,7 @@ import {
     IgxDividerModule,
     IgxExpansionPanelModule,
     IgxGridModule,
+    IgxIconButtonDirective,
     IgxIconModule,
     IgxInputGroupModule,
     IgxLayoutModule,
@@ -194,7 +195,8 @@ import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sampl
         IgxSwitchModule,
         IgxTabsModule,
         IgxTimePickerModule,
-        IgxToastModule
+        IgxToastModule,
+        IgxIconButtonDirective
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

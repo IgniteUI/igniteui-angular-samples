@@ -20,7 +20,7 @@ export class RemoteFilteringSampleComponent implements OnInit, AfterViewInit, On
 
     private _prevRequest: any;
     private _chunkSize: number;
-    private destroy$ = new Subject<boolean>();
+    private destroy$ = new Subject<void>();
 
     constructor(private _remoteService: RemoteFilteringService, public cdr: ChangeDetectorRef) { }
 

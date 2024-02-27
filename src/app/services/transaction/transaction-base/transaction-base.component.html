@@ -13,9 +13,9 @@
     </igx-list>
 </igx-card>
 <div class="buttons">
-    <button igxButton="raised" (click)="onClear()" [disabled]="this.getTransactionLog().length === 0">Clear
+    <button igxButton="contained" (click)="onClear()" [disabled]="this.getTransactionLog().length === 0">Clear
         Transactions</button>
-    <button igxButton="raised" (click)="onCommit()" [disabled]="this.getTransactionLog().length === 0">Commit
+    <button igxButton="contained" (click)="onCommit()" [disabled]="this.getTransactionLog().length === 0">Commit
         Transactions</button>
 </div>
 <div class="output">
