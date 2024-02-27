@@ -17,7 +17,6 @@ export class TreeConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['TreeBasicSampleComponent'],
                 ngImports: ['IgxTreeModule', 'IgxIconModule']
             }),
-            useIvy: true
         }));
 
         configs.push(new Config({
@@ -30,7 +29,6 @@ export class TreeConfigGenerator implements IConfigGenerator {
                 ngDeclarations: ['TreeAdvancedSampleComponent'],
                 ngImports: ['IgxTreeModule', 'IgxIconModule', 'IgxTooltipModule']
             }),
-            useIvy: true
         }));
 
         return configs;
