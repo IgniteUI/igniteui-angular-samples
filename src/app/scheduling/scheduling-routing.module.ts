@@ -10,6 +10,7 @@ import { CalendarSample5Component } from './calendar/calendar-sample-5/calendar-
 import { CalendarSample6Component } from './calendar/calendar-sample-6/calendar-sample-6.component';
 import { CalendarSample7Component } from './calendar/calendar-sample-7/calendar-sample-7.component';
 import { CalendarSample8Component } from './calendar/calendar-sample-8/calendar-sample-8.component';
+import { CalendarSample9Component } from './calendar/calendar-sample-9/calendar-sample-9.component';
 import { CalendarRtlSampleComponent } from './calendar/calendar-rtl-sample/calendar-rtl-sample.component';
 import { CalendarStylingSampleComponent } from './calendar/calendar-styling-sample/calendar-styling-sample.component';
 import { CalendarYearsViewComponent } from './calendar/calendar-years-view/calendar-years-view.component';
@@ -89,6 +90,11 @@ export const schedulingRoutes: Routes = [
         component: CalendarSample8Component,
         data: schedulingRoutesData['calendar-sample-8'],
         path: 'calendar-sample-8'
+    },
+    {
+        component: CalendarSample9Component,
+        data: schedulingRoutesData['calendar-sample-9'],
+        path: 'calendar-sample-9'
     },
     {
         component: CalendarRtlSampleComponent,

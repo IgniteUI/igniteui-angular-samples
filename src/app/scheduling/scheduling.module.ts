@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
-    IgxAutocompleteModule, IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule,
+    IgxAutocompleteModule, IgxButtonModule, IgxButtonGroupModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule,
     IgxDateRangePickerModule, IgxDateTimeEditorModule, IgxDialogModule, IgxDropDownModule, IgxIconModule,
     IgxInputGroupModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule, IgxTextSelectionModule,
     IgxTimePickerModule, IgxToastModule, IgxToggleModule
@@ -17,6 +17,7 @@ import { CalendarSample5Component } from './calendar/calendar-sample-5/calendar-
 import { CalendarSample6Component } from './calendar/calendar-sample-6/calendar-sample-6.component';
 import { CalendarSample7Component } from './calendar/calendar-sample-7/calendar-sample-7.component';
 import { CalendarSample8Component } from './calendar/calendar-sample-8/calendar-sample-8.component';
+import { CalendarSample9Component } from './calendar/calendar-sample-9/calendar-sample-9.component';
 import { CalendarRtlSampleComponent } from './calendar/calendar-rtl-sample/calendar-rtl-sample.component';
 import { CalendarStylingSampleComponent } from './calendar/calendar-styling-sample/calendar-styling-sample.component';
 import { CalendarYearsViewComponent } from './calendar/calendar-years-view/calendar-years-view.component';
@@ -73,6 +74,7 @@ import { DateRangePickerRangeButtonsComponent } from './daterangepicker/daterang
         CalendarSample6Component,
         CalendarSample7Component,
         CalendarSample8Component,
+        CalendarSample9Component,
         CalendarRtlSampleComponent,
         CalendarMultiViewComponent,
         CalendarStylingSampleComponent,
@@ -116,6 +118,8 @@ import { DateRangePickerRangeButtonsComponent } from './daterangepicker/daterang
         ReactiveFormsModule,
         SchedulingRoutingModule,
         IgxAutocompleteModule,
+        IgxButtonGroupModule,
+        IgxButtonModule,
         IgxCalendarModule,
         IgxCardModule,
         IgxDatePickerModule,
