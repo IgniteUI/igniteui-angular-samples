@@ -43,6 +43,7 @@ import { LayoutJustifyContentComponent } from './layout/layout-justify-content/l
 import { LayoutSampleComponent } from './layout/layout-sample/layout-sample.component';
 import { LayoutWrapComponent } from './layout/layout-wrap/layout-wrap.component';
 import { layoutsRoutesData } from './layouts-routes-data';
+import { SplitterCollapsibleSampleComponent } from './splitter/splitter-collapsible-sample/splitter-collapsible-sample.component';
 import {
     SplitterHorizontalSampleComponent
 } from './splitter/splitter-horizontal-sample/splitter-horizontal-sample.component';
@@ -236,6 +237,11 @@ export const layoutsRoutes: Routes = [
         component: LayoutWrapComponent,
         data: layoutsRoutesData['layout-wrap'],
         path: 'layout-wrap'
+    },
+    {
+        component: SplitterCollapsibleSampleComponent,
+        data: layoutsRoutesData['splitter-collapsible-sample'],
+        path: 'splitter-collapsible-sample'
     },
     {
         component: SplitterHorizontalSampleComponent,
