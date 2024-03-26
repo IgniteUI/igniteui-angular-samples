@@ -10,6 +10,6 @@ export class SplitterCollapsibleSampleComponent {
     @ViewChild('splitter') public splitterComponent: IgxSplitterComponent;
 
     public toggleCollapsible() {
-        this.splitterComponent.collapsible = !this.splitterComponent.collapsible;
+        this.splitterComponent.nonCollapsible = !this.splitterComponent.nonCollapsible;
     }
 }
