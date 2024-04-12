@@ -18,7 +18,7 @@ export interface User{
     slider: FormControl<IRangeSliderValue|null>
     calendar: FormControl<string |Date|null>
     month: FormControl<string| Date |null>
-    genres: FormControl<Array<string> | null>
+    genres: FormControl<string[] | null>
 }
 @Component({
     selector: 'app-reactive-form',
@@ -47,7 +47,7 @@ export class ReactiveFormsSampleComponent {
         checkbox: new FormControl(true,Validators.required),
         radio: new FormControl(''),
         switch: new FormControl(false),
-        range: new FormControl({ start: new Date(), end: new Date(new Date().setDate(new Date().getDate() + 5))} ),
+        range: new FormControl({ start: new Date(), end: new Date(new Date().setDate(new Date().getDate() + 5))}),
         slider: new FormControl({lower: 5, upper: 30}),
         calendar: new FormControl(null),
         month: new FormControl(null),
