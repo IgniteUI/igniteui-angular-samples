@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class RemotePagingService {
-    public url = `https://services.odata.org/V4/Northwind/Northwind.svc/`;
+    public url = `https://services.odata.org/northwind/northwind.svc/`;
     private key = 'value';
 
     constructor(private http: HttpClient) {

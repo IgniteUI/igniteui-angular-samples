@@ -16,7 +16,7 @@ export interface IDataState {
 
 @Injectable()
 export class RemoteLoDService {
-    public url = `https://services.odata.org/V4/Northwind/Northwind.svc/`;
+    public url = `https://services.odata.org/northwind/northwind.svc/`;
 
     constructor(private http: HttpClient) { }
 

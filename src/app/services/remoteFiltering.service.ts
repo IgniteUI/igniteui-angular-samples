@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { FilteringLogic, IForOfState, SortingDirection, FilteringExpressionsTree } from 'igniteui-angular';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-const DATA_URL = 'https://services.odata.org/V4/Northwind/Northwind.svc/Products';
+const DATA_URL = 'https://services.odata.org/northwind/northwind.svc/Products';
 const EMPTY_STRING = '';
 const NULL_VALUE = null;
 // eslint-disable-next-line no-shadow

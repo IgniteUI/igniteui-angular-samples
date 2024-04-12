@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable()
 export class RemoteNWindService {
     public remoteData: BehaviorSubject<any[]>;
-    private url = 'https://services.odata.org/V4/Northwind/Northwind.svc/Products';
+    private url = 'https://services.odata.org/northwind/northwind.svc/Products';
 
     constructor(private http: HttpClient) {
         this.remoteData = new BehaviorSubject([]);
