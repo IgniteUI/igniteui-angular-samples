@@ -20,15 +20,18 @@
                     <igx-suffix>
                         <igx-icon>person</igx-icon>
                     </igx-suffix>
+                    <igx-hint *ngIf="fullName.touched && fullName.invalid">Fullname is required</igx-hint>
+                    <igx-hint *ngIf="fullName.errors?.fullName">Please enter a valid name.</igx-hint>
                 </igx-input-group>
                 <igx-input-group>
                     <igx-prefix>+359</igx-prefix>
                     <label igxLabel for="phone">Phone</label>
-                    <input igxInput name="phone" type="tel" formControlName="phone" />
+                    <input igxInput name="phone" type="number" formControlName="phone" />
                     <igx-suffix>
                         <igx-icon>phone</igx-icon>
                     </igx-suffix>
                     <igx-hint position="start">Ex.: +359 888 123 456</igx-hint>
+                    <igx-hint *ngIf="phone.touched && phone.invalid">Phone number is required</igx-hint>
                 </igx-input-group>
                 <igx-input-group>
                     <label igxLabel for="email">Email address</label>
@@ -36,6 +39,8 @@
                     <igx-suffix>
                         <igx-icon>email</igx-icon>
                     </igx-suffix>
+                    <igx-hint *ngIf="email.touched && email.invalid">Email is required</igx-hint>
+                    <igx-hint *ngIf="email.errors?.email">Please enter a valid email</igx-hint>                    
                 </igx-input-group>
                 <igx-combo #combo1 class="input-container" [itemsMaxHeight]="130" [data]="genres" [valueKey]="'type'"
                     [displayKey]="'type'" type="line" formControlName="genres" placeholder="Select your favorite genres"
@@ -51,6 +56,34 @@
                         <igx-icon>access_time</igx-icon>
                     </igx-picker-toggle>
                 </igx-time-picker>
+                <igc-rating  size="large" name="rating" class="user-input" formControlName="rating">
+                    <label igxLabel>Rate the movie</label>
+                </igc-rating>                
+                <igx-checkbox labelPosition="after" class="user-input" name="checkbox" formControlName="checkbox">
+                    Agree to the terms of use.
+                </igx-checkbox>
+                <igx-radio-group value="1" class="user-input" formControlName="radio">
+                    <igx-radio value="2d" class="radio">
+                        2D Movie
+                    </igx-radio>
+                    <igx-radio value="3d" class="radio">
+                        3D Movie
+                    </igx-radio>
+                </igx-radio-group>
+                <igx-switch name="switch" formControlName="switch">
+                    Subtitles for the Deaf or Hard-of-Hearing (SDH)
+                </igx-switch>
+                <igx-date-range-picker name="range" formControlName="range">
+                    <label igxLabel>Pick suitable date range - for avaliable movies</label>
+                </igx-date-range-picker>
+                 <igx-slider name="slider" formControlName="slider" id="slider" type="range">
+                </igx-slider>
+                <article class="calendar-wrapper">
+                    <igx-calendar selection="multi" name="calendar" formControlName="calendar"></igx-calendar>
+                </article>
+                 <igx-card>
+                    <igx-month-picker #monthPicker name="month" formControlName="month"></igx-month-picker>
+                </igx-card>
                 <button igxButton="contained" igxRipple type="submit" [disabled]="!user.valid">Book</button>
             </div>
         </form>
