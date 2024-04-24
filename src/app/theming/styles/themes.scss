@@ -221,25 +221,25 @@ $black-paginator-theme: paginator-theme(
 
 $light-calendar-theme: calendar-theme(
     $content-background: color($light-theme-palette, "primary", 500),
-    $content-text-color: color($light-theme-palette, "secondary", 600),
+    $content-foreground: color($light-theme-palette, "secondary", 600),
     $header-background: color($light-theme-palette, "secondary", 500),
-    $header-text-color: color($light-theme-palette, "primary", 500),
-    $picker-arrow-hover-color: color($light-theme-palette, "secondary", 100),
-    $inactive-text-color: color($light-theme-palette, "secondary", 200),
-    $picker-text-hover-color: color($light-theme-palette, "secondary", 100),
-    $year-current-text-color: color($light-theme-palette, "secondary", 500),
-    $weekend-text-color: color($light-theme-palette, "secondary", 500)
+    $header-foreground: color($light-theme-palette, "primary", 500),
+    $navigation-hover-color: color($light-theme-palette, "secondary", 100),
+    $inactive-color: color($light-theme-palette, "secondary", 200),
+    $picker-hover-foreground: color($light-theme-palette, "secondary", 100),
+    $year-current-foreground: color($light-theme-palette, "secondary", 500),
+    $weekend-color: color($light-theme-palette, "secondary", 500)
 
 );
 
 $dark-calendar-theme: calendar-theme(
     $content-background: color($dark-theme-palette, "primary", 100),
-    $content-text-color: color($dark-theme-palette, "secondary", 500),
-    $inactive-text-color: color($dark-theme-palette, "primary", 700),
-    $picker-arrow-color: color($dark-theme-palette, "primary", 700),
-    $picker-arrow-hover-color: color($dark-theme-palette, "secondary", 500),
-    $picker-text-color: color($dark-theme-palette, "primary", 700),
-    $picker-text-hover-color:color($dark-theme-palette, "secondary", 500)
+    $content-foreground: color($dark-theme-palette, "secondary", 500),
+    $inactive-color: color($dark-theme-palette, "primary", 700),
+    $navigation-color: color($dark-theme-palette, "primary", 700),
+    $navigation-hover-color: color($dark-theme-palette, "secondary", 500),
+    $picker-foreground: color($dark-theme-palette, "primary", 700),
+    $picker-hover-foreground:color($dark-theme-palette, "secondary", 500)
 
 );
 
