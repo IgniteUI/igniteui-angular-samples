@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import {
     IgxAccordionModule,
     IgxAvatarModule,
@@ -167,6 +167,7 @@ import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sampl
     imports: [
         CommonModule,
         FormsModule,
+        ReactiveFormsModule ,
         LayoutsRoutingModule,
         IgxAccordionModule,
         IgxAvatarModule,

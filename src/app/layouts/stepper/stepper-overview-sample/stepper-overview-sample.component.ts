@@ -1,6 +1,36 @@
 import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import {  FormControl, FormGroup, Validators  } from '@angular/forms';
 import { IgxStepperComponent } from 'igniteui-angular';
+
+export interface BusinessInformation{
+    name: FormControl<string | null>,
+    physicalAddress: FormControl<string | null>,
+    city: FormControl<string | null>,
+    state: FormControl<string[] | null>,
+    zip: FormControl<number | null>,
+    taxIdNumber: FormControl<number | null>,
+    differentAddress: FormControl<boolean | null>,
+    nonUSBusinessActivity: FormControl<boolean | null>
+}
+
+export interface PersonalInformation{
+    firstName: FormControl<string | null>,
+    lastName: FormControl<string | null>,
+    jobTitle: FormControl<string | null>,
+    phoneNumber: FormControl<number | null>,
+    email: FormControl<string | null>,
+    authorization: FormControl<boolean | null>,
+    agreementAccepted: FormControl<boolean | null>
+}
+
+export interface ShippingDetails{
+    sfirstName: FormControl<string | null>,
+    slastName: FormControl<string | null>,
+    smailingAddress: FormControl<string | null>,
+    scity: FormControl<string | null>,
+    sstate: FormControl<string[] | null>,
+    szip: FormControl<number | null>
+}
 
 @Component({
     selector: 'app-stepper-overview-sample',
@@ -42,40 +72,44 @@ export class StepperOverviewSampleComponent {
         'Georgia', 'Hawaii', 'Illinois', 'Louisiana', 'Minnesota',
         'Nevada', 'New York', 'New Jersey', 'Ohio', 'Texas', 'Virginia', 'Washington'
     ];
-
     public selectedCard: any;
+    
+    public businessInformation:FormGroup<BusinessInformation>;
+    public personalInformation:FormGroup<PersonalInformation>;
+    public shippingDetails:FormGroup<ShippingDetails>;
+    
+    constructor(private cdr: ChangeDetectorRef) {        
+        this.businessInformation = new FormGroup<BusinessInformation>({
+            name: new FormControl('', Validators.required),
+            physicalAddress: new FormControl('', Validators.required),
+            city: new FormControl('', Validators.required),
+            state: new FormControl(this.states, Validators.required),
+            zip: new FormControl(null, [Validators.required, Validators.pattern("[0-9]{5}")]),
+            taxIdNumber: new FormControl(null, [Validators.required,Validators.pattern("[9]{1}[0-9]{8}")]),
+            differentAddress: new FormControl(false, Validators.required),
+            nonUSBusinessActivity: new FormControl(true, Validators.required)
+        })
 
-    public businessInformation: any = {
-        name: '',
-        physicalAddress: '',
-        city: '',
-        state: '',
-        zip: null,
-        taxIdNumber: null,
-        differentAddress: false,
-        nonUSBusinessActivity: null
+        this.personalInformation = new FormGroup<PersonalInformation>({
+            firstName: new FormControl('', Validators.required),
+            lastName: new FormControl('', Validators.required),
+            jobTitle: new FormControl('', Validators.required),
+            phoneNumber: new FormControl(null, Validators.required),
+            email: new FormControl('', Validators.required),
+            authorization: new FormControl(false, Validators.required),
+            agreementAccepted: new FormControl(false, Validators.required)
+        })
+
+        this.shippingDetails = new FormGroup<ShippingDetails>({
+            sfirstName: new FormControl('', Validators.required),
+            slastName: new FormControl('', Validators.required),
+            smailingAddress: new FormControl('', Validators.required),
+            scity: new FormControl('', Validators.required),
+            sstate: new FormControl(this.states, Validators.required),
+            szip: new FormControl(null, [Validators.required, Validators.pattern("[0-9]{5}")])
+        })
     };
 
-    public personalInformation: any = {
-        firstName: '',
-        lastName: '',
-        jobTitle: '',
-        phoneNumber: '',
-        email: '',
-        authorization: false,
-        agreementAccepted: false
-    };
-
-    public shippingDetails: any = {
-        firstName: '',
-        lastName: '',
-        mailingAddress: '',
-        city: '',
-        state: '',
-        zip: null
-    };
-
-    constructor(private cdr: ChangeDetectorRef) { }
 
     public selectCard(card: any): void {
         this.selectedCard = card;
@@ -83,20 +117,37 @@ export class StepperOverviewSampleComponent {
         this.stepper.next();
     }
 
-    public resetStepper(form1: NgForm, form2: NgForm, form3: NgForm): void {
-        this.stepper.reset();
-        this.selectedCard = null;
-        form1.reset();
-        this.businessInformation.differentAddress = false;
-        form2.reset();
-        this.personalInformation.authorization = false;
-        this.personalInformation.agreementAccepted = false;
-        form3.reset();
+    public resetStepper(form1: FormGroup, form2: FormGroup, form3: FormGroup): void {
+         this.stepper.reset();
+         this.selectedCard = null;
+         form1.reset();
+         //this.businessInformation.differentAddress = false;
+         form2.reset();
+        // this.personalInformation.authorization = false;
+         //this.personalInformation.controls.agreementAccepted = false;
+         form3.reset();
     }
 
     public handleKeyDown(evt: KeyboardEvent, card: any): void {
         if (evt.key.toLowerCase() === ' ' || evt.key.toLowerCase() === 'spacebar' || evt.key.toLowerCase() === 'space') {
             this.selectCard(card);
+        }
+    }
+    public onSubmit() {
+        console.log(this.businessInformation);
+    }
+
+    public checkValidTaxId():boolean{
+        return this.businessInformation.controls.taxIdNumber.invalid && this.businessInformation.controls.taxIdNumber.pristine;
+    }
+
+    public a(){
+        if(this.businessInformation.controls.taxIdNumber.errors.required){
+            return "This field is required"
+        }
+
+        if(this.businessInformation.controls.taxIdNumber.errors.pattern){
+            return "The Federal Tax ID Number should begin with 9 and should have 9 digits"
         }
     }
 }

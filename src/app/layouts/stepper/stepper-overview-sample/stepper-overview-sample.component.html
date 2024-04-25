@@ -24,55 +24,53 @@
         </div>
     </igx-step>
 
-    <igx-step #step2 [isValid]="businessInformationForm.form.valid" [completed]="businessInformationForm.form.valid">
+    <igx-step #step2 [isValid]="businessInformation.valid" [completed]="businessInformation.valid">
         <span igxStepTitle>Business information</span>
         <div igxStepContent [tabIndex]="-1">
             <div class="sample-row">
-                <form class="flex-form" #businessInformationForm="ngForm">
+                <form class="flex-form" [formGroup]="businessInformation" (ngSubmit)="onSubmit()">
                     <igx-input-group type="box">
-                        <input igxInput name="name" id="name" type="text" [(ngModel)]="businessInformation.name"
-                            required />
+                        <input igxInput name="name" id="name" type="text" formControlName="name" required/>
                         <label igxLabel for="name">Legal Business Name</label>
                     </igx-input-group>
                     <igx-input-group type="box">
                         <input igxInput name="physicalAddress" id="physicalAddress" type="text"
-                            [(ngModel)]="businessInformation.physicalAddress" required />
+                        formControlName="physicalAddress" required />
                         <label igxLabel for="physicalAddress">Business Physical Address</label>
                     </igx-input-group>
                     <div class="form-row">
                         <igx-input-group type="box">
-                            <input igxInput name="city" id="city" type="text" [(ngModel)]="businessInformation.city"
+                            <input igxInput name="city" id="city" type="text" formControlName="city"
                                 required />
                             <label igxLabel for="city">City</label>
                         </igx-input-group>
-                        <igx-select type="box" name="state" [(ngModel)]="businessInformation.state" required>
+                        <igx-select type="box" name="state" formControlName="state" required>
                             <igx-select-item *ngFor="let state of states" [value]="state">
                                 {{state}}
                             </igx-select-item>
                             <label igxLabel>State</label>
                         </igx-select>
                         <igx-input-group type="box">
-                            <input igxInput name="zip" id="zip" type="text" pattern="[0-9]{5}" [igxMask]="'00000'"
-                                [placeholder]="'#####'" [(ngModel)]="businessInformation.zip" required />
+                            <input igxInput name="zip" id="zip" type="text" [igxMask]="'00000'"
+                                [placeholder]="'#####'" formControlName="zip" required />
                             <label igxLabel for="zip">ZIP Code</label>
                         </igx-input-group>
                     </div>
-                    <igx-checkbox name="differentAddress" [(ngModel)]="businessInformation.differentAddress">
+                    <igx-checkbox name="differentAddress" formControlName="differentAddress">
                         The mailing address is different than the business physical address
                     </igx-checkbox>
                     <igx-input-group type="box">
-                        <input igxInput name="taxIdNumber" id="taxIdNumber" type="text" pattern="[9]{1}[0-9]{8}"
+                        <input igxInput name="taxIdNumber" id="taxIdNumber" type="text"
                             [placeholder]="'9##-##-####'" [igxMask]="'000-00-0000'"
-                            [(ngModel)]="businessInformation.taxIdNumber" required />
-                        <igx-hint *ngIf="!businessInformationForm.controls['taxIdNumber']?.pristine
-                            && !businessInformationForm.controls['taxIdNumber']?.valid">
-                            The Federal Tax ID Number should begin with 9
+                            formControlName="taxIdNumber" required/>
+                       <igx-hint *ngIf="businessInformation.controls.taxIdNumber.invalid && businessInformation.controls.taxIdNumber.touched">
+                             {{a()}}
                         </igx-hint>
                         <label igxLabel for="taxIdNumber">Federal Tax ID Number</label>
                     </igx-input-group>
                     <p>Does this business operate outside the United States? <span class="sample-required">*</span></p>
-                    <igx-radio-group type="box" name="nonUSBusinessActivity" alignment="vertical"
-                        [(ngModel)]="businessInformation.nonUSBusinessActivity" required>
+                    <igx-radio-group type="box" name="nonUSBusinessActivity" formControlName="nonUSBusinessActivity" alignment="vertical"
+                         required>
                         <igx-radio class="radio-sample" value="true">
                             Yes
                         </igx-radio>
@@ -96,49 +94,49 @@
                 </igx-card>
             </div>
             <div class="sample-step-actions">
-                <button igxButton="contained" (click)="stepper.prev()">Back</button>
-                <button igxButton="contained" (click)="stepper.next()"
-                    [disabled]="!businessInformationForm.form.valid">Continue</button>
+                <button igxButton="raised" (click)="stepper.prev()">Back</button>
+                <button igxButton="raised" (click)="onSubmit()"
+                    [disabled]="!businessInformation.valid">Continue</button>
             </div>
         </div>
     </igx-step>
 
-    <igx-step #step3 [isValid]="personalInformationForm.form.valid" [completed]="personalInformationForm.form.valid">
+    <igx-step #step3 [isValid]="personalInformation.valid" [completed]="personalInformation.valid">
         <span igxStepTitle>Personal Information</span>
         <div igxStepContent [tabIndex]="-1">
             <div class="sample-row">
-                <form class="flex-form" #personalInformationForm="ngForm">
+                <form class="flex-form" [formGroup]="personalInformation" (ngSubmit)="onSubmit()">
                     <igx-input-group type="box">
                         <input igxInput name="firstName" id="firstName" type="text"
-                            [(ngModel)]="personalInformation.firstName" required />
+                        formControlName="firstName" required />
                         <label igxLabel for="firstName">First Name</label>
                     </igx-input-group>
                     <igx-input-group type="box">
                         <input igxInput name="lastName" id="lastName" type="text"
-                            [(ngModel)]="personalInformation.lastName" required />
+                        formControlName="lastName" required />
                         <label igxLabel for="lastName">Last Name</label>
                     </igx-input-group>
                     <igx-input-group type="box">
                         <input igxInput name="jobTitle" id="jobTitle" type="text"
-                            [(ngModel)]="personalInformation.jobTitle" required />
+                        formControlName="jobTitle" required />
                         <label igxLabel for="jobTitle">Job Title</label>
                     </igx-input-group>
                     <igx-input-group type="box">
                         <input igxInput name="phoneNumber" id="phoneNumber" type="text"
-                            [(ngModel)]="personalInformation.phoneNumber" required />
+                        formControlName="phoneNumber" required />
                         <label igxLabel for="phoneNumber">Phone Number</label>
                     </igx-input-group>
                     <igx-input-group type="box">
-                        <input igxInput name="email" id="email" type="email" [(ngModel)]="personalInformation.email"
+                        <input igxInput name="email" id="email" type="email" formControlName="email"
                             required email />
                         <label igxLabel for="email">Email Address</label>
                     </igx-input-group>
-                    <igx-checkbox name="authorization" [(ngModel)]="personalInformation.authorization" required>
+                    <igx-checkbox name="authorization" formControlName="authorization" required>
                         I confirm that I am authorized to borrow on behalf of this business. <span
                             class="sample-required">*</span>
                     </igx-checkbox>
                     <div class="sample-terms">
-                        <igx-checkbox name="agreementAccepted" [(ngModel)]="personalInformation.agreementAccepted"
+                        <igx-checkbox name="agreementAccepted" formControlName="agreementAccepted"
                             required>
                             I agree with the<span class="sample-required">*</span>
                         </igx-checkbox>
@@ -160,41 +158,40 @@
                 </igx-card>
             </div>
             <div class="sample-step-actions">
-                <button igxButton="contained" (click)="stepper.prev()">Back</button>
-                <button igxButton="contained" (click)="stepper.next()"
-                    [disabled]="!personalInformationForm.form.valid">Continue</button>
+                <button igxButton="raised" (click)="stepper.prev()">Back</button>
+                <button igxButton="raised" (click)="stepper.next()"
+                    [disabled]="!personalInformation.valid">Continue</button>
             </div>
         </div>
     </igx-step>
 
-    <igx-step #step4 [disabled]="!businessInformation.differentAddress" [isValid]="shippingDetailsForm.form.valid"
-        [completed]="shippingDetailsForm.form.valid || (!businessInformation.differentAddress && step3.completed)">
+    <igx-step #step4 [disabled]="!businessInformation.get('differentAddress')" [isValid]="shippingDetails.valid" [completed]="shippingDetails.valid || (!businessInformation.get('differentAddress') && step3.completed)">
         <span igxStepTitle>Shipping Details</span>
         <div igxStepContent [tabIndex]="-1">
             <div class="sample-row">
-                <form class="flex-form" #shippingDetailsForm="ngForm">
+                <form class="flex-form" [formGroup]="shippingDetails" (ngSubmit)="onSubmit()">
                     <igx-input-group type="box">
                         <input igxInput name="sfirstName" id="sfirstName" type="text"
-                            [(ngModel)]="shippingDetails.firstName" required />
+                        formControlName="sfirstName" required />
                         <label igxLabel for="sfirstName">First Name</label>
                     </igx-input-group>
                     <igx-input-group type="box">
                         <input igxInput name="slastName" id="slastName" type="text"
-                            [(ngModel)]="shippingDetails.lastName" required />
+                        formControlName="slastName" required />
                         <label igxLabel for="slastName">Last Name</label>
                     </igx-input-group>
                     <igx-input-group type="box">
-                        <input igxInput name="mailingAddress" type="text" [(ngModel)]="shippingDetails.mailingAddress"
+                        <input igxInput name="mailingAddress" type="text" formControlName="smailingAddress"
                             required />
                         <label igxLabel for="mailingAddress" id="mailingAddress">Mailing Address</label>
                     </igx-input-group>
                     <div class="form-row">
                         <igx-input-group type="box">
-                            <input igxInput name="scity" id="scity" type="text" [(ngModel)]="shippingDetails.city"
+                            <input igxInput name="scity" id="scity" type="text" formControlName="scity"
                                 required />
                             <label igxLabel for="scity">City</label>
                         </igx-input-group>
-                        <igx-select type="box" name="sstate" [(ngModel)]="shippingDetails.state" required>
+                        <igx-select type="box" name="sstate" formControlName="sstate" required>
                             <igx-select-item *ngFor="let state of states" [value]="state">
                                 {{state}}
                             </igx-select-item>
@@ -202,7 +199,7 @@
                         </igx-select>
                         <igx-input-group type="box">
                             <input igxInput name="szip" id="szip" type="text" pattern="[0-9]{5}" [placeholder]="'#####'"
-                                [igxMask]="'00000'" [(ngModel)]="shippingDetails.zip" required />
+                                [igxMask]="'00000'" formControlName="szip" required />
                             <label igxLabel for="szip">ZIP Code</label>
                         </igx-input-group>
                     </div>
@@ -222,9 +219,9 @@
                 </igx-card>
             </div>
             <div class="sample-step-actions">
-                <button igxButton="contained" (click)="stepper.prev()">Back</button>
-                <button igxButton="contained" (click)="stepper.next()"
-                    [disabled]="!shippingDetailsForm.form.valid">Continue</button>
+                <button igxButton="raised" (click)="stepper.prev()">Back</button>
+                <button igxButton="raised" (click)="stepper.next()"
+                    [disabled]="!shippingDetails.valid">Continue</button>
             </div>
         </div>
     </igx-step>
@@ -257,8 +254,7 @@
                 </igx-card-content>
             </igx-card>
             <div class="sample-step-actions">
-                <button igxButton="contained"
-                    (click)="resetStepper(businessInformationForm, personalInformationForm, shippingDetailsForm)">Reset</button>
+                 <button igxButton="raised" (click)="resetStepper(businessInformation, personalInformation, shippingDetails)">Reset</button>
             </div>
         </div>
     </igx-step>
