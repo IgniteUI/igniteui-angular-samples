@@ -121,10 +121,10 @@ export class StepperOverviewSampleComponent {
          this.stepper.reset();
          this.selectedCard = null;
          form1.reset();
-         //this.businessInformation.differentAddress = false;
+         this.businessInformation.controls.differentAddress.setValue(false);
          form2.reset();
-        // this.personalInformation.authorization = false;
-         //this.personalInformation.controls.agreementAccepted = false;
+         this.personalInformation.controls.authorization.setValue(false);
+         this.personalInformation.controls.agreementAccepted.setValue(false);
          form3.reset();
     }
 
@@ -133,15 +133,8 @@ export class StepperOverviewSampleComponent {
             this.selectCard(card);
         }
     }
-    public onSubmit() {
-        console.log(this.businessInformation);
-    }
 
-    public checkValidTaxId():boolean{
-        return this.businessInformation.controls.taxIdNumber.invalid && this.businessInformation.controls.taxIdNumber.pristine;
-    }
-
-    public a(){
+    public errorMessages(){
         if(this.businessInformation.controls.taxIdNumber.errors.required){
             return "This field is required"
         }

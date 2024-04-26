@@ -28,7 +28,7 @@
         <span igxStepTitle>Business information</span>
         <div igxStepContent [tabIndex]="-1">
             <div class="sample-row">
-                <form class="flex-form" [formGroup]="businessInformation" (ngSubmit)="onSubmit()">
+                <form class="flex-form" [formGroup]="businessInformation">
                     <igx-input-group type="box">
                         <input igxInput name="name" id="name" type="text" formControlName="name" required/>
                         <label igxLabel for="name">Legal Business Name</label>
@@ -64,7 +64,7 @@
                             [placeholder]="'9##-##-####'" [igxMask]="'000-00-0000'"
                             formControlName="taxIdNumber" required/>
                        <igx-hint *ngIf="businessInformation.controls.taxIdNumber.invalid && businessInformation.controls.taxIdNumber.touched">
-                             {{a()}}
+                             {{errorMessages()}}
                         </igx-hint>
                         <label igxLabel for="taxIdNumber">Federal Tax ID Number</label>
                     </igx-input-group>
@@ -95,7 +95,7 @@
             </div>
             <div class="sample-step-actions">
                 <button igxButton="raised" (click)="stepper.prev()">Back</button>
-                <button igxButton="raised" (click)="onSubmit()"
+                <button igxButton="raised" (click)="stepper.next()"
                     [disabled]="!businessInformation.valid">Continue</button>
             </div>
         </div>
@@ -105,7 +105,7 @@
         <span igxStepTitle>Personal Information</span>
         <div igxStepContent [tabIndex]="-1">
             <div class="sample-row">
-                <form class="flex-form" [formGroup]="personalInformation" (ngSubmit)="onSubmit()">
+                <form class="flex-form" [formGroup]="personalInformation">
                     <igx-input-group type="box">
                         <input igxInput name="firstName" id="firstName" type="text"
                         formControlName="firstName" required />
@@ -165,11 +165,11 @@
         </div>
     </igx-step>
 
-    <igx-step #step4 [disabled]="!businessInformation.get('differentAddress')" [isValid]="shippingDetails.valid" [completed]="shippingDetails.valid || (!businessInformation.get('differentAddress') && step3.completed)">
+    <igx-step #step4 [isValid]="shippingDetails.valid" [completed]="shippingDetails.valid || (!businessInformation.controls.differentAddress && step3.completed)">
         <span igxStepTitle>Shipping Details</span>
         <div igxStepContent [tabIndex]="-1">
             <div class="sample-row">
-                <form class="flex-form" [formGroup]="shippingDetails" (ngSubmit)="onSubmit()">
+                <form class="flex-form" [formGroup]="shippingDetails">
                     <igx-input-group type="box">
                         <input igxInput name="sfirstName" id="sfirstName" type="text"
                         formControlName="sfirstName" required />
