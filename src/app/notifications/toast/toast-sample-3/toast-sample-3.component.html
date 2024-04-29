@@ -7,10 +7,10 @@
     </span>
     <span>
         <h6>Toast which dynamically changes the message text</h6>
-        <button igxButton="outlined" igxButtonColor="blue" (click)="toast1.open('Hi! This is info message.')">Info Message</button>
-        <button igxButton="outlined" igxButtonColor="green" (click)="toast1.open('Hi! This is success message.')">Success Message</button>
-        <button igxButton="outlined" igxButtonColor="orange" (click)="toast1.open('Hi! This is warning message.')">Warning Message</button>
-        <button igxButton="outlined" igxButtonColor="red" (click)="toast1.open('Hi! This is error message.')">Error Message</button>
+        <button igxButton="outlined" (click)="toast1.open('Hi! This is info message.')">Info Message</button>
+        <button igxButton="outlined" (click)="toast1.open('Hi! This is success message.')">Success Message</button>
+        <button igxButton="outlined" (click)="toast1.open('Hi! This is warning message.')">Warning Message</button>
+        <button igxButton="outlined" (click)="toast1.open('Hi! This is error message.')">Error Message</button>
         <igx-toast #toast1 [autoHide]="true"></igx-toast>
     </span>
     <span>
