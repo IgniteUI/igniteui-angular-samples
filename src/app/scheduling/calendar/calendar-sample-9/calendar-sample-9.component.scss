@@ -1,0 +1,51 @@
+$padding: 2rem;
+
+:host {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 90px);
+    overflow: hidden;
+}
+
+small {
+    &:not(:first-child) {
+        margin-block-start: 1rem;
+    }
+}
+
+.calendar-wrapper {
+    flex-basis: 100px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 20px;
+}
+
+.igx-calendar{
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.26),
+    0 1px 1px 0 rgba(0,0,0,.12),
+    0 2px 1px -1px rgba(0,0,0,.08);
+}
+
+.preview {
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+
+    &__sample {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: auto;
+        flex: 1;
+    }
+
+    &__settings {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background: hsla(var(--ig-gray-50));
+        border-left: 1px solid hsla(var(--ig-gray-300));
+        padding: $padding;
+        overflow-x: auto;
+    }
+}
