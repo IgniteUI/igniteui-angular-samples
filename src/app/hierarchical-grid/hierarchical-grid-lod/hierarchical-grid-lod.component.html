@@ -1,22 +1,22 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hGrid [primaryKey]="'CustomerID'" [autoGenerate]="false" [height]="'580px'" [width]="'100%'">
-        <igx-column field="CustomerID" [hidden]="true"></igx-column>
-        <igx-column field="CompanyName"></igx-column>
-        <igx-column field="ContactName"></igx-column>
-        <igx-column field="ContactTitle"></igx-column>
-        <igx-column field="Country"></igx-column>
-        <igx-column field="Phone"></igx-column>
-        <igx-row-island [height]="null" [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false"  (gridCreated)="gridCreated($event, 'CustomerID')" [width]="'100%'">
-            <igx-column field="OrderID" [hidden]="true"></igx-column>
-            <igx-column field="ShipCountry"></igx-column>
-            <igx-column field="ShipCity"></igx-column>
-            <igx-column field="ShipAddress"></igx-column>
-            <igx-column field="OrderDate" [formatter]="dateFormatter"></igx-column>
-            <igx-row-island [height]="null" [key]="'Order_Details'" [primaryKey]="'ProductID'" [autoGenerate]="false" (gridCreated)="gridCreated($event, 'OrderID')">
-                <igx-column field="ProductID" [hidden]="true"></igx-column>
-                <igx-column field="Quantity"></igx-column>
-                <igx-column field="UnitPrice"></igx-column>
-                <igx-column field="Discount"></igx-column>
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hGrid [primaryKey]="'customerId'" [autoGenerate]="false" [height]="'580px'" [width]="'100%'">
+        <igx-column field="customerId" [hidden]="true"></igx-column>
+        <igx-column field="companyName"></igx-column>
+        <igx-column field="contactName"></igx-column>
+        <igx-column field="contactTitle"></igx-column>
+        <igx-column field="address.country"></igx-column>
+        <igx-column field="address.phone"></igx-column>
+        <igx-row-island [height]="null" [key]="'orders'" [primaryKey]="'orderId'" [autoGenerate]="false"  (gridCreated)="gridCreated($event, 'customers')" [width]="'100%'">
+            <igx-column field="orderID" [hidden]="true"></igx-column>
+            <igx-column field="shipAddress.country"></igx-column>
+            <igx-column field="shipAddress.city"></igx-column>
+            <igx-column field="shipAddress.street"></igx-column>
+            <igx-column field="orderDate" [formatter]="dateFormatter"></igx-column>
+            <igx-row-island [height]="null" [key]="'details'" [primaryKey]="'productId'" [autoGenerate]="false" (gridCreated)="gridCreated($event, 'orders')">
+                <igx-column field="productID" [hidden]="true"></igx-column>
+                <igx-column field="quantity"></igx-column>
+                <igx-column field="unitPrice"></igx-column>
+                <igx-column field="discount"></igx-column>
             </igx-row-island>
         </igx-row-island>
     </igx-hierarchical-grid>

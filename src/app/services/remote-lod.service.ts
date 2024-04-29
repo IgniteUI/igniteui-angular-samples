@@ -16,27 +16,27 @@ export interface IDataState {
 
 @Injectable()
 export class RemoteLoDService {
-    public url = `https://services.odata.org/V4/Northwind/Northwind.svc/`;
+    public url = `https://data-northwind.indigo.design/`;
 
     constructor(private http: HttpClient) { }
 
     public getData(dataState?: IDataState): Observable<any[]> {
         return this.http.get(this.buildUrl(dataState)).pipe(
-            map((response: IDataResponse) => response.value)
+            map((response: any[]) => response)
         );
     }
 
     public buildUrl(dataState: IDataState) {
         let qS = '';
-        if (dataState) {
-            qS += `${dataState.key}?`;
-
+        if (dataState.rootLevel) {
+            qS += `${dataState.key}`;
+        } else {
             if (!dataState.rootLevel) {
-                if (typeof dataState.parentID === 'string') {
-                    qS += `$filter=${dataState.parentKey} eq '${dataState.parentID}'`;
-                } else {
-                    qS += `$filter=${dataState.parentKey} eq ${dataState.parentID}`;
-                }
+                //if (typeof dataState.parentID === 'string') {
+                    qS += `${dataState.parentKey}\/${dataState.parentID}/${dataState.key}`;
+               // } else {
+               //     qS += `$filter=${dataState.parentKey} eq ${dataState.parentID}`;
+               // }
             }
         }
         return `${this.url}${qS}`;

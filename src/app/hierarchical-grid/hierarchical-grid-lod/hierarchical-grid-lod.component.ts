@@ -20,7 +20,7 @@ export class HierarchicalGridLoDSampleComponent implements AfterViewInit {
 
     public ngAfterViewInit() {
         const dataState: IDataState = {
-            key: 'Customers',
+            key: 'customers',
             parentID: '',
             parentKey: '',
             rootLevel: true
