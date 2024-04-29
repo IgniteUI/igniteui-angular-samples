@@ -29,6 +29,7 @@ export const layoutsRoutesData = {
     'layout-justify-content' : { displayName: 'Layout Justify Content', parentName: 'Layout' },
     'layout-wrap' : { displayName: 'Layout Wrap', parentName: 'Layout' },
     'layout-sample' : { displayName: 'Layouts Sample', parentName: 'Layout' },
+    'splitter-collapsible-sample': { displayName: 'Splitter Collapsible', parentName: 'Splitter' },
     'splitter-horizontal-sample': { displayName: 'Splitter Horizontal', parentName: 'Splitter' },
     'splitter-nested-sample': { displayName: 'Splitter Nested Panes', parentName: 'Splitter' },
     'splitter-styling-sample': { displayName: 'Splitter Styling', parentName: 'Splitter' },
