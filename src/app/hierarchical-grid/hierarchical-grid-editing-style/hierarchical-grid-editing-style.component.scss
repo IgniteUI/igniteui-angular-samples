@@ -30,7 +30,7 @@ $checkbox-theme: checkbox-theme(
 );
 
 $datepicker-theme: calendar-theme(
-    $date-selected-text-color: $white,
+    $date-selected-foreground: $white,
     $date-selected-background: $blue
 );
 

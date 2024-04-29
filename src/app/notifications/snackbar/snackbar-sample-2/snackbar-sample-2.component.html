@@ -7,8 +7,8 @@
 
     <span>
         <h6>Snackbar Component which dynamically changes the message text</h6>
-        <button igxButton="outlined" igxButtonColor="blue" (click)="snackbar1.open('Hi! This is info message.')">Info Message</button>
-        <button igxButton="outlined" igxButtonColor="green" (click)="snackbar1.open('Hi! This is success message.')">Success Message</button>
+        <button igxButton="outlined" (click)="snackbar1.open('Hi! This is info message.')">Info Message</button>
+        <button igxButton="outlined" (click)="snackbar1.open('Hi! This is success message.')">Success Message</button>
         <igx-snackbar #snackbar1 [autoHide]="true" actionText="CLOSE" (clicked)="close(snackbar1)"></igx-snackbar>
     </span>
     <span>

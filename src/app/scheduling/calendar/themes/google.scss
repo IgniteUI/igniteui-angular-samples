@@ -11,11 +11,11 @@ $google-dark: calendar-theme(
     $header-background: $dark-gray,
     $content-background: $charcoal,
     $date-selected-background: $monte-carlo,
-    $date-current-text-color: $monte-carlo,
-    $picker-arrow-hover-color: $monte-carlo,
-    $picker-text-hover-color: $monte-carlo,
-    $year-current-text-color: $monte-carlo,
-    $year-hover-text-color: $monte-carlo,
-    $month-current-text-color: $monte-carlo,
-    $month-hover-text-color: $monte-carlo
+    $date-current-foreground: $monte-carlo,
+    $navigation-hover-color: $monte-carlo,
+    $picker-hover-foreground: $monte-carlo,
+    $year-current-foreground: $monte-carlo,
+    $year-hover-foreground: $monte-carlo,
+    $month-current-foreground: $monte-carlo,
+    $month-hover-foreground: $monte-carlo
 );
