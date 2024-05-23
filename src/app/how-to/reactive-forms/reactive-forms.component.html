@@ -13,15 +13,16 @@
                     <ng-template igxSelectToggleIcon>
                         <igx-icon family="material">local_movies</igx-icon>
                     </ng-template>
+                    <igx-hint *ngIf="movies.errors?">Selection is required</igx-hint>
                 </igx-select>
                 <igx-input-group>
-                    <input igxInput name="fullName" type="text" formControlName="fullName" />
+                    <input igxInput name="fullName" type="text" formControlName="fullName" aria-describedby="invalid-name" />
                     <label igxLabel for="fullName">Full Name</label>
                     <igx-suffix>
                         <igx-icon>person</igx-icon>
                     </igx-suffix>
-                    <igx-hint *ngIf="fullName.touched && fullName.invalid">Fullname is required</igx-hint>
-                    <igx-hint *ngIf="fullName.errors?.fullName">Please enter a valid name.</igx-hint>
+                    <igx-hint *ngIf="fullName.touched && fullName.errors?.required">Fullname is required</igx-hint>
+                    <igx-hint id="invalid-name" *ngIf="fullName.touched && fullName.errors?.pattern">Please enter a valid name.</igx-hint>
                 </igx-input-group>
                 <igx-input-group>
                     <igx-prefix>+359</igx-prefix>
@@ -40,7 +41,7 @@
                         <igx-icon>email</igx-icon>
                     </igx-suffix>
                     <igx-hint *ngIf="email.touched && email.invalid">Email is required</igx-hint>
-                    <igx-hint *ngIf="email.errors?.email">Please enter a valid email</igx-hint>                    
+                    <igx-hint *ngIf="email.errors?.email">Please enter a valid email</igx-hint>
                 </igx-input-group>
                 <igx-combo #combo1 class="input-container" [itemsMaxHeight]="130" [data]="genres" [valueKey]="'type'"
                     [displayKey]="'type'" type="line" formControlName="genres" placeholder="Select your favorite genres"
@@ -58,7 +59,7 @@
                 </igx-time-picker>
                 <igc-rating  size="large" name="rating" class="user-input" formControlName="rating">
                     <label igxLabel>Rate the movie</label>
-                </igc-rating>                
+                </igc-rating>
                 <igx-checkbox labelPosition="after" class="user-input" name="checkbox" formControlName="checkbox">
                     Agree to the terms of use.
                 </igx-checkbox>
