@@ -4,10 +4,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     IgcFormsModule,
-    IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxIconButtonDirective, IgxCardModule, IgxCheckboxModule, IgxChipsAreaComponent, IgxChipsModule, IgxComboModule,
-    IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
+    IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxIconButtonDirective, IgxCalendarModule, IgxCardModule, IgxCheckboxModule, IgxChipsAreaComponent, IgxChipsModule, IgxComboModule,
+    IgxDatePickerModule, IgxDateRangePickerModule, IgxDialogModule, IgxDividerModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
     IgxIconModule, IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule,
-    IgxSelectModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule, IgxTreeGridModule, IgxTreeModule
+    IgxSelectModule, IgxSlideComponent, IgxSliderModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule, IgxTreeGridModule, IgxTreeModule
 } from 'igniteui-angular';
 import { AutocompleteBasicComponent, AutocompletePipeStartsWith } from './autocomplete/autocomplete/autocomplete.component';
 import { MovieComponent } from './autocomplete/movie/movie.component';
@@ -195,7 +195,11 @@ import { IconButtonStylingComponent } from './icon-button/icon-button-styling/ic
         IgcFormsModule,
         IgxChipsModule,
         IgxTreeModule,
-        IgxTreeGridModule
+        IgxTreeGridModule,
+        IgxSliderModule,
+        IgxDateRangePickerModule,
+        IgxCalendarModule,
+        IgxCardModule
     ]
 })
 export class DataEntriesModule { }
