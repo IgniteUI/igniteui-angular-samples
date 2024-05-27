@@ -74,6 +74,7 @@ import { LayoutJustifyContentComponent } from './layout/layout-justify-content/l
 import { LayoutSampleComponent } from './layout/layout-sample/layout-sample.component';
 import { LayoutWrapComponent } from './layout/layout-wrap/layout-wrap.component';
 import { LayoutsRoutingModule } from './layouts-routing.module';
+import { SplitterCollapsibleSampleComponent } from './splitter/splitter-collapsible-sample/splitter-collapsible-sample.component';
 import {
     SplitterHorizontalSampleComponent
 } from './splitter/splitter-horizontal-sample/splitter-horizontal-sample.component';
@@ -140,6 +141,7 @@ import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sampl
         LayoutContentSpaceComponent,
         LayoutSampleComponent,
         LayoutWrapComponent,
+        SplitterCollapsibleSampleComponent,
         SplitterHorizontalSampleComponent,
         SplitterNestedSampleComponent,
         SplitterStylingSampleComponent,

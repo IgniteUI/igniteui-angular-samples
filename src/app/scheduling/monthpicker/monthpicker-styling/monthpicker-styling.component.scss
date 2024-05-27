@@ -8,15 +8,15 @@ igx-month-picker {
 $my-calendar-theme: calendar-theme(
   $border-radius: 15px,
   $content-background: #011627,
-  $picker-background-color: #011627,
-  $month-current-text-color: #ECAA53,
+  $picker-background: #011627,
+  $month-current-foreground: #ECAA53,
   $month-hover-background: #ECAA53,
-  $year-current-text-color: #ECAA53,
-  $year-hover-text-color: #D37B08,
-  $picker-arrow-color: #ECAA53,
-  $picker-text-hover-color: #D37B08,
-  $picker-arrow-hover-color: #D37B08,
-  $picker-text-color: #ECAA53
+  $year-current-foreground: #ECAA53,
+  $year-hover-foreground: #D37B08,
+  $navigation-color: #ECAA53,
+  $picker-hover-foreground: #D37B08,
+  $navigation-hover-color: #D37B08,
+  $picker-foreground: #ECAA53
 );
 
 :host ::ng-deep {
