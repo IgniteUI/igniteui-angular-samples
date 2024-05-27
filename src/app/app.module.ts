@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-    IgxAutocompleteModule, IgxButtonModule, IgxButtonGroupModule, IgxDropDownModule,
-    IgxIconModule, IgxInputGroupModule, IgxLayoutModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxRippleModule, IgxTreeModule
+    IgxAutocompleteModule, IgxButtonModule, IgxButtonGroupModule, IgxDateRangePickerModule, IgxDropDownModule,
+    IgxIconModule, IgxInputGroupModule, IgxLayoutModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxRippleModule, IgxSliderModule, IgxTreeModule
 } from 'igniteui-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,7 +39,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         FormsModule,
         HttpClientModule,
         HammerModule,
-        NgbModule
+        NgbModule,
+        IgxSliderModule,
+        IgxDateRangePickerModule,
+        IgxDropDownModule
     ],
     providers: []
 })
