@@ -34,6 +34,7 @@ export const layoutsRoutesData = {
     'splitter-nested-sample': { displayName: 'Splitter Nested Panes', parentName: 'Splitter' },
     'splitter-styling-sample': { displayName: 'Splitter Styling', parentName: 'Splitter' },
     'stepper-overview-sample': { displayName: 'Stepper Overview', parentName: 'Stepper' },
+    'stepper-sample-reactive-forms': { displayName: 'Stepper Reactive Forms', parentName: 'Stepper' },
     'stepper-label-position-and-orientation-sample': { displayName: 'Stepper Label Position And Orientation', parentName: 'Stepper' },
     'stepper-linear-sample': { displayName: 'Linear Stepper', parentName: 'Stepper' },
     'stepper-steptypes-sample': { displayName: 'Stepper Step Types', parentName: 'Stepper' },
