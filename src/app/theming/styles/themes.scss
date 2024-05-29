@@ -1,56 +1,56 @@
 @use 'schemas';
 
 // Import grid component and theme styles
-@use '~igniteui-angular/lib/core/styles/components/grid/grid-component';
-@use '~igniteui-angular/lib/core/styles//components/grid/grid-theme';
+@use 'igniteui-angular/lib/core/styles/components/grid/grid-component';
+@use 'igniteui-angular/lib/core/styles//components/grid/grid-theme';
 
 // Import grid snackbar and theme styles
-@use '~igniteui-angular/lib/core/styles//components/snackbar/snackbar-component';
-@use '~igniteui-angular/lib/core/styles//components/snackbar/snackbar-theme';
+@use 'igniteui-angular/lib/core/styles//components/snackbar/snackbar-component';
+@use 'igniteui-angular/lib/core/styles//components/snackbar/snackbar-theme';
 
 // Import input-group component and theme styles
-@use '~igniteui-angular/lib/core/styles//components/input/input-group-component';
-@use '~igniteui-angular/lib/core/styles//components/input/input-group-theme';
+@use 'igniteui-angular/lib/core/styles//components/input/input-group-component';
+@use 'igniteui-angular/lib/core/styles//components/input/input-group-theme';
 
 // Import dialog-group component and theme styles
-@use '~igniteui-angular/lib/core/styles//components/dialog/dialog-component';
-@use '~igniteui-angular/lib/core/styles//components/dialog/dialog-theme';
+@use 'igniteui-angular/lib/core/styles//components/dialog/dialog-component';
+@use 'igniteui-angular/lib/core/styles//components/dialog/dialog-theme';
 
 // Import paginator component and theme styles
-@use '~igniteui-angular/lib/core/styles//components/paginator/paginator-component';
-@use '~igniteui-angular/lib/core/styles//components/paginator/paginator-theme';
+@use 'igniteui-angular/lib/core/styles//components/paginator/paginator-component';
+@use 'igniteui-angular/lib/core/styles//components/paginator/paginator-theme';
 
 // Import button component and theme styles
-@use '~igniteui-angular/lib/core/styles//components/button/button-component';
-@use '~igniteui-angular/lib/core/styles//components/button/button-theme';
+@use 'igniteui-angular/lib/core/styles//components/button/button-component';
+@use 'igniteui-angular/lib/core/styles//components/button/button-theme';
 
 // Import button-group component and theme styles
-@use '~igniteui-angular/lib/core/styles//components/button-group/button-group-component';
-@use '~igniteui-angular/lib/core/styles//components/button-group/button-group-theme';
+@use 'igniteui-angular/lib/core/styles//components/button-group/button-group-component';
+@use 'igniteui-angular/lib/core/styles//components/button-group/button-group-theme';
 
 // Import drop-down component and theme styles
-@use '~igniteui-angular/lib/core/styles//components/drop-down/drop-down-component';
-@use '~igniteui-angular/lib/core/styles//components/drop-down/drop-down-theme';
+@use 'igniteui-angular/lib/core/styles//components/drop-down/drop-down-component';
+@use 'igniteui-angular/lib/core/styles//components/drop-down/drop-down-theme';
 
 // Import calendar component and theme styles
-@use '~igniteui-angular/lib/core/styles/components/calendar/calendar-component';
-@use '~igniteui-angular/lib/core/styles/components/calendar/calendar-theme';
+@use 'igniteui-angular/lib/core/styles/components/calendar/calendar-component';
+@use 'igniteui-angular/lib/core/styles/components/calendar/calendar-theme';
 
 // Import chip component and theme styles
-@use '~igniteui-angular/lib/core/styles/components/chip/chip-component';
-@use '~igniteui-angular/lib/core/styles/components/chip/chip-theme';
+@use 'igniteui-angular/lib/core/styles/components/chip/chip-component';
+@use 'igniteui-angular/lib/core/styles/components/chip/chip-theme';
 
 // Import icon component and theme styles
-@use '~igniteui-angular/lib/core/styles/components/icon/icon-component';
-@use '~igniteui-angular/lib/core/styles/components/icon/icon-theme';
+@use 'igniteui-angular/lib/core/styles/components/icon/icon-component';
+@use 'igniteui-angular/lib/core/styles/components/icon/icon-theme';
 
 // Import drop-down component and theme styles
-@use '~igniteui-angular/lib/core/styles/components/drop-down/drop-down-component';
-@use '~igniteui-angular/lib/core/styles/components/drop-down/drop-down-theme';
+@use 'igniteui-angular/lib/core/styles/components/drop-down/drop-down-component';
+@use 'igniteui-angular/lib/core/styles/components/drop-down/drop-down-theme';
 
 // Import badge component and theme styles
-@use '~igniteui-angular/lib/core/styles/components/badge/badge-component';
-@use '~igniteui-angular/lib/core/styles/components/badge/badge-theme';
+@use 'igniteui-angular/lib/core/styles/components/badge/badge-component';
+@use 'igniteui-angular/lib/core/styles/components/badge/badge-theme';
 
 
 // Define the primary colors
