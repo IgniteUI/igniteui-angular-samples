@@ -48,7 +48,7 @@ export class ReactiveFormsSampleComponent {
             radio: new FormControl(''),
             switch: new FormControl(false),
             range: new FormControl({ start: new Date(), end: new Date(new Date().setDate(new Date().getDate() + 5))}),
-            slider: new FormControl({lower: 5, upper: 30}),
+            slider: new FormControl({lower: 1, upper: 5}),
             calendar: new FormControl(null),
             month: new FormControl(null),
             genres: new FormControl(['Action','Adventure','Comedy'])
@@ -78,6 +78,11 @@ export class ReactiveFormsSampleComponent {
     }
     public get fullName() {
         return this.user.get('fullName');
+    }
+
+    public valueChangeHandler(): void{
+        var sliderValue = this.user.get('slider');
+        this.user.controls.range.setValue({ start: new Date(new Date().setDate(new Date().getDate() + sliderValue.value.lower)), end: new Date(new Date().setDate(new Date().getDate() + sliderValue.value.upper))});
     }
 
     public onSubmit() {
