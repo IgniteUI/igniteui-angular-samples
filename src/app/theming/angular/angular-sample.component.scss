@@ -1,9 +1,10 @@
 @use '@angular/material' as mat;
 @use '../../../variables' as *;
+@include mat.core();
 
-$custom-typography: mat.define-typography-config(
+$custom-typography: mat.m2-define-typography-config(
     $font-family: $material-typeface,
-    $button: mat.define-typography-level(14px, $font-weight: 600)
+    $button: mat.m2-define-typography-level(14px, $font-weight: 600)
 );
 
 $saturations: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700);
@@ -45,9 +46,9 @@ $custom-dark-palette: palette(
     $error: #ff134a,
 );
 
-$light-palette-primary: mat.define-palette(material-like-palette('primary', $saturations, $igx-light-palette));
-$light-palette-accent: mat.define-palette(material-like-palette('secondary', $saturations, $igx-light-palette));
-$custom-mat-light-theme: mat.define-light-theme((
+$light-palette-primary: mat.m2-define-palette(material-like-palette('primary', $saturations, $igx-light-palette));
+$light-palette-accent: mat.m2-define-palette(material-like-palette('secondary', $saturations, $igx-light-palette));
+$custom-mat-light-theme: mat.m2-define-light-theme((
     color: (
         primary: $light-palette-primary,
         accent: $light-palette-accent
@@ -55,11 +56,11 @@ $custom-mat-light-theme: mat.define-light-theme((
     typography: $custom-typography
 ));
 
-$dark-palette-primary: mat.define-palette(material-like-palette('primary', $saturations, $custom-dark-palette));
-$dark-palette-accent: mat.define-palette(material-like-palette('secondary', $saturations, $custom-dark-palette));
-$custom-mat-dark-theme: mat.define-dark-theme((
+$dark-palette-primary: mat.m2-define-palette(material-like-palette('primary', $saturations, $custom-dark-palette));
+$dark-palette-accent: mat.m2-define-palette(material-like-palette('secondary', $saturations, $custom-dark-palette));
+$custom-mat-dark-theme: mat.m2-define-dark-theme((
     color: (
-        primary: $dark-palette-primary, 
+        primary: $dark-palette-primary,
         accent: $dark-palette-accent
     )
 ));

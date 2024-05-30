@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
@@ -84,8 +84,7 @@ import { SVGIconButtonComponent } from './icon-button/svg-icon-button/svg-icon-b
 import { IconButtonSizeComponent } from './icon-button/icon-button-size/icon-button-size.component';
 import { IconButtonStylingComponent } from './icon-button/icon-button-styling/icon-button-styling.component';
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         AutocompleteBasicComponent,
         AutocompletePipeStartsWith,
         ButtonGroupSample1Component,
@@ -160,11 +159,8 @@ import { IconButtonStylingComponent } from './icon-button/icon-button-styling/ic
         TemplateDrivenFormValidationComponent,
         ReactiveFormValidationComponent,
         ReactiveFormCustomValidationComponent
-    ],
-    imports: [
-        CommonModule,
+    ], imports: [CommonModule,
         FormsModule,
-        HttpClientModule,
         ReactiveFormsModule,
         DataEntriesRoutingModule,
         IgxAutocompleteModule,
@@ -199,7 +195,5 @@ import { IconButtonStylingComponent } from './icon-button/icon-button-styling/ic
         IgxSliderModule,
         IgxDateRangePickerModule,
         IgxCalendarModule,
-        IgxCardModule
-    ]
-})
+        IgxCardModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class DataEntriesModule { }
