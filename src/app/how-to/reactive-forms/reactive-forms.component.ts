@@ -80,11 +80,13 @@ export class ReactiveFormsSampleComponent {
         return this.user.get('fullName');
     }
 
-    public valueChangeHandler(): void{
+public valueChangeHandler() {
         var sliderValue = this.user.get('slider');
-        this.user.controls.range.setValue({ start: new Date(new Date().setDate(new Date().getDate() + sliderValue.value.lower)), end: new Date(new Date().setDate(new Date().getDate() + sliderValue.value.upper))});
-    }
-
+        this.user.controls.range.setValue({
+            start: new Date(new Date().setDate(new Date().getDate() + sliderValue.value.lower)),
+            end: new Date(new Date().setDate(new Date().getDate() + sliderValue.value.upper))
+        });
+}
     public onSubmit() {
         console.log(this.user);
     }
