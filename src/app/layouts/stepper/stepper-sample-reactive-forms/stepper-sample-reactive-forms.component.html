@@ -94,8 +94,8 @@
                 </igx-card>
             </div>
             <div class="sample-step-actions">
-                <button igxButton="raised" (click)="stepper.prev()">Back</button>
-                <button igxButton="raised" (click)="stepper.next()"
+                <button igxButton="contained" (click)="stepper.prev()">Back</button>
+                <button igxButton="contained" (click)="stepper.next()"
                     [disabled]="!businessInformation.valid">Continue</button>
             </div>
         </div>
@@ -158,8 +158,8 @@
                 </igx-card>
             </div>
             <div class="sample-step-actions">
-                <button igxButton="raised" (click)="stepper.prev()">Back</button>
-                <button igxButton="raised" (click)="stepper.next()"
+                <button igxButton="contained" (click)="stepper.prev()">Back</button>
+                <button igxButton="contained" (click)="stepper.next()"
                     [disabled]="!personalInformation.valid">Continue</button>
             </div>
         </div>
@@ -219,8 +219,8 @@
                 </igx-card>
             </div>
             <div class="sample-step-actions">
-                <button igxButton="raised" (click)="stepper.prev()">Back</button>
-                <button igxButton="raised" (click)="stepper.next()"
+                <button igxButton="contained" (click)="stepper.prev()">Back</button>
+                <button igxButton="contained" (click)="stepper.next()"
                     [disabled]="!shippingDetails.valid">Continue</button>
             </div>
         </div>
@@ -254,7 +254,7 @@
                 </igx-card-content>
             </igx-card>
             <div class="sample-step-actions">
-                 <button igxButton="raised" (click)="resetStepper(businessInformation, personalInformation, shippingDetails)">Reset</button>
+                 <button igxButton="contained" (click)="resetStepper(businessInformation, personalInformation, shippingDetails)">Reset</button>
             </div>
         </div>
     </igx-step>
