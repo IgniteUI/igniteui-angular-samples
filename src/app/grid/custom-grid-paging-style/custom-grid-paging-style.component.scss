@@ -12,14 +12,13 @@ $dark-paginator: paginator-theme(
     $border-color: $my-secondary
 );
 
-$dark-button: button-theme(
+$dark-button: icon-button-theme(
     $foreground: $my-secondary,
     $hover-foreground: $dark-gray,
     $hover-background: $my-secondary,
     $focus-foreground: $dark-gray,
     $focus-background: $my-secondary,
     $border-color: $my-secondary,
-    $hover-border-color: $my-secondary,
     $focus-border-color: $my-secondary,
     $disabled-foreground: $inactive-color
 );
