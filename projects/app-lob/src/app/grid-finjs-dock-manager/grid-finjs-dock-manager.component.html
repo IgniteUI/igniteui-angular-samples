@@ -35,7 +35,7 @@
         <div igxOverlayOutlet #outlet></div>
     </div>
     <div slot="gridStockPrices" style="height: 100%;">
-        <igx-grid #grid1 [data]="data | async" [isLoading]="isLoading"
+        <igx-grid #grid1 [data]="data | async" [isLoading]="isLoading" [rowHeight]="32"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
             [columnSelection]="'multiple'" [cellSelection]="'none'" [outlet]="filteringOverlayOutlet">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]="true" [sortable]="true"></igx-column>
@@ -67,7 +67,7 @@
         </igx-grid>
     </div>
     <div slot="forexMarket" style="height: 100%;">
-        <igx-grid #grid2 [data]="data | async" [isLoading]="isLoading"
+        <igx-grid #grid2 [data]="data | async" [isLoading]="isLoading" [rowHeight]="32"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]="true" [sortable]="true"></igx-column>
@@ -99,7 +99,7 @@
         </igx-grid>
     </div>
     <div slot="content4" style="height: 100%;">
-        <igx-grid #grid3 [data]="data | async" [isLoading]="isLoading"
+        <igx-grid #grid3 [data]="data | async" [isLoading]="isLoading" [rowHeight]="32"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-column [field]="'id'" [width]="'70px'" [hidden]="true" [sortable]="true"></igx-column>
@@ -131,7 +131,7 @@
         </igx-grid>
     </div>
     <div slot="etfStockPrices" style="height: 100%;">
-        <igx-grid #grid4 [data]="data | async" [isLoading]="isLoading"
+        <igx-grid #grid4 [data]="data | async" [isLoading]="isLoading" [rowHeight]="32"
             [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
             [columnSelection]="'multiple'" [cellSelection]="'none'">
             <igx-paginator></igx-paginator>
