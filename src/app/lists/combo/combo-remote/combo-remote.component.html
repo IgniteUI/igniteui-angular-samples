@@ -10,6 +10,6 @@
     (closing)="onClosing()" (opened)="onOpened()"
     (closed)="onClosed()"
     placeholder="Location(s)"
-    [filteringOptions]="{ filterable: true }">
+    [filteringOptions]="{ filterable: true, caseSensitive: false }">
 </igx-combo>
 <igx-toast #loadingToast></igx-toast>
