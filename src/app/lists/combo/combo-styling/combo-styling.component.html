@@ -1,6 +1,6 @@
 <div class="control-wrapper">
     <igx-combo [width]="'430px'" [data]="weaponsData" [displayKey]="'field'" [valueKey]="'field'" [overlaySettings]="{outlet: elem}"
-        [groupKey]="'weaponRange'" placeholder="Pick up two weapons" searchPlaceholder="Search..." [filterable]="true"
+        [groupKey]="'weaponRange'" placeholder="Pick up two weapons" searchPlaceholder="Search..." [filteringOptions]="{ filterable: true, caseSensitive: false }"
         [itemsMaxHeight]="255" (selectionChanging)="setWeaponsLimit($event)">
     </igx-combo>
 
