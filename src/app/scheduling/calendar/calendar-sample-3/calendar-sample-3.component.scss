@@ -1,4 +1,6 @@
-.igx-calendar{
+.igx-calendar {
+	--ig-size: 2;
+	
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.26),
     0 1px 1px 0 rgba(0,0,0,.12),
     0 2px 1px -1px rgba(0,0,0,.08);
@@ -7,11 +9,12 @@
  :host {
      display: flex;
      width: 100%;
+	 gap: 16px;
      flex-flow: row wrap;
  }
  
  button {
-     margin: 8px 0px;
+     margin: 8px 0;
  }
  
  .calendar-wrapper {
@@ -20,10 +23,10 @@
  }
  
  .calendar-section {
-     height: 383px;
+     height: 336px;
  }
  
- .selected-data-area{
+ .selected-data-area {
      overflow-y: auto;
      max-height: 500px;
      width: 100%;

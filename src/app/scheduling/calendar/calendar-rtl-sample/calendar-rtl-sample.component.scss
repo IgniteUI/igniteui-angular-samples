@@ -3,6 +3,8 @@
 $border-color: color($color: gray, $variant: 300);
 
 igx-calendar {
+	--ig-size: 2;
+	
     border: 1px solid $border-color;
     border-radius: 6px;
 }

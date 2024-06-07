@@ -69,13 +69,13 @@ import { View3Component } from './tabs/views/view3/view3.component';
 import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
 import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
 import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
-import {
-    StepperLabelPositionAndOrientationSampleComponent
+import {StepperLabelPositionAndOrientationSampleComponent
 } from './stepper/stepper-label-position-and-orientation-sample/stepper-label-position-and-orientation-sample.component';
 import { StepperLinearSampleComponent } from './stepper/stepper-linear-sample/stepper-linear-sample.component';
 import { StepperStepTypesSampleComponent } from './stepper/stepper-steptypes-sample/stepper-steptypes-sample.component';
 import { StepperStylingSampleComponent } from './stepper/stepper-styling-sample/stepper-styling-sample.component';
 import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sample/stepper-overview-sample.component';
+import { StepperSampleReactiveFormsComponent } from './stepper/stepper-sample-reactive-forms/stepper-sample-reactive-forms.component';
 
 export const layoutsRoutes: Routes = [
     {
@@ -272,6 +272,11 @@ export const layoutsRoutes: Routes = [
         component: StepperOverviewSampleComponent,
         data: layoutsRoutesData['stepper-overview-sample'],
         path: 'stepper-overview-sample'
+    },
+    {
+        component: StepperSampleReactiveFormsComponent,
+        data: layoutsRoutesData['stepper-sample-reactive-forms'],
+        path: 'stepper-sample-reactive-forms'
     },
     {
         component: StepperStepTypesSampleComponent,

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     IgxAccordionModule,
     IgxAvatarModule,
@@ -32,12 +32,15 @@ import {
     IgxTimePickerModule,
     IgxToastModule
 } from 'igniteui-angular';
+import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
+import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
+import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
+import { AvatarCSSVariablesComponent } from './avatar/avatar-css-variables/avatar-css-variables.component';
 import { AvatarSample1Component } from './avatar/avatar-sample-1/avatar-sample-1.component';
 import { AvatarSample2Component } from './avatar/avatar-sample-2/avatar-sample-2.component';
 import { AvatarSample3Component } from './avatar/avatar-sample-3/avatar-sample-3.component';
 import { AvatarSample4Component } from './avatar/avatar-sample-4/avatar-sample-4.component';
 import { AvatarStylingSampleComponent } from './avatar/avatar-styling/avatar-styling.component';
-import { AvatarCSSVariablesComponent } from './avatar/avatar-css-variables/avatar-css-variables.component';
 import { CardSample1Component } from './card/card-sample-1/card-sample-1.component';
 import { CardSample2Component } from './card/card-sample-2/card-sample-2.component';
 import { CardSample3Component } from './card/card-sample-3/card-sample-3.component';
@@ -80,27 +83,25 @@ import {
 } from './splitter/splitter-horizontal-sample/splitter-horizontal-sample.component';
 import { SplitterNestedSampleComponent } from './splitter/splitter-nested-sample/splitter-nested-sample.component';
 import { SplitterStylingSampleComponent } from './splitter/splitter-styling-sample/splitter-styling-sample.component';
+import {
+    StepperLabelPositionAndOrientationSampleComponent
+} from './stepper/stepper-label-position-and-orientation-sample/stepper-label-position-and-orientation-sample.component';
+import { StepperLinearSampleComponent } from './stepper/stepper-linear-sample/stepper-linear-sample.component';
+import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sample/stepper-overview-sample.component';
+import { StepperSampleReactiveFormsComponent } from './stepper/stepper-sample-reactive-forms/stepper-sample-reactive-forms.component';
+import { StepperStepTypesSampleComponent } from './stepper/stepper-steptypes-sample/stepper-steptypes-sample.component';
+import { StepperStylingSampleComponent } from './stepper/stepper-styling-sample/stepper-styling-sample.component';
 import { TabbarSample1Component } from './tabbar/tabbar-sample-1/tabbar-sample-1.component';
 import { TabbarSample2Component } from './tabbar/tabbar-sample-2/tabbar-sample-2.component';
 import { TabbarSample3Component } from './tabbar/tabbar-sample-3/components/tabbar-sample-3.component';
 import { TabbarStyleComponent } from './tabbar/tabbar-style/tabbar-style.component';
+import { TabsAlignmentComponent } from './tabs/tabs-alignment/tabs-alignment.component';
+import { TabsHeaderPrefixSuffixComponent } from './tabs/tabs-header-prefix-suffix/tabs-header-prefix-suffix';
 import { TabsSample1Component } from './tabs/tabs-sample-1/tabs-sample-1.component';
 import { TabsSample2Component } from './tabs/tabs-sample-2/tabs-sample-2.component';
 import { TabsSample3Component } from './tabs/tabs-sample-3/tabs-sample-3.component';
 import { TabsSample4Component } from './tabs/tabs-sample-4/components/tabs-sample-4.component';
 import { TabsStyleComponent } from './tabs/tabs-style/tabs-style.component';
-import { TabsAlignmentComponent } from './tabs/tabs-alignment/tabs-alignment.component';
-import { TabsHeaderPrefixSuffixComponent } from './tabs/tabs-header-prefix-suffix/tabs-header-prefix-suffix';
-import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
-import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
-import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
-import {
-    StepperLabelPositionAndOrientationSampleComponent
-} from './stepper/stepper-label-position-and-orientation-sample/stepper-label-position-and-orientation-sample.component';
-import { StepperLinearSampleComponent } from './stepper/stepper-linear-sample/stepper-linear-sample.component';
-import { StepperStepTypesSampleComponent } from './stepper/stepper-steptypes-sample/stepper-steptypes-sample.component';
-import { StepperStylingSampleComponent } from './stepper/stepper-styling-sample/stepper-styling-sample.component';
-import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sample/stepper-overview-sample.component';
 
 @NgModule({
     declarations: [
@@ -148,6 +149,7 @@ import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sampl
         StepperLabelPositionAndOrientationSampleComponent,
         StepperLinearSampleComponent,
         StepperOverviewSampleComponent,
+        StepperSampleReactiveFormsComponent,
         StepperStepTypesSampleComponent,
         StepperStylingSampleComponent,
         TabbarSample1Component,
@@ -168,7 +170,8 @@ import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sampl
     ],
     imports: [
         CommonModule,
-        FormsModule,
+        FormsModule,        
+        ReactiveFormsModule ,
         LayoutsRoutingModule,
         IgxAccordionModule,
         IgxAvatarModule,
