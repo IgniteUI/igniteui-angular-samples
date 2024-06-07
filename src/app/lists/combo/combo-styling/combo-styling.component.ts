@@ -24,7 +24,7 @@ export class ComboStylingComponent implements OnInit {
         this.loadToast.positionSettings.verticalDirection = VerticalAlignment.Middle;
         // this.loadToast.autoHide = true;
 
-        if (event.newSelection.length > 2) {
+        if (event.newValue.length > 2) {
             event.cancel = true;
             this.loadToast.open('Choose only two items');
         }

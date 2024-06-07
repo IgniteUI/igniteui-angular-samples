@@ -8,10 +8,12 @@
 }
 
 .igx-calendar {
+	--ig-size: 2;
+	
     border-radius: 0;
 }
 
-.igx-button--raised {
+.igx-button--contained {
     border-radius: 0;
 }
 

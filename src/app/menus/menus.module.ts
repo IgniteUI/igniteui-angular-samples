@@ -5,6 +5,7 @@ import {
     IgxActionStripModule,
     IgxButtonGroupModule,
     IgxButtonModule,
+    IgxIconButtonDirective,
     IgxIconModule,
     IgxLayoutModule,
     IgxNavbarModule,
@@ -71,7 +72,8 @@ import { NavDrawerHierarchicalComponent } from './navdrawer/nav-drawer-hierarchi
         IgxSwitchModule,
         IgxToggleModule,
         IgxNavbarModule,
-        IgxTreeModule
+        IgxTreeModule,
+        IgxIconButtonDirective
     ]
 })
 export class MenusModule { }

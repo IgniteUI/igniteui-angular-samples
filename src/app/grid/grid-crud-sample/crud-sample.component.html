@@ -63,7 +63,7 @@
 </igx-column>
 <igx-column width="100px" [filterable]="false">
     <ng-template igxCell let-cell="cell">
-        <button igxButton="icon" (click)="removeRow(cell.row)">
+        <button igxIconButton="flat" (click)="removeRow(cell.row)">
             <igx-icon>delete</igx-icon>
         </button>
     </ng-template>

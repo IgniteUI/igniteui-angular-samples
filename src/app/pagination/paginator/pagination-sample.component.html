@@ -1,7 +1,7 @@
 <div class="sample-column">
     <div class="card-wrapper">
         <ng-container *ngFor="let product of data">
-            <igx-card>
+            <igx-card elevated>
                 <igx-card-media height="300px">
                     <img [src]="product.ImageURL">
                 </igx-card-media>
@@ -16,7 +16,7 @@
 
                 <igx-card-actions>
                     <button igxButton="outlined" igxRipple igxStart> Buy now</button>
-                    <button igxButton="icon"
+                    <button igxIconButton="flat"
                         igxRipple
                         [igxRippleCentered]="true"
                         *ngFor="let icon of product.icons" igxEnd>

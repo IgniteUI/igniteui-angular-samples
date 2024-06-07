@@ -1,5 +1,5 @@
 <div class="sample-column card-wrapper">
-    <igx-card>
+    <igx-card elevated>
         <igx-card-media height="180px">
             <img [src]="card.imageUrl">
         </igx-card-media>
@@ -14,7 +14,7 @@
         </igx-card-content>
 
         <igx-card-actions>
-            <button igxButton="icon"
+            <button igxIconButton="flat"
                 igxRipple
                 [igxRippleCentered]="true"
                 *ngFor="let icon of card.icons" igxEnd>

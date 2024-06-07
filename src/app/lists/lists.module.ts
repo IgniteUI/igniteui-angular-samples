@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
@@ -19,7 +19,8 @@ import {
     IgxToastModule,
     IgxTooltipModule,
     IgxTreeModule,
-    IgxProgressBarModule
+    IgxProgressBarModule,
+    IgxIconButtonDirective
 } from 'igniteui-angular';
 import { IgxFinancialChartModule } from 'igniteui-angular-charts';
 import { ComboBindingComponent } from './combo/combo-binding/combo-binding.component';
@@ -50,8 +51,7 @@ import { SimpleComboStylingComponent } from './combo/simple-combo-styling/simple
 import { ListItemSelectionComponent } from './list/list-item-selection/list-item-selection.component';
 import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-combo-remote.component';
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         ListComponent,
         ListSample1Component,
         ListSample2Component,
@@ -78,9 +78,7 @@ import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-c
         TreeAdvancedSampleComponent,
         ListItemSelectionComponent,
         SimpleComboRemoteComponent
-    ],
-    imports: [
-        CommonModule,
+    ], imports: [CommonModule,
         FormsModule,
         ListsRoutingModule,
         IgxAvatarModule,
@@ -94,14 +92,12 @@ import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-c
         IgxSwitchModule,
         IgxToastModule,
         IgxButtonGroupModule,
-        HttpClientModule,
         IgxRippleModule,
         IgxCardModule,
         IgxTreeModule,
         IgxTooltipModule,
         IgxFinancialChartModule,
         IgxSimpleComboModule,
-        IgxProgressBarModule
-    ]
-})
+        IgxProgressBarModule,
+        IgxIconButtonDirective], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class ListsModule { }

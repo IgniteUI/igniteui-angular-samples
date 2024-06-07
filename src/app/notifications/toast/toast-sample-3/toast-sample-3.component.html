@@ -1,22 +1,22 @@
 <div class='columnWrapper'>
     <span>
         <h6>Toast that uses content projection</h6>
-        <button igxButton="raised" (click)="toast.open()">Show Toast</button>
-        <button igxButton="raised" (click)="toast.close()">Hide Toast</button>
+        <button igxButton="contained" (click)="toast.open()">Show Toast</button>
+        <button igxButton="contained" (click)="toast.close()">Hide Toast</button>
         <igx-toast #toast [autoHide]="false">Notification displayed</igx-toast>
     </span>
     <span>
         <h6>Toast which dynamically changes the message text</h6>
-        <button igxButton="outlined" igxButtonColor="blue" (click)="toast1.open('Hi! This is info message.')">Info Message</button>
-        <button igxButton="outlined" igxButtonColor="green" (click)="toast1.open('Hi! This is success message.')">Success Message</button>
-        <button igxButton="outlined" igxButtonColor="orange" (click)="toast1.open('Hi! This is warning message.')">Warning Message</button>
-        <button igxButton="outlined" igxButtonColor="red" (click)="toast1.open('Hi! This is error message.')">Error Message</button>
+        <button igxButton="outlined" (click)="toast1.open('Hi! This is info message.')">Info Message</button>
+        <button igxButton="outlined" (click)="toast1.open('Hi! This is success message.')">Success Message</button>
+        <button igxButton="outlined" (click)="toast1.open('Hi! This is warning message.')">Warning Message</button>
+        <button igxButton="outlined" (click)="toast1.open('Hi! This is error message.')">Error Message</button>
         <igx-toast #toast1 [autoHide]="true"></igx-toast>
     </span>
     <span>
         <h6>Toast that uses content projection and dynamically changes the message text</h6>
-        <button igxButton="raised" (click)="toast2.open('You have one new message.')">Show Toast</button>
-        <button igxButton="raised" (click)="toast2.open('Your massage has been successfully sent.')">Show Toast with another message</button>
+        <button igxButton="contained" (click)="toast2.open('You have one new message.')">Show Toast</button>
+        <button igxButton="contained" (click)="toast2.open('Your massage has been successfully sent.')">Show Toast with another message</button>
         <igx-toast #toast2 [autoHide]="true">
             <igx-icon>mail</igx-icon>
         </igx-toast>

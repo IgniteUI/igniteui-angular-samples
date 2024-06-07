@@ -21,18 +21,18 @@
             <div class="chips">
                 <igx-chips-area>
                     <igx-chip (click)="updateSearch()" [color]="caseSensitive? 'lightgrey' : 'rgba(0, 0, 0, .04)'">
-                        <span>Case Sensitive</span>
+                        <span title="Match case">Aa</span>
                     </igx-chip>
                     <igx-chip (click)="updateExactSearch()" [color]="exactMatch? 'lightgrey' : 'rgba(0, 0, 0, .04)'">
-                        <span>Exact Match</span>
+                        <u title="Exact match">Ab</u>
                     </igx-chip>
                 </igx-chips-area>
             </div>
             <div class="searchButtons">
-                <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="treeGrid.findPrev(searchText, caseSensitive, exactMatch)">
+                <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="treeGrid.findPrev(searchText, caseSensitive, exactMatch)">
                     <igx-icon family="material">navigate_before</igx-icon>
                 </button>
-                <button igxButton="icon" igxRipple [igxRippleCentered]="true" (click)="treeGrid.findNext(searchText, caseSensitive, exactMatch)">
+                <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="treeGrid.findNext(searchText, caseSensitive, exactMatch)">
                     <igx-icon family="material">navigate_next</igx-icon>
                 </button>
             </div>

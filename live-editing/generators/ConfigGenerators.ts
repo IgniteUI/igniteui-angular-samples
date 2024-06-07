@@ -28,6 +28,7 @@ import { ForConfigGenerator } from '../configs/ForConfigGenerator';
 import { GridConfigGenerator } from '../configs/GridConfigGenerator';
 import { HierarchicalGridConfigGenerator } from '../configs/HierarchicalGridConfigGenerator';
 import { IconConfigGenerator } from '../configs/IconConfigGenerator';
+import { IconButtonConfigGenerator } from '../configs/IconButtonConfigGenerator';
 import { InputGroupConfigGenerator } from '../configs/InputGroupConfigGenerator';
 import { LayoutConfigGenerator } from '../configs/LayoutConfigGenerator';
 import { LinearProgressbarConfigGenerator } from '../configs/LinearProgressbarConfigGenerator';
@@ -99,6 +100,7 @@ export const CONFIG_GENERATORS =
         DateRangePickerConfigGenerator,
         DateTimeEditorConfigGenerator,
         DropDownConfigGenerator,
+        IconButtonConfigGenerator,
         InputGroupConfigGenerator,
         MaskConfigGenerator,
         MonthPickerConfigGenerator,

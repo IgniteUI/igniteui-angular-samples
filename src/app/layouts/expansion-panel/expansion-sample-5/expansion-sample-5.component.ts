@@ -2,10 +2,9 @@ import { useAnimation } from '@angular/animations';
 import { Component, ViewChild } from '@angular/core';
 
 import {
-    IgxExpansionPanelComponent,
-    slideInLeft,
-    slideOutRight
+    IgxExpansionPanelComponent
 } from 'igniteui-angular';
+import { slideInLeft, slideOutRight } from 'igniteui-angular/animations';
 
 @Component({
     // tslint:disable-next-line:component-selector

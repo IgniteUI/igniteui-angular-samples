@@ -866,9 +866,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             component: 'TreeGridConditionalCellStyle2Component',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridConditionalCellStyle2Component'],
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule', 'IgxInputGroupModule', 'TreeGridConditionalCellStyle2Component'],
                 ngDeclarations: ['TreeGridConditionalCellStyle2Component'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule', 'IgxInputGroupModule']
             })
         }));
 
@@ -1022,9 +1022,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 '/src/app/tree-grid/tree-grid-save-state/about.component.ts',
                 '/src/app/tree-grid/tree-grid-save-state/about.component.html'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxCheckboxModule', 'IgxIconModule', 'TGridSaveStateComponent', 'TGridAboutComponent', 'Router', 'RouterModule'],
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxCheckboxModule', 'IgxIconModule', 'IgxButtonModule', 'TGridSaveStateComponent', 'TGridAboutComponent', 'Router', 'RouterModule'],
                 ngDeclarations: ['TGridSaveStateComponent', 'TGridAboutComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxCheckboxModule', 'IgxIconModule',
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxCheckboxModule', 'IgxIconModule', 'IgxButtonModule',
                     'RouterModule.forRoot([\{component: TGridAboutComponent, path: \'tree-grid-state-about\'},\{component: TGridSaveStateComponent, path: \'tree-grid-state\'},\{ path: \'\', redirectTo: \'/tree-grid-state\', pathMatch: \'full\' }])']
 
             }),
@@ -1072,11 +1072,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat.ts', '/src/app/tree-grid/tree-grid-add-row-sample/employee.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridAddRowSampleComponent', 'IgxButtonModule', 'IgxDialogModule',
-                    'IgxInputGroupModule', 'IgxCheckboxModule', 'IgxDatePickerModule', 'IgxActionStripModule'],
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridAddRowSampleComponent', 'IgxIconModule', 'IgxActionStripModule'],
                 ngDeclarations: ['TreeGridAddRowSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonModule', 'IgxDialogModule',
-                    'IgxInputGroupModule', 'IgxCheckboxModule', 'IgxDatePickerModule', 'IgxActionStripModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxIconModule', 'IgxActionStripModule']
             }),
             component: 'TreeGridAddRowSampleComponent',
             shortenComponentPathBy: '/tree-grid/'

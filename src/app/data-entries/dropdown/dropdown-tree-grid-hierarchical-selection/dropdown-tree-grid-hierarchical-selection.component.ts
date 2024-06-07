@@ -1,28 +1,35 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IBaseChipEventArgs, IgxTreeGridComponent, IRowSelectionEventArgs } from 'igniteui-angular';
-import { IBaseCancelableBrowserEventArgs } from 'igniteui-angular/lib/core/utils';
+import { AfterViewInit, Component,ElementRef, OnInit, ViewChild } from '@angular/core';
+import { IBaseChipEventArgs, IgxDropDownComponent, OverlaySettings, IgxTreeGridComponent, IRowSelectionEventArgs, ConnectedPositioningStrategy } from 'igniteui-angular';
 import { EMPLOYEE_DATA } from './nested-employee-data';
+
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-tree-grid-hierarchical-selection',
     styleUrls: ['./dropdown-tree-grid-hierarchical-selection.component.scss'],
     templateUrl: './dropdown-tree-grid-hierarchical-selection.component.html'
 })
-export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit {
+export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit, AfterViewInit {
     @ViewChild('treeGrid', { static: true })
     public igxTreeGrid: IgxTreeGridComponent;
+    @ViewChild(IgxDropDownComponent, { static: true }) public igxDropDown: IgxDropDownComponent;
+    @ViewChild('button', { static: true }) public igxButton: ElementRef;
 
     public employees!: any[];
     public selectedRows!: any[];
 
     public ngOnInit(): void {
         this.employees = EMPLOYEE_DATA;
-        
-        this.igxTreeGrid.selectRows([1,4], true); 
+
+        this.igxTreeGrid.selectRows([1,4], true);
         this.selectedRows = [];
         this.igxTreeGrid.selectedRows.forEach((row) => this.selectedRows.push(this.employees.find(employee => employee.ID == row)));
     }
-
+    public ngAfterViewInit(): void {
+        requestAnimationFrame(() => {
+            this._overlaySettings.target = this.igxButton.nativeElement;
+            this.igxDropDown.open(this._overlaySettings);
+        });
+     }
     public onRowSelectionChanging(args: IRowSelectionEventArgs, grid: IgxTreeGridComponent) {
         this.selectedRows = [];
         args.newSelection.forEach((val) => this.selectedRows.push(grid.getRowData(val.ID)));
@@ -37,7 +44,9 @@ export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit {
         });
     }
 
-    public handleClosing(event: IBaseCancelableBrowserEventArgs) {
-        event.cancel = event.event.composedPath().some(e => (e as HTMLElement).nodeName?.toLowerCase() === 'igx-chip');
-    }
+    public _overlaySettings: OverlaySettings = {
+        modal: false,
+        positionStrategy: new ConnectedPositioningStrategy(),
+        closeOnOutsideClick: false
+    };
 }

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/member-delimiter-style */
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeBG from '@angular/common/locales/bg';
 import localeCS from '@angular/common/locales/cs';
@@ -25,7 +25,7 @@ import localeHI from '@angular/common/locales/hi';
 import localeHans from '@angular/common/locales/zh-Hans';
 import localeHant from '@angular/common/locales/zh-Hant';
 import { DATA } from '../../../data/nwindData';
-import { IgxGridComponent, IResourceStrings, changei18n, getCurrentResourceStrings } from 'igniteui-angular';
+import { IgxGridComponent, GridResourceStringsEN, IGridResourceStrings } from 'igniteui-angular';
 import {
     IgxResourceStringsBG, IgxResourceStringsCS, IgxResourceStringsDA, IgxResourceStringsDE,
     IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsHU, IgxResourceStringsIT,
@@ -39,8 +39,7 @@ import {
     styleUrls: ['./localization-all-resources.component.scss'],
     templateUrl: 'localization-all-resources.component.html'
 })
-
-export class LocalizationAllResourcesComponent implements OnInit, OnDestroy {
+export class LocalizationAllResourcesComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
     public data: any[];
@@ -50,8 +49,7 @@ export class LocalizationAllResourcesComponent implements OnInit, OnDestroy {
         'HI', 'BG', 'CS', 'DA', 'DE', 'EN', 'ES', 'FR', 'HU', 'IT', 'JA', 'KO', 'NB', 'NL',
         'PL', 'PT', 'RO', 'SV', 'TR', 'zh-Hans', 'zh-Hant'
     ];
-    public cashedLocalizationEN: IResourceStrings;
-    public partialCustomHindi: IResourceStrings;
+    public partialCustomHindi: IGridResourceStrings;
 
     constructor() { }
     public ngOnInit(): void {
@@ -78,7 +76,7 @@ export class LocalizationAllResourcesComponent implements OnInit, OnDestroy {
         registerLocaleData(localeHant);
 
         this.data = DATA;
-        this.cashedLocalizationEN = Object.assign({}, getCurrentResourceStrings());
+
         // Creating a custom locale (HI) for specific grid strings.
         // Similarly can localize all needed strings in a separate IgxResourceStringsHI file (feel free to contribute)
         this.partialCustomHindi = {
@@ -100,7 +98,7 @@ export class LocalizationAllResourcesComponent implements OnInit, OnDestroy {
             { type: 'IT', resource: IgxResourceStringsIT },
             { type: 'JA', resource: IgxResourceStringsJA },
             { type: 'KO', resource: IgxResourceStringsKO },
-            { type: 'EN', resource: this.cashedLocalizationEN },
+            { type: 'EN', resource: GridResourceStringsEN },
             { type: 'HI', resource: this.partialCustomHindi },
             { type: 'NB', resource: IgxResourceStringsNB },
             { type: 'NL', resource: IgxResourceStringsNL },
@@ -117,11 +115,6 @@ export class LocalizationAllResourcesComponent implements OnInit, OnDestroy {
 
     public updateLocale() {
         const newLocale = this.locales.find(x => x.type === this.locale).resource;
-        changei18n(newLocale);
-    }
-
-    // Required only for Infragistics documentation page
-    public ngOnDestroy(): void {
-        changei18n(this.cashedLocalizationEN);
+        this.grid.resourceStrings = newLocale;
     }
 }

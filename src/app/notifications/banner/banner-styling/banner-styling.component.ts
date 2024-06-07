@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { IgxBannerComponent, IgxToastComponent, slideInLeft, slideOutRight, VerticalAlignment } from 'igniteui-angular';
+import { IgxBannerComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { slideInLeft, slideOutRight } from 'igniteui-angular/animations';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -19,7 +20,7 @@ export class BannerStylingComponent implements OnInit, OnDestroy {
         closeAnimation: slideOutRight,
         openAnimation: slideInLeft
     };
-    public onNetworkStateChange = new Subject();
+    public onNetworkStateChange = new Subject<void>();
     private _wifiState = false;
 
     public get wifiState(): boolean {

@@ -585,9 +585,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridConditionalCellStyle2Component',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/athletesData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxGridModule', 'GridConditionalCellStyle2Component', 'IgxPreventDocumentScrollModule'],
+                imports: ['IgxGridModule', 'GridConditionalCellStyle2Component', 'IgxPreventDocumentScrollModule', 'IgxButtonModule', 'IgxInputGroupModule'],
                 ngDeclarations: ['GridConditionalCellStyle2Component'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxButtonModule', 'IgxInputGroupModule']
             })
         }));
 
@@ -770,10 +770,10 @@ export class GridConfigGenerator implements IConfigGenerator {
                 '/src/app/grid/grid-save-state/about.component.html'
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridSaveStateComponent', 'IgxGridModule', 'IgxTooltipModule', 'IgxCheckboxModule', 'IgxIconModule',
+                imports: ['GridSaveStateComponent', 'IgxGridModule', 'IgxTooltipModule', 'IgxCheckboxModule', 'IgxIconModule', 'IgxButtonModule',
                     'IgxToastModule', 'IgxSwitchModule', 'AboutComponent', 'Router', 'RouterModule', 'IgxPreventDocumentScrollModule'],
                 ngDeclarations: ['GridSaveStateComponent', 'AboutComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxTooltipModule', 'IgxCheckboxModule', 'IgxIconModule',
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxTooltipModule', 'IgxCheckboxModule', 'IgxIconModule', 'IgxButtonModule',
                     'RouterModule.forRoot([\{component: AboutComponent, path: \'grid-about\'},\{component: GridSaveStateComponent, path: \'grid-state\'},\{ path: \'\', redirectTo: \'/grid-state\', pathMatch: \'full\' }])',
                     'IgxToastModule', 'IgxSwitchModule']
             })
@@ -1071,9 +1071,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridCollapsibleColumnGroupsComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/invoiceData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['GridCollapsibleColumnGroupsComponent', 'IgxGridModule', 'IgxTooltipModule', 'IgxPreventDocumentScrollModule'],
+                imports: ['GridCollapsibleColumnGroupsComponent', 'IgxGridModule', 'IgxTooltipModule', 'IgxPreventDocumentScrollModule', 'IgxIconModule'],
                 ngDeclarations: ['GridCollapsibleColumnGroupsComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxTooltipModule']
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxTooltipModule', 'IgxIconModule']
             })
         }));
 
@@ -1345,9 +1345,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'GridRowStylesComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/services/financial.service.ts', '/src/app/data/financialData.ts'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxGridModule', 'GridRowStylesComponent', 'IgxPreventDocumentScrollModule', 'FinancialDataService'],
+                imports: ['IgxGridModule', 'GridRowStylesComponent', 'IgxPreventDocumentScrollModule', 'IgxBadgeModule', 'FinancialDataService'],
                 ngDeclarations: ['GridRowStylesComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxBadgeModule'],
                 ngProviders: ['FinancialDataService']
             })
         }));

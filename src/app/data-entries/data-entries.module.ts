@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     IgcFormsModule,
-    IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxChipsAreaComponent, IgxChipsModule, IgxComboModule,
-    IgxDatePickerModule, IgxDialogModule, IgxDividerModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
+    IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxIconButtonDirective, IgxCalendarModule, IgxCardModule, IgxCheckboxModule, IgxChipsAreaComponent, IgxChipsModule, IgxComboModule,
+    IgxDatePickerModule, IgxDateRangePickerModule, IgxDialogModule, IgxDividerModule, IgxDropDownModule, IgxFocusModule, IgxForOfModule,
     IgxIconModule, IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule,
-    IgxSelectModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule, IgxTreeGridModule, IgxTreeModule
+    IgxSelectModule, IgxSlideComponent, IgxSliderModule, IgxSwitchModule, IgxTextSelectionModule, IgxTimePickerModule, IgxToastModule, IgxToggleModule, IgxTreeGridModule, IgxTreeModule
 } from 'igniteui-angular';
 import { AutocompleteBasicComponent, AutocompletePipeStartsWith } from './autocomplete/autocomplete/autocomplete.component';
 import { MovieComponent } from './autocomplete/movie/movie.component';
@@ -37,6 +37,8 @@ import { DataEntriesRoutingModule } from './data-entries-routing.module';
 import { DropDownRemoteComponent } from './dropdown/drop-down-remote-virtual/drop-down-remote.component';
 import { DropDownVirtualComponent } from './dropdown/drop-down-virtual/drop-down-virtual.component';
 import { DropdownMenuComponent } from './dropdown/dropdown-menu/dropdown-menu.component';
+import { DropdownMultiLevelMenuComponent } from './dropdown/dropdown-multi-level-menu/dropdown-multi-level-menu.component';
+import { MultiLevelDirective } from './dropdown/dropdown-multi-level-menu/multi-level.directive';
 import { DropDownSample1Component } from './dropdown/dropdown-sample-1/dropdown-sample-1.component';
 import { DropDownSample2Component } from './dropdown/dropdown-sample-2/dropdown-sample-2.component';
 import { DropDownSample3Component } from './dropdown/dropdown-sample-3/dropdown-sample-3.component';
@@ -73,9 +75,16 @@ import { RatingInFormComponent } from './rating/rating-form/rating-form.componen
 import { TemplateDrivenFormValidationComponent } from './input-group/template-driven-form-validation/template-driven-form-validation.component';
 import { ReactiveFormValidationComponent } from './input-group/reactive-form-validation/reactive-form-validation.component';
 import { ReactiveFormCustomValidationComponent } from './input-group/reactive-form-custom-validation/reactive-form-custom-validation.component';
+import { IconButtonOverviewComponent } from './icon-button/icon-button-overview/icon-button-overview.component';
+import { FlatIconButtonComponent } from './icon-button/flat-icon-button/flat-icon-button.component';
+import { ContainedIconButtonComponent } from './icon-button/contained-icon-button/contained-icon-button.component';
+import { OutlinedIconButtonComponent } from './icon-button/outlined-icon-button/outlined-icon-button.component';
+import { DisabledIconButtonComponent } from './icon-button/disabled-icon-button/disabled-icon-button.component';
+import { SVGIconButtonComponent } from './icon-button/svg-icon-button/svg-icon-button.component';
+import { IconButtonSizeComponent } from './icon-button/icon-button-size/icon-button-size.component';
+import { IconButtonStylingComponent } from './icon-button/icon-button-styling/icon-button-styling.component';
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         AutocompleteBasicComponent,
         AutocompletePipeStartsWith,
         ButtonGroupSample1Component,
@@ -99,6 +108,8 @@ import { ReactiveFormCustomValidationComponent } from './input-group/reactive-fo
         DropDownRemoteComponent,
         DropDownVirtualComponent,
         DropdownMenuComponent,
+        DropdownMultiLevelMenuComponent,
+        MultiLevelDirective,
         DropDownSample1Component,
         DropDownSample2Component,
         DropDownSample3Component,
@@ -107,6 +118,14 @@ import { ReactiveFormCustomValidationComponent } from './input-group/reactive-fo
         DropDownStylingComponent,
         DropdownTreeHierarchicalSelectionComponent,
         DropdownTreeGridHierarchicalSelectionComponent,
+        IconButtonOverviewComponent,
+        FlatIconButtonComponent,
+        ContainedIconButtonComponent,
+        OutlinedIconButtonComponent,
+        DisabledIconButtonComponent,
+        SVGIconButtonComponent,
+        IconButtonSizeComponent,
+        IconButtonStylingComponent,
         InputGroupSample1Component,
         InputGroupSample2Component,
         InputGroupSample3Component,
@@ -140,16 +159,14 @@ import { ReactiveFormCustomValidationComponent } from './input-group/reactive-fo
         TemplateDrivenFormValidationComponent,
         ReactiveFormValidationComponent,
         ReactiveFormCustomValidationComponent
-    ],
-    imports: [
-        CommonModule,
+    ], imports: [CommonModule,
         FormsModule,
-        HttpClientModule,
         ReactiveFormsModule,
         DataEntriesRoutingModule,
         IgxAutocompleteModule,
         IgxButtonGroupModule,
         IgxButtonModule,
+        IgxIconButtonDirective,
         IgxDialogModule,
         IgxIconModule,
         IgxRippleModule,
@@ -174,7 +191,9 @@ import { ReactiveFormCustomValidationComponent } from './input-group/reactive-fo
         IgcFormsModule,
         IgxChipsModule,
         IgxTreeModule,
-        IgxTreeGridModule
-    ]
-})
+        IgxTreeGridModule,
+        IgxSliderModule,
+        IgxDateRangePickerModule,
+        IgxCalendarModule,
+        IgxCardModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class DataEntriesModule { }

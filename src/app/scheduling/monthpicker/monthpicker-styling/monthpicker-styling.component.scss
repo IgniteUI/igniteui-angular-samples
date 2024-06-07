@@ -1,22 +1,26 @@
 @use '../../../../variables' as *;
 
 igx-month-picker {
-    max-width: 400px;
-    margin: 20px;
+	--ig-size: 2;
+	
+	max-width: 400px;
 }
 
 $my-calendar-theme: calendar-theme(
-  $border-radius: 15px,
-  $content-background: #011627,
-  $picker-background-color: #011627,
-  $month-current-text-color: #ECAA53,
-  $month-hover-background: #ECAA53,
-  $year-current-text-color: #ECAA53,
-  $year-hover-text-color: #D37B08,
-  $picker-arrow-color: #ECAA53,
-  $picker-text-hover-color: #D37B08,
-  $picker-arrow-hover-color: #D37B08,
-  $picker-text-color: #ECAA53
+	$border-radius: 15px,
+	$content-background: #011627,
+	$picker-background: #011627,
+	
+	$month-current-foreground: #ecaa53,
+	$month-hover-background: #ecaa53,
+	
+	$year-current-foreground: #ecaa53,
+	$year-hover-background: #ecaa53,
+	
+	$navigation-color: #ecaa53,
+	$picker-hover-foreground: #d37b08,
+	$navigation-hover-color: #d37b08,
+	$picker-foreground: #ecaa53
 );
 
 :host ::ng-deep {

@@ -1,4 +1,4 @@
-<button #button class="drop-down" igxButton="raised" [igxToggleAction]="dropDown" [overlaySettings]="{outlet: elem}"
+<button #button class="drop-down" igxButton="contained" [igxToggleAction]="dropDown" [overlaySettings]="{outlet: elem}"
     [igxDropDownItemNavigation]="dropDown">{{ hero }}</button>
 <igx-drop-down #dropDown class="drop-down" (selectionChanging)="handleDropDownSelection($event)">
     <div class="drop-down__scroll-container">

@@ -1,6 +1,6 @@
 <div class="sample-column">
     <form>
-        <igx-card>
+        <igx-card elevated>
             <igx-card-media height="300px">
                 <img [src]="product.ImageURL">
             </igx-card-media>
@@ -18,7 +18,7 @@
             </igx-card-content>
             <igx-card-actions>
                 <button igxButton="outlined" igxRipple igxStart>Buy again</button>
-                <button igxButton="icon"
+                <button igxIconButton="flat"
                     igxRipple
                     [igxRippleCentered]="true"
                     *ngFor="let icon of product.icons" igxEnd>

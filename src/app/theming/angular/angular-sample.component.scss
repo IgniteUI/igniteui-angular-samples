@@ -1,10 +1,10 @@
 @use '@angular/material' as mat;
-@use "../../../variables" as *;
-@use "@angular/material/theming";
+@use '../../../variables' as *;
+@include mat.core();
 
-$custom-typography: mat.define-legacy-typography-config(
+$custom-typography: mat.m2-define-typography-config(
     $font-family: $material-typeface,
-    $button: mat.define-typography-level(14px, $font-weight: 600)
+    $button: mat.m2-define-typography-level(14px, $font-weight: 600)
 );
 
 $saturations: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700);
@@ -37,7 +37,7 @@ $igx-light-palette: palette(
 );
 
 $custom-dark-palette: palette(
-    $primary: #011627,
+    $primary: #206094,
     $secondary: #72da67,
     $surface: #222,
     $info: #1377d5,
@@ -46,13 +46,36 @@ $custom-dark-palette: palette(
     $error: #ff134a,
 );
 
-$light-palette-primary: mat.define-palette(material-like-palette('primary', $saturations, $igx-light-palette));
-$light-palette-accent: mat.define-palette(material-like-palette('secondary', $saturations, $igx-light-palette));
-$custom-mat-light-theme: mat.define-light-theme($light-palette-primary, $light-palette-accent);
+$light-palette-primary: mat.m2-define-palette(material-like-palette('primary', $saturations, $igx-light-palette));
+$light-palette-accent: mat.m2-define-palette(material-like-palette('secondary', $saturations, $igx-light-palette));
+$custom-mat-light-theme: mat.m2-define-light-theme((
+    color: (
+        primary: $light-palette-primary,
+        accent: $light-palette-accent
+    ),
+    typography: $custom-typography
+));
 
-$dark-palette-primary: mat.define-palette(material-like-palette('primary', $saturations, $custom-dark-palette));
-$dark-palette-accent: mat.define-palette(material-like-palette('secondary', $saturations, $custom-dark-palette));
-$custom-mat-dark-theme: mat.define-dark-theme($dark-palette-primary, $dark-palette-accent);
+$dark-palette-primary: mat.m2-define-palette(material-like-palette('primary', $saturations, $custom-dark-palette));
+$dark-palette-accent: mat.m2-define-palette(material-like-palette('secondary', $saturations, $custom-dark-palette));
+$custom-mat-dark-theme: mat.m2-define-dark-theme((
+    color: (
+        primary: $dark-palette-primary,
+        accent: $dark-palette-accent
+    )
+));
+
+::ng-deep {
+    @include mat.core();
+
+    .light-menu-theme {
+        @include mat.menu-theme($custom-mat-light-theme);
+    }
+
+    .dark-menu-theme {
+        @include mat.menu-theme($custom-mat-dark-theme);
+    }
+}
 
 .navbar-brand {
     margin-right: 16px;
@@ -144,6 +167,9 @@ igx-expansion-panel-body {
         }
 
         ::ng-deep {
+            @include dark-theme($custom-dark-palette);
+            @include mat.all-component-themes($custom-mat-dark-theme);
+
             .primary {
                 color: color($custom-dark-palette, 'primary', 100);
                 margin-left: 32px;
@@ -151,11 +177,6 @@ igx-expansion-panel-body {
 
             .mat-step-header .mat-step-icon-selected {
                 background-color: color($custom-dark-palette, 'secondary');
-            }
-
-            .mat-accent .mat-slider-thumb,
-            .mat-accent .mat-slider-track-fill {
-                background-color: color($custom-dark-palette, 'primary', 100);
             }
 
             .mat-stepper-horizontal {
@@ -182,24 +203,33 @@ igx-expansion-panel-body {
             color: color($igx-light-palette, "warn");
         }
     }
-}
 
-::ng-deep {
-    // TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
-//  The following line adds:
-//    1. Default typography styles for all components
-//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
-//  If you specify typography styles for the components you use elsewhere, you should delete this line.
-//  If you don't need the default component typographies but still want the hierarchy styles,
-//  you can delete this line and instead use:
-//    `@include mat.legacy-typography-hierarchy($custom-typography);`
-@include mat.all-legacy-component-typographies($custom-typography);
-@include mat.legacy-core();
-    @include theme($igx-light-palette);
-    @include mat.all-legacy-component-themes($custom-mat-light-theme);
+    ::ng-deep {
+        @include theme($igx-light-palette);
+        @include mat.all-component-themes($custom-mat-light-theme);
 
-    .dark {
-        @include dark-theme($custom-dark-palette);
-        @include mat.all-legacy-component-themes($custom-mat-dark-theme);
+        .mat-mdc-slider.secondary .mdc-slider__track--inactive,
+        .mat-mdc-slider.secondary .mdc-slider__thumb-knob {
+            background-color: color($custom-mat-light-theme, 'secondary');
+        }
+
+        .mat-mdc-slider.secondary .mdc-slider__track--active_fill,
+        .mat-mdc-slider.secondary .mdc-slider__thumb-knob {
+            border-color: color($custom-mat-light-theme, 'secondary');
+        }
+
+        .mat-mdc-slider.secondary .mat-mdc-slider-visual-thumb .mat-ripple > * {
+            background-color: color($custom-mat-light-theme, 'secondary');
+            opacity: .12;
+        }
+
+        .mat-stepper-horizontal.mb-1 .mat-horizontal-stepper-header-container {
+            margin-bottom: 16px;
+        }
+
+        .mat-mdc-form-field-focus-overlay,
+        .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+            background-color: color($custom-mat-light-theme, 'surface');
+        }
     }
 }
