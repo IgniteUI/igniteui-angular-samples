@@ -5,6 +5,7 @@
 
 .container > * {
     margin-top: 32px;
+    max-width: 450px;
 }
 
 .input-group-form {
@@ -15,4 +16,9 @@
 
 h4 {
     margin-top: 0;
+}
+
+igx-card, article {
+    max-width: 400px;
+    margin: 20px;
 }

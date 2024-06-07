@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
@@ -23,15 +23,11 @@ import { IgxBarSeriesModule, IgxBollingerBandsOverlayModule, IgxCategoryChartMod
 import { GridsDVRoutingModule } from './grids-routing.module';
 import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         GridComponent,
         GridMasterDetailSampleComponent
-    ],
-    imports: [
-        CommonModule,
+    ], imports: [CommonModule,
         FormsModule,
-        HttpClientModule,
         GridsDVRoutingModule,
         IgxPreventDocumentScrollModule,
         IgxAvatarModule,
@@ -81,7 +77,5 @@ import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directive
         IgxDividerModule,
         IgxDataChartScatterModule,
         IgxBarSeriesModule,
-        IgxCategoryChartModule
-    ]
-})
+        IgxCategoryChartModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class GridsDVModule { }

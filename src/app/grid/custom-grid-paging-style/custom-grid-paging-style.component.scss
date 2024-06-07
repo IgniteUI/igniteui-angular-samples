@@ -7,49 +7,53 @@ $light-gray: #999;
 $inactive-color: #9b7829;
 
 $dark-paginator: paginator-theme(
-    $text-color: $my-secondary,
-    $background-color: $my-primary,
-    $border-color: $my-secondary
+	$text-color: $my-secondary,
+	$background-color: $my-primary,
+	$border-color: $my-secondary
 );
 
-$dark-button: button-theme(
-    $foreground: $my-secondary,
-    $hover-foreground: $dark-gray,
-    $hover-background: $my-secondary,
-    $focus-foreground: $dark-gray,
-    $focus-background: $my-secondary,
-    $border-color: $my-secondary,
-    $hover-border-color: $my-secondary,
-    $focus-border-color: $my-secondary,
-    $disabled-foreground: $inactive-color
+$dark-button: icon-button-theme(
+	$foreground: $my-secondary,
+	$hover-foreground: $dark-gray,
+	$hover-background: $my-secondary,
+	$focus-foreground: $dark-gray,
+	$focus-background: $my-secondary,
+	$border-color: $my-secondary,
+	$focus-border-color: $my-secondary,
+	$disabled-foreground: $inactive-color
 );
 
 $dark-select: select-theme(
-    $toggle-button-background: $my-primary,
-    $toggle-button-foreground: $inactive-color,
+	$toggle-button-background: $my-primary,
+	$toggle-button-foreground: $inactive-color,
+	$toggle-button-foreground-filled: $inactive-color,
+	$toggle-button-foreground-focus: $inactive-color,
+	$toggle-button-background-focus--border: $my-primary,
 );
 
 $dark-input-group: input-group-theme(
-    $filled-text-color: $my-secondary,
-    $idle-text-color: $my-secondary,
-    $focused-text-color: $my-secondary,
-    $border-color: darken($inactive-color, 10%),
-    $focused-border-color: $my-secondary,
-    $input-suffix-color: $my-secondary,
+	$filled-text-color: $my-secondary,
+	$idle-text-color: $my-secondary,
+	$filled-text-hover-color: $my-secondary,
+	$focused-text-color: $my-secondary,
+	$border-color: darken($inactive-color, 10%),
+	$focused-border-color: $my-secondary,
+	$input-suffix-color: $my-secondary,
 );
 
 $dark-drop-down-theme: drop-down-theme(
-    $background-color: $my-primary,
-    $item-text-color: $my-secondary,
-    $selected-item-background: $my-secondary,
-    $selected-item-text-color: $dark-gray,
-    $focused-item-background: $my-secondary,
-    $focused-item-text-color: $dark-gray,
-    $selected-focus-item-background: $my-secondary,
-    $selected-focus-item-text-color: $dark-gray,
-    $selected-hover-item-background: $my-secondary,
-    $selected-hover-item-text-color: $dark-gray
+	$background-color: $my-primary,
+	$item-text-color: $my-secondary,
+	$selected-item-background: $my-secondary,
+	$selected-item-text-color: $dark-gray,
+	$focused-item-background: $my-secondary,
+	$focused-item-text-color: $dark-gray,
+	$selected-focus-item-background: $my-secondary,
+	$selected-focus-item-text-color: $dark-gray,
+	$selected-hover-item-background: $my-secondary,
+	$selected-hover-item-text-color: $dark-gray
 );
+
 /*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 
 :host {

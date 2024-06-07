@@ -33,6 +33,20 @@ export class StepperConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'StepperSampleReactiveFormsComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['StepperSampleReactiveFormsComponent', 'IgxStepperModule', 'IgxMaskModule', 'IgxInputGroupModule', 'IgxButtonModule',
+                    'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule',
+                    'IgxIconModule', 'IgxBadgeModule'],
+                ngDeclarations: ['StepperSampleReactiveFormsComponent'],
+                ngImports: ['IgxStepperModule', 'IgxMaskModule', 'IgxInputGroupModule', 'IgxButtonModule',
+                    'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule',
+                    'IgxIconModule', 'IgxBadgeModule']
+            }),
+            shortenComponentPathBy: '/layouts/stepper/'
+        }));
+
+        configs.push(new Config({
             component: 'StepperLabelPositionAndOrientationSampleComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['StepperLabelPositionAndOrientationSampleComponent',

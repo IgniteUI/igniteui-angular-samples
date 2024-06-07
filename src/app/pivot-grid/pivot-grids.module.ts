@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 // tslint:disable:max-line-length
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IgxCheckboxModule, IgxIconModule, IgxPivotGridModule } from 'igniteui-angular';
@@ -15,8 +15,7 @@ import { PivotGridStatePersistenceSampleComponent } from './pivot-state-persiste
 import { PivotGridAboutComponent } from './pivot-state-persistence/about.component';
 import { PivotGridNoopPersistenceSampleComponent } from './pivot-grid-noop-persistence/pivot-grid-noop-persistence-sample.component';
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         PivotGridBasicSampleComponent,
         PivotDataSelectorSampleComponent,
         PivotExportComponent,
@@ -25,15 +24,10 @@ import { PivotGridNoopPersistenceSampleComponent } from './pivot-grid-noop-persi
         PivotGridNoopSampleComponent,
         PivotGridAboutComponent,
         PivotGridNoopPersistenceSampleComponent
-    ],
-    imports: [
-        CommonModule,
+    ], imports: [CommonModule,
         FormsModule,
-        HttpClientModule,
         PivotGridsRoutingModule,
         IgxPivotGridModule,
         IgxCheckboxModule,
-        IgxIconModule
-    ]
-})
+        IgxIconModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class PivotGridsModule { }
