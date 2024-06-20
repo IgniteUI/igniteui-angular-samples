@@ -8,6 +8,7 @@
                 <ng-template igxCell let-cell="cell">
                     <igx-simple-combo [id]="'country-' + cell.row.data.ID" [data]="countriesData"
                         (selectionChanging)="countryChanging($event, cell)" placeholder="Choose Country..."
+                        [ngModel]="cell.value === '' ? undefined : cell.value" (ngModelChange)="handleCellUpdate($event, cell)"
                         [displayKey]="'name'" width="100%">
                     </igx-simple-combo>
                 </ng-template>
@@ -17,10 +18,10 @@
                     <div>
                         <igx-simple-combo [id]="'region-' + cell.row.data.ID"
                             (selectionChanging)="regionChanging($event, cell)" placeholder="Choose Region..."
-                            [displayKey]="'name'" [(ngModel)]="cell.value"
-                            [disabled]="cell.row.cells[1].value === ''">
+                            [ngModel]="cell.value === '' ? undefined : cell.value"  (ngModelChange)="handleCellUpdate($event, cell)"
+                            [displayKey]="'name'" [disabled]="cell.row.cells[1].value === ''">
                         </igx-simple-combo>
-                        <igx-linear-bar [id]="'region-progress-' + cell.row.data.ID" [style.visibility]="'hidden'"
+                        <igx-linear-bar *ngIf="cell.row.data.loadingRegion" [id]="'region-progress-' + cell.row.data.ID"
                             type="info" [indeterminate]="true">
                         </igx-linear-bar>
                     </div>
@@ -30,9 +31,10 @@
                 <ng-template igxCell let-cell="cell">
                     <div>
                         <igx-simple-combo [id]="'city-' + cell.row.data.ID" placeholder="Choose City..."
-                            [(ngModel)]="cell.value" [displayKey]="'name'" [disabled]="cell.row.cells[2].value === ''">
+                            [ngModel]="cell.value === '' ? undefined : cell.value"  (ngModelChange)="handleCellUpdate($event, cell)"
+                            [displayKey]="'name'" [disabled]="cell.row.cells[2].value === ''">
                         </igx-simple-combo>
-                        <igx-linear-bar [id]="'city-progress-' + cell.row.data.ID" [style.visibility]="'hidden'"
+                        <igx-linear-bar *ngIf="cell.row.data.loadingCity" [id]="'city-progress-' + cell.row.data.ID"
                             type="info" [indeterminate]="true">
                         </igx-linear-bar>
                     </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { IgxSimpleComboComponent, ISimpleComboSelectionChangingEventArgs } from 'igniteui-angular';
+import { CellType, IgxSimpleComboComponent, ISimpleComboSelectionChangingEventArgs } from 'igniteui-angular';
 import { City, Country, getCitiesByCountry, getCountries, Region } from '../../data/cities15000-regions-countries';
 import { DATA } from '../../data/data';
 
@@ -30,6 +30,7 @@ export class GridCascadingCombosComponent implements OnInit {
 
     public countryChanging(e: ISimpleComboSelectionChangingEventArgs, cell) {
         const ID = cell.row.data.ID;
+        cell.row.data.loadingRegion = true;
         const nextRegionCombo = this.combos.filter(
             (combo) => combo.id === 'region-' + ID
         )[0];
@@ -40,14 +41,13 @@ export class GridCascadingCombosComponent implements OnInit {
         this.selectedCountry = e.newValue as Country;
         cell.update(e.newValue ? e.newValue : '');
         if (e.newValue) {
-            document.getElementById('region-progress-' + ID).style.visibility = 'visible';
             this.loadingTime = 2000;
         }
         setTimeout(() => {
             nextRegionCombo.data = getCitiesByCountry([this.selectedCountry?.name])
                 .map((c) => ({ name: c.region, country: c.country }))
                 .filter((v, i, a) => a.findIndex((r) => r.name === v.name) === i);
-            document.getElementById('region-progress-' + ID).style.visibility = 'hidden';
+                cell.row.data.loadingRegion = false;
         }, this.loadingTime);
         this.selectedRegion = null;
         this.selectedCity = null;
@@ -56,6 +56,7 @@ export class GridCascadingCombosComponent implements OnInit {
 
     public regionChanging(e: ISimpleComboSelectionChangingEventArgs, cell) {
         const nextComboID = 'city-' + cell.row.data.ID;
+        cell.row.data.loadingCity = true;
         const cityCombo = this.combos.filter(
             (combo) => combo.id === nextComboID
         )[0];
@@ -64,18 +65,13 @@ export class GridCascadingCombosComponent implements OnInit {
         this.selectedRegion = e.newValue as Region;
         cell.update(e.newValue ? e.newValue : '');
         if (e.newValue) {
-            document.getElementById(
-                'city-progress-' + cell.row.data.ID
-            ).style.visibility = 'visible';
             this.loadingTime = 2000;
         }
         setTimeout(() => {
             cityCombo.data = getCitiesByCountry([this.selectedCountry?.name]).filter(
                 (c) => c.region === this.selectedRegion?.name
             );
-            document.getElementById(
-                'city-progress-' + cell.row.data.ID
-            ).style.visibility = 'hidden';
+            cell.row.data.loadingCity = false;
         }, this.loadingTime);
         this.selectedCity = null;
         this.loadingTime = 0;
@@ -85,10 +81,16 @@ export class GridCascadingCombosComponent implements OnInit {
         const nextCellIndex = cell.column.visibleIndex + 1;
         cell.row.cells[nextCellIndex].update('');
 
-        if (CityCombo !== null) CityCombo.data = [];
+        if (CityCombo !== null) {
+            CityCombo.data = [];
+        }
         if (RegionCombo !== null) {
             RegionCombo.data = [];
             cell.row.cells[nextCellIndex + 1].update('');
         }
+    }
+
+    public handleCellUpdate(value: any, cell: CellType) {
+        cell.update(value);
     }
 }
