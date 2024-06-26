@@ -16,12 +16,7 @@ body {
     overflow: hidden;
     margin: 0;
 }
-@include core();
-@include typography();
-@include theme(
-    $palette: $palette,
-    $schema: $schema
-);
+
 :root {
     @include palette($palette);
 }
