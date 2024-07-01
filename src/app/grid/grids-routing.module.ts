@@ -87,6 +87,7 @@ import { GridColumnSelectionComponent } from './column-selection-sample/column-s
 import { GridColumnSelectionStylesComponent } from './column-selection-styles/column-selection-styles.component';
 import { CustomGridPagingStyleSampleComponent } from './custom-grid-paging-style/custom-grid-paging-style.component';
 import { GridActionStripSampleComponent } from './grid-action-strip/grid-action-strip-sample';
+import { AdvancedRemoteFilteringSampleComponent } from './grid-advanced-remote-filtering-sample/advanced-remote-filtering-sample.component';
 import { GridAdvancedFilteringSampleComponent } from './grid-advanced-filtering-sample/grid-advanced-filtering-sample.component';
 import { GridColumnDataTypesSampleComponent } from './grid-column-data-types-sample/grid-column-data-types-sample.component';
 import { GridAdvancedFilteringStyleComponent } from './grid-advanced-filtering-style/grid-advanced-filtering-style.component';
@@ -759,6 +760,11 @@ export const gridsRoutes: Routes = [
         component: GridCascadingCombosComponent,
         data: gridsRoutesData['grid-cascading-combos'],
         path: 'grid-cascading-combos'
+    },
+    {
+        component: AdvancedRemoteFilteringSampleComponent,
+        data: gridsRoutesData['advanced-remote-filtering'],
+        path: 'grid-advanced-remote-filtering'
     }
 ];
 
