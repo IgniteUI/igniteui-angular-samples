@@ -7,5 +7,6 @@ export const pivotGridsRoutesData = {
     'pivot-grid-features': { displayName: 'Pivot Grid With Features', parentName: 'Pivot Grid' },
     'pivot-grid-state-persistence': { displayName: 'Pivot Grid With State Persistence', parentName: 'Pivot Grid' },
     'pivot-grid-noop-persistence': { displayName: 'Pivot Noop Grid with State Persistence', parentName: 'Pivot Grid' },
-    'pivot-grid-about': { displayName: 'Pivot Grid About', parentName: 'Pivot Grid' }
+    'pivot-grid-about': { displayName: 'Pivot Grid About', parentName: 'Pivot Grid' },
+    'pivot-grid-layout': { displayName: 'Pivot Grid Layout', parentName: 'Pivot Grid' }
 };
