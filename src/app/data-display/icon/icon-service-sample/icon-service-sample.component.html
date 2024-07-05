@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <igx-card>
+        <igx-card-header>
+            <igx-avatar>
+                <igx-icon family="default" name="weather_status"></igx-icon>
+            </igx-avatar>
+            <h3 igxCardHeaderTitle>{{ status }}</h3>
+            <h6 igxCardHeaderSubtitle>Current Weather</h6>
+        </igx-card-header>
+        <igx-card-actions>
+            <button igxButton="contained" igxEnd (click)="updateWeather()">
+                <igx-icon name="sync" family="material"></igx-icon>
+                <span>Refresh</span>
+            </button>
+        </igx-card-actions>
+        <igx-icon family="default" name="weather_status" backdrop inert></igx-icon>
+    </igx-card>
+</div>

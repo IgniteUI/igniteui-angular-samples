@@ -24,6 +24,7 @@ import { IconSample2Component } from './icon/icon-sample-2/icon-sample-2.compone
 import { IconSample3Component } from './icon/icon-sample-3/icon-sample-3.component';
 import { IconSample4Component } from './icon/icon-sample-4/icon-sample-4.component';
 import { IconSample5Component } from './icon/icon-sample-5/icon-sample-5.component';
+import { IconServiceSampleComponent } from './icon/icon-service-sample/icon-service-sample.component';
 import { IconStylingSampleComponent } from './icon/icon-styling-sample/icon-styling-sample.component';
 import { SvgIconSampleComponent } from './icon/svg-icon-sample/svg-icon-sample.component';
 import { IgxForComponent } from './igxFor/igxFor.component';
@@ -207,6 +208,11 @@ export const dataDisplayRoutes: Routes = [
         component: TextHighlightStyleComponent,
         data: dataDisplayRoutesData['text-highlight-style'],
         path: 'text-highlight-style'
+    },
+    {
+        component: IconServiceSampleComponent,
+        data: dataDisplayRoutesData['icon-service'],
+        path: 'icon-service'
     },
     {
         component: IconStylingSampleComponent,
