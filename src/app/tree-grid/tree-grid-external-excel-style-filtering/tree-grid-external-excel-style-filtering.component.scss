@@ -4,6 +4,7 @@
     height: 650px;
     margin: 15px;
     justify-content: center;
+    column-gap: 5px;
 }
 
 .flex-column {
@@ -11,9 +12,6 @@
     flex-flow: column;
     height: 650px;
     margin-left: 1px;
-    font-size: 0.9em;
-    transform: scale(0.95);
-    transform-origin: top left;
 }
 
 .igSelect {
