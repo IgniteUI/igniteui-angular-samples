@@ -35,7 +35,7 @@ export class TreeGridMultiRowDragComponent {
             draggedRow.delete();
         } else {
             this.ids.forEach((rowData) => {
-                this.treeGrid.deleteRow(rowData);
+                this.treeGrid.deleteRow(rowData['ID']);
             });
             this.selected = false;
         }
