@@ -63,18 +63,21 @@ export class PivotGridLayoutComponent {
                 memberFunction: () => 'All Products',
                 memberName: 'AllProducts',
                 enabled: true,
+                horizontalSummary: true,
                 width: "150px",
                 childLevel: {
                     memberFunction: (data) => data.Product.Name,
                     memberName: 'ProductCategory',
-                    enabled: true
+                    horizontalSummary: true,
+                    width: "150px",
+                    enabled: true,
+                    childLevel: {
+                        memberName: 'City',
+                        width: "150px",
+                        memberFunction: (data) => data.Seller.City,
+                        enabled: true
+                    }
                 }
-            },
-            {
-                memberName: 'City',
-                width: "150px",
-                memberFunction: (data) => data.Seller.City,
-                enabled: true
             }
         ],
         values: [
