@@ -1,0 +1,11 @@
+<div class="switches">
+    <igx-switch [checked]="pivotUI.showRowHeaders" (change)="onShowRowHeaders($event)">Show row headers</igx-switch>
+    <igx-switch [checked]="pivotUI.rowLayout === 'horizontal'" (change)="onLayoutToggle($event)">Horizontal layout</igx-switch>
+    <igx-switch [checked]="pivotConfig.rows[0].horizontalSummary" (change)="onSummariesToggle($event)">Horizontal summaries</igx-switch>
+    <igx-switch [checked]="pivotUI.horizontalSummariesPosition === 'top'" (change)="onSummariesPositionToggle($event)">Horizontal summaries position</igx-switch>
+</div>
+<div class="pivot-container">
+    <igx-pivot-grid #grid1 [data]="data" [height]="'800px'" [pivotConfiguration]="pivotConfig" [rowSelection]="'single'"
+        [superCompactMode]="true" [defaultExpandState]='true' [pivotUI]="pivotUI">
+    </igx-pivot-grid>
+</div>
