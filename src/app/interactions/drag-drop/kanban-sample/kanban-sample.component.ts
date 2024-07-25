@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 /* eslint-disable @typescript-eslint/naming-convention */
-import { ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2, viewChild, ViewChild } from '@angular/core';
 import { IDropBaseEventArgs, IDropDroppedEventArgs } from 'igniteui-angular';
 
 enum state {
@@ -20,6 +20,9 @@ interface IListItem {
     styleUrls: ['./kanban-sample.component.scss']
 })
 export class KanbanSampleComponent implements OnInit {
+    @ViewChild('toDo', { read: ElementRef }) public toDo: ElementRef;
+    @ViewChild('inProgress', { read: ElementRef }) public inProgress: ElementRef;
+    @ViewChild('done', { read: ElementRef }) public done: ElementRef;
     public toDoList: IListItem[];
     public inProgressList: IListItem[];
     public doneList: IListItem[];
