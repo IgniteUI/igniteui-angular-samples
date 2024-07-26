@@ -615,6 +615,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: '/tree-grid/'
         }));
 
+        // TreeGrid Advanced Remote Filtering sample
+        configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat.ts', '/src/app/tree-grid/services/remoteFilteringService.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridAdvancedRemoteFilteringSampleComponent', 'IgxIconModule', 'IgxToastModule'],
+                ngDeclarations: ['TreeGridAdvancedRemoteFilteringSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxIconModule', 'IgxToastModule']
+            }),
+            component: 'TreeGridAdvancedRemoteFilteringSampleComponent',
+            shortenComponentPathBy: '/tree-grid/'
+        }));
+
         // TreeGrid multi cell selection
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts'],
