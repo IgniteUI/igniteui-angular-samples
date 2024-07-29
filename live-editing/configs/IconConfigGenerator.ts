@@ -1,7 +1,9 @@
 import { HttpClientModule } from '@angular/common/http';
 import {IgxIconModule,
+IgxAvatarModule,
 IgxInputGroupModule,
 IgxButtonModule,
+IgxCardModule,
 IgxSelectModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class IconConfigGenerator implements IConfigGenerator {
@@ -41,6 +43,17 @@ export class IconConfigGenerator implements IConfigGenerator {
                 imports: ['IgxIconModule', 'IconStylingSampleComponent'],
                 ngDeclarations: ['IconStylingSampleComponent'],
                 ngImports: ['IgxIconModule']
+            }),
+            shortenComponentPathBy: "/data-display/icon/"
+        }));
+
+        // Icon Service Sample
+        configs.push(new Config({
+            component: 'IconServiceSampleComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxAvatarModule', 'IgxButtonModule', 'IgxCardModule', 'IgxIconModule', 'IconServiceSampleComponent'],
+                ngDeclarations: ['IconStylingSampleComponent'],
+                ngImports: ['IgxAvatarModule', 'IgxButtonModule', 'IgxCardModule', 'IgxIconModule']
             }),
             shortenComponentPathBy: "/data-display/icon/"
         }));

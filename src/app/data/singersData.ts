@@ -1556,7 +1556,7 @@ export const SINGERS: Singer[] = [
                 {
                     Number: 4,
                     Title: 'Regret',
-                    Released: new Date('22 Avg 2004'),
+                    Released: new Date('22 Aug 2004'),
                     Genre: 'Heavy metal',
                     Album: 'Nemesis'
                 }]
