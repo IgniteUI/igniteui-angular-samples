@@ -8,11 +8,11 @@ const DEBOUNCE_TIME = 300;
 
 @Component({
     providers: [RemoteFilteringService],
-    selector: 'app-tree-grid-advanced-remote-filtering-sample',
-    styleUrls: ['./tree-grid-advanced-remote-filtering-sample.component.scss'],
-    templateUrl: './tree-grid-advanced-remote-filtering-sample.component.html'
+    selector: 'tree-grid-advanced-remote-filtering',
+    styleUrls: ['./tree-grid-advanced-remote-filtering.component.scss'],
+    templateUrl: './tree-grid-advanced-remote-filtering.component.html'
 })
-export class TreeGridAdvancedRemoteFilteringSampleComponent implements OnInit, AfterViewInit, OnDestroy {
+export class TreeGridAdvancedRemoteFilteringComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
     public remoteData: Observable<any[]>;
     public noopFilterStrategy = NoopFilteringStrategy.instance();

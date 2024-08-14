@@ -51,6 +51,8 @@ export const treeGridRoutesData = {
         { displayName: 'TreeGrid External Excel Style Filtering', parentName: 'TreeGrid' },
     'tree-grid-external-advanced-filtering':
         { displayName: 'TreeGrid External Advanced Filtering', parentName: 'TreeGrid' },
+    'tree-grid-advanced-remote-filtering':
+        { displayName: 'TreeGrid Advanced Remote Filtering', parentName: 'TreeGrid' },
     'tree-grid-external-outlet': { displayName: 'TreeGrid External Outlet', parentName: 'TreeGrid' },
     'treegrid-filtering-custom': { displayName: 'TreeGrid Custom Filtering', parentName: 'TreeGrid' },
     'treegrid-multi-column-header-template': {

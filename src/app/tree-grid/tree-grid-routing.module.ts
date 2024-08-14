@@ -100,6 +100,7 @@ import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/tr
 import { TreeGridValidatorServiceCrossFieldComponent } from './tree-grid-validator-service-cross-field/tree-grid-validator-service-cross-field.component';
 import { TreeGridValidationStyleComponent } from './tree-grid-validation-style/tree-grid-validation-style.component';
 import { TreeGridSummaryExportComponent } from './tree-grid-summary-export/tree-grid-summary-export.component';
+import { TreeGridAdvancedRemoteFilteringComponent } from './tree-grid-advanced-remote-filtering/tree-grid-advanced-remote-filtering.component';
 
 export const treeGridRoutes: Routes = [
     {
@@ -256,6 +257,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridExcelStyleFilteringLoadOnDemandComponent,
         data: treeGridRoutesData['treegrid-excel-style-filtering-load-on-demand'],
         path: 'treegrid-excel-style-filtering-load-on-demand'
+    },
+    {
+        component: TreeGridAdvancedRemoteFilteringComponent,
+        data: treeGridRoutesData['treegrid-advanced-remote-filtering'],
+        path: 'treegrid-advanced-remote-filtering'
     },
     {
         component: TreeGridFilteringCustomSampleComponent,
