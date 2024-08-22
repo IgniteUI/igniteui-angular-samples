@@ -1,6 +1,10 @@
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/naming-convention */
 import {HttpClientModule} from '@angular/common/http';
+import {
+    Router,
+    RouterModule
+} from '@angular/router';
 import {IgxAvatarModule,
 IgxBadgeModule,
 IgxButtonGroupModule,
@@ -20,6 +24,7 @@ IgxSwitchModule,
 IgxTabsModule,
 IgxToggleModule,
 IgxToastModule,
+IgxFocusModule,
 IgxGridComponent} from 'igniteui-angular';
 import {IgxCategoryChartModule,
 IgxLegendModule,
@@ -95,13 +100,13 @@ export class DVGridConfigGenerator implements IConfigGenerator {
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxPreventDocumentScrollModule', 'IgxCategoryChartModule',
-                    'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
+                    'IgxGridModule', 'IgxButtonGroupModule', 'IgxFocusModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxSwitchModule',
                     'IgxRippleModule', 'FinJSDemoComponent', 'IgxDialogModule', 'FinancialDataService','ControllerComponent', 'GridFinJSComponent', 'IgxToastModule',
-                    'HttpClientModule', 'SignalRService'],
+                    'HttpClientModule', 'SignalRService', 'RouterModule'],
                 ngDeclarations: ['FinJSDemoComponent','ControllerComponent', 'GridFinJSComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
-                    'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule', 'IgxCategoryChartModule', 'IgxDialogModule', 'IgxToastModule', 'HttpClientModule'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxButtonGroupModule', 'IgxFocusModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
+                    'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule', 'IgxCategoryChartModule', 'IgxDialogModule', 'IgxToastModule', 'HttpClientModule', 'RouterModule', 'RouterModule.forRoot([])'],
                 ngProviders: ['FinancialDataService', 'IgxExcelExporterService', 'IgxCsvExporterService', 'SignalRService']
             })
         }));

@@ -1,10 +1,12 @@
 <igx-input-group>
-    <label igxLabel for="email">Increase</label>
-    <input igxInput
-    type="text"
-    [(ngModel)]="value"
-    [igxMask]="'000'"
-    [igxTextSelection]="true"
-    [focusedValuePipe]="inputFormat"
-    [displayValuePipe]="displayFormat"/>
+    <label igxLabel>Increase</label>
+    <input
+        igxInput
+        type="text"
+        [(ngModel)]="value"
+        [igxMask]="'000'"
+        [igxTextSelection]="true"
+        [focusedValuePipe]="inputFormat"
+        [displayValuePipe]="displayFormat"
+    />
 </igx-input-group>

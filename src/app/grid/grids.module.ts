@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 // tslint:disable:max-line-length
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
@@ -143,8 +143,7 @@ import { GridSummaryExportComponent } from './grid-summary-export/grid-summary-e
 import { GridStatePersistenceSampleComponent } from './grid-state-persistence-sample/grid-state-persistance-sample.component';
 import { GridCascadingCombosComponent } from './grid-cascading-combos/grid-cascading-combos.component';
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         GridBatchEditingSampleComponent,
         GridActionStripSampleComponent,
         GridColumnHidingSampleComponent,
@@ -273,12 +272,9 @@ import { GridCascadingCombosComponent } from './grid-cascading-combos/grid-casca
         GridSummaryExportComponent,
         GridStatePersistenceSampleComponent,
         GridCascadingCombosComponent
-    ],
-    imports: [
-        CommonModule,
+    ], imports: [CommonModule,
         FormsModule,
         IgxPreventDocumentScrollModule,
-        HttpClientModule,
         GridsRoutingModule,
         IgcFormsModule,
         IgxActionStripModule,
@@ -315,7 +311,5 @@ import { GridCascadingCombosComponent } from './grid-cascading-combos/grid-casca
         IgxSimpleComboModule,
         IgxDragDropModule,
         IgxDropDownModule,
-        IgxIconButtonDirective
-    ]
-})
+        IgxIconButtonDirective], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class GridsModule { }

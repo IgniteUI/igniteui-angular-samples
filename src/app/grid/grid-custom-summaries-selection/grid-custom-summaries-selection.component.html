@@ -15,7 +15,7 @@
         <igx-column [field]="'OrderDate'" [dataType]="'date'"></igx-column>
         <igx-grid-footer>
             <div class="custom-summaries">
-                <div *ngFor="let summary of selectionSummaries" class="summaries-data-wrapper" [ngClass]="grid1.displayDensity">
+                <div *ngFor="let summary of selectionSummaries" class="summaries-data-wrapper">
                     <span class="igx-grid-summary__label">{{ summary.label }}</span>
                     <span class="igx-grid-summary__result">{{ format(summary.summaryResult) }}</span>
                 </div>

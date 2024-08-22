@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* tslint:disable:max-line-length */
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IgxActionStripModule, IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule,
@@ -99,8 +99,7 @@ import { HGridValidationStyleComponent } from './hierarchical-grid-validation-st
 import { HGridPhoneFormatDirective, HierarchicalGridValidatorServiceExtendedComponent } from './hierarchical-grid-validator-service-extended/hierarchical-grid-validator-service-extended.component';
 import { HGridSummaryExportComponent } from './hgrid-summary-export/hgrid-summary-export.component';
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         HGridFilteringSampleComponent,
         HGridCustomFilteringSampleComponent,
         HGridSortingStylingComponent,
@@ -189,12 +188,9 @@ import { HGridSummaryExportComponent } from './hgrid-summary-export/hgrid-summar
         HGridValidationStyleComponent,
         HGridPhoneFormatDirective,
         HGridSummaryExportComponent
-    ],
-    imports: [
-        CommonModule,
+    ], imports: [CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule,
         HierarchicalGridRoutingModule,
         IgxPreventDocumentScrollModule,
         IgxActionStripModule,
@@ -226,7 +222,5 @@ import { HGridSummaryExportComponent } from './hgrid-summary-export/hgrid-summar
         IgxTabsModule,
         IgxListModule,
         IgxDragDropModule,
-        IgxIconButtonDirective
-    ]
-})
+        IgxIconButtonDirective], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class HierarchicalGridModule { }

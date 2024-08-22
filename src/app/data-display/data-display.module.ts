@@ -5,6 +5,7 @@ import {
     IgxAvatarModule,
     IgxBadgeModule,
     IgxButtonModule,
+    IgxCardModule,
     IgxChipsModule,
     IgxDropDownModule,
     IgxFilterModule,
@@ -43,6 +44,7 @@ import { IconSample3Component } from './icon/icon-sample-3/icon-sample-3.compone
 import { IconSample4Component } from './icon/icon-sample-4/icon-sample-4.component';
 import { IconSample5Component } from './icon/icon-sample-5/icon-sample-5.component';
 import { IconStylingSampleComponent } from './icon/icon-styling-sample/icon-styling-sample.component';
+import { IconServiceSampleComponent } from './icon/icon-service-sample/icon-service-sample.component';
 import { SvgIconSampleComponent } from './icon/svg-icon-sample/svg-icon-sample.component';
 import { IgxForComponent } from './igxFor/igxFor.component';
 import { IgxForHorizontalComponent } from './igxFor/igxFor-horizontal-sample/igxFor-horizontal.component';
@@ -90,6 +92,7 @@ import { MaterialSymbolsComponent } from './icon/material-symbols/material-symbo
         IconSample4Component,
         IconSample5Component,
         IconStylingSampleComponent,
+        IconServiceSampleComponent,
         SvgIconSampleComponent,
         IgxForComponent,
         IgxForHorizontalComponent,
@@ -120,6 +123,7 @@ import { MaterialSymbolsComponent } from './icon/material-symbols/material-symbo
         IgxAvatarModule,
         IgxBadgeModule,
         IgxListModule,
+        IgxCardModule,
         IgxChipsModule,
         IgxDropDownModule,
         IgxFocusModule,

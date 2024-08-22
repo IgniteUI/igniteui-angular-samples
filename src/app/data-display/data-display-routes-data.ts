@@ -14,6 +14,7 @@ export const dataDisplayRoutesData = {
     "circular-indeterminate-progressbar": { displayName: "Circular Indeterminate Progressbar", parentName: "Circular Progressbar" },
     "circular-styling-sample": { displayName: "Circular Styling Sample", parentName: "Circular Progressbar" },
     "icon-sample-1": { displayName: "Simple Icons", parentName: "Icon" },
+    "icon-service": { displayName: "Icon Service", parentName: "Icon" },
     "icon-styling": { displayName: "Icon Styling", parentName: "Icon" },
     "svg-icon-sample": { displayName: "SVG Icons", parentName: "Icon" },
     "material-symbols": { displayName: "Material Symbols", parentName: "Icon" },

@@ -1,19 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxIconButtonDirective, IgxIconModule, IgxPaginatorModule, IgxRippleModule } from 'igniteui-angular';
 import { PaginatorRoutingModule } from './pagination-routing.module';
 import { PaginationSampleComponent } from './paginator/pagination-sample.component';
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         PaginationSampleComponent
-    ],
-    imports: [
-        CommonModule,
+    ], imports: [CommonModule,
         FormsModule,
-        HttpClientModule,
         PaginatorRoutingModule,
         IgxCardModule,
         IgxPaginatorModule,
@@ -21,7 +17,5 @@ import { PaginationSampleComponent } from './paginator/pagination-sample.compone
         IgxButtonGroupModule,
         IgxIconModule,
         IgxRippleModule,
-        IgxIconButtonDirective
-    ]
-})
+        IgxIconButtonDirective], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class PaginationModule { }

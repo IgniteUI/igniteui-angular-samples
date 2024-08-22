@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 // tslint:disable:max-line-length
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IgxCheckboxModule, IgxIconModule, IgxPivotGridModule } from 'igniteui-angular';
+import { IgxButtonModule, IgxCheckboxModule, IgxIconModule, IgxPivotGridModule, IgxSwitchModule } from 'igniteui-angular';
 import { PivotExportComponent } from './pivot-export/pivot-export.component';
 import { PivotFeaturesComponent } from './pivot-features/pivot-features.component';
 import { PivotGridBasicSampleComponent } from './pivot-basic-sample/pivot-grid-basic-sample.component';
@@ -14,9 +14,9 @@ import { PivotGridsRoutingModule } from './pivot-grids-routing.module';
 import { PivotGridStatePersistenceSampleComponent } from './pivot-state-persistence/pivot-grid-state-persistence-sample.component';
 import { PivotGridAboutComponent } from './pivot-state-persistence/about.component';
 import { PivotGridNoopPersistenceSampleComponent } from './pivot-grid-noop-persistence/pivot-grid-noop-persistence-sample.component';
+import { PivotGridLayoutComponent } from './pivot-layout/pivot-layout.component';
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         PivotGridBasicSampleComponent,
         PivotDataSelectorSampleComponent,
         PivotExportComponent,
@@ -24,16 +24,14 @@ import { PivotGridNoopPersistenceSampleComponent } from './pivot-grid-noop-persi
         PivotGridStatePersistenceSampleComponent,
         PivotGridNoopSampleComponent,
         PivotGridAboutComponent,
-        PivotGridNoopPersistenceSampleComponent
-    ],
-    imports: [
-        CommonModule,
+        PivotGridNoopPersistenceSampleComponent,
+        PivotGridLayoutComponent
+    ], imports: [CommonModule,
         FormsModule,
-        HttpClientModule,
         PivotGridsRoutingModule,
+        IgxButtonModule,
         IgxPivotGridModule,
         IgxCheckboxModule,
-        IgxIconModule
-    ]
-})
+        IgxSwitchModule,
+        IgxIconModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class PivotGridsModule { }

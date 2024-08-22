@@ -3,3 +3,9 @@
     min-width: 200px;
     margin: 8px;
 }
+
+:host {
+	igx-years-view {
+		--ig-size: 2;
+	}
+}

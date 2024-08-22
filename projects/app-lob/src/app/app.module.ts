@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
@@ -14,16 +14,13 @@ import { HomeComponent } from './home/home.component';
 import { DocsLayoutComponent } from './index/docs-layout.component';
 import { IndexComponent } from './index/index.component';
 import { SEOService } from './seo.service';
-@NgModule({
-    bootstrap: [AppComponent],
+@NgModule({ bootstrap: [AppComponent],
     declarations: [
         AppComponent,
         HomeComponent,
         DocsLayoutComponent,
         IndexComponent
-    ],
-    imports: [
-        AppRoutingModule,
+    ], imports: [AppRoutingModule,
         IgxRippleModule,
         IgxNavbarModule,
         IgxNavigationDrawerModule,
@@ -34,15 +31,12 @@ import { SEOService } from './seo.service';
         BrowserAnimationsModule,
         IgxButtonModule,
         FormsModule,
-        HttpClientModule,
         HammerModule,
         IgxExtrasModule,
         IgxFocusModule,
         IgxToggleModule,
-        IgxIconButtonDirective
-    ],
-    providers: [
-        SEOService
-    ]
-})
+        IgxIconButtonDirective], providers: [
+        SEOService,
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }

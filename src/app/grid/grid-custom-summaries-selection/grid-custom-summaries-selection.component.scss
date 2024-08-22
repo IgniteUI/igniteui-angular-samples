@@ -56,17 +56,5 @@ div.igx-grid__tfoot {
     justify-content: flex-end;
 }
 
-.summaries-data-wrapper { display: inline-block; }
+.summaries-data-wrapper { display: inline-block; padding-right: 24px; }
 .summaries-data-wrapper span:first-child { margin-right: 16px }
-
-.cosy {
-    padding-right: 16px;
-}
-
-.compact {
-    padding-right: 12px;
-}
-
-.comfortable {
-    padding-right: 24px;
-}

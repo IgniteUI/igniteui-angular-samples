@@ -1,4 +1,5 @@
 import {IgxButtonModule,
+IgxButtonGroupModule,
 IgxCalendarModule,
 IgxCardModule,
 IgxDialogModule,
@@ -98,6 +99,16 @@ export class CalendarConfigGenerator implements IConfigGenerator {
                 imports: ['IgxCalendarModule', 'IgxSnackbarModule', 'CalendarSample8Component'],
                 ngDeclarations: ['CalendarSample8Component'],
                 ngImports: ['IgxCalendarModule', 'IgxSnackbarModule']
+            }),
+            shortenComponentPathBy: "/scheduling/calendar/"
+        }));
+
+        configs.push(new Config({
+            component: 'CalendarSample9Component',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxButtonModule', 'IgxButtonGroupModule', 'IgxCalendarModule', 'CalendarSample9Component'],
+                ngDeclarations: ['CalendarSample9Component'],
+                ngImports: ['IgxButtonModule', 'IgxButtonGroupModule', 'IgxCalendarModule']
             }),
             shortenComponentPathBy: "/scheduling/calendar/"
         }));

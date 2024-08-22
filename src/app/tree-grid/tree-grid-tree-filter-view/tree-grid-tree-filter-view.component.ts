@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent, TreeGridFilteringStrategy } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'app-tree-grid-tree-filter-view',
     styleUrls: ['./tree-grid-tree-filter-view.component.scss'],
     templateUrl: 'tree-grid-tree-filter-view.component.html'

@@ -1,11 +1,11 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-    IgxAutocompleteModule, IgxButtonModule, IgxDropDownModule,
-    IgxIconModule, IgxInputGroupModule, IgxLayoutModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxRippleModule, IgxTreeModule
+    IgxAutocompleteModule, IgxButtonModule, IgxButtonGroupModule, IgxDateRangePickerModule, IgxDropDownModule,
+    IgxIconModule, IgxInputGroupModule, IgxLayoutModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxRippleModule, IgxSliderModule, IgxTreeModule
 } from 'igniteui-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,16 +14,13 @@ import { DocsLayoutComponent } from './index/docs-layout.component';
 import { IndexComponent } from './index/index.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-@NgModule({
-    bootstrap: [AppComponent],
+@NgModule({ bootstrap: [AppComponent],
     declarations: [
         AppComponent,
         HomeComponent,
         DocsLayoutComponent,
         IndexComponent
-    ],
-    imports: [
-        AppRoutingModule,
+    ], imports: [AppRoutingModule,
         IgxAutocompleteModule,
         IgxRippleModule,
         IgxNavbarModule,
@@ -35,11 +32,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         BrowserModule,
         BrowserAnimationsModule,
         IgxButtonModule,
+        IgxButtonGroupModule,
         FormsModule,
-        HttpClientModule,
         HammerModule,
-        NgbModule
-    ],
-    providers: []
-})
+        NgbModule,
+        IgxSliderModule,
+        IgxDateRangePickerModule,
+        IgxDropDownModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

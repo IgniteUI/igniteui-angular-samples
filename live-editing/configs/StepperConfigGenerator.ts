@@ -11,6 +11,7 @@ import {
     IgxSelectModule,
     IgxIconModule
 } from 'igniteui-angular';
+import { ReactiveFormsModule} from '@angular/forms'
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 
 export class StepperConfigGenerator implements IConfigGenerator {
@@ -26,6 +27,20 @@ export class StepperConfigGenerator implements IConfigGenerator {
                     'IgxIconModule', 'IgxBadgeModule'],
                 ngDeclarations: ['StepperOverviewSampleComponent'],
                 ngImports: ['IgxStepperModule', 'IgxMaskModule', 'IgxInputGroupModule', 'IgxButtonModule',
+                    'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule',
+                    'IgxIconModule', 'IgxBadgeModule']
+            }),
+            shortenComponentPathBy: '/layouts/stepper/'
+        }));
+
+        configs.push(new Config({
+            component: 'StepperSampleReactiveFormsComponent',
+            appModuleConfig: new AppModuleConfig({
+                imports: ['ReactiveFormsModule', 'StepperSampleReactiveFormsComponent', 'IgxStepperModule', 'IgxMaskModule', 'IgxInputGroupModule', 'IgxButtonModule',
+                    'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule',
+                    'IgxIconModule', 'IgxBadgeModule'],
+                ngDeclarations: ['StepperSampleReactiveFormsComponent'],
+                ngImports: ['ReactiveFormsModule', 'IgxStepperModule', 'IgxMaskModule', 'IgxInputGroupModule', 'IgxButtonModule',
                     'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule',
                     'IgxIconModule', 'IgxBadgeModule']
             }),

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
@@ -51,8 +51,7 @@ import { SimpleComboStylingComponent } from './combo/simple-combo-styling/simple
 import { ListItemSelectionComponent } from './list/list-item-selection/list-item-selection.component';
 import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-combo-remote.component';
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         ListComponent,
         ListSample1Component,
         ListSample2Component,
@@ -79,9 +78,7 @@ import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-c
         TreeAdvancedSampleComponent,
         ListItemSelectionComponent,
         SimpleComboRemoteComponent
-    ],
-    imports: [
-        CommonModule,
+    ], imports: [CommonModule,
         FormsModule,
         ListsRoutingModule,
         IgxAvatarModule,
@@ -95,7 +92,6 @@ import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-c
         IgxSwitchModule,
         IgxToastModule,
         IgxButtonGroupModule,
-        HttpClientModule,
         IgxRippleModule,
         IgxCardModule,
         IgxTreeModule,
@@ -103,7 +99,5 @@ import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-c
         IgxFinancialChartModule,
         IgxSimpleComboModule,
         IgxProgressBarModule,
-        IgxIconButtonDirective
-    ]
-})
+        IgxIconButtonDirective], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class ListsModule { }
