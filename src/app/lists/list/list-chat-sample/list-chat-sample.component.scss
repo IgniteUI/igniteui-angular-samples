@@ -1,197 +1,121 @@
-.chat-sample-wrapper {
-    margin: 0 auto;
-    height: 100%;
-    padding-bottom: 50px;
+@use "igniteui-angular/theming" as *;
+
+igx-avatar {
+    --ig-size: var(--ig-size-small);
 }
 
-.chat-sample__form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    position: relative;
+igx-list {
+    --ig-spacing-block-small: 0;
+    --ig-spacing-block-medium: 0;
+    --ig-spacing-block-large: 0;
+    --item-background: transparent;
+    --border-color: transparent;
+    --item-background-hover: transparent;
+    --item-background-active: transparent;
+
+    gap: rem(4px);
 }
 
-igx-icon {
-    cursor: pointer;
-    user-select: none;
+.sample-form {
+    overflow-y: scroll;
+    overflow-x: auto;
+    max-width: rem(400px);
+    height: rem(580px);
+    background: color(null, surface, 500);
+    box-shadow: var(--ig-elevation-12);
+    margin: rem(24px) auto;
+    border-radius: rem(4px);
+
+    * {
+        overflow-anchor: none;
+    }
 }
 
-.igx-input-group--border .igx-input-group__bundle,
-.igx-input-group--border .igx-input-group__bundle:hover,
-.igx-input-group--border .igx-input-group__bundle:focus,
-.igx-input-group--focused.igx-input-group--border .igx-input-group__bundle,
-.igx-input-group--focused,
-.igx-input-group__bundle:focus,
-.igx-input-group__bundle,
-.igx-input-group:focus
-{
-    box-shadow: none;
-    outline: none;
-}
-
-.igx-input-group--border .igx-input-group__bundle {
-    padding: 4px 0;
-}
-  
-.igx-list {
-    position: relative;
-    display: flex;
-    flex-flow: column nowrap;
-    background-color: #fff;
-    height: 100%;
-    overflow: auto;
-    z-index: 0;
-    flex: 1 0 0%;
-    padding-bottom: 10px;
-}
-
-.chat-massage-field {
-    display: flex;
-    align-items: center;
-    position: fixed;
-    left: 0;
-    right: 0;
+.massage-field {
+    position: sticky;
     bottom: 0;
-    width: 100%;
-    padding: 0 8px;
-    height: 50px;
-    margin: 0 auto;
-    border-top: 1px solid #ddd;
-    background: #fff;
+    padding-block: rem(12px);
+    padding-inline: rem(16px);
+    background: color(null, surface, 500);
 }
 
-.chat-sample-wrapper {
-    .input-round-box {
-        transform: translateY(0);
-        font-size: 14px;
+.overflow-anchor {
+    height: 1px;
+    overflow-anchor: auto;
+}
+
+.contact {
+    margin-block: rem(24px) rem(8px);
+
+    &__panel {
+        display: flex;
+        align-items: center;
+        gap: rem(8px);
     }
 
-    .igx-input-group__bundle-main {
-        padding: 0;
-    }
-
-    .chat-input-group {
-        flex: 1 0 0%;
-        height: 40px;
+    &__panel {
         display: flex;
         align-items: center;
     }
 
-    .igx-input-group__wrapper {
-        flex: 1;
-    }
-
-    .igx-input-group--box .igx-input-group__bundle {
-        padding: 0 8px;
+    &:active {
+        background: transparent;
     }
 }
 
+.message {
+    @include type-style("body-2");
 
-
-.send-message-button {
-    margin-left: 8px;
-}
-  
-.igx-list__item-base:active,
-.igx-list__item-base {
-    padding: 0;
-    min-height: 36px;
-    user-select: auto!important;
-}
-  
-.others-message,
-.my-message {
-    .igx-list__item-content {
-        font-weight: 600;
-        min-height: 16px;
-        border-radius: 4px;
-        margin: 0 0 4px 16px;
-        padding: 4px 8px;
-        font-size: 12px;
-        font-weight: 300;
-    }
-}
-
-
-
-.igx-list__item-content {
-    padding: .5rem 0;
-}
-
-
-.others-message--first {
-    .igx-list__item-content {
-        border-top-left-radius: 0;
-    }   
-}
-
-.my-message--first {
-    .igx-list__item-content {
-        border-top-right-radius: 0;
-    }
-}
-  
-.others-message:active,
-.others-message {
-    .igx-list__item-content {
-        align-self: flex-start;
-        background-color: #09f;
-        color: white;
-    }
-}
-  
-.my-message:active,
-.my-message {
-    .igx-list__item-content {
-        align-self: flex-end;
-        background-color: rgb(240, 240, 240);
-    }
-}
-  
-.my-message {
-    .igx-list__item-content {
-        margin-right: 16px;
-    }
-}
-  
-.message__info {
-    margin-left: 10px;
-    font-weight: 400;
-}
-  
-.my-message__info {
-    margin-top: 20px;
-    font-weight: 400;
-    text-align: right;
-}
-  
-.contact:active {
-    background: transparent;
-} 
-  
-.contact {
-    margin: 20px 16px 5px 16px;
-}
-  
-.contact__panel {
     display: flex;
     align-items: center;
-    padding: 0;
+    min-height: rem(32px);
+    border-radius: rem(4px);
+    padding-inline: rem(16px);
+
+    &__info {
+        h6 {
+            @include type-style("body-1");
+            font-weight: 600;
+            margin: initial;
+            line-height: 1;
+        }
+
+        span {
+            @include type-style("caption");
+        }
+    }
 }
 
-@media only screen and (min-width: 960px) {
-    .chat-sample-wrapper {
-        max-width: 400px;
-        max-height: 600px;
-        margin: 20px auto;
-        padding: 0;
-        border: 1px solid #ddd;
-        box-shadow: 0 0 10px #999;
+.own-message {
+    margin-inline-start: auto;
+    background-color: color(null, gray, 200);
+    color: contrast-color(null, gray, 200);
+
+    &--first {
+        border-top-right-radius: 0;
     }
-    .chat-massage-field {
-        max-width: 400px;
-        position: static;
-        padding-bottom: 0;
+
+    &.message__info {
+        background: transparent;
+        color: color(null, gray, 700);
+        text-align: end;
+    }
+
+    &:active {
+        background-color: inherit;
+    }
+}
+
+.other-message {
+    background-color: color(null, primary, 800);
+    color: contrast-color(null, primary, 800);
+
+    &--first {
+        border-top-left-radius: 0;
+    }
+
+    &:active {
+        background-color: color(null, primary, 900);
+        color: contrast-color(null, primary, 900);
     }
 }

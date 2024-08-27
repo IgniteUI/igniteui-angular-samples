@@ -1,53 +1,98 @@
-<div class="chat-sample-wrapper">
-    <form class="chat-sample__form">
-        <igx-list #list>
-            <ng-template #othersMessage let-message="message" let-contact="contact" let-messageIndex="index">
-                <igx-list-item class="contact" *ngIf="isFirstMessage(messageIndex)">
-                    <div class="contact__panel">
-                        <igx-avatar [src]="contact.photo" shape="circle"></igx-avatar>
-                        <span class="message__info">
-                            {{ contact.name }}, {{ message.timestamp | date: 'shortTime'}}
+<form #form class="sample-form">
+    <igx-list #list>
+        <ng-template
+            #othersMessage
+            let-message="message"
+            let-contact="contact"
+            let-messageIndex="index"
+        >
+            <igx-list-item class="contact" *ngIf="isFirstMessage(messageIndex)">
+                <section class="contact__panel">
+                    <igx-avatar
+                        [src]="contact.photo"
+                        shape="circle"
+                    ></igx-avatar>
+                    <header class="message__info">
+                        <h6>{{ contact.name }}</h6>
+                        <span>
+                            {{ message.timestamp | date: "shortTime" }}
                         </span>
-                    </div>
-                </igx-list-item>
-                <igx-list-item [ngClass]="{
-                    'others-message': true,
-                    'others-message--first': isFirstMessage(messageIndex)}">
+                    </header>
+                </section>
+            </igx-list-item>
+            <igx-list-item>
+                <div
+                    [ngClass]="{
+                        message: true,
+                        'other-message': true,
+                        'other-message--first': isFirstMessage(messageIndex)
+                    }"
+                >
+                    <span>{{ message.message }}</span>
+                </div>
+            </igx-list-item>
+        </ng-template>
+        <ng-template #myMessage let-message="message" let-messageIndex="index">
+            <igx-list-item class="contact" *ngIf="isFirstMessage(messageIndex)">
+                <header class="own-message message__info">
+                    <h6>You</h6>
+                    <span class="message__info">
+                        {{ message.timestamp | date: "shortTime" }}
+                    </span>
+                </header>
+            </igx-list-item>
+            <igx-list-item>
+                <div
+                    [ngClass]="{
+                        message: true,
+                        'own-message': true,
+                        'own-message--first': isFirstMessage(messageIndex)
+                    }"
+                >
                     <span>
                         {{ message.message }}
                     </span>
-                </igx-list-item>
-            </ng-template>
-            <ng-template #myMessage let-message="message" let-messageIndex="index">
-                <igx-list-item class="contact" *ngIf="isFirstMessage(messageIndex)">
-                    <span class="my-message__info">
-                        {{ message.timestamp | date: 'shortTime'}}
-                    </span>
-                </igx-list-item>
-                <igx-list-item class="my-message" [ngClass]="{
-                    'my-message': true,
-                    'my-message--first': isFirstMessage(messageIndex)}">
-                    <span>
-                        {{ message.message }}
-                    </span>
-                </igx-list-item>
-            </ng-template>
+                </div>
+            </igx-list-item>
+        </ng-template>
 
-            <ng-container *ngFor="let message of messagesService.getMessages(); index as i">
-                <ng-container *ngTemplateOutlet="getMessageTemplate(message); context: {message: message, contact: contactsService.getContact(message.authorId), index: i}">
-                </ng-container>
+        <ng-container
+            *ngFor="let message of messagesService.getMessages(); index as i"
+        >
+            <ng-container
+                *ngTemplateOutlet="
+                    getMessageTemplate(message);
+                    context: {
+                        message: message,
+                        contact: contactsService.getContact(message.authorId),
+                        index: i
+                    }
+                "
+            >
             </ng-container>
-        </igx-list>
+        </ng-container>
+    </igx-list>
 
-        <div class="chat-massage-field">
-            <igx-input-group class="chat-input-group" type="box">
-                <input class="input-round-box" placeholder="Send message" autocomplete="off" igxInput #newMessage name="newMessage"
-                    [(ngModel)]="message" (keypress)="onMessageKeypress($event)" />
-            </igx-input-group>
-            <button class="send-message-button" igxIconButton="flat"
-                igxRipple="#09f" [igxRippleCentered]="true" (click)="onSendButtonClick()">
-                <igx-icon family="material">send</igx-icon>
+    <div class="massage-field">
+        <igx-input-group type="box">
+            <input
+                #newMessage
+                igxInput
+                name="newMessage"
+                placeholder="Send message"
+                autocomplete="off"
+                [(ngModel)]="message"
+                (keypress)="onMessageKeypress($event)"
+            />
+
+            <button
+                igxSuffix
+                igxIconButton="flat"
+                (click)="onSendButtonClick()"
+            >
+                <igx-icon name="send" family="material"></igx-icon>
             </button>
-        </div>
-    </form>
-</div>
+        </igx-input-group>
+    </div>
+    <div class="overflow-anchor"></div>
+</form>
