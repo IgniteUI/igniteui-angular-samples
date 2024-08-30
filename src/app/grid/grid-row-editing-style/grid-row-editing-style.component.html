@@ -7,7 +7,7 @@
             <!--The following template can be omitted (grid handles this internally) but it is here as an example of custom cell editor.-->
             <ng-template igxCellEditor let-cell="cell">
                 <igx-input-group>
-                    <input igxInput [igxFocus]='true' name="units" [(ngModel)]="cell.editValue" style="color: black" />
+                    <input igxInput type="number" [igxFocus]='true' name="units" [(ngModel)]="cell.editValue" style="color: black" />
                 </igx-input-group>
             </ng-template>
         </igx-column>
