@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IgxCheckboxModule, IgxIconModule, IgxPivotGridModule, IgxSwitchModule } from 'igniteui-angular';
+import { IgxButtonModule, IgxCheckboxModule, IgxIconModule, IgxPivotGridModule, IgxSwitchModule } from 'igniteui-angular';
 import { PivotExportComponent } from './pivot-export/pivot-export.component';
 import { PivotFeaturesComponent } from './pivot-features/pivot-features.component';
 import { PivotGridBasicSampleComponent } from './pivot-basic-sample/pivot-grid-basic-sample.component';
@@ -29,6 +29,7 @@ import { PivotGridLayoutComponent } from './pivot-layout/pivot-layout.component'
     ], imports: [CommonModule,
         FormsModule,
         PivotGridsRoutingModule,
+        IgxButtonModule,
         IgxPivotGridModule,
         IgxCheckboxModule,
         IgxSwitchModule,
