@@ -733,6 +733,16 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'AdvancedRemoteFilteringSampleComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', 'src/app/services/remoteFiltering.service.ts'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'AdvancedRemoteFilteringSampleComponent'],
+                ngDeclarations: ['AdvancedRemoteFilteringSampleComponent'],
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule']
+            })
+        }));
+
+        configs.push(new Config({
             component: 'GridMultiCellSelectionComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts'],
             appModuleConfig: new AppModuleConfig({
