@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxBooleanFilteringOperand, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxQueryBuilderComponent, IgxStringFilteringOperand } from 'igniteui-angular';
+import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxBooleanFilteringOperand, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular';
 
 @Component({
     selector: 'app-query-builder-sample-1',
@@ -7,9 +7,9 @@ import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxBooleanFi
     templateUrl: 'query-builder-sample-1.component.html'
 })
 export class QueryBuilderSample1Component implements OnInit {
-    public entities: Array<any>;
-    public companiesFields: Array<any>;
-    public ordersFields: Array<any>;
+    public entities: any[];
+    public companiesFields: any[];
+    public ordersFields: any[];
     public expressionTree: IExpressionTree;
 
     public ngOnInit(): void {
@@ -27,7 +27,7 @@ export class QueryBuilderSample1Component implements OnInit {
             { field: "PostalCode", dataType: "string" },
             { field: "Phone", dataType: "string" },
             { field: "Fax", dataType: "string" },
-            { field: "Contract", dataType: "boolean" },
+            { field: "Contract", dataType: "boolean" }
         ];
 
         this.ordersFields = [
@@ -43,17 +43,17 @@ export class QueryBuilderSample1Component implements OnInit {
             { field: "ShipCity", dataType: "string" },
             { field: "ShipPostalCode", dataType: "string" },
             { field: "ShipCountry", dataType: "string" },
-            { field: "Region", dataType: "string" },
+            { field: "Region", dataType: "string" }
         ];
 
         this.entities = [
             {
                 name: "Companies",
-                fields: this.companiesFields,
+                fields: this.companiesFields
             },
             {
                 name: "Orders",
-                fields: this.ordersFields,
+                fields: this.ordersFields
             }
         ];
 
@@ -62,12 +62,12 @@ export class QueryBuilderSample1Component implements OnInit {
             fieldName: 'Employees',
             condition: IgxNumberFilteringOperand.instance().condition('greaterThan'),
             conditionName: 'greaterThan',
-            searchVal: 100,
+            searchVal: 100
         });
         innerTree.filteringOperands.push({
             fieldName: 'Contact',
             condition: IgxBooleanFilteringOperand.instance().condition('true'),
-            conditionName: 'true',
+            conditionName: 'true'
         });
 
         const tree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Orders', ['*']);
