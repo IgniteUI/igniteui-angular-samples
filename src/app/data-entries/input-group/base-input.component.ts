@@ -12,15 +12,17 @@ export class BaseInputGroupSampleComponent {
 
     @HostListener('window:message', ['$event'])
     private onMessage(e: MessageEvent) {
-        if (e.origin === e.data.origin && e.data.themeName) {
-            this.applyInputTypeForTheme(e.data.themeName);
+        if (e.origin === e.data.origin && e.data.themeStyle) {
+            const theme = JSON.parse(e.data.themeStyle);
+            this.applyInputTypeForTheme(theme.globalTheme);
         }
     }
 
     private applyInputTypeForTheme(theme: string) {
         const themeName = theme.split('-')[1];
         switch (themeName) {
-            case 'theme': this.setInputType('line'); break;
+            case 'theme':
+            case 'dark': this.setInputType('line'); break;
             case 'fluent': this.setInputType('fluent'); break;
             case 'bootstrap': this.setInputType('bootstrap'); break;
             default: break;
