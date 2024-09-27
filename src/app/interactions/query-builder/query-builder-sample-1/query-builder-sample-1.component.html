@@ -2,8 +2,6 @@
     <igx-query-builder #queryBuilder
         [entities]="entities"
         [expressionTree]="expressionTree">
-        <igx-query-builder-header [title]="'Query Builder Overview'" [showLegend]="true">        
-        </igx-query-builder-header>
     </igx-query-builder>
     <div class="output-area">
         <pre>{{ printExpressionTree(queryBuilder.expressionTree) }}</pre>
