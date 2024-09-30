@@ -11,26 +11,23 @@ export class QueryBuilderTemplateSampleComponent implements OnInit {
     public companiesFields: any[];
     public ordersFields: any[];
     public expressionTree: IExpressionTree;
-    public options: string[] = ['one', 'two', 'three'];
+    public regionOptions = [
+        {text: 'Central North America', value: 'CNA'},
+        {text: 'Central Europe', value: 'CEU'},
+        {text: 'Mediterranean region', value: 'MED'},
+        {text: 'Central Asia', value: 'CAS'},
+        {text: 'South Asia', value: 'SAS'},
+        {text: 'Western Africa', value: 'WAF'},
+        {text: 'Amazonia', value: 'AMZ'},
+        {text: 'Southern Africa', value: 'SAF'},
+        {text: 'Northern Australia', value: 'NAU'}];
+
+    public statusOptions = [
+        {text: 'New', value: 1},
+        {text: 'Shipped', value: 2},
+        {text: 'Delivered', value: 3}];
 
     public ngOnInit(): void {
-        this.companiesFields = [
-            { field: "ID", dataType: "string" },
-            { field: "CompanyName", dataType: "string" },
-            { field: "ContactName", dataType: "string" },
-            { field: "Employees", dataType: "number" },
-            { field: "ContactTitle", dataType: "string" },
-            { field: "DateCreated", dataType: "date" },
-            { field: "TimeCreated", dataType: "time" },
-            { field: "Address", dataType: "string" },
-            { field: "City", dataType: "string" },
-            { field: "Region", dataType: "string" },
-            { field: "PostalCode", dataType: "string" },
-            { field: "Phone", dataType: "string" },
-            { field: "Fax", dataType: "string" },
-            { field: "Contract", dataType: "boolean" }
-        ];
-
         this.ordersFields = [
             { field: "CompanyID", dataType: "string" },
             { field: "OrderID", dataType: "number" },
@@ -44,50 +41,35 @@ export class QueryBuilderTemplateSampleComponent implements OnInit {
             { field: "ShipCity", dataType: "string" },
             { field: "ShipPostalCode", dataType: "string" },
             { field: "ShipCountry", dataType: "string" },
-            { field: "Region", dataType: "string" }
+            { field: "Region", dataType: "string" },
+            { field: "OrderStatus", dataType: "number" }
         ];
 
         this.entities = [
-            {
-                name: "Companies",
-                fields: this.companiesFields
-            },
             {
                 name: "Orders",
                 fields: this.ordersFields
             }
         ];
 
-        const innerTree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Companies', ['ID']);
-        innerTree.filteringOperands.push({
-            fieldName: 'Employees',
-            condition: IgxNumberFilteringOperand.instance().condition('greaterThan'),
-            conditionName: 'greaterThan',
-            searchVal: 100
-        });
-        innerTree.filteringOperands.push({
-            fieldName: 'Contact',
-            condition: IgxBooleanFilteringOperand.instance().condition('true'),
-            conditionName: 'true'
-        });
-
         const tree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Orders', ['*']);
         tree.filteringOperands.push({
-            fieldName: 'CompanyID',
-            condition: IgxStringFilteringOperand.instance().condition('in'),
-            conditionName: 'in',
-            searchTree: innerTree
+            fieldName: 'Region',
+            condition: IgxStringFilteringOperand.instance().condition('equals'),
+            conditionName: 'equals',
+            searchVal: 'CNA'
+        });
+        tree.filteringOperands.push({
+            fieldName: 'OrderStatus',
+            condition: IgxNumberFilteringOperand.instance().condition('equals'),
+            conditionName: 'equals',
+            searchVal: 1
         });
         tree.filteringOperands.push({
             fieldName: 'OrderDate',
             condition: IgxDateFilteringOperand.instance().condition('before'),
             conditionName: 'before',
             searchVal: new Date('2024-01-01T00:00:00.000Z')
-        });
-        tree.filteringOperands.push({
-            fieldName: 'ShippedDate',
-            condition: IgxDateFilteringOperand.instance().condition('null'),
-            conditionName: 'null'
         });
 
         this.expressionTree = tree;

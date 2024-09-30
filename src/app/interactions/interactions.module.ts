@@ -24,6 +24,8 @@ import {
     IgxIconButtonDirective,
     IgxSelectComponent,
     IgxSelectItemComponent,
+    IgxRadioComponent,
+    IgxRadioGroupDirective
 } from 'igniteui-angular';
 import { LayoutsModule } from '../layouts/layouts.module';
 import { DialogSample1Component } from './dialog/dialog-sample-1/dialog-sample-1.component';
@@ -166,7 +168,9 @@ import { TooltipStyleComponent } from './tooltip/tooltip-style/tooltip-style.com
         LayoutsModule,
         IgxIconButtonDirective,
         IgxSelectComponent,
-        IgxSelectItemComponent
+        IgxSelectItemComponent,
+        IgxRadioComponent,
+        IgxRadioGroupDirective
     ],
     providers: [IgxOverlayService]
 })

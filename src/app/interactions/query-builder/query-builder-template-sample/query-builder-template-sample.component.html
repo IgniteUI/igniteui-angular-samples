@@ -2,18 +2,27 @@
     <igx-query-builder #queryBuilder
         [entities]="entities"
         [expressionTree]="expressionTree">
-        <igx-query-builder-header [title]="'Query Builder Overview'" [showLegend]="true">        
+        <igx-query-builder-header [title]="'Query Builder Template Sample'" [showLegend]="true">  
+            <igx-icon>search</igx-icon>      
         </igx-query-builder-header>
         <ng-template #searchValueTemplate igxQueryBuilderSearchValue 
                         let-searchValue
                         let-selectedField = "selectedField" 
                         let-selectedCondition = "selectedCondition"
                         let-defaultSearchValueTemplate = "defaultSearchValueTemplate">
-                @if (selectedField?.field === 'Id' && selectedCondition === 'equals'){
-                    <igx-select [placeholder]="'Please Select'" [(ngModel)]="searchValue.value">
-                        <igx-select-item *ngFor="let c of options" [value]="c">{{ c }}</igx-select-item>
+                @if (selectedField?.field === 'Region' && (selectedCondition === 'equals' || selectedCondition === 'doesNotEqual')){
+                    <igx-select [placeholder]="'Select region'" [(ngModel)]="searchValue.value">
+                        <igx-select-item *ngFor="let reg of regionOptions" [value]="reg.value">{{ reg.text }}</igx-select-item>
                     </igx-select>
-                } @else {  
+                } 
+                @else if (selectedField?.field === 'OrderStatus' && (selectedCondition === 'equals' || selectedCondition === 'doesNotEqual')){
+                    <igx-radio-group>
+                        <igx-radio class="radio-sample" *ngFor="let stat of statusOptions" value="{{stat.value}}" [(ngModel)]="searchValue.value">
+                            {{stat.text}}
+                        </igx-radio>
+                    </igx-radio-group>
+                }
+                 @else {  
                     <ng-container #defaultTemplate *ngTemplateOutlet="defaultSearchValueTemplate"></ng-container>
                 }
             </ng-template>
