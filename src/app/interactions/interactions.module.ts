@@ -21,7 +21,9 @@ import {
     IgxSwitchModule,
     IgxToggleModule,
     IgxTooltipModule,
-    IgxIconButtonDirective
+    IgxIconButtonDirective,
+    IgxSelectComponent,
+    IgxSelectItemComponent,
 } from 'igniteui-angular';
 import { LayoutsModule } from '../layouts/layouts.module';
 import { DialogSample1Component } from './dialog/dialog-sample-1/dialog-sample-1.component';
@@ -110,6 +112,7 @@ import { TooltipStyleComponent } from './tooltip/tooltip-style/tooltip-style.com
         TickLabelsTemplateComponent,
         QueryBuilderSample1Component,
         QueryBuilderStyleComponent,
+        QueryBuilderTemplateSampleComponent,
         RippleSample2Component,
         RippleSample3Component,
         RippleSample4Component,
@@ -161,7 +164,9 @@ import { TooltipStyleComponent } from './tooltip/tooltip-style/tooltip-style.com
         IgxComboModule,
         IgxListModule,
         LayoutsModule,
-        IgxIconButtonDirective
+        IgxIconButtonDirective,
+        IgxSelectComponent,
+        IgxSelectItemComponent
     ],
     providers: [IgxOverlayService]
 })

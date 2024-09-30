@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxQueryBuilderComponent, IgxBooleanFilteringOperand, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular';
+import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxBooleanFilteringOperand, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular';
 
 @Component({
     selector: 'app-query-builder-template-sample',
@@ -11,6 +11,7 @@ export class QueryBuilderTemplateSampleComponent implements OnInit {
     public companiesFields: any[];
     public ordersFields: any[];
     public expressionTree: IExpressionTree;
+    public options: string[] = ['one', 'two', 'three'];
 
     public ngOnInit(): void {
         this.companiesFields = [
