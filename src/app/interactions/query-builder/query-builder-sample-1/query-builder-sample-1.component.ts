@@ -65,7 +65,7 @@ export class QueryBuilderSample1Component implements OnInit {
             searchVal: 100
         });
         innerTree.filteringOperands.push({
-            fieldName: 'Contact',
+            fieldName: 'Contract',
             condition: IgxBooleanFilteringOperand.instance().condition('true'),
             conditionName: 'true'
         });
