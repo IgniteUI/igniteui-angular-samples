@@ -15,14 +15,14 @@
                     </igx-select>
                 } 
                 @else if (selectedField?.field === 'OrderStatus' && (selectedCondition === 'equals' || selectedCondition === 'doesNotEqual')){
-                    <igx-radio-group>
-                        <igx-radio class="radio-sample" *ngFor="let stat of statusOptions" value="{{stat.value}}" [(ngModel)]="searchValue.value">
+                    <igx-radio-group [(ngModel)]="searchValue.value">
+                        <igx-radio class="radio-sample" *ngFor="let stat of statusOptions" value="{{stat.value}}">
                             {{stat.text}}
                         </igx-radio>
                     </igx-radio-group>
                 }
                  @else {  
-                    <ng-container #defaultTemplate *ngTemplateOutlet="defaultSearchValueTemplate"></ng-container>
+                    <ng-container *ngTemplateOutlet="defaultSearchValueTemplate"></ng-container>
                 }
             </ng-template>
     </igx-query-builder>
