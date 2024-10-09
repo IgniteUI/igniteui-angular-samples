@@ -202,7 +202,7 @@ igx-expansion-panel-body {
         .warning {
             color: color($igx-light-palette, "warn");
         }
-    }
+   }
 
     ::ng-deep {
         @include theme($igx-light-palette);
@@ -210,16 +210,16 @@ igx-expansion-panel-body {
 
         .mat-mdc-slider.secondary .mdc-slider__track--inactive,
         .mat-mdc-slider.secondary .mdc-slider__thumb-knob {
-            background-color: color($custom-mat-light-theme, 'secondary');
+            background-color: color($igx-light-palette, 'secondary');
         }
 
         .mat-mdc-slider.secondary .mdc-slider__track--active_fill,
         .mat-mdc-slider.secondary .mdc-slider__thumb-knob {
-            border-color: color($custom-mat-light-theme, 'secondary');
+            border-color: color($igx-light-palette, 'secondary');
         }
 
         .mat-mdc-slider.secondary .mat-mdc-slider-visual-thumb .mat-ripple > * {
-            background-color: color($custom-mat-light-theme, 'secondary');
+            background-color: color($igx-light-palette, 'secondary');
             opacity: .12;
         }
 
@@ -229,7 +229,7 @@ igx-expansion-panel-body {
 
         .mat-mdc-form-field-focus-overlay,
         .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-            background-color: color($custom-mat-light-theme, 'surface');
+            background-color: color($igx-light-palette, 'surface');
         }
     }
 }
