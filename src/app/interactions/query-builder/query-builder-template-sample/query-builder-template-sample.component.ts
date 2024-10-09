@@ -25,7 +25,7 @@ export class QueryBuilderTemplateSampleComponent implements OnInit {
     public statusOptions = [
         {text: 'New', value: 1},
         {text: 'Shipped', value: 2},
-        {text: 'Delivered', value: 3}];
+        {text: 'Done', value: 3}];
 
     public ngOnInit(): void {
         this.ordersFields = [
