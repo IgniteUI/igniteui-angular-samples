@@ -15,7 +15,7 @@ export class GridMultiCellSelectionComponent {
 
     public transferData(source: IgxGridComponent, target: IgxGridComponent,
                         notification: IgxToastComponent) {
-        target.autoGenerate = true;
+        target.shouldGenerate = true;
         target.clearCellSelection();
         this.targetData = source.getSelectedData();
         notification.positionSettings.verticalDirection = VerticalAlignment.Middle;

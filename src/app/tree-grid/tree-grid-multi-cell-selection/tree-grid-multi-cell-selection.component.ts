@@ -20,7 +20,7 @@ export class TreeGridMultiCellSelectionComponent {
 
     public transferData(source: IgxTreeGridComponent, target: IgxGridComponent,
                         notification: IgxToastComponent) {
-        target.autoGenerate = true;
+        target.shouldGenerate = true;
         target.clearCellSelection();
         this.targetData = source.getSelectedData();
         notification.positionSettings.verticalDirection = VerticalAlignment.Middle;

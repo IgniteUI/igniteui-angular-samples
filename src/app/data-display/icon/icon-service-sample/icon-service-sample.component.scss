@@ -16,12 +16,12 @@ igx-avatar {
     z-index: 1;
     --ig-size: var(--ig-size-medium);
     --background: hsla(var(--ig-secondary-500), 6%);
-    border: 1px solid var(--ig-secondary-500);
+    border: 1px solid hsl(var(--ig-secondary-500));
     border-radius: rem(4px);
 
     igx-icon {
         --size: #{rem(48px)};
-        color: var(--ig-secondary-500);
+        color: hsl(var(--ig-secondary-500));
     }
 }
 
@@ -31,5 +31,5 @@ igx-icon[backdrop] {
     inset-inline: calc(100% - var(--size));
     z-index: -1;
     position: absolute;
-    color: var(--ig-gray-300);
+    color: hsl(var(--ig-gray-300));
 }
