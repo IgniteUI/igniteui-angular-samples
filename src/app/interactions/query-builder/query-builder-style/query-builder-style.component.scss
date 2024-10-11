@@ -91,6 +91,10 @@ $custom-drop-down: drop-down-theme($schema: $dark-material-schema,
                 color: $yellow
             }
 
+            .igx-icon-button--flat{
+                height: 32px;
+            }
+
             .igx-filter-tree__inputs-actions igx-icon {
                 color: $yellow
             }
@@ -100,6 +104,18 @@ $custom-drop-down: drop-down-theme($schema: $dark-material-schema,
             }
 
             .igx-filter-tree__inputs-actions igx-icon:focus {
+                color: $muted-yellow
+            }
+
+            .igx-filter-tree__expression-actions igx-icon {
+                color: $yellow !important
+            }
+
+            .igx-filter-tree__expression-actions igx-icon:hover {
+                color: $muted-yellow
+            }
+
+            .igx-filter-tree__expression-actions igx-icon:focus {
                 color: $muted-yellow
             }
 
