@@ -125,5 +125,6 @@ export const gridsRoutesData = {
     'grid-validator-service-extended': { displayName: 'Grid Validator Service Extended', parentName: 'Grid'},
     'grid-summary-export': { displayName: 'Grid Summary Export', parentName: 'Grid'},
     'grid-state-persistence': { displayName: 'Grid State Persistence', parentName: 'Grid'},
-    'grid-cascading-combos': { displayName: 'Grid Editing with Cascading Combos', parentName: 'Grid'}
+    'grid-cascading-combos': { displayName: 'Grid Editing with Cascading Combos', parentName: 'Grid'},
+    'grid-advanced-remote-filtering': { displayName: 'Grid Advanced Remote Filtering', parentName: 'Grid'},
 };

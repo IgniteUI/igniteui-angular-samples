@@ -2,10 +2,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FilteringLogic, IForOfState, SortingDirection, FilteringExpressionsTree } from 'igniteui-angular';
+import { FilteringLogic, IForOfState, SortingDirection, FilteringExpressionsTree, IFilteringExpression, IFilteringExpressionsTree } from 'igniteui-angular';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-const DATA_URL = 'https://services.odata.org/V4/Northwind/Northwind.svc/Products';
+const DATA_URL = 'https://services.odata.org/V4/Northwind/Northwind.svc/';
 const EMPTY_STRING = '';
 const NULL_VALUE = null;
 // eslint-disable-next-line no-shadow
@@ -24,6 +24,8 @@ export enum FILTER_OPERATION {
 
 @Injectable()
 export class RemoteFilteringService {
+    public entity = 'Products';
+
     public remoteData: Observable<any[]>;
     private _remoteData: BehaviorSubject<any[]>;
 
@@ -46,7 +48,7 @@ export class RemoteFilteringService {
     }
 
     private buildDataUrl(virtualizationArgs: any, filteringArgs: any, sortingArgs: any): string {
-        let baseQueryString = `${DATA_URL}?$count=true`;
+        let baseQueryString = `${DATA_URL}${this.entity}?$count=true`;
         let scrollingQuery = EMPTY_STRING;
         let orderQuery = EMPTY_STRING;
         let filterQuery = EMPTY_STRING;
@@ -57,13 +59,15 @@ export class RemoteFilteringService {
             orderQuery = this._buildSortExpression(sortingArgs);
         }
 
-        if (filteringArgs && filteringArgs.length > 0) {
+        if (filteringArgs instanceof FilteringExpressionsTree) {
+            filterQuery = `$filter=${this._buildAdvancedFilterExpression(filteringArgs)}`;
+        } else if (filteringArgs?.length > 0) {
             filteringArgs.forEach((columnFilter) => {
                 if (filter !== EMPTY_STRING) {
                     filter += ` ${FilteringLogic[columnFilter.operator].toLowerCase()} `;
                 }
 
-                filter += this._buildAdvancedFilterExpression(
+                filter += this._buildFilterExpression(
                     columnFilter.filteringOperands,
                     columnFilter.operator);
             });
@@ -84,93 +88,49 @@ export class RemoteFilteringService {
         return baseQueryString;
     }
 
-    private _buildAdvancedFilterExpression(operands, operator): string {
+    private _buildFilterExpression(operands, operator): string {
         let filterExpression = EMPTY_STRING;
         operands.forEach((operand, index) => {
             if (operand instanceof FilteringExpressionsTree) {
                 if (index > 0) {
                   filterExpression += ` ${FilteringLogic[operator].toLowerCase()} `;
                 }
-                filterExpression += this._buildAdvancedFilterExpression(
+                filterExpression += this._buildFilterExpression(
                   operand.filteringOperands,
                   operand.operator
                 );
                 return filterExpression;
             }
-
-            const value = operand.searchVal;
-            const isNumberValue = (typeof (value) === 'number') ? true : false;
-            const filterValue = (isNumberValue) ? value : `'${value}'`;
-            const fieldName = operand.fieldName;
             let filterString;
 
             if (filterExpression !== EMPTY_STRING) {
                 filterExpression += ` ${FilteringLogic[operator].toLowerCase()} `;
             }
 
-            switch (operand.condition.name) {
-                case 'contains': {
-                    filterString = `${FILTER_OPERATION.CONTAINS}(${fieldName}, ${filterValue})`;
-                    break;
-                }
-                case 'startsWith': {
-                    filterString = `${FILTER_OPERATION.STARTS_WITH}(${fieldName},${filterValue})`;
-                    break;
-                }
-                case 'endsWith': {
-                    filterString = `${FILTER_OPERATION.ENDS_WITH}(${fieldName},${filterValue})`;
-                    break;
-                }
-                case 'equals': {
-                    filterString = `${fieldName} ${FILTER_OPERATION.EQUALS} ${filterValue} `;
-                    break;
-                }
-                case 'doesNotEqual': {
-                    filterString = `${fieldName} ${FILTER_OPERATION.DOES_NOT_EQUAL} ${filterValue} `;
-                    break;
-                }
-                case 'doesNotContain': {
-                    filterString = `${FILTER_OPERATION.DOES_NOT_CONTAIN}(${fieldName},${filterValue})`;
-                    break;
-                }
-                case 'greaterThan': {
-                    filterString = `${fieldName} ${FILTER_OPERATION.GREATER_THAN} ${filterValue} `;
-                    break;
-                }
-                case 'greaterThanOrEqualTo': {
-                    filterString = `${fieldName} ${FILTER_OPERATION.GREATER_THAN_EQUAL} ${filterValue} `;
-                    break;
-                }
-                case 'lessThan': {
-                    filterString = `${fieldName} ${FILTER_OPERATION.LESS_THAN} ${filterValue} `;
-                    break;
-                }
-                case 'lessThanOrEqualTo': {
-                    filterString = `${fieldName} ${FILTER_OPERATION.LESS_THAN_EQUAL} ${filterValue} `;
-                    break;
-                }
-                case 'empty': {
-                    filterString = `length(${fieldName}) ${FILTER_OPERATION.EQUALS} 0`;
-                    break;
-                }
-                case 'notEmpty': {
-                    filterString = `length(${fieldName}) ${FILTER_OPERATION.GREATER_THAN} 0`;
-                    break;
-                }
-                case 'null': {
-                    filterString = `${fieldName} ${FILTER_OPERATION.EQUALS} ${NULL_VALUE}`;
-                    break;
-                }
-                case 'notNull': {
-                    filterString = `${fieldName} ${FILTER_OPERATION.DOES_NOT_EQUAL} ${NULL_VALUE}`;
-                    break;
-                }
-            }
+            filterString = this._oDataOperandMapper(operand);
 
             filterExpression += filterString;
         });
 
         return filterExpression;
+    }
+
+    private _buildAdvancedFilterExpression(filter: IFilteringExpressionsTree): string {
+        const operands = filter.filteringOperands;
+        let builder: string = '';
+        operands.forEach((operand) => {
+            if (operand instanceof FilteringExpressionsTree) {
+                builder += `${builder.length ? FilteringLogic[filter.operator].toLowerCase() : ''} (${this._buildAdvancedFilterExpression(operand)})`;
+            } else {
+                if (builder !== EMPTY_STRING) {
+                    builder += ` ${FilteringLogic[filter.operator].toLowerCase()} `;
+                }
+
+                builder += this._oDataOperandMapper(operand as IFilteringExpression);
+            }
+        });
+
+        return builder;
     }
 
     private _buildSortExpression(sortingArgs): string {
@@ -197,5 +157,70 @@ export class RemoteFilteringService {
         const top = requiredChunkSize;
 
         return `$skip=${skip}&$top=${top}`;
+    }
+
+    private _oDataOperandMapper(operand: IFilteringExpression): string {
+        const value = (operand as IFilteringExpression).searchVal;
+        const isNumberValue = (typeof (value) === 'number' || value instanceof Date) ? true : false;
+        const filterValue = (isNumberValue) ? value : `'${value}'`;
+        const fieldName = operand.fieldName;
+        switch ((operand as IFilteringExpression).condition.name) {
+            case 'contains': return `${FILTER_OPERATION.CONTAINS}(${fieldName}, ${filterValue})`;
+            case 'startsWith': return `${FILTER_OPERATION.STARTS_WITH}(${fieldName},${filterValue})`;
+            case 'endsWith': return`${FILTER_OPERATION.ENDS_WITH}(${fieldName},${filterValue})`;
+            case 'equals': return`${fieldName} ${FILTER_OPERATION.EQUALS} ${filterValue} `;
+            case 'doesNotEqual': return`${fieldName} ${FILTER_OPERATION.DOES_NOT_EQUAL} ${filterValue} `;
+            case 'doesNotContain': return`${FILTER_OPERATION.DOES_NOT_CONTAIN}(${fieldName},${filterValue})`;
+            case 'greaterThan': return`${fieldName} ${FILTER_OPERATION.GREATER_THAN} ${filterValue} `;
+            case 'greaterThanOrEqualTo': return`${fieldName} ${FILTER_OPERATION.GREATER_THAN_EQUAL} ${filterValue} `;
+            case 'lessThan': return`${fieldName} ${FILTER_OPERATION.LESS_THAN} ${filterValue} `;
+            case 'lessThanOrEqualTo': return`${fieldName} ${FILTER_OPERATION.LESS_THAN_EQUAL} ${filterValue} `;
+            case 'empty': return`length(${fieldName}) ${FILTER_OPERATION.EQUALS} 0`;
+            case 'notEmpty': return`length(${fieldName}) ${FILTER_OPERATION.GREATER_THAN} 0`;
+            case 'null': return`${fieldName} ${FILTER_OPERATION.EQUALS} ${NULL_VALUE}`;
+            case 'notNull': return`${fieldName} ${FILTER_OPERATION.DOES_NOT_EQUAL} ${NULL_VALUE}`;
+            case 'before': return`${fieldName} ${FILTER_OPERATION.LESS_THAN} ${(filterValue as Date).toISOString()} `;
+            case 'after': return`${fieldName} ${FILTER_OPERATION.GREATER_THAN} ${(filterValue as Date).toISOString()} `;
+            case 'today': {
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                const tomorrow = new Date().setDate(today.getDate() + 1);
+                return`(${fieldName} ${FILTER_OPERATION.GREATER_THAN_EQUAL} ${today} and ${fieldName} ${FILTER_OPERATION.LESS_THAN} ${tomorrow}) `;
+            }
+            case 'yesterday': {
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                const yesterday = new Date().setDate(today.getDate() - 1);
+                return`(${fieldName} ${FILTER_OPERATION.GREATER_THAN_EQUAL} ${yesterday} and ${fieldName} ${FILTER_OPERATION.LESS_THAN} ${today}) `;
+            }
+            case 'thisMonth': {
+                const today = new Date();
+                return`(year(${fieldName}) ${FILTER_OPERATION.EQUALS} ${today.getFullYear()} and month(${fieldName}) ${FILTER_OPERATION.EQUALS} ${today.getMonth() + 1}) `;
+            }
+            case 'lastMonth': {
+                const today = new Date();
+                const month = (today.getMonth() ? today.getMonth() - 1 : 11) + 1;
+                const year = today.getMonth() ? today.getFullYear() : today.getFullYear() - 1;
+                return`(year(${fieldName}) ${FILTER_OPERATION.EQUALS} ${year} and month(${fieldName}) ${FILTER_OPERATION.EQUALS} ${month}) `;
+            }
+            case 'nextMonth': {
+                const today = new Date();
+                const month = (today.getMonth() < 11 ? today.getMonth() + 1 : 0) + 1;
+                const year = today.getMonth() < 11 ? today.getFullYear() : today.getFullYear() + 1;
+                return`(year(${fieldName}) ${FILTER_OPERATION.EQUALS} ${year} and month(${fieldName}) ${FILTER_OPERATION.EQUALS} ${month}) `;
+            }
+            case 'thisYear': {
+                const today = new Date();
+                return`year(${fieldName}) ${FILTER_OPERATION.EQUALS} ${today.getFullYear()} `;
+            }
+            case 'lastYear': { 
+                const today = new Date();
+                return`year(${fieldName}) ${FILTER_OPERATION.EQUALS} ${today.getFullYear() - 1} `;
+            }
+            case 'nextYear': { 
+                const today = new Date();
+                return`year(${fieldName}) ${FILTER_OPERATION.EQUALS} ${today.getFullYear() + 1} `;
+            }
+        }
     }
 }
