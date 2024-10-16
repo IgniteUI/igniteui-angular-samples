@@ -28,6 +28,9 @@ export class SimpleComboCascadingComponent implements OnInit {
             this.regionData = [];
             this.isLoadingRegions = true;
             this.loadingTime = 2000;
+        } else {
+            this.selectedRegion = undefined;
+            this.selectedCity = undefined;
         }
         setTimeout(() => {
             this.regionData = getCitiesByCountry([this.selectedCountry?.name])
@@ -35,8 +38,6 @@ export class SimpleComboCascadingComponent implements OnInit {
             .filter((v, i, a) => a.findIndex(r => r.name === v.name) === i);
             this.isLoadingRegions = false;
         }, this.loadingTime)
-        this.selectedRegion = null;
-        this.selectedCity = null;
         this.citiesData = [];
         this.loadingTime = 0;
     }
@@ -47,13 +48,14 @@ export class SimpleComboCascadingComponent implements OnInit {
             this.citiesData = [];
             this.isLoadingCities = true;
             this.loadingTime = 2000;
+        } else {
+            this.selectedCity = undefined;
         }
         setTimeout(() => {
             this.citiesData = getCitiesByCountry([this.selectedCountry?.name])
             .filter(c => c.region === this.selectedRegion?.name);
             this.isLoadingCities = false;
         }, this.loadingTime)
-        this.selectedCity = null;
         this.loadingTime = 0;
     }
 }
