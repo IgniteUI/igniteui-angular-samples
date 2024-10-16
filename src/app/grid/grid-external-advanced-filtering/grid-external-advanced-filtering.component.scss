@@ -1,10 +1,12 @@
 .grid__wrapper {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     margin: 15px;
+    align-items: stretch;
 }
 
 .advanced-dialog {
     margin-bottom: 2px;
-    height: 300px;
+    max-height: 400px;
+    overflow-y: auto;
 }
