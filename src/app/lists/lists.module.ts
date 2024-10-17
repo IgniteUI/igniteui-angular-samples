@@ -89,6 +89,7 @@ import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-c
         IgxButtonModule,
         IgxSliderModule,
         IgxComboModule,
+        IgxSimpleComboModule,
         IgxSwitchModule,
         IgxToastModule,
         IgxButtonGroupModule,
@@ -96,8 +97,7 @@ import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-c
         IgxCardModule,
         IgxTreeModule,
         IgxTooltipModule,
-        IgxFinancialChartModule,
-        IgxSimpleComboModule,
         IgxProgressBarModule,
+        IgxFinancialChartModule,
         IgxIconButtonDirective], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class ListsModule { }
