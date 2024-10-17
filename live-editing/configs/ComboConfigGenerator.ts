@@ -10,7 +10,8 @@ import {
     IgxToastModule,
     IgxIconModule,
     IgxPrefixModule,
-    IgxSimpleComboModule
+    IgxSimpleComboModule,
+    IgxProgressBarModule
 } from 'igniteui-angular';
 import { IgxFinancialChartModule } from 'igniteui-angular-charts';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
