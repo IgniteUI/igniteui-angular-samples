@@ -4,17 +4,16 @@ body {
 
 .overlay-sample {
     padding: 32px 0px 32px 32px;
-    overflow-y: scroll;
     display: flex;
     flex-direction: row;
     height: 200px;
     overflow-y: scroll;
 }
 
-
 .container__row > div, .section__container--wide > span, .section__position-element > div {
     display: inline-block;
 }
+
 .section__row--wide, .container__row, .section__header {
     width: 100%;
 }
@@ -22,6 +21,7 @@ body {
 .section__row > span {
     height: 48px;
 }
+
 .section__row--wide, .section__container--wide > span {
     height: 80px;
     max-width: 320px;
@@ -59,6 +59,7 @@ span:hover {
 .section__separator {
     width: 32px;
 }
+
 .container {
     width: 50%;
     height: 600px;
@@ -84,6 +85,7 @@ span:hover {
     text-align: left;
     margin-top: 16px;
 }
+
 .section__position-element, .section__row--wide {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
 }

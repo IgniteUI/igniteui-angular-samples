@@ -68,7 +68,7 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
                 this._target = this.scrollDemo.nativeElement.children[1];
                 break;
             case ('close'):
-                scrollStrategy = new CloseScrollStrategy(this.mainContainer.nativeElement);
+                scrollStrategy = new CloseScrollStrategy();
                 this._target = this.scrollDemo.nativeElement.children[2];
                 break;
             default:
