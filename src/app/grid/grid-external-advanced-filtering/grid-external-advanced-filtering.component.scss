@@ -2,9 +2,11 @@
     display: flex;
     flex-flow: column;
     margin: 15px;
+    align-items: stretch;
 }
 
 .advanced-dialog {
     margin-bottom: 2px;
-    height: 300px;
+    height: 325px;
+    overflow-y: auto;
 }
