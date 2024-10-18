@@ -5,7 +5,6 @@ $black: #292826;
 $muted-yellow: #ffe482;
 
 $custom-query-builder: query-builder-theme($background: $black,
-        $tree-background: $black,
         $header-background: $black,
         $header-foreground: $yellow);
 
@@ -69,10 +68,8 @@ $custom-drop-down: drop-down-theme($schema: $dark-material-schema,
     margin: 16px;
 
     ::ng-deep {
-        @include theme($palette: $dark-material-palette );
-
-        @include css-vars($custom-query-builder);
         @include css-vars($custom-drop-down);
+        @include css-vars($custom-query-builder);
         @include css-vars($custom-button-group);
         @include css-vars($custom-input-group);
         @include css-vars($custom-chip);
@@ -91,24 +88,8 @@ $custom-drop-down: drop-down-theme($schema: $dark-material-schema,
                 color: $yellow
             }
 
-            .igx-icon-button--flat{
-                height: 32px;
-            }
-
-            .igx-filter-tree__inputs-actions igx-icon {
-                color: $yellow
-            }
-
-            .igx-filter-tree__inputs-actions igx-icon:hover {
-                color: $muted-yellow
-            }
-
-            .igx-filter-tree__inputs-actions igx-icon:focus {
-                color: $muted-yellow
-            }
-
             .igx-filter-tree__expression-actions igx-icon {
-                color: $yellow !important
+                color: $yellow
             }
 
             .igx-filter-tree__expression-actions igx-icon:hover {
