@@ -21,11 +21,7 @@ import {
     IgxSwitchModule,
     IgxToggleModule,
     IgxTooltipModule,
-    IgxIconButtonDirective,
-    IgxSelectComponent,
-    IgxSelectItemComponent,
-    IgxRadioComponent,
-    IgxRadioGroupDirective
+    IgxIconButtonDirective
 } from 'igniteui-angular';
 import { LayoutsModule } from '../layouts/layouts.module';
 import { DialogSample1Component } from './dialog/dialog-sample-1/dialog-sample-1.component';
@@ -51,7 +47,6 @@ import { OverlayScrollSample2Component } from './overlay/overlay-scroll-2/overla
 import { OverlayStylingComponent } from './overlay/overlay-styling/overlay-styling.component';
 import { QueryBuilderSample1Component } from './query-builder/query-builder-sample-1/query-builder-sample-1.component';
 import { QueryBuilderStyleComponent } from './query-builder/query-builder-style/query-builder-style.component';
-import { QueryBuilderTemplateSampleComponent } from './query-builder/query-builder-template-sample/query-builder-template-sample.component';
 import { RippleSample2Component } from './ripple/ripple-sample-2/ripple-sample-2.component';
 import { RippleSample3Component } from './ripple/ripple-sample-3/ripple-sample-3.component';
 import { RippleSample4Component } from './ripple/ripple-sample-4/ripple-sample-4.component';
@@ -114,7 +109,6 @@ import { TooltipStyleComponent } from './tooltip/tooltip-style/tooltip-style.com
         TickLabelsTemplateComponent,
         QueryBuilderSample1Component,
         QueryBuilderStyleComponent,
-        QueryBuilderTemplateSampleComponent,
         RippleSample2Component,
         RippleSample3Component,
         RippleSample4Component,
@@ -166,11 +160,7 @@ import { TooltipStyleComponent } from './tooltip/tooltip-style/tooltip-style.com
         IgxComboModule,
         IgxListModule,
         LayoutsModule,
-        IgxIconButtonDirective,
-        IgxSelectComponent,
-        IgxSelectItemComponent,
-        IgxRadioComponent,
-        IgxRadioGroupDirective
+        IgxIconButtonDirective
     ],
     providers: [IgxOverlayService]
 })
