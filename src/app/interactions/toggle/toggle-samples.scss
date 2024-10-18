@@ -25,7 +25,7 @@
 
     .custom-body & {
         color: var(--ig-surface-500-contrast);
-        background-color: var(--ig-surface-500);
+        background-color: hsla(var(--ig-surface-500));
     }
 }
 
