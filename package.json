@@ -55,7 +55,7 @@
     "@angular/platform-browser": "^18.2.8",
     "@angular/platform-browser-dynamic": "^18.2.8",
     "@angular/router": "^18.2.8",
-    "@igniteui/material-icons-extended": "^3.0.2",
+    "@igniteui/material-icons-extended": "^3.1.0",
     "@microsoft/signalr": "^7.0.12",
     "@ng-bootstrap/ng-bootstrap": "^17.0.0",
     "@popperjs/core": "2.11.8",
