@@ -69,12 +69,12 @@ $custom-mat-dark-theme: mat.m2-define-dark-theme((
 ::ng-deep {
     @include mat.core();
 
-    .light-menu-theme {
+    .mat-menu {
         @include mat.menu-theme($custom-mat-light-theme);
     }
 
     .dark-menu-theme {
-        @include mat.menu-theme($custom-mat-dark-theme);
+        @include mat.menu-color($custom-mat-dark-theme);
     }
 }
 
@@ -90,9 +90,12 @@ mat-toolbar div {
     }
 }
 
-.card-wrapper {
-    margin: 16px;
-    flex: 1 0 25%;
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: rem(16px);
+    gap: rem(16px);
+    align-items: stretch;
 }
 
 .slider-wrapper {
@@ -169,18 +172,35 @@ igx-expansion-panel-body {
 
         ::ng-deep {
             @include dark-theme($custom-dark-palette);
-            @include mat.all-component-themes($custom-mat-dark-theme);
+            @include mat.all-component-colors($custom-mat-dark-theme);
 
             .primary {
                 color: color($custom-dark-palette, 'primary', 100);
                 margin-left: 32px;
             }
 
+            .mat-mdc-slider.secondary .mdc-slider__track--inactive,
+            .mat-mdc-slider.secondary .mdc-slider__thumb-knob {
+                background-color: color($custom-mat-dark-theme, 'accent');
+            }
+
+            .mat-mdc-slider.secondary .mdc-slider__track--active_fill,
+            .mat-mdc-slider.secondary .mdc-slider__thumb-knob {
+                border-color: color($custom-mat-dark-theme, 'accent');
+            }
+
+            .mat-mdc-slider.secondary .mat-mdc-slider-visual-thumb .mat-ripple > * {
+                background-color: color($custom-mat-dark-theme, 'accent');
+                opacity: .12;
+            }
+
             .mat-step-header .mat-step-icon-selected {
                 background-color: color($custom-dark-palette, 'secondary');
             }
 
-            .mat-stepper-horizontal {
+            .mat-stepper-horizontal,
+            .mat-mdc-form-field-focus-overlay,
+            .mdc-text-field--filled:not(.mdc-text-field--disabled) {
                 background: color($custom-dark-palette, 'surface');
             }
 
