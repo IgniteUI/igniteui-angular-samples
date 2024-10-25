@@ -27,7 +27,12 @@ export class TreeGridFilteringSampleComponent implements OnInit {
     }
 
     public filter(element: EventTarget) {
-        this.treegrid1.filter('Name', (element as HTMLInputElement).value, IgxStringFilteringOperand.instance().condition('contains'));
+        const value = (element as HTMLInputElement).value;
+        if (value) {
+            this.treegrid1.filter('Name', value, IgxStringFilteringOperand.instance().condition('contains'));
+        } else {
+            this.treegrid1.clearFilter('Name');
+        }
     }
 
     public formatDate(val: Date) {
