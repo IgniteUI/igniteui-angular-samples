@@ -80,7 +80,7 @@
   },
   "overrides": {
     "igniteui-angular-extras": {
-      "igniteui-angular": "^18.2.0-rc.0"
+      "igniteui-angular": "^18.2.0"
     }
   },
   "devDependencies": {
