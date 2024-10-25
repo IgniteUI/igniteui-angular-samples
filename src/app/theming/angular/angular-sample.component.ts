@@ -41,6 +41,7 @@ export class AngularMaterialComponent implements OnInit {
 
     private toggleOverlayClasses(theme: 'light' | 'dark') {
         const overlayClasses = this.overlayContainer.getContainerElement().classList;
+        overlayClasses.add('mat-menu');
     
         switch (theme) {
             case 'light':

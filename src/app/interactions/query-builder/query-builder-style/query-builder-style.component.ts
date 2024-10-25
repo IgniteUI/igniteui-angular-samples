@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
     templateUrl: 'query-builder-style.component.html'
 })
 export class QueryBuilderStyleComponent {
-    
     public fields: any[] = [
         { field: 'ID', dataType: 'string' },
         { field: 'CompanyName', dataType: 'string' },
