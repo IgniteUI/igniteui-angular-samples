@@ -9,7 +9,7 @@
                     <igx-simple-combo [id]="'country-' + cell.row.data.ID" [data]="countriesData"
                         (selectionChanging)="countryChanging($event, cell)" placeholder="Choose Country..."
                         [ngModel]="cell.value === '' ? undefined : cell.value" [valueKey]="'name'" [displayKey]="'name'"
-                        width="100%">
+                        width="100%" [overlaySettings]="{ outlet: grid1.outlet }">
                     </igx-simple-combo>
                 </ng-template>
             </igx-column>
@@ -19,7 +19,7 @@
                         <igx-simple-combo [id]="'region-' + cell.row.data.ID"
                             (selectionChanging)="regionChanging($event, cell)" placeholder="Choose Region..."
                             [ngModel]="cell.value === '' ? undefined : cell.value" [valueKey]="'name'"
-                            [displayKey]="'name'" [disabled]="cell.row.cells[1].value === ''">
+                            [displayKey]="'name'" [disabled]="cell.row.cells[1].value === ''" [overlaySettings]="{ outlet: grid1.outlet }">
                         </igx-simple-combo>
                         <igx-linear-bar *ngIf="cell.row.data.loadingRegion" [id]="'region-progress-' + cell.row.data.ID"
                             type="info" [indeterminate]="true">
@@ -33,7 +33,7 @@
                         <igx-simple-combo [id]="'city-' + cell.row.data.ID" placeholder="Choose City..."
                             (selectionChanging)="cityChanging($event, cell)"
                             [ngModel]="!cell.value ? undefined : cell.value" [valueKey]="'id'" [displayKey]="'name'"
-                            [disabled]="cell.row.cells[2].value === ''">
+                            [disabled]="cell.row.cells[2].value === ''" [overlaySettings]="{ outlet: grid1.outlet }">
                         </igx-simple-combo>
                         <igx-linear-bar *ngIf="cell.row.data.loadingCity" [id]="'city-progress-' + cell.row.data.ID"
                             type="info" [indeterminate]="true">
