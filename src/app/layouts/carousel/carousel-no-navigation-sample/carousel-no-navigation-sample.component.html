@@ -1,6 +1,6 @@
 <div class="carousel-animation-wrapper">
     <div class="carousel-wrapper">
-        <igx-carousel [navigation]="false" [pause]="false" animationType="fade" [interval]="2000">
+        <igx-carousel [navigation]="false" [indicators]="false" [pause]="false" animationType="fade" [interval]="2000" [gesturesSupport]="false">
                 <igx-slide #slide *ngFor="let item of slides">
                     <div style="height: 100%" [ngStyle]="slideStyle(item.image)">
                         <section class="promo-price" [ngClass]="{'animated': slide.active}">
@@ -9,7 +9,6 @@
                         </section>
                 </div>
                 </igx-slide>
-            <ng-template igxCarouselIndicator></ng-template>
         </igx-carousel>
     </div>
     <div class="list-wrapper">
