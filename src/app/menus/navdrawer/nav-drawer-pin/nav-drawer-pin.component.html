@@ -1,14 +1,11 @@
 <div class="content-wrap" igxLayout>
     <igx-nav-drawer id="navigation" #drawer [isOpen]="true" [pin]="true" [pinThreshold]="0">
       <ng-template igxDrawer>
-        <nav>
           <span igxDrawerItem [isHeader]="true">Components</span>
-
           <span *ngFor="let item of navItems" igxDrawerItem [active]="item.text === selected" igxRipple (click)="navigate(item)">
             <igx-icon family="material">{{ item.name }}</igx-icon>
             <span>{{ item.text }}</span>
           </span>
-        </nav>
       </ng-template>
     </igx-nav-drawer>
 
@@ -20,4 +17,4 @@
 
       <h5>{{selected}} content.</h5>
     </main>
-  </div>
+</div>
