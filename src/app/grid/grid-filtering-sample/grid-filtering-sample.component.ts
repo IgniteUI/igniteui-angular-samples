@@ -21,7 +21,12 @@ export class FilteringSampleComponent implements OnInit {
     }
 
     public filter(target: EventTarget) {
-        this.grid1.filter('ProductName', (target as HTMLInputElement).value, IgxStringFilteringOperand.instance().condition('contains'));
+        const value = (target as HTMLInputElement).value;
+        if (value) {
+            this.grid1.filter('ProductName', value, IgxStringFilteringOperand.instance().condition('contains'));
+        } else {
+            this.grid1.clearFilter('ProductName');
+        }
     }
 
     public formatDate(val: Date) {
