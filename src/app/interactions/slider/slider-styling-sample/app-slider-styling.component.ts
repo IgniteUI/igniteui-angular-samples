@@ -5,7 +5,7 @@ import { IgxSliderComponent, TicksOrientation} from 'igniteui-angular';
     selector: 'app-slider-styling',
     styleUrls: ['./app-slider-styling.component.scss'],
     templateUrl: './app-slider-styling.component.html',
-    standalone: false
+    imports: [IgxSliderComponent]
 })
 export class AppSliderStylingComponent {
     @ViewChild(IgxSliderComponent, { static: true })

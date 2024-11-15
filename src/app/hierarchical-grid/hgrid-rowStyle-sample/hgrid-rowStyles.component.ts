@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent, RowType } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, RowType, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxIconComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 @Component({
     selector: 'app-hgrid-row-row-styles',
     styleUrls: ['./hgrid-rowStyles.component.scss'],
     templateUrl: 'hgrid-rowStyles.component.html',
-    standalone: false
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxIconComponent, IgxRowIslandComponent]
 })
 
 export class HGridRowStylesSampleComponent implements OnInit {

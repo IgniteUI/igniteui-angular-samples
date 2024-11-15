@@ -15,12 +15,7 @@ import { DocsLayoutComponent } from './index/docs-layout.component';
 import { IndexComponent } from './index/index.component';
 import { SEOService } from './seo.service';
 @NgModule({ bootstrap: [AppComponent],
-    declarations: [
-        AppComponent,
-        HomeComponent,
-        DocsLayoutComponent,
-        IndexComponent
-    ], imports: [AppRoutingModule,
+    declarations: [AppComponent], imports: [AppRoutingModule,
         IgxRippleModule,
         IgxNavbarModule,
         IgxNavigationDrawerModule,
@@ -35,7 +30,9 @@ import { SEOService } from './seo.service';
         IgxExtrasModule,
         IgxFocusModule,
         IgxToggleModule,
-        IgxIconButtonDirective], providers: [
+        IgxIconButtonDirective, HomeComponent,
+        DocsLayoutComponent,
+        IndexComponent], providers: [
         SEOService,
         provideHttpClient(withInterceptorsFromDi())
     ] })

@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    IgxDialogComponent, IgxHierarchicalGridComponent,
-    IgxNumberSummaryOperand, IgxSummaryResult
-} from 'igniteui-angular';
+import { IgxDialogComponent, IgxHierarchicalGridComponent, IgxNumberSummaryOperand, IgxSummaryResult, IgxButtonDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxIconComponent, IgxRowIslandComponent, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxCheckboxComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { Singer } from '../models';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { FormsModule } from '@angular/forms';
 
 class MySummary {
 
@@ -34,7 +33,7 @@ class MySummary {
     selector: 'app-hierarchical-grid-editing',
     styleUrls: ['./hierarchical-grid-editing.component.scss'],
     templateUrl: 'hierarchical-grid-editing.component.html',
-    standalone: false
+    imports: [IgxButtonDirective, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxIconComponent, IgxRowIslandComponent, IgxDialogComponent, IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxCheckboxComponent]
 })
 
 export class HGridEditingSampleComponent implements OnInit {

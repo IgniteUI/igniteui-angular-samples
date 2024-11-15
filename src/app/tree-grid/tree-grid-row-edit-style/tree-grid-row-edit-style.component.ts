@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { GridSelectionMode } from 'igniteui-angular';
+import { GridSelectionMode, IgxTreeGridComponent, IgxColumnComponent, IgxRowEditTextDirective, IgxRowEditActionsDirective, IgxIconButtonDirective, IgxRowEditTabStopDirective, IgxIconComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-tree-grid-row-edit-style',
     styleUrls: ['tree-grid-row-edit-style.component.scss'],
     templateUrl: 'tree-grid-row-edit-style.component.html',
-    standalone: false
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, NgFor, IgxColumnComponent, IgxRowEditTextDirective, IgxRowEditActionsDirective, IgxIconButtonDirective, IgxRowEditTabStopDirective, IgxIconComponent]
 })
 export class TreeGridRowEditStyleComponent implements OnInit {
 

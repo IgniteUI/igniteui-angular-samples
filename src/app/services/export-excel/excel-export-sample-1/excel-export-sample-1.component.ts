@@ -1,18 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    GridColumnDataType,
-    IgxExcelExporterService,
-    IgxGridComponent,
-    ISortingExpression,
-    SortingDirection
-} from 'igniteui-angular';
+import { GridColumnDataType, IgxExcelExporterService, IgxGridComponent, ISortingExpression, SortingDirection, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, IgxColumnComponent } from 'igniteui-angular';
 import { INVOICE_DATA } from '../data/invoiceData';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-excel-export-sample-1',
     styleUrls: ['./excel-export-sample-1.component.scss'],
     templateUrl: './excel-export-sample-1.component.html',
-    standalone: false
+    imports: [IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, NgFor, IgxColumnComponent]
 })
 export class ExcelExportSample1Component implements OnInit {
   @ViewChild('igxGrid1', { static: true }) public igxGrid1: IgxGridComponent;

@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ISimpleComboSelectionChangingEventArgs } from 'igniteui-angular';
+import { ISimpleComboSelectionChangingEventArgs, IgxSimpleComboComponent, IgxLinearProgressBarComponent } from 'igniteui-angular';
 import { City, Country, getCitiesByCountry, getCountries, Region } from '../../../data/cities15000-regions-countries';
+import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-simple-combo-cascading',
     templateUrl: 'simple-combo-cascading.component.html',
     styleUrls: ['simple-combo-cascading.component.scss'],
-    standalone: false
+    imports: [IgxSimpleComboComponent, FormsModule, NgIf, IgxLinearProgressBarComponent]
 })
 export class SimpleComboCascadingComponent implements OnInit {
     public selectedCountry: Country;

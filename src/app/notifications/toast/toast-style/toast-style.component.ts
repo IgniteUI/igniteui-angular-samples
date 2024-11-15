@@ -1,11 +1,11 @@
 import { Component, ElementRef } from '@angular/core';
-import { IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IgxToastComponent, VerticalAlignment, IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-toast-style',
     styleUrls: ['./toast-style.component.scss'],
     templateUrl: './toast-style.component.html',
-    standalone: false
+    imports: [IgxButtonDirective, IgxRippleDirective, IgxToastComponent]
 })
 export class ToastStyleComponent {
     public toast: IgxToastComponent;

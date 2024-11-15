@@ -1,12 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxColumnGroupComponent, IgxGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxColumnGroupComponent, IgxGridComponent, IgxIconComponent, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-multi-column-header-template',
     styleUrls: ['multi-column-header-template.scss'],
     templateUrl: 'multi-column-header-template.html',
-    standalone: false
+    imports: [IgxIconComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnGroupComponent]
 })
 export class GridMultiColumnHeaderTemplateComponent {
 

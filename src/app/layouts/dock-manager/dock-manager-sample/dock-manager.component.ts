@@ -6,8 +6,7 @@ import { IgcDockManagerLayout,
 @Component({
     selector: 'app-dock-manager',
     styleUrls: ['./dock-manager.component.scss'],
-    templateUrl: './dock-manager.component.html',
-    standalone: false
+    templateUrl: './dock-manager.component.html'
 })
 export class DockManagerComponent {
     public layout: IgcDockManagerLayout = {

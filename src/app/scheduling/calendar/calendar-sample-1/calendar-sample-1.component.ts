@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { IgxCalendarComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-calendar',
     styleUrls: ['./calendar-sample-1.component.scss'],
     templateUrl: './calendar-sample-1.component.html',
-    standalone: false
+    imports: [IgxCalendarComponent]
 })
 export class CalendarSample1Component { }

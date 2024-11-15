@@ -1,14 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 
-import {
-    IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate,
-    IgxPivotDateDimension, FilteringExpressionsTree, FilteringLogic, IgxStringFilteringOperand,
-    PivotRowLayoutType,
-    IPivotUISettings,
-    IChangeCheckboxEventArgs,
-    IgxPivotGridComponent,
-    PivotSummaryPosition
-} from "igniteui-angular"
+import { IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate, IgxPivotDateDimension, FilteringExpressionsTree, FilteringLogic, IgxStringFilteringOperand, PivotRowLayoutType, IPivotUISettings, IChangeCheckboxEventArgs, IgxPivotGridComponent, PivotSummaryPosition, IgxSwitchComponent } from "igniteui-angular"
 import { SALES_DATA } from "../../data/dataToAnalyze";
 
 export class IgxTotalSaleAggregate {
@@ -42,7 +34,7 @@ export class IgxTotalSaleAggregate {
     selector: 'app-pivot-layout-sample',
     styleUrls: ['./pivot-layout.component.scss'],
     templateUrl: './pivot-layout.component.html',
-    standalone: false
+    imports: [IgxSwitchComponent, IgxPivotGridComponent]
 })
 export class PivotGridLayoutComponent {
     public data = SALES_DATA;

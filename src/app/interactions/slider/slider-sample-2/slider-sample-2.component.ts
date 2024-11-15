@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { IgxSliderComponent } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-slider-sample-2',
     styleUrls: ['./slider-sample-2.component.scss'],
     templateUrl: './slider-sample-2.component.html',
-    standalone: false
+    imports: [IgxSliderComponent, FormsModule]
 })
 export class SliderSample2Component implements OnInit {
   public volume = 20;

@@ -1,12 +1,14 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { contains } from '@igniteui/material-icons-extended';
 import { DATA } from '../../data/nwindData';
+import { IgxSwitchComponent, IgxGridComponent, IgxColumnComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-grid-editing-lifecycle',
     templateUrl: 'grid-editing-lifecycle.component.html',
     styleUrls: ['grid-editing-lifecycle.component.scss'],
-    standalone: false
+    imports: [IgxSwitchComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxButtonDirective, IgxIconComponent]
 })
 export class GridEditingLifecycleComponent {
     @ViewChild('logger')

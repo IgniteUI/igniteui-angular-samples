@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { IgxIconComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-icon-sample-2',
     styleUrls: ['./icon-sample-2.component.scss'],
     templateUrl: './icon-sample-2.component.html',
-    standalone: false
+    imports: [IgxIconComponent]
 })
 export class IconSample2Component { }

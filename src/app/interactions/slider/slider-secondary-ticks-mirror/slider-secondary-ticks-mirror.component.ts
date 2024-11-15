@@ -5,7 +5,7 @@ import { IgxSliderComponent, TicksOrientation} from 'igniteui-angular';
     selector: 'app-slider-bottom-ticks',
     styleUrls: ['./slider-secondary-ticks-mirror.component.scss'],
     templateUrl: './slider-secondary-ticks-mirror.component.html',
-    standalone: false
+    imports: [IgxSliderComponent]
 })
 export class SliderSecondaryTicksMirrorComponent {
     @ViewChild(IgxSliderComponent, { static: true })

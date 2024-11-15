@@ -1,13 +1,16 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { IgxSimpleComboComponent, ISimpleComboSelectionChangingEventArgs } from 'igniteui-angular';
+import { IgxSimpleComboComponent, ISimpleComboSelectionChangingEventArgs, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxLinearProgressBarComponent } from 'igniteui-angular';
 import { Country, getCitiesByCountry, getCountries } from '../../data/cities15000-regions-countries';
 import { DATA } from '../../data/data';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'grid-cascading-combos',
     templateUrl: './grid-cascading-combos.component.html',
     styleUrls: ['./grid-cascading-combos.component.scss'],
-    standalone: false
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxSimpleComboComponent, FormsModule, NgIf, IgxLinearProgressBarComponent]
 })
 export class GridCascadingCombosComponent implements OnInit {
     @ViewChildren(IgxSimpleComboComponent)

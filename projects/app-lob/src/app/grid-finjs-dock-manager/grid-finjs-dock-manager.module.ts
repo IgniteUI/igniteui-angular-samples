@@ -10,11 +10,6 @@ import { DockSlotComponent, GridHostDirective } from './dock-slot.component';
 import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
 
 @NgModule({
-    declarations: [
-        GridFinJSDockManagerComponent,
-        DockSlotComponent,
-        GridHostDirective
-    ],
     imports: [
         GridFinJSDockManagerRoutingModule,
         IgxPreventDocumentScrollModule,
@@ -29,7 +24,10 @@ import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directive
         IgxTabsModule,
         IgxToggleModule,
         IgxSelectModule,
-        IgxIconModule
+        IgxIconModule,
+        GridFinJSDockManagerComponent,
+        DockSlotComponent,
+        GridHostDirective
     ],
     providers: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

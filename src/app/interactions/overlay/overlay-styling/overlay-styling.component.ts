@@ -1,11 +1,12 @@
 import { Component, ElementRef } from '@angular/core';
-import { IgxOverlayService } from 'igniteui-angular';
+import { IgxOverlayService, IgxComboComponent } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-overlay-styling',
     styleUrls: ['overlay-styling.component.scss'],
     templateUrl: 'overlay-styling.component.html',
-    standalone: false
+    imports: [IgxComboComponent, FormsModule]
 })
 export class OverlayStylingComponent {
     public items = [{

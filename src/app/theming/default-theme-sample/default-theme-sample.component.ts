@@ -1,24 +1,15 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import {
-    CloseScrollStrategy,
-    ConnectedPositioningStrategy,
-    HorizontalAlignment,
-    IgxDialogComponent,
-    IgxDropDownComponent,
-    IgxGridComponent,
-    IgxOverlayOutletDirective,
-    IgxSnackbarComponent,
-    VerticalAlignment,
-    OverlaySettings
-} from 'igniteui-angular';
+import { CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxDialogComponent, IgxDropDownComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxSnackbarComponent, VerticalAlignment, OverlaySettings, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxDatePickerComponent, IgxLayoutDirective, IgxButtonDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
 import { DATA } from '../data/data';
 import { Record } from '../data/record';
+import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-default-theme-sample',
     styleUrls: ['./default-theme-sample.component.scss'],
     templateUrl: './default-theme-sample.component.html',
-    standalone: false
+    imports: [IgxDialogComponent, IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxDatePickerComponent, IgxOverlayOutletDirective, IgxLayoutDirective, IgxButtonDirective, IgxGridComponent, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxIconComponent, IgxSnackbarComponent, DatePipe]
 })
 export class DefaultThemeSampleComponent implements OnInit {
     @ViewChild('dialog1', { read: IgxDialogComponent, static: true })

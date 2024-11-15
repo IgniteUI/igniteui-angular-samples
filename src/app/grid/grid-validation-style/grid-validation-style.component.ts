@@ -1,12 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
 import { DATA } from '../../data/nwindData';
-import { IgxGridComponent, RowType } from 'igniteui-angular';
+import { IgxGridComponent, RowType, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxCellValidationErrorDirective } from 'igniteui-angular';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
     selector: 'app-grid-validation-style',
     styleUrls: [`grid-validation-style.component.scss`],
     templateUrl: 'grid-validation-style.component.html',
-    standalone: false
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxCellValidationErrorDirective, NgTemplateOutlet]
 })
 export class GridValidationStyleComponent {
     @ViewChild('grid', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;

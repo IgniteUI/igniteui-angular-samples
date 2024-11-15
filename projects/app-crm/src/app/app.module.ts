@@ -14,10 +14,7 @@ import { SEOService } from '../../../app-lob/src/app/seo.service';
 
 @NgModule({
     bootstrap: [AppComponent],
-    declarations: [
-        AppComponent,
-        GridCRMComponent
-    ],
+    declarations: [AppComponent],
     imports: [
         IgxAutocompleteModule,
         IgxRippleModule,
@@ -34,7 +31,8 @@ import { SEOService } from '../../../app-lob/src/app/seo.service';
         FormsModule,
         IgxPreventDocumentScrollModule,
         HammerModule,
-        IgxIconButtonDirective
+        IgxIconButtonDirective,
+        GridCRMComponent
     ],
     providers: [SEOService]
 })

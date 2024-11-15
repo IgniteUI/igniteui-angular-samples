@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { IgxSliderType } from 'igniteui-angular';
+import { IgxSliderType, IgxAccordionComponent, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelBodyComponent, IgxCheckboxComponent, IgxSliderComponent, IgxRadioComponent, IgxIconComponent, IgxTimePickerComponent, IgxLabelDirective } from 'igniteui-angular';
+import { NgFor, NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-accordion-sample-3',
     styleUrls: ['./accordion-sample-3.component.scss'],
     templateUrl: './accordion-sample-3.component.html',
-    standalone: false
+    imports: [IgxAccordionComponent, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelBodyComponent, NgFor, IgxCheckboxComponent, FormsModule, IgxSliderComponent, NgIf, IgxRadioComponent, IgxIconComponent, IgxTimePickerComponent, IgxLabelDirective]
 })
 export class AccordionSample3Component {
     public sliderType = IgxSliderType;

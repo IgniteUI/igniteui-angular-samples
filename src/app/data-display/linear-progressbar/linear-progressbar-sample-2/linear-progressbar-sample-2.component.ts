@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { IgxTextAlign } from 'igniteui-angular';
+import { IgxTextAlign, IgxLinearProgressBarComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-linear-progressbar-sample-2',
     styleUrls: ['./linear-progressbar-sample-2.component.scss'],
     templateUrl: './linear-progressbar-sample-2.component.html',
-    standalone: false
+    imports: [IgxLinearProgressBarComponent]
 })
 export class LinearProgressbarSample2Component {
 

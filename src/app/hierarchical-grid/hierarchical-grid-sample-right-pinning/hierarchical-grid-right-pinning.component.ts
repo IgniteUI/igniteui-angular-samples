@@ -1,12 +1,8 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import {
-    ColumnPinningPosition,
-    IgxColumnComponent,
-    IgxHierarchicalGridComponent,
-    IPinningConfig
-} from 'igniteui-angular';
+import { ColumnPinningPosition, IgxColumnComponent, IgxHierarchicalGridComponent, IPinningConfig, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxAvatarComponent, IgxCellHeaderTemplateDirective, IgxIconComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { employeesData } from '../../data/employeesData';
 import { athletesData } from '../../data/athletesData';
+import { DatePipe } from '@angular/common';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -15,7 +11,7 @@ import { athletesData } from '../../data/athletesData';
     selector: 'hierarchical-grid-sample',
     styleUrls: ['hierarchical-grid-right-pinning.component.scss'],
     templateUrl: 'hierarchical-grid-right-pinning.component.html',
-    standalone: false
+    imports: [IgxHierarchicalGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxAvatarComponent, IgxCellHeaderTemplateDirective, IgxIconComponent, IgxRowIslandComponent, DatePipe]
 })
 
 export class HierarchicalGridRightPinningSampleComponent implements OnInit {

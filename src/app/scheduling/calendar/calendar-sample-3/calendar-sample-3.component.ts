@@ -5,7 +5,7 @@ import { IgxCalendarComponent, IgxDialogComponent, IgxCalendarView, IViewDateCha
     selector: 'app-calendar',
     styleUrls: ['./calendar-sample-3.component.scss'],
     templateUrl: './calendar-sample-3.component.html',
-    standalone: false
+    imports: [IgxCalendarComponent]
 })
 
 export class CalendarSample3Component {

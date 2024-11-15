@@ -1,13 +1,14 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { IgxGridComponent, DefaultSortingStrategy } from 'igniteui-angular';
+import { IgxGridComponent, DefaultSortingStrategy, IgxColumnComponent } from 'igniteui-angular';
 import { FinancialData } from '../../data/financialData';
 import  {generateRandomInteger, generateRandomFloat} from '../../data/utils';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-grid-sorting-indicators',
     templateUrl: './grid-sorting-indicators.component.html',
     styleUrls: ['./grid-sorting-indicators.component.scss'],
-    standalone: false
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class GridSortingIndicatorsComponent implements OnInit, AfterViewInit {
 

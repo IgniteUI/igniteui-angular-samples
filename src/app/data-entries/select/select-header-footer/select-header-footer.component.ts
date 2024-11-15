@@ -1,9 +1,11 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit } from '@angular/core';
+import { IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxIconComponent, IgxSelectHeaderDirective, IgxButtonGroupComponent, IgxButtonDirective, IgxSelectFooterDirective } from 'igniteui-angular';
+import { NgFor, NgSwitch, NgSwitchCase } from '@angular/common';
 @Component({
     selector: 'app-select-header-footer',
     styleUrls: ['select-header-footer.component.scss'],
     templateUrl: 'select-header-footer.component.html',
-    standalone: false
+    imports: [IgxSelectComponent, IgxLabelDirective, NgFor, IgxSelectItemComponent, NgSwitch, NgSwitchCase, IgxIconComponent, IgxSelectHeaderDirective, IgxButtonGroupComponent, IgxButtonDirective, IgxSelectFooterDirective]
 })
 export class SelectHeaderFooterComponent implements OnInit {
     public flightCount: number;

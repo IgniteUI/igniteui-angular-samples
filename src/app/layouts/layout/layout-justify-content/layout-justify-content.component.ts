@@ -1,12 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ButtonGroupAlignment } from 'igniteui-angular';
+import { ButtonGroupAlignment, IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, IgxLayoutDirective } from 'igniteui-angular';
+import { NgIf } from '@angular/common';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: 'app-layout-justify-content',
     styleUrls: ['./layout-justify-content.component.scss'],
     templateUrl: './layout-justify-content.component.html',
-    standalone: false
+    imports: [IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, NgIf, IgxLayoutDirective]
 })
 
 export class LayoutJustifyContentComponent {

@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/member-delimiter-style */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, NgFor } from '@angular/common';
 import localeBG from '@angular/common/locales/bg';
 import localeCS from '@angular/common/locales/cs';
 import localeDA from '@angular/common/locales/da';
@@ -25,7 +25,7 @@ import localeHI from '@angular/common/locales/hi';
 import localeHans from '@angular/common/locales/zh-Hans';
 import localeHant from '@angular/common/locales/zh-Hant';
 import { DATA } from '../../../data/nwindData';
-import { IgxGridComponent, GridResourceStringsEN, IGridResourceStrings } from 'igniteui-angular';
+import { IgxGridComponent, GridResourceStringsEN, IGridResourceStrings, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxSelectComponent, IgxSelectItemComponent, IgxColumnComponent } from 'igniteui-angular';
 import {
     IgxResourceStringsBG, IgxResourceStringsCS, IgxResourceStringsDA, IgxResourceStringsDE,
     IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsHU, IgxResourceStringsIT,
@@ -33,12 +33,13 @@ import {
     IgxResourceStringsPT, IgxResourceStringsRO, IgxResourceStringsSV, IgxResourceStringsTR,
     IgxResourceStringsZHHANS, IgxResourceStringsZHHANT
 } from 'igniteui-angular-i18n';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-localization-all-resources',
     styleUrls: ['./localization-all-resources.component.scss'],
     templateUrl: 'localization-all-resources.component.html',
-    standalone: false
+    imports: [IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxSelectComponent, FormsModule, NgFor, IgxSelectItemComponent, IgxColumnComponent]
 })
 export class LocalizationAllResourcesComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true })

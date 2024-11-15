@@ -1,12 +1,13 @@
 import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, IgxButtonGroupComponent, IgxColumnComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { CUSTOMERS } from '../../data/hierarchical-data';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-density',
     styleUrls: ['./hierarchical-grid-density.component.scss'],
     templateUrl: 'hierarchical-grid-density.component.html',
-    standalone: false
+    imports: [IgxButtonGroupComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent]
 })
 
 export class HGridDisplayDensitySampleComponent implements OnInit {

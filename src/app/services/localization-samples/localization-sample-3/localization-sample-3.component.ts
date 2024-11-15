@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { IgxGridComponent, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-localization-sample-3',
     styleUrls: ['./localization-sample-3.component.scss'],
     templateUrl: 'localization-sample-3.component.html',
-    standalone: false
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 
 export class LocalizationSample3Component implements OnInit {

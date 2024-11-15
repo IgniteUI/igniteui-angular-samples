@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxBooleanFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular';
+import { IgxBooleanFilteringOperand, IgxStringFilteringOperand, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf, CurrencyPipe } from '@angular/common';
 
 @Component({
     selector: 'app-grid-custom-filtering',
     styleUrls: ['./grid-custom-filtering.component.scss'],
     templateUrl: './grid-custom-filtering.component.html',
-    standalone: false
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, NgIf, CurrencyPipe]
 })
 export class GridCustomFilteringComponent implements OnInit {
     public data: any[];

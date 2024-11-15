@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { IgxQueryBuilderComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-query-builder-style-sample',
     styleUrls: ['./query-builder-style.component.scss'],
     templateUrl: 'query-builder-style.component.html',
-    standalone: false
+    imports: [IgxQueryBuilderComponent]
 })
 export class QueryBuilderStyleComponent {
     public fields: any[] = [

@@ -1,11 +1,12 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { DateRange, IgxDateRangePickerComponent, OverlaySettings } from 'igniteui-angular';
+import { DateRange, IgxDateRangePickerComponent, OverlaySettings, IgxPickerActionsDirective, IgxButtonDirective } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-rangdatepicker-range-buttons',
     styleUrls: ['./daterangepicker-range-buttons.scss'],
     templateUrl: './daterangepicker-range-buttons.html',
-    standalone: false
+    imports: [IgxDateRangePickerComponent, FormsModule, IgxPickerActionsDirective, IgxButtonDirective]
 })
 export class DateRangePickerRangeButtonsComponent {
     @ViewChild('rangePicker')

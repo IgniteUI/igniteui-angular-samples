@@ -1,25 +1,21 @@
 /* eslint-disable max-len */
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { IgxChartIntegrationDirective, OPTIONS_TYPE, CHART_TYPE } from 'igniteui-angular-extras';
+import { IgxChartIntegrationDirective, OPTIONS_TYPE, CHART_TYPE, IgxExtrasModule } from 'igniteui-angular-extras';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { FinancialData } from '../../data/financialData';
 import { FloatingPanesService } from '../../services/floating-panes.service';
 import { DockSlotComponent } from './dock-slot/dock-slot.component';
+import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxDividerDirective } from 'igniteui-angular';
+import { NgFor, NgIf, NgClass, DecimalPipe, TitleCasePipe, CurrencyPipe } from '@angular/common';
 
-@Pipe({
-    name: 'filterType',
-    standalone: false
-})
+@Pipe({ name: 'filterType' })
 export class FilterTypePipe implements PipeTransform {
     public transform(collection: CHART_TYPE[], type: string): CHART_TYPE[] {
         return collection.filter(types => types.indexOf(type) !== -1 && types.indexOf(type, type.length - 1) === -1);
     }
 }
 
-@Pipe({
-    name: 'hastDuplicateLayouts',
-    standalone: false
-})
+@Pipe({ name: 'hastDuplicateLayouts' })
 export class HastDuplicateLayouts implements PipeTransform {
     public transform(contentId: string, layout: IgcDockManagerLayout, chartTypes) {
         const count = this.hasDuplicateContentID(layout, contentId, 0);
@@ -53,7 +49,7 @@ export class HastDuplicateLayouts implements PipeTransform {
     templateUrl: './data-analysis-dock-manager.component.html',
     styleUrls: ['./data-analysis-dock-manager.component.scss'],
     providers: [FloatingPanesService],
-    standalone: false
+    imports: [IgxGridComponent, IgxExtrasModule, IgxColumnComponent, IgxCellTemplateDirective, NgFor, NgIf, NgClass, IgxDividerDirective, DockSlotComponent, DecimalPipe, TitleCasePipe, CurrencyPipe, FilterTypePipe, HastDuplicateLayouts]
 })
 export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
 

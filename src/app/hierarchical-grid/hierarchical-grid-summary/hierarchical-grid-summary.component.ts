@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent, IgxNumberSummaryOperand,
-    IgxSummaryResult } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, IgxNumberSummaryOperand, IgxSummaryResult, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 class MySummary  {
 
@@ -44,7 +44,7 @@ class MyChildSummary {
     selector: 'app-hierarchical-grid-summary',
     styleUrls: ['./hierarchical-grid-summary.component.scss'],
     templateUrl: 'hierarchical-grid-summary.component.html',
-    standalone: false
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent]
 })
 
 export class HGridSummarySampleComponent {

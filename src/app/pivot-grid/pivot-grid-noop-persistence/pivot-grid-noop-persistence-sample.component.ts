@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ViewChild } from "@angular/core";
-import { IPivotConfiguration, IgxPivotNumericAggregate, NoopPivotDimensionsStrategy, IgxPivotGridComponent, NoopSortingStrategy, IGridState, IGridStateOptions, IgxGridStateDirective } from "igniteui-angular"
+import { IPivotConfiguration, IgxPivotNumericAggregate, NoopPivotDimensionsStrategy, IgxPivotGridComponent, NoopSortingStrategy, IGridState, IGridStateOptions, IgxGridStateDirective, IgxButtonDirective, IgxIconComponent } from "igniteui-angular"
 import { PivotDataService } from "../../services/pivotRemoteData.service";
 import { take } from 'rxjs/operators';
 
@@ -8,7 +8,7 @@ import { take } from 'rxjs/operators';
     styleUrls: ['./pivot-grid-noop-persistence-sample.component.scss'],
     templateUrl: './pivot-grid-noop-persistence-sample.component.html',
     providers: [PivotDataService],
-    standalone: false
+    imports: [IgxButtonDirective, IgxIconComponent, IgxPivotGridComponent, IgxGridStateDirective]
 })
 export class PivotGridNoopPersistenceSampleComponent implements AfterViewInit {
     @ViewChild('grid', { static: true })

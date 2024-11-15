@@ -1,19 +1,15 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import {
-    DefaultSortingStrategy,
-    GridSelectionMode,
-    IgxGridComponent,
-    ISortingExpression,
-    SortingDirection
-} from 'igniteui-angular';
+import { DefaultSortingStrategy, GridSelectionMode, IgxGridComponent, ISortingExpression, SortingDirection, IgxColumnComponent, IgxCellTemplateDirective, IgxGroupByRowTemplateDirective, IgxIconComponent, IgxBadgeComponent } from 'igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf } from '@angular/common';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: 'app-grid-groupby-sample',
     styleUrls: ['./grid-groupby-sample.component.scss'],
     templateUrl: './grid-groupby-sample.component.html',
-    standalone: false
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, NgIf, IgxGroupByRowTemplateDirective, IgxIconComponent, IgxBadgeComponent]
 })
 export class GridGroupBySampleComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

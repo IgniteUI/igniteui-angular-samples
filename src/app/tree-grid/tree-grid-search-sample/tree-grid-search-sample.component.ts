@@ -1,12 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent} from 'igniteui-angular';
+import { IgxTreeGridComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxChipsAreaComponent, IgxChipComponent, IgxIconButtonDirective, IgxRippleDirective, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tree-grid-search-sample',
     styleUrls: ['./tree-grid-search-sample.component.scss'],
     templateUrl: './tree-grid-search-sample.component.html',
-    standalone: false
+    imports: [IgxInputGroupComponent, IgxPrefixDirective, NgIf, IgxIconComponent, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxChipsAreaComponent, IgxChipComponent, IgxIconButtonDirective, IgxRippleDirective, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridSearchSampleComponent implements OnInit {
 

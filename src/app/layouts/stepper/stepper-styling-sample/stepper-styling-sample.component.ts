@@ -1,11 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxStepperComponent, IStepChangingEventArgs } from 'igniteui-angular';
+import { IgxStepperComponent, IStepChangingEventArgs, IgxStepActiveIndicatorDirective, IgxIconComponent, IgxStepCompletedIndicatorDirective, IgxStepComponent, IgxStepTitleDirective, IgxStepSubtitleDirective, IgxStepContentDirective, IgxButtonDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-stepper-styling-sample',
     styleUrls: ['./stepper-styling-sample.component.scss'],
     templateUrl: './stepper-styling-sample.component.html',
-    standalone: false
+    imports: [IgxStepperComponent, IgxStepActiveIndicatorDirective, IgxIconComponent, IgxStepCompletedIndicatorDirective, IgxStepComponent, IgxStepTitleDirective, IgxStepSubtitleDirective, IgxStepContentDirective, IgxButtonDirective]
 })
 export class StepperStylingSampleComponent {
     @ViewChild('stepper', { read: IgxStepperComponent })

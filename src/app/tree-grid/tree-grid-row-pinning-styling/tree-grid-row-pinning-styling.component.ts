@@ -1,17 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    ColumnPinningPosition,
-    IgxTreeGridComponent,
-    IPinningConfig,
-    RowPinningPosition
-} from 'igniteui-angular';
+import { ColumnPinningPosition, IgxTreeGridComponent, IPinningConfig, RowPinningPosition, IgxColumnComponent, IgxActionStripComponent, IgxGridPinningActionsComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-tree-grid-row-pinning-styling',
     styleUrls: ['tree-grid-row-pinning-styling.component.scss'],
     templateUrl: 'tree-grid-row-pinning-styling.component.html',
-    standalone: false
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, NgFor, IgxColumnComponent, IgxActionStripComponent, IgxGridPinningActionsComponent]
 })
 export class TreeGridRowPinningStylingSampleComponent implements OnInit {
 

@@ -4,8 +4,7 @@ import { WishlistItem } from '../data';
 
 @Pipe({
     name: 'transactionBasePipe',
-    pure: false,
-    standalone: false
+    pure: false
 })
 export class TransactionBasePipe implements PipeTransform {
     /**

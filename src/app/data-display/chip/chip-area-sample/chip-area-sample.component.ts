@@ -1,11 +1,12 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { IBaseChipEventArgs, IChipsAreaReorderEventArgs } from 'igniteui-angular';
+import { IBaseChipEventArgs, IChipsAreaReorderEventArgs, IgxChipsAreaComponent, IgxChipComponent, IgxAvatarComponent, IgxPrefixDirective, IgxIconComponent } from 'igniteui-angular';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-chip-area-sample',
     styleUrls: ['./chip-area-sample.component.scss'],
     templateUrl: './chip-area-sample.component.html',
-    standalone: false
+    imports: [IgxChipsAreaComponent, NgFor, IgxChipComponent, IgxAvatarComponent, IgxPrefixDirective, IgxIconComponent]
 })
 
 export class ChipAreaSampleComponent {

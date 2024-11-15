@@ -1,18 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-import {
-    IDropDroppedEventArgs,
-    IgxHierarchicalGridComponent,
-    RowType,
-    Point,
-    GridSelectionMode
-} from 'igniteui-angular';
+import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType, Point, GridSelectionMode, IgxDropDirective, IgxColumnComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { createData, IDrive } from '../../data/files.data';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-row-reorder',
     styleUrls: ['./hierarchical-grid-row-reorder.component.scss'],
     templateUrl: 'hierarchical-grid-row-reorder.component.html',
-    standalone: false
+    imports: [IgxHierarchicalGridComponent, IgxDropDirective, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent]
 })
 export class HGridRowReorderComponent {
     @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent, static: true })

@@ -1,5 +1,5 @@
 import { Component, ElementRef, Inject, OnDestroy, ViewChild, ViewContainerRef } from '@angular/core';
-import { ConnectedPositioningStrategy, IgxOverlayService, OverlaySettings } from 'igniteui-angular';
+import { ConnectedPositioningStrategy, IgxOverlayService, OverlaySettings, IgxButtonDirective } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 @Component({
@@ -7,7 +7,7 @@ import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-
     styleUrls: ['./overlay-position-sample-1.component.scss'],
     templateUrl: './overlay-position-sample-1.component.html',
     providers: [IgxOverlayService],
-    standalone: false
+    imports: [IgxButtonDirective]
 })
 export class OverlayPositionSample1Component implements OnDestroy {
     @ViewChild('buttonElement', { static: true })

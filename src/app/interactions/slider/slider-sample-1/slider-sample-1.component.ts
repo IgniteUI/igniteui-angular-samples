@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { IgxSliderType } from 'igniteui-angular';
+import { IgxSliderType, IgxSliderComponent, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective, IgxInputDirective } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-slider-sample-1',
     styleUrls: ['./slider-sample-1.component.scss'],
     templateUrl: './slider-sample-1.component.html',
-    standalone: false
+    imports: [IgxSliderComponent, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective, FormsModule, IgxInputDirective]
 })
 export class SliderSample1Component {
 

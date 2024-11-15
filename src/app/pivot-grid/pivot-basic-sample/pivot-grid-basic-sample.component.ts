@@ -1,13 +1,13 @@
 import { Component } from "@angular/core";
 import { DATA } from '../../data/pivot-data';
 
-import { IPivotConfiguration, IgxPivotNumericAggregate } from "igniteui-angular"
+import { IPivotConfiguration, IgxPivotNumericAggregate, IgxPivotGridComponent } from "igniteui-angular"
 
 @Component({
     selector: 'app-pivot-grid-basic-sample',
     styleUrls: ['./pivot-grid-basic-sample.component.scss'],
     templateUrl: './pivot-grid-basic-sample.component.html',
-    standalone: false
+    imports: [IgxPivotGridComponent]
 })
 export class PivotGridBasicSampleComponent {
     public data = DATA;

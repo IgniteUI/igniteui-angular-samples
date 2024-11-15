@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { IgxSliderType } from 'igniteui-angular';
+import { IgxSliderType, IgxSliderComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-slider-timeframe',
     styleUrls: ['./slider-timeframe.component.scss'],
     templateUrl: './slider-timeframe.component.html',
-    standalone: false
+    imports: [IgxSliderComponent]
 })
 export class SliderTimeframeComponent {
     public type: IgxSliderType = IgxSliderType.RANGE;

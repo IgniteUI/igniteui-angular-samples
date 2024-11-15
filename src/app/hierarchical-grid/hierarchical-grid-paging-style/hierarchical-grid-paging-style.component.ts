@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { SINGERS } from '../../data/singersData';
+import { IgxHierarchicalGridComponent, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxPaginatorDirective } from 'igniteui-angular';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-paging',
     styleUrls: ['./hierarchical-grid-paging-style.component.scss'],
     templateUrl: 'hierarchical-grid-paging-style.component.html',
-    standalone: false
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxPaginatorDirective]
 })
 
 export class HGridPagingStyleSampleComponent {

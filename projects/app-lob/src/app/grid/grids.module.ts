@@ -23,10 +23,8 @@ import { IgxBarSeriesModule, IgxBollingerBandsOverlayModule, IgxCategoryChartMod
 import { GridsDVRoutingModule } from './grids-routing.module';
 import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
 
-@NgModule({ declarations: [
-        GridComponent,
-        GridMasterDetailSampleComponent
-    ], imports: [CommonModule,
+@NgModule({
+    imports: [CommonModule,
         FormsModule,
         GridsDVRoutingModule,
         IgxPreventDocumentScrollModule,
@@ -77,5 +75,6 @@ import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directive
         IgxDividerModule,
         IgxDataChartScatterModule,
         IgxBarSeriesModule,
-        IgxCategoryChartModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        IgxCategoryChartModule, GridComponent,
+        GridMasterDetailSampleComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class GridsDVModule { }

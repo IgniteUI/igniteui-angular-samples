@@ -1,12 +1,13 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { CUSTOMERS } from '../../data/hierarchical-data';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-column-group-selection',
     templateUrl: './hierarchical-grid-column-group-selection.component.html',
     styleUrls: ['./hierarchical-grid-column-group-selection.component.scss'],
-    standalone: false
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnGroupComponent, IgxRowIslandComponent]
 })
 export class HierarchicalGridColumnGroupSelectionComponent implements OnInit, AfterViewInit {
     @ViewChild(IgxHierarchicalGridComponent, { static: true })

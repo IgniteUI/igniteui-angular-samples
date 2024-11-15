@@ -1,9 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 
-import {
-    IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate, IgxPivotDateDimension,
-    IgxExcelExporterService, IgxExcelExporterOptions, IgxPivotGridComponent
-} from "igniteui-angular"
+import { IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate, IgxPivotDateDimension, IgxExcelExporterService, IgxExcelExporterOptions, IgxPivotGridComponent, IgxButtonDirective } from "igniteui-angular"
 import { SALES_DATA } from "../../data/dataToAnalyze";
 
 export class IgxTotalSaleAggregate {
@@ -37,7 +34,7 @@ export class IgxTotalSaleAggregate {
     selector: 'app-pivot-export-sample',
     styleUrls: ['./pivot-export.component.scss'],
     templateUrl: './pivot-export.component.html',
-    standalone: false
+    imports: [IgxButtonDirective, IgxPivotGridComponent]
 })
 export class PivotExportComponent {
     @ViewChild(IgxPivotGridComponent, { static: true }) public grid: IgxPivotGridComponent;

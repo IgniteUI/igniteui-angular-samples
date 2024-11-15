@@ -1,13 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
-import {
-    ColumnPinningPosition,
-    IgxIconService,
-    RowType,
-    IPinningConfig,
-    RowPinningPosition
-} from 'igniteui-angular';
+import { ColumnPinningPosition, IgxIconService, RowType, IPinningConfig, RowPinningPosition, IgxSwitchComponent, IgxHierarchicalGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { icons } from '../../services/svgIcons';
 import { SINGERS } from '../../data/singersData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 
@@ -15,7 +10,7 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
     selector: 'app-hierarchical-grid-row-pinning-extra-column',
     styleUrls: ['./hierarchical-grid-row-pinning-extra-column.component.scss'],
     templateUrl: 'hierarchical-grid-row-pinning-extra-column.component.html',
-    standalone: false
+    imports: [IgxSwitchComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, IgxRowIslandComponent]
 })
 
 export class HGridRowPinningExtraColumnSampleComponent implements AfterViewInit{

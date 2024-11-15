@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IgxDatePickerComponent, IgxLabelDirective, IgxTimePickerComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-datetimepicker-reactive-form',
     styleUrls: ['./reactive-form.component.scss'],
     templateUrl: './reactive-form.component.html',
-    standalone: false
+    imports: [FormsModule, ReactiveFormsModule, IgxDatePickerComponent, IgxLabelDirective, IgxTimePickerComponent]
 })
 export class DateTimePickerRFSampleComponent {
     public dateTimeForm: FormGroup;

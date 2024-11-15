@@ -1,17 +1,14 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import {
-    IGridCreatedEventArgs,
-    IgxHierarchicalGridComponent,
-    IgxRowIslandComponent
-} from 'igniteui-angular';
+import { IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent, IgxColumnComponent } from 'igniteui-angular';
 import { IDataState, RemoteLoDService } from '../../services/remote-lod.service';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     providers: [RemoteLoDService],
     selector: 'app-hierarchical-grid-lod',
     styleUrls: ['./hierarchical-grid-lod.component.scss'],
     templateUrl: './hierarchical-grid-lod.component.html',
-    standalone: false
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent]
 })
 export class HierarchicalGridLoDSampleComponent implements AfterViewInit {
     @ViewChild('hGrid', { static: true })

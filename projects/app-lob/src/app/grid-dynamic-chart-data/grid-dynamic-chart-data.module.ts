@@ -18,16 +18,6 @@ import { GridDynamicChartDataComponent } from './grid-dynamic-chart-data.compone
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-    declarations: [
-        GridDynamicChartDataComponent,
-        ChartHostDirective,
-        ConditionalFormattingDirective,
-        ChartIntegrationDirective,
-        FilterTypePipe,
-        DataAnalysisDockManagerComponent,
-        DockSlotComponent,
-        HastDuplicateLayouts
-    ],
     imports: [
         IgxButtonModule,
         IgxDialogModule,
@@ -51,7 +41,15 @@ import { CommonModule } from '@angular/common';
         IgxCategoryChartModule,
         GridDynamicChartDataRoutingModule,
         IgxExtrasModule,
-        CommonModule
+        CommonModule,
+        GridDynamicChartDataComponent,
+        ChartHostDirective,
+        ConditionalFormattingDirective,
+        ChartIntegrationDirective,
+        FilterTypePipe,
+        DataAnalysisDockManagerComponent,
+        DockSlotComponent,
+        HastDuplicateLayouts
     ],
     providers: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

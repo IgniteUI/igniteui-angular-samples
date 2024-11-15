@@ -8,9 +8,6 @@ import { TreeGridFinJSComponent } from './tree-grid-finjs-sample.component';
 import { TreeGridFinjsRoutingModule } from './treegrid-finjs-routing.module';
 
 @NgModule({
-    declarations: [
-        TreeGridFinJSComponent
-    ],
     imports: [
         CommonModule,
         IgxPreventDocumentScrollModule,
@@ -24,7 +21,8 @@ import { TreeGridFinjsRoutingModule } from './treegrid-finjs-routing.module';
         IgxToggleModule,
         IgxSelectModule,
         IgxFocusModule,
-        IgxButtonGroupModule
+        IgxButtonGroupModule,
+        TreeGridFinJSComponent
     ]
 })
 export class TreeGridFinjsModule {}

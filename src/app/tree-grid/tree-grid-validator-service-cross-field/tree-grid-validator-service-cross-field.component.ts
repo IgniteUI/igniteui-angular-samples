@@ -1,21 +1,17 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
-import {
-    ColumnPinningPosition,
-    CellType,
-    IGridEditEventArgs,
-    IgxTreeGridComponent,
-    IPinningConfig
-} from 'igniteui-angular';
+import { FormGroup, ValidationErrors, ValidatorFn, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ColumnPinningPosition, CellType, IGridEditEventArgs, IgxTreeGridComponent, IPinningConfig, IgxSwitchComponent, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnMaxValidatorDirective, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxButtonDirective } from 'igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-tree-grid-validator-service-cross-field-component',
     styleUrls: ['tree-grid-validator-service-cross-field.component.scss'],
     templateUrl: 'tree-grid-validator-service-cross-field.component.html',
-    standalone: false
+    imports: [IgxSwitchComponent, FormsModule, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnMaxValidatorDirective, IgxCellEditorTemplateDirective, IgxSelectComponent, ReactiveFormsModule, IgxFocusDirective, NgFor, IgxSelectItemComponent, IgxCellTemplateDirective, NgIf, IgxTooltipTargetDirective, IgxTooltipDirective, IgxButtonDirective]
 })
 export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
     @ViewChild('treeGrid', { static: true })

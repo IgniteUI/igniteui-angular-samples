@@ -1,8 +1,11 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 
-import { GridSelectionMode, IgxGridComponent, IgxSnackbarComponent, IRowSelectionEventArgs } from 'igniteui-angular';
+import { GridSelectionMode, IgxGridComponent, IgxSnackbarComponent, IRowSelectionEventArgs, IgxSwitchComponent, IgxButtonGroupComponent, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
+import { FormsModule } from '@angular/forms';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 
 @Component({
@@ -11,7 +14,7 @@ import { FinancialDataService } from '../../services/financial.service';
     selector: 'grid-sample',
     styleUrls: ['./grid-selection.component.scss'],
     templateUrl: 'grid-selection.component.html',
-    standalone: false
+    imports: [IgxSwitchComponent, FormsModule, IgxButtonGroupComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, NgIf, IgxBadgeComponent, IgxButtonDirective, IgxIconComponent, IgxSnackbarComponent, AsyncPipe]
 })
 
 export class GridSelectionSampleComponent implements OnInit {

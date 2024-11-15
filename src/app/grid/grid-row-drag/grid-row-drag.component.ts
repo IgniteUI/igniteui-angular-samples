@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChildren } from '@angular/core';
-import { RowType } from 'igniteui-angular';
+import { RowType, IgxGridComponent, IgxColumnComponent, IgxDropDirective } from 'igniteui-angular';
 import { moonData, planetData } from './data';
 import { PlanetComponent as PlanetComponent } from './planet/planet.component';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgFor } from '@angular/common';
 
 // eslint-disable-next-line no-shadow
 enum HoverClassList {
@@ -14,7 +16,7 @@ enum HoverClassList {
     selector: 'app-grid-row-drag-sample',
     styleUrls: ['./grid-row-drag.component.scss'],
     templateUrl: 'grid-row-drag.component.html',
-    standalone: false
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, NgFor, PlanetComponent, IgxDropDirective]
 })
 
 export class GridDragSampleComponent {

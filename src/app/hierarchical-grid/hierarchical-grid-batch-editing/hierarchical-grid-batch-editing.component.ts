@@ -1,19 +1,16 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    IgxDialogComponent,
-    IgxHierarchicalGridComponent,
-    IgxRowIslandComponent,
-    Transaction
-} from 'igniteui-angular';
+import { IgxDialogComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent, Transaction, IgxButtonDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxCheckboxComponent, IgxGridComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { Singer } from '../models';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-hierarchical-grid-batch-editing',
     styleUrls: ['./hierarchical-grid-batch-editing.component.scss'],
     templateUrl: 'hierarchical-grid-batch-editing.component.html',
-    standalone: false
+    imports: [IgxButtonDirective, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxDialogComponent, IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxCheckboxComponent, IgxGridComponent]
 })
 
 export class HGridBatchEditingSampleComponent implements OnInit {

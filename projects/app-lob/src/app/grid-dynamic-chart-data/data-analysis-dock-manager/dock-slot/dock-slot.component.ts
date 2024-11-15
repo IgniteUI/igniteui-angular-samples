@@ -5,7 +5,7 @@ import { ChartHostDirective } from '../../directives/chart-integration/chart-int
     selector: 'app-dock-slot',
     templateUrl: './dock-slot.component.html',
     styleUrls: ['./dock-slot.component.scss'],
-    standalone: false
+    imports: [ChartHostDirective]
 })
 export class DockSlotComponent implements OnInit {
 

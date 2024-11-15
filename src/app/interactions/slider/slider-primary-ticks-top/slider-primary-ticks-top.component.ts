@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { TicksOrientation } from 'igniteui-angular';
+import { TicksOrientation, IgxSliderComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-slider-primary-ticks-top',
     styleUrls: ['./slider-primary-ticks-top.component.scss'],
     templateUrl: './slider-primary-ticks-top.component.html',
-    standalone: false
+    imports: [IgxSliderComponent]
 })
 export class SliderPrimaryTicksTopComponent {
     public ticksOreintation = TicksOrientation.Top;

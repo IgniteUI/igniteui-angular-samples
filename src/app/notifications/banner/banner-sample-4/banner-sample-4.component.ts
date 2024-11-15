@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxBannerComponent } from 'igniteui-angular';
+import { IgxBannerComponent, IgxNavbarComponent, IgxIconComponent, IgxBannerActionsDirective, IgxButtonDirective, IgxRippleDirective, IgxAvatarComponent, IgxSwitchComponent, IgxInputGroupComponent, IgxInputDirective } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: 'app-banner-sample-4',
     templateUrl: './banner-sample-4.component.html',
     styleUrls: ['./banner-sample-4.component.scss'],
-    standalone: false
+    imports: [IgxNavbarComponent, IgxIconComponent, IgxBannerComponent, IgxBannerActionsDirective, IgxButtonDirective, IgxRippleDirective, IgxAvatarComponent, IgxSwitchComponent, FormsModule, IgxInputGroupComponent, IgxInputDirective]
 })
 export class BannerSample4Component implements OnInit {
     @ViewChild(IgxBannerComponent, { static: true }) public banner: IgxBannerComponent;

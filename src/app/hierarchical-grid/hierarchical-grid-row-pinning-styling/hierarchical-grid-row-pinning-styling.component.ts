@@ -1,17 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    ColumnPinningPosition,
-    IgxHierarchicalGridComponent,
-    IPinningConfig,
-    RowPinningPosition
-} from 'igniteui-angular';
+import { ColumnPinningPosition, IgxHierarchicalGridComponent, IPinningConfig, RowPinningPosition, IgxColumnComponent, IgxCellTemplateDirective, IgxActionStripComponent, IgxGridPinningActionsComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-row-pinning-styling',
     styleUrls: ['./hierarchical-grid-row-pinning-styling.component.scss'],
     templateUrl: 'hierarchical-grid-row-pinning-styling.component.html',
-    standalone: false
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxActionStripComponent, IgxGridPinningActionsComponent, IgxRowIslandComponent]
 })
 
 export class HGridRowPinningStylingSampleComponent implements OnInit {

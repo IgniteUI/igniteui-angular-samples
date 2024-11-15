@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxActionStripComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { IgxActionStripComponent, IgxTreeGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, IgxGridEditingActionsComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tree-grid-add-row-sample',
     styleUrls: ['./tree-grid-add-row-sample.component.scss'],
     templateUrl: './tree-grid-add-row-sample.component.html',
-    standalone: false
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, IgxActionStripComponent, IgxGridEditingActionsComponent]
 })
 export class TreeGridAddRowSampleComponent implements OnInit {
     @ViewChild('actionstrip') actionStrip: IgxActionStripComponent;

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { IRowSelectionEventArgs } from 'igniteui-angular';
+import { IRowSelectionEventArgs, IgxHierarchicalGridComponent, IgxPaginatorComponent, IgxColumnComponent, IgxRowIslandComponent, IgxRowSelectorDirective, IgxCheckboxComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-conditional-row-selectors',
     styleUrls: ['./hierarchical-grid-conditional-row-selectors.component.scss'],
     templateUrl: 'hierarchical-grid-conditional-row-selectors.component.html',
-    standalone: false
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxRowIslandComponent, IgxRowSelectorDirective, IgxCheckboxComponent]
 })
 
 export class HGridConditionalRowSelectorsComponent implements OnInit {

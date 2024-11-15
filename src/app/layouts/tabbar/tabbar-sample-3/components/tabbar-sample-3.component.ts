@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet, RouterLinkActive, RouterLink } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { IgxBottomNavComponent, IgxBottomNavItemComponent, IgxBottomNavHeaderComponent, IgxIconComponent, IgxBottomNavHeaderIconDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-tabbar-sample-3',
     styleUrls: ['./tabbar-sample-3.component.scss'],
     templateUrl: './tabbar-sample-3.component.html',
-    standalone: false
+    imports: [RouterOutlet, IgxBottomNavComponent, IgxBottomNavItemComponent, RouterLinkActive, IgxBottomNavHeaderComponent, RouterLink, IgxIconComponent, IgxBottomNavHeaderIconDirective]
 })
 export class TabbarSample3Component implements OnInit {
     public path: string;

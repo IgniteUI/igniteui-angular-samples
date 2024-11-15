@@ -1,11 +1,12 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { IBaseChipEventArgs } from 'igniteui-angular';
+import { IBaseChipEventArgs, IgxChipComponent, IgxIconComponent, IgxPrefixDirective } from 'igniteui-angular';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-chip-simple',
     styleUrls: ['./chip-simple.component.scss'],
     templateUrl: './chip-simple.component.html',
-    standalone: false
+    imports: [NgFor, IgxChipComponent, IgxIconComponent, IgxPrefixDirective]
 })
 
 export class ChipSimpleComponent {

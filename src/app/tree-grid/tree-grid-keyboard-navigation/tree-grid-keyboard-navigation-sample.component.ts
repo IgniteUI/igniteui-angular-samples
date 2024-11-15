@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IGridKeydownEventArgs, CellType, IgxTreeGridComponent, GridSelectionMode } from 'igniteui-angular';
+import { IGridKeydownEventArgs, CellType, IgxTreeGridComponent, GridSelectionMode, IgxPaginatorComponent, IgxColumnComponent } from 'igniteui-angular';
 import { EMPLOYEE_DATA } from './data';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tree-grid-keyboard-navigation-sample',
     styleUrls: ['./tree-grid-keyboard-navigation-sample.component.scss'],
     templateUrl: './tree-grid-keyboard-navigation-sample.component.html',
-    standalone: false
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent]
 })
 export class TreeGridKBNavigationComponent implements OnInit {
     @ViewChild('grid1', { read: IgxTreeGridComponent, static: true })

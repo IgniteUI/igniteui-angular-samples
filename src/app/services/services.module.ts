@@ -20,7 +20,18 @@ import { TransactionBaseComponent } from './transaction/transaction-base/transac
 // tslint:enable:max-line-length
 
 @NgModule({
-    declarations: [
+    imports: [
+        CommonModule,
+        FormsModule,
+        IgxPreventDocumentScrollModule,
+        ServicesRoutingModule,
+        IgxGridModule,
+        IgxTimePickerModule,
+        IgxTreeGridModule,
+        IgxListModule,
+        IgxCardModule,
+        IgxSelectModule,
+        IgxIconModule,
         CsvExportComponent,
         CsvExportSample1Component,
         TreeGridCsvExportSample1Component,
@@ -33,19 +44,6 @@ import { TransactionBaseComponent } from './transaction/transaction-base/transac
         LocalizationAllResourcesComponent,
         TransactionBaseComponent,
         TransactionBasePipe
-    ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        IgxPreventDocumentScrollModule,
-        ServicesRoutingModule,
-        IgxGridModule,
-        IgxTimePickerModule,
-        IgxTreeGridModule,
-        IgxListModule,
-        IgxCardModule,
-        IgxSelectModule,
-        IgxIconModule
     ],
     providers: [
         IgxTransactionService

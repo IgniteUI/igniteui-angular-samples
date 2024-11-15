@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IgxBannerComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IgxBannerComponent, IgxToastComponent, VerticalAlignment, IgxNavbarComponent, IgxIconComponent, IgxBannerActionsDirective, IgxButtonDirective, IgxRippleDirective, IgxCardComponent } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 
 @Component({
     selector: 'app-banner-advanced-sample',
     styleUrls: ['../banner-samples.scss'],
     templateUrl: 'banner-advanced-sample.component.html',
-    standalone: false
+    imports: [IgxNavbarComponent, IgxIconComponent, IgxBannerComponent, IgxBannerActionsDirective, IgxButtonDirective, IgxRippleDirective, IgxCardComponent, IgxToastComponent]
 })
 
 export class BannerAdvancedSampleComponent implements OnInit, OnDestroy {

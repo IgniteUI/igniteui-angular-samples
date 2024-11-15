@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { IgxAvatarComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-avatar-sample-2',
     styleUrls: ['./avatar-sample-2.component.scss'],
     templateUrl: './avatar-sample-2.component.html',
-    standalone: false
+    imports: [IgxAvatarComponent]
 })
 export class AvatarSample2Component {
 

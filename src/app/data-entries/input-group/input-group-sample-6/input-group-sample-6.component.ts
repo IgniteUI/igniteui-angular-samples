@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { BaseInputGroupSampleComponent } from '../base-input.component';
+import { FormsModule } from '@angular/forms';
+import { IgxSelectComponent, IgxSelectGroupComponent, IgxSelectItemComponent, IgxLabelDirective, IgxSelectToggleIconDirective, IgxIconComponent, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxPrefixDirective, IgxHintDirective, IgxComboComponent, IgxDatePickerComponent, IgxPickerToggleComponent, IgxTimePickerComponent, IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular';
+import { NgFor } from '@angular/common';
 @Component({
     selector: 'app-input-group-sample-6',
     styleUrls: ['./input-group-sample-6.component.scss'],
     templateUrl: './input-group-sample-6.component.html',
-    standalone: false
+    imports: [FormsModule, IgxSelectComponent, NgFor, IgxSelectGroupComponent, IgxSelectItemComponent, IgxLabelDirective, IgxSelectToggleIconDirective, IgxIconComponent, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxPrefixDirective, IgxHintDirective, IgxComboComponent, IgxDatePickerComponent, IgxPickerToggleComponent, IgxTimePickerComponent, IgxButtonDirective, IgxRippleDirective]
 })
 export class InputGroupSample6Component extends BaseInputGroupSampleComponent {
     public user = {

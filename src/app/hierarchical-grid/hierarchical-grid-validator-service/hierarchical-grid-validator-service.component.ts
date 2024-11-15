@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, IgxSwitchComponent, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxRowIslandComponent, IgxColumnMinValidatorDirective, IgxColumnMaxValidatorDirective } from 'igniteui-angular';
 import { CUSTOMERS } from '../../data/hierarchical-data';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-hierarchical-grid-validator-service',
     styleUrls: ['./hierarchical-grid-validator-service.component.scss'],
     templateUrl: './hierarchical-grid-validator-service.component.html',
-    standalone: false
+    imports: [IgxSwitchComponent, FormsModule, IgxHierarchicalGridComponent, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxRowIslandComponent, IgxColumnMinValidatorDirective, IgxColumnMaxValidatorDirective]
 })
 export class HierarchicalGridValidatorServiceComponent implements OnInit {
 

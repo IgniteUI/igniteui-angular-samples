@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { IgxCheckboxComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-checkbox-sample-1',
     styleUrls: ['./checkbox-sample-1.component.scss'],
     templateUrl: './checkbox-sample-1.component.html',
-    standalone: false
+    imports: [IgxCheckboxComponent]
 })
 export class CheckboxSample1Component { }

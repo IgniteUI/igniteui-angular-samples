@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxBannerComponent } from 'igniteui-angular';
+import { IgxBannerComponent, IgxNavbarComponent, IgxIconComponent, IgxBannerActionsDirective, IgxButtonDirective, IgxRippleDirective, IgxCardComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-banner-sample-2',
     styleUrls: ['../banner-samples.scss'],
     templateUrl: 'banner-sample-2.component.html',
-    standalone: false
+    imports: [IgxNavbarComponent, IgxIconComponent, IgxBannerComponent, IgxBannerActionsDirective, IgxButtonDirective, IgxRippleDirective, IgxCardComponent]
 })
 
 export class BannerSample2Component implements OnInit {

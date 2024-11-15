@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { IRowSelectionEventArgs } from 'igniteui-angular';
+import { IRowSelectionEventArgs, IgxTreeGridComponent, IgxPaginatorComponent, IgxColumnComponent, IgxRowSelectorDirective, IgxCheckboxComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tree-grid-conditional-row-selectors',
     styleUrls: ['./tree-grid-conditional-row-selectors.component.scss'],
     templateUrl: 'tree-grid-conditional-row-selectors.component.html',
-    standalone: false
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxRowSelectorDirective, IgxCheckboxComponent]
 })
 
 export class TreeGridConditionalRowSelectorsSampleComponent implements OnInit {

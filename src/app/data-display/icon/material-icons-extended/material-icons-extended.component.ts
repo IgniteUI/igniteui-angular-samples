@@ -1,15 +1,8 @@
 /* eslint-disable @typescript-eslint/member-ordering */
-import {
-    Component,
-    Inject,
-    OnInit,
-    Pipe,
-    PipeTransform,
-    Renderer2
-} from '@angular/core';
+import { Component, Inject, OnInit, Pipe, PipeTransform, Renderer2, forwardRef } from '@angular/core';
 import * as fileSaver from 'file-saver';
-import { DOCUMENT } from '@angular/common';
-import { IgxIconService, ISelectionEventArgs } from 'igniteui-angular';
+import { DOCUMENT, NgFor, NgIf } from '@angular/common';
+import { IgxIconService, ISelectionEventArgs, IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxInputGroupComponent, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, IgxSuffixDirective, IgxButtonDirective } from 'igniteui-angular';
 
 import {
     all as imxIcons,
@@ -26,7 +19,7 @@ interface ICategoryOption {
     selector: 'app-material-icons-extended',
     templateUrl: './material-icons-extended.component.html',
     styleUrls: ['./material-icons-extended.component.scss'],
-    standalone: false
+    imports: [IgxSelectComponent, IgxLabelDirective, NgFor, IgxSelectItemComponent, IgxInputGroupComponent, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, NgIf, IgxSuffixDirective, IgxButtonDirective, forwardRef(() => CategoriesFilterPipe), forwardRef(() => FilterByName)]
 })
 export class MaterialIconsExtendedComponent implements OnInit {
     constructor(
@@ -128,10 +121,7 @@ interface IIconsGroup {
     icons: IMXIcon[];
 }
 
-@Pipe({
-    name: 'categoriesFilter',
-    standalone: false
-})
+@Pipe({ name: 'categoriesFilter' })
 export class CategoriesFilterPipe implements PipeTransform {
     sortIcons(acc: IIconsGroup[], icon: IMXIcon): IIconsGroup[] {
         for (const category of icon.categories) {
@@ -168,10 +158,7 @@ export class CategoriesFilterPipe implements PipeTransform {
     }
 }
 
-@Pipe({
-    name: 'filterByName',
-    standalone: false
-})
+@Pipe({ name: 'filterByName' })
 export class FilterByName implements PipeTransform {
     transform(icons: IMXIcon[], keyword: string): IMXIcon[] {
         return icons.filter((icon) => {

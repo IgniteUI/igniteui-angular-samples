@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxForOfDirective, IgxDropDownItemComponent } from 'igniteui-angular';
 
 // tslint:disable:object-literal-sort-keys
 // tslint:disable-next-line:interface-name
@@ -13,7 +14,7 @@ interface DataItem {
     selector: 'app-drop-down-virtual',
     templateUrl: './drop-down-virtual.component.html',
     styleUrls: ['./drop-down-virtual.component.scss'],
-    standalone: false
+    imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxForOfDirective, IgxDropDownItemComponent]
 })
 export class DropDownVirtualComponent {
   public items: DataItem[];

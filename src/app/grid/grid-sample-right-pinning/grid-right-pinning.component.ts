@@ -1,7 +1,8 @@
 import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
-import { ColumnPinningPosition, IgxColumnComponent, IgxGridComponent, IPinningConfig } from 'igniteui-angular';
+import { ColumnPinningPosition, IgxColumnComponent, IgxGridComponent, IPinningConfig, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxAvatarComponent, IgxCellHeaderTemplateDirective, IgxIconComponent } from 'igniteui-angular';
 import { employeesData } from '../../data/employeesData';
 import { athletesData } from '../../data/athletesData';
+import { DatePipe } from '@angular/common';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -9,7 +10,7 @@ import { athletesData } from '../../data/athletesData';
     selector: 'app-grid-sample',
     styleUrls: ['grid-right-pinning.component.scss'],
     templateUrl: 'grid-right-pinning.component.html',
-    standalone: false
+    imports: [IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxAvatarComponent, IgxCellHeaderTemplateDirective, IgxIconComponent, DatePipe]
 })
 
 export class RightPinningSampleComponent implements OnInit{

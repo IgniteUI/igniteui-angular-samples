@@ -1,12 +1,12 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { IComboSelectionChangingEventArgs, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IComboSelectionChangingEventArgs, IgxToastComponent, VerticalAlignment, IgxComboComponent } from 'igniteui-angular';
 import { getHeroWeaponsData, IHeroWeapon } from '../../../data/heroData';
 
 @Component({
     selector: 'app-combo',
     styleUrls: ['./combo-styling.component.scss'],
     templateUrl: './combo-styling.component.html',
-    standalone: false
+    imports: [IgxComboComponent, IgxToastComponent]
 })
 export class ComboStylingComponent implements OnInit {
     @ViewChild('loadToast', { read: IgxToastComponent, static: true })

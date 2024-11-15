@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { IgxSwitchComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-switch-styling',
     styleUrls: ['./switch-styling.component.scss'],
     templateUrl: './switch-styling.component.html',
-    standalone: false
+    imports: [NgFor, IgxSwitchComponent]
 })
 export class SwitchStylingComponent {
   public settings = [

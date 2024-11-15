@@ -1,13 +1,14 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { IComboSearchInputEventArgs, IForOfState, IgxSimpleComboComponent, IgxToastComponent, ISimpleComboSelectionChangingEventArgs, VerticalAlignment } from 'igniteui-angular';
 import { RemoteNWindService } from '../../../services/remoteNwind.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     providers: [RemoteNWindService],
     selector: 'app-simple-combo-remote',
     templateUrl: './simple-combo-remote.component.html',
     styleUrls: ['./simple-combo-remote.component.scss'],
-    standalone: false
+    imports: [IgxSimpleComboComponent, IgxToastComponent, AsyncPipe]
 })
 export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
     @ViewChild('loadingToast')

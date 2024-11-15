@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { DatePart } from 'igniteui-angular';
+import { DatePart, IgxInputGroupComponent, IgxInputDirective, IgxDateTimeEditorDirective, IgxSuffixDirective, IgxIconComponent } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-datetime-advanced',
     styleUrls: ['./datetime-advanced.scss'],
     templateUrl: './datetime-advanced.html',
-    standalone: false
+    imports: [IgxInputGroupComponent, FormsModule, IgxInputDirective, IgxDateTimeEditorDirective, IgxSuffixDirective, IgxIconComponent]
 })
 
 export class DateTimeAdvancedComponent {

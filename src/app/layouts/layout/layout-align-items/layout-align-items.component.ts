@@ -1,12 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ButtonGroupAlignment } from 'igniteui-angular';
+import { ButtonGroupAlignment, IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, IgxLayoutDirective, IgxFlexDirective } from 'igniteui-angular';
+import { NgIf } from '@angular/common';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: 'app-layout-align-items',
     styleUrls: ['./layout-align-items.component.scss'],
     templateUrl: './layout-align-items.component.html',
-    standalone: false
+    imports: [IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, NgIf, IgxLayoutDirective, IgxFlexDirective]
 })
 
 export class LayoutAlignItemsComponent {

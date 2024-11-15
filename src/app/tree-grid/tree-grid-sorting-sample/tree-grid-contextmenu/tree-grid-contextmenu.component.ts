@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { SortingDirection } from 'igniteui-angular';
+import { SortingDirection, IgxIconComponent } from 'igniteui-angular';
+import { NgStyle } from '@angular/common';
 
 @Component({
     selector: 'app-tree-grid-contextmenu',
     styleUrls: ['./tree-grid-contextmenu.component.scss'],
     templateUrl: './tree-grid-contextmenu.component.html',
-    standalone: false
+    imports: [NgStyle, IgxIconComponent]
 })
 export class TreeGridContextmenuComponent {
 

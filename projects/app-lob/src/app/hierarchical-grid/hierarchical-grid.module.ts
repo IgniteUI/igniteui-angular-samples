@@ -9,9 +9,8 @@ import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directive
 import { HGridColumnResizingSampleComponent } from './hierarchical-grid-column-resizing/hierarchical-grid-resizing.component';
 import { HierarchicalGridDVRoutingModule } from './hierarchical-grid-routing.module';
 
-@NgModule({ declarations: [
-        HGridColumnResizingSampleComponent
-    ], imports: [CommonModule,
+@NgModule({
+    imports: [CommonModule,
         FormsModule,
         IgxPreventDocumentScrollModule,
         HierarchicalGridDVRoutingModule,
@@ -43,5 +42,5 @@ import { HierarchicalGridDVRoutingModule } from './hierarchical-grid-routing.mod
         IgxSnackbarModule,
         IgxTooltipModule,
         IgxTabsModule,
-        IgxPieChartModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        IgxPieChartModule, HGridColumnResizingSampleComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class HierarchicalGridDVModule { }

@@ -1,17 +1,17 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {
-    IButtonGroupEventArgs, IChangeCheckboxEventArgs, IgxButtonGroupComponent,
-    IgxSliderComponent, IgxToastComponent, ISliderValueChangeEventArgs, VerticalAlignment }
+import { IButtonGroupEventArgs, IChangeCheckboxEventArgs, IgxButtonGroupComponent, IgxSliderComponent, IgxToastComponent, ISliderValueChangeEventArgs, VerticalAlignment, IgxSwitchComponent }
 from 'igniteui-angular';
 import { Observable, Subscription, timer } from 'rxjs';
 import { debounce } from 'rxjs/operators';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-finjs-controllers',
     styleUrls: ['./controllers.component.scss'],
     templateUrl: './controllers.component.html',
-    standalone: false
+    imports: [NgIf, IgxSwitchComponent, FormsModule, IgxSliderComponent, IgxButtonGroupComponent, IgxToastComponent]
 })
 export class ControllerComponent implements OnInit, OnDestroy {
     @ViewChild('buttonGroup1', { static: true }) public playButtons: IgxButtonGroupComponent;

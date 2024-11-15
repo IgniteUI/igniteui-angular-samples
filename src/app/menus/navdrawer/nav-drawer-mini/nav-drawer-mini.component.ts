@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { IgxLayoutDirective, IgxNavigationDrawerComponent, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, IgxIconComponent, IgxNavDrawerMiniTemplateDirective, IgxFlexDirective, IgxIconButtonDirective, IgxToggleActionDirective } from 'igniteui-angular';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-nav-drawer-mini',
     styleUrls: ['./nav-drawer-mini.component.scss'],
     templateUrl: './nav-drawer-mini.component.html',
-    standalone: false
+    imports: [IgxLayoutDirective, IgxNavigationDrawerComponent, IgxNavDrawerTemplateDirective, NgFor, IgxNavDrawerItemDirective, IgxRippleDirective, IgxIconComponent, IgxNavDrawerMiniTemplateDirective, IgxFlexDirective, IgxIconButtonDirective, IgxToggleActionDirective]
 })
 export class NavDrawerMiniComponent  {
     public navItems = [

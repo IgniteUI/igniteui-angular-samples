@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { IgxButtonDirective } from 'igniteui-angular';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-about',
     templateUrl: './about.component.html',
-    standalone: false
+    imports: [IgxButtonDirective, RouterLink]
 })
 export class HGridAboutComponent {
 }

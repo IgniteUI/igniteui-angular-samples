@@ -15,12 +15,7 @@ import { IndexComponent } from './index/index.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({ bootstrap: [AppComponent],
-    declarations: [
-        AppComponent,
-        HomeComponent,
-        DocsLayoutComponent,
-        IndexComponent
-    ], imports: [AppRoutingModule,
+    declarations: [AppComponent], imports: [AppRoutingModule,
         IgxAutocompleteModule,
         IgxRippleModule,
         IgxNavbarModule,
@@ -38,5 +33,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         NgbModule,
         IgxSliderModule,
         IgxDateRangePickerModule,
-        IgxDropDownModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        IgxDropDownModule, HomeComponent,
+        DocsLayoutComponent,
+        IndexComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

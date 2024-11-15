@@ -1,6 +1,8 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
+import { IgxNumberSummaryOperand, IgxSummaryResult, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxSwitchComponent, IgxButtonGroupComponent, IgxGridComponent, IgxColumnComponent, IgxSummaryTemplateDirective } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
+import { FormsModule } from '@angular/forms';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 class DiscontinuedSummary {
     public operate(data?: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
@@ -32,7 +34,7 @@ class DiscontinuedSummary {
     selector: 'app-grid-summary-template',
     styleUrls: ['./grid-summary-template.component.scss'],
     templateUrl: './grid-summary-template.component.html',
-    standalone: false
+    imports: [IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxSwitchComponent, IgxButtonGroupComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxSummaryTemplateDirective]
 })
 export class GridSummaryTemplateComponent implements OnInit {
     public discontinuedSummary = DiscontinuedSummary;

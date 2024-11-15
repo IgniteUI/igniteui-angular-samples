@@ -3,18 +3,11 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-    IgxColumnComponent,
-    IgxColumnGroupComponent,
-    CellType,
-    IgxListComponent,
-    IgxOverlayService,
-    IgxTreeGridComponent,
-    IActiveNodeChangeEventArgs
-} from 'igniteui-angular';
+import { IgxColumnComponent, IgxColumnGroupComponent, CellType, IgxListComponent, IgxOverlayService, IgxTreeGridComponent, IActiveNodeChangeEventArgs, IgxPaginatorComponent, IgxGridToolbarComponent, IgxCellTemplateDirective, IgxListItemComponent, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
+import { NgIf, NgFor, NgClass } from '@angular/common';
 
 // eslint-disable-next-line no-shadow
 enum GridSection {
@@ -178,7 +171,7 @@ const summaryCombinations: Item[] = [
             ])
         ])
     ],
-    standalone: false
+    imports: [IgxTreeGridComponent, IgxPaginatorComponent, NgIf, IgxGridToolbarComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxCellTemplateDirective, IgxListComponent, IgxListItemComponent, NgFor, NgClass, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective]
 })
 export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
     @ViewChild(IgxTreeGridComponent, { static: true })

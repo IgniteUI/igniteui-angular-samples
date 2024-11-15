@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs, IgxGridComponent } from 'igniteui-angular';
+import { IDropDroppedEventArgs, IgxGridComponent, IgxColumnComponent, IgxDropDirective } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 // eslint-disable-next-line no-shadow
 enum DragIcon {
@@ -13,7 +14,7 @@ enum DragIcon {
     selector: 'app-grid-row-drag-base-sample',
     styleUrls: ['./grid-row-drag-base.component.scss'],
     templateUrl: 'grid-row-drag-base.component.html',
-    standalone: false
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxDropDirective]
 })
 
 export class GridDragBaseSampleComponent {

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { IgxSwitchComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-switch-sample-2',
     styleUrls: ['./switch-sample-2.component.scss'],
     templateUrl: './switch-sample-2.component.html',
-    standalone: false
+    imports: [NgFor, IgxSwitchComponent]
 })
 export class SwitchSample2Component {
   public settings = [

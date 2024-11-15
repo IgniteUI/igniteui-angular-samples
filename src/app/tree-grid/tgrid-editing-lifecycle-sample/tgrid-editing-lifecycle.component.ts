@@ -1,11 +1,13 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { generateEmployeeFlatData } from '../data/employees-flat';
+import { IgxSwitchComponent, IgxTreeGridComponent, IgxColumnComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tgrid-editing-lifecycle',
     templateUrl: 'tgrid-editing-lifecycle.component.html',
     styleUrls: ['tgrid-editing-lifecycle.component.scss'],
-    standalone: false
+    imports: [IgxSwitchComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxButtonDirective, IgxIconComponent]
 })
 export class TGridEditingLifecycleComponent {
     @ViewChild('logger')

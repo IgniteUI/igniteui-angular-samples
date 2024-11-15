@@ -1,12 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxExporterEvent, IgxGridComponent } from 'igniteui-angular';
+import { IgxExporterEvent, IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxSwitchComponent, IgxGridToolbarPinningComponent, IgxGridToolbarHidingComponent, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxColumnGroupComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-multi-column-headers-export',
     styleUrls: ['multi-column-headers-export.component.scss'],
     templateUrl: 'multi-column-headers-export.component.html',
-    standalone: false
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxSwitchComponent, FormsModule, IgxGridToolbarPinningComponent, IgxGridToolbarHidingComponent, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxColumnGroupComponent]
 })
 export class GridMultiColumnHeadersExportComponent {
 

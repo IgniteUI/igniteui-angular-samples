@@ -1,9 +1,7 @@
 import { useAnimation } from '@angular/animations';
 import { Component, ViewChild } from '@angular/core';
 
-import {
-    IgxExpansionPanelComponent
-} from 'igniteui-angular';
+import { IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelBodyComponent } from 'igniteui-angular';
 import { slideInLeft, slideOutRight } from 'igniteui-angular/animations';
 
 @Component({
@@ -11,7 +9,7 @@ import { slideInLeft, slideOutRight } from 'igniteui-angular/animations';
     selector: 'app-expansion-sample-5',
     styleUrls: ['./expansion-sample-5.component.scss'],
     templateUrl: './expansion-sample-5.component.html',
-    standalone: false
+    imports: [IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelBodyComponent]
 })
 export class ExpansionPanelSample5Component {
 

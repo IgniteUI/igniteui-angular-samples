@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { ButtonGroupAlignment } from 'igniteui-angular';
+import { ButtonGroupAlignment, IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-button-group-sample-2',
     styleUrls: ['./button-group-sample-2.component.scss'],
     templateUrl: './button-group-sample-2.component.html',
-    standalone: false
+    imports: [IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective]
 })
 export class ButtonGroupSample2Component {
     public alignment = ButtonGroupAlignment.vertical;

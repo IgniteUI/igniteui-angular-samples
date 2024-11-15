@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxToastComponent, CellType } from 'igniteui-angular';
+import { IgxToastComponent, CellType, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgcFormControlDirective } from 'igniteui-angular';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { DATA } from '../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { FormsModule } from '@angular/forms';
 
 defineComponents(IgcRatingComponent);
 
@@ -9,7 +11,7 @@ defineComponents(IgcRatingComponent);
     selector: 'app-grid-rating-sample',
     styleUrls: ['./grid-with-rating.component.scss'],
     templateUrl: 'grid-with-rating.component.html',
-    standalone: false
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgcFormControlDirective, FormsModule, IgxToastComponent]
 })
 export class GridWithRatingComponent implements OnInit {
     @ViewChild('toast', { read: IgxToastComponent, static: true })

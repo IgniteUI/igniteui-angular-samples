@@ -1,10 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { IgxNavbarComponent } from 'igniteui-angular';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: 'app-navbar',
     styleUrls: ['./navbar.component.scss'],
     templateUrl: './navbar.component.html',
-    standalone: false
+    imports: [IgxNavbarComponent]
 })
 export class NavbarComponent { }

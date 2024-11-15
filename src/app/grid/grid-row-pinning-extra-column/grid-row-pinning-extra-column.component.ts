@@ -1,14 +1,8 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import {
-    ColumnPinningPosition,
-    IgxGridComponent,
-    IgxIconService,
-    IPinningConfig,
-    RowType,
-    RowPinningPosition
-} from 'igniteui-angular';
+import { ColumnPinningPosition, IgxGridComponent, IgxIconService, IPinningConfig, RowType, RowPinningPosition, IgxSwitchComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 import { icons } from '../../services/svgIcons';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 
@@ -16,7 +10,7 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
     selector: 'app-grid-row-pinning-extra-column',
     templateUrl: 'grid-row-pinning-extra-column.component.html',
     styleUrls: ['./grid-row-pinning-extra-column.component.scss'],
-    standalone: false
+    imports: [IgxSwitchComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent]
 })
 
 export class GridRowPinningExtraColumnSampleComponent implements AfterViewInit {

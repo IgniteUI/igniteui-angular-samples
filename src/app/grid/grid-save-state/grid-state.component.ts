@@ -1,11 +1,11 @@
 /* eslint-disable max-len */
 import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
-import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
-    IGridState, IGridStateOptions, IgxGridComponent, IgxGridStateDirective,
-    IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent } from 'igniteui-angular';
+import { NavigationStart, Router, RouterLink } from '@angular/router';
+import { FilteringExpressionsTree, FilteringLogic, GridFeatures, IGridState, IGridStateOptions, IgxGridComponent, IgxGridStateDirective, IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent, IgxButtonDirective, IgxIconComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent } from 'igniteui-angular';
 import { take } from 'rxjs/operators';
 import { employeesData } from './localData';
+import { NgFor } from '@angular/common';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 class MySummary {
 
@@ -25,7 +25,7 @@ class MySummary {
     selector: 'app-grid',
     styleUrls: ['./grid-state.component.scss'],
     templateUrl: './grid-state.component.html',
-    standalone: false
+    imports: [IgxButtonDirective, IgxIconComponent, RouterLink, IgxCheckboxComponent, NgFor, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridStateDirective, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent]
 })
 
 export class GridSaveStateComponent implements OnInit, AfterViewInit {

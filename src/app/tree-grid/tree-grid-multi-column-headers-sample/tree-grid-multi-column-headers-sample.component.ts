@@ -1,12 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxTreeGridComponent} from 'igniteui-angular';
+import { GridSelectionMode, IgxTreeGridComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxButtonDirective } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tree-grid-multi-column-headers-sample',
     styleUrls: ['./tree-grid-multi-column-headers-sample.component.scss'],
     templateUrl: './tree-grid-multi-column-headers-sample.component.html',
-    standalone: false
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnGroupComponent, IgxButtonDirective]
 })
 export class TreeGridMultiColumnHeadersSampleComponent {
 

@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IGridEditEventArgs, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IGridEditEventArgs, IgxToastComponent, VerticalAlignment, IgxTreeGridComponent, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tree-grid-editing-events',
     templateUrl: 'tree-grid-editing-events.component.html',
     styleUrls: ['tree-grid-editing-events.component.scss'],
-    standalone: false
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxToastComponent]
 })
 export class TreeGridEditingEventsComponent implements OnInit {
     @ViewChild(IgxToastComponent, { read: IgxToastComponent, static: true })

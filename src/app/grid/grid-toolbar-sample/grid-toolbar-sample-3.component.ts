@@ -1,19 +1,13 @@
 import { Component } from '@angular/core';
-import {
-    CsvFileTypes,
-    IColumnExportingEventArgs,
-    IGridToolbarExportEventArgs,
-    IgxCsvExporterOptions,
-    IgxExcelExporterOptions,
-    IgxExporterOptionsBase
-} from 'igniteui-angular';
+import { CsvFileTypes, IColumnExportingEventArgs, IGridToolbarExportEventArgs, IgxCsvExporterOptions, IgxExcelExporterOptions, IgxExporterOptionsBase, IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent } from 'igniteui-angular';
 import { athletesData } from '../../data/athletesData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-grid-toolbar-sample-3',
     styleUrls: ['./grid-toolbar-sample-3.component.scss'],
     templateUrl: './grid-toolbar-sample-3.component.html',
-    standalone: false
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent]
 })
 export class GridToolbarSample3Component {
 

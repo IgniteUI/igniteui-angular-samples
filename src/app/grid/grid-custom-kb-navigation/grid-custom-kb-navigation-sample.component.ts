@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IGridKeydownEventArgs, CellType, IgxGridComponent, GridSelectionMode } from 'igniteui-angular';
+import { IGridKeydownEventArgs, CellType, IgxGridComponent, GridSelectionMode, IgxPaginatorComponent, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-grid-custom-kb-navigation-sample',
     styleUrls: ['./grid-custom-kb-navigation-sample.component.scss'],
     templateUrl: 'grid-custom-kb-navigation-sample.component.html',
-    standalone: false
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent]
 })
 
 export class GridCustomKBNavigationComponent implements OnInit {

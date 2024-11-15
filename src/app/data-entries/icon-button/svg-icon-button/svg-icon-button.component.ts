@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxIconService } from 'igniteui-angular';
+import { IgxIconService, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-svg-icon-button',
     styleUrls: ['./svg-icon-button.component.scss'],
     templateUrl: './svg-icon-button.component.html',
-    standalone: false
+    imports: [IgxIconButtonDirective, IgxIconComponent]
 })
 export class SVGIconButtonComponent implements OnInit {
     constructor(private _iconService: IgxIconService) { }

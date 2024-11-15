@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormsModule } from '@angular/forms';
+import { IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxHintDirective, IgxIconComponent, IgxSuffixDirective, IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular';
+import { NgIf } from '@angular/common';
 
 interface User
 {
@@ -12,7 +14,7 @@ interface User
     selector: 'app-template-driven-form-validation',
     templateUrl: './template-driven-form-validation.component.html',
     styleUrls: ['./template-driven-form-validation.component.scss'],
-    standalone: false
+    imports: [FormsModule, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, NgIf, IgxHintDirective, IgxIconComponent, IgxSuffixDirective, IgxButtonDirective, IgxRippleDirective]
 })
 export class TemplateDrivenFormValidationComponent {
     @ViewChild(NgForm, { static: true })

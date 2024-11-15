@@ -1,12 +1,13 @@
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Component } from '@angular/core';
+import { IgxNavbarComponent } from 'igniteui-angular';
 
 @Component({
     providers: [Location, { provide: LocationStrategy, useClass: PathLocationStrategy }],
     selector: 'app-navbar',
     styleUrls: ['./navbar-sample-3.component.scss'],
     templateUrl: './navbar-sample-3.component.html',
-    standalone: false
+    imports: [IgxNavbarComponent]
 })
 export class NavbarSample3Component {
 

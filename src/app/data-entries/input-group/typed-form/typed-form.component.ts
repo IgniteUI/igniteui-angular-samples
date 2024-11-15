@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxDatePickerComponent, IgxPickerToggleComponent, IgxSuffixDirective, IgxIconComponent, IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular';
 
 export interface registrationFormGroup
 {
@@ -16,7 +17,7 @@ export interface registrationFormGroup
     selector: 'app-typed-form',
     templateUrl: './typed-form.component.html',
     styleUrls: ['./typed-form.component.scss'],
-    standalone: false
+    imports: [FormsModule, ReactiveFormsModule, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxDatePickerComponent, IgxPickerToggleComponent, IgxSuffixDirective, IgxIconComponent, IgxButtonDirective, IgxRippleDirective]
 })
 export class TypedFormComponent {
     public minDate = new Date();

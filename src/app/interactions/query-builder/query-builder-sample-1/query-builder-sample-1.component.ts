@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxQueryBuilderComponent, IgxStringFilteringOperand } from 'igniteui-angular';
+import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxQueryBuilderComponent, IgxStringFilteringOperand, IgxQueryBuilderHeaderComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-query-builder-sample-1',
     styleUrls: ['./query-builder-sample-1.component.scss'],
     templateUrl: 'query-builder-sample-1.component.html',
-    standalone: false
+    imports: [IgxQueryBuilderComponent, IgxQueryBuilderHeaderComponent]
 })
 export class QueryBuilderSample1Component implements OnInit {
     public expressionTree: IExpressionTree;

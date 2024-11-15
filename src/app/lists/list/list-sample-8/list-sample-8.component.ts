@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { IgxListComponent, IgxToastComponent } from 'igniteui-angular';
+import { IgxListComponent, IgxToastComponent, IgxListItemComponent, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxIconComponent, IgxListActionDirective, IgxRippleDirective } from 'igniteui-angular';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-list-8',
     styleUrls: ['./list-sample-8.component.scss'],
     templateUrl: './list-sample-8.component.html',
-    standalone: false
+    imports: [IgxListComponent, IgxListItemComponent, NgFor, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxIconComponent, IgxListActionDirective, IgxRippleDirective]
 })
 export class ListSample8Component implements OnInit {
     @ViewChild('toast', { static: true })

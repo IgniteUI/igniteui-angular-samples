@@ -1,11 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxToggleDirective } from 'igniteui-angular';
+import { IgxToggleDirective, IgxButtonDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-toggle-sample-1',
     styleUrls: ['./toggle-sample-1.component.scss', '../toggle-samples.scss'],
     templateUrl: './toggle-sample-1.component.html',
-    standalone: false
+    imports: [IgxButtonDirective, IgxToggleDirective]
 })
 export class ToggleSample1Component {
 

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { IgxDatePickerComponent, IgxLabelDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-datepicker-sample-4',
     styleUrls: ['./datepicker-sample-4.component.scss'],
     templateUrl: './datepicker-sample-4.component.html',
-    standalone: false
+    imports: [IgxDatePickerComponent, IgxLabelDirective]
 })
 export class DatepickerSample4Component {
 

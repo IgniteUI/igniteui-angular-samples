@@ -1,14 +1,9 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import {
-    ColumnPinningPosition,
-    IgxIconService,
-    IgxTreeGridComponent,
-    IPinningConfig,
-    RowPinningPosition,
-    RowType
-} from 'igniteui-angular';
+import { ColumnPinningPosition, IgxIconService, IgxTreeGridComponent, IPinningConfig, RowPinningPosition, RowType, IgxSwitchComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent } from 'igniteui-angular';
 import { icons } from '../../services/svgIcons';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgFor } from '@angular/common';
 
 const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 
@@ -16,7 +11,7 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
     selector: 'app-tree-grid-row-pinning-extra-column',
     styleUrls: ['tree-grid-row-pinning-extra-column.component.scss'],
     templateUrl: 'tree-grid-row-pinning-extra-column.component.html',
-    standalone: false
+    imports: [IgxSwitchComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, NgFor]
 })
 export class TreeGridRowPinningExtraColumnSampleComponent implements OnInit, AfterViewInit {
 

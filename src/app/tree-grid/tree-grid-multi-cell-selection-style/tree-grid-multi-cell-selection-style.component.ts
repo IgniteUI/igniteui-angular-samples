@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { IgxColumnComponent } from 'igniteui-angular';
+import { IgxColumnComponent, IgxTreeGridComponent } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tree-grid-multi-cell-selection-style-sample',
     styleUrls: ['./tree-grid-multi-cell-selection-style.component.scss'],
     templateUrl: './tree-grid-multi-cell-selection-style.component.html',
-    standalone: false
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridMultiCellSelectionStyleComponent {
     public sourceData = ORDERS_DATA;

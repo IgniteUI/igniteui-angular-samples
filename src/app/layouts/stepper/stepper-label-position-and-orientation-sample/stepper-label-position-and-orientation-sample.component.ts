@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { IButtonGroupEventArgs, IgxStepperOrientation, IgxStepperTitlePosition } from 'igniteui-angular';
+import { IButtonGroupEventArgs, IgxStepperOrientation, IgxStepperTitlePosition, IgxButtonGroupComponent, IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxButtonDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-stepper-label-position-and-orientation-sample',
     styleUrls: ['./stepper-label-position-and-orientation-sample.component.scss'],
     templateUrl: './stepper-label-position-and-orientation-sample.component.html',
-    standalone: false
+    imports: [IgxButtonGroupComponent, IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxButtonDirective]
 })
 export class StepperLabelPositionAndOrientationSampleComponent {
     public orientation: IgxStepperOrientation = 'horizontal';

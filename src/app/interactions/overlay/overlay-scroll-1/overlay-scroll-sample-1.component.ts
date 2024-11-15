@@ -1,23 +1,13 @@
 import { Component, ElementRef, Inject, OnDestroy, ViewChild } from '@angular/core';
-import {
-    AbsoluteScrollStrategy,
-    AutoPositionStrategy,
-    ConnectedPositioningStrategy,
-    ElasticPositionStrategy,
-    GlobalPositionStrategy,
-    HorizontalAlignment,
-    IgxOverlayService,
-    OverlaySettings,
-    PositionSettings,
-    VerticalAlignment
-} from 'igniteui-angular';
+import { AbsoluteScrollStrategy, AutoPositionStrategy, ConnectedPositioningStrategy, ElasticPositionStrategy, GlobalPositionStrategy, HorizontalAlignment, IgxOverlayService, OverlaySettings, PositionSettings, VerticalAlignment, IgxSwitchComponent, IgxIconComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardContentDirective } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: 'app-overlay-sample',
     styleUrls: ['./overlay-scroll-sample-1.component.scss'],
     templateUrl: './overlay-scroll-sample-1.component.html',
     providers: [IgxOverlayService],
-    standalone: false
+    imports: [IgxSwitchComponent, FormsModule, IgxIconComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardContentDirective]
 })
 export class OverlayScrollSample1Component implements OnDestroy {
     @ViewChild('modalDemo', { static: true })

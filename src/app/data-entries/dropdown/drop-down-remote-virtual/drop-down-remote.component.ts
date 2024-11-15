@@ -1,9 +1,10 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 // tslint:disable-next-line:max-line-length
-import { IForOfState, IgxDropDownComponent, IgxForOfDirective, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IForOfState, IgxDropDownComponent, IgxForOfDirective, IgxToastComponent, VerticalAlignment, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownItemComponent } from 'igniteui-angular';
 import { Subject, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { RemoteNWindService } from '../../../services/remoteNwind.service';
+import { AsyncPipe } from '@angular/common';
 
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -11,7 +12,7 @@ import { RemoteNWindService } from '../../../services/remoteNwind.service';
     selector: 'app-drop-down-remote',
     templateUrl: './drop-down-remote.component.html',
     styleUrls: ['./drop-down-remote.component.scss'],
-    standalone: false
+    imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxForOfDirective, IgxDropDownItemComponent, IgxToastComponent, AsyncPipe]
 })
 export class DropDownRemoteComponent implements OnInit, OnDestroy, AfterViewInit {
     @ViewChild('loadingToast', { read: IgxToastComponent, static: true })

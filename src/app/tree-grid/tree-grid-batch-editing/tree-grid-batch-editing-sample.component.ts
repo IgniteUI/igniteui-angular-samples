@@ -1,19 +1,15 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    IgxDialogComponent,
-    IgxGridComponent,
-    IgxTreeGridComponent,
-    Transaction
-} from 'igniteui-angular';
+import { IgxDialogComponent, IgxGridComponent, IgxTreeGridComponent, Transaction, IgxColumnComponent, IgxCellTemplateDirective, IgxButtonDirective } from 'igniteui-angular';
 import { generateRandomInteger } from '../../data/utils';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tree-grid-batch-editing-sample',
     styleUrls: ['tree-grid-batch-editing-sample.component.scss'],
     templateUrl: 'tree-grid-batch-editing-sample.component.html',
-    standalone: false
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxButtonDirective, IgxDialogComponent, IgxGridComponent]
 })
 export class TreeGridBatchEditingSampleComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

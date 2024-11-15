@@ -14,10 +14,6 @@ import { TreeGridPrimaryforeignkeySampleComponent } from './tree-grid-primaryfor
 import { TreeGridDvRoutingModule } from './tree-grid-routing.module';
 
 @NgModule({
-    declarations: [
-        TreeGridChilddatakeySampleComponent,
-        TreeGridPrimaryforeignkeySampleComponent
-    ],
     imports: [
         CommonModule,
         FormsModule,
@@ -41,7 +37,9 @@ import { TreeGridDvRoutingModule } from './tree-grid-routing.module';
         IgxSparklineCoreModule,
         IgxBannerModule,
         IgxSnackbarModule,
-        IgxTooltipModule
+        IgxTooltipModule,
+        TreeGridChilddatakeySampleComponent,
+        TreeGridPrimaryforeignkeySampleComponent
     ],
     providers: [RemoteFilteringService]
 })

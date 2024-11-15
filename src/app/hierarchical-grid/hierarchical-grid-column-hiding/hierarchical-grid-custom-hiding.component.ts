@@ -1,12 +1,13 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent, IgxColumnActionsComponent, IgxColumnHidingDirective, IgxRadioComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-custom-hiding',
     styleUrls: ['./hierarchical-grid-custom-hiding.component.scss'],
     templateUrl: 'hierarchical-grid-custom-hiding.component.html',
-    standalone: false
+    imports: [IgxColumnActionsComponent, IgxColumnHidingDirective, IgxRadioComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent]
 })
 
 export class HGridCostumHidingSampleComponent implements OnInit, AfterViewInit {

@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxColumnGroupComponent, IgxHierarchicalGridComponent } from 'igniteui-angular';
+import { IgxColumnGroupComponent, IgxHierarchicalGridComponent, IgxIconComponent, IgxColumnComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { CUSTOMERS } from '../../data/hierarchical-data';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-multi-column-template',
     styleUrls: ['./hierarchical-grid-multi-column-template.component.scss'],
     templateUrl: 'hierarchical-grid-multi-column-template.component.html',
-    standalone: false
+    imports: [IgxIconComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnGroupComponent, IgxRowIslandComponent]
 })
 
 export class HGridMultiHeaderTemplateSampleComponent implements OnInit {

@@ -21,11 +21,6 @@ import { FinancialDataService } from '../services/financial.service';
 import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
 
 @NgModule({
-    declarations: [
-        FinJSDemoComponent,
-        GridFinJSComponent,
-        ControllerComponent
-    ],
     imports: [
         IgxPreventDocumentScrollModule,
         CommonModule,
@@ -52,7 +47,10 @@ import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directive
         IgxSelectModule,
         IgxToggleModule,
         IgxFocusModule,
-        IgxButtonGroupModule
+        IgxButtonGroupModule,
+        FinJSDemoComponent,
+        GridFinJSComponent,
+        ControllerComponent
     ],
     providers: [FinancialDataService]
 })

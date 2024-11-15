@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IgxButtonGroupComponent } from 'igniteui-angular';
 
 interface IButton {
     ripple?: string;
@@ -34,7 +35,7 @@ class ToggleButton {
     selector: 'app-button-group-sample-3',
     styleUrls: ['./button-group-sample-3.component.scss'],
     templateUrl: './button-group-sample-3.component.html',
-    standalone: false
+    imports: [IgxButtonGroupComponent]
 })
 export class ButtonGroupSample3Component implements OnInit {
     public bordersButtons: ToggleButton[];

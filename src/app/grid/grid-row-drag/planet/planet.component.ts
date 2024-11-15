@@ -1,12 +1,13 @@
 import { ChangeDetectorRef, Component, HostBinding, HostListener, Input, ViewChild } from '@angular/core';
 import { IgxDialogComponent } from 'igniteui-angular';
 import { IPlanet } from '../data';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-planet',
     styleUrls: ['./planet.component.scss'],
     templateUrl: 'planet.component.html',
-    standalone: false
+    imports: [NgFor, IgxDialogComponent]
 })
 
 export class PlanetComponent {

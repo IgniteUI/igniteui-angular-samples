@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { IFilteringExpressionsTree, IgxColumnComponent } from 'igniteui-angular';
+import { IFilteringExpressionsTree, IgxColumnComponent, IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular';
 import { RemoteValuesService } from './remoteValues.service';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-grid-excel-style-filtering-load-on-demand',
     styleUrls: ['./grid-excel-style-filtering-load-on-demand.component.scss'],
     templateUrl: './grid-excel-style-filtering-load-on-demand.component.html',
     providers: [RemoteValuesService],
-    standalone: false
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent]
 })
 export class GridExcelStyleFilteringLoadOnDemandComponent implements OnInit {
 

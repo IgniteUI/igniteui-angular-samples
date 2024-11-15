@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { IgxButtonDirective, IgxRippleDirective, IgxDialogComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-dialog-sample-2',
     styleUrls: ['./dialog-sample-2.component.scss'],
     templateUrl: './dialog-sample-2.component.html',
-    standalone: false
+    imports: [IgxButtonDirective, IgxRippleDirective, IgxDialogComponent]
 })
 export class DialogSample2Component {
 

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { IgxDividerDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-divider-default',
     styleUrls: ['./divider-default.component.scss'],
     templateUrl: './divider-default.component.html',
-    standalone: false
+    imports: [IgxDividerDirective]
 })
 export class DividerDefaultComponent {
 

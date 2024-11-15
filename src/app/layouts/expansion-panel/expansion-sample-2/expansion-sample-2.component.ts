@@ -1,13 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
-import {
-    IgxExpansionPanelComponent, IgxToastComponent
-} from 'igniteui-angular';
+import { IgxExpansionPanelComponent, IgxToastComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelBodyComponent } from 'igniteui-angular';
+import { NgIf } from '@angular/common';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-expansion-sample-2',
     styleUrls: ['./expansion-sample-2.component.scss'],
     templateUrl: './expansion-sample-2.component.html',
-    standalone: false
+    imports: [IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, NgIf, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelBodyComponent, IgxToastComponent]
 })
 export class ExpansionPanelSample2Component {
     @ViewChild(IgxExpansionPanelComponent, { read: IgxExpansionPanelComponent, static: true })

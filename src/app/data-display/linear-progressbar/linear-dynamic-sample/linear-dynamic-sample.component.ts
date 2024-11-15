@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { IgxLinearProgressBarComponent, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-linear-dynamic-sample',
     styleUrls: ['./linear-dynamic-sample.component.scss'],
     templateUrl: './linear-dynamic-sample.component.html',
-    standalone: false
+    imports: [IgxLinearProgressBarComponent, IgxIconButtonDirective, IgxIconComponent]
 })
 export class LinearDynamicSampleComponent implements OnInit{
 

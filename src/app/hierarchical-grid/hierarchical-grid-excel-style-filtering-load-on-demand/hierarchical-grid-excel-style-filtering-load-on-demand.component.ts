@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { IFilteringExpressionsTree, IgxColumnComponent } from 'igniteui-angular';
+import { IFilteringExpressionsTree, IgxColumnComponent, IgxHierarchicalGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxCellTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
 import { RemoteValuesService } from '../../services/remoteValues.service';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-excel-style-filtering-load-on-demand',
     templateUrl: './hierarchical-grid-excel-style-filtering-load-on-demand.component.html',
     styleUrls: ['./hierarchical-grid-excel-style-filtering-load-on-demand.component.scss'],
     providers: [RemoteValuesService],
-    standalone: false
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent]
 })
 export class HierarchicalGridExcelStyleFilteringLoadOnDemandComponent implements OnInit {
 

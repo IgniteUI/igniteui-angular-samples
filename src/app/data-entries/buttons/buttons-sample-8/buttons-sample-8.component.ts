@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { IgxButtonDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-buttons-sample-8',
     styleUrls: ['./buttons-sample-8.component.scss'],
     templateUrl: './buttons-sample-8.component.html',
-    standalone: false
+    imports: [IgxButtonDirective]
 })
 export class ButtonsSample8Component { }

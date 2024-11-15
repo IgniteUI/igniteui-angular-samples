@@ -61,7 +61,31 @@ import { TimePickerStylingComponent } from './timepicker/timepicker-styling/time
 import { DateRangePickerRangeButtonsComponent } from './daterangepicker/daterangepicker-range-buttons/daterangepicker-range-buttons';
 
 @NgModule({
-    declarations: [
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        SchedulingRoutingModule,
+        IgxAutocompleteModule,
+        IgxButtonGroupModule,
+        IgxButtonModule,
+        IgxCalendarModule,
+        IgxCardModule,
+        IgxDatePickerModule,
+        IgxDateRangePickerModule,
+        IgxDateTimeEditorModule,
+        IgxDialogModule,
+        IgxIconModule,
+        IgxInputGroupModule,
+        IgxSnackbarModule,
+        IgxTimePickerModule,
+        IgxToastModule,
+        IgxSwitchModule,
+        IgxButtonModule,
+        IgxSelectModule,
+        IgxDropDownModule,
+        IgxToggleModule,
+        IgxTextSelectionModule,
         AutocompletePipeStartsWith,
         CalendarDaysViewComponent,
         CalendarMonthsViewComponent,
@@ -111,32 +135,6 @@ import { DateRangePickerRangeButtonsComponent } from './daterangepicker/daterang
         DateRangePickerValidationComponent,
         StyledDateRangePickerComponent,
         FlightBookingComponent
-    ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        SchedulingRoutingModule,
-        IgxAutocompleteModule,
-        IgxButtonGroupModule,
-        IgxButtonModule,
-        IgxCalendarModule,
-        IgxCardModule,
-        IgxDatePickerModule,
-        IgxDateRangePickerModule,
-        IgxDateTimeEditorModule,
-        IgxDialogModule,
-        IgxIconModule,
-        IgxInputGroupModule,
-        IgxSnackbarModule,
-        IgxTimePickerModule,
-        IgxToastModule,
-        IgxSwitchModule,
-        IgxButtonModule,
-        IgxSelectModule,
-        IgxDropDownModule,
-        IgxToggleModule,
-        IgxTextSelectionModule
     ]
 })
 export class SchedulingModule { }

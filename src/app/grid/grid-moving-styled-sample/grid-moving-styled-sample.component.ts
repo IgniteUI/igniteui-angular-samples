@@ -1,12 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
-import { ColumnType, IgxGridComponent } from 'igniteui-angular';
+import { ColumnType, IgxGridComponent, IgxCellHeaderTemplateDirective, IgxIconComponent, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { DATA } from '../../data/financialData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-grid-moving-styled-sample',
     styleUrls: ['./grid-moving-styled-sample.component.scss'],
     templateUrl: './grid-moving-styled-sample.component.html',
-    standalone: false
+    imports: [IgxCellHeaderTemplateDirective, IgxIconComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, NgIf, IgxBadgeComponent]
 })
 
 export class GridMovingStyledSampleComponent {

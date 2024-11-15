@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { DATA } from '../../data/nwindData';
+import { IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxSuffixDirective, IgxIconComponent, IgxHintDirective, IgxGridComponent, IgxGridToolbarComponent, IgxSwitchComponent, IgxButtonDirective } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-grid-clipboard-operations-sample',
     styleUrls: ['grid-clipboard-operations-sample.component.scss'],
     templateUrl: './grid-clipboard-operations-sample.component.html',
-    standalone: false
+    imports: [IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxIconComponent, IgxHintDirective, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxSwitchComponent, IgxButtonDirective]
 })
 export class GridClipboardSampleComponent {
     public data: any[];
