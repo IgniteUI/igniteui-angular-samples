@@ -5,7 +5,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-sorting-styling',
     styleUrls: ['./hierarchical-grid-sorting-styling.component.scss'],
-    templateUrl: 'hierarchical-grid-sorting-styling.component.html'
+    templateUrl: 'hierarchical-grid-sorting-styling.component.html',
+    standalone: false
 })
 
 export class HGridSortingStylingComponent implements OnInit, AfterViewInit {

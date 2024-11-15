@@ -16,7 +16,8 @@ import {
     selector: 'app-overlay-sample',
     styleUrls: ['./overlay-scroll-sample-1.component.scss'],
     templateUrl: './overlay-scroll-sample-1.component.html',
-    providers: [IgxOverlayService]
+    providers: [IgxOverlayService],
+    standalone: false
 })
 export class OverlayScrollSample1Component implements OnDestroy {
     @ViewChild('modalDemo', { static: true })

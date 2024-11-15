@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { athletesData } from '../../data/athletesData';
 
 @Component({
-  selector: 'app-grid-toolbar-style',
-  styleUrls: ['./grid-toolbar-style.component.scss'],
-  templateUrl: './grid-toolbar-style.component.html'
+    selector: 'app-grid-toolbar-style',
+    styleUrls: ['./grid-toolbar-style.component.scss'],
+    templateUrl: './grid-toolbar-style.component.html',
+    standalone: false
 })
 export class GridToolbarStyleComponent {
 

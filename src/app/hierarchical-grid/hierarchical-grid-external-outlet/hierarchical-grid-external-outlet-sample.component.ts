@@ -4,7 +4,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-external-outlet',
     styleUrls: ['./hierarchical-grid-external-outlet-sample.component.scss'],
-    templateUrl: 'hierarchical-grid-external-outlet-sample.component.html'
+    templateUrl: 'hierarchical-grid-external-outlet-sample.component.html',
+    standalone: false
 })
 
 export class HierarchicalGridExternalOutletComponent implements OnInit {

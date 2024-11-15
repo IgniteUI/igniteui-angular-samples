@@ -5,7 +5,8 @@ import { CITIES, ICity } from './cities';
 @Component({
     selector: 'app-combo-valuekey',
     templateUrl: 'combo-valuekey.component.html',
-    styleUrls: ['combo-valuekey.component.scss']
+    styleUrls: ['combo-valuekey.component.scss'],
+    standalone: false
 })
 export class ComboValueKeyComponent {
     @ViewChild('withValueKey', { read: IgxComboComponent })

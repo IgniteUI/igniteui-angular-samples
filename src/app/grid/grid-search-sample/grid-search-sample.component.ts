@@ -5,7 +5,8 @@ import { MARKET_DATA } from './data';
 @Component({
     selector: 'app-grid-search-sample',
     styleUrls: ['./grid-search-sample.component.scss'],
-    templateUrl: './grid-search-sample.component.html'
+    templateUrl: './grid-search-sample.component.html',
+    standalone: false
 })
 export class GridSearchSampleComponent implements OnInit {
 

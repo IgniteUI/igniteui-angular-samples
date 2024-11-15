@@ -3,9 +3,10 @@ import { IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
-  selector: 'app-tree-grid-column-resizing-sample',
-  styleUrls: ['./tree-grid-column-resizing-sample.component.scss'],
-  templateUrl: './tree-grid-column-resizing-sample.component.html'
+    selector: 'app-tree-grid-column-resizing-sample',
+    styleUrls: ['./tree-grid-column-resizing-sample.component.scss'],
+    templateUrl: './tree-grid-column-resizing-sample.component.html',
+    standalone: false
 })
 export class TreeGridColumnResizingSampleComponent {
     public data: any[];

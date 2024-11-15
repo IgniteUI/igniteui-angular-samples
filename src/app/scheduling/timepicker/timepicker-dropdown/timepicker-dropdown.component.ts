@@ -4,7 +4,8 @@ import { PickerInteractionMode } from 'igniteui-angular';
 @Component({
     selector: 'app-timepicker-dropdown',
     styleUrls: ['./timepicker-dropdown.component.scss'],
-    templateUrl: './timepicker-dropdown.component.html'
+    templateUrl: './timepicker-dropdown.component.html',
+    standalone: false
 })
 export class TimepickerDropdownComponent {
     public mode: PickerInteractionMode = PickerInteractionMode.DropDown;

@@ -8,7 +8,8 @@ import { FinancialDataService } from '../../services/financial.service';
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'tree-grid-virtualization-sample',
     styleUrls: ['./tree-grid-virtualization-sample.component.scss'],
-    templateUrl: 'tree-grid-virtualization-sample.component.html'
+    templateUrl: 'tree-grid-virtualization-sample.component.html',
+    standalone: false
 })
 
 export class TreeGridVirtualizationSampleComponent {

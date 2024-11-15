@@ -14,7 +14,8 @@ export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
 
 @Directive({
     selector: '[phoneFormat]',
-    providers: [{ provide: NG_VALIDATORS, useExisting: TGridPhoneFormatDirective, multi: true }]
+    providers: [{ provide: NG_VALIDATORS, useExisting: TGridPhoneFormatDirective, multi: true }],
+    standalone: false
 })
 
 export class TGridPhoneFormatDirective extends Validators {
@@ -30,7 +31,8 @@ export class TGridPhoneFormatDirective extends Validators {
 @Component({
     selector: 'app-tree-grid-validator-service-extended-component',
     styleUrls: ['tree-grid-validator-service-extended.component.scss'],
-    templateUrl: 'tree-grid-validator-service-extended.component.html'
+    templateUrl: 'tree-grid-validator-service-extended.component.html',
+    standalone: false
 })
 export class TreeGridValidatorServiceExtendedComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

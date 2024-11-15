@@ -4,7 +4,8 @@ import { IButtonGroupEventArgs, IgxStepperOrientation, IgxStepperTitlePosition }
 @Component({
     selector: 'app-stepper-label-position-and-orientation-sample',
     styleUrls: ['./stepper-label-position-and-orientation-sample.component.scss'],
-    templateUrl: './stepper-label-position-and-orientation-sample.component.html'
+    templateUrl: './stepper-label-position-and-orientation-sample.component.html',
+    standalone: false
 })
 export class StepperLabelPositionAndOrientationSampleComponent {
     public orientation: IgxStepperOrientation = 'horizontal';

@@ -7,7 +7,8 @@ import { take } from 'rxjs/operators';
     selector: 'app-pivot-grid-noop-persistence-sample',
     styleUrls: ['./pivot-grid-noop-persistence-sample.component.scss'],
     templateUrl: './pivot-grid-noop-persistence-sample.component.html',
-    providers: [PivotDataService]
+    providers: [PivotDataService],
+    standalone: false
 })
 export class PivotGridNoopPersistenceSampleComponent implements AfterViewInit {
     @ViewChild('grid', { static: true })

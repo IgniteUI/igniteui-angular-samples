@@ -6,7 +6,8 @@ import { RemoteNWindService } from '../../../services/remoteNwind.service';
     providers: [RemoteNWindService],
     selector: 'app-simple-combo-remote',
     templateUrl: './simple-combo-remote.component.html',
-    styleUrls: ['./simple-combo-remote.component.scss']
+    styleUrls: ['./simple-combo-remote.component.scss'],
+    standalone: false
 })
 export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
     @ViewChild('loadingToast')

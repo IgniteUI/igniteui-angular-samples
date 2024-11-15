@@ -7,7 +7,8 @@ import { FinancialData } from '../data/financialData';
 @Component({
     selector: 'app-grid-dynamic-chart-data',
     templateUrl: './grid-dynamic-chart-data.component.html',
-    styleUrls: ['./grid-dynamic-chart-data.component.scss']
+    styleUrls: ['./grid-dynamic-chart-data.component.scss'],
+    standalone: false
 })
 export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 

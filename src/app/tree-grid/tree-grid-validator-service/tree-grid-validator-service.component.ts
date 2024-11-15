@@ -8,7 +8,8 @@ import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 @Component({
     selector: 'app-tree-grid-validator-service-component',
     styleUrls: ['tree-grid-validator-service.component.scss'],
-    templateUrl: 'tree-grid-validator-service.component.html'
+    templateUrl: 'tree-grid-validator-service.component.html',
+    standalone: false
 })
 export class TreeGridValidatorServiceComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

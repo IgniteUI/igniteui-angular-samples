@@ -3,10 +3,11 @@ import { IFilteringExpressionsTree, IgxColumnComponent } from 'igniteui-angular'
 import { RemoteValuesService } from './remoteValues.service';
 
 @Component({
-  selector: 'app-tree-grid-excel-style-filtering-load-on-demand',
-  styleUrls: ['./tree-grid-excel-style-filtering-load-on-demand.component.scss'],
-  templateUrl: './tree-grid-excel-style-filtering-load-on-demand.component.html',
-  providers: [RemoteValuesService]
+    selector: 'app-tree-grid-excel-style-filtering-load-on-demand',
+    styleUrls: ['./tree-grid-excel-style-filtering-load-on-demand.component.scss'],
+    templateUrl: './tree-grid-excel-style-filtering-load-on-demand.component.html',
+    providers: [RemoteValuesService],
+    standalone: false
 })
 export class TreeGridExcelStyleFilteringLoadOnDemandComponent implements OnInit {
 

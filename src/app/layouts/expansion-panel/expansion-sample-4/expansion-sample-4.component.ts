@@ -4,7 +4,8 @@ import { IExpansionPanelEventArgs, IgxExpansionPanelComponent } from 'igniteui-a
     // tslint:disable-next-line:component-selector
     selector: 'app-expansion-sample-4',
     styleUrls: ['./expansion-sample-4.component.scss'],
-    templateUrl: './expansion-sample-4.component.html'
+    templateUrl: './expansion-sample-4.component.html',
+    standalone: false
 })
 export class ExpansionPanelSample4Component {
 

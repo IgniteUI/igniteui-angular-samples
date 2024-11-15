@@ -23,7 +23,8 @@ export interface User{
 @Component({
     selector: 'app-reactive-form',
     styleUrls: ['./reactive-forms.component.scss'],
-    templateUrl: './reactive-forms.component.html'
+    templateUrl: './reactive-forms.component.html',
+    standalone: false
 })
 export class ReactiveFormsSampleComponent {
     public genres = [];

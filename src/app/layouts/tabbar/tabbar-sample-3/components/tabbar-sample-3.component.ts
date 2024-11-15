@@ -5,7 +5,8 @@ import { filter } from 'rxjs/operators';
 @Component({
     selector: 'app-tabbar-sample-3',
     styleUrls: ['./tabbar-sample-3.component.scss'],
-    templateUrl: './tabbar-sample-3.component.html'
+    templateUrl: './tabbar-sample-3.component.html',
+    standalone: false
 })
 export class TabbarSample3Component implements OnInit {
     public path: string;

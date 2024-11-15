@@ -14,7 +14,8 @@ import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detaile
 @Component({
     selector: 'app-tree-grid-validator-service-cross-field-component',
     styleUrls: ['tree-grid-validator-service-cross-field.component.scss'],
-    templateUrl: 'tree-grid-validator-service-cross-field.component.html'
+    templateUrl: 'tree-grid-validator-service-cross-field.component.html',
+    standalone: false
 })
 export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
     @ViewChild('treeGrid', { static: true })

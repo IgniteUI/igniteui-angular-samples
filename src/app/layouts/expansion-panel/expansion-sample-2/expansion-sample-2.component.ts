@@ -6,7 +6,8 @@ import {
     // tslint:disable-next-line:component-selector
     selector: 'app-expansion-sample-2',
     styleUrls: ['./expansion-sample-2.component.scss'],
-    templateUrl: './expansion-sample-2.component.html'
+    templateUrl: './expansion-sample-2.component.html',
+    standalone: false
 })
 export class ExpansionPanelSample2Component {
     @ViewChild(IgxExpansionPanelComponent, { read: IgxExpansionPanelComponent, static: true })

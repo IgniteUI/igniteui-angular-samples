@@ -10,7 +10,8 @@ import { IDataState, RemoteLoDService } from '../../services/remote-lod.service'
     providers: [RemoteLoDService],
     selector: 'app-hierarchical-grid-lod',
     styleUrls: ['./hierarchical-grid-lod.component.scss'],
-    templateUrl: './hierarchical-grid-lod.component.html'
+    templateUrl: './hierarchical-grid-lod.component.html',
+    standalone: false
 })
 export class HierarchicalGridLoDSampleComponent implements AfterViewInit {
     @ViewChild('hGrid', { static: true })

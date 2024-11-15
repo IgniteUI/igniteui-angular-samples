@@ -5,7 +5,8 @@ import { getHeroWeaponsData, IHeroWeapon } from '../../../data/heroData';
 @Component({
     selector: 'app-combo',
     styleUrls: ['./combo-styling.component.scss'],
-    templateUrl: './combo-styling.component.html'
+    templateUrl: './combo-styling.component.html',
+    standalone: false
 })
 export class ComboStylingComponent implements OnInit {
     @ViewChild('loadToast', { read: IgxToastComponent, static: true })

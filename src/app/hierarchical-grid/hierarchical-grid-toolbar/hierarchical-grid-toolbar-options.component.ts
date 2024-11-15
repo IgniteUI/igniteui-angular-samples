@@ -4,7 +4,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-toolbar-options',
     styleUrls: ['./hierarchical-grid-toolbar-options.component.scss'],
-    templateUrl: 'hierarchical-grid-toolbar-options.component.html'
+    templateUrl: 'hierarchical-grid-toolbar-options.component.html',
+    standalone: false
 })
 
 export class HGridToolbarOptionsSampleComponent {

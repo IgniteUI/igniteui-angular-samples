@@ -7,7 +7,8 @@ import { Subject } from 'rxjs';
     selector: 'app-banner-styling',
     styleUrls: ['banner-styling.component.scss', '../banner-samples.scss'],
     templateUrl: 'banner-styling.component.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 
 export class BannerStylingComponent implements OnInit, OnDestroy {

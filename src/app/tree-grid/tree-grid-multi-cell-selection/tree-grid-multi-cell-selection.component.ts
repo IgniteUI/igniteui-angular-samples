@@ -6,7 +6,8 @@ import { ORDERS_DATA } from '../data/orders';
     encapsulation: ViewEncapsulation.None,
     selector: 'app-tree-grid-multi-cell-selection-sample',
     styleUrls: ['./tree-grid-multi-cell-selection.component.scss'],
-    templateUrl: './tree-grid-multi-cell-selection.component.html'
+    templateUrl: './tree-grid-multi-cell-selection.component.html',
+    standalone: false
 })
 export class TreeGridMultiCellSelectionComponent {
     public sourceData = ORDERS_DATA;

@@ -5,7 +5,8 @@ import { INVOICE_DATA } from '../../data/invoiceData';
 @Component({
     selector: 'app-grid-collapsible-column-groups',
     styleUrls: ['./grid-collapsible-column-groups.component.scss'],
-    templateUrl: './grid-collapsible-column-groups.component.html'
+    templateUrl: './grid-collapsible-column-groups.component.html',
+    standalone: false
 })
 export class GridCollapsibleColumnGroupsComponent implements OnInit {
 

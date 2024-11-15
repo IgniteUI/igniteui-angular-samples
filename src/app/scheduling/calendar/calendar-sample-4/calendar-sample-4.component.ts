@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { DateParser } from '../../../date-parser';
 
 @Component({
-  providers: [DateParser],
-  selector: 'app-calendar',
-  styleUrls: ['./calendar-sample-4.component.scss'],
-  templateUrl: './calendar-sample-4.component.html'
+    providers: [DateParser],
+    selector: 'app-calendar',
+    styleUrls: ['./calendar-sample-4.component.scss'],
+    templateUrl: './calendar-sample-4.component.html',
+    standalone: false
 })
 
 export class CalendarSample4Component {

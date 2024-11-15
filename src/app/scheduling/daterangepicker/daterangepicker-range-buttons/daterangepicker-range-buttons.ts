@@ -4,7 +4,8 @@ import { DateRange, IgxDateRangePickerComponent, OverlaySettings } from 'igniteu
 @Component({
     selector: 'app-rangdatepicker-range-buttons',
     styleUrls: ['./daterangepicker-range-buttons.scss'],
-    templateUrl: './daterangepicker-range-buttons.html'
+    templateUrl: './daterangepicker-range-buttons.html',
+    standalone: false
 })
 export class DateRangePickerRangeButtonsComponent {
     @ViewChild('rangePicker')

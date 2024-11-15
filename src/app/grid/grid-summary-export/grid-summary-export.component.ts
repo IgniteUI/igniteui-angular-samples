@@ -22,9 +22,10 @@ class MySummary {
     }
 }
 @Component({
-  selector: 'app-grid-summary-export',
-  styleUrls: ['./grid-summary-export.component.scss'],
-  templateUrl: './grid-summary-export.component.html'
+    selector: 'app-grid-summary-export',
+    styleUrls: ['./grid-summary-export.component.scss'],
+    templateUrl: './grid-summary-export.component.html',
+    standalone: false
 })
 export class GridSummaryExportComponent {
     @ViewChild('grid', { read: IgxGridComponent, static: true })

@@ -3,10 +3,11 @@ import { IFilteringExpressionsTree, IgxColumnComponent } from 'igniteui-angular'
 import { RemoteValuesService } from '../../services/remoteValues.service';
 
 @Component({
-  selector: 'app-hierarchical-grid-excel-style-filtering-load-on-demand',
-  templateUrl: './hierarchical-grid-excel-style-filtering-load-on-demand.component.html',
-  styleUrls: ['./hierarchical-grid-excel-style-filtering-load-on-demand.component.scss'],
-  providers: [RemoteValuesService]
+    selector: 'app-hierarchical-grid-excel-style-filtering-load-on-demand',
+    templateUrl: './hierarchical-grid-excel-style-filtering-load-on-demand.component.html',
+    styleUrls: ['./hierarchical-grid-excel-style-filtering-load-on-demand.component.scss'],
+    providers: [RemoteValuesService],
+    standalone: false
 })
 export class HierarchicalGridExcelStyleFilteringLoadOnDemandComponent implements OnInit {
 

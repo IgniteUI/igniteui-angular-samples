@@ -5,7 +5,8 @@ import { CUSTOMERS } from '../../data/hierarchical-data';
 @Component({
     selector: 'app-hierarchical-grid-collapsible-column-groups',
     styleUrls: ['./hierarchical-grid-collapsible-column-groups.component.scss'],
-    templateUrl: 'hierarchical-grid-collapsible-column-groups.component.html'
+    templateUrl: 'hierarchical-grid-collapsible-column-groups.component.html',
+    standalone: false
 })
 
 export class HGridCollapsibleColumnGroupComponent implements OnInit {

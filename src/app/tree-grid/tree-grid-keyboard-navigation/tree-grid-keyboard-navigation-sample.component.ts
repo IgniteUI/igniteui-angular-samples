@@ -5,7 +5,8 @@ import { EMPLOYEE_DATA } from './data';
 @Component({
     selector: 'app-tree-grid-keyboard-navigation-sample',
     styleUrls: ['./tree-grid-keyboard-navigation-sample.component.scss'],
-    templateUrl: './tree-grid-keyboard-navigation-sample.component.html'
+    templateUrl: './tree-grid-keyboard-navigation-sample.component.html',
+    standalone: false
 })
 export class TreeGridKBNavigationComponent implements OnInit {
     @ViewChild('grid1', { read: IgxTreeGridComponent, static: true })

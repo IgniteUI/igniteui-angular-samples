@@ -4,7 +4,8 @@ import { SplitterType } from 'igniteui-angular';
 @Component({
     selector: 'app-splitter-nested-sample',
     styleUrls: ['splitter-nested-sample.component.scss'],
-    templateUrl: 'splitter-nested-sample.component.html'
+    templateUrl: 'splitter-nested-sample.component.html',
+    standalone: false
 })
 export class SplitterNestedSampleComponent {
     public typeHorizontal = SplitterType.Horizontal;

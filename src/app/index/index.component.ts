@@ -22,7 +22,8 @@ import { treeGridRoutesData } from '../tree-grid/tree-grid-routes-data';
 @Component({
     selector: 'app-index',
     styleUrls: ['./index.component.scss'],
-    templateUrl: './index.component.html'
+    templateUrl: './index.component.html',
+    standalone: false
 })
 export class IndexComponent implements OnInit, AfterViewInit {
 

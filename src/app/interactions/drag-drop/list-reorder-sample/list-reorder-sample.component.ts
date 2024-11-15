@@ -15,7 +15,8 @@ import {
 @Component({
     selector: 'app-list-reorder-sample',
     templateUrl: './list-reorder-sample.component.html',
-    styleUrls: ['./list-reorder-sample.component.scss']
+    styleUrls: ['./list-reorder-sample.component.scss'],
+    standalone: false
 })
 export class ListReorderSampleComponent {
     @ViewChildren('dragDirRef', { read: IgxDragDirective })

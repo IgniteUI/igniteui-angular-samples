@@ -5,7 +5,8 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-cell-selection',
     styleUrls: ['./grid-cellSelection.component.scss'],
-    templateUrl: 'grid-cellSelection.component.html'
+    templateUrl: 'grid-cellSelection.component.html',
+    standalone: false
 })
 export class GridCellSelectionComponent implements OnInit {
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;

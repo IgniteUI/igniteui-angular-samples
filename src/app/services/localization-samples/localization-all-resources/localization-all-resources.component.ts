@@ -37,7 +37,8 @@ import {
 @Component({
     selector: 'app-localization-all-resources',
     styleUrls: ['./localization-all-resources.component.scss'],
-    templateUrl: 'localization-all-resources.component.html'
+    templateUrl: 'localization-all-resources.component.html',
+    standalone: false
 })
 export class LocalizationAllResourcesComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true })

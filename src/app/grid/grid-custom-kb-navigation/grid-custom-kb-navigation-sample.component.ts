@@ -5,7 +5,8 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-custom-kb-navigation-sample',
     styleUrls: ['./grid-custom-kb-navigation-sample.component.scss'],
-    templateUrl: 'grid-custom-kb-navigation-sample.component.html'
+    templateUrl: 'grid-custom-kb-navigation-sample.component.html',
+    standalone: false
 })
 
 export class GridCustomKBNavigationComponent implements OnInit {

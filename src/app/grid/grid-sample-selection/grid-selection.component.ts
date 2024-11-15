@@ -10,7 +10,8 @@ import { FinancialDataService } from '../../services/financial.service';
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'grid-sample',
     styleUrls: ['./grid-selection.component.scss'],
-    templateUrl: 'grid-selection.component.html'
+    templateUrl: 'grid-selection.component.html',
+    standalone: false
 })
 
 export class GridSelectionSampleComponent implements OnInit {

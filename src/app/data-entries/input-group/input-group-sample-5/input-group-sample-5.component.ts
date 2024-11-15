@@ -6,6 +6,7 @@ import { IGX_INPUT_GROUP_TYPE } from 'igniteui-angular';
     selector: 'app-input-group-sample-5',
     styleUrls: ['./input-group-sample-5.component.scss'],
     templateUrl: './input-group-sample-5.component.html',
-    providers: [{ provide: IGX_INPUT_GROUP_TYPE, useValue: 'box' }]
+    providers: [{ provide: IGX_INPUT_GROUP_TYPE, useValue: 'box' }],
+    standalone: false
 })
 export class InputGroupSample5Component extends BaseInputGroupSampleComponent { }

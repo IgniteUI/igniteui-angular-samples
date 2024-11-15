@@ -4,7 +4,8 @@ import { SEOService } from '../../../app-lob/src/app/seo.service';
 @Component({
     selector: 'app-root',
     styleUrls: ['./app.component.scss'],
-    templateUrl: './app.component.html'
+    templateUrl: './app.component.html',
+    standalone: false
 })
 export class AppComponent implements OnInit {
     private title = 'Business propeller - Angular Data Grid Example';

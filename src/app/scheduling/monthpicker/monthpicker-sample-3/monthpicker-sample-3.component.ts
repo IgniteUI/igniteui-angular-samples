@@ -9,7 +9,8 @@ import localeZH from '@angular/common/locales/zh';
 @Component({
     selector: 'app-monthpicker-sample-3',
     styleUrls: ['./monthpicker-sample-3.component.scss'],
-    templateUrl: './monthpicker-sample-3.component.html'
+    templateUrl: './monthpicker-sample-3.component.html',
+    standalone: false
 })
 export class MonthpickerSample3Component implements OnInit {
     public formatOptions: IFormattingOptions = {

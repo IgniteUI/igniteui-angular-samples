@@ -4,7 +4,8 @@ import { IgxSliderType } from 'igniteui-angular';
 @Component({
     selector: 'app-slider-sample-6',
     styleUrls: ['./slider-sample-6.component.scss'],
-    templateUrl: './slider-sample-6.component.html'
+    templateUrl: './slider-sample-6.component.html',
+    standalone: false
 })
 export class SliderSample6Component {
     public type: IgxSliderType = IgxSliderType.RANGE;

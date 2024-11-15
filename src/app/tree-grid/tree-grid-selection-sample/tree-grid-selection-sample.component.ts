@@ -5,7 +5,8 @@ import { generateEmployeeFlatData } from '../data/employees-flat';
 @Component({
     selector: 'app-tree-grid-selection-sample',
     styleUrls: ['./tree-grid-selection-sample.component.scss'],
-    templateUrl: './tree-grid-selection-sample.component.html'
+    templateUrl: './tree-grid-selection-sample.component.html',
+    standalone: false
 })
 export class TreeGridSelectionSampleComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

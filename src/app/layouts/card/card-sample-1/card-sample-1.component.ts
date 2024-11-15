@@ -4,7 +4,8 @@ import { Card } from '../card.blueprint';
 @Component({
     selector: 'app-igx-card-simple',
     styleUrls: ['./card-sample-1.component.scss'],
-    templateUrl: './card-sample-1.component.html'
+    templateUrl: './card-sample-1.component.html',
+    standalone: false
 })
 export class CardSample1Component {
     public card = new Card({

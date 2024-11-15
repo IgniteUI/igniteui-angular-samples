@@ -5,7 +5,8 @@ import { FULL_EMPLOYEE_DATA } from '../data/employees';
 @Component({
     selector: 'app-tree-grid-employees-sample',
     styleUrls: ['./tree-grid-employees-sample.component.scss'],
-    templateUrl: './tree-grid-employees-sample.component.html'
+    templateUrl: './tree-grid-employees-sample.component.html',
+    standalone: false
 })
 export class TreeGridEmployeesSampleComponent implements OnInit {
     public localData: any[];

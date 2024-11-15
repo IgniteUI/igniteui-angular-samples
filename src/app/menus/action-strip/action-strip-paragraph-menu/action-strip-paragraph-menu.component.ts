@@ -2,9 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { IgxActionStripComponent } from 'igniteui-angular';
 
 @Component({
-  selector: 'app-action-strip-paragraph-menu',
-  styleUrls: ['./action-strip-paragraph-menu.component.scss'],
-  templateUrl: './action-strip-paragraph-menu.component.html'
+    selector: 'app-action-strip-paragraph-menu',
+    styleUrls: ['./action-strip-paragraph-menu.component.scss'],
+    templateUrl: './action-strip-paragraph-menu.component.html',
+    standalone: false
 })
 export class ActionStripParagraphMenuComponent {
     @ViewChild('actionStrip') public actionStrip: IgxActionStripComponent;

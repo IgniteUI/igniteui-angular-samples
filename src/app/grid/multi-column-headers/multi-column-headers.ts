@@ -4,8 +4,9 @@ import { DATA } from '../../data/customers';
 
 @Component({
     selector: 'app-multi-column-headers',
-    styleUrls: [ 'multi-column-headers.scss' ],
-    templateUrl: 'multi-column-headers.html'
+    styleUrls: ['multi-column-headers.scss'],
+    templateUrl: 'multi-column-headers.html',
+    standalone: false
 })
 export class GridMultiColumnHeadersComponent {
 

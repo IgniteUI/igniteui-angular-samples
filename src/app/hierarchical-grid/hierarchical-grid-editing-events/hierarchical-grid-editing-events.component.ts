@@ -9,7 +9,8 @@ import { Singer } from '../models';
 @Component({
     selector: 'app-hierarchical-grid-editing-events',
     styleUrls: ['./hierarchical-grid-editing-events.component.scss'],
-    templateUrl: 'hierarchical-grid-editing-events.component.html'
+    templateUrl: 'hierarchical-grid-editing-events.component.html',
+    standalone: false
 })
 
 export class HGridEditingEventsComponent implements OnInit, OnDestroy {

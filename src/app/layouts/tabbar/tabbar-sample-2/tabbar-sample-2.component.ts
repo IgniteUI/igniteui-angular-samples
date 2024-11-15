@@ -2,9 +2,10 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "app-tabbar-sample-2",
-  styleUrls: ["./tabbar-sample-2.component.scss"],
-  templateUrl: "./tabbar-sample-2.component.html"
+    selector: "app-tabbar-sample-2",
+    styleUrls: ["./tabbar-sample-2.component.scss"],
+    templateUrl: "./tabbar-sample-2.component.html",
+    standalone: false
 })
 export class TabbarSample2Component {
 

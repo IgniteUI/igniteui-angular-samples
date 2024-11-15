@@ -7,7 +7,8 @@ import { FloatingPanesService } from '../../services/floating-panes.service';
 import { DockSlotComponent } from './dock-slot/dock-slot.component';
 
 @Pipe({
-    name: 'filterType'
+    name: 'filterType',
+    standalone: false
 })
 export class FilterTypePipe implements PipeTransform {
     public transform(collection: CHART_TYPE[], type: string): CHART_TYPE[] {
@@ -16,7 +17,8 @@ export class FilterTypePipe implements PipeTransform {
 }
 
 @Pipe({
-    name: 'hastDuplicateLayouts'
+    name: 'hastDuplicateLayouts',
+    standalone: false
 })
 export class HastDuplicateLayouts implements PipeTransform {
     public transform(contentId: string, layout: IgcDockManagerLayout, chartTypes) {
@@ -50,7 +52,8 @@ export class HastDuplicateLayouts implements PipeTransform {
     selector: 'app-data-analysis-dock-manager',
     templateUrl: './data-analysis-dock-manager.component.html',
     styleUrls: ['./data-analysis-dock-manager.component.scss'],
-    providers: [FloatingPanesService]
+    providers: [FloatingPanesService],
+    standalone: false
 })
 export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
 

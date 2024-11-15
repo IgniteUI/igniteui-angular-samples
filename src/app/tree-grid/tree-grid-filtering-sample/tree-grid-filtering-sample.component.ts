@@ -5,7 +5,8 @@ import { ORDERS_DATA } from '../data/orders';
 @Component({
     selector: 'app-tree-grid-filtering-sample',
     styleUrls: ['./tree-grid-filtering-sample.component.scss'],
-    templateUrl: 'tree-grid-filtering-sample.component.html'
+    templateUrl: 'tree-grid-filtering-sample.component.html',
+    standalone: false
 })
 
 export class TreeGridFilteringSampleComponent implements OnInit {

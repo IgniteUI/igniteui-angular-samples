@@ -9,7 +9,8 @@ import { SignalRService } from '../services/signal-r.service';
 @Component({
     selector: 'app-finjs-grid',
     templateUrl: './grid-finjs.component.html',
-    styleUrls: ['./grid-finjs.component.scss']
+    styleUrls: ['./grid-finjs.component.scss'],
+    standalone: false
 })
 export class GridFinJSComponent implements OnInit {
     @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;

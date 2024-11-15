@@ -5,7 +5,8 @@ import { createData, IDrive } from '../../data/files.data';
 @Component({
     selector: 'app-hierarchical-grid-multi-row-drag',
     styleUrls: ['./hierarchical-grid-multi-row-drag.component.scss'],
-    templateUrl: 'hierarchical-grid-multi-row-drag.component.html'
+    templateUrl: 'hierarchical-grid-multi-row-drag.component.html',
+    standalone: false
 })
 
 export class HGridMultiRowDragComponent {

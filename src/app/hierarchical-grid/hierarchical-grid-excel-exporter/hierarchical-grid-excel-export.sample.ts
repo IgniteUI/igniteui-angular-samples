@@ -5,7 +5,8 @@ import { Singer, SINGERS } from '../../data/artistData';
 @Component({
     selector: 'app-hierarchical-grid-excel-export-sample',
     styleUrls: ['hierarchical-grid-excel-export.sample.scss'],
-    templateUrl: 'hierarchical-grid-excel-export.sample.html'
+    templateUrl: 'hierarchical-grid-excel-export.sample.html',
+    standalone: false
 })
 export class HGridExcelExportSampleComponent {
     @ViewChild('hierarchicalGrid', { static: true }) public igxGrid1: IgxHierarchicalGridComponent;

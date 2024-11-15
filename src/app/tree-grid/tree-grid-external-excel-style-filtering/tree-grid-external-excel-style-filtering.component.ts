@@ -5,7 +5,8 @@ import { ORDERS_DATA } from '../data/orders';
     changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'app-tree-grid-external-excel-style-filtering',
     templateUrl: './tree-grid-external-excel-style-filtering.component.html',
-    styleUrls: ['./tree-grid-external-excel-style-filtering.component.scss']
+    styleUrls: ['./tree-grid-external-excel-style-filtering.component.scss'],
+    standalone: false
 })
 export class TreeGridExternalExcelStyleFilteringComponent implements OnInit {
     public data: any[];

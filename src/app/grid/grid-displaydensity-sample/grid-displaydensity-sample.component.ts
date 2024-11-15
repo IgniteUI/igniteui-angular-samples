@@ -20,9 +20,10 @@ class CustomNumberSummary {
     }
   }
 @Component({
-  selector: 'app-grid-displaydensity-sample',
-  styleUrls: ['./grid-displaydensity-sample.component.scss'],
-  templateUrl: './grid-displaydensity-sample.component.html'
+    selector: 'app-grid-displaydensity-sample',
+    styleUrls: ['./grid-displaydensity-sample.component.scss'],
+    templateUrl: './grid-displaydensity-sample.component.html',
+    standalone: false
 })
 export class GridDisplayDensitySampleComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true })

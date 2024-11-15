@@ -5,9 +5,10 @@ import { icons } from "../../services/svgIcons";
 
 const FILTERING_ICONS_FONT_SET = "filtering-icons";
 @Component({
-  selector: 'app-tree-grid-column-pinning-sample',
-  styleUrls: ['./tree-grid-column-pinning-sample.component.scss'],
-  templateUrl: './tree-grid-column-pinning-sample.component.html'
+    selector: 'app-tree-grid-column-pinning-sample',
+    styleUrls: ['./tree-grid-column-pinning-sample.component.scss'],
+    templateUrl: './tree-grid-column-pinning-sample.component.html',
+    standalone: false
 })
 export class TreeGridColumnPinningSampleComponent implements AfterViewInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

@@ -43,7 +43,8 @@ class SumSummary {
 @Component({
     selector: 'app-grid-groupby-summary-sample',
     styleUrls: ['./grid-groupby-summary-sample.component.scss'],
-    templateUrl: './grid-groupby-summary-sample.component.html'
+    templateUrl: './grid-groupby-summary-sample.component.html',
+    standalone: false
 })
 export class GridGroupBySummarySampleComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

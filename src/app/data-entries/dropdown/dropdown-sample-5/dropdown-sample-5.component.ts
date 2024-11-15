@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-sample-5',
     styleUrls: ['./dropdown-sample-5.component.scss'],
-    templateUrl: './dropdown-sample-5.component.html'
+    templateUrl: './dropdown-sample-5.component.html',
+    standalone: false
 })
 export class DropDownSample5Component {
     public disableMeats = false;

@@ -38,7 +38,8 @@ export class IgxTotalSaleAggregate {
 @Component({
     selector: 'app-pivot-grid-state-persistence-sample',
     styleUrls: ['./pivot-grid-state-persistence-sample.component.scss'],
-    templateUrl: './pivot-grid-state-persistence-sample.component.html'
+    templateUrl: './pivot-grid-state-persistence-sample.component.html',
+    standalone: false
 })
 export class PivotGridStatePersistenceSampleComponent implements OnInit, AfterViewInit {
     @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;

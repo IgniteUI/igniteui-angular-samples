@@ -5,7 +5,8 @@ import { CUSTOMERS } from '../../data/hierarchical-data';
 @Component({
     selector: 'app-hierarchical-grid-density',
     styleUrls: ['./hierarchical-grid-density.component.scss'],
-    templateUrl: 'hierarchical-grid-density.component.html'
+    templateUrl: 'hierarchical-grid-density.component.html',
+    standalone: false
 })
 
 export class HGridDisplayDensitySampleComponent implements OnInit {

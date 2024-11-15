@@ -4,7 +4,8 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-external-outlet',
     styleUrls: ['./grid-external-outlet-sample.component.scss'],
-    templateUrl: 'grid-external-outlet-sample.component.html'
+    templateUrl: 'grid-external-outlet-sample.component.html',
+    standalone: false
 })
 
 export class GridExternalOutletComponent implements OnInit {

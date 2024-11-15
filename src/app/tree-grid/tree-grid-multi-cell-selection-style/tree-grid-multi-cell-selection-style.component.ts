@@ -5,7 +5,8 @@ import { ORDERS_DATA } from '../data/orders';
 @Component({
     selector: 'app-tree-grid-multi-cell-selection-style-sample',
     styleUrls: ['./tree-grid-multi-cell-selection-style.component.scss'],
-    templateUrl: './tree-grid-multi-cell-selection-style.component.html'
+    templateUrl: './tree-grid-multi-cell-selection-style.component.html',
+    standalone: false
 })
 export class TreeGridMultiCellSelectionStyleComponent {
     public sourceData = ORDERS_DATA;

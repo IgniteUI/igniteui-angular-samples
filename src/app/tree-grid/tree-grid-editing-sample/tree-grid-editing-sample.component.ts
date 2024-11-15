@@ -26,7 +26,8 @@ class CustomNumberSummary {
 @Component({
     selector: 'app-tree-grid-editing-sample',
     styleUrls: ['./tree-grid-editing-sample.component.scss'],
-    templateUrl: './tree-grid-editing-sample.component.html'
+    templateUrl: './tree-grid-editing-sample.component.html',
+    standalone: false
 })
 export class TreeGridEditingSampleComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

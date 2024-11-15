@@ -7,7 +7,8 @@ import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detaile
     providers: [],
     selector: 'app-tree-grid-sample',
     styleUrls: ['tree-grid-right-pinning.component.scss'],
-    templateUrl: 'tree-grid-right-pinning.component.html'
+    templateUrl: 'tree-grid-right-pinning.component.html',
+    standalone: false
 })
 
 export class TreeGridRightPinningSampleComponent implements OnInit {

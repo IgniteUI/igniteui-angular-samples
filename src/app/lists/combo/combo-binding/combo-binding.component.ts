@@ -5,7 +5,8 @@ import { CITIES, ICity } from './cities';
 @Component({
     selector: 'app-combo-binding',
     templateUrl: 'combo-binding.component.html',
-    styleUrls: ['combo-binding.component.scss']
+    styleUrls: ['combo-binding.component.scss'],
+    standalone: false
 })
 export class ComboBindingComponent {
     @ViewChild('noValueKey', { read: IgxComboComponent })

@@ -5,7 +5,8 @@ import { slideInLeft, slideOutRight } from 'igniteui-angular/animations';
 @Component({
     selector: 'app-banner-sample-3',
     styleUrls: ['../banner-samples.scss'],
-    templateUrl: 'banner-sample-3.component.html'
+    templateUrl: 'banner-sample-3.component.html',
+    standalone: false
 })
 
 export class BannerSample3Component implements OnInit {

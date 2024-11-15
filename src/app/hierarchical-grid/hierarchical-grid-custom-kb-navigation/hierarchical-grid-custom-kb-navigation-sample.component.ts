@@ -8,7 +8,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-custom-kb-navigation-sample',
     styleUrls: ['./hierarchical-grid-custom-kb-navigation-sample.component.scss'],
-    templateUrl: 'hierarchical-grid-custom-kb-navigation-sample.component.html'
+    templateUrl: 'hierarchical-grid-custom-kb-navigation-sample.component.html',
+    standalone: false
 })
 
 export class HGridCustomKBNavigationComponent implements OnInit {

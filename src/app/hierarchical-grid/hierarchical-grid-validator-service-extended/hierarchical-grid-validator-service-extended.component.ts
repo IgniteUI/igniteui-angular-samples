@@ -13,7 +13,8 @@ export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
 
 @Directive({
     selector: '[phoneFormat]',
-    providers: [{ provide: NG_VALIDATORS, useExisting: HGridPhoneFormatDirective, multi: true }]
+    providers: [{ provide: NG_VALIDATORS, useExisting: HGridPhoneFormatDirective, multi: true }],
+    standalone: false
 })
 export class HGridPhoneFormatDirective extends Validators {
     @Input('phoneFormat')
@@ -32,7 +33,8 @@ export function unique(value, index, self) {
 @Component({
     selector: 'app-hierarchical-grid-validator-service-extended',
     styleUrls: ['./hierarchical-grid-validator-service-extended.component.scss'],
-    templateUrl: './hierarchical-grid-validator-service-extended.component.html'
+    templateUrl: './hierarchical-grid-validator-service-extended.component.html',
+    standalone: false
 })
 export class HierarchicalGridValidatorServiceExtendedComponent {
 

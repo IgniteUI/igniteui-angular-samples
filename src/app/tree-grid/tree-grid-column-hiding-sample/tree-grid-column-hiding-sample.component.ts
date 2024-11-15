@@ -4,7 +4,8 @@ import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detaile
 @Component({
     selector: 'app-tree-grid-column-hiding-sample',
     styleUrls: ['./tree-grid-column-hiding-sample.component.scss'],
-    templateUrl: './tree-grid-column-hiding-sample.component.html'
+    templateUrl: './tree-grid-column-hiding-sample.component.html',
+    standalone: false
 })
 export class TreeGridColumnHidingSampleComponent implements OnInit {
 

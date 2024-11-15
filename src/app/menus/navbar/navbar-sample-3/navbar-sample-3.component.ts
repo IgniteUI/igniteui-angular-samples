@@ -2,10 +2,11 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 import { Component } from '@angular/core';
 
 @Component({
-  providers: [Location, { provide: LocationStrategy, useClass: PathLocationStrategy }],
-  selector: 'app-navbar',
-  styleUrls: ['./navbar-sample-3.component.scss'],
-  templateUrl: './navbar-sample-3.component.html'
+    providers: [Location, { provide: LocationStrategy, useClass: PathLocationStrategy }],
+    selector: 'app-navbar',
+    styleUrls: ['./navbar-sample-3.component.scss'],
+    templateUrl: './navbar-sample-3.component.html',
+    standalone: false
 })
 export class NavbarSample3Component {
 

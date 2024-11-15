@@ -4,7 +4,8 @@ import { Subject } from 'rxjs';
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: '[gridHost]'
+    selector: '[gridHost]',
+    standalone: false
 })
 export class GridHostDirective {
     constructor(public viewContainerRef: ViewContainerRef) { }
@@ -15,7 +16,8 @@ export class GridHostDirective {
     template: `
     <div style='width: 100%; height: 100%; overflow-x: hidden;'>
         <ng-template gridHost></ng-template>
-    </div>`
+    </div>`,
+    standalone: false
 })
 export class DockSlotComponent implements OnInit, AfterViewInit, OnDestroy {
     @Output()

@@ -4,7 +4,8 @@ import { IgxBannerComponent } from 'igniteui-angular';
 @Component({
     selector: 'app-banner-sample-2',
     styleUrls: ['../banner-samples.scss'],
-    templateUrl: 'banner-sample-2.component.html'
+    templateUrl: 'banner-sample-2.component.html',
+    standalone: false
 })
 
 export class BannerSample2Component implements OnInit {

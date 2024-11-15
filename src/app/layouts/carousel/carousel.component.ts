@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-carousel',
-  styleUrls: ['./carousel.component.scss'],
-  templateUrl: './carousel.component.html'
+    selector: 'app-carousel',
+    styleUrls: ['./carousel.component.scss'],
+    templateUrl: './carousel.component.html',
+    standalone: false
 })
 
 export class CarouselComponent {

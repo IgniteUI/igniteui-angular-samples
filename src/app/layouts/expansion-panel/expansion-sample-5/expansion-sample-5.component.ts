@@ -10,7 +10,8 @@ import { slideInLeft, slideOutRight } from 'igniteui-angular/animations';
     // tslint:disable-next-line:component-selector
     selector: 'app-expansion-sample-5',
     styleUrls: ['./expansion-sample-5.component.scss'],
-    templateUrl: './expansion-sample-5.component.html'
+    templateUrl: './expansion-sample-5.component.html',
+    standalone: false
 })
 export class ExpansionPanelSample5Component {
 

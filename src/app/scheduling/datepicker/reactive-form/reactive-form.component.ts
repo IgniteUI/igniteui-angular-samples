@@ -4,7 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
     selector: 'app-datetimepicker-reactive-form',
     styleUrls: ['./reactive-form.component.scss'],
-    templateUrl: './reactive-form.component.html'
+    templateUrl: './reactive-form.component.html',
+    standalone: false
 })
 export class DateTimePickerRFSampleComponent {
     public dateTimeForm: FormGroup;

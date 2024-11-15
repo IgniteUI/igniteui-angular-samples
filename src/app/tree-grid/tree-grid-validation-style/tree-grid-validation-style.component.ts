@@ -5,7 +5,8 @@ import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 @Component({
     selector: 'app-tree-grid-validation-style',
     styleUrls: ['tree-grid-validation-style.component.scss'],
-    templateUrl: 'tree-grid-validation-style.component.html'
+    templateUrl: 'tree-grid-validation-style.component.html',
+    standalone: false
 })
 export class TreeGridValidationStyleComponent implements OnInit {
 

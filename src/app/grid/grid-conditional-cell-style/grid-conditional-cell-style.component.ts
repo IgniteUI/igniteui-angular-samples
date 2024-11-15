@@ -4,7 +4,8 @@ import { athletesData } from '../../data/athletesData';
 @Component({
     selector: 'app-grid-conditional-cell-style',
     styleUrls: ['./grid-conditional-cell-style.component.scss'],
-    templateUrl: './grid-conditional-cell-style.component.html'
+    templateUrl: './grid-conditional-cell-style.component.html',
+    standalone: false
 })
 export class GridConditionalCellStyleComponent implements OnInit {
     public data: any[];

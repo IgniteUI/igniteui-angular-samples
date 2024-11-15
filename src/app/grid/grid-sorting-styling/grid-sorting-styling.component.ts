@@ -11,7 +11,8 @@ enum TYPE {
 @Component({
     selector: 'app-grid-sorting-styling',
     styleUrls: ['./grid-sorting-styling.component.scss'],
-    templateUrl: 'grid-sorting-styling.component.html'
+    templateUrl: 'grid-sorting-styling.component.html',
+    standalone: false
 })
 
 export class SortingStylingComponent implements OnInit {

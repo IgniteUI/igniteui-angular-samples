@@ -5,7 +5,8 @@ import { ORDERS_DATA } from '../data/orders';
 @Component({
     selector: 'app-tree-grid-formatted-filtering-strategy',
     styleUrls: ['./tree-grid-formatted-filtering-strategy.component.scss'],
-    templateUrl: 'tree-grid-formatted-filtering-strategy.component.html'
+    templateUrl: 'tree-grid-formatted-filtering-strategy.component.html',
+    standalone: false
 })
 
 export class TreeGridFormattedFilteringStrategyComponent implements OnInit {

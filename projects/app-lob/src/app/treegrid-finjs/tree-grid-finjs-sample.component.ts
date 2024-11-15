@@ -11,7 +11,8 @@ import { SignalRService } from '../services/signal-r.service';
     providers: [SignalRService],
     selector: 'app-tree-grid-finjs-sample',
     styleUrls: ['./tree-grid-finjs-sample.component.scss'],
-    templateUrl: './tree-grid-finjs-sample.component.html'
+    templateUrl: './tree-grid-finjs-sample.component.html',
+    standalone: false
 })
 
 export class TreeGridFinJSComponent implements OnDestroy, OnInit {

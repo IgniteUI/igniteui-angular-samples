@@ -5,7 +5,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-selection',
     styleUrls: ['./hierarchical-grid-selection.component.scss'],
-    templateUrl: 'hierarchical-grid-selection.component.html'
+    templateUrl: 'hierarchical-grid-selection.component.html',
+    standalone: false
 })
 
 export class HGridSelectionSampleComponent implements OnInit, OnDestroy {

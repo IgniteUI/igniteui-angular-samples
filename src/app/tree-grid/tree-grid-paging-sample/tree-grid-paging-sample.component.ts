@@ -6,7 +6,8 @@ import { ORDERS_DATA } from '../data/orders';
     encapsulation: ViewEncapsulation.None,
     selector: 'app-tree-grid-paging-sample',
     styleUrls: ['./tree-grid-paging-sample.component.scss'],
-    templateUrl: 'tree-grid-paging-sample.component.html'
+    templateUrl: 'tree-grid-paging-sample.component.html',
+    standalone: false
 })
 
 export class TreeGridPagingSampleComponent implements OnInit {

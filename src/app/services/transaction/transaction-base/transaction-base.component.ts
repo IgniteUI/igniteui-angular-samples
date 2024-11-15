@@ -5,7 +5,8 @@ import { WISHLIST, WishlistItem } from '../data';
 @Component({
     selector: 'app-transaction-base',
     styleUrls: ['./transaction-base.component.scss'],
-    templateUrl: 'transaction-base.component.html'
+    templateUrl: 'transaction-base.component.html',
+    standalone: false
 })
 export class TransactionBaseComponent {
     public wishlist: WishlistItem[];

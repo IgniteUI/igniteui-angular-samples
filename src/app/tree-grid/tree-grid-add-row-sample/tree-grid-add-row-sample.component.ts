@@ -5,7 +5,8 @@ import { generateEmployeeFlatData } from '../data/employees-flat';
 @Component({
     selector: 'app-tree-grid-add-row-sample',
     styleUrls: ['./tree-grid-add-row-sample.component.scss'],
-    templateUrl: './tree-grid-add-row-sample.component.html'
+    templateUrl: './tree-grid-add-row-sample.component.html',
+    standalone: false
 })
 export class TreeGridAddRowSampleComponent implements OnInit {
     @ViewChild('actionstrip') actionStrip: IgxActionStripComponent;

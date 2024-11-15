@@ -3,7 +3,8 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 @Component({
     selector: 'app-buttons-display-density',
     styleUrls: ['./buttons-display-density.component.scss'],
-    templateUrl: './buttons-display-density.component.html'
+    templateUrl: './buttons-display-density.component.html',
+    standalone: false
 })
 export class ButtonsDisplayDensityComponent implements OnInit {
     public size = 'large';

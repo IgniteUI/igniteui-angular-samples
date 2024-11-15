@@ -5,7 +5,8 @@ import { athletesData } from '../../data/athletesData';
 @Component({
     selector: 'app-grid-conditional-cell-style-2',
     styleUrls: ['./grid-conditional-cell-style-2.component.scss'],
-    templateUrl: './grid-conditional-cell-style-2.component.html'
+    templateUrl: './grid-conditional-cell-style-2.component.html',
+    standalone: false
 })
 export class GridConditionalCellStyle2Component implements OnInit {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

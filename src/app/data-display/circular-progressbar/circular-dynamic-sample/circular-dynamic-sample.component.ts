@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-circular-dynamic-sample',
     styleUrls: ['./circular-dynamic-sample.component.scss'],
-    templateUrl: './circular-dynamic-sample.component.html'
+    templateUrl: './circular-dynamic-sample.component.html',
+    standalone: false
 })
 export class CircularDynamicSampleComponent implements OnInit {
 

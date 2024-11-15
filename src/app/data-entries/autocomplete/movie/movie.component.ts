@@ -3,7 +3,8 @@ import { ConnectedPositioningStrategy, VerticalAlignment } from 'igniteui-angula
 @Component({
     selector: 'app-movie-availability',
     styleUrls: ['./movie.component.scss'],
-    templateUrl: './movie.component.html'
+    templateUrl: './movie.component.html',
+    standalone: false
 })
 export class MovieComponent {
     public cinemaSelected;
@@ -45,7 +46,10 @@ export class MovieComponent {
     ];
 }
 
-@Pipe({ name: 'startsWith' })
+@Pipe({
+    name: 'startsWith',
+    standalone: false
+})
 export class AutocompletePipeStartsWith2 implements PipeTransform {
     public transform(collection: any[], term = '') {
         return collection.filter((item) => item.toString().toLowerCase().startsWith(term.toString().toLowerCase()));

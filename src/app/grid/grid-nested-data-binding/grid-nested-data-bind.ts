@@ -4,7 +4,8 @@ import {EMPLOYEE_DATA} from '../../data/nested-employee-data';
 @Component({
     selector: 'app-grid-nested-data-bind',
     styleUrls: ['./grid-nested-data-bind.scss'],
-    templateUrl: './grid-nested-data-bind.html'
+    templateUrl: './grid-nested-data-bind.html',
+    standalone: false
 })
 
 export class GridNestedDataBindComponent implements OnInit{

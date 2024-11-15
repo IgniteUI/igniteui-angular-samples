@@ -9,7 +9,8 @@ import { GridFinJSComponent } from './grid-finjs.component';
 @Component({
     selector: 'app-finjs-main',
     styleUrls: ['./main.component.scss'],
-    templateUrl: './main.component.html'
+    templateUrl: './main.component.html',
+    standalone: false
 })
 export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
     @ViewChild('finGrid', { static: true }) public finGrid: GridFinJSComponent;

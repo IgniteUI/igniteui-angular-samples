@@ -7,7 +7,8 @@ import { RemoteServiceVirt } from '../../services/remoteVirtualization.service';
     providers: [RemoteServiceVirt],
     selector: 'app-grid-remote-virtualization-sample',
     styleUrls: ['grid-sample-4.component.scss'],
-    templateUrl: 'grid-sample-4.component.html'
+    templateUrl: 'grid-sample-4.component.html',
+    standalone: false
 })
 
 export class GridRemoteVirtualizationSampleComponent implements OnInit, AfterViewInit, OnDestroy{

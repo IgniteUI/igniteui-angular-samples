@@ -8,7 +8,8 @@ defineComponents(IgcRatingComponent);
 @Component({
     selector: 'app-grid-rating-sample',
     styleUrls: ['./grid-with-rating.component.scss'],
-    templateUrl: 'grid-with-rating.component.html'
+    templateUrl: 'grid-with-rating.component.html',
+    standalone: false
 })
 export class GridWithRatingComponent implements OnInit {
     @ViewChild('toast', { read: IgxToastComponent, static: true })

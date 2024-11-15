@@ -4,9 +4,10 @@ import { FinancialData } from '../../data/financialData';
 import  {generateRandomInteger, generateRandomFloat} from '../../data/utils';
 
 @Component({
-  selector: 'app-grid-sorting-indicators',
-  templateUrl: './grid-sorting-indicators.component.html',
-  styleUrls: ['./grid-sorting-indicators.component.scss']
+    selector: 'app-grid-sorting-indicators',
+    templateUrl: './grid-sorting-indicators.component.html',
+    styleUrls: ['./grid-sorting-indicators.component.scss'],
+    standalone: false
 })
 export class GridSortingIndicatorsComponent implements OnInit, AfterViewInit {
 

@@ -2,10 +2,11 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { ButtonGroupAlignment } from 'igniteui-angular';
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
-  selector: 'app-layout-direction-column',
-  styleUrls: ['./layout-direction-column.component.scss'],
-  templateUrl: './layout-direction-column.component.html'
+    encapsulation: ViewEncapsulation.None,
+    selector: 'app-layout-direction-column',
+    styleUrls: ['./layout-direction-column.component.scss'],
+    templateUrl: './layout-direction-column.component.html',
+    standalone: false
 })
 
 export class LayoutDirectionColumnComponent {

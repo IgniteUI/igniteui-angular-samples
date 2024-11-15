@@ -3,7 +3,8 @@ import { Component, ViewChild } from '@angular/core';
 @Component({
     selector: 'app-timepicker',
     styleUrls: ['./timepicker-sample-4.component.scss'],
-    templateUrl: './timepicker-sample-4.component.html'
+    templateUrl: './timepicker-sample-4.component.html',
+    standalone: false
 })
 export class TimePickerSample4Component {
     @ViewChild('toast', { static: true })

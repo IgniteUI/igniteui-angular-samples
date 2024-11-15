@@ -5,7 +5,8 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-contextmenu-sample',
     styleUrls: ['./grid-contextmenu-sample.component.scss'],
-    templateUrl: './grid-contextmenu-sample.component.html'
+    templateUrl: './grid-contextmenu-sample.component.html',
+    standalone: false
 })
 
 export class GridContextmenuSampleComponent implements OnInit {

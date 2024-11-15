@@ -3,9 +3,10 @@ import { GridSelectionMode, IgxTreeGridComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
-  selector: 'app-tree-grid-multi-column-headers-sample',
-  styleUrls: ['./tree-grid-collapsible-column-groups.component.scss'],
-  templateUrl: './tree-grid-collapsible-column-groups.component.html'
+    selector: 'app-tree-grid-multi-column-headers-sample',
+    styleUrls: ['./tree-grid-collapsible-column-groups.component.scss'],
+    templateUrl: './tree-grid-collapsible-column-groups.component.html',
+    standalone: false
 })
 export class TreeGridMultiCollapsibleColumnGroupsComponent implements OnInit {
 

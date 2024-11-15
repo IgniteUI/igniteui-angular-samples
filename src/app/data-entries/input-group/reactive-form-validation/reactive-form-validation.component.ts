@@ -9,9 +9,10 @@ interface User
 }
 
 @Component({
-  selector: 'app-reactive-form-validation',
-  templateUrl: './reactive-form-validation.component.html',
-  styleUrls: ['./reactive-form-validation.component.scss']
+    selector: 'app-reactive-form-validation',
+    templateUrl: './reactive-form-validation.component.html',
+    styleUrls: ['./reactive-form-validation.component.scss'],
+    standalone: false
 })
 export class ReactiveFormValidationComponent {
     public registrationForm: FormGroup<User>;

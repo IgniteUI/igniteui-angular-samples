@@ -7,9 +7,10 @@ import {
 import { DATA } from './../../data/nwindData';
 
 @Component({
-  selector: 'app-grid-excel-style-editing-sample',
-  styleUrls: [`grid-editing-excel-style.component.scss`],
-  templateUrl: 'grid-editing-excel-style.component.html'
+    selector: 'app-grid-excel-style-editing-sample',
+    styleUrls: [`grid-editing-excel-style.component.scss`],
+    templateUrl: 'grid-editing-excel-style.component.html',
+    standalone: false
 })
 export class GridExcelStyleEditingComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true })

@@ -6,7 +6,8 @@ import { Singer } from '../models';
 @Component({
     selector: 'app-hierarchical-grid-validation-style',
     styleUrls: ['./hierarchical-grid-validation-style.component.scss'],
-    templateUrl: 'hierarchical-grid-validation-style.component.html'
+    templateUrl: 'hierarchical-grid-validation-style.component.html',
+    standalone: false
 })
 export class HGridValidationStyleComponent {
     @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;

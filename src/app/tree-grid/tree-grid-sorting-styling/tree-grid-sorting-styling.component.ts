@@ -5,7 +5,8 @@ import { ORDERS_DATA } from '../data/orders';
 @Component({
     selector: 'app-tree-grid-sorting-styling',
     styleUrls: ['./tree-grid-sorting-styling.component.scss'],
-    templateUrl: 'tree-grid-sorting-styling.component.html'
+    templateUrl: 'tree-grid-sorting-styling.component.html',
+    standalone: false
 })
 
 export class TreeGridSortingStylingComponent implements OnInit {

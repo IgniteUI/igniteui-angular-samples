@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-radio-sample-2',
     styleUrls: ['./radio-sample-2.component.scss'],
-    templateUrl: './radio-sample-2.component.html'
+    templateUrl: './radio-sample-2.component.html',
+    standalone: false
 })
 export class RadioSample2Component {
     public colors = [{

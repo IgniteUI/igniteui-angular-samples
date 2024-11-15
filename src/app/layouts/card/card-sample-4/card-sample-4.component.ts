@@ -12,7 +12,8 @@ import {
 @Component({
     selector: 'app-card-sample-4',
     styleUrls: ['./card-sample-4.component.scss'],
-    templateUrl: './card-sample-4.component.html'
+    templateUrl: './card-sample-4.component.html',
+    standalone: false
 })
 export class CardSample4Component implements OnInit {
     @ViewChild(IgxExpansionPanelComponent, { static: true })

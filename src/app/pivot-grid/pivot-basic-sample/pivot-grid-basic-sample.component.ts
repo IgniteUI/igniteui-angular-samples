@@ -4,9 +4,10 @@ import { DATA } from '../../data/pivot-data';
 import { IPivotConfiguration, IgxPivotNumericAggregate } from "igniteui-angular"
 
 @Component({
-  selector: 'app-pivot-grid-basic-sample',
-  styleUrls: ['./pivot-grid-basic-sample.component.scss'],
-  templateUrl: './pivot-grid-basic-sample.component.html'
+    selector: 'app-pivot-grid-basic-sample',
+    styleUrls: ['./pivot-grid-basic-sample.component.scss'],
+    templateUrl: './pivot-grid-basic-sample.component.html',
+    standalone: false
 })
 export class PivotGridBasicSampleComponent {
     public data = DATA;

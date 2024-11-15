@@ -5,7 +5,8 @@ import { DATA } from '../../data/customers';
 @Component({
     selector: 'app-grid-conditional-row-selectors',
     styleUrls: ['./grid-conditional-row-selectors-sample.component.scss'],
-    templateUrl: 'grid-conditional-row-selectors-sample.component.html'
+    templateUrl: 'grid-conditional-row-selectors-sample.component.html',
+    standalone: false
 })
 
 export class GridConditionalRowSelectorsComponent {

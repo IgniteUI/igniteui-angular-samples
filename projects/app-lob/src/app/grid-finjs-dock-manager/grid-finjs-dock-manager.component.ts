@@ -8,11 +8,12 @@ import { FloatingPanesService } from '../services/floating-panes.service';
 import { SignalRService } from '../services/signal-r.service';
 import { DockSlotComponent, GridHostDirective } from './dock-slot.component';
 @Component({
-  encapsulation: ViewEncapsulation.None,
-  providers: [SignalRService, FloatingPanesService],
-  selector: 'app-finjs-dock-manager',
-  templateUrl: './grid-finjs-dock-manager.component.html',
-  styleUrls: ['./grid-finjs-dock-manager.component.scss']
+    encapsulation: ViewEncapsulation.None,
+    providers: [SignalRService, FloatingPanesService],
+    selector: 'app-finjs-dock-manager',
+    templateUrl: './grid-finjs-dock-manager.component.html',
+    styleUrls: ['./grid-finjs-dock-manager.component.scss'],
+    standalone: false
 })
 export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterViewInit, DoCheck {
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;

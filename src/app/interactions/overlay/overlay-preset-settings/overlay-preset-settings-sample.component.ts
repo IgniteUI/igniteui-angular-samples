@@ -22,7 +22,8 @@ import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-
     selector: 'app-overlay-sample',
     styleUrls: ['./overlay-preset-settings-sample.component.scss'],
     templateUrl: './overlay-preset-settings-sample.component.html',
-    providers: [IgxOverlayService]
+    providers: [IgxOverlayService],
+    standalone: false
 })
 export class OverlayPresetSettingsSampleComponent implements OnInit, OnDestroy {
     @ViewChild('anchor', { static: true })

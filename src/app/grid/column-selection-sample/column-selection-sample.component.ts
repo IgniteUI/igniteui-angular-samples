@@ -5,7 +5,8 @@ import { DATA } from '../../data/customers';
 @Component({
     selector: 'app-grid-column-selection',
     templateUrl: './column-selection-sample.component.html',
-    styleUrls: ['./column-selection-sample.component.scss']
+    styleUrls: ['./column-selection-sample.component.scss'],
+    standalone: false
 })
 export class GridColumnSelectionComponent implements OnInit, AfterViewInit {
     @ViewChild(IgxGridComponent)

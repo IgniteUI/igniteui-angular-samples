@@ -12,7 +12,8 @@ import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-
     selector: 'app-overlay-sample',
     styleUrls: ['./overlay-position-sample-2.component.scss'],
     templateUrl: './overlay-position-sample-2.component.html',
-    providers: [IgxOverlayService]
+    providers: [IgxOverlayService],
+    standalone: false
 })
 export class OverlayPositionSample2Component implements OnDestroy {
     @ViewChild('buttonElement', { static: true })

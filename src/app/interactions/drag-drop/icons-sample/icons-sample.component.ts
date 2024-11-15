@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-icons-sample',
     styleUrls: ['./icons-sample.component.scss'],
-    templateUrl: './icons-sample.component.html'
+    templateUrl: './icons-sample.component.html',
+    standalone: false
 })
 
 export class IconsSampleComponent {

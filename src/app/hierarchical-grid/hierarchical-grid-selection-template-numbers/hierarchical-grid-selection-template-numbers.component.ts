@@ -4,7 +4,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-selection-template-numbers',
     styleUrls: ['./hierarchical-grid-selection-template-numbers.component.scss'],
-    templateUrl: 'hierarchical-grid-selection-template-numbers.component.html'
+    templateUrl: 'hierarchical-grid-selection-template-numbers.component.html',
+    standalone: false
 })
 
 export class HGridSelectionTemplateNumbersSampleComponent {

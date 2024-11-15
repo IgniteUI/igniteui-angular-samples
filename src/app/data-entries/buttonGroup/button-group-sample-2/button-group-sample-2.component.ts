@@ -4,7 +4,8 @@ import { ButtonGroupAlignment } from 'igniteui-angular';
 @Component({
     selector: 'app-button-group-sample-2',
     styleUrls: ['./button-group-sample-2.component.scss'],
-    templateUrl: './button-group-sample-2.component.html'
+    templateUrl: './button-group-sample-2.component.html',
+    standalone: false
 })
 export class ButtonGroupSample2Component {
     public alignment = ButtonGroupAlignment.vertical;

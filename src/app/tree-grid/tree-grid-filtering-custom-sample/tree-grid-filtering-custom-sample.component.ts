@@ -5,7 +5,8 @@ import { ORDERS_DATA } from '../data/orders';
 @Component({
     selector: 'app-tree-grid-filtering-custom-sample',
     styleUrls: ['./tree-grid-filtering-custom-sample.component.scss'],
-    templateUrl: './tree-grid-filtering-custom-sample.component.html'
+    templateUrl: './tree-grid-filtering-custom-sample.component.html',
+    standalone: false
 })
 export class TreeGridFilteringCustomSampleComponent implements OnInit {
     public data: any[];

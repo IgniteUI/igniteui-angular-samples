@@ -5,7 +5,8 @@ import { TreeGridLoadOnDemandService } from './remoteService';
 @Component({
     selector: 'app-tree-grid-load-on-demand-sample',
     styleUrls: ['./tree-grid-load-on-demand-sample.component.scss'],
-    templateUrl: './tree-grid-load-on-demand-sample.component.html'
+    templateUrl: './tree-grid-load-on-demand-sample.component.html',
+    standalone: false
 })
 export class TreeGridLoadOnDemandSampleComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

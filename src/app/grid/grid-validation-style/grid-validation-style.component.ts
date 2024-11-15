@@ -5,7 +5,8 @@ import { IgxGridComponent, RowType } from 'igniteui-angular';
 @Component({
     selector: 'app-grid-validation-style',
     styleUrls: [`grid-validation-style.component.scss`],
-    templateUrl: 'grid-validation-style.component.html'
+    templateUrl: 'grid-validation-style.component.html',
+    standalone: false
 })
 export class GridValidationStyleComponent {
     @ViewChild('grid', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;

@@ -5,7 +5,8 @@ import { Subject } from 'rxjs';
 @Component({
     selector: 'app-banner-advanced-sample',
     styleUrls: ['../banner-samples.scss'],
-    templateUrl: 'banner-advanced-sample.component.html'
+    templateUrl: 'banner-advanced-sample.component.html',
+    standalone: false
 })
 
 export class BannerAdvancedSampleComponent implements OnInit, OnDestroy {

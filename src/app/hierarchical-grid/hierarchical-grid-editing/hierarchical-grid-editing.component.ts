@@ -33,7 +33,8 @@ class MySummary {
 @Component({
     selector: 'app-hierarchical-grid-editing',
     styleUrls: ['./hierarchical-grid-editing.component.scss'],
-    templateUrl: 'hierarchical-grid-editing.component.html'
+    templateUrl: 'hierarchical-grid-editing.component.html',
+    standalone: false
 })
 
 export class HGridEditingSampleComponent implements OnInit {

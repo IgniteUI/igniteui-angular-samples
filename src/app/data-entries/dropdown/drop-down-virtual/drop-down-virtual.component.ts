@@ -10,9 +10,10 @@ interface DataItem {
 }
 
 @Component({
-  selector: 'app-drop-down-virtual',
-  templateUrl: './drop-down-virtual.component.html',
-  styleUrls: ['./drop-down-virtual.component.scss']
+    selector: 'app-drop-down-virtual',
+    templateUrl: './drop-down-virtual.component.html',
+    styleUrls: ['./drop-down-virtual.component.scss'],
+    standalone: false
 })
 export class DropDownVirtualComponent {
   public items: DataItem[];

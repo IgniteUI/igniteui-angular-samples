@@ -3,7 +3,8 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 @Component({
     selector: 'app-display-density',
     styleUrls: ['./display-density.component.scss'],
-    templateUrl: './display-density.component.html'
+    templateUrl: './display-density.component.html',
+    standalone: false
 })
 
 export class DisplayDensityComponent implements OnInit {

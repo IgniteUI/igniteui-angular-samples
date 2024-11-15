@@ -9,9 +9,10 @@ import {
 } from 'igniteui-angular';
 
 @Component({
-  selector: 'app-toggle',
-  styleUrls: ['./toggle-samples.scss'],
-  templateUrl: './toggle.component.html'
+    selector: 'app-toggle',
+    styleUrls: ['./toggle-samples.scss'],
+    templateUrl: './toggle.component.html',
+    standalone: false
 })
 export class ToggleComponent {
     @ViewChild(IgxToggleDirective, { static: true }) public igxToggle: IgxToggleDirective;

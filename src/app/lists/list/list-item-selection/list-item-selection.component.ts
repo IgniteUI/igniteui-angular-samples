@@ -4,7 +4,8 @@ import { IgxFilterOptions } from 'igniteui-angular';
 @Component({
     selector: 'app-list-item-selection',
     templateUrl: './list-item-selection.component.html',
-    styleUrls: ['./list-item-selection.component.scss']
+    styleUrls: ['./list-item-selection.component.scss'],
+    standalone: false
 })
 export class ListItemSelectionComponent {
     public searchContact: string;

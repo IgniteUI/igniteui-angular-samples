@@ -10,7 +10,8 @@ const DEBOUNCE_TIME = 300;
     providers: [RemoteFilteringService],
     selector: 'app-tree-grid-remote-filtering-sample',
     styleUrls: ['./tree-grid-remote-filtering-sample.component.scss'],
-    templateUrl: './tree-grid-remote-filtering-sample.component.html'
+    templateUrl: './tree-grid-remote-filtering-sample.component.html',
+    standalone: false
 })
 export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

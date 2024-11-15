@@ -4,7 +4,8 @@ import { MyDynamicCardComponent} from '../overlay-dynamic-card/overlay-dynamic-c
 @Component({
     selector: 'app-overlay-sample',
     templateUrl: `./overlay-main-sample-1.component.html`,
-    styleUrls: [`./overlay-main-sample-1.component.scss`]
+    styleUrls: [`./overlay-main-sample-1.component.scss`],
+    standalone: false
 })
 export class OverlaySampleMain1Component implements OnDestroy {
     private _overlayId: string;

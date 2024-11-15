@@ -7,7 +7,8 @@ import { BehaviorSubject } from 'rxjs';
     providers: [RemotePagingService],
     selector: 'app-hierarchical-grid-remote-paging',
     styleUrls: ['./hierarchical-grid-remote-paging.component.scss'],
-    templateUrl: 'hierarchical-grid-remote-paging.component.html'
+    templateUrl: 'hierarchical-grid-remote-paging.component.html',
+    standalone: false
 })
 
 export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, OnDestroy {

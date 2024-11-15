@@ -5,7 +5,8 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-row-action-strip',
     styleUrls: [`grid-action-strip-sample.scss`],
-    templateUrl: 'grid-action-strip-sample.html'
+    templateUrl: 'grid-action-strip-sample.html',
+    standalone: false
 })
 export class GridActionStripSampleComponent {
     @ViewChild('grid', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;

@@ -15,7 +15,8 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 @Component({
     selector: 'app-tree-grid-row-pinning-extra-column',
     styleUrls: ['tree-grid-row-pinning-extra-column.component.scss'],
-    templateUrl: 'tree-grid-row-pinning-extra-column.component.html'
+    templateUrl: 'tree-grid-row-pinning-extra-column.component.html',
+    standalone: false
 })
 export class TreeGridRowPinningExtraColumnSampleComponent implements OnInit, AfterViewInit {
 

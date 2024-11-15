@@ -6,7 +6,8 @@ defineComponents(IgcRatingComponent)
 @Component({
     selector: 'app-rating-sample',
     styleUrls: ['./rating-form.component.scss'],
-    templateUrl: './rating-form.component.html'
+    templateUrl: './rating-form.component.html',
+    standalone: false
 })
 export class RatingInFormComponent {
 

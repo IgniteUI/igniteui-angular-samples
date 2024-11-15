@@ -9,9 +9,10 @@ interface User
 }
 
 @Component({
-  selector: 'app-template-driven-form-validation',
-  templateUrl: './template-driven-form-validation.component.html',
-  styleUrls: ['./template-driven-form-validation.component.scss']
+    selector: 'app-template-driven-form-validation',
+    templateUrl: './template-driven-form-validation.component.html',
+    styleUrls: ['./template-driven-form-validation.component.scss'],
+    standalone: false
 })
 export class TemplateDrivenFormValidationComponent {
     @ViewChild(NgForm, { static: true })

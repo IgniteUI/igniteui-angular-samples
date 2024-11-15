@@ -5,7 +5,8 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-adf-style-sample',
     styleUrls: ['./grid-advanced-filtering-style.component.scss'],
-    templateUrl: 'grid-advanced-filtering-style.component.html'
+    templateUrl: 'grid-advanced-filtering-style.component.html',
+    standalone: false
 })
 export class GridAdvancedFilteringStyleComponent implements OnInit {
 

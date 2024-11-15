@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-input-text-selection',
-  templateUrl: './input-text-selection.component.html',
-  styleUrls: ['./input-text-selection.component.scss']
+    selector: 'app-input-text-selection',
+    templateUrl: './input-text-selection.component.html',
+    styleUrls: ['./input-text-selection.component.scss'],
+    standalone: false
 })
 export class InputTextSelectionComponent {
 

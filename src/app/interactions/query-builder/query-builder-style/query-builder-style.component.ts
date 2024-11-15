@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-query-builder-style-sample',
     styleUrls: ['./query-builder-style.component.scss'],
-    templateUrl: 'query-builder-style.component.html'
+    templateUrl: 'query-builder-style.component.html',
+    standalone: false
 })
 export class QueryBuilderStyleComponent {
     public fields: any[] = [

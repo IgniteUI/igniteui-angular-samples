@@ -4,7 +4,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-external-advanced-filtering',
     templateUrl: './hierarchical-grid-external-advanced-filtering.component.html',
-    styleUrls: ['./hierarchical-grid-external-advanced-filtering.component.scss']
+    styleUrls: ['./hierarchical-grid-external-advanced-filtering.component.scss'],
+    standalone: false
 })
 export class HGridExternalAdvancedFilteringComponent {
 

@@ -14,7 +14,8 @@ import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-
     selector: 'app-overlay-sample',
     styleUrls: ['./overlay-scroll-sample-2.component.scss'],
     templateUrl: './overlay-scroll-sample-2.component.html',
-    providers: [IgxOverlayService]
+    providers: [IgxOverlayService],
+    standalone: false
 })
 export class OverlayScrollSample2Component implements OnInit, OnDestroy {
     @ViewChild('scrollDemo', { static: true })

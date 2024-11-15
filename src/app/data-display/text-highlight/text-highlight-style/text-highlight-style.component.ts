@@ -5,7 +5,8 @@ import { IgxTextHighlightDirective, IgxTextHighlightService } from 'igniteui-ang
 @Component({
     selector: 'app-text-highlight-style',
     styleUrls: ['./text-highlight-style.component.scss'],
-    templateUrl: './text-highlight-style.component.html'
+    templateUrl: './text-highlight-style.component.html',
+    standalone: false
 })
 export class TextHighlightStyleComponent implements OnDestroy {
     @ViewChild(IgxTextHighlightDirective, { read: IgxTextHighlightDirective, static: true })

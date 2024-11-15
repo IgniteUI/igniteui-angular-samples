@@ -4,7 +4,8 @@ import { IgxExpansionPanelComponent } from 'igniteui-angular';
     // tslint:disable-next-line:component-selector
     selector: 'app-expansion-sample-1',
     styleUrls: ['./expansion-sample-1.component.scss'],
-    templateUrl: './expansion-sample-1.component.html'
+    templateUrl: './expansion-sample-1.component.html',
+    standalone: false
 })
 export class ExpansionPanelSample1Component {
     @ViewChild(IgxExpansionPanelComponent, { read: IgxExpansionPanelComponent, static: true })

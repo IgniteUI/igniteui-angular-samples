@@ -5,7 +5,8 @@ import { filter } from 'rxjs/operators';
 @Component({
     selector: 'app-tabs-sample-4',
     styleUrls: ['./tabs-sample-4.component.scss'],
-    templateUrl: './tabs-sample-4.component.html'
+    templateUrl: './tabs-sample-4.component.html',
+    standalone: false
 })
 export class TabsSample4Component implements OnInit {
     public path: string;

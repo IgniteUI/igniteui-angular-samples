@@ -5,7 +5,8 @@ import { athletesData } from '../../data/athletesData';
 @Component({
     selector: 'app-custom-grid-paging-style-sample',
     styleUrls: ['custom-grid-paging-style.component.scss'],
-    templateUrl: 'custom-grid-paging-style.component.html'
+    templateUrl: 'custom-grid-paging-style.component.html',
+    standalone: false
 })
 
 export class CustomGridPagingStyleSampleComponent implements OnInit{

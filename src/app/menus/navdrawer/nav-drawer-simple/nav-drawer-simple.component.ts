@@ -2,9 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { IgxNavigationDrawerComponent } from 'igniteui-angular';
 
 @Component({
-  selector: 'app-nav-drawer-simple',
-  styleUrls: ['./nav-drawer-simple.component.scss'],
-  templateUrl: './nav-drawer-simple.component.html'
+    selector: 'app-nav-drawer-simple',
+    styleUrls: ['./nav-drawer-simple.component.scss'],
+    templateUrl: './nav-drawer-simple.component.html',
+    standalone: false
 })
 export class NavDrawerSimpleComponent  {
     @ViewChild(IgxNavigationDrawerComponent, { static: true })

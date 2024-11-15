@@ -6,7 +6,8 @@ import { DATA, ALIGNMENTS, RACES, CLASSES } from './data';
 @Component({
     selector: 'app-grid-select-sample',
     styleUrls: ['./grid-select-sample.component.scss'],
-    templateUrl: './grid-select-sample.component.html'
+    templateUrl: './grid-select-sample.component.html',
+    standalone: false
 })
 export class GridSelectComponent implements OnInit {
 

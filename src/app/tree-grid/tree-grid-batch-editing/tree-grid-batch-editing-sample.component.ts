@@ -12,7 +12,8 @@ import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 @Component({
     selector: 'app-tree-grid-batch-editing-sample',
     styleUrls: ['tree-grid-batch-editing-sample.component.scss'],
-    templateUrl: 'tree-grid-batch-editing-sample.component.html'
+    templateUrl: 'tree-grid-batch-editing-sample.component.html',
+    standalone: false
 })
 export class TreeGridBatchEditingSampleComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

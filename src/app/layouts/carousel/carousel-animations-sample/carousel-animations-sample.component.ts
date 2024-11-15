@@ -2,9 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxCarouselComponent } from 'igniteui-angular';
 
 @Component({
-  selector: 'app-carousel',
-  styleUrls: ['./carousel-animations-sample.component.scss'],
-  templateUrl: './carousel-animations-sample.component.html'
+    selector: 'app-carousel',
+    styleUrls: ['./carousel-animations-sample.component.scss'],
+    templateUrl: './carousel-animations-sample.component.html',
+    standalone: false
 })
 export class CarouselAnimationsSampleComponent implements OnInit {
   @ViewChild('carousel', { static: true }) public carousel: IgxCarouselComponent;

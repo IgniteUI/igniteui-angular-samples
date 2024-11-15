@@ -36,7 +36,8 @@ export class IgxTotalSaleAggregate {
 @Component({
     selector: 'app-pivot-features-sample',
     styleUrls: ['./pivot-features.component.scss'],
-    templateUrl: './pivot-features.component.html'
+    templateUrl: './pivot-features.component.html',
+    standalone: false
 })
 export class PivotFeaturesComponent {
     public data = SALES_DATA;

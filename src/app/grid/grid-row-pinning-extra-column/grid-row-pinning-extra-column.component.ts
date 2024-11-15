@@ -15,7 +15,8 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 @Component({
     selector: 'app-grid-row-pinning-extra-column',
     templateUrl: 'grid-row-pinning-extra-column.component.html',
-    styleUrls: ['./grid-row-pinning-extra-column.component.scss']
+    styleUrls: ['./grid-row-pinning-extra-column.component.scss'],
+    standalone: false
 })
 
 export class GridRowPinningExtraColumnSampleComponent implements AfterViewInit {

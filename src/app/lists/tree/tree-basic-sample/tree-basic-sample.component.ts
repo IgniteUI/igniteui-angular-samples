@@ -4,7 +4,8 @@ import { DATA } from '../../../data/animations-data';
 @Component({
     selector: 'app-tree-basic-sample',
     templateUrl: './tree-basic-sample.component.html',
-    styleUrls: ['./tree-basic-sample.component.scss']
+    styleUrls: ['./tree-basic-sample.component.scss'],
+    standalone: false
 })
 export class TreeBasicSampleComponent {
     public data = DATA;

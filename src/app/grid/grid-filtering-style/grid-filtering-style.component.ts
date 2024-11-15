@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { DATA } from '../../data/nwindData';
 
 @Component({
-  selector: 'app-grid-filtering-style',
-  styleUrls: ['./grid-filtering-style.component.scss'],
-  templateUrl: './grid-filtering-style.component.html'
+    selector: 'app-grid-filtering-style',
+    styleUrls: ['./grid-filtering-style.component.scss'],
+    templateUrl: './grid-filtering-style.component.html',
+    standalone: false
 })
 export class GridFilteringStyleComponent implements OnInit {
     public data: any[];

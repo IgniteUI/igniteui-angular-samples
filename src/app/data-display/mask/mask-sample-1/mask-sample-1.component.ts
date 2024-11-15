@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-mask-sample-1',
     styleUrls: ['./mask-sample-1.component.scss'],
-    templateUrl: './mask-sample-1.component.html'
+    templateUrl: './mask-sample-1.component.html',
+    standalone: false
 })
 
 export class MaskSample1Component {

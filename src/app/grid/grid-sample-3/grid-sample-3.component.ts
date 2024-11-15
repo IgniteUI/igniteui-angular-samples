@@ -20,9 +20,10 @@ class MySummary  {
     }
 }
 @Component({
-  selector: 'app-grid-sample-3',
-  styleUrls: ['./grid-sample-3.component.scss'],
-  templateUrl: './grid-sample-3.component.html'
+    selector: 'app-grid-sample-3',
+    styleUrls: ['./grid-sample-3.component.scss'],
+    templateUrl: './grid-sample-3.component.html',
+    standalone: false
 })
 export class GridSample3Component {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

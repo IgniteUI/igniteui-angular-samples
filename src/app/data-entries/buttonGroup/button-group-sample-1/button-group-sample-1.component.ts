@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-button-group-sample-1',
     styleUrls: ['./button-group-sample-1.component.scss'],
-    templateUrl: './button-group-sample-1.component.html'
+    templateUrl: './button-group-sample-1.component.html',
+    standalone: false
 })
 
 export class ButtonGroupSample1Component {

@@ -5,7 +5,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hgrid-row-classes',
     styleUrls: ['./hgrid-rowClasses.component.scss'],
-    templateUrl: 'hgrid-rowClasses.component.html'
+    templateUrl: 'hgrid-rowClasses.component.html',
+    standalone: false
 })
 
 export class HGridRowClassesSampleComponent implements OnInit {

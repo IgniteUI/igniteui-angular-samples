@@ -4,7 +4,8 @@ import { ORDERS_DATA } from '../data/orders';
 @Component({
     selector: 'app-tree-grid-external-advanced-filtering',
     templateUrl: './tree-grid-external-advanced-filtering.component.html',
-    styleUrls: ['./tree-grid-external-advanced-filtering.component.scss']
+    styleUrls: ['./tree-grid-external-advanced-filtering.component.scss'],
+    standalone: false
 })
 export class TreeGridExternalAdvancedFilteringComponent {
     public data: any[];

@@ -5,7 +5,8 @@ import { ORDERS_DATA } from '../data/orders';
 @Component({
     selector: 'app-tree-grid-excel-style-filtering-sample-2',
     styleUrls: ['./tree-grid-excel-style-filtering-sample-2.component.scss'],
-    templateUrl: 'tree-grid-excel-style-filtering-sample-2.component.html'
+    templateUrl: 'tree-grid-excel-style-filtering-sample-2.component.html',
+    standalone: false
 })
 
 export class TreeGridExcelStyleFilteringSample2Component implements OnInit {

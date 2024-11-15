@@ -6,7 +6,8 @@ import { DATA } from '../../data/customers';
 @Component({
     selector: 'app-grid-row-reorder-sample',
     styleUrls: ['grid-row-reorder.scss'],
-    templateUrl: 'grid-row-reorder.html'
+    templateUrl: 'grid-row-reorder.html',
+    standalone: false
 })
 export class GridRowReorderComponent {
     @ViewChild('grid', { read: IgxGridComponent, static : true })

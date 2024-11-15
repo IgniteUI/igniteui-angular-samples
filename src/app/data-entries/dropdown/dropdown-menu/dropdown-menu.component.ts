@@ -7,7 +7,8 @@ import {
 @Component({
     selector: 'app-dropdown-menu',
     styleUrls: ['./dropdown-menu.component.scss'],
-    templateUrl: './dropdown-menu.component.html'
+    templateUrl: './dropdown-menu.component.html',
+    standalone: false
 })
 export class DropdownMenuComponent {
     public items: { text: string }[] =

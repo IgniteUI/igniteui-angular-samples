@@ -7,9 +7,10 @@ import { CsvFileTypes,
          IgxGridComponent } from 'igniteui-angular';
 
 @Component({
-  selector: 'app-csv-export-sample-1',
-  styleUrls: ['./csv-export-sample-1.component.scss'],
-  templateUrl: './csv-export-sample-1.component.html'
+    selector: 'app-csv-export-sample-1',
+    styleUrls: ['./csv-export-sample-1.component.scss'],
+    templateUrl: './csv-export-sample-1.component.html',
+    standalone: false
 })
 export class CsvExportSample1Component {
 

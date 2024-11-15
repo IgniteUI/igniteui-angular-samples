@@ -5,7 +5,8 @@ import { EMPLOYEE_DATA } from './data';
 @Component({
     selector: 'app-tree-grid-childdatakey-sample',
     styleUrls: ['./tree-grid-childdatakey-sample.component.scss'],
-    templateUrl: './tree-grid-childdatakey-sample.component.html'
+    templateUrl: './tree-grid-childdatakey-sample.component.html',
+    standalone: false
 })
 export class TreeGridChilddatakeySampleComponent implements OnInit {
     public localData: any[];

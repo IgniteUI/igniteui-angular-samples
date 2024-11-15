@@ -3,9 +3,10 @@ import { IgxTreeGridComponent } from 'igniteui-angular';
 import { ORDERS_DATA } from '../../../tree-grid/data/orders';
 
 @Component({
-  selector: 'app-csv-export-tree-grid-sample',
-  styleUrls: ['./csv-export-tree-grid-sample.component.scss'],
-  templateUrl: './csv-export-tree-grid-sample.component.html'
+    selector: 'app-csv-export-tree-grid-sample',
+    styleUrls: ['./csv-export-tree-grid-sample.component.scss'],
+    templateUrl: './csv-export-tree-grid-sample.component.html',
+    standalone: false
 })
 export class TreeGridCsvExportSample1Component implements OnInit {
 

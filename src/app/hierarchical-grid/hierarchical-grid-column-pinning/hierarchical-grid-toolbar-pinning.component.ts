@@ -5,7 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
     selector: 'app-hierarchical-grid-toolbar-pinning',
     styleUrls: ['./hierarchical-grid-toolbar-pinning.component.scss'],
-    templateUrl: 'hierarchical-grid-toolbar-pinning.component.html'
+    templateUrl: 'hierarchical-grid-toolbar-pinning.component.html',
+    standalone: false
 })
 export class HGridToolbarPinningComponent implements OnInit {
     public localdata;

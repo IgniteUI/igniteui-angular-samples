@@ -5,7 +5,8 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-sample',
     styleUrls: ['./grid-formatted-filtering-strategy.component.scss'],
-    templateUrl: 'grid-formatted-filtering-strategy.component.html'
+    templateUrl: 'grid-formatted-filtering-strategy.component.html',
+    standalone: false
 })
 export class GridFormattedFilteringStrategyComponent implements OnInit {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

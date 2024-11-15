@@ -5,7 +5,8 @@ import { CardSample1Component } from '../../../layouts/card/card-sample-1/card-s
 @Component({
     selector: 'app-overlay-sample',
     templateUrl: `./overlay-main-sample-2.component.html`,
-    styleUrls: [`./overlay-main-sample-2.component.scss`]
+    styleUrls: [`./overlay-main-sample-2.component.scss`],
+    standalone: false
 })
 export class OverlaySampleMain2Component implements OnDestroy {
 

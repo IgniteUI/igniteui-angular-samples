@@ -14,7 +14,8 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 @Component({
     selector: 'app-hierarchical-grid-row-pinning-extra-column',
     styleUrls: ['./hierarchical-grid-row-pinning-extra-column.component.scss'],
-    templateUrl: 'hierarchical-grid-row-pinning-extra-column.component.html'
+    templateUrl: 'hierarchical-grid-row-pinning-extra-column.component.html',
+    standalone: false
 })
 
 export class HGridRowPinningExtraColumnSampleComponent implements AfterViewInit{

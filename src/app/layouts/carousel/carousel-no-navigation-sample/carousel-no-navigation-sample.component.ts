@@ -2,9 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxCarouselComponent, IgxListComponent, IListItemClickEventArgs, ISlideEventArgs } from 'igniteui-angular';
 
 @Component({
-  selector: 'app-carousel',
-  styleUrls: ['./carousel-no-navigation-sample.component.scss'],
-  templateUrl: './carousel-no-navigation-sample.component.html'
+    selector: 'app-carousel',
+    styleUrls: ['./carousel-no-navigation-sample.component.scss'],
+    templateUrl: './carousel-no-navigation-sample.component.html',
+    standalone: false
 })
 export class CarouselNoNavigationSampleComponent implements OnInit {
   @ViewChild(IgxCarouselComponent, { static: true })

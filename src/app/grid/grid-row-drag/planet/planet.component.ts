@@ -5,7 +5,8 @@ import { IPlanet } from '../data';
 @Component({
     selector: 'app-planet',
     styleUrls: ['./planet.component.scss'],
-    templateUrl: 'planet.component.html'
+    templateUrl: 'planet.component.html',
+    standalone: false
 })
 
 export class PlanetComponent {

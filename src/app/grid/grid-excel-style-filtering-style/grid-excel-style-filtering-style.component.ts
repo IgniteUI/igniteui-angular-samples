@@ -5,7 +5,8 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-esf-style-sample',
     styleUrls: ['./grid-excel-style-filtering-style.component.scss'],
-    templateUrl: 'grid-excel-style-filtering-style.component.html'
+    templateUrl: 'grid-excel-style-filtering-style.component.html',
+    standalone: false
 })
 export class ExcelStyleFilteringStyleComponent implements OnInit {
 

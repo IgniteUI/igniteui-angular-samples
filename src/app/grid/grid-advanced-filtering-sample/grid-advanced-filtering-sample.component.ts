@@ -5,7 +5,8 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-advanced-filtering-sample',
     styleUrls: ['./grid-advanced-filtering-sample.component.scss'],
-    templateUrl: 'grid-advanced-filtering-sample.component.html'
+    templateUrl: 'grid-advanced-filtering-sample.component.html',
+    standalone: false
 })
 export class GridAdvancedFilteringSampleComponent implements OnInit {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

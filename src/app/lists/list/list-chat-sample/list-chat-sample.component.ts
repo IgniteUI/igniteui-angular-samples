@@ -13,7 +13,8 @@ import { IMessage, MessagesService } from './services/messages.service';
     encapsulation: ViewEncapsulation.None,
     selector: 'app-list-chat-sample',
     styleUrls: ['./list-chat-sample.component.scss'],
-    templateUrl: './list-chat-sample.component.html'
+    templateUrl: './list-chat-sample.component.html',
+    standalone: false
 })
 export class ListChatSampleComponent implements AfterViewInit {
     @ViewChild('form', { static: true })

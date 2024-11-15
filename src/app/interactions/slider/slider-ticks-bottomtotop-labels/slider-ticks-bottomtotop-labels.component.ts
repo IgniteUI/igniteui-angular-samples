@@ -4,7 +4,8 @@ import { IgxSliderType, TickLabelsOrientation } from 'igniteui-angular';
 @Component({
     selector: 'app-slider-ticks-bottomtotop-labels',
     styleUrls: ['./slider-ticks-bottomtotop-labels.component.scss'],
-    templateUrl: './slider-ticks-bottomtotop-labels.component.html'
+    templateUrl: './slider-ticks-bottomtotop-labels.component.html',
+    standalone: false
 })
 export class SliderTicksBottomtotopLabelsComponent {
     public type: IgxSliderType = IgxSliderType.RANGE;

@@ -5,7 +5,8 @@ import { IgxStepperComponent } from 'igniteui-angular';
 @Component({
     selector: 'app-stepper-overview-sample',
     styleUrls: ['./stepper-overview-sample.component.scss'],
-    templateUrl: './stepper-overview-sample.component.html'
+    templateUrl: './stepper-overview-sample.component.html',
+    standalone: false
 })
 export class StepperOverviewSampleComponent {
     @ViewChild('stepper', { static: true })

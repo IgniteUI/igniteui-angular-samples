@@ -6,7 +6,8 @@ import { DATA } from '../../data/company-data';
     encapsulation: ViewEncapsulation.None,
     selector: 'app-grid-mrl-custom-navigation-sample',
     styleUrls: ['./grid-mrl-custom-navigation.component.scss'],
-    templateUrl: './grid-mrl-custom-navigation.component.html'
+    templateUrl: './grid-mrl-custom-navigation.component.html',
+    standalone: false
 })
 export class GridMRLCustomNavigationComponent {
     @ViewChild(IgxGridComponent, { read: IgxGridComponent, static : true })

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-slider-sample-2',
-  styleUrls: ['./slider-sample-2.component.scss'],
-  templateUrl: './slider-sample-2.component.html'
+    selector: 'app-slider-sample-2',
+    styleUrls: ['./slider-sample-2.component.scss'],
+    templateUrl: './slider-sample-2.component.html',
+    standalone: false
 })
 export class SliderSample2Component implements OnInit {
   public volume = 20;

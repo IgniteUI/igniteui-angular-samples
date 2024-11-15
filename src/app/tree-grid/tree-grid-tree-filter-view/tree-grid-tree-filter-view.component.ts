@@ -6,7 +6,8 @@ import { ORDERS_DATA } from '../data/orders';
     changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'app-tree-grid-tree-filter-view',
     styleUrls: ['./tree-grid-tree-filter-view.component.scss'],
-    templateUrl: 'tree-grid-tree-filter-view.component.html'
+    templateUrl: 'tree-grid-tree-filter-view.component.html',
+    standalone: false
 })
 
 export class TreeGridTreeFilterViewComponent implements OnInit {

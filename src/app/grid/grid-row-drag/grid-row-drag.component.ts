@@ -13,7 +13,8 @@ enum HoverClassList {
 @Component({
     selector: 'app-grid-row-drag-sample',
     styleUrls: ['./grid-row-drag.component.scss'],
-    templateUrl: 'grid-row-drag.component.html'
+    templateUrl: 'grid-row-drag.component.html',
+    standalone: false
 })
 
 export class GridDragSampleComponent {

@@ -4,7 +4,8 @@ import { DateRangeType, IgxCalendarComponent, IgxDropDownComponent } from 'ignit
 @Component({
     selector: 'app-datepicker-sample-9',
     styleUrls: ['./datepicker-sample-9.component.scss'],
-    templateUrl: './datepicker-sample-9.component.html'
+    templateUrl: './datepicker-sample-9.component.html',
+    standalone: false
 })
 export class DatepickerSample9Component implements OnInit {
     @ViewChild('calendar', { static: true }) public calendar: IgxCalendarComponent;
@@ -92,14 +93,20 @@ export class DatepickerSample9Component implements OnInit {
         }
     }
 }
-@Pipe({ name: 'startsWith' })
+@Pipe({
+    name: 'startsWith',
+    standalone: false
+})
 export class AutocompletePipeStartsWith implements PipeTransform {
     public transform(collection: any[], term = '') {
         return collection.filter((item) => item.toString().toLowerCase().startsWith(term.toString().toLowerCase()));
     }
 }
 
-@Pipe({ name: 'withoutTownFrom' })
+@Pipe({
+    name: 'withoutTownFrom',
+    standalone: false
+})
 export class PipeWithoutTownFrom implements PipeTransform {
     public transform(collection: any[], townFrom: string) {
         return collection.filter((item) => item !== townFrom);

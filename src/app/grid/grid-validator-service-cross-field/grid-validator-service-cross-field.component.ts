@@ -7,7 +7,8 @@ import { employeesData } from '../../data/employeesData';
 @Component({
     selector: 'app-grid-validator-service-cross-field',
     styleUrls: ['./grid-validator-service-cross-field.component.scss'],
-    templateUrl: './grid-validator-service-cross-field.component.html'
+    templateUrl: './grid-validator-service-cross-field.component.html',
+    standalone: false
 })
 export class GridValidatorServiceCrossFieldComponent {
 

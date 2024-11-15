@@ -8,7 +8,8 @@ import {
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-sample-4',
     styleUrls: ['./dropdown-sample-4.component.scss'],
-    templateUrl: './dropdown-sample-4.component.html'
+    templateUrl: './dropdown-sample-4.component.html',
+    standalone: false
 })
 export class DropDownSample4Component {
     @ViewChild(IgxDropDownComponent, { static: true }) public igxDropDown: IgxDropDownComponent;

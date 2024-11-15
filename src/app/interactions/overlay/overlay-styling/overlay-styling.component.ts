@@ -4,7 +4,8 @@ import { IgxOverlayService } from 'igniteui-angular';
 @Component({
     selector: 'app-overlay-styling',
     styleUrls: ['overlay-styling.component.scss'],
-    templateUrl: 'overlay-styling.component.html'
+    templateUrl: 'overlay-styling.component.html',
+    standalone: false
 })
 export class OverlayStylingComponent {
     public items = [{

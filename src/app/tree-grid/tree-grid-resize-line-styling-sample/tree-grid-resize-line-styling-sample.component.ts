@@ -4,7 +4,8 @@ import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detaile
 @Component({
     selector: 'app-tree-grid-resize-line-styling-sample',
     styleUrls: ['./tree-grid-resize-line-styling-sample.component.scss'],
-    templateUrl: './tree-grid-resize-line-styling-sample.component.html'
+    templateUrl: './tree-grid-resize-line-styling-sample.component.html',
+    standalone: false
 })
 export class TreeGridResizeLineStylingSampleComponent {
     public data: any[];

@@ -4,7 +4,8 @@ import { IgxTreeComponent } from 'igniteui-angular';
 @Component({
     selector: 'app-nav-drawer-hierarchical',
     templateUrl: './nav-drawer-hierarchical.component.html',
-    styleUrls: ['./nav-drawer-hierarchical.component.scss']
+    styleUrls: ['./nav-drawer-hierarchical.component.scss'],
+    standalone: false
 })
 export class NavDrawerHierarchicalComponent implements AfterViewInit {
     @ViewChild('tree') public tree: IgxTreeComponent;

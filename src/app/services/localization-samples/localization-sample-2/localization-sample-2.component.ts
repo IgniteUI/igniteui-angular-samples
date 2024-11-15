@@ -5,7 +5,8 @@ import { DATA } from '../../../data/nwindData';
 @Component({
     selector: 'app-localization-sample-2',
     styleUrls: ['./localization-sample-2.component.scss'],
-    templateUrl: 'localization-sample-2.component.html'
+    templateUrl: 'localization-sample-2.component.html',
+    standalone: false
 })
 
 export class LocalizationSample2Component implements OnInit {

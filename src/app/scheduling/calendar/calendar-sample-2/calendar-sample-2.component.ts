@@ -9,7 +9,8 @@ import localeZH from '@angular/common/locales/zh';
 @Component({
     selector: 'app-calendar',
     styleUrls: ['./calendar-sample-2.component.scss'],
-    templateUrl: './calendar-sample-2.component.html'
+    templateUrl: './calendar-sample-2.component.html',
+    standalone: false
 })
 export class CalendarSample2Component implements OnInit{
     @ViewChild('calendar', { read: IgxCalendarComponent }) public calendar: IgxCalendarComponent;

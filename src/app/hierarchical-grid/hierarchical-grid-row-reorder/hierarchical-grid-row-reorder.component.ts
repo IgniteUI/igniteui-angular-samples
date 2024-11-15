@@ -11,7 +11,8 @@ import { createData, IDrive } from '../../data/files.data';
 @Component({
     selector: 'app-hierarchical-grid-row-reorder',
     styleUrls: ['./hierarchical-grid-row-reorder.component.scss'],
-    templateUrl: 'hierarchical-grid-row-reorder.component.html'
+    templateUrl: 'hierarchical-grid-row-reorder.component.html',
+    standalone: false
 })
 export class HGridRowReorderComponent {
     @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent, static: true })

@@ -8,7 +8,8 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-row-classes-sample',
     styleUrls: ['./grid-rowClasses.component.scss'],
-    templateUrl: 'grid-rowClasses.component.html'
+    templateUrl: 'grid-rowClasses.component.html',
+    standalone: false
 })
 export class GridRowClassesComponent implements OnInit {
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;

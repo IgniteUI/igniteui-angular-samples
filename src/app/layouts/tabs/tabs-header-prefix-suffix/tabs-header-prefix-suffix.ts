@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-tabs-header-prefix-suffix',
-    templateUrl: './tabs-header-prefix-suffix.html'
+    templateUrl: './tabs-header-prefix-suffix.html',
+    standalone: false
 })
 export class TabsHeaderPrefixSuffixComponent {
     public tabs = [{

@@ -7,7 +7,8 @@ import { CUSTOMERS } from '../../data/hierarchical-data';
 @Component({
     selector: 'hierarchical-grid-cross-field-validation',
     styleUrls: ['./hierarchical-grid-cross-field-validation.component.scss'],
-    templateUrl: 'hierarchical-grid-cross-field-validation.component.html'
+    templateUrl: 'hierarchical-grid-cross-field-validation.component.html',
+    standalone: false
 })
 
 export class HierarchicalGridValidatorServiceCrossCellComponent implements OnInit {

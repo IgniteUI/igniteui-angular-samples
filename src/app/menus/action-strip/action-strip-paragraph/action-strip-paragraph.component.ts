@@ -1,9 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-action-strip-paragraph',
-  styleUrls: ['./action-strip-paragraph.component.scss'],
-  templateUrl: './action-strip-paragraph.component.html'
+    selector: 'app-action-strip-paragraph',
+    styleUrls: ['./action-strip-paragraph.component.scss'],
+    templateUrl: './action-strip-paragraph.component.html',
+    standalone: false
 })
 export class ActionStripParagraphComponent {
     @ViewChild('myParagraph') public paragraph;

@@ -4,7 +4,8 @@ import { generateEmployeeFlatData } from '../data/employees-flat';
 @Component({
     selector: 'app-tgrid-editing-lifecycle',
     templateUrl: 'tgrid-editing-lifecycle.component.html',
-    styleUrls: ['tgrid-editing-lifecycle.component.scss']
+    styleUrls: ['tgrid-editing-lifecycle.component.scss'],
+    standalone: false
 })
 export class TGridEditingLifecycleComponent {
     @ViewChild('logger')

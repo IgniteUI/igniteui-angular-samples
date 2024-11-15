@@ -4,7 +4,8 @@ import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxQueryBuil
 @Component({
     selector: 'app-query-builder-sample-1',
     styleUrls: ['./query-builder-sample-1.component.scss'],
-    templateUrl: 'query-builder-sample-1.component.html'
+    templateUrl: 'query-builder-sample-1.component.html',
+    standalone: false
 })
 export class QueryBuilderSample1Component implements OnInit {
     public expressionTree: IExpressionTree;

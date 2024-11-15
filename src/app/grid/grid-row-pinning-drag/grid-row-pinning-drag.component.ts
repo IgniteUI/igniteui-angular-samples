@@ -13,7 +13,8 @@ import { DATA } from '../../data/customers';
 @Component({
     selector: 'app-grid-row-pinning-drag-sample',
     styleUrls: ['./grid-row-pinning-drag.component.scss'],
-    templateUrl: 'grid-row-pinning-drag.component.html'
+    templateUrl: 'grid-row-pinning-drag.component.html',
+    standalone: false
 })
 
 export class GridPinningDragSampleComponent implements OnInit {

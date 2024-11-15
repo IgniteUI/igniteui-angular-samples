@@ -5,7 +5,8 @@ import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detaile
 @Component({
     selector: 'app-tree-grid-row-action-strip',
     styleUrls: [`tree-grid-action-strip-sample.scss`],
-    templateUrl: 'tree-grid-action-strip-sample.html'
+    templateUrl: 'tree-grid-action-strip-sample.html',
+    standalone: false
 })
 export class TreeGridActionStripSampleComponent {
     @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true }) public grid: IgxTreeGridComponent;

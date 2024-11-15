@@ -10,7 +10,8 @@ import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 @Component({
     selector: 'app-tree-grid-row-pinning-styling',
     styleUrls: ['tree-grid-row-pinning-styling.component.scss'],
-    templateUrl: 'tree-grid-row-pinning-styling.component.html'
+    templateUrl: 'tree-grid-row-pinning-styling.component.html',
+    standalone: false
 })
 export class TreeGridRowPinningStylingSampleComponent implements OnInit {
 

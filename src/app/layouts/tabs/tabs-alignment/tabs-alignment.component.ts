@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-tabs-alignment',
-    templateUrl: './tabs-alignment.component.html'
+    templateUrl: './tabs-alignment.component.html',
+    standalone: false
 })
 export class TabsAlignmentComponent {
     public tabAlignment = 'start';

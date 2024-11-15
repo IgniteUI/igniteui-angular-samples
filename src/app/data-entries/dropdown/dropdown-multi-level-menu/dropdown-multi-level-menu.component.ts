@@ -17,10 +17,11 @@ import {
 import { MultiLevelService } from './multi-level.service';
 
 @Component({
-  selector: 'app-dropdown-multi-level-menu',
-  templateUrl: './dropdown-multi-level-menu.component.html',
-  styleUrls: ['./dropdown-multi-level-menu.component.scss'],
-  providers: [MultiLevelService]
+    selector: 'app-dropdown-multi-level-menu',
+    templateUrl: './dropdown-multi-level-menu.component.html',
+    styleUrls: ['./dropdown-multi-level-menu.component.scss'],
+    providers: [MultiLevelService],
+    standalone: false
 })
 export class DropdownMultiLevelMenuComponent implements AfterViewInit {
   @ViewChildren(IgxDropDownComponent, { read: IgxDropDownComponent })

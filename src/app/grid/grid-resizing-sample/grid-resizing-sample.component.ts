@@ -5,7 +5,8 @@ import { DATA } from '../../data/customers';
 @Component({
     selector: 'app-grid-resizing-sample',
     styleUrls: ['./grid-resizing-sample.component.scss'],
-    templateUrl: 'grid-resizing-sample.component.html'
+    templateUrl: 'grid-resizing-sample.component.html',
+    standalone: false
 })
 
 export class ResizingSampleComponent {

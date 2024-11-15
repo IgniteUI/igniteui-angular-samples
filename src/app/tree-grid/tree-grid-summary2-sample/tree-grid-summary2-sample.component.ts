@@ -29,7 +29,8 @@ class AvgSummary {
 @Component({
     selector: 'app-tree-grid-summary2-sample',
     styleUrls: ['./tree-grid-summary2-sample.component.scss'],
-    templateUrl: './tree-grid-summary2-sample.component.html'
+    templateUrl: './tree-grid-summary2-sample.component.html',
+    standalone: false
 })
 export class TreeGridSummary2SampleComponent implements OnInit {
 

@@ -10,7 +10,8 @@ import { debounce } from 'rxjs/operators';
 @Component({
     selector: 'app-finjs-controllers',
     styleUrls: ['./controllers.component.scss'],
-    templateUrl: './controllers.component.html'
+    templateUrl: './controllers.component.html',
+    standalone: false
 })
 export class ControllerComponent implements OnInit, OnDestroy {
     @ViewChild('buttonGroup1', { static: true }) public playButtons: IgxButtonGroupComponent;

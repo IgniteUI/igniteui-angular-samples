@@ -5,7 +5,8 @@ import { DATA } from '../../data/product';
 @Component({
     selector: 'app-pagination-sample',
     styleUrls: ['./pagination-sample.component.scss'],
-    templateUrl: './pagination-sample.component.html'
+    templateUrl: './pagination-sample.component.html',
+    standalone: false
 })
 export class PaginationSampleComponent implements AfterViewInit {
     @ViewChild('paginator', { static: true }) public paginator!: IgxPaginatorComponent;

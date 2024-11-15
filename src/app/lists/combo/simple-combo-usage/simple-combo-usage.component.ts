@@ -4,7 +4,8 @@ import { City, getCitiesByPopulation } from '../../../data/cities15000-regions-c
 @Component({
     selector: 'app-simple-combo-usage',
     templateUrl: 'simple-combo-usage.component.html',
-    styleUrls: ['simple-combo-usage.component.scss']
+    styleUrls: ['simple-combo-usage.component.scss'],
+    standalone: false
 })
 export class SimpleComboUsageComponent implements OnInit {
     public cities: City[];

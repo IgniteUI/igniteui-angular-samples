@@ -4,7 +4,8 @@ import { IgxIconService } from 'igniteui-angular';
 @Component({
     selector: 'app-svg-icon-sample',
     styleUrls: ['./svg-icon-sample.component.scss'],
-    templateUrl: './svg-icon-sample.component.html'
+    templateUrl: './svg-icon-sample.component.html',
+    standalone: false
 })
 export class SvgIconSampleComponent implements OnInit {
 

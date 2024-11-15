@@ -5,7 +5,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-styling',
     styleUrls: ['./hierarchical-grid-styling.component.scss'],
-    templateUrl: 'hierarchical-grid-styling.component.html'
+    templateUrl: 'hierarchical-grid-styling.component.html',
+    standalone: false
 })
 
 export class HGridStylingComponent {

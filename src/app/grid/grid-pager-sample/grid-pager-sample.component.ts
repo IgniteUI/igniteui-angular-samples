@@ -5,7 +5,8 @@ import { IPaginatorResourceStrings, IgxPaginatorComponent } from 'igniteui-angul
 @Component({
     selector: 'app-grid-pager-sample',
     styleUrls: ['./grid-pager-sample.component.scss'],
-    templateUrl: './grid-pager-sample.component.html'
+    templateUrl: './grid-pager-sample.component.html',
+    standalone: false
 })
 export class GridPagerSampleComponent implements OnInit, AfterViewInit {
     @ViewChild('paginator', { read: IgxPaginatorComponent, static: false })

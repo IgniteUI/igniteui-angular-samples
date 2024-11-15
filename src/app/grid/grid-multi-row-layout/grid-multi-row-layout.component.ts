@@ -6,7 +6,8 @@ import { DATA } from '../../data/customers';
     encapsulation: ViewEncapsulation.None,
     selector: 'app-grid-multi-row-layout-sample',
     styleUrls: ['./grid-multi-row-layout.component.scss'],
-    templateUrl: './grid-multi-row-layout.component.html'
+    templateUrl: './grid-multi-row-layout.component.html',
+    standalone: false
 })
 export class GridMultiRowLayoutComponent {
 

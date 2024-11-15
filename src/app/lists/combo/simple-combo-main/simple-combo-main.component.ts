@@ -5,7 +5,8 @@ import { StockData, updatedStockData } from '../../../data/stocks-data';
 @Component({
     selector: 'app-simple-combo-main',
     templateUrl: 'simple-combo-main.component.html',
-    styleUrls: ['simple-combo-main.component.scss']
+    styleUrls: ['simple-combo-main.component.scss'],
+    standalone: false
 })
 export class SimpleComboMainComponent implements OnInit {
     public data: StockData[] = updatedStockData;

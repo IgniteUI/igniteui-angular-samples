@@ -9,7 +9,8 @@ import { scaleInTop, scaleOutBottom } from 'igniteui-angular/animations';
 @Component({
     selector: 'app-select-sample-4',
     styleUrls: ['select-sample-4.component.scss'],
-    templateUrl: 'select-sample-4.component.html'
+    templateUrl: 'select-sample-4.component.html',
+    standalone: false
 })
 export class SelectSample4Component implements OnInit {
     @ViewChild(IgxSelectComponent, { static: true })

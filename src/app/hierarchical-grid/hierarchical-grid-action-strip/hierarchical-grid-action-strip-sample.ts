@@ -5,7 +5,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-grid-row-action-strip',
     styleUrls: [`hierarchical-grid-action-strip-sample.scss`],
-    templateUrl: 'hierarchical-grid-action-strip-sample.html'
+    templateUrl: 'hierarchical-grid-action-strip-sample.html',
+    standalone: false
 })
 export class HGridActionStripSampleComponent implements AfterViewInit{
     @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true })

@@ -5,7 +5,8 @@ import { CUSTOMERS } from '../../data/hierarchical-data';
 @Component({
     selector: 'app-hierarchical-grid-column-group-selection',
     templateUrl: './hierarchical-grid-column-group-selection.component.html',
-    styleUrls: ['./hierarchical-grid-column-group-selection.component.scss']
+    styleUrls: ['./hierarchical-grid-column-group-selection.component.scss'],
+    standalone: false
 })
 export class HierarchicalGridColumnGroupSelectionComponent implements OnInit, AfterViewInit {
     @ViewChild(IgxHierarchicalGridComponent, { static: true })

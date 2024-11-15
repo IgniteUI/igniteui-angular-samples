@@ -5,7 +5,8 @@ import { getHeroClassData, IHeroClass } from '../../../data/heroData';
 @Component({
     selector: 'app-dropdown-styling',
     styleUrls: ['./dropdown-styling.component.scss'],
-    templateUrl: './dropdown-styling.component.html'
+    templateUrl: './dropdown-styling.component.html',
+    standalone: false
 })
 export class DropDownStylingComponent implements OnInit {
     @ViewChild('button', { static: true }) public button: ElementRef;

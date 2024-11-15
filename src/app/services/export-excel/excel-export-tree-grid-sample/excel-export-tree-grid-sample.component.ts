@@ -3,9 +3,10 @@ import { IgxTreeGridComponent } from 'igniteui-angular';
 import { ORDERS_DATA } from '../../../tree-grid/data/orders';
 
 @Component({
-  selector: 'app-excel-export-tree-grid-sample',
-  styleUrls: ['./excel-export-tree-grid-sample.component.scss'],
-  templateUrl: './excel-export-tree-grid-sample.component.html'
+    selector: 'app-excel-export-tree-grid-sample',
+    styleUrls: ['./excel-export-tree-grid-sample.component.scss'],
+    templateUrl: './excel-export-tree-grid-sample.component.html',
+    standalone: false
 })
 export class TreeGridExcelExportSample1Component implements OnInit {
 

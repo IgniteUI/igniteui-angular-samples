@@ -22,9 +22,10 @@ class MySummary {
 
 // tslint:disable:object-literal-sort-keys
 @Component({
-  selector: 'app-grid',
-  styleUrls: ['./grid-state.component.scss'],
-  templateUrl: './grid-state.component.html'
+    selector: 'app-grid',
+    styleUrls: ['./grid-state.component.scss'],
+    templateUrl: './grid-state.component.html',
+    standalone: false
 })
 
 export class GridSaveStateComponent implements OnInit, AfterViewInit {

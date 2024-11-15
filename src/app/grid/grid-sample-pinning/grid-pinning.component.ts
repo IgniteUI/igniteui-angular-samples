@@ -10,8 +10,8 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
     providers: [],
     selector: 'app-grid-sample',
     styleUrls: ['grid-pinning.component.scss'],
-    templateUrl: 'grid-pinning.component.html'
-
+    templateUrl: 'grid-pinning.component.html',
+    standalone: false
 })
 
 export class PinningSampleComponent implements OnInit, AfterViewInit {

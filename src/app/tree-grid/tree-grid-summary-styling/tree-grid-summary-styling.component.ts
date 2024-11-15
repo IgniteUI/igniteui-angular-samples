@@ -3,9 +3,10 @@ import { ColumnType, IgxTreeGridComponent } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
 
 @Component({
-  selector: 'app-tree-grid-summary-styling',
-  styleUrls: ['./tree-grid-summary-styling.component.scss'],
-  templateUrl: './tree-grid-summary-styling.component.html'
+    selector: 'app-tree-grid-summary-styling',
+    styleUrls: ['./tree-grid-summary-styling.component.scss'],
+    templateUrl: './tree-grid-summary-styling.component.html',
+    standalone: false
 })
 export class TreeGridSummaryStylingComponent {
 

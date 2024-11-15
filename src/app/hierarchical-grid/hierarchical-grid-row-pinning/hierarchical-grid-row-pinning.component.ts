@@ -10,7 +10,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-row-pinning',
     styleUrls: ['./hierarchical-grid-row-pinning.component.scss'],
-    templateUrl: 'hierarchical-grid-row-pinning.component.html'
+    templateUrl: 'hierarchical-grid-row-pinning.component.html',
+    standalone: false
 })
 
 export class HGridRowPinningSampleComponent implements OnInit {

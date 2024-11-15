@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-switch-sample-2',
-  styleUrls: ['./switch-sample-2.component.scss'],
-  templateUrl: './switch-sample-2.component.html'
+    selector: 'app-switch-sample-2',
+    styleUrls: ['./switch-sample-2.component.scss'],
+    templateUrl: './switch-sample-2.component.html',
+    standalone: false
 })
 export class SwitchSample2Component {
   public settings = [

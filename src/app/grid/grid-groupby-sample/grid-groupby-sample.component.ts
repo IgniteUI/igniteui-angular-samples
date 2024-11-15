@@ -12,7 +12,8 @@ import { INVOICE_DATA } from '../../data/invoiceData';
     encapsulation: ViewEncapsulation.None,
     selector: 'app-grid-groupby-sample',
     styleUrls: ['./grid-groupby-sample.component.scss'],
-    templateUrl: './grid-groupby-sample.component.html'
+    templateUrl: './grid-groupby-sample.component.html',
+    standalone: false
 })
 export class GridGroupBySampleComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

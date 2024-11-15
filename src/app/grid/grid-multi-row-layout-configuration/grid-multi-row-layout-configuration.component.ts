@@ -45,7 +45,8 @@ enum DialogType {
     encapsulation: ViewEncapsulation.None,
     selector: "app-grid-multi-row-layout-configuration-sample",
     styleUrls: ["./grid-multi-row-layout-configuration.component.scss"],
-    templateUrl: "./grid-multi-row-layout-configuration.component.html"
+    templateUrl: "./grid-multi-row-layout-configuration.component.html",
+    standalone: false
 })
 export class GridMultiRowLayoutConfigurationComponent {
 

@@ -5,7 +5,8 @@ import { CUSTOMERS } from '../../data/hierarchical-data';
 @Component({
     selector: 'app-hierarchical-grid-moving',
     styleUrls: ['./hierarchical-grid-moving.component.scss'],
-    templateUrl: 'hierarchical-grid-moving.component.html'
+    templateUrl: 'hierarchical-grid-moving.component.html',
+    standalone: false
 })
 
 export class HGridColumnMovingSampleComponent {

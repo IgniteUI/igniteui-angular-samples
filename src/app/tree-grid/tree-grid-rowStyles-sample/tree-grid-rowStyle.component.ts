@@ -5,7 +5,8 @@ import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 @Component({
     selector: 'app-tree-grid-row-styles-sample',
     styleUrls: ['tree-grid-rowStyle.component.scss'],
-    templateUrl: 'tree-grid-rowStyle.component.html'
+    templateUrl: 'tree-grid-rowStyle.component.html',
+    standalone: false
 })
 export class TreeGridRowStylesComponent implements OnInit {
 

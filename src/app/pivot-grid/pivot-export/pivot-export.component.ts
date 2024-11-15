@@ -36,7 +36,8 @@ export class IgxTotalSaleAggregate {
 @Component({
     selector: 'app-pivot-export-sample',
     styleUrls: ['./pivot-export.component.scss'],
-    templateUrl: './pivot-export.component.html'
+    templateUrl: './pivot-export.component.html',
+    standalone: false
 })
 export class PivotExportComponent {
     @ViewChild(IgxPivotGridComponent, { static: true }) public grid: IgxPivotGridComponent;

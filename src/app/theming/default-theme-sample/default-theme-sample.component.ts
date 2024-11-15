@@ -17,7 +17,8 @@ import { Record } from '../data/record';
 @Component({
     selector: 'app-default-theme-sample',
     styleUrls: ['./default-theme-sample.component.scss'],
-    templateUrl: './default-theme-sample.component.html'
+    templateUrl: './default-theme-sample.component.html',
+    standalone: false
 })
 export class DefaultThemeSampleComponent implements OnInit {
     @ViewChild('dialog1', { read: IgxDialogComponent, static: true })

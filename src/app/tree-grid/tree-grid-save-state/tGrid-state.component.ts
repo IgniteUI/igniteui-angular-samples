@@ -8,9 +8,10 @@ import { EMPLOYEE_DATA } from './data';
 
 // tslint:disable:object-literal-sort-keys
 @Component({
-  selector: 'app-tgrid',
-  styleUrls: ['./tGrid-state.component.scss'],
-  templateUrl: './tGrid-state.component.html'
+    selector: 'app-tgrid',
+    styleUrls: ['./tGrid-state.component.scss'],
+    templateUrl: './tGrid-state.component.html',
+    standalone: false
 })
 
 export class TGridSaveStateComponent implements OnInit, AfterViewInit {

@@ -9,7 +9,8 @@ import localeJA from '@angular/common/locales/ja';
 @Component({
     selector: "grid-column-data-types-sample",
     styleUrls: ["./grid-column-data-types-sample.component.scss"],
-    templateUrl: "grid-column-data-types-sample.component.html"
+    templateUrl: "grid-column-data-types-sample.component.html",
+    standalone: false
 })
 export class GridColumnDataTypesSampleComponent implements OnInit {
 

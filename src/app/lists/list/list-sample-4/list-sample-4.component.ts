@@ -3,7 +3,8 @@ import { IgxFilterOptions } from 'igniteui-angular';
 @Component({
     selector: 'app-contact-list2',
     styleUrls: ['./list-sample-4.component.scss'],
-    templateUrl: './list-sample-4.component.html'
+    templateUrl: './list-sample-4.component.html',
+    standalone: false
 })
 export class ListSample4Component implements OnInit {
     public searchContact: string;

@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Card } from '../card.blueprint';
 
 @Component({
-  selector: 'app-card-styling-sample',
-  templateUrl: './card-styling-sample.component.html',
-  styleUrls: ['./card-styling-sample.component.scss']
+    selector: 'app-card-styling-sample',
+    templateUrl: './card-styling-sample.component.html',
+    styleUrls: ['./card-styling-sample.component.scss'],
+    standalone: false
 })
 export class CardStylingSampleComponent {
     public card = new Card({

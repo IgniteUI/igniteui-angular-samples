@@ -8,7 +8,8 @@ import { athletesData } from '../../data/athletesData';
     providers: [],
     selector: 'app-grid-sample',
     styleUrls: ['grid-right-pinning.component.scss'],
-    templateUrl: 'grid-right-pinning.component.html'
+    templateUrl: 'grid-right-pinning.component.html',
+    standalone: false
 })
 
 export class RightPinningSampleComponent implements OnInit{

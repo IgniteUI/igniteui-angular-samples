@@ -5,7 +5,8 @@ import { DATA } from '../../data/customers';
 @Component({
     selector: 'app-grid-sample',
     styleUrls: ['grid-pinning-styling.component.scss'],
-    templateUrl: 'grid-pinning-styling.component.html'
+    templateUrl: 'grid-pinning-styling.component.html',
+    standalone: false
 })
 
 export class PinningStylingComponent implements OnInit{

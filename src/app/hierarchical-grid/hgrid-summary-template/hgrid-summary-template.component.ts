@@ -46,7 +46,8 @@ class GrammySummary {
 @Component({
     selector: 'app-hierarchical-grid-all-data-summary',
     styleUrls: ['./hgrid-summary-template.component.scss'],
-    templateUrl: 'hgrid-summary-template.component.html'
+    templateUrl: 'hgrid-summary-template.component.html',
+    standalone: false
 })
 
 export class HGridSummaryTemplateComponent implements OnInit {

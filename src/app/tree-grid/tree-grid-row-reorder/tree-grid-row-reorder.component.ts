@@ -6,7 +6,8 @@ import { generateEmployeeFlatData } from '../data/employees-flat';
 @Component({
     selector: 'app-tree-grid-row-reorder',
     styleUrls: ['tree-grid-row-reorder.component.scss'],
-    templateUrl: 'tree-grid-row-reorder.component.html'
+    templateUrl: 'tree-grid-row-reorder.component.html',
+    standalone: false
 })
 export class TreeGridRowReorderComponent {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static : true })

@@ -12,7 +12,8 @@ import { first } from 'rxjs/operators';
 @Component({
     selector: 'app-grid-paste-sample',
     styleUrls: ['./grid-paste-sample.component.scss'],
-    templateUrl: './grid-paste-sample.component.html'
+    templateUrl: './grid-paste-sample.component.html',
+    standalone: false
 })
 export class GridPasteSampleComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

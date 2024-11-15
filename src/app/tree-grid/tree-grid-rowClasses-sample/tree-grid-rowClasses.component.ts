@@ -5,7 +5,8 @@ import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 @Component({
     selector: 'app-tree-grid-row-classes-sample',
     styleUrls: ['tree-grid-rowClasses.component.scss'],
-    templateUrl: 'tree-grid-rowClasses.component.html'
+    templateUrl: 'tree-grid-rowClasses.component.html',
+    standalone: false
 })
 export class TreeGridRowClassesComponent implements OnInit {
 

@@ -3,9 +3,10 @@ import { IgxTreeGridComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
-  selector: 'app-column-group-selection',
-  templateUrl: './column-group-selection.component.html',
-  styleUrls: ['./column-group-selection.component.scss']
+    selector: 'app-column-group-selection',
+    templateUrl: './column-group-selection.component.html',
+    styleUrls: ['./column-group-selection.component.scss'],
+    standalone: false
 })
 export class TreeGridColumnGroupSelectionComponent implements OnInit {
 

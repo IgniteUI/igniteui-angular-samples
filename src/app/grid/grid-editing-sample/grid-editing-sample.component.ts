@@ -27,7 +27,8 @@ class NumberSummary {
 @Component({
     selector: 'app-grid-editing-sample',
     styleUrls: ['./grid-editing-sample.component.scss'],
-    templateUrl: './grid-editing-sample.component.html'
+    templateUrl: './grid-editing-sample.component.html',
+    standalone: false
 })
 export class GridEditingSampleComponent implements OnInit, AfterViewInit {
 

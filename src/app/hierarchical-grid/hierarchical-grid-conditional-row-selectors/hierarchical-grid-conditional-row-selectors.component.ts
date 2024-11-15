@@ -5,7 +5,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-conditional-row-selectors',
     styleUrls: ['./hierarchical-grid-conditional-row-selectors.component.scss'],
-    templateUrl: 'hierarchical-grid-conditional-row-selectors.component.html'
+    templateUrl: 'hierarchical-grid-conditional-row-selectors.component.html',
+    standalone: false
 })
 
 export class HGridConditionalRowSelectorsComponent implements OnInit {

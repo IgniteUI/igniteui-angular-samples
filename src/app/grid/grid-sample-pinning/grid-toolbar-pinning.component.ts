@@ -8,8 +8,8 @@ import { ActivatedRoute } from '@angular/router';
     providers: [],
     selector: 'app-grid-sample',
     styleUrls: ['grid-toolbar-pinning.component.scss'],
-    templateUrl: 'grid-toolbar-pinning.component.html'
-
+    templateUrl: 'grid-toolbar-pinning.component.html',
+    standalone: false
 })
 
 export class PinningToolbarSampleComponent implements OnInit{

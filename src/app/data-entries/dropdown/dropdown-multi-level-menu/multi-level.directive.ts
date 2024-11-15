@@ -12,7 +12,8 @@ import {
 } from 'igniteui-angular';
 
 @Directive({
-  selector: '[multiLevel]'
+    selector: '[multiLevel]',
+    standalone: false
 })
 export class MultiLevelDirective implements AfterViewInit, OnDestroy {
   @Input()

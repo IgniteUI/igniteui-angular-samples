@@ -4,7 +4,8 @@ import { DateRangeType, IgxCalendarComponent, IgxDialogComponent } from 'igniteu
 @Component({
     selector: 'app-calendar',
     styleUrls: ['./calendar-sample-7.component.scss'],
-    templateUrl: './calendar-sample-7.component.html'
+    templateUrl: './calendar-sample-7.component.html',
+    standalone: false
 })
 export class CalendarSample7Component {
     @ViewChild('calendar', { static: true }) public calendar: IgxCalendarComponent;

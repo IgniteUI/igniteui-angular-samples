@@ -4,7 +4,8 @@ import { IgxSliderType } from 'igniteui-angular';
 @Component({
     selector: 'app-slider-timeframe',
     styleUrls: ['./slider-timeframe.component.scss'],
-    templateUrl: './slider-timeframe.component.html'
+    templateUrl: './slider-timeframe.component.html',
+    standalone: false
 })
 export class SliderTimeframeComponent {
     public type: IgxSliderType = IgxSliderType.RANGE;

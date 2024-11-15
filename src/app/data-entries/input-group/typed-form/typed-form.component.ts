@@ -13,9 +13,10 @@ export interface registrationFormGroup
 }
 
 @Component({
-  selector: 'app-typed-form',
-  templateUrl: './typed-form.component.html',
-  styleUrls: ['./typed-form.component.scss']
+    selector: 'app-typed-form',
+    templateUrl: './typed-form.component.html',
+    styleUrls: ['./typed-form.component.scss'],
+    standalone: false
 })
 export class TypedFormComponent {
     public minDate = new Date();

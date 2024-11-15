@@ -3,9 +3,10 @@ import { ColumnType, IgxTreeGridComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
-  selector: 'app-tree-grid-column-moving-sample',
-  styleUrls: ['./tree-grid-column-moving-sample.component.scss'],
-  templateUrl: './tree-grid-column-moving-sample.component.html'
+    selector: 'app-tree-grid-column-moving-sample',
+    styleUrls: ['./tree-grid-column-moving-sample.component.scss'],
+    templateUrl: './tree-grid-column-moving-sample.component.html',
+    standalone: false
 })
 export class TreeGridColumnMovingSampleComponent {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

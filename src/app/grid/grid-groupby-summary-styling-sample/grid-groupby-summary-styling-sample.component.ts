@@ -34,7 +34,8 @@ class CustomSummary {
 @Component({
     selector: 'app-grid-groupby-summary-sample',
     styleUrls: ['./grid-groupby-summary-styling-sample.component.scss'],
-    templateUrl: './grid-groupby-summary-styling-sample.component.html'
+    templateUrl: './grid-groupby-summary-styling-sample.component.html',
+    standalone: false
 })
 export class GridGroupBySummaryStylingSampleComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

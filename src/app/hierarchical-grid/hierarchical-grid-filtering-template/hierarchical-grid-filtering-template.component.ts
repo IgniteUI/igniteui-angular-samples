@@ -13,7 +13,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-filtering-template',
     styleUrls: ['./hierarchical-grid-filtering-template.component.scss'],
-    templateUrl: 'hierarchical-grid-filtering-template.component.html'
+    templateUrl: 'hierarchical-grid-filtering-template.component.html',
+    standalone: false
 })
 
 export class HGridFilteringTemplateSampleComponent implements OnInit {

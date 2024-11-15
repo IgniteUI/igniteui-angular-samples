@@ -6,7 +6,8 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 @Component({
     selector: 'app-angular-sample',
     styleUrls: ['./angular-sample.component.scss'],
-    templateUrl: './angular-sample.component.html'
+    templateUrl: './angular-sample.component.html',
+    standalone: false
 })
 
 export class AngularMaterialComponent implements OnInit {

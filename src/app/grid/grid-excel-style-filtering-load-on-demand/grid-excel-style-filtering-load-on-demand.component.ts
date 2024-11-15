@@ -6,7 +6,8 @@ import { RemoteValuesService } from './remoteValues.service';
     selector: 'app-grid-excel-style-filtering-load-on-demand',
     styleUrls: ['./grid-excel-style-filtering-load-on-demand.component.scss'],
     templateUrl: './grid-excel-style-filtering-load-on-demand.component.html',
-    providers: [RemoteValuesService]
+    providers: [RemoteValuesService],
+    standalone: false
 })
 export class GridExcelStyleFilteringLoadOnDemandComponent implements OnInit {
 

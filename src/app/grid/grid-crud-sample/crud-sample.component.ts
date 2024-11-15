@@ -11,7 +11,8 @@ import { CRUDService } from '../../services/crud.service';
     providers: [CRUDService],
     selector: 'app-grid-crud-sample',
     styleUrls: ['./crud-sample.component.scss'],
-    templateUrl: './crud-sample.component.html'
+    templateUrl: './crud-sample.component.html',
+    standalone: false
 })
 export class CRUDSampleComponent implements OnInit, OnDestroy {
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;

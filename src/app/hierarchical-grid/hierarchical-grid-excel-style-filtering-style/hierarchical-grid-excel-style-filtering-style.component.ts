@@ -5,7 +5,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-excel-style-filtering-style',
     styleUrls: ['./hierarchical-grid-excel-style-filtering-style.component.scss'],
-    templateUrl: 'hierarchical-grid-excel-style-filtering-style.component.html'
+    templateUrl: 'hierarchical-grid-excel-style-filtering-style.component.html',
+    standalone: false
 })
 export class HGridExcelStyleFilteringStyleComponent {
 

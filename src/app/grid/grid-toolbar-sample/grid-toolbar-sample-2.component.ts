@@ -4,9 +4,10 @@ import { scaleInCenter, scaleOutCenter } from 'igniteui-angular/animations';
 import { athletesData } from '../../data/athletesData';
 
 @Component({
-  selector: 'app-grid-toolbar-sample-2',
-  styleUrls: ['./grid-toolbar-sample-2.component.scss'],
-  templateUrl: './grid-toolbar-sample-2.component.html'
+    selector: 'app-grid-toolbar-sample-2',
+    styleUrls: ['./grid-toolbar-sample-2.component.scss'],
+    templateUrl: './grid-toolbar-sample-2.component.html',
+    standalone: false
 })
 export class GridToolbarSample2Component {
 

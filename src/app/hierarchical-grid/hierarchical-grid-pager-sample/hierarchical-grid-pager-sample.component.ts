@@ -5,7 +5,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-pager-sample',
     styleUrls: ['./hierarchical-grid-pager-sample.component.scss'],
-    templateUrl: './hierarchical-grid-pager-sample.component.html'
+    templateUrl: './hierarchical-grid-pager-sample.component.html',
+    standalone: false
 })
 export class HierarchicalGridPagerSampleComponent implements OnInit, AfterViewInit {
     @ViewChild('paginator', { read: IgxPaginatorComponent, static: false })

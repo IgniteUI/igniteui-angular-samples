@@ -2,9 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxSnackbarComponent } from 'igniteui-angular';
 
 @Component({
-  selector: 'app-snackbar-sample-4',
-  styleUrls: ['./snackbar-sample-4.component.scss'],
-  templateUrl: './snackbar-sample-4.component.html'
+    selector: 'app-snackbar-sample-4',
+    styleUrls: ['./snackbar-sample-4.component.scss'],
+    templateUrl: './snackbar-sample-4.component.html',
+    standalone: false
 })
 export class SnackbarSample4Component implements OnInit {
   @ViewChild(IgxSnackbarComponent, { static: true })

@@ -5,7 +5,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-custom-hiding',
     styleUrls: ['./hierarchical-grid-custom-hiding.component.scss'],
-    templateUrl: 'hierarchical-grid-custom-hiding.component.html'
+    templateUrl: 'hierarchical-grid-custom-hiding.component.html',
+    standalone: false
 })
 
 export class HGridCostumHidingSampleComponent implements OnInit, AfterViewInit {

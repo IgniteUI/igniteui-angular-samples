@@ -4,7 +4,8 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-clipboard-operations-sample',
     styleUrls: ['grid-clipboard-operations-sample.component.scss'],
-    templateUrl: './grid-clipboard-operations-sample.component.html'
+    templateUrl: './grid-clipboard-operations-sample.component.html',
+    standalone: false
 })
 export class GridClipboardSampleComponent {
     public data: any[];

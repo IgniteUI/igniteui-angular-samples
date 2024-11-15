@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { Member } from '../model/member.model';
 
 @Component({
-  selector: 'app-badge-sample-3',
-  styleUrls: ['./badge-sample-3.component.scss'],
-  templateUrl: './badge-sample-3.component.html'
+    selector: 'app-badge-sample-3',
+    styleUrls: ['./badge-sample-3.component.scss'],
+    templateUrl: './badge-sample-3.component.html',
+    standalone: false
 })
 export class BadgeSample3Component {
   public members: Member[] = [

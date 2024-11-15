@@ -4,7 +4,8 @@ import { ORDERS_DATA } from '../data/orders';
 @Component({
     selector: 'app-tree-grid-external-outlet',
     styleUrls: ['./tree-grid-external-outlet-sample.component.scss'],
-    templateUrl: 'tree-grid-external-outlet-sample.component.html'
+    templateUrl: 'tree-grid-external-outlet-sample.component.html',
+    standalone: false
 })
 
 export class TreeGridExternalOutletComponent implements OnInit {

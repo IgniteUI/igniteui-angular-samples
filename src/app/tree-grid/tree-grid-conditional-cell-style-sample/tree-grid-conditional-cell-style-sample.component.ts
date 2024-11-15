@@ -4,7 +4,8 @@ import { ORDERS_DATA } from '../data/orders';
 @Component({
     selector: 'app-tree-grid-conditional-cell-style-sample',
     styleUrls: ['./tree-grid-conditional-cell-style-sample.component.scss'],
-    templateUrl: './tree-grid-conditional-cell-style-sample.component.html'
+    templateUrl: './tree-grid-conditional-cell-style-sample.component.html',
+    standalone: false
 })
 
 export class TreeGridConditionalCellStyleComponent implements OnInit {

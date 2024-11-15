@@ -22,9 +22,10 @@ class MySummary {
 
 // tslint:disable:object-literal-sort-keys
 @Component({
-  selector: 'app-hgrid',
-  styleUrls: ['./hGrid-state.component.scss'],
-  templateUrl: './hGrid-state.component.html'
+    selector: 'app-hgrid',
+    styleUrls: ['./hGrid-state.component.scss'],
+    templateUrl: './hGrid-state.component.html',
+    standalone: false
 })
 
 export class HGridSaveStateComponent implements OnInit, AfterViewInit {

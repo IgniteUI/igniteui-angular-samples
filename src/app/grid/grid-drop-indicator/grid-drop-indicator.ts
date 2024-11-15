@@ -8,7 +8,8 @@ import { IgxRowDirective } from 'igniteui-angular/lib/grids/row.directive';
 @Component({
     selector: 'app-grid-drop-indicator',
     styleUrls: ['grid-drop-indicator.scss'],
-    templateUrl: 'grid-drop-indicator.html'
+    templateUrl: 'grid-drop-indicator.html',
+    standalone: false
 })
 export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
   @ViewChild('grid', { read: IgxGridComponent, static: true })

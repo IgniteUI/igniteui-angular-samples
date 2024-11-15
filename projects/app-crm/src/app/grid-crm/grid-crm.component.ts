@@ -89,7 +89,8 @@ class SoonSummary extends IgxDateSummaryOperand {
 @Component({
     selector: 'app-grid',
     styleUrls: ['./grid-crm.component.scss'],
-    templateUrl: './grid-crm.component.html'
+    templateUrl: './grid-crm.component.html',
+    standalone: false
 })
 export class GridCRMComponent implements OnInit, AfterViewInit {
 

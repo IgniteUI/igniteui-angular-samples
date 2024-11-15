@@ -3,9 +3,10 @@ import { ColumnType, IgxExcelExporterOptions, IgxExcelExporterService, IgxTreeGr
 import { ORDERS_DATA } from '../data/orders';
 
 @Component({
-  selector: 'app-tree-grid-summary-export',
-  styleUrls: ['./tree-grid-summary-export.component.scss'],
-  templateUrl: './tree-grid-summary-export.component.html'
+    selector: 'app-tree-grid-summary-export',
+    styleUrls: ['./tree-grid-summary-export.component.scss'],
+    templateUrl: './tree-grid-summary-export.component.html',
+    standalone: false
 })
 export class TreeGridSummaryExportComponent {
 

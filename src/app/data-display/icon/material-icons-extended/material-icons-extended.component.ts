@@ -25,7 +25,8 @@ interface ICategoryOption {
 @Component({
     selector: 'app-material-icons-extended',
     templateUrl: './material-icons-extended.component.html',
-    styleUrls: ['./material-icons-extended.component.scss']
+    styleUrls: ['./material-icons-extended.component.scss'],
+    standalone: false
 })
 export class MaterialIconsExtendedComponent implements OnInit {
     constructor(
@@ -128,7 +129,8 @@ interface IIconsGroup {
 }
 
 @Pipe({
-    name: 'categoriesFilter'
+    name: 'categoriesFilter',
+    standalone: false
 })
 export class CategoriesFilterPipe implements PipeTransform {
     sortIcons(acc: IIconsGroup[], icon: IMXIcon): IIconsGroup[] {
@@ -167,7 +169,8 @@ export class CategoriesFilterPipe implements PipeTransform {
 }
 
 @Pipe({
-    name: 'filterByName'
+    name: 'filterByName',
+    standalone: false
 })
 export class FilterByName implements PipeTransform {
     transform(icons: IMXIcon[], keyword: string): IMXIcon[] {

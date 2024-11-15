@@ -10,7 +10,8 @@ const DEBOUNCE_TIME = 300;
     providers: [RemoteFilteringService],
     selector: 'app-grid-remote-filtering-sample',
     styleUrls: ['./remote-filtering-sample.component.scss'],
-    templateUrl: './remote-filtering-sample.component.html'
+    templateUrl: './remote-filtering-sample.component.html',
+    standalone: false
 })
 export class RemoteFilteringSampleComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;

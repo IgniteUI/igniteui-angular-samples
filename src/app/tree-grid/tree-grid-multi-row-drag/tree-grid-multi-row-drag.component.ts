@@ -5,7 +5,8 @@ import { FULL_EMPLOYEE_DATA } from '../data/employees';
 @Component({
     selector: 'app-tree-grid-multi-row-drag',
     styleUrls: ['tree-grid-multi-row-drag.component.scss'],
-    templateUrl: 'tree-grid-multi-row-drag.component.html'
+    templateUrl: 'tree-grid-multi-row-drag.component.html',
+    standalone: false
 })
 export class TreeGridMultiRowDragComponent {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: true })

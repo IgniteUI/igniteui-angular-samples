@@ -4,7 +4,8 @@ import { IButtonGroupEventArgs, IgxStepType } from 'igniteui-angular';
 @Component({
     selector: 'app-stepper-steptypes-sample',
     styleUrls: ['./stepper-steptypes-sample.component.scss'],
-    templateUrl: './stepper-steptypes-sample.component.html'
+    templateUrl: './stepper-steptypes-sample.component.html',
+    standalone: false
 })
 export class StepperStepTypesSampleComponent {
     public stepType: IgxStepType = 'full';

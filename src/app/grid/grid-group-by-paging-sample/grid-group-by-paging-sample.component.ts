@@ -9,9 +9,10 @@ import {
 import { INVOICE_DATA } from '../../data/invoiceData';
 
 @Component({
-  selector: 'app-grid-group-by-paging-sample',
-  templateUrl: './grid-group-by-paging-sample.component.html',
-  styleUrls: ['./grid-group-by-paging-sample.component.scss']
+    selector: 'app-grid-group-by-paging-sample',
+    templateUrl: './grid-group-by-paging-sample.component.html',
+    styleUrls: ['./grid-group-by-paging-sample.component.scss'],
+    standalone: false
 })
 export class GridGroupByPagingSampleComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

@@ -5,7 +5,8 @@ import { DATA } from '../../data/customers';
 @Component({
     selector: 'app-grid-multiple-row-drag',
     styleUrls: ['./grid-multiple-row-drag.component.scss'],
-    templateUrl: './grid-multiple-row-drag.component.html'
+    templateUrl: './grid-multiple-row-drag.component.html',
+    standalone: false
 })
 export class GridMultipleRowDragComponent  {
     @ViewChild('sourceGrid', { read: IgxGridComponent, static: true })

@@ -4,7 +4,8 @@ import { IgxDatePickerComponent, IgxSnackbarComponent } from 'igniteui-angular';
 @Component({
     selector: 'app-datepicker-sample-7',
     styleUrls: ['./datepicker-sample-7.component.scss'],
-    templateUrl: './datepicker-sample-7.component.html'
+    templateUrl: './datepicker-sample-7.component.html',
+    standalone: false
 })
 
 export class DatepickerSample7Component {

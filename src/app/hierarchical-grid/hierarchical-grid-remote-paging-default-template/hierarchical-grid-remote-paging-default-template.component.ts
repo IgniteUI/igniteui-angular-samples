@@ -6,7 +6,8 @@ import { RemotePagingService } from './remotePagingService';
     providers: [RemotePagingService],
     selector: 'app-hierarchical-grid-remote-paging-default-template',
     styleUrls: ['./hierarchical-grid-remote-paging-default-template.component.scss'],
-    templateUrl: 'hierarchical-grid-remote-paging-default-template.component.html'
+    templateUrl: 'hierarchical-grid-remote-paging-default-template.component.html',
+    standalone: false
 })
 
 export class HGridRemotePagingDefaultTemplateComponent implements OnInit, AfterViewInit, OnDestroy {

@@ -4,7 +4,8 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-export-visualization',
     templateUrl: './grid-export-visualization.component.html',
-    styleUrls: ['./grid-export-visualization.component.scss']
+    styleUrls: ['./grid-export-visualization.component.scss'],
+    standalone: false
 })
 export class GridExportVisualizationComponent {
     public localData = [];

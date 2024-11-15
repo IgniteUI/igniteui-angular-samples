@@ -5,7 +5,8 @@ import { CUSTOMERS } from '../../data/hierarchical-data';
 @Component({
     selector: 'app-hierarchical-grid-validator-service',
     styleUrls: ['./hierarchical-grid-validator-service.component.scss'],
-    templateUrl: './hierarchical-grid-validator-service.component.html'
+    templateUrl: './hierarchical-grid-validator-service.component.html',
+    standalone: false
 })
 export class HierarchicalGridValidatorServiceComponent implements OnInit {
 

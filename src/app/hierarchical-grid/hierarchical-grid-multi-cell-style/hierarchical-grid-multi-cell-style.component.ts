@@ -4,7 +4,8 @@ import { CUSTOMERS } from '../../data/hierarchical-data';
 @Component({
     selector: 'app-hierarchical-grid-multi-cell-style',
     styleUrls: ['./hierarchical-grid-multi-cell-style.component.scss'],
-    templateUrl: 'hierarchical-grid-multi-cell-style.component.html'
+    templateUrl: 'hierarchical-grid-multi-cell-style.component.html',
+    standalone: false
 })
 
 export class HGridMultiCellStyleComponent implements OnInit {

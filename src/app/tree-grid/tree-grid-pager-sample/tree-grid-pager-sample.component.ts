@@ -5,7 +5,8 @@ import { ORDERS_DATA } from '../data/orders';
 @Component({
     selector: 'app-tree-grid-pager-sample',
     styleUrls: ['./tree-grid-pager-sample.component.scss'],
-    templateUrl: './tree-grid-pager-sample.component.html'
+    templateUrl: './tree-grid-pager-sample.component.html',
+    standalone: false
 })
 export class TreeGridPagerSampleComponent implements OnInit, AfterViewInit {
     @ViewChild('paginator', { read: IgxPaginatorComponent, static: false })

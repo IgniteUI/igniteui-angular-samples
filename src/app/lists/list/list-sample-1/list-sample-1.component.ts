@@ -1,9 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-igx-list-demo',
-  styleUrls: ['./list-sample-1.component.scss'],
-  templateUrl: './list-sample-1.component.html'
+    selector: 'app-igx-list-demo',
+    styleUrls: ['./list-sample-1.component.scss'],
+    templateUrl: './list-sample-1.component.html',
+    standalone: false
 })
 export class ListSample1Component {
   @ViewChild('itemInput') public newItem: ElementRef;

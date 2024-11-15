@@ -30,7 +30,8 @@ import { blink, fadeIn, fadeOut, flipBottom, flipHorBck, flipHorFwd, flipLeft, f
 @Component({
     selector: 'app-animations-sample-1',
     styleUrls: ['./animations-sample-1.component.scss'],
-    templateUrl: './animations-sample-1.component.html'
+    templateUrl: './animations-sample-1.component.html',
+    standalone: false
 })
 export class AnimationsSampleComponent {
     @ViewChild('dialog', { static: true, read: IgxDialogComponent })

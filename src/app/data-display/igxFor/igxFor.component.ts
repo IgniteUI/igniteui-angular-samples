@@ -5,7 +5,8 @@ import { femaleFNames, lastName, maleFNames, middleNames } from './names';
 @Component({
     selector: 'app-igx-for-list',
     styleUrls: ['./igxFor.component.scss'],
-    templateUrl: './igxFor.component.html'
+    templateUrl: './igxFor.component.html',
+    standalone: false
 })
 export class IgxForComponent implements OnInit {
     public search: string;

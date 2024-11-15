@@ -4,7 +4,8 @@ import { Component, HostListener, Inject, OnInit } from '@angular/core';
 @Component({
     selector: 'app-root',
     styleUrls: ['./app.component.scss'],
-    templateUrl: './app.component.html'
+    templateUrl: './app.component.html',
+    standalone: false
 })
 export class AppComponent implements OnInit {
     public title = 'Samples';

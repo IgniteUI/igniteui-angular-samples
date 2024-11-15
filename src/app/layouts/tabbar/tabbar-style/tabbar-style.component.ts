@@ -4,7 +4,8 @@ import { Component, OnInit } from "@angular/core";
 @Component({
     selector: "app-tabbar-style",
     styleUrls: ["./tabbar-style.component.scss"],
-    templateUrl: "./tabbar-style.component.html"
+    templateUrl: "./tabbar-style.component.html",
+    standalone: false
 })
 export class TabbarStyleComponent {
     public songsList = [

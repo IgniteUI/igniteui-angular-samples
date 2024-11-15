@@ -7,7 +7,8 @@ import { employeesData } from '../../data/employeesData';
 @Component({
     selector: 'app-grid-master-detail',
     styleUrls: ['./grid-master-detail.component.scss'],
-    templateUrl: 'grid-master-detail.component.html'
+    templateUrl: 'grid-master-detail.component.html',
+    standalone: false
 })
 
 export class GridMasterDetailSampleComponent {

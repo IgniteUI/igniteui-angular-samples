@@ -4,7 +4,8 @@ import { SALES_DATA_NEW } from '../../data/salesDataNew';
 @Component({
     selector: 'app-pivot-data-selector-sample',
     styleUrls: ['./pivot-data-selector-sample.component.scss'],
-    templateUrl: './pivot-data-selector-sample.component.html'
+    templateUrl: './pivot-data-selector-sample.component.html',
+    standalone: false
 })
 export class PivotDataSelectorSampleComponent {
     public data = SALES_DATA_NEW;

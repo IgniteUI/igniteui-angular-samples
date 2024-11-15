@@ -4,7 +4,8 @@ import { IButtonGroupEventArgs } from 'igniteui-angular';
 @Component({
     selector: 'app-stepper-linear-sample',
     styleUrls: ['./stepper-linear-sample.component.scss'],
-    templateUrl: './stepper-linear-sample.component.html'
+    templateUrl: './stepper-linear-sample.component.html',
+    standalone: false
 })
 export class StepperLinearSampleComponent {
     public linear = false;

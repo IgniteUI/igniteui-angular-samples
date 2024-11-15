@@ -14,7 +14,8 @@ import { athletesData } from '../../data/athletesData';
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'hierarchical-grid-sample',
     styleUrls: ['hierarchical-grid-right-pinning.component.scss'],
-    templateUrl: 'hierarchical-grid-right-pinning.component.html'
+    templateUrl: 'hierarchical-grid-right-pinning.component.html',
+    standalone: false
 })
 
 export class HierarchicalGridRightPinningSampleComponent implements OnInit {

@@ -8,7 +8,8 @@ import { generateRandomInteger } from '../../data/utils';
 @Component({
     selector: 'app-grid-row-edit',
     styleUrls: [`grid-batch-editing-sample.component.scss`],
-    templateUrl: 'grid-batch-editing-sample.component.html'
+    templateUrl: 'grid-batch-editing-sample.component.html',
+    standalone: false
 })
 export class GridBatchEditingSampleComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;

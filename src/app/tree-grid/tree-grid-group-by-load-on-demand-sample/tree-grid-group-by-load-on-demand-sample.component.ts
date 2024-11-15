@@ -5,7 +5,8 @@ import { TreeGridGroupingLoadOnDemandService, TreeGridGroupingParameters } from 
 @Component({
     selector: 'app-tree-grid-group-by-load-on-demand-sample',
     styleUrls: ['./tree-grid-group-by-load-on-demand-sample.component.scss'],
-    templateUrl: './tree-grid-group-by-load-on-demand-sample.component.html'
+    templateUrl: './tree-grid-group-by-load-on-demand-sample.component.html',
+    standalone: false
 })
 
 export class TreeGridGroupByLoadOnDemandComponent implements OnInit {

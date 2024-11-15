@@ -41,7 +41,8 @@ export class IgxTotalSaleAggregate {
 @Component({
     selector: 'app-pivot-layout-sample',
     styleUrls: ['./pivot-layout.component.scss'],
-    templateUrl: './pivot-layout.component.html'
+    templateUrl: './pivot-layout.component.html',
+    standalone: false
 })
 export class PivotGridLayoutComponent {
     public data = SALES_DATA;

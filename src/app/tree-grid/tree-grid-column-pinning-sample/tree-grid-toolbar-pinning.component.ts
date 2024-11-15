@@ -7,8 +7,8 @@ import { ActivatedRoute } from '@angular/router';
     providers: [],
     selector: 'app-grid-sample',
     styleUrls: ['tree-grid-toolbar-pinning.component.scss'],
-    templateUrl: 'tree-grid-toolbar-pinning.component.html'
-
+    templateUrl: 'tree-grid-toolbar-pinning.component.html',
+    standalone: false
 })
 
 export class TreeGridPinningToolbarSampleComponent implements OnInit {

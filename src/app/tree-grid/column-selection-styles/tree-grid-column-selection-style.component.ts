@@ -5,7 +5,8 @@ import { ORDERS_DATA } from '../data/orders';
 @Component({
     selector: 'app-tree-grid-column-selection-style',
     templateUrl: './tree-grid-column-selection-style.component.html',
-    styleUrls: ['./tree-grid-column-selection-style.component.scss']
+    styleUrls: ['./tree-grid-column-selection-style.component.scss'],
+    standalone: false
 })
 export class TreeGridColumnSelectionStylesComponent implements OnInit, AfterViewInit {
     @ViewChild(IgxTreeGridComponent)

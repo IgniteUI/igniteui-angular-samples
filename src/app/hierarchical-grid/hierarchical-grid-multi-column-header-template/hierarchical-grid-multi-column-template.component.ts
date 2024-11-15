@@ -5,7 +5,8 @@ import { CUSTOMERS } from '../../data/hierarchical-data';
 @Component({
     selector: 'app-hierarchical-grid-multi-column-template',
     styleUrls: ['./hierarchical-grid-multi-column-template.component.scss'],
-    templateUrl: 'hierarchical-grid-multi-column-template.component.html'
+    templateUrl: 'hierarchical-grid-multi-column-template.component.html',
+    standalone: false
 })
 
 export class HGridMultiHeaderTemplateSampleComponent implements OnInit {

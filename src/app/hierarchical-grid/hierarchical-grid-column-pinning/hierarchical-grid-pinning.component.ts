@@ -8,7 +8,8 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 @Component({
     selector: 'app-hierarchical-grid-pinning',
     styleUrls: ['./hierarchical-grid-pinning.component.scss'],
-    templateUrl: 'hierarchical-grid-pinning.component.html'
+    templateUrl: 'hierarchical-grid-pinning.component.html',
+    standalone: false
 })
 
 export class HGridPinningSampleComponent implements AfterViewInit {

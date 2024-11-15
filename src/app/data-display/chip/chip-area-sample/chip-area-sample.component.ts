@@ -4,7 +4,8 @@ import { IBaseChipEventArgs, IChipsAreaReorderEventArgs } from 'igniteui-angular
 @Component({
     selector: 'app-chip-area-sample',
     styleUrls: ['./chip-area-sample.component.scss'],
-    templateUrl: './chip-area-sample.component.html'
+    templateUrl: './chip-area-sample.component.html',
+    standalone: false
 })
 
 export class ChipAreaSampleComponent {

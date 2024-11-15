@@ -4,7 +4,8 @@ import {Component} from '@angular/core';
     // tslint:disable-next-line:component-selector
     selector: 'app-expansion-styling',
     styleUrls: ['./expansion-styling.component.scss'],
-    templateUrl: './expansion-styling.component.html'
+    templateUrl: './expansion-styling.component.html',
+    standalone: false
 })
 
 export class ExpansionPanelStylingComponent {

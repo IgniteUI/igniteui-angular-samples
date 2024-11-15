@@ -5,7 +5,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-formatted-filtering-strategy',
     styleUrls: ['./hierarchical-grid-formatted-filtering-strategy.component.scss'],
-    templateUrl: 'hierarchical-grid-formatted-filtering-strategy.component.html'
+    templateUrl: 'hierarchical-grid-formatted-filtering-strategy.component.html',
+    standalone: false
 })
 
 export class HGridFormattedFilteringStrategyComponent {

@@ -39,9 +39,10 @@ class PTOSummary {
 }
 
 @Component({
-  selector: 'app-treegrid-all-data-summary-sample',
-  styleUrls: ['./treegrid-allData-summary.component.scss'],
-  templateUrl: './treegrid-allData-summary.component.html'
+    selector: 'app-treegrid-all-data-summary-sample',
+    styleUrls: ['./treegrid-allData-summary.component.scss'],
+    templateUrl: './treegrid-allData-summary.component.html',
+    standalone: false
 })
 export class TreeGridAllDataSummaryComponent implements OnInit {
 

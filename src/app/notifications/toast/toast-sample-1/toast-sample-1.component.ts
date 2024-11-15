@@ -4,7 +4,8 @@ import { IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 @Component({
     selector: 'app-toast-sample-1',
     styleUrls: ['./toast-sample-1.component.scss'],
-    templateUrl: './toast-sample-1.component.html'
+    templateUrl: './toast-sample-1.component.html',
+    standalone: false
 })
 export class ToastSample1Component {
     public toast: IgxToastComponent;

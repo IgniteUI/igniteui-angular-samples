@@ -4,7 +4,8 @@ import { DateRange } from 'igniteui-angular';
 @Component({
     selector: 'app-flight-booking',
     styleUrls: ['./daterangepicker-flight-booking.scss'],
-    templateUrl: './daterangepicker-flight-booking.html'
+    templateUrl: './daterangepicker-flight-booking.html',
+    standalone: false
 })
 export class FlightBookingComponent {
     public towns: string[] = [
@@ -42,7 +43,10 @@ export class FlightBookingComponent {
     }
 }
 
-@Pipe({ name: 'withoutTownFrom' })
+@Pipe({
+    name: 'withoutTownFrom',
+    standalone: false
+})
 export class PipeWithoutTownFrom implements PipeTransform {
     public transform(collection: any[], townFrom: string) {
         return collection.filter((item) => item !== townFrom);

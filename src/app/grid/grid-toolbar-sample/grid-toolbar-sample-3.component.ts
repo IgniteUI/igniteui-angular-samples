@@ -10,9 +10,10 @@ import {
 import { athletesData } from '../../data/athletesData';
 
 @Component({
-  selector: 'app-grid-toolbar-sample-3',
-  styleUrls: ['./grid-toolbar-sample-3.component.scss'],
-  templateUrl: './grid-toolbar-sample-3.component.html'
+    selector: 'app-grid-toolbar-sample-3',
+    styleUrls: ['./grid-toolbar-sample-3.component.scss'],
+    templateUrl: './grid-toolbar-sample-3.component.html',
+    standalone: false
 })
 export class GridToolbarSample3Component {
 

@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-sample-1',
     styleUrls: ['./dropdown-sample-1.component.scss'],
-    templateUrl: './dropdown-sample-1.component.html'
+    templateUrl: './dropdown-sample-1.component.html',
+    standalone: false
 })
 export class DropDownSample1Component {
     public items: { field: string }[] = [

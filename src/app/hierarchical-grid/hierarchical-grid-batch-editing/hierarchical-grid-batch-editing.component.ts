@@ -12,7 +12,8 @@ import { Singer } from '../models';
 @Component({
     selector: 'app-hierarchical-grid-batch-editing',
     styleUrls: ['./hierarchical-grid-batch-editing.component.scss'],
-    templateUrl: 'hierarchical-grid-batch-editing.component.html'
+    templateUrl: 'hierarchical-grid-batch-editing.component.html',
+    standalone: false
 })
 
 export class HGridBatchEditingSampleComponent implements OnInit {

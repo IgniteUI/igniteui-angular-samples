@@ -6,7 +6,8 @@ import { RemoteService } from '../../services/remote.service';
     providers: [RemoteService],
     selector: 'app-grid-remote-virtualization-sample',
     styleUrls: ['grid-sample-5.component.scss'],
-    templateUrl: 'grid-sample-5.component.html'
+    templateUrl: 'grid-sample-5.component.html',
+    standalone: false
 })
 
 export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewInit, OnInit {

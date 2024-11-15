@@ -6,7 +6,8 @@ import { ORDERS_DATA } from '../data/orders';
 @Component({
     selector: 'app-tree-grid-summary-formatter',
     styleUrls: ['./tree-grid-summary-formatter.component.scss'],
-    templateUrl: 'tree-grid-summary-formatter.component.html'
+    templateUrl: 'tree-grid-summary-formatter.component.html',
+    standalone: false
 })
 
 export class TreeGridSummaryFormatterComponent implements OnInit {

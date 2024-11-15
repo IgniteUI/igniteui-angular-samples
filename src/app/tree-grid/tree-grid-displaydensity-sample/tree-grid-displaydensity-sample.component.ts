@@ -24,7 +24,8 @@ class CustomNumberSummary {
 @Component({
     selector: 'app-tree-grid-displaydensity-sample',
     styleUrls: ['./tree-grid-displaydensity-sample.component.scss'],
-    templateUrl: './tree-grid-displaydensity-sample.component.html'
+    templateUrl: './tree-grid-displaydensity-sample.component.html',
+    standalone: false
 })
 export class TreeGridDisplaydensitySampleComponent implements OnInit {
     @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true })

@@ -5,7 +5,8 @@ import { femaleFNames, lastName, maleFNames } from '../names';
 @Component({
     selector: 'app-igx-for-horizontal',
     styleUrls: ['./igxFor-horizontal.component.scss'],
-    templateUrl: './igxFor-horizontal.component.html'
+    templateUrl: './igxFor-horizontal.component.html',
+    standalone: false
 })
 export class IgxForHorizontalComponent implements OnInit {
     public search: string;

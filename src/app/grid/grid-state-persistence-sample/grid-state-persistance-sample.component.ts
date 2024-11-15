@@ -9,7 +9,8 @@ import { FinancialDataService } from '../../services/financial.service';
     providers: [FinancialDataService],
     selector: 'app-grid-state-persistance-sample',
     styleUrls: ['./grid-state-persistance-sample.component.scss'],
-    templateUrl: 'grid-state-persistance-sample.component.html'
+    templateUrl: 'grid-state-persistance-sample.component.html',
+    standalone: false
 })
 
 export class GridStatePersistenceSampleComponent {

@@ -6,7 +6,8 @@ import { DATA } from '../../data/data';
 @Component({
     selector: 'grid-cascading-combos',
     templateUrl: './grid-cascading-combos.component.html',
-    styleUrls: ['./grid-cascading-combos.component.scss']
+    styleUrls: ['./grid-cascading-combos.component.scss'],
+    standalone: false
 })
 export class GridCascadingCombosComponent implements OnInit {
     @ViewChildren(IgxSimpleComboComponent)

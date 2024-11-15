@@ -3,9 +3,10 @@ import { GridSelectionMode, IgxColumnGroupComponent, IgxTreeGridComponent } from
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
-  selector: 'app-tree-grid-multi-column-header-template-sample',
-  styleUrls: ['./tree-grid-multi-column-header-template-sample.component.scss'],
-  templateUrl: './tree-grid-multi-column-header-template-sample.component.html'
+    selector: 'app-tree-grid-multi-column-header-template-sample',
+    styleUrls: ['./tree-grid-multi-column-header-template-sample.component.scss'],
+    templateUrl: './tree-grid-multi-column-header-template-sample.component.html',
+    standalone: false
 })
 export class TreeGridMultiColumnHeaderTemplateSampleComponent {
 

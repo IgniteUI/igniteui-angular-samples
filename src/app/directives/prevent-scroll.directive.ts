@@ -3,7 +3,8 @@ import { GridType, IGX_GRID_BASE } from 'igniteui-angular';
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: '[igxPreventDocumentScroll]'
+    selector: '[igxPreventDocumentScroll]',
+    standalone: false
 })
 export class IgxPreventDocumentScrollDirective implements AfterViewInit, OnDestroy {
     private _preventScroll = true;

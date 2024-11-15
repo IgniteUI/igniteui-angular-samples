@@ -17,9 +17,10 @@ interface ValidatorErrors
 }
 
 @Component({
-  selector: 'app-reactive-form-custom-validation',
-  templateUrl: './reactive-form-custom-validation.component.html',
-  styleUrls: ['./reactive-form-custom-validation.component.scss']
+    selector: 'app-reactive-form-custom-validation',
+    templateUrl: './reactive-form-custom-validation.component.html',
+    styleUrls: ['./reactive-form-custom-validation.component.scss'],
+    standalone: false
 })
 export class ReactiveFormCustomValidationComponent {
     private pattern = `^(?=.*[A-Za-z])(?=.*\\d)(?=.*[~!@?#+$"'%^&:;*\\-_=.,<>])[A-Za-z\\d~!@?#+$"'%^&:;*\\-_=.,<>]+$`;

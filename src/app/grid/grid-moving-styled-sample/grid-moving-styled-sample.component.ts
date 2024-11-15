@@ -5,7 +5,8 @@ import { DATA } from '../../data/financialData';
 @Component({
     selector: 'app-grid-moving-styled-sample',
     styleUrls: ['./grid-moving-styled-sample.component.scss'],
-    templateUrl: './grid-moving-styled-sample.component.html'
+    templateUrl: './grid-moving-styled-sample.component.html',
+    standalone: false
 })
 
 export class GridMovingStyledSampleComponent {

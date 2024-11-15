@@ -5,7 +5,8 @@ import { localData } from './local-data';
 @Component({
     selector: 'app-combo',
     styleUrls: ['./combo-features.component.scss'],
-    templateUrl: './combo-features.component.html'
+    templateUrl: './combo-features.component.html',
+    standalone: false
 })
 export class ComboFeaturesComponent implements OnInit{
     @ViewChild('combo', { read: IgxComboComponent, static: true }) public combo: IgxComboComponent;

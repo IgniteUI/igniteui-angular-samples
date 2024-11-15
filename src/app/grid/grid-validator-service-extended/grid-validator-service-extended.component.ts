@@ -13,7 +13,8 @@ export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
 
 @Directive({
     selector: '[phoneFormat]',
-    providers: [{ provide: NG_VALIDATORS, useExisting: PhoneFormatDirective, multi: true }]
+    providers: [{ provide: NG_VALIDATORS, useExisting: PhoneFormatDirective, multi: true }],
+    standalone: false
 })
 export class PhoneFormatDirective extends Validators {
     @Input('phoneFormat')
@@ -28,7 +29,8 @@ export class PhoneFormatDirective extends Validators {
 @Component({
     selector: 'app-grid-validator-service-extended',
     styleUrls: ['./grid-validator-service-extended.component.scss'],
-    templateUrl: './grid-validator-service-extended.component.html'
+    templateUrl: './grid-validator-service-extended.component.html',
+    standalone: false
 })
 export class GridValidatorServiceExtendedComponent {
 

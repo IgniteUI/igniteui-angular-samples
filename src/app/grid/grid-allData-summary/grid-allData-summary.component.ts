@@ -32,9 +32,10 @@ class DiscontinuedSummary {
     }
 }
 @Component({
-  selector: 'app-grid-all-data-summary',
-  styleUrls: ['./grid-allData-summary.component.scss'],
-  templateUrl: './grid-allData-summary.component.html'
+    selector: 'app-grid-all-data-summary',
+    styleUrls: ['./grid-allData-summary.component.scss'],
+    templateUrl: './grid-allData-summary.component.html',
+    standalone: false
 })
 export class GridAllDataSummaryComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

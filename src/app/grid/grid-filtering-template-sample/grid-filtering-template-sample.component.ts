@@ -13,7 +13,8 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-sample',
     styleUrls: ['./grid-filtering-template-sample.component.scss'],
-    templateUrl: 'grid-filtering-template-sample.component.html'
+    templateUrl: 'grid-filtering-template-sample.component.html',
+    standalone: false
 })
 
 export class FilteringTemplateSampleComponent implements OnInit {

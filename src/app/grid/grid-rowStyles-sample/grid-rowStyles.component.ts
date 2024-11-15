@@ -7,7 +7,8 @@ import { FinancialDataService } from '../../services/financial.service';
     providers: [FinancialDataService],
     selector: 'app-grid-row-styles-sample',
     styleUrls: ['./grid-rowStyles.component.scss'],
-    templateUrl: 'grid-rowStyles.component.html'
+    templateUrl: 'grid-rowStyles.component.html',
+    standalone: false
 })
 
 export class GridRowStylesComponent {

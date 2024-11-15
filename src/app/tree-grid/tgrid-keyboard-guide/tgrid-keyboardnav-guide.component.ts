@@ -177,7 +177,8 @@ const summaryCombinations: Item[] = [
                 animate('.3s', style({ opacity: .4 }))
             ])
         ])
-    ]
+    ],
+    standalone: false
 })
 export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
     @ViewChild(IgxTreeGridComponent, { static: true })

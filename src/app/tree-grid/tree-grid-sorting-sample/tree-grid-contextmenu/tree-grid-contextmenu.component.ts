@@ -2,9 +2,10 @@ import { Component, Input } from '@angular/core';
 import { SortingDirection } from 'igniteui-angular';
 
 @Component({
-  selector: 'app-tree-grid-contextmenu',
-  styleUrls: ['./tree-grid-contextmenu.component.scss'],
-  templateUrl: './tree-grid-contextmenu.component.html'
+    selector: 'app-tree-grid-contextmenu',
+    styleUrls: ['./tree-grid-contextmenu.component.scss'],
+    templateUrl: './tree-grid-contextmenu.component.html',
+    standalone: false
 })
 export class TreeGridContextmenuComponent {
 

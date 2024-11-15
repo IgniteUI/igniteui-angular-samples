@@ -165,7 +165,8 @@ const summaryCombinations: Item[] = [
                 animate('.3s', style({ opacity: .4 }))
             ])
         ])
-    ]
+    ],
+    standalone: false
 })
 export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
 

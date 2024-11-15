@@ -9,7 +9,8 @@ import { RemotePagingWithBatchEditingService } from '../../services/remotePaging
     providers: [RemotePagingWithBatchEditingService],
     selector: 'app-remote-paging-batch-editing',
     styleUrls: ['./batch-editing-remote-paging.component.scss'],
-    templateUrl: './batch-editing-remote-paging.component.html'
+    templateUrl: './batch-editing-remote-paging.component.html',
+    standalone: false
 })
 export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;

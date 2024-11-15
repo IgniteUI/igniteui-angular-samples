@@ -6,7 +6,8 @@ import { DATA } from '../../data/nwindData';
     changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'app-grid-external-excel-style-filtering',
     templateUrl: './grid-external-excel-style-filtering.component.html',
-    styleUrls: ['./grid-external-excel-style-filtering.component.scss']
+    styleUrls: ['./grid-external-excel-style-filtering.component.scss'],
+    standalone: false
 })
 export class GridExternalExcelStyleFilteringComponent implements OnInit {
 

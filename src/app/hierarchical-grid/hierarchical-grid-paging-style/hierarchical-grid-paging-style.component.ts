@@ -4,7 +4,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-paging',
     styleUrls: ['./hierarchical-grid-paging-style.component.scss'],
-    templateUrl: 'hierarchical-grid-paging-style.component.html'
+    templateUrl: 'hierarchical-grid-paging-style.component.html',
+    standalone: false
 })
 
 export class HGridPagingStyleSampleComponent {

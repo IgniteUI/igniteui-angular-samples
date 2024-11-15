@@ -6,8 +6,9 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-summary-formatter',
     styleUrls: ['./grid-summary-formatter.component.scss'],
-    templateUrl: './grid-summary-formatter.component.html'
-  })
+    templateUrl: './grid-summary-formatter.component.html',
+    standalone: false
+})
 
   export class GridSummaryFormatterComponent implements OnInit {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

@@ -5,7 +5,8 @@ import { City, Country, getCitiesByCountry, getCountries, Region } from '../../.
 @Component({
     selector: 'app-simple-combo-cascading',
     templateUrl: 'simple-combo-cascading.component.html',
-    styleUrls: ['simple-combo-cascading.component.scss']
+    styleUrls: ['simple-combo-cascading.component.scss'],
+    standalone: false
 })
 export class SimpleComboCascadingComponent implements OnInit {
     public selectedCountry: Country;

@@ -8,7 +8,8 @@ import { FinancialDataService } from '../../services/financial.service';
     providers: [FinancialDataService],
     selector: 'app-grid-sample',
     styleUrls: ['./grid-sample-2.component.scss'],
-    templateUrl: 'grid-sample-2.component.html'
+    templateUrl: 'grid-sample-2.component.html',
+    standalone: false
 })
 
 export class FinancialSampleComponent {

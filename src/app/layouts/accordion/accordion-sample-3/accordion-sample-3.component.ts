@@ -4,7 +4,8 @@ import { IgxSliderType } from 'igniteui-angular';
 @Component({
     selector: 'app-accordion-sample-3',
     styleUrls: ['./accordion-sample-3.component.scss'],
-    templateUrl: './accordion-sample-3.component.html'
+    templateUrl: './accordion-sample-3.component.html',
+    standalone: false
 })
 export class AccordionSample3Component {
     public sliderType = IgxSliderType;

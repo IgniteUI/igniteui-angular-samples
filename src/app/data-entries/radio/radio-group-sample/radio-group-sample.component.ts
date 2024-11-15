@@ -4,7 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
     selector: 'app-radio-group-sample',
     styleUrls: ['./radio-group-sample.component.scss'],
-    templateUrl: './radio-group-sample.component.html'
+    templateUrl: './radio-group-sample.component.html',
+    standalone: false
 })
 export class RadioGroupSampleComponent {
     public fruitsForm: FormGroup;

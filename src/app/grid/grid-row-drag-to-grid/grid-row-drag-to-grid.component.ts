@@ -12,7 +12,8 @@ enum DragIcon {
 @Component({
     selector: 'app-grid-row-drag-to-grid-sample',
     styleUrls: ['./grid-row-drag-to-grid.component.scss'],
-    templateUrl: 'grid-row-drag-to-grid.component.html'
+    templateUrl: 'grid-row-drag-to-grid.component.html',
+    standalone: false
 })
 
 export class GridDragToGridSampleComponent {

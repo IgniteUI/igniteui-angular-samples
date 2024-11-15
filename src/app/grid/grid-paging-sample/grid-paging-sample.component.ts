@@ -6,7 +6,8 @@ import { athletesData } from '../../data/athletesData';
     encapsulation: ViewEncapsulation.None,
     selector: 'app-grid-sample',
     styleUrls: ['./grid-paging-sample.component.scss'],
-    templateUrl: 'grid-paging-sample.component.html'
+    templateUrl: 'grid-paging-sample.component.html',
+    standalone: false
 })
 
 export class PagingSampleComponent implements OnInit {

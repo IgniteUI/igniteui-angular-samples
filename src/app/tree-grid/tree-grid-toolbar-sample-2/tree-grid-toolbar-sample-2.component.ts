@@ -12,7 +12,8 @@ import { EMPLOYEE_FLAT_AVATARS_DATA } from '../data/employees-flat-avatars';
 @Component({
     selector: 'app-tree-grid-toolbar-sample-2',
     styleUrls: ['./tree-grid-toolbar-sample-2.component.scss'],
-    templateUrl: './tree-grid-toolbar-sample-2.component.html'
+    templateUrl: './tree-grid-toolbar-sample-2.component.html',
+    standalone: false
 })
 export class TreeGridToolbarSample2Component {
 

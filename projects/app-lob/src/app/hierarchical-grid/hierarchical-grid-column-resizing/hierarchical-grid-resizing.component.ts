@@ -6,7 +6,8 @@ import { RemoteValuesService } from '../../services/remoteValues.service';
     selector: 'app-hierarchical-grid-resizing',
     styleUrls: ['./hierarchical-grid-resizing.component.scss'],
     templateUrl: 'hierarchical-grid-resizing.component.html',
-    providers: [RemoteValuesService]
+    providers: [RemoteValuesService],
+    standalone: false
 })
 
 export class HGridColumnResizingSampleComponent {

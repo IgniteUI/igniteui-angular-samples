@@ -10,7 +10,8 @@ import { slideInBottom, slideOutTop } from 'igniteui-angular/animations';
 @Component({
     selector: 'app-dialog-styling-sample',
     styleUrls: ['./dialog-styling-sample.component.scss'],
-    templateUrl: './dialog-styling-sample.component.html'
+    templateUrl: './dialog-styling-sample.component.html',
+    standalone: false
 })
 export class DialogStylingSampleComponent implements OnInit {
 

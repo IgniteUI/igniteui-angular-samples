@@ -2,9 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { IgxCalendarComponent, IgxDialogComponent, IgxCalendarView, IViewDateChangeEventArgs } from 'igniteui-angular';
 
 @Component({
-  selector: 'app-calendar',
-  styleUrls: ['./calendar-sample-3.component.scss'],
-  templateUrl: './calendar-sample-3.component.html'
+    selector: 'app-calendar',
+    styleUrls: ['./calendar-sample-3.component.scss'],
+    templateUrl: './calendar-sample-3.component.html',
+    standalone: false
 })
 
 export class CalendarSample3Component {

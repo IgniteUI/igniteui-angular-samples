@@ -6,7 +6,8 @@ import { SINGERS } from '../../data/singersData';
 @Component({
     selector: 'app-hierarchical-grid-summary-formatter',
     styleUrls: ['./hierarchical-grid-summary-formatter.component.scss'],
-    templateUrl: 'hierarchical-grid-summary-formatter.component.html'
+    templateUrl: 'hierarchical-grid-summary-formatter.component.html',
+    standalone: false
 })
 
 export class HGridSummaryFormatterComponent {

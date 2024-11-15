@@ -35,7 +35,8 @@ export interface ShippingDetails{
 @Component({
     selector: 'app-stepper-sample-reactive-forms',
     styleUrls: ['./stepper-sample-reactive-forms.component.scss'],
-    templateUrl: './stepper-sample-reactive-forms.component.html'
+    templateUrl: './stepper-sample-reactive-forms.component.html',
+    standalone: false
 })
 export class StepperSampleReactiveFormsComponent {
     @ViewChild('stepper', { static: true })

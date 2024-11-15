@@ -41,7 +41,8 @@ class PTOSummary {
 @Component({
     selector: 'app-treegrid-summary-template',
     styleUrls: ['./treegrid-summary-template.component.scss'],
-    templateUrl: './treegrid-summary-template.component.html'
+    templateUrl: './treegrid-summary-template.component.html',
+    standalone: false
 })
 export class TreeGridSummaryTemplateComponent implements OnInit {
     public data;

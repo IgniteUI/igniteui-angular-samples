@@ -4,7 +4,8 @@ import { IgxCalendarComponent } from 'igniteui-angular';
 @Component({
     selector: 'app-calendar',
     styleUrls: ['./calendar-rtl-sample.component.scss'],
-    templateUrl: './calendar-rtl-sample.component.html'
+    templateUrl: './calendar-rtl-sample.component.html',
+    standalone: false
 })
 export class CalendarRtlSampleComponent {
     @ViewChild('calendar', { read: IgxCalendarComponent }) public calendar: IgxCalendarComponent;

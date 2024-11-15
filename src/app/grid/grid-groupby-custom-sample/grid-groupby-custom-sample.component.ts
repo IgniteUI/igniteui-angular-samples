@@ -12,7 +12,8 @@ import { DatePipe } from '@angular/common';
     encapsulation: ViewEncapsulation.None,
     selector: 'app-grid-groupby-custom-sample',
     styleUrls: ['./grid-groupby-custom-sample.component.scss'],
-    templateUrl: './grid-groupby-custom-sample.component.html'
+    templateUrl: './grid-groupby-custom-sample.component.html',
+    standalone: false
 })
 export class GridGroupByCustomSampleComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

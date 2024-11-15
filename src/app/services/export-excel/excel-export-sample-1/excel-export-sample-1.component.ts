@@ -9,9 +9,10 @@ import {
 import { INVOICE_DATA } from '../data/invoiceData';
 
 @Component({
-  selector: 'app-excel-export-sample-1',
-  styleUrls: ['./excel-export-sample-1.component.scss'],
-  templateUrl: './excel-export-sample-1.component.html'
+    selector: 'app-excel-export-sample-1',
+    styleUrls: ['./excel-export-sample-1.component.scss'],
+    templateUrl: './excel-export-sample-1.component.html',
+    standalone: false
 })
 export class ExcelExportSample1Component implements OnInit {
   @ViewChild('igxGrid1', { static: true }) public igxGrid1: IgxGridComponent;

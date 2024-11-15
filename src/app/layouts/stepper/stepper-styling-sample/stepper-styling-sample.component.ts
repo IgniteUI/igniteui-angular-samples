@@ -4,7 +4,8 @@ import { IgxStepperComponent, IStepChangingEventArgs } from 'igniteui-angular';
 @Component({
     selector: 'app-stepper-styling-sample',
     styleUrls: ['./stepper-styling-sample.component.scss'],
-    templateUrl: './stepper-styling-sample.component.html'
+    templateUrl: './stepper-styling-sample.component.html',
+    standalone: false
 })
 export class StepperStylingSampleComponent {
     @ViewChild('stepper', { read: IgxStepperComponent })

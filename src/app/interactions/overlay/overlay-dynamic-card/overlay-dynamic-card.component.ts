@@ -3,7 +3,8 @@ import { IgxCardModule } from 'igniteui-angular';
 @Component({
     selector: `app-overlay-dynamic-card-component`,
     templateUrl: `overlay-dynamic-card.component.html`,
-    styleUrls: [`overlay-dynamic-card.component.scss`]
+    styleUrls: [`overlay-dynamic-card.component.scss`],
+    standalone: false
 })
 export class MyDynamicCardComponent {
     constructor(public elementRef: ElementRef) {}

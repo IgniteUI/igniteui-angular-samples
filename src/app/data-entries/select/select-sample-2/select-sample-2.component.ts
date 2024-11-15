@@ -5,7 +5,8 @@ import { IgxSelectComponent } from 'igniteui-angular';
 @Component({
     selector: 'app-select-sample-2',
     styleUrls: ['select-sample-2.component.scss'],
-    templateUrl: 'select-sample-2.component.html'
+    templateUrl: 'select-sample-2.component.html',
+    standalone: false
 })
 export class SelectSample2Component {
     @ViewChild(IgxSelectComponent, { static: true })

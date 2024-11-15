@@ -31,7 +31,8 @@ class DiscontinuedSummary {
 @Component({
     selector: 'app-grid-summary-template',
     styleUrls: ['./grid-summary-template.component.scss'],
-    templateUrl: './grid-summary-template.component.html'
+    templateUrl: './grid-summary-template.component.html',
+    standalone: false
 })
 export class GridSummaryTemplateComponent implements OnInit {
     public discontinuedSummary = DiscontinuedSummary;

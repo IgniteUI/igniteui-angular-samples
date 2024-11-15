@@ -3,7 +3,8 @@ import { IgxInputGroupComponent } from 'igniteui-angular';
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: 'input-group-sample-base'
+    selector: 'input-group-sample-base',
+    standalone: false
 })
 // eslint-disable-next-line @angular-eslint/directive-class-suffix
 export class BaseInputGroupSampleComponent {

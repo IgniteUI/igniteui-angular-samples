@@ -9,7 +9,8 @@ import { take, takeUntil } from 'rxjs/operators';
     selector: 'app-tree-advanced-sample',
     templateUrl: './tree-advanced-sample.component.html',
     styleUrls: ['./tree-advanced-sample.component.scss'],
-    providers: [DataService]
+    providers: [DataService],
+    standalone: false
 })
 export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
     public family = 'tree-icons';

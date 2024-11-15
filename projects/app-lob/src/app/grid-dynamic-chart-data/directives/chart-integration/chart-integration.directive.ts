@@ -19,14 +19,16 @@ export interface IDeterminedChartTypesArgs {
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: '[chartHost]'
+    selector: '[chartHost]',
+    standalone: false
 })
 export class ChartHostDirective {
     constructor(public viewContainerRef: ViewContainerRef) { }
 }
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: '[chartIntegration]'
+    selector: '[chartIntegration]',
+    standalone: false
 })
 export class ChartIntegrationDirective {
     @Input()

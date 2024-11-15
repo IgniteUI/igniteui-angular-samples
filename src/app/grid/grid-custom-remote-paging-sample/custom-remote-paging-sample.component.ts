@@ -7,7 +7,8 @@ import { RemotePagingService } from '../../services/remotePaging.service';
     providers: [RemotePagingService],
     selector: 'app-custom-remote-paging-grid-sample',
     styleUrls: ['./custom-remote-paging-sample.component.scss'],
-    templateUrl: './custom-remote-paging-sample.component.html'
+    templateUrl: './custom-remote-paging-sample.component.html',
+    standalone: false
 })
 export class CustomRemotePagingGridSampleComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;

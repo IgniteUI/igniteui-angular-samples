@@ -6,7 +6,8 @@ import { DATA } from '../../data/localData';
 @Component({
     selector: 'app-grid-sample',
     styleUrls: ['./grid-sorting-sample.component.scss'],
-    templateUrl: 'grid-sorting-sample.component.html'
+    templateUrl: 'grid-sorting-sample.component.html',
+    standalone: false
 })
 
 export class SortingSampleComponent implements OnInit, AfterViewInit {

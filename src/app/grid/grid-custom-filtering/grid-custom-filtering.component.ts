@@ -5,7 +5,8 @@ import { DATA } from '../../data/nwindData';
 @Component({
     selector: 'app-grid-custom-filtering',
     styleUrls: ['./grid-custom-filtering.component.scss'],
-    templateUrl: './grid-custom-filtering.component.html'
+    templateUrl: './grid-custom-filtering.component.html',
+    standalone: false
 })
 export class GridCustomFilteringComponent implements OnInit {
     public data: any[];

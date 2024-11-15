@@ -5,7 +5,8 @@ import { ORDERS_DATA } from '../data/orders';
 @Component({
     selector: 'app-grid-conditional-cell-style-2',
     styleUrls: ['./tree-grid-conditional-cell-style-2.component.scss'],
-    templateUrl: './tree-grid-conditional-cell-style-2.component.html'
+    templateUrl: './tree-grid-conditional-cell-style-2.component.html',
+    standalone: false
 })
 export class TreeGridConditionalCellStyle2Component implements OnInit {
     @ViewChild('grid1', { read: IgxTreeGridComponent, static: true })

@@ -4,7 +4,8 @@ import { EMPLOYEE_DATA } from './data';
 @Component({
     selector: 'app-tree-grid-clipboard-operations-sample',
     styleUrls: ['tree-grid-clipboard-operations-sample.component.scss'],
-    templateUrl: './tree-grid-clipboard-operations-sample.component.html'
+    templateUrl: './tree-grid-clipboard-operations-sample.component.html',
+    standalone: false
 })
 export class TreeGridClipboardSampleComponent {
 
