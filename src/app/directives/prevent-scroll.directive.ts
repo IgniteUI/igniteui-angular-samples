@@ -53,9 +53,4 @@ export class IgxPreventDocumentScrollDirective implements AfterViewInit, OnDestr
 /**
  * @hidden
  */
-@NgModule({
-    imports: [IgxPreventDocumentScrollDirective],
-    exports: [IgxPreventDocumentScrollDirective]
-})
 
-export class IgxPreventDocumentScrollModule { }
