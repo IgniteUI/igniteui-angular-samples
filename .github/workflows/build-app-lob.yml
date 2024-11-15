@@ -54,7 +54,7 @@ jobs:
         run: npm config set ${{secrets.IG_SCOPE}}:_auth=${{secrets.IG_TOKEN}}
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --force
 
       - name: Run lint
         run: npm run lint
