@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { SEOService } from './seo.service';
 
@@ -8,7 +8,7 @@ import { SEOService } from './seo.service';
     selector: 'app-root',
     styleUrls: ['./app.component.scss'],
     templateUrl: './app.component.html',
-    standalone: false
+    imports: [RouterOutlet]
 })
 export class AppComponent implements OnInit {
     public title = 'app-lob';

@@ -1,11 +1,12 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'app-root',
     styleUrls: ['./app.component.scss'],
     templateUrl: './app.component.html',
-    standalone: false
+    imports: [RouterOutlet]
 })
 export class AppComponent implements OnInit {
     public title = 'Samples';
