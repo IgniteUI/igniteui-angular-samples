@@ -8,7 +8,7 @@ import { IgxBarSeriesModule, IgxCategoryChartModule, IgxCategoryXAxisModule,
          IgxDataChartStackedModule, IgxItemLegendModule,
          IgxLegendModule, IgxNumericXAxisModule,
          IgxNumericYAxisModule, IgxPieChartModule } from 'igniteui-angular-charts';
-import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
+import { IgxPreventDocumentScrollDirective } from '../../../../../src/app/directives/prevent-scroll.directive';
 import { DataAnalysisDockManagerComponent, HastDuplicateLayouts, FilterTypePipe } from './data-analysis-dock-manager/data-analysis-dock-manager.component';
 import { DockSlotComponent } from './data-analysis-dock-manager/dock-slot/dock-slot.component';
 import { ChartHostDirective, ChartIntegrationDirective } from './directives/chart-integration/chart-integration.directive';
@@ -23,7 +23,6 @@ import { CommonModule } from '@angular/common';
         IgxDialogModule,
         IgxDividerModule,
         IgxGridModule,
-        IgxPreventDocumentScrollModule,
         IgxTabsModule,
         IgxDataChartCategoryModule,
         IgxDataChartCoreModule,
@@ -46,6 +45,7 @@ import { CommonModule } from '@angular/common';
         ChartHostDirective,
         ConditionalFormattingDirective,
         ChartIntegrationDirective,
+        IgxPreventDocumentScrollDirective,
         FilterTypePipe,
         DataAnalysisDockManagerComponent,
         DockSlotComponent,

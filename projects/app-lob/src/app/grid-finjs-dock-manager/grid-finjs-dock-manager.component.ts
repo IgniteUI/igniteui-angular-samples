@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, Renderer2, OnDestroy, OnInit, DoCheck, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, Renderer2, OnDestroy, OnInit, DoCheck, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, GridColumnDataType, IgxColumnComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxSelectComponent, OverlaySettings, SortingDirection, IgxSwitchComponent, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent, IgxSelectItemComponent, IgxButtonDirective, IgxCellTemplateDirective, IgxPaginatorComponent } from 'igniteui-angular';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { Subject } from 'rxjs';
@@ -15,7 +15,8 @@ import { NgFor, NgIf, AsyncPipe, CurrencyPipe } from '@angular/common';
     selector: 'app-finjs-dock-manager',
     templateUrl: './grid-finjs-dock-manager.component.html',
     styleUrls: ['./grid-finjs-dock-manager.component.scss'],
-    imports: [IgxSwitchComponent, FormsModule, IgxSelectComponent, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent, NgFor, IgxSelectItemComponent, IgxButtonDirective, IgxOverlayOutletDirective, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, NgIf, IgxPaginatorComponent, GridHostDirective, AsyncPipe, CurrencyPipe]
+    imports: [IgxSwitchComponent, FormsModule, IgxSelectComponent, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent, NgFor, IgxSelectItemComponent, IgxButtonDirective, IgxOverlayOutletDirective, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, NgIf, IgxPaginatorComponent, GridHostDirective, AsyncPipe, CurrencyPipe],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterViewInit, DoCheck {
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;

@@ -18,11 +18,10 @@ import { GridFinjsRoutingModule } from './grid-finjs-routing.module';
 import { GridFinJSComponent } from './grid-finjs.component';
 import { ControllerComponent } from './controllers.component';
 import { FinancialDataService } from '../services/financial.service';
-import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
+import { IgxPreventDocumentScrollDirective } from '../../../../../src/app/directives/prevent-scroll.directive';
 
 @NgModule({
     imports: [
-        IgxPreventDocumentScrollModule,
         CommonModule,
         FormsModule,
         IgxButtonModule,
@@ -50,6 +49,7 @@ import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directive
         IgxButtonGroupModule,
         FinJSDemoComponent,
         GridFinJSComponent,
+        IgxPreventDocumentScrollDirective,
         ControllerComponent
     ],
     providers: [FinancialDataService]

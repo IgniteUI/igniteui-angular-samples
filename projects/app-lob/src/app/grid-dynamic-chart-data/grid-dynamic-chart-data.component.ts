@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { AfterViewInit, Component, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { IgxChartIntegrationDirective, OPTIONS_TYPE, CHART_TYPE, IgxExtrasModule } from 'igniteui-angular-extras';
 
 import { FinancialData } from '../data/financialData';
@@ -18,11 +18,11 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     @ViewChild(IgxChartIntegrationDirective, {static: false})
     public chartDirective: IgxChartIntegrationDirective;
-  
+
     public ngOnInit() {
         this.data = FinancialData.generateData(1000);
     }
-  
+
     public ngAfterViewInit() {
       const pieChartOptions = {
         labelsPosition: 4,
@@ -38,7 +38,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
                                           chart !== CHART_TYPE.PIE)
                          .forEach(chart => this.chartDirective.setChartComponentOptions(chart, OPTIONS_TYPE.X_AXIS, {labelAngle: 30}));
     }
-  
+
     public formatCurrency(value: number) {
         return '$' + value.toFixed(3);
     }
