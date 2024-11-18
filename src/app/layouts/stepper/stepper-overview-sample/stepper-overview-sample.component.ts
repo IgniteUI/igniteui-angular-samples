@@ -1,13 +1,13 @@
 import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { NgForm, FormsModule } from '@angular/forms';
-import { IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxCardComponent, IgxCardMediaDirective, IgxCardContentDirective, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxSelectComponent, IgxSelectItemComponent, IgxMaskDirective, IgxCheckboxComponent, IgxHintDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxCardComponent, IgxCardMediaDirective, IgxCardContentDirective, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxSelectComponent, IgxSelectItemComponent, IgxMaskDirective, IgxCheckboxComponent, IgxHintDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxIconComponent, IgxBadgeComponent } from 'igniteui-angular';
 import { NgFor, NgClass, NgIf, DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-stepper-overview-sample',
     styleUrls: ['./stepper-overview-sample.component.scss'],
     templateUrl: './stepper-overview-sample.component.html',
-    imports: [IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, NgFor, IgxCardComponent, NgClass, NgIf, IgxCardMediaDirective, IgxCardContentDirective, FormsModule, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxSelectComponent, IgxSelectItemComponent, IgxMaskDirective, IgxCheckboxComponent, IgxHintDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxIconComponent, DatePipe]
+    imports: [IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxBadgeComponent, NgFor, IgxCardComponent, NgClass, NgIf, IgxCardMediaDirective, IgxCardContentDirective, FormsModule, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxSelectComponent, IgxSelectItemComponent, IgxMaskDirective, IgxCheckboxComponent, IgxHintDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxIconComponent, DatePipe]
 })
 export class StepperOverviewSampleComponent {
     @ViewChild('stepper', { static: true })
