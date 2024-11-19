@@ -9,7 +9,7 @@ import { BrowserModule, HammerModule, bootstrapApplication } from '@angular/plat
 import { AppRoutingModule } from './app/app-routing.module';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { IgxPreventDocumentScrollModule } from '../../../src/app/directives/prevent-scroll.directive';
+import { IgxPreventDocumentScrollDirective } from '../../../src/app/directives/prevent-scroll.directive';
 import { AppComponent } from './app/app.component';
 
 if (environment.production) {
@@ -18,7 +18,7 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(IgxAutocompleteModule, IgxRippleModule, IgxGridModule, IgxIconModule, IgxLayoutModule, IgxAvatarModule, IgxInputGroupModule, BrowserModule, AppRoutingModule, IgxButtonModule, IgxProgressBarModule, FormsModule, IgxPreventDocumentScrollModule, HammerModule, IgxIconButtonDirective),
+        importProvidersFrom(IgxAutocompleteModule, IgxRippleModule, IgxGridModule, IgxIconModule, IgxLayoutModule, IgxAvatarModule, IgxInputGroupModule, BrowserModule, AppRoutingModule, IgxButtonModule, IgxProgressBarModule, FormsModule, IgxPreventDocumentScrollDirective, HammerModule, IgxIconButtonDirective),
         SEOService,
         provideAnimations()
     ]
