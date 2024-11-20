@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular';
+import { IgxTreeGridComponent, IgxColumnComponent } from 'igniteui-angular';
 import { TreeGridLoadOnDemandService } from './remoteService';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tree-grid-load-on-demand-sample',
     styleUrls: ['./tree-grid-load-on-demand-sample.component.scss'],
-    templateUrl: './tree-grid-load-on-demand-sample.component.html'
+    templateUrl: './tree-grid-load-on-demand-sample.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridLoadOnDemandSampleComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

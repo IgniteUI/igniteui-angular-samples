@@ -1,15 +1,14 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChild } from '@angular/core';
 
-import { CsvFileTypes,
-         IgxCsvExporterOptions,
-         IgxCsvExporterService,
-         IgxGridComponent } from 'igniteui-angular';
+import { CsvFileTypes, IgxCsvExporterOptions, IgxCsvExporterService, IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent } from 'igniteui-angular';
+import { IgxPreventDocumentScrollDirective } from '../../../directives/prevent-scroll.directive';
 
 @Component({
-  selector: 'app-csv-export-sample-1',
-  styleUrls: ['./csv-export-sample-1.component.scss'],
-  templateUrl: './csv-export-sample-1.component.html'
+    selector: 'app-csv-export-sample-1',
+    styleUrls: ['./csv-export-sample-1.component.scss'],
+    templateUrl: './csv-export-sample-1.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent]
 })
 export class CsvExportSample1Component {
 

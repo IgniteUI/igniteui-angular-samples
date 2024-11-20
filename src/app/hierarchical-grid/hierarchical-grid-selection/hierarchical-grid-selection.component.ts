@@ -1,11 +1,15 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxSnackbarComponent, IRowSelectionEventArgs } from 'igniteui-angular';
+import { GridSelectionMode, IgxSnackbarComponent, IRowSelectionEventArgs, IgxSwitchComponent, IgxButtonGroupComponent, IgxHierarchicalGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxIconComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
+import { FormsModule } from '@angular/forms';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-hierarchical-grid-selection',
     styleUrls: ['./hierarchical-grid-selection.component.scss'],
-    templateUrl: 'hierarchical-grid-selection.component.html'
+    templateUrl: 'hierarchical-grid-selection.component.html',
+    imports: [IgxSwitchComponent, FormsModule, IgxButtonGroupComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxSnackbarComponent, IgxIconComponent, NgIf]
 })
 
 export class HGridSelectionSampleComponent implements OnInit, OnDestroy {

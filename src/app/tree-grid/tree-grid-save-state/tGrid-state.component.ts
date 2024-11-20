@@ -1,16 +1,16 @@
 import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
-import { FilteringExpressionsTree, FilteringLogic, GridFeatures,
-    IGridState, IGridStateOptions, IgxGridStateDirective,
-    IgxTreeGridComponent, IgxCheckboxComponent} from 'igniteui-angular';
+import { NavigationStart, Router, RouterLink } from '@angular/router';
+import { FilteringExpressionsTree, FilteringLogic, GridFeatures, IGridState, IGridStateOptions, IgxGridStateDirective, IgxTreeGridComponent, IgxCheckboxComponent, IgxButtonDirective, IgxIconComponent, IgxPaginatorComponent, IgxColumnComponent } from 'igniteui-angular';
 import { take } from 'rxjs/operators';
 import { EMPLOYEE_DATA } from './data';
+import { NgFor } from '@angular/common';
 
 // tslint:disable:object-literal-sort-keys
 @Component({
-  selector: 'app-tgrid',
-  styleUrls: ['./tGrid-state.component.scss'],
-  templateUrl: './tGrid-state.component.html'
+    selector: 'app-tgrid',
+    styleUrls: ['./tGrid-state.component.scss'],
+    templateUrl: './tGrid-state.component.html',
+    imports: [IgxButtonDirective, IgxIconComponent, RouterLink, IgxCheckboxComponent, NgFor, IgxTreeGridComponent, IgxGridStateDirective, IgxPaginatorComponent, IgxColumnComponent]
 })
 
 export class TGridSaveStateComponent implements OnInit, AfterViewInit {

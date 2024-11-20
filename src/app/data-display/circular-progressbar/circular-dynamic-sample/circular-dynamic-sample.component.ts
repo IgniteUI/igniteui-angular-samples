@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { IgxCircularProgressBarComponent, IgxProgressBarGradientDirective, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-circular-dynamic-sample',
     styleUrls: ['./circular-dynamic-sample.component.scss'],
-    templateUrl: './circular-dynamic-sample.component.html'
+    templateUrl: './circular-dynamic-sample.component.html',
+    imports: [IgxCircularProgressBarComponent, IgxProgressBarGradientDirective, IgxIconButtonDirective, IgxIconComponent]
 })
 export class CircularDynamicSampleComponent implements OnInit {
 

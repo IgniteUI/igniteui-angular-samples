@@ -2,7 +2,9 @@
 import { OnInit, Directive, EventEmitter, HostListener, Output} from '@angular/core';
 
 // eslint-disable-next-line @angular-eslint/directive-selector
-@Directive({ selector: '[paste-handler]' })
+@Directive({
+    selector: '[paste-handler]'
+})
 // eslint-disable-next-line @angular-eslint/directive-class-suffix
 export class PasteHandler implements OnInit{
     @Output()

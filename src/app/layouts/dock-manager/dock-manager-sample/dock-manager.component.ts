@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { IgcDockManagerLayout,
          IgcDockManagerPaneType,
          IgcSplitPaneOrientation } from 'igniteui-dockmanager';
@@ -6,7 +6,8 @@ import { IgcDockManagerLayout,
 @Component({
     selector: 'app-dock-manager',
     styleUrls: ['./dock-manager.component.scss'],
-    templateUrl: './dock-manager.component.html'
+    templateUrl: './dock-manager.component.html',
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DockManagerComponent {
     public layout: IgcDockManagerLayout = {

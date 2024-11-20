@@ -1,11 +1,15 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { IPaginatorResourceStrings, IgxPaginatorComponent } from 'igniteui-angular';
+import { IPaginatorResourceStrings, IgxPaginatorComponent, IgxTreeGridComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxSwitchComponent } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-tree-grid-pager-sample',
     styleUrls: ['./tree-grid-pager-sample.component.scss'],
-    templateUrl: './tree-grid-pager-sample.component.html'
+    templateUrl: './tree-grid-pager-sample.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxPaginatorContentDirective, NgIf, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxSwitchComponent, FormsModule]
 })
 export class TreeGridPagerSampleComponent implements OnInit, AfterViewInit {
     @ViewChild('paginator', { read: IgxPaginatorComponent, static: false })

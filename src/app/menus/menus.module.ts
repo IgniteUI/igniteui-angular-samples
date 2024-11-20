@@ -40,23 +40,6 @@ import { NavbarCustomTitleComponent } from './navbar/navbar-custom-title/navbar-
 import { NavDrawerHierarchicalComponent } from './navdrawer/nav-drawer-hierarchical/nav-drawer-hierarchical.component';
 
 @NgModule({
-    declarations: [
-        NavDrawerMiniComponent,
-        NavDrawerPinComponent,
-        NavDrawerSimpleComponent,
-        NavDrawerRoutingComponent,
-        NavDrawerStylingComponent,
-        NavbarComponent,
-        NavbarSample1Component,
-        NavbarSample2Component,
-        NavbarSample3Component,
-        NavbarStyleComponent,
-        ActionStripParagraphComponent,
-        ActionStripParagraphMenuComponent,
-        ActionStripStylingComponent,
-        NavbarCustomTitleComponent,
-        NavDrawerHierarchicalComponent
-    ],
     imports: [
         CommonModule,
         FormsModule,
@@ -73,7 +56,22 @@ import { NavDrawerHierarchicalComponent } from './navdrawer/nav-drawer-hierarchi
         IgxToggleModule,
         IgxNavbarModule,
         IgxTreeModule,
-        IgxIconButtonDirective
+        IgxIconButtonDirective,
+        NavDrawerMiniComponent,
+        NavDrawerPinComponent,
+        NavDrawerSimpleComponent,
+        NavDrawerRoutingComponent,
+        NavDrawerStylingComponent,
+        NavbarComponent,
+        NavbarSample1Component,
+        NavbarSample2Component,
+        NavbarSample3Component,
+        NavbarStyleComponent,
+        ActionStripParagraphComponent,
+        ActionStripParagraphMenuComponent,
+        ActionStripStylingComponent,
+        NavbarCustomTitleComponent,
+        NavDrawerHierarchicalComponent
     ]
 })
 export class MenusModule { }

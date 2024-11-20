@@ -1,10 +1,12 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'app-docs-layout',
     styleUrls: ['./docs-layout.component.scss'],
-    template: `<router-outlet></router-outlet>`
+    template: `<router-outlet></router-outlet>`,
+    imports: [RouterOutlet]
 })
 
 export class DocsLayoutComponent implements OnInit {

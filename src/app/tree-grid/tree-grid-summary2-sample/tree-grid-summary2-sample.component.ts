@@ -1,16 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    DefaultSortingStrategy,
-    GridSummaryCalculationMode,
-    GridSummaryPosition,
-    IgxNumberSummaryOperand,
-    IgxSummaryOperand,
-    IgxSummaryResult,
-    IgxTreeGridComponent,
-    ISortingExpression,
-    SortingDirection
-} from 'igniteui-angular';
+import { DefaultSortingStrategy, GridSummaryCalculationMode, GridSummaryPosition, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent, ISortingExpression, SortingDirection, IgxButtonGroupComponent, IgxSwitchComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf } from '@angular/common';
 
 class AvgSummary {
 
@@ -29,7 +21,8 @@ class AvgSummary {
 @Component({
     selector: 'app-tree-grid-summary2-sample',
     styleUrls: ['./tree-grid-summary2-sample.component.scss'],
-    templateUrl: './tree-grid-summary2-sample.component.html'
+    templateUrl: './tree-grid-summary2-sample.component.html',
+    imports: [IgxButtonGroupComponent, IgxSwitchComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, NgIf]
 })
 export class TreeGridSummary2SampleComponent implements OnInit {
 

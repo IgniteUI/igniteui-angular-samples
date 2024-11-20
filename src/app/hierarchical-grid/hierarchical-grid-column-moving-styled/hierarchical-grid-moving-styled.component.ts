@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { IgxColumnComponent } from 'igniteui-angular';
+import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxPaginatorComponent, IgxCellHeaderTemplateDirective, IgxIconComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { CUSTOMERS } from '../../data/hierarchical-data';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-moving-styled',
     styleUrls: ['./hierarchical-grid-moving-styled.component.scss'],
-    templateUrl: 'hierarchical-grid-moving-styled.component.html'
+    templateUrl: 'hierarchical-grid-moving-styled.component.html',
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxIconComponent, IgxRowIslandComponent]
 })
 
 export class HGridColumnMovingSampleStyledComponent {

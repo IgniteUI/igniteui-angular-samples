@@ -1,15 +1,13 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import {
-  IgxDialogComponent,
-  IgxGridComponent,
-  Transaction
-} from 'igniteui-angular';
+import { IgxDialogComponent, IgxGridComponent, Transaction, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from './../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
-  selector: 'app-grid-excel-style-editing-sample',
-  styleUrls: [`grid-editing-excel-style.component.scss`],
-  templateUrl: 'grid-editing-excel-style.component.html'
+    selector: 'app-grid-excel-style-editing-sample',
+    styleUrls: [`grid-editing-excel-style.component.scss`],
+    templateUrl: 'grid-editing-excel-style.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class GridExcelStyleEditingComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true })

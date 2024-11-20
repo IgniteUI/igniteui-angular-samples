@@ -1,14 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    IGridCreatedEventArgs, IGridKeydownEventArgs,
-    CellType, IgxHierarchicalGridComponent
-} from 'igniteui-angular';
+import { IGridCreatedEventArgs, IGridKeydownEventArgs, CellType, IgxHierarchicalGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxGridToolbarTitleComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-custom-kb-navigation-sample',
     styleUrls: ['./hierarchical-grid-custom-kb-navigation-sample.component.scss'],
-    templateUrl: 'hierarchical-grid-custom-kb-navigation-sample.component.html'
+    templateUrl: 'hierarchical-grid-custom-kb-navigation-sample.component.html',
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxGridToolbarTitleComponent]
 })
 
 export class HGridCustomKBNavigationComponent implements OnInit {

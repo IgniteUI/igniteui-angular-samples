@@ -1,10 +1,13 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { SINGERS } from '../../data/singersData';
+import { IgxSwitchComponent, IgxHierarchicalGridComponent, IgxColumnComponent, IgxRowIslandComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hgrid-editing-lifecycle',
     templateUrl: 'hgrid-editing-lifecycle.component.html',
-    styleUrls: ['hgrid-editing-lifecycle.component.scss']
+    styleUrls: ['hgrid-editing-lifecycle.component.scss'],
+    imports: [IgxSwitchComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent, IgxButtonDirective, IgxIconComponent]
 })
 export class HGridEditingLifecycleComponent {
     @ViewChild('logger')

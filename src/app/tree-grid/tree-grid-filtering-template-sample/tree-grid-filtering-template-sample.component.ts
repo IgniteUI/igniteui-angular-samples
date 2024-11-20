@@ -1,18 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    GridColumnDataType,
-    ColumnType,
-    IgxDateFilteringOperand,
-    IgxNumberFilteringOperand,
-    IgxStringFilteringOperand,
-    IgxTreeGridComponent
-} from 'igniteui-angular';
+import { GridColumnDataType, ColumnType, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxStringFilteringOperand, IgxTreeGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxFilterCellTemplateDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxDatePickerComponent, IgxPickerToggleComponent, IgxPickerClearComponent } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf, CurrencyPipe } from '@angular/common';
 
 @Component({
     selector: 'app-tree-grid-filtering-template-sample',
     styleUrls: ['./tree-grid-filtering-template-sample.component.scss'],
-    templateUrl: 'tree-grid-filtering-template-sample.component.html'
+    templateUrl: 'tree-grid-filtering-template-sample.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, NgIf, IgxFilterCellTemplateDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxDatePickerComponent, IgxPickerToggleComponent, IgxPickerClearComponent, CurrencyPipe]
 })
 
 export class TreeGridFilteringTemplateSampleComponent implements OnInit {

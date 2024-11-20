@@ -1,9 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
-import {
-    IgxGridComponent,
-    IgxNumberSummaryOperand,
-    IgxSummaryResult } from 'igniteui-angular';
+import { IgxGridComponent, IgxNumberSummaryOperand, IgxSummaryResult, IgxPaginatorComponent, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf } from '@angular/common';
 
 class DiscontinuedSummary {
     public operate(data?: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
@@ -32,9 +31,10 @@ class DiscontinuedSummary {
     }
 }
 @Component({
-  selector: 'app-grid-all-data-summary',
-  styleUrls: ['./grid-allData-summary.component.scss'],
-  templateUrl: './grid-allData-summary.component.html'
+    selector: 'app-grid-all-data-summary',
+    styleUrls: ['./grid-allData-summary.component.scss'],
+    templateUrl: './grid-allData-summary.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, NgIf, IgxPaginatorComponent, IgxColumnComponent]
 })
 export class GridAllDataSummaryComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

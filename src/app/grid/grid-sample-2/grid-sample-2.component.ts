@@ -1,14 +1,17 @@
 import { Component, Injectable, ViewChild, OnInit } from '@angular/core';
 
-import { IgxGridComponent } from 'igniteui-angular';
+import { IgxGridComponent, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
     providers: [FinancialDataService],
     selector: 'app-grid-sample',
     styleUrls: ['./grid-sample-2.component.scss'],
-    templateUrl: 'grid-sample-2.component.html'
+    templateUrl: 'grid-sample-2.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, NgIf, IgxBadgeComponent, AsyncPipe]
 })
 
 export class FinancialSampleComponent {

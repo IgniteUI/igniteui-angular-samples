@@ -8,8 +8,8 @@ describe('CsvExportComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CsvExportComponent ]
-    })
+    imports: [CsvExportComponent]
+})
     .compileComponents();
   }));
 

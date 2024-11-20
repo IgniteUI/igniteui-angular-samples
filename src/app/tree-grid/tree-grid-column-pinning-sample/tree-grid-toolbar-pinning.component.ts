@@ -1,14 +1,16 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular';
+import { IgxTreeGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 import { ActivatedRoute } from '@angular/router';
+import { NgClass } from '@angular/common';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     providers: [],
     selector: 'app-grid-sample',
     styleUrls: ['tree-grid-toolbar-pinning.component.scss'],
-    templateUrl: 'tree-grid-toolbar-pinning.component.html'
-
+    templateUrl: 'tree-grid-toolbar-pinning.component.html',
+    imports: [NgClass, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent]
 })
 
 export class TreeGridPinningToolbarSampleComponent implements OnInit {

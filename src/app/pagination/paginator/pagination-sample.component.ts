@@ -1,11 +1,13 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
-import { IgxPaginatorComponent } from 'igniteui-angular';
+import { IgxPaginatorComponent, IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardHeaderSubtitleDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
 import { DATA } from '../../data/product';
+import { NgFor, CurrencyPipe } from '@angular/common';
 
 @Component({
     selector: 'app-pagination-sample',
     styleUrls: ['./pagination-sample.component.scss'],
-    templateUrl: './pagination-sample.component.html'
+    templateUrl: './pagination-sample.component.html',
+    imports: [NgFor, IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardHeaderSubtitleDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxIconButtonDirective, IgxIconComponent, IgxPaginatorComponent, CurrencyPipe]
 })
 export class PaginationSampleComponent implements AfterViewInit {
     @ViewChild('paginator', { static: true }) public paginator!: IgxPaginatorComponent;

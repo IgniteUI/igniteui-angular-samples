@@ -1,11 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-import { GridSelectionMode, IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType } from 'igniteui-angular';
+import { GridSelectionMode, IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType, IgxDropDirective, IgxColumnComponent, IgxRowIslandComponent, IgxRowDragGhostDirective, IgxIconComponent } from 'igniteui-angular';
 import { createData, IDrive } from '../../data/files.data';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-multi-row-drag',
     styleUrls: ['./hierarchical-grid-multi-row-drag.component.scss'],
-    templateUrl: 'hierarchical-grid-multi-row-drag.component.html'
+    templateUrl: 'hierarchical-grid-multi-row-drag.component.html',
+    imports: [IgxDropDirective, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent, IgxRowDragGhostDirective, IgxIconComponent]
 })
 
 export class HGridMultiRowDragComponent {

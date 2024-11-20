@@ -8,8 +8,8 @@ describe('GridGroupBySample', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ GridGroupBySampleComponent ]
-    })
+    imports: [GridGroupBySampleComponent]
+})
     .compileComponents();
   }));
 

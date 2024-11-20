@@ -1,10 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxActionStripComponent } from 'igniteui-angular';
+import { IgxActionStripComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
 
 @Component({
-  selector: 'app-action-strip-paragraph-styling',
-  styleUrls: ['./action-strip-paragraph-styling.component.scss'],
-  templateUrl: './action-strip-paragraph-styling.component.html'
+    selector: 'app-action-strip-paragraph-styling',
+    styleUrls: ['./action-strip-paragraph-styling.component.scss'],
+    templateUrl: './action-strip-paragraph-styling.component.html',
+    imports: [IgxActionStripComponent, IgxButtonDirective, IgxIconComponent]
 })
 export class ActionStripStylingComponent {
     @ViewChild('actionstrip') public actionStrip: IgxActionStripComponent;

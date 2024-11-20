@@ -1,12 +1,15 @@
 import { Character } from './characters';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { IgxGridComponent, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent } from 'igniteui-angular';
 import { DATA, ALIGNMENTS, RACES, CLASSES } from './data';
+import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-grid-select-sample',
     styleUrls: ['./grid-select-sample.component.scss'],
-    templateUrl: './grid-select-sample.component.html'
+    templateUrl: './grid-select-sample.component.html',
+    imports: [IgxGridComponent, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, FormsModule, IgxFocusDirective, NgFor, IgxSelectItemComponent]
 })
 export class GridSelectComponent implements OnInit {
 

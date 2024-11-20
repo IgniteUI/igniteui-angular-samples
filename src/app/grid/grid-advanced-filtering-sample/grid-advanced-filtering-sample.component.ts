@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { IgxGridComponent, IgxGridToolbarComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-grid-advanced-filtering-sample',
     styleUrls: ['./grid-advanced-filtering-sample.component.scss'],
-    templateUrl: 'grid-advanced-filtering-sample.component.html'
+    templateUrl: 'grid-advanced-filtering-sample.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxColumnComponent, IgxCellTemplateDirective, NgIf]
 })
 export class GridAdvancedFilteringSampleComponent implements OnInit {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

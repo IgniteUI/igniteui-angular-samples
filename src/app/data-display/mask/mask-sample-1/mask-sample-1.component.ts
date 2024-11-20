@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxMaskDirective, IgxTextSelectionDirective, IgxSnackbarComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-mask-sample-1',
     styleUrls: ['./mask-sample-1.component.scss'],
-    templateUrl: './mask-sample-1.component.html'
+    templateUrl: './mask-sample-1.component.html',
+    imports: [IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxMaskDirective, IgxTextSelectionDirective, IgxSnackbarComponent]
 })
 
 export class MaskSample1Component {

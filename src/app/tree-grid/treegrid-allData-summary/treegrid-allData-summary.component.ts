@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent  } from 'igniteui-angular';
+import { IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 class PTOSummary {
 
@@ -39,9 +40,10 @@ class PTOSummary {
 }
 
 @Component({
-  selector: 'app-treegrid-all-data-summary-sample',
-  styleUrls: ['./treegrid-allData-summary.component.scss'],
-  templateUrl: './treegrid-allData-summary.component.html'
+    selector: 'app-treegrid-all-data-summary-sample',
+    styleUrls: ['./treegrid-allData-summary.component.scss'],
+    templateUrl: './treegrid-allData-summary.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridAllDataSummaryComponent implements OnInit {
 

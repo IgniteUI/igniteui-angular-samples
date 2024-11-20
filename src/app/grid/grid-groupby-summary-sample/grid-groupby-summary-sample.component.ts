@@ -1,17 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import {
-    DefaultSortingStrategy,
-    GridSelectionMode,
-    GridSummaryCalculationMode,
-    GridSummaryPosition,
-    IgxGridComponent,
-    IgxNumberSummaryOperand,
-    IgxSummaryOperand,
-    IgxSummaryResult,
-    ISortingExpression,
-    SortingDirection
-} from 'igniteui-angular';
+import { DefaultSortingStrategy, GridSelectionMode, GridSummaryCalculationMode, GridSummaryPosition, IgxGridComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, ISortingExpression, SortingDirection, IgxButtonGroupComponent, IgxSwitchComponent, IgxColumnComponent } from 'igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 class AvgSummary {
 
@@ -43,7 +33,8 @@ class SumSummary {
 @Component({
     selector: 'app-grid-groupby-summary-sample',
     styleUrls: ['./grid-groupby-summary-sample.component.scss'],
-    templateUrl: './grid-groupby-summary-sample.component.html'
+    templateUrl: './grid-groupby-summary-sample.component.html',
+    imports: [IgxButtonGroupComponent, IgxSwitchComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class GridGroupBySummarySampleComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

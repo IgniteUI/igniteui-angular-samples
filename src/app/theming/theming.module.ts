@@ -24,17 +24,6 @@ import { ShadowsSample2Component } from './shadows/shadows-sample-2/shadows-samp
 import { ThemingRoutingModule } from './theming-routing.module';
 
 @NgModule({
-    declarations: [
-        DefaultThemeSampleComponent,
-        DisplayDensityComponent,
-        ShadowsSampleComponent,
-        ShadowsSample2Component,
-        CardSampleShadowComponent,
-        AnimationsSampleComponent,
-        AnimationsSample2Component,
-        AngularMaterialComponent,
-        BootstrapComponent
-    ],
     exports: [
         DefaultThemeSampleComponent,
         DisplayDensityComponent,
@@ -78,7 +67,16 @@ import { ThemingRoutingModule } from './theming-routing.module';
         MatStepperModule,
         MatToolbarModule,
         IgxIconButtonDirective,
-        NgbModule
+        NgbModule,
+        DefaultThemeSampleComponent,
+        DisplayDensityComponent,
+        ShadowsSampleComponent,
+        ShadowsSample2Component,
+        CardSampleShadowComponent,
+        AnimationsSampleComponent,
+        AnimationsSample2Component,
+        AngularMaterialComponent,
+        BootstrapComponent
     ]
 })
 export class ThemingModule {}

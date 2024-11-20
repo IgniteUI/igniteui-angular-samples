@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { GridSelectionMode } from 'igniteui-angular';
+import { GridSelectionMode, IgxTreeGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { Data } from './data';
+import { IgxPreventDocumentScrollDirective } from '../../../../../../src/app/directives/prevent-scroll.directive';
+import { IgxSparklineCoreModule } from 'igniteui-angular-charts';
 
 @Component({
     selector: 'app-tree-grid-primaryforeignkey-sample',
     styleUrls: ['./tree-grid-primaryforeignkey-sample.component.scss'],
-    templateUrl: './tree-grid-primaryforeignkey-sample.component.html'
+    templateUrl: './tree-grid-primaryforeignkey-sample.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxSparklineCoreModule]
 })
 export class TreeGridPrimaryforeignkeySampleComponent implements OnInit {
     public data: any[];

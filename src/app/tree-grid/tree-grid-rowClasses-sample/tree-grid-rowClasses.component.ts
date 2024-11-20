@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent, RowType } from 'igniteui-angular';
+import { IgxTreeGridComponent, RowType, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-tree-grid-row-classes-sample',
     styleUrls: ['tree-grid-rowClasses.component.scss'],
-    templateUrl: 'tree-grid-rowClasses.component.html'
+    templateUrl: 'tree-grid-rowClasses.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, NgFor, IgxColumnComponent]
 })
 export class TreeGridRowClassesComponent implements OnInit {
 

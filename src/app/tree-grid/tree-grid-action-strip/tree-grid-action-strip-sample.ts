@@ -1,11 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent, RowType, Transaction } from 'igniteui-angular';
+import { IgxTreeGridComponent, RowType, Transaction, IgxColumnComponent, IgxActionStripComponent, IgxGridPinningActionsComponent, IgxIconButtonDirective, IgxRippleDirective, IgxIconComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-tree-grid-row-action-strip',
     styleUrls: [`tree-grid-action-strip-sample.scss`],
-    templateUrl: 'tree-grid-action-strip-sample.html'
+    templateUrl: 'tree-grid-action-strip-sample.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxActionStripComponent, IgxGridPinningActionsComponent, NgIf, IgxIconButtonDirective, IgxRippleDirective, IgxIconComponent]
 })
 export class TreeGridActionStripSampleComponent {
     @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true }) public grid: IgxTreeGridComponent;

@@ -1,12 +1,14 @@
-import { DatePipe } from '@angular/common';
+import { DatePipe, NgIf } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxDateSummaryOperand, IgxSummaryResult, IgxSummaryOperand, IgxTreeGridComponent } from 'igniteui-angular';
+import { IgxDateSummaryOperand, IgxSummaryResult, IgxSummaryOperand, IgxTreeGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tree-grid-summary-formatter',
     styleUrls: ['./tree-grid-summary-formatter.component.scss'],
-    templateUrl: 'tree-grid-summary-formatter.component.html'
+    templateUrl: 'tree-grid-summary-formatter.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, NgIf]
 })
 
 export class TreeGridSummaryFormatterComponent implements OnInit {

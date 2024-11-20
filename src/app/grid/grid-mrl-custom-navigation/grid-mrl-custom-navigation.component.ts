@@ -1,12 +1,14 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { IgxGridComponent, IgxColumnLayoutComponent, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../data/company-data';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: 'app-grid-mrl-custom-navigation-sample',
     styleUrls: ['./grid-mrl-custom-navigation.component.scss'],
-    templateUrl: './grid-mrl-custom-navigation.component.html'
+    templateUrl: './grid-mrl-custom-navigation.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnLayoutComponent, IgxColumnComponent]
 })
 export class GridMRLCustomNavigationComponent {
     @ViewChild(IgxGridComponent, { read: IgxGridComponent, static : true })

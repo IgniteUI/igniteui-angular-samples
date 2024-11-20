@@ -1,9 +1,12 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { IgxButtonGroupComponent, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective, IgxIconComponent, IgxHintDirective } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-display-density',
     styleUrls: ['./display-density.component.scss'],
-    templateUrl: './display-density.component.html'
+    templateUrl: './display-density.component.html',
+    imports: [IgxButtonGroupComponent, IgxInputGroupComponent, FormsModule, IgxInputDirective, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective, IgxIconComponent, IgxHintDirective]
 })
 
 export class DisplayDensityComponent implements OnInit {

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxExpansionPanelComponent, IgxIconService } from 'igniteui-angular';
+import { IgxExpansionPanelComponent, IgxIconService, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxIconComponent, IgxSliderComponent, IgxExpansionPanelBodyComponent, IgxListComponent, IgxListItemComponent, IgxDividerDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, IgxCardMediaDirective, IgxAvatarComponent, IgxChipComponent } from 'igniteui-angular';
 
 import {
     Card,
@@ -8,11 +8,13 @@ import {
     weatherDetailsFactory,
     weatherListFactory
 } from '../card.blueprint';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-card-sample-4',
     styleUrls: ['./card-sample-4.component.scss'],
-    templateUrl: './card-sample-4.component.html'
+    templateUrl: './card-sample-4.component.html',
+    imports: [IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxChipComponent, IgxIconComponent, IgxSliderComponent, IgxExpansionPanelComponent, IgxExpansionPanelBodyComponent, IgxListComponent, NgFor, IgxListItemComponent, IgxDividerDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, IgxCardMediaDirective, IgxAvatarComponent]
 })
 export class CardSample4Component implements OnInit {
     @ViewChild(IgxExpansionPanelComponent, { static: true })

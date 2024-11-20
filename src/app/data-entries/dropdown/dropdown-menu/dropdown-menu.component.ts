@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import {
-    ConnectedPositioningStrategy, HorizontalAlignment,
-    ISelectionEventArgs, NoOpScrollStrategy, VerticalAlignment
-} from 'igniteui-angular';
+import { ConnectedPositioningStrategy, HorizontalAlignment, ISelectionEventArgs, NoOpScrollStrategy, VerticalAlignment, IgxNavbarComponent, IgxIconButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxDropDownComponent, IgxDropDownItemComponent, IgxLabelDirective, IgxOverlayOutletDirective } from 'igniteui-angular';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-dropdown-menu',
     styleUrls: ['./dropdown-menu.component.scss'],
-    templateUrl: './dropdown-menu.component.html'
+    templateUrl: './dropdown-menu.component.html',
+    imports: [IgxNavbarComponent, IgxIconButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxDropDownComponent, NgFor, IgxDropDownItemComponent, NgIf, IgxLabelDirective, IgxOverlayOutletDirective]
 })
 export class DropdownMenuComponent {
     public items: { text: string }[] =
