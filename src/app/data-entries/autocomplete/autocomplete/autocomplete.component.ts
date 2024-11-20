@@ -18,7 +18,9 @@ export class AutocompleteBasicComponent {
     }
 }
 
-@Pipe({ name: 'startsWith' })
+@Pipe({
+    name: 'startsWith'
+})
 export class AutocompletePipeStartsWith implements PipeTransform {
     public transform(collection: any[], term = '') {
         return collection.filter((item) => item.toString().toLowerCase().startsWith(term.toString().toLowerCase()));

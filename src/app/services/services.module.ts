@@ -37,7 +37,6 @@ import { TransactionBaseComponent } from './transaction/transaction-base/transac
     imports: [
         CommonModule,
         FormsModule,
-        IgxPreventDocumentScrollModule,
         ServicesRoutingModule,
         IgxGridModule,
         IgxTimePickerModule,
@@ -45,7 +44,19 @@ import { TransactionBaseComponent } from './transaction/transaction-base/transac
         IgxListModule,
         IgxCardModule,
         IgxSelectModule,
-        IgxIconModule
+        IgxIconModule,
+        CsvExportComponent,
+        CsvExportSample1Component,
+        TreeGridCsvExportSample1Component,
+        ExcelExportComponent,
+        ExcelExportSample1Component,
+        TreeGridExcelExportSample1Component,
+        LocalizationSample1Component,
+        LocalizationSample2Component,
+        LocalizationSample3Component,
+        LocalizationAllResourcesComponent,
+        TransactionBaseComponent,
+        TransactionBasePipe
     ],
     providers: [
         IgxTransactionService
