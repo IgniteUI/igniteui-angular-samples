@@ -31,79 +31,70 @@
     </div>
 </mat-toolbar>
 
-<div igxLayout>
-    <div class="card-wrapper">
-        <igx-card elevated>
-            <igx-card-media height="180px">
-                <img src="assets/images/card/media/card-image1.png">
-            </igx-card-media>
-            <igx-card-header>
-                <igx-avatar src="assets/images/avatar/11.jpg" shape="circle" size="small"></igx-avatar>
-                <h5 igxCardHeaderTitle>Salaries</h5>
-                <h5 igxCardHeaderSubtitle>$ 346,692.72</h5>
-            </igx-card-header>
-
-            <igx-card-actions [vertical]="false">
-                <button mat-stroked-button color="accent" (click)="openDialog()">More</button>
-                <igx-dialog #dialog title="Confirmation" message="Do you want to download the full report?">
-                    <div igxDialogActions>
-                        <button igxButton="flat" (click)="dialog.close()">Cancel</button>
-                        <button igxButton="flat" (click)="dialog.close()">OK</button>
-                    </div>
-                </igx-dialog>
-                <igx-icon class="success" igxEnd>trending_up</igx-icon>
-            </igx-card-actions>
-        </igx-card>
-    </div>
-    <div class="card-wrapper">
-        <igx-card elevated>
-            <igx-card-media height="180px">
-                <img src="assets/images/card/media/card-image2.png">
-            </igx-card-media>
-            <igx-card-header>
-                <igx-avatar src="assets/images/avatar/8.jpg" shape="circle" size="small"></igx-avatar>
-                <h5 igxCardHeaderTitle>Suppliers</h5>
-                <h5 igxCardHeaderSubtitle>$ 122,745.832</h5>
-            </igx-card-header>
-
-            <igx-card-actions [vertical]="false">
-                <button mat-stroked-button color="accent" (click)="openDialog()">More</button>
-                <igx-dialog #dialog title="Confirmation" message="Do you want to download the full report?">
-                    <div igxDialogActions>
-                        <button igxButton="flat" (click)="dialog.close()">Cancel</button>
-                        <button igxButton="flat" (click)="dialog.close()">OK</button>
-                    </div>
-                </igx-dialog>
-                <igx-icon class="warning" igxEnd>error</igx-icon>
-                <igx-icon class="error" igxEnd>trending_down</igx-icon>
-            </igx-card-actions>
-        </igx-card>
-    </div>
-    <div class="card-wrapper">
-        <igx-card elevated>
-            <igx-card-media height="180px">
-                <img src="assets/images/card/media/card-image3.png">
-            </igx-card-media>
-            <igx-card-header>
-                <igx-avatar src="assets/images/avatar/9.jpg" shape="circle" size="small"></igx-avatar>
-                <h5 igxCardHeaderTitle>Ads & Marketing</h5>
-                <h5 igxCardHeaderSubtitle>$ 42,646.43</h5>
-            </igx-card-header>
-
-            <igx-card-actions [vertical]="false">
-                <div igxOverlayOutlet>
-                    <button mat-stroked-button color="accent" (click)="openDialog()">More</button>
-                    <igx-dialog #dialog title="Confirmation" message="Do you want to download the full report?">
-                        <div igxDialogActions>
-                            <button igxButton="flat" (click)="dialog.close()">Cancel</button>
-                            <button igxButton="flat" (click)="dialog.close()">OK</button>
-                        </div>
-                    </igx-dialog>
+<div class="cards-container">
+    <igx-card elevated>
+        <igx-card-media height="180px">
+            <img src="assets/images/card/media/card-image1.png">
+        </igx-card-media>
+        <igx-card-header>
+            <igx-avatar src="assets/images/avatar/11.jpg" shape="circle" size="small"></igx-avatar>
+            <h5 igxCardHeaderTitle>Salaries</h5>
+            <h5 igxCardHeaderSubtitle>$ 346,692.72</h5>
+        </igx-card-header>
+        <igx-card-actions [vertical]="false">
+            <button mat-stroked-button color="accent" (click)="openDialog()">More</button>
+            <igx-dialog #dialog title="Confirmation" message="Do you want to download the full report?">
+                <div igxDialogActions>
+                    <button igxButton="flat" (click)="dialog.close()">Cancel</button>
+                    <button igxButton="flat" (click)="dialog.close()">OK</button>
                 </div>
-                <igx-icon class="success" igxEnd>trending_up</igx-icon>
-            </igx-card-actions>
-        </igx-card>
-    </div>
+            </igx-dialog>
+            <igx-icon class="success" igxEnd>trending_up</igx-icon>
+        </igx-card-actions>
+    </igx-card>
+    <igx-card elevated>
+        <igx-card-media height="180px">
+            <img src="assets/images/card/media/card-image2.png">
+        </igx-card-media>
+        <igx-card-header>
+            <igx-avatar src="assets/images/avatar/8.jpg" shape="circle" size="small"></igx-avatar>
+            <h5 igxCardHeaderTitle>Suppliers</h5>
+            <h5 igxCardHeaderSubtitle>$ 122,745.832</h5>
+        </igx-card-header>
+        <igx-card-actions [vertical]="false">
+            <button mat-stroked-button color="accent" (click)="openDialog()">More</button>
+            <igx-dialog #dialog title="Confirmation" message="Do you want to download the full report?">
+                <div igxDialogActions>
+                    <button igxButton="flat" (click)="dialog.close()">Cancel</button>
+                    <button igxButton="flat" (click)="dialog.close()">OK</button>
+                </div>
+            </igx-dialog>
+            <igx-icon class="warning" igxEnd>error</igx-icon>
+            <igx-icon class="error" igxEnd>trending_down</igx-icon>
+        </igx-card-actions>
+    </igx-card>
+    <igx-card elevated>
+        <igx-card-media height="180px">
+            <img src="assets/images/card/media/card-image3.png">
+        </igx-card-media>
+        <igx-card-header>
+            <igx-avatar src="assets/images/avatar/9.jpg" shape="circle" size="small"></igx-avatar>
+            <h5 igxCardHeaderTitle>Ads & Marketing</h5>
+            <h5 igxCardHeaderSubtitle>$ 42,646.43</h5>
+        </igx-card-header>
+        <igx-card-actions [vertical]="false">
+            <div igxOverlayOutlet>
+                <button mat-stroked-button color="accent" (click)="openDialog()">More</button>
+                <igx-dialog #dialog title="Confirmation" message="Do you want to download the full report?">
+                    <div igxDialogActions>
+                        <button igxButton="flat" (click)="dialog.close()">Cancel</button>
+                        <button igxButton="flat" (click)="dialog.close()">OK</button>
+                    </div>
+                </igx-dialog>
+            </div>
+            <igx-icon class="success" igxEnd>trending_up</igx-icon>
+        </igx-card-actions>
+    </igx-card>
 </div>
 <igx-expansion-panel class="card-panel">
     <igx-expansion-panel-header>

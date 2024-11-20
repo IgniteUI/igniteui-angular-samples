@@ -20,6 +20,9 @@ interface IListItem {
     styleUrls: ['./kanban-sample.component.scss']
 })
 export class KanbanSampleComponent implements OnInit {
+    @ViewChild('toDo', { read: ElementRef }) public toDo: ElementRef;
+    @ViewChild('inProgress', { read: ElementRef }) public inProgress: ElementRef;
+    @ViewChild('done', { read: ElementRef }) public done: ElementRef;
     public toDoList: IListItem[];
     public inProgressList: IListItem[];
     public doneList: IListItem[];

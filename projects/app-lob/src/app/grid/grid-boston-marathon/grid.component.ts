@@ -197,8 +197,12 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     public filter(target: EventTarget): void {
-        this.grid1.filter('CountryName', (target as HTMLInputElement).value, IgxStringFilteringOperand.instance().condition('contains'), true);
-        this.grid1.markForCheck();
+        const value = (target as HTMLInputElement).value;
+        if (value) {
+            this.grid1.filter('CountryName', value, IgxStringFilteringOperand.instance().condition('contains'));
+        } else {
+            this.grid1.clearFilter('CountryName');
+        }
     }
 
     public showAlert(element: ElementRef): void {
