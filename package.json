@@ -19,7 +19,7 @@
     "build:app-lob": "gulp generate-live-editing --appDv=true && gulp overwrite-package-json && ng build app-lob --configuration production && gulp prerenderPages",
     "build:app-crm": "gulp generate-live-editing --appCrm=true && gulp overwrite-package-json && ng build app-crm --configuration production",
     "test": "ng test",
-    "lint": "node node_modules/@angular/cli/bin/ng lint",
+    "lint": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng lint",
     "lint:app-lob": "node node_modules/@angular/cli/bin/ng lint app-lob",
     "start:app-crm": "node node_modules/@angular/cli/bin/ng serve app-crm -o",
     "start:app-crm:live-editing": "gulp generate-live-editing --appCrm=true && node node_modules/@angular/cli/bin/ng serve app-crm -o",
