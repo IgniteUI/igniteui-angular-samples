@@ -8,14 +8,18 @@ import { DockSlotComponent } from './dock-slot/dock-slot.component';
 import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxDividerDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { NgFor, NgIf, NgClass, DecimalPipe, TitleCasePipe, CurrencyPipe } from '@angular/common';
 
-@Pipe({ name: 'filterType' })
+@Pipe({
+    name: 'filterType'
+})
 export class FilterTypePipe implements PipeTransform {
     public transform(collection: CHART_TYPE[], type: string): CHART_TYPE[] {
         return collection.filter(types => types.indexOf(type) !== -1 && types.indexOf(type, type.length - 1) === -1);
     }
 }
 
-@Pipe({ name: 'hastDuplicateLayouts' })
+@Pipe({
+    name: 'hastDuplicateLayouts'
+})
 export class HastDuplicateLayouts implements PipeTransform {
     public transform(contentId: string, layout: IgcDockManagerLayout, chartTypes) {
         const count = this.hasDuplicateContentID(layout, contentId, 0);

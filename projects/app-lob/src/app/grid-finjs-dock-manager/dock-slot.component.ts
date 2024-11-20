@@ -2,9 +2,10 @@
 import { AfterViewInit, Component, Directive, EventEmitter, HostBinding, Input, OnInit, OnDestroy, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { Subject } from 'rxjs';
 
-@Directive({ 
+@Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: '[gridHost]' })
+    selector: '[gridHost]'
+})
 export class GridHostDirective {
     constructor(public viewContainerRef: ViewContainerRef) { }
 }

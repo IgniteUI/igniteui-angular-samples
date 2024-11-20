@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
     selector: 'app-root',
     styleUrls: ['./app.component.scss'],
     templateUrl: './app.component.html',
-    standalone: true,
     imports: [AppRoutingModule]
 })
 export class AppComponent implements OnInit {

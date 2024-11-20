@@ -121,7 +121,9 @@ interface IIconsGroup {
     icons: IMXIcon[];
 }
 
-@Pipe({ name: 'categoriesFilter' })
+@Pipe({
+    name: 'categoriesFilter'
+})
 export class CategoriesFilterPipe implements PipeTransform {
     sortIcons(acc: IIconsGroup[], icon: IMXIcon): IIconsGroup[] {
         for (const category of icon.categories) {
@@ -158,7 +160,9 @@ export class CategoriesFilterPipe implements PipeTransform {
     }
 }
 
-@Pipe({ name: 'filterByName' })
+@Pipe({
+    name: 'filterByName'
+})
 export class FilterByName implements PipeTransform {
     transform(icons: IMXIcon[], keyword: string): IMXIcon[] {
         return icons.filter((icon) => {

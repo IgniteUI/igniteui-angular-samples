@@ -13,7 +13,9 @@ export class MaskSample4Component {
     public inputFormat = new InputFormatPipe();
 }
 
-@Pipe({ name: 'displayFormat' })
+@Pipe({
+    name: 'displayFormat'
+})
 export class DisplayFormatPipe implements PipeTransform {
     public transform(value: any): string {
         if (value !== null && value !== undefined) {
@@ -26,7 +28,9 @@ export class DisplayFormatPipe implements PipeTransform {
     }
 }
 
-@Pipe({ name: 'inputFormat' })
+@Pipe({
+    name: 'inputFormat'
+})
 export class InputFormatPipe implements PipeTransform {
     public transform(value: any): string {
         if (value !== null && value !== undefined) {

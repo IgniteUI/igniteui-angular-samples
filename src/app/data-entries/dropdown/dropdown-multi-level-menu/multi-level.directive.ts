@@ -11,7 +11,9 @@ import {
   VerticalAlignment
 } from 'igniteui-angular';
 
-@Directive({ selector: '[multiLevel]' })
+@Directive({
+    selector: '[multiLevel]'
+})
 export class MultiLevelDirective implements AfterViewInit, OnDestroy {
   @Input()
   public innerDropdown!: IgxDropDownComponent;

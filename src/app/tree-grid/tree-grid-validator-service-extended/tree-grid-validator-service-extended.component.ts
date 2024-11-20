@@ -18,7 +18,6 @@ export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
     selector: '[phoneFormat]',
     providers: [{ provide: NG_VALIDATORS, useExisting: TGridPhoneFormatDirective, multi: true }]
 })
-
 export class TGridPhoneFormatDirective extends Validators {
     @Input('phoneFormat')
     public phoneFormatString = '';

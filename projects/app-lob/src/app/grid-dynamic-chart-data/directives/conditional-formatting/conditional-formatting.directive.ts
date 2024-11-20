@@ -21,9 +21,10 @@ export interface IFormatColors {
     text: string;
 }
 
-@Directive({ 
+@Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: '[conditionalFormatting]' })
+    selector: '[conditionalFormatting]'
+})
 export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy {
     @Input()
     public formatter: string | ConditionalFormattingType;

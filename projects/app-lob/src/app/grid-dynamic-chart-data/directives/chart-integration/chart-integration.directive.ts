@@ -17,15 +17,17 @@ export interface IDeterminedChartTypesArgs {
     chartsForCreation: CHART_TYPE[];
 }
 
-@Directive({ 
+@Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: '[chartHost]' })
+    selector: '[chartHost]'
+})
 export class ChartHostDirective {
     constructor(public viewContainerRef: ViewContainerRef) { }
 }
-@Directive({ 
+@Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: '[chartIntegration]' })
+    selector: '[chartIntegration]'
+})
 export class ChartIntegrationDirective {
     @Input()
     public get chartData() {
