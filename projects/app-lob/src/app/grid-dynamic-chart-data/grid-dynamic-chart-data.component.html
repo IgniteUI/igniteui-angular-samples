@@ -1,9 +1,9 @@
 
-<app-page-header title="Data Analysis Grid">
+<!-- <app-page-header title="Data Analysis Grid">
     Excel like data analysis showcase application with Ignite UI Angular components and extras
-</app-page-header>
+</app-page-header> -->
 <div class="grid-chart-contextmenu-wrapper">
-    <igx-grid #grid igxChartIntegration igxConditionalFormatting igxContextMenu primaryKey='id' [data]="data">
+    <igx-grid #grid igxChartIntegration igxConditionalFormatting igxContextMenu primaryKey="id" [data]="data">
         <igx-column field="id" [hidden]="true"></igx-column>
         <igx-column field="category" [editable]="true" [width]="'110px'"></igx-column>
         <igx-column field="type" [editable]="true" [filterable]="false" [width]="'130px'"></igx-column>

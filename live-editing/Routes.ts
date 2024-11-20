@@ -46,8 +46,6 @@ import { GridFinJSDockManagerModule } from '../projects/app-lob/src/app/grid-fin
 import { PaginationModule } from '../src/app/pagination/pagination.module';
 import * as PaginatorRouting from '../src/app/pagination/pagination-routing.module';
 import { PivotGridsModule } from '../src/app/pivot-grid/pivot-grids.module';
-import { PivotGridsRoutingModule } from '../src/app/pivot-grid/pivot-grids-routing.module';
-import { AppModule } from '../projects/app-crm/src/app/app.module';
 
 export const MODULE_ROUTES = [
     {
@@ -157,13 +155,5 @@ export const DV_MODULE_ROUTES = [
         module: GridFinJSDockManagerModule,
         path: 'grid-finjs-dock-manager',
         routes: GridFinJSDockManagerRoutingModule.gridFinJsDockManagerGridRoutes
-    }
-];
-
-export const CRM_MODULE_ROUTES = [
-    {
-        module: AppModule,
-        path: 'grid-crm',
-        routes: GridCRMRouting.gridCrmRoutes
     }
 ];
