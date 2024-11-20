@@ -26,22 +26,22 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
             component: 'GridCRMComponent',
             additionalFiles: [
                 '/src/app/directives/prevent-scroll.directive.ts',
-                '/projects/app-crm/src/_app-layout.scss', 
+                '/projects/app-crm/src/_app-layout.scss',
                 '/projects/app-crm/src/_variables.scss',
                 '/projects/app-crm/src/app/grid-crm/data.ts'
             ],
             additionalDependencies: [],
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    'IgxRippleModule', 
+                    'IgxRippleModule',
                     'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
                     'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                    'IgxPreventDocumentScrollModule', 'GridCRMComponent', 'RouterTestingModule'
+                    'IgxPreventDocumentScrollModule', 'GridCRMComponent'
                 ],
                 ngDeclarations: ['GridCRMComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxRippleModule', 
+                ngImports: ['IgxPreventDocumentScrollModule', 'IgxRippleModule',
                 'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
-                'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule', 'RouterTestingModule']
+                'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule']
             })
         }));
 

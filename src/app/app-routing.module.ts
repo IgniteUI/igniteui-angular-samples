@@ -29,7 +29,7 @@ export const samplesRoutes: Routes = [
     },
     {
         data: ['NotificationsModule'],
-        loadChildren: () => import('./notifications/notifications.module').then(m => m.NotificationsModule),
+        loadChildren: () => import('./notifications/notifications.routes').then(m => m.notificationsRoutes),
         path: 'notifications'
     },
     {

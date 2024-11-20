@@ -13,7 +13,7 @@ export const samplesRoutes: Routes = [
     },
     {
         data: ['GridFinjsModule'],
-        loadChildren: () => import('./grid-finjs/grid-finjs.module').then(m => m.GridFinjsModule),
+        loadChildren: () => import('./grid-finjs/grid-finjs.routes').then(m => m.gridfinjsRoutes),
         path: 'grid-finjs'
     },
     {

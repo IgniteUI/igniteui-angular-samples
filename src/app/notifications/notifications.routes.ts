@@ -106,13 +106,3 @@ export const notificationsRoutes: Routes = [
         path: 'toast-style'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(notificationsRoutes)
-    ]
-})
-export class NotificationsRoutingModule { }
