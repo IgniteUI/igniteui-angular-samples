@@ -1,10 +1,7 @@
 import { ApplicationConfig, Provider } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideClientHydration } from '@angular/platform-browser';
 
-import { routes } from './app.routes';
 
-const providers: Provider = [
-  provideRouter(routes)
-];
 
-export const appConfig: ApplicationConfig = { providers };
+export const appConfig: ApplicationConfig = { providers: [provideClientHydration(), provideAnimations()] };

@@ -1,0 +1,39 @@
+<p>
+  IgxTreeGrid with optional features like sorting, filtering, row editing, etc.<br />
+    You can read more about configuring the igx-grid component in the
+    <a href="https://github.com/IgniteUI/igniteui-angular/blob/master/projects/igniteui-angular/src/lib/grids/tree-grid/README.md"
+      target="_blank">README</a> or the
+    <a href="https://www.infragistics.com/products/ignite-ui-angular/angular/components/treegrid/tree-grid"
+      target="_blank">official documentation</a>.
+</p>
+
+
+<igx-tree-grid #treeGrid [data]="localData" primaryKey="ID" childDataKey="Employees" width="990px" height="700px"
+rowSelection="multipleCascade">
+<igx-paginator></igx-paginator>
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-title>Actions</igx-grid-toolbar-title>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
+                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+                <igx-grid-toolbar-exporter>
+                    <span excelText>Export to Excel</span>
+                    <span csvText>Export to CSV</span>
+                </igx-grid-toolbar-exporter>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
+  <igx-column field="Name" width="300px" >
+    <ng-template igxCell let-cell="cell">
+      <div class="flex-container">
+        <igx-avatar [src]="cell.row.data.Picture" shape="rounded" size="small"></igx-avatar>
+        {{ cell.row.data.Name }}
+      </div>
+    </ng-template>
+  </igx-column>
+  <igx-column field="JobTitle" dataType="string" minWidth="200px" ></igx-column>
+  <igx-column field="Department" dataType="string" minWidth="200px" ></igx-column>
+  <igx-column field="Location" dataType="string"></igx-column>
+  <igx-column field="Contacts" dataType="string" minWidth="200px" ></igx-column>
+  <igx-column field="HireDate" header="Hire Date" dataType="date" minWidth="100px"></igx-column>
+  <igx-column field="GrossSalary" dataType="number" minWidth="100px" ></igx-column>
+</igx-tree-grid>
