@@ -10,15 +10,15 @@ section {
 .header {
     background: url("../../assets/images/home/hero-background.png") #09f no-repeat fixed;
     background-size: contain;
-    min-height: 350px;    
+    min-height: 350px;
     display: flex;
     flex-direction: column;
-    justify-content: center;    
+    justify-content: center;
 }
 
 .title {
     color: white;
-    font-size: 32px;    
+    font-size: 32px;
     vertical-align: middle;
     margin-top: 20px;
     max-width: 300px;
@@ -45,7 +45,7 @@ section {
     justify-content: center;
     align-content: center;
     min-width: 350px;
-    min-height: 200px;    
+    min-height: 200px;
 }
 
 .videoWrapper {
@@ -58,7 +58,7 @@ section {
 }
 
 .videoInstall {
-    background: url("../../assets/images/home/installing-CLI.gif");    
+    background: url("../../assets/images/home/installing-CLI.gif");
 }
 
 .videoBuild {
@@ -77,7 +77,7 @@ section {
 
 .code-snippet {
     width: fit-content;
-    background-color: #EDEFF1;    
+    background-color: #EDEFF1;
     justify-content: left;
     text-align: left;
     padding: 4px 6px 4px 6px;
@@ -85,7 +85,7 @@ section {
 
 .bannerArea {
     margin-top: 100px;
-    background: #014CB1;    
+    background: #014CB1;
     display: flex;
     height: 320px;
     min-width: 800px;
