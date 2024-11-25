@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IgxInputGroupComponent, IgxInputDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxRippleDirective, IgxLabelDirective } from 'igniteui-angular';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-radio-group-sample',
     styleUrls: ['./radio-group-sample.component.scss'],
-    templateUrl: './radio-group-sample.component.html'
+    templateUrl: './radio-group-sample.component.html',
+    imports: [FormsModule, ReactiveFormsModule, IgxInputGroupComponent, IgxInputDirective, IgxRadioGroupDirective, NgFor, IgxRadioComponent, IgxButtonDirective, IgxRippleDirective, NgIf, IgxLabelDirective]
 })
 export class RadioGroupSampleComponent {
     public fruitsForm: FormGroup;

@@ -1,11 +1,13 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IGroupingExpression, IgxTreeGridComponent } from 'igniteui-angular';
+import { DefaultSortingStrategy, IGroupingExpression, IgxTreeGridComponent, IgxTreeGridGroupByAreaComponent, IgxColumnComponent } from 'igniteui-angular';
 import { TreeGridGroupingLoadOnDemandService, TreeGridGroupingParameters } from './remoteService';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tree-grid-group-by-load-on-demand-sample',
     styleUrls: ['./tree-grid-group-by-load-on-demand-sample.component.scss'],
-    templateUrl: './tree-grid-group-by-load-on-demand-sample.component.html'
+    templateUrl: './tree-grid-group-by-load-on-demand-sample.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxTreeGridGroupByAreaComponent, IgxColumnComponent]
 })
 
 export class TreeGridGroupByLoadOnDemandComponent implements OnInit {

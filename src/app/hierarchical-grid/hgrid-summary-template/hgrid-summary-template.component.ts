@@ -1,9 +1,8 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import {
-    IgxNumberSummaryOperand,
-    IgxSummaryResult
-} from 'igniteui-angular';
+import { IgxNumberSummaryOperand, IgxSummaryResult, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxSwitchComponent, IgxButtonGroupComponent, IgxHierarchicalGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxSummaryTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
+import { FormsModule } from '@angular/forms';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 class CustomNumberSummary {
 
@@ -46,7 +45,8 @@ class GrammySummary {
 @Component({
     selector: 'app-hierarchical-grid-all-data-summary',
     styleUrls: ['./hgrid-summary-template.component.scss'],
-    templateUrl: 'hgrid-summary-template.component.html'
+    templateUrl: 'hgrid-summary-template.component.html',
+    imports: [IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxSwitchComponent, IgxButtonGroupComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxSummaryTemplateDirective, IgxRowIslandComponent]
 })
 
 export class HGridSummaryTemplateComponent implements OnInit {

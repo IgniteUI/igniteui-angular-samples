@@ -1,15 +1,17 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
-import { IgxIconService, IgxTreeNodeComponent } from 'igniteui-angular';
+import { IgxIconService, IgxTreeNodeComponent, IgxTreeComponent, IgxIconComponent, IgxTooltipTargetDirective, IgxTooltipDirective } from 'igniteui-angular';
 import { icons } from './services/svgIcons';
 import { DATA, NodeData, REMOTE_ROOT, SelectableNodeData } from '../../../data/tree-file-data';
 import { DataService } from './services/data.service';
 import { Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
+import { NgFor, NgTemplateOutlet, NgIf } from '@angular/common';
 @Component({
     selector: 'app-tree-advanced-sample',
     templateUrl: './tree-advanced-sample.component.html',
     styleUrls: ['./tree-advanced-sample.component.scss'],
-    providers: [DataService]
+    providers: [DataService],
+    imports: [IgxTreeComponent, NgFor, IgxTreeNodeComponent, NgTemplateOutlet, IgxIconComponent, NgIf, IgxTooltipTargetDirective, IgxTooltipDirective]
 })
 export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
     public family = 'tree-icons';

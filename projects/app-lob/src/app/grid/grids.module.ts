@@ -21,15 +21,13 @@ import { IgxBarSeriesModule, IgxBollingerBandsOverlayModule, IgxCategoryChartMod
     IgxPieChartModule, IgxRingSeriesModule, IgxSparklineCoreModule, IgxSparklineModule
 } from 'igniteui-angular-charts';
 import { GridsDVRoutingModule } from './grids-routing.module';
-import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directives/prevent-scroll.directive';
+import { IgxPreventDocumentScrollDirective } from '../../../../../src/app/directives/prevent-scroll.directive';
 
-@NgModule({ declarations: [
-        GridComponent,
-        GridMasterDetailSampleComponent
-    ], imports: [CommonModule,
+@NgModule({
+    imports: [
+        CommonModule,
         FormsModule,
         GridsDVRoutingModule,
-        IgxPreventDocumentScrollModule,
         IgxAvatarModule,
         IgxBadgeModule,
         IgxBannerModule,
@@ -77,5 +75,11 @@ import { IgxPreventDocumentScrollModule } from '../../../../../src/app/directive
         IgxDividerModule,
         IgxDataChartScatterModule,
         IgxBarSeriesModule,
-        IgxCategoryChartModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        IgxCategoryChartModule,
+        IgxPreventDocumentScrollDirective,
+        GridComponent,
+        GridMasterDetailSampleComponent
+    ],
+    providers: [provideHttpClient(withInterceptorsFromDi())]
+})
 export class GridsDVModule { }

@@ -16,8 +16,15 @@ import { PivotGridAboutComponent } from './pivot-state-persistence/about.compone
 import { PivotGridNoopPersistenceSampleComponent } from './pivot-grid-noop-persistence/pivot-grid-noop-persistence-sample.component';
 import { PivotGridLayoutComponent } from './pivot-layout/pivot-layout.component';
 
-@NgModule({ declarations: [
-        PivotGridBasicSampleComponent,
+@NgModule({
+    imports: [CommonModule,
+        FormsModule,
+        PivotGridsRoutingModule,
+        IgxButtonModule,
+        IgxPivotGridModule,
+        IgxCheckboxModule,
+        IgxSwitchModule,
+        IgxIconModule, PivotGridBasicSampleComponent,
         PivotDataSelectorSampleComponent,
         PivotExportComponent,
         PivotFeaturesComponent,
@@ -25,13 +32,5 @@ import { PivotGridLayoutComponent } from './pivot-layout/pivot-layout.component'
         PivotGridNoopSampleComponent,
         PivotGridAboutComponent,
         PivotGridNoopPersistenceSampleComponent,
-        PivotGridLayoutComponent
-    ], imports: [CommonModule,
-        FormsModule,
-        PivotGridsRoutingModule,
-        IgxButtonModule,
-        IgxPivotGridModule,
-        IgxCheckboxModule,
-        IgxSwitchModule,
-        IgxIconModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        PivotGridLayoutComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class PivotGridsModule { }

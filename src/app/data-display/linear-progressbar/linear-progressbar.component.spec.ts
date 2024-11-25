@@ -8,8 +8,8 @@ describe('LinearProgressbarComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LinearProgressbarComponent ]
-    })
+    imports: [LinearProgressbarComponent]
+})
     .compileComponents();
   }));
 

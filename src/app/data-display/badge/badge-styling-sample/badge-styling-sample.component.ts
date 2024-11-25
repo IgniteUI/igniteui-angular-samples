@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { Member } from '../model/member.model';
+import { IgxListComponent, IgxListItemComponent, IgxAvatarComponent, IgxBadgeComponent } from 'igniteui-angular';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-badge-styling-sample',
-  styleUrls: ['./badge-styling-sample.component.scss'],
-  templateUrl: './badge-styling-sample.component.html'
+    selector: 'app-badge-styling-sample',
+    styleUrls: ['./badge-styling-sample.component.scss'],
+    templateUrl: './badge-styling-sample.component.html',
+    imports: [IgxListComponent, IgxListItemComponent, NgFor, IgxAvatarComponent, IgxBadgeComponent]
 })
 export class BadgeStylingSampleComponent {
   public members: Member[] = [

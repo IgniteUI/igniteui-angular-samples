@@ -84,7 +84,7 @@ const createPrependerdLobStructure = (cb) => {
 
 const addPrerenderedLobPages = (cb) => {
     const { metadata } = require('./projects/app-lob/src/app/metadata');
-    const indexFilePath = path.resolve(__dirname, './', 'dist/app-lob', 'index.html');
+    const indexFilePath = path.resolve(__dirname, './', 'dist/app-lob/browser', 'index.html');
 
     // read in the index.html file
     fs.readFile(indexFilePath, 'utf8', function (err, data) {
@@ -236,10 +236,6 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
 const processDemosWithScss = () => processApp("src", "angular-demos", "data");
 const processDemosLobWithScss = () => processApp("projects/app-lob/src", "angular-demos-lob", "services");
 const processDemosCrmWithScss = () => processApp("projects/app-crm/src", "angular-demos-grid-crm");
-
-let repositoryfyAngularDemos;
-let repositoryfyAngularDemosLob;
-let repositoryfyAngularDemosCrm;
 
 const copyGitHooks = async (cb) => {
 

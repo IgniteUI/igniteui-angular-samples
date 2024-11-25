@@ -1,17 +1,16 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
-import { GridPagingMode, IGridEditDoneEventArgs, IgxGridComponent, IgxGridRow,
-    IgxSnackbarComponent,
-    IRowDataEventArgs,
-    NoopFilteringStrategy, NoopSortingStrategy } from 'igniteui-angular';
+import { GridPagingMode, IGridEditDoneEventArgs, IgxGridComponent, IgxGridRow, IgxSnackbarComponent, IRowDataEventArgs, NoopFilteringStrategy, NoopSortingStrategy, IgxPaginatorComponent, IgxColumnComponent, IgxActionStripComponent, IgxGridEditingActionsComponent } from 'igniteui-angular';
 import { Observable, Subject } from 'rxjs';
 import { Invoice } from '../../data/invoiceData';
 import { CRUDService } from '../../services/crud.service';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     providers: [CRUDService],
     selector: 'app-grid-crud-sample',
     styleUrls: ['./crud-sample.component.scss'],
-    templateUrl: './crud-sample.component.html'
+    templateUrl: './crud-sample.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxActionStripComponent, IgxGridEditingActionsComponent, IgxSnackbarComponent]
 })
 export class CRUDSampleComponent implements OnInit, OnDestroy {
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;

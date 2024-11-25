@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { DATA } from '../../data/nwindData';
+import { IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxButtonDirective, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf, CurrencyPipe } from '@angular/common';
 
 @Component({
     selector: 'app-grid-export-visualization',
     templateUrl: './grid-export-visualization.component.html',
-    styleUrls: ['./grid-export-visualization.component.scss']
+    styleUrls: ['./grid-export-visualization.component.scss'],
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxButtonDirective, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective, NgIf, CurrencyPipe]
 })
 export class GridExportVisualizationComponent {
     public localData = [];

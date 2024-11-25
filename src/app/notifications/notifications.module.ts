@@ -24,7 +24,23 @@ import { ToastSample5Component } from './toast/toast-sample-5/toast-sample-5.com
 import { ToastStyleComponent } from './toast/toast-style/toast-style.component';
 
 @NgModule({
-    declarations: [
+    imports: [
+        CommonModule,
+        FormsModule,
+        NotificationsRoutingModule,
+        IgxAvatarModule,
+        IgxBannerModule,
+        IgxButtonModule,
+        IgxCardModule,
+        IgxIconModule,
+        IgxInputGroupModule,
+        IgxListModule,
+        IgxNavbarModule,
+        IgxRippleModule,
+        IgxSnackbarModule,
+        IgxSwitchModule,
+        IgxToastModule,
+        IgxIconButtonDirective,
         BannerSample1Component,
         BannerSample2Component,
         BannerSample3Component,
@@ -42,24 +58,6 @@ import { ToastStyleComponent } from './toast/toast-style/toast-style.component';
         ToastSample4Component,
         ToastSample5Component,
         ToastStyleComponent
-    ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        NotificationsRoutingModule,
-        IgxAvatarModule,
-        IgxBannerModule,
-        IgxButtonModule,
-        IgxCardModule,
-        IgxIconModule,
-        IgxInputGroupModule,
-        IgxListModule,
-        IgxNavbarModule,
-        IgxRippleModule,
-        IgxSnackbarModule,
-        IgxSwitchModule,
-        IgxToastModule,
-        IgxIconButtonDirective
     ]
 })
 export class NotificationsModule {}

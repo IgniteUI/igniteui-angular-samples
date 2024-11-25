@@ -1,11 +1,12 @@
 import { Component, ElementRef, Inject, OnDestroy, ViewChild, ViewContainerRef } from '@angular/core';
-import { AutoPositionStrategy, IgxOverlayService } from 'igniteui-angular';
+import { AutoPositionStrategy, IgxOverlayService, IgxButtonDirective } from 'igniteui-angular';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 @Component({
     selector: 'app-overlay-sample',
     styleUrls: ['./overlay-position-sample-3.component.scss'],
     templateUrl: './overlay-position-sample-3.component.html',
-    providers: [IgxOverlayService]
+    providers: [IgxOverlayService],
+    imports: [IgxButtonDirective]
 })
 export class OverlayPositionSample3Component implements OnDestroy {
     @ViewChild('buttonElement', { static: true })

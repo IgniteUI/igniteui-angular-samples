@@ -1,11 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent, RowType, Transaction } from 'igniteui-angular';
+import { IgxGridComponent, RowType, Transaction, IgxColumnComponent, IgxActionStripComponent, IgxGridPinningActionsComponent, IgxIconButtonDirective, IgxRippleDirective, IgxIconComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-grid-row-action-strip',
     styleUrls: [`grid-action-strip-sample.scss`],
-    templateUrl: 'grid-action-strip-sample.html'
+    templateUrl: 'grid-action-strip-sample.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxActionStripComponent, IgxGridPinningActionsComponent, NgIf, IgxIconButtonDirective, IgxRippleDirective, IgxIconComponent]
 })
 export class GridActionStripSampleComponent {
     @ViewChild('grid', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;

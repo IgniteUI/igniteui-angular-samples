@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ColumnPinningPosition, IgxColumnComponent, IgxTreeGridComponent, IPinningConfig } from 'igniteui-angular';
+import { ColumnPinningPosition, IgxColumnComponent, IgxTreeGridComponent, IPinningConfig, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
@@ -7,7 +7,8 @@ import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detaile
     providers: [],
     selector: 'app-tree-grid-sample',
     styleUrls: ['tree-grid-right-pinning.component.scss'],
-    templateUrl: 'tree-grid-right-pinning.component.html'
+    templateUrl: 'tree-grid-right-pinning.component.html',
+    imports: [IgxTreeGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent]
 })
 
 export class TreeGridRightPinningSampleComponent implements OnInit {

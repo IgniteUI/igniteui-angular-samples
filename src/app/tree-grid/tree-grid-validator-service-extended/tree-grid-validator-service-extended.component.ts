@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, Directive, Input, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { IgxTreeGridComponent } from 'igniteui-angular';
+import { IgxTreeGridComponent, IgxColumnComponent, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective, IgxColumnMaxValidatorDirective, IgxCellValidationErrorDirective, IgxButtonDirective } from 'igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgTemplateOutlet, NgIf } from '@angular/common';
 
 export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
@@ -16,7 +18,6 @@ export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
     selector: '[phoneFormat]',
     providers: [{ provide: NG_VALIDATORS, useExisting: TGridPhoneFormatDirective, multi: true }]
 })
-
 export class TGridPhoneFormatDirective extends Validators {
     @Input('phoneFormat')
     public phoneFormatString = '';
@@ -30,7 +31,8 @@ export class TGridPhoneFormatDirective extends Validators {
 @Component({
     selector: 'app-tree-grid-validator-service-extended-component',
     styleUrls: ['tree-grid-validator-service-extended.component.scss'],
-    templateUrl: 'tree-grid-validator-service-extended.component.html'
+    templateUrl: 'tree-grid-validator-service-extended.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective, IgxColumnMaxValidatorDirective, TGridPhoneFormatDirective, IgxCellValidationErrorDirective, NgTemplateOutlet, NgIf, IgxButtonDirective]
 })
 export class TreeGridValidatorServiceExtendedComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

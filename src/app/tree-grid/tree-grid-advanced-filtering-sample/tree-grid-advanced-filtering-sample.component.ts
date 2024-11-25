@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent} from 'igniteui-angular';
+import { IgxTreeGridComponent, IgxGridToolbarComponent, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tree-grid-advanced-filtering-sample',
     styleUrls: ['./tree-grid-advanced-filtering-sample.component.scss'],
-    templateUrl: './tree-grid-advanced-filtering-sample.component.html'
+    templateUrl: './tree-grid-advanced-filtering-sample.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxColumnComponent]
 })
 export class TreeGridAdvancedFilteringSampleComponent implements OnInit {
 

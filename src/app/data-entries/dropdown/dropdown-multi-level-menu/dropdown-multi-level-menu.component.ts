@@ -1,11 +1,5 @@
 import { AfterViewInit, Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import {
-  IgxDropDownComponent,
-  OverlaySettings,
-  ConnectedPositioningStrategy,
-  HorizontalAlignment,
-  VerticalAlignment
-} from 'igniteui-angular';
+import { IgxDropDownComponent, OverlaySettings, ConnectedPositioningStrategy, HorizontalAlignment, VerticalAlignment, IgxNavbarComponent, IgxNavbarTitleDirective, IgxButtonDirective, IgxToggleActionDirective, IgxIconComponent, IgxDropDownItemComponent, IgxSuffixDirective } from 'igniteui-angular';
 import {
   CROSS_PLATFORM_DATA,
   DESIGN_TO_CODE_DATA,
@@ -15,12 +9,15 @@ import {
   TESTING_TOOLS_DATA
 } from './data';
 import { MultiLevelService } from './multi-level.service';
+import { MultiLevelDirective } from './multi-level.directive';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-dropdown-multi-level-menu',
-  templateUrl: './dropdown-multi-level-menu.component.html',
-  styleUrls: ['./dropdown-multi-level-menu.component.scss'],
-  providers: [MultiLevelService]
+    selector: 'app-dropdown-multi-level-menu',
+    templateUrl: './dropdown-multi-level-menu.component.html',
+    styleUrls: ['./dropdown-multi-level-menu.component.scss'],
+    providers: [MultiLevelService],
+    imports: [IgxNavbarComponent, IgxNavbarTitleDirective, IgxButtonDirective, IgxToggleActionDirective, IgxIconComponent, IgxDropDownComponent, IgxDropDownItemComponent, MultiLevelDirective, IgxSuffixDirective, NgFor]
 })
 export class DropdownMultiLevelMenuComponent implements AfterViewInit {
   @ViewChildren(IgxDropDownComponent, { read: IgxDropDownComponent })

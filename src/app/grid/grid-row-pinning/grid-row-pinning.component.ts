@@ -1,15 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    IgxGridComponent,
-    IPinningConfig,
-    RowPinningPosition
-} from 'igniteui-angular';
+import { IgxGridComponent, IPinningConfig, RowPinningPosition, IgxSwitchComponent, IgxColumnComponent, IgxActionStripComponent, IgxGridPinningActionsComponent, IgxGridEditingActionsComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-grid-row-pinning',
     templateUrl: 'grid-row-pinning.component.html',
-    styleUrls: ['./grid-row-pinning.component.scss']
+    styleUrls: ['./grid-row-pinning.component.scss'],
+    imports: [IgxSwitchComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxActionStripComponent, IgxGridPinningActionsComponent, IgxGridEditingActionsComponent]
 })
 
 export class GridRowPinningSampleComponent implements OnInit {

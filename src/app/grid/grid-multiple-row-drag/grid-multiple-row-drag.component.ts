@@ -1,11 +1,13 @@
 
 import { Component, ViewChild } from '@angular/core';
-import { GridSelectionMode, IDropDroppedEventArgs, IgxGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IDropDroppedEventArgs, IgxGridComponent, IgxColumnComponent, IgxRowDragGhostDirective, IgxIconComponent, IgxDropDirective } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 @Component({
     selector: 'app-grid-multiple-row-drag',
     styleUrls: ['./grid-multiple-row-drag.component.scss'],
-    templateUrl: './grid-multiple-row-drag.component.html'
+    templateUrl: './grid-multiple-row-drag.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowDragGhostDirective, IgxIconComponent, IgxDropDirective]
 })
 export class GridMultipleRowDragComponent  {
     @ViewChild('sourceGrid', { read: IgxGridComponent, static: true })

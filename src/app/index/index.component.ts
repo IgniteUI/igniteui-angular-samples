@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { NavigationStart, Route, Router } from '@angular/router';
-import { IgxNavigationDrawerComponent, IgxTreeComponent } from 'igniteui-angular';
+import { NavigationStart, Route, Router, RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
+import { IgxNavigationDrawerComponent, IgxTreeComponent, IgxLayoutDirective, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxInputDirective, IgxSuffixDirective, IgxTreeNodeComponent, IgxTreeNodeLinkDirective, IgxFlexDirective, IgxNavbarComponent } from 'igniteui-angular';
 import { fromEvent, Subscription } from 'rxjs';
 import { filter, map, debounceTime } from 'rxjs/operators';
 import { dataDisplayRoutesData } from '../data-display/data-display-routes-data';
@@ -18,11 +18,14 @@ import { schedulingRoutesData } from '../scheduling/scheduling-routes-data';
 import { servicesRoutesData } from '../services/services-routes-data';
 import { themingRoutesData } from '../theming/theming-routes-data';
 import { treeGridRoutesData } from '../tree-grid/tree-grid-routes-data';
+import { FormsModule } from '@angular/forms';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-index',
     styleUrls: ['./index.component.scss'],
-    templateUrl: './index.component.html'
+    templateUrl: './index.component.html',
+    imports: [IgxLayoutDirective, IgxNavigationDrawerComponent, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, RouterLinkActive, RouterLink, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, FormsModule, IgxInputDirective, NgIf, IgxSuffixDirective, IgxTreeComponent, NgFor, IgxTreeNodeComponent, IgxTreeNodeLinkDirective, IgxFlexDirective, IgxNavbarComponent, RouterOutlet]
 })
 export class IndexComponent implements OnInit, AfterViewInit {
 

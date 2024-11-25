@@ -4,12 +4,14 @@ import {
     IgxComboComponent, IgxToastComponent, VerticalAlignment
 } from 'igniteui-angular';
 import { RemoteNWindService } from '../../../services/remoteNwind.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     providers: [RemoteNWindService],
     selector: 'app-combo-remote',
     styleUrls: ['./combo-remote.component.scss'],
-    templateUrl: './combo-remote.component.html'
+    templateUrl: './combo-remote.component.html',
+    imports: [IgxComboComponent, IgxToastComponent, AsyncPipe]
 })
 export class ComboRemoteComponent implements OnInit, AfterViewInit {
     @ViewChild('loadingToast')

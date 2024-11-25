@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxSnackbarComponent } from 'igniteui-angular';
+import { IgxSnackbarComponent, IgxListComponent, IgxListItemComponent, IgxRippleDirective, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListActionDirective, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-snackbar-sample-4',
-  styleUrls: ['./snackbar-sample-4.component.scss'],
-  templateUrl: './snackbar-sample-4.component.html'
+    selector: 'app-snackbar-sample-4',
+    styleUrls: ['./snackbar-sample-4.component.scss'],
+    templateUrl: './snackbar-sample-4.component.html',
+    imports: [IgxListComponent, IgxListItemComponent, NgFor, IgxRippleDirective, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListActionDirective, IgxIconButtonDirective, IgxIconComponent, IgxSnackbarComponent]
 })
 export class SnackbarSample4Component implements OnInit {
   @ViewChild(IgxSnackbarComponent, { static: true })

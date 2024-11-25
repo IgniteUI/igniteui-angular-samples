@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { IButtonGroupEventArgs } from 'igniteui-angular';
+import { IButtonGroupEventArgs, IgxButtonGroupComponent, IgxStepperComponent, IgxStepActiveIndicatorDirective, IgxIconComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxButtonDirective, IgxStepSubtitleDirective, IgxRadioGroupDirective, IgxRadioComponent } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-stepper-linear-sample',
     styleUrls: ['./stepper-linear-sample.component.scss'],
-    templateUrl: './stepper-linear-sample.component.html'
+    templateUrl: './stepper-linear-sample.component.html',
+    imports: [IgxButtonGroupComponent, IgxStepperComponent, IgxStepActiveIndicatorDirective, IgxIconComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, FormsModule, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxButtonDirective, IgxStepSubtitleDirective, IgxRadioGroupDirective, NgFor, IgxRadioComponent]
 })
 export class StepperLinearSampleComponent {
     public linear = false;

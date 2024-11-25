@@ -1,11 +1,15 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxTreeGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxTreeGridComponent, IgxGridToolbarComponent, IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxColumnComponent } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-tree-grid-column-selection',
     templateUrl: './tree-grid-column-selection.component.html',
-    styleUrls: ['./tree-grid-column-selection.component.scss']
+    styleUrls: ['./tree-grid-column-selection.component.scss'],
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxSelectComponent, FormsModule, IgxLabelDirective, IgxSelectItemComponent, NgFor, IgxColumnComponent]
 })
 export class TreeGridColumnSelectionComponent implements OnInit, AfterViewInit {
     @ViewChild(IgxTreeGridComponent)

@@ -1,10 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { SortingDirection } from 'igniteui-angular';
+import { SortingDirection, IgxIconComponent } from 'igniteui-angular';
+import { NgStyle } from '@angular/common';
 
 @Component({
-  selector: 'app-hgrid-contextmenu',
-  styleUrls: ['./hgrid-contextmenu.component.scss'],
-  templateUrl: './hgrid-contextmenu.component.html'
+    selector: 'app-hgrid-contextmenu',
+    styleUrls: ['./hgrid-contextmenu.component.scss'],
+    templateUrl: './hgrid-contextmenu.component.html',
+    imports: [NgStyle, IgxIconComponent]
 })
 export class HGridContextmenuComponent {
 

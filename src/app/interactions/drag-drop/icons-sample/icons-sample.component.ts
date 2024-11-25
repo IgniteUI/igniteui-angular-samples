@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { IgxDragDirective, IgxDropDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-icons-sample',
     styleUrls: ['./icons-sample.component.scss'],
-    templateUrl: './icons-sample.component.html'
+    templateUrl: './icons-sample.component.html',
+    imports: [NgFor, IgxDragDirective, IgxDropDirective]
 })
 
 export class IconsSampleComponent {

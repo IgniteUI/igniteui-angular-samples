@@ -1,14 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
-import {
-    ConnectedPositioningStrategy,
-    IgxDropDownComponent,
-    IgxInputGroupComponent
-} from 'igniteui-angular';
+import { ConnectedPositioningStrategy, IgxDropDownComponent, IgxInputGroupComponent, IgxToggleActionDirective, IgxInputDirective, IgxDropDownItemNavigationDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective, IgxIconComponent, IgxDropDownItemComponent } from 'igniteui-angular';
+import { NgFor } from '@angular/common';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-sample-4',
     styleUrls: ['./dropdown-sample-4.component.scss'],
-    templateUrl: './dropdown-sample-4.component.html'
+    templateUrl: './dropdown-sample-4.component.html',
+    imports: [IgxInputGroupComponent, IgxToggleActionDirective, IgxInputDirective, IgxDropDownItemNavigationDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective, IgxIconComponent, IgxDropDownComponent, NgFor, IgxDropDownItemComponent]
 })
 export class DropDownSample4Component {
     @ViewChild(IgxDropDownComponent, { static: true }) public igxDropDown: IgxDropDownComponent;

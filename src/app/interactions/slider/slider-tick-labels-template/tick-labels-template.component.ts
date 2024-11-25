@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { IgxSliderComponent, IgxTickLabelTemplateDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-tick-labels-template',
     styleUrls: ['./tick-labels-template.component.scss'],
-    templateUrl: './tick-labels-template.component.html'
+    templateUrl: './tick-labels-template.component.html',
+    imports: [IgxSliderComponent, IgxTickLabelTemplateDirective]
 })
 export class TickLabelsTemplateComponent {
     public tickLabel(value, primary, index) {

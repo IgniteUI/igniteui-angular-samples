@@ -1,16 +1,13 @@
 import { useAnimation } from '@angular/animations';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CloseScrollStrategy,
-    GlobalPositionStrategy,
-    IgxDialogComponent,
-    IgxOverlayOutletDirective,
-    PositionSettings } from 'igniteui-angular';
+import { CloseScrollStrategy, GlobalPositionStrategy, IgxDialogComponent, IgxOverlayOutletDirective, PositionSettings, IgxButtonDirective, IgxRippleDirective, IgxDialogTitleDirective, IgxIconComponent, IgxDialogActionsDirective } from 'igniteui-angular';
 import { slideInBottom, slideOutTop } from 'igniteui-angular/animations';
 
 @Component({
     selector: 'app-dialog-styling-sample',
     styleUrls: ['./dialog-styling-sample.component.scss'],
-    templateUrl: './dialog-styling-sample.component.html'
+    templateUrl: './dialog-styling-sample.component.html',
+    imports: [IgxOverlayOutletDirective, IgxButtonDirective, IgxRippleDirective, IgxDialogComponent, IgxDialogTitleDirective, IgxIconComponent, IgxDialogActionsDirective]
 })
 export class DialogStylingSampleComponent implements OnInit {
 

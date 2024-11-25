@@ -6,9 +6,8 @@ import { IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxIconButtonDire
 import { PaginatorRoutingModule } from './pagination-routing.module';
 import { PaginationSampleComponent } from './paginator/pagination-sample.component';
 
-@NgModule({ declarations: [
-        PaginationSampleComponent
-    ], imports: [CommonModule,
+@NgModule({
+    imports: [CommonModule,
         FormsModule,
         PaginatorRoutingModule,
         IgxCardModule,
@@ -17,5 +16,5 @@ import { PaginationSampleComponent } from './paginator/pagination-sample.compone
         IgxButtonGroupModule,
         IgxIconModule,
         IgxRippleModule,
-        IgxIconButtonDirective], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        IgxIconButtonDirective, PaginationSampleComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class PaginationModule { }

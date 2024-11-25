@@ -1,10 +1,12 @@
 /* eslint-disable max-len */
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { IgxChartIntegrationDirective, OPTIONS_TYPE, CHART_TYPE } from 'igniteui-angular-extras';
+import { AfterViewInit, ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { IgxChartIntegrationDirective, OPTIONS_TYPE, CHART_TYPE, IgxExtrasModule } from 'igniteui-angular-extras';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { FinancialData } from '../../data/financialData';
 import { FloatingPanesService } from '../../services/floating-panes.service';
 import { DockSlotComponent } from './dock-slot/dock-slot.component';
+import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxDividerDirective, IgxBadgeComponent } from 'igniteui-angular';
+import { NgFor, NgIf, NgClass, DecimalPipe, TitleCasePipe, CurrencyPipe } from '@angular/common';
 
 @Pipe({
     name: 'filterType'
@@ -50,7 +52,9 @@ export class HastDuplicateLayouts implements PipeTransform {
     selector: 'app-data-analysis-dock-manager',
     templateUrl: './data-analysis-dock-manager.component.html',
     styleUrls: ['./data-analysis-dock-manager.component.scss'],
-    providers: [FloatingPanesService]
+    providers: [FloatingPanesService],
+    imports: [IgxGridComponent, IgxExtrasModule, IgxBadgeComponent, IgxColumnComponent, IgxCellTemplateDirective, NgFor, NgIf, NgClass, IgxDividerDirective, DockSlotComponent, DecimalPipe, TitleCasePipe, CurrencyPipe, FilterTypePipe, HastDuplicateLayouts],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
 
