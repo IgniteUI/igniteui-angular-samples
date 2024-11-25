@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee, EMPLOYEE_DATA } from './localData';
-import { IgxTreeGridComponent, IgxColumnComponent, IgxAvatarComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxGridToolbarExporterComponent, IgxCellTemplateDirective } from '@infragistics/igniteui-angular';
+import { IgxTreeGridComponent, IgxColumnComponent, IgxAvatarComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxGridToolbarExporterComponent, IgxCellTemplateDirective, IgxIconComponent, IgxIconService, IgxIconModule } from '@infragistics/igniteui-angular';
 
 
 @Component({
@@ -18,7 +18,8 @@ import { IgxTreeGridComponent, IgxColumnComponent, IgxAvatarComponent, IgxPagina
     IgxGridToolbarPinningComponent,
     IgxGridToolbarTitleComponent,
     IgxGridToolbarExporterComponent,
-    IgxCellTemplateDirective]
+    IgxCellTemplateDirective,
+    IgxIconModule]
 })
 export class TreeGrid1Component implements OnInit {
   public localData: Employee[] = [];
