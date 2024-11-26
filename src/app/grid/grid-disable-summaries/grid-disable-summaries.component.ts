@@ -50,15 +50,15 @@ class DiscontinuedSummary {
                     .map((r) => r[fieldName])
             )
         });
-        
+
         return result;
     }
 }
 
 @Component({
     selector: "app-grid-summary-sample",
-    styleUrls: ["./grid-disabled-summaies.component.scss"],
-    templateUrl: "grid-disabled-summaies.component.html",
+    styleUrls: ["./grid-disable-summaries.component.scss"],
+    templateUrl: "grid-disable-summaries.component.html",
     imports: [
         IgxPreventDocumentScrollDirective,
         IgxGridComponent,
@@ -66,7 +66,7 @@ class DiscontinuedSummary {
         IgxButtonDirective
     ]
 })
-export class GridDisabledSummariesComponent implements OnInit{
+export class GridDisableSummariesComponent implements OnInit{
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
 
     public data: any[];
