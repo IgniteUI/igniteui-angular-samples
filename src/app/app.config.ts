@@ -4,49 +4,21 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule, HammerModule } from "@angular/platform-browser";
 import { provideAnimations } from "@angular/platform-browser/animations";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import {
-    IgxAutocompleteModule,
-    IgxRippleModule,
-    IgxNavbarModule,
-    IgxNavigationDrawerModule,
-    IgxIconModule,
-    IgxLayoutModule,
-    IgxInputGroupModule,
-    IgxTreeModule,
-    IgxButtonModule,
-    IgxButtonGroupModule,
-    IgxSliderModule,
-    IgxDateRangePickerModule,
-    IgxDropDownModule
-} from "igniteui-angular";
 import { provideRouter } from "@angular/router";
-import { appRoutes } from "./app.routes";
+import { AppRoutes } from "./app.routes";
 import { OverflowService } from "./services/overflow.service";
 
-export const appConfig: ApplicationConfig = {
+export const AppConfig: ApplicationConfig = {
     providers: [
         importProvidersFrom(
-            IgxAutocompleteModule,
-            IgxRippleModule,
-            IgxNavbarModule,
-            IgxNavigationDrawerModule,
-            IgxIconModule,
-            IgxLayoutModule,
-            IgxInputGroupModule,
-            IgxTreeModule,
             BrowserModule,
-            IgxButtonModule,
-            IgxButtonGroupModule,
             FormsModule,
             HammerModule,
-            NgbModule,
-            IgxSliderModule,
-            IgxDateRangePickerModule,
-            IgxDropDownModule
+            NgbModule
         ),
         provideHttpClient(withInterceptorsFromDi()),
         provideAnimations(),
-        provideRouter(appRoutes),
+        provideRouter(AppRoutes),
         OverflowService
     ]
 };

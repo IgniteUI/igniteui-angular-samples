@@ -1,6 +1,5 @@
 // tslint:disable:no-string-literal
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { DialogSample1Component } from './dialog/dialog-sample-1/dialog-sample-1.component';
 import { DialogSample2Component } from './dialog/dialog-sample-2/dialog-sample-2.component';
 import { DialogSample3Component } from './dialog/dialog-sample-3/dialog-sample-3.component';
