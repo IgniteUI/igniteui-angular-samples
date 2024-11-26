@@ -15,7 +15,7 @@ export const samplesRoutes: Routes = [
     },
     {
         data: ['DataEntriesModule'],
-        loadChildren: () => import('./data-entries/data-entries.module').then(m => m.DataEntriesModule),
+        loadChildren: () => import('./data-entries/data-entries.routes').then(m => m.DataEntriesRoutes),
         path: 'data-entries'
     },
     {
@@ -58,8 +58,6 @@ export const samplesRoutes: Routes = [
         loadChildren: () => import('./services/services.module').then(m => m.ServicesModule),
         path: 'services'
     },
-
-
     {
         data: ['TreeGridModule'],
         loadChildren: () => import('./tree-grid/tree-grid.module').then(m => m.TreeGridModule),

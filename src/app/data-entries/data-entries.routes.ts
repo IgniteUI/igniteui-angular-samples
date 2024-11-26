@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { AutocompleteBasicComponent } from './autocomplete/autocomplete/autocomplete.component';
 import { MovieComponent } from './autocomplete/movie/movie.component';
 import { ButtonGroupSample1Component } from './buttonGroup/button-group-sample-1/button-group-sample-1.component';
@@ -74,7 +73,7 @@ import { SVGIconButtonComponent } from './icon-button/svg-icon-button/svg-icon-b
 import { IconButtonSizeComponent } from './icon-button/icon-button-size/icon-button-size.component';
 import { IconButtonStylingComponent } from './icon-button/icon-button-styling/icon-button-styling.component';
 
-export const dataEntriesRoutes: Routes = [
+export const DataEntriesRoutes: Routes = [
     {
         component: AutocompleteBasicComponent,
         data: dataEntriesRoutesData.autocomplete,
@@ -436,13 +435,3 @@ export const dataEntriesRoutes: Routes = [
         path: 'reactive-form-custom-validation'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(dataEntriesRoutes)
-    ]
-})
-export class DataEntriesRoutingModule { }
