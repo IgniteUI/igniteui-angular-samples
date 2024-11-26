@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { CalendarDaysViewComponent } from './calendar/calendar-days-view/calendar-days-view.component';
 import { CalendarMonthsViewComponent } from './calendar/calendar-months-view/calendar-months-view.component';
 import { CalendarSample1Component } from './calendar/calendar-sample-1/calendar-sample-1.component';
@@ -50,7 +49,7 @@ import { TimePickerSample5Component } from './timepicker/timepicker-sample-5/tim
 import { TimePickerSample6Component } from './timepicker/timepicker-sample-6/timepicker-sample-6.component';
 import { TimePickerStylingComponent } from './timepicker/timepicker-styling/timepicker-styling.component';
 
-export const schedulingRoutes: Routes = [
+export const SchedulingRoutes: Routes = [
     {
         component: CalendarSample1Component,
         data: schedulingRoutesData['calendar-sample-1'],
@@ -277,9 +276,3 @@ export const schedulingRoutes: Routes = [
         path: 'flight-booking'
     }
 ];
-
-@NgModule({
-    exports: [RouterModule],
-    imports: [RouterModule.forChild(schedulingRoutes)]
-})
-export class SchedulingRoutingModule {}

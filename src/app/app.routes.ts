@@ -40,12 +40,12 @@ export const samplesRoutes: Routes = [
     },
     {
         data: ['SchedulingModule'],
-        loadChildren: () => import('./scheduling/scheduling.module').then(m => m.SchedulingModule),
+        loadChildren: () => import('./scheduling/scheduling.routes').then(m => m.SchedulingRoutes),
         path: 'scheduling'
     },
     {
         data: ['MenusModule'],
-        loadChildren: () => import('./menus/menus.module').then(m => m.MenusModule),
+        loadChildren: () => import('./menus/menus.routes').then(m => m.MenusRoutes),
         path: 'menus'
     },
     {

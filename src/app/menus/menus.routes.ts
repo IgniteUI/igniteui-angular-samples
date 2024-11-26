@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import {
     ActionStripParagraphMenuComponent
 } from './action-strip/action-strip-paragraph-menu/action-strip-paragraph-menu.component';
@@ -23,7 +22,7 @@ import { NavDrawerStylingComponent } from './navdrawer/nav-drawer-styling/nav-dr
 import { NavbarCustomTitleComponent } from './navbar/navbar-custom-title/navbar-custom-title.component';
 import { NavDrawerHierarchicalComponent } from './navdrawer/nav-drawer-hierarchical/nav-drawer-hierarchical.component';
 
-export const menusRoutes: Routes = [
+export const MenusRoutes: Routes = [
     {
         component: NavDrawerHierarchicalComponent,
         path: 'navigation-drawer-hierarchical',
@@ -131,13 +130,3 @@ export const menusRoutes: Routes = [
         path: 'action-strip-styling'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(menusRoutes)
-    ]
-})
-export class MenusRoutingModule { }
