@@ -18,7 +18,7 @@ import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing
 export class DVTreeGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         FinancialDataService: '../../../projects/app-lob/src/app/services/financial.service',
-        IgxPreventDocumentScrollModule: '../../../src/app/directives/prevent-scroll.directive',
+        IgxPreventDocumentScrollDirective: '../../../src/app/directives/prevent-scroll.directive',
         SignalRService : '../../../projects/app-lob/src/app/services/signal-r.service'
 };
 
@@ -31,9 +31,9 @@ export class DVTreeGridConfigGenerator implements IConfigGenerator {
                         '/projects/app-lob/src/_app-layout.scss', '/projects/app-lob/src/_variables.scss'],
                     additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core'],
                     appModuleConfig: new AppModuleConfig({
-                        imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridChilddatakeySampleComponent', 'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxSparklineCoreModule', 'IgxSparklineModule'],
+                        imports: ['IgxPreventDocumentScrollDirective', 'IgxTreeGridModule', 'TreeGridChilddatakeySampleComponent', 'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxSparklineCoreModule', 'IgxSparklineModule'],
                         ngDeclarations: ['TreeGridChilddatakeySampleComponent'],
-                        ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxSparklineCoreModule', 'IgxSparklineModule'],
+                        ngImports: ['IgxPreventDocumentScrollDirective', 'IgxTreeGridModule', 'IgxSparklineCoreModule', 'IgxSparklineModule'],
                         ngProviders: ['IgxExcelExporterService', 'IgxCsvExporterService']
                     }),
                     component: 'TreeGridChilddatakeySampleComponent',
@@ -46,9 +46,9 @@ export class DVTreeGridConfigGenerator implements IConfigGenerator {
                 '/projects/app-lob/src/_app-layout.scss', '/projects/app-lob/src/_variables.scss'],
             additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'TreeGridPrimaryforeignkeySampleComponent', 'IgxSparklineCoreModule', 'IgxSparklineModule'],
+                imports: ['IgxPreventDocumentScrollDirective', 'IgxTreeGridModule', 'TreeGridPrimaryforeignkeySampleComponent', 'IgxSparklineCoreModule', 'IgxSparklineModule'],
                 ngDeclarations: ['TreeGridPrimaryforeignkeySampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxSparklineCoreModule', 'IgxSparklineModule']
+                ngImports: ['IgxPreventDocumentScrollDirective', 'IgxTreeGridModule', 'IgxSparklineCoreModule', 'IgxSparklineModule']
             }),
             component: 'TreeGridPrimaryforeignkeySampleComponent',
             shortenComponentPathBy: '/tree-grid/'
@@ -60,11 +60,11 @@ export class DVTreeGridConfigGenerator implements IConfigGenerator {
                 '/projects/app-lob/src/app/data/financialData.ts', '/projects/app-lob/src/app/services/signal-r.service.ts',
                 '/projects/app-lob/src/_app-layout.scss', '/projects/app-lob/src/_variables.scss'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
+                imports: ['IgxPreventDocumentScrollDirective', 'IgxTreeGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxExcelExporterService', 'IgxSwitchModule', 'IgxRippleModule', 'TreeGridFinJSComponent',
                     'FinancialDataService', 'HttpClientModule', 'SignalRService'],
                 ngDeclarations: ['TreeGridFinJSComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxTreeGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
+                ngImports: ['IgxPreventDocumentScrollDirective', 'IgxTreeGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule', 'HttpClientModule'],
                 ngProviders: ['FinancialDataService', 'IgxExcelExporterService', 'SignalRService']
             }),

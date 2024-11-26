@@ -12,7 +12,7 @@ import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing
 export class ExportExcelConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         PasteHandler: '../../src/app/grid/grid-paste/paste-handler.directive',
-        IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive'
+        IgxPreventDocumentScrollDirective: '../../src/app/directives/prevent-scroll.directive'
     };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -45,9 +45,9 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
                 '/src/app/grid/grid-paste/paste-handler.directive.ts'],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxGridModule', 'IgxExcelExporterService', 'GridPasteSampleComponent', 'IgxDropDownComponent',
-                    'IgxDropDownModule', 'IgxButtonModule', 'PasteHandler', 'IgxToggleModule','IgxPreventDocumentScrollModule'],
+                    'IgxDropDownModule', 'IgxButtonModule', 'PasteHandler', 'IgxToggleModule','IgxPreventDocumentScrollDirective'],
                 ngDeclarations: ['GridPasteSampleComponent', 'PasteHandler'],
-                ngImports: ['IgxGridModule', 'IgxDropDownModule', 'IgxButtonModule', 'IgxToggleModule', 'IgxPreventDocumentScrollModule'],
+                ngImports: ['IgxGridModule', 'IgxDropDownModule', 'IgxButtonModule', 'IgxToggleModule', 'IgxPreventDocumentScrollDirective'],
                 ngProviders: ['IgxExcelExporterService']
             }),
             shortenComponentPathBy: '/grid-paste/'
@@ -58,9 +58,9 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/tree-grid/data/orders.ts', '/src/app/directives/prevent-scroll.directive.ts',],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxTreeGridModule', 'IgxExcelExporterService', 'TreeGridExcelExportSample1Component',
-                    'IgxButtonModule', 'IgxPreventDocumentScrollModule'],
+                    'IgxButtonModule', 'IgxPreventDocumentScrollDirective'],
                 ngDeclarations: ['TreeGridExcelExportSample1Component'],
-                ngImports: ['IgxTreeGridModule', 'IgxButtonModule', 'IgxPreventDocumentScrollModule'],
+                ngImports: ['IgxTreeGridModule', 'IgxButtonModule', 'IgxPreventDocumentScrollDirective'],
                 ngProviders: ['IgxExcelExporterService']
             })
         }));
