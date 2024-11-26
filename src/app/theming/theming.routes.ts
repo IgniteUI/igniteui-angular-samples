@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { AnimationsSampleComponent } from './animations/animations-sample-1/animations-sample-1.component';
 import { AnimationsSample2Component } from './animations/animations-sample-2/animations-sample-2.component';
 import { AngularMaterialComponent } from './angular/angular-sample.component';
@@ -11,7 +10,7 @@ import { ShadowsSampleComponent } from './shadows/shadows-sample-1/shadows-sampl
 import { ShadowsSample2Component } from './shadows/shadows-sample-2/shadows-sample-2.component';
 import { themingRoutesData } from './theming-routes-data';
 
-export const themingRoutes: Routes = [
+export const ThemingRoutes: Routes = [
     {
         component: DefaultThemeSampleComponent,
         data: themingRoutesData['default-theme-sample'],
@@ -59,13 +58,3 @@ export const themingRoutes: Routes = [
         path: 'bootstrap-sample'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(themingRoutes)
-    ]
-})
-export class ThemingRoutingModule { }

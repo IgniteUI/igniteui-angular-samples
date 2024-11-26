@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { ComboBindingComponent } from './combo/combo-binding/combo-binding.component';
 import { ComboFeaturesComponent } from './combo/combo-features/combo-features.component';
 import { ComboMainComponent } from './combo/combo-main/combo-main.component';
@@ -28,7 +27,7 @@ import { SimpleComboStylingComponent } from './combo/simple-combo-styling/simple
 import { ListItemSelectionComponent } from './list/list-item-selection/list-item-selection.component';
 import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-combo-remote.component';
 
-export const listsRoutes: Routes = [
+export const ListsRoutes: Routes = [
     {
         component: ComboMainComponent,
         data: listsRoutesData['combo-main'],
@@ -160,13 +159,3 @@ export const listsRoutes: Routes = [
         path: 'tree-advanced-sample'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(listsRoutes)
-    ]
-})
-export class ListsRoutingModule { }

@@ -30,12 +30,12 @@ export const samplesRoutes: Routes = [
     },
     {
         data: ['ListsModule'],
-        loadChildren: () => import('./lists/lists.module').then(m => m.ListsModule),
+        loadChildren: () => import('./lists/lists.routes').then(m => m.ListsRoutes),
         path: 'lists'
     },
     {
         data: ['ThemingModule'],
-        loadChildren: () => import('./theming/theming.module').then(m => m.ThemingModule),
+        loadChildren: () => import('./theming/theming.routes').then(m => m.ThemingRoutes),
         path: 'theming'
     },
     {
