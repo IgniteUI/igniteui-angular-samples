@@ -1,0 +1,103 @@
+<div class="grid__wrapper">
+    <igx-hierarchical-grid
+        [igxPreventDocumentScroll]="true"
+        #hierarchicalGrid
+        [data]="data"
+        [autoGenerate]="false"
+        [height]="'600px'"
+        [width]="'100%'"
+        [rowHeight]="'65px'"
+    >
+        <igx-column field="Artist" [hasSummary]="true"></igx-column>
+        <igx-column
+            field="Photo"
+            [hasSummary]="true"
+            [summaries]="grammySummary"
+            [disabledSummaries]="['singersWithAwards', 'awards']"
+        >
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner_2">
+                    <img [src]="cell.value" class="photo" />
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column
+            field="Debut"
+            [hasSummary]="true"
+            [formatter]="formatter"
+        ></igx-column>
+        <igx-column
+            field="GrammyNominations"
+            header="Grammy Nominations"
+            dataType="number"
+            [hasSummary]="true"
+            [disabledSummaries]="['count', 'sum', 'average']"
+        ></igx-column>
+        <igx-column
+            field="GrammyAwards"
+            header="Grammy Awards"
+            dataType="number"
+            [hasSummary]="true"
+            [disabledSummaries]="['count', 'sum', 'average']"
+        ></igx-column>
+
+        <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false">
+            <igx-column field="Album"></igx-column>
+            <igx-column
+                field="LaunchDate"
+                header="Launch Date"
+                [dataType]="'date'"
+                [hasSummary]="true"
+            ></igx-column>
+            <igx-column
+                field="BillboardReview"
+                header="Billboard Review"
+                dataType="number"
+                [hasSummary]="true"
+            ></igx-column>
+            <igx-column
+                field="USBillboard200"
+                header="US Billboard 200"
+                dataType="number"
+                [hasSummary]="true"
+            ></igx-column>
+            <igx-row-island
+                [height]="null"
+                [key]="'Songs'"
+                [autoGenerate]="false"
+            >
+                <igx-column
+                    field="Number"
+                    header="No."
+                    [hasSummary]="true"
+                ></igx-column>
+                <igx-column field="Title" [hasSummary]="true"></igx-column>
+                <igx-column
+                    field="Released"
+                    dataType="date"
+                    [hasSummary]="true"
+                ></igx-column>
+                <igx-column field="Genre" [hasSummary]="true"></igx-column>
+            </igx-row-island>
+        </igx-row-island>
+
+        <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false">
+            <igx-column field="Tour" [hasSummary]="true"></igx-column>
+            <igx-column
+                field="StartedOn"
+                header="Started on"
+                [hasSummary]="true"
+            ></igx-column>
+            <igx-column field="Location" [hasSummary]="true"></igx-column>
+            <igx-column field="Headliner" [hasSummary]="true"></igx-column>
+        </igx-row-island>
+    </igx-hierarchical-grid>
+    <div class="action__buttons">
+        <button igxButton="contained" (click)="disableDefaultSummaries()">
+            Disable Min and Max summaries for the Grammy Nominations column
+        </button>
+        <button igxButton="contained" (click)="disableCustomSummaries()">
+            Disable Nominated Singers and Total Nominations summaries
+        </button>
+    </div>
+</div>
