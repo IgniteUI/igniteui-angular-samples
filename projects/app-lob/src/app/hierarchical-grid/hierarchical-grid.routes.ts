@@ -1,11 +1,10 @@
 /* eslint-disable max-len */
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { HGridColumnResizingSampleComponent } from './hierarchical-grid-column-resizing/hierarchical-grid-resizing.component';
 import { hierarchicalGridRoutesData } from './hierarchical-grid-routes-data';
 
-export const hierarchicalGridDVRoutes: Routes = [
+export const HierarchicalGridDVRoutes: Routes = [
     {
         component: HGridColumnResizingSampleComponent,
         // eslint-disable-next-line @typescript-eslint/dot-notation
@@ -13,13 +12,3 @@ export const hierarchicalGridDVRoutes: Routes = [
         path: 'hierarchical-grid-resizing'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(hierarchicalGridDVRoutes)
-    ]
-})
-export class HierarchicalGridDVRoutingModule { }

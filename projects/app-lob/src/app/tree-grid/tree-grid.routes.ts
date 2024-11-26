@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import {
     TreeGridChilddatakeySampleComponent
@@ -9,7 +8,7 @@ import {
 } from './tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component';
 import { treeGridRoutesData } from './tree-grid-routes-data';
 
-export const treeGridDVRoutes: Routes = [
+export const TreeGridDVRoutes: Routes = [
     {
         component: TreeGridChilddatakeySampleComponent,
         data: treeGridRoutesData['treegrid-childdatakey'],
@@ -21,13 +20,3 @@ export const treeGridDVRoutes: Routes = [
         path: 'treegrid-primaryforeignkey'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(treeGridDVRoutes)
-    ]
-})
-export class TreeGridDvRoutingModule { }

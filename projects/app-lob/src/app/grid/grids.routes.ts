@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { GridComponent } from './grid-boston-marathon/grid.component';
 import { GridMasterDetailSampleComponent } from './grid-master-detail/grid-master-detail.component';
 import { gridsRoutesData } from './grid-routes-data';
 
-export const gridsDVRoutes: Routes = [
+export const GridsDVRoutes: Routes = [
     {
         component: GridComponent,
         data: gridsRoutesData['grid'],
@@ -16,13 +15,3 @@ export const gridsDVRoutes: Routes = [
         path: 'grid-master-detail'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(gridsDVRoutes)
-    ]
-})
-export class GridsDVRoutingModule { }
