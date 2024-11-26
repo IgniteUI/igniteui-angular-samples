@@ -50,12 +50,12 @@ export const samplesRoutes: Routes = [
     },
     {
         data: ['LayoutsModule'],
-        loadChildren: () => import('./layouts/layouts.module').then(m => m.LayoutsModule),
+        loadChildren: () => import('./layouts/layouts.routes').then(m => m.LayoutsRoutes),
         path: 'layouts'
     },
     {
         data: ['ServicesModule'],
-        loadChildren: () => import('./services/services.module').then(m => m.ServicesModule),
+        loadChildren: () => import('./services/services.routes').then(m => m.ServicesRoutes),
         path: 'services'
     },
 

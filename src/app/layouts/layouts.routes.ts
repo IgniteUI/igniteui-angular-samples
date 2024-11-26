@@ -1,6 +1,5 @@
 // tslint:disable:no-string-literal
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { AvatarSample1Component } from './avatar/avatar-sample-1/avatar-sample-1.component';
 import { AvatarSample2Component } from './avatar/avatar-sample-2/avatar-sample-2.component';
 import { AvatarSample3Component } from './avatar/avatar-sample-3/avatar-sample-3.component';
@@ -77,7 +76,7 @@ import { StepperStylingSampleComponent } from './stepper/stepper-styling-sample/
 import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sample/stepper-overview-sample.component';
 import { StepperSampleReactiveFormsComponent } from './stepper/stepper-sample-reactive-forms/stepper-sample-reactive-forms.component';
 
-export const layoutsRoutes: Routes = [
+export const LayoutsRoutes: Routes = [
     {
         component: AccordionSample1Component,
         data: layoutsRoutesData['accordion-sample-1'],
@@ -380,13 +379,3 @@ export const layoutsRoutes: Routes = [
         path: 'card-styling-sample'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(layoutsRoutes)
-    ]
-})
-export class LayoutsRoutingModule { }

@@ -1,6 +1,5 @@
 // tslint:disable:max-line-length
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { CsvExportSample1Component } from './export-csv/csv-export-sample-1/csv-export-sample-1.component';
 import { TreeGridCsvExportSample1Component } from './export-csv/csv-export-tree-grid-sample/csv-export-tree-grid-sample.component';
 import { CsvExportComponent } from './export-csv/csv-export.component';
@@ -15,7 +14,7 @@ import { servicesRoutesData } from './services-routes-data';
 import { TransactionBaseComponent } from './transaction/transaction-base/transaction-base.component';
 // tslint:enable:max-line-length
 
-export const servicesRoutes: Routes = [
+export const ServicesRoutes: Routes = [
     {
         component: CsvExportComponent,
         data: servicesRoutesData['export-csv'],
@@ -72,13 +71,3 @@ export const servicesRoutes: Routes = [
         path: 'transaction-base'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(servicesRoutes)
-    ]
-})
-export class ServicesRoutingModule { }
