@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SEOService } from '../../../app-lob/src/app/seo.service';
-import { AppRoutingModule } from './app-routing.module';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'app-root',
     styleUrls: ['./app.component.scss'],
     templateUrl: './app.component.html',
-    imports: [AppRoutingModule]
+    imports: [RouterOutlet]
 })
 export class AppComponent implements OnInit {
     private title = 'Business propeller - Angular Data Grid Example';
