@@ -7,7 +7,7 @@ import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing
 
 export class DVHierarchicalGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
-        IgxPreventDocumentScrollModule: '../../../src/app/directives/prevent-scroll.directive',
+        IgxPreventDocumentScrollDirective: '../../../src/app/directives/prevent-scroll.directive',
         RemoteValuesService: '../../../projects/app-lob/src/app/services/remoteValues.service'
     };
 
@@ -19,10 +19,10 @@ export class DVHierarchicalGridConfigGenerator implements IConfigGenerator {
                 '/projects/app-lob/src/_app-layout.scss', '/projects/app-lob/src/_variables.scss', '/src/app/services/remoteValues.service.ts'],
             additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'HGridColumnResizingSampleComponent', 'IgxSparklineCoreModule', 'IgxSparklineModule',
+                imports: ['IgxPreventDocumentScrollDirective', 'IgxHierarchicalGridModule', 'HGridColumnResizingSampleComponent', 'IgxSparklineCoreModule', 'IgxSparklineModule',
                     'RemoteValuesService'],
                 ngDeclarations: ['HGridColumnResizingSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxHierarchicalGridModule', 'IgxSparklineCoreModule', 'IgxSparklineModule'],
+                ngImports: ['IgxPreventDocumentScrollDirective', 'IgxHierarchicalGridModule', 'IgxSparklineCoreModule', 'IgxSparklineModule'],
                 ngProviders: ['RemoteValuesService']
             }),
             component: 'HGridColumnResizingSampleComponent'

@@ -4,7 +4,7 @@ IgxTreeGridModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 export class ExportCsvConfigGenerator implements IConfigGenerator {
     public additionalImports = {
-        IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive'
+        IgxPreventDocumentScrollDirective: '../../src/app/directives/prevent-scroll.directive'
     };
 
     public generateConfigs(): Config[] {
@@ -24,9 +24,9 @@ export class ExportCsvConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts'],
             component: 'CsvExportSample1Component',
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxGridModule', 'IgxCsvExporterService', 'CsvExportSample1Component', 'IgxPreventDocumentScrollModule'],
+                imports: ['IgxGridModule', 'IgxCsvExporterService', 'CsvExportSample1Component', 'IgxPreventDocumentScrollDirective'],
                 ngDeclarations: ['CsvExportSample1Component'],
-                ngImports: ['IgxGridModule', 'IgxPreventDocumentScrollModule'],
+                ngImports: ['IgxGridModule', 'IgxPreventDocumentScrollDirective'],
                 ngProviders: ['IgxCsvExporterService']
             }),
             shortenComponentPathBy: "/export-csv/"
