@@ -59,7 +59,7 @@ class GrammySummary {
         IgxCellTemplateDirective,
         IgxRowIslandComponent,
         IgxButtonDirective
-    ],
+    ]
 })
 export class HierarchicalGridDisableSummariesComponent implements OnInit {
     @ViewChild("hierarchicalGrid", { static: true })
