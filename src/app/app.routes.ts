@@ -10,9 +10,8 @@ export const samplesRoutes: Routes = [
         path: 'home'
     },
     {
-        data: ['DataDisplayModule'],
-        loadChildren: () => import('./data-display/data-display.module').then(m => m.DataDisplayModule),
-        path: 'data-display'
+        path: 'data-display',
+        loadChildren: () => import('./data-display/data-display.routes').then(m => m.DataDisplayRoutes)
     },
     {
         data: ['DataEntriesModule'],
@@ -59,6 +58,8 @@ export const samplesRoutes: Routes = [
         loadChildren: () => import('./services/services.module').then(m => m.ServicesModule),
         path: 'services'
     },
+
+
     {
         data: ['TreeGridModule'],
         loadChildren: () => import('./tree-grid/tree-grid.module').then(m => m.TreeGridModule),
