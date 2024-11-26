@@ -1,33 +1,4 @@
-import { IgxAvatarModule,
-IgxButtonGroupModule,
-IgxButtonModule,
-IgxCalendarModule,
-IgxCardModule,
-IgxDatePickerModule,
-IgxDialogModule,
-IgxDividerModule,
-IgxDropDownModule,
-IgxExpansionPanelModule,
-IgxGridModule,
-IgxIconModule,
-IgxInputGroupModule,
-IgxLayoutModule,
-IgxListModule,
-IgxRippleModule,
-IgxSelectModule,
-IgxSnackbarModule,
-IgxToggleModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatStepperModule } from '@angular/material/stepper';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 export class ThemingConfigGenerator implements IConfigGenerator {
 
     public generateConfigs(): Config[] {
