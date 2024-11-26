@@ -13,7 +13,7 @@ import { PivotGridStatePersistenceSampleComponent } from './pivot-state-persiste
 import { PivotGridLayoutComponent } from './pivot-layout/pivot-layout.component'
 // tslint:enable:max-line-length
 
-export const gridsRoutes: Routes = [
+export const PivotGridsRoutes: Routes = [
     {
         component: PivotGridBasicSampleComponent,
         data: pivotGridsRoutesData['pivot-grid-basic'],
@@ -60,13 +60,3 @@ export const gridsRoutes: Routes = [
         path: 'pivot-grid-layout'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(gridsRoutes)
-    ]
-})
-export class PivotGridsRoutingModule { }

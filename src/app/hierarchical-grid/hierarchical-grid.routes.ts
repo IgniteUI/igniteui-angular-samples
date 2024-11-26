@@ -1,7 +1,5 @@
 /* eslint-disable max-len */
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
+import { Routes } from '@angular/router';
 import { HierarchicalGridColumnGroupSelectionComponent } from './column-group-selection/hierarchical-grid-column-group-selection.component';
 import { HGridColumnSelectionStylesComponent } from './column-selection-styles/hierarchical-grid-column-selection-styles.component';
 import { HierarchicalGridColumnSelectionComponent } from './column-selection/hierarchical-grid-column-selection.component';
@@ -103,7 +101,7 @@ import { HGridValidationStyleComponent } from './hierarchical-grid-validation-st
 import { HierarchicalGridValidatorServiceExtendedComponent } from './hierarchical-grid-validator-service-extended/hierarchical-grid-validator-service-extended.component';
 import { HGridSummaryExportComponent } from './hgrid-summary-export/hgrid-summary-export.component';
 
-export const hierarchicalGridRoutes: Routes = [
+export const HierarchicalGridRoutes: Routes = [
     {
         component: HGridFilteringSampleComponent,
         // tslint:disable-next-line:no-string-literal
@@ -579,13 +577,3 @@ export const hierarchicalGridRoutes: Routes = [
         path: 'hierarchical-grid-summary-export'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(hierarchicalGridRoutes)
-    ]
-})
-export class HierarchicalGridRoutingModule { }

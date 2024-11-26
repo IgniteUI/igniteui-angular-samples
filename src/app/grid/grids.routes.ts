@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { GridBatchEditingSampleComponent } from './grid-batch-editing/grid-batch-editing-sample.component';
 import { GridClipboardSampleComponent } from './grid-clipboard-operations-sample/grid-clipboard-operations-sample.component';
 import { GridColumnHidingSampleComponent } from './grid-column-hiding-sample/grid-column-hiding-sample.component';
@@ -134,7 +133,7 @@ import { GridCascadingCombosComponent } from './grid-cascading-combos/grid-casca
 
 // tslint:enable:max-line-length
 
-export const gridsRoutes: Routes = [
+export const GridsRoutes: Routes = [
     {
         component: GridSample3Component,
         data: gridsRoutesData['grid-summary'],
@@ -761,13 +760,3 @@ export const gridsRoutes: Routes = [
         path: 'grid-cascading-combos'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(gridsRoutes)
-    ]
-})
-export class GridsRoutingModule { }

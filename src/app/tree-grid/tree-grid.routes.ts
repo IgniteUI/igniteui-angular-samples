@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { TreeGridColumnGroupSelectionComponent } from './column-group-selection/column-group-selection.component';
 import { TreeGridColumnSelectionStylesComponent } from './column-selection-styles/tree-grid-column-selection-style.component';
 import { TreeGridColumnSelectionComponent } from './column-selection/tree-grid-column-selection.component';
@@ -101,7 +100,7 @@ import { TreeGridValidatorServiceCrossFieldComponent } from './tree-grid-validat
 import { TreeGridValidationStyleComponent } from './tree-grid-validation-style/tree-grid-validation-style.component';
 import { TreeGridSummaryExportComponent } from './tree-grid-summary-export/tree-grid-summary-export.component';
 
-export const treeGridRoutes: Routes = [
+export const TreeGridRoutes: Routes = [
     {
         component: TreeGridRowEditSampleComponent,
         data: treeGridRoutesData['treegrid-row-edit'],
@@ -593,13 +592,3 @@ export const treeGridRoutes: Routes = [
         path: 'treegrid-summary-export'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(treeGridRoutes)
-    ]
-})
-export class TreeGridRoutingModule { }

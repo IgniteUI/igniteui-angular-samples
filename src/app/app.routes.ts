@@ -58,30 +58,29 @@ export const samplesRoutes: Routes = [
         loadChildren: () => import('./services/services.routes').then(m => m.ServicesRoutes),
         path: 'services'
     },
-
     {
         data: ['TreeGridModule'],
-        loadChildren: () => import('./tree-grid/tree-grid.module').then(m => m.TreeGridModule),
+        loadChildren: () => import('./tree-grid/tree-grid.routes').then(m => m.TreeGridRoutes),
         path: 'tree-grid'
     },
     {
         data: ['GridsModule'],
-        loadChildren: () => import('./grid/grids.module').then(m => m.GridsModule),
+        loadChildren: () => import('./grid/grids.routes').then(m => m.GridsRoutes),
         path: 'grid'
     },
     {
         data: ['PivotGridsModule'],
-        loadChildren: () => import('./pivot-grid/pivot-grids.module').then(m => m.PivotGridsModule),
+        loadChildren: () => import('./pivot-grid/pivot-grids.routes').then(m => m.PivotGridsRoutes),
         path: 'pivot-grid'
     },
     {
         data: ['HierarchicalGridModule'],
-        loadChildren: () => import('./hierarchical-grid/hierarchical-grid.module').then(m => m.HierarchicalGridModule),
+        loadChildren: () => import('./hierarchical-grid/hierarchical-grid.routes').then(m => m.HierarchicalGridRoutes),
         path: 'hierarchical-grid'
     },
     {
         data: ['PaginationModule'],
-        loadChildren: () => import('./pagination/pagination.module').then(m => m.PaginationModule),
+        loadChildren: () => import('./pagination/pagination.routes').then(m => m.PaginatorRoutes),
         path: 'pagination'
     }
 ];
