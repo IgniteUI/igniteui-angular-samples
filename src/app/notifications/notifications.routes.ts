@@ -19,7 +19,7 @@ import { ToastSample4Component } from './toast/toast-sample-4/toast-sample-4.com
 import { ToastSample5Component } from './toast/toast-sample-5/toast-sample-5.component';
 import { ToastStyleComponent } from './toast/toast-style/toast-style.component';
 
-export const notificationsRoutes: Routes = [
+export const NotificationsRoutes: Routes = [
     {
         component: BannerSample1Component,
         data: notificationsRoutesData['banner-sample-1'],
@@ -106,13 +106,3 @@ export const notificationsRoutes: Routes = [
         path: 'toast-style'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(notificationsRoutes)
-    ]
-})
-export class NotificationsRoutingModule { }

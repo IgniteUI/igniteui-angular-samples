@@ -59,7 +59,7 @@ import { TooltipRichComponent } from './tooltip/tooltip-rich/tooltip-rich.compon
 import { TooltipSimpleComponent } from './tooltip/tooltip-simple/tooltip-simple.component';
 import { TooltipStyleComponent } from './tooltip/tooltip-style/tooltip-style.component';
 
-export const interactionsRoutes: Routes = [
+export const InteractionsRoutes: Routes = [
     {
         component: DialogSample1Component,
         data: interactionsRoutesData['dialog-sample-1'],
@@ -301,13 +301,3 @@ export const interactionsRoutes: Routes = [
         path: 'query-builder-style'
     }
 ];
-
-@NgModule({
-    exports: [
-        RouterModule
-    ],
-    imports: [
-        RouterModule.forChild(interactionsRoutes)
-    ]
-})
-export class InteractionsRoutingModule { }

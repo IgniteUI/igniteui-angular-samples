@@ -20,12 +20,12 @@ export const samplesRoutes: Routes = [
     },
     {
         data: ['InteractionsModule'],
-        loadChildren: () => import('./interactions/interactions.module').then(m => m.InteractionsModule),
+        loadChildren: () => import('./interactions/interactions.routes').then(m => m.InteractionsRoutes),
         path: 'interactions'
     },
     {
         data: ['NotificationsModule'],
-        loadChildren: () => import('./notifications/notifications.module').then(m => m.NotificationsModule),
+        loadChildren: () => import('./notifications/notifications.routes').then(m => m.NotificationsRoutes),
         path: 'notifications'
     },
     {
@@ -58,6 +58,7 @@ export const samplesRoutes: Routes = [
         loadChildren: () => import('./services/services.module').then(m => m.ServicesModule),
         path: 'services'
     },
+
     {
         data: ['TreeGridModule'],
         loadChildren: () => import('./tree-grid/tree-grid.module').then(m => m.TreeGridModule),
