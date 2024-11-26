@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { BannerAdvancedSampleComponent } from './banner/banner-advanced-sample/banner-advanced-sample.component';
 import { BannerSample1Component } from './banner/banner-sample-1/banner-sample-1.component';
 import { BannerSample2Component } from './banner/banner-sample-2/banner-sample-2.component';

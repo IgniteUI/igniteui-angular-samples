@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { PivotGridBasicSampleComponent } from './pivot-basic-sample/pivot-grid-basic-sample.component';
 import { PivotDataSelectorSampleComponent } from './pivot-datasource/pivot-data-selector-sample.component';
 import { PivotFeaturesComponent } from './pivot-features/pivot-features.component';
