@@ -1,4 +1,22 @@
 <div class="grid__wrapper">
+    <div class="summary-chooser">
+        <igx-buttongroup
+            [selectionMode]="'multi'"
+            [values]="defaultSummaries"
+            (selected)="disableDefaultSummary($event)"
+            (deselected)="enableDefaultSummary($event)"
+        ></igx-buttongroup>
+    </div>
+
+    <div class="summary-chooser">
+        <igx-buttongroup
+            [selectionMode]="'multi'"
+            [values]="customSummaries"
+            (selected)="disableCustomSummary($event)"
+            (deselected)="enableCustomSummary($event)"
+        ></igx-buttongroup>
+    </div>
+
     <igx-grid
         [igxPreventDocumentScroll]="true"
         #grid1
@@ -7,8 +25,7 @@
         height="600px"
         width="100%"
     >
-        <igx-column field="ProductID" header="Product ID">
-        </igx-column>
+        <igx-column field="ProductID" header="Product ID"> </igx-column>
         <igx-column
             field="ProductName"
             header="Product Name"
@@ -39,15 +56,12 @@
             [hasSummary]="true"
         >
         </igx-column>
-        <igx-column field="OrderDate" [dataType]="'date'" [hasSummary]="true">
+        <igx-column
+            field="OrderDate"
+            header="Order Date"
+            [dataType]="'date'"
+            [hasSummary]="true"
+        >
         </igx-column>
     </igx-grid>
-    <div class="action__buttons">
-        <button igxButton="contained" (click)="disableDefaultSummaries()">
-            Disable Min and Max summaries for the Price column
-        </button>
-        <button igxButton="contained" (click)="disableCustomSummaries()">
-            Disable Products and Discontinued Products summaries
-        </button>
-    </div>
 </div>
