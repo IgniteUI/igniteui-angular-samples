@@ -30,8 +30,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/@infragistics/igniteui-angular/styles/igniteui-angular.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "./node_modules/hammerjs/hammer.min.js"

@@ -1,38 +1,59 @@
-<igx-tree-grid #treeGrid [data]="localData" primaryKey="ID" childDataKey="Employees" width="990px" height="700px"
-rowSelection="multipleCascade">
-<igx-paginator></igx-paginator>
+<igx-tree-grid #treeGrid [data]="localData" primaryKey="ID" childDataKey="Employees" width="1200" height="800"
+rowSelection="multipleCascade" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+<igx-paginator [perPage]="20"></igx-paginator>
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>Actions</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
+                <button igxButton="flat">Clear Sort</button>
                 <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
                 <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
                 <igx-grid-toolbar-exporter>
                     <span excelText>Export to Excel</span>
                     <span csvText>Export to CSV</span>
                 </igx-grid-toolbar-exporter>
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
-  <igx-column field="Name" width="300px" >
+  <igx-column field="Name" width="300px" sortable="true" [pinned]="true">
     <ng-template igxCell let-cell="cell">
-      <div class="flex-container">
-        <igx-avatar [src]="cell.row.data.Picture" shape="rounded" size="small"></igx-avatar>
+      <div class="customDiv">
+        <igx-avatar [src]="cell.row.data.Picture" shape="rounded"></igx-avatar>
         {{ cell.row.data.Name }}
       </div>
     </ng-template>
   </igx-column>
-  <igx-column field="JobTitle" dataType="string" minWidth="200px" ></igx-column>
-  <igx-column field="Department" dataType="string" minWidth="200px" ></igx-column>
-  <igx-column field="Location" dataType="string"></igx-column>
-  <igx-column field="Contacts" dataType="string" minWidth="200px" >
+  <igx-column field="JobTitle" dataType="string" minWidth="200px" sortable="true"></igx-column>
+  <igx-column field="Department" dataType="string" minWidth="200px" sortable="true"></igx-column>
+  <igx-column field="Location" dataType="string">
     <ng-template igxCell let-cell="cell">
       <div class="flex-container">
-        <a [href]="'mailto:' + cell.row.data.Contacts" (click)="$event.stopPropagation()">
-          <igx-icon>mail</igx-icon>
-        </a>
-        {{ cell.row.data.Contacts }}
+        <igx-icon family="country-icons" name="{{cell.row.data.Country}}"></igx-icon>
+        {{ cell.row.data.Country }}, {{ cell.row.data.Location }}
       </div>
     </ng-template>
   </igx-column>
-  <igx-column field="HireDate" header="Hire Date" dataType="date" minWidth="100px"></igx-column>
-  <igx-column field="GrossSalary" dataType="number" minWidth="100px" ></igx-column>
+  <igx-column field="Contacts" dataType="string" minWidth="200px" >
+    <ng-template igxCell let-cell="cell">
+      <div class="flex-container">
+        <!-- <a [href]="'mailto:' + cell.row.data.Contacts" (click)="$event.stopPropagation()">
+          <igx-icon>mail</igx-icon>
+        </a> -->
+        <button igxIconButton="flat">
+          <igx-icon>mail</igx-icon>
+        </button>
+        <button igxIconButton="flat">
+        <igx-icon>phone</igx-icon>
+        </button>
+        <button igxIconButton="flat">
+          <igx-icon family="hr-icons" name="linkedIn"></igx-icon>
+        </button>
+      </div>
+    </ng-template>
+  </igx-column>
+  <igx-column field="HireDate" header="Hire Date" dataType="date"  minWidth="100px" sortable="true" sortable="true">
+    <ng-template igxCell let-cell="cell">
+      {{ cell.value | date:'yyyy-MM-dd' }}
+    </ng-template>
+  </igx-column>
+  <igx-column field="GrossSalary" dataType="currency" minWidth="100px" sortable="true"></igx-column>
 </igx-tree-grid>
