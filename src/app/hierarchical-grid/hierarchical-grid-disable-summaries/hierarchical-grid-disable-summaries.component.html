@@ -1,7 +1,25 @@
 <div class="grid__wrapper">
+    <div class="summary-chooser">
+        <igx-buttongroup
+            [selectionMode]="'multi'"
+            [values]="defaultSummaries"
+            (selected)="disableDefaultSummary($event)"
+            (deselected)="enableDefaultSummary($event)"
+        ></igx-buttongroup>
+    </div>
+
+    <div class="summary-chooser">
+        <igx-buttongroup
+            [selectionMode]="'multi'"
+            [values]="customSummaries"
+            (selected)="disableCustomSummary($event)"
+            (deselected)="enableCustomSummary($event)"
+        ></igx-buttongroup>
+    </div>
+
     <igx-hierarchical-grid
         [igxPreventDocumentScroll]="true"
-        #hierarchicalGrid
+        #hierarchicalGrid1
         [data]="data"
         [autoGenerate]="false"
         [height]="'600px'"
@@ -92,12 +110,4 @@
             <igx-column field="Headliner" [hasSummary]="true"></igx-column>
         </igx-row-island>
     </igx-hierarchical-grid>
-    <div class="action__buttons">
-        <button igxButton="contained" (click)="disableDefaultSummaries()">
-            Disable Min and Max summaries for the Grammy Nominations column
-        </button>
-        <button igxButton="contained" (click)="disableCustomSummaries()">
-            Disable Nominated Singers and Total Nominations summaries
-        </button>
-    </div>
 </div>
