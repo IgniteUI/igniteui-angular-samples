@@ -588,8 +588,8 @@ export const gridsRoutes: Routes = [
     },
     {
         component: GridDisableSummariesComponent,
-        data: gridsRoutesData['grid-disabled-summaries'],
-        path: 'grid-disabled-summaries'
+        data: gridsRoutesData['grid-disable-summaries'],
+        path: 'grid-disable-summaries'
     },
     {
         component: GridMultiRowLayoutStylingComponent,

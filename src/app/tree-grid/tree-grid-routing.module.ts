@@ -460,8 +460,8 @@ export const treeGridRoutes: Routes = [
     },
     {
         component: TreeGridDisableSummariesComponent,
-        data: treeGridRoutesData['treegrid-disabled-summaries'],
-        path: 'treegrid-disabled-summaries'
+        data: treeGridRoutesData['treegrid-disable-summaries'],
+        path: 'treegrid-disable-summaries'
     },
     {
         component: TreeGridStyleComponent,
