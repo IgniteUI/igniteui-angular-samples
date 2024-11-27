@@ -1,10 +1,13 @@
-<igx-tree-grid #treeGrid [data]="localData" primaryKey="ID" childDataKey="Employees" width="1200" height="800"
+<igx-tree-grid #treeGrid [data]="localData" primaryKey="ID" childDataKey="Employees" width="1800" height="900"
 rowSelection="multipleCascade" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
 <igx-paginator [perPage]="20"></igx-paginator>
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>Actions</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
-                <button igxButton="flat">Clear Sort</button>
+              <button igxButton="flat">
+                <igx-icon>clear</igx-icon>
+                Clear Sort
+              </button>
                 <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
                 <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
                 <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
@@ -52,7 +55,7 @@ rowSelection="multipleCascade" [allowFiltering]="true" [filterMode]="'excelStyle
   </igx-column>
   <igx-column field="HireDate" header="Hire Date" dataType="date"  minWidth="100px" sortable="true" sortable="true">
     <ng-template igxCell let-cell="cell">
-      {{ cell.value | date:'yyyy-MM-dd' }}
+      {{ cell.value | date:'yyyy-mm-dd' }}
     </ng-template>
   </igx-column>
   <igx-column field="GrossSalary" dataType="currency" minWidth="100px" sortable="true"></igx-column>

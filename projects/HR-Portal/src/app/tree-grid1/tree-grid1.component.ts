@@ -31,7 +31,7 @@ import { CommonModule } from '@angular/common';
     CommonModule
     ]
 })
-export class TreeGrid1Component implements OnInit, AfterViewInit {
+export class TreeGrid1Component implements OnInit {
   public localData: Employee[] = [];
   title = 'HR Portal - IgniteUI for Angular';
   @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true })
@@ -60,6 +60,4 @@ export class TreeGrid1Component implements OnInit, AfterViewInit {
 
   }
 
-  ngAfterViewInit() {
-  }
 }
