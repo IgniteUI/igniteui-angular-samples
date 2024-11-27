@@ -1,4 +1,22 @@
 <div class="grid__wrapper">
+    <div class="summary-chooser">
+        <igx-buttongroup
+            [selectionMode]="'multi'"
+            [values]="defaultSummaries"
+            (selected)="disableDefaultSummary($event)"
+            (deselected)="enableDefaultSummary($event)"
+        ></igx-buttongroup>
+    </div>
+
+    <div class="summary-chooser">
+        <igx-buttongroup
+            [selectionMode]="'multi'"
+            [values]="customSummaries"
+            (selected)="disableCustomSummary($event)"
+            (deselected)="enableCustomSummary($event)"
+        ></igx-buttongroup>
+    </div>
+    
     <igx-tree-grid
         [igxPreventDocumentScroll]="true"
         #treegrid1
@@ -52,12 +70,4 @@
         >
         </igx-column>
     </igx-tree-grid>
-    <div class="action__buttons">
-        <button igxButton="contained" (click)="disableDefaultSummaries()">
-            Disable Min and Max summaries for the Unit Price column
-        </button>
-        <button igxButton="contained" (click)="disableCustomSummaries()">
-            Disable Average Units per Order and Highest Units summaries
-        </button>
-    </div>
 </div>
