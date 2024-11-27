@@ -74,6 +74,7 @@ export const gridsRoutesData = {
     'grid-multi-cell-selection': { displayName: 'Grid Multi cell selection', parentName: 'Grid' },
     'grid-multi-cell-selection-style': { displayName: 'Grid Multi Cell Selection Style', parentName: 'Grid' },
     'grid-selection-custom-summaries': { displayName: 'Grid Selection Based Summaries', parentName: 'Grid' },
+    'grid-disable-summaries': { displayName: 'Grid Disable Summaries', parentName: 'Grid' },
     'grid-multi-row-layout': { displayName: 'Grid Multi Row Layout', parentName: 'Grid' },
     'grid-multi-row-layout-configuration': { displayName: 'Grid Multi Row Layout Configuration', parentName: 'Grid' },
     'grid-multi-row-layout-styling': { displayName: 'Grid Multi Row Layout Styling', parentName: 'Grid' },
