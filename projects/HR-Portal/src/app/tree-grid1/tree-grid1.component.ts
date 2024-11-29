@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild, viewChild } from '@angular/core';
 import { Employee, EMPLOYEE_DATA } from './localData';
-import { IgxTreeGridComponent, IgxColumnComponent, IgxAvatarComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxGridToolbarExporterComponent, IgxCellTemplateDirective, IgxIconComponent, IgxIconModule, IgxIconService, IgxButtonGroupComponent, IgxIconButtonDirective, IgxButtonModule } from '@infragistics/igniteui-angular';
-import ResizeObserver from 'resize-observer-polyfill';
+import { IgxTreeGridComponent, IgxColumnComponent, IgxAvatarComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxGridToolbarExporterComponent, IgxCellTemplateDirective, IgxIconComponent, IgxIconModule, IgxIconService, IgxButtonGroupComponent, IgxIconButtonDirective, IgxButtonModule } from 'igniteui-angular';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 

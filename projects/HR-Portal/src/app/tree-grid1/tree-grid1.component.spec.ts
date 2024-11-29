@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { IgxCheckboxModule, IgxDatePickerModule, IgxTreeGridModule } from '@infragistics/igniteui-angular';
+import { IgxCheckboxModule, IgxDatePickerModule, IgxTreeGridModule } from 'igniteui-angular';
 import { TreeGrid1Component } from './tree-grid1.component';
 
 describe('TreeGrid1Component', () => {
