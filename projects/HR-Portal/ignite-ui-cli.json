@@ -1,0 +1,24 @@
+{
+    "igPackageRegistry": "https://packages.infragistics.com/npm/js-licensed/",
+    "customTemplates": [],
+    "skipGit": false,
+    "skipAnalytic": false,
+    "version": "14.1.0",
+    "project": {
+        "defaultPort": 4200,
+        "framework": "angular",
+        "projectType": "igx-ts",
+        "projectTemplate": "empty",
+        "theme": "Default",
+        "themePath": "node_modules/igniteui-angular/styles/igniteui-angular.css",
+        "isBundle": false,
+        "bundleFilePath": "",
+        "igniteuiSource": "",
+        "components": [],
+        "sourceFiles": [],
+        "isShowcase": false,
+        "version": ""
+    },
+    "build": {},
+    "packagesInstalled": true
+}
