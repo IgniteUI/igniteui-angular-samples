@@ -4,7 +4,7 @@ rowSelection="multipleCascade" [allowFiltering]="true" [filterMode]="'excelStyle
         <igx-grid-toolbar>
             <igx-grid-toolbar-title>Actions</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
-              <button igxButton="flat">
+              <button igxButton="flat" *ngIf="treeGrid.sortingExpressions.length> 0" (buttonClick)="treeGrid.sortingExpressions=[]">
                 <igx-icon>clear</igx-icon>
                 Clear Sort
               </button>
