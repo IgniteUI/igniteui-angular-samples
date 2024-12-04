@@ -80,7 +80,7 @@
   },
   "overrides": {
     "igniteui-angular-extras": {
-      "igniteui-angular": "^19.0.0-rc.0",
+      "igniteui-angular": "^19.0.0",
       "@angular/core": "^19.0.0",
       "@angular/common": "^19.0.0",
       "@angular/animations": "^19.0.0"
