@@ -15,7 +15,18 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
                 '/projects/app-crm/src/app/grid-crm/data.ts'
             ],
             additionalDependencies: [],
-            appModuleConfig: new AppModuleConfig({
+            appConfig: {
+                modules: [
+                    { 'module': 'BrowserModule', 'import': '@angular/platform-browser' },
+                    { 'module': 'FormsModule', 'import': '@angular/forms' },
+                    { 'module': 'HammerModule', 'import': '@angular/platform-browser' }
+                ],
+                providers: [
+                    { 'provider': 'provideAnimations()', 'import': '@angular/platform-browser/animations' }
+                ],
+                router: 'GridCRMRoutes'
+            }
+            /*appModuleConfig: new AppModuleConfig({
                 imports: [
                     'IgxRippleModule',
                     'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
@@ -26,7 +37,8 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
                 ngImports: ['IgxPreventDocumentScrollDirective', 'IgxRippleModule',
                 'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
                 'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule', 'RouterTestingModule']
-            })
+            })*/
+
         }));
 
         return configs;
