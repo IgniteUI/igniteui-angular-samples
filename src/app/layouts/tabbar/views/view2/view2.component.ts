@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-view2',
-    templateUrl: './view2.component.html',
-    standalone: false
+    templateUrl: './view2.component.html'
 })
 export class TabbarView2Component { }
