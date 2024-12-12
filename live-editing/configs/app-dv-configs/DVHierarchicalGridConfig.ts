@@ -1,10 +1,12 @@
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/naming-convention */
-import {IgxHierarchicalGridModule} from 'igniteui-angular';
-import {IgxSparklineCoreModule,
-IgxSparklineModule} from 'igniteui-angular-charts';
-import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing'
-import { BaseAppConfig } from './BaseConfig';;
+import { IgxHierarchicalGridModule } from 'igniteui-angular';
+import {
+    IgxSparklineCoreModule,
+    IgxSparklineModule
+} from 'igniteui-angular-charts';
+import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing';
+import { BaseAppConfig } from '../BaseConfig';
 
 export class DVHierarchicalGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {

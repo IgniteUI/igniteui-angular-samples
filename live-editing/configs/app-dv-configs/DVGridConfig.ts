@@ -1,50 +1,54 @@
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/naming-convention */
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import {
     Router,
     RouterModule
 } from '@angular/router';
-import {IgxAvatarModule,
-IgxBadgeModule,
-IgxButtonGroupModule,
-IgxButtonModule,
-IgxCheckboxModule,
-IgxCsvExporterService,
-IgxDialogModule,
-IgxDividerModule,
-IgxExcelExporterService,
-IgxGridModule,
-IgxIconModule,
-IgxInputGroupModule,
-IgxProgressBarModule,
-IgxRippleModule,
-IgxSliderModule,
-IgxSwitchModule,
-IgxTabsModule,
-IgxToggleModule,
-IgxToastModule,
-IgxFocusModule,
-IgxGridComponent} from 'igniteui-angular';
-import {IgxCategoryChartModule,
-IgxLegendModule,
-IgxPieChartModule,
-IgxSparklineCoreModule,
-IgxSparklineModule} from 'igniteui-angular-charts';
-import { Config, IConfigGenerator, AppModuleConfig, DependenciesType } from 'igniteui-live-editing'
-import { BaseAppConfig } from './BaseConfig';;
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {
+    IgxAvatarModule,
+    IgxBadgeModule,
+    IgxButtonGroupModule,
+    IgxButtonModule,
+    IgxCheckboxModule,
+    IgxCsvExporterService,
+    IgxDialogModule,
+    IgxDividerModule,
+    IgxExcelExporterService,
+    IgxGridModule,
+    IgxIconModule,
+    IgxInputGroupModule,
+    IgxProgressBarModule,
+    IgxRippleModule,
+    IgxSliderModule,
+    IgxSwitchModule,
+    IgxTabsModule,
+    IgxToggleModule,
+    IgxToastModule,
+    IgxFocusModule,
+    IgxGridComponent
+} from 'igniteui-angular';
+import {
+    IgxCategoryChartModule,
+    IgxLegendModule,
+    IgxPieChartModule,
+    IgxSparklineCoreModule,
+    IgxSparklineModule
+} from 'igniteui-angular-charts';
+import { Config, IConfigGenerator, AppModuleConfig, DependenciesType } from 'igniteui-live-editing';
+import { BaseAppConfig } from '../BaseConfig';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 export class DVGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         IgxPreventDocumentScrollModule: '../../../src/app/directives/prevent-scroll.directive',
-        ControllerComponent : '../../../projects/app-lob/src/app/grid-finjs/controllers.component',
-        GridFinJSComponent : '../../../projects/app-lob/src/app/grid-finjs/grid-finjs.component',
-        SignalRService : '../../../projects/app-lob/src/app/services/signal-r.service',
-        FloatingPanesService : '../../../projects/app-lob/src/app/services/floating-panes.service',
+        ControllerComponent: '../../../projects/app-lob/src/app/grid-finjs/controllers.component',
+        GridFinJSComponent: '../../../projects/app-lob/src/app/grid-finjs/grid-finjs.component',
+        SignalRService: '../../../projects/app-lob/src/app/services/signal-r.service',
+        FloatingPanesService: '../../../projects/app-lob/src/app/services/floating-panes.service',
         DockSlotComponent: '../../../projects/app-lob/src/app/grid-finjs-dock-manager/dock-slot.component',
         GridHostDirective: '../../../projects/app-lob/src/app/grid-finjs-dock-manager/dock-slot.component',
         FinancialDataService: '../../../projects/app-lob/src/app/services/financial.service'
-};
+    };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
