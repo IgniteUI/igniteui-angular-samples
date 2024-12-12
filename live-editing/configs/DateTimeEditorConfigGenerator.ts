@@ -1,8 +1,11 @@
-import {IgxDateTimeEditorModule,
-IgxIconModule,
-IgxInputGroupModule,
-IgxTextSelectionModule} from 'igniteui-angular';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import {
+    IgxDateTimeEditorModule,
+    IgxIconModule,
+    IgxInputGroupModule,
+    IgxTextSelectionModule
+} from 'igniteui-angular';
+import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 export class DateTimeEditorConfigGenerator implements IConfigGenerator {
 
 
@@ -13,12 +16,7 @@ export class DateTimeEditorConfigGenerator implements IConfigGenerator {
         configs.push(
             new Config({
                 component: 'DateTimeBasicComponent',
-                appModuleConfig: new AppModuleConfig({
-                    imports: ['IgxInputGroupModule', 'DateTimeBasicComponent',
-                        'IgxDateTimeEditorModule', 'IgxTextSelectionModule'],
-                    ngDeclarations: ['DateTimeBasicComponent'],
-                    ngImports: ['IgxInputGroupModule', 'IgxDateTimeEditorModule', 'IgxTextSelectionModule']
-                }),
+                appConfig: BaseAppConfig,
                 shortenComponentPathBy: "/scheduling/datetimeeditor/"
             })
         );
@@ -26,11 +24,7 @@ export class DateTimeEditorConfigGenerator implements IConfigGenerator {
         // Date Time Advanced
         configs.push(new Config({
             component: 'DateTimeAdvancedComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxInputGroupModule', 'IgxDateTimeEditorModule', 'DateTimeAdvancedComponent', 'IgxIconModule'],
-                ngDeclarations: ['DateTimeAdvancedComponent'],
-                ngImports: ['IgxInputGroupModule', 'IgxDateTimeEditorModule', 'IgxIconModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/scheduling/datetimeeditor/"
         }));
         return configs;

@@ -8,7 +8,8 @@ import {
     IgxRippleModule,
     IgxSliderModule
 } from 'igniteui-angular';
-import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
+import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';;
 
 export class PaginationConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -17,13 +18,7 @@ export class PaginationConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'PaginationSampleComponent',
             additionalFiles: ['/src/app/data/product.ts'],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPaginatorModule', 'IgxRippleModule',
-                    'IgxButtonGroupModule', 'IgxButtonModule', 'IgxIconModule', 'IgxCardModule', 'PaginationSampleComponent'],
-                ngDeclarations: ['PaginationSampleComponent'],
-                ngImports: ['IgxPaginatorModule', 'IgxRippleModule', 'IgxButtonGroupModule',
-                    'IgxButtonModule', 'IgxIconModule', 'IgxCardModule']
-            })
+            appConfig: BaseAppConfig
         }));
 
         return configs;

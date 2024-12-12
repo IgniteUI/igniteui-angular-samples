@@ -1,6 +1,7 @@
 import {IgxButtonModule,
 IgxToggleModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 export class ToggleConfigGenerator implements IConfigGenerator {
 
 
@@ -11,11 +12,7 @@ export class ToggleConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ToggleComponent',
             additionalFiles: ["/src/app/interactions/toggle/toggle-samples.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxButtonModule', 'IgxToggleModule', 'ToggleComponent'],
-                ngDeclarations: ['ToggleComponent'],
-                ngImports: ['IgxButtonModule', 'IgxToggleModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/"
         }));
 
@@ -23,11 +20,7 @@ export class ToggleConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ToggleSample1Component',
             additionalFiles: ["/src/app/interactions/toggle/toggle-samples.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxButtonModule', 'IgxToggleModule', 'ToggleSample1Component'],
-                ngDeclarations: ['ToggleSample1Component'],
-                ngImports: ['IgxButtonModule', 'IgxToggleModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/toggle/"
         }));
 
@@ -35,11 +28,7 @@ export class ToggleConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ToggleSample2Component',
             additionalFiles: ["/src/app/interactions/toggle/toggle-samples.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxButtonModule', 'IgxToggleModule', 'ToggleSample2Component'],
-                ngDeclarations: ['ToggleSample2Component'],
-                ngImports: ['IgxButtonModule', 'IgxToggleModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/toggle/"
         }));
 
@@ -47,11 +36,7 @@ export class ToggleConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ToggleSample3Component',
             additionalFiles: ["/src/app/interactions/toggle/toggle-samples.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxButtonModule', 'IgxToggleModule', 'ToggleSample3Component'],
-                ngDeclarations: ['ToggleSample3Component'],
-                ngImports: ['IgxButtonModule', 'IgxToggleModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/toggle/"
         }));
 
@@ -59,11 +44,7 @@ export class ToggleConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ToggleSample4Component',
             additionalFiles: ["/src/app/interactions/toggle/toggle-samples.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxButtonModule', 'IgxToggleModule', 'ToggleSample4Component'],
-                ngDeclarations: ['ToggleSample4Component'],
-                ngImports: ['IgxButtonModule', 'IgxToggleModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/toggle/"
         }));
 

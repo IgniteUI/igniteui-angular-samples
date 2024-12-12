@@ -6,6 +6,7 @@ IgxInputGroupModule,
 IgxListModule,
 IgxRippleModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 export class ForConfigGenerator implements IConfigGenerator {
 
 
@@ -15,26 +16,14 @@ export class ForConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'IgxForComponent',
             additionalFiles: ["/src/app/data-display/igxFor/names.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxAvatarModule', 'IgxFilterModule', 'IgxListModule', 'IgxIconModule',
-                    'IgxRippleModule', 'IgxForOfModule', 'IgxForComponent', 'IgxInputGroupModule'],
-                ngDeclarations: ['IgxForComponent'],
-                ngImports: ['IgxAvatarModule', 'IgxFilterModule', 'IgxListModule',
-                            'IgxIconModule', 'IgxRippleModule', 'IgxForOfModule', 'IgxInputGroupModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/"
         }));
 
         configs.push(new Config({
             component: 'IgxForHorizontalComponent',
             additionalFiles: ["/src/app/data-display/igxFor/names.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxAvatarModule', 'IgxFilterModule', 'IgxListModule', 'IgxIconModule',
-                          'IgxForOfModule', 'IgxForHorizontalComponent', 'IgxInputGroupModule'],
-                ngDeclarations: ['IgxForHorizontalComponent'],
-                ngImports: ['IgxAvatarModule', 'IgxFilterModule', 'IgxListModule',
-                            'IgxIconModule', 'IgxForOfModule', 'IgxInputGroupModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/"
         }));
 
