@@ -1,4 +1,5 @@
-import { Config, IConfigGenerator } from 'igniteui-live-editing';
+import { Config, IConfigGenerator } from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';;
 import { ActionStripConfigGenerator } from '../configs/ActionStripConfigGenerator';
 import { AutocompleteConfigGenerator } from '../configs/AutocompleteConfigGenerator';
 import { AvatarConfigGenerator } from '../configs/AvatarConfigGenerator';

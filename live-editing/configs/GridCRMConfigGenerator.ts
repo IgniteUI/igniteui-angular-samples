@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing';
+import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';;
+import { FormsModule } from '@angular/forms';
 
 export class GridCRMConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -24,20 +26,9 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
                 providers: [
                     { 'provider': 'provideAnimations()', 'import': '@angular/platform-browser/animations' }
                 ],
-                router: 'GridCRMRoutes'
+                router: true
             }
-            /*appModuleConfig: new AppModuleConfig({
-                imports: [
-                    'IgxRippleModule',
-                    'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
-                    'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                    'IgxPreventDocumentScrollDirective', 'GridCRMComponent', 'RouterTestingModule'
-                ],
-                ngDeclarations: ['GridCRMComponent'],
-                ngImports: ['IgxPreventDocumentScrollDirective', 'IgxRippleModule',
-                'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
-                'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule', 'RouterTestingModule']
-            })*/
+            /*appConfig: BaseAppConfig*/
 
         }));
 

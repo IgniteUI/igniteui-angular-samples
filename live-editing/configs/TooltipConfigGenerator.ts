@@ -3,6 +3,7 @@ IgxIconModule,
 IgxToggleModule,
 IgxTooltipModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 export class TooltipConfigGenerator implements IConfigGenerator {
 
 
@@ -12,53 +13,21 @@ export class TooltipConfigGenerator implements IConfigGenerator {
         // Simple Tooltip Sample
         configs.push(new Config({
             component: 'TooltipSimpleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: [
-                    'IgxAvatarModule',
-                    'IgxTooltipModule',
-                    'TooltipSimpleComponent'
-                ],
-                ngDeclarations: ['TooltipSimpleComponent'],
-                ngImports: ['IgxAvatarModule', 'IgxTooltipModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
         // Rich Tooltip Sample
         configs.push(new Config({
             component: 'TooltipRichComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: [
-                    'IgxAvatarModule',
-                    'IgxTooltipModule',
-                    'IgxIconModule',
-                    'TooltipRichComponent'],
-                ngDeclarations: ['TooltipRichComponent'],
-                ngImports: [
-                    'IgxAvatarModule',
-                    'IgxTooltipModule',
-                    'IgxIconModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
         // Style Tooltip Sample
         configs.push(new Config({
             component: 'TooltipStyleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: [
-                    'IgxAvatarModule',
-                    'IgxTooltipModule',
-                    'IgxToggleModule',
-                    'TooltipStyleComponent'
-                ],
-                ngDeclarations: ['TooltipStyleComponent'],
-                ngImports: [
-                    'IgxAvatarModule',
-                    'IgxTooltipModule',
-                    'IgxToggleModule'
-                ]
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
