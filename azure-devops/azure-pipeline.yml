@@ -1,0 +1,130 @@
+trigger:
+  branches:
+    include:
+      - master
+      - vnext
+
+# This pipeline is meant to build specific branches for deployment. It's not meant to be a part of PR validation. Ensure that this pipeline is reserved for deployment purposes.
+pr: none
+
+name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
+
+variables:
+  githubToken: <value> # Add a GitHub token in Libraries
+  ReplacementText: '@infragistics/igniteui-angular-extras'
+
+jobs:
+- job: CommonSteps
+  displayName: Common Steps for All Jobs
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+  - checkout: self
+    clean: true
+    fetchTags: true
+
+  - task: NodeTool@0
+    displayName: Use Node 20.x
+    inputs:
+      versionSpec: 20.x
+
+  - task: Npm@1
+    displayName: npm cache clean
+    continueOnError: true
+    inputs:
+      command: custom
+      workingDir: $(Build.SourcesDirectory)
+      verbose: false
+      customCommand: cache clean --force
+
+  - task: Npm@1
+    displayName: npm cache verify
+    inputs:
+      command: custom
+      workingDir: $(Build.SourcesDirectory)
+      verbose: false
+      customCommand: cache verify
+
+  - task: RegexReplace@3
+    displayName: RegEx Find & Replace
+    inputs:
+      InputSearchPattern: |
+        projects/app-lob/src/app/grid-dynamic-chart-data/grid-dynamic-chart-data.module.ts
+        projects/app-lob/src/app/grid-dynamic-chart-data/grid-dynamic-chart-data.component.ts
+        projects/app-lob/src/app/app.module.ts
+        package.json
+      FindRegex: igniteui-angular-extras
+      ReplaceRegex: $(ReplacementText)
+      UseUTF8: false
+
+  - task: Npm@1
+    displayName: npm install
+    inputs:
+      workingDir: $(Build.SourcesDirectory)
+      verbose: false
+
+  - task: CmdLine@2
+    displayName: Clone submodule
+    inputs:
+      script: git clone --recurse-submodules https://github.com/IgniteUI/igniteui-live-editing-samples igniteui-live-editing-samples
+      workingDirectory: ${{ parameters.workingDir }}
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: '$(Build.SourcesDirectory)'
+      artifact: 'source-code'
+      publishLocation: 'pipeline'
+
+- job: Job_1
+  displayName: App CD Build
+  dependsOn: CommonSteps
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+  - download: current
+    artifact: source-code
+  - template: template.yml
+    parameters:
+      customCommand: run generate-live-editing
+      workingDir: $(Build.SourcesDirectory)
+      submoduleDir: angular-demos
+      baseHref: /angular-demos/
+      targetFolder: dist/app-lob
+      findRegex: angular-demos
+      npmBuildCommand: 'run build-ci'
+
+- job: Job_2
+  displayName: App CRM Build
+  dependsOn: CommonSteps
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+  - download: current
+    artifact: source-code
+  - template: template.yml
+    parameters:
+      customCommand: run generate-live-editing:app-crm
+      workingDir: $(Build.SourcesDirectory)
+      submoduleDir: angular-demos-crm
+      baseHref: /angular-demos-grid-crm/
+      targetFolder: dist/app-crm
+      findRegex: angular-demos
+      npmBuildCommand: 'run build-ci:app-crm --loglevel verbose'
+
+- job: Job_3
+  displayName: App LOB Build
+  dependsOn: CommonSteps
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+  - download: current
+    artifact: source-code
+  - template: template.yml
+    parameters:
+      customCommand: run generate-live-editing:app-lob
+      workingDir: $(Build.SourcesDirectory)
+      submoduleDir: angular-demos-lob
+      baseHref: /angular-demos-lob/
+      targetFolder: dist/app-lob
+      findRegex: angular-demos
+      npmBuildCommand: 'run build-ci:app-lob'
