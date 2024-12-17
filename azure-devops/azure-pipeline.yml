@@ -51,7 +51,7 @@ jobs:
     displayName: Clone submodule
     inputs:
       script: git clone --recurse-submodules https://github.com/IgniteUI/igniteui-live-editing-samples igniteui-live-editing-samples
-      workingDirectory: ${{ parameters.workingDir }}
+      workingDirectory: $(Build.SourcesDirectory)
 
   - task: PublishPipelineArtifact@1
     inputs:
