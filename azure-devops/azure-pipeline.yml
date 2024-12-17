@@ -28,17 +28,17 @@ jobs:
     inputs:
       versionSpec: 20.x
 
-  - task: RegexReplace@3
-    displayName: RegEx Find & Replace
+  - task: ReplaceInFilesTextByText@2
     inputs:
-      InputSearchPattern: |
+      parameterSearchDirectory: '$(Build.SourcesDirectory)'
+      parameterSearchText: 'igniteui-angular-extras'
+      parameterReplaceText: '$(ReplacementText)'
+      parameterTypeOfSearch: 'filesList'
+      parameterFilesList: |
         projects/app-lob/src/app/grid-dynamic-chart-data/grid-dynamic-chart-data.module.ts
         projects/app-lob/src/app/grid-dynamic-chart-data/grid-dynamic-chart-data.component.ts
         projects/app-lob/src/app/app.module.ts
         package.json
-      FindRegex: igniteui-angular-extras
-      ReplaceRegex: $(ReplacementText)
-      UseUTF8: false
 
   - task: Npm@1
     displayName: npm ci
