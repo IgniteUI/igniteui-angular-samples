@@ -67,7 +67,7 @@ jobs:
   steps:
   - download: current
     artifact: source-code
-  - template: cd-template.yml
+  - template: templates/cd-template.yml
     parameters:
       customCommand: run generate-live-editing
       workingDir: $(Build.SourcesDirectory)
@@ -85,7 +85,7 @@ jobs:
   steps:
   - download: current
     artifact: source-code
-  - template: cd-template.yml
+  - template: templates/cd-template.yml
     parameters:
       customCommand: run generate-live-editing:app-crm
       workingDir: $(Build.SourcesDirectory)
@@ -103,7 +103,7 @@ jobs:
   steps:
   - download: current
     artifact: source-code
-  - template: cd-template.yml
+  - template: templates/cd-template.yml
     parameters:
       customCommand: run generate-live-editing:app-lob
       workingDir: $(Build.SourcesDirectory)
