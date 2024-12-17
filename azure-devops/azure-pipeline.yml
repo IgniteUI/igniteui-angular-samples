@@ -28,23 +28,6 @@ jobs:
     inputs:
       versionSpec: 20.x
 
-  - task: Npm@1
-    displayName: npm cache clean
-    continueOnError: true
-    inputs:
-      command: custom
-      workingDir: $(Build.SourcesDirectory)
-      verbose: false
-      customCommand: cache clean --force
-
-  - task: Npm@1
-    displayName: npm cache verify
-    inputs:
-      command: custom
-      workingDir: $(Build.SourcesDirectory)
-      verbose: false
-      customCommand: cache verify
-
   - task: RegexReplace@3
     displayName: RegEx Find & Replace
     inputs:
@@ -58,8 +41,9 @@ jobs:
       UseUTF8: false
 
   - task: Npm@1
-    displayName: npm install
+    displayName: npm ci
     inputs:
+      command: ci
       workingDir: $(Build.SourcesDirectory)
       verbose: false
 
@@ -83,7 +67,7 @@ jobs:
   steps:
   - download: current
     artifact: source-code
-  - template: template.yml
+  - template: cd-template.yml
     parameters:
       customCommand: run generate-live-editing
       workingDir: $(Build.SourcesDirectory)
@@ -101,7 +85,7 @@ jobs:
   steps:
   - download: current
     artifact: source-code
-  - template: template.yml
+  - template: cd-template.yml
     parameters:
       customCommand: run generate-live-editing:app-crm
       workingDir: $(Build.SourcesDirectory)
@@ -119,7 +103,7 @@ jobs:
   steps:
   - download: current
     artifact: source-code
-  - template: template.yml
+  - template: cd-template.yml
     parameters:
       customCommand: run generate-live-editing:app-lob
       workingDir: $(Build.SourcesDirectory)
