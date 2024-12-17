@@ -84,11 +84,11 @@ steps:
       UseUTF8: false
 
   - task: PublishPipelineArtifact@1
-      displayName: Publish Artifact
-      inputs:
-        targetPath: $(Build.SourcesDirectory)/${{ parameters.targetFolder }}
-        artifact: $(Build.SourceBranchName)-artifact
-        publishLocation: pipeline
+    displayName: Publish Artifact
+    inputs:
+      targetPath: $(Build.SourcesDirectory)/${{ parameters.targetFolder }}
+      artifact: $(Build.SourceBranchName)-artifact
+      publishLocation: pipeline
 
   - task: Npm@1
     displayName: Staging - Repositorify Angular Demos and LOB Demos
