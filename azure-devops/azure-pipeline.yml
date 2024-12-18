@@ -29,7 +29,7 @@ jobs:
       versionSpec: 20.x
 
   - task: PowerShell@2
-    displayName: 'Replace text in files using PowerShell'
+    displayName: 'Replace with licensed angular-extras'
     inputs:
       targetType: 'inline'
       script: |
@@ -44,11 +44,20 @@ jobs:
         }
 
   - task: Npm@1
-    displayName: npm ci
+    displayName: 'Register licensed npm registry in .npmrc'
     inputs:
-      command: ci
+      command: 'custom'
+      workingDir: '$(Build.SourcesDirectory)'
+      customCommand: 'config -L project set @infragistics:registry=https://packages.infragistics.com/npm/js-licensed/'
+      customEndpoint: 'public proget'
+
+  - task: Npm@1
+    displayName: npm install
+    inputs:
+      command: install
       workingDir: $(Build.SourcesDirectory)
       verbose: false
+      customEndpoint: 'public proget'
 
   - task: CmdLine@2
     displayName: Clone submodule
