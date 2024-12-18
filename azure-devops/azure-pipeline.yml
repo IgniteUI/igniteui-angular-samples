@@ -28,17 +28,20 @@ jobs:
     inputs:
       versionSpec: 20.x
 
-  - task: ReplaceInFilesTextByText@2
+  - task: PowerShell@2
+    displayName: 'Replace text in files using PowerShell'
     inputs:
-      parameterSearchDirectory: '$(Build.SourcesDirectory)'
-      parameterSearchText: 'igniteui-angular-extras'
-      parameterReplaceText: '$(ReplacementText)'
-      parameterTypeOfSearch: 'filesList'
-      parameterFilesList: |
-        projects/app-lob/src/app/grid-dynamic-chart-data/grid-dynamic-chart-data.module.ts
-        projects/app-lob/src/app/grid-dynamic-chart-data/grid-dynamic-chart-data.component.ts
-        projects/app-lob/src/app/app.module.ts
-        package.json
+      targetType: 'inline'
+      script: |
+        # List of files to update
+        $files = @(
+            "projects/app-lob/src/app/grid-dynamic-chart-data/grid-dynamic-chart-data.module.ts",
+            "projects/app-lob/src/app/grid-dynamic-chart-data/grid-dynamic-chart-data.component.ts",
+            "projects/app-lob/src/app/app.module.ts",
+            "package.json")
+        foreach ($file in $files) {
+          (Get-Content -Path $file) -replace 'igniteui-angular-extras', '$(ReplacementText)' | Set-Content -Path $file
+        }
 
   - task: Npm@1
     displayName: npm ci
