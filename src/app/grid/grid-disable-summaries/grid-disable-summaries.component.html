@@ -1,31 +1,60 @@
-<div class="grid__wrapper">
-    <div class="summary-chooser">
-        <igx-buttongroup
-            [selectionMode]="'multi'"
-            [values]="defaultSummaries"
-            (selected)="disableDefaultSummary($event)"
-            (deselected)="enableDefaultSummary($event)"
-        ></igx-buttongroup>
-    </div>
+<div class="grid-wrapper">
+    <div class="summaries">
+        <h5 class="summaries-title">Disable Summaries for Column:</h5>
+        <ng-container *ngFor="let column of columns; let i = index">
+            <div class="summary-column-button">
+                <button
+                    #toggleButton
+                    igxButton="outlined"
+                    (click)="toggle(i)"
+                >
+                    {{ column.label }} ({{ getCheckedSummariesCount(column.summaries) }})
+                </button>
+                <div igxToggle>
+                    <div class="summaries-dropdown">
+                        <div>
+                            <p class="summaries-dropdown-title">
+                                Disabled Summaries
+                            </p>
+                        </div>
 
-    <div class="summary-chooser">
-        <igx-buttongroup
-            [selectionMode]="'multi'"
-            [values]="customSummaries"
-            (selected)="disableCustomSummary($event)"
-            (deselected)="enableCustomSummary($event)"
-        ></igx-buttongroup>
-    </div>
+                        <div class="summaries-dropdown-items">
+                            <igx-checkbox
+                                *ngFor="let summary of column.summaries; let i = index"
+                                class="summaries-dropdown-item"
+                                [checked]="summary.checked"
+                                (change)="toggleCheckbox($event, i, column)"
+                            >
+                                {{ summary.summaryLabel }}
+                            </igx-checkbox>
+                        </div>
 
+                        <div class="summaries-dropdown-buttons">
+                            <button igxButton="flat" (click)="checkAllColumns(column)">
+                                Disable All
+                            </button>
+                            <button igxButton="flat" (click)="uncheckAllColumns(column)">
+                                Enable All
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
     <igx-grid
         [igxPreventDocumentScroll]="true"
         #grid1
         [data]="data"
         [autoGenerate]="false"
-        height="600px"
+        height="700px"
         width="100%"
     >
-        <igx-column field="ProductID" header="Product ID"> </igx-column>
+        <igx-column
+            field="ProductID"
+            header="Product ID"
+            [hasSummary]="true"
+        ></igx-column>
         <igx-column
             field="ProductName"
             header="Product Name"
@@ -37,7 +66,6 @@
             header="Unit Price"
             dataType="number"
             [hasSummary]="true"
-            [disabledSummaries]="['count', 'sum', 'average']"
         >
         </igx-column>
         <igx-column
@@ -45,8 +73,7 @@
             header="Units In Stock"
             dataType="number"
             [hasSummary]="true"
-            [summaries]="discontinuedSummary"
-            [disabledSummaries]="['total', 'totalDiscontinued']"
+            [summaries]="unitsInStockSummary"
         >
         </igx-column>
         <igx-column
@@ -54,6 +81,7 @@
             header="Discontinued"
             [dataType]="'boolean'"
             [hasSummary]="true"
+            [summaries]="discontinuedSummary"
         >
         </igx-column>
         <igx-column

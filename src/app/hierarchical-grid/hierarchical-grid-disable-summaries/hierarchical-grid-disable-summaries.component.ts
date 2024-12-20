@@ -2,27 +2,44 @@ import {
     Component,
     ViewChild,
     OnInit,
-    AfterViewInit
+    AfterViewInit,
+    ElementRef,
+    QueryList,
+    ViewChildren
 } from "@angular/core";
 import {
-    IgxCellTemplateDirective,
-    IgxColumnComponent,
     IgxHierarchicalGridComponent,
-    IgxNumberSummaryOperand,
     IgxRowIslandComponent,
+    IgxCellTemplateDirective,
+    IgxNumberSummaryOperand,
     IgxSummaryResult,
-    IgxButtonGroupComponent
+    IgxColumnComponent,
+    IgxButtonDirective,
+    IgxCheckboxComponent,
+    IgxToggleDirective,
+    HorizontalAlignment,
+    VerticalAlignment,
+    OverlaySettings,
+    ConnectedPositioningStrategy
 } from "igniteui-angular";
 import { SINGERS } from "../../data/singersData";
 import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scroll.directive";
+import { NgFor, NgIf } from "@angular/common";
 
 class GrammySummary {
     public operate(
         data?: any[],
-        allData = [],
-        fieldName = ""
+        allData: any[] = [],
+        fieldName: string = ""
     ): IgxSummaryResult[] {
         const result = [];
+
+        result.push({
+            key: "count",
+            label: "Count",
+            summaryResult: allData.filter((rec) => rec["Artist"] > 0)
+                .length
+        });
 
         result.push({
             key: "nominatedSingers",
@@ -63,23 +80,70 @@ class GrammySummary {
     styleUrls: ["./hierarchical-grid-disable-summaries.component.scss"],
     templateUrl: "hierarchical-grid-disable-summaries.component.html",
     imports: [
+        NgFor,
+        NgIf,
         IgxHierarchicalGridComponent,
+        IgxRowIslandComponent,
+        IgxCellTemplateDirective,
         IgxPreventDocumentScrollDirective,
         IgxColumnComponent,
-        IgxCellTemplateDirective,
-        IgxRowIslandComponent,
-        IgxButtonGroupComponent
+        IgxButtonDirective,
+        IgxCheckboxComponent,
+        IgxToggleDirective
     ]
 })
 export class HierarchicalGridDisableSummariesComponent implements OnInit, AfterViewInit {
-    @ViewChild("hierarchicalGrid1", { static: true })
-    private hierarchicalGrid1: IgxHierarchicalGridComponent;
+    @ViewChild("hierarchicalGrid1", { static: true }) public hierarchicalGrid1: IgxHierarchicalGridComponent;
+    @ViewChildren(IgxToggleDirective) public toggles: QueryList<IgxToggleDirective>;
+    @ViewChildren('toggleButton') public buttons: QueryList<ElementRef>;
 
     public data: any[];
-    public defaultSummaries: any[];
-    public customSummaries: any[];
+    public togglesArray: any[];
+    public buttonsArray: any[];
+
+    public columns = [
+        {
+            label: 'Artist',
+            field: 'Artist',
+            summaries: []
+        },
+        {
+            label: 'Photo',
+            field: 'Photo',
+            summaries: []
+        },
+        {
+            label: 'Debut',
+            field: 'Debut',
+            summaries: []
+        },
+        {
+            label: 'Grammy Nominations',
+            field: 'GrammyNominations',
+            summaries: []
+        },
+        {
+            label: 'Grammy Awards',
+            field: 'GrammyAwards',
+            summaries: []
+        }
+    ];
 
     public grammySummary = GrammySummary;
+
+    private _positionSettings = {
+        horizontalStartPoint: HorizontalAlignment.Right,
+        verticalStartPoint: VerticalAlignment.Bottom,
+        horizontalDirection: HorizontalAlignment.Left,
+        verticalDirection: VerticalAlignment.Bottom
+    };
+
+    private _overlaySettings: OverlaySettings = {
+        closeOnOutsideClick: true,
+        modal: false,
+        closeOnEscape: true,
+        positionStrategy: new ConnectedPositioningStrategy(this._positionSettings)
+    };
 
     constructor() {}
 
@@ -88,102 +152,59 @@ export class HierarchicalGridDisableSummariesComponent implements OnInit, AfterV
     }
 
     public ngAfterViewInit(): void {
-        this.defaultSummaries = [
-            {
-                label: 'Count',
-                selected: this.hierarchicalGrid1.getColumnByName('GrammyNominations').disabledSummaries.includes('count'),
-                togglable: true,
-                value: 'count'
-            },
-            {
-                label: 'Min',
-                selected: this.hierarchicalGrid1.getColumnByName('GrammyNominations').disabledSummaries.includes('min'),
-                togglable: true,
-                value: 'min'
-            },
-            {
-                label: 'Max',
-                selected: this.hierarchicalGrid1.getColumnByName('GrammyNominations').disabledSummaries.includes('max'),
-                togglable: true,
-                value: 'max'
-            },
-            {
-                label: 'Sum',
-                selected: this.hierarchicalGrid1.getColumnByName('GrammyNominations').disabledSummaries.includes('sum'),
-                togglable: true,
-                value: 'sum'
-            },
-            {
-                label: 'Average',
-                selected: this.hierarchicalGrid1.getColumnByName('GrammyNominations').disabledSummaries.includes('average'),
-                togglable: true,
-                value: 'average'
-            }
-        ];
+        this.togglesArray = this.toggles.toArray();
+        this.buttonsArray = this.buttons.toArray();
 
-        this.customSummaries = [
-            {
-                label: 'Nominated Singers',
-                selected: this.hierarchicalGrid1.getColumnByName('Photo').disabledSummaries.includes('nominatedSingers'),
-                togglable: true,
-                value: 'nominatedSingers'
-            },
-            {
-                label: 'Singers with Awards',
-                selected: this.hierarchicalGrid1.getColumnByName('Photo').disabledSummaries.includes('singersWithAwards'),
-                togglable: true,
-                value: 'singersWithAwards'
-            },
-            {
-                label: 'Total Nominations',
-                selected: this.hierarchicalGrid1.getColumnByName('Photo').disabledSummaries.includes('nominations'),
-                togglable: true,
-                value: 'nominations'
-            },
-            {
-                label: 'Total Awards',
-                selected: this.hierarchicalGrid1.getColumnByName('Photo').disabledSummaries.includes('awards'),
-                togglable: true,
-                value: 'awards'
-            }
-        ];
+        this.columns.forEach((column, index) => {
+            column.summaries = this.getSummaries(column.field)
+        });
     }
 
-    public disableDefaultSummary(event) {
-        const selectedValue = this.defaultSummaries[event.index].value;
-        const column = this.hierarchicalGrid1.getColumnByName('GrammyNominations');
+    public getCheckedSummariesCount(summaries: any[]): number {
+        return summaries.filter(summary => summary.checked).length;
+    }
 
-        if (!column.disabledSummaries.includes(selectedValue)) {
-            column.disabledSummaries = [...column.disabledSummaries, selectedValue];
+    public toggle(index: number): void {
+        this._overlaySettings.target = this.buttonsArray[index].nativeElement;
+        this.togglesArray[index].toggle(this._overlaySettings);
+    }
+
+    public toggleCheckbox(event: any, index: number, column: any): void {
+        column.summaries[index].checked = event.checked;
+        if (event.checked) {
+            this.hierarchicalGrid1.getColumnByName(column.field).disabledSummaries = [
+                ...this.hierarchicalGrid1.getColumnByName(column.field).disabledSummaries,
+                column.summaries[index].summaryKey
+            ];
+        } else {
+            this.hierarchicalGrid1.getColumnByName(column.field).disabledSummaries = this.hierarchicalGrid1.getColumnByName(column.field).disabledSummaries.filter(
+                (key: string) => key !== column.summaries[index].summaryKey
+            );
         }
     }
 
-    public enableDefaultSummary(event) {
-        const selectedValue = this.defaultSummaries[event.index].value;
-        const column = this.hierarchicalGrid1.getColumnByName('GrammyNominations');
-
-        column.disabledSummaries = column.disabledSummaries.filter(
-            (summary) => summary !== selectedValue
-        );
+    public uncheckAllColumns(column: any): void {
+        column.summaries.forEach(summary => (summary.checked = false));
+        this.hierarchicalGrid1.getColumnByName(column.field).disabledSummaries = [];
     }
 
-    public disableCustomSummary(event) {
-        const selectedValue = this.customSummaries[event.index].value;
-        const column = this.hierarchicalGrid1.getColumnByName('Photo');
-
-        if (!column.disabledSummaries.includes(selectedValue)) {
-            column.disabledSummaries = [...column.disabledSummaries, selectedValue];
-        }
-    }
-
-    public enableCustomSummary(event) {
-        const selectedValue = this.customSummaries[event.index].value;
-        const column = this.hierarchicalGrid1.getColumnByName('Photo');
-
-        column.disabledSummaries = column.disabledSummaries.filter(
-            (summary) => summary !== selectedValue
-        );
+    public checkAllColumns(column: any): void {
+        column.summaries.forEach(summary => (summary.checked = true));
+        this.hierarchicalGrid1.getColumnByName(column.field).disabledSummaries = column.summaries.map(summary => summary.summaryKey);
     }
 
     public formatter = (a) => a;
+
+    private getSummaries(columnName: string): any[] {
+        return this.hierarchicalGrid1
+            .getColumnByName(columnName)
+            .summaries.operate(
+                this.hierarchicalGrid1.data.map((record) => record.ProductID)
+            )
+            .map((summary) => ({
+                summaryKey: summary.key,
+                summaryLabel: summary.label,
+                checked: false
+            }));
+    }
 }

@@ -1,33 +1,58 @@
-<div class="grid__wrapper">
-    <div class="summary-chooser">
-        <igx-buttongroup
-            [selectionMode]="'multi'"
-            [values]="defaultSummaries"
-            (selected)="disableDefaultSummary($event)"
-            (deselected)="enableDefaultSummary($event)"
-        ></igx-buttongroup>
-    </div>
+<div class="grid-wrapper">
+    <div class="summaries">
+        <h5 class="summaries-title">Disable Summaries for Column:</h5>
+        <ng-container *ngFor="let column of columns; let i = index">
+            <div class="summary-column-button">
+                <button
+                    #toggleButton
+                    igxButton="outlined"
+                    (click)="toggle(i)"
+                >
+                    {{ column.label }} ({{ getCheckedSummariesCount(column.summaries) }})
+                </button>
+                <div igxToggle>
+                    <div class="summaries-dropdown">
+                        <div>
+                            <p class="summaries-dropdown-title">
+                                Disabled Summaries
+                            </p>
+                        </div>
 
-    <div class="summary-chooser">
-        <igx-buttongroup
-            [selectionMode]="'multi'"
-            [values]="customSummaries"
-            (selected)="disableCustomSummary($event)"
-            (deselected)="enableCustomSummary($event)"
-        ></igx-buttongroup>
+                        <div class="summaries-dropdown-items">
+                            <igx-checkbox
+                                *ngFor="let summary of column.summaries; let i = index"
+                                class="summaries-dropdown-item"
+                                [checked]="summary.checked"
+                                (change)="toggleCheckbox($event, i, column)"
+                            >
+                                {{ summary.summaryLabel }}
+                            </igx-checkbox>
+                        </div>
+
+                        <div class="summaries-dropdown-buttons">
+                            <button igxButton="flat" (click)="checkAllColumns(column)">
+                                Disable All
+                            </button>
+                            <button igxButton="flat" (click)="uncheckAllColumns(column)">
+                                Enable All
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
     </div>
-    
     <igx-tree-grid
         [igxPreventDocumentScroll]="true"
-        #treegrid1
+        #treeGrid1
         [data]="data"
         [autoGenerate]="false"
-        height="700px"
+        height="800px"
         width="100%"
         primaryKey="ID"
         foreignKey="ParentID"
     >
-        <igx-column field="ID" header="Order ID"> </igx-column>
+        <igx-column field="ID" header="Order ID" [hasSummary]="true"> </igx-column>
         <igx-column field="Name" header="Order Product" [hasSummary]="true">
         </igx-column>
         <igx-column
@@ -36,7 +61,6 @@
             dataType="number"
             [hasSummary]="true"
             [summaries]="unitsSummary"
-            [disabledSummaries]="['totalDelivered', 'totalNotDelivered']"
         >
         </igx-column>
         <igx-column
@@ -44,7 +68,6 @@
             header="Unit Price"
             dataType="number"
             [hasSummary]="true"
-            [disabledSummaries]="['count', 'sum', 'average']"
         >
         </igx-column>
         <igx-column
@@ -52,14 +75,14 @@
             header="Price"
             dataType="number"
             [hasSummary]="true"
-            [disabledSummaries]="['count', 'sum', 'average']"
         >
         </igx-column>
         <igx-column
             field="Delivered"
             header="Delivered"
-            [hasSummary]="true"
             [dataType]="'boolean'"
+            [hasSummary]="true"
+            [summaries]="deliveredSummary"
         >
         </igx-column>
         <igx-column
