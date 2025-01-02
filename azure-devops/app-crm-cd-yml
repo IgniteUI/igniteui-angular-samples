@@ -1,4 +1,3 @@
-trigger:
   branches:
     include:
     - master
@@ -9,16 +8,14 @@ pr: none
 
 name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
 
+pool:
+  vmImage: ubuntu-latest
+
 variables:
   githubToken: <value> # Add a GitHub token in Libraries
   ReplacementText: '@infragistics/igniteui-angular-extras'
 
-jobs:
-- job: CommonSteps
-  displayName: Common Steps for All Jobs
-  pool:
-    vmImage: ubuntu-latest
-  steps:
+steps:
   - checkout: self
     clean: true
     fetchTags: true
@@ -71,32 +68,6 @@ jobs:
       artifact: 'source-code'
       publishLocation: 'pipeline'
 
-- job: Job_1
-  displayName: App CD Build
-  dependsOn: CommonSteps
-  pool:
-    vmImage: ubuntu-latest
-  steps:
-  - download: current
-    artifact: source-code
-  - template: templates/cd-template.yml
-    parameters:
-      customCommand: run generate-live-editing
-      workingDir: $(Build.SourcesDirectory)
-      submoduleDir: angular-demos
-      baseHref: /angular-demos/
-      targetFolder: dist/app-lob
-      findRegex: angular-demos
-      npmBuildCommand: 'run build-ci'
-
-- job: Job_2
-  displayName: App CRM Build
-  dependsOn: CommonSteps
-  pool:
-    vmImage: ubuntu-latest
-  steps:
-  - download: current
-    artifact: source-code
   - template: templates/cd-template.yml
     parameters:
       customCommand: run generate-live-editing:app-crm
@@ -106,21 +77,3 @@ jobs:
       targetFolder: dist/app-crm
       findRegex: angular-demos
       npmBuildCommand: 'run build-ci:app-crm --loglevel verbose'
-
-- job: Job_3
-  displayName: App LOB Build
-  dependsOn: CommonSteps
-  pool:
-    vmImage: ubuntu-latest
-  steps:
-  - download: current
-    artifact: source-code
-  - template: templates/cd-template.yml
-    parameters:
-      customCommand: run generate-live-editing:app-lob
-      workingDir: $(Build.SourcesDirectory)
-      submoduleDir: angular-demos-lob
-      baseHref: /angular-demos-lob/
-      targetFolder: dist/app-lob
-      findRegex: angular-demos
-      npmBuildCommand: 'run build-ci:app-lob'
