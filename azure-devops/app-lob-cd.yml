@@ -63,18 +63,12 @@ steps:
       script: git clone --recurse-submodules https://github.com/IgniteUI/igniteui-live-editing-samples igniteui-live-editing-samples
       workingDirectory: $(Build.SourcesDirectory)
 
-  - task: PublishPipelineArtifact@1
-    inputs:
-      targetPath: '$(Build.SourcesDirectory)'
-      artifact: 'source-code'
-      publishLocation: 'pipeline'
-
   - template: templates/cd-template.yml
     parameters:
       customCommand: run generate-live-editing:app-lob
       workingDir: $(Build.SourcesDirectory)
       submoduleDir: angular-demos-lob
-      baseHref: /angular-demos-lob/
+      baseHref: \/angular-demos-lob\/
       targetFolder: dist/app-lob
       findRegex: angular-demos
       npmBuildCommand: 'run build-ci:app-lob'
