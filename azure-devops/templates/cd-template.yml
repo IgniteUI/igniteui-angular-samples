@@ -54,10 +54,16 @@ steps:
       verbose: false
       customCommand: ${{ parameters.customCommand }}
   
-  - script: |
-      find . -type f -exec sed -i 's/'\''igniteui-angular'\''/'\''@infragistics\/igniteui-angular'\''/g; s/"igniteui-angular"/"@infragistics\/igniteui-angular"/g' {} +
-    displayName: Update to licensed igniteui-angular
-    condition: succeeded()
+  - task: PowerShell@2
+    displayName: 'Replace with licensed igniteui-angular'
+    inputs:
+      targetType: 'inline'
+      script: |
+        # List of files to update
+        Get-ChildItem -Path . -Recurse -File | ForEach-Object {
+          (Get-Content -Path $file) -replace '''igniteui-angular''', '''@infragistics/igniteui-angular''' | Set-Content -Path $file
+          (Get-Content -Path $file) -replace '"igniteui-angular"', '"@infragistics/igniteui-angular"' | Set-Content -Path $file
+        }
 
   - task: Npm@1
     displayName: npm install
