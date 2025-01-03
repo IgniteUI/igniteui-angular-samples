@@ -59,10 +59,24 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        # List of files to update
-        Get-ChildItem -Path . -Recurse -File | ForEach-Object {
-          (Get-Content -Path $file) -replace '''igniteui-angular''', '''@infragistics/igniteui-angular''' | Set-Content -Path $file
-          (Get-Content -Path $file) -replace '"igniteui-angular"', '"@infragistics/igniteui-angular"' | Set-Content -Path $file
+        $mainDirectory = "."
+        $subDirs = @("projects", "src")
+        $oldStrings = @("'igniteui-angular'", """igniteui-angular""")  # Strings to replace
+        $newStrings = @("'@infragistics/igniteui-angular'", """@infragistics/igniteui-angular""")
+        $files = Get-ChildItem -Path $mainDirectory -File
+        foreach ($subDir in $subDirs) {
+          $subDirPath = Join-Path -Path $mainDirectory -ChildPath $subDir
+          if (Test-Path $subDirPath) {
+              $files += Get-ChildItem -Path $subDirPath -File -Recurse
+          }
+        }
+        foreach ($file in $files) {
+          $filePath = $file.FullName
+          $content = Get-Content -Path $filePath -Raw
+          for ($i = 0; $i -lt $oldStrings.Count; $i++) {
+              $content = $content -replace [regex]::Escape($oldStrings[$i]), $newStrings[$i]
+          }
+          Set-Content -Path $filePath -Value $content
         }
 
   - task: Npm@1
