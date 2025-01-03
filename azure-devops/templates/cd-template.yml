@@ -106,13 +106,10 @@ steps:
       Contents: web.config
       TargetFolder: $(Build.SourcesDirectory)/${{ parameters.targetFolder }}
 
-  - task: RegexReplace@3
-    displayName: RegEx Find & Replace
-    inputs:
-      InputSearchPattern: $(Build.SourcesDirectory)/${{ parameters.targetFolder }}/web.config
-      FindRegex: ${{ parameters.findRegex }}
-      ReplaceRegex: ${{ parameters.submoduleDir }}
-      UseUTF8: false
+  - script: |
+      sed -i 's/${{ parameters.findRegex }}/${{ parameters.submoduleDir }}/g' $(Build.SourcesDirectory)/${{ parameters.targetFolder }}/web.config
+    displayName: 'Update web.config file'
+    workingDirectory: ${{ parameters.workingDir }}
 
   - task: PublishPipelineArtifact@1
     displayName: Publish Artifact
@@ -169,7 +166,3 @@ steps:
     inputs:
       script: git push
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
-
-  - task: PostBuildCleanup@4
-    displayName: Clean Agent Directories
-    condition: eq('${{ parameters.runCleanup }}', 'true')
