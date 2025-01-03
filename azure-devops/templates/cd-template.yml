@@ -71,10 +71,12 @@ steps:
           }
         }
         foreach ($file in $files) {
+          Write-Host "Processing file: $($file.FullName)" -ForegroundColor Green
           $filePath = $file.FullName
           $content = Get-Content -Path $filePath -Raw
           for ($i = 0; $i -lt $oldStrings.Count; $i++) {
               $content = $content -replace [regex]::Escape($oldStrings[$i]), $newStrings[$i]
+              Write-Host "Replacing: $($oldStrings[$i]) with $($newStrings[$i])" -ForegroundColor Green
           }
           Set-Content -Path $filePath -Value $content
         }
