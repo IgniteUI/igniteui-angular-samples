@@ -61,8 +61,8 @@ steps:
       script: |
         $mainDirectory = "."
         $subDirs = @("projects", "src")
-        $oldStrings = @("'igniteui-angular'", """igniteui-angular""")  # Strings to replace
-        $newStrings = @("'@infragistics/igniteui-angular'", """@infragistics/igniteui-angular""")
+        $oldStrings = @("'igniteui-angular'", "igniteui-angular/", """igniteui-angular""")  # Strings to replace
+        $newStrings = @("'@infragistics/igniteui-angular'", "@infragistics/igniteui-angular/" ,"""@infragistics/igniteui-angular""")
         $files = Get-ChildItem -Path $mainDirectory -File
         foreach ($subDir in $subDirs) {
           $subDirPath = Join-Path -Path $mainDirectory -ChildPath $subDir
