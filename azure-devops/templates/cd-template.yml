@@ -54,11 +54,20 @@ steps:
       verbose: false
       customCommand: ${{ parameters.customCommand }}
   
-  - task: CmdLine@2
+  - script: |
+      find . -type f -exec sed -i 's/igniteui-angular/@infragistics\/igniteui-angular/g' {} +
     displayName: Update to licensed igniteui-angular
+    condition: succeeded()
+
+  - task: Npm@1
+    displayName: npm install
     inputs:
-      script: npx ng g @igniteui/angular-schematics:upgrade-packages --skip-install
-      workingDirectory: ${{ parameters.workingDir }}
+      command: install
+      workingDir: $(Build.SourcesDirectory)
+      verbose: false
+      customEndpoint: 'public proget'
+    env:
+      AZURE_PIPELINES: true
 
   - task: Npm@1
     displayName: ${{ parameters.npmBuildCommand }}
