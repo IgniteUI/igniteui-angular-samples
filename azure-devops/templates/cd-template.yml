@@ -55,7 +55,7 @@ steps:
       customCommand: ${{ parameters.customCommand }}
   
   - script: |
-      find . -type f -exec sed -i 's/igniteui-angular/@infragistics\/igniteui-angular/g' {} +
+      find . -type f -exec sed -i 's/\'igniteui-angular\'/\'@infragistics\/igniteui-angular\'/g; s/"igniteui-angular"/"@infragistics\/igniteui-angular"/g' {} +
     displayName: Update to licensed igniteui-angular
     condition: succeeded()
 
