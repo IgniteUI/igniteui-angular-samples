@@ -85,7 +85,7 @@ steps:
     displayName: 'Update packages trial->licensed using angular schematics'
     inputs:
       script: |
-        npx ng g @igniteui/angular-schematics:upgrade-packages --skip-install  --userconfig=$(Build.SourcesDirectory)\.npmrc
+        npx ng g @igniteui/angular-schematics:upgrade-packages --skip-install --userconfig=$(Build.SourcesDirectory)\.npmrc
       failOnStderr: true
 
   - task: Npm@1
