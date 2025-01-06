@@ -54,32 +54,42 @@ steps:
       verbose: false
       customCommand: ${{ parameters.customCommand }}
   
-  - task: PowerShell@2
-    displayName: 'Replace with licensed igniteui-angular'
+#  - task: PowerShell@2
+#    displayName: 'Replace with licensed igniteui-angular'
+#    inputs:
+#      targetType: 'inline'
+#      script: |
+#        $mainDirectory = "."
+#        $subDirs = @("projects", "src")
+#        $oldStrings = @("'igniteui-angular'", "igniteui-angular/", """igniteui-angular""")  # Strings to replace
+#        $newStrings = @("'@infragistics/igniteui-angular'", "@infragistics/igniteui-angular/" ,"""@infragistics/igniteui-angular""")
+#        $files = Get-ChildItem -Path $mainDirectory -File
+#        foreach ($subDir in $subDirs) {
+#          $subDirPath = Join-Path -Path $mainDirectory -ChildPath $subDir
+#          if (Test-Path $subDirPath) {
+#              $files += Get-ChildItem -Path $subDirPath -File -Recurse
+#          }
+#        }
+#        foreach ($file in $files) {
+#          Write-Host "Processing file: $($file.FullName)" -ForegroundColor Green
+#          $filePath = $file.FullName
+#          $content = Get-Content -Path $filePath -Raw
+#          for ($i = 0; $i -lt $oldStrings.Count; $i++) {
+#              $content = $content -replace [regex]::Escape($oldStrings[$i]), $newStrings[$i]
+#              Write-Host "Replacing: $($oldStrings[$i]) with $($newStrings[$i])" -ForegroundColor Green
+#          }
+#          Set-Content -Path $filePath -Value $content
+#        }
+
+  - task: CmdLine@2
     inputs:
-      targetType: 'inline'
       script: |
-        $mainDirectory = "."
-        $subDirs = @("projects", "src")
-        $oldStrings = @("'igniteui-angular'", "igniteui-angular/", """igniteui-angular""")  # Strings to replace
-        $newStrings = @("'@infragistics/igniteui-angular'", "@infragistics/igniteui-angular/" ,"""@infragistics/igniteui-angular""")
-        $files = Get-ChildItem -Path $mainDirectory -File
-        foreach ($subDir in $subDirs) {
-          $subDirPath = Join-Path -Path $mainDirectory -ChildPath $subDir
-          if (Test-Path $subDirPath) {
-              $files += Get-ChildItem -Path $subDirPath -File -Recurse
-          }
-        }
-        foreach ($file in $files) {
-          Write-Host "Processing file: $($file.FullName)" -ForegroundColor Green
-          $filePath = $file.FullName
-          $content = Get-Content -Path $filePath -Raw
-          for ($i = 0; $i -lt $oldStrings.Count; $i++) {
-              $content = $content -replace [regex]::Escape($oldStrings[$i]), $newStrings[$i]
-              Write-Host "Replacing: $($oldStrings[$i]) with $($newStrings[$i])" -ForegroundColor Green
-          }
-          Set-Content -Path $filePath -Value $content
-        }
+        echo "NPM_CONFIG_REGISTRY is set to: $NPM_CONFIG_REGISTRY"
+        
+        npx ng g @igniteui/angular-schematics:upgrade-packages --skip-install
+      failOnStderr: true
+    env:
+      NPM_CONFIG_REGISTRY: $(Build.SourcesDirectory)/.npmrc
 
   - task: Npm@1
     displayName: npm install
