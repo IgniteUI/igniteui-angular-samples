@@ -97,7 +97,7 @@ steps:
       command: custom
       workingDir: ${{ parameters.workingDir }}
       verbose: false
-      customCommand: ${{ parameters.npmBuildCommand }}
+      customCommand: '${{ parameters.npmBuildCommand }} --userconfig=$(Build.SourcesDirectory)\.npmrc'
 
   - task: CopyFiles@2
     displayName: Copy web.config
