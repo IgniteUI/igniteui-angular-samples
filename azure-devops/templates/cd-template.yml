@@ -151,12 +151,15 @@ steps:
         if [ "$changeCount" -eq 0 ]; then
           echo "##vso[task.logissue type=warning]No changes to commit."
           exit 0
+        else
+          echo "##vso[task.setvariable variable=changesDetected;isOutput=true]true"
         fi
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
 
 
   - task: CmdLine@2
     displayName: Commit changes
+    condition: eq(dependencies.CheckChanges.outputs['CheckChanges.changesDetected'], 'true')
     inputs:
       script: |
         git config user.name "tfsbuild"
@@ -167,6 +170,7 @@ steps:
 
   - task: CmdLine@2
     displayName: Push changes
+    condition: eq(dependencies.CheckChanges.outputs['CheckChanges.changesDetected'], 'true')
     inputs:
       script: git push
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
