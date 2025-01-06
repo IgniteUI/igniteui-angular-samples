@@ -49,6 +49,11 @@ steps:
       customCommand: 'config -L project set @infragistics:registry=https://packages.infragistics.com/npm/js-licensed/'
       customEndpoint: 'public proget'
 
+  - task: npmAuthenticate@0
+    inputs:
+      workingFile: '$(Build.SourcesDirectory)\.npmrc'
+      customEndpoint: 'public proget'
+
   - task: Npm@1
     displayName: npm install
     inputs:
