@@ -84,12 +84,13 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-        echo "NPM_CONFIG_REGISTRY is set to: $NPM_CONFIG_REGISTRY"
+        echo "NPM_CONFIG_USERCONFIG is set to: $NPM_CONFIG_USERCONFIG"
+        cat $NPM_CONFIG_USERCONFIG
         
         npx ng g @igniteui/angular-schematics:upgrade-packages --skip-install
       failOnStderr: true
     env:
-      NPM_CONFIG_REGISTRY: $(Build.SourcesDirectory)/.npmrc
+      NPM_CONFIG_USERCONFIG: $(Build.SourcesDirectory)/.npmrc
 
   - task: Npm@1
     displayName: npm install
