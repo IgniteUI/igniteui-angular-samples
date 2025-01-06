@@ -52,12 +52,12 @@ steps:
   - task: CmdLine@2
     displayName: 'Create empty .npmrc file in the project root dir'
     inputs:
-      script: 'touch $(Build.SourcesDirectory)\.npmrc'
+      script: 'touch $(Build.SourcesDirectory)/.npmrc'
       failOnStderr: true
 
   - task: npmAuthenticate@0
     inputs:
-      workingFile: '$(Build.SourcesDirectory)\.npmrc'
+      workingFile: '$(Build.SourcesDirectory)/.npmrc'
       customEndpoint: 'public proget'
 
   - task: Npm@1
