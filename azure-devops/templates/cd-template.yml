@@ -82,15 +82,11 @@ steps:
 #        }
 
   - task: CmdLine@2
+    displayName: 'Update packages trial->licensed using angular schematics'
     inputs:
       script: |
-        echo "NPM_CONFIG_USERCONFIG is set to: $NPM_CONFIG_USERCONFIG"
-        cat $NPM_CONFIG_USERCONFIG
-        
-        npx ng g @igniteui/angular-schematics:upgrade-packages --skip-install
+        npx ng g @igniteui/angular-schematics:upgrade-packages --skip-install  --userconfig=$(Build.SourcesDirectory)\.npmrc
       failOnStderr: true
-    env:
-      NPM_CONFIG_USERCONFIG: $(Build.SourcesDirectory)/.npmrc
 
   - task: Npm@1
     displayName: npm install
