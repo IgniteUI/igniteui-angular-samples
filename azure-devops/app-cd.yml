@@ -71,6 +71,6 @@ steps:
       workingDir: $(Build.SourcesDirectory)
       submoduleDir: angular-demos
       baseHref: \/angular-demos\/
-      targetFolder: dist/app-lob
+      targetFolder: dist/app
       findRegex: angular-demos
       npmBuildCommand: 'run build-ci'

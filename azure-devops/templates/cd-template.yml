@@ -158,7 +158,11 @@ steps:
   - task: CmdLine@2
     displayName: Commit changes
     inputs:
-      script: git commit -m "Automated repository update"
+      script: |
+        git config user.name "tfsbuild"
+        git config user.email "tfsbuild@infragistics.com"
+        git add .
+        git commit -m "Automated repository update"
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
 
   - task: CmdLine@2
