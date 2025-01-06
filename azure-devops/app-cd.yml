@@ -49,6 +49,12 @@ steps:
       customCommand: 'config -L project set @infragistics:registry=https://packages.infragistics.com/npm/js-licensed/'
       customEndpoint: 'public proget'
 
+  - task: CmdLine@2
+    displayName: 'Create empty .npmrc file in the project root dir'
+    inputs:
+      script: 'touch $(Build.SourcesDirectory)\.npmrc'
+      failOnStderr: true
+
   - task: npmAuthenticate@0
     inputs:
       workingFile: '$(Build.SourcesDirectory)\.npmrc'
