@@ -159,7 +159,7 @@ steps:
 
   - task: CmdLine@2
     displayName: Commit changes
-    condition: eq(dependencies.CheckChanges.outputs['CheckChanges.changesDetected'], 'true')
+    condition: eq(variables['changesDetected'], 'true')
     inputs:
       script: |
         git config user.name "tfsbuild"
@@ -170,7 +170,7 @@ steps:
 
   - task: CmdLine@2
     displayName: Push changes
-    condition: eq(dependencies.CheckChanges.outputs['CheckChanges.changesDetected'], 'true')
+    condition: eq(variables['changesDetected'], 'true')
     inputs:
       script: git push
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
