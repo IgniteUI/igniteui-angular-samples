@@ -41,6 +41,12 @@ steps:
           (Get-Content -Path $file) -replace 'igniteui-angular-extras', '$(ReplacementText)' | Set-Content -Path $file
         }
 
+  - task: CmdLine@2
+    displayName: 'Create empty .npmrc file in the project root dir'
+    inputs:
+      script: 'touch $(Build.SourcesDirectory)/.npmrc'
+      failOnStderr: true
+
   - task: Npm@1
     displayName: 'Register licensed npm registry in .npmrc'
     inputs:
@@ -48,12 +54,6 @@ steps:
       workingDir: '$(Build.SourcesDirectory)'
       customCommand: 'config -L project set @infragistics:registry=https://packages.infragistics.com/npm/js-licensed/'
       customEndpoint: 'public proget'
-
-  - task: CmdLine@2
-    displayName: 'Create empty .npmrc file in the project root dir'
-    inputs:
-      script: 'touch $(Build.SourcesDirectory)/.npmrc'
-      failOnStderr: true
 
   - task: npmAuthenticate@0
     inputs:
