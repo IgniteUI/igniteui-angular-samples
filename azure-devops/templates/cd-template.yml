@@ -130,7 +130,7 @@ steps:
     displayName: Publish Artifact
     inputs:
       targetPath: $(Build.ArtifactStagingDirectory)/output.zip
-      artifact: '{{ parameters.submoduleDir }}-artifact'
+      artifact: '${{ parameters.submoduleDir }}-artifact'
       publishLocation: pipeline
 
   - task: Npm@1
