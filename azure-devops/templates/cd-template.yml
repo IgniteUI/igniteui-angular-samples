@@ -118,11 +118,19 @@ steps:
     displayName: 'Update web.config file'
     workingDirectory: ${{ parameters.workingDir }}
 
+  - script: |
+      sourcePath="$(Build.SourcesDirectory)/${{ parameters.targetFolder }}"
+      destinationZip="$(Build.ArtifactStagingDirectory)/output.zip"
+      cd "$sourcePath"
+      zip -r "$destinationZip" ./
+    displayName: 'Zip build output'
+
+
   - task: PublishPipelineArtifact@1
     displayName: Publish Artifact
     inputs:
-      targetPath: $(Build.SourcesDirectory)/${{ parameters.targetFolder }}
-      artifact: $(Build.SourceBranchName)-artifact
+      targetPath: $(Build.ArtifactStagingDirectory)/output.zip
+      artifact: {{ parameters.submoduleDir }}-artifact
       publishLocation: pipeline
 
   - task: Npm@1
