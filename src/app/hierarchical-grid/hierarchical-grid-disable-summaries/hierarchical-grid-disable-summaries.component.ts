@@ -24,7 +24,7 @@ import {
 } from "igniteui-angular";
 import { SINGERS } from "../../data/singersData";
 import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scroll.directive";
-import { NgFor, NgIf } from "@angular/common";
+import { NgFor } from "@angular/common";
 
 class GrammySummary {
     public operate(
@@ -81,7 +81,6 @@ class GrammySummary {
     templateUrl: "hierarchical-grid-disable-summaries.component.html",
     imports: [
         NgFor,
-        NgIf,
         IgxHierarchicalGridComponent,
         IgxRowIslandComponent,
         IgxCellTemplateDirective,

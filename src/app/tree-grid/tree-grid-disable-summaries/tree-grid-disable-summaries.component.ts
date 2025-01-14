@@ -21,7 +21,7 @@ import {
 } from "igniteui-angular";
 import { ORDERS_DATA } from "../data/orders";
 import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scroll.directive";
-import { NgFor, NgIf } from "@angular/common";
+import { NgFor } from "@angular/common";
 
 class UnitsSummary {
     public operate(
@@ -142,7 +142,6 @@ class DeliveredSummary {
     templateUrl: "./tree-grid-disable-summaries.component.html",
     imports: [
         NgFor,
-        NgIf,
         IgxTreeGridComponent,
         IgxPreventDocumentScrollDirective,
         IgxColumnComponent,

@@ -30,10 +30,16 @@
                         </div>
 
                         <div class="summaries-dropdown-buttons">
-                            <button igxButton="flat" (click)="checkAllColumns(column)">
+                            <button igxButton="flat"
+                                [disabled]="getCheckedSummariesCount(column.summaries) === column.summaries.length"
+                                (click)="checkAllColumns(column)"
+                            >
                                 Disable All
                             </button>
-                            <button igxButton="flat" (click)="uncheckAllColumns(column)">
+                            <button igxButton="flat"
+                                [disabled]="getCheckedSummariesCount(column.summaries) === 0"
+                                (click)="uncheckAllColumns(column)"
+                            >
                                 Enable All
                             </button>
                         </div>

@@ -3,13 +3,14 @@
     padding: 16px;
 
     .summaries {
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
 
         &-title {
-            margin: 0 1rem 0 0;
+            margin: 0 0 1rem 0;
+            flex-basis: 100%;
         }
 
         .summary-column-button {
