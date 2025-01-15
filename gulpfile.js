@@ -247,8 +247,6 @@ const copyGitHooks = async (cb) => {
         return;
     }
 
-    console.log(process.env);
-
     const gitHooksDir = './.git/hooks/';
     const defaultCopyHookDir = gitHooksDir + 'scripts/';
     const dirs = [
