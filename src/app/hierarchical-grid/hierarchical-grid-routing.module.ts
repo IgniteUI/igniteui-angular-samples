@@ -23,6 +23,7 @@ import {
     HGridConditionalRowSelectorsComponent
 } from './hierarchical-grid-conditional-row-selectors/hierarchical-grid-conditional-row-selectors.component';
 import { HGridCustomKBNavigationComponent } from './hierarchical-grid-custom-kb-navigation/hierarchical-grid-custom-kb-navigation-sample.component';
+import { HierarchicalGridDisableSummariesComponent } from './hierarchical-grid-disable-summaries/hierarchical-grid-disable-summaries.component';
 import { HGridDisplayDensitySampleComponent } from './hierarchical-grid-display-density/hierarchical-grid-density.component';
 import { HGridEditingEventsComponent } from './hierarchical-grid-editing-events/hierarchical-grid-editing-events.component';
 import { HGridEditingStyleComponent } from './hierarchical-grid-editing-style/hierarchical-grid-editing-style.component';
@@ -405,6 +406,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridCustomKBNavigationComponent,
         data: hierarchicalGridRoutesData['hierarchical-grid-custom-kb-navigation'],
         path: 'hierarchical-grid-custom-kb-navigation'
+    },
+    {
+        component: HierarchicalGridDisableSummariesComponent,
+        data: hierarchicalGridRoutesData['hierarchical-grid-disable-summaries'],
+        path: 'hierarchical-grid-disable-summaries'
     },
     {
         component: HGridPagingStyleSampleComponent,

@@ -1,0 +1,141 @@
+<div class="grid-wrapper">
+    <div class="summaries">
+        <h5 class="summaries-title">Disable Summaries for Column:</h5>
+        <ng-container *ngFor="let column of columns; let i = index">
+            <div class="summary-column-button">
+                <button
+                    #toggleButton
+                    igxButton="outlined"
+                    (click)="toggle(i)"
+                >
+                    {{ column.label }} ({{ getCheckedSummariesCount(column.summaries) }})
+                </button>
+                <div igxToggle>
+                    <div class="summaries-dropdown">
+                        <div>
+                            <p class="summaries-dropdown-title">
+                                Disabled Summaries
+                            </p>
+                        </div>
+
+                        <div class="summaries-dropdown-items">
+                            <igx-checkbox
+                                *ngFor="let summary of column.summaries; let i = index"
+                                class="summaries-dropdown-item"
+                                [checked]="summary.checked"
+                                (change)="toggleCheckbox($event, i, column)"
+                            >
+                                {{ summary.summaryLabel }}
+                            </igx-checkbox>
+                        </div>
+
+                        <div class="summaries-dropdown-buttons">
+                            <button igxButton="flat"
+                                [disabled]="getCheckedSummariesCount(column.summaries) === column.summaries.length"
+                                (click)="checkAllColumns(column)"
+                            >
+                                Disable All
+                            </button>
+                            <button igxButton="flat"
+                                [disabled]="getCheckedSummariesCount(column.summaries) === 0"
+                                (click)="uncheckAllColumns(column)"
+                            >
+                                Enable All
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <igx-hierarchical-grid
+        [igxPreventDocumentScroll]="true"
+        #hierarchicalGrid1
+        [data]="data"
+        [autoGenerate]="false"
+        [height]="'700px'"
+        [width]="'100%'"
+        [rowHeight]="'65px'"
+    >
+        <igx-column field="Artist" [hasSummary]="true"></igx-column>
+        <igx-column
+            field="Photo"
+            [hasSummary]="true"
+            [summaries]="grammySummary"
+        >
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner_2">
+                    <img [src]="cell.value" class="photo" />
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column
+            field="Debut"
+            [hasSummary]="true"
+            [formatter]="formatter"
+        ></igx-column>
+        <igx-column
+            field="GrammyNominations"
+            header="Grammy Nominations"
+            dataType="number"
+            [hasSummary]="true"
+        ></igx-column>
+        <igx-column
+            field="GrammyAwards"
+            header="Grammy Awards"
+            dataType="number"
+            [hasSummary]="true"
+        ></igx-column>
+
+        <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false">
+            <igx-column field="Album" [hasSummary]="true"></igx-column>
+            <igx-column
+                field="LaunchDate"
+                header="Launch Date"
+                [dataType]="'date'"
+                [hasSummary]="true"
+            ></igx-column>
+            <igx-column
+                field="BillboardReview"
+                header="Billboard Review"
+                dataType="number"
+                [hasSummary]="true"
+            ></igx-column>
+            <igx-column
+                field="USBillboard200"
+                header="US Billboard 200"
+                dataType="number"
+                [hasSummary]="true"
+            ></igx-column>
+            <igx-row-island
+                [height]="null"
+                [key]="'Songs'"
+                [autoGenerate]="false"
+            >
+                <igx-column
+                    field="Number"
+                    header="No."
+                    [hasSummary]="true"
+                ></igx-column>
+                <igx-column field="Title" [hasSummary]="true"></igx-column>
+                <igx-column
+                    field="Released"
+                    dataType="date"
+                    [hasSummary]="true"
+                ></igx-column>
+                <igx-column field="Genre" [hasSummary]="true"></igx-column>
+            </igx-row-island>
+        </igx-row-island>
+
+        <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false">
+            <igx-column field="Tour" [hasSummary]="true"></igx-column>
+            <igx-column
+                field="StartedOn"
+                header="Started on"
+                [hasSummary]="true"
+            ></igx-column>
+            <igx-column field="Location" [hasSummary]="true"></igx-column>
+            <igx-column field="Headliner" [hasSummary]="true"></igx-column>
+        </igx-row-island>
+    </igx-hierarchical-grid>
+</div>

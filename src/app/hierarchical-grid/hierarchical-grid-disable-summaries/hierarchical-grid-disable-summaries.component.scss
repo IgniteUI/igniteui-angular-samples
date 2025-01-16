@@ -1,0 +1,58 @@
+.grid-wrapper {
+    margin: 0 auto;
+    padding: 16px;
+
+    .summaries {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &-title {
+            margin: 0 0 1rem 0;
+            flex-basis: 100%;
+        }
+
+        .summary-column-button {
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .photo {
+        vertical-align: middle;
+        max-height: 62px;
+    }
+
+    .cell__inner_2 {
+        margin: 1px
+    }
+}
+
+.summaries-dropdown {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+
+    &-title {
+        color: #40B3FF;
+        margin: 0.5rem 1.1rem;
+    }
+
+    &-items {
+        display: flex;
+        flex-direction: column;
+
+        .summaries-dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+        }
+    }
+
+    &-buttons {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.2rem;
+    }
+}
