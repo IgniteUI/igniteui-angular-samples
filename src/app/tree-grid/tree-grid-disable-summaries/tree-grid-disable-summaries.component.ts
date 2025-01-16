@@ -201,9 +201,9 @@ export class TreeGridDisableSummariesComponent implements OnInit, AfterViewInit 
     public deliveredSummary = DeliveredSummary;
 
     private _positionSettings = {
-        horizontalStartPoint: HorizontalAlignment.Right,
+        horizontalStartPoint: HorizontalAlignment.Left,
         verticalStartPoint: VerticalAlignment.Bottom,
-        horizontalDirection: HorizontalAlignment.Left,
+        horizontalDirection: HorizontalAlignment.Right,
         verticalDirection: VerticalAlignment.Bottom
     };
 

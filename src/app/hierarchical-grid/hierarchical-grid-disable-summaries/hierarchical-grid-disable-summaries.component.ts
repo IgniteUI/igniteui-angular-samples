@@ -131,9 +131,9 @@ export class HierarchicalGridDisableSummariesComponent implements OnInit, AfterV
     public grammySummary = GrammySummary;
 
     private _positionSettings = {
-        horizontalStartPoint: HorizontalAlignment.Right,
+        horizontalStartPoint: HorizontalAlignment.Left,
         verticalStartPoint: VerticalAlignment.Bottom,
-        horizontalDirection: HorizontalAlignment.Left,
+        horizontalDirection: HorizontalAlignment.Right,
         verticalDirection: VerticalAlignment.Bottom
     };
 

@@ -211,9 +211,9 @@ export class GridDisableSummariesComponent implements OnInit, AfterViewInit {
     public discontinuedSummary = DiscontinuedSummary;
 
     private _positionSettings = {
-        horizontalStartPoint: HorizontalAlignment.Right,
+        horizontalStartPoint: HorizontalAlignment.Left,
         verticalStartPoint: VerticalAlignment.Bottom,
-        horizontalDirection: HorizontalAlignment.Left,
+        horizontalDirection: HorizontalAlignment.Right,
         verticalDirection: VerticalAlignment.Bottom
     };
 
