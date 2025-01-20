@@ -28,5 +28,5 @@ export const listsRoutesData = {
     // eslint-disable-next-line quote-props
     'tree-basic-sample': { displayName: 'Tree Basic Sample', parentName: 'Tree' },
     'tree-advanced-sample': { displayName: 'Tree Advanced Sample', parentName: 'Tree' },
-    'tree-styling': { displayName: 'Tree Styling', parentName: 'Tree' },
+    'tree-styling': { displayName: 'Tree Styling', parentName: 'Tree' }
 };

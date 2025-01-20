@@ -164,7 +164,7 @@ export const listsRoutes: Routes = [
         component: TreeStylingComponent,
         data: listsRoutesData['tree-styling'],
         path: 'tree-styling'
-    },
+    }
 ];
 
 @NgModule({
