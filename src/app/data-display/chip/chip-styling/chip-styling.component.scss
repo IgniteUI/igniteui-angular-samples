@@ -1,22 +1,18 @@
-@use '../../../../variables' as *;
-
-igx-chip {
-    margin-right: 5px;
-    margin-top: 20px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-theme: chip-theme(
-    $background: #011627,
-    $hover-background:  #011627dc,
-    $focus-background: #0116276c,
-    $selected-background: #ECAA53,
-    $hover-selected-background: #ECAA53,
-    $focus-selected-background: #ECAA53,
-    $text-color: #FEFEFE,
-    $remove-icon-color-focus: #da0000,
-    $border-radius: 5px
+  $background: #011627,
+  $hover-background: #011627dc,
+  $focus-background: #0116276c,
+  $selected-background: #ecaa53,
+  $hover-selected-background: #ecaa53,
+  $focus-selected-background: #ecaa53,
+  $text-color: #fefefe,
+  $remove-icon-color: #f14545,
+  $remove-icon-color-focus: #da0000,
+  $border-radius: 5px,
 );
 
-:host ::ng-deep {
-    @include css-vars($custom-theme);
-}
+@include css-vars($custom-theme);
+ 

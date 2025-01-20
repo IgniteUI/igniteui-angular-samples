@@ -28,7 +28,12 @@ export class MonthPickerConfigGenerator implements IConfigGenerator {
         // styled month picker sample
         configs.push(new Config({
             component: 'MonthpickerStylingComponent',
-            appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/scheduling/monthpicker/monthpicker-styling/layout.scss"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxCalendarModule', 'MonthpickerStylingComponent'],
+                ngDeclarations: ['MonthpickerStylingComponent'],
+                ngImports: ['IgxCalendarModule']
+            }),
             shortenComponentPathBy: "/scheduling/monthpicker/"
         }));
 

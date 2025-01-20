@@ -45,7 +45,12 @@ export class TabBarConfigGenerator implements IConfigGenerator {
         // tabbar styling sample
         configs.push(new Config({
             component: 'TabbarStyleComponent',
-            appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/layouts/tabbar/tabbar-style/layout.scss"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxBottomNavModule', 'IgxIconModule', 'TabbarStyleComponent'],
+                ngDeclarations: ['TabbarStyleComponent'],
+                ngImports: ['IgxBottomNavModule', 'IgxIconModule']
+            }),
             shortenComponentPathBy: "/layouts/tabbar/"
         }));
 

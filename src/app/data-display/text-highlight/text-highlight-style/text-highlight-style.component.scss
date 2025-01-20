@@ -1,43 +1,24 @@
-@use '../../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $dark-highlight: highlight-theme(
-    $resting-background: #FFCD0F,
-    $resting-color: #292826,
-    $active-background: #292826,
-    $active-color: #FFCD0F
+  $resting-background: #ffcd0f,
+  $resting-color: #292826,
+  $active-background: #292826,
+  $active-color: #ffcd0f,
 );
 
 :host {
-    display: block;
-    padding: 4px;
-
-    ::ng-deep {
-        @include css-vars($dark-highlight);
-
-        .custom-highlight {
-            border: 1px solid #FFCD0F;
-        }
-
-        .custom-active-highlight {
-            box-shadow: 0 0 3px 0 rgba(0,0,0, .5);
-        }
+  ::ng-deep {
+    @include css-vars($dark-highlight);  
+    
+    .custom-highlight {
+      border: 1px solid #ffcd0f;
+    }  
+    
+    .custom-active-highlight {
+      box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.75);
     }
-}
-
-.caseSensitiveIcon {
-    width: 1rem;
-    height: 1rem;
-    font-size: 1rem;
-}
-
-.caseSensitiveButton + span {
-    margin-left: 8px;
-}
-
-.searchButtons {
-    margin-left: 8px;
-}
-
-.sample-text-container {
-    margin-top: 16px;
-}
+  }
+};
+ 

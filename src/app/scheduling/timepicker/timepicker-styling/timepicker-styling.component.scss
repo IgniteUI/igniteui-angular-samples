@@ -1,8 +1,5 @@
-@use '../../../../variables' as *;
-
-igx-time-picker {
-    width: 400px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $my-time-picker-theme: time-picker-theme(
   $text-color: #e4c8a5,
@@ -14,12 +11,12 @@ $my-time-picker-theme: time-picker-theme(
 );
 
 $dark-button: button-theme(
-    $foreground: #ECAA53,
-    $hover-background: #ECAA53
+  $foreground: #ECAA53,
+  $hover-background: #ECAA53
 );
 
 :host ::ng-deep {
-    @include css-vars($my-time-picker-theme);
-    @include css-vars($dark-button);
+  @include css-vars($my-time-picker-theme);
+  @include css-vars($dark-button);
 }
-
+ 

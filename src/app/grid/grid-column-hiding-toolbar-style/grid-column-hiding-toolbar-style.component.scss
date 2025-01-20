@@ -1,4 +1,5 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $yellow: #ffcd0f;
 $bg: #292826;
@@ -6,51 +7,51 @@ $gray: #404040;
 $light-gray: rgba(255, 255, 255, .54);
 
 $dark-column-actions-theme: column-actions-theme(
-    $background-color: $bg,
-    $title-color: $yellow
+  $background-color: $bg,
+  $title-color: $yellow
 );
 
 $dark-button-theme: button-theme(
-    $background: $yellow,
-    $foreground: $bg,
-    $hover-background: $gray,
-    $hover-foreground: $yellow,
-    $focus-background: $yellow,
-    $disabled-foreground: $light-gray
+  $background: $yellow,
+  $foreground: $bg,
+  $hover-background: $gray,
+  $hover-foreground: $yellow,
+  $focus-background: $yellow,
+  $disabled-foreground: $light-gray
 );
 
 $dark-input-group: input-group-theme(
-    $filled-text-color: $yellow,
-    $focused-text-color: $yellow,
-    $idle-text-color: $yellow,
-    $idle-bottom-line-color: $yellow,
-    $interim-bottom-line-color: $yellow,
-    $hover-bottom-line-color: $yellow,
-    $focused-secondary-color: $gray,
-    $box-background: $bg
+  $filled-text-color: $yellow,
+  $focused-text-color: $yellow,
+  $idle-text-color: $yellow,
+  $idle-bottom-line-color: $yellow,
+  $interim-bottom-line-color: $yellow,
+  $hover-bottom-line-color: $yellow,
+  $focused-secondary-color: $gray,
+  $box-background: $bg
 );
 
 $dark-checkbox-theme: checkbox-theme(
-    $label-color: $yellow,
-    $empty-color: $yellow,
-    $fill-color: $yellow,
-    $tick-color: $bg
+  $label-color: $yellow,
+  $empty-color: $yellow,
+  $fill-color: $yellow,
+  $tick-color: $bg
 );
 
 $dark-radio-theme: radio-theme(
-    $label-color: $yellow,
-    $empty-color: $yellow,
-    $fill-color: $yellow
+  $label-color: $yellow,
+  $empty-color: $yellow,
+  $fill-color: $yellow
 );
 
 $dark-ripple-theme: ripple-theme(
-    $color: $gray
+  $color: $gray
 );
 
-:host {
-	@include css-vars($dark-column-actions-theme);
-    @include css-vars($dark-radio-theme);
+@include css-vars($dark-column-actions-theme);
+@include css-vars($dark-radio-theme);
 
+:host {
     ::ng-deep {
         igx-column-actions, igx-grid-toolbar {
             @include css-vars($dark-button-theme);
@@ -59,39 +60,4 @@ $dark-ripple-theme: ripple-theme(
             @include css-vars($dark-ripple-theme);
         }
     }
-}
-
-.grid__wrapper {
-    margin: 15px;
-    display: flex;
-    flex-direction: row;
-}
-
-.columnHidingContainer {
-    min-width: 250px;
-    height: 560px;
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
-    border: 1px gray;
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px 2px rgba(50, 50, 50, 0.25);
-    igx-column-actions {
-        height: 460px;
-    }
-    background-color: $bg;
-}
-
-.columnsOrderOptionsContainer {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.gridContainer {
-    width: 100%;
-    min-width: 200px;
-    display: flex;
-    flex-direction: column;
-    margin-left: 30px;
 }

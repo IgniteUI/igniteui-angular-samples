@@ -1,76 +1,74 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $yellow: #ffcd0f;
 $black: #292826;
 
 $custom-grid: grid-theme(
-    $filtering-row-background: $yellow
+  $filtering-row-background: $yellow
 );
 
 $custom-flat-button: button-theme(
-    $background: $yellow,
-    $foreground: $black,
-    $hover-background: $black,
-    $hover-foreground: $yellow
+  $background: $yellow,
+  $foreground: $black,
+  $hover-background: $black,
+  $hover-foreground: $yellow
 );
 
 $custom-contained-button: button-theme(
-    $background: $black,
-    $foreground: $yellow,
-    $hover-background: $black,
-    $hover-foreground: $yellow
+  $background: $black,
+  $foreground: $yellow,
+  $hover-background: $black,
+  $hover-foreground: $yellow
 );
 
 $custom-button-group: button-group-theme(
-    $item-background: $yellow,
-    $item-text-color: $black,
-    $item-hover-background: $black,
-    $item-hover-text-color: $yellow
+  $item-background: $yellow,
+  $item-text-color: $black,
+  $item-hover-background: $black,
+  $item-hover-text-color: $yellow
 );
 
 $custom-input-group: input-group-theme(
-    $box-background: $yellow,
-    $idle-text-color: $black,
-    $focused-text-color: $black,
-    $filled-text-color: $black
+  $box-background: $yellow,
+  $idle-text-color: $black,
+  $focused-text-color: $black,
+  $filled-text-color: $black
 );
 
 $custom-list: list-theme(
-    $background: $yellow
+  $background: $yellow
 );
 
 $custom-checkbox: checkbox-theme(
-    $empty-color: $black,
-    $fill-color: $black,
-    $tick-color: $yellow,
-    $label-color: $black
+   $empty-color: $black,
+   $fill-color: $black,
+   $tick-color: $yellow,
+   $label-color: $black
 );
 
 $custom-drop-down: drop-down-theme(
-    $background-color: $yellow,
-    $selected-item-background: lighten($black, 10%),
-    $selected-focus-item-background: lighten($black, 15%),
-    $item-text-color: $black,
-    $hover-item-background: $black,
-    $hover-item-text-color: $yellow
+  $background-color: $yellow,
+  $selected-item-background: lighten($black, 10%),
+  $selected-focus-item-background: lighten($black, 15%),
+  $item-text-color: $black,
+  $hover-item-background: $black,
+  $hover-item-text-color: $yellow
 );
 
 :host {
-	::ng-deep {
-		@include css-vars($custom-grid);
-		@include css-vars($custom-drop-down);
-		@include css-vars($custom-input-group);
-		@include css-vars($custom-checkbox);
-		@include css-vars($custom-list);
-		@include css-vars($custom-flat-button);
-		@include css-vars($custom-button-group);
-
-		.igx-excel-filter__apply {
-			@include css-vars($custom-contained-button);
-		}
-	}
+  ::ng-deep {
+    @include css-vars($custom-grid);
+    @include css-vars($custom-drop-down);
+    @include css-vars($custom-input-group);
+    @include css-vars($custom-checkbox);
+    @include css-vars($custom-list);
+    @include css-vars($custom-flat-button);
+    @include css-vars($custom-button-group);
+    
+    .igx-excel-filter__apply {
+      @include css-vars($custom-contained-button);
+    }
+  }
 }
-
-.grid__wrapper {
-    margin: 16px;
-}
+ 

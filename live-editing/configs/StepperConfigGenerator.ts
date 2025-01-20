@@ -52,7 +52,12 @@ export class StepperConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'StepperStylingSampleComponent',
-            appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/layouts/stepper/stepper-styling-sample/layout.scss"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['StepperStylingSampleComponent', 'IgxStepperModule', 'IgxIconModule', 'IgxButtonModule'],
+                ngDeclarations: ['StepperStylingSampleComponent'],
+                ngImports: ['IgxStepperModule', 'IgxIconModule', 'IgxButtonModule']
+            }),
             shortenComponentPathBy: '/layouts/stepper/'
         }));
 

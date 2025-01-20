@@ -37,7 +37,13 @@ export class DialogConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'DialogStylingSampleComponent',
-            appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/interactions/dialog/dialog-styling-sample/layout.scss"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxButtonModule', 'IgxDialogModule', 'IgxRippleModule',
+                    'DialogStylingSampleComponent', 'IgxIconModule', 'IgxToggleModule'],
+                ngDeclarations: ['DialogStylingSampleComponent'],
+                ngImports: ['IgxButtonModule', 'IgxDialogModule', 'IgxRippleModule', 'IgxIconModule', 'IgxToggleModule']
+            }),
             shortenComponentPathBy: "/interactions/"
         }));
 

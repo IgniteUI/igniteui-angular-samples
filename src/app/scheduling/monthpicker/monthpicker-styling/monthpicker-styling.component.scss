@@ -1,26 +1,17 @@
-@use '../../../../variables' as *;
-
-igx-month-picker {
-	--ig-size: 2;
-	
-	max-width: 400px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $my-calendar-theme: calendar-theme(
-	$border-radius: 15px,
-	$content-background: #011627,
-	$picker-background: #011627,
-	
-	$ym-current-foreground: #ecaa53,
-	$ym-hover-background: #ecaa53,
-	
-	$navigation-color: #ecaa53,
-	$picker-hover-foreground: #d37b08,
-	$navigation-hover-color: #d37b08,
-	$picker-foreground: #ecaa53
+  $border-radius: 15px,
+  $content-background: #011627,
+  $picker-background: #011627,
+  $ym-current-foreground: #ecaa53,
+  $ym-hover-background: #ecaa53,
+  $navigation-color: #ecaa53,
+  $picker-hover-foreground: #d37b08,
+  $navigation-hover-color: #d37b08,
+  $picker-foreground: #ecaa53,
 );
 
-:host ::ng-deep {
-    @include css-vars($my-calendar-theme);
-}
-
+@include css-vars($my-calendar-theme);
+ 

@@ -25,7 +25,14 @@ export class TextHighlightConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'TextHighlightStyleComponent',
-            appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/data-display/text-highlight/text-highlight-style/layout.scss"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxButtonModule', 'IgxInputGroupModule',
+                    'IgxIconModule', 'IgxRippleModule', 'IgxTextHighlightModule', 'TextHighlightStyleComponent'],
+                ngDeclarations: ['TextHighlightStyleComponent'],
+                ngImports: ['IgxButtonModule', 'IgxIconModule',
+                    'IgxInputGroupModule', 'IgxRippleModule', 'IgxTextHighlightModule']
+            }),
             shortenComponentPathBy: "/data-display/text-highlight/"
         }));
 

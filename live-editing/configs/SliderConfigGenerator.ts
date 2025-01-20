@@ -90,7 +90,12 @@ export class SliderConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'AppSliderStylingComponent',
-            appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/interactions/slider/slider-styling-sample/layout.scss"],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxSliderModule', 'AppSliderStylingComponent', 'HammerModule'],
+                ngDeclarations: ['AppSliderStylingComponent'],
+                ngImports: ['IgxSliderModule', 'HammerModule']
+            }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
         return configs;

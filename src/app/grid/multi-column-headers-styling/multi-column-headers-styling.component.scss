@@ -1,18 +1,13 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-theme: grid-theme(
-    $header-background: #e0f3ff,
-    $header-text-color: #e41c77,
-    $header-border-width: 1px,
-    $header-border-style: solid,
-    $header-border-color: rgba(0, 0, 0, 0.08)
+  $header-background: #e0f3ff,
+  $header-text-color: #e41c77,
+  $header-border-width: 1px,
+  $header-border-style: solid,
+  $header-border-color: rgba(0, 0, 0, 0.08)
 );
 
-:host ::ng-deep {
-	@include css-vars($custom-theme);
-}
-
-.grid__wrapper {
-    --ig-size: var(--ig-size-small);
-    margin: 16px;
-}
+@include css-vars($custom-theme);
+ 

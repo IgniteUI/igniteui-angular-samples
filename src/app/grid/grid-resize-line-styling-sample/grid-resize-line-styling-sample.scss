@@ -1,26 +1,9 @@
-@use '../../../variables' as *;
-
-$primary-color: #0288D1;
-$secondary-color: #BDBDBD;
-
-$custom-theme-palette: palette(
-    $primary: $primary-color,
-    $secondary: $secondary-color,
-    $surface: #fff
-);
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-grid-theme: grid-theme(
-    $resize-line-color: color($custom-theme-palette, 'secondary', 500)
+    $resize-line-color: #0288D1
 );
 
-:host {
-    @include palette($custom-theme-palette);
-    ::ng-deep {
-        @include css-vars($custom-grid-theme);
-    }
-}
-
-.grid__wrapper {
-    --ig-size: var(--ig-size-medium);
-    padding: 16px;
-}
+@include css-vars($custom-grid-theme);
+ 

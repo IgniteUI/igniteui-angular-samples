@@ -1,9 +1,5 @@
-@use '../../../variables' as *;
-
-.sample-wrapper {
-    margin: 0 auto;
-    padding: 16px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $banner-theme: banner-theme(
     $banner-background: #494949,
@@ -16,7 +12,6 @@ $icon-button-theme: icon-button-theme(
 );
 
 :host {
-
   ::ng-deep {
     @include css-vars($banner-theme);
     @include css-vars($icon-button-theme);
