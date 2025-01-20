@@ -1,68 +1,54 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $my-dark-palette: palette(
-    $primary: #2466ff,
-    $secondary: #FFCD0F,
-    $surface: #2a2b2f,
-    $gray: #fff,
+  $primary: #2466ff,
+  $secondary: #FFCD0F,
+  $surface: #2a2b2f,
+  $gray: #fff,
 );
 
 $my-dark-color: color($my-dark-palette, 'surface');
 
 $dark-button-theme: button-theme(
-    $background: color($my-dark-palette, 'secondary'),
-    $hover-background: color($my-dark-palette, 'gray', 100),
-    $hover-foreground: color($my-dark-palette, 'secondary')
+  $background: color($my-dark-palette, 'secondary'),
+  $hover-background: color($my-dark-palette, 'gray', 100),
+  $hover-foreground: color($my-dark-palette, 'secondary')
 );
 
 $dark-grid-toolbar-theme: grid-toolbar-theme(
-    $background-color: $my-dark-color,
-    $title-text-color: color($my-dark-palette, 'secondary'),
-    $dropdown-background: $my-dark-color,
+  $background-color: $my-dark-color,
+  $title-text-color: color($my-dark-palette, 'secondary'),
+  $dropdown-background: $my-dark-color,
 );
 
 $dark-column-actions-theme: column-actions-theme(
-    $title-color: color($my-dark-palette, 'secondary'),
-    $background-color: color($my-dark-palette, 'surface')
+  $title-color: color($my-dark-palette, 'secondary'),
+  $background-color: color($my-dark-palette, 'surface')
 );
 
 $dark-checkbox-theme: checkbox-theme(
-    $tick-color: $my-dark-color,
+  $tick-color: $my-dark-color,
 );
 
-:host {
-    @include palette($my-dark-palette);
-    ::ng-deep {
-        @include css-vars($dark-grid-toolbar-theme);
-        @include css-vars($dark-column-actions-theme);
-        @include css-vars($dark-checkbox-theme);
-        @include css-vars($dark-button-theme);
+igx-grid {
+  @include palette($my-dark-palette);
+}
 
-        .igx-grid-toolbar__actions {
-            .igx-button--outlined {
-                margin-left: 0.5rem;
-                border: none;
-            }
-        }
+@include css-vars($dark-grid-toolbar-theme);
+
+:host { 
+  ::ng-deep {
+    @include css-vars($dark-column-actions-theme);
+    @include css-vars($dark-checkbox-theme);
+    @include css-vars($dark-button-theme);
+    
+    .igx-grid-toolbar__actions {
+      .igx-button--outlined {
+        margin-left: 0.5rem;
+        border: none;
+      }
     }
+  }
 }
 
-.grid__wrapper {
-    margin: 15px;
-}
-
-.cell__inner {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    position: relative;
-    justify-content: space-between;
-}
-
-.athlete_name {
-    margin-left: 30px;
-}
-
-.country_name {
-    margin-left: 30px;
-}

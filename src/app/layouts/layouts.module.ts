@@ -35,6 +35,7 @@ import {
 import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
 import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
 import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
+import { AccordionStyleComponent } from './accordion/accordion-style/accordion-style.component';
 import { AvatarCSSVariablesComponent } from './avatar/avatar-css-variables/avatar-css-variables.component';
 import { AvatarSample1Component } from './avatar/avatar-sample-1/avatar-sample-1.component';
 import { AvatarSample2Component } from './avatar/avatar-sample-2/avatar-sample-2.component';
@@ -108,6 +109,7 @@ import { TabsStyleComponent } from './tabs/tabs-style/tabs-style.component';
         AccordionSample1Component,
         AccordionSample2Component,
         AccordionSample3Component,
+        AccordionStyleComponent,
         AvatarSample1Component,
         AvatarSample2Component,
         AvatarSample3Component,

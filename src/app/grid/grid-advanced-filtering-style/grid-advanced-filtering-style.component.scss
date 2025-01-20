@@ -1,4 +1,4 @@
-@use '../../../variables' as *;
+@use "igniteui-angular/theming" as *;
 
 $yellow: #ffcd0f;
 $black: #292826;
@@ -65,21 +65,16 @@ $custom-drop-down: drop-down-theme(
 
 
 :host {
-    display: block;
-    margin: 16px;
-
-	::ng-deep {
-
-        igx-advanced-filtering-dialog {
-            @include theme(
-            $palette: $dark-material-palette
-            );
-
-            @include css-vars($custom-button);
-			@include css-vars($custom-button-group);
-			@include css-vars($custom-input-group);
-			@include css-vars($custom-chip);
-			@include css-vars($custom-drop-down);
-        }
+  ::ng-deep {
+    igx-advanced-filtering-dialog {
+      @include theme(
+        $palette: $dark-material-palette
+    );
+    @include css-vars($custom-button);
+  	@include css-vars($custom-button-group);
+  	@include css-vars($custom-input-group);
+  	@include css-vars($custom-chip);
+  	@include css-vars($custom-drop-down);
     }
+  }
 }

@@ -143,6 +143,7 @@ export class OverlayConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'OverlayStylingComponent',
+            additionalFiles: ["/src/app/interactions/overlay/overlay-styling/layout.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxToggleModule', 'IgxComboModule', 'IgxOverlayService', 'OverlayStylingComponent'],
                 ngProviders: ['IgxOverlayService'],

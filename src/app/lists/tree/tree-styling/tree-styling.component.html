@@ -1,0 +1,10 @@
+<div class="sample-wrapper">
+    <igx-tree class="tree-root">
+        <igx-tree-node *ngFor="let type of data">
+            {{ type.Name }}
+            <igx-tree-node *ngFor="let value of type.Children">
+                {{ value.Name }}
+            </igx-tree-node>
+        </igx-tree-node>
+    </igx-tree>
+</div>

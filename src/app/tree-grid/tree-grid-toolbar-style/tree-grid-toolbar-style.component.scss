@@ -1,44 +1,30 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $dark-button-theme: button-theme(
-    $background: #FFCD0F,
-    $foreground: #292826,
-    $hover-background: #404040,
-    $hover-foreground: #FFCD0F
+  $background: #FFCD0F,
+  $foreground: #292826,
+  $hover-background: #404040,
+  $hover-foreground: #FFCD0F
 );
 
 $dark-grid-toolbar-theme: grid-toolbar-theme(
-    $background-color: #292826,
-    $title-text-color: #FFCD0F
+  $background-color: #292826,
+  $title-text-color: #FFCD0F
 );
 
+@include css-vars($dark-grid-toolbar-theme);
+
 :host {
-    ::ng-deep {
-        @include css-vars($dark-grid-toolbar-theme);
-
-        .igx-grid-toolbar__actions {
-            @include css-vars($dark-button-theme);
-
-            .igx-button--outlined {
-                margin-left: 0.5rem;
-                border: none;
-            }
-        }
+  ::ng-deep {
+    .igx-grid-toolbar__actions {
+      @include css-vars($dark-button-theme); 
+ 
+      .igx-button--outlined {
+        margin-left: 0.5rem;
+        border: none;
+      }
     }
+  }
 }
 
-.grid__wrapper {
-    margin: 10px;
-}
-
-.cell__inner {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    position: relative;
-    justify-content: space-between;
-}
-
-.name {
-    margin-left: 30px;
-}
