@@ -163,5 +163,5 @@ export const ListsRoutes: Routes = [
         component: TreeStylingComponent,
         data: listsRoutesData['tree-styling'],
         path: 'tree-styling'
-    },
+    }
 ];
