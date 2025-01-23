@@ -35,6 +35,7 @@ steps:
         $files = @(
             "projects/app-lob/src/app/grid-dynamic-chart-data/grid-dynamic-chart-data.module.ts",
             "projects/app-lob/src/app/grid-dynamic-chart-data/grid-dynamic-chart-data.component.ts",
+            "projects/app-lob/src/app/data-analysis-dock-manager/data-analysis-dock-manager.component.ts",
             "projects/app-lob/src/app/app.module.ts",
             "package.json")
         foreach ($file in $files) {
