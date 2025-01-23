@@ -19,6 +19,9 @@ parameters:
   - name: runCleanup
     type: boolean
     default: true
+  - name: repositoryfy
+    type: boolean
+    default: false
 
 steps:
   # - task: CmdLine@2
