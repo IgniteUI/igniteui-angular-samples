@@ -86,3 +86,4 @@ steps:
       targetFolder: dist/app-crm
       findRegex: angular-demos
       npmBuildCommand: 'run build-ci:app-crm --loglevel verbose'
+      repositoryfy: false

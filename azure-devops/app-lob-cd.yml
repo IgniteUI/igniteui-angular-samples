@@ -86,3 +86,4 @@ steps:
       targetFolder: dist/app-lob
       findRegex: angular-demos
       npmBuildCommand: 'run build-ci:app-lob'
+      repositoryfy: true

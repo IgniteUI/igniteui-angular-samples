@@ -86,3 +86,4 @@ steps:
       targetFolder: dist/app
       findRegex: angular-demos
       npmBuildCommand: 'run build-ci'
+      repositoryfy: true
