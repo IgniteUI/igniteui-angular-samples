@@ -2,7 +2,7 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-grid-theme: grid-theme(
-  $resize-line-color: #0288D1
+  $resize-line-color: #0288d1
 );
 
 :host ::ng-deep {

@@ -21,4 +21,5 @@ $dark-button: button-theme(
   ::ng-deep {
     @include css-vars($my-dialog-theme); 
   }
-};
+}
+ 
