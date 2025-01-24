@@ -44,7 +44,7 @@ $input-theme: input-group-theme(
 
 :host {
   ::ng-deep {
-    .igx-grid__tbody{
+    .igx-grid__tbody {
       @include css-vars($input-theme);
     }
     @include css-vars($checkbox-theme);

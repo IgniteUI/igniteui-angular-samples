@@ -2,15 +2,15 @@
 @use "igniteui-angular/theming" as *;
 
 $dark-button-theme: button-theme(
-  $background: #FFCD0F,
+  $background: #ffcd0f,
   $foreground: #292826,
   $hover-background: #404040,
-  $hover-foreground: #FFCD0F
+  $hover-foreground: #ffcd0f
 );
 
 $dark-grid-toolbar-theme: grid-toolbar-theme(
   $background-color: #292826,
-  $title-text-color: #FFCD0F
+  $title-text-color: #ffcd0f
 );
 
 @include css-vars($dark-grid-toolbar-theme);

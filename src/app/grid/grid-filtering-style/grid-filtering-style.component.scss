@@ -44,11 +44,11 @@ $dark-drop-down-theme: drop-down-theme(
 
 :host {
   ::ng-deep {
-  	@include css-vars($dark-drop-down-theme);
-  	igx-grid-filtering-row {
-  	  @include css-vars($dark-button);
-  	  @include css-vars($dark-input-group);
-  	}
+    @include css-vars($dark-drop-down-theme);
+    igx-grid-filtering-row {
+      @include css-vars($dark-button);
+      @include css-vars($dark-input-group);
+    }
   }
 }
  

@@ -3,16 +3,16 @@
 
 $my-time-picker-theme: time-picker-theme(
   $text-color: #e4c8a5,
-  $hover-text-color: #ECAA53,
-  $selected-text-color: #ECAA53,
-  $header-background: #ECAA53,
+  $hover-text-color: #ecaa53,
+  $selected-text-color: #ecaa53,
+  $header-background: #ecaa53,
   $header-hour-text-color: #011627,
   $background-color: #011627
 );
 
 $dark-button: button-theme(
-  $foreground: #ECAA53,
-  $hover-background: #ECAA53
+  $foreground: #ecaa53,
+  $hover-background: #ecaa53
 );
 
 :host ::ng-deep {
