@@ -1,33 +1,20 @@
-@use '../../../../variables' as *;
-
-.calendar-wrapper {
-    max-width: 600px;
-    min-width: 200px;
-    margin: 8px;
-}
-
-.igx-calendar {
-	--ig-size: 2;
-
-    box-shadow: elevation(4);
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-calendar-theme: calendar-theme(
-    $header-background: #345779,
-    $content-background: #fdfdfd,
-    $header-foreground: #ffffff,
-    $date-current-foreground: #2dabe8,
-    $navigation-color: #2dabe8,
-    $date-selected-foreground: #fdfdfd,
-    $date-current-background: #fdfdfd,
-    $navigation-hover-color: #345779,
-    $ym-current-foreground: #2dabe8,
-    $ym-hover-foreground: #2dabe8,
-    $picker-foreground: #2dabe8,
-    $picker-hover-foreground: #345779,
+  $header-background: #345779,
+  $content-background: #fdfdfd,
+  $header-foreground: #ffffff,
+  $date-current-foreground: #2dabe8,
+  $navigation-color: #2dabe8,
+  $date-selected-foreground: #fdfdfd,
+  $date-current-background: #fdfdfd,
+  $navigation-hover-color: #345779,
+  $ym-current-foreground: #2dabe8,
+  $ym-hover-foreground: #2dabe8,
+  $picker-foreground: #2dabe8,
+  $picker-hover-foreground: #345779,
 );
 
-:host {
-    @include css-vars($custom-calendar-theme);
-}
-
+@include css-vars($custom-calendar-theme);
+ 

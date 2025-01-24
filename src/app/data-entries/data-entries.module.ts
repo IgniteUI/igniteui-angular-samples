@@ -67,6 +67,7 @@ import { SelectInputDirectivesComponent } from './select/select-input-directives
 import { SelectSample1Component } from './select/select-sample-1/select-sample-1.component';
 import { SelectSample2Component } from './select/select-sample-2/select-sample-2.component';
 import { SelectSample4Component } from './select/select-sample-4/select-sample-4.component';
+import { SelectStylingComponent } from './select/select-styling/select-styling.component';
 import { SwitchSample1Component } from './switch/switch-sample-1/switch-sample-1.component';
 import { SwitchSample2Component } from './switch/switch-sample-2/switch-sample-2.component';
 import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.component';
@@ -148,6 +149,7 @@ import { IconButtonStylingComponent } from './icon-button/icon-button-styling/ic
         SelectSample1Component,
         SelectSample2Component,
         SelectSample4Component,
+        SelectStylingComponent,
         SelectInputDirectivesComponent,
         SelectHeaderFooterComponent,
         ButtonGroupSampleComponent,

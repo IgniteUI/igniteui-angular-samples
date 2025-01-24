@@ -1,12 +1,10 @@
-@use '../../../../variables' as *;
+@use "igniteui-angular/theming" as *;
 
 $dark-tooltip: tooltip-theme(
-    $text-color: #ECAA53,
-    $background: #011627,
-    $border-radius: 6px
+  $text-color: #ecaa53,
+  $background: #011627,
+  $border-radius: 6px,
 );
 
-:host {
-	@include css-vars($dark-tooltip);
-}
-
+@include css-vars($dark-tooltip);
+ 

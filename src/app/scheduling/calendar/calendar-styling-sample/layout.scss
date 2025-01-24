@@ -1,0 +1,12 @@
+@use "igniteui-angular/theming" as *;
+
+.calendar-wrapper {
+  max-width: 600px;
+  min-width: 200px;
+  margin: 8px;
+}
+
+.igx-calendar {
+  --ig-size: 2;
+  box-shadow: elevation(4);
+}

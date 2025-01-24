@@ -88,7 +88,8 @@ export class NavdrawerConfigGenerator implements IConfigGenerator {
             additionalFiles: [
                 "/src/app/menus/navdrawer/nav-drawer-routing/nav-drawer-routing.component.ts",
                 "/src/app/menus/navdrawer/nav-drawer-routing/nav-drawer-routing.component.html",
-                "/src/app/menus/navdrawer/nav-drawer-routing/nav-drawer-routing.component.scss"
+                "/src/app/menus/navdrawer/nav-drawer-routing/nav-drawer-routing.component.scss",
+                "/src/app/menus/navdrawer/nav-drawer-styling/layout.scss"
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: [

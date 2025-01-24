@@ -62,12 +62,13 @@ export class LinearProgressbarConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'LinearProgressbarStylingComponent',
+            additionalFiles: ["/src/app/data-display/linear-progressbar/linear-progressbar-styling-sample/layout.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxProgressBarModule', 'LinearProgressbarStylingComponent'],
                 ngDeclarations: ['LinearProgressbarStylingComponent'],
                 ngImports: ['IgxProgressBarModule']
             }),
-            shortenComponentPathBy: "/data-display/linear-progressbar"
+            shortenComponentPathBy: "/data-display/linear-progressbar/"
         }));
 
         return configs;

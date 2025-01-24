@@ -1,25 +1,17 @@
-@use '../../../../variables' as *;
-
-igx-buttongroup{
-    display: inline-block;
-    width: 200px;
-}
+@use "layout.scss" as *;
+@use "igniteui-angular/theming" as *;
 
 $custom-button-group: button-group-theme(
-    $item-text-color: #fdfdfd,
-    $item-background: #2f4d6a,
-    $item-hover-text-color: #fdfdfd,
-    $item-hover-background: #1f3347,
-    $item-selected-text-color: #fdfdfd,
-    $item-selected-background: #1f3347,
-    $item-selected-hover-background: #1f3347,
-    $disabled-text-color: gray,
-    $disabled-background-color: lightgray
+  $item-text-color: #fdfdfd,
+  $item-background: #2f4d6a,
+  $item-hover-text-color: #fdfdfd,
+  $item-hover-background: #1f3347,
+  $item-selected-text-color: #fdfdfd,
+  $item-selected-background: #1f3347,
+  $item-selected-hover-background: #1f3347,
+  $disabled-text-color: gray,
+  $disabled-background-color: lightgray,
 );
 
-:host ::ng-deep {
-	@include css-vars($custom-button-group);
-}
-
-
-
+@include css-vars($custom-button-group);
+ 

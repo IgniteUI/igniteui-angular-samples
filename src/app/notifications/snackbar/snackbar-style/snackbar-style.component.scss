@@ -1,13 +1,11 @@
-@use '../../../../variables' as *;
+@use "igniteui-angular/theming" as *;
 
 $dark-snackbar: snackbar-theme(
-    $text-color: #FFCD0F,
-    $background: #292826,
-    $button-color: #FFCD0F,
-    $border-radius: 12px
+  $text-color: #ffcd0f,
+  $background: #292826,
+  $button-color: #ffcd0f,
+  $border-radius: 12px
 );
 
-:host {
-    @include css-vars($dark-snackbar);
-}
-
+@include css-vars($dark-snackbar);
+ 

@@ -5,4 +5,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar-style.component.scss'],
   templateUrl: './navbar-style.component.html'
 })
+
 export class NavbarStyleComponent { }

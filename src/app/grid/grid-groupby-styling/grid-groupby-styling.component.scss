@@ -1,4 +1,5 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $yellow: #ffcd0f;
 $gray: #494949;
@@ -6,34 +7,32 @@ $light-gray: #f8f8f8;
 $black: #222;
 
 $custom-theme: grid-theme(
-    $group-row-background: $gray,
-    $group-row-selected-background: #383838,
-    $group-label-column-name-text: $light-gray,
-    $group-label-icon: $yellow,
-    $group-label-text: $light-gray,
-    $group-count-background: $yellow,
-    $group-count-text-color: $black,
-    $expand-icon-color: $yellow,
-    $expand-icon-hover-color: rgb(223, 181, 13),
-    $cell-active-border-color: $yellow,
-    $row-selected-background: #fff6d3,
-    $row-selected-text-color: $black,
-    $drop-indicator-color: $yellow
+  $group-row-background: $gray,
+  $group-row-selected-background: #383838,
+  $group-label-column-name-text: $light-gray,
+  $group-label-icon: $yellow,
+  $group-label-text: $light-gray,
+  $group-count-background: $yellow,
+  $group-count-text-color: $black,
+  $expand-icon-color: $yellow,
+  $expand-icon-hover-color: rgb(223, 181, 13),
+  $cell-active-border-color: $yellow,
+  $row-selected-background: #fff6d3,
+  $row-selected-text-color: $black,
+  $drop-indicator-color: $yellow
 );
 
 $custom-chips-theme: chip-theme(
-    $background: $gray,
-    $text-color: $light-gray,
-    $hover-text-color: #e7e7e7
+  $background: $gray,
+  $text-color: $light-gray,
+  $hover-text-color: #e7e7e7
 );
 
-:host {
-    display: block;
-    padding-top: 16px;
-    margin: 0 16px;
+@include css-vars($custom-theme);
 
-	::ng-deep {
-		@include css-vars($custom-theme);
-		@include css-vars($custom-chips-theme);
-	}
+:host {
+  ::ng-deep {
+    @include chip($custom-chips-theme);
+  }
 }
+ 

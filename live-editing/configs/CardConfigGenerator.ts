@@ -177,7 +177,8 @@ export class CardConfigGenerator implements IConfigGenerator {
                 ]
             }),
             additionalFiles: [
-                "/src/app/layouts/card/card.blueprint.ts"
+                "/src/app/layouts/card/card.blueprint.ts",
+                "/src/app/layouts/card/card-styling-sample/layout.scss"
             ],
             shortenComponentPathBy: "/layouts/card/"
         }));

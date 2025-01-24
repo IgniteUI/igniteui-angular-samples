@@ -1,9 +1,5 @@
-@use '../../../variables' as *;
-
-.wrapper {
-    --ig-size: var(--ig-size-medium);
-    padding: 16px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-theme: grid-theme(
   $cell-active-border-color: #ffcd0f,
@@ -16,6 +12,5 @@ $custom-theme: grid-theme(
   $sortable-header-icon-hover-color: #e9bd0d
 );
 
-:host ::ng-deep {
-	@include css-vars($custom-theme);
-}
+@include css-vars($custom-theme);
+ 

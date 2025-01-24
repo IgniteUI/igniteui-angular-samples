@@ -137,6 +137,7 @@ export class SliderConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'AppSliderStylingComponent',
+            additionalFiles: ["/src/app/interactions/slider/slider-styling-sample/layout.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxSliderModule', 'AppSliderStylingComponent', 'HammerModule'],
                 ngDeclarations: ['AppSliderStylingComponent'],

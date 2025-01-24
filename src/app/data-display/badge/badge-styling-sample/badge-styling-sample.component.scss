@@ -1,30 +1,11 @@
-@use '../../../../variables' as *;
-
-.wrapper {
-    display: flex;
-    flex-direction: row;
-}
-
-.contact-name {
-    font-weight: 600;
-}
-
-.contact-container{
-    margin-left: 20px;
-}
-
-.badge-style {
-  position: absolute;
-  bottom: 2.5px;
-  left: 40px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-badge-theme: badge-theme(
-    $border-color: white,
-    $icon-color: white,
-    $text-color: black
+  $border-radius: 15px,
+  $icon-color: white,
+  $text-color: black
 );
 
-:host {
-    @include css-vars($custom-badge-theme);
-}
+@include css-vars($custom-badge-theme);
+

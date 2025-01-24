@@ -97,6 +97,7 @@ export class TabsConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'TabsStyleComponent',
+            additionalFiles: ["/src/app/layouts/tabs/tabs-style/layout.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: [
                     'IgxIconModule',

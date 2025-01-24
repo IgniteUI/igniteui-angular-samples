@@ -1,0 +1,13 @@
+.avatars-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.avatar-sample {
+  display: flex;
+  flex: 1 0 30%;
+  width: 88px;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}

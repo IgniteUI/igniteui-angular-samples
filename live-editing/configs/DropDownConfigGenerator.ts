@@ -71,7 +71,7 @@ export class DropDownConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ['/src/app/data/heroData.ts'],
+            additionalFiles: ['/src/app/data/heroData.ts', '/src/app/data-entries/dropdown/dropdown-styling/layout.scss'],
             component: 'DropDownStylingComponent',
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxDropDownModule', 'DropDownStylingComponent', 'IgxButtonModule', 'IgxToggleModule'],

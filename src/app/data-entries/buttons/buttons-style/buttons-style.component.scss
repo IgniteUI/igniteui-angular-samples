@@ -1,25 +1,17 @@
-@use '../../../../variables' as *;
-
-.buttons-sample {
-    display: flex;
-    margin: 8px;
-}
-
-.button-sample {
-    display: flex;
-    margin-right: 16px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-button-theme: button-theme(
-    $foreground: #fdfdfd,
-    $hover-foreground: #fdfdfd,
-    $background: #345779,
-    $hover-background: #2e4d6b,
-    $focus-foreground: #fdfdfd,
-    $focus-background: #2e4d6b,
-    $disabled-foreground: #bbb
+  $foreground: #fdfdfd,
+  $hover-foreground: #fdfdfd,
+  $focus-foreground: #fdfdfd,
+  $background: #345779,
+  $hover-background: #2e4d6b,
+  $focus-background: #2e4d6b,
+  $disabled-foreground: #2e4d6b,
 );
 
-:host ::ng-deep {
-	@include css-vars($custom-button-theme);
+.button-sample {
+  @include css-vars($custom-button-theme);
 }
+ 

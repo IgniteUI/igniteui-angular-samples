@@ -35,6 +35,7 @@ export class ChipConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'ChipStylingSampleComponent',
+            additionalFiles: ["/src/app/data-display/chip/chip-styling/layout.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxChipsModule', 'IgxIconModule', 'ChipStylingSampleComponent'],
                 ngDeclarations: ['ChipStylingSampleComponent'],

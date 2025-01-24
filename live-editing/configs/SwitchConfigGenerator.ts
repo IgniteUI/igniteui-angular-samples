@@ -31,6 +31,7 @@ export class SwitchConfigGenerator implements IConfigGenerator {
         // switch styling
         configs.push(new Config({
             component: 'SwitchStylingComponent',
+            additionalFiles: ["/src/app/data-entries/switch/switch-styling/layout.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxSwitchModule', 'SwitchStylingComponent'],
                 ngDeclarations: ['SwitchStylingComponent'],

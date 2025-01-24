@@ -1,28 +1,24 @@
-@use '../../../../variables' as *;
-
-.date-picker-wrapper {
-    padding: 1rem;
-    max-width: 600px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-datepicker-theme: calendar-theme(
-    $header-background: #345779,
-    $content-background: #fdfdfd,
-    $header-foreground: #ffffff,
-    $date-current-foreground: #2dabe8,
-    $navigation-color: #2dabe8,
-    $date-selected-foreground: #fdfdfd,
-    $date-current-background: #fdfdfd,
-    $navigation-hover-color: #345779,
-    $ym-current-foreground: #2dabe8,
-    $ym-hover-foreground: #2dabe8,
-    $picker-foreground: #2dabe8,
-    $picker-hover-foreground: #345779,
+  $header-background: #345779,
+  $content-background: #fdfdfd,
+  $header-foreground: #ffffff,
+  $date-current-foreground: #2dabe8,
+  $navigation-color: #2dabe8,
+  $date-selected-foreground: #fdfdfd,
+  $date-current-background: #fdfdfd,
+  $navigation-hover-color: #345779,
+  $ym-current-foreground: #2dabe8,
+  $ym-hover-foreground: #2dabe8,
+  $picker-foreground: #2dabe8,
+  $picker-hover-foreground: #345779,
 );
 
 :host {
-    ::ng-deep {
-        @include css-vars($custom-datepicker-theme);
-    }
+  ::ng-deep {
+    @include css-vars($custom-datepicker-theme);
+  }
 }
-
+ 

@@ -1,17 +1,12 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-theme: grid-theme(
-    $pinned-border-width: 5px,
-    $pinned-border-style: double,
-    $pinned-border-color: #FFCD0F,
-    $cell-active-border-color: #FFCD0F
+  $pinned-border-width: 5px,
+  $pinned-border-style: double,
+  $pinned-border-color: #ffcd0f,
+  $cell-active-border-color: #ffcd0f
 );
 
-:host ::ng-deep {
-	@include css-vars($custom-theme);
-}
-
-.grid-container {
-    display: flex;
-    padding: 16px;
-}
+@include css-vars($custom-theme);
+ 

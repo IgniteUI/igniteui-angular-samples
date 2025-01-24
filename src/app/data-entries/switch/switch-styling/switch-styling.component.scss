@@ -1,20 +1,10 @@
-@use '../../../../variables' as *;
-
-//Sample related styling
-igx-switch {
-    margin-top: 24px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-switch-theme: switch-theme(
-    $thumb-on-color: #ECAA53,
-    $track-on-color: #F0CB9C
+  $thumb-on-color: #ecaa53,
+  $track-on-color: #f0cb9c
 );
 
-:host {
-    display: flex;
-    flex-flow: column nowrap;
-    padding: 16px;
-
-	@include css-vars($custom-switch-theme);
-}
-
+@include css-vars($custom-switch-theme);
+ 

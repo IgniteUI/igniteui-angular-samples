@@ -1,72 +1,29 @@
-@use '../../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 // Add your brand colors
 $my-primary-color:#353a4b;
 $my-secondary-color: #ffd351;
+$my-surface-color: #efefef;
 
-// Create custom palette
+// Create custom palette.
 $my-color-palette: palette(
-    $primary: $my-primary-color,
-    $secondary: $my-secondary-color,
-	$surface: #000
+  $primary: $my-primary-color,
+  $secondary: $my-secondary-color,
+  $surface: $my-surface-color
 );
 
 // Create expansion panel theme
 $custom-panel-theme: expansion-panel-theme(
-    $header-background: color($my-color-palette, "primary", 700),
-    $header-focus-background: color($my-color-palette, "primary", 700),
-    $header-title-color: color($my-color-palette, "secondary"),
-    $header-icon-color: color($my-color-palette, "secondary"),
-    $body-background: color($my-color-palette, "primary", 700),
-    $body-color: color($my-color-palette, "secondary", 100),
-    $border-radius: .5
+  $header-background: color($my-color-palette, "primary", 700),
+  $header-focus-background: color($my-color-palette, "primary", 700),
+  $header-title-color: color($my-color-palette, "secondary"),
+  $header-icon-color: color($my-color-palette, "secondary"),
+  $body-background: color($my-color-palette, "primary", 700),
+  $body-color: color($my-color-palette, "secondary", 100),
+  $border-radius: .5
 );
 
-:host {
-    @include palette($my-color-palette);
-    // Penetrate the ViewEncapsulation
-    ::ng-deep {
-        // Apply the custom themes to the compoents mixins.
-        @include css-vars($custom-panel-theme);
-    }
-}
-
-// Styles NOT related to Theming engine START
-.sample-holder {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    height: 100%;
-}
-
-.my-expansion-panel {
-    max-width: 500px;
-    min-width: 300px;
-    width: 100%;
-}
-
-.example-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-top: 1px solid color($my-color-palette, 'primary');
-    ::selection  {
-        background: color($my-color-palette, 'secondary', 200)
-    }
-    span {
-        display: block;
-        margin-bottom: 16px;
-    }
-}
-
-a {
-    text-decoration: none;
-}
-
-img {
-    width: 100%;
-    margin-bottom: 8px;
-    border-radius: 8px;
-}
-// Styles NOT related to Theming engine END
-
+// Apply the custom themes to the compoents mixins.
+@include css-vars($custom-panel-theme);
+ 

@@ -1,34 +1,25 @@
-@use '../../../../variables' as *;
-
-.dialog-container {
-	display: flex;
-}
-
-igx-icon {
-	margin-right: 8px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $my-dialog-theme: dialog-theme(
-	$background: #011627,
-	$title-color: #ecaa53,
-	$message-color: #fefefe,
-	$border-radius: .3,
+  $background: #011627,
+  $title-color: #ecaa53,
+  $message-color: #fefefe,
+  $border-radius: .3,
 );
 
 $dark-button: button-theme(
-	$background: #ecaa53,
-	$foreground: #011627,
+  $background: #ecaa53,
+  $foreground: #011627,
 );
 
-:host {
-	display: block;
-	padding: 16px;
-
-	::ng-deep {
-		@include css-vars($my-dialog-theme);
-
-		.dialog-container {
-			@include css-vars($dark-button);
-		}
-	}
+.dialog-container {
+  @include css-vars($dark-button);
 }
+
+:host {
+  ::ng-deep {
+    @include css-vars($my-dialog-theme); 
+  }
+}
+ 

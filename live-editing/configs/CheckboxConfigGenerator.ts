@@ -41,6 +41,7 @@ export class CheckboxConfigGenerator implements IConfigGenerator {
         // checkbox styling
         configs.push(new Config({
             component: 'CheckboxStylingComponent',
+            additionalFiles: ["/src/app/data-entries/checkbox/checkbox-styling/layout.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: ['IgxCheckboxModule', 'CheckboxStylingComponent'],
                 ngDeclarations: ['CheckboxStylingComponent'],

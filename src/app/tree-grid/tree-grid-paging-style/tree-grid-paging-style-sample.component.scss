@@ -1,75 +1,71 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
-.grid__wrapper {
-    --ig-size: var(--ig-size-medium);
-    margin: 0 16px;
-    padding-top: 10px;
-}
-
+$my-primary: #231c2c;
 $my-secondary: #d0ab23;
 $dark-gray: #333;
-$my-primary: #231c2c;
 $light-gray: #999;
 $inactive-color: #9b7829;
 
 $dark-paginator: paginator-theme(
-	$text-color: $my-secondary,
-	$background-color: $my-primary,
-	$border-color: $my-secondary
+  $text-color: $my-secondary,
+  $background-color: $my-primary,
+  $border-color: $my-secondary
 );
 
 $dark-button: icon-button-theme(
-	$foreground: $my-secondary,
-	$hover-foreground: $dark-gray,
-	$hover-background: $my-secondary,
-	$focus-foreground: $dark-gray,
-	$focus-background: $my-secondary,
-	$border-color: $my-secondary,
-	$focus-border-color: $my-secondary,
-	$disabled-foreground: $inactive-color
+  $foreground: $my-secondary,
+  $hover-foreground: $dark-gray,
+  $hover-background: $my-secondary,
+  $focus-foreground: $dark-gray,
+  $focus-background: $my-secondary,
+  $border-color: $my-secondary,
+  $focus-border-color: $my-secondary,
+  $disabled-foreground: $inactive-color
 );
 
 $dark-select: select-theme(
-	$toggle-button-background: $my-primary,
-	$toggle-button-foreground: $inactive-color,
-	$toggle-button-foreground-filled: $inactive-color,
-	$toggle-button-foreground-focus: $inactive-color,
-	$toggle-button-background-focus--border: $my-primary,
+  $toggle-button-background: $my-primary,
+  $toggle-button-foreground: $inactive-color,
+  $toggle-button-foreground-filled: $inactive-color,
+  $toggle-button-foreground-focus: $inactive-color,
+  $toggle-button-background-focus--border: $my-primary,
 );
 
 $dark-input-group: input-group-theme(
-	$filled-text-color: $my-secondary,
-	$idle-text-color: $my-secondary,
-	$filled-text-hover-color: $my-secondary,
-	$focused-text-color: $my-secondary,
-	$border-color: darken($inactive-color, 10%),
-	$focused-border-color: $my-secondary,
-	$input-suffix-color: $my-secondary,
+  $filled-text-color: $my-secondary,
+  $idle-text-color: $my-secondary,
+  $filled-text-hover-color: $my-secondary,
+  $focused-text-color: $my-secondary,
+  $border-color: darken($inactive-color, 10%),
+  $focused-border-color: $my-secondary,
+  $input-suffix-color: $my-secondary,
 );
 
 $dark-drop-down-theme: drop-down-theme(
-	$background-color: $my-primary,
-	$item-text-color: $my-secondary,
-	$selected-item-background: $my-secondary,
-	$selected-item-text-color: $dark-gray,
-	$focused-item-background: $my-secondary,
-	$focused-item-text-color: $dark-gray,
-	$selected-focus-item-background: $my-secondary,
-	$selected-focus-item-text-color: $dark-gray,
-	$selected-hover-item-background: $my-secondary,
-	$selected-hover-item-text-color: $dark-gray
+  $background-color: $my-primary,
+  $item-text-color: $my-secondary,
+  $selected-item-background: $my-secondary,
+  $selected-item-text-color: $dark-gray,
+  $focused-item-background: $my-secondary,
+  $focused-item-text-color: $dark-gray,
+  $selected-focus-item-background: $my-secondary,
+  $selected-focus-item-text-color: $dark-gray,
+  $selected-hover-item-background: $my-secondary,
+  $selected-hover-item-text-color: $dark-gray
 );
 
+@include css-vars($dark-paginator);
 
 :host {
-    ::ng-deep {
-        @include css-vars($dark-drop-down-theme);
-
-        igx-paginator {
-            @include css-vars($dark-button);
-            @include css-vars($dark-input-group);
-            @include css-vars($dark-select);
-            @include css-vars($dark-paginator);
-        }
+  ::ng-deep {
+    @include css-vars($dark-drop-down-theme);  
+	  
+    igx-paginator {
+      @include css-vars($dark-button);
+      @include css-vars($dark-input-group);
+      @include css-vars($dark-select);
     }
+  }
 }
+ 

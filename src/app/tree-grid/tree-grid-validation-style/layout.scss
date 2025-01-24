@@ -1,0 +1,14 @@
+@use "igniteui-angular/theming" as *;
+
+.grid__wrapper {
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.validator-container {
+  color: hsl(34, 80%, 63%);
+}
+
+.invalid-cell {
+  box-shadow: inset 0 0 0 0.125rem color($color: error);
+}

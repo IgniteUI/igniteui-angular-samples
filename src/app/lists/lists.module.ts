@@ -44,6 +44,7 @@ import { ListComponent } from './list/list.component';
 import { ListsRoutingModule } from './lists-routing.module';
 import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sample.component';
 import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-advanced-sample.component';
+import { TreeStylingComponent } from './tree/tree-styling/tree-styling.component';
 import { SimpleComboMainComponent } from './combo/simple-combo-main/simple-combo-main.component';
 import { SimpleComboUsageComponent } from './combo/simple-combo-usage/simple-combo-usage.component';
 import { SimpleComboCascadingComponent } from './combo/simple-combo-cascading/simple-combo-cascading.component';
@@ -76,6 +77,7 @@ import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-c
         SimpleComboStylingComponent,
         TreeBasicSampleComponent,
         TreeAdvancedSampleComponent,
+        TreeStylingComponent,
         ListItemSelectionComponent,
         SimpleComboRemoteComponent
     ], imports: [CommonModule,

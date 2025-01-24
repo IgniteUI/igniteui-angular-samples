@@ -1,0 +1,11 @@
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
+
+$custom-panel-theme: expansion-panel-theme(
+  $expanded-margin: 10px,
+  $body-color: #282885,
+  $header-focus-background: #efefef
+);
+
+@include css-vars($custom-panel-theme);
+ 

@@ -1,0 +1,11 @@
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
+
+$custom-tree-theme: tree-theme(
+  $background-selected: #ffe6cc,
+  $background-active: #ecaa53,
+  $background-active-selected: #ff8c1a
+);
+
+@include css-vars($custom-tree-theme);
+ 

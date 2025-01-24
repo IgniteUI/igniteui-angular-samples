@@ -1,23 +1,22 @@
-@use '../../../../variables' as *;
+@use "igniteui-angular/theming" as *;
 
-// common
 $purple: #9e379f;
 $blue: #61aedb;
+$light-gray: #efefef;
 
 $custom-palette: palette(
-    $primary: $blue,
-    $secondary: $purple,
-    $surface: #fff
+  $primary: $blue,
+  $secondary: $purple,
+  $surface: $light-gray
 );
 
 $today-text: color($custom-palette, 'primary', 500);
 $text-color: color($custom-palette, 'secondary', 200);
 $color-focused: color($custom-palette, 'secondary', 500);
 
-
 // DATE-RANGE
 $custom-date-range-theme: date-range-picker-theme(
-    $label-color: $color-focused
+  $label-color: $color-focused
 );
 
 // INPUT GROUP
@@ -32,18 +31,18 @@ $custom-input-group-theme: input-group-theme(
 
 // CALENDAR styling specific overlay component requires outlet -> [overlaySettings]="{ outlet: element }"
 $custom-calendar-theme: calendar-theme(
-    $date-current-foreground: $today-text,
-    $border-radius: 0.5,
-    $date-border-radius: 0.5
+  $date-current-foreground: $today-text,
+  $border-radius: 0.5,
+  $date-border-radius: 0.5
 );
 
 :host {
-    display: block;
-    padding: 1rem;
+  display: block;
+  padding: 1rem;
 
-    ::ng-deep {
-        @include css-vars($custom-date-range-theme);
-        @include css-vars($custom-input-group-theme);
-        @include css-vars($custom-calendar-theme);
-    }
+  ::ng-deep {
+    @include css-vars($custom-date-range-theme);
+    @include css-vars($custom-input-group-theme);
+    @include css-vars($custom-calendar-theme);
+  }
 }

@@ -1,33 +1,18 @@
-@use '../../../variables' as *;
-
-.photo {
-    vertical-align: middle;
-    max-height: 62px;
-}
-
-.cell__inner_2 {
-    margin: 1px
-}
-
-.grid__wrapper {
-    margin: 0 auto;
-    padding: 16px;
-}
-
-.sample-wrapper {
-    margin: 0 auto;
-    padding: 5px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $banner-theme: banner-theme(
-    $banner-background: #e3e3e3,
-    $banner-message-color: color($purple-palette, "secondary", 600)
+  $banner-background: #e3e3e3,
+  $banner-message-color: color($purple-palette, "secondary", 600)
 );
 
 :host {
-    @include palette($purple-palette);
-
-    ::ng-deep {
-        @include css-vars($banner-theme);
-    }
+  ::ng-deep {
+    @include css-vars($banner-theme);
+  }
 }
+
+igx-hierarchical-grid {
+  @include palette($purple-palette);
+}
+ 

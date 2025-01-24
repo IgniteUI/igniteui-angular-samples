@@ -1,35 +1,30 @@
-@use '../../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
-// Browser samples related styling
-.sample-wrapper {
-    width: 430px;
-    margin: 16px;
-}
-
-// Ignite UI for Angular Theming engine related styling
 $custom-simple-combo-theme: combo-theme(
-    $empty-list-background: #1a5214
+  $empty-list-background: #1a5214
 );
 
 $custom-drop-down-theme: drop-down-theme(
-    $background-color: #d9f5d6,
-    $header-text-color: #1a5214,
-    $item-text-color: #1a5214,
+  $background-color: #d9f5d6,
+  $header-text-color: #1a5214,
+  $item-text-color: #1a5214,
 
-    $focused-item-background: #72da67,
-    $focused-item-text-color: #1a5214,
-    $hover-item-background: #a0e698,
-    $hover-item-text-color: #1a5214,
+  $focused-item-background: #72da67,
+  $focused-item-text-color: #1a5214,
+  $hover-item-background: #a0e698,
+  $hover-item-text-color: #1a5214,
 
-    $selected-item-background: #a0e698,
-    $selected-item-text-color: #1a5214,
-    $selected-hover-item-background: #72da67,
-    $selected-hover-item-text-color: #1a5214,
-    $selected-focus-item-background: #72da67,
-    $selected-focus-item-text-color: #1a5214,
+  $selected-item-background: #a0e698,
+  $selected-item-text-color: #1a5214,
+  $selected-hover-item-background: #72da67,
+  $selected-hover-item-text-color: #1a5214,
+  $selected-focus-item-background: #72da67,
+  $selected-focus-item-text-color: #1a5214,
 );
 
 :host ::ng-deep {
-    @include css-vars($custom-simple-combo-theme);
-    @include css-vars($custom-drop-down-theme);
+  @include css-vars($custom-simple-combo-theme);
+  @include css-vars($custom-drop-down-theme);
 }
+ 

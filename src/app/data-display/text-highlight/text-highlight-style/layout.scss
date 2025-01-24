@@ -1,0 +1,21 @@
+.search-wrapper {
+  display: block;
+  padding: 4px;
+}
+.caseSensitiveIcon {
+  width: 1rem;
+  height: 1rem;
+  font-size: 1rem;
+}
+
+.caseSensitiveButton + span {
+  margin-left: 8px;
+}
+
+.searchButtons {
+  margin-left: 8px;
+}
+
+.sample-text-container {
+  margin-top: 16px;
+}

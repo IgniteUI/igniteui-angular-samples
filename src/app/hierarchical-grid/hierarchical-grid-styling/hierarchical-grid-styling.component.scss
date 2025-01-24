@@ -1,4 +1,5 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-theme: grid-theme(
   $cell-active-border-color: #ffcd0f,
@@ -13,19 +14,7 @@ $custom-theme: grid-theme(
   $row-highlight: #ffcd0f
 );
 
-
 :host ::ng-deep {
-	@include css-vars($custom-theme);
+  @include css-vars($custom-theme);
 }
-
-.photo {
-    vertical-align: middle;
-    max-height: 62px;
-}
-.cell__inner_2 {
-    margin: 1px
-}
-
-.grid__wrapper{
-    padding: 10px;
-}
+ 

@@ -69,6 +69,7 @@ import { View3Component } from './tabs/views/view3/view3.component';
 import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
 import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
 import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
+import { AccordionStyleComponent } from './accordion/accordion-style/accordion-style.component';
 import {StepperLabelPositionAndOrientationSampleComponent
 } from './stepper/stepper-label-position-and-orientation-sample/stepper-label-position-and-orientation-sample.component';
 import { StepperLinearSampleComponent } from './stepper/stepper-linear-sample/stepper-linear-sample.component';
@@ -92,6 +93,11 @@ export const layoutsRoutes: Routes = [
         component: AccordionSample3Component,
         data: layoutsRoutesData['accordion-sample-3'],
         path: 'accordion-sample-3'
+    },
+    {
+        component: AccordionStyleComponent,
+        data: layoutsRoutesData['accordion-style'],
+        path: 'accordion-style'
     },
     {
         component: AvatarSample1Component,

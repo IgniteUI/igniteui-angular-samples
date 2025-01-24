@@ -1,66 +1,27 @@
-// Stepper theme
-@use '../../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $stepper-theme: stepper-theme(
-	$indicator-background: #fff,
+  $indicator-background: #fff,
 
-	$current-indicator-background: #f6cd28,
-	$current-indicator-outline: #351e65,
+  $current-indicator-background: #f6cd28,
+  $current-indicator-outline: #351e65,
 
-	$current-title-color: #351e65,
-	$current-subtitle-color: #5f4691,
+  $current-title-color: #351e65,
+  $current-subtitle-color: #5f4691,
 
-	$complete-indicator-background: #351e65,
-	$complete-indicator-outline: #351e65,
+  $complete-indicator-background: #351e65,
+  $complete-indicator-outline: #351e65,
 
-	$complete-title-color: red,
-	$complete-subtitle-color: #5f4691,
+  $complete-title-color: red,
+  $complete-subtitle-color: #5f4691,
 
-	$border-radius-step-header: 16px,
-	$border-radius-indicator: 10px 4px 10px 4px,
+  $border-radius-step-header: 16px,
+  $border-radius-indicator: 10px 4px 10px 4px,
 
-	$step-separator-color: #f6cd28,
-	$complete-step-separator-color: #351e65,
+  $step-separator-color: #f6cd28,
+  $complete-step-separator-color: #351e65,
 );
 
-:host {
-	// @include css-vars($stepper-theme);
-
-	/* Using Theme Overrides to provide IE 11 support.
-	 * NOTE: Theming using this approach will greatly increase the size
-	 * of the output CSS. If you do not plan to target IE 11,
-	 * delete this section and use the `igx-css-vars` mixin as shown above.
-	**/
-	::ng-deep {
-		@include stepper($stepper-theme);
-	}
-}
-
-// Sample styling
-$sample-gap: 20px;
-
-:host {
-	display: block;
-	padding: $sample-gap;
-}
-
-.sample-split,
-.sample-step-actions {
-	display: flex;
-	gap: $sample-gap;
-}
-
-.sample-step-actions {
-	margin-top: $sample-gap * 2;
-}
-
-.sample-split {
-	> * {
-		max-width: 380px;
-		flex: 1;
-	}
-
-	margin-bottom: $sample-gap;
-}
-
-
+@include css-vars($stepper-theme);
+ 

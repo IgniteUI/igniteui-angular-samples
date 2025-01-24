@@ -1,21 +1,22 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-column-actions-theme: column-actions-theme(
-    $background-color: steelblue,
-    $title-color: gold
+  $background-color: steelblue,
+  $title-color: gold
 );
 
-$custom-button: button-theme($foreground: gold, $disabled-foreground: black);
+$custom-button: button-theme(
+  $foreground: gold, 
+  $disabled-foreground: black
+);
 
 :host {
-    ::ng-deep {
-        @include css-vars($custom-column-actions-theme);
-        .igx-column-actions {
-            @include css-vars($custom-button);
-        }
+  ::ng-deep {
+    @include css-vars($custom-column-actions-theme);
+    .igx-column-actions {
+      @include css-vars($custom-button);
     }
+  }
 }
-
-.grid__wrapper {
-    margin: 10px;
-}
+ 

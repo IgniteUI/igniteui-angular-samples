@@ -1,8 +1,5 @@
-@use '../../../../variables' as *;
-
-.sample-column {
-    max-width: 550px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-input-group: input-group-theme(
   $filled-text-color: #288a54,
@@ -15,7 +12,5 @@ $custom-input-group: input-group-theme(
   $box-background: #eeeeee
 );
 
-:host {
-    @include css-vars($custom-input-group);
-}
-
+@include css-vars($custom-input-group);
+ 
