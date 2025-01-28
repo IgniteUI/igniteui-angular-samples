@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxChartIntegrationDirective, OPTIONS_TYPE, CHART_TYPE, IgxExtrasModule } from 'igniteui-angular-extras';
+import { IgxChartIntegrationDirective, OPTIONS_TYPE, CHART_TYPE, PageHeaderComponent } from 'igniteui-angular-extras';
 
 import { FinancialData } from '../data/financialData';
 import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
@@ -10,7 +10,7 @@ import { DecimalPipe, CurrencyPipe } from '@angular/common';
     selector: 'app-grid-dynamic-chart-data',
     templateUrl: './grid-dynamic-chart-data.component.html',
     styleUrls: ['./grid-dynamic-chart-data.component.scss'],
-    imports: [IgxGridComponent, IgxExtrasModule, IgxColumnComponent, IgxCellTemplateDirective, DecimalPipe, CurrencyPipe]
+    imports: [IgxGridComponent, PageHeaderComponent, IgxChartIntegrationDirective, IgxColumnComponent, IgxCellTemplateDirective, DecimalPipe, CurrencyPipe]
 })
 export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
