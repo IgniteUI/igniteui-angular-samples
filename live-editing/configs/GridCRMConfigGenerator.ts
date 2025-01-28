@@ -16,7 +16,7 @@ import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { IgxPreventDocumentScrollModule } from '../../src/app/directives/prevent-scroll.directive';
+import { IgxPreventDocumentScrollDirective } from '../../src/app/directives/prevent-scroll.directive';
 
 export class GridCRMConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -36,10 +36,10 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
                     'IgxRippleModule', 
                     'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
                     'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                    'IgxPreventDocumentScrollModule', 'GridCRMComponent', 'RouterTestingModule'
+                    'IgxPreventDocumentScrollDirective', 'GridCRMComponent', 'RouterTestingModule'
                 ],
                 ngDeclarations: ['GridCRMComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxRippleModule', 
+                ngImports: ['IgxPreventDocumentScrollDirective', 'IgxRippleModule', 
                 'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
                 'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule', 'RouterTestingModule']
             })

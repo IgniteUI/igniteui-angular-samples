@@ -35,7 +35,7 @@ import { Config, IConfigGenerator, AppModuleConfig, DependenciesType } from 'ign
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 export class DVGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
-        IgxPreventDocumentScrollModule: '../../../src/app/directives/prevent-scroll.directive',
+        IgxPreventDocumentScrollDirective: '../../../src/app/directives/prevent-scroll.directive',
         ControllerComponent : '../../../projects/app-lob/src/app/grid-finjs/controllers.component',
         GridFinJSComponent : '../../../projects/app-lob/src/app/grid-finjs/grid-finjs.component',
         SignalRService : '../../../projects/app-lob/src/app/services/signal-r.service',
@@ -56,12 +56,12 @@ export class DVGridConfigGenerator implements IConfigGenerator {
                 '/projects/app-lob/src/_app-layout.scss', '/projects/app-lob/src/_variables.scss'],
             additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'HttpClientModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule',
+                imports: ['IgxPreventDocumentScrollDirective', 'HttpClientModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule',
                     'IgxGridModule', 'IgxIconModule', 'IgxInputGroupModule', 'IgxProgressBarModule',
                     'IgxRippleModule', 'IgxSwitchModule', 'GridComponent',
                     'IgxSparklineCoreModule', 'IgxSparklineModule'],
                 ngDeclarations: ['GridComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule', 'IgxGridModule',
+                ngImports: ['IgxPreventDocumentScrollDirective', 'IgxAvatarModule', 'IgxBadgeModule', 'IgxButtonModule', 'IgxGridModule',
                     'IgxIconModule', 'IgxInputGroupModule', 'IgxProgressBarModule', 'IgxRippleModule',
                     'IgxSwitchModule', 'HttpClientModule', 'IgxSparklineCoreModule', 'IgxSparklineModule']
             })
@@ -74,11 +74,11 @@ export class DVGridConfigGenerator implements IConfigGenerator {
                 '/projects/app-lob/src/_app-layout.scss', '/projects/app-lob/src/_variables.scss'],
             additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core'],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'GridMasterDetailSampleComponent', 'IgxGridModule', 'IgxCategoryChartModule',
+                imports: ['IgxPreventDocumentScrollDirective', 'GridMasterDetailSampleComponent', 'IgxGridModule', 'IgxCategoryChartModule',
                     'IgxAvatarModule', 'IgxTabsModule', 'IgxIconModule', 'IgxPieChartModule', 'IgxLegendModule',
                     'IgxDividerModule'],
                 ngDeclarations: ['GridMasterDetailSampleComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxCategoryChartModule', 'IgxPieChartModule', 'IgxLegendModule',
+                ngImports: ['IgxPreventDocumentScrollDirective', 'IgxGridModule', 'IgxCategoryChartModule', 'IgxPieChartModule', 'IgxLegendModule',
                     'IgxAvatarModule', 'IgxTabsModule', 'IgxIconModule', 'IgxDividerModule'],
                 ngProviders: []
             })
@@ -99,13 +99,13 @@ export class DVGridConfigGenerator implements IConfigGenerator {
                 '/projects/app-lob/src/_app-layout.scss', '/projects/app-lob/src/_variables.scss'
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxCategoryChartModule',
+                imports: ['IgxPreventDocumentScrollDirective', 'IgxCategoryChartModule',
                     'IgxGridModule', 'IgxButtonGroupModule', 'IgxFocusModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxSwitchModule',
                     'IgxRippleModule', 'FinJSDemoComponent', 'IgxDialogModule', 'FinancialDataService','ControllerComponent', 'GridFinJSComponent', 'IgxToastModule',
                     'HttpClientModule', 'SignalRService', 'RouterModule'],
                 ngDeclarations: ['FinJSDemoComponent','ControllerComponent', 'GridFinJSComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxButtonGroupModule', 'IgxFocusModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
+                ngImports: ['IgxPreventDocumentScrollDirective', 'IgxGridModule', 'IgxButtonGroupModule', 'IgxFocusModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule', 'IgxCategoryChartModule', 'IgxDialogModule', 'IgxToastModule', 'HttpClientModule', 'RouterModule', 'RouterModule.forRoot([])'],
                 ngProviders: ['FinancialDataService', 'IgxExcelExporterService', 'IgxCsvExporterService', 'SignalRService']
             })
@@ -122,7 +122,7 @@ export class DVGridConfigGenerator implements IConfigGenerator {
                 '/projects/app-lob/src/_app-layout.scss', '/projects/app-lob/src/_variables.scss'
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: ['IgxPreventDocumentScrollModule', 'IgxCategoryChartModule',
+                imports: ['IgxPreventDocumentScrollDirective', 'IgxCategoryChartModule',
                     'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxExcelExporterService', 'IgxCsvExporterService', 'IgxSwitchModule',
                     'IgxRippleModule', 'GridFinJSDockManagerComponent', 'IgxDialogModule', 'IgxToastModule',
@@ -130,7 +130,7 @@ export class DVGridConfigGenerator implements IConfigGenerator {
                     'IgxGridComponent', 'GridHostDirective'],
                 schemas: ['CUSTOM_ELEMENTS_SCHEMA'],
                 ngDeclarations: ['GridFinJSDockManagerComponent', 'DockSlotComponent', 'GridHostDirective'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
+                ngImports: ['IgxPreventDocumentScrollDirective', 'IgxGridModule', 'IgxButtonGroupModule', 'IgxIconModule', 'IgxSliderModule', 'IgxToggleModule',
                     'IgxButtonModule', 'IgxSwitchModule', 'IgxRippleModule', 'IgxCategoryChartModule', 'IgxDialogModule', 'IgxToastModule', 'HttpClientModule'],
                 ngProviders: ['IgxExcelExporterService', 'IgxCsvExporterService', 'SignalRService', 'FloatingPanesService'],
                 additionalAdjustments: [dockManagerImport, defineCustomElements],
