@@ -40,6 +40,7 @@ import { GridCustomFilteringComponent } from './grid-custom-filtering/grid-custo
 import { GridCustomKBNavigationComponent } from './grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component';
 import { CustomRemotePagingGridSampleComponent } from './grid-custom-remote-paging-sample/custom-remote-paging-sample.component';
 import { GridCustomSummariesSelectionComponent } from './grid-custom-summaries-selection/grid-custom-summaries-selection.component';
+import { GridDisableSummariesComponent } from './grid-disable-summaries/grid-disable-summaries.component';
 import { GridDisplayDensitySampleComponent } from './grid-displaydensity-sample/grid-displaydensity-sample.component';
 import { GridEditingEventsComponent } from './grid-editing-events/grid-editing-events.component';
 import { GridEditingLifecycleComponent } from './grid-editing-lifecycle-sample/grid-editing-lifecycle.component';
@@ -272,6 +273,7 @@ import { GridCascadingCombosComponent } from './grid-cascading-combos/grid-casca
     GridExternalExcelStyleFilteringComponent,
     GridExternalOutletComponent,
     GridCustomSummariesSelectionComponent,
+    GridDisableSummariesComponent,
     GridMultiRowLayoutStylingComponent,
     PinningStylingComponent,
     GridGroupByStylingComponent,
