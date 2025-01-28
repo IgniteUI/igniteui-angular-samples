@@ -24,6 +24,7 @@ import { TreeGridColumnResizingSampleComponent } from './tree-grid-column-resizi
 import { TreeGridConditionalCellStyle2Component } from './tree-grid-conditional-cell-style-2/tree-grid-conditional-cell-style-2.component';
 import { TreeGridConditionalCellStyleComponent } from './tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component';
 import { TreeGridConditionalRowSelectorsSampleComponent } from './tree-grid-conditional-row-selectors/tree-grid-conditional-row-selectors.component';
+import { TreeGridDisableSummariesComponent } from './tree-grid-disable-summaries/tree-grid-disable-summaries.component';
 import { TreeGridDisplaydensitySampleComponent } from './tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component';
 import { TreeGridEditingEventsComponent } from './tree-grid-editing-events/tree-grid-editing-events.component';
 import { TreeGridEditingSampleComponent } from './tree-grid-editing-sample/tree-grid-editing-sample.component';
@@ -455,6 +456,11 @@ export const TreeGridRoutes: Routes = [
         component: TreeGridConditionalRowSelectorsSampleComponent,
         data: treeGridRoutesData['treegrid-conditional-row-selectors'],
         path: 'treegrid-conditional-row-selectors'
+    },
+    {
+        component: TreeGridDisableSummariesComponent,
+        data: treeGridRoutesData['treegrid-disable-summaries'],
+        path: 'treegrid-disable-summaries'
     },
     {
         component: TreeGridStyleComponent,

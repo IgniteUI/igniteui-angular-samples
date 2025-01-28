@@ -1,0 +1,194 @@
+# template.yml
+parameters:
+  - name: customCommand
+    type: string
+  - name: workingDir
+    type: string
+  - name: submoduleDir
+    type: string
+  - name: baseHref
+    type: string
+  - name: targetFolder
+    type: string
+    default: 'dist'
+  - name: findRegex
+    type: string
+  - name: npmBuildCommand
+    type: string
+    default: ''
+  - name: runCleanup
+    type: boolean
+    default: true
+  - name: repositoryfy
+    type: boolean
+    default: false
+
+steps:
+  # - task: CmdLine@2
+  #   displayName: Clone submodule
+  #   inputs:
+  #     script: git clone --recurse-submodules https://github.com/IgniteUI/igniteui-live-editing-samples igniteui-live-editing-samples
+  #     workingDirectory: ${{ parameters.workingDir }}
+
+  - task: CmdLine@2
+    displayName: Staging - Git checkout branch
+    condition: eq(variables['Build.SourceBranchName'], 'vNext')
+    inputs:
+      script: git checkout vNext
+      workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples
+
+  - task: CmdLine@2
+    displayName: Production - Git checkout branch
+    condition: and(eq(variables['Build.SourceBranchName'], 'master'), contains(variables['build.reason'], 'CI'))
+    inputs:
+      script: git checkout master
+      workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples
+
+  - script: |
+      sed -i 's/--configuration production/--base-href=${{ parameters.baseHref }} --configuration production/g' package.json
+    displayName: 'Update package.json file'
+    workingDirectory: ${{ parameters.workingDir }}
+
+  - task: Npm@1
+    displayName: generate live-editing
+    inputs:
+      command: custom
+      workingDir: ${{ parameters.workingDir }}
+      verbose: false
+      customCommand: ${{ parameters.customCommand }}
+  
+#  - task: PowerShell@2
+#    displayName: 'Replace with licensed igniteui-angular'
+#    inputs:
+#      targetType: 'inline'
+#      script: |
+#        $mainDirectory = "."
+#        $subDirs = @("projects", "src")
+#        $oldStrings = @("'igniteui-angular'", "igniteui-angular/", """igniteui-angular""")  # Strings to replace
+#        $newStrings = @("'@infragistics/igniteui-angular'", "@infragistics/igniteui-angular/" ,"""@infragistics/igniteui-angular""")
+#        $files = Get-ChildItem -Path $mainDirectory -File
+#        foreach ($subDir in $subDirs) {
+#          $subDirPath = Join-Path -Path $mainDirectory -ChildPath $subDir
+#          if (Test-Path $subDirPath) {
+#              $files += Get-ChildItem -Path $subDirPath -File -Recurse
+#          }
+#        }
+#        foreach ($file in $files) {
+#          Write-Host "Processing file: $($file.FullName)" -ForegroundColor Green
+#          $filePath = $file.FullName
+#          $content = Get-Content -Path $filePath -Raw
+#          for ($i = 0; $i -lt $oldStrings.Count; $i++) {
+#              $content = $content -replace [regex]::Escape($oldStrings[$i]), $newStrings[$i]
+#              Write-Host "Replacing: $($oldStrings[$i]) with $($newStrings[$i])" -ForegroundColor Green
+#          }
+#          Set-Content -Path $filePath -Value $content
+#        }
+
+  - task: CmdLine@2
+    displayName: 'Update packages trial->licensed using angular schematics'
+    inputs:
+      script: |
+        npx --userconfig=$(Build.SourcesDirectory)\.npmrc ng g @igniteui/angular-schematics:upgrade-packages --skip-install
+      failOnStderr: true
+
+  - task: Npm@1
+    displayName: npm install
+    inputs:
+      command: install
+      workingDir: $(Build.SourcesDirectory)
+      verbose: false
+      customEndpoint: 'public proget'
+    env:
+      AZURE_PIPELINES: true
+
+  - task: Npm@1
+    displayName: ${{ parameters.npmBuildCommand }}
+    inputs:
+      command: custom
+      workingDir: ${{ parameters.workingDir }}
+      verbose: false
+      customCommand: '${{ parameters.npmBuildCommand }} --userconfig=$(Build.SourcesDirectory)\.npmrc'
+
+  - task: CopyFiles@2
+    displayName: Copy web.config
+    inputs:
+      SourceFolder: $(Build.SourcesDirectory)
+      Contents: web.config
+      TargetFolder: $(Build.SourcesDirectory)/${{ parameters.targetFolder }}
+
+  - script: |
+      sed -i 's/${{ parameters.findRegex }}/${{ parameters.submoduleDir }}/g' $(Build.SourcesDirectory)/${{ parameters.targetFolder }}/web.config
+    displayName: 'Update web.config file'
+    workingDirectory: ${{ parameters.workingDir }}
+
+  - script: |
+      sourcePath="$(Build.SourcesDirectory)/${{ parameters.targetFolder }}"
+      destinationZip="$(Build.ArtifactStagingDirectory)/output.zip"
+      cd "$sourcePath"
+      zip -r "$destinationZip" ./
+    displayName: 'Zip build output'
+
+  - task: PublishPipelineArtifact@1
+    displayName: Publish Artifact
+    inputs:
+      targetPath: $(Build.ArtifactStagingDirectory)/output.zip
+      artifact: '${{ parameters.submoduleDir }}-artifact'
+      publishLocation: pipeline
+
+  - task: Npm@1
+    displayName: Staging - Repositorify Angular Demos and LOB Demos
+    condition: and(eq(variables['Build.SourceBranchName'], 'vNext'), eq(variables['repositoryfy'], 'true'))
+    inputs:
+      command: custom
+      workingDir: ${{ parameters.workingDir }}
+      verbose: false
+      customCommand: run repositoryfyAngularDemosLob
+
+  - task: Npm@1
+    displayName: Production - Repositorify Angular Demos
+    condition: and(eq(variables['Build.SourceBranchName'], 'master'), contains(variables['build.reason'], 'CI'), eq(variables['repositoryfy'], 'true'))
+    inputs:
+      command: custom
+      workingDir: ${{ parameters.workingDir }}
+      verbose: false
+      customCommand: run repositoryfyAngularDemosLob:prod
+
+  - task: CmdLine@2
+    displayName: Stage changes
+    condition: eq(variables['repositoryfy'], 'true')
+    inputs:
+      script: git add .
+      workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
+
+  - task: CmdLine@2
+    displayName: 'Check if there are any changes to be committed'
+    condition: eq(variables['repositoryfy'], 'true')
+    inputs:
+      script: |
+        # Check for changes
+        changeCount=$(git status --porcelain | wc -l)
+        if [ "$changeCount" -eq 0 ]; then
+          echo "##vso[task.logissue type=warning]No changes to commit."
+          exit 0
+        else
+          echo "##vso[task.setvariable variable=changesDetected;isOutput=true]true"
+        fi
+      workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
+
+  - task: CmdLine@2
+    displayName: Commit changes
+    condition: and(eq(variables['changesDetected'], 'true'), eq(variables['repositoryfy'], 'true'))
+    inputs:
+      script: |
+        git config user.name "tfsbuild"
+        git config user.email "tfsbuild@infragistics.com"
+        git add .
+        git commit -m "Automated repository update"
+      workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
+
+  - task: CmdLine@2
+    displayName: Push changes
+    condition: and(eq(variables['changesDetected'], 'true'), eq(variables['repositoryfy'], 'true'))
+    inputs:
+      script: git push
+      workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}

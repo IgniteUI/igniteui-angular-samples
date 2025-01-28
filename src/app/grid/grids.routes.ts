@@ -13,6 +13,7 @@ import { GridCustomFilteringComponent } from './grid-custom-filtering/grid-custo
 import { GridCustomKBNavigationComponent } from './grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component';
 import { CustomRemotePagingGridSampleComponent } from './grid-custom-remote-paging-sample/custom-remote-paging-sample.component';
 import { GridCustomSummariesSelectionComponent } from './grid-custom-summaries-selection/grid-custom-summaries-selection.component';
+import { GridDisableSummariesComponent } from './grid-disable-summaries/grid-disable-summaries.component';
 import { GridDisplayDensitySampleComponent } from './grid-displaydensity-sample/grid-displaydensity-sample.component';
 import { GridEditingSampleComponent } from './grid-editing-sample/grid-editing-sample.component';
 import { GridExcelStyleFilteringLoadOnDemandComponent } from './grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component';
@@ -583,6 +584,11 @@ export const GridsRoutes: Routes = [
         component: GridCustomSummariesSelectionComponent,
         data: gridsRoutesData['grid-selection-custom-summaries'],
         path: 'grid-selection-custom-summaries'
+    },
+    {
+        component: GridDisableSummariesComponent,
+        data: gridsRoutesData['grid-disable-summaries'],
+        path: 'grid-disable-summaries'
     },
     {
         component: GridMultiRowLayoutStylingComponent,
