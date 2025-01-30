@@ -122,7 +122,7 @@ steps:
     workingDirectory: ${{ parameters.workingDir }}
 
   - script: |
-      sourcePath="$(Build.SourcesDirectory)/${{ parameters.targetFolder }}"
+      sourcePath="$(Build.SourcesDirectory)/${{ parameters.targetFolder }}/browser"
       destinationZip="$(Build.ArtifactStagingDirectory)/output.zip"
       cd "$sourcePath"
       zip -r "$destinationZip" ./
