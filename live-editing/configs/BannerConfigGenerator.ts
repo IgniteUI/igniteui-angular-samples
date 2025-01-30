@@ -1,14 +1,17 @@
-import {IgxAvatarModule,
-IgxBannerModule,
-IgxButtonModule,
-IgxCardModule,
-IgxIconModule,
-IgxInputGroupModule,
-IgxNavbarModule,
-IgxRippleModule,
-IgxSwitchModule,
-IgxToastModule} from 'igniteui-angular';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import {
+    IgxAvatarModule,
+    IgxBannerModule,
+    IgxButtonModule,
+    IgxCardModule,
+    IgxIconModule,
+    IgxInputGroupModule,
+    IgxNavbarModule,
+    IgxRippleModule,
+    IgxSwitchModule,
+    IgxToastModule
+} from 'igniteui-angular';
+import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 export class BannerConfigGenerator implements IConfigGenerator {
 
 
@@ -18,93 +21,41 @@ export class BannerConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'BannerAdvancedSampleComponent',
             additionalFiles: ["/src/app/notifications/banner/banner-samples.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxBannerModule',
-                          'IgxNavbarModule',
-                          'IgxCardModule',
-                          'IgxIconModule',
-                          'IgxToastModule',
-                          'IgxButtonModule',
-                          'IgxRippleModule',
-                          'BannerAdvancedSampleComponent'],
-                ngDeclarations: ['BannerAdvancedSampleComponent'],
-                ngImports: ['IgxBannerModule',
-                            'IgxCardModule',
-                            'IgxIconModule',
-                            'IgxNavbarModule',
-                            'IgxToastModule',
-                            'IgxButtonModule',
-                            'IgxRippleModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/notifications/banner/"
         }));
 
         configs.push(new Config({
             component: 'BannerSample1Component',
             additionalFiles: ["/src/app/notifications/banner/banner-samples.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxBannerModule',
-                          'IgxNavbarModule',
-                          'IgxCardModule',
-                          'IgxIconModule',
-                          'BannerSample1Component'],
-                ngDeclarations: ['BannerSample1Component'],
-                ngImports: ['IgxBannerModule',
-                            'IgxCardModule',
-                            'IgxIconModule',
-                            'IgxNavbarModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/notifications/banner/"
         }));
 
         configs.push(new Config({
             component: 'BannerSample2Component',
             additionalFiles: ["/src/app/notifications/banner/banner-samples.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxBannerModule', 'IgxNavbarModule', 'IgxCardModule', 'IgxToastModule', 'IgxButtonModule',
-                    'IgxRippleModule', 'IgxIconModule', 'BannerSample2Component'],
-                ngDeclarations: ['BannerSample2Component'],
-                ngImports: ['IgxBannerModule', 'IgxCardModule', 'IgxNavbarModule', 'IgxToastModule', 'IgxButtonModule',
-                    'IgxRippleModule', 'IgxIconModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/notifications/banner/"
         }));
 
         configs.push(new Config({
             component: 'BannerSample3Component',
             additionalFiles: ["/src/app/notifications/banner/banner-samples.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxBannerModule', 'IgxCardModule', 'IgxToastModule', 'IgxNavbarModule', 'IgxButtonModule',
-                    'IgxRippleModule', 'IgxIconModule', 'BannerSample3Component'],
-                ngDeclarations: ['BannerSample3Component'],
-                ngImports: ['IgxBannerModule', 'IgxCardModule', 'IgxToastModule',  'IgxNavbarModule', 'IgxButtonModule',
-                    'IgxRippleModule', 'IgxIconModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/notifications/banner/"
         }));
 
         configs.push(new Config({
             component: 'BannerStylingComponent',
             additionalFiles: ["/src/app/notifications/banner/banner-samples.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxBannerModule', 'IgxCardModule', 'IgxToastModule', 'IgxNavbarModule', 'IgxButtonModule',
-                    'IgxRippleModule', 'IgxIconModule', 'BannerStylingComponent'],
-                ngDeclarations: ['BannerStylingComponent'],
-                ngImports: ['IgxBannerModule', 'IgxCardModule', 'IgxToastModule',  'IgxNavbarModule', 'IgxButtonModule',
-                    'IgxRippleModule', 'IgxIconModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/notifications/banner/"
         }));
 
         configs.push(new Config({
             component: 'BannerSample4Component',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxBannerModule', 'IgxToastModule', 'IgxAvatarModule', 'IgxButtonModule', 'IgxInputGroupModule',
-                    'IgxNavbarModule', 'IgxRippleModule', 'IgxIconModule', 'BannerSample4Component', 'IgxSwitchModule'],
-                ngDeclarations: ['BannerSample4Component'],
-                ngImports: ['IgxBannerModule', 'IgxAvatarModule', 'IgxRippleModule', 'IgxIconModule', 'IgxInputGroupModule',
-                    'IgxButtonModule', 'IgxNavbarModule', 'IgxSwitchModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/notifications/banner/"
         }));
 

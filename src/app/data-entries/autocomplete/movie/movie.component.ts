@@ -50,8 +50,7 @@ export class MovieComponent {
 }
 
 @Pipe({
-    name: 'startsWith',
-    standalone: false
+    name: 'startsWith'
 })
 export class AutocompletePipeStartsWith2 implements PipeTransform {
     public transform(collection: any[], term = '') {

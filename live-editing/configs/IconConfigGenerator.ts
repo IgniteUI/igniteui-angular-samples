@@ -6,6 +6,7 @@ IgxButtonModule,
 IgxCardModule,
 IgxSelectModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 export class IconConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         CategoriesFilterPipe: '../../src/app/data-display/icon/material-icons-extended/material-icons-extended.component',
@@ -17,66 +18,42 @@ export class IconConfigGenerator implements IConfigGenerator {
         // icon sample 1
         configs.push(new Config({
             component: 'IconSample1Component',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxIconModule', 'IconSample1Component'],
-                ngDeclarations: ['IconSample1Component'],
-                ngImports: ['IgxIconModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/icon/"
         }));
 
         // SVG icon sample
         configs.push(new Config({
             component: 'SvgIconSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxIconModule', 'SvgIconSampleComponent', 'HttpClientModule'],
-                ngDeclarations: ['SvgIconSampleComponent'],
-                ngImports: ['IgxIconModule', 'HttpClientModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/icon/"
         }));
 
         // Icon Styling Sample
         configs.push(new Config({
             component: 'IconStylingSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxIconModule', 'IconStylingSampleComponent'],
-                ngDeclarations: ['IconStylingSampleComponent'],
-                ngImports: ['IgxIconModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/icon/"
         }));
 
         // Icon Service Sample
         configs.push(new Config({
             component: 'IconServiceSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxAvatarModule', 'IgxButtonModule', 'IgxCardModule', 'IgxIconModule', 'IconServiceSampleComponent'],
-                ngDeclarations: ['IconStylingSampleComponent'],
-                ngImports: ['IgxAvatarModule', 'IgxButtonModule', 'IgxCardModule', 'IgxIconModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/icon/"
         }));
 
         // Material Symbols Sample
         configs.push(new Config({
             component: 'MaterialSymbolsComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxIconModule', 'MaterialSymbolsComponent'],
-                ngDeclarations: ['MaterialSymbolsComponent'],
-                ngImports: ['IgxIconModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/material-symbols/"
         }));
 
         // Material icons extended sample
         configs.push(new Config({
             component: 'MaterialIconsExtendedComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxIconModule', 'IgxInputGroupModule', 'IgxButtonModule', 'IgxSelectModule', 'MaterialIconsExtendedComponent', 'CategoriesFilterPipe', 'FilterByName'],
-                ngDeclarations: ['MaterialIconsExtendedComponent', 'CategoriesFilterPipe', 'FilterByName'],
-                ngImports: ['IgxIconModule', 'IgxInputGroupModule', 'IgxButtonModule', 'IgxSelectModule']
-            }),
+            appConfig: BaseAppConfig,
             additionalDependencies: ['file-saver', '@igniteui/material-icons-extended'],
             shortenComponentPathBy: "/data-display/icon/"
         }));

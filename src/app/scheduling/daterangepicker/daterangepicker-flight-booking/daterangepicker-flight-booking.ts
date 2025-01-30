@@ -47,8 +47,7 @@ export class FlightBookingComponent {
 }
 
 @Pipe({
-    name: 'withoutTownFrom',
-    standalone: false
+    name: 'withoutTownFrom'
 })
 export class PipeWithoutTownFrom implements PipeTransform {
     public transform(collection: any[], townFrom: string) {
