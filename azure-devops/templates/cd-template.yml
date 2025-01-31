@@ -117,7 +117,7 @@ steps:
       TargetFolder: $(Build.SourcesDirectory)/${{ parameters.targetFolder }}/browser
 
   - script: |
-      sed -i 's/${{ parameters.findRegex }}/${{ parameters.submoduleDir }}/g' $(Build.SourcesDirectory)/${{ parameters.targetFolder }}/web.config
+      sed -i 's/${{ parameters.findRegex }}/${{ parameters.submoduleDir }}/g' $(Build.SourcesDirectory)/${{ parameters.targetFolder }}/browser/web.config
     displayName: 'Update web.config file'
     workingDirectory: ${{ parameters.workingDir }}
 
