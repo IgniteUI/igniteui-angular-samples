@@ -114,7 +114,7 @@ steps:
     inputs:
       SourceFolder: $(Build.SourcesDirectory)
       Contents: web.config
-      TargetFolder: $(Build.SourcesDirectory)/${{ parameters.targetFolder }}
+      TargetFolder: $(Build.SourcesDirectory)/${{ parameters.targetFolder }}/browser
 
   - script: |
       sed -i 's/${{ parameters.findRegex }}/${{ parameters.submoduleDir }}/g' $(Build.SourcesDirectory)/${{ parameters.targetFolder }}/web.config
