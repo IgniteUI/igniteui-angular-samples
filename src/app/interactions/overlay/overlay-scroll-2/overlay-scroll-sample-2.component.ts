@@ -1,12 +1,5 @@
 import { Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import {
-    AbsoluteScrollStrategy,
-    BlockScrollStrategy,
-    CloseScrollStrategy,
-    ConnectedPositioningStrategy,
-    IgxOverlayService,
-    NoOpScrollStrategy
-} from 'igniteui-angular';
+import { AbsoluteScrollStrategy, BlockScrollStrategy, CloseScrollStrategy, ConnectedPositioningStrategy, IgxOverlayService, NoOpScrollStrategy, IgxIconComponent } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
@@ -14,7 +7,8 @@ import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-
     selector: 'app-overlay-sample',
     styleUrls: ['./overlay-scroll-sample-2.component.scss'],
     templateUrl: './overlay-scroll-sample-2.component.html',
-    providers: [IgxOverlayService]
+    providers: [IgxOverlayService],
+    imports: [IgxIconComponent, MyDynamicCardComponent]
 })
 export class OverlayScrollSample2Component implements OnInit, OnDestroy {
     @ViewChild('scrollDemo', { static: true })
@@ -68,7 +62,7 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
                 this._target = this.scrollDemo.nativeElement.children[1];
                 break;
             case ('close'):
-                scrollStrategy = new CloseScrollStrategy(this.mainContainer.nativeElement);
+                scrollStrategy = new CloseScrollStrategy();
                 this._target = this.scrollDemo.nativeElement.children[2];
                 break;
             default:

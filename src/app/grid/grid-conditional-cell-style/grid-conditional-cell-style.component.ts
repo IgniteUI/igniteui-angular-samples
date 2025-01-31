@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { athletesData } from '../../data/athletesData';
+import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { DecimalPipe, PercentPipe } from '@angular/common';
 
 @Component({
     selector: 'app-grid-conditional-cell-style',
     styleUrls: ['./grid-conditional-cell-style.component.scss'],
-    templateUrl: './grid-conditional-cell-style.component.html'
+    templateUrl: './grid-conditional-cell-style.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, DecimalPipe, PercentPipe]
 })
 export class GridConditionalCellStyleComponent implements OnInit {
     public data: any[];

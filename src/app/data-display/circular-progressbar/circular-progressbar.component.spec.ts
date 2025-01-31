@@ -8,8 +8,8 @@ describe('CircularProgressbarComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CircularProgressbarComponent ]
-    })
+    imports: [CircularProgressbarComponent]
+})
     .compileComponents();
   }));
 

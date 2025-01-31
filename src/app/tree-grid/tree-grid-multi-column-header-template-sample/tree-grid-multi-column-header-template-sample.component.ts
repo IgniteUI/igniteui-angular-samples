@@ -1,11 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxColumnGroupComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxColumnGroupComponent, IgxTreeGridComponent, IgxIconComponent, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
-  selector: 'app-tree-grid-multi-column-header-template-sample',
-  styleUrls: ['./tree-grid-multi-column-header-template-sample.component.scss'],
-  templateUrl: './tree-grid-multi-column-header-template-sample.component.html'
+    selector: 'app-tree-grid-multi-column-header-template-sample',
+    styleUrls: ['./tree-grid-multi-column-header-template-sample.component.scss'],
+    templateUrl: './tree-grid-multi-column-header-template-sample.component.html',
+    imports: [IgxIconComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnGroupComponent]
 })
 export class TreeGridMultiColumnHeaderTemplateSampleComponent {
 
@@ -21,7 +23,7 @@ export class TreeGridMultiColumnHeaderTemplateSampleComponent {
     }
 
     public toggleColumnGroup(columnGroup: IgxColumnGroupComponent) {
-        const columns = columnGroup.children.toArray();
+        const columns = columnGroup.childColumns;
 
         if (columnGroup.header === 'General Information') {
             const col = columns[1];

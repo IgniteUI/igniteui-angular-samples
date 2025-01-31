@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { IgxColumnComponent } from 'igniteui-angular';
+import { IgxColumnComponent, IgxTreeGridComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
-  selector: 'app-tree-grid-column-resizing-sample',
-  styleUrls: ['./tree-grid-column-resizing-sample.component.scss'],
-  templateUrl: './tree-grid-column-resizing-sample.component.html'
+    selector: 'app-tree-grid-column-resizing-sample',
+    styleUrls: ['./tree-grid-column-resizing-sample.component.scss'],
+    templateUrl: './tree-grid-column-resizing-sample.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridColumnResizingSampleComponent {
     public data: any[];

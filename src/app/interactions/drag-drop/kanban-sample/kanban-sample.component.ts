@@ -1,7 +1,8 @@
 /* eslint-disable no-shadow */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { IDropBaseEventArgs, IDropDroppedEventArgs } from 'igniteui-angular';
+import { IDropBaseEventArgs, IDropDroppedEventArgs, IgxDropDirective, IgxChipComponent, IgxCardComponent, IgxDragDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective } from 'igniteui-angular';
+import { NgFor } from '@angular/common';
 
 enum state {
     toDo = 'toDo',
@@ -17,9 +18,13 @@ interface IListItem {
 @Component({
     selector: 'app-kanban-sample',
     templateUrl: './kanban-sample.component.html',
-    styleUrls: ['./kanban-sample.component.scss']
+    styleUrls: ['./kanban-sample.component.scss'],
+    imports: [IgxDropDirective, IgxChipComponent, NgFor, IgxCardComponent, IgxDragDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective]
 })
 export class KanbanSampleComponent implements OnInit {
+    @ViewChild('toDo', { read: ElementRef }) public toDo: ElementRef;
+    @ViewChild('inProgress', { read: ElementRef }) public inProgress: ElementRef;
+    @ViewChild('done', { read: ElementRef }) public done: ElementRef;
     public toDoList: IListItem[];
     public inProgressList: IListItem[];
     public doneList: IListItem[];

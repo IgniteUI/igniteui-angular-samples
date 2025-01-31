@@ -11,7 +11,9 @@ import {
     IgxSelectModule,
     IgxIconModule
 } from 'igniteui-angular';
-import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
+import { ReactiveFormsModule} from '@angular/forms'
+import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';;
 
 export class StepperConfigGenerator implements IConfigGenerator {
 
@@ -20,72 +22,37 @@ export class StepperConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'StepperOverviewSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['StepperOverviewSampleComponent', 'IgxStepperModule', 'IgxMaskModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                    'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule',
-                    'IgxIconModule', 'IgxBadgeModule'],
-                ngDeclarations: ['StepperOverviewSampleComponent'],
-                ngImports: ['IgxStepperModule', 'IgxMaskModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                    'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule',
-                    'IgxIconModule', 'IgxBadgeModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: '/layouts/stepper/'
         }));
 
         configs.push(new Config({
             component: 'StepperSampleReactiveFormsComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['StepperSampleReactiveFormsComponent', 'IgxStepperModule', 'IgxMaskModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                    'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule',
-                    'IgxIconModule', 'IgxBadgeModule'],
-                ngDeclarations: ['StepperSampleReactiveFormsComponent'],
-                ngImports: ['IgxStepperModule', 'IgxMaskModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                    'IgxRadioModule', 'IgxCardModule', 'IgxCheckboxModule', 'IgxSelectModule',
-                    'IgxIconModule', 'IgxBadgeModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: '/layouts/stepper/'
         }));
 
         configs.push(new Config({
             component: 'StepperLabelPositionAndOrientationSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['StepperLabelPositionAndOrientationSampleComponent',
-                    'IgxStepperModule', 'IgxButtonModule', 'IgxButtonGroupModule'],
-                ngDeclarations: ['StepperLabelPositionAndOrientationSampleComponent'],
-                ngImports: ['IgxStepperModule', 'IgxButtonModule', 'IgxButtonGroupModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: '/layouts/stepper/'
         }));
 
         configs.push(new Config({
             component: 'StepperLinearSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['StepperLinearSampleComponent', 'IgxStepperModule', 'IgxIconModule', 'IgxButtonModule', 'IgxButtonGroupModule',
-                    'IgxInputGroupModule', 'IgxRadioModule'],
-                ngDeclarations: ['StepperLinearSampleComponent'],
-                ngImports: ['IgxStepperModule', 'IgxIconModule', 'IgxButtonModule',
-                    'IgxButtonGroupModule', 'IgxInputGroupModule', 'IgxRadioModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: '/layouts/stepper/'
         }));
 
         configs.push(new Config({
             component: 'StepperStepTypesSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['StepperStepTypesSampleComponent', 'IgxStepperModule', 'IgxButtonGroupModule'],
-                ngDeclarations: ['StepperStepTypesSampleComponent'],
-                ngImports: ['IgxStepperModule', 'IgxButtonGroupModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: '/layouts/stepper/'
         }));
 
         configs.push(new Config({
             component: 'StepperStylingSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['StepperStylingSampleComponent', 'IgxStepperModule', 'IgxIconModule', 'IgxButtonModule'],
-                ngDeclarations: ['StepperStylingSampleComponent'],
-                ngImports: ['IgxStepperModule', 'IgxIconModule', 'IgxButtonModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: '/layouts/stepper/'
         }));
 

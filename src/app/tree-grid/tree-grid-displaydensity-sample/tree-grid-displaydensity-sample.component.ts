@@ -1,8 +1,8 @@
 import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
-import {
-    IgxButtonGroupComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent
-} from 'igniteui-angular';
+import { IgxButtonGroupComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { DatePipe } from '@angular/common';
 
 class CustomNumberSummary {
     public operate(data?: any[]): IgxSummaryResult[] {
@@ -24,7 +24,8 @@ class CustomNumberSummary {
 @Component({
     selector: 'app-tree-grid-displaydensity-sample',
     styleUrls: ['./tree-grid-displaydensity-sample.component.scss'],
-    templateUrl: './tree-grid-displaydensity-sample.component.html'
+    templateUrl: './tree-grid-displaydensity-sample.component.html',
+    imports: [IgxButtonGroupComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnGroupComponent, IgxCellTemplateDirective, DatePipe]
 })
 export class TreeGridDisplaydensitySampleComponent implements OnInit {
     @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true })

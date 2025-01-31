@@ -8,8 +8,8 @@ describe('NavDrawerHierarchicalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavDrawerHierarchicalComponent ]
-    })
+    imports: [NavDrawerHierarchicalComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(NavDrawerHierarchicalComponent);

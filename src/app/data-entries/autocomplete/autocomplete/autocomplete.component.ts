@@ -1,9 +1,13 @@
-import { Component, Pipe, PipeTransform } from '@angular/core';
+import { Component, Pipe, PipeTransform, forwardRef } from '@angular/core';
+import { IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxAutocompleteDirective, IgxDropDownComponent, IgxDropDownItemComponent } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-autocomplete',
     styleUrls: ['./autocomplete.component.scss'],
-    templateUrl: './autocomplete.component.html'
+    templateUrl: './autocomplete.component.html',
+    imports: [IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxAutocompleteDirective, IgxDropDownComponent, NgFor, IgxDropDownItemComponent, forwardRef(() => AutocompletePipeStartsWith)]
 })
 export class AutocompleteBasicComponent {
     public towns = [];
@@ -18,7 +22,9 @@ export class AutocompleteBasicComponent {
     }
 }
 
-@Pipe({ name: 'startsWith' })
+@Pipe({
+    name: 'startsWith'
+})
 export class AutocompletePipeStartsWith implements PipeTransform {
     public transform(collection: any[], term = '') {
         return collection.filter((item) => item.toString().toLowerCase().startsWith(term.toString().toLowerCase()));

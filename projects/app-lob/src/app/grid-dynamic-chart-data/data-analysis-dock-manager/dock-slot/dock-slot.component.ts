@@ -4,7 +4,8 @@ import { ChartHostDirective } from '../../directives/chart-integration/chart-int
 @Component({
     selector: 'app-dock-slot',
     templateUrl: './dock-slot.component.html',
-    styleUrls: ['./dock-slot.component.scss']
+    styleUrls: ['./dock-slot.component.scss'],
+    imports: [ChartHostDirective]
 })
 export class DockSlotComponent implements OnInit {
 

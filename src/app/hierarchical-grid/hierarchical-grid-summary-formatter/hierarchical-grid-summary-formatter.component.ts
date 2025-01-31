@@ -1,12 +1,14 @@
 import { DatePipe } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
-import { IgxDateSummaryOperand, IgxHierarchicalGridComponent, IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
+import { IgxDateSummaryOperand, IgxHierarchicalGridComponent, IgxSummaryOperand, IgxSummaryResult, IgxColumnComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-summary-formatter',
     styleUrls: ['./hierarchical-grid-summary-formatter.component.scss'],
-    templateUrl: 'hierarchical-grid-summary-formatter.component.html'
+    templateUrl: 'hierarchical-grid-summary-formatter.component.html',
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent]
 })
 
 export class HGridSummaryFormatterComponent {

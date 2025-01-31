@@ -1,12 +1,16 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IgxGridComponent, ISortingOptions, SortingDirection } from 'igniteui-angular';
+import { DefaultSortingStrategy, IgxGridComponent, ISortingOptions, SortingDirection, IgxGridToolbarComponent, IgxButtonDirective, IgxGridToolbarActionsComponent, IgxSimpleComboComponent, IgxComboClearIconDirective, IgxComboItemDirective, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { DATA } from '../../data/localData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { FormsModule } from '@angular/forms';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
     selector: 'app-grid-sample',
     styleUrls: ['./grid-sorting-sample.component.scss'],
-    templateUrl: 'grid-sorting-sample.component.html'
+    templateUrl: 'grid-sorting-sample.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxButtonDirective, IgxGridToolbarActionsComponent, IgxSimpleComboComponent, FormsModule, IgxComboClearIconDirective, IgxComboItemDirective, IgxColumnComponent, IgxCellTemplateDirective, UpperCasePipe]
 })
 
 export class SortingSampleComponent implements OnInit, AfterViewInit {

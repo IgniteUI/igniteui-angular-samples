@@ -1,14 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    IgxGridComponent,
-    RowType
-} from 'igniteui-angular';
+import { IgxGridComponent, RowType, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-grid-row-classes-sample',
     styleUrls: ['./grid-rowClasses.component.scss'],
-    templateUrl: 'grid-rowClasses.component.html'
+    templateUrl: 'grid-rowClasses.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class GridRowClassesComponent implements OnInit {
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;

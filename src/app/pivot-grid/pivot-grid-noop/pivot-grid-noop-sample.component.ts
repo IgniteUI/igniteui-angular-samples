@@ -7,7 +7,8 @@ import { PivotDataService } from "../../services/pivotRemoteData.service";
     selector: 'app-pivot-grid-noop-sample',
     styleUrls: ['./pivot-grid-noop-sample.component.scss'],
     templateUrl: './pivot-grid-noop-sample.component.html',
-    providers: [PivotDataService]
+    providers: [PivotDataService],
+    imports: [IgxPivotGridComponent]
 })
 export class PivotGridNoopSampleComponent implements AfterViewInit {
     @ViewChild('grid', { static: true })

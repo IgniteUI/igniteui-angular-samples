@@ -1,11 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent, FormattedValuesFilteringStrategy } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, FormattedValuesFilteringStrategy, IgxColumnComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-formatted-filtering-strategy',
     styleUrls: ['./hierarchical-grid-formatted-filtering-strategy.component.scss'],
-    templateUrl: 'hierarchical-grid-formatted-filtering-strategy.component.html'
+    templateUrl: 'hierarchical-grid-formatted-filtering-strategy.component.html',
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent]
 })
 
 export class HGridFormattedFilteringStrategyComponent {

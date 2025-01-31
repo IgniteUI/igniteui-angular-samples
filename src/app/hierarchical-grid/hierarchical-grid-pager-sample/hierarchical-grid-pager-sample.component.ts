@@ -1,11 +1,15 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { IPaginatorResourceStrings, IgxPaginatorComponent } from 'igniteui-angular';
+import { IPaginatorResourceStrings, IgxPaginatorComponent, IgxHierarchicalGridComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxPaginatorDirective, IgxSwitchComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-hierarchical-grid-pager-sample',
     styleUrls: ['./hierarchical-grid-pager-sample.component.scss'],
-    templateUrl: './hierarchical-grid-pager-sample.component.html'
+    templateUrl: './hierarchical-grid-pager-sample.component.html',
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxPaginatorContentDirective, NgIf, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxPaginatorDirective, IgxSwitchComponent, FormsModule]
 })
 export class HierarchicalGridPagerSampleComponent implements OnInit, AfterViewInit {
     @ViewChild('paginator', { read: IgxPaginatorComponent, static: false })

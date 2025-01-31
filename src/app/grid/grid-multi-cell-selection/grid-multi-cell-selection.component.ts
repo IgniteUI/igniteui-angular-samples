@@ -1,12 +1,14 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { IgxColumnComponent, IgxGridComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: 'app-grid-multi-cell-selection-sample',
     styleUrls: ['./grid-multi-cell-selection.component.scss'],
-    templateUrl: './grid-multi-cell-selection.component.html'
+    templateUrl: './grid-multi-cell-selection.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxToastComponent]
 })
 export class GridMultiCellSelectionComponent {
 
@@ -15,7 +17,7 @@ export class GridMultiCellSelectionComponent {
 
     public transferData(source: IgxGridComponent, target: IgxGridComponent,
                         notification: IgxToastComponent) {
-        target.shouldGenerate = true;
+        target.autoGenerate = true;
         target.clearCellSelection();
         this.targetData = source.getSelectedData();
         notification.positionSettings.verticalDirection = VerticalAlignment.Middle;

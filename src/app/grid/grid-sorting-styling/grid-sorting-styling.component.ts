@@ -1,7 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IgxGridComponent, IgxSelectComponent, SortingDirection } from 'igniteui-angular';
+import { DefaultSortingStrategy, IgxGridComponent, IgxSelectComponent, SortingDirection, IgxGridToolbarComponent, IgxLabelDirective, IgxSelectItemComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { DATA } from '../../data/localData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
 
 // eslint-disable-next-line no-shadow
 enum TYPE {
@@ -11,7 +14,8 @@ enum TYPE {
 @Component({
     selector: 'app-grid-sorting-styling',
     styleUrls: ['./grid-sorting-styling.component.scss'],
-    templateUrl: 'grid-sorting-styling.component.html'
+    templateUrl: 'grid-sorting-styling.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxSelectComponent, FormsModule, IgxLabelDirective, NgFor, IgxSelectItemComponent, IgxColumnComponent, IgxCellTemplateDirective]
 })
 
 export class SortingStylingComponent implements OnInit {

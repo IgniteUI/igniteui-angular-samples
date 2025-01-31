@@ -1,12 +1,14 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { DefaultSortingStrategy, SortingDirection } from 'igniteui-angular';
+import { DefaultSortingStrategy, SortingDirection, IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnLayoutComponent, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: 'app-grid-multi-row-layout-sample',
     styleUrls: ['./grid-multi-row-layout.component.scss'],
-    templateUrl: './grid-multi-row-layout.component.html'
+    templateUrl: './grid-multi-row-layout.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnLayoutComponent, IgxColumnComponent]
 })
 export class GridMultiRowLayoutComponent {
 

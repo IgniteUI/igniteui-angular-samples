@@ -1,30 +1,41 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
-// import { IgxListComponent } from 'igniteui-angular';
+import {
+    AfterViewInit,
+    Component,
+    ElementRef,
+    TemplateRef,
+    ViewChild,
+    ViewEncapsulation
+} from '@angular/core';
 import { ContactsService } from './services/contacts.service';
 import { IMessage, MessagesService } from './services/messages.service';
+import { FormsModule } from '@angular/forms';
+import { IgxListComponent, IgxListItemComponent, IgxAvatarComponent, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
+import { NgIf, NgClass, NgFor, NgTemplateOutlet, DatePipe } from '@angular/common';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: 'app-list-chat-sample',
     styleUrls: ['./list-chat-sample.component.scss'],
-    templateUrl: './list-chat-sample.component.html'
+    templateUrl: './list-chat-sample.component.html',
+    imports: [FormsModule, IgxListComponent, NgIf, IgxListItemComponent, IgxAvatarComponent, NgClass, NgFor, NgTemplateOutlet, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent, DatePipe]
 })
-export class ListChatSampleComponent {
+export class ListChatSampleComponent implements AfterViewInit {
+    @ViewChild('form', { static: true })
+    public form: ElementRef;
+
     @ViewChild('myMessage', { static: true })
     public myMessageTemplate: TemplateRef<any>;
+
     @ViewChild('othersMessage', { static: true })
     public othersMessageTemplate: TemplateRef<any>;
 
     public message: string;
-
-    // @ViewChild('list')
-    // public listComponent: IgxListComponent;
-
     private myId = 4;
 
-    constructor(public messagesService: MessagesService, public contactsService: ContactsService,
-                @Inject(DOCUMENT) private document: any) { }
+    constructor(
+        public messagesService: MessagesService,
+        public contactsService: ContactsService
+    ) { }
 
     public getMessageTemplate(message: IMessage): TemplateRef<any> {
         if (message.authorId === this.myId) {
@@ -63,8 +74,6 @@ export class ListChatSampleComponent {
     private sendMessage() {
         this.addMessage(this.message);
         this.message = null;
-
-        this.scrollToBottom();
     }
 
     private addMessage(message: string) {
@@ -78,15 +87,12 @@ export class ListChatSampleComponent {
         }
     }
 
-    private scrollToBottom(): void {
-        try {
-            const listElement = this.document.querySelector('igx-list');
-            if (listElement) {
-                listElement.scrollTop = listElement.scrollHeight;
-            }
+    public ngAfterViewInit() {
+        this.scrollToBottom();
+    }
 
-            // this.listComponent.element.nativeElement.scrollTop =
-            // this.listComponent.element.nativeElement.scrollHeight;
-        } catch (err) { }
+    private scrollToBottom(): void {
+        const form = this.form.nativeElement;
+        form.scrollTop = form.scrollHeight;
     }
 }

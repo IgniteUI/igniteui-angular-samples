@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ISimpleComboSelectionChangingEventArgs } from 'igniteui-angular';
+import { ISimpleComboSelectionChangingEventArgs, IgxSimpleComboComponent, IgxLinearProgressBarComponent } from 'igniteui-angular';
 import { City, Country, getCitiesByCountry, getCountries, Region } from '../../../data/cities15000-regions-countries';
+import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-simple-combo-cascading',
     templateUrl: 'simple-combo-cascading.component.html',
-    styleUrls: ['simple-combo-cascading.component.scss']
+    styleUrls: ['simple-combo-cascading.component.scss'],
+    imports: [IgxSimpleComboComponent, FormsModule, NgIf, IgxLinearProgressBarComponent]
 })
 export class SimpleComboCascadingComponent implements OnInit {
     public selectedCountry: Country;
@@ -28,6 +31,9 @@ export class SimpleComboCascadingComponent implements OnInit {
             this.regionData = [];
             this.isLoadingRegions = true;
             this.loadingTime = 2000;
+        } else {
+            this.selectedRegion = undefined;
+            this.selectedCity = undefined;
         }
         setTimeout(() => {
             this.regionData = getCitiesByCountry([this.selectedCountry?.name])
@@ -35,8 +41,6 @@ export class SimpleComboCascadingComponent implements OnInit {
             .filter((v, i, a) => a.findIndex(r => r.name === v.name) === i);
             this.isLoadingRegions = false;
         }, this.loadingTime)
-        this.selectedRegion = null;
-        this.selectedCity = null;
         this.citiesData = [];
         this.loadingTime = 0;
     }
@@ -47,13 +51,14 @@ export class SimpleComboCascadingComponent implements OnInit {
             this.citiesData = [];
             this.isLoadingCities = true;
             this.loadingTime = 2000;
+        } else {
+            this.selectedCity = undefined;
         }
         setTimeout(() => {
             this.citiesData = getCitiesByCountry([this.selectedCountry?.name])
             .filter(c => c.region === this.selectedRegion?.name);
             this.isLoadingCities = false;
         }, this.loadingTime)
-        this.selectedCity = null;
         this.loadingTime = 0;
     }
 }

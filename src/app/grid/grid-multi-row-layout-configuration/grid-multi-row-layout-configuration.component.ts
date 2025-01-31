@@ -9,12 +9,8 @@ import {
     ViewChild,
     ViewChildren,
     ViewEncapsulation } from "@angular/core";
-import {
-    IDropBaseEventArgs,
-    IDropDroppedEventArgs,
-    IgxDialogComponent,
-    IgxGridComponent
-} from "igniteui-angular";
+import { IDropBaseEventArgs, IDropDroppedEventArgs, IgxDialogComponent, IgxGridComponent, IgxChipsAreaComponent, IgxChipComponent, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent, IgxPrefixDirective, IgxInputGroupComponent, IgxInputDirective, IgxDropDirective, IgxButtonDirective } from "igniteui-angular";
+import { NgFor, NgIf, NgStyle, NgClass } from "@angular/common";
 
 interface IColumnConfig {
     key: string;
@@ -45,7 +41,8 @@ enum DialogType {
     encapsulation: ViewEncapsulation.None,
     selector: "app-grid-multi-row-layout-configuration-sample",
     styleUrls: ["./grid-multi-row-layout-configuration.component.scss"],
-    templateUrl: "./grid-multi-row-layout-configuration.component.html"
+    templateUrl: "./grid-multi-row-layout-configuration.component.html",
+    imports: [IgxChipsAreaComponent, NgFor, IgxChipComponent, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent, IgxPrefixDirective, NgIf, IgxInputGroupComponent, IgxInputDirective, NgStyle, IgxDropDirective, NgClass, IgxButtonDirective, IgxDialogComponent]
 })
 export class GridMultiRowLayoutConfigurationComponent {
 

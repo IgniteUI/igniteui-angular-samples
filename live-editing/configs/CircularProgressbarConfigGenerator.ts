@@ -1,8 +1,11 @@
-import {IgxButtonModule,
-IgxIconModule,
-IgxProgressBarModule,
-IgxRippleModule} from 'igniteui-angular';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import {
+    IgxButtonModule,
+    IgxIconModule,
+    IgxProgressBarModule,
+    IgxRippleModule
+} from 'igniteui-angular';
+import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 export class CircularProgressbarConfigGenerator implements IConfigGenerator {
 
 
@@ -11,50 +14,25 @@ export class CircularProgressbarConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'CircularProgressbarComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxProgressBarModule', 'CircularProgressbarComponent'],
-                ngDeclarations: ['CircularProgressbarComponent'],
-                ngImports: ['IgxProgressBarModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/"
         }));
 
         configs.push(new Config({
             component: 'CircularIndeterminateProgressbarComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxProgressBarModule', 'CircularIndeterminateProgressbarComponent'],
-                ngDeclarations: ['CircularIndeterminateProgressbarComponent'],
-                ngImports: ['IgxProgressBarModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/circular-progressbar/"
         }));
 
         configs.push(new Config({
             component: 'CircularDynamicSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: [
-                    'IgxButtonModule',
-                    'IgxIconModule',
-                    'IgxProgressBarModule',
-                    'IgxRippleModule',
-                    'CircularDynamicSampleComponent'],
-                ngDeclarations: ['CircularDynamicSampleComponent'],
-                ngImports: [
-                    'IgxButtonModule',
-                    'IgxIconModule',
-                    'IgxProgressBarModule',
-                    'IgxRippleModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/"
         }));
 
         configs.push(new Config({
             component: 'CircularStylingSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxProgressBarModule', 'CircularStylingSampleComponent'],
-                ngDeclarations: ['CircularStylingSampleComponent'],
-                ngImports: ['IgxProgressBarModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/circular-progressbar/"
         }));
 

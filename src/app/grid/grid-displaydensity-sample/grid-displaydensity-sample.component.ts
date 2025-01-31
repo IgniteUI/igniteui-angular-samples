@@ -1,7 +1,8 @@
 import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
-import { IgxButtonGroupComponent, IgxGridComponent, IgxNumberSummaryOperand,
-    IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
+import { IgxButtonGroupComponent, IgxGridComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxColumnGroupComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { DatePipe } from '@angular/common';
 
 class CustomNumberSummary {
     public operate(data?: any[]): IgxSummaryResult[] {
@@ -20,9 +21,10 @@ class CustomNumberSummary {
     }
   }
 @Component({
-  selector: 'app-grid-displaydensity-sample',
-  styleUrls: ['./grid-displaydensity-sample.component.scss'],
-  templateUrl: './grid-displaydensity-sample.component.html'
+    selector: 'app-grid-displaydensity-sample',
+    styleUrls: ['./grid-displaydensity-sample.component.scss'],
+    templateUrl: './grid-displaydensity-sample.component.html',
+    imports: [IgxButtonGroupComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnGroupComponent, IgxColumnComponent, IgxCellTemplateDirective, DatePipe]
 })
 export class GridDisplayDensitySampleComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true })

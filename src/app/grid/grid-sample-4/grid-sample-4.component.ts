@@ -1,13 +1,16 @@
 import { ChangeDetectorRef, Component, TemplateRef, ViewChild, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-import { IgxColumnComponent, IgxGridComponent } from 'igniteui-angular';
+import { IgxColumnComponent, IgxGridComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { debounceTime } from 'rxjs/operators';
 import { RemoteServiceVirt } from '../../services/remoteVirtualization.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     providers: [RemoteServiceVirt],
     selector: 'app-grid-remote-virtualization-sample',
     styleUrls: ['grid-sample-4.component.scss'],
-    templateUrl: 'grid-sample-4.component.html'
+    templateUrl: 'grid-sample-4.component.html',
+    imports: [IgxCellTemplateDirective, NgIf, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxBadgeComponent, AsyncPipe]
 })
 
 export class GridRemoteVirtualizationSampleComponent implements OnInit, AfterViewInit, OnDestroy{

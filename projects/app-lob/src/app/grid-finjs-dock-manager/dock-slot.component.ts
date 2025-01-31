@@ -15,7 +15,8 @@ export class GridHostDirective {
     template: `
     <div style='width: 100%; height: 100%; overflow-x: hidden;'>
         <ng-template gridHost></ng-template>
-    </div>`
+    </div>`,
+    imports: [GridHostDirective]
 })
 export class DockSlotComponent implements OnInit, AfterViewInit, OnDestroy {
     @Output()

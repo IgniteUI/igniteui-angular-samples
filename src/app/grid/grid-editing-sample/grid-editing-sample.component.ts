@@ -1,7 +1,10 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxGridComponent, IgxSummaryResult, IgxNumberSummaryOperand, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IgxDialogComponent, IgxGridComponent, IgxSummaryResult, IgxNumberSummaryOperand, IgxToastComponent, VerticalAlignment, IgxPaginatorComponent, IgxGridToolbarComponent, IgxButtonDirective, IgxIconComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxCellEditorTemplateDirective, IgxComboComponent, IgxFocusDirective, IgxIconButtonDirective, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxDatePickerComponent, IgxCheckboxComponent } from 'igniteui-angular';
 import { DATA, LOCATIONS } from './data';
 import { Product } from './product';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 class NumberSummary {
     public operate(data: any[]): IgxSummaryResult[] {
@@ -27,7 +30,8 @@ class NumberSummary {
 @Component({
     selector: 'app-grid-editing-sample',
     styleUrls: ['./grid-editing-sample.component.scss'],
-    templateUrl: './grid-editing-sample.component.html'
+    templateUrl: './grid-editing-sample.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxGridToolbarComponent, IgxButtonDirective, IgxIconComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxCellEditorTemplateDirective, FormsModule, IgxComboComponent, IgxFocusDirective, IgxIconButtonDirective, IgxToastComponent, IgxDialogComponent, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxDatePickerComponent, IgxCheckboxComponent, DatePipe]
 })
 export class GridEditingSampleComponent implements OnInit, AfterViewInit {
 

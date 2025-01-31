@@ -12,6 +12,7 @@ IgxSelectModule,
 IgxTextSelectionModule,
 IgxTimePickerModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 export class InputGroupConfigGenerator implements IConfigGenerator {
 
 
@@ -23,11 +24,7 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
             additionalFiles: [
                 "/src/app/data-entries/input-group/base-input.component.ts"
             ],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxInputGroupModule', 'InputGroupSample1Component'],
-                ngDeclarations: ['InputGroupSample1Component'],
-                ngImports: ['IgxInputGroupModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/input-group/"
         }));
 
@@ -37,11 +34,7 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
             additionalFiles: [
                 "/src/app/data-entries/input-group/base-input.component.ts"
             ],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxInputGroupModule', 'InputGroupSample2Component'],
-                ngDeclarations: ['InputGroupSample2Component'],
-                ngImports: ['IgxInputGroupModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/input-group/"
         }));
 
@@ -51,11 +44,7 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
             additionalFiles: [
                 "/src/app/data-entries/input-group/base-input.component.ts"
             ],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxIconModule', 'IgxInputGroupModule', 'InputGroupSample5Component'],
-                ngDeclarations: ['InputGroupSample5Component'],
-                ngImports: ['IgxIconModule', 'IgxInputGroupModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/input-group/"
         }));
 
@@ -65,15 +54,7 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
             additionalFiles: [
                 "/src/app/data-entries/input-group/base-input.component.ts"
             ],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxIconModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                     'IgxRippleModule', 'ReactiveFormsSampleComponent', 'IgxDatePickerModule', 'IgxTimePickerModule',
-                     'IgxComboModule', 'ReactiveFormsModule', 'IgxDropDownModule', 'IgxSelectModule'],
-
-                ngDeclarations: ['ReactiveFormsSampleComponent'],
-                ngImports: ['IgxIconModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                     'IgxRippleModule', 'IgxDatePickerModule', 'IgxTimePickerModule', 'IgxComboModule', 'ReactiveFormsModule', 'IgxDropDownModule', 'IgxSelectModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/"
         }));
 
@@ -82,21 +63,13 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
             additionalFiles: [
                 "/src/app/data-entries/input-group/base-input.component.ts"
             ],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxIconModule', 'IgxInputGroupModule', 'InputGroupStyleComponent'],
-                ngDeclarations: ['InputGroupStyleComponent'],
-                ngImports: ['IgxIconModule', 'IgxInputGroupModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/"
         }));
 
         configs.push(new Config({
             component: 'InputTextSelectionComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxInputGroupModule', 'InputTextSelectionComponent', 'IgxTextSelectionModule', 'IgxFocusModule'],
-                ngDeclarations: ['InputTextSelectionComponent'],
-                ngImports: ['IgxInputGroupModule', 'IgxTextSelectionModule', 'IgxFocusModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/"
         }));
 
@@ -106,11 +79,7 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
             additionalFiles: [
                 "/src/app/data-entries/input-group/base-input.component.ts"
             ],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxInputGroupModule', 'IgxButtonModule', 'IgxRippleModule', 'TemplateDrivenFormValidationComponent'],
-                ngDeclarations: ['TemplateDrivenFormValidationComponent'],
-                ngImports: ['IgxInputGroupModule', 'IgxButtonModule', 'IgxRippleModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/"
         }));
 
@@ -120,11 +89,7 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
             additionalFiles: [
                 "/src/app/data-entries/input-group/base-input.component.ts"
             ],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxInputGroupModule', 'IgxButtonModule', 'IgxRippleModule', 'ReactiveFormsModule', 'ReactiveFormValidationComponent'],
-                ngDeclarations: ['ReactiveFormValidationComponent'],
-                ngImports: ['IgxInputGroupModule', 'IgxButtonModule', 'IgxRippleModule', 'ReactiveFormsModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/"
         }));
 
@@ -134,11 +99,7 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
             additionalFiles: [
                 "/src/app/data-entries/input-group/base-input.component.ts"
             ],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxInputGroupModule', 'IgxButtonModule', 'IgxRippleModule', 'ReactiveFormsModule', 'ReactiveFormCustomValidationComponent'],
-                ngDeclarations: ['ReactiveFormCustomValidationComponent'],
-                ngImports: ['IgxInputGroupModule', 'IgxButtonModule', 'IgxRippleModule', 'ReactiveFormsModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/"
         }));
 

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SINGERS } from '../../data/singersData';
-import { IgxExcelExporterOptions, IgxExcelExporterService, IgxHierarchicalGridComponent, IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular';
+import { IgxExcelExporterOptions, IgxExcelExporterService, IgxHierarchicalGridComponent, IgxNumberSummaryOperand, IgxSummaryResult, IgxButtonDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 class MySummary  {
     public operate(data?: any[]): IgxSummaryResult[] {
@@ -41,7 +42,8 @@ class MyChildSummary {
 @Component({
     selector: 'app-hierarchical-grid-summary-export',
     styleUrls: ['./hgrid-summary-export.component.scss'],
-    templateUrl: 'hgrid-summary-export.component.html'
+    templateUrl: 'hgrid-summary-export.component.html',
+    imports: [IgxButtonDirective, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent]
 })
 
 export class HGridSummaryExportComponent {
