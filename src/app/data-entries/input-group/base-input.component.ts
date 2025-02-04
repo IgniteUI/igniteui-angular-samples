@@ -1,10 +1,9 @@
-import { AfterViewInit, Directive, HostListener, QueryList, ViewChildren } from '@angular/core';
+import { Directive, HostListener, QueryList, ViewChildren } from '@angular/core';
 import { IgxInputGroupComponent } from 'igniteui-angular';
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: 'input-group-sample-base',
-    standalone: false
+    selector: 'input-group-sample-base'
 })
 // eslint-disable-next-line @angular-eslint/directive-class-suffix
 export class BaseInputGroupSampleComponent {

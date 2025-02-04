@@ -1,169 +1,121 @@
 
-import * as GridFinjsRouting from '../projects/app-lob/src/app/grid-finjs/grid-finjs-routing.module';
-import { GridFinjsModule } from '../projects/app-lob/src/app/grid-finjs/grid-finjs.module';
-import * as TreeGridFinjsRouting from '../projects/app-lob/src/app/treegrid-finjs/treegrid-finjs-routing.module';
-import { TreeGridFinjsModule } from '../projects/app-lob/src/app/treegrid-finjs/treegrid-finjs.module';
-import * as GridCRMRouting from '../projects/app-crm/src/app/app-routing.module';
-
-import * as GridsDVRouting from '../projects/app-lob/src/app/grid/grids-routing.module';
-import { GridsDVModule } from '../projects/app-lob/src/app/grid/grids.module';
+import * as GridFinjsRouting from '../projects/app-lob/src/app/grid-finjs/grid-finjs.routes';
+import * as TreeGridFinjsRouting from '../projects/app-lob/src/app/treegrid-finjs/treegrid-finjs.routes';
+import * as GridCRMRouting from '../projects/app-crm/src/app/app.routes';
+import * as GridsDVRouting from '../projects/app-lob/src/app/grid/grids.routes';
 // tslint:disable-next-line: max-line-length
-import * as HieararchicalGridsDVRouting from '../projects/app-lob/src/app/hierarchical-grid/hierarchical-grid-routing.module';
-import { HierarchicalGridDVModule } from '../projects/app-lob/src/app/hierarchical-grid/hierarchical-grid.module';
-import * as TreeGridDvRoutingModule from '../projects/app-lob/src/app/tree-grid/tree-grid-routing.module';
-import { TreeGridDVModule } from '../projects/app-lob/src/app/tree-grid/tree-grid.module';
-
-import * as DataDisplayRouting from '../src/app/data-display/data-display-routing.module';
-import { DataDisplayModule } from '../src/app/data-display/data-display.module';
-import * as DataEntriesRouting from '../src/app/data-entries/data-entries-routing.module';
-import { DataEntriesModule } from '../src/app/data-entries/data-entries.module';
-import * as GridRouting from '../src/app/grid/grids-routing.module';
-import * as PivotGridRouting from '../src/app/pivot-grid/pivot-grids-routing.module';
-import { GridsModule } from '../src/app/grid/grids.module';
-import * as HierarchicalGridRouting from '../src/app/hierarchical-grid/hierarchical-grid-routing.module';
-import { HierarchicalGridModule } from '../src/app/hierarchical-grid/hierarchical-grid.module';
-import * as InteractionsRouting from '../src/app/interactions/interactions-routing.module';
-import { InteractionsModule } from '../src/app/interactions/interactions.module';
-import * as LayoutsRouting from '../src/app/layouts/layouts-routing.module';
-import { LayoutsModule } from '../src/app/layouts/layouts.module';
-import * as ListsRouting from '../src/app/lists/lists-routing.module';
-import { ListsModule } from '../src/app/lists/lists.module';
-import * as MenusRouting from '../src/app/menus/menus-routing.module';
-import { MenusModule } from '../src/app/menus/menus.module';
-import * as NotificationsRouting from '../src/app/notifications/notifications-routing.module';
-import { NotificationsModule } from '../src/app/notifications/notifications.module';
-import * as SchedulingRouting from '../src/app/scheduling/scheduling-routing.module';
-import { SchedulingModule } from '../src/app/scheduling/scheduling.module';
-import * as ServicesRouting from '../src/app/services/services-routing.module';
-import { ServicesModule } from '../src/app/services/services.module';
-import * as ThemingRouting from '../src/app/theming/theming-routing.module';
-import { ThemingModule } from '../src/app/theming/theming.module';
-import * as TreeGridRouting from '../src/app/tree-grid/tree-grid-routing.module';
-import { TreeGridModule } from '../src/app/tree-grid/tree-grid.module';
+import * as HieararchicalGridsDVRouting from '../projects/app-lob/src/app/hierarchical-grid/hierarchical-grid.routes';
+import * as TreeGridDvRoutingModule from '../projects/app-lob/src/app/tree-grid/tree-grid.routes';
+import * as DataDisplayRouting from '../src/app/data-display/data-display.routes';
+import * as DataEntriesRouting from '../src/app/data-entries/data-entries.routes';
+import * as GridRouting from '../src/app/grid/grids.routes';
+import * as PivotGridRouting from '../src/app/pivot-grid/pivot-grids.routes';
+import * as HierarchicalGridRouting from '../src/app/hierarchical-grid/hierarchical-grid.routes';
+import * as InteractionsRouting from '../src/app/interactions/interactions.routes';
+import * as LayoutsRouting from '../src/app/layouts/layouts.routes';
+import * as ListsRouting from '../src/app/lists/lists.routes';
+import * as MenusRouting from '../src/app/menus/menus.routes';
+import * as NotificationsRouting from '../src/app/notifications/notifications.routes';
+import * as SchedulingRouting from '../src/app/scheduling/scheduling.routes';
+import * as ServicesRouting from '../src/app/services/services.routes';
+import * as ThemingRouting from '../src/app/theming/theming.routes';
+import * as TreeGridRouting from '../src/app/tree-grid/tree-grid.routes';
 // eslint-disable-next-line max-len
-import * as GridFinJSDockManagerRoutingModule from '../projects/app-lob/src/app/grid-finjs-dock-manager/grid-finjs-dock-manager-routing.module';
-import { GridFinJSDockManagerModule } from '../projects/app-lob/src/app/grid-finjs-dock-manager/grid-finjs-dock-manager.module';
-import { PaginationModule } from '../src/app/pagination/pagination.module';
-import * as PaginatorRouting from '../src/app/pagination/pagination-routing.module';
-import { PivotGridsModule } from '../src/app/pivot-grid/pivot-grids.module';
-import { PivotGridsRoutingModule } from '../src/app/pivot-grid/pivot-grids-routing.module';
-import { AppModule } from '../projects/app-crm/src/app/app.module';
-
+import * as GridFinJSDockManagerRoutingModule from '../projects/app-lob/src/app/grid-finjs-dock-manager/grid-finjs-dock-manager.routes';
+import * as PaginatorRouting from '../src/app/pagination/pagination.routes';
 export const MODULE_ROUTES = [
     {
-        module: NotificationsModule,
         path: 'notifications',
-        routes: NotificationsRouting.notificationsRoutes
+        routes: NotificationsRouting.NotificationsRoutes
     },
     {
-        module: DataDisplayModule,
         path: 'data-display',
-        routes: DataDisplayRouting.dataDisplayRoutes
+        routes: DataDisplayRouting.DataDisplayRoutes
     },
     {
-        module: DataEntriesModule,
         path: 'data-entries',
-        routes: DataEntriesRouting.dataEntriesRoutes
+        routes: DataEntriesRouting.DataEntriesRoutes
     },
     {
-        module: ThemingModule,
         path: 'theming',
-        routes: ThemingRouting.themingRoutes
+        routes: ThemingRouting.ThemingRoutes
     },
     {
-        module: MenusModule,
         path: 'menus',
-        routes: MenusRouting.menusRoutes
+        routes: MenusRouting.MenusRoutes
     },
     {
-        module: SchedulingModule,
         path: 'scheduling',
-        routes: SchedulingRouting.schedulingRoutes
+        routes: SchedulingRouting.SchedulingRoutes
     },
     {
-        module: ListsModule,
         path: 'lists',
-        routes: ListsRouting.listsRoutes
+        routes: ListsRouting.ListsRoutes
     },
     {
-        module: InteractionsModule,
         path: 'interactions',
-        routes: InteractionsRouting.interactionsRoutes
+        routes: InteractionsRouting.InteractionsRoutes
     },
     {
-        module: LayoutsModule,
         path: 'layouts',
-        routes: LayoutsRouting.layoutsRoutes
+        routes: LayoutsRouting.LayoutsRoutes
     },
     {
-        module: TreeGridModule,
         path: 'tree-grid',
-        routes: TreeGridRouting.treeGridRoutes
+        routes: TreeGridRouting.TreeGridRoutes
     },
     {
-        module: GridsModule,
         path: 'grid',
-        routes: GridRouting.gridsRoutes
+        routes: GridRouting.GridsRoutes
     },
     {
-        module: PivotGridsModule,
         path: 'pivot-grid',
-        routes: PivotGridRouting.gridsRoutes
+        routes: PivotGridRouting.PivotGridsRoutes
     },
     {
-        module: HierarchicalGridModule,
         path: 'hierarchical-grid',
-        routes: HierarchicalGridRouting.hierarchicalGridRoutes
+        routes: HierarchicalGridRouting.HierarchicalGridRoutes
     },
     {
-        module: ServicesModule,
         path: 'services',
-        routes: ServicesRouting.servicesRoutes
+        routes: ServicesRouting.ServicesRoutes
     },
     {
-        module: PaginationModule,
         path: 'pagination',
-        routes: PaginatorRouting.paginatorRoutes
+        routes: PaginatorRouting.PaginatorRoutes
     }
 ];
 
 export const DV_MODULE_ROUTES = [
     {
-        module: GridFinjsModule,
         path: 'grid-finjs',
-        routes: GridFinjsRouting.gridfinjsRoutes
+        routes: GridFinjsRouting.GridfinjsRoutes
     },
     {
-        module: TreeGridFinjsModule,
         path: 'treegrid-finjs',
-        routes: TreeGridFinjsRouting.treegridfinjsRoutes
+        routes: TreeGridFinjsRouting.TreegridfinjsRoutes
     },
     {
-        module: GridsDVModule,
         path: 'grid',
-        routes: GridsDVRouting.gridsDVRoutes
+        routes: GridsDVRouting.GridsDVRoutes
     },
     {
-        module: TreeGridDVModule,
         path: 'tree-grid',
-        routes: TreeGridDvRoutingModule.treeGridDVRoutes
+        routes: TreeGridDvRoutingModule.TreeGridDVRoutes
     },
     {
-        module: HierarchicalGridDVModule,
         path: 'hierarchical-grid',
-        routes: HieararchicalGridsDVRouting.hierarchicalGridDVRoutes
+        routes: HieararchicalGridsDVRouting.HierarchicalGridDVRoutes
     },
     {
-        module: GridFinJSDockManagerModule,
         path: 'grid-finjs-dock-manager',
-        routes: GridFinJSDockManagerRoutingModule.gridFinJsDockManagerGridRoutes
+        routes: GridFinJSDockManagerRoutingModule.GridFinJsDockManagerGridRoutes
     }
 ];
 
 export const CRM_MODULE_ROUTES = [
     {
-        module: AppModule,
         path: 'grid-crm',
-        routes: GridCRMRouting.gridCrmRoutes
+        routes: GridCRMRouting.GridCrmRoutes
     }
 ];

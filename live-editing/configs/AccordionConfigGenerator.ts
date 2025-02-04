@@ -7,7 +7,8 @@ import {
     IgxSwitchModule,
     IgxIconModule
 } from 'igniteui-angular';
-import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
+import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 
 export class AccordionConfigGenerator implements IConfigGenerator {
 
@@ -16,33 +17,19 @@ export class AccordionConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'AccordionSample1Component',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['AccordionSample1Component', 'IgxAccordionModule', 'IgxSwitchModule'],
-                ngDeclarations: ['AccordionSample1Component'],
-                ngImports: ['IgxAccordionModule', 'IgxSwitchModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: '/layouts/accordion/'
         }));
 
         configs.push(new Config({
             component: 'AccordionSample2Component',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['AccordionSample2Component', 'IgxAccordionModule', 'IgxSwitchModule'],
-                ngDeclarations: ['AccordionSample2Component'],
-                ngImports: ['IgxAccordionModule', 'IgxSwitchModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: '/layouts/accordion/'
         }));
 
         configs.push(new Config({
             component: 'AccordionSample3Component',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxCheckboxModule', 'IgxSliderModule',
-                    'IgxRadioModule', 'IgxTimePickerModule', 'AccordionSample3Component', 'IgxAccordionModule', 'IgxIconModule'],
-                ngDeclarations: ['AccordionSample3Component'],
-                ngImports: ['IgxCheckboxModule', 'IgxSliderModule',
-                    'IgxRadioModule', 'IgxTimePickerModule', 'IgxAccordionModule', 'IgxIconModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: '/layouts/accordion/'
         }));
 
