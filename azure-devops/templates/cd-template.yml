@@ -112,7 +112,7 @@ steps:
   - task: CopyFiles@2
     displayName: Copy web.config
     inputs:
-      SourceFolder: $(Build.SourcesDirectory)
+      SourceFolder: $(Build.SourcesDirectory)/projects/app-crm/
       Contents: web.config
       TargetFolder: $(Build.SourcesDirectory)/${{ parameters.targetFolder }}/browser
 
