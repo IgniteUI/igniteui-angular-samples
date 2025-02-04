@@ -31,7 +31,7 @@ import { BaseAppConfig } from './BaseConfig';;
 import { Router, RouterModule } from '@angular/router';
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
-        IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive',
+        IgxPreventDocumentScrollDirective: '../../src/app/directives/prevent-scroll.directive',
         RemoteValuesService: '../../src/app/services/remoteValues.service',
         HGridContextmenuComponent: '../../src/app/hierarchical-grid/hierarchical-grid-sorting/hgrid-contextmenu/hgrid-contextmenu.component',
         RemoteLoDService: '../../src/app/services/remote-lod.service'

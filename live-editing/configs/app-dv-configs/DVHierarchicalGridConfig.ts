@@ -10,7 +10,7 @@ import { BaseAppConfig } from '../BaseConfig';
 
 export class DVHierarchicalGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
-        IgxPreventDocumentScrollModule: '../../../src/app/directives/prevent-scroll.directive',
+        IgxPreventDocumentScrollDirective: '../../../src/app/directives/prevent-scroll.directive',
         RemoteValuesService: '../../../projects/app-lob/src/app/services/remoteValues.service'
     };
 

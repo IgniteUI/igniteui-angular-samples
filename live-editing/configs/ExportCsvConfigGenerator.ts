@@ -5,7 +5,7 @@ import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class ExportCsvConfigGenerator implements IConfigGenerator {
     public additionalImports = {
-        IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive'
+        IgxPreventDocumentScrollDirective: '../../src/app/directives/prevent-scroll.directive'
     };
 
     public generateConfigs(): Config[] {

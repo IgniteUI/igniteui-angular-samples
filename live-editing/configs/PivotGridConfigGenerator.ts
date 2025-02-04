@@ -17,7 +17,7 @@ import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing
 import { BaseAppConfig } from './BaseConfig';;
 export class PivotGridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
-        IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive',
+        IgxPreventDocumentScrollDirective: '../../src/app/directives/prevent-scroll.directive',
         PivotDataService: '../../src/app/services/pivotRemoteData.service'
     };
     public generateConfigs(): Config[] {

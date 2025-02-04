@@ -47,7 +47,7 @@ import { Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';;
 export class GridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
-        IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive',
+        IgxPreventDocumentScrollDirective: '../../src/app/directives/prevent-scroll.directive',
         ContextmenuComponent: '../../src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component',
         RemoteValuesService: '../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service',
         PlanetComponent: '../../src/app/grid/grid-row-drag/planet/planet.component',

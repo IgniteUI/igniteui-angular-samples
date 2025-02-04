@@ -3,6 +3,7 @@
 import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';;
 import { FormsModule } from '@angular/forms';
+import { IgxPreventDocumentScrollDirective } from '../../src/app/directives/prevent-scroll.directive';
 
 export class GridCRMConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {

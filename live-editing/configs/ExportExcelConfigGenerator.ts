@@ -13,7 +13,7 @@ import { BaseAppConfig } from './BaseConfig';;
 export class ExportExcelConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         PasteHandler: '../../src/app/grid/grid-paste/paste-handler.directive',
-        IgxPreventDocumentScrollModule: '../../src/app/directives/prevent-scroll.directive'
+        IgxPreventDocumentScrollDirective: '../../src/app/directives/prevent-scroll.directive'
     };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -32,15 +32,21 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridPasteSampleComponent',
-            additionalFiles: ['/src/app/grid/grid-paste/data.ts',
-                '/src/app/grid/grid-paste/paste-handler.directive.ts'],
+            additionalFiles: [
+                '/src/app/grid/grid-paste/data.ts',
+                '/src/app/grid/grid-paste/paste-handler.directive.ts',
+                '/src/app/directives/prevent-scroll.directive.ts'
+            ],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: '/grid-paste/'
         }));
 
         configs.push(new Config({
             component: 'TreeGridExcelExportSample1Component',
-            additionalFiles: ['/src/app/tree-grid/data/orders.ts', '/src/app/directives/prevent-scroll.directive.ts',],
+            additionalFiles: [
+                '/src/app/tree-grid/data/orders.ts',
+                '/src/app/directives/prevent-scroll.directive.ts'
+            ],
             appConfig: BaseAppConfig
         }));
 
