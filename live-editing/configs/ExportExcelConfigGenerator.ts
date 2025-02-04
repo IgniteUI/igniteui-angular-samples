@@ -35,7 +35,7 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
             additionalFiles: [
                 '/src/app/grid/grid-paste/data.ts',
                 '/src/app/grid/grid-paste/paste-handler.directive.ts',
-                this.additionalImports.IgxPreventDocumentScrollDirective
+                '/src/app/directives/prevent-scroll.directive.ts'
             ],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: '/grid-paste/'
