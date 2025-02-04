@@ -1,30 +1,10 @@
-@use '../../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-icon-theme: icon-theme(
   $color: #1481b8,
   $disabled-color: #494949
 );
 
-.wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    margin: 16px 0;
-}
-
-.icon-sample {
-    display: flex;
-    flex: 1 0 20%;
-    width: 44px;
-    height: 44px;
-    justify-content: center;
-    align-items: center;
-}
-
-:host {
-    .igx-icon:hover {
-      color: #0a415c;
-    }
-
-	@include css-vars($custom-icon-theme);
-}
-
+@include css-vars($custom-icon-theme);
+ 

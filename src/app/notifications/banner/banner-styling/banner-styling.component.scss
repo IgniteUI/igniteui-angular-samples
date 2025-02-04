@@ -1,11 +1,10 @@
-@use '../../../../variables' as *;
+@use "igniteui-angular/theming" as *;
 
 $custom-banner-theme: banner-theme(
-    $banner-message-color: #151515,
-    $banner-background: #dedede,
-    $banner-illustration-color: #666666
+  $banner-message-color: #151515,
+  $banner-background: #dedede,
+  $banner-illustration-color: #666666
 );
 
-igx-banner {
-    @include css-vars($custom-banner-theme);
-}
+@include css-vars($custom-banner-theme);
+ 

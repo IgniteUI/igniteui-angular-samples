@@ -1,41 +1,39 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
+
+$yellow: #ffcd0f;
+$bg: #292826;
+$gray: #404040;
 
 $custom-grid: grid-theme(
-    $filtering-row-text-color: #292826,
-    $filtering-row-background: #FFCD0F,
-    $filtering-header-text-color: #292826,
-    $filtering-header-background: #FFCD0F
+  $filtering-row-text-color: $bg,
+  $filtering-row-background: $yellow,
+  $filtering-header-text-color: $bg,
+  $filtering-header-background: $yellow
 );
 
 $dark-input-group: input-group-theme(
-    $box-background: #FFCD0F,
-    $idle-text-color: #292826,
-    $focused-text-color: #292826,
-    $filled-text-color: #292826
+  $box-background: $yellow,
+  $idle-text-color: $bg,
+  $focused-text-color: $bg,
+  $filled-text-color: $bg
 );
 
 $dark-button: button-theme(
-    $background: #FFCD0F,
-    $foreground: #292826,
-    $hover-background: #292826,
-    $hover-foreground: #FFCD0F
+  $background: $yellow,
+  $foreground: $bg,
+  $hover-background: $bg,
+  $hover-foreground: $yellow
 );
 
+@include css-vars($custom-grid);
+
 :host {
-	::ng-deep {
-		@include css-vars($custom-grid);
-
-		.igx-grid__filtering-row {
-			@include css-vars($dark-button);
-			@include css-vars($dark-input-group);
-
-			.igx-input-group__input::placeholder {
-				color: #292826;
-			}
-		}
-	}
+  ::ng-deep {
+    .igx-grid__filtering-row {
+      @include css-vars($dark-button);
+      @include css-vars($dark-input-group);  
+    }
+  }
 }
-
-.grid__wrapper {
-    margin: 16px;
-}
+ 

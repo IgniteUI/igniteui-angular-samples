@@ -20,6 +20,16 @@ export class TreeConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'TreeStylingComponent',
+            additionalFiles: ['/src/app/data/animations-data.ts', '/src/app/lists/tree/tree-styling/layout.scss'],
+            appModuleConfig: new AppModuleConfig({
+                imports: ['IgxTreeModule', 'IgxIconModule', 'TreeStylingComponent'],
+                ngDeclarations: ['TreeStylingComponent'],
+                ngImports: ['IgxTreeModule', 'IgxIconModule']
+            }),
+        }));
+
+        configs.push(new Config({
             component: 'TreeAdvancedSampleComponent',
             additionalFiles: ['/src/app/data/tree-file-data.ts',
             '/src/app/lists/tree/tree-advanced-sample/services/data.service.ts',

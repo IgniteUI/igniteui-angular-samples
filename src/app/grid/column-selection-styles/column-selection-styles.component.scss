@@ -1,18 +1,13 @@
-@use '../../../variables' as *;
-
-.grid-wrapper {
-    padding: 16px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-grid-theme: grid-theme(
-    $row-selected-background: #011627,
-    $row-selected-text-color: #ecaa53,
-    $row-selected-hover-background: #011627,
-    $header-selected-text-color: #ecaa53,
-    $header-selected-background: #011627
+  $row-selected-background: #011627,
+  $row-selected-text-color: #ecaa53,
+  $row-selected-hover-background: #011627,
+  $header-selected-text-color: #ecaa53,
+  $header-selected-background: #011627
 );
 
-:host ::ng-deep {
-    @include css-vars($custom-grid-theme);
-}
-
+@include css-vars($custom-grid-theme);
+ 
