@@ -17,9 +17,9 @@ export class TreeConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            appConfig: BaseAppConfig,
             component: 'TreeStylingComponent',
             additionalFiles: ['/src/app/data/animations-data.ts', '/src/app/lists/tree/tree-styling/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({

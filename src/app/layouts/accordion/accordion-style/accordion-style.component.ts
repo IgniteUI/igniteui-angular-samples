@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { IgxAccordionComponent, IgxExpansionPanelBodyComponent, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective } from 'igniteui-angular';
+import { IgxSwitchComponent, IgxAccordionComponent, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelBodyComponent } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-accordion-style',
     styleUrls: ['./accordion-style.component.scss'],
     templateUrl: './accordion-style.component.html',
-    imports: [IgxAccordionComponent, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelBodyComponent]
+    imports: [IgxSwitchComponent, FormsModule, IgxAccordionComponent, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelBodyComponent]
 })
 export class AccordionStyleComponent {
     public singleBranchExpand = false;

@@ -43,6 +43,7 @@ export class ButtonConfigGenerator implements IConfigGenerator {
         // button style
         configs.push(new Config({
             component: 'ButtonsStyleComponent',
+            additionalFiles: ["/src/app/data-entries/buttons/buttons-style/layout.scss"],
             appConfig: BaseAppConfig,
             additionalFiles: ["/src/app/data-entries/buttons/buttons-style/layout.scss"],
             shortenComponentPathBy: "/data-entries/buttons/"

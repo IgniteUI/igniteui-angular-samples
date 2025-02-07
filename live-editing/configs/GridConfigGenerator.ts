@@ -100,14 +100,14 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridGroupBySummaryStylingSampleComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/invoiceData.ts', '/src/app/grid/grid-groupby-summary-styling-sample/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/invoiceData.ts', '/src/app/grid/grid-groupby-summary-styling-sample/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
             component: 'GridFilteringStyleComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/grid/grid-filtering-style/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/grid/grid-filtering-style/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
@@ -175,8 +175,8 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridColumnHidingToolbarStyleComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts', '/src/app/grid/grid-column-hiding-toolbar-style/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts', '/src/app/grid/grid-column-hiding-toolbar-style/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
@@ -187,8 +187,8 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridResizeLineStylingSampleComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/athletesData.ts', '/src/app/grid/grid-resize-line-styling-sample/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/athletesData.ts', '/src/app/grid/grid-resize-line-styling-sample/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
@@ -236,8 +236,8 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridMovingStyledSampleComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/financialData.ts', '/src/app/grid/grid-moving-styled-sample/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/financialData.ts', '/src/app/grid/grid-moving-styled-sample/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
@@ -266,8 +266,8 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridToolbarStyleComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/athletesData.ts', '/src/app/grid/grid-toolbar-style/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/athletesData.ts', '/src/app/grid/grid-toolbar-style/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
@@ -291,8 +291,8 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridEditingStyleSampleComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/grid/grid-editing-style-sample/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/grid/grid-editing-style-sample/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
@@ -303,8 +303,8 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridMultiColumnHeadersStylingComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts', '/src/app/grid/multi-column-headers-styling/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts', '/src/app/grid/multi-column-headers-styling/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
@@ -376,8 +376,8 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid Row Editing Styling
         configs.push(new Config({
             component: 'GridRowEditStyleComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/grid/grid-row-editing-style/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/grid/grid-row-editing-style/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
@@ -413,8 +413,8 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'ExcelStyleFilteringStyleComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/grid/grid-excel-style-filtering-style/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/grid/grid-excel-style-filtering-style/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
@@ -437,8 +437,8 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridMultiCellSelectionStyleComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/grid/grid-multi-cell-selection-style/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/grid/grid-multi-cell-selection-style/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
@@ -529,8 +529,8 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'CustomGridPagingStyleSampleComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/athletesData.ts', '/src/app/grid/custom-grid-paging-style/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/athletesData.ts', '/src/app/grid/custom-grid-paging-style/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
@@ -576,18 +576,13 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
         configs.push(new Config({
             component: 'PinningStylingComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts', '/src/app/grid/grid-sample-pinning-styling/layout.scss'],
             appConfig: BaseAppConfig
         }));
         configs.push(new Config({
             component: 'GridGroupByStylingComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts', '/src/app/grid/grid-sample-pinning-styling/layout.scss']
-        }));
-        configs.push(new Config({
-            appConfig: BaseAppConfig,
-            component: 'GridGroupByStylingComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/invoiceData.ts', '/src/app/grid/grid-groupby-styling/layout.scss'],
+            appConfig: BaseAppConfig
         }));
         configs.push(new Config({
             component: 'GridCellSelectionComponent',
@@ -597,8 +592,8 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridMultiRowLayoutStylingComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts', '/src/app/grid/grid-multi-row-layout-styling/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts', '/src/app/grid/grid-multi-row-layout-styling/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
@@ -702,8 +697,8 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridRowPinningStylingSampleComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts', '/src/app/grid/grid-row-pinning-styling/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts', '/src/app/grid/grid-row-pinning-styling/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
@@ -827,8 +822,8 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'GridValidationStyleComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/grid/grid-validation-style/layout.scss']
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/nwindData.ts', '/src/app/grid/grid-validation-style/layout.scss'],
+            appConfig: BaseAppConfig
         }));
 
         configs.push(new Config({
