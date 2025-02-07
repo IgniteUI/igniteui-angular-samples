@@ -62,7 +62,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
-                '/src/app/hierarchical-grid/models.ts'],
+                '/src/app/hierarchical-grid/models.ts', '/src/app/hierarchical-grid/hierarchical-grid-row-edit-style/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HGridRowEditStyleComponent'
 
@@ -70,7 +70,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
-                '/src/app/hierarchical-grid/models.ts'],
+                '/src/app/hierarchical-grid/models.ts', '/src/app/hierarchical-grid/hierarchical-grid-editing-style/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HGridEditingStyleComponent'
         }));
@@ -84,7 +84,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
-                '/src/app/hierarchical-grid/models.ts'],
+                '/src/app/hierarchical-grid/models.ts', '/src/app/hierarchical-grid/hierarchical-grid-filtering-style/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HierarchicalGridFilteringStyleComponent'
         }));
@@ -126,7 +126,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
-                '/src/app/hierarchical-grid/models.ts'],
+                '/src/app/hierarchical-grid/models.ts', '/src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-style/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HGridExcelStyleFilteringStyleComponent'
         }));
@@ -170,7 +170,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
-                '/src/app/hierarchical-grid/models.ts'],
+                '/src/app/hierarchical-grid/models.ts', '/src/app/hierarchical-grid/hierarchical-grid-sorting-styling/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HGridSortingStylingComponent'
         }));
@@ -184,7 +184,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
-                '/src/app/hierarchical-grid/models.ts'],
+                '/src/app/hierarchical-grid/models.ts', '/src/app/hierarchical-grid/hierarchical-grid-summary-styling/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HGridSummaryStylingComponent'
         }));
@@ -216,7 +216,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/hierarchical-data.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/hierarchical-data.ts', '/src/app/hierarchical-grid/hierarchical-grid-column-moving-styled/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HGridColumnMovingSampleStyledComponent'
         }));
@@ -241,7 +241,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
-                '/src/app/hierarchical-grid/models.ts'],
+                '/src/app/hierarchical-grid/models.ts', '/src/app/hierarchical-grid/hierarchical-grid-column-moving-styled/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HGridResizeLineStylingComponent'
         }));
@@ -255,7 +255,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
-                '/src/app/hierarchical-grid/models.ts'],
+                '/src/app/hierarchical-grid/models.ts', '/src/app/hierarchical-grid/hierarchical-grid-column-hiding-toolbar-style/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HierarchicalGridColumnHidingToolbarStyleComponent'
         }));
@@ -269,7 +269,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         // HGrid Multi Cell Selection Styling
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/hierarchical-data.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/hierarchical-data.ts', '/src/app/hierarchical-grid/hierarchical-grid-multi-cell-style/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HGridMultiCellStyleComponent'
         }));
@@ -281,7 +281,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/hierarchical-data.ts'],
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/hierarchical-data.ts', '/src/app/hierarchical-grid/hierarchical-grid-multi-column-headers-styling/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HGridMultiHeadersStylingComponent'
         }));
@@ -315,7 +315,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
-                '/src/app/hierarchical-grid/models.ts'],
+                '/src/app/hierarchical-grid/models.ts', '/src/app/hierarchical-grid/hierarchical-grid-toolbar-style/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HierarchicalGridToolbarStyleComponent'
         }));
@@ -370,7 +370,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
-                '/src/app/hierarchical-grid/models.ts'],
+                '/src/app/hierarchical-grid/models.ts', '/src/app/hierarchical-grid/hierarchical-grid-paging-style/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HGridPagingStyleSampleComponent'
         }));
@@ -383,7 +383,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
-                '/src/app/hierarchical-grid/models.ts'],
+                '/src/app/hierarchical-grid/models.ts', '/src/app/hierarchical-grid/hierarchical-grid-styling/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HGridStylingComponent'
         }));
@@ -471,7 +471,8 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             additionalFiles: [
                 '/src/app/directives/prevent-scroll.directive.ts',
                 '/src/app/data/singersData.ts',
-                '/src/app/hierarchical-grid/models.ts'
+                '/src/app/hierarchical-grid/models.ts',
+                '/src/app/hierarchical-grid/column-selection-styles/layout.scss'
             ],
             appConfig: BaseAppConfig
         }));
@@ -493,7 +494,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'HGridRowPinningStylingSampleComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
-                '/src/app/hierarchical-grid/models.ts', '/src/app/services/svgIcons.ts'],
+                '/src/app/hierarchical-grid/models.ts', '/src/app/services/svgIcons.ts', '/src/app/hierarchical-grid/hierarchical-grid-row-pinning-styling/layout.scss'],
             appConfig: BaseAppConfig
         }));
 
@@ -623,7 +624,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/singersData.ts',
-                '/src/app/hierarchical-grid/models.ts'],
+                '/src/app/hierarchical-grid/models.ts', '/src/app/hierarchical-grid/hierarchical-grid-validation-style/layout.scss'],
             appConfig: BaseAppConfig,
             component: 'HGridValidationStyleComponent'
         }));

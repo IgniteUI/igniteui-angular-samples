@@ -57,6 +57,7 @@ import { SelectInputDirectivesComponent } from './select/select-input-directives
 import { SelectSample1Component } from './select/select-sample-1/select-sample-1.component';
 import { SelectSample2Component } from './select/select-sample-2/select-sample-2.component';
 import { SelectSample4Component } from './select/select-sample-4/select-sample-4.component';
+import { SelectStylingComponent } from './select/select-styling/select-styling.component';
 import { SwitchSample1Component } from './switch/switch-sample-1/switch-sample-1.component';
 import { SwitchSample2Component } from './switch/switch-sample-2/switch-sample-2.component';
 import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.component';
@@ -398,6 +399,11 @@ export const DataEntriesRoutes: Routes = [
         component: SelectSample4Component,
         data: dataEntriesRoutesData['select-sample-4'],
         path: 'select-sample-4'
+    },
+    {
+        component: SelectStylingComponent,
+        data: dataEntriesRoutesData['select-styling'],
+        path: 'select-styling'
     },
     {
         component: SelectInputDirectivesComponent,

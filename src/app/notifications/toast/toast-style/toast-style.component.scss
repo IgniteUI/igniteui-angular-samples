@@ -1,28 +1,11 @@
-@use '../../../../variables' as *;
-
-.sample-content{
-    margin: 10% auto 0;
-}
-
-.sample-column {
-    min-width: 270px;
-}
-
-.btn-group {
-    display: flex;
-    width: 250px;
-    margin-top: 16px;
-    justify-content: space-between;
-}
-
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-toast-theme: toast-theme(
-    $background: #dedede,
-    $text-color: #151515,
-    $border-radius: 12px
+  $background: #dedede,
+  $text-color: #151515,
+  $border-radius: 12px
 );
 
-:host {
-    @include css-vars($custom-toast-theme);
-}
-
+@include css-vars($custom-toast-theme);
+ 

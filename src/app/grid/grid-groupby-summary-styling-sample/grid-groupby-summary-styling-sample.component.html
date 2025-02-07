@@ -1,3 +1,4 @@
+<div class="grid-wrapper">
 <div class="summary-chooser">
     <igx-buttongroup [values]="summaryCalcModes" (selected)="selectSummaryCalcMode($event)"></igx-buttongroup>
 </div>
@@ -22,3 +23,4 @@
     <igx-column field="Quantity" header="Quantity" width="150px" dataType="number" [groupable]="true" [hasSummary]="true" [summaries]="customSummary">
     </igx-column>
 </igx-grid>
+</div>

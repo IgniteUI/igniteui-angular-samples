@@ -88,6 +88,7 @@ export class OverlayConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'OverlayStylingComponent',
+            additionalFiles: ["/src/app/interactions/overlay/overlay-styling/layout.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/overlay/"
         }));

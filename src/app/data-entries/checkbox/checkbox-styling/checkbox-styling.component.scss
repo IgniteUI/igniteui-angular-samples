@@ -1,19 +1,13 @@
-@use '../../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-checkbox-theme: checkbox-theme(
-    $border-radius: 10px,
-    $label-color: #011627,
-    $empty-color: #ecaa53,
-    $fill-color: #ecaa53,
-    $tick-color: #011627,
+  $border-radius: 10px,
+  $label-color: #011627,
+  $empty-color: #ecaa53,
+  $fill-color: #ecaa53,
+  $tick-color: #011627,
 );
 
-:host {
-    display: flex;
-    padding: 16px;
-
-	::ng-deep {
-		@include css-vars($custom-checkbox-theme);
-	}
-}
-
+@include css-vars($custom-checkbox-theme);
+ 

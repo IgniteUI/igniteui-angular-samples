@@ -7,4 +7,5 @@ import { IgxNavbarComponent, IgxNavbarActionDirective, IgxIconButtonDirective, I
     templateUrl: './navbar-style.component.html',
     imports: [IgxNavbarComponent, IgxNavbarActionDirective, IgxIconButtonDirective, IgxIconComponent]
 })
+
 export class NavbarStyleComponent { }

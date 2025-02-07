@@ -41,6 +41,7 @@ export class ToastConfigGenerator implements IConfigGenerator {
         // toast style
         configs.push(new Config({
             component: 'ToastStyleComponent',
+            additionalFiles: ["/src/app/notifications/toast/toast-style/layout.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/notifications/toast/"
         }));

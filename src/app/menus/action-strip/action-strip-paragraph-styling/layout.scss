@@ -1,0 +1,31 @@
+:host ::ng-deep {
+  .igx-action-strip__actions {
+    display: flex;
+    flex-direction: column;
+    max-height: 72px;
+  }
+}
+
+.parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: auto;
+  min-width: 700px;
+  max-width: 1000px;
+  position: relative;
+}
+
+.text-strike-through {
+  text-decoration: line-through;
+}
+
+.my-action-strip {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: flex-end;
+}

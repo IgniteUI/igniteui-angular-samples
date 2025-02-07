@@ -12,6 +12,7 @@ export class RippleConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'RippleStylingSampleComponent',
+            additionalFiles: ["/src/app/interactions/ripple/ripple-stying/layout.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/ripple/"
         }));

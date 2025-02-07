@@ -1,23 +1,9 @@
-@use '../../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
-:host ::ng-deep {
-    $my-list-theme: list-theme(
-        $background: #0568ab
-    );
+$my-list-theme: list-theme(
+  $background: #0568ab
+);
 
-    @include css-vars($my-list-theme);
-}
-
-:host {
-    display: block;
-    padding: 16px;
-}
-
-.list-sample {
-    box-shadow: elevation(2);
-}
-
-igx-icon {
-  cursor: pointer;
-  position: relative;
-}
+@include css-vars($my-list-theme);
+ 
