@@ -32,6 +32,13 @@ export class SelectConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/data-entries/select/select-styling/layout.scss"],
+            component: 'SelectStylingComponent',
+            shortenComponentPathBy: "/data-entries/select/"
+        }));
+
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
             component: 'SelectInputDirectivesComponent'
         }));
 

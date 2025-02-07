@@ -37,7 +37,8 @@ export class LinearProgressbarConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'LinearProgressbarStylingComponent',
             appConfig: BaseAppConfig,
-            shortenComponentPathBy: "/data-display/linear-progressbar"
+            shortenComponentPathBy: "/data-display/linear-progressbar",
+            additionalFiles: ["/src/app/data-display/linear-progressbar/linear-progressbar-styling-sample/layout.scss"]
         }));
 
         return configs;

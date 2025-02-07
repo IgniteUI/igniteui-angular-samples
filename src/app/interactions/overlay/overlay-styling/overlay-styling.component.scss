@@ -1,23 +1,17 @@
-@use '../../../../variables' as *;
-
-$orange: #eaa417;
-$blue: #09f;
-
-$my-palette: palette($primary: $orange, $secondary: $blue, $surface: #fff);
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $my-drop-down-theme: drop-down-theme(
-    $header-text-color: color($my-palette, "secondary", 500)
+  $background-color: #efefef
 );
 
 $my-overlay-theme: overlay-theme(
-    $background-color: rgba(0, 153, 255, 0.3)
+  $background-color: rgba(0, 153, 255, 0.3)
 );
 
 :host {
-    @include palette($my-palette);
-    display: block;
-    padding: 16px;
-
-	@include css-vars($my-drop-down-theme);
-	@include css-vars($my-overlay-theme);
+  ::ng-deep {
+    @include css-vars($my-overlay-theme);
+    @include css-vars($my-drop-down-theme);
+  }
 }

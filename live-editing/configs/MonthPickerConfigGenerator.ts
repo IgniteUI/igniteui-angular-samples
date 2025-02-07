@@ -29,6 +29,7 @@ export class MonthPickerConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'MonthpickerStylingComponent',
             appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/scheduling/monthpicker/monthpicker-styling/layout.scss"],
             shortenComponentPathBy: "/scheduling/monthpicker/"
         }));
 

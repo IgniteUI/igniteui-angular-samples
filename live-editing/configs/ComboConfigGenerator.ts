@@ -30,8 +30,8 @@ export class ComboConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ['/src/app/data/heroData.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/data/heroData.ts', '/src/app/lists/combo/combo-styling/layout.scss'],
             component: 'ComboStylingComponent'
         }));
 
@@ -102,6 +102,7 @@ export class ComboConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ['/src/app/data/cities15000-regions-countries.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/data/cities15000-regions-countries.ts', '/src/app/lists/combo/simple-combo-styling/layout.scss'],
             component: 'SimpleComboStylingComponent'
         }));
 

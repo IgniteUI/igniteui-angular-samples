@@ -26,6 +26,7 @@ export class ChipConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ChipStylingSampleComponent',
             appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/data-display/chip/chip-styling/layout.scss"],
             shortenComponentPathBy: "/data-display/"
         }));
 

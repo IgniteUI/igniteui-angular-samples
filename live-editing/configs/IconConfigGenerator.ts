@@ -33,6 +33,7 @@ export class IconConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'IconStylingSampleComponent',
             appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/data-display/icon/icon-styling-sample/layout.scss"],
             shortenComponentPathBy: "/data-display/icon/"
         }));
 

@@ -78,7 +78,8 @@ export class DatePickerConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'DatepickerStylingSampleComponent',
-            appConfig: BaseAppConfig
+            appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/scheduling/datepicker/datepicker-styling-sample/layout.scss"],
         }));
 
         // date & time picker - template driven form

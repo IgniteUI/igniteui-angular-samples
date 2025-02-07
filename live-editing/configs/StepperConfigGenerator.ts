@@ -53,6 +53,7 @@ export class StepperConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'StepperStylingSampleComponent',
             appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/layouts/stepper/stepper-styling-sample/layout.scss"],
             shortenComponentPathBy: '/layouts/stepper/'
         }));
 

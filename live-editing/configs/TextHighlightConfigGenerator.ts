@@ -26,6 +26,7 @@ export class TextHighlightConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'TextHighlightStyleComponent',
             appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/data-display/text-highlight/text-highlight-style/layout.scss"],
             shortenComponentPathBy: "/data-display/text-highlight/"
         }));
 

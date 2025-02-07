@@ -1,0 +1,17 @@
+.section {
+  flex-flow: row wrap;
+  display: flex;
+  justify-content: center;
+}
+
+.sample-column {
+  min-width: 270px;
+}
+
+.sample-button{
+  width: 7rem;
+}
+
+h5 {
+  margin-bottom: 16px;
+}

@@ -86,6 +86,7 @@ export class ListConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ListSample8Component',
             appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/lists/list/list-chat-sample/services/contacts.service.ts", "/src/app/lists/list/list-sample-8/layout.scss"],
             shortenComponentPathBy: "/lists/list/"
         }));
 

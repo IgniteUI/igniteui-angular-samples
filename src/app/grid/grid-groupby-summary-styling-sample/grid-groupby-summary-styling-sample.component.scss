@@ -1,29 +1,18 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-theme: grid-summary-theme(
-    $background-color: #e0f3ff,
-    $focus-background-color: rgba( #94d1f7, .3 ),
-    $label-color: color($color: 'secondary'),
-    $result-color: black,
-    $pinned-border-width: 2px,
-    $pinned-border-style: dotted,
-    $pinned-border-color: color($color: 'secondary')
+  $background-color: #e0f3ff,
+  $focus-background-color: rgba(#94d1f7, .3),
+  $label-color: #e41c77,
+  $result-color: black,
+  $pinned-border-width: 2px,
+  $pinned-border-style: dotted,
+  $pinned-border-color: #e41c77
 );
 
 :host {
-	::ng-deep {
-		@include css-vars($custom-theme);
-	}
-
-    display: block;
-    padding: 16px;
-}
-
-.summary-chooser {
-    margin-bottom: 16px;
-}
-
-igx-buttongroup{
-    display: block;
-    width: 600px;
+  ::ng-deep {
+    @include css-vars($custom-theme);
+  }
 }

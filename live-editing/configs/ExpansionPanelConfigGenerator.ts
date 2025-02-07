@@ -48,6 +48,7 @@ export class ExpansionPanelConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ExpansionPanelStylingComponent',
             appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/layouts/expansion-panel/expansion-styling/layout.scss"],
             shortenComponentPathBy: "/layouts/expansion-panel/"
         }));
 

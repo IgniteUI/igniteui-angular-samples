@@ -25,6 +25,7 @@ export class SwitchConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SwitchStylingComponent',
             appConfig: BaseAppConfig,
+            additionalFiles: ["/src/app/data-entries/switch/switch-styling/layout.scss"],
             shortenComponentPathBy: "/data-entries/switch/"
         }));
 

@@ -56,8 +56,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Row Edit Style
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat.ts', '/src/app/tree-grid/tree-grid-row-edit-style/layout.scss'],
             component: 'TreeGridRowEditStyleComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
@@ -114,8 +114,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Column Hiding Toolbar style sample
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts', '/src/app/tree-grid/tree-grid-column-hiding-toolbar-style/layout.scss'],
             component: 'TreeGridColumnHidingToolbarStyleComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
@@ -141,8 +141,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Sorting Styling sample
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts', '/src/app/tree-grid/tree-grid-sorting-styling/layout.scss'],
             component: 'TreeGridSortingStylingComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
@@ -156,8 +156,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts', '/src/app/tree-grid/tree-grid-column-moving-styled-sample/layout.scss'],
             component: 'TreeGridColumnMovingStyledSampleComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
@@ -196,16 +196,16 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Column Resizing Line Styling sample
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts', '/src/app/tree-grid/tree-grid-resize-line-styling-sample/layout.scss'],
             component: 'TreeGridResizeLineStylingSampleComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
 
         // TreeGrid Filtering Style sample
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts', '/src/app/tree-grid/tree-grid-filtering-style/layout.scss'],
             component: 'TreeGridFilteringStyleComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
@@ -247,8 +247,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts', '/src/app/tree-grid/tree-grid-excel-style-filtering-style/layout.scss'],
             component: 'TreeGridExcelStyleFilteringStyleComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
@@ -271,8 +271,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Multi Column Headers Styling
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-detailed.ts', '/src/app/tree-grid/tree-grid-multi-column-headers-styling/layout.scss'],
             component: 'TreeGridMultiColumnHeadersStylingComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
@@ -326,8 +326,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Toolbar style sample
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-avatars.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-avatars.ts', '/src/app/tree-grid/tree-grid-toolbar-style/layout.scss'],
             component: 'TreeGridToolbarStyleComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
@@ -342,8 +342,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Summary Styling sample
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts', '/src/app/tree-grid/tree-grid-summary-styling/layout.scss'],
             component: 'TreeGridSummaryStylingComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
@@ -387,8 +387,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat.ts', '/src/app/tree-grid/tree-grid-editing-style/layout.scss'],
             component: 'TreeGridEditingStyleComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
@@ -425,8 +425,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid multi cell selection - styling
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts', '/src/app/tree-grid/tree-grid-multi-cell-selection-style/layout.scss'],
             component: 'TreeGridMultiCellSelectionStyleComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
@@ -509,8 +509,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Paging sample
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts', '/src/app/tree-grid/tree-grid-paging-style/layout.scss'],
             component: 'TreeGridPagingStyleSampleComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
@@ -569,8 +569,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-avatars.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat-avatars.ts', '/src/app/tree-grid/tree-grid-style/layout.scss'],
             component: 'TreeGridStyleComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));
@@ -630,8 +630,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'TreeGridColumnSelectionStylesComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts'],
-            appConfig: BaseAppConfig
+            appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/orders.ts', '/src/app/tree-grid/column-selection-styles/layout.scss']
         }));
 
         configs.push(new Config({
@@ -648,8 +648,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'TreeGridRowPinningStylingSampleComponent',
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat.ts'],
-            appConfig: BaseAppConfig
+            appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat.ts', '/src/app/tree-grid/tree-grid-row-pinning-styling/layout.scss']
         }));
 
         configs.push(new Config({
@@ -769,8 +769,8 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Validation Style
         configs.push(new Config({
-            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat.ts'],
             appConfig: BaseAppConfig,
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/tree-grid/data/employees-flat.ts', '/src/app/tree-grid/tree-grid-validation-style/layout.scss'],
             component: 'TreeGridValidationStyleComponent',
             shortenComponentPathBy: '/tree-grid/'
         }));

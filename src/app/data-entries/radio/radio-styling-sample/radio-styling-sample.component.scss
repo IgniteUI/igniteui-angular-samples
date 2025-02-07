@@ -1,24 +1,13 @@
-@use '../../../../variables' as *;
-
-igx-radio + igx-radio {
-    margin-top: 16px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-radio-theme: radio-theme(
-    $disabled-color: lightgray,
-    $empty-color:  #345779,
-    $fill-color: #2dabe8,
-    $fill-color-hover: #2dabe8,
-    $fill-hover-border-color: #2dabe8
-
+  $disabled-color: lightgray,
+  $empty-color:  #345779,
+  $fill-color: #2dabe8,
+  $fill-color-hover: #2dabe8,
+  $fill-hover-border-color: #2dabe8
 );
 
-:host {
-    display: flex;
-    flex-flow: column nowrap;
-    padding: 16px;
-
-
-	@include css-vars($custom-radio-theme);
-}
-
+@include css-vars($custom-radio-theme);
+ 
