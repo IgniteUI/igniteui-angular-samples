@@ -55,26 +55,7 @@ export class TabsConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'TabsStyleComponent',
             additionalFiles: ["/src/app/layouts/tabs/tabs-style/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [
-                    'IgxIconModule',
-                    'IgxTabsModule',
-                    'IgxCardModule',
-                    'IgxAvatarModule',
-                    'IgxButtonModule',
-                    'IgxRippleModule',
-                    'TabsStyleComponent'
-                ],
-                ngDeclarations: ['TabsStyleComponent'],
-                ngImports: [
-                    'IgxIconModule',
-                    'IgxTabsModule',
-                    'IgxCardModule',
-                    'IgxAvatarModule',
-                    'IgxButtonModule',
-                    'IgxRippleModule'
-                ]
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 

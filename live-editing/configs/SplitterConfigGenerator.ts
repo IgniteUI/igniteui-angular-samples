@@ -25,11 +25,7 @@ export class SplitterConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SplitterStylingSampleComponent',
             additionalFiles: ["/src/app/layouts/splitter/splitter-styling-sample/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSplitterModule', 'SplitterStylingSampleComponent'],
-                ngDeclarations: ['SplitterStylingSampleComponent'],
-                ngImports: ['IgxSplitterModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/splitter/"
         }));
 

@@ -38,11 +38,7 @@ export class BadgeConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'BadgeStylingSampleComponent',
             additionalFiles: ["src/app/data-display/badge/model/member.model.ts", "src/app/data-display/badge/badge-styling-sample/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxBadgeModule', 'IgxListModule', 'IgxAvatarModule', 'BadgeStylingSampleComponent'],
-                ngDeclarations: ['BadgeStylingSampleComponent'],
-                ngImports: ['IgxBadgeModule', 'IgxListModule', 'IgxAvatarModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/badge/"
         }));
 

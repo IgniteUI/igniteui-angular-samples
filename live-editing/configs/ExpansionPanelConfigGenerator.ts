@@ -48,12 +48,7 @@ export class ExpansionPanelConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ExpansionPanelStylingComponent',
             additionalFiles: ["/src/app/layouts/expansion-panel/expansion-styling/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxIconModule', 'IgxButtonModule', 'IgxExpansionPanelModule', 'IgxInputGroupModule',
-                    'ExpansionPanelStylingComponent'],
-                ngDeclarations: ['ExpansionPanelStylingComponent'],
-                ngImports: ['IgxIconModule', 'IgxButtonModule', 'IgxExpansionPanelModule', 'IgxInputGroupModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/expansion-panel/"
         }));
 

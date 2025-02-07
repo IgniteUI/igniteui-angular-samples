@@ -37,11 +37,7 @@ export class RadioConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'RadioStylingSampleComponent',
             additionalFiles: ["/src/app/data-entries/radio/radio-styling-sample/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxRadioModule', 'RadioStylingSampleComponent'],
-                ngDeclarations: ['RadioStylingSampleComponent'],
-                ngImports: ['IgxRadioModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/radio/"
         }));
 

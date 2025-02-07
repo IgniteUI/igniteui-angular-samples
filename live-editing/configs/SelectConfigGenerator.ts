@@ -32,22 +32,14 @@ export class SelectConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ["/src/app/data-entries/select/select-styling/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSelectModule', 'SelectStylingComponent', 'IgxInputGroupModule'],
-                ngDeclarations: ['SelectStylingComponent'],
-                ngImports: ['IgxSelectModule', 'IgxInputGroupModule']
-            }),
+            appConfig: BaseAppConfig,
             component: 'SelectStylingComponent',
             shortenComponentPathBy: "/data-entries/select/"
         }));
 
         configs.push(new Config({
             additionalFiles: ["/src/app/data-entries/select/select-styling/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSelectModule', 'SelectStylingComponent', 'IgxInputGroupModule'],
-                ngDeclarations: ['SelectStylingComponent'],
-                ngImports: ['IgxSelectModule', 'IgxInputGroupModule']
-            }),
+            appConfig: BaseAppConfig,
             component: 'SelectStylingComponent',
             shortenComponentPathBy: "/data-entries/select/"
         }));

@@ -44,12 +44,7 @@ export class ButtonConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ButtonsStyleComponent',
             additionalFiles: ["/src/app/data-entries/buttons/buttons-style/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule', 'IgxButtonGroupModule',
-                    'ButtonsStyleComponent'],
-                ngDeclarations: ['ButtonsStyleComponent'],
-                ngImports: ['IgxButtonModule', 'IgxIconModule', 'IgxRippleModule', 'IgxButtonGroupModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttons/"
         }));
 

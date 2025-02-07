@@ -79,11 +79,7 @@ export class DatePickerConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'DatepickerStylingSampleComponent',
             additionalFiles: ["/src/app/scheduling/datepicker/datepicker-styling-sample/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxDatePickerModule', 'DatepickerStylingSampleComponent', 'IgxIconModule'],
-                ngDeclarations: ['DatepickerStylingSampleComponent'],
-                ngImports: ['IgxDatePickerModule', 'IgxIconModule']
-            })
+            appConfig: BaseAppConfig,
         }));
 
         // date & time picker - template driven form

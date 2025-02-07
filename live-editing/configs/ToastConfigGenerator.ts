@@ -42,13 +42,7 @@ export class ToastConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ToastStyleComponent',
             additionalFiles: ["/src/app/notifications/toast/toast-style/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxButtonModule', 'IgxRippleModule',
-                    'IgxToastModule', 'ToastStyleComponent'],
-                ngDeclarations: ['ToastStyleComponent'],
-                ngImports: ['IgxButtonModule', 'IgxRippleModule',
-                    'IgxToastModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/notifications/toast/"
         }));
 

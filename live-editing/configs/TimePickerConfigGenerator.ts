@@ -50,11 +50,7 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'TimePickerStylingComponent',
             additionalFiles: ["/src/app/scheduling/timepicker/timepicker-styling/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxTimePickerModule', 'TimePickerStylingComponent'],
-                ngDeclarations: ['TimePickerStylingComponent'],
-                ngImports: ['IgxTimePickerModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/scheduling/timepicker/"
         }));
 
