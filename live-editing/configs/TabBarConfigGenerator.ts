@@ -47,7 +47,6 @@ export class TabBarConfigGenerator implements IConfigGenerator {
             component: 'TabbarStyleComponent',
             additionalFiles: ["/src/app/layouts/tabbar/tabbar-style/layout.scss"],
             appConfig: BaseAppConfig,
-            additionalFiles: ["/src/app/layouts/tabbar/tabbar-style/layout.scss"],
             shortenComponentPathBy: "/layouts/tabbar/"
         }));
 

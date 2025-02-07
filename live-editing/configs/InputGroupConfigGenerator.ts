@@ -60,8 +60,8 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'InputGroupStyleComponent',
-            appConfig: BaseAppConfig,
             additionalFiles: ["/src/app/data-entries/input-group/base-input.component.ts", "/src/app/data-entries/input-group/input-group-styling/layout.scss"],
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/"
         }));
 

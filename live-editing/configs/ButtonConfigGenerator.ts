@@ -45,7 +45,6 @@ export class ButtonConfigGenerator implements IConfigGenerator {
             component: 'ButtonsStyleComponent',
             additionalFiles: ["/src/app/data-entries/buttons/buttons-style/layout.scss"],
             appConfig: BaseAppConfig,
-            additionalFiles: ["/src/app/data-entries/buttons/buttons-style/layout.scss"],
             shortenComponentPathBy: "/data-entries/buttons/"
         }));
 

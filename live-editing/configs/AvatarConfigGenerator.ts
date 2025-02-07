@@ -17,7 +17,6 @@ export class AvatarConfigGenerator implements IConfigGenerator {
             component: 'AvatarStylingSampleComponent',
             additionalFiles: ["/src/app/layouts/avatar/avatar-styling/layout.scss"],
             appConfig: BaseAppConfig,
-            additionalFiles: ["/src/app/layouts/avatar/avatar-styling/layout.scss"],
             shortenComponentPathBy: "/layouts/avatar/"
         }));
 

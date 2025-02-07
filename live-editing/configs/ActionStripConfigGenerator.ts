@@ -30,7 +30,6 @@ export class ActionStripConfigGenerator implements IConfigGenerator {
             component: 'ActionStripStylingComponent',
             additionalFiles: ["/src/app/menus/action-strip/action-strip-paragraph-styling/layout.scss"],
             appConfig: BaseAppConfig,
-            additionalFiles: ["/src/app/menus/action-strip/action-strip-paragraph-styling/layout.scss"],
             shortenComponentPathBy: '/menus/action-strip/'
         }));
 

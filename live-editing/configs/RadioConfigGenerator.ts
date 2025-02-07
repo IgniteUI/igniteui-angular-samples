@@ -38,7 +38,6 @@ export class RadioConfigGenerator implements IConfigGenerator {
             component: 'RadioStylingSampleComponent',
             additionalFiles: ["/src/app/data-entries/radio/radio-styling-sample/layout.scss"],
             appConfig: BaseAppConfig,
-            additionalFiles: ["/src/app/data-entries/radio/radio-styling-sample/layout.scss"],
             shortenComponentPathBy: "/data-entries/radio/"
         }));
 

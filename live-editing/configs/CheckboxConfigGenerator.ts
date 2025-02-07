@@ -32,7 +32,6 @@ export class CheckboxConfigGenerator implements IConfigGenerator {
             component: 'CheckboxStylingComponent',
             additionalFiles: ["/src/app/data-entries/checkbox/checkbox-styling/layout.scss"],
             appConfig: BaseAppConfig,
-            additionalFiles: ["/src/app/data-entries/checkbox/checkbox-styling/layout.scss"],
             shortenComponentPathBy: "/data-entries/checkbox/"
         }));
 

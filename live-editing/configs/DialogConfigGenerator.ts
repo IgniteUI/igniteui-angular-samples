@@ -39,7 +39,6 @@ export class DialogConfigGenerator implements IConfigGenerator {
             component: 'DialogStylingSampleComponent',
             additionalFiles: ["/src/app/interactions/dialog/dialog-styling-sample/layout.scss"],
             appConfig: BaseAppConfig,
-            additionalFiles: ["/src/app/interactions/dialog/dialog-styling-sample/layout.scss"],
             shortenComponentPathBy: "/interactions/"
         }));
 

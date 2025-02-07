@@ -17,7 +17,6 @@ export class QueryBuilderConfigGenerator implements IConfigGenerator {
             component: 'QueryBuilderStyleComponent',
             additionalFiles: ["/src/app/interactions/query-builder/query-builder-style/layout.scss"],
             appConfig: BaseAppConfig,
-            additionalFiles: ["/src/app/interactions/query-builder/query-builder-style/layout.scss"],
             shortenComponentPathBy: "/interactions/query-builder/"
         }));
 

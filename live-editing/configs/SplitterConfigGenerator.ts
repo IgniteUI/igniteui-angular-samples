@@ -26,7 +26,6 @@ export class SplitterConfigGenerator implements IConfigGenerator {
             component: 'SplitterStylingSampleComponent',
             additionalFiles: ["/src/app/layouts/splitter/splitter-styling-sample/layout.scss"],
             appConfig: BaseAppConfig,
-            additionalFiles: ["/src/app/layouts/splitter/splitter-styling-sample/layout.scss"],
             shortenComponentPathBy: "/layouts/splitter/"
         }));
 

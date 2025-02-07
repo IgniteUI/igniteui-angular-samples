@@ -92,7 +92,6 @@ export class SliderConfigGenerator implements IConfigGenerator {
             component: 'AppSliderStylingComponent',
             additionalFiles: ["/src/app/interactions/slider/slider-styling-sample/layout.scss"],
             appConfig: BaseAppConfig,
-            additionalFiles: ["/src/app/interactions/slider/slider-styling-sample/layout.scss"],
             shortenComponentPathBy: "/interactions/slider/"
         }));
         return configs;

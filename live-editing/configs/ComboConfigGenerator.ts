@@ -100,8 +100,8 @@ export class ComboConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            appConfig: BaseAppConfig,
             additionalFiles: ['/src/app/data/cities15000-regions-countries.ts', '/src/app/lists/combo/simple-combo-styling/layout.scss'],
+            appConfig: BaseAppConfig,
             component: 'SimpleComboStylingComponent'
         }));
 

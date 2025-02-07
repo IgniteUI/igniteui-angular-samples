@@ -51,7 +51,6 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
             component: 'TimePickerStylingComponent',
             additionalFiles: ["/src/app/scheduling/timepicker/timepicker-styling/layout.scss"],
             appConfig: BaseAppConfig,
-            additionalFiles: ["/src/app/scheduling/timepicker/timepicker-styling/layout.scss"],
             shortenComponentPathBy: "/scheduling/timepicker/"
         }));
 

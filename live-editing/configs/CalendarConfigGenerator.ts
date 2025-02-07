@@ -79,7 +79,6 @@ export class CalendarConfigGenerator implements IConfigGenerator {
             component: 'CalendarStylingSampleComponent',
             additionalFiles: ["/src/app/scheduling/calendar/calendar-styling-sample/layout.scss"],
             appConfig: BaseAppConfig,
-            additionalFiles: ["/src/app/scheduling/calendar/calendar-styling-sample/layout.scss"],
             shortenComponentPathBy: "/scheduling/calendar/"
         }));
 

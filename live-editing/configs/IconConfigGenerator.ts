@@ -34,7 +34,6 @@ export class IconConfigGenerator implements IConfigGenerator {
             component: 'IconStylingSampleComponent',
             additionalFiles: ["/src/app/data-display/icon/icon-styling-sample/layout.scss"],
             appConfig: BaseAppConfig,
-            additionalFiles: ["/src/app/data-display/icon/icon-styling-sample/layout.scss"],
             shortenComponentPathBy: "/data-display/icon/"
         }));
 

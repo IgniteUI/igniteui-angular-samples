@@ -30,7 +30,6 @@ export class MonthPickerConfigGenerator implements IConfigGenerator {
             component: 'MonthpickerStylingComponent',
             additionalFiles: ["/src/app/scheduling/monthpicker/monthpicker-styling/layout.scss"],
             appConfig: BaseAppConfig,
-            additionalFiles: ["/src/app/scheduling/monthpicker/monthpicker-styling/layout.scss"],
             shortenComponentPathBy: "/scheduling/monthpicker/"
         }));
 
