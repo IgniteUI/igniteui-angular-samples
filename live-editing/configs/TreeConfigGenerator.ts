@@ -17,13 +17,9 @@ export class TreeConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            appConfig: BaseAppConfig,
             component: 'TreeStylingComponent',
             additionalFiles: ['/src/app/data/animations-data.ts', '/src/app/lists/tree/tree-styling/layout.scss'],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxTreeModule', 'IgxIconModule', 'TreeStylingComponent'],
-                ngDeclarations: ['TreeStylingComponent'],
-                ngImports: ['IgxTreeModule', 'IgxIconModule']
-            }),
         }));
 
         configs.push(new Config({

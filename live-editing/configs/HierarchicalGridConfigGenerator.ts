@@ -12,7 +12,6 @@ import {
     IgxDialogModule,
     IgxDragDropModule,
     IgxGridModule,
-    IgxHierarchicalGridAPIService,
     IgxHierarchicalGridModule,
     IgxIconModule,
     IgxInputGroupModule,
