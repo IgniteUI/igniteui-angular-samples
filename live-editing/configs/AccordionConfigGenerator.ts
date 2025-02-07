@@ -36,11 +36,7 @@ export class AccordionConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'AccordionStyleComponent',
             additionalFiles: ["/src/app/layouts/accordion/accordion-style/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['AccordionStyleComponent', 'IgxAccordionModule', 'IgxSwitchModule'],
-                ngDeclarations: ['AccordionStyleComponent'],
-                ngImports: ['IgxAccordionModule', 'IgxSwitchModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: '/layouts/accordion/'
         }));
 
