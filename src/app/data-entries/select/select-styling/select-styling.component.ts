@@ -1,7 +1,8 @@
+import { NgFor } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy,
-    HorizontalAlignment, IgxSelectComponent, OverlaySettings,
+    HorizontalAlignment, IgxLabelDirective, IgxSelectComponent, IgxSelectItemComponent, OverlaySettings,
     PositionSettings, VerticalAlignment
 } from 'igniteui-angular';
 import { scaleInTop, scaleOutBottom } from 'igniteui-angular/animations';
@@ -9,7 +10,8 @@ import { scaleInTop, scaleOutBottom } from 'igniteui-angular/animations';
 @Component({
     selector: 'app-select-styling',
     styleUrls: ['select-styling.component.scss'],
-    templateUrl: 'select-styling.component.html'
+    templateUrl: 'select-styling.component.html',
+    imports: [IgxSelectComponent, IgxLabelDirective, NgFor, IgxSelectItemComponent]
 })
 export class SelectStylingComponent implements OnInit {
     @ViewChild(IgxSelectComponent, { static: true })
