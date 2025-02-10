@@ -2,17 +2,26 @@
 @use "igniteui-angular/theming" as *;
 
 $banner-theme: banner-theme(
-  $banner-background: #e3e3e3,
-  $banner-message-color: color($purple-palette, "secondary", 600)
+    $banner-background: #e3e3e3,
+    $banner-message-color: color($purple-palette, "secondary", 600),
+);
+$banner-theme: banner-theme(
+    $banner-background: #494949,
+    $banner-message-color: #ffcd0f,
+);
+
+$icon-button-theme: icon-button-theme(
+    $foreground: #ffcd0f,
+    $hover-foreground: #ffffff
 );
 
 :host {
-  ::ng-deep {
-    @include css-vars($banner-theme);
-    @include css-vars($icon-button-theme);
-  }
+    ::ng-deep {
+        @include css-vars($banner-theme);
+        @include css-vars($icon-button-theme);
+    }
 }
 
 igx-grid {
-  @include palette($purple-palette);
+    @include palette($purple-palette);
 }
