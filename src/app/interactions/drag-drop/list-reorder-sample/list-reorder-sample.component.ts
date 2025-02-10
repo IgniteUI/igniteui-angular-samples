@@ -5,17 +5,14 @@ import {
     ViewChild,
     ViewChildren
 } from '@angular/core';
-import {
-    IDragBaseEventArgs,
-    IDragMoveEventArgs,
-    IgxDragDirective,
-    IgxDragLocation
-} from 'igniteui-angular';
+import { IDragBaseEventArgs, IDragMoveEventArgs, IgxDragDirective, IgxDragLocation, IgxListComponent, IgxListItemComponent, IgxDropDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxIconComponent, IgxDragHandleDirective, IgxListActionDirective } from 'igniteui-angular';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-list-reorder-sample',
     templateUrl: './list-reorder-sample.component.html',
-    styleUrls: ['./list-reorder-sample.component.scss']
+    styleUrls: ['./list-reorder-sample.component.scss'],
+    imports: [IgxListComponent, NgFor, IgxListItemComponent, IgxDropDirective, IgxDragDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxIconComponent, IgxDragHandleDirective, IgxListActionDirective]
 })
 export class ListReorderSampleComponent {
     @ViewChildren('dragDirRef', { read: IgxDragDirective })

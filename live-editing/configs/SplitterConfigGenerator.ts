@@ -1,5 +1,6 @@
 import {IgxSplitterModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 export class SplitterConfigGenerator implements IConfigGenerator {
 
 
@@ -9,22 +10,14 @@ export class SplitterConfigGenerator implements IConfigGenerator {
         // splitter horizontal sample
         configs.push(new Config({
             component: 'SplitterHorizontalSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSplitterModule', 'SplitterHorizontalSampleComponent'],
-                ngDeclarations: ['SplitterHorizontalSampleComponent'],
-                ngImports: ['IgxSplitterModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/splitter/"
         }));
 
         // splitter nested sample
         configs.push(new Config({
             component: 'SplitterNestedSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSplitterModule', 'SplitterNestedSampleComponent'],
-                ngDeclarations: ['SplitterNestedSampleComponent'],
-                ngImports: ['IgxSplitterModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/splitter/"
         }));
 
@@ -32,11 +25,7 @@ export class SplitterConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'SplitterStylingSampleComponent',
             additionalFiles: ["/src/app/layouts/splitter/splitter-styling-sample/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxSplitterModule', 'SplitterStylingSampleComponent'],
-                ngDeclarations: ['SplitterStylingSampleComponent'],
-                ngImports: ['IgxSplitterModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/splitter/"
         }));
 

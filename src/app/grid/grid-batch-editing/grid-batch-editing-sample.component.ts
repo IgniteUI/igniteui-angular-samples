@@ -1,14 +1,16 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxGridComponent, Transaction } from 'igniteui-angular';
+import { IgxDialogComponent, IgxGridComponent, Transaction, IgxColumnComponent, IgxCellTemplateDirective, IgxButtonDirective } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 import { generateRandomInteger } from '../../data/utils';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 
 @Component({
     selector: 'app-grid-row-edit',
     styleUrls: [`grid-batch-editing-sample.component.scss`],
-    templateUrl: 'grid-batch-editing-sample.component.html'
+    templateUrl: 'grid-batch-editing-sample.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxButtonDirective, IgxDialogComponent]
 })
 export class GridBatchEditingSampleComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;

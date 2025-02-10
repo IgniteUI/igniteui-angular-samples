@@ -1,17 +1,11 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import {
-    GlobalPositionStrategy,
-    IgxDragDirective,
-    IgxDragLocation,
-    IgxToggleDirective,
-    NoOpScrollStrategy,
-    OverlaySettings
-} from 'igniteui-angular';
+import { GlobalPositionStrategy, IgxDragDirective, IgxDragLocation, IgxToggleDirective, NoOpScrollStrategy, OverlaySettings, IgxButtonDirective, IgxIconComponent, IgxDragHandleDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-drag-dialog-sample',
     templateUrl: './drag-dialog-sample.component.html',
-    styleUrls: ['./drag-dialog-sample.component.scss']
+    styleUrls: ['./drag-dialog-sample.component.scss'],
+    imports: [IgxButtonDirective, IgxToggleDirective, IgxDragDirective, IgxIconComponent, IgxDragHandleDirective]
 })
 export class DragDialogSampleComponent {
     @ViewChild('toggleForm', { static: true })

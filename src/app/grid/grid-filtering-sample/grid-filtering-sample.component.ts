@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent, IgxStringFilteringOperand } from 'igniteui-angular';
+import { IgxGridComponent, IgxStringFilteringOperand, IgxInputGroupComponent, IgxInputDirective, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf, CurrencyPipe } from '@angular/common';
 
 @Component({
     selector: 'app-grid-sample',
     styleUrls: ['./grid-filtering-sample.component.scss'],
-    templateUrl: 'grid-filtering-sample.component.html'
+    templateUrl: 'grid-filtering-sample.component.html',
+    imports: [IgxInputGroupComponent, IgxInputDirective, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, NgIf, CurrencyPipe]
 })
 
 export class FilteringSampleComponent implements OnInit {
@@ -21,7 +24,12 @@ export class FilteringSampleComponent implements OnInit {
     }
 
     public filter(target: EventTarget) {
-        this.grid1.filter('ProductName', (target as HTMLInputElement).value, IgxStringFilteringOperand.instance().condition('contains'));
+        const value = (target as HTMLInputElement).value;
+        if (value) {
+            this.grid1.filter('ProductName', value, IgxStringFilteringOperand.instance().condition('contains'));
+        } else {
+            this.grid1.clearFilter('ProductName');
+        }
     }
 
     public formatDate(val: Date) {

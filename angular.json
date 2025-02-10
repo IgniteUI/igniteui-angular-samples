@@ -10,11 +10,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/app",
+            "outputPath": {
+              "base": "dist/app"
+            },
             "index": "src/index.html",
-            "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": [
                 "zone.js",
@@ -28,16 +29,15 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "vendorChunk": true,
             "extractLicenses": false,
-            "buildOptimizer": false,
             "optimization": false,
             "namedChunks": true,
             "sourceMap": true,
             "progress": true,
             "stylePreprocessorOptions": {
                 "includePaths": ["node_modules"]
-            }
+            },
+            "browser": "src/main.ts"
           },
           "configurations": {
             "production": {
@@ -51,8 +51,6 @@
               "outputHashing": "all",
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "sourceMap": false,
               "fileReplacements": [
                 {
@@ -125,12 +123,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/app-lob",
+            "outputPath": {
+              "base": "dist/app-lob"
+            },
             "index": "projects/app-lob/src/index.html",
-            "main": "projects/app-lob/src/main.ts",
-            "polyfills": "projects/app-lob/src/polyfills.ts",
+            "polyfills": [
+              "projects/app-lob/src/polyfills.ts"
+            ],
             "tsConfig": "projects/app-lob/tsconfig.app.json",
             "assets": [
               "projects/app-lob/src/favicon.ico",
@@ -140,9 +141,7 @@
               "projects/app-lob/src/styles.scss"
             ],
             "scripts": [],
-            "vendorChunk": true,
             "extractLicenses": false,
-            "buildOptimizer": false,
             "sourceMap": {
               "scripts": true,
               "styles": true,
@@ -155,7 +154,8 @@
             "stylePreprocessorOptions": {
                 "includePaths": ["node_modules"]
             },
-            "preserveSymlinks": true
+            "preserveSymlinks": true,
+            "browser": "projects/app-lob/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -170,8 +170,6 @@
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -249,12 +247,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/app-crm",
+            "outputPath": {
+              "base": "dist/app-crm"
+            },
             "index": "projects/app-crm/src/index.html",
-            "main": "projects/app-crm/src/main.ts",
-            "polyfills": "projects/app-crm/src/polyfills.ts",
+            "polyfills": [
+              "projects/app-crm/src/polyfills.ts"
+            ],
             "tsConfig": "projects/app-crm/tsconfig.app.json",
             "assets": [
               "projects/app-crm/src/favicon.ico",
@@ -264,9 +265,7 @@
               "projects/app-crm/src/styles.scss"
             ],
             "scripts": [],
-            "vendorChunk": true,
             "extractLicenses": false,
-            "buildOptimizer": false,
             "sourceMap": {
               "scripts": true,
               "styles": true,
@@ -278,7 +277,8 @@
             "namedChunks": true,
             "stylePreprocessorOptions": {
                 "includePaths": ["node_modules"]
-            }
+            },
+            "browser": "projects/app-crm/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -293,8 +293,6 @@
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",

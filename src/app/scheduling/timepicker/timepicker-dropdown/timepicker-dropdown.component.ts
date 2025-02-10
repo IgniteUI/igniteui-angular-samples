@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { PickerInteractionMode } from 'igniteui-angular';
+import { PickerInteractionMode, IgxTimePickerComponent, IgxLabelDirective } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-timepicker-dropdown',
     styleUrls: ['./timepicker-dropdown.component.scss'],
-    templateUrl: './timepicker-dropdown.component.html'
+    templateUrl: './timepicker-dropdown.component.html',
+    imports: [IgxTimePickerComponent, FormsModule, IgxLabelDirective]
 })
 export class TimepickerDropdownComponent {
     public mode: PickerInteractionMode = PickerInteractionMode.DropDown;

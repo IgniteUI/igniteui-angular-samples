@@ -1,9 +1,11 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, IgxIconComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-buttons-display-density',
     styleUrls: ['./buttons-display-density.component.scss'],
-    templateUrl: './buttons-display-density.component.html'
+    templateUrl: './buttons-display-density.component.html',
+    imports: [IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, IgxIconComponent]
 })
 export class ButtonsDisplayDensityComponent implements OnInit {
     public size = 'large';

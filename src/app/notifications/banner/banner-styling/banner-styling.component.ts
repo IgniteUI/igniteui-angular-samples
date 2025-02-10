@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { IgxBannerComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IgxBannerComponent, IgxToastComponent, VerticalAlignment, IgxNavbarComponent, IgxIconComponent, IgxBannerActionsDirective, IgxButtonDirective, IgxRippleDirective, IgxCardComponent } from 'igniteui-angular';
 import { slideInLeft, slideOutRight } from 'igniteui-angular/animations';
 import { Subject } from 'rxjs';
 
@@ -7,7 +7,8 @@ import { Subject } from 'rxjs';
     selector: 'app-banner-styling',
     styleUrls: ['banner-styling.component.scss', '../banner-samples.scss'],
     templateUrl: 'banner-styling.component.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    imports: [IgxNavbarComponent, IgxIconComponent, IgxBannerComponent, IgxBannerActionsDirective, IgxButtonDirective, IgxRippleDirective, IgxCardComponent, IgxToastComponent]
 })
 
 export class BannerStylingComponent implements OnInit, OnDestroy {

@@ -1,11 +1,13 @@
 
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { IgxSelectComponent } from 'igniteui-angular';
+import { IgxSelectComponent, IgxLabelDirective, IgxSelectGroupComponent, IgxSelectItemComponent, IgxIconComponent } from 'igniteui-angular';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-select-sample-2',
     styleUrls: ['select-sample-2.component.scss'],
-    templateUrl: 'select-sample-2.component.html'
+    templateUrl: 'select-sample-2.component.html',
+    imports: [IgxSelectComponent, IgxLabelDirective, NgFor, IgxSelectGroupComponent, IgxSelectItemComponent, NgIf, IgxIconComponent]
 })
 export class SelectSample2Component {
     @ViewChild(IgxSelectComponent, { static: true })

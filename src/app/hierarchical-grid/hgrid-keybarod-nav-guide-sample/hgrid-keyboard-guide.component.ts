@@ -4,14 +4,11 @@
 /* eslint-disable no-shadow */
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import {
-    CellType, IgxColumnComponent,
-    IgxColumnGroupComponent, IgxHierarchicalGridComponent,
-    IgxListComponent
-} from 'igniteui-angular';
+import { CellType, IgxColumnComponent, IgxColumnGroupComponent, IgxHierarchicalGridComponent, IgxListComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxRowIslandComponent, IgxGridToolbarDirective, IgxListItemComponent, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective } from 'igniteui-angular';
 import { fromEvent, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { CUSTOMERS } from '../../data/hierarchical-data';
+import { NgIf, NgFor, NgClass } from '@angular/common';
 
 enum GridSection {
     THEAD = 'igx-grid__thead-wrapper',
@@ -165,7 +162,8 @@ const summaryCombinations: Item[] = [
                 animate('.3s', style({ opacity: .4 }))
             ])
         ])
-    ]
+    ],
+    imports: [IgxHierarchicalGridComponent, IgxPaginatorComponent, NgIf, IgxGridToolbarComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxRowIslandComponent, IgxGridToolbarDirective, IgxListComponent, IgxListItemComponent, NgFor, NgClass, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective]
 })
 export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
 

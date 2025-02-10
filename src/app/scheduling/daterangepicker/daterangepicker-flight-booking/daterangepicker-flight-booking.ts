@@ -1,10 +1,14 @@
 import { Component, Pipe, PipeTransform } from '@angular/core';
-import { DateRange } from 'igniteui-angular';
+import { DateRange, IgxSelectComponent, IgxPrefixDirective, IgxIconComponent, IgxSelectItemComponent, IgxDateRangePickerComponent, IgxLabelDirective, IgxHintDirective } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
+import { NgFor, NgIf } from '@angular/common';
+import { PipeWithoutTownFrom as PipeWithoutTownFrom_1 } from '../../datepicker/datepicker-sample-9/datepicker-sample-9.component';
 
 @Component({
     selector: 'app-flight-booking',
     styleUrls: ['./daterangepicker-flight-booking.scss'],
-    templateUrl: './daterangepicker-flight-booking.html'
+    templateUrl: './daterangepicker-flight-booking.html',
+    imports: [FormsModule, IgxSelectComponent, IgxPrefixDirective, IgxIconComponent, NgFor, IgxSelectItemComponent, IgxDateRangePickerComponent, IgxLabelDirective, NgIf, IgxHintDirective, PipeWithoutTownFrom_1]
 })
 export class FlightBookingComponent {
     public towns: string[] = [
@@ -42,7 +46,9 @@ export class FlightBookingComponent {
     }
 }
 
-@Pipe({ name: 'withoutTownFrom' })
+@Pipe({
+    name: 'withoutTownFrom'
+})
 export class PipeWithoutTownFrom implements PipeTransform {
     public transform(collection: any[], townFrom: string) {
         return collection.filter((item) => item !== townFrom);

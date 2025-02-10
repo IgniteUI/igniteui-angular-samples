@@ -8,8 +8,8 @@ describe('GridDisplaydensitySampleComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ GridDisplayDensitySampleComponent ]
-    })
+    imports: [GridDisplayDensitySampleComponent]
+})
     .compileComponents();
   }));
 

@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    IgxDialogComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent
-} from 'igniteui-angular';
+import { IgxDialogComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent, IgxButtonDirective, IgxIconComponent, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxDatePickerComponent, IgxCheckboxComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 import { Employee } from './employee';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { FormsModule } from '@angular/forms';
 
 class CustomNumberSummary {
 
@@ -26,7 +26,8 @@ class CustomNumberSummary {
 @Component({
     selector: 'app-tree-grid-editing-sample',
     styleUrls: ['./tree-grid-editing-sample.component.scss'],
-    templateUrl: './tree-grid-editing-sample.component.html'
+    templateUrl: './tree-grid-editing-sample.component.html',
+    imports: [IgxButtonDirective, IgxIconComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxDialogComponent, IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxDatePickerComponent, IgxCheckboxComponent]
 })
 export class TreeGridEditingSampleComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

@@ -1,12 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs,
-    IgxTreeGridComponent, RowType, Point, GridSelectionMode } from 'igniteui-angular';
+import { IDropDroppedEventArgs, IgxTreeGridComponent, RowType, Point, GridSelectionMode, IgxDropDirective, IgxPaginatorComponent, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tree-grid-row-reorder',
     styleUrls: ['tree-grid-row-reorder.component.scss'],
-    templateUrl: 'tree-grid-row-reorder.component.html'
+    templateUrl: 'tree-grid-row-reorder.component.html',
+    imports: [IgxTreeGridComponent, IgxDropDirective, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent]
 })
 export class TreeGridRowReorderComponent {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static : true })

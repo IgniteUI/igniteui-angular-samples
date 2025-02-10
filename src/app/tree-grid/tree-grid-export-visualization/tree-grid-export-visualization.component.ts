@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { ORDERS_DATA } from '../data/orders';
+import { IgxTreeGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxButtonDirective, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
     selector: 'app-tree-grid-export-visualization',
     templateUrl: './tree-grid-export-visualization.component.html',
-    styleUrls: ['./tree-grid-export-visualization.component.scss']
+    styleUrls: ['./tree-grid-export-visualization.component.scss'],
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxButtonDirective, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective, CurrencyPipe]
 })
 export class TreeGridExportVisualizationComponent {
     public localData = [];

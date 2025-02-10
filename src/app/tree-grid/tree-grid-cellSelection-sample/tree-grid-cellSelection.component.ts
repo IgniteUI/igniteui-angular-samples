@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxSnackbarComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxSnackbarComponent, IgxTreeGridComponent, IgxButtonGroupComponent, IgxColumnComponent, IgxIconComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-tree-grid-cell-selection',
     styleUrls: ['./tree-grid-cellSelection.component.scss'],
-    templateUrl: 'tree-grid-cellSelection.component.html'
+    templateUrl: 'tree-grid-cellSelection.component.html',
+    imports: [IgxButtonGroupComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxSnackbarComponent, IgxIconComponent, NgIf]
 })
 export class TreeGridCellSelectionComponent implements OnInit {
 

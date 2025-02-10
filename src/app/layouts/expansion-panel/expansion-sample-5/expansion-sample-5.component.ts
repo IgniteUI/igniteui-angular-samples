@@ -1,16 +1,15 @@
 import { useAnimation } from '@angular/animations';
 import { Component, ViewChild } from '@angular/core';
 
-import {
-    IgxExpansionPanelComponent
-} from 'igniteui-angular';
+import { IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelBodyComponent } from 'igniteui-angular';
 import { slideInLeft, slideOutRight } from 'igniteui-angular/animations';
 
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-expansion-sample-5',
     styleUrls: ['./expansion-sample-5.component.scss'],
-    templateUrl: './expansion-sample-5.component.html'
+    templateUrl: './expansion-sample-5.component.html',
+    imports: [IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelBodyComponent]
 })
 export class ExpansionPanelSample5Component {
 

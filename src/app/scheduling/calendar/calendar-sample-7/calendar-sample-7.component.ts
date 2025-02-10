@@ -1,10 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { DateRangeType, IgxCalendarComponent, IgxDialogComponent } from 'igniteui-angular';
+import { DateRangeType, IgxCalendarComponent, IgxDialogComponent, IgxButtonDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-calendar',
     styleUrls: ['./calendar-sample-7.component.scss'],
-    templateUrl: './calendar-sample-7.component.html'
+    templateUrl: './calendar-sample-7.component.html',
+    imports: [IgxCalendarComponent, IgxDialogComponent, IgxButtonDirective]
 })
 export class CalendarSample7Component {
     @ViewChild('calendar', { static: true }) public calendar: IgxCalendarComponent;

@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxTreeGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxTreeGridComponent, IgxColumnGroupComponent, IgxCollapsibleIndicatorTemplateDirective, IgxIconComponent, IgxTooltipTargetDirective, IgxTooltipDirective, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
-  selector: 'app-tree-grid-multi-column-headers-sample',
-  styleUrls: ['./tree-grid-collapsible-column-groups.component.scss'],
-  templateUrl: './tree-grid-collapsible-column-groups.component.html'
+    selector: 'app-tree-grid-multi-column-headers-sample',
+    styleUrls: ['./tree-grid-collapsible-column-groups.component.scss'],
+    templateUrl: './tree-grid-collapsible-column-groups.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnGroupComponent, IgxCollapsibleIndicatorTemplateDirective, IgxIconComponent, IgxTooltipTargetDirective, IgxTooltipDirective, IgxColumnComponent]
 })
 export class TreeGridMultiCollapsibleColumnGroupsComponent implements OnInit {
 

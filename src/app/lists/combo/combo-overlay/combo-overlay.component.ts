@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { GlobalPositionStrategy, OverlaySettings } from 'igniteui-angular';
+import { GlobalPositionStrategy, OverlaySettings, IgxComboComponent } from 'igniteui-angular';
 import { scaleInCenter, scaleOutCenter } from 'igniteui-angular/animations';
 
 @Component({
     selector: 'app-combo-overlay',
     templateUrl: 'combo-overlay.component.html',
-    styleUrls: ['combo-overlay.component.scss']
+    styleUrls: ['combo-overlay.component.scss'],
+    imports: [IgxComboComponent]
 })
 export class ComboOverlayComponent {
     public items = [{ name: 'Option 1' }, { name: 'Option 2' }, { name: 'Option 3' },

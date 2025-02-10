@@ -3,6 +3,7 @@ import {IgxButtonModule,
 IgxInputGroupModule,
 IgxRadioModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 export class RadioConfigGenerator implements IConfigGenerator {
 
 
@@ -11,56 +12,32 @@ export class RadioConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'RadioSample1Component',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxRadioModule', 'RadioSample1Component'],
-                ngDeclarations: ['RadioSample1Component'],
-                ngImports: ['IgxRadioModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/radio/"
         }));
 
         configs.push(new Config({
             component: 'RadioSample2Component',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxRadioModule', 'RadioSample2Component'],
-                ngDeclarations: ['RadioSample2Component'],
-                ngImports: ['IgxRadioModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/radio/"
         }));
 
         configs.push(new Config({
             component: 'RadioGroupSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxButtonModule',
-                          'IgxRadioModule',
-                          'RadioGroupSampleComponent',
-                          'IgxInputGroupModule',
-                          'ReactiveFormsModule'],
-                ngDeclarations: ['RadioGroupSampleComponent'],
-                ngImports: ['IgxButtonModule', 'IgxRadioModule', 'IgxInputGroupModule', 'ReactiveFormsModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/radio/"
         }));
 
         configs.push(new Config({
             component: 'RadioGroupVerticalComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxRadioModule', 'RadioGroupVerticalComponent'],
-                ngDeclarations: ['RadioGroupVerticalComponent'],
-                ngImports: ['IgxRadioModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/radio/"
         }));
 
         configs.push(new Config({
             component: 'RadioStylingSampleComponent',
             additionalFiles: ["/src/app/data-entries/radio/radio-styling-sample/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxRadioModule', 'RadioStylingSampleComponent'],
-                ngDeclarations: ['RadioStylingSampleComponent'],
-                ngImports: ['IgxRadioModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/radio/"
         }));
 

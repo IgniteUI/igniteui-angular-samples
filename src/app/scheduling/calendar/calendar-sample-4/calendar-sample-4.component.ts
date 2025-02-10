@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { DateParser } from '../../../date-parser';
+import { IgxCalendarComponent, IgxCalendarHeaderTemplateDirective, IgxCalendarSubheaderTemplateDirective } from 'igniteui-angular';
+import { NgIf, TitleCasePipe } from '@angular/common';
 
 @Component({
-  providers: [DateParser],
-  selector: 'app-calendar',
-  styleUrls: ['./calendar-sample-4.component.scss'],
-  templateUrl: './calendar-sample-4.component.html'
+    providers: [DateParser],
+    selector: 'app-calendar',
+    styleUrls: ['./calendar-sample-4.component.scss'],
+    templateUrl: './calendar-sample-4.component.html',
+    imports: [IgxCalendarComponent, NgIf, IgxCalendarHeaderTemplateDirective, IgxCalendarSubheaderTemplateDirective, TitleCasePipe]
 })
 
 export class CalendarSample4Component {

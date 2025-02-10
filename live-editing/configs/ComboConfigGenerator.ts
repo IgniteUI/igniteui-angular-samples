@@ -9,12 +9,12 @@ import {
     IgxSwitchModule,
     IgxToastModule,
     IgxIconModule,
-    IgxPrefixModule,
     IgxSimpleComboModule,
     IgxProgressBarModule
 } from 'igniteui-angular';
 import { IgxFinancialChartModule } from 'igniteui-angular-charts';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
+import { BaseAppConfig } from './BaseConfig';
 export class ComboConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         RemoteNWindService: '../../src/app/services/remoteNwind.service'
@@ -24,86 +24,52 @@ export class ComboConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ['/src/app/lists/combo/combo-features/local-data.ts'],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'IgxSwitchModule', 'ComboFeaturesComponent'],
-                ngDeclarations: ['ComboFeaturesComponent'],
-                ngImports: ['IgxComboModule', 'IgxSwitchModule']
-            }),
+            appConfig: BaseAppConfig,
             component: 'ComboFeaturesComponent',
             shortenComponentPathBy: '/lists/combo/'
         }));
 
         configs.push(new Config({
             additionalFiles: ['/src/app/data/heroData.ts', '/src/app/lists/combo/combo-styling/layout.scss'],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'IgxToastModule', 'ComboStylingComponent'],
-                ngDeclarations: ['ComboStylingComponent'],
-                ngImports: ['IgxComboModule', 'IgxToastModule']
-            }),
+            appConfig: BaseAppConfig,
             component: 'ComboStylingComponent'
         }));
 
         configs.push(new Config({
             additionalFiles: ['/src/app/lists/combo/combo-main/local-data.ts'],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'ComboMainComponent'],
-                ngDeclarations: ['ComboMainComponent'],
-                ngImports: ['IgxComboModule']
-            }),
+            appConfig: BaseAppConfig,
             component: 'ComboMainComponent',
             shortenComponentPathBy: '/lists/combo/'
         }));
 
         configs.push(new Config({
             additionalFiles: ['/src/app/lists/combo/combo-template/local-data.ts'],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'IgxIconModule', 'IgxPrefixModule', 'ComboTemplateComponent'],
-                ngDeclarations: ['ComboTemplateComponent'],
-                ngImports: ['IgxComboModule', 'IgxIconModule', 'IgxPrefixModule']
-            }),
+            appConfig: BaseAppConfig,
             component: 'ComboTemplateComponent',
             shortenComponentPathBy: '/lists/combo/'
         }));
 
         configs.push(new Config({
             additionalFiles: ['/src/app/services/remoteNwind.service.ts'],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'IgxToastModule', 'ComboRemoteComponent',
-                    'HttpClientModule', 'RemoteNWindService'],
-                ngDeclarations: ['ComboRemoteComponent'],
-                ngImports: ['IgxComboModule', 'IgxToastModule', 'HttpClientModule'],
-                ngProviders: ['RemoteNWindService']
-            }),
+            appConfig: BaseAppConfig,
             component: 'ComboRemoteComponent'
         }));
 
         configs.push(new Config({
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'ComboOverlayComponent'],
-                ngDeclarations: ['ComboOverlayComponent'],
-                ngImports: ['IgxComboModule']
-            }),
+            appConfig: BaseAppConfig,
             component: 'ComboOverlayComponent'
         }));
 
         configs.push(new Config({
             additionalFiles: ['/src/app/lists/combo/combo-binding/cities.ts'],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'IgxButtonModule', 'IgxCardModule', 'ComboBindingComponent'],
-                ngDeclarations: ['ComboBindingComponent'],
-                ngImports: ['IgxComboModule', 'IgxButtonModule', 'IgxCardModule']
-            }),
+            appConfig: BaseAppConfig,
             component: 'ComboBindingComponent',
             shortenComponentPathBy: '/lists/combo/'
         }));
 
         configs.push(new Config({
             additionalFiles: ['/src/app/lists/combo/combo-valuekey/cities.ts'],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'IgxButtonModule', 'ComboValueKeyComponent'],
-                ngDeclarations: ['ComboValueKeyComponent'],
-                ngImports: ['IgxComboModule', 'IgxButtonModule']
-            }),
+            appConfig: BaseAppConfig,
             component: 'ComboValueKeyComponent',
             shortenComponentPathBy: '/lists/combo/'
         }));
@@ -111,53 +77,31 @@ export class ComboConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ['/src/app/data/stocks-data.ts'],
             additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core'],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxButtonGroupModule', 'IgxComboModule', 'IgxFinancialChartModule', 'IgxSimpleComboModule', 'SimpleComboMainComponent'],
-                ngDeclarations: ['SimpleComboMainComponent'],
-                ngImports: ['IgxButtonGroupModule', 'IgxComboModule', 'IgxFinancialChartModule', 'IgxSimpleComboModule']
-            }),
+            appConfig: BaseAppConfig,
             component: 'SimpleComboMainComponent'
         }));
 
         configs.push(new Config({
             additionalFiles: ['/src/app/data/cities15000-regions-countries.ts'],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'SimpleComboUsageComponent', 'IgxSimpleComboModule'],
-                ngDeclarations: ['SimpleComboUsageComponent'],
-                ngImports: ['IgxComboModule', 'IgxSimpleComboModule']
-            }),
+            appConfig: BaseAppConfig,
             component: 'SimpleComboUsageComponent'
         }));
 
         configs.push(new Config({
             additionalFiles: ['/src/app/data/cities15000-regions-countries.ts'],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'IgxSimpleComboModule', 'IgxProgressBarModule', 'SimpleComboCascadingComponent'],
-                ngDeclarations: ['SimpleComboCascadingComponent'],
-                ngImports: ['IgxComboModule', 'IgxSimpleComboModule', 'IgxProgressBarModule']
-            }),
+            appConfig: BaseAppConfig,
             component: 'SimpleComboCascadingComponent'
         }));
 
         configs.push(new Config({
             additionalFiles: ['/src/app/services/remoteNwind.service.ts'],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'IgxSimpleComboModule', 'IgxToastModule',
-                    'HttpClientModule', 'RemoteNWindService', 'SimpleComboRemoteComponent'],
-                ngDeclarations: ['SimpleComboRemoteComponent'],
-                ngImports: ['IgxComboModule', 'IgxSimpleComboModule', 'IgxToastModule', 'HttpClientModule'],
-                ngProviders: ['RemoteNWindService']
-            }),
+            appConfig: BaseAppConfig,
             component: 'SimpleComboRemoteComponent'
         }));
 
         configs.push(new Config({
             additionalFiles: ['/src/app/data/cities15000-regions-countries.ts', '/src/app/lists/combo/simple-combo-styling/layout.scss'],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxComboModule', 'IgxSimpleComboModule', 'SimpleComboStylingComponent'],
-                ngDeclarations: ['SimpleComboStylingComponent'],
-                ngImports: ['IgxComboModule', 'IgxSimpleComboModule']
-            }),
+            appConfig: BaseAppConfig,
             component: 'SimpleComboStylingComponent'
         }));
 

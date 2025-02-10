@@ -1,10 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxSplitterComponent } from 'igniteui-angular';
+import { IgxSplitterComponent, IgxSplitterPaneComponent, IgxButtonDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-splitter-collapsible-sample',
     styleUrls: ['splitter-collapsible-sample.component.scss'],
-    templateUrl: 'splitter-collapsible-sample.component.html'
+    templateUrl: 'splitter-collapsible-sample.component.html',
+    imports: [IgxSplitterComponent, IgxSplitterPaneComponent, IgxButtonDirective]
 })
 export class SplitterCollapsibleSampleComponent {
     @ViewChild('splitter') public splitterComponent: IgxSplitterComponent;

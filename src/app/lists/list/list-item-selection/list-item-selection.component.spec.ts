@@ -8,8 +8,8 @@ describe('ListItemSelectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListItemSelectionComponent ]
-    })
+    imports: [ListItemSelectionComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(ListItemSelectionComponent);

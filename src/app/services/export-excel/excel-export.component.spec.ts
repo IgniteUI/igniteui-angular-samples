@@ -8,8 +8,8 @@ describe('ExcelExportComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExcelExportComponent ]
-    })
+    imports: [ExcelExportComponent]
+})
     .compileComponents();
   }));
 

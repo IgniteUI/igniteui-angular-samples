@@ -7,7 +7,8 @@ IgxNavbarModule,
 IgxRippleModule,
 IgxTabsModule,
 IgxButtonGroupModule } from 'igniteui-angular';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing';
+import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';;
 export class TabsConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         TabsSample4Module: '../../src/app/layouts/tabs/tabs-sample-4/tabs-sample-4.module',
@@ -20,48 +21,25 @@ export class TabsConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'TabsSample1Component',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxIconModule', 'IgxTabsModule', 'TabsSample1Component'],
-                ngDeclarations: ['TabsSample1Component'],
-                ngImports: ['IgxIconModule', 'IgxTabsModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 
         configs.push(new Config({
             component: 'TabsSample2Component',
-            appModuleConfig: new AppModuleConfig({
-                imports: [
-                    'IgxTabsModule',
-                    'IgxNavbarModule',
-                    'IgxIconModule',
-                    'TabsSample2Component'
-                ],
-                ngDeclarations: ['TabsSample2Component'],
-                ngImports: [
-                    'IgxTabsModule',
-                    'IgxNavbarModule',
-                    'IgxIconModule'
-                ]
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 
         configs.push(new Config({
             component: 'TabsSample3Component',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxIconModule', 'IgxTabsModule', 'TabsSample3Component'],
-                ngDeclarations: ['TabsSample3Component'],
-                ngImports: ['IgxIconModule', 'IgxTabsModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 
         configs.push(new Config({
             component: 'TabsSample4Component',
             additionalFiles: [
-                "/src/app/layouts/tabs/tabs-sample-4/tabs-sample-4.module.ts",
-                "/src/app/layouts/tabs/views/views.module.ts",
                 "/src/app/layouts/tabs/views/view1/view1.component.ts",
                 "/src/app/layouts/tabs/views/view1/view1.component.html",
                 "/src/app/layouts/tabs/views/view2/view2.component.ts",
@@ -69,101 +47,27 @@ export class TabsConfigGenerator implements IConfigGenerator {
                 "/src/app/layouts/tabs/views/view3/view3.component.ts",
                 "/src/app/layouts/tabs/views/view3/view3.component.html"
             ],
-            appModuleConfig: new AppModuleConfig({
-                imports: [
-                    'RouterModule',
-                    'IgxTabsModule',
-                    'TabsSample4Module',
-                    'TabsSample4Component',
-                    'View1Component',
-                    'View2Component',
-                    'View3Component'
-                ],
-                ngDeclarations: ['TabsSample4Component'],
-                ngImports: [
-                    'IgxTabsModule',
-                    'TabsSample4Module',
-                    `
-                    RouterModule.forRoot([
-                        { path: "view1", component: View1Component },
-                        { path: "view2", component: View2Component },
-                        { path: "view3", component: View3Component }
-                    ])
-                    `
-                ]
-            }),
+            /* TODO: Adding the correct router config needs to be done separately */
+            appConfig: { ...BaseAppConfig, ...{ router: true }},
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 
         configs.push(new Config({
             component: 'TabsStyleComponent',
             additionalFiles: ["/src/app/layouts/tabs/tabs-style/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [
-                    'IgxIconModule',
-                    'IgxTabsModule',
-                    'IgxCardModule',
-                    'IgxAvatarModule',
-                    'IgxButtonModule',
-                    'IgxRippleModule',
-                    'TabsStyleComponent'
-                ],
-                ngDeclarations: ['TabsStyleComponent'],
-                ngImports: [
-                    'IgxIconModule',
-                    'IgxTabsModule',
-                    'IgxCardModule',
-                    'IgxAvatarModule',
-                    'IgxButtonModule',
-                    'IgxRippleModule'
-                ]
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 
         configs.push(new Config({
             component: 'TabsAlignmentComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: [
-                    'IgxButtonGroupModule',
-                    'IgxIconModule',
-                    'IgxTabsModule',
-                    'IgxButtonModule',
-                    'IgxRippleModule',
-                    'TabsAlignmentComponent'
-                ],
-                ngDeclarations: ['TabsAlignmentComponent'],
-                ngImports: [
-                    'IgxButtonGroupModule',
-                    'IgxIconModule',
-                    'IgxTabsModule',
-                    'IgxButtonModule',
-                    'IgxRippleModule'
-                ]
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 
         configs.push(new Config({
             component: 'TabsHeaderPrefixSuffixComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: [
-                    'IgxIconModule',
-                    'IgxTabsModule',
-                    'IgxButtonGroupModule',
-                    'IgxButtonModule',
-                    'IgxRippleModule',
-                    'TabsHeaderPrefixSuffixComponent'
-                ],
-                ngDeclarations: ['TabsHeaderPrefixSuffixComponent'],
-                ngImports: [
-                    'IgxIconModule',
-                    'IgxTabsModule',
-                    'IgxButtonGroupModule',
-                    'IgxButtonModule',
-                    'IgxRippleModule'
-                ]
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 

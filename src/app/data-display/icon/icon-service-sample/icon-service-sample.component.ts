@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { IgxIconService } from 'igniteui-angular';
+import { IgxIconService, IgxCardComponent, IgxCardHeaderComponent, IgxAvatarComponent, IgxIconComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardActionsComponent, IgxButtonDirective, IgxSuffixDirective } from 'igniteui-angular';
 
 @Component({
-  selector: 'app-icon-service-sample',
-  styleUrls: ['./icon-service-sample.component.scss'],
-  templateUrl: './icon-service-sample.component.html'
+    selector: 'app-icon-service-sample',
+    styleUrls: ['./icon-service-sample.component.scss'],
+    templateUrl: './icon-service-sample.component.html',
+    imports: [IgxCardComponent, IgxCardHeaderComponent, IgxAvatarComponent, IgxIconComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardActionsComponent, IgxButtonDirective, IgxSuffixDirective]
 })
 export class IconServiceSampleComponent {
     private weather = [{

@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { IRowSelectionEventArgs } from 'igniteui-angular';
+import { IRowSelectionEventArgs, IgxGridComponent, IgxPaginatorComponent, IgxColumnComponent, IgxRowSelectorDirective, IgxCheckboxComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-grid-conditional-row-selectors',
     styleUrls: ['./grid-conditional-row-selectors-sample.component.scss'],
-    templateUrl: 'grid-conditional-row-selectors-sample.component.html'
+    templateUrl: 'grid-conditional-row-selectors-sample.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxRowSelectorDirective, IgxCheckboxComponent]
 })
 
 export class GridConditionalRowSelectorsComponent {

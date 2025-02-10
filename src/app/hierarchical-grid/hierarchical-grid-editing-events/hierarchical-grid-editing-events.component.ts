@@ -1,15 +1,16 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IGridCreatedEventArgs, IGridEditEventArgs,
-    IgxHierarchicalGridComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IGridCreatedEventArgs, IGridEditEventArgs, IgxHierarchicalGridComponent, IgxToastComponent, VerticalAlignment, IgxColumnComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { SINGERS } from '../../data/singersData';
 import { Singer } from '../models';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-editing-events',
     styleUrls: ['./hierarchical-grid-editing-events.component.scss'],
-    templateUrl: 'hierarchical-grid-editing-events.component.html'
+    templateUrl: 'hierarchical-grid-editing-events.component.html',
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent, IgxToastComponent]
 })
 
 export class HGridEditingEventsComponent implements OnInit, OnDestroy {

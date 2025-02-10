@@ -1,5 +1,6 @@
-import {IgxCheckboxModule} from 'igniteui-angular';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import { IgxCheckboxModule } from 'igniteui-angular';
+import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 export class CheckboxConfigGenerator implements IConfigGenerator {
 
 
@@ -9,32 +10,20 @@ export class CheckboxConfigGenerator implements IConfigGenerator {
         // checkbox sample 2
         configs.push(new Config({
             component: 'CheckboxSample1Component',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxCheckboxModule', 'CheckboxSample1Component'],
-                ngDeclarations: ['CheckboxSample1Component'],
-                ngImports: ['IgxCheckboxModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/checkbox/"
         }));
 
         // checkbox sample 2
         configs.push(new Config({
             component: 'CheckboxSample2Component',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxCheckboxModule', 'CheckboxSample2Component'],
-                ngDeclarations: ['CheckboxSample2Component'],
-                ngImports: ['IgxCheckboxModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/checkbox/"
         }));
 
         configs.push(new Config({
             component: 'CheckboxSample3Component',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxCheckboxModule', 'CheckboxSample3Component'],
-                ngDeclarations: ['CheckboxSample3Component'],
-                ngImports: ['IgxCheckboxModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/checkbox/"
         }));
 
@@ -42,11 +31,7 @@ export class CheckboxConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'CheckboxStylingComponent',
             additionalFiles: ["/src/app/data-entries/checkbox/checkbox-styling/layout.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxCheckboxModule', 'CheckboxStylingComponent'],
-                ngDeclarations: ['CheckboxStylingComponent'],
-                ngImports: ['IgxCheckboxModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/checkbox/"
         }));
 

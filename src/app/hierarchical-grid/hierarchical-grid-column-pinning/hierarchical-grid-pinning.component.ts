@@ -1,14 +1,16 @@
 
 import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
-import { ColumnType, IgxIconService } from 'igniteui-angular';
+import { ColumnType, IgxIconService, IgxCellHeaderTemplateDirective, IgxIconComponent, IgxHierarchicalGridComponent, IgxColumnComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 import { icons } from "../../services/svgIcons";
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 @Component({
     selector: 'app-hierarchical-grid-pinning',
     styleUrls: ['./hierarchical-grid-pinning.component.scss'],
-    templateUrl: 'hierarchical-grid-pinning.component.html'
+    templateUrl: 'hierarchical-grid-pinning.component.html',
+    imports: [IgxCellHeaderTemplateDirective, IgxIconComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent]
 })
 
 export class HGridPinningSampleComponent implements AfterViewInit {

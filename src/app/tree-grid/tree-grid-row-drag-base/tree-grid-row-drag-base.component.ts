@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs, IgxTreeGridComponent, RowType } from 'igniteui-angular';
+import { IDropDroppedEventArgs, IgxTreeGridComponent, RowType, IgxDropDirective, IgxIconComponent, IgxPaginatorComponent, IgxColumnComponent } from 'igniteui-angular';
 import { FULL_EMPLOYEE_DATA } from '../data/employees';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 // eslint-disable-next-line no-shadow
 enum DragIcon {
@@ -12,7 +13,8 @@ enum DragIcon {
 @Component({
     selector: 'app-tree-grid-row-drag-base',
     styleUrls: ['tree-grid-row-drag-base.component.scss'],
-    templateUrl: 'tree-grid-row-drag-base.component.html'
+    templateUrl: 'tree-grid-row-drag-base.component.html',
+    imports: [IgxDropDirective, IgxIconComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent]
 })
 export class TreeGridRowDragBaseComponent {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: true })

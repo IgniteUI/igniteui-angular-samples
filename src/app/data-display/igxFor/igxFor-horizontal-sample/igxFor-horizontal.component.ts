@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxFilterOptions } from 'igniteui-angular';
+import { IgxFilterOptions, IgxInputGroupComponent, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, IgxSuffixDirective, IgxListComponent, IgxListItemComponent, IgxForOfDirective, IgxAvatarComponent, IgxFilterPipe } from 'igniteui-angular';
 import { femaleFNames, lastName, maleFNames } from '../names';
+import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-igx-for-horizontal',
     styleUrls: ['./igxFor-horizontal.component.scss'],
-    templateUrl: './igxFor-horizontal.component.html'
+    templateUrl: './igxFor-horizontal.component.html',
+    imports: [IgxInputGroupComponent, FormsModule, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, NgIf, IgxSuffixDirective, IgxListComponent, IgxListItemComponent, IgxForOfDirective, IgxAvatarComponent, IgxFilterPipe]
 })
 export class IgxForHorizontalComponent implements OnInit {
     public search: string;

@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { IgxGridComponent, IgxColumnGroupComponent, IgxCollapsibleIndicatorTemplateDirective, IgxIconComponent, IgxTooltipTargetDirective, IgxTooltipDirective, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf, DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-grid-collapsible-column-groups',
     styleUrls: ['./grid-collapsible-column-groups.component.scss'],
-    templateUrl: './grid-collapsible-column-groups.component.html'
+    templateUrl: './grid-collapsible-column-groups.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnGroupComponent, IgxCollapsibleIndicatorTemplateDirective, IgxIconComponent, IgxTooltipTargetDirective, IgxTooltipDirective, NgIf, IgxColumnComponent, IgxCellTemplateDirective, DatePipe]
 })
 export class GridCollapsibleColumnGroupsComponent implements OnInit {
 

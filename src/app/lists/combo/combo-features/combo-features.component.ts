@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxComboComponent } from 'igniteui-angular';
+import { IgxComboComponent, IgxSwitchComponent } from 'igniteui-angular';
 import { localData } from './local-data';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-combo',
     styleUrls: ['./combo-features.component.scss'],
-    templateUrl: './combo-features.component.html'
+    templateUrl: './combo-features.component.html',
+    imports: [IgxComboComponent, IgxSwitchComponent, FormsModule]
 })
 export class ComboFeaturesComponent implements OnInit{
     @ViewChild('combo', { read: IgxComboComponent, static: true }) public combo: IgxComboComponent;

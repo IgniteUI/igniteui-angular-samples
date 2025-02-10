@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
 import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
 
 @Component({
-  selector: 'app-excel-export',
-  styleUrls: ['./excel-export.component.scss'],
-  templateUrl: './excel-export.component.html'
+    selector: 'app-excel-export',
+    styleUrls: ['./excel-export.component.scss'],
+    templateUrl: './excel-export.component.html'
 })
 export class ExcelExportComponent {
 

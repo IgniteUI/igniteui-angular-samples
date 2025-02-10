@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxColumnComponent, IgxTreeGridComponent } from 'igniteui-angular';
+import { IgxColumnComponent, IgxTreeGridComponent, IgxInputGroupComponent, IgxInputDirective, IgxHintDirective, IgxButtonDirective } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgFor, JsonPipe } from '@angular/common';
 
 @Component({
     selector: 'app-grid-conditional-cell-style-2',
     styleUrls: ['./tree-grid-conditional-cell-style-2.component.scss'],
-    templateUrl: './tree-grid-conditional-cell-style-2.component.html'
+    templateUrl: './tree-grid-conditional-cell-style-2.component.html',
+    imports: [IgxInputGroupComponent, IgxInputDirective, IgxHintDirective, IgxButtonDirective, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, NgFor, IgxColumnComponent, JsonPipe]
 })
 export class TreeGridConditionalCellStyle2Component implements OnInit {
     @ViewChild('grid1', { read: IgxTreeGridComponent, static: true })

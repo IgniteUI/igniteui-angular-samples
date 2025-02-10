@@ -1,16 +1,15 @@
 import { Component, ViewChild } from '@angular/core';
-import {
-    IgxGridComponent,
-    IgxNumberSummaryOperand,
-    IgxSummaryResult } from 'igniteui-angular';
+import { IgxGridComponent, IgxNumberSummaryOperand, IgxSummaryResult, IgxPaginatorComponent, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgIf } from '@angular/common';
 
 class DiscontinuedSummary {
     public operate(data?: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
         const result = [];
         result.push({
             key: 'products',
-            label: 'Producs',
+            label: 'Products',
             summaryResult: data.length
         });
         result.push({
@@ -20,7 +19,7 @@ class DiscontinuedSummary {
         });
         result.push({
             key: 'discontinued',
-            label: 'Discontinued Producs',
+            label: 'Discontinued Products',
             summaryResult: allData.map(r => r['Discontinued']).filter((rec) =>  rec).length
             });
         result.push({
@@ -32,9 +31,10 @@ class DiscontinuedSummary {
     }
 }
 @Component({
-  selector: 'app-grid-all-data-summary',
-  styleUrls: ['./grid-allData-summary.component.scss'],
-  templateUrl: './grid-allData-summary.component.html'
+    selector: 'app-grid-all-data-summary',
+    styleUrls: ['./grid-allData-summary.component.scss'],
+    templateUrl: './grid-allData-summary.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, NgIf, IgxPaginatorComponent, IgxColumnComponent]
 })
 export class GridAllDataSummaryComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
