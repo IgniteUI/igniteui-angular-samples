@@ -34,8 +34,7 @@ $custom-input-group: input-group-theme(
 $custom-chip: chip-theme(
   $schema: $dark-material-schema,
   $background: $yellow,
-  $text-color: $black,
-  $ghost-background: $yellow
+  $text-color: $black
 );
 
 $custom-icon-button: icon-button-theme(

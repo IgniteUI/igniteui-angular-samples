@@ -21,6 +21,10 @@
                         </igx-radio>
                     </igx-radio-group>
                 }
+                @else if (selectedField?.field === 'ShipVia' && (selectedCondition === 'equals' || selectedCondition === 'doesNotEqual')){
+                    <igx-combo class="combo" [data]="shipViaFormatterData" [(ngModel)]="searchValue.value" [displayKey]="'field'">
+                    </igx-combo>
+                }
                  @else {  
                     <ng-container *ngTemplateOutlet="defaultSearchValueTemplate"></ng-container>
                 }

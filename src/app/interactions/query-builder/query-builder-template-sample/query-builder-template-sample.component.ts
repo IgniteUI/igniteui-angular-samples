@@ -1,34 +1,35 @@
 import { NgForOf, NgTemplateOutlet } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxQueryBuilderComponent, IgxQueryBuilderHeaderComponent, IgxQueryBuilderSearchValueTemplateDirective, IgxRadioModule, IgxSelectModule, IgxStringFilteringOperand } from 'igniteui-angular';
+import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxComboModule, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxQueryBuilderComponent, IgxQueryBuilderHeaderComponent, IgxQueryBuilderSearchValueTemplateDirective, IgxRadioModule, IgxSelectModule, IgxStringFilteringOperand } from 'igniteui-angular';
 
 @Component({
     selector: 'app-query-builder-template-sample',
     styleUrls: ['./query-builder-template-sample.component.scss'],
     templateUrl: 'query-builder-template-sample.component.html',
-    imports: [IgxQueryBuilderComponent, IgxQueryBuilderHeaderComponent, IgxSelectModule, IgxRadioModule, FormsModule, IgxQueryBuilderSearchValueTemplateDirective, NgForOf, NgTemplateOutlet]
+    imports: [IgxQueryBuilderComponent, IgxQueryBuilderHeaderComponent, IgxSelectModule, IgxRadioModule, IgxComboModule, FormsModule, IgxQueryBuilderSearchValueTemplateDirective, NgForOf, NgTemplateOutlet]
 })
 export class QueryBuilderTemplateSampleComponent implements OnInit {
+    public shipViaFormatterData: any[];
     public entities: any[];
     public companiesFields: any[];
     public ordersFields: any[];
     public expressionTree: IExpressionTree;
     public regionOptions = [
-        {text: 'Central North America', value: 'CNA'},
-        {text: 'Central Europe', value: 'CEU'},
-        {text: 'Mediterranean region', value: 'MED'},
-        {text: 'Central Asia', value: 'CAS'},
-        {text: 'South Asia', value: 'SAS'},
-        {text: 'Western Africa', value: 'WAF'},
-        {text: 'Amazonia', value: 'AMZ'},
-        {text: 'Southern Africa', value: 'SAF'},
-        {text: 'Northern Australia', value: 'NAU'}];
+        { text: 'Central North America', value: 'CNA' },
+        { text: 'Central Europe', value: 'CEU' },
+        { text: 'Mediterranean region', value: 'MED' },
+        { text: 'Central Asia', value: 'CAS' },
+        { text: 'South Asia', value: 'SAS' },
+        { text: 'Western Africa', value: 'WAF' },
+        { text: 'Amazonia', value: 'AMZ' },
+        { text: 'Southern Africa', value: 'SAF' },
+        { text: 'Northern Australia', value: 'NAU' }];
 
     public statusOptions = [
-        {text: 'New', value: 1},
-        {text: 'Shipped', value: 2},
-        {text: 'Done', value: 3}];
+        { text: 'New', value: 1 },
+        { text: 'Shipped', value: 2 },
+        { text: 'Done', value: 3 }];
 
     public ngOnInit(): void {
         this.ordersFields = [
@@ -38,7 +39,7 @@ export class QueryBuilderTemplateSampleComponent implements OnInit {
             { field: "OrderDate", dataType: "date" },
             { field: "RequiredDate", dataType: "date" },
             { field: "ShippedDate", dataType: "date" },
-            { field: "ShipVia", dataType: "number" },
+            { field: "ShipVia", dataType: "number", formatter: (value: any, rowData: any) => rowData === 'equals'|| rowData === 'doesNotEqual'? `${Array.from(value).map((v: { id: any; }) => v.id)}` : value },
             { field: "Freight", dataType: "number" },
             { field: "ShipName", dataType: "string" },
             { field: "ShipCity", dataType: "string" },
@@ -69,13 +70,14 @@ export class QueryBuilderTemplateSampleComponent implements OnInit {
             searchVal: 1
         });
         tree.filteringOperands.push({
-            fieldName: 'OrderDate',
-            condition: IgxDateFilteringOperand.instance().condition('before'),
-            conditionName: 'before',
-            searchVal: new Date('2024-01-01T00:00:00.000Z')
+            fieldName: 'ShipVia',
+            condition: IgxNumberFilteringOperand.instance().condition('equals'),
+            conditionName: 'equals',
+            searchVal: [{ id: 0, field: 'sea' },  { id: 2, field: 'land' }]
         });
 
         this.expressionTree = tree;
+        this.shipViaFormatterData = [{ id: 0, field: 'sea' }, { id: 1, field: 'air' }, { id: 2, field: 'land' }]
     }
 
     public printExpressionTree(tree: IExpressionTree) {
