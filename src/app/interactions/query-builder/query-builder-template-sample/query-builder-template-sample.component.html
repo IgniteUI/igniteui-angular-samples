@@ -11,7 +11,7 @@
                         let-defaultSearchValueTemplate = "defaultSearchValueTemplate">
                 @if (selectedField?.field === 'Region' && (selectedCondition === 'equals' || selectedCondition === 'doesNotEqual')){
                     <igx-select [placeholder]="'Select region'" [(ngModel)]="searchValue.value">
-                        <igx-select-item *ngFor="let reg of regionOptions" [value]="reg.value">{{ reg.text }}</igx-select-item>
+                        <igx-select-item *ngFor="let reg of regionOptions" [value]="reg">{{ reg.text }}</igx-select-item>
                     </igx-select>
                 } 
                 @else if (selectedField?.field === 'OrderStatus' && (selectedCondition === 'equals' || selectedCondition === 'doesNotEqual')){
@@ -21,12 +21,7 @@
                         </igx-radio>
                     </igx-radio-group>
                 }
-                @else if (selectedField?.field === 'ShipCountry' && (selectedCondition === 'equals' || selectedCondition === 'doesNotEqual')){
-                    <igx-select [placeholder]="'Select Country'" [(ngModel)]="searchValue.value">
-                        <igx-select-item *ngFor="let c of countries" [value]="c.data">{{ c.text }}</igx-select-item>
-                    </igx-select>
-                }
-                 @else {  
+                @else {  
                     <ng-container *ngTemplateOutlet="defaultSearchValueTemplate"></ng-container>
                 }
             </ng-template>
