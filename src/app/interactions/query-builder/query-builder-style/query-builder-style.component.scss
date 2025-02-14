@@ -47,6 +47,7 @@ $custom-icon-button: icon-button-theme(
 
 :host {
   ::ng-deep {
+    @include theme($palette: $dark-material-palette);
     @include css-vars($custom-input-group);
     @include css-vars($custom-chip);
     @include css-vars($custom-icon-button);
