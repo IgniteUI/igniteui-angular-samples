@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IgxQueryBuilderComponent } from 'igniteui-angular';
 
 @Component({
@@ -7,7 +7,7 @@ import { IgxQueryBuilderComponent } from 'igniteui-angular';
     templateUrl: 'query-builder-style.component.html',
     imports: [IgxQueryBuilderComponent]
 })
-export class QueryBuilderStyleComponent {
+export class QueryBuilderStyleComponent implements OnInit {
     public entities: any[];
     public ngOnInit(): void {
         const fields: any[] = [
