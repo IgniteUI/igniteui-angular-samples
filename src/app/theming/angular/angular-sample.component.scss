@@ -139,7 +139,7 @@ igx-expansion-panel-body {
     @include typography($font-family: $material-typeface, $type-scale: $material-type-scale);
 
     &.light {
-        @include color-classes($palette: $igx-light-palette, $prop: "background", $prefix: "bg");
+        @include color-classes($prop: "background", $prefix: "bg");
 
         background: color($igx-light-palette, 'surface');
 
@@ -159,7 +159,7 @@ igx-expansion-panel-body {
     }
 
     &.dark {
-        @include color-classes($palette: $custom-dark-palette, $prop: "background", $prefix: "bg");
+        @include color-classes($prop: "background", $prefix: "bg");
 
         background: color($custom-dark-palette, 'surface');
 

@@ -51,7 +51,6 @@ $dark-secondary: color($custom-dark-palette, "secondary");
 
     &.light {
         @include color-classes(
-            $palette: $light-bootstrap-palette,
             $prop: 'background',
             $prefix: 'bg'
         );
@@ -78,7 +77,6 @@ $dark-secondary: color($custom-dark-palette, "secondary");
 
     &.dark {
         @include color-classes(
-            $palette: $custom-dark-palette,
             $prop: 'background',
             $prefix: 'bg'
         );
