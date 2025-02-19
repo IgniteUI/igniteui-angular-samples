@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxCarouselComponent, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardMediaDirective, IgxCardActionsComponent, IgxButtonDirective, IgxPrefixDirective, IgxCarouselIndicatorDirective } from 'igniteui-angular';
+import { IgxCarouselComponent, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardMediaDirective, IgxCardActionsComponent, IgxButtonDirective, IgxPrefixDirective } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 import { TitleCasePipe } from '@angular/common';
 
@@ -7,7 +7,7 @@ import { TitleCasePipe } from '@angular/common';
     selector: 'app-carousel',
     styleUrls: ['./carousel-animations-sample.component.scss'],
     templateUrl: './carousel-animations-sample.component.html',
-    imports: [IgxSelectComponent, FormsModule, IgxSelectItemComponent, IgxCarouselComponent, IgxSlideComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardMediaDirective, IgxCardActionsComponent, IgxButtonDirective, IgxPrefixDirective, IgxCarouselIndicatorDirective, TitleCasePipe]
+    imports: [IgxSelectComponent, FormsModule, IgxSelectItemComponent, IgxCarouselComponent, IgxSlideComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardMediaDirective, IgxCardActionsComponent, IgxButtonDirective, IgxPrefixDirective, TitleCasePipe]
 })
 export class CarouselAnimationsSampleComponent implements OnInit {
   @ViewChild('carousel', { static: true }) public carousel: IgxCarouselComponent;
