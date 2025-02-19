@@ -1,16 +1,18 @@
 <div class="grid-wrapper">
-    <igx-tree-grid  [igxPreventDocumentScroll]="true"
-                    [data]="data"
-                    primaryKey="ID"
-                    foreignKey = "ParentID"
-                    height="530px"
-                    width="100%"
-                    columnSelection="multiple">
-        <igx-column *ngFor="let c of columnConfig"
-                    [field] = "c.field"
-                    [header] = "c.header"
-                    [selectable] = "c.selectable"
-                    [formatter] = "c?.formatter">
-        </igx-column>
-    </igx-tree-grid>
+  <igx-tree-grid  [igxPreventDocumentScroll]="true"
+    [data]="data"
+    primaryKey="ID"
+    foreignKey = "ParentID"
+    height="530px"
+    width="100%"
+    columnSelection="multiple">
+    @for (c of columnConfig; track c) {
+      <igx-column
+        [field] = "c.field"
+        [header] = "c.header"
+        [selectable] = "c.selectable"
+        [formatter] = "c?.formatter">
+      </igx-column>
+    }
+  </igx-tree-grid>
 </div>

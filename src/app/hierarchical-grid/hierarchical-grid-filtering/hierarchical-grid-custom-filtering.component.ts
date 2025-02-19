@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { IgxBooleanFilteringOperand, IgxStringFilteringOperand, IgxHierarchicalGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-hierarchical-grid-custom-filtering',
     styleUrls: ['./hierarchical-grid-custom-filtering.component.scss'],
     templateUrl: 'hierarchical-grid-custom-filtering.component.html',
-    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, NgIf, IgxRowIslandComponent]
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent]
 })
 
 export class HGridCustomFilteringSampleComponent {

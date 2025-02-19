@@ -8,13 +8,13 @@ import {
     weatherDetailsFactory,
     weatherListFactory
 } from '../card.blueprint';
-import { NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-card-sample-4',
     styleUrls: ['./card-sample-4.component.scss'],
     templateUrl: './card-sample-4.component.html',
-    imports: [IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxChipComponent, IgxIconComponent, IgxSliderComponent, IgxExpansionPanelComponent, IgxExpansionPanelBodyComponent, IgxListComponent, NgFor, IgxListItemComponent, IgxDividerDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, IgxCardMediaDirective, IgxAvatarComponent]
+    imports: [IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxChipComponent, IgxIconComponent, IgxSliderComponent, IgxExpansionPanelComponent, IgxExpansionPanelBodyComponent, IgxListComponent, IgxListItemComponent, IgxDividerDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, IgxCardMediaDirective, IgxAvatarComponent]
 })
 export class CardSample4Component implements OnInit {
     @ViewChild(IgxExpansionPanelComponent, { static: true })

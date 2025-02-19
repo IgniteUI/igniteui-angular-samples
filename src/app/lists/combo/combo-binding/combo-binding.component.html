@@ -1,19 +1,21 @@
 <div class="sample-wrapper">
-    <div class="combo-section">
-        <igx-combo class="combo" #noValueKey [data]="cities" displayKey="name"
-                   groupKey="country" [(ngModel)]="selectedNoValueKey">
-        </igx-combo>
-        <button igxButton="contained" (click)="selectFavorites()">Select Favorites</button>
-    </div>
-    <h6>Selected Cities:</h6>
-    <div class="cities-container">
-        <igx-card  *ngFor="let city of selectedNoValueKey">
-            <igx-card-header>
-                <h5 igxCardHeaderTitle>{{ city.name }}</h5>
-                <h5 igxCardHeaderSubtitle>{{ city.country }}</h5>
-                {{ city.id }}
-            </igx-card-header>
-        </igx-card>
-    </div>
+  <div class="combo-section">
+    <igx-combo class="combo" #noValueKey [data]="cities" displayKey="name"
+      groupKey="country" [(ngModel)]="selectedNoValueKey">
+    </igx-combo>
+    <button igxButton="contained" (click)="selectFavorites()">Select Favorites</button>
+  </div>
+  <h6>Selected Cities:</h6>
+  <div class="cities-container">
+    @for (city of selectedNoValueKey; track city) {
+      <igx-card >
+        <igx-card-header>
+          <h5 igxCardHeaderTitle>{{ city.name }}</h5>
+          <h5 igxCardHeaderSubtitle>{{ city.country }}</h5>
+          {{ city.id }}
+        </igx-card-header>
+      </igx-card>
+    }
+  </div>
 </div>
 

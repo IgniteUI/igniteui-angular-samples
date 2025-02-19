@@ -1,35 +1,39 @@
 <div class="grid__wrapper">
-    <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" height="500px"
-        width="100%">
-        <igx-paginator #paginator [(page)]="grid.page" [totalRecords]="grid.totalRecords" [(perPage)]="grid.perPage"
-            [selectOptions]="selectOptions">
-            <igx-paginator-content>
-                <igx-page-size *ngIf="!isDropdownHidden"></igx-page-size>
-                <igx-page-nav *ngIf="!isPagerHidden"></igx-page-nav>
-            </igx-paginator-content>
-        </igx-paginator>
-        <igx-column header="Rank" headerClasses="myClass" field="Id" [sortable]="true"></igx-column>
-        <igx-column field="Name" header="Athlete"></igx-column>
-        <igx-column field="BeatsPerMinute" header="Beats per minute" dataType="number">
-            <ng-template igxCell let-val>
-                <div class="cell__inner">
-                    {{ val }}
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column field="TopSpeed" header="Top Speed" dataType="number">
-            <ng-template igxCell let-val>
-                <div class="cell__inner">
-                    {{ val | number: '1.1-5' }}
-                </div>
-            </ng-template>
-        </igx-column>
-    </igx-grid>
+  <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" height="500px"
+    width="100%">
+    <igx-paginator #paginator [(page)]="grid.page" [totalRecords]="grid.totalRecords" [(perPage)]="grid.perPage"
+      [selectOptions]="selectOptions">
+      <igx-paginator-content>
+        @if (!isDropdownHidden) {
+          <igx-page-size></igx-page-size>
+        }
+        @if (!isPagerHidden) {
+          <igx-page-nav></igx-page-nav>
+        }
+      </igx-paginator-content>
+    </igx-paginator>
+    <igx-column header="Rank" headerClasses="myClass" field="Id" [sortable]="true"></igx-column>
+    <igx-column field="Name" header="Athlete"></igx-column>
+    <igx-column field="BeatsPerMinute" header="Beats per minute" dataType="number">
+      <ng-template igxCell let-val>
+        <div class="cell__inner">
+          {{ val }}
+        </div>
+      </ng-template>
+    </igx-column>
+    <igx-column field="TopSpeed" header="Top Speed" dataType="number">
+      <ng-template igxCell let-val>
+        <div class="cell__inner">
+          {{ val | number: '1.1-5' }}
+        </div>
+      </ng-template>
+    </igx-column>
+  </igx-grid>
 
 
 
-    <div class="options-container">
-        <igx-switch [(ngModel)]="isDropdownHidden">Hide Dropdown</igx-switch>
-        <igx-switch [(ngModel)]="isPagerHidden">Hide Pager</igx-switch>
-    </div>
+  <div class="options-container">
+    <igx-switch [(ngModel)]="isDropdownHidden">Hide Dropdown</igx-switch>
+    <igx-switch [(ngModel)]="isPagerHidden">Hide Pager</igx-switch>
+  </div>
 </div>

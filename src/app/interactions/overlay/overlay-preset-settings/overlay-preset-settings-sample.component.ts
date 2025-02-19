@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { AbsolutePosition, IgxOverlayService, OverlaySettings, RelativePosition, RelativePositionStrategy, IButtonGroupEventArgs, IgxIconComponent, IgxButtonGroupComponent, IgxButtonDirective } from 'igniteui-angular';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
-import { NgTemplateOutlet, NgFor, NgIf } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -17,7 +17,7 @@ import { NgTemplateOutlet, NgFor, NgIf } from '@angular/common';
     styleUrls: ['./overlay-preset-settings-sample.component.scss'],
     templateUrl: './overlay-preset-settings-sample.component.html',
     providers: [IgxOverlayService],
-    imports: [IgxIconComponent, NgTemplateOutlet, IgxButtonGroupComponent, NgFor, IgxButtonDirective, NgIf]
+    imports: [IgxIconComponent, NgTemplateOutlet, IgxButtonGroupComponent, IgxButtonDirective]
 })
 export class OverlayPresetSettingsSampleComponent implements OnInit, OnDestroy {
     @ViewChild('anchor', { static: true })

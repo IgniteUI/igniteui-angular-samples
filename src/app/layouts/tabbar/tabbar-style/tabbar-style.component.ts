@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/quotes */
 import { Component, OnInit } from "@angular/core";
 import { IgxBottomNavComponent, IgxBottomNavItemComponent, IgxBottomNavHeaderComponent, IgxIconComponent, IgxBottomNavHeaderIconDirective, IgxBottomNavHeaderLabelDirective, IgxBottomNavContentComponent } from "igniteui-angular";
-import { NgFor } from "@angular/common";
+
 
 @Component({
     selector: "app-tabbar-style",
     styleUrls: ["./tabbar-style.component.scss"],
     templateUrl: "./tabbar-style.component.html",
-    imports: [IgxBottomNavComponent, IgxBottomNavItemComponent, IgxBottomNavHeaderComponent, IgxIconComponent, IgxBottomNavHeaderIconDirective, IgxBottomNavHeaderLabelDirective, IgxBottomNavContentComponent, NgFor]
+    imports: [IgxBottomNavComponent, IgxBottomNavItemComponent, IgxBottomNavHeaderComponent, IgxIconComponent, IgxBottomNavHeaderIconDirective, IgxBottomNavHeaderLabelDirective, IgxBottomNavContentComponent]
 })
 export class TabbarStyleComponent {
     public songsList = [

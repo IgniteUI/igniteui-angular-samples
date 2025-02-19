@@ -1,87 +1,93 @@
 <div class="sample">
-    <div class="grid_wrapper">
-        <igx-hierarchical-grid height="570px" width="100%" [allowAdvancedFiltering]="true"
-            columnSelection="multiple" [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
-            (keydown)="gridKeydown($event)" (activeNodeChange)="onActiveNodeChange($event)">
-            <igx-paginator></igx-paginator>
-            <igx-grid-toolbar *ngIf="false"></igx-grid-toolbar>
+  <div class="grid_wrapper">
+    <igx-hierarchical-grid height="570px" width="100%" [allowAdvancedFiltering]="true"
+      columnSelection="multiple" [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
+      (keydown)="gridKeydown($event)" (activeNodeChange)="onActiveNodeChange($event)">
+      <igx-paginator></igx-paginator>
+      @if (false) {
+        <igx-grid-toolbar></igx-grid-toolbar>
+      }
 
-            <igx-column field="CustomerID" [filterable]="true" [sortable]="true" [editable]="true"></igx-column>
-            <igx-column-group header="General Information">
-                <igx-column field="CompanyName" [sortable]="true"></igx-column>
-                <igx-column-group  header="Personal Details">
-                    <igx-column field="ContactName" [filterable]="true" [hasSummary]="true" [editable]="true"></igx-column>
-                    <igx-column field="ContactTitle" [sortable]="true"></igx-column>
-                </igx-column-group>
-            </igx-column-group>
-            <igx-column-group header="Address Information">
-                <igx-column-group header="Location" [collapsible]="true" [expanded]="false" (expandedChange)="expandChange()">
-                    <igx-column field="FullAddress" header="Full Address" [width]="'250px'" [visibleWhenCollapsed]="true"
-                        [dataType]="'string'" [sortable]="true" [editable]="true"></igx-column>
-                    <igx-column [visibleWhenCollapsed]="false" field="Address"  [selectable]="false" [filterable]="true"></igx-column>
-                    <igx-column [visibleWhenCollapsed]="false" field="City" [sortable]="true"></igx-column>
-                    <igx-column [visibleWhenCollapsed]="false" field="PostalCode" [selectable]="false" [filterable]="true" [hasSummary]="true"></igx-column>
-                    <igx-column [visibleWhenCollapsed]="false" field="Country" [selectable]="false"></igx-column>
-                </igx-column-group>
-                <igx-column-group header="Contact Information">
-                    <igx-column field="Phone" [filterable]="true"></igx-column>
-                    <igx-column field="Fax"></igx-column>
-                </igx-column-group>
-            </igx-column-group>
+      <igx-column field="CustomerID" [filterable]="true" [sortable]="true" [editable]="true"></igx-column>
+      <igx-column-group header="General Information">
+        <igx-column field="CompanyName" [sortable]="true"></igx-column>
+        <igx-column-group  header="Personal Details">
+          <igx-column field="ContactName" [filterable]="true" [hasSummary]="true" [editable]="true"></igx-column>
+          <igx-column field="ContactTitle" [sortable]="true"></igx-column>
+        </igx-column-group>
+      </igx-column-group>
+      <igx-column-group header="Address Information">
+        <igx-column-group header="Location" [collapsible]="true" [expanded]="false" (expandedChange)="expandChange()">
+          <igx-column field="FullAddress" header="Full Address" [width]="'250px'" [visibleWhenCollapsed]="true"
+          [dataType]="'string'" [sortable]="true" [editable]="true"></igx-column>
+          <igx-column [visibleWhenCollapsed]="false" field="Address"  [selectable]="false" [filterable]="true"></igx-column>
+          <igx-column [visibleWhenCollapsed]="false" field="City" [sortable]="true"></igx-column>
+          <igx-column [visibleWhenCollapsed]="false" field="PostalCode" [selectable]="false" [filterable]="true" [hasSummary]="true"></igx-column>
+          <igx-column [visibleWhenCollapsed]="false" field="Country" [selectable]="false"></igx-column>
+        </igx-column-group>
+        <igx-column-group header="Contact Information">
+          <igx-column field="Phone" [filterable]="true"></igx-column>
+          <igx-column field="Fax"></igx-column>
+        </igx-column-group>
+      </igx-column-group>
 
-            <igx-row-island [height]="null" [key]="'Orders'" [autoGenerate]="false" columnSelection="multiple" (gridCreated)="onGridCreated($event)" (activeNodeChange)="onActiveNodeChange($event)" [allowAdvancedFiltering]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
-                <igx-grid-toolbar *igxGridToolbar="let childGrid"></igx-grid-toolbar>
+      <igx-row-island [height]="null" [key]="'Orders'" [autoGenerate]="false" columnSelection="multiple" (gridCreated)="onGridCreated($event)" (activeNodeChange)="onActiveNodeChange($event)" [allowAdvancedFiltering]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+        <igx-grid-toolbar *igxGridToolbar="let childGrid"></igx-grid-toolbar>
 
-                <igx-column-group header="Order Information">
-                    <igx-column-group header="Order Details">
-                        <igx-column [editable]="true" [sortable]="true" field="OrderID"></igx-column>
-                        <igx-column [editable]="true" [sortable]="true" field="EmployeeID"></igx-column>
-                        <igx-column [editable]="true" [sortable]="true" field="OrderDate"  [dataType]="'date'" [hasSummary]="true"></igx-column>
-                        <igx-column [editable]="true" field="RequiredDate"  [dataType]="'date'"></igx-column>
-                    </igx-column-group>
-                    <igx-column-group header="General Shipping Information">
-                        <igx-column field="ShippedDate" [dataType]="'date'"></igx-column>
-                        <igx-column field="ShipVia" [selectable]="false"></igx-column>
-                        <igx-column field="Freight" [selectable]="false"></igx-column>
-                        <igx-column field="ShipName" [hasSummary]="true"></igx-column>
-                    </igx-column-group>
-                    <igx-column-group header="Shipping Location">
-                        <igx-column field="ShipAddress"></igx-column>
-                        <igx-column field="ShipCity"></igx-column>
-                        <igx-column field="ShipPostalCode"></igx-column>
-                        <igx-column field="ShipCountry"></igx-column>
-                    </igx-column-group>
-                </igx-column-group>
-                <igx-row-island [height]="null" [key]="'OrderDetails'" [autoGenerate]="false" columnSelection="single" (gridCreated)="onGridCreated($event)" [allowAdvancedFiltering]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" (activeNodeChange)="onActiveNodeChange($event)">
-<igx-grid-toolbar *igxGridToolbar="let childGrid"></igx-grid-toolbar>
+        <igx-column-group header="Order Information">
+          <igx-column-group header="Order Details">
+            <igx-column [editable]="true" [sortable]="true" field="OrderID"></igx-column>
+            <igx-column [editable]="true" [sortable]="true" field="EmployeeID"></igx-column>
+            <igx-column [editable]="true" [sortable]="true" field="OrderDate"  [dataType]="'date'" [hasSummary]="true"></igx-column>
+            <igx-column [editable]="true" field="RequiredDate"  [dataType]="'date'"></igx-column>
+          </igx-column-group>
+          <igx-column-group header="General Shipping Information">
+            <igx-column field="ShippedDate" [dataType]="'date'"></igx-column>
+            <igx-column field="ShipVia" [selectable]="false"></igx-column>
+            <igx-column field="Freight" [selectable]="false"></igx-column>
+            <igx-column field="ShipName" [hasSummary]="true"></igx-column>
+          </igx-column-group>
+          <igx-column-group header="Shipping Location">
+            <igx-column field="ShipAddress"></igx-column>
+            <igx-column field="ShipCity"></igx-column>
+            <igx-column field="ShipPostalCode"></igx-column>
+            <igx-column field="ShipCountry"></igx-column>
+          </igx-column-group>
+        </igx-column-group>
+        <igx-row-island [height]="null" [key]="'OrderDetails'" [autoGenerate]="false" columnSelection="single" (gridCreated)="onGridCreated($event)" [allowAdvancedFiltering]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" (activeNodeChange)="onActiveNodeChange($event)">
+          <igx-grid-toolbar *igxGridToolbar="let childGrid"></igx-grid-toolbar>
 
-                        <igx-column [editable]="true" [sortable]="true" field="ProductID" ></igx-column>
-                        <igx-column [editable]="true" [sortable]="true" field="UnitPrice"></igx-column>
-                        <igx-column [editable]="true" [sortable]="true" field="Quantity" [selectable]="false"></igx-column>
-                        <igx-column [editable]="true" field="Discount" [hasSummary]="true"></igx-column>
-                </igx-row-island>
-            </igx-row-island>
-        </igx-hierarchical-grid>
-    </div>
-    <div class="list-sample">
-        <igx-list>
-            <igx-list-item *ngIf="keyboardCollection.length > 0" [isHeader]="true">{{headerList}}</igx-list-item>
-            <igx-list-item @load *ngFor="let c of keyboardCollection; let idx=index" [ngClass]="{ 'active': c.active, 'disabled': !c.active}" [@toggle]="c.completed ? 'selected' : 'deselected'">
-                <h4 igxListLineTitle>{{ c.title }}</h4>
-                <p igxListLineSubTitle>{{ c.subTitle }}</p>
-                <igx-checkbox [disabled]="!c.active" [checked]="c.completed" (change)="onCheckChange($event, idx)"></igx-checkbox>
-            </igx-list-item>
-            <ng-template igxEmptyList>
-                <span class="empty-list">
-                    <h6>Use the native navigation of the browser until you reach some of the following grid sections below:</h6>
-                    <ul>
-                        <li>Header</li>
-                        <li>Body</li>
-                        <li>Summary</li>
-                    </ul>
-                    <h6>When reached, an <b>action list</b> will be shown.</h6>
-                </span>
-            </ng-template>
-        </igx-list>
-    </div>
+          <igx-column [editable]="true" [sortable]="true" field="ProductID" ></igx-column>
+          <igx-column [editable]="true" [sortable]="true" field="UnitPrice"></igx-column>
+          <igx-column [editable]="true" [sortable]="true" field="Quantity" [selectable]="false"></igx-column>
+          <igx-column [editable]="true" field="Discount" [hasSummary]="true"></igx-column>
+        </igx-row-island>
+      </igx-row-island>
+    </igx-hierarchical-grid>
+  </div>
+  <div class="list-sample">
+    <igx-list>
+      @if (keyboardCollection.length > 0) {
+        <igx-list-item [isHeader]="true">{{headerList}}</igx-list-item>
+      }
+      @for (c of keyboardCollection; track c; let idx = $index) {
+        <igx-list-item @load [ngClass]="{ 'active': c.active, 'disabled': !c.active}" [@toggle]="c.completed ? 'selected' : 'deselected'">
+          <h4 igxListLineTitle>{{ c.title }}</h4>
+          <p igxListLineSubTitle>{{ c.subTitle }}</p>
+          <igx-checkbox [disabled]="!c.active" [checked]="c.completed" (change)="onCheckChange($event, idx)"></igx-checkbox>
+        </igx-list-item>
+      }
+      <ng-template igxEmptyList>
+        <span class="empty-list">
+          <h6>Use the native navigation of the browser until you reach some of the following grid sections below:</h6>
+          <ul>
+            <li>Header</li>
+            <li>Body</li>
+            <li>Summary</li>
+          </ul>
+          <h6>When reached, an <b>action list</b> will be shown.</h6>
+        </span>
+      </ng-template>
+    </igx-list>
+  </div>
 </div>

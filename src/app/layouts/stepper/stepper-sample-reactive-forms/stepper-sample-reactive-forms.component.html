@@ -1,262 +1,279 @@
 <igx-stepper #stepper [linear]="true">
 
-    <igx-step #step1 [isValid]="!!selectedCard" [completed]="!!selectedCard">
-        <span igxStepTitle>Card Type</span>
-        <div igxStepContent [tabIndex]="-1">
-            <h2 class="sample-step-title">Choose your business credit card</h2>
-            <div class="card-wrapper">
-                <igx-card *ngFor="let card of cards" (click)="selectCard(card)"
-                    [ngClass]="{'selected-card': selectedCard === card}" [tabIndex]="0"
-                    (keydown)="handleKeyDown($event, card)" elevated>
-                    <igx-badge *ngIf="selectedCard === card" value="Your current choice"></igx-badge>
-                    <igx-card-media>
-                        <img src="{{card.img}}" alt="">
-                    </igx-card-media>
+  <igx-step #step1 [isValid]="!!selectedCard" [completed]="!!selectedCard">
+    <span igxStepTitle>Card Type</span>
+    <div igxStepContent [tabIndex]="-1">
+      <h2 class="sample-step-title">Choose your business credit card</h2>
+      <div class="card-wrapper">
+        @for (card of cards; track card) {
+          <igx-card (click)="selectCard(card)"
+            [ngClass]="{'selected-card': selectedCard === card}" [tabIndex]="0"
+            (keydown)="handleKeyDown($event, card)" elevated>
+            @if (selectedCard === card) {
+              <igx-badge value="Your current choice"></igx-badge>
+            }
+            <igx-card-media>
+              <img src="{{card.img}}" alt="">
+            </igx-card-media>
+            <igx-card-content>
+              <span class="card-currency">{{card.price}}</span>
+              <span class="card-title">{{card.offer}}</span>
+              <p>{{card.type}}</p>
+              <p>{{card.description}}</p>
+            </igx-card-content>
+          </igx-card>
+        }
+      </div>
+    </div>
+  </igx-step>
 
-                    <igx-card-content>
-                        <span class="card-currency">{{card.price}}</span>
-                        <span class="card-title">{{card.offer}}</span>
-                        <p>{{card.type}}</p>
-                        <p>{{card.description}}</p>
-                    </igx-card-content>
-                </igx-card>
-            </div>
-        </div>
-    </igx-step>
-
-    <igx-step #step2 [isValid]="businessInformation.valid" [completed]="businessInformation.valid">
-        <span igxStepTitle>Business information</span>
-        <div igxStepContent [tabIndex]="-1">
-            <div class="sample-row">
-                <form class="flex-form" [formGroup]="businessInformation">
-                    <igx-input-group type="box">
-                        <input igxInput name="name" id="name" type="text" formControlName="name" required/>
-                        <label igxLabel for="name">Legal Business Name</label>
-                    </igx-input-group>
-                    <igx-input-group type="box">
-                        <input igxInput name="physicalAddress" id="physicalAddress" type="text"
-                        formControlName="physicalAddress" required />
-                        <label igxLabel for="physicalAddress">Business Physical Address</label>
-                    </igx-input-group>
-                    <div class="form-row">
-                        <igx-input-group type="box">
-                            <input igxInput name="city" id="city" type="text" formControlName="city"
-                                required />
-                            <label igxLabel for="city">City</label>
-                        </igx-input-group>
-                        <igx-select type="box" name="state" formControlName="state" required>
-                            <igx-select-item *ngFor="let state of states" [value]="state">
-                                {{state}}
-                            </igx-select-item>
-                            <label igxLabel>State</label>
-                        </igx-select>
-                        <igx-input-group type="box">
-                            <input igxInput name="zip" id="zip" type="text" [igxMask]="'00000'"
-                                [placeholder]="'#####'" formControlName="zip" required />
-                            <label igxLabel for="zip">ZIP Code</label>
-                        </igx-input-group>
-                    </div>
-                    <igx-checkbox name="differentAddress" formControlName="differentAddress">
-                        The mailing address is different than the business physical address
-                    </igx-checkbox>
-                    <igx-input-group type="box">
-                        <input igxInput name="taxIdNumber" id="taxIdNumber" type="text"
-                            [placeholder]="'9##-##-####'" [igxMask]="'000-00-0000'"
-                            formControlName="taxIdNumber" required/>
-                       <igx-hint *ngIf="businessInformation.controls.taxIdNumber.invalid && businessInformation.controls.taxIdNumber.touched">
-                             {{errorMessages()}}
-                        </igx-hint>
-                        <label igxLabel for="taxIdNumber">Federal Tax ID Number</label>
-                    </igx-input-group>
-                    <p>Does this business operate outside the United States? <span class="sample-required">*</span></p>
-                    <igx-radio-group type="box" name="nonUSBusinessActivity" formControlName="nonUSBusinessActivity" alignment="vertical"
-                         required>
-                        <igx-radio class="radio-sample" value="true">
-                            Yes
-                        </igx-radio>
-                        <igx-radio class="radio-sample" value="false">
-                            No
-                        </igx-radio>
-                    </igx-radio-group>
-                </form>
-                <igx-card  *ngIf="selectedCard">
-                    <igx-card-content>
-                        <div class="sample-row sample-card">
-                            <img src="{{selectedCard.img}}" alt="">
-                            <div>
-                                <span class="card-currency">{{selectedCard.price}}</span>
-                                <span class="card-title">{{selectedCard.offer}}</span>
-                                <p>{{selectedCard.type}}</p>
-                                <p>{{selectedCard.description}}</p>
-                            </div>
-                        </div>
-                    </igx-card-content>
-                </igx-card>
-            </div>
-            <div class="sample-step-actions">
-                <button igxButton="contained" (click)="stepper.prev()">Back</button>
-                <button igxButton="contained" (click)="stepper.next()"
-                    [disabled]="!businessInformation.valid">Continue</button>
-            </div>
-        </div>
-    </igx-step>
-
-    <igx-step #step3 [isValid]="personalInformation.valid" [completed]="personalInformation.valid">
-        <span igxStepTitle>Personal Information</span>
-        <div igxStepContent [tabIndex]="-1">
-            <div class="sample-row">
-                <form class="flex-form" [formGroup]="personalInformation">
-                    <igx-input-group type="box">
-                        <input igxInput name="firstName" id="firstName" type="text"
-                        formControlName="firstName" required />
-                        <label igxLabel for="firstName">First Name</label>
-                    </igx-input-group>
-                    <igx-input-group type="box">
-                        <input igxInput name="lastName" id="lastName" type="text"
-                        formControlName="lastName" required />
-                        <label igxLabel for="lastName">Last Name</label>
-                    </igx-input-group>
-                    <igx-input-group type="box">
-                        <input igxInput name="jobTitle" id="jobTitle" type="text"
-                        formControlName="jobTitle" required />
-                        <label igxLabel for="jobTitle">Job Title</label>
-                    </igx-input-group>
-                    <igx-input-group type="box">
-                        <input igxInput name="phoneNumber" id="phoneNumber" type="text"
-                        formControlName="phoneNumber" required />
-                        <label igxLabel for="phoneNumber">Phone Number</label>
-                    </igx-input-group>
-                    <igx-input-group type="box">
-                        <input igxInput name="email" id="email" type="email" formControlName="email"
-                            required email />
-                        <label igxLabel for="email">Email Address</label>
-                    </igx-input-group>
-                    <igx-checkbox name="authorization" formControlName="authorization" required>
-                        I confirm that I am authorized to borrow on behalf of this business. <span
-                            class="sample-required">*</span>
-                    </igx-checkbox>
-                    <div class="sample-terms">
-                        <igx-checkbox name="agreementAccepted" formControlName="agreementAccepted"
-                            required>
-                            I agree with the<span class="sample-required">*</span>
-                        </igx-checkbox>
-                        <a (click)="$event.stopPropagation()">Terms and Conditions</a>
-                    </div>
-                </form>
-                <igx-card  *ngIf="selectedCard">
-                    <igx-card-content>
-                        <div class="sample-row sample-card">
-                            <img src="{{selectedCard.img}}" alt="">
-                            <div>
-                                <span class="card-currency">{{selectedCard.price}}</span>
-                                <span class="card-title">{{selectedCard.offer}}</span>
-                                <p>{{selectedCard.type}}</p>
-                                <p>{{selectedCard.description}}</p>
-                            </div>
-                        </div>
-                    </igx-card-content>
-                </igx-card>
-            </div>
-            <div class="sample-step-actions">
-                <button igxButton="contained" (click)="stepper.prev()">Back</button>
-                <button igxButton="contained" (click)="stepper.next()"
-                    [disabled]="!personalInformation.valid">Continue</button>
-            </div>
-        </div>
-    </igx-step>
-
-    <igx-step #step4 [isValid]="shippingDetails.valid" [completed]="shippingDetails.valid || (!businessInformation.controls.differentAddress && step3.completed)">
-        <span igxStepTitle>Shipping Details</span>
-        <div igxStepContent [tabIndex]="-1">
-            <div class="sample-row">
-                <form class="flex-form" [formGroup]="shippingDetails">
-                    <igx-input-group type="box">
-                        <input igxInput name="sfirstName" id="sfirstName" type="text"
-                        formControlName="sfirstName" required />
-                        <label igxLabel for="sfirstName">First Name</label>
-                    </igx-input-group>
-                    <igx-input-group type="box">
-                        <input igxInput name="slastName" id="slastName" type="text"
-                        formControlName="slastName" required />
-                        <label igxLabel for="slastName">Last Name</label>
-                    </igx-input-group>
-                    <igx-input-group type="box">
-                        <input igxInput name="mailingAddress" type="text" formControlName="smailingAddress"
-                            required />
-                        <label igxLabel for="mailingAddress" id="mailingAddress">Mailing Address</label>
-                    </igx-input-group>
-                    <div class="form-row">
-                        <igx-input-group type="box">
-                            <input igxInput name="scity" id="scity" type="text" formControlName="scity"
-                                required />
-                            <label igxLabel for="scity">City</label>
-                        </igx-input-group>
-                        <igx-select type="box" name="sstate" formControlName="sstate" required>
-                            <igx-select-item *ngFor="let state of states" [value]="state">
-                                {{state}}
-                            </igx-select-item>
-                            <label igxLabel>State</label>
-                        </igx-select>
-                        <igx-input-group type="box">
-                            <input igxInput name="szip" id="szip" type="text" pattern="[0-9]{5}" [placeholder]="'#####'"
-                                [igxMask]="'00000'" formControlName="szip" required />
-                            <label igxLabel for="szip">ZIP Code</label>
-                        </igx-input-group>
-                    </div>
-                </form>
-                <igx-card  *ngIf="selectedCard">
-                    <igx-card-content>
-                        <div class="sample-row sample-card">
-                            <img src="{{selectedCard.img}}" alt="">
-                            <div>
-                                <span class="card-currency">{{selectedCard.price}}</span>
-                                <span class="card-title">{{selectedCard.offer}}</span>
-                                <p>{{selectedCard.type}}</p>
-                                <p>{{selectedCard.description}}</p>
-                            </div>
-                        </div>
-                    </igx-card-content>
-                </igx-card>
-            </div>
-            <div class="sample-step-actions">
-                <button igxButton="contained" (click)="stepper.prev()">Back</button>
-                <button igxButton="contained" (click)="stepper.next()"
-                    [disabled]="!shippingDetails.valid">Continue</button>
-            </div>
-        </div>
-    </igx-step>
-
-    <igx-step #step5>
-        <span igxStepTitle>Confirmation</span>
-        <div igxStepContent [tabIndex]="-1">
-            <div class="success-message">
-                <div class="success-marker">
-                    <igx-icon>check</igx-icon>
+  <igx-step #step2 [isValid]="businessInformation.valid" [completed]="businessInformation.valid">
+    <span igxStepTitle>Business information</span>
+    <div igxStepContent [tabIndex]="-1">
+      <div class="sample-row">
+        <form class="flex-form" [formGroup]="businessInformation">
+          <igx-input-group type="box">
+            <input igxInput name="name" id="name" type="text" formControlName="name" required/>
+            <label igxLabel for="name">Legal Business Name</label>
+          </igx-input-group>
+          <igx-input-group type="box">
+            <input igxInput name="physicalAddress" id="physicalAddress" type="text"
+              formControlName="physicalAddress" required />
+              <label igxLabel for="physicalAddress">Business Physical Address</label>
+            </igx-input-group>
+            <div class="form-row">
+              <igx-input-group type="box">
+                <input igxInput name="city" id="city" type="text" formControlName="city"
+                  required />
+                  <label igxLabel for="city">City</label>
+                </igx-input-group>
+                <igx-select type="box" name="state" formControlName="state" required>
+                  @for (state of states; track state) {
+                    <igx-select-item [value]="state">
+                      {{state}}
+                    </igx-select-item>
+                  }
+                  <label igxLabel>State</label>
+                </igx-select>
+                <igx-input-group type="box">
+                  <input igxInput name="zip" id="zip" type="text" [igxMask]="'00000'"
+                    [placeholder]="'#####'" formControlName="zip" required />
+                    <label igxLabel for="zip">ZIP Code</label>
+                  </igx-input-group>
                 </div>
-                <div class="success-text">
-                    <h2 class="sample-step-title">Your application for a business credit card has been sent
-                        successfully!</h2>
-                    <p>We will contact you within a few days.</p>
-                </div>
-            </div>
-            <igx-card class="sample-small-card"  *ngIf="selectedCard">
-                <igx-card-content>
-                    <strong class="sample-date">Application date: {{ today | date:'d MMM y' }}</strong>
-                    <div class="sample-row sample-card">
+                <igx-checkbox name="differentAddress" formControlName="differentAddress">
+                  The mailing address is different than the business physical address
+                </igx-checkbox>
+                <igx-input-group type="box">
+                  <input igxInput name="taxIdNumber" id="taxIdNumber" type="text"
+                    [placeholder]="'9##-##-####'" [igxMask]="'000-00-0000'"
+                    formControlName="taxIdNumber" required/>
+                    @if (businessInformation.controls.taxIdNumber.invalid && businessInformation.controls.taxIdNumber.touched) {
+                      <igx-hint>
+                        {{errorMessages()}}
+                      </igx-hint>
+                    }
+                    <label igxLabel for="taxIdNumber">Federal Tax ID Number</label>
+                  </igx-input-group>
+                  <p>Does this business operate outside the United States? <span class="sample-required">*</span></p>
+                  <igx-radio-group type="box" name="nonUSBusinessActivity" formControlName="nonUSBusinessActivity" alignment="vertical"
+                    required>
+                    <igx-radio class="radio-sample" value="true">
+                      Yes
+                    </igx-radio>
+                    <igx-radio class="radio-sample" value="false">
+                      No
+                    </igx-radio>
+                  </igx-radio-group>
+                </form>
+                @if (selectedCard) {
+                  <igx-card >
+                    <igx-card-content>
+                      <div class="sample-row sample-card">
                         <img src="{{selectedCard.img}}" alt="">
                         <div>
-                            <span class="card-currency">{{selectedCard.price}}</span>
-                            <span class="card-title">{{selectedCard.offer}}</span>
-                            <p>{{selectedCard.type}}</p>
-                            <p>{{selectedCard.description}}</p>
+                          <span class="card-currency">{{selectedCard.price}}</span>
+                          <span class="card-title">{{selectedCard.offer}}</span>
+                          <p>{{selectedCard.type}}</p>
+                          <p>{{selectedCard.description}}</p>
                         </div>
-                    </div>
-                </igx-card-content>
-            </igx-card>
-            <div class="sample-step-actions">
-                 <button igxButton="contained" (click)="resetStepper(businessInformation, personalInformation, shippingDetails)">Reset</button>
+                      </div>
+                    </igx-card-content>
+                  </igx-card>
+                }
+              </div>
+              <div class="sample-step-actions">
+                <button igxButton="contained" (click)="stepper.prev()">Back</button>
+                <button igxButton="contained" (click)="stepper.next()"
+                [disabled]="!businessInformation.valid">Continue</button>
+              </div>
             </div>
-        </div>
-    </igx-step>
+          </igx-step>
 
-</igx-stepper>
+          <igx-step #step3 [isValid]="personalInformation.valid" [completed]="personalInformation.valid">
+            <span igxStepTitle>Personal Information</span>
+            <div igxStepContent [tabIndex]="-1">
+              <div class="sample-row">
+                <form class="flex-form" [formGroup]="personalInformation">
+                  <igx-input-group type="box">
+                    <input igxInput name="firstName" id="firstName" type="text"
+                      formControlName="firstName" required />
+                      <label igxLabel for="firstName">First Name</label>
+                    </igx-input-group>
+                    <igx-input-group type="box">
+                      <input igxInput name="lastName" id="lastName" type="text"
+                        formControlName="lastName" required />
+                        <label igxLabel for="lastName">Last Name</label>
+                      </igx-input-group>
+                      <igx-input-group type="box">
+                        <input igxInput name="jobTitle" id="jobTitle" type="text"
+                          formControlName="jobTitle" required />
+                          <label igxLabel for="jobTitle">Job Title</label>
+                        </igx-input-group>
+                        <igx-input-group type="box">
+                          <input igxInput name="phoneNumber" id="phoneNumber" type="text"
+                            formControlName="phoneNumber" required />
+                            <label igxLabel for="phoneNumber">Phone Number</label>
+                          </igx-input-group>
+                          <igx-input-group type="box">
+                            <input igxInput name="email" id="email" type="email" formControlName="email"
+                              required email />
+                              <label igxLabel for="email">Email Address</label>
+                            </igx-input-group>
+                            <igx-checkbox name="authorization" formControlName="authorization" required>
+                              I confirm that I am authorized to borrow on behalf of this business. <span
+                            class="sample-required">*</span>
+                          </igx-checkbox>
+                          <div class="sample-terms">
+                            <igx-checkbox name="agreementAccepted" formControlName="agreementAccepted"
+                              required>
+                              I agree with the<span class="sample-required">*</span>
+                            </igx-checkbox>
+                            <a (click)="$event.stopPropagation()">Terms and Conditions</a>
+                          </div>
+                        </form>
+                        @if (selectedCard) {
+                          <igx-card >
+                            <igx-card-content>
+                              <div class="sample-row sample-card">
+                                <img src="{{selectedCard.img}}" alt="">
+                                <div>
+                                  <span class="card-currency">{{selectedCard.price}}</span>
+                                  <span class="card-title">{{selectedCard.offer}}</span>
+                                  <p>{{selectedCard.type}}</p>
+                                  <p>{{selectedCard.description}}</p>
+                                </div>
+                              </div>
+                            </igx-card-content>
+                          </igx-card>
+                        }
+                      </div>
+                      <div class="sample-step-actions">
+                        <button igxButton="contained" (click)="stepper.prev()">Back</button>
+                        <button igxButton="contained" (click)="stepper.next()"
+                        [disabled]="!personalInformation.valid">Continue</button>
+                      </div>
+                    </div>
+                  </igx-step>
+
+                  <igx-step #step4 [isValid]="shippingDetails.valid" [completed]="shippingDetails.valid || (!businessInformation.controls.differentAddress && step3.completed)">
+                    <span igxStepTitle>Shipping Details</span>
+                    <div igxStepContent [tabIndex]="-1">
+                      <div class="sample-row">
+                        <form class="flex-form" [formGroup]="shippingDetails">
+                          <igx-input-group type="box">
+                            <input igxInput name="sfirstName" id="sfirstName" type="text"
+                              formControlName="sfirstName" required />
+                              <label igxLabel for="sfirstName">First Name</label>
+                            </igx-input-group>
+                            <igx-input-group type="box">
+                              <input igxInput name="slastName" id="slastName" type="text"
+                                formControlName="slastName" required />
+                                <label igxLabel for="slastName">Last Name</label>
+                              </igx-input-group>
+                              <igx-input-group type="box">
+                                <input igxInput name="mailingAddress" type="text" formControlName="smailingAddress"
+                                  required />
+                                  <label igxLabel for="mailingAddress" id="mailingAddress">Mailing Address</label>
+                                </igx-input-group>
+                                <div class="form-row">
+                                  <igx-input-group type="box">
+                                    <input igxInput name="scity" id="scity" type="text" formControlName="scity"
+                                      required />
+                                      <label igxLabel for="scity">City</label>
+                                    </igx-input-group>
+                                    <igx-select type="box" name="sstate" formControlName="sstate" required>
+                                      @for (state of states; track state) {
+                                        <igx-select-item [value]="state">
+                                          {{state}}
+                                        </igx-select-item>
+                                      }
+                                      <label igxLabel>State</label>
+                                    </igx-select>
+                                    <igx-input-group type="box">
+                                      <input igxInput name="szip" id="szip" type="text" pattern="[0-9]{5}" [placeholder]="'#####'"
+                                        [igxMask]="'00000'" formControlName="szip" required />
+                                        <label igxLabel for="szip">ZIP Code</label>
+                                      </igx-input-group>
+                                    </div>
+                                  </form>
+                                  @if (selectedCard) {
+                                    <igx-card >
+                                      <igx-card-content>
+                                        <div class="sample-row sample-card">
+                                          <img src="{{selectedCard.img}}" alt="">
+                                          <div>
+                                            <span class="card-currency">{{selectedCard.price}}</span>
+                                            <span class="card-title">{{selectedCard.offer}}</span>
+                                            <p>{{selectedCard.type}}</p>
+                                            <p>{{selectedCard.description}}</p>
+                                          </div>
+                                        </div>
+                                      </igx-card-content>
+                                    </igx-card>
+                                  }
+                                </div>
+                                <div class="sample-step-actions">
+                                  <button igxButton="contained" (click)="stepper.prev()">Back</button>
+                                  <button igxButton="contained" (click)="stepper.next()"
+                                  [disabled]="!shippingDetails.valid">Continue</button>
+                                </div>
+                              </div>
+                            </igx-step>
+
+                            <igx-step #step5>
+                              <span igxStepTitle>Confirmation</span>
+                              <div igxStepContent [tabIndex]="-1">
+                                <div class="success-message">
+                                  <div class="success-marker">
+                                    <igx-icon>check</igx-icon>
+                                  </div>
+                                  <div class="success-text">
+                                    <h2 class="sample-step-title">Your application for a business credit card has been sent
+                                    successfully!</h2>
+                                    <p>We will contact you within a few days.</p>
+                                  </div>
+                                </div>
+                                @if (selectedCard) {
+                                  <igx-card class="sample-small-card" >
+                                    <igx-card-content>
+                                      <strong class="sample-date">Application date: {{ today | date:'d MMM y' }}</strong>
+                                      <div class="sample-row sample-card">
+                                        <img src="{{selectedCard.img}}" alt="">
+                                        <div>
+                                          <span class="card-currency">{{selectedCard.price}}</span>
+                                          <span class="card-title">{{selectedCard.offer}}</span>
+                                          <p>{{selectedCard.type}}</p>
+                                          <p>{{selectedCard.description}}</p>
+                                        </div>
+                                      </div>
+                                    </igx-card-content>
+                                  </igx-card>
+                                }
+                                <div class="sample-step-actions">
+                                  <button igxButton="contained" (click)="resetStepper(businessInformation, personalInformation, shippingDetails)">Reset</button>
+                                </div>
+                              </div>
+                            </igx-step>
+
+                          </igx-stepper>

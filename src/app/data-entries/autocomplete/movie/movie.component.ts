@@ -1,13 +1,13 @@
 import { Component, Pipe, PipeTransform } from '@angular/core';
 import { ConnectedPositioningStrategy, VerticalAlignment, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxAutocompleteDirective, IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
-import { NgFor } from '@angular/common';
+
 import { AutocompletePipeStartsWith } from '../autocomplete/autocomplete.component';
 @Component({
     selector: 'app-movie-availability',
     styleUrls: ['./movie.component.scss'],
     templateUrl: './movie.component.html',
-    imports: [IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxAutocompleteDirective, IgxDropDownComponent, NgFor, IgxDropDownGroupComponent, IgxDropDownItemComponent, AutocompletePipeStartsWith]
+    imports: [IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxAutocompleteDirective, IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent, AutocompletePipeStartsWith]
 })
 export class MovieComponent {
     public cinemaSelected;

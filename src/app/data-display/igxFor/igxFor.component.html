@@ -1,28 +1,30 @@
 <igx-input-group class="search" type="search">
-    <input #searchBar igxInput placeholder="Search Contacts" [(ngModel)]="search" />
-    <igx-prefix>
-        <igx-icon>search</igx-icon>
-    </igx-prefix>
-    <igx-suffix *ngIf="searchBar.value.length > 0" (click)="search = null">
-        <igx-icon>clear</igx-icon>
+  <input #searchBar igxInput placeholder="Search Contacts" [(ngModel)]="search" />
+  <igx-prefix>
+    <igx-icon>search</igx-icon>
+  </igx-prefix>
+  @if (searchBar.value.length > 0) {
+    <igx-suffix (click)="search = null">
+      <igx-icon>clear</igx-icon>
     </igx-suffix>
+  }
 </igx-input-group>
 
 <div class="list-sample">
 
-    <igx-list>
-        <igx-list-item [isHeader]="true">Contacts: {{(data | igxFilter: fo).length}} </igx-list-item>
-        <div [style.height]="'500px'" [style.overflow]="'hidden'" [style.position]="'relative'">
-            <igx-list-item
-                [style.width]="'calc(100% - 18px)'"
-                igxRipple="pink"
-                igxRippleTarget=".igx-list__item"
-                *igxFor="let item of data | igxFilter: fo; scrollOrientation : 'vertical'; containerSize: '500px'; itemSize: '50px'">
-                <igx-avatar igxListThumbnail [src]="item.avatar" shape="circle"></igx-avatar>
-            <span igxListLineTitle>{{ item.name }}</span>
-            <igx-icon igxListAction [style.color]="item.favorite ? 'orange' : 'lightgray'" (click)="toggleFavorite(item)">star</igx-icon>
-            </igx-list-item>
-        </div>
-    </igx-list>
+  <igx-list>
+    <igx-list-item [isHeader]="true">Contacts: {{(data | igxFilter: fo).length}} </igx-list-item>
+    <div [style.height]="'500px'" [style.overflow]="'hidden'" [style.position]="'relative'">
+      <igx-list-item
+        [style.width]="'calc(100% - 18px)'"
+        igxRipple="pink"
+        igxRippleTarget=".igx-list__item"
+        *igxFor="let item of data | igxFilter: fo; scrollOrientation : 'vertical'; containerSize: '500px'; itemSize: '50px'">
+        <igx-avatar igxListThumbnail [src]="item.avatar" shape="circle"></igx-avatar>
+        <span igxListLineTitle>{{ item.name }}</span>
+        <igx-icon igxListAction [style.color]="item.favorite ? 'orange' : 'lightgray'" (click)="toggleFavorite(item)">star</igx-icon>
+      </igx-list-item>
+    </div>
+  </igx-list>
 
 </div>

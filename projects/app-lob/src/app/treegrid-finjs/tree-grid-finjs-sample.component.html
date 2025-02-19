@@ -1,124 +1,134 @@
 <div class="grid__wrapper ig-scrollbar">
-    <div class="controls-wrapper">
+  <div class="controls-wrapper">
+  </div>
+  <div class="controls-holder">
+    <div class="switches">
+      <div class="finjs-slider control-item">
+        <label for="slider">Records: {{volume}}</label>
+        <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" (dragFinished)="updateVolume()" [step]="100"
+        [thumbLabelVisibilityDuration]="250" [continuous]="true"></igx-slider>
+      </div>
+      <div class="finjs-slider control-item">
+        <label for="slider">Frequency: {{frequency}} ms</label>
+        <igx-slider #slider2 id="slider" [minValue]="100" [maxValue]="3000" [step]="10" [(ngModel)]="frequency"
+        [thumbLabelVisibilityDuration]="250" [continuous]="true"></igx-slider>
+      </div>
     </div>
-    <div class="controls-holder">
-        <div class="switches">
-            <div class="finjs-slider control-item">
-                <label for="slider">Records: {{volume}}</label>
-                <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" (dragFinished)="updateVolume()" [step]="100"
-                    [thumbLabelVisibilityDuration]="250" [continuous]="true"></igx-slider>
-            </div>
-            <div class="finjs-slider control-item">
-                <label for="slider">Frequency: {{frequency}} ms</label>
-                <igx-slider #slider2 id="slider" [minValue]="100" [maxValue]="3000" [step]="10" [(ngModel)]="frequency"
-                    [thumbLabelVisibilityDuration]="250" [continuous]="true"></igx-slider>
-            </div>
+    <div class="control-item finjs-play-controls">
+      <igx-buttongroup class="finjssample-btn-group" #buttonGroup1 [values]="controls"
+      (selected)="onButtonAction($event)"></igx-buttongroup>
+    </div>
+
+  </div>
+  <div class="sample-toolbar">
+    @if (buttonSelected === 0) {
+      <span>Feeding {{volume}} records every {{frequency / 1000}} sec.
+      ~{{volume/5}} records updated.</span>
+    }
+  </div>
+  <igx-tree-grid #grid1 [igxPreventDocumentScroll]="true"
+    [data]="data$ | async | treeGridGrouping:groupingExpressions:groupColumnKey:childDataKey:grid1:aggregations"
+    [childDataKey]="childDataKey"
+    [sortStrategy]="sorting"
+    [height]="'calc(100% - 76px)'"
+    width="100%"
+    [moving]="true"
+    [autoGenerate]="false"
+    hiddenColumnsText="Hidden"
+    [isLoading]="isLoading"
+    [allowFiltering]="true"
+    [filterMode]="'excelStyleFilter'"
+    [filterStrategy]="filterStrategy">
+    @if (showToolbar) {
+      <igx-grid-toolbar>
+        <igx-grid-toolbar-actions>
+          <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+          <igx-grid-toolbar-hiding title="Indicators"></igx-grid-toolbar-hiding>
+          <igx-grid-toolbar-exporter [exportCSV]="false"></igx-grid-toolbar-exporter>
+        </igx-grid-toolbar-actions>
+      </igx-grid-toolbar>
+    }
+    <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
+    <!-- <ng-template igxExcelStyleSorting></ng-template>
+    <ng-template igxExcelStyleMoving></ng-template>
+    <ng-template igxExcelStyleHiding></ng-template>
+    <ng-template igxExcelStylePinning></ng-template> -->
+
+    <igx-tree-grid-group-by-area
+      [grid]="grid1"
+      [(expressions)]="groupingExpressions"
+      [hideGroupedColumns]="true">
+    </igx-tree-grid-group-by-area>
+
+    <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]="false" [resizable]="true"
+    [disableHiding]="true"></igx-column>
+    <igx-column [field]="'category'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true">
+    </igx-column>
+    <igx-column [field]="'type'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true">
+    </igx-column>
+    <igx-column [field]="'contract'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true">
+    </igx-column>
+    <igx-column [field]="'settlement'" [width]="'100px'" [sortable]="true"></igx-column>
+    <igx-column [field]="'country'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true">
+    </igx-column>
+    <igx-column [field]="'region'" [width]="'110px'" [groupable]="true" [sortable]="true" [editable]="true">
+      <ng-template igxCellEditor let-cell="cell" let-value>
+        <igx-select [overlaySettings]="overlaySettings" [placeholder]="value" [(ngModel)]="cell.editValue" [igxFocus]="true">
+          @for (r of regions; track r) {
+            <igx-select-item [value]="r.Name">{{ r.Name }}</igx-select-item>
+          }
+        </igx-select>
+      </ng-template>
+    </igx-column>
+    <igx-column [field]="'lastUpdated'" [width]="'120px'" [editable]="true" header="Last Update" dataType="date">
+      <ng-template igxCell let-cell="cell">
+        {{ cell.value | date }}
+      </ng-template>
+    </igx-column>
+    <igx-column [field]="'openPrice'" [width]="'120px'" dataType="number" [formatter]="formatCurrency"
+    [sortable]="true"></igx-column>
+    <igx-column [field]="'price'" [width]="'130px'" dataType="number" [cellClasses]="trends"
+      [sortable]="true" [disableHiding]="true">
+      <ng-template igxCell let-cell="cell">
+        <div class="finjs-icons">
+          <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+          @if (trends.positive(cell.row.data)) {
+            <igx-icon>trending_up</igx-icon>
+          }
+          @if (trends.negative(cell.row.data)) {
+            <igx-icon>trending_down</igx-icon>
+          }
         </div>
-        <div class="control-item finjs-play-controls">
-            <igx-buttongroup class="finjssample-btn-group" #buttonGroup1 [values]="controls"
-                (selected)="onButtonAction($event)"></igx-buttongroup>
-        </div>
+      </ng-template>
+    </igx-column>
 
-    </div>
-    <div class="sample-toolbar">
-        <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
-            ~{{volume/5}} records updated.</span>
-    </div>
-    <igx-tree-grid #grid1 [igxPreventDocumentScroll]="true"
-        [data]="data$ | async | treeGridGrouping:groupingExpressions:groupColumnKey:childDataKey:grid1:aggregations"
-        [childDataKey]="childDataKey"
-        [sortStrategy]="sorting"
-        [height]="'calc(100% - 76px)'"
-        width="100%"
-        [moving]="true"
-        [autoGenerate]="false"
-        hiddenColumnsText="Hidden"
-        [isLoading]="isLoading"
-        [allowFiltering]="true"
-        [filterMode]="'excelStyleFilter'"
-        [filterStrategy]="filterStrategy">
-        <igx-grid-toolbar *ngIf="showToolbar">
-            <igx-grid-toolbar-actions>
-                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
-                <igx-grid-toolbar-hiding title="Indicators"></igx-grid-toolbar-hiding>
-                <igx-grid-toolbar-exporter [exportCSV]="false"></igx-grid-toolbar-exporter>
-            </igx-grid-toolbar-actions>
-        </igx-grid-toolbar>
-        <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
-        <!-- <ng-template igxExcelStyleSorting></ng-template>
-        <ng-template igxExcelStyleMoving></ng-template>
-        <ng-template igxExcelStyleHiding></ng-template>
-        <ng-template igxExcelStylePinning></ng-template> -->
+    <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
+      [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatNumber" >
+    </igx-column>
 
-        <igx-tree-grid-group-by-area
-            [grid]="grid1"
-            [(expressions)]="groupingExpressions"
-            [hideGroupedColumns]="true">
-        </igx-tree-grid-group-by-area>
+    <igx-column [field]="'changeP'" [width]="'110px'" dataType="number" [formatter]="percentage"
+      [sortable]="true" [cellClasses]="trendsChange">
+    </igx-column>
 
-        <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]="false" [resizable]="true"
-            [disableHiding]="true"></igx-column>
-        <igx-column [field]="'category'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true">
-        </igx-column>
-        <igx-column [field]="'type'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true">
-        </igx-column>
-        <igx-column [field]="'contract'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true">
-        </igx-column>
-        <igx-column [field]="'settlement'" [width]="'100px'" [sortable]="true"></igx-column>
-        <igx-column [field]="'country'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true">
-        </igx-column>
-        <igx-column [field]="'region'" [width]="'110px'" [groupable]="true" [sortable]="true" [editable]="true">
-            <ng-template igxCellEditor let-cell="cell" let-value>
-                <igx-select [overlaySettings]="overlaySettings" [placeholder]="value" [(ngModel)]="cell.editValue" [igxFocus]="true">
-                    <igx-select-item *ngFor="let r of regions" [value]="r.Name">{{ r.Name }}</igx-select-item>
-                </igx-select>
-            </ng-template>
-        </igx-column>
-        <igx-column [field]="'lastUpdated'" [width]="'120px'" [editable]="true" header="Last Update" dataType="date">
-            <ng-template igxCell let-cell="cell">
-                {{ cell.value | date }}
-            </ng-template>
-        </igx-column>
-        <igx-column [field]="'openPrice'" [width]="'120px'" dataType="number" [formatter]="formatCurrency"
-             [sortable]="true"></igx-column>
-        <igx-column [field]="'price'" [width]="'130px'" dataType="number" [cellClasses]="trends"
-            [sortable]="true" [disableHiding]="true">
-            <ng-template igxCell let-cell="cell">
-                <div class="finjs-icons">
-                    <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-                    <igx-icon *ngIf="trends.positive(cell.row.data)">trending_up</igx-icon>
-                    <igx-icon *ngIf="trends.negative(cell.row.data)">trending_down</igx-icon>
-                </div>
-            </ng-template>
-        </igx-column>
-
-        <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
-            [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatNumber" >
-        </igx-column>
-
-        <igx-column [field]="'changeP'" [width]="'110px'" dataType="number" [formatter]="percentage"
-            [sortable]="true" [cellClasses]="trendsChange">
-        </igx-column>
-
-        <igx-column [field]="'buy'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
-            [sortable]="true"></igx-column>
-        <igx-column [field]="'sell'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
-            [sortable]="true"></igx-column>
-        <igx-column [field]="'spread'" [width]="'110px'" dataType="number" [formatter]="formatNumber" >
-        </igx-column>
-        <igx-column [field]="'volume'" [width]="'110px'" dataType="number" [formatter]="formatNumber"
-            [sortable]="true"></igx-column>
-        <igx-column [field]="'highD'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
-             [sortable]="true"></igx-column>
-        <igx-column [field]="'lowD'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
-            [sortable]="true"></igx-column>
-        <igx-column [field]="'highY'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
-             [sortable]="true"></igx-column>
-        <igx-column [field]="'lowY'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
-            [sortable]="true"></igx-column>
-        <igx-column [field]="'startY'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
-             [sortable]="true"></igx-column>
-    </igx-tree-grid>
+    <igx-column [field]="'buy'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
+    [sortable]="true"></igx-column>
+    <igx-column [field]="'sell'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
+    [sortable]="true"></igx-column>
+    <igx-column [field]="'spread'" [width]="'110px'" dataType="number" [formatter]="formatNumber" >
+    </igx-column>
+    <igx-column [field]="'volume'" [width]="'110px'" dataType="number" [formatter]="formatNumber"
+    [sortable]="true"></igx-column>
+    <igx-column [field]="'highD'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
+    [sortable]="true"></igx-column>
+    <igx-column [field]="'lowD'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
+    [sortable]="true"></igx-column>
+    <igx-column [field]="'highY'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
+    [sortable]="true"></igx-column>
+    <igx-column [field]="'lowY'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
+    [sortable]="true"></igx-column>
+    <igx-column [field]="'startY'" [width]="'110px'" dataType="number" [formatter]="formatCurrency"
+    [sortable]="true"></igx-column>
+  </igx-tree-grid>
 </div>
 
 <div igxOverlayOutlet #outlet="overlay-outlet">

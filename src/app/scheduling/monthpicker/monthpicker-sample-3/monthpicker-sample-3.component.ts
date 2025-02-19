@@ -1,4 +1,4 @@
-import { registerLocaleData, NgFor } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { IFormattingOptions, IgxSelectComponent, IgxPrefixDirective, IgxSelectItemComponent, IgxCardComponent, IgxMonthPickerComponent } from 'igniteui-angular';
 import localeDE from '@angular/common/locales/de';
@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-monthpicker-sample-3',
     styleUrls: ['./monthpicker-sample-3.component.scss'],
     templateUrl: './monthpicker-sample-3.component.html',
-    imports: [IgxSelectComponent, FormsModule, IgxPrefixDirective, NgFor, IgxSelectItemComponent, IgxCardComponent, IgxMonthPickerComponent]
+    imports: [IgxSelectComponent, FormsModule, IgxPrefixDirective, IgxSelectItemComponent, IgxCardComponent, IgxMonthPickerComponent]
 })
 export class MonthpickerSample3Component implements OnInit {
     public formatOptions: IFormattingOptions = {

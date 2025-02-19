@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
 import { FormsModule } from '@angular/forms';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 
 @Component({
@@ -14,7 +14,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     selector: 'grid-sample',
     styleUrls: ['./grid-selection.component.scss'],
     templateUrl: 'grid-selection.component.html',
-    imports: [IgxSwitchComponent, FormsModule, IgxButtonGroupComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, NgIf, IgxBadgeComponent, IgxButtonDirective, IgxIconComponent, IgxSnackbarComponent, AsyncPipe]
+    imports: [IgxSwitchComponent, FormsModule, IgxButtonGroupComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent, IgxButtonDirective, IgxIconComponent, IgxSnackbarComponent, AsyncPipe]
 })
 
 export class GridSelectionSampleComponent implements OnInit {

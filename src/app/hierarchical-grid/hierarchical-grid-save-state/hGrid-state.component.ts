@@ -3,7 +3,7 @@ import { NavigationStart, Router, RouterLink } from '@angular/router';
 import { GridFeatures, IGridState, IGridStateOptions, IgxGridStateDirective, IgxHierarchicalGridComponent, IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent, IgxButtonDirective, IgxIconComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
 import { take } from 'rxjs/operators';
 import { SINGERS } from '../../data/singersData';
-import { NgFor } from '@angular/common';
+
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 class MySummary {
@@ -24,7 +24,7 @@ class MySummary {
     selector: 'app-hgrid',
     styleUrls: ['./hGrid-state.component.scss'],
     templateUrl: './hGrid-state.component.html',
-    imports: [IgxButtonDirective, IgxIconComponent, RouterLink, IgxCheckboxComponent, NgFor, IgxHierarchicalGridComponent, IgxGridStateDirective, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent]
+    imports: [IgxButtonDirective, IgxIconComponent, RouterLink, IgxCheckboxComponent, IgxHierarchicalGridComponent, IgxGridStateDirective, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent]
 })
 
 export class HGridSaveStateComponent implements OnInit, AfterViewInit {

@@ -1,13 +1,13 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { IgxTreeComponent, IgxLayoutDirective, IgxNavigationDrawerComponent, IgxNavDrawerTemplateDirective, IgxTreeNodeComponent, IgxTreeNodeLinkDirective, IgxFlexDirective, IgxIconButtonDirective, IgxToggleActionDirective, IgxIconComponent } from 'igniteui-angular';
-import { NgFor } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-nav-drawer-hierarchical',
     templateUrl: './nav-drawer-hierarchical.component.html',
     styleUrls: ['./nav-drawer-hierarchical.component.scss'],
-    imports: [IgxLayoutDirective, IgxNavigationDrawerComponent, IgxNavDrawerTemplateDirective, IgxTreeComponent, NgFor, IgxTreeNodeComponent, IgxTreeNodeLinkDirective, RouterLink, IgxFlexDirective, IgxIconButtonDirective, IgxToggleActionDirective, IgxIconComponent]
+    imports: [IgxLayoutDirective, IgxNavigationDrawerComponent, IgxNavDrawerTemplateDirective, IgxTreeComponent, IgxTreeNodeComponent, IgxTreeNodeLinkDirective, RouterLink, IgxFlexDirective, IgxIconButtonDirective, IgxToggleActionDirective, IgxIconComponent]
 })
 export class NavDrawerHierarchicalComponent implements AfterViewInit {
     @ViewChild('tree') public tree: IgxTreeComponent;

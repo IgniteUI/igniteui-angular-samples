@@ -3,13 +3,13 @@ import { GridSelectionMode, IgxSnackbarComponent, IgxTreeGridComponent, IRowSele
 import { generateEmployeeFlatData } from '../data/employees-flat';
 import { FormsModule } from '@angular/forms';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-tree-grid-selection-sample',
     styleUrls: ['./tree-grid-selection-sample.component.scss'],
     templateUrl: './tree-grid-selection-sample.component.html',
-    imports: [IgxSwitchComponent, FormsModule, IgxButtonGroupComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxSnackbarComponent, IgxIconComponent, NgIf]
+    imports: [IgxSwitchComponent, FormsModule, IgxButtonGroupComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxSnackbarComponent, IgxIconComponent]
 })
 export class TreeGridSelectionSampleComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
