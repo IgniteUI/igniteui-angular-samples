@@ -1,57 +1,61 @@
 <div class="date-picker-wrapper">
-    <div class="form">
-        <igx-input-group #inputGroup1 [igxToggleAction]="dropDown1" class="input-group" type="border">
-            <input #input1 type="text" igxInput placeholder="choose a destination" [igxAutocomplete]="dropDown1"
-                [(ngModel)]="townFrom" [value]="dropDown1.selectedItem?.value" />
-            <label igxLabel>From</label>
-            <igx-prefix>
-                <igx-icon>flight_takeoff</igx-icon>
-            </igx-prefix>
-            <igx-suffix igxIconButton="flat" class="dropdownToggleButton" igxRipple>
-                <igx-icon>arrow_drop{{ dropDown1.collapsed ? '_down' : '_up' }}</igx-icon>
-            </igx-suffix>
-        </igx-input-group>
+  <div class="form">
+    <igx-input-group #inputGroup1 [igxToggleAction]="dropDown1" class="input-group" type="border">
+      <input #input1 type="text" igxInput placeholder="choose a destination" [igxAutocomplete]="dropDown1"
+        [(ngModel)]="townFrom" [value]="dropDown1.selectedItem?.value" />
+        <label igxLabel>From</label>
+        <igx-prefix>
+          <igx-icon>flight_takeoff</igx-icon>
+        </igx-prefix>
+        <igx-suffix igxIconButton="flat" class="dropdownToggleButton" igxRipple>
+          <igx-icon>arrow_drop{{ dropDown1.collapsed ? '_down' : '_up' }}</igx-icon>
+        </igx-suffix>
+      </igx-input-group>
 
-        <igx-drop-down #dropDown1 (closing)="saveTownFrom()" [width]="'180px'" [maxHeight]="'400px'">
-            <igx-drop-down-item *ngFor="let town of towns | startsWith:townFrom" [value]="town">
-                {{ town }}
-            </igx-drop-down-item>
-        </igx-drop-down>
+      <igx-drop-down #dropDown1 (closing)="saveTownFrom()" [width]="'180px'" [maxHeight]="'400px'">
+        @for (town of towns | startsWith:townFrom; track town) {
+          <igx-drop-down-item [value]="town">
+            {{ town }}
+          </igx-drop-down-item>
+        }
+      </igx-drop-down>
 
-        <igx-input-group #inputGroup2 [igxToggleAction]="dropDown2" class="input-group" type="border">
-            <input #input2 type="text" igxInput placeholder="choose a destination" [igxAutocomplete]="dropDown2"
-                [(ngModel)]="townTo" [value]="dropDown2.selectedItem?.value" />
-            <label igxLabel>To</label>
-            <igx-prefix>
-                <igx-icon>flight_land</igx-icon>
-            </igx-prefix>
-            <igx-suffix igxIconButton="flat" class="dropdownToggleButton" igxRipple>
-                <igx-icon>arrow_drop{{ dropDown2.collapsed ? '_down' : '_up' }}</igx-icon>
-            </igx-suffix>
+      <igx-input-group #inputGroup2 [igxToggleAction]="dropDown2" class="input-group" type="border">
+        <input #input2 type="text" igxInput placeholder="choose a destination" [igxAutocomplete]="dropDown2"
+          [(ngModel)]="townTo" [value]="dropDown2.selectedItem?.value" />
+          <label igxLabel>To</label>
+          <igx-prefix>
+            <igx-icon>flight_land</igx-icon>
+          </igx-prefix>
+          <igx-suffix igxIconButton="flat" class="dropdownToggleButton" igxRipple>
+            <igx-icon>arrow_drop{{ dropDown2.collapsed ? '_down' : '_up' }}</igx-icon>
+          </igx-suffix>
         </igx-input-group>
 
         <igx-drop-down #dropDown2 (closing)="saveTownTo()" [width]="'180px'" [maxHeight]="'400px'">
-            <igx-drop-down-item *ngFor="let town of towns | withoutTownFrom:townFrom | startsWith:townTo"
-                [value]="town">
-                {{ town }}
+          @for (town of towns | withoutTownFrom:townFrom | startsWith:townTo; track town) {
+            <igx-drop-down-item
+              [value]="town">
+              {{ town }}
             </igx-drop-down-item>
+          }
         </igx-drop-down>
-    </div>
-    <igx-input-group class="calendarDropDown" [igxToggleAction]="dropDownCalendar" type="border">
+      </div>
+      <igx-input-group class="calendarDropDown" [igxToggleAction]="dropDownCalendar" type="border">
         <input #dates igxInput [value]="inputStartDate +  slash + inputEndDate" type="text" igxInput
-            [igxDropDownItemNavigation]="dropDownCalendar">
-        <igx-prefix>
+          [igxDropDownItemNavigation]="dropDownCalendar">
+          <igx-prefix>
             <igx-icon>today</igx-icon>
-        </igx-prefix>
-    </igx-input-group>
+          </igx-prefix>
+        </igx-input-group>
 
-    <igx-drop-down #dropDownCalendar (closing)="onClosing()" >
-        <igx-calendar #calendar class="calendar" selection="range" [monthsViewNumber]="2"
+        <igx-drop-down #dropDownCalendar (closing)="onClosing()" >
+          <igx-calendar #calendar class="calendar" selection="range" [monthsViewNumber]="2"
             (selected)="verifyRange($event)">
-        </igx-calendar>
-        <div class="buttons">
+          </igx-calendar>
+          <div class="buttons">
             <button igxButton (click)="oneWay(dropDownCalendar)">One Way Ticket</button>
             <button igxButton (click)="onDoneSelected(dropDownCalendar)">Done</button>
-        </div>
-    </igx-drop-down>
-</div>
+          </div>
+        </igx-drop-down>
+      </div>

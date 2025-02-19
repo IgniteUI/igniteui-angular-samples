@@ -1,34 +1,36 @@
 <div style="width:300px; margin-bottom:20px">
-    <igx-slider id="slider" [minValue]="0.1" [maxValue]="0.9" [step]="0.1" [continuous]="true"
-        [(ngModel)]="mainIgxList.panEndTriggeringThreshold"></igx-slider>
-    <label>Threshold: {{panThreshold}}</label>
+  <igx-slider id="slider" [minValue]="0.1" [maxValue]="0.9" [step]="0.1" [continuous]="true"
+  [(ngModel)]="mainIgxList.panEndTriggeringThreshold"></igx-slider>
+  <label>Threshold: {{panThreshold}}</label>
 </div>
 
 <div class="list-sample">
-    <igx-list [allowLeftPanning]="true" [allowRightPanning]="true" #mainIgxList (leftPan)="leftPanPerformed($event)"
-        (rightPan)="rightPanPerformed($event)">
-        <ng-template igxListItemLeftPanning>
-            <div class="listItemLeftPanningStyle">
-                <igx-icon>delete</igx-icon>Delete
-            </div>
-        </ng-template>
-        <ng-template igxListItemRightPanning>
-            <div class="listItemRightPanningStyle">
-                <igx-icon>call</igx-icon>Dial
-            </div>
-        </ng-template>
-        <igx-list-item [isHeader]="true">Contacts</igx-list-item>
-        <igx-list-item #item *ngFor="let contact of contacts" igxRipple="pink"
-            igxRippleTarget=".igx-list__item-content">
-            <igx-avatar igxListThumbnail [src]="contact.photo" shape="circle"></igx-avatar>
-            <span igxListLineTitle>{{ contact.name }}</span>
-            <span igxListLineSubTitle>{{ contact.phone }}</span>
-            <igx-icon igxListAction [style.color]="contact.isFavorite ? 'orange' : 'lightgray'" igxRipple="pink"
-                [igxRippleCentered]="true" (click)="toggleFavorite(contact, $event)"
-                (mousedown)="mousedown($event)">star</igx-icon>
-        </igx-list-item>
-    </igx-list>
-    <igx-toast #toast></igx-toast>
+  <igx-list [allowLeftPanning]="true" [allowRightPanning]="true" #mainIgxList (leftPan)="leftPanPerformed($event)"
+    (rightPan)="rightPanPerformed($event)">
+    <ng-template igxListItemLeftPanning>
+      <div class="listItemLeftPanningStyle">
+        <igx-icon>delete</igx-icon>Delete
+      </div>
+    </ng-template>
+    <ng-template igxListItemRightPanning>
+      <div class="listItemRightPanningStyle">
+        <igx-icon>call</igx-icon>Dial
+      </div>
+    </ng-template>
+    <igx-list-item [isHeader]="true">Contacts</igx-list-item>
+    @for (contact of contacts; track contact) {
+      <igx-list-item #item igxRipple="pink"
+        igxRippleTarget=".igx-list__item-content">
+        <igx-avatar igxListThumbnail [src]="contact.photo" shape="circle"></igx-avatar>
+        <span igxListLineTitle>{{ contact.name }}</span>
+        <span igxListLineSubTitle>{{ contact.phone }}</span>
+        <igx-icon igxListAction [style.color]="contact.isFavorite ? 'orange' : 'lightgray'" igxRipple="pink"
+          [igxRippleCentered]="true" (click)="toggleFavorite(contact, $event)"
+        (mousedown)="mousedown($event)">star</igx-icon>
+      </igx-list-item>
+    }
+  </igx-list>
+  <igx-toast #toast></igx-toast>
 </div>
 
 <button igxButton="contained" (click)="repopulateHandler()" style="margin-top:20px">Repopulate IgxList</button>

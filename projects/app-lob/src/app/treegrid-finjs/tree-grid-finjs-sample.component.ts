@@ -3,7 +3,7 @@ import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStr
 import { Contract, REGIONS } from '../data/financialData';
 import { SignalRService } from '../services/signal-r.service';
 import { FormsModule } from '@angular/forms';
-import { NgIf, NgFor, AsyncPipe, CurrencyPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, CurrencyPipe, DatePipe } from '@angular/common';
 import { IgxPreventDocumentScrollDirective } from '../../../../../src/app/directives/prevent-scroll.directive';
 
 @Component({
@@ -11,7 +11,7 @@ import { IgxPreventDocumentScrollDirective } from '../../../../../src/app/direct
     selector: 'app-tree-grid-finjs-sample',
     styleUrls: ['./tree-grid-finjs-sample.component.scss'],
     templateUrl: './tree-grid-finjs-sample.component.html',
-    imports: [IgxSliderComponent, FormsModule, IgxButtonGroupComponent, NgIf, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxGridToolbarHidingComponent, IgxGridToolbarExporterComponent, IgxTreeGridGroupByAreaComponent, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, NgFor, IgxSelectItemComponent, IgxCellTemplateDirective, IgxIconComponent, IgxOverlayOutletDirective, AsyncPipe, CurrencyPipe, DatePipe, IgxTreeGridGroupingPipe]
+    imports: [IgxSliderComponent, FormsModule, IgxButtonGroupComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxGridToolbarHidingComponent, IgxGridToolbarExporterComponent, IgxTreeGridGroupByAreaComponent, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxIconComponent, IgxOverlayOutletDirective, AsyncPipe, CurrencyPipe, DatePipe, IgxTreeGridGroupingPipe]
 })
 
 export class TreeGridFinJSComponent implements OnDestroy, OnInit {

@@ -1,81 +1,85 @@
 <div class="grid__wrapper">
-    <div class="controls-holder">
-        <div class="switches">
-            <button igxButton="contained" (click)="restoreGridState()">
-                <igx-icon class="btn-icon">restore</igx-icon>
-                <span>Restore</span>
-            </button>
-            <button igxButton="contained" (click)="saveGridState()">
-                <igx-icon class="btn-icon">save</igx-icon>
-                <span>Save</span>
-            </button>
-            <button igxButton="contained" (click)="resetGridState()">
-                <igx-icon class="btn-icon">clear</igx-icon>
-                <span>Reset</span>
-            </button>
-            <button igxButton="contained" [routerLink]="['../grid-about']">
-                <igx-icon class="btn-icon">forward</igx-icon>
-                <span>Leave</span>
-            </button>
-            <button igxButton="contained" (click)="clearStorage()">
-                <igx-icon class="btn-icon">delete</igx-icon>
-                <span>Clear</span>
-            </button>
-            <button igxButton="contained" (click)="reloadPage()">
-                <igx-icon class="btn-icon">refresh</igx-icon>
-                <span>Reload</span>
-            </button>
-        </div>
-
-        <div class="switches">
-            <ul>
-                <li>Clicking the SAVE button or leaving the page <a [routerLink]="['../grid-about']"><strong>here</strong></a> will save grid state to localStorage.</li>
-                <li>Use the control buttons to SAVE / RESTORE / RESET / DELETE / grid state or LEAVE the page.</li>
-                <li>Select/Deselect checkboxes to control saving / restoring feature state.</li>
-            </ul>
-        </div>
-
-        <div class="switches">
-            <div class="control-item">
-                <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">All</igx-checkbox>
-            </div>
-            <div class="control-item" *ngFor="let f of features">
-                <igx-checkbox (change)="onChange($event, f.key)" [checked]="options[f.key]">
-                    {{ f.shortName }}
-                </igx-checkbox>
-            </div>
-        </div>
+  <div class="controls-holder">
+    <div class="switches">
+      <button igxButton="contained" (click)="restoreGridState()">
+        <igx-icon class="btn-icon">restore</igx-icon>
+        <span>Restore</span>
+      </button>
+      <button igxButton="contained" (click)="saveGridState()">
+        <igx-icon class="btn-icon">save</igx-icon>
+        <span>Save</span>
+      </button>
+      <button igxButton="contained" (click)="resetGridState()">
+        <igx-icon class="btn-icon">clear</igx-icon>
+        <span>Reset</span>
+      </button>
+      <button igxButton="contained" [routerLink]="['../grid-about']">
+        <igx-icon class="btn-icon">forward</igx-icon>
+        <span>Leave</span>
+      </button>
+      <button igxButton="contained" (click)="clearStorage()">
+        <igx-icon class="btn-icon">delete</igx-icon>
+        <span>Clear</span>
+      </button>
+      <button igxButton="contained" (click)="reloadPage()">
+        <igx-icon class="btn-icon">refresh</igx-icon>
+        <span>Reload</span>
+      </button>
     </div>
 
-    <igx-grid [igxPreventDocumentScroll]="true" [id]="gridId" #grid1 [igxGridState]="options"
-        width="98%" height="530px" [autoGenerate]="false" [moving]="true"
-        [data]="localData"
-        [primaryKey]="'EmployeeID'"
-        [rowEditable]="false"
-        [allowFiltering]="true" 
-        [filterMode]="'excelStyleFilter'"
-        [allowAdvancedFiltering]="true"
-        [cellSelection]="'multiple'"
-        [rowSelection]="'none'">
-        <igx-paginator></igx-paginator>
-        <igx-grid-toolbar>
-            <igx-grid-toolbar-actions>
-                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
-                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
-            </igx-grid-toolbar-actions>
-        </igx-grid-toolbar>
+    <div class="switches">
+      <ul>
+        <li>Clicking the SAVE button or leaving the page <a [routerLink]="['../grid-about']"><strong>here</strong></a> will save grid state to localStorage.</li>
+        <li>Use the control buttons to SAVE / RESTORE / RESET / DELETE / grid state or LEAVE the page.</li>
+        <li>Select/Deselect checkboxes to control saving / restoring feature state.</li>
+      </ul>
+    </div>
 
-        <igx-column *ngFor="let c of columns"
-            [sortable]="c.sortable"
-            [editable]="true"
-            [hasSummary]="c.hasSummary"
-            [filterable]="c.filterable"
-            [groupable]="c.groupable"
-            [field]="c.field"
-            [header]="c.header"
-            [dataType]="c.dataType"
-            [pinned]="c.pinned"
-            [hidden]="c.hidden">
-        </igx-column>
-    </igx-grid>
+    <div class="switches">
+      <div class="control-item">
+        <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">All</igx-checkbox>
+      </div>
+      @for (f of features; track f) {
+        <div class="control-item">
+          <igx-checkbox (change)="onChange($event, f.key)" [checked]="options[f.key]">
+            {{ f.shortName }}
+          </igx-checkbox>
+        </div>
+      }
+    </div>
+  </div>
+
+  <igx-grid [igxPreventDocumentScroll]="true" [id]="gridId" #grid1 [igxGridState]="options"
+    width="98%" height="530px" [autoGenerate]="false" [moving]="true"
+    [data]="localData"
+    [primaryKey]="'EmployeeID'"
+    [rowEditable]="false"
+    [allowFiltering]="true"
+    [filterMode]="'excelStyleFilter'"
+    [allowAdvancedFiltering]="true"
+    [cellSelection]="'multiple'"
+    [rowSelection]="'none'">
+    <igx-paginator></igx-paginator>
+    <igx-grid-toolbar>
+      <igx-grid-toolbar-actions>
+        <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+        <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+      </igx-grid-toolbar-actions>
+    </igx-grid-toolbar>
+
+    @for (c of columns; track c) {
+      <igx-column
+        [sortable]="c.sortable"
+        [editable]="true"
+        [hasSummary]="c.hasSummary"
+        [filterable]="c.filterable"
+        [groupable]="c.groupable"
+        [field]="c.field"
+        [header]="c.header"
+        [dataType]="c.dataType"
+        [pinned]="c.pinned"
+        [hidden]="c.hidden">
+      </igx-column>
+    }
+  </igx-grid>
 </div>

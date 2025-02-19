@@ -4,14 +4,14 @@ import { IButtonGroupEventArgs, IChangeCheckboxEventArgs, IgxButtonGroupComponen
 from 'igniteui-angular';
 import { Observable, Subscription, timer } from 'rxjs';
 import { debounce } from 'rxjs/operators';
-import { NgIf } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-finjs-controllers',
     styleUrls: ['./controllers.component.scss'],
     templateUrl: './controllers.component.html',
-    imports: [NgIf, IgxSwitchComponent, FormsModule, IgxSliderComponent, IgxButtonGroupComponent, IgxToastComponent]
+    imports: [IgxSwitchComponent, FormsModule, IgxSliderComponent, IgxButtonGroupComponent, IgxToastComponent]
 })
 export class ControllerComponent implements OnInit, OnDestroy {
     @ViewChild('buttonGroup1', { static: true }) public playButtons: IgxButtonGroupComponent;

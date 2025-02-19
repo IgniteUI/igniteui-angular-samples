@@ -1,40 +1,46 @@
 <div class="controls-wrapper">
-    <div class="controls-holder">
-        <div class="switches">
-            <div class="control-item" *ngIf="isThemeSwitchVisible">
-                <igx-switch class="theme-switch" [checked]="false" [(ngModel)]="theme"
-                    (change)="onChange('theme', $event)">Dark</igx-switch>
-            </div>
-            <div class="control-item">
-                <igx-switch [checked]="true" (change)="onChange('grouped', $event)" color="blue"
-                    cssClass="finjs-sample-switch">
-                    Grouped</igx-switch>
-            </div>
-            <div class="control-item">
-                <igx-switch [checked]="true" (change)="onChange('toolbar', $event)" color="blue"
-                    cssClass="finjs-sample-switch">Toolbar</igx-switch>
-            </div>
-            <div class="finjs-slider control-item">
-                <label for="slider">Records: {{volume}}</label>
-                <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" [step]="100"
-                    [thumbLabelVisibilityDuration]="250" [continuous]="true"></igx-slider>
-            </div>
-            <div class="finjs-slider control-item">
-                <label for="slider">Frequency: {{frequency}} ms</label>
-                <igx-slider #slider2 id="slider" [minValue]="100" [maxValue]="3000" [step]="10" [(ngModel)]="frequency"
-                    [thumbLabelVisibilityDuration]="250" [continuous]="true"></igx-slider>
-            </div>
+  <div class="controls-holder">
+    <div class="switches">
+      @if (isThemeSwitchVisible) {
+        <div class="control-item">
+          <igx-switch class="theme-switch" [checked]="false" [(ngModel)]="theme"
+          (change)="onChange('theme', $event)">Dark</igx-switch>
         </div>
-        <div class="control-item finjs-play-controls">
-            <igx-buttongroup class="finjssample-btn-group" #buttonGroup1 [values]="controls"
-                (selected)="onButtonSelected($event)"></igx-buttongroup>
-        </div>
+      }
+      <div class="control-item">
+        <igx-switch [checked]="true" (change)="onChange('grouped', $event)" color="blue"
+          cssClass="finjs-sample-switch">
+        Grouped</igx-switch>
+      </div>
+      <div class="control-item">
+        <igx-switch [checked]="true" (change)="onChange('toolbar', $event)" color="blue"
+        cssClass="finjs-sample-switch">Toolbar</igx-switch>
+      </div>
+      <div class="finjs-slider control-item">
+        <label for="slider">Records: {{volume}}</label>
+        <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" [step]="100"
+        [thumbLabelVisibilityDuration]="250" [continuous]="true"></igx-slider>
+      </div>
+      <div class="finjs-slider control-item">
+        <label for="slider">Frequency: {{frequency}} ms</label>
+        <igx-slider #slider2 id="slider" [minValue]="100" [maxValue]="3000" [step]="10" [(ngModel)]="frequency"
+        [thumbLabelVisibilityDuration]="250" [continuous]="true"></igx-slider>
+      </div>
     </div>
-    <div class="sample-toolbar">
-        <span *ngIf="buttonSelected === 1">Feeding {{volume}} records every {{frequency / 1000}} sec.
-            {{volume}} records updated. </span>
-        <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
-            ~{{volume/5}} records updated.</span>
+    <div class="control-item finjs-play-controls">
+      <igx-buttongroup class="finjssample-btn-group" #buttonGroup1 [values]="controls"
+      (selected)="onButtonSelected($event)"></igx-buttongroup>
     </div>
-    <igx-toast #toast (onClosed)="handleHidden()"></igx-toast>
+  </div>
+  <div class="sample-toolbar">
+    @if (buttonSelected === 1) {
+      <span>Feeding {{volume}} records every {{frequency / 1000}} sec.
+      {{volume}} records updated. </span>
+    }
+    @if (buttonSelected === 0) {
+      <span>Feeding {{volume}} records every {{frequency / 1000}} sec.
+      ~{{volume/5}} records updated.</span>
+    }
+  </div>
+  <igx-toast #toast (onClosed)="handleHidden()"></igx-toast>
 </div>

@@ -21,7 +21,7 @@ import {
 } from "igniteui-angular";
 import { ORDERS_DATA } from "../data/orders";
 import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scroll.directive";
-import { NgFor } from "@angular/common";
+
 
 class UnitsSummary {
     public operate(
@@ -141,14 +141,13 @@ class DeliveredSummary {
     styleUrls: ["./tree-grid-disable-summaries.component.scss"],
     templateUrl: "./tree-grid-disable-summaries.component.html",
     imports: [
-        NgFor,
-        IgxTreeGridComponent,
-        IgxPreventDocumentScrollDirective,
-        IgxColumnComponent,
-        IgxButtonDirective,
-        IgxCheckboxComponent,
-        IgxToggleDirective
-    ]
+    IgxTreeGridComponent,
+    IgxPreventDocumentScrollDirective,
+    IgxColumnComponent,
+    IgxButtonDirective,
+    IgxCheckboxComponent,
+    IgxToggleDirective
+]
 })
 export class TreeGridDisableSummariesComponent implements OnInit, AfterViewInit {
     @ViewChild("treeGrid1", { read: IgxTreeGridComponent, static: true }) public treeGrid1: IgxTreeGridComponent;

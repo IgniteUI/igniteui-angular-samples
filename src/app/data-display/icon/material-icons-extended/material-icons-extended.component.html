@@ -1,93 +1,101 @@
 <div class="sample">
-    <div class="sample__header">
-        <div class="sample__header-title">
-            <igx-select
-                (selectionChanging)="handleSelection($event)"
-                type="box"
-                [value]="selectedCategory"
+  <div class="sample__header">
+    <div class="sample__header-title">
+      <igx-select
+        (selectionChanging)="handleSelection($event)"
+        type="box"
+        [value]="selectedCategory"
+        >
+        <label igxLabel>Select category</label>
+        @for (option of categories; track option) {
+          <igx-select-item
+            [value]="option.category"
             >
-                <label igxLabel>Select category</label>
-                <igx-select-item
-                    *ngFor="let option of categories"
-                    [value]="option.category"
-                >
-                    {{ option.text }}
-                </igx-select-item>
-            </igx-select>
-        </div>
-        <igx-input-group class="sample__header-search" type="search">
-            <input #input igxInput placeholder="Search by icon name or keyword" />
-            <igx-prefix>
-                <igx-icon>search</igx-icon>
-            </igx-prefix>
-            <igx-suffix
-                *ngIf="input.value.length > 0"
-                (click)="input.value = ''"
-            >
-                <igx-icon>clear</igx-icon>
-            </igx-suffix>
-        </igx-input-group>
+            {{ option.text }}
+          </igx-select-item>
+        }
+      </igx-select>
     </div>
-    <div class="sample__body">
-        <ng-container *ngIf="(allIcons | filterByName: input.value | categoriesFilter: selectedCategory) as fResults">
-            <article *ngFor="let group of fResults" class="sample__body-inner">
-                <header class="sample__body-title">
-                    {{ group.category }}
-                </header>
-                <section class="sample__body-section">
-                    <div class="sample__grid">
-                        <div
-                            class="sample__grid-item"
-                            *ngFor="let icon of group.icons"
-                        >
-                            <button
-                                [value]="icon.name"
+    <igx-input-group class="sample__header-search" type="search">
+      <input #input igxInput placeholder="Search by icon name or keyword" />
+      <igx-prefix>
+        <igx-icon>search</igx-icon>
+      </igx-prefix>
+      @if (input.value.length > 0) {
+        <igx-suffix
+          (click)="input.value = ''"
+          >
+          <igx-icon>clear</igx-icon>
+        </igx-suffix>
+      }
+    </igx-input-group>
+  </div>
+  <div class="sample__body">
+    @if ((allIcons | filterByName: input.value | categoriesFilter: selectedCategory); as fResults) {
+      @for (group of fResults; track group) {
+        <article class="sample__body-inner">
+          <header class="sample__body-title">
+            {{ group.category }}
+          </header>
+          <section class="sample__body-section">
+            <div class="sample__grid">
+              @for (icon of group.icons; track icon) {
+                <div
+                  class="sample__grid-item"
+                  >
+                  <button
+                    [value]="icon.name"
                                 [title]="
                                     'Copy &quot;' +
                                     icon.name +
                                     '&quot; to clipboard'
                                 "
-                                (click)="copyValue($event, icon.name)"
-                                class="sample__grid-item-clipboard"
-                            >
-                                <igx-icon>content_copy</igx-icon>
-                            </button>
-                            <div class="sample__grid-item-content">
-                                <igx-icon
-                                    class="sample__grid-icon"
-                                    family="imx-icons"
-                                    name="{{ icon.name }}"
-                                ></igx-icon>
-                                <span
-                                    class="sample__grid-icon-name"
-                                    title="{{ icon.name }}"
-                                    >{{ icon.name }}</span
-                                >
-                            </div>
-
-                            <button
-                                (click)="downloadFile(icon)"
-                                igxripple
-                                class="sample__grid-item-download"
-                                igxButton="contained"
-                            >
-                                <igx-icon>arrow_downward</igx-icon>
-                                <span>SVG</span>
-                            </button>
-                        </div>
+                    (click)="copyValue($event, icon.name)"
+                    class="sample__grid-item-clipboard"
+                    >
+                    <igx-icon>content_copy</igx-icon>
+                  </button>
+                  <div class="sample__grid-item-content">
+                    <igx-icon
+                      class="sample__grid-icon"
+                      family="imx-icons"
+                      name="{{ icon.name }}"
+                    ></igx-icon>
+                    <span
+                      class="sample__grid-icon-name"
+                      title="{{ icon.name }}"
+                      >{{ icon.name }}</span
+                      >
                     </div>
-                </section>
-            </article>
-            <div class="sample__body-empty">
-                <span>
-                    No results
-                    {{selectedCategory !== 'all' && fResults.length !== -1 ? ' in category: ' : 'found' }}
-                    <strong *ngIf="selectedCategory !== 'all' && fResults.length !== -1">{{ selectedCategory }}</strong>
-                </span>
-                <button *ngIf="selectedCategory !== 'all' && fResults.length !== -1" igxButton (click)="resetFilter()">
-                    Reset the category filter
-                </button>
-            </div>
-        </ng-container>
+                    <button
+                      (click)="downloadFile(icon)"
+                      igxripple
+                      class="sample__grid-item-download"
+                      igxButton="contained"
+                      >
+                      <igx-icon>arrow_downward</igx-icon>
+                      <span>SVG</span>
+                    </button>
+                  </div>
+                }
+              </div>
+            </section>
+          </article>
+        }
+        <div class="sample__body-empty">
+          <span>
+            No results
+            {{selectedCategory !== 'all' && fResults.length !== -1 ? ' in category: ' : 'found' }}
+            @if (selectedCategory !== 'all' && fResults.length !== -1) {
+              <strong>{{ selectedCategory }}</strong>
+            }
+          </span>
+          @if (selectedCategory !== 'all' && fResults.length !== -1) {
+            <button igxButton (click)="resetFilter()">
+              Reset the category filter
+            </button>
+          }
+        </div>
+      }
     </div>
-</div>
+  </div>

@@ -2,13 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxGridComponent, FormattedValuesFilteringStrategy, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-grid-sample',
     styleUrls: ['./grid-formatted-filtering-strategy.component.scss'],
     templateUrl: 'grid-formatted-filtering-strategy.component.html',
-    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, NgIf]
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective]
 })
 export class GridFormattedFilteringStrategyComponent implements OnInit {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

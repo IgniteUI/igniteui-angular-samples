@@ -3,14 +3,14 @@ import { DefaultSortingStrategy, IgxTreeGridComponent, ISortingOptions, SortingD
 import { ORDERS_DATA } from '../data/orders';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { FormsModule } from '@angular/forms';
-import { NgIf, UpperCasePipe } from '@angular/common';
+import { UpperCasePipe } from '@angular/common';
 import { TreeGridContextmenuComponent } from './tree-grid-contextmenu/tree-grid-contextmenu.component';
 
 @Component({
     selector: 'app-tree-grid-sorting-sample',
     styleUrls: ['./tree-grid-sorting-sample.component.scss'],
     templateUrl: 'tree-grid-sorting-sample.component.html',
-    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxButtonDirective, IgxGridToolbarActionsComponent, IgxSimpleComboComponent, FormsModule, IgxComboClearIconDirective, IgxComboItemDirective, IgxTreeGridGroupByAreaComponent, IgxColumnComponent, IgxCellTemplateDirective, NgIf, TreeGridContextmenuComponent, UpperCasePipe]
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxButtonDirective, IgxGridToolbarActionsComponent, IgxSimpleComboComponent, FormsModule, IgxComboClearIconDirective, IgxComboItemDirective, IgxTreeGridGroupByAreaComponent, IgxColumnComponent, IgxCellTemplateDirective, TreeGridContextmenuComponent, UpperCasePipe]
 })
 
 export class TreeGridSortingSampleComponent implements OnInit, AfterViewInit {

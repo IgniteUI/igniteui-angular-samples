@@ -1,59 +1,61 @@
 <article>
-    <form>
-        <h6>Line Type</h6>
-        <igx-input-group type="line">
-            <input igxInput name="fullName1" type="text" />
-            <label igxLabel for="fullName1">Full Name</label>
-            <igx-suffix>
-                <igx-icon>person</igx-icon>
-            </igx-suffix>
-        </igx-input-group>
-        <h6>Box Type</h6>
-        <igx-input-group type="box">
-            <input igxInput name="fullName2" type="text" />
-            <label igxLabel for="fullName2">Full Name</label>
-            <igx-suffix>
-                <igx-icon>person</igx-icon>
-            </igx-suffix>
-        </igx-input-group>
-        <h6>Border Type</h6>
-        <igx-input-group type="border">
-            <input igxInput name="fullName3" type="text" />
-            <label igxLabel for="fullName3">Full Name</label>
-            <igx-suffix>
-                <igx-icon>person</igx-icon>
-            </igx-suffix>
-        </igx-input-group>
-        <h6>File Type</h6>
-        <igx-input-group>
-            <label igxLabel>Important Documents</label>
-            <input
-                igxInput
-                type="file"
-                multiple
-            />
-            <igx-hint>Upload a file to begin...</igx-hint>
-        </igx-input-group>
-        <h6>Search Type</h6>
-        <igx-input-group type="search">
-            <input #input1 igxInput placeholder="Search" />
-            <igx-prefix>
-                <igx-icon>search</igx-icon>
-            </igx-prefix>
-            <igx-suffix *ngIf="input1.value.length > 0" (click)="input1.value = ''">
-                <igx-icon>clear</igx-icon>
-            </igx-suffix>
-            <igx-suffix>
-                <igx-icon>mic</igx-icon>
-            </igx-suffix>
-        </igx-input-group>
-        <h6>Type Box set via a Token</h6>
-        <igx-input-group>
-            <input igxInput name="fullName1" type="text" />
-            <label igxLabel for="fullName1">Full Name</label>
-            <igx-suffix>
-                <igx-icon>person</igx-icon>
-            </igx-suffix>
-        </igx-input-group>
+  <form>
+    <h6>Line Type</h6>
+    <igx-input-group type="line">
+      <input igxInput name="fullName1" type="text" />
+      <label igxLabel for="fullName1">Full Name</label>
+      <igx-suffix>
+        <igx-icon>person</igx-icon>
+      </igx-suffix>
+    </igx-input-group>
+    <h6>Box Type</h6>
+    <igx-input-group type="box">
+      <input igxInput name="fullName2" type="text" />
+      <label igxLabel for="fullName2">Full Name</label>
+      <igx-suffix>
+        <igx-icon>person</igx-icon>
+      </igx-suffix>
+    </igx-input-group>
+    <h6>Border Type</h6>
+    <igx-input-group type="border">
+      <input igxInput name="fullName3" type="text" />
+      <label igxLabel for="fullName3">Full Name</label>
+      <igx-suffix>
+        <igx-icon>person</igx-icon>
+      </igx-suffix>
+    </igx-input-group>
+    <h6>File Type</h6>
+    <igx-input-group>
+      <label igxLabel>Important Documents</label>
+      <input
+        igxInput
+        type="file"
+        multiple
+        />
+        <igx-hint>Upload a file to begin...</igx-hint>
+      </igx-input-group>
+      <h6>Search Type</h6>
+      <igx-input-group type="search">
+        <input #input1 igxInput placeholder="Search" />
+        <igx-prefix>
+          <igx-icon>search</igx-icon>
+        </igx-prefix>
+        @if (input1.value.length > 0) {
+          <igx-suffix (click)="input1.value = ''">
+            <igx-icon>clear</igx-icon>
+          </igx-suffix>
+        }
+        <igx-suffix>
+          <igx-icon>mic</igx-icon>
+        </igx-suffix>
+      </igx-input-group>
+      <h6>Type Box set via a Token</h6>
+      <igx-input-group>
+        <input igxInput name="fullName1" type="text" />
+        <label igxLabel for="fullName1">Full Name</label>
+        <igx-suffix>
+          <igx-icon>person</igx-icon>
+        </igx-suffix>
+      </igx-input-group>
     </form>
-</article>
+  </article>

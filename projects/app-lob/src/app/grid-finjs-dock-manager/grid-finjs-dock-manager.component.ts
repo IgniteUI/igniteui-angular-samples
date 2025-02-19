@@ -8,14 +8,14 @@ import { FloatingPanesService } from '../services/floating-panes.service';
 import { SignalRService } from '../services/signal-r.service';
 import { DockSlotComponent, GridHostDirective } from './dock-slot.component';
 import { FormsModule } from '@angular/forms';
-import { NgFor, NgIf, AsyncPipe, CurrencyPipe } from '@angular/common';
+import { AsyncPipe, CurrencyPipe } from '@angular/common';
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [SignalRService, FloatingPanesService],
     selector: 'app-finjs-dock-manager',
     templateUrl: './grid-finjs-dock-manager.component.html',
     styleUrls: ['./grid-finjs-dock-manager.component.scss'],
-    imports: [IgxSwitchComponent, FormsModule, IgxSelectComponent, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent, NgFor, IgxSelectItemComponent, IgxButtonDirective, IgxOverlayOutletDirective, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, NgIf, IgxPaginatorComponent, GridHostDirective, AsyncPipe, CurrencyPipe],
+    imports: [IgxSwitchComponent, FormsModule, IgxSelectComponent, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent, IgxSelectItemComponent, IgxButtonDirective, IgxOverlayOutletDirective, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxPaginatorComponent, GridHostDirective, AsyncPipe, CurrencyPipe],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterViewInit, DoCheck {

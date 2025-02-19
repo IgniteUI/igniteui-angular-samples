@@ -2,13 +2,13 @@ import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { IgxGridComponent, IgxButtonGroupComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf, CurrencyPipe } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
     selector: 'app-grid-sample',
     styleUrls: ['./grid-excel-style-filtering-sample-1.component.scss'],
     templateUrl: 'grid-excel-style-filtering-sample-1.component.html',
-    imports: [IgxButtonGroupComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxColumnComponent, IgxCellTemplateDirective, NgIf, CurrencyPipe]
+    imports: [IgxButtonGroupComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxColumnComponent, IgxCellTemplateDirective, CurrencyPipe]
 })
 
 export class ExcelStyleFilteringSample1Component implements OnInit {

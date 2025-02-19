@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, TemplateRef, ViewChild, OnInit, AfterView
 import { IgxColumnComponent, IgxGridComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { debounceTime } from 'rxjs/operators';
 import { RemoteServiceVirt } from '../../services/remoteVirtualization.service';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
@@ -10,7 +10,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-remote-virtualization-sample',
     styleUrls: ['grid-sample-4.component.scss'],
     templateUrl: 'grid-sample-4.component.html',
-    imports: [IgxCellTemplateDirective, NgIf, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxBadgeComponent, AsyncPipe]
+    imports: [IgxCellTemplateDirective, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxBadgeComponent, AsyncPipe]
 })
 
 export class GridRemoteVirtualizationSampleComponent implements OnInit, AfterViewInit, OnDestroy{

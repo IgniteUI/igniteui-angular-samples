@@ -2,14 +2,14 @@ import { Component, OnInit, ViewChild} from '@angular/core';
 import { DefaultSortingStrategy, IgxGridComponent, SortingDirection, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf } from '@angular/common';
+
 import { ContextmenuComponent } from './contextmenu/contextmenu.component';
 
 @Component({
     selector: 'app-grid-contextmenu-sample',
     styleUrls: ['./grid-contextmenu-sample.component.scss'],
     templateUrl: './grid-contextmenu-sample.component.html',
-    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, NgIf, ContextmenuComponent]
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, ContextmenuComponent]
 })
 
 export class GridContextmenuSampleComponent implements OnInit {

@@ -2,13 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent, TreeGridFormattedValuesFilteringStrategy, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-tree-grid-formatted-filtering-strategy',
     styleUrls: ['./tree-grid-formatted-filtering-strategy.component.scss'],
     templateUrl: 'tree-grid-formatted-filtering-strategy.component.html',
-    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, NgIf]
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective]
 })
 
 export class TreeGridFormattedFilteringStrategyComponent implements OnInit {

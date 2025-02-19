@@ -1,61 +1,61 @@
 <span class="button-group-wrapper">
-    <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
+  <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
 </span>
 <div class="sample-wrapper">
-    <div class="grid-wrapper">
-        <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" [height]="'550px'" [cellSelection]="selectionMode"
-            (rangeSelected)="onRangeSelected()"
-            (selected)="onCellSelected($event)"
-            >
-            <igx-column [field]="'ProductID'"></igx-column>
-            <igx-column [field]="'ProductName'"></igx-column>
-            <igx-column [field]="'UnitsInStock'" [dataType]="'number'"></igx-column>
-            <igx-column [field]="'UnitPrice'" [dataType]="'number'"></igx-column>
-            <igx-column [field]="'Discontinued'" [dataType]="'boolean'">
-            </igx-column>
-            <igx-column [field]="'OrderDate'" [dataType]="'date'"></igx-column>
-        </igx-grid>
-    </div>
-    <div class="log-wrapper">
-        <div class="selected-data-area">
-            <div class="logContainer">
-                <div class="highlight">
-                    <span>Events execution sequence</span>
-                    <button class="clearBtn" igxButton="flat" (click)="clearLog()">
-                        <igx-icon>clear</igx-icon>
-                        <span>Clear log</span>
-                    </button>
-                </div>
-                <hr />
-                <div #logger class="logger"></div>
-            </div>
+  <div class="grid-wrapper">
+    <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" [height]="'550px'" [cellSelection]="selectionMode"
+      (rangeSelected)="onRangeSelected()"
+      (selected)="onCellSelected($event)"
+      >
+      <igx-column [field]="'ProductID'"></igx-column>
+      <igx-column [field]="'ProductName'"></igx-column>
+      <igx-column [field]="'UnitsInStock'" [dataType]="'number'"></igx-column>
+      <igx-column [field]="'UnitPrice'" [dataType]="'number'"></igx-column>
+      <igx-column [field]="'Discontinued'" [dataType]="'boolean'">
+      </igx-column>
+      <igx-column [field]="'OrderDate'" [dataType]="'date'"></igx-column>
+    </igx-grid>
+  </div>
+  <div class="log-wrapper">
+    <div class="selected-data-area">
+      <div class="logContainer">
+        <div class="highlight">
+          <span>Events execution sequence</span>
+          <button class="clearBtn" igxButton="flat" (click)="clearLog()">
+            <igx-icon>clear</igx-icon>
+            <span>Clear log</span>
+          </button>
         </div>
+        <hr />
+        <div #logger class="logger"></div>
+      </div>
     </div>
+  </div>
 </div>
 
 <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.close()">
-    <div class="container">
-        <igx-icon>notification_important</igx-icon>
-        <ng-container *ngIf="selectionMode === 'multiple'">
-            <ul>
-                <li><b>This is the default selection behavior.</b></li>
-                <li>Click on a cell and while pressing the mouse key perform drag action.
-                </li>
-                <li>Select a cell and press Shift + Arrow down key, this will start range selection as well.</li>
-            </ul>
-        </ng-container>
-        <ng-container *ngIf="selectionMode === 'single'">
-            <ul>
-                <li><b>Now you can select only one cell within the grid.</b></li>
-                <li>On single cell click the previous selection state will be cleared.</li>
-                <li>The mouse drag will not work and instead of selecting a cell, this will make default text selection.</li>
-            </ul>
-        </ng-container>
-        <ng-container *ngIf="selectionMode === 'none'">
-            <ul>
-                <li><b>Now you are unable to select a cell while interacting with grid UI.</b></li>
-                <li>If you need to select a cell, you can use the grid API methods.</li>
-            </ul>
-        </ng-container>
-    </div>
+  <div class="container">
+    <igx-icon>notification_important</igx-icon>
+    @if (selectionMode === 'multiple') {
+      <ul>
+        <li><b>This is the default selection behavior.</b></li>
+        <li>Click on a cell and while pressing the mouse key perform drag action.
+        </li>
+        <li>Select a cell and press Shift + Arrow down key, this will start range selection as well.</li>
+      </ul>
+    }
+    @if (selectionMode === 'single') {
+      <ul>
+        <li><b>Now you can select only one cell within the grid.</b></li>
+        <li>On single cell click the previous selection state will be cleared.</li>
+        <li>The mouse drag will not work and instead of selecting a cell, this will make default text selection.</li>
+      </ul>
+    }
+    @if (selectionMode === 'none') {
+      <ul>
+        <li><b>Now you are unable to select a cell while interacting with grid UI.</b></li>
+        <li>If you need to select a cell, you can use the grid API methods.</li>
+      </ul>
+    }
+  </div>
 </igx-snackbar>

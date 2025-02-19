@@ -1,71 +1,75 @@
 <div class="grid__wrapper">
-<igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="localdata" [autoGenerate]="false" [allowFiltering]='true'
+  <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="localdata" [autoGenerate]="false" [allowFiltering]='true'
     [height]="'580px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
     <igx-column field="Artist" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
     <igx-column field="Photo" [filterable]="false">
-        <ng-template igxCell let-cell="cell">
-            <div class="cell__inner_2">
-                <img [src]="cell.value" class="photo" />
-            </div>
-        </ng-template>
+      <ng-template igxCell let-cell="cell">
+        <div class="cell__inner_2">
+          <img [src]="cell.value" class="photo" />
+        </div>
+      </ng-template>
     </igx-column>
     <igx-column field="Debut" [filterCellTemplate]="defaultFilterTemplate" dataType="number" [formatter]="formatter"></igx-column>
     <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
     <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
 
     <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false" [allowFiltering]='true'>
-        <igx-column field="Album" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
-        <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'" [filterCellTemplate]="dateFilterTemplate"></igx-column>
-        <igx-column field="BillboardReview" header="Billboard Review" dataType="number" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
-        <igx-column field="USBillboard200" header="US Billboard 200" dataType="number" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
-    <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false" >
-            <igx-column field="Number" header="No."></igx-column>
-            <igx-column field="Title"></igx-column>
-            <igx-column field="Released" dataType="date"></igx-column>
-            <igx-column field="Genre"></igx-column>
-    </igx-row-island>
+      <igx-column field="Album" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
+      <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'" [filterCellTemplate]="dateFilterTemplate"></igx-column>
+      <igx-column field="BillboardReview" header="Billboard Review" dataType="number" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
+      <igx-column field="USBillboard200" header="US Billboard 200" dataType="number" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
+      <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false" >
+        <igx-column field="Number" header="No."></igx-column>
+        <igx-column field="Title"></igx-column>
+        <igx-column field="Released" dataType="date"></igx-column>
+        <igx-column field="Genre"></igx-column>
+      </igx-row-island>
     </igx-row-island>
 
     <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false" [allowFiltering]='true'>
-        <igx-column field="Tour"></igx-column>
-        <igx-column field="StartedOn" header="Started on"></igx-column>
-        <igx-column field="Location"></igx-column>
-        <igx-column field="Headliner"></igx-column>
+      <igx-column field="Tour"></igx-column>
+      <igx-column field="StartedOn" header="Started on"></igx-column>
+      <igx-column field="Location"></igx-column>
+      <igx-column field="Headliner"></igx-column>
     </igx-row-island>
-</igx-hierarchical-grid>
-<ng-template #defaultFilterTemplate igxFilterCellTemplate let-column="column">
+  </igx-hierarchical-grid>
+  <ng-template #defaultFilterTemplate igxFilterCellTemplate let-column="column">
     <div class="filter-cell">
-        <igx-input-group #inputGr type="box">
-            <igx-prefix>
-                <igx-icon>search</igx-icon>
-            </igx-prefix>
-            <input
-                #input
-                igxInput
-                tabindex="0"
-                placeholder="Filter..."
-                autocomplete="off"
-                [value]="getFilterValue(column)"
-                (input)="onInput(input, column)"
-                (click)="onClick(inputGr)"
-                (keydown)="onKeyDown($event)" />
-            <igx-suffix *ngIf="input.value || input.value === '0'" (click)="clearInput(column)" tabindex="0">
-                <igx-icon>clear</igx-icon>
+      <igx-input-group #inputGr type="box">
+        <igx-prefix>
+          <igx-icon>search</igx-icon>
+        </igx-prefix>
+        <input
+          #input
+          igxInput
+          tabindex="0"
+          placeholder="Filter..."
+          autocomplete="off"
+          [value]="getFilterValue(column)"
+          (input)="onInput(input, column)"
+          (click)="onClick(inputGr)"
+          (keydown)="onKeyDown($event)" />
+          @if (input.value || input.value === '0') {
+            <igx-suffix (click)="clearInput(column)" tabindex="0">
+              <igx-icon>clear</igx-icon>
             </igx-suffix>
+          }
         </igx-input-group>
-    </div>
-</ng-template>
-<ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column">
-    <div class="filter-cell">
+      </div>
+    </ng-template>
+    <ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column">
+      <div class="filter-cell">
         <igx-date-picker #picker [value]="getFilterValue(column)" (valueChange)="onDateSelected($event, column)" mode="dialog"
-            placeholder="Filter..." [displayFormat]="displayDateFormat" type="box">
-            <igx-picker-toggle igxPrefix>
-                <igx-icon>search</igx-icon>
-            </igx-picker-toggle>
-            <igx-picker-clear *ngIf="picker.value" igxSuffix>
-                <igx-icon>clear</igx-icon>
+          placeholder="Filter..." [displayFormat]="displayDateFormat" type="box">
+          <igx-picker-toggle igxPrefix>
+            <igx-icon>search</igx-icon>
+          </igx-picker-toggle>
+          @if (picker.value) {
+            <igx-picker-clear igxSuffix>
+              <igx-icon>clear</igx-icon>
             </igx-picker-clear>
+          }
         </igx-date-picker>
-    </div>
-</ng-template>
-</div>
+      </div>
+    </ng-template>
+  </div>

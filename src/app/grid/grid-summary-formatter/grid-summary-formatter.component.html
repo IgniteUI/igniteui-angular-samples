@@ -1,20 +1,24 @@
 <div class="grid__wrapper">
-    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [autoGenerate]="false" height="600px" width="100%"
-        [allowFiltering]='true' filterMode="excelStyleFilter">
-        <igx-column field="ProductName" header="Product Name" [sortable]="true" [disableHiding]="true" [dataType]="'string'">
-        </igx-column>
-        <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [sortable]="true" [disableHiding]="true" [dataType]="'string'">
-        </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price Category" [sortable]="true" [disableHiding]="true" dataType="string">
-        </igx-column>
-        <igx-column field="OrderDate" header="Order Date" [sortable]="true" [disableHiding]="true" [dataType]="'date'" [hasSummary]="true"
-            [summaryFormatter]="dateSummaryFormat">
-        </igx-column>
-        <igx-column field="Discontinued" header="Discontinued" [sortable]="true" [disableHiding]="true" [dataType]="'boolean'">
-            <ng-template igxCell let-cell="cell" let-val>
-                <img *ngIf="val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
-                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
-            </ng-template>
-        </igx-column>
-    </igx-grid>
+  <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [autoGenerate]="false" height="600px" width="100%"
+    [allowFiltering]='true' filterMode="excelStyleFilter">
+    <igx-column field="ProductName" header="Product Name" [sortable]="true" [disableHiding]="true" [dataType]="'string'">
+    </igx-column>
+    <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [sortable]="true" [disableHiding]="true" [dataType]="'string'">
+    </igx-column>
+    <igx-column field="UnitPrice" header="Unit Price Category" [sortable]="true" [disableHiding]="true" dataType="string">
+    </igx-column>
+    <igx-column field="OrderDate" header="Order Date" [sortable]="true" [disableHiding]="true" [dataType]="'date'" [hasSummary]="true"
+      [summaryFormatter]="dateSummaryFormat">
+    </igx-column>
+    <igx-column field="Discontinued" header="Discontinued" [sortable]="true" [disableHiding]="true" [dataType]="'boolean'">
+      <ng-template igxCell let-cell="cell" let-val>
+        @if (val) {
+          <img src="assets/images/grid/active.png" title="Continued" alt="Continued" />
+        }
+        @if (!val) {
+          <img src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+        }
+      </ng-template>
+    </igx-column>
+  </igx-grid>
 </div>

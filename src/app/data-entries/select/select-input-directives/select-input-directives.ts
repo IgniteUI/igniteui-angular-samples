@@ -1,13 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
 import { IgxSelectComponent, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective, IgxIconComponent, IgxHintDirective, IgxSelectItemComponent } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
-import { NgIf, NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-select-input-directives',
     styleUrls: ['select-input-directives.scss'],
     templateUrl: 'select-input-directives.html',
-    imports: [IgxSelectComponent, FormsModule, IgxLabelDirective, IgxPrefixDirective, NgIf, IgxSuffixDirective, IgxIconComponent, IgxHintDirective, NgFor, IgxSelectItemComponent]
+    imports: [IgxSelectComponent, FormsModule, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective, IgxIconComponent, IgxHintDirective, IgxSelectItemComponent]
 })
 
 export class SelectInputDirectivesComponent {

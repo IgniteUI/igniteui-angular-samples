@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { DOCUMENT, NgIf, NgFor, AsyncPipe, CurrencyPipe } from '@angular/common';
+import { DOCUMENT, AsyncPipe, CurrencyPipe } from '@angular/common';
 import { Component, ElementRef, EventEmitter, Inject, OnInit, Output, ViewChild } from '@angular/core';
 import { CellType, DefaultSortingStrategy, GridSelectionMode, IGridKeydownEventArgs, IgxGridComponent, IgxOverlayOutletDirective, IRowSelectionEventArgs, OverlaySettings, SortingDirection, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxExcelTextDirective, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxIconComponent, IgxIconButtonDirective } from 'igniteui-angular';
 import { BehaviorSubject } from 'rxjs';
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-finjs-grid',
     templateUrl: './grid-finjs.component.html',
     styleUrls: ['./grid-finjs.component.scss'],
-    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, NgIf, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxExcelTextDirective, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, FormsModule, IgxFocusDirective, NgFor, IgxSelectItemComponent, IgxCellTemplateDirective, IgxIconComponent, IgxIconButtonDirective, IgxOverlayOutletDirective, AsyncPipe, CurrencyPipe]
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxExcelTextDirective, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, FormsModule, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxIconComponent, IgxIconButtonDirective, IgxOverlayOutletDirective, AsyncPipe, CurrencyPipe]
 })
 export class GridFinJSComponent implements OnInit {
     @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;

@@ -1,19 +1,23 @@
 <igx-buttongroup [alignment]="alignment">
-    <button igxButton (click) = "layout = 'space-between'" [igxRipple]="rippleColor" [selected]="true">Space Between</button>
-    <button igxButton (click) = "layout = 'space-around'" [igxRipple]="rippleColor">Space Around</button>
+  <button igxButton (click) = "layout = 'space-between'" [igxRipple]="rippleColor" [selected]="true">Space Between</button>
+  <button igxButton (click) = "layout = 'space-around'" [igxRipple]="rippleColor">Space Around</button>
 </igx-buttongroup>
-<div *ngIf="layout === 'space-between'">
+@if (layout === 'space-between') {
+  <div>
     <div class="layout-box" igxLayout igxLayoutJustify="space-between">
-        <div class="layout-box__el">1</div>
-        <div class="layout-box__el">2</div>
-        <div class="layout-box__el">3</div>
+      <div class="layout-box__el">1</div>
+      <div class="layout-box__el">2</div>
+      <div class="layout-box__el">3</div>
     </div>
-</div>
+  </div>
+}
 
-<div *ngIf="layout === 'space-around'">
+@if (layout === 'space-around') {
+  <div>
     <div class="layout-box" igxLayout igxLayoutJustify="space-around">
-        <div class="layout-box__el">1</div>
-        <div class="layout-box__el">2</div>
-        <div class="layout-box__el">3</div>
+      <div class="layout-box__el">1</div>
+      <div class="layout-box__el">2</div>
+      <div class="layout-box__el">3</div>
     </div>
-</div>
+  </div>
+}

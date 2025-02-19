@@ -3,7 +3,7 @@ import { ColumnPinningPosition, IgxIconService, IgxTreeGridComponent, IPinningCo
 import { icons } from '../../services/svgIcons';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgFor } from '@angular/common';
+
 
 const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 
@@ -11,7 +11,7 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
     selector: 'app-tree-grid-row-pinning-extra-column',
     styleUrls: ['tree-grid-row-pinning-extra-column.component.scss'],
     templateUrl: 'tree-grid-row-pinning-extra-column.component.html',
-    imports: [IgxSwitchComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, NgFor]
+    imports: [IgxSwitchComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent]
 })
 export class TreeGridRowPinningExtraColumnSampleComponent implements OnInit, AfterViewInit {
 

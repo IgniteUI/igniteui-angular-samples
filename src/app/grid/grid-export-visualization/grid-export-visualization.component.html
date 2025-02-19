@@ -1,31 +1,35 @@
 <div class="grid__wrapper">
-    <igx-grid [igxPreventDocumentScroll]="true" [data]="localData" [moving]="true" [autoGenerate]="false" height="350px" width="100%">
-        <igx-grid-toolbar #toolbar>
-            <igx-grid-toolbar-actions>
-                <button [disabled]="toolbar.showProgress" (click)="longRunning(toolbar)" igxButton>
-                    Simulate long running operation
-                </button>
-                <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
-            </igx-grid-toolbar-actions>
-        </igx-grid-toolbar>
+  <igx-grid [igxPreventDocumentScroll]="true" [data]="localData" [moving]="true" [autoGenerate]="false" height="350px" width="100%">
+    <igx-grid-toolbar #toolbar>
+      <igx-grid-toolbar-actions>
+        <button [disabled]="toolbar.showProgress" (click)="longRunning(toolbar)" igxButton>
+          Simulate long running operation
+        </button>
+        <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+      </igx-grid-toolbar-actions>
+    </igx-grid-toolbar>
 
-        <igx-column field="ProductName" header="Product Name" [sortable]="true" [dataType]="'string'">
-        </igx-column>
-        <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [sortable]="true" [dataType]="'string'">
-        </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" [sortable]="true" dataType="number">
-            <ng-template igxCell let-cell="cell" let-val let-row>
-                {{+val | currency}}
-            </ng-template>
-        </igx-column>
-        <igx-column field="OrderDate" header="Order Date" [sortable]="true" [dataType]="'date'" [formatter]="formatDate">
-        </igx-column>
-        <igx-column field="Discontinued" header="Discontinued" [sortable]="true" [dataType]="'boolean'">
-            <ng-template igxCell let-cell="cell" let-val>
-                <img *ngIf="val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
-                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
-            </ng-template>
-        </igx-column>
-    </igx-grid>
+    <igx-column field="ProductName" header="Product Name" [sortable]="true" [dataType]="'string'">
+    </igx-column>
+    <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [sortable]="true" [dataType]="'string'">
+    </igx-column>
+    <igx-column field="UnitPrice" header="Unit Price" [sortable]="true" dataType="number">
+      <ng-template igxCell let-cell="cell" let-val let-row>
+        {{+val | currency}}
+      </ng-template>
+    </igx-column>
+    <igx-column field="OrderDate" header="Order Date" [sortable]="true" [dataType]="'date'" [formatter]="formatDate">
+    </igx-column>
+    <igx-column field="Discontinued" header="Discontinued" [sortable]="true" [dataType]="'boolean'">
+      <ng-template igxCell let-cell="cell" let-val>
+        @if (val) {
+          <img src="assets/images/grid/active.png" title="Continued" alt="Continued" />
+        }
+        @if (!val) {
+          <img src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+        }
+      </ng-template>
+    </igx-column>
+  </igx-grid>
 
 </div>

@@ -51,9 +51,11 @@
   </igx-drop-down>
 
   <igx-drop-down #dropdown3>
-    <igx-drop-down-item *ngFor="let item of supportData" [value]="item">
-      {{ item }}
-    </igx-drop-down-item>
+    @for (item of supportData; track item) {
+      <igx-drop-down-item [value]="item">
+        {{ item }}
+      </igx-drop-down-item>
+    }
   </igx-drop-down>
 
   <igx-drop-down #dropdown4>
@@ -72,33 +74,43 @@
   </igx-drop-down>
 
   <igx-drop-down #desktop>
-    <igx-drop-down-item *ngFor="let item of desktopData" [value]="item">
-      {{ item }}
-    </igx-drop-down-item>
+    @for (item of desktopData; track item) {
+      <igx-drop-down-item [value]="item">
+        {{ item }}
+      </igx-drop-down-item>
+    }
   </igx-drop-down>
 
   <igx-drop-down #crossPlatform>
-    <igx-drop-down-item *ngFor="let item of crossPlatformData" [value]="item">
-      {{ item }}
-    </igx-drop-down-item>
+    @for (item of crossPlatformData; track item) {
+      <igx-drop-down-item [value]="item">
+        {{ item }}
+      </igx-drop-down-item>
+    }
   </igx-drop-down>
 
   <igx-drop-down #designToCode>
-    <igx-drop-down-item *ngFor="let item of designToCodeData" [value]="item">
-      {{ item }}
-    </igx-drop-down-item>
+    @for (item of designToCodeData; track item) {
+      <igx-drop-down-item [value]="item">
+        {{ item }}
+      </igx-drop-down-item>
+    }
   </igx-drop-down>
 
   <igx-drop-down #testingTools>
-    <igx-drop-down-item *ngFor="let item of testingToolsData" [value]="item">
-      {{ item }}
-    </igx-drop-down-item>
+    @for (item of testingToolsData; track item) {
+      <igx-drop-down-item [value]="item">
+        {{ item }}
+      </igx-drop-down-item>
+    }
   </igx-drop-down>
 
   <!-- Drop Down Level 3 -->
   <igx-drop-down #igniteUI>
-    <igx-drop-down-item *ngFor="let item of igniteUIData" [value]="item">
-      {{ item }}
-    </igx-drop-down-item>
+    @for (item of igniteUIData; track item) {
+      <igx-drop-down-item [value]="item">
+        {{ item }}
+      </igx-drop-down-item>
+    }
   </igx-drop-down>
 </div>

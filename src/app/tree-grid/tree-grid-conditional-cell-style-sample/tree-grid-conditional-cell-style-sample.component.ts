@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ORDERS_DATA } from '../data/orders';
 import { IgxTreeGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-tree-grid-conditional-cell-style-sample',
     styleUrls: ['./tree-grid-conditional-cell-style-sample.component.scss'],
     templateUrl: './tree-grid-conditional-cell-style-sample.component.html',
-    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, NgIf]
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective]
 })
 
 export class TreeGridConditionalCellStyleComponent implements OnInit {

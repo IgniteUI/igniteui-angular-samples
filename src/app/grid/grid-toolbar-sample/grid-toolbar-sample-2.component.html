@@ -1,69 +1,77 @@
 <div class="grid__wrapper">
-    <div class="control-panel">
-        <igx-input-group type="box">
-            <label for="toolbarTitle" igxLabel>Change Toolbar title</label>
-            <input name="toolbarTitle" id="toolbarTitle" type="text" igxInput [(ngModel)]="toolbarTitle" />
-        </igx-input-group>
-        <div class="control-panel__switches">
-            <igx-switch [(ngModel)]="enableFiltering">Advanced Filtering</igx-switch>
-            <igx-switch [(ngModel)]="enableHiding">Column hiding</igx-switch>
-            <igx-switch [(ngModel)]="enablePinning">Column pinning</igx-switch>
-            <igx-switch [(ngModel)]="enableExport">Exporting</igx-switch>
-        </div>
+  <div class="control-panel">
+    <igx-input-group type="box">
+      <label for="toolbarTitle" igxLabel>Change Toolbar title</label>
+      <input name="toolbarTitle" id="toolbarTitle" type="text" igxInput [(ngModel)]="toolbarTitle" />
+    </igx-input-group>
+    <div class="control-panel__switches">
+      <igx-switch [(ngModel)]="enableFiltering">Advanced Filtering</igx-switch>
+      <igx-switch [(ngModel)]="enableHiding">Column hiding</igx-switch>
+      <igx-switch [(ngModel)]="enablePinning">Column pinning</igx-switch>
+      <igx-switch [(ngModel)]="enableExport">Exporting</igx-switch>
     </div>
-    <igx-grid [igxPreventDocumentScroll]="true" [data]="data" [autoGenerate]="false" height="280px">
-        <igx-grid-toolbar>
-            <igx-grid-toolbar-title>{{ toolbarTitle }}</igx-grid-toolbar-title>
-            <igx-grid-toolbar-actions>
-                <igx-grid-toolbar-advanced-filtering *ngIf="enableFiltering" [overlaySettings]="overlaySettingsAuto"></igx-grid-toolbar-advanced-filtering>
-                <igx-grid-toolbar-hiding *ngIf="enableHiding" [overlaySettings]="overlaySettingsAuto"></igx-grid-toolbar-hiding>
-                <igx-grid-toolbar-pinning *ngIf="enablePinning" [overlaySettings]="overlaySettingsScaleCenter"></igx-grid-toolbar-pinning>
-                <igx-grid-toolbar-exporter *ngIf="enableExport"></igx-grid-toolbar-exporter>
-            </igx-grid-toolbar-actions>
-        </igx-grid-toolbar>
+  </div>
+  <igx-grid [igxPreventDocumentScroll]="true" [data]="data" [autoGenerate]="false" height="280px">
+    <igx-grid-toolbar>
+      <igx-grid-toolbar-title>{{ toolbarTitle }}</igx-grid-toolbar-title>
+      <igx-grid-toolbar-actions>
+        @if (enableFiltering) {
+          <igx-grid-toolbar-advanced-filtering [overlaySettings]="overlaySettingsAuto"></igx-grid-toolbar-advanced-filtering>
+        }
+        @if (enableHiding) {
+          <igx-grid-toolbar-hiding [overlaySettings]="overlaySettingsAuto"></igx-grid-toolbar-hiding>
+        }
+        @if (enablePinning) {
+          <igx-grid-toolbar-pinning [overlaySettings]="overlaySettingsScaleCenter"></igx-grid-toolbar-pinning>
+        }
+        @if (enableExport) {
+          <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+        }
+      </igx-grid-toolbar-actions>
+    </igx-grid-toolbar>
 
 
-        <igx-column field="Name" header="Athlete" width="200">
-            <ng-template igxCell let-cell="cell">
-                <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.data.Avatar" shape="circle" size="small"></igx-avatar>
-                    <span class="athlete-name">{{ cell.value }}</span>
-                </div>
-            </ng-template>
-        </igx-column>
+    <igx-column field="Name" header="Athlete" width="200">
+      <ng-template igxCell let-cell="cell">
+        <div class="cell__inner">
+          <igx-avatar [src]="cell.row.data.Avatar" shape="circle" size="small"></igx-avatar>
+          <span class="athlete-name">{{ cell.value }}</span>
+        </div>
+      </ng-template>
+    </igx-column>
 
-        <igx-column field="CountryName" header="Country" width="200">
-            <ng-template igxCell let-cell="cell">
-                <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.data.CountryFlag" shape="circle" size="small"></igx-avatar>
-                    <span class="country-name">{{ cell.value }}</span>
-                </div>
-            </ng-template>
-        </igx-column>
+    <igx-column field="CountryName" header="Country" width="200">
+      <ng-template igxCell let-cell="cell">
+        <div class="cell__inner">
+          <igx-avatar [src]="cell.row.data.CountryFlag" shape="circle" size="small"></igx-avatar>
+          <span class="country-name">{{ cell.value }}</span>
+        </div>
+      </ng-template>
+    </igx-column>
 
-        <igx-column field="BeatsPerMinute" header="Beats Per Minute" >
-            <ng-template igxCell let-val>
-                <div class="cell__inner">{{ val }}</div>
-            </ng-template>
-        </igx-column>
+    <igx-column field="BeatsPerMinute" header="Beats Per Minute" >
+      <ng-template igxCell let-val>
+        <div class="cell__inner">{{ val }}</div>
+      </ng-template>
+    </igx-column>
 
-        <igx-column field="TopSpeed" header="Top Speed">
-            <ng-template igxCell let-val>
-                <div class="cell__inner">{{ val }}</div>
-            </ng-template>
+    <igx-column field="TopSpeed" header="Top Speed">
+      <ng-template igxCell let-val>
+        <div class="cell__inner">{{ val }}</div>
+      </ng-template>
 
-        </igx-column>
+    </igx-column>
 
-        <igx-column field="AthleteNumber" header="ID">
-            <ng-template igxCell let-val>
-                <div class="cell__inner">{{ val }}</div>
-            </ng-template>
-        </igx-column>
+    <igx-column field="AthleteNumber" header="ID">
+      <ng-template igxCell let-val>
+        <div class="cell__inner">{{ val }}</div>
+      </ng-template>
+    </igx-column>
 
-        <igx-column field="TrackProgress" header="Progress">
-            <ng-template igxCell let-val>
-                <div class="cell__inner">{{ val }}</div>
-            </ng-template>
-        </igx-column>
-    </igx-grid>
+    <igx-column field="TrackProgress" header="Progress">
+      <ng-template igxCell let-val>
+        <div class="cell__inner">{{ val }}</div>
+      </ng-template>
+    </igx-column>
+  </igx-grid>
 </div>

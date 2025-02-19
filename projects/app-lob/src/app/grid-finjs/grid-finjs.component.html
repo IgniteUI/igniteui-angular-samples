@@ -1,135 +1,145 @@
 <div class="grid__wrapper">
-    <igx-grid #grid1
-        [igxPreventDocumentScroll]="true"
-        width="100%" height="100%"
-        hiddenColumnsText="Hidden"
-        primaryKey="id"
-        [autoGenerate]="false"
-        [data]="data$ | async"
-        [hideGroupedColumns]="true"
-        [rowSelection]="selectionMode"
-        [allowFiltering]="true"
-        [moving]="true"
-        [filterMode]="'excelStyleFilter'"
-        (rowSelectionChanging)="rowSelectionChanged($event)"
-        (keydown)="gridKeydown($event)"
-        (gridKeydown)="customKeydown($event)"
-        [isLoading]="isLoading">
+  <igx-grid #grid1
+    [igxPreventDocumentScroll]="true"
+    width="100%" height="100%"
+    hiddenColumnsText="Hidden"
+    primaryKey="id"
+    [autoGenerate]="false"
+    [data]="data$ | async"
+    [hideGroupedColumns]="true"
+    [rowSelection]="selectionMode"
+    [allowFiltering]="true"
+    [moving]="true"
+    [filterMode]="'excelStyleFilter'"
+    (rowSelectionChanging)="rowSelectionChanged($event)"
+    (keydown)="gridKeydown($event)"
+    (gridKeydown)="customKeydown($event)"
+    [isLoading]="isLoading">
 
-        <igx-grid-toolbar *ngIf="showToolbar">
-            <igx-grid-toolbar-actions>
-                <igx-grid-toolbar-hiding title="Indicators"></igx-grid-toolbar-hiding>
-                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
-                <igx-grid-toolbar-exporter [exportCSV]="false">
-                    <span excelText>Export to Excel</span>
-                </igx-grid-toolbar-exporter>
-            </igx-grid-toolbar-actions>
-        </igx-grid-toolbar>
+    @if (showToolbar) {
+      <igx-grid-toolbar>
+        <igx-grid-toolbar-actions>
+          <igx-grid-toolbar-hiding title="Indicators"></igx-grid-toolbar-hiding>
+          <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+          <igx-grid-toolbar-exporter [exportCSV]="false">
+            <span excelText>Export to Excel</span>
+          </igx-grid-toolbar-exporter>
+        </igx-grid-toolbar-actions>
+      </igx-grid-toolbar>
+    }
 
-        <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
-        <!-- <ng-template igxExcelStyleSorting></ng-template>
-        <ng-template igxExcelStyleMoving></ng-template>
-        <ng-template igxExcelStyleHiding></ng-template>
-        <ng-template igxExcelStylePinning></ng-template> -->
+    <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
+    <!-- <ng-template igxExcelStyleSorting></ng-template>
+    <ng-template igxExcelStyleMoving></ng-template>
+    <ng-template igxExcelStyleHiding></ng-template>
+    <ng-template igxExcelStylePinning></ng-template> -->
 
-        <igx-column [field]="'id'" [sortable]="true" [groupable]="true"></igx-column>
-        <igx-column [field]="'category'" [width]="'120px'" [groupable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'type'" [width]="'100px'" [groupable]="true" [sortable]="true" [filterable]="false">
-        </igx-column>
-        <igx-column [field]="'contract'" [width]="'110px'" [groupable]="true" [sortable]="true" [editable]="true">
-            <ng-template igxCellEditor let-cell="cell" let-value>
-                <igx-select [overlaySettings]="overlaySettings" [placeholder]="value" [(ngModel)]="cell.editValue" [igxFocus]="true">
-                    <igx-select-item *ngFor="let c of contracts" [value]="c">{{ c }}</igx-select-item>
-                </igx-select>
-            </ng-template>
-        </igx-column>
-        <igx-column [field]="'settlement'" [width]="'100px'" [groupable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'country'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true"></igx-column>
-        <igx-column [field]="'region'" [width]="'110px'" [groupable]="true" [sortable]="true" [editable]="true">
-            <ng-template igxCellEditor let-cell="cell" let-value>
-                <igx-select [overlaySettings]="overlaySettings" [placeholder]="value" [(ngModel)]="cell.editValue" [igxFocus]="true">
-                    <igx-select-item *ngFor="let r of regions" [value]="r.Name">{{ r.Name }}</igx-select-item>
-                </igx-select>
-            </ng-template>
-        </igx-column>
-        <igx-column [field]="'lastUpdated'" [width]="'120px'" [editable]="true" header="Last Update" dataType="date"></igx-column>
-        <igx-column [field]="'openPrice'" [width]="'120px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
-        <igx-column [field]="'price'" [width]="'110px'" dataType="number" [cellClasses]="trends"
-            [sortable]="true">
-            <ng-template igxCell let-cell="cell">
-                <div class="finjs-icons">
-                    <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-                    <igx-icon *ngIf="trends.positive(cell.row.data)">trending_up</igx-icon>
-                    <igx-icon *ngIf="trends.negative(cell.row.data)">trending_down</igx-icon>
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [filterable]="false">
-            <ng-template igxCell let-cell="cell" class="center-text">
-                <button class="button-icon" igxIconButton="flat" tabindex="-1">
-                    <igx-icon family="material" (click)="chartColumnAction(cell)">insert_chart_outlined</igx-icon>
-                </button>
-            </ng-template>
-        </igx-column>
+    <igx-column [field]="'id'" [sortable]="true" [groupable]="true"></igx-column>
+    <igx-column [field]="'category'" [width]="'120px'" [groupable]="true" [sortable]="true"></igx-column>
+    <igx-column [field]="'type'" [width]="'100px'" [groupable]="true" [sortable]="true" [filterable]="false">
+    </igx-column>
+    <igx-column [field]="'contract'" [width]="'110px'" [groupable]="true" [sortable]="true" [editable]="true">
+      <ng-template igxCellEditor let-cell="cell" let-value>
+        <igx-select [overlaySettings]="overlaySettings" [placeholder]="value" [(ngModel)]="cell.editValue" [igxFocus]="true">
+          @for (c of contracts; track c) {
+            <igx-select-item [value]="c">{{ c }}</igx-select-item>
+          }
+        </igx-select>
+      </ng-template>
+    </igx-column>
+    <igx-column [field]="'settlement'" [width]="'100px'" [groupable]="true" [sortable]="true"></igx-column>
+    <igx-column [field]="'country'" [width]="'100px'" [groupable]="true" [sortable]="true" [editable]="true"></igx-column>
+    <igx-column [field]="'region'" [width]="'110px'" [groupable]="true" [sortable]="true" [editable]="true">
+      <ng-template igxCellEditor let-cell="cell" let-value>
+        <igx-select [overlaySettings]="overlaySettings" [placeholder]="value" [(ngModel)]="cell.editValue" [igxFocus]="true">
+          @for (r of regions; track r) {
+            <igx-select-item [value]="r.Name">{{ r.Name }}</igx-select-item>
+          }
+        </igx-select>
+      </ng-template>
+    </igx-column>
+    <igx-column [field]="'lastUpdated'" [width]="'120px'" [editable]="true" header="Last Update" dataType="date"></igx-column>
+    <igx-column [field]="'openPrice'" [width]="'120px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
+    <igx-column [field]="'price'" [width]="'110px'" dataType="number" [cellClasses]="trends"
+      [sortable]="true">
+      <ng-template igxCell let-cell="cell">
+        <div class="finjs-icons">
+          <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+          @if (trends.positive(cell.row.data)) {
+            <igx-icon>trending_up</igx-icon>
+          }
+          @if (trends.negative(cell.row.data)) {
+            <igx-icon>trending_down</igx-icon>
+          }
+        </div>
+      </ng-template>
+    </igx-column>
+    <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [filterable]="false">
+      <ng-template igxCell let-cell="cell" class="center-text">
+        <button class="button-icon" igxIconButton="flat" tabindex="-1">
+          <igx-icon family="material" (click)="chartColumnAction(cell)">insert_chart_outlined</igx-icon>
+        </button>
+      </ng-template>
+    </igx-column>
 
-        <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
-            [sortable]="true" [cellClasses]="trendsChange" >
-        </igx-column>
+    <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
+      [sortable]="true" [cellClasses]="trendsChange" >
+    </igx-column>
 
-        <igx-column [field]="'changeP'" [width]="'110px'" dataType="percent"
-            [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
-        </igx-column>
+    <igx-column [field]="'changeP'" [width]="'110px'" dataType="percent"
+      [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
+    </igx-column>
 
-        <igx-column [field]="'buy'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"
-            [sortable]="true"></igx-column>
-        <igx-column [field]="'sell'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"
-            [sortable]="true"></igx-column>
-        <igx-column [field]="'spread'" [width]="'110px'" dataType="number"  [pipeArgs]="columnFormat" >
-        </igx-column>
-        <igx-column [field]="'volume'" [width]="'110px'" dataType="number"  [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
-        <igx-column [field]="'highD'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
-        <igx-column [field]="'lowD'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"
-            [sortable]="true"></igx-column>
-        <igx-column [field]="'highY'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
-        <igx-column [field]="'lowY'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
-        <igx-column [field]="'startY'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
-        <!-- <igx-column [field]="'Grid'" [width]="'80px'" [hidden]="false" [filterable]="false">
-            <ng-template igxCell let-cell="cell" class="center-text">
-                <button class="button-icon" igxIconButton="flat" [igxRippleCentered]="true">
-                    <igx-icon (click)="chartClick(cell)" family="material">table_charttable_chart</igx-icon>
-                </button>
-            </ng-template>
-        </igx-column> -->
-        <igx-column [field]="'indGrou'" [width]="'100px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'indSect'" [width]="'120px'" [filterable]="false" [resizable]="true"></igx-column>
-        <igx-column [field]="'indSubg'" [width]="'100px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'secType'" [width]="'90px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'issuerN'" [width]="'170px'" [filterable]="false" [resizable]="true"></igx-column>
-        <igx-column [field]="'moodys'" [width]="'60px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'fitch'" [width]="'60px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'dbrs'" [width]="'60px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'collatT'" [width]="'90px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'curncy'" [width]="'60px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'security'" [width]="'120px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'sector'" [width]="'80px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'cusip'" [width]="'100px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'ticker'" [width]="'60px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'cpn'" [width]="'80px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'maturity'" [width]="'120px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'krD_3YR'" [width]="'110px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'zV_SPREAD'" [width]="'90px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'kRD_5YR'" [width]="'50px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'kRD_1YR'" [width]="'80px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'indGrou'" [width]="'100px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'indSect'" [width]="'100px'" [filterable]="false" [resizable]="true"></igx-column>
-        <igx-column [field]="'indSubg'" [width]="'100px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'secType'" [width]="'90px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'issuerN'" [width]="'170px'" [filterable]="false" [resizable]="true"></igx-column>
-        <igx-column [field]="'moodys'" [width]="'60px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'fitch'" [width]="'60px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'dbrs'" [width]="'60px'" [filterable]="false"></igx-column>
-        <igx-column [field]="'collatT'" [width]="'90px'" [filterable]="false"></igx-column>
-    </igx-grid>
+    <igx-column [field]="'buy'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"
+    [sortable]="true"></igx-column>
+    <igx-column [field]="'sell'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"
+    [sortable]="true"></igx-column>
+    <igx-column [field]="'spread'" [width]="'110px'" dataType="number"  [pipeArgs]="columnFormat" >
+    </igx-column>
+    <igx-column [field]="'volume'" [width]="'110px'" dataType="number"  [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
+    <igx-column [field]="'highD'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
+    <igx-column [field]="'lowD'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"
+    [sortable]="true"></igx-column>
+    <igx-column [field]="'highY'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
+    <igx-column [field]="'lowY'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
+    <igx-column [field]="'startY'" [width]="'110px'" dataType="currency" [pipeArgs]="columnFormat"  [sortable]="true"></igx-column>
+    <!-- <igx-column [field]="'Grid'" [width]="'80px'" [hidden]="false" [filterable]="false">
+    <ng-template igxCell let-cell="cell" class="center-text">
+      <button class="button-icon" igxIconButton="flat" [igxRippleCentered]="true">
+        <igx-icon (click)="chartClick(cell)" family="material">table_charttable_chart</igx-icon>
+      </button>
+    </ng-template>
+  </igx-column> -->
+  <igx-column [field]="'indGrou'" [width]="'100px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'indSect'" [width]="'120px'" [filterable]="false" [resizable]="true"></igx-column>
+  <igx-column [field]="'indSubg'" [width]="'100px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'secType'" [width]="'90px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'issuerN'" [width]="'170px'" [filterable]="false" [resizable]="true"></igx-column>
+  <igx-column [field]="'moodys'" [width]="'60px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'fitch'" [width]="'60px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'dbrs'" [width]="'60px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'collatT'" [width]="'90px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'curncy'" [width]="'60px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'security'" [width]="'120px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'sector'" [width]="'80px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'cusip'" [width]="'100px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'ticker'" [width]="'60px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'cpn'" [width]="'80px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'maturity'" [width]="'120px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'krD_3YR'" [width]="'110px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'zV_SPREAD'" [width]="'90px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'kRD_5YR'" [width]="'50px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'kRD_1YR'" [width]="'80px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'indGrou'" [width]="'100px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'indSect'" [width]="'100px'" [filterable]="false" [resizable]="true"></igx-column>
+  <igx-column [field]="'indSubg'" [width]="'100px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'secType'" [width]="'90px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'issuerN'" [width]="'170px'" [filterable]="false" [resizable]="true"></igx-column>
+  <igx-column [field]="'moodys'" [width]="'60px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'fitch'" [width]="'60px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'dbrs'" [width]="'60px'" [filterable]="false"></igx-column>
+  <igx-column [field]="'collatT'" [width]="'90px'" [filterable]="false"></igx-column>
+</igx-grid>
 </div>
 
 <div igxOverlayOutlet #outlet="overlay-outlet">

@@ -24,7 +24,7 @@ import {
 } from "igniteui-angular";
 import { SINGERS } from "../../data/singersData";
 import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scroll.directive";
-import { NgFor } from "@angular/common";
+
 
 class GrammySummary {
     public operate(
@@ -80,16 +80,15 @@ class GrammySummary {
     styleUrls: ["./hierarchical-grid-disable-summaries.component.scss"],
     templateUrl: "hierarchical-grid-disable-summaries.component.html",
     imports: [
-        NgFor,
-        IgxHierarchicalGridComponent,
-        IgxRowIslandComponent,
-        IgxCellTemplateDirective,
-        IgxPreventDocumentScrollDirective,
-        IgxColumnComponent,
-        IgxButtonDirective,
-        IgxCheckboxComponent,
-        IgxToggleDirective
-    ]
+    IgxHierarchicalGridComponent,
+    IgxRowIslandComponent,
+    IgxCellTemplateDirective,
+    IgxPreventDocumentScrollDirective,
+    IgxColumnComponent,
+    IgxButtonDirective,
+    IgxCheckboxComponent,
+    IgxToggleDirective
+]
 })
 export class HierarchicalGridDisableSummariesComponent implements OnInit, AfterViewInit {
     @ViewChild("hierarchicalGrid1", { static: true }) public hierarchicalGrid1: IgxHierarchicalGridComponent;

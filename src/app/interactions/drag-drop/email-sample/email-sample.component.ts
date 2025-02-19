@@ -1,13 +1,13 @@
 import { ChangeDetectorRef, Component, Input, Renderer2 } from '@angular/core';
 import { IgxIconComponent, IgxListComponent, IgxListItemComponent, IgxDropDirective, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxDragDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent } from 'igniteui-angular';
-import { NgFor } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-email-sample',
     templateUrl: './email-sample.component.html',
     styleUrls: ['./email-sample.component.scss'],
-    imports: [IgxIconComponent, IgxListComponent, NgFor, IgxListItemComponent, IgxDropDirective, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxDragDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, FormsModule]
+    imports: [IgxIconComponent, IgxListComponent, IgxListItemComponent, IgxDropDirective, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxDragDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, FormsModule]
 })
 
 export class EmailSampleComponent {

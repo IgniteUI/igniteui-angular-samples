@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { GridColumnDataType, IgxGridComponent, IgxColumnComponent, IgxGridFooterComponent } from 'igniteui-angular';
 import { AMINO_DATA } from '../../data/amino-data';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-grid-nested-data-bind2',
     styleUrls: ['./grid-nested-data-bind2.scss'],
     templateUrl: './grid-nested-data-bind2.html',
-    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, NgFor, IgxColumnComponent, IgxGridFooterComponent]
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxGridFooterComponent]
 })
 export class GridNestedDataBindAminoacidComponent implements OnInit {
 

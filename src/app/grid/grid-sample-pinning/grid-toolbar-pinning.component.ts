@@ -2,7 +2,7 @@ import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
 import { IgxColumnComponent, IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 import { ActivatedRoute } from '@angular/router';
-import { NgClass, NgFor } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
@@ -11,7 +11,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-sample',
     styleUrls: ['grid-toolbar-pinning.component.scss'],
     templateUrl: 'grid-toolbar-pinning.component.html',
-    imports: [NgClass, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, NgFor, IgxColumnComponent]
+    imports: [NgClass, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent]
 })
 
 export class PinningToolbarSampleComponent implements OnInit{

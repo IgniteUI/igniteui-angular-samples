@@ -3,13 +3,13 @@ import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn, FormsModule 
 import { CellType, IgxGridComponent, IGridEditEventArgs, IgxSwitchComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxColumnRequiredValidatorDirective, IgxColumnEmailValidatorDirective, IgxCellValidationErrorDirective, IgxColumnMinValidatorDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxButtonDirective } from 'igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { employeesData } from '../../data/employeesData';
-import { NgTemplateOutlet, NgIf, NgFor, DatePipe } from '@angular/common';
+import { NgTemplateOutlet, DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-grid-validator-service-cross-field',
     styleUrls: ['./grid-validator-service-cross-field.component.scss'],
     templateUrl: './grid-validator-service-cross-field.component.html',
-    imports: [IgxSwitchComponent, FormsModule, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxColumnRequiredValidatorDirective, IgxColumnEmailValidatorDirective, IgxCellValidationErrorDirective, NgTemplateOutlet, NgIf, IgxColumnMinValidatorDirective, IgxTooltipTargetDirective, IgxTooltipDirective, NgFor, IgxButtonDirective, DatePipe]
+    imports: [IgxSwitchComponent, FormsModule, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxColumnRequiredValidatorDirective, IgxColumnEmailValidatorDirective, IgxCellValidationErrorDirective, NgTemplateOutlet, IgxColumnMinValidatorDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxButtonDirective, DatePipe]
 })
 export class GridValidatorServiceCrossFieldComponent {
 

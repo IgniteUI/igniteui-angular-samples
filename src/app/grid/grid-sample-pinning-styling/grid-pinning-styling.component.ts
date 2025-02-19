@@ -2,13 +2,13 @@ import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
 import { IgxColumnComponent, IgxGridComponent, IgxCellHeaderTemplateDirective, IgxIconComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-grid-sample',
     styleUrls: ['grid-pinning-styling.component.scss'],
     templateUrl: 'grid-pinning-styling.component.html',
-    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, NgFor, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxIconComponent]
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxIconComponent]
 })
 
 export class PinningStylingComponent implements OnInit{

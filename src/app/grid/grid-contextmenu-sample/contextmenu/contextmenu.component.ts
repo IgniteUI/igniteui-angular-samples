@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { IgxIconModule, IgxIconComponent } from 'igniteui-angular';
-import { NgIf, NgStyle } from '@angular/common';
+import { NgStyle } from '@angular/common';
 
 interface ICopyData {
     data: any;
@@ -9,7 +9,7 @@ interface ICopyData {
     selector: 'app-contextmenu',
     styleUrls: ['./contextmenu.component.scss'],
     templateUrl: './contextmenu.component.html',
-    imports: [NgIf, NgStyle, IgxIconComponent]
+    imports: [NgStyle, IgxIconComponent]
 })
 export class ContextmenuComponent {
 

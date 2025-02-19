@@ -1,4 +1,4 @@
-import { formatDate, NgIf, NgFor } from '@angular/common';
+import { formatDate } from '@angular/common';
 import { AfterViewInit, Component, ViewChild, OnInit, ChangeDetectorRef} from '@angular/core';
 import { IgxDateSummaryOperand, IgxGridComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxColumnComponent, IgxCellTemplateDirective, IgxGridFooterComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
@@ -34,7 +34,7 @@ class MySummary {
     selector: 'app-grid-sample',
     styleUrls: ['./grid-custom-summaries-selection.component.scss'],
     templateUrl: 'grid-custom-summaries-selection.component.html',
-    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, NgIf, IgxGridFooterComponent, NgFor]
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxGridFooterComponent]
 })
 
 export class GridCustomSummariesSelectionComponent implements AfterViewInit, OnInit {

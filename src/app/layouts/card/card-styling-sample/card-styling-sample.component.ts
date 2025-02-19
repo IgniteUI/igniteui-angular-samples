@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../card.blueprint';
 import { IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxCardActionsComponent, IgxIconButtonDirective, IgxRippleDirective, IgxSuffixDirective, IgxIconComponent } from 'igniteui-angular';
-import { NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-card-styling-sample',
     templateUrl: './card-styling-sample.component.html',
     styleUrls: ['./card-styling-sample.component.scss'],
-    imports: [IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxCardActionsComponent, NgFor, IgxIconButtonDirective, IgxRippleDirective, IgxSuffixDirective, IgxIconComponent]
+    imports: [IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxCardActionsComponent, IgxIconButtonDirective, IgxRippleDirective, IgxSuffixDirective, IgxIconComponent]
 })
 export class CardStylingSampleComponent {
     public card = new Card({

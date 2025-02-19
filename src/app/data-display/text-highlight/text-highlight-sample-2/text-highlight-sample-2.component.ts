@@ -1,14 +1,14 @@
 /* eslint-disable max-len */
 import { Component, OnDestroy, ViewChildren } from '@angular/core';
 import { IgxTextHighlightDirective, IgxTextHighlightService, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular';
-import { NgIf } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-text-highlight-2',
     styleUrls: ['./text-highlight-sample-2.component.scss'],
     templateUrl: './text-highlight-sample-2.component.html',
-    imports: [IgxInputGroupComponent, IgxPrefixDirective, NgIf, IgxIconComponent, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective, IgxTextHighlightDirective]
+    imports: [IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective, IgxTextHighlightDirective]
 })
 export class TextHighlightSample2Component implements OnDestroy {
     @ViewChildren(IgxTextHighlightDirective)

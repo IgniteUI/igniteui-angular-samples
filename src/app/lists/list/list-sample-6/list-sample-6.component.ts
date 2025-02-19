@@ -1,12 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import { IgxListComponent, IgxListItemComponent, IgxRippleDirective, IgxEmptyListTemplateDirective, IgxButtonDirective, IgxDataLoadingTemplateDirective } from 'igniteui-angular';
-import { NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-list-sample-6',
     styleUrls: ['./list-sample-6.component.scss'],
     templateUrl: './list-sample-6.component.html',
-    imports: [IgxListComponent, NgFor, IgxListItemComponent, IgxRippleDirective, IgxEmptyListTemplateDirective, IgxButtonDirective, IgxDataLoadingTemplateDirective]
+    imports: [IgxListComponent, IgxListItemComponent, IgxRippleDirective, IgxEmptyListTemplateDirective, IgxButtonDirective, IgxDataLoadingTemplateDirective]
 })
 export class ListSample6Component {
 

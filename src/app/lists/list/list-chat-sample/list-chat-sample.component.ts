@@ -10,14 +10,14 @@ import { ContactsService } from './services/contacts.service';
 import { IMessage, MessagesService } from './services/messages.service';
 import { FormsModule } from '@angular/forms';
 import { IgxListComponent, IgxListItemComponent, IgxAvatarComponent, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
-import { NgIf, NgClass, NgFor, NgTemplateOutlet, DatePipe } from '@angular/common';
+import { NgClass, NgTemplateOutlet, DatePipe } from '@angular/common';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: 'app-list-chat-sample',
     styleUrls: ['./list-chat-sample.component.scss'],
     templateUrl: './list-chat-sample.component.html',
-    imports: [FormsModule, IgxListComponent, NgIf, IgxListItemComponent, IgxAvatarComponent, NgClass, NgFor, NgTemplateOutlet, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent, DatePipe]
+    imports: [FormsModule, IgxListComponent, IgxListItemComponent, IgxAvatarComponent, NgClass, NgTemplateOutlet, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent, DatePipe]
 })
 export class ListChatSampleComponent implements AfterViewInit {
     @ViewChild('form', { static: true })

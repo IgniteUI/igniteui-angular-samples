@@ -2,13 +2,13 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '
 import { IgxTreeGridComponent, IgxColumnComponent } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-tree-grid-column-selection-style',
     templateUrl: './tree-grid-column-selection-style.component.html',
     styleUrls: ['./tree-grid-column-selection-style.component.scss'],
-    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, NgFor, IgxColumnComponent]
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridColumnSelectionStylesComponent implements OnInit, AfterViewInit {
     @ViewChild(IgxTreeGridComponent)

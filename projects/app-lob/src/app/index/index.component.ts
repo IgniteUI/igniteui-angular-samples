@@ -11,13 +11,13 @@ import { hierarchicalGridRoutesData } from '../hierarchical-grid/hierarchical-gr
 import { treeGridRoutesData } from '../tree-grid/tree-grid-routes-data';
 import { treegridfinjsRoutesData } from '../treegrid-finjs/treegrid-finjs-routes-data';
 import { FormsModule } from '@angular/forms';
-import { NgIf, NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-index',
     styleUrls: ['./index.component.scss'],
     templateUrl: './index.component.html',
-    imports: [IgxLayoutDirective, IgxNavigationDrawerComponent, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, RouterLinkActive, RouterLink, IgxIconButtonDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, FormsModule, IgxInputDirective, NgIf, IgxSuffixDirective, NgFor, IgxFlexDirective, IgxNavbarComponent, RouterOutlet]
+    imports: [IgxLayoutDirective, IgxNavigationDrawerComponent, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, RouterLinkActive, RouterLink, IgxIconButtonDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxFlexDirective, IgxNavbarComponent, RouterOutlet]
 })
 export class IndexComponent implements OnInit, AfterViewInit {
 
