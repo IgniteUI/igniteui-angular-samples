@@ -12,7 +12,6 @@ import { SEOService } from './seo.service';
 })
 export class AppComponent implements OnInit {
     public title = 'app-lob';
-    private isIE = !((window as any).ActiveXObject) && 'ActiveXObject' in window;
     private theme = 'default-theme';
     private styleElem: HTMLStyleElement;
     private typefacesLoaded = ['Titillium Web', 'Roboto'];
@@ -65,13 +64,9 @@ export class AppComponent implements OnInit {
     }
 
     private createThemeStyle() {
-        if (this.isIE) {
-            this.document.body.classList.add(this.theme);
-        } else {
-            this.styleElem = document.createElement('style');
-            this.styleElem.id = 'igniteui-theme';
-            document.head.insertBefore(this.styleElem, this.document.head.lastElementChild);
-            this.document.body.classList.add('custom-body');
-        }
+        this.styleElem = document.createElement('style');
+        this.styleElem.id = 'igniteui-theme';
+        document.head.insertBefore(this.styleElem, this.document.head.lastElementChild);
+        this.document.body.classList.add('custom-body');
     }
 }
