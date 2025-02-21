@@ -1,38 +1,46 @@
 <div class="grid__wrapper">
-    <div class="control_panel">
-        <igx-input-group>
-            <label for="toolbarTitle" igxLabel>Toolbar title</label>
-            <input name="toolbarTitle" type="text" igxInput [(ngModel)]="toolbarTitle" />
-        </igx-input-group>
-        <div>
-            <igx-switch [(ngModel)]="enableFiltering">Advanced Filtering</igx-switch>
-            <igx-switch [(ngModel)]="enableHiding">Column hiding</igx-switch>
-            <igx-switch [(ngModel)]="enablePinning">Column pinning</igx-switch>
-            <igx-switch [(ngModel)]="enableExport">Exporting</igx-switch>
-        </div>
+  <div class="control_panel">
+    <igx-input-group>
+      <label for="toolbarTitle" igxLabel>Toolbar title</label>
+      <input name="toolbarTitle" type="text" igxInput [(ngModel)]="toolbarTitle" />
+    </igx-input-group>
+    <div>
+      <igx-switch [(ngModel)]="enableFiltering">Advanced Filtering</igx-switch>
+      <igx-switch [(ngModel)]="enableHiding">Column hiding</igx-switch>
+      <igx-switch [(ngModel)]="enablePinning">Column pinning</igx-switch>
+      <igx-switch [(ngModel)]="enableExport">Exporting</igx-switch>
     </div>
-    <igx-tree-grid [igxPreventDocumentScroll]="true" #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" height="310px">
-        <igx-grid-toolbar>
-            <igx-grid-toolbar-title>{{ toolbarTitle }}</igx-grid-toolbar-title>
-            <igx-grid-toolbar-actions>
-                <igx-grid-toolbar-advanced-filtering *ngIf="enableFiltering"></igx-grid-toolbar-advanced-filtering>
-                <igx-grid-toolbar-hiding *ngIf="enableHiding"></igx-grid-toolbar-hiding>
-                <igx-grid-toolbar-pinning *ngIf="enablePinning"></igx-grid-toolbar-pinning>
-                <igx-grid-toolbar-exporter *ngIf="enableExport"></igx-grid-toolbar-exporter>
-            </igx-grid-toolbar-actions>
-        </igx-grid-toolbar>
+  </div>
+  <igx-tree-grid [igxPreventDocumentScroll]="true" #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" height="310px">
+    <igx-grid-toolbar>
+      <igx-grid-toolbar-title>{{ toolbarTitle }}</igx-grid-toolbar-title>
+      <igx-grid-toolbar-actions>
+        @if (enableFiltering) {
+          <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
+        }
+        @if (enableHiding) {
+          <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+        }
+        @if (enablePinning) {
+          <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+        }
+        @if (enableExport) {
+          <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+        }
+      </igx-grid-toolbar-actions>
+    </igx-grid-toolbar>
 
-        <igx-column field="Name" width="25%">
-            <ng-template igxCell let-cell="cell">
-                <div class="cell__inner">
-                    <igx-avatar [src]="cell.row.data.Avatar" shape="circle" size="small"></igx-avatar>
-                    <span class="name">{{ cell.value }}</span>
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column field="Title" dataType="string"></igx-column>
-        <igx-column field="ID" dataType="number"></igx-column>
-        <igx-column field="Age" dataType="number"></igx-column>
-        <igx-column field="HireDate" dataType="date"></igx-column>
-    </igx-tree-grid>
+    <igx-column field="Name" width="25%">
+      <ng-template igxCell let-cell="cell">
+        <div class="cell__inner">
+          <igx-avatar [src]="cell.row.data.Avatar" shape="circle" size="small"></igx-avatar>
+          <span class="name">{{ cell.value }}</span>
+        </div>
+      </ng-template>
+    </igx-column>
+    <igx-column field="Title" dataType="string"></igx-column>
+    <igx-column field="ID" dataType="number"></igx-column>
+    <igx-column field="Age" dataType="number"></igx-column>
+    <igx-column field="HireDate" dataType="date"></igx-column>
+  </igx-tree-grid>
 </div>

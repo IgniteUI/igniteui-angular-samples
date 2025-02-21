@@ -2,13 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxSnackbarComponent, IgxHierarchicalGridComponent, GridSelectionMode, IgxButtonGroupComponent, IgxColumnComponent, IgxRowIslandComponent, IgxIconComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-hierarchical-grid-cell-selection',
     styleUrls: ['./hierarchical-grid-cellSelection.component.scss'],
     templateUrl: 'hierarchical-grid-cellSelection.component.html',
-    imports: [IgxButtonGroupComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent, IgxSnackbarComponent, IgxIconComponent, NgIf]
+    imports: [IgxButtonGroupComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent, IgxSnackbarComponent, IgxIconComponent]
 })
 export class HierarchicalGridCellSelectionComponent implements OnInit {
     @ViewChild('hgrid', { static: true }) public hGrid: IgxHierarchicalGridComponent;

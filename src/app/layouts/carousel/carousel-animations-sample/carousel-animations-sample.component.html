@@ -1,37 +1,38 @@
 <div class="carousel-animation-wrapper">
-    <div class="action-wrapper">
-        <span>Current animation: </span>
-        <span class="select-container">
-            <igx-select #select [(ngModel)]="carousel.animationType">
-                <igx-select-item *ngFor="let animation of animations" [value]="animation">
-                    {{animation | titlecase}}
-                </igx-select-item>
-            </igx-select>
-        </span>
-    </div>
-    <div class="carousel-wrapper">
-        <igx-carousel #carousel [indicators]="false">
-            <igx-slide *ngFor="let slide of slides;">
-                <div class="slide-wrapper">
-                    <igx-card elevated>
-                        <igx-card-header>
-                            <h4 igxCardHeaderTitle>{{slide.heading}}</h4>
-                        </igx-card-header>
-
-                        <igx-card-content>
-                            <p>{{slide.description}}</p>
-                        </igx-card-content>
-
-                        <igx-card-media>
-                            <img [src]="slide.image">
-                        </igx-card-media>
-
-                        <igx-card-actions>
-                            <a igxButton href="{{slide.link}}" target="_blank" rel="noopener" style="text-decoration: none;" igxStart>visit page</a>
-                        </igx-card-actions>
-                    </igx-card>
-                </div>
-            </igx-slide>
-        </igx-carousel>
-    </div>
+  <div class="action-wrapper">
+    <span>Current animation: </span>
+    <span class="select-container">
+      <igx-select #select [(ngModel)]="carousel.animationType">
+        @for (animation of animations; track animation) {
+          <igx-select-item [value]="animation">
+            {{animation | titlecase}}
+          </igx-select-item>
+        }
+      </igx-select>
+    </span>
+  </div>
+  <div class="carousel-wrapper">
+    <igx-carousel #carousel [indicators]="false">
+      @for (slide of slides; track slide) {
+        <igx-slide>
+          <div class="slide-wrapper">
+            <igx-card elevated>
+              <igx-card-header>
+                <h4 igxCardHeaderTitle>{{slide.heading}}</h4>
+              </igx-card-header>
+              <igx-card-content>
+                <p>{{slide.description}}</p>
+              </igx-card-content>
+              <igx-card-media>
+                <img [src]="slide.image">
+              </igx-card-media>
+              <igx-card-actions>
+                <a igxButton href="{{slide.link}}" target="_blank" rel="noopener" style="text-decoration: none;" igxStart>visit page</a>
+              </igx-card-actions>
+            </igx-card>
+          </div>
+        </igx-slide>
+      }
+    </igx-carousel>
+  </div>
 </div>

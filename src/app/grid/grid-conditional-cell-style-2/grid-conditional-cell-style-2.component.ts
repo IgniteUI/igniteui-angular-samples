@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxGridComponent, IgxInputGroupComponent, IgxInputDirective, IgxHintDirective, IgxButtonDirective, IgxColumnComponent } from 'igniteui-angular';
 import { athletesData } from '../../data/athletesData';
-import { NgFor, JsonPipe } from '@angular/common';
+import { JsonPipe } from '@angular/common';
 
 @Component({
     selector: 'app-grid-conditional-cell-style-2',
     styleUrls: ['./grid-conditional-cell-style-2.component.scss'],
     templateUrl: './grid-conditional-cell-style-2.component.html',
-    imports: [IgxInputGroupComponent, IgxInputDirective, IgxHintDirective, IgxButtonDirective, IgxGridComponent, NgFor, IgxColumnComponent, JsonPipe]
+    imports: [IgxInputGroupComponent, IgxInputDirective, IgxHintDirective, IgxButtonDirective, IgxGridComponent, IgxColumnComponent, JsonPipe]
 })
 export class GridConditionalCellStyle2Component implements OnInit {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

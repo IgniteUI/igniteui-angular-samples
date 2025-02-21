@@ -4,13 +4,13 @@ import { Country, getCitiesByCountry, getCountries } from '../../data/cities1500
 import { DATA } from '../../data/data';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'grid-cascading-combos',
     templateUrl: './grid-cascading-combos.component.html',
     styleUrls: ['./grid-cascading-combos.component.scss'],
-    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxSimpleComboComponent, FormsModule, NgIf, IgxLinearProgressBarComponent]
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxSimpleComboComponent, FormsModule, IgxLinearProgressBarComponent]
 })
 export class GridCascadingCombosComponent implements OnInit {
     @ViewChildren(IgxSimpleComboComponent)

@@ -12,14 +12,14 @@ import { IgxGridComponent, IgxNumberSummaryOperand, IgxStringFilteringOperand, I
 import { Athlete, АthletesData, SpeedDescriptor } from '../../data/athletesData';
 import { FormsModule } from '@angular/forms';
 import { IgxPreventDocumentScrollDirective } from '../../../../../../src/app/directives/prevent-scroll.directive';
-import { NgIf, NgClass, NgFor, DecimalPipe } from '@angular/common';
+import { NgClass, DecimalPipe } from '@angular/common';
 import { IgxSparklineCoreModule } from 'igniteui-angular-charts';
 
 @Component({
     selector: 'app-grid',
     styleUrls: ['./grid.component.scss'],
     templateUrl: './grid.component.html',
-    imports: [IgxSwitchComponent, FormsModule, IgxInputGroupComponent, IgxInputDirective, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, NgIf, IgxAvatarComponent, IgxBadgeComponent, IgxSparklineCoreModule, IgxCircularProgressBarComponent, NgClass, NgFor, DecimalPipe]
+    imports: [IgxSwitchComponent, FormsModule, IgxInputGroupComponent, IgxInputDirective, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxBadgeComponent, IgxSparklineCoreModule, IgxCircularProgressBarComponent, NgClass, DecimalPipe]
 })
 export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
 

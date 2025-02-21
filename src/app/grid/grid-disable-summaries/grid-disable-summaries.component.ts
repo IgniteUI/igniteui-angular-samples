@@ -22,7 +22,7 @@ import {
 } from "igniteui-angular";
 import { DATA } from "../../data/nwindData";
 import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scroll.directive";
-import { NgFor } from "@angular/common";
+
 
 class UnitsInStockSummary {
     public operate(
@@ -156,14 +156,13 @@ class DiscontinuedSummary {
     styleUrls: ["./grid-disable-summaries.component.scss"],
     templateUrl: "grid-disable-summaries.component.html",
     imports: [
-        NgFor,
-        IgxGridComponent,
-        IgxPreventDocumentScrollDirective,
-        IgxColumnComponent,
-        IgxButtonDirective,
-        IgxCheckboxComponent,
-        IgxToggleDirective
-    ]
+    IgxGridComponent,
+    IgxPreventDocumentScrollDirective,
+    IgxColumnComponent,
+    IgxButtonDirective,
+    IgxCheckboxComponent,
+    IgxToggleDirective
+]
 })
 export class GridDisableSummariesComponent implements OnInit, AfterViewInit {
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;

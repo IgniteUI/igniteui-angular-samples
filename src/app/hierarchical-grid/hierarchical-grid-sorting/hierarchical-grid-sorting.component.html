@@ -1,40 +1,42 @@
 <div class="hgrid-sample" (window:click)="disableContextMenu()">
-    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="localdata" [autoGenerate]="false"
-        [height]="'480px'" [width]="'100%'" [rowHeight]="'65px'" (contextMenu)="rightClick($event)" #hierarchicalGrid>
-        <igx-column field="Artist" [sortable]="true"></igx-column>
-        <igx-column field="Photo">
-            <ng-template igxCell let-cell="cell">
-                <div class="cell__inner_2">
-                    <img [src]="cell.value" class="photo" />
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column field="Debut" [sortable]="true" [formatter]="formatter"></igx-column>
-        <igx-column field="GrammyNominations" header="Grammy Nominations" [sortable]="true"></igx-column>
-        <igx-column field="GrammyAwards" header="Grammy Awards" [sortable]="true"></igx-column>
+  <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="localdata" [autoGenerate]="false"
+    [height]="'480px'" [width]="'100%'" [rowHeight]="'65px'" (contextMenu)="rightClick($event)" #hierarchicalGrid>
+    <igx-column field="Artist" [sortable]="true"></igx-column>
+    <igx-column field="Photo">
+      <ng-template igxCell let-cell="cell">
+        <div class="cell__inner_2">
+          <img [src]="cell.value" class="photo" />
+        </div>
+      </ng-template>
+    </igx-column>
+    <igx-column field="Debut" [sortable]="true" [formatter]="formatter"></igx-column>
+    <igx-column field="GrammyNominations" header="Grammy Nominations" [sortable]="true"></igx-column>
+    <igx-column field="GrammyAwards" header="Grammy Awards" [sortable]="true"></igx-column>
 
-        <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false">
-            <igx-column field="Album" [sortable]="true"></igx-column>
-            <igx-column field="LaunchDate" header="Launch Date" [sortable]="true" [dataType]="'date'"></igx-column>
-            <igx-column field="BillboardReview" header="Billboard Review" [sortable]="true"></igx-column>
-            <igx-column field="USBillboard200" header="US Billboard 200" [sortable]="true"></igx-column>
-        <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false" >
-                <igx-column field="Number" header="No." [sortable]="true"></igx-column>
-                <igx-column field="Title" [sortable]="true"></igx-column>
-                <igx-column field="Released" dataType="date" [sortable]="true"></igx-column>
-                <igx-column field="Genre" [sortable]="true"></igx-column>
-        </igx-row-island>
+    <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false">
+      <igx-column field="Album" [sortable]="true"></igx-column>
+      <igx-column field="LaunchDate" header="Launch Date" [sortable]="true" [dataType]="'date'"></igx-column>
+      <igx-column field="BillboardReview" header="Billboard Review" [sortable]="true"></igx-column>
+      <igx-column field="USBillboard200" header="US Billboard 200" [sortable]="true"></igx-column>
+      <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false" >
+        <igx-column field="Number" header="No." [sortable]="true"></igx-column>
+        <igx-column field="Title" [sortable]="true"></igx-column>
+        <igx-column field="Released" dataType="date" [sortable]="true"></igx-column>
+        <igx-column field="Genre" [sortable]="true"></igx-column>
+      </igx-row-island>
     </igx-row-island>
 
     <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false">
-        <igx-column field="Tour" [sortable]="true"></igx-column>
-        <igx-column field="StartedOn" header="Started on" [sortable]="true"></igx-column>
-        <igx-column field="Location" [sortable]="true"></igx-column>
-        <igx-column field="Headliner" [sortable]="true"></igx-column>
+      <igx-column field="Tour" [sortable]="true"></igx-column>
+      <igx-column field="StartedOn" header="Started on" [sortable]="true"></igx-column>
+      <igx-column field="Location" [sortable]="true"></igx-column>
+      <igx-column field="Headliner" [sortable]="true"></igx-column>
     </igx-row-island>
 
-    </igx-hierarchical-grid>
-    <div *ngIf="contextmenu">
-        <app-hgrid-contextmenu [x]="contextmenuX" [y]="contextmenuY" [cell]="clickedCell"></app-hgrid-contextmenu>
+  </igx-hierarchical-grid>
+  @if (contextmenu) {
+    <div>
+      <app-hgrid-contextmenu [x]="contextmenuX" [y]="contextmenuY" [cell]="clickedCell"></app-hgrid-contextmenu>
     </div>
+  }
 </div>

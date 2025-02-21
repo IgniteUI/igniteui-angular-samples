@@ -6,7 +6,7 @@ import { FinancialData } from '../../data/financialData';
 import { FloatingPanesService } from '../../services/floating-panes.service';
 import { DockSlotComponent } from './dock-slot/dock-slot.component';
 import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxDividerDirective, IgxBadgeComponent } from 'igniteui-angular';
-import { NgFor, NgIf, NgClass, DecimalPipe, TitleCasePipe, CurrencyPipe } from '@angular/common';
+import { NgClass, DecimalPipe, TitleCasePipe, CurrencyPipe } from '@angular/common';
 
 @Pipe({
     name: 'filterType'
@@ -53,7 +53,7 @@ export class HastDuplicateLayouts implements PipeTransform {
     templateUrl: './data-analysis-dock-manager.component.html',
     styleUrls: ['./data-analysis-dock-manager.component.scss'],
     providers: [FloatingPanesService],
-    imports: [IgxGridComponent, IgxChartIntegrationDirective, IgxBadgeComponent, IgxColumnComponent, IgxCellTemplateDirective, NgFor, NgIf, NgClass, IgxDividerDirective, DockSlotComponent, DecimalPipe, TitleCasePipe, CurrencyPipe, FilterTypePipe, HastDuplicateLayouts],
+    imports: [IgxGridComponent, IgxChartIntegrationDirective, IgxBadgeComponent, IgxColumnComponent, IgxCellTemplateDirective, NgClass, IgxDividerDirective, DockSlotComponent, DecimalPipe, TitleCasePipe, CurrencyPipe, FilterTypePipe, HastDuplicateLayouts],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {

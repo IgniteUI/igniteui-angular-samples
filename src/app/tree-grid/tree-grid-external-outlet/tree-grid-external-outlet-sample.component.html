@@ -1,68 +1,76 @@
 <div>
-    <igx-tree-grid [igxPreventDocumentScroll]="true" #tGrid1 [data]="data" [autoGenerate]="false" height="300px" width="100%"
-        [allowFiltering]="true" primaryKey="ID" [moving]="true" foreignKey="ParentID" filterMode="excelStyleFilter"
-        [outlet]="filteringOverlayOutlet">
-        <igx-grid-toolbar>
-            <igx-grid-toolbar-actions>
-                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
-            </igx-grid-toolbar-actions>
-        </igx-grid-toolbar>
+  <igx-tree-grid [igxPreventDocumentScroll]="true" #tGrid1 [data]="data" [autoGenerate]="false" height="300px" width="100%"
+    [allowFiltering]="true" primaryKey="ID" [moving]="true" foreignKey="ParentID" filterMode="excelStyleFilter"
+    [outlet]="filteringOverlayOutlet">
+    <igx-grid-toolbar>
+      <igx-grid-toolbar-actions>
+        <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+      </igx-grid-toolbar-actions>
+    </igx-grid-toolbar>
 
-        <igx-column field="ID" header="Order ID" [sortable]="true">
-        </igx-column>
-        <igx-column field="Name" header="Order Product" [sortable]="true">
-        </igx-column>
-        <igx-column field="Category" header="Category" [sortable]="true">
-        </igx-column>
-        <igx-column field="Units" header="Units" [dataType]="'number'" [sortable]="true">
-        </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [sortable]="false">
-        </igx-column>
-        <igx-column field="Price" header="Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [sortable]="false">
-        </igx-column>
-        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [sortable]="true">
-        </igx-column>
-        <igx-column field="Delivered" header="Delivered" [dataType]="'boolean'" [sortable]="true">
-            <ng-template igxCell let-cell="cell" let-val>
-                <img *ngIf="val" src="assets/images/grid/active.png" title="Delivered" alt="Delivered" />
-                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered" />
-            </ng-template>
-        </igx-column>
-    </igx-tree-grid>
+    <igx-column field="ID" header="Order ID" [sortable]="true">
+    </igx-column>
+    <igx-column field="Name" header="Order Product" [sortable]="true">
+    </igx-column>
+    <igx-column field="Category" header="Category" [sortable]="true">
+    </igx-column>
+    <igx-column field="Units" header="Units" [dataType]="'number'" [sortable]="true">
+    </igx-column>
+    <igx-column field="UnitPrice" header="Unit Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [sortable]="false">
+    </igx-column>
+    <igx-column field="Price" header="Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [sortable]="false">
+    </igx-column>
+    <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [sortable]="true">
+    </igx-column>
+    <igx-column field="Delivered" header="Delivered" [dataType]="'boolean'" [sortable]="true">
+      <ng-template igxCell let-cell="cell" let-val>
+        @if (val) {
+          <img src="assets/images/grid/active.png" title="Delivered" alt="Delivered" />
+        }
+        @if (!val) {
+          <img src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered" />
+        }
+      </ng-template>
+    </igx-column>
+  </igx-tree-grid>
 
-    <br>
+  <br>
 
     <igx-tree-grid [igxPreventDocumentScroll]="true" #tGrid2 [data]="data" [autoGenerate]="false" height="300px" width="100%"
-        [allowFiltering]="true" primaryKey="ID" foreignKey="ParentID" filterMode="excelStyleFilter"
-        [outlet]="filteringOverlayOutlet">
-        <igx-grid-toolbar>
-            <igx-grid-toolbar-actions>
-                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
-            </igx-grid-toolbar-actions>
-        </igx-grid-toolbar>
+      [allowFiltering]="true" primaryKey="ID" foreignKey="ParentID" filterMode="excelStyleFilter"
+      [outlet]="filteringOverlayOutlet">
+      <igx-grid-toolbar>
+        <igx-grid-toolbar-actions>
+          <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+        </igx-grid-toolbar-actions>
+      </igx-grid-toolbar>
 
-        <igx-column field="ID" header="Order ID" [sortable]="true">
-        </igx-column>
-        <igx-column field="Name" header="Order Product" [sortable]="true">
-        </igx-column>
-        <igx-column field="Category" header="Category" [sortable]="true">
-        </igx-column>
-        <igx-column field="Units" header="Units" [dataType]="'number'" [sortable]="true">
-        </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [sortable]="false">
-        </igx-column>
-        <igx-column field="Price" header="Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [sortable]="false">
-        </igx-column>
-        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [sortable]="true">
-        </igx-column>
-        <igx-column field="Delivered" header="Delivered" [dataType]="'boolean'" [sortable]="true">
-            <ng-template igxCell let-cell="cell" let-val>
-                <img *ngIf="val" src="assets/images/grid/active.png" title="Delivered" alt="Delivered" />
-                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered" />
-            </ng-template>
-        </igx-column>
+      <igx-column field="ID" header="Order ID" [sortable]="true">
+      </igx-column>
+      <igx-column field="Name" header="Order Product" [sortable]="true">
+      </igx-column>
+      <igx-column field="Category" header="Category" [sortable]="true">
+      </igx-column>
+      <igx-column field="Units" header="Units" [dataType]="'number'" [sortable]="true">
+      </igx-column>
+      <igx-column field="UnitPrice" header="Unit Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [sortable]="false">
+      </igx-column>
+      <igx-column field="Price" header="Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [sortable]="false">
+      </igx-column>
+      <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [sortable]="true">
+      </igx-column>
+      <igx-column field="Delivered" header="Delivered" [dataType]="'boolean'" [sortable]="true">
+        <ng-template igxCell let-cell="cell" let-val>
+          @if (val) {
+            <img src="assets/images/grid/active.png" title="Delivered" alt="Delivered" />
+          }
+          @if (!val) {
+            <img src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered" />
+          }
+        </ng-template>
+      </igx-column>
     </igx-tree-grid>
 
-</div>
+  </div>
 
-<div #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>
+  <div #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>

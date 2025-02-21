@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { IgxFilterOptions, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxListComponent, IgxListItemComponent, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxListActionDirective, IgxRippleDirective, IgxFilterPipe } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
-import { NgIf, NgFor, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-list-item-selection',
     templateUrl: './list-item-selection.component.html',
     styleUrls: ['./list-item-selection.component.scss'],
-    imports: [IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, FormsModule, IgxInputDirective, NgIf, IgxSuffixDirective, IgxListComponent, IgxListItemComponent, NgFor, NgClass, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxListActionDirective, IgxRippleDirective, IgxFilterPipe]
+    imports: [IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxListComponent, IgxListItemComponent, NgClass, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxListActionDirective, IgxRippleDirective, IgxFilterPipe]
 })
 export class ListItemSelectionComponent {
     public searchContact: string;

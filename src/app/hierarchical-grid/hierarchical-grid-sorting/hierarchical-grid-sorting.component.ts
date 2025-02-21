@@ -2,14 +2,14 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { DefaultSortingStrategy, IgxHierarchicalGridComponent, IgxRowIslandComponent, SortingDirection, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf } from '@angular/common';
+
 import { HGridContextmenuComponent } from './hgrid-contextmenu/hgrid-contextmenu.component';
 
 @Component({
     selector: 'app-hierarchical-grid-sorting',
     styleUrls: ['./hierarchical-grid-sorting.component.scss'],
     templateUrl: 'hierarchical-grid-sorting.component.html',
-    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, NgIf, HGridContextmenuComponent]
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, HGridContextmenuComponent]
 })
 
 export class HGridSortingSampleComponent implements OnInit, AfterViewInit {

@@ -1,90 +1,90 @@
 <div class="grid__wrapper">
-    <div class="grid-controls">
-        <igx-switch [(ngModel)]="hideRowSelectors">Hide Row Selectors</igx-switch>
-        <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
-    </div>
-    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="localdata" [height]="'580px'" [width]="'100%'" [rowHeight]="'65px'"
+  <div class="grid-controls">
+    <igx-switch [(ngModel)]="hideRowSelectors">Hide Row Selectors</igx-switch>
+    <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
+  </div>
+  <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="localdata" [height]="'580px'" [width]="'100%'" [rowHeight]="'65px'"
     [cellSelection]="'none'" [rowSelection]="selectionMode" [hideRowSelectors]="hideRowSelectors"
-        [allowFiltering]="true" (rowSelectionChanging)="handleRowSelection($event)" #hierarchicalGrid>
-        <igx-column field="Artist"></igx-column>
-        <igx-column field="Photo">
-            <ng-template igxCell let-cell="cell">
-                <div class="cell__inner_2">
-                    <img [src]="cell.value" class="photo" />
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column field="Debut" [formatter]="formatter"></igx-column>
-        <igx-column field="GrammyNominations" header="Grammy Nominations"></igx-column>
-        <igx-column field="GrammyAwards" header="Grammy Awards"></igx-column>
+    [allowFiltering]="true" (rowSelectionChanging)="handleRowSelection($event)" #hierarchicalGrid>
+    <igx-column field="Artist"></igx-column>
+    <igx-column field="Photo">
+      <ng-template igxCell let-cell="cell">
+        <div class="cell__inner_2">
+          <img [src]="cell.value" class="photo" />
+        </div>
+      </ng-template>
+    </igx-column>
+    <igx-column field="Debut" [formatter]="formatter"></igx-column>
+    <igx-column field="GrammyNominations" header="Grammy Nominations"></igx-column>
+    <igx-column field="GrammyAwards" header="Grammy Awards"></igx-column>
 
     <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false" [rowSelection]="selectionMode">
-        <igx-column field="Album" ></igx-column>
-        <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
-        <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
-        <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
-    <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false" [rowSelection]="selectionMode" >
-            <igx-column field="Number" header="No."></igx-column>
-            <igx-column field="Title"></igx-column>
-            <igx-column field="Released" dataType="date"></igx-column>
-            <igx-column field="Genre"></igx-column>
-    </igx-row-island>
+      <igx-column field="Album" ></igx-column>
+      <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
+      <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
+      <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
+      <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false" [rowSelection]="selectionMode" >
+        <igx-column field="Number" header="No."></igx-column>
+        <igx-column field="Title"></igx-column>
+        <igx-column field="Released" dataType="date"></igx-column>
+        <igx-column field="Genre"></igx-column>
+      </igx-row-island>
     </igx-row-island>
 
     <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false" [rowSelection]="selectionMode" >
-        <igx-column field="Tour"></igx-column>
-        <igx-column field="StartedOn" header="Started on"></igx-column>
-        <igx-column field="Location"></igx-column>
-        <igx-column field="Headliner"></igx-column>
+      <igx-column field="Tour"></igx-column>
+      <igx-column field="StartedOn" header="Started on"></igx-column>
+      <igx-column field="Location"></igx-column>
+      <igx-column field="Headliner"></igx-column>
     </igx-row-island>
-</igx-hierarchical-grid>
+  </igx-hierarchical-grid>
 </div>
 
 <igx-snackbar #snackbarRowCount actionText="Got it. Thanks!" (clicked)="snackbarRowCount.close()">
-    <div class="container">
-        <igx-icon>notification_important</igx-icon>
-        <ng-container *ngIf="selectionMode === 'multiple'">
-           <p>Number of selected rows: {{selectedRowsCount}}</p>
-        </ng-container>
-        <ng-container *ngIf="selectionMode === 'single' && this.selectedRowIndex !== undefined">
-            <p>Currently selected row index: {{selectedRowIndex}}</p>
-        </ng-container>
-        <ng-container *ngIf="selectionMode === 'single' && this.selectedRowIndex === undefined">
-            <p>There is no currently selected row.</p>
-        </ng-container>
-    </div>
+  <div class="container">
+    <igx-icon>notification_important</igx-icon>
+    @if (selectionMode === 'multiple') {
+      <p>Number of selected rows: {{selectedRowsCount}}</p>
+    }
+    @if (selectionMode === 'single' && this.selectedRowIndex !== undefined) {
+      <p>Currently selected row index: {{selectedRowIndex}}</p>
+    }
+    @if (selectionMode === 'single' && this.selectedRowIndex === undefined) {
+      <p>There is no currently selected row.</p>
+    }
+  </div>
 </igx-snackbar>
 
 <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.close()">
-    <div class="container">
-        <igx-icon>notification_important</igx-icon>
-        <ng-container *ngIf="selectionMode === 'multiple'">
-            <ul>
-                <li><b>Now you can select multiple rows within a grid.</b></li>
-                <li>Click on row selector field or press SPACE key when some cell is active to toggle row
-                    selection.
-                </li>
-                <li>On cell click the row get selected and previous selection state is cleared.</li>
-                <li>On cell click holding ctrl key, the row get selected and previous selection state is
-                    preserved.
-                </li>
-                <li>Shift + click select a range of rows.</li>
-            </ul>
-        </ng-container>
-        <ng-container *ngIf="selectionMode === 'single'">
-            <ul>
-                <li><b>Now you can select only one row within a grid.</b></li>
-                <li>Click on row selector field or press SPACE key when some cell is active to toggle row
-                    selection.
-                </li>
-                <li>On cell click the row get selected and previous selection state is cleared.</li>
-            </ul>
-        </ng-container>
-        <ng-container *ngIf="selectionMode === 'none'">
-            <ul>
-                <li><b>Now you are unable to select a row while interacting with grid UI.</b></li>
-                <li>If you need to select a row use grid API methods.</li>
-            </ul>
-        </ng-container>
-    </div>
+  <div class="container">
+    <igx-icon>notification_important</igx-icon>
+    @if (selectionMode === 'multiple') {
+      <ul>
+        <li><b>Now you can select multiple rows within a grid.</b></li>
+        <li>Click on row selector field or press SPACE key when some cell is active to toggle row
+          selection.
+        </li>
+        <li>On cell click the row get selected and previous selection state is cleared.</li>
+        <li>On cell click holding ctrl key, the row get selected and previous selection state is
+          preserved.
+        </li>
+        <li>Shift + click select a range of rows.</li>
+      </ul>
+    }
+    @if (selectionMode === 'single') {
+      <ul>
+        <li><b>Now you can select only one row within a grid.</b></li>
+        <li>Click on row selector field or press SPACE key when some cell is active to toggle row
+          selection.
+        </li>
+        <li>On cell click the row get selected and previous selection state is cleared.</li>
+      </ul>
+    }
+    @if (selectionMode === 'none') {
+      <ul>
+        <li><b>Now you are unable to select a row while interacting with grid UI.</b></li>
+        <li>If you need to select a row use grid API methods.</li>
+      </ul>
+    }
+  </div>
 </igx-snackbar>

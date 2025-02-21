@@ -1,82 +1,82 @@
 <div class="grid__wrapper">
-    <div class="button-group-wrapper">
-        <h6>Parent Grid cell selection mode: </h6>
-        <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
-    </div>
-    <div class="button-group-wrapper">
-        <h6>Child Grid cell selection mode: </h6>
-        <igx-buttongroup [values]="selectionModesChildren" (selected)="selectCellSelectionModeChildGrid($event)"></igx-buttongroup>
-    </div>
-    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hierarchicalGrid [data]="data" [height]="'560px'" [width]="'100%'" [cellSelection]="selectionMode" #hgrid>
-        <igx-column field="Artist" [dataType]="'string'"></igx-column>
-        <igx-column field="HasGrammyAward" header="Has Grammy Award?" [dataType]="'boolean'">
-        </igx-column>
-        <igx-column field="Debut" dataType="number"></igx-column>
-        <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number" [hasSummary]="true"></igx-column>
-        <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number" [hasSummary]="true"></igx-column>
-        <igx-row-island [height]="null" [key]="'Albums'" [cellSelection]="selectionModeChild">
-            <igx-column field="Album" [dataType]="'string'"></igx-column>
-            <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
-            <igx-column field="BillboardReview" header="Billboard Review" dataType="number"></igx-column>
-            <igx-column field="USBillboard200" header="US Billboard 200" dataType="number"></igx-column>
-        </igx-row-island>
-    </igx-hierarchical-grid>
+  <div class="button-group-wrapper">
+    <h6>Parent Grid cell selection mode: </h6>
+    <igx-buttongroup [values]="selectionModes" (selected)="selectCellSelectionMode($event)"></igx-buttongroup>
+  </div>
+  <div class="button-group-wrapper">
+    <h6>Child Grid cell selection mode: </h6>
+    <igx-buttongroup [values]="selectionModesChildren" (selected)="selectCellSelectionModeChildGrid($event)"></igx-buttongroup>
+  </div>
+  <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hierarchicalGrid [data]="data" [height]="'560px'" [width]="'100%'" [cellSelection]="selectionMode" #hgrid>
+    <igx-column field="Artist" [dataType]="'string'"></igx-column>
+    <igx-column field="HasGrammyAward" header="Has Grammy Award?" [dataType]="'boolean'">
+    </igx-column>
+    <igx-column field="Debut" dataType="number"></igx-column>
+    <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number" [hasSummary]="true"></igx-column>
+    <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number" [hasSummary]="true"></igx-column>
+    <igx-row-island [height]="null" [key]="'Albums'" [cellSelection]="selectionModeChild">
+      <igx-column field="Album" [dataType]="'string'"></igx-column>
+      <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
+      <igx-column field="BillboardReview" header="Billboard Review" dataType="number"></igx-column>
+      <igx-column field="USBillboard200" header="US Billboard 200" dataType="number"></igx-column>
+    </igx-row-island>
+  </igx-hierarchical-grid>
 </div>
 
 <igx-snackbar #snackbar actionText="Got it. Thanks!" (clicked)="snackbar.close()">
-    <div class="container">
-        <igx-icon>notification_important</igx-icon>
-        <div class="message-container">
-            <span>Parent grid:</span>
-            <ng-container *ngIf="selectionMode === 'multiple'">
-                <ul>
-                    <li><b>This is the default selection behavior.</b></li>
-                    <li>Click on a cell and while pressing the mouse key perform drag action.
-                    </li>
-                    <li>Select a cell and press Shift + Arrow down key, this will start range selection as well.
-                    </li>
-                </ul>
-            </ng-container>
-            <ng-container *ngIf="selectionMode === 'single'">
-                <ul>
-                    <li><b>Now you can select only one cell within the grid.</b></li>
-                    <li>On single cell click the previous selection state will be cleared.</li>
-                    <li>The mouse drag will not work and instead of selecting a cell, this will make default text
-                        selection.</li>
-                </ul>
-            </ng-container>
-            <ng-container *ngIf="selectionMode === 'none'">
-                <ul>
-                    <li><b>Now you are unable to select a cell while interacting with grid UI.</b></li>
-                    <li>If you need to select a cell, you can use the grid API methods.</li>
-                </ul>
-            </ng-container>
-        </div>
-        <div class="message-container">
-            <span>Child grid:</span>
-            <ng-container *ngIf="selectionModeChild === 'multiple'">
-                <ul>
-                    <li><b>This is the default selection behavior.</b></li>
-                    <li>Click on a cell and while pressing the mouse key perform drag action.
-                    </li>
-                    <li>Select a cell and press Shift + Arrow down key, this will start range selection as well.
-                    </li>
-                </ul>
-            </ng-container>
-            <ng-container *ngIf="selectionModeChild === 'single'">
-                <ul>
-                    <li><b>Now you can select only one cell within the grid.</b></li>
-                    <li>On single cell click the previous selection state will be cleared.</li>
-                    <li>The mouse drag will not work and instead of selecting a cell, this will make default text
-                        selection.</li>
-                </ul>
-            </ng-container>
-            <ng-container *ngIf="selectionModeChild === 'none'">
-                <ul>
-                    <li><b>Now you are unable to select a cell while interacting with grid UI.</b></li>
-                    <li>If you need to select a cell, you can use the grid API methods.</li>
-                </ul>
-            </ng-container>
-        </div>
+  <div class="container">
+    <igx-icon>notification_important</igx-icon>
+    <div class="message-container">
+      <span>Parent grid:</span>
+      @if (selectionMode === 'multiple') {
+        <ul>
+          <li><b>This is the default selection behavior.</b></li>
+          <li>Click on a cell and while pressing the mouse key perform drag action.
+          </li>
+          <li>Select a cell and press Shift + Arrow down key, this will start range selection as well.
+          </li>
+        </ul>
+      }
+      @if (selectionMode === 'single') {
+        <ul>
+          <li><b>Now you can select only one cell within the grid.</b></li>
+          <li>On single cell click the previous selection state will be cleared.</li>
+          <li>The mouse drag will not work and instead of selecting a cell, this will make default text
+          selection.</li>
+        </ul>
+      }
+      @if (selectionMode === 'none') {
+        <ul>
+          <li><b>Now you are unable to select a cell while interacting with grid UI.</b></li>
+          <li>If you need to select a cell, you can use the grid API methods.</li>
+        </ul>
+      }
     </div>
+    <div class="message-container">
+      <span>Child grid:</span>
+      @if (selectionModeChild === 'multiple') {
+        <ul>
+          <li><b>This is the default selection behavior.</b></li>
+          <li>Click on a cell and while pressing the mouse key perform drag action.
+          </li>
+          <li>Select a cell and press Shift + Arrow down key, this will start range selection as well.
+          </li>
+        </ul>
+      }
+      @if (selectionModeChild === 'single') {
+        <ul>
+          <li><b>Now you can select only one cell within the grid.</b></li>
+          <li>On single cell click the previous selection state will be cleared.</li>
+          <li>The mouse drag will not work and instead of selecting a cell, this will make default text
+          selection.</li>
+        </ul>
+      }
+      @if (selectionModeChild === 'none') {
+        <ul>
+          <li><b>Now you are unable to select a cell while interacting with grid UI.</b></li>
+          <li>If you need to select a cell, you can use the grid API methods.</li>
+        </ul>
+      }
+    </div>
+  </div>
 </igx-snackbar>

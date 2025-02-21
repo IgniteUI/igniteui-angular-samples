@@ -4,13 +4,13 @@ import { CellType, IgxHierarchicalGridComponent, IGridEditEventArgs, IgxSwitchCo
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf, NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'hierarchical-grid-cross-field-validation',
     styleUrls: ['./hierarchical-grid-cross-field-validation.component.scss'],
     templateUrl: 'hierarchical-grid-cross-field-validation.component.html',
-    imports: [IgxSwitchComponent, FormsModule, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, NgIf, IgxTooltipTargetDirective, IgxTooltipDirective, NgFor, IgxColumnRequiredValidatorDirective, IgxCellEditorTemplateDirective, IgxSelectComponent, ReactiveFormsModule, IgxFocusDirective, IgxSelectItemComponent, IgxRowIslandComponent, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxButtonDirective]
+    imports: [IgxSwitchComponent, FormsModule, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxColumnRequiredValidatorDirective, IgxCellEditorTemplateDirective, IgxSelectComponent, ReactiveFormsModule, IgxFocusDirective, IgxSelectItemComponent, IgxRowIslandComponent, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxButtonDirective]
 })
 
 export class HierarchicalGridValidatorServiceCrossCellComponent implements OnInit {

@@ -1,102 +1,101 @@
 <div class="grid-wrapper">
-    <div class="summaries">
-        <h5 class="summaries-title">Disable Summaries for Column:</h5>
-        <ng-container *ngFor="let column of columns; let i = index">
-            <div class="summary-column-button">
-                <button
-                    #toggleButton
-                    igxButton="outlined"
-                    (click)="toggle(i)"
-                >
-                    {{ column.label }} ({{ getCheckedSummariesCount(column.summaries) }})
-                </button>
-                <div igxToggle>
-                    <div class="summaries-dropdown">
-                        <div>
-                            <p class="summaries-dropdown-title">
-                                Disabled Summaries
-                            </p>
-                        </div>
-
-                        <div class="summaries-dropdown-items">
-                            <igx-checkbox
-                                *ngFor="let summary of column.summaries; let i = index"
-                                class="summaries-dropdown-item"
-                                [checked]="summary.checked"
-                                (change)="toggleCheckbox($event, i, column)"
-                            >
-                                {{ summary.summaryLabel }}
-                            </igx-checkbox>
-                        </div>
-
-                        <div class="summaries-dropdown-buttons">
-                            <button igxButton="flat"
-                                [disabled]="getCheckedSummariesCount(column.summaries) === column.summaries.length"
-                                (click)="checkAllColumns(column)"
-                            >
-                                Disable All
-                            </button>
-                            <button igxButton="flat"
-                                [disabled]="getCheckedSummariesCount(column.summaries) === 0"
-                                (click)="uncheckAllColumns(column)"
-                            >
-                                Enable All
-                            </button>
-                        </div>
-                    </div>
-                </div>
+  <div class="summaries">
+    <h5 class="summaries-title">Disable Summaries for Column:</h5>
+    @for (column of columns; track column; let i = $index) {
+      <div class="summary-column-button">
+        <button
+          #toggleButton
+          igxButton="outlined"
+          (click)="toggle(i)"
+          >
+          {{ column.label }} ({{ getCheckedSummariesCount(column.summaries) }})
+        </button>
+        <div igxToggle>
+          <div class="summaries-dropdown">
+            <div>
+              <p class="summaries-dropdown-title">
+                Disabled Summaries
+              </p>
             </div>
-        </ng-container>
-    </div>
-    <igx-tree-grid
-        [igxPreventDocumentScroll]="true"
-        #treeGrid1
-        [data]="data"
-        [autoGenerate]="false"
-        height="800px"
-        width="100%"
-        primaryKey="ID"
-        foreignKey="ParentID"
+            <div class="summaries-dropdown-items">
+              @for (summary of column.summaries; track summary; let i = $index) {
+                <igx-checkbox
+                  class="summaries-dropdown-item"
+                  [checked]="summary.checked"
+                  (change)="toggleCheckbox($event, i, column)"
+                  >
+                  {{ summary.summaryLabel }}
+                </igx-checkbox>
+              }
+            </div>
+            <div class="summaries-dropdown-buttons">
+              <button igxButton="flat"
+                [disabled]="getCheckedSummariesCount(column.summaries) === column.summaries.length"
+                (click)="checkAllColumns(column)"
+                >
+                Disable All
+              </button>
+              <button igxButton="flat"
+                [disabled]="getCheckedSummariesCount(column.summaries) === 0"
+                (click)="uncheckAllColumns(column)"
+                >
+                Enable All
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+  <igx-tree-grid
+    [igxPreventDocumentScroll]="true"
+    #treeGrid1
+    [data]="data"
+    [autoGenerate]="false"
+    height="800px"
+    width="100%"
+    primaryKey="ID"
+    foreignKey="ParentID"
     >
-        <igx-column field="ID" header="Order ID" [hasSummary]="true"> </igx-column>
-        <igx-column field="Name" header="Order Product" [hasSummary]="true">
-        </igx-column>
-        <igx-column
-            field="Units"
-            header="Units"
-            dataType="number"
-            [hasSummary]="true"
-            [summaries]="unitsSummary"
-        >
-        </igx-column>
-        <igx-column
-            field="UnitPrice"
-            header="Unit Price"
-            dataType="number"
-            [hasSummary]="true"
-        >
-        </igx-column>
-        <igx-column
-            field="Price"
-            header="Price"
-            dataType="number"
-            [hasSummary]="true"
-        >
-        </igx-column>
-        <igx-column
-            field="Delivered"
-            header="Delivered"
-            [dataType]="'boolean'"
-            [hasSummary]="true"
-            [summaries]="deliveredSummary"
-        >
-        </igx-column>
-        <igx-column
-            field="OrderDate"
-            header="Order Date"
-            [dataType]="'date'"
-            [hasSummary]="true"
-        >
-        </igx-column>
-    </igx-tree-grid>
+    <igx-column field="ID" header="Order ID" [hasSummary]="true"> </igx-column>
+    <igx-column field="Name" header="Order Product" [hasSummary]="true">
+    </igx-column>
+    <igx-column
+      field="Units"
+      header="Units"
+      dataType="number"
+      [hasSummary]="true"
+      [summaries]="unitsSummary"
+      >
+    </igx-column>
+    <igx-column
+      field="UnitPrice"
+      header="Unit Price"
+      dataType="number"
+      [hasSummary]="true"
+      >
+    </igx-column>
+    <igx-column
+      field="Price"
+      header="Price"
+      dataType="number"
+      [hasSummary]="true"
+      >
+    </igx-column>
+    <igx-column
+      field="Delivered"
+      header="Delivered"
+      [dataType]="'boolean'"
+      [hasSummary]="true"
+      [summaries]="deliveredSummary"
+      >
+    </igx-column>
+    <igx-column
+      field="OrderDate"
+      header="Order Date"
+      [dataType]="'date'"
+      [hasSummary]="true"
+      >
+    </igx-column>
+  </igx-tree-grid>
 </div>

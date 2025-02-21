@@ -1,64 +1,66 @@
 <div class="grid__wrapper">
-    <div class="controls-holder">
-        <div class="switches">
-            <button igxButton="contained" (click)="restoreGridState()">
-                <igx-icon class="btn-icon">restore</igx-icon>
-                <span>Restore</span>
-            </button>
-            <button igxButton="contained" (click)="saveGridState()">
-                <igx-icon class="btn-icon">save</igx-icon>
-                <span>Save</span>
-            </button>
-            <button igxButton="contained" (click)="resetGridState()">
-                <igx-icon class="btn-icon">clear</igx-icon>
-                <span>Reset</span>
-            </button>
-            <button igxButton="contained" [routerLink]="['../tree-grid-state-about']">
-                <igx-icon class="btn-icon">forward</igx-icon>
-                <span>Leave</span>
-            </button>
-            <button igxButton="contained" (click)="clearStorage()">
-                <igx-icon class="btn-icon">delete</igx-icon>
-                <span>Clear</span>
-            </button>
-            <button igxButton="contained" (click)="reloadPage()">
-                <igx-icon class="btn-icon">refresh</igx-icon>
-                <span>Reload</span>
-            </button>
-        </div>
-
-        <div class="switches">
-            <ul>
-                <li>Clicking the SAVE button or leaving the page <a [routerLink]="['../tree-grid-state-about']"><strong>here</strong></a> will save grid state to localStorage.</li>
-                <li>Use the control buttons to SAVE / RESTORE / RESET / DELETE / grid state or LEAVE the page.</li>
-                <li>Select/Deselect checkboxes to control saving / restoring feature state.</li>
-            </ul>
-        </div>
-
-        <div class="switches">
-            <div class="control-item">
-                <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">All</igx-checkbox>
-            </div>
-            <div class="control-item" *ngFor="let f of features">
-                <igx-checkbox (change)="onChange($event, f.key)" [checked]="options[f.key]">
-                    {{ f.shortName }}
-                </igx-checkbox>
-            </div>
-        </div>
+  <div class="controls-holder">
+    <div class="switches">
+      <button igxButton="contained" (click)="restoreGridState()">
+        <igx-icon class="btn-icon">restore</igx-icon>
+        <span>Restore</span>
+      </button>
+      <button igxButton="contained" (click)="saveGridState()">
+        <igx-icon class="btn-icon">save</igx-icon>
+        <span>Save</span>
+      </button>
+      <button igxButton="contained" (click)="resetGridState()">
+        <igx-icon class="btn-icon">clear</igx-icon>
+        <span>Reset</span>
+      </button>
+      <button igxButton="contained" [routerLink]="['../tree-grid-state-about']">
+        <igx-icon class="btn-icon">forward</igx-icon>
+        <span>Leave</span>
+      </button>
+      <button igxButton="contained" (click)="clearStorage()">
+        <igx-icon class="btn-icon">delete</igx-icon>
+        <span>Clear</span>
+      </button>
+      <button igxButton="contained" (click)="reloadPage()">
+        <igx-icon class="btn-icon">refresh</igx-icon>
+        <span>Reload</span>
+      </button>
     </div>
 
-    <igx-tree-grid #treeGrid [id]="treeGridId" igxGridState
-        primaryKey="Name"
-        [data]="localData"
-        childDataKey="Employees"
-        [moving]="true"
-        width="98%" height="800px"
-        [autoGenerate]="false"
-        [rowSelection]="'multiple'"
-        [allowFiltering]="true">
-        <igx-paginator></igx-paginator>
-        <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [resizable]="true" [hasSummary]="true"></igx-column>
-        <igx-column field="HireDate" dataType="date" [sortable]="true" [editable]="true" [resizable]="true"></igx-column>
-        <igx-column field="Age" dataType="number" [sortable]="true" [editable]="true" [resizable]="true"></igx-column>
-    </igx-tree-grid>
+    <div class="switches">
+      <ul>
+        <li>Clicking the SAVE button or leaving the page <a [routerLink]="['../tree-grid-state-about']"><strong>here</strong></a> will save grid state to localStorage.</li>
+        <li>Use the control buttons to SAVE / RESTORE / RESET / DELETE / grid state or LEAVE the page.</li>
+        <li>Select/Deselect checkboxes to control saving / restoring feature state.</li>
+      </ul>
+    </div>
+
+    <div class="switches">
+      <div class="control-item">
+        <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">All</igx-checkbox>
+      </div>
+      @for (f of features; track f) {
+        <div class="control-item">
+          <igx-checkbox (change)="onChange($event, f.key)" [checked]="options[f.key]">
+            {{ f.shortName }}
+          </igx-checkbox>
+        </div>
+      }
+    </div>
+  </div>
+
+  <igx-tree-grid #treeGrid [id]="treeGridId" igxGridState
+    primaryKey="Name"
+    [data]="localData"
+    childDataKey="Employees"
+    [moving]="true"
+    width="98%" height="800px"
+    [autoGenerate]="false"
+    [rowSelection]="'multiple'"
+    [allowFiltering]="true">
+    <igx-paginator></igx-paginator>
+    <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [resizable]="true" [hasSummary]="true"></igx-column>
+    <igx-column field="HireDate" dataType="date" [sortable]="true" [editable]="true" [resizable]="true"></igx-column>
+    <igx-column field="Age" dataType="number" [sortable]="true" [editable]="true" [resizable]="true"></igx-column>
+  </igx-tree-grid>
 </div>

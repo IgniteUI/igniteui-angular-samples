@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IgxButtonGroupComponent, IgxCalendarComponent, IgxButtonDirective }
 from 'igniteui-angular';
-import { NgFor } from '@angular/common';
+
 
 const orientations = ["horizontal", "vertical"] as const;
 type Orientation = (typeof orientations)[number];
@@ -10,7 +10,7 @@ type Orientation = (typeof orientations)[number];
     selector: 'app-calendar',
     styleUrls: ['./calendar-sample-9.component.scss'],
     templateUrl: './calendar-sample-9.component.html',
-    imports: [IgxCalendarComponent, IgxButtonGroupComponent, NgFor, IgxButtonDirective]
+    imports: [IgxCalendarComponent, IgxButtonGroupComponent, IgxButtonDirective]
 })
 
 export class CalendarSample9Component {

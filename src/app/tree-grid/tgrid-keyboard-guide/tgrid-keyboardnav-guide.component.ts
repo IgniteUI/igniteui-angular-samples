@@ -7,7 +7,7 @@ import { IgxColumnComponent, IgxColumnGroupComponent, CellType, IgxListComponent
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
-import { NgIf, NgFor, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 // eslint-disable-next-line no-shadow
 enum GridSection {
@@ -171,7 +171,7 @@ const summaryCombinations: Item[] = [
             ])
         ])
     ],
-    imports: [IgxTreeGridComponent, IgxPaginatorComponent, NgIf, IgxGridToolbarComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxCellTemplateDirective, IgxListComponent, IgxListItemComponent, NgFor, NgClass, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective]
+    imports: [IgxTreeGridComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxCellTemplateDirective, IgxListComponent, IgxListItemComponent, NgClass, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective]
 })
 export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
     @ViewChild(IgxTreeGridComponent, { static: true })

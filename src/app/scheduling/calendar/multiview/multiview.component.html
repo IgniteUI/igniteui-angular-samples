@@ -1,12 +1,16 @@
 <article class="sample-column calendar-wrapper">
-    <div class="stay__info">
-        <span *ngIf="range.length <= 1">{{ action }}</span>
-        <span *ngIf="range.length > 1">{{ checkin }} - {{ checkout }} ({{ this.range.length - 1 }} nights stay)</span>
-    </div>
-    <igx-calendar #calendar selection="range" [monthsViewNumber]="2" [hideOutsideDays]="true"
-        (selected)="selectDates($event)">
-    </igx-calendar>
-    <igx-dialog #alert title="Availability" leftButtonLabel="OK" (leftButtonSelect)="alert.close()">
-    </igx-dialog>
-    <button igxButton="contained" (click)="submitDates()">Check Availability</button>
+  <div class="stay__info">
+    @if (range.length <= 1) {
+      <span>{{ action }}</span>
+    }
+    @if (range.length > 1) {
+      <span>{{ checkin }} - {{ checkout }} ({{ this.range.length - 1 }} nights stay)</span>
+    }
+  </div>
+  <igx-calendar #calendar selection="range" [monthsViewNumber]="2" [hideOutsideDays]="true"
+    (selected)="selectDates($event)">
+  </igx-calendar>
+  <igx-dialog #alert title="Availability" leftButtonLabel="OK" (leftButtonSelect)="alert.close()">
+  </igx-dialog>
+  <button igxButton="contained" (click)="submitDates()">Check Availability</button>
 </article>

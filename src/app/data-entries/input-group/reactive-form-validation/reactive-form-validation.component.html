@@ -1,28 +1,34 @@
 <article>
-    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-        <h4>Registration Form</h4>
-        <div class="container">
-            <igx-input-group>
-                <label igxLabel for="username">Username</label>
-                <input igxInput name="username" type="text" formControlName="username" />
-            </igx-input-group>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <h4>Registration Form</h4>
+    <div class="container">
+      <igx-input-group>
+        <label igxLabel for="username">Username</label>
+        <input igxInput name="username" type="text" formControlName="username" />
+      </igx-input-group>
 
-            <igx-input-group>
-                <label igxLabel for="email">Email</label>
-                <input igxInput name="email" type="email" formControlName="email" />
-                <igx-hint *ngIf="email.errors?.email">Please enter a valid email</igx-hint>
-            </igx-input-group>
+      <igx-input-group>
+        <label igxLabel for="email">Email</label>
+        <input igxInput name="email" type="email" formControlName="email" />
+        @if (email.errors?.email) {
+          <igx-hint>Please enter a valid email</igx-hint>
+        }
+      </igx-input-group>
 
-            <igx-input-group>
-                <label igxLabel for="password">Password</label>
-                <input igxInput name="password" [type]="showPassword ? 'text' : 'password'" formControlName="password" />
-                <igx-hint *ngIf="password.errors?.minlength">Password should be at least 8 characters</igx-hint>
-                <igx-icon *ngIf="password.value" igxSuffix (click)="showPassword = !showPassword">
-                    {{ togglePasswordVisibility }}
-                </igx-icon>
-            </igx-input-group>
+      <igx-input-group>
+        <label igxLabel for="password">Password</label>
+        <input igxInput name="password" [type]="showPassword ? 'text' : 'password'" formControlName="password" />
+        @if (password.errors?.minlength) {
+          <igx-hint>Password should be at least 8 characters</igx-hint>
+        }
+        @if (password.value) {
+          <igx-icon igxSuffix (click)="showPassword = !showPassword">
+            {{ togglePasswordVisibility }}
+          </igx-icon>
+        }
+      </igx-input-group>
 
-            <button igxButton="contained" igxRipple type="submit" [disabled]="!registrationForm.valid">Submit</button>
-        </div>
-    </form>
+      <button igxButton="contained" igxRipple type="submit" [disabled]="!registrationForm.valid">Submit</button>
+    </div>
+  </form>
 </article>

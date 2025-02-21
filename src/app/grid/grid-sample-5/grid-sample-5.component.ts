@@ -2,14 +2,14 @@ import { AfterViewInit, ChangeDetectorRef, Component, ViewChild, OnInit } from '
 import { IgxGridComponent, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { RemoteService } from '../../services/remote.service';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     providers: [RemoteService],
     selector: 'app-grid-remote-virtualization-sample',
     styleUrls: ['grid-sample-5.component.scss'],
     templateUrl: 'grid-sample-5.component.html',
-    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, NgIf, IgxBadgeComponent]
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent]
 })
 
 export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewInit, OnInit {
