@@ -2,13 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DefaultSortingStrategy, IgxTreeGridComponent, SortingDirection, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-tree-grid-sorting-styling',
     styleUrls: ['./tree-grid-sorting-styling.component.scss'],
     templateUrl: 'tree-grid-sorting-styling.component.html',
-    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, NgIf]
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective]
 })
 
 export class TreeGridSortingStylingComponent implements OnInit {

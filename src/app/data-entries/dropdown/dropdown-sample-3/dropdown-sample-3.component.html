@@ -1,13 +1,15 @@
 <button class="button" igxButton="contained" [igxToggleAction]="dropdown"
-    [igxDropDownItemNavigation]="dropdown">Countries</button>
+[igxDropDownItemNavigation]="dropdown">Countries</button>
 <igx-drop-down #dropdown [width]="'240px'">
-    <div class="drop-down__scroll-container">
-        <igx-drop-down-item *ngFor="let item of items" [disabled]="item.disabled" [isHeader]="item.header"
-            [selected]="item.selected" [class.drop-down-header]="item.header">
-            <igx-icon igxPrefix>place</igx-icon>
-            {{ item.field }}
-            <span igxSuffix>{{ item.code }}</span>
-            <igx-divider></igx-divider>
-        </igx-drop-down-item>
-    </div>
+  <div class="drop-down__scroll-container">
+    @for (item of items; track item) {
+      <igx-drop-down-item [disabled]="item.disabled" [isHeader]="item.header"
+        [selected]="item.selected" [class.drop-down-header]="item.header">
+        <igx-icon igxPrefix>place</igx-icon>
+        {{ item.field }}
+        <span igxSuffix>{{ item.code }}</span>
+        <igx-divider></igx-divider>
+      </igx-drop-down-item>
+    }
+  </div>
 </igx-drop-down>

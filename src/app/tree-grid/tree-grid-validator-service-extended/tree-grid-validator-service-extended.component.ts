@@ -5,7 +5,7 @@ import { IgxTreeGridComponent, IgxColumnComponent, IgxColumnMinValidatorDirectiv
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgTemplateOutlet, NgIf } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 
 export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
@@ -32,7 +32,7 @@ export class TGridPhoneFormatDirective extends Validators {
     selector: 'app-tree-grid-validator-service-extended-component',
     styleUrls: ['tree-grid-validator-service-extended.component.scss'],
     templateUrl: 'tree-grid-validator-service-extended.component.html',
-    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective, IgxColumnMaxValidatorDirective, TGridPhoneFormatDirective, IgxCellValidationErrorDirective, NgTemplateOutlet, NgIf, IgxButtonDirective]
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective, IgxColumnMaxValidatorDirective, TGridPhoneFormatDirective, IgxCellValidationErrorDirective, NgTemplateOutlet, IgxButtonDirective]
 })
 export class TreeGridValidatorServiceExtendedComponent implements OnInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

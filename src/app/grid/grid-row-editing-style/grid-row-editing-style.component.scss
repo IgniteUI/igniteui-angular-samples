@@ -1,10 +1,10 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
-.sample-wrapper {
-    margin: 0 auto;
-    padding: 16px;
-}
-
+$banner-theme: banner-theme(
+    $banner-background: #e3e3e3,
+    $banner-message-color: color($purple-palette, "secondary", 600),
+);
 $banner-theme: banner-theme(
     $banner-background: #494949,
     $banner-message-color: #ffcd0f,
@@ -16,9 +16,12 @@ $icon-button-theme: icon-button-theme(
 );
 
 :host {
+    ::ng-deep {
+        @include css-vars($banner-theme);
+        @include css-vars($icon-button-theme);
+    }
+}
 
-  ::ng-deep {
-    @include css-vars($banner-theme);
-    @include css-vars($icon-button-theme);
-  }
+igx-grid {
+    @include palette($purple-palette);
 }

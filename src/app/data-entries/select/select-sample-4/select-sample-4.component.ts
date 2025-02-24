@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxSelectComponent, OverlaySettings, PositionSettings, VerticalAlignment, IgxLabelDirective, IgxSelectItemComponent } from 'igniteui-angular';
 import { scaleInTop, scaleOutBottom } from 'igniteui-angular/animations';
-import { NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-select-sample-4',
     styleUrls: ['select-sample-4.component.scss'],
     templateUrl: 'select-sample-4.component.html',
-    imports: [IgxSelectComponent, IgxLabelDirective, NgFor, IgxSelectItemComponent]
+    imports: [IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent]
 })
 export class SelectSample4Component implements OnInit {
     @ViewChild(IgxSelectComponent, { static: true })

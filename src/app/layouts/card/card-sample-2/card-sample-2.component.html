@@ -1,25 +1,27 @@
 <div class="sample-column card-wrapper">
-    <igx-card  [horizontal]="horizontal">
-        <div igxLayout igxLayoutDir="column" igxFlex [igxFlexGrow]="1">
-            <igx-card-header>
-                <h5 igxCardHeaderTitle>{{card.title}}</h5>
-                <h5 igxCardHeaderSubtitle>{{card.subtitle}}</h5>
-                <igx-card-media width="64px" height="64px">
-                    <img [src]="card.imageUrl">
-                </igx-card-media>
-            </igx-card-header>
+  <igx-card  [horizontal]="horizontal">
+    <div igxLayout igxLayoutDir="column" igxFlex [igxFlexGrow]="1">
+      <igx-card-header>
+        <h5 igxCardHeaderTitle>{{card.title}}</h5>
+        <h5 igxCardHeaderSubtitle>{{card.subtitle}}</h5>
+        <igx-card-media width="64px" height="64px">
+          <img [src]="card.imageUrl">
+        </igx-card-media>
+      </igx-card-header>
 
-            <igx-card-content>
-                <p>{{card.content}}</p>
-            </igx-card-content>
-        </div>
+      <igx-card-content>
+        <p>{{card.content}}</p>
+      </igx-card-content>
+    </div>
 
-        <igx-divider [vertical]="horizontal"></igx-divider>
+    <igx-divider [vertical]="horizontal"></igx-divider>
 
-        <igx-card-actions layout="justify">
-            <button *ngFor="let icon of card.icons;" igxIconButton="flat" igxRipple [igxRippleCentered]="true" igxEnd>
-                <igx-icon>{{icon}}</igx-icon>
-            </button>
-        </igx-card-actions>
-    </igx-card>
+    <igx-card-actions layout="justify">
+      @for (icon of card.icons; track icon) {
+        <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" igxEnd>
+          <igx-icon>{{icon}}</igx-icon>
+        </button>
+      }
+    </igx-card-actions>
+  </igx-card>
 </div>

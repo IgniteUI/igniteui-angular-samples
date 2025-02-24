@@ -1,59 +1,63 @@
 <div class="grid__wrapper">
-    <div class="button-container">
-        <button igxButton="contained" (click)="exportButtonHandler()">Export To Excel</button>
-        Press the button to export the Grid as a .xlsx file.
-    </div>
+  <div class="button-container">
+    <button igxButton="contained" (click)="exportButtonHandler()">Export To Excel</button>
+    Press the button to export the Grid as a .xlsx file.
+  </div>
 
-    <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" [autoGenerate]="false" height="650px" width="100%">
-        <igx-column #col field="ProductID" header="Product ID" [headerClasses]="'prodId'">
-        </igx-column>
-        <igx-column #col field="ProductName" header="Product Name" [headerClasses]="'prodId'" [hasSummary]="true">
-            <ng-template igxCell let-cell="cell" let-val>
-                {{val}}
-            </ng-template>
-            <ng-template igxHeader let-col>
-                <div class="header-text">{{col.field}}</div>
-                <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
-            </ng-template>
-        </igx-column>
-        <igx-column #col field="UnitPrice" header="Price" [filterable]="false" [editable]="true" dataType="number"
-            [hasSummary]="true">
-            <ng-template igxCell let-cell="cell" let-val let-row>
-                ${{val}}
-            </ng-template>
-            <ng-template igxHeader let-col>
-                <div class="header-text">{{col.field}}</div>
-                <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
-            </ng-template>
-        </igx-column>
-        <igx-column #col field="UnitsInStock" header="Units In Stock" dataType="number" [editable]="true"
-            [hasSummary]="false" [summaries]="mySummary">
-            <ng-template igxCell let-cell="cell" let-val let-row>
-                {{val}}
-            </ng-template>
-            <ng-template igxHeader let-col>
-                <div class="header-text">{{col.field}}</div>
-                <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
-            </ng-template>
-        </igx-column>
-        <igx-column #col field="Discontinued" header="Discontinued" [hasSummary]="true" [dataType]="'boolean'">
-            <ng-template igxCell let-cell="cell" let-val>
-                <img *ngIf="val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
-                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
-            </ng-template>
-            <ng-template igxHeader let-col>
-                <div class="header-text">{{col.field}}</div>
-                <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
-            </ng-template>
-        </igx-column>
-        <igx-column #col field="OrderDate" [dataType]="'date'" [hasSummary]="true">
-            <ng-template igxCell let-cell="cell" let-val let-row>
-                {{ val | date: 'MMM d, yyyy' }}
-            </ng-template>
-            <ng-template igxHeader let-col>
-                <div class="header-text">{{col.field}}</div>
-                <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
-            </ng-template>
-        </igx-column>
-    </igx-grid>
+  <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" [autoGenerate]="false" height="650px" width="100%">
+    <igx-column #col field="ProductID" header="Product ID" [headerClasses]="'prodId'">
+    </igx-column>
+    <igx-column #col field="ProductName" header="Product Name" [headerClasses]="'prodId'" [hasSummary]="true">
+      <ng-template igxCell let-cell="cell" let-val>
+        {{val}}
+      </ng-template>
+      <ng-template igxHeader let-col>
+        <div class="header-text">{{col.field}}</div>
+        <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
+      </ng-template>
+    </igx-column>
+    <igx-column #col field="UnitPrice" header="Price" [filterable]="false" [editable]="true" dataType="number"
+      [hasSummary]="true">
+      <ng-template igxCell let-cell="cell" let-val let-row>
+        ${{val}}
+      </ng-template>
+      <ng-template igxHeader let-col>
+        <div class="header-text">{{col.field}}</div>
+        <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
+      </ng-template>
+    </igx-column>
+    <igx-column #col field="UnitsInStock" header="Units In Stock" dataType="number" [editable]="true"
+      [hasSummary]="false" [summaries]="mySummary">
+      <ng-template igxCell let-cell="cell" let-val let-row>
+        {{val}}
+      </ng-template>
+      <ng-template igxHeader let-col>
+        <div class="header-text">{{col.field}}</div>
+        <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
+      </ng-template>
+    </igx-column>
+    <igx-column #col field="Discontinued" header="Discontinued" [hasSummary]="true" [dataType]="'boolean'">
+      <ng-template igxCell let-cell="cell" let-val>
+        @if (val) {
+          <img src="assets/images/grid/active.png" title="Continued" alt="Continued" />
+        }
+        @if (!val) {
+          <img src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+        }
+      </ng-template>
+      <ng-template igxHeader let-col>
+        <div class="header-text">{{col.field}}</div>
+        <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
+      </ng-template>
+    </igx-column>
+    <igx-column #col field="OrderDate" [dataType]="'date'" [hasSummary]="true">
+      <ng-template igxCell let-cell="cell" let-val let-row>
+        {{ val | date: 'MMM d, yyyy' }}
+      </ng-template>
+      <ng-template igxHeader let-col>
+        <div class="header-text">{{col.field}}</div>
+        <igx-icon class="header-icon" style.color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
+      </ng-template>
+    </igx-column>
+  </igx-grid>
 </div>

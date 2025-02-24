@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 import { RemoteFilteringService } from '../../services/remoteFiltering.service';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 const DEBOUNCE_TIME = 300;
 
@@ -13,7 +13,7 @@ const DEBOUNCE_TIME = 300;
     selector: 'app-grid-remote-filtering-sample',
     styleUrls: ['./remote-filtering-sample.component.scss'],
     templateUrl: './remote-filtering-sample.component.html',
-    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, NgIf, IgxBadgeComponent, AsyncPipe]
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent, AsyncPipe]
 })
 export class RemoteFilteringSampleComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;

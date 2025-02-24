@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/member-delimiter-style */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { registerLocaleData, NgFor } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
 import localeBG from '@angular/common/locales/bg';
 import localeCS from '@angular/common/locales/cs';
 import localeDA from '@angular/common/locales/da';
@@ -39,7 +39,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-localization-all-resources',
     styleUrls: ['./localization-all-resources.component.scss'],
     templateUrl: 'localization-all-resources.component.html',
-    imports: [IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxSelectComponent, FormsModule, NgFor, IgxSelectItemComponent, IgxColumnComponent]
+    imports: [IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxSelectComponent, FormsModule, IgxSelectItemComponent, IgxColumnComponent]
 })
 export class LocalizationAllResourcesComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true })

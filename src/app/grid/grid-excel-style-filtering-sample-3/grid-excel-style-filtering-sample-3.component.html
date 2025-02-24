@@ -1,49 +1,53 @@
 <div class="grid__wrapper">
-    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [autoGenerate]="false" [moving]="true" height="650px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
-        <igx-grid-toolbar>
-            <igx-grid-toolbar-actions>
-                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
-            </igx-grid-toolbar-actions>
-        </igx-grid-toolbar>
+  <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [autoGenerate]="false" [moving]="true" height="650px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+    <igx-grid-toolbar>
+      <igx-grid-toolbar-actions>
+        <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+      </igx-grid-toolbar-actions>
+    </igx-grid-toolbar>
 
 
-        <ng-template igxExcelStyleHeaderIcon>
-            <igx-icon>filter_alt</igx-icon>
-        </ng-template>
+    <ng-template igxExcelStyleHeaderIcon>
+      <igx-icon>filter_alt</igx-icon>
+    </ng-template>
 
-        <igx-grid-excel-style-filtering [minHeight]="'380px'" [maxHeight]="'500px'">
-            <igx-excel-style-column-operations>
-                <igx-excel-style-header
-                    [showPinning]="true"
-                    [showHiding]="true"
-                >
-                </igx-excel-style-header>
+    <igx-grid-excel-style-filtering [minHeight]="'380px'" [maxHeight]="'500px'">
+      <igx-excel-style-column-operations>
+        <igx-excel-style-header
+          [showPinning]="true"
+          [showHiding]="true"
+          >
+        </igx-excel-style-header>
 
-                <igx-excel-style-sorting></igx-excel-style-sorting>
-            </igx-excel-style-column-operations>
+        <igx-excel-style-sorting></igx-excel-style-sorting>
+      </igx-excel-style-column-operations>
 
-            <igx-excel-style-filter-operations>
-                <igx-excel-style-search></igx-excel-style-search>
-            </igx-excel-style-filter-operations>
-        </igx-grid-excel-style-filtering>
+      <igx-excel-style-filter-operations>
+        <igx-excel-style-search></igx-excel-style-search>
+      </igx-excel-style-filter-operations>
+    </igx-grid-excel-style-filtering>
 
-        <igx-column field="ProductName" header="Product Name" [sortable]="true" [dataType]="'string'">
-        </igx-column>
-        <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [sortable]="true" [dataType]="'string'">
-        </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price"  dataType="number">
-            <ng-template igxCell let-cell="cell" let-val let-row>
-                {{+val | currency}}
-            </ng-template>
-        </igx-column>
-        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [formatter]="formatDate">
-        </igx-column>
-        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
-            <ng-template igxCell let-cell="cell" let-val>
-                <img *ngIf="val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
-                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
-            </ng-template>
-        </igx-column>
-    </igx-grid>
+    <igx-column field="ProductName" header="Product Name" [sortable]="true" [dataType]="'string'">
+    </igx-column>
+    <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [sortable]="true" [dataType]="'string'">
+    </igx-column>
+    <igx-column field="UnitPrice" header="Unit Price"  dataType="number">
+      <ng-template igxCell let-cell="cell" let-val let-row>
+        {{+val | currency}}
+      </ng-template>
+    </igx-column>
+    <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [formatter]="formatDate">
+    </igx-column>
+    <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
+      <ng-template igxCell let-cell="cell" let-val>
+        @if (val) {
+          <img src="assets/images/grid/active.png" title="Continued" alt="Continued" />
+        }
+        @if (!val) {
+          <img src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+        }
+      </ng-template>
+    </igx-column>
+  </igx-grid>
 
 </div>

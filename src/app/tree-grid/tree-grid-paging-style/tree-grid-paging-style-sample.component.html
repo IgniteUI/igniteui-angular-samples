@@ -1,26 +1,30 @@
 <div class="grid__wrapper">
-    <igx-tree-grid [igxPreventDocumentScroll]="true"  #treegrid1 [data]="data" height="520px" width="100%"
-        primaryKey="ID" foreignKey="ParentID">
-        <igx-paginator [perPage]="10"></igx-paginator>
-        <igx-column field="ID" header="Order ID">
-        </igx-column>
-        <igx-column field="Name" header="Order Product">
-        </igx-column>
-        <igx-column field="Category" header="Category">
-        </igx-column>
-        <igx-column field="Units" header="Units" dataType="number">
-        </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" [dataType]="'currency'" [pipeArgs]="formatOptions">
-        </igx-column>
-        <igx-column field="Price" header="Price" [dataType]="'currency'" [pipeArgs]="formatOptions">
-        </igx-column>
-        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'">
-        </igx-column>
-        <igx-column field="Delivered" header="Delivered" [dataType]="'boolean'">
-            <ng-template igxCell let-cell="cell" let-val>
-                <img *ngIf="val" src="assets/images/grid/active.png" title="Delivered" alt="CDelivered" />
-                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered" />
-            </ng-template>
-        </igx-column>
-    </igx-tree-grid>
+  <igx-tree-grid [igxPreventDocumentScroll]="true"  #treegrid1 [data]="data" height="520px" width="100%"
+    primaryKey="ID" foreignKey="ParentID">
+    <igx-paginator [perPage]="10"></igx-paginator>
+    <igx-column field="ID" header="Order ID">
+    </igx-column>
+    <igx-column field="Name" header="Order Product">
+    </igx-column>
+    <igx-column field="Category" header="Category">
+    </igx-column>
+    <igx-column field="Units" header="Units" dataType="number">
+    </igx-column>
+    <igx-column field="UnitPrice" header="Unit Price" [dataType]="'currency'" [pipeArgs]="formatOptions">
+    </igx-column>
+    <igx-column field="Price" header="Price" [dataType]="'currency'" [pipeArgs]="formatOptions">
+    </igx-column>
+    <igx-column field="OrderDate" header="Order Date" [dataType]="'date'">
+    </igx-column>
+    <igx-column field="Delivered" header="Delivered" [dataType]="'boolean'">
+      <ng-template igxCell let-cell="cell" let-val>
+        @if (val) {
+          <img src="assets/images/grid/active.png" title="Delivered" alt="CDelivered" />
+        }
+        @if (!val) {
+          <img src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered" />
+        }
+      </ng-template>
+    </igx-column>
+  </igx-tree-grid>
 </div>

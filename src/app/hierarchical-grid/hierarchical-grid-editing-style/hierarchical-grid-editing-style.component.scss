@@ -1,50 +1,55 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $white: #fff;
 $blue: #4567bb;
+$gray: #efefef;
 
-$color-palette: palette($primary: $white, $secondary: $blue, $surface: #fff);
+$color-palette: palette(
+  $primary: $white, 
+  $secondary: $blue, 
+  $surface: $gray
+);
 
 $grid-theme: grid-theme(
-    $cell-editing-background: $blue,
-    $cell-edited-value-color: $white,
-    $cell-active-border-color: $white,
-    $edit-mode-color: color($color-palette, "secondary", 200)
+  $cell-editing-background: $blue,
+  $cell-edited-value-color: $white,
+  $cell-active-border-color: $white,
+  $edit-mode-color: color($color-palette, "secondary", 200)
 );
 
 $input-theme: input-group-theme(
-    $filled-text-color: $white,
-    $focused-text-color: $white,
-    $idle-text-color: $white,
-    $idle-bottom-line-color: $white,
-    $focused-bottom-line-color: $white,
-    $interim-bottom-line-color: $white,
-    $hover-bottom-line-color: $white,
-    $box-background: $blue
+  $filled-text-color: $white,
+  $focused-text-color: $white,
+  $idle-text-color: $white,
+  $idle-bottom-line-color: $white,
+  $focused-bottom-line-color: $white,
+  $interim-bottom-line-color: $white,
+  $hover-bottom-line-color: $white,
+  $box-background: $blue
 );
 
 $checkbox-theme: checkbox-theme(
-    $empty-color: color($color-palette, "secondary", 200),
-    $fill-color: $white,
-    $tick-color: $blue
+  $empty-color: color($color-palette, "secondary", 200),
+  $fill-color: $white,
+  $tick-color: $blue
 );
 
 $datepicker-theme: calendar-theme(
-    $date-selected-foreground: $white,
-    $date-selected-background: $blue
+  $date-selected-foreground: $white,
+  $date-selected-background: $blue
 );
 
 :host {
-    @include palette($color-palette);
-    ::ng-deep {
-        @include css-vars($checkbox-theme);
-        @include css-vars($input-theme);
-        @include css-vars($datepicker-theme);
-        @include css-vars($grid-theme);
-    }
+  ::ng-deep {
+    @include css-vars($grid-theme);
+    @include css-vars($checkbox-theme);
+    @include css-vars($input-theme);
+    @include css-vars($datepicker-theme);
+  }
 }
 
-.grid__wrapper {
-    margin: 0 auto;
-    padding: 16px;
+igx-hierarchical-grid {
+  @include palette($color-palette);
 }
+ 

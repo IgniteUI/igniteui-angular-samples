@@ -1,30 +1,34 @@
 <div class="summary-chooser">
-    <igx-buttongroup [values]="summaryCalcModes" (selected)="selectSummaryCalcMode($event)"></igx-buttongroup>
+  <igx-buttongroup [values]="summaryCalcModes" (selected)="selectSummaryCalcMode($event)"></igx-buttongroup>
 </div>
 
 <div class="summary-chooser">
-    <igx-buttongroup [values]="summaryPositions" (selected)="selectSummaryPosition($event)"></igx-buttongroup>
+  <igx-buttongroup [values]="summaryPositions" (selected)="selectSummaryPosition($event)"></igx-buttongroup>
 </div>
 
 <div class="summary-chooser">
-    <igx-switch labelPosition="before" [checked]='treegrid1.showSummaryOnCollapse' (change)='toggle($event)'> Show summary row when group row is collapsed:</igx-switch>
+  <igx-switch labelPosition="before" [checked]='treegrid1.showSummaryOnCollapse' (change)='toggle($event)'> Show summary row when group row is collapsed:</igx-switch>
 </div>
 
 <igx-tree-grid [igxPreventDocumentScroll]="true"  #treegrid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
-    primaryKey="ID" foreignKey="ParentID">
-    <igx-column #col field="ID" header="Order ID" [sortable]="true">
-    </igx-column>
-    <igx-column #col field="Name" header="Order Product" [hasSummary]="true">
-    </igx-column>
-    <igx-column #col field="UnitPrice" header="Price" [formatter]="formatCurrency" [filterable]="false" [editable]="true" dataType="number"
-                [hasSummary]="true" [summaries]="avgSummary">
-    </igx-column>
-    <igx-column #col field="Delivered" header="Delivered" [dataType]="'boolean'">
-        <ng-template igxCell let-cell="cell" let-val>
-            <img *ngIf="val" src="assets/images/grid/active.png" title="Delivered" alt="Delivered" />
-            <img *ngIf="!val" src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered" />
-        </ng-template>
-    </igx-column>
-    <igx-column #col field="OrderDate" header="Order Date" [dataType]="'date'">
-    </igx-column>
+  primaryKey="ID" foreignKey="ParentID">
+  <igx-column #col field="ID" header="Order ID" [sortable]="true">
+  </igx-column>
+  <igx-column #col field="Name" header="Order Product" [hasSummary]="true">
+  </igx-column>
+  <igx-column #col field="UnitPrice" header="Price" [formatter]="formatCurrency" [filterable]="false" [editable]="true" dataType="number"
+    [hasSummary]="true" [summaries]="avgSummary">
+  </igx-column>
+  <igx-column #col field="Delivered" header="Delivered" [dataType]="'boolean'">
+    <ng-template igxCell let-cell="cell" let-val>
+      @if (val) {
+        <img src="assets/images/grid/active.png" title="Delivered" alt="Delivered" />
+      }
+      @if (!val) {
+        <img src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered" />
+      }
+    </ng-template>
+  </igx-column>
+  <igx-column #col field="OrderDate" header="Order Date" [dataType]="'date'">
+  </igx-column>
 </igx-tree-grid>

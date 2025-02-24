@@ -1,23 +1,25 @@
 <div class="sample-wrapper">
-    <div class="grid__wrapper">
-        <igx-grid [igxPreventDocumentScroll]="true" [data]="data" [allowFiltering]="true" filterMode="excelStyleFilter">
-            <igx-column *ngFor="let each of nestedConfigColumns"
-                [sortable]="true"
-                [field]="each.field"
-                [header]="each.header"
-                [dataType]="each.type"
-                [formatter]="each.formatter"
-            >
-            </igx-column>
-            <igx-grid-footer>
-                <section class="references">
-                    <p><sup>1</sup>pKa is the negative of the logarithm of the dissociation constant for the -COOH group.</p>
-                    <p><sup>2</sup>pKb is the negative of the logarithm of the dissociation constant for the -NH3 group.</p>
-                    <p><sup>3</sup>pKx is the negative of the logarithm of the dissociation constant for any other group in the molecule.</p>
-                    <p><sup>4</sup> pl is the pH at the isoelectric point.</p>
-                    Reference: D.R. Lide, Handbook of Chemistry and Physics, 72nd Edition, CRC Press, Boca Raton, FL, 1991.
-                </section>
-            </igx-grid-footer>
-        </igx-grid>
-    </div>
+  <div class="grid__wrapper">
+    <igx-grid [igxPreventDocumentScroll]="true" [data]="data" [allowFiltering]="true" filterMode="excelStyleFilter">
+      @for (each of nestedConfigColumns; track each) {
+        <igx-column
+          [sortable]="true"
+          [field]="each.field"
+          [header]="each.header"
+          [dataType]="each.type"
+          [formatter]="each.formatter"
+          >
+        </igx-column>
+      }
+      <igx-grid-footer>
+        <section class="references">
+          <p><sup>1</sup>pKa is the negative of the logarithm of the dissociation constant for the -COOH group.</p>
+          <p><sup>2</sup>pKb is the negative of the logarithm of the dissociation constant for the -NH3 group.</p>
+          <p><sup>3</sup>pKx is the negative of the logarithm of the dissociation constant for any other group in the molecule.</p>
+          <p><sup>4</sup> pl is the pH at the isoelectric point.</p>
+          Reference: D.R. Lide, Handbook of Chemistry and Physics, 72nd Edition, CRC Press, Boca Raton, FL, 1991.
+        </section>
+      </igx-grid-footer>
+    </igx-grid>
+  </div>
 </div>

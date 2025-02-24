@@ -23,13 +23,13 @@ import { blink, fadeIn, fadeOut, flipBottom, flipHorBck, flipHorFwd, flipLeft, f
     swingInLeftFwd, swingInRightBck, swingInRightFwd, swingInTopBck, swingInTopFwd,
     swingOutBottomBck, swingOutBottomFwd, swingOutLeftBck, swingOutLefttFwd,
     swingOutRightBck, swingOutRightFwd, swingOutTopBck, swingOutTopFwd } from 'igniteui-angular/animations';
-import { NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-animations-sample-1',
     styleUrls: ['./animations-sample-1.component.scss'],
     templateUrl: './animations-sample-1.component.html',
-    imports: [IgxListComponent, NgFor, IgxListItemComponent, IgxDialogComponent]
+    imports: [IgxListComponent, IgxListItemComponent, IgxDialogComponent]
 })
 export class AnimationsSampleComponent {
     @ViewChild('dialog', { static: true, read: IgxDialogComponent })

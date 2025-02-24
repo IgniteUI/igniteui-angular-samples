@@ -1,47 +1,53 @@
-<div class="search-container">
+<div class="search-wrapper">
+  <div class="search-container">
     <igx-input-group type="search" class="input-group">
-        <igx-prefix>
-            <igx-icon *ngIf="searchText.length === 0">search</igx-icon>
-            <igx-icon *ngIf="searchText.length > 0" (click)="clearSearch()">clear</igx-icon>
-        </igx-prefix>
+      <igx-prefix>
+        @if (searchText.length === 0) {
+          <igx-icon>search</igx-icon>
+        }
+        @if (searchText.length > 0) {
+          <igx-icon (click)="clearSearch()">clear</igx-icon>
+        }
+      </igx-prefix>
 
-        <input #search1 id="search1" igxInput placeholder="Search" autocomplete="off" [(ngModel)]="searchText" (ngModelChange)="onTextboxChange()"
-                (keydown)="searchKeyDown($event)" />
+      <input #search1 id="search1" igxInput placeholder="Search" autocomplete="off" [(ngModel)]="searchText" (ngModelChange)="onTextboxChange()"
+        (keydown)="searchKeyDown($event)" />
 
         <igx-suffix>
-            <div class="caseSensitiveButton">
-                <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="updateSearch()"
-                        [style.background]="caseSensitive ? 'rgb(73, 180, 254)' : 'transparent'">
-                    <igx-icon class="caseSensitiveIcon" family="material">text_fields</igx-icon>
-                </button>
-            </div>
-            <ng-container *ngIf="searchText.length > 0">
-                <span>
-                    <ng-container *ngIf="matchCount > 0">
-                    {{ index + 1 }} of {{ matchCount }} results
-                    </ng-container>
-                    <ng-container *ngIf="matchCount === 0">
-                        No results
-                    </ng-container>
-                </span>
-            </ng-container>
-            <div class="searchButtons">
-                <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="findPrev()" [disabled]="!canMoveHighlight">
-                    <igx-icon family="material">navigate_before</igx-icon>
-                </button>
-                <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="findNext()" [disabled]="!canMoveHighlight">
-                    <igx-icon family="material">navigate_next</igx-icon>
-                </button>
-            </div>
+          <div class="caseSensitiveButton">
+            <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="updateSearch()"
+              [style.background]="caseSensitive ? 'rgb(73, 180, 254)' : 'transparent'">
+              <igx-icon class="caseSensitiveIcon" family="material">text_fields</igx-icon>
+            </button>
+          </div>
+          @if (searchText.length > 0) {
+            <span>
+              @if (matchCount > 0) {
+                {{ index + 1 }} of {{ matchCount }} results
+              }
+              @if (matchCount === 0) {
+                No results
+              }
+            </span>
+          }
+          <div class="searchButtons">
+            <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="findPrev()" [disabled]="!canMoveHighlight">
+              <igx-icon family="material">navigate_before</igx-icon>
+            </button>
+            <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="findNext()" [disabled]="!canMoveHighlight">
+              <igx-icon family="material">navigate_next</igx-icon>
+            </button>
+          </div>
         </igx-suffix>
-    </igx-input-group>
-</div>
-<div igxTextHighlight
-     [value]="html"
-     [groupName]="'group1'"
-     [cssClass]="'custom-highlight'"
-     [activeCssClass]="'custom-active-highlight'"
-     [containerClass]="'sample-text-container'"
-     class="sample-text-container">
-    {{html}}
-</div>
+      </igx-input-group>
+    </div>
+    <div igxTextHighlight
+      [value]="html"
+      [groupName]="'group1'"
+      [cssClass]="'custom-highlight'"
+      [activeCssClass]="'custom-active-highlight'"
+      [containerClass]="'sample-text-container'"
+      class="sample-text-container">
+      {{html}}
+    </div>
+  </div>

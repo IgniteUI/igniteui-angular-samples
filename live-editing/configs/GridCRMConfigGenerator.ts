@@ -1,22 +1,9 @@
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/naming-convention */
-import {HttpClientModule} from '@angular/common/http';
-import {
-    IgxAutocompleteModule,
-    IgxRippleModule,
-    IgxGridModule,
-    IgxIconModule,
-    IgxLayoutModule,
-    IgxAvatarModule,
-    IgxInputGroupModule,
-    IgxButtonModule } from 'igniteui-angular';
-import { RouterTestingModule } from "@angular/router/testing";
-import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing';
-import { BrowserModule, HammerModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';;
 import { FormsModule } from '@angular/forms';
-import { IgxPreventDocumentScrollModule } from '../../src/app/directives/prevent-scroll.directive';
+import { IgxPreventDocumentScrollDirective } from '../../src/app/directives/prevent-scroll.directive';
 
 export class GridCRMConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -26,23 +13,24 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
             component: 'GridCRMComponent',
             additionalFiles: [
                 '/src/app/directives/prevent-scroll.directive.ts',
-                '/projects/app-crm/src/_app-layout.scss', 
+                '/projects/app-crm/src/_app-layout.scss',
                 '/projects/app-crm/src/_variables.scss',
                 '/projects/app-crm/src/app/grid-crm/data.ts'
             ],
             additionalDependencies: [],
-            appModuleConfig: new AppModuleConfig({
-                imports: [
-                    'IgxRippleModule', 
-                    'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
-                    'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule',
-                    'IgxPreventDocumentScrollModule', 'GridCRMComponent', 'RouterTestingModule'
+            appConfig: {
+                modules: [
+                    { 'module': 'BrowserModule', 'import': '@angular/platform-browser' },
+                    { 'module': 'FormsModule', 'import': '@angular/forms' },
+                    { 'module': 'HammerModule', 'import': '@angular/platform-browser' }
                 ],
-                ngDeclarations: ['GridCRMComponent'],
-                ngImports: ['IgxPreventDocumentScrollModule', 'IgxRippleModule', 
-                'IgxGridModule', 'IgxIconModule', 'IgxLayoutModule',
-                'IgxAvatarModule', 'IgxInputGroupModule', 'IgxButtonModule', 'RouterTestingModule']
-            })
+                providers: [
+                    { 'provider': 'provideAnimations()', 'import': '@angular/platform-browser/animations' }
+                ],
+                router: true
+            }
+            /*appConfig: BaseAppConfig*/
+
         }));
 
         return configs;

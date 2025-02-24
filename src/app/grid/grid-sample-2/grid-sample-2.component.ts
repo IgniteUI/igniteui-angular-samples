@@ -4,14 +4,14 @@ import { IgxGridComponent, IgxColumnComponent, IgxCellHeaderTemplateDirective, I
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     providers: [FinancialDataService],
     selector: 'app-grid-sample',
     styleUrls: ['./grid-sample-2.component.scss'],
     templateUrl: 'grid-sample-2.component.html',
-    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, NgIf, IgxBadgeComponent, AsyncPipe]
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent, AsyncPipe]
 })
 
 export class FinancialSampleComponent {

@@ -3,7 +3,7 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validato
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxCellValidationErrorDirective, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxButtonDirective } from 'igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { CUSTOMERS } from '../../data/hierarchical-data';
-import { NgTemplateOutlet, NgIf } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 
 export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
@@ -34,7 +34,7 @@ export function unique(value, index, self) {
     selector: 'app-hierarchical-grid-validator-service-extended',
     styleUrls: ['./hierarchical-grid-validator-service-extended.component.scss'],
     templateUrl: './hierarchical-grid-validator-service-extended.component.html',
-    imports: [IgxHierarchicalGridComponent, IgxColumnComponent, IgxColumnRequiredValidatorDirective, HGridPhoneFormatDirective, IgxCellValidationErrorDirective, NgTemplateOutlet, NgIf, IgxRowIslandComponent, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxButtonDirective]
+    imports: [IgxHierarchicalGridComponent, IgxColumnComponent, IgxColumnRequiredValidatorDirective, HGridPhoneFormatDirective, IgxCellValidationErrorDirective, NgTemplateOutlet, IgxRowIslandComponent, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxButtonDirective]
 })
 export class HierarchicalGridValidatorServiceExtendedComponent {
 

@@ -1,0 +1,10 @@
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
+
+$custom-select-theme: select-theme(
+  $toggle-button-background: #2b2b2b,
+  $toggle-button-background-focus: #808080,
+);
+
+@include css-vars($custom-select-theme);
+ 

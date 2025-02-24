@@ -1,6 +1,8 @@
 <igx-select #select>
-    <label igxLabel>Simple Select</label>
-    <igx-select-item *ngFor="let item of items" [value]="item">
-        {{item}}
+  <label igxLabel>Simple Select</label>
+  @for (item of items; track item) {
+    <igx-select-item [value]="item">
+      {{item}}
     </igx-select-item>
+  }
 </igx-select>

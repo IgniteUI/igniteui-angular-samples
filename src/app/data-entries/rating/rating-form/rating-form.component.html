@@ -1,31 +1,33 @@
 <div class="sample-column">
-    <form>
-        <igx-card elevated>
-            <igx-card-media height="300px">
-                <img [src]="product.ImageURL">
-            </igx-card-media>
+  <form>
+    <igx-card elevated>
+      <igx-card-media height="300px">
+        <img [src]="product.ImageURL">
+      </igx-card-media>
 
-            <igx-card-header>
-                <h4 igxCardHeaderTitle>{{ product.ProductName }}</h4>
-            </igx-card-header>
+      <igx-card-header>
+        <h4 igxCardHeaderTitle>{{ product.ProductName }}</h4>
+      </igx-card-header>
 
-            <igx-card-content>
-                <span igxCardHeaderSubtitle>Price: {{ product.UnitPrice | currency:'USD' }}</span>
-                <span igxCardHeaderSubtitle>
-                    User Rating: {{ productRating }} from {{ product.TotalReviews + (product.UserRating !== 0 ? 1 : 0) }} users
-                </span>
-                <igc-rating [(ngModel)]="product.UserRating" name="userRating"></igc-rating>
-            </igx-card-content>
-            <igx-card-actions>
-                <button igxButton="outlined" igxRipple igxStart>Buy again</button>
-                <button igxIconButton="flat"
-                    igxRipple
-                    [igxRippleCentered]="true"
-                    *ngFor="let icon of product.icons" igxEnd>
-                    <igx-icon [style.color]="'#ECAA53'">{{icon}}</igx-icon>
-                </button>
-            </igx-card-actions>
-        </igx-card>
-    </form>
+      <igx-card-content>
+        <span igxCardHeaderSubtitle>Price: {{ product.UnitPrice | currency:'USD' }}</span>
+        <span igxCardHeaderSubtitle>
+          User Rating: {{ productRating }} from {{ product.TotalReviews + (product.UserRating !== 0 ? 1 : 0) }} users
+        </span>
+        <igc-rating [(ngModel)]="product.UserRating" name="userRating"></igc-rating>
+      </igx-card-content>
+      <igx-card-actions>
+        <button igxButton="outlined" igxRipple igxStart>Buy again</button>
+        @for (icon of product.icons; track icon) {
+          <button igxIconButton="flat"
+            igxRipple
+            [igxRippleCentered]="true"
+            igxEnd>
+            <igx-icon [style.color]="'#ECAA53'">{{icon}}</igx-icon>
+          </button>
+        }
+      </igx-card-actions>
+    </igx-card>
+  </form>
 </div>
 

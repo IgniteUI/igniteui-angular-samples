@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxIconComponent, IgxPrefixDirective, IgxSuffixDirective, IgxDividerDirective } from 'igniteui-angular';
-import { NgFor } from '@angular/common';
+
 
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-sample-3',
     styleUrls: ['./dropdown-sample-3.component.scss'],
     templateUrl: './dropdown-sample-3.component.html',
-    imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, NgFor, IgxDropDownItemComponent, IgxIconComponent, IgxPrefixDirective, IgxSuffixDirective, IgxDividerDirective]
+    imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxIconComponent, IgxPrefixDirective, IgxSuffixDirective, IgxDividerDirective]
 })
 export class DropDownSample3Component {
 

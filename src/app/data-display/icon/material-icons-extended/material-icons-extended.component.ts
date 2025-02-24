@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/member-ordering */
 import { Component, Inject, OnInit, Pipe, PipeTransform, Renderer2, forwardRef } from '@angular/core';
 import * as fileSaver from 'file-saver';
-import { DOCUMENT, NgFor, NgIf } from '@angular/common';
+import { DOCUMENT } from '@angular/common';
 import { IgxIconService, ISelectionEventArgs, IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxInputGroupComponent, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, IgxSuffixDirective, IgxButtonDirective } from 'igniteui-angular';
 
 import {
@@ -19,7 +19,7 @@ interface ICategoryOption {
     selector: 'app-material-icons-extended',
     templateUrl: './material-icons-extended.component.html',
     styleUrls: ['./material-icons-extended.component.scss'],
-    imports: [IgxSelectComponent, IgxLabelDirective, NgFor, IgxSelectItemComponent, IgxInputGroupComponent, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, NgIf, IgxSuffixDirective, IgxButtonDirective, forwardRef(() => CategoriesFilterPipe), forwardRef(() => FilterByName)]
+    imports: [IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxInputGroupComponent, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, IgxSuffixDirective, IgxButtonDirective, forwardRef(() => CategoriesFilterPipe), forwardRef(() => FilterByName)]
 })
 export class MaterialIconsExtendedComponent implements OnInit {
     constructor(

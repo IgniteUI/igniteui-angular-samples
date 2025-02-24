@@ -8,7 +8,7 @@ import { IgxColumnComponent, IgxColumnGroupComponent, CellType, IgxGridComponent
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { DATA } from '../../data/customers';
-import { NgIf, NgFor, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 enum GridSection {
     THEAD = 'igx-grid__thead-wrapper',
@@ -164,7 +164,7 @@ const summaryCombinations: Item[] = [
             ])
         ])
     ],
-    imports: [IgxGridComponent, IgxPaginatorComponent, NgIf, IgxGridToolbarComponent, IgxGridDetailTemplateDirective, IgxColumnGroupComponent, IgxColumnComponent, IgxListComponent, IgxListItemComponent, NgFor, NgClass, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective]
+    imports: [IgxGridComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridDetailTemplateDirective, IgxColumnGroupComponent, IgxColumnComponent, IgxListComponent, IgxListItemComponent, NgClass, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective]
 })
 export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 

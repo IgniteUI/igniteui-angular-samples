@@ -183,31 +183,31 @@ igx-expansion-panel-body {
 
             .mat-mdc-slider.secondary .mdc-slider__track--inactive,
             .mat-mdc-slider.secondary .mdc-slider__thumb-knob {
-                background-color: color($custom-mat-dark-theme, 'accent');
+                background-color: color($custom-mat-dark-theme, accent, default);
             }
 
             .mat-mdc-slider.secondary .mdc-slider__track--active_fill,
             .mat-mdc-slider.secondary .mdc-slider__thumb-knob {
-                border-color: color($custom-mat-dark-theme, 'accent');
+                border-color: color($custom-mat-dark-theme, accent, default);
             }
 
             .mat-mdc-slider.secondary .mat-mdc-slider-visual-thumb .mat-ripple > * {
-                background-color: color($custom-mat-dark-theme, 'accent');
+                background-color: color($custom-mat-dark-theme, accent, default);
                 opacity: .12;
             }
 
             .mat-step-header .mat-step-icon-selected {
-                background-color: color($custom-dark-palette, 'secondary');
+                background-color: color($custom-dark-palette, secondary);
             }
 
             .mat-stepper-horizontal,
             .mat-mdc-form-field-focus-overlay,
             .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-                background: color($custom-dark-palette, 'surface');
+                background: color($custom-dark-palette, surface);
             }
 
             igx-expansion-panel h5 {
-                color: color($custom-dark-palette, 'gray', 800);
+                color: color($custom-dark-palette, "gray", 800);
             }
         }
     }
@@ -233,16 +233,16 @@ igx-expansion-panel-body {
 
         .mat-mdc-slider.secondary .mdc-slider__track--inactive,
         .mat-mdc-slider.secondary .mdc-slider__thumb-knob {
-            background-color: color($custom-mat-light-theme, 'accent');
+            background-color: color($custom-mat-light-theme, accent, default);
         }
 
         .mat-mdc-slider.secondary .mdc-slider__track--active_fill,
         .mat-mdc-slider.secondary .mdc-slider__thumb-knob {
-            border-color: color($custom-mat-light-theme, 'accent');
+            border-color: color($custom-mat-light-theme, accent, default);
         }
 
         .mat-mdc-slider.secondary .mat-mdc-slider-visual-thumb .mat-ripple > * {
-            background-color: color($custom-mat-light-theme, 'accent');
+            background-color: color($custom-mat-light-theme, accent, default);
             opacity: .12;
         }
 

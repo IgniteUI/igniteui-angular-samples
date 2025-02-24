@@ -5,13 +5,13 @@ import { DATA, NodeData, REMOTE_ROOT, SelectableNodeData } from '../../../data/t
 import { DataService } from './services/data.service';
 import { Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
-import { NgFor, NgTemplateOutlet, NgIf } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 @Component({
     selector: 'app-tree-advanced-sample',
     templateUrl: './tree-advanced-sample.component.html',
     styleUrls: ['./tree-advanced-sample.component.scss'],
     providers: [DataService],
-    imports: [IgxTreeComponent, NgFor, IgxTreeNodeComponent, NgTemplateOutlet, IgxIconComponent, NgIf, IgxTooltipTargetDirective, IgxTooltipDirective]
+    imports: [IgxTreeComponent, IgxTreeNodeComponent, NgTemplateOutlet, IgxIconComponent, IgxTooltipTargetDirective, IgxTooltipDirective]
 })
 export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
     public family = 'tree-icons';

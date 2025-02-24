@@ -1,10 +1,13 @@
 /* eslint-disable max-len */
-import {IgxActionStripModule,
-IgxRippleModule,
-IgxButtonModule,
-IgxIconModule,
-IgxButtonGroupModule} from 'igniteui-angular';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing';
+import {
+    IgxActionStripModule,
+    IgxRippleModule,
+    IgxButtonModule,
+    IgxIconModule,
+    IgxButtonGroupModule
+} from 'igniteui-angular';
+import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 export class ActionStripConfigGenerator implements IConfigGenerator {
 
 
@@ -13,31 +16,20 @@ export class ActionStripConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'ActionStripParagraphComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxActionStripModule', 'ActionStripParagraphComponent', 'IgxRippleModule', 'IgxButtonGroupModule', 'IgxButtonModule', 'IgxIconModule'],
-                ngDeclarations: ['ActionStripParagraphComponent'],
-                ngImports: ['IgxActionStripModule', 'IgxRippleModule', 'IgxButtonGroupModule', 'IgxButtonModule', 'IgxIconModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: '/menus/action-strip/'
         }));
 
         configs.push(new Config({
             component: 'ActionStripParagraphMenuComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxActionStripModule', 'ActionStripParagraphMenuComponent', 'IgxRippleModule', 'IgxButtonModule', 'IgxIconModule'],
-                ngDeclarations: ['ActionStripParagraphMenuComponent'],
-                ngImports: ['IgxActionStripModule', 'IgxRippleModule', 'IgxButtonModule', 'IgxIconModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: '/menus/action-strip/'
         }));
 
         configs.push(new Config({
             component: 'ActionStripStylingComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxActionStripModule', 'ActionStripStylingComponent', 'IgxRippleModule', 'IgxButtonModule', 'IgxIconModule'],
-                ngDeclarations: ['ActionStripStylingComponent'],
-                ngImports: ['IgxActionStripModule', 'IgxRippleModule', 'IgxButtonModule', 'IgxIconModule']
-            }),
+            additionalFiles: ["/src/app/menus/action-strip/action-strip-paragraph-styling/layout.scss"],
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: '/menus/action-strip/'
         }));
 
