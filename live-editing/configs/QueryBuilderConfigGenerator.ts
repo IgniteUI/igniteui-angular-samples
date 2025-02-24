@@ -1,5 +1,4 @@
-import {IgxQueryBuilderModule} from 'igniteui-angular';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import { Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class QueryBuilderConfigGenerator implements IConfigGenerator {
 
@@ -9,6 +8,12 @@ export class QueryBuilderConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'QueryBuilderSample1Component',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/interactions/query-builder/"
+        }));
+
+        configs.push(new Config({
+            component: 'QueryBuilderTemplateSampleComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/query-builder/"
         }));
