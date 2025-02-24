@@ -6,9 +6,14 @@ $black: #292826;
 $muted-yellow: #ffe482;
 
 $custom-query-builder: query-builder-theme(
+  $schema: $dark-material-schema,
   $background: $black,
+  $subquery-header-background: #373532,
+  $subquery-border-color: #4e4d4a,
   $header-background: $black,
-  $header-foreground: $yellow
+  $header-foreground: $yellow,
+  $color-expression-group-and: #4e78ea,
+  $color-expression-group-or: #b64fcb
 );
 
 $custom-button: button-theme(
@@ -22,36 +27,7 @@ $custom-button: button-theme(
   $border-color: $yellow
 );
 
-$custom-contained-button: button-theme(
-  $schema: $dark-material-schema,
-  $background: $yellow,
-  $foreground: $black,
-  $active-background: $muted-yellow,
-  $active-foreground: $black,
-  $hover-background: $muted-yellow,
-  $hover-foreground: $black,
-  $border-color: $yellow,
-  $active-border-color: $muted-yellow,
-  $hover-border-color: $muted-yellow,
-  $focus-border-color: $yellow
-);
-
-$custom-button-group: button-group-theme(
-  $schema: $dark-material-schema,
-  $item-background: $black,
-  $item-text-color: $yellow,
-  $item-border-color: $yellow,
-  $item-selected-background: $yellow,
-  $item-hover-background: $yellow,
-  $item-selected-hover-background: $yellow
-);
-
 $custom-input-group: input-group-theme(
-  $schema: $dark-material-schema,
-  $idle-text-color: $yellow,
-  $focused-text-color: $yellow,
-  $filled-text-color: $yellow,
-  $idle-bottom-line-color: $muted-yellow,
   $focused-secondary-color: $yellow
 );
 
@@ -61,31 +37,30 @@ $custom-chip: chip-theme(
   $text-color: $black
 );
 
-$custom-drop-down: drop-down-theme(
+$custom-icon-button: icon-button-theme(
   $schema: $dark-material-schema,
-  $background-color: $black,
-  $item-text-color: $yellow,
-  $hover-item-background: $yellow,
-  $hover-item-text-color: $black,
-  $focused-item-background: $yellow,
-  $focused-item-text-color: $black,
-  $selected-item-background: $yellow,
-  $selected-item-text-color: $black,
-  $selected-focus-item-background: $yellow,
-  $selected-focus-item-text-color: $black,
-  $selected-hover-item-background: $yellow,
-  $selected-hover-item-text-color: $black
+  $background: $yellow,
+  $foreground: $black
 );
 
 @include css-vars($custom-query-builder);
 
 :host {
   ::ng-deep {
-    @include css-vars($custom-drop-down);
-    @include css-vars($custom-button);
-    @include css-vars($custom-button-group);
+    @include theme($palette: $dark-material-palette);
     @include css-vars($custom-input-group);
     @include css-vars($custom-chip);
+    @include css-vars($custom-icon-button);
+
+    .igx-filter-tree__buttons {
+      @include css-vars($custom-button);
+    }
   }
 }
-          
+
+.wrapper{
+    margin: 10px;
+    height: 100%;
+    overflow-y: auto;
+}
+ 
