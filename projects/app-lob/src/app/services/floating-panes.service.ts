@@ -24,7 +24,9 @@ export class FloatingPanesService {
 
         if (this.floatingPanes.length) {
             const lastPane = this.floatingPanes[this.floatingPanes.length - 1];
-            pane.floatingLocation = {x: lastPane.floatingLocation.x + 10, y: lastPane.floatingLocation.y + 10}  ;
+            if (lastPane.floatingLocation) {
+                pane.floatingLocation = {x: lastPane.floatingLocation.x + 10, y: lastPane.floatingLocation.y + 10};
+            }
         } else {
             pane.floatingLocation = this.initialPanePosition;
         }

@@ -1,10 +1,10 @@
 <div class="wrapper">
     <igx-query-builder #queryBuilder
-        [fields]="fields"
+        [entities]="entities"
         [expressionTree]="expressionTree">
-        <igx-query-builder-header [title]="'Query Builder Overview'" [showLegend]="true">        
-        </igx-query-builder-header>
+        <igx-query-builder-header [title]="'Query Builder Overview'"></igx-query-builder-header>
     </igx-query-builder>
+
     <div class="output-area">
         <pre>{{ printExpressionTree(queryBuilder.expressionTree) }}</pre>
     </div>
