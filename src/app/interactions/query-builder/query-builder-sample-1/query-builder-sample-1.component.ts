@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxBooleanFilteringOperand, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxQueryBuilderComponent, IgxQueryBuilderHeaderComponent, IgxStringFilteringOperand } from 'igniteui-angular';
+import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxBooleanFilteringOperand, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxQueryBuilderComponent, IgxStringFilteringOperand } from 'igniteui-angular';
 
 @Component({
     selector: 'app-query-builder-sample-1',
     styleUrls: ['./query-builder-sample-1.component.scss'],
     templateUrl: 'query-builder-sample-1.component.html',
-    imports: [IgxQueryBuilderComponent, IgxQueryBuilderHeaderComponent]
+    imports: [IgxQueryBuilderComponent]
 })
 export class QueryBuilderSample1Component implements OnInit {
     public entities: any[];
@@ -87,8 +87,8 @@ export class QueryBuilderSample1Component implements OnInit {
         const tree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Orders', ['*']);
         tree.filteringOperands.push({
             fieldName: 'CompanyID',
-            condition: IgxStringFilteringOperand.instance().condition('in'),
-            conditionName: 'in',
+            condition: IgxStringFilteringOperand.instance().condition('inQuery'),
+            conditionName: 'inQuery',
             searchTree: innerTree
         });
         tree.filteringOperands.push({
