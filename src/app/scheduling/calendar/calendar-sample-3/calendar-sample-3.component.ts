@@ -8,7 +8,6 @@ import { IgxCalendarComponent, IgxDialogComponent, IgxCalendarView, IViewDateCha
     templateUrl: './calendar-sample-3.component.html',
     imports: [IgxCalendarComponent]
 })
-
 export class CalendarSample3Component {
     @ViewChild('calendar', { static: true }) public calendar: IgxCalendarComponent;
     @ViewChild('alert', { static: true }) public dialog: IgxDialogComponent;
@@ -17,7 +16,7 @@ export class CalendarSample3Component {
     constructor(@Inject(DOCUMENT) private document: Document) { }
 
     public onSelection(dates: Date | Date[]) {
-      const logger: HTMLElement = document.querySelector('.logger');
+      const logger: HTMLElement = this.document.querySelector('.logger');
       dates = dates as Date[];
       logger.innerHTML = `<span> => 'onSelectionChanged': ${dates.length} dates selected.<br>${logger.innerHTML}`;
     }
