@@ -8,7 +8,7 @@ import { CellType, IgxColumnComponent, IgxColumnGroupComponent, IgxHierarchicalG
 import { fromEvent, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { CUSTOMERS } from '../../data/hierarchical-data';
-import { NgIf, NgFor, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 enum GridSection {
     THEAD = 'igx-grid__thead-wrapper',
@@ -163,7 +163,7 @@ const summaryCombinations: Item[] = [
             ])
         ])
     ],
-    imports: [IgxHierarchicalGridComponent, IgxPaginatorComponent, NgIf, IgxGridToolbarComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxRowIslandComponent, IgxGridToolbarDirective, IgxListComponent, IgxListItemComponent, NgFor, NgClass, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective]
+    imports: [IgxHierarchicalGridComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxRowIslandComponent, IgxGridToolbarDirective, IgxListComponent, IgxListItemComponent, NgClass, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective]
 })
 export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
 

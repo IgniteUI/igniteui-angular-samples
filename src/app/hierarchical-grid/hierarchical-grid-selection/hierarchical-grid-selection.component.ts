@@ -3,13 +3,13 @@ import { GridSelectionMode, IgxSnackbarComponent, IRowSelectionEventArgs, IgxSwi
 import { SINGERS } from '../../data/singersData';
 import { FormsModule } from '@angular/forms';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-hierarchical-grid-selection',
     styleUrls: ['./hierarchical-grid-selection.component.scss'],
     templateUrl: 'hierarchical-grid-selection.component.html',
-    imports: [IgxSwitchComponent, FormsModule, IgxButtonGroupComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxSnackbarComponent, IgxIconComponent, NgIf]
+    imports: [IgxSwitchComponent, FormsModule, IgxButtonGroupComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxSnackbarComponent, IgxIconComponent]
 })
 
 export class HGridSelectionSampleComponent implements OnInit, OnDestroy {

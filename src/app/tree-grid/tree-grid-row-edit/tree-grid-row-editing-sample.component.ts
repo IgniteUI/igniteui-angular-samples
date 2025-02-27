@@ -3,13 +3,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { GridSelectionMode, IgxTreeGridComponent, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-tree-grid-row-editing-sample',
     styleUrls: ['tree-grid-row-editing-sample.component.scss'],
     templateUrl: 'tree-grid-row-editing-sample.component.html',
-    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, NgFor, IgxColumnComponent]
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridRowEditSampleComponent implements OnInit {
 

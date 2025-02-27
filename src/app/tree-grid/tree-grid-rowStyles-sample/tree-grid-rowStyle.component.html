@@ -1,18 +1,20 @@
 <div class="grid__wrapper">
-    <igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid [data]="data" [moving]="true" primaryKey="ID" foreignKey="ParentID"
-        width ="100%"
-        height ="550px"
-        [rowStyles] = "rowStyles"
+  <igx-tree-grid [igxPreventDocumentScroll]="true"  #treeGrid [data]="data" [moving]="true" primaryKey="ID" foreignKey="ParentID"
+    width ="100%"
+    height ="550px"
+    [rowStyles] = "rowStyles"
+    >
+    @for (c of columns; track c) {
+      <igx-column
+        [editable] ="c.editable"
+        [field]="c.field"
+        [dataType]="c.dataType"
+        [header]="c.label"
+        [resizable]="c.resizable"
+        [sortable]="c.sortable"
+        [filterable]="c.filterable"
         >
-        <igx-column *ngFor="let c of columns"
-            [editable] ="c.editable"
-            [field]="c.field"
-            [dataType]="c.dataType"
-            [header]="c.label"
-            [resizable]="c.resizable"
-            [sortable]="c.sortable"
-            [filterable]="c.filterable"
-            >
-        </igx-column>
-    </igx-tree-grid>
+      </igx-column>
+    }
+  </igx-tree-grid>
 </div>

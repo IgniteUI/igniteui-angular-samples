@@ -1,26 +1,27 @@
 <div class="content-wrap">
-    <igx-nav-drawer id="navigation" #drawer [isOpen]="true">
-      <ng-template igxDrawer>
-        <nav>
-          <span igxDrawerItem [isHeader]="true">Components</span>
+  <igx-nav-drawer id="navigation" #drawer [isOpen]="true">
+    <ng-template igxDrawer>
+      <nav>
+        <span igxDrawerItem [isHeader]="true">Components</span>
 
+        @for (item of componentLinks; track item) {
           <span
-              igxDrawerItem
-              igxRipple
-              *ngFor="let item of componentLinks"
-              routerLink="{{item.link}}"
-              routerLinkActive #rla="routerLinkActive"
-              [active]="rla.isActive"
-          >
-          {{item.name}}
+            igxDrawerItem
+            igxRipple
+            routerLink="{{item.link}}"
+            routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive"
+            >
+            {{item.name}}
           </span>
-        </nav>
-      </ng-template>
-    </igx-nav-drawer>
+        }
+      </nav>
+    </ng-template>
+  </igx-nav-drawer>
 
-    <main>
-        <span igxIconButton="flat" igxToggleAction="navigation">
-            <igx-icon family="material">menu</igx-icon>
-        </span>
-    </main>
-  </div>
+  <main>
+    <span igxIconButton="flat" igxToggleAction="navigation">
+      <igx-icon family="material">menu</igx-icon>
+    </span>
+  </main>
+</div>

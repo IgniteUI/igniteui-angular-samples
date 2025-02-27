@@ -1,14 +1,14 @@
 import { AfterViewInit, Component,ElementRef, OnInit, ViewChild } from '@angular/core';
 import { IBaseChipEventArgs, IgxDropDownComponent, OverlaySettings, IgxTreeGridComponent, IRowSelectionEventArgs, ConnectedPositioningStrategy, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxChipsAreaComponent, IgxChipComponent, IgxColumnComponent } from 'igniteui-angular';
 import { EMPLOYEE_DATA } from './nested-employee-data';
-import { NgFor } from '@angular/common';
+
 
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-tree-grid-hierarchical-selection',
     styleUrls: ['./dropdown-tree-grid-hierarchical-selection.component.scss'],
     templateUrl: './dropdown-tree-grid-hierarchical-selection.component.html',
-    imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxChipsAreaComponent, NgFor, IgxChipComponent, IgxDropDownComponent, IgxTreeGridComponent, IgxColumnComponent]
+    imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxChipsAreaComponent, IgxChipComponent, IgxDropDownComponent, IgxTreeGridComponent, IgxColumnComponent]
 })
 export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit, AfterViewInit {
     @ViewChild('treeGrid', { static: true })

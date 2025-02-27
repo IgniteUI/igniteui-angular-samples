@@ -10,14 +10,14 @@ import {
 } from './data';
 import { MultiLevelService } from './multi-level.service';
 import { MultiLevelDirective } from './multi-level.directive';
-import { NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-dropdown-multi-level-menu',
     templateUrl: './dropdown-multi-level-menu.component.html',
     styleUrls: ['./dropdown-multi-level-menu.component.scss'],
     providers: [MultiLevelService],
-    imports: [IgxNavbarComponent, IgxNavbarTitleDirective, IgxButtonDirective, IgxToggleActionDirective, IgxIconComponent, IgxDropDownComponent, IgxDropDownItemComponent, MultiLevelDirective, IgxSuffixDirective, NgFor]
+    imports: [IgxNavbarComponent, IgxNavbarTitleDirective, IgxButtonDirective, IgxToggleActionDirective, IgxIconComponent, IgxDropDownComponent, IgxDropDownItemComponent, MultiLevelDirective, IgxSuffixDirective]
 })
 export class DropdownMultiLevelMenuComponent implements AfterViewInit {
   @ViewChildren(IgxDropDownComponent, { read: IgxDropDownComponent })

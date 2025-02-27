@@ -1,36 +1,38 @@
 <div class="sample-content">
 
-<igx-input-group class="search" type="search">
+  <igx-input-group class="search" type="search">
     <input #searchBar igxInput placeholder="Search Contacts" [(ngModel)]="search" />
     <igx-prefix>
-        <igx-icon>search</igx-icon>
+      <igx-icon>search</igx-icon>
     </igx-prefix>
-    <igx-suffix *ngIf="searchBar.value.length > 0" (click)="search = null">
+    @if (searchBar.value.length > 0) {
+      <igx-suffix (click)="search = null">
         <igx-icon>clear</igx-icon>
-    </igx-suffix>
-</igx-input-group>
+      </igx-suffix>
+    }
+  </igx-input-group>
 
-<div class="list-sample">
+  <div class="list-sample">
     <igx-list>
-        <igx-list-item [isHeader]="true">Contacts: {{(data | igxFilter: fo).length}} </igx-list-item>
-        <div class="list-container" [style.width]="'880px'" [style.overflow]="'hidden'" [style.position]="'relative'">
-            <igx-list-item
-                style="overflow: hidden;"
-                [style.min-width]="'220px'"
-                [style.width]="'220px'"
-                [style.max-width]="'220px'"
-                *igxFor="let item of data | igxFilter: fo; scrollOrientation : 'horizontal'; containerSize: '880px'; itemSize: '220px'">
-                <div class="item-container">
-                    <div class="contact">
-                        <igx-avatar [src]="item.avatar" shape="circle"></igx-avatar>
-                        <div class="contact__info">
-                            <span class="name">{{item.name}}</span>
-                        </div>
-                    </div>
-                </div>
-            </igx-list-item>
-        </div>
+      <igx-list-item [isHeader]="true">Contacts: {{(data | igxFilter: fo).length}} </igx-list-item>
+      <div class="list-container" [style.width]="'880px'" [style.overflow]="'hidden'" [style.position]="'relative'">
+        <igx-list-item
+          style="overflow: hidden;"
+          [style.min-width]="'220px'"
+          [style.width]="'220px'"
+          [style.max-width]="'220px'"
+          *igxFor="let item of data | igxFilter: fo; scrollOrientation : 'horizontal'; containerSize: '880px'; itemSize: '220px'">
+          <div class="item-container">
+            <div class="contact">
+              <igx-avatar [src]="item.avatar" shape="circle"></igx-avatar>
+              <div class="contact__info">
+                <span class="name">{{item.name}}</span>
+              </div>
+            </div>
+          </div>
+        </igx-list-item>
+      </div>
     </igx-list>
-</div>
+  </div>
 
 </div>

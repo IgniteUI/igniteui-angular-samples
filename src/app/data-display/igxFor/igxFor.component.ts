@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { IgxFilterOptions, IgxInputGroupComponent, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, IgxSuffixDirective, IgxListComponent, IgxListItemComponent, IgxForOfDirective, IgxRippleDirective, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListActionDirective, IgxFilterPipe } from 'igniteui-angular';
 import { femaleFNames, lastName, maleFNames, middleNames } from './names';
 import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-igx-for-list',
     styleUrls: ['./igxFor.component.scss'],
     templateUrl: './igxFor.component.html',
-    imports: [IgxInputGroupComponent, FormsModule, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, NgIf, IgxSuffixDirective, IgxListComponent, IgxListItemComponent, IgxForOfDirective, IgxRippleDirective, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListActionDirective, IgxFilterPipe]
+    imports: [IgxInputGroupComponent, FormsModule, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, IgxSuffixDirective, IgxListComponent, IgxListItemComponent, IgxForOfDirective, IgxRippleDirective, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListActionDirective, IgxFilterPipe]
 })
 export class IgxForComponent implements OnInit {
     public search: string;

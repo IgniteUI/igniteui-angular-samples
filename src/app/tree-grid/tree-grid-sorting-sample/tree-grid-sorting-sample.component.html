@@ -1,56 +1,62 @@
 <div class="grid__wrapper" (window:click)="disableContextMenu()">
-    <igx-tree-grid [igxPreventDocumentScroll]="true" #treegrid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
-        primaryKey="ID" foreignKey="ParentID" (contextMenu)="rightClick($event)" [sortingOptions]="sortingOptions">
-        <igx-grid-toolbar>
-            <button class="button-opitions" igxButton="contained" (click)="treegrid1.sortingExpressions = []">
-                Clear Sorting
-            </button>
+  <igx-tree-grid [igxPreventDocumentScroll]="true" #treegrid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
+    primaryKey="ID" foreignKey="ParentID" (contextMenu)="rightClick($event)" [sortingOptions]="sortingOptions">
+    <igx-grid-toolbar>
+      <button class="button-opitions" igxButton="contained" (click)="treegrid1.sortingExpressions = []">
+        Clear Sorting
+      </button>
 
-            <button class="button-opitions" igxButton="contained" (click)="groupArea.expressions = []">
-                Clear Grouped columns
-            </button>
-            <igx-grid-toolbar-actions>
-                <igx-simple-combo #comboItem
-                    [data]="sortingTypes"
-                    [displayKey]="'mode'"
-                    [(ngModel)]="sortingOptions"
-                    (keydown)="handleSearchResults($event)">
-                    <ng-template igxComboClearIcon></ng-template>
-                    <ng-template igxComboItem let-item>
-                        <div>{{ item.mode | uppercase }}</div>
-                    </ng-template>
-                </igx-simple-combo>
-            </igx-grid-toolbar-actions>
-        </igx-grid-toolbar>
+      <button class="button-opitions" igxButton="contained" (click)="groupArea.expressions = []">
+        Clear Grouped columns
+      </button>
+      <igx-grid-toolbar-actions>
+        <igx-simple-combo #comboItem
+          [data]="sortingTypes"
+          [displayKey]="'mode'"
+          [(ngModel)]="sortingOptions"
+          (keydown)="handleSearchResults($event)">
+          <ng-template igxComboClearIcon></ng-template>
+          <ng-template igxComboItem let-item>
+            <div>{{ item.mode | uppercase }}</div>
+          </ng-template>
+        </igx-simple-combo>
+      </igx-grid-toolbar-actions>
+    </igx-grid-toolbar>
 
-        <igx-tree-grid-group-by-area
-            #groupArea
-            [grid]="treegrid1"
-            [hideGroupedColumns]="true">
-        </igx-tree-grid-group-by-area>
+    <igx-tree-grid-group-by-area
+      #groupArea
+      [grid]="treegrid1"
+      [hideGroupedColumns]="true">
+    </igx-tree-grid-group-by-area>
 
-        <igx-column field="ID" header="Order ID" [groupable]="true" [sortable]="true">
-        </igx-column>
-        <igx-column field="Name" header="Order Product" [groupable]="true" [sortable]="true">
-        </igx-column>
-        <igx-column field="Category" header="Category" [groupable]="true" [sortable]="true">
-        </igx-column>
-        <igx-column field="Units" header="Units" [dataType]="'number'" [groupable]="true" [sortable]="true">
-        </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [groupable]="true" [sortable]="true">
-        </igx-column>
-        <igx-column field="Price" header="Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [groupable]="true" [sortable]="true">
-        </igx-column>
-        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [formatter]="formatDate" [groupable]="true" [sortable]="true">
-        </igx-column>
-        <igx-column field="Delivered" header="Delivered" [dataType]="'boolean'" [groupable]="true" [sortable]="true">
-            <ng-template igxCell let-cell="cell" let-val>
-                <img *ngIf="val" src="assets/images/grid/active.png" title="Delivered" alt="Delivered" />
-                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered" />
-            </ng-template>
-        </igx-column>
-    </igx-tree-grid>
-    <div *ngIf="contextmenu">
-        <app-tree-grid-contextmenu [x]="contextmenuX" [y]="contextmenuY" [cell]="clickedCell"></app-tree-grid-contextmenu>
+    <igx-column field="ID" header="Order ID" [groupable]="true" [sortable]="true">
+    </igx-column>
+    <igx-column field="Name" header="Order Product" [groupable]="true" [sortable]="true">
+    </igx-column>
+    <igx-column field="Category" header="Category" [groupable]="true" [sortable]="true">
+    </igx-column>
+    <igx-column field="Units" header="Units" [dataType]="'number'" [groupable]="true" [sortable]="true">
+    </igx-column>
+    <igx-column field="UnitPrice" header="Unit Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [groupable]="true" [sortable]="true">
+    </igx-column>
+    <igx-column field="Price" header="Price" [dataType]="'currency'" [pipeArgs]="formatOptions" [groupable]="true" [sortable]="true">
+    </igx-column>
+    <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [formatter]="formatDate" [groupable]="true" [sortable]="true">
+    </igx-column>
+    <igx-column field="Delivered" header="Delivered" [dataType]="'boolean'" [groupable]="true" [sortable]="true">
+      <ng-template igxCell let-cell="cell" let-val>
+        @if (val) {
+          <img src="assets/images/grid/active.png" title="Delivered" alt="Delivered" />
+        }
+        @if (!val) {
+          <img src="assets/images/grid/expired.png" title="Undelivered" alt="Undelivered" />
+        }
+      </ng-template>
+    </igx-column>
+  </igx-tree-grid>
+  @if (contextmenu) {
+    <div>
+      <app-tree-grid-contextmenu [x]="contextmenuX" [y]="contextmenuY" [cell]="clickedCell"></app-tree-grid-contextmenu>
     </div>
+  }
 </div>

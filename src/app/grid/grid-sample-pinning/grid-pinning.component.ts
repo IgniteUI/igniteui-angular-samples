@@ -4,7 +4,7 @@ import { icons } from '../../services/svgIcons';
 
 import { DATA } from '../../data/customers';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgFor } from '@angular/common';
+
 
 const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 @Component({
@@ -13,7 +13,7 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
     selector: 'app-grid-sample',
     styleUrls: ['grid-pinning.component.scss'],
     templateUrl: 'grid-pinning.component.html',
-    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, NgFor, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxIconComponent]
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxIconComponent]
 })
 
 export class PinningSampleComponent implements OnInit, AfterViewInit {

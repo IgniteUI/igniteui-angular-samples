@@ -2,7 +2,7 @@ import { Component} from '@angular/core';
 import { IgcRatingComponent, defineComponents } from 'igniteui-webcomponents';
 import { FormsModule } from '@angular/forms';
 import { IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardHeaderSubtitleDirective, IgcFormControlDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, IgxIconButtonDirective, IgxSuffixDirective, IgxIconComponent } from 'igniteui-angular';
-import { NgFor, CurrencyPipe } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 
 defineComponents(IgcRatingComponent)
 
@@ -10,7 +10,7 @@ defineComponents(IgcRatingComponent)
     selector: 'app-rating-sample',
     styleUrls: ['./rating-form.component.scss'],
     templateUrl: './rating-form.component.html',
-    imports: [FormsModule, IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardHeaderSubtitleDirective, IgcFormControlDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, NgFor, IgxIconButtonDirective, IgxSuffixDirective, IgxIconComponent, CurrencyPipe]
+    imports: [FormsModule, IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardHeaderSubtitleDirective, IgcFormControlDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, IgxIconButtonDirective, IgxSuffixDirective, IgxIconComponent, CurrencyPipe]
 })
 export class RatingInFormComponent {
 

@@ -2,13 +2,13 @@ import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent, TreeGridFilteringStrategy, IgxButtonGroupComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-tree-grid-excel-style-filtering-sample-1',
     styleUrls: ['./tree-grid-excel-style-filtering-sample-1.component.scss'],
     templateUrl: 'tree-grid-excel-style-filtering-sample-1.component.html',
-    imports: [IgxButtonGroupComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxCellTemplateDirective, NgIf]
+    imports: [IgxButtonGroupComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxCellTemplateDirective]
 })
 
 export class TreeGridExcelStyleFilteringSample1Component implements OnInit {

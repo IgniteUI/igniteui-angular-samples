@@ -1,37 +1,55 @@
 <article>
-    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-        <igx-input-group>
-            <label igxLabel for="email">Email</label>
-            <input igxInput name="email" type="email" formControlName="email" />
-            <igx-hint *ngIf="email.errors?.email">Please enter a valid email address</igx-hint>
-            <igx-hint *ngIf="!email.errors?.email && email.errors?.localPart">This email address is not allowed</igx-hint>
-            <igx-hint *ngIf="!email.errors?.email && email.errors?.domain">This domain is not allowed</igx-hint>
-        </igx-input-group>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <igx-input-group>
+      <label igxLabel for="email">Email</label>
+      <input igxInput name="email" type="email" formControlName="email" />
+      @if (email.errors?.email) {
+        <igx-hint>Please enter a valid email address</igx-hint>
+      }
+      @if (!email.errors?.email && email.errors?.localPart) {
+        <igx-hint>This email address is not allowed</igx-hint>
+      }
+      @if (!email.errors?.email && email.errors?.domain) {
+        <igx-hint>This domain is not allowed</igx-hint>
+      }
+    </igx-input-group>
 
-        <igx-input-group>
-            <label igxLabel for="password">Password</label>
-            <input igxInput name="password" [type]="showPassword ? 'text' : 'password'" formControlName="password" />
-            <igx-hint *ngIf="password.errors?.containsEmail">Should not contain the email address</igx-hint>
-            <igx-hint *ngIf="password.errors?.minlength">Should be at least 8 characters</igx-hint>
-            <igx-hint *ngIf="password.errors?.pattern">Should contain a digit and a special character</igx-hint>
-            <igx-icon *ngIf="password.value" igxSuffix (click)="showPassword = !showPassword">
-                {{ togglePasswordVisibility }}
-            </igx-icon>
-        </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="password">Password</label>
+      <input igxInput name="password" [type]="showPassword ? 'text' : 'password'" formControlName="password" />
+      @if (password.errors?.containsEmail) {
+        <igx-hint>Should not contain the email address</igx-hint>
+      }
+      @if (password.errors?.minlength) {
+        <igx-hint>Should be at least 8 characters</igx-hint>
+      }
+      @if (password.errors?.pattern) {
+        <igx-hint>Should contain a digit and a special character</igx-hint>
+      }
+      @if (password.value) {
+        <igx-icon igxSuffix (click)="showPassword = !showPassword">
+          {{ togglePasswordVisibility }}
+        </igx-icon>
+      }
+    </igx-input-group>
 
-        <igx-input-group>
-            <label igxLabel for="repeatPassword">Repeat password</label>
-            <input igxInput name="repeatPassword" [type]="showRepeat ? 'text' : 'password'" formControlName="repeatPassword" />
-            <igx-hint *ngIf="repeatPassword.errors?.mismatch
-                && !repeatPassword.pristine
-                && repeatPassword.value">
-                Passwords do not match
-            </igx-hint>
-            <igx-icon *ngIf="repeatPassword.value" igxSuffix (click)="showRepeat = !showRepeat">
-                {{ toggleRepeatVisibility }}
-            </igx-icon>
-        </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="repeatPassword">Repeat password</label>
+      <input igxInput name="repeatPassword" [type]="showRepeat ? 'text' : 'password'" formControlName="repeatPassword" />
+      @if (repeatPassword.errors?.mismatch
+        && !repeatPassword.pristine
+        && repeatPassword.value) {
+        <igx-hint>
+          Passwords do not match
+        </igx-hint>
+      }
+      @if (repeatPassword.value) {
+        <igx-icon igxSuffix (click)="showRepeat = !showRepeat">
+          {{ toggleRepeatVisibility }}
+        </igx-icon>
+      }
+    </igx-input-group>
 
-        <button igxButton="contained" igxRipple type="submit" [disabled]="!registrationForm.valid">Submit</button>
-    </form>
+    <button igxButton="contained" igxRipple type="submit" [disabled]="!registrationForm.valid">Submit</button>
+  </form>
 </article>

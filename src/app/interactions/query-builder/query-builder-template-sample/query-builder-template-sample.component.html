@@ -1,0 +1,32 @@
+<div class="wrapper">
+    <igx-query-builder #queryBuilder
+        [entities]="entities"
+        [expressionTree]="expressionTree">
+        <igx-query-builder-header [title]="'Query Builder Template Sample'">  
+        </igx-query-builder-header>
+        <ng-template #searchValueTemplate igxQueryBuilderSearchValue 
+                        let-searchValue
+                        let-selectedField = "selectedField" 
+                        let-selectedCondition = "selectedCondition"
+                        let-defaultSearchValueTemplate = "defaultSearchValueTemplate">
+                @if (selectedField?.field === 'Region' && (selectedCondition === 'equals' || selectedCondition === 'doesNotEqual')){
+                    <igx-select [placeholder]="'Select region'" [(ngModel)]="searchValue.value">
+                        <igx-select-item *ngFor="let reg of regionOptions" [value]="reg">{{ reg.text }}</igx-select-item>
+                    </igx-select>
+                } 
+                @else if (selectedField?.field === 'OrderStatus' && (selectedCondition === 'equals' || selectedCondition === 'doesNotEqual')){
+                    <igx-radio-group [(ngModel)]="searchValue.value">
+                        <igx-radio class="radio-sample" *ngFor="let stat of statusOptions" value="{{stat.value}}">
+                            {{stat.text}}
+                        </igx-radio>
+                    </igx-radio-group>
+                }
+                @else {  
+                    <ng-container *ngTemplateOutlet="defaultSearchValueTemplate"></ng-container>
+                }
+            </ng-template>
+    </igx-query-builder>
+    <div class="output-area">
+        <pre>{{ printExpressionTree(queryBuilder.expressionTree) }}</pre>
+    </div>
+</div>

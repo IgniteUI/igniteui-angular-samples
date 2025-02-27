@@ -1,31 +1,33 @@
 <div class="preview__sample">
-    <article class="calendar-wrapper">
-        <igx-calendar [monthsViewNumber]="2" [headerOrientation]="headerOrientation" [orientation]="orientation"></igx-calendar>
-    </article>
+  <article class="calendar-wrapper">
+    <igx-calendar [monthsViewNumber]="2" [headerOrientation]="headerOrientation" [orientation]="orientation"></igx-calendar>
+  </article>
 
-    <div class="preview__settings">
-        <small>Header orientation</small>
-        <igx-buttongroup selectionMode="singleRequired">
-            <button
-                igxButton
-                (click)="setHeaderOrientation(ho)"
-                *ngFor="let ho of orientations"
-                [selected]="ho === headerOrientation"
-            >
-                {{ ho }}
-            </button>
-        </igx-buttongroup>
+  <div class="preview__settings">
+    <small>Header orientation</small>
+    <igx-buttongroup selectionMode="singleRequired">
+      @for (ho of orientations; track ho) {
+        <button
+          igxButton
+          (click)="setHeaderOrientation(ho)"
+          [selected]="ho === headerOrientation"
+          >
+          {{ ho }}
+        </button>
+      }
+    </igx-buttongroup>
 
-        <small>View orientation</small>
-        <igx-buttongroup selectionMode="singleRequired">
-            <button
-                igxButton
-                (click)="setOrientation(vo)"
-                *ngFor="let vo of orientations"
-                [selected]="vo === orientation"
-            >
-                {{ vo }}
-            </button>
-        </igx-buttongroup>
-    </div>
+    <small>View orientation</small>
+    <igx-buttongroup selectionMode="singleRequired">
+      @for (vo of orientations; track vo) {
+        <button
+          igxButton
+          (click)="setOrientation(vo)"
+          [selected]="vo === orientation"
+          >
+          {{ vo }}
+        </button>
+      }
+    </igx-buttongroup>
+  </div>
 </div>

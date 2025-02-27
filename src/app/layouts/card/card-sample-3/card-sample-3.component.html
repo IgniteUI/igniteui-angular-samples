@@ -1,25 +1,27 @@
 <div class="sample-column card-wrapper">
-    <igx-card [horizontal]="horizontal" elevated>
-        <div igxLayout igxLayoutDir="column" igxFlex [igxFlexGrow]="1">
-            <igx-card-header>
-                <igx-avatar [src]="card.avatarUrl"></igx-avatar>
-                <h5 igxCardHeaderTitle>{{card.title}}</h5>
-                <h5 igxCardHeaderSubtitle>{{card.subtitle}}</h5>
-            </igx-card-header>
+  <igx-card [horizontal]="horizontal" elevated>
+    <div igxLayout igxLayoutDir="column" igxFlex [igxFlexGrow]="1">
+      <igx-card-header>
+        <igx-avatar [src]="card.avatarUrl"></igx-avatar>
+        <h5 igxCardHeaderTitle>{{card.title}}</h5>
+        <h5 igxCardHeaderSubtitle>{{card.subtitle}}</h5>
+      </igx-card-header>
 
-            <igx-card-content>
-                <p>{{card.content}}</p>
-            </igx-card-content>
+      <igx-card-content>
+        <p>{{card.content}}</p>
+      </igx-card-content>
 
-            <igx-card-actions [vertical]="false">
-                <button *ngFor="let button of card.buttons;" igxButton="flat" igxRipple igxStart>
-                    {{button}}
-                </button>
-            </igx-card-actions>
-        </div>
+      <igx-card-actions [vertical]="false">
+        @for (button of card.buttons; track button) {
+          <button igxButton="flat" igxRipple igxStart>
+            {{button}}
+          </button>
+        }
+      </igx-card-actions>
+    </div>
 
-        <igx-card-media width="96px">
-            <img [src]="card.imageUrl">
-        </igx-card-media>
-    </igx-card>
+    <igx-card-media width="96px">
+      <img [src]="card.imageUrl">
+    </igx-card-media>
+  </igx-card>
 </div>

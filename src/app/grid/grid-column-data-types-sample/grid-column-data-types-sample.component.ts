@@ -1,6 +1,6 @@
 /*eslint-disable*/
 import { Component, OnInit } from "@angular/core";
-import { registerLocaleData, NgFor, NgIf, NgClass } from "@angular/common";
+import { registerLocaleData, NgClass } from "@angular/common";
 import localeBG from '@angular/common/locales/bg';
 import localeDE from '@angular/common/locales/de';
 import localeFR from '@angular/common/locales/fr';
@@ -13,7 +13,7 @@ import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scro
     selector: "grid-column-data-types-sample",
     styleUrls: ["./grid-column-data-types-sample.component.scss"],
     templateUrl: "grid-column-data-types-sample.component.html",
-    imports: [IgxSelectComponent, FormsModule, IgxPrefixDirective, NgFor, IgxSelectItemComponent, IgxHintDirective, IgxSuffixDirective, NgIf, IgxIconComponent, IgxInputGroupComponent, IgxTooltipTargetDirective, IgxTooltipDirective, IgxInputDirective, NgClass, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
+    imports: [IgxSelectComponent, FormsModule, IgxPrefixDirective, IgxSelectItemComponent, IgxHintDirective, IgxSuffixDirective, IgxIconComponent, IgxInputGroupComponent, IgxTooltipTargetDirective, IgxTooltipDirective, IgxInputDirective, NgClass, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class GridColumnDataTypesSampleComponent implements OnInit {
 

@@ -1,7 +1,7 @@
 <div class="sample-container">
-    <igx-chips-area (reorder)="chipsOrderChanged($event)">
-        <igx-chip
-        *ngFor="let chip of chipList"
+  <igx-chips-area (reorder)="chipsOrderChanged($event)">
+    @for (chip of chipList; track chip) {
+      <igx-chip
         [id]="chip.id"
         [selectable]="true"
         [selectIcon]="mySelectIcon"
@@ -9,21 +9,22 @@
         [removeIcon]="myRemoveIcon"
         (remove)="chipRemoved($event)"
         [draggable]="true">
-            <igx-avatar
-            class="chip-avatar-resized"
-            igxPrefix
-            [src]="chip.photo"
-            shape="circle"
-            ></igx-avatar>
-            {{chip.name}}
-        </igx-chip>
-    </igx-chips-area>
+        <igx-avatar
+          class="chip-avatar-resized"
+          igxPrefix
+          [src]="chip.photo"
+          shape="circle"
+        ></igx-avatar>
+        {{chip.name}}
+      </igx-chip>
+    }
+  </igx-chips-area>
 </div>
 
 <ng-template #mySelectIcon>
-    <igx-icon>check_circle</igx-icon>
+  <igx-icon>check_circle</igx-icon>
 </ng-template>
 
 <ng-template #myRemoveIcon>
-    <igx-icon>delete</igx-icon>
+  <igx-icon>delete</igx-icon>
 </ng-template>

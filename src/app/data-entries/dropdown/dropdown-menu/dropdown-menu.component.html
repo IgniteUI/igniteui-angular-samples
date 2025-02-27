@@ -1,23 +1,25 @@
 <div class="drop-down-wrapper">
-    <igx-navbar title="Contacts">
-        <button [igxToggleAction]="menu" [igxToggleOutlet]="outlet" [overlaySettings]="overlaySettings" [igxDropDownItemNavigation]="menu"
-            igxIconButton="flat">
-            <igx-icon family="material">more_vert</igx-icon>
-        </button>
-        <igx-drop-down #menu (selectionChanging)="onSelection($event)">
-            <igx-drop-down-item *ngFor="let item of items" [value]="item.text">
-                <div>
-                    {{ item.text }}
-                </div>
-            </igx-drop-down-item>
-        </igx-drop-down>
-    </igx-navbar>
+  <igx-navbar title="Contacts">
+    <button [igxToggleAction]="menu" [igxToggleOutlet]="outlet" [overlaySettings]="overlaySettings" [igxDropDownItemNavigation]="menu"
+      igxIconButton="flat">
+      <igx-icon family="material">more_vert</igx-icon>
+    </button>
+    <igx-drop-down #menu (selectionChanging)="onSelection($event)">
+      @for (item of items; track item) {
+        <igx-drop-down-item [value]="item.text">
+          <div>
+            {{ item.text }}
+          </div>
+        </igx-drop-down-item>
+      }
+    </igx-drop-down>
+  </igx-navbar>
 
-    <div class="textContainer">
-        <ng-container *ngIf="text">
-            <label igxLabel>{{ text }}</label>
-        </ng-container>
-    </div>
+  <div class="textContainer">
+    @if (text) {
+      <label igxLabel>{{ text }}</label>
+    }
+  </div>
 
-    <div class="overlayOutlet" igxOverlayOutlet #outlet="overlay-outlet"></div>
+  <div class="overlayOutlet" igxOverlayOutlet #outlet="overlay-outlet"></div>
 </div>

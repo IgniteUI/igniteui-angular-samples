@@ -5,13 +5,13 @@ import { ColumnPinningPosition, CellType, IGridEditEventArgs, IgxTreeGridCompone
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { NgFor, NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-tree-grid-validator-service-cross-field-component',
     styleUrls: ['tree-grid-validator-service-cross-field.component.scss'],
     templateUrl: 'tree-grid-validator-service-cross-field.component.html',
-    imports: [IgxSwitchComponent, FormsModule, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnMaxValidatorDirective, IgxCellEditorTemplateDirective, IgxSelectComponent, ReactiveFormsModule, IgxFocusDirective, NgFor, IgxSelectItemComponent, IgxCellTemplateDirective, NgIf, IgxTooltipTargetDirective, IgxTooltipDirective, IgxButtonDirective]
+    imports: [IgxSwitchComponent, FormsModule, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnMaxValidatorDirective, IgxCellEditorTemplateDirective, IgxSelectComponent, ReactiveFormsModule, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxButtonDirective]
 })
 export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
     @ViewChild('treeGrid', { static: true })

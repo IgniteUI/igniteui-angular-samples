@@ -1,33 +1,39 @@
 <igx-grid #grid1 [data]="data" [primaryKey]="'name'" height="600px">
-    <igx-column field="name" header="Character name" [editable]="true">
-    </igx-column>
-    <igx-column field="race" header="Race" [editable]="true">
-        <ng-template igxCellEditor let-cell="cell" let-value>
-            <igx-select class="cell-select" [(ngModel)]="cell.editValue" [igxFocus]="true">
-                <igx-select-item *ngFor="let race of races" [value]="race">
-                    {{ race }}
-                </igx-select-item>
-            </igx-select>
-        </ng-template>
-    </igx-column>
-    <igx-column field="class" header="Class" [editable]="true">
-        <ng-template igxCellEditor let-cell="cell" let-value>
-            <igx-select class="cell-select" [(ngModel)]="cell.editValue" [igxFocus]="true">
-                <igx-select-item *ngFor="let class of classes" [value]="class">
-                    {{ class }}
-                </igx-select-item>
-            </igx-select>
-        </ng-template>
-    </igx-column>
-    <igx-column field="age" header="Age" [dataType]="'number'" [editable]="true" width="10%">
-    </igx-column>
-    <igx-column field="alignment" header="Alignment" [editable]="true">
-        <ng-template igxCellEditor let-cell="cell" let-value>
-            <igx-select class="cell-select"  [(ngModel)]="cell.editValue" [igxFocus]="true">
-                <igx-select-item *ngFor="let alignment of alignments" [value]="alignment">
-                    {{ alignment }}
-                </igx-select-item>
-            </igx-select>
-        </ng-template>
-    </igx-column>
+  <igx-column field="name" header="Character name" [editable]="true">
+  </igx-column>
+  <igx-column field="race" header="Race" [editable]="true">
+    <ng-template igxCellEditor let-cell="cell" let-value>
+      <igx-select class="cell-select" [(ngModel)]="cell.editValue" [igxFocus]="true">
+        @for (race of races; track race) {
+          <igx-select-item [value]="race">
+            {{ race }}
+          </igx-select-item>
+        }
+      </igx-select>
+    </ng-template>
+  </igx-column>
+  <igx-column field="class" header="Class" [editable]="true">
+    <ng-template igxCellEditor let-cell="cell" let-value>
+      <igx-select class="cell-select" [(ngModel)]="cell.editValue" [igxFocus]="true">
+        @for (class of classes; track class) {
+          <igx-select-item [value]="class">
+            {{ class }}
+          </igx-select-item>
+        }
+      </igx-select>
+    </ng-template>
+  </igx-column>
+  <igx-column field="age" header="Age" [dataType]="'number'" [editable]="true" width="10%">
+  </igx-column>
+  <igx-column field="alignment" header="Alignment" [editable]="true">
+    <ng-template igxCellEditor let-cell="cell" let-value>
+      <igx-select class="cell-select"  [(ngModel)]="cell.editValue" [igxFocus]="true">
+        @for (alignment of alignments; track alignment) {
+          <igx-select-item [value]="alignment">
+            {{ alignment }}
+          </igx-select-item>
+        }
+      </igx-select>
+    </ng-template>
+  </igx-column>
 </igx-grid>

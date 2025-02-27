@@ -4,7 +4,7 @@ import { DefaultSortingStrategy, IgxGridComponent, IgxSelectComponent, SortingDi
 import { DATA } from '../../data/localData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { FormsModule } from '@angular/forms';
-import { NgFor } from '@angular/common';
+
 
 // eslint-disable-next-line no-shadow
 enum TYPE {
@@ -15,7 +15,7 @@ enum TYPE {
     selector: 'app-grid-sorting-styling',
     styleUrls: ['./grid-sorting-styling.component.scss'],
     templateUrl: 'grid-sorting-styling.component.html',
-    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxSelectComponent, FormsModule, IgxLabelDirective, NgFor, IgxSelectItemComponent, IgxColumnComponent, IgxCellTemplateDirective]
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxSelectComponent, FormsModule, IgxLabelDirective, IgxSelectItemComponent, IgxColumnComponent, IgxCellTemplateDirective]
 })
 
 export class SortingStylingComponent implements OnInit {
