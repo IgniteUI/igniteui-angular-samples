@@ -22,19 +22,19 @@ export const serverRoutes: ServerRoute[] = [
         renderMode: RenderMode.Prerender
     },
     {
-        path: 'lists',
+        path: 'lists/**',
+        renderMode: RenderMode.Client // TODO: Fails with Prerender
+    },
+    {
+        path: 'theming/**',
         renderMode: RenderMode.Prerender
     },
     {
-        path: 'theming',
+        path: 'scheduling/**',
         renderMode: RenderMode.Prerender
     },
     {
-        path: 'scheduling',
-        renderMode: RenderMode.Prerender
-    },
-    {
-        path: 'menus',
+        path: 'menus/**',
         renderMode: RenderMode.Prerender
     },
     {
