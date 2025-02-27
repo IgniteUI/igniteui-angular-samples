@@ -99,7 +99,9 @@ export class DVGridConfigGenerator implements IConfigGenerator {
                 '/projects/app-lob/src/app/grid-finjs-dock-manager/dock-slot.component.ts',
                 '/projects/app-lob/src/_app-layout.scss', '/projects/app-lob/src/_variables.scss'
             ],
-            appConfig: BaseAppConfig
+            appConfig: { ...BaseAppConfig,
+                additionalAdjustments: [dockManagerImport, defineCustomElements]
+            }
         }));
 
         return configs;
