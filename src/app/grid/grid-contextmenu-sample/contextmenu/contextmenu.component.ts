@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, Output} from '@angular/core';
-import { IgxIconModule, IgxIconComponent } from 'igniteui-angular';
-import { NgStyle } from '@angular/common';
+import { Component, EventEmitter, Inject, Input, Output} from '@angular/core';
+import { IgxIconComponent } from 'igniteui-angular';
+import { DOCUMENT, NgStyle } from '@angular/common';
 
 interface ICopyData {
     data: any;
@@ -30,7 +30,7 @@ export class ContextmenuComponent {
 
     public selectedData: ICopyData;
 
-    constructor() { }
+    constructor(@Inject(DOCUMENT) private document: Document) { }
 
     public copySelectedCellData(event) {
         const selectedData = { [this.cell.column.field]: this.cell.value };
@@ -55,12 +55,12 @@ export class ContextmenuComponent {
     }
 
     private copyData(data) {
-        const tempElement = document.createElement('input');
-        document.body.appendChild(tempElement);
+        const tempElement = this.document.createElement('input');
+        this.document.body.appendChild(tempElement);
         tempElement.setAttribute('id', 'temp_id');
-        (document.getElementById('temp_id') as HTMLInputElement).value = data;
+        (this.document.getElementById('temp_id') as HTMLInputElement).value = data;
         tempElement.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempElement);
+        this.document.execCommand('copy');
+        this.document.body.removeChild(tempElement);
     }
 }
