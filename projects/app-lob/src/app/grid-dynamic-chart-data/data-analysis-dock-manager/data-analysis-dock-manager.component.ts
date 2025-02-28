@@ -5,8 +5,9 @@ import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPan
 import { FinancialData } from '../../data/financialData';
 import { FloatingPanesService } from '../../services/floating-panes.service';
 import { DockSlotComponent } from './dock-slot/dock-slot.component';
-import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxDividerDirective, IgxBadgeComponent } from 'igniteui-angular';
+import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxDividerDirective, IgxBadgeComponent, IColumnSelectionEventArgs } from 'igniteui-angular';
 import { NgClass, DecimalPipe, TitleCasePipe, CurrencyPipe } from '@angular/common';
+import { debounceTime } from 'rxjs/operators';
 
 @Pipe({
     name: 'filterType'
@@ -120,6 +121,10 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit  
         this.cdr.detectChanges();
 
         this.grid.rangeSelected.subscribe(range => {
+            this.createChartCommonLogic();
+        });
+
+        this.grid.columnSelectionChanging.pipe(debounceTime(100)).subscribe((args: IColumnSelectionEventArgs) => {
             this.createChartCommonLogic();
         });
     }
