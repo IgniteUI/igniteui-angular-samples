@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxHierarchicalGridComponent, RowType, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxIconComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { isPlatformBrowser } from '@angular/common';
 @Component({
     selector: 'app-hgrid-row-classes',
     styleUrls: ['./hgrid-rowClasses.component.scss'],
@@ -16,7 +15,7 @@ export class HGridRowClassesSampleComponent implements OnInit {
     public hierarchicalGrid: IgxHierarchicalGridComponent;
     public localdata;
 
-    constructor(@Inject(PLATFORM_ID) private platformId: any) { }
+    constructor() { }
 
     public ngOnInit(): void {
         this.localdata = SINGERS;
@@ -35,12 +34,10 @@ export class HGridRowClassesSampleComponent implements OnInit {
 
 
     public handleChange() {
-        if (isPlatformBrowser(this.platformId)) {
-            requestAnimationFrame(() => {
-                this.hierarchicalGrid.pipeTrigger++;
-                this.hierarchicalGrid.notifyChanges();
-            });
-        }
+        requestAnimationFrame(() => {
+            this.hierarchicalGrid.pipeTrigger++;
+            this.hierarchicalGrid.notifyChanges();
+        });
     }
     public handleLeftClick(args) {
         args.event.preventDefault();

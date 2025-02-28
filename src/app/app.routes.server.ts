@@ -38,23 +38,23 @@ export const serverRoutes: ServerRoute[] = [
         renderMode: RenderMode.Prerender
     },
     {
-        path: 'layouts',
+        path: 'layouts/**',
+        renderMode: RenderMode.Client // TODO: Fails with Prerender
+    },
+    {
+        path: 'services/**',
         renderMode: RenderMode.Prerender
     },
     {
-        path: 'services',
-        renderMode: RenderMode.Prerender
+        path: 'tree-grid/**',
+        renderMode: RenderMode.Client // TODO: Fails with Prerender
     },
     {
-        path: 'tree-grid',
-        renderMode: RenderMode.Prerender
+        path: 'grid/**',
+        renderMode: RenderMode.Client // TODO: Fails with Prerender
     },
     {
-        path: 'grid',
-        renderMode: RenderMode.Prerender
-    },
-  {
-    path: '**',
-    renderMode: RenderMode.Client
-  }
+        path: '**',
+        renderMode: RenderMode.Client
+    }
 ];

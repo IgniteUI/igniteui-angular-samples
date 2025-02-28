@@ -1,8 +1,7 @@
-import { Component, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxGridComponent, RowType, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { isPlatformBrowser } from '@angular/common';
 
 @Component({
     selector: 'app-grid-row-classes-sample',
@@ -14,7 +13,7 @@ export class GridRowClassesComponent implements OnInit {
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;
     public data: any[];
 
-    public constructor(@Inject(PLATFORM_ID) private platformId: any) { }
+    public constructor() { }
 
     public activeRowCondition = (row: RowType) => this.grid?.navigation.activeNode?.row === row.index;
     // eslint-disable-next-line @typescript-eslint/member-ordering
@@ -27,12 +26,10 @@ export class GridRowClassesComponent implements OnInit {
     }
 
     public handleChange() {
-        if (isPlatformBrowser(this.platformId)) {
-            requestAnimationFrame(() => {
-                this.grid.pipeTrigger++;
-                this.grid.notifyChanges();
-            });
-        }
+        requestAnimationFrame(() => {
+            this.grid.pipeTrigger++;
+            this.grid.notifyChanges();
+        });
     }
     public handleLeftClick(args) {
         args.event.preventDefault();
