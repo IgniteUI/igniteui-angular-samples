@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <igx-query-builder #queryBuilder
+        [entities]="entities"
+        [(expressionTree)]="expressionTree"
+        (expressionTreeChange)="handleExpressionTreeChange($event)">
+    </igx-query-builder>
+
+    <div class="output-area">
+        <pre>{{sqlQuery}}</pre>
+    </div>
+</div>

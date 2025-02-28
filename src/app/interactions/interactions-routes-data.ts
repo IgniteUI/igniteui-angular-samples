@@ -50,5 +50,6 @@ export const interactionsRoutesData = {
     'icons-sample': { displayName: 'Icons sample', parentName: 'Drag and Drop' },
     'query-builder-sample-1': { displayName: 'Query Builder Sample 1', parentName: 'Query Builder' },
     'query-builder-style': { displayName: 'Query Builder Style Sample', parentName: 'Query Builder' },
-    'query-builder-template-sample': { displayName: 'Query Builder Template Sample', parentName: 'Query Builder' }
+    'query-builder-template-sample': { displayName: 'Query Builder Template Sample', parentName: 'Query Builder' },
+    'query-builder-sql-sample': { displayName: 'Query Builder SQL Sample', parentName: 'Query Builder' }
 };
