@@ -173,7 +173,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
             const parents = this.tree.findNodes(loadedParentItem.name);
             if (parents?.length) {
                 parents[0].expanded = true;
-                parents[0].nativeElement.scrollIntoView();
+                parents[0].nativeElement?.scrollIntoView();
             }
             const children = this.tree.findNodes(loadedChildItem.displayName);
             if (children?.length) {

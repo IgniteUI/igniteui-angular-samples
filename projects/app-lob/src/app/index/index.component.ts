@@ -125,7 +125,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
                 (routeItem) => routeItem.displayName === loadedRouteItem.displayName)[0];
 
             this.toggleParent('header' + loadedParentItem.name);
-            this.document.getElementById('child' + loadedChildItem.displayName).scrollIntoView();
+            this.document.getElementById('child' + loadedChildItem.displayName)?.scrollIntoView();
             this.cdr.detectChanges();
         }
     }
