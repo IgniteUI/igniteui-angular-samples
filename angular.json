@@ -41,7 +41,7 @@
             },
             "browser": "src/main.ts",
             "server": "src/main.server.ts",
-            "outputMode": "server",
+            "outputMode": "static",
             "ssr": {
               "entry": "src/server.ts"
             }
@@ -166,7 +166,7 @@
             "preserveSymlinks": true,
             "browser": "projects/app-lob/src/main.ts",
             "server": "projects/app-lob/src/main.server.ts",
-            "outputMode": "server",
+            "outputMode": "static",
             "ssr": {
               "entry": "projects/app-lob/src/server.ts"
             }
@@ -296,7 +296,7 @@
             },
             "browser": "projects/app-crm/src/main.ts",
             "server": "projects/app-crm/src/main.server.ts",
-            "outputMode": "server",
+            "outputMode": "static",
             "ssr": {
               "entry": "projects/app-crm/src/server.ts"
             }
