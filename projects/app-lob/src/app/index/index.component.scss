@@ -4,6 +4,10 @@
 
 .main {
     width: calc(100% - 300px);
+    igx-navbar {
+        position: relative;
+        z-index: 0;
+    }
 }
 
 .content {    
