@@ -10,7 +10,7 @@ export const serverRoutes: ServerRoute[] = [
         renderMode: RenderMode.Client // TODO: Fails with Prerender
     },
     {
-        path: 'grid-finjs-dock-manager/**',
+        path: 'grid-finjs-dock-manager',
         renderMode: RenderMode.Client // TODO: Fails with Prerender
     },
     {
