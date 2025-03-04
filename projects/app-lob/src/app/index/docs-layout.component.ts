@@ -22,7 +22,7 @@ export class DocsLayoutComponent implements OnInit {
         if (e.origin === e.data.origin && typeof e.data.themeStyle === 'string') {
             this.styleElem.textContent = e.data.themeStyle;
 
-            const typeface = window.getComputedStyle(this.document.body).fontFamily.replace(/\'/g, '');
+            const typeface = this.document.defaultView.getComputedStyle(this.document.body).fontFamily.replace(/\'/g, '');
             if (!(typeface.match(/,/g) || []).length &&
                 !this.typefacesLoaded.includes(typeface)) {
                 this.typefacesLoaded.push(typeface);
