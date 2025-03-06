@@ -28,7 +28,7 @@ export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
         super();
         const customOperations = [
             {
-                iconName: 'contains',
+                iconName: 'filter_contains',
                 isUnary: false,
                 logic: (target: string, searchVal: string, ignoreCase?: boolean) => {
                     ignoreCase = false;
@@ -39,7 +39,7 @@ export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
                 name: 'Contains (case sensitive)'
             },
             {
-                iconName: 'does-not-contain',
+                iconName: 'filter_does_not_contain',
                 isUnary: false,
                 logic: (target: string, searchVal: string, ignoreCase?: boolean) => {
                     ignoreCase = false;
