@@ -215,7 +215,7 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                     paths.forEach(p => {
                         tempPath += p + "/";
                         if (p.indexOf(".") !== -1 && p !== codesandboxConfigFolder) {
-                            fs.writeFileSync(sampleAppPath + "/" + tempPath, sampleContent);
+                            fs.writeFileSync(sampleAppPath + "/" + tempPath.slice(0, -1), sampleContent);
                         } else
                             if (p === 'Dockerfile') {
                                 fs.writeFileSync(sampleAppPath + "/" + tempPath, sampleContent);
