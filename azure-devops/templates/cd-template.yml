@@ -22,6 +22,9 @@ parameters:
   - name: repositoryfy
     type: boolean
     default: false
+  - name: repositoryfyCommand
+    type: string
+    default: ''
 
 steps:
   # - task: CmdLine@2
@@ -142,7 +145,7 @@ steps:
       command: custom
       workingDir: ${{ parameters.workingDir }}
       verbose: false
-      customCommand: run repositoryfyAngularDemosLob
+      customCommand: run ${{ parameters.repositoryfyCommand }}
 
   - task: Npm@1
     displayName: Production - Repositorify Angular Demos
@@ -151,7 +154,7 @@ steps:
       command: custom
       workingDir: ${{ parameters.workingDir }}
       verbose: false
-      customCommand: run repositoryfyAngularDemosLob:prod
+      customCommand: run ${{ parameters.repositoryfyCommand }}:prod
 
   - task: CmdLine@2
     displayName: Stage changes

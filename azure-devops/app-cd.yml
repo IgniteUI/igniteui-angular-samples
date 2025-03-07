@@ -85,3 +85,4 @@ steps:
       findRegex: angular-demos
       npmBuildCommand: 'run build-ci'
       repositoryfy: true
+      repositoryfyCommand: 'repositoryfyAngularDemos'
