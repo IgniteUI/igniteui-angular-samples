@@ -30,7 +30,7 @@ gulp.task("generate-live-editing", async () => {
             }
         }
         :
-        (argv.appCrm  ?
+        (argv.appCrm ?
             {
                 platform: 'angular',
                 projectDir: "./projects/app-crm",
@@ -213,16 +213,18 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                     const paths = sampleFile.path.replace("./", "").split("/");
                     let tempPath = "";
                     paths.forEach(p => {
-                        tempPath += p + "/";
+                        tempPath += p;
                         if (p.indexOf(".") !== -1 && p !== codesandboxConfigFolder) {
-                            fs.writeFileSync(sampleAppPath + "/" + tempPath.slice(0, -1), sampleContent);
-                        } else
+                            fs.writeFileSync(sampleAppPath + "/" + tempPath, sampleContent);
+                        } else {
                             if (p === 'Dockerfile') {
                                 fs.writeFileSync(sampleAppPath + "/" + tempPath, sampleContent);
                             } else if (!fs.existsSync(sampleAppPath + "/" + tempPath)) {
                                 fs.mkdirSync(sampleAppPath + "/" + tempPath)
                             }
-                    })
+                        }
+                        tempPath += "/";
+                    });
                 });
                 i++;
                 console.log(`Processing ${fileName}.json with SCSS styling`);
