@@ -30,8 +30,6 @@ export class OverlayStylingComponent {
         }
     ];
 
-    public selectedItems = ['Option 2'];
-
     constructor(public element: ElementRef, private overlayService: IgxOverlayService) {
     }
 }
