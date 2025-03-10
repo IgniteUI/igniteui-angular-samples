@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { SEOService } from '../../../app-lob/src/app/seo.service';
 import { RouterOutlet } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
     selector: 'app-root',
@@ -13,10 +14,10 @@ export class AppComponent implements OnInit {
     // eslint-disable-next-line max-len
     private metaDesc = 'In this angular grid example, you can see how users can customize their data view by leveraging the various features built into the grid.';
 
-    constructor(private seoService: SEOService) { }
+    constructor(private seoService: SEOService, @Inject(DOCUMENT) private document: Document) { }
 
     public ngOnInit() {
-        this.seoService.updateHeadProperties(this.title, this.metaDesc, window.location.href);
+        this.seoService.updateHeadProperties(this.title, this.metaDesc, this.document.defaultView.location.href);
     }
 }
 

@@ -103,7 +103,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit  
                 chart.indexOf('Bar') === -1 ||
                 chart !== CHART_TYPE.PIE)
             .forEach(chart => this.chartIntegration.setChartComponentOptions(chart, OPTIONS_TYPE.X_AXIS, { labelAngle: 30 }));
-        
+
         this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
             if (args.chartsAvailability.size === 0 || args.chartsForCreation.length === 0) {
                 this.chartIntegration.disableCharts(this.allCharts);
@@ -121,10 +121,16 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit  
         this.cdr.detectChanges();
 
         this.grid.rangeSelected.subscribe(range => {
+            this.grid.columns.forEach((column) => {
+                if (column.selected) {
+                    column.selected = false;
+                }
+            });
             this.createChartCommonLogic();
         });
 
         this.grid.columnSelectionChanging.pipe(debounceTime(100)).subscribe((args: IColumnSelectionEventArgs) => {
+            this.grid.clearCellSelection();
             this.createChartCommonLogic();
         });
     }

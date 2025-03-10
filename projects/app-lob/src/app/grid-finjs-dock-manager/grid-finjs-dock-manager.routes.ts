@@ -6,6 +6,6 @@ export const GridFinJsDockManagerGridRoutes: Routes = [
     {
         component: GridFinJSDockManagerComponent,
         data: finJsDockManagerGridRoutes['grid-finjs-dock-manager'],
-        path: 'grid-finjs-dock-manager'
+        path: ''
     }
 ];
