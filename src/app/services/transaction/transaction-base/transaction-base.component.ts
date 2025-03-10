@@ -5,6 +5,7 @@ import { NgClass } from '@angular/common';
 import { TransactionBasePipe } from '../pipes/transaction-base.pipe';
 
 @Component({
+    providers: [IgxTransactionService],
     selector: 'app-transaction-base',
     styleUrls: ['./transaction-base.component.scss'],
     templateUrl: 'transaction-base.component.html',
