@@ -1,5 +1,4 @@
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import { Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class DockManagerConfigGenerator implements IConfigGenerator {
 
@@ -13,7 +12,9 @@ export class DockManagerConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'DockManagerComponent',
             additionalDependencies: ["igniteui-dockmanager"],
-            appConfig: BaseAppConfig,
+            appConfig: { ...BaseAppConfig,
+                additionalAdjustments: [dockManagerImport, defineCustomElements]
+            },
             shortenComponentPathBy: "/layouts/dock-manager/"
         }));
 
