@@ -164,6 +164,21 @@ steps:
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
 
   - task: CmdLine@2
+    displayName: 'TODO REMOVE Git Changes'
+    condition: eq(${{ parameters.repositoryfy }}, 'true')
+    inputs:
+      script: |
+        echo "Checking for changes"
+        git status --porcelain
+        echo "Changes detected:"
+        git status --porcelain | wc -l
+        echo "Working Dir"
+        echo "${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}"
+        echo "Working Dir Linux"
+        echo "Current Directory: $(pwd)"
+      workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
+
+  - task: CmdLine@2
     displayName: 'Check if there are any changes to be committed'
     condition: eq(${{ parameters.repositoryfy }}, 'true')
     inputs:
