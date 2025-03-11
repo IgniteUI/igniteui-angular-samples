@@ -166,7 +166,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
     }
 
     public refresh() {
-        window.dispatchEvent(new Event('resize'));
+        this.document.defaultView.dispatchEvent(new Event('resize'));
     }
 
     private getAllSampleRoutes(basePath: string, appModuleRoutes: Route[], modulesRoutes: any[]): any[] {

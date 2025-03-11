@@ -46,21 +46,21 @@ export class PasteHandler implements OnInit {
     }
 
     public onPaste(eventArgs) {
-    let data;
-    const clData = 'clipboardData';
+        let data;
+        const clData = 'clipboardData';
 
-    // get clipboard data - from window.cliboardData for IE or from the original event's arguments.
-    if (window[clData]) {
-        window.event.returnValue = false;
-        data = window[clData].getData('text');
-    } else {
-        data = eventArgs[clData].getData('text/plain');
-    }
+        // get clipboard data - from window.cliboardData for IE or from the original event's arguments.
+        if (window[clData]) {
+            window.event.returnValue = false;
+            data = window[clData].getData('text');
+        } else {
+            data = eventArgs[clData].getData('text/plain');
+        }
 
-    // process the clipboard data
-    const processedData = this.processData(data);
+        // process the clipboard data
+        const processedData = this.processData(data);
 
-    this.dataProcessed.emit(processedData);
+        this.dataProcessed.emit(processedData);
     }
 
     public processData(data) {
