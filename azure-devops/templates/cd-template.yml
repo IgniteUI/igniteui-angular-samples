@@ -185,11 +185,15 @@ steps:
       script: |
         # Check for changes
         changeCount=$(git status --porcelain | wc -l)
+        echo $changeCount
         if [ "$changeCount" -eq 0 ]; then
           echo "##vso[task.logissue type=warning]No changes to commit."
           exit 0
         else
+          echo "Changes detected."
           echo "##vso[task.setvariable variable=changesDetected;isOutput=true]true"
+          echo variables['changesDetected']
+          echo eq(variables['changesDetected'], 'true')
         fi
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
 
