@@ -1,86 +1,119 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { EntityType, FilteringExpressionsTree, IExpressionTree, IgxQueryBuilderComponent } from 'igniteui-angular';
-import { RemoteLoDService } from '../../../services/remote-lod.service';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { EntityType, FilteringExpressionsTree, IExpressionTree, IgxGridComponent, IgxQueryBuilderComponent } from 'igniteui-angular';
+import { initDbQuery } from './data-query';
+import { format } from 'sql-formatter';
+import initSqlJs from 'sql.js';
 
 @Component({
-    providers: [RemoteLoDService],
     selector: 'app-query-builder-sql-sample',
     styleUrls: ['./query-builder-sql-sample.component.scss'],
     templateUrl: 'query-builder-sql-sample.component.html',
-    imports: [IgxQueryBuilderComponent]
+    imports: [IgxQueryBuilderComponent, IgxGridComponent]
 })
-export class QueryBuilderSqlSampleComponent implements OnInit {
+export class QueryBuilderSqlSampleComponent implements OnInit, OnDestroy {
     @ViewChild('queryBuilder', { static: true })
     public queryBuilder: IgxQueryBuilderComponent;
 
+    @ViewChild('grid', { static: true })
+    public grid: IgxGridComponent;
+
+    public gridData = [];
     public entities: EntityType[] = [];
     public expressionTree: IExpressionTree;
-    public sqlQuery: string = 'Select an entity and build your query';
+    public sqlQuery: string = 'SQL Query will be displayed here';
 
-    private dataTypeMap = {
-        'Edm.String': 'string',
-        'Edm.Int16': 'number',
-        'Edm.Int32': 'number',
-        'Edm.Int64': 'number',
-        'Edm.Decimal': 'number',
-        'Edm.Double': 'number',
-        'Edm.Single': 'number',
-        'Edm.Boolean': 'boolean',
-        'Edm.DateTimeOffset': 'date',
-        'Edm.Guid': 'string'
-    };
-    
-    constructor(private remoteService: RemoteLoDService) { }
+    private db: any;
+    private sqlQueryResult: any;
+
+    private sqlDataTypeMap = {
+        'smallint': 'number',
+        'integer': 'number',
+        'bigint': 'number',
+        'decimal': 'number',
+        'numeric': 'number',
+        'real': 'number',
+        'date': 'date',
+        'time': 'time',
+        'timestamp': 'datetime'
+    }
 
     public ngOnInit(): void {
-        console.log('Query Builder SQL Sample');
+        this.initializeDbAndEntities();
+    }
 
-        const entities = [];
-        this.remoteService.getMetadata().subscribe({
-            next: (data) => {
-                const schema = data['edmx:Edmx']['edmx:DataServices']['Schema'];
-                const entityTypes = schema[0]['EntityType'];
-                const entitySets = schema[1]['EntityContainer']['EntitySet'];
-                entityTypes.forEach((entityType) => {
-                    const entityName = entityType['$'].Name;
-                    const fields = entityType['Property'].map((prop) => {
-                        return {
-                            field: prop['$'].Name,
-                            dataType: this.dataTypeMap[prop['$'].Type]
-                        }
-                    });
-                    const entityMatch = entitySets.find((entitySet) => entitySet['$'].EntityType === 'NorthwindModel.' + entityName);
+    public ngOnDestroy(): void {
+        this.db.close();
+    }
 
-                    const entity = {
-                        name: entityMatch['$'].Name,
-                        fields: fields
-                    }
-                    entities.push(entity);
-                });
-            },
-            error: err => {
-                console.log(err);
-            },
-            complete: () => {
-                this.entities = entities;
+    private async initializeDbAndEntities() {
+        const SQL = await initSqlJs({
+            locateFile: file => `https://sql.js.org/dist/${file}`
+        });
+          
+        // create a database
+        this.db = new SQL.Database();
+
+        // create tables and insert data
+        this.db.run(initDbQuery);
+
+        
+        // get table names with fields and field types
+        const tables = this.db.exec("SELECT name FROM sqlite_master WHERE type='table'");
+
+        // get fields for each table
+        const tableFields = tables[0].values.map(table => {
+            const tableName = table[0];
+            const fieldsResult = this.db.exec(`PRAGMA table_info(${tableName})`);
+            const fields = fieldsResult[0].values.map(field => {
+                return {
+                    name: field[1],
+                    type: field[2]
+                };
+            });
+            return {
+                tableName: tableName,
+                fields: fields
             }
         });
+
+        // transform tables to entities
+        const entities = [];
+        tableFields.forEach(table => {
+            const fields = table.fields.map(field => {
+                return {
+                    field: field.name,
+                    dataType: this.sqlDataTypeMap[field.type.toLowerCase()] ?? 'string'
+                }
+            });
+            entities.push({
+                name: table.tableName,
+                fields: fields
+            });
+        });
+
+        this.entities = entities;
     }
 
     public handleExpressionTreeChange(event: IExpressionTree) {
-        this.sqlQuery = this.transformExpressionTreeToSQL(this.queryBuilder.expressionTree);
+        const sqlQuery = this.transformExpressionTreeToSqlQuery(this.queryBuilder.expressionTree);
+        this.sqlQuery = format(sqlQuery);
+        this.sqlQueryResult = this.db.exec(this.sqlQuery);
+        this.setGridData();
     }
 
-    private transformExpressionTreeToSQL(tree: any): string {
+    private transformExpressionTreeToSqlQuery(tree: any): string {
         if (!tree) {
             return '';
         }
 
-        const selectClause = `SELECT \n    ${tree.returnFields.length > 0 ? tree.returnFields.join('\n    ') : '*'} `; 
+        const selectFields = tree.returnFields.length > 0 && tree.returnFields.length < this.entities.find(e => e.name === tree.entity).fields.length ?
+            `${tree.returnFields.join(',')}` :
+            '*';
+        const selectClause = `SELECT ${selectFields}`; 
         const fromClause = `FROM ${tree.entity}`;
         const whereClause = this.buildWhereClause(tree);
 
-        return `\n${selectClause}\n${fromClause}${whereClause ? '\n' + whereClause : ''}\n`;
+        return `${selectClause} ${fromClause} ${whereClause}`;
     }
 
     private buildWhereClause(tree: IExpressionTree): string {
@@ -96,7 +129,7 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
             }
         });
 
-        const operator = tree.operator === 0 ? 'AND' : 'OR'; // 0 for AND, 1 for OR
+        const operator = tree.operator === 0 ? 'AND' : 'OR';
         conditions = conditions.filter(cond => cond !== '');
         return conditions.length > 0 ? `WHERE ${conditions.join(` ${operator} `)}` : '';
     }
@@ -106,7 +139,6 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
         const value = operand.searchVal;
         const condition = operand.condition.name;
 
-        // TODO: add missing conditions
         switch (condition) {
             case 'equals':
                 return `${field} = '${value}'`;
@@ -140,14 +172,14 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
                 return `${field} = ''`;
             case 'notEmpty':
                 return `${field} <> ''`;
-                case 'true':
+            case 'true':
                 return `${field} = true`;
             case 'false':
                 return `${field} = false`;
             case 'inQuery':
-                return `${field} IN (${this.transformExpressionTreeToSQL(operand.searchTree)})`;
+                return `${field} IN (${this.transformExpressionTreeToSqlQuery(operand.searchTree)})`;
             case 'notInQuery':
-                return `${field} NOT IN (${this.transformExpressionTreeToSQL(operand.searchTree)})`;
+                return `${field} NOT IN (${this.transformExpressionTreeToSqlQuery(operand.searchTree)})`;
             case 'before':
                 return `${field} < DATEFROMPARTS(${value.getFullYear()}, ${value.getMonth() + 1}, ${value.getDate()})`;
             case 'after':
@@ -171,5 +203,20 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
             default:
                 return '';
         }
+    }
+    
+    private setGridData() {
+        const rows = this.sqlQueryResult[0].values;
+        const columns = this.sqlQueryResult[0].columns;
+        
+        const gridData = rows.map(row => {
+            const data = {};
+            columns.forEach((column, index) => {
+                data[column] = row[index];
+            });
+            return data;
+        });
+
+        this.gridData = gridData;
     }
 }

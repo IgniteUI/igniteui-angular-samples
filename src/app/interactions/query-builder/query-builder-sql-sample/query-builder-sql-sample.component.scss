@@ -1,13 +1,29 @@
 .wrapper{
+    display: flex;
+    flex-wrap: wrap;
     margin: 10px;
     height: 100%;
     overflow-y: auto;
 }
 
+igx-query-builder {
+    flex: 1 100px;
+}
+
 .output-area{
+    flex: 1 200px;
     box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.75);
     border-radius: 4px;
-    margin: 0 20px 20px 20px;
+    margin: 5px 20px 20px 20px;
     word-break: break-all;
     word-wrap: break-word;
+
+    pre {
+        margin-left: 10px
+    }
+}
+
+igx-grid {
+    flex: 1 750px;
+    margin: 0 20px 20px 20px;
 }
