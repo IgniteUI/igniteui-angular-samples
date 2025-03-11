@@ -207,7 +207,7 @@ steps:
         git commit -m "Automated repository update"
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
 
-    - task: CmdLine@2
+  - task: CmdLine@2
     displayName: Commit changes
     condition: and(eq(variables['changesDetected'], 'true'), eq(${{ parameters.repositoryfy }}, 'true'))
     inputs:
