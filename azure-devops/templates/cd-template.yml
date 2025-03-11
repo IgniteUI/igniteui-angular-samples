@@ -192,12 +192,22 @@ steps:
         else
           echo "Changes detected."
           echo "##vso[task.setvariable variable=changesDetected;isOutput=true]true"
-          echo variables['changesDetected']
-          echo eq(variables['changesDetected'], 'true')
+          echo "changes detected=$(changesDetected)"
         fi
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
 
   - task: CmdLine@2
+    displayName: TODO REMOVE Commit changes WITH BOOLEAN CHECK
+    condition: and(eq(variables['changesDetected'], true), eq(${{ parameters.repositoryfy }}, 'true'))
+    inputs:
+      script: |
+        git config user.name "tfsbuild"
+        git config user.email "tfsbuild@infragistics.com"
+        git add .
+        git commit -m "Automated repository update"
+      workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
+
+    - task: CmdLine@2
     displayName: Commit changes
     condition: and(eq(variables['changesDetected'], 'true'), eq(${{ parameters.repositoryfy }}, 'true'))
     inputs:
