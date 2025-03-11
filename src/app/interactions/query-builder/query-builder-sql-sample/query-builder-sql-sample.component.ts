@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { EntityType, FilteringExpressionsTree, IExpressionTree, IgxGridComponent, IgxQueryBuilderComponent } from 'igniteui-angular';
+import { EntityType, FilteringExpressionsTree, IExpressionTree, IgxGridComponent, IgxQueryBuilderComponent, IgxStringFilteringOperand } from 'igniteui-angular';
 import { initDbQuery } from './data-query';
 import { format } from 'sql-formatter';
 import initSqlJs from 'sql.js';
@@ -38,11 +38,22 @@ export class QueryBuilderSqlSampleComponent implements OnInit, OnDestroy {
     }
 
     public ngOnInit(): void {
-        this.initializeDbAndEntities();
+        this.initializeDbAndEntities().then(() => {
+            this.fetchTablesAndSetEntities();
+            this.setInitialExpressionTree();
+            this.executeQuery();
+        });
     }
 
     public ngOnDestroy(): void {
         this.db.close();
+    }
+
+    public executeQuery() {
+        const sqlQuery = this.transformExpressionTreeToSqlQuery(this.expressionTree);
+        this.sqlQuery = format(sqlQuery);
+        this.sqlQueryResult = this.db.exec(this.sqlQuery);
+        this.setGridData();
     }
 
     private async initializeDbAndEntities() {
@@ -55,8 +66,9 @@ export class QueryBuilderSqlSampleComponent implements OnInit, OnDestroy {
 
         // create tables and insert data
         this.db.run(initDbQuery);
+    }
 
-        
+    private fetchTablesAndSetEntities() {
         // get table names with fields and field types
         const tables = this.db.exec("SELECT name FROM sqlite_master WHERE type='table'");
 
@@ -94,14 +106,32 @@ export class QueryBuilderSqlSampleComponent implements OnInit, OnDestroy {
         this.entities = entities;
     }
 
-    public handleExpressionTreeChange(event: IExpressionTree) {
-        const sqlQuery = this.transformExpressionTreeToSqlQuery(this.queryBuilder.expressionTree);
-        this.sqlQuery = format(sqlQuery);
-        this.sqlQueryResult = this.db.exec(this.sqlQuery);
-        this.setGridData();
+    private setInitialExpressionTree() {
+        const categoriesTree = new FilteringExpressionsTree(0, undefined, 'categories', ['category_id']);
+        categoriesTree.filteringOperands.push({
+            fieldName: 'category_name',
+            conditionName: IgxStringFilteringOperand.instance().condition('equals').name,
+            searchVal: 'Beverages'
+        });
+
+        const productsTree = new FilteringExpressionsTree(0, undefined, 'products', ['supplier_id']);
+        productsTree.filteringOperands.push({
+            fieldName: 'category_id',
+            conditionName: IgxStringFilteringOperand.instance().condition('inQuery').name,
+            searchTree: categoriesTree
+        });
+
+        const suppliersTree = new FilteringExpressionsTree(0, undefined, 'suppliers', ['*']);
+        suppliersTree.filteringOperands.push({
+            fieldName: 'supplier_id',
+            conditionName: IgxStringFilteringOperand.instance().condition('inQuery').name,
+            searchTree: productsTree
+        });
+
+        this.expressionTree = suppliersTree;
     }
 
-    private transformExpressionTreeToSqlQuery(tree: any): string {
+    private transformExpressionTreeToSqlQuery(tree: IExpressionTree): string {
         if (!tree) {
             return '';
         }
@@ -137,11 +167,13 @@ export class QueryBuilderSqlSampleComponent implements OnInit, OnDestroy {
     private buildCondition(operand: any): string {
         const field = operand.fieldName;
         const value = operand.searchVal;
-        const condition = operand.condition.name;
+        const condition = operand.conditionName;
 
         switch (condition) {
             case 'equals':
                 return `${field} = '${value}'`;
+            case 'doesNotEqual':
+                return `${field} <> '${value}'`;
             case 'contains':
                 return `${field} LIKE '%${value}%'`;
             case 'startsWith':
@@ -156,8 +188,6 @@ export class QueryBuilderSqlSampleComponent implements OnInit, OnDestroy {
                 return `${field} >= ${value}`;
             case 'lessThanOrEqualTo':
                 return `${field} <= ${value}`;
-            case 'doesNotEqual':
-                return `${field} <> ${value}`;
             case 'doesNotContain':
                 return `${field} NOT LIKE '%${value}%'`;
             case 'doesNotStartWith':
@@ -168,7 +198,7 @@ export class QueryBuilderSqlSampleComponent implements OnInit, OnDestroy {
                 return `${field} IS NULL`;
             case 'notNull':
                 return `${field} IS NOT NULL`;
-                case 'empty':
+            case 'empty':
                 return `${field} = ''`;
             case 'notEmpty':
                 return `${field} <> ''`;

@@ -1,9 +1,12 @@
-.wrapper{
-    display: flex;
-    flex-wrap: wrap;
+.wrapper {
     margin: 10px;
     height: 100%;
     overflow-y: auto;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 igx-query-builder {
@@ -24,6 +27,5 @@ igx-query-builder {
 }
 
 igx-grid {
-    flex: 1 750px;
-    margin: 0 20px 20px 20px;
+    margin-left: 20px;
 }
