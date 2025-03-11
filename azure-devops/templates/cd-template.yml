@@ -192,7 +192,7 @@ steps:
         else
           echo "Changes detected."
           echo "##vso[task.setvariable variable=changesDetected;isOutput=true]true"
-          echo "changes detected=$(changesDetected)"
+          echo "changes detected is now $changesDetected"
         fi
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
 
