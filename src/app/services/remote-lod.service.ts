@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { parseString } from 'xml2js';
 
 interface IDataResponse {
     value: any[];
@@ -24,21 +23,6 @@ export class RemoteLoDService {
     public getData(dataState?: IDataState): Observable<any[]> {
         return this.http.get(this.buildUrl(dataState)).pipe(
             map((response: IDataResponse) => response.value)
-        );
-    }
-
-    public getMetadata(): Observable<object> {
-        return this.http.get(`${this.url}$metadata`, { responseType: 'text' }).pipe(
-            map((response: string) => {
-                let result;
-                parseString(response, { explicitArray: false }, (err, parsedResult) => {
-                    if (err) {
-                        throw new Error('Error parsing XML');
-                    }
-                    result = parsedResult;
-                });
-                return result;
-            })
         );
     }
 
