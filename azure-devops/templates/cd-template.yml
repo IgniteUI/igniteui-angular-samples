@@ -22,6 +22,9 @@ parameters:
   - name: repositoryfy
     type: boolean
     default: false
+  - name: repositoryfyCommand
+    type: string
+    default: ''
 
 steps:
   # - task: CmdLine@2
@@ -137,47 +140,77 @@ steps:
 
   - task: Npm@1
     displayName: Staging - Repositorify Angular Demos and LOB Demos
-    condition: and(eq(variables['Build.SourceBranchName'], 'vNext'), eq(variables['repositoryfy'], 'true'))
+    condition: and(eq(variables['Build.SourceBranchName'], 'vNext'), eq(${{ parameters.repositoryfy }}, 'true'))
     inputs:
       command: custom
       workingDir: ${{ parameters.workingDir }}
       verbose: false
-      customCommand: run repositoryfyAngularDemosLob
+      customCommand: run ${{ parameters.repositoryfyCommand }}
 
   - task: Npm@1
     displayName: Production - Repositorify Angular Demos
-    condition: and(eq(variables['Build.SourceBranchName'], 'master'), contains(variables['build.reason'], 'CI'), eq(variables['repositoryfy'], 'true'))
+    condition: and(eq(variables['Build.SourceBranchName'], 'master'), contains(variables['build.reason'], 'CI'), eq(${{ parameters.repositoryfy }}, 'true'))
     inputs:
       command: custom
       workingDir: ${{ parameters.workingDir }}
       verbose: false
-      customCommand: run repositoryfyAngularDemosLob:prod
+      customCommand: run ${{ parameters.repositoryfyCommand }}:prod
 
   - task: CmdLine@2
     displayName: Stage changes
-    condition: eq(variables['repositoryfy'], 'true')
+    condition: eq(${{ parameters.repositoryfy }}, 'true')
     inputs:
       script: git add .
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
 
   - task: CmdLine@2
+    displayName: 'TODO REMOVE Git Changes'
+    condition: eq(${{ parameters.repositoryfy }}, 'true')
+    inputs:
+      script: |
+        echo "Checking for changes"
+        git status --porcelain
+        echo "Changes detected:"
+        git status --porcelain | wc -l
+        echo "Working Dir"
+        echo "${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}"
+        echo "Working Dir Linux"
+        echo "Current Directory: $(pwd)"
+      workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
+
+  - task: CmdLine@2
     displayName: 'Check if there are any changes to be committed'
-    condition: eq(variables['repositoryfy'], 'true')
+    condition: eq(${{ parameters.repositoryfy }}, 'true')
     inputs:
       script: |
         # Check for changes
         changeCount=$(git status --porcelain | wc -l)
+        echo $changeCount
         if [ "$changeCount" -eq 0 ]; then
           echo "##vso[task.logissue type=warning]No changes to commit."
           exit 0
         else
-          echo "##vso[task.setvariable variable=changesDetected;isOutput=true]true"
+          echo "Changes detected."
+          echo "##vso[task.setvariable variable=changesDetected;]true"
+          echo "changes detected is now $changesDetected"
+          echo "changes detected is now $(changesDetected)"
         fi
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
 
   - task: CmdLine@2
+    displayName: TODO REMOVE Commit changes WITH BOOLEAN CHECK
+    condition: and(eq(variables['changesDetected'], true), eq(${{ parameters.repositoryfy }}, 'true'))
+    inputs:
+      script: |
+        git config user.name "tfsbuild"
+        git config user.email "tfsbuild@infragistics.com"
+        git add .
+        git commit -m "Automated repository update"
+      workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
+
+  - task: CmdLine@2
     displayName: Commit changes
-    condition: and(eq(variables['changesDetected'], 'true'), eq(variables['repositoryfy'], 'true'))
+    condition: and(eq(variables['changesDetected'], 'true'), eq(${{ parameters.repositoryfy }}, 'true'))
     inputs:
       script: |
         git config user.name "tfsbuild"
@@ -188,7 +221,7 @@ steps:
 
   - task: CmdLine@2
     displayName: Push changes
-    condition: and(eq(variables['changesDetected'], 'true'), eq(variables['repositoryfy'], 'true'))
+    condition: and(eq(variables['changesDetected'], 'true'), eq(${{ parameters.repositoryfy }}, 'true'))
     inputs:
       script: git push
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
