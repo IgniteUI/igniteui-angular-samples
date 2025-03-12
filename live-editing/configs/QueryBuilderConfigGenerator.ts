@@ -29,7 +29,7 @@ export class QueryBuilderConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'QueryBuilderSqlSampleComponent',
-            additionalFiles: ['/src/app/services/remote-lod.service.ts'],
+            additionalFiles: ['/src/app/interactions/query-builder/query-builder-sql-sample/data-query.ts'],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/query-builder/"
         }));
