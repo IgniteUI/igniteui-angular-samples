@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, DoCheck, OnInit, ViewChild,ElementRef } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, OnInit, ViewChild,ElementRef, Inject, PLATFORM_ID } from '@angular/core';
 import { IBaseChipEventArgs, IgxDropDownComponent, IgxTreeComponent, ITreeNodeSelectionEvent, ConnectedPositioningStrategy, OverlaySettings, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxChipsAreaComponent, IgxChipComponent, IgxTreeNodeComponent } from 'igniteui-angular';
 import { COUNTRIES } from './countries';
+import { isPlatformBrowser } from '@angular/common';
 
 
 @Component({
@@ -18,15 +19,19 @@ export class DropdownTreeHierarchicalSelectionComponent implements OnInit, DoChe
     public countries!: any[];
     public selectedNodes!: any[];
 
+    constructor(@Inject(PLATFORM_ID) private platformId: any) { }
+
     public ngOnInit(): void {
         this.countries = COUNTRIES;
     }
 
     public ngAfterViewInit(): void {
-       requestAnimationFrame(() => {
-        this._overlaySettings.target = this.igxButton.nativeElement;
-        this.igxDropDown.open(this._overlaySettings);
-       });
+        if (isPlatformBrowser(this.platformId)) {
+            requestAnimationFrame(() => {
+                this._overlaySettings.target = this.igxButton.nativeElement;
+                this.igxDropDown.open(this._overlaySettings);
+            });
+        }
     }
 
     public ngDoCheck(){
