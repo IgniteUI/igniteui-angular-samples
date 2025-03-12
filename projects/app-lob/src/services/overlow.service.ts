@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
@@ -6,7 +7,7 @@ import { filter } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class OverflowService {
-  constructor(private router: Router) {
+  constructor(private router: Router, @Inject(DOCUMENT) private document: Document) {
     this.router.events.pipe(
       filter(event => event instanceof NavigationStart)
     ).subscribe((event: NavigationStart) => {
@@ -16,9 +17,9 @@ export class OverflowService {
 
   private setOverflow(url: string) {
     if (url.endsWith('finjs')) {
-      document.body.style.overflow = 'auto';
+      this.document.body.style.overflow = 'auto';
     } else {
-      document.body.style.overflow = 'hidden';
+      this.document.body.style.overflow = 'hidden';
     }
   }
 }
