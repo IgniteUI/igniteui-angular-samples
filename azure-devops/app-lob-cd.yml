@@ -14,7 +14,8 @@ pool:
 
 variables:
 - group: live-editing-samples-pat
-  ReplacementText: '@infragistics/igniteui-angular-extras'
+- name: ReplacementText
+  value: '@infragistics/igniteui-angular-extras'
 
 steps:
   - checkout: self
