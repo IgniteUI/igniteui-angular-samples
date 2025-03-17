@@ -18,6 +18,7 @@ variables:
 
 steps:
   - checkout: self
+    persistCredentials: true
     clean: true
     fetchTags: true
 
