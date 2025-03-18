@@ -127,6 +127,11 @@ steps:
     workingDirectory: ${{ parameters.workingDir }}
 
   - script: |
+      mv "$(Build.SourcesDirectory)/${{ parameters.targetFolder }}/browser/index.csr.html" "$(Build.SourcesDirectory)/${{ parameters.targetFolder }}/browser/index.html"
+      echo "File renamed successfully."
+    displayName: Rename index.csr.html to index.html
+
+  - script: |
       sourcePath="$(Build.SourcesDirectory)/${{ parameters.targetFolder }}/browser"
       destinationZip="$(Build.ArtifactStagingDirectory)/output.zip"
       cd "$sourcePath"
