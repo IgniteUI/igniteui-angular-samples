@@ -2,6 +2,8 @@
 parameters:
   - name: customCommand
     type: string
+  - name: gitHubToken
+    type: string
   - name: workingDir
     type: string
   - name: submoduleDir
@@ -178,16 +180,18 @@ steps:
         fi
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
 
-  - task: CmdLine@2
+  - script: |
+      git config --global user.name "tfsbuild"
+      git config --global user.email "tfsbuild@infragistics.com"
+      git config --global credential.helper store
+      echo "https://x-access-token:$(GITHUB_TOKEN)@github.com" > ~/.git-credentials
+      git add .
+      git commit -m "Automated repository update"
     displayName: Commit changes
     condition: and(eq(variables['changesDetected'], true), eq(${{ parameters.repositoryfy }}, 'true'))
-    inputs:
-      script: |
-        git config user.name "tfsbuild"
-        git config user.email "tfsbuild@infragistics.com"
-        git add .
-        git commit -m "Automated repository update"
-      workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
+    env:
+      GITHUB_TOKEN: ${{ parameters.gitHubToken }}
+    workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
 
   - task: CmdLine@2
     displayName: Push changes
