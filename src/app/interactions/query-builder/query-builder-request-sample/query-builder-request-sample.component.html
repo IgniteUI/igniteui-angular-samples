@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <igx-query-builder #queryBuilder
+        [entities]="entities"
+        [expressionTree]="expressionTree">
+    </igx-query-builder>
+
+    <div class="output-area">
+        <!-- <pre>{{ printExpressionTree(queryBuilder.expressionTree) }}</pre> -->
+         <igx-grid [data]="data"></igx-grid>
+    </div>
+</div>
