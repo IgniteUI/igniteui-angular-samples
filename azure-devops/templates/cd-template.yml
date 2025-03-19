@@ -190,7 +190,6 @@ steps:
       git config --global user.email "tfsbuild@infragistics.com"
       git config --global credential.helper store
       echo "https://x-access-token:$(GITHUB_TOKEN)@github.com" > ~/.git-credentials
-      git add .
       git commit -m "Automated repository update"
     displayName: Commit changes
     condition: and(eq(variables['changesDetected'], true), eq(${{ parameters.repositoryfy }}, 'true'))
@@ -204,3 +203,4 @@ steps:
     inputs:
       script: git push
       workingDirectory: ${{ parameters.workingDir }}/igniteui-live-editing-samples/${{ parameters.submoduleDir }}
+    continueOnError: true
