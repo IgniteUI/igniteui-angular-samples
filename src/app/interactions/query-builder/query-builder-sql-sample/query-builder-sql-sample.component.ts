@@ -1,8 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { EntityType, FilteringExpressionsTree, IExpressionTree, IgxGridComponent, IgxQueryBuilderComponent, IgxStringFilteringOperand } from 'igniteui-angular';
-import { initDbQuery } from './data-query';
+import { EntityType, FieldType, FilteringExpressionsTree, IExpressionTree, IgxGridComponent, IgxQueryBuilderComponent, IgxStringFilteringOperand } from 'igniteui-angular';
 import { format } from 'sql-formatter';
-import initSqlJs from 'sql.js';
+const API_ENDPOINT = 'https://data-northwind.indigo.design';
 
 @Component({
     selector: 'app-query-builder-sql-sample',
@@ -10,7 +10,7 @@ import initSqlJs from 'sql.js';
     templateUrl: 'query-builder-sql-sample.component.html',
     imports: [IgxQueryBuilderComponent, IgxGridComponent]
 })
-export class QueryBuilderSqlSampleComponent implements OnInit, OnDestroy {
+export class QueryBuilderSqlSampleComponent implements OnInit {
     @ViewChild('queryBuilder', { static: true })
     public queryBuilder: IgxQueryBuilderComponent;
 
@@ -22,108 +22,81 @@ export class QueryBuilderSqlSampleComponent implements OnInit, OnDestroy {
     public expressionTree: IExpressionTree;
     public sqlQuery: string = 'SQL Query will be displayed here';
 
-    private db: any;
-    private sqlQueryResult: any;
-
-    private sqlDataTypeMap = {
-        'smallint': 'number',
-        'integer': 'number',
-        'bigint': 'number',
-        'decimal': 'number',
-        'numeric': 'number',
-        'real': 'number',
-        'date': 'date',
-        'time': 'time',
-        'timestamp': 'datetime'
-    }
+    constructor(private http: HttpClient) {}
 
     public ngOnInit(): void {
-        this.initializeDbAndEntities().then(() => {
-            this.fetchTablesAndSetEntities();
-            this.setInitialExpressionTree();
-            this.executeQuery();
-        });
-    }
-
-    public ngOnDestroy(): void {
-        this.db.close();
+        this.setEntities();
+        this.setInitialExpressionTree();
+        this.executeQuery();
     }
 
     public executeQuery() {
         const sqlQuery = this.transformExpressionTreeToSqlQuery(this.expressionTree);
         this.sqlQuery = format(sqlQuery);
-        this.sqlQueryResult = this.db.exec(this.sqlQuery);
         this.setGridData();
     }
 
-    private async initializeDbAndEntities() {
-        const SQL = await initSqlJs({
-            locateFile: file => `https://sql.js.org/dist/${file}`
-        });
-          
-        // create a database
-        this.db = new SQL.Database();
-
-        // create tables and insert data
-        this.db.run(initDbQuery);
-    }
-
-    private fetchTablesAndSetEntities() {
-        // get table names with fields and field types
-        const tables = this.db.exec("SELECT name FROM sqlite_master WHERE type='table'");
-
-        // get fields for each table
-        const tableFields = tables[0].values.map(table => {
-            const tableName = table[0];
-            const fieldsResult = this.db.exec(`PRAGMA table_info(${tableName})`);
-            const fields = fieldsResult[0].values.map(field => {
-                return {
-                    name: field[1],
-                    type: field[2]
-                };
-            });
-            return {
-                tableName: tableName,
-                fields: fields
+    private setEntities() {
+        this.entities = [
+            {
+                name: 'Categories',
+                fields: [
+                    { field: 'categoryId', dataType: 'number' },
+                    { field: 'description', dataType: 'string' },
+                    { field: 'name', dataType: 'string' },
+                ]
+            }, {
+                name: 'Products',
+                fields: [
+                    { field: 'productId', dataType: 'number' },
+                    { field: 'productName', dataType: 'string' },
+                    { field: 'supplierId', dataType: 'number' },
+                    { field: 'categoryId', dataType: 'number' },
+                    { field: 'quantityperUnit', dataType: 'number' },
+                    { field: 'unitPrice', dataType: 'number' },
+                    { field: 'unitsInStock', dataType: 'number' },
+                    { field: 'unitsOnOrder', dataType: 'number' },
+                    { field: 'reorderLevel', dataType: 'number' },
+                    { field: 'discontinued', dataType: 'boolean' },
+                ]
+            }, {
+                name: 'Suppliers',
+                fields: [
+                    { field: 'supplierId', dataType: 'number' },
+                    { field: 'companyName', dataType: 'string' },
+                    { field: 'contactName', dataType: 'string' },
+                    { field: 'contactTitle', dataType: 'string' },
+                    { field: 'address', dataType: 'string' },
+                    { field: 'city', dataType: 'string' },
+                    { field: 'region', dataType: 'string' },
+                    { field: 'postalCode', dataType: 'string' },
+                    { field: 'country', dataType: 'string' },
+                    { field: 'phone', dataType: 'string' },
+                    { field: 'fax', dataType: 'string' },
+                    { field: 'homePage', dataType: 'string' },
+                ]
             }
-        });
-
-        // transform tables to entities
-        const entities = [];
-        tableFields.forEach(table => {
-            const fields = table.fields.map(field => {
-                return {
-                    field: field.name,
-                    dataType: this.sqlDataTypeMap[field.type.toLowerCase()] ?? 'string'
-                }
-            });
-            entities.push({
-                name: table.tableName,
-                fields: fields
-            });
-        });
-
-        this.entities = entities;
+        ];
     }
 
     private setInitialExpressionTree() {
-        const categoriesTree = new FilteringExpressionsTree(0, undefined, 'categories', ['category_id']);
+        const categoriesTree = new FilteringExpressionsTree(0, undefined, 'Categories', ['categoryId', 'name']);
         categoriesTree.filteringOperands.push({
-            fieldName: 'category_name',
+            fieldName: 'name',
             conditionName: IgxStringFilteringOperand.instance().condition('equals').name,
             searchVal: 'Beverages'
         });
 
-        const productsTree = new FilteringExpressionsTree(0, undefined, 'products', ['supplier_id']);
+        const productsTree = new FilteringExpressionsTree(0, undefined, 'Products', ['supplierId']);
         productsTree.filteringOperands.push({
-            fieldName: 'category_id',
+            fieldName: 'categoryId',
             conditionName: IgxStringFilteringOperand.instance().condition('inQuery').name,
             searchTree: categoriesTree
         });
 
-        const suppliersTree = new FilteringExpressionsTree(0, undefined, 'suppliers', ['*']);
+        const suppliersTree = new FilteringExpressionsTree(0, undefined, 'Suppliers', ['supplierId', 'companyName', 'contactName', 'contactTitle']);
         suppliersTree.filteringOperands.push({
-            fieldName: 'supplier_id',
+            fieldName: 'supplierId',
             conditionName: IgxStringFilteringOperand.instance().condition('inQuery').name,
             searchTree: productsTree
         });
@@ -139,6 +112,7 @@ export class QueryBuilderSqlSampleComponent implements OnInit, OnDestroy {
         const selectFields = tree.returnFields.length > 0 && tree.returnFields.length < this.entities.find(e => e.name === tree.entity).fields.length ?
             `${tree.returnFields.join(',')}` :
             '*';
+
         const selectClause = `SELECT ${selectFields}`; 
         const fromClause = `FROM ${tree.entity}`;
         const whereClause = this.buildWhereClause(tree);
@@ -236,17 +210,8 @@ export class QueryBuilderSqlSampleComponent implements OnInit, OnDestroy {
     }
     
     private setGridData() {
-        const rows = this.sqlQueryResult[0].values;
-        const columns = this.sqlQueryResult[0].columns;
-        
-        const gridData = rows.map(row => {
-            const data = {};
-            columns.forEach((column, index) => {
-                data[column] = row[index];
-            });
-            return data;
+        this.http.post(`${API_ENDPOINT}/QueryBuilder/ExecuteQuery`, this.expressionTree).subscribe(data => {
+            this.gridData = Object.values(data)[0] as any[];
         });
-
-        this.gridData = gridData;
     }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxBooleanFilteringOperand, IgxStringFilteringOperand, IgxHierarchicalGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
+import { IgxBooleanFilteringOperand, IgxStringFilteringOperand, IgxHierarchicalGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IFilteringOperation } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
@@ -26,7 +26,7 @@ export class HGridCustomFilteringSampleComponent {
 export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
     private constructor() {
         super();
-        const customOperations = [
+        const customOperations: IFilteringOperation[] = [
             {
                 iconName: 'filter_contains',
                 isUnary: false,

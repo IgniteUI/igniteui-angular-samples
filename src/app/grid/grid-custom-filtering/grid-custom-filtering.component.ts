@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxBooleanFilteringOperand, IgxStringFilteringOperand, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { IgxBooleanFilteringOperand, IgxStringFilteringOperand, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IFilteringOperation } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { CurrencyPipe } from '@angular/common';
@@ -31,7 +31,7 @@ export class GridCustomFilteringComponent implements OnInit {
 export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
     private constructor() {
         super();
-        const customOperations = [
+        const customOperations: IFilteringOperation[] = [
             {
                 iconName: 'filter_contains',
                 isUnary: false,
