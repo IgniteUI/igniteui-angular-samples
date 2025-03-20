@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxGridComponent, IgxQueryBuilderComponent } from 'igniteui-angular';
-import { NorthwindSwaggerService } from './northwind.service';
+
+const API_ENDPOINT = 'https://data-northwind.indigo.design';
 
 @Component({
     selector: 'query-builder-request-sample',
@@ -18,7 +20,7 @@ export class QueryBuilderRequestSampleComponent implements OnInit {
     public expressionTree: IExpressionTree;
     public data: any[] = [];
 
-    constructor(private northwindService: NorthwindSwaggerService) {}
+    constructor(private http: HttpClient) {}
 
     public ngOnInit(): void {
         this.customersFields = [
@@ -60,7 +62,7 @@ export class QueryBuilderRequestSampleComponent implements OnInit {
 
     public onChange() {
         this.grid.isLoading = true;
-        this.northwindService.postQueryBuilderResult(this.expressionTree).subscribe(data =>{
+        this.http.post(`${API_ENDPOINT}/QueryBuilder/ExecuteQuery`, this.expressionTree).subscribe(data =>{
             this.data = Object.values(data)[0];
             this.grid.isLoading = false;
         });
