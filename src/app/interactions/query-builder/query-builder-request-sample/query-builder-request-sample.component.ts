@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxGridComponent, IgxQueryBuilderComponent } from 'igniteui-angular';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxColumnComponent, IgxGridComponent, IgxQueryBuilderComponent } from 'igniteui-angular';
 
 const API_ENDPOINT = 'https://data-northwind.indigo.design';
 
@@ -8,7 +8,7 @@ const API_ENDPOINT = 'https://data-northwind.indigo.design';
     selector: 'query-builder-request-sample',
     styleUrls: ['./query-builder-request-sample.component.scss'],
     templateUrl: 'query-builder-request-sample.component.html',
-    imports: [IgxQueryBuilderComponent, IgxGridComponent]
+    imports: [IgxQueryBuilderComponent, IgxGridComponent, IgxColumnComponent]
 })
 export class QueryBuilderRequestSampleComponent implements OnInit {
     @ViewChild('grid', { static: true })
@@ -20,7 +20,7 @@ export class QueryBuilderRequestSampleComponent implements OnInit {
     public expressionTree: IExpressionTree;
     public data: any[] = [];
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
     public ngOnInit(): void {
         this.customersFields = [
@@ -66,5 +66,11 @@ export class QueryBuilderRequestSampleComponent implements OnInit {
             this.data = Object.values(data)[0];
             this.grid.isLoading = false;
         });
+        this.cdr.detectChanges();
+        this.calculateColsInView();
+    }
+
+    private calculateColsInView() {
+        this.grid.columns.forEach(column => column.hidden = !this.expressionTree.returnFields.includes(column.field));
     }
 }
