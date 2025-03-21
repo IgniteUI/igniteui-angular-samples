@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <igx-query-builder #queryBuilder
+        [entities]="entities"
+        [(expressionTree)]="expressionTree"
+        (expressionTreeChange)="onChange()">
+    </igx-query-builder>
+
+    <div class="output-area">
+        <igx-grid #grid [data]="data" [autoGenerate]="true"></igx-grid>
+    </div>
+</div>
