@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxBooleanFilteringOperand, IgxStringFilteringOperand, IgxTreeGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { IgxBooleanFilteringOperand, IgxStringFilteringOperand, IgxTreeGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IFilteringOperation } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
@@ -33,7 +33,7 @@ export class TreeGridFilteringCustomSampleComponent implements OnInit {
 export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
     private constructor() {
         super();
-        const customOperations = [
+        const customOperations: IFilteringOperation[] = [
             {
                 iconName: 'filter_contains',
                 isUnary: false,
