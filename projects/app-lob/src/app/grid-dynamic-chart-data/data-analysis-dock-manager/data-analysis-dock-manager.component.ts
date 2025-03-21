@@ -57,7 +57,7 @@ export class HastDuplicateLayouts implements PipeTransform {
     imports: [IgxGridComponent, IgxConditionalFormattingDirective, IgxChartIntegrationDirective, IgxContextMenuDirective, IgxBadgeComponent, IgxColumnComponent, IgxCellTemplateDirective, NgClass, IgxDividerDirective, DockSlotComponent, DecimalPipe, TitleCasePipe, CurrencyPipe, FilterTypePipe, HastDuplicateLayouts],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit  {
+export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
 
@@ -121,16 +121,10 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit  
         this.cdr.detectChanges();
 
         this.grid.rangeSelected.subscribe(range => {
-            this.grid.columns.forEach((column) => {
-                if (column.selected) {
-                    column.selected = false;
-                }
-            });
             this.createChartCommonLogic();
         });
 
         this.grid.columnSelectionChanging.pipe(debounceTime(100)).subscribe((args: IColumnSelectionEventArgs) => {
-            this.grid.clearCellSelection();
             this.createChartCommonLogic();
         });
     }
@@ -232,7 +226,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit  
     }
 
     private clearViewContainer(viewContainerRef: ViewContainerRef) {
-        for (let i = viewContainerRef.length -1; i >= 0; i--) {
+        for (let i = viewContainerRef.length - 1; i >= 0; i--) {
             const viewRef = viewContainerRef.get(i);
             if (viewRef) {
                 const componentInstance = (viewRef as any).context;

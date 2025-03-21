@@ -1,59 +1,55 @@
+.carousel-wrapper {
+    height: 600px;
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.action-wrapper {
+    height: 40px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+}
+
 .slide-wrapper {
-    max-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     padding: 10px;
- 
+
     img {
         width: 100%;
     }
 }
- 
-.carousel-wrapper {
-    max-height: 600px;
-    height: 100%;
-    width: 90%;
-    margin: 20px auto;
+
+igx-carousel {
+    border: 0.5px solid #dde0e4;
 }
- 
-.action-wrapper {
-    height: 40px;
-    width: 70%;
-    display: flex;
-    align-items: baseline;
-    margin-bottom: 1rem;
-    margin-left: 5.7rem;
-}
- 
-.carousel-animation-wrapper {
-    height: 700px;
-    margin: 16px auto;
-    display: flex;
-    flex-flow: column;
-}
- 
-.igx-card {
-    box-shadow: none;
-}
- 
-.select-container {
-    margin-left: 10px;
-}
- 
-span:first-child {
-    position: relative;
-    bottom: 2px;
-}
- 
+
 igx-select {
     width: 150px;
+    margin-left: 10px;
+    --ig-size: var(--ig-size-small);
 }
- 
-::ng-deep {
-    .input.igx-input-group__input {
-        top: 10px;
-        left: 10px;
-    }
+
+igx-card {
+    border: none;
+}
+
+igx-card-header {
+    padding: 8px 16px;
+}
+
+a {
+    text-decoration: none;
 }

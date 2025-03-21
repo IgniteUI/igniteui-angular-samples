@@ -24,6 +24,7 @@ import { QueryBuilderSample1Component } from './query-builder/query-builder-samp
 import { QueryBuilderStyleComponent } from './query-builder/query-builder-style/query-builder-style.component';
 import { QueryBuilderTemplateSampleComponent } from './query-builder/query-builder-template-sample/query-builder-template-sample.component';
 import { QueryBuilderSqlSampleComponent } from './query-builder/query-builder-sql-sample/query-builder-sql-sample.component';
+import { QueryBuilderRequestSampleComponent } from './query-builder/query-builder-request-sample/query-builder-request-sample.component';
 import { RippleSample2Component } from './ripple/ripple-sample-2/ripple-sample-2.component';
 import { RippleSample3Component } from './ripple/ripple-sample-3/ripple-sample-3.component';
 import { RippleSample4Component } from './ripple/ripple-sample-4/ripple-sample-4.component';
@@ -310,5 +311,10 @@ export const InteractionsRoutes: Routes = [
         component: QueryBuilderSqlSampleComponent,
         data: interactionsRoutesData['query-builder-sql-sample'],
         path: 'query-builder-sql-sample'
+    },
+    {
+        component: QueryBuilderRequestSampleComponent,
+        data: interactionsRoutesData['query-builder-request-sample'],
+        path: 'query-builder-request-sample'
     }
 ];
