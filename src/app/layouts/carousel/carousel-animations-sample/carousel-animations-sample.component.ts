@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxCarouselComponent, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardMediaDirective, IgxCardActionsComponent, IgxButtonDirective, IgxPrefixDirective } from 'igniteui-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IgxCarouselComponent, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardMediaDirective, IgxCardActionsComponent, IgxButtonDirective, IgxPrefixDirective, IgxSwitchComponent } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 import { TitleCasePipe } from '@angular/common';
 
@@ -7,21 +7,14 @@ import { TitleCasePipe } from '@angular/common';
     selector: 'app-carousel',
     styleUrls: ['./carousel-animations-sample.component.scss'],
     templateUrl: './carousel-animations-sample.component.html',
-    imports: [IgxSelectComponent, FormsModule, IgxSelectItemComponent, IgxCarouselComponent, IgxSlideComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardMediaDirective, IgxCardActionsComponent, IgxButtonDirective, IgxPrefixDirective, TitleCasePipe]
+    imports: [IgxSelectComponent, IgxSwitchComponent, FormsModule, IgxSelectItemComponent, IgxCarouselComponent, IgxSlideComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardMediaDirective, IgxCardActionsComponent, IgxButtonDirective, IgxPrefixDirective, TitleCasePipe]
 })
-export class CarouselAnimationsSampleComponent implements OnInit {
+export class CarouselAnimationsSampleComponent {
   @ViewChild('carousel', { static: true }) public carousel: IgxCarouselComponent;
 
-  public slides: any[] = [];
   public animations = ['slide', 'fade', 'none'];
-
-  public ngOnInit() {
-    this.addSlides();
-  }
-
-  public addSlides() {
-    this.slides.push(
-      {
+  public slides: any[] = [
+    {
         description: '30+ Material-based Angular components to code speedy web apps faster.',
         heading: 'Ignite UI for Angular',
         image: 'assets/images/carousel/slide1-angular.png',
@@ -39,6 +32,5 @@ export class CarouselAnimationsSampleComponent implements OnInit {
         image: 'assets/images/carousel/slide3-aspnet.png',
         link: 'https://www.infragistics.com/products/aspnet'
       }
-    );
-  }
+  ];
 }
