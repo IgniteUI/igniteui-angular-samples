@@ -52,5 +52,5 @@ export const interactionsRoutesData = {
     'query-builder-style': { displayName: 'Query Builder Style Sample', parentName: 'Query Builder' },
     'query-builder-template-sample': { displayName: 'Query Builder Template Sample', parentName: 'Query Builder' },
     'query-builder-sql-sample': { displayName: 'Query Builder SQL Sample', parentName: 'Query Builder' },
-    'query-builder-request-sample': { displayName: 'Query Builder Request Sample', parentName: 'Query Builder' },
+    'query-builder-request-sample': { displayName: 'Query Builder Request Sample', parentName: 'Query Builder' }
 };
