@@ -43,7 +43,7 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
                 fields: [
                     { field: 'categoryId', dataType: 'number' },
                     { field: 'description', dataType: 'string' },
-                    { field: 'name', dataType: 'string' },
+                    { field: 'name', dataType: 'string' }
                 ]
             }, {
                 name: 'Products',
@@ -57,7 +57,7 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
                     { field: 'unitsInStock', dataType: 'number' },
                     { field: 'unitsOnOrder', dataType: 'number' },
                     { field: 'reorderLevel', dataType: 'number' },
-                    { field: 'discontinued', dataType: 'boolean' },
+                    { field: 'discontinued', dataType: 'boolean' }
                 ]
             }, {
                 name: 'Suppliers',
@@ -73,7 +73,7 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
                     { field: 'country', dataType: 'string' },
                     { field: 'phone', dataType: 'string' },
                     { field: 'fax', dataType: 'string' },
-                    { field: 'homePage', dataType: 'string' },
+                    { field: 'homePage', dataType: 'string' }
                 ]
             }
         ];
