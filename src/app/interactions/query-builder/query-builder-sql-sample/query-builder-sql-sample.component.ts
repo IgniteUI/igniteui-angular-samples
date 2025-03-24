@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { EntityType, FieldType, FilteringExpressionsTree, IExpressionTree, IgxGridComponent, IgxQueryBuilderComponent, IgxStringFilteringOperand } from 'igniteui-angular';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { EntityType, FilteringExpressionsTree, IExpressionTree, IgxGridComponent, IgxQueryBuilderComponent, IgxStringFilteringOperand } from 'igniteui-angular';
 import { format } from 'sql-formatter';
+
 const API_ENDPOINT = 'https://data-northwind.indigo.design';
 
 @Component({
@@ -22,7 +23,7 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
     public expressionTree: IExpressionTree;
     public sqlQuery: string = 'SQL Query will be displayed here';
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
     public ngOnInit(): void {
         this.setEntities();
@@ -80,7 +81,7 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
     }
 
     private setInitialExpressionTree() {
-        const categoriesTree = new FilteringExpressionsTree(0, undefined, 'Categories', ['categoryId', 'name']);
+        const categoriesTree = new FilteringExpressionsTree(0, undefined, 'Categories', ['categoryId']);
         categoriesTree.filteringOperands.push({
             fieldName: 'name',
             conditionName: IgxStringFilteringOperand.instance().condition('equals').name,
@@ -210,8 +211,11 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
     }
     
     private setGridData() {
+        this.grid.isLoading = true;
         this.http.post(`${API_ENDPOINT}/QueryBuilder/ExecuteQuery`, this.expressionTree).subscribe(data => {
             this.gridData = Object.values(data)[0] as any[];
+            this.grid.isLoading = false;
         });
+        this.cdr.detectChanges();
     }
 }

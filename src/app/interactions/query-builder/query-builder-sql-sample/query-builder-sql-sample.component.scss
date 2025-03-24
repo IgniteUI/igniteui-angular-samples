@@ -7,6 +7,7 @@
 .container {
     display: flex;
     flex-wrap: wrap;
+    margin-right: 20px;
 }
 
 igx-query-builder {
@@ -16,8 +17,8 @@ igx-query-builder {
 .output-area{
     flex: 1 200px;
     box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.75);
-    border-radius: 4px;
-    margin: 5px 20px 20px 20px;
+    border-radius: 0.75rem;
+    margin: 5px 0px 20px 20px;
     word-break: break-all;
     word-wrap: break-word;
 

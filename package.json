@@ -82,7 +82,6 @@
     "minireset.css": "0.0.6",
     "rxjs": "^7.8.2",
     "sql-formatter": "^15.4.11",
-    "sql.js": "^1.12.0",
     "tslib": "^2.6.1",
     "zone.js": "~0.15.0"
   },
