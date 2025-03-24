@@ -176,7 +176,7 @@ steps:
     inputs:
       script: |
         # Check for changes
-        changeCount=$(git status --porcelain | wc -l)
+        changeCount=$(git status --porcelain "../${{ parameters.submoduleDir }}" | wc -l)
         if [ "$changeCount" -eq 0 ]; then
           echo "##vso[task.logissue type=warning]No changes to commit."
           exit 0
