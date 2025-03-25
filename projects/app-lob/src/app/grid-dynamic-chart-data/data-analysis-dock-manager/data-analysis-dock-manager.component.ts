@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import { AfterViewInit, ChangeDetectorRef, ViewContainerRef, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren, TemplateRef } from '@angular/core';
 import { IgxChartIntegrationDirective, IgxConditionalFormattingDirective, IgxContextMenuDirective, OPTIONS_TYPE, CHART_TYPE, IDeterminedChartTypesArgs } from 'igniteui-angular-extras';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
@@ -24,29 +23,26 @@ export class FilterTypePipe implements PipeTransform {
 export class HastDuplicateLayouts implements PipeTransform {
     public transform(contentId: string, layout: IgcDockManagerLayout, chartTypes) {
         const count = this.hasDuplicateContentID(layout, contentId, 0);
-        if (count === 0 && (chartTypes[contentId] || Object.keys(chartTypes).indexOf(contentId) !== -1)) {
+        if (count === 0 && (chartTypes[contentId] || Object.keys(chartTypes).includes(contentId))) {
             delete chartTypes[contentId];
             return false;
         }
         return count >= 1;
-
     }
 
-    private hasDuplicateContentID = (ob, contentId, count) => {
-
+    private hasDuplicateContentID(ob, contentId, count) {
         if (ob['contentId'] && ob['contentId'] === contentId) {
             count++;
         }
 
         for (const i in ob) {
-            if (!ob.hasOwnProperty(i)) { continue; }
-
-            if ((typeof ob[i]) === 'object') {
+            if (!ob.hasOwnProperty(i)) continue;
+            if (typeof ob[i] === 'object') {
                 count = this.hasDuplicateContentID(ob[i], contentId, count);
             }
         }
         return count;
-    };
+    }
 }
 
 @Component({
@@ -54,7 +50,11 @@ export class HastDuplicateLayouts implements PipeTransform {
     templateUrl: './data-analysis-dock-manager.component.html',
     styleUrls: ['./data-analysis-dock-manager.component.scss'],
     providers: [FloatingPanesService],
-    imports: [IgxGridComponent, IgxConditionalFormattingDirective, IgxChartIntegrationDirective, IgxContextMenuDirective, IgxBadgeComponent, IgxColumnComponent, IgxCellTemplateDirective, NgClass, IgxDividerDirective, DockSlotComponent, DecimalPipe, TitleCasePipe, CurrencyPipe, FilterTypePipe, HastDuplicateLayouts],
+    imports: [
+        IgxGridComponent, IgxConditionalFormattingDirective, IgxChartIntegrationDirective, IgxContextMenuDirective,
+        IgxBadgeComponent, IgxColumnComponent, IgxCellTemplateDirective, NgClass, IgxDividerDirective,
+        DockSlotComponent, DecimalPipe, TitleCasePipe, CurrencyPipe, FilterTypePipe, HastDuplicateLayouts
+    ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
@@ -76,20 +76,29 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     public availableCharts: CHART_TYPE[] = [];
     public allCharts: CHART_TYPE[] = [];
     public data;
-    public chartData = [];
     public selectedCharts = {};
-    public headersRenderButton = false;
     public chartTypes = ['Column', 'Area', 'Bar', 'Line', 'Scatter', 'Pie'];
 
-    constructor(private cdr: ChangeDetectorRef, private paneService: FloatingPanesService) { }
+    constructor(private cdr: ChangeDetectorRef, private paneService: FloatingPanesService) {}
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.data = FinancialData.generateData(1000);
     }
 
-    public ngAfterViewInit() {
+    public ngAfterViewInit(): void {
         this.allCharts = this.chartIntegration.getAllChartTypes();
         this.cdr.detectChanges();
+
+        this.configureChartOptions();
+
+        this.chartIntegration.onChartTypesDetermined.subscribe(this.onChartTypesDetermined.bind(this));
+        this.cdr.detectChanges();
+
+        this.grid.rangeSelected.pipe(debounceTime(100)).subscribe(this.createChartCommonLogic.bind(this));
+        this.grid.columnSelectionChanging.pipe(debounceTime(100)).subscribe(this.createChartCommonLogic.bind(this));
+    }
+
+    private configureChartOptions(): void {
         const pieChartOptions = {
             labelsPosition: 4,
             allowSliceExplosion: true,
@@ -99,37 +108,24 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
 
         this.chartIntegration.setChartComponentOptions(CHART_TYPE.PIE, OPTIONS_TYPE.CHART, pieChartOptions);
         this.chartIntegration.getAvailableCharts()
-            .filter(chart => chart.indexOf('Scatter') === -1 ||
-                chart.indexOf('Bar') === -1 ||
-                chart !== CHART_TYPE.PIE)
+            .filter(chart => !['Scatter', 'Bar'].includes(chart) && chart !== CHART_TYPE.PIE)
             .forEach(chart => this.chartIntegration.setChartComponentOptions(chart, OPTIONS_TYPE.X_AXIS, { labelAngle: 30 }));
-
-        this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
-            if (args.chartsAvailability.size === 0 || args.chartsForCreation.length === 0) {
-                this.chartIntegration.disableCharts(this.allCharts);
-            } else {
-                args.chartsAvailability.forEach((isAvailable, chart) => {
-                    if (args.chartsForCreation.indexOf(chart) === -1) {
-                        this.chartIntegration.disableCharts([chart]);
-                    } else {
-                        this.chartIntegration.enableCharts([chart]);
-                    }
-                });
-            }
-            this.availableCharts = this.chartIntegration.getAvailableCharts();
-        });
-        this.cdr.detectChanges();
-
-        this.grid.rangeSelected.subscribe(range => {
-            this.createChartCommonLogic();
-        });
-
-        this.grid.columnSelectionChanging.pipe(debounceTime(100)).subscribe((args: IColumnSelectionEventArgs) => {
-            this.createChartCommonLogic();
-        });
     }
 
-    // eslint-disable-next-line @typescript-eslint/member-ordering
+    public onChartTypesDetermined(args: IDeterminedChartTypesArgs): void {
+        const chartsToDisable = [];
+        const chartsToEnable = [];
+
+        args.chartsAvailability.forEach((isAvailable, chart) => {
+            (args.chartsForCreation.includes(chart)) ? chartsToEnable.push(chart) : chartsToDisable.push(chart);
+        });
+
+        if (chartsToDisable.length) this.chartIntegration.disableCharts(chartsToDisable);
+        if (chartsToEnable.length) this.chartIntegration.enableCharts(chartsToEnable);
+
+        this.availableCharts = this.chartIntegration.getAvailableCharts();
+    }
+
     public docLayout: IgcDockManagerLayout = {
         rootPane: {
             type: IgcDockManagerPaneType.splitPane,
@@ -164,7 +160,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     };
 
     public getChartHostFromSlot(type: CHART_TYPE) {
-        return this.dockSlots.find(s => s.id === type).chartHost;
+        return this.dockSlots.find(s => s.id === type)?.chartHost;
     }
 
     public formatCurrency(value: number) {
@@ -172,9 +168,25 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     }
 
     public createChart(type: CHART_TYPE) {
-        const floatingPane: IgcSplitPane = {
+        const splitPane: IgcSplitPane = this.createSplitPane(type);
+
+        this.paneService.appendPane(splitPane);
+        const chartHost = this.getChartHostFromSlot(type);
+        chartHost.viewContainerRef.clear();
+        const chart = this.createChartInstance(type, chartHost.viewContainerRef);
+
+        this.dockManager.nativeElement.layout.floatingPanes.push(splitPane);
+        this.docLayout = { ...this.dockManager.nativeElement.layout };
+        this.selectedCharts[type] = chart;
+        this.cdr.detectChanges();
+    }
+
+    private createSplitPane(type: CHART_TYPE): IgcSplitPane {
+        return {
             type: IgcDockManagerPaneType.splitPane,
             orientation: IgcSplitPaneOrientation.horizontal,
+            floatingWidth: 550,
+            floatingHeight: 350,
             panes: [
                 {
                     type: IgcDockManagerPaneType.contentPane,
@@ -183,58 +195,49 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                 }
             ]
         };
-        const splitPane: IgcSplitPane = {
-            type: IgcDockManagerPaneType.splitPane,
-            orientation: IgcSplitPaneOrientation.horizontal,
-            floatingWidth: 550,
-            floatingHeight: 350,
-            panes: [floatingPane]
-        };
-
-        this.paneService.appendPane(splitPane);
-        const chartHost = this.getChartHostFromSlot(type);
-        chartHost.viewContainerRef.clear();
-        const chart = this.chartIntegration.chartFactory(type, chartHost.viewContainerRef);
-
-        this.dockManager.nativeElement.layout.floatingPanes.push(splitPane);
-        this.docLayout = { ...this.dockManager.nativeElement.layout };
-        this.selectedCharts[type] = chart;
-        this.cdr.detectChanges();
     }
 
-    public createChartCommonLogic() {
-        if (Object.keys(this.selectedCharts).length !== 0) {
-            setTimeout(() => {
-                Object.keys(this.selectedCharts).forEach((c: CHART_TYPE) => {
-                    const chartHost = this.getChartHostFromSlot(c);
-                    if (this.availableCharts.indexOf(c) !== -1) {
-                        if (c !== CHART_TYPE.PIE && typeof this.selectedCharts[c] === 'object') {
-                            this.selectedCharts[c] = this.chartIntegration.chartFactory(c, null, this.selectedCharts[c]);
-                        } else {
-                            chartHost.viewContainerRef.clear();
-                            this.selectedCharts[c] = this.chartIntegration.chartFactory(c, chartHost.viewContainerRef);
-                        }
-                    } else {
-                        this.clearViewContainer(chartHost.viewContainerRef);
-                        const embeddedView = chartHost.viewContainerRef.createEmbeddedView(this.emptyChartTemplate);
-                        embeddedView.detectChanges();
-                        this.selectedCharts[c] = 'Empty';
-                    }
-                });
-            });
+    public createChartCommonLogic(): void {
+        if (Object.keys(this.selectedCharts).length === 0) return;
+
+        Object.keys(this.selectedCharts).forEach((chartType: CHART_TYPE) => {
+            const chartHost = this.getChartHostFromSlot(chartType);
+            if (this.availableCharts.includes(chartType)) {
+                this.updateChart(chartType, chartHost);
+            } else {
+                this.renderEmptyChart(chartType, chartHost);
+            }
+        });
+    }
+
+    private updateChart(chartType: CHART_TYPE, chartHost: any): void {
+        if (chartType !== CHART_TYPE.PIE && typeof this.selectedCharts[chartType] === 'object') {
+            this.selectedCharts[chartType] = this.createChartInstance(chartType, null, this.selectedCharts[chartType]);
+        } else {
+            chartHost.viewContainerRef.clear();
+            this.selectedCharts[chartType] = this.createChartInstance(chartType, chartHost.viewContainerRef);
         }
     }
 
-    private clearViewContainer(viewContainerRef: ViewContainerRef) {
+    private renderEmptyChart(chartType: CHART_TYPE, chartHost: any): void {
+        this.clearViewContainer(chartHost.viewContainerRef);
+        const embeddedView = chartHost.viewContainerRef.createEmbeddedView(this.emptyChartTemplate);
+        embeddedView.detectChanges();
+        this.selectedCharts[chartType] = 'Empty';
+    }
+
+    private clearViewContainer(viewContainerRef: ViewContainerRef): void {
         for (let i = viewContainerRef.length - 1; i >= 0; i--) {
             const viewRef = viewContainerRef.get(i);
             if (viewRef) {
                 const componentInstance = (viewRef as any).context;
-                if (componentInstance && (componentInstance as any).destroy) {
-                    (componentInstance as any).destroy();
-                }
+                if (componentInstance?.destroy) componentInstance.destroy();
             }
         }
         viewContainerRef.clear();
+    }
+
+    private createChartInstance(chartType: CHART_TYPE, viewContainerRef?: any, existingChart?: any): any {
+        return this.chartIntegration.chartFactory(chartType, viewContainerRef, existingChart);
     }
 }

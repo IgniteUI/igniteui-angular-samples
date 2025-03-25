@@ -24,19 +24,19 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     }
 
     public ngAfterViewInit() {
-      const pieChartOptions = {
-        labelsPosition: 4,
-        allowSliceExplosion: true,
-        sliceClick: (evt) => { evt.args.isExploded = !evt.args.isExploded; },
-        formatLabel: (context) => `${context.percentValue.toFixed(2)}%`
-      };
+        const pieChartOptions = {
+          labelsPosition: 4,
+          allowSliceExplosion: true,
+          sliceClick: (evt) => { evt.args.isExploded = !evt.args.isExploded; },
+          formatLabel: (context) => `${context.percentValue.toFixed(2)}%`
+        };
 
-      this.chartDirective.setChartComponentOptions(CHART_TYPE.PIE, OPTIONS_TYPE.CHART, pieChartOptions);
-      this.chartDirective.getAvailableCharts()
-                         .filter(chart => chart.indexOf('Scatter') === -1 ||
-                                          chart.indexOf('Bar') === -1 ||
-                                          chart !== CHART_TYPE.PIE)
-                         .forEach(chart => this.chartDirective.setChartComponentOptions(chart, OPTIONS_TYPE.X_AXIS, {labelAngle: 30}));
+        this.chartDirective.setChartComponentOptions(CHART_TYPE.PIE, OPTIONS_TYPE.CHART, pieChartOptions);
+        this.chartDirective.getAvailableCharts()
+          .filter(chart => !chart.includes('Scatter') ||
+                           !chart.includes('Bar') ||
+                           chart !== CHART_TYPE.PIE)
+          .forEach(chart => this.chartDirective.setChartComponentOptions(chart, OPTIONS_TYPE.X_AXIS, {labelAngle: 30}));
     }
 
     public formatCurrency(value: number) {
