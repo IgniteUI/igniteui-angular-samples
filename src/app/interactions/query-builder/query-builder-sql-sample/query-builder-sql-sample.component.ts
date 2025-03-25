@@ -84,6 +84,7 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
         const categoriesTree = new FilteringExpressionsTree(0, undefined, 'Categories', ['categoryId']);
         categoriesTree.filteringOperands.push({
             fieldName: 'name',
+            ignoreCase: false,
             conditionName: IgxStringFilteringOperand.instance().condition('equals').name,
             searchVal: 'Beverages'
         });
@@ -91,14 +92,16 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
         const productsTree = new FilteringExpressionsTree(0, undefined, 'Products', ['supplierId']);
         productsTree.filteringOperands.push({
             fieldName: 'categoryId',
+            ignoreCase: false,
             conditionName: IgxStringFilteringOperand.instance().condition('inQuery').name,
             searchTree: categoriesTree
         });
 
-        const suppliersTree = new FilteringExpressionsTree(0, undefined, 'Suppliers', ['supplierId', 'companyName', 'contactName', 'contactTitle']);
+        const suppliersTree = new FilteringExpressionsTree(0, undefined, 'Suppliers', ['*']);
         suppliersTree.filteringOperands.push({
             fieldName: 'supplierId',
             conditionName: IgxStringFilteringOperand.instance().condition('inQuery').name,
+            ignoreCase: false,
             searchTree: productsTree
         });
 
@@ -149,12 +152,6 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
                 return `${field} = '${value}'`;
             case 'doesNotEqual':
                 return `${field} <> '${value}'`;
-            case 'contains':
-                return `${field} LIKE '%${value}%'`;
-            case 'startsWith':
-                return `${field} LIKE '${value}%'`;
-            case 'endsWith':
-                return `${field} LIKE '%${value}'`;
             case 'greaterThan':
                 return `${field} > ${value}`;
             case 'lessThan':
@@ -163,12 +160,14 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
                 return `${field} >= ${value}`;
             case 'lessThanOrEqualTo':
                 return `${field} <= ${value}`;
+            case 'contains':
+                return `${field} LIKE '%${value}%'`;
             case 'doesNotContain':
                 return `${field} NOT LIKE '%${value}%'`;
-            case 'doesNotStartWith':
-                return `${field} NOT LIKE '${value}%'`;
-            case 'doesNotEndWith':
-                return `${field} NOT LIKE '%${value}'`;
+            case 'startsWith':
+                return `${field} LIKE '${value}%'`;
+            case 'endsWith':
+                return `${field} LIKE '%${value}'`;
             case 'null':
                 return `${field} IS NULL`;
             case 'notNull':
@@ -185,28 +184,9 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
                 return `${field} IN (${this.transformExpressionTreeToSqlQuery(operand.searchTree)})`;
             case 'notInQuery':
                 return `${field} NOT IN (${this.transformExpressionTreeToSqlQuery(operand.searchTree)})`;
-            case 'before':
-                return `${field} < DATEFROMPARTS(${value.getFullYear()}, ${value.getMonth() + 1}, ${value.getDate()})`;
-            case 'after':
-                return `${field} > DATEFROMPARTS(${value.getFullYear()}, ${value.getMonth() + 1}, ${value.getDate()})`;
-            case 'today':
-                return `CONVERT(DATE, ${field}) = CONVERT(DATE, GETDATE())`;
-            case 'yesterday':
-                return `CONVERT(DATE, ${field}) = CONVERT(DATE, DATEADD(DAY, -1, GETDATE()))`;
-            case 'thisMonth':
-                return `YEAR(${field}) = YEAR(GETDATE()) AND MONTH(${field}) = MONTH(GETDATE())`;
-            case 'lastMonth':
-                return `${field} BETWEEN DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0) AND DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), 0)`;
-            case 'nextMonth':
-                return `${field} BETWEEN DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), 0) AND DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) + 1, 0)`;
-            case 'thisYear':
-                return `YEAR(${field}) = YEAR(GETDATE())`;
-            case 'lastYear':
-                return `YEAR(${field}) = YEAR(GETDATE()) - 1`;
-            case 'nextYear':
-                return `YEAR(${field}) = YEAR(GETDATE()) + 1`;
             default:
-                return '';
+                console.error(`Condition ${condition} is not implemented`);
+                break;
         }
     }
     
