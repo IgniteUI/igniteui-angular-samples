@@ -389,5 +389,5 @@ export const LayoutsRoutes: Routes = [
         component: TileManagerComponent,
         data: layoutsRoutesData['tile-manager-sample'],
         path: 'tile-manager-sample'
-    },
+    }
 ];
