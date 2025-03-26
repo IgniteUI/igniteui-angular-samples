@@ -1,11 +1,14 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit} from '@angular/core';
-import { IgxIconService} from 'igniteui-angular';
-// import { IgcTileManagerComponent, IgcTileComponent } from 'igniteui-webcomponents';
+import { IgxAvatarComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardThumbnailDirective, IgxIconComponent, IgxIconService, IgxListComponent, IgxListItemComponent, IgxListLineDirective, IgxListThumbnailDirective} from 'igniteui-angular';
+import { defineComponents, IgcTileManagerComponent } from 'igniteui-webcomponents';
+
+defineComponents(IgcTileManagerComponent);
 
 @Component({
     selector: 'app-tile-manager',
     styleUrls: ['./tile-manager.component.scss'],
     templateUrl: './tile-manager.component.html',
+    imports: [IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardThumbnailDirective, IgxCardContentDirective, IgxListComponent, IgxListItemComponent, IgxListThumbnailDirective, IgxAvatarComponent, IgxIconComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TileManagerComponent implements OnInit {
