@@ -1,13 +1,12 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit} from '@angular/core';
 import { IgxIconService} from 'igniteui-angular';
-import { IgcTileManagerComponent, IgcTileComponent } from 'igniteui-webcomponents';
+// import { IgcTileManagerComponent, IgcTileComponent } from 'igniteui-webcomponents';
 
 @Component({
     selector: 'app-tile-manager',
     styleUrls: ['./tile-manager.component.scss'],
     templateUrl: './tile-manager.component.html',
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    imports: [IgcTileManagerComponent, IgcTileComponent]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TileManagerComponent implements OnInit {
     constructor(protected _iconService: IgxIconService) {}
