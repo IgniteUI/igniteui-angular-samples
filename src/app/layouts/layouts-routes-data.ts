@@ -60,5 +60,6 @@ export const layoutsRoutesData = {
     'divider-sample-1': { displayName: 'Default Divider', parentName: 'Divider' },
     'divider-sample-2': { displayName: 'Vertical Divider', parentName: 'Divider' },
     'divider-sample-3': { displayName: 'Dashed Divider', parentName: 'Divider' },
-    'divider-sample-4': { displayName: 'Inset Divider', parentName: 'Divider' }
-};
+    'divider-sample-4': { displayName: 'Inset Divider', parentName: 'Divider' },
+    'tile-manager-sample': { displayName: 'Tile Manager Overview', parentName: 'Tile Manager' }
+}
