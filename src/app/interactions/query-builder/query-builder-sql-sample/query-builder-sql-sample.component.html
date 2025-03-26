@@ -1,17 +1,17 @@
 <div class="wrapper">
-    <div class="container">
+    <div class="flex-container">
         <igx-query-builder #queryBuilder
             [entities]="entities"
             [(expressionTree)]="expressionTree"
-            (expressionTreeChange)="executeQuery()"
-            class="output-area">
+            (expressionTreeChange)="onChange()"
+            class="container">
         </igx-query-builder>
     
-        <div class="output-area">
+        <div class="container">
             <pre>{{sqlQuery}}</pre>
         </div>
     </div>
 
-    <igx-grid #grid [data]="gridData" [autoGenerate]="true" height="270px" [width]="'calc(100% - 40px)'">
+    <igx-grid #grid [data]="data" [autoGenerate]="true" height="270px" [width]="'calc(100% - 40px)'">
     </igx-grid>
 </div>

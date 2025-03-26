@@ -4,17 +4,13 @@
     overflow-y: auto;
 }
 
-.container {
+.flex-container {
     display: flex;
     flex-wrap: wrap;
     margin-right: 20px;
 }
 
-igx-query-builder {
-    flex: 1 100px;
-}
-
-.output-area{
+.container {
     flex: 1 200px;
     box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.75);
     border-radius: 0.75rem;
@@ -25,6 +21,10 @@ igx-query-builder {
     pre {
         margin-left: 10px
     }
+}
+
+igx-query-builder {
+    flex: 1 100px;
 }
 
 igx-grid {

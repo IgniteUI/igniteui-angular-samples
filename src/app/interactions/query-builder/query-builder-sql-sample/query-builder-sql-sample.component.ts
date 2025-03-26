@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { EntityType, FilteringExpressionsTree, IExpressionTree, IgxGridComponent, IgxQueryBuilderComponent, IgxStringFilteringOperand } from 'igniteui-angular';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { EntityType, FilteringExpressionsTree, IExpressionTree, IgxColumnComponent, IgxGridComponent, IgxNumberFilteringOperand, IgxQueryBuilderComponent, IgxStringFilteringOperand } from 'igniteui-angular';
 import { format } from 'sql-formatter';
 
 const API_ENDPOINT = 'https://data-northwind.indigo.design';
@@ -9,16 +9,13 @@ const API_ENDPOINT = 'https://data-northwind.indigo.design';
     selector: 'app-query-builder-sql-sample',
     styleUrls: ['./query-builder-sql-sample.component.scss'],
     templateUrl: 'query-builder-sql-sample.component.html',
-    imports: [IgxQueryBuilderComponent, IgxGridComponent]
+    imports: [IgxQueryBuilderComponent, IgxGridComponent, IgxColumnComponent]
 })
-export class QueryBuilderSqlSampleComponent implements OnInit {
-    @ViewChild('queryBuilder', { static: true })
-    public queryBuilder: IgxQueryBuilderComponent;
-
+export class QueryBuilderSqlSampleComponent implements OnInit, AfterViewInit {
     @ViewChild('grid', { static: true })
     public grid: IgxGridComponent;
 
-    public gridData = [];
+    public data: any[] = [];
     public entities: EntityType[] = [];
     public expressionTree: IExpressionTree;
     public sqlQuery: string = 'SQL Query will be displayed here';
@@ -28,13 +25,10 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
     public ngOnInit(): void {
         this.setEntities();
         this.setInitialExpressionTree();
-        this.executeQuery();
     }
 
-    public executeQuery() {
-        const sqlQuery = this.transformExpressionTreeToSqlQuery(this.expressionTree);
-        this.sqlQuery = format(sqlQuery);
-        this.setGridData();
+    public ngAfterViewInit(): void {
+        this.onChange();
     }
 
     private setEntities() {
@@ -97,7 +91,7 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
             searchTree: categoriesTree
         });
 
-        const suppliersTree = new FilteringExpressionsTree(0, undefined, 'Suppliers', ['*']);
+        const suppliersTree = new FilteringExpressionsTree(0, undefined, 'Suppliers', ['supplierId', 'companyName', 'contactName', 'contactTitle']);
         suppliersTree.filteringOperands.push({
             fieldName: 'supplierId',
             conditionName: IgxStringFilteringOperand.instance().condition('inQuery').name,
@@ -190,12 +184,20 @@ export class QueryBuilderSqlSampleComponent implements OnInit {
         }
     }
     
-    private setGridData() {
+    public onChange() {
+        const sqlQuery = this.transformExpressionTreeToSqlQuery(this.expressionTree);
+        this.sqlQuery = format(sqlQuery);
+
         this.grid.isLoading = true;
-        this.http.post(`${API_ENDPOINT}/QueryBuilder/ExecuteQuery`, this.expressionTree).subscribe(data => {
-            this.gridData = Object.values(data)[0] as any[];
+        this.http.post(`${API_ENDPOINT}/QueryBuilder/ExecuteQuery`, this.expressionTree).subscribe(data =>{
+            this.data = Object.values(data)[0];
             this.grid.isLoading = false;
+            this.cdr.detectChanges();
+            this.calculateColsInView();
         });
-        this.cdr.detectChanges();
+    }
+
+    private calculateColsInView() {
+        this.grid.columns.forEach(column => column.hidden = !this.expressionTree.returnFields.includes(column.field));
     }
 }
