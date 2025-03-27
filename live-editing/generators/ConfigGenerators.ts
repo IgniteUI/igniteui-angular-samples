@@ -63,6 +63,7 @@ import { StepperConfigGenerator } from '../configs/StepperConfigGenerator';
 import { PaginationConfigGenerator } from '../configs/PaginationConfigGenerator';
 import { PivotGridConfigGenerator } from '../configs/PivotGridConfigGenerator';
 import { QueryBuilderConfigGenerator } from '../configs/QueryBuilderConfigGenerator';
+import { TileManagerConfigGenerator } from '../configs/TileManagerConfigGenerator';
 
 export const CONFIG_GENERATORS =
     [
@@ -136,6 +137,7 @@ export const CONFIG_GENERATORS =
         TransactionsConfigGenerator,
         SplitterConfigGenerator,
         DockManagerConfigGenerator,
+        TileManagerConfigGenerator,
         PaginationConfigGenerator,
         QueryBuilderConfigGenerator
     ];
