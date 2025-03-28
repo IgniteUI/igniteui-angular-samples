@@ -23,6 +23,7 @@ import { OverlayStylingComponent } from './overlay/overlay-styling/overlay-styli
 import { QueryBuilderSample1Component } from './query-builder/query-builder-sample-1/query-builder-sample-1.component';
 import { QueryBuilderStyleComponent } from './query-builder/query-builder-style/query-builder-style.component';
 import { QueryBuilderTemplateSampleComponent } from './query-builder/query-builder-template-sample/query-builder-template-sample.component';
+import { QueryBuilderSqlSampleComponent } from './query-builder/query-builder-sql-sample/query-builder-sql-sample.component';
 import { QueryBuilderRequestSampleComponent } from './query-builder/query-builder-request-sample/query-builder-request-sample.component';
 import { RippleSample2Component } from './ripple/ripple-sample-2/ripple-sample-2.component';
 import { RippleSample3Component } from './ripple/ripple-sample-3/ripple-sample-3.component';
@@ -305,6 +306,11 @@ export const InteractionsRoutes: Routes = [
         component: QueryBuilderTemplateSampleComponent,
         data: interactionsRoutesData['query-builder-template-sample'],
         path: 'query-builder-template-sample'
+    },
+    {
+        component: QueryBuilderSqlSampleComponent,
+        data: interactionsRoutesData['query-builder-sql-sample'],
+        path: 'query-builder-sql-sample'
     },
     {
         component: QueryBuilderRequestSampleComponent,
