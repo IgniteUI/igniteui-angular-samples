@@ -1,13 +1,23 @@
 import { NgForOf, NgTemplateOutlet } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxComboModule, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxQueryBuilderComponent, IgxQueryBuilderHeaderComponent, IgxQueryBuilderSearchValueTemplateDirective, IgxRadioModule, IgxSelectModule, IgxStringFilteringOperand } from 'igniteui-angular';
+import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxComboModule, IgxNumberFilteringOperand, IgxQueryBuilderComponent, IgxQueryBuilderHeaderComponent, IgxQueryBuilderSearchValueTemplateDirective, IgxRadioModule, IgxSelectModule, IgxStringFilteringOperand } from 'igniteui-angular';
 
 @Component({
     selector: 'app-query-builder-template-sample',
     styleUrls: ['./query-builder-template-sample.component.scss'],
     templateUrl: 'query-builder-template-sample.component.html',
-    imports: [IgxQueryBuilderComponent, IgxQueryBuilderHeaderComponent, IgxSelectModule, IgxRadioModule, IgxComboModule, FormsModule, IgxQueryBuilderSearchValueTemplateDirective, NgForOf, NgTemplateOutlet]
+    imports: [
+        IgxQueryBuilderComponent,
+        IgxQueryBuilderHeaderComponent,
+        IgxSelectModule,
+        IgxRadioModule,
+        IgxComboModule,
+        FormsModule,
+        IgxQueryBuilderSearchValueTemplateDirective,
+        NgForOf,
+        NgTemplateOutlet
+    ]
 })
 export class QueryBuilderTemplateSampleComponent implements OnInit {
     public shipViaFormatterData: any[];

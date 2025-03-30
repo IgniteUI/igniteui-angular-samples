@@ -18,8 +18,8 @@
             "index": "src/index.html",
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": [
-                "zone.js",
-                "hammerjs"
+              "zone.js",
+              "hammerjs"
             ],
             "assets": [
               "src/assets",
@@ -35,7 +35,9 @@
             "sourceMap": true,
             "progress": true,
             "stylePreprocessorOptions": {
-                "includePaths": ["node_modules"]
+              "includePaths": [
+                "node_modules"
+              ]
             },
             "browser": "src/main.ts"
           },
@@ -152,7 +154,9 @@
             "optimization": false,
             "namedChunks": true,
             "stylePreprocessorOptions": {
-                "includePaths": ["node_modules"]
+              "includePaths": [
+                "node_modules"
+              ]
             },
             "preserveSymlinks": true,
             "browser": "projects/app-lob/src/main.ts"
@@ -276,7 +280,9 @@
             "optimization": false,
             "namedChunks": true,
             "stylePreprocessorOptions": {
-                "includePaths": ["node_modules"]
+              "includePaths": [
+                "node_modules"
+              ]
             },
             "browser": "projects/app-crm/src/main.ts"
           },

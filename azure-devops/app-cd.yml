@@ -13,11 +13,13 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  githubToken: <value> # Add a GitHub token in Libraries
-  ReplacementText: '@infragistics/igniteui-angular-extras'
+- group: live-editing-samples-pat
+- name: ReplacementText
+  value: '@infragistics/igniteui-angular-extras'
 
 steps:
   - checkout: self
+    persistCredentials: true
     clean: true
     fetchTags: true
 
@@ -78,6 +80,7 @@ steps:
   - template: templates/cd-template.yml
     parameters:
       customCommand: run generate-live-editing
+      gitHubToken: $(GITHUB_TOKEN)
       workingDir: $(Build.SourcesDirectory)
       submoduleDir: angular-demos
       baseHref: \/angular-demos\/
@@ -85,3 +88,4 @@ steps:
       findRegex: angular-demos
       npmBuildCommand: 'run build-ci'
       repositoryfy: true
+      repositoryfyCommand: 'repositoryfyAngularDemos'

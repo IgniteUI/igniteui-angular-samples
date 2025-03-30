@@ -1,16 +1,19 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { OnInit, Directive, EventEmitter, HostListener, Output} from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { OnInit, Directive, EventEmitter, HostListener, Output, Inject} from '@angular/core';
 
 // eslint-disable-next-line @angular-eslint/directive-selector
 @Directive({
     selector: '[paste-handler]'
 })
 // eslint-disable-next-line @angular-eslint/directive-class-suffix
-export class PasteHandler implements OnInit{
+export class PasteHandler implements OnInit {
     @Output()
     public dataProcessed = new EventEmitter<any>();
 
     public textArea;
+
+    constructor(@Inject(DOCUMENT) private document: Document) { }
 
     @HostListener('focusin', ['$event'])
     public focusIn(eventArgs) {
@@ -27,11 +30,11 @@ export class PasteHandler implements OnInit{
     }
 
     public ngOnInit(): void {
-        const div = document.createElement('div');
+        const div = this.document.createElement('div');
         const divStyle = div.style;
         divStyle.position = 'fixed';
-        document.body.appendChild(div);
-        this.textArea = document.createElement('textarea');
+        this.document.body.appendChild(div);
+        this.textArea = this.document.createElement('textarea');
         const style = this.textArea.style;
         style.opacity = '0';
         style.height = '0px';
@@ -43,21 +46,21 @@ export class PasteHandler implements OnInit{
     }
 
     public onPaste(eventArgs) {
-    let data;
-    const clData = 'clipboardData';
+        let data;
+        const clData = 'clipboardData';
 
-    // get clipboard data - from window.cliboardData for IE or from the original event's arguments.
-    if (window[clData]) {
-        window.event.returnValue = false;
-        data = window[clData].getData('text');
-    } else {
-        data = eventArgs[clData].getData('text/plain');
-    }
+        // get clipboard data - from window.cliboardData for IE or from the original event's arguments.
+        if (window[clData]) {
+            window.event.returnValue = false;
+            data = window[clData].getData('text');
+        } else {
+            data = eventArgs[clData].getData('text/plain');
+        }
 
-    // process the clipboard data
-    const processedData = this.processData(data);
+        // process the clipboard data
+        const processedData = this.processData(data);
 
-    this.dataProcessed.emit(processedData);
+        this.dataProcessed.emit(processedData);
     }
 
     public processData(data) {
