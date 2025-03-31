@@ -187,6 +187,7 @@ export class QueryBuilderSqlSampleComponent implements OnInit, AfterViewInit {
     public onChange() {
         const sqlQuery = this.transformExpressionTreeToSqlQuery(this.expressionTree);
         this.sqlQuery = format(sqlQuery);
+        this.cdr.detectChanges();
 
         this.grid.isLoading = true;
         this.http.post(`${API_ENDPOINT}/QueryBuilder/ExecuteQuery`, this.expressionTree).subscribe(data =>{
