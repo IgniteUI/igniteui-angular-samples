@@ -23,11 +23,12 @@ export class QueryBuilderConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/interactions/query-builder/"
         }));
 
-        configs.push(new Config({
-            component: 'QueryBuilderSqlSampleComponent',
-            appConfig: BaseAppConfig,
-            shortenComponentPathBy: "/interactions/query-builder/"
-        }));
+        // configs.push(new Config({
+        //     component: 'QueryBuilderSqlSampleComponent',
+        //     additionalDependencies: ["sql-formatter"],
+        //     appConfig: BaseAppConfig,
+        //     shortenComponentPathBy: "/interactions/query-builder/"
+        // })); // sql-formatter is not available in the live editing environment and cannot be enabled per config atm
 
         return configs;
     }
