@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxColumnComponent, IgxGridComponent, IgxQueryBuilderComponent } from 'igniteui-angular';
 
 const API_ENDPOINT = 'https://data-northwind.indigo.design';
@@ -10,7 +10,7 @@ const API_ENDPOINT = 'https://data-northwind.indigo.design';
     templateUrl: 'query-builder-request-sample.component.html',
     imports: [IgxQueryBuilderComponent, IgxGridComponent, IgxColumnComponent]
 })
-export class QueryBuilderRequestSampleComponent implements OnInit {
+export class QueryBuilderRequestSampleComponent implements OnInit, AfterViewInit {
     @ViewChild('grid', { static: true })
     public grid: IgxGridComponent;
 
@@ -56,18 +56,21 @@ export class QueryBuilderRequestSampleComponent implements OnInit {
         
         const tree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Orders', ['orderId', 'customerId', 'employeeId', 'shipperId', 'orderDate', 'requiredDate', 'shipVia', 'freight', 'shipName', 'completed']);
         this.expressionTree = tree;
-
+    }
+    
+    public ngAfterViewInit(): void {
         this.onChange();
     }
+
 
     public onChange() {
         this.grid.isLoading = true;
         this.http.post(`${API_ENDPOINT}/QueryBuilder/ExecuteQuery`, this.expressionTree).subscribe(data =>{
             this.data = Object.values(data)[0];
             this.grid.isLoading = false;
+            this.cdr.detectChanges();
+            this.calculateColsInView();
         });
-        this.cdr.detectChanges();
-        this.calculateColsInView();
     }
 
     private calculateColsInView() {
