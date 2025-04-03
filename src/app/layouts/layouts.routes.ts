@@ -76,6 +76,7 @@ import { StepperStepTypesSampleComponent } from './stepper/stepper-steptypes-sam
 import { StepperStylingSampleComponent } from './stepper/stepper-styling-sample/stepper-styling-sample.component';
 import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sample/stepper-overview-sample.component';
 import { StepperSampleReactiveFormsComponent } from './stepper/stepper-sample-reactive-forms/stepper-sample-reactive-forms.component';
+import { TileManagerComponent } from './tile-manager/tile-manager-sample/tile-manager.component';
 
 export const LayoutsRoutes: Routes = [
     {
@@ -383,5 +384,10 @@ export const LayoutsRoutes: Routes = [
         component: CardStylingSampleComponent,
         data: layoutsRoutesData['card-styling-sample'],
         path: 'card-styling-sample'
+    },
+    {
+        component: TileManagerComponent,
+        data: layoutsRoutesData['tile-manager-sample'],
+        path: 'tile-manager-sample'
     }
 ];
