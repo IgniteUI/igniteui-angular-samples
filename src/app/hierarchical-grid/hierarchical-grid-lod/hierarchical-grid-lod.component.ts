@@ -1,66 +1,115 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent, IgxColumnComponent } from 'igniteui-angular';
-import { IDataState, RemoteLoDService } from '../../services/remote-lod.service';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent, IgxColumnComponent, FilteringExpressionsTree, IgxNumberFilteringOperand, IgxStringFilteringOperand, EntityType, IGX_HIERARCHICAL_GRID_DIRECTIVES, FilteringLogic } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { HttpClient } from '@angular/common/http';
+
+const API_ENDPOINT = 'https://data-northwind.indigo.design';
 
 @Component({
-    providers: [RemoteLoDService],
     selector: 'app-hierarchical-grid-lod',
     styleUrls: ['./hierarchical-grid-lod.component.scss'],
     templateUrl: './hierarchical-grid-lod.component.html',
-    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent]
+    imports: [IGX_HIERARCHICAL_GRID_DIRECTIVES, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent]
 })
-export class HierarchicalGridLoDSampleComponent implements AfterViewInit {
+export class HierarchicalGridLoDSampleComponent implements OnInit, AfterViewInit {
     @ViewChild('hGrid', { static: true })
     public hGrid: IgxHierarchicalGridComponent;
 
-    constructor(private remoteService: RemoteLoDService) { }
+    public remoteData = [];
+    public schema: EntityType[] = [
+        {
+            name: 'Customers',
+            fields: [
+                { field: 'customerId', dataType: 'string' },
+                { field: 'companyName', dataType: 'string' },
+                { field: 'contactName', dataType: 'string' },
+                { field: 'contactTitle', dataType: 'string' }
+            ],
+            childEntities: [
+                {
+                    name: 'Orders',
+                    fields: [
+                        { field: 'customerId', dataType: 'string' }, // first field will be treated as foreign key
+                        { field: 'orderId', dataType: 'number' },
+                        { field: 'employeeId', dataType: 'number' },
+                        { field: 'shipVia', dataType: 'string' },
+                        { field: 'freight', dataType: 'number' }
+                    ],
+                    childEntities: [
+                        {
+                            name: 'Details',
+                            fields: [
+                                { field: 'orderId', dataType: 'number' }, // first field will be treated as foreign key
+                                { field: 'productId', dataType: 'number' },
+                                { field: 'unitPrice', dataType: 'number' },
+                                { field: 'quantity', dataType: 'number' },
+                                { field: 'discount', dataType: 'number' }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ];
+
+    constructor(private http: HttpClient) {}
+
+    public ngOnInit() {
+        const ordersTree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Orders', ['customerId']);
+        ordersTree.filteringOperands.push({
+            fieldName: 'freight',
+            ignoreCase: false,
+            condition: IgxNumberFilteringOperand.instance().condition('greaterThanOrEqualTo'),
+            conditionName: IgxNumberFilteringOperand.instance().condition('greaterThanOrEqualTo').name,
+            searchVal: '500'
+        });
+
+        const customersTree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Customers', ['customerId', 'companyName', 'contactName', 'contactTitle']);
+        customersTree.filteringOperands.push({
+            fieldName: 'customerId',
+            condition: IgxStringFilteringOperand.instance().condition('inQuery'),
+            conditionName: IgxStringFilteringOperand.instance().condition('inQuery').name,
+            ignoreCase: false,
+            searchTree: ordersTree
+        });
+        this.hGrid.advancedFilteringExpressionsTree = customersTree;
+    }
 
     public ngAfterViewInit() {
-        const dataState: IDataState = {
-            key: 'Customers',
-            parentID: '',
-            parentKey: '',
-            rootLevel: true
-        };
+        this.refreshRootGridData();
+    }
+
+    public refreshRootGridData() {
+        const tree = this.hGrid.advancedFilteringExpressionsTree;
         this.hGrid.isLoading = true;
-        this.remoteService.getData(dataState).subscribe(
-            (data) => {
-                this.hGrid.isLoading = false;
-                this.hGrid.data = data;
-                this.hGrid.cdr.detectChanges();
-            },
-            (error) => {
-                this.hGrid.emptyGridMessage = error.message;
+        if (tree) {
+            this.http.post(`${API_ENDPOINT}/QueryBuilder/ExecuteQuery`, tree).subscribe(data =>{
+                this.remoteData = Object.values(data)[0];
                 this.hGrid.isLoading = false;
                 this.hGrid.cdr.detectChanges();
-            }
-        );
+            });
+        } else {
+            this.http.get(`${API_ENDPOINT}/Customers`).subscribe(data => {
+                this.remoteData = Object.values(data);
+                this.hGrid.isLoading = false;
+                this.hGrid.cdr.detectChanges();
+            });
+        }
     }
 
-    public dateFormatter(val: string) {
-        return new Intl.DateTimeFormat('en-US').format(new Date(val));
-    }
-
-    public gridCreated(event: IGridCreatedEventArgs, _parentKey: string) {
-        const dataState: IDataState = {
-            key: event.owner.key,
-            parentID: event.parentID,
-            parentKey: _parentKey,
-            rootLevel: false
-        };
+    public gridCreated(event: IGridCreatedEventArgs) {
         event.grid.isLoading = true;
-        this.remoteService.getData(dataState).subscribe(
-            (data) => {
-                event.grid.isLoading = false;
-                event.grid.data = data;
-                event.grid.cdr.detectChanges();
-            },
-            (error) => {
-                event.grid.emptyGridMessage = error.message;
-                event.grid.isLoading = false;
-                event.grid.cdr.detectChanges();
-            }
-        );
+        const url = this.buildUrl(event);
+        this.http.get(url).subscribe(data => {
+            event.grid.data = Object.values(data);
+            event.grid.isLoading = false;
+            this.hGrid.cdr.detectChanges();
+        });
+    }
+
+    private buildUrl(event: IGridCreatedEventArgs) {
+        const parentKey = (event.grid.parent as any).key ?? this.schema[0].name;
+        const url = `${API_ENDPOINT}/${parentKey}/${event.parentID}/${event.owner.key}`;
+        return url;
     }
 }
