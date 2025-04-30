@@ -2,27 +2,15 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-contained-theme: contained-button-theme(
-  $background: #348ae0,
-  $hover-background: #2e7bc8,
-  $focus-visible-background: #2e7bc8
+  $background: #348ae0
 );
 
 $custom-flat-theme: flat-button-theme(
-  $foreground: var(--ig-error-500-contrast),
-  $hover-foreground: var(--ig-error-800-contrast),
-  $focus-visible-foreground: var(--ig-error-800-contrast),
-  $background: var(--ig-error-500),
-  $hover-background: var(--ig-error-800),
-  $focus-visible-background: var(--ig-error-800)
+  $foreground: var(--ig-error-800)
 );
 
 $custom-outlined-theme: outlined-button-theme(
-  $foreground: var(--ig-success-500),
-  $hover-foreground: var(--ig-success-700),
-  $focus-foreground: var(--ig-success-700),
-  $border-color: var(--ig-success-500),
-  $hover-border-color: var(--ig-success-700),
-  $focus-border-color: var(--ig-success-700)
+  $foreground: var(--ig-success-500)
 );
 
 $custom-fab-theme: fab-button-theme(
