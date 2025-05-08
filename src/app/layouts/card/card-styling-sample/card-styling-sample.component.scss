@@ -3,10 +3,7 @@
 
 $colorful-card: card-theme(
   $background: #011627,
-  $header-text-color: #fefefe,
   $subtitle-text-color: #ecaa53,
-  $content-text-color: #fefefe
 );
 
 @include css-vars($colorful-card);
- 

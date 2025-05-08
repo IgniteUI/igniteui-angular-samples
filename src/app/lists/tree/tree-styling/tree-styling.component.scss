@@ -2,10 +2,7 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-tree-theme: tree-theme(
-  $background-selected: #ffe6cc,
-  $background-active: #ecaa53,
-  $background-active-selected: #ff8c1a
+  $background: #ecaa53,
 );
 
 @include css-vars($custom-tree-theme);
- 
