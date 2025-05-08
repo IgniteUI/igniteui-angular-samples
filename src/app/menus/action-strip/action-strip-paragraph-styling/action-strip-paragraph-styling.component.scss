@@ -2,12 +2,15 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-strip: action-strip-theme(
-  $background: rgba(150, 133, 143, 0.7),
-  $actions-background: rgba(109, 121, 147, 0.9),
-  $icon-color:  null,
-  $delete-action: null,
+  $background: rgba(109, 121, 147, 0.2),
+  $actions-background: rgba(#011627, 0.9),
   $actions-border-radius: 0
 );
 
+
+$custom-btn: flat-button-theme(
+    $foreground: #ecaa53
+);
+
 @include css-vars($custom-strip);
- 
+@include css-vars($custom-btn);

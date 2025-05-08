@@ -1,9 +1,7 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-theme: progress-circular-theme(
-  $base-circle-color: lightgray,
   $fill-color-default: rgb(32, 192, 17),
 );
 
 @include css-vars($custom-theme);
- 

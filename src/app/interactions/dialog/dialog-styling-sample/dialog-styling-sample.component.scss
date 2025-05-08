@@ -4,11 +4,10 @@
 $my-dialog-theme: dialog-theme(
   $background: #011627,
   $title-color: #ecaa53,
-  $message-color: #fefefe,
   $border-radius: .3,
 );
 
-$dark-button: button-theme(
+$dark-button: contained-button-theme(
   $background: #ecaa53,
   $foreground: #011627,
 );
@@ -19,7 +18,6 @@ $dark-button: button-theme(
 
 :host {
   ::ng-deep {
-    @include css-vars($my-dialog-theme); 
+    @include css-vars($my-dialog-theme);
   }
 }
- 

@@ -2,12 +2,9 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-checkbox-theme: checkbox-theme(
-  $border-radius: 10px,
-  $label-color: #011627,
   $empty-color: #ecaa53,
   $fill-color: #ecaa53,
-  $tick-color: #011627,
+  $border-radius: 5px
 );
 
 @include css-vars($custom-checkbox-theme);
- 
