@@ -3,17 +3,8 @@
 
 $custom-slider-theme: slider-theme(
   $track-color: #ff7400,
-  $track-hover-color: #ff7400,
-
-  $thumb-color: #ff7400,
-
-  $base-track-color: #ddd,
-  $base-track-hover-color: #ccc,
-
   $tick-label-color: #b246c2,
-
   $tick-color: #b246c2
 );
 
 @include css-vars($custom-slider-theme);
- 

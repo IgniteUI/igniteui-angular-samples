@@ -11,7 +11,6 @@ $stepper-theme: stepper-theme(
   $current-subtitle-color: #5f4691,
 
   $complete-indicator-background: #351e65,
-  $complete-indicator-outline: #351e65,
 
   $complete-title-color: red,
   $complete-subtitle-color: #5f4691,
@@ -24,4 +23,3 @@ $stepper-theme: stepper-theme(
 );
 
 @include css-vars($stepper-theme);
- 
