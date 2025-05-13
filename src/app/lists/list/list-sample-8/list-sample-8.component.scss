@@ -2,7 +2,7 @@
 @use "igniteui-angular/theming" as *;
 
 $my-list-theme: list-theme(
-  $background: #57a5cd
+    $background: #57a5cd
 );
 
 @include css-vars($my-list-theme);

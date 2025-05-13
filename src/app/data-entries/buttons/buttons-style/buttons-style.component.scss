@@ -1,17 +1,10 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-$custom-button-theme: button-theme(
-  $foreground: #fdfdfd,
-  $hover-foreground: #fdfdfd,
-  $focus-foreground: #fdfdfd,
+$custom-button-theme: contained-button-theme(
   $background: #345779,
-  $hover-background: #2e4d6b,
-  $focus-background: #2e4d6b,
-  $disabled-foreground: #2e4d6b,
 );
 
 .button-sample {
   @include css-vars($custom-button-theme);
 }
- 

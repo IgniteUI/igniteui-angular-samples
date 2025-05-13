@@ -4,10 +4,9 @@
 // Create expansion panel theme
 $custom-panel-theme: expansion-panel-theme(
   $header-background: #353a4b,
+  $body-background: #353a4b,
   $header-title-color: #ffd351,
   $header-icon-color: #ffd351,
-  $body-background: #353a4b,
-  $border-radius: .5
 );
 
 // Apply the custom themes to the components mixins.

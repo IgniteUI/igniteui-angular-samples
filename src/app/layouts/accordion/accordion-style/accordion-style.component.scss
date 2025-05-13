@@ -3,7 +3,8 @@
 
 $custom-panel-theme: expansion-panel-theme(
   $header-background: #011627,
-  $expanded-margin: 10px,
+  $body-background: #f0ece7,
+  $expanded-margin: 10px
 );
 
 @include css-vars($custom-panel-theme);

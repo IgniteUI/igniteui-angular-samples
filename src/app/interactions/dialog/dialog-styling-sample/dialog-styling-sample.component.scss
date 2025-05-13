@@ -4,16 +4,16 @@
 $my-dialog-theme: dialog-theme(
   $background: #011627,
   $title-color: #ecaa53,
-  $border-radius: .3,
+  $border-radius: 5px,
 );
 
-$dark-button: contained-button-theme(
+$custom-button: contained-button-theme(
   $background: #ecaa53,
   $foreground: #011627,
 );
 
 .dialog-container {
-  @include css-vars($dark-button);
+  @include css-vars($custom-button);
 }
 
 :host {
