@@ -2,10 +2,9 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-toast-theme: toast-theme(
-  $background: #dedede,
-  $text-color: #151515,
+  $text-color: #ffcd0f,
+  $background: #292826,
   $border-radius: 12px
 );
 
 @include css-vars($custom-toast-theme);
- 

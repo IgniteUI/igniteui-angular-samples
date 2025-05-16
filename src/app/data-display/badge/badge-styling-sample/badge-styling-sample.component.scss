@@ -2,9 +2,8 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-badge-theme: badge-theme(
-  $border-radius: 15px,
-  $icon-color: white,
-  $text-color: black
+  $background-color: #57a5cd,
+  $border-radius: 4px
 );
 
 @include css-vars($custom-badge-theme);
