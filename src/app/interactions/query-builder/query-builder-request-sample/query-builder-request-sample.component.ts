@@ -37,7 +37,7 @@ export class QueryBuilderRequestSampleComponent implements OnInit, AfterViewInit
             { field: "shipperId", dataType: "number" },
             { field: "orderDate", dataType: "date" },
             { field: "requiredDate", dataType: "date" },
-            { field: "shipVia", dataType: "number" },
+            { field: "shipVia", dataType: "string" },
             { field: "freight", dataType: "number" },
             { field: "shipName", dataType: "string" },
             { field: "completed", dataType: "boolean" }
