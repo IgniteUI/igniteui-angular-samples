@@ -2,20 +2,12 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-drop-down-theme: drop-down-theme(
-  $background-color: #fdfdfd,
   $header-text-color: #345779,
   $item-text-color: #2dabe8,
-  $selected-item-background: #345779,
-  $selected-item-text-color: #fdfdfd,
-  $selected-hover-item-background: #345779,
-  $selected-hover-item-text-color: #fdfdfd,
-  $selected-focus-item-background: #345779,
-  $selected-focus-item-text-color: #fdfdfd,
-  $hover-item-background: rgba(0, 0, 0, 0.12),
   $hover-item-text-color: #345779,
+  $selected-item-background: #345779,
 );
 
 .drop-down__scroll-container {
   @include css-vars($custom-drop-down-theme);
 }
- 

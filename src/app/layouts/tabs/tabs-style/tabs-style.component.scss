@@ -1,26 +1,9 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-$black-color: #292826;
-$yellow-color: #F4D45C;
-$light-color: #efefef;
-
-$dark-palette: palette(
-  $primary: $black-color,
-  $secondary: $yellow-color,
-  $surface: $light-color,
-  $gray: #fff
-);
-
 $dark-tabs: tabs-theme(
-  $item-text-color: color($dark-palette, "secondary", 400),
-  $item-background: color($dark-palette, "primary", 400),
-  $item-hover-background: color($dark-palette, "secondary", 400),
-  $item-hover-color: color($dark-palette, "primary", 400),
-  $item-active-color: color($dark-palette, "secondary", 400),
-  $item-active-icon-color: color($dark-palette, "secondary", 400),
-  $indicator-color: color($dark-palette, "secondary", 400),
-  $tab-ripple-color: color($dark-palette, "secondary", 400)
+  $item-background: #292826,
+  $item-active-color: #F4D45C,
 );
 
 @include css-vars($dark-tabs);

@@ -2,10 +2,8 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-theme: progress-linear-theme(
-  $track-color: #d3d3d3,
   $fill-color-default: #ecaa53,
   $text-color: #ecaa53,
 );
 
 @include css-vars($custom-theme);
- 
