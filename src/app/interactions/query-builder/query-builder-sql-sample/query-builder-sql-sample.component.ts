@@ -199,6 +199,12 @@ export class QueryBuilderSqlSampleComponent implements OnInit, AfterViewInit {
     }
 
     private calculateColsInView() {
-        this.grid.columns.forEach(column => column.hidden = !this.expressionTree.returnFields.includes(column.field));
+        if (this.expressionTree.returnFields.length === 0 || this.expressionTree.returnFields[0] === '*') {
+            const selectedEntity = this.entities.find(entity => entity.name === this.expressionTree.entity);
+            const selectedEntityFields = selectedEntity.fields.map(field => field.field);
+            this.grid.columns.forEach(column => column.hidden = !selectedEntityFields.includes(column.field));
+        } else {
+            this.grid.columns.forEach(column => column.hidden = !this.expressionTree.returnFields.includes(column.field));
+        }
     }
 }
