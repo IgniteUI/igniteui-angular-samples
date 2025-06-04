@@ -1,18 +1,19 @@
 import {
-    Component,
-    HostListener,
-    OnDestroy,
-    OnInit,
-    ViewChild,
-    Inject,
-    ElementRef,
-    AfterViewInit
+  Component,
+  HostListener,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+  Inject,
+  ElementRef,
+  AfterViewInit,
+  DOCUMENT
 } from '@angular/core';
 import { IgxGridComponent, IgxNumberSummaryOperand, IgxStringFilteringOperand, IgxSummaryResult, CellType, OverlaySettings, IgxOverlayService, AbsolutePosition, OverlayClosingEventArgs, IgxSwitchComponent, IgxInputGroupComponent, IgxInputDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxBadgeComponent, IgxCircularProgressBarComponent } from 'igniteui-angular';
 import { Athlete, АthletesData, SpeedDescriptor } from '../../data/athletesData';
 import { FormsModule } from '@angular/forms';
 import { IgxPreventDocumentScrollDirective } from '../../../../../../src/app/directives/prevent-scroll.directive';
-import { NgClass, DecimalPipe, DOCUMENT } from '@angular/common';
+import { NgClass, DecimalPipe } from '@angular/common';
 import { IgxSparklineCoreModule } from 'igniteui-angular-charts';
 
 @Component({

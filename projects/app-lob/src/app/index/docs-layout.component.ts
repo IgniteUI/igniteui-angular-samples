@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, HostListener, Inject, OnInit } from '@angular/core';
+
+import { Component, HostListener, Inject, OnInit, DOCUMENT } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({

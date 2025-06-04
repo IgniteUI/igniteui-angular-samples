@@ -1,7 +1,7 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, DOCUMENT } from '@angular/core';
 import { SEOService } from '../../../app-lob/src/app/seo.service';
 import { RouterOutlet } from '@angular/router';
-import { DOCUMENT } from '@angular/common';
+
 
 @Component({
     selector: 'app-root',

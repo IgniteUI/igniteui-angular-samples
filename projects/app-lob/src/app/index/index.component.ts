@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit, ViewChild, DOCUMENT } from '@angular/core';
 import { NavigationStart, Route, Router, RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
 import { IgxNavigationDrawerComponent, IgxLayoutDirective, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, IgxIconButtonDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxInputDirective, IgxSuffixDirective, IgxFlexDirective, IgxNavbarComponent } from 'igniteui-angular';
 import { filter } from 'rxjs/operators';
@@ -11,7 +11,7 @@ import { hierarchicalGridRoutesData } from '../hierarchical-grid/hierarchical-gr
 import { treeGridRoutesData } from '../tree-grid/tree-grid-routes-data';
 import { treegridfinjsRoutesData } from '../treegrid-finjs/treegrid-finjs-routes-data';
 import { FormsModule } from '@angular/forms';
-import { DOCUMENT } from '@angular/common';
+
 
 
 @Component({

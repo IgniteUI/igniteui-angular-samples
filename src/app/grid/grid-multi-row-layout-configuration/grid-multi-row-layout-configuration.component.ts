@@ -1,16 +1,18 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/quotes */
 import {
-    ChangeDetectorRef,
-    Component,
-    ElementRef,
-    Inject,
-    QueryList,
-    ViewChild,
-    ViewChildren,
-    ViewEncapsulation } from "@angular/core";
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  Inject,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+  ViewEncapsulation,
+  DOCUMENT
+} from "@angular/core";
 import { IDropBaseEventArgs, IDropDroppedEventArgs, IgxDialogComponent, IgxGridComponent, IgxChipsAreaComponent, IgxChipComponent, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent, IgxPrefixDirective, IgxInputGroupComponent, IgxInputDirective, IgxDropDirective, IgxButtonDirective } from "igniteui-angular";
-import { NgStyle, NgClass, DOCUMENT } from "@angular/common";
+import { NgStyle, NgClass } from "@angular/common";
 
 interface IColumnConfig {
     key: string;

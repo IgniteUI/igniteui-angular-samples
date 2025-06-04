@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { DOCUMENT } from '@angular/common';
-import { OnInit, Directive, EventEmitter, HostListener, Output, Inject} from '@angular/core';
+
+import { OnInit, Directive, EventEmitter, HostListener, Output, Inject, DOCUMENT } from '@angular/core';
 
 // eslint-disable-next-line @angular-eslint/directive-selector
 @Directive({

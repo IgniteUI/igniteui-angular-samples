@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Inject, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Inject, Input, Output, DOCUMENT } from '@angular/core';
 import { IgxIconComponent } from 'igniteui-angular';
-import { DOCUMENT, NgStyle } from '@angular/common';
+import { NgStyle } from '@angular/common';
 
 interface ICopyData {
     data: any;

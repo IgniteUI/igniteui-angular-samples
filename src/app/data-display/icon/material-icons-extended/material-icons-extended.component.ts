@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/member-ordering */
-import { Component, Inject, OnInit, Pipe, PipeTransform, Renderer2, forwardRef } from '@angular/core';
+import { Component, Inject, OnInit, Pipe, PipeTransform, Renderer2, forwardRef, DOCUMENT } from '@angular/core';
 import * as fileSaver from 'file-saver';
-import { DOCUMENT } from '@angular/common';
+
 import { IgxIconService, ISelectionEventArgs, IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxInputGroupComponent, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, IgxSuffixDirective, IgxButtonDirective } from 'igniteui-angular';
 
 import {

@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit, ViewChild, DOCUMENT } from '@angular/core';
 import { NavigationStart, Route, Router, RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
 import { IgxNavigationDrawerComponent, IgxTreeComponent, IgxLayoutDirective, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxInputDirective, IgxSuffixDirective, IgxTreeNodeComponent, IgxTreeNodeLinkDirective, IgxFlexDirective, IgxNavbarComponent } from 'igniteui-angular';
 import { fromEvent, Subscription } from 'rxjs';
@@ -19,7 +19,7 @@ import { servicesRoutesData } from '../services/services-routes-data';
 import { themingRoutesData } from '../theming/theming-routes-data';
 import { treeGridRoutesData } from '../tree-grid/tree-grid-routes-data';
 import { FormsModule } from '@angular/forms';
-import { DOCUMENT } from '@angular/common';
+
 
 
 @Component({
