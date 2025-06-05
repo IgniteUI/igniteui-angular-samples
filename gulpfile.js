@@ -7,7 +7,7 @@ const fsExtra = require("fs-extra");
 require('ts-node').register({
     transpileOnly: true,
     compilerOptions: {
-        module: "commonjs",
+        module: "ES2022",
         allowJs: true
     }
 });
