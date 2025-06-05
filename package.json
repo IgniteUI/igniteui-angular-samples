@@ -86,6 +86,15 @@
     "zone.js": "~0.15.0"
   },
   "overrides": {
+    "@infragistics/igniteui-angular-extras": {
+      "igniteui-angular": "20.0.0-rc.0",
+      "@infragistics/igniteui-angular": "20.0.0-rc.0",
+      "igniteui-angular-charts": "^19.0.0",
+      "igniteui-angular-core": "^19.0.0",
+      "@angular/core": "^20.0.0",
+      "@angular/common": "^20.0.0",
+      "@angular/animations": "^20.0.0"
+    },
     "igniteui-angular-extras": {
       "igniteui-angular": "20.0.0-rc.0",
       "@infragistics/igniteui-angular": "20.0.0-rc.0",
