@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild, inject } from '@angular/core';
 import { SINGERS } from '../../data/singersData';
 import { IgxSwitchComponent, IgxHierarchicalGridComponent, IgxColumnComponent, IgxRowIslandComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -10,6 +10,8 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [IgxSwitchComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent, IgxButtonDirective, IgxIconComponent]
 })
 export class HGridEditingLifecycleComponent {
+    private renderer = inject(Renderer2);
+
     @ViewChild('logger')
     public logger: ElementRef;
     public $rowEditEnter = false;
@@ -20,7 +22,7 @@ export class HGridEditingLifecycleComponent {
 
 
 
-    public constructor(private renderer: Renderer2) {
+    public constructor() {
         this.data = SINGERS;
     }
 

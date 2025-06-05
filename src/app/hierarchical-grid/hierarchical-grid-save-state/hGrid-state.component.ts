@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit, inject } from '@angular/core';
 import { NavigationStart, Router, RouterLink } from '@angular/router';
 import { GridFeatures, IGridState, IGridStateOptions, IgxGridStateDirective, IgxHierarchicalGridComponent, IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent, IgxButtonDirective, IgxIconComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
 import { take } from 'rxjs/operators';
@@ -28,6 +28,8 @@ class MySummary {
 })
 
 export class HGridSaveStateComponent implements OnInit, AfterViewInit {
+    private router = inject(Router);
+
     @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
     @ViewChild('hierarchicalGrid', { static: true }) public hGrid: IgxHierarchicalGridComponent;
     @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
@@ -65,7 +67,7 @@ export class HGridSaveStateComponent implements OnInit, AfterViewInit {
       columnSelection: true
     };
 
-    constructor(private router: Router) {
+    constructor() {
         this.localData = SINGERS;
     }
 

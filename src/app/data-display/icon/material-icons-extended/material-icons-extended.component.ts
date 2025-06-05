@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/member-ordering */
-import { Component, Inject, OnInit, Pipe, PipeTransform, Renderer2, forwardRef, DOCUMENT } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform, Renderer2, forwardRef, DOCUMENT, inject } from '@angular/core';
 import * as fileSaver from 'file-saver';
 
 import { IgxIconService, ISelectionEventArgs, IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxInputGroupComponent, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, IgxSuffixDirective, IgxButtonDirective } from 'igniteui-angular';
@@ -22,11 +22,10 @@ interface ICategoryOption {
     imports: [IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxInputGroupComponent, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, IgxSuffixDirective, IgxButtonDirective, forwardRef(() => CategoriesFilterPipe), forwardRef(() => FilterByName)]
 })
 export class MaterialIconsExtendedComponent implements OnInit {
-    constructor(
-        private iconService: IgxIconService,
-        @Inject(DOCUMENT) private document: Document,
-        private renderer: Renderer2
-    ) { }
+    private iconService = inject(IgxIconService);
+    private document = inject<Document>(DOCUMENT);
+    private renderer = inject(Renderer2);
+
 
     public categories: ICategoryOption[] = [
         {

@@ -1,5 +1,5 @@
 
-import { Component, HostListener, Inject, OnInit, DOCUMENT } from '@angular/core';
+import { Component, HostListener, OnInit, DOCUMENT, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -9,13 +9,13 @@ import { RouterOutlet } from '@angular/router';
     imports: [RouterOutlet]
 })
 export class AppComponent implements OnInit {
+    private document = inject<Document>(DOCUMENT);
+
     public title = 'Samples';
     private theme = 'default-theme';
     private styleElem: HTMLStyleElement;
     private typefacesLoaded = ['Titillium Web', 'Roboto'];
     private typefaceUrl = 'https://fonts.googleapis.com/css?family=';
-
-    constructor(@Inject(DOCUMENT) private document: Document) {}
 
     public ngOnInit() {
         this.createThemeStyle();

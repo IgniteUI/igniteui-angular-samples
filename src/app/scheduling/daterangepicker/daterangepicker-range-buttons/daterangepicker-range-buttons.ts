@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
 import { DateRange, IgxDateRangePickerComponent, OverlaySettings, IgxPickerActionsDirective, IgxButtonDirective } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
     imports: [IgxDateRangePickerComponent, FormsModule, IgxPickerActionsDirective, IgxButtonDirective]
 })
 export class DateRangePickerRangeButtonsComponent {
+    private element = inject(ElementRef);
+
     @ViewChild('rangePicker')
     public dateRangePicker: IgxDateRangePickerComponent;
 
@@ -21,8 +23,6 @@ export class DateRangePickerRangeButtonsComponent {
         outlet: this.element,
         modal: true
     };
-
-    constructor(private element: ElementRef) { }
 
     public selectDays(count: number) {
         const today: Date = new Date();

@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit, inject } from '@angular/core';
 import { NavigationStart, Router, RouterLink } from '@angular/router';
 import { FilteringExpressionsTree, FilteringLogic, GridFeatures, IGridState, IGridStateOptions, IgxGridComponent, IgxGridStateDirective, IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent, IgxButtonDirective, IgxIconComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent } from 'igniteui-angular';
 import { take } from 'rxjs/operators';
@@ -29,6 +29,8 @@ class MySummary {
 })
 
 export class GridSaveStateComponent implements OnInit, AfterViewInit {
+    private router = inject(Router);
+
     @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
     @ViewChild(IgxGridComponent, { static: true }) public grid: IgxGridComponent;
     @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
@@ -78,8 +80,6 @@ export class GridSaveStateComponent implements OnInit, AfterViewInit {
       { field: 'IsActive', header: 'Is Active', width: '140px', dataType: 'boolean', groupable: true, sortable: true, filterable: true }
       // tslint:enable:max-line-length
     ];
-
-    constructor(private router: Router) {}
 
     public ngOnInit() {
       this.localData = employeesData;

@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit, ViewChild, DOCUMENT } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, DOCUMENT, inject } from '@angular/core';
 import { NavigationStart, Route, Router, RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
 import { IgxNavigationDrawerComponent, IgxTreeComponent, IgxLayoutDirective, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxInputDirective, IgxSuffixDirective, IgxTreeNodeComponent, IgxTreeNodeLinkDirective, IgxFlexDirective, IgxNavbarComponent } from 'igniteui-angular';
 import { fromEvent, Subscription } from 'rxjs';
@@ -29,6 +29,10 @@ import { FormsModule } from '@angular/forms';
     imports: [IgxLayoutDirective, IgxNavigationDrawerComponent, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, RouterLinkActive, RouterLink, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxTreeComponent, IgxTreeNodeComponent, IgxTreeNodeLinkDirective, IgxFlexDirective, IgxNavbarComponent, RouterOutlet]
 })
 export class IndexComponent implements OnInit, AfterViewInit {
+    private router = inject(Router);
+    private cdr = inject(ChangeDetectorRef);
+    private document = inject<Document>(DOCUMENT);
+
 
     @ViewChild('navdrawer', { read: IgxNavigationDrawerComponent, static: true })
     public navdrawer: IgxNavigationDrawerComponent;
@@ -123,7 +127,9 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
     private searchSub: Subscription;
 
-    constructor(private router: Router, private cdr: ChangeDetectorRef, @Inject(DOCUMENT) private document: Document) {
+    constructor() {
+        const router = this.router;
+
         this.appRoutes = this.getAllSampleRoutes('/samples',
             router.config.filter((c) => c.path === 'samples')[0].children, this.modulesRoutes);
     }

@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ViewChild, inject } from '@angular/core';
 import { IgxPaginatorComponent, IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardHeaderSubtitleDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
 import { DATA } from '../../data/product';
 import { CurrencyPipe } from '@angular/common';
@@ -10,11 +10,11 @@ import { CurrencyPipe } from '@angular/common';
     imports: [IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardHeaderSubtitleDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxIconButtonDirective, IgxIconComponent, IgxPaginatorComponent, CurrencyPipe]
 })
 export class PaginationSampleComponent implements AfterViewInit {
+    cdr = inject(ChangeDetectorRef);
+
     @ViewChild('paginator', { static: true }) public paginator!: IgxPaginatorComponent;
     public productData = DATA;
     public itemsPerPage = [3, 4, 5];
-
-    constructor(public cdr: ChangeDetectorRef) { }
 
     public ngAfterViewInit() {
         this.cdr.detectChanges();

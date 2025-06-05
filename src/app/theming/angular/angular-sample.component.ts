@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
+import { Component, HostBinding, OnInit, ViewChild, inject } from '@angular/core';
 import { IgxDialogComponent, IgxOverlayOutletDirective, IgxButtonDirective, IgxIconComponent, IgxLayoutDirective, IgxAvatarComponent, IgxIconButtonDirective, IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardActionsComponent, IgxDialogActionsDirective, IgxSuffixDirective, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelBodyComponent, IgxDividerDirective } from 'igniteui-angular';
 import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OverlayContainer } from '@angular/cdk/overlay';
@@ -18,6 +18,9 @@ import { MatInput } from '@angular/material/input';
 })
 
 export class AngularMaterialComponent implements OnInit {
+    private _formBuilder = inject(FormBuilder);
+    private overlayContainer = inject(OverlayContainer);
+
     @ViewChild(IgxOverlayOutletDirective, { static: true })
     public outlet: IgxOverlayOutletDirective;
 
@@ -33,7 +36,7 @@ export class AngularMaterialComponent implements OnInit {
 
     private _dialogOverlaySettings2;
 
-    constructor(private _formBuilder: FormBuilder, private overlayContainer: OverlayContainer) {
+    constructor() {
         this.toggleOverlayClasses(this.themesClass);
     }
 

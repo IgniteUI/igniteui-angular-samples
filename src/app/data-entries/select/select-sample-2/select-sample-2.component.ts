@@ -1,5 +1,5 @@
 
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { IgxSelectComponent, IgxLabelDirective, IgxSelectGroupComponent, IgxSelectItemComponent, IgxIconComponent } from 'igniteui-angular';
 
 
@@ -10,6 +10,8 @@ import { IgxSelectComponent, IgxLabelDirective, IgxSelectGroupComponent, IgxSele
     imports: [IgxSelectComponent, IgxLabelDirective, IgxSelectGroupComponent, IgxSelectItemComponent, IgxIconComponent]
 })
 export class SelectSample2Component {
+    element = inject(ElementRef);
+
     @ViewChild(IgxSelectComponent, { static: true })
     public select: IgxSelectComponent;
 
@@ -36,7 +38,4 @@ export class SelectSample2Component {
             ]
         }
     ];
-
-    constructor(public element: ElementRef) {
-    }
 }

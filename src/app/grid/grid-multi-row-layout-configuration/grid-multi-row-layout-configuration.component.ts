@@ -1,16 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/quotes */
-import {
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  Inject,
-  QueryList,
-  ViewChild,
-  ViewChildren,
-  ViewEncapsulation,
-  DOCUMENT
-} from "@angular/core";
+import { ChangeDetectorRef, Component, ElementRef, QueryList, ViewChild, ViewChildren, ViewEncapsulation, DOCUMENT, inject } from "@angular/core";
 import { IDropBaseEventArgs, IDropDroppedEventArgs, IgxDialogComponent, IgxGridComponent, IgxChipsAreaComponent, IgxChipComponent, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent, IgxPrefixDirective, IgxInputGroupComponent, IgxInputDirective, IgxDropDirective, IgxButtonDirective } from "igniteui-angular";
 import { NgStyle, NgClass } from "@angular/common";
 
@@ -47,6 +37,9 @@ enum DialogType {
     imports: [IgxChipsAreaComponent, IgxChipComponent, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent, IgxPrefixDirective, IgxInputGroupComponent, IgxInputDirective, NgStyle, IgxDropDirective, NgClass, IgxButtonDirective, IgxDialogComponent]
 })
 export class GridMultiRowLayoutConfigurationComponent {
+    cdr = inject(ChangeDetectorRef);
+    private document = inject<Document>(DOCUMENT);
+
 
     @ViewChild("resultDialog", { read: IgxDialogComponent, static : true })
     public resultDialog: IgxDialogComponent;
@@ -121,10 +114,7 @@ export class GridMultiRowLayoutConfigurationComponent {
     private resizeInitialWidth = 0;
     private resizeInitialHeight = 0;
 
-    constructor(
-        public cdr: ChangeDetectorRef,
-        @Inject(DOCUMENT) private document: Document
-    ) {
+    constructor() {
         const newCollection1 = [
             [
                 { colSpan: 1, colStart: 1, hovered: false, key: "ID", rowSpan: 2, rowStart: 1, selected: false,

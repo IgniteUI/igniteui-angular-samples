@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
-import { OnInit, Directive, EventEmitter, HostListener, Output, Inject, DOCUMENT } from '@angular/core';
+import { OnInit, Directive, EventEmitter, HostListener, Output, DOCUMENT, inject } from '@angular/core';
 
 // eslint-disable-next-line @angular-eslint/directive-selector
 @Directive({
@@ -8,12 +8,12 @@ import { OnInit, Directive, EventEmitter, HostListener, Output, Inject, DOCUMENT
 })
 // eslint-disable-next-line @angular-eslint/directive-class-suffix
 export class PasteHandler implements OnInit {
+    private document = inject<Document>(DOCUMENT);
+
     @Output()
     public dataProcessed = new EventEmitter<any>();
 
     public textArea;
-
-    constructor(@Inject(DOCUMENT) private document: Document) { }
 
     @HostListener('focusin', ['$event'])
     public focusIn(eventArgs) {

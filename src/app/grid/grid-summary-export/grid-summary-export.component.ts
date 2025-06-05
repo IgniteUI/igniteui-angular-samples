@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import { ColumnType, IgxExcelExporterOptions, IgxExcelExporterService, IgxGridComponent, IgxNumberSummaryOperand, IgxSummaryResult, IgxButtonDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxIconComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -24,6 +24,8 @@ class MySummary {
     imports: [IgxButtonDirective, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxIconComponent, DatePipe]
 })
 export class GridSummaryExportComponent {
+    private excelExportService = inject(IgxExcelExporterService);
+
     @ViewChild('grid', { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
 
@@ -31,7 +33,7 @@ export class GridSummaryExportComponent {
     public data;
     public productId = 0;
 
-    constructor(private excelExportService: IgxExcelExporterService) {
+    constructor() {
         this.data = DATA;
         this.productId = DATA.length;
     }

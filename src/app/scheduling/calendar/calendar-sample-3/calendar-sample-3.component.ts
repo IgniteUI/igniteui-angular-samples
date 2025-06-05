@@ -1,5 +1,5 @@
 
-import { Component, Inject, ViewChild, DOCUMENT } from '@angular/core';
+import { Component, ViewChild, DOCUMENT, inject } from '@angular/core';
 import { IgxCalendarComponent, IgxDialogComponent, IgxCalendarView, IViewDateChangeEventArgs } from 'igniteui-angular';
 
 @Component({
@@ -9,11 +9,11 @@ import { IgxCalendarComponent, IgxDialogComponent, IgxCalendarView, IViewDateCha
     imports: [IgxCalendarComponent]
 })
 export class CalendarSample3Component {
+    private document = inject<Document>(DOCUMENT);
+
     @ViewChild('calendar', { static: true }) public calendar: IgxCalendarComponent;
     @ViewChild('alert', { static: true }) public dialog: IgxDialogComponent;
     public loggerHeader = `Interact with the calendar to see the events logged here in sequence:`;
-
-    constructor(@Inject(DOCUMENT) private document: Document) { }
 
     public onSelection(dates: Date | Date[]) {
       const logger: HTMLElement = this.document.querySelector('.logger');

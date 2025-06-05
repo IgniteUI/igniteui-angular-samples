@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild, inject } from '@angular/core';
 
 import { GridSelectionMode, IgxGridComponent, IgxSnackbarComponent, IRowSelectionEventArgs, IgxSwitchComponent, IgxButtonGroupComponent, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
@@ -18,6 +18,9 @@ import { AsyncPipe } from '@angular/common';
 })
 
 export class GridSelectionSampleComponent implements OnInit {
+    private localService = inject(FinancialDataService);
+    private renderer = inject(Renderer2);
+
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     @ViewChild('snackbarRowCount', { static: true }) public snackbarRowCount: IgxSnackbarComponent;
     @ViewChild('snackbar', { static: true }) public snackbar: IgxSnackbarComponent;
@@ -30,8 +33,7 @@ export class GridSelectionSampleComponent implements OnInit {
     public selectedRowsCount;
     public selectedRowIndex;
 
-    constructor(private localService: FinancialDataService,
-        private renderer: Renderer2) {
+    constructor() {
         this.localService.getData(500);
         this.data = this.localService.records;
         this.selectionModes = [

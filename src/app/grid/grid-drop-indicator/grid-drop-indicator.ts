@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, OnDestroy, Renderer2 } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, OnDestroy, Renderer2, inject } from '@angular/core';
 import { IDragMoveEventArgs, IDropDroppedEventArgs, IgxGridComponent, IRowDragStartEventArgs, Point, IgxDropDirective, IgxColumnComponent, IgxRowDirective } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 import { Subject, interval, Observable, Subscription } from 'rxjs';
@@ -12,6 +12,8 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [IgxGridComponent, IgxDropDirective, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
+  private renderer = inject(Renderer2);
+
   @ViewChild('grid', { read: IgxGridComponent, static: true })
   public grid: IgxGridComponent;
   public data: any[];
@@ -21,7 +23,7 @@ export class GridDropIndicatorComponent implements AfterViewInit, OnDestroy {
   private _draggedRow: any;
   private highlightedRow: HTMLElement;
 
-  constructor(private renderer: Renderer2) {
+  constructor() {
     this.data = DATA;
   }
 

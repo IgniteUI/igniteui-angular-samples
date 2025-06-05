@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, inject } from '@angular/core';
 import { IgxOverlayService, IgxComboComponent } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
     imports: [IgxComboComponent, FormsModule]
 })
 export class OverlayStylingComponent {
+    element = inject(ElementRef);
+    private overlayService = inject(IgxOverlayService);
+
     public items = [{
             name: 'Option 1',
             id: 0
@@ -29,7 +32,4 @@ export class OverlayStylingComponent {
             id: 5
         }
     ];
-
-    constructor(public element: ElementRef, private overlayService: IgxOverlayService) {
-    }
 }
