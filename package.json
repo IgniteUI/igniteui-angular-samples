@@ -62,7 +62,7 @@
     "@angular/ssr": "^20.0.0",
     "@igniteui/material-icons-extended": "^3.1.0",
     "@microsoft/signalr": "^8.0.7",
-    "@ng-bootstrap/ng-bootstrap": "^18.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^19.0.0-rc.0",
     "@popperjs/core": "2.11.8",
     "@types/file-saver": "^2.0.2",
     "@types/hammerjs": "^2.0.39",

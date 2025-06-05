@@ -52,9 +52,9 @@ export const ThemingRoutes: Routes = [
         data: themingRoutesData['angular-sample'],
         path: 'angular-sample'
     },
-    // {
-    //     component: BootstrapComponent,
-    //     data: themingRoutesData['bootstrap-sample'],
-    //     path: 'bootstrap-sample'
-    // }
+    {
+        component: BootstrapComponent,
+        data: themingRoutesData['bootstrap-sample'],
+        path: 'bootstrap-sample'
+    }
 ];
