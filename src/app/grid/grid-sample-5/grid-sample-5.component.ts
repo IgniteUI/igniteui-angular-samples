@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ViewChild, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ViewChild, OnInit, inject } from '@angular/core';
 import { IgxGridComponent, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { RemoteService } from '../../services/remote.service';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -13,6 +13,9 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
 })
 
 export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewInit, OnInit {
+    private _remoteService = inject(RemoteService);
+    cdr = inject(ChangeDetectorRef);
+
 
     @ViewChild('grid', { static: true })
     public grid: IgxGridComponent;
@@ -22,8 +25,6 @@ export class GridRemoteVirtualizationAddRowSampleComponent implements AfterViewI
     private pageSize = 10;
     private totalPageCount = 0;
     private totalItems = 0;
-
-    constructor(private _remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
 
     public ngOnInit(): void {
         this.remoteData = this._remoteService.data;

@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, HostListener, Inject, OnInit } from '@angular/core';
+
+import { Component, HostListener, OnInit, DOCUMENT, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -10,12 +10,12 @@ import { RouterOutlet } from '@angular/router';
 })
 
 export class DocsLayoutComponent implements OnInit {
+    private document = inject<Document>(DOCUMENT);
+
     private theme = 'default-theme';
     private styleElem: HTMLStyleElement;
     private typefacesLoaded = ['Titillium Web', 'Roboto'];
     private typefaceUrl = 'https://fonts.googleapis.com/css?family=';
-
-    constructor(@Inject(DOCUMENT) private document: Document) {}
 
     @HostListener('window:message', ['$event'])
     private onMessage(e: MessageEvent) {

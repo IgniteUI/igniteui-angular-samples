@@ -1,15 +1,17 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable()
 export class RemotePagingService {
+    private http = inject(HttpClient);
+
     public remoteData: BehaviorSubject<any[]>;
     public dataLenght: BehaviorSubject<number> = new BehaviorSubject(0);
     public url = 'https://www.igniteui.com/api/products';
 
-    constructor(private http: HttpClient) {
+    constructor() {
         this.remoteData = new BehaviorSubject([]);
     }
 

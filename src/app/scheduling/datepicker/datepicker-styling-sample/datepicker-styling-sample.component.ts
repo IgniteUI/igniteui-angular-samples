@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, inject } from '@angular/core';
 import { IgxOverlayService, IgxDatePickerComponent, IgxLabelDirective } from 'igniteui-angular';
 
 @Component({
@@ -7,6 +7,7 @@ import { IgxOverlayService, IgxDatePickerComponent, IgxLabelDirective } from 'ig
     templateUrl: './datepicker-styling-sample.component.html',
     imports: [IgxDatePickerComponent, IgxLabelDirective]
 })
-export class DatepickerStylingSampleComponent {
-    constructor(public element: ElementRef, private overlayService: IgxOverlayService) { }
+export class DatepickerStylingSampleComponent {    element = inject(ElementRef);
+    private overlayService = inject(IgxOverlayService);
+
  }

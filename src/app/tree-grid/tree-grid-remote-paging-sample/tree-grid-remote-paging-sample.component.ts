@@ -1,5 +1,5 @@
 import { formatNumber, AsyncPipe } from '@angular/common';
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation, inject } from '@angular/core';
 import { GridPagingMode, IgxTreeGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { RemotePagingService } from './remotePagingService';
@@ -14,6 +14,8 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, AsyncPipe]
 })
 export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewInit, OnDestroy {
+    private remoteService = inject(RemotePagingService);
+
 
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
 
@@ -27,10 +29,6 @@ export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewIni
     public mode = GridPagingMode.Remote;
     private _perPage = 10;
     private _dataLengthSubscriber;
-
-    constructor(
-        private remoteService: RemotePagingService) {
-    }
 
     public get perPage(): number {
         return this._perPage;

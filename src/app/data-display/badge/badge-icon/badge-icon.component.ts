@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { heartMonitor } from '@igniteui/material-icons-extended';
 import { IgxIconService, IgxAvatarComponent, IgxBadgeComponent } from 'igniteui-angular';
 
@@ -8,8 +8,9 @@ import { IgxIconService, IgxAvatarComponent, IgxBadgeComponent } from 'igniteui-
     templateUrl: './badge-icon.component.html',
     imports: [IgxAvatarComponent, IgxBadgeComponent]
 })
-export class BadgeIconComponent implements OnInit { 
-    constructor (protected _iconService: IgxIconService) {}
+export class BadgeIconComponent implements OnInit {
+    protected _iconService = inject(IgxIconService);
+
 
     public ngOnInit() {
         this._iconService.addSvgIconFromText(heartMonitor.name, heartMonitor.value, 'imx-icons');

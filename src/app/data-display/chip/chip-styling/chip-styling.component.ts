@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { IBaseChipEventArgs, IChipsAreaReorderEventArgs, IgxChipsAreaComponent, IgxChipComponent, IgxIconComponent, IgxPrefixDirective } from 'igniteui-angular';
 
 
@@ -10,6 +10,8 @@ import { IBaseChipEventArgs, IChipsAreaReorderEventArgs, IgxChipsAreaComponent, 
 })
 
 export class ChipStylingSampleComponent {
+    changeDetectionRef = inject(ChangeDetectorRef);
+
     public chipList = [
         {
            text: 'Country',
@@ -32,8 +34,6 @@ export class ChipStylingSampleComponent {
             icon: 'person_pin'
         }
     ];
-
-    constructor(public changeDetectionRef: ChangeDetectorRef) { }
 
 
     public chipRemoved(event: IBaseChipEventArgs) {

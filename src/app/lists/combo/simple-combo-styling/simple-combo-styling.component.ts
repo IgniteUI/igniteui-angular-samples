@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, inject } from '@angular/core';
 import { City, getCitiesByPopulation } from '../../../data/cities15000-regions-countries';
 import { IgxSimpleComboComponent } from 'igniteui-angular';
 
@@ -9,9 +9,9 @@ import { IgxSimpleComboComponent } from 'igniteui-angular';
     imports: [IgxSimpleComboComponent]
 })
 export class SimpleComboStylingComponent implements OnInit {
-    public cities: City[];
+    element = inject(ElementRef);
 
-    constructor(public element: ElementRef) { }
+    public cities: City[];
 
     ngOnInit(): void {
         this.cities = getCitiesByPopulation(10000000);

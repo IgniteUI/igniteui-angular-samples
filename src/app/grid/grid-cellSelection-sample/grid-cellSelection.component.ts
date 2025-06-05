@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild, inject } from '@angular/core';
 import { GridSelectionMode, IgxGridComponent, IgxSnackbarComponent, IgxButtonGroupComponent, IgxColumnComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -11,6 +11,8 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [IgxButtonGroupComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxButtonDirective, IgxIconComponent, IgxSnackbarComponent]
 })
 export class GridCellSelectionComponent implements OnInit {
+    private renderer = inject(Renderer2);
+
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;
     @ViewChild(IgxSnackbarComponent, { static: true }) public snackbar: IgxSnackbarComponent;
     @ViewChild('logger') public logger: ElementRef;
@@ -18,8 +20,6 @@ export class GridCellSelectionComponent implements OnInit {
     public selection = true;
     public selectionMode: GridSelectionMode = 'multiple';
     public selectionModes = [];
-
-    constructor(private renderer: Renderer2) { }
 
     public ngOnInit(): void {
         this.data = DATA;

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { GridColumnDataType, IgxExcelExporterService, IgxGridComponent, ISortingExpression, SortingDirection, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, IgxColumnComponent } from 'igniteui-angular';
 import { INVOICE_DATA } from '../data/invoiceData';
 
@@ -10,6 +10,8 @@ import { INVOICE_DATA } from '../data/invoiceData';
     imports: [IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, IgxColumnComponent]
 })
 export class ExcelExportSample1Component implements OnInit {
+  private excelExportService = inject(IgxExcelExporterService);
+
   @ViewChild('igxGrid1', { static: true }) public igxGrid1: IgxGridComponent;
 
   public data = [];
@@ -22,9 +24,6 @@ export class ExcelExportSample1Component implements OnInit {
     { dataType: GridColumnDataType.Date, field: 'OrderDate', width: '150', groupable: true },
     { dataType: GridColumnDataType.Number, field: 'Quantity', width: '150', groupable: true }
   ];
-
-  constructor(private excelExportService: IgxExcelExporterService) {
-  }
 
   public ngOnInit(): void {
     this.data = INVOICE_DATA;

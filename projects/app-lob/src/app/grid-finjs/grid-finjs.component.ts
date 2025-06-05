@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
-import { DOCUMENT, AsyncPipe, CurrencyPipe } from '@angular/common';
-import { Component, ElementRef, EventEmitter, Inject, OnInit, Output, ViewChild } from '@angular/core';
+import { AsyncPipe, CurrencyPipe } from '@angular/common';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild, DOCUMENT, inject } from '@angular/core';
 import { CellType, DefaultSortingStrategy, GridSelectionMode, IGridKeydownEventArgs, IgxGridComponent, IgxOverlayOutletDirective, IRowSelectionEventArgs, OverlaySettings, SortingDirection, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxExcelTextDirective, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxIconComponent, IgxIconButtonDirective } from 'igniteui-angular';
 import { BehaviorSubject } from 'rxjs';
 import { Contract, REGIONS, Stock } from '../data/financialData';
@@ -15,6 +15,10 @@ import { FormsModule } from '@angular/forms';
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxExcelTextDirective, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, FormsModule, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxIconComponent, IgxIconButtonDirective, IgxOverlayOutletDirective, AsyncPipe, CurrencyPipe]
 })
 export class GridFinJSComponent implements OnInit {
+    private el = inject(ElementRef);
+    private document = inject<Document>(DOCUMENT);
+    dataService = inject(SignalRService);
+
     @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;
     @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
     @Output() public selectedDataChanged = new EventEmitter<Stock[]>();
@@ -34,8 +38,6 @@ export class GridFinJSComponent implements OnInit {
     public overlaySettings: OverlaySettings = {
         modal: false
     };
-
-    constructor(private el: ElementRef, @Inject(DOCUMENT) private document: Document, public dataService: SignalRService) { }
 
     public ngOnInit(): void {
         this.dataService.getData(this.volume);

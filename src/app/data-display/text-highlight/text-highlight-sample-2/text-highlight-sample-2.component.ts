@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { Component, OnDestroy, ViewChildren } from '@angular/core';
+import { Component, OnDestroy, ViewChildren, inject } from '@angular/core';
 import { IgxTextHighlightDirective, IgxTextHighlightService, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular';
 
 import { FormsModule } from '@angular/forms';
@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
     imports: [IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective, IgxTextHighlightDirective]
 })
 export class TextHighlightSample2Component implements OnDestroy {
+    private highlightService = inject(IgxTextHighlightService);
+
     @ViewChildren(IgxTextHighlightDirective)
     public highlights;
     // tslint:disable max-line-length
@@ -34,8 +36,6 @@ export class TextHighlightSample2Component implements OnDestroy {
     public matchCount = 0;
     public caseSensitive = false;
     public index = 0;
-
-    constructor(private highlightService: IgxTextHighlightService) { }
 
     public ngOnDestroy() {
         this.highlightService.destroyGroup('group1');

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnDestroy, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, ViewChild, inject } from '@angular/core';
 import { ConnectedPositioningStrategy, IgxOverlayService, IgxButtonDirective } from 'igniteui-angular';
 import { CardSample1Component } from '../../../layouts/card/card-sample-1/card-sample-1.component';
 // tslint:disable:object-literal-sort-keys
@@ -9,6 +9,8 @@ import { CardSample1Component } from '../../../layouts/card/card-sample-1/card-s
     imports: [IgxButtonDirective, CardSample1Component]
 })
 export class OverlaySampleMain3Component implements OnDestroy {
+    private overlayService = inject<IgxOverlayService>(IgxOverlayService);
+
     @ViewChild('card', { static: true, read: ElementRef })
     private cardSample: ElementRef;
 
@@ -16,8 +18,6 @@ export class OverlaySampleMain3Component implements OnDestroy {
     private buttonElement: ElementRef;
 
     private _overlayId;
-
-    constructor(@Inject(IgxOverlayService) private overlayService: IgxOverlayService) { }
 
     public showOverlay() {
         if (!this._overlayId) {

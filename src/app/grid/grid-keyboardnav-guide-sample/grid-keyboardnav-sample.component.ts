@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-shadow */
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { IgxColumnComponent, IgxColumnGroupComponent, CellType, IgxGridComponent, IgxListComponent, SortingDirection, IActiveNodeChangeEventArgs, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridDetailTemplateDirective, IgxListItemComponent, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -167,6 +167,8 @@ const summaryCombinations: Item[] = [
     imports: [IgxGridComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridDetailTemplateDirective, IgxColumnGroupComponent, IgxColumnComponent, IgxListComponent, IgxListItemComponent, NgClass, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective]
 })
 export class GridKeyboardnavGuide implements OnInit, OnDestroy {
+    private cdr = inject(ChangeDetectorRef);
+
 
     @ViewChild(IgxGridComponent, { static: true })
     public grid: IgxGridComponent;
@@ -187,8 +189,6 @@ export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 
     private _destroyer = new Subject<void>();
     private _keyboardHandler = new KeyboardHandler([], GridSection.THEAD);
-
-    public constructor(private cdr: ChangeDetectorRef) { }
 
 
     public onActiveNodeChange(evt: IActiveNodeChangeEventArgs) {

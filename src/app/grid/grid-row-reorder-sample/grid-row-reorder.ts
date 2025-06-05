@@ -1,6 +1,5 @@
 import { Component, QueryList, ViewChild } from '@angular/core';
-import { IgxGridComponent, RowType, IgxDropDirective, IgxColumnComponent } from 'igniteui-angular';
-import { IgxRowDirective } from 'igniteui-angular/lib/grids/row.directive';
+import { IgxGridComponent, RowType, IgxDropDirective, IgxColumnComponent, IgxRowDirective } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

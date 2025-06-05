@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, Directive, Input, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { IgxTreeGridComponent, IgxColumnComponent, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective, IgxColumnMaxValidatorDirective, IgxCellValidationErrorDirective, IgxButtonDirective } from 'igniteui-angular';
-import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
+import { IgxTreeGridComponent, IgxColumnComponent, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective, IgxColumnMaxValidatorDirective, IgxCellValidationErrorDirective, IgxButtonDirective, IGridFormGroupCreatedEventArgs } from 'igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { NgTemplateOutlet } from '@angular/common';

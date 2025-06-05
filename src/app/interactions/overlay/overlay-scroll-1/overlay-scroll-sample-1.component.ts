@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnDestroy, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, ViewChild, inject } from '@angular/core';
 import { AbsoluteScrollStrategy, AutoPositionStrategy, ConnectedPositioningStrategy, ElasticPositionStrategy, GlobalPositionStrategy, HorizontalAlignment, IgxOverlayService, OverlaySettings, PositionSettings, VerticalAlignment, IgxSwitchComponent, IgxIconComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardContentDirective } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 // tslint:disable:object-literal-sort-keys
@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
     imports: [IgxSwitchComponent, FormsModule, IgxIconComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardContentDirective]
 })
 export class OverlayScrollSample1Component implements OnDestroy {
+    private overlay = inject<IgxOverlayService>(IgxOverlayService);
+
     @ViewChild('modalDemo', { static: true })
     public modalDemo: ElementRef;
 
@@ -35,8 +37,6 @@ export class OverlayScrollSample1Component implements OnDestroy {
     };
 
     private _overlayId: string;
-
-    constructor(@Inject(IgxOverlayService) private overlay: IgxOverlayService) { }
 
     public onClickModal(event: Event, strategy: string) {
         event.stopPropagation();

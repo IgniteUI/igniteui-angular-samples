@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit} from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
 import { IgxAvatarComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardThumbnailDirective, IgxIconComponent, IgxIconService, IgxListComponent, IgxListItemComponent, IgxListLineDirective, IgxListThumbnailDirective} from 'igniteui-angular';
 import { defineComponents, IgcTileManagerComponent } from 'igniteui-webcomponents';
 
@@ -12,7 +12,8 @@ defineComponents(IgcTileManagerComponent);
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TileManagerComponent implements OnInit {
-    constructor(protected _iconService: IgxIconService) {}
+    protected _iconService = inject(IgxIconService);
+
 
     public ngOnInit() {
         const listIcon =

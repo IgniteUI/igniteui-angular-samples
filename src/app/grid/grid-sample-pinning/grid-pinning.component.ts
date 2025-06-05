@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation, OnInit , AfterViewInit} from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, OnInit, AfterViewInit, inject } from '@angular/core';
 import { IgxColumnComponent, IgxGridComponent, IgxIconService, IgxCellHeaderTemplateDirective, IgxIconComponent } from 'igniteui-angular';
 import { icons } from '../../services/svgIcons';
 
@@ -17,13 +17,12 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 })
 
 export class PinningSampleComponent implements OnInit, AfterViewInit {
+    private iconService = inject(IgxIconService);
+
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
 
     public data: any[];
     public columns: any[];
-
-    constructor(private iconService: IgxIconService) {
-    }
 
     public ngOnInit(): void {
         this.columns = [

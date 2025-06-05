@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, inject } from '@angular/core';
 import { IgxButtonDirective, IgxSnackbarComponent } from 'igniteui-angular';
 
 @Component({
@@ -8,8 +8,8 @@ import { IgxButtonDirective, IgxSnackbarComponent } from 'igniteui-angular';
     imports: [IgxButtonDirective, IgxSnackbarComponent]
 })
 export class SnackbarStyleComponent {
+  elem = inject(ElementRef);
 
-  constructor(public elem: ElementRef) { }
 
   public close(element) {
     element.close();
