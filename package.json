@@ -132,7 +132,7 @@
     "@angular/cli": "^20.0.1",
     "@angular/compiler-cli": "^20.0.1",
     "@angular/language-service": "^20.0.1",
-    "@igniteui/angular-schematics": "19.0.14314",
+    "@igniteui/angular-schematics": "20.0.1450",
     "@juggle/resize-observer": "^3.3.1",
     "@types/express": "^4.17.17",
     "@types/jasmine": "^5.1.6",
