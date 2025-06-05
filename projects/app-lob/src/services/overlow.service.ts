@@ -1,5 +1,5 @@
 
-import { Inject, Injectable, DOCUMENT } from '@angular/core';
+import { Injectable, DOCUMENT, inject } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
@@ -7,7 +7,10 @@ import { filter } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class OverflowService {
-  constructor(private router: Router, @Inject(DOCUMENT) private document: Document) {
+  private router = inject(Router);
+  private document = inject<Document>(DOCUMENT);
+
+  constructor() {
     this.router.events.pipe(
       filter(event => event instanceof NavigationStart)
     ).subscribe((event: NavigationStart) => {

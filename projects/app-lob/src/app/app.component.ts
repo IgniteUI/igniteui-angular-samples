@@ -1,5 +1,5 @@
 
-import { Component, HostListener, Inject, OnInit, DOCUMENT } from '@angular/core';
+import { Component, HostListener, OnInit, DOCUMENT, inject } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { SEOService } from './seo.service';
@@ -11,14 +11,16 @@ import { SEOService } from './seo.service';
     imports: [RouterOutlet]
 })
 export class AppComponent implements OnInit {
+    private document = inject<Document>(DOCUMENT);
+    private router = inject(Router);
+    private activatedRoute = inject(ActivatedRoute);
+    private seoService = inject(SEOService);
+
     public title = 'app-lob';
     private theme = 'default-theme';
     private styleElem: HTMLStyleElement;
     private typefacesLoaded = ['Titillium Web', 'Roboto'];
     private typefaceUrl = 'https://fonts.googleapis.com/css?family=';
-
-    constructor(@Inject(DOCUMENT) private document: Document, private router: Router,
-        private activatedRoute: ActivatedRoute, private seoService: SEOService) { }
 
     public ngOnInit() {
         this.router.events.pipe(
