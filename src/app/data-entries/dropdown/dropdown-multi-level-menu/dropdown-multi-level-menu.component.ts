@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, QueryList, ViewChild, ViewChildren, inject } from '@angular/core';
 import { IgxDropDownComponent, OverlaySettings, ConnectedPositioningStrategy, HorizontalAlignment, VerticalAlignment, IgxNavbarComponent, IgxNavbarTitleDirective, IgxButtonDirective, IgxToggleActionDirective, IgxIconComponent, IgxDropDownItemComponent, IgxSuffixDirective } from 'igniteui-angular';
 import {
   CROSS_PLATFORM_DATA,
@@ -20,6 +20,8 @@ import { MultiLevelDirective } from './multi-level.directive';
     imports: [IgxNavbarComponent, IgxNavbarTitleDirective, IgxButtonDirective, IgxToggleActionDirective, IgxIconComponent, IgxDropDownComponent, IgxDropDownItemComponent, MultiLevelDirective, IgxSuffixDirective]
 })
 export class DropdownMultiLevelMenuComponent implements AfterViewInit {
+  private _multiLevelService = inject(MultiLevelService);
+
   @ViewChildren(IgxDropDownComponent, { read: IgxDropDownComponent })
   private _dropdowns: QueryList<IgxDropDownComponent>;
 
@@ -44,8 +46,6 @@ export class DropdownMultiLevelMenuComponent implements AfterViewInit {
   };
 
   public selection: string = '';
-
-  constructor(private _multiLevelService: MultiLevelService) { }
 
   public ngAfterViewInit(): void {
     this._dropdowns.forEach((dropdown) => {

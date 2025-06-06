@@ -1,5 +1,5 @@
 import { formatDate } from '@angular/common';
-import { AfterViewInit, Component, ViewChild, OnInit, ChangeDetectorRef} from '@angular/core';
+import { AfterViewInit, Component, ViewChild, OnInit, ChangeDetectorRef, inject } from '@angular/core';
 import { IgxDateSummaryOperand, IgxGridComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxColumnComponent, IgxCellTemplateDirective, IgxGridFooterComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -38,12 +38,12 @@ class MySummary {
 })
 
 export class GridCustomSummariesSelectionComponent implements AfterViewInit, OnInit {
+    private cdr = inject(ChangeDetectorRef);
+
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     public data: any[];
     public selectionSummaries = [];
     private customSummary =  new MySummary();
-
-    constructor(private cdr: ChangeDetectorRef) { }
 
     public ngOnInit(): void {
         this.data = DATA;

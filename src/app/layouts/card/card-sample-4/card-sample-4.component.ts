@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { IgxExpansionPanelComponent, IgxIconService, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxIconComponent, IgxSliderComponent, IgxExpansionPanelBodyComponent, IgxListComponent, IgxListItemComponent, IgxDividerDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, IgxCardMediaDirective, IgxAvatarComponent, IgxChipComponent } from 'igniteui-angular';
 
 import {
@@ -17,6 +17,8 @@ import {
     imports: [IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxChipComponent, IgxIconComponent, IgxSliderComponent, IgxExpansionPanelComponent, IgxExpansionPanelBodyComponent, IgxListComponent, IgxListItemComponent, IgxDividerDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, IgxCardMediaDirective, IgxAvatarComponent]
 })
 export class CardSample4Component implements OnInit {
+    private iconService = inject(IgxIconService);
+
     @ViewChild(IgxExpansionPanelComponent, { static: true })
     public panel: IgxExpansionPanelComponent;
 
@@ -24,7 +26,7 @@ export class CardSample4Component implements OnInit {
     public details: IWeatherDetails[];
     public days: IWeatherList[];
 
-    constructor(private iconService: IgxIconService) {
+    constructor() {
         this.iconService.addSvgIcon('rain', 'assets/images/card/icons/rain.svg', 'weather-icons');
         this.iconService.addSvgIcon('breeze', 'assets/images/card/icons/breeze.svg', 'weather-icons');
     }

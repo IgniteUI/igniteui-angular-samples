@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent, IgxColumnComponent, FilteringExpressionsTree, IgxNumberFilteringOperand, IgxStringFilteringOperand, EntityType, IGX_HIERARCHICAL_GRID_DIRECTIVES, FilteringLogic } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { HttpClient } from '@angular/common/http';
@@ -12,6 +12,8 @@ const API_ENDPOINT = 'https://data-northwind.indigo.design';
     imports: [IGX_HIERARCHICAL_GRID_DIRECTIVES, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent]
 })
 export class HierarchicalGridLoDSampleComponent implements OnInit, AfterViewInit {
+    private http = inject(HttpClient);
+
     @ViewChild('hGrid', { static: true })
     public hGrid: IgxHierarchicalGridComponent;
 
@@ -51,8 +53,6 @@ export class HierarchicalGridLoDSampleComponent implements OnInit, AfterViewInit
             ]
         }
     ];
-
-    constructor(private http: HttpClient) {}
 
     public ngOnInit() {
         const ordersTree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Orders', ['customerId']);

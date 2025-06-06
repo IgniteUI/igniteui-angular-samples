@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, HostBinding, HostListener, Input, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, HostBinding, HostListener, Input, ViewChild, inject } from '@angular/core';
 import { IgxDialogComponent } from 'igniteui-angular';
 import { IPlanet } from '../data';
 
@@ -11,6 +11,8 @@ import { IPlanet } from '../data';
 })
 
 export class PlanetComponent {
+    cdr = inject(ChangeDetectorRef);
+
 
     @ViewChild('info', { read: IgxDialogComponent, static: true })
     public info: IgxDialogComponent;
@@ -21,8 +23,6 @@ export class PlanetComponent {
 
     @HostBinding('class')
     public class = 'planet-area';
-
-    constructor(public cdr: ChangeDetectorRef) { }
 
     @HostListener('click')
     public onClick() {

@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 /* eslint-disable @typescript-eslint/naming-convention */
-import { ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2, ViewChild, inject } from '@angular/core';
 import { IDropBaseEventArgs, IDropDroppedEventArgs, IgxDropDirective, IgxChipComponent, IgxCardComponent, IgxDragDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective } from 'igniteui-angular';
 
 
@@ -22,6 +22,9 @@ interface IListItem {
     imports: [IgxDropDirective, IgxChipComponent, IgxCardComponent, IgxDragDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective]
 })
 export class KanbanSampleComponent implements OnInit {
+    private renderer = inject(Renderer2);
+    private cdr = inject(ChangeDetectorRef);
+
     @ViewChild('toDo', { read: ElementRef }) public toDo: ElementRef;
     @ViewChild('inProgress', { read: ElementRef }) public inProgress: ElementRef;
     @ViewChild('done', { read: ElementRef }) public done: ElementRef;
@@ -32,8 +35,6 @@ export class KanbanSampleComponent implements OnInit {
     private dummyObj;
     private lastDragEnterList: string;
     private currentList: string;
-
-    constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) { }
 
     public ngOnInit(): void {
         this.toDoList = [

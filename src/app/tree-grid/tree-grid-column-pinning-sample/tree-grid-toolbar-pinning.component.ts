@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, inject } from '@angular/core';
 import { IgxTreeGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 import { ActivatedRoute } from '@angular/router';
@@ -14,11 +14,13 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
 })
 
 export class TreeGridPinningToolbarSampleComponent implements OnInit {
+    private activatedRoute = inject(ActivatedRoute);
+
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
     public data: any[];
     public useDarkTheme: boolean = false;
 
-    constructor(private activatedRoute: ActivatedRoute) {
+    constructor() {
         this.data = generateEmployeeDetailedFlatData();
     }
 

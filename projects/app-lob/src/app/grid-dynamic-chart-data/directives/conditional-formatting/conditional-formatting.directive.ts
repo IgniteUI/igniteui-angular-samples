@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, EventEmitter, Inject, Input, OnDestroy, Output } from '@angular/core';
+import { AfterViewInit, Directive, EventEmitter, Input, OnDestroy, Output, inject } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
@@ -26,6 +26,8 @@ export interface IFormatColors {
     selector: '[conditionalFormatting]'
 })
 export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy {
+    grid = inject<IgxGridComponent>(IgxGridComponent);
+
     @Input()
     public formatter: string | ConditionalFormattingType;
 
@@ -189,7 +191,7 @@ export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy 
     private destroy$ = new Subject<any>();
     private formatedRange: Map<number, Set<number>> = new Map<number, Set<number>>();
 
-    constructor(@Inject(IgxGridComponent) public grid: IgxGridComponent) {
+    constructor() {
         this._formattersData.set('Data Bars', this.dataBars);
         this._formattersData.set('Color Scale', this.colorScale);
         this._formattersData.set('Top 10', this.top10Percent);

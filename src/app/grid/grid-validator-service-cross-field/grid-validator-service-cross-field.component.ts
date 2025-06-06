@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn, FormsModule } from '@angular/forms';
-import { CellType, IgxGridComponent, IGridEditEventArgs, IgxSwitchComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxColumnRequiredValidatorDirective, IgxColumnEmailValidatorDirective, IgxCellValidationErrorDirective, IgxColumnMinValidatorDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxButtonDirective } from 'igniteui-angular';
-import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
+import { CellType, IgxGridComponent, IGridEditEventArgs, IgxSwitchComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxColumnRequiredValidatorDirective, IgxColumnEmailValidatorDirective, IgxCellValidationErrorDirective, IgxColumnMinValidatorDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxButtonDirective, IGridFormGroupCreatedEventArgs } from 'igniteui-angular';
 import { employeesData } from '../../data/employeesData';
 import { NgTemplateOutlet, DatePipe } from '@angular/common';
 
@@ -36,7 +35,7 @@ export class GridValidatorServiceCrossFieldComponent {
         const invalidTransactions = this.grid.validation.getInvalid();
         if (invalidTransactions.length > 0 && !confirm('You\'re committing invalid transactions. Are you sure?')) {
             return;
-        } 
+        }
 
         this.grid.transactions.commit(this.transactionData);
         this.grid.validation.clear();
@@ -73,7 +72,7 @@ export class GridValidatorServiceCrossFieldComponent {
             const winControl = formGroup.get('deals_won');
             const loseControl = formGroup.get('deals_lost');
             const actualSalesControl = formGroup.get('actual_sales');
-    
+
             // Validate dates
             const curDate = new Date();
             if (new Date(createdOnRecord.value) > curDate) {
@@ -88,7 +87,7 @@ export class GridValidatorServiceCrossFieldComponent {
                 // The created on date shouldn't be greater than last active date.
                 returnObject['createdLastActiveInvalid'] = true;
             }
-            
+
             // Validate deals
             const dealsRatio = this.calculateDealsRatio(winControl.value, loseControl.value);
             if (actualSalesControl.value === 0 && dealsRatio > 0) {
@@ -97,7 +96,7 @@ export class GridValidatorServiceCrossFieldComponent {
             if (actualSalesControl.value > 0 && dealsRatio === 0) {
                 returnObject['salesNotZero'] = true;
             }
-            
+
             return returnObject;
         };
     }

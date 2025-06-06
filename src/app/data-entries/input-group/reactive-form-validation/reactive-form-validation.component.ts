@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxHintDirective, IgxIconComponent, IgxSuffixDirective, IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular';
 
@@ -20,7 +20,9 @@ export class ReactiveFormValidationComponent {
     public registrationForm: FormGroup<User>;
     public showPassword: boolean = false;
 
-    constructor(fb: FormBuilder) {
+    constructor() {
+        const fb = inject(FormBuilder);
+
         this.registrationForm = fb.group({
             username: ['', { nonNullable: true, validators: [Validators.required] }],
             email: ['', { nonNullable: true, validators: [Validators.required, Validators.email] }],

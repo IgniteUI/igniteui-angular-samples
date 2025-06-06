@@ -1,12 +1,4 @@
-import {
-    Component,
-    ElementRef,
-    Inject,
-    OnDestroy,
-    OnInit,
-    ViewChild,
-    ViewContainerRef
-} from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewContainerRef, inject } from '@angular/core';
 import { AbsolutePosition, IgxOverlayService, OverlaySettings, RelativePosition, RelativePositionStrategy, IButtonGroupEventArgs, IgxIconComponent, IgxButtonGroupComponent, IgxButtonDirective } from 'igniteui-angular';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 import { NgTemplateOutlet } from '@angular/common';
@@ -20,6 +12,9 @@ import { NgTemplateOutlet } from '@angular/common';
     imports: [IgxIconComponent, NgTemplateOutlet, IgxButtonGroupComponent, IgxButtonDirective]
 })
 export class OverlayPresetSettingsSampleComponent implements OnInit, OnDestroy {
+    private overlayService = inject<IgxOverlayService>(IgxOverlayService);
+    private viewContainerRef = inject(ViewContainerRef);
+
     @ViewChild('anchor', { static: true })
     public anchor: ElementRef;
 
@@ -57,11 +52,6 @@ export class OverlayPresetSettingsSampleComponent implements OnInit, OnDestroy {
     public relPosition = RelativePosition.Default;
     private _overlayId: string;
     private _overlaySettings: OverlaySettings;
-
-    constructor(
-        @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
-        private viewContainerRef: ViewContainerRef
-    ) { }
 
     public ngOnInit(): void {
         this.setRelativeOverlaySettings();

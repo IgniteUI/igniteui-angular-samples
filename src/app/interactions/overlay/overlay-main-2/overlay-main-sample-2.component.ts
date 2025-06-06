@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnDestroy, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ElementRef, OnDestroy, ViewChild, ViewContainerRef, inject } from '@angular/core';
 import { ConnectedPositioningStrategy, IgxOverlayService, IgxButtonDirective } from 'igniteui-angular';
 import { CardSample1Component } from '../../../layouts/card/card-sample-1/card-sample-1.component';
 // tslint:disable:object-literal-sort-keys
@@ -9,17 +9,14 @@ import { CardSample1Component } from '../../../layouts/card/card-sample-1/card-s
     imports: [IgxButtonDirective]
 })
 export class OverlaySampleMain2Component implements OnDestroy {
+    private overlayService = inject<IgxOverlayService>(IgxOverlayService);
+    private viewContainerRef = inject(ViewContainerRef);
+
 
     @ViewChild('buttonElement', { static: true })
     private buttonElement: ElementRef;
     private _overlayId: string;
     private _cardHidden = true;
-
-
-    constructor(
-        @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
-        private viewContainerRef: ViewContainerRef
-    ) { }
 
     public toggleOverlay() {
         if (this._cardHidden) {

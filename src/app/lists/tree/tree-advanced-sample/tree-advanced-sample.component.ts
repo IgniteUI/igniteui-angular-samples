@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, PLATFORM_ID, inject } from '@angular/core';
 import { IgxIconService, IgxTreeNodeComponent, IgxTreeComponent, IgxIconComponent, IgxTooltipTargetDirective, IgxTooltipDirective } from 'igniteui-angular';
 import { icons } from './services/svgIcons';
 import { DATA, NodeData, REMOTE_ROOT, SelectableNodeData } from '../../../data/tree-file-data';
@@ -14,6 +14,10 @@ import { isPlatformBrowser, NgTemplateOutlet } from '@angular/common';
     imports: [IgxTreeComponent, IgxTreeNodeComponent, NgTemplateOutlet, IgxIconComponent, IgxTooltipTargetDirective, IgxTooltipDirective]
 })
 export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
+    private iconService = inject(IgxIconService);
+    private dataService = inject(DataService);
+    private platformId = inject(PLATFORM_ID);
+
     public family = 'tree-icons';
     public data = DATA;
     public loading = false;
@@ -21,7 +25,7 @@ export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
     public remoteRoot = REMOTE_ROOT;
     public remoteData: SelectableNodeData[] = [];
     private destroy$ = new Subject<void>();
-    constructor(private iconService: IgxIconService, private dataService: DataService, @Inject(PLATFORM_ID) private platformId: any) {
+    constructor() {
         this.dataService.data.pipe(takeUntil(this.destroy$)).subscribe((data) => {
             this.loading = false;
             this.remoteData = data;

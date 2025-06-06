@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation, inject } from '@angular/core';
 import { GridPagingMode, IgxGridComponent, IgxPaginatorComponent, IgxColumnComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { RemotePagingService } from '../../services/remotePaging.service';
@@ -14,6 +14,8 @@ import { AsyncPipe } from '@angular/common';
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, AsyncPipe]
 })
 export class RemotePagingDefaultTemplateComponent implements OnInit, AfterViewInit, OnDestroy {
+    private remoteService = inject(RemotePagingService);
+
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     @ViewChild('customPager', { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
     public totalCount = 0;
@@ -32,9 +34,6 @@ export class RemotePagingDefaultTemplateComponent implements OnInit, AfterViewIn
     public set perPage(val: number) {
         this._perPage = val;
         this.paginate(0);
-    }
-
-    constructor(private remoteService: RemotePagingService) {
     }
 
     public ngOnInit() {

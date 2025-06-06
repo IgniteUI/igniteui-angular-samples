@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, inject } from '@angular/core';
 import { IgxCardModule, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective } from 'igniteui-angular';
 @Component({
     selector: `app-overlay-dynamic-card-component`,
@@ -6,6 +6,6 @@ import { IgxCardModule, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderT
     styleUrls: [`overlay-dynamic-card.component.scss`],
     imports: [IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective]
 })
-export class MyDynamicCardComponent {
-    constructor(public elementRef: ElementRef) {}
+export class MyDynamicCardComponent {    elementRef = inject(ElementRef);
+
 }

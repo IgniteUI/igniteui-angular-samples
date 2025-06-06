@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import { IgxGridComponent, RowType, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
@@ -14,6 +14,8 @@ import { AsyncPipe } from '@angular/common';
 })
 
 export class GridRowStylesComponent {
+    private localService = inject(FinancialDataService);
+
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     public data: Observable<any[]>;
 
@@ -23,7 +25,7 @@ export class GridRowStylesComponent {
         'border-color': (row: RowType) => (+row.data['Change'] < 0  && +row.data['Change On Year(%)'] < 0) ? '#FF000099' : '#E9E9E9'
     };
 
-    constructor(private localService: FinancialDataService) {
+    constructor() {
         this.localService.getData(1000);
         this.data = this.localService.records;
     }
