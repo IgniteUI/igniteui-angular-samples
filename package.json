@@ -71,11 +71,11 @@
     "express": "^4.18.2",
     "file-saver": "^2.0.2",
     "hammerjs": "^2.0.8",
-    "igniteui-angular": "20.0.0-rc.0",
+    "igniteui-angular": "20.0.0",
     "igniteui-angular-charts": "^19.0.1",
     "igniteui-angular-core": "^19.0.1",
-    "igniteui-angular-extras": "^19.1.2",
-    "igniteui-angular-i18n": "^20.0.0-rc.0",
+    "igniteui-angular-extras": "^20.0.0",
+    "igniteui-angular-i18n": "^20.0.0",
     "igniteui-dockmanager": "^1.16.0",
     "igniteui-live-editing": "^3.0.3",
     "igniteui-webcomponents": "^6.0.1",
@@ -86,25 +86,6 @@
     "zone.js": "~0.15.0"
   },
   "overrides": {
-    "igniteui-angular-extras": {
-      "igniteui-angular": "20.0.0-rc.0",
-      "@infragistics/igniteui-angular": "20.0.0-rc.0",
-      "igniteui-angular-charts": {
-        ".": "^19.0.0",
-        "@angular/core": "^20.0.0",
-        "@angular/common": "^20.0.0",
-        "@angular/compiler": "^20.0.0"
-      },
-      "igniteui-angular-core": {
-        ".": "^19.0.0",
-        "@angular/core": "^20.0.0",
-        "@angular/common": "^20.0.0",
-        "@angular/compiler": "^20.0.0"
-      },
-      "@angular/core": "^20.0.0",
-      "@angular/common": "^20.0.0",
-      "@angular/animations": "^20.0.0"
-    },
     "@ng-bootstrap/ng-bootstrap": {
       "@angular/common": "^20.0.0",
       "@angular/core": "^20.0.0",
@@ -132,7 +113,7 @@
     "@angular/cli": "^20.0.1",
     "@angular/compiler-cli": "^20.0.1",
     "@angular/language-service": "^20.0.1",
-    "@igniteui/angular-schematics": "19.0.14314",
+    "@igniteui/angular-schematics": "20.0.1450",
     "@juggle/resize-observer": "^3.3.1",
     "@types/express": "^4.17.17",
     "@types/jasmine": "^5.1.6",
