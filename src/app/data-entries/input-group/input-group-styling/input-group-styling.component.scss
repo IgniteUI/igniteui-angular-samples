@@ -1,16 +1,13 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
+.sample-column {
+    gap: 1rem;
+}
+
 $custom-input-group: input-group-theme(
-  $filled-text-color: #288a54,
-  $focused-text-color: #174f30,
-  $idle-text-color: #288a54,
-  $idle-bottom-line-color: #288a54,
-  $interim-bottom-line-color: #288a54,
-  $hover-bottom-line-color: #288a54,
-  $focused-secondary-color: #174f30,
-  $box-background: #eeeeee
+    $box-background: #57a5cd,
+    $border-color: #57a5cd,
 );
 
 @include css-vars($custom-input-group);
- 

@@ -6,17 +6,14 @@ $my-time-picker-theme: time-picker-theme(
   $hover-text-color: #ecaa53,
   $selected-text-color: #ecaa53,
   $header-background: #ecaa53,
-  $header-hour-text-color: #011627,
   $background-color: #011627
 );
 
-$dark-button: button-theme(
+$dark-button: flat-button-theme(
   $foreground: #ecaa53,
-  $hover-background: #ecaa53
 );
 
 :host ::ng-deep {
   @include css-vars($my-time-picker-theme);
   @include css-vars($dark-button);
 }
- 

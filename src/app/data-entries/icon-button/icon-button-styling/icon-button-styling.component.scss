@@ -1,3 +1,5 @@
+@use "igniteui-angular/theming" as *;
+
 .wrapper {
   display: flex;
   flex-flow: row wrap;
@@ -11,6 +13,24 @@
   flex: 1 0 30%;
   margin: 16px 0;
 }
+
+// $custom-flat: flat-icon-button-theme(
+//     $foreground: #011627,
+// );
+
+// $custom-contained: contained-icon-button-theme(
+//     $background: #ECAA53,
+// );
+
+// $custom-outlined: outlined-icon-button-theme(
+//     $foreground: #011627,
+// );
+
+// :host {
+//   @include css-vars($custom-flat);
+//   @include css-vars($custom-contained);
+//   @include css-vars($custom-outlined);
+// }
 
 [igxIconButton="flat"] {
   --foreground: #011627;
