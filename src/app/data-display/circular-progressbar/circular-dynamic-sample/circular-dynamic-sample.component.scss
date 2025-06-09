@@ -1,11 +1,11 @@
 .custom-size {
-    width: 100px;
-    height: 100px;
+    --diameter: 50px;
+    --stroke-thickness: 3px;
 }
 
 .sample-content {
     width: 300px;
     display: flex;
     align-items: center;
-    margin-top: 30px;
+    margin: 30px;
 }
