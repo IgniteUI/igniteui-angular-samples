@@ -1,16 +1,18 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { Invoice, INVOICE_DATA } from '../data/invoiceData';
 
 @Injectable()
 export class CRUDService {
+    private _http = inject(HttpClient);
+
     public dataCollection: Invoice[];
     public data$: Observable<Invoice[]>;
     private _data: BehaviorSubject<Invoice[]>;
 
-    constructor(private _http: HttpClient) {
+    constructor() {
         this._data = new BehaviorSubject([]);
         this.data$ = this._data.asObservable();
         this.dataCollection = INVOICE_DATA.map((rec: Invoice, index) => {

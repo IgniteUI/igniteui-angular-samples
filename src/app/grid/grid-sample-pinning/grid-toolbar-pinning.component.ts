@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, OnInit, inject } from '@angular/core';
 import { IgxColumnComponent, IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 import { ActivatedRoute } from '@angular/router';
@@ -15,13 +15,13 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
 })
 
 export class PinningToolbarSampleComponent implements OnInit{
+    private activatedRoute = inject(ActivatedRoute);
+
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
 
     public useDarkTheme: boolean = false;
     public data: any[];
     public columns: any[];
-
-    constructor(private activatedRoute: ActivatedRoute) {}
 
     public ngOnInit(): void {
         this.columns = [

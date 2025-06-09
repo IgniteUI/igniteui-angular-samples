@@ -1,13 +1,16 @@
-import { ChangeDetectorRef, Component, ElementRef, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, inject } from '@angular/core';
 import { IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxIconComponent, IgxSelectHeaderDirective, IgxButtonGroupComponent, IgxButtonDirective, IgxSelectFooterDirective } from 'igniteui-angular';
-import { NgFor, NgSwitch, NgSwitchCase } from '@angular/common';
+
 @Component({
     selector: 'app-select-header-footer',
     styleUrls: ['select-header-footer.component.scss'],
     templateUrl: 'select-header-footer.component.html',
-    imports: [IgxSelectComponent, IgxLabelDirective, NgFor, IgxSelectItemComponent, NgSwitch, NgSwitchCase, IgxIconComponent, IgxSelectHeaderDirective, IgxButtonGroupComponent, IgxButtonDirective, IgxSelectFooterDirective]
+    imports: [IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxIconComponent, IgxSelectHeaderDirective, IgxButtonGroupComponent, IgxButtonDirective, IgxSelectFooterDirective]
 })
 export class SelectHeaderFooterComponent implements OnInit {
+    cdr = inject(ChangeDetectorRef);
+    element = inject(ElementRef);
+
     public flightCount: number;
     public trainCount: number;
     public boatCount: number;
@@ -32,9 +35,6 @@ export class SelectHeaderFooterComponent implements OnInit {
             { type: 'Pomegranate', delivery: 'flight'},
             { type: 'Watermelon', delivery: 'train'}
         ];
-
-    constructor(public cdr: ChangeDetectorRef, public element: ElementRef) {
-    }
 
     public ngOnInit() {
         this.flightCount = this.fruitsDS.filter(items => items.delivery === 'flight').length;

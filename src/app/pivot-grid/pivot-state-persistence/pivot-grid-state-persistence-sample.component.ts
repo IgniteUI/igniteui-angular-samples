@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, QueryList, ViewChild, ViewChildren } from "@angular/core";
+import { AfterViewInit, Component, OnInit, QueryList, ViewChild, ViewChildren, inject } from "@angular/core";
 import { NavigationStart, Router, RouterLink } from "@angular/router";
 
 import { IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate, IgxPivotDateDimension, IgxGridStateDirective, IgxPivotGridComponent, IgxCheckboxComponent, GridFeatures, IGridStateOptions, IGridState, IPivotValue, IPivotDimension, IPivotAggregator, GridColumnDataType, IgxButtonDirective, IgxIconComponent } from "igniteui-angular"
@@ -40,6 +40,8 @@ export class IgxTotalSaleAggregate {
     imports: [IgxButtonDirective, IgxIconComponent, RouterLink, IgxCheckboxComponent, IgxPivotGridComponent, IgxGridStateDirective]
 })
 export class PivotGridStatePersistenceSampleComponent implements OnInit, AfterViewInit {
+    private router = inject(Router);
+
     @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
     @ViewChild(IgxPivotGridComponent, { static: true }) public grid: IgxPivotGridComponent;
     @ViewChildren(IgxCheckboxComponent) public checkboxes: QueryList<IgxCheckboxComponent>;
@@ -153,8 +155,6 @@ export class PivotGridStatePersistenceSampleComponent implements OnInit, AfterVi
             }
         ]
     };
-
-    constructor(private router: Router) { }
 
     public ngOnInit(): void {
         this.router.events.pipe(take(1)).subscribe((event: NavigationStart) => {

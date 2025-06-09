@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IgxTransactionService, State, Transaction, TransactionType, IgxCardComponent, IgxListComponent, IgxListItemComponent, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxIconComponent, IgxListActionDirective } from 'igniteui-angular';
 import { WISHLIST, WishlistItem } from '../data';
 import { NgClass } from '@angular/common';
@@ -12,12 +12,14 @@ import { TransactionBasePipe } from '../pipes/transaction-base.pipe';
     imports: [IgxCardComponent, IgxListComponent, IgxListItemComponent, NgClass, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxIconComponent, IgxListActionDirective, TransactionBasePipe]
 })
 export class TransactionBaseComponent {
+    transactions = inject<IgxTransactionService<Transaction, State>>(IgxTransactionService);
+
     public wishlist: WishlistItem[];
 
     /**
      * @param transactions Injected Transaction Service.
      */
-    constructor(public transactions: IgxTransactionService<Transaction, State>) {
+    constructor() {
         this.wishlist = WISHLIST;
     }
 

@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, ValidationErrors, ValidatorFn, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CellType, IgxHierarchicalGridComponent, IGridEditEventArgs, IgxSwitchComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxColumnRequiredValidatorDirective, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxRowIslandComponent, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxButtonDirective } from 'igniteui-angular';
-import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
+import { CellType, IgxHierarchicalGridComponent, IGridEditEventArgs, IGridFormGroupCreatedEventArgs, IgxSwitchComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxColumnRequiredValidatorDirective, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxRowIslandComponent, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxButtonDirective } from 'igniteui-angular';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

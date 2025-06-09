@@ -1,5 +1,5 @@
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IgxNavbarComponent } from 'igniteui-angular';
 
 @Component({
@@ -10,8 +10,8 @@ import { IgxNavbarComponent } from 'igniteui-angular';
     imports: [IgxNavbarComponent]
 })
 export class NavbarSample3Component {
+  private _location = inject(Location);
 
-  constructor(private _location: Location) { }
 
   public navigateBack() {
     this._location.back();

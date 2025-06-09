@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import {EMPLOYEE_DATA} from '../../data/nested-employee-data';
 import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelBodyComponent, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -13,8 +13,9 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class GridNestedDataBindComponent implements OnInit{
+    private cdr = inject(ChangeDetectorRef);
+
     public data;
-    constructor(private cdr: ChangeDetectorRef){}
 
     public ngOnInit() {
         this.data = EMPLOYEE_DATA;

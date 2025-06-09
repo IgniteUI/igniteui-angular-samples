@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, inject } from '@angular/core';
 import { IgxToastComponent, VerticalAlignment, IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular';
 
 @Component({
@@ -8,10 +8,10 @@ import { IgxToastComponent, VerticalAlignment, IgxButtonDirective, IgxRippleDire
     imports: [IgxButtonDirective, IgxRippleDirective, IgxToastComponent]
 })
 export class ToastStyleComponent {
+    elem = inject(ElementRef);
+
     public toast: IgxToastComponent;
     public position = VerticalAlignment;
-
-    constructor(public elem: ElementRef) { }
 
     openToast(toast: IgxToastComponent, pos: VerticalAlignment) {
         toast.positionSettings.verticalDirection = pos;

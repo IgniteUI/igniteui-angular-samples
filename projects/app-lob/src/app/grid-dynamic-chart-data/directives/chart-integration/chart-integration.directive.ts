@@ -1,5 +1,4 @@
-import { ComponentFactory, ComponentFactoryResolver, ComponentRef, Directive,
-    EventEmitter, Input, Output, Type, ViewContainerRef } from '@angular/core';
+import { ComponentFactory, ComponentFactoryResolver, ComponentRef, Directive, EventEmitter, Input, Output, Type, ViewContainerRef, inject } from '@angular/core';
 import {
     IgxAreaSeriesComponent, IgxBarSeriesComponent, IgxBubbleSeriesComponent, IgxColumnSeriesComponent,
     IgxDataChartComponent, IgxItemLegendComponent, IgxLegendComponent, IgxLineSeriesComponent, IgxPieChartComponent,
@@ -21,14 +20,16 @@ export interface IDeterminedChartTypesArgs {
     // eslint-disable-next-line @angular-eslint/directive-selector
     selector: '[chartHost]'
 })
-export class ChartHostDirective {
-    constructor(public viewContainerRef: ViewContainerRef) { }
+export class ChartHostDirective {    viewContainerRef = inject(ViewContainerRef);
+
 }
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
     selector: '[chartIntegration]'
 })
 export class ChartIntegrationDirective {
+    private factoryResolver = inject(ComponentFactoryResolver);
+
     @Input()
     public get chartData() {
         return this._chartData;
@@ -171,7 +172,7 @@ export class ChartIntegrationDirective {
             dataSource: this.chartData
         };
     }
-    constructor(private factoryResolver: ComponentFactoryResolver) {
+    constructor() {
         this.dataCharts.set(CHART_TYPE.COLUMN_GROUPED, IgxColumnSeriesComponent);
         this.dataCharts.set(CHART_TYPE.AREA_GROUPED, IgxAreaSeriesComponent);
         this.dataCharts.set(CHART_TYPE.LINE_GROUPED, IgxLineSeriesComponent);

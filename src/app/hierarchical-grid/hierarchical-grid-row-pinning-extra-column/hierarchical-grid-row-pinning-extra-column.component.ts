@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, inject } from '@angular/core';
 import { ColumnPinningPosition, IgxIconService, RowType, IPinningConfig, RowPinningPosition, IgxSwitchComponent, IgxHierarchicalGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { icons } from '../../services/svgIcons';
 import { SINGERS } from '../../data/singersData';
@@ -14,10 +14,12 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 })
 
 export class HGridRowPinningExtraColumnSampleComponent implements AfterViewInit{
+    private iconService = inject(IgxIconService);
+
     public localData;
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top, columns: ColumnPinningPosition.End };
 
-    constructor(private iconService: IgxIconService) {
+    constructor() {
         this.localData = SINGERS;
     }
 

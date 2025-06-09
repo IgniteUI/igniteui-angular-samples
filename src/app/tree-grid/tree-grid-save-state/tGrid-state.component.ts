@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit, inject } from '@angular/core';
 import { NavigationStart, Router, RouterLink } from '@angular/router';
 import { FilteringExpressionsTree, FilteringLogic, GridFeatures, IGridState, IGridStateOptions, IgxGridStateDirective, IgxTreeGridComponent, IgxCheckboxComponent, IgxButtonDirective, IgxIconComponent, IgxPaginatorComponent, IgxColumnComponent } from 'igniteui-angular';
 import { take } from 'rxjs/operators';
@@ -14,6 +14,8 @@ import { EMPLOYEE_DATA } from './data';
 })
 
 export class TGridSaveStateComponent implements OnInit, AfterViewInit {
+    private router = inject(Router);
+
 
     @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;
     @ViewChild('treeGrid', { static: true }) public tGrid: IgxTreeGridComponent;
@@ -52,7 +54,7 @@ export class TGridSaveStateComponent implements OnInit, AfterViewInit {
       columnSelection: true
     };
 
-    constructor(private router: Router) {
+    constructor() {
         this.localData = EMPLOYEE_DATA;
     }
 

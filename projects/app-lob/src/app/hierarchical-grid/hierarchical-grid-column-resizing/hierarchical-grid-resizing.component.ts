@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxCellTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
 import { RemoteValuesService } from '../../services/remoteValues.service';
 import { IgxPreventDocumentScrollDirective } from '../../../../../../src/app/directives/prevent-scroll.directive';
@@ -13,6 +13,8 @@ import { IgxSparklineCoreModule } from 'igniteui-angular-charts';
 })
 
 export class HGridColumnResizingSampleComponent {
+    private remoteValuesService = inject(RemoteValuesService);
+
     public years = 10;
     public localdata: any[];
     public col: IgxColumnComponent;
@@ -20,7 +22,7 @@ export class HGridColumnResizingSampleComponent {
     public nWidth: string;
     public singers: any[];
 
-    constructor(private remoteValuesService: RemoteValuesService) {
+    constructor() {
         this.singers = this.remoteValuesService.getSingersData();;
         for (const singer of this.singers) {
             this.getSales(singer);

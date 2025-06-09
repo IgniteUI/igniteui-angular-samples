@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { IgxDialogComponent, IgxGridComponent, Transaction, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from './../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -10,6 +10,8 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class GridExcelStyleEditingComponent implements OnInit {
+    private cdr = inject(ChangeDetectorRef);
+
     @ViewChild('grid', { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
 
@@ -19,8 +21,6 @@ export class GridExcelStyleEditingComponent implements OnInit {
     public ngOnInit(): void {
       this.data = DATA;
     }
-
-    constructor(private cdr:ChangeDetectorRef){}
 
     public keydownHandler(event) {
       const key = event.keyCode;

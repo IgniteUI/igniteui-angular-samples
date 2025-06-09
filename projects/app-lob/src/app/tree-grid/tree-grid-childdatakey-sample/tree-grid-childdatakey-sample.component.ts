@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { GridSelectionMode, IColumnExportingEventArgs, IgxCsvExporterService, IgxExcelExporterService, IgxTreeGridComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxExcelTextDirective, IgxCSVTextDirective, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { EMPLOYEE_DATA } from './data';
 import { IgxPreventDocumentScrollDirective } from '../../../../../../src/app/directives/prevent-scroll.directive';
@@ -11,9 +11,12 @@ import { IgxSparklineCoreModule } from 'igniteui-angular-charts';
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxExcelTextDirective, IgxCSVTextDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxSparklineCoreModule]
 })
 export class TreeGridChilddatakeySampleComponent implements OnInit {
+    private excelExporter = inject(IgxExcelExporterService);
+    private csvExporter = inject(IgxCsvExporterService);
+
     public localData: any[];
     public selectionMode: GridSelectionMode = 'multiple';
-    constructor(private excelExporter: IgxExcelExporterService, private csvExporter: IgxCsvExporterService) {
+    constructor() {
         const skipColumnExport = (eventArgs: IColumnExportingEventArgs) => {
             eventArgs.cancel = eventArgs.header === 'Performance';
         };

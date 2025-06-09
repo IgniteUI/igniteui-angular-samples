@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet, RouterLinkActive, RouterLink } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { IgxBottomNavComponent, IgxBottomNavItemComponent, IgxBottomNavHeaderComponent, IgxIconComponent, IgxBottomNavHeaderIconDirective } from 'igniteui-angular';
@@ -10,9 +10,9 @@ import { IgxBottomNavComponent, IgxBottomNavItemComponent, IgxBottomNavHeaderCom
     imports: [RouterOutlet, IgxBottomNavComponent, IgxBottomNavItemComponent, RouterLinkActive, IgxBottomNavHeaderComponent, RouterLink, IgxIconComponent, IgxBottomNavHeaderIconDirective]
 })
 export class TabbarSample3Component implements OnInit {
-    public path: string;
+    private router = inject(Router);
 
-    constructor(private router: Router) { }
+    public path: string;
 
     public ngOnInit() {
         this.path = this.router.url;

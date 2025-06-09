@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import { localData } from './local-data';
 import { IgxComboComponent, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent, IgxComboItemDirective, IgxComboHeaderItemDirective, IgxComboHeaderDirective, IgxComboFooterDirective, IgxComboAddItemDirective, IgxButtonDirective, IgxComboToggleIconDirective, IgxComboClearIconDirective, IgxComboEmptyDirective } from 'igniteui-angular';
 
@@ -9,9 +9,9 @@ import { IgxComboComponent, IgxLabelDirective, IgxPrefixDirective, IgxIconCompon
     imports: [IgxComboComponent, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent, IgxComboItemDirective, IgxComboHeaderItemDirective, IgxComboHeaderDirective, IgxComboFooterDirective, IgxComboAddItemDirective, IgxButtonDirective, IgxComboToggleIconDirective, IgxComboClearIconDirective, IgxComboEmptyDirective]
 })
 export class ComboTemplateComponent implements OnInit {
-    public lData: any[];
+    cdr = inject(ChangeDetectorRef);
 
-    constructor(public cdr: ChangeDetectorRef) {}
+    public lData: any[];
 
     public ngOnInit() {
         this.lData = localData;
