@@ -1,29 +1,13 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-// Add your brand colors
-$my-primary-color:#353a4b;
-$my-secondary-color: #ffd351;
-$my-surface-color: #efefef;
-
-// Create custom palette.
-$my-color-palette: palette(
-  $primary: $my-primary-color,
-  $secondary: $my-secondary-color,
-  $surface: $my-surface-color
-);
-
 // Create expansion panel theme
 $custom-panel-theme: expansion-panel-theme(
-  $header-background: color($my-color-palette, "primary", 700),
-  $header-focus-background: color($my-color-palette, "primary", 700),
-  $header-title-color: color($my-color-palette, "secondary"),
-  $header-icon-color: color($my-color-palette, "secondary"),
-  $body-background: color($my-color-palette, "primary", 700),
-  $body-color: color($my-color-palette, "secondary", 100),
-  $border-radius: .5
+  $header-background: #353a4b,
+  $body-background: #353a4b,
+  $header-title-color: #ffd351,
+  $header-icon-color: #ffd351,
 );
 
-// Apply the custom themes to the compoents mixins.
+// Apply the custom themes to the components mixins.
 @include css-vars($custom-panel-theme);
- 

@@ -8,23 +8,11 @@ $muted-yellow: #ffe482;
 $custom-query-builder: query-builder-theme(
   $schema: $dark-material-schema,
   $background: $black,
-  $subquery-header-background: #373532,
-  $subquery-border-color: #4e4d4a,
-  $header-background: $black,
-  $header-foreground: $yellow,
-  $color-expression-group-and: #4e78ea,
-  $color-expression-group-or: #b64fcb
 );
 
-$custom-button: button-theme(
+$custom-button: flat-button-theme(
   $schema: $dark-material-schema,
-  $background: $black,
   $foreground: $yellow,
-  $hover-foreground: $black,
-  $hover-background: $yellow,
-  $focus-foreground: $yellow,
-  $focus-background: $black,
-  $border-color: $yellow
 );
 
 $custom-input-group: input-group-theme(
@@ -34,13 +22,11 @@ $custom-input-group: input-group-theme(
 $custom-chip: chip-theme(
   $schema: $dark-material-schema,
   $background: $yellow,
-  $text-color: $black
 );
 
-$custom-icon-button: icon-button-theme(
+$custom-icon-button: outlined-icon-button-theme(
   $schema: $dark-material-schema,
-  $background: $yellow,
-  $foreground: $black
+  $foreground: $yellow,
 );
 
 @include css-vars($custom-query-builder);
@@ -51,10 +37,7 @@ $custom-icon-button: icon-button-theme(
     @include css-vars($custom-input-group);
     @include css-vars($custom-chip);
     @include css-vars($custom-icon-button);
-
-    .igx-filter-tree__buttons {
-      @include css-vars($custom-button);
-    }
+    @include css-vars($custom-button);
   }
 }
 
@@ -63,4 +46,3 @@ $custom-icon-button: icon-button-theme(
     height: 100%;
     overflow-y: auto;
 }
- 

@@ -2,9 +2,8 @@
 @use "igniteui-angular/theming" as *;
 
 $dark-bottom-nav: bottom-nav-theme(
-  $background: #292826,
+  $background: #011627,
   $icon-selected-color: #F4D45C
 );
 
 @include css-vars($dark-bottom-nav);
- 
