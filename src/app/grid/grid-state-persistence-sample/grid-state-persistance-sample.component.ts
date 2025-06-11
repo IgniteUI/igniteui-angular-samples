@@ -1,4 +1,4 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { Component, TemplateRef, ViewChild, inject } from '@angular/core';
 
 import { IGridStateOptions, IgxGridStateDirective, IgxGridComponent, NoopSortingStrategy, IgxColumnComponent, IgxButtonDirective, IgxIconComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
@@ -16,6 +16,8 @@ import { AsyncPipe } from '@angular/common';
 })
 
 export class GridStatePersistenceSampleComponent {
+    private localService = inject(FinancialDataService);
+
     @ViewChild('grid', { static: true })
     public grid: IgxGridComponent;
     @ViewChild(IgxGridStateDirective, { static: true })
@@ -44,7 +46,7 @@ export class GridStatePersistenceSampleComponent {
         columnSelection: true
     };
 
-    constructor(private localService: FinancialDataService) {
+    constructor() {
         this.localService.getData(100000);
         this.data = this.localService.records;
     }

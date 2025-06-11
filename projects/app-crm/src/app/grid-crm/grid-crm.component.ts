@@ -1,12 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import {
-    AfterViewInit,
-    Component,
-    ElementRef,
-    OnInit,
-    QueryList,
-    ViewChild
-} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IColumnExportingEventArgs, IgxColumnComponent, IgxCsvExporterService, IgxDateSummaryOperand, IgxExcelExporterService, IgxGridComponent, IgxNumberSummaryOperand, IgxSummaryResult, IgxToggleDirective, OverlaySettings, PositionSettings, VerticalAlignment, CellType, GridSelectionMode, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxGridToolbarTitleComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective, IgxCellTemplateDirective, IgxAvatarComponent, IgxLinearProgressBarComponent } from 'igniteui-angular';
 import { data, Employee } from './data';
@@ -78,6 +71,10 @@ class SoonSummary extends IgxDateSummaryOperand {
     imports: [NgClass, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxGridToolbarTitleComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxLinearProgressBarComponent]
 })
 export class GridCRMComponent implements OnInit, AfterViewInit {
+    private csvExporter = inject(IgxCsvExporterService);
+    private excelExporter = inject(IgxExcelExporterService);
+    private activatedRoute = inject(ActivatedRoute);
+
 
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1!: IgxGridComponent;
@@ -117,10 +114,7 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         scrollStrategy: new CloseScrollStrategy()
     };
 
-    constructor(
-        private csvExporter: IgxCsvExporterService,
-        private excelExporter: IgxExcelExporterService,
-        private activatedRoute: ActivatedRoute) {
+    constructor() {
 
         const exporterCb = (args: IColumnExportingEventArgs) => {
             if (args.field === 'Deals') { args.cancel = true; }

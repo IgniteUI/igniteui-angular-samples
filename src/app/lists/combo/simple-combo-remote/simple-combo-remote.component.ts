@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { IComboSearchInputEventArgs, IForOfState, IgxSimpleComboComponent, IgxToastComponent, ISimpleComboSelectionChangingEventArgs, VerticalAlignment } from 'igniteui-angular';
 import { RemoteNWindService } from '../../../services/remoteNwind.service';
 import { AsyncPipe } from '@angular/common';
@@ -11,6 +11,9 @@ import { AsyncPipe } from '@angular/common';
     imports: [IgxSimpleComboComponent, IgxToastComponent, AsyncPipe]
 })
 export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
+    private remoteService = inject(RemoteNWindService);
+    cdr = inject(ChangeDetectorRef);
+
     @ViewChild('loadingToast')
     public loadingToast: IgxToastComponent;
 
@@ -26,11 +29,6 @@ export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {
     private itemCount: number = 0;
     private hasSelection: boolean;
     private additionalScroll: number = 0;
-
-    constructor(
-        private remoteService: RemoteNWindService,
-        public cdr: ChangeDetectorRef
-    ) { }
 
     public ngOnInit() {
         this.rData = this.remoteService.remoteData;

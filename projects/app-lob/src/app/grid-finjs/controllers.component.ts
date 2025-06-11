@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IButtonGroupEventArgs, IChangeCheckboxEventArgs, IgxButtonGroupComponent, IgxSliderComponent, IgxToastComponent, ISliderValueChangeEventArgs, VerticalAlignment, IgxSwitchComponent }
 from 'igniteui-angular';
@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
     imports: [IgxSwitchComponent, FormsModule, IgxSliderComponent, IgxButtonGroupComponent, IgxToastComponent]
 })
 export class ControllerComponent implements OnInit, OnDestroy {
+    private router = inject(ActivatedRoute);
+
     @ViewChild('buttonGroup1', { static: true }) public playButtons: IgxButtonGroupComponent;
     @ViewChild('slider1', { static: true }) public volumeSlider: IgxSliderComponent;
     @ViewChild('slider2', { static: true }) public intervalSlider: IgxSliderComponent;
@@ -54,8 +56,6 @@ export class ControllerComponent implements OnInit, OnDestroy {
     private volumeChangedSubscription: Subscription;
     private frequencyChanged$: Observable<ISliderValueChangeEventArgs>;
     private frequencyChangedSubscription: Subscription;
-
-    constructor(private router: ActivatedRoute) {}
 
     public ngOnInit(): void {
         this.volumeChanged$ = this.volumeSlider.valueChange.pipe(debounce(() => timer(200)));

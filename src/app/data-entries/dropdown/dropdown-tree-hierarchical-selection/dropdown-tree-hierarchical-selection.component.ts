@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, DoCheck, OnInit, ViewChild,ElementRef, Inject, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, OnInit, ViewChild, ElementRef, PLATFORM_ID, inject } from '@angular/core';
 import { IBaseChipEventArgs, IgxDropDownComponent, IgxTreeComponent, ITreeNodeSelectionEvent, ConnectedPositioningStrategy, OverlaySettings, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxChipsAreaComponent, IgxChipComponent, IgxTreeNodeComponent } from 'igniteui-angular';
 import { COUNTRIES } from './countries';
 import { isPlatformBrowser } from '@angular/common';
@@ -12,14 +12,14 @@ import { isPlatformBrowser } from '@angular/common';
     imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxChipsAreaComponent, IgxChipComponent, IgxDropDownComponent, IgxTreeComponent, IgxTreeNodeComponent]
 })
 export class DropdownTreeHierarchicalSelectionComponent implements OnInit, DoCheck, AfterViewInit {
+    private platformId = inject(PLATFORM_ID);
+
     @ViewChild(IgxTreeComponent, { static: true }) public igxTree: IgxTreeComponent;
     @ViewChild(IgxDropDownComponent, { static: true }) public igxDropDown: IgxDropDownComponent;
     @ViewChild('button', { static: true }) public igxButton: ElementRef;
 
     public countries!: any[];
     public selectedNodes!: any[];
-
-    constructor(@Inject(PLATFORM_ID) private platformId: any) { }
 
     public ngOnInit(): void {
         this.countries = COUNTRIES;

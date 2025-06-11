@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxCardComponent, IgxCardMediaDirective, IgxCardContentDirective, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxSelectComponent, IgxSelectItemComponent, IgxMaskDirective, IgxCheckboxComponent, IgxHintDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxIconComponent, IgxBadgeComponent } from 'igniteui-angular';
 import { NgClass, DatePipe } from '@angular/common';
@@ -40,6 +40,8 @@ export interface ShippingDetails{
     imports: [IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxBadgeComponent, IgxCardComponent, NgClass, IgxCardMediaDirective, IgxCardContentDirective, FormsModule, ReactiveFormsModule, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxSelectComponent, IgxSelectItemComponent, IgxMaskDirective, IgxCheckboxComponent, IgxHintDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxIconComponent, DatePipe]
 })
 export class StepperSampleReactiveFormsComponent {
+    private cdr = inject(ChangeDetectorRef);
+
     @ViewChild('stepper', { static: true })
     public stepper: IgxStepperComponent;
 
@@ -80,7 +82,7 @@ export class StepperSampleReactiveFormsComponent {
     public personalInformation:FormGroup<PersonalInformation>;
     public shippingDetails:FormGroup<ShippingDetails>;
 
-    constructor(private cdr: ChangeDetectorRef) {
+    constructor() {
         this.businessInformation = new FormGroup<BusinessInformation>({
             name: new FormControl('', Validators.required),
             physicalAddress: new FormControl('', Validators.required),

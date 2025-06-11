@@ -1,4 +1,4 @@
-import { Component, Injectable, ViewChild, OnInit } from '@angular/core';
+import { Component, Injectable, ViewChild, OnInit, inject } from '@angular/core';
 
 import { IgxGridComponent, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
@@ -15,9 +15,11 @@ import { AsyncPipe } from '@angular/common';
 })
 
 export class FinancialSampleComponent {
+    private localService = inject(FinancialDataService);
+
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     public data: Observable<any[]>;
-    constructor(private localService: FinancialDataService) {
+    constructor() {
         this.localService.getData(100000);
         this.data = this.localService.records;
     }

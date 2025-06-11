@@ -1,10 +1,12 @@
-import { AfterViewInit, Directive, Host, Input, Optional, OnDestroy, Inject } from '@angular/core';
+import { AfterViewInit, Directive, Input, OnDestroy, inject } from '@angular/core';
 import { GridType, IGX_GRID_BASE } from 'igniteui-angular';
 
 @Directive({
     selector: '[igxPreventDocumentScroll]'
 })
 export class IgxPreventDocumentScrollDirective implements AfterViewInit, OnDestroy {
+    private grid = inject<GridType>(IGX_GRID_BASE, { host: true, optional: true });
+
     private _preventScroll = true;
     private gridBody: HTMLElement;
 
@@ -19,12 +21,6 @@ export class IgxPreventDocumentScrollDirective implements AfterViewInit, OnDestr
     @Input('igxPreventDocumentScroll')
     public set preventScroll(val: boolean) {
         if (val === false) { this._preventScroll = false; }
-    }
-
-    /**
-     * @hidden
-     */
-    constructor(@Host() @Optional() @Inject(IGX_GRID_BASE) private grid: GridType) {
     }
 
     public ngAfterViewInit() {

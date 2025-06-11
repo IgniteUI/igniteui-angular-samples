@@ -1,16 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Injectable({
     providedIn: 'root'
 })
 export class SEOService {
+    private title = inject(Title);
+    private meta = inject(Meta);
+
     private defaultTitle = 'Build Better Modern Web Experiences, Faster with Angular Components';
     // eslint-disable-next-line max-len
     private defaultDesc = 'Create feature-rich, progressive web apps with Ignite UI for Angular! A complete library for Angular native UI components, including the fastest Angular data grid and 60+ high-performance charts.';
-
-
-    constructor(private title: Title, private meta: Meta) { }
 
     updateHeadProperties(title: string, desc: string, url: string){
         this.title.setTitle(title ?? this.defaultTitle);

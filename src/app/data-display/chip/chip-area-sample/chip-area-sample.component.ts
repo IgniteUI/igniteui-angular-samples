@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { IBaseChipEventArgs, IChipsAreaReorderEventArgs, IgxChipsAreaComponent, IgxChipComponent, IgxAvatarComponent, IgxPrefixDirective, IgxIconComponent } from 'igniteui-angular';
 
 
@@ -10,6 +10,8 @@ import { IBaseChipEventArgs, IChipsAreaReorderEventArgs, IgxChipsAreaComponent, 
 })
 
 export class ChipAreaSampleComponent {
+    changeDetectionRef = inject(ChangeDetectorRef);
+
     public chipList = [
         {
             id: '770-504-2217',
@@ -27,9 +29,6 @@ export class ChipAreaSampleComponent {
             photo: 'assets/images/women/50.jpg'
         }
     ];
-
-
-    constructor(public changeDetectionRef: ChangeDetectorRef) { }
 
     public chipRemoved(event: IBaseChipEventArgs) {
         this.chipList = this.chipList.filter((item) => item.id !== event.owner.id);

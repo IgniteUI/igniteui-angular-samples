@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IgxDatePickerComponent, IgxLabelDirective, IgxTimePickerComponent } from 'igniteui-angular';
 
@@ -16,7 +16,9 @@ export class DateTimePickerRFSampleComponent {
     public minTime = '06:15:30';
     public maxTime = '15:15:30';
 
-    constructor(fb: FormBuilder) {
+    constructor() {
+        const fb = inject(FormBuilder);
+
         this.dateTimeForm = fb.group({
             date: [this.date, Validators.required],
             time: [this.date, Validators.required]

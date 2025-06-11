@@ -1,4 +1,4 @@
-import { NgForOf, NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxComboModule, IgxNumberFilteringOperand, IgxQueryBuilderComponent, IgxQueryBuilderHeaderComponent, IgxQueryBuilderSearchValueTemplateDirective, IgxRadioModule, IgxSelectModule, IgxStringFilteringOperand } from 'igniteui-angular';
@@ -8,16 +8,15 @@ import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxComboModu
     styleUrls: ['./query-builder-template-sample.component.scss'],
     templateUrl: 'query-builder-template-sample.component.html',
     imports: [
-        IgxQueryBuilderComponent,
-        IgxQueryBuilderHeaderComponent,
-        IgxSelectModule,
-        IgxRadioModule,
-        IgxComboModule,
-        FormsModule,
-        IgxQueryBuilderSearchValueTemplateDirective,
-        NgForOf,
-        NgTemplateOutlet
-    ]
+    IgxQueryBuilderComponent,
+    IgxQueryBuilderHeaderComponent,
+    IgxSelectModule,
+    IgxRadioModule,
+    IgxComboModule,
+    FormsModule,
+    IgxQueryBuilderSearchValueTemplateDirective,
+    NgTemplateOutlet
+]
 })
 export class QueryBuilderTemplateSampleComponent implements OnInit {
     public shipViaFormatterData: any[];

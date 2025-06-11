@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, PLATFORM_ID, inject } from '@angular/core';
 import { IPaginatorResourceStrings, IgxPaginatorComponent, IgxHierarchicalGridComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxPaginatorDirective, IgxSwitchComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -13,6 +13,8 @@ import { isPlatformBrowser } from '@angular/common';
     imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxPaginatorDirective, IgxSwitchComponent, FormsModule]
 })
 export class HierarchicalGridPagerSampleComponent implements OnInit, AfterViewInit {
+    private platformId = inject(PLATFORM_ID);
+
     @ViewChild('paginator', { read: IgxPaginatorComponent, static: false })
     paginator: IgxPaginatorComponent;
 
@@ -26,8 +28,6 @@ export class HierarchicalGridPagerSampleComponent implements OnInit, AfterViewIn
         // eslint-disable-next-line @typescript-eslint/naming-convention
         igx_paginator_label: 'Records per page'
     };
-
-    constructor(@Inject(PLATFORM_ID) private platformId: any) { }
 
     public ngOnInit(): void {
         this.data = SINGERS;

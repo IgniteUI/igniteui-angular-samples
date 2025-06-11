@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import { IgxTreeGridComponent, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
@@ -15,12 +15,14 @@ import { AsyncPipe } from '@angular/common';
 })
 
 export class TreeGridVirtualizationSampleComponent {
+    private localService = inject(FinancialDataService);
+
     @ViewChild('grid1', { static: true }) public grid1: IgxTreeGridComponent;
 
     public data: Observable<any[]>;
     public volume = 10000;
 
-    constructor(private localService: FinancialDataService) {
+    constructor() {
         this.localService.getHierarchicalData(this.volume);
         this.data = this.localService.records;
     }

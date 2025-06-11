@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 import { ActivatedRoute } from '@angular/router';
 import { NgClass } from '@angular/common';
@@ -12,10 +12,12 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [NgClass, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxRowIslandComponent]
 })
 export class HGridToolbarPinningComponent implements OnInit {
+    private activatedRoute = inject(ActivatedRoute);
+
     public localdata;
     public useDarkTheme: boolean = false;
 
-    constructor(private activatedRoute: ActivatedRoute) {
+    constructor() {
         this.localdata = CUSTOMERS;
     }
 
