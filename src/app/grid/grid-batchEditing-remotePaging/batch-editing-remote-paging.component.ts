@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation, inject } from '@angular/core';
 import { IgxDialogComponent, IgxGridComponent, Transaction, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxButtonDirective, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { RemotePagingWithBatchEditingService } from '../../services/remotePagingWithBatchEditing.service';
@@ -15,6 +15,8 @@ import { AsyncPipe } from '@angular/common';
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxButtonDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxDialogComponent, AsyncPipe]
 })
 export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit, OnDestroy {
+    private remoteService = inject(RemotePagingWithBatchEditingService);
+
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     @ViewChild(IgxDialogComponent, { static: true }) public dialog: IgxDialogComponent;
 
@@ -28,8 +30,6 @@ export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit,
     private _dataLengthSubscriber;
     private _recordsOnServer = 0;
     private _totalPagesOnServer = 0;
-    constructor(private remoteService: RemotePagingWithBatchEditingService) {
-    }
 
     public get perPage(): number {
         return this._perPage;

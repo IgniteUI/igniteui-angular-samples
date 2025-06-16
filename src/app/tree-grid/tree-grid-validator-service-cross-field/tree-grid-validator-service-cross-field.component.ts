@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, ValidationErrors, ValidatorFn, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ColumnPinningPosition, CellType, IGridEditEventArgs, IgxTreeGridComponent, IPinningConfig, IgxSwitchComponent, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnMaxValidatorDirective, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxButtonDirective } from 'igniteui-angular';
-import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
+import { ColumnPinningPosition, CellType, IGridEditEventArgs, IgxTreeGridComponent, IGridFormGroupCreatedEventArgs,  IPinningConfig, IgxSwitchComponent, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnMaxValidatorDirective, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxButtonDirective } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
@@ -50,7 +49,7 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
     private rowValidator(): ValidatorFn {
         return (formGroup: FormGroup): ValidationErrors | null => {
             let returnObject = {};
-            
+
             const age = formGroup.get('Age');
             const hireDate = formGroup.get('HireDate');
             if((new Date().getFullYear() - new Date(hireDate.value).getFullYear()) + 18 >= age.value) {
@@ -104,12 +103,12 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
         return messages;
     }
 
-    
+
     public commit() {
         const invalidTransactions = this.treeGrid.validation.getInvalid();
         if (invalidTransactions.length > 0 && !confirm('You\'re committing invalid transactions. Are you sure?')) {
             return;
-        } 
+        }
 
         this.treeGrid.transactions.commit(this.data);
         this.treeGrid.validation.clear();

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
 import { IComboSelectionChangingEventArgs, IgxToastComponent, VerticalAlignment, IgxComboComponent } from 'igniteui-angular';
 import { getHeroWeaponsData, IHeroWeapon } from '../../../data/heroData';
 
@@ -9,13 +9,12 @@ import { getHeroWeaponsData, IHeroWeapon } from '../../../data/heroData';
     imports: [IgxComboComponent, IgxToastComponent]
 })
 export class ComboStylingComponent implements OnInit {
+    elem = inject(ElementRef);
+
     @ViewChild('loadToast', { read: IgxToastComponent, static: true })
     public loadToast: IgxToastComponent;
 
     public weaponsData: IHeroWeapon[] = [];
-
-    constructor(public elem: ElementRef) {
-    }
 
     public ngOnInit() {
         this.weaponsData = getHeroWeaponsData();

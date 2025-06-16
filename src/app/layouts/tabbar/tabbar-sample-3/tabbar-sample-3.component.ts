@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ISelectionEventArgs } from 'igniteui-angular';
 
@@ -9,14 +9,14 @@ import { ISelectionEventArgs } from 'igniteui-angular';
     templateUrl: './components/tabbar-sample-3.component.html'
 })
 export class TabbarSample3Component implements OnInit {
+    private router = inject(Router);
+
     public urlLocations = [
         '',
         '/arrivals',
         '/departures',
         '/canceled'
     ];
-
-    constructor(private router: Router) { }
 
     public get currentDocumentLocation() {
         return this.router.url;

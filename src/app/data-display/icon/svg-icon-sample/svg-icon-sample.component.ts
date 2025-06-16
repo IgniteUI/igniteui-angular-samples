@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { IgxIconService, IgxIconComponent } from 'igniteui-angular';
 
 @Component({
@@ -8,8 +8,8 @@ import { IgxIconService, IgxIconComponent } from 'igniteui-angular';
     imports: [IgxIconComponent]
 })
 export class SvgIconSampleComponent implements OnInit {
+    private iconService = inject(IgxIconService);
 
-    constructor(private iconService: IgxIconService) { }
 
     public ngOnInit() {
         // register custom SVG icons

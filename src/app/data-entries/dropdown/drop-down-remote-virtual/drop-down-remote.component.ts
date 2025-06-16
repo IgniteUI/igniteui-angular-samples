@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, AfterViewInit, inject } from '@angular/core';
 // tslint:disable-next-line:max-line-length
 import { IForOfState, IgxDropDownComponent, IgxForOfDirective, IgxToastComponent, VerticalAlignment, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownItemComponent } from 'igniteui-angular';
 import { Subject, Subscription } from 'rxjs';
@@ -15,6 +15,9 @@ import { AsyncPipe } from '@angular/common';
     imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxForOfDirective, IgxDropDownItemComponent, IgxToastComponent, AsyncPipe]
 })
 export class DropDownRemoteComponent implements OnInit, OnDestroy, AfterViewInit {
+    private remoteService = inject(RemoteNWindService);
+    cdr = inject(ChangeDetectorRef);
+
     @ViewChild('loadingToast', { read: IgxToastComponent, static: true })
     public loadingToast: IgxToastComponent;
     @ViewChild(IgxForOfDirective, { read: IgxForOfDirective, static: true })
@@ -26,7 +29,6 @@ export class DropDownRemoteComponent implements OnInit, OnDestroy, AfterViewInit
     public prevRequest: Subscription;
     public rData: any;
     private destroy$ = new Subject<void>();
-    constructor(private remoteService: RemoteNWindService, public cdr: ChangeDetectorRef) { }
 
     public ngAfterViewInit() {
         const initialState: IForOfState = {

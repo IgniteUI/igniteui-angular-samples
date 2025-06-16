@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-shadow */
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { CellType, IgxColumnComponent, IgxColumnGroupComponent, IgxHierarchicalGridComponent, IgxListComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxRowIslandComponent, IgxGridToolbarDirective, IgxListItemComponent, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective } from 'igniteui-angular';
 import { fromEvent, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -166,6 +166,8 @@ const summaryCombinations: Item[] = [
     imports: [IgxHierarchicalGridComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxRowIslandComponent, IgxGridToolbarDirective, IgxListComponent, IgxListItemComponent, NgClass, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective]
 })
 export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
+    private cdr = inject(ChangeDetectorRef);
+
 
     @ViewChild(IgxHierarchicalGridComponent, { static: true })
     public hGrid: IgxHierarchicalGridComponent;
@@ -188,9 +190,6 @@ export class HGridKeyboardnavGuide implements OnInit, OnDestroy {
 
     private _destroyer = new Subject<void>();
     private keyboardHandler = new KeyboardHandler([], GridSection.THEAD);
-
-    public constructor(
-        private cdr: ChangeDetectorRef) { }
 
     public onActiveNodeChange(evt) {
         if (this.hGrid.crudService.cell) {

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { IgxGridComponent, NoopFilteringStrategy, NoopSortingStrategy, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
@@ -16,6 +16,9 @@ const DEBOUNCE_TIME = 300;
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent, AsyncPipe]
 })
 export class RemoteFilteringSampleComponent implements OnInit, AfterViewInit, OnDestroy {
+    private _remoteService = inject(RemoteFilteringService);
+    cdr = inject(ChangeDetectorRef);
+
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;
     public remoteData: any;
     public noopFilterStrategy = NoopFilteringStrategy.instance();
@@ -24,8 +27,6 @@ export class RemoteFilteringSampleComponent implements OnInit, AfterViewInit, On
     private _prevRequest: any;
     private _chunkSize: number;
     private destroy$ = new Subject<void>();
-
-    constructor(private _remoteService: RemoteFilteringService, public cdr: ChangeDetectorRef) { }
 
     public ngOnInit(): void {
         this.remoteData = this._remoteService.remoteData;

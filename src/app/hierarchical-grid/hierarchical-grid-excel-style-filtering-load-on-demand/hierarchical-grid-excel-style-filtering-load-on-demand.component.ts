@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { IFilteringExpressionsTree, IgxColumnComponent, IgxHierarchicalGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxCellTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
 import { RemoteValuesService } from '../../services/remoteValues.service';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -11,10 +11,10 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent]
 })
 export class HierarchicalGridExcelStyleFilteringLoadOnDemandComponent implements OnInit {
+    private remoteValuesService = inject(RemoteValuesService);
+
 
     public localdata: any[];
-
-    constructor(private remoteValuesService: RemoteValuesService) { }
 
     public singersColumnValuesStrategy = (column: IgxColumnComponent,
                                           columnExprTree: IFilteringExpressionsTree,

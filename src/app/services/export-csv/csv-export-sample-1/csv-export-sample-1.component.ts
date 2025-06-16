@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 
 import { CsvFileTypes, IgxCsvExporterOptions, IgxCsvExporterService, IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../../directives/prevent-scroll.directive';
@@ -11,6 +11,8 @@ import { IgxPreventDocumentScrollDirective } from '../../../directives/prevent-s
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent]
 })
 export class CsvExportSample1Component {
+  private csvExportService = inject(IgxCsvExporterService);
+
 
   @ViewChild('igxGrid1', { static: true }) public igxGrid1: IgxGridComponent;
   public localData = [
@@ -18,9 +20,6 @@ export class CsvExportSample1Component {
     { Name: 'Alanis Brook', Age: '22' },
     { Name: 'Jonathan Morris', Age: '23' }
   ];
-
-  constructor(private csvExportService: IgxCsvExporterService) {
-  }
 
     /*
     The following code demonstrates how to attach event handlers to exporter specific events

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ViewChild, inject } from "@angular/core";
 import { IPivotConfiguration, IgxPivotNumericAggregate, NoopPivotDimensionsStrategy, IgxPivotGridComponent, NoopSortingStrategy, IGridState, IGridStateOptions, IgxGridStateDirective, IgxButtonDirective, IgxIconComponent } from "igniteui-angular"
 import { PivotDataService } from "../../services/pivotRemoteData.service";
 import { take } from 'rxjs/operators';
@@ -11,6 +11,8 @@ import { take } from 'rxjs/operators';
     imports: [IgxButtonDirective, IgxIconComponent, IgxPivotGridComponent, IgxGridStateDirective]
 })
 export class PivotGridNoopPersistenceSampleComponent implements AfterViewInit {
+    private _remoteService = inject(PivotDataService);
+
     @ViewChild('grid', { static: true })
     public grid: IgxPivotGridComponent;
 
@@ -72,9 +74,6 @@ export class PivotGridNoopPersistenceSampleComponent implements AfterViewInit {
         ],
         filters: null
     };
-
-    constructor(private _remoteService: PivotDataService) {
-    }
 
     ngAfterViewInit(): void {
         this.grid.isLoading = true;

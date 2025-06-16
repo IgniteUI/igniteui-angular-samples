@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ViewChild, inject } from '@angular/core';
 import { ColumnType, IgxIconService, IgxTreeGridComponent, IgxCellHeaderTemplateDirective, IgxIconComponent, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 import { icons } from "../../services/svgIcons";
@@ -12,10 +12,13 @@ const FILTERING_ICONS_FONT_SET = "filtering-icons";
     imports: [IgxCellHeaderTemplateDirective, IgxIconComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridColumnPinningSampleComponent implements AfterViewInit {
+    private cdr = inject(ChangeDetectorRef);
+    private iconService = inject(IgxIconService);
+
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
     public data: any[];
 
-    constructor(private cdr: ChangeDetectorRef, private iconService: IgxIconService) {
+    constructor() {
         this.data = generateEmployeeDetailedFlatData();
     }
 

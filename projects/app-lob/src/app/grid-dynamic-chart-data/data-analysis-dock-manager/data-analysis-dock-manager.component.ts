@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { AfterViewInit, ChangeDetectorRef, ViewContainerRef, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren, TemplateRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ViewContainerRef, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren, TemplateRef, inject } from '@angular/core';
 import { IgxChartIntegrationDirective, IgxConditionalFormattingDirective, IgxContextMenuDirective, OPTIONS_TYPE, CHART_TYPE, IDeterminedChartTypesArgs } from 'igniteui-angular-extras';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { FinancialData } from '../../data/financialData';
@@ -58,6 +58,9 @@ export class HastDuplicateLayouts implements PipeTransform {
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
+    private cdr = inject(ChangeDetectorRef);
+    private paneService = inject(FloatingPanesService);
+
     @ViewChild('grid', { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
 
@@ -80,8 +83,6 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     public selectedCharts = {};
     public headersRenderButton = false;
     public chartTypes = ['Column', 'Area', 'Bar', 'Line', 'Scatter', 'Pie'];
-
-    constructor(private cdr: ChangeDetectorRef, private paneService: FloatingPanesService) { }
 
     public ngOnInit() {
         this.data = FinancialData.generateData(1000);

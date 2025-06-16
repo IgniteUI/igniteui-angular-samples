@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { IgxTransactionService, State, Transaction, TransactionType } from 'igniteui-angular';
 import { WishlistItem } from '../data';
 
@@ -7,10 +7,8 @@ import { WishlistItem } from '../data';
     pure: false
 })
 export class TransactionBasePipe implements PipeTransform {
-    /**
-     * @param transactions Injected Transaction Service.
-     */
-    constructor(public transactions: IgxTransactionService<Transaction, State>) { }
+    transactions = inject<IgxTransactionService<Transaction, State>>(IgxTransactionService);
+
 
     public transform(data: WishlistItem[]) {
         // the pipe should NOT operate on the original dataset

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxColumnComponent, IgxGridComponent, IgxQueryBuilderComponent } from 'igniteui-angular';
 
 const API_ENDPOINT = 'https://data-northwind.indigo.design';
@@ -11,6 +11,9 @@ const API_ENDPOINT = 'https://data-northwind.indigo.design';
     imports: [IgxQueryBuilderComponent, IgxGridComponent, IgxColumnComponent]
 })
 export class QueryBuilderRequestSampleComponent implements OnInit, AfterViewInit {
+    private http = inject(HttpClient);
+    private cdr = inject(ChangeDetectorRef);
+
     @ViewChild('grid', { static: true })
     public grid: IgxGridComponent;
 
@@ -19,8 +22,6 @@ export class QueryBuilderRequestSampleComponent implements OnInit, AfterViewInit
     public ordersFields: any[];
     public expressionTree: IExpressionTree;
     public data: any[] = [];
-
-    constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
     public ngOnInit(): void {
         this.customersFields = [
