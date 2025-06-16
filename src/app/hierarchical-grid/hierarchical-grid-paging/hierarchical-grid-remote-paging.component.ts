@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, inject } from '@angular/core';
 import { GridPagingMode, IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent, IgxColumnComponent, IgxPaginatorDirective, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent } from 'igniteui-angular';
 import { RemotePagingService } from './remotePagingService';
 import { BehaviorSubject } from 'rxjs';
@@ -14,6 +14,8 @@ import { AsyncPipe } from '@angular/common';
 })
 
 export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, OnDestroy {
+    private remoteService = inject(RemotePagingService);
+
     @ViewChild('hierarchicalGrid', { static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;
     public page = 0;
     public lastPage = false;
@@ -27,8 +29,6 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
     private _perPage = 10;
     private _dataLengthSubscriber;
     private _dataSubscriber;
-
-    constructor(private remoteService: RemotePagingService) { }
 
     public ngOnInit(): void {
         this._dataLengthSubscriber = this.remoteService.getDataLength(

@@ -1,5 +1,5 @@
 
-import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, inject } from '@angular/core';
 import { ColumnType, IgxIconService, IgxCellHeaderTemplateDirective, IgxIconComponent, IgxHierarchicalGridComponent, IgxColumnComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 import { icons } from "../../services/svgIcons";
@@ -14,9 +14,12 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 })
 
 export class HGridPinningSampleComponent implements AfterViewInit {
+    private cdr = inject(ChangeDetectorRef);
+    private iconService = inject(IgxIconService);
+
     public localdata;
 
-    constructor(private cdr: ChangeDetectorRef, private iconService: IgxIconService) {
+    constructor() {
         this.localdata = CUSTOMERS;
     }
 

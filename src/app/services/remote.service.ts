@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { IForOfState } from 'igniteui-angular';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -17,12 +17,14 @@ export enum SortOrder {
 
 @Injectable()
 export class RemoteService {
+    private _http = inject(HttpClient);
+
     public data: Observable<any[]>;
     private _data: BehaviorSubject<any[]>;
     private _cachedData = [];
     private _prevRequestChunk: number;
 
-    constructor(private _http: HttpClient) {
+    constructor() {
         this._data = new BehaviorSubject([]);
         this.data = this._data.asObservable();
     }

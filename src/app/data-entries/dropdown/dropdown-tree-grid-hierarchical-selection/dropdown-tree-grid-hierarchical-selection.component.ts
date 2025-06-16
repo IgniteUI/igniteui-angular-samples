@@ -1,4 +1,4 @@
-import { AfterViewInit, Component,ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, PLATFORM_ID, ViewChild, inject } from '@angular/core';
 import { IBaseChipEventArgs, IgxDropDownComponent, OverlaySettings, IgxTreeGridComponent, IRowSelectionEventArgs, ConnectedPositioningStrategy, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxChipsAreaComponent, IgxChipComponent, IgxColumnComponent } from 'igniteui-angular';
 import { EMPLOYEE_DATA } from './nested-employee-data';
 import { isPlatformBrowser } from '@angular/common';
@@ -12,6 +12,8 @@ import { isPlatformBrowser } from '@angular/common';
     imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxChipsAreaComponent, IgxChipComponent, IgxDropDownComponent, IgxTreeGridComponent, IgxColumnComponent]
 })
 export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit, AfterViewInit {
+    private platformId = inject(PLATFORM_ID);
+
     @ViewChild('treeGrid', { static: true })
     public igxTreeGrid: IgxTreeGridComponent;
     @ViewChild(IgxDropDownComponent, { static: true }) public igxDropDown: IgxDropDownComponent;
@@ -19,8 +21,6 @@ export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit, A
 
     public employees!: any[];
     public selectedRows!: any[];
-
-    constructor(@Inject(PLATFORM_ID) private platformId: any) { }
 
     public ngOnInit(): void {
         this.employees = EMPLOYEE_DATA;

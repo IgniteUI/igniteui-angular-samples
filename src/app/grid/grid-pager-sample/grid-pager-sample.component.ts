@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef, PLATFORM_ID, inject } from '@angular/core';
 import { athletesData } from '../../data/athletesData';
 import { IPaginatorResourceStrings, IgxPaginatorComponent, IgxGridComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxSwitchComponent } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -12,6 +12,9 @@ import { FormsModule } from '@angular/forms';
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxSwitchComponent, FormsModule, DecimalPipe]
 })
 export class GridPagerSampleComponent implements OnInit, AfterViewInit {
+    private cdr = inject(ChangeDetectorRef);
+    private platformId = inject(PLATFORM_ID);
+
     @ViewChild('paginator', { read: IgxPaginatorComponent, static: false })
     paginator: IgxPaginatorComponent;
 
@@ -24,8 +27,6 @@ export class GridPagerSampleComponent implements OnInit, AfterViewInit {
         // eslint-disable-next-line @typescript-eslint/naming-convention
         igx_paginator_label: 'Records per page'
     };
-
-    constructor(private cdr: ChangeDetectorRef, @Inject(PLATFORM_ID) private platformId: any) {}
 
     public ngOnInit(): void {
         this.data = athletesData;

@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent, IgxColumnActionsComponent, IgxColumnHidingDirective, IgxRadioComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -11,11 +11,11 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
 })
 
 export class HGridCostumHidingSampleComponent implements OnInit, AfterViewInit {
+    private cdr = inject(ChangeDetectorRef);
+
     @ViewChild('hierarchicalGrid', { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
     public localdata;
-
-    constructor(private cdr: ChangeDetectorRef) {}
 
     public ngOnInit(): void {
         this.localdata = SINGERS;

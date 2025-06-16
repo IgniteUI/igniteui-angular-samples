@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxHintDirective, IgxIconComponent, IgxSuffixDirective, IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular';
 
@@ -30,7 +30,9 @@ export class ReactiveFormCustomValidationComponent {
     public showPassword: boolean = false;
     public showRepeat: boolean = false;
 
-    constructor(fb: FormBuilder) {
+    constructor() {
+        const fb = inject(FormBuilder);
+
         this.registrationForm = fb.group({
             email: ['', {
                 nonNullable: true,

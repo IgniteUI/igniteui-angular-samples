@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, DOCUMENT, inject } from '@angular/core';
 import { NavigationStart, Route, Router, RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
 import { IgxNavigationDrawerComponent, IgxLayoutDirective, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, IgxIconButtonDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxInputDirective, IgxSuffixDirective, IgxFlexDirective, IgxNavbarComponent } from 'igniteui-angular';
 import { filter } from 'rxjs/operators';
@@ -11,7 +11,7 @@ import { hierarchicalGridRoutesData } from '../hierarchical-grid/hierarchical-gr
 import { treeGridRoutesData } from '../tree-grid/tree-grid-routes-data';
 import { treegridfinjsRoutesData } from '../treegrid-finjs/treegrid-finjs-routes-data';
 import { FormsModule } from '@angular/forms';
-import { DOCUMENT } from '@angular/common';
+
 
 
 @Component({
@@ -21,6 +21,10 @@ import { DOCUMENT } from '@angular/common';
     imports: [IgxLayoutDirective, IgxNavigationDrawerComponent, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, RouterLinkActive, RouterLink, IgxIconButtonDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxFlexDirective, IgxNavbarComponent, RouterOutlet]
 })
 export class IndexComponent implements OnInit, AfterViewInit {
+    private router = inject(Router);
+    private cdr = inject(ChangeDetectorRef);
+    private document = inject<Document>(DOCUMENT);
+
 
     @ViewChild('navdrawer', { read: IgxNavigationDrawerComponent, static: true })
     public navdrawer: IgxNavigationDrawerComponent;
@@ -82,7 +86,9 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
     private allNavItems: INavigationItem[] = [];
 
-    constructor(private router: Router, private cdr: ChangeDetectorRef, @Inject(DOCUMENT) private document: Document) {
+    constructor() {
+        const router = this.router;
+
         this.appRoutes = this.getAllSampleRoutes('/samples',
             router.config.filter((c) => c.path === 'samples')[0].children, this.modulesRoutes);
     }
