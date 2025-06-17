@@ -25,8 +25,7 @@ $custom-input-group-theme: input-group-theme(
   $idle-text-color: $text-color,
   $focused-text-color: $color-focused,
   $idle-bottom-line-color: $purple,
-  $hover-bottom-line-color: $color-focused,
-  $interim-bottom-line-color: $color-focused
+  $hover-bottom-line-color: $color-focused
 );
 
 // CALENDAR styling specific overlay component requires outlet -> [overlaySettings]="{ outlet: element }"
